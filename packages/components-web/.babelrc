@@ -1,0 +1,29 @@
+{
+	"presets": [
+		"@babel/preset-typescript",
+		[
+			"@babel/preset-env",
+			{
+				"targets": "last 2 Chrome version",
+				"modules": false
+			}
+		]
+	],
+	"plugins": [
+		[
+			"@babel/plugin-proposal-decorators",
+			{
+				"legacy": true
+			}
+		],
+		[
+			"@babel/plugin-proposal-class-properties",
+			{
+				"loose": true
+			}
+		],
+		[
+			"@babel/proposal-object-rest-spread"
+		]
+	]
+}

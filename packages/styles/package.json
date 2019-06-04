@@ -1,0 +1,18 @@
+{
+    "name": "@telements/styles",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc -b",
+        "postbuild": "node ./dist/export-css.js",
+        "setup": "yarn"
+    },
+    "author": "@eeegor <egor.kirpichev@telekom.de>",
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^3.4.5"
+    },
+    "dependencies": {
+
+    }
+}

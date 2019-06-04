@@ -1,0 +1,21 @@
+{
+    "name": "@telements/components-html",
+    "version": "0.0.1",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "prebuild": "rimraf ./dist",
+        "build": "tsc -b",
+        "watch": "tsc -b -w --verbose"
+    },
+    "author": "@eeegor <egor.kirpichev@telekom.de>",
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^3.4.5"
+    },
+    "dependencies": {},
+    "peerDependencies": {
+        "rimraf": "*"
+    }
+}

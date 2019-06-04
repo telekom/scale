@@ -1,0 +1,30 @@
+{
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./styles"
+    },
+    {
+      "path": "./components-html"
+    },
+    {
+      "path": "./components-web"
+    },
+    {
+      "path": "./components-react"
+    },
+    {
+      "path": "./boilerplate-next"
+    },
+    {
+      "path": "./boilerplate-react"
+    },
+    {
+      "path": "./boilerplate-vue"
+    },
+    {
+      "path": "./boilerplate-angular"
+    },
+  ],
+}

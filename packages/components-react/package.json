@@ -1,0 +1,21 @@
+{
+    "name": "@telements/components-react",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc -b",
+        "watch": "tsc -b --watch --verbose"
+    },
+    "dependencies": {
+        "react": "^16.4.2"
+    },
+    "devDependencies": {
+        "@types/react": "^16.4.10",
+        "babel-core": "^6.26.3",
+        "typescript": "^3.4.5"
+    },
+    "peerDependencies": {
+        "rimraf": "*"
+    }
+}

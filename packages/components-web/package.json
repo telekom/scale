@@ -1,0 +1,42 @@
+{
+    "name": "@telements/components-web",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "start": "yarn watch",
+        "copy": "cp ./src/IntrinsicTelements.d.ts ./dist/IntrinsicTelements.d.ts; cp ./src/theme.css ./dist/theme.css",
+        "prebuild": "rimraf ./dist",
+        "build": "rollup -c",
+        "postbuild": "yarn copy; yarn check-types",
+        "watch": "rollup -cw",
+        "check-types": "tsc"
+    },
+    "author": "@eeegor <egor.kirpichev@telekom.de>",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.1.5",
+        "@babel/core": "^7.1.5",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/plugin-proposal-decorators": "^7.1.2",
+        "@babel/preset-env": "^7.1.5",
+        "@babel/preset-typescript": "^7.1.0",
+        "@telements/styles": "*",
+        "express": "^4.16.2",
+        "lit-element": "^2.0.0-rc.5",
+        "npm-run-all": "^4.1.5",
+        "rollup": "^0.67.1",
+        "rollup-plugin-babel": "^4.0.3",
+        "rollup-plugin-node-resolve": "^3.4.0",
+        "typescript": "^3.4.5"
+    },
+    "dependencies": {
+        "@babel/plugin-proposal-object-rest-spread": "^7.4.4"
+    },
+    "peerDependencies": {
+        "rimraf": "*"
+    }
+}
