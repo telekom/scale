@@ -82,11 +82,11 @@ Each CHANGELOG entry that corresponds to a published package will have a timesta
 >
 ```json
 {
-    "version": "1.0.1", <- The updated package version
+    "version": "1.0.1", // The updated package version
     "changes": [
         {
-            "note": "", <- Describe your change
-            "PR": 100 <- Your PR number
+            "note": "", // Describe your change
+            "PR": 100 // Your PR number
         }
     ]
 }
