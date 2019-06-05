@@ -80,7 +80,7 @@ We use Semantic Versioning for all our published packages. If a change you make 
 Each CHANGELOG entry that corresponds to a published package will have a timestamp. If no entry exists without a timestamp, you must first create a new one:
 
 >
-```json
+```js
 {
     "version": "1.0.1", // The updated package version
     "changes": [
