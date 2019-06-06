@@ -10,7 +10,79 @@ The `telements` library offers a set of customizable UI components written in `T
 
 This repository uses `yarn workspaces` and `typescript`
 
+### Running locally
 
+#### 1. Clone this repository to a local folder of your choice
+
+```bash
+cd path-to/folder-name
+git clone git@github.com:telekom/telements.git
+cd telements
+git checkout development
+```
+
+#### 2. Install dependencies
+
+This repository uses `yarn workspaces`, for the symlinks to work correctly please use `yarn` in favour of `npm`
+
+```bash
+yarn
+```
+
+#### 3. Build packages
+
+```bash
+# you'll need to build at least the components to be available for boilerplates
+yarn build:components
+
+# you'll need to run this if you want to deploy one or more boilerplates
+yarn build:boilerplates
+
+# run all above commands sequentially  
+yarn build
+```
+
+#### 4. Watch components for development
+
+> **NOTE:** Currently, every `components-{target}` needs to be watched independently, to do so please open a new `terminal` tab for each one you want to watch
+
+> **TODO:** Explore possibilities to watch all (selected) `components-{target}` packages with a `watch` command at once. E.g. `npm-run-all`
+
+```bash
+# Styles: All `components-{target}` packages depend on the `styles` package
+# Make sure you watch it, if you modify it's source files
+yarn watch:styles
+
+# HTML
+yarn watch:components:html
+
+# Web Components
+yarn watch:components:web
+
+# React
+yarn watch:components:react
+
+```
+
+#### 5. Serve Boilerplates
+
+> **NOTE:** Currently, every `boilerplate` needs to be served independently, to do so please open a new `terminal` tab for each one you want to serve
+
+> **TODO:** Explore possibilities to launch all (selected) packages with a `watch` command at once. E.g. `npm-run-all`
+
+```bash
+# React
+yarn start:react
+
+# Next
+yarn start:next
+
+# Vue
+yarn start:vue
+
+# Angular
+yarn start:angular
+```
 
 ### Packages
 
@@ -74,25 +146,25 @@ CHANGELOGs
 > 
 > This is an Example
 >
-We use Semantic Versioning for all our published packages. If a change you make corresponds to a semver bump, you must modify the package's CHANGELOG.json file accordingly.
+> We use Semantic Versioning for all our published packages. If a change you make corresponds to a semver bump, you must modify the package's CHANGELOG.json file accordingly.
 
 >
-Each CHANGELOG entry that corresponds to a published package will have a timestamp. If no entry exists without a timestamp, you must first create a new one:
+> Each CHANGELOG entry that corresponds to a published package will have a timestamp. If no entry exists without a timestamp, you must first create a new one:
 
 >
-```js
-{
-    "version": "1.0.1", // The updated package version
-    "changes": [
-        {
-            "note": "", // Describe your change
-            "PR": 100 // Your PR number
-        }
-    ]
-}
-```
+> ```js
+> {
+>     "version": "1.0.1", // The updated package version
+>     "changes": [
+>         {
+>             "note": "", // Describe your change
+>             "PR": 100 // Your PR number
+>         }
+>     ]
+> }
+> ```
 >
-If an entry without a timestamp already exists, this means other changes have been introduced by other collaborators since the last publish. Add your changes to the list of notes and adjust the version if your PR introduces a greater semver change (i.e current changes required a patch bump, but your changes require a major version bump).
+> If an entry without a timestamp already exists, this means other changes have been introduced by other collaborators since the last publish. Add your changes to the list of notes and adjust the version if your PR introduces a greater semver change (i.e current changes required a patch bump, but your changes require a major version bump).
 
 ##### Development Tooling
 
