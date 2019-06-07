@@ -1,0 +1,18 @@
+{
+    "name": "@telements/generator-sketch",
+    "version": "0.0.1",
+    "scripts": {
+        "build": "tsc -b",
+        "postbuild": "yarn generate",
+        "pregenerate": "rimraf telements.sketch",
+        "generate": "node ./dist/index.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^3.1.6"
+    },
+    "dependencies": {
+        "sketch-constructor": "^1.1.1",
+        "sketch-json": "^1.2.0"
+    }
+}

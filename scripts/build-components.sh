@@ -17,6 +17,9 @@ echo "--------"
 echo "${GREEN}Build React Components...${NC}"
 yarn workspace @telements/components-react build;
 echo "--------"
+echo "${GREEN}Build Sketch Document...${NC}"
+yarn workspace @telements/generator-sketch build;
+echo "--------"
 echo "--------"
 echo "--------"
 echo "${GREEN}Done building components!${NC}"
