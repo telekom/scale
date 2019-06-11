@@ -50,7 +50,7 @@ yarn build
 
 ```bash
 # Styles: All `components-{target}` packages depend on the `styles` package
-# Make sure you watch it, if you modify it's source files
+# Make sure you watch it, if you modify its source files
 yarn watch:styles
 
 # HTML
