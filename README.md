@@ -32,13 +32,7 @@ yarn
 #### 3. Build packages
 
 ```bash
-# you'll need to build at least the components to be available for boilerplates
-yarn build:components
-
-# you'll need to run this if you want to deploy one or more boilerplates
-yarn build:boilerplates
-
-# run all above commands sequentially  
+# build
 yarn build
 ```
 
@@ -64,36 +58,12 @@ yarn watch:components:react
 
 ```
 
-#### 5. Serve Boilerplates
-
-> **NOTE:** Currently, every `boilerplate` needs to be served independently, to do so please open a new `terminal` tab for each one you want to serve
-
-> **TODO:** Explore possibilities to launch all (selected) packages with a `watch` command at once. E.g. `npm-run-all`
-
-```bash
-# React
-yarn start:react
-
-# Next
-yarn start:next
-
-# Vue
-yarn start:vue
-
-# Angular
-yarn start:angular
-```
-
 ### Packages
 
 All packages maintained with this monorepo are listed below.
 
 | Package	| Version	| Description |
 |---			|---	|---|
-| boilerplate-angular | 0.0.1 | Angular app example with `web-components` |
-| boilerplate-next | 0.0.1 | Next app example with server-side-rendered `react-components` |
-| boilerplate-react | 0.0.1 | React app example with `react-` and `web-components`|
-| boilerplate-vue | 0.0.1 | Vue app example with `web-components` |
 | cli | x.x.x | TODO: Command line interface for better development experience |
 | components-html | 0.0.1 | Component Library as plain HTML + CSS + JS version |
 | components-react | 0.0.1 | Component Library as React Components |
@@ -102,6 +72,17 @@ All packages maintained with this monorepo are listed below.
 | docs | x.x.x | TODO: Documentation |
 | util | x.x.x | TODO: Shared helper functions |
 | styles | 0.0.1 | Shared styles |
+
+### Examples
+
+You can find some demos in the `./examples` directory
+
+| Example	| Version	| Description |
+|---			|---	|---|
+| boilerplate-angular | 0.0.1 | Angular app example with `web-components` |
+| boilerplate-next | 0.0.1 | Next app example with server-side-rendered `react-components` |
+| boilerplate-react | 0.0.1 | React app example with `react-` and `web-components`|
+| boilerplate-vue | 0.0.1 | Vue app example with `web-components` |
 
 ### Contributing
 

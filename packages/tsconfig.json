@@ -16,18 +16,6 @@
     },
     {
       "path": "./generator-sketch"
-    },
-    {
-      "path": "./boilerplate-next"
-    },
-    {
-      "path": "./boilerplate-react"
-    },
-    {
-      "path": "./boilerplate-vue"
-    },
-    {
-      "path": "./boilerplate-angular"
-    },
+    }
   ],
 }
