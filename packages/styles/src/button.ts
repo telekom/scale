@@ -1,9 +1,11 @@
-export const button = `
+import { css } from ".";
+
+export const button = css`
 	.button {
 		color: var(--button-color, black);
 		background: var(--button-background-color, white);
-		border: var(--button-border, 1px solid);
-		border-color: var(--button-border-color, #ddd);
+		border: var(--button-border, 1px solid black);
+		border-color: var(--button-border-color, black);
 		border-radius: var(--button-border-radius, 0);
 		padding: var(--button-padding, 0.25rem 1rem);
 		box-shadow: var(--button-box-shadow, none);

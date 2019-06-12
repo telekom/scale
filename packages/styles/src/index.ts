@@ -2,6 +2,8 @@ import { button } from './button';
 import { alert } from './alert';
 import { card } from './card';
 
+const css = (styles: TemplateStringsArray) => styles
+
 const theme = {
 	colors: {
 		white: '#fff',
@@ -12,6 +14,7 @@ const theme = {
 }
 
 export {
+	css,
 	theme,
 	alert,
 	button,
