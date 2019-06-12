@@ -1,4 +1,6 @@
-export const card = `
+import { css } from ".";
+
+export const card = css`
 	.card {
 		box-sizing: border-box;
 		background: var(--card-background-color, #fff);

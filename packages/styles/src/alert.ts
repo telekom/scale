@@ -1,4 +1,6 @@
-export const alert = `
+import { css } from ".";
+
+export const alert = css`
 	.alert {
 		box-sizing: border-box;
 		background: #eee;
