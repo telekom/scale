@@ -185,4 +185,6 @@ if (!fs.existsSync(buildFolder)) {
 newSketch.build(`${buildFolder}/telements.sketch`);
 
 // Convert all sketch files in the repo to json
-sketchJson.toJson().then(() => console.log('Done!'))
+if (fs.existsSync(`${buildFolder}/telements.sketch`)) {
+  sketchJson.toJson().then(() => console.log('Done generating Sketch!'))
+}
