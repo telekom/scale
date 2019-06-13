@@ -4,6 +4,20 @@
     "strict": false,
     "declaration": true,
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "types": [
+      "node",
+      "jest"
+    ]
   },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "docs",
+    "story",
+    "test",
+    "scripts",
+    "**/*.test.tsx",
+    "**/*.test.ts"
+  ]
 }

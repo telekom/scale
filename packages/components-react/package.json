@@ -5,10 +5,18 @@
     "license": "MIT",
     "scripts": {
         "build": "tsc -b",
-        "watch": "tsc -b --watch --verbose"
+        "watch": "tsc -b --watch --verbose",
+        "test": "jest"
     },
     "dependencies": {
-        "react": "^16.4.2"
+        "@telements/config": "*",
+        "@telements/styles": "*",
+        "@types/enzyme": "^3.9.3",
+        "@types/enzyme-adapter-react-16": "^1.0.5",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "react": "^16.4.2",
+        "ts-jest": "^24.0.2"
     },
     "devDependencies": {
         "@types/jest": "^24.0.13",
