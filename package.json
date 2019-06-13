@@ -15,6 +15,7 @@
         "packages/boilerplate-angular"
     ],
     "scripts": {
+        "postinstall": "yarn build",
         "clean": "./scripts/clean.sh",
         "start:react": "yarn workspace @telements/boilerplate-react start",
         "start:next": "yarn workspace @telements/boilerplate-next start",
