@@ -1,5 +1,3 @@
-source ./scripts/_header.sh;
-
 echo "--------"
 echo "--------"
 echo "${GREEN}Build Components...${NC}"

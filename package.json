@@ -8,21 +8,12 @@
         "packages/components-html",
         "packages/components-web",
         "packages/components-react",
-        "packages/generator-sketch",
-        "packages/boilerplate-react",
-        "packages/boilerplate-next",
-        "packages/boilerplate-vue",
-        "packages/boilerplate-angular"
+        "packages/generator-sketch"
     ],
     "scripts": {
         "postinstall": "yarn build",
         "clean": "./scripts/clean.sh",
-        "start:react": "yarn workspace @telements/boilerplate-react start",
-        "start:next": "yarn workspace @telements/boilerplate-next start",
-        "start:angular": "yarn workspace @telements/boilerplate-angular start",
-        "start:vue": "yarn workspace @telements/boilerplate-vue start",
         "build": "./scripts/build.sh",
-        "build:boilerplates": "./scripts/build-boilerplates.sh",
         "build:components": "./scripts/build-components.sh",
         "watch:components:react": "yarn workspace @telements/components-react npx tsc -b -w --verbose",
         "watch:components:web": "yarn workspace @telements/components-web watch",
