@@ -1,3 +1,5 @@
+// TODO: https://stackoverflow.com/questions/41318115/testing-two-environments-with-jest/42236602#42236602
+
 module.exports = {
   transform: {
     '^.+\\.ts(x)?$': 'ts-jest'
