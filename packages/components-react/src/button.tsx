@@ -8,7 +8,7 @@ interface Props {
 	theme?: string;
 	ariaLabel?: string;
 	size?: string;
-	look?: string;
+	variant?: string;
 	accessKey?: string;
 	autoFocus?: boolean;
 	tabIndex?: number;
@@ -25,7 +25,7 @@ export const Button: React.SFC<Props> = (props) => {
 		style,
 		theme,
 		size,
-		look,
+		variant,
 		disabled,
 		accessKey,
 		autoFocus,
@@ -41,7 +41,7 @@ export const Button: React.SFC<Props> = (props) => {
 		deselected,
 		theme,
 		size,
-		look
+		variant
 	}
 
 	const excludeProps = (p: Props) => {
@@ -59,7 +59,7 @@ export const Button: React.SFC<Props> = (props) => {
 			className={classnames(
 				'button',
 				size ? `button--size-${size}` : '',
-				look ? `button--look-${look}` : '',
+				variant ? `button--variant-${variant}` : '',
 				theme ? `button--theme-${theme}` : '',
 				disabled ? `button--disabled` : '',
 				deselected ? `button--deselected` : '',
