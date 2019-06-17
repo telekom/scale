@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
+import { removeFromObject } from '@telements/util';
 require('@telements/styles/dist/button.css');
 
 interface Props {
@@ -36,7 +37,7 @@ export const Button: React.SFC<Props> = (props) => {
 		onClick,
 	} = props;
 
-	const excludedProps = {
+	const blacklistedProps = {
 		ariaLabel,
 		deselected,
 		theme,
@@ -44,15 +45,7 @@ export const Button: React.SFC<Props> = (props) => {
 		variant
 	}
 
-	const excludeProps = (p: Props) => {
-		const copy = {...p}
-		Object.keys(p).forEach(k => {
-			if (excludedProps[k]) {
-				delete copy[k]
-			}
-		})
-		return copy;
-	}
+	const allowedProps = removeFromObject(props, blacklistedProps);
 
 	return (
 		<button
@@ -72,7 +65,7 @@ export const Button: React.SFC<Props> = (props) => {
 			tabIndex={tabIndex}
 			aria-label={ariaLabel}
 			onClick={event => onClick && onClick(event)}
-			{...excludeProps(props)}
+			{...allowedProps}
 		>
 			{children}
 		</button>

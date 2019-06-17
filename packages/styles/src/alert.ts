@@ -1,4 +1,4 @@
-import { css } from ".";
+import { css } from "./util";
 
 export const alert = css`
 	.alert {

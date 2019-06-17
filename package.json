@@ -4,6 +4,7 @@
     "license": "MIT",
     "private": true,
     "workspaces": [
+        "packages/util",
         "packages/config",
         "packages/styles",
         "packages/components-html",
