@@ -1,6 +1,6 @@
 import * as React from 'react';
-import classnames from 'classnames';
 import { removeFromObject } from '@telements/util';
+import { buttonClassNames } from '@telements/styles';
 require('@telements/styles/dist/button.css');
 
 interface Props {
@@ -45,19 +45,16 @@ export const Button: React.SFC<Props> = (props) => {
 		variant
 	}
 
-	const allowedProps = removeFromObject(props, blacklistedProps);
-
 	return (
 		<button
-			className={classnames(
-				'button',
-				size ? `button--size-${size}` : '',
-				variant ? `button--variant-${variant}` : '',
-				theme ? `button--theme-${theme}` : '',
-				disabled ? `button--disabled` : '',
-				deselected ? `button--deselected` : '',
+			className={buttonClassNames({
+				size,
+				variant,
+				theme,
+				disabled,
+				deselected,
 				className
-			)}
+			})}
 			style={style}
 			disabled={disabled}
 			accessKey={accessKey}
@@ -65,7 +62,7 @@ export const Button: React.SFC<Props> = (props) => {
 			tabIndex={tabIndex}
 			aria-label={ariaLabel}
 			onClick={event => onClick && onClick(event)}
-			{...allowedProps}
+			{...removeFromObject(props, blacklistedProps)}
 		>
 			{children}
 		</button>

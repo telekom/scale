@@ -15,7 +15,9 @@
         "typescript": "^3.4.5"
     },
     "dependencies": {
+        "@types/classnames": "^2.2.8",
         "@types/tinycolor2": "^1.4.2",
+        "classnames": "^2.2.6",
         "tinycolor2": "^1.4.1"
     }
 }

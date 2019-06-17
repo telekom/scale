@@ -1,11 +1,33 @@
 import { css, theme } from "./util";
+import classnames from 'classnames';
 
-const { colors } = theme({
-	colors: {
-		white: 'blue',
-		black: 'lightblue'
-	}
-});
+const { colors } = theme();
+
+interface ClassNames {
+	size?: string;
+	variant?: string;
+	theme?: string;
+	disabled?: boolean;
+	deselected?: boolean;
+	className?: string;
+}
+
+export const buttonClassNames = ({
+	size,
+	variant,
+	theme,
+	disabled,
+	deselected,
+	className
+}: ClassNames) => classnames(
+	'button',
+	size ? `button--size-${size}` : '',
+	variant ? `button--variant-${variant}` : '',
+	theme ? `button--theme-${theme}` : '',
+	disabled ? `button--disabled` : '',
+	deselected ? `button--deselected` : '',
+	className
+)
 
 export const button = css`
 	.button {
