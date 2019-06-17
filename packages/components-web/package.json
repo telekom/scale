@@ -9,7 +9,6 @@
     "scripts": {
         "start": "yarn watch",
         "copy": "cp ./src/IntrinsicTelements.d.ts ./dist/IntrinsicTelements.d.ts; cp ./src/theme.css ./dist/theme.css",
-        "prebuild": "rimraf ./dist",
         "build": "rollup -c",
         "postbuild": "yarn copy; yarn check-types",
         "watch": "rollup -cw",
