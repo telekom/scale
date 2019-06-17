@@ -4,8 +4,7 @@
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc -b",
-        "postbuild": "node ./dist/export-css.js",
-        "setup": "yarn"
+        "postbuild": "node ./dist/export-css.js"
     },
     "author": "@eeegor <egor.kirpichev@telekom.de>",
     "license": "MIT",
