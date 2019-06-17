@@ -3,6 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { defineCustomElements, JSX as LocalJSX } from '@telements/components-stencil/loader';
+import { HTMLAttributes } from 'react';
+
+type StencilToReact<T> = {
+  [P in keyof T]?: T[P] & Omit<HTMLAttributes<Element>, 'className'> & {
+    class?: string;
+  };
+} ;
+
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  export namespace JSX {
+    interface IntrinsicElements extends StencilToReact<LocalJSX.IntrinsicElements> {
+    }
+  }
+}
+
+defineCustomElements(window)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
