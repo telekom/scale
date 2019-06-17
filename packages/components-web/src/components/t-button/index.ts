@@ -1,5 +1,5 @@
 import { LitElement, customElement, html, css, unsafeCSS } from "lit-element";
-import { button } from '@telements/styles/src';
+import { button } from '@telements/styles';
 
 const styles = css`
 	:host {}
