@@ -6,10 +6,10 @@
  */
 
 import * as React from 'react';
-import { IntrinsicTelements } from '@telements/components-web/dist/IntrinsicTelements';
+// import { IntrinsicTelements } from '@telements/components-web/dist/IntrinsicTelements';
 
-declare global {
-	namespace JSX {
-		interface IntrinsicElements extends IntrinsicTelements { }
-	}
-}
+// declare global {
+// 	namespace JSX {
+// 		interface IntrinsicElements extends IntrinsicTelements { }
+// 	}
+// }

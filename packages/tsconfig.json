@@ -18,6 +18,9 @@
       "path": "./components-web"
     },
     {
+      "path": "./components-stencil"
+    },
+    {
       "path": "./components-react"
     },
     {

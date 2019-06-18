@@ -18,6 +18,9 @@ echo "--------"
 echo "${GREEN}Build Web Components...${NC}"
 yarn workspace @telements/components-web build;
 echo "--------"
+echo "${GREEN}Build Stencil Components...${NC}"
+yarn workspace @telements/components-stencil build;
+echo "--------"
 echo "${GREEN}Build React Components...${NC}"
 yarn workspace @telements/components-react build;
 echo "--------"

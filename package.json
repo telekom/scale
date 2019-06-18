@@ -9,6 +9,7 @@
         "packages/styles",
         "packages/components-html",
         "packages/components-web",
+        "packages/components-stencil",
         "packages/components-react",
         "packages/generator-sketch"
     ],

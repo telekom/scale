@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import '@telements/components-web/dist/components-web';
 import { Button, Alert, Card } from '@telements/components-react';
 
 const App: React.FC = () => {
@@ -20,9 +19,10 @@ const App: React.FC = () => {
       <hr />
       <h1>Web components in React</h1>
       <h3>Alert</h3>
-      <t-alert context="success">Success</t-alert>
+      <t-alert custom-class="alert--success" variant="success">Success</t-alert>
       <h3>Button</h3>
       <t-button onClick={onWebComponentButtonClick}>Hello</t-button>
+      <t-button variant="primary" >Hello</t-button>
       <h3>Card</h3>
       <t-card>A title</t-card>
     </div>
