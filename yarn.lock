@@ -945,17 +945,10 @@
   resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
   integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
 
-<<<<<<< HEAD
-"@types/jest@^24.0.13":
-  version "24.0.14"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.14.tgz#bb40fec243164b2def5cfaddd0cb4d4e958c5c1c"
-  integrity sha512-IxS2AO0nOr4zrpKfRCxobQUb1bSK6ejodZ7odCzHXMjsASCI8J10N8qVQhrCjvJTc3bUjGGeuD+ytKZqyhajqQ==
-=======
 "@types/jest@24.0.15", "@types/jest@^24.0.13":
   version "24.0.15"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.15.tgz#6c42d5af7fe3b44ffff7cc65de7bf741e8fa427f"
   integrity sha512-MU1HIvWUme74stAoc3mgAi+aMlgKOudgEvQDIm1v4RkrDudBh1T+NFp5sftpBAdXdx1J0PbdpJ+M2EsSOi1djA==
->>>>>>> init stencil boilerplate
   dependencies:
     "@types/jest-diff" "*"
 
@@ -2182,15 +2175,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.150:
-<<<<<<< HEAD
-  version "1.3.159"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.159.tgz#4292643c5cb77678821ce01557ba6dd0f562db5e"
-  integrity sha512-bhiEr8/A97GUBcUzNb9MFNhzQOjakbKmEKBEAa6UMY45zG2e8PM63LOgAPXEJE9bQiaQH6nOdYiYf8X821tZjQ==
-=======
   version "1.3.164"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.164.tgz#8680b875577882c1572c42218d53fa9ba5f71d5d"
   integrity sha512-VLlalqUeduN4+fayVtRZvGP2Hl1WrRxlwzh2XVVMJym3IFrQUS29BFQ1GP/BxOJXJI1OFCrJ5BnFEsAe8NHtOg==
->>>>>>> init stencil boilerplate
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -5843,16 +5830,12 @@ type-is@~1.6.17, type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
-<<<<<<< HEAD
-typescript@^3.1.6, typescript@^3.4.5, typescript@^3.5.2:
-=======
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.5.2, typescript@^3.1.6, typescript@^3.4.5:
->>>>>>> init stencil boilerplate
+typescript@3.5.2, typescript@^3.1.6, typescript@^3.4.5, typescript@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.2.tgz#a09e1dc69bc9551cadf17dba10ee42cf55e5d56c"
   integrity sha512-7KxJovlYhTX5RaRbUdkAXN1KUZ8PwWlTzQdHV6xNqvuFOs7+WBo10TQUqT19Q/Jz2hk5v9TQDIhyLhhJY4p5AA==
