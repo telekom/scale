@@ -4,6 +4,7 @@
     "license": "MIT",
     "private": true,
     "workspaces": [
+        "packages/util",
         "packages/config",
         "packages/styles",
         "packages/components-html",
@@ -12,7 +13,6 @@
         "packages/generator-sketch"
     ],
     "scripts": {
-        "postinstall": "yarn build",
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
         "build:components": "./scripts/build-components.sh",

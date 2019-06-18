@@ -1,5 +1,6 @@
 import babel from "rollup-plugin-babel";
 import nodeResolve from "rollup-plugin-node-resolve";
+import commonjs from 'rollup-plugin-commonjs';
 import path from "path";
 
 const pkg = require(path.join(process.cwd(), "package.json"));
@@ -15,13 +16,14 @@ const config = {
     },
     plugins: [
         nodeResolve({
-            module: true,
+            mainFields: ['module', 'main'],
             extensions
         }),
         babel({
             exclude: "node_modules/**",
             extensions
-        })
+        }),
+        commonjs()
     ]
 };
 

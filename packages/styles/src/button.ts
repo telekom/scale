@@ -1,9 +1,40 @@
-export const button = `
+import { css, theme } from "./util";
+import classnames from 'classnames';
+
+const { colors } = theme();
+
+interface ClassNames {
+	size?: string;
+	variant?: string;
+	theme?: string;
+	disabled?: boolean;
+	deselected?: boolean;
+	className?: string;
+}
+
+export const buttonClassNames = ({
+	size,
+	variant,
+	theme,
+	disabled,
+	deselected,
+	className
+}: ClassNames) => classnames(
+	'button',
+	size ? `button--size-${size}` : '',
+	variant ? `button--variant-${variant}` : '',
+	theme ? `button--theme-${theme}` : '',
+	disabled ? `button--disabled` : '',
+	deselected ? `button--deselected` : '',
+	className
+)
+
+export const button = css`
 	.button {
-		color: var(--button-color, black);
-		background: var(--button-background-color, white);
-		border: var(--button-border, 1px solid);
-		border-color: var(--button-border-color, #ddd);
+		color: var(--button-color, ${colors.black});
+		background: var(--button-background-color, ${colors.white});
+		border: var(--button-border, 1px solid ${colors.black});
+		border-color: var(--button-border-color, ${colors.black});
 		border-radius: var(--button-border-radius, 0);
 		padding: var(--button-padding, 0.25rem 1rem);
 		box-shadow: var(--button-box-shadow, none);
@@ -20,11 +51,17 @@ export const button = `
 		flex-shrink: 0;
 		vertical-align: middle;
 		text-align: center;
-		transition: background 0.2s, border 0.2s, color 0.2s;
+		transition: all 0.2s;
 		cursor: pointer;
 		user-select: none;
 	}
 
+	/*
+	 * NOTE: Only tested in Chrome and Safari
+	 * --------------------------------------
+	 * This compensates for missing left alignment
+	 * when letter-spacing is applied
+	 */
 	.button:before {
 		content: '';
 		display: block;
@@ -34,16 +71,27 @@ export const button = `
 
 	.button:hover,
 	.button.active {
-		color: var(--button-color-hover);
-		background: var(--button-background-color-hover);
-		border-color: var(--button-border-color-hover);
+		color: var(--button-color-hover, ${colors.white});
+		background: var(--button-background-color-hover, ${colors.black});
+		border: var(--button-border, 1px solid ${colors.black});
+		border-color: var(--button-border-color-hover, ${colors.black});
+		border-radius: var(--button-border-radius, 0);
+		padding: var(--button-padding, 0.25rem 1rem);
+		box-shadow: var(--button-box-shadow, none);
+		line-height: var(--button-line-height, 2rem);
+		font-size: var(--button-font-size, unset);
+		font-weight: var(--button-font-weight, 400);
 		transition: all .2s ease-in-out;
 		text-decoration: none;
 		outline: none;
 	}
 
-
-	/* TODO: implement accessability */
+	/*
+	 * TODO: implement accessability
+	 * -----------------------------
+	 * Once the user starts tabbing it probably
+	 * means that a screen-reader is required
+	 */
 
 	.button:not(.tabbing):focus {
 		outline: 0;

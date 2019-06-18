@@ -1,6 +1,6 @@
 import { LitElement, customElement, html, css, unsafeCSS } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map.js';
-import { alert } from '@telements/styles/src';
+import { alert } from '@telements/styles';
 
 const styles = css`
 	:host {
