@@ -1,4 +1,4 @@
-const jestConfig = require('@telements/config/jest.config');
+const jestConfig = require('@telements/config/dist/jest.config');
 
 module.exports = {
   ...jestConfig
