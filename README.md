@@ -38,24 +38,9 @@ yarn build
 
 #### 4. Watch components for development
 
-> **NOTE:** Currently, every `components-{target}` needs to be watched independently, to do so please open a new `terminal` tab for each one you want to watch
-
-> **TODO:** Explore possibilities to watch all (selected) `components-{target}` packages with a `watch` command at once. E.g. `npm-run-all`
-
 ```bash
-# Styles: All `components-{target}` packages depend on the `styles` package
-# Make sure you watch it, if you modify its source files
-yarn watch:styles
-
-# HTML
-yarn watch:components:html
-
-# Web Components
-yarn watch:components:web
-
-# React
-yarn watch:components:react
-
+# Components
+yarn watch:components
 ```
 
 ### Packages
@@ -65,13 +50,9 @@ All packages maintained with this monorepo are listed below.
 | Package	| Version	| Description |
 |---			|---	|---|
 | cli | x.x.x | TODO: Command line interface for better development experience |
-| components-html | 0.0.1 | Component Library as plain HTML + CSS + JS version |
-| components-react | 0.0.1 | Component Library as React Components |
-| components-web | 0.0.1 | Component Library as Web Components |
+| components | 0.0.1 | Component Library as Web Components build with Stencil.js |
 | config | x.x.x | TODO: Shared configuration |
 | docs | x.x.x | TODO: Documentation |
-| util | x.x.x | TODO: Shared helper functions |
-| styles | 0.0.1 | Shared styles |
 
 ### Examples
 

@@ -4,23 +4,15 @@
     "license": "MIT",
     "private": true,
     "workspaces": [
-        "packages/util",
         "packages/config",
-        "packages/styles",
-        "packages/components-html",
-        "packages/components-web",
-        "packages/components-stencil",
-        "packages/components-react",
+        "packages/components",
         "packages/generator-sketch"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
-        "build:components": "./scripts/build-components.sh",
-        "watch:components:react": "yarn workspace @telements/components-react npx tsc -b -w --verbose",
-        "watch:components:web": "yarn workspace @telements/components-web watch",
-        "watch:components:html": "yarn workspace @telements/components-html npx tsc -b -w --verbose",
-        "watch:styles": "yarn workspace @telements/styles npx tsc -b -w --verbose"
+        "build:components": "yarn workspace @telements/components build",
+        "watch:components": "yarn workspace @telements/components start"
     },
     "devDependencies": {
         "rimraf": "2.6.3"

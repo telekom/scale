@@ -1,0 +1,41 @@
+{
+  "name": "@telements/components",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/telements-components/telements-components.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "test-install-hack:add": "echo \"\" > './package-lock.json'",
+    "test-install-hack:remove": "rimraf ./package-lock.json",
+    "prebuild": "yarn test-install-hack:remove",
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "pretest": "yarn test-install-hack:add",
+    "posttest": "yarn test-install-hack:remove",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.0.5",
+    "@types/jest": "24.0.15",
+    "@types/puppeteer": "1.12.4",
+    "jest": "24.8.0",
+    "jest-cli": "24.8.0",
+    "puppeteer": "1.17.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/classnames": "^2.2.8",
+    "classnames": "^2.2.6"
+  }
+}

@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { defineCustomElements, JSX as LocalJSX } from '@telements/components-stencil/loader';
+import { defineCustomElements, JSX as LocalJSX } from '@telements/components/loader';
 import { HTMLAttributes } from 'react';
 
 type StencilToReact<T> = {
