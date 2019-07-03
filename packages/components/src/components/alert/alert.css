@@ -1,0 +1,38 @@
+.alert {
+	box-sizing: border-box;
+	background: #eee;
+	color: #333;
+	width: 100%;
+	padding: 1rem;
+	text-align: left;
+}
+
+.alert--variant-primary {
+	background: blue;
+	color: #fff;
+}
+
+.alert--variant-secondary {
+	background: #eee;
+	color: #333;
+}
+
+.alert--variant-variant-warning {
+	background: orange;
+	color: #fff;
+}
+
+.alert--variant-danger {
+	background: red;
+	color: #fff;
+}
+
+.alert--variant-success {
+	background: green;
+	color: #fff;
+}
+
+.alert--variant-info {
+	background: lightblue;
+	color: #fff;
+}

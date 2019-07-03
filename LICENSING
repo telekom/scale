@@ -1,6 +1,6 @@
 telements :- a library offering a set of customizable UI components written in JavaScript / TypeScript.
 
-(c) 2019 Egor Kirpicheck, Deutsche Telekom AG
+(c) 2019 Egor Kirpichev, Deutsche Telekom AG
 
 By default all files of the project 'Telements' are licensed under the MIT license. For details see the file 'LICENSE' in the top directory.
 

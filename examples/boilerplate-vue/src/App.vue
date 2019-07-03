@@ -2,7 +2,7 @@
   <div>
     <h1>Vue App</h1>
     <h3>Alert</h3>
-    <t-alert context="success">Success</t-alert>
+    <t-alert variant="success">Success</t-alert>
     <h3>Button</h3>
     <t-button>Click!</t-button>
     <h3>Card</h3>
@@ -12,7 +12,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-import "@telements/components-web/dist/components-web";
 
 export default Vue.extend({
   name: "app"

@@ -1,6 +1,6 @@
 telements :- a javascript library offering a set of customizable UI components written in JavaScript / TypeScript.
 
-(c) 2019 Egor Kirpicheck, Deutsche Telekom AG
+(c) 2019 Egor Kirpichev, Deutsche Telekom AG
 
 This file is licensed under the MIT license. For details
 see the file license on the top level of the repository.

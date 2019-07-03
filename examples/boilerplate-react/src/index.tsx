@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { defineCustomElements, JSX as LocalJSX } from '@telements/components-stencil/loader';
-import { HTMLAttributes } from 'react';
+import { defineCustomElements, JSX as EnhancedJSX } from '@telements/components/loader';
+import App from './App';
+import './index.css';
 
 type StencilToReact<T> = {
   [P in keyof T]?: T[P] & Omit<HTMLAttributes<Element>, 'className'> & {
@@ -16,8 +15,7 @@ type StencilToReact<T> = {
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace JSX {
-    interface IntrinsicElements extends StencilToReact<LocalJSX.IntrinsicElements> {
-    }
+    interface IntrinsicElements extends StencilToReact<EnhancedJSX.IntrinsicElements> {}
   }
 }
 

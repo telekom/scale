@@ -6,22 +6,7 @@
       "path": "./config"
     },
     {
-      "path": "./util"
-    },
-    {
-      "path": "./styles"
-    },
-    {
-      "path": "./components-html"
-    },
-    {
-      "path": "./components-web"
-    },
-    {
-      "path": "./components-stencil"
-    },
-    {
-      "path": "./components-react"
+      "path": "./components"
     },
     {
       "path": "./generator-sketch"

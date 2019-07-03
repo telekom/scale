@@ -1,0 +1,73 @@
+/**
+ * @prop --button-color: Color of the button
+ * @prop --button-background-color: Background color of the button
+ * @prop --button-border: Border of the button
+ * @prop --button-border-color: Border color of the button
+ */
+
+ .button {
+	color: var(--button-color, #000);
+	background: var(--button-background-color, #fff);
+	border: var(--button-border, 1px solid #000);
+	border-color: var(--button-border-color, #000);
+	border-radius: var(--button-border-radius, 0);
+	padding: var(--button-padding, 0.25rem 1rem);
+	box-shadow: var(--button-box-shadow, none);
+	line-height: var(--button-line-height, 2rem);
+	font-family: var(--button-font-family, unset);
+	font-size: var(--button-font-size, unset);
+	font-weight: var(--button-font-weight, 400);
+	text-transform: var(--button-text-transform, initial);
+	letter-spacing: var(--button-letter-spacing, 0);
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	vertical-align: middle;
+	text-align: center;
+	transition: all 0.2s;
+	cursor: pointer;
+	user-select: none;
+}
+
+/*
+ * NOTE: Only tested in Chrome and Safari
+ * --------------------------------------
+ * This compensates for missing left alignment
+ * when letter-spacing is applied
+ */
+.button:before {
+	content: '';
+	display: block;
+	height: 100%;
+	width: var(--button-letter-spacing, 0);
+}
+
+.button:hover,
+.button.active {
+	color: var(--button-color-hover, #fff);
+	background: var(--button-background-color-hover, #000);
+	border: var(--button-border, 1px solid #000);
+	border-color: var(--button-border-color-hover, #000);
+	border-radius: var(--button-border-radius, 0);
+	padding: var(--button-padding, 0.25rem 1rem);
+	box-shadow: var(--button-box-shadow, none);
+	line-height: var(--button-line-height, 2rem);
+	font-size: var(--button-font-size, unset);
+	font-weight: var(--button-font-weight, 400);
+	transition: all .2s ease-in-out;
+	text-decoration: none;
+	outline: none;
+}
+
+/*
+ * TODO: implement accessability
+ * -----------------------------
+ * Once the user starts tabbing it probably
+ * means that a screen-reader is required
+ */
+
+.button:not(.tabbing):focus {
+	outline: 0;
+}
