@@ -59,9 +59,8 @@ All packages maintained with this monorepo are listed below.
 You can find some demos in the `./examples` directory
 
 | Example	| Version	| Description |
-|---			|---	|---|
+|---			|---			|---					|
 | boilerplate-angular | 0.0.1 | Angular app example with `web-components` |
-| boilerplate-next | 0.0.1 | Next app example with server-side-rendered `react-components` |
 | boilerplate-react | 0.0.1 | React app example with `react-` and `web-components`|
 | boilerplate-vue | 0.0.1 | Vue app example with `web-components` |
 

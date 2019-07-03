@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import '@telements/components-web/dist/components-web';
 
 @Component({
   selector: 'app-root',
