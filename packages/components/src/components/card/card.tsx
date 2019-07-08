@@ -30,7 +30,13 @@ export class card {
   render() {
     return (
       <div class={this.getCssClassMap()}>
+        <div class="card__header">
+          <slot/>
+        </div> 
         <div class="card__body">
+          <slot/>
+        </div>
+        <div class="card__footer">
           <slot/>
         </div>
       </div>

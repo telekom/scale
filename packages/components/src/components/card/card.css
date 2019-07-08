@@ -11,3 +11,11 @@
 .card__body {
 	padding: 1rem;
 }
+
+.card__header {
+	padding: 1rem;
+}
+
+.card__footer {
+	padding: 1rem;
+}
