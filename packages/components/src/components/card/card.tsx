@@ -31,13 +31,13 @@ export class card {
     return (
       <div class={this.getCssClassMap()}>
         <div class="card__header">
-          <slot/>
+          <slot name="header" />
         </div> 
         <div class="card__body">
-          <slot/>
+          <slot name="body" />
         </div>
         <div class="card__footer">
-          <slot/>
+          <slot name="footer" />
         </div>
       </div>
     );
