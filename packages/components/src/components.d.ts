@@ -11,8 +11,11 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface TAlert {
     'customClass'?: string;
+    'open': () => Promise<void>;
+    'opened': boolean;
     'size'?: string;
     'theme'?: string;
+    'title': string;
     'variant'?: string;
   }
   interface TButton {
@@ -76,8 +79,10 @@ declare global {
 declare namespace LocalJSX {
   interface TAlert extends JSXBase.HTMLAttributes<HTMLTAlertElement> {
     'customClass'?: string;
+    'opened'?: boolean;
     'size'?: string;
     'theme'?: string;
+    'title'?: string;
     'variant'?: string;
   }
   interface TButton extends JSXBase.HTMLAttributes<HTMLTButtonElement> {

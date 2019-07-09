@@ -27,10 +27,28 @@
 <body>
   <h1>Components</h1>
   <h3>Alert</h3>
-  <t-alert custom-class="alert--success" variant="success">Success</t-alert>
+  <button
+  id="show-alert-btn">show alert</button>
+  <t-alert
+    custom-class="alert--success"
+    variant="success"
+    title="This is a title"
+  >Success</t-alert>
   <h3>Button</h3>
   <t-button variant="primary">Hello</t-button>
   <h3>Card</h3>
   <t-card>A title</t-card>
+
+
+<script>
+  const showAlert = document.querySelector('#show-alert-btn');
+  const alert = document.querySelector('t-alert');
+  showAlert.addEventListener('click',() => {
+    console.log('open alert');
+      alert.open();
+  })
+
+</script>
+
 </body>
 </html>
