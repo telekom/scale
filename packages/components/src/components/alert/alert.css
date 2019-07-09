@@ -5,6 +5,7 @@
 	width: 100%;
 	padding: 1rem;
 	text-align: left;
+  position: relative;
 }
 
 .alert--variant-primary {
@@ -41,33 +42,24 @@
   font-size: 1rem;
   color: white;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
-header {
-  padding: 1rem;
-  background: transparent;
-  position: relative;
+.alert--icon {
+
+
 }
 
-header h4 {
-  font-size: 1rem;
-  color: white;
-  margin: 0;
-}
-
-header button {
+button {
   position: absolute;
-  top: -10px;
+  top: 0;
   right: 0;
-  padding: 0;
+  padding: 1rem;
   color: white;
   background: transparent;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: none;
-
 }
 
-header button:focus {
-  outline: none;
-}
+
+

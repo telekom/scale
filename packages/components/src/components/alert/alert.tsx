@@ -15,7 +15,7 @@ export class alert {
   @Prop() theme?: string = '';
   @Prop() variant?: string = '';
   @Prop({reflectToAttr: true}) title: string;
-  @Prop({reflectToAttr: true, mutable: true}) opened: boolean;
+  @Prop({reflectToAttr: true}) opened: boolean;
 
   private getCssClassMap(): CssClassMap {
     return classNames(
@@ -28,7 +28,6 @@ export class alert {
   }
 
   onCloseAlert = () => {
-    console.log('alert closed');
     this.opened = false;
   };
 
@@ -38,28 +37,24 @@ export class alert {
   }
 
   render() {
-
     let mainContent = <slot />;
-
-    return (
-      <div class={this.getCssClassMap()}>
-        <header>
-
+    let alertContent = null;
+    if (this.opened) {
+      alertContent = (
+        <div class={this.getCssClassMap()}>
           <h4 class="alert--title">
+            <i class="alert--icon"></i>
             {this.title}
+            <button
+              onClick={this.onCloseAlert}
+            >x
+            </button>
           </h4>
-          <button
-            onClick={this.onCloseAlert}
-          >x
-          </button>
-        </header>
-        <body>
+          <p>{mainContent}</p>
+        </div>
+      )
+    }
 
-        {mainContent}
-        </body>
-
-
-      </div>
-    );
+    return alertContent;
   }
 }
