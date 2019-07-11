@@ -34,7 +34,7 @@ export class card {
           <slot name="header" />
         </div> 
         <div class="card__body">
-          <slot name="body" />
+          <slot/>
         </div>
         <div class="card__footer">
           <slot name="footer" />
