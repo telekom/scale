@@ -35,13 +35,12 @@ export class card {
         <h5 class="card-subtitle">Subtitel Header</h5>
           <slot name="header" />
         </div> 
-        <img class="card-img-top" src="http://placehold.it/400x300" alt="Card image"></img>
+        <img class="card__img-top" src="http://placehold.it/400x300" alt="Card image"></img>
         <div class="card__body">
           <slot/>
           <t-button variant="primary" class="hydrated">Click me!</t-button>
         </div>
         <div class="card__footer">
-        <h4 class="card-title">Testtitel Footer</h4>
           <slot name="footer" />
         </div>
       </div>
