@@ -17,9 +17,10 @@ export namespace Components {
     'opened': boolean;
     'size'?: string;
     'theme'?: string;
-    'timeout'?: number | boolean;
+    'timeout'?: number;
     'title': string;
     'variant'?: string;
+    'withTimeout'?: boolean;
   }
   interface TButton {
     /**
@@ -87,9 +88,10 @@ declare namespace LocalJSX {
     'opened'?: boolean;
     'size'?: string;
     'theme'?: string;
-    'timeout'?: number | boolean;
+    'timeout'?: number;
     'title'?: string;
     'variant'?: string;
+    'withTimeout'?: boolean;
   }
   interface TButton extends JSXBase.HTMLAttributes<HTMLTButtonElement> {
     /**

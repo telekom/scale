@@ -17,7 +17,8 @@ export class alert {
   @Prop() variant?: string = '';
   @Prop({reflectToAttr: true}) title: string;
   @Prop({reflectToAttr: true}) opened: boolean;
-  @Prop() timeout?: number | boolean;
+  @Prop() timeout?: number;
+  @Prop() withTimeout?: boolean = false;
   @Prop() icon?: string = '';
   @Prop() close?: string = '';
 
@@ -44,8 +45,8 @@ export class alert {
   onCloseAlertWithTimeout = () => {
     if (this.timeout !== undefined) {
       setTimeout(this.onCloseAlert, this.timeout);
-    } else if (this.timeout !== undefined && this.timeout === true) {
-      let defaultTimeout = 100;
+    } else if (!this.withTimeout) {
+      let defaultTimeout = 500;
       setTimeout(this.onCloseAlert, defaultTimeout);
     } else {
       return null
@@ -56,7 +57,6 @@ export class alert {
   render() {
 
     this.onCloseAlertWithTimeout();
-
 
     if (!this.opened) {
       return null;
