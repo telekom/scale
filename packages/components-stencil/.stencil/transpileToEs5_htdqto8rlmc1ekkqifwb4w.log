@@ -1,0 +1,7 @@
+import { a as patchEsm, b as bootstrapLazy } from './chunk-5fa7b17b.js';
+var defineCustomElements = function (win, options) {
+    return patchEsm().then(function () {
+        bootstrapLazy([["t-alert_3", [[1, "t-alert", { "customClass": [1, "custom-class"], "size": [1], "theme": [1], "variant": [1] }], [1, "t-button", { "size": [1], "theme": [1], "variant": [1], "disabled": [4], "deselected": [4] }], [1, "t-card", { "size": [1], "theme": [1], "variant": [1], "disabled": [4], "deselected": [4] }]]]], options);
+    });
+};
+export { defineCustomElements };

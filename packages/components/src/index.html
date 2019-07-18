@@ -32,8 +32,13 @@
   <t-alert
     custom-class="alert--success"
     variant="success"
-    title="This is a title"
-  >Success</t-alert>
+    title="Warning"
+    timeout="100000"
+    icon="!"
+    close=""
+  >
+    This is only a warning - for your information!
+  </t-alert>
   <h3>Button</h3>
   <t-button variant="primary">Hello</t-button>
   <h3>Card</h3>
@@ -43,11 +48,11 @@
 <script>
   const showAlert = document.querySelector('#show-alert-btn');
   const alert = document.querySelector('t-alert');
-  showAlert.addEventListener('click',() => {
-      alert.open();
-  })
+    showAlert.addEventListener('click',() => {
+      if(!alert.opened) {
+        alert.open();
+      }});
 
 </script>
-
 </body>
 </html>

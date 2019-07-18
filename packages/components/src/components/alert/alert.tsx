@@ -2,6 +2,7 @@ import {Component, Prop, h, Method} from '@stencil/core';
 import {CssClassMap} from '../../utils/utils';
 import classNames from 'classnames';
 
+
 @Component({
   tag: 't-alert',
   styleUrls: [
@@ -16,6 +17,10 @@ export class alert {
   @Prop() variant?: string = '';
   @Prop({reflectToAttr: true}) title: string;
   @Prop({reflectToAttr: true}) opened: boolean;
+  @Prop() timeout?: number;
+  @Prop() icon?: string = '';
+  @Prop() close?: string = '';
+
 
   private getCssClassMap(): CssClassMap {
     return classNames(
@@ -36,25 +41,35 @@ export class alert {
     this.opened = true;
   }
 
+  onCloseAlertWithTimeout = () => {
+    setTimeout(this.onCloseAlert, this.timeout);
+  };
+
   render() {
-    let mainContent = <slot />;
-    let alertContent = null;
-    if (this.opened) {
-      alertContent = (
-        <div class={this.getCssClassMap()}>
-          <h4 class="alert--title">
-            <i class="alert--icon"></i>
-            {this.title}
-            <button
-              onClick={this.onCloseAlert}
-            >x
-            </button>
-          </h4>
-          <p>{mainContent}</p>
+
+    let timeoutSet = this.onCloseAlertWithTimeout();
+
+    if(this.timeout !== 0 ) {
+      timeoutSet
+    }
+
+    let alertContent = this.opened
+      ? (<div class={this.getCssClassMap()}>
+            <a class="close" onClick={this.onCloseAlert}>
+              {this.close}
+            </a>
+            <div class="alert--icon">
+              {this.icon}
+            </div>
+            <div class="alert--title">
+              {this.title}
+            </div>
+          <slot/>
         </div>
       )
-    }
+      : null;
 
     return alertContent;
   }
 }
+
