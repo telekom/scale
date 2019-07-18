@@ -25,33 +25,43 @@
   </style>
 </head>
 <body>
-  <h1>Components</h1>
-  <h3>Alert</h3>
-  <button
-  id="show-alert-btn">show alert</button>
-  <t-alert
-    custom-class="alert--success"
-    variant="success"
-    title="Warning"
-    timeout="100000"
-    icon="!"
-    close=""
-  >
-    This is only a warning - for your information!
-  </t-alert>
-  <h3>Button</h3>
-  <t-button variant="primary">Hello</t-button>
-  <h3>Card</h3>
-  <t-card>A title</t-card>
+<h1>Components</h1>
+<h3>Alert</h3>
+<button
+  id="show-alert-btn">show alert
+</button>
+<t-alert
+  custom-class="alert--danger"
+  variant="danger"
+  title="Help!"
+  icon="!"
+  close="x"
+  timeout="10000"
+>
+  This is only a warning - for your information!
+</t-alert>
+<h3>Button</h3>
+
+
+<t-button
+  variant="primary"
+>
+  Hello</t-button>
+
+
+
+<h3>Card</h3>
+<t-card>A title</t-card>
 
 
 <script>
   const showAlert = document.querySelector('#show-alert-btn');
   const alert = document.querySelector('t-alert');
-    showAlert.addEventListener('click',() => {
-      if(!alert.opened) {
-        alert.open();
-      }});
+  showAlert.addEventListener('click', () => {
+    if (!alert.opened) {
+      alert.open();
+    }
+  });
 
 </script>
 </body>

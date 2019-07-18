@@ -17,7 +17,7 @@ export namespace Components {
     'opened': boolean;
     'size'?: string;
     'theme'?: string;
-    'timeout'?: number;
+    'timeout'?: number | boolean;
     'title': string;
     'variant'?: string;
   }
@@ -87,7 +87,7 @@ declare namespace LocalJSX {
     'opened'?: boolean;
     'size'?: string;
     'theme'?: string;
-    'timeout'?: number;
+    'timeout'?: number | boolean;
     'title'?: string;
     'variant'?: string;
   }

@@ -17,7 +17,7 @@ export class alert {
   @Prop() variant?: string = '';
   @Prop({reflectToAttr: true}) title: string;
   @Prop({reflectToAttr: true}) opened: boolean;
-  @Prop() timeout?: number;
+  @Prop() timeout?: number | boolean;
   @Prop() icon?: string = '';
   @Prop() close?: string = '';
 
@@ -28,7 +28,7 @@ export class alert {
       this.customClass && this.customClass,
       this.size && `alert--size-${this.size}`,
       this.theme && `alert--theme-${this.theme}`,
-      this.variant && `alert--variant-${this.variant}`
+      this.variant && `alert--variant-${this.variant}`,
     );
   }
 
@@ -42,34 +42,41 @@ export class alert {
   }
 
   onCloseAlertWithTimeout = () => {
-    setTimeout(this.onCloseAlert, this.timeout);
+    if (this.timeout !== undefined) {
+      setTimeout(this.onCloseAlert, this.timeout);
+    } else if (this.timeout !== undefined && this.timeout === true) {
+      let defaultTimeout = 100;
+      setTimeout(this.onCloseAlert, defaultTimeout);
+    } else {
+      return null
+    }
+
   };
 
   render() {
 
-    let timeoutSet = this.onCloseAlertWithTimeout();
+    this.onCloseAlertWithTimeout();
 
-    if(this.timeout !== 0 ) {
-      timeoutSet
+
+    if (!this.opened) {
+      return null;
     }
 
-    let alertContent = this.opened
-      ? (<div class={this.getCssClassMap()}>
-            <a class="close" onClick={this.onCloseAlert}>
-              {this.close}
-            </a>
-            <div class="alert--icon">
-              {this.icon}
-            </div>
-            <div class="alert--title">
-              {this.title}
-            </div>
-          <slot/>
+    return (
+      <div class={this.getCssClassMap()}>
+        <a class="close" onClick={this.onCloseAlert}>
+          {this.close}
+        </a>
+        <div class="alert--icon">
+          {this.icon}
         </div>
-      )
-      : null;
+        <div class="alert--title">
+          {this.title}
+        </div>
+        <slot/>
+      </div>
+    );
 
-    return alertContent;
   }
 }
 
