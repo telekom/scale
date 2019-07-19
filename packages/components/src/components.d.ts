@@ -38,7 +38,7 @@ export namespace Components {
     /**
     * (optional) Alert timeout
     */
-    'timeout'?: number;
+    'timeout'?: boolean | number;
     /**
     * (optional) Alert title
     */
@@ -47,10 +47,6 @@ export namespace Components {
     * (optional) Alert variant
     */
     'variant'?: string;
-    /**
-    * (optional) Alert with default timeout value
-    */
-    'withTimeout'?: boolean;
   }
   interface TButton {
     /**
@@ -139,7 +135,7 @@ declare namespace LocalJSX {
     /**
     * (optional) Alert timeout
     */
-    'timeout'?: number;
+    'timeout'?: boolean | number;
     /**
     * (optional) Alert title
     */
@@ -148,10 +144,6 @@ declare namespace LocalJSX {
     * (optional) Alert variant
     */
     'variant'?: string;
-    /**
-    * (optional) Alert with default timeout value
-    */
-    'withTimeout'?: boolean;
   }
   interface TButton extends JSXBase.HTMLAttributes<HTMLTButtonElement> {
     /**

@@ -2,6 +2,7 @@ import {Component, Prop, h, Method} from '@stencil/core';
 import {CssClassMap} from '../../utils/utils';
 import classNames from 'classnames';
 
+const defaultTimeout = 2000;
 
 @Component({
   tag: 't-alert',
@@ -24,14 +25,11 @@ export class alert {
   /** (required) Alert opened */
   @Prop({reflectToAttr: true}) opened: boolean;
   /** (optional) Alert timeout */
-  @Prop() timeout?: number = 2000;
-  /** (optional) Alert with default timeout value*/
-  @Prop() withTimeout?: boolean = false;
+  @Prop() timeout?: boolean | number = false;
   /** (optional) Alert icon */
   @Prop() icon?: string = '';
   /** (required) Alert close */
   @Prop() close?: string = '';
-
 
   private getCssClassMap(): CssClassMap {
     return classNames(
@@ -47,30 +45,24 @@ export class alert {
     this.opened = false;
   };
 
-  @Method()
-  open() {
+  @Method() async open() {
     this.opened = true;
   }
 
   onCloseAlertWithTimeout = () => {
-
-    if(this.timeout !== 2000) {
-      this.withTimeout = true
-    }
-    if (this.withTimeout === true) {
-      setTimeout(this.onCloseAlert, this.timeout);
+    if (this.timeout !== false) {
+      if (typeof this.timeout === 'number') {
+        setTimeout(this.onCloseAlert, this.timeout);
+      } else {
+        setTimeout(this.onCloseAlert, defaultTimeout);
+      }
     } else {
       return null
     }
-
   };
 
   render() {
-
     this.onCloseAlertWithTimeout();
-
-    console.log('with timeout', this.withTimeout);
-    console.log('timeout', this.timeout);
 
     if (!this.opened) {
       return null;
@@ -90,7 +82,6 @@ export class alert {
         <slot/>
       </div>
     );
-
   }
 }
 

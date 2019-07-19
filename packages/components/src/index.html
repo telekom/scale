@@ -45,10 +45,8 @@
 <script>
   const showAlertWithout = document.querySelector('#show-alert-btn-without-timeout');
   const alertWithout = document.getElementById('alert-without-timeout');
-  showAlertWithout.addEventListener('click', () => !alertWithout.opened && alertWithout.open()
-  );
+  showAlertWithout.addEventListener('click', () => !alertWithout.opened && alertWithout.open());
 </script>
-
 
 <button
   id="show-alert-btn-with-default-timeout">show alert with default timeout
@@ -60,7 +58,7 @@
   title="Help!"
   icon="!"
   close="x"
-  with-timeout="true"
+  timeout="true"
 >
   This is only a warning - for your information!
 </t-alert>
@@ -68,10 +66,8 @@
 <script>
   const showAlert = document.querySelector('#show-alert-btn-with-default-timeout');
   const alert = document.getElementById('alert-with-default-timeout');
-  showAlert.addEventListener('click', () => !alert.opened && alert.open()
-  );
+  showAlert.addEventListener('click', () => !alert.opened && alert.open());
 </script>
-
 
 <button
   id="show-alert-btn-with-custom-timeout">show alert with custom timeout
@@ -82,19 +78,15 @@
   variant="danger"
   title="Help!"
   icon="!"
-  close="x"
   timeout="500"
 >
   This is only a warning - for your information!
 </t-alert>
 
-
 <script>
   const showAlertWithCustom = document.querySelector('#show-alert-btn-with-custom-timeout');
   const alertWithCustom = document.getElementById('alert-with-custom-timeout');
-  showAlertWithCustom.addEventListener('click', () => !alertWithCustom.opened && alertWithCustom.open()
-  );
-
+  showAlertWithCustom.addEventListener('click', () => !alertWithCustom.opened && alertWithCustom.open());
 </script>
 </body>
 </html>
