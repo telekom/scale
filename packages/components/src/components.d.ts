@@ -10,16 +10,46 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface TAlert {
+    /**
+    * (required) Alert close
+    */
     'close'?: string;
+    /**
+    * (required) Alert class
+    */
     'customClass'?: string;
+    /**
+    * (optional) Alert icon
+    */
     'icon'?: string;
     'open': () => Promise<void>;
+    /**
+    * (required) Alert opened
+    */
     'opened': boolean;
+    /**
+    * (optional) Alert size
+    */
     'size'?: string;
+    /**
+    * (optional) Alert theme
+    */
     'theme'?: string;
+    /**
+    * (optional) Alert timeout
+    */
     'timeout'?: number;
+    /**
+    * (optional) Alert title
+    */
     'title': string;
+    /**
+    * (optional) Alert variant
+    */
     'variant'?: string;
+    /**
+    * (optional) Alert with default timeout value
+    */
     'withTimeout'?: boolean;
   }
   interface TButton {
@@ -82,15 +112,45 @@ declare global {
 
 declare namespace LocalJSX {
   interface TAlert extends JSXBase.HTMLAttributes<HTMLTAlertElement> {
+    /**
+    * (required) Alert close
+    */
     'close'?: string;
+    /**
+    * (required) Alert class
+    */
     'customClass'?: string;
+    /**
+    * (optional) Alert icon
+    */
     'icon'?: string;
+    /**
+    * (required) Alert opened
+    */
     'opened'?: boolean;
+    /**
+    * (optional) Alert size
+    */
     'size'?: string;
+    /**
+    * (optional) Alert theme
+    */
     'theme'?: string;
+    /**
+    * (optional) Alert timeout
+    */
     'timeout'?: number;
+    /**
+    * (optional) Alert title
+    */
     'title'?: string;
+    /**
+    * (optional) Alert variant
+    */
     'variant'?: string;
+    /**
+    * (optional) Alert with default timeout value
+    */
     'withTimeout'?: boolean;
   }
   interface TButton extends JSXBase.HTMLAttributes<HTMLTButtonElement> {

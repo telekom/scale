@@ -27,42 +27,73 @@
 <body>
 <h1>Components</h1>
 <h3>Alert</h3>
+
 <button
-  id="show-alert-btn">show alert
+  id="show-alert-btn-without-timeout">show alert without timeout
 </button>
 <t-alert
+  id="alert-without-timeout"
   custom-class="alert--danger"
   variant="danger"
   title="Help!"
   icon="!"
   close="x"
-  withTimeout="true"
-  timeout="10000"
 >
   This is only a warning - for your information!
 </t-alert>
-<h3>Button</h3>
+
+<script>
+  const showAlertWithout = document.querySelector('#show-alert-btn-without-timeout');
+  const alertWithout = document.getElementById('alert-without-timeout');
+  showAlertWithout.addEventListener('click', () => !alertWithout.opened && alertWithout.open()
+  );
+</script>
 
 
-<t-button
-  variant="primary"
+<button
+  id="show-alert-btn-with-default-timeout">show alert with default timeout
+</button>
+<t-alert
+  id="alert-with-default-timeout"
+  custom-class="alert--danger"
+  variant="danger"
+  title="Help!"
+  icon="!"
+  close="x"
+  with-timeout="true"
 >
-  Hello</t-button>
+  This is only a warning - for your information!
+</t-alert>
+
+<script>
+  const showAlert = document.querySelector('#show-alert-btn-with-default-timeout');
+  const alert = document.getElementById('alert-with-default-timeout');
+  showAlert.addEventListener('click', () => !alert.opened && alert.open()
+  );
+</script>
 
 
-
-<h3>Card</h3>
-<t-card>A title</t-card>
+<button
+  id="show-alert-btn-with-custom-timeout">show alert with custom timeout
+</button>
+<t-alert
+  id="alert-with-custom-timeout"
+  custom-class="alert--danger"
+  variant="danger"
+  title="Help!"
+  icon="!"
+  close="x"
+  timeout="500"
+>
+  This is only a warning - for your information!
+</t-alert>
 
 
 <script>
-  const showAlert = document.querySelector('#show-alert-btn');
-  const alert = document.querySelector('t-alert');
-  showAlert.addEventListener('click', () => {
-    if (!alert.opened) {
-      alert.open();
-    }
-  });
+  const showAlertWithCustom = document.querySelector('#show-alert-btn-with-custom-timeout');
+  const alertWithCustom = document.getElementById('alert-with-custom-timeout');
+  showAlertWithCustom.addEventListener('click', () => !alertWithCustom.opened && alertWithCustom.open()
+  );
 
 </script>
 </body>

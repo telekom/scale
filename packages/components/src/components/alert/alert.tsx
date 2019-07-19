@@ -11,15 +11,25 @@ import classNames from 'classnames';
   shadow: true
 })
 export class alert {
+  /** (required) Alert class */
   @Prop() customClass?: string = '';
+  /** (optional) Alert size */
   @Prop() size?: string = '';
+  /** (optional) Alert theme */
   @Prop() theme?: string = '';
+  /** (optional) Alert variant */
   @Prop() variant?: string = '';
+  /** (optional) Alert title */
   @Prop({reflectToAttr: true}) title: string;
+  /** (required) Alert opened */
   @Prop({reflectToAttr: true}) opened: boolean;
-  @Prop() timeout?: number;
+  /** (optional) Alert timeout */
+  @Prop() timeout?: number = 2000;
+  /** (optional) Alert with default timeout value*/
   @Prop() withTimeout?: boolean = false;
+  /** (optional) Alert icon */
   @Prop() icon?: string = '';
+  /** (required) Alert close */
   @Prop() close?: string = '';
 
 
@@ -43,11 +53,12 @@ export class alert {
   }
 
   onCloseAlertWithTimeout = () => {
-    if (this.timeout !== undefined) {
+
+    if(this.timeout !== 2000) {
+      this.withTimeout = true
+    }
+    if (this.withTimeout === true) {
       setTimeout(this.onCloseAlert, this.timeout);
-    } else if (!this.withTimeout) {
-      let defaultTimeout = 500;
-      setTimeout(this.onCloseAlert, defaultTimeout);
     } else {
       return null
     }
@@ -58,16 +69,19 @@ export class alert {
 
     this.onCloseAlertWithTimeout();
 
+    console.log('with timeout', this.withTimeout);
+    console.log('timeout', this.timeout);
+
     if (!this.opened) {
       return null;
     }
 
     return (
       <div class={this.getCssClassMap()}>
-        <a class="close" onClick={this.onCloseAlert}>
+        <a class="alert__close" onClick={this.onCloseAlert}>
           {this.close}
         </a>
-        <div class="alert--icon">
+        <div class="alert__icon">
           {this.icon}
         </div>
         <div class="alert--title">
