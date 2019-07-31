@@ -8,3 +8,4 @@ describe('t-card', () => {
     expect(element).toHaveClass('hydrated');
   });
 });
+// Test für bild, alt-text

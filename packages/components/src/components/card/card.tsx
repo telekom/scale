@@ -15,6 +15,8 @@ export class card {
   @Prop() variant?: string = '';
   @Prop() disabled?: boolean = false;
   @Prop() deselected?: boolean = false;
+  @Prop() imageTop?: string;
+  @Prop() imageTopAlt?: string = '';
 
   private getCssClassMap(): CssClassMap {
     return classNames(
@@ -33,7 +35,7 @@ export class card {
         <div class="card__header">
         <slot name="header" />
         </div> 
-        <img class="card__img-top" src="http://placehold.it/400x300" alt="Card image"></img>
+        {this.imageTop && <img class="card__img-top" src={this.imageTop} alt={this.imageTopAlt}></img>}
         <div class="card__body">
           <slot/>
         </div>

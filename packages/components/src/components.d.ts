@@ -40,6 +40,8 @@ export namespace Components {
   interface TCard {
     'deselected'?: boolean;
     'disabled'?: boolean;
+    'imageTop'?: string;
+    'imageTopAlt'?: string;
     'size'?: string;
     'theme'?: string;
     'variant'?: string;
@@ -105,6 +107,8 @@ declare namespace LocalJSX {
   interface TCard extends JSXBase.HTMLAttributes<HTMLTCardElement> {
     'deselected'?: boolean;
     'disabled'?: boolean;
+    'imageTop'?: string;
+    'imageTopAlt'?: string;
     'size'?: string;
     'theme'?: string;
     'variant'?: string;

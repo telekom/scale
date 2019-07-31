@@ -1,22 +1,21 @@
 .card {
 	box-sizing: border-box;
 	background: var(--card-background-color, #fff);
-	border-radius: 4px;
-	width: 400px;
-	max-width: 550px;
+	border-radius: var(--card-border-radius, 4px); 
+	width: var(--card-width, 400px);
+	max-width: var(--card-max-width, 550px);
 	box-shadow: var(--card-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.12));
-	border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.1));
-	
+	border: var(--card-border-color, 1px solid rgba(0, 0, 0, 0.1)); 
 }
 
 .card__body {
-	padding: 1rem;
+	padding: var(--card-body-padding, 1rem); 
 }
 
 .card__header {
-	padding: 1rem;
+	padding: var(--card-header-padding);
 }
 
 .card__footer {
-	padding: 1rem;
+	padding: var(--card-footer-padding);
 }
