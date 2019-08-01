@@ -33,7 +33,7 @@ export class card {
     return (
       <div class={this.getCssClassMap()}>
         <div class="card__header">
-        <slot name="header" />
+          <slot name="header" />
         </div> 
         {this.imageTop && <img class="card__img-top" src={this.imageTop} alt={this.imageTopAlt}></img>}
         <div class="card__body">
