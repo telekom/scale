@@ -73,10 +73,13 @@ export namespace Components {
   interface TCard {
     'deselected'?: boolean;
     'disabled'?: boolean;
+    'imageTop'?: string;
+    'imageTopAlt'?: string;
     'size'?: string;
     'theme'?: string;
     'variant'?: string;
   }
+  interface TInputText {}
 }
 
 declare global {
@@ -99,10 +102,17 @@ declare global {
     prototype: HTMLTCardElement;
     new (): HTMLTCardElement;
   };
+
+  interface HTMLTInputTextElement extends Components.TInputText, HTMLStencilElement {}
+  var HTMLTInputTextElement: {
+    prototype: HTMLTInputTextElement;
+    new (): HTMLTInputTextElement;
+  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
+    't-input-text': HTMLTInputTextElement;
   }
 }
 
@@ -170,15 +180,19 @@ declare namespace LocalJSX {
   interface TCard extends JSXBase.HTMLAttributes<HTMLTCardElement> {
     'deselected'?: boolean;
     'disabled'?: boolean;
+    'imageTop'?: string;
+    'imageTopAlt'?: string;
     'size'?: string;
     'theme'?: string;
     'variant'?: string;
   }
+  interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
 
   interface IntrinsicElements {
     't-alert': TAlert;
     't-button': TButton;
     't-card': TCard;
+    't-input-text': TInputText;
   }
 }
 

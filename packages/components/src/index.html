@@ -87,5 +87,13 @@
   const alertWithCustom = document.getElementById('alert-with-custom-timeout');
   showAlertWithCustom.addEventListener('click', () => !alertWithCustom.opened && alertWithCustom.open());
 </script>
+  <h3>Card</h3>
+  <t-card>A title</t-card>
+  <h3>Card with image</h3>
+  <t-card image-top="http://placehold.it/400x300">A title</t-card>
+  <h3>Card with image alt</h3>
+  <t-card image-top="http://placehold.it/400x300" image-top-alt="Image alt text">A title</t-card>
+  <h3>Input text</h3>
+  <t-input-text />
 </body>
 </html>
