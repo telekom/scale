@@ -1,85 +1,108 @@
+/**
+ * @prop --alert-background: Background color of the alert
+ * @prop --alert-color: Color of the text of the alert
+ * @prop --alert-padding: Padding of the alert
+ * @prop --alert-title-font-size: Font size of the title of the alert
+ * @prop --alert-title-color: Color of the title of the alert
+ * @prop --alert-title-margin: Margin of the title of the alert
+ * @prop --alert-icon-background: Background color of the icon of the alert
+ * @prop --alert-icon-height: Height of the icon of the alert
+ * @prop --alert-icon-width: Width of the icon of the alert
+ * @prop --alert-icon-margin: Margin of the icon of the alert
+ * @prop --alert-icon-border-radius: Border radius of the icon of the alert
+ * @prop --alert-close-width: Width of the close icon of the alert
+ * @prop --alert-close-height: Height of the close icon of the alert
+ * @prop --alert-close-opacity: Opacity of the close icon of the alert
+ * @prop --alert-close-hover-opacity: Hover opacity of the close icon of the alert
+ * @prop --alert-variant-primary-background: Background color of the variant primary alert
+ * @prop --alert-variant-primary-color: Color of the text the variant primary alert
+ * @prop --alert-variant-secondary-background: Background color of the variant secondary alert
+ * @prop --alert-variant-secondary-color: Color of the text of the variant secondary alert
+ * @prop --alert-variant-warning-background: Background color of the variant warning alert
+ * @prop --alert-variant-warning-color: Color of the text of the variant warning alert
+ * @prop --alert-variant-danger-background: Background color of the variant danger alert
+ * @prop --alert-variant-danger-color: Color of the text of the variant danger alert
+ * @prop --alert-variant-success-background: Background color of the variant success alert
+ * @prop --alert-variant-success-color: Color of the text of the variant success alert
+ * @prop --alert-variant-info-background: Background color of the variant info alert
+ * @prop --alert-variant-info-color: Color of the text of the variant info alert
+ */
+
 .alert {
   box-sizing: border-box;
-  background: #eee;
-  color: #333;
+  background: var(--alert-background, #eee);
+  color: var(--alert-color, #333);
   width: 100%;
-  padding: 1rem;
+  padding: var(--alert-padding, 1rem);
   text-align: left;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.alert__body {
+  display: flex;
+}
+
+.alert__content {
+
+}
+
+.alert__title {
+  font-size: var(--alert-title-font-size, 1rem);
+  color: var(--alert-title-color, white);
+  margin: var(--alert-title-margin, 0);
+}
+
+.alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--alert-icon-background);
+  height: var(--alert-icon-height, 24px);
+  width: var(--alert-icon-width, 24px);
+  margin: var(--alert-icon-margin, 0 0.5rem 0 0);
+  border-radius: var(--alert-icon-border-radius)
+}
+
+.alert__close {
+  width: var(--alert-close-width, 16px);
+  height: var(--alert-close-height, 16px);
+  opacity:  var(--alert-close-opacity, 0.5);
+  cursor: pointer;
+}
+
+.alert__close:hover {
+  opacity:  var(--alert-close-hover-opacity, 1);
 }
 
 .alert--variant-primary {
-  background: blue;
-  color: #fff;
+  background: var(--alert-variant-primary-background, blue);
+  color: var(--alert-variant-primary-color, #fff);
 }
 
 .alert--variant-secondary {
-  background: #eee;
-  color: #333;
+  background: var(--alert-variant-secondary-background, #eee);
+  color: var(--alert-variant-secondary-color, #333);
 }
 
 .alert--variant-variant-warning {
-  background: orange;
-  color: #fff;
+  background: var(--alert-variant-warning-background, orange);
+  color: var(--alert-variant-warning-color, #fff);
 }
 
 .alert--variant-danger {
-  background: red;
-  color: #fff;
+  background: var(--alert-variant-danger-background, red);
+  color: var(--alert-variant-danger-color, #fff);
 }
 
 .alert--variant-success {
-  background: green;
-  color: #fff;
+  background: var(--alert-variant-success-background, green);
+  color: var(--alert-variant-success-color, #fff);
 }
 
 .alert--variant-info {
-  background: lightblue;
-  color: #fff;
-}
-
-.alert--title {
-  font-size: 1rem;
-  color: white;
-  margin: 0;
-  text-align: left;
-}
-
-.alert--icon {
-  font-weight: normal;
-  color: black;
-  margin: 3px;
-  left: 0.75rem;
-  z-index: 10;
-  padding: 1px;
-  border-radius: 3px;
-  text-align: center;
-}
-
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 14px;
-  height: 32px;
-  opacity: 0.5;
-  size: 3px;
-}
-.close:hover {
-  opacity: 1;
-}
-.close:before, .close:after {
-  left: 15px;
-  content: ' ';
-  height: 33px;
-  width: 2px;
-  background-color: #eee;
-  cursor: pointer;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
+  background: var(--alert-variant-info-background, lightblue);
+  color: var(--alert-variant-info-color, #fff);
 }
 

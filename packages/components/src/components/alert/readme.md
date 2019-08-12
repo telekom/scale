@@ -33,6 +33,16 @@ Type: `Promise<void>`
 
 
 
+## CSS Custom Properties
+
+| Name                        | Description                    |
+| --------------------------- | ------------------------------ |
+| `--alert-color`             | Color of the button            |
+| `--button-background-color` | Background color of the button |
+| `--button-border`           | Border of the button           |
+| `--button-border-color`     | Border color of the button     |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

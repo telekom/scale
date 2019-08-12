@@ -45,7 +45,8 @@ export class alert {
     this.opened = false;
   };
 
-  @Method() async open() {
+  @Method()
+  async open() {
     this.opened = true;
   }
 
@@ -69,17 +70,24 @@ export class alert {
     }
 
     return (
+
       <div class={this.getCssClassMap()}>
+        <div class="alert__body">
+          <div class="alert__icon">
+            {this.icon}
+          </div>
+          <div class="alert__content">
+            <div class="alert__title">
+              {this.title}
+            </div>
+            <slot/>
+          </div>
+        </div>
+
         <a class="alert__close" onClick={this.onCloseAlert}>
           {this.close}
         </a>
-        <div class="alert__icon">
-          {this.icon}
-        </div>
-        <div class="alert--title">
-          {this.title}
-        </div>
-        <slot/>
+
       </div>
     );
   }
