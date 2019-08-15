@@ -53,10 +53,12 @@ export namespace Components {
     * (optional) Deselected button
     */
     'deselected'?: boolean;
+    'disable': () => Promise<void>;
     /**
     * (optional) Disabled button
     */
     'disabled'?: boolean;
+    'enable': () => Promise<void>;
     /**
     * (optional) Button size
     */

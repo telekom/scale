@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should match snapshot 1`] = `
+<t-button>
+  <mock:shadow-root>
+    <button class="button">
+      <slot></slot>
+    </button>
+  </mock:shadow-root>
+  Label
+</t-button>
+`;
