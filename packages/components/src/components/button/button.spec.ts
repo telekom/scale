@@ -15,10 +15,6 @@ describe('Button', () => {
 		expect(page.root).toMatchSnapshot();
 	});
 
-	it('should compile', () => {
-		expect(element).toBeTruthy();
-	});
-
 	it('should disable the button', () => {
 		expect(element.disabled).toBe(false);
 		element.disable();
@@ -31,10 +27,6 @@ describe('Button', () => {
 		element.enable();
 		expect(element.disabled).toBe(false);
 	});
-
-	it('should have a default css class', () => {
-		expect(element.getCssClassMap()).toBe('button');
-	})
 
 	it('should handle size css class', () => {
 		element.size = 'small'
