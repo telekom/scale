@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
@@ -30,9 +30,19 @@ export class Button {
     );
   }
 
+  @Method()
+  async disable() {
+    this.disabled = true;
+  }
+
+  @Method()
+  async enable() {
+    this.disabled = false;
+  }
+
   render() {
     return (
-      <button class={this.getCssClassMap()}>
+      <button class={this.getCssClassMap()} disabled={this.disabled}>
         <slot/>
       </button>
     );
