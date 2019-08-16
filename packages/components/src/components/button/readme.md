@@ -48,7 +48,7 @@ Type: `Promise<void>`
 | `--button-border-color`              | Border color of the button              |
 | `--button-border-radius`             | Border radius of the button             |
 | `--button-box-shadow`                | Box shadow of the button                |
-| `--button-color`                     | Color of the button x                   |
+| `--button-color`                     | Color of the button                     |
 | `--button-disabled-background-color` | Disabled background color of the button |
 | `--button-disabled-border`           | Disabled border of the button           |
 | `--button-disabled-color`            | Disabled color of the button            |
@@ -65,12 +65,12 @@ Type: `Promise<void>`
 | `--button-hover-font-weight`         | Hover font-weight of the button         |
 | `--button-hover-line-height`         | Hover line-height of the button         |
 | `--button-hover-padding`             | Hover padding of the button             |
-| `--button-hover-transition`          | hover transition of the button Disabled |
+| `--button-hover-transition`          | hover transition of the button          |
 | `--button-letter-spacing`            | Letter spacing of the button            |
 | `--button-line-height`               | Line height of the button               |
 | `--button-padding`                   | Padding of the button                   |
 | `--button-text-transform`            | Font transform of the button            |
-| `--button-transition`                | Transition of the button Hover          |
+| `--button-transition`                | Transition of the button                |
 
 
 ----------------------------------------------
