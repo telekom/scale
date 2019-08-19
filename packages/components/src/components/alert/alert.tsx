@@ -2,7 +2,7 @@ import {Component, Prop, h, Method} from '@stencil/core';
 import {CssClassMap} from '../../utils/utils';
 import classNames from 'classnames';
 
-const defaultTimeout = 2000;
+export const defaultTimeout = 2000;
 
 @Component({
   tag: 't-alert',

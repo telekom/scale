@@ -1,10 +1,11 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Alert } from './alert';
+import { Alert, defaultTimeout } from './alert';
 
 describe('Alert', () => {
 	let element;
 	beforeEach(async () => {
-		element = new Alert()
+		element = new Alert();
+		jest.useFakeTimers();
 	});
 
 	it('should match snapshot', async () => {
@@ -32,17 +33,23 @@ describe('Alert', () => {
 	});
 
 	it('should open the alert without timeout', () => {
-	
+
 	});
 
 	it('should closed the alert after default timeout', () => {
 		element.timeout=true;
-		expect(element.onCloseAlertWithTimeout()).toBe(element.defaultTimeout);
+		element.onCloseAlertWithTimeout();
+
+		expect(setTimeout).toHaveBeenCalledTimes(1);
+		expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), defaultTimeout);
 	});
 
 	it('should closed the alert after set timeout', () => {
 		element.timeout=500;
-		expect(element.onCloseAlertWithTimeout()).toBe(element.timeout);
+		element.onCloseAlertWithTimeout();
+
+		expect(setTimeout).toHaveBeenCalledTimes(1);
+		expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 500);
 	})
 
 	it('should have a default css class', () => {
