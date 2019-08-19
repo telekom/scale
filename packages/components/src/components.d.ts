@@ -19,6 +19,10 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
+    * (optional) Alert title
+    */
+    'headline': string;
+    /**
     * (optional) Alert icon
     */
     'icon'?: string;
@@ -39,10 +43,6 @@ export namespace Components {
     * (optional) Alert timeout
     */
     'timeout'?: boolean | number;
-    /**
-    * (optional) Alert title
-    */
-    'title': string;
     /**
     * (optional) Alert variant
     */
@@ -129,6 +129,10 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
+    * (optional) Alert title
+    */
+    'headline'?: string;
+    /**
     * (optional) Alert icon
     */
     'icon'?: string;
@@ -148,10 +152,6 @@ declare namespace LocalJSX {
     * (optional) Alert timeout
     */
     'timeout'?: boolean | number;
-    /**
-    * (optional) Alert title
-    */
-    'title'?: string;
     /**
     * (optional) Alert variant
     */
