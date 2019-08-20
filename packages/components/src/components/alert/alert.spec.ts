@@ -7,29 +7,24 @@ describe('Alert', () => {
 		element = new Alert();
 		jest.useFakeTimers();
 	});
-
-	const html = `<t-alert>Notifications</t-alert>`;
+	
 	const components = [Alert];
 
 	it('should match snapshot', async () => {
 		const page = await newSpecPage({
 			components,
-			html
+			html: `<t-alert>Notifications</t-alert>`
 		});
 		expect(page.root).toMatchSnapshot();
 	});
 
-	it('should render', async () => {
+	it('should match snapshot when opened', async () => {
 		const page = await newSpecPage({
 			components,
 			html: `<t-alert opened=true >Notifications</t-alert>`
 		});
 		expect(page.root.shadowRoot).toBeTruthy();
 		expect(page.root).toMatchSnapshot();
-	});
-
-	it('should compile', () => {
-		expect(element).toBeTruthy();
 	});
 
 	it('should close the alert', () => {
