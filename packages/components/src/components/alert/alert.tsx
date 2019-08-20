@@ -2,8 +2,6 @@ import {Component, Prop, h, Method} from '@stencil/core';
 import {CssClassMap} from '../../utils/utils';
 import classNames from 'classnames';
 
-const defaultTimeout = 2000;
-
 @Component({
   tag: 't-alert',
   styleUrls: [
@@ -11,7 +9,7 @@ const defaultTimeout = 2000;
   ],
   shadow: true
 })
-export class alert {
+export class Alert {
   /** (required) Alert class */
   @Prop() customClass?: string = '';
   /** (optional) Alert size */
@@ -21,7 +19,7 @@ export class alert {
   /** (optional) Alert variant */
   @Prop() variant?: string = '';
   /** (optional) Alert title */
-  @Prop({reflectToAttr: true}) title: string;
+  @Prop({reflectToAttr: true}) headline: string;
   /** (required) Alert opened */
   @Prop({reflectToAttr: true}) opened: boolean;
   /** (optional) Alert timeout */
@@ -41,6 +39,8 @@ export class alert {
     );
   }
 
+  private defaultTimeout = 2000;
+
   onCloseAlert = () => {
     this.opened = false;
   };
@@ -55,7 +55,7 @@ export class alert {
       if (typeof this.timeout === 'number') {
         setTimeout(this.onCloseAlert, this.timeout);
       } else {
-        setTimeout(this.onCloseAlert, defaultTimeout);
+        setTimeout(this.onCloseAlert, this.defaultTimeout);
       }
     } else {
       return null
@@ -77,8 +77,8 @@ export class alert {
             {this.icon}
           </div>
           <div class="alert__content">
-            <div class="alert__title">
-              {this.title}
+            <div class="alert__headline">
+              {this.headline}
             </div>
             <slot/>
           </div>

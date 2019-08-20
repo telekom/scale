@@ -2,9 +2,9 @@
  * @prop --alert-background: Background color of the alert
  * @prop --alert-color: Color of the text of the alert
  * @prop --alert-padding: Padding of the alert
- * @prop --alert-title-font-size: Font size of the title of the alert
- * @prop --alert-title-color: Color of the title of the alert
- * @prop --alert-title-margin: Margin of the title of the alert
+ * @prop --alert-headline-font-size: Font size of the headline of the alert
+ * @prop --alert-headline-color: Color of the headline of the alert
+ * @prop --alert-headline-margin: Margin of the headline of the alert
  * @prop --alert-icon-background: Background color of the icon of the alert
  * @prop --alert-icon-height: Height of the icon of the alert
  * @prop --alert-icon-width: Width of the icon of the alert
@@ -48,10 +48,10 @@
 
 }
 
-.alert__title {
-  font-size: var(--alert-title-font-size, 1rem);
-  color: var(--alert-title-color, white);
-  margin: var(--alert-title-margin, 0);
+.alert__headline {
+  font-size: var(--alert-headline-font-size, 1rem);
+  color: var(--alert-headline-color, white);
+  margin: var(--alert-headline-margin, 0);
 }
 
 .alert__icon {
