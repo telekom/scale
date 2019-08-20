@@ -7,7 +7,7 @@ exports[`Alert should match snapshot 1`] = `
 </t-alert>
 `;
 
-exports[`Alert should match snapshot when opened 1`] = `
+exports[`Alert should render 1`] = `
 <t-alert opened="">
   <mock:shadow-root>
     <div class="alert">
