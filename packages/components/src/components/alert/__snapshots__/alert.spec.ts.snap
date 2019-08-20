@@ -6,3 +6,21 @@ exports[`Alert should match snapshot 1`] = `
   Notifications
 </t-alert>
 `;
+
+exports[`Alert should render 1`] = `
+<t-alert opened="">
+  <mock:shadow-root>
+    <div class="alert">
+      <div class="alert__body">
+        <div class="alert__icon"></div>
+        <div class="alert__content">
+          <div class="alert__headline"></div>
+          <slot></slot>
+        </div>
+      </div>
+      <a class="alert__close"></a>
+    </div>
+  </mock:shadow-root>
+  Notifications
+</t-alert>
+`;
