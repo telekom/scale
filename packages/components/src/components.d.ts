@@ -82,6 +82,12 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
+  interface TTag {
+    /**
+    * (optional) Button variant
+    */
+    'variant'?: string;
+  }
 }
 
 declare global {
@@ -110,11 +116,18 @@ declare global {
     prototype: HTMLTInputTextElement;
     new (): HTMLTInputTextElement;
   };
+
+  interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
+  var HTMLTTagElement: {
+    prototype: HTMLTTagElement;
+    new (): HTMLTTagElement;
+  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
+    't-tag': HTMLTTagElement;
   }
 }
 
@@ -189,12 +202,19 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
+  interface TTag extends JSXBase.HTMLAttributes<HTMLTTagElement> {
+    /**
+    * (optional) Button variant
+    */
+    'variant'?: string;
+  }
 
   interface IntrinsicElements {
     't-alert': TAlert;
     't-button': TButton;
     't-card': TCard;
     't-input-text': TInputText;
+    't-tag': TTag;
   }
 }
 

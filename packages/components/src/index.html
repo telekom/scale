@@ -1,127 +1,155 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/telements-components.esm.js"></script>
-  <script nomodule src="/build/telements-components.js"></script>
-  <style>
-    html {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
+    <script type="module" src="/build/telements-components.esm.js"></script>
+    <script nomodule src="/build/telements-components.js"></script>
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
 
-    body {
-      margin: 0;
-      padding: 4rem;
-    }
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
 
-    hr {
-      margin: 3rem 0;
-    }
-  </style>
-</head>
-<body>
-  <h1>Components</h1>
-  <h3>Alert</h3>
-  <t-button
-    id="show-alert-btn-without-timeout">show alert without timeout
-  </t-button>
-  <t-alert
-    id="alert-without-timeout"
-    variant="danger"
-    title="Help!"
-    icon="!"
-    close="x"
-  >
-    This is only a warning - for your information!
-  </t-alert>
+      hr {
+        margin: 3rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Components</h1>
+    <h3>Alert</h3>
+    <t-button id="show-alert-btn-without-timeout"
+      >show alert without timeout
+    </t-button>
+    <t-alert
+      id="alert-without-timeout"
+      variant="danger"
+      title="Help!"
+      icon="!"
+      close="x"
+    >
+      This is only a warning - for your information!
+    </t-alert>
 
-  <script>
-    const showAlertWithout = document.querySelector('#show-alert-btn-without-timeout');
-    const alertWithout = document.getElementById('alert-without-timeout');
-    showAlertWithout.addEventListener('click', () => !alertWithout.opened && alertWithout.open());
-  </script>
+    <script>
+      const showAlertWithout = document.querySelector(
+        "#show-alert-btn-without-timeout"
+      );
+      const alertWithout = document.getElementById("alert-without-timeout");
+      showAlertWithout.addEventListener(
+        "click",
+        () => !alertWithout.opened && alertWithout.open()
+      );
+    </script>
 
-  <t-button
-    id="show-alert-btn-with-default-timeout">show alert with default timeout
-  </t-button>
-  <t-alert
-    id="alert-with-default-timeout"
-    variant="danger"
-    title="Help!"
-    icon="!"
-    close="x"
-    timeout="true"
-  >
-    This is only a warning - for your information!
-  </t-alert>
+    <t-button id="show-alert-btn-with-default-timeout"
+      >show alert with default timeout
+    </t-button>
+    <t-alert
+      id="alert-with-default-timeout"
+      variant="danger"
+      title="Help!"
+      icon="!"
+      close="x"
+      timeout="true"
+    >
+      This is only a warning - for your information!
+    </t-alert>
 
-  <script>
-    const showAlert = document.querySelector('#show-alert-btn-with-default-timeout');
-    const alert = document.getElementById('alert-with-default-timeout');
-    showAlert.addEventListener('click', () => !alert.opened && alert.open());
-  </script>
+    <script>
+      const showAlert = document.querySelector(
+        "#show-alert-btn-with-default-timeout"
+      );
+      const alert = document.getElementById("alert-with-default-timeout");
+      showAlert.addEventListener("click", () => !alert.opened && alert.open());
+    </script>
 
-  <t-button
-    id="show-alert-btn-with-custom-timeout">show alert with custom timeout
-  </t-button>
-  <t-alert
-    id="alert-with-custom-timeout"
-    variant="danger"
-    title="Help!"
-    icon="!"
-    timeout="500"
-  >
-    This is only a warning - for your information!
-  </t-alert>
+    <t-button id="show-alert-btn-with-custom-timeout"
+      >show alert with custom timeout
+    </t-button>
+    <t-alert
+      id="alert-with-custom-timeout"
+      variant="danger"
+      title="Help!"
+      icon="!"
+      timeout="500"
+    >
+      This is only a warning - for your information!
+    </t-alert>
 
-  <script>
-    const showAlertWithCustom = document.querySelector('#show-alert-btn-with-custom-timeout');
-    const alertWithCustom = document.getElementById('alert-with-custom-timeout');
-    showAlertWithCustom.addEventListener('click', () => !alertWithCustom.opened && alertWithCustom.open());
-  </script>
+    <script>
+      const showAlertWithCustom = document.querySelector(
+        "#show-alert-btn-with-custom-timeout"
+      );
+      const alertWithCustom = document.getElementById(
+        "alert-with-custom-timeout"
+      );
+      showAlertWithCustom.addEventListener(
+        "click",
+        () => !alertWithCustom.opened && alertWithCustom.open()
+      );
+    </script>
 
-  <h3>Button</h3>
-  <t-button>Label</t-button>
-  <h3>Button - disabled</h3>
-  <t-button disabled=true>Label</t-button>
+    <h3>Button</h3>
+    <t-button>Label</t-button>
+    <h3>Button - disabled</h3>
+    <t-button disabled="true">Label</t-button>
 
-  <h3>Button - disabled (with method)</h3>
-  <t-button id="disable-button">Toggle disable Button</t-button>
-  <t-button id="button-disabled">Label</t-button>
+    <h3>Button - disabled (with method)</h3>
+    <t-button id="disable-button">Toggle disable Button</t-button>
+    <t-button id="button-disabled">Label</t-button>
 
-  <script>
-    const buttonDisabled = document.getElementById('button-disabled');
-    const disableButton = document.getElementById('disable-button');
-    disableButton.addEventListener('click', () => !buttonDisabled.disabled ? buttonDisabled.disable() : buttonDisabled.enable());
-  </script>
+    <script>
+      const buttonDisabled = document.getElementById("button-disabled");
+      const disableButton = document.getElementById("disable-button");
+      disableButton.addEventListener("click", () =>
+        !buttonDisabled.disabled
+          ? buttonDisabled.disable()
+          : buttonDisabled.enable()
+      );
+    </script>
 
-  <h3>Card</h3>
-  <t-card>A title</t-card>
+    <h3>Card</h3>
+    <t-card>A title</t-card>
 
-  <h3>Card with header</h3>
-  <t-card>
-    <h3 slot="header">Header content</h3>
-    A title
-  </t-card>
-  
-  <h3>Card with footer</h3>
-  <t-card>
-    A title
-    <h3 slot="footer">Footer content</h3>
-  </t-card>
+    <h3>Card with header</h3>
+    <t-card>
+      <h3 slot="header">Header content</h3>
+      A title
+    </t-card>
 
-  <h3>Card with image</h3>
-  <t-card image-top="http://placehold.it/400x300">A title</t-card>
-  <h3>Card with image alt</h3>
-  <t-card image-top="http://placehold.it/400x300" image-top-alt="Image alt text">A title</t-card>
+    <h3>Card with footer</h3>
+    <t-card>
+      A title
+      <h3 slot="footer">Footer content</h3>
+    </t-card>
 
-  
-  <h3>Input text</h3>
-  <t-input-text />
-</body>
+    <h3>Card with image</h3>
+    <t-card image-top="http://placehold.it/400x300">A title</t-card>
+    <h3>Card with image alt</h3>
+    <t-card
+      image-top="http://placehold.it/400x300"
+      image-top-alt="Image alt text"
+      >A title</t-card
+    >
+
+    <h3>Input text</h3>
+    <t-input-text></t-input-text>
+
+    <h3>Tag</h3>
+    <t-tag>This is a tag</t-tag>
+  </body>
 </html>
