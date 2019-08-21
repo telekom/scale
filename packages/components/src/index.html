@@ -102,10 +102,25 @@
 
   <h3>Card</h3>
   <t-card>A title</t-card>
+
+  <h3>Card with header</h3>
+  <t-card>
+    <h3 slot="header">Header content</h3>
+    A title
+  </t-card>
+  
+  <h3>Card with footer</h3>
+  <t-card>
+    A title
+    <h3 slot="footer">Footer content</h3>
+  </t-card>
+
   <h3>Card with image</h3>
   <t-card image-top="http://placehold.it/400x300">A title</t-card>
   <h3>Card with image alt</h3>
   <t-card image-top="http://placehold.it/400x300" image-top-alt="Image alt text">A title</t-card>
+
+  
   <h3>Input text</h3>
   <t-input-text />
 </body>
