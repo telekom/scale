@@ -1,0 +1,19 @@
+/**
+* @prop --tag-color: Color of the tag
+* @prop --tag-background: Background of the tag
+* @prop --tag-border: Border of the tag
+* @prop --tag-border-color: Border color of the tag
+* @prop --tag-border-radius: Border radius of the tag
+* @prop --tag-padding: Padding of the tag
+* @prop --tag-font-size: Font size of the tag
+*/
+.tag {
+  display: inline-flex;
+  color: var(--tag-color, #fff);
+  background: var(--tag-background, #333);
+  border: var(--tag-border, 1px solid);
+  border-color: var(--tag-border-color, #dfdfdf);
+  border-radius: var(--tag-border-radius, 4px);
+  padding: var(--tag-padding, 0.5rem);
+  font-size: var(--tag-font-size, 0.8rem);
+}

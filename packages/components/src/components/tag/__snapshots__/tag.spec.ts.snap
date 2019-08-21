@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag should match snapshot 1`] = `
+<t-tag>
+  <mock:shadow-root>
+    <div class="tag">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-tag>
+`;
