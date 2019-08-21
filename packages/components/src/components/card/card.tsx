@@ -9,7 +9,7 @@ import classNames from 'classnames';
   ],
   shadow: true
 })
-export class card {
+export class Card {
   @Prop() size?: string = '';
   @Prop() theme?: string = '';
   @Prop() variant?: string = '';
