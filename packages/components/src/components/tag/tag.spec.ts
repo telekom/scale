@@ -17,7 +17,7 @@ describe("Tag", () => {
 
   it("should handle pill css class", () => {
     element.variant = "pill";
-    expect(element.getCssClassMap()).toContain("tag--variant--pill");
+    expect(element.getCssClassMap()).toContain("tag--variant-pill");
   });
 
   it("should have a link", async () => {

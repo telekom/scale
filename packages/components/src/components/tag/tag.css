@@ -26,7 +26,7 @@
   font-size: var(--tag-font-size, 0.8rem);
 }
 
-.tag--variant--pill {
+.tag--variant-pill {
   border-radius: var(--tag-pill-border-radius, 0.75rem);
   padding: var(--tag-pill-padding, 0.4rem);
 }

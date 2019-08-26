@@ -14,7 +14,7 @@ export class Tag {
   @Prop() link?: boolean = false;
 
   private getCssClassMap(): CssClassMap {
-    return classNames("tag", this.variant && `tag--variant--${this.variant}`);
+    return classNames("tag", this.variant && `tag--variant-${this.variant}`);
   }
 
   render() {
