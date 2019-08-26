@@ -8,6 +8,12 @@
 * @prop --tag-font-size: Font size of the tag
 * @prop --tag-pill-border-radius: Large border radius of the tag variant pill
 * @prop --tag-pill-padding: Additional horizontal padding of the tag variant pill
+* @prop --tag-wth-link-text-decoration: Text decoration of the tag with link
+* @prop --tag-wth-link-hover-background: Background color of the tag with link when hover 
+* @prop --tag-wth-link-active-background: Background color of the tag with link when active 
+* @prop --tag-wth-link-visited-background: Background color of the tag with link when visited 
+* @prop --tag-wth-link-focus-outline: outline of the tag with link when focus 
+* @prop --tag-wth-link-focus-box-shadow: Box shadow of the tag with link when focus 
 */
 .tag {
   display: inline-flex;
@@ -20,7 +26,27 @@
   font-size: var(--tag-font-size, 0.8rem);
 }
 
-.tag--pill {
+.tag--variant--pill {
   border-radius: var(--tag-pill-border-radius, 0.75rem);
   padding: var(--tag-pill-padding, 0.4rem);
+}
+
+a.tag {
+  text-decoration: var(--tag-with-link-text-decoration, none);
+}
+
+a.tag:hover {
+  background: var(--tag-with-link-hover-background, #1d2124);
+}
+
+a.tag:active {
+  background: var(--tag-with-link-active-background, #1d2124);
+}
+
+a.tag:focus {
+  outline: var(--tag-with-link-focus-outline, 0);
+  box-shadow: var(
+    --tag-with-link-focus-box-shadow,
+    0 0 0 0.2rem rgba(52, 58, 64, 0.5)
+  );
 }

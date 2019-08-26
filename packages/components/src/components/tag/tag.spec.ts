@@ -17,6 +17,14 @@ describe("Tag", () => {
 
   it("should handle pill css class", () => {
     element.variant = "pill";
-    expect(element.getCssClassMap()).toContain("tag--pill");
+    expect(element.getCssClassMap()).toContain("tag--variant--pill");
+  });
+
+  it("should have a link", async () => {
+    const page = await newSpecPage({
+      components: [Tag],
+      html: `<t-tag link="true">Label</t-tag>`
+    });
+    expect(page.root).toMatchSnapshot();
   });
 });

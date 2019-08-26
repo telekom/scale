@@ -8,14 +8,22 @@ import classNames from "classnames";
   shadow: true
 })
 export class Tag {
-  /** (optional) Button variant */
+  /** (optional) Tag variant */
   @Prop() variant?: string = "";
+  /** (optional) Tag on an <a> element */
+  @Prop() link?: boolean = false;
 
   private getCssClassMap(): CssClassMap {
-    return classNames("tag", this.variant && `tag--${this.variant}`);
+    return classNames("tag", this.variant && `tag--variant--${this.variant}`);
   }
 
   render() {
+    if (this.link)
+      return (
+        <a href="#" class={this.getCssClassMap()}>
+          <slot />
+        </a>
+      );
     return (
       <div class={this.getCssClassMap()}>
         <slot />
