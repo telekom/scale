@@ -48,6 +48,9 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TBadge {
+    'size'?: string;
+  }
   interface TButton {
     /**
     * (optional) Deselected button
@@ -93,6 +96,12 @@ declare global {
     new (): HTMLTAlertElement;
   };
 
+  interface HTMLTBadgeElement extends Components.TBadge, HTMLStencilElement {}
+  var HTMLTBadgeElement: {
+    prototype: HTMLTBadgeElement;
+    new (): HTMLTBadgeElement;
+  };
+
   interface HTMLTButtonElement extends Components.TButton, HTMLStencilElement {}
   var HTMLTButtonElement: {
     prototype: HTMLTButtonElement;
@@ -112,6 +121,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
+    't-badge': HTMLTBadgeElement;
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
@@ -157,6 +167,9 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TBadge extends JSXBase.HTMLAttributes<HTMLTBadgeElement> {
+    'size'?: string;
+  }
   interface TButton extends JSXBase.HTMLAttributes<HTMLTButtonElement> {
     /**
     * (optional) Deselected button
@@ -192,6 +205,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     't-alert': TAlert;
+    't-badge': TBadge;
     't-button': TButton;
     't-card': TCard;
     't-input-text': TInputText;
