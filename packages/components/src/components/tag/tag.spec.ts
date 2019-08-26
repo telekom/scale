@@ -15,15 +15,20 @@ describe("Tag", () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it("should handle pill css class", () => {
-    element.variant = "pill";
-    expect(element.getCssClassMap()).toContain("tag--variant-pill");
+  it("should have class variant primary", () => {
+    element.variant = "primary";
+    expect(element.getCssClassMap()).toContain("tag--variant-primary");
+  });
+
+  it("should render pill tag", () => {
+    element.pill = true;
+    expect(element.getCssClassMap()).toContain("tag--pill");
   });
 
   it("should have a link", async () => {
     const page = await newSpecPage({
       components: [Tag],
-      html: `<t-tag link="true">Label</t-tag>`
+      html: `<t-tag link="#">Label</t-tag>`
     });
     expect(page.root).toMatchSnapshot();
   });

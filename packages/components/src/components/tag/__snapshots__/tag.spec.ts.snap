@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag should have a link 1`] = `
-<t-tag link="true">
+<t-tag link="#">
   <mock:shadow-root>
     <a class="tag" href="#">
       <slot></slot>

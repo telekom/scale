@@ -5,17 +5,34 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property  | Attribute | Description                      | Type      | Default |
+| --------- | --------- | -------------------------------- | --------- | ------- |
+| `link`    | `link`    | (optional) Tag on an <a> element | `string`  | `""`    |
+| `pill`    | `pill`    | (optional) Tag pill              | `boolean` | `false` |
+| `variant` | `variant` | (optional) Tag variant           | `string`  | `""`    |
+
+
 ## CSS Custom Properties
 
-| Name                  | Description              |
-| --------------------- | ------------------------ |
-| `--tag-background`    | Background of the tag    |
-| `--tag-border`        | Border of the tag        |
-| `--tag-border-color`  | Border color of the tag  |
-| `--tag-border-radius` | Border radius of the tag |
-| `--tag-color`         | Color of the tag         |
-| `--tag-font-size`     | Font size of the tag     |
-| `--tag-padding`       | Padding of the tag       |
+| Name                                 | Description                                        |
+| ------------------------------------ | -------------------------------------------------- |
+| `--tag-background`                   | Background of the tag                              |
+| `--tag-border`                       | Border of the tag                                  |
+| `--tag-border-color`                 | Border color of the tag                            |
+| `--tag-border-radius`                | Border radius of the tag                           |
+| `--tag-color`                        | Color of the tag                                   |
+| `--tag-font-size`                    | Font size of the tag                               |
+| `--tag-padding`                      | Padding of the tag                                 |
+| `--tag-pill-border-radius`           | Large border radius of the tag pill                |
+| `--tag-pill-padding`                 | Additional horizontal padding of the tag pill      |
+| `--tag-with-link-active-background`  | Background color of the tag with link when active  |
+| `--tag-with-link-focus-box-shadow`   | Box shadow of the tag with link when focus         |
+| `--tag-with-link-focus-outline`      | outline of the tag with link when focus            |
+| `--tag-with-link-hover-background`   | Background color of the tag with link when hover   |
+| `--tag-with-link-text-decoration`    | Text decoration of the tag with link               |
+| `--tag-with-link-visited-background` | Background color of the tag with link when visited |
 
 
 ----------------------------------------------

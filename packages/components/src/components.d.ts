@@ -86,7 +86,11 @@ export namespace Components {
     /**
     * (optional) Tag on an <a> element
     */
-    'link'?: boolean;
+    'link'?: string;
+    /**
+    * (optional) Tag pill
+    */
+    'pill'?: boolean;
     /**
     * (optional) Tag variant
     */
@@ -210,7 +214,11 @@ declare namespace LocalJSX {
     /**
     * (optional) Tag on an <a> element
     */
-    'link'?: boolean;
+    'link'?: string;
+    /**
+    * (optional) Tag pill
+    */
+    'pill'?: boolean;
     /**
     * (optional) Tag variant
     */

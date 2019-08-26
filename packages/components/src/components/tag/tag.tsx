@@ -10,17 +10,23 @@ import classNames from "classnames";
 export class Tag {
   /** (optional) Tag variant */
   @Prop() variant?: string = "";
+  /** (optional) Tag pill */
+  @Prop() pill?: boolean = false;
   /** (optional) Tag on an <a> element */
-  @Prop() link?: boolean = false;
+  @Prop() link?: string = "";
 
   private getCssClassMap(): CssClassMap {
-    return classNames("tag", this.variant && `tag--variant-${this.variant}`);
+    return classNames(
+      "tag",
+      this.variant && `tag--variant-${this.variant}`,
+      this.pill && `tag--pill`
+    );
   }
 
   render() {
     if (this.link)
       return (
-        <a href="#" class={this.getCssClassMap()}>
+        <a href={this.link} class={this.getCssClassMap()}>
           <slot />
         </a>
       );
