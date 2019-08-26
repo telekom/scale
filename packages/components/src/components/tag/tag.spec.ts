@@ -15,8 +15,8 @@ describe("Tag", () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it("should handle variant css class", () => {
-    element.variant = "basic";
-    expect(element.getCssClassMap()).toContain("tag--variant-basic");
+  it("should handle pill css class", () => {
+    element.variant = "pill";
+    expect(element.getCssClassMap()).toContain("tag--pill");
   });
 });

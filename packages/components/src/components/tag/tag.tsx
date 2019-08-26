@@ -12,7 +12,7 @@ export class Tag {
   @Prop() variant?: string = "";
 
   private getCssClassMap(): CssClassMap {
-    return classNames("tag", this.variant && `tag--variant-${this.variant}`);
+    return classNames("tag", this.variant && `tag--${this.variant}`);
   }
 
   render() {

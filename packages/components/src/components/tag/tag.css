@@ -6,6 +6,8 @@
 * @prop --tag-border-radius: Border radius of the tag
 * @prop --tag-padding: Padding of the tag
 * @prop --tag-font-size: Font size of the tag
+* @prop --tag-pill-border-radius: Large border radius of the tag variant pill
+* @prop --tag-pill-padding: Additional horizontal padding of the tag variant pill
 */
 .tag {
   display: inline-flex;
@@ -16,4 +18,9 @@
   border-radius: var(--tag-border-radius, 4px);
   padding: var(--tag-padding, 0.5rem);
   font-size: var(--tag-font-size, 0.8rem);
+}
+
+.tag--pill {
+  border-radius: var(--tag-pill-border-radius, 0.75rem);
+  padding: var(--tag-pill-padding, 0.4rem);
 }
