@@ -10,7 +10,7 @@
     border-radius: var(--badge-border-radius, .25rem);
     transition: var(--badge-transition,color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out);
 }
-.badge-pill {
+.badge--pill {
     padding-right: var(--badge-pill-padding-right,.6em);
     padding-left: var(--badge-pill-padding-left,.6em);
     border-radius: var(--badge-pill-border-radius, 10rem);
