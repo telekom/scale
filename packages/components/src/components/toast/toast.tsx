@@ -68,11 +68,13 @@ export class Toast {
 
     return (
       <div class={this.getCssClassMap()}>
-        <div class="toast__backdrop">
+
+        <div class="toast__message">
+
           <div class="toast__header">
             <slot name="header" />
             header
-            <small>just now</small>
+              <small>just now</small>
             <a onClick={this.onCloseToast}>
               <span aria-hidden="true">&times;</span>
             </a>
@@ -80,7 +82,9 @@ export class Toast {
           <div class="toast__body">
             <slot />
           </div>
+
         </div>
+
       </div>
     );
   }

@@ -33,9 +33,18 @@
 
     <t-button id="show-toast">show toast
     </t-button>
-    <t-toast id="enabled-toast">
+    <t-toast id="enabled-toast" autohide="false" opened="true">
         toast message
     </t-toast>
+
+    <script>
+        const showToast = document.getElementById('show-toast');
+        const enabledToast = document.getElementById('enabled-toast');
+        showToast.addEventListener('click', () =>
+            !enabledToast.opened && enabledToast.openToast()
+        );
+    </script>
+
     <h3>Alert without timeout</h3>
     <t-button id="show-alert-btn-without-timeout">show alert without timeout
     </t-button>
