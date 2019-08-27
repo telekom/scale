@@ -20,6 +20,11 @@ describe("Tag", () => {
     expect(element.getCssClassMap()).toContain("tag--variant-primary");
   });
 
+  it("should have class link ", () => {
+    element.link = "#";
+    expect(element.getCssClassMap()).toContain("tag--link");
+  });
+
   it("should render pill tag", () => {
     element.pill = true;
     expect(element.getCssClassMap()).toContain("tag--pill");

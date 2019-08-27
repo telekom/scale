@@ -6,6 +6,8 @@
 * @prop --tag-border-radius: Border radius of the tag
 * @prop --tag-padding: Padding of the tag
 * @prop --tag-font-size: Font size of the tag
+* @prop --tag-variant-primary-color: Color of the tag variant primary
+* @prop --tag-variant-primary-background: Background of the tag variant primary
 * @prop --tag-pill-border-radius: Large border radius of the tag pill
 * @prop --tag-pill-padding: Additional horizontal padding of the tag pill
 * @prop --tag-link-text-decoration: Text decoration of the tag with link
@@ -24,6 +26,11 @@
   border-radius: var(--tag-border-radius, 4px);
   padding: var(--tag-padding, 0.5rem);
   font-size: var(--tag-font-size, 0.8rem);
+}
+
+.tag--variant-primary {
+  color: var(--tag-variant-primary-color, #fff);
+  background-color: var(--tag-variant-primary-background, #007bff);
 }
 
 .tag--pill {
