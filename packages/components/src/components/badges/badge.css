@@ -1,57 +1,57 @@
 .badge {
-    display: inline-block;
-    padding: .25em .4em;
-    font-size: 90%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    display: var(--badge-display, inline-block);
+    padding: var(--badge-padding, .25em .4em);
+    font-size: var(--badge-font-size, 90%);
+    font-weight: var(--badge-font-weight,700);
+    line-height: var(--badge-line-height, 1);
+    text-align: var(--badge-text-allign,center);
+    white-space: var(--badge-white-space, nowrap);
+    vertical-align: var(--badge-vertical-align, baseline);
+    border-radius: var(--badge-border-radius, .25rem);
+    transition: var(--badge-transition,color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out);
 }
 .badge-pill {
-    padding-right: .6em;
-    padding-left: .6em;
-    border-radius: 10rem;
-}
+    padding-right: var(--badge-pill-padding-right,.6em);
+    padding-left: var(--badge-pill-padding-left,.6em);
+    border-radius: var(--badge-pill-border-radius, 10rem);
+    }
 
-.badge-dark {
+.badge--dark {
     color: #fff;
     background-color: #343a40;
 }
 
-.badge-light {
+.badge--light {
     color: #212529;
     background-color: #f8f9fa;
 }
 
-.badge-info {
+.badge--info {
     color: #fff;
     background-color: #17a2b8;
 }
 
-.badge-warning {
+.badge--warning {
     color: #212529;
     background-color: #ffc107;
 }
 
-.badge-danger {
+.badge--danger {
     color: #fff;
     background-color: #dc3545;
 }
 
-.badge-success {
+.badge--success {
     color: #fff;
     background-color: #28a745;
 }
 
-.badge-secondary {
+.badge--secondary {
     color: #fff;
     background-color: #6c757d;
 }
 
-.badge-primary {
+.badge--primary {
     color: #fff;
     background-color: #007bff;
 }
