@@ -15,8 +15,26 @@ describe("Tag", () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it("should handle variant css class", () => {
-    element.variant = "basic";
-    expect(element.getCssClassMap()).toContain("tag--variant-basic");
+  it("should have class variant primary", () => {
+    element.variant = "primary";
+    expect(element.getCssClassMap()).toContain("tag--variant-primary");
+  });
+
+  it("should have class link ", () => {
+    element.link = "#";
+    expect(element.getCssClassMap()).toContain("tag--link");
+  });
+
+  it("should render pill tag", () => {
+    element.pill = true;
+    expect(element.getCssClassMap()).toContain("tag--pill");
+  });
+
+  it("should have a link", async () => {
+    const page = await newSpecPage({
+      components: [Tag],
+      html: `<t-tag link="#">Label</t-tag>`
+    });
+    expect(page.root).toMatchSnapshot();
   });
 });

@@ -8,14 +8,29 @@ import classNames from "classnames";
   shadow: true
 })
 export class Tag {
-  /** (optional) Button variant */
+  /** (optional) Tag variant */
   @Prop() variant?: string = "";
+  /** (optional) Tag pill */
+  @Prop() pill?: boolean = false;
+  /** (optional) Tag on an <a> element */
+  @Prop() link?: string = "";
 
   private getCssClassMap(): CssClassMap {
-    return classNames("tag", this.variant && `tag--variant-${this.variant}`);
+    return classNames(
+      "tag",
+      this.variant && `tag--variant-${this.variant}`,
+      this.pill && `tag--pill`,
+      !!this.link && "tag--link"
+    );
   }
 
   render() {
+    if (!!this.link)
+      return (
+        <a href={this.link} class={this.getCssClassMap()}>
+          <slot />
+        </a>
+      );
     return (
       <div class={this.getCssClassMap()}>
         <slot />

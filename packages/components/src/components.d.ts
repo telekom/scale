@@ -84,7 +84,15 @@ export namespace Components {
   interface TInputText {}
   interface TTag {
     /**
-    * (optional) Button variant
+    * (optional) Tag on an <a> element
+    */
+    'link'?: string;
+    /**
+    * (optional) Tag pill
+    */
+    'pill'?: boolean;
+    /**
+    * (optional) Tag variant
     */
     'variant'?: string;
   }
@@ -204,7 +212,15 @@ declare namespace LocalJSX {
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
   interface TTag extends JSXBase.HTMLAttributes<HTMLTTagElement> {
     /**
-    * (optional) Button variant
+    * (optional) Tag on an <a> element
+    */
+    'link'?: string;
+    /**
+    * (optional) Tag pill
+    */
+    'pill'?: boolean;
+    /**
+    * (optional) Tag variant
     */
     'variant'?: string;
   }
