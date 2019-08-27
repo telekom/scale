@@ -4,14 +4,8 @@ exports[`Card should match snapshot 1`] = `
 <t-card>
   <mock:shadow-root>
     <div class="card">
-      <div class="card__header">
-        <slot name="header"></slot>
-      </div>
       <div class="card__body">
         <slot></slot>
-      </div>
-      <div class="card__footer">
-        <slot name="footer"></slot>
       </div>
     </div>
   </mock:shadow-root>
@@ -23,15 +17,9 @@ exports[`Card should match snapshot with image 1`] = `
 <t-card image-top="http://placehold.it/400x300">
   <mock:shadow-root>
     <div class="card">
-      <div class="card__header">
-        <slot name="header"></slot>
-      </div>
       <img alt="" class="card__img-top" src="http://placehold.it/400x300">
       <div class="card__body">
         <slot></slot>
-      </div>
-      <div class="card__footer">
-        <slot name="footer"></slot>
       </div>
     </div>
   </mock:shadow-root>

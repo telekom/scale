@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag should have a link 1`] = `
+<t-tag link="#">
+  <mock:shadow-root>
+    <a class="tag tag--link" href="#">
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+  Label
+</t-tag>
+`;
+
+exports[`Tag should match snapshot 1`] = `
+<t-tag>
+  <mock:shadow-root>
+    <div class="tag">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-tag>
+`;

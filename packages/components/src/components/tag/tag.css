@@ -1,0 +1,61 @@
+/**
+* @prop --tag-color: Color of the tag
+* @prop --tag-background: Background of the tag
+* @prop --tag-border: Border of the tag
+* @prop --tag-border-color: Border color of the tag
+* @prop --tag-border-radius: Border radius of the tag
+* @prop --tag-padding: Padding of the tag
+* @prop --tag-font-size: Font size of the tag
+* @prop --tag-variant-primary-color: Color of the tag variant primary
+* @prop --tag-variant-primary-background: Background of the tag variant primary
+* @prop --tag-variant-primary-border-color: Border color of the tag variant primary
+* @prop --tag-pill-border-radius: Large border radius of the tag pill
+* @prop --tag-pill-padding: Additional horizontal padding of the tag pill
+* @prop --tag-link-text-decoration: Text decoration of the tag with link
+* @prop --tag-link-hover-background: Background color of the tag with link when hover 
+* @prop --tag-link-active-background: Background color of the tag with link when active 
+* @prop --tag-link-visited-background: Background color of the tag with link when visited 
+* @prop --tag-link-focus-outline: outline of the tag with link when focus 
+* @prop --tag-link-focus-box-shadow: Box shadow of the tag with link when focus 
+*/
+.tag {
+  display: inline-flex;
+  color: var(--tag-color, #fff);
+  background: var(--tag-background, #333);
+  border: var(--tag-border, 1px solid);
+  border-color: var(--tag-border-color, #dfdfdf);
+  border-radius: var(--tag-border-radius, 0.25rem);
+  padding: var(--tag-padding, 0.5rem);
+  font-size: var(--tag-font-size, 0.8rem);
+}
+
+.tag--variant-primary {
+  color: var(--tag-variant-primary-color, #fff);
+  background: var(--tag-variant-primary-background, #007bff);
+  border-color: var(--tag-variant-primary-border-color, #007bff);
+}
+
+.tag--pill {
+  border-radius: var(--tag-pill-border-radius, 1rem);
+  padding: var(--tag-pill-padding, 0.6rem);
+}
+
+.tag--link {
+  text-decoration: var(--tag-link-text-decoration, none);
+}
+
+.tag--link:hover {
+  background: var(--tag-link-hover-background, #1d2124);
+}
+
+.tag--link:active {
+  background: var(--tag-link-active-background, #1d2124);
+}
+
+.tag--link:focus {
+  outline: var(--tag-link-focus-outline, 0);
+  box-shadow: var(
+    --tag-link-focus-box-shadow,
+    0 0 0 0.2rem rgba(52, 58, 64, 0.5)
+  );
+}
