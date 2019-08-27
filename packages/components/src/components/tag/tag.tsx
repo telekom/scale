@@ -19,7 +19,8 @@ export class Tag {
     return classNames(
       "tag",
       this.variant && `tag--variant-${this.variant}`,
-      this.pill && `tag--pill`
+      this.pill && `tag--pill`,
+      !!this.link && "tag--link"
     );
   }
 

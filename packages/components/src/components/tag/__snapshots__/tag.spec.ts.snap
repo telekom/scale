@@ -3,7 +3,7 @@
 exports[`Tag should have a link 1`] = `
 <t-tag link="#">
   <mock:shadow-root>
-    <a class="tag" href="#">
+    <a class="tag tag--link" href="#">
       <slot></slot>
     </a>
   </mock:shadow-root>
