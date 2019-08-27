@@ -1,0 +1,62 @@
+.toast {
+  backdrop-filter: blur(20px);
+  box-sizing: border-box;
+  background: var(--toast-background-color, #fff);
+  border-radius: var(--toast-border-radius, 4px);
+  width: var(--toast-width, 50%);
+  max-width: var(--toast-max-width, 550px);
+  box-shadow: var(--toast-box-shadow, 0 2px 8px 0 rgba(0, 0, 0, 0.26));
+  border: var(--toast-border-color, 1px solid rgba(0, 0, 0, 0.1));
+  /* position: fixed; */
+  opacity: 1;
+  justify-content: space-between;
+  top: 15 vh;
+  /*
+	pointer-events: none;
+	z-index: 100;
+	width: 50%;
+	left: var(--toast-left, 25%);
+	top: var(--toast-top, 10vh);
+border-radius: 3px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+background: white;
+*/
+}
+
+.toast__backdrop {
+  /* position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: var(--toast-backdrop-background-color, rgb(0, 0, 0, 0.75));
+	z-index: 10;
+	opacity: 0;
+	pointer-events: none; */
+  /* display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: var(--toast-backdrop-min-height, 200px); */
+}
+
+:host([opened]) .backdrop,
+:host([opened]) .toast {
+  opacity: 1;
+  pointer-events: all;
+}
+
+:host([opened]) .toast {
+  top: 15 vh;
+}
+.toast__body {
+  padding: var(--toast-body-padding, 1rem);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.toast__header {
+  padding: var(--toast-header-padding, 1rem);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--toast-header-border-bottom-color, 1px solid #ccc);
+}
