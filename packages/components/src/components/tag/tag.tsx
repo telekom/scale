@@ -24,7 +24,7 @@ export class Tag {
   }
 
   render() {
-    if (this.link)
+    if (!!this.link)
       return (
         <a href={this.link} class={this.getCssClassMap()}>
           <slot />
