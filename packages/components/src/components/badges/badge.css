@@ -1,0 +1,80 @@
+.badge {
+    display: var(--badge-display, inline-block);
+    padding: var(--badge-padding, .25em .4em);
+    font-size: var(--badge-font-size, 90%);
+    font-weight: var(--badge-font-weight,700);
+    line-height: var(--badge-line-height, 1);
+    text-align: var(--badge-text-allign,center);
+    white-space: var(--badge-white-space, nowrap);
+    vertical-align: var(--badge-vertical-align, baseline);
+    border-radius: var(--badge-border-radius, .25rem);
+    transition: var(--badge-transition,color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out);
+    background-color: var(--badge-background-color, #343a40);
+    color: var(--badge-color, #fff);
+}
+.badge--pill {
+    padding-right: var(--badge-pill-padding-right,.6em);
+    padding-left: var(--badge-pill-padding-left,.6em);
+    border-radius: var(--badge-pill-border-radius, 10rem);
+    background-color: var(--badge-pill-background-color, #343a40);
+    color: var(--badge-pill-color, #fff);
+}
+
+.badge--variant-dark {
+    color: #fff;
+    background-color: #343a40;
+}
+
+.badge--variant-light {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+
+.badge--variant-info {
+    color: #fff;
+    background-color: #17a2b8;
+}
+
+.badge--variant-warning {
+    color: #212529;
+    background-color: #ffc107;
+}
+
+.badge--variant-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.badge--variant-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.badge--variant-secondary {
+    color: #fff;
+    background-color: #6c757d;
+}
+
+.badge--variant-primary {
+    color: #fff;
+    background-color: #007bff;
+}
+.badge--link {
+    text-decoration: var(--badge-link-text-decoration, none);
+  }
+  
+  .badge--link:hover {
+    background: var(--badge-link-hover-background, #1d2124);
+  }
+  
+  .badge--link:active {
+    background: var(--badge-link-active-background, #1d2124);
+  }
+  
+  .badge--link:focus {
+    outline: var(--badge-link-focus-outline, 0);
+    box-shadow: var(
+      --badge-link-focus-box-shadow,
+      0 0 0 0.2rem rgba(52, 58, 64, 0.5)
+    );
+  }
