@@ -20,13 +20,10 @@ describe('Badge', () => {
 		expect(element.getCssClassMap()).toBe('badge');
 	})
 
-	it("should have a link", async () => {
-		const page = await newSpecPage({
-		  components: [Badge],
-		  html: `<t-badge link="#">Label</t-badge>`
-		});
-		expect(page.root).toMatchSnapshot();
-	  });
+	it('should handle link css class', () => {
+		element.link = 'http://example-url.com'
+		expect(element.getCssClassMap()).toContain('badge--link');
+})
 
 	it('should handle size css class', () => {
 		element.size = 'small'
