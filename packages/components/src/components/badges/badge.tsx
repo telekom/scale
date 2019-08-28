@@ -25,12 +25,13 @@ export class Badge {
     }
 
     render() {
-        if (!!this.link)
-        return (
-          <a href={this.link} class={this.getCssClassMap()}>
-            <slot />
-          </a>
-        );
+        if (!!this.link) {
+            return (
+                <a href={this.link} class={this.getCssClassMap()}>
+                    <slot />
+                </a>
+            );
+        }
         return (
             <span class={this.getCssClassMap()}>
                 <slot/>
