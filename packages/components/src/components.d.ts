@@ -49,6 +49,7 @@ export namespace Components {
     'variant'?: string;
   }
   interface TBadge {
+    'link'?: string;
     'pill'?: boolean;
     'size'?: string;
     'variant'?: string;
@@ -191,6 +192,7 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TBadge extends JSXBase.HTMLAttributes<HTMLTBadgeElement> {
+    'link'?: string;
     'pill'?: boolean;
     'size'?: string;
     'variant'?: string;

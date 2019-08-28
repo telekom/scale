@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type     | Default |
-| --------- | --------- | ----------- | -------- | ------- |
-| `pill`    | `pill`    |             | `string` | `''`    |
-| `size`    | `size`    |             | `string` | `''`    |
-| `variant` | `variant` |             | `string` | `''`    |
+| Property  | Attribute | Description | Type      | Default |
+| --------- | --------- | ----------- | --------- | ------- |
+| `link`    | `link`    |             | `string`  | `""`    |
+| `pill`    | `pill`    |             | `boolean` | `false` |
+| `size`    | `size`    |             | `string`  | `''`    |
+| `variant` | `variant` |             | `string`  | `''`    |
 
 
 ----------------------------------------------
