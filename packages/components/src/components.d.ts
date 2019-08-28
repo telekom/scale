@@ -102,6 +102,9 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TTooltip {
+    'size'?: string;
+  }
 }
 
 declare global {
@@ -142,6 +145,12 @@ declare global {
     prototype: HTMLTTagElement;
     new (): HTMLTTagElement;
   };
+
+  interface HTMLTTooltipElement extends Components.TTooltip, HTMLStencilElement {}
+  var HTMLTTooltipElement: {
+    prototype: HTMLTTooltipElement;
+    new (): HTMLTTooltipElement;
+  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-badge': HTMLTBadgeElement;
@@ -149,6 +158,7 @@ declare global {
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
     't-tag': HTMLTTagElement;
+    't-tooltip': HTMLTTooltipElement;
   }
 }
 
@@ -243,6 +253,9 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TTooltip extends JSXBase.HTMLAttributes<HTMLTTooltipElement> {
+    'size'?: string;
+  }
 
   interface IntrinsicElements {
     't-alert': TAlert;
@@ -251,6 +264,7 @@ declare namespace LocalJSX {
     't-card': TCard;
     't-input-text': TInputText;
     't-tag': TTag;
+    't-tooltip': TTooltip;
   }
 }
 
