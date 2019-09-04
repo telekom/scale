@@ -1,0 +1,75 @@
+.tooltip{
+    background: var(--tooltip-background, #343a40);
+    color:var(--tooltip-color, #fff);
+    display: inline-flex;
+    padding: var(--tooltip-padding, .25em .4em);
+    font-size: var(--tooltip-font-size, 90%);
+    font-weight: var(--tooltip-font-weight,700);
+    line-height: var(--tooltip-line-height, 1);
+    text-align: var(--tooltip-text-allign,center);
+    white-space: var(--tooltip-white-space, nowrap);
+    vertical-align: var(--tooltip-vertical-align, baseline);
+    border-radius: var(--tooltip-border-radius, .25rem);
+    position: relative;
+}
+.tooltip--placement-bottom:after {
+    content: '';
+    position: absolute;
+    top: var(0);
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: var(--tooltip-background, #343a40);
+    border-top: 0;
+    margin-left: -8px;
+    margin-top: -12px;
+    transition: var(--tooltip--placement-bottom-transition, --tooltip--placement-bottom-border , --tooltip--placement-bottom-border-bottom-color, --tooltip--placement-bottom-margin-left, --tooltip--placement-bottom-margin-top);
+
+}
+
+.tooltip--placement-top:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-top-color: var(--tooltip-background, #343a40);
+	border-bottom: 0;
+	margin-left: -8px;
+    margin-bottom: -8px;
+    transition: var(--tooltip--placement-top-transition, --tooltip--placement-top-border , --tooltip--placement-top-border-top-color, --tooltip--placement-top-margin-left, --tooltip--placement-top-margin-bottom);
+
+}
+
+.tooltip--placement-left:after {
+    content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-left-color: var(--tooltip-background, #343a40);
+	border-right: 0;
+	margin-top: -8px;
+    margin-right: -8px;
+    transition: var(--tooltip--placement-left-transition, --tooltip--placement-left-border , --tooltip--placement-left-border-left-color, --tooltip--placement-left-margin-top, --tooltip--placement-left-margin-right);
+}
+
+.tooltip--placement-right:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-right-color: var(--tooltip-background, #343a40);
+	border-left: 0;
+	margin-top: -8px;
+    margin-left: -8px;
+    transition: var(--tooltip--placement-right-transition, --tooltip--placement-right-border , --tooltip--placement-right-border-right-color, --tooltip--placement-right-margin-top, --tooltip--placement-right-margin-left);
+}

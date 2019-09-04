@@ -188,6 +188,12 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TTooltip {
+    'delay'?: number | object;
+    'offset'?: string | number;
+    'placement'?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+    'size'?: string;
+  }
 }
 
 declare global {
@@ -252,6 +258,12 @@ declare global {
     prototype: HTMLTTagElement;
     new (): HTMLTTagElement;
   };
+
+  interface HTMLTTooltipElement extends Components.TTooltip, HTMLStencilElement {}
+  var HTMLTTooltipElement: {
+    prototype: HTMLTTooltipElement;
+    new (): HTMLTTooltipElement;
+  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-badge': HTMLTBadgeElement;
@@ -263,6 +275,7 @@ declare global {
     't-progress-bar': HTMLTProgressBarElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
+    't-tooltip': HTMLTTooltipElement;
   }
 }
 
@@ -438,6 +451,12 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TTooltip extends JSXBase.HTMLAttributes<HTMLTTooltipElement> {
+    'delay'?: number | object;
+    'offset'?: string | number;
+    'placement'?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+    'size'?: string;
+  }
 
   interface IntrinsicElements {
     't-alert': TAlert;
@@ -450,6 +469,7 @@ declare namespace LocalJSX {
     't-progress-bar': TProgressBar;
     't-switch': TSwitch;
     't-tag': TTag;
+    't-tooltip': TTooltip;
   }
 }
 
