@@ -1,44 +1,51 @@
+/**
+* @prop --toast-width: Width of the toast
+* @prop --toast-height: Height of the toast
+* @prop --toast-border-radius: Border radius of the toast
+* @prop --toast-box-shadow: Box shadow of the toast
+* @prop --toast-background: Background color of the toast
+* @prop --toast-body-padding: Padding of the toast body
+* @prop --toast-body-margin-bottom: Margin bottom of the toast body
+* @prop --toast-header-padding: Padding of the toast header
+* @prop --toast-header-border-bottom: Border bottom of the toast header
+* @prop --toast-header-font-size: Font size of the toast header
+* @prop --toast-header-margin: Margin of the toast header
+* @prop --toast-header-small-font-size: Font size of the small header
+* @prop --toast-header-small-margin-left: Margin left of the small header
+* @prop --toast-header-small-margin-top: Margin top of the small header
+*/
+
 .toast {
-  position: fixed;
+  box-sizing: border-box;
+  width: var(--toast-width, 400px);
+  height: var(--toast-height, 100px);
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: var(--toast-background-color, rgba(0, 0, 0, 0.75));
-  z-index: 10;
-  opacity: 0;
-  pointer-events: none;
-}
-
-:host([opened]) .toast,
-:host([opened]) .toast__message {
-  opacity: 1;
-  pointer-events: all;
-}
-
-:host([opened]) .toast__message {
-  top: 15 vh;
-}
-
-.toast__message {
   position: fixed;
-  top: 10vh;
-  left: 25%;
-  width: var(--toast-message-width, 50%);
-  border-radius: var(--toast-message-border-radius, 3px);
-  box-shadow: var(--toast-message-box-shadow, 0 2px 8px rgba(0, 0, 0, 0.26));
-  z-index: 100;
-  background: var(--toast-message-background-color, white);
+  border-radius: var(--toast-border-radius, 3px);
+  box-shadow: var(--toast-box-shadow, 0 2px 8px rgba(0, 0, 0, 0.26));
+  background: var(--toast-background, #fff);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease-out;
+  z-index: 1;
+}
+
+:host([animated]) .toast {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0;
+  }
 }
 
 .toast__body {
   padding: var(--toast-body-padding, 1rem);
+  margin-bottom: var(--toast-body-margin-bottom, 1rem);
 }
 
 .toast__header {
@@ -48,6 +55,10 @@
   margin: var(--toast-header-margin, 0);
   justify-content: space-between;
   display: flex;
+}
+
+.toast__header a {
+  cursor: pointer;
 }
 
 .toast__header small {

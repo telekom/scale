@@ -33,16 +33,19 @@
 
     <t-button id="show-toast">show toast
     </t-button>
-    <t-toast id="enabled-toast" autohide="false" opened="true">
+    <t-toast id="enabled-toast" animated>
         toast message
     </t-toast>
 
     <script>
         const showToast = document.getElementById('show-toast');
         const enabledToast = document.getElementById('enabled-toast');
-        showToast.addEventListener('click', () =>
-            !enabledToast.opened && enabledToast.openToast()
-        );
+        showToast.addEventListener('click', () => {
+            !enabledToast.opened && enabledToast.openToast();
+            var d = new Date();
+            d.setDate(d.getDate() - 5);
+            enabledToast.time = d;
+        });
     </script>
 
     <h3>Alert without timeout</h3>
