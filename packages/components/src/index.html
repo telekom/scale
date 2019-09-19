@@ -166,5 +166,32 @@
     <t-badge pill=true>Pill</t-badge>
     <h3>Badge - with link</h3>
     <t-badge link="#">badge with link</t-badge>
+
+    <h3>Modal</h3>
+    <t-button 
+    id="show-modal"
+    >
+      show modal
+    </t-button>
+    <t-modal
+    id="modal-default"
+    opened="true"
+    >
+      <span slot="header">Header content</span>
+      content in the modal slot
+    </t-modal>
+
+    <script>
+      const showModal = document.querySelector(
+        "#show-modal"
+      );
+      const modal = document.getElementById(
+        "modal-default"
+      );
+      showModal.addEventListener(
+        "click",
+        () => !modal.opened && modal.openModal()
+      );
+    </script>
   </body>
 </html>
