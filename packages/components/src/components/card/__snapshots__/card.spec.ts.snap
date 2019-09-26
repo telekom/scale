@@ -13,6 +13,44 @@ exports[`Card should match snapshot 1`] = `
 </t-card>
 `;
 
+exports[`Card should match snapshot with footer slot 1`] = `
+<t-card>
+  <mock:shadow-root>
+    <div class="card">
+      <div class="card__body">
+        <slot></slot>
+      </div>
+      <div class="card__footer">
+        <slot name="footer"></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <h3 slot="footer">
+    Footer content
+  </h3>
+  A title
+</t-card>
+`;
+
+exports[`Card should match snapshot with header slot 1`] = `
+<t-card>
+  <mock:shadow-root>
+    <div class="card">
+      <div class="card__header">
+        <slot name="header"></slot>
+      </div>
+      <div class="card__body">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <h3 slot="header">
+    Header content
+  </h3>
+  A title
+</t-card>
+`;
+
 exports[`Card should match snapshot with image 1`] = `
 <t-card image-top="http://placehold.it/400x300">
   <mock:shadow-root>
