@@ -163,34 +163,38 @@
     <h3>Badge-primary</h3>
     <t-badge variant="primary">Primary</t-badge>
     <h3>Badge-pill</h3>
-    <t-badge pill=true>Pill</t-badge>
+    <t-badge pill="true">Pill</t-badge>
     <h3>Badge - with link</h3>
     <t-badge link="#">badge with link</t-badge>
 
-    <h3>Modal</h3>
-    <t-button 
-    id="show-modal"
-    >
+    <h3>Modal with header</h3>
+    <t-button id="show-modal">
       show modal
     </t-button>
-    <t-modal
-    id="modal-default"
-    opened="true"
-    >
+    <t-modal id="modal-default" opened="false">
       <span slot="header">Header content</span>
       content in the modal slot
     </t-modal>
 
     <script>
-      const showModal = document.querySelector(
-        "#show-modal"
-      );
-      const modal = document.getElementById(
-        "modal-default"
-      );
+      const showModal = document.querySelector("#show-modal");
+      const modal = document.getElementById("modal-default");
       showModal.addEventListener(
         "click",
         () => !modal.opened && modal.openModal()
+      );
+    </script>
+    <h3>Modal without header</h3>
+    <t-button id="show-modal-without-header">
+      show modal without header
+    </t-button>
+    <t-modal id="modal-without-header" opened="false">content</t-modal>
+      <script>
+      const showModalWithoutHeader = document.querySelector("#show-modal-without-header");
+      const modalWithoutHeader = document.getElementById("modal-without-header");
+      showModalWithoutHeader.addEventListener(
+        "click",
+        () => !modalWithoutHeader.opened && modalWithoutHeader.openModal()
       );
     </script>
   </body>

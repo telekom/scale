@@ -17,6 +17,19 @@ describe("Modal", () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  	it("should match snapshot with header slot", async () => {
+      const page = await newSpecPage({
+        components: [Modal],
+        html: `
+			<t-modal>
+				<span slot="header">Header content</span>
+				A title
+			</t-modal>
+			`
+      });
+      expect(page.root).toMatchSnapshot();
+    });
+
   it("should match snapshot when opened", async () => {
     const page = await newSpecPage({
       components,
