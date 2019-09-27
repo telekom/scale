@@ -17,8 +17,10 @@ export class Modal {
   /** (optional) Modal variant */
   @Prop() variant?: string = "";
   @Prop() opened?: boolean = false;
+  @Prop() close?: string = "x";
 
   private hasSlotHeader: boolean;
+  private hasActions: boolean;
 
   private getCssClassMap(): CssClassMap {
     return classNames(
@@ -32,12 +34,14 @@ export class Modal {
   async openModal() {
     this.opened = true;
   }
-  onCloseModal = () => {
+  @Method()
+  async onCloseModal() {
     this.opened = false;
-  };
+  }
 
   componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
+    this.hasActions = !!this.hostElement.querySelector('[slot="modal-actions"]');
   }
 
   render() {
@@ -47,27 +51,32 @@ export class Modal {
 
     return (
       <div class={this.getCssClassMap()}>
-        <div class="modal__backdrop" onClick={this.onCloseModal}></div>
+        <div class="modal__backdrop" onClick={() => this.onCloseModal}></div>
 
         <div class="modal">
           {this.hasSlotHeader && (
             <div class="modal__header">
               <slot name="header" />
               <a class="modal__close" onClick={this.onCloseModal}>
-                &times;
+                {this.close}
               </a>
             </div>
           )}
 
           <div class="modal__body">
             <slot />
+            {!this.hasSlotHeader && (
+              <a class="modal__close" onClick={this.onCloseModal}>
+                {this.close}
+              </a>
+            )}
           </div>
-          <div class="modal__actions">
-            <t-button id="cancel-btn" onClick={this.onCloseModal}>
-              cancel
-            </t-button>
-            <t-button id="submit-btn">submit</t-button>
-          </div>
+
+          {this.hasActions && (
+            <div class="modal__actions">
+              <slot name="modal-actions" />
+            </div>
+          )}
         </div>
       </div>
     );

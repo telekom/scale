@@ -19,7 +19,6 @@
 * @prop --modal-body-padding: Padding of the modal body
 * @prop --modal-body-border-bottom: Border bottom of the modal body
 * @prop --modal-close-font-size: Font size of the modal close button
-* @prop --modal-close-width: Width of the modal close button
 * @prop --modal-close-height: Height of the modal close button
 * @prop --modal-close-opacity: Opacity of the modal close button
 * @prop --modal-close-hover-opacity: Hover opacity of the modal close button
@@ -54,7 +53,7 @@
   box-sizing: border-box;
   overflow: hidden;
   position: fixed;
-    background: var(--modal-background, white);
+  background: var(--modal-background, white);
   color: var(--modal-color, #333);
   padding: var(--modal-padding, 1rem);
   text-align: left;
@@ -93,12 +92,12 @@
 
 .modal__body {
   padding: var(--modal-body-padding, 1rem 0);
-  border-bottom: var(--modal-body-border-bottom, 1px solid #ccc);
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal__close {
   font-size: var(--modal-close-font-size, 1rem);
-  width: var(--modal-close-width, 16px);
   height: var(--modal-close-height, 16px);
   opacity: var(--modal-close-opacity, 0.5);
   cursor: pointer;
@@ -110,6 +109,7 @@
 }
 
 .modal__actions {
+  border-top: var(--modal-body-border-bottom, 1px solid #ccc);
   padding: var(--modal-actions-padding, 1rem 0);
   display: flex;
   justify-content: flex-end;
