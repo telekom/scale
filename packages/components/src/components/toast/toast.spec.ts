@@ -22,6 +22,15 @@ describe('Toast', () => {
 		expect(page.root).toMatchSnapshot();
 	});
 
+	  it("should match snapshot when opened", async () => {
+      const page = await newSpecPage({
+        components,
+        html: `<t-toast opened=true >Label</t-toast>`
+      });
+      expect(page.root.shadowRoot).toBeTruthy();
+      expect(page.root).toMatchSnapshot();
+    });
+
 
 	it('should close the Toast', () => {
 		expect(element.opened).toBe(undefined);
@@ -42,6 +51,12 @@ describe('Toast', () => {
 		expect(setTimeout).toHaveBeenCalledTimes(1);
 		expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), element.autohideTime);
 	});
+
+	it('should not hide the toast', () => {
+		element.autohide = false;
+		element.onHideToast();
+		expect(element.autohide).toBe(false);
+	})
 
 	it('should have a default css class', () => {
 		expect(element.getCssClassMap()).toBe('toast');
