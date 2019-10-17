@@ -1,0 +1,66 @@
+.layout {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.sidebar {
+  height: 100%;
+  overflow-y: scroll;
+  width: 100%;
+  max-width: 240px;
+  flex: 1 0 auto;
+  border-right: 1px solid #ddd;
+
+  &__container {
+    padding: 1rem;
+  }
+
+  &__header {
+    padding: 1rem 0;
+  }
+}
+
+.site-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  overflow-y: scroll;
+  width: 100%;
+  padding: 1rem;
+
+  &__container {
+    width: 100%;
+  }
+
+  h1 {
+    padding-top: 1rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+}
+
+.demo-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -23,12 +23,17 @@
     "pretest": "yarn test-install-hack:add",
     "posttest": "yarn test-install-hack:remove",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "docs": "cd ./docs && jekyll serve",
+    "watch:build": "node ./scripts/watch-build.js",
+    "start:docs": "sd concurrent \"yarn watch:build\" \"yarn docs\""
   },
   "devDependencies": {
     "@stencil/core": "1.0.5",
+    "@stencil/utils": "0.0.5",
     "@types/jest": "24.0.15",
     "@types/puppeteer": "1.12.4",
+    "chokidar": "^3.2.2",
     "jest": "24.8.0",
     "jest-cli": "24.8.0",
     "puppeteer": "1.17.0"

@@ -1,0 +1,24 @@
+<header class="sidebar">
+
+  <div class="sidebar__container">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign pages = site.header_pages | default: default_paths -%}
+    {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+    <div class="sidebar__header">
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    </div>
+
+    {%- if titles_size > 0 -%}
+      <nav class="site-nav">
+        {%- for path in pages -%}
+          {%- assign page = site.pages | where: "path", path | first -%}
+          {% unless page.exclude %}
+            {%- if page.title -%}
+              <a class="site-nav__item" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+            {%- endif -%}
+          {% endunless %}
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+  </div>
+</header>
