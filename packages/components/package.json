@@ -23,7 +23,8 @@
     "pretest": "yarn test-install-hack:add",
     "posttest": "yarn test-install-hack:remove",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "format": "prettier --write \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\""
   },
   "devDependencies": {
     "@stencil/core": "1.0.5",
