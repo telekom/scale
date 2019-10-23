@@ -17,18 +17,31 @@ describe("Modal", () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  	it("should match snapshot with header slot", async () => {
-      const page = await newSpecPage({
-        components: [Modal],
-        html: `
+  it("should match snapshot with header slot", async () => {
+    const page = await newSpecPage({
+      components: [Modal],
+      html: `
 			<t-modal>
 				<span slot="header">Header content</span>
 				A title
 			</t-modal>
 			`
-      });
-      expect(page.root).toMatchSnapshot();
     });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it("should match snapshot with actions slot", async () => {
+    const page = await newSpecPage({
+      components: [Modal],
+      html: `
+			<t-modal>
+				<span slot="modal-actions">Action buttons</span>
+				Content
+			</t-modal>
+			`
+    });
+    expect(page.root).toMatchSnapshot();
+  });
 
   it("should match snapshot when opened", async () => {
     const page = await newSpecPage({
@@ -40,18 +53,18 @@ describe("Modal", () => {
   });
 
   it("should handle size css class", () => {
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('modal--size-small');
+    element.size = "small";
+    expect(element.getCssClassMap()).toContain("modal--size-small");
   });
 
   it("should handle theme css class", () => {
-    element.theme = 'default';
-    expect(element.getCssClassMap()).toContain('modal--theme-default');
+    element.theme = "default";
+    expect(element.getCssClassMap()).toContain("modal--theme-default");
   });
 
   it("should handle variant css class", () => {
-    element.variant = 'primary';
-    expect(element.getCssClassMap()).toContain('modal--variant-primary');
+    element.variant = "primary";
+    expect(element.getCssClassMap()).toContain("modal--variant-primary");
   });
 
   it("should open the modal", () => {
@@ -61,8 +74,12 @@ describe("Modal", () => {
   });
 
   it("should close the modal", () => {
-    expect(element.opened).toBe(false);
     element.onCloseModal();
+    expect(element.opened).toBe(false);
+  });
+
+  it("should close the modal", () => {
+    element.closeModal();
     expect(element.opened).toBe(false);
   });
 
