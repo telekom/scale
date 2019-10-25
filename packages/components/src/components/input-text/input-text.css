@@ -16,3 +16,15 @@
 .input-text:not(.tabbing):focus {
   outline: 0;
 }
+.input-container {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid grey;
+}
+
+.input-container input {
+  outline: none !important;
+  border: none;
+  width: 100%;
+  font-size: 0.8rem;
+}
