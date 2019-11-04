@@ -14,8 +14,8 @@
       html {
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
 
       body {
@@ -46,11 +46,11 @@
 
     <script>
       const showAlertWithout = document.querySelector(
-        "#show-alert-btn-without-timeout"
+        '#show-alert-btn-without-timeout'
       );
-      const alertWithout = document.getElementById("alert-without-timeout");
+      const alertWithout = document.getElementById('alert-without-timeout');
       showAlertWithout.addEventListener(
-        "click",
+        'click',
         () => !alertWithout.opened && alertWithout.open()
       );
     </script>
@@ -71,10 +71,10 @@
 
     <script>
       const showAlert = document.querySelector(
-        "#show-alert-btn-with-default-timeout"
+        '#show-alert-btn-with-default-timeout'
       );
-      const alert = document.getElementById("alert-with-default-timeout");
-      showAlert.addEventListener("click", () => !alert.opened && alert.open());
+      const alert = document.getElementById('alert-with-default-timeout');
+      showAlert.addEventListener('click', () => !alert.opened && alert.open());
     </script>
 
     <t-button id="show-alert-btn-with-custom-timeout"
@@ -92,13 +92,13 @@
 
     <script>
       const showAlertWithCustom = document.querySelector(
-        "#show-alert-btn-with-custom-timeout"
+        '#show-alert-btn-with-custom-timeout'
       );
       const alertWithCustom = document.getElementById(
-        "alert-with-custom-timeout"
+        'alert-with-custom-timeout'
       );
       showAlertWithCustom.addEventListener(
-        "click",
+        'click',
         () => !alertWithCustom.opened && alertWithCustom.open()
       );
     </script>
@@ -113,9 +113,9 @@
     <t-button id="button-disabled">Label</t-button>
 
     <script>
-      const buttonDisabled = document.getElementById("button-disabled");
-      const disableButton = document.getElementById("disable-button");
-      disableButton.addEventListener("click", () =>
+      const buttonDisabled = document.getElementById('button-disabled');
+      const disableButton = document.getElementById('disable-button');
+      disableButton.addEventListener('click', () =>
         !buttonDisabled.disabled
           ? buttonDisabled.disable()
           : buttonDisabled.enable()
@@ -163,8 +163,38 @@
     <h3>Badge-primary</h3>
     <t-badge variant="primary">Primary</t-badge>
     <h3>Badge-pill</h3>
-    <t-badge pill=true>Pill</t-badge>
+    <t-badge pill="true">Pill</t-badge>
     <h3>Badge - with link</h3>
     <t-badge link="#">badge with link</t-badge>
+
+    <h3>Progress bar - show progress percentage outside of bar</h3>
+    <t-progress-bar
+      percentage="30"
+      theme="info"
+      showText="true"
+    ></t-progress-bar>
+    <t-progress-bar
+      percentage="50"
+      theme="danger"
+      showText="true"
+    ></t-progress-bar>
+    <t-progress-bar
+      percentage="80"
+      theme="warning"
+      showText="true"
+    ></t-progress-bar>
+    <t-progress-bar
+      percentage="100"
+      theme="success"
+      showText="true"
+    ></t-progress-bar>
+    <h3>Progress bar - show progress percentage inside of bar</h3>
+    <t-progress-bar
+      percentage="80"
+      theme="info"
+      showText="false"
+      textInside="true"
+      strokeWidth="20"
+    ></t-progress-bar>
   </body>
 </html>

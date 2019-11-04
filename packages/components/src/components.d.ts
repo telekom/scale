@@ -88,6 +88,28 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
+  interface TProgressBar {
+    /**
+    * (required) progress percentage
+    */
+    'percentage'?: number;
+    /**
+    * (optional) show progress percentage text
+    */
+    'showText'?: boolean;
+    /**
+    * (optional) progress stroke width
+    */
+    'strokeWidth'?: number;
+    /**
+    * (optional) progress text display inside bar
+    */
+    'textInside'?: boolean;
+    /**
+    * (optional) show progress theme
+    */
+    'theme'?: string;
+  }
   interface TTag {
     /**
     * (optional) Tag on an <a> element
@@ -137,6 +159,12 @@ declare global {
     new (): HTMLTInputTextElement;
   };
 
+  interface HTMLTProgressBarElement extends Components.TProgressBar, HTMLStencilElement {}
+  var HTMLTProgressBarElement: {
+    prototype: HTMLTProgressBarElement;
+    new (): HTMLTProgressBarElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -148,6 +176,7 @@ declare global {
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
+    't-progress-bar': HTMLTProgressBarElement;
     't-tag': HTMLTTagElement;
   }
 }
@@ -229,6 +258,28 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
+  interface TProgressBar extends JSXBase.HTMLAttributes<HTMLTProgressBarElement> {
+    /**
+    * (required) progress percentage
+    */
+    'percentage'?: number;
+    /**
+    * (optional) show progress percentage text
+    */
+    'showText'?: boolean;
+    /**
+    * (optional) progress stroke width
+    */
+    'strokeWidth'?: number;
+    /**
+    * (optional) progress text display inside bar
+    */
+    'textInside'?: boolean;
+    /**
+    * (optional) show progress theme
+    */
+    'theme'?: string;
+  }
   interface TTag extends JSXBase.HTMLAttributes<HTMLTTagElement> {
     /**
     * (optional) Tag on an <a> element
@@ -250,6 +301,7 @@ declare namespace LocalJSX {
     't-button': TButton;
     't-card': TCard;
     't-input-text': TInputText;
+    't-progress-bar': TProgressBar;
     't-tag': TTag;
   }
 }

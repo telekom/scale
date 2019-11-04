@@ -1,0 +1,73 @@
+/**
+* @prop --progress-bar-display: Display of the progress bar
+* @prop --progress-bar-height: Height of the progress bar
+* @prop --progress-bar-overflow: Overflow of the progress bar
+* @prop --progress-bar-background: Background of the progress bar
+* @prop --progress-bar-border-radius: Border radius of the progress bar
+*/
+
+.progress-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px 0;
+}
+
+.progress-bar__outer {
+  height: 6px;
+  border-radius: 100px;
+  background-color: #ebeef5;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  width: 400px;
+}
+
+.progress-bar__outer-custom-stroke-width {
+  height: 18px;
+}
+
+.progress-bar__inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 100px;
+  line-height: 1;
+  white-space: nowrap;
+  transition: width 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.progress-bar__inner-theme-success {
+  background-color: #28a745;
+}
+
+.progress-bar__inner-theme-info {
+  background-color: #409eff;
+}
+
+.progress-bar__inner-theme-warning {
+  background-color: #ffc107;
+}
+
+.progress-bar__inner-theme-danger {
+  background-color: #dc3545;
+}
+
+.progress-bar__inner-text {
+  color: #fff;
+  font-size: 12px;
+  padding: 0 12px;
+}
+.progress__text {
+  font-size: 14px;
+  color: #606266;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  line-height: 1;
+}
