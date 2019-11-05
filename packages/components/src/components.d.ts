@@ -106,9 +106,9 @@ export namespace Components {
     */
     'textInside'?: boolean;
     /**
-    * (optional) show progress theme
+    * (optional) show progress variant
     */
-    'theme'?: string;
+    'variant'?: string;
   }
   interface TTag {
     /**
@@ -276,9 +276,9 @@ declare namespace LocalJSX {
     */
     'textInside'?: boolean;
     /**
-    * (optional) show progress theme
+    * (optional) show progress variant
     */
-    'theme'?: string;
+    'variant'?: string;
   }
   interface TTag extends JSXBase.HTMLAttributes<HTMLTTagElement> {
     /**
