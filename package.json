@@ -21,7 +21,7 @@
     "dependencies": {},
     "husky": {
         "hooks": {
-            "pre-commit": "yarn build"
+            "pre-commit": "cd packages/components && yarn format && yarn lint"
         }
     }
 }
