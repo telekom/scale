@@ -19,7 +19,6 @@ export class Toast {
   @Prop() animated?: boolean = true;
   /** (optional) Toast time */
   @Prop() time?: number;
-  @Prop() myTimeout;
 
   private getCssClassMap(): CssClassMap {
     return classNames(
@@ -32,11 +31,12 @@ export class Toast {
   }
 
   private autohideTime = 5000;
+  private myTimeout;
+  
 
   onCloseToast = () => {
     this.opened = false;
-    clearTimeout(this.myTimeout);
-    console.log('clear', this.myTimeout);
+    console.log('close toast');
   };
 
   @Method()
@@ -53,6 +53,8 @@ export class Toast {
 
   onHideToast = () => {
     if (this.opened && this.autohide !== false) {
+      clearTimeout(this.myTimeout);
+      console.log("clear", this.myTimeout);
       this.myTimeout = setTimeout(this.onCloseToast, this.autohideTime);
       console.log("myTimeout", this.myTimeout);
       return this.myTimeout;
