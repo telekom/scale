@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar should match snapshot 1`] = `
+<t-progress-bar>
+  <mock:shadow-root>
+    <div class="progress-bar">
+      <div class="progress-bar__outer" style="height: 18px;">
+        <div class="progress-bar__inner" style="width: undefined%;">
+          <div class="progress-bar__inner-text">
+            undefined%
+          </div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-progress-bar>
+`;

@@ -92,7 +92,7 @@ export namespace Components {
     /**
     * (required) progress percentage
     */
-    'percentage'?: number;
+    'percentage': number;
     /**
     * (optional) show progress percentage text
     */

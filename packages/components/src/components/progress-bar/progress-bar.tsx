@@ -7,17 +7,17 @@ import classNames from 'classnames';
   styleUrl: 'progress-bar.css',
   shadow: true,
 })
-export class InputText {
+export class ProgressBar {
   /** (required) progress percentage */
-  @Prop() public percentage?: number;
+  @Prop() public percentage: number;
   /** (optional) show progress variant */
   @Prop() public variant?: string;
   /** (optional) progress stroke width */
-  @Prop() public strokeWidth?: number;
+  @Prop() public strokeWidth?: number = 6;
   /** (optional) show progress percentage text */
-  @Prop() public showText?: boolean;
+  @Prop() public showText?: boolean = false;
   /** (optional) progress text display inside bar */
-  @Prop() public textInside?: boolean;
+  @Prop() public textInside?: boolean = false;
 
   public render() {
     return (
@@ -30,13 +30,13 @@ export class InputText {
             class={`progress-bar__inner ${this.getCssClassMap()}`}
             style={{ width: `${this.percentage}%` }}
           >
-            {this.textInside && (
+            {this.textInside && this.textInside === true && (
               <div class="progress-bar__inner-text">{`${this.percentage}%`}</div>
             )}
           </div>
         </div>
 
-        {this.showText && (
+        {!!this.showText && (
           <div class="progress-bar__text">{`${this.percentage}%`}</div>
         )}
       </div>
