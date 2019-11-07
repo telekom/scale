@@ -58,7 +58,7 @@
   height: var(--progress-bar__inner-height, 100%);
   border-radius: var(--progress-bar__inner-border-radius, 100px);
   white-space: var(--progress-bar__inner-white-space, nowrap);
-  transition: var(--progress-bar__inner-transition, width 2s ease);
+  transition: var(--progress-bar__inner-transition, width 0.5s ease);
   display: var(--progress-bar__inner-display, flex);
   align-items: var(--progress-bar__inner-align-items, center);
   justify-content: var(--progress-bar__inner-justify-content, flex-end);
