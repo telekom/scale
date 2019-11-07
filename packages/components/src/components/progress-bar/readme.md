@@ -10,9 +10,9 @@
 | Property      | Attribute      | Description                                 | Type      | Default     |
 | ------------- | -------------- | ------------------------------------------- | --------- | ----------- |
 | `percentage`  | `percentage`   | (required) progress percentage              | `number`  | `undefined` |
-| `showText`    | `show-text`    | (optional) show progress percentage text    | `boolean` | `false`     |
-| `strokeWidth` | `stroke-width` | (optional) progress stroke width            | `number`  | `6`         |
-| `textInside`  | `text-inside`  | (optional) progress text display inside bar | `boolean` | `true`      |
+| `showText`    | `show-text`    | (optional) show progress percentage text    | `boolean` | `undefined` |
+| `strokeWidth` | `stroke-width` | (optional) progress stroke width            | `number`  | `undefined` |
+| `textInside`  | `text-inside`  | (optional) progress text display inside bar | `boolean` | `undefined` |
 | `variant`     | `variant`      | (optional) show progress variant            | `string`  | `undefined` |
 
 
