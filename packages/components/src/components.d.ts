@@ -188,6 +188,23 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TToast {
+    'animated'?: boolean;
+    'autohide'?: boolean;
+    /**
+    * (required) Alert class
+    */
+    'customClass'?: string;
+    'openToast': () => Promise<void>;
+    'opened'?: boolean;
+    'size'?: string;
+    'theme'?: string;
+    /**
+    * (optional) Toast time
+    */
+    'time'?: number;
+    'variant'?: string;
+  }
 }
 
 declare global {
@@ -252,6 +269,12 @@ declare global {
     prototype: HTMLTTagElement;
     new (): HTMLTTagElement;
   };
+
+  interface HTMLTToastElement extends Components.TToast, HTMLStencilElement {}
+  var HTMLTToastElement: {
+    prototype: HTMLTToastElement;
+    new (): HTMLTToastElement;
+  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-badge': HTMLTBadgeElement;
@@ -263,6 +286,7 @@ declare global {
     't-progress-bar': HTMLTProgressBarElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
+    't-toast': HTMLTToastElement;
   }
 }
 
@@ -438,6 +462,22 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TToast {
+    'animated'?: boolean;
+    'autohide'?: boolean;
+    /**
+    * (required) Alert class
+    */
+    'customClass'?: string;
+    'opened'?: boolean;
+    'size'?: string;
+    'theme'?: string;
+    /**
+    * (optional) Toast time
+    */
+    'time'?: number;
+    'variant'?: string;
+  }
 
   interface IntrinsicElements {
     't-alert': TAlert;
@@ -450,6 +490,7 @@ declare namespace LocalJSX {
     't-progress-bar': TProgressBar;
     't-switch': TSwitch;
     't-tag': TTag;
+    't-toast': TToast;
   }
 }
 
@@ -469,6 +510,7 @@ declare module "@stencil/core" {
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
+      't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;
     }
   }
 }

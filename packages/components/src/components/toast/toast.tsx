@@ -32,11 +32,17 @@ export class Toast {
 
   private autohideTime = 5000;
   private myTimeout;
-  
+
+  componentDidUnload() {
+    if (this.myTimeout) {
+      clearTimeout(this.myTimeout);
+    }
+  }
 
   onCloseToast = () => {
     this.opened = false;
-    console.log('close toast');
+    this.myTimeout = undefined;
+    clearTimeout(this.myTimeout);
   };
 
   @Method()
@@ -51,20 +57,20 @@ export class Toast {
     return formattedTime;
   };
 
-  onHideToast = () => {
-    if (this.opened && this.autohide !== false) {
-      clearTimeout(this.myTimeout);
-      console.log("clear", this.myTimeout);
-      this.myTimeout = setTimeout(this.onCloseToast, this.autohideTime);
-      console.log("myTimeout", this.myTimeout);
-      return this.myTimeout;
-    } else {
-      return null;
+  setToastTimeout = () => {
+    if (this.myTimeout === undefined) {
+      if (this.opened && this.autohide !== false) {
+        this.myTimeout = setTimeout(this.onCloseToast, this.autohideTime);
+        console.log("myTimeout", this.myTimeout);
+        return;
+      } else {
+        return null;
+      }
     }
   };
 
   render() {
-    this.onHideToast();
+    this.setToastTimeout();
 
     if (!this.opened) {
       return null;
@@ -72,16 +78,16 @@ export class Toast {
 
     return (
       <div class={this.getCssClassMap()}>
-        <div class="toast">
-          <div class="toast__header">
-            <slot name="header" />
+        <div class='toast'>
+          <div class='toast__header'>
+            <slot name='header' />
             header
             <small>{this.getTime()}</small>
             <a onClick={this.onCloseToast}>
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden='true'>&times;</span>
             </a>
           </div>
-          <div class="toast__body">
+          <div class='toast__body'>
             <slot />
           </div>
         </div>
