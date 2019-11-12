@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should contain target="_blank" when newTag is set true 1`] = `
+<t-link href="http://example.com" new-tag="true">
+  <mock:shadow-root>
+    <a class="link" href="http://example.com" target="_blank">
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+  Label
+</t-link>
+`;
+
+exports[`Link should have link href value when href value is set 1`] = `
+<t-link href="http://example.com">
+  <mock:shadow-root>
+    <a class="link" href="http://example.com">
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+  Label
+</t-link>
+`;
+
+exports[`Link should match snapshot 1`] = `
+<t-link>
+  <mock:shadow-root>
+    <div class="link">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  default
+</t-link>
+`;

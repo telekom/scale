@@ -88,6 +88,28 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
+  interface TLink {
+    /**
+    * (optional) link disabled
+    */
+    'disabled'?: string;
+    /**
+    * (optional) link href
+    */
+    'href'?: string;
+    /**
+    * (optional) link open a new tag
+    */
+    'newTag'?: boolean;
+    /**
+    * (optional) link variant
+    */
+    'underline'?: string;
+    /**
+    * (optional) link variant
+    */
+    'variant'?: string;
+  }
   interface TTag {
     /**
     * (optional) Tag on an <a> element
@@ -137,6 +159,12 @@ declare global {
     new (): HTMLTInputTextElement;
   };
 
+  interface HTMLTLinkElement extends Components.TLink, HTMLStencilElement {}
+  var HTMLTLinkElement: {
+    prototype: HTMLTLinkElement;
+    new (): HTMLTLinkElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -148,6 +176,7 @@ declare global {
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
+    't-link': HTMLTLinkElement;
     't-tag': HTMLTTagElement;
   }
 }
@@ -229,6 +258,28 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
+  interface TLink extends JSXBase.HTMLAttributes<HTMLTLinkElement> {
+    /**
+    * (optional) link disabled
+    */
+    'disabled'?: string;
+    /**
+    * (optional) link href
+    */
+    'href'?: string;
+    /**
+    * (optional) link open a new tag
+    */
+    'newTag'?: boolean;
+    /**
+    * (optional) link variant
+    */
+    'underline'?: string;
+    /**
+    * (optional) link variant
+    */
+    'variant'?: string;
+  }
   interface TTag extends JSXBase.HTMLAttributes<HTMLTTagElement> {
     /**
     * (optional) Tag on an <a> element
@@ -250,6 +301,7 @@ declare namespace LocalJSX {
     't-button': TButton;
     't-card': TCard;
     't-input-text': TInputText;
+    't-link': TLink;
     't-tag': TTag;
   }
 }
