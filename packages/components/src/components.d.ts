@@ -92,7 +92,7 @@ export namespace Components {
     /**
     * (optional) link disabled
     */
-    'disabled'?: string;
+    'disabled'?: boolean;
     /**
     * (optional) link href
     */
@@ -104,7 +104,7 @@ export namespace Components {
     /**
     * (optional) link variant
     */
-    'underline'?: string;
+    'underline'?: boolean;
     /**
     * (optional) link variant
     */
@@ -262,7 +262,7 @@ declare namespace LocalJSX {
     /**
     * (optional) link disabled
     */
-    'disabled'?: string;
+    'disabled'?: boolean;
     /**
     * (optional) link href
     */
@@ -274,7 +274,7 @@ declare namespace LocalJSX {
     /**
     * (optional) link variant
     */
-    'underline'?: string;
+    'underline'?: boolean;
     /**
     * (optional) link variant
     */

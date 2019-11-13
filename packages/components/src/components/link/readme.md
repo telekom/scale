@@ -9,10 +9,10 @@
 
 | Property    | Attribute   | Description                    | Type      | Default |
 | ----------- | ----------- | ------------------------------ | --------- | ------- |
-| `disabled`  | `disabled`  | (optional) link disabled       | `string`  | `''`    |
+| `disabled`  | `disabled`  | (optional) link disabled       | `boolean` | `false` |
 | `href`      | `href`      | (optional) link href           | `string`  | `''`    |
 | `newTag`    | `new-tag`   | (optional) link open a new tag | `boolean` | `false` |
-| `underline` | `underline` | (optional) link variant        | `string`  | `''`    |
+| `underline` | `underline` | (optional) link variant        | `boolean` | `false` |
 | `variant`   | `variant`   | (optional) link variant        | `string`  | `''`    |
 
 

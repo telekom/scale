@@ -11,9 +11,9 @@ export class Link {
   /** (optional) link href */
   @Prop() public href?: string = '';
   /** (optional) link disabled */
-  @Prop() public disabled?: string = '';
+  @Prop() public disabled?: boolean = false;
   /** (optional) link variant */
-  @Prop() public underline?: string = '';
+  @Prop() public underline?: boolean = false;
   /** (optional) link open a new tag */
   @Prop() public newTag?: boolean = false;
   /** (optional) link variant */
