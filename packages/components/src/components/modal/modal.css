@@ -1,0 +1,120 @@
+/** 
+* @prop --modal-backdrop-background: Color of the backdrop of the modal
+* @prop --modal-opened-top: Top position of the modal when it is opened
+* @prop --modal-background-color: Background color of the modal
+* @prop --modal-color: Color of the text in the modal
+* @prop --modal-padding: Padding of the modal
+* @prop --modal-max-width: Max width of the modal
+* @prop --modal-border-radius: Border radius of the modal
+* @prop --modal-box-shadow: Box shadow of the modal
+* @prop --modal-header-font-size: Font size of the modal header 
+* @prop --modal-header-color: Color of the text of the modal header
+* @prop --modal-header-margin: Margin of the modal header
+* @prop --modal-header-border-bottom: Border bottom of the modal header
+* @prop --modal-header-padding: Padding of the modal header
+* @prop --modal-header-slot-margin: Margin of the modal header slot
+* @prop --modal-header-slot-font-size: Font size of the modal header slot
+* @prop --modal-header-slot-color: Color of the text of the modal header slot
+* @prop --modal-header-slot-font-weight: Font weight of the modal header slot
+* @prop --modal-body-padding: Padding of the modal body
+* @prop --modal-body-border-bottom: Border bottom of the modal body
+* @prop --modal-close-font-size: Font size of the modal close button
+* @prop --modal-close-height: Height of the modal close button
+* @prop --modal-close-opacity: Opacity of the modal close button
+* @prop --modal-close-hover-opacity: Hover opacity of the modal close button
+* @prop --modal-actions-padding: Padding of the modal actions
+
+*/
+
+
+.modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--modal-backdrop-background,rgba(0,0,0,0.75));
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+
+:host([opened]) .modal__backdrop,
+:host([opened]) .modal {
+  opacity: 1;
+  pointer-events: all;
+}
+
+:host([opened]) .modal {
+  top: var(--modal-opened-top, 15vh);
+}
+
+.modal {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: fixed;
+  background: var(--modal-background, white);
+  color: var(--modal-color, #333);
+  padding: var(--modal-padding, 1rem);
+  text-align: left;
+  position: fixed;
+  top: 10vh;
+  left: 25%;
+  width: 50%;
+  max-width: var(--modal-max-width, 550px);
+  border-radius: var(--modal-border-radius, 3px);
+  box-shadow: var(--modal-box-shadow, 0 2px 8px rgba(0,0,0,0.26));
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+
+.modal__header {
+  font-size: var(--modal-header-font-size, 0.8rem);
+  color: var(--modal-header-color, #333);
+  margin: var(--modal-header-margin, 0);
+  border-bottom: var(--modal-header-border-bottom,1px solid #333);
+  padding: var(--modal-header-padding,0.5rem 0);
+  display: flex;
+  justify-content: space-between;
+}
+.modal__header ::slotted(*) {
+  margin:  var(--modal-header-slot-margin, 0);
+  font-size: var(--modal-header-slot-font-size, 1rem);
+  color: var(--modal-header-slot-color, #262626);
+  font-weight: var(--modal-header-slot-font-weight, bold);
+  
+}
+
+.modal__body {
+  padding: var(--modal-body-padding, 1rem 0);
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__close {
+  font-size: var(--modal-close-font-size, 1rem);
+  height: var(--modal-close-height, 16px);
+  opacity: var(--modal-close-opacity, 0.5);
+  cursor: pointer;
+
+}
+
+.modal__close:hover {
+  opacity:  var(--modal-close-hover-opacity, 1);
+}
+
+.modal__actions {
+  border-top: var(--modal-body-border-bottom, 1px solid #ccc);
+  padding: var(--modal-actions-padding, 1rem 0);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal__actions t-button {
+  margin: 0.25rem;
+}

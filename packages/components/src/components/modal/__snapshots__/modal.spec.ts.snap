@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should match snapshot 1`] = `
+<t-modal>
+  <mock:shadow-root></mock:shadow-root>
+  Label
+</t-modal>
+`;
+
+exports[`Modal should match snapshot when opened 1`] = `
+<t-modal opened="true">
+  <mock:shadow-root>
+    <div class="modal">
+      <div class="modal__backdrop"></div>
+      <div class="modal">
+        <div class="modal__body">
+          <slot></slot>
+        </div>
+        <div class="modal__actions">
+          <t-button id="cancel-btn">
+            cancel
+          </t-button>
+          <t-button id="submit-btn">
+            submit
+          </t-button>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-modal>
+`;
+
+exports[`Modal should match snapshot with header slot 1`] = `
+<t-modal>
+  <mock:shadow-root></mock:shadow-root>
+  <span slot="header">
+    Header content
+  </span>
+  A title
+</t-modal>
+`;
