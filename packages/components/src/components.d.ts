@@ -88,6 +88,24 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
+  interface TModal {
+    'close'?: string;
+    'onCloseModal': () => Promise<void>;
+    'openModal': () => Promise<void>;
+    'opened'?: boolean;
+    /**
+    * (optional) Modal size
+    */
+    'size'?: string;
+    /**
+    * (optional) Modal theme
+    */
+    'theme'?: string;
+    /**
+    * (optional) Modal variant
+    */
+    'variant'?: string;
+  }
   interface TTag {
     /**
     * (optional) Tag on an <a> element
@@ -137,6 +155,12 @@ declare global {
     new (): HTMLTInputTextElement;
   };
 
+  interface HTMLTModalElement extends Components.TModal, HTMLStencilElement {}
+  var HTMLTModalElement: {
+    prototype: HTMLTModalElement;
+    new (): HTMLTModalElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -148,6 +172,7 @@ declare global {
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
+    't-modal': HTMLTModalElement;
     't-tag': HTMLTTagElement;
   }
 }
@@ -229,6 +254,22 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
+  interface TModal extends JSXBase.HTMLAttributes<HTMLTModalElement> {
+    'close'?: string;
+    'opened'?: boolean;
+    /**
+    * (optional) Modal size
+    */
+    'size'?: string;
+    /**
+    * (optional) Modal theme
+    */
+    'theme'?: string;
+    /**
+    * (optional) Modal variant
+    */
+    'variant'?: string;
+  }
   interface TTag extends JSXBase.HTMLAttributes<HTMLTTagElement> {
     /**
     * (optional) Tag on an <a> element
@@ -250,6 +291,7 @@ declare namespace LocalJSX {
     't-button': TButton;
     't-card': TCard;
     't-input-text': TInputText;
+    't-modal': TModal;
     't-tag': TTag;
   }
 }
