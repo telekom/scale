@@ -23,21 +23,21 @@ export class ProgressBar {
     return (
       <div class="progress-bar">
         <div
-          class="progress-bar__outer"
+          class="progress-bar-outer"
           style={{ height: `${this.strokeWidth}px` }}
         >
           <div
-            class={`progress-bar__inner ${this.getCssClassMap()}`}
+            class={`progress-bar-inner ${this.getCssClassMap()}`}
             style={{ width: `${this.percentage}%` }}
           >
             {!!this.textInside && (
-              <div class="progress-bar__inner-text">{`${this.percentage}%`}</div>
+              <div class="progress-bar-inner-text">{`${this.percentage}%`}</div>
             )}
           </div>
         </div>
 
         {!!this.showText && (
-          <div class="progress-bar__text">{`${this.percentage}%`}</div>
+          <div class="progress-bar-text">{`${this.percentage}%`}</div>
         )}
       </div>
     );
@@ -45,7 +45,7 @@ export class ProgressBar {
 
   private getCssClassMap(): CssClassMap {
     return classNames(
-      this.variant && `progress-bar__inner-variant-${this.variant}`
+      this.variant && `progress-bar-inner-variant-${this.variant}`
     );
   }
 }
