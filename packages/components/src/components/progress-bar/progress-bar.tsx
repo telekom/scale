@@ -13,7 +13,7 @@ export class ProgressBar {
   /** (optional) show progress variant */
   @Prop() public variant?: string;
   /** (optional) progress stroke width */
-  @Prop() public strokeWidth?: number;
+  @Prop() public strokeWidth?: number = 6;
   /** (optional) show progress percentage text */
   @Prop() public showText?: boolean;
   /** (optional) progress text display inside bar */
@@ -24,7 +24,7 @@ export class ProgressBar {
       <div class="progress-bar">
         <div
           class="progress-bar__outer"
-          style={{ height: this.strokeWidth ? `${this.strokeWidth}px` : '6px' }}
+          style={{ height: `${this.strokeWidth}px` }}
         >
           <div
             class={`progress-bar__inner ${this.getCssClassMap()}`}
