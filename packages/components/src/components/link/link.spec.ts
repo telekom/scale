@@ -30,10 +30,10 @@ describe('Link', () => {
     expect(element.getCssClassMap()).toContain('link--underline');
   });
 
-  it('should contain target="_blank" when newTag is set true', async () => {
+  it('should contain target="_blank" when openNewTab is set true', async () => {
     const page = await newSpecPage({
       components: [Link],
-      html: `<t-link href="http://example.com" new-tag=true>Label</t-link>`,
+      html: `<t-link href="http://example.com" open-new-tab=true>Label</t-link>`,
     });
     expect(page.root).toMatchSnapshot();
   });

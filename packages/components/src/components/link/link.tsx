@@ -15,21 +15,18 @@ export class Link {
   /** (optional) link variant */
   @Prop() public underline?: boolean = false;
   /** (optional) link open a new tag */
-  @Prop() public newTag?: boolean = false;
+  @Prop() public openNewTab?: boolean = false;
   /** (optional) link variant */
   @Prop() public variant?: string = '';
 
   public render() {
     if (!!this.href) {
-      if (!!this.newTag) {
-        return (
-          <a href={this.href} class={this.getCssClassMap()} target="_blank">
-            <slot />
-          </a>
-        );
-      }
       return (
-        <a href={this.href} class={this.getCssClassMap()}>
+        <a
+          href={this.href}
+          class={this.getCssClassMap()}
+          target={this.openNewTab ? '_blank' : null}
+        >
           <slot />
         </a>
       );

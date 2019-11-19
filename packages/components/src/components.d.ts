@@ -100,13 +100,31 @@ export namespace Components {
     /**
     * (optional) link open a new tag
     */
-    'newTag'?: boolean;
+    'openNewTab'?: boolean;
     /**
     * (optional) link variant
     */
     'underline'?: boolean;
     /**
     * (optional) link variant
+    */
+    'variant'?: string;
+  }
+  interface TModal {
+    'close'?: string;
+    'onCloseModal': () => Promise<void>;
+    'openModal': () => Promise<void>;
+    'opened'?: boolean;
+    /**
+    * (optional) Modal size
+    */
+    'size'?: string;
+    /**
+    * (optional) Modal theme
+    */
+    'theme'?: string;
+    /**
+    * (optional) Modal variant
     */
     'variant'?: string;
   }
@@ -165,6 +183,12 @@ declare global {
     new (): HTMLTLinkElement;
   };
 
+  interface HTMLTModalElement extends Components.TModal, HTMLStencilElement {}
+  var HTMLTModalElement: {
+    prototype: HTMLTModalElement;
+    new (): HTMLTModalElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -177,6 +201,7 @@ declare global {
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
     't-link': HTMLTLinkElement;
+    't-modal': HTMLTModalElement;
     't-tag': HTMLTTagElement;
   }
 }
@@ -270,13 +295,29 @@ declare namespace LocalJSX {
     /**
     * (optional) link open a new tag
     */
-    'newTag'?: boolean;
+    'openNewTab'?: boolean;
     /**
     * (optional) link variant
     */
     'underline'?: boolean;
     /**
     * (optional) link variant
+    */
+    'variant'?: string;
+  }
+  interface TModal extends JSXBase.HTMLAttributes<HTMLTModalElement> {
+    'close'?: string;
+    'opened'?: boolean;
+    /**
+    * (optional) Modal size
+    */
+    'size'?: string;
+    /**
+    * (optional) Modal theme
+    */
+    'theme'?: string;
+    /**
+    * (optional) Modal variant
     */
     'variant'?: string;
   }
@@ -302,6 +343,7 @@ declare namespace LocalJSX {
     't-card': TCard;
     't-input-text': TInputText;
     't-link': TLink;
+    't-modal': TModal;
     't-tag': TTag;
   }
 }
