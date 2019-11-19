@@ -1,7 +1,7 @@
 /** 
 * @prop --modal-backdrop-background: Color of the backdrop of the modal
 * @prop --modal-opened-top: Top position of the modal when it is opened
-* @prop --modal-background-color: Background color of the modal
+* @prop --modal-background: Background color of the modal
 * @prop --modal-color: Color of the text in the modal
 * @prop --modal-padding: Padding of the modal
 * @prop --modal-max-width: Max width of the modal
