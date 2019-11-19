@@ -20,6 +20,8 @@ export class InputText {
 
   @Event() public changed: EventEmitter<string>;
 
+  @Prop() public theme: string;
+
   // tslint:disable-next-line: variable-name
   public _validator: Validator<string> = defaultValidator;
 
@@ -31,8 +33,8 @@ export class InputText {
     this._validator = getValidator<string>(this.validator);
   }
 
-  public handleChange(ev) {
-    this.value = ev.target ? ev.target.value : null;
+  public handleChange(event) {
+    this.value = event.target ? event.target.value : null;
     this.changed.emit(this.value);
   }
 
@@ -40,12 +42,11 @@ export class InputText {
     return (
       <div>
         <div class={this.getCssClassMap()}>
-          <div class="input-container"></div>
           <input
             type="text"
             class="input-text__input"
             value={this.value}
-            onInput={ev => this.handleChange(ev)}
+            onInput={event => this.handleChange(event)}
           />
         </div>
         {!this._validator.validate(this.value) ? (
@@ -56,6 +57,9 @@ export class InputText {
   }
 
   private getCssClassMap(): CssClassMap {
-    return classNames('input-text');
+    return classNames(
+      'input-text',
+      this.theme && `input-text--theme-${this.theme}`
+    );
   }
 }

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText should match snapshot 1`] = `
+<t-input-text>
+  <mock:shadow-root>
+    <div>
+      <div class="input-text">
+        <input class="input-text__input" type="text">
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-input-text>
+`;
