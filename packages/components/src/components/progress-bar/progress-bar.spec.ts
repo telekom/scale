@@ -18,7 +18,7 @@ describe('ProgressBar', () => {
   it('should have class variant info', () => {
     element.variant = 'info';
     expect(element.getCssClassMap()).toContain(
-      'progress-bar__inner-variant-info'
+      'progress-bar-inner-variant-info'
     );
   });
 
@@ -30,7 +30,7 @@ describe('ProgressBar', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should contain progress-bar__text css class when show text is set true', async () => {
+  it('should contain progress-bar-text css class when show text is set true', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
       html: `<t-progress-bar show-text=true>Label</t-progress-bar>`,
@@ -38,7 +38,7 @@ describe('ProgressBar', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should contain progress-bar__inner-text css class when text inside is set true', async () => {
+  it('should contain progress-bar-inner-text css class when text inside is set true', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
       html: `<t-progress-bar text-inside=true>Label</t-progress-bar>`,
