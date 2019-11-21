@@ -7,16 +7,19 @@
 
 ## Properties
 
-| Property      | Attribute      | Description            | Type      | Default     |
-| ------------- | -------------- | ---------------------- | --------- | ----------- |
-| `animated`    | `animated`     |                        | `boolean` | `true`      |
-| `autohide`    | `autohide`     |                        | `boolean` | `true`      |
-| `customClass` | `custom-class` | (required) Alert class | `string`  | `""`        |
-| `opened`      | `opened`       |                        | `boolean` | `undefined` |
-| `size`        | `size`         |                        | `string`  | `""`        |
-| `theme`       | `theme`        |                        | `string`  | `""`        |
-| `time`        | `time`         | (optional) Toast time  | `number`  | `undefined` |
-| `variant`     | `variant`      |                        | `string`  | `""`        |
+| Property        | Attribute        | Description            | Type                | Default     |
+| --------------- | ---------------- | ---------------------- | ------------------- | ----------- |
+| `animated`      | `animated`       |                        | `boolean`           | `true`      |
+| `autoHide`      | `auto-hide`      |                        | `boolean \| number` | `false`     |
+| `customClass`   | `custom-class`   | (required) Alert class | `string`            | `""`        |
+| `fadeDuration`  | `fade-duration`  |                        | `number`            | `500`       |
+| `opened`        | `opened`         |                        | `boolean`           | `undefined` |
+| `positionRight` | `position-right` |                        | `number`            | `12`        |
+| `positionTop`   | `position-top`   |                        | `number`            | `12`        |
+| `size`          | `size`           |                        | `string`            | `""`        |
+| `theme`         | `theme`          |                        | `string`            | `""`        |
+| `time`          | `time`           | (optional) Toast time  | `number`            | `undefined` |
+| `variant`       | `variant`        |                        | `string`            | `""`        |
 
 
 ## Methods

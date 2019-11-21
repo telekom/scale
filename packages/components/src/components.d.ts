@@ -89,9 +89,15 @@ export namespace Components {
   }
   interface TInputText {}
   interface TModal {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
     'onCloseModal': () => Promise<void>;
     'openModal': () => Promise<void>;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -118,6 +124,26 @@ export namespace Components {
     /**
     * (optional) Tag variant
     */
+    'variant'?: string;
+  }
+  interface TToast {
+    'animated'?: boolean;
+    'autoHide'?: boolean | number;
+    /**
+    * (required) Alert class
+    */
+    'customClass'?: string;
+    'fadeDuration'?: number;
+    'openToast': () => Promise<void>;
+    'opened'?: boolean;
+    'positionRight'?: number;
+    'positionTop'?: number;
+    'size'?: string;
+    'theme'?: string;
+    /**
+    * (optional) Toast time
+    */
+    'time'?: number;
     'variant'?: string;
   }
 }
@@ -166,6 +192,12 @@ declare global {
     prototype: HTMLTTagElement;
     new (): HTMLTTagElement;
   };
+
+  interface HTMLTToastElement extends Components.TToast, HTMLStencilElement {}
+  var HTMLTToastElement: {
+    prototype: HTMLTToastElement;
+    new (): HTMLTToastElement;
+  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-badge': HTMLTBadgeElement;
@@ -174,6 +206,7 @@ declare global {
     't-input-text': HTMLTInputTextElement;
     't-modal': HTMLTModalElement;
     't-tag': HTMLTTagElement;
+    't-toast': HTMLTToastElement;
   }
 }
 
@@ -255,7 +288,13 @@ declare namespace LocalJSX {
   }
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
   interface TModal extends JSXBase.HTMLAttributes<HTMLTModalElement> {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -284,6 +323,25 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TToast extends JSXBase.HTMLAttributes<HTMLTToastElement> {
+    'animated'?: boolean;
+    'autoHide'?: boolean | number;
+    /**
+    * (required) Alert class
+    */
+    'customClass'?: string;
+    'fadeDuration'?: number;
+    'opened'?: boolean;
+    'positionRight'?: number;
+    'positionTop'?: number;
+    'size'?: string;
+    'theme'?: string;
+    /**
+    * (optional) Toast time
+    */
+    'time'?: number;
+    'variant'?: string;
+  }
 
   interface IntrinsicElements {
     't-alert': TAlert;
@@ -293,6 +351,7 @@ declare namespace LocalJSX {
     't-input-text': TInputText;
     't-modal': TModal;
     't-tag': TTag;
+    't-toast': TToast;
   }
 }
 
