@@ -96,7 +96,6 @@ export class Toast {
           <div class="toast__progress" style={{ width: `${this.progress}%` }}>&nbsp;</div>
         }
         <div class='toast__body'>
-          <div style={{ height: '200px' }}>X</div>
           <slot />
         </div>
       </div>
