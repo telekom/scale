@@ -20,7 +20,7 @@ export class Link {
   @Prop() public variant?: string = '';
 
   public render() {
-    if (!!this.href) {
+    if (!!this.href && !this.disabled) {
       return (
         <a
           href={this.href}
