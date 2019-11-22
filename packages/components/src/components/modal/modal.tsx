@@ -1,91 +1,93 @@
-import { Component, Prop, h, Method, Element } from "@stencil/core";
-import { HTMLStencilElement } from "@stencil/core/internal";
-import { CssClassMap } from "../../utils/utils";
-import classNames from "classnames";
+import { Component, Prop, h, Method, Element } from '@stencil/core';
+import { HTMLStencilElement } from '@stencil/core/internal';
+import { CssClassMap } from '../../utils/utils';
+import classNames from 'classnames';
 
 @Component({
-  tag: "t-modal",
-  styleUrl: "modal.css",
-  shadow: true
+  tag: 't-modal',
+  styleUrl: 'modal.css',
+  shadow: true,
 })
 export class Modal {
-  @Element() hostElement: HTMLStencilElement;
+  @Element() public hostElement: HTMLStencilElement;
   /** (optional) Modal size */
-  @Prop() size?: string = "";
+  @Prop() public size?: string = '';
   /** (optional) Modal theme */
-  @Prop() theme?: string = "";
+  @Prop() public theme?: string = '';
   /** (optional) Modal variant */
-  @Prop() variant?: string = "";
-  @Prop({ reflectToAttr: true }) opened?: boolean = false;
-  @Prop() close?: string = "x";
+  @Prop() public variant?: string = '';
+  /** (optional) Modal opened */
+  @Prop({ reflectToAttr: true }) public opened?: boolean = false;
+  /** (optional) Modal close */
+  @Prop() public close?: string = 'x';
 
   private hasSlotHeader: boolean;
   private hasSlotActions: boolean;
 
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      "modal",
-      this.size && `modal--size-${this.size}`,
-      this.theme && `modal--theme-${this.theme}`,
-      this.variant && `modal--variant-${this.variant}`
-    );
-  }
   @Method()
-  async openModal() {
+  public async openModal() {
     this.opened = true;
   }
 
-  closeModal = () => {
+  public closeModal = () => {
     this.opened = false;
   };
 
   @Method()
-  async onCloseModal() {
+  public async onCloseModal() {
     this.opened = false;
-  };
-
-  componentWillLoad() {
+  }
+  public componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
     this.hasSlotActions = !!this.hostElement.querySelector(
       '[slot="modal-actions"]'
     );
   }
 
-  render() {
+  public render() {
     if (!this.opened) {
       return null;
     }
 
     return (
       <div class={this.getCssClassMap()}>
-        <div class="modal__backdrop" onClick={this.closeModal}></div>
+        <div class='modal__backdrop' onClick={this.closeModal}></div>
 
-        <div class="modal">
-          {this.hasSlotHeader && (
-            <div class="modal__header">
-              <slot name="header" />
-              <a class="modal__close" onClick={this.closeModal}>
+        <div class='modal'>
+          {this.hasSlotHeader /* istanbul ignore next */ && (
+            <div class='modal__header'>
+              <slot name='header' />
+              <a class='modal__close' onClick={this.closeModal}>
                 {this.close}
               </a>
             </div>
           )}
 
-          <div class="modal__body">
+          <div class='modal__body'>
             <slot />
             {!this.hasSlotHeader && (
-              <a class="modal__close" onClick={this.closeModal}>
+              <a class='modal__close' onClick={this.closeModal}>
                 {this.close}
               </a>
             )}
           </div>
 
-          {this.hasSlotActions && (
-            <div class="modal__actions">
-              <slot name="modal-actions" />
+          {this.hasSlotActions /* istanbul ignore next */ && (
+            <div class='modal__actions'>
+              <slot name='modal-actions' />
             </div>
           )}
         </div>
       </div>
+    );
+  }
+
+  private getCssClassMap(): CssClassMap {
+    return classNames(
+      'modal',
+      this.size && `modal--size-${this.size}`,
+      this.theme && `modal--theme-${this.theme}`,
+      this.variant && `modal--variant-${this.variant}`
     );
   }
 }

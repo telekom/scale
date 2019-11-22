@@ -88,6 +88,7 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
+
   interface TLink {
     /**
     * (optional) link disabled
@@ -110,6 +111,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
+    
   interface TModal {
     'close'?: string;
     'onCloseModal': () => Promise<void>;
