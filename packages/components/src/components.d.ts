@@ -88,7 +88,6 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
-
   interface TLink {
     /**
     * (optional) link disabled
@@ -111,11 +110,16 @@ export namespace Components {
     */
     'variant'?: string;
   }
-    
   interface TModal {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
     'onCloseModal': () => Promise<void>;
     'openModal': () => Promise<void>;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -127,6 +131,28 @@ export namespace Components {
     'theme'?: string;
     /**
     * (optional) Modal variant
+    */
+    'variant'?: string;
+  }
+  interface TProgressBar {
+    /**
+    * (required) progress percentage
+    */
+    'percentage': number;
+    /**
+    * (optional) show progress percentage text
+    */
+    'showText'?: boolean;
+    /**
+    * (optional) progress stroke width
+    */
+    'strokeWidth'?: number;
+    /**
+    * (optional) progress text display inside bar
+    */
+    'textInside'?: boolean;
+    /**
+    * (optional) show progress variant
     */
     'variant'?: string;
   }
@@ -191,6 +217,12 @@ declare global {
     new (): HTMLTModalElement;
   };
 
+  interface HTMLTProgressBarElement extends Components.TProgressBar, HTMLStencilElement {}
+  var HTMLTProgressBarElement: {
+    prototype: HTMLTProgressBarElement;
+    new (): HTMLTProgressBarElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -204,6 +236,7 @@ declare global {
     't-input-text': HTMLTInputTextElement;
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
+    't-progress-bar': HTMLTProgressBarElement;
     't-tag': HTMLTTagElement;
   }
 }
@@ -308,7 +341,13 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TModal extends JSXBase.HTMLAttributes<HTMLTModalElement> {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -320,6 +359,28 @@ declare namespace LocalJSX {
     'theme'?: string;
     /**
     * (optional) Modal variant
+    */
+    'variant'?: string;
+  }
+  interface TProgressBar extends JSXBase.HTMLAttributes<HTMLTProgressBarElement> {
+    /**
+    * (required) progress percentage
+    */
+    'percentage'?: number;
+    /**
+    * (optional) show progress percentage text
+    */
+    'showText'?: boolean;
+    /**
+    * (optional) progress stroke width
+    */
+    'strokeWidth'?: number;
+    /**
+    * (optional) progress text display inside bar
+    */
+    'textInside'?: boolean;
+    /**
+    * (optional) show progress variant
     */
     'variant'?: string;
   }
@@ -346,6 +407,7 @@ declare namespace LocalJSX {
     't-input-text': TInputText;
     't-link': TLink;
     't-modal': TModal;
+    't-progress-bar': TProgressBar;
     't-tag': TTag;
   }
 }
@@ -358,5 +420,3 @@ declare module "@stencil/core" {
     interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
 }
-
-
