@@ -88,10 +88,38 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
+  interface TLink {
+    /**
+    * (optional) link disabled
+    */
+    'disabled'?: boolean;
+    /**
+    * (optional) link href
+    */
+    'href'?: string;
+    /**
+    * (optional) link open a new tag
+    */
+    'openNewTab'?: boolean;
+    /**
+    * (optional) link variant
+    */
+    'underline'?: boolean;
+    /**
+    * (optional) link variant
+    */
+    'variant'?: string;
+  }
   interface TModal {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
     'onCloseModal': () => Promise<void>;
     'openModal': () => Promise<void>;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -177,6 +205,12 @@ declare global {
     new (): HTMLTInputTextElement;
   };
 
+  interface HTMLTLinkElement extends Components.TLink, HTMLStencilElement {}
+  var HTMLTLinkElement: {
+    prototype: HTMLTLinkElement;
+    new (): HTMLTLinkElement;
+  };
+
   interface HTMLTModalElement extends Components.TModal, HTMLStencilElement {}
   var HTMLTModalElement: {
     prototype: HTMLTModalElement;
@@ -200,6 +234,7 @@ declare global {
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-input-text': HTMLTInputTextElement;
+    't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
     't-progress-bar': HTMLTProgressBarElement;
     't-tag': HTMLTTagElement;
@@ -283,8 +318,36 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TInputText extends JSXBase.HTMLAttributes<HTMLTInputTextElement> {}
+  interface TLink extends JSXBase.HTMLAttributes<HTMLTLinkElement> {
+    /**
+    * (optional) link disabled
+    */
+    'disabled'?: boolean;
+    /**
+    * (optional) link href
+    */
+    'href'?: string;
+    /**
+    * (optional) link open a new tag
+    */
+    'openNewTab'?: boolean;
+    /**
+    * (optional) link variant
+    */
+    'underline'?: boolean;
+    /**
+    * (optional) link variant
+    */
+    'variant'?: string;
+  }
   interface TModal extends JSXBase.HTMLAttributes<HTMLTModalElement> {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -342,6 +405,7 @@ declare namespace LocalJSX {
     't-button': TButton;
     't-card': TCard;
     't-input-text': TInputText;
+    't-link': TLink;
     't-modal': TModal;
     't-progress-bar': TProgressBar;
     't-tag': TTag;
@@ -356,5 +420,3 @@ declare module "@stencil/core" {
     interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
 }
-
-

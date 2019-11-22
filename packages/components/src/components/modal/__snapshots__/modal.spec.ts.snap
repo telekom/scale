@@ -8,26 +8,31 @@ exports[`Modal should match snapshot 1`] = `
 `;
 
 exports[`Modal should match snapshot when opened 1`] = `
-<t-modal opened="true">
+<t-modal opened="">
   <mock:shadow-root>
     <div class="modal">
       <div class="modal__backdrop"></div>
       <div class="modal">
         <div class="modal__body">
           <slot></slot>
-        </div>
-        <div class="modal__actions">
-          <t-button id="cancel-btn">
-            cancel
-          </t-button>
-          <t-button id="submit-btn">
-            submit
-          </t-button>
+          <a class="modal__close">
+            x
+          </a>
         </div>
       </div>
     </div>
   </mock:shadow-root>
   Label
+</t-modal>
+`;
+
+exports[`Modal should match snapshot with actions slot 1`] = `
+<t-modal>
+  <mock:shadow-root></mock:shadow-root>
+  <span slot="modal-actions">
+    Action buttons
+  </span>
+  Content
 </t-modal>
 `;
 
