@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link should contain target="_blank" when newTag is set true 1`] = `
-<t-link href="http://example.com" new-tag="true">
-  <mock:shadow-root>
-    <a class="link" href="http://example.com" target="_blank">
-      <slot></slot>
-    </a>
-  </mock:shadow-root>
-  Label
-</t-link>
-`;
-
 exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <t-link href="http://example.com" open-new-tab="true">
   <mock:shadow-root>
