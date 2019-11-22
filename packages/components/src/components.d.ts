@@ -88,7 +88,6 @@ export namespace Components {
     'variant'?: string;
   }
   interface TInputText {}
-
   interface TLink {
     /**
     * (optional) link disabled
@@ -111,11 +110,16 @@ export namespace Components {
     */
     'variant'?: string;
   }
-    
   interface TModal {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
     'onCloseModal': () => Promise<void>;
     'openModal': () => Promise<void>;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
@@ -308,7 +312,13 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TModal extends JSXBase.HTMLAttributes<HTMLTModalElement> {
+    /**
+    * (optional) Modal close
+    */
     'close'?: string;
+    /**
+    * (optional) Modal opened
+    */
     'opened'?: boolean;
     /**
     * (optional) Modal size
