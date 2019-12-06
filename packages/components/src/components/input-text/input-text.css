@@ -1,9 +1,9 @@
 .input-text {
-    border: var(--input-text-border, 1px solid #dfdfdf);
-    border-radius: var(--input-text-border-radius, 4px);
-    padding: var(--input-text-padding, 0.5rem 1rem);
-    font-size: var(--input-text-font-size, 16px);
-    font-family: var(--input-text-font-family, inherit);
+  border: var(--input-text-border, 1px solid #dfdfdf);
+  border-radius: var(--input-text-border-radius, 4px);
+  padding: var(--input-text-padding, 0.5rem 1rem);
+  font-size: var(--input-text-font-size, 16px);
+  font-family: var(--input-text-font-family, inherit);
 }
 
 /*
@@ -13,6 +13,6 @@
  * means that a screen-reader is required
  */
 
- .input-text:not(.tabbing):focus {
-	outline: 0;
+.input-text:not(.tabbing):focus {
+  outline: 0;
 }

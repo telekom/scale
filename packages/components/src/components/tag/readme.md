@@ -9,9 +9,9 @@
 
 | Property  | Attribute | Description                      | Type      | Default |
 | --------- | --------- | -------------------------------- | --------- | ------- |
-| `link`    | `link`    | (optional) Tag on an <a> element | `string`  | `""`    |
+| `link`    | `link`    | (optional) Tag on an <a> element | `string`  | `''`    |
 | `pill`    | `pill`    | (optional) Tag pill              | `boolean` | `false` |
-| `variant` | `variant` | (optional) Tag variant           | `string`  | `""`    |
+| `variant` | `variant` | (optional) Tag variant           | `string`  | `''`    |
 
 
 ## CSS Custom Properties

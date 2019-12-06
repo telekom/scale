@@ -9,11 +9,11 @@
 
 | Property  | Attribute | Description              | Type      | Default |
 | --------- | --------- | ------------------------ | --------- | ------- |
-| `close`   | `close`   |                          | `string`  | `"x"`   |
-| `opened`  | `opened`  |                          | `boolean` | `false` |
-| `size`    | `size`    | (optional) Modal size    | `string`  | `""`    |
-| `theme`   | `theme`   | (optional) Modal theme   | `string`  | `""`    |
-| `variant` | `variant` | (optional) Modal variant | `string`  | `""`    |
+| `close`   | `close`   | (optional) Modal close   | `string`  | `'x'`   |
+| `opened`  | `opened`  | (optional) Modal opened  | `boolean` | `false` |
+| `size`    | `size`    | (optional) Modal size    | `string`  | `''`    |
+| `theme`   | `theme`   | (optional) Modal theme   | `string`  | `''`    |
+| `variant` | `variant` | (optional) Modal variant | `string`  | `''`    |
 
 
 ## Methods
@@ -45,7 +45,7 @@ Type: `Promise<void>`
 | --------------------------------- | ------------------------------------------- |
 | `--modal-actions-padding`         | Padding of the modal actions                |
 | `--modal-backdrop-background`     | Color of the backdrop of the modal          |
-| `--modal-background-color`        | Background color of the modal               |
+| `--modal-background`              | Background color of the modal               |
 | `--modal-body-border-bottom`      | Border bottom of the modal body             |
 | `--modal-body-padding`            | Padding of the modal body                   |
 | `--modal-border-radius`           | Border radius of the modal                  |

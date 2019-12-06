@@ -5,41 +5,28 @@ import classNames from 'classnames';
 
 @Component({
   tag: 't-card',
-  styleUrls: [
-    'card.css'
-  ],
-  shadow: true
+  styleUrls: ['card.css'],
+  shadow: true,
 })
 export class Card {
-  @Element() hostElement: HTMLStencilElement;
-  @Prop() size?: string = '';
-  @Prop() theme?: string = '';
-  @Prop() variant?: string = '';
-  @Prop() disabled?: boolean = false;
-  @Prop() deselected?: boolean = false;
-  @Prop() imageTop?: string;
-  @Prop() imageTopAlt?: string = '';
-  
+  @Element() public hostElement: HTMLStencilElement;
+  @Prop() public size?: string = '';
+  @Prop() public theme?: string = '';
+  @Prop() public variant?: string = '';
+  @Prop() public disabled?: boolean = false;
+  @Prop() public deselected?: boolean = false;
+  @Prop() public imageTop?: string;
+  @Prop() public imageTopAlt?: string = '';
+
   private hasSlotHeader: boolean;
   private hasSlotFooter: boolean;
 
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      'card',
-      this.size && `card--size-${this.size}`,
-      this.theme && `card--theme-${this.theme}`,
-      this.variant && `card--variant-${this.variant}`,
-      this.disabled && `card--disabled`,
-      this.deselected && `card--deselected`,
-    );
-  }
-
-  componentWillLoad() {
+  public componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
     this.hasSlotFooter = !!this.hostElement.querySelector('[slot="footer"]');
   }
 
-  render() {
+  public render() {
     return (
       <div class={this.getCssClassMap()}>
         {this.hasSlotHeader && (
@@ -48,10 +35,14 @@ export class Card {
           </div>
         )}
         {this.imageTop && (
-          <img class="card__img-top" src={this.imageTop} alt={this.imageTopAlt} />
+          <img
+            class="card__img-top"
+            src={this.imageTop}
+            alt={this.imageTopAlt}
+          />
         )}
         <div class="card__body">
-          <slot/>
+          <slot />
         </div>
         {this.hasSlotFooter && (
           <div class="card__footer">
@@ -59,6 +50,17 @@ export class Card {
           </div>
         )}
       </div>
+    );
+  }
+
+  private getCssClassMap(): CssClassMap {
+    return classNames(
+      'card',
+      this.size && `card--size-${this.size}`,
+      this.theme && `card--theme-${this.theme}`,
+      this.variant && `card--variant-${this.variant}`,
+      this.disabled && `card--disabled`,
+      this.deselected && `card--deselected`
     );
   }
 }
