@@ -44,6 +44,9 @@
   display: flex;
 }
 
+.alert__content {
+}
+
 .alert__headline {
   font-size: var(--alert-headline-font-size, 1rem);
   color: var(--alert-headline-color, white);
