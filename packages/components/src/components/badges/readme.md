@@ -9,7 +9,7 @@
 
 | Property  | Attribute | Description | Type      | Default |
 | --------- | --------- | ----------- | --------- | ------- |
-| `link`    | `link`    |             | `string`  | `""`    |
+| `link`    | `link`    |             | `string`  | `''`    |
 | `pill`    | `pill`    |             | `boolean` | `false` |
 | `size`    | `size`    |             | `string`  | `''`    |
 | `variant` | `variant` |             | `string`  | `''`    |
