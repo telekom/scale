@@ -51,30 +51,30 @@ export class Modal {
 
     return (
       <div class={this.getCssClassMap()}>
-        <div class='modal__backdrop' onClick={this.closeModal}></div>
+        <div class="modal__backdrop" onClick={this.closeModal}></div>
 
-        <div class='modal'>
+        <div class="modal">
           {this.hasSlotHeader /* istanbul ignore next */ && (
-            <div class='modal__header'>
-              <slot name='header' />
-              <a class='modal__close' onClick={this.closeModal}>
+            <div class="modal__header">
+              <slot name="header" />
+              <a class="modal__close" onClick={this.closeModal}>
                 {this.close}
               </a>
             </div>
           )}
 
-          <div class='modal__body'>
+          <div class="modal__body">
             <slot />
             {!this.hasSlotHeader && (
-              <a class='modal__close' onClick={this.closeModal}>
+              <a class="modal__close" onClick={this.closeModal}>
                 {this.close}
               </a>
             )}
           </div>
 
           {this.hasSlotActions /* istanbul ignore next */ && (
-            <div class='modal__actions'>
-              <slot name='modal-actions' />
+            <div class="modal__actions">
+              <slot name="modal-actions" />
             </div>
           )}
         </div>

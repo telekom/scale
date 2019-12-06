@@ -1,56 +1,44 @@
-import {Component, Prop, h, Method} from '@stencil/core';
-import {CssClassMap} from '../../utils/utils';
+import { Component, Prop, h, Method } from '@stencil/core';
+import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
 @Component({
   tag: 't-alert',
-  styleUrls: [
-    'alert.css'
-  ],
-  shadow: true
+  styleUrls: ['alert.css'],
+  shadow: true,
 })
 export class Alert {
   /** (required) Alert class */
-  @Prop() customClass?: string = '';
+  @Prop() public customClass?: string = '';
   /** (optional) Alert size */
-  @Prop() size?: string = '';
+  @Prop() public size?: string = '';
   /** (optional) Alert theme */
-  @Prop() theme?: string = '';
+  @Prop() public theme?: string = '';
   /** (optional) Alert variant */
-  @Prop() variant?: string = '';
+  @Prop() public variant?: string = '';
   /** (optional) Alert title */
-  @Prop({reflectToAttr: true}) headline: string;
+  @Prop({ reflectToAttr: true }) public headline: string;
   /** (required) Alert opened */
-  @Prop({reflectToAttr: true}) opened: boolean;
+  @Prop({ reflectToAttr: true }) public opened: boolean;
   /** (optional) Alert timeout */
-  @Prop() timeout?: boolean | number = false;
+  @Prop() public timeout?: boolean | number = false;
   /** (optional) Alert icon */
-  @Prop() icon?: string = '';
+  @Prop() public icon?: string = '';
   /** (required) Alert close */
-  @Prop() close?: string = '';
-
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      'alert',
-      this.customClass && this.customClass,
-      this.size && `alert--size-${this.size}`,
-      this.theme && `alert--theme-${this.theme}`,
-      this.variant && `alert--variant-${this.variant}`,
-    );
-  }
+  @Prop() public close?: string = '';
 
   private defaultTimeout = 2000;
 
-  onCloseAlert = () => {
+  public onCloseAlert = () => {
     this.opened = false;
   };
 
   @Method()
-  async open() {
+  public async open() {
     this.opened = true;
   }
 
-  onCloseAlertWithTimeout = () => {
+  public onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
       if (typeof this.timeout === 'number') {
         setTimeout(this.onCloseAlert, this.timeout);
@@ -58,11 +46,11 @@ export class Alert {
         setTimeout(this.onCloseAlert, this.defaultTimeout);
       }
     } else {
-      return null
+      return null;
     }
   };
 
-  render() {
+  public render() {
     this.onCloseAlertWithTimeout();
 
     if (!this.opened) {
@@ -70,26 +58,29 @@ export class Alert {
     }
 
     return (
-
       <div class={this.getCssClassMap()}>
         <div class="alert__body">
-          <div class="alert__icon">
-            {this.icon}
-          </div>
+          <div class="alert__icon">{this.icon}</div>
           <div class="alert__content">
-            <div class="alert__headline">
-              {this.headline}
-            </div>
-            <slot/>
+            <div class="alert__headline">{this.headline}</div>
+            <slot />
           </div>
         </div>
 
         <a class="alert__close" onClick={this.onCloseAlert}>
           {this.close}
         </a>
-
       </div>
     );
   }
-}
 
+  private getCssClassMap(): CssClassMap {
+    return classNames(
+      'alert',
+      this.customClass && this.customClass,
+      this.size && `alert--size-${this.size}`,
+      this.theme && `alert--theme-${this.theme}`,
+      this.variant && `alert--variant-${this.variant}`
+    );
+  }
+}
