@@ -40,8 +40,8 @@ export class InputText {
 
   public render() {
     return (
-      <div>
-        <div class={this.getCssClassMap()}>
+      <div class={this.getCssClassMap()}>
+        <div>
           <input
             type="text"
             class="input-text__input"

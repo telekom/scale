@@ -123,6 +123,43 @@
     <h3>Input text</h3>
     <t-input-text></t-input-text>
 
+    <h3>Input text with text validator</h3>
+    <t-input-text id="input-text-validator"></t-input-text>
+
+    <script>
+        const inputTextValidator = document.getElementById('input-text-validator');
+        inputTextValidator.validator = ['text']
+    </script>
+
+    <h3>Input text with number validator</h3>
+    <t-input-text id="input-number-validator"></t-input-text>
+
+    <script>
+        const inputNumberValidator = document.getElementById('input-number-validator');
+        inputNumberValidator.validator = ['number']
+    </script>
+
+    <h3>Input text with email validator</h3>
+    <t-input-text id="input-email-validator"></t-input-text>
+
+    <script>
+        const inputEmailValidator = document.getElementById('input-email-validator');
+        inputEmailValidator.validator = ['email']
+    </script>
+
+    <h3>Input text with multiple validators</h3>
+    <t-input-text id="input-multiple-validators"></t-input-text>
+
+    <script>
+        const inputMultipleValidators = document.getElementById('input-multiple-validators');
+        inputMultipleValidators.validator = ['text', 'email', {
+            name: 'length',
+            options: {
+                min: 6
+            }
+        }]
+    </script>
+
     <h3>Tag</h3>
     <t-tag>This is a tag</t-tag>
     <h3>Tag - primary tag</h3>
