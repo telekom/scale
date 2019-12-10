@@ -24,7 +24,8 @@
     "lint:fix": "yarn lint:style --fix",
     "lint:types": "tsc --noEmit",
     "lint:style": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "lint:format": "prettier --list-different \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\""
+    "lint:format": "prettier --list-different \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
+    "verify": "yarn format && yarn lint:fix"
   },
   "devDependencies": {
     "@stencil/core": "^1.8.1",

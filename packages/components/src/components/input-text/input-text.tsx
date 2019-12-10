@@ -1,4 +1,4 @@
-import { Component, Prop, Event, h, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, h, EventEmitter, State } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import {
@@ -22,6 +22,8 @@ export class InputText {
 
   @Prop() public theme: string;
 
+  @State() public touched: boolean = false;
+
   // tslint:disable-next-line: variable-name
   public _validator: Validator<string> = defaultValidator;
 
@@ -36,6 +38,7 @@ export class InputText {
   public handleChange(event) {
     this.value = event.target ? event.target.value : null;
     this.changed.emit(this.value);
+    this.touched = true;
   }
 
   public render() {
@@ -47,7 +50,7 @@ export class InputText {
           value={this.value}
           onInput={event => this.handleChange(event)}
         />
-        {!this._validator.validate(this.value) ? (
+        {this.touched && !this._validator.validate(this.value) ? (
           <span class="input-text__validation">
             {this._validator.errorMessage}
           </span>

@@ -1,4 +1,4 @@
-import { defaultValidator, combineValidators } from './validator';
+import { defaultValidator } from './validator';
 
 describe('defaultValidator', () => {
   it('returns default validator', () => {
