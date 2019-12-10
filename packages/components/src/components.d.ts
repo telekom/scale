@@ -7,7 +7,10 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  Validator,
+  ValidatorEntry,
+} from './validators';
 
 export namespace Components {
   interface TAlert {
@@ -88,7 +91,11 @@ export namespace Components {
     'theme'?: string;
     'variant'?: string;
   }
-  interface TInputText {}
+  interface TInputText {
+    'theme': string;
+    'validator': Array<string | ValidatorEntry | Validator<string>>;
+    'value': string;
+  }
   interface TLink {
     /**
     * (optional) link disabled
@@ -318,7 +325,12 @@ declare namespace LocalJSX {
     'theme'?: string;
     'variant'?: string;
   }
-  interface TInputText {}
+  interface TInputText {
+    'onChanged'?: (event: CustomEvent<string>) => void;
+    'theme'?: string;
+    'validator'?: Array<string | ValidatorEntry | Validator<string>>;
+    'value'?: string;
+  }
   interface TLink {
     /**
     * (optional) link disabled
