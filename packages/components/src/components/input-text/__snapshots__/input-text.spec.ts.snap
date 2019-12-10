@@ -4,9 +4,7 @@ exports[`InputText should match snapshot 1`] = `
 <t-input-text>
   <mock:shadow-root>
     <div class="input-text">
-      <div>
-        <input class="input-text__input" type="text">
-      </div>
+      <input class="input-text__input" type="text">
     </div>
   </mock:shadow-root>
   Label

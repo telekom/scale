@@ -1,6 +1,6 @@
 import {
   LengthValidator,
-  TextValidator,
+  RequiredValidator,
   NumberValidator,
   EmailValidator,
 } from './validators';
@@ -39,7 +39,7 @@ describe('LengthValidator', () => {
   );
 });
 
-describe('TextValidator', () => {
+describe('RequiredValidator', () => {
   const results: Array<{ value: string; result: boolean }> = [
     { value: 'ok', result: true },
     { value: '', result: false },
@@ -47,7 +47,7 @@ describe('TextValidator', () => {
 
   results.forEach(result =>
     it(resultFormat(result), () => {
-      expect(TextValidator.validate(result.value)).toEqual(result.result);
+      expect(RequiredValidator.validate(result.value)).toEqual(result.result);
     })
   );
 });

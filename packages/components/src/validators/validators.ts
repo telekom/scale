@@ -1,7 +1,7 @@
 import { Validator } from './validator';
 
 export enum ValidatorName {
-  text = 'text',
+  required = 'required',
   number = 'number',
   email = 'email',
   length = 'length',
@@ -33,11 +33,11 @@ export function LengthValidator(min: number, max: number): Validator<string> {
   };
 }
 
-export const TextValidator: Validator<string> = {
+export const RequiredValidator: Validator<string> = {
   validate: (value: string) => {
     return !!(value && value.length > 0);
   },
-  errorMessage: 'You must provide a text entry',
+  errorMessage: 'You must provide an entry',
 };
 
 export const NumberValidator: Validator<string> = {

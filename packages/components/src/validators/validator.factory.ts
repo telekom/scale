@@ -6,7 +6,7 @@ import {
 } from './validator';
 import {
   ValidatorName,
-  TextValidator,
+  RequiredValidator,
   NumberValidator,
   EmailValidator,
   LengthValidator,
@@ -32,8 +32,8 @@ export function getValidator<A>(
 export function validatorFactory(name: string, options?: any): Validator<any> {
   options = options || {};
   switch (name) {
-    case ValidatorName.text:
-      return TextValidator;
+    case ValidatorName.required:
+      return RequiredValidator;
     case ValidatorName.number:
       return NumberValidator;
     case ValidatorName.email:
