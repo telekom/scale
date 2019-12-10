@@ -41,16 +41,16 @@ export class InputText {
   public render() {
     return (
       <div class={this.getCssClassMap()}>
-        <div>
-          <input
-            type="text"
-            class="input-text__input"
-            value={this.value}
-            onInput={event => this.handleChange(event)}
-          />
-        </div>
+        <input
+          type="text"
+          class="input-text__input"
+          value={this.value}
+          onInput={event => this.handleChange(event)}
+        />
         {!this._validator.validate(this.value) ? (
-          <span class="validation-error">{this._validator.errorMessage}</span>
+          <span class="input-text__validation">
+            {this._validator.errorMessage}
+          </span>
         ) : null}
       </div>
     );

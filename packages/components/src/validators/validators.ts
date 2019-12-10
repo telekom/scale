@@ -26,10 +26,10 @@ export function LengthValidator(min: number, max: number): Validator<string> {
       min && max
         ? `You must enter between ${min} and ${max} characters`
         : min
-          ? `You must enter at least ${min} characters`
-          : max
-            ? `You must enter less then ${max} characters`
-            : '',
+        ? `You must enter at least ${min} characters`
+        : max
+        ? `You must enter less then ${max} characters`
+        : '',
   };
 }
 
