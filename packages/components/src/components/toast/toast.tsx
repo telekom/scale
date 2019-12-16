@@ -1,19 +1,19 @@
-import { Component, Prop, Method, h } from "@stencil/core";
-import { CssClassMap } from "../../utils/utils";
-import classNames from "classnames";
-import { formatDistance, subSeconds } from "date-fns";
+import { Component, Prop, Method, h } from '@stencil/core';
+import { CssClassMap } from '../../utils/utils';
+import classNames from 'classnames';
+import { formatDistance, subSeconds } from 'date-fns';
 
 @Component({
-  tag: "t-toast",
-  styleUrls: ["toast.css"],
-  shadow: true
+  tag: 't-toast',
+  styleUrls: ['toast.css'],
+  shadow: true,
 })
 export class Toast {
   /** (required) Alert class */
-  @Prop() customClass?: string = "";
-  @Prop() size?: string = "";
-  @Prop() theme?: string = "";
-  @Prop() variant?: string = "";
+  @Prop() customClass?: string = '';
+  @Prop() size?: string = '';
+  @Prop() theme?: string = '';
+  @Prop() variant?: string = '';
   @Prop({ reflectToAttr: true }) opened?: boolean;
   @Prop() autohide?: boolean = true;
   @Prop() animated?: boolean = true;
@@ -22,7 +22,7 @@ export class Toast {
 
   private getCssClassMap(): CssClassMap {
     return classNames(
-      "toast",
+      'toast',
       this.customClass && this.customClass,
       this.size && `toast--size-${this.size}`,
       this.theme && `toast--theme-${this.theme}`,
@@ -61,7 +61,7 @@ export class Toast {
     if (this.myTimeout === undefined) {
       if (this.opened && this.autohide !== false) {
         this.myTimeout = setTimeout(this.onCloseToast, this.autohideTime);
-        console.log("myTimeout", this.myTimeout);
+        console.log('myTimeout', this.myTimeout);
         return;
       } else {
         return null;
@@ -78,16 +78,16 @@ export class Toast {
 
     return (
       <div class={this.getCssClassMap()}>
-        <div class='toast'>
-          <div class='toast__header'>
-            <slot name='header' />
+        <div class="toast">
+          <div class="toast__header">
+            <slot name="header" />
             header
             <small>{this.getTime()}</small>
             <a onClick={this.onCloseToast}>
-              <span aria-hidden='true'>&times;</span>
+              <span aria-hidden="true">&times;</span>
             </a>
           </div>
-          <div class='toast__body'>
+          <div class="toast__body">
             <slot />
           </div>
         </div>
