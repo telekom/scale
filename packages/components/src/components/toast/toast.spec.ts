@@ -34,7 +34,9 @@ describe('Toast', () => {
   it('should close the Toast', () => {
     expect(element.opened).toBe(undefined);
     element.onCloseToast();
-    expect(element.opened).toBe(false);
+    setTimeout(() => {
+      expect(element.opened).toBe(false);
+    }, 10);
   });
 
   it('should open the Toast', () => {
@@ -48,11 +50,14 @@ describe('Toast', () => {
     element.opened = true;
     element.setToastTimeout();
 
-    expect(setTimeout).toHaveBeenCalledTimes(1);
-    expect(setTimeout).toHaveBeenLastCalledWith(
-      expect.any(Function),
-      element.autohideTime
-    );
+    setTimeout(() => {
+      expect(setTimeout).toHaveBeenCalledTimes(1);
+      expect(setTimeout).toHaveBeenLastCalledWith(
+        expect.any(Function),
+        element.autohideTime
+      );
+    }, 10);
+
   });
 
   it('should not hide the toast', () => {
@@ -66,8 +71,11 @@ describe('Toast', () => {
     element.myTimeout = 500;
     element.onCloseToast();
 
-    expect(clearTimeout).toHaveBeenCalledTimes(1);
-    expect(element.myTimeout).toEqual(undefined);
+    setTimeout(() => {
+      expect(clearTimeout).toHaveBeenCalledTimes(1);
+      expect(element.myTimeout).toEqual(undefined);
+    }, 10);
+
   });
 
   it('should have a default css class', () => {
