@@ -1,4 +1,4 @@
-import { Component, Prop, Method, h } from '@stencil/core';
+import { Component, Prop, Method, h, State, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { formatDistance, subSeconds } from 'date-fns';
@@ -15,29 +15,49 @@ export class Toast {
   @Prop() public theme?: string = '';
   @Prop() public variant?: string = '';
   @Prop({ reflectToAttr: true }) public opened?: boolean;
-  @Prop() public autohide?: boolean = true;
+  @Prop() public autoHide?: boolean | number = false;
   @Prop() public animated?: boolean = true;
   /** (optional) Toast time */
   @Prop() public time?: number;
+  @Prop() public positionTop?: number = 12;
+  @Prop() public positionRight?: number = 12;
+  @Prop() public fadeDuration?: number = 500;
+  @State() public progress: number = 0;
+  @State() public toastHeightWithOffset: number = 0;
 
-  private autohideTime = 5000;
-  private myTimeout;
+  @Element() private element: HTMLElement;
+
+  private hideToast: boolean = false;
+
+  private timerId = null;
+
+  public componentDidLoad() {
+    this.getToastHeightWithOffset();
+  }
 
   public componentDidUnload() {
-    if (this.myTimeout) {
-      clearTimeout(this.myTimeout);
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+      this.timerId = null;
+      this.opened = false;
+      this.progress = 0;
     }
   }
 
   public onCloseToast = () => {
-    this.opened = false;
-    this.myTimeout = undefined;
-    clearTimeout(this.myTimeout);
+    clearInterval(this.timerId);
+    this.hideToast = true;
+    setTimeout(() => {
+      this.timerId = null;
+      this.opened = false;
+      this.progress = 0;
+    }, this.fadeDuration);
   };
 
   @Method()
   public async openToast() {
     this.opened = true;
+    this.hideToast = false;
   }
 
   public getTime = () => {
@@ -48,40 +68,96 @@ export class Toast {
   };
 
   public setToastTimeout = () => {
-    if (this.myTimeout === undefined) {
-      if (this.opened && this.autohide !== false) {
-        this.myTimeout = setTimeout(this.onCloseToast, this.autohideTime);
-        return;
-      } else {
-        return null;
-      }
+    if (this.opened && this.autoHide !== false && !this.timerId) {
+      this.timerId = setInterval(() => {
+        this.progress += 1 / (this.getAutoHide() / 1000);
+        if (this.progress >= 100) {
+          this.onCloseToast();
+        }
+      }, 10);
     }
   };
 
   public render() {
     this.setToastTimeout();
-
-    if (!this.opened) {
-      return null;
-    }
-
     return (
       <div class={this.getCssClassMap()}>
-        <div class="toast">
-          <div class="toast__header">
-            <slot name="header" />
-            header
-            <small>{this.getTime()}</small>
-            <a onClick={this.onCloseToast}>
-              <span aria-hidden="true">&times;</span>
-            </a>
+        <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
+        <div class="toast__header">
+          <slot name="header" />
+          header
+          <small>{this.getTime()}</small>
+          <a onClick={this.onCloseToast}>
+            <span aria-hidden="true">&times;</span>
+          </a>
+        </div>
+        {this.autoHide && (
+          <div class="toast__progress" style={{ width: `${this.progress}%` }}>
+            &nbsp;
           </div>
-          <div class="toast__body">
-            <slot />
-          </div>
+        )}
+        <div class="toast__body">
+          <slot />
         </div>
       </div>
     );
+  }
+
+  private animationStyle = offset => `
+    .toast {
+      right: ${this.positionRight}px;
+      top: -${offset}px;
+    }
+
+    .toast--show {
+      animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
+      animation-timing-function: ease-out;
+      top: ${this.positionTop}px;
+    }
+
+    .toast--hide {
+      animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        top: -${offset}px;
+      }
+      to {
+        opacity: 1;
+        top: ${this.positionTop}px;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        top: ${this.positionTop}px;
+      }
+      to {
+        opacity: 0;
+        top: -${offset}px;
+      }
+    }
+  `;
+
+  private getToastHeightWithOffset() {
+    const toastHeight = this.element.shadowRoot.querySelector('.toast')
+      .scrollHeight;
+    this.toastHeightWithOffset = toastHeight + this.positionTop;
+  }
+
+  private getAutoHide() {
+    if (
+      typeof this.autoHide === 'number' ||
+      typeof this.autoHide === 'string'
+    ) {
+      return Number(this.autoHide);
+    } else {
+      return 0;
+    }
   }
 
   private getCssClassMap(): CssClassMap {
@@ -90,7 +166,9 @@ export class Toast {
       this.customClass && this.customClass,
       this.size && `toast--size-${this.size}`,
       this.theme && `toast--theme-${this.theme}`,
-      this.variant && `toast--variant-${this.variant}`
+      this.variant && `toast--variant-${this.variant}`,
+      !!this.opened && 'toast--show',
+      !!this.hideToast && 'toast--hide'
     );
   }
 }

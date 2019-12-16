@@ -190,13 +190,16 @@ export namespace Components {
   }
   interface TToast {
     'animated'?: boolean;
-    'autohide'?: boolean;
+    'autoHide'?: boolean | number;
     /**
     * (required) Alert class
     */
     'customClass'?: string;
+    'fadeDuration'?: number;
     'openToast': () => Promise<void>;
     'opened'?: boolean;
+    'positionRight'?: number;
+    'positionTop'?: number;
     'size'?: string;
     'theme'?: string;
     /**
@@ -464,12 +467,15 @@ declare namespace LocalJSX {
   }
   interface TToast {
     'animated'?: boolean;
-    'autohide'?: boolean;
+    'autoHide'?: boolean | number;
     /**
     * (required) Alert class
     */
     'customClass'?: string;
+    'fadeDuration'?: number;
     'opened'?: boolean;
+    'positionRight'?: number;
+    'positionTop'?: number;
     'size'?: string;
     'theme'?: string;
     /**
