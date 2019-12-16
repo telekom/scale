@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should match snapshot 1`] = `
+<t-switch>
+  <mock:shadow-root>
+    <div class="switch"></div>
+  </mock:shadow-root>
+  /t-switch&gt;
+</t-switch>
+`;

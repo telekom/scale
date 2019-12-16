@@ -1,0 +1,77 @@
+/**
+* @prop --switch-margin: Margin of the switch
+* @prop --switch-display: Display of the switch
+* @prop --switch-position: Position of the switch
+* @prop --switch-width: Width of the switch
+* @prop --switch-height: Height of the switch
+* @prop --switch-border: Border of the switch
+* @prop --switch-outline: Outline of the switch
+* @prop --switch-border-radius: Border radius of the switch
+* @prop --switch-background: Background of the switch
+* @prop --switch-cursor: Cursor of the switch
+* @prop --switch-transition: Transition radius of the switch
+* @prop --switch-vertical-align: Vertical Align of the switch
+* @prop --switch-after-content: Content of the switch after
+* @prop --switch-after-position: Position of the switch after
+* @prop --switch-after-top: Top of the switch after
+* @prop --switch-after-left: Left of the switch after
+* @prop --switch-after-border-radius: Border radius of the switch after
+* @prop --switch-after-transition: Transition radius of the switch after
+* @prop --switch-after-width: Width of the switch after
+* @prop --switch-after-height: Height of the switch after
+* @prop --switch-after-background-color: Background color of the switch after
+
+* @prop --switch-active-border-color: Border color of the switch active
+* @prop --switch-active-background-color: Background color of the switch active
+* @prop --switch-active-after-left: Left of the switch active after
+* @prop --switch-active-after-margin-left: Margin left of the switch active after
+* @prop --switch-disabled-cursor: Cursor of the switch disabled
+* @prop --switch-disabled-opacity: Opacity of the switch disabled
+
+*/
+
+.switch {
+  margin: var(--switch-margin, 0);
+  display: var(--switch-display, inline-block);
+  position: var(--switch-position, relative);
+  width: var(--switch-width, 40px);
+  height: var(--switch-height, 20px);
+  border: var(--switch-border, 1px solid #dcdfe6);
+  outline: var(--switch-outline, none);
+  border-radius: var(--switch-border-radius, 10px);
+  background: var(--switch-background, #dcdfe6);
+  cursor: var(--switch-cursor, pointer);
+  transition: var(
+    --switch-transition,
+    border-color 0.3s,
+    background-color 0.3s
+  );
+  vertical-align: var(--switch-vertical-align, middle);
+}
+
+.switch:after {
+  content: var(--switch-after-content, '');
+  position: var(--switch-after-position, absolute);
+  top: var(--switch-after-top, 2px);
+  left: var(--switch-after-left, 1px);
+  border-radius: var(--switch-after-border-radius, 100%);
+  transition: var(--switch-after-transition, all 0.3s);
+  width: var(--switch-after-width, 16px);
+  height: var(--switch-after-height, 16px);
+  background-color: var(--switch-after-background-color, #fff);
+}
+
+.switch--active {
+  border-color: var(--switch-active-border-color, #409eff);
+  background-color: var(--switch-active-background-color, #409eff);
+}
+
+.switch--active:after {
+  left: var(--switch-active-after-left, 100%);
+  margin-left: var(--switch-active-after-margin-left, -17px);
+}
+
+.switch--disabled {
+  cursor: var(--switch-disabled-cursor, not-allowed);
+  opacity: var(--switch-disabled-opacity, 0.5);
+}

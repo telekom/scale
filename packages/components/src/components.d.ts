@@ -164,6 +164,16 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TSwitch {
+    /**
+    * Switch props active optional
+    */
+    'active'?: boolean;
+    /**
+    * Switch props disabled optional
+    */
+    'disabled'?: boolean;
+  }
   interface TTag {
     /**
     * (optional) Tag on an <a> element
@@ -231,6 +241,12 @@ declare global {
     new (): HTMLTProgressBarElement;
   };
 
+  interface HTMLTSwitchElement extends Components.TSwitch, HTMLStencilElement {}
+  var HTMLTSwitchElement: {
+    prototype: HTMLTSwitchElement;
+    new (): HTMLTSwitchElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -245,6 +261,7 @@ declare global {
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
     't-progress-bar': HTMLTProgressBarElement;
+    't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
   }
 }
@@ -397,6 +414,16 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TSwitch {
+    /**
+    * Switch props active optional
+    */
+    'active'?: boolean;
+    /**
+    * Switch props disabled optional
+    */
+    'disabled'?: boolean;
+  }
   interface TTag {
     /**
     * (optional) Tag on an <a> element
@@ -421,6 +448,7 @@ declare namespace LocalJSX {
     't-link': TLink;
     't-modal': TModal;
     't-progress-bar': TProgressBar;
+    't-switch': TSwitch;
     't-tag': TTag;
   }
 }
@@ -439,6 +467,7 @@ declare module "@stencil/core" {
       't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
       't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
+      't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
     }
   }
