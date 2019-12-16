@@ -1,5 +1,4 @@
 import { newE2EPage } from '@stencil/core/testing';
-import { execFile } from 'child_process';
 
 describe('t-switch', () => {
   it('renders', async () => {

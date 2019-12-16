@@ -17,8 +17,7 @@ export class Switch {
     if (this.disabled) {
       return;
     }
-    const currentActiveState = this.active;
-    this.active = !currentActiveState;
+    this.active = !this.active;
   };
 
   public render() {

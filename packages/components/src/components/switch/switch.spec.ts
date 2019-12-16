@@ -1,4 +1,4 @@
-import { newSpecPage, newE2EPage } from '@stencil/core/testing';
+import { newSpecPage } from '@stencil/core/testing';
 import { Switch } from './switch';
 
 describe('Switch', () => {
@@ -20,8 +20,22 @@ describe('Switch', () => {
     expect(element.getCssClassMap()).toContain('switch--active');
   });
 
-  it('should have class disabled ', () => {
+  it('should have class disabled', () => {
     element.disabled = true;
     expect(element.getCssClassMap()).toContain('switch--disabled');
+  });
+
+  it('should have toggle active state', () => {
+    element.disabled = false;
+    element.active = true;
+    element.toggleSwitch();
+    expect(element.active).toBe(false);
+  });
+
+  it('should not toggle active state if disabled', () => {
+    element.disabled = true;
+    element.active = true;
+    element.toggleSwitch();
+    expect(element.active).toBe(true);
   });
 });
