@@ -57,7 +57,6 @@ describe('Toast', () => {
         element.autohideTime
       );
     }, 10);
-
   });
 
   it('should not hide the toast', () => {
@@ -75,7 +74,6 @@ describe('Toast', () => {
       expect(clearTimeout).toHaveBeenCalledTimes(1);
       expect(element.myTimeout).toEqual(undefined);
     }, 10);
-
   });
 
   it('should have a default css class', () => {
