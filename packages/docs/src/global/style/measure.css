@@ -1,0 +1,11 @@
+.measure-xl {
+  max-width: 720px;
+}
+
+.measure-lg {
+  max-width: 660px;
+}
+
+.measure-md {
+  max-width: 460px;
+}

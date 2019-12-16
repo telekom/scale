@@ -1,0 +1,32 @@
+[
+  {
+    "text": "Introduction",
+    "children": [
+      {
+        "text": "Why Telements",
+        "filePath": "/assets/docs/introduction/why-telements.json",
+        "url": "/docs/introduction"
+      },
+      {
+        "text": "Getting Started",
+        "filePath": "/assets/docs/introduction/getting-started.json",
+        "url": "/docs/getting-started"
+      }
+    ]
+  },
+  {
+    "text": "Components",
+    "children": [
+      {
+        "text": "Button",
+        "filePath": "/assets/docs/components/button.json",
+        "url": "/docs/button"
+      },
+      {
+        "text": "New",
+        "filePath": "/assets/docs/components/new.json",
+        "url": "/docs/new"
+      }
+    ]
+  }
+]
