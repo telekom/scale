@@ -451,7 +451,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TTooltip extends JSXBase.HTMLAttributes<HTMLTTooltipElement> {
+  interface TTooltip {
     'delay'?: number | object;
     'offset'?: string | number;
     'placement'?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
@@ -489,6 +489,7 @@ declare module "@stencil/core" {
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
+      't-tooltip': LocalJSX.TTooltip & JSXBase.HTMLAttributes<HTMLTTooltipElement>;
     }
   }
 }
