@@ -10,58 +10,47 @@ import { formatDistance, subSeconds } from 'date-fns';
 })
 export class Toast {
   /** (required) Alert class */
-  @Prop() customClass?: string = '';
-  @Prop() size?: string = '';
-  @Prop() theme?: string = '';
-  @Prop() variant?: string = '';
-  @Prop({ reflectToAttr: true }) opened?: boolean;
-  @Prop() autohide?: boolean = true;
-  @Prop() animated?: boolean = true;
+  @Prop() public customClass?: string = '';
+  @Prop() public size?: string = '';
+  @Prop() public theme?: string = '';
+  @Prop() public variant?: string = '';
+  @Prop({ reflectToAttr: true }) public opened?: boolean;
+  @Prop() public autohide?: boolean = true;
+  @Prop() public animated?: boolean = true;
   /** (optional) Toast time */
-  @Prop() time?: number;
-
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      'toast',
-      this.customClass && this.customClass,
-      this.size && `toast--size-${this.size}`,
-      this.theme && `toast--theme-${this.theme}`,
-      this.variant && `toast--variant-${this.variant}`
-    );
-  }
+  @Prop() public time?: number;
 
   private autohideTime = 5000;
   private myTimeout;
 
-  componentDidUnload() {
+  public componentDidUnload() {
     if (this.myTimeout) {
       clearTimeout(this.myTimeout);
     }
   }
 
-  onCloseToast = () => {
+  public onCloseToast = () => {
     this.opened = false;
     this.myTimeout = undefined;
     clearTimeout(this.myTimeout);
   };
 
   @Method()
-  async openToast() {
+  public async openToast() {
     this.opened = true;
   }
 
-  getTime = () => {
+  public getTime = () => {
     const formattedTime =
       this.time &&
       formatDistance(subSeconds(this.time, 3), new Date(), { addSuffix: true });
     return formattedTime;
   };
 
-  setToastTimeout = () => {
+  public setToastTimeout = () => {
     if (this.myTimeout === undefined) {
       if (this.opened && this.autohide !== false) {
         this.myTimeout = setTimeout(this.onCloseToast, this.autohideTime);
-        console.log('myTimeout', this.myTimeout);
         return;
       } else {
         return null;
@@ -69,7 +58,7 @@ export class Toast {
     }
   };
 
-  render() {
+  public render() {
     this.setToastTimeout();
 
     if (!this.opened) {
@@ -92,6 +81,16 @@ export class Toast {
           </div>
         </div>
       </div>
+    );
+  }
+
+  private getCssClassMap(): CssClassMap {
+    return classNames(
+      'toast',
+      this.customClass && this.customClass,
+      this.size && `toast--size-${this.size}`,
+      this.theme && `toast--theme-${this.theme}`,
+      this.variant && `toast--variant-${this.variant}`
     );
   }
 }
