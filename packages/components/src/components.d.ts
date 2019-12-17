@@ -209,26 +209,6 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TToast {
-    'animated'?: boolean;
-    'autoHide'?: boolean | number;
-    /**
-    * (required) Alert class
-    */
-    'customClass'?: string;
-    'fadeDuration'?: number;
-    'openToast': () => Promise<void>;
-    'opened'?: boolean;
-    'positionRight'?: number;
-    'positionTop'?: number;
-    'size'?: string;
-    'theme'?: string;
-    /**
-    * (optional) Toast time
-    */
-    'time'?: number;
-    'variant'?: string;
-  }
 }
 
 declare global {
@@ -299,12 +279,6 @@ declare global {
     prototype: HTMLTTagElement;
     new (): HTMLTTagElement;
   };
-
-  interface HTMLTToastElement extends Components.TToast, HTMLStencilElement {}
-  var HTMLTToastElement: {
-    prototype: HTMLTToastElement;
-    new (): HTMLTToastElement;
-  };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
     't-badge': HTMLTBadgeElement;
@@ -317,7 +291,6 @@ declare global {
     't-slider': HTMLTSliderElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
-    't-toast': HTMLTToastElement;
   }
 }
 
@@ -515,25 +488,6 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TToast extends JSXBase.HTMLAttributes<HTMLTToastElement> {
-    'animated'?: boolean;
-    'autoHide'?: boolean | number;
-    /**
-    * (required) Alert class
-    */
-    'customClass'?: string;
-    'fadeDuration'?: number;
-    'opened'?: boolean;
-    'positionRight'?: number;
-    'positionTop'?: number;
-    'size'?: string;
-    'theme'?: string;
-    /**
-    * (optional) Toast time
-    */
-    'time'?: number;
-    'variant'?: string;
-  }
 
   interface IntrinsicElements {
     't-alert': TAlert;
@@ -547,7 +501,6 @@ declare namespace LocalJSX {
     't-slider': TSlider;
     't-switch': TSwitch;
     't-tag': TTag;
-    't-toast': TToast;
   }
 }
 
