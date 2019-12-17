@@ -1,6 +1,7 @@
 .slider {
   display: block;
   width: 100%;
+  max-width: 400px;
 }
 
 .slider--track {
@@ -10,9 +11,12 @@
   background-color: #e4e7ed;
   border-radius: 3px;
   position: relative;
-  cursor: pointer;
   display: flex;
   align-items: center;
+}
+
+.slider--track-disabled {
+  opacity: 0.4;
 }
 
 .slider--bar {
@@ -41,6 +45,10 @@
   cursor: grab;
 }
 
+.slider--track-disabled .slider--button-wrapper:hover {
+  cursor: not-allowed;
+}
+
 .slider--button {
   width: 16px;
   height: 16px;
@@ -53,4 +61,8 @@
 
 .slider--button:hover {
   transform: scale(1.2);
+}
+
+.slider--track-disabled .slider--button:hover {
+  transform: none;
 }

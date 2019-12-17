@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should match snapshot 1`] = `
+<t-slider>
+  <mock:shadow-root>
+    <div class="slider">
+      <div class="slider--track">
+        <div class="slider--bar" style="width: undefined%;"></div>
+        <div class="slider--button-wrapper" style="left: undefined%;">
+          <div class="slider--button"></div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</t-slider>
+`;

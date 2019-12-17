@@ -165,11 +165,24 @@ export namespace Components {
   }
   interface TSlider {
     /**
-    * Slider props disabled optional
+    * disabled optional
     */
     'disabled'?: boolean;
+    /**
+    * the maximal value of the slider optional
+    */
     'max'?: number;
+    /**
+    * the minimal value of the slider optional
+    */
     'min'?: number;
+    /**
+    * the step size to increase of decrease when dragging slider
+    */
+    'step'?: number;
+    /**
+    * the binding value of the slider optional
+    */
     'value'?: number;
   }
   interface TSwitch {
@@ -458,11 +471,24 @@ declare namespace LocalJSX {
   }
   interface TSlider extends JSXBase.HTMLAttributes<HTMLTSliderElement> {
     /**
-    * Slider props disabled optional
+    * disabled optional
     */
     'disabled'?: boolean;
+    /**
+    * the maximal value of the slider optional
+    */
     'max'?: number;
+    /**
+    * the minimal value of the slider optional
+    */
     'min'?: number;
+    /**
+    * the step size to increase of decrease when dragging slider
+    */
+    'step'?: number;
+    /**
+    * the binding value of the slider optional
+    */
     'value'?: number;
   }
   interface TSwitch extends JSXBase.HTMLAttributes<HTMLTSwitchElement> {
