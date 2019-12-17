@@ -1,68 +1,108 @@
+/**
+* @prop --slider-display: Display of the slider
+* @prop --slider-width: Width of the slider
+* @prop --slider-max-width: Max Width of the slider
+* @prop --slider--track-width: Width of the slider track
+* @prop --slider--track-height: Height of the slider track
+* @prop --slider--track-margin: Margin of the slider track
+* @prop --slider--track-background-color: Background color of the slider track
+* @prop --slider--track-border-radius: Border radius of the slider track
+* @prop --slider--track-position: Position radius of the slider track
+* @prop --slider--track-display: Display of the slider track
+* @prop --slider--track-align-items: Align items of the slider track
+* @prop --slider--track-disabled-opacity:  Opacity of the slider track disabled
+* @prop --slider--bar-height: Height of the slider bar
+* @prop --slider--bar-background-color: Background color of the slider bar
+* @prop --slider--bar-border-top-left-radius: Border top left radius of the slider bar
+* @prop --slider--bar-border-bottom-left-radius: Border bottom left radius of the slider bar
+* @prop --slider--bar-position: Position of the slider bar
+* @prop --slider--button-wrapper-height: Height of the slider button wrapper
+* @prop --slider--button-wrapper-width: Width of the slider button wrapper
+* @prop --slider--button-wrapper-position: Position color of the slider button wrapper
+* @prop --slider--button-wrapper-z-index: Z index color of the slider  button wrapper
+* @prop --slider--button-wrapper-transform: Transform of the slider  button wrapper
+* @prop --slider--button-wrapper-background-color: Background Color of the slider button wrapper
+* @prop --slider--button-wrapper-text-align: Text  left align of the slider button wrapper
+* @prop --slider--button-wrapper-user-select: User select of the slider button wrapper
+* @prop --slider--button-wrapper-display: Display of the slider button wrapper
+* @prop --slider--button-wrapper-align-items: Align items of the slider button wrapper
+* @prop --slider--button-wrapper-hover-cursor:  Cursor of the slider button wrapper hover
+* @prop --slider--button-wrapper-disabled-cursor:  Cursor of the slider button wrapper disabled
+* @prop --slider--button-width: Width of the slider button
+* @prop --slider--button-height: Height of the slider button
+* @prop --slider--button-border: Border of the slider button
+* @prop --slider--button-background-color: Background color of the slider button
+* @prop --slider--button-border-radius: Border radius of the slider button
+* @prop --slider--button-transition: Transition of the slider button
+* @prop --slider--button-user-select: User select of the slider button
+* @prop --slider--button-hover-transform: Transform of the slider button hover
+* @prop --slider--button-disabled-hover-transform: Transform of the slider button disabled hover
+*/
+
 .slider {
-  display: block;
-  width: 100%;
-  max-width: 400px;
+  display: var(--slider-display, block);
+  width: var(--slider-width, 100%);
+  max-width: var(--slider-max-width, 400px);
 }
 
 .slider--track {
-  width: 100%;
-  height: 6px;
-  margin: 16px 0;
-  background-color: #e4e7ed;
-  border-radius: 3px;
-  position: relative;
-  display: flex;
-  align-items: center;
+  width: var(--slider--track-width, 100%);
+  height: var(--slider--track-height, 6px);
+  margin: var(--slider--track-margin, 16px 0);
+  background-color: var(--slider--track-background-color, #e4e7ed);
+  border-radius: var(--slider--track-border-radius, 3px);
+  position: var(--slider--track-position, relative);
+  display: var(--slider--track-display, flex);
+  align-items: var(--slider--track-align-items, center);
 }
 
 .slider--track-disabled {
-  opacity: 0.4;
+  opacity: var(--slider--track-disabled-opacity, 0.4);
 }
 
 .slider--bar {
-  height: 6px;
-  background-color: #409eff;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  position: absolute;
+  height: var(--slider--bar-height, 6px);
+  background-color: var(--slider--bar-background-color, #409eff);
+  border-top-left-radius: var(--slider--bar-border-top-left-radius, 3px);
+  border-bottom-left-radius: var(--slider--bar-border-bottom-left-radius, 3px);
+  position: var(--slider--bar-position, absolute);
 }
 
 .slider--button-wrapper {
-  height: 36px;
-  width: 36px;
-  position: absolute;
-  z-index: 100;
-  transform: translateX(-50%);
-  background-color: transparent;
-  text-align: center;
-  user-select: none;
-  line-height: normal;
-  display: flex;
-  align-items: center;
+  height: var(--slider--button-wrapper-height, 36px);
+  width: var(--slider--button-wrapper-width, 36px);
+  position: var(--slider--button-wrapper-position, absolute);
+  z-index: var(--slider--button-wrapper-z-index, 100);
+  transform: var(--slider--button-wrapper-transform, translateX(-50%));
+  background-color: var(--slider--button-wrapper-background-color, transparent);
+  text-align: var(--slider--button-wrapper-text-align, center);
+  user-select: var(--slider--button-wrapper-user-select, none);
+  display: var(--slider--button-wrapper-display, flex);
+  align-items: var(--slider--button-wrapper-align-items, center);
 }
 
 .slider--button-wrapper:hover {
-  cursor: grab;
+  cursor: var(--slider--button-wrapper-hover-cursor, grab);
 }
 
 .slider--track-disabled .slider--button-wrapper:hover {
-  cursor: not-allowed;
+  cursor: var(--slider--button-wrapper-disabled-cursor, not-allowed);
 }
 
 .slider--button {
-  width: 16px;
-  height: 16px;
-  border: 2px solid #409eff;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: 0.2s;
-  user-select: none;
+  width: var(--slider--button-width, 16px);
+  height: var(--slider--button-height, 16px);
+  border: var(--slider--button-border, 2px solid #409eff);
+  background-color: var(--slider--button-background-color, #fff);
+  border-radius: var(--slider--button-border-radius, 50%);
+  transition: var(--slider--button-transition 0.2s);
+  user-select: var(--slider--button-user-select, none);
 }
 
 .slider--button:hover {
-  transform: scale(1.2);
+  transform: var(--slider--button-hover-transform, scale(1.2));
 }
 
 .slider--track-disabled .slider--button:hover {
-  transform: none;
+  transform: var(--slider--button-disabled-hover, none);
 }
