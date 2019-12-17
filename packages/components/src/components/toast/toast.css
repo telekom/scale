@@ -1,0 +1,62 @@
+/**
+* @prop --toast-width: Width of the toast
+* @prop --toast-height: Height of the toast
+* @prop --toast-border-radius: Border radius of the toast
+* @prop --toast-box-shadow: Box shadow of the toast
+* @prop --toast-background: Background color of the toast
+* @prop --toast-body-padding: Padding of the toast body
+* @prop --toast-body-margin-bottom: Margin bottom of the toast body
+* @prop --toast-header-padding: Padding of the toast header
+* @prop --toast-header-border-bottom: Border bottom of the toast header
+* @prop --toast-header-font-size: Font size of the toast header
+* @prop --toast-header-margin: Margin of the toast header
+* @prop --toast-header-small-font-size: Font size of the small header
+* @prop --toast-header-small-margin-left: Margin left of the small header
+* @prop --toast-header-small-margin-top: Margin top of the small header
+*/
+
+.toast {
+  box-sizing: border-box;
+  width: var(--toast-width, 400px);
+  position: fixed;
+  border-radius: var(--toast-border-radius, 3px);
+  box-shadow: var(--toast-box-shadow, 0 2px 8px rgba(0, 0, 0, 0.26));
+  background: var(--toast-background, #fff);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.toast__body {
+  padding: var(--toast-body-padding, 1rem);
+}
+
+.toast__header {
+  padding: var(--toast-header-padding, 1rem);
+  border-bottom: var(--toast-header-border-bottom, 1px solid #ccc);
+  font-size: var(--toast-header-font-size, 1.25rem);
+  margin: var(--toast-header-margin, 0);
+  justify-content: space-between;
+  display: flex;
+}
+
+.toast__header a {
+  cursor: pointer;
+}
+
+.toast__header small {
+  font-size: var(--toast-header-small-font-size, 0.8rem);
+  margin-left: var(--toast-header-small-margin-left, 120px);
+  margin-top: var(--toast-header-small-margin-top, 5px);
+}
+
+.toast__progress {
+  background: red;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
