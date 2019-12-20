@@ -164,9 +164,10 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TStarRating {
+  interface TRating {
     'disabled'?: boolean;
     'range': number[];
+    'type'?: string;
   }
   interface TSwitch {
     /**
@@ -265,10 +266,10 @@ declare global {
     new (): HTMLTProgressBarElement;
   };
 
-  interface HTMLTStarRatingElement extends Components.TStarRating, HTMLStencilElement {}
-  var HTMLTStarRatingElement: {
-    prototype: HTMLTStarRatingElement;
-    new (): HTMLTStarRatingElement;
+  interface HTMLTRatingElement extends Components.TRating, HTMLStencilElement {}
+  var HTMLTRatingElement: {
+    prototype: HTMLTRatingElement;
+    new (): HTMLTRatingElement;
   };
 
   interface HTMLTSwitchElement extends Components.TSwitch, HTMLStencilElement {}
@@ -297,7 +298,7 @@ declare global {
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
     't-progress-bar': HTMLTProgressBarElement;
-    't-star-rating': HTMLTStarRatingElement;
+    't-rating': HTMLTRatingElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
     't-toast': HTMLTToastElement;
@@ -452,9 +453,10 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TStarRating {
+  interface TRating {
     'disabled'?: boolean;
     'range'?: number[];
+    'type'?: string;
   }
   interface TSwitch {
     /**
@@ -509,7 +511,7 @@ declare namespace LocalJSX {
     't-link': TLink;
     't-modal': TModal;
     't-progress-bar': TProgressBar;
-    't-star-rating': TStarRating;
+    't-rating': TRating;
     't-switch': TSwitch;
     't-tag': TTag;
     't-toast': TToast;
@@ -530,7 +532,7 @@ declare module "@stencil/core" {
       't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
       't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
-      't-star-rating': LocalJSX.TStarRating & JSXBase.HTMLAttributes<HTMLTStarRatingElement>;
+      't-rating': LocalJSX.TRating & JSXBase.HTMLAttributes<HTMLTRatingElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
       't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;

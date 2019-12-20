@@ -3684,11 +3684,6 @@ stealthy-require@^1.1.1:
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
 
-stencil-inline-svg@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/stencil-inline-svg/-/stencil-inline-svg-1.0.1.tgz#1ae2ae279f47b5d53efcdd5b1a3bf55a3e675177"
-  integrity sha512-0pi9bMta3uQjLdB+yrieZLLURAq25ZC3ZGGRy7C95mKalcZVltW3gokUVyIM4Sq1xDW2i667Pkxtk6hASarrnQ==
-
 string-length@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/string-length/-/string-length-2.0.0.tgz#d40dbb686a3ace960c1cffca562bf2c45f8363ed"

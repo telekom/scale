@@ -1,0 +1,49 @@
+.rating--star,
+.rating--emoji {
+  display: inline;
+  margin-right: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.rating--star:after {
+  content: '\2606';
+}
+.rating--emoji:after {
+  content: '😐';
+}
+.rating--star-selected-1,
+.rating--star-selected-2,
+.rating--star-selected-3,
+.rating--star-selected-4,
+.rating--star-selected-5,
+.rating--emoji-selected-1,
+.rating--emoji-selected-2,
+.rating--emoji-selected-3,
+.rating--emoji-selected-4,
+.rating--emoji-selected-5 {
+  color: #f7ba2a;
+}
+.rating--star-selected-1:after,
+.rating--star-selected-2:after,
+.rating--star-selected-3:after,
+.rating--star-selected-4:after,
+.rating--star-selected-5:after {
+  content: '\2605';
+}
+.rating--emoji-selected-1:after {
+  content: '🤒';
+}
+.rating--emoji-selected-2:after {
+  content: '😣';
+}
+.rating--emoji-selected-3:after {
+  content: '😐';
+}
+.rating--emoji-selected-4:after {
+  content: '😎';
+}
+.rating--emoji-selected-5:after {
+  content: '🤑';
+}

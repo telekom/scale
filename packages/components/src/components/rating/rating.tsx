@@ -1,14 +1,14 @@
 import { Component, h, Prop, State } from '@stencil/core';
-import star from './star.svg';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
 @Component({
-  tag: 't-star-rating',
-  styleUrl: 'star-rating.css',
+  tag: 't-rating',
+  styleUrl: 'rating.css',
   shadow: true,
 })
-export class StarRating {
+export class Rating {
+  @Prop() public type?: string;
   @Prop() public range = [1, 2, 3, 4, 5];
   @Prop() public disabled?: boolean = false;
 
@@ -40,7 +40,7 @@ export class StarRating {
 
   public render() {
     return (
-      <div class="star-rating">
+      <div class="rating--container">
         {this.range.map(val => {
           this.selected = val <= this.preSelectValue;
           return (
@@ -49,7 +49,6 @@ export class StarRating {
               onMouseEnter={() => this.handleMouseEnter(val)}
               onMouseLeave={() => this.handleMouseLeave(val)}
               onClick={() => this.handleClick(val)}
-              innerHTML={star}
             />
           );
         })}
@@ -59,8 +58,8 @@ export class StarRating {
 
   private getCssClassMap(): CssClassMap {
     return classNames(
-      'star-rating--svg-container',
-      this.selected && `star--selected`
+      `rating--${this.type}`,
+      this.selected && `rating--${this.type}-selected-${this.preSelectValue}`
     );
   }
 }

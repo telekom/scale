@@ -42,7 +42,6 @@
   "license": "MIT",
   "dependencies": {
     "@types/classnames": "^2.2.8",
-    "classnames": "^2.2.6",
-    "stencil-inline-svg": "^1.0.1"
+    "classnames": "^2.2.6"
   }
 }
