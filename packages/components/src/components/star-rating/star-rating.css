@@ -1,0 +1,9 @@
+.star-rating--svg-container {
+  display: inline;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.star--selected svg path {
+  fill: #f7ba2a;
+}
