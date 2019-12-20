@@ -28,13 +28,46 @@
 
 <body>
     <h1>Components</h1>
-    <h3>Alert without timeout</h3>
+
+    <h3>Toast</h3>
+
+    <t-button id="show-toast-auto-hide">show toast</t-button>
+    <t-toast id="enabled-toast-auto-hide" auto-hide="3000" position-top="36" position-right="36" fade-duration="500">
+        With auto hide
+    </t-toast>
+    <script>
+        const showToastAutoHide = document.getElementById('show-toast-auto-hide');
+        const enabledToastAutoHide = document.getElementById('enabled-toast-auto-hide');
+        showToastAutoHide.addEventListener('click', () => {
+            !enabledToastAutoHide.opened && enabledToastAutoHide.openToast();
+            var d = new Date();
+            d.setDate(d.getDate() - 5);
+            enabledToastAutoHide.time = d;
+        });
+    </script>
+
+    <t-button id="show-toast">show toast</t-button>
+    <t-toast id="enabled-toast" position-top="154" position-right="36" fade-duration="500">
+        No auto hide
+    </t-toast>
+    <script>
+        const showToast = document.getElementById('show-toast');
+        const enabledToast = document.getElementById('enabled-toast');
+        showToast.addEventListener('click', () => {
+            !enabledToast.opened && enabledToast.openToast();
+            var d = new Date();
+            d.setDate(d.getDate() - 5);
+            enabledToast.time = d;
+        });
+    </script>
+
+
+    <h3>Alert</h3>
     <t-button id="show-alert-btn-without-timeout">show alert without timeout
     </t-button>
     <t-alert id="alert-without-timeout" variant="danger" title="Help!" icon="!" close="x">
         This is only a warning - for your information!
     </t-alert>
-
     <script>
         const showAlertWithout = document.querySelector(
             '#show-alert-btn-without-timeout'

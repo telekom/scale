@@ -188,6 +188,26 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TToast {
+    'animated'?: boolean;
+    'autoHide'?: boolean | number;
+    /**
+    * (required) Alert class
+    */
+    'customClass'?: string;
+    'fadeDuration'?: number;
+    'openToast': () => Promise<void>;
+    'opened'?: boolean;
+    'positionRight'?: number;
+    'positionTop'?: number;
+    'size'?: string;
+    'theme'?: string;
+    /**
+    * (optional) Toast time
+    */
+    'time'?: number;
+    'variant'?: string;
+  }
   interface TTooltip {
     'delay'?: number | object;
     'offset'?: string | number;
@@ -259,6 +279,12 @@ declare global {
     new (): HTMLTTagElement;
   };
 
+  interface HTMLTToastElement extends Components.TToast, HTMLStencilElement {}
+  var HTMLTToastElement: {
+    prototype: HTMLTToastElement;
+    new (): HTMLTToastElement;
+  };
+
   interface HTMLTTooltipElement extends Components.TTooltip, HTMLStencilElement {}
   var HTMLTTooltipElement: {
     prototype: HTMLTTooltipElement;
@@ -275,6 +301,7 @@ declare global {
     't-progress-bar': HTMLTProgressBarElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
+    't-toast': HTMLTToastElement;
     't-tooltip': HTMLTTooltipElement;
   }
 }
@@ -451,6 +478,25 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TToast {
+    'animated'?: boolean;
+    'autoHide'?: boolean | number;
+    /**
+    * (required) Alert class
+    */
+    'customClass'?: string;
+    'fadeDuration'?: number;
+    'opened'?: boolean;
+    'positionRight'?: number;
+    'positionTop'?: number;
+    'size'?: string;
+    'theme'?: string;
+    /**
+    * (optional) Toast time
+    */
+    'time'?: number;
+    'variant'?: string;
+  }
   interface TTooltip {
     'delay'?: number | object;
     'offset'?: string | number;
@@ -469,6 +515,7 @@ declare namespace LocalJSX {
     't-progress-bar': TProgressBar;
     't-switch': TSwitch;
     't-tag': TTag;
+    't-toast': TToast;
     't-tooltip': TTooltip;
   }
 }
@@ -489,9 +536,8 @@ declare module "@stencil/core" {
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
+      't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;
       't-tooltip': LocalJSX.TTooltip & JSXBase.HTMLAttributes<HTMLTTooltipElement>;
     }
   }
 }
-
-
