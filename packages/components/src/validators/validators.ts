@@ -49,8 +49,8 @@ export const NumberValidator: Validator<string> = {
 
 export const EmailValidator: Validator<string> = {
   validate: (value: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    // !!(value && value.includes('@'));
+    const reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return reg.test(value.toLowerCase());
   },
   errorMessage: 'You must provide a valid email',
 };
