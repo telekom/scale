@@ -1,10 +1,35 @@
+/**
+ * @prop --badge-display: Display of the badge
+ * @prop --badge-padding: Padding of the badge
+ * @prop --badge-font-size: Font size of the badge
+ * @prop --badge-font-weight: Font weight of the badge
+ * @prop --badge-line-height: Line height of the badge
+ * @prop --badge-text-align: Text align of the badge
+ * @prop --badge-white-space: White space of the badge
+ * @prop --badge-vertical-align: Vertical align of the badge
+ * @prop --badge-border-radius: Border radius of the badge
+ * @prop --badge-transition: Transition of the badge
+ * @prop --badge-background-color: Background of the badge
+ * @prop --badge-color: Color of the text of the badge
+ * @prop --badge-pill-padding-right: Padding right of the pill of the badge
+ * @prop --badge-pill-padding-left: Padding left of the pill of the badge
+ * @prop --badge-pill-border-radius: Border radius of the pill of the badge
+ * @prop --badge-pill-background-color: Background color of the pill of the badge
+ * @prop --badge-pill-color: Color of the text of the pill of the badge
+ * @prop --badge-link-text-decoration: Text decoration of the link of the badge
+ * @prop --badge-link-hover-background: Hover background of the link of the badge
+ * @prop --badge-link-active-background: Active background of the link of the badge
+ * @prop --badge-link-focus-outline: Focus outline of the link of the badge
+ * @prop --badge-link-focus-box-shadow: Box shadow of the link of the badge 
+ */
+
 .badge {
   display: var(--badge-display, inline-block);
   padding: var(--badge-padding, 0.25em 0.4em);
   font-size: var(--badge-font-size, 90%);
   font-weight: var(--badge-font-weight, 700);
   line-height: var(--badge-line-height, 1);
-  text-align: var(--badge-text-allign, center);
+  text-align: var(--badge-text-align, center);
   white-space: var(--badge-white-space, nowrap);
   vertical-align: var(--badge-vertical-align, baseline);
   border-radius: var(--badge-border-radius, 0.25rem);

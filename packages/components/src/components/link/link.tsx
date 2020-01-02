@@ -8,15 +8,17 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Link {
-  /** (optional) link href */
+  /** (required) Link class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Link href */
   @Prop() public href?: string = '';
-  /** (optional) link disabled */
+  /** (optional) Disabled link */
   @Prop() public disabled?: boolean = false;
-  /** (optional) link variant */
+  /** (optional) Link underline */
   @Prop() public underline?: boolean = false;
-  /** (optional) link open a new tag */
+  /** (optional) Link open a new tag */
   @Prop() public openNewTab?: boolean = false;
-  /** (optional) link variant */
+  /** (optional) Link variant */
   @Prop() public variant?: string = '';
 
   public render() {
@@ -41,6 +43,7 @@ export class Link {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'link',
+      this.customClass && this.customClass,
       this.disabled && `link--disabled`,
       this.underline && 'link--underline',
       this.variant && `link--variant-${this.variant}`

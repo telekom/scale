@@ -33,6 +33,7 @@ export class Alert {
     this.opened = false;
   };
 
+  /** (required) Alert method: open() */
   @Method()
   public async open() {
     this.opened = true;

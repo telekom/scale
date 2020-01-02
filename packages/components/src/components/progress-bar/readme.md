@@ -9,11 +9,12 @@
 
 | Property      | Attribute      | Description                                 | Type      | Default     |
 | ------------- | -------------- | ------------------------------------------- | --------- | ----------- |
-| `percentage`  | `percentage`   | (required) progress percentage              | `number`  | `undefined` |
-| `showText`    | `show-text`    | (optional) show progress percentage text    | `boolean` | `undefined` |
-| `strokeWidth` | `stroke-width` | (optional) progress stroke width            | `number`  | `6`         |
-| `textInside`  | `text-inside`  | (optional) progress text display inside bar | `boolean` | `undefined` |
-| `variant`     | `variant`      | (optional) show progress variant            | `string`  | `undefined` |
+| `customClass` | `custom-class` | (required) Progress bar class               | `string`  | `''`        |
+| `percentage`  | `percentage`   | (required) Progress bar percentage          | `number`  | `undefined` |
+| `showText`    | `show-text`    | (optional) Progress bar percentage text     | `boolean` | `undefined` |
+| `strokeWidth` | `stroke-width` | (optional) Progress bar stroke width        | `number`  | `6`         |
+| `textInside`  | `text-inside`  | (optional) Progress text display inside bar | `boolean` | `undefined` |
+| `variant`     | `variant`      | (optional) Progress bar variant             | `string`  | `undefined` |
 
 
 ## CSS Custom Properties
@@ -30,7 +31,7 @@
 | `--progress-bar-inner-left`                       | Left of the progress bar inner                   |
 | `--progress-bar-inner-position`                   | Position of the progress bar inner               |
 | `--progress-bar-inner-text-color`                 | Text color of inside progress bar                |
-| `--progress-bar-inner-text-font-size`             | Text fond size of inside progress bar            |
+| `--progress-bar-inner-text-font-size`             | Text font size of inside progress bar            |
 | `--progress-bar-inner-text-padding`               | Text padding of inside progress bar              |
 | `--progress-bar-inner-top`                        | Top of the progress bar inner                    |
 | `--progress-bar-inner-transition`                 | Transition of the progress bar inner             |
@@ -49,7 +50,7 @@
 | `--progress-bar-outer-width`                      | Width of the progress bar outer                  |
 | `--progress-bar-text-color`                       | Text color of progress bar                       |
 | `--progress-bar-text-display`                     | Text display of progress bar                     |
-| `--progress-bar-text-font-size`                   | Text fond size of progress bar                   |
+| `--progress-bar-text-font-size`                   | Text font size of progress bar                   |
 | `--progress-bar-width`                            | Width of the progress bar                        |
 
 

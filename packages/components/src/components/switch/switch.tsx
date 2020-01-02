@@ -8,9 +8,13 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Switch {
-  /** Switch props active optional */
+  /** (required) Switch class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Switch theme */
+  @Prop() public theme?: string = '';
+  /** (optional) Active switch */
   @Prop() public active?: boolean = false;
-  /** Switch props disabled optional */
+  /** (optional) Disabled switch */
   @Prop() public disabled?: boolean = false;
 
   public toggleSwitch = () => {
@@ -27,6 +31,8 @@ export class Switch {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'switch',
+      this.customClass && this.customClass,
+      this.theme && `alert--theme-${this.theme}`,
       this.active && `switch--active`,
       this.disabled && `switch--disabled`
     );

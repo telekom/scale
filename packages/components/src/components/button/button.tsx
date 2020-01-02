@@ -8,6 +8,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Button {
+  /** (required) Button class */
+  @Prop() public customClass?: string = '';
   /** (optional) Button size */
   @Prop() public size?: string = '';
   /** (optional) Button theme */
@@ -19,11 +21,13 @@ export class Button {
   /** (optional) Deselected button */
   @Prop() public deselected?: boolean = false;
 
+  /** (optional) Button method: disable()  */
   @Method()
   public async disable() {
     this.disabled = true;
   }
 
+  /** (optional) Button method: enable()  */
   @Method()
   public async enable() {
     this.disabled = false;
@@ -40,6 +44,7 @@ export class Button {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'button',
+      this.customClass && this.customClass,
       this.size && `button--size-${this.size}`,
       this.theme && `button--theme-${this.theme}`,
       this.variant && `button--variant-${this.variant}`,

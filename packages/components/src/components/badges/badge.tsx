@@ -8,9 +8,15 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Badge {
+  /** (required) Badge class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Badge size */
   @Prop() public size?: string = '';
+  /** (optional) Badge variant */
   @Prop() public variant?: string = '';
+  /** (optional) Badge pill */
   @Prop() public pill?: boolean = false;
+  /** (optional) Badge link */
   @Prop() public link?: string = '';
 
   public render() {
@@ -31,6 +37,7 @@ export class Badge {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'badge',
+      this.customClass && this.customClass,
       this.size && `badge--size-${this.size}`,
       this.variant && `badge--variant-${this.variant}`,
       this.pill && `badge--pill`,

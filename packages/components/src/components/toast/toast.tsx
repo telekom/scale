@@ -9,22 +9,33 @@ import { formatDistance, subSeconds } from 'date-fns';
   shadow: true,
 })
 export class Toast {
-  /** (required) Alert class */
+  /** (required) Toast class */
   @Prop() public customClass?: string = '';
+  /** (optional) Toast size */
   @Prop() public size?: string = '';
+  /** (optional) Toast theme */
   @Prop() public theme?: string = '';
+  /** (optional) Toast variant */
   @Prop() public variant?: string = '';
+  /** (optional) Toast opened */
   @Prop({ reflectToAttr: true }) public opened?: boolean;
+  /** (optional) Toast autohide time */
   @Prop() public autoHide?: boolean | number = false;
+  /** (optional) Animated toast */
   @Prop() public animated?: boolean = true;
   /** (optional) Toast time */
   @Prop() public time?: number;
+  /** (optional) Toast position at the top */
   @Prop() public positionTop?: number = 12;
+  /** (optional) Toast position right */
   @Prop() public positionRight?: number = 12;
+  /** (optional) Toast fade duration */
   @Prop() public fadeDuration?: number = 500;
+  /** (optional) Toast state progress */
   @State() public progress: number = 0;
+  /** (optional) Toast state height with offset */
   @State() public toastHeightWithOffset: number = 0;
-
+  /** (optional) Toast HTML element */
   @Element() private element: HTMLElement;
 
   private hideToast: boolean = false;
@@ -54,6 +65,7 @@ export class Toast {
     }, this.fadeDuration);
   };
 
+  /** (optional) Toast method: openToast() */
   @Method()
   public async openToast() {
     this.opened = true;

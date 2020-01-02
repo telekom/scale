@@ -5,26 +5,26 @@ s# t-toast
 
 ## Properties
 
-| Property        | Attribute        | Description            | Type                | Default     |
-| --------------- | ---------------- | ---------------------- | ------------------- | ----------- |
-| `animated`      | `animated`       |                        | `boolean`           | `true`      |
-| `autoHide`      | `auto-hide`      |                        | `boolean \| number` | `false`     |
-| `customClass`   | `custom-class`   | (required) Alert class | `string`            | `''`        |
-| `fadeDuration`  | `fade-duration`  |                        | `number`            | `500`       |
-| `opened`        | `opened`         |                        | `boolean`           | `undefined` |
-| `positionRight` | `position-right` |                        | `number`            | `12`        |
-| `positionTop`   | `position-top`   |                        | `number`            | `12`        |
-| `size`          | `size`           |                        | `string`            | `''`        |
-| `theme`         | `theme`          |                        | `string`            | `''`        |
-| `time`          | `time`           | (optional) Toast time  | `number`            | `undefined` |
-| `variant`       | `variant`        |                        | `string`            | `''`        |
+| Property        | Attribute        | Description                          | Type                | Default     |
+| --------------- | ---------------- | ------------------------------------ | ------------------- | ----------- |
+| `animated`      | `animated`       | (optional) Animated toast            | `boolean`           | `true`      |
+| `autoHide`      | `auto-hide`      | (optional) Toast autohide time       | `boolean \| number` | `false`     |
+| `customClass`   | `custom-class`   | (required) Toast class               | `string`            | `''`        |
+| `fadeDuration`  | `fade-duration`  | (optional) Toast fade duration       | `number`            | `500`       |
+| `opened`        | `opened`         | (optional) Toast opened              | `boolean`           | `undefined` |
+| `positionRight` | `position-right` | (optional) Toast position right      | `number`            | `12`        |
+| `positionTop`   | `position-top`   | (optional) Toast position at the top | `number`            | `12`        |
+| `size`          | `size`           | (optional) Toast size                | `string`            | `''`        |
+| `theme`         | `theme`          | (optional) Toast theme               | `string`            | `''`        |
+| `time`          | `time`           | (optional) Toast time                | `number`            | `undefined` |
+| `variant`       | `variant`        | (optional) Toast variant             | `string`            | `''`        |
 
 
 ## Methods
 
 ### `openToast() => Promise<void>`
 
-
+(optional) Toast method: openToast()
 
 #### Returns
 

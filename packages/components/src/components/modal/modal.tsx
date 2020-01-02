@@ -9,14 +9,17 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Modal {
+  /** (optional) Modal HTML element */
   @Element() public hostElement: HTMLStencilElement;
+  /** (required) Modal class */
+  @Prop() public customClass?: string = '';
   /** (optional) Modal size */
   @Prop() public size?: string = '';
   /** (optional) Modal theme */
   @Prop() public theme?: string = '';
   /** (optional) Modal variant */
   @Prop() public variant?: string = '';
-  /** (optional) Modal opened */
+  /** (required) Modal opened */
   @Prop({ reflectToAttr: true }) public opened?: boolean = false;
   /** (optional) Modal close */
   @Prop() public close?: string = 'x';
@@ -24,6 +27,7 @@ export class Modal {
   private hasSlotHeader: boolean;
   private hasSlotActions: boolean;
 
+  /** (required) Modal method: openModal() */
   @Method()
   public async openModal() {
     this.opened = true;
@@ -33,10 +37,12 @@ export class Modal {
     this.opened = false;
   };
 
+  /** (required) Modal method: onCloseModal() */
   @Method()
   public async onCloseModal() {
     this.opened = false;
   }
+
   public componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
     this.hasSlotActions = !!this.hostElement.querySelector(
@@ -85,6 +91,7 @@ export class Modal {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'modal',
+      this.customClass && this.customClass,
       this.size && `modal--size-${this.size}`,
       this.theme && `modal--theme-${this.theme}`,
       this.variant && `modal--variant-${this.variant}`

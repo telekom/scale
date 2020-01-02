@@ -7,20 +7,21 @@
 
 ## Properties
 
-| Property  | Attribute | Description              | Type      | Default |
-| --------- | --------- | ------------------------ | --------- | ------- |
-| `close`   | `close`   | (optional) Modal close   | `string`  | `'x'`   |
-| `opened`  | `opened`  | (optional) Modal opened  | `boolean` | `false` |
-| `size`    | `size`    | (optional) Modal size    | `string`  | `''`    |
-| `theme`   | `theme`   | (optional) Modal theme   | `string`  | `''`    |
-| `variant` | `variant` | (optional) Modal variant | `string`  | `''`    |
+| Property      | Attribute      | Description              | Type      | Default |
+| ------------- | -------------- | ------------------------ | --------- | ------- |
+| `close`       | `close`        | (optional) Modal close   | `string`  | `'x'`   |
+| `customClass` | `custom-class` | (required) Modal class   | `string`  | `''`    |
+| `opened`      | `opened`       | (required) Modal opened  | `boolean` | `false` |
+| `size`        | `size`         | (optional) Modal size    | `string`  | `''`    |
+| `theme`       | `theme`        | (optional) Modal theme   | `string`  | `''`    |
+| `variant`     | `variant`      | (optional) Modal variant | `string`  | `''`    |
 
 
 ## Methods
 
 ### `onCloseModal() => Promise<void>`
 
-
+(required) Modal method: onCloseModal()
 
 #### Returns
 
@@ -30,7 +31,7 @@ Type: `Promise<void>`
 
 ### `openModal() => Promise<void>`
 
-
+(required) Modal method: openModal()
 
 #### Returns
 

@@ -7,10 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                    | Type      | Default |
-| ---------- | ---------- | ------------------------------ | --------- | ------- |
-| `active`   | `active`   | Switch props active optional   | `boolean` | `false` |
-| `disabled` | `disabled` | Switch props disabled optional | `boolean` | `false` |
+| Property      | Attribute      | Description                | Type      | Default |
+| ------------- | -------------- | -------------------------- | --------- | ------- |
+| `active`      | `active`       | (optional) Active switch   | `boolean` | `false` |
+| `customClass` | `custom-class` | (required) Switch class    | `string`  | `''`    |
+| `disabled`    | `disabled`     | (optional) Disabled switch | `boolean` | `false` |
+| `theme`       | `theme`        | (optional) Switch theme    | `string`  | `''`    |
 
 
 ## CSS Custom Properties

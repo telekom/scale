@@ -7,15 +7,16 @@
 
 ## Properties
 
-| Property      | Attribute       | Description | Type      | Default     |
-| ------------- | --------------- | ----------- | --------- | ----------- |
-| `deselected`  | `deselected`    |             | `boolean` | `false`     |
-| `disabled`    | `disabled`      |             | `boolean` | `false`     |
-| `imageTop`    | `image-top`     |             | `string`  | `undefined` |
-| `imageTopAlt` | `image-top-alt` |             | `string`  | `''`        |
-| `size`        | `size`          |             | `string`  | `''`        |
-| `theme`       | `theme`         |             | `string`  | `''`        |
-| `variant`     | `variant`       |             | `string`  | `''`        |
+| Property      | Attribute       | Description                                  | Type      | Default     |
+| ------------- | --------------- | -------------------------------------------- | --------- | ----------- |
+| `customClass` | `custom-class`  | (required) Card class                        | `string`  | `''`        |
+| `deselected`  | `deselected`    | (optional) Deselected card                   | `boolean` | `false`     |
+| `disabled`    | `disabled`      | (optional) Disabled card                     | `boolean` | `false`     |
+| `imageTop`    | `image-top`     | (optional) Card image at the top             | `string`  | `undefined` |
+| `imageTopAlt` | `image-top-alt` | (optional) Card image alternative at the top | `string`  | `''`        |
+| `size`        | `size`          | (optional) Card size                         | `string`  | `''`        |
+| `theme`       | `theme`         | (optional) Card theme                        | `string`  | `''`        |
+| `variant`     | `variant`       | (optional) Card variant                      | `string`  | `''`        |
 
 
 ## CSS Custom Properties

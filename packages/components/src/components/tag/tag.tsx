@@ -8,6 +8,10 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Tag {
+  /** (required) Tag class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Tag theme */
+  @Prop() public theme?: string = '';
   /** (optional) Tag variant */
   @Prop() public variant?: string = '';
   /** (optional) Tag pill */
@@ -33,6 +37,8 @@ export class Tag {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'tag',
+      this.customClass && this.customClass,
+      this.theme && `alert--theme-${this.theme}`,
       this.variant && `tag--variant-${this.variant}`,
       this.pill && `tag--pill`,
       !!this.link && 'tag--link'

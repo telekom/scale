@@ -24,7 +24,7 @@
 
 ### `open() => Promise<void>`
 
-
+(required) Alert method: open()
 
 #### Returns
 
