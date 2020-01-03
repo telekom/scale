@@ -65,8 +65,9 @@
     <h3>Alert</h3>
     <t-button id="show-alert-btn-without-timeout">show alert without timeout
     </t-button>
-    <t-alert id="alert-without-timeout" variant="danger" title="Help!" icon="!" close="x">
+    <t-alert id="alert-without-timeout" variant="danger" title="Help!" icon="!">
         This is only a warning - for your information!
+        <div slot="close">Close</div>
     </t-alert>
     <script>
         const showAlertWithout = document.querySelector(

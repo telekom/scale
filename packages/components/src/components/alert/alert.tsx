@@ -1,4 +1,5 @@
-import { Component, Prop, h, Method } from '@stencil/core';
+import { Component, Prop, h, Method, Element } from '@stencil/core';
+import { HTMLStencilElement } from '@stencil/core/internal';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
@@ -8,6 +9,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Alert {
+  /** (optional) Card HTML element */
+  @Element() public hostElement: HTMLStencilElement;
   /** (required) Alert class */
   @Prop() public customClass?: string = '';
   /** (optional) Alert size */
@@ -24,12 +27,16 @@ export class Alert {
   @Prop() public timeout?: boolean | number = false;
   /** (optional) Alert icon */
   @Prop() public icon?: string = '';
-  /** (required) Alert close */
-  @Prop() public close?: string = '';
 
   private defaultTimeout = 2000;
 
-  public onCloseAlert = () => {
+  private hasSlotClose: boolean;
+
+  public componentWillLoad() {
+    this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
+  }
+
+  public close = () => {
     this.opened = false;
   };
 
@@ -42,9 +49,9 @@ export class Alert {
   public onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
       if (typeof this.timeout === 'number') {
-        setTimeout(this.onCloseAlert, this.timeout);
+        setTimeout(this.close, this.timeout);
       } else {
-        setTimeout(this.onCloseAlert, this.defaultTimeout);
+        setTimeout(this.close, this.defaultTimeout);
       }
     } else {
       return null;
@@ -68,8 +75,12 @@ export class Alert {
           </div>
         </div>
 
-        <a class="alert__close" onClick={this.onCloseAlert}>
-          {this.close}
+        <a class="alert__close" onClick={this.close}>
+          {this.hasSlotClose ? (
+            <div class="alert__close-icon">
+              <slot name="close" />
+            </div>
+          ) : 'x'}
         </a>
       </div>
     );

@@ -15,10 +15,6 @@ import {
 export namespace Components {
   interface TAlert {
     /**
-    * (required) Alert close
-    */
-    'close'?: string;
-    /**
     * (required) Alert class
     */
     'customClass'?: string;
@@ -426,10 +422,6 @@ declare global {
 
 declare namespace LocalJSX {
   interface TAlert {
-    /**
-    * (required) Alert close
-    */
-    'close'?: string;
     /**
     * (required) Alert class
     */

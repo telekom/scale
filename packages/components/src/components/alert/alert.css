@@ -62,7 +62,6 @@
 }
 
 .alert__close {
-  width: var(--alert-close-width, 16px);
   height: var(--alert-close-height, 16px);
   opacity: var(--alert-close-opacity, 0.5);
   cursor: pointer;

@@ -9,7 +9,6 @@
 
 | Property      | Attribute      | Description              | Type                | Default     |
 | ------------- | -------------- | ------------------------ | ------------------- | ----------- |
-| `close`       | `close`        | (required) Alert close   | `string`            | `''`        |
 | `customClass` | `custom-class` | (required) Alert class   | `string`            | `''`        |
 | `headline`    | `headline`     | (optional) Alert title   | `string`            | `undefined` |
 | `icon`        | `icon`         | (optional) Alert icon    | `string`            | `''`        |
