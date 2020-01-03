@@ -80,7 +80,9 @@ export class Alert {
             <div class="alert__close-icon">
               <slot name="close" />
             </div>
-          ) : 'x'}
+          ) : (
+            'x'
+          )}
         </a>
       </div>
     );
