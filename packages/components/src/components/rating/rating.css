@@ -1,49 +1,61 @@
+/**
+* @prop --rating--container-display: Display of the rating container
+* @prop --rating--star-emoji-display: Display of the rating star rating emoji
+* @prop --rating--star-selected-color: Color of the rating star selected
+* @prop --rating--star-selected-after-content: Content of the rating star selected after
+* @prop --rating--emoji-selected-1-after-content: Content of the rating star selected 1 after
+* @prop --rating--emoji-selected-2-after-content: Content of the rating star selected 2 after
+* @prop --rating--emoji-selected-3-after-content: Content of the rating star selected 3 after
+* @prop --rating--emoji-selected-4-after-content: Content of the rating star selected 4 after
+* @prop --rating--emoji-selected-5-after-content: Content of the rating star selected 5 after
+
+*/
+
+.rating--container {
+  display: var(--rating--container-display, block);
+}
+
 .rating--star,
 .rating--emoji {
-  display: inline;
-  margin-right: 6px;
-  cursor: pointer;
-  font-size: 24px;
-  transition: color 0.2s;
+  display: var(--rating--star-emoji-display, inline);
+  margin-right: var(--rating--star-emoji-margin-right, 6px);
+  cursor: var(--rating--star-emoji-cursor, pointer);
+  font-size: var(--rating--star-emoji-font-size, 24px);
+  transition: var(--rating--star-emoji-transition, color 0.2s);
 }
 
 .rating--star:after {
-  content: '\2606';
+  content: var(--rating--star-after-content, '\2606');
 }
 .rating--emoji:after {
-  content: '😐';
+  content: var(--rating--emoji-after-content, '\1F611');
 }
 .rating--star-selected-1,
 .rating--star-selected-2,
 .rating--star-selected-3,
 .rating--star-selected-4,
-.rating--star-selected-5,
-.rating--emoji-selected-1,
-.rating--emoji-selected-2,
-.rating--emoji-selected-3,
-.rating--emoji-selected-4,
-.rating--emoji-selected-5 {
-  color: #f7ba2a;
+.rating--star-selected-5 {
+  color: var(--rating--star-selected-color, #f7ba2a);
 }
 .rating--star-selected-1:after,
 .rating--star-selected-2:after,
 .rating--star-selected-3:after,
 .rating--star-selected-4:after,
 .rating--star-selected-5:after {
-  content: '\2605';
+  content: var(--rating--star-selected-after-content, '\2605');
 }
 .rating--emoji-selected-1:after {
-  content: '🤒';
+  content: var(--rating--emoji-selected-1-after-content, '\1F61E');
 }
 .rating--emoji-selected-2:after {
-  content: '😣';
+  content: var(--rating--emoji-selected-2-after-content, '\1F615');
 }
 .rating--emoji-selected-3:after {
-  content: '😐';
+  content: var(--rating--emoji-selected-3-after-content, '\1F625');
 }
 .rating--emoji-selected-4:after {
-  content: '😎';
+  content: var(--rating--emoji-selected-4-after-content, '\1F60E');
 }
 .rating--emoji-selected-5:after {
-  content: '🤑';
+  content: var(--rating--emoji-selected-5-after-content, '\1F60D');
 }

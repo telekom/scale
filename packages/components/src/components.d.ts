@@ -165,8 +165,6 @@ export namespace Components {
     'variant'?: string;
   }
   interface TRating {
-    'disabled'?: boolean;
-    'range': number[];
     'type'?: string;
   }
   interface TSwitch {
@@ -454,8 +452,6 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TRating {
-    'disabled'?: boolean;
-    'range'?: number[];
     'type'?: string;
   }
   interface TSwitch {

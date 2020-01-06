@@ -9,9 +9,8 @@ import classNames from 'classnames';
 })
 export class Rating {
   @Prop() public type?: string;
-  @Prop() public range = [1, 2, 3, 4, 5];
-  @Prop() public disabled?: boolean = false;
 
+  @State() private range = [1, 2, 3, 4, 5];
   @State() private selectedValue = null;
   @State() private preSelectValue = 0;
   @State() private selected = false;
