@@ -10,12 +10,21 @@ import classNames from 'classnames';
 })
 export class Card {
   @Element() public hostElement: HTMLStencilElement;
+  /** (optional) Card class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Card size */
   @Prop() public size?: string = '';
+  /** (optional) Card theme */
   @Prop() public theme?: string = '';
+  /** (optional) Card variant */
   @Prop() public variant?: string = '';
+  /** (optional) Disabled card */
   @Prop() public disabled?: boolean = false;
+  /** (optional) Deselected card */
   @Prop() public deselected?: boolean = false;
+  /** (optional) Card image at the top */
   @Prop() public imageTop?: string;
+  /** (optional) Card image alternative at the top */
   @Prop() public imageTopAlt?: string = '';
 
   private hasSlotHeader: boolean;
@@ -56,6 +65,7 @@ export class Card {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'card',
+      this.customClass && this.customClass,
       this.size && `card--size-${this.size}`,
       this.theme && `card--theme-${this.theme}`,
       this.variant && `card--variant-${this.variant}`,

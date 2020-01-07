@@ -50,7 +50,7 @@
         'enabled-toast-auto-hide'
       );
       showToastAutoHide.addEventListener('click', () => {
-        !enabledToastAutoHide.opened && enabledToastAutoHide.openToast();
+        !enabledToastAutoHide.opened && enabledToastAutoHide.open();
         var d = new Date();
         d.setDate(d.getDate() - 5);
         enabledToastAutoHide.time = d;
@@ -70,7 +70,7 @@
       const showToast = document.getElementById('show-toast');
       const enabledToast = document.getElementById('enabled-toast');
       showToast.addEventListener('click', () => {
-        !enabledToast.opened && enabledToast.openToast();
+        !enabledToast.opened && enabledToast.open();
         var d = new Date();
         d.setDate(d.getDate() - 5);
         enabledToast.time = d;
@@ -81,14 +81,9 @@
     <t-button id="show-alert-btn-without-timeout"
       >show alert without timeout
     </t-button>
-    <t-alert
-      id="alert-without-timeout"
-      variant="danger"
-      title="Help!"
-      icon="!"
-      close="x"
-    >
+    <t-alert id="alert-without-timeout" variant="danger" title="Help!" icon="!">
       This is only a warning - for your information!
+      <div slot="close">Close</div>
     </t-alert>
     <script>
       const showAlertWithout = document.querySelector(
@@ -324,10 +319,7 @@
     <script>
       const showModal = document.querySelector('#show-modal');
       const modal = document.getElementById('modal-default');
-      showModal.addEventListener(
-        'click',
-        () => !modal.opened && modal.openModal()
-      );
+      showModal.addEventListener('click', () => !modal.opened && modal.open());
     </script>
     <h3>Modal without header</h3>
     <t-button id="show-modal-without-header">
@@ -343,7 +335,7 @@
       );
       showModalWithoutHeader.addEventListener(
         'click',
-        () => !modalWithoutHeader.opened && modalWithoutHeader.openModal()
+        () => !modalWithoutHeader.opened && modalWithoutHeader.open()
       );
     </script>
 
@@ -354,6 +346,7 @@
     <t-modal id="modal-with-header-and-buttons" opened="false">
       <span slot="header">Header</span> content of the modal with header and
       buttons
+      <span slot="close">Close</span>
       <span slot="modal-actions">
         <t-button id="cancel-btn">cancel</t-button>
         <t-button id="submit-btn">submit</t-button>
@@ -372,12 +365,11 @@
       showModalWithHeaderAndButtons.addEventListener(
         'click',
         () =>
-          !modalWithHeaderAndButtons.opened &&
-          modalWithHeaderAndButtons.openModal()
+          !modalWithHeaderAndButtons.opened && modalWithHeaderAndButtons.open()
       );
 
       cancelModal.addEventListener('click', () =>
-        modalWithHeaderAndButtons.onCloseModal()
+        modalWithHeaderAndButtons.close()
       );
     </script>
 
