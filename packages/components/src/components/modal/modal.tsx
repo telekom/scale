@@ -38,7 +38,7 @@ export class Modal {
   /** Modal method: onCloseModal() */
   @Method()
   public async close() {
-    this.closeModal()
+    this.closeModal();
   }
 
   public componentWillLoad() {
@@ -68,8 +68,8 @@ export class Modal {
                     <slot name="close" />
                   </div>
                 ) : (
-                    'x'
-                  )}
+                  'x'
+                )}
               </a>
             </div>
           )}

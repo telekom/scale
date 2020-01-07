@@ -80,8 +80,8 @@ export class Alert {
               <slot name="close" />
             </div>
           ) : (
-              'x'
-            )}
+            'x'
+          )}
         </a>
       </div>
     );
