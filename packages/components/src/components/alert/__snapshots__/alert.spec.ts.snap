@@ -18,7 +18,9 @@ exports[`Alert should match snapshot when opened 1`] = `
           <slot></slot>
         </div>
       </div>
-      <a class="alert__close"></a>
+      <a class="alert__close">
+        x
+      </a>
     </div>
   </mock:shadow-root>
   Notifications

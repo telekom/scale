@@ -20,14 +20,12 @@
 * @prop --switch-after-width: Width of the switch after
 * @prop --switch-after-height: Height of the switch after
 * @prop --switch-after-background-color: Background color of the switch after
-
 * @prop --switch-active-border-color: Border color of the switch active
 * @prop --switch-active-background-color: Background color of the switch active
 * @prop --switch-active-after-left: Left of the switch active after
 * @prop --switch-active-after-margin-left: Margin left of the switch active after
 * @prop --switch-disabled-cursor: Cursor of the switch disabled
 * @prop --switch-disabled-opacity: Opacity of the switch disabled
-
 */
 
 .switch {

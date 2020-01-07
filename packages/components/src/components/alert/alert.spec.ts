@@ -29,7 +29,7 @@ describe('Alert', () => {
 
   it('should close the alert', () => {
     expect(element.opened).toBe(undefined);
-    element.onCloseAlert();
+    element.close();
     expect(element.opened).toBe(false);
   });
 
@@ -43,14 +43,6 @@ describe('Alert', () => {
     element.opened = true;
     expect(element.root).toBeFalsy();
   });
-
-  // it('should open the alert without timeout', () => {
-  // 	element.timeout=undefined;
-  // 	element.onCloseAlertWithTimeout();
-
-  // 	expect(setTimeout).toHaveBeenCalledTimes(1);
-  // 	expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), null);
-  // });
 
   it('should closed the alert after default timeout', () => {
     element.timeout = true;

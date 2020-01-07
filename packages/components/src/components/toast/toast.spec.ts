@@ -33,7 +33,7 @@ describe('Toast', () => {
 
   it('should close the Toast', () => {
     expect(element.opened).toBe(undefined);
-    element.onCloseToast();
+    element.close();
     setTimeout(() => {
       expect(element.opened).toBe(false);
     }, 10);
@@ -41,7 +41,7 @@ describe('Toast', () => {
 
   it('should open the Toast', () => {
     expect(element.opened).toBe(undefined);
-    element.openToast();
+    element.open();
     expect(element.opened).toBe(true);
   });
 
@@ -68,7 +68,7 @@ describe('Toast', () => {
 
   it('should cancel the timeout', () => {
     element.myTimeout = 500;
-    element.onCloseToast();
+    element.close();
 
     setTimeout(() => {
       expect(clearTimeout).toHaveBeenCalledTimes(1);

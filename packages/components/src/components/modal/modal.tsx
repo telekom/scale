@@ -10,22 +10,24 @@ import classNames from 'classnames';
 })
 export class Modal {
   @Element() public hostElement: HTMLStencilElement;
+  /** (optional) Modal class */
+  @Prop() public customClass?: string = '';
   /** (optional) Modal size */
   @Prop() public size?: string = '';
   /** (optional) Modal theme */
   @Prop() public theme?: string = '';
   /** (optional) Modal variant */
   @Prop() public variant?: string = '';
-  /** (optional) Modal opened */
+  /** (required) Modal opened */
   @Prop({ reflectToAttr: true }) public opened?: boolean = false;
-  /** (optional) Modal close */
-  @Prop() public close?: string = 'x';
 
   private hasSlotHeader: boolean;
+  private hasSlotClose: boolean;
   private hasSlotActions: boolean;
 
+  /** Modal method: open() */
   @Method()
-  public async openModal() {
+  public async open() {
     this.opened = true;
   }
 
@@ -33,12 +35,15 @@ export class Modal {
     this.opened = false;
   };
 
+  /** Modal method: onCloseModal() */
   @Method()
-  public async onCloseModal() {
-    this.opened = false;
+  public async close() {
+    this.closeModal();
   }
+
   public componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
+    this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
     this.hasSlotActions = !!this.hostElement.querySelector(
       '[slot="modal-actions"]'
     );
@@ -58,18 +63,19 @@ export class Modal {
             <div class="modal__header">
               <slot name="header" />
               <a class="modal__close" onClick={this.closeModal}>
-                {this.close}
+                {this.hasSlotClose ? (
+                  <div class="modal__close-icon">
+                    <slot name="close" />
+                  </div>
+                ) : (
+                  'x'
+                )}
               </a>
             </div>
           )}
 
           <div class="modal__body">
             <slot />
-            {!this.hasSlotHeader && (
-              <a class="modal__close" onClick={this.closeModal}>
-                {this.close}
-              </a>
-            )}
           </div>
 
           {this.hasSlotActions /* istanbul ignore next */ && (
@@ -85,6 +91,7 @@ export class Modal {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'modal',
+      this.customClass && this.customClass,
       this.size && `modal--size-${this.size}`,
       this.theme && `modal--theme-${this.theme}`,
       this.variant && `modal--variant-${this.variant}`
