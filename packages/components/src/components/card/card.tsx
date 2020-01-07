@@ -9,9 +9,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Card {
-  /** (optional) Card HTML element */
   @Element() public hostElement: HTMLStencilElement;
-  /** (required) Card class */
+  /** (optional) Card class */
   @Prop() public customClass?: string = '';
   /** (optional) Card size */
   @Prop() public size?: string = '';

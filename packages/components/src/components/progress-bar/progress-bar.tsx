@@ -8,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class ProgressBar {
-  /** (required) Progress bar class */
+  /** (optional) Progress bar class */
   @Prop() public customClass?: string = '';
   /** (required) Progress bar percentage */
   @Prop() public percentage: number;

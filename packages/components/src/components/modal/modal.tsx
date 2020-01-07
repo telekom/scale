@@ -9,9 +9,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Modal {
-  /** (optional) Modal HTML element */
   @Element() public hostElement: HTMLStencilElement;
-  /** (required) Modal class */
+  /** (optional) Modal class */
   @Prop() public customClass?: string = '';
   /** (optional) Modal size */
   @Prop() public size?: string = '';
@@ -21,15 +20,14 @@ export class Modal {
   @Prop() public variant?: string = '';
   /** (required) Modal opened */
   @Prop({ reflectToAttr: true }) public opened?: boolean = false;
-  /** (optional) Modal close */
-  @Prop() public close?: string = 'x';
 
   private hasSlotHeader: boolean;
+  private hasSlotClose: boolean;
   private hasSlotActions: boolean;
 
-  /** (required) Modal method: openModal() */
+  /** Modal method: open() */
   @Method()
-  public async openModal() {
+  public async open() {
     this.opened = true;
   }
 
@@ -37,14 +35,15 @@ export class Modal {
     this.opened = false;
   };
 
-  /** (required) Modal method: onCloseModal() */
+  /** Modal method: onCloseModal() */
   @Method()
-  public async onCloseModal() {
-    this.opened = false;
+  public async close() {
+    this.closeModal()
   }
 
   public componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
+    this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
     this.hasSlotActions = !!this.hostElement.querySelector(
       '[slot="modal-actions"]'
     );
@@ -64,18 +63,19 @@ export class Modal {
             <div class="modal__header">
               <slot name="header" />
               <a class="modal__close" onClick={this.closeModal}>
-                {this.close}
+                {this.hasSlotClose ? (
+                  <div class="modal__close-icon">
+                    <slot name="close" />
+                  </div>
+                ) : (
+                    'x'
+                  )}
               </a>
             </div>
           )}
 
           <div class="modal__body">
             <slot />
-            {!this.hasSlotHeader && (
-              <a class="modal__close" onClick={this.closeModal}>
-                {this.close}
-              </a>
-            )}
           </div>
 
           {this.hasSlotActions /* istanbul ignore next */ && (

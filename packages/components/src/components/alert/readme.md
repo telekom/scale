@@ -9,10 +9,10 @@
 
 | Property      | Attribute      | Description              | Type                | Default     |
 | ------------- | -------------- | ------------------------ | ------------------- | ----------- |
-| `customClass` | `custom-class` | (required) Alert class   | `string`            | `''`        |
+| `customClass` | `custom-class` | (optional) Alert class   | `string`            | `''`        |
 | `headline`    | `headline`     | (optional) Alert title   | `string`            | `undefined` |
 | `icon`        | `icon`         | (optional) Alert icon    | `string`            | `''`        |
-| `opened`      | `opened`       | (required) Alert opened  | `boolean`           | `undefined` |
+| `opened`      | `opened`       | (optional) Alert opened  | `boolean`           | `undefined` |
 | `size`        | `size`         | (optional) Alert size    | `string`            | `''`        |
 | `theme`       | `theme`        | (optional) Alert theme   | `string`            | `''`        |
 | `timeout`     | `timeout`      | (optional) Alert timeout | `boolean \| number` | `false`     |
@@ -23,7 +23,7 @@
 
 ### `open() => Promise<void>`
 
-(required) Alert method: open()
+Alert method: open()
 
 #### Returns
 

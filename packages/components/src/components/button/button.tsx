@@ -8,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Button {
-  /** (required) Button class */
+  /** (optional) Button class */
   @Prop() public customClass?: string = '';
   /** (optional) Button size */
   @Prop() public size?: string = '';
@@ -21,13 +21,13 @@ export class Button {
   /** (optional) Deselected button */
   @Prop() public deselected?: boolean = false;
 
-  /** (optional) Button method: disable()  */
+  /** Button method: disable()  */
   @Method()
   public async disable() {
     this.disabled = true;
   }
 
-  /** (optional) Button method: enable()  */
+  /** Button method: enable()  */
   @Method()
   public async enable() {
     this.disabled = false;

@@ -10,7 +10,7 @@
 | Property      | Attribute      | Description                | Type      | Default |
 | ------------- | -------------- | -------------------------- | --------- | ------- |
 | `active`      | `active`       | (optional) Active switch   | `boolean` | `false` |
-| `customClass` | `custom-class` | (required) Switch class    | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Switch class    | `string`  | `''`    |
 | `disabled`    | `disabled`     | (optional) Disabled switch | `boolean` | `false` |
 | `theme`       | `theme`        | (optional) Switch theme    | `string`  | `''`    |
 

@@ -8,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Tag {
-  /** (required) Tag class */
+  /** (optional) Tag class */
   @Prop() public customClass?: string = '';
   /** (optional) Tag theme */
   @Prop() public theme?: string = '';

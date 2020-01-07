@@ -9,7 +9,7 @@
 
 | Property      | Attribute       | Description                                  | Type      | Default     |
 | ------------- | --------------- | -------------------------------------------- | --------- | ----------- |
-| `customClass` | `custom-class`  | (required) Card class                        | `string`  | `''`        |
+| `customClass` | `custom-class`  | (optional) Card class                        | `string`  | `''`        |
 | `deselected`  | `deselected`    | (optional) Deselected card                   | `boolean` | `false`     |
 | `disabled`    | `disabled`      | (optional) Disabled card                     | `boolean` | `false`     |
 | `imageTop`    | `image-top`     | (optional) Card image at the top             | `string`  | `undefined` |

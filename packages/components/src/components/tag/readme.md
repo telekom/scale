@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description                      | Type      | Default |
 | ------------- | -------------- | -------------------------------- | --------- | ------- |
-| `customClass` | `custom-class` | (required) Tag class             | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Tag class             | `string`  | `''`    |
 | `link`        | `link`         | (optional) Tag on an <a> element | `string`  | `''`    |
 | `pill`        | `pill`         | (optional) Tag pill              | `boolean` | `false` |
 | `theme`       | `theme`        | (optional) Tag theme             | `string`  | `''`    |

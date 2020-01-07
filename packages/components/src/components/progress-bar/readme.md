@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description                                 | Type      | Default     |
 | ------------- | -------------- | ------------------------------------------- | --------- | ----------- |
-| `customClass` | `custom-class` | (required) Progress bar class               | `string`  | `''`        |
+| `customClass` | `custom-class` | (optional) Progress bar class               | `string`  | `''`        |
 | `percentage`  | `percentage`   | (required) Progress bar percentage          | `number`  | `undefined` |
 | `showText`    | `show-text`    | (optional) Progress bar percentage text     | `boolean` | `undefined` |
 | `strokeWidth` | `stroke-width` | (optional) Progress bar stroke width        | `number`  | `6`         |

@@ -9,7 +9,7 @@ import { formatDistance, subSeconds } from 'date-fns';
   shadow: true,
 })
 export class Toast {
-  /** (required) Toast class */
+  /** (optional) Toast class */
   @Prop() public customClass?: string = '';
   /** (optional) Toast size */
   @Prop() public size?: string = '';
@@ -31,11 +31,12 @@ export class Toast {
   @Prop() public positionRight?: number = 12;
   /** (optional) Toast fade duration */
   @Prop() public fadeDuration?: number = 500;
+
   /** (optional) Toast state progress */
   @State() public progress: number = 0;
   /** (optional) Toast state height with offset */
   @State() public toastHeightWithOffset: number = 0;
-  /** (optional) Toast HTML element */
+
   @Element() private element: HTMLElement;
 
   private hideToast: boolean = false;
@@ -55,7 +56,7 @@ export class Toast {
     }
   }
 
-  public onCloseToast = () => {
+  public close = () => {
     clearInterval(this.timerId);
     this.hideToast = true;
     setTimeout(() => {
@@ -64,13 +65,6 @@ export class Toast {
       this.progress = 0;
     }, this.fadeDuration);
   };
-
-  /** (optional) Toast method: openToast() */
-  @Method()
-  public async openToast() {
-    this.opened = true;
-    this.hideToast = false;
-  }
 
   public getTime = () => {
     const formattedTime =
@@ -84,11 +78,18 @@ export class Toast {
       this.timerId = setInterval(() => {
         this.progress += 1 / (this.getAutoHide() / 1000);
         if (this.progress >= 100) {
-          this.onCloseToast();
+          this.close();
         }
       }, 10);
     }
   };
+
+  /** Toast method: open() */
+  @Method()
+  public async open() {
+    this.opened = true;
+    this.hideToast = false;
+  }
 
   public render() {
     this.setToastTimeout();
@@ -99,7 +100,7 @@ export class Toast {
           <slot name="header" />
           header
           <small>{this.getTime()}</small>
-          <a onClick={this.onCloseToast}>
+          <a onClick={this.close}>
             <span aria-hidden="true">&times;</span>
           </a>
         </div>

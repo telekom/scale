@@ -8,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Badge {
-  /** (required) Badge class */
+  /** (optional) Badge class */
   @Prop() public customClass?: string = '';
   /** (optional) Badge size */
   @Prop() public size?: string = '';

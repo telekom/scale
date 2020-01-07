@@ -15,9 +15,6 @@ exports[`Modal should match snapshot when opened 1`] = `
       <div class="modal">
         <div class="modal__body">
           <slot></slot>
-          <a class="modal__close">
-            x
-          </a>
         </div>
       </div>
     </div>

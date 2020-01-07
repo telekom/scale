@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description                    | Type      | Default |
 | ------------- | -------------- | ------------------------------ | --------- | ------- |
-| `customClass` | `custom-class` | (required) Link class          | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Link class          | `string`  | `''`    |
 | `disabled`    | `disabled`     | (optional) Disabled link       | `boolean` | `false` |
 | `href`        | `href`         | (optional) Link href           | `string`  | `''`    |
 | `openNewTab`  | `open-new-tab` | (optional) Link open a new tag | `boolean` | `false` |

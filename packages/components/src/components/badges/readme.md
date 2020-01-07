@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description              | Type      | Default |
 | ------------- | -------------- | ------------------------ | --------- | ------- |
-| `customClass` | `custom-class` | (required) Badge class   | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Badge class   | `string`  | `''`    |
 | `link`        | `link`         | (optional) Badge link    | `string`  | `''`    |
 | `pill`        | `pill`         | (optional) Badge pill    | `boolean` | `false` |
 | `size`        | `size`         | (optional) Badge size    | `string`  | `''`    |

@@ -14,7 +14,7 @@ import {
   shadow: true,
 })
 export class InputText {
-  /** (required) Input text class */
+  /** (optional) Input text class */
   @Prop() public customClass?: string = '';
   /** (optional) Input text theme */
   @Prop() public theme?: string = '';

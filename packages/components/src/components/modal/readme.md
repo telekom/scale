@@ -9,8 +9,7 @@
 
 | Property      | Attribute      | Description              | Type      | Default |
 | ------------- | -------------- | ------------------------ | --------- | ------- |
-| `close`       | `close`        | (optional) Modal close   | `string`  | `'x'`   |
-| `customClass` | `custom-class` | (required) Modal class   | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Modal class   | `string`  | `''`    |
 | `opened`      | `opened`       | (required) Modal opened  | `boolean` | `false` |
 | `size`        | `size`         | (optional) Modal size    | `string`  | `''`    |
 | `theme`       | `theme`        | (optional) Modal theme   | `string`  | `''`    |
@@ -19,9 +18,9 @@
 
 ## Methods
 
-### `onCloseModal() => Promise<void>`
+### `close() => Promise<void>`
 
-(required) Modal method: onCloseModal()
+Modal method: onCloseModal()
 
 #### Returns
 
@@ -29,9 +28,9 @@ Type: `Promise<void>`
 
 
 
-### `openModal() => Promise<void>`
+### `open() => Promise<void>`
 
-(required) Modal method: openModal()
+Modal method: open()
 
 #### Returns
 

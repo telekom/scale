@@ -69,12 +69,12 @@ describe('Modal', () => {
 
   it('should open the modal', () => {
     expect(element.opened).toBe(false);
-    element.openModal();
+    element.open();
     expect(element.opened).toBe(true);
   });
 
   it('should close the modal', () => {
-    element.onCloseModal();
+    element.close();
     expect(element.opened).toBe(false);
   });
 

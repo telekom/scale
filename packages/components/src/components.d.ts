@@ -15,7 +15,7 @@ import {
 export namespace Components {
   interface TAlert {
     /**
-    * (required) Alert class
+    * (optional) Alert class
     */
     'customClass'?: string;
     /**
@@ -27,11 +27,11 @@ export namespace Components {
     */
     'icon'?: string;
     /**
-    * (required) Alert method: open()
+    * Alert method: open()
     */
     'open': () => Promise<void>;
     /**
-    * (required) Alert opened
+    * (optional) Alert opened
     */
     'opened': boolean;
     /**
@@ -53,7 +53,7 @@ export namespace Components {
   }
   interface TBadge {
     /**
-    * (required) Badge class
+    * (optional) Badge class
     */
     'customClass'?: string;
     /**
@@ -75,7 +75,7 @@ export namespace Components {
   }
   interface TButton {
     /**
-    * (required) Button class
+    * (optional) Button class
     */
     'customClass'?: string;
     /**
@@ -83,7 +83,7 @@ export namespace Components {
     */
     'deselected'?: boolean;
     /**
-    * (optional) Button method: disable()
+    * Button method: disable()
     */
     'disable': () => Promise<void>;
     /**
@@ -91,7 +91,7 @@ export namespace Components {
     */
     'disabled'?: boolean;
     /**
-    * (optional) Button method: enable()
+    * Button method: enable()
     */
     'enable': () => Promise<void>;
     /**
@@ -109,7 +109,7 @@ export namespace Components {
   }
   interface TCard {
     /**
-    * (required) Card class
+    * (optional) Card class
     */
     'customClass'?: string;
     /**
@@ -143,7 +143,7 @@ export namespace Components {
   }
   interface TInputText {
     /**
-    * (required) Input text class
+    * (optional) Input text class
     */
     'customClass'?: string;
     /**
@@ -161,7 +161,7 @@ export namespace Components {
   }
   interface TLink {
     /**
-    * (required) Link class
+    * (optional) Link class
     */
     'customClass'?: string;
     /**
@@ -187,21 +187,17 @@ export namespace Components {
   }
   interface TModal {
     /**
-    * (optional) Modal close
+    * Modal method: onCloseModal()
     */
-    'close'?: string;
+    'close': () => Promise<void>;
     /**
-    * (required) Modal class
+    * (optional) Modal class
     */
     'customClass'?: string;
     /**
-    * (required) Modal method: onCloseModal()
+    * Modal method: open()
     */
-    'onCloseModal': () => Promise<void>;
-    /**
-    * (required) Modal method: openModal()
-    */
-    'openModal': () => Promise<void>;
+    'open': () => Promise<void>;
     /**
     * (required) Modal opened
     */
@@ -221,7 +217,7 @@ export namespace Components {
   }
   interface TProgressBar {
     /**
-    * (required) Progress bar class
+    * (optional) Progress bar class
     */
     'customClass'?: string;
     /**
@@ -251,7 +247,7 @@ export namespace Components {
     */
     'active'?: boolean;
     /**
-    * (required) Switch class
+    * (optional) Switch class
     */
     'customClass'?: string;
     /**
@@ -265,7 +261,7 @@ export namespace Components {
   }
   interface TTag {
     /**
-    * (required) Tag class
+    * (optional) Tag class
     */
     'customClass'?: string;
     /**
@@ -295,7 +291,7 @@ export namespace Components {
     */
     'autoHide'?: boolean | number;
     /**
-    * (required) Toast class
+    * (optional) Toast class
     */
     'customClass'?: string;
     /**
@@ -303,9 +299,9 @@ export namespace Components {
     */
     'fadeDuration'?: number;
     /**
-    * (optional) Toast method: openToast()
+    * Toast method: open()
     */
-    'openToast': () => Promise<void>;
+    'open': () => Promise<void>;
     /**
     * (optional) Toast opened
     */
@@ -423,7 +419,7 @@ declare global {
 declare namespace LocalJSX {
   interface TAlert {
     /**
-    * (required) Alert class
+    * (optional) Alert class
     */
     'customClass'?: string;
     /**
@@ -435,7 +431,7 @@ declare namespace LocalJSX {
     */
     'icon'?: string;
     /**
-    * (required) Alert opened
+    * (optional) Alert opened
     */
     'opened'?: boolean;
     /**
@@ -457,7 +453,7 @@ declare namespace LocalJSX {
   }
   interface TBadge {
     /**
-    * (required) Badge class
+    * (optional) Badge class
     */
     'customClass'?: string;
     /**
@@ -479,7 +475,7 @@ declare namespace LocalJSX {
   }
   interface TButton {
     /**
-    * (required) Button class
+    * (optional) Button class
     */
     'customClass'?: string;
     /**
@@ -505,7 +501,7 @@ declare namespace LocalJSX {
   }
   interface TCard {
     /**
-    * (required) Card class
+    * (optional) Card class
     */
     'customClass'?: string;
     /**
@@ -539,7 +535,7 @@ declare namespace LocalJSX {
   }
   interface TInputText {
     /**
-    * (required) Input text class
+    * (optional) Input text class
     */
     'customClass'?: string;
     /**
@@ -561,7 +557,7 @@ declare namespace LocalJSX {
   }
   interface TLink {
     /**
-    * (required) Link class
+    * (optional) Link class
     */
     'customClass'?: string;
     /**
@@ -587,11 +583,7 @@ declare namespace LocalJSX {
   }
   interface TModal {
     /**
-    * (optional) Modal close
-    */
-    'close'?: string;
-    /**
-    * (required) Modal class
+    * (optional) Modal class
     */
     'customClass'?: string;
     /**
@@ -613,7 +605,7 @@ declare namespace LocalJSX {
   }
   interface TProgressBar {
     /**
-    * (required) Progress bar class
+    * (optional) Progress bar class
     */
     'customClass'?: string;
     /**
@@ -643,7 +635,7 @@ declare namespace LocalJSX {
     */
     'active'?: boolean;
     /**
-    * (required) Switch class
+    * (optional) Switch class
     */
     'customClass'?: string;
     /**
@@ -657,7 +649,7 @@ declare namespace LocalJSX {
   }
   interface TTag {
     /**
-    * (required) Tag class
+    * (optional) Tag class
     */
     'customClass'?: string;
     /**
@@ -687,7 +679,7 @@ declare namespace LocalJSX {
     */
     'autoHide'?: boolean | number;
     /**
-    * (required) Toast class
+    * (optional) Toast class
     */
     'customClass'?: string;
     /**

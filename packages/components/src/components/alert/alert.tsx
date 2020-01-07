@@ -9,9 +9,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Alert {
-  /** (optional) Card HTML element */
   @Element() public hostElement: HTMLStencilElement;
-  /** (required) Alert class */
+  /** (optional) Alert class */
   @Prop() public customClass?: string = '';
   /** (optional) Alert size */
   @Prop() public size?: string = '';
@@ -21,7 +20,7 @@ export class Alert {
   @Prop() public variant?: string = '';
   /** (optional) Alert title */
   @Prop({ reflectToAttr: true }) public headline: string;
-  /** (required) Alert opened */
+  /** (optional) Alert opened */
   @Prop({ reflectToAttr: true }) public opened: boolean;
   /** (optional) Alert timeout */
   @Prop() public timeout?: boolean | number = false;
@@ -40,7 +39,7 @@ export class Alert {
     this.opened = false;
   };
 
-  /** (required) Alert method: open() */
+  /** Alert method: open() */
   @Method()
   public async open() {
     this.opened = true;
@@ -81,8 +80,8 @@ export class Alert {
               <slot name="close" />
             </div>
           ) : (
-            'x'
-          )}
+              'x'
+            )}
         </a>
       </div>
     );

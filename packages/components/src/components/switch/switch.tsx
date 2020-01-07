@@ -8,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Switch {
-  /** (required) Switch class */
+  /** (optional) Switch class */
   @Prop() public customClass?: string = '';
   /** (optional) Switch theme */
   @Prop() public theme?: string = '';

@@ -9,7 +9,7 @@ s# t-toast
 | --------------- | ---------------- | ------------------------------------ | ------------------- | ----------- |
 | `animated`      | `animated`       | (optional) Animated toast            | `boolean`           | `true`      |
 | `autoHide`      | `auto-hide`      | (optional) Toast autohide time       | `boolean \| number` | `false`     |
-| `customClass`   | `custom-class`   | (required) Toast class               | `string`            | `''`        |
+| `customClass`   | `custom-class`   | (optional) Toast class               | `string`            | `''`        |
 | `fadeDuration`  | `fade-duration`  | (optional) Toast fade duration       | `number`            | `500`       |
 | `opened`        | `opened`         | (optional) Toast opened              | `boolean`           | `undefined` |
 | `positionRight` | `position-right` | (optional) Toast position right      | `number`            | `12`        |
@@ -22,9 +22,9 @@ s# t-toast
 
 ## Methods
 
-### `openToast() => Promise<void>`
+### `open() => Promise<void>`
 
-(optional) Toast method: openToast()
+Toast method: open()
 
 #### Returns
 

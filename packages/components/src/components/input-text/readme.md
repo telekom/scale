@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description                     | Type                                                | Default     |
 | ------------- | -------------- | ------------------------------- | --------------------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (required) Input text class     | `string`                                            | `''`        |
+| `customClass` | `custom-class` | (optional) Input text class     | `string`                                            | `''`        |
 | `theme`       | `theme`        | (optional) Input text theme     | `string`                                            | `''`        |
 | `validator`   | --             | (optional) Input text validator | `(string \| ValidatorEntry \| Validator<string>)[]` | `undefined` |
 | `value`       | `value`        | (optional) Input text value     | `string`                                            | `undefined` |

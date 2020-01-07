@@ -8,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Link {
-  /** (required) Link class */
+  /** (optional) Link class */
   @Prop() public customClass?: string = '';
   /** (optional) Link href */
   @Prop() public href?: string = '';

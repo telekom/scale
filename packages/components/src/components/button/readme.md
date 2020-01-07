@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description                  | Type      | Default |
 | ------------- | -------------- | ---------------------------- | --------- | ------- |
-| `customClass` | `custom-class` | (required) Button class      | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Button class      | `string`  | `''`    |
 | `deselected`  | `deselected`   | (optional) Deselected button | `boolean` | `false` |
 | `disabled`    | `disabled`     | (optional) Disabled button   | `boolean` | `false` |
 | `size`        | `size`         | (optional) Button size       | `string`  | `''`    |
@@ -21,7 +21,7 @@
 
 ### `disable() => Promise<void>`
 
-(optional) Button method: disable()
+Button method: disable()
 
 #### Returns
 
@@ -31,7 +31,7 @@ Type: `Promise<void>`
 
 ### `enable() => Promise<void>`
 
-(optional) Button method: enable()
+Button method: enable()
 
 #### Returns
 
