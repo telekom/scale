@@ -1,44 +1,44 @@
 /**
-* @prop --back-to-top--container-height: Height of back to top container
-* @prop --back-to-top--container-width: Width of back to top container
-* @prop --back-to-top--container-background: Background of back to top container
-* @prop --back-to-top--container-border-radius: Border radius of back to top container
-* @prop --back-to-top--container-position: Position of back to top container
-* @prop --back-to-top--container-right: Right of back to top container
-* @prop --back-to-top--container-bottom: Bottom of back to top container
-* @prop --back-to-top--container-display: Display of back to top container
-* @prop --back-to-top--container-cursor: Cursor of back to top container
-* @prop --back-to-top--container-z-index: Z index of back to top container
-* @prop --back-to-top--container-visible-display: Display of back to top container visible
-* @prop --back-to-top--container-visible-align-items: Align items of back to top container visible
-* @prop --back-to-top--container-visible-justify-content: Justify content of back to top container visible
-* @prop --back-to-top--container-visible-after-content: Content of back to top container visible after
-* @prop --back-to-top--container-visible-after-color: Color of back to top container visible after
+* @prop --back-to-top__container-height: Height of back to top container
+* @prop --back-to-top__container-width: Width of back to top container
+* @prop --back-to-top__container-background: Background of back to top container
+* @prop --back-to-top__container-border-radius: Border radius of back to top container
+* @prop --back-to-top__container-position: Position of back to top container
+* @prop --back-to-top__container-right: Right of back to top container
+* @prop --back-to-top__container-bottom: Bottom of back to top container
+* @prop --back-to-top__container-display: Display of back to top container
+* @prop --back-to-top__container-cursor: Cursor of back to top container
+* @prop --back-to-top__container-z-index: Z index of back to top container
+* @prop --back-to-top__container-visible-display: Display of back to top container visible
+* @prop --back-to-top__container-visible-align-items: Align items of back to top container visible
+* @prop --back-to-top__container-visible-justify-content: Justify content of back to top container visible
+* @prop --back-to-top__container-visible-after-content: Content of back to top container visible after
+* @prop --back-to-top__container-visible-after-color: Color of back to top container visible after
 */
 
-.back-to-top--container {
-  height: var(--back-to-top--container-height, 40px);
-  width: var(--back-to-top--container-width, 40px);
-  background: var(--back-to-top--container-background, #409eff);
-  border-radius: var(--back-to-top--container-border-radius, 50%);
-  position: var(--back-to-top--container-position, fixed);
-  right: var(--back-to-top--container-right, 40px);
-  bottom: var(--back-to-top--container-bottom, 40px);
-  display: var(--back-to-top--container-display, none);
-  cursor: var(--back-to-top--container-cursor, pointer);
-  z-index: var(--back-to-top--container-z-index, 11);
+.back-to-top__container {
+  height: var(--back-to-top__container-height, 40px);
+  width: var(--back-to-top__container-width, 40px);
+  background: var(--back-to-top__container-background, #409eff);
+  border-radius: var(--back-to-top__container-border-radius, 50%);
+  position: var(--back-to-top__container-position, fixed);
+  right: var(--back-to-top__container-right, 40px);
+  bottom: var(--back-to-top__container-bottom, 40px);
+  display: var(--back-to-top__container-display, none);
+  cursor: var(--back-to-top__container-cursor, pointer);
+  z-index: var(--back-to-top__container-z-index, 11);
 }
 
-.back-to-top--container-visible {
-  display: var(--back-to-top--container-visible-display, flex);
-  align-items: var(--back-to-top--container-visible-align-items, center);
+.back-to-top__container-visible {
+  display: var(--back-to-top__container-visible-display, flex);
+  align-items: var(--back-to-top__container-visible-align-items, center);
   justify-content: var(
-    --back-to-top--container-visible-justify-content,
+    --back-to-top__container-visible-justify-content,
     center
   );
 }
 
-.back-to-top--container-visible:after {
-  content: var(--back-to-top--container-visible-after-content, '\2B06');
-  color: var(--back-to-top--container-visible-after-color, white);
+.back-to-top__container-visible:after {
+  content: var(--back-to-top__container-visible-after-content, '\2B06');
+  color: var(--back-to-top__container-visible-after-color, white);
 }

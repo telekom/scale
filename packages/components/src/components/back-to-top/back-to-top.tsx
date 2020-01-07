@@ -48,8 +48,8 @@ export class BackToTop {
 
   private getCssClassMap(): CssClassMap {
     return classNames(
-      'back-to-top--container',
-      this.visible && `back-to-top--container-visible`
+      'back-to-top__container',
+      this.visible && `back-to-top__container-visible`
     );
   }
 }
