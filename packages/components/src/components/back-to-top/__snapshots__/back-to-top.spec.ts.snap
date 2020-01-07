@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackToTop should match snapshot 1`] = `
+<t-back-to-top>
+  <mock:shadow-root>
+    <div class="back-to-top--container">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</t-back-to-top>
+`;

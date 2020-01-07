@@ -52,6 +52,9 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TBackToTop {
+    'visibilityHeight'?: number;
+  }
   interface TBadge {
     'link'?: string;
     'pill'?: boolean;
@@ -219,6 +222,12 @@ declare global {
     new (): HTMLTAlertElement;
   };
 
+  interface HTMLTBackToTopElement extends Components.TBackToTop, HTMLStencilElement {}
+  var HTMLTBackToTopElement: {
+    prototype: HTMLTBackToTopElement;
+    new (): HTMLTBackToTopElement;
+  };
+
   interface HTMLTBadgeElement extends Components.TBadge, HTMLStencilElement {}
   var HTMLTBadgeElement: {
     prototype: HTMLTBadgeElement;
@@ -280,6 +289,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     't-alert': HTMLTAlertElement;
+    't-back-to-top': HTMLTBackToTopElement;
     't-badge': HTMLTBadgeElement;
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
@@ -331,6 +341,9 @@ declare namespace LocalJSX {
     * (optional) Alert variant
     */
     'variant'?: string;
+  }
+  interface TBackToTop {
+    'visibilityHeight'?: number;
   }
   interface TBadge {
     'link'?: string;
@@ -487,6 +500,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     't-alert': TAlert;
+    't-back-to-top': TBackToTop;
     't-badge': TBadge;
     't-button': TButton;
     't-card': TCard;
@@ -507,6 +521,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       't-alert': LocalJSX.TAlert & JSXBase.HTMLAttributes<HTMLTAlertElement>;
+      't-back-to-top': LocalJSX.TBackToTop & JSXBase.HTMLAttributes<HTMLTBackToTopElement>;
       't-badge': LocalJSX.TBadge & JSXBase.HTMLAttributes<HTMLTBadgeElement>;
       't-button': LocalJSX.TButton & JSXBase.HTMLAttributes<HTMLTButtonElement>;
       't-card': LocalJSX.TCard & JSXBase.HTMLAttributes<HTMLTCardElement>;
