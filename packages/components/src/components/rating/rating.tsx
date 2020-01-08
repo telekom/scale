@@ -1,6 +1,8 @@
 import { Component, h, Prop, State } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import star from './star.svg';
+import starSelected from './star-selected.svg';
 
 @Component({
   tag: 't-rating',
@@ -44,6 +46,13 @@ export class Rating {
           this.selected = val <= this.preSelectValue;
           return (
             <div
+              innerHTML={
+                this.type === 'star'
+                  ? this.selected
+                    ? starSelected
+                    : star
+                  : ''
+              }
               class={this.getCssClassMap()}
               onMouseEnter={() => this.handleMouseEnter(val)}
               onMouseLeave={() => this.handleMouseLeave()}

@@ -5,10 +5,7 @@
 * @prop --rating__item--star-emoji-cursor: Cursor of the rating star rating emoji
 * @prop --rating__item--star-emoji-font-size: Font size of the rating star rating emoji
 * @prop --rating__item--star-emoji-transition: Transition of the rating star staring emoji
-* @prop --rating__item--star-after-content: Content of the rating star after
 * @prop --rating__item--emoji-after-content: Content of the rating emoji after
-* @prop --rating__item--star-selected-after-color: Color of the rating star selected
-* @prop --rating__item--star-selected-after-content: Content of the rating star selected after
 * @prop --rating__item--emoji-selected-1-after-content: Content of the rating star selected 1 after
 * @prop --rating__item--emoji-selected-2-after-content: Content of the rating star selected 2 after
 * @prop --rating__item--emoji-selected-3-after-content: Content of the rating star selected 3 after
@@ -30,20 +27,10 @@
   transition: var(--rating__item--star-emoji-transition, color 0.2s);
 }
 
-.rating__item--star:after {
-  content: var(--rating__item--star-after-content, '☆');
-}
 .rating__item--emoji:after {
   content: var(--rating__item--emoji-after-content, '\1F611');
 }
-.rating__item--star-selected-1:after,
-.rating__item--star-selected-2:after,
-.rating__item--star-selected-3:after,
-.rating__item--star-selected-4:after,
-.rating__item--star-selected-5:after {
-  color: var(--rating__item--star-selected-after-color, #f7ba2a);
-  content: var(--rating__item--star-selected-after-content, '★');
-}
+
 .rating__item--emoji-selected-1:after {
   content: var(--rating__item--emoji-selected-1-after-content, '\1F61E');
 }

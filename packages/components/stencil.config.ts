@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
   namespace: 'telements-components',
@@ -15,4 +16,5 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  plugins: [inlineSvg()],
 };

@@ -36,6 +36,7 @@
     "jest-cli": "^24.9.0",
     "prettier": "^1.18.2",
     "puppeteer": "1.20.0",
+    "stencil-inline-svg": "^1.0.1",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0"
   },
