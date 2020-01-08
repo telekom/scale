@@ -3,12 +3,12 @@
 exports[`Rating should match snapshot 1`] = `
 <t-rating>
   <mock:shadow-root>
-    <div class="rating--container">
-      <div class="rating--undefined"></div>
-      <div class="rating--undefined"></div>
-      <div class="rating--undefined"></div>
-      <div class="rating--undefined"></div>
-      <div class="rating--undefined"></div>
+    <div class="rating__container">
+      <div class="rating__item--undefined"></div>
+      <div class="rating__item--undefined"></div>
+      <div class="rating__item--undefined"></div>
+      <div class="rating__item--undefined"></div>
+      <div class="rating__item--undefined"></div>
     </div>
   </mock:shadow-root>
   /t-rating&gt;

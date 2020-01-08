@@ -1,67 +1,61 @@
 /**
-* @prop --rating--container-display: Display of the rating container
-* @prop --rating--star-emoji-display: Display of the rating star rating emoji
-* @prop --rating--star-emoji-margin-right: Margin right of the rating star rating emoji
-* @prop --rating--star-emoji-cursor: Cursor of the rating star rating emoji
-* @prop --rating--star-emoji-font-size: Font size of the rating star rating emoji
-* @prop --rating--star-emoji-transition: Transition of the rating star staring emoji
-* @prop --rating--star-after-content: Content of the rating star after
-* @prop --rating--emoji-after-content: Content of the rating emoji after
-* @prop --rating--star-selected-color: Color of the rating star selected
-* @prop --rating--star-selected-after-content: Content of the rating star selected after
-* @prop --rating--emoji-selected-1-after-content: Content of the rating star selected 1 after
-* @prop --rating--emoji-selected-2-after-content: Content of the rating star selected 2 after
-* @prop --rating--emoji-selected-3-after-content: Content of the rating star selected 3 after
-* @prop --rating--emoji-selected-4-after-content: Content of the rating star selected 4 after
-* @prop --rating--emoji-selected-5-after-content: Content of the rating star selected 5 after
+* @prop --rating__container-display: Display of the rating container
+* @prop --rating__item--star-emoji-display: Display of the rating star rating emoji
+* @prop --rating__item--star-emoji-margin-right: Margin right of the rating star rating emoji
+* @prop --rating__item--star-emoji-cursor: Cursor of the rating star rating emoji
+* @prop --rating__item--star-emoji-font-size: Font size of the rating star rating emoji
+* @prop --rating__item--star-emoji-transition: Transition of the rating star staring emoji
+* @prop --rating__item--star-after-content: Content of the rating star after
+* @prop --rating__item--emoji-after-content: Content of the rating emoji after
+* @prop --rating__item--star-selected-after-color: Color of the rating star selected
+* @prop --rating__item--star-selected-after-content: Content of the rating star selected after
+* @prop --rating__item--emoji-selected-1-after-content: Content of the rating star selected 1 after
+* @prop --rating__item--emoji-selected-2-after-content: Content of the rating star selected 2 after
+* @prop --rating__item--emoji-selected-3-after-content: Content of the rating star selected 3 after
+* @prop --rating__item--emoji-selected-4-after-content: Content of the rating star selected 4 after
+* @prop --rating__item--emoji-selected-5-after-content: Content of the rating star selected 5 after
 
 */
 
-.rating--container {
-  display: var(--rating--container-display, block);
+.rating__container {
+  display: var(--rating__container-display, flex);
 }
 
-.rating--star,
-.rating--emoji {
-  display: var(--rating--star-emoji-display, inline);
-  margin-right: var(--rating--star-emoji-margin-right, 6px);
-  cursor: var(--rating--star-emoji-cursor, pointer);
-  font-size: var(--rating--star-emoji-font-size, 24px);
-  transition: var(--rating--star-emoji-transition, color 0.2s);
+.rating__item--star,
+.rating__item--emoji {
+  display: var(--rating__item--star-emoji-display, inline);
+  margin-right: var(--rating__item--star-emoji-margin-right, 6px);
+  cursor: var(--rating__item--star-emoji-cursor, pointer);
+  font-size: var(--rating__item--star-emoji-font-size, 24px);
+  transition: var(--rating__item--star-emoji-transition, color 0.2s);
 }
 
-.rating--star:after {
-  content: var(--rating--star-after-content, '\2606');
+.rating__item--star:after {
+  content: var(--rating__item--star-after-content, '☆');
 }
-.rating--emoji:after {
-  content: var(--rating--emoji-after-content, '\1F611');
+.rating__item--emoji:after {
+  content: var(--rating__item--emoji-after-content, '\1F611');
 }
-.rating--star-selected-1,
-.rating--star-selected-2,
-.rating--star-selected-3,
-.rating--star-selected-4,
-.rating--star-selected-5 {
-  color: var(--rating--star-selected-color, #f7ba2a);
+.rating__item--star-selected-1:after,
+.rating__item--star-selected-2:after,
+.rating__item--star-selected-3:after,
+.rating__item--star-selected-4:after,
+.rating__item--star-selected-5:after {
+  color: var(--rating__item--star-selected-after-color, #f7ba2a);
+  content: var(--rating__item--star-selected-after-content, '★');
 }
-.rating--star-selected-1:after,
-.rating--star-selected-2:after,
-.rating--star-selected-3:after,
-.rating--star-selected-4:after,
-.rating--star-selected-5:after {
-  content: var(--rating--star-selected-after-content, '\2605');
+.rating__item--emoji-selected-1:after {
+  content: var(--rating__item--emoji-selected-1-after-content, '\1F61E');
 }
-.rating--emoji-selected-1:after {
-  content: var(--rating--emoji-selected-1-after-content, '\1F61E');
+.rating__item--emoji-selected-2:after {
+  content: var(--rating__item--emoji-selected-2-after-content, '\1F615');
 }
-.rating--emoji-selected-2:after {
-  content: var(--rating--emoji-selected-2-after-content, '\1F615');
+.rating__item--emoji-selected-3:after {
+  content: var(--rating__item--emoji-selected-3-after-content, '\1F625');
 }
-.rating--emoji-selected-3:after {
-  content: var(--rating--emoji-selected-3-after-content, '\1F625');
+.rating__item--emoji-selected-4:after {
+  content: var(--rating__item--emoji-selected-4-after-content, '\1F60E');
 }
-.rating--emoji-selected-4:after {
-  content: var(--rating--emoji-selected-4-after-content, '\1F60E');
-}
-.rating--emoji-selected-5:after {
-  content: var(--rating--emoji-selected-5-after-content, '\1F60D');
+.rating__item--emoji-selected-5:after {
+  content: var(--rating__item--emoji-selected-5-after-content, '\1F60D');
 }

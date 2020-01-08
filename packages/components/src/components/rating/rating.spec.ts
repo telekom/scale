@@ -24,7 +24,7 @@ describe('Rating', () => {
   it('should set new preSelectValue if there is a value set to selectedValue when mouse leaving', () => {
     element.selectedValue = 2;
     element.handleMouseLeave(5);
-    expect(element.preSelectValue).toBe(5);
+    expect(element.preSelectValue).toBe(2);
   });
 
   it('should set new preSelectValue to 0 if there is no value set to preSelectValue when mouse leaving', () => {
@@ -49,6 +49,6 @@ describe('Rating', () => {
 
   it('should have class emoji when type value emoji is set', () => {
     element.type = 'emoji';
-    expect(element.getCssClassMap()).toContain('rating--emoji');
+    expect(element.getCssClassMap()).toContain('rating__item--emoji');
   });
 });

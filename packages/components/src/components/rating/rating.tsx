@@ -19,9 +19,9 @@ export class Rating {
     this.preSelectValue = val;
   };
 
-  public handleMouseLeave = val => {
+  public handleMouseLeave = () => {
     if (this.selectedValue) {
-      this.preSelectValue = val;
+      this.preSelectValue = this.selectedValue;
     } else {
       this.preSelectValue = 0;
     }
@@ -39,14 +39,14 @@ export class Rating {
 
   public render() {
     return (
-      <div class="rating--container">
+      <div class="rating__container">
         {this.range.map(val => {
           this.selected = val <= this.preSelectValue;
           return (
             <div
               class={this.getCssClassMap()}
               onMouseEnter={() => this.handleMouseEnter(val)}
-              onMouseLeave={() => this.handleMouseLeave(val)}
+              onMouseLeave={() => this.handleMouseLeave()}
               onClick={() => this.handleClick(val)}
             />
           );
@@ -57,8 +57,9 @@ export class Rating {
 
   private getCssClassMap(): CssClassMap {
     return classNames(
-      `rating--${this.type}`,
-      this.selected && `rating--${this.type}-selected-${this.preSelectValue}`
+      `rating__item--${this.type}`,
+      this.selected &&
+        `rating__item--${this.type}-selected-${this.preSelectValue}`
     );
   }
 }
