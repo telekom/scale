@@ -16,7 +16,6 @@ export class DocumentComponent implements ComponentInterface {
 
   async componentWillRender() {
     if (this.page) {
-      console.log('componentWillRender', this.page);
       const data = this.data = findItem(siteStructure as SiteStructureItem[], this.page);
 
       if (!Build.isBrowser && !data.item) {
@@ -36,7 +35,6 @@ export class DocumentComponent implements ComponentInterface {
     if (!data || !content) {
       return null;
     }
-    console.log('render3', this.page);
     return (
       <Host>
         <div class="container">
@@ -65,7 +63,6 @@ export class DocumentComponent implements ComponentInterface {
 const localCache = new Map<string, Promise<MarkdownContent>>();
 
 const fetchContent = (path: string) => {
-
   let promise = localCache.get(path);
   if (!promise) {
     console.log('fetchContent', path);
@@ -106,4 +103,4 @@ const toHypertext = (data: any) => {
   return (h as any).apply(null, args);
 };
 
-const tagBlacklist = ['script', 'link', 'meta', 'object', 'head', 'html', 'body'];
+const tagBlacklist = ['link', 'meta', 'object', 'head', 'html', 'body'];

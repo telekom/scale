@@ -10,7 +10,7 @@ interface ItemOffset {
   tag: 'in-page-navigation',
   styleUrl: 'in-page-navigation.css'
 })
-export class InPageNavigtion implements ComponentInterface {
+export class InPageNavigation implements ComponentInterface {
 
   @Prop() pageLinks: MarkdownHeading[] = [];
   @Prop() srcUrl: string = '';
@@ -62,7 +62,7 @@ export class InPageNavigtion implements ComponentInterface {
   render() {
     const pageLinks = this.pageLinks.filter(pl => pl.level !== 1);
     const submitEditLink = (
-      <a class="submit-edit-link" href={`https://github.com/telekom/telements/edit/master/${this.srcUrl}`}>
+      <a class="submit-edit-link" href={`https://github.com/telekom/telements/edit/development/packages/docs/${this.srcUrl}`} target="_blank">
         <app-icon name="github"></app-icon>
         <span>Submit an edit</span>
       </a>

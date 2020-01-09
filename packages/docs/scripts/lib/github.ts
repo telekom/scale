@@ -17,9 +17,6 @@ export async function getGithubData(filePath: string, parsedMarkdown: any) {
     }));
 
     const commits = await request.json();
-
-    console.log('commits', commits)
-
     const contributors = Array.from(new Set(commits.map(commit => {
       if (commit && commit.author && commit.author.login) {
         return commit.author.login;
@@ -40,9 +37,6 @@ export async function getGithubData(filePath: string, parsedMarkdown: any) {
         attributes.contributors.push(contributor);
       }
     });
-
-    console.log('filePath:', filePath, 'contributors:', attributes.contributors.length, 'lastUpdated:', lastUpdated);
-
   } catch (e) {
     console.log(e);
   }

@@ -17,6 +17,9 @@ function convertElementToHypertextData(node) {
             tag = 'template';
         }
         data.push(tag);
+        if (tag == 'script') {
+            elm.childNodes[0].nodeValue = `\n    //\n${elm.childNodes[0].nodeValue}`;
+        }
         if (elm.attributes.length > 0) {
             const attrs = {};
             for (let j = 0; j < elm.attributes.length; j++) {
@@ -38,4 +41,4 @@ function convertElementToHypertextData(node) {
     }
     return '';
 }
-const tagBlacklist = ['script', 'link', 'meta', 'object', 'head', 'html', 'body'];
+const tagBlacklist = ['link', 'meta', 'object', 'head', 'html', 'body'];

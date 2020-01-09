@@ -1,6 +1,0 @@
-import { p as patchBrowser, g as globals, b as bootstrapLazy } from './core-9beb9895.js';
-
-patchBrowser().then(options => {
-  globals();
-  return bootstrapLazy([["t-alert",[[1,"t-alert",{"customClass":[1,"custom-class"],"size":[1],"theme":[1],"variant":[1],"headline":[513],"opened":[516],"timeout":[8],"icon":[1],"close":[1],"open":[64]}]]],["t-badge",[[1,"t-badge",{"size":[1],"variant":[1],"pill":[4],"link":[1]}]]],["t-button",[[1,"t-button",{"size":[1],"theme":[1],"variant":[1],"disabled":[4],"deselected":[4],"disable":[64],"enable":[64]}]]],["t-card",[[1,"t-card",{"size":[1],"theme":[1],"variant":[1],"disabled":[4],"deselected":[4],"imageTop":[1,"image-top"],"imageTopAlt":[1,"image-top-alt"]}]]],["t-input-text",[[1,"t-input-text",{"value":[1025],"validator":[16],"theme":[1],"touched":[32]}]]],["t-link",[[1,"t-link",{"href":[1],"disabled":[4],"underline":[4],"openNewTab":[4,"open-new-tab"],"variant":[1]}]]],["t-modal",[[1,"t-modal",{"size":[1],"theme":[1],"variant":[1],"opened":[516],"close":[1],"openModal":[64],"onCloseModal":[64]}]]],["t-progress-bar",[[1,"t-progress-bar",{"percentage":[2],"variant":[1],"strokeWidth":[2,"stroke-width"],"showText":[4,"show-text"],"textInside":[4,"text-inside"]}]]],["t-tag",[[1,"t-tag",{"variant":[1],"pill":[4],"link":[1]}]]]], options);
-});

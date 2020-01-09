@@ -98,7 +98,7 @@ export class AppRoot {
           <footer>
             <div class="container">
               <div class="footer-col">
-                <app-icon name="logo" />
+                <span>Telements</span>
                 <p>© 2019 Telekom. Released under MIT License</p>
               </div>
             </div>

@@ -12,7 +12,7 @@
     "prerender.dev": "stencil build --dev --prerender",
     "site.structure": "tsc --p ./scripts && node ./scripts/site-structure",
     "start": "stencil build --dev --watch --serve",
-    "watch": "node ./scripts/watch.js"
+    "watch": "tsc --p ./scripts && node ./scripts/watch.js"
   },
   "devDependencies": {
     "@stencil/core": "^1.7.4",
@@ -44,5 +44,6 @@
   "bugs": {
     "url": "https://github.com/telekom/telements"
   },
-  "homepage": "https://stenciljs.com/"
+  "homepage": "https://stenciljs.com/",
+  "dependencies": {}
 }

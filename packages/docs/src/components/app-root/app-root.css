@@ -37,7 +37,7 @@ stencil-site {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 0 64px;

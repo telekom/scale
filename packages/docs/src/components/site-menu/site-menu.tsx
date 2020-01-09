@@ -23,15 +23,15 @@ export class SiteMenu implements ComponentInterface {
         <SiteProviderConsumer.Consumer>
           {({ toggleLeftSidebar }: SiteState) => (
             <div>
-              <ul class='menu-list'>
+              <ul class="menu-list">
                 {this.siteStructureList.map((item) => (
                   <li>
-                    <a href={item.children![0].url || '#'} onClick={this.toggleParent(item)}>
+                    <a href={item.children![0].url || '#'}>
                       <span class="section-label">
                         {item.text}
                       </span>
                     </a>
-                    <ul class={{ 'collapsed': item !== this.selectedParent }}>
+                    <ul>
                       {item.children!.map((childItem) => (
                         <li>
                           {(childItem.url) ?

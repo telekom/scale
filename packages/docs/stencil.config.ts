@@ -10,7 +10,8 @@ export const config: Config = {
         unregister: true
       },
       copy: [
-        { src: '../components', dest: 'components' }
+        { src: '../../components/www/build', dest: 'components' },
+        { src: 'docs/themes', dest: 'themes' },
       ]
     },
     {

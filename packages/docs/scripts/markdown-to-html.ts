@@ -44,8 +44,6 @@ const SITE_STRUCTURE_FILE = './src/assets/docs-structure.json';
 
     try {
       let parsedMarkdown = frontMatter<any>(markdownContents);
-      // parsedMarkdown = await getGithubData(filePath, parsedMarkdown);
-
       const renderer = new marked.Renderer();
 
       collectHeadingMetadata(renderer, markdownMetadata);

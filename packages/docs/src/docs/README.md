@@ -5,4 +5,5 @@
   * [Getting Started](introduction/getting-started.md)
 * Components
   * [Button](components/button.md)
-  * [New](components/new.md)
+  * [Alert](components/alert.md)
+  * [Card](components/card.md)

@@ -1,6 +1,10 @@
 import { Component, Element, Listen, State, h } from '@stencil/core';
+import { themes } from '../../docs/themes/themes';
 
-const STORAGE_THEME = 'telements-theme';
+interface Theme {
+  name: string;
+  slug: string;
+}
 
 @Component({
   tag: 'site-header',
@@ -25,19 +29,8 @@ export class SiteHeader {
     });
   }
 
-  getThemeFromStorage() {
-    const selectedThemeFromStorage = localStorage.getItem(STORAGE_THEME);
-    if (selectedThemeFromStorage) {
-      this.selectedTheme = selectedThemeFromStorage;
-    }
-  }
-
   componentDidLoad() {
     this.isMobileMenuShown = false;
-  }
-
-  componentWillLoad() {
-    this.getThemeFromStorage();
   }
 
   showNav() {
@@ -46,7 +39,7 @@ export class SiteHeader {
 
     const menu = (this.el.querySelector('.header-menu') as HTMLElement);
 
-    menu.style.display = "flex";
+    menu.style.display = 'flex';
     setTimeout(() => {
       this.el.classList.add('show-mobile-menu');
       document.body.classList.add('no-scroll');
@@ -61,21 +54,21 @@ export class SiteHeader {
 
     this.el.classList.remove('show-mobile-menu');
     setTimeout(() => {
-      menu.style.display = "none";
+      menu.style.display = 'none';
       document.body.classList.remove('no-scroll');
     }, 300)
   }
 
   selectTheme(event: any) {
     this.selectedTheme = event.target.value;
-    localStorage.setItem(STORAGE_THEME, this.selectedTheme);
   }
 
   render() {
     return (
       <div class="container">
+        <link href={`/themes/${this.selectedTheme}.css`} rel="stylesheet"></link>
         <stencil-route-link url="/" class="logo-link" anchorTitle="Stencil logo">
-          <app-icon name="logo" />
+          <span>Telements</span>
         </stencil-route-link>
 
         <div class="header-menu">
@@ -86,8 +79,9 @@ export class SiteHeader {
           <ul class="external-links list--unstyled">
             <li>
               <select name="theme" id="theme" onChange={this.selectTheme.bind(this)}>
-                <option value="default" selected={this.selectedTheme === 'default'}>Default</option>
-                <option value="basic" selected={this.selectedTheme === 'basic'}>Basic</option>
+                {themes.map((theme: Theme) => (
+                  <option value={theme.slug} selected={this.selectedTheme === theme.slug}>{theme.name}</option>
+                ))}
               </select>
             </li>
             <li>

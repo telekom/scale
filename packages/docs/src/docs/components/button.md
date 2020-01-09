@@ -10,8 +10,6 @@ contributors:
 
 A Button component
 
-Some updated again
-
 selector: `t-button`
 
 ## Default
