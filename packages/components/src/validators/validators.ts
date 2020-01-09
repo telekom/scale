@@ -26,10 +26,10 @@ export function LengthValidator(min: number, max: number): Validator<string> {
       min && max
         ? `You must enter between ${min} and ${max} characters`
         : min
-        ? `You must enter at least ${min} characters`
-        : max
-        ? `You must enter less then ${max} characters`
-        : '',
+          ? `You must enter at least ${min} characters`
+          : max
+            ? `You must enter less then ${max} characters`
+            : '',
   };
 }
 
@@ -49,7 +49,7 @@ export const NumberValidator: Validator<string> = {
 
 export const EmailValidator: Validator<string> = {
   validate: (value: string) => {
-    const reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return reg.test(value.toLowerCase());
   },
   errorMessage: 'You must provide a valid email',
