@@ -52,6 +52,13 @@ export namespace Components {
     'variant'?: string;
   }
   interface TBackToTop {
+    /**
+    * (optional) text inside back to top button
+    */
+    'text'?: string;
+    /**
+    * (optional) define the scroll height value, the back to top button will not show until the height reaches the value
+    */
     'visibilityHeight'?: number;
   }
   interface TBadge {
@@ -462,6 +469,13 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TBackToTop {
+    /**
+    * (optional) text inside back to top button
+    */
+    'text'?: string;
+    /**
+    * (optional) define the scroll height value, the back to top button will not show until the height reaches the value
+    */
     'visibilityHeight'?: number;
   }
   interface TBadge {

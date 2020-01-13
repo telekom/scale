@@ -3,8 +3,8 @@
 exports[`BackToTop should match snapshot 1`] = `
 <t-back-to-top>
   <mock:shadow-root>
-    <div class="back-to-top--container">
-      <slot></slot>
+    <div class="back-to-top__container">
+      ⬆
     </div>
   </mock:shadow-root>
 </t-back-to-top>

@@ -8,16 +8,19 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class BackToTop {
+  /** (optional) define the scroll height value, the back to top button will not show until the height reaches the value */
   @Prop() public visibilityHeight?: number = 200;
+  /** (optional) text inside back to top button */
+  @Prop() public text?: string = '⬆';
 
   @State() private visible: boolean = false;
 
   @Listen('scroll', { target: 'window' })
-  public handleScroll(ev) {
+  public handleScroll(event) {
     if (
-      (ev.target.documentElement &&
-        ev.target.documentElement.scrollTop > this.visibilityHeight) ||
-      (ev.target.body && ev.target.body.scrollTop > this.visibilityHeight)
+      (event.target.documentElement &&
+        event.target.documentElement.scrollTop > this.visibilityHeight) ||
+      (event.target.body && event.target.body.scrollTop > this.visibilityHeight)
     ) {
       this.visible = true;
     } else {
@@ -41,7 +44,7 @@ export class BackToTop {
         onClick={this.scrollToTop}
         onScroll={() => this.handleScroll}
       >
-        <slot />
+        {this.text}
       </div>
     );
   }

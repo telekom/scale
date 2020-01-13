@@ -12,8 +12,8 @@
 * @prop --back-to-top__container-visible-display: Display of back to top container visible
 * @prop --back-to-top__container-visible-align-items: Align items of back to top container visible
 * @prop --back-to-top__container-visible-justify-content: Justify content of back to top container visible
-* @prop --back-to-top__container-visible-after-content: Content of back to top container visible after
-* @prop --back-to-top__container-visible-after-color: Color of back to top container visible after
+* @prop --back-to-top__container-visible-color: Color of back to top container visible
+* @prop --back-to-top__container-visible-font-size: Font size of back to top container visible
 */
 
 .back-to-top__container {
@@ -36,9 +36,6 @@
     --back-to-top__container-visible-justify-content,
     center
   );
-}
-
-.back-to-top__container-visible:after {
-  content: var(--back-to-top__container-visible-after-content, '\2B06');
-  color: var(--back-to-top__container-visible-after-color, white);
+  color: var(--back-to-top__container-visible-color, #fff);
+  font-size: var(--back-to-top__container-visible-font-size, 16px);
 }

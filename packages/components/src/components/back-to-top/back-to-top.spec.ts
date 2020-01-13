@@ -18,7 +18,7 @@ describe('BackToTop', () => {
   it('should have class back to top container visible', () => {
     element.visible = true;
     expect(element.getCssClassMap()).toContain(
-      'back-to-top--container-visible'
+      'back-to-top__container-visible'
     );
   });
 
