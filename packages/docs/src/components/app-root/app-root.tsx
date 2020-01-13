@@ -99,7 +99,7 @@ export class AppRoot {
             <div class="container">
               <div class="footer-col">
                 <span>Telements</span>
-                <p>© 2019 Telekom. Released under MIT License</p>
+                <p>© {new Date().getFullYear()} Telekom. Released under MIT License</p>
               </div>
             </div>
           </footer>

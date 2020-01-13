@@ -4,20 +4,21 @@
   "version": "0.0.1",
   "description": "Stencil Site",
   "scripts": {
-    "build": "npm run site.structure && npm run docs && stencil build --prerender",
+    "build": "npm run site.structure && npm run docs && npm run prerender",
     "build.ci": "npm run site.structure && npm run docs && stencil build --prerender --max-workers=1 --ci",
     "docs": "tsc --p ./scripts && node ./scripts/markdown-to-html",
     "prerender": "stencil build --prerender",
     "test": "echo Good",
     "prerender.dev": "stencil build --dev --prerender",
     "site.structure": "tsc --p ./scripts && node ./scripts/site-structure",
-    "start": "stencil build --dev --watch --serve",
+    "start": "sd concurrent \"npm run watch\" \"stencil build --dev --watch --serve\"",
     "watch": "tsc --p ./scripts && node ./scripts/watch.js"
   },
   "devDependencies": {
     "@stencil/core": "^1.7.4",
     "@stencil/router": "1.0.1",
     "@stencil/state-tunnel": "1.0.1",
+    "@stencil/utils": "^0.0.5",
     "@stencil/yahara": "0.0.5",
     "@types/fs-extra": "^8.0.0",
     "@types/glob": "^7.1.1",

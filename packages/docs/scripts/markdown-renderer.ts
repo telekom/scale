@@ -4,7 +4,7 @@ import path from 'path';
 import loadLanguages from 'prismjs/components/';
 import { SiteStructureItem, MarkdownContent } from '../src/global/definitions';
 
-const languages = ['tsx', 'bash', 'typescript', 'javascript','markup', 'css', 'json', 'diff'];
+const languages = ['tsx', 'bash', 'typescript', 'javascript', 'markup', 'css', 'json', 'diff'];
 loadLanguages(languages);
 
 export function findItem(siteStructureList: SiteStructureItem[], filePath: string): SiteStructureItem {
@@ -27,15 +27,15 @@ export function listFactory(renderer: marked.Renderer, metadataList: SiteStructu
   const prevListitem = renderer.listitem;
   const prevLink = renderer.link;
 
-  renderer.list = function(body, ordered) {
+  renderer.list = function (body, ordered) {
     lastItem = {
       type: 'list'
     };
     return prevList.call(this, body, ordered);
   };
-  renderer.listitem = function(text) {
+  renderer.listitem = function (text) {
     if (lastItem.type === 'list') {
-      const [ itemText ] = text.split('<ul');
+      const [itemText] = text.split('<ul');
       lastItem = {
         type: 'listitem',
         text: itemText,
@@ -68,7 +68,7 @@ export function listFactory(renderer: marked.Renderer, metadataList: SiteStructu
     }
     return prevListitem.call(this, text);
   };
-  renderer.link = function(href: string, title: string, text: string) {
+  renderer.link = function (href: string, title: string, text: string) {
     lastItem = {
       type: 'link',
       text,
@@ -81,7 +81,7 @@ export function listFactory(renderer: marked.Renderer, metadataList: SiteStructu
 export function localizeMarkdownLink(renderer: marked.Renderer, filePath: string, metadataList: SiteStructureItem[]) {
   const prevLink = renderer.link;
 
-  renderer.link = function(href: string, title: string, text: string) {
+  renderer.link = function (href: string, title: string, text: string) {
     if (!(href.startsWith('/') || href.startsWith('#') || href.startsWith('http'))) {
       let [pathname, fragment] = href.split('#');
       fragment = fragment ? `#${fragment}` : '';
@@ -96,7 +96,7 @@ export function localizeMarkdownLink(renderer: marked.Renderer, filePath: string
 }
 
 export function collectHeadingMetadata(renderer: marked.Renderer, metadata: MarkdownContent) {
-  renderer.heading = function(text, level, raw) {
+  renderer.heading = function (text, level, raw) {
     const id = raw.toLowerCase().replace(/[^\w]+/g, '-');
     metadata.headings.push({
       id,
