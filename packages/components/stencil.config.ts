@@ -17,4 +17,9 @@ export const config: Config = {
     },
   ],
   plugins: [inlineSvg()],
+  testing: {
+    transform: {
+      "^.+\\.svg$": "<rootDir>/../../test/__mocks__/svgTransform.js"
+    }
+  }
 };
