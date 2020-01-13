@@ -71,6 +71,7 @@ describe('EmailValidator', () => {
     { value: 'a@b.de', result: true },
     { value: 'a.de', result: false },
     { value: '', result: false },
+    { value: 'a@b@c.de', result: false },
   ];
 
   results.forEach(result =>
