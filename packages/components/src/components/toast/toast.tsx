@@ -9,20 +9,32 @@ import { formatDistance, subSeconds } from 'date-fns';
   shadow: true,
 })
 export class Toast {
-  /** (required) Alert class */
+  /** (optional) Toast class */
   @Prop() public customClass?: string = '';
+  /** (optional) Toast size */
   @Prop() public size?: string = '';
+  /** (optional) Toast theme */
   @Prop() public theme?: string = '';
+  /** (optional) Toast variant */
   @Prop() public variant?: string = '';
+  /** (optional) Toast opened */
   @Prop({ reflectToAttr: true }) public opened?: boolean;
+  /** (optional) Toast autohide time */
   @Prop() public autoHide?: boolean | number = false;
+  /** (optional) Animated toast */
   @Prop() public animated?: boolean = true;
   /** (optional) Toast time */
   @Prop() public time?: number;
+  /** (optional) Toast position at the top */
   @Prop() public positionTop?: number = 12;
+  /** (optional) Toast position right */
   @Prop() public positionRight?: number = 12;
+  /** (optional) Toast fade duration */
   @Prop() public fadeDuration?: number = 500;
+
+  /** (optional) Toast state progress */
   @State() public progress: number = 0;
+  /** (optional) Toast state height with offset */
   @State() public toastHeightWithOffset: number = 0;
 
   @Element() private element: HTMLElement;
@@ -44,7 +56,7 @@ export class Toast {
     }
   }
 
-  public onCloseToast = () => {
+  public close = () => {
     clearInterval(this.timerId);
     this.hideToast = true;
     setTimeout(() => {
@@ -53,12 +65,6 @@ export class Toast {
       this.progress = 0;
     }, this.fadeDuration);
   };
-
-  @Method()
-  public async openToast() {
-    this.opened = true;
-    this.hideToast = false;
-  }
 
   public getTime = () => {
     const formattedTime =
@@ -72,11 +78,18 @@ export class Toast {
       this.timerId = setInterval(() => {
         this.progress += 1 / (this.getAutoHide() / 1000);
         if (this.progress >= 100) {
-          this.onCloseToast();
+          this.close();
         }
       }, 10);
     }
   };
+
+  /** Toast method: open() */
+  @Method()
+  public async open() {
+    this.opened = true;
+    this.hideToast = false;
+  }
 
   public render() {
     this.setToastTimeout();
@@ -87,7 +100,7 @@ export class Toast {
           <slot name="header" />
           header
           <small>{this.getTime()}</small>
-          <a onClick={this.onCloseToast}>
+          <a onClick={this.close}>
             <span aria-hidden="true">&times;</span>
           </a>
         </div>

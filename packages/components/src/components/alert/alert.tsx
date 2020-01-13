@@ -1,4 +1,5 @@
-import { Component, Prop, h, Method } from '@stencil/core';
+import { Component, Prop, h, Method, Element } from '@stencil/core';
+import { HTMLStencilElement } from '@stencil/core/internal';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
@@ -8,7 +9,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Alert {
-  /** (required) Alert class */
+  @Element() public hostElement: HTMLStencilElement;
+  /** (optional) Alert class */
   @Prop() public customClass?: string = '';
   /** (optional) Alert size */
   @Prop() public size?: string = '';
@@ -18,21 +20,26 @@ export class Alert {
   @Prop() public variant?: string = '';
   /** (optional) Alert title */
   @Prop({ reflectToAttr: true }) public headline: string;
-  /** (required) Alert opened */
+  /** (optional) Alert opened */
   @Prop({ reflectToAttr: true }) public opened: boolean;
   /** (optional) Alert timeout */
   @Prop() public timeout?: boolean | number = false;
   /** (optional) Alert icon */
   @Prop() public icon?: string = '';
-  /** (required) Alert close */
-  @Prop() public close?: string = '';
 
   private defaultTimeout = 2000;
 
-  public onCloseAlert = () => {
+  private hasSlotClose: boolean;
+
+  public componentWillLoad() {
+    this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
+  }
+
+  public close = () => {
     this.opened = false;
   };
 
+  /** Alert method: open() */
   @Method()
   public async open() {
     this.opened = true;
@@ -41,9 +48,9 @@ export class Alert {
   public onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
       if (typeof this.timeout === 'number') {
-        setTimeout(this.onCloseAlert, this.timeout);
+        setTimeout(this.close, this.timeout);
       } else {
-        setTimeout(this.onCloseAlert, this.defaultTimeout);
+        setTimeout(this.close, this.defaultTimeout);
       }
     } else {
       return null;
@@ -67,8 +74,14 @@ export class Alert {
           </div>
         </div>
 
-        <a class="alert__close" onClick={this.onCloseAlert}>
-          {this.close}
+        <a class="alert__close" onClick={this.close}>
+          {this.hasSlotClose ? (
+            <div class="alert__close-icon">
+              <slot name="close" />
+            </div>
+          ) : (
+            'x'
+          )}
         </a>
       </div>
     );

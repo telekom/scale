@@ -8,15 +8,17 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class ProgressBar {
-  /** (required) progress percentage */
+  /** (optional) Progress bar class */
+  @Prop() public customClass?: string = '';
+  /** (required) Progress bar percentage */
   @Prop() public percentage: number;
-  /** (optional) show progress variant */
+  /** (optional) Progress bar variant */
   @Prop() public variant?: string;
-  /** (optional) progress stroke width */
+  /** (optional) Progress bar stroke width */
   @Prop() public strokeWidth?: number = 6;
-  /** (optional) show progress percentage text */
+  /** (optional) Progress bar percentage text */
   @Prop() public showText?: boolean;
-  /** (optional) progress text display inside bar */
+  /** (optional) Progress text display inside bar */
   @Prop() public textInside?: boolean;
 
   public render() {
@@ -45,6 +47,8 @@ export class ProgressBar {
 
   private getCssClassMap(): CssClassMap {
     return classNames(
+      'progress-bar',
+      this.customClass && this.customClass,
       this.variant && `progress-bar-inner-variant-${this.variant}`
     );
   }

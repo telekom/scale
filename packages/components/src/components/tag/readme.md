@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property  | Attribute | Description                      | Type      | Default |
-| --------- | --------- | -------------------------------- | --------- | ------- |
-| `link`    | `link`    | (optional) Tag on an <a> element | `string`  | `''`    |
-| `pill`    | `pill`    | (optional) Tag pill              | `boolean` | `false` |
-| `variant` | `variant` | (optional) Tag variant           | `string`  | `''`    |
+| Property      | Attribute      | Description                      | Type      | Default |
+| ------------- | -------------- | -------------------------------- | --------- | ------- |
+| `customClass` | `custom-class` | (optional) Tag class             | `string`  | `''`    |
+| `link`        | `link`         | (optional) Tag on an <a> element | `string`  | `''`    |
+| `pill`        | `pill`         | (optional) Tag pill              | `boolean` | `false` |
+| `theme`       | `theme`        | (optional) Tag theme             | `string`  | `''`    |
+| `variant`     | `variant`      | (optional) Tag variant           | `string`  | `''`    |
 
 
 ## CSS Custom Properties

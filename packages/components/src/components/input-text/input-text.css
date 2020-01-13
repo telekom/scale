@@ -1,3 +1,15 @@
+/**
+ * @prop --input-text-border: Border of the input-text
+ * @prop --input-text-border-radius: Border radius of the input-text 
+ * @prop --input-text-padding: Padding of the input-text
+ * @prop --input-text-font-size: Font size of the input-text
+ * @prop --input-text-font-family: Font family of the input-text
+ * @prop --input-text-validation-font-size: Font size of the validation of the input-text
+ * @prop --input-text-validation-opacity: Opacity of the validation of the input-text
+ * @prop --input-text-validation-margin: Margin of the validation of the input-text
+ * @prop --input-text-validation-color: Color of the validation text of the input-text
+ */
+
 .input-text {
   display: flex;
   flex-direction: column;

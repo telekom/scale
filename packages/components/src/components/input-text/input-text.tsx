@@ -14,14 +14,17 @@ import {
   shadow: true,
 })
 export class InputText {
+  /** (optional) Input text class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Input text theme */
+  @Prop() public theme?: string = '';
+  /** (optional) Input text value */
   @Prop({ mutable: true }) public value: string;
-
+  /** (optional) Input text validator */
   @Prop() public validator: Array<string | ValidatorEntry | Validator<string>>;
-
+  /** (optional) Input text event changed */
   @Event() public changed: EventEmitter<string>;
-
-  @Prop() public theme: string;
-
+  /** (optional) Input text state touched */
   @State() public touched: boolean = false;
 
   // tslint:disable-next-line: variable-name
@@ -62,6 +65,7 @@ export class InputText {
   private getCssClassMap(): CssClassMap {
     return classNames(
       'input-text',
+      this.customClass && this.customClass,
       this.theme && `input-text--theme-${this.theme}`
     );
   }

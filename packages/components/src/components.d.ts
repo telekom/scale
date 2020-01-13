@@ -15,11 +15,7 @@ import {
 export namespace Components {
   interface TAlert {
     /**
-    * (required) Alert close
-    */
-    'close'?: string;
-    /**
-    * (required) Alert class
+    * (optional) Alert class
     */
     'customClass'?: string;
     /**
@@ -30,9 +26,12 @@ export namespace Components {
     * (optional) Alert icon
     */
     'icon'?: string;
+    /**
+    * Alert method: open()
+    */
     'open': () => Promise<void>;
     /**
-    * (required) Alert opened
+    * (optional) Alert opened
     */
     'opened': boolean;
     /**
@@ -53,21 +52,47 @@ export namespace Components {
     'variant'?: string;
   }
   interface TBadge {
+    /**
+    * (optional) Badge class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Badge link
+    */
     'link'?: string;
+    /**
+    * (optional) Badge pill
+    */
     'pill'?: boolean;
+    /**
+    * (optional) Badge size
+    */
     'size'?: string;
+    /**
+    * (optional) Badge variant
+    */
     'variant'?: string;
   }
   interface TButton {
     /**
+    * (optional) Button class
+    */
+    'customClass'?: string;
+    /**
     * (optional) Deselected button
     */
     'deselected'?: boolean;
+    /**
+    * Button method: disable()
+    */
     'disable': () => Promise<void>;
     /**
     * (optional) Disabled button
     */
     'disabled'?: boolean;
+    /**
+    * Button method: enable()
+    */
     'enable': () => Promise<void>;
     /**
     * (optional) Button size
@@ -83,50 +108,98 @@ export namespace Components {
     'variant'?: string;
   }
   interface TCard {
+    /**
+    * (optional) Card class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Deselected card
+    */
     'deselected'?: boolean;
+    /**
+    * (optional) Disabled card
+    */
     'disabled'?: boolean;
+    /**
+    * (optional) Card image at the top
+    */
     'imageTop'?: string;
+    /**
+    * (optional) Card image alternative at the top
+    */
     'imageTopAlt'?: string;
+    /**
+    * (optional) Card size
+    */
     'size'?: string;
+    /**
+    * (optional) Card theme
+    */
     'theme'?: string;
+    /**
+    * (optional) Card variant
+    */
     'variant'?: string;
   }
   interface TInputText {
-    'theme': string;
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text theme
+    */
+    'theme'?: string;
+    /**
+    * (optional) Input text validator
+    */
     'validator': Array<string | ValidatorEntry | Validator<string>>;
+    /**
+    * (optional) Input text value
+    */
     'value': string;
   }
   interface TLink {
     /**
-    * (optional) link disabled
+    * (optional) Link class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Disabled link
     */
     'disabled'?: boolean;
     /**
-    * (optional) link href
+    * (optional) Link href
     */
     'href'?: string;
     /**
-    * (optional) link open a new tag
+    * (optional) Link open a new tag
     */
     'openNewTab'?: boolean;
     /**
-    * (optional) link variant
+    * (optional) Link underline
     */
     'underline'?: boolean;
     /**
-    * (optional) link variant
+    * (optional) Link variant
     */
     'variant'?: string;
   }
   interface TModal {
     /**
-    * (optional) Modal close
+    * Modal method: onCloseModal()
     */
-    'close'?: string;
-    'onCloseModal': () => Promise<void>;
-    'openModal': () => Promise<void>;
+    'close': () => Promise<void>;
     /**
-    * (optional) Modal opened
+    * (optional) Modal class
+    */
+    'customClass'?: string;
+    /**
+    * Modal method: open()
+    */
+    'open': () => Promise<void>;
+    /**
+    * (required) Modal opened
     */
     'opened'?: boolean;
     /**
@@ -144,23 +217,27 @@ export namespace Components {
   }
   interface TProgressBar {
     /**
-    * (required) progress percentage
+    * (optional) Progress bar class
+    */
+    'customClass'?: string;
+    /**
+    * (required) Progress bar percentage
     */
     'percentage': number;
     /**
-    * (optional) show progress percentage text
+    * (optional) Progress bar percentage text
     */
     'showText'?: boolean;
     /**
-    * (optional) progress stroke width
+    * (optional) Progress bar stroke width
     */
     'strokeWidth'?: number;
     /**
-    * (optional) progress text display inside bar
+    * (optional) Progress text display inside bar
     */
     'textInside'?: boolean;
     /**
-    * (optional) show progress variant
+    * (optional) Progress bar variant
     */
     'variant'?: string;
   }
@@ -169,15 +246,27 @@ export namespace Components {
   }
   interface TSwitch {
     /**
-    * Switch props active optional
+    * (optional) Active switch
     */
     'active'?: boolean;
     /**
-    * Switch props disabled optional
+    * (optional) Switch class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Disabled switch
     */
     'disabled'?: boolean;
+    /**
+    * (optional) Switch theme
+    */
+    'theme'?: string;
   }
   interface TTag {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
     /**
     * (optional) Tag on an <a> element
     */
@@ -187,28 +276,62 @@ export namespace Components {
     */
     'pill'?: boolean;
     /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+    /**
     * (optional) Tag variant
     */
     'variant'?: string;
   }
   interface TToast {
+    /**
+    * (optional) Animated toast
+    */
     'animated'?: boolean;
+    /**
+    * (optional) Toast autohide time
+    */
     'autoHide'?: boolean | number;
     /**
-    * (required) Alert class
+    * (optional) Toast class
     */
     'customClass'?: string;
+    /**
+    * (optional) Toast fade duration
+    */
     'fadeDuration'?: number;
-    'openToast': () => Promise<void>;
+    /**
+    * Toast method: open()
+    */
+    'open': () => Promise<void>;
+    /**
+    * (optional) Toast opened
+    */
     'opened'?: boolean;
+    /**
+    * (optional) Toast position right
+    */
     'positionRight'?: number;
+    /**
+    * (optional) Toast position at the top
+    */
     'positionTop'?: number;
+    /**
+    * (optional) Toast size
+    */
     'size'?: string;
+    /**
+    * (optional) Toast theme
+    */
     'theme'?: string;
     /**
     * (optional) Toast time
     */
     'time'?: number;
+    /**
+    * (optional) Toast variant
+    */
     'variant'?: string;
   }
 }
@@ -306,11 +429,7 @@ declare global {
 declare namespace LocalJSX {
   interface TAlert {
     /**
-    * (required) Alert close
-    */
-    'close'?: string;
-    /**
-    * (required) Alert class
+    * (optional) Alert class
     */
     'customClass'?: string;
     /**
@@ -322,7 +441,7 @@ declare namespace LocalJSX {
     */
     'icon'?: string;
     /**
-    * (required) Alert opened
+    * (optional) Alert opened
     */
     'opened'?: boolean;
     /**
@@ -343,12 +462,32 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TBadge {
+    /**
+    * (optional) Badge class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Badge link
+    */
     'link'?: string;
+    /**
+    * (optional) Badge pill
+    */
     'pill'?: boolean;
+    /**
+    * (optional) Badge size
+    */
     'size'?: string;
+    /**
+    * (optional) Badge variant
+    */
     'variant'?: string;
   }
   interface TButton {
+    /**
+    * (optional) Button class
+    */
+    'customClass'?: string;
     /**
     * (optional) Deselected button
     */
@@ -371,49 +510,94 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TCard {
+    /**
+    * (optional) Card class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Deselected card
+    */
     'deselected'?: boolean;
+    /**
+    * (optional) Disabled card
+    */
     'disabled'?: boolean;
+    /**
+    * (optional) Card image at the top
+    */
     'imageTop'?: string;
+    /**
+    * (optional) Card image alternative at the top
+    */
     'imageTopAlt'?: string;
+    /**
+    * (optional) Card size
+    */
     'size'?: string;
+    /**
+    * (optional) Card theme
+    */
     'theme'?: string;
+    /**
+    * (optional) Card variant
+    */
     'variant'?: string;
   }
   interface TInputText {
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text event changed
+    */
     'onChanged'?: (event: CustomEvent<string>) => void;
+    /**
+    * (optional) Input text theme
+    */
     'theme'?: string;
+    /**
+    * (optional) Input text validator
+    */
     'validator'?: Array<string | ValidatorEntry | Validator<string>>;
+    /**
+    * (optional) Input text value
+    */
     'value'?: string;
   }
   interface TLink {
     /**
-    * (optional) link disabled
+    * (optional) Link class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Disabled link
     */
     'disabled'?: boolean;
     /**
-    * (optional) link href
+    * (optional) Link href
     */
     'href'?: string;
     /**
-    * (optional) link open a new tag
+    * (optional) Link open a new tag
     */
     'openNewTab'?: boolean;
     /**
-    * (optional) link variant
+    * (optional) Link underline
     */
     'underline'?: boolean;
     /**
-    * (optional) link variant
+    * (optional) Link variant
     */
     'variant'?: string;
   }
   interface TModal {
     /**
-    * (optional) Modal close
+    * (optional) Modal class
     */
-    'close'?: string;
+    'customClass'?: string;
     /**
-    * (optional) Modal opened
+    * (required) Modal opened
     */
     'opened'?: boolean;
     /**
@@ -431,23 +615,27 @@ declare namespace LocalJSX {
   }
   interface TProgressBar {
     /**
-    * (required) progress percentage
+    * (optional) Progress bar class
+    */
+    'customClass'?: string;
+    /**
+    * (required) Progress bar percentage
     */
     'percentage'?: number;
     /**
-    * (optional) show progress percentage text
+    * (optional) Progress bar percentage text
     */
     'showText'?: boolean;
     /**
-    * (optional) progress stroke width
+    * (optional) Progress bar stroke width
     */
     'strokeWidth'?: number;
     /**
-    * (optional) progress text display inside bar
+    * (optional) Progress text display inside bar
     */
     'textInside'?: boolean;
     /**
-    * (optional) show progress variant
+    * (optional) Progress bar variant
     */
     'variant'?: string;
   }
@@ -456,15 +644,27 @@ declare namespace LocalJSX {
   }
   interface TSwitch {
     /**
-    * Switch props active optional
+    * (optional) Active switch
     */
     'active'?: boolean;
     /**
-    * Switch props disabled optional
+    * (optional) Switch class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Disabled switch
     */
     'disabled'?: boolean;
+    /**
+    * (optional) Switch theme
+    */
+    'theme'?: string;
   }
   interface TTag {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
     /**
     * (optional) Tag on an <a> element
     */
@@ -474,27 +674,58 @@ declare namespace LocalJSX {
     */
     'pill'?: boolean;
     /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+    /**
     * (optional) Tag variant
     */
     'variant'?: string;
   }
   interface TToast {
+    /**
+    * (optional) Animated toast
+    */
     'animated'?: boolean;
+    /**
+    * (optional) Toast autohide time
+    */
     'autoHide'?: boolean | number;
     /**
-    * (required) Alert class
+    * (optional) Toast class
     */
     'customClass'?: string;
+    /**
+    * (optional) Toast fade duration
+    */
     'fadeDuration'?: number;
+    /**
+    * (optional) Toast opened
+    */
     'opened'?: boolean;
+    /**
+    * (optional) Toast position right
+    */
     'positionRight'?: number;
+    /**
+    * (optional) Toast position at the top
+    */
     'positionTop'?: number;
+    /**
+    * (optional) Toast size
+    */
     'size'?: string;
+    /**
+    * (optional) Toast theme
+    */
     'theme'?: string;
     /**
     * (optional) Toast time
     */
     'time'?: number;
+    /**
+    * (optional) Toast variant
+    */
     'variant'?: string;
   }
 

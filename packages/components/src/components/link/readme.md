@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property     | Attribute      | Description                    | Type      | Default |
-| ------------ | -------------- | ------------------------------ | --------- | ------- |
-| `disabled`   | `disabled`     | (optional) link disabled       | `boolean` | `false` |
-| `href`       | `href`         | (optional) link href           | `string`  | `''`    |
-| `openNewTab` | `open-new-tab` | (optional) link open a new tag | `boolean` | `false` |
-| `underline`  | `underline`    | (optional) link variant        | `boolean` | `false` |
-| `variant`    | `variant`      | (optional) link variant        | `string`  | `''`    |
+| Property      | Attribute      | Description                    | Type      | Default |
+| ------------- | -------------- | ------------------------------ | --------- | ------- |
+| `customClass` | `custom-class` | (optional) Link class          | `string`  | `''`    |
+| `disabled`    | `disabled`     | (optional) Disabled link       | `boolean` | `false` |
+| `href`        | `href`         | (optional) Link href           | `string`  | `''`    |
+| `openNewTab`  | `open-new-tab` | (optional) Link open a new tag | `boolean` | `false` |
+| `underline`   | `underline`    | (optional) Link underline      | `boolean` | `false` |
+| `variant`     | `variant`      | (optional) Link variant        | `string`  | `''`    |
 
 
 ## CSS Custom Properties
