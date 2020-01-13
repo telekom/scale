@@ -242,6 +242,8 @@ export namespace Components {
     'variant'?: string;
   }
   interface TRating {
+    'star'?: any;
+    'starSelected'?: any;
     'type'?: string;
   }
   interface TSwitch {
@@ -640,6 +642,8 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TRating {
+    'star'?: any;
+    'starSelected'?: any;
     'type'?: string;
   }
   interface TSwitch {

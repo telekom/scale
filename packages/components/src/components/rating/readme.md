@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `type`   | `type`    |             | `string` | `undefined` |
+| Property       | Attribute       | Description | Type     | Default        |
+| -------------- | --------------- | ----------- | -------- | -------------- |
+| `star`         | `star`          |             | `any`    | `star`         |
+| `starSelected` | `star-selected` |             | `any`    | `starSelected` |
+| `type`         | `type`          |             | `string` | `undefined`    |
 
 
 ## CSS Custom Properties

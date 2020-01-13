@@ -11,6 +11,8 @@ import starSelected from './star-selected.svg';
 })
 export class Rating {
   @Prop() public type?: string;
+  @Prop() public star?: any = star;
+  @Prop() public starSelected?: any = starSelected;
 
   @State() private range = [1, 2, 3, 4, 5];
   @State() private selectedValue = null;
