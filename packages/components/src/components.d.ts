@@ -265,9 +265,13 @@ export namespace Components {
     */
     'direction'?: string;
     /**
-    * (optional)the display value of the slider
+    * (optional) Slider display value
     */
     'displayValue': boolean;
+    /**
+    * (optional) Slider track fill color
+    */
+    'fillColor': string;
     /**
     * (optional) Slider range max value
     */
@@ -277,11 +281,15 @@ export namespace Components {
     */
     'min'?: number;
     /**
+    * (optional) Slider track runway color
+    */
+    'trackColor': string;
+    /**
     * (optional) Slider type
     */
     'type'?: string;
     /**
-    * (optional)the binding value of the slider
+    * (optional) Slider binding value
     */
     'value': number;
   }
@@ -711,9 +719,13 @@ declare namespace LocalJSX {
     */
     'direction'?: string;
     /**
-    * (optional)the display value of the slider
+    * (optional) Slider display value
     */
     'displayValue'?: boolean;
+    /**
+    * (optional) Slider track fill color
+    */
+    'fillColor'?: string;
     /**
     * (optional) Slider range max value
     */
@@ -723,11 +735,15 @@ declare namespace LocalJSX {
     */
     'min'?: number;
     /**
+    * (optional) Slider track runway color
+    */
+    'trackColor'?: string;
+    /**
     * (optional) Slider type
     */
     'type'?: string;
     /**
-    * (optional)the binding value of the slider
+    * (optional) Slider binding value
     */
     'value'?: number;
   }

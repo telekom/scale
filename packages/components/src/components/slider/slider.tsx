@@ -14,16 +14,29 @@ export class Slider {
   @Prop() public min?: number = 0;
   /** (optional) Slider range max value */
   @Prop() public max?: number = 100;
-  /** (optional)the binding value of the slider */
+  /** (optional) Slider binding value */
   @Prop() public value = 0;
-  /** (optional)the display value of the slider */
+  /** (optional) Slider display value */
   @Prop() public displayValue = true;
+  /** (optional) Slider track runway color */
+  @Prop() public trackColor = '#e4e7ed';
+  /** (optional) Slider track fill color */
+  @Prop() public fillColor = '#409eff';
 
   public render() {
     return (
       <div class="slider__container">
         <input
-          class={`slider__input slider--${this.type}`}
+          class={`slider__input slider__input--${this.type} slider--${this.direction}`}
+          style={{
+            background: `linear-gradient(
+            to right,
+            ${this.fillColor} 0%,
+            ${this.fillColor} ${this.value}%,
+            ${this.trackColor} ${this.value}%,
+            ${this.trackColor} 100%
+          )`,
+          }}
           type="range"
           min={this.min}
           max={this.max}
@@ -36,14 +49,14 @@ export class Slider {
     );
   }
 
-  private updateValue = e => {
-    this.value = e.target.value;
-    e.target.style.background = `linear-gradient(
+  private updateValue = event => {
+    this.value = event.target.value;
+    event.target.style.background = `linear-gradient(
       to right,
-      green 0%,
-      green ${this.value}%,
-      #fff ${this.value}%,
-      #fff 100%
+      ${this.fillColor} 0%,
+      ${this.fillColor} ${this.value}%,
+      ${this.trackColor} ${this.value}%,
+      ${this.trackColor} 100%
     )`;
   };
 }

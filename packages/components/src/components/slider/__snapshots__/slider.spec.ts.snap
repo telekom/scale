@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should match snapshot 1`] = `
+<t-slider>
+  <mock:shadow-root>
+    <div class="slider__container">
+      <input class="slider--horizontal slider__input slider__input--default" max="100" min="0" type="range" value="0" style="background: linear-gradient(
+            to right,
+            #409eff 0%,
+            #409eff 0%,
+            #e4e7ed 0%,
+            #e4e7ed 100%
+          );">
+      <span class="slider__text">
+        0
+      </span>
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-slider>
+`;
