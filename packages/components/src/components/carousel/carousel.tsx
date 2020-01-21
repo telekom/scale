@@ -15,9 +15,10 @@ export class Carousel {
   @State() private value = 0;
 
   public componentWillLoad() {
-    this.slidesArray = [];
-    for (let i = 0; i < this.totalSlides; i++) {
-      this.slidesArray.push(i);
+    if (this.slidesArray.length === 0) {
+      for (let i = 0; i < this.totalSlides; i++) {
+        this.slidesArray.push(i);
+      }
     }
   }
 
@@ -44,7 +45,6 @@ export class Carousel {
     if (this.direction === 'vertical') {
       return `translateY(${this.value}%)`;
     }
-
     return `translateX(${this.value}%)`;
   };
 
