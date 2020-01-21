@@ -1,6 +1,4 @@
 import { Component, Prop, h, State } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
-import classNames from 'classnames';
 
 @Component({
   tag: 't-carousel',
@@ -14,7 +12,7 @@ export class Carousel {
   @Prop() public direction?: string = 'horizontal';
 
   @State() private slidesArray = [];
-  @State() private X = 0;
+  @State() private value = 0;
 
   public componentWillLoad() {
     this.slidesArray = [];
@@ -24,29 +22,38 @@ export class Carousel {
   }
 
   public displayNext = direction => {
+    const val = this.value;
     if (direction === 'left') {
-      const x = this.X;
-      x === 0
-        ? (this.X = -100 * (this.slidesArray.length - 1))
-        : (this.X = x + 100);
+      val === 0
+        ? (this.value = -100 * (this.slidesArray.length - 1))
+        : (this.value = val + 100);
     }
 
     if (direction === 'right') {
-      const x = this.X;
-      x === -100 * (this.slidesArray.length - 1)
-        ? (this.X = 0)
-        : (this.X = x - 100);
+      val === -100 * (this.slidesArray.length - 1)
+        ? (this.value = 0)
+        : (this.value = val - 100);
     }
   };
 
   public setActiveSlide = index => {
-    this.X = -100 * index;
+    this.value = -100 * index;
+  };
+
+  public setTransformValue = () => {
+    if (this.direction === 'vertical') {
+      return `translateY(${this.value}%)`;
+    }
+
+    return `translateX(${this.value}%)`;
   };
 
   public render() {
     return (
-      <div class={this.getCssClassMap()}>
-        <div class="carousel__container">
+      <div class="carousel">
+        <div
+          class={`carousel__container  carousel__container--${this.direction}`}
+        >
           <div
             class="carousel__arrow carousel__arrow--left"
             onClick={() => this.displayNext('left')}
@@ -56,7 +63,7 @@ export class Carousel {
           {this.slidesArray.map(index => (
             <div
               class="carousel__slide"
-              style={{ transform: `translateX(${this.X}%)` }}
+              style={{ transform: this.setTransformValue() }}
             >
               <slot name={`slide_${index}`} />
             </div>
@@ -75,20 +82,13 @@ export class Carousel {
             <li
               key={index}
               class={`carousel__indicator carousel__indicator--${
-                Math.abs(this.X) / 100 === index ? 'active' : 'inactive'
+                Math.abs(this.value) / 100 === index ? 'active' : 'inactive'
               } carousel__indicator--${this.direction}`}
               onMouseEnter={() => this.setActiveSlide(index)}
             ></li>
           ))}
         </ul>
       </div>
-    );
-  }
-
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      'carousel',
-      this.direction && `carousel--${this.direction}`
     );
   }
 }
