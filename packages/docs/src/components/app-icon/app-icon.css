@@ -1,0 +1,85 @@
+app-icon .icon-logo {
+  width: 24px;
+  height: 24px;
+}
+
+app-icon .icon-checkmark {
+  fill: var(--color-primary);
+  width: 15px;
+  height: 11px;
+}
+
+app-icon .icon-targetblank {
+  fill: var(--color-cadet-blue);
+  width: 9px;
+  height: 9px;
+}
+
+app-icon .icon-github {
+  fill: var(--color-woodsmoke);
+  width: 17px;
+  height: 16px;
+}
+
+app-icon .icon-slack {
+  fill: var(--color-woodsmoke);
+  width: 16px;
+  height: 16px;
+}
+
+app-icon .icon-twitter {
+  fill: var(--color-woodsmoke);
+  width: 19px;
+  height: 14px;
+}
+
+app-icon .icon-menu {
+  fill: var(--color-primary);
+  width: 17px;
+  height: 15px;
+}
+
+app-icon .icon-close {
+  fill: var(--color-primary);
+  width: 14px;
+  height: 14px;
+}
+
+app-icon .icon-more {
+  fill: var(--color-primary);
+  width: 4px;
+  height: 18px;
+}
+
+app-icon .icon-docs {
+  fill: var(--color-primary);
+  width: 13px;
+  height: 11px;
+}
+
+app-icon .icon-link {
+  fill: var(--color-woodsmoke);
+  height: 12px;
+  width: 12px;
+}
+
+app-icon .icon-circle {
+  fill: var(--color-woodsmoke);
+  height: 12px;
+  width: 12px;
+}
+
+app-icon .icon-arrow-right {
+  height: 10px;
+  width: 7px;
+}
+
+app-icon .icon-arrow-down {
+  height: 16px;
+  width: 16px;
+}
+
+app-icon .icon-play {
+  height: 61px;
+  width: 61px;
+}

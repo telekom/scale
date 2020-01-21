@@ -1,0 +1,80 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+defaults: &defaults
+  working_directory: /tmp/workspace
+  docker:
+    - image: circleci/node:10.14
+
+jobs:
+  build:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm run build.ci
+      - run:
+          name: Checking clean build
+          command: git diff --exit-code
+
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - www
+            - node_modules
+            - firebase.json
+            - .firebaserc
+            - package.json
+
+  deploy-prod:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+
+      - run:
+          name: Deploy Prod to Firebase
+          command: ./node_modules/.bin/firebase deploy --project production --token=$FIREBASE_DEPLOY_TOKEN
+
+  deploy-next:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+
+      - run:
+          name: Deploy Next to Firebase
+          command: ./node_modules/.bin/firebase deploy --project next --token=$FIREBASE_DEPLOY_TOKEN
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy-prod:
+          requires:
+              - build
+          filters:
+            branches:
+              only: master
+      - deploy-next:
+          requires:
+              - build
+          filters:
+            branches:
+              only: next

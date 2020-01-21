@@ -1,0 +1,15 @@
+{
+  "name": "Telements",
+  "short_name": "Telements",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#fff",
+  "theme_color": "#e20074"
+}
