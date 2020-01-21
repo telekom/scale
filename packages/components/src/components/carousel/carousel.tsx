@@ -13,8 +13,8 @@ export class Carousel {
   /** (optional) carousel display direction */
   @Prop() public direction?: string = 'horizontal';
 
-  @State() private activeSlide: number = 0;
   @State() private slidesArray = [];
+  @State() private X = 0;
 
   public componentWillLoad() {
     this.slidesArray = [];
@@ -25,20 +25,22 @@ export class Carousel {
 
   public displayNext = direction => {
     if (direction === 'left') {
-      if (this.activeSlide > 0) {
-        this.activeSlide--;
-      } else {
-        this.activeSlide = this.totalSlides - 1;
-      }
+      const x = this.X;
+      x === 0
+        ? (this.X = -100 * (this.slidesArray.length - 1))
+        : (this.X = x + 100);
     }
 
     if (direction === 'right') {
-      if (this.activeSlide < this.totalSlides - 1) {
-        this.activeSlide++;
-      } else {
-        this.activeSlide = 0;
-      }
+      const x = this.X;
+      x === -100 * (this.slidesArray.length - 1)
+        ? (this.X = 0)
+        : (this.X = x - 100);
     }
+  };
+
+  public setActiveSlide = index => {
+    this.X = -100 * index;
   };
 
   public render() {
@@ -53,9 +55,8 @@ export class Carousel {
           </div>
           {this.slidesArray.map(index => (
             <div
-              class={`carousel__slide ${
-                index === this.activeSlide ? 'carousel__slide--active' : ''
-              }`}
+              class="carousel__slide"
+              style={{ transform: `translateX(${this.X}%)` }}
             >
               <slot name={`slide_${index}`} />
             </div>
@@ -73,10 +74,11 @@ export class Carousel {
           {this.slidesArray.map(index => (
             <li
               key={index}
-              class={`carousel__indicator carousel__indicator--${this.direction}`}
-            >
-              <button class="carousel__button" />
-            </li>
+              class={`carousel__indicator carousel__indicator--${
+                Math.abs(this.X) / 100 === index ? 'active' : 'inactive'
+              } carousel__indicator--${this.direction}`}
+              onMouseEnter={() => this.setActiveSlide(index)}
+            ></li>
           ))}
         </ul>
       </div>
