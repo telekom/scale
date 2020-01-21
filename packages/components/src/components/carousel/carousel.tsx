@@ -6,7 +6,7 @@ import { Component, Prop, h, State } from '@stencil/core';
   shadow: true,
 })
 export class Carousel {
-  /** carousel slider total number */
+  /** carousel slides total number */
   @Prop() public totalSlides: number;
   /** (optional) carousel display direction */
   @Prop() public direction?: string = 'horizontal';
@@ -48,6 +48,13 @@ export class Carousel {
     return `translateX(${this.value}%)`;
   };
 
+  public setActiveCssClass = index => {
+    if (Math.abs(this.value) / 100 === index) {
+      return 'carousel__indicator--active';
+    }
+    return '';
+  };
+
   public render() {
     return (
       <div class="carousel">
@@ -81,9 +88,9 @@ export class Carousel {
           {this.slidesArray.map(index => (
             <li
               key={index}
-              class={`carousel__indicator carousel__indicator--${
-                Math.abs(this.value) / 100 === index ? 'active' : 'inactive'
-              } carousel__indicator--${this.direction}`}
+              class={`carousel__indicator ${this.setActiveCssClass(
+                index
+              )} carousel__indicator--${this.direction}`}
               onMouseEnter={() => this.setActiveSlide(index)}
             ></li>
           ))}

@@ -69,4 +69,10 @@ describe('Carousel', () => {
     element.setTransformValue();
     expect(element.setTransformValue()).toBe('translateX(-200%)');
   });
+
+  it('should set css active class', () => {
+    element.value = -200;
+    element.setActiveCssClass(2);
+    expect(element.setActiveCssClass(2)).toBe('carousel__indicator--active');
+  });
 });

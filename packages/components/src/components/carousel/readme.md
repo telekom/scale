@@ -10,7 +10,7 @@
 | Property      | Attribute      | Description                           | Type     | Default        |
 | ------------- | -------------- | ------------------------------------- | -------- | -------------- |
 | `direction`   | `direction`    | (optional) carousel display direction | `string` | `'horizontal'` |
-| `totalSlides` | `total-slides` | carousel slider total number          | `number` | `undefined`    |
+| `totalSlides` | `total-slides` | carousel slides total number          | `number` | `undefined`    |
 
 
 ----------------------------------------------

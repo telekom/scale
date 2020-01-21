@@ -146,7 +146,7 @@ export namespace Components {
     */
     'direction'?: string;
     /**
-    * carousel slider total number
+    * carousel slides total number
     */
     'totalSlides': number;
   }
@@ -712,7 +712,7 @@ declare namespace LocalJSX {
     */
     'direction'?: string;
     /**
-    * carousel slider total number
+    * carousel slides total number
     */
     'totalSlides'?: number;
   }
