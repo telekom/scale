@@ -4,7 +4,10 @@
   - [Why Telements](introduction/why-telements.md)
   - [Getting Started](introduction/getting-started.md)
 - Components
-  - [Button](components/button.md)
   - [Alert](components/alert.md)
-  - [Card](components/card.md)
   - [Badge](components/badge.md)
+  - [Button](components/button.md)
+  - [Card](components/card.md)
+  - [Input Text](components/input-text.md)
+  - [Progress Bar](components/progress-bar.md)
+  - [Tag](components/tag.md)

@@ -18,14 +18,19 @@
     "text": "Components",
     "children": [
       {
-        "text": "Button",
-        "filePath": "/assets/docs/components/button.json",
-        "url": "/docs/button"
-      },
-      {
         "text": "Alert",
         "filePath": "/assets/docs/components/alert.json",
         "url": "/docs/alert"
+      },
+      {
+        "text": "Badge",
+        "filePath": "/assets/docs/components/badge.json",
+        "url": "/docs/badge"
+      },
+      {
+        "text": "Button",
+        "filePath": "/assets/docs/components/button.json",
+        "url": "/docs/button"
       },
       {
         "text": "Card",
@@ -33,9 +38,19 @@
         "url": "/docs/card"
       },
       {
-        "text": "Badge",
-        "filePath": "/assets/docs/components/badge.json",
-        "url": "/docs/badge"
+        "text": "Input Text",
+        "filePath": "/assets/docs/components/input-text.json",
+        "url": "/docs/input-text"
+      },
+      {
+        "text": "Progress Bar",
+        "filePath": "/assets/docs/components/progress-bar.json",
+        "url": "/docs/progress-bar"
+      },
+      {
+        "text": "Tag",
+        "filePath": "/assets/docs/components/tag.json",
+        "url": "/docs/tag"
       }
     ]
   }
