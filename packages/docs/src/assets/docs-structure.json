@@ -43,9 +43,24 @@
         "url": "/docs/input-text"
       },
       {
+        "text": "Link",
+        "filePath": "/assets/docs/components/link.json",
+        "url": "/docs/link"
+      },
+      {
+        "text": "Modal",
+        "filePath": "/assets/docs/components/modal.json",
+        "url": "/docs/modal"
+      },
+      {
         "text": "Progress Bar",
         "filePath": "/assets/docs/components/progress-bar.json",
         "url": "/docs/progress-bar"
+      },
+      {
+        "text": "Switch",
+        "filePath": "/assets/docs/components/switch.json",
+        "url": "/docs/switch"
       },
       {
         "text": "Tag",
