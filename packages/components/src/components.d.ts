@@ -141,6 +141,22 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TDivider {
+    /**
+    * (optional) Card class
+    */
+    'customClass'?: string;
+    'horizontal'?: boolean;
+    /**
+    * (optional) Card size
+    */
+    'size'?: string;
+    /**
+    * (optional) Card theme
+    */
+    'theme'?: string;
+    'vertical'?: boolean;
+  }
   interface TInputText {
     /**
     * (optional) Input text class
@@ -360,6 +376,12 @@ declare global {
     new (): HTMLTCardElement;
   };
 
+  interface HTMLTDividerElement extends Components.TDivider, HTMLStencilElement {}
+  var HTMLTDividerElement: {
+    prototype: HTMLTDividerElement;
+    new (): HTMLTDividerElement;
+  };
+
   interface HTMLTInputTextElement extends Components.TInputText, HTMLStencilElement {}
   var HTMLTInputTextElement: {
     prototype: HTMLTInputTextElement;
@@ -406,6 +428,7 @@ declare global {
     't-badge': HTMLTBadgeElement;
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
+    't-divider': HTMLTDividerElement;
     't-input-text': HTMLTInputTextElement;
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
@@ -532,6 +555,22 @@ declare namespace LocalJSX {
     * (optional) Card variant
     */
     'variant'?: string;
+  }
+  interface TDivider {
+    /**
+    * (optional) Card class
+    */
+    'customClass'?: string;
+    'horizontal'?: boolean;
+    /**
+    * (optional) Card size
+    */
+    'size'?: string;
+    /**
+    * (optional) Card theme
+    */
+    'theme'?: string;
+    'vertical'?: boolean;
   }
   interface TInputText {
     /**
@@ -721,6 +760,7 @@ declare namespace LocalJSX {
     't-badge': TBadge;
     't-button': TButton;
     't-card': TCard;
+    't-divider': TDivider;
     't-input-text': TInputText;
     't-link': TLink;
     't-modal': TModal;
@@ -741,6 +781,7 @@ declare module "@stencil/core" {
       't-badge': LocalJSX.TBadge & JSXBase.HTMLAttributes<HTMLTBadgeElement>;
       't-button': LocalJSX.TButton & JSXBase.HTMLAttributes<HTMLTButtonElement>;
       't-card': LocalJSX.TCard & JSXBase.HTMLAttributes<HTMLTCardElement>;
+      't-divider': LocalJSX.TDivider & JSXBase.HTMLAttributes<HTMLTDividerElement>;
       't-input-text': LocalJSX.TInputText & JSXBase.HTMLAttributes<HTMLTInputTextElement>;
       't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
       't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;

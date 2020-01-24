@@ -1,0 +1,18 @@
+/**
+ * @prop --divider-color: Color of the divider
+ 
+ */
+
+.divider {
+  background: var(--divider-background, #fff);
+  border: var(--divider-border, 1px solid);
+  border-color: var(--divider-border-color, rgba(0, 0, 0, 0.1));
+  width: var(--divider-width, 100vh);
+  margin: var(--divider-margin, 10px);
+  padding: var(--divider-padding, 10px);
+}
+
+.divider__vertical {
+  height: var(--divider-vertical-height, 100vh);
+  width: var(--divider-vertical-width, 10px);
+}
