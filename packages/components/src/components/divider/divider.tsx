@@ -21,7 +21,7 @@ export class Divider {
     return (
       <div class={this.getCssClassMap()}>
         {this.horizontal && <hr class="divider__horizontal" />}
-        {!this.vertical && <span class="divider__vertical" />}
+        {!this.horizontal && <span class="divider__vertical" />}
       </div>
     );
   }
