@@ -31,30 +31,30 @@
  * @prop --button-disabled-color: Disabled color of the button
  */
 
- .button {
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	flex-shrink: 0;
-	vertical-align: middle;
-	text-align: center;
-	cursor: pointer;
-	user-select: none;
-	color: var(--button-color, #000);
-	background: var(--button-background-color, #fff);
-	border: var(--button-border, 1px solid #000);
-	border-color: var(--button-border-color, #000);
-	border-radius: var(--button-border-radius, 0);
-	padding: var(--button-padding, 0.25rem 1rem);
-	box-shadow: var(--button-box-shadow, none);
-	line-height: var(--button-line-height, 2rem);
-	font-family: var(--button-font-family, unset);
-	font-size: var(--button-font-size, unset);
-	font-weight: var(--button-font-weight, 400);
-	text-transform: var(--button-text-transform, initial);
-	letter-spacing: var(--button-letter-spacing, 0);
-	transition: var(--button-transition, all .2s ease-in-out);
+.button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  color: var(--button-color, #000);
+  background: var(--button-background-color, #fff);
+  border: var(--button-border, 1px solid #000);
+  border-color: var(--button-border-color, #000);
+  border-radius: var(--button-border-radius, 0);
+  padding: var(--button-padding, 0.25rem 1rem);
+  box-shadow: var(--button-box-shadow, none);
+  line-height: var(--button-line-height, 2rem);
+  font-family: var(--button-font-family, unset);
+  font-size: var(--button-font-size, unset);
+  font-weight: var(--button-font-weight, 400);
+  text-transform: var(--button-text-transform, initial);
+  letter-spacing: var(--button-letter-spacing, 0);
+  transition: var(--button-transition, all 0.2s ease-in-out);
 }
 
 /*
@@ -64,26 +64,26 @@
  * when letter-spacing is applied
  */
 .button:before {
-	width: var(--button-letter-spacing, 0);
-	content: '';
-	display: block;
-	height: 100%;
+  width: var(--button-letter-spacing, 0);
+  content: '';
+  display: block;
+  height: 100%;
 }
 
 .button:hover,
 .button.active {
-	color: var(--button-hover-color, #fff);
-	background: var(--button-hover-background-color, #000);
-	border: var(--button-hover-border, 1px solid #000);
-	border-color: var(--button-hover-border-color, #000);
-	border-radius: var(--button-hover-border-radius, 0);
-	padding: var(--button-hover-padding, 0.25rem 1rem);
-	box-shadow: var(--button-hover-box-shadow, none);
-	line-height: var(--button-hover-line-height, 2rem);
-	font-size: var(--button-hover-font-size, unset);
-	font-weight: var(--button-hover-font-weight, 400);
-	transition: var(--button-hover-transition, all .2s ease-in-out);
-	text-decoration: none;
+  color: var(--button-hover-color, #fff);
+  background: var(--button-hover-background-color, #000);
+  border: var(--button-hover-border, 1px solid #000);
+  border-color: var(--button-hover-border-color, #000);
+  border-radius: var(--button-hover-border-radius, 0);
+  padding: var(--button-hover-padding, 0.25rem 1rem);
+  box-shadow: var(--button-hover-box-shadow, none);
+  line-height: var(--button-hover-line-height, 2rem);
+  font-size: var(--button-hover-font-size, unset);
+  font-weight: var(--button-hover-font-weight, 400);
+  transition: var(--button-hover-transition, all 0.2s ease-in-out);
+  text-decoration: none;
 }
 
 /*
@@ -93,14 +93,17 @@
  * means that a screen-reader is required
  */
 .button:not(.tabbing):focus {
-	outline: 0;
+  outline: 0;
 }
 
 .button--disabled,
 .button--disabled:hover {
-	background: var(--button-disabled-background-color, var(--button-background-color, #fff));
-	border: var(--button-disabled-border, var(--button-border, 1px solid #000));
-	color: var(--button-disabled-color, var(--button-color, #000));
-	opacity: 0.5;
-	cursor: not-allowed;
+  background: var(
+    --button-disabled-background-color,
+    var(--button-background-color, #fff)
+  );
+  border: var(--button-disabled-border, var(--button-border, 1px solid #000));
+  color: var(--button-disabled-color, var(--button-color, #000));
+  opacity: 0.5;
+  cursor: not-allowed;
 }

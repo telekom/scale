@@ -1,9 +1,26 @@
+/**
+ * @prop --input-text-border: Border of the input-text
+ * @prop --input-text-border-radius: Border radius of the input-text 
+ * @prop --input-text-padding: Padding of the input-text
+ * @prop --input-text-font-size: Font size of the input-text
+ * @prop --input-text-font-family: Font family of the input-text
+ * @prop --input-text-validation-font-size: Font size of the validation of the input-text
+ * @prop --input-text-validation-opacity: Opacity of the validation of the input-text
+ * @prop --input-text-validation-margin: Margin of the validation of the input-text
+ * @prop --input-text-validation-color: Color of the validation text of the input-text
+ */
+
 .input-text {
-    border: var(--input-text-border, 1px solid #dfdfdf);
-    border-radius: var(--input-text-border-radius, 4px);
-    padding: var(--input-text-padding, 0.5rem 1rem);
-    font-size: var(--input-text-font-size, 16px);
-    font-family: var(--input-text-font-family, inherit);
+  display: flex;
+  flex-direction: column;
+}
+
+.input-text__input {
+  border: var(--input-text-border, 1px solid #dfdfdf);
+  border-radius: var(--input-text-border-radius, 4px);
+  padding: var(--input-text-padding, 0.5rem);
+  font-size: var(--input-text-font-size, 16px);
+  font-family: var(--input-text-font-family, inherit);
 }
 
 /*
@@ -13,6 +30,13 @@
  * means that a screen-reader is required
  */
 
- .input-text:not(.tabbing):focus {
-	outline: 0;
+.input-text:not(.tabbing):focus {
+  outline: 0;
+}
+
+.input-text__validation {
+  font-size: var(--input-text-validation-font-size, 12px);
+  opacity: var(--input-text-validation-opacity, 0.7);
+  margin: var(--input-text-validation-margin, 0.5rem 0 0 0);
+  color: var(--input-text-validation-color, red);
 }

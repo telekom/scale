@@ -1,0 +1,51 @@
+
+table {
+  width: 100%;
+  overflow: auto;
+  margin-top: 28px;
+  margin-bottom: 18px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+th {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 10px 10px;
+  border: 1px solid #dfe2e5;
+}
+
+td {
+  border: 1px solid #dfe2e5;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+td {
+  line-height: 1.5;
+}
+
+table code {
+  font-size: 13px;
+}
+
+tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+
+@media screen and (max-width: 590px) {
+  table {
+    display: block;
+  }
+}

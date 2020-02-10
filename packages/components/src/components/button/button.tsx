@@ -5,46 +5,51 @@ import classNames from 'classnames';
 @Component({
   tag: 't-button',
   styleUrl: 'button.css',
-  shadow: true
+  shadow: true,
 })
 export class Button {
+  /** (optional) Button class */
+  @Prop() public customClass?: string = '';
   /** (optional) Button size */
-  @Prop() size?: string = '';
+  @Prop() public size?: string = '';
   /** (optional) Button theme */
-  @Prop() theme?: string = '';
+  @Prop() public theme?: string = '';
   /** (optional) Button variant */
-  @Prop() variant?: string = '';
+  @Prop() public variant?: string = '';
   /** (optional) Disabled button */
-  @Prop() disabled?: boolean = false;
+  @Prop() public disabled?: boolean = false;
   /** (optional) Deselected button */
-  @Prop() deselected?: boolean = false;
+  @Prop() public deselected?: boolean = false;
+
+  /** Button method: disable()  */
+  @Method()
+  public async disable() {
+    this.disabled = true;
+  }
+
+  /** Button method: enable()  */
+  @Method()
+  public async enable() {
+    this.disabled = false;
+  }
+
+  public render() {
+    return (
+      <button class={this.getCssClassMap()} disabled={this.disabled}>
+        <slot />
+      </button>
+    );
+  }
 
   private getCssClassMap(): CssClassMap {
     return classNames(
       'button',
-       this.size && `button--size-${this.size}`,
-       this.theme && `button--theme-${this.theme}`,
-       this.variant && `button--variant-${this.variant}`,
-       this.disabled && `button--disabled`,
-       this.deselected && `button--deselected`,
-    );
-  }
-
-  @Method()
-  async disable() {
-    this.disabled = true;
-  }
-
-  @Method()
-  async enable() {
-    this.disabled = false;
-  }
-
-  render() {
-    return (
-      <button class={this.getCssClassMap()} disabled={this.disabled}>
-        <slot/>
-      </button>
+      this.customClass && this.customClass,
+      this.size && `button--size-${this.size}`,
+      this.theme && `button--theme-${this.theme}`,
+      this.variant && `button--variant-${this.variant}`,
+      this.disabled && `button--disabled`,
+      this.deselected && `button--deselected`
     );
   }
 }

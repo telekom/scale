@@ -18,7 +18,7 @@
   },
   "include": [
     "src",
-    "types/jsx.d.ts"
+    "types/jsx.d.ts", "src/validators"
   ],
   "exclude": [
     "node_modules"

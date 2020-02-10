@@ -1,40 +1,47 @@
-import { Component, h, Prop } from "@stencil/core";
-import { CssClassMap } from "../../utils/utils";
-import classNames from "classnames";
+import { Component, h, Prop } from '@stencil/core';
+import { CssClassMap } from '../../utils/utils';
+import classNames from 'classnames';
 
 @Component({
-  tag: "t-tag",
-  styleUrl: "tag.css",
-  shadow: true
+  tag: 't-tag',
+  styleUrl: 'tag.css',
+  shadow: true,
 })
 export class Tag {
+  /** (optional) Tag class */
+  @Prop() public customClass?: string = '';
+  /** (optional) Tag theme */
+  @Prop() public theme?: string = '';
   /** (optional) Tag variant */
-  @Prop() variant?: string = "";
+  @Prop() public variant?: string = '';
   /** (optional) Tag pill */
-  @Prop() pill?: boolean = false;
+  @Prop() public pill?: boolean = false;
   /** (optional) Tag on an <a> element */
-  @Prop() link?: string = "";
+  @Prop() public link?: string = '';
 
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      "tag",
-      this.variant && `tag--variant-${this.variant}`,
-      this.pill && `tag--pill`,
-      !!this.link && "tag--link"
-    );
-  }
-
-  render() {
-    if (!!this.link)
+  public render() {
+    if (!!this.link) {
       return (
         <a href={this.link} class={this.getCssClassMap()}>
           <slot />
         </a>
       );
+    }
     return (
       <div class={this.getCssClassMap()}>
         <slot />
       </div>
+    );
+  }
+
+  private getCssClassMap(): CssClassMap {
+    return classNames(
+      'tag',
+      this.customClass && this.customClass,
+      this.theme && `alert--theme-${this.theme}`,
+      this.variant && `tag--variant-${this.variant}`,
+      this.pill && `tag--pill`,
+      !!this.link && 'tag--link'
     );
   }
 }

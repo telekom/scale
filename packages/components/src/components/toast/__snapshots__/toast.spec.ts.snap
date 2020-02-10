@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast should match snapshot 1`] = `
+<t-toast>
+  <mock:shadow-root>
+    <div class="toast">
+      <style>
+        .toast {
+      right: 12px;
+      top: -NaNpx;
+    }
+
+    .toast--show {
+      animation: fadeIn 0.5s ease-in-out;
+      animation-timing-function: ease-out;
+      top: 12px;
+    }
+
+    .toast--hide {
+      animation: fadeOut 0.5s ease-in-out;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        top: -NaNpx;
+      }
+      to {
+        opacity: 1;
+        top: 12px;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        top: 12px;
+      }
+      to {
+        opacity: 0;
+        top: -NaNpx;
+      }
+    }
+      </style>
+      <div class="toast__header">
+        <slot name="header"></slot>
+        header
+        <small></small>
+        <a>
+          <span aria-hidden="true">
+            ×
+          </span>
+        </a>
+      </div>
+      <div class="toast__body">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Toast message
+</t-toast>
+`;
+
+exports[`Toast should match snapshot when opened 1`] = `
+<t-toast opened="">
+  <mock:shadow-root>
+    <div class="toast toast--show">
+      <style>
+        .toast {
+      right: 12px;
+      top: -NaNpx;
+    }
+
+    .toast--show {
+      animation: fadeIn 0.5s ease-in-out;
+      animation-timing-function: ease-out;
+      top: 12px;
+    }
+
+    .toast--hide {
+      animation: fadeOut 0.5s ease-in-out;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        top: -NaNpx;
+      }
+      to {
+        opacity: 1;
+        top: 12px;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        top: 12px;
+      }
+      to {
+        opacity: 0;
+        top: -NaNpx;
+      }
+    }
+      </style>
+      <div class="toast__header">
+        <slot name="header"></slot>
+        header
+        <small></small>
+        <a>
+          <span aria-hidden="true">
+            ×
+          </span>
+        </a>
+      </div>
+      <div class="toast__body">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-toast>
+`;

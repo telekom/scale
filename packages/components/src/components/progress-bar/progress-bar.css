@@ -1,0 +1,92 @@
+/**
+* @prop --progress-bar-display: Display of the progress bar
+* @prop --progress-bar-width: Width of the progress bar
+* @prop --progress-bar-align-items: Align items of the progress bar
+* @prop --progress-bar-outer-margin: Margin of the progress bar outer
+* @prop --progress-bar-outer-position: Position of the progress bar outer
+* @prop --progress-bar-outer-height: Height of the progress bar outer
+* @prop --progress-bar-outer-border-radius: Border radius of the progress bar outer
+* @prop --progress-bar-outer-background: Background of the progress bar outer
+* @prop --progress-bar-outer-overflow: Overflow of the progress bar outer
+* @prop --progress-bar-outer-position: Position of the progress bar outer
+* @prop --progress-bar-outer-width: Width of the progress bar outer
+* @prop --progress-bar-inner-position: Position of the progress bar inner
+* @prop --progress-bar-inner-left: Left of the progress bar inner
+* @prop --progress-bar-inner-top: Top of the progress bar inner
+* @prop --progress-bar-inner-height: Height of the progress bar inner
+* @prop --progress-bar-inner-border-radius: Border radius of the progress bar inner
+* @prop --progress-bar-inner-width: Width of the progress bar inner
+* @prop --progress-bar-inner-white-space: White space of the progress bar inner
+* @prop --progress-bar-inner-transition: Transition of the progress bar inner
+* @prop --progress-bar-inner-display: Display of the progress bar inner
+* @prop --progress-bar-inner-border-align-items: Align items of the progress bar inner
+* @prop --progress-bar-inner-justify-content: Justify content of the progress bar inner
+* @prop --progress-bar-inner-variant-success-background: Background of progress bar inner variant success
+* @prop --progress-bar-inner-variant-info-background: Background of progress bar inner variant info
+* @prop --progress-bar-inner-variant-warning-background: Background of progress bar inner variant warning
+* @prop --progress-bar-inner-variant-danger-background: Background of progress bar inner variant danger
+* @prop --progress-bar-inner-text-color: Text color of inside progress bar
+* @prop --progress-bar-inner-text-font-size: Text font size of inside progress bar
+* @prop --progress-bar-inner-text-padding: Text padding of inside progress bar
+* @prop --progress-bar-text-color: Text color of progress bar
+* @prop --progress-bar-text-font-size: Text font size of progress bar
+* @prop --progress-bar-text-display: Text display of progress bar
+*/
+
+.progress-bar {
+  display: var(--progress-bar-display, flex);
+  width: var(--progress-bar-width, 100%);
+  align-items: var(--progress-bar-align-items, center);
+  box-sizing: border-box;
+}
+
+.progress-bar-outer {
+  margin: var(--progress-bar-outer-margin, 12px 12px 12px 0);
+  position: var(--progress-bar-outer-position, relative);
+  height: var(--progress-bar-outer-height, 6px);
+  border-radius: var(--progress-bar-outer-border-radius, 100px);
+  background: var(--progress-bar-outer-background, #ebeef5);
+  overflow: var(--progress-bar-outer-overflow, hidden);
+  position: var(-progress-bar-outer-position, relative);
+  width: var(--progress-bar-outer-width, 400px);
+}
+
+.progress-bar-inner {
+  position: var(--progress-bar-inner-position, absolute);
+  left: var(--progress-bar-inner-left, 0);
+  top: var(--progress-bar-inner-top, 0);
+  height: var(--progress-bar-inner-height, 100%);
+  border-radius: var(--progress-bar-inner-border-radius, 100px);
+  white-space: var(--progress-bar-inner-white-space, nowrap);
+  transition: var(--progress-bar-inner-transition, width 0.5s ease);
+  display: var(--progress-bar-inner-display, flex);
+  align-items: var(--progress-bar-inner-align-items, center);
+  justify-content: var(--progress-bar-inner-justify-content, flex-end);
+}
+
+.progress-bar-inner-variant-success {
+  background: var(--progress-bar-inner-variant-success-background, #28a745);
+}
+
+.progress-bar-inner-variant-info {
+  background: var(--progress-bar-inner-variant-info-background, #409eff);
+}
+
+.progress-bar-inner-variant-warning {
+  background: var(--progress-bar-inner-variant-warning-background, #ffc107);
+}
+
+.progress-bar-inner-variant-danger {
+  background: var(--progress-bar-inner-variant-dander-background, #dc3545);
+}
+
+.progress-bar-inner-text {
+  color: var(--progress-bar-inner-text-color, #fff);
+  font-size: var(--progress-bar-inner-text-font-size, 12px);
+  padding: var(--progress-bar-inner-text-padding, 0 12px);
+}
+.progress-bar-text {
+  color: var(--progress-bar-text-color, #606266);
+  font-size: var(--progress-bar-font-size, 14px);
+  display: var(--progress-bar-display, inline-block);
+}

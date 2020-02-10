@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar should contain progress-bar-inner-text css class when text inside is set true 1`] = `
+<t-progress-bar text-inside="true">
+  <mock:shadow-root>
+    <div class="progress-bar">
+      <div class="progress-bar-outer" style="height: 6px;">
+        <div class="progress-bar progress-bar-inner" style="width: undefined%;">
+          <div class="progress-bar-inner-text">
+            undefined%
+          </div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-progress-bar>
+`;
+
+exports[`ProgressBar should contain progress-bar-text css class when show text is set true 1`] = `
+<t-progress-bar show-text="true">
+  <mock:shadow-root>
+    <div class="progress-bar">
+      <div class="progress-bar-outer" style="height: 6px;">
+        <div class="progress-bar progress-bar-inner" style="width: undefined%;"></div>
+      </div>
+      <div class="progress-bar-text">
+        undefined%
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-progress-bar>
+`;
+
+exports[`ProgressBar should have css property width 24px when stroke width is set to 24 1`] = `
+<t-progress-bar stroke-width="24">
+  <mock:shadow-root>
+    <div class="progress-bar">
+      <div class="progress-bar-outer" style="height: 24px;">
+        <div class="progress-bar progress-bar-inner" style="width: undefined%;"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-progress-bar>
+`;
+
+exports[`ProgressBar should match snapshot 1`] = `
+<t-progress-bar>
+  <mock:shadow-root>
+    <div class="progress-bar">
+      <div class="progress-bar-outer" style="height: 6px;">
+        <div class="progress-bar progress-bar-inner" style="width: undefined%;"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-progress-bar>
+`;

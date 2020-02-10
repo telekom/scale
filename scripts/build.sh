@@ -32,8 +32,5 @@ echo "${CYAN}Linked components to boilerplate-angular${NC}"
 cd ../boilerplate-vue
 yarn link "@telements/components"
 echo "${CYAN}Linked components to boilerplate-vue${NC}"
-cd ../boilerplate-next
-yarn link "@telements/components"
-echo "${CYAN}Linked components to boilerplate-next${NC}"
 echo "${GREEN}Done creating symlinks!${NC}"
 

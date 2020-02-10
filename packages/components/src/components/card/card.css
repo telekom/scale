@@ -19,44 +19,50 @@
  * @prop --card-footer-background: Background of the card footer
  * @prop --card-footer-font-size: Font size of the card footer
  */
- 
- .card {
-	box-sizing: border-box;
-	overflow: hidden;
-	color: var(--card-color, #333);
-	background: var(--card-background, #fff);
-	border: var(--card-border, 1px solid); 
-	border-color: var(--card-border-color, rgba(0, 0, 0, 0.1)); 
-	border-radius: var(--card-border-radius, 4px); 
-	width: var(--card-width, 400px);
-	max-width: var(--card-max-width, 550px);
-	box-shadow: var(--card-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.12));
+
+.card {
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--card-color, #333);
+  background: var(--card-background, #fff);
+  border: var(--card-border, 1px solid);
+  border-color: var(--card-border-color, rgba(0, 0, 0, 0.1));
+  border-radius: var(--card-border-radius, 4px);
+  width: var(--card-width, 400px);
+  max-width: var(--card-max-width, 550px);
+  box-shadow: var(--card-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.12));
 }
 
 .card__body {
-	padding: var(--card-body-padding, 1rem); 
+  padding: var(--card-body-padding, 1rem);
 }
 
 .card__header {
-	padding: var(--card-header-padding, 0.5rem 1rem);
-	border-bottom: var(--card-header-border-bottom, 1px solid);
-	border-bottom-color: var(--card-header-border-bottom-color, var(--card-border-color, #dfdfdf));
-	background: var(--card-header-background, #eee);
-	font-size: var(--card-header-font-size, 0.8rem);
+  padding: var(--card-header-padding, 0.5rem 1rem);
+  border-bottom: var(--card-header-border-bottom, 1px solid);
+  border-bottom-color: var(
+    --card-header-border-bottom-color,
+    var(--card-border-color, #dfdfdf)
+  );
+  background: var(--card-header-background, #eee);
+  font-size: var(--card-header-font-size, 0.8rem);
 }
 
 .card__header ::slotted(*) {
-	margin:  0;
+  margin: 0;
 }
 
 .card__footer {
-	padding: var(--card-footer-padding, 0.5rem 1rem);
-	border-top: var(--card-footer-border-top, 1px solid);
-	border-top-color: var(--card-footer-border-top-color, var(--card-border-color, #dfdfdf));
-	background: var(--card-footer-background, #eee);
-	font-size: var(--card-footer-font-size, 0.8rem);
+  padding: var(--card-footer-padding, 0.5rem 1rem);
+  border-top: var(--card-footer-border-top, 1px solid);
+  border-top-color: var(
+    --card-footer-border-top-color,
+    var(--card-border-color, #dfdfdf)
+  );
+  background: var(--card-footer-background, #eee);
+  font-size: var(--card-footer-font-size, 0.8rem);
 }
 
 .card__footer ::slotted(*) {
-	margin:  0;
+  margin: 0;
 }

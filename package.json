@@ -6,7 +6,8 @@
     "workspaces": [
         "packages/config",
         "packages/components",
-        "packages/generator-sketch"
+        "packages/generator-sketch",
+        "packages/docs"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",
@@ -15,6 +16,13 @@
         "watch:components": "yarn workspace @telements/components start"
     },
     "devDependencies": {
+        "husky": "^3.0.9",
         "rimraf": "2.6.3"
+    },
+    "dependencies": {},
+    "husky": {
+        "hooks": {
+            "pre-commit": "cd packages/components && yarn format && yarn lint"
+        }
     }
 }

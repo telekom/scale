@@ -1,0 +1,64 @@
+/**
+* @prop --link-display: Display of the link
+* @prop --link-flex-direction: Flex direction of the link
+* @prop --link-align-items: Align items of the link
+* @prop --link-justify-content: Justify content of the link
+* @prop --link-position: Position of the link
+* @prop --link-text-decoration: Text decoration of the link
+* @prop --link-outline: Outline of the link
+* @prop --link-cursor: Cursor of the link
+* @prop --link-padding: Padding of the link
+* @prop --link-font-size: Font size of the link
+* @prop --link-font-weight: Font weight of the link
+* @prop --link-color: Color of the link
+* @prop --link-variant-primary-color: Color of the link variant primary
+* @prop --link-variant-success-color: Color of the link variant success
+* @prop --link-variant-warning-color: Color of the link variant warning
+* @prop --link-variant-danger-color: Color of the link variant danger
+* @prop --link-variant-info-color: Color of the link variant info
+* @prop --link-hover-with-underline: Color of the link variant primary
+*
+*/
+.link {
+  display: var(--link-display, inline-flex);
+  flex-direction: var(--link-flex-direction, row);
+  align-items: var(--link-align-items, center);
+  justify-content: var(--link-justify-content, center);
+  position: var(--link-position, relative);
+  text-decoration: var(--link-text-decoration, none);
+  outline: var(--link-outline, none);
+  cursor: var(--link-cursor, pointer);
+  padding: var(--link-padding, 0);
+  font-size: var(--link-font-size, 14px);
+  font-weight: var(--link-font-weight, 500);
+  color: var(--link-color, #000);
+}
+
+.link--disabled {
+  cursor: var(--link-disabled-cursor, not-allowed);
+  opacity: var(--link-disabled-opacity, 0.5);
+}
+
+.link--variant-primary {
+  color: var(--link-variant-primary-color, #409eff);
+}
+
+.link--variant-success {
+  color: var(--link-variant-success-color, #67c23a);
+}
+
+.link--variant-warning {
+  color: var(--link-variant-warning-color, #e6a23c);
+}
+
+.link--variant-danger {
+  color: var(--link-variant-danger-color, #f56c6c);
+}
+
+.link--variant-info {
+  color: var(--link-variant-info-color, #909399);
+}
+
+.link--underline:hover {
+  text-decoration: var(--link-hover-with-underline, underline);
+}

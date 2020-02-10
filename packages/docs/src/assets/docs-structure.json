@@ -1,0 +1,72 @@
+[
+  {
+    "text": "Introduction",
+    "children": [
+      {
+        "text": "Why Telements",
+        "filePath": "/assets/docs/introduction/why-telements.json",
+        "url": "/docs/introduction"
+      },
+      {
+        "text": "Getting Started",
+        "filePath": "/assets/docs/introduction/getting-started.json",
+        "url": "/docs/getting-started"
+      }
+    ]
+  },
+  {
+    "text": "Components",
+    "children": [
+      {
+        "text": "Alert",
+        "filePath": "/assets/docs/components/alert.json",
+        "url": "/docs/alert"
+      },
+      {
+        "text": "Badge",
+        "filePath": "/assets/docs/components/badge.json",
+        "url": "/docs/badge"
+      },
+      {
+        "text": "Button",
+        "filePath": "/assets/docs/components/button.json",
+        "url": "/docs/button"
+      },
+      {
+        "text": "Card",
+        "filePath": "/assets/docs/components/card.json",
+        "url": "/docs/card"
+      },
+      {
+        "text": "Input Text",
+        "filePath": "/assets/docs/components/input-text.json",
+        "url": "/docs/input-text"
+      },
+      {
+        "text": "Link",
+        "filePath": "/assets/docs/components/link.json",
+        "url": "/docs/link"
+      },
+      {
+        "text": "Modal",
+        "filePath": "/assets/docs/components/modal.json",
+        "url": "/docs/modal"
+      },
+      {
+        "text": "Progress Bar",
+        "filePath": "/assets/docs/components/progress-bar.json",
+        "url": "/docs/progress-bar"
+      },
+      {
+        "text": "Switch",
+        "filePath": "/assets/docs/components/switch.json",
+        "url": "/docs/switch"
+      },
+      {
+        "text": "Tag",
+        "filePath": "/assets/docs/components/tag.json",
+        "url": "/docs/tag"
+      }
+    ]
+  }
+]
