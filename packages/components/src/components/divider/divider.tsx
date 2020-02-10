@@ -8,20 +8,24 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Divider {
-  /** (optional) Card class */
+  /** (optional) Devider class */
   @Prop() public customClass?: string = '';
-  /** (optional) Card size */
+  /** (optional) Devider size */
   @Prop() public size?: string = '';
-  /** (optional) Card theme */
+  /** (optional) Devider theme */
   @Prop() public theme?: string = '';
+  /** (optional) Devider horizontal */
   @Prop() public horizontal?: boolean = true;
+  /** (optional) Devider vertical */
   @Prop() public vertical?: boolean = false;
 
   public render() {
     return (
       <div class={this.getCssClassMap()}>
         {this.horizontal && <hr class="divider__horizontal" />}
-        {!this.horizontal && <span class="divider__vertical" />}
+        {!this.horizontal && (
+          /* istanbul ignore next */ <span class="divider__vertical" />
+        )}
       </div>
     );
   }

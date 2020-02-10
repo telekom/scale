@@ -1,25 +1,31 @@
 /**
- * @prop --divider-color: Color of the divider
- 
+ * @prop --divider-margin: Margin of the divider
+ * @prop --divider-padding: Padding of the divider
+ * @prop --divider-height: Height of the divider
+ * @prop --divider-vertical-border-left: Border left of the vertical divider
+ * @prop --divider-vertical-border-bottom: Border bottom of the vertical divider
+ * @prop --divider-vertical-border-color: Border color of the vertical divider
+ * @prop --divider-horizontal-border-bottom: Border bottom of the horizontal divider 
+ * @prop --divider-horizontal-width: Width of the horizontal divider
+ * @prop --divider-horizontal-margin-inline-start: Margin inline start of the horizontal divider
+ * @prop --divider-horizontal-border-color: Border color of the horizontal divider
  */
 
 .divider {
   margin: var(--divider-margin, 10px);
   padding: var(--divider-padding, 10px);
+  height: var(--divider-height, 2rem);
 }
 
 .divider__vertical {
-  border-left: var(--divider-vertical-border-left, 7px solid blue);
-  height: var(--divider-vertical-height, 500px);
-  position: absolute;
-  left: 50%;
-  margin-left: -3px;
-  /* top: 0; */
-  height: 50px;
+  border-left: var(--divider-vertical-border-left, 0.5rem solid black);
+  border-bottom: var(--divider-vertical-border-bottom, 2rem solid black);
+  border-color: var(--divider-vertical-border-color, black);
 }
 
 .divider__horizontal {
-  width: var(--divider-width, 50px);
-  border-color: black;
-  border-width: 3px;
+  border-bottom: var(--divider-horizontal-border-bottom, 0.4rem solid black);
+  width: var(--divider-horizontal-width, 3rem);
+  margin-inline-start: var(--divider-horizontal-margin-inline-start, 0);
+  border-color: var(--divider-horizontal-border-color, black);
 }
