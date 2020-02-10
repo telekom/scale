@@ -1,5 +1,4 @@
 import { Component, Prop, h, Element } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
@@ -9,7 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Card {
-  @Element() public hostElement: HTMLStencilElement;
+  @Element() public hostElement: HTMLElement;
   /** (optional) Card class */
   @Prop() public customClass?: string = '';
   /** (optional) Card size */
