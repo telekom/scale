@@ -18,7 +18,7 @@ describe('Divider', () => {
   it('should match snapshot when horizontal false', async () => {
     const page = await newSpecPage({
       components: [Divider],
-      html: `<t-divider horizontal=false ></t-divider>`,
+      html: `<t-divider vertical=true></t-divider>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('Divider', () => {
   });
 
   it('should handle default css class', () => {
-    element.horizontal = true;
+    element.vertical = false;
     expect(element.getCssClassMap()).toContain('divider');
   });
 

@@ -4,16 +4,16 @@ exports[`Divider should match snapshot 1`] = `
 <t-divider>
   <mock:shadow-root>
     <div class="divider">
-      <hr class="divider__horizontal">
+      <hr>
     </div>
   </mock:shadow-root>
 </t-divider>
 `;
 
 exports[`Divider should match snapshot when horizontal false 1`] = `
-<t-divider horizontal="false">
+<t-divider vertical="true">
   <mock:shadow-root>
-    <div class="divider">
+    <div class="divider divider--vertical">
       <span class="divider__vertical"></span>
     </div>
   </mock:shadow-root>
