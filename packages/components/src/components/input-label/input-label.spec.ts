@@ -15,6 +15,11 @@ describe('Input Label', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should handle a custom css class', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+  });
+
   it('should handle theme css class', () => {
     element.theme = 'default';
     expect(element.getCssClassMap()).toContain('input-label--theme-default');
