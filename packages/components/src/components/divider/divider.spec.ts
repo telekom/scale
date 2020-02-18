@@ -24,6 +24,11 @@ describe('Divider', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should handle custom css class', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+  });
+
   it('should handle vertical css class', () => {
     element.vertical = true;
     expect(element.getCssClassMap()).toContain('divider--vertical');
