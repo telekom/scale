@@ -5,7 +5,7 @@ import classNames from 'classnames';
 export type InputTypes =
   | 'email'
   | 'hidden'
-  | 'number '
+  | 'number'
   | 'password'
   | 'tel'
   | 'text'
