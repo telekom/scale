@@ -8,6 +8,7 @@
   - [Badge](components/badge.md)
   - [Button](components/button.md)
   - [Card](components/card.md)
+  - [Divider](components/divider.md)
   - [Input Text](components/input-text.md)
   - [Link](components/link.md)
   - [Modal](components/modal.md)
