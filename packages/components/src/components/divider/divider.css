@@ -1,13 +1,14 @@
 /**
  * @prop --divider-border-top: Border top of the divider
  * @prop --divider-color: Color of the divider
- * @prop --divider-vertical-border-left: Border left of the vertical divider
+ * @prop --divider-vertical-border: Border left of the vertical divider
  * @prop --divider-vertical-min-height: Min height of the vertical divider
  */
 :host {
   width: 100%;
   height: 100%;
 }
+
 .divider hr {
   border: 0;
   border-top: var(
@@ -18,7 +19,7 @@
 
 .divider__vertical {
   border-left: var(
-    --divider-vertical-border-left,
+    --divider-vertical-border,
     1px solid var(--divider-color, #dfdfdf)
   );
   min-height: var(--divider-vertical-min-height, 1rem);
