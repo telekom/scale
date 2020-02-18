@@ -38,9 +38,14 @@
         "url": "/docs/card"
       },
       {
-        "text": "Input Text",
-        "filePath": "/assets/docs/components/input-text.json",
-        "url": "/docs/input-text"
+        "text": "Divider",
+        "filePath": "/assets/docs/components/divider.json",
+        "url": "/docs/divider"
+      },
+      {
+        "text": "Input",
+        "filePath": "/assets/docs/components/input.json",
+        "url": "/docs/input"
       },
       {
         "text": "Link",

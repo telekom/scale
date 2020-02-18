@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should match snapshot 1`] = `
+<t-input>
+  <mock:shadow-root>
+    <input class="input input--type-text" type="text">
+  </mock:shadow-root>
+</t-input>
+`;

@@ -1,26 +1,26 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { InputText } from './input-text';
+import { Input } from './input';
 
-describe('InputText', () => {
+describe('Input', () => {
   let element;
   beforeEach(async () => {
-    element = new InputText();
+    element = new Input();
   });
 
   it('should match snapshot', async () => {
     const page = await newSpecPage({
-      components: [InputText],
-      html: `<t-input-text>Label</t-input-text>`,
+      components: [Input],
+      html: `<t-input></t-input>`,
     });
     expect(page.root).toMatchSnapshot();
   });
 
   it('should handle theme css class', () => {
     element.theme = 'default';
-    expect(element.getCssClassMap()).toContain('input-text--theme-default');
+    expect(element.getCssClassMap()).toContain('input--theme-default');
   });
 
   it('should have a default css class', () => {
-    expect(element.getCssClassMap()).toBe('input-text');
+    expect(element.getCssClassMap()).toContain('input');
   });
 });

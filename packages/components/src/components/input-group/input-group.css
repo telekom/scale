@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: inherit;
+  width: 100%;
+  margin-bottom: 1rem;
+}

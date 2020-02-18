@@ -9,7 +9,7 @@
   - [Button](components/button.md)
   - [Card](components/card.md)
   - [Divider](components/divider.md)
-  - [Input Text](components/input-text.md)
+  - [Input](components/input.md)
   - [Link](components/link.md)
   - [Modal](components/modal.md)
   - [Progress Bar](components/progress-bar.md)

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Error should match snapshot 1`] = `
+<t-input-error>
+  <mock:shadow-root>
+    <div class="input-error">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Error
+</t-input-error>
+`;
