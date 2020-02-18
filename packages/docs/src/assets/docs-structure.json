@@ -38,6 +38,16 @@
         "url": "/docs/card"
       },
       {
+        "text": "Divider",
+        "filePath": "/assets/docs/components/divider.json",
+        "url": "/docs/divider"
+      },
+      {
+        "text": "Icon",
+        "filePath": "/assets/docs/components/icon.json",
+        "url": "/docs/icon"
+      },
+      {
         "text": "Input Text",
         "filePath": "/assets/docs/components/input-text.json",
         "url": "/docs/input-text"
@@ -66,6 +76,11 @@
         "text": "Tag",
         "filePath": "/assets/docs/components/tag.json",
         "url": "/docs/tag"
+      },
+      {
+        "text": "Text",
+        "filePath": "/assets/docs/components/text.json",
+        "url": "/docs/text"
       }
     ]
   }

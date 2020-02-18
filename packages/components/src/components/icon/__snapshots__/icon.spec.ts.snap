@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should match snapshot 1`] = `
+<t-icon path="d 10 10">
+  Label
+  <svg class="icon" height="24" viewBox="0 0 26 26" width="24">
+    <path d="d 10 10" fill="transparent" stroke="black"></path>
+  </svg>
+</t-icon>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text should match snapshot 1`] = `
+<t-text>
+  <mock:shadow-root>
+    <div class="text">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-text>
+`;

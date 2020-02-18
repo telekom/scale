@@ -159,6 +159,18 @@ export namespace Components {
     */
     'vertical'?: boolean;
   }
+  interface TIcon {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
+    'name': string;
+    'path': string;
+    /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+  }
   interface TInputText {
     /**
     * (optional) Input text class
@@ -299,6 +311,16 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TText {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+  }
   interface TToast {
     /**
     * (optional) Animated toast
@@ -384,6 +406,12 @@ declare global {
     new (): HTMLTDividerElement;
   };
 
+  interface HTMLTIconElement extends Components.TIcon, HTMLStencilElement {}
+  var HTMLTIconElement: {
+    prototype: HTMLTIconElement;
+    new (): HTMLTIconElement;
+  };
+
   interface HTMLTInputTextElement extends Components.TInputText, HTMLStencilElement {}
   var HTMLTInputTextElement: {
     prototype: HTMLTInputTextElement;
@@ -420,6 +448,12 @@ declare global {
     new (): HTMLTTagElement;
   };
 
+  interface HTMLTTextElement extends Components.TText, HTMLStencilElement {}
+  var HTMLTTextElement: {
+    prototype: HTMLTTextElement;
+    new (): HTMLTTextElement;
+  };
+
   interface HTMLTToastElement extends Components.TToast, HTMLStencilElement {}
   var HTMLTToastElement: {
     prototype: HTMLTToastElement;
@@ -431,12 +465,14 @@ declare global {
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-divider': HTMLTDividerElement;
+    't-icon': HTMLTIconElement;
     't-input-text': HTMLTInputTextElement;
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
     't-progress-bar': HTMLTProgressBarElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
+    't-text': HTMLTTextElement;
     't-toast': HTMLTToastElement;
   }
 }
@@ -576,6 +612,18 @@ declare namespace LocalJSX {
     */
     'vertical'?: boolean;
   }
+  interface TIcon {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
+    'name'?: string;
+    'path'?: string;
+    /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+  }
   interface TInputText {
     /**
     * (optional) Input text class
@@ -712,6 +760,16 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TText {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+  }
   interface TToast {
     /**
     * (optional) Animated toast
@@ -765,12 +823,14 @@ declare namespace LocalJSX {
     't-button': TButton;
     't-card': TCard;
     't-divider': TDivider;
+    't-icon': TIcon;
     't-input-text': TInputText;
     't-link': TLink;
     't-modal': TModal;
     't-progress-bar': TProgressBar;
     't-switch': TSwitch;
     't-tag': TTag;
+    't-text': TText;
     't-toast': TToast;
   }
 }
@@ -786,12 +846,14 @@ declare module "@stencil/core" {
       't-button': LocalJSX.TButton & JSXBase.HTMLAttributes<HTMLTButtonElement>;
       't-card': LocalJSX.TCard & JSXBase.HTMLAttributes<HTMLTCardElement>;
       't-divider': LocalJSX.TDivider & JSXBase.HTMLAttributes<HTMLTDividerElement>;
+      't-icon': LocalJSX.TIcon & JSXBase.HTMLAttributes<HTMLTIconElement>;
       't-input-text': LocalJSX.TInputText & JSXBase.HTMLAttributes<HTMLTInputTextElement>;
       't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
       't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
+      't-text': LocalJSX.TText & JSXBase.HTMLAttributes<HTMLTTextElement>;
       't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;
     }
   }
