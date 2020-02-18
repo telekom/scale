@@ -143,18 +143,20 @@ export namespace Components {
   }
   interface TDivider {
     /**
-    * (optional) Card class
+    * (optional) Divider class
     */
     'customClass'?: string;
-    'horizontal'?: boolean;
     /**
-    * (optional) Card size
+    * (optional) Divider size
     */
     'size'?: string;
     /**
-    * (optional) Card theme
+    * (optional) Divider theme
     */
     'theme'?: string;
+    /**
+    * (optional) Divider vertical
+    */
     'vertical'?: boolean;
   }
   interface TInputText {
@@ -558,18 +560,20 @@ declare namespace LocalJSX {
   }
   interface TDivider {
     /**
-    * (optional) Card class
+    * (optional) Divider class
     */
     'customClass'?: string;
-    'horizontal'?: boolean;
     /**
-    * (optional) Card size
+    * (optional) Divider size
     */
     'size'?: string;
     /**
-    * (optional) Card theme
+    * (optional) Divider theme
     */
     'theme'?: string;
+    /**
+    * (optional) Divider vertical
+    */
     'vertical'?: boolean;
   }
   interface TInputText {
