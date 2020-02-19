@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute       | Description                         | Type                                                                         | Default     |
-| -------------- | --------------- | ----------------------------------- | ---------------------------------------------------------------------------- | ----------- |
-| `customClass`  | `custom-class`  | (optional) Input text class         | `string`                                                                     | `''`        |
-| `errorMessage` | `error-message` | (optional) Input text error message | `string`                                                                     | `undefined` |
-| `name`         | `name`          | (optional) Input name               | `string`                                                                     | `''`        |
-| `theme`        | `theme`         | (optional) Input text theme         | `string`                                                                     | `''`        |
-| `type`         | `type`          | (optional) Input type               | `"email" \| "hidden" \| "number " \| "password" \| "tel" \| "text" \| "url"` | `'text'`    |
-| `value`        | `value`         | (optional) Input text value         | `string`                                                                     | `undefined` |
+| Property       | Attribute       | Description                         | Type                                                                        | Default     |
+| -------------- | --------------- | ----------------------------------- | --------------------------------------------------------------------------- | ----------- |
+| `customClass`  | `custom-class`  | (optional) Input text class         | `string`                                                                    | `''`        |
+| `errorMessage` | `error-message` | (optional) Input text error message | `string`                                                                    | `undefined` |
+| `name`         | `name`          | (optional) Input name               | `string`                                                                    | `''`        |
+| `theme`        | `theme`         | (optional) Input text theme         | `string`                                                                    | `''`        |
+| `type`         | `type`          | (optional) Input type               | `"email" \| "hidden" \| "number" \| "password" \| "tel" \| "text" \| "url"` | `'text'`    |
+| `value`        | `value`         | (optional) Input text value         | `string`                                                                    | `undefined` |
 
 
 ## Events
