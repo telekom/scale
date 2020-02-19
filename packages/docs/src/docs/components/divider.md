@@ -25,9 +25,9 @@ selector: `t-divider`
 ## Vertical
 
 ```javascript
-<t-divider horizontal="false"></t-divider>
+<t-divider vertical="true"></t-divider>
 ```
 
 <div class="demo-container">
-  <t-divider horizontal="false"></t-divider>
+  <t-divider vertical="true"></t-divider>
 </div>
