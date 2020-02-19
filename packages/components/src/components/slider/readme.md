@@ -1,22 +1,17 @@
 # t-slider
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
 | Property      | Attribute      | Description                         | Type      | Default |
 | ------------- | -------------- | ----------------------------------- | --------- | ------- |
-| `customClass` | `custom-class` | (optional) Card class               | `string`  | `''`    |
+| `customClass` | `custom-class` | (optional) Slider class             | `string`  | `''`    |
 | `label`       | `label`        | (optional) Slider display value     | `boolean` | `false` |
 | `max`         | `max`          | (optional) Slider range max value   | `number`  | `100`   |
 | `min`         | `min`          | (optional) Slider range start value | `number`  | `0`     |
 | `step`        | `step`         | (optional) Slider step              | `number`  | `1`     |
 | `value`       | `value`        | (optional) Slider binding value     | `number`  | `0`     |
-| `vertical`    | `vertical`     | (optional) Slider direction         | `boolean` | `false` |
-
 
 ## CSS Custom Properties
 
@@ -32,7 +27,6 @@
 | `--slider-input-thumb-width`         | Width of the slider input default thumb                                                    |
 | `--slider-input-width`               | Width of the slider input                                                                  |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

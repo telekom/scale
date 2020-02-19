@@ -83,6 +83,11 @@
         "url": "/docs/progress-bar"
       },
       {
+        "text": "Slider",
+        "filePath": "/assets/docs/components/slider.json",
+        "url": "/docs/slider"
+      },
+      {
         "text": "Switch",
         "filePath": "/assets/docs/components/switch.json",
         "url": "/docs/switch"

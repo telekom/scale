@@ -17,6 +17,7 @@
   - [Link](components/link.md)
   - [Modal](components/modal.md)
   - [Progress Bar](components/progress-bar.md)
+  - [Slider](components/slider.md)
   - [Switch](components/switch.md)
   - [Tag](components/tag.md)
   - [Text](components/text.md)
