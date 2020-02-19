@@ -7,7 +7,7 @@ import classNames from 'classnames';
   styleUrl: 'slider.css',
 })
 export class Slider {
-  /** (optional) Card class */
+  /** (optional) Slider class */
   @Prop() public customClass?: string = '';
   /** (optional) Slider range start value */
   @Prop() public min?: number = 0;
