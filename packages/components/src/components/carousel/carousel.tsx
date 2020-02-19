@@ -22,7 +22,11 @@ export class Carousel {
       for (let childIndex = 0; childIndex < children.length; childIndex++) {
         if (children[childIndex].slot === '') {
           // tslint:disable-next-line: prefer-for-of
-          for (let slideIndex = 0; slideIndex < children[childIndex].children.length; slideIndex++) {
+          for (
+            let slideIndex = 0;
+            slideIndex < children[childIndex].children.length;
+            slideIndex++
+          ) {
             const element = children[childIndex].children[slideIndex];
             this.slidesArray.push(element);
           }
@@ -81,7 +85,6 @@ export class Carousel {
             >
               <div innerHTML={element.outerHTML}></div>
             </div>
-
           ))}
           <div
             class="carousel__arrow carousel__arrow--right"
@@ -91,13 +94,12 @@ export class Carousel {
           </div>
         </div>
         <ul class={`carousel__indicators`}>
-          {Array.from(Array(this.slidesArray.length).keys()).map((index) => (
+          {Array.from(Array(this.slidesArray.length).keys()).map(index => (
             <li
-              key={(index)}
+              key={index}
               class={`carousel__indicator ${this.setActiveCssClass(index)}`}
-              onClick={() => this.setActiveSlide((index))}
-            >
-            </li>
+              onClick={() => this.setActiveSlide(index)}
+            ></li>
           ))}
         </ul>
       </div>
@@ -105,9 +107,6 @@ export class Carousel {
   }
 
   private getCssClassMap(): CssClassMap {
-    return classNames(
-      'carousel',
-      this.vertical && 'carousel--vertical',
-    );
+    return classNames('carousel', this.vertical && 'carousel--vertical');
   }
 }
