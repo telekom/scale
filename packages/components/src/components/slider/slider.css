@@ -1,0 +1,65 @@
+/**
+* @prop --slider-input-background: Background of the slider input
+* @prop --slider-input-height: Height of the slider input
+* @prop --slider-input-width: Width of the slider input
+* @prop --slider-input-border-radius: Border radius of the slider input default
+* @prop --slider-input-thumb-border: Border of the slider input default thumb
+* @prop --slider-input-thumb-height: Height of the slider input default thumb
+* @prop --slider-input-thumb-width: Width of the slider input default thumb
+* @prop --slider-input-thumb-border-radius: Border radius of the slider input default thumb
+* @prop --slider-input-thumb-background: Background of the slider input thumb
+* @Prop --slider-text-margin: Margin of the slider text
+*/
+
+.slider {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.slider__input {
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: var(--slider-input-background, #e4e7ed);
+  height: var(--slider-input-height, 4px);
+  width: var(--slider-input-width, 100%);
+  border-radius: var(--slider-input-border-radius, 2px);
+}
+
+.slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: var(--slider-input-thumb-border, 2px solid #409eff);
+  height: var(--slider-input-thumb-height, 20px);
+  width: var(--slider-input-thumb-width, 20px);
+  border-radius: var(--slider-input-thumb-border-radius, 50%);
+  background: var(--slider-input-thumb-background, #fff);
+}
+
+.slider__input::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: var(--slider-input-thumb-border, 2px solid #409eff);
+  height: var(--slider-input-thumb-height, 20px);
+  width: var(--slider-input-thumb-width, 20px);
+  border-radius: var(--slider-input-thumb-border-radius, 50%);
+  background: var(--slider-input-thumb-background, #fff);
+}
+
+.slider__input::-ms-thumb {
+  -webkit-appearance: none;
+  border: var(--slider-input-thumb-border, 2px solid #409eff);
+  height: var(--slider-input-thumb-height, 20px);
+  width: var(--slider-input-thumb-width, 20px);
+  border-radius: var(--slider-input-thumb-border-radius, 50%);
+  background: var(--slider-input-thumb-background, #fff);
+}
+
+input[type='range']::-moz-focus-outer {
+  border: 0;
+}
+
+.slider__text {
+  margin: var(--slider-text-margin, 0 0 0 1rem);
+  min-width: 30px;
+  text-align: right;
+}

@@ -296,6 +296,36 @@ export namespace Components {
     */
     'variant'?: string;
   }
+  interface TSlider {
+    /**
+    * (optional) Card class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Slider display value
+    */
+    'label': boolean;
+    /**
+    * (optional) Slider range max value
+    */
+    'max'?: number;
+    /**
+    * (optional) Slider range start value
+    */
+    'min'?: number;
+    /**
+    * (optional) Slider step
+    */
+    'step': number;
+    /**
+    * (optional) Slider binding value
+    */
+    'value': number;
+    /**
+    * (optional) Slider direction
+    */
+    'vertical'?: boolean;
+  }
   interface TSwitch {
     /**
     * (optional) Active switch
@@ -463,6 +493,12 @@ declare global {
     new (): HTMLTProgressBarElement;
   };
 
+  interface HTMLTSliderElement extends Components.TSlider, HTMLStencilElement {}
+  var HTMLTSliderElement: {
+    prototype: HTMLTSliderElement;
+    new (): HTMLTSliderElement;
+  };
+
   interface HTMLTSwitchElement extends Components.TSwitch, HTMLStencilElement {}
   var HTMLTSwitchElement: {
     prototype: HTMLTSwitchElement;
@@ -493,6 +529,7 @@ declare global {
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
     't-progress-bar': HTMLTProgressBarElement;
+    't-slider': HTMLTSliderElement;
     't-switch': HTMLTSwitchElement;
     't-tag': HTMLTTagElement;
     't-toast': HTMLTToastElement;
@@ -768,6 +805,36 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
+  interface TSlider {
+    /**
+    * (optional) Card class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Slider display value
+    */
+    'label'?: boolean;
+    /**
+    * (optional) Slider range max value
+    */
+    'max'?: number;
+    /**
+    * (optional) Slider range start value
+    */
+    'min'?: number;
+    /**
+    * (optional) Slider step
+    */
+    'step'?: number;
+    /**
+    * (optional) Slider binding value
+    */
+    'value'?: number;
+    /**
+    * (optional) Slider direction
+    */
+    'vertical'?: boolean;
+  }
   interface TSwitch {
     /**
     * (optional) Active switch
@@ -868,6 +935,7 @@ declare namespace LocalJSX {
     't-link': TLink;
     't-modal': TModal;
     't-progress-bar': TProgressBar;
+    't-slider': TSlider;
     't-switch': TSwitch;
     't-tag': TTag;
     't-toast': TToast;
@@ -892,6 +960,7 @@ declare module "@stencil/core" {
       't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
       't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
+      't-slider': LocalJSX.TSlider & JSXBase.HTMLAttributes<HTMLTSliderElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
       't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;
