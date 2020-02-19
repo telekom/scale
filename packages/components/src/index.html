@@ -370,6 +370,7 @@
     <h3>Switch disabled</h3>
     <t-switch active="true" disabled="true"></t-switch>
     <t-switch active="false" disabled="true"></t-switch>
+
     <h3>Slider</h3>
     <t-slider></t-slider>
     <h3>Slider - with label</h3>
@@ -378,5 +379,23 @@
     <t-slider label step="10"></t-slider>
     <h3>Slider - min max</h3>
     <t-slider label min="10" max="1000"></t-slider>
+
+    <h3>Carousel - horizontal</h3>
+    <t-carousel>
+      <div slot="arrow-left">&larr;</div>
+      <div><img src="http://placehold.it/400x300/d3dce6" /></div>
+      <div><img src="http://placehold.it/400x300/99a9bf" /></div>
+      <div><img src="http://placehold.it/400x300/d3dce6" /></div>
+      <div><img src="http://placehold.it/400x300/99a9bf" /></div>
+      <div slot="arrow-right">&rarr;</div>
+    </t-carousel>
+
+    <h3>Carousel - vertical</h3>
+    <t-carousel vertical>
+      <div><img src="http://placehold.it/400x300/d3dce6" /></div>
+      <div><img src="http://placehold.it/400x300/99a9bf" /></div>
+      <div><img src="http://placehold.it/400x300/d3dce6" /></div>
+      <div><img src="http://placehold.it/400x300/99a9bf" /></div>
+    </t-carousel>
   </body>
 </html>
