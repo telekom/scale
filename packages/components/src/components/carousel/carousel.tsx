@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 @Component({
   tag: 't-carousel',
-  styleUrls: ['Carousel.css'],
+  styleUrls: ['carousel.css'],
   shadow: true,
 })
 export class Carousel {
