@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 @Component({
   tag: 't-slider',
-  styleUrl: 'slider.css'
+  styleUrl: 'slider.css',
 })
 export class Slider {
   /** (optional) Card class */
@@ -24,7 +24,7 @@ export class Slider {
 
   public componentWillLoad() {
     if (this.min > this.value) {
-      this.value = this.min
+      this.value = this.min;
     }
   }
 
@@ -40,9 +40,7 @@ export class Slider {
           step={this.step}
           onInput={this.updateValue}
         />
-        {this.label &&
-          <span class="slider__text">{this.value}</span>
-        }
+        {this.label && <span class="slider__text">{this.value}</span>}
       </div>
     );
   }
@@ -52,9 +50,6 @@ export class Slider {
   };
 
   private getCssClassMap(): CssClassMap {
-    return classNames(
-      'slider',
-      this.customClass && this.customClass
-    );
+    return classNames('slider', this.customClass && this.customClass);
   }
 }
