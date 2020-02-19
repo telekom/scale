@@ -4,6 +4,8 @@ description: Input element
 url: /docs/input
 contributors:
   - eeegor
+  - steffilankes
+  - SylviaGonschior
 ---
 
 # Input
