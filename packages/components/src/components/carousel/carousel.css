@@ -48,6 +48,7 @@
   z-index: 99;
   justify-content: center;
   display: flex;
+  align-items: center;
 }
 
 .carousel--vertical .carousel__arrow {
