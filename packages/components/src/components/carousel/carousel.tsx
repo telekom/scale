@@ -1,4 +1,6 @@
-import { Component, Prop, h, State } from '@stencil/core';
+import { Component, Prop, h, State, Element } from '@stencil/core';
+import { CssClassMap } from '../../utils/utils';
+import classNames from 'classnames';
 
 @Component({
   tag: 't-carousel',
@@ -6,31 +8,38 @@ import { Component, Prop, h, State } from '@stencil/core';
   shadow: true,
 })
 export class Carousel {
-  /** carousel slides total number */
-  @Prop() public totalSlides: number;
+  @Element() public hostElement: HTMLElement;
   /** (optional) carousel display direction */
-  @Prop() public direction?: string = 'horizontal';
+  @Prop() public vertical?: boolean = false;
 
   @State() private slidesArray = [];
   @State() private value = 0;
 
   public componentWillLoad() {
     if (this.slidesArray.length === 0) {
-      for (let i = 0; i < this.totalSlides; i++) {
-        this.slidesArray.push(i);
+      const children = this.hostElement.children;
+      // tslint:disable-next-line: prefer-for-of
+      for (let childIndex = 0; childIndex < children.length; childIndex++) {
+        if (children[childIndex].slot === '') {
+          // tslint:disable-next-line: prefer-for-of
+          for (let slideIndex = 0; slideIndex < children[childIndex].children.length; slideIndex++) {
+            const element = children[childIndex].children[slideIndex];
+            this.slidesArray.push(element);
+          }
+        }
       }
     }
   }
 
-  public displayNext = direction => {
+  public handleSlideChange = direction => {
     const val = this.value;
-    if (direction === 'left') {
+    if (direction === 'prev') {
       val === 0
         ? (this.value = -100 * (this.slidesArray.length - 1))
         : (this.value = val + 100);
     }
 
-    if (direction === 'right') {
+    if (direction === 'next') {
       val === -100 * (this.slidesArray.length - 1)
         ? (this.value = 0)
         : (this.value = val - 100);
@@ -42,7 +51,7 @@ export class Carousel {
   };
 
   public setTransformValue = () => {
-    if (this.direction === 'vertical') {
+    if (!!this.vertical) {
       return `translateY(${this.value}%)`;
     }
     return `translateX(${this.value}%)`;
@@ -57,45 +66,48 @@ export class Carousel {
 
   public render() {
     return (
-      <div class="carousel">
-        <div
-          class={`carousel__container  carousel__container--${this.direction}`}
-        >
+      <div class={this.getCssClassMap()}>
+        <div class={`carousel__container`}>
           <div
             class="carousel__arrow carousel__arrow--left"
-            onClick={() => this.displayNext('left')}
+            onClick={() => this.handleSlideChange('prev')}
           >
             <slot name="arrow-left" />
           </div>
-          {this.slidesArray.map(index => (
+          {this.slidesArray.map(element => (
             <div
               class="carousel__slide"
               style={{ transform: this.setTransformValue() }}
             >
-              <slot name={`slide_${index}`} />
+              <div innerHTML={element.outerHTML}></div>
             </div>
+
           ))}
           <div
             class="carousel__arrow carousel__arrow--right"
-            onClick={() => this.displayNext('right')}
+            onClick={() => this.handleSlideChange('next')}
           >
             <slot name="arrow-right" />
           </div>
         </div>
-        <ul
-          class={`carousel__indicators carousel__indicators--${this.direction}`}
-        >
-          {this.slidesArray.map(index => (
+        <ul class={`carousel__indicators`}>
+          {Array.from(Array(this.slidesArray.length).keys()).map((index) => (
             <li
-              key={index}
-              class={`carousel__indicator ${this.setActiveCssClass(
-                index
-              )} carousel__indicator--${this.direction}`}
-              onMouseEnter={() => this.setActiveSlide(index)}
-            ></li>
+              key={(index)}
+              class={`carousel__indicator ${this.setActiveCssClass(index)}`}
+              onClick={() => this.setActiveSlide((index))}
+            >
+            </li>
           ))}
         </ul>
       </div>
+    );
+  }
+
+  private getCssClassMap(): CssClassMap {
+    return classNames(
+      'carousel',
+      this.vertical && 'carousel--vertical',
     );
   }
 }

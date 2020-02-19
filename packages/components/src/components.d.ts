@@ -144,11 +144,7 @@ export namespace Components {
     /**
     * (optional) carousel display direction
     */
-    'direction'?: string;
-    /**
-    * carousel slides total number
-    */
-    'totalSlides': number;
+    'vertical'?: boolean;
   }
   interface TDivider {
     /**
@@ -710,11 +706,7 @@ declare namespace LocalJSX {
     /**
     * (optional) carousel display direction
     */
-    'direction'?: string;
-    /**
-    * carousel slides total number
-    */
-    'totalSlides'?: number;
+    'vertical'?: boolean;
   }
   interface TDivider {
     /**

@@ -4,7 +4,7 @@ exports[`Carousel should match snapshot 1`] = `
 <t-carousel>
   <mock:shadow-root>
     <div class="carousel">
-      <div class="carousel__container carousel__container--horizontal">
+      <div class="carousel__container">
         <div class="carousel__arrow carousel__arrow--left">
           <slot name="arrow-left"></slot>
         </div>
@@ -12,7 +12,7 @@ exports[`Carousel should match snapshot 1`] = `
           <slot name="arrow-right"></slot>
         </div>
       </div>
-      <ul class="carousel__indicators carousel__indicators--horizontal"></ul>
+      <ul class="carousel__indicators"></ul>
     </div>
   </mock:shadow-root>
   Label

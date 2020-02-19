@@ -15,38 +15,17 @@ describe('Carousel', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should calculate slides number into an array', () => {
-    element.slidesArray = [];
-    element.totalSlides = 4;
-    element.componentWillLoad();
-    expect(element.slidesArray.length).toBe(4);
-  });
-
-  it('should set correct translate value when clicking arrow left', () => {
+  it('should set correct translate value when clicking arrow prev', () => {
     element.value = 0;
     element.slidesArray = [0, 1, 2, 3];
-    element.displayNext('left');
+    element.handleSlideChange('prev');
     expect(element.value).toBe(-300);
   });
 
-  it('should set correct translate value when clicking arrow left', () => {
-    element.value = -100;
-    element.slidesArray = [0, 1, 2, 3];
-    element.displayNext('left');
-    expect(element.value).toBe(0);
-  });
-
-  it('should set correct translate value when clicking arrow right', () => {
+  it('should set correct translate value when clicking arrow next', () => {
     element.value = 100;
     element.slidesArray = [0, 1, 2, 3];
-    element.displayNext('right');
-    expect(element.value).toBe(0);
-  });
-
-  it('should set correct translate value when clicking arrow right', () => {
-    element.value = -300;
-    element.slidesArray = [0, 1, 2, 3];
-    element.displayNext('right');
+    element.handleSlideChange('next');
     expect(element.value).toBe(0);
   });
 
@@ -58,14 +37,13 @@ describe('Carousel', () => {
 
   it('should set correct transform value based on the carousel container direction', () => {
     element.value = -300;
-    element.direction = 'vertical';
+    element.vertical = true;
     element.setTransformValue();
     expect(element.setTransformValue()).toBe('translateY(-300%)');
   });
 
   it('should set correct transform value based on the carousel container direction', () => {
     element.value = -200;
-    element.direction = 'horizontal';
     element.setTransformValue();
     expect(element.setTransformValue()).toBe('translateX(-200%)');
   });

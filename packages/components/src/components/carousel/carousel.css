@@ -1,172 +1,111 @@
 /**
 * @prop --carousel-height: Height of the carousel
 * @prop --carousel-width: Width of the carousel
-* @prop --carousel-position: position of the carousel
-* @prop --carousel-container-position: position of the carousel container
-* @prop --carousel-container-height: Height of the carousel container
-* @prop --carousel-container-width: Width of the carousel container
-* @prop --carousel-container-align-items: Align items of the carousel container
-* @prop --carousel-container-display: Display of the carousel container
-* @prop --carousel-container-margin: Margin of the carousel container
-* @prop --carousel-container-padding: Padding of the carousel container
-* @prop --carousel-container-box-sizing: Box sizing of the carousel container
-* @prop --carousel-container-overflow: Overflow of the carousel container
-* @prop --carousel-container-vertical-flex-direction: Flex direction of the carousel container vertical
-* @prop --carousel-slide-position: Position of the carousel slide
-* @prop --carousel-slide-height: Height of the carousel slide
-* @prop --carousel-slide-min-width: Min width of the carousel slide
 * @prop --carousel-slide-transition: Transition of the carousel slide
-* @prop --carousel-arrow-position: Position of the carousel arrow
-* @prop --carousel-arrow-top: Top of the carousel arrow
-* @prop --carousel-arrow-width: Width of the carousel arrow
-* @prop --carousel-arrow-height: Height of the carousel arrow
-* @prop --carousel-arrow-border-radius: Border radius of the carousel arrow
-* @prop --carousel-arrow-cursor: Cursor of the carousel arrow
-* @prop --carousel-arrow-transform: Transform of the carousel arrow
-* @prop --carousel-arrow-border: Border of the carousel arrow
-* @prop --carousel-arrow-outline: Outline of the carousel arrow
-* @prop --carousel-arrow-background: Background of the carousel arrow
-* @prop --carousel-arrow-color: Color of the carousel arrow
-* @prop --carousel-arrow-z-index:Z index of the carousel arrow
-* @prop --carousel-arrow-justify-content: Justify-content of the carousel arrow
-* @prop --carousel-arrow-display: display of the carousel arrow
-* @prop --carousel-vertical-arrow-display: display of the carousel vertical arrow
-* @prop --carousel-arrow-left: left of the carousel arrow left
-* @prop --carousel-arrow-right: Right of the carousel arrow right
-* @prop --carousel-indicator-position: Position of the carousel indicator
-* @prop --carousel-indicators-list-style: List style of the carousel indicators
-* @prop --carousel-indicators-margin: Margin of the carousel indicators
-* @prop --carousel-indicators-padding: Padding of the carousel indicators
-* @prop --carousel-indicators-z-index: Z index of the carousel indicators
-* @prop --carousel-indicators-display: Display of the carousel indicators
-* @prop --carousel-indicator-display: Display of the carousel indicator
-* @prop --carousel-indicator-opacity: Opacity of the carousel indicator
-* @prop --carousel-indicator-width: Width of the carousel indicator
-* @prop --carousel-indicator-height: Height of the carousel indicator
-* @prop --carousel-indicator-background-color: Background color of the carousel indicator
-* @prop --carousel-indicator-border: Border of the carousel indicator
-* @prop --carousel-indicator-outline: Outline of the carousel indicator
-* @prop --carousel-indicator-padding: Padding of the carousel indicator
-* @prop --carousel-indicator-margin: Margin of the carousel indicator
-* @prop --carousel-indicator-cursor: Cursor of the carousel indicator
-* @prop --carousel-indicator-transition: Transition of the carousel indicator
-* @prop --carousel-indicator-active-opacity: Opacity of the carousel indicator active
-* @prop --carousel-indicators-horizontal-bottom: Bottom of the carousel indicators horizontal
-* @prop --carousel-indicators-horizontal-Left: Left of the carousel indicators horizontal
-* @prop --carousel-indicators-horizontal-transform: Transform of the carousel indicators horizontal
-* @prop --carousel-indicators-vertical-bottom: Bottom of the carousel indicators vertical
-* @prop --carousel-indicators-vertical-right: Right of the carousel indicators vertical
-* @prop --carousel-indicators-vertical-top: Top of the carousel indicators vertical
-* @prop --carousel-indicators-vertical-transform: Transform of the carousel indicators vertical
-* @prop --carousel-indicators-vertical-display: Display of the carousel indicators vertical
-* @prop --carousel-indicators-vertical-flex-direction: Flex direction of the carousel indicators vertical
-* @prop --carousel-indicator-vertical-margin: Margin of the carousel indicator vertical
-* @prop --carousel-indicator-vertical-width: Width of the carousel indicator vertical
-* @prop --carousel-indicator-vertical-height: Height of the carousel indicator vertical
-
 */
 
 .carousel {
   height: var(--carousel-height, 300px);
   width: var(--carousel-width, 400px);
-  position: var(--carousel-position, relative);
+  position: relative;
 }
 
 .carousel__container {
-  position: var(--carousel-container-position, relative);
-  height: var(--carousel-container-height, 100%);
-  width: var(--carousel-container-width, 100%);
-  align-items: var(--carousel-container-align-items, center);
-  display: var(--carousel-container-display, flex);
-  margin: var(--carousel-container-margin, 0);
-  padding: var(--carousel-container-padding, 0);
-  box-sizing: var(--carousel-container-box-sizing, border-box);
-  overflow: var(--carousel-container-overflow, hidden);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.carousel__container--vertical {
-  flex-direction: var(--carousel-container-vertical-flex-direction, column);
+.carousel--vertical .carousel__container {
+  flex-direction: column;
 }
 
 .carousel__slide {
-  position: var(--carousel-slide-position, relative);
-  height: var(--carousel-slide-height, 100%);
-  min-width: var(--carousel-slide-min-width, 100%);
-  transition: var(--carousel-slide-transition, transform 0.5s);
+  position: relative;
+  height: 100%;
+  min-width: 100%;
+  transition: var(--carousel-slide-transition, all 0.3s ease-in-out);
 }
 
 .carousel__arrow {
-  position: var(--carousel-arrow-position, absolute);
-  top: var(--carousel-arrow-top, 50%);
-  width: var(--carousel-arrow-width, 24px);
-  height: var(--carousel-arrow-height, 23px);
-  border-radius: var(--carousel-arrow-border-radius, 50%);
-  cursor: var(--carousel-arrow-cursor, pointer);
-  transform: var(--carousel-arrow-transform, translateY(-50%));
-  border: var(--carousel-arrow-border, none);
-  outline: var(--carousel-arrow-outline, none);
-  background: var(--carousel-arrow-background, rgba(31, 45, 61, 0.11));
-  color: var(--carousel-arrow-color, #fff);
-  z-index: var(--carousel-arrow-z-index, 99);
-  justify-content: var(--carousel-arrow-justify-content, center);
-  display: var(--carousel-arrow-display, flex);
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+  background: rgba(31, 45, 61, 0.11);
+  color: #fff;
+  z-index: 99;
+  justify-content: center;
+  display: flex;
 }
 
-.carousel__container--vertical .carousel__arrow {
-  display: var(--carousel-vertical-arrow-display, none);
+.carousel--vertical .carousel__arrow {
+  display: none;
 }
 .carousel__arrow--left {
-  left: var(--carousel-arrow-left, 12px);
+  left: 12px;
 }
 
 .carousel__arrow--right {
-  right: var(--carousel-arrow-right, 12px);
+  right: 12px;
 }
 
 .carousel__indicators {
-  position: var(--carousel-indicators-position, absolute);
-  list-style: var(--carousel-indicators-list-style, none);
-  margin: var(--carousel-indicators-margin, 0);
-  padding: var(--carousel-indicators-padding, 0);
-  z-index: var(--carousel-indicators-z-index, 2);
-  display: var(--carousel-indicators-display, inline-flex);
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  display: inline-flex;
 }
 
 .carousel__indicator {
-  display: var(--carousel-indicator-display, block);
-  opacity: var(--carousel-indicator-opacity, 0.48);
-  width: var(--carousel-indicator-width, 30px);
-  height: var(--carousel-indicator-height, 4px);
-  background-color: var(--carousel-indicator-background-color, #fff);
-  border: var(--carousel-indicator-border, none);
-  outline: var(--carousel-indicator-outline, none);
-  padding: var(--carousel-indicator-padding, 0);
-  margin: var(--carousel-indicator-margin, 0 6px);
-  cursor: var(--carousel-indicator-cursor, pointer);
-  transition: var(--carousel-indicator-transition, 0.3s);
+  display: block;
+  opacity: 0.5;
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .carousel__indicator--active {
-  opacity: var(--carousel-indicator-active-opacity, 1);
+  opacity: 1;
 }
 
-.carousel__indicators--horizontal {
-  bottom: var(--carousel-indicators-horizontal-bottom, 12px);
-  left: var(--carousel-indicators-horizontal-Left, 50%);
-  transform: var(--carousel-indicators-horizontal-transform, translateX(-50%));
+.carousel__indicators {
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.carousel__indicators--vertical {
-  bottom: var(--carousel-indicators-vertical-bottom, 0);
-  right: var(--carousel-indicators-vertical-right, 12px);
-  top: var(--carousel-indicators-vertical-top, 50%);
-  transform: var(--carousel-indicators-vertical-transform, translateY(-50%));
-  display: var(--carousel-indicators-vertical-display, flex);
-  flex-direction: var(--carousel-indicators-vertical-flex-direction, column);
+.carousel--vertical .carousel__indicators {
+  left: unset;
+  bottom: 0;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
 }
 
-.carousel__indicator--vertical {
-  margin: var(--carousel-indicator-vertical-margin, 6px 0);
-  width: var(--carousel-indicator-vertical-width, 4px);
-  height: var(--carousel-indicator-vertical-height, 30px);
+.carousel--vertical .carousel__indicator {
+  margin: 6px 0;
+  width: 4px;
+  height: 30px;
 }
