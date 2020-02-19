@@ -15,18 +15,12 @@ describe('Slider', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should update value when slider moved', () => {
-    const event = {
-      target: {
-        value: 30,
-        style: {
-          background:
-            'linear-gradient(to right, #409eff 0%, #409eff 0%, #e4e7ed 0%, #e4e7ed 100%)',
-        },
-      },
-    };
-    element.value = 0;
-    element.updateValue(event);
-    expect(element.value).toBe(30);
+  it('should handle a custom css class', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+  });
+
+  it('should have a default css class', () => {
+    expect(element.getCssClassMap()).toContain('slider');
   });
 });

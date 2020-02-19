@@ -9,8 +9,6 @@ import classNames from 'classnames';
 export class Slider {
   /** (optional) Card class */
   @Prop() public customClass?: string = '';
-  /** (optional) Slider direction */
-  @Prop() public vertical?: boolean = false;
   /** (optional) Slider range start value */
   @Prop() public min?: number = 0;
   /** (optional) Slider range max value */
