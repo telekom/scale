@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Label should match snapshot 1`] = `
+<t-input-label>
+  <mock:shadow-root>
+    <div class="input-label">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Label
+</t-input-label>
+`;
