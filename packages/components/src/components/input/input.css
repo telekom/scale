@@ -1,0 +1,29 @@
+/**
+ * @prop --input-border: Border of the input
+ * @prop --input-border-radius: Border radius of the input
+ * @prop --input-padding: Padding of the input
+ * @prop --input-font-size: Font size of the input
+ * @prop --input-font-family: Font family of the input
+ */
+
+.input {
+  display: flex;
+  width: 100%;
+  border: var(--input-border, 1px solid #dfdfdf);
+  border-radius: var(--input-border-radius, 4px);
+  padding: var(--input-padding, 0.5rem);
+  font-size: var(--input-font-size, 16px);
+  font-family: var(--input-font-family, inherit);
+  box-sizing: border-box;
+}
+
+/*
+ * TODO: implement accessability
+ * -----------------------------
+ * Once the user starts tabbing it probably
+ * means that a screen-reader is required
+ */
+
+.input:not(.tabbing):focus {
+  outline: 0;
+}

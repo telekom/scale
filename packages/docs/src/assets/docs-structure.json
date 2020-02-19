@@ -38,9 +38,29 @@
         "url": "/docs/card"
       },
       {
-        "text": "Input Text",
-        "filePath": "/assets/docs/components/input-text.json",
-        "url": "/docs/input-text"
+        "text": "Divider",
+        "filePath": "/assets/docs/components/divider.json",
+        "url": "/docs/divider"
+      },
+      {
+        "text": "Input",
+        "filePath": "/assets/docs/components/input.json",
+        "url": "/docs/input"
+      },
+      {
+        "text": "Input group",
+        "filePath": "/assets/docs/components/input-group.json",
+        "url": "/docs/input-group"
+      },
+      {
+        "text": "Input label",
+        "filePath": "/assets/docs/components/input-label.json",
+        "url": "/docs/input-label"
+      },
+      {
+        "text": "Input error",
+        "filePath": "/assets/docs/components/input-error.json",
+        "url": "/docs/input-error"
       },
       {
         "text": "Link",

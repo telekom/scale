@@ -8,9 +8,8 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  Validator,
-  ValidatorEntry,
-} from './validators';
+  InputTypes,
+} from './components/input/input';
 
 export namespace Components {
   interface TAlert {
@@ -159,7 +158,33 @@ export namespace Components {
     */
     'vertical'?: boolean;
   }
-  interface TInputText {
+  interface TInput {
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text error message
+    */
+    'errorMessage': string;
+    /**
+    * (optional) Input name
+    */
+    'name'?: string;
+    /**
+    * (optional) Input text theme
+    */
+    'theme'?: string;
+    /**
+    * (optional) Input type
+    */
+    'type'?: InputTypes;
+    /**
+    * (optional) Input text value
+    */
+    'value': string;
+  }
+  interface TInputError {
     /**
     * (optional) Input text class
     */
@@ -168,14 +193,26 @@ export namespace Components {
     * (optional) Input text theme
     */
     'theme'?: string;
+  }
+  interface TInputGroup {
     /**
-    * (optional) Input text validator
+    * (optional) Input text class
     */
-    'validator': Array<string | ValidatorEntry | Validator<string>>;
+    'customClass'?: string;
     /**
-    * (optional) Input text value
+    * (optional) Input text theme
     */
-    'value': string;
+    'theme'?: string;
+  }
+  interface TInputLabel {
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text theme
+    */
+    'theme'?: string;
   }
   interface TLink {
     /**
@@ -414,10 +451,28 @@ declare global {
     new (): HTMLTDividerElement;
   };
 
-  interface HTMLTInputTextElement extends Components.TInputText, HTMLStencilElement {}
-  var HTMLTInputTextElement: {
-    prototype: HTMLTInputTextElement;
-    new (): HTMLTInputTextElement;
+  interface HTMLTInputElement extends Components.TInput, HTMLStencilElement {}
+  var HTMLTInputElement: {
+    prototype: HTMLTInputElement;
+    new (): HTMLTInputElement;
+  };
+
+  interface HTMLTInputErrorElement extends Components.TInputError, HTMLStencilElement {}
+  var HTMLTInputErrorElement: {
+    prototype: HTMLTInputErrorElement;
+    new (): HTMLTInputErrorElement;
+  };
+
+  interface HTMLTInputGroupElement extends Components.TInputGroup, HTMLStencilElement {}
+  var HTMLTInputGroupElement: {
+    prototype: HTMLTInputGroupElement;
+    new (): HTMLTInputGroupElement;
+  };
+
+  interface HTMLTInputLabelElement extends Components.TInputLabel, HTMLStencilElement {}
+  var HTMLTInputLabelElement: {
+    prototype: HTMLTInputLabelElement;
+    new (): HTMLTInputLabelElement;
   };
 
   interface HTMLTLinkElement extends Components.TLink, HTMLStencilElement {}
@@ -467,7 +522,10 @@ declare global {
     't-button': HTMLTButtonElement;
     't-card': HTMLTCardElement;
     't-divider': HTMLTDividerElement;
-    't-input-text': HTMLTInputTextElement;
+    't-input': HTMLTInputElement;
+    't-input-error': HTMLTInputErrorElement;
+    't-input-group': HTMLTInputGroupElement;
+    't-input-label': HTMLTInputLabelElement;
     't-link': HTMLTLinkElement;
     't-modal': HTMLTModalElement;
     't-progress-bar': HTMLTProgressBarElement;
@@ -613,11 +671,19 @@ declare namespace LocalJSX {
     */
     'vertical'?: boolean;
   }
-  interface TInputText {
+  interface TInput {
     /**
     * (optional) Input text class
     */
     'customClass'?: string;
+    /**
+    * (optional) Input text error message
+    */
+    'errorMessage'?: string;
+    /**
+    * (optional) Input name
+    */
+    'name'?: string;
     /**
     * (optional) Input text event changed
     */
@@ -627,13 +693,43 @@ declare namespace LocalJSX {
     */
     'theme'?: string;
     /**
-    * (optional) Input text validator
+    * (optional) Input type
     */
-    'validator'?: Array<string | ValidatorEntry | Validator<string>>;
+    'type'?: InputTypes;
     /**
     * (optional) Input text value
     */
     'value'?: string;
+  }
+  interface TInputError {
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text theme
+    */
+    'theme'?: string;
+  }
+  interface TInputGroup {
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text theme
+    */
+    'theme'?: string;
+  }
+  interface TInputLabel {
+    /**
+    * (optional) Input text class
+    */
+    'customClass'?: string;
+    /**
+    * (optional) Input text theme
+    */
+    'theme'?: string;
   }
   interface TLink {
     /**
@@ -832,7 +928,10 @@ declare namespace LocalJSX {
     't-button': TButton;
     't-card': TCard;
     't-divider': TDivider;
-    't-input-text': TInputText;
+    't-input': TInput;
+    't-input-error': TInputError;
+    't-input-group': TInputGroup;
+    't-input-label': TInputLabel;
     't-link': TLink;
     't-modal': TModal;
     't-progress-bar': TProgressBar;
@@ -854,7 +953,10 @@ declare module "@stencil/core" {
       't-button': LocalJSX.TButton & JSXBase.HTMLAttributes<HTMLTButtonElement>;
       't-card': LocalJSX.TCard & JSXBase.HTMLAttributes<HTMLTCardElement>;
       't-divider': LocalJSX.TDivider & JSXBase.HTMLAttributes<HTMLTDividerElement>;
-      't-input-text': LocalJSX.TInputText & JSXBase.HTMLAttributes<HTMLTInputTextElement>;
+      't-input': LocalJSX.TInput & JSXBase.HTMLAttributes<HTMLTInputElement>;
+      't-input-error': LocalJSX.TInputError & JSXBase.HTMLAttributes<HTMLTInputErrorElement>;
+      't-input-group': LocalJSX.TInputGroup & JSXBase.HTMLAttributes<HTMLTInputGroupElement>;
+      't-input-label': LocalJSX.TInputLabel & JSXBase.HTMLAttributes<HTMLTInputLabelElement>;
       't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
       't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
