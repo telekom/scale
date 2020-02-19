@@ -1,4 +1,4 @@
-import { Component, Prop, Event, h, EventEmitter, State } from '@stencil/core';
+import { Component, Prop, Event, h, EventEmitter } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 
@@ -31,13 +31,10 @@ export class Input {
   @Prop({ mutable: true }) public errorMessage: string;
   /** (optional) Input text event changed */
   @Event() public changed: EventEmitter<string>;
-  /** (optional) Input text state touched */
-  @State() public touched: boolean = false;
 
   public handleChange(event) {
     this.value = event.target ? event.target.value : this.value;
     this.changed.emit(this.value);
-    this.touched = true;
   }
 
   public render() {
