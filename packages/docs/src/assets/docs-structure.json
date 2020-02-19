@@ -38,6 +38,11 @@
         "url": "/docs/card"
       },
       {
+        "text": "Carousel",
+        "filePath": "/assets/docs/components/carousel.json",
+        "url": "/docs/carousel"
+      },
+      {
         "text": "Divider",
         "filePath": "/assets/docs/components/divider.json",
         "url": "/docs/divider"
