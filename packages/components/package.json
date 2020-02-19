@@ -17,7 +17,7 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
+    "test": "stencil test --spec --e2e --max-workers=2",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "format": "prettier --write \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint": "yarn lint:types && yarn lint:style && yarn lint:format",
