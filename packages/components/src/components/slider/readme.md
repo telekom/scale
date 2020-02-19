@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property      | Attribute      | Description                         | Type      | Default |
@@ -12,6 +13,7 @@
 | `min`         | `min`          | (optional) Slider range start value | `number`  | `0`     |
 | `step`        | `step`         | (optional) Slider step              | `number`  | `1`     |
 | `value`       | `value`        | (optional) Slider binding value     | `number`  | `0`     |
+
 
 ## CSS Custom Properties
 
@@ -27,6 +29,7 @@
 | `--slider-input-thumb-width`         | Width of the slider input default thumb                                                    |
 | `--slider-input-width`               | Width of the slider input                                                                  |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
