@@ -43,6 +43,11 @@
         "url": "/docs/divider"
       },
       {
+        "text": "Icon",
+        "filePath": "/assets/docs/components/icon.json",
+        "url": "/docs/icon"
+      },
+      {
         "text": "Input",
         "filePath": "/assets/docs/components/input.json",
         "url": "/docs/input"
@@ -86,6 +91,11 @@
         "text": "Tag",
         "filePath": "/assets/docs/components/tag.json",
         "url": "/docs/tag"
+      },
+      {
+        "text": "Text",
+        "filePath": "/assets/docs/components/text.json",
+        "url": "/docs/text"
       }
     ]
   }

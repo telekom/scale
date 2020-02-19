@@ -9,6 +9,7 @@
   - [Button](components/button.md)
   - [Card](components/card.md)
   - [Divider](components/divider.md)
+  - [Icon](components/icon.md)
   - [Input](components/input.md)
   - [Input group](components/input-group.md)
   - [Input label](components/input-label.md)
@@ -18,3 +19,4 @@
   - [Progress Bar](components/progress-bar.md)
   - [Switch](components/switch.md)
   - [Tag](components/tag.md)
+  - [Text](components/text.md)
