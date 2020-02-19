@@ -3,7 +3,7 @@ title: Switch
 description: Switch element
 url: /docs/switch
 contributors:
-  - SylviaGonschior
+  - maomaoZH
 ---
 
 # Switch

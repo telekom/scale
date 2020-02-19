@@ -3,7 +3,7 @@ title: Input
 description: Input element
 url: /docs/input
 contributors:
-  - SylviaGonschior
+  - eeegor
 ---
 
 # Input
@@ -91,4 +91,3 @@ selector: `t-input`
 <div class="demo-container">
   <t-input type="hidden"></t-input>
 </div>
-

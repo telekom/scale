@@ -3,7 +3,7 @@ title: Link
 description: Link element
 url: /docs/link
 contributors:
-  - SylviaGonschior
+  - maomaoZH
 ---
 
 # Link
