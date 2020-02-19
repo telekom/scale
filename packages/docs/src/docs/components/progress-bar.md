@@ -3,7 +3,7 @@ title: Progress Bar
 description: Progress Bar element
 url: /docs/progress-bar
 contributors:
-  - SylviaGonschior
+  - maomaoZH
 ---
 
 # Progress Bar
