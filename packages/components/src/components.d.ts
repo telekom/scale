@@ -261,17 +261,13 @@ export namespace Components {
   }
   interface TSlider {
     /**
-    * (optional) Slider direction
+    * (optional) Card class
     */
-    'direction'?: string;
+    'customClass'?: string;
     /**
     * (optional) Slider display value
     */
-    'displayValue': boolean;
-    /**
-    * (optional) Slider track fill color
-    */
-    'fillColor': string;
+    'label': boolean;
     /**
     * (optional) Slider range max value
     */
@@ -281,17 +277,17 @@ export namespace Components {
     */
     'min'?: number;
     /**
-    * (optional) Slider track runway color
+    * (optional) Slider step
     */
-    'trackColor': string;
-    /**
-    * (optional) Slider type
-    */
-    'type'?: string;
+    'step': number;
     /**
     * (optional) Slider binding value
     */
     'value': number;
+    /**
+    * (optional) Slider direction
+    */
+    'vertical'?: boolean;
   }
   interface TSwitch {
     /**
@@ -715,17 +711,13 @@ declare namespace LocalJSX {
   }
   interface TSlider {
     /**
-    * (optional) Slider direction
+    * (optional) Card class
     */
-    'direction'?: string;
+    'customClass'?: string;
     /**
     * (optional) Slider display value
     */
-    'displayValue'?: boolean;
-    /**
-    * (optional) Slider track fill color
-    */
-    'fillColor'?: string;
+    'label'?: boolean;
     /**
     * (optional) Slider range max value
     */
@@ -735,17 +727,17 @@ declare namespace LocalJSX {
     */
     'min'?: number;
     /**
-    * (optional) Slider track runway color
+    * (optional) Slider step
     */
-    'trackColor'?: string;
-    /**
-    * (optional) Slider type
-    */
-    'type'?: string;
+    'step'?: number;
     /**
     * (optional) Slider binding value
     */
     'value'?: number;
+    /**
+    * (optional) Slider direction
+    */
+    'vertical'?: boolean;
   }
   interface TSwitch {
     /**

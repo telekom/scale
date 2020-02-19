@@ -1,127 +1,65 @@
 /**
-* @prop --slider__container-display: Display of the slider container
-* @prop --slider__input-outline: Outline of the slider input
-* @prop --slider__input-transition: Transition of the slider input
-* @prop --slider__input--webkit-appearance: Webkit appearance of the slider input
-* @prop --slider__input-cursor: Cursor of the slider input
-* @prop --slider__input-background: Background of the slider input
-* @prop --slider__input-height: Height of the slider input
-* @prop --slider__input-width: Width of the slider input
-* @prop --slider__input--default-border-radius: Border radius of the slider input default
-* @prop --slider__input--square-border-radius: Border radius of the slider input square
-* @prop --slider__input--square-height: Height of the slider input square
-* @prop --slider__input-thumb--webkit-appearance: Webkit appearance  of the slider input thumb
-* @prop --slider__input--default-thumb-border: Border of the slider input default thumb
-* @prop --slider__input--default-thumb-height: Height of the slider input default thumb
-* @prop --slider__input--default-thumb-width: Width of the slider input default thumb
-* @prop --slider__input--default-thumb-border-radius: Border radius of the slider input default thumb
-* @prop --slider__input--default-thumb-background: Background of the slider input thumb
-* @prop --slider__input--square-thumb-border: Border of the slider input square thumb
-* @prop --slider__input--square-thumb-height: Height of the slider input square thumb
-* @prop --slider__input--square-thumb-width: Width of the slider input square thumb
-* @prop --slider__input--square-thumb-border-radius: Border radius of the slider input square thumb
-* @prop --slider__input--square-thumb-background: Background of the slider input thumb
-* @prop --slider--vertical-width: Width of the slider vertical
-* @prop --slider--vertical-transform-origin: Transform origin of the slider vertical
-* @Prop --slider__text-margin: Margin of the slider text
+* @prop --slider-input-background: Background of the slider input
+* @prop --slider-input-height: Height of the slider input
+* @prop --slider-input-width: Width of the slider input
+* @prop --slider-input-border-radius: Border radius of the slider input default
+* @prop --slider-input-thumb-border: Border of the slider input default thumb
+* @prop --slider-input-thumb-height: Height of the slider input default thumb
+* @prop --slider-input-thumb-width: Width of the slider input default thumb
+* @prop --slider-input-thumb-border-radius: Border radius of the slider input default thumb
+* @prop --slider-input-thumb-background: Background of the slider input thumb
+* @Prop --slider-text-margin: Margin of the slider text
 */
 
-.slider__container {
-  display: var(--slider__container-display, block);
+.slider {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
 }
 
 .slider__input {
-  outline: var(--slider__input-outline, none);
-  transition: var(--slider__input-transition, background 450ms ease-in);
-  -webkit-appearance: var(--slider__input--webkit-appearance, none);
-  cursor: var(--slider__input-cursor, pointer);
-  background: var(
-    --slider__input-background,
-    linear-gradient(to right, #409eff 0%, #409eff 0%, #e4e7ed 0%, #e4e7ed 100%)
-      /*  the color values should match component props trackColor and fillColor value*/
-  );
-  height: var(--slider__input-height, 7px);
-  width: var(--slider__input-width, 356px);
-}
-
-.slider__input--default {
-  border-radius: var(--slider__input--default-border-radius, 8px);
-}
-
-.slider__input--square {
-  border-radius: var(--slider__input--square-border-radius, 0);
-  height: var(--slider__input--square-height, 20px);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: var(--slider-input-background, #e4e7ed);
+  height: var(--slider-input-height, 4px);
+  width: var(--slider-input-width, 100%);
+  border-radius: var(--slider-input-border-radius, 2px);
 }
 
 .slider__input::-webkit-slider-thumb {
-  -webkit-appearance: var(--slider__input-thumb--webkit-appearance, none);
-}
-
-.slider__input--default::-webkit-slider-thumb {
-  border: var(--slider__input--default-thumb-border, 2px solid #409eff);
-  height: var(--slider__input--default-thumb-height, 20px);
-  width: var(--slider__input--default-thumb-width, 20px);
-  border-radius: var(--slider__input--default-thumb-border-radius, 50%);
-  background: var(--slider__input--default-thumb-background, #fff);
-}
-
-.slider__input--square::-webkit-slider-thumb {
-  border: var(--slider__input--square-thumb-border, 1px solid #e4e7ed);
-  height: var(--slider__input--square-thumb-height, 20px);
-  width: var(--slider__input--square-thumb-width, 20px);
-  border-radius: var(--slider__input--square-thumb-border-radius, 0);
-  background: var(--slider__input--square-thumb-background, #fff);
+  -webkit-appearance: none;
+  border: var(--slider-input-thumb-border, 2px solid #409eff);
+  height: var(--slider-input-thumb-height, 20px);
+  width: var(--slider-input-thumb-width, 20px);
+  border-radius: var(--slider-input-thumb-border-radius, 50%);
+  background: var(--slider-input-thumb-background, #fff);
 }
 
 .slider__input::-moz-range-thumb {
-  -webkit-appearance: var(--slider__input-thumb--webkit-appearance, none);
-}
-
-.slider__input--default::-moz-range-thumb {
-  border: var(--slider__input--default-thumb-border, 2px solid #409eff);
-  height: var(--slider__input--default-thumb-height, 20px);
-  width: var(--slider__input--default-thumb-width, 20px);
-  border-radius: var(--slider__input--default-thumb-border-radius, 50%);
-  background: var(--slider__input--default-thumb-background, #fff);
-}
-
-.slider__input--square::-moz-range-thumb {
-  border: var(--slider__input--square-thumb-border, 1px solid #e4e7ed);
-  height: var(--slider__input--square-thumb-height, 20px);
-  width: var(--slider__input--square-thumb-width, 20px);
-  border-radius: var(--slider__input--square-thumb-border-radius, 0);
-  background: var(--slider__input--square-thumb-background, #fff);
+  -webkit-appearance: none;
+  border: var(--slider-input-thumb-border, 2px solid #409eff);
+  height: var(--slider-input-thumb-height, 20px);
+  width: var(--slider-input-thumb-width, 20px);
+  border-radius: var(--slider-input-thumb-border-radius, 50%);
+  background: var(--slider-input-thumb-background, #fff);
 }
 
 .slider__input::-ms-thumb {
-  -webkit-appearance: var(--slider__input-thumb--webkit-appearance, none);
-}
-
-.slider__input--default::-ms-thumb {
-  border: var(--slider__input--default-thumb-border, 2px solid #409eff);
-  height: var(--slider__input--default-thumb-height, 20px);
-  width: var(--slider__input--default-thumb-width, 20px);
-  border-radius: var(--slider__input--default-thumb-border-radius, 50%);
-  background: var(--slider__input--default-thumb-background, #fff);
-}
-
-.slider__input--square::-ms-thumb {
-  border: var(--slider__input--square-thumb-border, 1px solid #e4e7ed);
-  height: var(--slider__input--square-thumb-height, 20px);
-  width: var(--slider__input--square-thumb-width, 20px);
-  border-radius: var(--slider__input--square-thumb-border-radius, 0);
-  background: var(--slider__input--square-thumb-background, #fff);
-}
-
-.slider--vertical {
-  transform-origin: var(--slider--vertical-transform-origin, 100px 100px);
-  transform: rotate(-90deg);
-  width: var(--slider--vertical-transform-origin, 200px);
+  -webkit-appearance: none;
+  border: var(--slider-input-thumb-border, 2px solid #409eff);
+  height: var(--slider-input-thumb-height, 20px);
+  width: var(--slider-input-thumb-width, 20px);
+  border-radius: var(--slider-input-thumb-border-radius, 50%);
+  background: var(--slider-input-thumb-background, #fff);
 }
 
 input[type='range']::-moz-focus-outer {
-  border: 0; /* this will remove firefox input focus border dot line */
+  border: 0;
 }
+
 .slider__text {
-  margin: var(--slider__text-margin, 0 0 0 24px);
+  margin: var(--slider-text-margin, 0 0 0 1rem);
+  min-width: 30px;
+  text-align: right;
 }
