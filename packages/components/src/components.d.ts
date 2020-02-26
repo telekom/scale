@@ -358,6 +358,17 @@ export namespace Components {
     */
     'theme'?: string;
   }
+  interface TTableCard {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
+    'items': string[];
+    /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+  }
   interface TTag {
     /**
     * (optional) Tag class
@@ -541,6 +552,12 @@ declare global {
     new (): HTMLTSwitchElement;
   };
 
+  interface HTMLTTableCardElement extends Components.TTableCard, HTMLStencilElement {}
+  var HTMLTTableCardElement: {
+    prototype: HTMLTTableCardElement;
+    new (): HTMLTTableCardElement;
+  };
+
   interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
   var HTMLTTagElement: {
     prototype: HTMLTTagElement;
@@ -575,6 +592,7 @@ declare global {
     't-progress-bar': HTMLTProgressBarElement;
     't-slider': HTMLTSliderElement;
     't-switch': HTMLTSwitchElement;
+    't-table-card': HTMLTTableCardElement;
     't-tag': HTMLTTagElement;
     't-text': HTMLTTextElement;
     't-toast': HTMLTToastElement;
@@ -912,6 +930,17 @@ declare namespace LocalJSX {
     */
     'theme'?: string;
   }
+  interface TTableCard {
+    /**
+    * (optional) Tag class
+    */
+    'customClass'?: string;
+    'items'?: string[];
+    /**
+    * (optional) Tag theme
+    */
+    'theme'?: string;
+  }
   interface TTag {
     /**
     * (optional) Tag class
@@ -1008,6 +1037,7 @@ declare namespace LocalJSX {
     't-progress-bar': TProgressBar;
     't-slider': TSlider;
     't-switch': TSwitch;
+    't-table-card': TTableCard;
     't-tag': TTag;
     't-text': TText;
     't-toast': TToast;
@@ -1036,6 +1066,7 @@ declare module "@stencil/core" {
       't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
       't-slider': LocalJSX.TSlider & JSXBase.HTMLAttributes<HTMLTSliderElement>;
       't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
+      't-table-card': LocalJSX.TTableCard & JSXBase.HTMLAttributes<HTMLTTableCardElement>;
       't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
       't-text': LocalJSX.TText & JSXBase.HTMLAttributes<HTMLTTextElement>;
       't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;

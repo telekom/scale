@@ -20,5 +20,6 @@
   - [Progress Bar](components/progress-bar.md)
   - [Slider](components/slider.md)
   - [Switch](components/switch.md)
+  - [Table Card](components/table-card.md)
   - [Tag](components/tag.md)
   - [Text](components/text.md)
