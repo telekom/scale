@@ -19,18 +19,18 @@ echo "--------"
 echo "${GREEN}Done building components!${NC}"
 echo "--------"
 echo "--------"
-echo "${GREEN}Creating boilerplate symlinks for components${NC}"
-cd packages/components
-echo "${CYAN}Linking components${NC}"
-yarn link
-cd ../../examples/boilerplate-react
-yarn link "@telements/components"
-echo "${CYAN}Linked components to boilerplate-react${NC}"
-cd ../boilerplate-angular
-yarn link "@telements/components"
-echo "${CYAN}Linked components to boilerplate-angular${NC}"
-cd ../boilerplate-vue
-yarn link "@telements/components"
-echo "${CYAN}Linked components to boilerplate-vue${NC}"
-echo "${GREEN}Done creating symlinks!${NC}"
+# echo "${GREEN}Creating boilerplate symlinks for components${NC}"
+# cd packages/components
+# echo "${CYAN}Linking components${NC}"
+# yarn link
+# cd ../../examples/boilerplate-react
+# yarn link "@telements/components"
+# echo "${CYAN}Linked components to boilerplate-react${NC}"
+# cd ../boilerplate-angular
+# yarn link "@telements/components"
+# echo "${CYAN}Linked components to boilerplate-angular${NC}"
+# cd ../boilerplate-vue
+# yarn link "@telements/components"
+# echo "${CYAN}Linked components to boilerplate-vue${NC}"
+# echo "${GREEN}Done creating symlinks!${NC}"
 

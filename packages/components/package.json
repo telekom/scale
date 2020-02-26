@@ -1,5 +1,5 @@
 {
-  "name": "@telements/components",
+  "name": "@telementsdemo/components",
   "version": "0.1.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/telements-components/telements-components.js",
+  "unpkg": "dist/telementsdemo-components/telementsdemo-components.js",
   "files": [
     "dist/",
     "loader/"
