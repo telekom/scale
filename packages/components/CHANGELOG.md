@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/telekom/telements/compare/@telements/components@0.1.0...@telements/components@0.2.1) (2020-02-26)
+
+
+### Bug Fixes
+
+* new version ([75bdf1e](https://github.com/telekom/telements/commit/75bdf1e4d112f0bfe3342f5d2f2c87bae7d43a02))
+* Solve some dependencies issues. Comments out local package linking. updates bilerplates to use components from the registry ([375022d](https://github.com/telekom/telements/commit/375022d617339b415d7e8a218aeb672e8a69943c))
+
+
+
+
+
 # 0.2.0 (2020-02-26)
 
 
