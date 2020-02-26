@@ -1,0 +1,16 @@
+{
+  "packages": [
+    "packages/config",
+    "packages/components",
+    "packages/generator-sketch",
+    "packages/docs"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "command": {
+    "version": {
+      "allowBranch": "experimental"
+    }
+  }
+}

@@ -13,9 +13,13 @@
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
         "build:components": "yarn workspace @telements/components build",
-        "watch:components": "yarn workspace @telements/components start"
+        "watch:components": "yarn workspace @telements/components start",
+        "bootstrap": "lerna bootstrap",
+        "test": "lerna run test --scope=@telements",
+        "new-version": "lerna version --conventional-commits --yes"
     },
     "devDependencies": {
+        "lerna": "^3.20.2",
         "husky": "^3.0.9",
         "rimraf": "2.6.3"
     },
