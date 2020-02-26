@@ -1,7 +1,7 @@
 {
   "name": "@telements/docs",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Stencil Site",
   "scripts": {
     "build": "npm run site.structure && npm run docs && npm run prerender",
@@ -45,6 +45,5 @@
   "bugs": {
     "url": "https://github.com/telekom/telements"
   },
-  "homepage": "https://stenciljs.com/",
-  "dependencies": {}
+  "homepage": "https://stenciljs.com/"
 }
