@@ -1,6 +1,6 @@
-import { HTMLStencilElement } from '../../../dist/types/stencil.core';
+import { Element } from '@stencil/core';
 export declare class Card {
-    hostElement: HTMLStencilElement;
+    hostElement: HTMLElement;
     size?: string;
     theme?: string;
     variant?: string;
