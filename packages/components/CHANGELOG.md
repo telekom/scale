@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2020-02-26)
+
+
+### Bug Fixes
+
+* add coverage to gitignore ([#21](https://github.com/telekom/telements/issues/21)) ([81f7ba2](https://github.com/telekom/telements/commit/81f7ba2df12087947219b1ef20843cf5bf478339))
+* auto generate docs for existing components ([#24](https://github.com/telekom/telements/issues/24)) ([8fd269c](https://github.com/telekom/telements/commit/8fd269c551e0ec599075e8b2fe32ce4531e5b76b))
+* cleanup button tests ([#31](https://github.com/telekom/telements/issues/31)) ([a0a5fd0](https://github.com/telekom/telements/commit/a0a5fd046d654a449da18499a5f8971dc6ae55ee))
+* Fixes am erroneous package import on the card component. ([#103](https://github.com/telekom/telements/issues/103)) ([6008e15](https://github.com/telekom/telements/commit/6008e1522c1c649f960e654276bb86ee527cce1f))
+* Fixes types in card component ([ae8197e](https://github.com/telekom/telements/commit/ae8197e4328f46f430abe339452a57aad9085e12))
+* generate correct button docs ([#32](https://github.com/telekom/telements/issues/32)) ([11d2a44](https://github.com/telekom/telements/commit/11d2a44372907ec6ea725f75a5da6dcd28d6a790))
+* satisfy development format and linter ([#74](https://github.com/telekom/telements/issues/74)) ([a611b3d](https://github.com/telekom/telements/commit/a611b3d299663f3cc0f3e85bae9ead5682265d8d))
+* Solve some dependencies issues. Comments out local package linking. updates bilerplates to use components from the registry ([375022d](https://github.com/telekom/telements/commit/375022d617339b415d7e8a218aeb672e8a69943c))
+* update card snapshot ([#37](https://github.com/telekom/telements/issues/37)) ([6c965e7](https://github.com/telekom/telements/commit/6c965e79fa9bdc0cd7a073168fa69c7a8b741ed5))
+* update modal snapshot ([#67](https://github.com/telekom/telements/issues/67)) ([1b1ea1c](https://github.com/telekom/telements/commit/1b1ea1c1b7d0728e4b10f778c1ea0780163e3867))
+* update slider snapshot ([#110](https://github.com/telekom/telements/issues/110)) ([ea21df6](https://github.com/telekom/telements/commit/ea21df6b3a34587a75d885e00ba75cf2434c3457))
+* update stencil and jest; to run the tests please use npm instead of yarn now ([#73](https://github.com/telekom/telements/issues/73)) ([dd6d0c9](https://github.com/telekom/telements/commit/dd6d0c916906cb1e51a242a9dded5bee528d6584))
+
+
+### Features
+
+* add basic tag markup ([#36](https://github.com/telekom/telements/issues/36)) ([121a2e7](https://github.com/telekom/telements/commit/121a2e7561b65f8b784d8b2aae3907a7c6b928cf))
+* add switch component ([#80](https://github.com/telekom/telements/issues/80)) ([28bf2e7](https://github.com/telekom/telements/commit/28bf2e7eeea366093acd7df9391414bb6896d846))
+* implement component Link ([#64](https://github.com/telekom/telements/issues/64)) ([6debf8c](https://github.com/telekom/telements/commit/6debf8cd66595772f29e70871554872581536e36))
+
+
+
+
+
 # 0.1.0 (2020-02-26)
 
 
