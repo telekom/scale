@@ -26,9 +26,11 @@ const eventsTemplate = events => {
   return template
 }
 
+const interfaceName = name => `${name}Props`
+
 const interfaceTemplate = (name, props) => {
   let template = ''
-  template += `interface ${name}Interface `
+  template += `interface ${interfaceName(name)} extends React.FC`
   template += propsTemplate(props)
   return template
 }
@@ -36,7 +38,7 @@ const interfaceTemplate = (name, props) => {
 const componentTemplate = ({ name, tag, props, events }) =>
   `${interfaceTemplate(name, props)}
 
-const ${name} = (props: ${name}Interface) => (
+const ${name} = (props: ${interfaceName(name)}) => (
 	<WebComponentWrapper
 		events={${eventsTemplate(events)}}
 		component="${tag}"

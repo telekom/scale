@@ -1,7 +1,7 @@
 import * as React from 'react'
 import WebComponentWrapper from './Wrapper'
 
-interface AlertInterface {
+interface AlertProps extends React.FC {
   customClass?: string
   headline: string
   icon?: string
@@ -12,10 +12,10 @@ interface AlertInterface {
   variant?: string
 }
 
-const Alert = (props: AlertInterface) => (
+const Alert = (props: AlertProps) => (
   <WebComponentWrapper events={{}} component='t-alert' {...props} />
 )
-interface BadgeInterface {
+interface BadgeProps extends React.FC {
   customClass?: string
   link?: string
   pill?: boolean
@@ -23,10 +23,10 @@ interface BadgeInterface {
   variant?: string
 }
 
-const Badge = (props: BadgeInterface) => (
+const Badge = (props: BadgeProps) => (
   <WebComponentWrapper events={{}} component='t-badge' {...props} />
 )
-interface ButtonInterface {
+interface ButtonProps extends React.FC {
   customClass?: string
   deselected?: boolean
   disabled?: boolean
@@ -35,10 +35,10 @@ interface ButtonInterface {
   variant?: string
 }
 
-const Button = (props: ButtonInterface) => (
+const Button = (props: ButtonProps) => (
   <WebComponentWrapper events={{}} component='t-button' {...props} />
 )
-interface CardInterface {
+interface CardProps extends React.FC {
   customClass?: string
   deselected?: boolean
   disabled?: boolean
@@ -49,37 +49,37 @@ interface CardInterface {
   variant?: string
 }
 
-const Card = (props: CardInterface) => (
+const Card = (props: CardProps) => (
   <WebComponentWrapper events={{}} component='t-card' {...props} />
 )
-interface CarouselInterface {
+interface CarouselProps extends React.FC {
   vertical?: boolean
 }
 
-const Carousel = (props: CarouselInterface) => (
+const Carousel = (props: CarouselProps) => (
   <WebComponentWrapper events={{}} component='t-carousel' {...props} />
 )
-interface DividerInterface {
+interface DividerProps extends React.FC {
   customClass?: string
   size?: string
   theme?: string
   vertical?: boolean
 }
 
-const Divider = (props: DividerInterface) => (
+const Divider = (props: DividerProps) => (
   <WebComponentWrapper events={{}} component='t-divider' {...props} />
 )
-interface IconInterface {
+interface IconProps extends React.FC {
   customClass?: string
   name: string
   path: string
   theme?: string
 }
 
-const Icon = (props: IconInterface) => (
+const Icon = (props: IconProps) => (
   <WebComponentWrapper events={{}} component='t-icon' {...props} />
 )
-interface InputInterface {
+interface InputProps extends React.FC {
   customClass?: string
   errorMessage?: string
   name?: string
@@ -88,38 +88,38 @@ interface InputInterface {
   value: string
 }
 
-const Input = (props: InputInterface) => (
+const Input = (props: InputProps) => (
   <WebComponentWrapper
     events={{ onChanged: 'changed' }}
     component='t-input'
     {...props}
   />
 )
-interface InputErrorInterface {
+interface InputErrorProps extends React.FC {
   customClass?: string
   theme?: string
 }
 
-const InputError = (props: InputErrorInterface) => (
+const InputError = (props: InputErrorProps) => (
   <WebComponentWrapper events={{}} component='t-input-error' {...props} />
 )
-interface InputGroupInterface {
+interface InputGroupProps extends React.FC {
   customClass?: string
   theme?: string
 }
 
-const InputGroup = (props: InputGroupInterface) => (
+const InputGroup = (props: InputGroupProps) => (
   <WebComponentWrapper events={{}} component='t-input-group' {...props} />
 )
-interface InputLabelInterface {
+interface InputLabelProps extends React.FC {
   customClass?: string
   theme?: string
 }
 
-const InputLabel = (props: InputLabelInterface) => (
+const InputLabel = (props: InputLabelProps) => (
   <WebComponentWrapper events={{}} component='t-input-label' {...props} />
 )
-interface LinkInterface {
+interface LinkProps extends React.FC {
   customClass?: string
   disabled?: boolean
   href?: string
@@ -128,10 +128,10 @@ interface LinkInterface {
   variant?: string
 }
 
-const Link = (props: LinkInterface) => (
+const Link = (props: LinkProps) => (
   <WebComponentWrapper events={{}} component='t-link' {...props} />
 )
-interface ModalInterface {
+interface ModalProps extends React.FC {
   customClass?: string
   opened?: boolean
   size?: string
@@ -139,10 +139,10 @@ interface ModalInterface {
   variant?: string
 }
 
-const Modal = (props: ModalInterface) => (
+const Modal = (props: ModalProps) => (
   <WebComponentWrapper events={{}} component='t-modal' {...props} />
 )
-interface ProgressBarInterface {
+interface ProgressBarProps extends React.FC {
   customClass?: string
   percentage: number
   showText?: boolean
@@ -151,10 +151,10 @@ interface ProgressBarInterface {
   variant?: string
 }
 
-const ProgressBar = (props: ProgressBarInterface) => (
+const ProgressBar = (props: ProgressBarProps) => (
   <WebComponentWrapper events={{}} component='t-progress-bar' {...props} />
 )
-interface SliderInterface {
+interface SliderProps extends React.FC {
   customClass?: string
   label: boolean
   max?: number
@@ -163,20 +163,20 @@ interface SliderInterface {
   value: number
 }
 
-const Slider = (props: SliderInterface) => (
+const Slider = (props: SliderProps) => (
   <WebComponentWrapper events={{}} component='t-slider' {...props} />
 )
-interface SwitchInterface {
+interface SwitchProps extends React.FC {
   active?: boolean
   customClass?: string
   disabled?: boolean
   theme?: string
 }
 
-const Switch = (props: SwitchInterface) => (
+const Switch = (props: SwitchProps) => (
   <WebComponentWrapper events={{}} component='t-switch' {...props} />
 )
-interface TagInterface {
+interface TagProps extends React.FC {
   customClass?: string
   link?: string
   pill?: boolean
@@ -184,18 +184,18 @@ interface TagInterface {
   variant?: string
 }
 
-const Tag = (props: TagInterface) => (
+const Tag = (props: TagProps) => (
   <WebComponentWrapper events={{}} component='t-tag' {...props} />
 )
-interface TextInterface {
+interface TextProps extends React.FC {
   customClass?: string
   theme?: string
 }
 
-const Text = (props: TextInterface) => (
+const Text = (props: TextProps) => (
   <WebComponentWrapper events={{}} component='t-text' {...props} />
 )
-interface ToastInterface {
+interface ToastProps extends React.FC {
   animated?: boolean
   autoHide?: boolean | number
   customClass?: string
@@ -209,7 +209,7 @@ interface ToastInterface {
   variant?: string
 }
 
-const Toast = (props: ToastInterface) => (
+const Toast = (props: ToastProps) => (
   <WebComponentWrapper events={{}} component='t-toast' {...props} />
 )
 
