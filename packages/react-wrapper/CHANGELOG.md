@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.0...@telements/react-wrapper@0.2.1) (2020-02-27)
+
+
+### Bug Fixes
+
+* add build output ([10fe013](https://github.com/telekom/telements/commit/10fe013d0305bbe4eb8983315454ee362b4df61a))
+
+
+
+
+
 # [0.2.0](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.1.1...@telements/react-wrapper@0.2.0) (2020-02-27)
 
 ### Features
