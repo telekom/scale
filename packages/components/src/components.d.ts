@@ -184,7 +184,7 @@ export namespace Components {
     /**
     * (optional) Input text error message
     */
-    'errorMessage': string;
+    'errorMessage'?: string;
     /**
     * (optional) Input name
     */

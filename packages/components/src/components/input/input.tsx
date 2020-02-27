@@ -28,7 +28,7 @@ export class Input {
   /** (optional) Input text value */
   @Prop({ mutable: true }) public value: string;
   /** (optional) Input text error message */
-  @Prop({ mutable: true }) public errorMessage: string;
+  @Prop({ mutable: true }) public errorMessage?: string;
   /** (optional) Input text event changed */
   @Event() public changed: EventEmitter<string>;
 

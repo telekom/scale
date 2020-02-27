@@ -9,8 +9,8 @@ function capitalizeFirst (string) {
 const propsTemplate = props => {
   let template = ''
   template += '{'
-  props.forEach(({ name, type }) => {
-    template += `  ${name}: ${type};`
+  props.forEach(({ name, type, optional }) => {
+    template += `  ${name}${optional ? '?' : ''}: ${type};`
   })
   template += '}'
   return template
