@@ -30,7 +30,7 @@ const interfaceName = name => `${name}Props`
 
 const interfaceTemplate = (name, props) => {
   let template = ''
-  template += `interface ${interfaceName(name)} extends React.FC`
+  template += `interface ${interfaceName(name)}`
   template += propsTemplate(props)
   return template
 }
@@ -38,7 +38,7 @@ const interfaceTemplate = (name, props) => {
 const componentTemplate = ({ name, tag, props, events }) =>
   `${interfaceTemplate(name, props)}
 
-const ${name} = (props: ${interfaceName(name)}) => (
+const ${name}: React.FunctionComponent<${interfaceName(name)}> = (props) => (
 	<WebComponentWrapper
 		events={${eventsTemplate(events)}}
 		component="${tag}"

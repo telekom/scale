@@ -1,7 +1,7 @@
 import * as React from 'react'
 import WebComponentWrapper from './Wrapper'
 
-interface AlertProps extends React.FC {
+interface AlertProps {
   customClass?: string
   headline: string
   icon?: string
@@ -12,10 +12,10 @@ interface AlertProps extends React.FC {
   variant?: string
 }
 
-const Alert = (props: AlertProps) => (
+const Alert: React.FunctionComponent<AlertProps> = props => (
   <WebComponentWrapper events={{}} component='t-alert' {...props} />
 )
-interface BadgeProps extends React.FC {
+interface BadgeProps {
   customClass?: string
   link?: string
   pill?: boolean
@@ -23,10 +23,10 @@ interface BadgeProps extends React.FC {
   variant?: string
 }
 
-const Badge = (props: BadgeProps) => (
+const Badge: React.FunctionComponent<BadgeProps> = props => (
   <WebComponentWrapper events={{}} component='t-badge' {...props} />
 )
-interface ButtonProps extends React.FC {
+interface ButtonProps {
   customClass?: string
   deselected?: boolean
   disabled?: boolean
@@ -35,10 +35,10 @@ interface ButtonProps extends React.FC {
   variant?: string
 }
 
-const Button = (props: ButtonProps) => (
+const Button: React.FunctionComponent<ButtonProps> = props => (
   <WebComponentWrapper events={{}} component='t-button' {...props} />
 )
-interface CardProps extends React.FC {
+interface CardProps {
   customClass?: string
   deselected?: boolean
   disabled?: boolean
@@ -49,37 +49,37 @@ interface CardProps extends React.FC {
   variant?: string
 }
 
-const Card = (props: CardProps) => (
+const Card: React.FunctionComponent<CardProps> = props => (
   <WebComponentWrapper events={{}} component='t-card' {...props} />
 )
-interface CarouselProps extends React.FC {
+interface CarouselProps {
   vertical?: boolean
 }
 
-const Carousel = (props: CarouselProps) => (
+const Carousel: React.FunctionComponent<CarouselProps> = props => (
   <WebComponentWrapper events={{}} component='t-carousel' {...props} />
 )
-interface DividerProps extends React.FC {
+interface DividerProps {
   customClass?: string
   size?: string
   theme?: string
   vertical?: boolean
 }
 
-const Divider = (props: DividerProps) => (
+const Divider: React.FunctionComponent<DividerProps> = props => (
   <WebComponentWrapper events={{}} component='t-divider' {...props} />
 )
-interface IconProps extends React.FC {
+interface IconProps {
   customClass?: string
   name: string
   path: string
   theme?: string
 }
 
-const Icon = (props: IconProps) => (
+const Icon: React.FunctionComponent<IconProps> = props => (
   <WebComponentWrapper events={{}} component='t-icon' {...props} />
 )
-interface InputProps extends React.FC {
+interface InputProps {
   customClass?: string
   errorMessage?: string
   name?: string
@@ -88,38 +88,38 @@ interface InputProps extends React.FC {
   value: string
 }
 
-const Input = (props: InputProps) => (
+const Input: React.FunctionComponent<InputProps> = props => (
   <WebComponentWrapper
     events={{ onChanged: 'changed' }}
     component='t-input'
     {...props}
   />
 )
-interface InputErrorProps extends React.FC {
+interface InputErrorProps {
   customClass?: string
   theme?: string
 }
 
-const InputError = (props: InputErrorProps) => (
+const InputError: React.FunctionComponent<InputErrorProps> = props => (
   <WebComponentWrapper events={{}} component='t-input-error' {...props} />
 )
-interface InputGroupProps extends React.FC {
+interface InputGroupProps {
   customClass?: string
   theme?: string
 }
 
-const InputGroup = (props: InputGroupProps) => (
+const InputGroup: React.FunctionComponent<InputGroupProps> = props => (
   <WebComponentWrapper events={{}} component='t-input-group' {...props} />
 )
-interface InputLabelProps extends React.FC {
+interface InputLabelProps {
   customClass?: string
   theme?: string
 }
 
-const InputLabel = (props: InputLabelProps) => (
+const InputLabel: React.FunctionComponent<InputLabelProps> = props => (
   <WebComponentWrapper events={{}} component='t-input-label' {...props} />
 )
-interface LinkProps extends React.FC {
+interface LinkProps {
   customClass?: string
   disabled?: boolean
   href?: string
@@ -128,10 +128,10 @@ interface LinkProps extends React.FC {
   variant?: string
 }
 
-const Link = (props: LinkProps) => (
+const Link: React.FunctionComponent<LinkProps> = props => (
   <WebComponentWrapper events={{}} component='t-link' {...props} />
 )
-interface ModalProps extends React.FC {
+interface ModalProps {
   customClass?: string
   opened?: boolean
   size?: string
@@ -139,10 +139,10 @@ interface ModalProps extends React.FC {
   variant?: string
 }
 
-const Modal = (props: ModalProps) => (
+const Modal: React.FunctionComponent<ModalProps> = props => (
   <WebComponentWrapper events={{}} component='t-modal' {...props} />
 )
-interface ProgressBarProps extends React.FC {
+interface ProgressBarProps {
   customClass?: string
   percentage: number
   showText?: boolean
@@ -151,10 +151,10 @@ interface ProgressBarProps extends React.FC {
   variant?: string
 }
 
-const ProgressBar = (props: ProgressBarProps) => (
+const ProgressBar: React.FunctionComponent<ProgressBarProps> = props => (
   <WebComponentWrapper events={{}} component='t-progress-bar' {...props} />
 )
-interface SliderProps extends React.FC {
+interface SliderProps {
   customClass?: string
   label: boolean
   max?: number
@@ -163,20 +163,20 @@ interface SliderProps extends React.FC {
   value: number
 }
 
-const Slider = (props: SliderProps) => (
+const Slider: React.FunctionComponent<SliderProps> = props => (
   <WebComponentWrapper events={{}} component='t-slider' {...props} />
 )
-interface SwitchProps extends React.FC {
+interface SwitchProps {
   active?: boolean
   customClass?: string
   disabled?: boolean
   theme?: string
 }
 
-const Switch = (props: SwitchProps) => (
+const Switch: React.FunctionComponent<SwitchProps> = props => (
   <WebComponentWrapper events={{}} component='t-switch' {...props} />
 )
-interface TagProps extends React.FC {
+interface TagProps {
   customClass?: string
   link?: string
   pill?: boolean
@@ -184,18 +184,18 @@ interface TagProps extends React.FC {
   variant?: string
 }
 
-const Tag = (props: TagProps) => (
+const Tag: React.FunctionComponent<TagProps> = props => (
   <WebComponentWrapper events={{}} component='t-tag' {...props} />
 )
-interface TextProps extends React.FC {
+interface TextProps {
   customClass?: string
   theme?: string
 }
 
-const Text = (props: TextProps) => (
+const Text: React.FunctionComponent<TextProps> = props => (
   <WebComponentWrapper events={{}} component='t-text' {...props} />
 )
-interface ToastProps extends React.FC {
+interface ToastProps {
   animated?: boolean
   autoHide?: boolean | number
   customClass?: string
@@ -209,7 +209,7 @@ interface ToastProps extends React.FC {
   variant?: string
 }
 
-const Toast = (props: ToastProps) => (
+const Toast: React.FunctionComponent<ToastProps> = props => (
   <WebComponentWrapper events={{}} component='t-toast' {...props} />
 )
 

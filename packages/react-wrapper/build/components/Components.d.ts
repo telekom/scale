@@ -1,5 +1,5 @@
 import * as React from 'react';
-interface AlertProps extends React.FC {
+interface AlertProps {
     customClass?: string;
     headline: string;
     icon?: string;
@@ -9,16 +9,16 @@ interface AlertProps extends React.FC {
     timeout?: boolean | number;
     variant?: string;
 }
-declare const Alert: (props: AlertProps) => JSX.Element;
-interface BadgeProps extends React.FC {
+declare const Alert: React.FunctionComponent<AlertProps>;
+interface BadgeProps {
     customClass?: string;
     link?: string;
     pill?: boolean;
     size?: string;
     variant?: string;
 }
-declare const Badge: (props: BadgeProps) => JSX.Element;
-interface ButtonProps extends React.FC {
+declare const Badge: React.FunctionComponent<BadgeProps>;
+interface ButtonProps {
     customClass?: string;
     deselected?: boolean;
     disabled?: boolean;
@@ -26,8 +26,8 @@ interface ButtonProps extends React.FC {
     theme?: string;
     variant?: string;
 }
-declare const Button: (props: ButtonProps) => JSX.Element;
-interface CardProps extends React.FC {
+declare const Button: React.FunctionComponent<ButtonProps>;
+interface CardProps {
     customClass?: string;
     deselected?: boolean;
     disabled?: boolean;
@@ -37,26 +37,26 @@ interface CardProps extends React.FC {
     theme?: string;
     variant?: string;
 }
-declare const Card: (props: CardProps) => JSX.Element;
-interface CarouselProps extends React.FC {
+declare const Card: React.FunctionComponent<CardProps>;
+interface CarouselProps {
     vertical?: boolean;
 }
-declare const Carousel: (props: CarouselProps) => JSX.Element;
-interface DividerProps extends React.FC {
+declare const Carousel: React.FunctionComponent<CarouselProps>;
+interface DividerProps {
     customClass?: string;
     size?: string;
     theme?: string;
     vertical?: boolean;
 }
-declare const Divider: (props: DividerProps) => JSX.Element;
-interface IconProps extends React.FC {
+declare const Divider: React.FunctionComponent<DividerProps>;
+interface IconProps {
     customClass?: string;
     name: string;
     path: string;
     theme?: string;
 }
-declare const Icon: (props: IconProps) => JSX.Element;
-interface InputProps extends React.FC {
+declare const Icon: React.FunctionComponent<IconProps>;
+interface InputProps {
     customClass?: string;
     errorMessage?: string;
     name?: string;
@@ -64,23 +64,23 @@ interface InputProps extends React.FC {
     type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url';
     value: string;
 }
-declare const Input: (props: InputProps) => JSX.Element;
-interface InputErrorProps extends React.FC {
+declare const Input: React.FunctionComponent<InputProps>;
+interface InputErrorProps {
     customClass?: string;
     theme?: string;
 }
-declare const InputError: (props: InputErrorProps) => JSX.Element;
-interface InputGroupProps extends React.FC {
+declare const InputError: React.FunctionComponent<InputErrorProps>;
+interface InputGroupProps {
     customClass?: string;
     theme?: string;
 }
-declare const InputGroup: (props: InputGroupProps) => JSX.Element;
-interface InputLabelProps extends React.FC {
+declare const InputGroup: React.FunctionComponent<InputGroupProps>;
+interface InputLabelProps {
     customClass?: string;
     theme?: string;
 }
-declare const InputLabel: (props: InputLabelProps) => JSX.Element;
-interface LinkProps extends React.FC {
+declare const InputLabel: React.FunctionComponent<InputLabelProps>;
+interface LinkProps {
     customClass?: string;
     disabled?: boolean;
     href?: string;
@@ -88,16 +88,16 @@ interface LinkProps extends React.FC {
     underline?: boolean;
     variant?: string;
 }
-declare const Link: (props: LinkProps) => JSX.Element;
-interface ModalProps extends React.FC {
+declare const Link: React.FunctionComponent<LinkProps>;
+interface ModalProps {
     customClass?: string;
     opened?: boolean;
     size?: string;
     theme?: string;
     variant?: string;
 }
-declare const Modal: (props: ModalProps) => JSX.Element;
-interface ProgressBarProps extends React.FC {
+declare const Modal: React.FunctionComponent<ModalProps>;
+interface ProgressBarProps {
     customClass?: string;
     percentage: number;
     showText?: boolean;
@@ -105,8 +105,8 @@ interface ProgressBarProps extends React.FC {
     textInside?: boolean;
     variant?: string;
 }
-declare const ProgressBar: (props: ProgressBarProps) => JSX.Element;
-interface SliderProps extends React.FC {
+declare const ProgressBar: React.FunctionComponent<ProgressBarProps>;
+interface SliderProps {
     customClass?: string;
     label: boolean;
     max?: number;
@@ -114,28 +114,28 @@ interface SliderProps extends React.FC {
     step: number;
     value: number;
 }
-declare const Slider: (props: SliderProps) => JSX.Element;
-interface SwitchProps extends React.FC {
+declare const Slider: React.FunctionComponent<SliderProps>;
+interface SwitchProps {
     active?: boolean;
     customClass?: string;
     disabled?: boolean;
     theme?: string;
 }
-declare const Switch: (props: SwitchProps) => JSX.Element;
-interface TagProps extends React.FC {
+declare const Switch: React.FunctionComponent<SwitchProps>;
+interface TagProps {
     customClass?: string;
     link?: string;
     pill?: boolean;
     theme?: string;
     variant?: string;
 }
-declare const Tag: (props: TagProps) => JSX.Element;
-interface TextProps extends React.FC {
+declare const Tag: React.FunctionComponent<TagProps>;
+interface TextProps {
     customClass?: string;
     theme?: string;
 }
-declare const Text: (props: TextProps) => JSX.Element;
-interface ToastProps extends React.FC {
+declare const Text: React.FunctionComponent<TextProps>;
+interface ToastProps {
     animated?: boolean;
     autoHide?: boolean | number;
     customClass?: string;
@@ -148,5 +148,5 @@ interface ToastProps extends React.FC {
     time?: number;
     variant?: string;
 }
-declare const Toast: (props: ToastProps) => JSX.Element;
+declare const Toast: React.FunctionComponent<ToastProps>;
 export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
