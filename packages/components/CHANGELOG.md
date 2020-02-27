@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/telekom/telements/compare/@telements/components@0.2.1...@telements/components@0.3.0) (2020-02-27)
+
+
+### Features
+
+* auto-generate react component wrappers and types from component docs; you'll need to build packages/components first ([65fca2a](https://github.com/telekom/telements/commit/65fca2a64bdc87f973834623413fd87f8a9d45bc))
+
+
+
+
+
 ## [0.2.1](https://github.com/telekom/telements/compare/@telements/components@0.1.0...@telements/components@0.2.1) (2020-02-26)
 
 
