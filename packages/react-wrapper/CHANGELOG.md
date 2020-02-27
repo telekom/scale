@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.2...@telements/react-wrapper@0.2.3) (2020-02-27)
+
+
+### Bug Fixes
+
+* interfaces should extend react functional component ([9c69320](https://github.com/telekom/telements/commit/9c6932018da57de6a0ed51c6aa9b820c5edc723e))
+
+
+
+
+
 ## [0.2.2](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.1...@telements/react-wrapper@0.2.2) (2020-02-27)
 
 ### Bug Fixes
