@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/telekom/telements/compare/@telements/components@0.3.0...@telements/components@0.3.1) (2020-02-27)
+
+
+### Bug Fixes
+
+* optional props ([4f09ebf](https://github.com/telekom/telements/commit/4f09ebff1ac59c82533a9b0c7d5713dcc7bf7513))
+
+
+
+
+
 # [0.3.0](https://github.com/telekom/telements/compare/@telements/components@0.2.1...@telements/components@0.3.0) (2020-02-27)
 
 
