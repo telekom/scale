@@ -7,10 +7,12 @@
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "scripts": {
+    "prebuild": "yarn generate",
     "build": "rollup -c",
     "lint": "standard",
     "format": "prettier-standard --format",
-    "test": "jest --coverage"
+    "test": "jest --coverage --passWithNoTests",
+    "generate": "node ./generator.js && yarn format"
   },
   "keywords": [],
   "devDependencies": {
@@ -34,7 +36,9 @@
     "standard": "^14.3.1",
     "standard-prettier": "^1.0.1",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "@types/lodash": "^4.14.149",
+    "lodash": "^4.17.15"
   },
   "peerDependencies": {
     "react": "^16",
@@ -60,5 +64,6 @@
       "afterAll",
       "jest"
     ]
-  }
+  },
+  "dependencies": {}
 }
