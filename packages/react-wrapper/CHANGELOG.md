@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.4...@telements/react-wrapper@0.2.5) (2020-02-29)
+
+
+### Bug Fixes
+
+* add styles props (css-in-js), allow not specified props (until spicified) ([f7677a4](https://github.com/telekom/telements/commit/f7677a41a29aa5bb1905be31f7edfca91d8f31dd))
+
+
+
+
+
 ## [0.2.4](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.3...@telements/react-wrapper@0.2.4) (2020-02-27)
 
 ### Bug Fixes
