@@ -13,7 +13,6 @@
 | `disabled`    | `disabled`     | (optional) Disabled button     | `boolean`                                | `false`     |
 | `size`        | `size`         | (optional) Button size         | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `theme`       | `theme`        | (optional) Button theme        | `string`                                 | `''`        |
 | `variant`     | `variant`      | (optional) Button variant      | `string`                                 | `''`        |
 
 

@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                 | Type     | Default |
-| ------------- | -------------- | --------------------------- | -------- | ------- |
-| `customClass` | `custom-class` | (optional) Input text class | `string` | `''`    |
-| `theme`       | `theme`        | (optional) Input text theme | `string` | `''`    |
+| Property      | Attribute      | Description                    | Type                                     | Default     |
+| ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
+| `customClass` | `custom-class` | (optional) Input text class    | `string`                                 | `''`        |
+| `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
 
 ----------------------------------------------

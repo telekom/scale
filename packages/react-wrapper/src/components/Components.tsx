@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { StyleSheet } from 'jss'
 import WebComponentWrapper from './Wrapper'
 
 interface AlertProps {
@@ -8,12 +9,10 @@ interface AlertProps {
   icon?: string
   opened: boolean
   size?: string
-  styles?: StyleSheet
+  styles?: StyleSheet<string | number | symbol>
   theme?: string
   timeout?: boolean | number
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -28,9 +27,8 @@ interface BadgeProps {
   link?: string
   pill?: boolean
   size?: string
+  styles?: StyleSheet<string | number | symbol>
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -42,13 +40,10 @@ const Badge: React.FunctionComponent<BadgeProps> = props => (
 interface ButtonProps {
   // Web-component props
   customClass?: string
-  deselected?: boolean
   disabled?: boolean
   size?: string
-  theme?: string
+  styles?: StyleSheet<string | number | symbol>
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -60,15 +55,13 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
 interface CardProps {
   // Web-component props
   customClass?: string
-  deselected?: boolean
   disabled?: boolean
   imageTop?: string
   imageTopAlt?: string
   size?: string
+  styles?: StyleSheet<string | number | symbol>
   theme?: string
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -79,9 +72,8 @@ const Card: React.FunctionComponent<CardProps> = props => (
 )
 interface CarouselProps {
   // Web-component props
+  styles?: StyleSheet<string | number | symbol>
   vertical?: boolean
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -94,10 +86,8 @@ interface DividerProps {
   // Web-component props
   customClass?: string
   size?: string
-  theme?: string
+  styles?: StyleSheet<string | number | symbol>
   vertical?: boolean
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -111,9 +101,7 @@ interface IconProps {
   customClass?: string
   name: string
   path: string
-  theme?: string
-  // Allow css-in-js-styles
-  styles?: object
+  styles?: StyleSheet<string | number | symbol>
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -127,11 +115,9 @@ interface InputProps {
   customClass?: string
   errorMessage?: string
   name?: string
-  theme?: string
+  styles?: StyleSheet<string | number | symbol>
   type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url'
   value?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Web-component custom events
   // TODO: Provide events types
   onChanged?: (event?: any) => void
@@ -150,9 +136,7 @@ const Input: React.FunctionComponent<InputProps> = props => (
 interface InputErrorProps {
   // Web-component props
   customClass?: string
-  theme?: string
-  // Allow css-in-js-styles
-  styles?: object
+  styles?: StyleSheet<string | number | symbol>
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -164,9 +148,7 @@ const InputError: React.FunctionComponent<InputErrorProps> = props => (
 interface InputGroupProps {
   // Web-component props
   customClass?: string
-  theme?: string
-  // Allow css-in-js-styles
-  styles?: object
+  styles?: StyleSheet<string | number | symbol>
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -178,9 +160,7 @@ const InputGroup: React.FunctionComponent<InputGroupProps> = props => (
 interface InputLabelProps {
   // Web-component props
   customClass?: string
-  theme?: string
-  // Allow css-in-js-styles
-  styles?: object
+  styles?: StyleSheet<string | number | symbol>
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -195,10 +175,9 @@ interface LinkProps {
   disabled?: boolean
   href?: string
   openNewTab?: boolean
+  styles?: StyleSheet<string | number | symbol>
   underline?: boolean
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -212,10 +191,8 @@ interface ModalProps {
   customClass?: string
   opened?: boolean
   size?: string
-  theme?: string
+  styles?: StyleSheet<string | number | symbol>
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -230,10 +207,9 @@ interface ProgressBarProps {
   percentage: number
   showText?: boolean
   strokeWidth?: number
+  styles?: StyleSheet<string | number | symbol>
   textInside?: boolean
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -249,9 +225,8 @@ interface SliderProps {
   max?: number
   min?: number
   step: number
+  styles?: StyleSheet<string | number | symbol>
   value: number
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -265,9 +240,7 @@ interface SwitchProps {
   active?: boolean
   customClass?: string
   disabled?: boolean
-  theme?: string
-  // Allow css-in-js-styles
-  styles?: object
+  styles?: StyleSheet<string | number | symbol>
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -281,10 +254,8 @@ interface TagProps {
   customClass?: string
   link?: string
   pill?: boolean
-  theme?: string
+  styles?: StyleSheet<string | number | symbol>
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -296,9 +267,7 @@ const Tag: React.FunctionComponent<TagProps> = props => (
 interface TextProps {
   // Web-component props
   customClass?: string
-  theme?: string
-  // Allow css-in-js-styles
-  styles?: object
+  styles?: StyleSheet<string | number | symbol>
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -317,11 +286,9 @@ interface ToastProps {
   positionRight?: number
   positionTop?: number
   size?: string
-  theme?: string
+  styles?: StyleSheet<string | number | symbol>
   time?: number
   variant?: string
-  // Allow css-in-js-styles
-  styles?: object
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any

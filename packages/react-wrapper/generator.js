@@ -80,6 +80,7 @@ const componentsList = components => {
 
 const componentsTemplate = components => `
 import * as React from 'react'
+import { StyleSheet } from 'jss'
 import WebComponentWrapper from './Wrapper'
 
 ${componentsMarkup(components)}
