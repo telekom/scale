@@ -200,7 +200,7 @@ export namespace Components {
     /**
     * (optional) Input text value
     */
-    'value': string;
+    'value'?: string;
   }
   interface TInputError {
     /**

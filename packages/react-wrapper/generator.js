@@ -6,12 +6,31 @@ function capitalizeFirst (string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const propsTemplate = props => {
+const propsTemplate = (props, events) => {
   let template = ''
   template += '{'
+  template += `
+		// Web-component props
+	`
   props.forEach(({ name, type, optional }) => {
-    template += `  ${name}${optional ? '?' : ''}: ${type};`
+    template += `${name}${optional ? '?' : ''}: ${type};`
   })
+  template += `
+		// Allow css-in-js-styles
+		styles?: object;`
+  if (events && events.length > 0) {
+    template += `
+			// Web-component custom events
+			// TODO: Provide events types
+		`
+    events.forEach(({ reactEvent }) => {
+      template += `${reactEvent}?: (event?: any) => void;`
+    })
+  }
+  template += `
+		// Allow custom props not yet specified in the types e.g. events onClick etc.
+		// TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
+		[key: string]: any;`
   template += '}'
   return template
 }
@@ -28,19 +47,19 @@ const eventsTemplate = events => {
 
 const interfaceName = name => `${name}Props`
 
-const interfaceTemplate = (name, props) => {
+const interfaceTemplate = (name, props, events) => {
   let template = ''
   template += `interface ${interfaceName(name)}`
-  template += propsTemplate(props)
+  template += propsTemplate(props, events)
   return template
 }
 
 const componentTemplate = ({ name, tag, props, events }) =>
-  `${interfaceTemplate(name, props)}
+  `${interfaceTemplate(name, props, events)}
 
 const ${name}: React.FunctionComponent<${interfaceName(name)}> = (props) => (
 	<WebComponentWrapper
-		events={${eventsTemplate(events)}}
+		${events && events.length > 0 ? `events={${eventsTemplate(events)}}` : ''}
 		component="${tag}"
 		{...props}
 	/>
@@ -75,12 +94,14 @@ export {
 
 const indexTemplate = components =>
   `import {
-	${componentsList(components)}
-} from './components/Components'
+		${componentsList(components)}
+	} from './components/Components'
 
-export {
-	${componentsList(components)}
-}`
+	export {
+		${componentsList(components)}
+	}
+`
+
 const convertToReact = components => {
   const reactData = {}
   components.forEach(component => {
@@ -99,7 +120,7 @@ const convertToReact = components => {
         })) || [],
       events:
         component.events.map(({ event }) => ({
-          reactEvent: `on${capitalizeFirst(event)}`,
+          reactEvent: `on${capitalizeFirst(_.camelCase(event))}`,
           event
         })) || []
     }

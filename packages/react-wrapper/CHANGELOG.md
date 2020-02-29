@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.2.4](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.3...@telements/react-wrapper@0.2.4) (2020-02-27)
 
-
 ### Bug Fixes
 
-* prop types ([2a6443e](https://github.com/telekom/telements/commit/2a6443e4bf49cfb75f518c8ba1958299aeb8212d))
-
-
-
-
+- prop types ([2a6443e](https://github.com/telekom/telements/commit/2a6443e4bf49cfb75f518c8ba1958299aeb8212d))
 
 ## [0.2.3](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.2.2...@telements/react-wrapper@0.2.3) (2020-02-27)
 

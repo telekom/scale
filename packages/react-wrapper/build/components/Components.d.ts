@@ -8,6 +8,8 @@ interface AlertProps {
     theme?: string;
     timeout?: boolean | number;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Alert: React.FunctionComponent<AlertProps>;
 interface BadgeProps {
@@ -16,6 +18,8 @@ interface BadgeProps {
     pill?: boolean;
     size?: string;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Badge: React.FunctionComponent<BadgeProps>;
 interface ButtonProps {
@@ -25,6 +29,8 @@ interface ButtonProps {
     size?: string;
     theme?: string;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Button: React.FunctionComponent<ButtonProps>;
 interface CardProps {
@@ -36,10 +42,14 @@ interface CardProps {
     size?: string;
     theme?: string;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Card: React.FunctionComponent<CardProps>;
 interface CarouselProps {
     vertical?: boolean;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Carousel: React.FunctionComponent<CarouselProps>;
 interface DividerProps {
@@ -47,6 +57,8 @@ interface DividerProps {
     size?: string;
     theme?: string;
     vertical?: boolean;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Divider: React.FunctionComponent<DividerProps>;
 interface IconProps {
@@ -54,6 +66,8 @@ interface IconProps {
     name: string;
     path: string;
     theme?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Icon: React.FunctionComponent<IconProps>;
 interface InputProps {
@@ -62,22 +76,31 @@ interface InputProps {
     name?: string;
     theme?: string;
     type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url';
-    value: string;
+    value?: string;
+    styles?: object;
+    [key: string]: any;
+    onChanged?: (event?: any) => void;
 }
 declare const Input: React.FunctionComponent<InputProps>;
 interface InputErrorProps {
     customClass?: string;
     theme?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const InputError: React.FunctionComponent<InputErrorProps>;
 interface InputGroupProps {
     customClass?: string;
     theme?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const InputGroup: React.FunctionComponent<InputGroupProps>;
 interface InputLabelProps {
     customClass?: string;
     theme?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const InputLabel: React.FunctionComponent<InputLabelProps>;
 interface LinkProps {
@@ -87,6 +110,8 @@ interface LinkProps {
     openNewTab?: boolean;
     underline?: boolean;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Link: React.FunctionComponent<LinkProps>;
 interface ModalProps {
@@ -95,6 +120,8 @@ interface ModalProps {
     size?: string;
     theme?: string;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Modal: React.FunctionComponent<ModalProps>;
 interface ProgressBarProps {
@@ -104,6 +131,8 @@ interface ProgressBarProps {
     strokeWidth?: number;
     textInside?: boolean;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const ProgressBar: React.FunctionComponent<ProgressBarProps>;
 interface SliderProps {
@@ -113,6 +142,8 @@ interface SliderProps {
     min?: number;
     step: number;
     value: number;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Slider: React.FunctionComponent<SliderProps>;
 interface SwitchProps {
@@ -120,6 +151,8 @@ interface SwitchProps {
     customClass?: string;
     disabled?: boolean;
     theme?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Switch: React.FunctionComponent<SwitchProps>;
 interface TagProps {
@@ -128,11 +161,15 @@ interface TagProps {
     pill?: boolean;
     theme?: string;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Tag: React.FunctionComponent<TagProps>;
 interface TextProps {
     customClass?: string;
     theme?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Text: React.FunctionComponent<TextProps>;
 interface ToastProps {
@@ -147,6 +184,8 @@ interface ToastProps {
     theme?: string;
     time?: number;
     variant?: string;
+    styles?: object;
+    [key: string]: any;
 }
 declare const Toast: React.FunctionComponent<ToastProps>;
 export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
