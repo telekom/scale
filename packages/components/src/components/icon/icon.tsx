@@ -1,38 +1,51 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './icon.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
   tag: 't-icon',
-  styleUrl: 'icon.css',
+  shadow: true,
 })
-export class Icon {
+export class Icon implements Base {
   /** (optional) Tag class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Tag theme */
-  @Prop() public theme?: string = '';
-  @Prop() public name: string;
-  @Prop() public path: string;
+  @Prop() name: string;
+  @Prop() path: string;
 
-  public render() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Icon', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+
+  render() {
     return (
-      <svg
-        class={this.getCssClassMap()}
-        width="24"
-        height="24"
-        viewBox="0 0 26 26"
-      >
-        <path d={this.path} stroke="black" fill="transparent" />
-      </svg>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <svg
+          class={this.getCssClassMap()}
+          width="24"
+          height="24"
+          viewBox="0 0 26 26"
+        >
+          <path d={this.path} stroke="black" fill="transparent" />
+        </svg>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'icon',
+      classes.icon,
       this.name && this.name,
-      this.customClass && this.customClass,
-      this.theme && `icon--theme-${this.theme}`
+      this.customClass && this.customClass
     );
   }
 }

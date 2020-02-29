@@ -27,6 +27,18 @@
         margin: 3rem 0;
       }
     </style>
+    <script>
+      window.telements = {
+        theme: {
+          Alert: {
+            'alert--variant-primary': {
+              background: 'blue',
+              color: '#fff'
+            }
+          }
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -97,7 +109,7 @@
     <t-button id="show-alert-btn-without-timeout"
       >show alert without timeout
     </t-button>
-    <t-alert id="alert-without-timeout" variant="danger" title="Help!" icon="!">
+    <t-alert id="alert-without-timeout" variant="primary" title="Help!" icon="!">
       This is only a warning - for your information!
       <div slot="close">Close</div>
     </t-alert>

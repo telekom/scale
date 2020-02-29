@@ -8,6 +8,7 @@ interface AlertProps {
   icon?: string
   opened: boolean
   size?: string
+  styles?: StyleSheet
   theme?: string
   timeout?: boolean | number
   variant?: string
@@ -131,12 +132,12 @@ interface InputProps {
   value?: string
   // Allow css-in-js-styles
   styles?: object
-  // Allow custom props not yet specified in the types e.g. events onClick etc.
-  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
-  [key: string]: any
   // Web-component custom events
   // TODO: Provide events types
   onChanged?: (event?: any) => void
+  // Allow custom props not yet specified in the types e.g. events onClick etc.
+  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
+  [key: string]: any
 }
 
 const Input: React.FunctionComponent<InputProps> = props => (

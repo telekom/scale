@@ -1,40 +1,53 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './switch.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
   tag: 't-switch',
-  styleUrl: 'switch.css',
   shadow: true,
 })
-export class Switch {
+export class Switch implements Base {
   /** (optional) Switch class */
-  @Prop() public customClass?: string = '';
-  /** (optional) Switch theme */
-  @Prop() public theme?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Active switch */
-  @Prop() public active?: boolean = false;
+  @Prop() active?: boolean = false;
   /** (optional) Disabled switch */
-  @Prop() public disabled?: boolean = false;
+  @Prop() disabled?: boolean = false;
 
-  public toggleSwitch = () => {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Switch', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+
+  toggleSwitch = () => {
     if (this.disabled) {
       return;
     }
     this.active = !this.active;
   };
 
-  public render() {
-    return <div class={this.getCssClassMap()} onClick={this.toggleSwitch} />;
+  render() {
+    return (
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()} onClick={this.toggleSwitch} />
+      </Host>
+    );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'switch',
+      classes.switch,
       this.customClass && this.customClass,
-      this.theme && `alert--theme-${this.theme}`,
-      this.active && `switch--active`,
-      this.disabled && `switch--disabled`
+      this.active && classes[`switch--active`],
+      this.disabled && classes[`switch--disabled`]
     );
   }
 }

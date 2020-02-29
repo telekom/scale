@@ -2,9 +2,20 @@
 
 exports[`Icon should match snapshot 1`] = `
 <t-icon path="d 10 10">
+  <mock:shadow-root>
+    <style>
+      .\\:host-0-0-2 {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+    </style>
+    <svg height="24" viewBox="0 0 26 26" width="24">
+      <path d="d 10 10" fill="transparent" stroke="black"></path>
+    </svg>
+  </mock:shadow-root>
   Label
-  <svg class="icon" height="24" viewBox="0 0 26 26" width="24">
-    <path d="d 10 10" fill="transparent" stroke="black"></path>
-  </svg>
 </t-icon>
 `;

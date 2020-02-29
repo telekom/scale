@@ -15,9 +15,6 @@ const propsTemplate = (props, events) => {
   props.forEach(({ name, type, optional }) => {
     template += `${name}${optional ? '?' : ''}: ${type};`
   })
-  template += `
-		// Allow css-in-js-styles
-		styles?: object;`
   if (events && events.length > 0) {
     template += `
 			// Web-component custom events

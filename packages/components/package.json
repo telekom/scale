@@ -38,7 +38,11 @@
     "prettier": "^1.18.2",
     "puppeteer": "1.20.0",
     "tslint": "^5.20.0",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "@types/lodash": "^4.14.149",
+    "jss": "^10.0.4",
+    "jss-preset-default": "^10.0.4",
+    "lodash": "^4.17.15"
   },
   "license": "MIT",
   "dependencies": {

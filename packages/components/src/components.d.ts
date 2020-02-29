@@ -8,6 +8,9 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
+  StyleSheet,
+} from 'jss';
+import {
   InputTypes,
 } from './components/input/input';
 
@@ -37,6 +40,10 @@ export namespace Components {
     * (optional) Alert size
     */
     'size'?: string;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) Alert theme
     */
@@ -68,6 +75,10 @@ export namespace Components {
     */
     'size'?: string;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Badge variant
     */
     'variant'?: string;
@@ -77,10 +88,6 @@ export namespace Components {
     * (optional) Button class
     */
     'customClass'?: string;
-    /**
-    * (optional) Deselected button
-    */
-    'deselected'?: boolean;
     /**
     * Button method: disable()
     */
@@ -98,9 +105,9 @@ export namespace Components {
     */
     'size'?: string;
     /**
-    * (optional) Button theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Button variant
     */
@@ -111,10 +118,6 @@ export namespace Components {
     * (optional) Card class
     */
     'customClass'?: string;
-    /**
-    * (optional) Deselected card
-    */
-    'deselected'?: boolean;
     /**
     * (optional) Disabled card
     */
@@ -132,6 +135,10 @@ export namespace Components {
     */
     'size'?: string;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Card theme
     */
     'theme'?: string;
@@ -141,6 +148,10 @@ export namespace Components {
     'variant'?: string;
   }
   interface TCarousel {
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) carousel display direction
     */
@@ -156,9 +167,9 @@ export namespace Components {
     */
     'size'?: string;
     /**
-    * (optional) Divider theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Divider vertical
     */
@@ -169,12 +180,15 @@ export namespace Components {
     * (optional) Tag class
     */
     'customClass'?: string;
-    'name': string;
-    'path': string;
     /**
     * (optional) Tag theme
     */
-    'theme'?: string;
+    'name': string;
+    'path': string;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
   }
   interface TInput {
     /**
@@ -190,9 +204,9 @@ export namespace Components {
     */
     'name'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Input type
     */
@@ -208,9 +222,9 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TInputGroup {
     /**
@@ -218,9 +232,9 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TInputLabel {
     /**
@@ -228,9 +242,9 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TLink {
     /**
@@ -249,6 +263,10 @@ export namespace Components {
     * (optional) Link open a new tag
     */
     'openNewTab'?: boolean;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) Link underline
     */
@@ -280,9 +298,9 @@ export namespace Components {
     */
     'size'?: string;
     /**
-    * (optional) Modal theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Modal variant
     */
@@ -305,6 +323,10 @@ export namespace Components {
     * (optional) Progress bar stroke width
     */
     'strokeWidth'?: number;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) Progress text display inside bar
     */
@@ -336,6 +358,10 @@ export namespace Components {
     */
     'step': number;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Slider binding value
     */
     'value': number;
@@ -354,9 +380,9 @@ export namespace Components {
     */
     'disabled'?: boolean;
     /**
-    * (optional) Switch theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TTag {
     /**
@@ -372,9 +398,9 @@ export namespace Components {
     */
     'pill'?: boolean;
     /**
-    * (optional) Tag theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Tag variant
     */
@@ -386,9 +412,9 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Tag theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TToast {
     /**
@@ -428,9 +454,9 @@ export namespace Components {
     */
     'size'?: string;
     /**
-    * (optional) Toast theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Toast time
     */
@@ -604,6 +630,10 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Alert theme
     */
     'theme'?: string;
@@ -634,6 +664,10 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Badge variant
     */
     'variant'?: string;
@@ -644,10 +678,6 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Deselected button
-    */
-    'deselected'?: boolean;
-    /**
     * (optional) Disabled button
     */
     'disabled'?: boolean;
@@ -656,9 +686,9 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
-    * (optional) Button theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Button variant
     */
@@ -669,10 +699,6 @@ declare namespace LocalJSX {
     * (optional) Card class
     */
     'customClass'?: string;
-    /**
-    * (optional) Deselected card
-    */
-    'deselected'?: boolean;
     /**
     * (optional) Disabled card
     */
@@ -690,6 +716,10 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Card theme
     */
     'theme'?: string;
@@ -699,6 +729,10 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface TCarousel {
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) carousel display direction
     */
@@ -714,9 +748,9 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
-    * (optional) Divider theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Divider vertical
     */
@@ -727,12 +761,15 @@ declare namespace LocalJSX {
     * (optional) Tag class
     */
     'customClass'?: string;
-    'name'?: string;
-    'path'?: string;
     /**
     * (optional) Tag theme
     */
-    'theme'?: string;
+    'name'?: string;
+    'path'?: string;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
   }
   interface TInput {
     /**
@@ -752,9 +789,9 @@ declare namespace LocalJSX {
     */
     'onChanged'?: (event: CustomEvent<string>) => void;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Input type
     */
@@ -770,9 +807,9 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TInputGroup {
     /**
@@ -780,9 +817,9 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TInputLabel {
     /**
@@ -790,9 +827,9 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Input text theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TLink {
     /**
@@ -811,6 +848,10 @@ declare namespace LocalJSX {
     * (optional) Link open a new tag
     */
     'openNewTab'?: boolean;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) Link underline
     */
@@ -834,9 +875,9 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
-    * (optional) Modal theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Modal variant
     */
@@ -859,6 +900,10 @@ declare namespace LocalJSX {
     * (optional) Progress bar stroke width
     */
     'strokeWidth'?: number;
+    /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
     /**
     * (optional) Progress text display inside bar
     */
@@ -890,6 +935,10 @@ declare namespace LocalJSX {
     */
     'step'?: number;
     /**
+    * (optional) Injected jss styles
+    */
+    'styles'?: StyleSheet;
+    /**
     * (optional) Slider binding value
     */
     'value'?: number;
@@ -908,9 +957,9 @@ declare namespace LocalJSX {
     */
     'disabled'?: boolean;
     /**
-    * (optional) Switch theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TTag {
     /**
@@ -926,9 +975,9 @@ declare namespace LocalJSX {
     */
     'pill'?: boolean;
     /**
-    * (optional) Tag theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Tag variant
     */
@@ -940,9 +989,9 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Tag theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
   }
   interface TToast {
     /**
@@ -978,9 +1027,9 @@ declare namespace LocalJSX {
     */
     'size'?: string;
     /**
-    * (optional) Toast theme
+    * (optional) Injected jss styles
     */
-    'theme'?: string;
+    'styles'?: StyleSheet;
     /**
     * (optional) Toast time
     */

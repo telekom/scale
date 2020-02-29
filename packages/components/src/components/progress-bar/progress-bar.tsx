@@ -1,55 +1,78 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './progress-bar.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
   tag: 't-progress-bar',
-  styleUrl: 'progress-bar.css',
   shadow: true,
 })
-export class ProgressBar {
+export class ProgressBar implements Base {
   /** (optional) Progress bar class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (required) Progress bar percentage */
-  @Prop() public percentage: number;
+  @Prop() percentage: number;
   /** (optional) Progress bar variant */
-  @Prop() public variant?: string;
+  @Prop() variant?: string;
   /** (optional) Progress bar stroke width */
-  @Prop() public strokeWidth?: number = 6;
+  @Prop() strokeWidth?: number = 6;
   /** (optional) Progress bar percentage text */
-  @Prop() public showText?: boolean;
+  @Prop() showText?: boolean;
   /** (optional) Progress text display inside bar */
-  @Prop() public textInside?: boolean;
+  @Prop() textInside?: boolean;
 
-  public render() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('ProgressBar', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+
+  render() {
+    const { classes } = this.stylesheet;
+
     return (
-      <div class="progress-bar">
-        <div
-          class="progress-bar-outer"
-          style={{ height: `${this.strokeWidth}px` }}
-        >
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={classes['progress-bar']}>
           <div
-            class={`progress-bar-inner ${this.getCssClassMap()}`}
-            style={{ width: `${this.percentage}%` }}
+            class={classes['progress-bar__outer']}
+            style={{ height: `${this.strokeWidth}px` }}
           >
-            {!!this.textInside && (
-              <div class="progress-bar-inner-text">{`${this.percentage}%`}</div>
-            )}
+            <div
+              class={`${
+                classes['progress-bar__inner']
+              } ${this.getCssClassMap()}`}
+              style={{ width: `${this.percentage}%` }}
+            >
+              {!!this.textInside && (
+                <div
+                  class={classes['progress-bar__inner-text']}
+                >{`${this.percentage}%`}</div>
+              )}
+            </div>
           </div>
-        </div>
 
-        {!!this.showText && (
-          <div class="progress-bar-text">{`${this.percentage}%`}</div>
-        )}
-      </div>
+          {!!this.showText && (
+            <div
+              class={classes['progress-bar__text']}
+            >{`${this.percentage}%`}</div>
+          )}
+        </div>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
+
     return classNames(
-      'progress-bar',
+      classes['progress-bar'],
       this.customClass && this.customClass,
-      this.variant && `progress-bar-inner-variant-${this.variant}`
+      this.variant && classes[`progress-bar--variant-${this.variant}`]
     );
   }
 }

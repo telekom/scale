@@ -1,31 +1,42 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './input-label.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
   tag: 't-input-label',
-  styleUrl: 'input-label.css',
   shadow: true,
 })
-export class InputLabel {
+export class InputLabel implements Base {
   /** (optional) Input text class */
-  @Prop() public customClass?: string = '';
-  /** (optional) Input text theme */
-  @Prop() public theme?: string = '';
+  @Prop() customClass?: string = '';
 
-  public render() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('InputLabel', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+
+  render() {
     return (
-      <div class={this.getCssClassMap()}>
-        <slot />
-      </div>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          <slot />
+        </div>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'input-label',
-      this.customClass && this.customClass,
-      this.theme && `input-label--theme-${this.theme}`
+      classes['input-label'],
+      this.customClass && this.customClass
     );
   }
 }

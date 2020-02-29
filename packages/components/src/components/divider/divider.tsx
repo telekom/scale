@@ -1,37 +1,49 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './divider.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
   tag: 't-divider',
-  styleUrls: ['divider.css'],
   shadow: true,
 })
-export class Divider {
+export class Divider implements Base {
   /** (optional) Divider class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Divider size */
-  @Prop() public size?: string = '';
-  /** (optional) Divider theme */
-  @Prop() public theme?: string = '';
+  @Prop() size?: string = '';
   /** (optional) Divider vertical */
-  @Prop() public vertical?: boolean = false;
+  @Prop() vertical?: boolean = false;
 
-  public render() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Divider', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+
+  render() {
+    const { classes } = this.stylesheet;
     return (
-      <div class={this.getCssClassMap()}>
-        {!this.vertical ? <hr /> : <span class="divider__vertical" />}
-      </div>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          {!this.vertical ? <hr /> : <span class={classes.divider__vertical} />}
+        </div>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'divider',
+      classes.divider,
       this.customClass && this.customClass,
-      this.size && `divider--size-${this.size}`,
-      this.theme && `divider--theme-${this.theme}`,
-      this.vertical && `divider--vertical`
+      this.size && classes[`divider--size-${this.size}`],
+      this.vertical && classes[`divider--vertical`]
     );
   }
 }
