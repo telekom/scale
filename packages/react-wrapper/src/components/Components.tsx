@@ -10,7 +10,6 @@ interface AlertProps {
   opened: boolean
   size?: string
   styles?: StyleSheet<string | number | symbol>
-  theme?: string
   timeout?: boolean | number
   variant?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
@@ -55,12 +54,10 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
 interface CardProps {
   // Web-component props
   customClass?: string
-  disabled?: boolean
   imageTop?: string
   imageTopAlt?: string
   size?: string
   styles?: StyleSheet<string | number | symbol>
-  theme?: string
   variant?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
@@ -72,6 +69,7 @@ const Card: React.FunctionComponent<CardProps> = props => (
 )
 interface CarouselProps {
   // Web-component props
+  customClass?: string
   styles?: StyleSheet<string | number | symbol>
   vertical?: boolean
   // Allow custom props not yet specified in the types e.g. events onClick etc.

@@ -15,7 +15,6 @@
 | `opened`      | `opened`       | (optional) Alert opened        | `boolean`                                | `undefined` |
 | `size`        | `size`         | (optional) Alert size          | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `theme`       | `theme`        | (optional) Alert theme         | `string`                                 | `''`        |
 | `timeout`     | `timeout`      | (optional) Alert timeout       | `boolean \| number`                      | `false`     |
 | `variant`     | `variant`      | (optional) Alert variant       | `string`                                 | `''`        |
 

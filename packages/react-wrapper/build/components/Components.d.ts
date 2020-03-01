@@ -7,7 +7,6 @@ interface AlertProps {
     opened: boolean;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
-    theme?: string;
     timeout?: boolean | number;
     variant?: string;
     [key: string]: any;
@@ -34,17 +33,16 @@ interface ButtonProps {
 declare const Button: React.FunctionComponent<ButtonProps>;
 interface CardProps {
     customClass?: string;
-    disabled?: boolean;
     imageTop?: string;
     imageTopAlt?: string;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
-    theme?: string;
     variant?: string;
     [key: string]: any;
 }
 declare const Card: React.FunctionComponent<CardProps>;
 interface CarouselProps {
+    customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
     vertical?: boolean;
     [key: string]: any;
