@@ -52,9 +52,13 @@ describe('Carousel', () => {
     expect(element.setTransformValue()).toBe('translateX(-200%)');
   });
 
-  // it('should set css active class', () => {
-  //   element.value = -200;
-  //   element.setActiveCssClass(2);
-  //   expect(element.setActiveCssClass(2)).toBe('carousel__indicator--active');
-  // });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.vertical = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['carousel--vertical']
+    );
+  });
 });

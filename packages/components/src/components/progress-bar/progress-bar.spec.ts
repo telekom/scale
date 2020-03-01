@@ -19,13 +19,6 @@ describe('ProgressBar', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should have class variant info', () => {
-  //   element.variant = 'info';
-  //   expect(element.getCssClassMap()).toContain(
-  //     'progress-bar-inner-variant-info'
-  //   );
-  // });
-
   it('should have css property width 24px when stroke width is set to 24', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
@@ -48,5 +41,16 @@ describe('ProgressBar', () => {
       html: `<t-progress-bar text-inside=true>Label</t-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.variant = 'primary';
+    stylesheet.addRule('progress-bar--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['progress-bar--variant-primary']
+    );
   });
 });

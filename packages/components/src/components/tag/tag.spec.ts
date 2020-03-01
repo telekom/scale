@@ -19,26 +19,28 @@ describe('Tag', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should have class variant primary', () => {
-  //   element.variant = 'primary';
-  //   expect(element.getCssClassMap()).toContain('tag--variant-primary');
-  // });
-
-  // it('should have class link ', () => {
-  //   element.link = '#';
-  //   expect(element.getCssClassMap()).toContain('tag--link');
-  // });
-
-  // it('should render pill tag', () => {
-  //   element.pill = true;
-  //   expect(element.getCssClassMap()).toContain('tag--pill');
-  // });
-
   it('should have a link', async () => {
     const page = await newSpecPage({
       components: [Tag],
       html: `<t-tag link="#">Label</t-tag>`,
     });
     expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.variant = 'primary';
+    stylesheet.addRule('tag--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['tag--variant-primary']
+    );
+
+    element.pill = true;
+    expect(element.getCssClassMap()).toContain(stylesheet.classes['tag--pill']);
+
+    element.link = true;
+    expect(element.getCssClassMap()).toContain(stylesheet.classes['tag--link']);
   });
 });

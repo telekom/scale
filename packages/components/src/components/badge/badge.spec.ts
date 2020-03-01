@@ -19,10 +19,6 @@ describe('Badge', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should have a default css class', () => {
-  //   expect(element.getCssClassMap()).toBe('badge');
-  // });
-
   it('should have a link', async () => {
     const page = await newSpecPage({
       components: [Badge],
@@ -31,18 +27,30 @@ describe('Badge', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should handle size css class', () => {
-  //   element.size = 'small';
-  //   expect(element.getCssClassMap()).toContain('badge--size-small');
-  // });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
 
-  // it('should have class variant primary', () => {
-  //   element.variant = 'primary';
-  //   expect(element.getCssClassMap()).toContain('badge--variant-primary');
-  // });
+    element.size = 'small';
+    stylesheet.addRule('badge--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['badge--size-small']
+    );
 
-  // it('should render pill badge', () => {
-  //   element.pill = true;
-  //   expect(element.getCssClassMap()).toContain('badge--pill');
-  // });
+    element.variant = 'primary';
+    stylesheet.addRule('badge--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['badge--variant-primary']
+    );
+
+    element.pill = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['badge--pill']
+    );
+
+    element.link = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['badge--link']
+    );
+  });
 });

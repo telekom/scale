@@ -16,12 +16,8 @@ export class Card implements Base {
   @Prop() customClass?: string = '';
   /** (optional) Card size */
   @Prop() size?: string = '';
-  /** (optional) Card theme */
-  @Prop() theme?: string = '';
   /** (optional) Card variant */
   @Prop() variant?: string = '';
-  /** (optional) Disabled card */
-  @Prop() disabled?: boolean = false;
   /** (optional) Card image at the top */
   @Prop() imageTop?: string;
   /** (optional) Card image alternative at the top */
@@ -79,9 +75,7 @@ export class Card implements Base {
       classes.card,
       this.customClass && this.customClass,
       this.size && classes[`card--size-${this.size}`],
-      this.theme && classes[`card--theme-${this.theme}`],
-      this.variant && classes[`card--variant-${this.variant}`],
-      this.disabled && classes[`card--disabled`]
+      this.variant && classes[`card--variant-${this.variant}`]
     );
   }
 }

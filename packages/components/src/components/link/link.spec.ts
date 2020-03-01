@@ -19,21 +19,6 @@ describe('Link', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should have class variant primary', () => {
-  //   element.variant = 'primary';
-  //   expect(element.getCssClassMap()).toContain('link--variant-primary');
-  // });
-
-  // it('should have class disabled ', () => {
-  //   element.disabled = true;
-  //   expect(element.getCssClassMap()).toContain('link--disabled');
-  // });
-
-  // it('should have class underline', () => {
-  //   element.underline = true;
-  //   expect(element.getCssClassMap()).toContain('link--underline');
-  // });
-
   it('should contain target="_blank" when openNewTab is set true', async () => {
     const page = await newSpecPage({
       components: [Link],
@@ -48,5 +33,28 @@ describe('Link', () => {
       html: `<t-link href="http://example.com">Label</t-link>`,
     });
     expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.variant = 'primary';
+    stylesheet.addRule('link--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['link--variant-primary']
+    );
+
+    element.disabled = true;
+    stylesheet.addRule('link--disabled', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['link--disabled']
+    );
+
+    element.underline = true;
+    stylesheet.addRule('link--underline', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['link--underline']
+    );
   });
 });

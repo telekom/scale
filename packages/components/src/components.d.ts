@@ -45,10 +45,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * (optional) Alert theme
-    */
-    'theme'?: string;
-    /**
     * (optional) Alert timeout
     */
     'timeout'?: boolean | number;
@@ -119,10 +115,6 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Disabled card
-    */
-    'disabled'?: boolean;
-    /**
     * (optional) Card image at the top
     */
     'imageTop'?: string;
@@ -139,15 +131,15 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * (optional) Card theme
-    */
-    'theme'?: string;
-    /**
     * (optional) Card variant
     */
     'variant'?: string;
   }
   interface TCarousel {
+    /**
+    * (optional) Carousel class
+    */
+    'customClass'?: string;
     /**
     * (optional) Injected jss styles
     */
@@ -634,10 +626,6 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
     /**
-    * (optional) Alert theme
-    */
-    'theme'?: string;
-    /**
     * (optional) Alert timeout
     */
     'timeout'?: boolean | number;
@@ -700,10 +688,6 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Disabled card
-    */
-    'disabled'?: boolean;
-    /**
     * (optional) Card image at the top
     */
     'imageTop'?: string;
@@ -720,15 +704,15 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
     /**
-    * (optional) Card theme
-    */
-    'theme'?: string;
-    /**
     * (optional) Card variant
     */
     'variant'?: string;
   }
   interface TCarousel {
+    /**
+    * (optional) Carousel class
+    */
+    'customClass'?: string;
     /**
     * (optional) Injected jss styles
     */

@@ -12,6 +12,8 @@ import Base from '../../utils/base-interface';
 })
 export class Carousel implements Base {
   @Element() hostElement: HTMLElement;
+  /** (optional) Carousel class */
+  @Prop() customClass?: string = '';
   /** (optional) carousel display direction */
   @Prop() vertical?: boolean = false;
 
@@ -124,6 +126,7 @@ export class Carousel implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes.carousel,
+      this.customClass && this.customClass,
       this.vertical && classes['carousel--vertical']
     );
   }

@@ -19,17 +19,14 @@ describe('Input', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should handle a custom css class', () => {
-  //   element.customClass = 'custom';
-  //   expect(element.getCssClassMap()).toContain('custom');
-  // });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
 
-  // it('should handle theme css class', () => {
-  //   element.theme = 'default';
-  //   expect(element.getCssClassMap()).toContain('input--theme-default');
-  // });
-
-  // it('should have a default css class', () => {
-  //   expect(element.getCssClassMap()).toContain('input');
-  // });
+    element.type = 'number';
+    stylesheet.addRule('input--type-number', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['input--type-number']
+    );
+  });
 });

@@ -19,16 +19,6 @@ describe('Switch', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should have class active', () => {
-  //   element.active = true;
-  //   expect(element.getCssClassMap()).toContain('switch--active');
-  // });
-
-  // it('should have class disabled', () => {
-  //   element.disabled = true;
-  //   expect(element.getCssClassMap()).toContain('switch--disabled');
-  // });
-
   it('should have toggle active state', () => {
     element.disabled = false;
     element.active = true;
@@ -36,10 +26,18 @@ describe('Switch', () => {
     expect(element.active).toBe(false);
   });
 
-  // it('should not toggle active state if disabled', () => {
-  //   element.disabled = true;
-  //   element.active = true;
-  //   element.toggleSwitch();
-  //   expect(element.active).toBe(true);
-  // });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.active = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['switch--active']
+    );
+
+    element.disabled = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['switch--disabled']
+    );
+  });
 });

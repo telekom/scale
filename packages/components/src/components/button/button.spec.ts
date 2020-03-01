@@ -32,28 +32,24 @@ describe('Button', () => {
     expect(element.disabled).toBe(false);
   });
 
-  it('should handle custom css class', () => {
+  it('should handle custom css class', () => {});
+
+  it('should handle css classes', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
-  });
 
-  it('should handle size css class', () => {
     element.size = 'small';
     stylesheet.addRule('button--size-small', {});
     expect(element.getCssClassMap()).toContain(
       stylesheet.classes['button--size-small']
     );
-  });
 
-  it('should handle variant css class', () => {
     element.variant = 'primary';
     stylesheet.addRule('button--variant-primary', {});
     expect(element.getCssClassMap()).toContain(
       stylesheet.classes['button--variant-primary']
     );
-  });
 
-  it('should handle disabled css class', () => {
     element.disabled = true;
     expect(element.getCssClassMap()).toContain(
       stylesheet.classes['button--disabled']

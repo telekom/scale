@@ -53,32 +53,20 @@ describe('Card', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should have a default css class', () => {
-  //   expect(element.getCssClassMap()).toBe('card');
-  // });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
 
-  // it('should handle size css class', () => {
-  //   element.size = 'small';
-  //   expect(element.getCssClassMap()).toContain('card--size-small');
-  // });
+    element.size = 'small';
+    stylesheet.addRule('card--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['card--size-small']
+    );
 
-  // it('should handle theme css class', () => {
-  //   element.theme = 'default';
-  //   expect(element.getCssClassMap()).toContain('card--theme-default');
-  // });
-
-  // it('should handle variant css class', () => {
-  //   element.variant = 'primary';
-  //   expect(element.getCssClassMap()).toContain('card--variant-primary');
-  // });
-
-  // it('should handle disabled css class', () => {
-  //   element.disabled = true;
-  //   expect(element.getCssClassMap()).toContain('card--disabled');
-  // });
-
-  // it('should handle deselected css class', () => {
-  //   element.deselected = true;
-  //   expect(element.getCssClassMap()).toContain('card--deselected');
-  // });
+    element.variant = 'primary';
+    stylesheet.addRule('card--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['card--variant-primary']
+    );
+  });
 });

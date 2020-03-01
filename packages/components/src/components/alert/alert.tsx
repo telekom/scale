@@ -18,8 +18,6 @@ export class Alert implements Base {
   @Prop() customClass?: string = '';
   /** (optional) Alert size */
   @Prop() size?: string = '';
-  /** (optional) Alert theme */
-  @Prop() theme?: string = '';
   /** (optional) Alert variant */
   @Prop() variant?: string = '';
   /** (optional) Alert title */
@@ -107,7 +105,6 @@ export class Alert implements Base {
       classes.alert,
       this.customClass && this.customClass,
       this.size && classes[`alert--size-${this.size}`],
-      this.theme && classes[`alert--theme-${this.theme}`],
       this.variant && classes[`alert--variant-${this.variant}`]
     );
   }

@@ -28,28 +28,19 @@ describe('Divider', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  // it('should handle custom css class', () => {
-  //   element.customClass = 'custom';
-  //   expect(element.getCssClassMap()).toContain('custom');
-  // });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
 
-  // it('should handle vertical css class', () => {
-  //   element.vertical = true;
-  //   expect(element.getCssClassMap()).toContain('divider--vertical');
-  // });
+    element.size = 'small';
+    stylesheet.addRule('divider--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['divider--size-small']
+    );
 
-  // it('should handle default css class', () => {
-  //   element.vertical = false;
-  //   expect(element.getCssClassMap()).toContain('divider');
-  // });
-
-  // it('should handle size css class', () => {
-  //   element.size = 'small';
-  //   expect(element.getCssClassMap()).toContain('divider--size-small');
-  // });
-
-  // it('should handle theme css class', () => {
-  //   element.theme = 'default';
-  //   expect(element.getCssClassMap()).toContain('divider--theme-default');
-  // });
+    element.vertical = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['divider--vertical']
+    );
+  });
 });

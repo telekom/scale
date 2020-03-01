@@ -47,29 +47,27 @@ describe('Modal', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should match snapshot with close slot', async () => {
+    const page = await newSpecPage({
+      components: [Modal],
+      html: `
+			<t-modal>
+				<span slot="close">Close</span>
+				Content
+			</t-modal>
+			`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
   it('should match snapshot when opened', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-modal opened=true >Label</t-modal>`,
+      html: `<t-modal opened=true>Label</t-modal>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
   });
-
-  // it('should handle size css class', () => {
-  //   element.size = 'small';
-  //   expect(element.getCssClassMap()).toContain('modal--size-small');
-  // });
-
-  // it('should handle theme css class', () => {
-  //   element.theme = 'default';
-  //   expect(element.getCssClassMap()).toContain('modal--theme-default');
-  // });
-
-  // it('should handle variant css class', () => {
-  //   element.variant = 'primary';
-  //   expect(element.getCssClassMap()).toContain('modal--variant-primary');
-  // });
 
   it('should open the modal', () => {
     expect(element.opened).toBe(false);
@@ -90,5 +88,27 @@ describe('Modal', () => {
   it('should not open the modal/ should not render, if the modal is already opened', () => {
     element.opened = true;
     expect(element.root).toBeFalsy();
+  });
+
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.size = 'small';
+    stylesheet.addRule('modal--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['modal--size-small']
+    );
+
+    element.variant = 'primary';
+    stylesheet.addRule('modal--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['modal--variant-primary']
+    );
+
+    element.opened = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['modal--opened']
+    );
   });
 });
