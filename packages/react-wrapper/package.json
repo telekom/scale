@@ -1,6 +1,6 @@
 {
   "name": "@telements/react-wrapper",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "@eeegor <egor.kirpichev@telekom.de>",
   "license": "MIT",
   "main": "build/index.js",
@@ -65,6 +65,5 @@
       "afterAll",
       "jest"
     ]
-  },
-  "dependencies": {}
+  }
 }
