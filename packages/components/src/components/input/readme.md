@@ -1,4 +1,4 @@
-# t-input-text
+# t-input
 
 
 
@@ -22,19 +22,6 @@
 | Event     | Description                         | Type                  |
 | --------- | ----------------------------------- | --------------------- |
 | `changed` | (optional) Input text event changed | `CustomEvent<string>` |
-
-
-## Methods
-
-### `updateStyles(newStyle: StyleSheet<string | number | symbol>) => Promise<void>`
-
-Method: updateStyles()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
 
 
 ----------------------------------------------

@@ -46,7 +46,7 @@ var WebComponentWrapper = function (props) {
     useEffect(function () {
         if (ref.current) {
             if (styles) {
-                ref.current.updateStyles(styles);
+                ref.current.styles = styles;
             }
             if (eventNames) {
                 eventNames.map(function (eventName) {
@@ -55,7 +55,7 @@ var WebComponentWrapper = function (props) {
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [ref]);
+    }, [ref, styles]);
     return (React__default.createElement(Component, __assign({ ref: ref }, forwardedProps), children));
 };
 

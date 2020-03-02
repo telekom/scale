@@ -69,12 +69,6 @@ export class Toast implements Base {
   }
   componentWillUpdate() {}
 
-  /** Method: updateStyles()  */
-  @Method()
-  async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle;
-  }
-
   close = () => {
     clearInterval(this.timerId);
     this.hideToast = true;

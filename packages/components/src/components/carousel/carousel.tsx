@@ -1,12 +1,4 @@
-import {
-  Component,
-  Prop,
-  h,
-  State,
-  Element,
-  Host,
-  Method,
-} from '@stencil/core';
+import { Component, Prop, h, State, Element, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { CssInJs } from '../../utils/css-in-js';
@@ -53,12 +45,6 @@ export class Carousel implements Base {
     }
   }
   componentWillUpdate() {}
-
-  /** Method: updateStyles()  */
-  @Method()
-  async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle;
-  }
 
   handleSlideChange = direction => {
     const val = this.value;

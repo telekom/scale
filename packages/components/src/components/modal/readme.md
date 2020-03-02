@@ -38,16 +38,6 @@ Type: `Promise<void>`
 
 
 
-### `updateStyles(newStyle: StyleSheet<string | number | symbol>) => Promise<void>`
-
-Method: updateStyles()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
 
 ----------------------------------------------
 

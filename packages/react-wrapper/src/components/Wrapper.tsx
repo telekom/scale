@@ -8,9 +8,7 @@ const WebComponentWrapper = (props: any) => {
   useEffect(() => {
     if (ref.current) {
       if (styles) {
-        ref.current.updateStyles(styles)
-        console.log('ref.current', ref.current)
-        console.log('ref.current.styles', ref.current.styles)
+        ref.current.styles = styles
       }
       if (eventNames) {
         eventNames.map((eventName: string) =>
@@ -19,7 +17,7 @@ const WebComponentWrapper = (props: any) => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ref])
+  }, [ref, styles])
 
   return (
     <Component ref={ref} {...forwardedProps}>

@@ -1,5 +1,7 @@
 # t-slider
 
+
+
 <!-- Auto Generated Below -->
 
 
@@ -14,19 +16,6 @@
 | `step`        | `step`         | (optional) Slider step              | `number`                                 | `1`         |
 | `styles`      | --             | (optional) Injected jss styles      | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `value`       | `value`        | (optional) Slider binding value     | `number`                                 | `0`         |
-
-
-## Methods
-
-### `updateStyles(newStyle: StyleSheet<string | number | symbol>) => Promise<void>`
-
-Method: updateStyles()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
 
 
 ----------------------------------------------

@@ -15,19 +15,6 @@
 | `vertical`    | `vertical`     | (optional) Divider vertical    | `boolean`                                | `false`     |
 
 
-## Methods
-
-### `updateStyles(newStyle: StyleSheet<string | number | symbol>) => Promise<void>`
-
-Method: updateStyle()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

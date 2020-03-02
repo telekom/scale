@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host, Method } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './divider.styles';
@@ -25,12 +25,6 @@ export class Divider implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
-
-  /** Method: updateStyle()  */
-  @Method()
-  async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle;
-  }
 
   render() {
     const { classes } = this.stylesheet;

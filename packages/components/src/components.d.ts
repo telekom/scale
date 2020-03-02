@@ -49,10 +49,6 @@ export namespace Components {
     */
     'timeout'?: boolean | number;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Alert variant
     */
     'variant'?: string;
@@ -78,10 +74,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
     /**
     * (optional) Badge variant
     */
@@ -113,10 +105,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Button variant
     */
     'variant'?: string;
@@ -143,10 +131,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Card variant
     */
     'variant'?: string;
@@ -160,10 +144,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
     /**
     * (optional) carousel display direction
     */
@@ -183,10 +163,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * Method: updateStyle()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Divider vertical
     */
     'vertical'?: boolean;
@@ -205,10 +181,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
   }
   interface TInput {
     /**
@@ -232,10 +204,6 @@ export namespace Components {
     */
     'type'?: InputTypes;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Input text value
     */
     'value'?: string;
@@ -249,10 +217,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
   }
   interface TInputGroup {
     /**
@@ -263,10 +227,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
   }
   interface TInputLabel {
     /**
@@ -277,10 +237,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
   }
   interface TLink {
     /**
@@ -307,10 +263,6 @@ export namespace Components {
     * (optional) Link underline
     */
     'underline'?: boolean;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
     /**
     * (optional) Link variant
     */
@@ -342,10 +294,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Modal variant
     */
     'variant'?: string;
@@ -375,10 +323,6 @@ export namespace Components {
     * (optional) Progress text display inside bar
     */
     'textInside'?: boolean;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
     /**
     * (optional) Progress bar variant
     */
@@ -410,10 +354,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Slider binding value
     */
     'value': number;
@@ -435,10 +375,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
   }
   interface TTag {
     /**
@@ -458,10 +394,6 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
     /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
-    /**
     * (optional) Tag variant
     */
     'variant'?: string;
@@ -475,10 +407,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
   }
   interface TToast {
     /**
@@ -525,10 +453,6 @@ export namespace Components {
     * (optional) Toast time
     */
     'time'?: number;
-    /**
-    * Method: updateStyles()
-    */
-    'updateStyles': (newStyle: StyleSheet<string | number | symbol>) => Promise<void>;
     /**
     * (optional) Toast variant
     */

@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Method } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './slider.styles';
@@ -35,12 +35,6 @@ export class Slider implements Base {
     }
   }
   componentWillUpdate() {}
-
-  /** Method: updateStyles()  */
-  @Method()
-  async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle;
-  }
 
   render() {
     const { classes } = this.stylesheet;

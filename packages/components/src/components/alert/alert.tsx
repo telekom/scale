@@ -43,12 +43,6 @@ export class Alert implements Base {
   }
   componentWillUpdate() {}
 
-  /** Method: updateStyles()  */
-  @Method()
-  async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle;
-  }
-
   close = () => {
     this.opened = false;
   };
