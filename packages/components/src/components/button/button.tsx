@@ -38,6 +38,7 @@ export class Button implements Base {
   }
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

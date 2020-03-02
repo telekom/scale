@@ -28,6 +28,7 @@ export class Badge implements Base {
   @CssInJs('Badge', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

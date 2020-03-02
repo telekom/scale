@@ -24,6 +24,7 @@ export class Switch implements Base {
   @CssInJs('Switch', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   toggleSwitch = () => {
     if (this.disabled) {

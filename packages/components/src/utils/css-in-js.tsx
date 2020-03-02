@@ -35,5 +35,29 @@ export function CssInJs(className: string, styles: object): CssInJsDecorator {
       // tslint:disable-next-line: no-console
       return console.error('Something went wrong... CssInJs is not supported');
     }
+
+    const { componentWillUpdate } = target;
+    if (!componentWillUpdate) {
+      // tslint:disable-next-line: no-console
+      return console.warn(
+        `ConstructibleStyle requires you to have a \`componentWillUpdate\` lifecycle method in \`${target.constructor.name}\`. Failure to add this function may cause ConstructibleStyle to fail due to StencilJS build optimizations.`
+      );
+    }
+
+    if (componentWillUpdate) {
+      target.componentWillUpdate = function() {
+        const withDefaultTheme = combineObjects(styles, theme()[className]);
+        const cssText = jss.createStyleSheet(
+          combineObjects(withDefaultTheme, this.styles)
+        );
+        const willLoadResult =
+          componentWillUpdate && componentWillUpdate.call(this);
+        this[propertyKey] = cssText as StyleSheet;
+        return willLoadResult;
+      };
+    } else {
+      // tslint:disable-next-line: no-console
+      return console.error('Something went wrong... CssInJs is not supported');
+    }
   };
 }

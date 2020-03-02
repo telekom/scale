@@ -20,6 +20,7 @@ export class Text implements Base {
   @CssInJs('Text', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

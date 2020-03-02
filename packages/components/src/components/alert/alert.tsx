@@ -41,6 +41,7 @@ export class Alert implements Base {
   componentWillLoad() {
     this.hasSlotClose = !!this.hostElement.querySelector('[slot="close"]');
   }
+  componentWillUpdate() {}
 
   close = () => {
     this.opened = false;

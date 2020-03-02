@@ -59,8 +59,6 @@ export class Toast implements Base {
 
   componentWillLoad() {}
 
-  componentDidLoad() {}
-
   componentDidUnload() {
     if (this.timerId) {
       clearTimeout(this.timerId);
@@ -69,6 +67,7 @@ export class Toast implements Base {
       this.progress = 0;
     }
   }
+  componentWillUpdate() {}
 
   close = () => {
     clearInterval(this.timerId);

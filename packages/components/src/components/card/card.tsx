@@ -35,6 +35,7 @@ export class Card implements Base {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
     this.hasSlotFooter = !!this.hostElement.querySelector('[slot="footer"]');
   }
+  componentWillUpdate() {}
 
   render() {
     const { classes } = this.stylesheet;

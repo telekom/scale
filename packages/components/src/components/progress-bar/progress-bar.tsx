@@ -30,6 +30,7 @@ export class ProgressBar implements Base {
   @CssInJs('ProgressBar', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     const { classes } = this.stylesheet;

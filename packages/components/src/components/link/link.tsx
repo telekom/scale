@@ -30,6 +30,7 @@ export class Link implements Base {
   @CssInJs('Link', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

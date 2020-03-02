@@ -23,6 +23,7 @@ export class Icon implements Base {
   @CssInJs('Icon', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

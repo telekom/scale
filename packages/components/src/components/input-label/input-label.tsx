@@ -20,6 +20,7 @@ export class InputLabel implements Base {
   @CssInJs('InputLabel', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

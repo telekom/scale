@@ -39,6 +39,7 @@ export class Input implements Base {
   @CssInJs('Input', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   handleChange(event) {
     this.value = event.target ? event.target.value : this.value;

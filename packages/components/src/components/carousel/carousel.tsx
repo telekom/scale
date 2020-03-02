@@ -44,6 +44,7 @@ export class Carousel implements Base {
       }
     }
   }
+  componentWillUpdate() {}
 
   handleSlideChange = direction => {
     const val = this.value;

@@ -54,6 +54,7 @@ export class Modal implements Base {
       '[slot="modal-actions"]'
     );
   }
+  componentWillUpdate() {}
 
   render() {
     const { classes } = this.stylesheet;

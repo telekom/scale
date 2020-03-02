@@ -34,6 +34,7 @@ export class Slider implements Base {
       this.value = this.min;
     }
   }
+  componentWillUpdate() {}
 
   render() {
     const { classes } = this.stylesheet;

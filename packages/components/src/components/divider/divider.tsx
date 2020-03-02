@@ -24,6 +24,7 @@ export class Divider implements Base {
   @CssInJs('Divider', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     const { classes } = this.stylesheet;

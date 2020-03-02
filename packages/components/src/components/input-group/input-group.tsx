@@ -20,6 +20,7 @@ export class InputGroup implements Base {
   @CssInJs('InputGroup', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

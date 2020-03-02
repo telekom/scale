@@ -26,6 +26,7 @@ export class Tag implements Base {
   @CssInJs('Tag', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (

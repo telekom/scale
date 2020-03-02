@@ -20,6 +20,7 @@ export class InputError implements Base {
   @CssInJs('InputErrors', styles) stylesheet: StyleSheet;
 
   componentWillLoad() {}
+  componentWillUpdate() {}
 
   render() {
     return (
