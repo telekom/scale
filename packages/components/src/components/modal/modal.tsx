@@ -34,7 +34,7 @@ export class Modal implements Base {
   /** Method: updateStyles()  */
   @Method()
   async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle
+    this.styles = newStyle;
   }
 
   /** Modal method: open() */

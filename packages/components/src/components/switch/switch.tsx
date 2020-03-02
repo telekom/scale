@@ -29,7 +29,7 @@ export class Switch implements Base {
   /** Method: updateStyles()  */
   @Method()
   async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle
+    this.styles = newStyle;
   }
 
   toggleSwitch = () => {

@@ -29,7 +29,7 @@ export class Divider implements Base {
   /** Method: updateStyle()  */
   @Method()
   async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle
+    this.styles = newStyle;
   }
 
   render() {

@@ -41,7 +41,7 @@ export class Button implements Base {
   /** Method: updateStyles()  */
   @Method()
   async updateStyles(newStyle: StyleSheet) {
-    this.styles = newStyle
+    this.styles = newStyle;
   }
 
   componentWillUpdate() {}
