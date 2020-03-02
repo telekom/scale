@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.7](https://github.com/telekom/telements/compare/@telements/components@0.3.6...@telements/components@0.3.7) (2020-03-02)
+
+
+### Bug Fixes
+
+* format ([f321f62](https://github.com/telekom/telements/commit/f321f624c8fd0630ae814c15e010b893dd91981f))
+
+
+
+
+
 ## [0.3.6](https://github.com/telekom/telements/compare/@telements/components@0.3.5...@telements/components@0.3.6) (2020-03-02)
 
 **Note:** Version bump only for package @telements/components
