@@ -9,6 +9,8 @@ const WebComponentWrapper = (props: any) => {
     if (ref.current) {
       if (styles) {
         ref.current.updateStyles(styles)
+        console.log('ref.current', ref.current)
+        console.log('ref.current.styles', ref.current.styles)
       }
       if (eventNames) {
         eventNames.map((eventName: string) =>
