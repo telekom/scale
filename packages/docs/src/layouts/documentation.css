@@ -46,6 +46,7 @@ body,
 .main__sidebar h1 {
   padding: 0;
   margin: 0;
+  font-size: 1rem;
 }
 
 .main__sidebar .section__title {
@@ -64,8 +65,12 @@ body,
   padding: 1rem;
 }
 
-.menu__item {
+.main__sidebar .sidebar {
+  padding-top: 0;
+}
 
+.menu__item {
+  list-style: none;
 }
 
 .menu__item--selected {
@@ -78,15 +83,23 @@ body,
 
 .content {
   padding: 1rem;
+  padding-bottom: 5rem;
 }
 
+.content h1 {
+  margin: 0;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+/*
 .content div table {
   width: calc(100vw - 320px);
   max-width: 960px;
-}
+} */
 
 .content div table tr,
 .content div table td {
   font-size: 90%;
   text-align: left;
 }
+
