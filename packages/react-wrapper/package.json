@@ -7,8 +7,7 @@
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "scripts": {
-    "build:components": "cd ../components && yarn build",
-    "prebuild": "yarn build:components; yarn generate",
+    "prebuild": "yarn generate",
     "build": "rollup -c",
     "lint": "standard",
     "format": "prettier-standard --format",

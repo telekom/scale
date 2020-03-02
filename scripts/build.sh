@@ -11,6 +11,12 @@ echo "--------"
 echo "${GREEN}Build Components...${NC}"
 yarn workspace @telements/components build;
 echo "--------"
+echo "${GREEN}Build React wrappers...${NC}"
+yarn workspace @telements/react-wrapper build;
+echo "--------"
+echo "${GREEN}Build Docs...${NC}"
+yarn workspace @telements/docs build;
+echo "--------"
 echo "${GREEN}Build Sketch Document...${NC}"
 yarn workspace @telements/generator-sketch build;
 echo "--------"

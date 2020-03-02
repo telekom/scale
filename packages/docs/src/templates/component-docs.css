@@ -1,0 +1,10 @@
+.playground__preview {
+	padding: 1rem;
+	min-height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+	/* background: rgba(0,0,0,0.05); */
+	border: 1px solid rgba(0,0,0,0.05);
+}
