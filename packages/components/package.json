@@ -1,6 +1,6 @@
 {
   "name": "@telements/components",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
