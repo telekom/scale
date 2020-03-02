@@ -1,4 +1,4 @@
-import { Component, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
+import { Component, Prop, Event, h, EventEmitter, Host, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './input.styles';
@@ -40,6 +40,12 @@ export class Input implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
+
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
 
   handleChange(event) {
     this.value = event.target ? event.target.value : this.value;

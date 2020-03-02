@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './switch.styles';
@@ -25,6 +25,12 @@ export class Switch implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
+
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
 
   toggleSwitch = () => {
     if (this.disabled) {

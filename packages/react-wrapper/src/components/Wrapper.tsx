@@ -8,7 +8,7 @@ const WebComponentWrapper = (props: any) => {
   useEffect(() => {
     if (ref.current) {
       if (styles) {
-        ref.current.styles = styles
+        ref.current.updateStyles(styles)
       }
       if (eventNames) {
         eventNames.map((eventName: string) =>

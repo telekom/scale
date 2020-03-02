@@ -38,6 +38,12 @@ export class Button implements Base {
   }
 
   componentWillLoad() {}
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
+
   componentWillUpdate() {}
 
   render() {

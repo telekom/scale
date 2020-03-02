@@ -17,6 +17,19 @@
 | `variant`     | `variant`       | (optional) Card variant                      | `string`                                 | `''`        |
 
 
+## Methods
+
+### `updateStyles(newStyle: StyleSheet<string | number | symbol>) => Promise<void>`
+
+Method: updateStyles()
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

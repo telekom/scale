@@ -46,7 +46,7 @@ var WebComponentWrapper = function (props) {
     useEffect(function () {
         if (ref.current) {
             if (styles) {
-                ref.current.styles = styles;
+                ref.current.updateStyles(styles);
             }
             if (eventNames) {
                 eventNames.map(function (eventName) {

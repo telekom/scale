@@ -31,6 +31,12 @@ export class Modal implements Base {
   hasSlotClose: boolean;
   hasSlotActions: boolean;
 
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
+
   /** Modal method: open() */
   @Method()
   async open() {

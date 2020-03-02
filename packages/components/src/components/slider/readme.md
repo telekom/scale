@@ -16,6 +16,19 @@
 | `value`       | `value`        | (optional) Slider binding value     | `number`                                 | `0`         |
 
 
+## Methods
+
+### `updateStyles(newStyle: StyleSheet<string | number | symbol>) => Promise<void>`
+
+Method: updateStyles()
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host } from '@stencil/core';
+import { Component, Prop, h, Host, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './progress-bar.styles';
@@ -31,6 +31,12 @@ export class ProgressBar implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
+
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
 
   render() {
     const { classes } = this.stylesheet;

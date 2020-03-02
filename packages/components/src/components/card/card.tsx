@@ -1,4 +1,4 @@
-import { Component, Prop, h, Element, Host } from '@stencil/core';
+import { Component, Prop, h, Element, Host, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './card.styles';
@@ -36,6 +36,12 @@ export class Card implements Base {
     this.hasSlotFooter = !!this.hostElement.querySelector('[slot="footer"]');
   }
   componentWillUpdate() {}
+
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
 
   render() {
     const { classes } = this.stylesheet;

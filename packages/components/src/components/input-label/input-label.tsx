@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host } from '@stencil/core';
+import { Component, Prop, h, Host, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './input-label.styles';
@@ -21,6 +21,12 @@ export class InputLabel implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
+
+  /** Method: updateStyles()  */
+  @Method()
+  async updateStyles(newStyle: StyleSheet) {
+    this.styles = newStyle
+  }
 
   render() {
     return (
