@@ -2251,9 +2251,6 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@telements/react-wrapper@^0.2.8":
-  version "0.3.9"
-
 "@testing-library/dom@^6.11.0":
   version "6.12.2"
   resolved "https://telekom.iconstorm.work/@testing-library%2fdom/-/dom-6.12.2.tgz#5d549acf43f2e0c23b2abfd4e36d65594c3b2741"
