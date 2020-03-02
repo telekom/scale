@@ -1,8 +1,7 @@
 {
   "name": "@telements/docs",
-  "private": true,
   "description": "Telements Components Documentation",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "eeegor",
   "dependencies": {
     "@telements/react-wrapper": "^0.2.7",
