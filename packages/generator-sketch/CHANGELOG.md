@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2020-03-03)
+
+**Note:** Version bump only for package @telements/generator-sketch
+
+
+
+
+
 ## 0.0.2 (2020-02-26)
 
 **Note:** Version bump only for package @telements/generator-sketch
