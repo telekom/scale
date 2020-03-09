@@ -1,6 +1,6 @@
 {
     "name": "@telements/generator-sketch",
-    "version": "0.0.2",
+    "version": "0.4.0",
     "scripts": {
         "build": "tsc -b",
         "postbuild": "yarn generate",
