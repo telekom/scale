@@ -1,7 +1,7 @@
 {
     "name": "@telements/config",
     "main": "dist/index.js",
-    "version": "0.4.0",
+    "version": "0.0.2",
     "author": "@eeegor <egor.kirpichev@telekom.de>",
     "license": "MIT",
     "scripts": {

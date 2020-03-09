@@ -2,6 +2,7 @@
   "packages": [
     "packages/config",
     "packages/components",
+    "packages/html-to-sketch",
     "packages/generator-sketch",
     "packages/docs"
   ],

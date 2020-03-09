@@ -1,18 +1,24 @@
 {
-    "name": "@telements/generator-sketch",
-    "version": "0.4.0",
-    "scripts": {
-        "build": "tsc -b",
-        "postbuild": "yarn generate",
-        "pregenerate": "rimraf ./build",
-        "generate": "node ./dist/index.js"
-    },
-    "license": "MIT",
-    "devDependencies": {
-        "typescript": "^3.1.6"
-    },
-    "dependencies": {
-        "sketch-constructor": "^1.1.1",
-        "sketch-json": "^1.2.0"
-    }
+  "name": "@telements/generator-sketch",
+  "version": "0.4.0",
+  "description": "Convert the web-components to a sketch file",
+  "scripts": {
+    "test": "eslint src/",
+    "build": "webpack",
+    "preinject": "cp -R ../components/www/build ./sketch-render",
+    "inject": "node ./src/inject.js",
+    "sketch": "node ./src/index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sketch-constructor": "^1.18.0",
+    "tinycolor2": "^1.4.1",
+    "undefined": "^0.1.0",
+    "webpack-cli": "^3.2.0"
+  },
+  "dependencies": {
+    "puppeteer": "^1.19.0",
+    "uuid": "^3.4.0",
+    "webpack": "^4.28.3"
+  }
 }
