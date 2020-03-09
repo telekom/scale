@@ -17,6 +17,7 @@ export const styles: JssStyle = {
     borderRadius: 0,
     padding: '0.25rem 1rem',
     boxShadow: 'none',
+    lineHeight: '2rem',
     fontFamily: 'unset',
     fontSize: 'unset',
     fontWeight: 400,

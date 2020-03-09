@@ -1,8 +1,0 @@
-.DS_Store
-.idea/
-.editorconfig
-node_modules/
-playground/
-e2e/dist/
-e2e/valid/
-build/

@@ -17,19 +17,14 @@ echo "--------"
 echo "${GREEN}Build Docs...${NC}"
 yarn workspace @telements/docs build;
 echo "--------"
-echo "${GREEN}Building Html to Sketch!${NC}"
-cd packages/html-to-sketch
-yarn build
-yarn unlink
-yarn link
-echo "${GREEN}Done building Html to Sketch!${NC}"
-echo "${GREEN}Building Sketch Generator!${NC}"
-cd ../html-to-sketch
-yarn unlink "@telements/html-to-sketch"
-yarn link "@telements/html-to-sketch"
-yarn build
-echo "${GREEN}Done building Sketch Generator!${NC}"
-
+echo "${GREEN}Build Sketch Document...${NC}"
+yarn workspace @telements/generator-sketch build;
+echo "--------"
+echo "--------"
+echo "--------"
+echo "${GREEN}Done building components!${NC}"
+echo "--------"
+echo "--------"
 # echo "${GREEN}Creating boilerplate symlinks for components${NC}"
 # cd packages/components
 # echo "${CYAN}Linking components${NC}"
