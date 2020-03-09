@@ -1,0 +1,24 @@
+{
+  "name": "@telements/html-to-sketch",
+  "version": "0.0.1",
+  "description": "HTML to Sketch",
+  "keywords": [
+    "sketch",
+    "sketchapp",
+    "css",
+    "html"
+  ],
+  "author": "eeegor",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "normalize-css-color": "^1.0.2",
+    "sketch-constants": "^1.1.0"
+  },
+  "main": "build/index"
+}

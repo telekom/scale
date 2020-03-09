@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @telements/react-wrapper
 
-
-
-
-
 ## [0.3.8](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.3.7...@telements/react-wrapper@0.3.8) (2020-03-02)
 
 **Note:** Version bump only for package @telements/react-wrapper

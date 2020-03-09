@@ -96,6 +96,7 @@ export namespace Components {
     * Button method: enable()
     */
     'enable': () => Promise<void>;
+    'label'?: string;
     /**
     * (optional) Button size
     */
@@ -669,6 +670,7 @@ declare namespace LocalJSX {
     * (optional) Disabled button
     */
     'disabled'?: boolean;
+    'label'?: string;
     /**
     * (optional) Button size
     */

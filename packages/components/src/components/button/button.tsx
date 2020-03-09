@@ -19,6 +19,7 @@ export class Button implements Base {
   @Prop() variant?: string = '';
   /** (optional) Disabled button */
   @Prop() disabled?: boolean = false;
+  @Prop() label?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -46,7 +47,7 @@ export class Button implements Base {
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <button class={this.getCssClassMap()} disabled={this.disabled}>
-          <slot />
+          {!!this.label ? this.label : <slot />}
         </button>
       </Host>
     );

@@ -11,6 +11,7 @@
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Button class        | `string`                                 | `''`        |
 | `disabled`    | `disabled`     | (optional) Disabled button     | `boolean`                                | `false`     |
+| `label`       | `label`        |                                | `string`                                 | `undefined` |
 | `size`        | `size`         | (optional) Button size         | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `variant`     | `variant`      | (optional) Button variant      | `string`                                 | `''`        |
