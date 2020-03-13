@@ -5,34 +5,24 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # 0.4.0 (2020-03-03)
 
-
 ### Bug Fixes
 
-* add build output ([10fe013](https://github.com/telekom/telements/commit/10fe013d0305bbe4eb8983315454ee362b4df61a))
-* add styles props (css-in-js), allow not specified props (until spicified) ([f7677a4](https://github.com/telekom/telements/commit/f7677a41a29aa5bb1905be31f7edfca91d8f31dd))
-* build react wrappers ([15b6def](https://github.com/telekom/telements/commit/15b6def31600e07eef52feccbc0e26bc2503bf66))
-* cleanup ([cb61f54](https://github.com/telekom/telements/commit/cb61f547facbfde0458daa42b28b7c7dc4542401))
-* interfaces should extend react functional component ([9c69320](https://github.com/telekom/telements/commit/9c6932018da57de6a0ed51c6aa9b820c5edc723e))
-* optional props ([4f09ebf](https://github.com/telekom/telements/commit/4f09ebff1ac59c82533a9b0c7d5713dcc7bf7513))
-* prop types ([2a6443e](https://github.com/telekom/telements/commit/2a6443e4bf49cfb75f518c8ba1958299aeb8212d))
-
+- add build output ([10fe013](https://github.com/telekom/telements/commit/10fe013d0305bbe4eb8983315454ee362b4df61a))
+- add styles props (css-in-js), allow not specified props (until spicified) ([f7677a4](https://github.com/telekom/telements/commit/f7677a41a29aa5bb1905be31f7edfca91d8f31dd))
+- build react wrappers ([15b6def](https://github.com/telekom/telements/commit/15b6def31600e07eef52feccbc0e26bc2503bf66))
+- cleanup ([cb61f54](https://github.com/telekom/telements/commit/cb61f547facbfde0458daa42b28b7c7dc4542401))
+- interfaces should extend react functional component ([9c69320](https://github.com/telekom/telements/commit/9c6932018da57de6a0ed51c6aa9b820c5edc723e))
+- optional props ([4f09ebf](https://github.com/telekom/telements/commit/4f09ebff1ac59c82533a9b0c7d5713dcc7bf7513))
+- prop types ([2a6443e](https://github.com/telekom/telements/commit/2a6443e4bf49cfb75f518c8ba1958299aeb8212d))
 
 ### Features
 
-* auto-generate react component wrappers and types from component docs; you'll need to build packages/components first ([65fca2a](https://github.com/telekom/telements/commit/65fca2a64bdc87f973834623413fd87f8a9d45bc))
-* react-wrapper init ([#117](https://github.com/telekom/telements/issues/117)) ([97a5f13](https://github.com/telekom/telements/commit/97a5f13664a084458d36c1f443443a690f1cd240))
-
-
-
-
+- auto-generate react component wrappers and types from component docs; you'll need to build packages/components first ([65fca2a](https://github.com/telekom/telements/commit/65fca2a64bdc87f973834623413fd87f8a9d45bc))
+- react-wrapper init ([#117](https://github.com/telekom/telements/issues/117)) ([97a5f13](https://github.com/telekom/telements/commit/97a5f13664a084458d36c1f443443a690f1cd240))
 
 ## [0.3.9](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.3.8...@telements/react-wrapper@0.3.9) (2020-03-02)
 
 **Note:** Version bump only for package @telements/react-wrapper
-
-
-
-
 
 ## [0.3.8](https://github.com/telekom/telements/compare/@telements/react-wrapper@0.3.7...@telements/react-wrapper@0.3.8) (2020-03-02)
 

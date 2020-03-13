@@ -64,24 +64,25 @@
 
   <h1>Components</h1>
   <h3>Text</h3>
-  <t-text>Hello</t-text>
+  <t-text data-sketch-symbol="Text">Hello</t-text>
 
   <h3>Icon</h3>
-  <t-icon
+  <t-icon data-sketch-symbol="Icon"
     path="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
   ></t-icon>
 
   <h3>Divider horizontal default</h3>
-  <t-divider></t-divider>
+  <t-divider data-sketch-symbol="Divider / Horizontal"></t-divider>
 
   <h3>Divider vertical</h3>
   <div style="height: 100px; margin: 1px">
-    <t-divider vertical="true"></t-divider>
+    <t-divider data-sketch-symbol="Text / Vertical" vertical="true"></t-divider>
   </div>
 
   <h3>Toast</h3>
 
   <t-toast
+    data-sketch-symbol="Toast"
     id="toast"
     opened="true"
   >
@@ -101,57 +102,61 @@
   </script>
 
   <h3 class="doc-title">Alert</h3>
-  <t-alert id="alert-without-timeout" opened="true" variant="primary" title="Help!" icon="!">
+    <t-alert
+        data-sketch-symbol="Alert"
+        opened="true"
+        variant="primary"
+        title="Help!"
+        icon="!"
+    >
     This is only a warning - for your information!
     <div slot="close">Close</div>
   </t-alert>
 
   <h3 class="doc-title">Button</h3>
-  <t-button>Label</t-button>
+  <t-button data-sketch-symbol="Button / Default">Label</t-button>
+  <t-button data-sketch-symbol="Button / Default">Label again</t-button>
   <h3 class="doc-title">Button - disabled</h3>
-  <t-button disabled="true">Label</t-button>
+  <t-button data-sketch-symbol="Button / Disabled" disabled="true">Label</t-button>
 
   <h3 class="doc-title">Card</h3>
-  <t-card>A title</t-card>
+  <t-card data-sketch-symbol="Card / Default">A title</t-card>
 
   <h3 class="doc-title">Card with header</h3>
-  <t-card>
+  <t-card data-sketch-symbol="Card / Card with Header">
     <div slot="header">Header content</div>
     A title
   </t-card>
 
   <h3 class="doc-title">Card with footer</h3>
-  <t-card>
+  <t-card data-sketch-symbol="Card / Card with Footer">
     A title
     <div slot="footer">Footer content</div>
   </t-card>
 
   <h3 class="doc-title">Input text</h3>
-  <t-input></t-input>
+  <t-input data-sketch-symbol="Input / Text"></t-input>
 
   <h3 class="doc-title">Input email</h3>
-  <t-input type="email"></t-input>
+  <t-input data-sketch-symbol="Input / Email" type="email"></t-input>
 
   <h3 class="doc-title">Input number</h3>
-  <t-input type="number"></t-input>
+  <t-input data-sketch-symbol="Input / Number" type="number"></t-input>
 
   <h3 class="doc-title">Input password</h3>
-  <t-input type="password"></t-input>
+  <t-input data-sketch-symbol="Input / Password" type="password"></t-input>
 
   <h3 class="doc-title">Input tel</h3>
-  <t-input type="tel"></t-input>
+  <t-input data-sketch-symbol="Input / Telephone" type="tel"></t-input>
 
   <h3 class="doc-title">Input url</h3>
-  <t-input type="url"></t-input>
-
-  <h3 class="doc-title">Input hidden</h3>
-  <t-input type="hidden"></t-input>
+  <t-input data-sketch-symbol="Input / Url" type="url"></t-input>
 
   <h3 class="doc-title">Input group</h3>
-  <t-input-group>
-    <t-input-label>Label</t-input-label>
-    <t-input></t-input>
-    <t-input-error>Error</t-input-error>
+  <t-input-group data-sketch-symbol="Input Group / Default">
+    <t-input-label data-sketch-symbol="Input Label / Default">Label</t-input-label>
+    <t-input data-sketch-symbol="Input / Text"></t-input>
+    <t-input-error data-sketch-symbol="Input Error / Default">Error</t-input-error>
   </t-input-group>
 
   <h3 class="doc-title">Tag</h3>

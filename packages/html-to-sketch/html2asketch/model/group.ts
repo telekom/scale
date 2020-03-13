@@ -5,14 +5,20 @@ class Group extends Base {
   _y: any;
   _width: any;
   _height: any;
+  _isSymbol: boolean;
 
-  constructor({x, y, width, height, id}: any) {
+  constructor({x, y, width, height, id, isSymbol = false}: any) {
     super({id});
     this._class = 'group';
     this._x = x;
     this._y = y;
     this._width = width;
     this._height = height;
+    this._isSymbol = isSymbol;
+  }
+
+  setIsSymbol(isSymbol: boolean = false) {
+    this._isSymbol = isSymbol
   }
 
   toJSON() {
@@ -31,6 +37,7 @@ class Group extends Base {
     obj.clippingMaskMode = 0;
     obj.hasClippingMask = false;
     obj.windingRule = 1;
+    obj.isSymbol = this._isSymbol;
 
     return obj;
   }
