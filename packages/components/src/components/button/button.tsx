@@ -50,7 +50,11 @@ export class Button implements Base {
       <Host>
         <style>{this.stylesheet.toString()}</style>
         {!!this.href ? (
-          <a class={this.getCssClassMap()} href={this.href} target={this.target}>
+          <a
+            class={this.getCssClassMap()}
+            href={this.href}
+            target={this.target}
+          >
             <slot />
           </a>
         ) : (
