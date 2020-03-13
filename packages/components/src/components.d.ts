@@ -97,6 +97,10 @@ export namespace Components {
     */
     'enable': () => Promise<void>;
     /**
+    * (optional) Link button
+    */
+    'href'?: string;
+    /**
     * (optional) Button size
     */
     'size'?: string;
@@ -104,6 +108,10 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link target button
+    */
+    'target'?: string;
     /**
     * (optional) Button variant
     */
@@ -670,6 +678,10 @@ declare namespace LocalJSX {
     */
     'disabled'?: boolean;
     /**
+    * (optional) Link button
+    */
+    'href'?: string;
+    /**
     * (optional) Button size
     */
     'size'?: string;
@@ -677,6 +689,10 @@ declare namespace LocalJSX {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link target button
+    */
+    'target'?: string;
     /**
     * (optional) Button variant
     */

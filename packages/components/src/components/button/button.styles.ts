@@ -2,6 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   button: {
+    boxSizing: 'border-box',
     position: 'relative',
     display: 'inline-flex',
     justifyContent: 'center',
@@ -24,6 +25,7 @@ export const styles: JssStyle = {
     letterSpacing: 0,
     transition: 'all 0.2s ease-in-out',
     height: '40px',
+    textDecoration: 'none',
     '&:before': {
       width: 0,
       content: '"',

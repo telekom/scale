@@ -29,7 +29,7 @@
     "verify": "yarn format && yarn lint:fix"
   },
   "devDependencies": {
-    "@stencil/core": "^1.8.5",
+    "@stencil/core": "1.8.11",
     "@types/jest": "24.0.25",
     "@types/lodash": "^4.14.149",
     "@types/puppeteer": "1.20.3",
@@ -46,6 +46,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@stencil/core": "1.8.11",
     "@types/classnames": "^2.2.8",
     "classnames": "^2.2.6"
   }

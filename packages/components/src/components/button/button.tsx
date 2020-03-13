@@ -19,6 +19,10 @@ export class Button implements Base {
   @Prop() variant?: string = '';
   /** (optional) Disabled button */
   @Prop() disabled?: boolean = false;
+  /** (optional) Link button */
+  @Prop() href?: string = '';
+  /** (optional) Link target button */
+  @Prop() target?: string = '_self';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -45,9 +49,15 @@ export class Button implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <button class={this.getCssClassMap()} disabled={this.disabled}>
-          <slot />
-        </button>
+        {!!this.href ? (
+          <a class={this.getCssClassMap()} href={this.href} target={this.target}>
+            <slot />
+          </a>
+        ) : (
+          <button class={this.getCssClassMap()} disabled={this.disabled}>
+            <slot />
+          </button>
+        )}
       </Host>
     );
   }
