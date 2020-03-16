@@ -10,7 +10,7 @@
         "test:unit": "vue-cli-service test:unit"
     },
     "dependencies": {
-        "@scale/components": "^0.1.2",
+        "@scale/components": "^0.0.1",
         "core-js": "^2.6.5",
         "vue": "^2.6.10",
         "vue-class-component": "^7.0.2",

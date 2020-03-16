@@ -4,7 +4,7 @@
     "private": true,
     "main": "dist/index.js",
     "dependencies": {
-        "@scale/components": "0.2.1",
+        "@scale/components": "^0.0.1",
         "@types/jest": "24.0.13",
         "@types/node": "12.0.2",
         "@types/react": "16.8.18",
