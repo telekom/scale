@@ -52,4 +52,3 @@ We strongly recommend that the community help us make improvements and determine
 ##### Development Tooling
 
 We strongly recommend you use the `VSCode text editor` since most of our code is written in `Typescript` and it offers amazing support for the language.
-
