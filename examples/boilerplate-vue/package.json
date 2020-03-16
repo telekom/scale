@@ -1,5 +1,5 @@
 {
-    "name": "@telements/boilerplate-vue",
+    "name": "@scale/boilerplate-vue",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -10,7 +10,7 @@
         "test:unit": "vue-cli-service test:unit"
     },
     "dependencies": {
-        "@telements/components": "^0.1.2",
+        "@scale/components": "^0.1.2",
         "core-js": "^2.6.5",
         "vue": "^2.6.10",
         "vue-class-component": "^7.0.2",

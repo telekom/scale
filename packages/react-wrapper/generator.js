@@ -1,6 +1,6 @@
 const fs = require('fs')
 const _ = require('lodash')
-const docs = require('../components/dist/telements-components.json')
+const docs = require('../components/dist/scale-components.json')
 
 function capitalizeFirst (string) {
   return string.charAt(0).toUpperCase() + string.slice(1)

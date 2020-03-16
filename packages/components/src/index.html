@@ -8,8 +8,8 @@
     />
     <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/telements-components.esm.js"></script>
-    <script nomodule src="/build/telements-components.js"></script>
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
     <style>
       html {
         margin: 0;
@@ -28,7 +28,7 @@
       }
     </style>
     <script>
-      window.telements = {
+      window.scale = {
         theme: {
           Alert: {
             'alert--variant-primary': {
@@ -44,26 +44,36 @@
   <body>
     <h1>Components</h1>
 
+    <h3>Button Default</h3>
+    <scale-button>
+      Hello
+    </scale-button>
+
+    <h3>Button Link</h3>
+    <scale-button href="http://google.com" target="_blank">
+      Hello
+    </scale-button>
+
     <h3>Text</h3>
-    <t-text>Hello</t-text>
+    <scale-text>Hello</scale-text>
 
     <h3>Icon</h3>
-    <t-icon
+    <scale-icon
       path="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
-    ></t-icon>
+    ></scale-icon>
 
     <h3>Divider horizontal default</h3>
-    <t-divider></t-divider>
+    <scale-divider></scale-divider>
 
     <h3>Divider vertical</h3>
     <div style="height: 100px; margin: 1px">
-      <t-divider vertical="true"></t-divider>
+      <scale-divider vertical="true"></scale-divider>
     </div>
 
     <h3>Toast</h3>
 
-    <t-button id="show-toast-auto-hide">show toast</t-button>
-    <t-toast
+    <scale-button id="show-toast-auto-hide">show toast</scale-button>
+    <scale-toast
       id="enabled-toast-auto-hide"
       auto-hide="3000"
       position-top="36"
@@ -71,7 +81,7 @@
       fade-duration="500"
     >
       With auto hide
-    </t-toast>
+    </scale-toast>
     <script>
       const showToastAutoHide = document.getElementById('show-toast-auto-hide');
       const enabledToastAutoHide = document.getElementById(
@@ -85,15 +95,15 @@
       });
     </script>
 
-    <t-button id="show-toast">show toast</t-button>
-    <t-toast
+    <scale-button id="show-toast">show toast</scale-button>
+    <scale-toast
       id="enabled-toast"
       position-top="154"
       position-right="36"
       fade-duration="500"
     >
       No auto hide
-    </t-toast>
+    </scale-toast>
     <script>
       const showToast = document.getElementById('show-toast');
       const enabledToast = document.getElementById('enabled-toast');
@@ -106,13 +116,13 @@
     </script>
 
     <h3>Alert</h3>
-    <t-button id="show-alert-btn-without-timeout"
+    <scale-button id="show-alert-btn-without-timeout"
       >show alert without timeout
-    </t-button>
-    <t-alert id="alert-without-timeout" variant="primary" title="Help!" icon="!">
+    </scale-button>
+    <scale-alert id="alert-without-timeout" variant="primary" title="Help!" icon="!">
       This is only a warning - for your information!
       <div slot="close">Close</div>
-    </t-alert>
+    </scale-alert>
     <script>
       const showAlertWithout = document.querySelector(
         '#show-alert-btn-without-timeout'
@@ -125,10 +135,10 @@
     </script>
 
     <h3>Alert with default timeout</h3>
-    <t-button id="show-alert-btn-with-default-timeout"
+    <scale-button id="show-alert-btn-with-default-timeout"
       >show alert with default timeout
-    </t-button>
-    <t-alert
+    </scale-button>
+    <scale-alert
       id="alert-with-default-timeout"
       variant="danger"
       title="Help!"
@@ -137,7 +147,7 @@
       timeout="true"
     >
       This is only a warning - for your information!
-    </t-alert>
+    </scale-alert>
 
     <script>
       const showAlert = document.querySelector(
@@ -148,10 +158,10 @@
     </script>
 
     <h3>Alert with custom timeout</h3>
-    <t-button id="show-alert-btn-with-custom-timeout"
+    <scale-button id="show-alert-btn-with-custom-timeout"
       >show alert with custom timeout
-    </t-button>
-    <t-alert
+    </scale-button>
+    <scale-alert
       id="alert-with-custom-timeout"
       variant="danger"
       title="Help!"
@@ -159,7 +169,7 @@
       timeout="500"
     >
       This is only a warning - for your information!
-    </t-alert>
+    </scale-alert>
 
     <script>
       const showAlertWithCustom = document.querySelector(
@@ -175,13 +185,13 @@
     </script>
 
     <h3>Button</h3>
-    <t-button>Label</t-button>
+    <scale-button>Label</scale-button>
     <h3>Button - disabled</h3>
-    <t-button disabled="true">Label</t-button>
+    <scale-button disabled="true">Label</scale-button>
 
     <h3>Button - disabled (with method)</h3>
-    <t-button id="disable-button">Toggle disable Button</t-button>
-    <t-button id="button-disabled">Label</t-button>
+    <scale-button id="disable-button">Toggle disable Button</scale-button>
+    <scale-button id="button-disabled">Label</scale-button>
 
     <script>
       const buttonDisabled = document.getElementById('button-disabled');
@@ -194,131 +204,131 @@
     </script>
 
     <h3>Card</h3>
-    <t-card>A title</t-card>
+    <scale-card>A title</scale-card>
 
     <h3>Card with header</h3>
-    <t-card>
+    <scale-card>
       <h3 slot="header">Header content</h3>
       A title
-    </t-card>
+    </scale-card>
 
     <h3>Card with footer</h3>
-    <t-card>
+    <scale-card>
       A title
       <h3 slot="footer">Footer content</h3>
-    </t-card>
+    </scale-card>
 
     <h3>Card with image</h3>
-    <t-card image-top="http://placehold.it/400x300">A title</t-card>
+    <scale-card image-top="http://placehold.it/400x300">A title</scale-card>
     <h3>Card with image alt</h3>
-    <t-card
+    <scale-card
       image-top="http://placehold.it/400x300"
       image-top-alt="Image alt text"
-      >A title</t-card
+      >A title</scale-card
     >
 
     <h3>Input text</h3>
-    <t-input></t-input>
+    <scale-input></scale-input>
 
     <h3>Input email</h3>
-    <t-input type="email"></t-input>
+    <scale-input type="email"></scale-input>
 
     <h3>Input number</h3>
-    <t-input type="number"></t-input>
+    <scale-input type="number"></scale-input>
 
     <h3>Input password</h3>
-    <t-input type="password"></t-input>
+    <scale-input type="password"></scale-input>
 
     <h3>Input tel</h3>
-    <t-input type="tel"></t-input>
+    <scale-input type="tel"></scale-input>
 
     <h3>Input url</h3>
-    <t-input type="url"></t-input>
+    <scale-input type="url"></scale-input>
 
     <h3>Input hidden</h3>
-    <t-input type="hidden"></t-input>
+    <scale-input type="hidden"></scale-input>
 
     <h3>Input group</h3>
-    <t-input-group>
-      <t-input-label>Label</t-input-label>
-      <t-input></t-input>
-      <t-input-error>Error</t-input-error>
-    </t-input-group>
+    <scale-input-group>
+      <scale-input-label>Label</scale-input-label>
+      <scale-input></scale-input>
+      <scale-input-error>Error</scale-input-error>
+    </scale-input-group>
 
     <h3>Tag</h3>
-    <t-tag>This is a tag</t-tag>
+    <scale-tag>This is a tag</scale-tag>
     <h3>Tag - primary tag</h3>
-    <t-tag variant="primary">primary</t-tag>
+    <scale-tag variant="primary">primary</scale-tag>
     <h3>Tag - pill tag</h3>
-    <t-tag pill="true">Pill tag</t-tag>
+    <scale-tag pill="true">Pill tag</scale-tag>
     <h3>Tag - with link</h3>
-    <t-tag link="#">tag with link</t-tag>
+    <scale-tag link="#">tag with link</scale-tag>
 
     <h3>Badge</h3>
-    <t-badge>default</t-badge>
+    <scale-badge>default</scale-badge>
     <h3>Badge-primary</h3>
-    <t-badge variant="primary">Primary</t-badge>
+    <scale-badge variant="primary">Primary</scale-badge>
     <h3>Badge-pill</h3>
-    <t-badge pill="true">Pill</t-badge>
+    <scale-badge pill="true">Pill</scale-badge>
     <h3>Badge - with link</h3>
-    <t-badge link="#">badge with link</t-badge>
+    <scale-badge link="#">badge with link</scale-badge>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
-    <t-progress-bar
+    <scale-progress-bar
       percentage="30"
       variant="info"
       show-text="true"
       stroke-width="6"
-    ></t-progress-bar>
-    <t-progress-bar
+    ></scale-progress-bar>
+    <scale-progress-bar
       percentage="50"
       variant="danger"
       stroke-width="6"
       show-text="true"
-    ></t-progress-bar>
-    <t-progress-bar
+    ></scale-progress-bar>
+    <scale-progress-bar
       percentage="80"
       stroke-width="6"
       variant="warning"
       show-text="true"
-    ></t-progress-bar>
-    <t-progress-bar
+    ></scale-progress-bar>
+    <scale-progress-bar
       percentage="100"
       variant="success"
       stroke-width="6"
       show-text="true"
-    ></t-progress-bar>
+    ></scale-progress-bar>
     <h3>Progress bar - show progress percentage inside of bar</h3>
-    <t-progress-bar
+    <scale-progress-bar
       percentage="80"
       variant="info"
       text-inside="true"
       stroke-width="18"
-    ></t-progress-bar>
+    ></scale-progress-bar>
     <h3>Link</h3>
-    <t-link href="http://example.com" open-new-tab="true">default</t-link>
-    <t-link variant="primary">primary</t-link>
-    <t-link variant="success">success</t-link>
-    <t-link variant="warning">warning</t-link>
-    <t-link variant="danger">danger</t-link>
-    <t-link variant="info">info</t-link>
+    <scale-link href="http://example.com" open-new-tab="true">default</scale-link>
+    <scale-link variant="primary">primary</scale-link>
+    <scale-link variant="success">success</scale-link>
+    <scale-link variant="warning">warning</scale-link>
+    <scale-link variant="danger">danger</scale-link>
+    <scale-link variant="info">info</scale-link>
     <h3>Link disabled</h3>
-    <t-link href="http://example.com" disabled="true">default</t-link>
-    <t-link variant="primary" disabled="true">primary</t-link>
-    <t-link variant="success" disabled="true">success</t-link>
-    <t-link variant="warning" disabled="true">warning</t-link>
-    <t-link variant="danger" disabled="true">danger</t-link>
-    <t-link variant="info" disabled="true">info</t-link>
+    <scale-link href="http://example.com" disabled="true">default</scale-link>
+    <scale-link variant="primary" disabled="true">primary</scale-link>
+    <scale-link variant="success" disabled="true">success</scale-link>
+    <scale-link variant="warning" disabled="true">warning</scale-link>
+    <scale-link variant="danger" disabled="true">danger</scale-link>
+    <scale-link variant="info" disabled="true">info</scale-link>
     <h3>Link on hover with/without underline feature</h3>
-    <t-link underline="true">with underline</t-link>
-    <t-link>without underline</t-link>
+    <scale-link underline="true">with underline</scale-link>
+    <scale-link>without underline</scale-link>
     <h3>Modal with header</h3>
-    <t-button id="show-modal">
+    <scale-button id="show-modal">
       show modal
-    </t-button>
-    <t-modal id="modal-default" opened="false">
+    </scale-button>
+    <scale-modal id="modal-default" opened="false">
       <span slot="header">Header content</span> content in the modal slot
-    </t-modal>
+    </scale-modal>
 
     <script>
       const showModal = document.querySelector('#show-modal');
@@ -326,10 +336,10 @@
       showModal.addEventListener('click', () => !modal.opened && modal.open());
     </script>
     <h3>Modal without header</h3>
-    <t-button id="show-modal-without-header">
+    <scale-button id="show-modal-without-header">
       show modal without header
-    </t-button>
-    <t-modal id="modal-without-header" opened="false">content</t-modal>
+    </scale-button>
+    <scale-modal id="modal-without-header" opened="false">content</scale-modal>
     <script>
       const showModalWithoutHeader = document.querySelector(
         '#show-modal-without-header'
@@ -344,18 +354,18 @@
     </script>
 
     <h3>Modal with header and buttons</h3>
-    <t-button id="show-modal-with-header-and-buttons">
+    <scale-button id="show-modal-with-header-and-buttons">
       show modal with header and buttons
-    </t-button>
-    <t-modal id="modal-with-header-and-buttons" opened="false">
+    </scale-button>
+    <scale-modal id="modal-with-header-and-buttons" opened="false">
       <span slot="header">Header</span> content of the modal with header and
       buttons
       <span slot="close">Close</span>
       <span slot="modal-actions">
-        <t-button id="cancel-btn">cancel</t-button>
-        <t-button id="submit-btn">submit</t-button>
+        <scale-button id="cancel-btn">cancel</scale-button>
+        <scale-button id="submit-btn">submit</scale-button>
       </span>
-    </t-modal>
+    </scale-modal>
 
     <script>
       const showModalWithHeaderAndButtons = document.querySelector(
@@ -378,36 +388,36 @@
     </script>
 
     <h3>Switch</h3>
-    <t-switch></t-switch>
+    <scale-switch></scale-switch>
     <h3>Switch disabled</h3>
-    <t-switch active="true" disabled="true"></t-switch>
-    <t-switch active="false" disabled="true"></t-switch>
+    <scale-switch active="true" disabled="true"></scale-switch>
+    <scale-switch active="false" disabled="true"></scale-switch>
 
     <h3>Slider</h3>
-    <t-slider></t-slider>
+    <scale-slider></scale-slider>
     <h3>Slider - with label</h3>
-    <t-slider label></t-slider>
+    <scale-slider label></scale-slider>
     <h3>Slider - step 10</h3>
-    <t-slider label step="10"></t-slider>
+    <scale-slider label step="10"></scale-slider>
     <h3>Slider - min max</h3>
-    <t-slider label min="10" max="1000"></t-slider>
+    <scale-slider label min="10" max="1000"></scale-slider>
 
     <h3>Carousel - horizontal</h3>
-    <t-carousel>
+    <scale-carousel>
       <div slot="arrow-left">&larr;</div>
       <div><img src="http://placehold.it/400x300/d3dce6" /></div>
       <div><img src="http://placehold.it/400x300/99a9bf" /></div>
       <div><img src="http://placehold.it/400x300/d3dce6" /></div>
       <div><img src="http://placehold.it/400x300/99a9bf" /></div>
       <div slot="arrow-right">&rarr;</div>
-    </t-carousel>
+    </scale-carousel>
 
     <h3>Carousel - vertical</h3>
-    <t-carousel vertical>
+    <scale-carousel vertical>
       <div><img src="http://placehold.it/400x300/d3dce6" /></div>
       <div><img src="http://placehold.it/400x300/99a9bf" /></div>
       <div><img src="http://placehold.it/400x300/d3dce6" /></div>
       <div><img src="http://placehold.it/400x300/99a9bf" /></div>
-    </t-carousel>
+    </scale-carousel>
   </body>
 </html>

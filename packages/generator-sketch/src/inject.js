@@ -1,9 +1,9 @@
-const nodeTreeToSketchPage = require('@telements/html-to-sketch').nodeTreeToSketchPage;
+const nodeTreeToSketchPage = require('@scale/html-to-sketch').nodeTreeToSketchPage;
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 const URL = require('url').URL;
-const DEBUG = false
+const DEBUG = true
 
 const url = 'http://localhost:3334/';
 let urlObj = null;

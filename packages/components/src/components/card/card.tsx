@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-card',
+  tag: 'scale-card',
   shadow: true,
 })
 export class Card implements Base {

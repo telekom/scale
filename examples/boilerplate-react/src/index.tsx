@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { defineCustomElements, JSX as EnhancedJSX } from '@telements/components/loader';
+import { defineCustomElements, JSX as EnhancedJSX } from '@scale/components/loader';
 import App from './App';
 import './index.css';
 

@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-input-label',
+  tag: 'scale-input-label',
   shadow: true,
 })
 export class InputLabel implements Base {

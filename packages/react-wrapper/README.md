@@ -1,1 +1,1 @@
-# React Wrapper for telements web-components
+# React Wrapper for scale web-components

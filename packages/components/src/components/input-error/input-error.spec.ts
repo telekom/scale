@@ -13,7 +13,7 @@ describe('Input Error', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [InputError],
-      html: `<t-input-error>Error</t-input-error>`,
+      html: `<scale-input-error>Error</scale-input-error>`,
     });
     expect(page.root).toMatchSnapshot();
   });

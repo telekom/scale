@@ -14,7 +14,7 @@ describe('Divider', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Divider],
-      html: `<t-divider></t-divider>`,
+      html: `<scale-divider></scale-divider>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('Divider', () => {
   it('should match snapshot when horizontal false', async () => {
     const page = await newSpecPage({
       components: [Divider],
-      html: `<t-divider vertical=true></t-divider>`,
+      html: `<scale-divider vertical=true></scale-divider>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();

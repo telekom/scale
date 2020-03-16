@@ -1,5 +1,5 @@
 {
-    "name": "telements",
+    "name": "scale",
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
@@ -14,10 +14,10 @@
     "scripts": {
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
-        "build:components": "yarn workspace @telements/components build",
-        "watch:components": "yarn workspace @telements/components start",
+        "build:components": "yarn workspace @scale/components build",
+        "watch:components": "yarn workspace @scale/components start",
         "bootstrap": "lerna bootstrap",
-        "test": "lerna run test --scope=@telements",
+        "test": "lerna run test --scope=@scale",
         "new-version": "lerna version --conventional-commits --yes"
     },
     "devDependencies": {

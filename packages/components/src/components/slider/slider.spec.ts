@@ -13,7 +13,7 @@ describe('Slider', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Slider],
-      html: `<t-slider>Label</t-slider>`,
+      html: `<scale-slider>Label</scale-slider>`,
     });
     expect(page.root).toMatchSnapshot();
   });

@@ -16,7 +16,7 @@ describe('Modal', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Modal],
-      html: `<t-modal>Label</t-modal>`,
+      html: `<scale-modal>Label</scale-modal>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -25,10 +25,10 @@ describe('Modal', () => {
     const page = await newSpecPage({
       components: [Modal],
       html: `
-			<t-modal>
+			<scale-modal>
 				<span slot="header">Header content</span>
 				A title
-			</t-modal>
+			</scale-modal>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -38,10 +38,10 @@ describe('Modal', () => {
     const page = await newSpecPage({
       components: [Modal],
       html: `
-			<t-modal>
+			<scale-modal>
 				<span slot="modal-actions">Action buttons</span>
 				Content
-			</t-modal>
+			</scale-modal>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -51,10 +51,10 @@ describe('Modal', () => {
     const page = await newSpecPage({
       components: [Modal],
       html: `
-			<t-modal>
+			<scale-modal>
 				<span slot="close">Close</span>
 				Content
-			</t-modal>
+			</scale-modal>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('Modal', () => {
   it('should match snapshot when opened', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-modal opened=true>Label</t-modal>`,
+      html: `<scale-modal opened=true>Label</scale-modal>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();

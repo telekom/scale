@@ -16,7 +16,7 @@ export type InputTypes =
   | 'url';
 
 @Component({
-  tag: 't-input',
+  tag: 'scale-input',
   shadow: true,
 })
 export class Input implements Base {

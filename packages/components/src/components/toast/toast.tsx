@@ -16,7 +16,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-toast',
+  tag: 'scale-toast',
   shadow: true,
 })
 export class Toast implements Base {

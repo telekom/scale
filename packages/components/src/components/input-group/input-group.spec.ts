@@ -13,7 +13,7 @@ describe('Input Group', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [InputGroup],
-      html: `<t-input-group>Label</t-input-group>`,
+      html: `<scale-input-group>Label</scale-input-group>`,
     });
     expect(page.root).toMatchSnapshot();
   });

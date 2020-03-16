@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyleSheet } from 'jss'
 import WebComponentWrapper from './Wrapper'
 
-interface AlertProps {
+interface ScaleAlertProps {
   // Web-component props
   customClass?: string
   headline: string
@@ -17,10 +17,10 @@ interface AlertProps {
   [key: string]: any
 }
 
-const Alert: React.FunctionComponent<AlertProps> = props => (
-  <WebComponentWrapper component='t-alert' {...props} />
+const ScaleAlert: React.FunctionComponent<ScaleAlertProps> = props => (
+  <WebComponentWrapper component='scale-alert' {...props} />
 )
-interface BadgeProps {
+interface ScaleBadgeProps {
   // Web-component props
   customClass?: string
   link?: string
@@ -33,25 +33,27 @@ interface BadgeProps {
   [key: string]: any
 }
 
-const Badge: React.FunctionComponent<BadgeProps> = props => (
-  <WebComponentWrapper component='t-badge' {...props} />
+const ScaleBadge: React.FunctionComponent<ScaleBadgeProps> = props => (
+  <WebComponentWrapper component='scale-badge' {...props} />
 )
-interface ButtonProps {
+interface ScaleButtonProps {
   // Web-component props
   customClass?: string
   disabled?: boolean
+  href?: string
   size?: string
   styles?: StyleSheet<string | number | symbol>
+  target?: string
   variant?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
 
-const Button: React.FunctionComponent<ButtonProps> = props => (
-  <WebComponentWrapper component='t-button' {...props} />
+const ScaleButton: React.FunctionComponent<ScaleButtonProps> = props => (
+  <WebComponentWrapper component='scale-button' {...props} />
 )
-interface CardProps {
+interface ScaleCardProps {
   // Web-component props
   customClass?: string
   imageTop?: string
@@ -64,10 +66,10 @@ interface CardProps {
   [key: string]: any
 }
 
-const Card: React.FunctionComponent<CardProps> = props => (
-  <WebComponentWrapper component='t-card' {...props} />
+const ScaleCard: React.FunctionComponent<ScaleCardProps> = props => (
+  <WebComponentWrapper component='scale-card' {...props} />
 )
-interface CarouselProps {
+interface ScaleCarouselProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -77,10 +79,10 @@ interface CarouselProps {
   [key: string]: any
 }
 
-const Carousel: React.FunctionComponent<CarouselProps> = props => (
-  <WebComponentWrapper component='t-carousel' {...props} />
+const ScaleCarousel: React.FunctionComponent<ScaleCarouselProps> = props => (
+  <WebComponentWrapper component='scale-carousel' {...props} />
 )
-interface DividerProps {
+interface ScaleDividerProps {
   // Web-component props
   customClass?: string
   size?: string
@@ -91,10 +93,10 @@ interface DividerProps {
   [key: string]: any
 }
 
-const Divider: React.FunctionComponent<DividerProps> = props => (
-  <WebComponentWrapper component='t-divider' {...props} />
+const ScaleDivider: React.FunctionComponent<ScaleDividerProps> = props => (
+  <WebComponentWrapper component='scale-divider' {...props} />
 )
-interface IconProps {
+interface ScaleIconProps {
   // Web-component props
   customClass?: string
   name: string
@@ -105,10 +107,10 @@ interface IconProps {
   [key: string]: any
 }
 
-const Icon: React.FunctionComponent<IconProps> = props => (
-  <WebComponentWrapper component='t-icon' {...props} />
+const ScaleIcon: React.FunctionComponent<ScaleIconProps> = props => (
+  <WebComponentWrapper component='scale-icon' {...props} />
 )
-interface InputProps {
+interface ScaleInputProps {
   // Web-component props
   customClass?: string
   errorMessage?: string
@@ -124,14 +126,14 @@ interface InputProps {
   [key: string]: any
 }
 
-const Input: React.FunctionComponent<InputProps> = props => (
+const ScaleInput: React.FunctionComponent<ScaleInputProps> = props => (
   <WebComponentWrapper
     events={{ onChanged: 'changed' }}
-    component='t-input'
+    component='scale-input'
     {...props}
   />
 )
-interface InputErrorProps {
+interface ScaleInpuerrorProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -140,10 +142,10 @@ interface InputErrorProps {
   [key: string]: any
 }
 
-const InputError: React.FunctionComponent<InputErrorProps> = props => (
-  <WebComponentWrapper component='t-input-error' {...props} />
+const ScaleInpuerror: React.FunctionComponent<ScaleInpuerrorProps> = props => (
+  <WebComponentWrapper component='scale-input-error' {...props} />
 )
-interface InputGroupProps {
+interface ScaleInpugroupProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -152,10 +154,10 @@ interface InputGroupProps {
   [key: string]: any
 }
 
-const InputGroup: React.FunctionComponent<InputGroupProps> = props => (
-  <WebComponentWrapper component='t-input-group' {...props} />
+const ScaleInpugroup: React.FunctionComponent<ScaleInpugroupProps> = props => (
+  <WebComponentWrapper component='scale-input-group' {...props} />
 )
-interface InputLabelProps {
+interface ScaleInpulabelProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -164,10 +166,10 @@ interface InputLabelProps {
   [key: string]: any
 }
 
-const InputLabel: React.FunctionComponent<InputLabelProps> = props => (
-  <WebComponentWrapper component='t-input-label' {...props} />
+const ScaleInpulabel: React.FunctionComponent<ScaleInpulabelProps> = props => (
+  <WebComponentWrapper component='scale-input-label' {...props} />
 )
-interface LinkProps {
+interface ScaleLinkProps {
   // Web-component props
   customClass?: string
   disabled?: boolean
@@ -181,10 +183,10 @@ interface LinkProps {
   [key: string]: any
 }
 
-const Link: React.FunctionComponent<LinkProps> = props => (
-  <WebComponentWrapper component='t-link' {...props} />
+const ScaleLink: React.FunctionComponent<ScaleLinkProps> = props => (
+  <WebComponentWrapper component='scale-link' {...props} />
 )
-interface ModalProps {
+interface ScaleModalProps {
   // Web-component props
   customClass?: string
   opened?: boolean
@@ -196,10 +198,10 @@ interface ModalProps {
   [key: string]: any
 }
 
-const Modal: React.FunctionComponent<ModalProps> = props => (
-  <WebComponentWrapper component='t-modal' {...props} />
+const ScaleModal: React.FunctionComponent<ScaleModalProps> = props => (
+  <WebComponentWrapper component='scale-modal' {...props} />
 )
-interface ProgressBarProps {
+interface ScaleProgressBarProps {
   // Web-component props
   customClass?: string
   percentage: number
@@ -213,10 +215,10 @@ interface ProgressBarProps {
   [key: string]: any
 }
 
-const ProgressBar: React.FunctionComponent<ProgressBarProps> = props => (
-  <WebComponentWrapper component='t-progress-bar' {...props} />
+const ScaleProgressBar: React.FunctionComponent<ScaleProgressBarProps> = props => (
+  <WebComponentWrapper component='scale-progress-bar' {...props} />
 )
-interface SliderProps {
+interface ScaleSliderProps {
   // Web-component props
   customClass?: string
   label: boolean
@@ -230,10 +232,10 @@ interface SliderProps {
   [key: string]: any
 }
 
-const Slider: React.FunctionComponent<SliderProps> = props => (
-  <WebComponentWrapper component='t-slider' {...props} />
+const ScaleSlider: React.FunctionComponent<ScaleSliderProps> = props => (
+  <WebComponentWrapper component='scale-slider' {...props} />
 )
-interface SwitchProps {
+interface ScaleSwitchProps {
   // Web-component props
   active?: boolean
   customClass?: string
@@ -244,10 +246,10 @@ interface SwitchProps {
   [key: string]: any
 }
 
-const Switch: React.FunctionComponent<SwitchProps> = props => (
-  <WebComponentWrapper component='t-switch' {...props} />
+const ScaleSwitch: React.FunctionComponent<ScaleSwitchProps> = props => (
+  <WebComponentWrapper component='scale-switch' {...props} />
 )
-interface TagProps {
+interface ScaleTagProps {
   // Web-component props
   customClass?: string
   link?: string
@@ -259,10 +261,10 @@ interface TagProps {
   [key: string]: any
 }
 
-const Tag: React.FunctionComponent<TagProps> = props => (
-  <WebComponentWrapper component='t-tag' {...props} />
+const ScaleTag: React.FunctionComponent<ScaleTagProps> = props => (
+  <WebComponentWrapper component='scale-tag' {...props} />
 )
-interface TextProps {
+interface ScaleTextProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -271,10 +273,10 @@ interface TextProps {
   [key: string]: any
 }
 
-const Text: React.FunctionComponent<TextProps> = props => (
-  <WebComponentWrapper component='t-text' {...props} />
+const ScaleText: React.FunctionComponent<ScaleTextProps> = props => (
+  <WebComponentWrapper component='scale-text' {...props} />
 )
-interface ToastProps {
+interface ScaleToastProps {
   // Web-component props
   animated?: boolean
   autoHide?: boolean | number
@@ -292,28 +294,28 @@ interface ToastProps {
   [key: string]: any
 }
 
-const Toast: React.FunctionComponent<ToastProps> = props => (
-  <WebComponentWrapper component='t-toast' {...props} />
+const ScaleToast: React.FunctionComponent<ScaleToastProps> = props => (
+  <WebComponentWrapper component='scale-toast' {...props} />
 )
 
 export {
-  Alert,
-  Badge,
-  Button,
-  Card,
-  Carousel,
-  Divider,
-  Icon,
-  Input,
-  InputError,
-  InputGroup,
-  InputLabel,
-  Link,
-  Modal,
-  ProgressBar,
-  Slider,
-  Switch,
-  Tag,
-  Text,
-  Toast
+  ScaleAlert,
+  ScaleBadge,
+  ScaleButton,
+  ScaleCard,
+  ScaleCarousel,
+  ScaleDivider,
+  ScaleIcon,
+  ScaleInput,
+  ScaleInpuerror,
+  ScaleInpugroup,
+  ScaleInpulabel,
+  ScaleLink,
+  ScaleModal,
+  ScaleProgressBar,
+  ScaleSlider,
+  ScaleSwitch,
+  ScaleTag,
+  ScaleText,
+  ScaleToast
 }

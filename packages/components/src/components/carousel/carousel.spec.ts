@@ -14,7 +14,7 @@ describe('Carousel', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Carousel],
-      html: `<t-carousel>Label</t-carousel>`,
+      html: `<scale-carousel>Label</scale-carousel>`,
     });
     expect(page.root).toMatchSnapshot();
   });

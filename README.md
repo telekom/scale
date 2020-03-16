@@ -1,10 +1,10 @@
-![Telements](assets/telements-banner-ascii-light.jpg)
+![Scale](assets/scale-banner-ascii-light.jpg)
 
-The `telements` library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
+The `scale` library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
 
-![Telements badge](https://img.shields.io/badge/telekom-telements-%23e20074.svg) ![GitHub License](https://img.shields.io/github/license/telekom/telements.svg?style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/telekom/telements.svg?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/telekom/telements.svg?style=flat-square)
+![Scale badge](https://img.shields.io/badge/telekom-scale-%23e20074.svg) ![GitHub License](https://img.shields.io/github/license/telekom/scale.svg?style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/telekom/scale.svg?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/telekom/scale.svg?style=flat-square)
 
-## Telements Monorepo
+## Scale Monorepo
 
 ### Setup
 
@@ -16,8 +16,8 @@ This repository uses `yarn workspaces` and `typescript`
 
 ```bash
 cd path-to/folder-name
-git clone git@github.com:telekom/telements.git
-cd telements
+git clone git@github.com:telekom/scale.git
+cd scale
 git checkout development
 ```
 
@@ -68,13 +68,13 @@ You can find some demos in the `./examples` directory
 
 We strongly recommend that the community help us make improvements and determine the future direction of the library. To report bugs within this package, please create an issue in this repository.
 
-#### Telements Contribution Guide
+#### Scale Contribution Guide
 
-We welcome contributions from anyone on the internet and are grateful for even the smallest contributions. This document will help get you setup to start contributing back to `telements`.
+We welcome contributions from anyone on the internet and are grateful for even the smallest contributions. This document will help get you setup to start contributing back to `scale`.
 
 ##### Getting started
 
-1. Fork `telekom/telements`
+1. Fork `telekom/scale`
 2. Clone your fork
 3. Follow the installation & build steps in the repo's top-level README.
 4. Setup the recommended Development Tooling.

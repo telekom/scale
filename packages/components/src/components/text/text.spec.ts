@@ -13,7 +13,7 @@ describe('Text', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Text],
-      html: `<t-text>Label</t-text>`,
+      html: `<scale-text>Label</scale-text>`,
     });
     expect(page.root).toMatchSnapshot();
   });

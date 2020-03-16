@@ -14,7 +14,7 @@ describe('ProgressBar', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
-      html: `<t-progress-bar>Label</t-progress-bar>`,
+      html: `<scale-progress-bar>Label</scale-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('ProgressBar', () => {
   it('should have css property width 24px when stroke width is set to 24', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
-      html: `<t-progress-bar stroke-width=24>Label</t-progress-bar>`,
+      html: `<scale-progress-bar stroke-width=24>Label</scale-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -30,7 +30,7 @@ describe('ProgressBar', () => {
   it('should contain progress-bar-text css class when show text is set true', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
-      html: `<t-progress-bar show-text=true>Label</t-progress-bar>`,
+      html: `<scale-progress-bar show-text=true>Label</scale-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -38,7 +38,7 @@ describe('ProgressBar', () => {
   it('should contain progress-bar-inner-text css class when text inside is set true', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
-      html: `<t-progress-bar text-inside=true>Label</t-progress-bar>`,
+      html: `<scale-progress-bar text-inside=true>Label</scale-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
   });

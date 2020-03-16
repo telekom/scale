@@ -15,7 +15,7 @@ import {
 } from './components/input/input';
 
 export namespace Components {
-  interface TAlert {
+  interface ScaleAlert {
     /**
     * (optional) Alert class
     */
@@ -53,7 +53,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TBadge {
+  interface ScaleBadge {
     /**
     * (optional) Badge class
     */
@@ -79,7 +79,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TButton {
+  interface ScaleButton {
     /**
     * (optional) Button class
     */
@@ -117,7 +117,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TCard {
+  interface ScaleCard {
     /**
     * (optional) Card class
     */
@@ -143,7 +143,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TCarousel {
+  interface ScaleCarousel {
     /**
     * (optional) Carousel class
     */
@@ -157,7 +157,7 @@ export namespace Components {
     */
     'vertical'?: boolean;
   }
-  interface TDivider {
+  interface ScaleDivider {
     /**
     * (optional) Divider class
     */
@@ -175,7 +175,7 @@ export namespace Components {
     */
     'vertical'?: boolean;
   }
-  interface TIcon {
+  interface ScaleIcon {
     /**
     * (optional) Tag class
     */
@@ -190,7 +190,7 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
   }
-  interface TInput {
+  interface ScaleInput {
     /**
     * (optional) Input text class
     */
@@ -216,7 +216,7 @@ export namespace Components {
     */
     'value'?: string;
   }
-  interface TInputError {
+  interface ScaleInputError {
     /**
     * (optional) Input text class
     */
@@ -226,7 +226,7 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
   }
-  interface TInputGroup {
+  interface ScaleInputGroup {
     /**
     * (optional) Input text class
     */
@@ -236,7 +236,7 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
   }
-  interface TInputLabel {
+  interface ScaleInputLabel {
     /**
     * (optional) Input text class
     */
@@ -246,7 +246,7 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
   }
-  interface TLink {
+  interface ScaleLink {
     /**
     * (optional) Link class
     */
@@ -276,7 +276,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TModal {
+  interface ScaleModal {
     /**
     * Modal method: onCloseModal()
     */
@@ -306,7 +306,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TProgressBar {
+  interface ScaleProgressBar {
     /**
     * (optional) Progress bar class
     */
@@ -336,7 +336,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TSlider {
+  interface ScaleSlider {
     /**
     * (optional) Slider class
     */
@@ -366,7 +366,7 @@ export namespace Components {
     */
     'value': number;
   }
-  interface TSwitch {
+  interface ScaleSwitch {
     /**
     * (optional) Active switch
     */
@@ -384,7 +384,7 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
   }
-  interface TTag {
+  interface ScaleTag {
     /**
     * (optional) Tag class
     */
@@ -406,7 +406,7 @@ export namespace Components {
     */
     'variant'?: string;
   }
-  interface TText {
+  interface ScaleText {
     /**
     * (optional) Tag class
     */
@@ -416,7 +416,7 @@ export namespace Components {
     */
     'styles'?: StyleSheet;
   }
-  interface TToast {
+  interface ScaleToast {
     /**
     * (optional) Animated toast
     */
@@ -471,144 +471,144 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLTAlertElement extends Components.TAlert, HTMLStencilElement {}
-  var HTMLTAlertElement: {
-    prototype: HTMLTAlertElement;
-    new (): HTMLTAlertElement;
+  interface HTMLScaleAlertElement extends Components.ScaleAlert, HTMLStencilElement {}
+  var HTMLScaleAlertElement: {
+    prototype: HTMLScaleAlertElement;
+    new (): HTMLScaleAlertElement;
   };
 
-  interface HTMLTBadgeElement extends Components.TBadge, HTMLStencilElement {}
-  var HTMLTBadgeElement: {
-    prototype: HTMLTBadgeElement;
-    new (): HTMLTBadgeElement;
+  interface HTMLScaleBadgeElement extends Components.ScaleBadge, HTMLStencilElement {}
+  var HTMLScaleBadgeElement: {
+    prototype: HTMLScaleBadgeElement;
+    new (): HTMLScaleBadgeElement;
   };
 
-  interface HTMLTButtonElement extends Components.TButton, HTMLStencilElement {}
-  var HTMLTButtonElement: {
-    prototype: HTMLTButtonElement;
-    new (): HTMLTButtonElement;
+  interface HTMLScaleButtonElement extends Components.ScaleButton, HTMLStencilElement {}
+  var HTMLScaleButtonElement: {
+    prototype: HTMLScaleButtonElement;
+    new (): HTMLScaleButtonElement;
   };
 
-  interface HTMLTCardElement extends Components.TCard, HTMLStencilElement {}
-  var HTMLTCardElement: {
-    prototype: HTMLTCardElement;
-    new (): HTMLTCardElement;
+  interface HTMLScaleCardElement extends Components.ScaleCard, HTMLStencilElement {}
+  var HTMLScaleCardElement: {
+    prototype: HTMLScaleCardElement;
+    new (): HTMLScaleCardElement;
   };
 
-  interface HTMLTCarouselElement extends Components.TCarousel, HTMLStencilElement {}
-  var HTMLTCarouselElement: {
-    prototype: HTMLTCarouselElement;
-    new (): HTMLTCarouselElement;
+  interface HTMLScaleCarouselElement extends Components.ScaleCarousel, HTMLStencilElement {}
+  var HTMLScaleCarouselElement: {
+    prototype: HTMLScaleCarouselElement;
+    new (): HTMLScaleCarouselElement;
   };
 
-  interface HTMLTDividerElement extends Components.TDivider, HTMLStencilElement {}
-  var HTMLTDividerElement: {
-    prototype: HTMLTDividerElement;
-    new (): HTMLTDividerElement;
+  interface HTMLScaleDividerElement extends Components.ScaleDivider, HTMLStencilElement {}
+  var HTMLScaleDividerElement: {
+    prototype: HTMLScaleDividerElement;
+    new (): HTMLScaleDividerElement;
   };
 
-  interface HTMLTIconElement extends Components.TIcon, HTMLStencilElement {}
-  var HTMLTIconElement: {
-    prototype: HTMLTIconElement;
-    new (): HTMLTIconElement;
+  interface HTMLScaleIconElement extends Components.ScaleIcon, HTMLStencilElement {}
+  var HTMLScaleIconElement: {
+    prototype: HTMLScaleIconElement;
+    new (): HTMLScaleIconElement;
   };
 
-  interface HTMLTInputElement extends Components.TInput, HTMLStencilElement {}
-  var HTMLTInputElement: {
-    prototype: HTMLTInputElement;
-    new (): HTMLTInputElement;
+  interface HTMLScaleInputElement extends Components.ScaleInput, HTMLStencilElement {}
+  var HTMLScaleInputElement: {
+    prototype: HTMLScaleInputElement;
+    new (): HTMLScaleInputElement;
   };
 
-  interface HTMLTInputErrorElement extends Components.TInputError, HTMLStencilElement {}
-  var HTMLTInputErrorElement: {
-    prototype: HTMLTInputErrorElement;
-    new (): HTMLTInputErrorElement;
+  interface HTMLScaleInputErrorElement extends Components.ScaleInputError, HTMLStencilElement {}
+  var HTMLScaleInputErrorElement: {
+    prototype: HTMLScaleInputErrorElement;
+    new (): HTMLScaleInputErrorElement;
   };
 
-  interface HTMLTInputGroupElement extends Components.TInputGroup, HTMLStencilElement {}
-  var HTMLTInputGroupElement: {
-    prototype: HTMLTInputGroupElement;
-    new (): HTMLTInputGroupElement;
+  interface HTMLScaleInputGroupElement extends Components.ScaleInputGroup, HTMLStencilElement {}
+  var HTMLScaleInputGroupElement: {
+    prototype: HTMLScaleInputGroupElement;
+    new (): HTMLScaleInputGroupElement;
   };
 
-  interface HTMLTInputLabelElement extends Components.TInputLabel, HTMLStencilElement {}
-  var HTMLTInputLabelElement: {
-    prototype: HTMLTInputLabelElement;
-    new (): HTMLTInputLabelElement;
+  interface HTMLScaleInputLabelElement extends Components.ScaleInputLabel, HTMLStencilElement {}
+  var HTMLScaleInputLabelElement: {
+    prototype: HTMLScaleInputLabelElement;
+    new (): HTMLScaleInputLabelElement;
   };
 
-  interface HTMLTLinkElement extends Components.TLink, HTMLStencilElement {}
-  var HTMLTLinkElement: {
-    prototype: HTMLTLinkElement;
-    new (): HTMLTLinkElement;
+  interface HTMLScaleLinkElement extends Components.ScaleLink, HTMLStencilElement {}
+  var HTMLScaleLinkElement: {
+    prototype: HTMLScaleLinkElement;
+    new (): HTMLScaleLinkElement;
   };
 
-  interface HTMLTModalElement extends Components.TModal, HTMLStencilElement {}
-  var HTMLTModalElement: {
-    prototype: HTMLTModalElement;
-    new (): HTMLTModalElement;
+  interface HTMLScaleModalElement extends Components.ScaleModal, HTMLStencilElement {}
+  var HTMLScaleModalElement: {
+    prototype: HTMLScaleModalElement;
+    new (): HTMLScaleModalElement;
   };
 
-  interface HTMLTProgressBarElement extends Components.TProgressBar, HTMLStencilElement {}
-  var HTMLTProgressBarElement: {
-    prototype: HTMLTProgressBarElement;
-    new (): HTMLTProgressBarElement;
+  interface HTMLScaleProgressBarElement extends Components.ScaleProgressBar, HTMLStencilElement {}
+  var HTMLScaleProgressBarElement: {
+    prototype: HTMLScaleProgressBarElement;
+    new (): HTMLScaleProgressBarElement;
   };
 
-  interface HTMLTSliderElement extends Components.TSlider, HTMLStencilElement {}
-  var HTMLTSliderElement: {
-    prototype: HTMLTSliderElement;
-    new (): HTMLTSliderElement;
+  interface HTMLScaleSliderElement extends Components.ScaleSlider, HTMLStencilElement {}
+  var HTMLScaleSliderElement: {
+    prototype: HTMLScaleSliderElement;
+    new (): HTMLScaleSliderElement;
   };
 
-  interface HTMLTSwitchElement extends Components.TSwitch, HTMLStencilElement {}
-  var HTMLTSwitchElement: {
-    prototype: HTMLTSwitchElement;
-    new (): HTMLTSwitchElement;
+  interface HTMLScaleSwitchElement extends Components.ScaleSwitch, HTMLStencilElement {}
+  var HTMLScaleSwitchElement: {
+    prototype: HTMLScaleSwitchElement;
+    new (): HTMLScaleSwitchElement;
   };
 
-  interface HTMLTTagElement extends Components.TTag, HTMLStencilElement {}
-  var HTMLTTagElement: {
-    prototype: HTMLTTagElement;
-    new (): HTMLTTagElement;
+  interface HTMLScaleTagElement extends Components.ScaleTag, HTMLStencilElement {}
+  var HTMLScaleTagElement: {
+    prototype: HTMLScaleTagElement;
+    new (): HTMLScaleTagElement;
   };
 
-  interface HTMLTTextElement extends Components.TText, HTMLStencilElement {}
-  var HTMLTTextElement: {
-    prototype: HTMLTTextElement;
-    new (): HTMLTTextElement;
+  interface HTMLScaleTextElement extends Components.ScaleText, HTMLStencilElement {}
+  var HTMLScaleTextElement: {
+    prototype: HTMLScaleTextElement;
+    new (): HTMLScaleTextElement;
   };
 
-  interface HTMLTToastElement extends Components.TToast, HTMLStencilElement {}
-  var HTMLTToastElement: {
-    prototype: HTMLTToastElement;
-    new (): HTMLTToastElement;
+  interface HTMLScaleToastElement extends Components.ScaleToast, HTMLStencilElement {}
+  var HTMLScaleToastElement: {
+    prototype: HTMLScaleToastElement;
+    new (): HTMLScaleToastElement;
   };
   interface HTMLElementTagNameMap {
-    't-alert': HTMLTAlertElement;
-    't-badge': HTMLTBadgeElement;
-    't-button': HTMLTButtonElement;
-    't-card': HTMLTCardElement;
-    't-carousel': HTMLTCarouselElement;
-    't-divider': HTMLTDividerElement;
-    't-icon': HTMLTIconElement;
-    't-input': HTMLTInputElement;
-    't-input-error': HTMLTInputErrorElement;
-    't-input-group': HTMLTInputGroupElement;
-    't-input-label': HTMLTInputLabelElement;
-    't-link': HTMLTLinkElement;
-    't-modal': HTMLTModalElement;
-    't-progress-bar': HTMLTProgressBarElement;
-    't-slider': HTMLTSliderElement;
-    't-switch': HTMLTSwitchElement;
-    't-tag': HTMLTTagElement;
-    't-text': HTMLTTextElement;
-    't-toast': HTMLTToastElement;
+    'scale-alert': HTMLScaleAlertElement;
+    'scale-badge': HTMLScaleBadgeElement;
+    'scale-button': HTMLScaleButtonElement;
+    'scale-card': HTMLScaleCardElement;
+    'scale-carousel': HTMLScaleCarouselElement;
+    'scale-divider': HTMLScaleDividerElement;
+    'scale-icon': HTMLScaleIconElement;
+    'scale-input': HTMLScaleInputElement;
+    'scale-input-error': HTMLScaleInputErrorElement;
+    'scale-input-group': HTMLScaleInputGroupElement;
+    'scale-input-label': HTMLScaleInputLabelElement;
+    'scale-link': HTMLScaleLinkElement;
+    'scale-modal': HTMLScaleModalElement;
+    'scale-progress-bar': HTMLScaleProgressBarElement;
+    'scale-slider': HTMLScaleSliderElement;
+    'scale-switch': HTMLScaleSwitchElement;
+    'scale-tag': HTMLScaleTagElement;
+    'scale-text': HTMLScaleTextElement;
+    'scale-toast': HTMLScaleToastElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface TAlert {
+  interface ScaleAlert {
     /**
     * (optional) Alert class
     */
@@ -642,7 +642,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TBadge {
+  interface ScaleBadge {
     /**
     * (optional) Badge class
     */
@@ -668,7 +668,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TButton {
+  interface ScaleButton {
     /**
     * (optional) Button class
     */
@@ -698,7 +698,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TCard {
+  interface ScaleCard {
     /**
     * (optional) Card class
     */
@@ -724,7 +724,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TCarousel {
+  interface ScaleCarousel {
     /**
     * (optional) Carousel class
     */
@@ -738,7 +738,7 @@ declare namespace LocalJSX {
     */
     'vertical'?: boolean;
   }
-  interface TDivider {
+  interface ScaleDivider {
     /**
     * (optional) Divider class
     */
@@ -756,7 +756,7 @@ declare namespace LocalJSX {
     */
     'vertical'?: boolean;
   }
-  interface TIcon {
+  interface ScaleIcon {
     /**
     * (optional) Tag class
     */
@@ -771,7 +771,7 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
   }
-  interface TInput {
+  interface ScaleInput {
     /**
     * (optional) Input text class
     */
@@ -801,7 +801,7 @@ declare namespace LocalJSX {
     */
     'value'?: string;
   }
-  interface TInputError {
+  interface ScaleInputError {
     /**
     * (optional) Input text class
     */
@@ -811,7 +811,7 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
   }
-  interface TInputGroup {
+  interface ScaleInputGroup {
     /**
     * (optional) Input text class
     */
@@ -821,7 +821,7 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
   }
-  interface TInputLabel {
+  interface ScaleInputLabel {
     /**
     * (optional) Input text class
     */
@@ -831,7 +831,7 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
   }
-  interface TLink {
+  interface ScaleLink {
     /**
     * (optional) Link class
     */
@@ -861,7 +861,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TModal {
+  interface ScaleModal {
     /**
     * (optional) Modal class
     */
@@ -883,7 +883,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TProgressBar {
+  interface ScaleProgressBar {
     /**
     * (optional) Progress bar class
     */
@@ -913,7 +913,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TSlider {
+  interface ScaleSlider {
     /**
     * (optional) Slider class
     */
@@ -943,7 +943,7 @@ declare namespace LocalJSX {
     */
     'value'?: number;
   }
-  interface TSwitch {
+  interface ScaleSwitch {
     /**
     * (optional) Active switch
     */
@@ -961,7 +961,7 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
   }
-  interface TTag {
+  interface ScaleTag {
     /**
     * (optional) Tag class
     */
@@ -983,7 +983,7 @@ declare namespace LocalJSX {
     */
     'variant'?: string;
   }
-  interface TText {
+  interface ScaleText {
     /**
     * (optional) Tag class
     */
@@ -993,7 +993,7 @@ declare namespace LocalJSX {
     */
     'styles'?: StyleSheet;
   }
-  interface TToast {
+  interface ScaleToast {
     /**
     * (optional) Animated toast
     */
@@ -1041,25 +1041,25 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    't-alert': TAlert;
-    't-badge': TBadge;
-    't-button': TButton;
-    't-card': TCard;
-    't-carousel': TCarousel;
-    't-divider': TDivider;
-    't-icon': TIcon;
-    't-input': TInput;
-    't-input-error': TInputError;
-    't-input-group': TInputGroup;
-    't-input-label': TInputLabel;
-    't-link': TLink;
-    't-modal': TModal;
-    't-progress-bar': TProgressBar;
-    't-slider': TSlider;
-    't-switch': TSwitch;
-    't-tag': TTag;
-    't-text': TText;
-    't-toast': TToast;
+    'scale-alert': ScaleAlert;
+    'scale-badge': ScaleBadge;
+    'scale-button': ScaleButton;
+    'scale-card': ScaleCard;
+    'scale-carousel': ScaleCarousel;
+    'scale-divider': ScaleDivider;
+    'scale-icon': ScaleIcon;
+    'scale-input': ScaleInput;
+    'scale-input-error': ScaleInputError;
+    'scale-input-group': ScaleInputGroup;
+    'scale-input-label': ScaleInputLabel;
+    'scale-link': ScaleLink;
+    'scale-modal': ScaleModal;
+    'scale-progress-bar': ScaleProgressBar;
+    'scale-slider': ScaleSlider;
+    'scale-switch': ScaleSwitch;
+    'scale-tag': ScaleTag;
+    'scale-text': ScaleText;
+    'scale-toast': ScaleToast;
   }
 }
 
@@ -1069,25 +1069,25 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      't-alert': LocalJSX.TAlert & JSXBase.HTMLAttributes<HTMLTAlertElement>;
-      't-badge': LocalJSX.TBadge & JSXBase.HTMLAttributes<HTMLTBadgeElement>;
-      't-button': LocalJSX.TButton & JSXBase.HTMLAttributes<HTMLTButtonElement>;
-      't-card': LocalJSX.TCard & JSXBase.HTMLAttributes<HTMLTCardElement>;
-      't-carousel': LocalJSX.TCarousel & JSXBase.HTMLAttributes<HTMLTCarouselElement>;
-      't-divider': LocalJSX.TDivider & JSXBase.HTMLAttributes<HTMLTDividerElement>;
-      't-icon': LocalJSX.TIcon & JSXBase.HTMLAttributes<HTMLTIconElement>;
-      't-input': LocalJSX.TInput & JSXBase.HTMLAttributes<HTMLTInputElement>;
-      't-input-error': LocalJSX.TInputError & JSXBase.HTMLAttributes<HTMLTInputErrorElement>;
-      't-input-group': LocalJSX.TInputGroup & JSXBase.HTMLAttributes<HTMLTInputGroupElement>;
-      't-input-label': LocalJSX.TInputLabel & JSXBase.HTMLAttributes<HTMLTInputLabelElement>;
-      't-link': LocalJSX.TLink & JSXBase.HTMLAttributes<HTMLTLinkElement>;
-      't-modal': LocalJSX.TModal & JSXBase.HTMLAttributes<HTMLTModalElement>;
-      't-progress-bar': LocalJSX.TProgressBar & JSXBase.HTMLAttributes<HTMLTProgressBarElement>;
-      't-slider': LocalJSX.TSlider & JSXBase.HTMLAttributes<HTMLTSliderElement>;
-      't-switch': LocalJSX.TSwitch & JSXBase.HTMLAttributes<HTMLTSwitchElement>;
-      't-tag': LocalJSX.TTag & JSXBase.HTMLAttributes<HTMLTTagElement>;
-      't-text': LocalJSX.TText & JSXBase.HTMLAttributes<HTMLTTextElement>;
-      't-toast': LocalJSX.TToast & JSXBase.HTMLAttributes<HTMLTToastElement>;
+      'scale-alert': LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
+      'scale-badge': LocalJSX.ScaleBadge & JSXBase.HTMLAttributes<HTMLScaleBadgeElement>;
+      'scale-button': LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
+      'scale-card': LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
+      'scale-carousel': LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
+      'scale-divider': LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
+      'scale-icon': LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
+      'scale-input': LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
+      'scale-input-error': LocalJSX.ScaleInputError & JSXBase.HTMLAttributes<HTMLScaleInputErrorElement>;
+      'scale-input-group': LocalJSX.ScaleInputGroup & JSXBase.HTMLAttributes<HTMLScaleInputGroupElement>;
+      'scale-input-label': LocalJSX.ScaleInputLabel & JSXBase.HTMLAttributes<HTMLScaleInputLabelElement>;
+      'scale-link': LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
+      'scale-modal': LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
+      'scale-progress-bar': LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
+      'scale-slider': LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
+      'scale-switch': LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;
+      'scale-tag': LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
+      'scale-text': LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
+      'scale-toast': LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
     }
   }
 }

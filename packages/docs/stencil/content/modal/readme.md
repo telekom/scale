@@ -1,4 +1,4 @@
-# t-modal
+# scale-modal
 
 
 

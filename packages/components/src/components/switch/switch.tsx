@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-switch',
+  tag: 'scale-switch',
   shadow: true,
 })
 export class Switch implements Base {

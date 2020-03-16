@@ -1,4 +1,4 @@
-# t-input-group
+# scale-input-group
 
 
 

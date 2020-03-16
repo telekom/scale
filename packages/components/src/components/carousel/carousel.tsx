@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-carousel',
+  tag: 'scale-carousel',
   shadow: true,
 })
 export class Carousel implements Base {

@@ -14,7 +14,7 @@ describe('Tag', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Tag],
-      html: `<t-tag>Label</t-tag>`,
+      html: `<scale-tag>Label</scale-tag>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('Tag', () => {
   it('should have a link', async () => {
     const page = await newSpecPage({
       components: [Tag],
-      html: `<t-tag link="#">Label</t-tag>`,
+      html: `<scale-tag link="#">Label</scale-tag>`,
     });
     expect(page.root).toMatchSnapshot();
   });

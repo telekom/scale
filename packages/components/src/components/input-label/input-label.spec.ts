@@ -13,7 +13,7 @@ describe('Input Label', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [InputLabel],
-      html: `<t-input-label>Label</t-input-label>`,
+      html: `<scale-input-label>Label</scale-input-label>`,
     });
     expect(page.root).toMatchSnapshot();
   });

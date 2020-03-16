@@ -14,7 +14,7 @@ describe('Input', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Input],
-      html: `<t-input></t-input>`,
+      html: `<scale-input></scale-input>`,
     });
     expect(page.root).toMatchSnapshot();
   });

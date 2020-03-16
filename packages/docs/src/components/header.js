@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => {
     <header>
       <div>
           <Link to="/">
-            <h1>Telements</h1>
+            <h1>Scale</h1>
           </Link>
       </div>
     </header>
@@ -19,7 +19,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: `Telements Components Docs`,
+  siteTitle: `Scale Components Docs`,
 }
 
 export default Header

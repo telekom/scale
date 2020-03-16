@@ -59,25 +59,25 @@ var WebComponentWrapper = function (props) {
     return (React__default.createElement(Component, __assign({ ref: ref }, forwardedProps), children));
 };
 
-var Alert = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-alert' }, props))); };
-var Badge = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-badge' }, props))); };
-var Button = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-button' }, props))); };
-var Card = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-card' }, props))); };
-var Carousel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-carousel' }, props))); };
-var Divider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-divider' }, props))); };
-var Icon = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-icon' }, props))); };
-var Input = function (props) { return (createElement(WebComponentWrapper, __assign({ events: { onChanged: 'changed' }, component: 't-input' }, props))); };
-var InputError = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-input-error' }, props))); };
-var InputGroup = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-input-group' }, props))); };
-var InputLabel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-input-label' }, props))); };
-var Link = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-link' }, props))); };
-var Modal = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-modal' }, props))); };
-var ProgressBar = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-progress-bar' }, props))); };
-var Slider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-slider' }, props))); };
-var Switch = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-switch' }, props))); };
-var Tag = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-tag' }, props))); };
-var Text = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-text' }, props))); };
-var Toast = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 't-toast' }, props))); };
+var ScaleAlert = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-alert' }, props))); };
+var ScaleBadge = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-badge' }, props))); };
+var ScaleButton = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-button' }, props))); };
+var ScaleCard = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-card' }, props))); };
+var ScaleCarousel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-carousel' }, props))); };
+var ScaleDivider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-divider' }, props))); };
+var ScaleIcon = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-icon' }, props))); };
+var ScaleInput = function (props) { return (createElement(WebComponentWrapper, __assign({ events: { onChanged: 'changed' }, component: 'scale-input' }, props))); };
+var ScaleInpuerror = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-error' }, props))); };
+var ScaleInpugroup = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-group' }, props))); };
+var ScaleInpulabel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-label' }, props))); };
+var ScaleLink = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-link' }, props))); };
+var ScaleModal = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-modal' }, props))); };
+var ScaleProgressBar = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-progress-bar' }, props))); };
+var ScaleSlider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-slider' }, props))); };
+var ScaleSwitch = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-switch' }, props))); };
+var ScaleTag = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-tag' }, props))); };
+var ScaleText = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-text' }, props))); };
+var ScaleToast = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-toast' }, props))); };
 
-export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { ScaleAlert, ScaleBadge, ScaleButton, ScaleCard, ScaleCarousel, ScaleDivider, ScaleIcon, ScaleInpuerror, ScaleInpugroup, ScaleInpulabel, ScaleInput, ScaleLink, ScaleModal, ScaleProgressBar, ScaleSlider, ScaleSwitch, ScaleTag, ScaleText, ScaleToast };
 //# sourceMappingURL=index.es.js.map

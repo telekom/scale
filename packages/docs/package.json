@@ -1,7 +1,7 @@
 {
-  "name": "@telements/docs",
-  "description": "Telements Components Documentation",
-  "version": "0.4.0",
+  "name": "@scale/docs",
+  "description": "Scale Components Documentation",
+  "version": "0.0.1",
   "author": "eeegor",
   "dependencies": {
     "gatsby": "^2.17.11",

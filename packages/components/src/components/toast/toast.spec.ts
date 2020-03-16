@@ -20,7 +20,7 @@ describe('Toast', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-toast>Toast message</t-toast>`,
+      html: `<scale-toast>Toast message</scale-toast>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe('Toast', () => {
   it('should match snapshot when opened', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-toast opened=true >Label</t-toast>`,
+      html: `<scale-toast opened=true >Label</scale-toast>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();

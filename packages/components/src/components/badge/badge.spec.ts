@@ -14,7 +14,7 @@ describe('Badge', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Badge],
-      html: `<t-badge>Label</t-badge>`,
+      html: `<scale-badge>Label</scale-badge>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('Badge', () => {
   it('should have a link', async () => {
     const page = await newSpecPage({
       components: [Badge],
-      html: `<t-badge link="#">Label</t-badge>`,
+      html: `<scale-badge link="#">Label</scale-badge>`,
     });
     expect(page.root).toMatchSnapshot();
   });

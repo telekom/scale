@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-badge',
+  tag: 'scale-badge',
   shadow: true,
 })
 export class Badge implements Base {

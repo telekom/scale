@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-button',
+  tag: 'scale-button',
   shadow: true,
 })
 export class Button implements Base {

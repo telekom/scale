@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-progress-bar',
+  tag: 'scale-progress-bar',
   shadow: true,
 })
 export class ProgressBar implements Base {

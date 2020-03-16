@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-text',
+  tag: 'scale-text',
   shadow: true,
 })
 export class Text implements Base {

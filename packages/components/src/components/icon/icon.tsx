@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-icon',
+  tag: 'scale-icon',
   shadow: true,
 })
 export class Icon implements Base {

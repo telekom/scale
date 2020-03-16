@@ -14,7 +14,7 @@ describe('Link', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Link],
-      html: `<t-link>default</t-link>`,
+      html: `<scale-link>default</scale-link>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('Link', () => {
   it('should contain target="_blank" when openNewTab is set true', async () => {
     const page = await newSpecPage({
       components: [Link],
-      html: `<t-link href="http://example.com" open-new-tab=true>Label</t-link>`,
+      html: `<scale-link href="http://example.com" open-new-tab=true>Label</scale-link>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -30,7 +30,7 @@ describe('Link', () => {
   it('should have link href value when href value is set', async () => {
     const page = await newSpecPage({
       components: [Link],
-      html: `<t-link href="http://example.com">Label</t-link>`,
+      html: `<scale-link href="http://example.com">Label</scale-link>`,
     });
     expect(page.root).toMatchSnapshot();
   });

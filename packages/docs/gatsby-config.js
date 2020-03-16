@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Telements Components Documentation`,
-    description: `Documentation for Telements Web Components, a web component library build with Stencil.js`,
+    title: `Scale Components Documentation`,
+    description: `Documentation for Scale Web Components, a web component library build with Stencil.js`,
     author: `@telekom`,
   },
   plugins: [

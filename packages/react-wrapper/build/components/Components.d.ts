@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'jss';
-interface AlertProps {
+interface ScaleAlertProps {
     customClass?: string;
     headline: string;
     icon?: string;
@@ -11,8 +11,8 @@ interface AlertProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Alert: React.FunctionComponent<AlertProps>;
-interface BadgeProps {
+declare const ScaleAlert: React.FunctionComponent<ScaleAlertProps>;
+interface ScaleBadgeProps {
     customClass?: string;
     link?: string;
     pill?: boolean;
@@ -21,17 +21,19 @@ interface BadgeProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Badge: React.FunctionComponent<BadgeProps>;
-interface ButtonProps {
+declare const ScaleBadge: React.FunctionComponent<ScaleBadgeProps>;
+interface ScaleButtonProps {
     customClass?: string;
     disabled?: boolean;
+    href?: string;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
+    target?: string;
     variant?: string;
     [key: string]: any;
 }
-declare const Button: React.FunctionComponent<ButtonProps>;
-interface CardProps {
+declare const ScaleButton: React.FunctionComponent<ScaleButtonProps>;
+interface ScaleCardProps {
     customClass?: string;
     imageTop?: string;
     imageTopAlt?: string;
@@ -40,31 +42,31 @@ interface CardProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Card: React.FunctionComponent<CardProps>;
-interface CarouselProps {
+declare const ScaleCard: React.FunctionComponent<ScaleCardProps>;
+interface ScaleCarouselProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
     vertical?: boolean;
     [key: string]: any;
 }
-declare const Carousel: React.FunctionComponent<CarouselProps>;
-interface DividerProps {
+declare const ScaleCarousel: React.FunctionComponent<ScaleCarouselProps>;
+interface ScaleDividerProps {
     customClass?: string;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
     vertical?: boolean;
     [key: string]: any;
 }
-declare const Divider: React.FunctionComponent<DividerProps>;
-interface IconProps {
+declare const ScaleDivider: React.FunctionComponent<ScaleDividerProps>;
+interface ScaleIconProps {
     customClass?: string;
     name: string;
     path: string;
     styles?: StyleSheet<string | number | symbol>;
     [key: string]: any;
 }
-declare const Icon: React.FunctionComponent<IconProps>;
-interface InputProps {
+declare const ScaleIcon: React.FunctionComponent<ScaleIconProps>;
+interface ScaleInputProps {
     customClass?: string;
     errorMessage?: string;
     name?: string;
@@ -74,26 +76,26 @@ interface InputProps {
     onChanged?: (event?: any) => void;
     [key: string]: any;
 }
-declare const Input: React.FunctionComponent<InputProps>;
-interface InputErrorProps {
+declare const ScaleInput: React.FunctionComponent<ScaleInputProps>;
+interface ScaleInpuerrorProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
     [key: string]: any;
 }
-declare const InputError: React.FunctionComponent<InputErrorProps>;
-interface InputGroupProps {
+declare const ScaleInpuerror: React.FunctionComponent<ScaleInpuerrorProps>;
+interface ScaleInpugroupProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
     [key: string]: any;
 }
-declare const InputGroup: React.FunctionComponent<InputGroupProps>;
-interface InputLabelProps {
+declare const ScaleInpugroup: React.FunctionComponent<ScaleInpugroupProps>;
+interface ScaleInpulabelProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
     [key: string]: any;
 }
-declare const InputLabel: React.FunctionComponent<InputLabelProps>;
-interface LinkProps {
+declare const ScaleInpulabel: React.FunctionComponent<ScaleInpulabelProps>;
+interface ScaleLinkProps {
     customClass?: string;
     disabled?: boolean;
     href?: string;
@@ -103,8 +105,8 @@ interface LinkProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Link: React.FunctionComponent<LinkProps>;
-interface ModalProps {
+declare const ScaleLink: React.FunctionComponent<ScaleLinkProps>;
+interface ScaleModalProps {
     customClass?: string;
     opened?: boolean;
     size?: string;
@@ -112,8 +114,8 @@ interface ModalProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Modal: React.FunctionComponent<ModalProps>;
-interface ProgressBarProps {
+declare const ScaleModal: React.FunctionComponent<ScaleModalProps>;
+interface ScaleProgressBarProps {
     customClass?: string;
     percentage: number;
     showText?: boolean;
@@ -123,8 +125,8 @@ interface ProgressBarProps {
     variant?: string;
     [key: string]: any;
 }
-declare const ProgressBar: React.FunctionComponent<ProgressBarProps>;
-interface SliderProps {
+declare const ScaleProgressBar: React.FunctionComponent<ScaleProgressBarProps>;
+interface ScaleSliderProps {
     customClass?: string;
     label: boolean;
     max?: number;
@@ -134,16 +136,16 @@ interface SliderProps {
     value: number;
     [key: string]: any;
 }
-declare const Slider: React.FunctionComponent<SliderProps>;
-interface SwitchProps {
+declare const ScaleSlider: React.FunctionComponent<ScaleSliderProps>;
+interface ScaleSwitchProps {
     active?: boolean;
     customClass?: string;
     disabled?: boolean;
     styles?: StyleSheet<string | number | symbol>;
     [key: string]: any;
 }
-declare const Switch: React.FunctionComponent<SwitchProps>;
-interface TagProps {
+declare const ScaleSwitch: React.FunctionComponent<ScaleSwitchProps>;
+interface ScaleTagProps {
     customClass?: string;
     link?: string;
     pill?: boolean;
@@ -151,14 +153,14 @@ interface TagProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Tag: React.FunctionComponent<TagProps>;
-interface TextProps {
+declare const ScaleTag: React.FunctionComponent<ScaleTagProps>;
+interface ScaleTextProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
     [key: string]: any;
 }
-declare const Text: React.FunctionComponent<TextProps>;
-interface ToastProps {
+declare const ScaleText: React.FunctionComponent<ScaleTextProps>;
+interface ScaleToastProps {
     animated?: boolean;
     autoHide?: boolean | number;
     customClass?: string;
@@ -172,5 +174,5 @@ interface ToastProps {
     variant?: string;
     [key: string]: any;
 }
-declare const Toast: React.FunctionComponent<ToastProps>;
-export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+declare const ScaleToast: React.FunctionComponent<ScaleToastProps>;
+export { ScaleAlert, ScaleBadge, ScaleButton, ScaleCard, ScaleCarousel, ScaleDivider, ScaleIcon, ScaleInput, ScaleInpuerror, ScaleInpugroup, ScaleInpulabel, ScaleLink, ScaleModal, ScaleProgressBar, ScaleSlider, ScaleSwitch, ScaleTag, ScaleText, ScaleToast };

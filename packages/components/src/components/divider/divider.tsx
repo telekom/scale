@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-divider',
+  tag: 'scale-divider',
   shadow: true,
 })
 export class Divider implements Base {

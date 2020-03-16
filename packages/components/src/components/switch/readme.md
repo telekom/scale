@@ -1,4 +1,4 @@
-# t-switch
+# scale-switch
 
 
 

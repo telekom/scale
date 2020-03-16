@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-input-error',
+  tag: 'scale-input-error',
   shadow: true,
 })
 export class InputError implements Base {

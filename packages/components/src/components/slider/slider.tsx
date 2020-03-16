@@ -7,7 +7,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-slider',
+  tag: 'scale-slider',
   shadow: true,
 })
 export class Slider implements Base {

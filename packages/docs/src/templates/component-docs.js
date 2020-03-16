@@ -4,7 +4,7 @@ import rehypeReact from "rehype-react"
 import DocsLayout from "../layouts/documentation"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageHeader"
-import componentsDocs from './../../stencil/dist/telements-components.json'
+import componentsDocs from './../../stencil/dist/scale-components.json'
 import './component-docs.css'
 
 function parseStencilDocs(json) {
@@ -110,7 +110,7 @@ export default function Template({
           <h2>Playground</h2>
             <div className="playground__preview">
               <div>
-                {ComponentName.startsWith('t-') && (
+                {ComponentName.startsWith('scale-') && (
                   <ComponentName ref={ref} {...componentProps}>{componentState.children || 'Label'}</ComponentName>
                 )}
               </div>

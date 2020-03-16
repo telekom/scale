@@ -1,4 +1,4 @@
-# t-slider
+# scale-slider
 
 
 

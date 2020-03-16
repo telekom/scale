@@ -1,4 +1,4 @@
-# t-icon
+# scale-icon
 
 
 

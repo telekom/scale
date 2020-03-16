@@ -85,6 +85,6 @@ symbols.forEach(symbol => symbolsPage.addLayer(symbol));
 componentsPage.addArtboard(artboardComponents);
 sketch.addPage(symbolsPage);
 sketch.addPage(componentsPage);
-sketch.build("./sketch/telements.sketch").then(() => {
+sketch.build("./sketch/scale.sketch").then(() => {
   console.log("Built components sketch document!");
 });

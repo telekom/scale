@@ -1,4 +1,4 @@
-# t-divider
+# scale-divider
 
 
 

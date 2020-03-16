@@ -14,7 +14,7 @@ describe('Switch', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Switch],
-      html: `<t-switch>/t-switch>`,
+      html: `<scale-switch></scale-switch>`,
     });
     expect(page.root).toMatchSnapshot();
   });

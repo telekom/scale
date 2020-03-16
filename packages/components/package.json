@@ -1,7 +1,7 @@
 {
-  "name": "@telements/components",
-  "version": "0.4.0",
-  "description": "Stencil Component Starter",
+  "name": "@scale/components",
+  "version": "0.0.1",
+  "description": "Scale Components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/telements-components/telements-components.js",
+  "unpkg": "dist/scale-components/scale-components.js",
   "files": [
     "dist/",
     "loader/"

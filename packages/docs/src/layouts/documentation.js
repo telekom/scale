@@ -33,9 +33,9 @@ export default ({ children, location }) => {
         <title>{data.title.siteMetadata.title}</title>
         <script
           type="module"
-          src="/dist/telements-components/telements-components.esm.js"
+          src="/dist/scale-components/scale-components.esm.js"
         ></script>
-        <script nomodule="" src="/dist/telements-components.js"></script>
+        <script nomodule="" src="/dist/scale-components.js"></script>
       </Helmet>
       <main className="main">
         <div className="main__sidebar">

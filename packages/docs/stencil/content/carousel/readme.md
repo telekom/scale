@@ -1,4 +1,4 @@
-# t-carousel
+# scale-carousel
 
 
 

@@ -14,7 +14,7 @@ describe('Card', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Card],
-      html: `<t-card>Label</t-card>`,
+      html: `<scale-card>Label</scale-card>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -23,10 +23,10 @@ describe('Card', () => {
     const page = await newSpecPage({
       components: [Card],
       html: `
-			<t-card>
+			<scale-card>
 				<h3 slot="header">Header content</h3>
 				A title
-			</t-card>
+			</scale-card>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -36,10 +36,10 @@ describe('Card', () => {
     const page = await newSpecPage({
       components: [Card],
       html: `
-			<t-card>
+			<scale-card>
 				<h3 slot="footer">Footer content</h3>
 				A title
-			</t-card>
+			</scale-card>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -48,7 +48,7 @@ describe('Card', () => {
   it('should match snapshot with image', async () => {
     const page = await newSpecPage({
       components: [Card],
-      html: `<t-card image-top="http://placehold.it/400x300">A title</t-card>`,
+      html: `<scale-card image-top="http://placehold.it/400x300">A title</scale-card>`,
     });
     expect(page.root).toMatchSnapshot();
   });

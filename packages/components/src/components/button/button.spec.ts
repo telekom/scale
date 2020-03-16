@@ -14,7 +14,7 @@ describe('Button', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Button],
-      html: `<t-button>Label</t-button>`,
+      html: `<scale-button>Label</scale-button>`,
     });
     expect(page.root).toMatchSnapshot();
   });

@@ -9,7 +9,7 @@ import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-alert',
+  tag: 'scale-alert',
   shadow: true,
 })
 export class Alert implements Base {

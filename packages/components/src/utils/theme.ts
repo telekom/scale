@@ -30,10 +30,10 @@ export const defaultTheme = {
 };
 
 export const theme = (overrides?: Partial<Theme>) => {
-  const telements = (window as any).telements;
-  if (telements) {
-    const injectedConfig = telements.config;
-    const injectedTheme = telements.theme;
+  const scale = (window as any).scale;
+  if (scale) {
+    const injectedConfig = scale.config;
+    const injectedTheme = scale.theme;
     if (injectedTheme) {
       if (injectedConfig && injectedConfig.overrides === false) {
         return injectedTheme;

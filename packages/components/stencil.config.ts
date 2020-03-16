@@ -1,8 +1,7 @@
 import { Config } from '@stencil/core';
-import * as fs from 'fs';
 
 export const config: Config = {
-  namespace: 'telements-components',
+  namespace: 'scale-components',
   outputTargets: [
     {
       type: 'dist',
@@ -18,12 +17,12 @@ export const config: Config = {
     // {
     //   type: 'docs-custom',
     //   generator: docs => {
-    //     fs.writeFileSync('./dist/telements-components.json', JSON.stringify(docs, null, 4))
+    //     fs.writeFileSync('./dist/scale-components.json', JSON.stringify(docs, null, 4))
     //   }
     // }
     {
       type: 'docs-json',
-      file: './dist/telements-components.json'
+      file: './dist/scale-components.json'
     }
   ]
 };

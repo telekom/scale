@@ -55,7 +55,7 @@ const Sidebar = ({ components, currentPage }) => {
       <ul className="menu">
         <li className="menu__item">
           <a
-            href="https://github.com/telekom/telements"
+            href="https://github.com/telekom/scale"
             target="_blank"
             rel="noopener noreferrer"
           >

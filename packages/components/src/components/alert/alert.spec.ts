@@ -17,7 +17,7 @@ describe('Alert', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-alert>Notifications</t-alert>`,
+      html: `<scale-alert>Notifications</scale-alert>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -25,7 +25,7 @@ describe('Alert', () => {
   it('should match snapshot when opened', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-alert opened=true >Notifications</t-alert>`,
+      html: `<scale-alert opened=true >Notifications</scale-alert>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
@@ -35,12 +35,12 @@ describe('Alert', () => {
     const page = await newSpecPage({
       components,
       html: `
-      <t-alert opened=true>
+      <scale-alert opened=true>
         Notifications
         <div slot="close">
           Close
         </div>
-      </t-alert>
+      </scale-alert>
       `,
     });
     expect(page.root.shadowRoot).toBeTruthy();
