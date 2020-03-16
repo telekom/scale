@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input Label should match snapshot 1`] = `
-<t-input-label>
+<scale-input-label>
   <mock:shadow-root>
-    <div class="input-label">
+    <style>
+      .input-label-0-0-2 {
+  color: unset;
+  font-size: 1rem;
+  font-family: unset;
+  padding-bottom: 0.5rem;
+}
+    </style>
+    <div class="input-label-0-0-2">
       <slot></slot>
     </div>
   </mock:shadow-root>
   Label
-</t-input-label>
+</scale-input-label>
 `;

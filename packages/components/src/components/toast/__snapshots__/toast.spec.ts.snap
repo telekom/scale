@@ -1,30 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Toast should match snapshot 1`] = `
-<t-toast>
+<scale-toast>
   <mock:shadow-root>
-    <div class="toast">
-      <style>
-        .toast {
-      right: 12px;
-      top: -NaNpx;
-    }
-
-    .toast--show {
-      animation: fadeIn 0.5s ease-in-out;
-      animation-timing-function: ease-out;
-      top: 12px;
-    }
-
-    .toast--hide {
-      animation: fadeOut 0.5s ease-in-out;
-      animation-timing-function: ease-in;
-    }
-
-    @keyframes fadeIn {
+    <style>
+      .toast-0-0-5 {
+  width: 400px;
+  display: flex;
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-sizing: border-box;
+  border-radius: 3px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.toast__body-0-0-6 {
+  padding: 1rem;
+}
+.toast__header-0-0-7 {
+  margin: 0;
+  display: flex;
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+}
+.toast__header-0-0-7 a {
+  cursor: pointer;
+}
+.toast__header-0-0-7 small {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-left: 120px;
+}
+.toast__progress-0-0-8 {
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  background: red;
+}
+    </style>
+    <style>
+      @keyframes fadeIn {
       from {
         opacity: 0;
-        top: -NaNpx;
+        top: -0px;
       }
       to {
         opacity: 1;
@@ -39,11 +65,13 @@ exports[`Toast should match snapshot 1`] = `
       }
       to {
         opacity: 0;
-        top: -NaNpx;
+        top: -0px;
       }
     }
-      </style>
-      <div class="toast__header">
+    </style>
+    <style></style>
+    <div class="toast--show-0-0-9 toast-0-0-5">
+      <div class="toast__header-0-0-7">
         <slot name="header"></slot>
         header
         <small></small>
@@ -53,40 +81,66 @@ exports[`Toast should match snapshot 1`] = `
           </span>
         </a>
       </div>
-      <div class="toast__body">
+      <div class="toast__body-0-0-6">
         <slot></slot>
       </div>
     </div>
   </mock:shadow-root>
   Toast message
-</t-toast>
+</scale-toast>
 `;
 
 exports[`Toast should match snapshot when opened 1`] = `
-<t-toast opened="">
+<scale-toast opened="">
   <mock:shadow-root>
-    <div class="toast toast--show">
-      <style>
-        .toast {
-      right: 12px;
-      top: -NaNpx;
-    }
-
-    .toast--show {
-      animation: fadeIn 0.5s ease-in-out;
-      animation-timing-function: ease-out;
-      top: 12px;
-    }
-
-    .toast--hide {
-      animation: fadeOut 0.5s ease-in-out;
-      animation-timing-function: ease-in;
-    }
-
-    @keyframes fadeIn {
+    <style>
+      .toast-0-0-15 {
+  width: 400px;
+  display: flex;
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  box-sizing: border-box;
+  border-radius: 3px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.toast__body-0-0-16 {
+  padding: 1rem;
+}
+.toast__header-0-0-17 {
+  margin: 0;
+  display: flex;
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+}
+.toast__header-0-0-17 a {
+  cursor: pointer;
+}
+.toast__header-0-0-17 small {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-left: 120px;
+}
+.toast__progress-0-0-18 {
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  background: red;
+}
+    </style>
+    <style>
+      @keyframes fadeIn {
       from {
         opacity: 0;
-        top: -NaNpx;
+        top: -0px;
       }
       to {
         opacity: 1;
@@ -101,11 +155,13 @@ exports[`Toast should match snapshot when opened 1`] = `
       }
       to {
         opacity: 0;
-        top: -NaNpx;
+        top: -0px;
       }
     }
-      </style>
-      <div class="toast__header">
+    </style>
+    <style></style>
+    <div class="toast--show-0-0-19 toast-0-0-15">
+      <div class="toast__header-0-0-17">
         <slot name="header"></slot>
         header
         <small></small>
@@ -115,11 +171,11 @@ exports[`Toast should match snapshot when opened 1`] = `
           </span>
         </a>
       </div>
-      <div class="toast__body">
+      <div class="toast__body-0-0-16">
         <slot></slot>
       </div>
     </div>
   </mock:shadow-root>
   Label
-</t-toast>
+</scale-toast>
 `;

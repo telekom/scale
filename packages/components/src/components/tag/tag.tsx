@@ -1,47 +1,58 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './tag.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-tag',
-  styleUrl: 'tag.css',
+  tag: 'scale-tag',
   shadow: true,
 })
-export class Tag {
+export class Tag implements Base {
   /** (optional) Tag class */
-  @Prop() public customClass?: string = '';
-  /** (optional) Tag theme */
-  @Prop() public theme?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Tag variant */
-  @Prop() public variant?: string = '';
+  @Prop() variant?: string = '';
   /** (optional) Tag pill */
-  @Prop() public pill?: boolean = false;
+  @Prop() pill?: boolean = false;
   /** (optional) Tag on an <a> element */
-  @Prop() public link?: string = '';
+  @Prop() link?: string = '';
 
-  public render() {
-    if (!!this.link) {
-      return (
-        <a href={this.link} class={this.getCssClassMap()}>
-          <slot />
-        </a>
-      );
-    }
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Tag', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+  componentWillUpdate() {}
+
+  render() {
     return (
-      <div class={this.getCssClassMap()}>
-        <slot />
-      </div>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        {!!this.link ? (
+          <a href={this.link} class={this.getCssClassMap()}>
+            <slot />
+          </a>
+        ) : (
+          <div class={this.getCssClassMap()}>
+            <slot />
+          </div>
+        )}
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'tag',
+      classes.tag,
       this.customClass && this.customClass,
-      this.theme && `alert--theme-${this.theme}`,
-      this.variant && `tag--variant-${this.variant}`,
-      this.pill && `tag--pill`,
-      !!this.link && 'tag--link'
+      this.variant && classes[`tag--variant-${this.variant}`],
+      this.pill && classes[`tag--pill`],
+      !!this.link && classes[`tag--link`]
     );
   }
 }

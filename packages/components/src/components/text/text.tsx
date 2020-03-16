@@ -1,31 +1,40 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './text.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-text',
-  styleUrl: 'text.css',
+  tag: 'scale-text',
   shadow: true,
 })
-export class Text {
+export class Text implements Base {
   /** (optional) Tag class */
-  @Prop() public customClass?: string = '';
-  /** (optional) Tag theme */
-  @Prop() public theme?: string = '';
+  @Prop() customClass?: string = '';
 
-  public render() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Text', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+  componentWillUpdate() {}
+
+  render() {
     return (
-      <div class={this.getCssClassMap()}>
-        <slot />
-      </div>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          <slot />
+        </div>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
-    return classNames(
-      'text',
-      this.customClass && this.customClass,
-      this.theme && `text--theme-${this.theme}`
-    );
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
+    return classNames(classes.text, this.customClass && this.customClass);
   }
 }

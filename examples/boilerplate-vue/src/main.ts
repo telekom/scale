@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { defineCustomElements, applyPolyfills } from '@telements/components/loader'
+import { defineCustomElements, applyPolyfills } from '@scale/components/loader'
 
 Vue.config.productionTip = false
 Vue.config.ignoredElements = [/t-\w*/]

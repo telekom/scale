@@ -1,6 +1,10 @@
-import { Component, Prop, Event, h, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './input.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 export type InputTypes =
   | 'email'
@@ -12,49 +16,57 @@ export type InputTypes =
   | 'url';
 
 @Component({
-  tag: 't-input',
-  styleUrl: 'input.css',
+  tag: 'scale-input',
   shadow: true,
 })
-export class Input {
+export class Input implements Base {
   /** (optional) Input text class */
-  @Prop() public customClass?: string = '';
-  /** (optional) Input text theme */
-  @Prop() public theme?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Input type */
-  @Prop() public type?: InputTypes = 'text';
+  @Prop() type?: InputTypes = 'text';
   /** (optional) Input name */
-  @Prop() public name?: string = '';
+  @Prop() name?: string = '';
   /** (optional) Input text value */
-  @Prop({ mutable: true }) public value: string;
+  @Prop({ mutable: true }) value?: string;
   /** (optional) Input text error message */
-  @Prop({ mutable: true }) public errorMessage: string;
+  @Prop({ mutable: true }) errorMessage?: string;
   /** (optional) Input text event changed */
-  @Event() public changed: EventEmitter<string>;
+  @Event() changed: EventEmitter<string>;
 
-  public handleChange(event) {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Input', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+  componentWillUpdate() {}
+
+  handleChange(event) {
     this.value = event.target ? event.target.value : this.value;
     this.changed.emit(this.value);
   }
 
-  public render() {
+  render() {
     return (
-      <input
-        type={this.type}
-        class={this.getCssClassMap()}
-        value={this.value}
-        name={this.name}
-        onInput={event => this.handleChange(event)}
-      />
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <input
+          type={this.type}
+          class={this.getCssClassMap()}
+          value={this.value}
+          name={this.name}
+          onInput={event => this.handleChange(event)}
+        />
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'input',
+      classes.input,
       this.customClass && this.customClass,
-      this.theme && `input--theme-${this.theme}`,
-      this.type && `input--type-${this.type}`
+      this.type && classes[`input--type-${this.type}`]
     );
   }
 }

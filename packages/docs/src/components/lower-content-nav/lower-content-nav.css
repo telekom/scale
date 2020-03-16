@@ -1,8 +1,0 @@
-lower-content-nav {
-    display: flex;
-    justify-content: space-between;
-}
-
-lower-content-nav > stencil-route-link {
-    display: inline-block;
-}

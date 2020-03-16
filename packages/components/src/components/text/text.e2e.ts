@@ -1,10 +1,10 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('t-text', () => {
+describe('scale-text', () => {
   it('renders', async () => {
     const page = await newE2EPage();
-    await page.setContent('<t-text>this is a tag</t-text>');
-    const element = await page.find('t-text');
+    await page.setContent('<scale-text>this is a tag</scale-text>');
+    const element = await page.find('scale-text');
     expect(element).toHaveClass('hydrated');
   });
 });

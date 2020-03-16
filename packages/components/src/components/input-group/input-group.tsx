@@ -1,31 +1,43 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './input-group.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-input-group',
-  styleUrl: 'input-group.css',
+  tag: 'scale-input-group',
   shadow: true,
 })
-export class InputGroup {
+export class InputGroup implements Base {
   /** (optional) Input text class */
-  @Prop() public customClass?: string = '';
-  /** (optional) Input text theme */
-  @Prop() public theme?: string = '';
+  @Prop() customClass?: string = '';
 
-  public render() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('InputGroup', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {}
+  componentWillUpdate() {}
+
+  render() {
     return (
-      <div class={this.getCssClassMap()}>
-        <slot />
-      </div>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          <slot />
+        </div>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'input-group',
-      this.customClass && this.customClass,
-      this.theme && `input-group--theme-${this.theme}`
+      classes['input-group'],
+      this.customClass && this.customClass
     );
   }
 }

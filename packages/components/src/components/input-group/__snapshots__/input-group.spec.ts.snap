@@ -1,12 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input Group should match snapshot 1`] = `
-<t-input-group>
+<scale-input-group>
   <mock:shadow-root>
-    <div class="input-group">
+    <style>
+      .input-group-0-0-2 {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+    </style>
+    <div class="input-group-0-0-2">
       <slot></slot>
     </div>
   </mock:shadow-root>
   Label
-</t-input-group>
+</scale-input-group>
 `;

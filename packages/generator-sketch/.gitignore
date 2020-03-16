@@ -1,2 +1,7 @@
+/dist
+/node_modules
+.editorconfig
+*.asketch.json
+sketch
 sketch-json
-build
+sketch-render/build

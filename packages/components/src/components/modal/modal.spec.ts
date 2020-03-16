@@ -1,10 +1,14 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Modal } from './modal';
+import { styles } from './modal.styles';
+import jss from 'jss';
 
 describe('Modal', () => {
   let element;
+  let stylesheet;
   beforeEach(async () => {
     element = new Modal();
+    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
   });
 
   const components = [Modal];
@@ -12,7 +16,7 @@ describe('Modal', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Modal],
-      html: `<t-modal>Label</t-modal>`,
+      html: `<scale-modal>Label</scale-modal>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -21,10 +25,10 @@ describe('Modal', () => {
     const page = await newSpecPage({
       components: [Modal],
       html: `
-			<t-modal>
+			<scale-modal>
 				<span slot="header">Header content</span>
 				A title
-			</t-modal>
+			</scale-modal>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -34,10 +38,23 @@ describe('Modal', () => {
     const page = await newSpecPage({
       components: [Modal],
       html: `
-			<t-modal>
+			<scale-modal>
 				<span slot="modal-actions">Action buttons</span>
 				Content
-			</t-modal>
+			</scale-modal>
+			`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should match snapshot with close slot', async () => {
+    const page = await newSpecPage({
+      components: [Modal],
+      html: `
+			<scale-modal>
+				<span slot="close">Close</span>
+				Content
+			</scale-modal>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -46,25 +63,10 @@ describe('Modal', () => {
   it('should match snapshot when opened', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-modal opened=true >Label</t-modal>`,
+      html: `<scale-modal opened=true>Label</scale-modal>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
-  });
-
-  it('should handle size css class', () => {
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('modal--size-small');
-  });
-
-  it('should handle theme css class', () => {
-    element.theme = 'default';
-    expect(element.getCssClassMap()).toContain('modal--theme-default');
-  });
-
-  it('should handle variant css class', () => {
-    element.variant = 'primary';
-    expect(element.getCssClassMap()).toContain('modal--variant-primary');
   });
 
   it('should open the modal', () => {
@@ -86,5 +88,27 @@ describe('Modal', () => {
   it('should not open the modal/ should not render, if the modal is already opened', () => {
     element.opened = true;
     expect(element.root).toBeFalsy();
+  });
+
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.size = 'small';
+    stylesheet.addRule('modal--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['modal--size-small']
+    );
+
+    element.variant = 'primary';
+    stylesheet.addRule('modal--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['modal--variant-primary']
+    );
+
+    element.opened = true;
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['modal--opened']
+    );
   });
 });

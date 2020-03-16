@@ -1,11 +1,9 @@
 {
-    "name": "@telements/config",
+    "name": "@scale/config",
     "main": "dist/index.js",
     "version": "0.0.1",
     "author": "@eeegor <egor.kirpichev@telekom.de>",
     "license": "MIT",
-    "devDependencies": {},
-    "dependencies": {},
     "scripts": {
         "build": "tsc -b"
     }

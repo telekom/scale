@@ -1,12 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should match snapshot 1`] = `
-<t-button>
+<scale-button>
   <mock:shadow-root>
-    <button class="button">
+    <style>
+      .button-0-0-3 {
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+  height: 40px;
+  display: inline-flex;
+  padding: 0.25rem 1rem;
+  position: relative;
+  font-size: unset;
+  background: #fff;
+  box-shadow: none;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: unset;
+  font-weight: 400;
+  user-select: none;
+  border-radius: 0;
+  letter-spacing: 0;
+  text-transform: initial;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+}
+.button-0-0-3:before {
+  width: 0;
+  height: 100%;
+  content: ";
+  display: block;
+}
+.button-0-0-3:hover, .button-0-0-3.active {
+  color: #fff;
+  background: #000;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+  border-color: #000;
+  text-decoration: none;
+}
+.button-0-0-3:not(.tabbing):focus {
+  outline: 0;
+}
+.button--disabled-0-0-4, .button--disabled-0-0-4:hover {
+  color: #000;
+  border: 1px solid #000;
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: #fff;
+}
+    </style>
+    <button class="button-0-0-3">
       <slot></slot>
     </button>
   </mock:shadow-root>
   Label
-</t-button>
+</scale-button>
 `;
