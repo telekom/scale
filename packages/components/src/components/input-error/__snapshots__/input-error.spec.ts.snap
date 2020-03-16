@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Error should match snapshot 1`] = `
+<scale-input-error>
+  <mock:shadow-root>
+    <style>
+      .input-error-0-0-2 {
+  color: lightcoral;
+  font-size: 0.8rem;
+  font-family: unset;
+  padding-top: 0.5rem;
+}
+    </style>
+    <div class="input-error-0-0-2">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Error
+</scale-input-error>
+`;

@@ -1,0 +1,10 @@
+{
+    "name": "@scale/config",
+    "main": "dist/index.js",
+    "version": "0.0.1",
+    "author": "@eeegor <egor.kirpichev@telekom.de>",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc -b"
+    }
+}

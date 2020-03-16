@@ -1,0 +1,34 @@
+{
+    "name": "scale",
+    "version": "0.0.1",
+    "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "packages/config",
+        "packages/components",
+        "packages/html-to-sketch",
+        "packages/generator-sketch",
+        "packages/docs",
+        "packages/react-wrapper"
+    ],
+    "scripts": {
+        "clean": "./scripts/clean.sh",
+        "build": "./scripts/build.sh",
+        "build:components": "yarn workspace @scale/components build",
+        "watch:components": "yarn workspace @scale/components start",
+        "bootstrap": "lerna bootstrap",
+        "test": "lerna run test --scope=@scale",
+        "new-version": "lerna version --conventional-commits --yes"
+    },
+    "devDependencies": {
+        "lerna": "^3.20.2",
+        "husky": "^3.0.9",
+        "rimraf": "2.6.3"
+    },
+    "dependencies": {},
+    "husky": {
+        "hooks": {
+            "pre-commit": "cd packages/components && yarn format && yarn lint"
+        }
+    }
+}

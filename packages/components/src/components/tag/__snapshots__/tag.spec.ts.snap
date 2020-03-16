@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag should have a link 1`] = `
+<scale-tag link="#">
+  <mock:shadow-root>
+    <style>
+      .tag-0-0-13 {
+  color: #fff;
+  border: 1px solid #dfdfdf;
+  display: inline-flex;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  background: #333;
+  border-radius: 0.25rem;
+}
+.tag--pill-0-0-14 {
+  padding: 0.6rem;
+  border-radius: 1rem;
+}
+.tag--link-0-0-15 {
+  text-decoration: none;
+}
+.tag--link-0-0-15:hover {
+  background: #1d2124;
+}
+.tag--link-0-0-15:active {
+  background: #1d2124;
+}
+.tag--link-0-0-15:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+.tag--variant-primary-0-0-16 {
+  color: #fff;
+  background: #007bff;
+  border-color: #007bff;
+}
+    </style>
+    <a class="tag--link-0-0-15 tag-0-0-13" href="#">
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+  Label
+</scale-tag>
+`;
+
+exports[`Tag should match snapshot 1`] = `
+<scale-tag>
+  <mock:shadow-root>
+    <style>
+      .tag-0-0-5 {
+  color: #fff;
+  border: 1px solid #dfdfdf;
+  display: inline-flex;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  background: #333;
+  border-radius: 0.25rem;
+}
+.tag--pill-0-0-6 {
+  padding: 0.6rem;
+  border-radius: 1rem;
+}
+.tag--link-0-0-7 {
+  text-decoration: none;
+}
+.tag--link-0-0-7:hover {
+  background: #1d2124;
+}
+.tag--link-0-0-7:active {
+  background: #1d2124;
+}
+.tag--link-0-0-7:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+.tag--variant-primary-0-0-8 {
+  color: #fff;
+  background: #007bff;
+  border-color: #007bff;
+}
+    </style>
+    <div class="tag-0-0-5">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-tag>
+`;
