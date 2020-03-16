@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar should contain progress-bar-inner-text css class when text inside is set true 1`] = `
+<scale-progress-bar text-inside="true">
+  <mock:shadow-root>
+    <style>
+      .progress-bar-0-0-64 {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+.progress-bar__outer-0-0-65 {
+  width: 400px;
+  height: 6px;
+  margin: 12px 12px 12px 0;
+  overflow: hidden;
+  position: relative;
+  background: #ebeef5;
+  border-radius: 100px;
+}
+.progress-bar__inner-0-0-66 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 100px;
+  justify-content: flex-end;
+}
+.progress-bar__inner-text-0-0-67 {
+  color: #fff;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.progress-bar__text-0-0-68 {
+  color: #606266;
+  display: inline-block;
+  font-size: 14px;
+}
+.progress-bar--variant-success-0-0-69 {
+  background: #28a745;
+}
+.progress-bar--variant-info-0-0-70 {
+  background: #409eff;
+}
+.progress-bar--variant-warning-0-0-71 {
+  background: #ffc107;
+}
+.progress-bar--variant-danger-0-0-72 {
+  background: #dc3545;
+}
+    </style>
+    <div class="progress-bar-0-0-64">
+      <div class="progress-bar__outer-0-0-65" style="height: 6px;">
+        <div class="progress-bar-0-0-64 progress-bar__inner-0-0-66" style="width: undefined%;">
+          <div class="progress-bar__inner-text-0-0-67">
+            undefined%
+          </div>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-progress-bar>
+`;
+
+exports[`ProgressBar should contain progress-bar-text css class when show text is set true 1`] = `
+<scale-progress-bar show-text="true">
+  <mock:shadow-root>
+    <style>
+      .progress-bar-0-0-46 {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+.progress-bar__outer-0-0-47 {
+  width: 400px;
+  height: 6px;
+  margin: 12px 12px 12px 0;
+  overflow: hidden;
+  position: relative;
+  background: #ebeef5;
+  border-radius: 100px;
+}
+.progress-bar__inner-0-0-48 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 100px;
+  justify-content: flex-end;
+}
+.progress-bar__inner-text-0-0-49 {
+  color: #fff;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.progress-bar__text-0-0-50 {
+  color: #606266;
+  display: inline-block;
+  font-size: 14px;
+}
+.progress-bar--variant-success-0-0-51 {
+  background: #28a745;
+}
+.progress-bar--variant-info-0-0-52 {
+  background: #409eff;
+}
+.progress-bar--variant-warning-0-0-53 {
+  background: #ffc107;
+}
+.progress-bar--variant-danger-0-0-54 {
+  background: #dc3545;
+}
+    </style>
+    <div class="progress-bar-0-0-46">
+      <div class="progress-bar__outer-0-0-47" style="height: 6px;">
+        <div class="progress-bar-0-0-46 progress-bar__inner-0-0-48" style="width: undefined%;"></div>
+      </div>
+      <div class="progress-bar__text-0-0-50">
+        undefined%
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-progress-bar>
+`;
+
+exports[`ProgressBar should have css property width 24px when stroke width is set to 24 1`] = `
+<scale-progress-bar stroke-width="24">
+  <mock:shadow-root>
+    <style>
+      .progress-bar-0-0-28 {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+.progress-bar__outer-0-0-29 {
+  width: 400px;
+  height: 6px;
+  margin: 12px 12px 12px 0;
+  overflow: hidden;
+  position: relative;
+  background: #ebeef5;
+  border-radius: 100px;
+}
+.progress-bar__inner-0-0-30 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 100px;
+  justify-content: flex-end;
+}
+.progress-bar__inner-text-0-0-31 {
+  color: #fff;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.progress-bar__text-0-0-32 {
+  color: #606266;
+  display: inline-block;
+  font-size: 14px;
+}
+.progress-bar--variant-success-0-0-33 {
+  background: #28a745;
+}
+.progress-bar--variant-info-0-0-34 {
+  background: #409eff;
+}
+.progress-bar--variant-warning-0-0-35 {
+  background: #ffc107;
+}
+.progress-bar--variant-danger-0-0-36 {
+  background: #dc3545;
+}
+    </style>
+    <div class="progress-bar-0-0-28">
+      <div class="progress-bar__outer-0-0-29" style="height: 24px;">
+        <div class="progress-bar-0-0-28 progress-bar__inner-0-0-30" style="width: undefined%;"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-progress-bar>
+`;
+
+exports[`ProgressBar should match snapshot 1`] = `
+<scale-progress-bar>
+  <mock:shadow-root>
+    <style>
+      .progress-bar-0-0-10 {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+.progress-bar__outer-0-0-11 {
+  width: 400px;
+  height: 6px;
+  margin: 12px 12px 12px 0;
+  overflow: hidden;
+  position: relative;
+  background: #ebeef5;
+  border-radius: 100px;
+}
+.progress-bar__inner-0-0-12 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  transition: width 0.5s ease-in-out;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 100px;
+  justify-content: flex-end;
+}
+.progress-bar__inner-text-0-0-13 {
+  color: #fff;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.progress-bar__text-0-0-14 {
+  color: #606266;
+  display: inline-block;
+  font-size: 14px;
+}
+.progress-bar--variant-success-0-0-15 {
+  background: #28a745;
+}
+.progress-bar--variant-info-0-0-16 {
+  background: #409eff;
+}
+.progress-bar--variant-warning-0-0-17 {
+  background: #ffc107;
+}
+.progress-bar--variant-danger-0-0-18 {
+  background: #dc3545;
+}
+    </style>
+    <div class="progress-bar-0-0-10">
+      <div class="progress-bar__outer-0-0-11" style="height: 6px;">
+        <div class="progress-bar-0-0-10 progress-bar__inner-0-0-12" style="width: undefined%;"></div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-progress-bar>
+`;

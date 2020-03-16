@@ -13,7 +13,7 @@ describe('Icon', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Icon],
-      html: `<scale-icon path="d 10 10">Label</scale-icon>`,
+      html: `<scale-icon path="m 10 10">Label</scale-icon>`,
     });
     expect(page.root).toMatchSnapshot();
   });

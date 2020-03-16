@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should match snapshot 1`] = `
+<scale-slider>
+  <mock:shadow-root>
+    <style>
+      .slider-0-0-5 {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+.slider__text-0-0-6 {
+  margin: var(--slider-text-margin, 0 0 0 1rem);
+  min-width: 30px;
+  text-align: right;
+}
+.slider__input-0-0-7 {
+  width: 100%;
+  cursor: pointer;
+  height: 4px;
+  outline: none;
+  background: #e4e7ed;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+.slider__input-0-0-7::-webkit-slider-thumb {
+  width: 20px;
+  border: 2px solid #409eff;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-appearance: none;
+}
+.slider__input-0-0-7::-moz-range-thumb {
+  width: 20px;
+  border: 2px solid #409eff;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-appearance: none;
+}
+.slider__input-0-0-7::-ms-thumb {
+  width: 20px;
+  border: 2px solid #409eff;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-appearance: none;
+}
+.input\\[type\\=\\'range\\'\\]-0-0-8::-moz-focus-outer {
+  border: 0;
+}
+    </style>
+    <div class="slider-0-0-5">
+      <input class="slider__input-0-0-7" max="100" min="0" step="1" type="range" value="0">
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-slider>
+`;
