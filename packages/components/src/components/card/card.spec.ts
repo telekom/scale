@@ -1,16 +1,20 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Card } from './card';
+import { styles } from './card.styles';
+import jss from 'jss';
 
 describe('Card', () => {
   let element;
+  let stylesheet;
   beforeEach(async () => {
     element = new Card();
+    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
   });
 
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Card],
-      html: `<t-card>Label</t-card>`,
+      html: `<scale-card>Label</scale-card>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -19,10 +23,10 @@ describe('Card', () => {
     const page = await newSpecPage({
       components: [Card],
       html: `
-			<t-card>
+			<scale-card>
 				<h3 slot="header">Header content</h3>
 				A title
-			</t-card>
+			</scale-card>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -32,10 +36,10 @@ describe('Card', () => {
     const page = await newSpecPage({
       components: [Card],
       html: `
-			<t-card>
+			<scale-card>
 				<h3 slot="footer">Footer content</h3>
 				A title
-			</t-card>
+			</scale-card>
 			`,
     });
     expect(page.root).toMatchSnapshot();
@@ -44,37 +48,25 @@ describe('Card', () => {
   it('should match snapshot with image', async () => {
     const page = await newSpecPage({
       components: [Card],
-      html: `<t-card image-top="http://placehold.it/400x300">A title</t-card>`,
+      html: `<scale-card image-top="http://placehold.it/400x300">A title</scale-card>`,
     });
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should have a default css class', () => {
-    expect(element.getCssClassMap()).toBe('card');
-  });
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
 
-  it('should handle size css class', () => {
     element.size = 'small';
-    expect(element.getCssClassMap()).toContain('card--size-small');
-  });
+    stylesheet.addRule('card--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['card--size-small']
+    );
 
-  it('should handle theme css class', () => {
-    element.theme = 'default';
-    expect(element.getCssClassMap()).toContain('card--theme-default');
-  });
-
-  it('should handle variant css class', () => {
     element.variant = 'primary';
-    expect(element.getCssClassMap()).toContain('card--variant-primary');
-  });
-
-  it('should handle disabled css class', () => {
-    element.disabled = true;
-    expect(element.getCssClassMap()).toContain('card--disabled');
-  });
-
-  it('should handle deselected css class', () => {
-    element.deselected = true;
-    expect(element.getCssClassMap()).toContain('card--deselected');
+    stylesheet.addRule('card--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['card--variant-primary']
+    );
   });
 });

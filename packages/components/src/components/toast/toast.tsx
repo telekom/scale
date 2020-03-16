@@ -1,53 +1,65 @@
-import { Component, Prop, Method, h, State, Element } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  Method,
+  h,
+  State,
+  Element,
+  Host,
+} from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { formatDistance, subSeconds } from 'date-fns';
+import { styles } from './toast.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-toast',
-  styleUrls: ['toast.css'],
+  tag: 'scale-toast',
   shadow: true,
 })
-export class Toast {
+export class Toast implements Base {
   /** (optional) Toast class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Toast size */
-  @Prop() public size?: string = '';
-  /** (optional) Toast theme */
-  @Prop() public theme?: string = '';
+  @Prop() size?: string = '';
   /** (optional) Toast variant */
-  @Prop() public variant?: string = '';
+  @Prop() variant?: string = '';
   /** (optional) Toast opened */
-  @Prop({ reflectToAttr: true }) public opened?: boolean;
+  @Prop({ reflectToAttr: true }) opened?: boolean;
   /** (optional) Toast autohide time */
-  @Prop() public autoHide?: boolean | number = false;
+  @Prop() autoHide?: boolean | number = false;
   /** (optional) Animated toast */
-  @Prop() public animated?: boolean = true;
+  @Prop() animated?: boolean = true;
   /** (optional) Toast time */
-  @Prop() public time?: number;
+  @Prop() time?: number;
   /** (optional) Toast position at the top */
-  @Prop() public positionTop?: number = 12;
+  @Prop() positionTop?: number = 12;
   /** (optional) Toast position right */
-  @Prop() public positionRight?: number = 12;
+  @Prop() positionRight?: number = 12;
   /** (optional) Toast fade duration */
-  @Prop() public fadeDuration?: number = 500;
+  @Prop() fadeDuration?: number = 500;
 
   /** (optional) Toast state progress */
-  @State() public progress: number = 0;
+  @State() progress: number = 0;
   /** (optional) Toast state height with offset */
-  @State() public toastHeightWithOffset: number = 0;
+  @State() toastHeightWithOffset: number = 0;
 
-  @Element() private element: HTMLElement;
+  @Element() element: HTMLElement;
 
-  private hideToast: boolean = false;
+  /** (optional) Injected jss styles */
+  @Prop({ reflectToAttr: true }) styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Toast', styles) stylesheet: StyleSheet;
 
-  private timerId = null;
+  hideToast: boolean = false;
 
-  public componentDidLoad() {
-    this.getToastHeightWithOffset();
-  }
+  timerId = null;
 
-  public componentDidUnload() {
+  componentWillLoad() {}
+
+  componentDidUnload() {
     if (this.timerId) {
       clearTimeout(this.timerId);
       this.timerId = null;
@@ -55,8 +67,9 @@ export class Toast {
       this.progress = 0;
     }
   }
+  componentWillUpdate() {}
 
-  public close = () => {
+  close = () => {
     clearInterval(this.timerId);
     this.hideToast = true;
     setTimeout(() => {
@@ -66,14 +79,14 @@ export class Toast {
     }, this.fadeDuration);
   };
 
-  public getTime = () => {
+  getTime = () => {
     const formattedTime =
       this.time &&
       formatDistance(subSeconds(this.time, 3), new Date(), { addSuffix: true });
     return formattedTime;
   };
 
-  public setToastTimeout = () => {
+  setToastTimeout = () => {
     if (this.opened && this.autoHide !== false && !this.timerId) {
       this.timerId = setInterval(() => {
         this.progress += 1 / (this.getAutoHide() / 1000);
@@ -86,53 +99,45 @@ export class Toast {
 
   /** Toast method: open() */
   @Method()
-  public async open() {
+  async open() {
     this.opened = true;
     this.hideToast = false;
   }
 
-  public render() {
+  render() {
+    const { classes } = this.stylesheet;
     this.setToastTimeout();
     return (
-      <div class={this.getCssClassMap()}>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <style>{this.transitions(this.toastHeightWithOffset)}</style>
         <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
-        <div class="toast__header">
-          <slot name="header" />
-          header
-          <small>{this.getTime()}</small>
-          <a onClick={this.close}>
-            <span aria-hidden="true">&times;</span>
-          </a>
-        </div>
-        {this.autoHide && (
-          <div class="toast__progress" style={{ width: `${this.progress}%` }}>
-            &nbsp;
+        <div class={this.getCssClassMap()}>
+          <div class={classes.toast__header}>
+            <slot name="header" />
+            header
+            <small>{this.getTime()}</small>
+            <a onClick={this.close}>
+              <span aria-hidden="true">&times;</span>
+            </a>
           </div>
-        )}
-        <div class="toast__body">
-          <slot />
+          {this.autoHide && (
+            <div
+              class={classes.toast__progress}
+              style={{ width: `${this.progress}%` }}
+            >
+              &nbsp;
+            </div>
+          )}
+          <div class={classes.toast__body}>
+            <slot />
+          </div>
         </div>
-      </div>
+      </Host>
     );
   }
 
-  private animationStyle = offset => `
-    .toast {
-      right: ${this.positionRight}px;
-      top: -${offset}px;
-    }
-
-    .toast--show {
-      animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
-      animation-timing-function: ease-out;
-      top: ${this.positionTop}px;
-    }
-
-    .toast--hide {
-      animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
-      animation-timing-function: ease-in;
-    }
-
+  transitions = offset => `
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -156,13 +161,30 @@ export class Toast {
     }
   `;
 
-  private getToastHeightWithOffset() {
-    const toastHeight = this.element.shadowRoot.querySelector('.toast')
-      .scrollHeight;
+  animationStyle = offset => {
+    this.stylesheet.addRule('toast--show', {
+      right: `${this.positionRight}px`,
+      animation: `fadeIn ${this.fadeDuration / 1000}s ease-in-out`,
+      top: `${this.positionTop}px`,
+      opacity: 1,
+    });
+    this.stylesheet.addRule('toast--hide', {
+      right: `${this.positionRight}px`,
+      animation: `fadeOut ${this.fadeDuration / 1000}s ease-in-out`,
+      top: `-${offset}px`,
+      opacity: 0,
+    });
+  };
+
+  getToastHeightWithOffset() {
+    const { classes } = this.stylesheet;
+    const toastHeight = this.element.shadowRoot.querySelector(
+      `.${classes.toast}`
+    ).scrollHeight;
     this.toastHeightWithOffset = toastHeight + this.positionTop;
   }
 
-  private getAutoHide() {
+  getAutoHide() {
     if (
       typeof this.autoHide === 'number' ||
       typeof this.autoHide === 'string'
@@ -173,15 +195,16 @@ export class Toast {
     }
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'toast',
+      classes.toast,
       this.customClass && this.customClass,
-      this.size && `toast--size-${this.size}`,
-      this.theme && `toast--theme-${this.theme}`,
-      this.variant && `toast--variant-${this.variant}`,
-      !!this.opened && 'toast--show',
-      !!this.hideToast && 'toast--hide'
+      this.size && classes[`toast--size-${this.size}`],
+      this.variant && classes[`toast--variant-${this.variant}`],
+      !!this.opened && classes[`toast--opened`],
+      !!!this.hideToast && classes[`toast--show`],
+      !!this.hideToast && classes[`toast--hide`]
     );
   }
 }

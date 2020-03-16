@@ -1,3 +1,5 @@
+import { combineObjects } from './utils';
+
 interface Theme {
   unit: string;
   breakpoints: {
@@ -8,7 +10,7 @@ interface Theme {
   };
 }
 
-export const defaultTheme: Theme = {
+const base: any = {
   unit: 'px',
   breakpoints: {
     mobile: 320,
@@ -16,14 +18,28 @@ export const defaultTheme: Theme = {
     desktop: 1024,
   },
   colors: {
+    primary: 'blue',
+    secondary: 'lightblue',
     black: '#000',
     white: '#fff',
   },
 };
 
+export const defaultTheme = {
+  ...base,
+};
+
 export const theme = (overrides?: Partial<Theme>) => {
-  return {
-    ...defaultTheme,
-    ...overrides,
-  };
+  const scale = (window as any).scale;
+  if (scale) {
+    const injectedConfig = scale.config;
+    const injectedTheme = scale.theme;
+    if (injectedTheme) {
+      if (injectedConfig && injectedConfig.overrides === false) {
+        return injectedTheme;
+      }
+      return combineObjects(defaultTheme, injectedTheme);
+    }
+  }
+  return combineObjects(defaultTheme, overrides);
 };

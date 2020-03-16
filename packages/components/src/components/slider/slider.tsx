@@ -1,53 +1,68 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './slider.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-slider',
-  styleUrl: 'slider.css',
+  tag: 'scale-slider',
+  shadow: true,
 })
-export class Slider {
+export class Slider implements Base {
   /** (optional) Slider class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Slider range start value */
-  @Prop() public min?: number = 0;
+  @Prop() min?: number = 0;
   /** (optional) Slider range max value */
-  @Prop() public max?: number = 100;
+  @Prop() max?: number = 100;
   /** (optional) Slider binding value */
-  @Prop() public value: number = 0;
+  @Prop() value: number = 0;
   /** (optional) Slider step */
-  @Prop() public step: number = 1;
+  @Prop() step: number = 1;
   /** (optional) Slider display value */
-  @Prop() public label: boolean = false;
+  @Prop() label: boolean = false;
 
-  public componentWillLoad() {
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Slider', styles) stylesheet: StyleSheet;
+
+  componentWillLoad() {
     if (this.min > this.value) {
       this.value = this.min;
     }
   }
+  componentWillUpdate() {}
 
-  public render() {
+  render() {
+    const { classes } = this.stylesheet;
     return (
-      <div class={this.getCssClassMap()}>
-        <input
-          class="slider__input"
-          type="range"
-          min={this.min}
-          max={this.max}
-          value={this.value}
-          step={this.step}
-          onInput={this.updateValue}
-        />
-        {this.label && <span class="slider__text">{this.value}</span>}
-      </div>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          <input
+            class={classes.slider__input}
+            type="range"
+            min={this.min}
+            max={this.max}
+            value={this.value}
+            step={this.step}
+            onInput={this.updateValue}
+          />
+          {this.label && <span class={classes.slider__text}>{this.value}</span>}
+        </div>
+      </Host>
     );
   }
 
-  private updateValue = event => {
+  updateValue = event => {
     this.value = event.target.value;
   };
 
-  private getCssClassMap(): CssClassMap {
-    return classNames('slider', this.customClass && this.customClass);
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
+    return classNames(classes.slider, this.customClass && this.customClass);
   }
 }

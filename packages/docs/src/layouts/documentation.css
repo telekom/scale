@@ -1,0 +1,105 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover,
+.menu__item--selected,
+.menu__item--selected a {
+  color: #777;
+}
+
+html,
+body,
+.app {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  overflow: hidden;
+}
+
+.main__sidebar,
+.main__content {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.main__sidebar {
+  width: 100%;
+  max-width: 320px;
+  border-right: 1px solid #dfdfdf;
+}
+
+.main__sidebar h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.main__sidebar .section__title {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.main__sidebar ul {
+  padding: 0;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.main__sidebar header,
+.main__sidebar .sidebar {
+  padding: 1rem;
+}
+
+.main__sidebar .sidebar {
+  padding-top: 0;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.menu__item--selected {
+
+}
+
+.main__content {
+  width: 100%;
+}
+
+.content {
+  padding: 1rem;
+  padding-bottom: 5rem;
+}
+
+.content h1 {
+  margin: 0;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+/*
+.content div table {
+  width: calc(100vw - 320px);
+  max-width: 960px;
+} */
+
+.content div table tr,
+.content div table td {
+  font-size: 90%;
+  text-align: left;
+}
+

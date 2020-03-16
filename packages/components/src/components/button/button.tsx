@@ -1,55 +1,79 @@
-import { Component, Prop, h, Method } from '@stencil/core';
+import { Component, Prop, h, Method, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './button.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-button',
-  styleUrl: 'button.css',
+  tag: 'scale-button',
   shadow: true,
 })
-export class Button {
+export class Button implements Base {
   /** (optional) Button class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Button size */
-  @Prop() public size?: string = '';
-  /** (optional) Button theme */
-  @Prop() public theme?: string = '';
+  @Prop() size?: string = '';
   /** (optional) Button variant */
-  @Prop() public variant?: string = '';
+  @Prop() variant?: string = '';
   /** (optional) Disabled button */
-  @Prop() public disabled?: boolean = false;
-  /** (optional) Deselected button */
-  @Prop() public deselected?: boolean = false;
+  @Prop() disabled?: boolean = false;
+  /** (optional) Link button */
+  @Prop() href?: string = '';
+  /** (optional) Link target button */
+  @Prop() target?: string = '_self';
+
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Button', styles) stylesheet: StyleSheet;
 
   /** Button method: disable()  */
   @Method()
-  public async disable() {
+  async disable() {
     this.disabled = true;
   }
 
   /** Button method: enable()  */
   @Method()
-  public async enable() {
+  async enable() {
     this.disabled = false;
   }
 
-  public render() {
+  componentWillLoad() {}
+
+  componentWillUpdate() {}
+
+  render() {
     return (
-      <button class={this.getCssClassMap()} disabled={this.disabled}>
-        <slot />
-      </button>
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        {!!this.href ? (
+          <a
+            class={this.getCssClassMap()}
+            href={this.href}
+            target={this.target}
+          >
+            <slot />
+          </a>
+        ) : (
+          <button class={this.getCssClassMap()} disabled={this.disabled}>
+            <slot />
+          </button>
+        )}
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
     return classNames(
-      'button',
+      classes.button,
       this.customClass && this.customClass,
-      this.size && `button--size-${this.size}`,
-      this.theme && `button--theme-${this.theme}`,
-      this.variant && `button--variant-${this.variant}`,
-      this.disabled && `button--disabled`,
-      this.deselected && `button--deselected`
+      this.size && classes[`button--size-${this.size}`],
+      this.variant && classes[`button--variant-${this.variant}`],
+      this.disabled && classes[`button--disabled`]
     );
   }
 }

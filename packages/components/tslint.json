@@ -4,8 +4,14 @@
     "tslint:recommended",
     "tslint-config-prettier"
   ],
-  "jsRules": {},
+  "jsRules": {
+
+  },
   "rules": {
+    "only-arrow-functions": false,
+    "prefer-for-of": false,
+    "no-empty": false,
+    "member-access": false,
     "interface-name": [
       true,
       "never-prefix"
@@ -15,5 +21,7 @@
     "max-classes-per-file": false,
     "no-string-literal": false
   },
-  "rulesDirectory": []
+  "rulesDirectory": [
+
+  ]
 }

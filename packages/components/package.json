@@ -1,7 +1,7 @@
 {
-  "name": "@telements/components",
+  "name": "@scale/components",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Scale Components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -9,13 +9,14 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/telements-components/telements-components.js",
+  "unpkg": "dist/scale-components/scale-components.js",
   "files": [
     "dist/",
     "loader/"
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build:prod": "stencil build --prod",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e --max-workers=2",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -28,12 +29,16 @@
     "verify": "yarn format && yarn lint:fix"
   },
   "devDependencies": {
-    "@stencil/core": "^1.8.1",
+    "@stencil/core": "1.8.11",
     "@types/jest": "24.0.25",
+    "@types/lodash": "^4.14.149",
     "@types/puppeteer": "1.20.3",
     "date-fns": "^2.6.0",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
+    "jss": "^10.0.4",
+    "jss-preset-default": "^10.0.4",
+    "lodash": "^4.17.15",
     "prettier": "^1.18.2",
     "puppeteer": "1.20.0",
     "tslint": "^5.20.0",
@@ -41,6 +46,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@stencil/core": "1.8.11",
     "@types/classnames": "^2.2.8",
     "classnames": "^2.2.6"
   }

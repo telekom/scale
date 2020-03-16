@@ -1,9 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input should match snapshot 1`] = `
-<t-input>
+<scale-input>
   <mock:shadow-root>
-    <input class="input input--type-text" type="text">
+    <style>
+      .input-0-0-2 {
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  display: flex;
+  padding: 0.5rem;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+  border-radius: 4px;
+}
+.input-0-0-2:not(.tabbing):focus {
+  outline: 0;
+}
+    </style>
+    <input class="input-0-0-2" type="text">
   </mock:shadow-root>
-</t-input>
+</scale-input>
 `;

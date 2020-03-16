@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should have a link 1`] = `
+<scale-badge link="#">
+  <mock:shadow-root>
+    <style>
+      .badge-0-0-34 {
+  color:  #fff;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 90%;
+  background: #343a40;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+  vertical-align: baseline;
+}
+.badge--pill-0-0-35 {
+  padding-left: 0.6em;
+  border-radius: 10rem;
+  padding-right: 0.6em;
+}
+.badge--variant-dark-0-0-36 {
+  color: #fff;
+  background-color: #343a40;
+}
+.badge--variant-light-0-0-37 {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+.badge--variant-info-0-0-38 {
+  color: #fff;
+  background-color: #17a2b8;
+}
+.badge--variant-warning-0-0-39 {
+  color: #212529;
+  background-color: #ffc107;
+}
+.badge--variant-danger-0-0-40 {
+  color: #fff;
+  background-color: #dc3545;
+}
+.badge--variant-success-0-0-41 {
+  color: #fff;
+  background-color: #28a745;
+}
+.badge--variant-secondary-0-0-42 {
+  color: #fff;
+  background-color: #6c757d;
+}
+.badge--variant-primary-0-0-43 {
+  color: #fff;
+  background-color: #007bff;
+}
+.badge--link-0-0-44 {
+  text-decoration: none;
+}
+.badge--link-0-0-44:hover {
+  background: #1d2124;
+}
+.badge--link-0-0-44:active {
+  background: #1d2124;
+}
+.badge--link-0-0-44:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+    </style>
+    <a class="badge--link-0-0-44 badge-0-0-34" href="#">
+      <slot></slot>
+    </a>
+  </mock:shadow-root>
+  Label
+</scale-badge>
+`;
+
+exports[`Badge should match snapshot 1`] = `
+<scale-badge>
+  <mock:shadow-root>
+    <style>
+      .badge-0-0-12 {
+  color:  #fff;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 90%;
+  background: #343a40;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+  vertical-align: baseline;
+}
+.badge--pill-0-0-13 {
+  padding-left: 0.6em;
+  border-radius: 10rem;
+  padding-right: 0.6em;
+}
+.badge--variant-dark-0-0-14 {
+  color: #fff;
+  background-color: #343a40;
+}
+.badge--variant-light-0-0-15 {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+.badge--variant-info-0-0-16 {
+  color: #fff;
+  background-color: #17a2b8;
+}
+.badge--variant-warning-0-0-17 {
+  color: #212529;
+  background-color: #ffc107;
+}
+.badge--variant-danger-0-0-18 {
+  color: #fff;
+  background-color: #dc3545;
+}
+.badge--variant-success-0-0-19 {
+  color: #fff;
+  background-color: #28a745;
+}
+.badge--variant-secondary-0-0-20 {
+  color: #fff;
+  background-color: #6c757d;
+}
+.badge--variant-primary-0-0-21 {
+  color: #fff;
+  background-color: #007bff;
+}
+.badge--link-0-0-22 {
+  text-decoration: none;
+}
+.badge--link-0-0-22:hover {
+  background: #1d2124;
+}
+.badge--link-0-0-22:active {
+  background: #1d2124;
+}
+.badge--link-0-0-22:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+    </style>
+    <span class="badge-0-0-12">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  Label
+</scale-badge>
+`;

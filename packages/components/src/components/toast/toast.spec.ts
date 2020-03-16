@@ -1,10 +1,14 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Toast } from './toast';
+import { styles } from './toast.styles';
+import jss from 'jss';
 
 describe('Toast', () => {
   let element;
+  let stylesheet;
   beforeEach(async () => {
     element = new Toast();
+    stylesheet = element.stylesheet = jss.createStyleSheet(styles as any);
     jest.useFakeTimers();
     jest.mock('date-fns');
   });
@@ -16,7 +20,7 @@ describe('Toast', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-toast>Toast message</t-toast>`,
+      html: `<scale-toast>Toast message</scale-toast>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
@@ -25,7 +29,7 @@ describe('Toast', () => {
   it('should match snapshot when opened', async () => {
     const page = await newSpecPage({
       components,
-      html: `<t-toast opened=true >Label</t-toast>`,
+      html: `<scale-toast opened=true >Label</scale-toast>`,
     });
     expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
@@ -76,34 +80,45 @@ describe('Toast', () => {
     }, 10);
   });
 
-  it('should have a default css class', () => {
-    expect(element.getCssClassMap()).toBe('toast');
-  });
-
-  it('should handle custom css class', () => {
-    element.customClass = 'custom-class';
-    expect(element.getCssClassMap()).toContain('custom-class');
-  });
-
-  it('should handle size css class', () => {
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('toast--size-small');
-  });
-
-  it('should handle theme css class', () => {
-    element.theme = 'default';
-    expect(element.getCssClassMap()).toContain('toast--theme-default');
-  });
-
-  it('should handle variant css class', () => {
-    element.variant = 'primary';
-    expect(element.getCssClassMap()).toContain('toast--variant-primary');
-  });
-
   it('should render with default timeformat', () => {
     element.time = timeStamp;
     element.getTime();
 
     expect(element.time).toBe(timeStamp);
+  });
+
+  it('should handle css classes', () => {
+    element.customClass = 'custom';
+    expect(element.getCssClassMap()).toContain('custom');
+
+    element.variant = 'primary';
+    stylesheet.addRule('toast--variant-primary', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['toast--variant-primary']
+    );
+
+    element.size = 'small';
+    stylesheet.addRule('toast--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['toast--size-small']
+    );
+
+    element.opened = true;
+    stylesheet.addRule('toast--opened', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['toast--opened']
+    );
+
+    element.hideToast = false;
+    stylesheet.addRule('toast--show', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['toast--show']
+    );
+
+    element.hideToast = true;
+    stylesheet.addRule('toast--hide', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['toast--hide']
+    );
   });
 });

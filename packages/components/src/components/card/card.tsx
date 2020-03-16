@@ -1,75 +1,82 @@
-import { Component, Prop, h, Element } from '@stencil/core';
+import { Component, Prop, h, Element, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
+import { styles } from './card.styles';
+import { CssInJs } from '../../utils/css-in-js';
+import { StyleSheet } from 'jss';
+import Base from '../../utils/base-interface';
 
 @Component({
-  tag: 't-card',
-  styleUrls: ['card.css'],
+  tag: 'scale-card',
   shadow: true,
 })
-export class Card {
-  @Element() public hostElement: HTMLElement;
+export class Card implements Base {
+  @Element() hostElement: HTMLElement;
   /** (optional) Card class */
-  @Prop() public customClass?: string = '';
+  @Prop() customClass?: string = '';
   /** (optional) Card size */
-  @Prop() public size?: string = '';
-  /** (optional) Card theme */
-  @Prop() public theme?: string = '';
+  @Prop() size?: string = '';
   /** (optional) Card variant */
-  @Prop() public variant?: string = '';
-  /** (optional) Disabled card */
-  @Prop() public disabled?: boolean = false;
-  /** (optional) Deselected card */
-  @Prop() public deselected?: boolean = false;
+  @Prop() variant?: string = '';
   /** (optional) Card image at the top */
-  @Prop() public imageTop?: string;
+  @Prop() imageTop?: string;
   /** (optional) Card image alternative at the top */
-  @Prop() public imageTopAlt?: string = '';
+  @Prop() imageTopAlt?: string = '';
 
-  private hasSlotHeader: boolean;
-  private hasSlotFooter: boolean;
+  /** (optional) Injected jss styles */
+  @Prop() styles?: StyleSheet;
+  /** decorator Jss stylesheet */
+  @CssInJs('Card', styles) stylesheet: StyleSheet;
 
-  public componentWillLoad() {
+  hasSlotHeader: boolean;
+  hasSlotFooter: boolean;
+
+  componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
     this.hasSlotFooter = !!this.hostElement.querySelector('[slot="footer"]');
   }
+  componentWillUpdate() {}
 
-  public render() {
+  render() {
+    const { classes } = this.stylesheet;
+
     return (
-      <div class={this.getCssClassMap()}>
-        {this.hasSlotHeader && (
-          <div class="card__header">
-            <slot name="header" />
+      <Host>
+        <style>{this.stylesheet.toString()}</style>
+        <div class={this.getCssClassMap()}>
+          {this.hasSlotHeader && (
+            <div class={classes.card__header}>
+              <slot name="header" />
+            </div>
+          )}
+          {this.imageTop && (
+            <img
+              class={classes['card__img-top']}
+              src={this.imageTop}
+              alt={this.imageTopAlt}
+            />
+          )}
+          <div class={classes.card__body}>
+            <slot />
           </div>
-        )}
-        {this.imageTop && (
-          <img
-            class="card__img-top"
-            src={this.imageTop}
-            alt={this.imageTopAlt}
-          />
-        )}
-        <div class="card__body">
-          <slot />
+          {this.hasSlotFooter && (
+            <div class={classes.card__footer}>
+              <slot name="footer" />
+            </div>
+          )}
         </div>
-        {this.hasSlotFooter && (
-          <div class="card__footer">
-            <slot name="footer" />
-          </div>
-        )}
-      </div>
+      </Host>
     );
   }
 
-  private getCssClassMap(): CssClassMap {
+  getCssClassMap(): CssClassMap {
+    const { classes } = this.stylesheet;
+
     return classNames(
-      'card',
+      classes.card,
       this.customClass && this.customClass,
-      this.size && `card--size-${this.size}`,
-      this.theme && `card--theme-${this.theme}`,
-      this.variant && `card--variant-${this.variant}`,
-      this.disabled && `card--disabled`,
-      this.deselected && `card--deselected`
+      this.size && classes[`card--size-${this.size}`],
+      this.variant && classes[`card--variant-${this.variant}`]
     );
   }
 }
