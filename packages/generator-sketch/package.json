@@ -1,6 +1,6 @@
 {
   "name": "@scale/generator-sketch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert the web-components to a sketch file",
   "scripts": {
     "test": "eslint src/",

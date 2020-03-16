@@ -1,7 +1,7 @@
 {
   "name": "@scale/docs",
   "description": "Scale Components Documentation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "eeegor",
   "dependencies": {
     "gatsby": "^2.17.11",
