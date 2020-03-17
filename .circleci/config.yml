@@ -34,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn workspace @scale/components test
+      - run: yarn workspace @scaleds/components test
