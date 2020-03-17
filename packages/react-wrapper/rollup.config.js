@@ -38,6 +38,7 @@ export default {
           'PropTypes',
           'createElement'
         ],
+        'node_modules/lodash/lodash.js': ['kebabCase'],
         'node_modules/react-dom/index.js': ['render']
       }
     })

@@ -1,2 +1,2 @@
-import { ScaleAlert, ScaleBadge, ScaleButton, ScaleCard, ScaleCarousel, ScaleDivider, ScaleIcon, ScaleInput, ScaleInpuerror, ScaleInpugroup, ScaleInpulabel, ScaleLink, ScaleModal, ScaleProgressBar, ScaleSlider, ScaleSwitch, ScaleTag, ScaleText, ScaleToast } from './components/Components';
-export { ScaleAlert, ScaleBadge, ScaleButton, ScaleCard, ScaleCarousel, ScaleDivider, ScaleIcon, ScaleInput, ScaleInpuerror, ScaleInpugroup, ScaleInpulabel, ScaleLink, ScaleModal, ScaleProgressBar, ScaleSlider, ScaleSwitch, ScaleTag, ScaleText, ScaleToast };
+import { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast } from './components/Components';
+export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
