@@ -33,10 +33,10 @@ exports[`Button should match snapshot 1`] = `
 .button-0-0-3:before {
   width: 0;
   height: 100%;
-  content: ";
+  content: "";
   display: block;
 }
-.button-0-0-3:hover, .button-0-0-3.active {
+.button-0-0-3:hover {
   color: #fff;
   background: #000;
   box-shadow: none;
