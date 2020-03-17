@@ -46,7 +46,10 @@ var WebComponentWrapper = function (props) {
     var ref = useRef(null);
     var convertedProps = {};
     Object.keys(forwardedProps).forEach(function (prop) {
-        if (!prop.startsWith('on')) {
+        if (prop === 'className') {
+            convertedProps['custom-class'] = forwardedProps[prop];
+        }
+        else if (!prop.startsWith('on')) {
             convertedProps[kebabCase(prop)] = forwardedProps[prop];
         }
         else {
