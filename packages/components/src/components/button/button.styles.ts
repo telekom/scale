@@ -28,11 +28,11 @@ export const styles: JssStyle = {
     textDecoration: 'none',
     '&:before': {
       width: 0,
-      content: '"',
+      content: '""',
       display: 'block',
       height: '100%',
     },
-    '&:hover, &.active': {
+    '&:hover': {
       color: '#fff',
       background: '#000',
       borderColor: '#000',
@@ -49,7 +49,7 @@ export const styles: JssStyle = {
       background: '#fff',
       border: '1px solid #000',
       color: '#000',
-      opacity: '0.5',
+      opacity: 0.5,
       cursor: 'not-allowed',
     },
   },
