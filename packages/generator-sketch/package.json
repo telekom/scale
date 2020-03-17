@@ -1,5 +1,5 @@
 {
-  "name": "@scale/generator-sketch",
+  "name": "@scaleds/generator-sketch",
   "version": "0.0.2",
   "description": "Convert the web-components to a sketch file",
   "scripts": {

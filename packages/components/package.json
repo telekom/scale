@@ -1,5 +1,5 @@
 {
-  "name": "@scale/components",
+  "name": "@scaleds/components",
   "version": "0.0.2",
   "description": "Scale Components",
   "main": "dist/index.js",
