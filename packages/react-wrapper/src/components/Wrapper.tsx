@@ -1,10 +1,20 @@
 import React, { useRef, useEffect } from 'react'
 
+const kebabCase = require('lodash').kebabCase
+
 const WebComponentWrapper = (props: any) => {
   const { events, component, styles, children, ...forwardedProps } = props
   const eventNames: string[] | null = events ? Object.keys(events) : null
   const Component = component
   const ref = useRef<any>(null)
+  var convertedProps = {}
+  Object.keys(forwardedProps).forEach(function (prop) {
+    if (!prop.startsWith('on')) {
+      convertedProps[kebabCase(prop)] = forwardedProps[prop]
+    } else {
+      convertedProps[prop] = forwardedProps[prop]
+    }
+  })
   useEffect(() => {
     if (ref.current) {
       if (styles) {
@@ -20,7 +30,7 @@ const WebComponentWrapper = (props: any) => {
   }, [ref, styles])
 
   return (
-    <Component ref={ref} {...forwardedProps}>
+    <Component ref={ref} {...convertedProps}>
       {children}
     </Component>
   )

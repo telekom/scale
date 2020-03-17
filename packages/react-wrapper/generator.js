@@ -53,7 +53,6 @@ const interfaceTemplate = (name, props, events) => {
 
 const componentTemplate = ({ name, tag, props, events }) =>
   `${interfaceTemplate(name, props, events)}
-
 const ${name}: React.FunctionComponent<${interfaceName(name)}> = (props) => (
 	<WebComponentWrapper
 		${events && events.length > 0 ? `events={${eventsTemplate(events)}}` : ''}
@@ -104,7 +103,7 @@ const convertToReact = components => {
   const reactData = {}
   components.forEach(component => {
     const reactComponent = capitalizeFirst(
-      _.camelCase(component.tag.replace('t-', ''))
+      _.camelCase(component.tag.replace('scale-', ''))
     )
     reactData[reactComponent] = {
       tag: component.tag,

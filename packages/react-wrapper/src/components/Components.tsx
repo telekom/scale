@@ -2,7 +2,7 @@ import * as React from 'react'
 import { StyleSheet } from 'jss'
 import WebComponentWrapper from './Wrapper'
 
-interface ScaleAlertProps {
+interface AlertProps {
   // Web-component props
   customClass?: string
   headline: string
@@ -16,11 +16,10 @@ interface ScaleAlertProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleAlert: React.FunctionComponent<ScaleAlertProps> = props => (
+const Alert: React.FunctionComponent<AlertProps> = props => (
   <WebComponentWrapper component='scale-alert' {...props} />
 )
-interface ScaleBadgeProps {
+interface BadgeProps {
   // Web-component props
   customClass?: string
   link?: string
@@ -32,11 +31,10 @@ interface ScaleBadgeProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleBadge: React.FunctionComponent<ScaleBadgeProps> = props => (
+const Badge: React.FunctionComponent<BadgeProps> = props => (
   <WebComponentWrapper component='scale-badge' {...props} />
 )
-interface ScaleButtonProps {
+interface ButtonProps {
   // Web-component props
   customClass?: string
   disabled?: boolean
@@ -49,11 +47,10 @@ interface ScaleButtonProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleButton: React.FunctionComponent<ScaleButtonProps> = props => (
+const Button: React.FunctionComponent<ButtonProps> = props => (
   <WebComponentWrapper component='scale-button' {...props} />
 )
-interface ScaleCardProps {
+interface CardProps {
   // Web-component props
   customClass?: string
   imageTop?: string
@@ -65,11 +62,10 @@ interface ScaleCardProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleCard: React.FunctionComponent<ScaleCardProps> = props => (
+const Card: React.FunctionComponent<CardProps> = props => (
   <WebComponentWrapper component='scale-card' {...props} />
 )
-interface ScaleCarouselProps {
+interface CarouselProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -78,11 +74,10 @@ interface ScaleCarouselProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleCarousel: React.FunctionComponent<ScaleCarouselProps> = props => (
+const Carousel: React.FunctionComponent<CarouselProps> = props => (
   <WebComponentWrapper component='scale-carousel' {...props} />
 )
-interface ScaleDividerProps {
+interface DividerProps {
   // Web-component props
   customClass?: string
   size?: string
@@ -92,11 +87,10 @@ interface ScaleDividerProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleDivider: React.FunctionComponent<ScaleDividerProps> = props => (
+const Divider: React.FunctionComponent<DividerProps> = props => (
   <WebComponentWrapper component='scale-divider' {...props} />
 )
-interface ScaleIconProps {
+interface IconProps {
   // Web-component props
   customClass?: string
   name: string
@@ -106,11 +100,10 @@ interface ScaleIconProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleIcon: React.FunctionComponent<ScaleIconProps> = props => (
+const Icon: React.FunctionComponent<IconProps> = props => (
   <WebComponentWrapper component='scale-icon' {...props} />
 )
-interface ScaleInputProps {
+interface InputProps {
   // Web-component props
   customClass?: string
   errorMessage?: string
@@ -125,15 +118,14 @@ interface ScaleInputProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleInput: React.FunctionComponent<ScaleInputProps> = props => (
+const Input: React.FunctionComponent<InputProps> = props => (
   <WebComponentWrapper
     events={{ onChanged: 'changed' }}
     component='scale-input'
     {...props}
   />
 )
-interface ScaleInpuerrorProps {
+interface InputErrorProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -141,11 +133,10 @@ interface ScaleInpuerrorProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleInpuerror: React.FunctionComponent<ScaleInpuerrorProps> = props => (
+const InputError: React.FunctionComponent<InputErrorProps> = props => (
   <WebComponentWrapper component='scale-input-error' {...props} />
 )
-interface ScaleInpugroupProps {
+interface InputGroupProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -153,11 +144,10 @@ interface ScaleInpugroupProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleInpugroup: React.FunctionComponent<ScaleInpugroupProps> = props => (
+const InputGroup: React.FunctionComponent<InputGroupProps> = props => (
   <WebComponentWrapper component='scale-input-group' {...props} />
 )
-interface ScaleInpulabelProps {
+interface InputLabelProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -165,11 +155,10 @@ interface ScaleInpulabelProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleInpulabel: React.FunctionComponent<ScaleInpulabelProps> = props => (
+const InputLabel: React.FunctionComponent<InputLabelProps> = props => (
   <WebComponentWrapper component='scale-input-label' {...props} />
 )
-interface ScaleLinkProps {
+interface LinkProps {
   // Web-component props
   customClass?: string
   disabled?: boolean
@@ -182,11 +171,10 @@ interface ScaleLinkProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleLink: React.FunctionComponent<ScaleLinkProps> = props => (
+const Link: React.FunctionComponent<LinkProps> = props => (
   <WebComponentWrapper component='scale-link' {...props} />
 )
-interface ScaleModalProps {
+interface ModalProps {
   // Web-component props
   customClass?: string
   opened?: boolean
@@ -197,11 +185,10 @@ interface ScaleModalProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleModal: React.FunctionComponent<ScaleModalProps> = props => (
+const Modal: React.FunctionComponent<ModalProps> = props => (
   <WebComponentWrapper component='scale-modal' {...props} />
 )
-interface ScaleProgressBarProps {
+interface ProgressBarProps {
   // Web-component props
   customClass?: string
   percentage: number
@@ -214,11 +201,10 @@ interface ScaleProgressBarProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleProgressBar: React.FunctionComponent<ScaleProgressBarProps> = props => (
+const ProgressBar: React.FunctionComponent<ProgressBarProps> = props => (
   <WebComponentWrapper component='scale-progress-bar' {...props} />
 )
-interface ScaleSliderProps {
+interface SliderProps {
   // Web-component props
   customClass?: string
   label: boolean
@@ -231,11 +217,10 @@ interface ScaleSliderProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleSlider: React.FunctionComponent<ScaleSliderProps> = props => (
+const Slider: React.FunctionComponent<SliderProps> = props => (
   <WebComponentWrapper component='scale-slider' {...props} />
 )
-interface ScaleSwitchProps {
+interface SwitchProps {
   // Web-component props
   active?: boolean
   customClass?: string
@@ -245,11 +230,10 @@ interface ScaleSwitchProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleSwitch: React.FunctionComponent<ScaleSwitchProps> = props => (
+const Switch: React.FunctionComponent<SwitchProps> = props => (
   <WebComponentWrapper component='scale-switch' {...props} />
 )
-interface ScaleTagProps {
+interface TagProps {
   // Web-component props
   customClass?: string
   link?: string
@@ -260,11 +244,10 @@ interface ScaleTagProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleTag: React.FunctionComponent<ScaleTagProps> = props => (
+const Tag: React.FunctionComponent<TagProps> = props => (
   <WebComponentWrapper component='scale-tag' {...props} />
 )
-interface ScaleTextProps {
+interface TextProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
@@ -272,11 +255,10 @@ interface ScaleTextProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleText: React.FunctionComponent<ScaleTextProps> = props => (
+const Text: React.FunctionComponent<TextProps> = props => (
   <WebComponentWrapper component='scale-text' {...props} />
 )
-interface ScaleToastProps {
+interface ToastProps {
   // Web-component props
   animated?: boolean
   autoHide?: boolean | number
@@ -293,29 +275,28 @@ interface ScaleToastProps {
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
-
-const ScaleToast: React.FunctionComponent<ScaleToastProps> = props => (
+const Toast: React.FunctionComponent<ToastProps> = props => (
   <WebComponentWrapper component='scale-toast' {...props} />
 )
 
 export {
-  ScaleAlert,
-  ScaleBadge,
-  ScaleButton,
-  ScaleCard,
-  ScaleCarousel,
-  ScaleDivider,
-  ScaleIcon,
-  ScaleInput,
-  ScaleInpuerror,
-  ScaleInpugroup,
-  ScaleInpulabel,
-  ScaleLink,
-  ScaleModal,
-  ScaleProgressBar,
-  ScaleSlider,
-  ScaleSwitch,
-  ScaleTag,
-  ScaleText,
-  ScaleToast
+  Alert,
+  Badge,
+  Button,
+  Card,
+  Carousel,
+  Divider,
+  Icon,
+  Input,
+  InputError,
+  InputGroup,
+  InputLabel,
+  Link,
+  Modal,
+  ProgressBar,
+  Slider,
+  Switch,
+  Tag,
+  Text,
+  Toast
 }
