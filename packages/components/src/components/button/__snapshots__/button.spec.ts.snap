@@ -8,7 +8,6 @@ exports[`Button should match snapshot 1`] = `
   color: #000;
   border: 1px solid #000;
   cursor: pointer;
-  height: 40px;
   display: inline-flex;
   padding: 0.25rem 1rem;
   position: relative;
@@ -16,6 +15,7 @@ exports[`Button should match snapshot 1`] = `
   background: #fff;
   box-shadow: none;
   box-sizing: border-box;
+  min-height: 40px;
   text-align: center;
   transition: all 0.2s ease-in-out;
   align-items: center;
@@ -43,9 +43,6 @@ exports[`Button should match snapshot 1`] = `
   transition: all 0.2s ease-in-out;
   border-color: #000;
   text-decoration: none;
-}
-.button-0-0-3:not(.tabbing):focus {
-  outline: 0;
 }
 .button--disabled-0-0-4, .button--disabled-0-0-4:hover {
   color: #000;
