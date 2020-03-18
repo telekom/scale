@@ -24,7 +24,7 @@ export const styles: JssStyle = {
     textTransform: 'initial',
     letterSpacing: 0,
     transition: 'all 0.2s ease-in-out',
-    height: '40px',
+    minHeight: '40px',
     textDecoration: 'none',
     '&:before': {
       width: 0,
@@ -40,9 +40,9 @@ export const styles: JssStyle = {
       transition: 'all 0.2s ease-in-out',
       textDecoration: 'none',
     },
-    '&:not(.tabbing):focus': {
-      outline: 0,
-    },
+    // '&:not(.tabbing):focus': {
+    //   outline: 0,
+    // },
   },
   'button--disabled': {
     '&, &:hover': {
