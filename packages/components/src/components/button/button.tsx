@@ -24,6 +24,10 @@ export class Button implements Base {
   /** (optional) Link target button */
   @Prop() target?: string = '_self';
 
+  @Prop() ariaLabel?: string = '';
+  @Prop() focusable?: boolean = true;
+  @Prop() role?: string = '';
+
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
@@ -54,11 +58,20 @@ export class Button implements Base {
             class={this.getCssClassMap()}
             href={this.href}
             target={this.target}
+            aria-label={this.ariaLabel}
+            tabindex={this.focusable ? 0 : -1}
+            role={this.role || 'button'}
           >
             <slot />
           </a>
         ) : (
-          <button class={this.getCssClassMap()} disabled={this.disabled}>
+          <button
+            class={this.getCssClassMap()}
+            disabled={this.disabled}
+            aria-label={this.ariaLabel}
+            tabindex={this.focusable ? 0 : -1}
+            {...(!!this.role ? { role: this.role } : {})}
+          >
             <slot />
           </button>
         )}
