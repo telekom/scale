@@ -4,7 +4,7 @@ exports[`Button should match snapshot 1`] = `
 <scale-button>
   <mock:shadow-root>
     <style>
-      .button-0-0-3 {
+      .button-0-0-5 {
   color: #000;
   border: 1px solid #000;
   cursor: pointer;
@@ -30,13 +30,13 @@ exports[`Button should match snapshot 1`] = `
   justify-content: center;
   text-decoration: none;
 }
-.button-0-0-3:before {
+.button-0-0-5:before {
   width: 0;
   height: 100%;
   content: "";
   display: block;
 }
-.button-0-0-3:hover {
+.button-0-0-5:hover {
   color: #fff;
   background: #000;
   box-shadow: none;
@@ -44,15 +44,25 @@ exports[`Button should match snapshot 1`] = `
   border-color: #000;
   text-decoration: none;
 }
-.button--disabled-0-0-4, .button--disabled-0-0-4:hover {
+.button--disabled-0-0-6, .button--disabled-0-0-6:hover {
   color: #000;
   border: 1px solid #000;
   cursor: not-allowed;
   opacity: 0.5;
   background: #fff;
 }
+.button__before-0-0-7 {
+  display: flex;
+  align-items: center;
+  margin-right: .5rem;
+}
+.button__after-0-0-8 {
+  display: flex;
+  align-items: center;
+  margin-left: .5rem;
+}
     </style>
-    <button aria-label="" class="button-0-0-3" tabindex="0">
+    <button class="button-0-0-5" tabindex="0">
       <slot></slot>
     </button>
   </mock:shadow-root>

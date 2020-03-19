@@ -1,4 +1,4 @@
-import { Component, Prop, h, Method, Host } from '@stencil/core';
+import { Component, Prop, h, Method, Host, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './button.styles';
@@ -11,6 +11,10 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class Button implements Base {
+  hasSlotBefore: boolean;
+  hasSlotAfter: boolean;
+
+  @Element() hostElement: HTMLElement;
   /** (optional) Button class */
   @Prop() customClass?: string = '';
   /** (optional) Button size */
@@ -45,36 +49,44 @@ export class Button implements Base {
     this.disabled = false;
   }
 
-  componentWillLoad() {}
+  componentWillLoad() {
+    this.hasSlotBefore = !!this.hostElement.querySelector('[slot="before"]');
+    this.hasSlotAfter = !!this.hostElement.querySelector('[slot="after"]');
+  }
 
   componentWillUpdate() {}
 
   render() {
+    const { classes } = this.stylesheet;
+    const Tag = this.href ? 'a' : 'button';
+    const role = this.href
+      ? { role: this.role || 'button' }
+      : this.role
+      ? { role: this.role }
+      : {};
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        {!!this.href ? (
-          <a
-            class={this.getCssClassMap()}
-            href={this.href}
-            target={this.target}
-            aria-label={this.ariaLabel}
-            tabindex={this.focusable ? 0 : -1}
-            role={this.role || 'button'}
-          >
-            <slot />
-          </a>
-        ) : (
-          <button
-            class={this.getCssClassMap()}
-            disabled={this.disabled}
-            aria-label={this.ariaLabel}
-            tabindex={this.focusable ? 0 : -1}
-            {...(!!this.role ? { role: this.role } : {})}
-          >
-            <slot />
-          </button>
-        )}
+        <Tag
+          class={this.getCssClassMap()}
+          tabindex={this.focusable ? 0 : -1}
+          {...(!!!this.href ? { disabled: this.disabled } : {})}
+          {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
+          {...role}
+        >
+          {this.hasSlotBefore && (
+            <div class={classes.button__before}>
+              <slot name="before" />
+            </div>
+          )}
+          <slot />
+          {this.hasSlotAfter && (
+            <div class={classes.button__after}>
+              <slot name="after" />
+            </div>
+          )}
+        </Tag>
       </Host>
     );
   }
