@@ -80,6 +80,7 @@ export namespace Components {
     'variant'?: string;
   }
   interface ScaleButton {
+    'ariaLabel'?: string;
     /**
     * (optional) Button class
     */
@@ -96,10 +97,12 @@ export namespace Components {
     * Button method: enable()
     */
     'enable': () => Promise<void>;
+    'focusable'?: boolean;
     /**
     * (optional) Link button
     */
     'href'?: string;
+    'role'?: string;
     /**
     * (optional) Button size
     */
@@ -669,6 +672,7 @@ declare namespace LocalJSX {
     'variant'?: string;
   }
   interface ScaleButton {
+    'ariaLabel'?: string;
     /**
     * (optional) Button class
     */
@@ -677,10 +681,12 @@ declare namespace LocalJSX {
     * (optional) Disabled button
     */
     'disabled'?: boolean;
+    'focusable'?: boolean;
     /**
     * (optional) Link button
     */
     'href'?: string;
+    'role'?: string;
     /**
     * (optional) Button size
     */

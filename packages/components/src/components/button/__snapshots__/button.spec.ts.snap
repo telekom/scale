@@ -52,7 +52,7 @@ exports[`Button should match snapshot 1`] = `
   background: #fff;
 }
     </style>
-    <button class="button-0-0-3">
+    <button aria-label="" class="button-0-0-3" tabindex="0">
       <slot></slot>
     </button>
   </mock:shadow-root>
