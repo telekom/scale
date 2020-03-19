@@ -1,4 +1,4 @@
-import {nodeTreeToSketchPage} from '@scale/html-to-sketch';
+import {nodeTreeToSketchPage} from '@scaleds/html-to-sketch';
 
 export function run(mainNode = document.body) {
   const page = nodeTreeToSketchPage(mainNode);
