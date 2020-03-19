@@ -53,4 +53,14 @@ export const styles: JssStyle = {
       cursor: 'not-allowed',
     },
   },
+  button__before: {
+    marginRight: '.5rem',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  button__after: {
+    marginLeft: '.5rem',
+    display: 'flex',
+    alignItems: 'center',
+  },
 };

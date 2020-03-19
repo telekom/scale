@@ -179,19 +179,23 @@ export namespace Components {
     'vertical'?: boolean;
   }
   interface ScaleIcon {
+    'color'?: string;
     /**
     * (optional) Tag class
     */
     'customClass'?: string;
+    'height'?: number;
     /**
     * (optional) Tag theme
     */
     'name': string;
     'path': string;
+    'size'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    'width'?: number;
   }
   interface ScaleInput {
     /**
@@ -763,19 +767,23 @@ declare namespace LocalJSX {
     'vertical'?: boolean;
   }
   interface ScaleIcon {
+    'color'?: string;
     /**
     * (optional) Tag class
     */
     'customClass'?: string;
+    'height'?: number;
     /**
     * (optional) Tag theme
     */
     'name'?: string;
     'path'?: string;
+    'size'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    'width'?: number;
   }
   interface ScaleInput {
     /**
