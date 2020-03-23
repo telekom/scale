@@ -23,9 +23,13 @@ interface BadgeProps {
 }
 declare const Badge: React.FunctionComponent<BadgeProps>;
 interface ButtonProps {
+    ariaLabel?: string;
     customClass?: string;
     disabled?: boolean;
+    focusable?: boolean;
     href?: string;
+    iconOnly?: boolean;
+    role?: string;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
     target?: string;
@@ -59,10 +63,14 @@ interface DividerProps {
 }
 declare const Divider: React.FunctionComponent<DividerProps>;
 interface IconProps {
+    color?: string;
     customClass?: string;
-    name: string;
+    height?: number;
+    name?: string;
     path: string;
+    size?: number;
     styles?: StyleSheet<string | number | symbol>;
+    width?: number;
     [key: string]: any;
 }
 declare const Icon: React.FunctionComponent<IconProps>;

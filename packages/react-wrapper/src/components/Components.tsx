@@ -36,9 +36,13 @@ const Badge: React.FunctionComponent<BadgeProps> = props => (
 )
 interface ButtonProps {
   // Web-component props
+  ariaLabel?: string
   customClass?: string
   disabled?: boolean
+  focusable?: boolean
   href?: string
+  iconOnly?: boolean
+  role?: string
   size?: string
   styles?: StyleSheet<string | number | symbol>
   target?: string
@@ -92,10 +96,14 @@ const Divider: React.FunctionComponent<DividerProps> = props => (
 )
 interface IconProps {
   // Web-component props
+  color?: string
   customClass?: string
-  name: string
+  height?: number
+  name?: string
   path: string
+  size?: number
   styles?: StyleSheet<string | number | symbol>
+  width?: number
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any

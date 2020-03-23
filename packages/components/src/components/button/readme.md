@@ -14,6 +14,7 @@
 | `disabled`    | `disabled`     | (optional) Disabled button     | `boolean`                                | `false`     |
 | `focusable`   | `focusable`    |                                | `boolean`                                | `true`      |
 | `href`        | `href`         | (optional) Link button         | `string`                                 | `''`        |
+| `iconOnly`    | `icon-only`    | (optional) Icon only           | `boolean`                                | `false`     |
 | `role`        | `role`         |                                | `string`                                 | `''`        |
 | `size`        | `size`         | (optional) Button size         | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
