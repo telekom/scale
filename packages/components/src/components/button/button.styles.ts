@@ -12,6 +12,7 @@ export const styles: JssStyle = {
     textAlign: 'center',
     cursor: 'pointer',
     userSelect: 'none',
+    '--icon-color': '#000',
     color: '#000',
     background: '#fff',
     border: '1px solid #000',
@@ -24,7 +25,7 @@ export const styles: JssStyle = {
     textTransform: 'initial',
     letterSpacing: 0,
     transition: 'all 0.2s ease-in-out',
-    minHeight: '40px',
+    minHeight: 40,
     textDecoration: 'none',
     '&:before': {
       width: 0,
@@ -34,15 +35,13 @@ export const styles: JssStyle = {
     },
     '&:hover': {
       color: '#fff',
+      '--icon-color': '#fff',
       background: '#000',
       borderColor: '#000',
       boxShadow: 'none',
       transition: 'all 0.2s ease-in-out',
       textDecoration: 'none',
     },
-    // '&:not(.tabbing):focus': {
-    //   outline: 0,
-    // },
   },
   'button--disabled': {
     '&, &:hover': {
@@ -62,5 +61,9 @@ export const styles: JssStyle = {
     marginLeft: '.5rem',
     display: 'flex',
     alignItems: 'center',
+  },
+  'button--icon-only': {
+    height: 40,
+    width: 40,
   },
 };

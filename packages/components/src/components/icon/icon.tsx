@@ -6,16 +6,6 @@ import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
-const hostStyles = `
-:host {
-  height: auto;
-  width: auto;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-`;
-
 @Component({
   tag: 'scale-icon',
   shadow: true,
@@ -40,6 +30,19 @@ export class Icon implements Base {
   componentWillUpdate() {}
 
   render() {
+    const hostStyles = `
+:host {
+  height: auto;
+  width: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+path {
+  transition: all .2s ease-in-out;
+}
+`;
+
     return (
       <Host>
         <style>
