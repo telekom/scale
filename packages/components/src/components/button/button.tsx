@@ -23,6 +23,8 @@ export class Button implements Base {
   @Prop() variant?: string = '';
   /** (optional) Disabled button */
   @Prop() disabled?: boolean = false;
+  /** (optional) Icon only */
+  @Prop() iconOnly?: boolean = false;
   /** (optional) Link button */
   @Prop() href?: string = '';
   /** (optional) Link target button */
@@ -75,13 +77,13 @@ export class Button implements Base {
           {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
           {...role}
         >
-          {this.hasSlotBefore && (
+          {this.iconOnly === false && this.hasSlotBefore && (
             <div class={classes.button__before}>
               <slot name="before" />
             </div>
           )}
           <slot />
-          {this.hasSlotAfter && (
+          {this.iconOnly === false && this.hasSlotAfter && (
             <div class={classes.button__after}>
               <slot name="after" />
             </div>
@@ -98,6 +100,7 @@ export class Button implements Base {
       this.customClass && this.customClass,
       this.size && classes[`button--size-${this.size}`],
       this.variant && classes[`button--variant-${this.variant}`],
+      this.iconOnly && classes[`button--icon-only`],
       this.disabled && classes[`button--disabled`]
     );
   }

@@ -24,7 +24,7 @@ export class Icon implements Base {
   /** (optional) Tag class */
   @Prop() customClass?: string = '';
   /** (optional) Tag theme */
-  @Prop() name: string;
+  @Prop() name?: string;
   @Prop() path: string;
   @Prop() size?: number;
   @Prop() height?: number = 24;

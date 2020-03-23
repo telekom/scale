@@ -102,6 +102,10 @@ export namespace Components {
     * (optional) Link button
     */
     'href'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'iconOnly'?: boolean;
     'role'?: string;
     /**
     * (optional) Button size
@@ -188,7 +192,7 @@ export namespace Components {
     /**
     * (optional) Tag theme
     */
-    'name': string;
+    'name'?: string;
     'path': string;
     'size'?: number;
     /**
@@ -690,6 +694,10 @@ declare namespace LocalJSX {
     * (optional) Link button
     */
     'href'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'iconOnly'?: boolean;
     'role'?: string;
     /**
     * (optional) Button size
