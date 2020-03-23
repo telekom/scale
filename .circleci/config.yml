@@ -39,6 +39,7 @@ jobs:
           command: |
             yarn workspace @scaleds/components test
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            cat ~/repo/.npmrc
       - run:
           name: Publish Package
           command: |
