@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/react-wrapper",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "@eeegor <egor.kirpichev@telekom.de>",
   "license": "MIT",
   "main": "build/index.js",
