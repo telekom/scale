@@ -34,4 +34,13 @@ jobs:
             - ~/.cache/yarn
 
       # run tests!
-      - run: yarn workspace @scaleds/components test
+      - run:
+          name: Run Tests and deploy
+          command: |
+            yarn workspace @scaleds/components test
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish Package
+          command: |
+            cd packages/components
+            npm publish
