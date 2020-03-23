@@ -11,6 +11,13 @@ exports[`Icon should match snapshot 1`] = `
   justify-content: center;
   align-items: center;
 }
+path {
+  transition: all .2s ease-in-out;
+}
+.icon-0-0-2 path {
+  fill: var(--icon-color);
+  stroke: var(--icon-color);
+}
     </style>
     <svg class="icon-0-0-2" height="24" viewBox="0 0 26 26" width="24">
       <path d="m 10 10" fill="transparent" stroke="black"></path>

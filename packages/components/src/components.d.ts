@@ -105,7 +105,19 @@ export namespace Components {
     /**
     * (optional) Icon only
     */
-    'iconOnly'?: boolean;
+    'icon'?: string;
+    /**
+    * (optional) Icon after
+    */
+    'iconAfter'?: string;
+    /**
+    * (optional) Icon before
+    */
+    'iconBefore'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'iconSize'?: number;
     'role'?: string;
     /**
     * (optional) Button size
@@ -697,7 +709,19 @@ declare namespace LocalJSX {
     /**
     * (optional) Icon only
     */
-    'iconOnly'?: boolean;
+    'icon'?: string;
+    /**
+    * (optional) Icon after
+    */
+    'iconAfter'?: string;
+    /**
+    * (optional) Icon before
+    */
+    'iconBefore'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'iconSize'?: number;
     'role'?: string;
     /**
     * (optional) Button size

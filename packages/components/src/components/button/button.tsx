@@ -24,7 +24,13 @@ export class Button implements Base {
   /** (optional) Disabled button */
   @Prop() disabled?: boolean = false;
   /** (optional) Icon only */
-  @Prop() iconOnly?: boolean = false;
+  @Prop() iconSize?: number = 24;
+  /** (optional) Icon only */
+  @Prop() icon?: string;
+  /** (optional) Icon before */
+  @Prop() iconBefore?: string;
+  /** (optional) Icon after */
+  @Prop() iconAfter?: string;
   /** (optional) Link button */
   @Prop() href?: string = '';
   /** (optional) Link target button */
@@ -77,17 +83,31 @@ export class Button implements Base {
           {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
           {...role}
         >
-          {this.iconOnly === false && this.hasSlotBefore && (
-            <div class={classes.button__before}>
-              <slot name="before" />
-            </div>
+          {!!this.icon === false &&
+            (!!this.iconBefore === true || this.hasSlotBefore) && (
+              <div class={classes.button__before}>
+                {!!this.iconBefore ? (
+                  <scale-icon path={this.iconBefore} size={this.iconSize} />
+                ) : (
+                  <slot name="before"></slot>
+                )}
+              </div>
+            )}
+          {this.icon && this.icon !== '' ? (
+            <scale-icon path={this.icon} size={this.iconSize} />
+          ) : (
+            <slot />
           )}
-          <slot />
-          {this.iconOnly === false && this.hasSlotAfter && (
-            <div class={classes.button__after}>
-              <slot name="after" />
-            </div>
-          )}
+          {!!this.icon === false &&
+            (!!this.iconAfter === true || this.hasSlotAfter) && (
+              <div class={classes.button__after}>
+                {!!this.iconAfter ? (
+                  <scale-icon path={this.iconAfter} size={this.iconSize} />
+                ) : (
+                  <slot name="after"></slot>
+                )}
+              </div>
+            )}
         </Tag>
       </Host>
     );
@@ -100,7 +120,7 @@ export class Button implements Base {
       this.customClass && this.customClass,
       this.size && classes[`button--size-${this.size}`],
       this.variant && classes[`button--variant-${this.variant}`],
-      this.iconOnly && classes[`button--icon-only`],
+      this.icon && this.icon !== '' && classes[`button--icon-only`],
       this.disabled && classes[`button--disabled`]
     );
   }
