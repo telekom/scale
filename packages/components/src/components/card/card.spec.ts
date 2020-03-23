@@ -19,49 +19,9 @@ describe('Card', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should match snapshot with header slot', async () => {
-    const page = await newSpecPage({
-      components: [Card],
-      html: `
-			<scale-card>
-				<h3 slot="header">Header content</h3>
-				A title
-			</scale-card>
-			`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should match snapshot with footer slot', async () => {
-    const page = await newSpecPage({
-      components: [Card],
-      html: `
-			<scale-card>
-				<h3 slot="footer">Footer content</h3>
-				A title
-			</scale-card>
-			`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should match snapshot with image', async () => {
-    const page = await newSpecPage({
-      components: [Card],
-      html: `<scale-card image-top="http://placehold.it/400x300">A title</scale-card>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
   it('should handle css classes', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
-
-    element.size = 'small';
-    stylesheet.addRule('card--size-small', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['card--size-small']
-    );
 
     element.variant = 'primary';
     stylesheet.addRule('card--variant-primary', {});

@@ -15,22 +15,4 @@ export const styles: JssStyle = {
   card__body: {
     padding: '1rem',
   },
-  card__header: {
-    padding: '0.5rem 1rem',
-    borderBottom: '1px solid #dfdfdf',
-    background: '#eee',
-    fontSize: '0.8rem',
-    '& ::slotted(*)': {
-      margin: 0,
-    },
-  },
-  card__footer: {
-    padding: '0.5rem 1rem',
-    borderTop: '1px solid #dfdfdf',
-    background: '#eee',
-    fontSize: '0.8rem',
-    '& ::slotted(*)': {
-      margin: 0,
-    },
-  },
 };

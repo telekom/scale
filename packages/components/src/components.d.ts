@@ -142,18 +142,6 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Card image at the top
-    */
-    'imageTop'?: string;
-    /**
-    * (optional) Card image alternative at the top
-    */
-    'imageTopAlt'?: string;
-    /**
-    * (optional) Card size
-    */
-    'size'?: string;
-    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
@@ -745,18 +733,6 @@ declare namespace LocalJSX {
     * (optional) Card class
     */
     'customClass'?: string;
-    /**
-    * (optional) Card image at the top
-    */
-    'imageTop'?: string;
-    /**
-    * (optional) Card image alternative at the top
-    */
-    'imageTopAlt'?: string;
-    /**
-    * (optional) Card size
-    */
-    'size'?: string;
     /**
     * (optional) Injected jss styles
     */
