@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.8](https://github.com/telekom/scale/compare/v0.0.7...v0.0.8) (2020-03-23)
+
+
+### Bug Fixes
+
+* adjust icon and button props ([#151](https://github.com/telekom/scale/issues/151)) ([3448e31](https://github.com/telekom/scale/commit/3448e318494c933294c1381b779d9416c741be5b))
+
+
+
+
+
 ## [0.0.7](https://github.com/telekom/scale/compare/v0.0.6...v0.0.7) (2020-03-19)
 
 **Note:** Version bump only for package scale
