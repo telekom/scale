@@ -265,15 +265,23 @@ export namespace Components {
     /**
     * (optional) Link href
     */
-    'href'?: string;
+    'href': string;
     /**
-    * (optional) Link open a new tag
+    * (optional) Icon only
     */
-    'openNewTab'?: boolean;
+    'icon'?: string;
+    /**
+    * (optional) Icon size
+    */
+    'iconSize'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link open a new tag
+    */
+    'target'?: string;
     /**
     * (optional) Link underline
     */
@@ -859,13 +867,21 @@ declare namespace LocalJSX {
     */
     'href'?: string;
     /**
-    * (optional) Link open a new tag
+    * (optional) Icon only
     */
-    'openNewTab'?: boolean;
+    'icon'?: string;
+    /**
+    * (optional) Icon size
+    */
+    'iconSize'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link open a new tag
+    */
+    'target'?: string;
     /**
     * (optional) Link underline
     */

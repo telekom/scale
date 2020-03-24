@@ -12,13 +12,22 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   padding: 0;
   position: relative;
   font-size: 14px;
+  transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
+  --icon-color: #000;
   flex-direction: row;
   justify-content: center;
   text-decoration: none;
 }
-.link--underline-0-0-26:hover {
+.link-0-0-25 scale-icon {
+  margin-left: 4px;
+}
+.link-0-0-25:hover.link-0-0-25:not(.link--disabled-0-0-27) {
+  color: black;
+  --icon-color: black;
+}
+.link--underline-0-0-26:hover:not(.link--disabled-0-0-27) {
   text-decoration: underline;
 }
 .link--disabled-0-0-27 {
@@ -27,21 +36,26 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 }
 .link--variant-primary-0-0-28 {
   color: #409eff;
+  --icon-color: #409eff;
 }
 .link--variant-success-0-0-29 {
   color: #67c23a;
+  --icon-color: #67c23a;
 }
 .link--variant-warning-0-0-30 {
   color: #e6a23c;
+  --icon-color: #e6a23c;
 }
 .link--variant-danger-0-0-31 {
   color: #f56c6c;
+  --icon-color: #f56c6c;
 }
 .link--variant-info-0-0-32 {
   color: #909399;
+  --icon-color: #909399;
 }
     </style>
-    <a class="link-0-0-25" href="http://example.com" target="_blank">
+    <a class="link--underline-0-0-26 link-0-0-25" href="http://example.com" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -61,13 +75,22 @@ exports[`Link should have link href value when href value is set 1`] = `
   padding: 0;
   position: relative;
   font-size: 14px;
+  transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
+  --icon-color: #000;
   flex-direction: row;
   justify-content: center;
   text-decoration: none;
 }
-.link--underline-0-0-42:hover {
+.link-0-0-41 scale-icon {
+  margin-left: 4px;
+}
+.link-0-0-41:hover.link-0-0-41:not(.link--disabled-0-0-43) {
+  color: black;
+  --icon-color: black;
+}
+.link--underline-0-0-42:hover:not(.link--disabled-0-0-43) {
   text-decoration: underline;
 }
 .link--disabled-0-0-43 {
@@ -76,21 +99,26 @@ exports[`Link should have link href value when href value is set 1`] = `
 }
 .link--variant-primary-0-0-44 {
   color: #409eff;
+  --icon-color: #409eff;
 }
 .link--variant-success-0-0-45 {
   color: #67c23a;
+  --icon-color: #67c23a;
 }
 .link--variant-warning-0-0-46 {
   color: #e6a23c;
+  --icon-color: #e6a23c;
 }
 .link--variant-danger-0-0-47 {
   color: #f56c6c;
+  --icon-color: #f56c6c;
 }
 .link--variant-info-0-0-48 {
   color: #909399;
+  --icon-color: #909399;
 }
     </style>
-    <a class="link-0-0-41" href="http://example.com">
+    <a class="link--underline-0-0-42 link-0-0-41" href="http://example.com" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -110,13 +138,22 @@ exports[`Link should match snapshot 1`] = `
   padding: 0;
   position: relative;
   font-size: 14px;
+  transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
+  --icon-color: #000;
   flex-direction: row;
   justify-content: center;
   text-decoration: none;
 }
-.link--underline-0-0-10:hover {
+.link-0-0-9 scale-icon {
+  margin-left: 4px;
+}
+.link-0-0-9:hover.link-0-0-9:not(.link--disabled-0-0-11) {
+  color: black;
+  --icon-color: black;
+}
+.link--underline-0-0-10:hover:not(.link--disabled-0-0-11) {
   text-decoration: underline;
 }
 .link--disabled-0-0-11 {
@@ -125,23 +162,28 @@ exports[`Link should match snapshot 1`] = `
 }
 .link--variant-primary-0-0-12 {
   color: #409eff;
+  --icon-color: #409eff;
 }
 .link--variant-success-0-0-13 {
   color: #67c23a;
+  --icon-color: #67c23a;
 }
 .link--variant-warning-0-0-14 {
   color: #e6a23c;
+  --icon-color: #e6a23c;
 }
 .link--variant-danger-0-0-15 {
   color: #f56c6c;
+  --icon-color: #f56c6c;
 }
 .link--variant-info-0-0-16 {
   color: #909399;
+  --icon-color: #909399;
 }
     </style>
-    <div class="link-0-0-9">
+    <a class="link--underline-0-0-10 link-0-0-9" target="_self">
       <slot></slot>
-    </div>
+    </a>
   </mock:shadow-root>
   default
 </scale-link>
