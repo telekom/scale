@@ -79,6 +79,8 @@ export class Button implements Base {
         <Tag
           class={this.getCssClassMap()}
           tabindex={this.focusable ? 0 : -1}
+          {...(!!this.href ? { href: this.href } : {})}
+          {...(!!this.href ? { target: this.target } : {})}
           {...(!!!this.href ? { disabled: this.disabled } : {})}
           {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
           {...role}
