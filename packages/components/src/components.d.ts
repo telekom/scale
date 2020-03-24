@@ -142,25 +142,9 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Card image at the top
-    */
-    'imageTop'?: string;
-    /**
-    * (optional) Card image alternative at the top
-    */
-    'imageTopAlt'?: string;
-    /**
-    * (optional) Card size
-    */
-    'size'?: string;
-    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * (optional) Card variant
-    */
-    'variant'?: string;
   }
   interface ScaleCarousel {
     /**
@@ -746,25 +730,9 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Card image at the top
-    */
-    'imageTop'?: string;
-    /**
-    * (optional) Card image alternative at the top
-    */
-    'imageTopAlt'?: string;
-    /**
-    * (optional) Card size
-    */
-    'size'?: string;
-    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * (optional) Card variant
-    */
-    'variant'?: string;
   }
   interface ScaleCarousel {
     /**

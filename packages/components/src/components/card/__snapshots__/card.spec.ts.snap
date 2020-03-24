@@ -4,7 +4,7 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card-0-0-5 {
+      .card-0-0-3 {
   color: #333;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -15,188 +15,16 @@ exports[`Card should match snapshot 1`] = `
   box-sizing: border-box;
   border-radius: 4px;
 }
-.card__body-0-0-6 {
+.card__body-0-0-4 {
   padding: 1rem;
 }
-.card__header-0-0-7 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-bottom: 1px solid #dfdfdf;
-}
-.card__header-0-0-7 ::slotted(*) {
-  margin: 0;
-}
-.card__footer-0-0-8 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-top: 1px solid #dfdfdf;
-}
-.card__footer-0-0-8 ::slotted(*) {
-  margin: 0;
-}
     </style>
-    <div class="card-0-0-5">
-      <div class="card__body-0-0-6">
+    <div class="card-0-0-3">
+      <div class="card__body-0-0-4">
         <slot></slot>
       </div>
     </div>
   </mock:shadow-root>
   Label
-</scale-card>
-`;
-
-exports[`Card should match snapshot with footer slot 1`] = `
-<scale-card>
-  <mock:shadow-root>
-    <style>
-      .card-0-0-21 {
-  color: #333;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 400px;
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.card__body-0-0-22 {
-  padding: 1rem;
-}
-.card__header-0-0-23 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-bottom: 1px solid #dfdfdf;
-}
-.card__header-0-0-23 ::slotted(*) {
-  margin: 0;
-}
-.card__footer-0-0-24 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-top: 1px solid #dfdfdf;
-}
-.card__footer-0-0-24 ::slotted(*) {
-  margin: 0;
-}
-    </style>
-    <div class="card-0-0-21">
-      <div class="card__body-0-0-22">
-        <slot></slot>
-      </div>
-      <div class="card__footer-0-0-24">
-        <slot name="footer"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <h3 slot="footer">
-    Footer content
-  </h3>
-  A title
-</scale-card>
-`;
-
-exports[`Card should match snapshot with header slot 1`] = `
-<scale-card>
-  <mock:shadow-root>
-    <style>
-      .card-0-0-13 {
-  color: #333;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 400px;
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.card__body-0-0-14 {
-  padding: 1rem;
-}
-.card__header-0-0-15 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-bottom: 1px solid #dfdfdf;
-}
-.card__header-0-0-15 ::slotted(*) {
-  margin: 0;
-}
-.card__footer-0-0-16 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-top: 1px solid #dfdfdf;
-}
-.card__footer-0-0-16 ::slotted(*) {
-  margin: 0;
-}
-    </style>
-    <div class="card-0-0-13">
-      <div class="card__header-0-0-15">
-        <slot name="header"></slot>
-      </div>
-      <div class="card__body-0-0-14">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <h3 slot="header">
-    Header content
-  </h3>
-  A title
-</scale-card>
-`;
-
-exports[`Card should match snapshot with image 1`] = `
-<scale-card image-top="http://placehold.it/400x300">
-  <mock:shadow-root>
-    <style>
-      .card-0-0-29 {
-  color: #333;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 400px;
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.card__body-0-0-30 {
-  padding: 1rem;
-}
-.card__header-0-0-31 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-bottom: 1px solid #dfdfdf;
-}
-.card__header-0-0-31 ::slotted(*) {
-  margin: 0;
-}
-.card__footer-0-0-32 {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  background: #eee;
-  border-top: 1px solid #dfdfdf;
-}
-.card__footer-0-0-32 ::slotted(*) {
-  margin: 0;
-}
-    </style>
-    <div class="card-0-0-29">
-      <img alt="" src="http://placehold.it/400x300">
-      <div class="card__body-0-0-30">
-        <slot></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  A title
 </scale-card>
 `;
