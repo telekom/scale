@@ -4,7 +4,7 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card-0-0-3 {
+      .card-0-0-4 {
   color: #333;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -15,12 +15,15 @@ exports[`Card should match snapshot 1`] = `
   box-sizing: border-box;
   border-radius: 4px;
 }
-.card__body-0-0-4 {
+.card__body-0-0-5 {
   padding: 1rem;
 }
+.card--interactive-0-0-6, .card--interactive-0-0-6:hover {
+  cursor: pointer;
+}
     </style>
-    <div class="card-0-0-3">
-      <div class="card__body-0-0-4">
+    <div class="card-0-0-4">
+      <div class="card__body-0-0-5">
         <slot></slot>
       </div>
     </div>

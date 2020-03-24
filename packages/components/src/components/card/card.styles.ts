@@ -15,4 +15,9 @@ export const styles: JssStyle = {
   card__body: {
     padding: '1rem',
   },
+  'card--interactive': {
+    '&, &:hover': {
+      cursor: 'pointer',
+    },
+  },
 };
