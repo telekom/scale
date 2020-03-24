@@ -5,13 +5,13 @@ export const styles: JssStyle = {
     display: 'inline-flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     position: 'relative',
     textDecoration: 'none',
     outline: 'none',
     cursor: 'pointer',
     padding: 0,
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 500,
     color: '#000',
     transition: 'all .2s ease-in-out',
@@ -32,6 +32,9 @@ export const styles: JssStyle = {
   'link--disabled': {
     cursor: 'not-allowed',
     opacity: 0.5,
+  },
+  'link--block': {
+    display: 'flex',
   },
   'link--variant-primary': {
     color: '#409eff',

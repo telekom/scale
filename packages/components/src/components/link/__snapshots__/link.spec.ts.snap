@@ -4,58 +4,61 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <scale-link href="http://example.com" open-new-tab="true">
   <mock:shadow-root>
     <style>
-      .link-0-0-25 {
+      .link-0-0-28 {
   color: #000;
   cursor: pointer;
   display: inline-flex;
   outline: none;
   padding: 0;
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
   --icon-color: #000;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   text-decoration: none;
 }
-.link-0-0-25 scale-icon {
+.link-0-0-28 scale-icon {
   margin-left: 4px;
 }
-.link-0-0-25:hover.link-0-0-25:not(.link--disabled-0-0-27) {
+.link-0-0-28:hover.link-0-0-28:not(.link--disabled-0-0-30) {
   color: black;
   --icon-color: black;
 }
-.link--underline-0-0-26:hover:not(.link--disabled-0-0-27) {
+.link--underline-0-0-29:hover:not(.link--disabled-0-0-30) {
   text-decoration: underline;
 }
-.link--disabled-0-0-27 {
+.link--disabled-0-0-30 {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.link--variant-primary-0-0-28 {
+.link--block-0-0-31 {
+  display: flex;
+}
+.link--variant-primary-0-0-32 {
   color: #409eff;
   --icon-color: #409eff;
 }
-.link--variant-success-0-0-29 {
+.link--variant-success-0-0-33 {
   color: #67c23a;
   --icon-color: #67c23a;
 }
-.link--variant-warning-0-0-30 {
+.link--variant-warning-0-0-34 {
   color: #e6a23c;
   --icon-color: #e6a23c;
 }
-.link--variant-danger-0-0-31 {
+.link--variant-danger-0-0-35 {
   color: #f56c6c;
   --icon-color: #f56c6c;
 }
-.link--variant-info-0-0-32 {
+.link--variant-info-0-0-36 {
   color: #909399;
   --icon-color: #909399;
 }
     </style>
-    <a class="link--underline-0-0-26 link-0-0-25" href="http://example.com" target="_self">
+    <a class="link--underline-0-0-29 link-0-0-28" href="http://example.com" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -67,58 +70,61 @@ exports[`Link should have link href value when href value is set 1`] = `
 <scale-link href="http://example.com">
   <mock:shadow-root>
     <style>
-      .link-0-0-41 {
+      .link-0-0-46 {
   color: #000;
   cursor: pointer;
   display: inline-flex;
   outline: none;
   padding: 0;
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
   --icon-color: #000;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   text-decoration: none;
 }
-.link-0-0-41 scale-icon {
+.link-0-0-46 scale-icon {
   margin-left: 4px;
 }
-.link-0-0-41:hover.link-0-0-41:not(.link--disabled-0-0-43) {
+.link-0-0-46:hover.link-0-0-46:not(.link--disabled-0-0-48) {
   color: black;
   --icon-color: black;
 }
-.link--underline-0-0-42:hover:not(.link--disabled-0-0-43) {
+.link--underline-0-0-47:hover:not(.link--disabled-0-0-48) {
   text-decoration: underline;
 }
-.link--disabled-0-0-43 {
+.link--disabled-0-0-48 {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.link--variant-primary-0-0-44 {
+.link--block-0-0-49 {
+  display: flex;
+}
+.link--variant-primary-0-0-50 {
   color: #409eff;
   --icon-color: #409eff;
 }
-.link--variant-success-0-0-45 {
+.link--variant-success-0-0-51 {
   color: #67c23a;
   --icon-color: #67c23a;
 }
-.link--variant-warning-0-0-46 {
+.link--variant-warning-0-0-52 {
   color: #e6a23c;
   --icon-color: #e6a23c;
 }
-.link--variant-danger-0-0-47 {
+.link--variant-danger-0-0-53 {
   color: #f56c6c;
   --icon-color: #f56c6c;
 }
-.link--variant-info-0-0-48 {
+.link--variant-info-0-0-54 {
   color: #909399;
   --icon-color: #909399;
 }
     </style>
-    <a class="link--underline-0-0-42 link-0-0-41" href="http://example.com" target="_self">
+    <a class="link--underline-0-0-47 link-0-0-46" href="http://example.com" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -130,58 +136,61 @@ exports[`Link should match snapshot 1`] = `
 <scale-link>
   <mock:shadow-root>
     <style>
-      .link-0-0-9 {
+      .link-0-0-10 {
   color: #000;
   cursor: pointer;
   display: inline-flex;
   outline: none;
   padding: 0;
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   transition: all .2s ease-in-out;
   align-items: center;
   font-weight: 500;
   --icon-color: #000;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   text-decoration: none;
 }
-.link-0-0-9 scale-icon {
+.link-0-0-10 scale-icon {
   margin-left: 4px;
 }
-.link-0-0-9:hover.link-0-0-9:not(.link--disabled-0-0-11) {
+.link-0-0-10:hover.link-0-0-10:not(.link--disabled-0-0-12) {
   color: black;
   --icon-color: black;
 }
-.link--underline-0-0-10:hover:not(.link--disabled-0-0-11) {
+.link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
   text-decoration: underline;
 }
-.link--disabled-0-0-11 {
+.link--disabled-0-0-12 {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.link--variant-primary-0-0-12 {
+.link--block-0-0-13 {
+  display: flex;
+}
+.link--variant-primary-0-0-14 {
   color: #409eff;
   --icon-color: #409eff;
 }
-.link--variant-success-0-0-13 {
+.link--variant-success-0-0-15 {
   color: #67c23a;
   --icon-color: #67c23a;
 }
-.link--variant-warning-0-0-14 {
+.link--variant-warning-0-0-16 {
   color: #e6a23c;
   --icon-color: #e6a23c;
 }
-.link--variant-danger-0-0-15 {
+.link--variant-danger-0-0-17 {
   color: #f56c6c;
   --icon-color: #f56c6c;
 }
-.link--variant-info-0-0-16 {
+.link--variant-info-0-0-18 {
   color: #909399;
   --icon-color: #909399;
 }
     </style>
-    <a class="link--underline-0-0-10 link-0-0-9" target="_self">
+    <a class="link--underline-0-0-11 link-0-0-10" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>

@@ -17,6 +17,8 @@ export class Link implements Base {
   @Prop() href: string;
   /** (optional) Disabled link */
   @Prop() disabled?: boolean = false;
+  /** (optional) Block link */
+  @Prop() block?: boolean = false;
   /** (optional) Link underline */
   @Prop() underline?: boolean = true;
   /** (optional) Link open a new tag */
@@ -63,6 +65,7 @@ export class Link implements Base {
       this.customClass && this.customClass,
       this.variant && classes[`link--variant-${this.variant}`],
       this.disabled && classes[`link--disabled`],
+      this.block && classes[`link--block`],
       this.underline && classes[`link--underline`]
     );
   }

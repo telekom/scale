@@ -255,6 +255,10 @@ export namespace Components {
   }
   interface ScaleLink {
     /**
+    * (optional) Block link
+    */
+    'block'?: boolean;
+    /**
     * (optional) Link class
     */
     'customClass'?: string;
@@ -854,6 +858,10 @@ declare namespace LocalJSX {
     'styles'?: StyleSheet;
   }
   interface ScaleLink {
+    /**
+    * (optional) Block link
+    */
+    'block'?: boolean;
     /**
     * (optional) Link class
     */
