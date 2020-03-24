@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.10](https://github.com/telekom/scale/compare/v0.0.9...v0.0.10) (2020-03-24)
+
+
+### Bug Fixes
+
+* improve card component ([#153](https://github.com/telekom/scale/issues/153)) ([5e2029c](https://github.com/telekom/scale/commit/5e2029c8ef7ce5fbb4e07c8db04cae6a4926ff82))
+
+
+
+
+
 ## [0.0.9](https://github.com/telekom/scale/compare/v0.0.8...v0.0.9) (2020-03-23)
 
 **Note:** Version bump only for package @scaleds/components
