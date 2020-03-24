@@ -9,6 +9,7 @@
 
 | Property      | Attribute      | Description                    | Type                                     | Default     |
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
+| `block`       | `block`        | (optional) Block link          | `boolean`                                | `false`     |
 | `customClass` | `custom-class` | (optional) Link class          | `string`                                 | `''`        |
 | `disabled`    | `disabled`     | (optional) Disabled link       | `boolean`                                | `false`     |
 | `href`        | `href`         | (optional) Link href           | `string`                                 | `undefined` |
