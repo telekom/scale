@@ -24,7 +24,6 @@
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Card class          | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `variant`     | `variant`      | (optional) Card variant        | `string`                                 | `''`        |
 
 
 ----------------------------------------------

@@ -22,11 +22,5 @@ describe('Card', () => {
   it('should handle css classes', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
-
-    element.variant = 'primary';
-    stylesheet.addRule('card--variant-primary', {});
-    expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['card--variant-primary']
-    );
   });
 });

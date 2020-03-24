@@ -145,10 +145,6 @@ export namespace Components {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * (optional) Card variant
-    */
-    'variant'?: string;
   }
   interface ScaleCarousel {
     /**
@@ -737,10 +733,6 @@ declare namespace LocalJSX {
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * (optional) Card variant
-    */
-    'variant'?: string;
   }
   interface ScaleCarousel {
     /**

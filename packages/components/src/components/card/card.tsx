@@ -13,8 +13,6 @@ import Base from '../../utils/base-interface';
 export class Card implements Base {
   /** (optional) Card class */
   @Prop() customClass?: string = '';
-  /** (optional) Card variant */
-  @Prop() variant?: string = '';
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
@@ -41,10 +39,6 @@ export class Card implements Base {
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
 
-    return classNames(
-      classes.card,
-      this.customClass && this.customClass,
-      this.variant && classes[`card--variant-${this.variant}`]
-    );
+    return classNames(classes.card, this.customClass && this.customClass);
   }
 }
