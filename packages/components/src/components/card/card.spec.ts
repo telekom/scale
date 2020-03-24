@@ -21,6 +21,7 @@ describe('Card', () => {
 
   it('should handle css classes', () => {
     element.customClass = 'custom';
+    stylesheet.addRule('custom', {});
     expect(element.getCssClassMap()).toContain('custom');
   });
 });
