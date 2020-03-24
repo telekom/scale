@@ -24,11 +24,13 @@
 ### Used by
 
  - [scale-button](../button)
+ - [scale-link](../link)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-button --> scale-icon
+  scale-link --> scale-icon
   style scale-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

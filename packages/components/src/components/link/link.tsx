@@ -14,15 +14,19 @@ export class Link implements Base {
   /** (optional) Link class */
   @Prop() customClass?: string = '';
   /** (optional) Link href */
-  @Prop() href?: string = '';
+  @Prop() href: string;
   /** (optional) Disabled link */
   @Prop() disabled?: boolean = false;
   /** (optional) Link underline */
-  @Prop() underline?: boolean = false;
+  @Prop() underline?: boolean = true;
   /** (optional) Link open a new tag */
-  @Prop() openNewTab?: boolean = false;
+  @Prop() target?: string = '_self';
   /** (optional) Link variant */
   @Prop() variant?: string = '';
+  /** (optional) Icon size */
+  @Prop() iconSize?: number = 24;
+  /** (optional) Icon only */
+  @Prop() icon?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -33,22 +37,21 @@ export class Link implements Base {
   componentWillUpdate() {}
 
   render() {
+    const Tag = !this.disabled ? 'a' : 'div';
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        {!!this.href && !this.disabled ? (
-          <a
-            href={this.href}
-            class={this.getCssClassMap()}
-            target={this.openNewTab ? '_blank' : null}
-          >
-            <slot />
-          </a>
-        ) : (
-          <div class={this.getCssClassMap()}>
-            <slot />
-          </div>
-        )}
+        <Tag
+          class={this.getCssClassMap()}
+          {...(!this.disabled ? { href: this.href } : {})}
+          {...(!this.disabled ? { target: this.target } : {})}
+        >
+          <slot />
+          {this.icon && this.icon !== '' && (
+            <scale-icon path={this.icon} size={this.iconSize} />
+          )}
+        </Tag>
       </Host>
     );
   }
