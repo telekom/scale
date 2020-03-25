@@ -1,4 +1,4 @@
-import { Component, Prop, h, Method, Host } from '@stencil/core';
+import { Component, Prop, h, Method, Host, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './button.styles';
@@ -11,6 +11,10 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class Button implements Base {
+  hasSlotBefore: boolean;
+  hasSlotAfter: boolean;
+
+  @Element() hostElement: HTMLElement;
   /** (optional) Button class */
   @Prop() customClass?: string = '';
   /** (optional) Button size */
@@ -19,6 +23,14 @@ export class Button implements Base {
   @Prop() variant?: string = '';
   /** (optional) Disabled button */
   @Prop() disabled?: boolean = false;
+  /** (optional) Icon only */
+  @Prop() iconSize?: number = 24;
+  /** (optional) Icon only */
+  @Prop() icon?: string;
+  /** (optional) Icon before */
+  @Prop() iconBefore?: string;
+  /** (optional) Icon after */
+  @Prop() iconAfter?: string;
   /** (optional) Link button */
   @Prop() href?: string = '';
   /** (optional) Link target button */
@@ -45,36 +57,60 @@ export class Button implements Base {
     this.disabled = false;
   }
 
-  componentWillLoad() {}
+  componentWillLoad() {
+    this.hasSlotBefore = !!this.hostElement.querySelector('[slot="before"]');
+    this.hasSlotAfter = !!this.hostElement.querySelector('[slot="after"]');
+  }
 
   componentWillUpdate() {}
 
   render() {
+    const { classes } = this.stylesheet;
+    const Tag = this.href ? 'a' : 'button';
+    const role = this.href
+      ? { role: this.role || 'button' }
+      : this.role
+      ? { role: this.role }
+      : {};
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        {!!this.href ? (
-          <a
-            class={this.getCssClassMap()}
-            href={this.href}
-            target={this.target}
-            aria-label={this.ariaLabel}
-            tabindex={this.focusable ? 0 : -1}
-            role={this.role || 'button'}
-          >
+        <Tag
+          class={this.getCssClassMap()}
+          tabindex={this.focusable ? 0 : -1}
+          {...(!!this.href ? { href: this.href } : {})}
+          {...(!!this.href ? { target: this.target } : {})}
+          {...(!!!this.href ? { disabled: this.disabled } : {})}
+          {...(!!this.ariaLabel ? { 'aria-label': this.ariaLabel } : {})}
+          {...role}
+        >
+          {!!this.icon === false &&
+            (!!this.iconBefore === true || this.hasSlotBefore) && (
+              <div class={classes.button__before}>
+                {!!this.iconBefore ? (
+                  <scale-icon path={this.iconBefore} size={this.iconSize} />
+                ) : (
+                  <slot name="before"></slot>
+                )}
+              </div>
+            )}
+          {this.icon && this.icon !== '' ? (
+            <scale-icon path={this.icon} size={this.iconSize} />
+          ) : (
             <slot />
-          </a>
-        ) : (
-          <button
-            class={this.getCssClassMap()}
-            disabled={this.disabled}
-            aria-label={this.ariaLabel}
-            tabindex={this.focusable ? 0 : -1}
-            {...(!!this.role ? { role: this.role } : {})}
-          >
-            <slot />
-          </button>
-        )}
+          )}
+          {!!this.icon === false &&
+            (!!this.iconAfter === true || this.hasSlotAfter) && (
+              <div class={classes.button__after}>
+                {!!this.iconAfter ? (
+                  <scale-icon path={this.iconAfter} size={this.iconSize} />
+                ) : (
+                  <slot name="after"></slot>
+                )}
+              </div>
+            )}
+        </Tag>
       </Host>
     );
   }
@@ -86,6 +122,7 @@ export class Button implements Base {
       this.customClass && this.customClass,
       this.size && classes[`button--size-${this.size}`],
       this.variant && classes[`button--variant-${this.variant}`],
+      this.icon && this.icon !== '' && classes[`button--icon-only`],
       this.disabled && classes[`button--disabled`]
     );
   }

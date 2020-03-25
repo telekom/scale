@@ -102,6 +102,22 @@ export namespace Components {
     * (optional) Link button
     */
     'href'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'icon'?: string;
+    /**
+    * (optional) Icon after
+    */
+    'iconAfter'?: string;
+    /**
+    * (optional) Icon before
+    */
+    'iconBefore'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'iconSize'?: number;
     'role'?: string;
     /**
     * (optional) Button size
@@ -126,25 +142,9 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
-    * (optional) Card image at the top
-    */
-    'imageTop'?: string;
-    /**
-    * (optional) Card image alternative at the top
-    */
-    'imageTopAlt'?: string;
-    /**
-    * (optional) Card size
-    */
-    'size'?: string;
-    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * (optional) Card variant
-    */
-    'variant'?: string;
   }
   interface ScaleCarousel {
     /**
@@ -179,19 +179,23 @@ export namespace Components {
     'vertical'?: boolean;
   }
   interface ScaleIcon {
+    'color'?: string;
     /**
     * (optional) Tag class
     */
     'customClass'?: string;
+    'height'?: number;
     /**
     * (optional) Tag theme
     */
-    'name': string;
+    'name'?: string;
     'path': string;
+    'size'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    'width'?: number;
   }
   interface ScaleInput {
     /**
@@ -251,6 +255,10 @@ export namespace Components {
   }
   interface ScaleLink {
     /**
+    * (optional) Block link
+    */
+    'block'?: boolean;
+    /**
     * (optional) Link class
     */
     'customClass'?: string;
@@ -261,15 +269,23 @@ export namespace Components {
     /**
     * (optional) Link href
     */
-    'href'?: string;
+    'href': string;
     /**
-    * (optional) Link open a new tag
+    * (optional) Icon only
     */
-    'openNewTab'?: boolean;
+    'icon'?: string;
+    /**
+    * (optional) Icon size
+    */
+    'iconSize'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link open a new tag
+    */
+    'target'?: string;
     /**
     * (optional) Link underline
     */
@@ -686,6 +702,22 @@ declare namespace LocalJSX {
     * (optional) Link button
     */
     'href'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'icon'?: string;
+    /**
+    * (optional) Icon after
+    */
+    'iconAfter'?: string;
+    /**
+    * (optional) Icon before
+    */
+    'iconBefore'?: string;
+    /**
+    * (optional) Icon only
+    */
+    'iconSize'?: number;
     'role'?: string;
     /**
     * (optional) Button size
@@ -710,25 +742,9 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
-    * (optional) Card image at the top
-    */
-    'imageTop'?: string;
-    /**
-    * (optional) Card image alternative at the top
-    */
-    'imageTopAlt'?: string;
-    /**
-    * (optional) Card size
-    */
-    'size'?: string;
-    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
-    /**
-    * (optional) Card variant
-    */
-    'variant'?: string;
   }
   interface ScaleCarousel {
     /**
@@ -763,19 +779,23 @@ declare namespace LocalJSX {
     'vertical'?: boolean;
   }
   interface ScaleIcon {
+    'color'?: string;
     /**
     * (optional) Tag class
     */
     'customClass'?: string;
+    'height'?: number;
     /**
     * (optional) Tag theme
     */
     'name'?: string;
     'path'?: string;
+    'size'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    'width'?: number;
   }
   interface ScaleInput {
     /**
@@ -839,6 +859,10 @@ declare namespace LocalJSX {
   }
   interface ScaleLink {
     /**
+    * (optional) Block link
+    */
+    'block'?: boolean;
+    /**
     * (optional) Link class
     */
     'customClass'?: string;
@@ -851,13 +875,21 @@ declare namespace LocalJSX {
     */
     'href'?: string;
     /**
-    * (optional) Link open a new tag
+    * (optional) Icon only
     */
-    'openNewTab'?: boolean;
+    'icon'?: string;
+    /**
+    * (optional) Icon size
+    */
+    'iconSize'?: number;
     /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link open a new tag
+    */
+    'target'?: string;
     /**
     * (optional) Link underline
     */

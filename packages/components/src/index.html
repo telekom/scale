@@ -26,6 +26,7 @@
       hr {
         margin: 3rem 0;
       }
+
     </style>
     <script>
       window.scale = {
@@ -48,6 +49,14 @@
     <scale-button>
       Hello
     </scale-button>
+
+    <h3>Button icon Before</h3>
+    <scale-button icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">
+      Hello
+    </scale-button>
+
+    <h3>Button icon only</h3>
+    <scale-button icon="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"></scale-button>
 
     <h3>Button Link</h3>
     <scale-button href="http://google.com" target="_blank">
@@ -206,27 +215,6 @@
     <h3>Card</h3>
     <scale-card>A title</scale-card>
 
-    <h3>Card with header</h3>
-    <scale-card>
-      <h3 slot="header">Header content</h3>
-      A title
-    </scale-card>
-
-    <h3>Card with footer</h3>
-    <scale-card>
-      A title
-      <h3 slot="footer">Footer content</h3>
-    </scale-card>
-
-    <h3>Card with image</h3>
-    <scale-card image-top="http://placehold.it/400x300">A title</scale-card>
-    <h3>Card with image alt</h3>
-    <scale-card
-      image-top="http://placehold.it/400x300"
-      image-top-alt="Image alt text"
-      >A title</scale-card
-    >
-
     <h3>Input text</h3>
     <scale-input></scale-input>
 
@@ -306,7 +294,7 @@
       stroke-width="18"
     ></scale-progress-bar>
     <h3>Link</h3>
-    <scale-link href="http://example.com" open-new-tab="true">default</scale-link>
+    <scale-link href="http://example.com" target="true">default</scale-link>
     <scale-link variant="primary">primary</scale-link>
     <scale-link variant="success">success</scale-link>
     <scale-link variant="warning">warning</scale-link>
@@ -320,8 +308,14 @@
     <scale-link variant="danger" disabled="true">danger</scale-link>
     <scale-link variant="info" disabled="true">info</scale-link>
     <h3>Link on hover with/without underline feature</h3>
-    <scale-link underline="true">with underline</scale-link>
+    <scale-link underline="false">with underline</scale-link>
     <scale-link>without underline</scale-link>
+
+    <h3>Link with icon</h3>
+    <scale-link variant="primary" icon-size="16" icon="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">
+      Hello
+    </scale-link>
+
     <h3>Modal with header</h3>
     <scale-button id="show-modal">
       show modal

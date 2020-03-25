@@ -14,8 +14,12 @@ export class Icon implements Base {
   /** (optional) Tag class */
   @Prop() customClass?: string = '';
   /** (optional) Tag theme */
-  @Prop() name: string;
+  @Prop() name?: string;
   @Prop() path: string;
+  @Prop() size?: number;
+  @Prop() height?: number = 24;
+  @Prop() width?: number = 24;
+  @Prop() color?: string = 'black';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -26,16 +30,32 @@ export class Icon implements Base {
   componentWillUpdate() {}
 
   render() {
+    const hostStyles = `
+:host {
+  height: auto;
+  width: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+path {
+  transition: all .2s ease-in-out;
+}
+`;
+
     return (
       <Host>
-        <style>{this.stylesheet.toString()}</style>
+        <style>
+          {hostStyles}
+          {this.stylesheet.toString()}
+        </style>
         <svg
           class={this.getCssClassMap()}
-          width="24"
-          height="24"
-          viewBox="0 0 26 26"
+          width={this.size || this.height}
+          height={this.size || this.width}
+          viewBox={`0 0 26 26`}
         >
-          <path d={this.path} stroke="black" fill="transparent" />
+          <path d={this.path} stroke={this.color} fill="transparent" />
         </svg>
       </Host>
     );

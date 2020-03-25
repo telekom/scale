@@ -5,16 +5,25 @@
 <!-- Auto Generated Below -->
 
 
+## Usage
+
+### Card
+
+# card
+
+<scale-card>
+  <h1>Card Title</h1>
+  <p>This is card content</p>
+</scale-card>
+
+
+
 ## Properties
 
-| Property      | Attribute       | Description                                  | Type                                     | Default     |
-| ------------- | --------------- | -------------------------------------------- | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class`  | (optional) Card class                        | `string`                                 | `''`        |
-| `imageTop`    | `image-top`     | (optional) Card image at the top             | `string`                                 | `undefined` |
-| `imageTopAlt` | `image-top-alt` | (optional) Card image alternative at the top | `string`                                 | `''`        |
-| `size`        | `size`          | (optional) Card size                         | `string`                                 | `''`        |
-| `styles`      | --              | (optional) Injected jss styles               | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `variant`     | `variant`       | (optional) Card variant                      | `string`                                 | `''`        |
+| Property      | Attribute      | Description                    | Type                                     | Default     |
+| ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
+| `customClass` | `custom-class` | (optional) Card class          | `string`                                 | `''`        |
+| `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
 
 ----------------------------------------------
