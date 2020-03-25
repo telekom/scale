@@ -28,7 +28,7 @@
     "dependencies": {},
     "husky": {
         "hooks": {
-            "pre-commit": "cd packages/components && yarn lint && yarn test"
+            "pre-push": "cd packages/components && yarn lint && yarn test"
         }
     }
 }
