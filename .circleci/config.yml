@@ -27,7 +27,7 @@ jobs:
             cd packages/components
             yarn test
       - run:
-          name: Test Reacr Wrapper Package
+          name: Test React Wrapper Package
           command: |
             cd packages/react-wrapper
             yarn test
