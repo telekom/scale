@@ -19,7 +19,7 @@
 ## interactive card
 
 <scale-card href="http://example.com" target="_blank">
-  <p>click me</p>
+  <p style="margin: 100px 0">click me</p>
 </scale-card>
 
 
