@@ -1,47 +1,78 @@
-# JavaScript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:latest-browsers
+
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:latest-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
+  test:
+    <<: *defaults
     steps:
+      # Checkout repository
       - checkout
-
-      # Download and cache dependencies
+      # Restore Yarn Cache
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
+      # Install dependencies
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
+      # Run Tests
+      - run:
+          name: Test Components Package
+          command: |
+            cd packages/components
+            yarn test
+      - run:
+          name: Test Reacr Wrapper Package
+          command: |
+            cd packages/react-wrapper
+            yarn test
+      # Save Yarn Cache
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-
-      # run tests!
+      # Persist data
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  deploy:
+    <<: *defaults
+    steps:
+      # Attach persisted data to job
+      - attach_workspace:
+          at: ~/repo
+      # Authenticate
       - run:
-          name: Run Tests and deploy
-          command: |
-            yarn workspace @scaleds/components test
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-            cat ~/repo/.npmrc
+          name: Registry authentication
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      # Publish
       - run:
-          name: Publish Package
+          name: Publish Components Package to NPM
           command: |
             cd packages/components
-            npm publish
+            yarn publish --access public
+      - run:
+          name: Publish React Wrapper Package to NPM
+          command: |
+            cd packages/react-wrapper
+            yarn publish --access public
+
+workflows:
+  version: 2.1
+  test-deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              only: master
