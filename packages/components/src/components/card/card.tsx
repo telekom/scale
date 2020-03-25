@@ -27,24 +27,20 @@ export class Card implements Base {
 
   render() {
     const { classes } = this.stylesheet;
-    const cardElement = (
-      <div class={this.getCssClassMap()}>
-        <div class={classes.card__body}>
-          <slot />
-        </div>
-      </div>
-    );
+    const Tag = !!this.href ? 'a' : 'div';
 
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        {!!this.href ? (
-          <a href={this.href} target={this.target}>
-            {cardElement}
-          </a>
-        ) : (
-          cardElement
-        )}
+        <Tag
+          class={this.getCssClassMap()}
+          {...(!!this.href ? { href: this.href } : {})}
+          {...(!!this.href ? { target: this.target } : {})}
+        >
+          <div class={classes.card__body}>
+            <slot />
+          </div>
+        </Tag>
       </Host>
     );
   }

@@ -20,6 +20,7 @@ exports[`Card should match snapshot 1`] = `
 }
 .card--interactive-0-0-6, .card--interactive-0-0-6:hover {
   cursor: pointer;
+  display: block;
 }
     </style>
     <div class="card-0-0-4">

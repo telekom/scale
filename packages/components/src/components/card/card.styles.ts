@@ -18,6 +18,7 @@ export const styles: JssStyle = {
   'card--interactive': {
     '&, &:hover': {
       cursor: 'pointer',
+      display: 'block',
     },
   },
 };
