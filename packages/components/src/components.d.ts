@@ -142,9 +142,17 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
+    * (optional) Link card
+    */
+    'href'?: string;
+    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link card target
+    */
+    'target'?: string;
   }
   interface ScaleCarousel {
     /**
@@ -742,9 +750,17 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
+    * (optional) Link card
+    */
+    'href'?: string;
+    /**
     * (optional) Injected jss styles
     */
     'styles'?: StyleSheet;
+    /**
+    * (optional) Link card target
+    */
+    'target'?: string;
   }
   interface ScaleCarousel {
     /**

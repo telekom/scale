@@ -13,6 +13,10 @@ import Base from '../../utils/base-interface';
 export class Card implements Base {
   /** (optional) Card class */
   @Prop() customClass?: string = '';
+  /** (optional) Link card */
+  @Prop() href?: string = '';
+  /** (optional) Link card target */
+  @Prop() target?: string = '_self';
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
@@ -23,15 +27,20 @@ export class Card implements Base {
 
   render() {
     const { classes } = this.stylesheet;
+    const Tag = !!this.href ? 'a' : 'div';
 
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <div class={this.getCssClassMap()}>
+        <Tag
+          class={this.getCssClassMap()}
+          {...(!!this.href ? { href: this.href } : {})}
+          {...(!!this.href ? { target: this.target } : {})}
+        >
           <div class={classes.card__body}>
             <slot />
           </div>
-        </div>
+        </Tag>
       </Host>
     );
   }
@@ -39,6 +48,10 @@ export class Card implements Base {
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
 
-    return classNames(classes.card, this.customClass && this.customClass);
+    return classNames(
+      classes.card,
+      this.customClass && this.customClass,
+      !!this.href && classes[`card--interactive`]
+    );
   }
 }
