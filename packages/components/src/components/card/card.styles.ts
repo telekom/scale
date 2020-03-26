@@ -24,6 +24,6 @@ export const styles: JssStyle = {
     display: 'block',
     '&:hover': {
       boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
-    }
+    },
   },
 };
