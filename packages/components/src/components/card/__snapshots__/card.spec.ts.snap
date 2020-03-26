@@ -19,6 +19,9 @@ exports[`Card should match snapshot 1`] = `
 .card__body-0-0-5 {
   padding: 1rem;
 }
+.card__body-0-0-5 ::slotted(*) {
+  margin: 0;
+}
 .card--interactive-0-0-6 {
   cursor: pointer;
   display: block;
@@ -26,9 +29,6 @@ exports[`Card should match snapshot 1`] = `
 }
 .card--interactive-0-0-6:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
-}
-.card--interactive-0-0-6 .card__body-0-0-5 ::slotted(*) {
-  margin: 0;
 }
     </style>
     <div class="card-0-0-4">

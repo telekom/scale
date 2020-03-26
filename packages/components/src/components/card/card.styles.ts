@@ -14,6 +14,9 @@ export const styles: JssStyle = {
   },
   card__body: {
     padding: '1rem',
+    '& ::slotted(*)': {
+      margin: 0,
+    },
   },
   'card--interactive': {
     textDecoration: 'none',
@@ -21,9 +24,6 @@ export const styles: JssStyle = {
     display: 'block',
     '&:hover': {
       boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
-    },
-    '& $card__body ::slotted(*)': {
-      margin: 0,
-    },
+    }
   },
 };
