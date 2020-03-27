@@ -21,6 +21,8 @@ function deleteFolderRecursive(path) {
 
 console.log("Cleaning Web Components dist folder...")
 
+// deleteFolderRecursive(".cache")
 deleteFolderRecursive("./static/dist")
+deleteFolderRecursive("./public/dist")
 
 console.log("Successfully deleted Web Components dist folder!")

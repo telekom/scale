@@ -45,6 +45,32 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleBadge {
+        /**
+          * (optional) Badge class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Badge link
+         */
+        "link"?: string;
+        /**
+          * (optional) Badge pill
+         */
+        "pill"?: boolean;
+        /**
+          * (optional) Badge size
+         */
+        "size"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) Badge variant
+         */
+        "variant"?: string;
+    }
     interface ScaleBreadcrumb {
         "separator"?: string;
         /**
@@ -252,6 +278,36 @@ export namespace Components {
           * (optional) Input label variant
          */
         "variant"?: "animated" | "static";
+    }
+    interface ScaleInputError {
+        /**
+          * (optional) Input text class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleInputGroup {
+        /**
+          * (optional) Input text class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleInputLabel {
+        /**
+          * (optional) Input text class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
     }
     interface ScaleLink {
         /**
@@ -533,6 +589,12 @@ declare global {
         prototype: HTMLScaleAlertElement;
         new (): HTMLScaleAlertElement;
     };
+    interface HTMLScaleBadgeElement extends Components.ScaleBadge, HTMLStencilElement {
+    }
+    var HTMLScaleBadgeElement: {
+        prototype: HTMLScaleBadgeElement;
+        new (): HTMLScaleBadgeElement;
+    };
     interface HTMLScaleBreadcrumbElement extends Components.ScaleBreadcrumb, HTMLStencilElement {
     }
     var HTMLScaleBreadcrumbElement: {
@@ -574,6 +636,24 @@ declare global {
     var HTMLScaleInputElement: {
         prototype: HTMLScaleInputElement;
         new (): HTMLScaleInputElement;
+    };
+    interface HTMLScaleInputErrorElement extends Components.ScaleInputError, HTMLStencilElement {
+    }
+    var HTMLScaleInputErrorElement: {
+        prototype: HTMLScaleInputErrorElement;
+        new (): HTMLScaleInputErrorElement;
+    };
+    interface HTMLScaleInputGroupElement extends Components.ScaleInputGroup, HTMLStencilElement {
+    }
+    var HTMLScaleInputGroupElement: {
+        prototype: HTMLScaleInputGroupElement;
+        new (): HTMLScaleInputGroupElement;
+    };
+    interface HTMLScaleInputLabelElement extends Components.ScaleInputLabel, HTMLStencilElement {
+    }
+    var HTMLScaleInputLabelElement: {
+        prototype: HTMLScaleInputLabelElement;
+        new (): HTMLScaleInputLabelElement;
     };
     interface HTMLScaleLinkElement extends Components.ScaleLink, HTMLStencilElement {
     }
@@ -637,6 +717,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "scale-alert": HTMLScaleAlertElement;
+        "scale-badge": HTMLScaleBadgeElement;
         "scale-breadcrumb": HTMLScaleBreadcrumbElement;
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
@@ -644,6 +725,9 @@ declare global {
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
+        "scale-input-error": HTMLScaleInputErrorElement;
+        "scale-input-group": HTMLScaleInputGroupElement;
+        "scale-input-label": HTMLScaleInputLabelElement;
         "scale-link": HTMLScaleLinkElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
@@ -688,6 +772,32 @@ declare namespace LocalJSX {
         "timeout"?: boolean | number;
         /**
           * (optional) Alert variant
+         */
+        "variant"?: string;
+    }
+    interface ScaleBadge {
+        /**
+          * (optional) Badge class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Badge link
+         */
+        "link"?: string;
+        /**
+          * (optional) Badge pill
+         */
+        "pill"?: boolean;
+        /**
+          * (optional) Badge size
+         */
+        "size"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) Badge variant
          */
         "variant"?: string;
     }
@@ -897,6 +1007,36 @@ declare namespace LocalJSX {
           * (optional) Input label variant
          */
         "variant"?: "animated" | "static";
+    }
+    interface ScaleInputError {
+        /**
+          * (optional) Input text class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleInputGroup {
+        /**
+          * (optional) Input text class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
+    interface ScaleInputLabel {
+        /**
+          * (optional) Input text class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
     }
     interface ScaleLink {
         /**
@@ -1161,6 +1301,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "scale-alert": ScaleAlert;
+        "scale-badge": ScaleBadge;
         "scale-breadcrumb": ScaleBreadcrumb;
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
@@ -1168,6 +1309,9 @@ declare namespace LocalJSX {
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
+        "scale-input-error": ScaleInputError;
+        "scale-input-group": ScaleInputGroup;
+        "scale-input-label": ScaleInputLabel;
         "scale-link": ScaleLink;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
@@ -1185,6 +1329,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
+            "scale-badge": LocalJSX.ScaleBadge & JSXBase.HTMLAttributes<HTMLScaleBadgeElement>;
             "scale-breadcrumb": LocalJSX.ScaleBreadcrumb & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbElement>;
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
@@ -1192,6 +1337,9 @@ declare module "@stencil/core" {
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
+            "scale-input-error": LocalJSX.ScaleInputError & JSXBase.HTMLAttributes<HTMLScaleInputErrorElement>;
+            "scale-input-group": LocalJSX.ScaleInputGroup & JSXBase.HTMLAttributes<HTMLScaleInputGroupElement>;
+            "scale-input-label": LocalJSX.ScaleInputLabel & JSXBase.HTMLAttributes<HTMLScaleInputLabelElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;

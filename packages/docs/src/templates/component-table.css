@@ -1,0 +1,19 @@
+.component-table {
+	width: 100%;
+	overflow-x: scroll;
+	border: 1px solid #dfdfdf;
+}
+
+table {
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid #dfdfdf;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: .5rem;
+	white-space: nowrap;
+}

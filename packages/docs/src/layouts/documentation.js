@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Header from "../components/header"
 import Sidebar from "../components/sidebar"
-
 import "./documentation.css"
 
 export default ({ children, location }) => {
@@ -36,6 +35,19 @@ export default ({ children, location }) => {
           src="/dist/scale-components/scale-components.esm.js"
         ></script>
         <script nomodule="" src="/dist/scale-components.js"></script>
+        <script>
+          {`if (typeof window !== undefined) {
+            window.scale = {
+              theme: {
+                Button: {
+                  button: {
+                    borderColor: 'rgba(0,0,0,.1)'
+                  }
+                }
+              }
+            }
+          }`}
+        </script>
       </Helmet>
       <main className="main">
         <div className="main__sidebar">

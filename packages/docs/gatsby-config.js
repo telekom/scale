@@ -47,6 +47,7 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         plugins: [
+          'gatsby-remark-mermaid',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

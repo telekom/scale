@@ -1,18 +1,37 @@
 import React from "react"
 import { Link } from "gatsby"
 
+const whiteList = [
+  'button',
+  'card',
+  'link',
+  'icon',
+  'tag',
+]
+
 const Sidebar = ({ components, currentPage }) => {
-  const pages = [
-    {
-      name: "Getting Started",
-      url: "/getting-started",
-    },
-    {
-      name: "Components",
-      url: "/components/alert",
+  const sortedComponents = components.sort((a, b) => {
+    if (a.node.fields.filename < b.node.fields.filename) {
+      return -1;
     }
-  ]
-  const componentList = components.sort(function(a, b){ if(a.node.fields.filename < b.node.fields.filename) { return -1; } if(a.node.fields.filename > b.node.fields.filename) { return 1; } return 0; }).map(component => {
+    if (a.node.fields.filename > b.node.fields.filename) {
+      return 1;
+    }
+    return 0;
+  })
+
+  const filtered = sortedComponents.filter(c => {
+    if (whiteList.includes(c.node.fields.filename.replace('/', ''))) {
+      return true
+    } else if (c.node.fields.section !== 'components') {
+      return true
+    }
+    return false
+  })
+
+  console.log(filtered)
+
+  const componentList = filtered.map(component => {
     const {
       node: {
         fields: { section, slug, filename },
@@ -33,6 +52,19 @@ const Sidebar = ({ components, currentPage }) => {
     }
     return null
   })
+
+  const firstComponent = sortedComponents.filter(c => c.node.fields.section ===  'components')[0].node.fields.slug || '/'
+
+  const pages = [
+    {
+      name: "Getting Started",
+      url: "/getting-started",
+    },
+    {
+      name: "Components",
+      url: `/${firstComponent}`,
+    }
+  ]
 
   const pageList = pages.map(page => {
     // Set active depending on currentPage vs slug

@@ -4,12 +4,14 @@
   "version": "0.1.4",
   "author": "eeegor",
   "dependencies": {
+    "@textlint/markdown-to-ast": "^6.1.7",
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-remark-mermaid": "^1.2.0",
     "gatsby-remark-prismjs": "^3.3.25",
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-transformer-json": "^2.2.17",
@@ -21,6 +23,7 @@
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "rehype-react": "^4.0.1",
+    "uuid": "^7.0.2",
     "vfile-message": "^2.0.4"
   },
   "devDependencies": {
@@ -37,7 +40,8 @@
     "copy:dist": "cp -R ./stencil/dist ./public/dist",
     "components:clean": "node ./scripts/clean.js",
     "components:copy": "node ./scripts/copy.js",
-    "components:sync": "npm run components:clean && npm run components:copy",
+    "components:sync": "yarn components:clean && yarn components:copy",
+    "components:update": "cd ../components && yarn build && cd ../docs && yarn components:sync && yarn copy:dist",
     "predevelop": "yarn build",
     "develop": "gatsby develop",
     "debug": "nodemon --exec \"node --inspect-brk --no-lazy node_modules/.bin/gatsby develop\"",
