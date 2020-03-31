@@ -1,9 +1,6 @@
 # scale-card
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Usage
 
@@ -19,10 +16,8 @@
 ## interactive card
 
 <scale-card href="http://example.com" target="_blank">
-  <p style="margin: 100px 0">click me</p>
+  <p>click me</p>
 </scale-card>
-
-
 
 ## Properties
 
@@ -33,7 +28,6 @@
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `target`      | `target`       | (optional) Link card target    | `string`                                 | `'_self'`   |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
