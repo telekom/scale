@@ -2,11 +2,11 @@
   <div>
     <h1>Vue App</h1>
     <h3>Alert</h3>
-    <t-alert variant="success">Success</t-alert>
+    <scale-link variant="success">Success</scale-link>
     <h3>Button</h3>
-    <t-button>Click!</t-button>
+    <scale-button>Click!</scale-button>
     <h3>Card</h3>
-    <t-card>A tile</t-card>
+    <scale-card>A tile</scale-card>
   </div>
 </template>
 
