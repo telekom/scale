@@ -15,7 +15,14 @@ export class Input implements Base {
   /** (optional) Input text class */
   @Prop() customClass?: string = '';
   /** (optional) Input type */
-  @Prop() type?: InputTypes = 'text';
+  @Prop() type?:
+    | 'email'
+    | 'hidden'
+    | 'number'
+    | 'password'
+    | 'tel'
+    | 'text'
+    | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input text value */
