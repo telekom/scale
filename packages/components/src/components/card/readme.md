@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Usage
 
 ### Card
@@ -19,15 +20,20 @@
   <p>click me</p>
 </scale-card>
 
+
+
 ## Properties
 
 | Property      | Attribute      | Description                    | Type                                     | Default     |
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Card class          | `string`                                 | `''`        |
+| `disabled`    | `disabled`     | (optional) Link disabled       | `boolean`                                | `false`     |
 | `href`        | `href`         | (optional) Link card           | `string`                                 | `''`        |
+| `interactive` | `interactive`  | (optional) Link interactive    | `boolean`                                | `false`     |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `target`      | `target`       | (optional) Link card target    | `string`                                 | `'_self'`   |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

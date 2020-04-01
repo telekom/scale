@@ -142,9 +142,17 @@ export namespace Components {
     */
     'customClass'?: string;
     /**
+    * (optional) Link disabled
+    */
+    'disabled'?: boolean;
+    /**
     * (optional) Link card
     */
     'href'?: string;
+    /**
+    * (optional) Link interactive
+    */
+    'interactive'?: boolean;
     /**
     * (optional) Injected jss styles
     */
@@ -750,9 +758,17 @@ declare namespace LocalJSX {
     */
     'customClass'?: string;
     /**
+    * (optional) Link disabled
+    */
+    'disabled'?: boolean;
+    /**
     * (optional) Link card
     */
     'href'?: string;
+    /**
+    * (optional) Link interactive
+    */
+    'interactive'?: boolean;
     /**
     * (optional) Injected jss styles
     */
