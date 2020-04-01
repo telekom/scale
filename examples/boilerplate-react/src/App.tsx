@@ -1,15 +1,16 @@
 import React from 'react';
+import { Button, Card, Link } from '@scaleds/react-wrapper';
 import './App.css';
 
 const App: React.FC = () => (
   <div className="App">
     <h1>React App</h1>
     <h3>Alert</h3>
-    <scale-link variant="success">Success</scale-link>
+      <Link href="http://example.com" target="_blank" variant="success">Success</Link>
     <h3>Button</h3>
-    <scale-button variant="primary">Click!</scale-button>
+      <Button variant="primary">Click!</Button>
     <h3>Card</h3>
-    <scale-card>A title</scale-card>
+      <Card>A title</Card>
   </div>
 );
 
