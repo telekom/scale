@@ -5,11 +5,11 @@ const App: React.FC = () => (
   <div className="App">
     <h1>React App</h1>
     <h3>Alert</h3>
-    <t-alert variant="success">Success</t-alert>
+    <scale-link variant="success">Success</scale-link>
     <h3>Button</h3>
-    <t-button variant="primary">Click!</t-button>
+    <scale-button variant="primary">Click!</scale-button>
     <h3>Card</h3>
-    <t-card>A title</t-card>
+    <scale-card>A title</scale-card>
   </div>
 );
 
