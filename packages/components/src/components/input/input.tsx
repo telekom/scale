@@ -6,7 +6,7 @@ import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
 
-export type InputTypes =
+type InputTypes =
   | 'email'
   | 'hidden'
   | 'number'
