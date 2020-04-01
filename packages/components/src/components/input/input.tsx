@@ -5,7 +5,6 @@ import { styles } from './input.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { InputTypes } from './input.types';
 
 @Component({
   tag: 'scale-input',
@@ -15,7 +14,14 @@ export class Input implements Base {
   /** (optional) Input text class */
   @Prop() customClass?: string = '';
   /** (optional) Input type */
-  @Prop() type?: InputTypes = 'text';
+  @Prop() type?:
+    | 'email'
+    | 'hidden'
+    | 'number'
+    | 'password'
+    | 'tel'
+    | 'text'
+    | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input text value */
