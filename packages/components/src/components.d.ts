@@ -6,7 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { StyleSheet, } from "jss";
-import { InputTypes, } from "./components/input/input.types";
 export namespace Components {
     interface ScaleAlert {
         /**
@@ -218,7 +217,7 @@ export namespace Components {
         /**
           * (optional) Input type
          */
-        "type"?: InputTypes;
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
         /**
           * (optional) Input text value
          */
@@ -827,7 +826,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input type
          */
-        "type"?: InputTypes;
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
         /**
           * (optional) Input text value
          */
