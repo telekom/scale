@@ -41,7 +41,10 @@ interface ButtonProps {
   disabled?: boolean
   focusable?: boolean
   href?: string
-  iconOnly?: boolean
+  icon?: string
+  iconAfter?: string
+  iconBefore?: string
+  iconSize?: number
   role?: string
   size?: string
   styles?: StyleSheet<string | number | symbol>
@@ -57,11 +60,9 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
 interface CardProps {
   // Web-component props
   customClass?: string
-  imageTop?: string
-  imageTopAlt?: string
-  size?: string
+  href?: string
   styles?: StyleSheet<string | number | symbol>
-  variant?: string
+  target?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
@@ -168,11 +169,14 @@ const InputLabel: React.FunctionComponent<InputLabelProps> = props => (
 )
 interface LinkProps {
   // Web-component props
+  block?: boolean
   customClass?: string
   disabled?: boolean
-  href?: string
-  openNewTab?: boolean
+  href: string
+  icon?: string
+  iconSize?: number
   styles?: StyleSheet<string | number | symbol>
+  target?: string
   underline?: boolean
   variant?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.

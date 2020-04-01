@@ -5,7 +5,6 @@ import { styles } from './input.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { InputTypes } from './input.types';
 
 @Component({
   tag: 'scale-input',
