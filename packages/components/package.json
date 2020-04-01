@@ -46,7 +46,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@stencil/core": "1.8.11",
     "@types/classnames": "^2.2.8",
     "classnames": "^2.2.6"
   }

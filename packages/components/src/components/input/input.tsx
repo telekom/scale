@@ -5,15 +5,7 @@ import { styles } from './input.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-
-type InputTypes =
-  | 'email'
-  | 'hidden'
-  | 'number'
-  | 'password'
-  | 'tel'
-  | 'text'
-  | 'url';
+import { InputTypes } from './input.types';
 
 @Component({
   tag: 'scale-input',
