@@ -23,5 +23,8 @@ describe('Card', () => {
     element.customClass = 'custom';
     stylesheet.addRule('custom', {});
     expect(element.getCssClassMap()).toContain('custom');
+
+    element.href = 'http://example.com';
+    expect(element.getCssClassMap()).toContain('card--interactive');
   });
 });
