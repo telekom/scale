@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { defineCustomElements, JSX as EnhancedJSX } from '@scale/components/loader';
+import { defineCustomElements, JSX as EnhancedJSX } from '@scaleds/components/loader';
 import App from './App';
 import './index.css';
 
@@ -13,7 +13,6 @@ type StencilToReact<T> = {
 } ;
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   export namespace JSX {
     interface IntrinsicElements extends StencilToReact<EnhancedJSX.IntrinsicElements> {}
   }

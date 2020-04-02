@@ -1,4 +1,4 @@
-import { ComponentInterface } from '@stencil/core/dist/declarations';
+import { ComponentInterface } from '@stencil/core';
 import jss, { StyleSheet } from 'jss';
 import preset from 'jss-preset-default';
 import { combineObjects, theme } from './utils';

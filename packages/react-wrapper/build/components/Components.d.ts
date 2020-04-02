@@ -28,7 +28,10 @@ interface ButtonProps {
     disabled?: boolean;
     focusable?: boolean;
     href?: string;
-    iconOnly?: boolean;
+    icon?: string;
+    iconAfter?: string;
+    iconBefore?: string;
+    iconSize?: number;
     role?: string;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
@@ -39,11 +42,9 @@ interface ButtonProps {
 declare const Button: React.FunctionComponent<ButtonProps>;
 interface CardProps {
     customClass?: string;
-    imageTop?: string;
-    imageTopAlt?: string;
-    size?: string;
+    href?: string;
     styles?: StyleSheet<string | number | symbol>;
-    variant?: string;
+    target?: string;
     [key: string]: any;
 }
 declare const Card: React.FunctionComponent<CardProps>;
@@ -104,11 +105,14 @@ interface InputLabelProps {
 }
 declare const InputLabel: React.FunctionComponent<InputLabelProps>;
 interface LinkProps {
+    block?: boolean;
     customClass?: string;
     disabled?: boolean;
-    href?: string;
-    openNewTab?: boolean;
+    href: string;
+    icon?: string;
+    iconSize?: number;
     styles?: StyleSheet<string | number | symbol>;
+    target?: string;
     underline?: boolean;
     variant?: string;
     [key: string]: any;
