@@ -43,7 +43,12 @@ export class Button implements Base {
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
-  @CssInJs('Button', styles) stylesheet: StyleSheet;
+  @CssInJs('Button', styles, {
+    // this assigns button 'color' to nested icon if '--icon-color' is not provided
+    'button.--icon-color': 'button.color',
+    'button.&:hover.--icon-color': 'button.&:hover.color',
+  })
+  stylesheet: StyleSheet;
 
   /** Button method: disable()  */
   @Method()

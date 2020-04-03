@@ -179,7 +179,6 @@ export namespace Components {
         "vertical"?: boolean;
     }
     interface ScaleIcon {
-        "color"?: string;
         /**
           * (optional) Tag class
          */
@@ -784,7 +783,6 @@ declare namespace LocalJSX {
         "vertical"?: boolean;
     }
     interface ScaleIcon {
-        "color"?: string;
         /**
           * (optional) Tag class
          */

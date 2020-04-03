@@ -9,7 +9,6 @@
 
 | Property      | Attribute      | Description                    | Type                                     | Default     |
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `color`       | `color`        |                                | `string`                                 | `'black'`   |
 | `customClass` | `custom-class` | (optional) Tag class           | `string`                                 | `''`        |
 | `height`      | `height`       |                                | `number`                                 | `24`        |
 | `name`        | `name`         | (optional) Tag theme           | `string`                                 | `undefined` |

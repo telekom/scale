@@ -5,14 +5,20 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader'
+      esmLoaderPath: '../loader',
+      copy: [
+        { src: '../build/utils' , dest: '..', warn: true}
+      ]
     },
     {
       type: 'docs-readme'
     },
     {
       type: 'www',
-      serviceWorker: null // disable service workers
+      serviceWorker: null, // disable service workers
+      copy: [
+        { src: '../build/utils' , dest: 'build/utils', warn: true}
+      ]
     },
     // {
     //   type: 'docs-custom',
