@@ -6,6 +6,14 @@ import { defineCustomElements, JSX as EnhancedJSX } from '@scaleds/components/lo
 import App from './App';
 import './index.css';
 
+const { useTheme } = require('@scaleds/components/dist/theme')
+
+useTheme({
+  shape: {
+    borderRadius: 24
+  }
+})
+
 type StencilToReact<T> = {
   [P in keyof T]?: T[P] & Omit<HTMLAttributes<Element>, 'className'> & {
     class?: string;
