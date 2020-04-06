@@ -7,7 +7,7 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
       copy: [
-        { src: '../build/utils' , dest: '..', warn: true}
+        { src: '../build/theme' , dest: '..', warn: true}
       ]
     },
     {
@@ -17,7 +17,7 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
-        { src: '../build/utils' , dest: 'build/utils', warn: true}
+        { src: '../build/theme' , dest: 'build/theme', warn: true}
       ]
     },
     // {

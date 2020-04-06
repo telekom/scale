@@ -9,20 +9,20 @@ export default {
 		resolve()
 	],
   input: [
-		'src/utils/theme.ts',
+		'src/theme/theme.ts',
 	],
   output: [
 		{
-			file: 'build/utils/theme.js',
+			file: 'build/theme/theme.js',
 			format: 'cjs'
 		},
 		{
-			file: 'build/utils/theme.iife.js',
+			file: 'build/theme/theme.iife.js',
 			format: 'iife',
 			name: 'scale'
 		},
 		{
-			file: 'build/utils/theme.esm.js',
+			file: 'build/theme/theme.esm.js',
 			format: 'esm'
 		}
 	]

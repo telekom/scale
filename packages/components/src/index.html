@@ -8,6 +8,7 @@
     />
     <title>Stencil Component Starter</title>
 
+    <script src="/build/theme/theme.iife.js"></script>
     <script type="module" src="/build/scale-components.esm.js"></script>
     <script nomodule src="/build/scale-components.js"></script>
     <style>
@@ -16,6 +17,7 @@
         padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          --icon-color: black;
       }
 
       body {
@@ -29,16 +31,11 @@
 
     </style>
     <script>
-      window.scale = {
-        theme: {
-          Alert: {
-            'alert--variant-primary': {
-              background: 'blue',
-              color: '#fff'
-            }
-          }
+      scale.useTheme({
+        shape: {
+          borderRadius: 24
         }
-      }
+      })
     </script>
   </head>
 
@@ -46,9 +43,15 @@
     <h1>Components</h1>
 
     <h3>Button Default</h3>
-    <scale-button>
-      Hello
-    </scale-button>
+    <scale-button>Hello</scale-button>
+
+    <h3>Button variants</h3>
+    <scale-button variant="primary">Hello</scale-button>
+    <scale-button variant="secondary">Hello</scale-button>
+    <scale-button variant="error">Hello</scale-button>
+    <scale-button variant="warning">Hello</scale-button>
+    <scale-button variant="info">Hello</scale-button>
+    <scale-button variant="success">Hello</scale-button>
 
     <h3>Button icon Before</h3>
     <scale-button icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">

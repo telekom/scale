@@ -1,4 +1,4 @@
-import { combineObjects } from './utils';
+import { combineObjects } from '../utils/utils';
 import { defaultTheme } from './defaultTheme';
 
 export const getTheme = (overrides?: Partial<any>): any => {
@@ -9,7 +9,10 @@ export const getTheme = (overrides?: Partial<any>): any => {
       return combineObjects(defaultTheme, injectedTheme);
     }
   }
-  return combineObjects(defaultTheme, overrides);
+  if (overrides) {
+    return combineObjects(defaultTheme, overrides);
+  }
+  return defaultTheme
 };
 
 export const useTheme = (overrides?: any) => {

@@ -2,7 +2,7 @@ import { ComponentInterface } from '@stencil/core';
 import jss, { StyleSheet } from 'jss';
 import preset from 'jss-preset-default';
 import { combineObjects } from './utils';
-import { getTheme } from './theme';
+import { getTheme } from '../theme/theme';
 import has from 'lodash/has';
 import get from 'lodash/get';
 import set from 'lodash/set';
@@ -29,7 +29,7 @@ export function CssInJs(
     } catch (error) {
       withDefaultTheme = styles;
     }
-    const combined = combineObjects(withDefaultTheme, that.styles);
+    const combined = that.styles ? combineObjects(withDefaultTheme, that.styles) : withDefaultTheme;
     if (!!options) {
       const withStyleMappings = {};
       const selectStyles = (key: string) =>
