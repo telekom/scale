@@ -12,7 +12,7 @@ export const getTheme = (overrides?: Partial<any>): any => {
   if (overrides) {
     return combineObjects(defaultTheme, overrides);
   }
-  return defaultTheme
+  return defaultTheme;
 };
 
 export const useTheme = (overrides?: any) => {

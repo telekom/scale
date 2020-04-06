@@ -1,4 +1,4 @@
-import { Theme } from './interfaces'
+import { Theme } from './interfaces';
 
 export const defaultTheme: Theme = {
   colors: {

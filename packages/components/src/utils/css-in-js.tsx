@@ -29,7 +29,9 @@ export function CssInJs(
     } catch (error) {
       withDefaultTheme = styles;
     }
-    const combined = that.styles ? combineObjects(withDefaultTheme, that.styles) : withDefaultTheme;
+    const combined = that.styles
+      ? combineObjects(withDefaultTheme, that.styles)
+      : withDefaultTheme;
     if (!!options) {
       const withStyleMappings = {};
       const selectStyles = (key: string) =>

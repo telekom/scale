@@ -3,28 +3,28 @@ import { getTransition } from '../../theme/helpers';
 
 const buttonVariant = (variant: string) => ({
   [`button--variant-${variant}`]: {
-    color: ({colors}) => colors[variant].contrastText,
-    background: ({colors}) => colors[variant].default,
-    border: ({colors}) => `1px solid ${colors[variant].default}`,
+    color: ({ colors }) => colors[variant].contrastText,
+    background: ({ colors }) => colors[variant].default,
+    border: ({ colors }) => `1px solid ${colors[variant].default}`,
     '&:hover': {
-      color: ({colors}) => colors[variant].contrastText,
-      background: ({colors}) => colors[variant].darker,
-      border: ({colors}) => `1px solid ${colors[variant].darker}`,
-    }
+      color: ({ colors }) => colors[variant].contrastText,
+      background: ({ colors }) => colors[variant].darker,
+      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
+    },
   },
-})
+});
 
 export const styles: JssStyle = {
   button: {
-    color: ({colors}) => colors.common.black,
-    background: ({colors}) => colors.grey[300],
-    border: ({colors}) => `1px solid ${colors.grey[300]}`,
-    borderRadius: ({shape}) => shape.borderRadius,
-    fontFamily: ({typography}) => typography.button.fontFamily,
-    fontSize: ({typography}) => typography.button.fontSize,
-    fontWeight: ({typography}) => typography.button.fontWeightRegular,
-    textTransform: ({typography}) => typography.button.textTransform,
-    letterSpacing: ({typography}) => typography.button.letterSpacing,
+    color: ({ colors }) => colors.common.black,
+    background: ({ colors }) => colors.grey[300],
+    border: ({ colors }) => `1px solid ${colors.grey[300]}`,
+    borderRadius: ({ shape }) => shape.borderRadius,
+    fontFamily: ({ typography }) => typography.button.fontFamily,
+    fontSize: ({ typography }) => typography.button.fontSize,
+    fontWeight: ({ typography }) => typography.button.fontWeightRegular,
+    textTransform: ({ typography }) => typography.button.textTransform,
+    letterSpacing: ({ typography }) => typography.button.letterSpacing,
     transition: theme => getTransition(theme, 'all', 'shorter', 'easeInOut'),
     boxSizing: 'border-box',
     position: 'relative',
@@ -47,9 +47,9 @@ export const styles: JssStyle = {
       height: '100%',
     },
     '&:hover': {
-      color: ({colors}) => colors.common.white,
-      background: ({colors}) => colors.grey[700],
-      borderColor: ({colors}) => colors.grey[700],
+      color: ({ colors }) => colors.common.white,
+      background: ({ colors }) => colors.grey[700],
+      borderColor: ({ colors }) => colors.grey[700],
       transition: theme => getTransition(theme, 'all', 'standard', 'easeInOut'),
       boxShadow: 'none',
       textDecoration: 'none',
@@ -57,10 +57,10 @@ export const styles: JssStyle = {
   },
   'button--disabled': {
     '&, &:hover': {
-      opacity: ({colors}) => colors.action.disabledOpacity,
-      border: ({colors}) => `1px solid ${colors.action.disabled}`,
-      color: ({colors}) => colors.text.disabled,
-      background: ({colors}) => colors.common.white,
+      opacity: ({ colors }) => colors.action.disabledOpacity,
+      border: ({ colors }) => `1px solid ${colors.action.disabled}`,
+      color: ({ colors }) => colors.text.disabled,
+      background: ({ colors }) => colors.common.white,
       cursor: 'not-allowed',
     },
   },

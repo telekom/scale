@@ -30,11 +30,11 @@ export const styles: JssStyle = {
     borderRadius: '2px',
     '&::-webkit-slider-thumb': sliderKnob,
 
-    // TODO: currently throws warning in chrome, enable browser check to support firefox and edge 
+    // TODO: currently throws warning in chrome, enable browser check to support firefox and edge
     // '&::-moz-range-thumb': sliderKnob,
     // '&::-ms-thumb': sliderKnob,
   },
-  // TODO: currently throws warning in chrome, enable browser check to support firefox 
+  // TODO: currently throws warning in chrome, enable browser check to support firefox
   // "input[type='range']": {
   //   '&::-moz-focus-outer': {
   //     border: '0',
