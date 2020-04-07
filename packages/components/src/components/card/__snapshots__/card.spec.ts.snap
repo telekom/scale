@@ -39,6 +39,7 @@ exports[`Card should match snapshot 1`] = `
 .card--interactive-0-0-7 .card__body-0-0-6 ::slotted(*) {
   margin: 0;
 }
+.card--disabled-0-0-8 {}
 .card--disabled-0-0-8, .card--disabled-0-0-8:hover, .card--disabled-0-0-8:focus, .card--disabled-0-0-8:active {
   cursor: not-allowed;
   opacity: 0.5;
