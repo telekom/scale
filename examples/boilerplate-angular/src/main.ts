@@ -6,6 +6,14 @@ import { environment } from './environments/environment';
 
 import { defineCustomElements } from '@scaleds/components/loader';
 
+const { useTheme } = require('@scaleds/components/dist/theme')
+
+useTheme({
+  shape: {
+    borderRadius: 24
+  }
+})
+
 if (environment.production) {
   enableProdMode();
 }

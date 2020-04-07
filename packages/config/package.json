@@ -1,7 +1,7 @@
 {
     "name": "@scaleds/config",
     "main": "dist/index.js",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "author": "@eeegor <egor.kirpichev@telekom.de>",
     "license": "MIT",
     "scripts": {

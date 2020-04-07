@@ -19,7 +19,6 @@ export class Icon implements Base {
   @Prop() size?: number;
   @Prop() height?: number = 24;
   @Prop() width?: number = 24;
-  @Prop() color?: string = 'black';
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -55,7 +54,7 @@ path {
           height={this.size || this.width}
           viewBox={`0 0 26 26`}
         >
-          <path d={this.path} stroke={this.color} fill="transparent" />
+          <path d={this.path} stroke="transparent" fill="transparent" />
         </svg>
       </Host>
     );

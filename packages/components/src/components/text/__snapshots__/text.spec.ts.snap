@@ -3,7 +3,9 @@
 exports[`Text should match snapshot 1`] = `
 <scale-text>
   <mock:shadow-root>
-    <style></style>
+    <style>
+      .text-0-0-2 {}
+    </style>
     <div class="text-0-0-2">
       <slot></slot>
     </div>
