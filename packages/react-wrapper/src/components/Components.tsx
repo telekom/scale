@@ -60,7 +60,9 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
 interface CardProps {
   // Web-component props
   customClass?: string
+  disabled?: boolean
   href?: string
+  interactive?: boolean
   styles?: StyleSheet<string | number | symbol>
   target?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
