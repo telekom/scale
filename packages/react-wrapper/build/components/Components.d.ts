@@ -64,7 +64,6 @@ interface DividerProps {
 }
 declare const Divider: React.FunctionComponent<DividerProps>;
 interface IconProps {
-    color?: string;
     customClass?: string;
     height?: number;
     name?: string;

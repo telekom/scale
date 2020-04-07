@@ -97,7 +97,6 @@ const Divider: React.FunctionComponent<DividerProps> = props => (
 )
 interface IconProps {
   // Web-component props
-  color?: string
   customClass?: string
   height?: number
   name?: string

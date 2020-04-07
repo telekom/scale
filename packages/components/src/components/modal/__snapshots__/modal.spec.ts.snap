@@ -82,6 +82,7 @@ exports[`Modal should match snapshot when opened 1`] = `
 .modal__actions-0-0-69 t-button {
   margin: 0.25rem;
 }
+.modal--opened-0-0-70 {}
 .modal--opened-0-0-70 .modal__backdrop-0-0-65, .modal--opened-0-0-70 .modal__content-0-0-64 {
   opacity: 1;
   pointer-events: all;
