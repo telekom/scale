@@ -42,7 +42,9 @@ interface ButtonProps {
 declare const Button: React.FunctionComponent<ButtonProps>;
 interface CardProps {
     customClass?: string;
+    disabled?: boolean;
     href?: string;
+    interactive?: boolean;
     styles?: StyleSheet<string | number | symbol>;
     target?: string;
     [key: string]: any;

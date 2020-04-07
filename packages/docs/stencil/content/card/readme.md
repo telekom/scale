@@ -31,7 +31,7 @@
 | `href`        | `href`         | (optional) Link card           | `string`                                 | `''`        |
 | `interactive` | `interactive`  | (optional) Link interactive    | `boolean`                                | `false`     |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `target`      | `target`       | (optional) Link target         | `string`                                 | `'_self'`   |
+| `target`      | `target`       | (optional) Link card target    | `string`                                 | `'_self'`   |
 
 
 ----------------------------------------------
