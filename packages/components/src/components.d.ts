@@ -434,13 +434,21 @@ export namespace Components {
     }
     interface ScaleText {
         /**
-          * (optional) Tag class
+          * (optional) Text class
          */
         "customClass"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Text tag
+         */
+        "tag"?: string;
+        /**
+          * (optional) Text variant
+         */
+        "variant"?: string;
     }
     interface ScaleToast {
         /**
@@ -1042,13 +1050,21 @@ declare namespace LocalJSX {
     }
     interface ScaleText {
         /**
-          * (optional) Tag class
+          * (optional) Text class
          */
         "customClass"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Text tag
+         */
+        "tag"?: string;
+        /**
+          * (optional) Text variant
+         */
+        "variant"?: string;
     }
     interface ScaleToast {
         /**

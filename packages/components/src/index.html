@@ -33,13 +33,42 @@
       scale.useTheme({
         shape: {
           borderRadius: 24
+        },
+        typography: {
+          variants: {
+            custom: {
+              fontSize: 32,
+              color: 'green',
+            }
+          }
+        },
+        components: {
+          Button: {
+            'button--variant-custom': {
+              background: 'pink',
+              borderColor: 'pink'
+            }
+          },
         }
       })
+      console.log(scale.getTheme())
     </script>
   </head>
 
   <body>
     <h1>Components</h1>
+
+    <h3>Text</h3>
+    <scale-text tag="h1" variant="h1">h1 heading</scale-text>
+    <scale-text tag="h2" variant="h2">h2 heading</scale-text>
+    <scale-text tag="h3" variant="h3">h3 heading</scale-text>
+    <scale-text tag="h4" variant="h4">h4 heading</scale-text>
+    <scale-text tag="h5" variant="h5">h5 heading</scale-text>
+    <scale-text tag="h6" variant="h6">h6 heading</scale-text>
+    
+    <scale-text>Default paragraph</scale-text>
+
+    <scale-text variant="custom">Custom</scale-text>
 
     <h3>Button Default</h3>
     <scale-button>Hello</scale-button>
@@ -51,6 +80,7 @@
     <scale-button variant="warning">Hello</scale-button>
     <scale-button variant="info">Hello</scale-button>
     <scale-button variant="success">Hello</scale-button>
+    <scale-button variant="custom">Hello</scale-button>
 
     <h3>Button icon Before</h3>
     <scale-button
