@@ -76,6 +76,7 @@ exports[`Carousel should match snapshot 1`] = `
 .carousel__indicator--active-0-0-19 {
   opacity: 1;
 }
+.carousel--vertical-0-0-20 {}
 .carousel--vertical-0-0-20 .carousel__container-0-0-12 {
   flex-direction: column;
 }

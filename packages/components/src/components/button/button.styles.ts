@@ -1,7 +1,32 @@
 import { JssStyle } from 'jss';
+import { getTransition } from '../../theme/helpers';
+
+const buttonVariant = (variant: string) => ({
+  [`button--variant-${variant}`]: {
+    color: ({ colors }) => colors[variant].contrastText,
+    background: ({ colors }) => colors[variant].default,
+    border: ({ colors }) => `1px solid ${colors[variant].default}`,
+    '&:hover': {
+      color: ({ colors }) => colors[variant].contrastText,
+      background: ({ colors }) => colors[variant].darker,
+      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
+    },
+  },
+});
 
 export const styles: JssStyle = {
   button: {
+    color: ({ colors }) => colors.common.black,
+    background: ({ colors }) => colors.grey[300],
+    border: ({ colors }) => `1px solid ${colors.grey[300]}`,
+    borderRadius: ({ shape }) => shape.borderRadius,
+    fontFamily: ({ typography }) => typography.variants.button.fontFamily,
+    fontSize: ({ typography }) => typography.variants.button.fontSize,
+    fontWeight: ({ typography }) =>
+      typography.variants.button.fontWeightRegular,
+    textTransform: ({ typography }) => typography.variants.button.textTransform,
+    letterSpacing: ({ typography }) => typography.variants.button.letterSpacing,
+    transition: theme => getTransition(theme, 'all', 'shorter', 'easeInOut'),
     boxSizing: 'border-box',
     position: 'relative',
     display: 'inline-flex',
@@ -12,19 +37,8 @@ export const styles: JssStyle = {
     textAlign: 'center',
     cursor: 'pointer',
     userSelect: 'none',
-    '--icon-color': '#000',
-    color: '#000',
-    background: '#fff',
-    border: '1px solid #000',
-    borderRadius: 0,
     padding: '0.25rem 1rem',
     boxShadow: 'none',
-    fontFamily: 'unset',
-    fontSize: 'unset',
-    fontWeight: 400,
-    textTransform: 'initial',
-    letterSpacing: 0,
-    transition: 'all 0.2s ease-in-out',
     minHeight: 40,
     textDecoration: 'none',
     '&:before': {
@@ -34,21 +48,20 @@ export const styles: JssStyle = {
       height: '100%',
     },
     '&:hover': {
-      color: '#fff',
-      '--icon-color': '#fff',
-      background: '#000',
-      borderColor: '#000',
+      color: ({ colors }) => colors.common.white,
+      background: ({ colors }) => colors.grey[700],
+      borderColor: ({ colors }) => colors.grey[700],
+      transition: theme => getTransition(theme, 'all', 'standard', 'easeInOut'),
       boxShadow: 'none',
-      transition: 'all 0.2s ease-in-out',
       textDecoration: 'none',
     },
   },
   'button--disabled': {
     '&, &:hover': {
-      background: '#fff',
-      border: '1px solid #000',
-      color: '#000',
-      opacity: 0.5,
+      opacity: ({ colors }) => colors.action.disabledOpacity,
+      border: ({ colors }) => `1px solid ${colors.action.disabled}`,
+      color: ({ colors }) => colors.text.disabled,
+      background: ({ colors }) => colors.common.white,
       cursor: 'not-allowed',
     },
   },
@@ -66,4 +79,10 @@ export const styles: JssStyle = {
     height: 40,
     width: 40,
   },
+  ...buttonVariant('primary'),
+  ...buttonVariant('secondary'),
+  ...buttonVariant('error'),
+  ...buttonVariant('warning'),
+  ...buttonVariant('info'),
+  ...buttonVariant('success'),
 };

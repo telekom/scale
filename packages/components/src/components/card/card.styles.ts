@@ -25,5 +25,22 @@ export const styles: JssStyle = {
     '&:hover': {
       boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
     },
+    '&:focus': {
+      boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
+    },
+    '&:active': {
+      boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.24)',
+    },
+    '& $card__body ::slotted(*)': {
+      margin: 0,
+    },
+  },
+  'card--disabled': {
+    '&, &:hover, &:focus, &:active': {
+      opacity: 0.5,
+      cursor: 'not-allowed',
+      boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.12)',
+      outline: 'none',
+    },
   },
 };

@@ -17,6 +17,10 @@ export class Card implements Base {
   @Prop() href?: string = '';
   /** (optional) Link card target */
   @Prop() target?: string = '_self';
+  /** (optional) Link interactive */
+  @Prop() interactive?: boolean = false;
+  /** (optional) Link disabled */
+  @Prop() disabled?: boolean = false;
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
@@ -36,6 +40,7 @@ export class Card implements Base {
           class={this.getCssClassMap()}
           {...(!!this.href ? { href: this.href } : {})}
           {...(!!this.href ? { target: this.target } : {})}
+          {...(!!this.interactive ? { tabindex: 1 } : {})}
         >
           <div class={classes.card__body}>
             <slot />
@@ -51,7 +56,8 @@ export class Card implements Base {
     return classNames(
       classes.card,
       this.customClass && this.customClass,
-      !!this.href && classes[`card--interactive`]
+      (!!this.href || this.interactive) && classes[`card--interactive`],
+      this.disabled && classes['card--disabled']
     );
   }
 }

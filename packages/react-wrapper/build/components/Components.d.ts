@@ -42,7 +42,9 @@ interface ButtonProps {
 declare const Button: React.FunctionComponent<ButtonProps>;
 interface CardProps {
     customClass?: string;
+    disabled?: boolean;
     href?: string;
+    interactive?: boolean;
     styles?: StyleSheet<string | number | symbol>;
     target?: string;
     [key: string]: any;
@@ -64,7 +66,6 @@ interface DividerProps {
 }
 declare const Divider: React.FunctionComponent<DividerProps>;
 interface IconProps {
-    color?: string;
     customClass?: string;
     height?: number;
     name?: string;
@@ -169,6 +170,8 @@ declare const Tag: React.FunctionComponent<TagProps>;
 interface TextProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
+    tag?: string;
+    variant?: string;
     [key: string]: any;
 }
 declare const Text: React.FunctionComponent<TextProps>;

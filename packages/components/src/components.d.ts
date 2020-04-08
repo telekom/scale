@@ -134,9 +134,17 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
+          * (optional) Link disabled
+         */
+        "disabled"?: boolean;
+        /**
           * (optional) Link card
          */
         "href"?: string;
+        /**
+          * (optional) Link interactive
+         */
+        "interactive"?: boolean;
         /**
           * (optional) Injected jss styles
          */
@@ -179,7 +187,6 @@ export namespace Components {
         "vertical"?: boolean;
     }
     interface ScaleIcon {
-        "color"?: string;
         /**
           * (optional) Tag class
          */
@@ -427,13 +434,21 @@ export namespace Components {
     }
     interface ScaleText {
         /**
-          * (optional) Tag class
+          * (optional) Text class
          */
         "customClass"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Text tag
+         */
+        "tag"?: string;
+        /**
+          * (optional) Text variant
+         */
+        "variant"?: string;
     }
     interface ScaleToast {
         /**
@@ -739,9 +754,17 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
+          * (optional) Link disabled
+         */
+        "disabled"?: boolean;
+        /**
           * (optional) Link card
          */
         "href"?: string;
+        /**
+          * (optional) Link interactive
+         */
+        "interactive"?: boolean;
         /**
           * (optional) Injected jss styles
          */
@@ -784,7 +807,6 @@ declare namespace LocalJSX {
         "vertical"?: boolean;
     }
     interface ScaleIcon {
-        "color"?: string;
         /**
           * (optional) Tag class
          */
@@ -1028,13 +1050,21 @@ declare namespace LocalJSX {
     }
     interface ScaleText {
         /**
-          * (optional) Tag class
+          * (optional) Text class
          */
         "customClass"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Text tag
+         */
+        "tag"?: string;
+        /**
+          * (optional) Text variant
+         */
+        "variant"?: string;
     }
     interface ScaleToast {
         /**

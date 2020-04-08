@@ -60,7 +60,9 @@ const Button: React.FunctionComponent<ButtonProps> = props => (
 interface CardProps {
   // Web-component props
   customClass?: string
+  disabled?: boolean
   href?: string
+  interactive?: boolean
   styles?: StyleSheet<string | number | symbol>
   target?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
@@ -97,7 +99,6 @@ const Divider: React.FunctionComponent<DividerProps> = props => (
 )
 interface IconProps {
   // Web-component props
-  color?: string
   customClass?: string
   height?: number
   name?: string
@@ -263,6 +264,8 @@ interface TextProps {
   // Web-component props
   customClass?: string
   styles?: StyleSheet<string | number | symbol>
+  tag?: string
+  variant?: string
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any

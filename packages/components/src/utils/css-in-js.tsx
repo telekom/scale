@@ -1,7 +1,11 @@
 import { ComponentInterface } from '@stencil/core';
 import jss, { StyleSheet } from 'jss';
 import preset from 'jss-preset-default';
-import { combineObjects, theme } from './utils';
+import { combineObjects } from './utils';
+import { getTheme } from '../theme/theme';
+import has from 'lodash/has';
+import get from 'lodash/get';
+import set from 'lodash/set';
 
 jss.setup(preset());
 
@@ -10,7 +14,38 @@ declare type CssInJsDecorator = (
   propertyKey: string
 ) => void;
 
-export function CssInJs(className: string, styles: object): CssInJsDecorator {
+export function CssInJs(
+  componentKey: string,
+  styles: any,
+  options?: any
+): CssInJsDecorator {
+  const withInjectedValues = (that: any) => {
+    let withDefaultTheme;
+    try {
+      withDefaultTheme = combineObjects(
+        styles,
+        getTheme().components[componentKey]
+      );
+    } catch (error) {
+      withDefaultTheme = styles;
+    }
+    const combined = that.styles
+      ? combineObjects(withDefaultTheme, that.styles)
+      : withDefaultTheme;
+    if (!!options) {
+      const withStyleMappings = {};
+      const selectStyles = (key: string) =>
+        has(that.styles, key)
+          ? get(that.styles, key)
+          : get(combined, options[key]);
+      Object.keys(options).forEach((key: string) =>
+        set(withStyleMappings, key, selectStyles(key))
+      );
+      return combineObjects(combined, withStyleMappings);
+    }
+    return combined;
+  };
+
   return (target: ComponentInterface, propertyKey: string) => {
     const { componentWillLoad } = target;
     if (!componentWillLoad) {
@@ -22,10 +57,10 @@ export function CssInJs(className: string, styles: object): CssInJsDecorator {
 
     if (componentWillLoad) {
       target.componentWillLoad = function() {
-        const withDefaultTheme = combineObjects(styles, theme()[className]);
-        const cssText = jss.createStyleSheet(
-          combineObjects(withDefaultTheme, this.styles)
-        );
+        const cssText = jss
+          .createStyleSheet(withInjectedValues(this), { link: true })
+          .attach();
+        cssText.update(getTheme());
         const willLoadResult =
           componentWillLoad && componentWillLoad.call(this);
         this[propertyKey] = cssText as StyleSheet;
@@ -46,10 +81,10 @@ export function CssInJs(className: string, styles: object): CssInJsDecorator {
 
     if (componentWillUpdate) {
       target.componentWillUpdate = function() {
-        const withDefaultTheme = combineObjects(styles, theme()[className]);
-        const cssText = jss.createStyleSheet(
-          combineObjects(withDefaultTheme, this.styles)
-        );
+        const cssText = jss
+          .createStyleSheet(withInjectedValues(this), { link: true })
+          .attach();
+        cssText.update(getTheme());
         const willLoadResult =
           componentWillUpdate && componentWillUpdate.call(this);
         this[propertyKey] = cssText as StyleSheet;
