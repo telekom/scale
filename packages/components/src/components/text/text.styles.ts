@@ -5,7 +5,7 @@ export const styles: JssStyle = {
     margin: 0,
     marginBottom: '.5rem',
     '*::slotted': {
-      fontSize: 'unset'
-    }
+      fontSize: 'unset',
+    },
   },
 };

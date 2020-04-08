@@ -99,7 +99,7 @@ export const defaultTheme: Theme = {
         fontWeight: 500,
         fontSize: '2.5rem',
         lineHeight: 1.2,
-        letterSpacing: '-0.01562em'
+        letterSpacing: '-0.01562em',
       },
       h2: {
         fontWeight: 500,
@@ -111,13 +111,13 @@ export const defaultTheme: Theme = {
         fontWeight: 500,
         fontSize: '1.75rem',
         lineHeight: 1.2,
-        letterSpacing: '0em'
+        letterSpacing: '0em',
       },
       h4: {
         fontWeight: 500,
         fontSize: '1.5rem',
         lineHeight: 1.2,
-        letterSpacing: '0.00735em'
+        letterSpacing: '0.00735em',
       },
       h5: {
         fontWeight: 500,
@@ -135,7 +135,7 @@ export const defaultTheme: Theme = {
         fontWeight: 400,
         fontSize: '1rem',
         lineHeight: 1.5,
-        letterSpacing: '0.00938em'
+        letterSpacing: '0.00938em',
       },
       button: {
         fontWeight: 500,
@@ -150,7 +150,7 @@ export const defaultTheme: Theme = {
         lineHeight: 1.66,
         letterSpacing: '0.03333em',
       },
-    }
+    },
   },
   shape: {
     borderRadius: 4,

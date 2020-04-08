@@ -8,13 +8,13 @@ import Base from '../../utils/base-interface';
 import { getTheme } from '../../theme/theme';
 
 const variants = () => {
-  const variantClasses = {}
-  const themeVariants = getTheme().typography.variants
+  const variantClasses = {};
+  const themeVariants = getTheme().typography.variants;
   Object.keys(themeVariants).map(variant => {
-    variantClasses[`text--variant-${variant}`] = themeVariants[variant]
-  })
-  return variantClasses
-}
+    variantClasses[`text--variant-${variant}`] = themeVariants[variant];
+  });
+  return variantClasses;
+};
 
 @Component({
   tag: 'scale-text',
@@ -37,7 +37,7 @@ export class Text implements Base {
   componentWillUpdate() {}
 
   render() {
-    this.stylesheet.addRules(variants())
+    this.stylesheet.addRules(variants());
     const Tag = this.tag || 'p';
     return (
       <Host>
@@ -51,9 +51,10 @@ export class Text implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(classes.text, 
+    return classNames(
+      classes.text,
       this.customClass && this.customClass,
-      this.variant && classes[`text--variant-${this.variant}`],
+      this.variant && classes[`text--variant-${this.variant}`]
     );
   }
 }

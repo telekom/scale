@@ -22,7 +22,8 @@ export const styles: JssStyle = {
     borderRadius: ({ shape }) => shape.borderRadius,
     fontFamily: ({ typography }) => typography.variants.button.fontFamily,
     fontSize: ({ typography }) => typography.variants.button.fontSize,
-    fontWeight: ({ typography }) => typography.variants.button.fontWeightRegular,
+    fontWeight: ({ typography }) =>
+      typography.variants.button.fontWeightRegular,
     textTransform: ({ typography }) => typography.variants.button.textTransform,
     letterSpacing: ({ typography }) => typography.variants.button.letterSpacing,
     transition: theme => getTransition(theme, 'all', 'shorter', 'easeInOut'),
