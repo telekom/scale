@@ -170,6 +170,8 @@ declare const Tag: React.FunctionComponent<TagProps>;
 interface TextProps {
     customClass?: string;
     styles?: StyleSheet<string | number | symbol>;
+    tag?: string;
+    variant?: string;
     [key: string]: any;
 }
 declare const Text: React.FunctionComponent<TextProps>;
