@@ -31,14 +31,17 @@ describe('Tag', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
 
+    element.size = 'small';
+    stylesheet.addRule('tag--size-small', {});
+    expect(element.getCssClassMap()).toContain(
+      stylesheet.classes['tag--size-small']
+    );
+
     element.variant = 'primary';
     stylesheet.addRule('tag--variant-primary', {});
     expect(element.getCssClassMap()).toContain(
       stylesheet.classes['tag--variant-primary']
     );
-
-    element.pill = true;
-    expect(element.getCssClassMap()).toContain(stylesheet.classes['tag--pill']);
 
     element.link = true;
     expect(element.getCssClassMap()).toContain(stylesheet.classes['tag--link']);

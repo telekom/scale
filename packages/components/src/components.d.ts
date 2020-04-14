@@ -191,6 +191,7 @@ export namespace Components {
           * (optional) Tag class
          */
         "customClass"?: string;
+        "focusable"?: boolean;
         "height"?: number;
         /**
           * (optional) Tag theme
@@ -202,6 +203,7 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        "viewBox"?: string;
         "width"?: number;
     }
     interface ScaleInput {
@@ -416,17 +418,25 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Tag on an <a> element
+          * (optional) Tag target
+         */
+        "dismissable"?: boolean;
+        /**
+          * (optional) Tag link
          */
         "link"?: string;
         /**
-          * (optional) Tag pill
+          * (optional) Tag size
          */
-        "pill"?: boolean;
+        "size"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Tag target
+         */
+        "target"?: string;
         /**
           * (optional) Tag variant
          */
@@ -811,6 +821,7 @@ declare namespace LocalJSX {
           * (optional) Tag class
          */
         "customClass"?: string;
+        "focusable"?: boolean;
         "height"?: number;
         /**
           * (optional) Tag theme
@@ -822,6 +833,7 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        "viewBox"?: string;
         "width"?: number;
     }
     interface ScaleInput {
@@ -1032,17 +1044,26 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Tag on an <a> element
+          * (optional) Tag target
+         */
+        "dismissable"?: boolean;
+        /**
+          * (optional) Tag link
          */
         "link"?: string;
+        "onClose"?: (event: CustomEvent<any>) => void;
         /**
-          * (optional) Tag pill
+          * (optional) Tag size
          */
-        "pill"?: boolean;
+        "size"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Tag target
+         */
+        "target"?: string;
         /**
           * (optional) Tag variant
          */

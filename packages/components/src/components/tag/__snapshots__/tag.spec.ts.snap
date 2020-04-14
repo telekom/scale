@@ -4,39 +4,144 @@ exports[`Tag should have a link 1`] = `
 <scale-tag link="#">
   <mock:shadow-root>
     <style>
-      .tag-0-0-13 {
-  color: #fff;
-  border: 1px solid #dfdfdf;
+      .tag-0-0-31 {
+  color:  #fff;
   display: inline-flex;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  background: #333;
-  border-radius: 0.25rem;
+  padding: 6px 12px;
+  font-size: 16px;
+  background: #343a40;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  align-items: center;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  --icon-color: #fff;
+  border-radius: 4px;
+  vertical-align: baseline;
+  justify-content: center;
 }
-.tag--pill-0-0-14 {
-  padding: 0.6rem;
-  border-radius: 1rem;
+.tag-0-0-31 scale-icon {
+  margin-left: 2px;
 }
-.tag--link-0-0-15 {
+.tag-0-0-31 scale-icon:hover {
+  --icon-color: red;
+}
+.tag--dismissable-0-0-32 {
+  padding-right: 8px;
+}
+.tag--size-small-0-0-33 {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.tag--size-small-0-0-33 scale-icon {
+  width: 12px;
+  height: 12px;
+}
+.tag--size-small-0-0-33.tag--dismissable-0-0-32 {
+  padding-right: 4px;
+}
+.tag--variant-primary-0-0-34 {
+  color: #fff;
+  background: #2962ff;
+  border: 1px solid #2962ff;
+}
+.tag--variant-secondary-0-0-35 {
+  color: #fff;
+  background: #d500f9;
+  border: 1px solid #d500f9;
+}
+.tag--variant-error-0-0-36 {
+  color: #fff;
+  background: #f50057;
+  border: 1px solid #f50057;
+}
+.tag--variant-warning-0-0-37 {
+  color: #fff;
+  background: #ffc400;
+  border: 1px solid #ffc400;
+}
+.tag--variant-info-0-0-38 {
+  color: #fff;
+  background: #00b0ff;
+  border: 1px solid #00b0ff;
+}
+.tag--variant-success-0-0-39 {
+  color: #fff;
+  background: #00e676;
+  border: 1px solid #00e676;
+}
+.tag--link-0-0-40 {
   text-decoration: none;
 }
-.tag--link-0-0-15:hover {
-  background: #1d2124;
-}
-.tag--link-0-0-15:active {
-  background: #1d2124;
-}
-.tag--link-0-0-15:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
-}
-.tag--variant-primary-0-0-16 {
+.tag--link-0-0-40.tag--variant-primary-0-0-34 {}
+.tag--link-0-0-40.tag--variant-secondary-0-0-35 {}
+.tag--link-0-0-40.tag--variant-error-0-0-36 {}
+.tag--link-0-0-40.tag--variant-warning-0-0-37 {}
+.tag--link-0-0-40.tag--variant-info-0-0-38 {}
+.tag--link-0-0-40.tag--variant-success-0-0-39 {}
+.tag--link-0-0-40.tag--variant-success-0-0-39:hover {
   color: #fff;
-  background: #007bff;
-  border-color: #007bff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-40.tag--variant-success-0-0-39:active {
+  color: #fff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-40.tag--variant-info-0-0-38:hover {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-40.tag--variant-info-0-0-38:active {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-40.tag--variant-warning-0-0-37:hover {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-40.tag--variant-warning-0-0-37:active {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-40.tag--variant-error-0-0-36:hover {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-40.tag--variant-error-0-0-36:active {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-40.tag--variant-secondary-0-0-35:hover {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-40.tag--variant-secondary-0-0-35:active {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-40.tag--variant-primary-0-0-34:hover {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
+}
+.tag--link-0-0-40.tag--variant-primary-0-0-34:active {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
 }
     </style>
-    <a class="tag--link-0-0-15 tag-0-0-13" href="#">
+    <a class="tag--link-0-0-40 tag-0-0-31" href="#" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -48,41 +153,146 @@ exports[`Tag should match snapshot 1`] = `
 <scale-tag>
   <mock:shadow-root>
     <style>
-      .tag-0-0-5 {
-  color: #fff;
-  border: 1px solid #dfdfdf;
+      .tag-0-0-11 {
+  color:  #fff;
   display: inline-flex;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  background: #333;
-  border-radius: 0.25rem;
+  padding: 6px 12px;
+  font-size: 16px;
+  background: #343a40;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  align-items: center;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  --icon-color: #fff;
+  border-radius: 4px;
+  vertical-align: baseline;
+  justify-content: center;
 }
-.tag--pill-0-0-6 {
-  padding: 0.6rem;
-  border-radius: 1rem;
+.tag-0-0-11 scale-icon {
+  margin-left: 2px;
 }
-.tag--link-0-0-7 {
+.tag-0-0-11 scale-icon:hover {
+  --icon-color: red;
+}
+.tag--dismissable-0-0-12 {
+  padding-right: 8px;
+}
+.tag--size-small-0-0-13 {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.tag--size-small-0-0-13 scale-icon {
+  width: 12px;
+  height: 12px;
+}
+.tag--size-small-0-0-13.tag--dismissable-0-0-12 {
+  padding-right: 4px;
+}
+.tag--variant-primary-0-0-14 {
+  color: #fff;
+  background: #2962ff;
+  border: 1px solid #2962ff;
+}
+.tag--variant-secondary-0-0-15 {
+  color: #fff;
+  background: #d500f9;
+  border: 1px solid #d500f9;
+}
+.tag--variant-error-0-0-16 {
+  color: #fff;
+  background: #f50057;
+  border: 1px solid #f50057;
+}
+.tag--variant-warning-0-0-17 {
+  color: #fff;
+  background: #ffc400;
+  border: 1px solid #ffc400;
+}
+.tag--variant-info-0-0-18 {
+  color: #fff;
+  background: #00b0ff;
+  border: 1px solid #00b0ff;
+}
+.tag--variant-success-0-0-19 {
+  color: #fff;
+  background: #00e676;
+  border: 1px solid #00e676;
+}
+.tag--link-0-0-20 {
   text-decoration: none;
 }
-.tag--link-0-0-7:hover {
-  background: #1d2124;
-}
-.tag--link-0-0-7:active {
-  background: #1d2124;
-}
-.tag--link-0-0-7:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
-}
-.tag--variant-primary-0-0-8 {
+.tag--link-0-0-20.tag--variant-primary-0-0-14 {}
+.tag--link-0-0-20.tag--variant-secondary-0-0-15 {}
+.tag--link-0-0-20.tag--variant-error-0-0-16 {}
+.tag--link-0-0-20.tag--variant-warning-0-0-17 {}
+.tag--link-0-0-20.tag--variant-info-0-0-18 {}
+.tag--link-0-0-20.tag--variant-success-0-0-19 {}
+.tag--link-0-0-20.tag--variant-success-0-0-19:hover {
   color: #fff;
-  background: #007bff;
-  border-color: #007bff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-20.tag--variant-success-0-0-19:active {
+  color: #fff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-20.tag--variant-info-0-0-18:hover {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-20.tag--variant-info-0-0-18:active {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-20.tag--variant-warning-0-0-17:hover {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-20.tag--variant-warning-0-0-17:active {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-20.tag--variant-error-0-0-16:hover {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-20.tag--variant-error-0-0-16:active {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-20.tag--variant-secondary-0-0-15:hover {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-20.tag--variant-secondary-0-0-15:active {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-20.tag--variant-primary-0-0-14:hover {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
+}
+.tag--link-0-0-20.tag--variant-primary-0-0-14:active {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
 }
     </style>
-    <div class="tag-0-0-5">
+    <span class="tag-0-0-11">
       <slot></slot>
-    </div>
+    </span>
   </mock:shadow-root>
   Label
 </scale-tag>

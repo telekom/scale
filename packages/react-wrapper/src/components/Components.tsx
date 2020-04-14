@@ -19,21 +19,6 @@ interface AlertProps {
 const Alert: React.FunctionComponent<AlertProps> = props => (
   <WebComponentWrapper component='scale-alert' {...props} />
 )
-interface BadgeProps {
-  // Web-component props
-  customClass?: string
-  link?: string
-  pill?: boolean
-  size?: string
-  styles?: StyleSheet<string | number | symbol>
-  variant?: string
-  // Allow custom props not yet specified in the types e.g. events onClick etc.
-  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
-  [key: string]: any
-}
-const Badge: React.FunctionComponent<BadgeProps> = props => (
-  <WebComponentWrapper component='scale-badge' {...props} />
-)
 interface ButtonProps {
   // Web-component props
   ariaLabel?: string
@@ -100,11 +85,13 @@ const Divider: React.FunctionComponent<DividerProps> = props => (
 interface IconProps {
   // Web-component props
   customClass?: string
+  focusable?: boolean
   height?: number
   name?: string
   path: string
   size?: number
   styles?: StyleSheet<string | number | symbol>
+  viewBox?: string
   width?: number
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
@@ -249,16 +236,25 @@ const Switch: React.FunctionComponent<SwitchProps> = props => (
 interface TagProps {
   // Web-component props
   customClass?: string
+  dismissable?: boolean
   link?: string
-  pill?: boolean
+  size?: string
   styles?: StyleSheet<string | number | symbol>
+  target?: string
   variant?: string
+  // Web-component custom events
+  // TODO: Provide events types
+  onClose?: (event?: any) => void
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
 const Tag: React.FunctionComponent<TagProps> = props => (
-  <WebComponentWrapper component='scale-tag' {...props} />
+  <WebComponentWrapper
+    events={{ onClose: 'close' }}
+    component='scale-tag'
+    {...props}
+  />
 )
 interface TextProps {
   // Web-component props
@@ -296,7 +292,6 @@ const Toast: React.FunctionComponent<ToastProps> = props => (
 
 export {
   Alert,
-  Badge,
   Button,
   Card,
   Carousel,
