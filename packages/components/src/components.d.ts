@@ -242,36 +242,6 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface ScaleInputError {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputGroup {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputLabel {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
     interface ScaleLink {
         /**
           * (optional) Block link
@@ -568,24 +538,6 @@ declare global {
         prototype: HTMLScaleInputElement;
         new (): HTMLScaleInputElement;
     };
-    interface HTMLScaleInputErrorElement extends Components.ScaleInputError, HTMLStencilElement {
-    }
-    var HTMLScaleInputErrorElement: {
-        prototype: HTMLScaleInputErrorElement;
-        new (): HTMLScaleInputErrorElement;
-    };
-    interface HTMLScaleInputGroupElement extends Components.ScaleInputGroup, HTMLStencilElement {
-    }
-    var HTMLScaleInputGroupElement: {
-        prototype: HTMLScaleInputGroupElement;
-        new (): HTMLScaleInputGroupElement;
-    };
-    interface HTMLScaleInputLabelElement extends Components.ScaleInputLabel, HTMLStencilElement {
-    }
-    var HTMLScaleInputLabelElement: {
-        prototype: HTMLScaleInputLabelElement;
-        new (): HTMLScaleInputLabelElement;
-    };
     interface HTMLScaleLinkElement extends Components.ScaleLink, HTMLStencilElement {
     }
     var HTMLScaleLinkElement: {
@@ -642,9 +594,6 @@ declare global {
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
-        "scale-input-error": HTMLScaleInputErrorElement;
-        "scale-input-group": HTMLScaleInputGroupElement;
-        "scale-input-label": HTMLScaleInputLabelElement;
         "scale-link": HTMLScaleLinkElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
@@ -882,36 +831,6 @@ declare namespace LocalJSX {
           * (optional) Input label variant
          */
         "variant"?: string;
-    }
-    interface ScaleInputError {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputGroup {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputLabel {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
     }
     interface ScaleLink {
         /**
@@ -1162,9 +1081,6 @@ declare namespace LocalJSX {
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
-        "scale-input-error": ScaleInputError;
-        "scale-input-group": ScaleInputGroup;
-        "scale-input-label": ScaleInputLabel;
         "scale-link": ScaleLink;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
@@ -1186,9 +1102,6 @@ declare module "@stencil/core" {
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
-            "scale-input-error": LocalJSX.ScaleInputError & JSXBase.HTMLAttributes<HTMLScaleInputErrorElement>;
-            "scale-input-group": LocalJSX.ScaleInputGroup & JSXBase.HTMLAttributes<HTMLScaleInputGroupElement>;
-            "scale-input-label": LocalJSX.ScaleInputLabel & JSXBase.HTMLAttributes<HTMLScaleInputLabelElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
