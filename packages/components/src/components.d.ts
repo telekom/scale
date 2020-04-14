@@ -182,17 +182,49 @@ export namespace Components {
     }
     interface ScaleInput {
         /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
           * (optional) Input text class
          */
         "customClass"?: string;
         /**
-          * (optional) Input text error message
+          * (optional) Input disabled
          */
-        "errorMessage"?: string;
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
         /**
           * (optional) Input name
          */
         "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -202,9 +234,13 @@ export namespace Components {
          */
         "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
         /**
-          * (optional) Input text value
+          * (optional) Input value
          */
         "value"?: string;
+        /**
+          * (optional) Input label variant
+         */
+        "variant"?: string;
     }
     interface ScaleInputError {
         /**
@@ -783,13 +819,33 @@ declare namespace LocalJSX {
     }
     interface ScaleInput {
         /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
+        /**
           * (optional) Input text class
          */
         "customClass"?: string;
         /**
-          * (optional) Input text error message
+          * (optional) Input disabled
          */
-        "errorMessage"?: string;
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
         /**
           * (optional) Input name
          */
@@ -799,6 +855,18 @@ declare namespace LocalJSX {
          */
         "onChanged"?: (event: CustomEvent<string>) => void;
         /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
@@ -807,9 +875,13 @@ declare namespace LocalJSX {
          */
         "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
         /**
-          * (optional) Input text value
+          * (optional) Input value
          */
         "value"?: string;
+        /**
+          * (optional) Input label variant
+         */
+        "variant"?: string;
     }
     interface ScaleInputError {
         /**

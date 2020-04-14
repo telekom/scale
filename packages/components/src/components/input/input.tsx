@@ -24,10 +24,28 @@ export class Input implements Base {
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
-  /** (optional) Input text value */
+  /** (optional) Input label variant */
+  @Prop() variant?: string = 'inline';
+  /** (optional) Input label */
+  @Prop() label?: string = '';
+  /** (optional) Input helper text */
+  @Prop() helperText?: string = '';
+  /** (optional) Input status */
+  @Prop() status?: string = '';
+  /** (optional) Input max length */
+  @Prop() maxLength?: number;
+  /** (optional) Input min length */
+  @Prop() minLength?: number;
+  /** (optional) Input placeHolder */
+  @Prop() placeholder?: string = '';
+  /** (optional) Input disabled */
+  @Prop() disabled?: boolean;
+  /** (optional) Input required */
+  @Prop() required?: boolean;
+  /** (optional) Input counter */
+  @Prop() counter?: boolean;
+  /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
-  /** (optional) Input text error message */
-  @Prop({ mutable: true }) errorMessage?: string;
   /** (optional) Input text event changed */
   @Event() changed: EventEmitter<string>;
 
@@ -48,13 +66,33 @@ export class Input implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <input
-          type={this.type}
-          class={this.getCssClassMap()}
-          value={this.value}
-          name={this.name}
-          onInput={event => this.handleChange(event)}
-        />
+        <div class={this.getCssClassMap()}>
+          <input
+            type={this.type}
+            class={this.getCssClassMap()}
+            value={this.value}
+            name={this.name}
+            required={this.required}
+            minLength={this.minLength}
+            maxLength={this.maxLength}
+            onInput={event => this.handleChange(event)}
+            onFocus={event => this.handleChange(event)}
+            onBlur={event => this.handleChange(event)}
+            onKeyDown={event => this.handleChange(event)}
+            placeholder={this.placeholder}
+            disabled={this.disabled}
+          ></input>
+          {!!this.label && <label>{this.label}</label>}
+          {!!this.helperText && (
+            <div class="input__helper-text">{this.helperText}</div>
+          )}
+
+          {this.counter && (
+            <div class="input__counter">
+              {!!this.value ? this.value.length : 0} / {this.maxLength}
+            </div>
+          )}
+        </div>
       </Host>
     );
   }
@@ -64,7 +102,13 @@ export class Input implements Base {
     return classNames(
       classes.input,
       this.customClass && this.customClass,
-      this.type && classes[`input--type-${this.type}`]
+      this.type && classes[`input--type-${this.type}`],
+      this.variant && classes[`input--variant-${this.variant}`],
+      this.disabled && classes[`input--disabled`],
+      this.status && classes[`input--status-${this.status}`],
+      !!this.value &&
+        this.variant === 'inline' &&
+        classes['input--variant-inline-animated']
     );
   }
 }

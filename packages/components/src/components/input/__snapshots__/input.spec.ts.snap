@@ -4,9 +4,9 @@ exports[`Input should match snapshot 1`] = `
 <scale-input>
   <mock:shadow-root>
     <style>
-      .input-0-0-2 {
+      .input-0-0-6 input {
   width: 100%;
-  border: 1px solid #dfdfdf;
+  border: 1px solid #cecece;
   display: flex;
   padding: 0.5rem;
   font-size: 16px;
@@ -14,11 +14,58 @@ exports[`Input should match snapshot 1`] = `
   font-family: inherit;
   border-radius: 4px;
 }
-.input-0-0-2:not(.tabbing):focus {
+.input-0-0-6 .input__counter {
+  display: flex;
+  font-size: 12px;
+  justify-content: flex-end;
+}
+.input-0-0-6 .input__helper-text {
+  font-size: 9px;
+}
+.input-0-0-6 input:not(.tabbing):focus {
   outline: 0;
 }
+.input--status-error-0-0-7 input {
+  border: 1px solid red;
+}
+.input--status-error-0-0-7 .input__helper-text {
+  color: red;
+}
+.input--variant-inline-0-0-8 {
+  position: relative;
+}
+.input--variant-inline-0-0-8 label {
+  top: 0;
+  left: 0;
+  color: #dfdfdf;
+  height: 12px;
+  z-index: 1;
+  position: absolute;
+  transform: translate(0.5rem, 16px) scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.input--variant-inline-0-0-8 input {
+  height: 48px;
+  margin-top: 24px;
+}
+.input--variant-inline-0-0-8 input:focus + label {
+  color: #000;
+  transform: translate(0.5rem, 0) scale(0.75);
+  transition: all 0.3s ease-in-out;
+}
+.input--variant-inline-animated-0-0-9 label {
+  color: #000;
+  transform: translate(0.5rem, 0) scale(0.75);
+  transition: all 0.3s ease-in-out;
+}
+.input--disabled-0-0-10 label, .input--disabled-0-0-10 input {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
     </style>
-    <input class="input-0-0-2" type="text">
+    <div class="input--variant-inline-0-0-8 input-0-0-6">
+      <input class="input--variant-inline-0-0-8 input-0-0-6" placeholder="" type="text">
+    </div>
   </mock:shadow-root>
 </scale-input>
 `;

@@ -336,10 +336,39 @@
     <h3>Card - disabled</h3>
     <scale-card interactive="true" disabled="true">A title</scale-card>
 
-    <h3>Input text</h3>
-    <scale-input></scale-input>
+    <h3>Input Text - label inline</h3>
+    <scale-input type="text" variant="inline" label="First Name"></scale-input>
 
-    <h3>Input email</h3>
+    <h3>Input Text - max length and counter</h3>
+    <scale-input
+      type="text"
+      variant="inline"
+      label="Last Name"
+      counter="true"
+      max-length="24"
+    ></scale-input>
+
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      type="text"
+      variant="inline"
+      label="address"
+      require="true"
+      status="error"
+      helper-text="please fill out this field"
+    ></scale-input>
+
+    <h3>Input Text - place holder text</h3>
+    <scale-input
+      type="string"
+      variant="inline"
+      placeholder="placeholder"
+    ></scale-input>
+
+    <h3>Input Text - disabled</h3>
+    <scale-input type="string" disabled="true"></scale-input>
+
+    <h3>Input Email</h3>
     <scale-input type="email"></scale-input>
 
     <h3>Input number</h3>
