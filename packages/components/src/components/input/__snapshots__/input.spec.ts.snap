@@ -4,7 +4,8 @@ exports[`Input should match snapshot 1`] = `
 <scale-input>
   <mock:shadow-root>
     <style>
-      .input-0-0-6 input {
+      .input-0-0-6 {}
+.input-0-0-6 input {
   width: 100%;
   border: 1px solid #cecece;
   display: flex;
@@ -25,6 +26,7 @@ exports[`Input should match snapshot 1`] = `
 .input-0-0-6 input:not(.tabbing):focus {
   outline: 0;
 }
+.input--status-error-0-0-7 {}
 .input--status-error-0-0-7 input {
   border: 1px solid red;
 }
@@ -53,11 +55,13 @@ exports[`Input should match snapshot 1`] = `
   transform: translate(0.5rem, 0) scale(0.75);
   transition: all 0.3s ease-in-out;
 }
+.input--variant-inline-animated-0-0-9 {}
 .input--variant-inline-animated-0-0-9 label {
   color: #000;
   transform: translate(0.5rem, 0) scale(0.75);
   transition: all 0.3s ease-in-out;
 }
+.input--disabled-0-0-10 {}
 .input--disabled-0-0-10 label, .input--disabled-0-0-10 input {
   cursor: not-allowed;
   opacity: 0.5;
