@@ -1,72 +1,198 @@
-![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
+# Scale Components
 
-# Stencil Component Starter
-
-This is a starter project for building a standalone Web Component using Stencil.
-
-Stencil is also great for building entire apps. For that, use the [stencil-app-starter](https://github.com/ionic-team/stencil-app-starter) instead.
-
-# Stencil
-
-Stencil is a compiler for building fast web apps using Web Components.
-
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
-
-Stencil components are just Web Components, so they work in any major framework or with no framework at all.
-
-## Getting Started
-
-To start building a new web component using Stencil, clone this repo to a new directory:
+## Local development
 
 ```bash
-git clone https://github.com/ionic-team/stencil-component-starter.git my-component
-cd my-component
-git remote rm origin
+# get dependencies
+yarn
+
+# build assets
+yarn build
+
+# start development mode
+yarn start
 ```
 
-and run:
+## Theming
 
-```bash
-npm install
-npm start
+Scale uses `css-in-js` and particular [`jss`](http://jss.com) as it's styling solution. 
+
+### Default theme
+The default theme can be found under `src/theme/defaultTheme.ts`
+
+### Using the theme in a HTML file
+
+```html
+<html>
+    ...
+    <!-- Include theme helper  -->
+    <script src="/build/theme/theme.iife.js"></script>
+
+    <!-- Include components  -->
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <script>
+      // Applying changes to theme
+      scale.useTheme({
+        shape: {
+          borderRadius: 24
+        },
+        components: {
+          Button: {
+            button: {
+              background: 'purple',
+            }
+          }
+        }
+      })
+    </script>
+    <body>
+      <h3 id="title">Button</h3>
+      <scale-button>Click!</scale-button>
+    </body>
+    <script>
+      // Getting current theme values
+      const { colors } = scale.getTheme()
+      
+      document.getElementById('title').style.color = colors.primary.default
+    </script>
+</html>
 ```
 
-To build the component for production, run:
+### Using the theme in a React app
 
-```bash
-npm run build
+Modifying existing theme, preferrably in `index.(jsx|tsx)`
+
+```tsx
+const { useTheme } = require('@scaleds/components/dist/theme')
+
+useTheme({
+  shape: {
+    borderRadius: 24
+  },
+  components: {
+    Button: {
+      button: {
+        background: 'purple',
+      }
+    }
+  }
+})
 ```
 
-To run the unit tests for the components, run:
+Using current theme values 
 
-```bash
-npm test
+```tsx
+import React from 'react';
+import { Button } from '@scaleds/react-wrapper';
+
+const { colors } = require('@scaleds/components/dist/theme').getTheme()
+
+const App: React.FC = () => (
+  <div className="app">
+    <h3 style={{ color: colors.primary.default }}>
+      Button
+    </h3>
+    <Button variant="primary">Click!</Button>
+  </div>
+);
 ```
 
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
+### Using the theme in a Angular app
 
+Modifying existing theme, preferrably in `main.ts`
 
-## Naming Components
+```tsx
+const { useTheme } = require('@scaleds/components/dist/theme')
 
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
+useTheme({
+  shape: {
+    borderRadius: 24
+  },
+  components: {
+    Button: {
+      button: {
+        background: 'purple',
+      }
+    }
+  }
+})
+```
 
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the Ionic generated web components use the prefix `ion`.
+Using current theme values 
 
+`app.component.ts`
 
-## Using this component
+```ts
+import { Component } from '@angular/core';
+const { colors } = require('@scaleds/components/dist/theme').getTheme()
 
-### Script tag
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'boilerplate-angular';
+  colors = colors
+}
 
-- [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+```
 
-### Node Modules
-- Run `npm install my-component --save`
-- Put a script tag similar to this `<script src='node_modules/my-component/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+`app.component.html`
 
-### In a stencil-starter app
-- Run `npm install my-component --save`
-- Add an import to the npm packages `import my-component;`
-- Then you can use the element anywhere in your template, JSX, html etc
+```html
+<div>
+    <h3 style="color: {{colors.primary.default}}">Button</h3>
+    <scale-button>Click!</scale-button>
+</div>
+```
+
+### Using the theme in a Vue app
+
+Modifying existing theme, preferrably in `main.ts`
+
+```tsx
+const { useTheme } = require('@scaleds/components/dist/theme.esm.js')
+
+useTheme({
+  shape: {
+    borderRadius: 24
+  },
+  components: {
+    Button: {
+      button: {
+        background: 'purple',
+      }
+    }
+  }
+})
+```
+
+Using current theme values 
+
+`App.vue`
+
+```ts
+<template>
+  <div>
+    <h3 v-bind:style="`color: ${colors.primary.default}`">
+      Button
+    </h3>
+    <scale-button>Click!</scale-button>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+const { colors } = require('@scaleds/components/dist/theme.esm.js').getTheme()
+
+export default Vue.extend({
+  name: "app",
+  data: () => ({
+    colors
+  })
+});
+</script>
+
+```

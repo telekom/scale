@@ -29,12 +29,15 @@ export const styles: JssStyle = {
     width: '100%',
     borderRadius: '2px',
     '&::-webkit-slider-thumb': sliderKnob,
-    '&::-moz-range-thumb': sliderKnob,
-    '&::-ms-thumb': sliderKnob,
+
+    // TODO: currently throws warning in chrome, enable browser check to support firefox and edge
+    // '&::-moz-range-thumb': sliderKnob,
+    // '&::-ms-thumb': sliderKnob,
   },
-  "input[type='range']": {
-    '&::-moz-focus-outer': {
-      border: '0',
-    },
-  },
+  // TODO: currently throws warning in chrome, enable browser check to support firefox
+  // "input[type='range']": {
+  //   '&::-moz-focus-outer': {
+  //     border: '0',
+  //   },
+  // },
 };

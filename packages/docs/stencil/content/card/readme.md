@@ -1,7 +1,5 @@
 # scale-card
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -29,7 +27,9 @@
 | Property      | Attribute      | Description                    | Type                                     | Default     |
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Card class          | `string`                                 | `''`        |
+| `disabled`    | `disabled`     | (optional) Link disabled       | `boolean`                                | `false`     |
 | `href`        | `href`         | (optional) Link card           | `string`                                 | `''`        |
+| `interactive` | `interactive`  | (optional) Link interactive    | `boolean`                                | `false`     |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `target`      | `target`       | (optional) Link card target    | `string`                                 | `'_self'`   |
 

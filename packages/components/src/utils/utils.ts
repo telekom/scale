@@ -1,5 +1,4 @@
-export { defaultTheme, theme } from './theme';
-import _ from 'lodash';
+import merge from 'lodash/merge';
 
 export type CssClassMap =
   | string
@@ -7,5 +6,4 @@ export type CssClassMap =
       [className: string]: boolean;
     };
 
-export const combineObjects = (a: object, b: object): object =>
-  _.merge({}, a, b);
+export const combineObjects = (a: object, b: object): object => merge({}, a, b);

@@ -4,7 +4,7 @@ exports[`Card should match snapshot 1`] = `
 <scale-card>
   <mock:shadow-root>
     <style>
-      .card-0-0-4 {
+      .card-0-0-5 {
   color: #333;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -16,23 +16,39 @@ exports[`Card should match snapshot 1`] = `
   transition: all .2s ease-in-out;
   border-radius: 4px;
 }
-.card__body-0-0-5 {
+.card__body-0-0-6 {
   padding: 1rem;
 }
-.card__body-0-0-5 ::slotted(*) {
+.card__body-0-0-6 ::slotted(*) {
   margin: 0;
 }
-.card--interactive-0-0-6 {
+.card--interactive-0-0-7 {
   cursor: pointer;
   display: block;
   text-decoration: none;
 }
-.card--interactive-0-0-6:hover {
+.card--interactive-0-0-7:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
 }
+.card--interactive-0-0-7:focus {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+}
+.card--interactive-0-0-7:active {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+}
+.card--interactive-0-0-7 .card__body-0-0-6 ::slotted(*) {
+  margin: 0;
+}
+.card--disabled-0-0-8 {}
+.card--disabled-0-0-8, .card--disabled-0-0-8:hover, .card--disabled-0-0-8:focus, .card--disabled-0-0-8:active {
+  cursor: not-allowed;
+  opacity: 0.5;
+  outline: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
     </style>
-    <div class="card-0-0-4">
-      <div class="card__body-0-0-5">
+    <div class="card-0-0-5">
+      <div class="card__body-0-0-6">
         <slot></slot>
       </div>
     </div>

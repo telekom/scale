@@ -27,6 +27,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
   color: black;
   --icon-color: black;
 }
+.link--underline-0-0-29 {}
 .link--underline-0-0-29:hover:not(.link--disabled-0-0-30) {
   text-decoration: underline;
 }
@@ -93,6 +94,7 @@ exports[`Link should have link href value when href value is set 1`] = `
   color: black;
   --icon-color: black;
 }
+.link--underline-0-0-47 {}
 .link--underline-0-0-47:hover:not(.link--disabled-0-0-48) {
   text-decoration: underline;
 }
@@ -159,6 +161,7 @@ exports[`Link should match snapshot 1`] = `
   color: black;
   --icon-color: black;
 }
+.link--underline-0-0-11 {}
 .link--underline-0-0-11:hover:not(.link--disabled-0-0-12) {
   text-decoration: underline;
 }
