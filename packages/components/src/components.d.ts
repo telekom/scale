@@ -295,6 +295,15 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleList {
+        "listStyleType"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "type"?: string;
+        "variant"?: string;
+    }
     interface ScaleModal {
         /**
           * Modal method: onCloseModal()
@@ -581,6 +590,12 @@ declare global {
         prototype: HTMLScaleLinkElement;
         new (): HTMLScaleLinkElement;
     };
+    interface HTMLScaleListElement extends Components.ScaleList, HTMLStencilElement {
+    }
+    var HTMLScaleListElement: {
+        prototype: HTMLScaleListElement;
+        new (): HTMLScaleListElement;
+    };
     interface HTMLScaleModalElement extends Components.ScaleModal, HTMLStencilElement {
     }
     var HTMLScaleModalElement: {
@@ -645,6 +660,7 @@ declare global {
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
         "scale-link": HTMLScaleLinkElement;
+        "scale-list": HTMLScaleListElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-slider": HTMLScaleSliderElement;
@@ -940,6 +956,15 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface ScaleList {
+        "listStyleType"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "type"?: string;
+        "variant"?: string;
+    }
     interface ScaleModal {
         /**
           * (optional) Modal class
@@ -1169,6 +1194,7 @@ declare namespace LocalJSX {
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
         "scale-link": ScaleLink;
+        "scale-list": ScaleList;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
         "scale-slider": ScaleSlider;
@@ -1193,6 +1219,7 @@ declare module "@stencil/core" {
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
+            "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
