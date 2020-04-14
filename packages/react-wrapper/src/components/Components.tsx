@@ -102,58 +102,43 @@ const Icon: React.FunctionComponent<IconProps> = props => (
 )
 interface InputProps {
   // Web-component props
+  counter?: boolean
   customClass?: string
-  errorMessage?: string
+  disabled?: boolean
+  helperText?: string
+  label?: string
+  maxLength?: number
+  minLength?: number
   name?: string
+  placeholder?: string
+  required?: boolean
+  size?: string
+  status?: string
   styles?: StyleSheet<string | number | symbol>
   type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url'
   value?: string
+  variant?: 'animated' | 'static'
   // Web-component custom events
   // TODO: Provide events types
-  onChanged?: (event?: any) => void
+  onBlur?: (event?: any) => void
+  onChange?: (event?: any) => void
+  onFocus?: (event?: any) => void
+  onKeyDown?: (event?: any) => void
   // Allow custom props not yet specified in the types e.g. events onClick etc.
   // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
   [key: string]: any
 }
 const Input: React.FunctionComponent<InputProps> = props => (
   <WebComponentWrapper
-    events={{ onChanged: 'changed' }}
+    events={{
+      onBlur: 'blurEvent',
+      onChange: 'changeEvent',
+      onFocus: 'focusEvent',
+      onKeyDown: 'keyDownEvent'
+    }}
     component='scale-input'
     {...props}
   />
-)
-interface InputErrorProps {
-  // Web-component props
-  customClass?: string
-  styles?: StyleSheet<string | number | symbol>
-  // Allow custom props not yet specified in the types e.g. events onClick etc.
-  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
-  [key: string]: any
-}
-const InputError: React.FunctionComponent<InputErrorProps> = props => (
-  <WebComponentWrapper component='scale-input-error' {...props} />
-)
-interface InputGroupProps {
-  // Web-component props
-  customClass?: string
-  styles?: StyleSheet<string | number | symbol>
-  // Allow custom props not yet specified in the types e.g. events onClick etc.
-  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
-  [key: string]: any
-}
-const InputGroup: React.FunctionComponent<InputGroupProps> = props => (
-  <WebComponentWrapper component='scale-input-group' {...props} />
-)
-interface InputLabelProps {
-  // Web-component props
-  customClass?: string
-  styles?: StyleSheet<string | number | symbol>
-  // Allow custom props not yet specified in the types e.g. events onClick etc.
-  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
-  [key: string]: any
-}
-const InputLabel: React.FunctionComponent<InputLabelProps> = props => (
-  <WebComponentWrapper component='scale-input-label' {...props} />
 )
 interface LinkProps {
   // Web-component props
@@ -299,9 +284,6 @@ export {
   Divider,
   Icon,
   Input,
-  InputError,
-  InputGroup,
-  InputLabel,
   Link,
   Modal,
   ProgressBar,

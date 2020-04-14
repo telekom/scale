@@ -85,10 +85,12 @@ var Card = function (props) { return (React.createElement(WebComponentWrapper, _
 var Carousel = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-carousel' }, props))); };
 var Divider = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-divider' }, props))); };
 var Icon = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-icon' }, props))); };
-var Input = function (props) { return (React.createElement(WebComponentWrapper, __assign({ events: { onChanged: 'changed' }, component: 'scale-input' }, props))); };
-var InputError = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-input-error' }, props))); };
-var InputGroup = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-input-group' }, props))); };
-var InputLabel = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-input-label' }, props))); };
+var Input = function (props) { return (React.createElement(WebComponentWrapper, __assign({ events: {
+        onBlur: 'blurEvent',
+        onChange: 'changeEvent',
+        onFocus: 'focusEvent',
+        onKeyDown: 'keyDownEvent'
+    }, component: 'scale-input' }, props))); };
 var Link = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-link' }, props))); };
 var Modal = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-modal' }, props))); };
 var ProgressBar = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-progress-bar' }, props))); };
@@ -105,9 +107,6 @@ exports.Carousel = Carousel;
 exports.Divider = Divider;
 exports.Icon = Icon;
 exports.Input = Input;
-exports.InputError = InputError;
-exports.InputGroup = InputGroup;
-exports.InputLabel = InputLabel;
 exports.Link = Link;
 exports.Modal = Modal;
 exports.ProgressBar = ProgressBar;

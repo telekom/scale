@@ -222,6 +222,10 @@ export namespace Components {
          */
         "required"?: boolean;
         /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
           * (optional) Input status
          */
         "status"?: string;
@@ -240,7 +244,7 @@ export namespace Components {
         /**
           * (optional) Input label variant
          */
-        "variant"?: string;
+        "variant"?: "animated" | "static";
     }
     interface ScaleLink {
         /**
@@ -799,10 +803,13 @@ declare namespace LocalJSX {
           * (optional) Input name
          */
         "name"?: string;
+        "onBlurEvent"?: (event: CustomEvent<any>) => void;
         /**
           * (optional) Input text event changed
          */
-        "onChanged"?: (event: CustomEvent<string>) => void;
+        "onChangeEvent"?: (event: CustomEvent<any>) => void;
+        "onFocusEvent"?: (event: CustomEvent<any>) => void;
+        "onKeyDownEvent"?: (event: CustomEvent<any>) => void;
         /**
           * (optional) Input placeHolder
          */
@@ -811,6 +818,10 @@ declare namespace LocalJSX {
           * (optional) Input required
          */
         "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
         /**
           * (optional) Input status
          */
@@ -830,7 +841,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input label variant
          */
-        "variant"?: string;
+        "variant"?: "animated" | "static";
     }
     interface ScaleLink {
         /**

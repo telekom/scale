@@ -63,6 +63,95 @@
   <body>
     <h1>Components</h1><h3>Tag</h3>
 
+    <button id="shange">Change</button>
+
+    <h3>Default input</h3>
+    <scale-input></scale-input>
+    
+    <h3>Static input with label</h3>
+    <scale-input variant="static" label="Text"></scale-input>
+
+    <h3>Animated input</h3>
+    <scale-input label="First Name"></scale-input>
+
+    <h3>Animated input - max length and counter</h3>
+    <scale-input
+      label="Last Name"
+      max-length="24"
+      counter
+    ></scale-input>
+
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      id="input-error"
+      label="address"
+      required="true"
+      max-length="24"
+      counter
+    ></scale-input>
+    <button id="show-error">Toggle error</button>
+    <script>
+      document.getElementById('show-error').addEventListener('click', () => {
+        const input = document.getElementById('input-error')
+        if (input.status === 'error') {
+          input.status = undefined,
+          input.helperText = undefined
+        } else {
+          input.status = 'error',
+          input.helperText = 'Some error happened'
+        }
+      })
+    </script>
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      label="address"
+      required="true"
+      status="error"
+      max-length="24"
+      counter
+    ></scale-input>
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      label="address"
+      required="true"
+      status="error"
+      helper-text="please fill out this field"
+    ></scale-input>
+
+    <h3>Input Text - place holder text</h3>
+    <scale-input
+      type="string"
+      variant="inline"
+      placeholder="placeholder"
+    ></scale-input>
+
+    <h3>Input Text - disabled</h3>
+    <scale-input type="string" disabled="true"></scale-input>
+
+    <h3>Input Email</h3>
+    <scale-input type="email"></scale-input>
+
+    <h3>Input number</h3>
+    <scale-input type="number"></scale-input>
+
+    <h3>Input password</h3>
+    <scale-input type="password"></scale-input>
+
+    <h3>Input tel</h3>
+    <scale-input type="tel"></scale-input>
+
+    <h3>Input url</h3>
+    <scale-input type="url"></scale-input>
+
+    <h3>Input hidden</h3>
+    <scale-input type="hidden"></scale-input>
+    
+    <h3>Input small</h3>
+    <scale-input size="small"></scale-input>
+    
+    <h3>Input small animated</h3>
+    <scale-input label="Name" size="small"></scale-input>
+
     <scale-tag>default</scale-tag>
     <h3>Tag-primary</h3>
     <scale-tag variant="primary">Primary</scale-tag>
@@ -335,56 +424,6 @@
 
     <h3>Card - disabled</h3>
     <scale-card interactive="true" disabled="true">A title</scale-card>
-
-    <h3>Input Text - label inline</h3>
-    <scale-input type="text" variant="inline" label="First Name"></scale-input>
-
-    <h3>Input Text - max length and counter</h3>
-    <scale-input
-      type="text"
-      variant="inline"
-      label="Last Name"
-      counter="true"
-      max-length="24"
-    ></scale-input>
-
-    <h3>Input Text - helper text</h3>
-    <scale-input
-      type="text"
-      variant="inline"
-      label="address"
-      require="true"
-      status="error"
-      helper-text="please fill out this field"
-    ></scale-input>
-
-    <h3>Input Text - place holder text</h3>
-    <scale-input
-      type="string"
-      variant="inline"
-      placeholder="placeholder"
-    ></scale-input>
-
-    <h3>Input Text - disabled</h3>
-    <scale-input type="string" disabled="true"></scale-input>
-
-    <h3>Input Email</h3>
-    <scale-input type="email"></scale-input>
-
-    <h3>Input number</h3>
-    <scale-input type="number"></scale-input>
-
-    <h3>Input password</h3>
-    <scale-input type="password"></scale-input>
-
-    <h3>Input tel</h3>
-    <scale-input type="tel"></scale-input>
-
-    <h3>Input url</h3>
-    <scale-input type="url"></scale-input>
-
-    <h3>Input hidden</h3>
-    <scale-input type="hidden"></scale-input>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
     <scale-progress-bar

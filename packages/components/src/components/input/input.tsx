@@ -25,9 +25,11 @@ export class Input implements Base {
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label variant */
-  @Prop() variant?: string = 'inline';
+  @Prop() variant?: 'animated' | 'static' = 'animated';
   /** (optional) Input label */
   @Prop() label?: string = '';
+  /** (optional) Input size */
+  @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** (optional) Input status */
@@ -47,7 +49,10 @@ export class Input implements Base {
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
   /** (optional) Input text event changed */
-  @Event() changed: EventEmitter<string>;
+  @Event() changeEvent: EventEmitter<any>;
+  @Event() focusEvent: EventEmitter<any>;
+  @Event() blurEvent: EventEmitter<any>;
+  @Event() keyDownEvent: EventEmitter<any>;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -59,7 +64,19 @@ export class Input implements Base {
 
   handleChange(event) {
     this.value = event.target ? event.target.value : this.value;
-    this.changed.emit(this.value);
+    this.changeEvent.emit(event);
+  }
+
+  handleFocus(event) {
+    this.focusEvent.emit(event);
+  }
+
+  handleBlur(event) {
+    this.blurEvent.emit(event);
+  }
+
+  handleKeyDown(event) {
+    this.keyDownEvent.emit(event);
   }
 
   render() {
@@ -67,29 +84,37 @@ export class Input implements Base {
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
+          {!!this.label && this.variant === 'static' && (
+            <label class="input__label">{this.label}</label>
+          )}
           <input
             type={this.type}
-            class={this.getCssClassMap()}
+            class={classNames('input__input', this.label && 'has-label')}
             value={this.value}
             name={this.name}
             required={this.required}
             minLength={this.minLength}
             maxLength={this.maxLength}
             onInput={event => this.handleChange(event)}
-            onFocus={event => this.handleChange(event)}
-            onBlur={event => this.handleChange(event)}
-            onKeyDown={event => this.handleChange(event)}
+            onFocus={event => this.handleFocus(event)}
+            onBlur={event => this.handleBlur(event)}
+            onKeyDown={event => this.handleKeyDown(event)}
             placeholder={this.placeholder}
             disabled={this.disabled}
           ></input>
-          {!!this.label && <label>{this.label}</label>}
-          {!!this.helperText && (
-            <div class="input__helper-text">{this.helperText}</div>
+          {!!this.label && this.variant === 'animated' && (
+            <label class="input__label">{this.label}</label>
           )}
-
-          {this.counter && (
-            <div class="input__counter">
-              {!!this.value ? this.value.length : 0} / {this.maxLength}
+          {(!!this.helperText || !!this.counter) && (
+            <div class="input__meta">
+              {!!this.helperText && (
+                <div class="input__helper-text">{this.helperText}</div>
+              )}
+              {this.counter && (
+                <div class="input__counter">
+                  {!!this.value ? this.value.length : 0} / {this.maxLength}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -103,12 +128,11 @@ export class Input implements Base {
       classes.input,
       this.customClass && this.customClass,
       this.type && classes[`input--type-${this.type}`],
+      this.size && classes[`input--size-${this.size}`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
       this.status && classes[`input--status-${this.status}`],
-      !!this.value &&
-        this.variant === 'inline' &&
-        classes['input--variant-inline-animated']
+      !!this.value && !!this.label && this.variant === 'animated' && 'animated'
     );
   }
 }
