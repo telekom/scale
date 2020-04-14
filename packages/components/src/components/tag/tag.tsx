@@ -18,12 +18,14 @@ export class Tag implements Base {
   @Prop() size?: string = '';
   /** (optional) Tag variant */
   @Prop() variant?: string = '';
-  /** (optional) Tag link */
-  @Prop() link?: string = '';
+  /** (optional) Tag href */
+  @Prop() href?: string = '';
   /** (optional) Tag target */
   @Prop() target?: string = '_self';
-  /** (optional) Tag target */
+  /** (optional) Tag dismissable */
   @Prop() dismissable?: boolean = false;
+  /** (optional) Tag disabled */
+  @Prop() disabled?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -42,11 +44,17 @@ export class Tag implements Base {
   }
 
   render() {
-    const Tag = !!this.link ? 'a' : 'span';
-    const linkProps = !!this.link
+    const Element = !!this.href && !this.disabled ? 'a' : 'span';
+    const linkProps = !!this.href
       ? {
-          href: this.link,
+          href: this.href,
           target: this.target,
+        }
+      : {};
+    const iconProps = !this.disabled
+      ? {
+          focusable: true,
+          onClick: event => this.handleClose(event),
         }
       : {};
     const theme = (window as any).scale && (window as any).scale.theme;
@@ -54,17 +62,12 @@ export class Tag implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <Tag class={this.getCssClassMap()} {...linkProps}>
+        <Element class={this.getCssClassMap()} {...linkProps}>
           <slot />
           {this.dismissable && (
-            <scale-icon
-              focusable
-              size={16}
-              path={icons.close}
-              onClick={event => this.handleClose(event)}
-            />
+            <scale-icon size={16} path={icons.close} {...iconProps} />
           )}
-        </Tag>
+        </Element>
       </Host>
     );
   }
@@ -76,8 +79,9 @@ export class Tag implements Base {
       this.customClass && this.customClass,
       this.size && classes[`tag--size-${this.size}`],
       this.variant && classes[`tag--variant-${this.variant}`],
-      !!this.link && classes[`tag--link`],
-      !!this.dismissable && classes[`tag--dismissable`]
+      !!this.href && classes[`tag--link`],
+      !!this.dismissable && classes[`tag--dismissable`],
+      !!this.disabled && classes[`tag--disabled`]
     );
   }
 }

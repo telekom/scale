@@ -236,8 +236,9 @@ const Switch: React.FunctionComponent<SwitchProps> = props => (
 interface TagProps {
   // Web-component props
   customClass?: string
+  disabled?: boolean
   dismissable?: boolean
-  link?: string
+  href?: string
   size?: string
   styles?: StyleSheet<string | number | symbol>
   target?: string

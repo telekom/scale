@@ -51,7 +51,7 @@ exports[`Text should match snapshot 1`] = `
   letter-spacing: 0.00938em;
 }
 .text--variant-button-0-0-10 {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.75;
   letter-spacing: 0.02857em;

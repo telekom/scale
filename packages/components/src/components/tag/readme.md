@@ -10,8 +10,9 @@
 | Property      | Attribute      | Description                    | Type                                     | Default     |
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Tag class           | `string`                                 | `''`        |
-| `dismissable` | `dismissable`  | (optional) Tag target          | `boolean`                                | `false`     |
-| `link`        | `link`         | (optional) Tag link            | `string`                                 | `''`        |
+| `disabled`    | `disabled`     | (optional) Tag disabled        | `boolean`                                | `false`     |
+| `dismissable` | `dismissable`  | (optional) Tag dismissable     | `boolean`                                | `false`     |
+| `href`        | `href`         | (optional) Tag href            | `string`                                 | `''`        |
 | `size`        | `size`         | (optional) Tag size            | `string`                                 | `''`        |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
 | `target`      | `target`       | (optional) Tag target          | `string`                                 | `'_self'`   |

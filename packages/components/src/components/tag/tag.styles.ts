@@ -43,8 +43,12 @@ export const styles: JssStyle = {
     '--icon-color': '#fff',
     '& scale-icon': {
       marginLeft: 2,
-      '&:hover': {
-        '--icon-color': 'red',
+    },
+    '&:not($tag--disabled)': {
+      '& scale-icon': {
+        '&:hover': {
+          '--icon-color': 'red',
+        },
       },
     },
   },
@@ -76,5 +80,9 @@ export const styles: JssStyle = {
     ...tagVariantLink('warning'),
     ...tagVariantLink('info'),
     ...tagVariantLink('success'),
+  },
+  'tag--disabled': {
+    opacity: 0.5,
+    cursor: 'not-allowed',
   },
 };

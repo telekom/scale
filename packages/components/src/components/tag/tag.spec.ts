@@ -22,7 +22,7 @@ describe('Tag', () => {
   it('should have a link', async () => {
     const page = await newSpecPage({
       components: [Tag],
-      html: `<scale-tag link="#">Label</scale-tag>`,
+      html: `<scale-tag href="#">Label</scale-tag>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -43,7 +43,7 @@ describe('Tag', () => {
       stylesheet.classes['tag--variant-primary']
     );
 
-    element.link = true;
+    element.href = 'http://example.com';
     expect(element.getCssClassMap()).toContain(stylesheet.classes['tag--link']);
   });
 });

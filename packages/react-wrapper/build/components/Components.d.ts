@@ -152,8 +152,9 @@ interface SwitchProps {
 declare const Switch: React.FunctionComponent<SwitchProps>;
 interface TagProps {
     customClass?: string;
+    disabled?: boolean;
     dismissable?: boolean;
-    link?: string;
+    href?: string;
     size?: string;
     styles?: StyleSheet<string | number | symbol>;
     target?: string;
