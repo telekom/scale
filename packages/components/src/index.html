@@ -30,9 +30,15 @@
       }
     </style>
     <script>
+      const variants = {
+        custom: {
+          background: 'pink',
+          borderColor: 'pink'
+        }
+      }
       scale.useTheme({
         shape: {
-          borderRadius: 24
+          borderRadius: 4
         },
         typography: {
           variants: {
@@ -44,19 +50,87 @@
         },
         components: {
           Button: {
-            'button--variant-custom': {
-              background: 'pink',
-              borderColor: 'pink'
-            }
+            'button--variant-custom': variants.custom
           },
+          Tag: {
+            'tag--variant-custom': variants.custom
+          }
         }
       })
-      console.log(scale.getTheme())
     </script>
   </head>
 
   <body>
-    <h1>Components</h1>
+    <h1>Components</h1><h3>Tag</h3>
+
+    <scale-tag>default</scale-tag>
+    <h3>Tag-primary</h3>
+    <scale-tag variant="primary">Primary</scale-tag>
+    <h3>Tag - with link</h3>
+    <scale-tag href="#">tag with link</scale-tag>
+    <h3>Tag - with link target blank</h3>
+    <scale-tag href="#" target="_blank">tag with link</scale-tag>
+    <h3>Tag - dismissable</h3>
+    <scale-tag dismissable>tag dismissable</scale-tag>
+    <h3>Tag - dismissable with link</h3>
+    <scale-tag id="tag-dismissable" dismissable href="http://example.com" target="_blank">tag dismissable</scale-tag>
+    <h3>Tag - small</h3>
+    <scale-tag size="small">Small</scale-tag>
+    <h3>Tag - small dismissable</h3>
+    <scale-tag size="small" dismissable>tag dismissable</scale-tag>
+    <h3>Tag - disabled</h3>
+    <scale-tag disabled>tag disabled</scale-tag>
+    <h3>Tag - disabled dismissable</h3>
+    <scale-tag disabled dismissable>tag disabled</scale-tag>
+    <h3>Tag - variants</h3>
+    <scale-tag variant="primary">tag</scale-tag>
+    <scale-tag variant="secondary">tag</scale-tag>
+    <scale-tag variant="error">tag</scale-tag>
+    <scale-tag variant="warning">tag</scale-tag>
+    <scale-tag variant="info">tag</scale-tag>
+    <scale-tag variant="success">tag</scale-tag>
+    <scale-tag variant="custom">tag</scale-tag>
+    <h3>Tag - variants link</h3>
+    <scale-tag href="http://example.com" target="_blank" variant="primary">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="secondary">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="error">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="warning">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="info">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="success">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="custom">tag</scale-tag>
+    <h3>Tag - variants link dismissable</h3>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="primary">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="secondary">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="error">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="warning">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="info">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="success">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="custom">tag</scale-tag>
+    <h3>Tag - dismissable</h3>
+    <scale-tag variant="primary" dismissable>tag</scale-tag>
+    <scale-tag variant="secondary" dismissable>tag</scale-tag>
+    <scale-tag variant="error" dismissable>tag</scale-tag>
+    <scale-tag variant="warning" dismissable>tag</scale-tag>
+    <scale-tag variant="info" dismissable>tag</scale-tag>
+    <scale-tag variant="success" dismissable>tag</scale-tag>
+    <h3>Tag - small</h3>
+    <scale-tag size="small" variant="primary">tag</scale-tag>
+    <scale-tag size="small" variant="secondary">tag</scale-tag>
+    <scale-tag size="small" variant="error">tag</scale-tag>
+    <scale-tag size="small" variant="warning">tag</scale-tag>
+    <scale-tag size="small" variant="info">tag</scale-tag>
+    <scale-tag size="small" variant="success">tag</scale-tag>
+    <h3>Tag - dismissable small</h3>
+    <scale-tag size="small" variant="primary" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="secondary" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="error" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="warning" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="info" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="success" dismissable>tag</scale-tag>
+    
+    <script>
+      document.getElementById('tag-dismissable').addEventListener('close', (event) => console.log('Tag closed', event))
+    </script>
 
     <h3>Text</h3>
     <scale-text tag="h1" variant="h1">h1 heading</scale-text>
@@ -289,24 +363,6 @@
       <scale-input></scale-input>
       <scale-input-error>Error</scale-input-error>
     </scale-input-group>
-
-    <h3>Tag</h3>
-    <scale-tag>This is a tag</scale-tag>
-    <h3>Tag - primary tag</h3>
-    <scale-tag variant="primary">primary</scale-tag>
-    <h3>Tag - pill tag</h3>
-    <scale-tag pill="true">Pill tag</scale-tag>
-    <h3>Tag - with link</h3>
-    <scale-tag link="#">tag with link</scale-tag>
-
-    <h3>Badge</h3>
-    <scale-badge>default</scale-badge>
-    <h3>Badge-primary</h3>
-    <scale-badge variant="primary">Primary</scale-badge>
-    <h3>Badge-pill</h3>
-    <scale-badge pill="true">Pill</scale-badge>
-    <h3>Badge - with link</h3>
-    <scale-badge link="#">badge with link</scale-badge>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
     <scale-progress-bar

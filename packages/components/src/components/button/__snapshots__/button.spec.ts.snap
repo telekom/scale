@@ -23,7 +23,7 @@ exports[`Button should match snapshot 1`] = `
   background: #E0E0E0;
   border: 1px solid #E0E0E0;
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-transform: none;
   letter-spacing: 0.02857em;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);

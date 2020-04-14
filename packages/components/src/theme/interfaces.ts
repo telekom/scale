@@ -81,4 +81,7 @@ export interface Theme {
   zIndex?: {
     [key: string]: number;
   };
+  icons: {
+    [key: string]: string;
+  };
 }

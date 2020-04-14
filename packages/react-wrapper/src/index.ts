@@ -1,6 +1,5 @@
 import {
   Alert,
-  Badge,
   Button,
   Card,
   Carousel,
@@ -22,7 +21,6 @@ import {
 
 export {
   Alert,
-  Badge,
   Button,
   Card,
   Carousel,

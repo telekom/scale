@@ -1,10 +1,11 @@
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './tag.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+import { defaultTheme } from '../../theme/defaultTheme';
 
 @Component({
   tag: 'scale-tag',
@@ -13,34 +14,60 @@ import Base from '../../utils/base-interface';
 export class Tag implements Base {
   /** (optional) Tag class */
   @Prop() customClass?: string = '';
+  /** (optional) Tag size */
+  @Prop() size?: string = '';
   /** (optional) Tag variant */
   @Prop() variant?: string = '';
-  /** (optional) Tag pill */
-  @Prop() pill?: boolean = false;
-  /** (optional) Tag on an <a> element */
-  @Prop() link?: string = '';
+  /** (optional) Tag href */
+  @Prop() href?: string = '';
+  /** (optional) Tag target */
+  @Prop() target?: string = '_self';
+  /** (optional) Tag dismissable */
+  @Prop() dismissable?: boolean = false;
+  /** (optional) Tag disabled */
+  @Prop() disabled?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('Tag', styles) stylesheet: StyleSheet;
 
+  @Event() close: EventEmitter<any>;
+
   componentWillLoad() {}
   componentWillUpdate() {}
 
+  handleClose(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.close.emit(event);
+  }
+
   render() {
+    const Element = !!this.href && !this.disabled ? 'a' : 'span';
+    const linkProps = !!this.href
+      ? {
+          href: this.href,
+          target: this.target,
+        }
+      : {};
+    const iconProps = !this.disabled
+      ? {
+          focusable: true,
+          onClick: event => this.handleClose(event),
+        }
+      : {};
+    const theme = (window as any).scale && (window as any).scale.theme;
+    const { icons } = theme || defaultTheme;
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        {!!this.link ? (
-          <a href={this.link} class={this.getCssClassMap()}>
-            <slot />
-          </a>
-        ) : (
-          <div class={this.getCssClassMap()}>
-            <slot />
-          </div>
-        )}
+        <Element class={this.getCssClassMap()} {...linkProps}>
+          <slot />
+          {this.dismissable && (
+            <scale-icon size={16} path={icons.close} {...iconProps} />
+          )}
+        </Element>
       </Host>
     );
   }
@@ -50,9 +77,11 @@ export class Tag implements Base {
     return classNames(
       classes.tag,
       this.customClass && this.customClass,
+      this.size && classes[`tag--size-${this.size}`],
       this.variant && classes[`tag--variant-${this.variant}`],
-      this.pill && classes[`tag--pill`],
-      !!this.link && classes[`tag--link`]
+      !!this.href && classes[`tag--link`],
+      !!this.dismissable && classes[`tag--dismissable`],
+      !!this.disabled && classes[`tag--disabled`]
     );
   }
 }

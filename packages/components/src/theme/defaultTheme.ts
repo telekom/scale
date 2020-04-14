@@ -139,7 +139,7 @@ export const defaultTheme: Theme = {
       },
       button: {
         fontWeight: 500,
-        fontSize: '0.875rem',
+        fontSize: '1rem',
         lineHeight: 1.75,
         letterSpacing: '0.02857em',
         textTransform: 'none',
@@ -173,4 +173,8 @@ export const defaultTheme: Theme = {
     },
   },
   zIndex: {},
+  icons: {
+    close:
+      'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+  },
 };

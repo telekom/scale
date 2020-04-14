@@ -12,16 +12,6 @@ interface AlertProps {
     [key: string]: any;
 }
 declare const Alert: React.FunctionComponent<AlertProps>;
-interface BadgeProps {
-    customClass?: string;
-    link?: string;
-    pill?: boolean;
-    size?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    variant?: string;
-    [key: string]: any;
-}
-declare const Badge: React.FunctionComponent<BadgeProps>;
 interface ButtonProps {
     ariaLabel?: string;
     customClass?: string;
@@ -67,11 +57,13 @@ interface DividerProps {
 declare const Divider: React.FunctionComponent<DividerProps>;
 interface IconProps {
     customClass?: string;
+    focusable?: boolean;
     height?: number;
     name?: string;
     path: string;
     size?: number;
     styles?: StyleSheet<string | number | symbol>;
+    viewBox?: string;
     width?: number;
     [key: string]: any;
 }
@@ -160,10 +152,14 @@ interface SwitchProps {
 declare const Switch: React.FunctionComponent<SwitchProps>;
 interface TagProps {
     customClass?: string;
-    link?: string;
-    pill?: boolean;
+    disabled?: boolean;
+    dismissable?: boolean;
+    href?: string;
+    size?: string;
     styles?: StyleSheet<string | number | symbol>;
+    target?: string;
     variant?: string;
+    onClose?: (event?: any) => void;
     [key: string]: any;
 }
 declare const Tag: React.FunctionComponent<TagProps>;
@@ -190,4 +186,4 @@ interface ToastProps {
     [key: string]: any;
 }
 declare const Toast: React.FunctionComponent<ToastProps>;
-export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };

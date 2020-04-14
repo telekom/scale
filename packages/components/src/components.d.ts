@@ -45,32 +45,6 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface ScaleBadge {
-        /**
-          * (optional) Badge class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Badge link
-         */
-        "link"?: string;
-        /**
-          * (optional) Badge pill
-         */
-        "pill"?: boolean;
-        /**
-          * (optional) Badge size
-         */
-        "size"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-        /**
-          * (optional) Badge variant
-         */
-        "variant"?: string;
-    }
     interface ScaleButton {
         "ariaLabel"?: string;
         /**
@@ -191,6 +165,7 @@ export namespace Components {
           * (optional) Tag class
          */
         "customClass"?: string;
+        "focusable"?: boolean;
         "height"?: number;
         /**
           * (optional) Tag theme
@@ -202,6 +177,7 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        "viewBox"?: string;
         "width"?: number;
     }
     interface ScaleInput {
@@ -416,17 +392,29 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Tag on an <a> element
+          * (optional) Tag disabled
          */
-        "link"?: string;
+        "disabled"?: boolean;
         /**
-          * (optional) Tag pill
+          * (optional) Tag dismissable
          */
-        "pill"?: boolean;
+        "dismissable"?: boolean;
+        /**
+          * (optional) Tag href
+         */
+        "href"?: string;
+        /**
+          * (optional) Tag size
+         */
+        "size"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Tag target
+         */
+        "target"?: string;
         /**
           * (optional) Tag variant
          */
@@ -507,12 +495,6 @@ declare global {
     var HTMLScaleAlertElement: {
         prototype: HTMLScaleAlertElement;
         new (): HTMLScaleAlertElement;
-    };
-    interface HTMLScaleBadgeElement extends Components.ScaleBadge, HTMLStencilElement {
-    }
-    var HTMLScaleBadgeElement: {
-        prototype: HTMLScaleBadgeElement;
-        new (): HTMLScaleBadgeElement;
     };
     interface HTMLScaleButtonElement extends Components.ScaleButton, HTMLStencilElement {
     }
@@ -618,7 +600,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "scale-alert": HTMLScaleAlertElement;
-        "scale-badge": HTMLScaleBadgeElement;
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
@@ -670,32 +651,6 @@ declare namespace LocalJSX {
         "timeout"?: boolean | number;
         /**
           * (optional) Alert variant
-         */
-        "variant"?: string;
-    }
-    interface ScaleBadge {
-        /**
-          * (optional) Badge class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Badge link
-         */
-        "link"?: string;
-        /**
-          * (optional) Badge pill
-         */
-        "pill"?: boolean;
-        /**
-          * (optional) Badge size
-         */
-        "size"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-        /**
-          * (optional) Badge variant
          */
         "variant"?: string;
     }
@@ -811,6 +766,7 @@ declare namespace LocalJSX {
           * (optional) Tag class
          */
         "customClass"?: string;
+        "focusable"?: boolean;
         "height"?: number;
         /**
           * (optional) Tag theme
@@ -822,6 +778,7 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        "viewBox"?: string;
         "width"?: number;
     }
     interface ScaleInput {
@@ -1032,17 +989,30 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Tag on an <a> element
+          * (optional) Tag disabled
          */
-        "link"?: string;
+        "disabled"?: boolean;
         /**
-          * (optional) Tag pill
+          * (optional) Tag dismissable
          */
-        "pill"?: boolean;
+        "dismissable"?: boolean;
+        /**
+          * (optional) Tag href
+         */
+        "href"?: string;
+        "onClose"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Tag size
+         */
+        "size"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Tag target
+         */
+        "target"?: string;
         /**
           * (optional) Tag variant
          */
@@ -1114,7 +1084,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "scale-alert": ScaleAlert;
-        "scale-badge": ScaleBadge;
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
@@ -1139,7 +1108,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
-            "scale-badge": LocalJSX.ScaleBadge & JSXBase.HTMLAttributes<HTMLScaleBadgeElement>;
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
