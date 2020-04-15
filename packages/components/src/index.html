@@ -63,16 +63,28 @@
   <body>
     <h1>Components</h1><h3>Tag</h3>
 
-    <button id="shange">Change</button>
+    <button id="change">Change</button>
 
     <h3>Default input</h3>
-    <scale-input></scale-input>
+    <scale-input id="change-input"></scale-input>
+
+    <script>
+      document.getElementById('change').addEventListener('click', () => {
+        document.getElementById('change-input').styles = {
+          input: {
+            '& .input__input': {
+              color: 'blue'
+            }
+          }
+        }
+      })
+    </script>
     
     <h3>Static input with label</h3>
     <scale-input variant="static" label="Text"></scale-input>
 
     <h3>Animated input</h3>
-    <scale-input label="First Name"></scale-input>
+    <scale-input label="First Name" placeholder="Hello"></scale-input>
 
     <h3>Animated input - max length and counter</h3>
     <scale-input

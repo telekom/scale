@@ -124,6 +124,10 @@ export class Input implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
+    const isAnimated =
+      (!!this.placeholder || !!this.value) &&
+      !!this.label &&
+      this.variant === 'animated';
     return classNames(
       classes.input,
       this.customClass && this.customClass,
@@ -132,7 +136,7 @@ export class Input implements Base {
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
       this.status && classes[`input--status-${this.status}`],
-      !!this.value && !!this.label && this.variant === 'animated' && 'animated'
+      isAnimated && 'animated'
     );
   }
 }
