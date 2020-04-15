@@ -82,6 +82,6 @@ export interface Theme {
     [key: string]: number;
   };
   icons: {
-    [key: string]: string;
+    [key: string]: any;
   };
 }

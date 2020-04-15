@@ -69,34 +69,29 @@ interface IconProps {
 }
 declare const Icon: React.FunctionComponent<IconProps>;
 interface InputProps {
+    counter?: boolean;
     customClass?: string;
-    errorMessage?: string;
+    disabled?: boolean;
+    helperText?: string;
+    label?: string;
+    maxLength?: number;
+    minLength?: number;
     name?: string;
+    placeholder?: string;
+    required?: boolean;
+    size?: string;
+    status?: string;
     styles?: StyleSheet<string | number | symbol>;
     type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url';
     value?: string;
-    onChanged?: (event?: any) => void;
+    variant?: 'animated' | 'static';
+    onBlur?: (event?: any) => void;
+    onChange?: (event?: any) => void;
+    onFocus?: (event?: any) => void;
+    onKeyDown?: (event?: any) => void;
     [key: string]: any;
 }
 declare const Input: React.FunctionComponent<InputProps>;
-interface InputErrorProps {
-    customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    [key: string]: any;
-}
-declare const InputError: React.FunctionComponent<InputErrorProps>;
-interface InputGroupProps {
-    customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    [key: string]: any;
-}
-declare const InputGroup: React.FunctionComponent<InputGroupProps>;
-interface InputLabelProps {
-    customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    [key: string]: any;
-}
-declare const InputLabel: React.FunctionComponent<InputLabelProps>;
 interface LinkProps {
     block?: boolean;
     customClass?: string;
@@ -186,4 +181,4 @@ interface ToastProps {
     [key: string]: any;
 }
 declare const Toast: React.FunctionComponent<ToastProps>;
-export { Alert, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };

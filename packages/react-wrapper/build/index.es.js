@@ -78,10 +78,12 @@ var Card = function (props) { return (createElement(WebComponentWrapper, __assig
 var Carousel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-carousel' }, props))); };
 var Divider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-divider' }, props))); };
 var Icon = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-icon' }, props))); };
-var Input = function (props) { return (createElement(WebComponentWrapper, __assign({ events: { onChanged: 'changed' }, component: 'scale-input' }, props))); };
-var InputError = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-error' }, props))); };
-var InputGroup = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-group' }, props))); };
-var InputLabel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-label' }, props))); };
+var Input = function (props) { return (createElement(WebComponentWrapper, __assign({ events: {
+        onBlur: 'blurEvent',
+        onChange: 'changeEvent',
+        onFocus: 'focusEvent',
+        onKeyDown: 'keyDownEvent'
+    }, component: 'scale-input' }, props))); };
 var Link = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-link' }, props))); };
 var Modal = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-modal' }, props))); };
 var ProgressBar = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-progress-bar' }, props))); };
@@ -91,5 +93,5 @@ var Tag = function (props) { return (createElement(WebComponentWrapper, __assign
 var Text = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-text' }, props))); };
 var Toast = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-toast' }, props))); };
 
-export { Alert, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
 //# sourceMappingURL=index.es.js.map
