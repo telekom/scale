@@ -71,6 +71,12 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleBreadcrumb {
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+    }
     interface ScaleButton {
         "ariaLabel"?: string;
         /**
@@ -514,6 +520,12 @@ declare global {
         prototype: HTMLScaleBadgeElement;
         new (): HTMLScaleBadgeElement;
     };
+    interface HTMLScaleBreadcrumbElement extends Components.ScaleBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLScaleBreadcrumbElement: {
+        prototype: HTMLScaleBreadcrumbElement;
+        new (): HTMLScaleBreadcrumbElement;
+    };
     interface HTMLScaleButtonElement extends Components.ScaleButton, HTMLStencilElement {
     }
     var HTMLScaleButtonElement: {
@@ -619,6 +631,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "scale-alert": HTMLScaleAlertElement;
         "scale-badge": HTMLScaleBadgeElement;
+        "scale-breadcrumb": HTMLScaleBreadcrumbElement;
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
@@ -698,6 +711,12 @@ declare namespace LocalJSX {
           * (optional) Badge variant
          */
         "variant"?: string;
+    }
+    interface ScaleBreadcrumb {
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
     }
     interface ScaleButton {
         "ariaLabel"?: string;
@@ -1115,6 +1134,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "scale-alert": ScaleAlert;
         "scale-badge": ScaleBadge;
+        "scale-breadcrumb": ScaleBreadcrumb;
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
@@ -1140,6 +1160,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
             "scale-badge": LocalJSX.ScaleBadge & JSXBase.HTMLAttributes<HTMLScaleBadgeElement>;
+            "scale-breadcrumb": LocalJSX.ScaleBreadcrumb & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbElement>;
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
