@@ -37,7 +37,9 @@ exports[`Input should match snapshot 1`] = `
   margin-top: 6px;
   justify-content: space-between;
 }
-.input-0-0-7 .input__input:hover, .input-0-0-7 .input__input:focus {
+.input-0-0-7:not(.input--disabled-0-0-12) {}
+.input-0-0-7:not(.input--disabled-0-0-12) .input__input {}
+.input-0-0-7:not(.input--disabled-0-0-12) .input__input:hover, .input-0-0-7:not(.input--disabled-0-0-12) .input__input:focus {
   border-color: #2962ff;
 }
 .input--variant-static-0-0-8 {}

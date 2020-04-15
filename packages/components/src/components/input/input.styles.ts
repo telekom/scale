@@ -76,7 +76,7 @@ export const styles: JssStyle = {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
-      }
+      },
     },
   },
   'input--variant-static': {
@@ -142,5 +142,5 @@ export const styles: JssStyle = {
       opacity: '0.5',
       cursor: 'not-allowed',
     },
-  }
+  },
 };
