@@ -53,9 +53,6 @@ export const styles: JssStyle = {
       zIndex: 1,
       height: input.large.height,
       transition: defaultTransition,
-      '&:hover, &:focus': {
-        borderColor: ({ colors }) => colors.primary.default,
-      },
     },
     '& .input__counter': {
       display: 'flex',
@@ -73,6 +70,13 @@ export const styles: JssStyle = {
       marginTop: 6,
       display: 'flex',
       justifyContent: 'space-between',
+    },
+    '&:not($input--disabled)': {
+      '& .input__input': {
+        '&:hover, &:focus': {
+          borderColor: ({ colors }) => colors.primary.default,
+        },
+      }
     },
   },
   'input--variant-static': {
@@ -138,5 +142,5 @@ export const styles: JssStyle = {
       opacity: '0.5',
       cursor: 'not-allowed',
     },
-  },
+  }
 };
