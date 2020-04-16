@@ -293,24 +293,43 @@
     </script>
 
     <h3>List ordered</h3>
-    <scale-list variant="ordered" type="I">
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </scale-list>
-    
-    <h3>List unordered</h3>
-    <scale-list variant="ordered" type="I" list-style-type="circle">
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
+    <scale-list variant="ordered">
+      <scale-list-item type="upper-alpha">One</scale-list-item>
+      <scale-list-item type="upper-alpha">Two</scale-list-item>
+      <scale-list-item type="upper-alpha">Three</scale-list-item>
     </scale-list>
 
     <h3>List unordered</h3>
-    <scale-list type="I" list-style-type="square">
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
+    <scale-list variant="unordered">
+      <scale-list-item type="circle">one</scale-list-item>
+      <scale-list-item type="circle">Two</scale-list-item>
+      <scale-list-item type="circle">Three</scale-list-item>
+    </scale-list>
+
+    <h3>List ordered</h3>
+    <scale-list variant="ordered">
+      <scale-list-item type="decimal">one</scale-list-item>
+      <scale-list-item type="decimal">Two</scale-list-item>
+      <scale-list-item type="decimal">Three</scale-list-item>
+    </scale-list>
+
+    <h3>List with icon</h3>
+    <scale-list>
+      <scale-list-item
+        icon-size="16"
+        icon="M1.96037164,4.76348599 C2.20704822,4.51686874 2.59887783,4.50393445 2.86078044,4.72465004 L2.90318067,4.76359939 L7.84414654,9.70597854 L12.7871377,4.7635427 C13.0337846,4.51689577 13.4256126,4.50391434 13.6875418,4.72459843 L13.7299467,4.76354268 C13.9765936,5.01018959 13.9895751,5.40201764 13.768891,5.66394679 L13.7299467,5.70635172 L7.84442319,11.5918755 L1.96025825,5.70629503 C1.69994003,5.44591419 1.6999908,5.02380421 1.96037164,4.76348599 Z"
+        >Apple</scale-list-item
+      >
+      <scale-list-item
+        icon-size="16"
+        icon="M1.96037164,4.76348599 C2.20704822,4.51686874 2.59887783,4.50393445 2.86078044,4.72465004 L2.90318067,4.76359939 L7.84414654,9.70597854 L12.7871377,4.7635427 C13.0337846,4.51689577 13.4256126,4.50391434 13.6875418,4.72459843 L13.7299467,4.76354268 C13.9765936,5.01018959 13.9895751,5.40201764 13.768891,5.66394679 L13.7299467,5.70635172 L7.84442319,11.5918755 L1.96025825,5.70629503 C1.69994003,5.44591419 1.6999908,5.02380421 1.96037164,4.76348599 Z"
+        >Microsoft</scale-list-item
+      >
+      <scale-list-item
+        icon-size="16"
+        icon="M1.96037164,4.76348599 C2.20704822,4.51686874 2.59887783,4.50393445 2.86078044,4.72465004 L2.90318067,4.76359939 L7.84414654,9.70597854 L12.7871377,4.7635427 C13.0337846,4.51689577 13.4256126,4.50391434 13.6875418,4.72459843 L13.7299467,4.76354268 C13.9765936,5.01018959 13.9895751,5.40201764 13.768891,5.66394679 L13.7299467,5.70635172 L7.84442319,11.5918755 L1.96025825,5.70629503 C1.69994003,5.44591419 1.6999908,5.02380421 1.96037164,4.76348599 Z"
+        >Google</scale-list-item
+      >
     </scale-list>
 
     <h3>Text</h3>

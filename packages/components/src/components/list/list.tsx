@@ -10,10 +10,8 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class List implements Base {
+  /** (optional) List variant */
   @Prop() variant?: string = 'unordered';
-  @Prop() type?: string;
-  @Prop() listStyleType?: string;
-  /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('List', styles) stylesheet: StyleSheet;
@@ -33,16 +31,11 @@ export class List implements Base {
         Tag = 'ul';
         break;
     }
-    if (this.variant === 'unordered') {
-      this.stylesheet.update({
-        listStyleType: this.listStyleType,
-      });
-    }
 
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <Tag class={this.getCssClassMap()} type={this.type}>
+        <Tag class={this.getCssClassMap()}>
           <slot />
         </Tag>
       </Host>
@@ -52,9 +45,7 @@ export class List implements Base {
     const { classes } = this.stylesheet;
     return classNames(
       classes.list,
-      this.variant && classes[`list--variant-${this.variant}`],
-      this.type && classes[`list--type-${this.type}`], // ordered
-      this.listStyleType && 'list-style-type' // unordered
+      this.variant && classes[`list--variant-${this.variant}`]
     );
   }
 }

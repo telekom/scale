@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem should match snapshot 1`] = `
+<scale-list-item>
+  <mock:shadow-root>
+    <style>
+      .list-item-0-0-2 {}
+.list-item--type-0-0-3 {
+  list-style: square;
+}
+.list-item--has-icon-0-0-4 {
+  display: flex;
+  list-style: none !important;
+  align-items: center;
+}
+    </style>
+    <li class="list-item-0-0-2">
+      <slot></slot>
+    </li>
+  </mock:shadow-root>
+  default
+</scale-list-item>
+`;
