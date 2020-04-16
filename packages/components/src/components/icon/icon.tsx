@@ -19,6 +19,8 @@ export class Icon implements Base {
   @Prop() size?: number;
   @Prop() height?: number = 24;
   @Prop() width?: number = 24;
+  @Prop() viewBox?: string;
+  @Prop() focusable?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -49,10 +51,11 @@ path {
           {this.stylesheet.toString()}
         </style>
         <svg
+          {...(this.focusable ? { tabindex: 0 } : {})}
           class={this.getCssClassMap()}
           width={this.size || this.height}
           height={this.size || this.width}
-          viewBox={`0 0 26 26`}
+          viewBox={this.viewBox || `0 0 24 24`}
         >
           <path d={this.path} stroke="transparent" fill="transparent" />
         </svg>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Link } from '@scaleds/react-wrapper';
+import { Button, Card, Link, Tag } from '@scaleds/react-wrapper';
 import './App.css';
 
 const App: React.FC = () => (
@@ -11,6 +11,8 @@ const App: React.FC = () => (
       <Button variant="primary">Click!</Button>
     <h3>Card</h3>
       <Card>A title</Card>
+    <h3>Tag</h3>
+      <Tag dismissable size="small" onClose={(event: any) => console.log(event)}>A title</Tag>
   </div>
 );
 

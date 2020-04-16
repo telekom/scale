@@ -1,42 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tag should have a link 1`] = `
-<scale-tag link="#">
+<scale-tag href="#">
   <mock:shadow-root>
     <style>
-      .tag-0-0-13 {
-  color: #fff;
-  border: 1px solid #dfdfdf;
+      .tag-0-0-34 {
+  color:  #fff;
   display: inline-flex;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  background: #333;
-  border-radius: 0.25rem;
+  padding: 6px 12px;
+  font-size: 16px;
+  background: #343a40;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  align-items: center;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  --icon-color: #fff;
+  border-radius: 4px;
+  vertical-align: baseline;
+  justify-content: center;
 }
-.tag--pill-0-0-14 {
-  padding: 0.6rem;
-  border-radius: 1rem;
+.tag-0-0-34 scale-icon {
+  margin-left: 2px;
 }
-.tag--link-0-0-15 {
+.tag-0-0-34:not(.tag--disabled-0-0-44) {}
+.tag-0-0-34:not(.tag--disabled-0-0-44) scale-icon {}
+.tag-0-0-34:not(.tag--disabled-0-0-44) scale-icon:hover {
+  --icon-color: red;
+}
+.tag--dismissable-0-0-35 {
+  padding-right: 8px;
+}
+.tag--size-small-0-0-36 {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.tag--size-small-0-0-36 scale-icon {
+  width: 12px;
+  height: 12px;
+}
+.tag--size-small-0-0-36.tag--dismissable-0-0-35 {
+  padding-right: 4px;
+}
+.tag--variant-primary-0-0-37 {
+  color: #fff;
+  background: #2962ff;
+  border: 1px solid #2962ff;
+}
+.tag--variant-secondary-0-0-38 {
+  color: #fff;
+  background: #d500f9;
+  border: 1px solid #d500f9;
+}
+.tag--variant-error-0-0-39 {
+  color: #fff;
+  background: #f50057;
+  border: 1px solid #f50057;
+}
+.tag--variant-warning-0-0-40 {
+  color: #fff;
+  background: #ffc400;
+  border: 1px solid #ffc400;
+}
+.tag--variant-info-0-0-41 {
+  color: #fff;
+  background: #00b0ff;
+  border: 1px solid #00b0ff;
+}
+.tag--variant-success-0-0-42 {
+  color: #fff;
+  background: #00e676;
+  border: 1px solid #00e676;
+}
+.tag--link-0-0-43 {
   text-decoration: none;
 }
-.tag--link-0-0-15:hover {
-  background: #1d2124;
-}
-.tag--link-0-0-15:active {
-  background: #1d2124;
-}
-.tag--link-0-0-15:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
-}
-.tag--variant-primary-0-0-16 {
+.tag--link-0-0-43.tag--variant-primary-0-0-37 {}
+.tag--link-0-0-43.tag--variant-secondary-0-0-38 {}
+.tag--link-0-0-43.tag--variant-error-0-0-39 {}
+.tag--link-0-0-43.tag--variant-warning-0-0-40 {}
+.tag--link-0-0-43.tag--variant-info-0-0-41 {}
+.tag--link-0-0-43.tag--variant-success-0-0-42 {}
+.tag--link-0-0-43.tag--variant-success-0-0-42:hover {
   color: #fff;
-  background: #007bff;
-  border-color: #007bff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-43.tag--variant-success-0-0-42:active {
+  color: #fff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-43.tag--variant-info-0-0-41:hover {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-43.tag--variant-info-0-0-41:active {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-43.tag--variant-warning-0-0-40:hover {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-43.tag--variant-warning-0-0-40:active {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-43.tag--variant-error-0-0-39:hover {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-43.tag--variant-error-0-0-39:active {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-43.tag--variant-secondary-0-0-38:hover {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-43.tag--variant-secondary-0-0-38:active {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-43.tag--variant-primary-0-0-37:hover {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
+}
+.tag--link-0-0-43.tag--variant-primary-0-0-37:active {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
+}
+.tag--disabled-0-0-44 {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
     </style>
-    <a class="tag--link-0-0-15 tag-0-0-13" href="#">
+    <a class="tag--link-0-0-43 tag-0-0-34" href="#" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -48,41 +159,152 @@ exports[`Tag should match snapshot 1`] = `
 <scale-tag>
   <mock:shadow-root>
     <style>
-      .tag-0-0-5 {
-  color: #fff;
-  border: 1px solid #dfdfdf;
+      .tag-0-0-12 {
+  color:  #fff;
   display: inline-flex;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  background: #333;
-  border-radius: 0.25rem;
+  padding: 6px 12px;
+  font-size: 16px;
+  background: #343a40;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  align-items: center;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  --icon-color: #fff;
+  border-radius: 4px;
+  vertical-align: baseline;
+  justify-content: center;
 }
-.tag--pill-0-0-6 {
-  padding: 0.6rem;
-  border-radius: 1rem;
+.tag-0-0-12 scale-icon {
+  margin-left: 2px;
 }
-.tag--link-0-0-7 {
+.tag-0-0-12:not(.tag--disabled-0-0-22) {}
+.tag-0-0-12:not(.tag--disabled-0-0-22) scale-icon {}
+.tag-0-0-12:not(.tag--disabled-0-0-22) scale-icon:hover {
+  --icon-color: red;
+}
+.tag--dismissable-0-0-13 {
+  padding-right: 8px;
+}
+.tag--size-small-0-0-14 {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.tag--size-small-0-0-14 scale-icon {
+  width: 12px;
+  height: 12px;
+}
+.tag--size-small-0-0-14.tag--dismissable-0-0-13 {
+  padding-right: 4px;
+}
+.tag--variant-primary-0-0-15 {
+  color: #fff;
+  background: #2962ff;
+  border: 1px solid #2962ff;
+}
+.tag--variant-secondary-0-0-16 {
+  color: #fff;
+  background: #d500f9;
+  border: 1px solid #d500f9;
+}
+.tag--variant-error-0-0-17 {
+  color: #fff;
+  background: #f50057;
+  border: 1px solid #f50057;
+}
+.tag--variant-warning-0-0-18 {
+  color: #fff;
+  background: #ffc400;
+  border: 1px solid #ffc400;
+}
+.tag--variant-info-0-0-19 {
+  color: #fff;
+  background: #00b0ff;
+  border: 1px solid #00b0ff;
+}
+.tag--variant-success-0-0-20 {
+  color: #fff;
+  background: #00e676;
+  border: 1px solid #00e676;
+}
+.tag--link-0-0-21 {
   text-decoration: none;
 }
-.tag--link-0-0-7:hover {
-  background: #1d2124;
-}
-.tag--link-0-0-7:active {
-  background: #1d2124;
-}
-.tag--link-0-0-7:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
-}
-.tag--variant-primary-0-0-8 {
+.tag--link-0-0-21.tag--variant-primary-0-0-15 {}
+.tag--link-0-0-21.tag--variant-secondary-0-0-16 {}
+.tag--link-0-0-21.tag--variant-error-0-0-17 {}
+.tag--link-0-0-21.tag--variant-warning-0-0-18 {}
+.tag--link-0-0-21.tag--variant-info-0-0-19 {}
+.tag--link-0-0-21.tag--variant-success-0-0-20 {}
+.tag--link-0-0-21.tag--variant-success-0-0-20:hover {
   color: #fff;
-  background: #007bff;
-  border-color: #007bff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-21.tag--variant-success-0-0-20:active {
+  color: #fff;
+  background: #00b248;
+  border: 1px solid #00b248;
+}
+.tag--link-0-0-21.tag--variant-info-0-0-19:hover {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-21.tag--variant-info-0-0-19:active {
+  color: #fff;
+  background: #0081cb;
+  border: 1px solid #0081cb;
+}
+.tag--link-0-0-21.tag--variant-warning-0-0-18:hover {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-21.tag--variant-warning-0-0-18:active {
+  color: #fff;
+  background: #c79400;
+  border: 1px solid #c79400;
+}
+.tag--link-0-0-21.tag--variant-error-0-0-17:hover {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-21.tag--variant-error-0-0-17:active {
+  color: #fff;
+  background: #bb002f;
+  border: 1px solid #bb002f;
+}
+.tag--link-0-0-21.tag--variant-secondary-0-0-16:hover {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-21.tag--variant-secondary-0-0-16:active {
+  color: #fff;
+  background: #9e00c5;
+  border: 1px solid #9e00c5;
+}
+.tag--link-0-0-21.tag--variant-primary-0-0-15:hover {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
+}
+.tag--link-0-0-21.tag--variant-primary-0-0-15:active {
+  color: #fff;
+  background: #0039cb;
+  border: 1px solid #0039cb;
+}
+.tag--disabled-0-0-22 {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
     </style>
-    <div class="tag-0-0-5">
+    <span class="tag-0-0-12">
       <slot></slot>
-    </div>
+    </span>
   </mock:shadow-root>
   Label
 </scale-tag>

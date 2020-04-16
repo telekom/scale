@@ -117,7 +117,9 @@ const convertToReact = components => {
         })) || [],
       events:
         component.events.map(({ event }) => ({
-          reactEvent: `on${capitalizeFirst(_.camelCase(event))}`,
+          reactEvent: `on${capitalizeFirst(
+            _.camelCase(event.replace('Event', ''))
+          )}`,
           event
         })) || []
     }

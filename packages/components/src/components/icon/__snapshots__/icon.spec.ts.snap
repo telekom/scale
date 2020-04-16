@@ -20,7 +20,7 @@ path {
   stroke: var(--icon-color);
 }
     </style>
-    <svg class="icon-0-0-2" height="24" viewBox="0 0 26 26" width="24">
+    <svg class="icon-0-0-2" height="24" viewBox="0 0 24 24" width="24">
       <path d="m 10 10" fill="transparent" stroke="transparent"></path>
     </svg>
   </mock:shadow-root>
