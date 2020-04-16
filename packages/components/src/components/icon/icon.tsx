@@ -50,9 +50,9 @@ path {
         </style>
         <svg
           class={this.getCssClassMap()}
-          width={this.size || this.height}
-          height={this.size || this.width}
-          viewBox={`0 0 26 26`}
+          width={this.size || this.width}
+          height={this.size || this.height}
+          viewBox={`0 0 ${this.width} ${this.height}`}
         >
           <path d={this.path} stroke="transparent" fill="transparent" />
         </svg>
