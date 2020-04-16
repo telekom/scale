@@ -10,11 +10,13 @@
 | Property      | Attribute      | Description                    | Type                                     | Default     |
 | ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Tag class           | `string`                                 | `''`        |
+| `focusable`   | `focusable`    |                                | `boolean`                                | `false`     |
 | `height`      | `height`       |                                | `number`                                 | `24`        |
 | `name`        | `name`         | (optional) Tag theme           | `string`                                 | `undefined` |
 | `path`        | `path`         |                                | `string`                                 | `undefined` |
 | `size`        | `size`         |                                | `number`                                 | `undefined` |
 | `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| `viewBox`     | `view-box`     |                                | `string`                                 | `undefined` |
 | `width`       | `width`        |                                | `number`                                 | `24`        |
 
 
