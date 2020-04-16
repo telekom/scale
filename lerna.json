@@ -11,7 +11,7 @@
   "version": "0.0.15",
   "command": {
     "version": {
-      "allowBranch": "master"
+      "allowBranch": "release"
     }
   }
 }
