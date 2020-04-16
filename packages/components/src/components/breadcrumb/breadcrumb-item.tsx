@@ -18,7 +18,7 @@ export class BreadcrumbItem implements Base {
   @Prop() size?: number;
   @Prop() height?: number = 19;
   @Prop() width?: number = 11;
-  @Prop() separatorText?: string;
+  @Prop() separator?: string;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -34,9 +34,9 @@ export class BreadcrumbItem implements Base {
     const current = this.current === true ? { 'aria-current': 'page' } : {};
     // Define separator, either a string in a span or <scale-icon>
     const separator =
-      this.separatorText != null ? (
+      this.separator != null ? (
         <span class={`${classes['breadcrumb__item-icon']}`} aria-hidden>
-          {this.separatorText}
+          {this.separator}
         </span>
       ) : (
         <scale-icon

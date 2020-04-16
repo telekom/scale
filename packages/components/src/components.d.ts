@@ -82,7 +82,7 @@ export namespace Components {
         "height"?: number;
         "href": string;
         "path"?: string;
-        "separatorText"?: string;
+        "separator"?: string;
         "size"?: number;
         /**
           * (optional) Injected jss styles
@@ -743,7 +743,7 @@ declare namespace LocalJSX {
         "height"?: number;
         "href"?: string;
         "path"?: string;
-        "separatorText"?: string;
+        "separator"?: string;
         "size"?: number;
         /**
           * (optional) Injected jss styles
