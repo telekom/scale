@@ -100,13 +100,6 @@ export default function Template({
     }
   }, [componentState])
 
-  useEffect(() => {
-    if (ref && ref.current ) {
-      // let compo = document.querySelector(ComponentName)
-      // console.log(compo.shadowRoot.childNodes[1].offsetHeight)
-      // console.log(htmlAst)
-    }
-  })
   const {styles, ...componentProps} = componentState;
   return (
     <DocsLayout location={location}>
