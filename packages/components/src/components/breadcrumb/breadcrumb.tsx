@@ -11,11 +11,9 @@ import Base from '../../utils/base-interface';
 
   TODO
   ----
-  - [ ] try and use an <ol>
-  - [ ] how to make separator customizable via props?
-  - [ ] add styles for hover state (themable)
-  - [ ] add styles for focus state (themable)
-  - [ ] add "styles for pressed" (active) state (themable)
+  - [x] try and use an <ol>
+  - [x] allow customizing the separator
+  - [ ] add themable styles for link states (hover, focus, pressed)
   - [ ] add tests
 */
 
@@ -33,14 +31,13 @@ export class Breadcrumb implements Base {
   componentWillUpdate() {}
 
   render() {
-    // const { classes } = this.stylesheet;
-
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <nav aria-label="Breadcrumb" class={this.getCssClassMap()}>
-          {/* <a class={`${classes['breadcrumb__link']}`} href="/first">The very beginning</a> */}
-          <slot />
+          <ol>
+            <slot />
+          </ol>
         </nav>
       </Host>
     );

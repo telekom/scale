@@ -77,6 +77,19 @@ export namespace Components {
          */
         "styles"?: StyleSheet;
     }
+    interface ScaleBreadcrumbItem {
+        "current"?: boolean;
+        "height"?: number;
+        "href": string;
+        "path"?: string;
+        "separatorText"?: string;
+        "size"?: number;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "width"?: number;
+    }
     interface ScaleButton {
         "ariaLabel"?: string;
         /**
@@ -526,6 +539,12 @@ declare global {
         prototype: HTMLScaleBreadcrumbElement;
         new (): HTMLScaleBreadcrumbElement;
     };
+    interface HTMLScaleBreadcrumbItemElement extends Components.ScaleBreadcrumbItem, HTMLStencilElement {
+    }
+    var HTMLScaleBreadcrumbItemElement: {
+        prototype: HTMLScaleBreadcrumbItemElement;
+        new (): HTMLScaleBreadcrumbItemElement;
+    };
     interface HTMLScaleButtonElement extends Components.ScaleButton, HTMLStencilElement {
     }
     var HTMLScaleButtonElement: {
@@ -632,6 +651,7 @@ declare global {
         "scale-alert": HTMLScaleAlertElement;
         "scale-badge": HTMLScaleBadgeElement;
         "scale-breadcrumb": HTMLScaleBreadcrumbElement;
+        "scale-breadcrumb-item": HTMLScaleBreadcrumbItemElement;
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
@@ -717,6 +737,19 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+    }
+    interface ScaleBreadcrumbItem {
+        "current"?: boolean;
+        "height"?: number;
+        "href"?: string;
+        "path"?: string;
+        "separatorText"?: string;
+        "size"?: number;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "width"?: number;
     }
     interface ScaleButton {
         "ariaLabel"?: string;
@@ -1135,6 +1168,7 @@ declare namespace LocalJSX {
         "scale-alert": ScaleAlert;
         "scale-badge": ScaleBadge;
         "scale-breadcrumb": ScaleBreadcrumb;
+        "scale-breadcrumb-item": ScaleBreadcrumbItem;
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
@@ -1161,6 +1195,7 @@ declare module "@stencil/core" {
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
             "scale-badge": LocalJSX.ScaleBadge & JSXBase.HTMLAttributes<HTMLScaleBadgeElement>;
             "scale-breadcrumb": LocalJSX.ScaleBreadcrumb & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbElement>;
+            "scale-breadcrumb-item": LocalJSX.ScaleBreadcrumbItem & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbItemElement>;
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
