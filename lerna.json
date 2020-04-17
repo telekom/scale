@@ -4,6 +4,7 @@
     "packages/components",
     "packages/html-to-sketch",
     "packages/generator-sketch",
+    "packages/react-wrapper",
     "packages/docs"
   ],
   "npmClient": "yarn",

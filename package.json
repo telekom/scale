@@ -1,5 +1,5 @@
 {
-    "name": "scale",
+    "name": "scaleds",
     "version": "0.0.1",
     "license": "MIT",
     "private": true,
@@ -14,10 +14,10 @@
     "scripts": {
         "clean": "./scripts/clean.sh",
         "build": "./scripts/build.sh",
-        "build:components": "yarn workspace @scale/components build",
-        "watch:components": "yarn workspace @scale/components start",
+        "build:components": "yarn workspace @scaleds/components build",
+        "watch:components": "yarn workspace @scaleds/components start",
         "bootstrap": "lerna bootstrap",
-        "test": "lerna run test --scope=@scale",
+        "test": "lerna run test --scope @scaleds/components",
         "new-version": "lerna version --conventional-commits --tag-version-prefix='release-' --yes"
     },
     "devDependencies": {
