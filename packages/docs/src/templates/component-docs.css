@@ -6,6 +6,7 @@
 	align-items: center; */
 	margin-bottom: 1rem;
 	border: 1px solid rgba(0,0,0,0.05);
+  min-height: 150px;
 }
 
 .playground__preview > * {
@@ -68,4 +69,18 @@
 .stencil__docs th, td {
 	padding: .5rem;
 	white-space: nowrap;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 1.33s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
