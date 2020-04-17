@@ -55,7 +55,7 @@ path {
           class={this.getCssClassMap()}
           width={this.size || this.width}
           height={this.size || this.height}
-          viewBox={`0 0 ${this.width} ${this.height}`}
+          viewBox={`0 0 26 26`}
         >
           <path d={this.path} stroke="transparent" fill="transparent" />
         </svg>
