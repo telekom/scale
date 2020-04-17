@@ -73,24 +73,25 @@ var WebComponentWrapper = function (props) {
 };
 
 var Alert = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-alert' }, props))); };
-var Badge = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-badge' }, props))); };
 var Button = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-button' }, props))); };
 var Card = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-card' }, props))); };
 var Carousel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-carousel' }, props))); };
 var Divider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-divider' }, props))); };
 var Icon = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-icon' }, props))); };
-var Input = function (props) { return (createElement(WebComponentWrapper, __assign({ events: { onChanged: 'changed' }, component: 'scale-input' }, props))); };
-var InputError = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-error' }, props))); };
-var InputGroup = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-group' }, props))); };
-var InputLabel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-input-label' }, props))); };
+var Input = function (props) { return (createElement(WebComponentWrapper, __assign({ events: {
+        onBlur: 'blurEvent',
+        onChange: 'changeEvent',
+        onFocus: 'focusEvent',
+        onKeyDown: 'keyDownEvent'
+    }, component: 'scale-input' }, props))); };
 var Link = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-link' }, props))); };
 var Modal = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-modal' }, props))); };
 var ProgressBar = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-progress-bar' }, props))); };
 var Slider = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-slider' }, props))); };
 var Switch = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-switch' }, props))); };
-var Tag = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-tag' }, props))); };
+var Tag = function (props) { return (createElement(WebComponentWrapper, __assign({ events: { onClose: 'close' }, component: 'scale-tag' }, props))); };
 var Text = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-text' }, props))); };
 var Toast = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-toast' }, props))); };
 
-export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
 //# sourceMappingURL=index.es.js.map
