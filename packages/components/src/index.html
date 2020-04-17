@@ -61,8 +61,24 @@
   </head>
 
   <body>
-    <h1>Components</h1>
-    <h3>Tag</h3>
+    <h1>Components</h1><h3>Tag</h3>
+    <h3>Checkbox</h3>
+
+    <form id="form-checkbox">
+      <scale-input id="checkbox-1" type="checkbox"></scale-input>
+      <scale-input id="checkbox-2" type="checkbox"></scale-input>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const form = document.getElementById('form-checkbox')
+      form.addEventListener('submit', (event) => {
+        event.preventDefault()
+        const one = document.getElementById('checkbox-1').value
+        const two = document.getElementById('checkbox-2').value
+        console.log(one, two)
+      })
+    </script>
 
     <button id="change">Change</button>
 

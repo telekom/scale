@@ -1,4 +1,4 @@
-import { Component, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
+import { Component, Prop, Event, h, EventEmitter, Host, Listen } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './input.styles';
@@ -21,6 +21,8 @@ export class Input implements Base {
     | 'password'
     | 'tel'
     | 'text'
+    | 'checkbox'
+    | 'radio'
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
@@ -63,23 +65,49 @@ export class Input implements Base {
   componentDidUnload() {}
 
   handleChange(event) {
+    console.log('change', event.target.checked)
     this.value = event.target ? event.target.value : this.value;
     this.changeEvent.emit(event);
   }
 
   handleFocus(event) {
+    console.log('focus', event)
     this.focusEvent.emit(event);
   }
 
   handleBlur(event) {
+    console.log('blur', event)
     this.blurEvent.emit(event);
   }
 
   handleKeyDown(event) {
+    console.log('keyDown', event)
     this.keyDownEvent.emit(event);
   }
 
+  @Listen('change', { capture: true })
+  handleCheckbox(event) {
+  console.log('click', event);
+  }
+
   render() {
+    if (this.type === 'checkbox') {
+      return (
+        <div>
+          <input 
+            type="checkbox" 
+            id="scales" 
+            onChange={event => this.handleChange(event)}
+            onFocus={event => this.handleFocus(event)}
+            onBlur={event => this.handleBlur(event)}
+            onKeyDown={event => this.handleKeyDown(event)}
+            value="off"
+          />
+          <label htmlFor="scales">Scales</label>
+        </div>
+      )
+    }
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
@@ -101,7 +129,7 @@ export class Input implements Base {
             onKeyDown={event => this.handleKeyDown(event)}
             placeholder={this.placeholder}
             disabled={this.disabled}
-          ></input>
+          />
           {!!this.label && this.variant === 'animated' && (
             <label class="input__label">{this.label}</label>
           )}
