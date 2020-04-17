@@ -9,12 +9,12 @@
 
 | Property      | Attribute      | Description                            | Type                                                                                                 | Default     |
 | ------------- | -------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------- |
-| `checkboxId`  | `checkbox-id`  | (optional) Input checkbox id           | `string`                                                                                             | `undefined` |
 | `counter`     | `counter`      | (optional) Input counter               | `boolean`                                                                                            | `undefined` |
 | `customClass` | `custom-class` | (optional) Input text class            | `string`                                                                                             | `''`        |
 | `disabled`    | `disabled`     | (optional) Input disabled              | `boolean`                                                                                            | `undefined` |
 | `helperText`  | `helper-text`  | (optional) Input helper text           | `string`                                                                                             | `''`        |
 | `icon`        | `icon`         | (optional) Input checkbox checked icon | `string`                                                                                             | `undefined` |
+| `inputId`     | `input-id`     | (optional) Input checkbox id           | `string`                                                                                             | `undefined` |
 | `label`       | `label`        | (optional) Input label                 | `string`                                                                                             | `''`        |
 | `maxLength`   | `max-length`   | (optional) Input max length            | `number`                                                                                             | `undefined` |
 | `minLength`   | `min-length`   | (optional) Input min length            | `number`                                                                                             | `undefined` |
