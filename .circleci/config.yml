@@ -97,15 +97,21 @@ workflows:
           filters:
             tags:
               only: /^release-.*/
+            branches:
+              ignore: /.*/
       - build:
           requires:
             - test
           filters:
             tags:
               only: /^release-.*/
+            branches:
+              ignore: /.*/
       - deploy:
           requires:
             - build
           filters:
             tags:
               only: /^release-.*/
+            branches:
+              ignore: /.*/
