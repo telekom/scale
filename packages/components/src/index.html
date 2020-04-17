@@ -17,7 +17,7 @@
         padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          --icon-color: black;
+        --icon-color: black;
       }
 
       body {
@@ -30,33 +30,208 @@
       }
     </style>
     <script>
+      const variants = {
+        custom: {
+          background: 'pink',
+          borderColor: 'pink'
+        }
+      }
       scale.useTheme({
         shape: {
-          borderRadius: 24
+          borderRadius: 4
         },
         typography: {
           variants: {
             custom: {
               fontSize: 32,
               color: 'green',
-            }
-          }
+            },
+          },
         },
         components: {
           Button: {
-            'button--variant-custom': {
-              background: 'pink',
-              borderColor: 'pink'
-            }
+            'button--variant-custom': variants.custom
           },
+          Tag: {
+            'tag--variant-custom': variants.custom
+          }
         }
       })
-      console.log(scale.getTheme())
     </script>
   </head>
 
   <body>
-    <h1>Components</h1>
+    <h1>Components</h1><h3>Tag</h3>
+
+    <button id="change">Change</button>
+
+    <h3>Default input</h3>
+    <scale-input id="change-input"></scale-input>
+
+    <script>
+      document.getElementById('change').addEventListener('click', () => {
+        document.getElementById('change-input').styles = {
+          input: {
+            '& .input__input': {
+              color: 'blue'
+            }
+          }
+        }
+      })
+    </script>
+    
+    <h3>Static input with label</h3>
+    <scale-input variant="static" label="Text"></scale-input>
+
+    <h3>Animated input</h3>
+    <scale-input label="First Name" placeholder="Hello"></scale-input>
+
+    <h3>Animated input - max length and counter</h3>
+    <scale-input
+      label="Last Name"
+      max-length="24"
+      counter
+    ></scale-input>
+
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      id="input-error"
+      label="address"
+      required="true"
+      max-length="24"
+      counter
+    ></scale-input>
+    <button id="show-error">Toggle error</button>
+    <script>
+      document.getElementById('show-error').addEventListener('click', () => {
+        const input = document.getElementById('input-error')
+        if (input.status === 'error') {
+          input.status = undefined,
+          input.helperText = undefined
+        } else {
+          input.status = 'error',
+          input.helperText = 'Some error happened'
+        }
+      })
+    </script>
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      label="address"
+      required="true"
+      status="error"
+      max-length="24"
+      counter
+    ></scale-input>
+    <h3>Input Text - helper text</h3>
+    <scale-input
+      label="address"
+      required="true"
+      status="error"
+      helper-text="please fill out this field"
+    ></scale-input>
+
+    <h3>Input Text - place holder text</h3>
+    <scale-input
+      type="string"
+      variant="inline"
+      placeholder="placeholder"
+    ></scale-input>
+
+    <h3>Input Text - disabled</h3>
+    <scale-input type="string" disabled="true"></scale-input>
+
+    <h3>Input Email</h3>
+    <scale-input type="email"></scale-input>
+
+    <h3>Input number</h3>
+    <scale-input type="number"></scale-input>
+
+    <h3>Input password</h3>
+    <scale-input type="password"></scale-input>
+
+    <h3>Input tel</h3>
+    <scale-input type="tel"></scale-input>
+
+    <h3>Input url</h3>
+    <scale-input type="url"></scale-input>
+
+    <h3>Input hidden</h3>
+    <scale-input type="hidden"></scale-input>
+    
+    <h3>Input small</h3>
+    <scale-input size="small"></scale-input>
+    
+    <h3>Input small animated</h3>
+    <scale-input label="Name" size="small"></scale-input>
+
+    <scale-tag>default</scale-tag>
+    <h3>Tag-primary</h3>
+    <scale-tag variant="primary">Primary</scale-tag>
+    <h3>Tag - with link</h3>
+    <scale-tag href="#">tag with link</scale-tag>
+    <h3>Tag - with link target blank</h3>
+    <scale-tag href="#" target="_blank">tag with link</scale-tag>
+    <h3>Tag - dismissable</h3>
+    <scale-tag dismissable>tag dismissable</scale-tag>
+    <h3>Tag - dismissable with link</h3>
+    <scale-tag id="tag-dismissable" dismissable href="http://example.com" target="_blank">tag dismissable</scale-tag>
+    <h3>Tag - small</h3>
+    <scale-tag size="small">Small</scale-tag>
+    <h3>Tag - small dismissable</h3>
+    <scale-tag size="small" dismissable>tag dismissable</scale-tag>
+    <h3>Tag - disabled</h3>
+    <scale-tag disabled>tag disabled</scale-tag>
+    <h3>Tag - disabled dismissable</h3>
+    <scale-tag disabled dismissable>tag disabled</scale-tag>
+    <h3>Tag - variants</h3>
+    <scale-tag variant="primary">tag</scale-tag>
+    <scale-tag variant="secondary">tag</scale-tag>
+    <scale-tag variant="error">tag</scale-tag>
+    <scale-tag variant="warning">tag</scale-tag>
+    <scale-tag variant="info">tag</scale-tag>
+    <scale-tag variant="success">tag</scale-tag>
+    <scale-tag variant="custom">tag</scale-tag>
+    <h3>Tag - variants link</h3>
+    <scale-tag href="http://example.com" target="_blank" variant="primary">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="secondary">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="error">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="warning">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="info">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="success">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="custom">tag</scale-tag>
+    <h3>Tag - variants link dismissable</h3>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="primary">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="secondary">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="error">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="warning">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="info">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="success">tag</scale-tag>
+    <scale-tag dismissable href="http://example.com" target="_blank" variant="custom">tag</scale-tag>
+    <h3>Tag - dismissable</h3>
+    <scale-tag variant="primary" dismissable>tag</scale-tag>
+    <scale-tag variant="secondary" dismissable>tag</scale-tag>
+    <scale-tag variant="error" dismissable>tag</scale-tag>
+    <scale-tag variant="warning" dismissable>tag</scale-tag>
+    <scale-tag variant="info" dismissable>tag</scale-tag>
+    <scale-tag variant="success" dismissable>tag</scale-tag>
+    <h3>Tag - small</h3>
+    <scale-tag size="small" variant="primary">tag</scale-tag>
+    <scale-tag size="small" variant="secondary">tag</scale-tag>
+    <scale-tag size="small" variant="error">tag</scale-tag>
+    <scale-tag size="small" variant="warning">tag</scale-tag>
+    <scale-tag size="small" variant="info">tag</scale-tag>
+    <scale-tag size="small" variant="success">tag</scale-tag>
+    <h3>Tag - dismissable small</h3>
+    <scale-tag size="small" variant="primary" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="secondary" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="error" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="warning" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="info" dismissable>tag</scale-tag>
+    <scale-tag size="small" variant="success" dismissable>tag</scale-tag>
+    
+    <script>
+      document.getElementById('tag-dismissable').addEventListener('close', (event) => console.log('Tag closed', event))
+    </script>
 
     <!-- Testing -->
     <h3>Breadcrumb (testing)</h3>
@@ -73,7 +248,7 @@
     <scale-text tag="h4" variant="h4">h4 heading</scale-text>
     <scale-text tag="h5" variant="h5">h5 heading</scale-text>
     <scale-text tag="h6" variant="h6">h6 heading</scale-text>
-    
+
     <scale-text>Default paragraph</scale-text>
 
     <scale-text variant="custom">Custom</scale-text>
@@ -269,52 +444,6 @@
 
     <h3>Card - disabled</h3>
     <scale-card interactive="true" disabled="true">A title</scale-card>
-
-    <h3>Input text</h3>
-    <scale-input></scale-input>
-
-    <h3>Input email</h3>
-    <scale-input type="email"></scale-input>
-
-    <h3>Input number</h3>
-    <scale-input type="number"></scale-input>
-
-    <h3>Input password</h3>
-    <scale-input type="password"></scale-input>
-
-    <h3>Input tel</h3>
-    <scale-input type="tel"></scale-input>
-
-    <h3>Input url</h3>
-    <scale-input type="url"></scale-input>
-
-    <h3>Input hidden</h3>
-    <scale-input type="hidden"></scale-input>
-
-    <h3>Input group</h3>
-    <scale-input-group>
-      <scale-input-label>Label</scale-input-label>
-      <scale-input></scale-input>
-      <scale-input-error>Error</scale-input-error>
-    </scale-input-group>
-
-    <h3>Tag</h3>
-    <scale-tag>This is a tag</scale-tag>
-    <h3>Tag - primary tag</h3>
-    <scale-tag variant="primary">primary</scale-tag>
-    <h3>Tag - pill tag</h3>
-    <scale-tag pill="true">Pill tag</scale-tag>
-    <h3>Tag - with link</h3>
-    <scale-tag link="#">tag with link</scale-tag>
-
-    <h3>Badge</h3>
-    <scale-badge>default</scale-badge>
-    <h3>Badge-primary</h3>
-    <scale-badge variant="primary">Primary</scale-badge>
-    <h3>Badge-pill</h3>
-    <scale-badge pill="true">Pill</scale-badge>
-    <h3>Badge - with link</h3>
-    <scale-badge link="#">badge with link</scale-badge>
 
     <h3>Progress bar - show progress percentage outside of bar</h3>
     <scale-progress-bar

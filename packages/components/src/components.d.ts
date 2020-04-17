@@ -45,32 +45,6 @@ export namespace Components {
          */
         "variant"?: string;
     }
-    interface ScaleBadge {
-        /**
-          * (optional) Badge class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Badge link
-         */
-        "link"?: string;
-        /**
-          * (optional) Badge pill
-         */
-        "pill"?: boolean;
-        /**
-          * (optional) Badge size
-         */
-        "size"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-        /**
-          * (optional) Badge variant
-         */
-        "variant"?: string;
-    }
     interface ScaleBreadcrumb {
         /**
           * (optional) Injected jss styles
@@ -210,6 +184,7 @@ export namespace Components {
           * (optional) Tag class
          */
         "customClass"?: string;
+        "focusable"?: boolean;
         "height"?: number;
         /**
           * (optional) Tag theme
@@ -221,21 +196,58 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        "viewBox"?: string;
         "width"?: number;
     }
     interface ScaleInput {
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
         /**
           * (optional) Input text class
          */
         "customClass"?: string;
         /**
-          * (optional) Input text error message
+          * (optional) Input disabled
          */
-        "errorMessage"?: string;
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
         /**
           * (optional) Input name
          */
         "name"?: string;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -245,39 +257,13 @@ export namespace Components {
          */
         "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
         /**
-          * (optional) Input text value
+          * (optional) Input value
          */
         "value"?: string;
-    }
-    interface ScaleInputError {
         /**
-          * (optional) Input text class
+          * (optional) Input label variant
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputGroup {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputLabel {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
+        "variant"?: "animated" | "static";
     }
     interface ScaleLink {
         /**
@@ -435,17 +421,29 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) Tag on an <a> element
+          * (optional) Tag disabled
          */
-        "link"?: string;
+        "disabled"?: boolean;
         /**
-          * (optional) Tag pill
+          * (optional) Tag dismissable
          */
-        "pill"?: boolean;
+        "dismissable"?: boolean;
+        /**
+          * (optional) Tag href
+         */
+        "href"?: string;
+        /**
+          * (optional) Tag size
+         */
+        "size"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Tag target
+         */
+        "target"?: string;
         /**
           * (optional) Tag variant
          */
@@ -527,12 +525,6 @@ declare global {
         prototype: HTMLScaleAlertElement;
         new (): HTMLScaleAlertElement;
     };
-    interface HTMLScaleBadgeElement extends Components.ScaleBadge, HTMLStencilElement {
-    }
-    var HTMLScaleBadgeElement: {
-        prototype: HTMLScaleBadgeElement;
-        new (): HTMLScaleBadgeElement;
-    };
     interface HTMLScaleBreadcrumbElement extends Components.ScaleBreadcrumb, HTMLStencilElement {
     }
     var HTMLScaleBreadcrumbElement: {
@@ -580,24 +572,6 @@ declare global {
     var HTMLScaleInputElement: {
         prototype: HTMLScaleInputElement;
         new (): HTMLScaleInputElement;
-    };
-    interface HTMLScaleInputErrorElement extends Components.ScaleInputError, HTMLStencilElement {
-    }
-    var HTMLScaleInputErrorElement: {
-        prototype: HTMLScaleInputErrorElement;
-        new (): HTMLScaleInputErrorElement;
-    };
-    interface HTMLScaleInputGroupElement extends Components.ScaleInputGroup, HTMLStencilElement {
-    }
-    var HTMLScaleInputGroupElement: {
-        prototype: HTMLScaleInputGroupElement;
-        new (): HTMLScaleInputGroupElement;
-    };
-    interface HTMLScaleInputLabelElement extends Components.ScaleInputLabel, HTMLStencilElement {
-    }
-    var HTMLScaleInputLabelElement: {
-        prototype: HTMLScaleInputLabelElement;
-        new (): HTMLScaleInputLabelElement;
     };
     interface HTMLScaleLinkElement extends Components.ScaleLink, HTMLStencilElement {
     }
@@ -649,7 +623,6 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "scale-alert": HTMLScaleAlertElement;
-        "scale-badge": HTMLScaleBadgeElement;
         "scale-breadcrumb": HTMLScaleBreadcrumbElement;
         "scale-breadcrumb-item": HTMLScaleBreadcrumbItemElement;
         "scale-button": HTMLScaleButtonElement;
@@ -658,9 +631,6 @@ declare global {
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
-        "scale-input-error": HTMLScaleInputErrorElement;
-        "scale-input-group": HTMLScaleInputGroupElement;
-        "scale-input-label": HTMLScaleInputLabelElement;
         "scale-link": HTMLScaleLinkElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
@@ -703,32 +673,6 @@ declare namespace LocalJSX {
         "timeout"?: boolean | number;
         /**
           * (optional) Alert variant
-         */
-        "variant"?: string;
-    }
-    interface ScaleBadge {
-        /**
-          * (optional) Badge class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Badge link
-         */
-        "link"?: string;
-        /**
-          * (optional) Badge pill
-         */
-        "pill"?: boolean;
-        /**
-          * (optional) Badge size
-         */
-        "size"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-        /**
-          * (optional) Badge variant
          */
         "variant"?: string;
     }
@@ -863,6 +807,7 @@ declare namespace LocalJSX {
           * (optional) Tag class
          */
         "customClass"?: string;
+        "focusable"?: boolean;
         "height"?: number;
         /**
           * (optional) Tag theme
@@ -874,25 +819,65 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        "viewBox"?: string;
         "width"?: number;
     }
     interface ScaleInput {
+        /**
+          * (optional) Input counter
+         */
+        "counter"?: boolean;
         /**
           * (optional) Input text class
          */
         "customClass"?: string;
         /**
-          * (optional) Input text error message
+          * (optional) Input disabled
          */
-        "errorMessage"?: string;
+        "disabled"?: boolean;
+        /**
+          * (optional) Input helper text
+         */
+        "helperText"?: string;
+        /**
+          * (optional) Input label
+         */
+        "label"?: string;
+        /**
+          * (optional) Input max length
+         */
+        "maxLength"?: number;
+        /**
+          * (optional) Input min length
+         */
+        "minLength"?: number;
         /**
           * (optional) Input name
          */
         "name"?: string;
+        "onBlurEvent"?: (event: CustomEvent<any>) => void;
         /**
           * (optional) Input text event changed
          */
-        "onChanged"?: (event: CustomEvent<string>) => void;
+        "onChangeEvent"?: (event: CustomEvent<any>) => void;
+        "onFocusEvent"?: (event: CustomEvent<any>) => void;
+        "onKeyDownEvent"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Input placeHolder
+         */
+        "placeholder"?: string;
+        /**
+          * (optional) Input required
+         */
+        "required"?: boolean;
+        /**
+          * (optional) Input size
+         */
+        "size"?: string;
+        /**
+          * (optional) Input status
+         */
+        "status"?: string;
         /**
           * (optional) Injected jss styles
          */
@@ -902,39 +887,13 @@ declare namespace LocalJSX {
          */
         "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
         /**
-          * (optional) Input text value
+          * (optional) Input value
          */
         "value"?: string;
-    }
-    interface ScaleInputError {
         /**
-          * (optional) Input text class
+          * (optional) Input label variant
          */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputGroup {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
-    }
-    interface ScaleInputLabel {
-        /**
-          * (optional) Input text class
-         */
-        "customClass"?: string;
-        /**
-          * (optional) Injected jss styles
-         */
-        "styles"?: StyleSheet;
+        "variant"?: "animated" | "static";
     }
     interface ScaleLink {
         /**
@@ -1084,17 +1043,30 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Tag on an <a> element
+          * (optional) Tag disabled
          */
-        "link"?: string;
+        "disabled"?: boolean;
         /**
-          * (optional) Tag pill
+          * (optional) Tag dismissable
          */
-        "pill"?: boolean;
+        "dismissable"?: boolean;
+        /**
+          * (optional) Tag href
+         */
+        "href"?: string;
+        "onClose"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Tag size
+         */
+        "size"?: string;
         /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Tag target
+         */
+        "target"?: string;
         /**
           * (optional) Tag variant
          */
@@ -1166,7 +1138,6 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "scale-alert": ScaleAlert;
-        "scale-badge": ScaleBadge;
         "scale-breadcrumb": ScaleBreadcrumb;
         "scale-breadcrumb-item": ScaleBreadcrumbItem;
         "scale-button": ScaleButton;
@@ -1175,9 +1146,6 @@ declare namespace LocalJSX {
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
-        "scale-input-error": ScaleInputError;
-        "scale-input-group": ScaleInputGroup;
-        "scale-input-label": ScaleInputLabel;
         "scale-link": ScaleLink;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
@@ -1193,7 +1161,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "scale-alert": LocalJSX.ScaleAlert & JSXBase.HTMLAttributes<HTMLScaleAlertElement>;
-            "scale-badge": LocalJSX.ScaleBadge & JSXBase.HTMLAttributes<HTMLScaleBadgeElement>;
             "scale-breadcrumb": LocalJSX.ScaleBreadcrumb & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbElement>;
             "scale-breadcrumb-item": LocalJSX.ScaleBreadcrumbItem & JSXBase.HTMLAttributes<HTMLScaleBreadcrumbItemElement>;
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
@@ -1202,9 +1169,6 @@ declare module "@stencil/core" {
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
-            "scale-input-error": LocalJSX.ScaleInputError & JSXBase.HTMLAttributes<HTMLScaleInputErrorElement>;
-            "scale-input-group": LocalJSX.ScaleInputGroup & JSXBase.HTMLAttributes<HTMLScaleInputGroupElement>;
-            "scale-input-label": LocalJSX.ScaleInputLabel & JSXBase.HTMLAttributes<HTMLScaleInputLabelElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;

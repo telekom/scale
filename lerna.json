@@ -4,6 +4,7 @@
     "packages/components",
     "packages/html-to-sketch",
     "packages/generator-sketch",
+    "packages/react-wrapper",
     "packages/docs"
   ],
   "npmClient": "yarn",
@@ -11,7 +12,7 @@
   "version": "0.0.15",
   "command": {
     "version": {
-      "allowBranch": "master"
+      "allowBranch": "release"
     }
   }
 }

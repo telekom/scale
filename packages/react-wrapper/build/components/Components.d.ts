@@ -12,16 +12,6 @@ interface AlertProps {
     [key: string]: any;
 }
 declare const Alert: React.FunctionComponent<AlertProps>;
-interface BadgeProps {
-    customClass?: string;
-    link?: string;
-    pill?: boolean;
-    size?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    variant?: string;
-    [key: string]: any;
-}
-declare const Badge: React.FunctionComponent<BadgeProps>;
 interface ButtonProps {
     ariaLabel?: string;
     customClass?: string;
@@ -67,44 +57,41 @@ interface DividerProps {
 declare const Divider: React.FunctionComponent<DividerProps>;
 interface IconProps {
     customClass?: string;
+    focusable?: boolean;
     height?: number;
     name?: string;
     path: string;
     size?: number;
     styles?: StyleSheet<string | number | symbol>;
+    viewBox?: string;
     width?: number;
     [key: string]: any;
 }
 declare const Icon: React.FunctionComponent<IconProps>;
 interface InputProps {
+    counter?: boolean;
     customClass?: string;
-    errorMessage?: string;
+    disabled?: boolean;
+    helperText?: string;
+    label?: string;
+    maxLength?: number;
+    minLength?: number;
     name?: string;
+    placeholder?: string;
+    required?: boolean;
+    size?: string;
+    status?: string;
     styles?: StyleSheet<string | number | symbol>;
     type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url';
     value?: string;
-    onChanged?: (event?: any) => void;
+    variant?: 'animated' | 'static';
+    onBlur?: (event?: any) => void;
+    onChange?: (event?: any) => void;
+    onFocus?: (event?: any) => void;
+    onKeyDown?: (event?: any) => void;
     [key: string]: any;
 }
 declare const Input: React.FunctionComponent<InputProps>;
-interface InputErrorProps {
-    customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    [key: string]: any;
-}
-declare const InputError: React.FunctionComponent<InputErrorProps>;
-interface InputGroupProps {
-    customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    [key: string]: any;
-}
-declare const InputGroup: React.FunctionComponent<InputGroupProps>;
-interface InputLabelProps {
-    customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
-    [key: string]: any;
-}
-declare const InputLabel: React.FunctionComponent<InputLabelProps>;
 interface LinkProps {
     block?: boolean;
     customClass?: string;
@@ -160,10 +147,14 @@ interface SwitchProps {
 declare const Switch: React.FunctionComponent<SwitchProps>;
 interface TagProps {
     customClass?: string;
-    link?: string;
-    pill?: boolean;
+    disabled?: boolean;
+    dismissable?: boolean;
+    href?: string;
+    size?: string;
     styles?: StyleSheet<string | number | symbol>;
+    target?: string;
     variant?: string;
+    onClose?: (event?: any) => void;
     [key: string]: any;
 }
 declare const Tag: React.FunctionComponent<TagProps>;
@@ -190,4 +181,4 @@ interface ToastProps {
     [key: string]: any;
 }
 declare const Toast: React.FunctionComponent<ToastProps>;
-export { Alert, Badge, Button, Card, Carousel, Divider, Icon, Input, InputError, InputGroup, InputLabel, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };

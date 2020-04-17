@@ -20,6 +20,12 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
+      # Save Yarn Cache
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
       # Run Tests
       - run:
           name: Test Components Package
@@ -31,16 +37,28 @@ jobs:
           command: |
             cd packages/react-wrapper
             yarn test
-      # Save Yarn Cache
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
       # Persist data
       - persist_to_workspace:
           root: ~/repo
-          paths: .
+          paths:
+            - .
+  build:
+    <<: *defaults
+    steps:
+      # Attach persisted data to job
+      - attach_workspace:
+          at: ~/repo
+      - run: |
+          cd packages/components
+          yarn build:prod
+      - run: |
+          cd packages/react-wrapper
+          yarn build
+      # Persist data
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
   deploy:
     <<: *defaults
     steps:
@@ -65,14 +83,35 @@ jobs:
 
 workflows:
   version: 2.1
-  test-deploy:
+  test:
     jobs:
-      - test
-      - deploy:
+      - test:
+          filters:
+            branches:
+              only:
+                - development
+                - master
+  test-build-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /^release-.*/
+            branches:
+              ignore: /.*/
+      - build:
           requires:
             - test
           filters:
             tags:
-              only: /^v.*/
+              only: /^release-.*/
             branches:
-              only: master
+              ignore: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^release-.*/
+            branches:
+              ignore: /.*/
