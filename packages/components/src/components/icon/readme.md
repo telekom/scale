@@ -24,7 +24,6 @@
 
 ### Used by
 
- - [scale-breadcrumb-item](../breadcrumb)
  - [scale-button](../button)
  - [scale-link](../link)
  - [scale-tag](../tag)
@@ -32,7 +31,6 @@
 ### Graph
 ```mermaid
 graph TD;
-  scale-breadcrumb-item --> scale-icon
   scale-button --> scale-icon
   scale-link --> scale-icon
   scale-tag --> scale-icon

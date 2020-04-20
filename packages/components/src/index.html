@@ -233,14 +233,6 @@
       document.getElementById('tag-dismissable').addEventListener('close', (event) => console.log('Tag closed', event))
     </script>
 
-    <!-- Testing -->
-    <h3>Breadcrumb (testing)</h3>
-    <scale-breadcrumb>
-      <scale-breadcrumb-item href="/a">The very beginning</scale-breadcrumb-item>
-      <scale-breadcrumb-item href="/b">Second link</scale-breadcrumb-item>
-      <scale-breadcrumb-item href="/c" current>Current page</scale-breadcrumb-item>
-    </scale-breadcrumb>
-
     <h3>Text</h3>
     <scale-text tag="h1" variant="h1">h1 heading</scale-text>
     <scale-text tag="h2" variant="h2">h2 heading</scale-text>
@@ -601,5 +593,16 @@
       <div><img src="http://placehold.it/400x300/d3dce6" /></div>
       <div><img src="http://placehold.it/400x300/99a9bf" /></div>
     </scale-carousel>
+
+    <h3>Breadcrumb (testing)</h3>
+    <!-- could also use separator="\" in <scale-breadcrumb> -->
+    <scale-breadcrumb>
+      <span slot="separator">
+        <scale-icon path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z">
+      </span>
+      <a href="/a">The very beginning</a>
+      <a href="/b">Second link</a>
+      <span>Current page</span>
+    </scale-breadcrumb>
   </body>
 </html>
