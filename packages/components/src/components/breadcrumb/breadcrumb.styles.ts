@@ -13,18 +13,18 @@ export const styles: JssStyle = {
       display: 'inline-flex',
       alignItems: 'center',
       marginRight: '1ch',
-    }
+    },
   },
   separator: {
     display: 'inline-block',
-    marginLeft: '1ch'
+    marginLeft: '1ch',
   },
   link: {
     // TODO
     color: 'currentColor',
-    '&:hover': {}
+    '&:hover': {},
   },
   current: {
-    fontWeight: ({ typography }) => typography.fontWeightBold
-  }
+    fontWeight: ({ typography }) => typography.fontWeightBold,
+  },
 };

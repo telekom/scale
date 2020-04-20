@@ -52,7 +52,7 @@ export class Breadcrumb implements Base {
   }
 
   render() {
-    const { classes } = this.stylesheet
+    const { classes } = this.stylesheet;
     const isLast = index => index === this.linksArray.length - 1;
     const getCurrentAttr = index =>
       isLast(index) === true ? { 'aria-current': 'page' } : undefined;
@@ -65,18 +65,30 @@ export class Breadcrumb implements Base {
             {this.linksArray.map((element, index) => {
               const separator =
                 this.separatorSlot != null ? (
-                  <span class={classes.separator} innerHTML={this.separatorSlot.innerHTML} />
+                  <span
+                    class={classes.separator}
+                    innerHTML={this.separatorSlot.innerHTML}
+                  />
                 ) : (
                   <span class={classes.separator}>{this.separator}</span>
                 );
               return (
                 <li>
                   {element.href ? (
-                    <a href={element.href} class={classNames(isLast(index) && classes.current, classes.link)} {...getCurrentAttr(index)}>
+                    <a
+                      href={element.href}
+                      class={classNames(
+                        isLast(index) && classes.current,
+                        classes.link
+                      )}
+                      {...getCurrentAttr(index)}
+                    >
                       {element.textContent}
                     </a>
                   ) : (
-                    <span class={classNames(isLast(index) && classes.current)}>{element.textContent}</span>
+                    <span class={classNames(isLast(index) && classes.current)}>
+                      {element.textContent}
+                    </span>
                   )}
                   {!isLast(index) ? separator : null}
                 </li>
