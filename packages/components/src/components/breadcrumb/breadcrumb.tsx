@@ -37,14 +37,15 @@ export class Breadcrumb implements Base {
   @State() separatorSlot: HTMLElement = null;
 
   componentWillLoad() {
-    if (this.linksArray.length !== 0) return;
-    this.getLinksArray();
+    if (this.linksArray.length === 0) {
+      this.setLinksArray();
+    }
     this.separatorSlot = this.hostElement.querySelector('[slot="separator"]');
   }
 
   componentWillUpdate() {}
 
-  getLinksArray() {
+  setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
       element => element.slot === ''
     );
