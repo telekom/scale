@@ -1,13 +1,12 @@
-import React from "react";
+import React,  { Component, createRef } from "react";
 
 const kebabCase = require("lodash").kebabCase;
 
-class WebComponentWrapper extends React.Component {
+class WebComponentWrapper extends Component {
   constructor(props) {
     super(props);
+    this.componentRef = createRef();
   }
-
-  ref = React.createRef();
 
   render() {
     const {
@@ -32,20 +31,20 @@ class WebComponentWrapper extends React.Component {
     });
 
     componentDidMount() {
-      if (this.ref.current) {
+      if (this.componentRef.current) {
         if (styles) {
-          this.ref.current.styles = styles;
+          this.componentRef.current.styles = styles;
         }
         if (eventNames) {
           eventNames.map((eventName: string) =>
-            this.ref.current.addEventListener(events[eventName], this.props[eventName])
+            this.componentRef.current.addEventListener(events[eventName], this.props[eventName])
           );
         }
       }
     }
 
     return (
-      <Component ref={this.ref} {...convertedProps}>
+      <Component ref={this.componentRef} {...convertedProps}>
         {children}
       </Component>
     );
