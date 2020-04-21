@@ -2,6 +2,7 @@ const {
   Sketch,
   Page,
   Rect,
+  Style,
   Artboard,
   SharedStyle,
   SymbolMaster,
@@ -41,23 +42,60 @@ const symbolMaster = (args) => {
   return symbol
 };
 
-const symbols = []
+const symbols = new Map();
+
+// The issue with button label not showing up in symbol instances is because
+// "glyphBounds": "{{0, 0}, {0, 0}}", ?
+
+const excludeKeys = new Set(['_class', 'do_objectID', 'name']);
+// Set instance frame size and overrides
+function fillInstance(symbol, instance, json, objectID) {
+  const keys = Object.keys(json);
+  for (let i =0 ; i< keys.length; i++) {
+    const key = keys[i];
+    const symbolValue = symbol[key];
+    const jsonValue = json[key];
+    if (key === 'do_objectID') {
+      objectID = symbolValue;
+    }
+    if (Array.isArray(jsonValue)) {
+      jsonValue.forEach((nestedJson, i) => fillInstance(symbolValue[i], instance, nestedJson, objectID));
+    } else if (!excludeKeys.has(key) && typeof symbolValue === 'string' && symbolValue !== jsonValue) {
+      // console.log(key, ':',  symbolValue, '=>', jsonValue);
+      const override = {
+        "_class": "overrideValue",
+        "overrideName": `${objectID}_stringValue`,
+        "value": jsonValue
+      };
+      instance.overrideValues.push(override);
+    }
+  }
+}
 
 function enhanceJson(json) {
   let enhanced = {};
-  Object.keys(json).forEach((key) => {
-    if (Array.isArray(json[key])) {
-      enhanced[key] = json[key].map(nestedJson => enhanceJson(nestedJson))
-    } else {
-      if (key === '_class' && json[key] === 'group' && json.isSymbol === true) {
-        const symbolExists = symbols.filter(s => s.name === json.name)[0]
-        const symbol = symbolExists ? symbolExists : symbolMaster({...json, id: uuid()})
-        !symbolExists && symbols.push(symbol)
-        return enhanced = symbol.createInstance({name: json.name});
+  const keys = Object.keys(json);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const value = json[key];
+    if (Array.isArray(value)) {
+      enhanced[key] = value.map(nestedJson => enhanceJson(nestedJson))
+    } else if (key === '_class' && value === 'group' && json.isSymbol === true) {
+      let symbol = symbols.get(json.name);
+      if (!symbol) {
+        const args = {...json, id: uuid()};
+        symbol = symbolMaster(args);
+        symbols.set(json.name, symbol);
       }
-      return enhanced[key] = json[key]
+      const instance = symbol.createInstance({name: json.name});
+      instance.frame = new Rect(json.frame);
+      instance.style = new Style(json.style);
+      fillInstance(symbol, instance, json);
+      return instance;
+    } else {
+      enhanced[key] = value
     }
-  })
+  }
   return enhanced;
 }
 
@@ -78,9 +116,12 @@ const artboardComponents = new Artboard({
 });
 
 fs.writeFileSync('./debug.json', JSON.stringify(enhanceJson(json), null, 4))
-
-enhanceJson(json).layers.forEach(layer => artboardComponents.addLayer(layer));
-symbols.forEach(symbol => symbolsPage.addLayer(symbol));
+const enhanced = enhanceJson(json);
+enhanced.layers.forEach(layer => artboardComponents.addLayer(layer));
+for (const symbol of symbols.values()) {
+  symbolsPage.addLayer(symbol);
+}
+console.log(JSON.stringify(symbolsPage, null, 4));
 
 componentsPage.addArtboard(artboardComponents);
 sketch.addPage(symbolsPage);

@@ -36,7 +36,7 @@ class TextAttributedString {
 						MSAttributedStringFontAttribute: {
 							_class: "fontDescriptor",
 							attributes: {
-								name: this._fontFamily,
+								name: 'Helvetica',
 								size: this._fontSize
 							}
 						},
