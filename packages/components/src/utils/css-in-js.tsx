@@ -47,6 +47,7 @@ export function CssInJs(
   };
 
   return (target: ComponentInterface, propertyKey: string) => {
+    let cssText;
     const { componentWillLoad } = target;
     if (!componentWillLoad) {
       // tslint:disable-next-line: no-console
@@ -57,7 +58,7 @@ export function CssInJs(
 
     if (componentWillLoad) {
       target.componentWillLoad = function() {
-        const cssText = jss
+        cssText = jss
           .createStyleSheet(withInjectedValues(this), { link: true })
           .attach();
         cssText.update(getTheme());
@@ -81,9 +82,14 @@ export function CssInJs(
 
     if (componentWillUpdate) {
       target.componentWillUpdate = function() {
-        const cssText = jss
-          .createStyleSheet(withInjectedValues(this), { link: true })
-          .attach();
+        const newRules = withInjectedValues(this);
+        const ruleNames = Object.keys(newRules);
+
+        ruleNames.forEach(ruleName => {
+          cssText.deleteRule(ruleName);
+          cssText.addRule(ruleName, newRules[ruleName]);
+        });
+
         cssText.update(getTheme());
         const willLoadResult =
           componentWillUpdate && componentWillUpdate.call(this);
