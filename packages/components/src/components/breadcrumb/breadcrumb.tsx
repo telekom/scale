@@ -8,15 +8,6 @@ import Base from '../../utils/base-interface';
 
 /*
   @see https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
-
-  TODO
-  ----
-  - [x] refactor using slots
-  - [x] allow customizing the separator (string or icon), once
-  - [ ] add styles for link states (hover, focus, pressed)
-  - [ ] is breadcrumb-item really needed?
-  - [ ] add tests
-  - [ ] test styling links from outside (depends on theming strategy)
 */
 
 @Component({
@@ -54,6 +45,7 @@ export class Breadcrumb implements Base {
   render() {
     const { classes } = this.stylesheet;
     const isLast = index => index === this.linksArray.length - 1;
+    // Set aria-current="page" to the last item if it's a link
     const getCurrentAttr = index =>
       isLast(index) === true ? { 'aria-current': 'page' } : undefined;
 
@@ -86,7 +78,12 @@ export class Breadcrumb implements Base {
                       {element.textContent}
                     </a>
                   ) : (
-                    <span class={classNames(isLast(index) && classes.current)}>
+                    <span
+                      class={classNames(
+                        isLast(index) && classes.current,
+                        classes.item
+                      )}
+                    >
                       {element.textContent}
                     </span>
                   )}
