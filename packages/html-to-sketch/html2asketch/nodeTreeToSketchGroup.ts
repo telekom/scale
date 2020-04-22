@@ -14,13 +14,20 @@ const getAssignedNodes = (node: HTMLElement) => {
 }
 
 export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
-  const bcr = node.getBoundingClientRect();
+  let bcr = node.getBoundingClientRect();
+  if (bcr.width === 0 && bcr.height === 0) {
+    // Possibly broken getBoundingClientRect, let's try selecting the node.
+    const rangeHelper = document.createRange();
+    rangeHelper.selectNodeContents(node);
+    bcr = rangeHelper.getBoundingClientRect();
+  }
   const {left, top} = bcr;
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;
 
   // Collect layers for the node level itself
   const layers = nodeToSketchLayers(node, {...options, layerOpacity: false}) || [];
+
 
   if (node.nodeName !== 'svg') {
     Array.from(node.children)

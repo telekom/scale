@@ -47,11 +47,11 @@ const symbols = new Map();
 // The issue with button label not showing up in symbol instances is because
 // "glyphBounds": "{{0, 0}, {0, 0}}", ?
 
-const excludeKeys = new Set(['_class', 'do_objectID', 'name']);
+const excludeKeys = new Set(['_class', 'do_objectID', 'name', 'text']);
 // Set instance frame size and overrides
-function fillInstance(symbol, instance, json, objectID) {
+function fillInstance(instance, symbol, json, objectID = '') {
   const keys = Object.keys(json);
-  for (let i =0 ; i< keys.length; i++) {
+  for (let i = 0 ; i < keys.length; i++) {
     const key = keys[i];
     const symbolValue = symbol[key];
     const jsonValue = json[key];
@@ -59,15 +59,17 @@ function fillInstance(symbol, instance, json, objectID) {
       objectID = symbolValue;
     }
     if (Array.isArray(jsonValue)) {
-      jsonValue.forEach((nestedJson, i) => fillInstance(symbolValue[i], instance, nestedJson, objectID));
+      jsonValue.forEach((nestedJson, i) => fillInstance(instance, symbolValue[i], nestedJson, objectID));
     } else if (!excludeKeys.has(key) && typeof symbolValue === 'string' && symbolValue !== jsonValue) {
-      // console.log(key, ':',  symbolValue, '=>', jsonValue);
+      console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
       const override = {
         "_class": "overrideValue",
-        "overrideName": `${objectID}_stringValue`,
+        "overrideName": `${objectID}_${key}Value`,
         "value": jsonValue
       };
       instance.overrideValues.push(override);
+    } else if (typeof symbolValue === 'object') {
+      fillInstance(instance, symbolValue, jsonValue, objectID);
     }
   }
 }
@@ -83,14 +85,14 @@ function enhanceJson(json) {
     } else if (key === '_class' && value === 'group' && json.isSymbol === true) {
       let symbol = symbols.get(json.name);
       if (!symbol) {
-        const args = {...json, id: uuid()};
+        const args = {...json};
         symbol = symbolMaster(args);
         symbols.set(json.name, symbol);
       }
       const instance = symbol.createInstance({name: json.name});
       instance.frame = new Rect(json.frame);
       instance.style = new Style(json.style);
-      fillInstance(symbol, instance, json);
+      fillInstance(instance, symbol, json);
       return instance;
     } else {
       enhanced[key] = value
@@ -115,13 +117,14 @@ const artboardComponents = new Artboard({
   }
 });
 
-fs.writeFileSync('./debug.json', JSON.stringify(enhanceJson(json), null, 4))
 const enhanced = enhanceJson(json);
+fs.writeFileSync('./debug.json', JSON.stringify(enhanced, null, 4))
+
 enhanced.layers.forEach(layer => artboardComponents.addLayer(layer));
 for (const symbol of symbols.values()) {
   symbolsPage.addLayer(symbol);
 }
-console.log(JSON.stringify(symbolsPage, null, 4));
+// console.log(JSON.stringify(symbolsPage, null, 4));
 
 componentsPage.addArtboard(artboardComponents);
 sketch.addPage(symbolsPage);
