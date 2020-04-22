@@ -39,13 +39,8 @@ const symbolMaster = (args) => {
   //   maxSize: 0,
   //   minSize: 0
   // }
-  return symbol
+  return symbol;
 };
-
-const symbols = new Map();
-
-// The issue with button label not showing up in symbol instances is because
-// "glyphBounds": "{{0, 0}, {0, 0}}", ?
 
 const excludeKeys = new Set(['_class', 'do_objectID', 'name', 'text']);
 // Set instance frame size and overrides
@@ -73,6 +68,8 @@ function fillInstance(instance, symbol, json, objectID = '') {
     }
   }
 }
+
+const symbols = new Map();
 
 function enhanceJson(json) {
   let enhanced = {};
