@@ -83,7 +83,7 @@ export class Input implements Base {
   componentDidUnload() {}
 
   handleChange(event) {
-    console.log('change', event.target.checked)
+    console.log('change', event.target.checked);
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
     this.checkedValue = event.target.value;
@@ -91,23 +91,23 @@ export class Input implements Base {
   }
 
   handleFocus(event) {
-    console.log('focus', event)
+    console.log('focus', event);
     this.focusEvent.emit(event);
   }
 
   handleBlur(event) {
-    console.log('blur', event)
+    console.log('blur', event);
     this.blurEvent.emit(event);
   }
 
   handleKeyDown(event) {
-    console.log('keyDown', event)
+    console.log('keyDown', event);
     this.keyDownEvent.emit(event);
   }
 
   @Listen('change', { capture: true })
   handleCheckbox(event) {
-  console.log('click', event);
+    console.log('click', event);
   }
 
   render() {
