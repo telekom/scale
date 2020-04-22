@@ -91,7 +91,7 @@ export const styles: JssStyle = {
       justifyContent: 'space-between',
     },
     '&:not($input--disabled)': {
-      '& .input__input': {
+      '& .input__input, & .input__checkbox': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
