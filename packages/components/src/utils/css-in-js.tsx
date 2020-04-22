@@ -47,7 +47,7 @@ export function CssInJs(
   };
 
   return (target: ComponentInterface, propertyKey: string) => {
-    let cssText;
+    let prevStyles;
     const { componentWillLoad } = target;
     if (!componentWillLoad) {
       // tslint:disable-next-line: no-console
@@ -58,13 +58,16 @@ export function CssInJs(
 
     if (componentWillLoad) {
       target.componentWillLoad = function() {
-        cssText = jss
+        // attach the stylesheet to the component instance
+        this[propertyKey] = jss
           .createStyleSheet(withInjectedValues(this), { link: true })
-          .attach();
-        cssText.update(getTheme());
+          .attach()
+          .update(getTheme()) as StyleSheet;
+        // save the current value of the styles property and use it later to compare in componentWillUpdate
+        prevStyles = this.styles;
+
         const willLoadResult =
           componentWillLoad && componentWillLoad.call(this);
-        this[propertyKey] = cssText as StyleSheet;
         return willLoadResult;
       };
     } else {
@@ -82,18 +85,28 @@ export function CssInJs(
 
     if (componentWillUpdate) {
       target.componentWillUpdate = function() {
-        const newRules = withInjectedValues(this);
-        const ruleNames = Object.keys(newRules);
+        try {
+          // compare the styles value with the previously rendered one
+          if (JSON.stringify(this.styles) !== JSON.stringify(prevStyles)) {
+            // detach the previous sheet
+            this[propertyKey].detach();
+            // attach a new sheet with the updated values coming from the styles property
+            this[propertyKey] = jss
+              .createStyleSheet(withInjectedValues(this), { link: true })
+              .attach()
+              .update(getTheme()) as StyleSheet;
+            // update the current value of the styles property and use it for next runs of componentWillUpdate
+            prevStyles = this.styles;
+          }
+        } catch (error) {
+          // tslint:disable-next-line: no-console
+          return console.error(
+            'Something went wrong... CssInJs got invalid value via styles prop'
+          );
+        }
 
-        ruleNames.forEach(ruleName => {
-          cssText.deleteRule(ruleName);
-          cssText.addRule(ruleName, newRules[ruleName]);
-        });
-
-        cssText.update(getTheme());
         const willLoadResult =
           componentWillUpdate && componentWillUpdate.call(this);
-        this[propertyKey] = cssText as StyleSheet;
         return willLoadResult;
       };
     } else {
