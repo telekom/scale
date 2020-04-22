@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 const URL = require('url').URL;
-const DEBUG = true
+const DEBUG = false
 
 const url = 'http://localhost:3334/';
 let urlObj = null;

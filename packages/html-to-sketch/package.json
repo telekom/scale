@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "normalize-css-color": "^1.0.2",
-    "sketch-constants": "^1.1.0"
+    "sketch-constants": "^1.1.0",
+    "uuid": "^3.4.0"
   },
   "main": "build/index"
 }
