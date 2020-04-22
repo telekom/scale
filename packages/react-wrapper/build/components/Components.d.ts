@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { StyleSheet } from 'jss';
 interface AlertProps {
     customClass?: string;
     headline: string;
     icon?: string;
     opened: boolean;
     size?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     timeout?: boolean | number;
     variant?: string;
     [key: string]: any;
@@ -24,7 +23,7 @@ interface ButtonProps {
     iconSize?: number;
     role?: string;
     size?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     target?: string;
     variant?: string;
     [key: string]: any;
@@ -35,14 +34,14 @@ interface CardProps {
     disabled?: boolean;
     href?: string;
     interactive?: boolean;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     target?: string;
     [key: string]: any;
 }
 declare const Card: React.FunctionComponent<CardProps>;
 interface CarouselProps {
     customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     vertical?: boolean;
     [key: string]: any;
 }
@@ -50,7 +49,7 @@ declare const Carousel: React.FunctionComponent<CarouselProps>;
 interface DividerProps {
     customClass?: string;
     size?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     vertical?: boolean;
     [key: string]: any;
 }
@@ -62,7 +61,7 @@ interface IconProps {
     name?: string;
     path: string;
     size?: number;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     viewBox?: string;
     width?: number;
     [key: string]: any;
@@ -81,7 +80,7 @@ interface InputProps {
     required?: boolean;
     size?: string;
     status?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     type?: 'email' | 'hidden' | 'number' | 'password' | 'tel' | 'text' | 'url';
     value?: string;
     variant?: 'animated' | 'static';
@@ -99,7 +98,7 @@ interface LinkProps {
     href: string;
     icon?: string;
     iconSize?: number;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     target?: string;
     underline?: boolean;
     variant?: string;
@@ -110,7 +109,7 @@ interface ModalProps {
     customClass?: string;
     opened?: boolean;
     size?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     variant?: string;
     [key: string]: any;
 }
@@ -120,7 +119,7 @@ interface ProgressBarProps {
     percentage: number;
     showText?: boolean;
     strokeWidth?: number;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     textInside?: boolean;
     variant?: string;
     [key: string]: any;
@@ -132,7 +131,7 @@ interface SliderProps {
     max?: number;
     min?: number;
     step: number;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     value: number;
     [key: string]: any;
 }
@@ -141,7 +140,7 @@ interface SwitchProps {
     active?: boolean;
     customClass?: string;
     disabled?: boolean;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     [key: string]: any;
 }
 declare const Switch: React.FunctionComponent<SwitchProps>;
@@ -151,7 +150,7 @@ interface TagProps {
     dismissable?: boolean;
     href?: string;
     size?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     target?: string;
     variant?: string;
     onClose?: (event?: any) => void;
@@ -160,7 +159,7 @@ interface TagProps {
 declare const Tag: React.FunctionComponent<TagProps>;
 interface TextProps {
     customClass?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     tag?: string;
     variant?: string;
     [key: string]: any;
@@ -175,7 +174,7 @@ interface ToastProps {
     positionRight?: number;
     positionTop?: number;
     size?: string;
-    styles?: StyleSheet<string | number | symbol>;
+    styles?: Record<string, any>;
     time?: number;
     variant?: string;
     [key: string]: any;

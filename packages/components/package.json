@@ -33,7 +33,6 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@rollup/plugin-typescript": "^4.0.0",
     "@stencil/core": "^1.11.3",
     "@types/classnames": "^2.2.8",
     "@types/jest": "24.9.1",
@@ -48,7 +47,7 @@
     "prettier": "^1.18.2",
     "puppeteer": "1.20.0",
     "rollup": "^2.3.2",
-    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0"
   },
