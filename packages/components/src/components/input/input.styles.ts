@@ -17,6 +17,17 @@ const input = {
   },
 };
 
+const checkBox = {
+  height: 16,
+  width: 16,
+  margin: 2,
+};
+
+const checkBoxCheckedIcon = {
+  height: 12,
+  width: 12,
+};
+
 const defaultTransition = 'all 0.2s ease-in-out';
 
 const animated = (size: string) => ({
@@ -141,6 +152,29 @@ export const styles: JssStyle = {
     '& .input__label, & .input__input': {
       opacity: '0.5',
       cursor: 'not-allowed',
+    },
+  },
+  'input--type-checkbox': {
+    display: 'flex',
+    '& input': {
+      WebkitAppearance: 'none',
+      height: checkBox.height,
+      width: checkBox.width,
+      border: '1px solid red',
+      margin: checkBox.margin,
+    },
+  },
+  'input--checked': {
+    '& input': {
+      background: 'red',
+    },
+    '& scale-icon': {
+      height: checkBoxCheckedIcon.height,
+      width: checkBoxCheckedIcon.width,
+      userSelect: 'none',
+      position: 'absolute',
+      left: checkBox.margin + (checkBox.width - checkBoxCheckedIcon.width) / 2,
+      top: checkBox.margin + (checkBox.width - checkBoxCheckedIcon.width) / 2,
     },
   },
 };
