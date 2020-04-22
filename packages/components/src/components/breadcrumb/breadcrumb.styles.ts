@@ -17,7 +17,7 @@ export const styles: JssStyle = {
     },
   },
   separator: {
-    display: 'inline-block',
+    display: 'flex',
     marginLeft: '0.125ch',
   },
   item: {

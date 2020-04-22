@@ -20,7 +20,7 @@ exports[`Breadcrumb should match snapshot 1`] = `
   margin-right: 0.125ch;
 }
 .separator-0-0-2 {
-  display: inline-block;
+  display: flex;
   margin-left: 0.125ch;
 }
 .item-0-0-3 {

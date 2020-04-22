@@ -594,15 +594,21 @@
       <div><img src="http://placehold.it/400x300/99a9bf" /></div>
     </scale-carousel>
 
-    <h3>Breadcrumb</h3>
-    <!-- could also use separator="\" in <scale-breadcrumb> -->
+    <h3>Breadcrumb - default separator</h3>
     <scale-breadcrumb>
-      <!-- <span slot="separator">
-        <scale-icon path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z">
-      </span> -->
-      <a href="/a">The very beginning</a>
-      <a href="/b">Second link</a>
-      <span>Current page</span>
+      <a href="/a">Breadcrumb 1</a>
+      <a href="/b">Breadcrumb 2</a>
+      <span>Breadcrumb 3</span>
+    </scale-breadcrumb>
+
+    <h3>Breadcrumb - custom icon separator</h3>
+    <scale-breadcrumb>
+      <span slot="separator">
+        <scale-icon size="18" path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z">
+      </span>
+      <a href="/a">Breadcrumb 1</a>
+      <a href="/b">Breadcrumb 2</a>
+      <span>Breadcrumb 3</span>
     </scale-breadcrumb>
   </body>
 </html>
