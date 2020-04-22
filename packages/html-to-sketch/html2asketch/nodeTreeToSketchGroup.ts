@@ -28,7 +28,6 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // Collect layers for the node level itself
   const layers = nodeToSketchLayers(node, {...options, layerOpacity: false}) || [];
 
-
   if (node.nodeName !== 'svg') {
     Array.from(node.children)
       .map(getAssignedNodes)
