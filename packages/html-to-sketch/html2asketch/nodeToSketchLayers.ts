@@ -21,6 +21,13 @@ const DEFAULT_VALUES = {
   boxShadow: 'none',
 };
 
+const ALIGNMENTS = {
+  left: 0,
+  right: 1,
+  center: 2,
+  justify: 3
+};
+
 function hasOnlyDefaultStyles(styles: object) {
   return Object.keys(DEFAULT_VALUES).every(key => {
     const defaultValue = DEFAULT_VALUES[key];
@@ -75,6 +82,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     borderTopRightRadius,
     borderBottomLeftRadius,
     borderBottomRightRadius,
+    textAlign,
     fontFamily,
     fontSize,
     lineHeight,
@@ -273,11 +281,15 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     skipSystemFonts: options && options.skipSystemFonts,
   });
 
+  const alignment = ALIGNMENTS[textAlign] || 0;
+
   const textAttributedString = (text: string) => new TextAttributedString({
     text,
     fontFamily,
     fontSize: parseInt(fontSize, 10),
+    skipSystemFonts: options && options.skipSystemFonts,
     color,
+    alignment
   })
 
   const rangeHelper = document.createRange();
