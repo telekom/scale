@@ -83,7 +83,7 @@ export const styles: JssStyle = {
       justifyContent: 'space-between',
     },
     '&:not($input--disabled)': {
-      '& .input__input': {
+      '& .input__input, & .input__checkbox': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
@@ -149,24 +149,28 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input': {
+    '& .input__label, & .input__input, & .input__checkbox': {
       opacity: '0.5',
       cursor: 'not-allowed',
     },
   },
   'input--type-checkbox': {
     display: 'flex',
-    '& input': {
+    '& .input__checkbox': {
       WebkitAppearance: 'none',
       height: checkBox.height,
       width: checkBox.width,
-      border: '1px solid red',
+      border: '1px solid #cecece',
       margin: checkBox.margin,
+      borderRadius: 4,
+    },
+    '& .input__checkbox:active': {
+      background: '#D8D8D8',
     },
   },
   'input--checked': {
-    '& input': {
-      background: 'red',
+    '& .input__checkbox': {
+      background: '#D8D8D8',
     },
     '& scale-icon': {
       height: checkBoxCheckedIcon.height,

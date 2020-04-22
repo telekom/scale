@@ -118,14 +118,18 @@ export class Input implements Base {
               type="checkbox"
               name={this.name}
               id={this.checkboxId}
+              class={classNames('input__checkbox')}
               onChange={event => this.handleChange(event)}
               value={this.value}
               checked={this.checked}
+              disabled={this.disabled}
             />
             {!!this.checked && !!this.icon && (
               <scale-icon path={this.icon}></scale-icon>
             )}
-            <label htmlFor={this.name}>{this.label}</label>
+            <label class="input__label" htmlFor={this.name}>
+              {this.label}
+            </label>
           </div>
         </Host>
       );
