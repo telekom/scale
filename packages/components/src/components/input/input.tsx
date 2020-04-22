@@ -1,4 +1,13 @@
-import { Component, Prop, Event, h, EventEmitter, Host, Listen } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  Event,
+  h,
+  EventEmitter,
+  Host,
+  Listen,
+  State,
+} from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './input.styles';
@@ -27,7 +36,7 @@ export class Input implements Base {
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label variant */
-  @Prop() variant?: 'animated' | 'static' = 'animated';
+  @Prop() variant?: 'animated' | 'static';
   /** (optional) Input label */
   @Prop() label?: string = '';
   /** (optional) Input size */
@@ -50,6 +59,10 @@ export class Input implements Base {
   @Prop() counter?: boolean;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
+  /** (optional) Input checkbox id */
+  @Prop() checkboxId?: string;
+  /** (optional) Input checkbox checked icon */
+  @Prop() icon?: string;
   /** (optional) Input text event changed */
   @Event() changeEvent: EventEmitter<any>;
   @Event() focusEvent: EventEmitter<any>;
@@ -61,51 +74,61 @@ export class Input implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Input', styles) stylesheet: StyleSheet;
 
+  /** (optional) Input checkbox checked */
+  @State() checked?: boolean;
+
+  componentWillLoad() {}
   componentWillUpdate() {}
   componentDidUnload() {}
 
   handleChange(event) {
-    console.log('change', event.target.checked)
+    console.log('change', event.target.checked);
     this.value = event.target ? event.target.value : this.value;
+    this.checked = event.target.checked;
     this.changeEvent.emit(event);
   }
 
   handleFocus(event) {
-    console.log('focus', event)
+    console.log('focus', event);
     this.focusEvent.emit(event);
   }
 
   handleBlur(event) {
-    console.log('blur', event)
+    console.log('blur', event);
     this.blurEvent.emit(event);
   }
 
   handleKeyDown(event) {
-    console.log('keyDown', event)
+    console.log('keyDown', event);
     this.keyDownEvent.emit(event);
   }
 
   @Listen('change', { capture: true })
   handleCheckbox(event) {
-  console.log('click', event);
+    console.log('click', event);
   }
 
   render() {
     if (this.type === 'checkbox') {
       return (
-        <div>
-          <input 
-            type="checkbox" 
-            id="scales" 
-            onChange={event => this.handleChange(event)}
-            onFocus={event => this.handleFocus(event)}
-            onBlur={event => this.handleBlur(event)}
-            onKeyDown={event => this.handleKeyDown(event)}
-            value="off"
-          />
-          <label htmlFor="scales">Scales</label>
-        </div>
-      )
+        <Host>
+          <style>{this.stylesheet.toString()}</style>
+          <div class={this.getCssClassMap()}>
+            <input
+              type="checkbox"
+              name={this.name}
+              id={this.checkboxId}
+              onChange={event => this.handleChange(event)}
+              value={this.value}
+              checked={this.checked}
+            />
+            {!!this.checked && !!this.icon && (
+              <scale-icon path={this.icon}></scale-icon>
+            )}
+            <label htmlFor={this.name}>{this.label}</label>
+          </div>
+        </Host>
+      );
     }
 
     return (
@@ -160,6 +183,7 @@ export class Input implements Base {
       classes.input,
       this.customClass && this.customClass,
       this.type && classes[`input--type-${this.type}`],
+      this.checked && classes[`input--checked`],
       this.size && classes[`input--size-${this.size}`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
