@@ -45,7 +45,7 @@ jobs:
           at: ~/repo
       - run: |
           cd packages/components
-          yarn build:prod --prerender
+          yarn build:prod
       - run: |
           cd packages/scale-react
           yarn build
