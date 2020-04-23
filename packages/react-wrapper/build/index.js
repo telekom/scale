@@ -80,6 +80,7 @@ var WebComponentWrapper = function (props) {
 };
 
 var Alert = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-alert' }, props))); };
+var Breadcrumb = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-breadcrumb' }, props))); };
 var Button = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-button' }, props))); };
 var Card = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-card' }, props))); };
 var Carousel = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-carousel' }, props))); };
@@ -101,6 +102,7 @@ var Text = function (props) { return (React.createElement(WebComponentWrapper, _
 var Toast = function (props) { return (React.createElement(WebComponentWrapper, __assign({ component: 'scale-toast' }, props))); };
 
 exports.Alert = Alert;
+exports.Breadcrumb = Breadcrumb;
 exports.Button = Button;
 exports.Card = Card;
 exports.Carousel = Carousel;

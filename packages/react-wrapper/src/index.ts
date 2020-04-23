@@ -1,5 +1,6 @@
 import {
   Alert,
+  Breadcrumb,
   Button,
   Card,
   Carousel,
@@ -18,6 +19,7 @@ import {
 
 export {
   Alert,
+  Breadcrumb,
   Button,
   Card,
   Carousel,

@@ -73,6 +73,7 @@ var WebComponentWrapper = function (props) {
 };
 
 var Alert = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-alert' }, props))); };
+var Breadcrumb = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-breadcrumb' }, props))); };
 var Button = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-button' }, props))); };
 var Card = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-card' }, props))); };
 var Carousel = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-carousel' }, props))); };
@@ -93,5 +94,5 @@ var Tag = function (props) { return (createElement(WebComponentWrapper, __assign
 var Text = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-text' }, props))); };
 var Toast = function (props) { return (createElement(WebComponentWrapper, __assign({ component: 'scale-toast' }, props))); };
 
-export { Alert, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Breadcrumb, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
 //# sourceMappingURL=index.es.js.map

@@ -18,6 +18,17 @@ interface AlertProps {
 const Alert: React.FunctionComponent<AlertProps> = props => (
   <WebComponentWrapper component='scale-alert' {...props} />
 )
+interface BreadcrumbProps {
+  // Web-component props
+  separator?: string
+  styles?: Record<string, any>
+  // Allow custom props not yet specified in the types e.g. events onClick etc.
+  // TODO: Find a possibility to only allow relevant types e.g. Button = onClick, onFocus etc.
+  [key: string]: any
+}
+const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = props => (
+  <WebComponentWrapper component='scale-breadcrumb' {...props} />
+)
 interface ButtonProps {
   // Web-component props
   ariaLabel?: string
@@ -277,6 +288,7 @@ const Toast: React.FunctionComponent<ToastProps> = props => (
 
 export {
   Alert,
+  Breadcrumb,
   Button,
   Card,
   Carousel,

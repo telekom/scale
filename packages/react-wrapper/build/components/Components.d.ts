@@ -11,6 +11,12 @@ interface AlertProps {
     [key: string]: any;
 }
 declare const Alert: React.FunctionComponent<AlertProps>;
+interface BreadcrumbProps {
+    separator?: string;
+    styles?: Record<string, any>;
+    [key: string]: any;
+}
+declare const Breadcrumb: React.FunctionComponent<BreadcrumbProps>;
 interface ButtonProps {
     ariaLabel?: string;
     customClass?: string;
@@ -180,4 +186,4 @@ interface ToastProps {
     [key: string]: any;
 }
 declare const Toast: React.FunctionComponent<ToastProps>;
-export { Alert, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
+export { Alert, Breadcrumb, Button, Card, Carousel, Divider, Icon, Input, Link, Modal, ProgressBar, Slider, Switch, Tag, Text, Toast };
