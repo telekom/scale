@@ -6,7 +6,7 @@ import { environment } from './environments/environment';
 
 import { defineCustomElements } from '@scaleds/components/loader';
 
-const { useTheme } = require('@scaleds/components/dist/theme')
+import { useTheme } from '@scaleds/components/dist/theme';
 
 useTheme({
   shape: {

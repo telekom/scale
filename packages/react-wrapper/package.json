@@ -6,6 +6,7 @@
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "prebuild": "yarn generate",
     "build": "rollup -c",

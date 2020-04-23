@@ -6,7 +6,7 @@ import { defineCustomElements, JSX as EnhancedJSX } from '@scaleds/components/lo
 import App from './App';
 import './index.css';
 
-const { useTheme } = require('@scaleds/components/dist/theme')
+import { useTheme } from '@scaleds/components/dist/theme';
 
 useTheme({
   shape: {

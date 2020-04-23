@@ -9,13 +9,13 @@ applyPolyfills().then(() => {
   defineCustomElements(window);
 });
 
-const scale = require('@scaleds/components/dist/theme.esm.js')
+import { useTheme } from '@scaleds/components/dist/theme.esm.js';
 
-scale.useTheme({
+useTheme({
   shape: {
     borderRadius: 24
   }
-})
+});
 
 new Vue({
   render: h => h(App),

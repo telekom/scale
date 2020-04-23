@@ -79,7 +79,6 @@ const componentsList = components => {
 
 const componentsTemplate = components => `
 import * as React from 'react'
-import { StyleSheet } from 'jss'
 import WebComponentWrapper from './Wrapper'
 
 ${componentsMarkup(components)}
@@ -113,7 +112,7 @@ const convertToReact = components => {
           name,
           values,
           optional,
-          type
+          type: name === 'styles' ? `Record<string, any>` : type
         })) || [],
       events:
         component.events.map(({ event }) => ({
