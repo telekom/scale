@@ -28,8 +28,33 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // Collect layers for the node level itself
   const layers = nodeToSketchLayers(node, {...options, layerOpacity: false}) || [];
 
+
   if (node.nodeName !== 'svg') {
-    Array.from(node.children)
+    const processChild = (childNode: HTMLElement) => {
+      if (childNode.shadowRoot) {
+        // Get parent shadow root element
+        const root = nodeTreeToSketchGroup(childNode, options)
+        // Remove slotted content as it is already assigned
+        root._layers = []
+        // Process children
+        const children = Array.from(childNode.shadowRoot.children)
+          .filter(isNodeVisible)
+          .map(nodeTreeToSketchGroup)
+        // Align child and root positioning
+        children.forEach(layer => {
+          root._width = layer._width
+          root._height = layer._height
+          layer._x = 0
+          layer._y = 0
+          root._layers.push(layer)
+        });
+        layers.push(root)
+      } else {
+        layers.push(nodeTreeToSketchGroup(childNode, options));
+      }
+    };
+    const children = Array.from(node.children);
+    children
       .map(getAssignedNodes)
       .filter(isNodeVisible)
       // sort the children by computed z-index so that nodes with lower z-indexes are added
@@ -41,29 +66,11 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
         const zIndexB: number = isNaN(Number(computedB)) ? 0 : +computedB
         return zIndexA - zIndexB;
       })
-      .forEach((childNode: HTMLElement) => {
-        if (childNode.shadowRoot) {
-          // Get parent shadow root element
-          const root = nodeTreeToSketchGroup(childNode, options)
-          // Remove slotted content as it is already assigned
-          root._layers = []
-          // Process children
-          const children = Array.from(childNode.shadowRoot.children)
-            .filter(isNodeVisible)
-            .map(nodeTreeToSketchGroup)
-          // Align child and root positioning
-          children.forEach(layer => {
-            root._width = layer._width
-            root._height = layer._height
-            layer._x = 0
-            layer._y = 0
-            root._layers.push(layer)
-          });
-          layers.push(root)
-        } else {
-          layers.push(nodeTreeToSketchGroup(childNode, options));
-        }
-      });
+      .forEach(processChild);
+    // Process the added children. This is used for range input -webkit-slider-thumb and -webkit-slider-runnable-track.
+    for (let i = children.length, l = node.children.length; i < l; i++) {
+      processChild(node.children[i] as HTMLElement);
+    }
   }
 
   // Now build a group for all these children
