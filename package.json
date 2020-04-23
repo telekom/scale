@@ -9,7 +9,7 @@
         "packages/html-to-sketch",
         "packages/generator-sketch",
         "packages/docs",
-        "packages/react-wrapper"
+        "packages/scale-react"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",

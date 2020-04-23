@@ -1,69 +1,38 @@
 {
-  "name": "@scaleds/react-wrapper",
-  "version": "0.0.15",
-  "author": "@eeegor <egor.kirpichev@telekom.de>",
-  "license": "MIT",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "jsnext:main": "build/index.es.js",
+  "name": "@scaleds/scale-react",
+  "sideEffects": false,
+  "version": "0.0.16",
+  "private": true,
+  "description": "React proxy for @scaleds/components",
   "scripts": {
-    "prebuild": "yarn generate",
-    "build": "rollup -c",
-    "lint": "standard",
-    "format": "prettier-standard --format",
-    "test": "jest --coverage --passWithNoTests",
-    "generate": "node ./generator.js && yarn format"
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf dist",
+    "compile": "yarn tsc",
+    "tsc": "tsc -p ."
   },
-  "keywords": [],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@types/jest": "^24.0.24",
-    "@types/lodash": "^4.14.149",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6",
-    "jest": "^24.9.0",
-    "jss": "^10.0.4",
-    "lodash": "^4.17.15",
-    "prettier-standard": "^16.1.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "rollup": "^1.27.13",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-typescript2": "^0.25.3",
-    "standard": "^14.3.1",
-    "standard-prettier": "^1.0.1",
-    "ts-jest": "^24.2.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.3.4000"
+  },
+  "dependencies": {
+    "@types/react-dom": "^16.9.6",
+    "@types/vfile-message": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^16",
-    "react-dom": "^16"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "jsdom",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
     "testPathIgnorePatterns": [
-      "build/"
-    ]
-  },
-  "standard": {
-    "ignore": [
-      "node_modules/",
-      "build/"
-    ],
-    "globals": [
-      "describe",
-      "it",
-      "test",
-      "expect",
-      "afterAll",
-      "jest"
+      "node_modules",
+      "dist"
     ]
   }
 }
