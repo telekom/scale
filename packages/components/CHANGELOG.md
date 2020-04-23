@@ -3,20 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.0.17](https://github.com/telekom/scale/compare/v0.0.16...v0.0.17) (2020-04-17)
-
-**Note:** Version bump only for package @scaleds/components
-
-
-
-
-
-## [0.0.16](https://github.com/telekom/scale/compare/v0.0.15...v0.0.16) (2020-04-08)
+# [0.1.0](https://github.com/telekom/scale/compare/v0.0.12...v0.1.0) (2020-04-23)
 
 
 ### Bug Fixes
 
 * update build files ([#175](https://github.com/telekom/scale/issues/175)) ([1767c8b](https://github.com/telekom/scale/commit/1767c8bf98927d00afdce177f0e367d79c456e77))
+
+
+### Features
+
+* add Breadcrumb component ([#182](https://github.com/telekom/scale/issues/182)) ([fc339dd](https://github.com/telekom/scale/commit/fc339dd9513b5bd1458002e2cc6ea57b8021ca95))
+* adjust circleci config to mirror package name changes. Also corrects the readme file to reflect the right package name. ([3eae56b](https://github.com/telekom/scale/commit/3eae56bc37ec523f459e6550c82b81f2592df63e))
+* better types ([#185](https://github.com/telekom/scale/issues/185)) ([4a6ca9d](https://github.com/telekom/scale/commit/4a6ca9dc4e31289b55f96ecc37568e5c97c537c6))
+* finishes integration of the react proxy output plugin. Updates the react boiler plate. ([c33e451](https://github.com/telekom/scale/commit/c33e4514fb840cc2e19e53dee1b17c30e27320ac))
+
+
+### Performance Improvements
+
+* update old sheet with new component rules ([#184](https://github.com/telekom/scale/issues/184)) ([a98dac2](https://github.com/telekom/scale/commit/a98dac2047d560392fc055fddbf6535a422633b7))
 
 
 

@@ -21,6 +21,13 @@ const DEFAULT_VALUES = {
   boxShadow: 'none',
 };
 
+const ALIGNMENTS = {
+  left: 0,
+  right: 1,
+  center: 2,
+  justify: 3
+};
+
 function hasOnlyDefaultStyles(styles: object) {
   return Object.keys(DEFAULT_VALUES).every(key => {
     const defaultValue = DEFAULT_VALUES[key];
@@ -47,12 +54,116 @@ function isSVGDescendant(node: HTMLElement) {
   return (node instanceof SVGElement) && node.matches('svg *');
 }
 
+const PSEUDO_ELEMENTS = [':after', ':before'];
+
+function gatherCSSRules(rules: CSSStyleRule[], styleSheet: StyleSheet | CSSMediaRule): CSSStyleRule[] {
+  if (styleSheet instanceof CSSStyleSheet && !styleSheet.disabled) {
+    Array.from(styleSheet.cssRules).reverse().forEach(rule => {
+      if (rule instanceof CSSStyleRule && /::?-webkit-slider-/.test(rule.selectorText)) {
+        rules.push(rule);
+      } else if (rule instanceof CSSMediaRule && window.matchMedia(rule.media.mediaText).matches) {
+        rules = gatherCSSRules([], rule).concat(rules);
+      } else if (rule instanceof CSSImportRule) {
+        rules = gatherCSSRules([], rule.styleSheet).concat(rules);
+      }
+    });
+  }
+  return rules;
+}
+
+let CSSRules: CSSStyleRule[] | undefined = undefined;
+
+function findSliderThumbCSSRules(el: Element): CSSStyleRule[] {
+  if (!CSSRules) return [];
+  return CSSRules.filter(r => el.matches(r.selectorText.replace(/::?(-webkit-slider-thumb)/g,'')) && !el.matches(r.selectorText));
+}
+
+function findSliderTrackCSSRules(el: Element): CSSStyleRule[] {
+  if (!CSSRules) return [];
+  return CSSRules.filter(r => el.matches(r.selectorText.replace(/::?(-webkit-slider-runnable-track)/g,'')) && !el.matches(r.selectorText));
+}
+
+function resolveCSSContentString(node: HTMLElement, content: string): string {
+  node.style;
+  return content.replace(/"/g, '');
+}
+
+function applyStyle(element: HTMLElement, style: CSSStyleDeclaration) {
+  for (let k in style) {
+    try { element.style[k] = style[k] } catch(e) {}
+  }
+}
+
 export default function nodeToSketchLayers(node: HTMLElement, options: any) {
+  if (CSSRules === undefined) {
+    CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
+  }
   const layers: any[] = [];
   const bcr = node.getBoundingClientRect();
   const {left, top} = bcr;
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;
+
+  PSEUDO_ELEMENTS.forEach(pseudo => {
+    const pseudoStyle = getComputedStyle(node, pseudo);
+    if (pseudoStyle.content !== 'normal' && pseudoStyle.content !== 'none') {
+      const element = document.createElement('span');
+      applyStyle(element, pseudoStyle);
+      element.textContent = resolveCSSContentString(node, pseudoStyle.content);
+      if (pseudo === ':before') node.insertBefore(element, node.firstChild);
+      if (pseudo === ':after') node.appendChild(element);
+    }
+  });
+
+  const sliderThumbCSSRules = findSliderThumbCSSRules(node);
+  if (sliderThumbCSSRules.length > 0) {
+    const thumb = document.createElement('div');
+    const rules = [];
+    let rule: false | CSSStyleDeclaration = sliderThumbCSSRules[0].style;
+    while (rule) {
+      rules.unshift(rule);
+      rule = rule.parentRule instanceof CSSStyleRule && rule.parentRule.style !== rule && rule.parentRule.style;
+    }
+    rules.forEach(rule => applyStyle(thumb, rule));
+    thumb.style.boxSizing = 'border-box';
+    thumb.style.display = 'block';
+    thumb.style.position = 'absolute';
+    if (node.parentElement) {
+      if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
+        node.parentElement.style.position = 'relative';
+      }
+      thumb.style.top = node.offsetTop - ((-node.offsetHeight + parseFloat(thumb.style.height)) / 2) + 'px';
+      thumb.style.left = node.offsetLeft + 'px';
+      node.parentElement.appendChild(thumb);
+    }
+  }
+
+  const sliderTrackCSSRules = findSliderTrackCSSRules(node);
+  if (sliderTrackCSSRules.length > 0) {
+    const track = document.createElement('div');
+    const rules = [];
+    let rule: false | CSSStyleDeclaration = sliderTrackCSSRules[0].style;
+    while (rule) {
+      rules.unshift(rule);
+      rule = rule.parentRule instanceof CSSStyleRule && rule.parentRule.style !== rule && rule.parentRule.style;
+    }
+    rules.forEach(rule => applyStyle(track, rule));
+    track.style.boxSizing = 'border-box';
+    track.style.display = 'block';
+    track.style.position = 'absolute';
+    track.style.minWidth = '0px';
+    track.style.alignSelf = 'center';
+    track.style.flex = '1 1 0%';
+    if (node.parentElement) {
+      if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
+        node.parentElement.style.position = 'relative';
+      }
+      track.style.top = node.offsetTop - ((-node.offsetHeight + parseFloat(track.style.height)) / 2) + 'px';
+      track.style.left = node.offsetLeft + 'px';
+      node.parentElement.appendChild(track);
+    }
+  }
+
 
   const styles = getComputedStyle(node);
   const {
@@ -75,6 +186,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     borderTopRightRadius,
     borderBottomLeftRadius,
     borderBottomRightRadius,
+    textAlign,
     fontFamily,
     fontSize,
     lineHeight,
@@ -273,11 +385,15 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     skipSystemFonts: options && options.skipSystemFonts,
   });
 
+  const alignment = ALIGNMENTS[textAlign] || 0;
+
   const textAttributedString = (text: string) => new TextAttributedString({
     text,
     fontFamily,
     fontSize: parseInt(fontSize, 10),
+    skipSystemFonts: options && options.skipSystemFonts,
     color,
+    alignment
   })
 
   const rangeHelper = document.createRange();

@@ -20,27 +20,40 @@ jobs:
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
-      # Run Tests
-      - run:
-          name: Test Components Package
-          command: |
-            cd packages/components
-            yarn test
-      - run:
-          name: Test React Wrapper Package
-          command: |
-            cd packages/react-wrapper
-            yarn test
       # Save Yarn Cache
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+      # Run Tests
+      - run:
+          name: Test Components Package
+          command: |
+            cd packages/components
+            yarn test
       # Persist data
       - persist_to_workspace:
           root: ~/repo
-          paths: .
+          paths:
+            - .
+  build:
+    <<: *defaults
+    steps:
+      # Attach persisted data to job
+      - attach_workspace:
+          at: ~/repo
+      - run: |
+          cd packages/components
+          yarn build:prod --prerender
+      - run: |
+          cd packages/scale-react
+          yarn build
+      # Persist data
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
   deploy:
     <<: *defaults
     steps:
@@ -60,19 +73,33 @@ jobs:
       - run:
           name: Publish React Wrapper Package to NPM
           command: |
-            cd packages/react-wrapper
+            cd packages/scale-react
             yarn publish --access public
 
 workflows:
-  version: 2.1
-  test-deploy:
+  test:
     jobs:
-      - test
-      - deploy:
+      - test:
+          filters:
+            branches:
+              only:
+                - development
+                - master
+  test-build-deploy:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only: release
+      - build:
           requires:
             - test
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              only: master
+              only: release
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: release

@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/components",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "Scale Components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -34,7 +34,8 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-typescript": "^4.0.0",
-    "@stencil/core": "^1.11.3",
+    "@stencil/core": "1.12.0",
+    "@stencil/react-output-target": "^0.0.6",
     "@types/classnames": "^2.2.8",
     "@types/jest": "24.9.1",
     "@types/lodash": "^4.14.149",
@@ -48,6 +49,7 @@
     "prettier": "^1.18.2",
     "puppeteer": "1.20.0",
     "rollup": "^2.3.2",
+    "rollup-plugin-typescript2": "^0.27.0",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0"
   },

@@ -4,14 +4,15 @@
     "packages/components",
     "packages/html-to-sketch",
     "packages/generator-sketch",
+    "packages/scale-react",
     "packages/docs"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "0.0.17",
+  "version": "0.1.0",
   "command": {
     "version": {
-      "allowBranch": "master"
+      "allowBranch": "development"
     }
   }
 }

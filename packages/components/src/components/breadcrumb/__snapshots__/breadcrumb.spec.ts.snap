@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb should match snapshot 1`] = `
+<scale-breadcrumb>
+  <mock:shadow-root>
+    <style>
+      .breadcrumb-0-0-1 {
+  margin-left: -0.4em;
+}
+.breadcrumb-0-0-1 ol {
+  display: flex;
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.breadcrumb-0-0-1 li {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.125ch;
+}
+.separator-0-0-2 {
+  display: flex;
+  margin-left: 0.125ch;
+}
+.item-0-0-3 {
+  padding: 0.4em;
+}
+.link-0-0-4 {
+  border: 2px solid transparent;
+  padding: 0.4em;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000;
+}
+.link-0-0-4:hover {
+  color: #F90984;
+}
+.link-0-0-4:active {
+  color: #CB0068;
+}
+.link-0-0-4:focus {
+  outline: none;
+  border-color: #009DE0;
+}
+.current-0-0-5 {
+  font-weight: 700;
+}
+    </style>
+    <nav aria-label="Breadcrumb" class="breadcrumb-0-0-1">
+      <ol></ol>
+    </nav>
+  </mock:shadow-root>
+</scale-breadcrumb>
+`;

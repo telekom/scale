@@ -52,6 +52,7 @@ export default function Template({
   }).Compiler
 
   const { markdownRemark } = data
+
   const { fields, frontmatter, htmlAst } = markdownRemark
 
   const defaultProps = (componentDocs) => {
@@ -64,7 +65,7 @@ export default function Template({
     return obj;
   }
 
-  // Determine page title based on section
+    // Determine page title based on section
   // If components, we use filename to mimic web component style
   // Otherwise it's probably a page, so display the nicer frontmatter title
   let pageTitle
@@ -95,12 +96,11 @@ export default function Template({
 
   useEffect(() => {
     if (ref && ref.current ) {
-      ref.current.styles = componentState.styles
+      ref.current.styles = componentState.styles;
     }
   }, [componentState])
 
   const {styles, ...componentProps} = componentState;
-
   return (
     <DocsLayout location={location}>
       <SEO title={pageTitle} />
@@ -108,10 +108,10 @@ export default function Template({
       {fields.section && fields.section === "components" && (
         <div className="playground">
           <h2>Playground</h2>
-            <div className="playground__preview">
+            <div className="playground__preview fade-in" >
               <div>
                 {ComponentName.startsWith('scale-') && (
-                  <ComponentName ref={ref} {...componentProps}>{componentState.children || 'Label'}</ComponentName>
+                  <ComponentName ref={ref} {...componentProps} >{componentState.children || 'Label'}</ComponentName>
                 )}
               </div>
             </div>

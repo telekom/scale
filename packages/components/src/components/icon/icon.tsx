@@ -53,9 +53,9 @@ path {
         <svg
           {...(this.focusable ? { tabindex: 0 } : {})}
           class={this.getCssClassMap()}
-          width={this.size || this.height}
-          height={this.size || this.width}
-          viewBox={this.viewBox || `0 0 24 24`}
+          width={this.size || this.width}
+          height={this.size || this.height}
+          viewBox={`0 0 26 26`}
         >
           <path d={this.path} stroke="transparent" fill="transparent" />
         </svg>

@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/html-to-sketch",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "HTML to Sketch",
   "keywords": [
     "sketch",
@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "normalize-css-color": "^1.0.2",
-    "sketch-constants": "^1.1.0"
+    "sketch-constants": "^1.1.0",
+    "uuid": "^3.4.0"
   },
   "main": "build/index"
 }
