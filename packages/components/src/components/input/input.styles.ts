@@ -66,7 +66,6 @@ export const styles: JssStyle = {
       transition: defaultTransition,
     },
     '& .input__checkbox': {
-      WebkitAppearance: 'none',
       height: checkBox.height,
       width: checkBox.width,
       border: '1px solid #cecece',
@@ -170,6 +169,19 @@ export const styles: JssStyle = {
   },
   'input--type-checkbox': {
     display: 'flex',
+    '& input': {
+      // define a default checkbox
+      top: 0,
+      left: 0,
+      width: checkBox.width,
+      cursor: 'inherit',
+      height: checkBox.height,
+      margin: 0,
+      opacity: 0,
+      padding: 0,
+      zIndex: 1,
+      position: 'absolute',
+    },
   },
   'input--checked': {
     '& .input__checkbox': {

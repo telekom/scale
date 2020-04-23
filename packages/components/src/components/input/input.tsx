@@ -118,12 +118,12 @@ export class Input implements Base {
               type="checkbox"
               name={this.name}
               id={this.checkboxId}
-              class={classNames('input__checkbox')}
               onChange={event => this.handleChange(event)}
               value={this.value}
               checked={this.checked}
               disabled={this.disabled}
             />
+            <span class={classNames('input__checkbox')}></span>
             {!!this.checked && !!this.icon && (
               <scale-icon path={this.icon}></scale-icon>
             )}
