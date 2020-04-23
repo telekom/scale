@@ -65,6 +65,15 @@ export const styles: JssStyle = {
       height: input.large.height,
       transition: defaultTransition,
     },
+    '& .input__checkbox': {
+      WebkitAppearance: 'none',
+      height: checkBox.height,
+      width: checkBox.width,
+      border: '1px solid #cecece',
+      margin: checkBox.margin,
+      borderRadius: 4,
+      background: '#D8D8D8',
+    },
     '& .input__counter': {
       display: 'flex',
       justifyContent: 'flex-end',
@@ -86,6 +95,11 @@ export const styles: JssStyle = {
       '& .input__input, & .input__checkbox': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
+        },
+      },
+      '& .input__checkbox': {
+        '&:hover, &:active': {
+          backgroundColor: '#ffffff',
         },
       },
     },
@@ -115,7 +129,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--status-error': {
-    '&.animated .input__label': {
+    '&.animated .input__label, & .input__checkbox + .input__label': {
       color: ({ colors }) => `${colors.error.default} !important`,
     },
     '& .input__input:focus + .input__label': {
@@ -156,21 +170,16 @@ export const styles: JssStyle = {
   },
   'input--type-checkbox': {
     display: 'flex',
-    '& .input__checkbox': {
-      WebkitAppearance: 'none',
-      height: checkBox.height,
-      width: checkBox.width,
-      border: '1px solid #cecece',
-      margin: checkBox.margin,
-      borderRadius: 4,
-    },
-    '& .input__checkbox:active': {
-      background: '#D8D8D8',
-    },
   },
   'input--checked': {
     '& .input__checkbox': {
-      background: '#D8D8D8',
+      backgroundColor: '#ffffff',
+      borderColor: '#ececea',
+    },
+    '&:not($input--disabled)': {
+      '& .input__checkbox:hover, & .input__checkbox:active': {
+        borderColor: '#b3b3ae',
+      },
     },
     '& scale-icon': {
       height: checkBoxCheckedIcon.height,

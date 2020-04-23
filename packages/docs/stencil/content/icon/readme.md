@@ -48,6 +48,7 @@
 ### Used by
 
  - [scale-button](../button)
+ - [scale-input](../input)
  - [scale-link](../link)
  - [scale-list-item](../list)
  - [scale-tag](../tag)
@@ -56,6 +57,7 @@
 ```mermaid
 graph TD;
   scale-button --> scale-icon
+  scale-input --> scale-icon
   scale-link --> scale-icon
   scale-list-item --> scale-icon
   scale-tag --> scale-icon
