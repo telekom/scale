@@ -25,3 +25,7 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+
+build/theme/components
+build/theme/utils
+build/theme/index.d.ts
