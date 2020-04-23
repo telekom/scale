@@ -84,7 +84,7 @@ Using current theme values
 
 ```tsx
 import React from 'react';
-import { Button } from '@scaleds/react-wrapper';
+import { ScaleButton } from '@scaleds/scale-react';
 
 const { colors } = require('@scaleds/components/dist/theme').getTheme()
 
@@ -93,7 +93,7 @@ const App: React.FC = () => (
     <h3 style={{ color: colors.primary.default }}>
       Button
     </h3>
-    <Button variant="primary">Click!</Button>
+    <ScaleButton variant="primary">Click!</ScaleButton>
   </div>
 );
 ```
