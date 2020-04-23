@@ -1,7 +1,7 @@
 {
   "name": "@scaleds/scale-react",
   "sideEffects": false,
-  "version": "0.0.18",
+  "version": "0.1.0",
   "private": true,
   "description": "React proxy for @scaleds/components",
   "scripts": {
