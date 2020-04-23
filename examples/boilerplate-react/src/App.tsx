@@ -1,18 +1,18 @@
 import React from 'react';
-import { Button, Card, Link, Tag } from '@scaleds/react-wrapper';
+import { ScaleButton, ScaleCard, ScaleLink, ScaleTag } from '@scaleds/scale-react';
 import './App.css';
 
 const App: React.FC = () => (
   <div className="App">
     <h1>React App</h1>
     <h3>Alert</h3>
-      <Link href="http://example.com" target="_blank" variant="success">Success</Link>
+      <ScaleLink href="http://example.com" target="_blank" variant="success">Success</ScaleLink>
     <h3>Button</h3>
-      <Button variant="primary">Click!</Button>
+      <ScaleButton variant="primary">Click!</ScaleButton>
     <h3>Card</h3>
-      <Card>A title</Card>
+      <ScaleCard>A title</ScaleCard>
     <h3>Tag</h3>
-      <Tag dismissable size="small" onClose={(event: any) => console.log(event)}>A title</Tag>
+      <ScaleTag dismissable size="small" onClose={(event: any) => console.log(event)}>A title</ScaleTag>
   </div>
 );
 

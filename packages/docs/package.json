@@ -20,7 +20,8 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
-    "rehype-react": "^4.0.1"
+    "rehype-react": "^4.0.1",
+    "vfile-message": "^2.0.4"
   },
   "devDependencies": {
     "nodemon": "^1.19.4",

@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Test React Wrapper Package
           command: |
-            cd packages/react-wrapper
+            cd packages/scale-react
             yarn test
       # Persist data
       - persist_to_workspace:
@@ -50,9 +50,9 @@ jobs:
           at: ~/repo
       - run: |
           cd packages/components
-          yarn build:prod
+          yarn build:prod --prerender
       - run: |
-          cd packages/react-wrapper
+          cd packages/scale-react
           yarn build
       # Persist data
       - persist_to_workspace:
@@ -78,11 +78,10 @@ jobs:
       - run:
           name: Publish React Wrapper Package to NPM
           command: |
-            cd packages/react-wrapper
+            cd packages/scale-react
             yarn publish --access public
 
 workflows:
-  version: 2.1
   test:
     jobs:
       - test:
