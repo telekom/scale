@@ -32,11 +32,6 @@ jobs:
           command: |
             cd packages/components
             yarn test
-      - run:
-          name: Test React Wrapper Package
-          command: |
-            cd packages/scale-react
-            yarn test
       # Persist data
       - persist_to_workspace:
           root: ~/repo
@@ -94,23 +89,17 @@ workflows:
     jobs:
       - test:
           filters:
-            tags:
-              only: /^release-.*/
             branches:
-              ignore: /.*/
+              only: release
       - build:
           requires:
             - test
           filters:
-            tags:
-              only: /^release-.*/
             branches:
-              ignore: /.*/
+              only: release
       - deploy:
           requires:
             - build
           filters:
-            tags:
-              only: /^release-.*/
             branches:
-              ignore: /.*/
+              only: release
