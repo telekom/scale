@@ -45,7 +45,7 @@ jobs:
           at: ~/repo
       - run: |
           cd packages/components
-          yarn build:prod --prerender
+          yarn build:prod
       - run: |
           cd packages/scale-react
           yarn build
@@ -71,7 +71,7 @@ jobs:
             cd packages/components
             yarn publish --access public
       - run:
-          name: Publish React Wrapper Package to NPM
+          name: Publish Scale React Package to NPM
           command: |
             cd packages/scale-react
             yarn publish --access public
