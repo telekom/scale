@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/telekom/scale/compare/v0.1.2...v0.1.3) (2020-04-24)
+
+
+### Bug Fixes
+
+* updates the new-version script inside the package.json file ([3a40df4](https://github.com/telekom/scale/commit/3a40df48192c2edeb40c99a64d6e5681987f7b4f))
+
+
+
+
+
 ## [0.1.1](https://github.com/telekom/scale/compare/v0.1.0...v0.1.1) (2020-04-24)
 
 

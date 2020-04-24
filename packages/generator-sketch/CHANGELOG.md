@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/telekom/scale/compare/v0.1.2...v0.1.3) (2020-04-24)
+
+**Note:** Version bump only for package @scaleds/generator-sketch
+
+
+
+
+
 # [0.1.0](https://github.com/telekom/scale/compare/v0.0.12...v0.1.0) (2020-04-23)
 
 **Note:** Version bump only for package @scaleds/generator-sketch
