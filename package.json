@@ -18,7 +18,8 @@
         "watch:components": "yarn workspace @scaleds/components start",
         "bootstrap": "lerna bootstrap",
         "test": "lerna run test --scope @scaleds/components",
-        "new-version": "lerna version --conventional-commits --force-publish --no-push --yes"
+        "new-version": "lerna version --conventional-commits --no-push",
+        "force-version": "lerna version --conventional-commits --force-publish --no-push"
     },
     "devDependencies": {
         "lerna": "^3.20.2",
