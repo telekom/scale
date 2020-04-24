@@ -2,7 +2,6 @@
   "name": "@scaleds/scale-react",
   "sideEffects": false,
   "version": "0.1.0",
-  "private": true,
   "description": "React proxy for @scaleds/components",
   "scripts": {
     "build": "yarn clean && yarn compile",
