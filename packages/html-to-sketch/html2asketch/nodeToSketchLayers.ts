@@ -115,29 +115,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     }
   });
 
-  const sliderThumbCSSRules = findSliderThumbCSSRules(node);
-  if (sliderThumbCSSRules.length > 0) {
-    const thumb = document.createElement('div');
-    const rules = [];
-    let rule: false | CSSStyleDeclaration = sliderThumbCSSRules[0].style;
-    while (rule) {
-      rules.unshift(rule);
-      rule = rule.parentRule instanceof CSSStyleRule && rule.parentRule.style !== rule && rule.parentRule.style;
-    }
-    rules.forEach(rule => applyStyle(thumb, rule));
-    thumb.style.boxSizing = 'border-box';
-    thumb.style.display = 'block';
-    thumb.style.position = 'absolute';
-    if (node.parentElement) {
-      if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
-        node.parentElement.style.position = 'relative';
-      }
-      thumb.style.top = node.offsetTop - ((-node.offsetHeight + parseFloat(thumb.style.height)) / 2) + 'px';
-      thumb.style.left = node.offsetLeft + 'px';
-      node.parentElement.appendChild(thumb);
-    }
-  }
-
+  let haveTrack = false;
   const sliderTrackCSSRules = findSliderTrackCSSRules(node);
   if (sliderTrackCSSRules.length > 0) {
     const track = document.createElement('div');
@@ -158,9 +136,34 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
         node.parentElement.style.position = 'relative';
       }
-      track.style.top = node.offsetTop - ((-node.offsetHeight + parseFloat(track.style.height)) / 2) + 'px';
+      track.style.top = node.offsetTop - node.offsetHeight / 2 + 'px';
       track.style.left = node.offsetLeft + 'px';
+      track.style.width = node.getBoundingClientRect().width + 'px';
+      haveTrack = true;
       node.parentElement.appendChild(track);
+    }
+  }
+
+  const sliderThumbCSSRules = findSliderThumbCSSRules(node);
+  if (sliderThumbCSSRules.length > 0) {
+    const thumb = document.createElement('div');
+    const rules = [];
+    let rule: false | CSSStyleDeclaration = sliderThumbCSSRules[0].style;
+    while (rule) {
+      rules.unshift(rule);
+      rule = rule.parentRule instanceof CSSStyleRule && rule.parentRule.style !== rule && rule.parentRule.style;
+    }
+    rules.forEach(rule => applyStyle(thumb, rule));
+    thumb.style.boxSizing = 'border-box';
+    thumb.style.display = 'block';
+    thumb.style.position = 'absolute';
+    if (node.parentElement) {
+      if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
+        node.parentElement.style.position = 'relative';
+      }
+      thumb.style.top = node.offsetTop - node.offsetHeight / 2 - (haveTrack ? 0 : parseFloat(thumb.style.height) / 2 - node.offsetHeight) + 'px';
+      thumb.style.left = node.offsetLeft + 'px';
+      node.parentElement.appendChild(thumb);
     }
   }
 
