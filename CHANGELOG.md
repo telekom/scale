@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/telekom/scale/compare/v0.1.0...v0.1.1) (2020-04-24)
+
+
+### Bug Fixes
+
+* fixes the label of the Scale React Package deployment task ([593d66d](https://github.com/telekom/scale/commit/593d66ddd8f908ea5ad52900848c6257217c20cc))
+* removes --prerender flag from build command ([b324252](https://github.com/telekom/scale/commit/b32425287858dd8196a0a156f200a84c9d7bee8f))
+* removes private option from Scale React package.json file so the package can be published ([b4ebc76](https://github.com/telekom/scale/commit/b4ebc76c4a4f9f07aa8a5c781a83d2143805e61c))
+
+
+
+
+
 # [0.1.0](https://github.com/telekom/scale/compare/v0.0.12...v0.1.0) (2020-04-23)
 
 
