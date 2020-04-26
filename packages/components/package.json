@@ -12,7 +12,8 @@
   "unpkg": "dist/scale-components/scale-components.js",
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "hydrate/"
   ],
   "scripts": {
     "build": "stencil build --docs",
