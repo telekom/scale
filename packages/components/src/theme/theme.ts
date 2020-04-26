@@ -1,8 +1,10 @@
 import { combineObjects } from '../utils/utils';
 import { defaultTheme } from './defaultTheme';
 
+const data = typeof window === 'object' ? window : { theme: {} };
+
 export const getTheme = (overrides?: Partial<any>): any => {
-  const scale = (window as any).scale;
+  const scale = (data as any).scale;
   if (scale) {
     const injectedTheme = scale.theme;
     if (injectedTheme) {
@@ -16,9 +18,9 @@ export const getTheme = (overrides?: Partial<any>): any => {
 };
 
 export const useTheme = (overrides?: any) => {
-  (window as any).scale = {
-    ...(window as any).scale,
+  (data as any).scale = {
+    ...(data as any).scale,
   };
-  const scale = (window as any).scale;
+  const scale = (data as any).scale;
   scale.theme = getTheme(overrides);
 };
