@@ -1227,15 +1227,14 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@scaleds/components@0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@scaleds/components/-/components-0.0.14.tgz#7d529814b3cabfc3c161b4f6761aa30893f6e9ba"
-  integrity sha512-gsKx1vxXUlsGY82NdEUQL8/d+SCewpnlXEYIapO8cwG6z1ZEWmC/x795RC5LL4OaGNEIOeG1hZm+2A4accCt2A==
+"@scaleds/components@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@scaleds/components/-/components-0.1.3.tgz#cd63b80925a164f15f817817f39b80e1c097d6f0"
+  integrity sha512-pDsYXgkoKCHeV18U0AzJtkXUsdfWqMfJI2AqsR5NW47G3+ONob5ACcQJGA/1QhaafMmheLYw6YoADgPezqExKw==
   dependencies:
-    "@types/classnames" "^2.2.8"
     classnames "^2.2.6"
 
-"@scaleds/scale-react@^0.0.14":
+"@scaleds/scale-react@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@scaleds/scale-react/-/scale-react-0.1.3.tgz#6645e45673d7ae39cc3334482474c679636bfb93"
   integrity sha512-UJeQMrxz6Bi1LnmKLf0plbnG1smxYB2MBa5LJ7G5vyjo3iUP5ihrLDYYd6egS2Yfe7eUX20dZg9dZN+dR/43/A==
@@ -1378,11 +1377,6 @@
   integrity sha512-74fNdUGrWsgIB/V9kTO5FGHPWYY6Eqn+3Z7L6Hc4e/BxjYV7puvBqp5HwsVYYfLm6iURYBNCx4Ut37OF9yitCw==
   dependencies:
     "@babel/types" "^7.3.0"
-
-"@types/classnames@^2.2.8":
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.10.tgz#cc658ca319b6355399efc1f5b9e818f1a24bf999"
-  integrity sha512-1UzDldn9GfYYEsWWnn/P4wkTlkZDH7lDb0wBMGbtIQc9zXEQq7FlKBdZUn6OBqD8sKZZ2RQO2mAjGpXiDGoRmQ==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
