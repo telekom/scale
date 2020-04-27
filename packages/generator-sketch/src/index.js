@@ -4,15 +4,18 @@ const {
   Rect,
   Style,
   Artboard,
+  Bitmap,
   SharedStyle,
   SymbolMaster,
   SymbolInstance,
 } = require("sketch-constructor");
 const fs = require("fs");
+const path = require("path");
 const json = require("../sketch-json/asketch.json");
 const directory = "sketch";
 const sketch = new Sketch();
 const uuid = require("uuid").v4;
+const crypto = require('crypto');
 
 if (!fs.existsSync(directory)) {
   console.log(`generating directory: ${directory}`);
@@ -85,12 +88,28 @@ function enhanceJson(json) {
         const args = {...json};
         symbol = symbolMaster(args);
         symbols.set(json.name, symbol);
+        symbol.resizesContent = true;
+        symbol.groupLayout = {
+          "_class": "MSImmutableInferredGroupLayout",
+          "axis": 0,
+          "layoutAnchor": 0,
+          "maxSize": 0,
+          "minSize": 0
+        };
       }
       const instance = symbol.createInstance({name: json.name});
       instance.frame = new Rect(json.frame);
       instance.style = new Style(json.style);
       fillInstance(instance, symbol, json);
       return instance;
+    } else if (key === 'image') {
+      const fileName = crypto
+                    .createHash('sha1')
+                    .update(value.url)
+                    .digest('hex');
+      enhanced[key] = new Bitmap({filePath: path.resolve(__dirname, `../sketch-json/${fileName}`)}).image;
+    } else if (typeof value === 'object') {
+      enhanced[key] = enhanceJson(value);
     } else {
       enhanced[key] = value
     }
@@ -118,10 +137,14 @@ const enhanced = enhanceJson(json);
 fs.writeFileSync('./debug.json', JSON.stringify(enhanced, null, 4))
 
 enhanced.layers.forEach(layer => artboardComponents.addLayer(layer));
+const gutter = 32;
+let y = 0;
 for (const symbol of symbols.values()) {
+  symbol.frame.x = 0;
+  symbol.frame.y = y;
+  y += gutter + symbol.frame.height;
   symbolsPage.addLayer(symbol);
 }
-// console.log(JSON.stringify(symbolsPage, null, 4));
 
 componentsPage.addArtboard(artboardComponents);
 sketch.addPage(symbolsPage);
