@@ -3,5 +3,10 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+import { useTheme } from '@scaleds/components/dist/theme'
 
-// You can delete this file if you're not using it
+useTheme({
+  shape: {
+    borderRadius: 0
+  }
+})

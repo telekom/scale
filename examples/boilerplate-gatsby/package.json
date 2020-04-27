@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@scaleds/components": "^0.1.3",
+    "@scaleds/scale-react": "^0.1.3",
     "gatsby": "^2.20.36",
     "gatsby-image": "^2.3.5",
     "gatsby-plugin-manifest": "^2.3.7",

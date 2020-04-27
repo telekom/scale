@@ -1,20 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import { ScaleButton, ScaleCard, ScaleLink, ScaleTag } from '@scaleds/scale-react';
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h3>Alert</h3>
+    <ScaleLink href="http://example.com" target="_blank" variant="success">Success</ScaleLink>
+    <h3>Button</h3>
+    <ScaleButton variant="primary">Click!</ScaleButton>
+    <h3>Card</h3>
+    <ScaleCard>A title</ScaleCard>
+    <h3>Tag</h3>
+    <ScaleTag dismissable size="small" onClose={(event) => console.log(event)}>A title</ScaleTag>
   </Layout>
 )
 
