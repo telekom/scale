@@ -610,5 +610,80 @@
       <a href="/b">Breadcrumb 2</a>
       <span>Breadcrumb 3</span>
     </scale-breadcrumb>
+
+    <h3>Sidebar Nav (testing)</h3>
+    <div class="sidebar-nav">
+      <style>
+        /* Temporary! just for prototyping/testing */
+        .sidebar-nav {
+          max-width: 22rem;
+          --nav-color: #262626;
+          --nav-color-hover: #E20074;
+          --nav-color-active: #CB0068;
+          --nav-color-focus: #009DE0;
+          --nav-item-padding: 1em 1em 1em 2em;
+
+          margin-bottom: 50vh;
+        }
+        .sidebar-nav a {
+          display: block;
+          padding: var(--nav-item-padding);
+          color: var(--nav-color);
+          text-decoration: none;
+          border: 2px solid transparent;
+          border-radius: 4px;
+        }
+        .sidebar-nav a:hover {
+          color: var(--nav-color-hover);
+        }
+        .sidebar-nav a:active {
+          color: var(--nav-color-active);
+        }
+        .sidebar-nav a:focus {
+          outline: none;
+          border-color: var(--nav-color-focus);
+        }
+      </style>
+      <scale-sidebar-nav>
+        <scale-sidebar-nav-item>
+          <a href="/a">Schlitz sustainable</a>
+        </scale-sidebar-nav-item>
+        
+        <scale-sidebar-nav-collapsible label="Heading with h2">
+          <scale-sidebar-nav-item>
+            <a href="/b">Literally fashion axe</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="/c">Four loko health</a>
+          </scale-sidebar-nav-item>
+
+          <scale-sidebar-nav-collapsible label="Nested heading with h3" level="3">
+            <scale-sidebar-nav-item border="false">
+              <a href="/h">Gluten-free pug</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item border="false">
+              <a href="/i">XOXO farm-to-table</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+        </scale-sidebar-nav-collapsible>
+
+        <scale-sidebar-nav-collapsible label="Second heading, level 2">
+          <scale-sidebar-nav-item>
+            <a href="/d">Messenger bag everyday</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="/f">Kogi af street</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav-collapsible>
+
+        <scale-sidebar-nav-item>
+          <a href="/j">Williamsburg</a>
+        </scale-sidebar-nav-item>
+        <scale-sidebar-nav-item>
+          <a href="/k">Vaporware</a>
+        </scale-sidebar-nav-item>
+      </scale-sidebar-nav>
+    </div>
+
   </body>
 </html>
