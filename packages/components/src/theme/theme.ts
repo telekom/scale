@@ -1,10 +1,13 @@
 import { combineObjects } from '../utils/utils';
 import { defaultTheme } from './defaultTheme';
 
-const data = typeof window === 'object' ? window : { theme: {} };
+const store =
+  typeof window !== 'undefined' && typeof window.Audio !== 'undefined'
+    ? window
+    : { scale: { theme: 'ʕ•ᴥ•ʔ theme store magic placeholder ʕ•ᴥ•ʔ' } };
 
 export const getTheme = (overrides?: Partial<any>): any => {
-  const scale = (data as any).scale;
+  const scale = (store as any).scale;
   if (scale) {
     const injectedTheme = scale.theme;
     if (injectedTheme) {
@@ -18,9 +21,9 @@ export const getTheme = (overrides?: Partial<any>): any => {
 };
 
 export const useTheme = (overrides?: any) => {
-  (data as any).scale = {
-    ...(data as any).scale,
+  (store as any).scale = {
+    ...(store as any).scale,
   };
-  const scale = (data as any).scale;
+  const scale = (store as any).scale;
   scale.theme = getTheme(overrides);
 };
