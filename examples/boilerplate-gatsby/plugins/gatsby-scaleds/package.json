@@ -1,0 +1,7 @@
+{
+  "name": "gatsby-scaleds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gatsby-node.js",
+  "license": "MIT"
+}

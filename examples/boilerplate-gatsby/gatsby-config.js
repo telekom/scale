@@ -5,6 +5,16 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve:   'gatsby-scaleds',
+      options: {
+        theme: {
+          shape: {
+            borderRadius: 0
+          }
+        }
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
