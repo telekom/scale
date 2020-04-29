@@ -9,7 +9,8 @@
         "packages/html-to-sketch",
         "packages/generator-sketch",
         "packages/docs",
-        "packages/scale-react"
+        "packages/scale-react",
+        "packages/gatsby-plugin"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",
