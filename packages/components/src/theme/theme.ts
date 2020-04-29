@@ -10,7 +10,7 @@ const store =
 export const getTheme = (overrides?: Partial<any>): any => {
   const scale = (store as any).scale;
   if (scale) {
-    const injectedTheme = typeof scale.theme === "object" && scale.theme;
+    const injectedTheme = typeof scale.theme === 'object' && scale.theme;
     if (injectedTheme) {
       return combineObjects(defaultTheme, injectedTheme);
     }
@@ -27,5 +27,5 @@ export const useTheme = (overrides?: any) => {
   };
   const scale = (store as any).scale;
   scale.theme = getTheme(overrides);
-  return scale.theme
+  return scale.theme;
 };

@@ -2494,7 +2494,7 @@ var scale = (function (exports) {
   const getTheme = (overrides) => {
       const scale = store.scale;
       if (scale) {
-          const injectedTheme = typeof scale.theme === "object" && scale.theme;
+          const injectedTheme = typeof scale.theme === 'object' && scale.theme;
           if (injectedTheme) {
               return combineObjects(defaultTheme, injectedTheme);
           }
