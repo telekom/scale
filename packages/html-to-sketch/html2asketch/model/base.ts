@@ -13,6 +13,8 @@ class Base {
   _hasClippingMask: any;
   _isLocked: any;
   _variant?: string;
+  _points: any;
+  _isClosed: any;
 
   constructor({id}: any = {}) {
     this._class = null;
@@ -99,6 +101,7 @@ class Base {
       isFlippedVertical: false,
       isLocked: this._isLocked,
       isVisible: true,
+      isClosed: !!this._isClosed,
       layerListExpandedType: 0,
       name: this._name || this._class,
       nameIsFixed: false,
@@ -121,6 +124,10 @@ class Base {
 
     if (this._variant) {
       result.variant = this._variant;
+    }
+
+    if (this._points) {
+      result.points = this._points;
     }
 
     return result;
