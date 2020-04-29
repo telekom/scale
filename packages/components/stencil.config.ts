@@ -1,5 +1,5 @@
 import { Config } from '@stencil/core';
-import { reactOutputTarget } from '@stencil/react-output-target';
+import { reactOutputTarget } from '@nowseemee/stencil-react-output-target';
 
 export const config: Config = {
   namespace: 'scale-components',
@@ -34,6 +34,7 @@ export const config: Config = {
     {
       type: 'docs-json',
       file: './dist/scale-components.json'
-    }
+    },
+    { type: 'dist-hydrate-script' }
   ]
 };

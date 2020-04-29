@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "lib": ["dom", "es2015"],
-    "module": "es2015",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
