@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/gatsbyjs/gatsby-starter-default/compare/v0.1.3...v0.1.4) (2020-04-29)
+
+
+### Bug Fixes
+
+* renames scale-react package to components-react and fixes all the paths ([#200](https://github.com/gatsbyjs/gatsby-starter-default/issues/200)) ([2cd2fb1](https://github.com/gatsbyjs/gatsby-starter-default/commit/2cd2fb11d29d82640b244108c3ba75f77fca3f1b))
+* render theme for docs ([#193](https://github.com/gatsbyjs/gatsby-starter-default/issues/193)) ([9bf02ff](https://github.com/gatsbyjs/gatsby-starter-default/commit/9bf02ff14912894a5f266b095493a742da9f0316))
+
+
+
+
+
 ## [0.1.3](https://github.com/gatsbyjs/gatsby-starter-default/compare/v0.1.2...v0.1.3) (2020-04-24)
 
 **Note:** Version bump only for package @scaleds/docs

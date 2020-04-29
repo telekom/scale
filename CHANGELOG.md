@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/telekom/scale/compare/v0.1.3...v0.1.4) (2020-04-29)
+
+
+### Bug Fixes
+
+* fixes versions for @scaleds/components and @scaleds/scale-react to 0.1.3 ([e959284](https://github.com/telekom/scale/commit/e95928488b8eaddf0c8237b9c583c362f7fbf65b))
+* renames scale-react package to components-react and fixes all the paths ([#200](https://github.com/telekom/scale/issues/200)) ([2cd2fb1](https://github.com/telekom/scale/commit/2cd2fb11d29d82640b244108c3ba75f77fca3f1b))
+* render theme for docs ([#193](https://github.com/telekom/scale/issues/193)) ([9bf02ff](https://github.com/telekom/scale/commit/9bf02ff14912894a5f266b095493a742da9f0316))
+
+
+### Features
+
+* adds new script force-version to the root package.json file to force ([da08e17](https://github.com/telekom/scale/commit/da08e17c3b9c7503106ed7b23ce4290ccb0c2a46))
+
+
+
+## [0.0.17](https://github.com/telekom/scale/compare/v0.0.16...v0.0.17) (2020-04-17)
+
+
+
+## [0.0.16](https://github.com/telekom/scale/compare/v0.0.15...v0.0.16) (2020-04-08)
+
+
+
+## [0.0.15](https://github.com/telekom/scale/compare/v0.0.14...v0.0.15) (2020-04-01)
+
+
+
+## [0.0.14](https://github.com/telekom/scale/compare/v0.0.13...v0.0.14) (2020-04-01)
+
+
+
+## [0.0.13](https://github.com/telekom/scale/compare/v0.0.12...v0.0.13) (2020-04-01)
+
+
+
+
+
 ## [0.1.3](https://github.com/telekom/scale/compare/v0.1.2...v0.1.3) (2020-04-24)
 
 

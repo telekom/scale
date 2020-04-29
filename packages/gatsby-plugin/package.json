@@ -1,6 +1,6 @@
 {
   "name": "@scaleds/gatsby-plugin",
-  "version": "0.0.1",
+  "version": "0.1.4",
   "description": "",
   "license": "MIT",
   "peerDependencies": {
