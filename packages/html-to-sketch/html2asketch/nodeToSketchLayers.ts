@@ -14,6 +14,166 @@ import {fixWhiteSpace} from './helpers/text';
 import {isNodeVisible, isTextVisible} from './helpers/visibility';
 import TextAttributedString from './model/textAttributedString';
 
+import * as SvgPath from 'svgpath';
+
+// Converts quadratic bézier curves to cubic bézier curves
+//
+SvgPath.prototype.unquad = function () {
+  var segments = this.segments;
+  var nextPointX, nextPointY;
+  var curControlX, curControlY;
+
+  this.iterate(function (s:[string, ...number[]], idx:number, x:number, y:number) {
+    var name = s[0];
+    
+    if (name === 'Q') { // quadratic curve
+
+      nextPointX = s[3];
+      nextPointY = s[4];
+
+      curControlX = s[1];
+      curControlY = s[2];
+
+      segments[idx] = [
+        'C',
+        x + (2/3) * (curControlX-x), 
+        y + (2/3) * (curControlY-y), 
+        nextPointX + (2/3) * (curControlX-nextPointX), 
+        nextPointY + (2/3) * (curControlY-nextPointY),
+        nextPointX, nextPointY
+      ];
+    }
+  });
+
+  return this;
+};
+
+
+// Converts line segments to cubic bézier curves
+//
+SvgPath.prototype.unline = function () {
+  var segments = this.segments;
+
+  this.iterate(function (s:[string, ...number[]], idx:number, x:number, y:number) {
+    var name = s[0];
+
+    if (name === 'L') { // line segment
+      segments[idx] = [
+        'C',
+        x, y, 
+        s[1], s[2],
+        s[1], s[2]
+      ];
+    } else if (name === 'H') { // horizontal line segment
+      segments[idx] = [
+        'C',
+        x, y,
+        s[1], y,
+        s[1], y
+      ];
+    } else if (name === 'V') { // vertical line segment
+      segments[idx] = [
+        'C',
+        x, y,
+        x, s[1],
+        x, s[1]
+      ];
+    }
+  });
+
+  return this;
+};
+
+SvgPath.prototype.toCurvePoints = function(bcr: DOMRect) {
+  let c0x = 0;
+  let c0y = 0;
+  if (this.segments.length > 0) {
+    let startSeg = this.segments[0];
+    c0x = startSeg[1] / bcr.width;
+    c0y = startSeg[2] / bcr.height;
+  }
+  let hasCurveFrom = false;
+  let lastX = 0;
+  let lastY = 0;
+  const segments: any[] = [];
+  let curvePoints: any[] = [];
+  let isClosed = false;
+  this.iterate(function (s:[string, ...number[]], idx:number, x:number, y:number) {
+    console.log(Array.from(arguments));
+    const [command, ...coords] = s;
+    idx;
+    const rX = x / bcr.width;
+    const rY = y / bcr.height;
+    const rCoords = coords.map((c,i) => c / (i % 2 === 0 ? bcr.width : bcr.height));
+    if (command === 'M') {
+      if (hasCurveFrom) {
+        const cmd = {
+          "_class": "curvePoint",
+          "cornerRadius": 0,
+          "curveFrom": `{${c0x}, ${c0y}}`,
+          "curveMode": 5,
+          "curveTo": `{${lastX}, ${lastY}}`,
+          "hasCurveFrom": hasCurveFrom,
+          "hasCurveTo": false,
+          "point": `{${lastX}, ${lastY}}`
+        };
+        curvePoints.push(cmd);
+        lastX = 0;
+        lastY = 0;
+        c0x = rCoords[0];
+        c0y = rCoords[1];
+      }
+      hasCurveFrom = false;
+      isClosed = false;
+      if (curvePoints.length > 0) {
+        segments.push({isClosed, points: curvePoints});
+      }
+      curvePoints = [];
+    } else if (command === 'C') {
+      isClosed = false;
+      const cmd = {
+        "_class": "curvePoint",
+        "cornerRadius": 0,
+        "curveFrom": `{${c0x}, ${c0y}}`,
+        "curveMode": 5,
+        "curveTo": `{${rCoords[0]}, ${rCoords[1]}}`,
+        "hasCurveFrom": hasCurveFrom,
+        "hasCurveTo": true,
+        "point": `{${rX}, ${rY}}`
+      };
+      hasCurveFrom = true;
+      c0x = rCoords[2];
+      c0y = rCoords[3];
+      lastX = rCoords[4];
+      lastY = rCoords[5];
+      console.log(cmd);
+      curvePoints.push(cmd);
+    } else if (command === 'z' || command === 'Z') {
+      isClosed = true;
+    }
+  });
+  if (hasCurveFrom) {
+    const cmd = {
+      "_class": "curvePoint",
+      "cornerRadius": 0,
+      "curveFrom": `{${c0x}, ${c0y}}`,
+      "curveMode": 5,
+      "curveTo": `{${lastX}, ${lastY}}`,
+      "hasCurveFrom": hasCurveFrom,
+      "hasCurveTo": false,
+      "point": `{${lastX}, ${lastY}}`
+    };
+    curvePoints.push(cmd);
+  }
+  if (curvePoints.length > 0) {
+    segments.push({isClosed, points: curvePoints});
+  }
+  console.log(segments);
+  segments.reverse();
+  segments.forEach(s => s.points.reverse());
+  return segments;
+}
+
 const DEFAULT_VALUES = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
   backgroundImage: 'none',
@@ -327,7 +487,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
 
   // skip SVG child nodes as they are already covered by `new SVG(…)`
   if (isSVGDescendant(node)) {
-    return layers;
+    // return layers;
   }
 
   if (!isNodeVisible(node, bcr, styles)) {
@@ -344,6 +504,101 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
 
   const isImage = node.nodeName === 'IMG' && (node as HTMLImageElement).currentSrc;
   const isSVG = node.nodeName === 'svg';
+  const isSVGElement = node instanceof SVGElement;
+
+  if (isSVGElement) {
+    console.log(node);
+    // TODO Convert these into paths.
+    switch (node.tagName) {
+      case 'rect': break;
+      case 'circle': break;
+      case 'ellipse': break;
+      case 'text': break;
+      case 'polygon': break;
+    }
+    if (node.tagName === 'path') {
+      const path = (new SvgPath(node.getAttribute('d') || '') as any)
+        .abs()
+        .unshort()
+        .unarc()
+        .unquad()
+        .unline();
+      const bcr = node.getBoundingClientRect();
+      node.setAttribute('d', path.toString());
+      const style = new Style();
+      shapeGroup._isClosed = true;
+      style._borderOptions = {
+        "_class": "borderOptions",
+        "isEnabled": true,
+        "dashPattern": [],
+        "lineCapStyle": 0,
+        "lineJoinStyle": 0
+      };
+      style._borders = [
+        {
+          "_class": "border",
+          "isEnabled": true,
+          "fillType": 0,
+          "color": {
+            "_class": "color",
+            "alpha": 1,
+            "blue": 0,
+            "green": 0,
+            "red": 0
+          },
+          "contextSettings": {
+            "_class": "graphicsContextSettings",
+            "blendMode": 0,
+            "opacity": 1
+          },
+          "gradient": {
+            "_class": "gradient",
+            "elipseLength": 0,
+            "from": "{0.5, 0}",
+            "gradientType": 0,
+            "to": "{0.5, 1}",
+            "stops": [
+              {
+                "_class": "gradientStop",
+                "position": 0,
+                "color": {
+                  "_class": "color",
+                  "alpha": 1,
+                  "blue": 1,
+                  "green": 1,
+                  "red": 1
+                }
+              },
+              {
+                "_class": "gradientStop",
+                "position": 1,
+                "color": {
+                  "_class": "color",
+                  "alpha": 1,
+                  "blue": 0,
+                  "green": 0,
+                  "red": 0
+                }
+              }
+            ]
+          },
+          "position": 0,
+          "thickness": 2.999998950937317
+        }
+      ];
+      const curveSegments = path.toCurvePoints(bcr);
+      curveSegments.forEach((segment:{isClosed: boolean, points: any[]}) => {
+        const sg = new ShapeGroup({x: left, y: top, width, height});
+        sg._class = 'shapePath';
+        sg._points = segment.points;
+        sg._isClosed = segment.isClosed;
+        sg.setStyle(style);
+        layers.push(sg);
+      });
+    }
+    return layers;
+  }
+  
 
   // if layer has no background/shadow/border/etc. skip it
   if (isImage || !hasOnlyDefaultStyles(styles)) {
@@ -487,7 +742,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
   }
 
   if (isSVG) {
-    // sketch ignores padding and centerging as defined by viewBox and preserveAspectRatio when
+    // sketch ignores padding and centering as defined by viewBox and preserveAspectRatio when
     // importing SVG, so instead of using BCR of the SVG, we are using BCR of its children
     const childrenBCR = getGroupBCR(Array.from(node.children));
     const svgLayer = new SVG({

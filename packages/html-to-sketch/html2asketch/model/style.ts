@@ -7,6 +7,7 @@ class Style {
   _shadows: any;
   _innerShadows: any;
   _opacity: any;
+  _borderOptions: any;
 
   constructor() {
     this._fills = [];
@@ -109,6 +110,7 @@ class Style {
       _class: 'style',
       fills: this._fills,
       borders: this._borders,
+      borderOptions: this._borderOptions,
       shadows: this._shadows,
       innerShadows: this._innerShadows,
       endDecorationType: 0,

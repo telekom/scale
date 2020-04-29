@@ -12,6 +12,8 @@ class Base {
   _resizingConstraint: any;
   _hasClippingMask: any;
   _isLocked: any;
+  _points: any;
+  _isClosed: any;
 
   constructor({id}: any = {}) {
     this._class = null;
@@ -94,6 +96,7 @@ class Base {
       isFlippedVertical: false,
       isLocked: this._isLocked,
       isVisible: true,
+      isClosed: !!this._isClosed,
       layerListExpandedType: 0,
       name: this._name || this._class,
       nameIsFixed: false,
@@ -112,6 +115,10 @@ class Base {
 
     if (this._style) {
       result.style = this._style.toJSON();
+    }
+
+    if (this._points) {
+      result.points = this._points;
     }
 
     return result;
