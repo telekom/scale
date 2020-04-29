@@ -1,5 +1,5 @@
 import React from "react"
-import { ScaleButton, ScaleCard, ScaleLink, ScaleTag } from '@scaleds/scale-react';
+import { ScaleButton, ScaleCard, ScaleLink, ScaleTag } from '@scaleds/components-react';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"

@@ -6,7 +6,7 @@ export const config: Config = {
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: '@scaleds/components',
-      proxiesFile: '../scale-react/src/components.ts',
+      proxiesFile: '../components-react/src/components.ts',
     }),
     {
       type: 'dist',

@@ -4,8 +4,9 @@
     "packages/components",
     "packages/html-to-sketch",
     "packages/generator-sketch",
-    "packages/scale-react",
-    "packages/docs"
+    "packages/components-react",
+    "packages/docs",
+    "packages/gatsby-plugin"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
