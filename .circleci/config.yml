@@ -47,7 +47,7 @@ jobs:
           cd packages/components
           yarn build:prod
       - run: |
-          cd packages/scale-react
+          cd packages/components-react
           yarn build
       # Persist data
       - persist_to_workspace:
@@ -73,7 +73,7 @@ jobs:
       - run:
           name: Publish Scale React Package to NPM
           command: |
-            cd packages/scale-react
+            cd packages/components-react
             yarn publish --access public
 
 workflows:

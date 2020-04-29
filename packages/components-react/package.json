@@ -1,5 +1,5 @@
 {
-  "name": "@scaleds/scale-react",
+  "name": "@scaleds/components-react",
   "sideEffects": false,
   "version": "0.1.3",
   "description": "React proxy for @scaleds/components",

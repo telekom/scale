@@ -5,7 +5,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.1.3](https://github.com/telekom/scale/compare/v0.1.2...v0.1.3) (2020-04-24)
 
-**Note:** Version bump only for package @scaleds/scale-react
+**Note:** Version bump only for package @scaleds/components-react
 
 
 
@@ -28,4 +28,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * finishes integration of the react proxy output plugin. Updates the react boiler plate. ([c33e451](https://github.com/telekom/scale/commit/c33e4514fb840cc2e19e53dee1b17c30e27320ac))
-* renames package folder from react-wrapper to scale-react ([e05f868](https://github.com/telekom/scale/commit/e05f868954c9b93e2f223b344736c952387adcf1))
+* renames package folder from react-wrapper to components-react ([e05f868](https://github.com/telekom/scale/commit/e05f868954c9b93e2f223b344736c952387adcf1))
