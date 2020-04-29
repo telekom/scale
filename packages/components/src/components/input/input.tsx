@@ -83,7 +83,7 @@ export class Input implements Base {
   componentDidUnload() {}
 
   handleChange(event) {
-    console.log('change', event.target.checked);
+    console.log('change', event.target.value);
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
     this.checkedValue = event.target.value;
