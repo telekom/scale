@@ -2488,10 +2488,14 @@ const defaultTheme = {
     },
 };
 
+const THEME_MAGIC_STRING = 'ʕ•ᴥ•ʔ theme store magic placeholder ʕ•ᴥ•ʔ';
+const store = typeof window !== 'undefined' && typeof window.Audio !== 'undefined'
+    ? window
+    : { scale: { theme: THEME_MAGIC_STRING } };
 const getTheme = (overrides) => {
-    const scale = window.scale;
+    const scale = store.scale;
     if (scale) {
-        const injectedTheme = scale.theme;
+        const injectedTheme = typeof scale.theme === "object" && scale.theme;
         if (injectedTheme) {
             return combineObjects(defaultTheme, injectedTheme);
         }
@@ -2502,10 +2506,12 @@ const getTheme = (overrides) => {
     return defaultTheme;
 };
 const useTheme = (overrides) => {
-    window.scale = Object.assign({}, window.scale);
-    const scale = window.scale;
+    store.scale = Object.assign({}, store.scale);
+    const scale = store.scale;
     scale.theme = getTheme(overrides);
+    return scale.theme;
 };
 
+exports.THEME_MAGIC_STRING = THEME_MAGIC_STRING;
 exports.getTheme = getTheme;
 exports.useTheme = useTheme;
