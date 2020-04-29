@@ -32,12 +32,10 @@ export const createReactComponent = <PropType, ElementType>(tagName: string) => 
     }
 
     render() {
-      const newProps: any = {
+      return React.createElement(tagName, {
         ...this.props,
         ref: this.ref,
-      };
-
-      return React.createElement(tagName, newProps, this.props.children);
+      }, this.props.children);
     }
 
     static get displayName() {

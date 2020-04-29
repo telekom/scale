@@ -2246,6 +2246,11 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
+"@nowseemee/stencil-react-output-target@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@nowseemee/stencil-react-output-target/-/stencil-react-output-target-0.0.8.tgz#cac486f66b01937ed539ae71352bfbf12361bfe5"
+  integrity sha512-TNBF/6lvPAfsKtMw/6c7n6uQwJmqqv4v3Yboe0KlnQ0BTqLtFwitxQtYljlRDLHTl1jl8MPDk51tWS/9O8FrHQ==
+
 "@octokit/auth-token@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@octokit/auth-token/-/auth-token-2.4.0.tgz#b64178975218b99e4dfe948253f0673cbbb59d9f"
@@ -2436,11 +2441,6 @@
   integrity sha512-aYQyQI2mq2UkCc6MQXdA27OqcvaBDfcCcKOKarC9e7mF2YLEmJ90behs/Mk5PuG8hUuSqjvj+dwUryjV7KpGJg==
   dependencies:
     typescript "3.8.3"
-
-"@stencil/react-output-target@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-0.0.6.tgz#542ccf85f7c269d0c72f0ecf5c37326c1d969084"
-  integrity sha512-Z0d1+RLmyxi/SuwYeIt+bKPyAl8hvz971GixmfNL1Kr9NRV45fEg6pyAjU3VzpEQkcsExE2HER2ShRqWI0ubRw==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
