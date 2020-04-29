@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const URL = require('url').URL;
 const DEBUG = false
+const crypto = require('crypto');
 
 const url = 'http://localhost:3334/';
 let urlObj = null;
@@ -23,6 +24,20 @@ puppeteer.launch({headless: !!!DEBUG ? true : false}).then(async browser => {
         page.on('console', msg => console.log('PAGE LOG:', msg.text()));
     }
 
+    page.on('response', async response => {
+        const url = response.url();
+        if (response.request().resourceType() === 'image') {
+            response.buffer().then(file => {
+                const fileName = crypto
+                    .createHash('sha1')
+                    .update(url)
+                    .digest('hex');
+                const filePath = path.resolve(__dirname, `./../${directory}/${fileName}`);
+                fs.writeFileSync(filePath, file);
+            });
+        }
+    });
+
     await page.setViewport({ width: 1280, height: 800 });
     await page.goto(url, {
         waitUntil: 'networkidle2'
@@ -40,6 +55,6 @@ puppeteer.launch({headless: !!!DEBUG ? true : false}).then(async browser => {
     );
 
     if (!!!DEBUG) {
-        browser.close();
+        await browser.close();
     }
 });

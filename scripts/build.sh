@@ -12,7 +12,7 @@ echo "${GREEN}Build Components...${NC}"
 yarn workspace @scaleds/components build;
 echo "--------"
 echo "${GREEN}Build React wrappers...${NC}"
-yarn workspace @scaleds/scale-react build;
+yarn workspace @scaleds/components-react build;
 echo "--------"
 echo "${GREEN}Build Docs...${NC}"
 yarn workspace @scaleds/docs build;

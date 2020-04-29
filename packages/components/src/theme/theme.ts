@@ -1,10 +1,16 @@
 import { combineObjects } from '../utils/utils';
 import { defaultTheme } from './defaultTheme';
 
+export const THEME_MAGIC_STRING = 'ʕ•ᴥ•ʔ theme store magic placeholder ʕ•ᴥ•ʔ';
+const store =
+  typeof window !== 'undefined' && typeof window.Audio !== 'undefined'
+    ? window
+    : { scale: { theme: THEME_MAGIC_STRING } };
+
 export const getTheme = (overrides?: Partial<any>): any => {
-  const scale = (window as any).scale;
+  const scale = (store as any).scale;
   if (scale) {
-    const injectedTheme = scale.theme;
+    const injectedTheme = typeof scale.theme === 'object' && scale.theme;
     if (injectedTheme) {
       return combineObjects(defaultTheme, injectedTheme);
     }
@@ -16,9 +22,10 @@ export const getTheme = (overrides?: Partial<any>): any => {
 };
 
 export const useTheme = (overrides?: any) => {
-  (window as any).scale = {
-    ...(window as any).scale,
+  (store as any).scale = {
+    ...(store as any).scale,
   };
-  const scale = (window as any).scale;
+  const scale = (store as any).scale;
   scale.theme = getTheme(overrides);
+  return scale.theme;
 };

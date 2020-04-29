@@ -57,7 +57,11 @@ export class Tag implements Base {
           onClick: event => this.handleClose(event),
         }
       : {};
-    const theme = (window as any).scale && (window as any).scale.theme;
+    const theme =
+      typeof window !== 'undefined' &&
+      (window as any).scale &&
+      (window as any).scale.theme;
+
     const { icons } = theme || defaultTheme;
     return (
       <Host>
