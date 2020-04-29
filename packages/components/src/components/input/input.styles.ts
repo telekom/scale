@@ -91,16 +91,16 @@ export const styles: JssStyle = {
       justifyContent: 'space-between',
     },
     '&:not($input--disabled)': {
-      '& .input__input, & .input__checkbox': {
+      '& .input__input': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
       },
-      '& .input__checkbox': {
+      /* '& .input__checkbox': {
         '&:hover, &:active': {
           backgroundColor: '#ffffff',
         },
-      },
+      }, */
     },
   },
   'input--variant-static': {
@@ -128,7 +128,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--status-error': {
-    '&.animated .input__label, & .input__checkbox + .input__label': {
+    '&.animated .input__label, & label': {
       color: ({ colors }) => `${colors.error.default} !important`,
     },
     '& .input__input:focus + .input__label': {
@@ -198,8 +198,8 @@ export const styles: JssStyle = {
       width: checkBoxCheckedIcon.width,
       userSelect: 'none',
       position: 'absolute',
-      left: checkBox.margin + (checkBox.width - checkBoxCheckedIcon.width) / 2,
-      top: checkBox.margin + (checkBox.width - checkBoxCheckedIcon.width) / 2,
+      left: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
+      top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
     },
   },
 };

@@ -60,7 +60,7 @@ export class Input implements Base {
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
   /** (optional) Input checkbox id */
-  @Prop() checkboxId?: string;
+  @Prop() inputId?: string;
   /** (optional) Input checkbox checked icon */
   @Prop() icon?: string;
   /** (optional) Input text event changed */
@@ -76,15 +76,17 @@ export class Input implements Base {
 
   /** (optional) Input checkbox checked */
   @State() checked?: boolean;
+  @State() checkedValue?: string;
 
   componentWillLoad() {}
   componentWillUpdate() {}
   componentDidUnload() {}
 
   handleChange(event) {
-    console.log('change', event.target.checked);
+    console.log('change', event.target.value);
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
+    this.checkedValue = event.target.value;
     this.changeEvent.emit(event);
   }
 
@@ -117,7 +119,7 @@ export class Input implements Base {
             <input
               type="checkbox"
               name={this.name}
-              id={this.checkboxId}
+              id={this.inputId}
               onChange={event => this.handleChange(event)}
               value={this.value}
               checked={this.checked}
@@ -135,6 +137,31 @@ export class Input implements Base {
       );
     }
 
+    if (this.type === 'radio') {
+      return (
+        <Host>
+          <style>{this.stylesheet.toString()}</style>
+          <div class={this.getCssClassMap()}>
+            <input
+              type="radio"
+              name={this.name}
+              id={this.inputId}
+              onChange={event => this.handleChange(event)}
+              value={this.value}
+              checked={this.checkedValue === this.value}
+              disabled={this.disabled}
+            />
+            <span class={classNames('input__radio')}></span>
+            {!!this.checked && !!this.icon && (
+              <scale-icon path={this.icon}></scale-icon>
+            )}
+            <label class="input__label" htmlFor={this.inputId}>
+              {this.label}
+            </label>
+          </div>
+        </Host>
+      );
+    }
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
