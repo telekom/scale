@@ -63,6 +63,61 @@
   <body>
     <h1>Components</h1><h3>Tag</h3>
 
+    <h3>Sidebar Nav (testing 2)</h3>
+    <style>
+      .sidebar-nav-simple {
+        max-width: 22rem;
+        border: 1px solid olivedrab;
+      }
+      .sidebar-nav-simple ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .sidebar-nav-simple {
+        font-size: inherit;
+      }
+      .testing {
+        padding: 1rem;
+      }
+    </style>
+    <div class="sidebar-nav-simple">
+      <nav>
+        <ul>
+          <li>
+            <a href="/a">Schlitz sustainable</a>
+          </li>
+          <li>
+            <a href="/b">Literally fashion axe</a>
+          </li>
+          <li>
+            <a href="/c">Four loko health</a>
+          </li>
+          <scale-collapsible id="b1" wrapper="li" label="Heading here">
+            <ul>
+              <li><a href="#">A</a></li>
+              <li><a href="#">B</a></li>
+            </ul>
+          </scale-collapsible>
+          <script>
+            // document.getElementById('b1').styles = {
+            //   collapsible: {
+            //     padding: '1em 1em 1em 2em'
+            //   }
+            // }
+          </script>
+          <scale-collapsible wrapper="li" is-expanded="true" label="Heading 2">
+            <ul>
+              <li><a href="#">A</a></li>
+              <li><a href="#">B</a></li>
+            </ul>
+          </scale-collapsible>
+          <li>
+            <a href="/d">Gluten-free pug</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
     <button id="change">Change</button>
 
     <h3>Default input</h3>
@@ -617,13 +672,13 @@
         /* Temporary! just for prototyping/testing */
         .sidebar-nav {
           max-width: 22rem;
+          margin-bottom: 10vh;
+
           --nav-color: #262626;
           --nav-color-hover: tomato;
           --nav-color-active: darkred;
           --nav-color-focus: blue;
           --nav-item-padding: 1em 1em 1em 2em;
-
-          margin-bottom: 50vh;
         }
         .sidebar-nav a {
           display: block;

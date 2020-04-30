@@ -149,6 +149,15 @@ export namespace Components {
          */
         "vertical"?: boolean;
     }
+    interface ScaleCollapsible {
+        "isExpanded"?: boolean;
+        "label": string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "wrapper"?: string;
+    }
     interface ScaleDivider {
         /**
           * (optional) Divider class
@@ -558,6 +567,12 @@ declare global {
         prototype: HTMLScaleCarouselElement;
         new (): HTMLScaleCarouselElement;
     };
+    interface HTMLScaleCollapsibleElement extends Components.ScaleCollapsible, HTMLStencilElement {
+    }
+    var HTMLScaleCollapsibleElement: {
+        prototype: HTMLScaleCollapsibleElement;
+        new (): HTMLScaleCollapsibleElement;
+    };
     interface HTMLScaleDividerElement extends Components.ScaleDivider, HTMLStencilElement {
     }
     var HTMLScaleDividerElement: {
@@ -648,6 +663,7 @@ declare global {
         "scale-button": HTMLScaleButtonElement;
         "scale-card": HTMLScaleCardElement;
         "scale-carousel": HTMLScaleCarouselElement;
+        "scale-collapsible": HTMLScaleCollapsibleElement;
         "scale-divider": HTMLScaleDividerElement;
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
@@ -794,6 +810,15 @@ declare namespace LocalJSX {
           * (optional) carousel display direction
          */
         "vertical"?: boolean;
+    }
+    interface ScaleCollapsible {
+        "isExpanded"?: boolean;
+        "label"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        "wrapper"?: string;
     }
     interface ScaleDivider {
         /**
@@ -1174,6 +1199,7 @@ declare namespace LocalJSX {
         "scale-button": ScaleButton;
         "scale-card": ScaleCard;
         "scale-carousel": ScaleCarousel;
+        "scale-collapsible": ScaleCollapsible;
         "scale-divider": ScaleDivider;
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
@@ -1199,6 +1225,7 @@ declare module "@stencil/core" {
             "scale-button": LocalJSX.ScaleButton & JSXBase.HTMLAttributes<HTMLScaleButtonElement>;
             "scale-card": LocalJSX.ScaleCard & JSXBase.HTMLAttributes<HTMLScaleCardElement>;
             "scale-carousel": LocalJSX.ScaleCarousel & JSXBase.HTMLAttributes<HTMLScaleCarouselElement>;
+            "scale-collapsible": LocalJSX.ScaleCollapsible & JSXBase.HTMLAttributes<HTMLScaleCollapsibleElement>;
             "scale-divider": LocalJSX.ScaleDivider & JSXBase.HTMLAttributes<HTMLScaleDividerElement>;
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
