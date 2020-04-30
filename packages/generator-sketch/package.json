@@ -1,16 +1,19 @@
 {
   "name": "@scaleds/generator-sketch",
-  "version": "0.1.4",
+  "version": "0.1.3",
   "description": "Convert the web-components to a sketch file",
   "scripts": {
     "test": "eslint src/",
     "build": "webpack",
     "preinject": "cp -R ../components/www/build ./sketch-render",
     "inject": "node ./src/inject.js",
-    "sketch": "node ./src/index.js"
+    "sketch.json": "node ./src/index.js",
+    "sketch": "yarn build && yarn inject && yarn sketch.json"
   },
   "license": "MIT",
   "devDependencies": {
+    "connect": "^3.7.0",
+    "serve-static": "^1.14.1",
     "sketch-constructor": "^1.18.0",
     "tinycolor2": "^1.4.1",
     "undefined": "^0.1.0",
