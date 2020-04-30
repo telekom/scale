@@ -24,9 +24,9 @@ export const styles: JssStyle = {
     } */
   },
   'collapsible--bold': {
-    fontWeight: ({ typography }) => typography.fontWeightBold
+    fontWeight: ({ typography }) => typography.fontWeightBold,
   },
   'collapsible--border': {
-    borderBottomColor: ({ colors }) => colors.grey['200']
+    borderBottomColor: ({ colors }) => colors.grey['200'],
   },
 };
