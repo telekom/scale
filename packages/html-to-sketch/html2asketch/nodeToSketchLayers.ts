@@ -1,32 +1,39 @@
-import Rectangle from './model/rectangle';
-import Bitmap from './model/bitmap';
-import SVG from './model/svg';
-import ShapeGroup from './model/shapeGroup';
-import Group from './model/group';
-import Style from './model/style';
-import Text from './model/text';
-import TextStyle from './model/textStyle';
-import {parseBackgroundImage, getActualImageSize} from './helpers/background';
-import {splitShadowString, shadowStringToObject} from './helpers/shadow';
-import {getSVGString} from './helpers/svg';
-import {getGroupBCR} from './helpers/bcr';
-import {fixWhiteSpace} from './helpers/text';
-import {isNodeVisible, isTextVisible} from './helpers/visibility';
-import TextAttributedString from './model/textAttributedString';
+import Rectangle from "./model/rectangle";
+import Bitmap from "./model/bitmap";
+import SVG from "./model/svg";
+import ShapeGroup from "./model/shapeGroup";
+import Group from "./model/group";
+import Style from "./model/style";
+import Text from "./model/text";
+import TextStyle from "./model/textStyle";
+import { parseBackgroundImage, getActualImageSize } from "./helpers/background";
+import { splitShadowString, shadowStringToObject } from "./helpers/shadow";
+import { getSVGString } from "./helpers/svg";
+import { getGroupBCR } from "./helpers/bcr";
+import { fixWhiteSpace } from "./helpers/text";
+import { isNodeVisible, isTextVisible } from "./helpers/visibility";
+import TextAttributedString from "./model/textAttributedString";
 
-import * as SvgPath from 'svgpath';
+import * as SvgPath from "svgpath";
+import nodeTreeToSketchGroup from "./nodeTreeToSketchGroup";
 
 // Converts quadratic bézier curves to cubic bézier curves
 //
-SvgPath.prototype.unquad = function () {
+SvgPath.prototype.unquad = function() {
   var segments = this.segments;
   var nextPointX, nextPointY;
   var curControlX, curControlY;
 
-  this.iterate(function (s:[string, ...number[]], idx:number, x:number, y:number) {
+  this.iterate(function(
+    s: [string, ...number[]],
+    idx: number,
+    x: number,
+    y: number
+  ) {
     var name = s[0];
-    
-    if (name === 'Q') { // quadratic curve
+
+    if (name === "Q") {
+      // quadratic curve
 
       nextPointX = s[3];
       nextPointY = s[4];
@@ -35,62 +42,88 @@ SvgPath.prototype.unquad = function () {
       curControlY = s[2];
 
       segments[idx] = [
-        'C',
-        x + (2/3) * (curControlX-x), 
-        y + (2/3) * (curControlY-y), 
-        nextPointX + (2/3) * (curControlX-nextPointX), 
-        nextPointY + (2/3) * (curControlY-nextPointY),
-        nextPointX, nextPointY
+        "C",
+        x + (2 / 3) * (curControlX - x),
+        y + (2 / 3) * (curControlY - y),
+        nextPointX + (2 / 3) * (curControlX - nextPointX),
+        nextPointY + (2 / 3) * (curControlY - nextPointY),
+        nextPointX,
+        nextPointY
       ];
     }
   });
 
   return this;
 };
-
 
 // Converts line segments to cubic bézier curves
 //
-SvgPath.prototype.unline = function () {
+SvgPath.prototype.unline = function() {
   var segments = this.segments;
 
-  this.iterate(function (s:[string, ...number[]], idx:number, x:number, y:number) {
+  this.iterate(function(
+    s: [string, ...number[]],
+    idx: number,
+    x: number,
+    y: number
+  ) {
     var name = s[0];
 
-    if (name === 'L') { // line segment
-      segments[idx] = [
-        'C',
-        x, y, 
-        s[1], s[2],
-        s[1], s[2]
-      ];
-    } else if (name === 'H') { // horizontal line segment
-      segments[idx] = [
-        'C',
-        x, y,
-        s[1], y,
-        s[1], y
-      ];
-    } else if (name === 'V') { // vertical line segment
-      segments[idx] = [
-        'C',
-        x, y,
-        x, s[1],
-        x, s[1]
-      ];
+    if (name === "L") {
+      // line segment
+      segments[idx] = ["C", x, y, s[1], s[2], s[1], s[2]];
+    } else if (name === "H") {
+      // horizontal line segment
+      segments[idx] = ["C", x, y, s[1], y, s[1], y];
+    } else if (name === "V") {
+      // vertical line segment
+      segments[idx] = ["C", x, y, x, s[1], x, s[1]];
     }
   });
 
   return this;
 };
 
-SvgPath.prototype.toCurvePoints = function(bcr: DOMRect) {
+SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:number) {
+  const root = node.ownerSVGElement;
+  const ctm = node.getCTM();
+  if (!root || !ctm) return [];
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minY = Infinity;
+  let maxY = -Infinity;
+  for (let i = 0; i < this.segments.length; i++) {
+    const segment = this.segments[i];
+    for (let j = 1; j < segment.length; j+=2) {
+      const point = root.createSVGPoint();
+      point.x = segment[j];
+      point.y = segment[j+1];
+      const transformedPoint = point.matrixTransform(ctm);
+      segment[j] = transformedPoint.x;
+      segment[j+1] = transformedPoint.y;
+      if (minX > transformedPoint.x) minX = transformedPoint.x;
+      if (maxX < transformedPoint.x) maxX = transformedPoint.x;
+      if (minY > transformedPoint.y) minY = transformedPoint.y;
+      if (maxY < transformedPoint.y) maxY = transformedPoint.y;
+    }
+  }
+  const bboxX = minX;
+  const bboxY = minY;
+  const bboxWidth = maxX - minX;
+  const bboxHeight = maxY - minY;
+  for (let i = 0; i < this.segments.length; i++) {
+    const segment = this.segments[i];
+    for (let j = 1; j < segment.length; j+=2) {
+      segment[j] = (segment[j] - bboxX) / bboxWidth;
+      segment[j+1] = (segment[j+1] - bboxY) / bboxHeight;
+    }
+  }
   let c0x = 0;
   let c0y = 0;
   if (this.segments.length > 0) {
     let startSeg = this.segments[0];
-    c0x = startSeg[1] / bcr.width;
-    c0y = startSeg[2] / bcr.height;
+    c0x = startSeg[1];
+    c0y = startSeg[2];
   }
   let hasCurveFrom = false;
   let lastX = 0;
@@ -98,87 +131,132 @@ SvgPath.prototype.toCurvePoints = function(bcr: DOMRect) {
   const segments: any[] = [];
   let curvePoints: any[] = [];
   let isClosed = false;
-  this.iterate(function (s:[string, ...number[]], idx:number, x:number, y:number) {
-    console.log(Array.from(arguments));
+  this.iterate(function(
+    s: [string, ...number[]],
+    idx: number,
+    x: number,
+    y: number
+  ) {
     const [command, ...coords] = s;
     idx;
-    const rX = x / bcr.width;
-    const rY = y / bcr.height;
-    const rCoords = coords.map((c,i) => c / (i % 2 === 0 ? bcr.width : bcr.height));
-    if (command === 'M') {
+    if (command === "M") {
       if (hasCurveFrom) {
         const cmd = {
-          "_class": "curvePoint",
-          "cornerRadius": 0,
-          "curveFrom": `{${c0x}, ${c0y}}`,
-          "curveMode": 5,
-          "curveTo": `{${lastX}, ${lastY}}`,
-          "hasCurveFrom": hasCurveFrom,
-          "hasCurveTo": false,
-          "point": `{${lastX}, ${lastY}}`
+          _class: "curvePoint",
+          cornerRadius,
+          curveFrom: `{${c0x}, ${c0y}}`,
+          curveMode: 5,
+          curveTo: `{${lastX}, ${lastY}}`,
+          hasCurveFrom: hasCurveFrom,
+          hasCurveTo: false,
+          point: `{${lastX}, ${lastY}}`
         };
         curvePoints.push(cmd);
         lastX = 0;
         lastY = 0;
-        c0x = rCoords[0];
-        c0y = rCoords[1];
+        c0x = coords[0];
+        c0y = coords[1];
       }
       hasCurveFrom = false;
       isClosed = false;
       if (curvePoints.length > 0) {
-        segments.push({isClosed, points: curvePoints});
+        segments.push({ isClosed, points: curvePoints });
       }
       curvePoints = [];
-    } else if (command === 'C') {
+    } else if (command === "C") {
       isClosed = false;
       const cmd = {
-        "_class": "curvePoint",
-        "cornerRadius": 0,
-        "curveFrom": `{${c0x}, ${c0y}}`,
-        "curveMode": 5,
-        "curveTo": `{${rCoords[0]}, ${rCoords[1]}}`,
-        "hasCurveFrom": hasCurveFrom,
-        "hasCurveTo": true,
-        "point": `{${rX}, ${rY}}`
+        _class: "curvePoint",
+        cornerRadius,
+        curveFrom: `{${c0x}, ${c0y}}`,
+        curveMode: 5,
+        curveTo: `{${coords[0]}, ${coords[1]}}`,
+        hasCurveFrom: hasCurveFrom,
+        hasCurveTo: true,
+        point: `{${x}, ${y}}`
       };
       hasCurveFrom = true;
-      c0x = rCoords[2];
-      c0y = rCoords[3];
-      lastX = rCoords[4];
-      lastY = rCoords[5];
-      console.log(cmd);
+      c0x = coords[2];
+      c0y = coords[3];
+      lastX = coords[4];
+      lastY = coords[5];
       curvePoints.push(cmd);
-    } else if (command === 'z' || command === 'Z') {
+    } else if (command === "z" || command === "Z") {
       isClosed = true;
     }
   });
   if (hasCurveFrom) {
     const cmd = {
-      "_class": "curvePoint",
-      "cornerRadius": 0,
-      "curveFrom": `{${c0x}, ${c0y}}`,
-      "curveMode": 5,
-      "curveTo": `{${lastX}, ${lastY}}`,
-      "hasCurveFrom": hasCurveFrom,
-      "hasCurveTo": false,
-      "point": `{${lastX}, ${lastY}}`
+      _class: "curvePoint",
+      cornerRadius,
+      curveFrom: `{${c0x}, ${c0y}}`,
+      curveMode: 5,
+      curveTo: `{${lastX}, ${lastY}}`,
+      hasCurveFrom: hasCurveFrom,
+      hasCurveTo: false,
+      point: `{${lastX}, ${lastY}}`
     };
     curvePoints.push(cmd);
   }
   if (curvePoints.length > 0) {
-    segments.push({isClosed, points: curvePoints});
+    segments.push({ isClosed, points: curvePoints });
   }
-  console.log(segments);
   segments.reverse();
   segments.forEach(s => s.points.reverse());
-  return segments;
+  return {bbox: {x: bboxX, y: bboxY, width: bboxWidth, height: bboxHeight}, segments};
+};
+
+function getRectanglePoints(cornerRadius:number) {
+  return [
+    {
+      _class: "curvePoint",
+      cornerRadius,
+      curveFrom: `{0,0}`,
+      curveMode: 1,
+      curveTo: `{0,0}`,
+      hasCurveFrom: false,
+      hasCurveTo: false,
+      point: `{0,0}`
+    },
+    {
+      _class: "curvePoint",
+      cornerRadius,
+      curveFrom: `{1,0}`,
+      curveMode: 1,
+      curveTo: `{1,0}`,
+      hasCurveFrom: false,
+      hasCurveTo: false,
+      point: `{1,0}`
+    },
+    {
+      _class: "curvePoint",
+      cornerRadius,
+      curveFrom: `{1,1}`,
+      curveMode: 1,
+      curveTo: `{1,1}`,
+      hasCurveFrom: false,
+      hasCurveTo: false,
+      point: `{1,1}`
+    },
+    {
+      _class: "curvePoint",
+      cornerRadius,
+      curveFrom: `{0,1}`,
+      curveMode: 1,
+      curveTo: `{0,1}`,
+      hasCurveFrom: false,
+      hasCurveTo: false,
+      point: `{0,1}`
+    }
+  ];
 }
 
+
 const DEFAULT_VALUES = {
-  backgroundColor: 'rgba(0, 0, 0, 0)',
-  backgroundImage: 'none',
-  borderWidth: '0px',
-  boxShadow: 'none',
+  backgroundColor: "rgba(0, 0, 0, 0)",
+  backgroundImage: "none",
+  borderWidth: "0px",
+  boxShadow: "none"
 };
 
 const ALIGNMENTS = {
@@ -201,7 +279,7 @@ function fixBorderRadius(borderRadius: string, width: number, height: number) {
   const matches = borderRadius.match(/^([0-9.]+)(.+)$/);
 
   // Sketch uses 'px' units for border radius, so we need to convert % to px
-  if (matches && matches[2] === '%') {
+  if (matches && matches[2] === "%") {
     const baseVal = Math.max(width, height);
     const percentageApplied = baseVal * (parseInt(matches[1], 10) / 100);
 
@@ -211,22 +289,33 @@ function fixBorderRadius(borderRadius: string, width: number, height: number) {
 }
 
 function isSVGDescendant(node: HTMLElement) {
-  return (node instanceof SVGElement) && node.matches('svg *');
+  return node instanceof SVGElement && node.matches("svg *");
 }
 
-const PSEUDO_ELEMENTS = [':after', ':before'];
+const PSEUDO_ELEMENTS = [":after", ":before"];
 
-function gatherCSSRules(rules: CSSStyleRule[], styleSheet: StyleSheet | CSSMediaRule): CSSStyleRule[] {
+function gatherCSSRules(
+  rules: CSSStyleRule[],
+  styleSheet: StyleSheet | CSSMediaRule
+): CSSStyleRule[] {
   if (styleSheet instanceof CSSStyleSheet && !styleSheet.disabled) {
-    Array.from(styleSheet.cssRules).reverse().forEach(rule => {
-      if (rule instanceof CSSStyleRule && /::?-webkit-slider-/.test(rule.selectorText)) {
-        rules.push(rule);
-      } else if (rule instanceof CSSMediaRule && window.matchMedia(rule.media.mediaText).matches) {
-        rules = gatherCSSRules([], rule).concat(rules);
-      } else if (rule instanceof CSSImportRule) {
-        rules = gatherCSSRules([], rule.styleSheet).concat(rules);
-      }
-    });
+    Array.from(styleSheet.cssRules)
+      .reverse()
+      .forEach(rule => {
+        if (
+          rule instanceof CSSStyleRule &&
+          /::?-webkit-slider-/.test(rule.selectorText)
+        ) {
+          rules.push(rule);
+        } else if (
+          rule instanceof CSSMediaRule &&
+          window.matchMedia(rule.media.mediaText).matches
+        ) {
+          rules = gatherCSSRules([], rule).concat(rules);
+        } else if (rule instanceof CSSImportRule) {
+          rules = gatherCSSRules([], rule.styleSheet).concat(rules);
+        }
+      });
   }
   return rules;
 }
@@ -235,27 +324,36 @@ let CSSRules: CSSStyleRule[] | undefined = undefined;
 
 function findSliderThumbCSSRules(el: Element): CSSStyleRule[] {
   if (!CSSRules) return [];
-  return CSSRules.filter(r => el.matches(r.selectorText.replace(/::?(-webkit-slider-thumb)/g,'')) && !el.matches(r.selectorText));
+  return CSSRules.filter(
+    r =>
+      el.matches(r.selectorText.replace(/::?(-webkit-slider-thumb)/g, "")) &&
+      !el.matches(r.selectorText)
+  );
 }
 
 function findSliderTrackCSSRules(el: Element): CSSStyleRule[] {
   if (!CSSRules) return [];
-  return CSSRules.filter(r => el.matches(r.selectorText.replace(/::?(-webkit-slider-runnable-track)/g,'')) && !el.matches(r.selectorText));
+  return CSSRules.filter(
+    r =>
+      el.matches(
+        r.selectorText.replace(/::?(-webkit-slider-runnable-track)/g, "")
+      ) && !el.matches(r.selectorText)
+  );
 }
 
 const MODES = {
-  ESCAPE: '\\'.charCodeAt(0),
-  OPENPAREN: '('.charCodeAt(0),
-  CLOSEPAREN: ')'.charCodeAt(0),
+  ESCAPE: "\\".charCodeAt(0),
+  OPENPAREN: "(".charCodeAt(0),
+  CLOSEPAREN: ")".charCodeAt(0),
   DOUBLEQUOTE: '"'.charCodeAt(0),
   QUOTE: "'".charCodeAt(0),
   TOP: -1
 };
 
-function parseContentString(content:string) {
+function parseContentString(content: string) {
   let astStack = [];
   let currentMode = null;
-  let currentNode = {mode: MODES.TOP, name: '', children: [] as any[]};
+  let currentNode = { mode: MODES.TOP, name: "", children: [] as any[] };
   const top = currentNode;
   const re = /[^"'()\\\s]*.?/y;
   while (true) {
@@ -280,22 +378,26 @@ function parseContentString(content:string) {
       if (mode === currentMode) {
         treeEnd = true;
       } else {
-        currentNode.children.push(match[0].charAt(match.length-1));
+        currentNode.children.push(match[0].charAt(match.length - 1));
       }
     } else if (currentMode === MODES.OPENPAREN) {
       if (mode === MODES.CLOSEPAREN) {
         treeEnd = true;
       } else {
-        astStack.push({node: currentNode, mode: currentMode});
-        currentNode = {mode, name: '', children: [] as any[]};
+        astStack.push({ node: currentNode, mode: currentMode });
+        currentNode = { mode, name: "", children: [] as any[] };
         currentMode = mode;
       }
     } else if (mode !== 32 && mode !== 9 && mode !== 10) {
-      astStack.push({node: currentNode, mode: currentMode});
-      currentNode = {mode, name: mode === MODES.OPENPAREN ? currentNode.children.pop() : '', children: [] as any[]};
+      astStack.push({ node: currentNode, mode: currentMode });
+      currentNode = {
+        mode,
+        name: mode === MODES.OPENPAREN ? currentNode.children.pop() : "",
+        children: [] as any[]
+      };
       currentMode = mode;
     } else {
-      currentNode.children.push(match[0].charAt(match[0].length-1));
+      currentNode.children.push(match[0].charAt(match[0].length - 1));
     }
     if (treeEnd) {
       const frame = astStack.pop();
@@ -310,37 +412,49 @@ function parseContentString(content:string) {
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/image
-const IMAGE_FUNCS = ['url', 'element', 
-  'linear-gradient', 'radial-gradient', 'repeating-linear-gradient', 'repeating-radial-gradient', 'conic-gradient', 
-  'image', 'cross-fade', 'image-set'
+const IMAGE_FUNCS = [
+  "url",
+  "element",
+  "linear-gradient",
+  "radial-gradient",
+  "repeating-linear-gradient",
+  "repeating-radial-gradient",
+  "conic-gradient",
+  "image",
+  "cross-fade",
+  "image-set"
 ];
 
 function astToString(node: HTMLElement, ast: any): string {
-  if (typeof ast === 'string') return ast;
-  let string = '';
+  if (typeof ast === "string") return ast;
+  let string = "";
   if (ast.mode === MODES.QUOTE || ast.mode === MODES.DOUBLEQUOTE) {
     return JSON.stringify(ast.children.join(""));
   }
   if (ast.name) {
-    if (ast.name === 'attr') {
-      return node.getAttribute(ast.children.map((c:any) => astToString(node, c)).join("")) || '';
+    if (ast.name === "attr") {
+      return (
+        node.getAttribute(
+          ast.children.map((c: any) => astToString(node, c)).join("")
+        ) || ""
+      );
     }
     string += ast.name;
   }
   if (ast.mode === MODES.OPENPAREN) {
-    string += '(';
+    string += "(";
   }
-  string += ast.children.map((c:any) => astToString(node, c)).join("");
+  string += ast.children.map((c: any) => astToString(node, c)).join("");
   if (ast.mode === MODES.OPENPAREN) {
-    string += ')';
+    string += ")";
   }
   return string;
 }
 
 function applyAST(element: HTMLElement, node: HTMLElement, ast: any) {
-  if (typeof ast === 'string') {
-    if (ast === 'open-quote') element.textContent += '"';
-    if (ast === 'close-quote') element.textContent += '"';
+  if (typeof ast === "string") {
+    if (ast === "open-quote") element.textContent += '"';
+    if (ast === "close-quote") element.textContent += '"';
     return;
   }
   if (ast.mode === MODES.QUOTE || ast.mode === MODES.DOUBLEQUOTE) {
@@ -348,13 +462,17 @@ function applyAST(element: HTMLElement, node: HTMLElement, ast: any) {
   } else if (ast.mode === MODES.OPENPAREN) {
     if (IMAGE_FUNCS.includes(ast.name)) {
       element.style.backgroundImage = astToString(node, ast);
-    } else if (ast.name === 'attr') {
+    } else if (ast.name === "attr") {
       element.textContent += astToString(node, ast);
     }
   }
 }
 
-function resolveCSSContentString(element: HTMLElement, node: HTMLElement, content: string): void {
+function resolveCSSContentString(
+  element: HTMLElement,
+  node: HTMLElement,
+  content: string
+): void {
   const ast = parseContentString(content);
   for (let i = 0; i < ast.children.length; i++) {
     let child = ast.children[i];
@@ -364,7 +482,9 @@ function resolveCSSContentString(element: HTMLElement, node: HTMLElement, conten
 
 function applyStyle(element: HTMLElement, style: CSSStyleDeclaration) {
   for (let k in style) {
-    try { element.style[k] = style[k] } catch(e) {}
+    try {
+      element.style[k] = style[k];
+    } catch (e) {}
   }
 }
 
@@ -374,28 +494,34 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
   }
   const layers: any[] = [];
   const bcr = node.getBoundingClientRect();
-  const {left, top} = bcr;
+  const { left, top } = bcr;
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;
 
   PSEUDO_ELEMENTS.forEach(pseudo => {
     const pseudoStyle = getComputedStyle(node, pseudo);
-    if (pseudoStyle.content !== 'normal' && pseudoStyle.content !== 'none') {
-      const element = document.createElement('span');
+    if (pseudoStyle.content !== "normal" && pseudoStyle.content !== "none") {
+      const element = document.createElement("span");
       applyStyle(element, pseudoStyle);
-      element.style.content = 'normal';
+      element.style.content = "normal";
       resolveCSSContentString(element, node, pseudoStyle.content);
-      if (element.style.backgroundImage !== "" && element.style.display !== 'block') {
-        element.style.display = 'inline-block';
+      if (
+        element.style.backgroundImage !== "" &&
+        element.style.display !== "block"
+      ) {
+        element.style.display = "inline-block";
       }
-      if (pseudo === ':before') {
+      if (pseudo === ":before") {
         node.insertBefore(element, node.firstChild);
         // The fake pseudo element messes with the node's layout
-        if (element.style.position !== 'absolute' && element.style.position !== 'fixed') {
-          element.style.left = -element.getBoundingClientRect().width + 'px';
-          element.style.position = 'relative';
+        if (
+          element.style.position !== "absolute" &&
+          element.style.position !== "fixed"
+        ) {
+          element.style.left = -element.getBoundingClientRect().width + "px";
+          element.style.position = "relative";
         }
-      } else if (pseudo === ':after') {
+      } else if (pseudo === ":after") {
         node.appendChild(element);
       }
     }
@@ -404,27 +530,32 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
   let haveTrack = false;
   const sliderTrackCSSRules = findSliderTrackCSSRules(node);
   if (sliderTrackCSSRules.length > 0) {
-    const track = document.createElement('div');
+    const track = document.createElement("div");
     const rules = [];
     let rule: false | CSSStyleDeclaration = sliderTrackCSSRules[0].style;
     while (rule) {
       rules.unshift(rule);
-      rule = rule.parentRule instanceof CSSStyleRule && rule.parentRule.style !== rule && rule.parentRule.style;
+      rule =
+        rule.parentRule instanceof CSSStyleRule &&
+        rule.parentRule.style !== rule &&
+        rule.parentRule.style;
     }
     rules.forEach(rule => applyStyle(track, rule));
-    track.style.boxSizing = 'border-box';
-    track.style.display = 'block';
-    track.style.position = 'absolute';
-    track.style.minWidth = '0px';
-    track.style.alignSelf = 'center';
-    track.style.flex = '1 1 0%';
+    track.style.boxSizing = "border-box";
+    track.style.display = "block";
+    track.style.position = "absolute";
+    track.style.minWidth = "0px";
+    track.style.alignSelf = "center";
+    track.style.flex = "1 1 0%";
     if (node.parentElement) {
-      if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
-        node.parentElement.style.position = 'relative';
+      if (
+        !/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)
+      ) {
+        node.parentElement.style.position = "relative";
       }
-      track.style.top = node.offsetTop - node.offsetHeight / 2 + 'px';
-      track.style.left = node.offsetLeft + 'px';
-      track.style.width = node.getBoundingClientRect().width + 'px';
+      track.style.top = node.offsetTop - node.offsetHeight / 2 + "px";
+      track.style.left = node.offsetLeft + "px";
+      track.style.width = node.getBoundingClientRect().width + "px";
       haveTrack = true;
       node.parentElement.appendChild(track);
     }
@@ -432,27 +563,37 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
 
   const sliderThumbCSSRules = findSliderThumbCSSRules(node);
   if (sliderThumbCSSRules.length > 0) {
-    const thumb = document.createElement('div');
+    const thumb = document.createElement("div");
     const rules = [];
     let rule: false | CSSStyleDeclaration = sliderThumbCSSRules[0].style;
     while (rule) {
       rules.unshift(rule);
-      rule = rule.parentRule instanceof CSSStyleRule && rule.parentRule.style !== rule && rule.parentRule.style;
+      rule =
+        rule.parentRule instanceof CSSStyleRule &&
+        rule.parentRule.style !== rule &&
+        rule.parentRule.style;
     }
     rules.forEach(rule => applyStyle(thumb, rule));
-    thumb.style.boxSizing = 'border-box';
-    thumb.style.display = 'block';
-    thumb.style.position = 'absolute';
+    thumb.style.boxSizing = "border-box";
+    thumb.style.display = "block";
+    thumb.style.position = "absolute";
     if (node.parentElement) {
-      if (!/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)) {
-        node.parentElement.style.position = 'relative';
+      if (
+        !/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)
+      ) {
+        node.parentElement.style.position = "relative";
       }
-      thumb.style.top = node.offsetTop - node.offsetHeight / 2 - (haveTrack ? 0 : parseFloat(thumb.style.height) / 2 - node.offsetHeight) + 'px';
-      thumb.style.left = node.offsetLeft + 'px';
+      thumb.style.top =
+        node.offsetTop -
+        node.offsetHeight / 2 -
+        (haveTrack
+          ? 0
+          : parseFloat(thumb.style.height) / 2 - node.offsetHeight) +
+        "px";
+      thumb.style.left = node.offsetLeft + "px";
       node.parentElement.appendChild(thumb);
     }
   }
-
 
   const styles = getComputedStyle(node);
   const {
@@ -482,7 +623,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     color,
     boxShadow,
     opacity,
-    whiteSpace,
+    whiteSpace
   }: any = styles;
 
   // skip SVG child nodes as they are already covered by `new SVG(…)`
@@ -494,111 +635,248 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     return layers;
   }
 
-  const shapeGroup = new ShapeGroup({x: left, y: top, width, height});
+  const shapeGroup = new ShapeGroup({ x: left, y: top, width, height });
 
   if (options && options.getRectangleName) {
     shapeGroup.setName(options.getRectangleName(node));
   } else {
-    shapeGroup.setName('custom');
+    shapeGroup.setName("custom");
   }
 
-  const isImage = node.nodeName === 'IMG' && (node as HTMLImageElement).currentSrc;
-  const isSVG = node.nodeName === 'svg';
-  const isSVGElement = node instanceof SVGElement;
+  const isImage =
+    node.nodeName === "IMG" && (node as HTMLImageElement).currentSrc;
+  const isSVG = node.nodeName === "svg";
 
-  if (isSVGElement) {
-    console.log(node);
+  if (node instanceof SVGElement) {
+    if (!isSVG && node.ownerSVGElement) {
+      // Use the SVG viewbox as the frame for SVG elements.
+      // We transform the path points to viewbox coordinates in SvgPath$toCurvePoints,
+      // so e.g. <g> with transform need to be skipped.
+      const svgBCR = node.ownerSVGElement.getBoundingClientRect();
+      shapeGroup._x = svgBCR.left;
+      shapeGroup._y = svgBCR.top;
+      shapeGroup._width = svgBCR.width;
+      shapeGroup._height = svgBCR.height;
+    } else if (isSVG) {
+      // Create a clip rect for the SVG viewbox
+      const clip = new ShapeGroup({ x: left, y: top, width, height });
+      clip._class = "shapePath";
+      clip.setHasClippingMask(true);
+      clip._points = getRectanglePoints(0);
+      clip._isClosed = true;
+
+      console.log(clip._points);
+      layers.push(clip);
+      // Extract the SVG defs and store them on the SVG element.
+      // Is there any better way to store parsing stack state?
+      // 
+      const defsElements = node.getElementsByTagName('defs');
+      if (defsElements.length > 0) {
+        const defsArray = Array.from(defsElements);
+        (node as any).defs = defsArray.map(defs => ({id: defs.id, group: nodeTreeToSketchGroup(defs as unknown as HTMLElement, {})}));
+        defsArray.forEach((defs:any) => defs.parentNode.removeChild(defs));
+      }
+    }
+    const parseStyleNumber = (s:string = '') => {
+      let num = parseFloat(s);
+      if (isNaN(num)) return 0;
+      return num;
+    };
+    const ellipseAttrsToPath = (rx:number,cx:number,ry:number,cy:number) => (
+      `M${cx-rx},${cy}a${rx},${ry} 0 1,0 ${rx*2},0a${rx},${ry} 0 1,0 -${rx*2},0`
+    );
+    let pathSegments: string | null = null;
+    let cornerRadiusPx = 0;
+    const anyStyles = styles as any;
     // TODO Convert these into paths.
     switch (node.tagName) {
-      case 'rect': break;
-      case 'circle': break;
-      case 'ellipse': break;
-      case 'text': break;
-      case 'polygon': break;
+      case "rect":
+        const x = parseStyleNumber(anyStyles.x), y = parseStyleNumber(anyStyles.y);
+        const rectWidth = parseStyleNumber(anyStyles.width), rectHeight = parseStyleNumber(anyStyles.height);
+        pathSegments = `M ${x} ${y} L ${x+rectWidth} ${y} L ${x+rectWidth} ${y+rectHeight} L ${x} ${y+rectHeight} z`;
+        cornerRadiusPx = parseStyleNumber(anyStyles.rx || anyStyles.ry);
+        break;
+      case "polygon":
+      case "polyline":
+        const points = (node.getAttribute('points') || '').split(/\s*[,\s]\s*/);
+        if (points.length > 2) {
+          pathSegments = `M ${points[0]} ${points[1]}`;
+          for (let i = 2; i < points.length; i+=2) {
+            pathSegments += `L ${points[i]} ${points[i+1]}`;
+          }
+          if (node.tagName === 'polygon') {
+            pathSegments += 'z';
+          }
+        }
+        break;
+      case "circle": {
+        const r = parseStyleNumber(anyStyles.r);
+        const cx = parseStyleNumber(anyStyles.cx);
+        const cy = parseStyleNumber(anyStyles.cy);
+        pathSegments = ellipseAttrsToPath(r, cx, r, cy);
+        break;
+      }
+      case "ellipse": {
+        const rx = parseStyleNumber(anyStyles.rx);
+        const ry = parseStyleNumber(anyStyles.ry);
+        const cx = parseStyleNumber(anyStyles.cx);
+        const cy = parseStyleNumber(anyStyles.cy);
+        pathSegments = ellipseAttrsToPath(rx, cx, ry, cy);
+        break;
+      }
+      case "line": {
+        const x1 = parseStyleNumber(anyStyles.x1);
+        const x2 = parseStyleNumber(anyStyles.x2);
+        const y1 = parseStyleNumber(anyStyles.y1);
+        const y2 = parseStyleNumber(anyStyles.y2);
+        pathSegments = `M ${x1} ${y1} L ${x2} ${y2}`;
+        break;
+      }
+      case "path":
+        pathSegments = node.getAttribute("d");
+        break;
+      case "text":
+        break;
     }
-    if (node.tagName === 'path') {
-      const path = (new SvgPath(node.getAttribute('d') || '') as any)
+    if (pathSegments) {
+      const path = (new SvgPath(pathSegments) as any)
         .abs()
         .unshort()
         .unarc()
         .unquad()
         .unline();
-      const bcr = node.getBoundingClientRect();
-      node.setAttribute('d', path.toString());
+      node.setAttribute("d", path.toString());
       const style = new Style();
       shapeGroup._isClosed = true;
       style._borderOptions = {
-        "_class": "borderOptions",
-        "isEnabled": true,
-        "dashPattern": [],
-        "lineCapStyle": 0,
-        "lineJoinStyle": 0
+        _class: "borderOptions",
+        isEnabled: true,
+        dashPattern: [],
+        lineCapStyle: 0,
+        lineJoinStyle: 0
       };
-      style._borders = [
+      style._fills = [];
+      [
         {
-          "_class": "border",
-          "isEnabled": true,
-          "fillType": 0,
-          "color": {
-            "_class": "color",
-            "alpha": 1,
-            "blue": 0,
-            "green": 0,
-            "red": 0
+          _class: "fill",
+          isEnabled: true,
+          fillType: 0,
+          color: {
+            _class: "color",
+            alpha: 1,
+            blue: 0.1333333333333333,
+            green: 0.7333333333333333,
+            red: 1
           },
-          "contextSettings": {
-            "_class": "graphicsContextSettings",
-            "blendMode": 0,
-            "opacity": 1
+          contextSettings: {
+            _class: "graphicsContextSettings",
+            blendMode: 0,
+            opacity: 1
           },
-          "gradient": {
-            "_class": "gradient",
-            "elipseLength": 0,
-            "from": "{0.5, 0}",
-            "gradientType": 0,
-            "to": "{0.5, 1}",
-            "stops": [
+          gradient: {
+            _class: "gradient",
+            elipseLength: 0,
+            from: "{0.5, 0}",
+            gradientType: 0,
+            to: "{0.5, 1}",
+            stops: [
               {
-                "_class": "gradientStop",
-                "position": 0,
-                "color": {
-                  "_class": "color",
-                  "alpha": 1,
-                  "blue": 1,
-                  "green": 1,
-                  "red": 1
+                _class: "gradientStop",
+                position: 0,
+                color: {
+                  _class: "color",
+                  alpha: 1,
+                  blue: 1,
+                  green: 1,
+                  red: 1
                 }
               },
               {
-                "_class": "gradientStop",
-                "position": 1,
-                "color": {
-                  "_class": "color",
-                  "alpha": 1,
-                  "blue": 0,
-                  "green": 0,
-                  "red": 0
+                _class: "gradientStop",
+                position: 1,
+                color: {
+                  _class: "color",
+                  alpha: 1,
+                  blue: 0,
+                  green: 0,
+                  red: 0
                 }
               }
             ]
           },
-          "position": 0,
-          "thickness": 2.999998950937317
+          noiseIndex: 0,
+          noiseIntensity: 0,
+          patternFillType: 1,
+          patternTileScale: 1
         }
       ];
-      const curveSegments = path.toCurvePoints(bcr);
-      curveSegments.forEach((segment:{isClosed: boolean, points: any[]}) => {
-        const sg = new ShapeGroup({x: left, y: top, width, height});
-        sg._class = 'shapePath';
+      style._borders = [
+        {
+          _class: "border",
+          isEnabled: true,
+          fillType: 0,
+          color: {
+            _class: "color",
+            alpha: 1,
+            blue: 0,
+            green: 0,
+            red: 0
+          },
+          contextSettings: {
+            _class: "graphicsContextSettings",
+            blendMode: 0,
+            opacity: 1
+          },
+          gradient: {
+            _class: "gradient",
+            elipseLength: 0,
+            from: "{0.5, 0}",
+            gradientType: 0,
+            to: "{0.5, 1}",
+            stops: [
+              {
+                _class: "gradientStop",
+                position: 0,
+                color: {
+                  _class: "color",
+                  alpha: 1,
+                  blue: 1,
+                  green: 1,
+                  red: 1
+                }
+              },
+              {
+                _class: "gradientStop",
+                position: 1,
+                color: {
+                  _class: "color",
+                  alpha: 1,
+                  blue: 0,
+                  green: 0,
+                  red: 0
+                }
+              }
+            ]
+          },
+          position: 0,
+          thickness: 2.999998950937317
+        }
+      ];
+      const curveSegments = path.toCurvePoints(node, cornerRadiusPx);
+      const bbox = curveSegments.bbox;
+      bbox.x += shapeGroup._x;
+      bbox.y += shapeGroup._y;
+      curveSegments.segments.forEach((segment: { isClosed: boolean; points: any[] }) => {
+        const sg = new ShapeGroup({...bbox});
+        sg._class = "shapePath";
         sg._points = segment.points;
         sg._isClosed = segment.isClosed;
         sg.setStyle(style);
         layers.push(sg);
       });
+      return layers;
     }
-    return layers;
   }
-  
 
   // if layer has no background/shadow/border/etc. skip it
   if (isImage || !hasOnlyDefaultStyles(styles)) {
@@ -609,7 +887,10 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     }
 
     if (isImage) {
-      const absoluteUrl = new URL((node as HTMLImageElement).currentSrc, location.href);
+      const absoluteUrl = new URL(
+        (node as HTMLImageElement).currentSrc,
+        location.href
+      );
 
       style.addImageFill(absoluteUrl.href);
       shapeGroup.setFixedWidthAndHeight();
@@ -622,7 +903,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         const shadowObject: any = shadowStringToObject(shadowString);
 
         if (shadowObject.inset) {
-          if (borderWidth.indexOf(' ') === -1) {
+          if (borderWidth.indexOf(" ") === -1) {
             shadowObject.spread += parseFloat(borderWidth);
           }
           style.addInnerShadow(shadowObject);
@@ -633,8 +914,11 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     }
 
     // support for one-side borders (using inner shadow because Sketch doesn't support that)
-    if (borderWidth.indexOf(' ') === -1) {
-      style.addBorder({color: borderColor, thickness: parseFloat(borderWidth)});
+    if (borderWidth.indexOf(" ") === -1) {
+      style.addBorder({
+        color: borderColor,
+        thickness: parseFloat(borderWidth)
+      });
     } else {
       const borderTopWidthFloat = parseFloat(borderTopWidth);
       const borderRightWidthFloat = parseFloat(borderRightWidth);
@@ -642,16 +926,28 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       const borderLeftWidthFloat = parseFloat(borderLeftWidth);
 
       if (borderTopWidthFloat !== 0) {
-        style.addInnerShadow({color: borderTopColor, offsetY: borderTopWidthFloat});
+        style.addInnerShadow({
+          color: borderTopColor,
+          offsetY: borderTopWidthFloat
+        });
       }
       if (borderRightWidthFloat !== 0) {
-        style.addInnerShadow({color: borderRightColor, offsetX: -borderRightWidthFloat});
+        style.addInnerShadow({
+          color: borderRightColor,
+          offsetX: -borderRightWidthFloat
+        });
       }
       if (borderBottomWidthFloat !== 0) {
-        style.addInnerShadow({color: borderBottomColor, offsetY: -borderBottomWidthFloat});
+        style.addInnerShadow({
+          color: borderBottomColor,
+          offsetY: -borderBottomWidthFloat
+        });
       }
       if (borderLeftWidthFloat !== 0) {
-        style.addInnerShadow({color: borderLeftColor, offsetX: borderLeftWidthFloat});
+        style.addInnerShadow({
+          color: borderLeftColor,
+          offsetX: borderLeftWidthFloat
+        });
       }
     }
 
@@ -666,10 +962,10 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       topLeft: fixBorderRadius(borderTopLeftRadius, width, height),
       topRight: fixBorderRadius(borderTopRightRadius, width, height),
       bottomLeft: fixBorderRadius(borderBottomLeftRadius, width, height),
-      bottomRight: fixBorderRadius(borderBottomRightRadius, width, height),
+      bottomRight: fixBorderRadius(borderBottomRightRadius, width, height)
     };
 
-    const rectangle = new Rectangle({width, height, cornerRadius});
+    const rectangle = new Rectangle({ width, height, cornerRadius });
 
     shapeGroup.addLayer(rectangle);
 
@@ -679,9 +975,8 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     let layer: any = shapeGroup;
 
     if (backgroundImageResult) {
-
       switch (backgroundImageResult.type) {
-        case 'Image': {
+        case "Image": {
           const img: any = new Image();
 
           img.src = backgroundImageResult.value;
@@ -692,13 +987,15 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
 
           const actualImgSize = getActualImageSize(
             backgroundSize,
-            {width: img.width, height: img.height},
-            {width, height}
+            { width: img.width, height: img.height },
+            { width, height }
           );
 
           if (
-            bitmapX === 0 && bitmapY === 0 &&
-            actualImgSize.width === img.width && actualImgSize.height === img.height
+            bitmapX === 0 &&
+            bitmapY === 0 &&
+            actualImgSize.width === img.width &&
+            actualImgSize.height === img.height
           ) {
             // background image fits entirely inside the node, so we can represent it with a (cheaper) image fill
             style.addImageFill(backgroundImageResult.value);
@@ -709,16 +1006,16 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
               x: bitmapX,
               y: bitmapY,
               width: actualImgSize.width,
-              height: actualImgSize.height,
+              height: actualImgSize.height
             });
 
-            bm.setName('background-image');
+            bm.setName("background-image");
             shapeGroup.setHasClippingMask(true);
 
-            const group = new Group({x: left, y: top, width, height});
+            const group = new Group({ x: left, y: top, width, height });
 
             // position is relative to the group
-            shapeGroup.setPosition({x: 0, y: 0});
+            shapeGroup.setPosition({ x: 0, y: 0 });
             group.addLayer(shapeGroup);
             group.addLayer(bm);
 
@@ -727,7 +1024,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
 
           break;
         }
-        case 'LinearGradient':
+        case "LinearGradient":
           style.addGradientFill(backgroundImageResult.value);
           break;
         default:
@@ -738,7 +1035,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       }
     }
 
-    layers.push(layer)
+    layers.push(layer);
   }
 
   if (isSVG) {
@@ -750,7 +1047,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       y: childrenBCR.top,
       width: childrenBCR.width,
       height: childrenBCR.height,
-      rawSVGString: getSVGString(node),
+      rawSVGString: getSVGString(node)
     });
 
     layers.push(svgLayer);
@@ -766,25 +1063,31 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     fontFamily,
     fontSize: parseInt(fontSize, 10),
     color,
-    skipSystemFonts: options && options.skipSystemFonts,
+    skipSystemFonts: options && options.skipSystemFonts
   });
 
   const alignment = ALIGNMENTS[textAlign] || 0;
 
-  const textAttributedString = (text: string) => new TextAttributedString({
-    text,
-    fontFamily,
-    fontSize: parseInt(fontSize, 10),
-    skipSystemFonts: options && options.skipSystemFonts,
-    color,
-    alignment
-  })
+  const textAttributedString = (text: string) =>
+    new TextAttributedString({
+      text,
+      fontFamily,
+      fontSize: parseInt(fontSize, 10),
+      skipSystemFonts: options && options.skipSystemFonts,
+      color,
+      alignment
+    });
 
   const rangeHelper = document.createRange();
 
   // Text
   Array.from(node.childNodes)
-    .filter((child: HTMLElement) => child.nodeType === 3 && child.nodeValue && child.nodeValue.trim().length > 0)
+    .filter(
+      (child: HTMLElement) =>
+        child.nodeType === 3 &&
+        child.nodeValue &&
+        child.nodeValue.trim().length > 0
+    )
     .forEach((textNode: HTMLElement) => {
       rangeHelper.selectNodeContents(textNode);
       const textRanges = Array.from(rangeHelper.getClientRects());
@@ -800,7 +1103,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         fixY = (textBCRHeight - lineHeightInt * numberOfLines) / 2;
       }
 
-      const textValue = fixWhiteSpace(textNode.nodeValue || '', whiteSpace);
+      const textValue = fixWhiteSpace(textNode.nodeValue || "", whiteSpace);
 
       const text = new Text({
         x: textBCR.left,
@@ -810,11 +1113,11 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         text: textValue,
         style: textStyle,
         attributedString: textAttributedString(textValue),
-        multiline: numberOfLines > 1,
+        multiline: numberOfLines > 1
       });
 
       if (options && options.onTextGenerate) {
-        options.onTextGenerate({layer: text, node: textNode});
+        options.onTextGenerate({ layer: text, node: textNode });
       }
 
       layers.push(text);
