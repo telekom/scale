@@ -13,6 +13,7 @@ export const ScaleBreadcrumb = /*@__PURE__*/createReactComponent<JSX.ScaleBreadc
 export const ScaleButton = /*@__PURE__*/createReactComponent<JSX.ScaleButton, HTMLScaleButtonElement>('scale-button');
 export const ScaleCard = /*@__PURE__*/createReactComponent<JSX.ScaleCard, HTMLScaleCardElement>('scale-card');
 export const ScaleCarousel = /*@__PURE__*/createReactComponent<JSX.ScaleCarousel, HTMLScaleCarouselElement>('scale-carousel');
+export const ScaleCollapsible = /*@__PURE__*/createReactComponent<JSX.ScaleCollapsible, HTMLScaleCollapsibleElement>('scale-collapsible');
 export const ScaleDivider = /*@__PURE__*/createReactComponent<JSX.ScaleDivider, HTMLScaleDividerElement>('scale-divider');
 export const ScaleIcon = /*@__PURE__*/createReactComponent<JSX.ScaleIcon, HTMLScaleIconElement>('scale-icon');
 export const ScaleInput = /*@__PURE__*/createReactComponent<JSX.ScaleInput, HTMLScaleInputElement>('scale-input');
