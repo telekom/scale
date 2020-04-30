@@ -20,10 +20,14 @@ export class Collapsible implements Base {
   @Prop() label: string;
   @Prop() isExpanded?: boolean;
 
+  // Temporary, testing
+  @Prop() bold: boolean = false;
+  @Prop() border: boolean = true;
+
   @State() expanded: boolean = false;
 
   componentWillLoad() {
-    this.expanded = this.isExpanded
+    this.expanded = this.isExpanded;
   }
   componentWillUpdate() {}
 
@@ -38,21 +42,42 @@ export class Collapsible implements Base {
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <WrapperTag>
-          <button class={this.getCssClassMap()} onClick={this.handleClick.bind(this)} aria-expanded={this.expanded ? 'true' : 'false'}>
+          <button
+            class={this.getCssClassMap()}
+            onClick={this.handleClick.bind(this)}
+            aria-expanded={this.expanded ? 'true' : 'false'}
+          >
             {this.label}
-            {/* TODO scale-icon should be used instead */}
-            <svg
-              width="18"
-              height="10"
-              viewBox="0 0 18 10"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M.563 1.063A.544.544 0 011.5.65l7.499 7.499L16.462.687a.544.544 0 01.788 0 .544.544 0 010 .788L9.375 9.35a.544.544 0 01-.787 0L.713 1.475a.564.564 0 01-.15-.413z"
-                fill="currentColor"
-                fill-rule="nonzero"
-              />
-            </svg>
+            {/* TODO hard-coded for now, scale-icon should be used instead */}
+            {this.expanded ? (
+              this.bold ? (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 10.5c0 .25-.1.5-.3.7-.4.4-1.025.4-1.425 0L8 6.925 3.7 11.2c-.4.4-1.025.4-1.425 0a.996.996 0 010-1.425l5-5c.4-.4 1.025-.4 1.425 0l5 5c.2.225.3.475.3.725z"
+                    fill="currentColor"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.624 10.624A.362.362 0 0113 10.9l-5-5-4.975 5a.362.362 0 01-.525 0 .363.363 0 010-.525l5.25-5.25c.15-.15.375-.15.525 0l5.25 5.25c.076.05.1.15.1.25z"
+                    fill="currentColor"
+                  />
+                </svg>
+              )
+            ) : null}
           </button>
           <div hidden={!this.expanded}>
             <slot />
@@ -64,6 +89,10 @@ export class Collapsible implements Base {
 
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
-    return classNames(classes.collapsible);
+    return classNames(
+      classes.collapsible,
+      this.bold && classes['collapsible--bold'],
+      this.border && classes['collapsible--border']
+    );
   }
 }

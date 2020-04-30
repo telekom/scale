@@ -65,54 +65,88 @@
 
     <h3>Sidebar Nav (testing 2)</h3>
     <style>
-      .sidebar-nav-simple {
+      .sidebar-nav {
         max-width: 22rem;
-        border: 1px solid olivedrab;
       }
-      .sidebar-nav-simple ul {
+      .sidebar-nav ul {
         list-style-type: none;
         padding-left: 0;
       }
-      .sidebar-nav-simple {
+      .sidebar-nav {
         font-size: inherit;
       }
-      .testing {
-        padding: 1rem;
+      .sidebar-nav a {
+        display: block;
+        padding: 1.6em 1em 1.6em 2em;
+        color: black;
+        text-decoration: none;
+      }
+      .sidebar-nav__item--underline {
+        border-bottom: 1px solid #EEEEEE;
+      }
+      .sidebar-nav .sidebar-nav__list-3 {
+        margin: 1em 0 1em 2em;
+        border-left: 1px solid purple;
+      }
+      .sidebar-nav .sidebar-nav__link-1 {
+        font-weight: bold;
+      }
+      .sidebar-nav .sidebar-nav__link-3 {
+        padding: 1em 1em 1em 1em;
       }
     </style>
-    <div class="sidebar-nav-simple">
+    <div class="sidebar-nav">
       <nav>
         <ul>
-          <li>
-            <a href="/a">Schlitz sustainable</a>
+          <li class="sidebar-nav__item--underline">
+            <a href="/overview" class="sidebar-nav__link-1">Overview</a>
           </li>
-          <li>
-            <a href="/b">Literally fashion axe</a>
-          </li>
-          <li>
-            <a href="/c">Four loko health</a>
-          </li>
-          <scale-collapsible id="b1" wrapper="li" label="Heading here">
+          <!-- TODO add border-bottom via styles prop -->
+          <scale-collapsible wrapper="li" label="Reference" bold>
             <ul>
-              <li><a href="#">A</a></li>
-              <li><a href="#">B</a></li>
+              <scale-collapsible wrapper="li" label="Function A">
+                <ul class="sidebar-nav__list-3">
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 2</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 3</a>
+                  </li>
+                </ul>
+              </scale-collapsible>
+              <scale-collapsible wrapper="li" label="Function B">
+                <ul class="sidebar-nav__list-3">
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 2</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 3</a>
+                  </li>
+                </ul>
+              </scale-collapsible>
+              <scale-collapsible wrapper="li" label="Function C">
+                <ul class="sidebar-nav__list-3">
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 2</a>
+                  </li>
+                  <li>
+                    <a href="#" class="sidebar-nav__link-3">Endpoint 3</a>
+                  </li>
+                </ul>
+              </scale-collapsible>
             </ul>
           </scale-collapsible>
-          <script>
-            // document.getElementById('b1').styles = {
-            //   collapsible: {
-            //     padding: '1em 1em 1em 2em'
-            //   }
-            // }
-          </script>
-          <scale-collapsible wrapper="li" is-expanded="true" label="Heading 2">
-            <ul>
-              <li><a href="#">A</a></li>
-              <li><a href="#">B</a></li>
-            </ul>
-          </scale-collapsible>
-          <li>
-            <a href="/d">Gluten-free pug</a>
+          <li class="sidebar-nav__item--underline">
+            <a href="/console" class="sidebar-nav__link-1">Console</a>
           </li>
         </ul>
       </nav>
@@ -665,80 +699,6 @@
       <a href="/b">Breadcrumb 2</a>
       <span>Breadcrumb 3</span>
     </scale-breadcrumb>
-
-    <h3>Sidebar Nav (testing)</h3>
-    <div class="sidebar-nav">
-      <style>
-        /* Temporary! just for prototyping/testing */
-        .sidebar-nav {
-          max-width: 22rem;
-          margin-bottom: 10vh;
-
-          --nav-color: #262626;
-          --nav-color-hover: tomato;
-          --nav-color-active: darkred;
-          --nav-color-focus: blue;
-          --nav-item-padding: 1em 1em 1em 2em;
-        }
-        .sidebar-nav a {
-          display: block;
-          padding: var(--nav-item-padding);
-          color: var(--nav-color);
-          text-decoration: none;
-          border: 2px solid transparent;
-          border-radius: 4px;
-        }
-        .sidebar-nav a:hover {
-          color: var(--nav-color-hover);
-        }
-        .sidebar-nav a:active {
-          color: var(--nav-color-active);
-        }
-        .sidebar-nav a:focus {
-          outline: none;
-          border-color: var(--nav-color-focus);
-        }
-      </style>
-      <scale-sidebar-nav>
-        <scale-sidebar-nav-item>
-          <a href="/a">Schlitz sustainable</a>
-        </scale-sidebar-nav-item>
-        
-        <scale-sidebar-nav-collapsible label="Heading with h2">
-          <scale-sidebar-nav-item>
-            <a href="/b">Literally fashion axe</a>
-          </scale-sidebar-nav-item>
-          <scale-sidebar-nav-item>
-            <a href="/c">Four loko health</a>
-          </scale-sidebar-nav-item>
-
-          <scale-sidebar-nav-collapsible label="Nested heading with h3" level="3">
-            <scale-sidebar-nav-item border="false">
-              <a href="/h">Gluten-free pug</a>
-            </scale-sidebar-nav-item>
-            <scale-sidebar-nav-item border="false">
-              <a href="/i">XOXO farm-to-table</a>
-            </scale-sidebar-nav-item>
-          </scale-sidebar-nav-collapsible>
-        </scale-sidebar-nav-collapsible>
-
-        <scale-sidebar-nav-collapsible label="Second heading, level 2">
-          <scale-sidebar-nav-item>
-            <a href="/d">Messenger bag everyday</a>
-          </scale-sidebar-nav-item>
-          <scale-sidebar-nav-item>
-            <a href="/f">Kogi af street</a>
-          </scale-sidebar-nav-item>
-        </scale-sidebar-nav-collapsible>
-
-        <scale-sidebar-nav-item>
-          <a href="/j">Williamsburg</a>
-        </scale-sidebar-nav-item>
-        <scale-sidebar-nav-item>
-          <a href="/k">Vaporware</a>
-        </scale-sidebar-nav-item>
-      </scale-sidebar-nav>
-    </div>
 
   </body>
 </html>

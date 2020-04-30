@@ -150,6 +150,8 @@ export namespace Components {
         "vertical"?: boolean;
     }
     interface ScaleCollapsible {
+        "bold": boolean;
+        "border": boolean;
         "isExpanded"?: boolean;
         "label": string;
         /**
@@ -821,6 +823,8 @@ declare namespace LocalJSX {
         "vertical"?: boolean;
     }
     interface ScaleCollapsible {
+        "bold"?: boolean;
+        "border"?: boolean;
         "isExpanded"?: boolean;
         "label"?: string;
         /**

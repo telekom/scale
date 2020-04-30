@@ -4,7 +4,7 @@ export const styles: JssStyle = {
   collapsible: {
     width: '100%',
     appearance: 'none',
-    padding: 0,
+    // padding: 0,
     color: 'inherit',
     background: 'transparent',
     font: 'inherit',
@@ -16,8 +16,17 @@ export const styles: JssStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
     textAlign: 'left',
-    '&[aria-expanded="true"] svg': {
+    borderBottom: '1px solid transparent',
+
+    padding: '1.6em 1em 1.6em 2em',
+    /* '&[aria-expanded="true"] svg': {
       transform: 'rotate(180deg)',
-    }
+    } */
+  },
+  'collapsible--bold': {
+    fontWeight: ({ typography }) => typography.fontWeightBold
+  },
+  'collapsible--border': {
+    borderBottomColor: ({ colors }) => colors.grey['200']
   },
 };
