@@ -415,6 +415,8 @@ export namespace Components {
          */
         "value": number;
     }
+    interface ScaleSsrSlotFix {
+    }
     interface ScaleSwitch {
         /**
           * (optional) Active switch
@@ -633,6 +635,12 @@ declare global {
         prototype: HTMLScaleSliderElement;
         new (): HTMLScaleSliderElement;
     };
+    interface HTMLScaleSsrSlotFixElement extends Components.ScaleSsrSlotFix, HTMLStencilElement {
+    }
+    var HTMLScaleSsrSlotFixElement: {
+        prototype: HTMLScaleSsrSlotFixElement;
+        new (): HTMLScaleSsrSlotFixElement;
+    };
     interface HTMLScaleSwitchElement extends Components.ScaleSwitch, HTMLStencilElement {
     }
     var HTMLScaleSwitchElement: {
@@ -674,6 +682,7 @@ declare global {
         "scale-sidebar-nav-collapsible": HTMLScaleSidebarNavCollapsibleElement;
         "scale-sidebar-nav-item": HTMLScaleSidebarNavItemElement;
         "scale-slider": HTMLScaleSliderElement;
+        "scale-ssr-slot-fix": HTMLScaleSsrSlotFixElement;
         "scale-switch": HTMLScaleSwitchElement;
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
@@ -1076,6 +1085,8 @@ declare namespace LocalJSX {
          */
         "value"?: number;
     }
+    interface ScaleSsrSlotFix {
+    }
     interface ScaleSwitch {
         /**
           * (optional) Active switch
@@ -1210,6 +1221,7 @@ declare namespace LocalJSX {
         "scale-sidebar-nav-collapsible": ScaleSidebarNavCollapsible;
         "scale-sidebar-nav-item": ScaleSidebarNavItem;
         "scale-slider": ScaleSlider;
+        "scale-ssr-slot-fix": ScaleSsrSlotFix;
         "scale-switch": ScaleSwitch;
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
@@ -1236,6 +1248,7 @@ declare module "@stencil/core" {
             "scale-sidebar-nav-collapsible": LocalJSX.ScaleSidebarNavCollapsible & JSXBase.HTMLAttributes<HTMLScaleSidebarNavCollapsibleElement>;
             "scale-sidebar-nav-item": LocalJSX.ScaleSidebarNavItem & JSXBase.HTMLAttributes<HTMLScaleSidebarNavItemElement>;
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
+            "scale-ssr-slot-fix": LocalJSX.ScaleSsrSlotFix & JSXBase.HTMLAttributes<HTMLScaleSsrSlotFixElement>;
             "scale-switch": LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;

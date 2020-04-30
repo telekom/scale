@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/telekom/scale/compare/v0.1.3...v0.1.4) (2020-04-29)
+
+
+### Bug Fixes
+
+* fixes versions for @scaleds/components and @scaleds/scale-react to 0.1.3 ([e959284](https://github.com/telekom/scale/commit/e95928488b8eaddf0c8237b9c583c362f7fbf65b))
+* renames scale-react package to components-react and fixes all the paths ([#200](https://github.com/telekom/scale/issues/200)) ([2cd2fb1](https://github.com/telekom/scale/commit/2cd2fb11d29d82640b244108c3ba75f77fca3f1b))
+* render theme for docs ([#193](https://github.com/telekom/scale/issues/193)) ([9bf02ff](https://github.com/telekom/scale/commit/9bf02ff14912894a5f266b095493a742da9f0316))
+
+
+### Features
+
+* adds new script force-version to the root package.json file to force ([da08e17](https://github.com/telekom/scale/commit/da08e17c3b9c7503106ed7b23ce4290ccb0c2a46))
+
+
+
+## [0.0.17](https://github.com/telekom/scale/compare/v0.0.16...v0.0.17) (2020-04-17)
+
+
+
+## [0.0.16](https://github.com/telekom/scale/compare/v0.0.15...v0.0.16) (2020-04-08)
+
+
+
+## [0.0.15](https://github.com/telekom/scale/compare/v0.0.14...v0.0.15) (2020-04-01)
+
+
+
+## [0.0.14](https://github.com/telekom/scale/compare/v0.0.13...v0.0.14) (2020-04-01)
+
+
+
+## [0.0.13](https://github.com/telekom/scale/compare/v0.0.12...v0.0.13) (2020-04-01)
+
+
+
+
+
 ## [0.1.3](https://github.com/telekom/scale/compare/v0.1.2...v0.1.3) (2020-04-24)
 
 
@@ -33,7 +71,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * Add ignore property to build-deploy workflow ([22ffe16](https://github.com/telekom/scale/commit/22ffe1660336527ddbb2404ec26bc17beb648fa8))
-* fixes circleci workflow since there are no tests for the scale-react package ([b77ee3b](https://github.com/telekom/scale/commit/b77ee3b0628918740f7a95c154b5fcad1856e567))
+* fixes circleci workflow since there are no tests for the components-react package ([b77ee3b](https://github.com/telekom/scale/commit/b77ee3b0628918740f7a95c154b5fcad1856e567))
 * fixes typo ([f39f3ce](https://github.com/telekom/scale/commit/f39f3ce0332fba342a0d577d8a63ff5c073c4bc9))
 * manually fixes the lerna version to 0.17 to reflect the current version on master ([9109da7](https://github.com/telekom/scale/commit/9109da72fc6aaeaacad7f45e53b48a3d6acd799b))
 * update build files ([#175](https://github.com/telekom/scale/issues/175)) ([1767c8b](https://github.com/telekom/scale/commit/1767c8bf98927d00afdce177f0e367d79c456e77))
@@ -46,7 +84,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * better types ([#185](https://github.com/telekom/scale/issues/185)) ([4a6ca9d](https://github.com/telekom/scale/commit/4a6ca9dc4e31289b55f96ecc37568e5c97c537c6))
 * finishes integration of the react proxy output plugin. Updates the react boiler plate. ([c33e451](https://github.com/telekom/scale/commit/c33e4514fb840cc2e19e53dee1b17c30e27320ac))
 * removes react-wrapper package ([d177d4b](https://github.com/telekom/scale/commit/d177d4b2c0f2195e5f27b559f3016052e0f6fca7))
-* renames package folder from react-wrapper to scale-react ([e05f868](https://github.com/telekom/scale/commit/e05f868954c9b93e2f223b344736c952387adcf1))
+* renames package folder from react-wrapper to components-react ([e05f868](https://github.com/telekom/scale/commit/e05f868954c9b93e2f223b344736c952387adcf1))
 
 
 ### Performance Improvements

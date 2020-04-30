@@ -84,7 +84,7 @@ Using current theme values
 
 ```tsx
 import React from 'react';
-import { ScaleButton } from '@scaleds/scale-react';
+import { ScaleButton } from '@scaleds/components-react';
 
 const { colors } = require('@scaleds/components/dist/theme').getTheme()
 
