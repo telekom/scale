@@ -8,6 +8,8 @@ class Style {
   _innerShadows: any;
   _opacity: any;
   _borderOptions: any;
+  _miterLimit: number = 10;
+  _windingRule: number = 0;
 
   constructor() {
     this._fills = [];
@@ -17,8 +19,8 @@ class Style {
     this._opacity = '1';
   }
 
-  addColorFill(color: any) {
-    this._fills.push(makeColorFill(color));
+  addColorFill(color: any, alpha: number = 1) {
+    this._fills.push(makeColorFill(color, alpha));
   }
 
   addGradientFill({angle, stops}: any) {
@@ -56,11 +58,11 @@ class Style {
     this._fills.push(fill);
   }
 
-  addBorder({color, thickness}: any) {
+  addBorder({color, thickness, alpha}: {color:any, thickness:number, alpha?:number}) {
     this._borders.push({
       _class: 'border',
       isEnabled: true,
-      color: makeColorFromCSS(color),
+      color: makeColorFromCSS(color, alpha),
       fillType: 0,
       position: 1,
       thickness,
@@ -114,7 +116,8 @@ class Style {
       shadows: this._shadows,
       innerShadows: this._innerShadows,
       endDecorationType: 0,
-      miterLimit: 10,
+      miterLimit: this._miterLimit,
+      windingRule: this._windingRule,
       startDecorationType: 0,
       contextSettings: {
         _class: 'graphicsContextSettings',

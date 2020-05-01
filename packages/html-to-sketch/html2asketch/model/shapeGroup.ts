@@ -6,7 +6,7 @@ class ShapeGroup extends Base {
   _height: any;
   _x: any;
   _y: any;
-
+  
   constructor({x, y, width, height, id}: any) {
     super({id});
     this._class = 'shapeGroup';

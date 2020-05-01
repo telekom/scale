@@ -664,8 +664,6 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       clip.setHasClippingMask(true);
       clip._points = getRectanglePoints(0);
       clip._isClosed = true;
-
-      console.log(clip._points);
       layers.push(clip);
       // Extract the SVG defs and store them on the SVG element.
       // Is there any better way to store parsing stack state?
@@ -677,9 +675,9 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         defsArray.forEach((defs:any) => defs.parentNode.removeChild(defs));
       }
     }
-    const parseStyleNumber = (s:string = '') => {
+    const parseStyleNumber = (s:string = '', defaultValue:number = 0) => {
       let num = parseFloat(s);
-      if (isNaN(num)) return 0;
+      if (isNaN(num)) return defaultValue;
       return num;
     };
     const ellipseAttrsToPath = (rx:number,cx:number,ry:number,cy:number) => (
@@ -687,10 +685,11 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     );
     let pathSegments: string | null = null;
     let cornerRadiusPx = 0;
+    let classOverride = 'shapePath';
     const anyStyles = styles as any;
-    // TODO Convert these into paths.
     switch (node.tagName) {
       case "rect":
+        classOverride = 'rectangle';
         const x = parseStyleNumber(anyStyles.x), y = parseStyleNumber(anyStyles.y);
         const rectWidth = parseStyleNumber(anyStyles.width), rectHeight = parseStyleNumber(anyStyles.height);
         pathSegments = `M ${x} ${y} L ${x+rectWidth} ${y} L ${x+rectWidth} ${y+rectHeight} L ${x} ${y+rectHeight} z`;
@@ -755,126 +754,66 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         lineCapStyle: 0,
         lineJoinStyle: 0
       };
-      style._fills = [];
-      [
-        {
-          _class: "fill",
-          isEnabled: true,
-          fillType: 0,
-          color: {
-            _class: "color",
-            alpha: 1,
-            blue: 0.1333333333333333,
-            green: 0.7333333333333333,
-            red: 1
-          },
-          contextSettings: {
-            _class: "graphicsContextSettings",
-            blendMode: 0,
-            opacity: 1
-          },
-          gradient: {
-            _class: "gradient",
-            elipseLength: 0,
-            from: "{0.5, 0}",
-            gradientType: 0,
-            to: "{0.5, 1}",
-            stops: [
-              {
-                _class: "gradientStop",
-                position: 0,
-                color: {
-                  _class: "color",
-                  alpha: 1,
-                  blue: 1,
-                  green: 1,
-                  red: 1
-                }
-              },
-              {
-                _class: "gradientStop",
-                position: 1,
-                color: {
-                  _class: "color",
-                  alpha: 1,
-                  blue: 0,
-                  green: 0,
-                  red: 0
-                }
-              }
-            ]
-          },
-          noiseIndex: 0,
-          noiseIntensity: 0,
-          patternFillType: 1,
-          patternTileScale: 1
-        }
-      ];
-      style._borders = [
-        {
-          _class: "border",
-          isEnabled: true,
-          fillType: 0,
-          color: {
-            _class: "color",
-            alpha: 1,
-            blue: 0,
-            green: 0,
-            red: 0
-          },
-          contextSettings: {
-            _class: "graphicsContextSettings",
-            blendMode: 0,
-            opacity: 1
-          },
-          gradient: {
-            _class: "gradient",
-            elipseLength: 0,
-            from: "{0.5, 0}",
-            gradientType: 0,
-            to: "{0.5, 1}",
-            stops: [
-              {
-                _class: "gradientStop",
-                position: 0,
-                color: {
-                  _class: "color",
-                  alpha: 1,
-                  blue: 1,
-                  green: 1,
-                  red: 1
-                }
-              },
-              {
-                _class: "gradientStop",
-                position: 1,
-                color: {
-                  _class: "color",
-                  alpha: 1,
-                  blue: 0,
-                  green: 0,
-                  red: 0
-                }
-              }
-            ]
-          },
-          position: 0,
-          thickness: 2.999998950937317
-        }
-      ];
+      const ctm = (node as unknown as SVGPathElement).getCTM();
+      // Do we need to deal with X-Y scales separately?
+      // Sketch doesn't support transform matrices, so can't do full SVG transform stack.
+      // Well, you could SVD the matrix into a rotate-scale-rotate sequence if really needed.
+      const nodeScale = ctm ? ctm.a : 1;
       const curveSegments = path.toCurvePoints(node, cornerRadiusPx);
       const bbox = curveSegments.bbox;
       bbox.x += shapeGroup._x;
       bbox.y += shapeGroup._y;
+
+      // Set stroke parameters
+      if (anyStyles.stroke && anyStyles.stroke !== 'none' && anyStyles.stroke !== 'transparent') {
+        style.addBorder({ color: anyStyles.stroke, alpha: parseStyleNumber(anyStyles.strokeOpacity, 1), thickness: parseStyleNumber(anyStyles.strokeWidth) * nodeScale });
+        style._borders[style._borders.length-1].position = 0;
+        switch (anyStyles.strokeLinecap) {
+          case 'round': style._borderOptions.lineCapStyle = 1; break;
+          case 'square': style._borderOptions.lineCapStyle = 2; break;
+          case 'butt': 
+          default:
+            style._borderOptions.lineCapStyle = 0;
+            break;
+        }
+        switch (anyStyles.strokeLinejoin) {
+          case 'bevel': style._borderOptions.lineJoinStyle = 2; break;
+          case 'round': style._borderOptions.lineJoinStyle = 1; break;
+          case 'arcs': style._borderOptions.lineJoinStyle = 1; break;
+          case 'miter-clip':
+          case 'miter': 
+          default:
+            style._borderOptions.lineJoinStyle = 0;
+            break;
+        }
+        const dashArray = (anyStyles.strokeDasharray || '').split(" ").map((c:string) => parseInt(c));
+        if (dashArray.length > 0 && dashArray.every((c:number) => !isNaN(c))) {
+          style._borderOptions.dashPattern = dashArray.join("-");
+        }
+        style._miterLimit = parseStyleNumber(anyStyles.strokeMiterlimit);
+      }
+      // Set fill parameters
+      if (anyStyles.fill && anyStyles.fill !== 'none') {
+        style.addColorFill(anyStyles.fill, parseStyleNumber(anyStyles.fillOpacity, 1));
+        style._windingRule = anyStyles.fillRule === 'nonzero' ? 0 : 1;
+      }
+      shapeGroup._x = bbox.x;
+      shapeGroup._y = bbox.y;
+      shapeGroup._width = bbox.width;
+      shapeGroup._height = bbox.height;
+      shapeGroup.setStyle(style);
+      // Create shapePaths from the curve segments.
       curveSegments.segments.forEach((segment: { isClosed: boolean; points: any[] }) => {
-        const sg = new ShapeGroup({...bbox});
-        sg._class = "shapePath";
+        const sg = new ShapeGroup({x: 0, y: 0, width: bbox.width, height: bbox.height});
+        sg._class = classOverride;
         sg._points = segment.points;
+        if (classOverride === 'rectangle') {
+          sg._points.forEach((p:{curveMode:number}) => p.curveMode = 1);
+        }
         sg._isClosed = segment.isClosed;
-        sg.setStyle(style);
-        layers.push(sg);
+        shapeGroup._layers.push(sg);
       });
-      return layers;
+      return [shapeGroup];
     }
   }
 
