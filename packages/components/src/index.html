@@ -610,5 +610,45 @@
       <a href="/b">Breadcrumb 2</a>
       <span>Breadcrumb 3</span>
     </scale-breadcrumb>
+
+    <h3>Table</h3>
+
+    <scale-table variant="regular">
+      <table>
+        <thead>
+        <tr>
+          <th aria-sort="descending">Title</th>
+          <th>Tags</th>
+          <th>Stats</th>
+          <th style="text-align: right">Time</th>
+          <th style="text-align: right">Euros</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>University of Plymouth</td>
+          <td>
+            <scale-tag style="margin-right: 8px">Other</scale-tag>
+            <scale-tag style="margin-right: 8px">N/A</scale-tag>
+            <scale-tag>Demo</scale-tag>
+          </td>
+          <td>
+            <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px">1.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style=" max-width: 120px;"
+                  stroke-width="6"
+                  percentage="90"
+                />
+            </div>
+          </td>
+          <td style="text-align: right">00:00:20</td>
+          <td style="text-align: right">100.245,10</td>
+        </tr>
+        </tbody>
+      </table>
+    </scale-table>
+
   </body>
 </html>

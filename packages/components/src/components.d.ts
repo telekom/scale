@@ -405,6 +405,20 @@ export namespace Components {
          */
         "styles"?: StyleSheet;
     }
+    interface ScaleTable {
+        /**
+          * (optional) Tag class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) Visual variant
+         */
+        "variant"?: "regular" | "compressed";
+    }
     interface ScaleTag {
         /**
           * (optional) Tag class
@@ -593,6 +607,12 @@ declare global {
         prototype: HTMLScaleSwitchElement;
         new (): HTMLScaleSwitchElement;
     };
+    interface HTMLScaleTableElement extends Components.ScaleTable, HTMLStencilElement {
+    }
+    var HTMLScaleTableElement: {
+        prototype: HTMLScaleTableElement;
+        new (): HTMLScaleTableElement;
+    };
     interface HTMLScaleTagElement extends Components.ScaleTag, HTMLStencilElement {
     }
     var HTMLScaleTagElement: {
@@ -626,6 +646,7 @@ declare global {
         "scale-slider": HTMLScaleSliderElement;
         "scale-ssr-slot-fix": HTMLScaleSsrSlotFixElement;
         "scale-switch": HTMLScaleSwitchElement;
+        "scale-table": HTMLScaleTableElement;
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
         "scale-toast": HTMLScaleToastElement;
@@ -1017,6 +1038,20 @@ declare namespace LocalJSX {
          */
         "styles"?: StyleSheet;
     }
+    interface ScaleTable {
+        /**
+          * (optional) Tag class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) Visual variant
+         */
+        "variant"?: "regular" | "compressed";
+    }
     interface ScaleTag {
         /**
           * (optional) Tag class
@@ -1131,6 +1166,7 @@ declare namespace LocalJSX {
         "scale-slider": ScaleSlider;
         "scale-ssr-slot-fix": ScaleSsrSlotFix;
         "scale-switch": ScaleSwitch;
+        "scale-table": ScaleTable;
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
         "scale-toast": ScaleToast;
@@ -1154,6 +1190,7 @@ declare module "@stencil/core" {
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
             "scale-ssr-slot-fix": LocalJSX.ScaleSsrSlotFix & JSXBase.HTMLAttributes<HTMLScaleSsrSlotFixElement>;
             "scale-switch": LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;
+            "scale-table": LocalJSX.ScaleTable & JSXBase.HTMLAttributes<HTMLScaleTableElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;
