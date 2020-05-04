@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should match snapshot 1`] = `
+<scale-table class="table-0-0-3">
+  <mock:shadow-root>
+    <style>
+      .table-0-0-3 {}
+.table-0-0-3 table {
+  border-spacing: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+.table-0-0-3 th {
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+  line-height: 32px;
+  background: #F5F5F5;
+  color: #757575;
+}
+.table-0-0-3 th, .table-0-0-3 td {
+  padding: 0 8px;
+}
+.table-0-0-3 td {
+  padding: 16px 8px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.table-0-0-3 tfoot tr td {
+  padding: 8px;
+  font-weight: 600;
+  border-bottom: 1px solid black;
+}
+.table-0-0-3 th[aria-disabled="true"] {
+  cursor: default;
+  pointer-events: none;
+}
+.table--variant-compressed-0-0-4 {}
+.table--variant-compressed-0-0-4 td {
+  padding: 8px;
+}
+    </style>
+    <slot></slot>
+  </mock:shadow-root>
+  <table>
+    <thead>
+      <tr>
+        <th aria-sort="descending">
+          <span id="scale-sort-indicator">
+            <svg height="9px" version="1.1" viewBox="0 0 6 9" width="6px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd" id="scale-sort-indicator-1" stroke="none" stroke-width="1">
+                <g id="scale-sort-indicator-2" transform="translate(-183.000000, -7310.000000)">
+                  <g id="scale-sort-indicator-3" transform="translate(174.000000, 6631.000000)">
+                    <g id="scale-sort-indicator-4" transform="translate(0.000000, 668.000000)">
+                      <g id="scale-sort-indicator-5">
+                        <polygon fill="#CDCDCD" id="Rectangle" points="10 12 14 12 10 16" transform="translate(12.000000, 14.000000) rotate(45.000000) translate(-12.000000, -14.000000) "></polygon>
+                        <polygon fill="#000000" id="Rectangle" points="10 15 14 15 10 19" transform="translate(12.000000, 17.000000) scale(1, -1) rotate(45.000000) translate(-12.000000, -17.000000) "></polygon>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </span>
+          Title
+        </th>
+        <th>
+          <span id="scale-sort-indicator">
+            <span></span>
+          </span>
+          Time
+        </th>
+        <th>
+          <span id="scale-sort-indicator">
+            <span></span>
+          </span>
+          Euros
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          University of Plymouth
+        </td>
+        <td>
+          00:00:20
+        </td>
+        <td>
+          100.245,10
+        </td>
+      </tr>
+      <tr>
+        <td>
+          University of Plymouth
+        </td>
+        <td>
+          00:00:20
+        </td>
+        <td>
+          100.245,10
+        </td>
+      </tr>
+      <tr>
+        <td>
+          University of Plymouth
+        </td>
+        <td>
+          00:00:20
+        </td>
+        <td>
+          100.245,10
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          Total
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          00:00:20
+        </td>
+        <td>
+          100.245,10
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</scale-table>
+`;
