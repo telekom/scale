@@ -24,45 +24,41 @@ export class Table implements Base {
   @State() observer;
 
   disconnectedCallback() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
+    this.observer.disconnect();
   }
 
   componentWillLoad() {
     const tableChildren = this.hostElement.children[0];
 
     tableChildren.querySelectorAll('th').forEach(th => {
-      if (typeof MutationObserver !== 'undefined') {
-        this.observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            const mutationTarget = mutation.target as HTMLElement;
-            if (
-              mutation.type === 'attributes' &&
-              mutation.attributeName === 'aria-sort'
-            ) {
-              const sortIndicators = tableChildren.querySelectorAll(
-                `#${SORT_INDICATOR_ID}`
-              );
+      this.observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          const mutationTarget = mutation.target as HTMLElement;
+          if (
+            mutation.type === 'attributes' &&
+            mutation.attributeName === 'aria-sort'
+          ) {
+            const sortIndicators = tableChildren.querySelectorAll(
+              `#${SORT_INDICATOR_ID}`
+            );
 
-              sortIndicators.forEach(sortIndicator => {
-                sortIndicator.parentNode.removeChild(sortIndicator);
-              });
+            sortIndicators.forEach(sortIndicator => {
+              sortIndicator.parentNode.removeChild(sortIndicator);
+            });
 
-              mutationTarget.insertAdjacentHTML(
-                'afterbegin',
-                getSortIndicator(
-                  mutationTarget.getAttribute('aria-sort') as TDirection
-                )
-              );
-            }
-          });
+            mutationTarget.insertAdjacentHTML(
+              'afterbegin',
+              getSortIndicator(
+                mutationTarget.getAttribute('aria-sort') as TDirection
+              )
+            );
+          }
         });
+      });
 
-        this.observer.observe(th, {
-          attributes: true,
-        });
-      }
+      this.observer.observe(th, {
+        attributes: true,
+      });
     });
   }
 
