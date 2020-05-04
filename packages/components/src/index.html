@@ -79,7 +79,7 @@
         }
       })
     </script>
-    
+
     <h3>Static input with label</h3>
     <scale-input variant="static" label="Text"></scale-input>
 
@@ -157,10 +157,10 @@
 
     <h3>Input hidden</h3>
     <scale-input type="hidden"></scale-input>
-    
+
     <h3>Input small</h3>
     <scale-input size="small"></scale-input>
-    
+
     <h3>Input small animated</h3>
     <scale-input label="Name" size="small"></scale-input>
 
@@ -228,7 +228,7 @@
     <scale-tag size="small" variant="warning" dismissable>tag</scale-tag>
     <scale-tag size="small" variant="info" dismissable>tag</scale-tag>
     <scale-tag size="small" variant="success" dismissable>tag</scale-tag>
-    
+
     <script>
       document.getElementById('tag-dismissable').addEventListener('close', (event) => console.log('Tag closed', event))
     </script>
@@ -613,42 +613,100 @@
 
     <h3>Table</h3>
 
+    <script>
+      function sort(element) {
+        const prevSort = element.getAttribute('aria-sort');
+        const newSort = prevSort === 'descending' ? 'ascending' : prevSort === 'ascending' ? 'none' : 'descending';
+        element.setAttribute('aria-sort', newSort)
+      }
+    </script>
+
     <scale-table variant="regular">
       <table>
         <thead>
         <tr>
-          <th aria-sort="descending">Title</th>
-          <th>Tags</th>
-          <th>Stats</th>
-          <th style="text-align: right">Time</th>
-          <th style="text-align: right">Euros</th>
+          <th aria-sort="descending" onclick="sort(this)">Title</th>
+          <th aria-disabled="true" onclick="sort(this)">Tags</th>
+          <th onclick="sort(this)">Stats</th>
+          <th onclick="sort(this)" style="text-align: right;">Time</th>
+          <th onclick="sort(this)" style="text-align: right;">Euros</th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <td>University of Plymouth</td>
           <td>
-            <scale-tag style="margin-right: 8px">Other</scale-tag>
-            <scale-tag style="margin-right: 8px">N/A</scale-tag>
-            <scale-tag>Demo</scale-tag>
+            <scale-tag size="small" style="margin-right: 8px">Other</scale-tag>
+            <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+            <scale-tag size="small">Demo</scale-tag>
           </td>
           <td>
             <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px">1.356</span>
-                <scale-progress-bar
-                  variant="info"
-                  style=" max-width: 120px;"
-                  stroke-width="6"
-                  percentage="90"
-                />
+              <span style="margin-right: 8px">1.356</span>
+              <scale-progress-bar
+                variant="info"
+                style=" max-width: 120px;"
+                stroke-width="6"
+                percentage="90"
+              />
             </div>
           </td>
-          <td style="text-align: right">00:00:20</td>
-          <td style="text-align: right">100.245,10</td>
+          <td style="text-align: right; font-weight: 100;">00:00:20</td>
+          <td style="text-align: right; font-weight: 100;">100.245,10</td>
+        </tr>
+        <tr>
+          <td>University of Plymouth</td>
+          <td>
+            <scale-tag size="small" style="margin-right: 8px">Other</scale-tag>
+            <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+            <scale-tag size="small">Demo</scale-tag>
+          </td>
+          <td>
+            <div style="display: inline-flex; align-items: center;">
+              <span style="margin-right: 8px">1.356</span>
+              <scale-progress-bar
+                variant="info"
+                style=" max-width: 120px;"
+                stroke-width="6"
+                percentage="90"
+              />
+            </div>
+          </td>
+          <td style="text-align: right; font-weight: 100;">00:00:20</td>
+          <td style="text-align: right; font-weight: 100;">100.245,10</td>
+        </tr>
+        <tr>
+          <td>University of Plymouth</td>
+          <td>
+            <scale-tag size="small" style="margin-right: 8px">Other</scale-tag>
+            <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
+            <scale-tag size="small">Demo</scale-tag>
+          </td>
+          <td>
+            <div style="display: inline-flex; align-items: center;">
+              <span style="margin-right: 8px">1.356</span>
+              <scale-progress-bar
+                variant="info"
+                style=" max-width: 120px;"
+                stroke-width="6"
+                percentage="90"
+              />
+            </div>
+          </td>
+          <td style="text-align: right; font-weight: 100;">00:00:20</td>
+          <td style="text-align: right; font-weight: 100;">100.245,10</td>
         </tr>
         </tbody>
+        <tfoot>
+        <tr>
+          <td>Total</td>
+          <td />
+          <td />
+          <td style="text-align: right;">00:00:20</td>
+          <td style="text-align: right;">100.245,10</td>
+        </tr>
+        </tfoot>
       </table>
     </scale-table>
-
   </body>
 </html>
