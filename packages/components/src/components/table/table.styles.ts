@@ -12,12 +12,25 @@ export const styles: JssStyle = {
       lineHeight: '32px',
       fontSize: 12,
       textAlign: 'left',
+      cursor: 'pointer',
+
+      '&[aria-disabled="true"]': {
+        cursor: 'default',
+        pointerEvents: 'none',
+      },
     },
     '& th, td': {
       padding: '0 8px',
     },
     '& td': {
       padding: '16px 8px',
+      borderBottom: '1px solid #DDDDDD',
+    },
+
+    '& tfoot tr td': {
+      fontWeight: 600,
+      padding: '8px',
+      borderBottom: '1px solid black',
     },
   },
 
