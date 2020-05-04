@@ -1,9 +1,8 @@
 import { newE2EPage } from '@stencil/core/testing';
 
 describe('scale-table', () => {
-  let page;
-  beforeEach(async () => {
-    page = await newE2EPage();
+  it('should match snapshot', async () => {
+    const page = await newE2EPage();
     await page.setContent(`
       <html>
         <head></head>
@@ -17,76 +16,50 @@ describe('scale-table', () => {
           </script>
 
           <scale-table>
-          <table>
-            <thead>
-              <tr>
-                <th id="title-header" onclick="sort(this)">Title</th>
-                <th>Time</th>
-                <th>Euros</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>University of Plymouth</td>
-              <td>00:00:20</td>
-              <td>100.245,10</td>
-            </tr>
-            <tr>
-              <td>University of Plymouth</td>
-              <td>00:00:20</td>
-              <td>100.245,10</td>
-            </tr>
-            <tr>
-              <td>University of Plymouth</td>
-              <td>00:00:20</td>
-              <td>100.245,10</td>
-            </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td />
-                <td />
-                <td>00:00:20</td>
-                <td>100.245,10</td>
-              </tr>
-            </tfoot>
-          </table>
-        </scale-table>
+            <div slot="header">Table Header</div>
+            <div slot="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th id="title-header" onclick="sort(this)">Title</th>
+                    <th>Time</th>
+                    <th>Euros</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>University of Plymouth</td>
+                  <td>00:00:20</td>
+                  <td>100.245,10</td>
+                </tr>
+                <tr>
+                  <td>University of Plymouth</td>
+                  <td>00:00:20</td>
+                  <td>100.245,10</td>
+                </tr>
+                <tr>
+                  <td>University of Plymouth</td>
+                  <td>00:00:20</td>
+                  <td>100.245,10</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td>Total</td>
+                    <td />
+                    <td />
+                    <td>00:00:20</td>
+                    <td>100.245,10</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+          </scale-table>
         </body>
       </html>
     `);
-  });
-
-  it('should not render sort icon initially', async () => {
-    expect(await page.find('svg')).toMatchInlineSnapshot(`null`);
-  });
-
-  it('should render descending sort icon once table head is clicked', async () => {
-    await page.click('#title-header');
-    await page.waitForChanges();
-
-    expect(
-      (await page.find('polygon')).getAttribute('fill')
-    ).toMatchInlineSnapshot(`"#CDCDCD"`);
-  });
-
-  it('should render ascending sort icon when table head is clicked twice', async () => {
-    await page.click('#title-header');
-    await page.click('#title-header');
-    await page.waitForChanges();
-
-    expect(
-      (await page.find('polygon')).getAttribute('fill')
-    ).toMatchInlineSnapshot(`"#000000"`);
-  });
-
-  it('should not render a sort icon when clicked the third time', async () => {
-    await page.click('#title-header');
-    await page.click('#title-header');
-    await page.click('#title-header');
-    await page.waitForChanges();
-
-    expect(await page.find('svg')).toMatchInlineSnapshot(`null`);
+    const element = await page.find('scale-table');
+    expect(element).toHaveClass('hydrated');
   });
 });

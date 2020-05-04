@@ -5,7 +5,6 @@ import { styles } from './table.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
-import { getSortIndicator, TDirection, SORT_INDICATOR_ID } from './utils';
 
 @Component({
   tag: 'scale-table',
@@ -21,61 +20,50 @@ export class Table implements Base {
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('Table', styles) stylesheet: StyleSheet;
-  @State() observer;
+  /** object of the slots in use */
+  @State() slots: { header?: Element; table?: Element } = {};
 
-  disconnectedCallback() {
-    this.observer.disconnect();
-  }
-
-  componentWillLoad() {
-    const tableChildren = this.hostElement.children[0];
-
-    tableChildren.querySelectorAll('th').forEach(th => {
-      this.observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          const mutationTarget = mutation.target as HTMLElement;
-          if (
-            mutation.type === 'attributes' &&
-            mutation.attributeName === 'aria-sort'
-          ) {
-            const sortIndicators = tableChildren.querySelectorAll(
-              `#${SORT_INDICATOR_ID}`
-            );
-
-            sortIndicators.forEach(sortIndicator => {
-              sortIndicator.parentNode.removeChild(sortIndicator);
-            });
-
-            mutationTarget.insertAdjacentHTML(
-              'afterbegin',
-              getSortIndicator(
-                mutationTarget.getAttribute('aria-sort') as TDirection
-              )
-            );
-          }
-        });
-      });
-
-      this.observer.observe(th, {
-        attributes: true,
-      });
-    });
-  }
+  componentWillLoad() {}
 
   componentWillUpdate() {}
 
   render() {
-    const tableChildren = this.hostElement.children[0];
+    // on initial render
+    if (!this.slots.table) {
+      // build object of slots
+      // @ts-ignore - fromEntries should be fine here
+      this.slots = Object.fromEntries(
+        Array.from(this.hostElement.children).map(v => [v.slot, v])
+      );
 
-    tableChildren.querySelectorAll('th').forEach(th => {
-      const sort = th.getAttribute('aria-sort') as TDirection;
-      th.insertAdjacentHTML('afterbegin', getSortIndicator(sort));
-    });
+      // insert sort indicator arrows for each th when table found
+      if (this.slots.table) {
+        this.slots.table.querySelectorAll('th').forEach(th => {
+          th.insertAdjacentHTML(
+            'afterbegin',
+            `
+            <span class="scale-sort-indicator">
+              <svg width="24px" height="24px" viewBox="0 0 24 24">
+                <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271" />
+                <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271" />
+              </svg>
+            </span>`
+          );
+        });
+      }
+
+      // append header slot to thead
+      if (this.slots.header) {
+        this.slots.table
+          .querySelector('thead')
+          .insertAdjacentElement('afterbegin', this.slots.header);
+      }
+    }
 
     return (
       <Host class={this.getCssClassMap()}>
         <style>{this.stylesheet.toString()}</style>
-        <slot />
+        <slot name="table" />
       </Host>
     );
   }

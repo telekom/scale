@@ -622,8 +622,11 @@
     </script>
 
     <scale-table variant="regular">
-      <table>
+      <table slot="table">
         <thead>
+        <div slot="header" style="padding: 20px 8px 0px 8px;">
+          <scale-text variant="h5" slot="header">Table title</scale-text>
+        </div>
         <tr>
           <th aria-sort="descending" onclick="sort(this)">Title</th>
           <th aria-disabled="true" onclick="sort(this)">Tags</th>

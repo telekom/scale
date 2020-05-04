@@ -13,16 +13,12 @@ describe('Table', () => {
   });
 
   it('should match snapshot', async () => {
-    // @ts-ignore
-    global.MutationObserver = class MutationObserver {
-      observe() {}
-      disconnect() {}
-    };
     const page = await newSpecPage({
       components: [Table],
       html: `
         <scale-table>
-          <table>
+          <h5 slot="header">Table Header</h5>
+          <table slot="table">
             <thead>
               <tr>
                 <th aria-sort="descending">Title</th>
@@ -61,9 +57,6 @@ describe('Table', () => {
       `,
     });
     expect(page.root).toMatchSnapshot();
-
-    // @ts-ignore
-    global.MutationObserve = undefined;
   });
 
   it('should handle css classes', () => {
