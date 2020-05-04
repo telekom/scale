@@ -1,6 +1,6 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { ListItem } from './list-item';
-import { styles } from './list.styles';
+import { styles } from '../list/list.styles';
 import jss from 'jss';
 
 describe('ListItem', () => {
