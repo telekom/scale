@@ -116,19 +116,22 @@ export class Input implements Base {
         <Host>
           <style>{this.stylesheet.toString()}</style>
           <div class={this.getCssClassMap()}>
-            <input
-              type="checkbox"
-              name={this.name}
-              id={this.inputId}
-              onChange={event => this.handleChange(event)}
-              value={this.value}
-              checked={this.checked}
-              disabled={this.disabled}
-            />
-            <span class={classNames('input__checkbox')}></span>
-            {!!this.checked && !!this.icon && (
-              <scale-icon path={this.icon}></scale-icon>
-            )}
+            <div class={classNames('input__checkbox-container')}>
+              <input
+                type="checkbox"
+                name={this.name}
+                class={classNames('input__checkbox')}
+                id={this.inputId}
+                onChange={event => this.handleChange(event)}
+                value={this.value}
+                checked={this.checked}
+                disabled={this.disabled}
+              />
+              <span class={classNames('input__checkbox-placeholder')}></span>
+              {!!this.checked && !!this.icon && (
+                <scale-icon path={this.icon}></scale-icon>
+              )}
+            </div>
             <label class="input__label" htmlFor={this.name}>
               {this.label}
             </label>

@@ -65,14 +65,6 @@ export const styles: JssStyle = {
       height: input.large.height,
       transition: defaultTransition,
     },
-    '& .input__checkbox': {
-      height: checkBox.height,
-      width: checkBox.width,
-      border: '1px solid #cecece',
-      margin: checkBox.margin,
-      borderRadius: 4,
-      background: '#D8D8D8',
-    },
     '& .input__counter': {
       display: 'flex',
       justifyContent: 'flex-end',
@@ -96,11 +88,13 @@ export const styles: JssStyle = {
           borderColor: ({ colors }) => colors.primary.default,
         },
       },
-      /* '& .input__checkbox': {
-        '&:hover, &:active': {
-          backgroundColor: '#ffffff',
+      '& .input__checkbox-container': {
+        '&:hover, &:focus': {
+          '& .input__checkbox-placeholder': {
+            borderColor: ({ colors }) => colors.primary.default,
+          },
         },
-      }, */
+      },
     },
   },
   'input--variant-static': {
@@ -162,37 +156,42 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox': {
+    '& .input__label, & .input__input, & .input__checkbox-container': {
       opacity: '0.5',
-      cursor: 'not-allowed',
+      cursor: 'not-allowed!important',
     },
   },
   'input--type-checkbox': {
     display: 'flex',
-    '& input': {
-      // define a default checkbox
-      top: 0,
-      left: 0,
-      width: checkBox.width,
-      cursor: 'inherit',
-      height: checkBox.height,
-      margin: 0,
-      opacity: 0,
-      padding: 0,
-      zIndex: 1,
-      position: 'absolute',
+    '& .input__checkbox-container': {
+      height: 24,
+      width: 24,
+      display: 'flex',
+      alignItems: 'center',
+      position: 'relative',
+      '& .input__checkbox': {
+        // define a default checkbox
+        top: 0,
+        left: 0,
+        width: '100%',
+        cursor: 'inherit',
+        height: '100%',
+        margin: 0,
+        opacity: 0,
+        padding: 0,
+        zIndex: 1,
+        position: 'absolute',
+      },
+      '& .input__checkbox-placeholder': {
+        height: checkBox.height,
+        width: checkBox.height,
+        border: '1px solid #cecece',
+        margin: checkBox.margin,
+        borderRadius: 4,
+      },
     },
   },
   'input--checked': {
-    '& .input__checkbox': {
-      backgroundColor: '#ffffff',
-      borderColor: '#ececea',
-    },
-    '&:not($input--disabled)': {
-      '& .input__checkbox:hover, & .input__checkbox:active': {
-        borderColor: '#b3b3ae',
-      },
-    },
     '& scale-icon': {
       height: checkBoxCheckedIcon.height,
       width: checkBoxCheckedIcon.width,
