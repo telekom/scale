@@ -5,7 +5,6 @@ import {
   h,
   EventEmitter,
   Host,
-  Listen,
   State,
 } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
@@ -83,7 +82,6 @@ export class Input implements Base {
   componentDidUnload() {}
 
   handleChange(event) {
-    console.log('change', event.target.value);
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
     this.checkedValue = event.target.value;
@@ -91,23 +89,15 @@ export class Input implements Base {
   }
 
   handleFocus(event) {
-    console.log('focus', event);
     this.focusEvent.emit(event);
   }
 
   handleBlur(event) {
-    console.log('blur', event);
     this.blurEvent.emit(event);
   }
 
   handleKeyDown(event) {
-    console.log('keyDown', event);
     this.keyDownEvent.emit(event);
-  }
-
-  @Listen('change', { capture: true })
-  handleCheckbox(event) {
-    console.log('click', event);
   }
 
   render() {
@@ -127,7 +117,10 @@ export class Input implements Base {
                 checked={this.checked}
                 disabled={this.disabled}
               />
-              <span class={classNames('input__checkbox-placeholder')}></span>
+              <span
+                class={classNames('input__checkbox-placeholder')}
+                tabIndex={1}
+              ></span>
               {!!this.checked && !!this.icon && (
                 <scale-icon path={this.icon}></scale-icon>
               )}

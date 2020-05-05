@@ -160,9 +160,15 @@ export const styles: JssStyle = {
       opacity: '0.5',
       cursor: 'not-allowed!important',
     },
+    '&$input--status-error': {
+      '& .input__checkbox-container': {
+        display: 'none',
+      },
+    },
   },
   'input--type-checkbox': {
     display: 'flex',
+    alignItems: 'center',
     '& .input__checkbox-container': {
       height: 24,
       width: 24,
