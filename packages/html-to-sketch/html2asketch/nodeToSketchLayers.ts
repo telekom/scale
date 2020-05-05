@@ -765,7 +765,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       bbox.y += shapeGroup._y;
 
       // Set stroke parameters
-      if (anyStyles.stroke && anyStyles.stroke !== 'none' && anyStyles.stroke !== 'transparent') {
+      if (anyStyles.stroke && anyStyles.stroke !== 'none') {
         style.addBorder({ color: anyStyles.stroke, alpha: parseStyleNumber(anyStyles.strokeOpacity, 1), thickness: parseStyleNumber(anyStyles.strokeWidth) * nodeScale });
         style._borders[style._borders.length-1].position = 0;
         switch (anyStyles.strokeLinecap) {
