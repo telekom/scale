@@ -2,12 +2,17 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   table: {
+    '& [slot="table"]': {
+      overflow: 'auto',
+    },
     '& table': {
       fontFamily: ({ typography }) => typography.fontFamily,
       borderSpacing: 0,
       borderCollapse: 'collapse',
       borderRadius: '4px 0',
       background: ({ colors }) => colors.grey[100],
+      width: '100%',
+      whiteSpace: 'nowrap',
     },
 
     '& th': {
