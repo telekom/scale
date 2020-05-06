@@ -174,7 +174,6 @@ function enhanceJson(json) {
           "minSize": 0
         };
       }
-      console.log(json);
       const instance = symbol.createInstance({name: json.name});
       instance.frame = new Rect(json.frame);
       instance.style = new Style(json.style);
