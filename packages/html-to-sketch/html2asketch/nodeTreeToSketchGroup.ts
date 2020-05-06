@@ -99,6 +99,9 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   else if (node.getAttribute("data-sketch-symbol") && node.getAttribute("data-sketch-symbol") !== '') {
     group.setName(node.getAttribute("data-sketch-symbol"));
     group.setIsSymbol(true)
+    if (node.getAttribute('data-sketch-variant') && node.getAttribute('data-sketch-variant') !== '') {
+      group.setVariant(node.getAttribute('data-sketch-variant') || '');
+    }
   }
   // set group name from id if exists
   else if (node.id && node.id !== '') {

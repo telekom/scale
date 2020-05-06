@@ -12,6 +12,7 @@ class Base {
   _resizingConstraint: any;
   _hasClippingMask: any;
   _isLocked: any;
+  _variant?: string;
 
   constructor({id}: any = {}) {
     this._class = null;
@@ -57,6 +58,10 @@ class Base {
 
   setName(name: any) {
     this._name = name;
+  }
+
+  setVariant(variant: string) {
+    this._variant = variant;
   }
 
   addLayer(layer: any) {
@@ -112,6 +117,10 @@ class Base {
 
     if (this._style) {
       result.style = this._style.toJSON();
+    }
+
+    if (this._variant) {
+      result.variant = this._variant;
     }
 
     return result;

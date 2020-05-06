@@ -45,9 +45,9 @@ const symbolMaster = (args) => {
   return symbol;
 };
 
-const excludeKeys = new Set(['_class', 'do_objectID', 'name', 'text']);
+const excludeKeys = new Set(['_class', 'frame', 'contextSettings', 'attributedString', 'style', 'do_objectID', 'name', 'text']);
 // Set instance frame size and overrides
-function fillInstance(instance, symbol, json, objectID = '') {
+function fillInstance(instance, symbol, json, objectID = '', symbolName, variantName) {
   const keys = Object.keys(json);
   for (let i = 0 ; i < keys.length; i++) {
     const key = keys[i];
@@ -57,17 +57,94 @@ function fillInstance(instance, symbol, json, objectID = '') {
       objectID = symbolValue;
     }
     if (Array.isArray(jsonValue)) {
-      jsonValue.forEach((nestedJson, i) => fillInstance(instance, symbolValue[i], nestedJson, objectID));
+      jsonValue.forEach((nestedJson, i) => fillInstance(instance, symbolValue[i], nestedJson, objectID, symbolName, variantName));
     } else if (!excludeKeys.has(key) && typeof symbolValue === 'string' && symbolValue !== jsonValue) {
       console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
-      const override = {
+      const overrideValue = {
         "_class": "overrideValue",
         "overrideName": `${objectID}_${key}Value`,
         "value": jsonValue
       };
-      instance.overrideValues.push(override);
+      instance.overrideValues.push(overrideValue);
     } else if (typeof symbolValue === 'object') {
-      fillInstance(instance, symbolValue, jsonValue, objectID);
+      // If we're in style, do fill, borders and textStyle comparisons
+      // If they differ, create a new SharedStyle and assign it to the symbol instance.
+      if (key === 'style') {
+        let differs = false;
+        let textDiffers = false;
+        const override = {};
+        const textOverride = {};
+        if (JSON.stringify(symbolValue.borders) !== JSON.stringify(jsonValue.borders)) {
+          differs = true;
+          override.borders = jsonValue.borders;
+        }
+        if (JSON.stringify(symbolValue.fills) !== JSON.stringify(jsonValue.fills)) {
+          differs = true;
+          override.fills = jsonValue.fills;
+        }
+        if (JSON.stringify(symbolValue.textStyle) !== JSON.stringify(jsonValue.textStyle)) {
+          textDiffers = true;
+          textOverride.textStyle = jsonValue.textStyle;
+        }
+        if (differs) {
+          console.log('style override', JSON.stringify(override, null, 4));
+          if (!symbol.sharedStyleID) {
+            // Make a shared style for the SymbolMaster
+            const sharedStyle = new SharedStyle(null, {
+              name: `Master`,
+              do_objectID: uuid(),
+              _class: 'sharedStyle',
+              value: symbolValue
+            });
+            sketch.addLayerStyle(sharedStyle);
+            symbol.sharedStyleID = sharedStyle.do_objectID;
+          }
+          const sharedStyle = new SharedStyle(null, {
+            name: `${variantName}`,
+            do_objectID: uuid(),
+            _class: 'sharedStyle',
+            value: jsonValue
+          });
+          sketch.addLayerStyle(sharedStyle);
+          const overrideValue = {
+            "_class": "overrideValue",
+            "overrideName": `${objectID}_layerStyle`,
+            "value": sharedStyle.do_objectID
+          };
+          instance.overrideValues.push(overrideValue);
+        }
+        if (textDiffers) {
+          console.log('textStyle override', JSON.stringify(textOverride, null, 4));
+          if (!symbol.sharedStyleID) {
+            // Make a shared style for the SymbolMaster
+            const sharedStyle = new SharedStyle(null, {
+              name: `Master`,
+              do_objectID: uuid(),
+              _class: 'sharedStyle',
+              value: symbolValue
+            });
+            sketch.addTextStyle(sharedStyle);
+            symbol.sharedStyleID = sharedStyle.do_objectID;
+          }
+          const sharedStyle = new SharedStyle(null, {
+            name: `${variantName}`,
+            do_objectID: uuid(),
+            _class: 'sharedStyle',
+            value: jsonValue
+          });
+          sketch.addTextStyle(sharedStyle);
+          const overrideValue = {
+            "_class": "overrideValue",
+            "overrideName": `${objectID}_textStyle`,
+            "value": sharedStyle.do_objectID
+          };
+          instance.overrideValues.push(overrideValue);
+        }
+        if (differs || textDiffers) {
+          continue;
+        }
+      }
+      fillInstance(instance, symbolValue, jsonValue, objectID, symbolName, variantName);
     }
   }
 }
@@ -97,10 +174,11 @@ function enhanceJson(json) {
           "minSize": 0
         };
       }
+      console.log(json);
       const instance = symbol.createInstance({name: json.name});
       instance.frame = new Rect(json.frame);
       instance.style = new Style(json.style);
-      fillInstance(instance, symbol, json);
+      fillInstance(instance, symbol, json, '', json.name, json.variant || uuid());
       return instance;
     } else if (key === 'image') {
       const fileName = crypto
