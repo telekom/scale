@@ -21,6 +21,8 @@ export function CssInJs(
 ): CssInJsDecorator {
   const withInjectedValues = (that: any) => {
     let withDefaultTheme;
+    let stylesAttributeValue;
+
     try {
       withDefaultTheme = combineObjects(
         styles,
@@ -29,8 +31,15 @@ export function CssInJs(
     } catch (error) {
       withDefaultTheme = styles;
     }
+
+    try {
+      stylesAttributeValue = JSON.parse(that.styles);
+    } catch (err) {
+      stylesAttributeValue = that.styles;
+    }
+
     const combined = that.styles
-      ? combineObjects(withDefaultTheme, that.styles)
+      ? combineObjects(withDefaultTheme, stylesAttributeValue)
       : withDefaultTheme;
     if (!!options) {
       const withStyleMappings = {};
