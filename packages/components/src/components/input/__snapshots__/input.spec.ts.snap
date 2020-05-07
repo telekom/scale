@@ -2,12 +2,11 @@
 
 exports[`Input should match snapshot 1`] = `
 <scale-input>
-  <mock:shadow-root>
-    <style>
-      .input-0-0-9 {
+  <style>
+    .input-0-0-10 {
   position: relative;
 }
-.input-0-0-9 .input__input {
+.input-0-0-10 .input__input {
   width: 100%;
   border: 1px solid #cecece;
   height: 48px;
@@ -20,16 +19,7 @@ exports[`Input should match snapshot 1`] = `
   font-family: inherit;
   border-radius: 4px;
 }
-.input-0-0-9 .input__checkbox {
-  width: 16px;
-  border: 1px solid #cecece;
-  height: 16px;
-  margin: 2px;
-  background: #D8D8D8;
-  border-radius: 4px;
-  -webkit-appearance: none;
-}
-.input-0-0-9 .input__counter {
+.input-0-0-10 .input__counter {
   color: #333;
   display: flex;
   font-size: 12px;
@@ -37,34 +27,39 @@ exports[`Input should match snapshot 1`] = `
   margin-left: auto;
   justify-content: flex-end;
 }
-.input-0-0-9 .input__helper-text {
+.input-0-0-10 .input__helper-text {
   font-size: 12px;
   transition: all 0.2s ease-in-out;
 }
-.input-0-0-9 .input__meta {
+.input-0-0-10 .input__meta {
   display: flex;
   margin-top: 6px;
   justify-content: space-between;
 }
-.input-0-0-9:not(.input--disabled-0-0-14) {}
-.input-0-0-9:not(.input--disabled-0-0-14) .input__input, .input-0-0-9:not(.input--disabled-0-0-14) .input__checkbox {}
-.input-0-0-9:not(.input--disabled-0-0-14) .input__checkbox {}
-.input-0-0-9:not(.input--disabled-0-0-14) .input__checkbox:hover, .input-0-0-9:not(.input--disabled-0-0-14) .input__checkbox:active {
-  background-color: #ffffff;
-}
-.input-0-0-9:not(.input--disabled-0-0-14) .input__input:hover, .input-0-0-9:not(.input--disabled-0-0-14) .input__input:focus, .input-0-0-9:not(.input--disabled-0-0-14) .input__checkbox:hover, .input-0-0-9:not(.input--disabled-0-0-14) .input__checkbox:focus {
+.input-0-0-10:not(.input--disabled-0-0-15) {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__input {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__radio {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__radio:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:focus {
   border-color: #2962ff;
 }
-.input--variant-static-0-0-10 {}
-.input--variant-static-0-0-10 .input__label {
+.input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:focus {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:hover .input__checkbox-placeholder, .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:focus .input__checkbox-placeholder {
+  border-color: #2962ff;
+}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus {
+  border-color: #2962ff;
+}
+.input--variant-static-0-0-11 {}
+.input--variant-static-0-0-11 .input__label {
   display: flex;
   margin-bottom: 12px;
 }
-.input--variant-animated-0-0-11 {}
-.input--variant-animated-0-0-11 .input__input.has-label {
+.input--variant-animated-0-0-12 {}
+.input--variant-animated-0-0-12 .input__input.has-label {
   padding: 12px 12px 0 11px;
 }
-.input--variant-animated-0-0-11 .input__label {
+.input--variant-animated-0-0-12 .input__label {
   top: 0;
   left: 0;
   color: #dfdfdf;
@@ -77,34 +72,34 @@ exports[`Input should match snapshot 1`] = `
   font-weight: 400;
   pointer-events: none;
 }
-.input--variant-animated-0-0-11 .input__input:focus + .input__label, .input--variant-animated-0-0-11.animated .input__label {
+.input--variant-animated-0-0-12 .input__input:focus + .input__label, .input--variant-animated-0-0-12.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 8px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
   color: #2962ff;
 }
-.input--status-error-0-0-12 {}
-.input--status-error-0-0-12.animated .input__label, .input--status-error-0-0-12 .input__checkbox + .input__label {
+.input--status-error-0-0-13 {}
+.input--status-error-0-0-13.animated .input__label, .input--status-error-0-0-13 label {
   color: #f50057 !important;
 }
-.input--status-error-0-0-12 .input__input:focus + .input__label {
+.input--status-error-0-0-13 .input__input:focus + .input__label {
   color: #f50057 !important;
 }
-.input--status-error-0-0-12 .input__input {
+.input--status-error-0-0-13 .input__input {
   border: 1px solid #f50057;
 }
-.input--status-error-0-0-12 .input__helper-text {
+.input--status-error-0-0-13 .input__helper-text {
   color: #f50057;
 }
-.input--status-error-0-0-12 .input__counter {
+.input--status-error-0-0-13 .input__counter {
   color: #f50057;
 }
-.input--size-small-0-0-13 {}
-.input--size-small-0-0-13 .input__input {
+.input--size-small-0-0-14 {}
+.input--size-small-0-0-14 .input__input {
   height: 40px;
 }
-.input--size-small-0-0-13 .input__label {
+.input--size-small-0-0-14 .input__label {
   top: 0;
   left: 0;
   color: #dfdfdf;
@@ -117,42 +112,77 @@ exports[`Input should match snapshot 1`] = `
   font-weight: 400;
   pointer-events: none;
 }
-.input--size-small-0-0-13 .input__input:focus + .input__label, .input--size-small-0-0-13.animated .input__label {
+.input--size-small-0-0-14 .input__input:focus + .input__label, .input--size-small-0-0-14.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 4px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
   color: #2962ff;
 }
-.input--disabled-0-0-14 {}
-.input--disabled-0-0-14 .input__label, .input--disabled-0-0-14 .input__input, .input--disabled-0-0-14 .input__checkbox {
-  cursor: not-allowed;
+.input--disabled-0-0-15 {}
+.input--disabled-0-0-15 .input__label, .input--disabled-0-0-15 .input__input, .input--disabled-0-0-15 .input__checkbox-container, .input--disabled-0-0-15 .input__radio {
+  cursor: not-allowed!important;
   opacity: 0.5;
 }
-.input--type-checkbox-0-0-15 {
+.input--type-checkbox-0-0-16 {
   display: flex;
+  align-items: center;
 }
-.input--checked-0-0-16 {}
-.input--checked-0-0-16 .input__checkbox {
-  border-color: #ececea;
-  background-color: #ffffff;
+.input--type-checkbox-0-0-16 .input__checkbox-container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: relative;
+  align-items: center;
 }
-.input--checked-0-0-16:not(.input--disabled-0-0-14) {}
-.input--checked-0-0-16 scale-icon {
-  top: 4px;
-  left: 4px;
+.input--type-checkbox-0-0-16 .input__checkbox-container .input__checkbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: inherit;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  z-index: 1;
+  position: absolute;
+}
+.input--type-checkbox-0-0-16 .input__checkbox-container .input__checkbox-placeholder {
+  width: 16px;
+  border: 1px solid #cecece;
+  height: 16px;
+  margin: 2px;
+  border-radius: 4px;
+}
+.input--checked-0-0-17 {}
+.input--checked-0-0-17 scale-icon {
+  top: 6px;
+  left: 6px;
   width: 12px;
   height: 12px;
   position: absolute;
   user-select: none;
 }
-.input--checked-0-0-16:not(.input--disabled-0-0-14) .input__checkbox:hover, .input--checked-0-0-16:not(.input--disabled-0-0-14) .input__checkbox:active {
-  border-color: #b3b3ae;
+.input--type-radio-0-0-18 {
+  display: flex;
+  align-items: center;
 }
-    </style>
-    <div class="input-0-0-9">
-      <input class="input__input" placeholder="" type="text">
-    </div>
-  </mock:shadow-root>
+.input--type-radio-0-0-18 .input__radio {
+  width: 16px;
+  border: 1px solid #cecece;
+  height: 16px;
+  appearance: none;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.input--type-radio-0-0-18 .input__radio:checked, .input--type-radio-0-0-18 .input__radio:focus {
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  border: 6px solid #2962ff;
+}
+  </style>
+  <div class="input-0-0-10">
+    <input class="input__input" placeholder="" type="text">
+  </div>
 </scale-input>
 `;
