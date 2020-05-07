@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host, Element, State } from '@stencil/core';
+import { Component, Prop, h, Host, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './table.styles';
@@ -21,7 +21,7 @@ export class Table implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Table', styles) stylesheet: StyleSheet;
   /** object of the slots in use */
-  @State() slots: { header?: Element; table?: Element } = {};
+  slots: { header?: Element; table?: Element } = {};
 
   componentWillLoad() {}
 
