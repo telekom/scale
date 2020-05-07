@@ -16,7 +16,7 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-input',
-  shadow: true,
+  shadow: false,
 })
 export class Input implements Base {
   /** (optional) Input text class */
@@ -141,16 +141,12 @@ export class Input implements Base {
             <input
               type="radio"
               name={this.name}
+              class={classNames('input__radio')}
               id={this.inputId}
               onChange={event => this.handleChange(event)}
               value={this.value}
-              checked={this.checkedValue === this.value}
               disabled={this.disabled}
             />
-            <span class={classNames('input__radio')}></span>
-            {!!this.checked && !!this.icon && (
-              <scale-icon path={this.icon}></scale-icon>
-            )}
             <label class="input__label" htmlFor={this.inputId}>
               {this.label}
             </label>

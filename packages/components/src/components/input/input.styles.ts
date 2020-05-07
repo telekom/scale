@@ -95,6 +95,11 @@ export const styles: JssStyle = {
           },
         },
       },
+      '& .input__radio': {
+        '&:hover, &:focus': {
+          borderColor: ({ colors }) => colors.primary.default,
+        },
+      },
     },
   },
   'input--variant-static': {
@@ -156,14 +161,9 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox-container': {
+    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio': {
       opacity: '0.5',
       cursor: 'not-allowed!important',
-    },
-    '&$input--status-error': {
-      '& .input__checkbox-container': {
-        display: 'none',
-      },
     },
   },
   'input--type-checkbox': {
@@ -205,6 +205,23 @@ export const styles: JssStyle = {
       position: 'absolute',
       left: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
       top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
+    },
+  },
+  'input--type-radio': {
+    display: 'flex',
+    alignItems: 'center',
+    '& .input__radio': {
+      appearance: 'none',
+      height: 16,
+      width: 16,
+      background: '#ffffff',
+      border: '1px solid #cecece',
+      borderRadius: '50%',
+      '&:checked, &:focus': {
+        border: ({ colors }) => `6px solid ${colors.primary.default}`,
+        transition: defaultTransition,
+        outline: 'none',
+      },
     },
   },
 };
