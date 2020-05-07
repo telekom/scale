@@ -214,7 +214,7 @@ export const styles: JssStyle = {
       appearance: 'none',
       height: 16,
       width: 16,
-      background: '#ffffff',
+      backgroundColor: '#ffffff',
       border: '1px solid #cecece',
       borderRadius: '50%',
       '&:checked, &:focus': {
