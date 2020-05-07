@@ -1,6 +1,156 @@
-import { Theme } from './interfaces';
+import { Color, ColorVariants, ColorVariant, Theme } from './interfaces';
+
+const neutral: Color = {
+  100: '#fff',
+  200: '#f9f9fa',
+  300: '#efeff0',
+  400: '#d0d1d3',
+  500: '#a2a3a8',
+  600: '#66676e',
+  700: '#4d4e50',
+  800: '#1a1a1a',
+};
+
+const brand: Color = {
+  100: '#eff1fa',
+  200: '#768fff',
+  300: '#768fff',
+  400: '#768fff',
+  500: '#2962ff',
+  600: '#0039cb',
+  700: '#0039cb',
+  800: '#0039cb',
+};
+const red: Color = {
+  100: '#f8e9ed',
+  200: '#ff5983',
+  300: '#ff5983',
+  400: '#ff5983',
+  500: '#f50057',
+  600: '#bb002f',
+  700: '#bb002f',
+  800: '#bb002f',
+};
+const yellow: Color = {
+  100: '#f8f7e2',
+  200: '#fff64f',
+  300: '#fff64f',
+  400: '#fff64f',
+  500: '#ffc400',
+  600: '#c79400',
+  700: '#c79400',
+  800: '#c79400',
+};
+const blue: Color = {
+  100: '#e7f3f6',
+  200: '#69e2ff',
+  300: '#69e2ff',
+  400: '#69e2ff',
+  500: '#00b0ff',
+  600: '#0081cb',
+  700: '#0081cb',
+  800: '#0081cb',
+};
+const green: Color = {
+  100: '#dff5e8',
+  200: '#66ffa6',
+  300: '#66ffa6',
+  400: '#66ffa6',
+  500: '#00e676',
+  600: '#00b248',
+  700: '#00b248',
+  800: '#00b248',
+};
+
+export const colors = {
+  neutral,
+  brand,
+  blue,
+  green,
+  red,
+  yellow,
+};
+
+const defaultVariant: ColorVariant = {
+  normal: {
+    fill: colors.neutral[100],
+    contrast: colors.neutral[800],
+  },
+  dark: {
+    fill: colors.neutral[500],
+    contrast: colors.neutral[100],
+  },
+};
+
+const error: ColorVariant = {
+  normal: {
+    fill: colors.red[500],
+    contrast: colors.red[100],
+  },
+  dark: {
+    fill: colors.red[600],
+    contrast: colors.red[100],
+  },
+};
+
+const brandVariant: ColorVariant = {
+  normal: {
+    fill: colors.brand[500],
+    contrast: colors.brand[100],
+  },
+  dark: {
+    fill: colors.brand[600],
+    contrast: colors.brand[100],
+  },
+};
+
+const warning: ColorVariant = {
+  normal: {
+    fill: colors.yellow[500],
+    contrast: colors.yellow[100],
+  },
+  dark: {
+    fill: colors.yellow[600],
+    contrast: colors.yellow[100],
+  },
+};
+
+const success: ColorVariant = {
+  normal: {
+    fill: colors.green[500],
+    contrast: colors.green[100],
+  },
+  dark: {
+    fill: colors.green[600],
+    contrast: colors.green[100],
+  },
+};
+
+const info: ColorVariant = {
+  normal: {
+    fill: colors.blue[500],
+    contrast: colors.blue[100],
+  },
+  dark: {
+    fill: colors.blue[600],
+    contrast: colors.blue[100],
+  },
+};
+
+export const variants: ColorVariants = {
+  default: defaultVariant,
+  brand: brandVariant,
+  error,
+  warning,
+  success,
+  info,
+};
 
 export const defaultTheme: Theme = {
+  palette: {
+    colors,
+    variants,
+  },
   colors: {
     common: {
       black: '#000',
@@ -10,37 +160,26 @@ export const defaultTheme: Theme = {
       lighter: '#768fff',
       default: '#2962ff',
       darker: '#0039cb',
-      contrastText: '#fff',
-    },
-    secondary: {
-      lighter: '#ff5bff',
-      default: '#d500f9',
-      darker: '#9e00c5',
-      contrastText: '#fff',
     },
     error: {
       lighter: '#ff5983',
       default: '#f50057',
       darker: '#bb002f',
-      contrastText: '#fff',
     },
     warning: {
       lighter: '#fff64f',
       default: '#ffc400',
       darker: '#c79400',
-      contrastText: '#fff',
     },
     info: {
       lighter: '#69e2ff',
       default: '#00b0ff',
       darker: '#0081cb',
-      contrastText: '#fff',
     },
     success: {
       lighter: '#66ffa6',
       default: '#00e676',
       darker: '#00b248',
-      contrastText: '#fff',
     },
     grey: {
       50: '#FAFAFA',
@@ -57,7 +196,6 @@ export const defaultTheme: Theme = {
     text: {
       default: '#000',
       primary: 'rgba(0, 0, 0, .9)',
-      secondary: 'rgba(0, 0, 0, .6)',
       disabled: 'rgba(0, 0, 0, .4)',
       hint: 'rgba(0, 0, 0, .4)',
     },

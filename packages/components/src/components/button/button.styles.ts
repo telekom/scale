@@ -1,15 +1,17 @@
 import { JssStyle } from 'jss';
 import { getTransition } from '../../theme/helpers';
 
-const buttonVariant = (variant: string) => ({
+const buttonVariant = variant => ({
   [`button--variant-${variant}`]: {
-    color: ({ colors }) => colors[variant].contrastText,
-    background: ({ colors }) => colors[variant].default,
-    border: ({ colors }) => `1px solid ${colors[variant].default}`,
+    color: ({ palette }) => palette.variants[variant].normal.contrast,
+    background: ({ palette }) => palette.variants[variant].normal.fill,
+    border: ({ palette }) =>
+      `1px solid ${palette.variants[variant].normal.fill}`,
     '&:hover': {
-      color: ({ colors }) => colors[variant].contrastText,
-      background: ({ colors }) => colors[variant].darker,
-      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
+      color: ({ palette }) => palette.variants[variant].dark.contrast,
+      background: ({ palette }) => palette.variants[variant].dark.fill,
+      border: ({ palette }) =>
+        `1px solid ${palette.variants[variant].dark.fill}`,
     },
   },
 });
@@ -79,8 +81,7 @@ export const styles: JssStyle = {
     height: 40,
     width: 40,
   },
-  ...buttonVariant('primary'),
-  ...buttonVariant('secondary'),
+  ...buttonVariant('brand'),
   ...buttonVariant('error'),
   ...buttonVariant('warning'),
   ...buttonVariant('info'),

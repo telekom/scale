@@ -1,5 +1,12 @@
 import { JssStyle } from 'jss';
 
+const alertVariant = variant => ({
+  [`alert--variant-${variant}`]: {
+    color: ({ palette }) => palette.colors.neutral[100],
+    background: ({ palette }) => palette.variants[variant].normal.fill,
+  },
+});
+
 export const styles: JssStyle = {
   alert: {
     boxSizing: 'border-box',
@@ -38,28 +45,9 @@ export const styles: JssStyle = {
       opacity: 1,
     },
   },
-  'alert--variant-primary': {
-    background: 'blue',
-    color: '#fff',
-  },
-  'alert--variant-secondary': {
-    background: '#eee',
-    color: '#333',
-  },
-  'alert--variant-variant-warning': {
-    background: 'orange',
-    color: '#fff',
-  },
-  'alert--variant-danger': {
-    background: 'red',
-    color: '#fff',
-  },
-  'alert--variant-success': {
-    background: 'green',
-    color: '#fff',
-  },
-  'alert--variant-info': {
-    background: 'lightblue',
-    color: '#fff',
-  },
+  ...alertVariant('brand'),
+  ...alertVariant('error'),
+  ...alertVariant('warning'),
+  ...alertVariant('info'),
+  ...alertVariant('success'),
 };

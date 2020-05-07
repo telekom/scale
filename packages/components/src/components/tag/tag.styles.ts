@@ -2,9 +2,10 @@ import { JssStyle } from 'jss';
 
 const tagVariant = (variant: string) => ({
   [`tag--variant-${variant}`]: {
-    color: ({ colors }) => colors[variant].contrastText,
-    background: ({ colors }) => colors[variant].default,
-    border: ({ colors }) => `1px solid ${colors[variant].default}`,
+    color: ({ palette }) => palette.colors.neutral[100],
+    background: ({ palette }) => palette.variants[variant].normal.fill,
+    border: ({ palette }) =>
+      `1px solid ${palette.variants[variant].normal.fill}`,
   },
 });
 
@@ -12,14 +13,16 @@ const tagVariantLink = (variant: string) => ({
   [`&$tag--variant-${variant}`]: {
     ...tagVariant(variant),
     '&:hover': {
-      color: ({ colors }) => colors[variant].contrastText,
-      background: ({ colors }) => colors[variant].darker,
-      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
+      color: ({ palette }) => palette.colors.neutral[100],
+      background: ({ palette }) => palette.variants[variant].dark.fill,
+      border: ({ palette }) =>
+        `1px solid ${palette.variants[variant].dark.fill}`,
     },
     '&:active': {
-      color: ({ colors }) => colors[variant].contrastText,
-      background: ({ colors }) => colors[variant].darker,
-      border: ({ colors }) => `1px solid ${colors[variant].darker}`,
+      color: ({ palette }) => palette.colors.neutral[100],
+      background: ({ palette }) => palette.variants[variant].dark.fill,
+      border: ({ palette }) =>
+        `1px solid ${palette.variants[variant].dark.fill}`,
     },
   },
 });
@@ -66,16 +69,14 @@ export const styles: JssStyle = {
       paddingRight: 4,
     },
   },
-  ...tagVariant('primary'),
-  ...tagVariant('secondary'),
+  ...tagVariant('brand'),
   ...tagVariant('error'),
   ...tagVariant('warning'),
   ...tagVariant('info'),
   ...tagVariant('success'),
   'tag--link': {
     textDecoration: 'none',
-    ...tagVariantLink('primary'),
-    ...tagVariantLink('secondary'),
+    ...tagVariantLink('brand'),
     ...tagVariantLink('error'),
     ...tagVariantLink('warning'),
     ...tagVariantLink('info'),

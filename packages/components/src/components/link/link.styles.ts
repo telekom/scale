@@ -1,5 +1,13 @@
 import { JssStyle } from 'jss';
 
+const linkVariant = variant => ({
+  [`link--variant-${variant}`]: {
+    color: ({ palette }) => palette.variants[variant].normal.fill,
+    '--icon-color': ({ palette }) =>
+      palette.variants[variant].normal.contrast,
+  },
+});
+
 export const styles: JssStyle = {
   link: {
     display: 'inline-flex',
@@ -36,24 +44,9 @@ export const styles: JssStyle = {
   'link--block': {
     display: 'flex',
   },
-  'link--variant-primary': {
-    color: '#409eff',
-    '--icon-color': '#409eff',
-  },
-  'link--variant-success': {
-    color: '#67c23a',
-    '--icon-color': '#67c23a',
-  },
-  'link--variant-warning': {
-    color: '#e6a23c',
-    '--icon-color': '#e6a23c',
-  },
-  'link--variant-danger': {
-    color: '#f56c6c',
-    '--icon-color': '#f56c6c',
-  },
-  'link--variant-info': {
-    color: '#909399',
-    '--icon-color': '#909399',
-  },
+  ...linkVariant('brand'),
+  ...linkVariant('success'),
+  ...linkVariant('error'),
+  ...linkVariant('info'),
+  ...linkVariant('warning'),
 };

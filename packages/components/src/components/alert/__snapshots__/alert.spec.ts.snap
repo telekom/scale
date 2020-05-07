@@ -11,7 +11,7 @@ exports[`Alert should match snapshot when opened 1`] = `
 <scale-alert opened="">
   <mock:shadow-root>
     <style>
-      .alert-0-0-34 {
+      .alert-0-0-31 {
   color: #333;
   width: 100%;
   display: flex;
@@ -22,15 +22,15 @@ exports[`Alert should match snapshot when opened 1`] = `
   text-align: left;
   justify-content: space-between;
 }
-.alert__body-0-0-35 {
+.alert__body-0-0-32 {
   display: flex;
 }
-.alert__headline-0-0-36 {
+.alert__headline-0-0-33 {
   color: white;
   margin: 0;
   font-size: 1rem;
 }
-.alert__icon-0-0-37 {
+.alert__icon-0-0-34 {
   width: 24px;
   height: 24px;
   margin: 0 0.5rem 0 0;
@@ -40,48 +40,44 @@ exports[`Alert should match snapshot when opened 1`] = `
   border-radius: 4px;
   justify-content: center;
 }
-.alert__close-0-0-38 {
+.alert__close-0-0-35 {
   cursor: pointer;
   height: 16px;
   opacity: 0.5;
 }
-.alert__close-0-0-38hover {
+.alert__close-0-0-35hover {
   opacity: 1;
 }
-.alert--variant-primary-0-0-39 {
+.alert--variant-brand-0-0-36 {
   color: #fff;
-  background: blue;
+  background: #2962ff;
 }
-.alert--variant-secondary-0-0-40 {
-  color: #333;
-  background: #eee;
-}
-.alert--variant-variant-warning-0-0-41 {
+.alert--variant-error-0-0-37 {
   color: #fff;
-  background: orange;
+  background: #f50057;
 }
-.alert--variant-danger-0-0-42 {
+.alert--variant-warning-0-0-38 {
   color: #fff;
-  background: red;
+  background: #ffc400;
 }
-.alert--variant-success-0-0-43 {
+.alert--variant-info-0-0-39 {
   color: #fff;
-  background: green;
+  background: #00b0ff;
 }
-.alert--variant-info-0-0-44 {
+.alert--variant-success-0-0-40 {
   color: #fff;
-  background: lightblue;
+  background: #00e676;
 }
     </style>
-    <div class="alert-0-0-34">
-      <div class="alert__body-0-0-35">
-        <div class="alert__icon-0-0-37"></div>
+    <div class="alert-0-0-31">
+      <div class="alert__body-0-0-32">
+        <div class="alert__icon-0-0-34"></div>
         <div>
-          <div class="alert__headline-0-0-36"></div>
+          <div class="alert__headline-0-0-33"></div>
           <slot></slot>
         </div>
       </div>
-      <a class="alert__close-0-0-38">
+      <a class="alert__close-0-0-35">
         x
       </a>
     </div>
@@ -94,7 +90,7 @@ exports[`Alert should match snapshot with hasSlotClose 1`] = `
 <scale-alert opened="">
   <mock:shadow-root>
     <style>
-      .alert-0-0-56 {
+      .alert-0-0-51 {
   color: #333;
   width: 100%;
   display: flex;
@@ -105,15 +101,15 @@ exports[`Alert should match snapshot with hasSlotClose 1`] = `
   text-align: left;
   justify-content: space-between;
 }
-.alert__body-0-0-57 {
+.alert__body-0-0-52 {
   display: flex;
 }
-.alert__headline-0-0-58 {
+.alert__headline-0-0-53 {
   color: white;
   margin: 0;
   font-size: 1rem;
 }
-.alert__icon-0-0-59 {
+.alert__icon-0-0-54 {
   width: 24px;
   height: 24px;
   margin: 0 0.5rem 0 0;
@@ -123,48 +119,44 @@ exports[`Alert should match snapshot with hasSlotClose 1`] = `
   border-radius: 4px;
   justify-content: center;
 }
-.alert__close-0-0-60 {
+.alert__close-0-0-55 {
   cursor: pointer;
   height: 16px;
   opacity: 0.5;
 }
-.alert__close-0-0-60hover {
+.alert__close-0-0-55hover {
   opacity: 1;
 }
-.alert--variant-primary-0-0-61 {
+.alert--variant-brand-0-0-56 {
   color: #fff;
-  background: blue;
+  background: #2962ff;
 }
-.alert--variant-secondary-0-0-62 {
-  color: #333;
-  background: #eee;
-}
-.alert--variant-variant-warning-0-0-63 {
+.alert--variant-error-0-0-57 {
   color: #fff;
-  background: orange;
+  background: #f50057;
 }
-.alert--variant-danger-0-0-64 {
+.alert--variant-warning-0-0-58 {
   color: #fff;
-  background: red;
+  background: #ffc400;
 }
-.alert--variant-success-0-0-65 {
+.alert--variant-info-0-0-59 {
   color: #fff;
-  background: green;
+  background: #00b0ff;
 }
-.alert--variant-info-0-0-66 {
+.alert--variant-success-0-0-60 {
   color: #fff;
-  background: lightblue;
+  background: #00e676;
 }
     </style>
-    <div class="alert-0-0-56">
-      <div class="alert__body-0-0-57">
-        <div class="alert__icon-0-0-59"></div>
+    <div class="alert-0-0-51">
+      <div class="alert__body-0-0-52">
+        <div class="alert__icon-0-0-54"></div>
         <div>
-          <div class="alert__headline-0-0-58"></div>
+          <div class="alert__headline-0-0-53"></div>
           <slot></slot>
         </div>
       </div>
-      <a class="alert__close-0-0-60">
+      <a class="alert__close-0-0-55">
         <div>
           <slot name="close"></slot>
         </div>

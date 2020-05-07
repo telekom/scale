@@ -4,7 +4,7 @@ exports[`Tag should have a link 1`] = `
 <scale-tag href="#">
   <mock:shadow-root>
     <style>
-      .tag-0-0-34 {
+      .tag-0-0-31 {
   color:  #fff;
   display: inline-flex;
   padding: 6px 12px;
@@ -21,133 +21,117 @@ exports[`Tag should have a link 1`] = `
   vertical-align: baseline;
   justify-content: center;
 }
-.tag-0-0-34 scale-icon {
+.tag-0-0-31 scale-icon {
   margin-left: 2px;
 }
-.tag-0-0-34:not(.tag--disabled-0-0-44) {}
-.tag-0-0-34:not(.tag--disabled-0-0-44) scale-icon {}
-.tag-0-0-34:not(.tag--disabled-0-0-44) scale-icon:hover {
+.tag-0-0-31:not(.tag--disabled-0-0-40) {}
+.tag-0-0-31:not(.tag--disabled-0-0-40) scale-icon {}
+.tag-0-0-31:not(.tag--disabled-0-0-40) scale-icon:hover {
   --icon-color: red;
 }
-.tag--dismissable-0-0-35 {
+.tag--dismissable-0-0-32 {
   padding-right: 8px;
 }
-.tag--size-small-0-0-36 {
+.tag--size-small-0-0-33 {
   padding: 4px 8px;
   font-size: 12px;
 }
-.tag--size-small-0-0-36 scale-icon {
+.tag--size-small-0-0-33 scale-icon {
   width: 12px;
   height: 12px;
 }
-.tag--size-small-0-0-36.tag--dismissable-0-0-35 {
+.tag--size-small-0-0-33.tag--dismissable-0-0-32 {
   padding-right: 4px;
 }
-.tag--variant-primary-0-0-37 {
+.tag--variant-brand-0-0-34 {
   color: #fff;
   background: #2962ff;
   border: 1px solid #2962ff;
 }
-.tag--variant-secondary-0-0-38 {
-  color: #fff;
-  background: #d500f9;
-  border: 1px solid #d500f9;
-}
-.tag--variant-error-0-0-39 {
+.tag--variant-error-0-0-35 {
   color: #fff;
   background: #f50057;
   border: 1px solid #f50057;
 }
-.tag--variant-warning-0-0-40 {
+.tag--variant-warning-0-0-36 {
   color: #fff;
   background: #ffc400;
   border: 1px solid #ffc400;
 }
-.tag--variant-info-0-0-41 {
+.tag--variant-info-0-0-37 {
   color: #fff;
   background: #00b0ff;
   border: 1px solid #00b0ff;
 }
-.tag--variant-success-0-0-42 {
+.tag--variant-success-0-0-38 {
   color: #fff;
   background: #00e676;
   border: 1px solid #00e676;
 }
-.tag--link-0-0-43 {
+.tag--link-0-0-39 {
   text-decoration: none;
 }
-.tag--link-0-0-43.tag--variant-primary-0-0-37 {}
-.tag--link-0-0-43.tag--variant-secondary-0-0-38 {}
-.tag--link-0-0-43.tag--variant-error-0-0-39 {}
-.tag--link-0-0-43.tag--variant-warning-0-0-40 {}
-.tag--link-0-0-43.tag--variant-info-0-0-41 {}
-.tag--link-0-0-43.tag--variant-success-0-0-42 {}
-.tag--link-0-0-43.tag--variant-success-0-0-42:hover {
+.tag--link-0-0-39.tag--variant-brand-0-0-34 {}
+.tag--link-0-0-39.tag--variant-error-0-0-35 {}
+.tag--link-0-0-39.tag--variant-warning-0-0-36 {}
+.tag--link-0-0-39.tag--variant-info-0-0-37 {}
+.tag--link-0-0-39.tag--variant-success-0-0-38 {}
+.tag--link-0-0-39.tag--variant-success-0-0-38:hover {
   color: #fff;
   background: #00b248;
   border: 1px solid #00b248;
 }
-.tag--link-0-0-43.tag--variant-success-0-0-42:active {
+.tag--link-0-0-39.tag--variant-success-0-0-38:active {
   color: #fff;
   background: #00b248;
   border: 1px solid #00b248;
 }
-.tag--link-0-0-43.tag--variant-info-0-0-41:hover {
+.tag--link-0-0-39.tag--variant-info-0-0-37:hover {
   color: #fff;
   background: #0081cb;
   border: 1px solid #0081cb;
 }
-.tag--link-0-0-43.tag--variant-info-0-0-41:active {
+.tag--link-0-0-39.tag--variant-info-0-0-37:active {
   color: #fff;
   background: #0081cb;
   border: 1px solid #0081cb;
 }
-.tag--link-0-0-43.tag--variant-warning-0-0-40:hover {
+.tag--link-0-0-39.tag--variant-warning-0-0-36:hover {
   color: #fff;
   background: #c79400;
   border: 1px solid #c79400;
 }
-.tag--link-0-0-43.tag--variant-warning-0-0-40:active {
+.tag--link-0-0-39.tag--variant-warning-0-0-36:active {
   color: #fff;
   background: #c79400;
   border: 1px solid #c79400;
 }
-.tag--link-0-0-43.tag--variant-error-0-0-39:hover {
+.tag--link-0-0-39.tag--variant-error-0-0-35:hover {
   color: #fff;
   background: #bb002f;
   border: 1px solid #bb002f;
 }
-.tag--link-0-0-43.tag--variant-error-0-0-39:active {
+.tag--link-0-0-39.tag--variant-error-0-0-35:active {
   color: #fff;
   background: #bb002f;
   border: 1px solid #bb002f;
 }
-.tag--link-0-0-43.tag--variant-secondary-0-0-38:hover {
-  color: #fff;
-  background: #9e00c5;
-  border: 1px solid #9e00c5;
-}
-.tag--link-0-0-43.tag--variant-secondary-0-0-38:active {
-  color: #fff;
-  background: #9e00c5;
-  border: 1px solid #9e00c5;
-}
-.tag--link-0-0-43.tag--variant-primary-0-0-37:hover {
+.tag--link-0-0-39.tag--variant-brand-0-0-34:hover {
   color: #fff;
   background: #0039cb;
   border: 1px solid #0039cb;
 }
-.tag--link-0-0-43.tag--variant-primary-0-0-37:active {
+.tag--link-0-0-39.tag--variant-brand-0-0-34:active {
   color: #fff;
   background: #0039cb;
   border: 1px solid #0039cb;
 }
-.tag--disabled-0-0-44 {
+.tag--disabled-0-0-40 {
   cursor: not-allowed;
   opacity: 0.5;
 }
     </style>
-    <a class="tag--link-0-0-43 tag-0-0-34" href="#" target="_self">
+    <a class="tag--link-0-0-39 tag-0-0-31" href="#" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -159,7 +143,7 @@ exports[`Tag should match snapshot 1`] = `
 <scale-tag>
   <mock:shadow-root>
     <style>
-      .tag-0-0-12 {
+      .tag-0-0-11 {
   color:  #fff;
   display: inline-flex;
   padding: 6px 12px;
@@ -176,133 +160,117 @@ exports[`Tag should match snapshot 1`] = `
   vertical-align: baseline;
   justify-content: center;
 }
-.tag-0-0-12 scale-icon {
+.tag-0-0-11 scale-icon {
   margin-left: 2px;
 }
-.tag-0-0-12:not(.tag--disabled-0-0-22) {}
-.tag-0-0-12:not(.tag--disabled-0-0-22) scale-icon {}
-.tag-0-0-12:not(.tag--disabled-0-0-22) scale-icon:hover {
+.tag-0-0-11:not(.tag--disabled-0-0-20) {}
+.tag-0-0-11:not(.tag--disabled-0-0-20) scale-icon {}
+.tag-0-0-11:not(.tag--disabled-0-0-20) scale-icon:hover {
   --icon-color: red;
 }
-.tag--dismissable-0-0-13 {
+.tag--dismissable-0-0-12 {
   padding-right: 8px;
 }
-.tag--size-small-0-0-14 {
+.tag--size-small-0-0-13 {
   padding: 4px 8px;
   font-size: 12px;
 }
-.tag--size-small-0-0-14 scale-icon {
+.tag--size-small-0-0-13 scale-icon {
   width: 12px;
   height: 12px;
 }
-.tag--size-small-0-0-14.tag--dismissable-0-0-13 {
+.tag--size-small-0-0-13.tag--dismissable-0-0-12 {
   padding-right: 4px;
 }
-.tag--variant-primary-0-0-15 {
+.tag--variant-brand-0-0-14 {
   color: #fff;
   background: #2962ff;
   border: 1px solid #2962ff;
 }
-.tag--variant-secondary-0-0-16 {
-  color: #fff;
-  background: #d500f9;
-  border: 1px solid #d500f9;
-}
-.tag--variant-error-0-0-17 {
+.tag--variant-error-0-0-15 {
   color: #fff;
   background: #f50057;
   border: 1px solid #f50057;
 }
-.tag--variant-warning-0-0-18 {
+.tag--variant-warning-0-0-16 {
   color: #fff;
   background: #ffc400;
   border: 1px solid #ffc400;
 }
-.tag--variant-info-0-0-19 {
+.tag--variant-info-0-0-17 {
   color: #fff;
   background: #00b0ff;
   border: 1px solid #00b0ff;
 }
-.tag--variant-success-0-0-20 {
+.tag--variant-success-0-0-18 {
   color: #fff;
   background: #00e676;
   border: 1px solid #00e676;
 }
-.tag--link-0-0-21 {
+.tag--link-0-0-19 {
   text-decoration: none;
 }
-.tag--link-0-0-21.tag--variant-primary-0-0-15 {}
-.tag--link-0-0-21.tag--variant-secondary-0-0-16 {}
-.tag--link-0-0-21.tag--variant-error-0-0-17 {}
-.tag--link-0-0-21.tag--variant-warning-0-0-18 {}
-.tag--link-0-0-21.tag--variant-info-0-0-19 {}
-.tag--link-0-0-21.tag--variant-success-0-0-20 {}
-.tag--link-0-0-21.tag--variant-success-0-0-20:hover {
+.tag--link-0-0-19.tag--variant-brand-0-0-14 {}
+.tag--link-0-0-19.tag--variant-error-0-0-15 {}
+.tag--link-0-0-19.tag--variant-warning-0-0-16 {}
+.tag--link-0-0-19.tag--variant-info-0-0-17 {}
+.tag--link-0-0-19.tag--variant-success-0-0-18 {}
+.tag--link-0-0-19.tag--variant-success-0-0-18:hover {
   color: #fff;
   background: #00b248;
   border: 1px solid #00b248;
 }
-.tag--link-0-0-21.tag--variant-success-0-0-20:active {
+.tag--link-0-0-19.tag--variant-success-0-0-18:active {
   color: #fff;
   background: #00b248;
   border: 1px solid #00b248;
 }
-.tag--link-0-0-21.tag--variant-info-0-0-19:hover {
+.tag--link-0-0-19.tag--variant-info-0-0-17:hover {
   color: #fff;
   background: #0081cb;
   border: 1px solid #0081cb;
 }
-.tag--link-0-0-21.tag--variant-info-0-0-19:active {
+.tag--link-0-0-19.tag--variant-info-0-0-17:active {
   color: #fff;
   background: #0081cb;
   border: 1px solid #0081cb;
 }
-.tag--link-0-0-21.tag--variant-warning-0-0-18:hover {
+.tag--link-0-0-19.tag--variant-warning-0-0-16:hover {
   color: #fff;
   background: #c79400;
   border: 1px solid #c79400;
 }
-.tag--link-0-0-21.tag--variant-warning-0-0-18:active {
+.tag--link-0-0-19.tag--variant-warning-0-0-16:active {
   color: #fff;
   background: #c79400;
   border: 1px solid #c79400;
 }
-.tag--link-0-0-21.tag--variant-error-0-0-17:hover {
+.tag--link-0-0-19.tag--variant-error-0-0-15:hover {
   color: #fff;
   background: #bb002f;
   border: 1px solid #bb002f;
 }
-.tag--link-0-0-21.tag--variant-error-0-0-17:active {
+.tag--link-0-0-19.tag--variant-error-0-0-15:active {
   color: #fff;
   background: #bb002f;
   border: 1px solid #bb002f;
 }
-.tag--link-0-0-21.tag--variant-secondary-0-0-16:hover {
-  color: #fff;
-  background: #9e00c5;
-  border: 1px solid #9e00c5;
-}
-.tag--link-0-0-21.tag--variant-secondary-0-0-16:active {
-  color: #fff;
-  background: #9e00c5;
-  border: 1px solid #9e00c5;
-}
-.tag--link-0-0-21.tag--variant-primary-0-0-15:hover {
+.tag--link-0-0-19.tag--variant-brand-0-0-14:hover {
   color: #fff;
   background: #0039cb;
   border: 1px solid #0039cb;
 }
-.tag--link-0-0-21.tag--variant-primary-0-0-15:active {
+.tag--link-0-0-19.tag--variant-brand-0-0-14:active {
   color: #fff;
   background: #0039cb;
   border: 1px solid #0039cb;
 }
-.tag--disabled-0-0-22 {
+.tag--disabled-0-0-20 {
   cursor: not-allowed;
   opacity: 0.5;
 }
     </style>
-    <span class="tag-0-0-12">
+    <span class="tag-0-0-11">
       <slot></slot>
     </span>
   </mock:shadow-root>

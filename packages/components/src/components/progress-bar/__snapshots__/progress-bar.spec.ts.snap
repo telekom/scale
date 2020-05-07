@@ -4,13 +4,13 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
 <scale-progress-bar text-inside="true">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-64 {
+      .progress-bar-0-0-71 {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar__outer-0-0-65 {
+.progress-bar__outer-0-0-72 {
   width: 400px;
   height: 6px;
   margin: 12px 12px 12px 0;
@@ -19,7 +19,7 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   background: #ebeef5;
   border-radius: 100px;
 }
-.progress-bar__inner-0-0-66 {
+.progress-bar__inner-0-0-73 {
   top: 0;
   left: 0;
   height: 100%;
@@ -31,33 +31,36 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   border-radius: 100px;
   justify-content: flex-end;
 }
-.progress-bar__inner-text-0-0-67 {
+.progress-bar__inner-text-0-0-74 {
   color: #fff;
   padding: 0 12px;
   font-size: 12px;
 }
-.progress-bar__text-0-0-68 {
+.progress-bar__text-0-0-75 {
   color: #606266;
   display: inline-block;
   font-size: 14px;
 }
-.progress-bar--variant-success-0-0-69 {
-  background: #28a745;
+.progress-bar--variant-brand-0-0-76 {
+  background: #0039cb;
 }
-.progress-bar--variant-info-0-0-70 {
-  background: #409eff;
+.progress-bar--variant-error-0-0-77 {
+  background: #bb002f;
 }
-.progress-bar--variant-warning-0-0-71 {
-  background: #ffc107;
+.progress-bar--variant-warning-0-0-78 {
+  background: #c79400;
 }
-.progress-bar--variant-danger-0-0-72 {
-  background: #dc3545;
+.progress-bar--variant-info-0-0-79 {
+  background: #0081cb;
+}
+.progress-bar--variant-success-0-0-80 {
+  background: #00b248;
 }
     </style>
-    <div class="progress-bar-0-0-64">
-      <div class="progress-bar__outer-0-0-65" style="height: 6px;">
-        <div class="progress-bar-0-0-64 progress-bar__inner-0-0-66" style="width: undefined%;">
-          <div class="progress-bar__inner-text-0-0-67">
+    <div class="progress-bar-0-0-71">
+      <div class="progress-bar__outer-0-0-72" style="height: 6px;">
+        <div class="progress-bar-0-0-71 progress-bar__inner-0-0-73" style="width: undefined%;">
+          <div class="progress-bar__inner-text-0-0-74">
             undefined%
           </div>
         </div>
@@ -72,13 +75,13 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
 <scale-progress-bar show-text="true">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-46 {
+      .progress-bar-0-0-51 {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar__outer-0-0-47 {
+.progress-bar__outer-0-0-52 {
   width: 400px;
   height: 6px;
   margin: 12px 12px 12px 0;
@@ -87,7 +90,7 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   background: #ebeef5;
   border-radius: 100px;
 }
-.progress-bar__inner-0-0-48 {
+.progress-bar__inner-0-0-53 {
   top: 0;
   left: 0;
   height: 100%;
@@ -99,34 +102,37 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   border-radius: 100px;
   justify-content: flex-end;
 }
-.progress-bar__inner-text-0-0-49 {
+.progress-bar__inner-text-0-0-54 {
   color: #fff;
   padding: 0 12px;
   font-size: 12px;
 }
-.progress-bar__text-0-0-50 {
+.progress-bar__text-0-0-55 {
   color: #606266;
   display: inline-block;
   font-size: 14px;
 }
-.progress-bar--variant-success-0-0-51 {
-  background: #28a745;
+.progress-bar--variant-brand-0-0-56 {
+  background: #0039cb;
 }
-.progress-bar--variant-info-0-0-52 {
-  background: #409eff;
+.progress-bar--variant-error-0-0-57 {
+  background: #bb002f;
 }
-.progress-bar--variant-warning-0-0-53 {
-  background: #ffc107;
+.progress-bar--variant-warning-0-0-58 {
+  background: #c79400;
 }
-.progress-bar--variant-danger-0-0-54 {
-  background: #dc3545;
+.progress-bar--variant-info-0-0-59 {
+  background: #0081cb;
+}
+.progress-bar--variant-success-0-0-60 {
+  background: #00b248;
 }
     </style>
-    <div class="progress-bar-0-0-46">
-      <div class="progress-bar__outer-0-0-47" style="height: 6px;">
-        <div class="progress-bar-0-0-46 progress-bar__inner-0-0-48" style="width: undefined%;"></div>
+    <div class="progress-bar-0-0-51">
+      <div class="progress-bar__outer-0-0-52" style="height: 6px;">
+        <div class="progress-bar-0-0-51 progress-bar__inner-0-0-53" style="width: undefined%;"></div>
       </div>
-      <div class="progress-bar__text-0-0-50">
+      <div class="progress-bar__text-0-0-55">
         undefined%
       </div>
     </div>
@@ -139,13 +145,13 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
 <scale-progress-bar stroke-width="24">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-28 {
+      .progress-bar-0-0-31 {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar__outer-0-0-29 {
+.progress-bar__outer-0-0-32 {
   width: 400px;
   height: 6px;
   margin: 12px 12px 12px 0;
@@ -154,7 +160,7 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   background: #ebeef5;
   border-radius: 100px;
 }
-.progress-bar__inner-0-0-30 {
+.progress-bar__inner-0-0-33 {
   top: 0;
   left: 0;
   height: 100%;
@@ -166,32 +172,35 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
   border-radius: 100px;
   justify-content: flex-end;
 }
-.progress-bar__inner-text-0-0-31 {
+.progress-bar__inner-text-0-0-34 {
   color: #fff;
   padding: 0 12px;
   font-size: 12px;
 }
-.progress-bar__text-0-0-32 {
+.progress-bar__text-0-0-35 {
   color: #606266;
   display: inline-block;
   font-size: 14px;
 }
-.progress-bar--variant-success-0-0-33 {
-  background: #28a745;
+.progress-bar--variant-brand-0-0-36 {
+  background: #0039cb;
 }
-.progress-bar--variant-info-0-0-34 {
-  background: #409eff;
+.progress-bar--variant-error-0-0-37 {
+  background: #bb002f;
 }
-.progress-bar--variant-warning-0-0-35 {
-  background: #ffc107;
+.progress-bar--variant-warning-0-0-38 {
+  background: #c79400;
 }
-.progress-bar--variant-danger-0-0-36 {
-  background: #dc3545;
+.progress-bar--variant-info-0-0-39 {
+  background: #0081cb;
+}
+.progress-bar--variant-success-0-0-40 {
+  background: #00b248;
 }
     </style>
-    <div class="progress-bar-0-0-28">
-      <div class="progress-bar__outer-0-0-29" style="height: 24px;">
-        <div class="progress-bar-0-0-28 progress-bar__inner-0-0-30" style="width: undefined%;"></div>
+    <div class="progress-bar-0-0-31">
+      <div class="progress-bar__outer-0-0-32" style="height: 24px;">
+        <div class="progress-bar-0-0-31 progress-bar__inner-0-0-33" style="width: undefined%;"></div>
       </div>
     </div>
   </mock:shadow-root>
@@ -203,13 +212,13 @@ exports[`ProgressBar should match snapshot 1`] = `
 <scale-progress-bar>
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-10 {
+      .progress-bar-0-0-11 {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar__outer-0-0-11 {
+.progress-bar__outer-0-0-12 {
   width: 400px;
   height: 6px;
   margin: 12px 12px 12px 0;
@@ -218,7 +227,7 @@ exports[`ProgressBar should match snapshot 1`] = `
   background: #ebeef5;
   border-radius: 100px;
 }
-.progress-bar__inner-0-0-12 {
+.progress-bar__inner-0-0-13 {
   top: 0;
   left: 0;
   height: 100%;
@@ -230,32 +239,35 @@ exports[`ProgressBar should match snapshot 1`] = `
   border-radius: 100px;
   justify-content: flex-end;
 }
-.progress-bar__inner-text-0-0-13 {
+.progress-bar__inner-text-0-0-14 {
   color: #fff;
   padding: 0 12px;
   font-size: 12px;
 }
-.progress-bar__text-0-0-14 {
+.progress-bar__text-0-0-15 {
   color: #606266;
   display: inline-block;
   font-size: 14px;
 }
-.progress-bar--variant-success-0-0-15 {
-  background: #28a745;
+.progress-bar--variant-brand-0-0-16 {
+  background: #0039cb;
 }
-.progress-bar--variant-info-0-0-16 {
-  background: #409eff;
+.progress-bar--variant-error-0-0-17 {
+  background: #bb002f;
 }
-.progress-bar--variant-warning-0-0-17 {
-  background: #ffc107;
+.progress-bar--variant-warning-0-0-18 {
+  background: #c79400;
 }
-.progress-bar--variant-danger-0-0-18 {
-  background: #dc3545;
+.progress-bar--variant-info-0-0-19 {
+  background: #0081cb;
+}
+.progress-bar--variant-success-0-0-20 {
+  background: #00b248;
 }
     </style>
-    <div class="progress-bar-0-0-10">
-      <div class="progress-bar__outer-0-0-11" style="height: 6px;">
-        <div class="progress-bar-0-0-10 progress-bar__inner-0-0-12" style="width: undefined%;"></div>
+    <div class="progress-bar-0-0-11">
+      <div class="progress-bar__outer-0-0-12" style="height: 6px;">
+        <div class="progress-bar-0-0-11 progress-bar__inner-0-0-13" style="width: undefined%;"></div>
       </div>
     </div>
   </mock:shadow-root>

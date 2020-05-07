@@ -4,7 +4,7 @@ exports[`Button should match snapshot 1`] = `
 <scale-button>
   <mock:shadow-root>
     <style>
-      .button-0-0-12 {
+      .button-0-0-11 {
   cursor: pointer;
   display: inline-flex;
   padding: 0.25rem 1rem;
@@ -29,13 +29,13 @@ exports[`Button should match snapshot 1`] = `
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --icon-color: #000;
 }
-.button-0-0-12:before {
+.button-0-0-11:before {
   width: 0;
   height: 100%;
   content: "";
   display: block;
 }
-.button-0-0-12:hover {
+.button-0-0-11:hover {
   box-shadow: none;
   text-decoration: none;
   color: #fff;
@@ -44,90 +44,80 @@ exports[`Button should match snapshot 1`] = `
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --icon-color: #fff;
 }
-.button--disabled-0-0-13 {}
-.button--disabled-0-0-13, .button--disabled-0-0-13:hover {
+.button--disabled-0-0-12 {}
+.button--disabled-0-0-12, .button--disabled-0-0-12:hover {
   cursor: not-allowed;
   opacity: 0.3;
   border: 1px solid rgba(0, 0, 0, .3);
   color: rgba(0, 0, 0, .4);
   background: #fff;
 }
-.button__before-0-0-14 {
+.button__before-0-0-13 {
   display: flex;
   align-items: center;
   margin-right: .5rem;
 }
-.button__after-0-0-15 {
+.button__after-0-0-14 {
   display: flex;
   align-items: center;
   margin-left: .5rem;
 }
-.button--icon-only-0-0-16 {
+.button--icon-only-0-0-15 {
   width: 40px;
   height: 40px;
 }
-.button--variant-primary-0-0-17 {
-  color: #fff;
+.button--variant-brand-0-0-16 {
+  color: #eff1fa;
   background: #2962ff;
   border: 1px solid #2962ff;
 }
-.button--variant-primary-0-0-17:hover {
-  color: #fff;
+.button--variant-brand-0-0-16:hover {
+  color: #eff1fa;
   background: #0039cb;
   border: 1px solid #0039cb;
 }
-.button--variant-secondary-0-0-18 {
-  color: #fff;
-  background: #d500f9;
-  border: 1px solid #d500f9;
-}
-.button--variant-secondary-0-0-18:hover {
-  color: #fff;
-  background: #9e00c5;
-  border: 1px solid #9e00c5;
-}
-.button--variant-error-0-0-19 {
-  color: #fff;
+.button--variant-error-0-0-17 {
+  color: #f8e9ed;
   background: #f50057;
   border: 1px solid #f50057;
 }
-.button--variant-error-0-0-19:hover {
-  color: #fff;
+.button--variant-error-0-0-17:hover {
+  color: #f8e9ed;
   background: #bb002f;
   border: 1px solid #bb002f;
 }
-.button--variant-warning-0-0-20 {
-  color: #fff;
+.button--variant-warning-0-0-18 {
+  color: #f8f7e2;
   background: #ffc400;
   border: 1px solid #ffc400;
 }
-.button--variant-warning-0-0-20:hover {
-  color: #fff;
+.button--variant-warning-0-0-18:hover {
+  color: #f8f7e2;
   background: #c79400;
   border: 1px solid #c79400;
 }
-.button--variant-info-0-0-21 {
-  color: #fff;
+.button--variant-info-0-0-19 {
+  color: #e7f3f6;
   background: #00b0ff;
   border: 1px solid #00b0ff;
 }
-.button--variant-info-0-0-21:hover {
-  color: #fff;
+.button--variant-info-0-0-19:hover {
+  color: #e7f3f6;
   background: #0081cb;
   border: 1px solid #0081cb;
 }
-.button--variant-success-0-0-22 {
-  color: #fff;
+.button--variant-success-0-0-20 {
+  color: #dff5e8;
   background: #00e676;
   border: 1px solid #00e676;
 }
-.button--variant-success-0-0-22:hover {
-  color: #fff;
+.button--variant-success-0-0-20:hover {
+  color: #dff5e8;
   background: #00b248;
   border: 1px solid #00b248;
 }
     </style>
-    <button class="button-0-0-12" tabindex="0">
+    <button class="button-0-0-11" tabindex="0">
       <slot></slot>
     </button>
   </mock:shadow-root>

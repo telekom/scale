@@ -1,5 +1,11 @@
 import { JssStyle } from 'jss';
 
+const progressBarVariant = variant => ({
+  [`progress-bar--variant-${variant}`]: {
+    background: ({ palette }) => palette.variants[variant].dark.fill,
+  },
+});
+
 export const styles: JssStyle = {
   'progress-bar': {
     display: 'flex',
@@ -38,16 +44,9 @@ export const styles: JssStyle = {
     fontSize: '14px',
     display: 'inline-block',
   },
-  'progress-bar--variant-success': {
-    background: '#28a745',
-  },
-  'progress-bar--variant-info': {
-    background: '#409eff',
-  },
-  'progress-bar--variant-warning': {
-    background: '#ffc107',
-  },
-  'progress-bar--variant-danger': {
-    background: '#dc3545',
-  },
+  ...progressBarVariant('brand'),
+  ...progressBarVariant('error'),
+  ...progressBarVariant('warning'),
+  ...progressBarVariant('info'),
+  ...progressBarVariant('success'),
 };

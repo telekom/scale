@@ -1,4 +1,40 @@
+import { colors, variants } from './defaultTheme';
+
+export interface Color {
+  '100': string;
+  '200': string;
+  '300': string;
+  '400': string;
+  '500': string;
+  '600': string;
+  '700': string;
+  '800': string;
+}
+
+interface ColorVariantTarget {
+  fill: string;
+  contrast: string;
+}
+
+export interface ColorVariant {
+  normal: ColorVariantTarget;
+  dark: ColorVariantTarget;
+}
+
+export interface ColorVariants {
+  default: ColorVariant;
+  brand: ColorVariant;
+  error: ColorVariant;
+  warning: ColorVariant;
+  success: ColorVariant;
+  info: ColorVariant;
+}
+
 export interface Theme {
+  palette: {
+    colors: typeof colors;
+    variants: typeof variants;
+  };
   components?: {
     [key: string]: any;
   };
@@ -7,9 +43,6 @@ export interface Theme {
       [key: string]: string;
     };
     primary: {
-      [key: string]: string;
-    };
-    secondary: {
       [key: string]: string;
     };
     error: {

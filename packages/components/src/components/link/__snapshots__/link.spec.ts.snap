@@ -38,25 +38,25 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 .link--block-0-0-31 {
   display: flex;
 }
-.link--variant-primary-0-0-32 {
-  color: #409eff;
-  --icon-color: #409eff;
+.link--variant-brand-0-0-32 {
+  color: #2962ff;
+  --icon-color: #eff1fa;
 }
 .link--variant-success-0-0-33 {
-  color: #67c23a;
-  --icon-color: #67c23a;
+  color: #00e676;
+  --icon-color: #dff5e8;
 }
-.link--variant-warning-0-0-34 {
-  color: #e6a23c;
-  --icon-color: #e6a23c;
+.link--variant-error-0-0-34 {
+  color: #f50057;
+  --icon-color: #f8e9ed;
 }
-.link--variant-danger-0-0-35 {
-  color: #f56c6c;
-  --icon-color: #f56c6c;
+.link--variant-info-0-0-35 {
+  color: #00b0ff;
+  --icon-color: #e7f3f6;
 }
-.link--variant-info-0-0-36 {
-  color: #909399;
-  --icon-color: #909399;
+.link--variant-warning-0-0-36 {
+  color: #ffc400;
+  --icon-color: #f8f7e2;
 }
     </style>
     <a class="link--underline-0-0-29 link-0-0-28" href="http://example.com" target="_self">
@@ -105,25 +105,25 @@ exports[`Link should have link href value when href value is set 1`] = `
 .link--block-0-0-49 {
   display: flex;
 }
-.link--variant-primary-0-0-50 {
-  color: #409eff;
-  --icon-color: #409eff;
+.link--variant-brand-0-0-50 {
+  color: #2962ff;
+  --icon-color: #eff1fa;
 }
 .link--variant-success-0-0-51 {
-  color: #67c23a;
-  --icon-color: #67c23a;
+  color: #00e676;
+  --icon-color: #dff5e8;
 }
-.link--variant-warning-0-0-52 {
-  color: #e6a23c;
-  --icon-color: #e6a23c;
+.link--variant-error-0-0-52 {
+  color: #f50057;
+  --icon-color: #f8e9ed;
 }
-.link--variant-danger-0-0-53 {
-  color: #f56c6c;
-  --icon-color: #f56c6c;
+.link--variant-info-0-0-53 {
+  color: #00b0ff;
+  --icon-color: #e7f3f6;
 }
-.link--variant-info-0-0-54 {
-  color: #909399;
-  --icon-color: #909399;
+.link--variant-warning-0-0-54 {
+  color: #ffc400;
+  --icon-color: #f8f7e2;
 }
     </style>
     <a class="link--underline-0-0-47 link-0-0-46" href="http://example.com" target="_self">
@@ -172,25 +172,25 @@ exports[`Link should match snapshot 1`] = `
 .link--block-0-0-13 {
   display: flex;
 }
-.link--variant-primary-0-0-14 {
-  color: #409eff;
-  --icon-color: #409eff;
+.link--variant-brand-0-0-14 {
+  color: #2962ff;
+  --icon-color: #eff1fa;
 }
 .link--variant-success-0-0-15 {
-  color: #67c23a;
-  --icon-color: #67c23a;
+  color: #00e676;
+  --icon-color: #dff5e8;
 }
-.link--variant-warning-0-0-16 {
-  color: #e6a23c;
-  --icon-color: #e6a23c;
+.link--variant-error-0-0-16 {
+  color: #f50057;
+  --icon-color: #f8e9ed;
 }
-.link--variant-danger-0-0-17 {
-  color: #f56c6c;
-  --icon-color: #f56c6c;
+.link--variant-info-0-0-17 {
+  color: #00b0ff;
+  --icon-color: #e7f3f6;
 }
-.link--variant-info-0-0-18 {
-  color: #909399;
-  --icon-color: #909399;
+.link--variant-warning-0-0-18 {
+  color: #ffc400;
+  --icon-color: #f8f7e2;
 }
     </style>
     <a class="link--underline-0-0-11 link-0-0-10" target="_self">
