@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------ | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Tag class           | `string`                                 | `''`        |
-| `styles`      | --             | (optional) Injected jss styles | `StyleSheet<string \| number \| symbol>` | `undefined` |
-| `variant`     | `variant`      | (optional) Visual variant      | `"compressed" \| "regular"`              | `'regular'` |
+| Property      | Attribute      | Description                           | Type                                     | Default     |
+| ------------- | -------------- | ------------------------------------- | ---------------------------------------- | ----------- |
+| `customClass` | `custom-class` | (optional) Tag class                  | `string`                                 | `''`        |
+| `showSort`    | `show-sort`    | (optional) Display sort arrows on/off | `boolean`                                | `false`     |
+| `styles`      | --             | (optional) Injected jss styles        | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| `variant`     | `variant`      | (optional) Visual variant             | `"compressed" \| "regular"`              | `'regular'` |
 
 
 ----------------------------------------------

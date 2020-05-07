@@ -411,6 +411,10 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
+          * (optional) Display sort arrows on/off
+         */
+        "showSort"?: boolean;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
@@ -1043,6 +1047,10 @@ declare namespace LocalJSX {
           * (optional) Tag class
          */
         "customClass"?: string;
+        /**
+          * (optional) Display sort arrows on/off
+         */
+        "showSort"?: boolean;
         /**
           * (optional) Injected jss styles
          */

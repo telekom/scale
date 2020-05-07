@@ -4,13 +4,13 @@ export const styles: JssStyle = {
   table: {
     '& [slot="table"]': {
       overflow: 'auto',
+      borderRadius: '4px 4px 0 0',
+      background: ({ colors }) => colors.grey[100],
     },
     '& table': {
       fontFamily: ({ typography }) => typography.fontFamily,
       borderSpacing: 0,
       borderCollapse: 'collapse',
-      borderRadius: '4px 0',
-      background: ({ colors }) => colors.grey[100],
       width: '100%',
       whiteSpace: 'nowrap',
     },
@@ -20,10 +20,33 @@ export const styles: JssStyle = {
       lineHeight: '32px',
       fontSize: 12,
       textAlign: 'left',
-      cursor: 'pointer',
       userSelect: 'none',
+    },
+    '& th, td': {
+      padding: '0 8px',
+    },
+
+    '& tfoot, tbody': {
+      background: '#FFFFFF',
+    },
+
+    '& tfoot tr td': {
+      fontWeight: 600,
+      padding: '8px',
+      borderBottom: '1px solid #000000',
+    },
+  },
+
+  'table--variant-compressed': {
+    '& td': {
+      padding: '8px',
+    },
+  },
+
+  'table--sortable': {
+    '& th': {
+      cursor: 'pointer',
       '&[aria-disabled="true"]': {
-        cursor: 'default',
         pointerEvents: 'none',
       },
       '&[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type': {
@@ -55,25 +78,6 @@ export const styles: JssStyle = {
           fill: '#DCDCDC',
         },
       },
-    },
-    '& th, td': {
-      padding: '0 8px',
-    },
-
-    '& tfoot, tbody': {
-      background: '#FFFFFF',
-    },
-
-    '& tfoot tr td': {
-      fontWeight: 600,
-      padding: '8px',
-      borderBottom: '1px solid #000000',
-    },
-  },
-
-  'table--variant-compressed': {
-    '& td': {
-      padding: '8px',
     },
   },
 };

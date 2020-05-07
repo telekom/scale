@@ -8,12 +8,14 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-table',
-  shadow: true,
+  shadow: false,
 })
 export class Table implements Base {
   @Element() hostElement: HTMLElement;
   /** (optional) Tag class */
   @Prop() customClass?: string = '';
+  /** (optional) Display sort arrows on/off */
+  @Prop() showSort?: boolean = false;
   /** (optional) Visual variant */
   @Prop() variant?: 'regular' | 'compressed' = 'regular';
   /** (optional) Injected jss styles */
@@ -33,11 +35,11 @@ export class Table implements Base {
       // build object of slots
       // @ts-ignore - fromEntries should be fine here
       this.slots = Object.fromEntries(
-        Array.from(this.hostElement.children).map(v => [v.slot, v])
+        Array.from(this.hostElement.children).map(child => [child.slot, child])
       );
 
-      // insert sort indicator arrows for each th when table found
-      if (this.slots.table) {
+      // when showSort is enabled insert indicator arrows for each th of the found table
+      if (this.showSort && this.slots.table) {
         this.slots.table.querySelectorAll('th').forEach(th => {
           th.insertAdjacentHTML(
             'afterbegin',
@@ -73,7 +75,8 @@ export class Table implements Base {
     return classNames(
       classes.table,
       this.customClass && this.customClass,
-      this.variant && classes[`table--variant-${this.variant}`]
+      this.variant && classes[`table--variant-${this.variant}`],
+      this.showSort && classes[`table--sortable`]
     );
   }
 }
