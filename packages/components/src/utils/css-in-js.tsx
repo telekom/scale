@@ -57,34 +57,19 @@ export function CssInJs(
 
   return (target: ComponentInterface, propertyKey: string) => {
     let prevStyles;
-    const { componentWillLoad } = target;
-    if (!componentWillLoad) {
-      // tslint:disable-next-line: no-console
-      return console.warn(
-        `ConstructibleStyle requires you to have a \`componentWillLoad\` lifecycle method in \`${target.constructor.name}\`. Failure to add this function may cause ConstructibleStyle to fail due to StencilJS build optimizations.`
-      );
-    }
+    const { render, componentWillUpdate, componentDidUnload } = target;
 
-    if (componentWillLoad) {
-      target.componentWillLoad = function() {
-        // attach the stylesheet to the component instance
-        this[propertyKey] = jss
-          .createStyleSheet(withInjectedValues(this), { link: true })
-          .attach()
-          .update(getTheme()) as StyleSheet;
-        // save the current value of the styles property and use it later to compare in componentWillUpdate
-        prevStyles = this.styles;
+    target.render = function() {
+      // attach the stylesheet to the component instance
+      this[propertyKey] = jss
+        .createStyleSheet(withInjectedValues(this), { link: true })
+        .attach()
+        .update(getTheme()) as StyleSheet;
+      // save the current value of the styles property and use it later to compare in componentWillUpdate
+      prevStyles = this.styles;
+      return render.call(this);
+    };
 
-        const willLoadResult =
-          componentWillLoad && componentWillLoad.call(this);
-        return willLoadResult;
-      };
-    } else {
-      // tslint:disable-next-line: no-console
-      return console.error('Something went wrong... CssInJs is not supported');
-    }
-
-    const { componentWillUpdate } = target;
     if (!componentWillUpdate) {
       // tslint:disable-next-line: no-console
       return console.warn(
@@ -92,35 +77,40 @@ export function CssInJs(
       );
     }
 
-    if (componentWillUpdate) {
-      target.componentWillUpdate = function() {
-        try {
-          // compare the styles value with the previously rendered one
-          if (JSON.stringify(this.styles) !== JSON.stringify(prevStyles)) {
-            // detach the previous sheet
-            this[propertyKey].detach();
-            // attach a new sheet with the updated values coming from the styles property
-            this[propertyKey] = jss
-              .createStyleSheet(withInjectedValues(this), { link: true })
-              .attach()
-              .update(getTheme()) as StyleSheet;
-            // update the current value of the styles property and use it for next runs of componentWillUpdate
-            prevStyles = this.styles;
-          }
-        } catch (error) {
-          // tslint:disable-next-line: no-console
-          return console.error(
-            'Something went wrong... CssInJs got invalid value via styles prop'
-          );
+    target.componentWillUpdate = function() {
+      try {
+        // compare the styles value with the previously rendered one
+        if (JSON.stringify(this.styles) !== JSON.stringify(prevStyles)) {
+          // detach the previous sheet
+          this[propertyKey].detach();
+          // attach a new sheet with the updated values coming from the styles property
+          this[propertyKey] = jss
+            .createStyleSheet(withInjectedValues(this), { link: true })
+            .attach()
+            .update(getTheme()) as StyleSheet;
+          // update the current value of the styles property and use it for next runs of componentWillUpdate
+          prevStyles = this.styles;
         }
+      } catch (error) {
+        // tslint:disable-next-line: no-console
+        return console.error(
+          'Something went wrong... CssInJs got invalid value via styles prop'
+        );
+      }
 
-        const willLoadResult =
-          componentWillUpdate && componentWillUpdate.call(this);
-        return willLoadResult;
-      };
-    } else {
+      return componentWillUpdate.call(this);
+    };
+
+    if (!componentDidUnload) {
       // tslint:disable-next-line: no-console
-      return console.error('Something went wrong... CssInJs is not supported');
+      return console.warn(
+        `ConstructibleStyle requires you to have a \`componentDidUnload\` lifecycle method in \`${target.constructor.name}\`. Failure to add this function may cause ConstructibleStyle to fail due to StencilJS build optimizations.`
+      );
     }
+
+    target.componentDidUnload = function() {
+      this[propertyKey].detach();
+      return componentDidUnload.call(this);
+    };
   };
 }

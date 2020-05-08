@@ -23,8 +23,8 @@ export class Divider implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Divider', styles) stylesheet: StyleSheet;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;

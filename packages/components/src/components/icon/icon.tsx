@@ -27,8 +27,8 @@ export class Icon implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Icon', styles) stylesheet: StyleSheet;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const hostStyles = `

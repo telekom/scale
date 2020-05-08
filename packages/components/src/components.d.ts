@@ -385,8 +385,6 @@ export namespace Components {
          */
         "value": number;
     }
-    interface ScaleSsrSlotFix {
-    }
     interface ScaleSwitch {
         /**
           * (optional) Active switch
@@ -581,12 +579,6 @@ declare global {
         prototype: HTMLScaleSliderElement;
         new (): HTMLScaleSliderElement;
     };
-    interface HTMLScaleSsrSlotFixElement extends Components.ScaleSsrSlotFix, HTMLStencilElement {
-    }
-    var HTMLScaleSsrSlotFixElement: {
-        prototype: HTMLScaleSsrSlotFixElement;
-        new (): HTMLScaleSsrSlotFixElement;
-    };
     interface HTMLScaleSwitchElement extends Components.ScaleSwitch, HTMLStencilElement {
     }
     var HTMLScaleSwitchElement: {
@@ -624,7 +616,6 @@ declare global {
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-slider": HTMLScaleSliderElement;
-        "scale-ssr-slot-fix": HTMLScaleSsrSlotFixElement;
         "scale-switch": HTMLScaleSwitchElement;
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
@@ -997,8 +988,6 @@ declare namespace LocalJSX {
          */
         "value"?: number;
     }
-    interface ScaleSsrSlotFix {
-    }
     interface ScaleSwitch {
         /**
           * (optional) Active switch
@@ -1129,7 +1118,6 @@ declare namespace LocalJSX {
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
         "scale-slider": ScaleSlider;
-        "scale-ssr-slot-fix": ScaleSsrSlotFix;
         "scale-switch": ScaleSwitch;
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
@@ -1152,7 +1140,6 @@ declare module "@stencil/core" {
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
-            "scale-ssr-slot-fix": LocalJSX.ScaleSsrSlotFix & JSXBase.HTMLAttributes<HTMLScaleSsrSlotFixElement>;
             "scale-switch": LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;

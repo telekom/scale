@@ -35,6 +35,7 @@ export class Breadcrumb implements Base {
   }
 
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
