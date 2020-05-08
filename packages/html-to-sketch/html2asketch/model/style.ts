@@ -52,6 +52,33 @@ class Style {
     });
   }
 
+  addSVGGradientFill(fill: any, alpha: number = 1) {
+    this._fills.push({
+      _class: 'fill',
+      isEnabled: true,
+      fillType: 1,
+      gradient: {
+        _class: 'gradient',
+        ellipseLength: 0,
+        from: `{${fill.gradient.from.x}, ${fill.gradient.from.y}}`,
+        gradientType: fill.gradient.gradientType,
+        shouldSmoothenOpacity: false,
+        stops: fill.gradient.stops.map(({color, position}:{color:string,position:number}) => {
+          return {
+            _class: 'gradientStop',
+            color: makeColorFromCSS(color, alpha),
+            position,
+          }
+        }),
+        to: `{${fill.gradient.to.x}, ${fill.gradient.to.y}}`,
+      },
+      noiseIndex: 0,
+      noiseIntensity: 0,
+      patternFillType: 1,
+      patternTileScale: 1,
+    });
+  }
+
   addImageFill(image: any) {
     const fill = makeImageFill(image);
 

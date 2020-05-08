@@ -251,6 +251,54 @@ function getRectanglePoints(cornerRadius:number) {
   ];
 }
 
+function parseSVGGradientStops(node:(SVGLinearGradientElement|SVGRadialGradientElement)) {
+  const stopArray = [] as {position:number, color:string}[];
+  const stops = node.getElementsByTagName('stop');
+  for (let i = 0; i < stops.length; i++) {
+    const stopEl = stops[i];
+    const stop = {position: 0, color: '#000000'};
+    stop.position = stopEl.offset.baseVal;
+    stop.color = getComputedStyle(stopEl).getPropertyValue('stop-color') || '#000000';
+    stopArray.push(stop);
+  }
+  return stopArray;
+}
+
+function parseSVGLinearGradient(node:SVGLinearGradientElement) {
+  const template = {
+    fillType: 1,
+    gradient: {
+      gradientType: 0,
+      from: {x: 0, y: 0},
+      to: {x: 0, y: 0},
+      stops: [] as {position:number, color:string}[]
+    }
+  };
+  template.gradient.from.x = node.x1.baseVal.value;
+  template.gradient.from.y = node.y1.baseVal.value;
+  template.gradient.to.x = node.x2.baseVal.value;
+  template.gradient.to.y = node.y2.baseVal.value;
+  template.gradient.stops = parseSVGGradientStops(node);
+  return template;
+}
+
+function parseSVGRadialGradient(node:SVGRadialGradientElement) {
+  const template = {
+    fillType: 1,
+    gradient: {
+      gradientType: 1,
+      from: {x: 0, y: 0},
+      to: {x: 0, y: 0},
+      stops: [] as {position:number, color:string}[]
+    }
+  };
+  template.gradient.from.x = node.fx.baseVal.value;
+  template.gradient.from.y = node.fy.baseVal.value;
+  template.gradient.to.x = node.cx.baseVal.value;
+  template.gradient.to.y = node.cy.baseVal.value;
+  template.gradient.stops = parseSVGGradientStops(node);
+  return template;
+}
 
 const DEFAULT_VALUES = {
   backgroundColor: "rgba(0, 0, 0, 0)",
@@ -648,17 +696,23 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
   const isSVG = node.nodeName === "svg";
 
   if (node instanceof SVGElement) {
+    if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
+      return layers;
+    }
+
     if (!isSVG && node.ownerSVGElement) {
       // Use the SVG viewbox as the frame for SVG elements.
       // We transform the path points to viewbox coordinates in SvgPath$toCurvePoints,
       // so e.g. <g> with transform need to be skipped.
       const svgBCR = node.ownerSVGElement.getBoundingClientRect();
+
       shapeGroup._x = svgBCR.left;
       shapeGroup._y = svgBCR.top;
       shapeGroup._width = svgBCR.width;
       shapeGroup._height = svgBCR.height;
     } else if (isSVG) {
       // Create a clip rect for the SVG viewbox
+      console.log(node.nodeName, left, top, width, height);
       const clip = new ShapeGroup({ x: left, y: top, width, height });
       clip._class = "shapePath";
       clip.setHasClippingMask(true);
@@ -697,7 +751,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         break;
       case "polygon":
       case "polyline":
-        const points = (node.getAttribute('points') || '').split(/\s*[,\s]\s*/);
+        const points = (node.getAttribute('points') || '').trim().split(/\s*[,\s]\s*/);
         if (points.length > 2) {
           pathSegments = `M ${points[0]} ${points[1]}`;
           for (let i = 2; i < points.length; i+=2) {
@@ -794,7 +848,20 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       }
       // Set fill parameters
       if (anyStyles.fill && anyStyles.fill !== 'none') {
-        style.addColorFill(anyStyles.fill, parseStyleNumber(anyStyles.fillOpacity, 1));
+        const fill = anyStyles.fill.trim();
+        if (/^url\s*\(/.test(fill)) {
+          const selector = fill.replace(/(^url\s*\(\s*["']?)|(["']?\s*\)$)/g, '');
+          const fillElement = node.ownerSVGElement?.querySelector(selector.replace(/"/g, ''));
+          if (fillElement instanceof SVGLinearGradientElement) {
+            const gradient = parseSVGLinearGradient(fillElement);
+            style.addSVGGradientFill(gradient, parseStyleNumber(anyStyles.fillOpacity, 1));
+          } else if (fillElement instanceof SVGRadialGradientElement) {
+            const gradient = parseSVGRadialGradient(fillElement);
+            style.addSVGGradientFill(gradient, parseStyleNumber(anyStyles.fillOpacity, 1));
+          }
+        } else {
+          style.addColorFill(anyStyles.fill, parseStyleNumber(anyStyles.fillOpacity, 1));
+        }
         style._windingRule = anyStyles.fillRule === 'nonzero' ? 0 : 1;
       }
       shapeGroup._x = bbox.x;
@@ -813,6 +880,8 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         sg._isClosed = segment.isClosed;
         shapeGroup._layers.push(sg);
       });
+      console.log(node.nodeName, shapeGroup._x, shapeGroup._y, shapeGroup._width, shapeGroup._height);
+
       return [shapeGroup];
     }
   }
