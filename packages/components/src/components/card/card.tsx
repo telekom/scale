@@ -26,8 +26,8 @@ export class Card implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Card', styles) stylesheet: StyleSheet;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;

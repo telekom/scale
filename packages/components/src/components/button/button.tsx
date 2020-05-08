@@ -68,6 +68,7 @@ export class Button implements Base {
   }
 
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;

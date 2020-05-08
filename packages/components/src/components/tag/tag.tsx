@@ -34,8 +34,8 @@ export class Tag implements Base {
 
   @Event() close: EventEmitter<any>;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   handleClose(event) {
     event.preventDefault();
