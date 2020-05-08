@@ -20,7 +20,6 @@ export const ScaleLink = /*@__PURE__*/createReactComponent<JSX.ScaleLink, HTMLSc
 export const ScaleModal = /*@__PURE__*/createReactComponent<JSX.ScaleModal, HTMLScaleModalElement>('scale-modal');
 export const ScaleProgressBar = /*@__PURE__*/createReactComponent<JSX.ScaleProgressBar, HTMLScaleProgressBarElement>('scale-progress-bar');
 export const ScaleSlider = /*@__PURE__*/createReactComponent<JSX.ScaleSlider, HTMLScaleSliderElement>('scale-slider');
-export const ScaleSsrSlotFix = /*@__PURE__*/createReactComponent<JSX.ScaleSsrSlotFix, HTMLScaleSsrSlotFixElement>('scale-ssr-slot-fix');
 export const ScaleSwitch = /*@__PURE__*/createReactComponent<JSX.ScaleSwitch, HTMLScaleSwitchElement>('scale-switch');
 export const ScaleTag = /*@__PURE__*/createReactComponent<JSX.ScaleTag, HTMLScaleTagElement>('scale-tag');
 export const ScaleText = /*@__PURE__*/createReactComponent<JSX.ScaleText, HTMLScaleTextElement>('scale-text');
