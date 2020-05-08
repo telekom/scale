@@ -264,7 +264,7 @@ function parseSVGGradientStops(node:(SVGLinearGradientElement|SVGRadialGradientE
   return stopArray;
 }
 
-function parseSVGLinearGradient(node:SVGLinearGradientElement) {
+function parseSVGLinearGradient(node:SVGLinearGradientElement, ctm:DOMMatrix, bbox:{x:number,y:number,width:number,height:number}) {
   const template = {
     fillType: 1,
     gradient: {
@@ -274,15 +274,18 @@ function parseSVGLinearGradient(node:SVGLinearGradientElement) {
       stops: [] as {position:number, color:string}[]
     }
   };
-  template.gradient.from.x = node.x1.baseVal.value;
-  template.gradient.from.y = node.y1.baseVal.value;
-  template.gradient.to.x = node.x2.baseVal.value;
-  template.gradient.to.y = node.y2.baseVal.value;
+  ctm;
+  const point = new DOMPoint(node.x1.baseVal.value, node.y1.baseVal.value)// .matrixTransform(ctm);
+  template.gradient.from.x = (point.x - bbox.x) / bbox.width;
+  template.gradient.from.y = (point.y - bbox.y) / bbox.height;
+  const point2 = new DOMPoint(node.x2.baseVal.value, node.y2.baseVal.value)// .matrixTransform(ctm);
+  template.gradient.to.x = (point2.x - bbox.x) / bbox.width;
+  template.gradient.to.y = (point2.y - bbox.y) / bbox.height;
   template.gradient.stops = parseSVGGradientStops(node);
   return template;
 }
 
-function parseSVGRadialGradient(node:SVGRadialGradientElement) {
+function parseSVGRadialGradient(node:SVGRadialGradientElement, ctm:DOMMatrix, bbox:{x:number,y:number,width:number,height:number}) {
   const template = {
     fillType: 1,
     gradient: {
@@ -292,10 +295,14 @@ function parseSVGRadialGradient(node:SVGRadialGradientElement) {
       stops: [] as {position:number, color:string}[]
     }
   };
-  template.gradient.from.x = node.fx.baseVal.value;
-  template.gradient.from.y = node.fy.baseVal.value;
-  template.gradient.to.x = node.cx.baseVal.value;
-  template.gradient.to.y = node.cy.baseVal.value;
+  ctm;
+  const f = new DOMPoint(node.fx.baseVal.value, node.fy.baseVal.value); //.matrixTransform(ctm);
+  template.gradient.from.x = (f.x - bbox.x) / bbox.width;
+  template.gradient.from.y = (f.y - bbox.y) / bbox.height;
+  const c = new DOMPoint(node.cx.baseVal.value, node.cy.baseVal.value); //.matrixTransform(ctm);
+  // This should be `from + vec2(radius, 0)`
+  template.gradient.to.x = (c.x - bbox.x) / bbox.width;
+  template.gradient.to.y = (c.y - bbox.y) / bbox.height;
   template.gradient.stops = parseSVGGradientStops(node);
   return template;
 }
@@ -712,7 +719,6 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       shapeGroup._height = svgBCR.height;
     } else if (isSVG) {
       // Create a clip rect for the SVG viewbox
-      console.log(node.nodeName, left, top, width, height);
       const clip = new ShapeGroup({ x: left, y: top, width, height });
       clip._class = "shapePath";
       clip.setHasClippingMask(true);
@@ -853,10 +859,12 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
           const selector = fill.replace(/(^url\s*\(\s*["']?)|(["']?\s*\)$)/g, '');
           const fillElement = node.ownerSVGElement?.querySelector(selector.replace(/"/g, ''));
           if (fillElement instanceof SVGLinearGradientElement) {
-            const gradient = parseSVGLinearGradient(fillElement);
+            const gradient = parseSVGLinearGradient(fillElement, ctm || new DOMMatrix(), {...bbox,
+            x: bbox.x - shapeGroup._x, y: bbox.y - shapeGroup._y});
             style.addSVGGradientFill(gradient, parseStyleNumber(anyStyles.fillOpacity, 1));
           } else if (fillElement instanceof SVGRadialGradientElement) {
-            const gradient = parseSVGRadialGradient(fillElement);
+            const gradient = parseSVGRadialGradient(fillElement, ctm || new DOMMatrix(), {...bbox,
+            x: bbox.x - shapeGroup._x, y: bbox.y - shapeGroup._y});
             style.addSVGGradientFill(gradient, parseStyleNumber(anyStyles.fillOpacity, 1));
           }
         } else {
@@ -880,7 +888,6 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         sg._isClosed = segment.isClosed;
         shapeGroup._layers.push(sg);
       });
-      console.log(node.nodeName, shapeGroup._x, shapeGroup._y, shapeGroup._width, shapeGroup._height);
 
       return [shapeGroup];
     }
