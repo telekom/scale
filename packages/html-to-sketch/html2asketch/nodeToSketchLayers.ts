@@ -275,10 +275,11 @@ function parseSVGLinearGradient(node:SVGLinearGradientElement, ctm:DOMMatrix, bb
     }
   };
   ctm;
-  const point = new DOMPoint(node.x1.baseVal.value, node.y1.baseVal.value)// .matrixTransform(ctm);
+  const gtm = new DOMMatrix(getComputedStyle(node).transform);
+  const point = new DOMPoint(node.x1.baseVal.value, node.y1.baseVal.value).matrixTransform(gtm); // .matrixTransform(ctm);
   template.gradient.from.x = (point.x - bbox.x) / bbox.width;
   template.gradient.from.y = (point.y - bbox.y) / bbox.height;
-  const point2 = new DOMPoint(node.x2.baseVal.value, node.y2.baseVal.value)// .matrixTransform(ctm);
+  const point2 = new DOMPoint(node.x2.baseVal.value, node.y2.baseVal.value).matrixTransform(gtm); // .matrixTransform(ctm);
   template.gradient.to.x = (point2.x - bbox.x) / bbox.width;
   template.gradient.to.y = (point2.y - bbox.y) / bbox.height;
   template.gradient.stops = parseSVGGradientStops(node);
@@ -296,10 +297,11 @@ function parseSVGRadialGradient(node:SVGRadialGradientElement, ctm:DOMMatrix, bb
     }
   };
   ctm;
-  const f = new DOMPoint(node.fx.baseVal.value, node.fy.baseVal.value); //.matrixTransform(ctm);
+  const gtm = new DOMMatrix(getComputedStyle(node).transform);
+  const f = new DOMPoint(node.fx.baseVal.value, node.fy.baseVal.value).matrixTransform(gtm); //.matrixTransform(ctm);
   template.gradient.from.x = (f.x - bbox.x) / bbox.width;
   template.gradient.from.y = (f.y - bbox.y) / bbox.height;
-  const c = new DOMPoint(node.cx.baseVal.value, node.cy.baseVal.value); //.matrixTransform(ctm);
+  const c = new DOMPoint(node.cx.baseVal.value, node.cy.baseVal.value).matrixTransform(gtm); //.matrixTransform(ctm);
   // This should be `from + vec2(radius, 0)`
   template.gradient.to.x = (c.x - bbox.x) / bbox.width;
   template.gradient.to.y = (c.y - bbox.y) / bbox.height;
