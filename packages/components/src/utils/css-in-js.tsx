@@ -60,13 +60,17 @@ export function CssInJs(
     const { render, componentWillUpdate, componentDidUnload } = target;
 
     target.render = function() {
-      // attach the stylesheet to the component instance
-      this[propertyKey] = jss
-        .createStyleSheet(withInjectedValues(this), { link: true })
-        .attach()
-        .update(getTheme()) as StyleSheet;
-      // save the current value of the styles property and use it later to compare in componentWillUpdate
-      prevStyles = this.styles;
+      // on first render only
+      if(!this[propertyKey]) {
+        // attach the stylesheet to the component instance
+        this[propertyKey] = jss
+          .createStyleSheet(withInjectedValues(this), { link: true })
+          .attach()
+          .update(getTheme()) as StyleSheet;
+        // save the current value of the styles property and use it later to compare in componentWillUpdate
+        prevStyles = this.styles;
+      }
+
       return render.call(this);
     };
 
