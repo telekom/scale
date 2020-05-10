@@ -94,7 +94,7 @@ exports[`Toast should match snapshot when opened 1`] = `
 <scale-toast opened="">
   <mock:shadow-root>
     <style>
-      .toast-0-0-15 {
+      .toast-0-0-5 {
   width: 400px;
   display: flex;
   opacity: 0;
@@ -107,10 +107,10 @@ exports[`Toast should match snapshot when opened 1`] = `
   flex-direction: column;
   justify-content: space-between;
 }
-.toast__body-0-0-16 {
+.toast__body-0-0-6 {
   padding: 1rem;
 }
-.toast__header-0-0-17 {
+.toast__header-0-0-7 {
   margin: 0;
   display: flex;
   padding: 1rem;
@@ -118,15 +118,15 @@ exports[`Toast should match snapshot when opened 1`] = `
   border-bottom: 1px solid #ccc;
   justify-content: space-between;
 }
-.toast__header-0-0-17 a {
+.toast__header-0-0-7 a {
   cursor: pointer;
 }
-.toast__header-0-0-17 small {
+.toast__header-0-0-7 small {
   font-size: 0.8rem;
   margin-top: 5px;
   margin-left: 120px;
 }
-.toast__progress-0-0-18 {
+.toast__progress-0-0-8 {
   left: 0;
   bottom: 0;
   height: 2px;
@@ -134,6 +134,18 @@ exports[`Toast should match snapshot when opened 1`] = `
   overflow: hidden;
   position: absolute;
   background: red;
+}
+.toast--show-0-0-9 {
+  top: 12px;
+  right: 12px;
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.toast--hide-0-0-10 {
+  top: -0px;
+  right: 12px;
+  opacity: 0;
+  animation: fadeOut 0.5s ease-in-out;
 }
     </style>
     <style>
@@ -160,8 +172,8 @@ exports[`Toast should match snapshot when opened 1`] = `
     }
     </style>
     <style></style>
-    <div class="toast--show-0-0-19 toast-0-0-15">
-      <div class="toast__header-0-0-17">
+    <div class="toast--show-0-0-9 toast-0-0-5">
+      <div class="toast__header-0-0-7">
         <slot name="header"></slot>
         header
         <small></small>
@@ -171,7 +183,7 @@ exports[`Toast should match snapshot when opened 1`] = `
           </span>
         </a>
       </div>
-      <div class="toast__body-0-0-16">
+      <div class="toast__body-0-0-6">
         <slot></slot>
       </div>
     </div>

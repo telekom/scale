@@ -34,27 +34,27 @@ exports[`Divider should match snapshot when horizontal false 1`] = `
 <scale-divider vertical="true">
   <mock:shadow-root>
     <style>
-      .\\:host-0-0-13 {
+      .\\:host-0-0-5 {
   width: 100%;
   height: 100%;
 }
-.divider-0-0-14 {}
-.divider-0-0-14 hr {
+.divider-0-0-6 {}
+.divider-0-0-6 hr {
   border: 0;
   border-top: 1px solid #dfdfdf;
 }
-.divider__vertical-0-0-15 {
+.divider__vertical-0-0-7 {
   min-height: 1rem;
   border-left: 1px solid #dfdfdf;
 }
-.divider--vertical-0-0-16 {}
-.divider--vertical-0-0-16, .divider--vertical-0-0-16 divider__vertical {
+.divider--vertical-0-0-8 {}
+.divider--vertical-0-0-8, .divider--vertical-0-0-8 divider__vertical {
   height: inherit;
   display: inline-flex;
 }
     </style>
-    <div class="divider--vertical-0-0-16 divider-0-0-14">
-      <span class="divider__vertical-0-0-15"></span>
+    <div class="divider--vertical-0-0-8 divider-0-0-6">
+      <span class="divider__vertical-0-0-7"></span>
     </div>
   </mock:shadow-root>
 </scale-divider>
