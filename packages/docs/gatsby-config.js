@@ -5,6 +5,16 @@ module.exports = {
     author: `@telekom`,
   },
   plugins: [
+    {
+      resolve: "@scaleds/gatsby-plugin",
+      options: {
+        theme: {
+          shape: {
+            borderRadius: 0,
+          },
+        },
+      },
+    },
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     {
@@ -47,7 +57,6 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         plugins: [
-          'gatsby-remark-mermaid',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

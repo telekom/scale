@@ -2,7 +2,7 @@ var fs = require("fs")
 
 function deleteFolderRecursive(path) {
   if (fs.existsSync(path) && fs.lstatSync(path).isDirectory()) {
-    fs.readdirSync(path).forEach(function(file, index) {
+    fs.readdirSync(path).forEach(function (file, index) {
       var curPath = path + "/" + file
 
       if (fs.lstatSync(curPath).isDirectory()) {
@@ -21,7 +21,6 @@ function deleteFolderRecursive(path) {
 
 console.log("Cleaning Web Components dist folder...")
 
-// deleteFolderRecursive(".cache")
 deleteFolderRecursive("./static/dist")
 deleteFolderRecursive("./public/dist")
 

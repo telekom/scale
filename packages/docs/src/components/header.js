@@ -6,9 +6,9 @@ const Header = ({ siteTitle }) => {
   return (
     <header>
       <div>
-          <Link to="/">
-            <h1>Scale</h1>
-          </Link>
+        <Link to="/">
+          <h1>Scale</h1>
+        </Link>
       </div>
     </header>
   )

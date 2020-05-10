@@ -12,26 +12,24 @@ const whiteList = [
 const Sidebar = ({ components, currentPage }) => {
   const sortedComponents = components.sort((a, b) => {
     if (a.node.fields.filename < b.node.fields.filename) {
-      return -1;
+      return -1
     }
     if (a.node.fields.filename > b.node.fields.filename) {
-      return 1;
+      return 1
     }
-    return 0;
+    return 0
   })
 
-  const filtered = sortedComponents.filter(c => {
-    if (whiteList.includes(c.node.fields.filename.replace('/', ''))) {
+  const filtered = sortedComponents.filter((c) => {
+    if (whiteList.includes(c.node.fields.filename.replace("/", ""))) {
       return true
-    } else if (c.node.fields.section !== 'components') {
+    } else if (c.node.fields.section !== "components") {
       return true
     }
     return false
   })
 
-  console.log(filtered)
-
-  const componentList = filtered.map(component => {
+  const componentList = filtered.map((component) => {
     const {
       node: {
         fields: { section, slug, filename },
@@ -41,19 +39,23 @@ const Sidebar = ({ components, currentPage }) => {
       // Set active depending on currentPage vs slug
       return (
         <li
-          className={`menu__item ${currentPage.includes(slug.slice(0, -1)) ? `menu__item--selected` : ""}`}
+          className={`menu__item ${
+            currentPage.includes(slug.slice(0, -1))
+              ? `menu__item--selected`
+              : ""
+          }`}
           key={slug}
         >
-          <Link to={`/${slug}`}>
-            {filename.replace("/", "")}
-          </Link>
+          <Link to={`/${slug}`}>{filename.replace("/", "")}</Link>
         </li>
       )
     }
     return null
   })
 
-  const firstComponent = sortedComponents.filter(c => c.node.fields.section ===  'components')[0].node.fields.slug || '/'
+  const firstComponent =
+    sortedComponents.filter((c) => c.node.fields.section === "components")[0]
+      .node.fields.slug || "/"
 
   const pages = [
     {
@@ -63,17 +65,19 @@ const Sidebar = ({ components, currentPage }) => {
     {
       name: "Components",
       url: `/${firstComponent}`,
-    }
+    },
   ]
 
-  const pageList = pages.map(page => {
+  const pageList = pages.map((page) => {
     // Set active depending on currentPage vs slug
     return (
-      <li key={page.url} className={`menu__item ${currentPage.includes(page.url) ? `menu__item--selected` : ""}`}
+      <li
+        key={page.url}
+        className={`menu__item ${
+          currentPage.includes(page.url) ? `menu__item--selected` : ""
+        }`}
       >
-        <Link to={`${page.url}`}>
-          {page.name}
-        </Link>
+        <Link to={`${page.url}`}>{page.name}</Link>
       </li>
     )
   })

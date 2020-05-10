@@ -27,27 +27,14 @@ export default ({ children, location }) => {
     }
   `)
   return (
-      <Fragment>
-        <Helmet>
+    <Fragment>
+      <Helmet>
         <title>{data.title.siteMetadata.title}</title>
         <script
           type="module"
           src="/dist/scale-components/scale-components.esm.js"
         ></script>
         <script nomodule="" src="/dist/scale-components.js"></script>
-        <script>
-          {`if (typeof window !== undefined) {
-            window.scale = {
-              theme: {
-                Button: {
-                  button: {
-                    borderColor: 'rgba(0,0,0,.1)'
-                  }
-                }
-              }
-            }
-          }`}
-        </script>
       </Helmet>
       <main className="main">
         <div className="main__sidebar">
@@ -61,6 +48,6 @@ export default ({ children, location }) => {
           <div className="content">{children}</div>
         </section>
       </main>
-      </Fragment>
+    </Fragment>
   )
 }
