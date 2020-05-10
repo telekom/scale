@@ -32,7 +32,9 @@ class ScaleSheetManager {
     const newSheet =
       !oldSheet && jss.createStyleSheet(injectedValues, { link: true });
 
-    newSheet && this._set(nextKey, newSheet);
+    if (newSheet) {
+      this._set(nextKey, newSheet);
+    }
     this._manage(nextKey);
 
     return oldSheet || newSheet;
