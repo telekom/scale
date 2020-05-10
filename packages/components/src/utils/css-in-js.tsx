@@ -61,7 +61,7 @@ export function CssInJs(
 
     target.render = function() {
       // on first render only
-      if(!this[propertyKey]) {
+      if (!this[propertyKey]) {
         // attach the stylesheet to the component instance
         this[propertyKey] = jss
           .createStyleSheet(withInjectedValues(this), { link: true })
