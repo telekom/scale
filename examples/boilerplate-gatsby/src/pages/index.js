@@ -6,6 +6,7 @@ import {
   ScaleTag,
   ScaleTable
 } from "@scaleds/components-react"
+import { Link } from "gatsby"
 import { useTable, useSortBy } from "react-table"
 
 import Layout from "../components/layout"
@@ -47,6 +48,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Link to="/404">404</Link>
+      <Link to="/">Home</Link>
+
       <h3>Alert</h3>
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
