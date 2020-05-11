@@ -17,7 +17,6 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
   location,
 }) {
-
   const { markdownRemark } = data
   const { fields, frontmatter, htmlAst } = markdownRemark
 
@@ -77,12 +76,12 @@ export default function Template({
       <h1>{ComponentName}</h1>
 
       <div className="preview">
-        <ComponentGeneral {...{ componentDocs }} />
-        <ComponentUsage {...{ usageExamples }} />
-        <ComponentProps {...{ componentDocs }} />
-        <ComponentMethods {...{ componentDocs }} />
-        <ComponentEvents {...{ componentDocs }} />
-        <ComponentDependencies {...{ componentDocs }} />
+        <ComponentGeneral componentDocs={componentDocs} />
+        <ComponentUsage usageExamples={usageExamples} />
+        <ComponentProps componentDocs={componentDocs} />
+        <ComponentMethods componentDocs={componentDocs} />
+        <ComponentEvents componentDocs={componentDocs} />
+        <ComponentDependencies componentDocs={componentDocs} />
 
         {/*{fields.section && fields.section === "components" && (*/}
         {/*  <ComponentPlayground*/}
