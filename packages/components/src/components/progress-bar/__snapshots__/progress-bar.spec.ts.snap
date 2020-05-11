@@ -4,13 +4,13 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
 <scale-progress-bar text-inside="true">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-10 {
+      .progress-bar-0-0-55 {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar__outer-0-0-11 {
+.progress-bar__outer-0-0-56 {
   width: 400px;
   height: 6px;
   margin: 12px 12px 12px 0;
@@ -19,7 +19,7 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   background: #ebeef5;
   border-radius: 100px;
 }
-.progress-bar__inner-0-0-12 {
+.progress-bar__inner-0-0-57 {
   top: 0;
   left: 0;
   height: 100%;
@@ -31,33 +31,33 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
   border-radius: 100px;
   justify-content: flex-end;
 }
-.progress-bar__inner-text-0-0-13 {
+.progress-bar__inner-text-0-0-58 {
   color: #fff;
   padding: 0 12px;
   font-size: 12px;
 }
-.progress-bar__text-0-0-14 {
+.progress-bar__text-0-0-59 {
   color: #606266;
   display: inline-block;
   font-size: 14px;
 }
-.progress-bar--variant-success-0-0-15 {
+.progress-bar--variant-success-0-0-60 {
   background: #28a745;
 }
-.progress-bar--variant-info-0-0-16 {
+.progress-bar--variant-info-0-0-61 {
   background: #409eff;
 }
-.progress-bar--variant-warning-0-0-17 {
+.progress-bar--variant-warning-0-0-62 {
   background: #ffc107;
 }
-.progress-bar--variant-danger-0-0-18 {
+.progress-bar--variant-danger-0-0-63 {
   background: #dc3545;
 }
     </style>
-    <div class="progress-bar-0-0-10">
-      <div class="progress-bar__outer-0-0-11" style="height: 6px;">
-        <div class="progress-bar-0-0-10 progress-bar__inner-0-0-12" style="width: undefined%;">
-          <div class="progress-bar__inner-text-0-0-13">
+    <div class="progress-bar-0-0-55">
+      <div class="progress-bar__outer-0-0-56" style="height: 6px;">
+        <div class="progress-bar-0-0-55 progress-bar__inner-0-0-57" style="width: undefined%;">
+          <div class="progress-bar__inner-text-0-0-58">
             undefined%
           </div>
         </div>
@@ -72,13 +72,13 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
 <scale-progress-bar show-text="true">
   <mock:shadow-root>
     <style>
-      .progress-bar-0-0-10 {
+      .progress-bar-0-0-37 {
   width: 100%;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.progress-bar__outer-0-0-11 {
+.progress-bar__outer-0-0-38 {
   width: 400px;
   height: 6px;
   margin: 12px 12px 12px 0;
@@ -87,7 +87,7 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   background: #ebeef5;
   border-radius: 100px;
 }
-.progress-bar__inner-0-0-12 {
+.progress-bar__inner-0-0-39 {
   top: 0;
   left: 0;
   height: 100%;
@@ -99,34 +99,34 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
   border-radius: 100px;
   justify-content: flex-end;
 }
-.progress-bar__inner-text-0-0-13 {
+.progress-bar__inner-text-0-0-40 {
   color: #fff;
   padding: 0 12px;
   font-size: 12px;
 }
-.progress-bar__text-0-0-14 {
+.progress-bar__text-0-0-41 {
   color: #606266;
   display: inline-block;
   font-size: 14px;
 }
-.progress-bar--variant-success-0-0-15 {
+.progress-bar--variant-success-0-0-42 {
   background: #28a745;
 }
-.progress-bar--variant-info-0-0-16 {
+.progress-bar--variant-info-0-0-43 {
   background: #409eff;
 }
-.progress-bar--variant-warning-0-0-17 {
+.progress-bar--variant-warning-0-0-44 {
   background: #ffc107;
 }
-.progress-bar--variant-danger-0-0-18 {
+.progress-bar--variant-danger-0-0-45 {
   background: #dc3545;
 }
     </style>
-    <div class="progress-bar-0-0-10">
-      <div class="progress-bar__outer-0-0-11" style="height: 6px;">
-        <div class="progress-bar-0-0-10 progress-bar__inner-0-0-12" style="width: undefined%;"></div>
+    <div class="progress-bar-0-0-37">
+      <div class="progress-bar__outer-0-0-38" style="height: 6px;">
+        <div class="progress-bar-0-0-37 progress-bar__inner-0-0-39" style="width: undefined%;"></div>
       </div>
-      <div class="progress-bar__text-0-0-14">
+      <div class="progress-bar__text-0-0-41">
         undefined%
       </div>
     </div>
