@@ -13,7 +13,7 @@ declare type CssInJsDecorator = (
 ) => void;
 
 const getKeys = obj => {
-  const blackListedKeys = ['stylesheet'];
+  const blackListedProps = ['stylesheet', 'value', 'key'];
   const whiteListedTypes = ['boolean', 'string', 'object'];
   const keys = [];
 
@@ -21,7 +21,7 @@ const getKeys = obj => {
     if (
       obj[key] &&
       whiteListedTypes.includes(typeof obj[key]) &&
-      !blackListedKeys.includes(key)
+      !blackListedProps.includes(key)
     ) {
       keys.push(key);
     }
@@ -90,7 +90,11 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     }
 
     target.componentDidUnload = function() {
-      sheetManager.unmanage(this.key);
+
+      if (this.key) {
+        sheetManager.unmanage(this.key);
+      }
+
       return componentDidUnload.call(this);
     };
   };
