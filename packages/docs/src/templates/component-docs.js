@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import DocsLayout from "../layouts/documentation"
-import { ComponentPlayground } from "./component-playground"
+// import { ComponentPlayground } from "./component-playground"
 import { ComponentUsage } from "./component-usage"
 import { ComponentProps } from "./component-props"
 import { ComponentMethods } from "./component-methods"
@@ -84,17 +84,17 @@ export default function Template({
         <ComponentEvents {...{ componentDocs }} />
         <ComponentDependencies {...{ componentDocs }} />
 
-        {fields.section && fields.section === "components" && (
-          <ComponentPlayground
-            {...{
-              ComponentName,
-              componentProps,
-              componentState,
-              componentDocs,
-              setComponentState,
-            }}
-          />
-        )}
+        {/*{fields.section && fields.section === "components" && (*/}
+        {/*  <ComponentPlayground*/}
+        {/*    {...{*/}
+        {/*      ComponentName,*/}
+        {/*      componentProps,*/}
+        {/*      componentState,*/}
+        {/*      componentDocs,*/}
+        {/*      setComponentState,*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*)}*/}
       </div>
     </DocsLayout>
   )
