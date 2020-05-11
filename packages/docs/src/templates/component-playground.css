@@ -1,0 +1,53 @@
+.playground__preview {
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border: 1px solid rgba(0,0,0,0.05);
+}
+
+.playground__preview > * {
+	flex-shrink: 0;
+}
+
+.playground__controls {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 1rem;
+}
+
+.playground__styles {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.control__label {
+	font-size: 0.8rem;
+	opacity: .7;
+	margin-bottom: 0.25rem;
+}
+
+.control__input {
+	border: 1px solid #dfdfdf;
+	padding: .5rem;
+	width: 100%;
+	border-radius: 4px;
+}
+
+.playground__styles textarea {
+	min-height: 100px;
+	margin-bottom: .5rem;
+	resize: vertical;
+}
+
+.playground__styles button {
+	border: none;
+	border-radius: 4px;
+	background: black;
+	color: white;
+	padding: .5rem;
+}
+.playground__styles button:hover {
+	background: rgba(0,0,0,.7);
+	color: white;
+}

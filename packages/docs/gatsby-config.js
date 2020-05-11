@@ -5,6 +5,16 @@ module.exports = {
     author: `@telekom`,
   },
   plugins: [
+    {
+      resolve: "@scaleds/gatsby-plugin",
+      options: {
+        theme: {
+          shape: {
+            borderRadius: 0,
+          },
+        },
+      },
+    },
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     {

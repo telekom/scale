@@ -1,0 +1,11 @@
+.example__code pre {
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+	padding: .5rem .75rem;
+	width: 100%;
+	overflow-x: auto;
+}
+
+.example__code code {
+  line-height: 1.5;
+}
