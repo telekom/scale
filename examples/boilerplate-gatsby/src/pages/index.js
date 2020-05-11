@@ -4,10 +4,7 @@ import {
   ScaleCard,
   ScaleLink,
   ScaleTag,
-  ScaleTable,
-  ScaleProgressBar,
-    ScaleInput
-
+  ScaleTable
 } from "@scaleds/components-react"
 import { useTable, useSortBy } from "react-table"
 
@@ -48,26 +45,24 @@ const IndexPage = () => {
   )
 
   return (
-      <Layout>
-          <SEO title="Home" />
-          <h3>Alert</h3>
-          <ScaleLink href="http://example.com" target="_blank" variant="success">
-              Success
-          </ScaleLink>
-          <h3>Button</h3>
-          <ScaleButton variant="primary">Click!</ScaleButton>
-          <h3>Card</h3>
-          <ScaleCard>A title</ScaleCard>
-          <h3>Tag</h3>
-          <ScaleTag dismissable size="small" onClose={event => console.log(event)}>
-              A title
-          </ScaleTag>
+    <Layout>
+      <SEO title="Home" />
+      <h3>Alert</h3>
+      <ScaleLink href="http://example.com" target="_blank" variant="success">
+        Success
+      </ScaleLink>
+      <h3>Button</h3>
+      <ScaleButton variant="primary">Click!</ScaleButton>
+      <h3>Card</h3>
+      <ScaleCard>A title</ScaleCard>
+      <h3>Tag</h3>
+      <ScaleTag dismissable size="small" onClose={event => console.log(event)}>
+        A title
+      </ScaleTag>
 
       <ScaleTable variant="regular">
-        <div slot="header" style={{padding: '20px 8px 0px 8px'}}>
-          <ScaleText variant="h5">
-            Table title
-          </ScaleText>
+        <div slot="header" style={{ padding: "20px 8px 0px 8px" }}>
+          <ScaleText variant="h5">Table title</ScaleText>
         </div>
         <table slot="table" {...getTableProps()}>
           <thead>
