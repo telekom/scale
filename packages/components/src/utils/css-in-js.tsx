@@ -69,17 +69,6 @@ export function CssInJs(
     const combined = that.styles
       ? combineObjects(withDefaultTheme, stylesAttributeValue)
       : withDefaultTheme;
-    if (!!options) {
-      const withStyleMappings = {};
-      const selectStyles = (key: string) =>
-        has(that.styles, key)
-          ? get(that.styles, key)
-          : get(combined, options[key]);
-      Object.keys(options).forEach((key: string) =>
-        set(withStyleMappings, key, selectStyles(key))
-      );
-      return combineObjects(combined, withStyleMappings);
-    }
     return combined;
   };
 
