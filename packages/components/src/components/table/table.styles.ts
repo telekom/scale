@@ -2,17 +2,17 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   table: {
-    '& [slot="table"]': {
-      overflow: 'auto',
-      borderRadius: '4px 4px 0 0',
-      background: ({ colors }) => colors.grey[100],
-    },
+    overflow: 'auto',
+    borderRadius: '4px 4px 0 0',
+    background: ({ colors }) => colors.grey[100],
+
     '& table': {
       fontFamily: ({ typography }) => typography.fontFamily,
       borderSpacing: 0,
       borderCollapse: 'collapse',
       width: '100%',
       whiteSpace: 'nowrap',
+      marginBottom: 0,
     },
 
     '& th': {
@@ -35,6 +35,10 @@ export const styles: JssStyle = {
       padding: '8px',
       borderBottom: '1px solid #000000',
     },
+
+    '& .scale-sort-indicator svg': {
+      display: 'none',
+    },
   },
 
   'table--variant-compressed': {
@@ -46,6 +50,10 @@ export const styles: JssStyle = {
   'table--sortable': {
     '& th': {
       cursor: 'pointer',
+
+      '& .scale-sort-indicator svg': {
+        display: 'block',
+      },
       '&[aria-disabled="true"]': {
         pointerEvents: 'none',
       },

@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Element } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './table.styles';
@@ -25,47 +25,29 @@ export class Table implements Base {
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
-  componentWillUpdate() {}
-  componentDidUnload() {}
-
-  render() {
-    // on initial render
-    if (!this.slots.table) {
-      // build object of slots
-      // @ts-ignore - fromEntries should be fine here
-      this.slots = Object.fromEntries(
-        Array.from(this.hostElement.children).map(child => [child.slot, child])
-      );
-
-      // when showSort is enabled insert indicator arrows for each th of the found table
-      if (this.showSort && this.slots.table) {
-        this.slots.table.querySelectorAll('th').forEach(th => {
-          th.insertAdjacentHTML(
-            'afterbegin',
-            `
+  componentWillLoad() {
+    this.hostElement.querySelectorAll('th').forEach((th) => {
+      th.insertAdjacentHTML(
+        'afterbegin',
+        `
             <span class="scale-sort-indicator">
               <svg width="24px" height="24px" viewBox="0 0 24 24">
                 <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271" />
                 <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271" />
               </svg>
             </span>`
-          );
-        });
-      }
+      );
+    });
+  }
+  componentWillUpdate() {}
+  componentDidUnload() {}
 
-      // append header slot to thead
-      if (this.slots.header) {
-        this.slots.table
-          .querySelector('thead')
-          .insertAdjacentElement('afterbegin', this.slots.header);
-      }
-    }
-
+  render() {
     return (
-      <Host class={this.getCssClassMap()}>
+      <div class={this.getCssClassMap()}>
         <style>{this.stylesheet.toString()}</style>
-        <slot name="table" />
-      </Host>
+        <slot />
+      </div>
     );
   }
 
