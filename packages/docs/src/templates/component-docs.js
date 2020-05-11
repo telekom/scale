@@ -20,11 +20,11 @@ export default function Template({
   const { markdownRemark } = data
   const { fields, frontmatter, htmlAst } = markdownRemark
 
-  const defaultProps = componentDocs => {
+  const defaultProps = (componentDocs) => {
     let obj = {}
     componentDocs &&
       componentDocs.props &&
-      componentDocs.props.map(prop => {
+      componentDocs.props.map((prop) => {
         if (prop.name !== "styles") {
           obj[prop.name] =
             prop.default && prop.default !== "''" ? prop.default : ""
@@ -49,7 +49,7 @@ export default function Template({
 
   const ComponentName = htmlAst.children[0].children[0].value || pageTitle
   const componentDocs = componentsDocs.components.filter(
-    component => component.tag === ComponentName
+    (component) => component.tag === ComponentName
   )[0]
   const [componentState, setComponentState] = useState(
     defaultProps(componentDocs)
@@ -67,7 +67,7 @@ export default function Template({
   const usage = componentDocs && componentDocs.usage ? componentDocs.usage : {}
   const usageExamples =
     Object.keys(usage).length > 0
-      ? Object.keys(usage).map(example => parse(usage[example]))
+      ? Object.keys(usage).map((example) => parse(usage[example]))
       : []
 
   return (

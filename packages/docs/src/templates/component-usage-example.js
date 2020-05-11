@@ -80,13 +80,13 @@ export const ComponentUsageExample = (childExample) => {
         <span className="controls__current">Current: {width}</span>
       </div>
       <div className="frame">
-        {!!childExample.value && (
+        {!!childExample.raw && (
           <iframe
             onLoad={refresh}
             ref={iframeEl}
             title={uuid()}
             className="preview__frame initial"
-            srcDoc={iframeMarkup(childExample.value)}
+            srcDoc={iframeMarkup(childExample.raw)}
             style={{ width }}
           />
         )}

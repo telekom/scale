@@ -20,7 +20,7 @@ export const ComponentUsage = ({ usageExamples }) => {
                 <ComponentUsageExample {...childExample} />
                 <div className="example__code">
                   <pre>
-                    <code>{childExample.value}</code>
+                    <code>{childExample.raw}</code>
                   </pre>
                 </div>
               </div>

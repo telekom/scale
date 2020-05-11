@@ -17,7 +17,7 @@
 .component-usage-example .frame {
 	width: 100%;
 	min-width: 320px;
-	overflow-x: scroll;
+	overflow-x: auto;
 	border: 1px solid rgba(0,0,0,.1);
 	background: #eee;
 }

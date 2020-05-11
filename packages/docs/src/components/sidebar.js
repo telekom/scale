@@ -1,13 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const whiteList = [
-  'button',
-  'card',
-  'link',
-  'icon',
-  'tag',
-]
+const whiteList = ["button", "card", "link", "icon", "tag"]
 
 const Sidebar = ({ components, currentPage }) => {
   const sortedComponents = components.sort((a, b) => {

@@ -1,6 +1,6 @@
 .component-table {
 	width: 100%;
-	overflow-x: scroll;
+	overflow-x: auto;
 	border: 1px solid #dfdfdf;
 }
 

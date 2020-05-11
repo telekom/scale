@@ -34,7 +34,7 @@ a:hover,
 
 .main__sidebar,
 .main__content {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100vh;
 }
 
