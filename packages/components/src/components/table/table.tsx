@@ -25,9 +25,8 @@ export class Table implements Base {
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
-  componentWillLoad() {}
-
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     // on initial render
