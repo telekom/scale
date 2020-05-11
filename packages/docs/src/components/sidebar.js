@@ -1,18 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
 
+const whiteList = ["button", "card", "link", "icon", "tag"]
+
 const Sidebar = ({ components, currentPage }) => {
-  const pages = [
-    {
-      name: "Getting Started",
-      url: "/getting-started",
-    },
-    {
-      name: "Components",
-      url: "/components/alert",
+  const sortedComponents = components.sort((a, b) => {
+    if (a.node.fields.filename < b.node.fields.filename) {
+      return -1
     }
-  ]
-  const componentList = components.sort(function(a, b){ if(a.node.fields.filename < b.node.fields.filename) { return -1; } if(a.node.fields.filename > b.node.fields.filename) { return 1; } return 0; }).map(component => {
+    if (a.node.fields.filename > b.node.fields.filename) {
+      return 1
+    }
+    return 0
+  })
+
+  const filtered = sortedComponents.filter((c) => {
+    if (whiteList.includes(c.node.fields.filename.replace("/", ""))) {
+      return true
+    } else if (c.node.fields.section !== "components") {
+      return true
+    }
+    return false
+  })
+
+  const componentList = filtered.map((component) => {
     const {
       node: {
         fields: { section, slug, filename },
@@ -22,26 +33,45 @@ const Sidebar = ({ components, currentPage }) => {
       // Set active depending on currentPage vs slug
       return (
         <li
-          className={`menu__item ${currentPage.includes(slug.slice(0, -1)) ? `menu__item--selected` : ""}`}
+          className={`menu__item ${
+            currentPage.includes(slug.slice(0, -1))
+              ? `menu__item--selected`
+              : ""
+          }`}
           key={slug}
         >
-          <Link to={`/${slug}`}>
-            {filename.replace("/", "")}
-          </Link>
+          <Link to={`/${slug}`}>{filename.replace("/", "")}</Link>
         </li>
       )
     }
     return null
   })
 
-  const pageList = pages.map(page => {
+  const firstComponent =
+    sortedComponents.filter((c) => c.node.fields.section === "components")[0]
+      .node.fields.slug || "/"
+
+  const pages = [
+    {
+      name: "Getting Started",
+      url: "/getting-started",
+    },
+    {
+      name: "Components",
+      url: `/${firstComponent}`,
+    },
+  ]
+
+  const pageList = pages.map((page) => {
     // Set active depending on currentPage vs slug
     return (
-      <li key={page.url} className={`menu__item ${currentPage.includes(page.url) ? `menu__item--selected` : ""}`}
+      <li
+        key={page.url}
+        className={`menu__item ${
+          currentPage.includes(page.url) ? `menu__item--selected` : ""
+        }`}
       >
-        <Link to={`${page.url}`}>
-          {page.name}
-        </Link>
+        <Link to={`${page.url}`}>{page.name}</Link>
       </li>
     )
   })
