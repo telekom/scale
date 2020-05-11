@@ -172,8 +172,8 @@ exports[`Input should match snapshot 1`] = `
   border: 1px solid #cecece;
   height: 16px;
   appearance: none;
-  background: #ffffff;
   border-radius: 50%;
+  background-color: #ffffff;
 }
 .input--type-radio-0-0-18 .input__radio:checked, .input--type-radio-0-0-18 .input__radio:focus {
   outline: none;
