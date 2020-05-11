@@ -17,6 +17,7 @@ export class List implements Base {
   @CssInJs('List', styles) stylesheet: StyleSheet;
   componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
   render() {
     let Tag;
 

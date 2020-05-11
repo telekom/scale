@@ -1,10 +1,10 @@
 import { Component, h, Prop, Host } from '@stencil/core';
-import { CssClassMap } from '../../utils/utils';
+import { CssClassMap } from '../../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './list-item.styles';
-import { CssInJs } from '../../utils/css-in-js';
+import { CssInJs } from '../../../utils/css-in-js';
 import { StyleSheet } from 'jss';
-import Base from '../../utils/base-interface';
+import Base from '../../../utils/base-interface';
 @Component({
   tag: 'scale-list-item',
   shadow: true,
@@ -21,6 +21,7 @@ export class ListItem implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('ListItem', styles) stylesheet: StyleSheet;
   componentWillLoad() {}
+  componentDidUnload() {}
   componentWillUpdate() {}
 
   render() {

@@ -26,7 +26,7 @@
 
  - [scale-button](../button)
  - [scale-link](../link)
- - [scale-list-item](../listItem)
+ - [scale-list-item](../list/listItem)
  - [scale-tag](../tag)
 
 ### Graph

@@ -19,7 +19,7 @@
 
 ### Depends on
 
-- [scale-icon](../icon)
+- [scale-icon](../../icon)
 
 ### Graph
 ```mermaid

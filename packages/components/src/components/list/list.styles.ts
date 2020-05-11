@@ -1,5 +1,7 @@
 import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
-  list: {},
+  list: {
+    paddingLeft: '1.5rem',
+  },
 };

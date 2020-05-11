@@ -9,5 +9,6 @@ export const styles: JssStyle = {
     listStyle: 'none !important',
     display: 'flex',
     alignItems: 'center',
+    marginLeft: '-1.5rem',
   },
 };
