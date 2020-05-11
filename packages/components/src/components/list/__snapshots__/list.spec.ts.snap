@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should match snapshot 1`] = `
+<scale-list>
+  <mock:shadow-root>
+    <style>
+      .list-0-0-2 {
+  padding-left: 1.5rem;
+}
+    </style>
+    <ul class="list-0-0-2">
+      <slot></slot>
+    </ul>
+  </mock:shadow-root>
+  default
+</scale-list>
+`;

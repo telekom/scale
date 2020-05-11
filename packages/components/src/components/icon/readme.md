@@ -49,6 +49,7 @@
 
  - [scale-button](../button)
  - [scale-link](../link)
+ - [scale-list-item](../list/listItem)
  - [scale-tag](../tag)
 
 ### Graph
@@ -56,6 +57,7 @@
 graph TD;
   scale-button --> scale-icon
   scale-link --> scale-icon
+  scale-list-item --> scale-icon
   scale-tag --> scale-icon
   style scale-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
