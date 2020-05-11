@@ -15,8 +15,33 @@ declare type CssInJsDecorator = (
   propertyKey: string
 ) => void;
 
-const getComponentKey = (componentName, styles, variant) =>
-  `${componentName}-${JSON.stringify(styles)}-${variant}`;
+const getKeys = obj => {
+  let keys = [];
+  for (let key in obj) {
+    keys.push(key);
+  }
+  return keys;
+};
+
+const getComponentKey = (componentKey, that) => {
+  const blackListedKeys = ['stylesheet'];
+  const whiteListedTypes = ['boolean', 'string', 'object'];
+
+  return getKeys(that).reduce((acc, keyName) => {
+    if (
+      that[keyName] &&
+      whiteListedTypes.includes(typeof that[keyName]) &&
+      !blackListedKeys.includes(keyName)
+    ) {
+      try {
+        return `${acc}-${JSON.stringify({ [keyName]: that[keyName] })}`;
+      } catch (err) {
+        return acc;
+      }
+    }
+    return acc;
+  }, componentKey);
+};
 
 export function CssInJs(
   componentKey: string,
@@ -63,7 +88,7 @@ export function CssInJs(
     const { render, componentDidUnload } = target;
 
     target.render = function() {
-      const newKey = getComponentKey(componentKey, this.styles, this.variant);
+      const newKey = getComponentKey(componentKey, this);
 
       if (this.key !== newKey) {
         this[propertyKey] = sheetManager
