@@ -90,7 +90,6 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     }
 
     target.componentDidUnload = function() {
-
       if (this.key) {
         sheetManager.unmanage(this.key);
       }
