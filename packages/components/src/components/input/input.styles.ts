@@ -206,6 +206,11 @@ export const styles: JssStyle = {
       left: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
       top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
     },
+    '&$input--disabled': {
+      '& .input__checkbox-placeholder': {
+        backgroundColor: '#cdcdcd',
+      },
+    },
   },
   'input--type-radio': {
     display: 'flex',
@@ -221,6 +226,14 @@ export const styles: JssStyle = {
         border: ({ colors }) => `6px solid ${colors.primary.default}`,
         transition: defaultTransition,
         outline: 'none',
+      },
+    },
+    '&$input--disabled': {
+      '& .input__radio': {
+        '&:checked': {
+          border: '6px solid #cdcdcd',
+          backgroundColor: '#979797',
+        },
       },
     },
   },

@@ -97,13 +97,34 @@
         icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
         name="nameOfCheckbox"
       ></scale-input>
+      <scale-input
+      input-Id="checkbox"
+      type="checkbox"
+      value="5"
+      pre-checked='true'
+      status="error"
+      label="checked checkbox with error"
+      icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+      name="nameOfCheckbox"
+    ></scale-input>
+      <scale-input
+        input-Id="checkbox"
+        type="checkbox"
+        value="6"
+        disabled="true"
+        pre-checked="true"
+        label="disabled checked checkbox"
+        icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+        name="nameOfCheckbox"
+      ></scale-input>
 
       <h3>Radio</h3>
       <scale-input type="radio" value="1" label="One" name="radioSelect" input-Id="choiceOne"></scale-input>
       <scale-input type="radio" value="2" label="Two" name="radioSelect" input-Id="choiceTwo"></scale-input>
       <scale-input type="radio" value="3" label="Three" name="radioSelect" input-Id="choiceThree"></scale-input>
-      <scale-input type="radio" value="3" label="Four" name="radioSelect" input-Id="choiceFour" disabled="true"></scale-input>
-      <scale-input type="radio" value="3" label="Four" name="radioSelect" input-Id="choiceFour" status="error"></scale-input>
+      <scale-input type="radio" value="4" label="disabled unchecked radio" name="radioSelect" input-Id="choiceFour" disabled="true"></scale-input>
+      <scale-input type="radio" value="5" label="disabled checked radio" name="radioSelect" input-Id="choiceFive" pre-checked="true" disabled="true"></scale-input>
+      <scale-input type="radio" value="6" label="radio with error" name="radioSelect" input-Id="choiceSix" status="error"></scale-input>
 
     <h3>Default input</h3>
     <scale-input id="change-input"></scale-input>

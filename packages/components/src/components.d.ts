@@ -233,6 +233,10 @@ export namespace Components {
          */
         "placeholder"?: string;
         /**
+          * (optional) radio checked value
+         */
+        "preChecked"?: boolean;
+        /**
           * (optional) Input required
          */
         "required"?: boolean;
@@ -924,6 +928,10 @@ declare namespace LocalJSX {
           * (optional) Input placeHolder
          */
         "placeholder"?: string;
+        /**
+          * (optional) radio checked value
+         */
+        "preChecked"?: boolean;
         /**
           * (optional) Input required
          */

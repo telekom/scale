@@ -56,6 +56,8 @@ export class Input implements Base {
   @Prop() required?: boolean;
   /** (optional) Input counter */
   @Prop() counter?: boolean;
+  /** (optional) radio checked value */
+  @Prop() preChecked?: boolean;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
   /** (optional) Input checkbox id */
@@ -74,7 +76,7 @@ export class Input implements Base {
   @CssInJs('Input', styles) stylesheet: StyleSheet;
 
   /** (optional) Input checkbox checked */
-  @State() checked?: boolean;
+  @State() checked?: boolean = this.preChecked;
   @State() checkedValue?: string;
 
   componentWillLoad() {}
@@ -145,6 +147,7 @@ export class Input implements Base {
               id={this.inputId}
               onChange={event => this.handleChange(event)}
               value={this.value}
+              checked={this.preChecked}
               disabled={this.disabled}
             />
             <label class="input__label" htmlFor={this.inputId}>

@@ -163,6 +163,10 @@ exports[`Input should match snapshot 1`] = `
   position: absolute;
   user-select: none;
 }
+.input--checked-0-0-17.input--disabled-0-0-15 {}
+.input--checked-0-0-17.input--disabled-0-0-15 .input__checkbox-placeholder {
+  background-color: #cdcdcd;
+}
 .input--type-radio-0-0-18 {
   display: flex;
   align-items: center;
@@ -174,6 +178,12 @@ exports[`Input should match snapshot 1`] = `
   appearance: none;
   border-radius: 50%;
   background-color: #ffffff;
+}
+.input--type-radio-0-0-18.input--disabled-0-0-15 {}
+.input--type-radio-0-0-18.input--disabled-0-0-15 .input__radio {}
+.input--type-radio-0-0-18.input--disabled-0-0-15 .input__radio:checked {
+  border: 6px solid #cdcdcd;
+  background-color: #979797;
 }
 .input--type-radio-0-0-18 .input__radio:checked, .input--type-radio-0-0-18 .input__radio:focus {
   outline: none;
