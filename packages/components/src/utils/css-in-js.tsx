@@ -3,9 +3,6 @@ import jss from 'jss';
 import preset from 'jss-preset-default';
 import { combineObjects } from './utils';
 import { getTheme } from '../theme/theme';
-import has from 'lodash/has';
-import get from 'lodash/get';
-import set from 'lodash/set';
 import sheetManager from './sheet-manager';
 
 jss.setup(preset());
@@ -42,11 +39,7 @@ const getComponentKey = (componentKey, that) => {
   }, componentKey);
 };
 
-export function CssInJs(
-  componentKey: string,
-  styles: any,
-  options?: any
-): CssInJsDecorator {
+export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
   const withInjectedValues = (that: any) => {
     let withDefaultTheme;
     let stylesAttributeValue;
