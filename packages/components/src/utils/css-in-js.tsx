@@ -16,30 +16,29 @@ declare type CssInJsDecorator = (
 ) => void;
 
 const getKeys = obj => {
-  let keys = [];
-  for (let key in obj) {
-    keys.push(key);
+  const blackListedKeys = ['stylesheet'];
+  const whiteListedTypes = ['boolean', 'string', 'object'];
+  const keys = [];
+
+  for (const key in obj) {
+    if (
+      obj[key] &&
+      whiteListedTypes.includes(typeof obj[key]) &&
+      !blackListedKeys.includes(key)
+    ) {
+      keys.push(key);
+    }
   }
   return keys;
 };
 
 const getComponentKey = (componentKey, that) => {
-  const blackListedKeys = ['stylesheet'];
-  const whiteListedTypes = ['boolean', 'string', 'object'];
-
   return getKeys(that).reduce((acc, keyName) => {
-    if (
-      that[keyName] &&
-      whiteListedTypes.includes(typeof that[keyName]) &&
-      !blackListedKeys.includes(keyName)
-    ) {
-      try {
-        return `${acc}-${JSON.stringify({ [keyName]: that[keyName] })}`;
-      } catch (err) {
-        return acc;
-      }
+    try {
+      return `${acc}-${JSON.stringify({ [keyName]: that[keyName] })}`;
+    } catch (err) {
+      return acc;
     }
-    return acc;
   }, componentKey);
 };
 

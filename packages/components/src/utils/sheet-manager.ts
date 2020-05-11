@@ -13,14 +13,10 @@ class ScaleSheetManager {
     this.sheetManager.add(keyObj, sheet);
   }
   _manage(key) {
-    return key;
-    // disabled as using shadow DOM defeats stylesheet.attach
-    // this.sheetManager.manage(this.keyMap._get(key));
+    this.sheetManager.manage(this.keyMap.get(key));
   }
   unmanage(key) {
-    return key;
-    // disabled as using shadow DOM defeats stylesheet.attach
-    // this.sheetManager.unmanage(this.keyMap._get(key));
+    this.sheetManager.unmanage(this.keyMap.get(key));
   }
   load(prevKey, nextKey, injectedValues) {
     if (prevKey && prevKey !== nextKey) {
