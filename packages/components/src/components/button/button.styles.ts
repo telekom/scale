@@ -4,10 +4,12 @@ import { getTransition } from '../../theme/helpers';
 const buttonVariant = (variant: string) => ({
   [`button--variant-${variant}`]: {
     color: ({ colors }) => colors[variant].contrastText,
+    '--icon-color': ({ colors }) => colors[variant].contrastText,
     background: ({ colors }) => colors[variant].default,
     border: ({ colors }) => `1px solid ${colors[variant].default}`,
     '&:hover': {
       color: ({ colors }) => colors[variant].contrastText,
+      '--icon-color': ({ colors }) => colors[variant].contrastText,
       background: ({ colors }) => colors[variant].darker,
       border: ({ colors }) => `1px solid ${colors[variant].darker}`,
     },
@@ -17,6 +19,7 @@ const buttonVariant = (variant: string) => ({
 export const styles: JssStyle = {
   button: {
     color: ({ colors }) => colors.common.black,
+    '--icon-color': ({ colors }) => colors.common.black,
     background: ({ colors }) => colors.grey[300],
     border: ({ colors }) => `1px solid ${colors.grey[300]}`,
     borderRadius: ({ shape }) => shape.borderRadius,
@@ -49,6 +52,7 @@ export const styles: JssStyle = {
     },
     '&:hover': {
       color: ({ colors }) => colors.common.white,
+      '--icon-color': ({ colors }) => colors.common.white,
       background: ({ colors }) => colors.grey[700],
       borderColor: ({ colors }) => colors.grey[700],
       transition: theme => getTransition(theme, 'all', 'standard', 'easeInOut'),
@@ -61,6 +65,7 @@ export const styles: JssStyle = {
       opacity: ({ colors }) => colors.action.disabledOpacity,
       border: ({ colors }) => `1px solid ${colors.action.disabled}`,
       color: ({ colors }) => colors.text.disabled,
+      '--icon-color': ({ colors }) => colors.text.disabled,
       background: ({ colors }) => colors.common.white,
       cursor: 'not-allowed',
     },

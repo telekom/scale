@@ -4,8 +4,11 @@ import {
   ScaleCard,
   ScaleLink,
   ScaleTag,
-  ScaleTable
+  ScaleTable,
+  ScaleInput,
+  ScaleText
 } from "@scaleds/components-react"
+import { Link } from "gatsby"
 import { useTable, useSortBy } from "react-table"
 
 import Layout from "../components/layout"
@@ -47,6 +50,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Link to="/404">404</Link>
+      <Link to="/">Home</Link>
+
       <h3>Alert</h3>
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
@@ -59,7 +65,9 @@ const IndexPage = () => {
       <ScaleTag dismissable size="small" onClose={event => console.log(event)}>
         A title
       </ScaleTag>
-
+      <h3>Input</h3>
+      <ScaleInput styles={{ input: { "& input": { color: "blue" } } }} />
+      <h3>Table</h3>
       <ScaleTable variant="regular">
         <div slot="header" style={{ padding: "20px 8px 0px 8px" }}>
           <ScaleText variant="h5">Table title</ScaleText>
