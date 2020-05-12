@@ -83,7 +83,7 @@ workflows:
           filters:
             branches:
               only:
-                - feat/*
+                - /feat\/.*/
                 - master
   test-build-deploy:
     jobs:
