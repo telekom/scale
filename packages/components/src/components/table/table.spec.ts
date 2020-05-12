@@ -16,44 +16,34 @@ describe('Table', () => {
     const page = await newSpecPage({
       components: [Table],
       html: `
-        <scale-table>
-          <h5 slot="header">Table Header</h5>
-          <table slot="table">
-            <thead>
-              <tr>
-                <th aria-sort="descending">Title</th>
-                <th>Time</th>
-                <th>Euros</th>
-              </tr>
-            </thead>
-            <tbody>
+      <scale-table>
+        <div>Table header</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Time</th>
+              <th>Euros</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>University of Plymouth</td>
               <td>00:00:20</td>
               <td>100.245,10</td>
             </tr>
+          </tbody>
+          <tfoot>
             <tr>
-              <td>University of Plymouth</td>
+              <td>Total</td>
+              <td />
+              <td />
               <td>00:00:20</td>
               <td>100.245,10</td>
             </tr>
-            <tr>
-              <td>University of Plymouth</td>
-              <td>00:00:20</td>
-              <td>100.245,10</td>
-            </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td />
-                <td />
-                <td>00:00:20</td>
-                <td>100.245,10</td>
-              </tr>
-            </tfoot>
-          </table>
-        </scale-table>
+          </tfoot>
+        </table>
+      </scale-table>
       `,
     });
     expect(page.root).toMatchSnapshot();
