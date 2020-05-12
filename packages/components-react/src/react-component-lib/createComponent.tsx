@@ -9,6 +9,7 @@ import {
 interface IonicReactInternalProps<ElementType> extends React.HTMLAttributes<ElementType> {
   forwardedRef?: React.Ref<ElementType>;
   ref?: React.Ref<any>;
+  styles?: any;
 }
 
 export const createReactComponent = <PropType, ElementType>(tagName: string) => {
@@ -34,6 +35,9 @@ export const createReactComponent = <PropType, ElementType>(tagName: string) => 
     render() {
       return React.createElement(tagName, {
         ...this.props,
+        ...(this.props.styles
+          ? { styles: JSON.stringify(this.props.styles) }
+          : {}),
         ref: this.ref,
       }, this.props.children);
     }

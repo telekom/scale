@@ -50,7 +50,7 @@
  - [scale-button](../button)
  - [scale-input](../input)
  - [scale-link](../link)
- - [scale-list-item](../list)
+ - [scale-list-item](../list/listItem)
  - [scale-tag](../tag)
 
 ### Graph
