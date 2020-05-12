@@ -268,12 +268,12 @@ function convertSVGPointToObjectBoundingBox(point: DOMPoint, x: SVGAnimatedLengt
     if (x.baseVal.unitType === 2) { // Percent value, scale to bbox.
       point.x = bbox.x + (point.x - bbox.x) / (node.ownerSVGElement!.getBBox().width / bbox.width);
     } else { // pixel value, move origin to bbox
-      point.x += bbox.x;
+      point.x = bbox.x + point.x * bbox.width;
     }
     if (y.baseVal.unitType === 2) { // Percent value, scale to bbox.
       point.y = bbox.y + (point.y - bbox.y) / (node.ownerSVGElement!.getBBox().height / bbox.height);
     } else {
-      point.y += bbox.y;
+      point.y = bbox.y + point.y * bbox.height;
     }
 }
 
@@ -331,6 +331,9 @@ function parseSVGRadialGradient(node:SVGRadialGradientElement, ctm:DOMMatrix, bb
     let d = new DOMPoint(node.r.baseVal.valueInSpecifiedUnits * 0.01 * bbox.width, 0).matrixTransform(gtm);
     radiusPoint.x = center.x + d.x;
     radiusPoint.y = center.y + d.y;
+  } else if (node.gradientUnits.baseVal === 2) { // Add radius vector to center point.
+    radiusPoint.x = radiusPoint.x * bbox.width + center.x;
+    radiusPoint.y = radiusPoint.y * bbox.height + center.y;
   } else { // Add radius vector to center point.
     radiusPoint.x += center.x;
     radiusPoint.y += center.y;
