@@ -35,6 +35,7 @@ export class Slider implements Base {
     }
   }
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;

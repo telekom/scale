@@ -33,12 +33,12 @@
       const variants = {
         custom: {
           background: 'pink',
-          borderColor: 'pink'
-        }
-      }
+          borderColor: 'pink',
+        },
+      };
       scale.useTheme({
         shape: {
-          borderRadius: 4
+          borderRadius: 4,
         },
         typography: {
           variants: {
@@ -50,18 +50,19 @@
         },
         components: {
           Button: {
-            'button--variant-custom': variants.custom
+            'button--variant-custom': variants.custom,
           },
           Tag: {
-            'tag--variant-custom': variants.custom
-          }
-        }
-      })
+            'tag--variant-custom': variants.custom,
+          },
+        },
+      });
     </script>
   </head>
 
   <body>
-    <h1>Components</h1><h3>Tag</h3>
+    <h1>Components</h1>
+    <h3>Tag</h3>
 
     <button id="change">Change</button>
 
@@ -73,13 +74,13 @@
         document.getElementById('change-input').styles = {
           input: {
             '& .input__input': {
-              color: 'blue'
-            }
-          }
-        }
-      })
+              color: 'blue',
+            },
+          },
+        };
+      });
     </script>
-    
+
     <h3>Static input with label</h3>
     <scale-input variant="static" label="Text"></scale-input>
 
@@ -87,11 +88,7 @@
     <scale-input label="First Name" placeholder="Hello"></scale-input>
 
     <h3>Animated input - max length and counter</h3>
-    <scale-input
-      label="Last Name"
-      max-length="24"
-      counter
-    ></scale-input>
+    <scale-input label="Last Name" max-length="24" counter></scale-input>
 
     <h3>Input Text - helper text</h3>
     <scale-input
@@ -104,15 +101,13 @@
     <button id="show-error">Toggle error</button>
     <script>
       document.getElementById('show-error').addEventListener('click', () => {
-        const input = document.getElementById('input-error')
+        const input = document.getElementById('input-error');
         if (input.status === 'error') {
-          input.status = undefined,
-          input.helperText = undefined
+          (input.status = undefined), (input.helperText = undefined);
         } else {
-          input.status = 'error',
-          input.helperText = 'Some error happened'
+          (input.status = 'error'), (input.helperText = 'Some error happened');
         }
-      })
+      });
     </script>
     <h3>Input Text - helper text</h3>
     <scale-input
@@ -157,10 +152,10 @@
 
     <h3>Input hidden</h3>
     <scale-input type="hidden"></scale-input>
-    
+
     <h3>Input small</h3>
     <scale-input size="small"></scale-input>
-    
+
     <h3>Input small animated</h3>
     <scale-input label="Name" size="small"></scale-input>
 
@@ -174,7 +169,13 @@
     <h3>Tag - dismissable</h3>
     <scale-tag dismissable>tag dismissable</scale-tag>
     <h3>Tag - dismissable with link</h3>
-    <scale-tag id="tag-dismissable" dismissable href="http://example.com" target="_blank">tag dismissable</scale-tag>
+    <scale-tag
+      id="tag-dismissable"
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      >tag dismissable</scale-tag
+    >
     <h3>Tag - small</h3>
     <scale-tag size="small">Small</scale-tag>
     <h3>Tag - small dismissable</h3>
@@ -192,21 +193,77 @@
     <scale-tag variant="success">tag</scale-tag>
     <scale-tag variant="custom">tag</scale-tag>
     <h3>Tag - variants link</h3>
-    <scale-tag href="http://example.com" target="_blank" variant="primary">tag</scale-tag>
-    <scale-tag href="http://example.com" target="_blank" variant="secondary">tag</scale-tag>
-    <scale-tag href="http://example.com" target="_blank" variant="error">tag</scale-tag>
-    <scale-tag href="http://example.com" target="_blank" variant="warning">tag</scale-tag>
-    <scale-tag href="http://example.com" target="_blank" variant="info">tag</scale-tag>
-    <scale-tag href="http://example.com" target="_blank" variant="success">tag</scale-tag>
-    <scale-tag href="http://example.com" target="_blank" variant="custom">tag</scale-tag>
+    <scale-tag href="http://example.com" target="_blank" variant="primary"
+      >tag</scale-tag
+    >
+    <scale-tag href="http://example.com" target="_blank" variant="secondary"
+      >tag</scale-tag
+    >
+    <scale-tag href="http://example.com" target="_blank" variant="error"
+      >tag</scale-tag
+    >
+    <scale-tag href="http://example.com" target="_blank" variant="warning"
+      >tag</scale-tag
+    >
+    <scale-tag href="http://example.com" target="_blank" variant="info"
+      >tag</scale-tag
+    >
+    <scale-tag href="http://example.com" target="_blank" variant="success"
+      >tag</scale-tag
+    >
+    <scale-tag href="http://example.com" target="_blank" variant="custom"
+      >tag</scale-tag
+    >
     <h3>Tag - variants link dismissable</h3>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="primary">tag</scale-tag>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="secondary">tag</scale-tag>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="error">tag</scale-tag>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="warning">tag</scale-tag>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="info">tag</scale-tag>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="success">tag</scale-tag>
-    <scale-tag dismissable href="http://example.com" target="_blank" variant="custom">tag</scale-tag>
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="primary"
+      >tag</scale-tag
+    >
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="secondary"
+      >tag</scale-tag
+    >
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="error"
+      >tag</scale-tag
+    >
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="warning"
+      >tag</scale-tag
+    >
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="info"
+      >tag</scale-tag
+    >
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="success"
+      >tag</scale-tag
+    >
+    <scale-tag
+      dismissable
+      href="http://example.com"
+      target="_blank"
+      variant="custom"
+      >tag</scale-tag
+    >
     <h3>Tag - dismissable</h3>
     <scale-tag variant="primary" dismissable>tag</scale-tag>
     <scale-tag variant="secondary" dismissable>tag</scale-tag>
@@ -228,10 +285,55 @@
     <scale-tag size="small" variant="warning" dismissable>tag</scale-tag>
     <scale-tag size="small" variant="info" dismissable>tag</scale-tag>
     <scale-tag size="small" variant="success" dismissable>tag</scale-tag>
-    
+
     <script>
-      document.getElementById('tag-dismissable').addEventListener('close', (event) => console.log('Tag closed', event))
+      document
+        .getElementById('tag-dismissable')
+        .addEventListener('close', event => console.log('Tag closed', event));
     </script>
+
+    <h3>List ordered</h3>
+    <scale-list variant="ordered">
+      <scale-list-item type="upper-alpha">One</scale-list-item>
+      <scale-list-item type="upper-alpha">Two</scale-list-item>
+      <scale-list-item type="upper-alpha">Three</scale-list-item>
+    </scale-list>
+
+    <h3>List unordered</h3>
+    <scale-list variant="unordered">
+      <scale-list-item type="circle">one</scale-list-item>
+      <scale-list-item type="circle">Two</scale-list-item>
+      <scale-list-item type="circle">Three</scale-list-item>
+    </scale-list>
+
+    <h3>List ordered</h3>
+    <scale-list variant="ordered">
+      <scale-list-item type="decimal">one</scale-list-item>
+      <scale-list-item type="decimal">Two</scale-list-item>
+      <scale-list-item type="decimal">Three</scale-list-item>
+    </scale-list>
+
+    <h3>List with icon</h3>
+    <scale-list>
+      <scale-list-item
+        icon-size="16"
+        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z"
+        id="Path"
+        fill="#000000"
+        fill-rule="nonzero"
+        >Apple</scale-list-item
+      >
+      <scale-list-item
+        icon-size="16"
+        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z" id="Path" fill="#000000" fill-rule="nonzero"
+        >Microsoft</scale-list-item
+      >
+      <scale-list-item
+        icon-size="16"
+        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z" id="Path" fill="#000000" fill-rule="nonzero"
+        >Google</scale-list-item
+      >
+    </scale-list>
 
     <h3>Text</h3>
     <scale-text tag="h1" variant="h1">h1 heading</scale-text>
@@ -249,13 +351,13 @@
     <scale-button>Hello</scale-button>
 
     <h3>Button variants</h3>
-    <scale-button variant="primary">Hello</scale-button>
-    <scale-button variant="secondary">Hello</scale-button>
-    <scale-button variant="error">Hello</scale-button>
-    <scale-button variant="warning">Hello</scale-button>
-    <scale-button variant="info">Hello</scale-button>
-    <scale-button variant="success">Hello</scale-button>
-    <scale-button variant="custom">Hello</scale-button>
+    <scale-button variant="primary" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button variant="secondary" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button variant="error" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button variant="warning" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button variant="info" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button variant="success" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button variant="custom" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
 
     <h3>Button icon Before</h3>
     <scale-button
@@ -604,11 +706,198 @@
     <h3>Breadcrumb - custom icon separator</h3>
     <scale-breadcrumb>
       <span slot="separator">
-        <scale-icon size="18" path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z">
+        <scale-icon
+          size="18"
+          path="M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z"
+        />
       </span>
       <a href="/a">Breadcrumb 1</a>
       <a href="/b">Breadcrumb 2</a>
       <span>Breadcrumb 3</span>
     </scale-breadcrumb>
+
+    <h3>Table</h3>
+
+    <script>
+      const getNextSort = sort => {
+        if (!sort || ['none', 'other'].includes(sort)) {
+          return 'descending';
+        }
+        if (sort === 'descending') {
+          return 'ascending';
+        }
+        return 'none';
+      };
+
+      function sortTable(th) {
+        const currentSort = th.getAttribute('aria-sort');
+        const nextSort = getNextSort(currentSort);
+        const tableHeaders = Array.from(document.getElementsByTagName('TH'));
+        const columnIndex = tableHeaders.findIndex(x => x === th);
+
+        // clean up previous aria-sort value
+        tableHeaders.forEach(tableHeader => {
+          tableHeader.setAttribute('aria-sort', 'none');
+        });
+
+        // set actual sort
+        th.setAttribute('aria-sort', nextSort);
+
+        // Taken from:
+        // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById('sortable-table');
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+          //start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /*Loop through all table rows (except the
+          first, which contains table headers):*/
+          for (i = 1; i < rows.length - 1; i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName('TD')[columnIndex];
+            y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
+
+            if (
+              !['ascending', 'descending'].includes(nextSort) ||
+              x.parentElement.parentElement.tagName === 'TFOOT' ||
+              y.parentElement.parentElement.tagName === 'TFOOT'
+            ) {
+              break;
+            }
+
+            //check if the two rows should switch place:
+            if (
+              (nextSort === 'descending' ? y : x).innerHTML.toLowerCase() >
+              (nextSort === 'descending' ? x : y).innerHTML.toLowerCase()
+            ) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+    </script>
+
+    <scale-table variant="regular" show-sort="true">
+      <div slot="header" style="padding: 20px 8px 0px 8px;">
+        <scale-text variant="h5">Table title</scale-text>
+      </div>
+      <div slot="table">
+        <table id="sortable-table">
+          <thead>
+            <tr>
+              <th aria-sort="descending" onclick="sortTable(this)">Title</th>
+              <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
+              <th onclick="sortTable(this)">Stats</th>
+              <th onclick="sortTable(this)" style="text-align: right;">Time</th>
+              <th onclick="sortTable(this)" style="text-align: right;">
+                Euros
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jane</td>
+              <td>
+                <scale-tag size="small" style="margin-right: 8px"
+                  >Other</scale-tag
+                >
+                <scale-tag size="small" style="margin-right: 8px"
+                  >N/A</scale-tag
+                >
+                <scale-tag size="small">Demo</scale-tag>
+              </td>
+              <td>
+                <div style="display: inline-flex; align-items: center;">
+                  <span style="margin-right: 8px">9.356</span>
+                  <scale-progress-bar
+                    variant="info"
+                    style=" max-width: 120px;"
+                    stroke-width="6"
+                    percentage="90"
+                  />
+                </div>
+              </td>
+              <td style="text-align: right; font-weight: 100;">00:00:20</td>
+              <td style="text-align: right; font-weight: 100;">100.245,10</td>
+            </tr>
+            <tr>
+              <td>Jack</td>
+              <td>
+                <scale-tag size="small" style="margin-right: 8px"
+                  >Other</scale-tag
+                >
+                <scale-tag size="small" style="margin-right: 8px"
+                  >N/A</scale-tag
+                >
+                <scale-tag size="small">Demo</scale-tag>
+              </td>
+              <td>
+                <div style="display: inline-flex; align-items: center;">
+                  <span style="margin-right: 8px">3.356</span>
+                  <scale-progress-bar
+                    variant="info"
+                    style=" max-width: 120px;"
+                    stroke-width="6"
+                    percentage="90"
+                  />
+                </div>
+              </td>
+              <td style="text-align: right; font-weight: 100;">00:00:30</td>
+              <td style="text-align: right; font-weight: 100;">100.345,10</td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>
+                <scale-tag size="small" style="margin-right: 8px"
+                  >Other</scale-tag
+                >
+                <scale-tag size="small" style="margin-right: 8px"
+                  >N/A</scale-tag
+                >
+                <scale-tag size="small">Demo</scale-tag>
+              </td>
+              <td>
+                <div style="display: inline-flex; align-items: center;">
+                  <span style="margin-right: 8px">6.356</span>
+                  <scale-progress-bar
+                    variant="info"
+                    style=" max-width: 120px;"
+                    stroke-width="6"
+                    percentage="90"
+                  />
+                </div>
+              </td>
+              <td style="text-align: right; font-weight: 100;">00:00:40</td>
+              <td style="text-align: right; font-weight: 100;">100.445,10</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td />
+              <td />
+              <td style="text-align: right;">00:00:20</td>
+              <td style="text-align: right;">100.245,10</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </scale-table>
   </body>
 </html>

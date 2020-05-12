@@ -33,8 +33,8 @@ export class Text implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Text', styles) stylesheet: StyleSheet;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     this.stylesheet.addRules(variants());

@@ -35,8 +35,8 @@ export class Link implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Link', styles) stylesheet: StyleSheet;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const Tag = !this.disabled ? 'a' : 'div';

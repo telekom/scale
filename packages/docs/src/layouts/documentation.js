@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Header from "../components/header"
 import Sidebar from "../components/sidebar"
-
 import "./documentation.css"
 
 export default ({ children, location }) => {
@@ -28,8 +27,8 @@ export default ({ children, location }) => {
     }
   `)
   return (
-      <Fragment>
-        <Helmet>
+    <Fragment>
+      <Helmet>
         <title>{data.title.siteMetadata.title}</title>
         <script
           type="module"
@@ -49,6 +48,6 @@ export default ({ children, location }) => {
           <div className="content">{children}</div>
         </section>
       </main>
-      </Fragment>
+    </Fragment>
   )
 }

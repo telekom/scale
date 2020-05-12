@@ -295,6 +295,31 @@ export namespace Components {
          */
         "variant"?: string;
     }
+    interface ScaleList {
+        "styles"?: StyleSheet;
+        /**
+          * (optional) List variant
+         */
+        "variant"?: string;
+    }
+    interface ScaleListItem {
+        /**
+          * (optional) List item icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) list Icon size
+         */
+        "iconSize"?: number;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) List item style type
+         */
+        "type"?: string;
+    }
     interface ScaleModal {
         /**
           * Modal method: onCloseModal()
@@ -404,6 +429,24 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+    }
+    interface ScaleTable {
+        /**
+          * (optional) Tag class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Display sort arrows on/off
+         */
+        "showSort"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) Visual variant
+         */
+        "variant"?: "regular" | "compressed";
     }
     interface ScaleTag {
         /**
@@ -563,6 +606,18 @@ declare global {
         prototype: HTMLScaleLinkElement;
         new (): HTMLScaleLinkElement;
     };
+    interface HTMLScaleListElement extends Components.ScaleList, HTMLStencilElement {
+    }
+    var HTMLScaleListElement: {
+        prototype: HTMLScaleListElement;
+        new (): HTMLScaleListElement;
+    };
+    interface HTMLScaleListItemElement extends Components.ScaleListItem, HTMLStencilElement {
+    }
+    var HTMLScaleListItemElement: {
+        prototype: HTMLScaleListItemElement;
+        new (): HTMLScaleListItemElement;
+    };
     interface HTMLScaleModalElement extends Components.ScaleModal, HTMLStencilElement {
     }
     var HTMLScaleModalElement: {
@@ -593,6 +648,12 @@ declare global {
         prototype: HTMLScaleSwitchElement;
         new (): HTMLScaleSwitchElement;
     };
+    interface HTMLScaleTableElement extends Components.ScaleTable, HTMLStencilElement {
+    }
+    var HTMLScaleTableElement: {
+        prototype: HTMLScaleTableElement;
+        new (): HTMLScaleTableElement;
+    };
     interface HTMLScaleTagElement extends Components.ScaleTag, HTMLStencilElement {
     }
     var HTMLScaleTagElement: {
@@ -621,11 +682,14 @@ declare global {
         "scale-icon": HTMLScaleIconElement;
         "scale-input": HTMLScaleInputElement;
         "scale-link": HTMLScaleLinkElement;
+        "scale-list": HTMLScaleListElement;
+        "scale-list-item": HTMLScaleListItemElement;
         "scale-modal": HTMLScaleModalElement;
         "scale-progress-bar": HTMLScaleProgressBarElement;
         "scale-slider": HTMLScaleSliderElement;
         "scale-ssr-slot-fix": HTMLScaleSsrSlotFixElement;
         "scale-switch": HTMLScaleSwitchElement;
+        "scale-table": HTMLScaleTableElement;
         "scale-tag": HTMLScaleTagElement;
         "scale-text": HTMLScaleTextElement;
         "scale-toast": HTMLScaleToastElement;
@@ -915,6 +979,31 @@ declare namespace LocalJSX {
          */
         "variant"?: string;
     }
+    interface ScaleList {
+        "styles"?: StyleSheet;
+        /**
+          * (optional) List variant
+         */
+        "variant"?: string;
+    }
+    interface ScaleListItem {
+        /**
+          * (optional) List item icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) list Icon size
+         */
+        "iconSize"?: number;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) List item style type
+         */
+        "type"?: string;
+    }
     interface ScaleModal {
         /**
           * (optional) Modal class
@@ -1016,6 +1105,24 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+    }
+    interface ScaleTable {
+        /**
+          * (optional) Tag class
+         */
+        "customClass"?: string;
+        /**
+          * (optional) Display sort arrows on/off
+         */
+        "showSort"?: boolean;
+        /**
+          * (optional) Injected jss styles
+         */
+        "styles"?: StyleSheet;
+        /**
+          * (optional) Visual variant
+         */
+        "variant"?: "regular" | "compressed";
     }
     interface ScaleTag {
         /**
@@ -1126,11 +1233,14 @@ declare namespace LocalJSX {
         "scale-icon": ScaleIcon;
         "scale-input": ScaleInput;
         "scale-link": ScaleLink;
+        "scale-list": ScaleList;
+        "scale-list-item": ScaleListItem;
         "scale-modal": ScaleModal;
         "scale-progress-bar": ScaleProgressBar;
         "scale-slider": ScaleSlider;
         "scale-ssr-slot-fix": ScaleSsrSlotFix;
         "scale-switch": ScaleSwitch;
+        "scale-table": ScaleTable;
         "scale-tag": ScaleTag;
         "scale-text": ScaleText;
         "scale-toast": ScaleToast;
@@ -1149,11 +1259,14 @@ declare module "@stencil/core" {
             "scale-icon": LocalJSX.ScaleIcon & JSXBase.HTMLAttributes<HTMLScaleIconElement>;
             "scale-input": LocalJSX.ScaleInput & JSXBase.HTMLAttributes<HTMLScaleInputElement>;
             "scale-link": LocalJSX.ScaleLink & JSXBase.HTMLAttributes<HTMLScaleLinkElement>;
+            "scale-list": LocalJSX.ScaleList & JSXBase.HTMLAttributes<HTMLScaleListElement>;
+            "scale-list-item": LocalJSX.ScaleListItem & JSXBase.HTMLAttributes<HTMLScaleListItemElement>;
             "scale-modal": LocalJSX.ScaleModal & JSXBase.HTMLAttributes<HTMLScaleModalElement>;
             "scale-progress-bar": LocalJSX.ScaleProgressBar & JSXBase.HTMLAttributes<HTMLScaleProgressBarElement>;
             "scale-slider": LocalJSX.ScaleSlider & JSXBase.HTMLAttributes<HTMLScaleSliderElement>;
             "scale-ssr-slot-fix": LocalJSX.ScaleSsrSlotFix & JSXBase.HTMLAttributes<HTMLScaleSsrSlotFixElement>;
             "scale-switch": LocalJSX.ScaleSwitch & JSXBase.HTMLAttributes<HTMLScaleSwitchElement>;
+            "scale-table": LocalJSX.ScaleTable & JSXBase.HTMLAttributes<HTMLScaleTableElement>;
             "scale-tag": LocalJSX.ScaleTag & JSXBase.HTMLAttributes<HTMLScaleTagElement>;
             "scale-text": LocalJSX.ScaleText & JSXBase.HTMLAttributes<HTMLScaleTextElement>;
             "scale-toast": LocalJSX.ScaleToast & JSXBase.HTMLAttributes<HTMLScaleToastElement>;

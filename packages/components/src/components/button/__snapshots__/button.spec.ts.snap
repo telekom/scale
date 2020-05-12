@@ -20,6 +20,7 @@ exports[`Button should match snapshot 1`] = `
   justify-content: center;
   text-decoration: none;
   color: #000;
+  --icon-color: #000;
   background: #E0E0E0;
   border: 1px solid #E0E0E0;
   border-radius: 4px;
@@ -27,7 +28,6 @@ exports[`Button should match snapshot 1`] = `
   text-transform: none;
   letter-spacing: 0.02857em;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --icon-color: #000;
 }
 .button-0-0-12:before {
   width: 0;
@@ -39,10 +39,10 @@ exports[`Button should match snapshot 1`] = `
   box-shadow: none;
   text-decoration: none;
   color: #fff;
+  --icon-color: #fff;
   background: #616161;
   border-color: #616161;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --icon-color: #fff;
 }
 .button--disabled-0-0-13 {}
 .button--disabled-0-0-13, .button--disabled-0-0-13:hover {
@@ -50,6 +50,7 @@ exports[`Button should match snapshot 1`] = `
   opacity: 0.3;
   border: 1px solid rgba(0, 0, 0, .3);
   color: rgba(0, 0, 0, .4);
+  --icon-color: rgba(0, 0, 0, .4);
   background: #fff;
 }
 .button__before-0-0-14 {
@@ -68,61 +69,73 @@ exports[`Button should match snapshot 1`] = `
 }
 .button--variant-primary-0-0-17 {
   color: #fff;
+  --icon-color: #fff;
   background: #2962ff;
   border: 1px solid #2962ff;
 }
 .button--variant-primary-0-0-17:hover {
   color: #fff;
+  --icon-color: #fff;
   background: #0039cb;
   border: 1px solid #0039cb;
 }
 .button--variant-secondary-0-0-18 {
   color: #fff;
+  --icon-color: #fff;
   background: #d500f9;
   border: 1px solid #d500f9;
 }
 .button--variant-secondary-0-0-18:hover {
   color: #fff;
+  --icon-color: #fff;
   background: #9e00c5;
   border: 1px solid #9e00c5;
 }
 .button--variant-error-0-0-19 {
   color: #fff;
+  --icon-color: #fff;
   background: #f50057;
   border: 1px solid #f50057;
 }
 .button--variant-error-0-0-19:hover {
   color: #fff;
+  --icon-color: #fff;
   background: #bb002f;
   border: 1px solid #bb002f;
 }
 .button--variant-warning-0-0-20 {
   color: #fff;
+  --icon-color: #fff;
   background: #ffc400;
   border: 1px solid #ffc400;
 }
 .button--variant-warning-0-0-20:hover {
   color: #fff;
+  --icon-color: #fff;
   background: #c79400;
   border: 1px solid #c79400;
 }
 .button--variant-info-0-0-21 {
   color: #fff;
+  --icon-color: #fff;
   background: #00b0ff;
   border: 1px solid #00b0ff;
 }
 .button--variant-info-0-0-21:hover {
   color: #fff;
+  --icon-color: #fff;
   background: #0081cb;
   border: 1px solid #0081cb;
 }
 .button--variant-success-0-0-22 {
   color: #fff;
+  --icon-color: #fff;
   background: #00e676;
   border: 1px solid #00e676;
 }
 .button--variant-success-0-0-22:hover {
   color: #fff;
+  --icon-color: #fff;
   background: #00b248;
   border: 1px solid #00b248;
 }

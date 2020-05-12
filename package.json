@@ -30,7 +30,7 @@
     "dependencies": {},
     "husky": {
         "hooks": {
-            "pre-push": "cd packages/components && yarn lint && yarn test"
+            "pre-push": "cd packages/components && yarn lint"
         }
     }
 }

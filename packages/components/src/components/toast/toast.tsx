@@ -57,8 +57,6 @@ export class Toast implements Base {
 
   timerId = null;
 
-  componentWillLoad() {}
-
   componentDidUnload() {
     if (this.timerId) {
       clearTimeout(this.timerId);

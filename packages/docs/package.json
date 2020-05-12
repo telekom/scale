@@ -4,6 +4,8 @@
   "version": "0.1.4",
   "author": "eeegor",
   "dependencies": {
+    "@scaleds/gatsby-plugin": "^0.1.4",
+    "@textlint/markdown-to-ast": "^6.1.7",
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-manifest": "^2.2.27",
@@ -20,12 +22,12 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
-    "rehype-react": "^4.0.1",
+    "uuid": "^7.0.2",
     "vfile-message": "^2.0.4"
   },
   "devDependencies": {
     "nodemon": "^1.19.4",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.5"
   },
   "keywords": [
     "gatsby"
@@ -37,11 +39,12 @@
     "copy:dist": "cp -R ./stencil/dist ./public/dist",
     "components:clean": "node ./scripts/clean.js",
     "components:copy": "node ./scripts/copy.js",
-    "components:sync": "npm run components:clean && npm run components:copy",
+    "components:sync": "yarn components:clean && yarn components:copy",
+    "components:update": "cd ../components && yarn build && cd ../docs && yarn components:sync && yarn copy:dist",
     "predevelop": "yarn build",
     "develop": "gatsby develop",
     "debug": "nodemon --exec \"node --inspect-brk --no-lazy node_modules/.bin/gatsby develop\"",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

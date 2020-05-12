@@ -44,9 +44,9 @@ function renderToStringWithUserTheme() {
     files.map(file => {
       try {
         return renderToString(fs.readFileSync(file, "utf8"), {
-          prettyHtml: true
+          prettyHtml: false
         }).then(result => {
-          return fs.writeFileSync(file, result.html)
+          return fs.writeFileSync(file, result.html);
         });
       } catch (error) {
         if (error.code === "EISDIR") {

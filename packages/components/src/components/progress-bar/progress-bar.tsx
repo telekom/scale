@@ -29,8 +29,8 @@ export class ProgressBar implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('ProgressBar', styles) stylesheet: StyleSheet;
 
-  componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidUnload() {}
 
   render() {
     const { classes } = this.stylesheet;
