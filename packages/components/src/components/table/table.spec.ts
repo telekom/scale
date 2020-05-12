@@ -63,10 +63,10 @@ describe('Table', () => {
     element.customClass = 'custom';
     expect(element.getCssClassMap()).toContain('custom');
 
-    element.variant = 'compressed';
-    stylesheet.addRule('table--variant-compressed', {});
+    element.size = 'big';
+    stylesheet.addRule('table--size-big', {});
     expect(element.getCssClassMap()).toContain(
-      stylesheet.classes['table--variant-compressed']
+      stylesheet.classes['table--size-big']
     );
   });
 });

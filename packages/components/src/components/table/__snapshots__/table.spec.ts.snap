@@ -6,89 +6,34 @@ exports[`Table should match snapshot 1`] = `
   <h5 hidden="" slot="header">
     Table Header
   </h5>
-  <style>
-    .table-0-0-4 {}
-.table-0-0-4 [slot="table"] {
-  overflow: auto;
-  border-radius: 4px 4px 0 0;
-  background: #F5F5F5;
-}
-.table-0-0-4 table {
-  width: 100%;
-  white-space: nowrap;
-  border-spacing: 0;
-  border-collapse: collapse;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-}
-.table-0-0-4 th {
-  font-size: 12px;
-  text-align: left;
-  line-height: 32px;
-  user-select: none;
-  color: #757575;
-}
-.table-0-0-4 th, .table-0-0-4 td {
-  padding: 0 8px;
-}
-.table-0-0-4 tfoot, .table-0-0-4 tbody {
-  background: #FFFFFF;
-}
-.table-0-0-4 tfoot tr td {
-  padding: 8px;
-  font-weight: 600;
-  border-bottom: 1px solid #000000;
-}
-.table--variant-compressed-0-0-5 {}
-.table--variant-compressed-0-0-5 td {
-  padding: 8px;
-}
-.table--sortable-0-0-6 {}
-.table--sortable-0-0-6 th {
-  cursor: pointer;
-}
-.table--sortable-0-0-6 th[aria-disabled="true"] {
-  pointer-events: none;
-}
-.table--sortable-0-0-6 th[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type {
-  fill: #000000;
-}
-.table--sortable-0-0-6 th[aria-sort="descending"] .scale-sort-indicator polygon {
-  fill: #DCDCDC;
-}
-.table--sortable-0-0-6 th[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type {
-  fill: #DCDCDC;
-}
-.table--sortable-0-0-6 th[aria-sort="ascending"] .scale-sort-indicator polygon {
-  fill: #000000;
-}
-.table--sortable-0-0-6 th .scale-sort-indicator {
-  left: -8px;
-  width: 12px;
-  height: 20px;
-  display: inline-block;
-  position: relative;
-}
-.table--sortable-0-0-6 th .scale-sort-indicator > svg {
-  top: 4px;
-  left: 0;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-}
-.table--sortable-0-0-6 th .scale-sort-indicator polygon {
-  fill: #DCDCDC;
-}
-  </style>
-  <table slot="table">
+  <table hidden="" slot="table">
     <thead>
       <tr>
         <th aria-sort="descending">
+          <span class="scale-sort-indicator">
+            <svg height="24px" viewBox="0 0 24 24" width="24px">
+              <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271"></polygon>
+              <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271"></polygon>
+            </svg>
+          </span>
           Title
         </th>
         <th>
+          <span class="scale-sort-indicator">
+            <svg height="24px" viewBox="0 0 24 24" width="24px">
+              <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271"></polygon>
+              <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271"></polygon>
+            </svg>
+          </span>
           Time
         </th>
         <th>
+          <span class="scale-sort-indicator">
+            <svg height="24px" viewBox="0 0 24 24" width="24px">
+              <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271"></polygon>
+              <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271"></polygon>
+            </svg>
+          </span>
           Euros
         </th>
       </tr>
@@ -144,5 +89,88 @@ exports[`Table should match snapshot 1`] = `
       </tr>
     </tfoot>
   </table>
+  <style>
+    .table-0-0-4 {
+  display: block;
+  overflow: auto;
+  border-radius: 4px 4px 0 0;
+  background: #F5F5F5;
+}
+.table-0-0-4 table {
+  width: 100%;
+  white-space: nowrap;
+  margin-bottom: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+.table-0-0-4 th {
+  font-size: 12px;
+  text-align: left;
+  line-height: 32px;
+  user-select: none;
+  color: #757575;
+}
+.table-0-0-4 th, .table-0-0-4 td {
+  padding: 0 8px;
+}
+.table-0-0-4 tbody tr td {
+  padding: 8px;
+}
+.table-0-0-4 tfoot, .table-0-0-4 tbody {
+  background: #FFFFFF;
+}
+.table-0-0-4 tfoot tr td {
+  padding: 8px;
+  font-weight: 600;
+  border-bottom: 1px solid #000000;
+}
+.table-0-0-4 .scale-sort-indicator svg {
+  display: none;
+}
+.table--size-big-0-0-5 {}
+.table--size-big-0-0-5 tbody tr td {
+  padding: 16px 8px;
+}
+.table--sortable-0-0-6 {}
+.table--sortable-0-0-6 th {
+  cursor: pointer;
+}
+.table--sortable-0-0-6 th .scale-sort-indicator svg {
+  display: block;
+}
+.table--sortable-0-0-6 th[aria-disabled="true"] {
+  pointer-events: none;
+}
+.table--sortable-0-0-6 th[aria-sort="descending"] .scale-sort-indicator polygon:first-of-type {
+  fill: #000000;
+}
+.table--sortable-0-0-6 th[aria-sort="descending"] .scale-sort-indicator polygon {
+  fill: #DCDCDC;
+}
+.table--sortable-0-0-6 th[aria-sort="ascending"] .scale-sort-indicator polygon:first-of-type {
+  fill: #DCDCDC;
+}
+.table--sortable-0-0-6 th[aria-sort="ascending"] .scale-sort-indicator polygon {
+  fill: #000000;
+}
+.table--sortable-0-0-6 th .scale-sort-indicator {
+  left: -8px;
+  width: 12px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+.table--sortable-0-0-6 th .scale-sort-indicator > svg {
+  top: 4px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.table--sortable-0-0-6 th .scale-sort-indicator polygon {
+  fill: #DCDCDC;
+}
+  </style>
 </scale-table>
 `;

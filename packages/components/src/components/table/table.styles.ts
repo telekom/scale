@@ -2,6 +2,7 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   table: {
+    display: 'block',
     overflow: 'auto',
     borderRadius: '4px 4px 0 0',
     background: ({ colors }) => colors.grey[100],
@@ -26,6 +27,10 @@ export const styles: JssStyle = {
       padding: '0 8px',
     },
 
+    '& tbody tr td': {
+      padding: '8px',
+    },
+
     '& tfoot, tbody': {
       background: '#FFFFFF',
     },
@@ -41,9 +46,9 @@ export const styles: JssStyle = {
     },
   },
 
-  'table--variant-compressed': {
-    '& td': {
-      padding: '8px',
+  'table--size-big': {
+    '& tbody tr td': {
+      padding: '16px 8px',
     },
   },
 

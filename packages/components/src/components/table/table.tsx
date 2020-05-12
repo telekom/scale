@@ -1,4 +1,4 @@
-import { Component, Prop, h, Element } from '@stencil/core';
+import { Component, Prop, h, Element, Host } from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './table.styles';
@@ -16,8 +16,8 @@ export class Table implements Base {
   @Prop() customClass?: string = '';
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
-  /** (optional) Visual variant */
-  @Prop() variant?: 'regular' | 'compressed' = 'regular';
+  /** (optional) Visual size */
+  @Prop() size?: 'small' | 'big' = 'small';
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
@@ -30,12 +30,12 @@ export class Table implements Base {
       th.insertAdjacentHTML(
         'afterbegin',
         `
-            <span class="scale-sort-indicator">
-              <svg width="24px" height="24px" viewBox="0 0 24 24">
-                <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271" />
-                <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271" />
-              </svg>
-            </span>`
+          <span class="scale-sort-indicator">
+            <svg width="24px" height="24px" viewBox="0 0 24 24">
+              <polygon points="11.8284271 16.6568542 14.6568542 13.8284271 9 13.8284271" />
+              <polygon points="11.8284271 8 14.6568542 10.8284271 9 10.8284271" />
+            </svg>
+          </span>`
       );
     });
   }
@@ -44,10 +44,10 @@ export class Table implements Base {
 
   render() {
     return (
-      <div class={this.getCssClassMap()}>
+      <Host class={this.getCssClassMap()}>
         <style>{this.stylesheet.toString()}</style>
         <slot />
-      </div>
+      </Host>
     );
   }
 
@@ -56,7 +56,7 @@ export class Table implements Base {
     return classNames(
       classes.table,
       this.customClass && this.customClass,
-      this.variant && classes[`table--variant-${this.variant}`],
+      this.size && classes[`table--size-${this.size}`],
       this.showSort && classes[`table--sortable`]
     );
   }
