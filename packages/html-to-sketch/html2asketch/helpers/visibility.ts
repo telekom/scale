@@ -47,6 +47,10 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
     return false;
   }
 
+  if (node instanceof SVGLinearGradientElement || node instanceof SVGDefsElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
+    return false;
+  }
+
   const parent = node.parentElement;
 
   if (

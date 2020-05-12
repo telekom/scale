@@ -264,6 +264,19 @@ function parseSVGGradientStops(node:(SVGLinearGradientElement|SVGRadialGradientE
   return stopArray;
 }
 
+function convertSVGPointToObjectBoundingBox(point: DOMPoint, x: SVGAnimatedLength, y: SVGAnimatedLength, node:SVGElement, bbox:{x:number,y:number,width:number,height:number}) {
+    if (x.baseVal.unitType === 2) { // Percent value, scale to bbox.
+      point.x = bbox.x + (point.x - bbox.x) / (node.ownerSVGElement!.getBBox().width / bbox.width);
+    } else { // pixel value, move origin to bbox
+      point.x += bbox.x;
+    }
+    if (y.baseVal.unitType === 2) { // Percent value, scale to bbox.
+      point.y = bbox.y + (point.y - bbox.y) / (node.ownerSVGElement!.getBBox().height / bbox.height);
+    } else {
+      point.y += bbox.y;
+    }
+}
+
 function parseSVGLinearGradient(node:SVGLinearGradientElement, ctm:DOMMatrix, bbox:{x:number,y:number,width:number,height:number}) {
   const template = {
     fillType: 1,
@@ -277,9 +290,15 @@ function parseSVGLinearGradient(node:SVGLinearGradientElement, ctm:DOMMatrix, bb
   ctm;
   const gtm = new DOMMatrix(getComputedStyle(node).transform);
   const point = new DOMPoint(node.x1.baseVal.value, node.y1.baseVal.value).matrixTransform(gtm); // .matrixTransform(ctm);
+  if (node.gradientUnits.baseVal === 2) { // Object bounding box units.
+    convertSVGPointToObjectBoundingBox(point, node.x1, node.y1, node, bbox);
+  }
   template.gradient.from.x = (point.x - bbox.x) / bbox.width;
   template.gradient.from.y = (point.y - bbox.y) / bbox.height;
   const point2 = new DOMPoint(node.x2.baseVal.value, node.y2.baseVal.value).matrixTransform(gtm); // .matrixTransform(ctm);
+  if (node.gradientUnits.baseVal === 2) { // Object bounding box units.
+    convertSVGPointToObjectBoundingBox(point2, node.x2, node.y2, node, bbox);
+  }
   template.gradient.to.x = (point2.x - bbox.x) / bbox.width;
   template.gradient.to.y = (point2.y - bbox.y) / bbox.height;
   template.gradient.stops = parseSVGGradientStops(node);
@@ -296,15 +315,28 @@ function parseSVGRadialGradient(node:SVGRadialGradientElement, ctm:DOMMatrix, bb
       stops: [] as {position:number, color:string}[]
     }
   };
-  ctm;
-  const gtm = new DOMMatrix(getComputedStyle(node).transform);
-  const f = new DOMPoint(node.fx.baseVal.value, node.fy.baseVal.value).matrixTransform(gtm); //.matrixTransform(ctm);
-  template.gradient.from.x = (f.x - bbox.x) / bbox.width;
-  template.gradient.from.y = (f.y - bbox.y) / bbox.height;
-  const c = new DOMPoint(node.cx.baseVal.value, node.cy.baseVal.value).matrixTransform(gtm); //.matrixTransform(ctm);
-  // This should be `from + vec2(radius, 0)`
-  template.gradient.to.x = (c.x - bbox.x) / bbox.width;
-  template.gradient.to.y = (c.y - bbox.y) / bbox.height;
+  ctm; // Do we need to use the node CTM for anything?
+  const style = getComputedStyle(node) as any;
+  const gtm = new DOMMatrix(style.transform);
+  //.matrixTransform(ctm);
+  const center = new DOMPoint(node.cx.baseVal.value, node.cy.baseVal.value).matrixTransform(gtm);
+  if (node.gradientUnits.baseVal === 2) { // Object bounding box units.
+    convertSVGPointToObjectBoundingBox(center, node.cx, node.cy, node, bbox);
+  }
+  template.gradient.from.x = (center.x - bbox.x) / bbox.width;
+  template.gradient.from.y = (center.y - bbox.y) / bbox.height;
+  //.matrixTransform(ctm);
+  const radiusPoint = new DOMPoint(node.r.baseVal.value, 0).matrixTransform(gtm);
+  if (node.gradientUnits.baseVal === 2 && node.r.baseVal.unitType === 2) { // Percent value in OBB units.
+    let d = new DOMPoint(node.r.baseVal.valueInSpecifiedUnits * 0.01 * bbox.width, 0).matrixTransform(gtm);
+    radiusPoint.x = center.x + d.x;
+    radiusPoint.y = center.y + d.y;
+  } else { // Add radius vector to center point.
+    radiusPoint.x += center.x;
+    radiusPoint.y += center.y;
+  }
+  template.gradient.to.x = (radiusPoint.x - bbox.x) / bbox.width;
+  template.gradient.to.y = (radiusPoint.y - bbox.y) / bbox.height;
   template.gradient.stops = parseSVGGradientStops(node);
   return template;
 }
@@ -734,7 +766,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       if (defsElements.length > 0) {
         const defsArray = Array.from(defsElements);
         (node as any).defs = defsArray.map(defs => ({id: defs.id, group: nodeTreeToSketchGroup(defs as unknown as HTMLElement, {})}));
-        defsArray.forEach((defs:any) => defs.parentNode.removeChild(defs));
+        defsArray.forEach((defs:any) => defs.style.display = 'none');
       }
     }
     const parseStyleNumber = (s:string = '', defaultValue:number = 0) => {
