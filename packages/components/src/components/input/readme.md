@@ -34,10 +34,10 @@
 
 | Event          | Description                         | Type               |
 | -------------- | ----------------------------------- | ------------------ |
-| `blurEvent`    |                                     | `CustomEvent<any>` |
-| `changeEvent`  | (optional) Input text event changed | `CustomEvent<any>` |
-| `focusEvent`   |                                     | `CustomEvent<any>` |
-| `keyDownEvent` |                                     | `CustomEvent<any>` |
+| `scaleBlur`    |                                     | `CustomEvent<any>` |
+| `scaleChange`  | (optional) Input text event changed | `CustomEvent<any>` |
+| `scaleFocus`   |                                     | `CustomEvent<any>` |
+| `scaleKeyDown` |                                     | `CustomEvent<any>` |
 
 
 ## Dependencies

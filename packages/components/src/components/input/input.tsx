@@ -65,10 +65,10 @@ export class Input implements Base {
   /** (optional) Input checkbox checked icon */
   @Prop() icon?: string;
   /** (optional) Input text event changed */
-  @Event() changeEvent: EventEmitter<any>;
-  @Event() focusEvent: EventEmitter<any>;
-  @Event() blurEvent: EventEmitter<any>;
-  @Event() keyDownEvent: EventEmitter<any>;
+  @Event() scaleChange: EventEmitter<any>;
+  @Event() scaleFocus: EventEmitter<any>;
+  @Event() scaleBlur: EventEmitter<any>;
+  @Event() scaleKeyDown: EventEmitter<any>;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
@@ -87,19 +87,19 @@ export class Input implements Base {
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
     this.checkedValue = event.target.value;
-    this.changeEvent.emit(event);
+    this.scaleChange.emit(event);
   }
 
   handleFocus(event) {
-    this.focusEvent.emit(event);
+    this.scaleFocus.emit(event);
   }
 
   handleBlur(event) {
-    this.blurEvent.emit(event);
+    this.scaleBlur.emit(event);
   }
 
   handleKeyDown(event) {
-    this.keyDownEvent.emit(event);
+    this.scaleKeyDown.emit(event);
   }
 
   render() {

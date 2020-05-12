@@ -32,7 +32,7 @@ export class Tag implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Tag', styles) stylesheet: StyleSheet;
 
-  @Event() close: EventEmitter<any>;
+  @Event() scaleClose: EventEmitter<any>;
 
   componentWillUpdate() {}
   componentDidUnload() {}
@@ -40,7 +40,7 @@ export class Tag implements Base {
   handleClose(event) {
     event.preventDefault();
     event.stopPropagation();
-    this.close.emit(event);
+    this.scaleClose.emit(event);
   }
 
   render() {

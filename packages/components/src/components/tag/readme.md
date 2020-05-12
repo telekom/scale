@@ -45,9 +45,9 @@
 
 ## Events
 
-| Event   | Description | Type               |
-| ------- | ----------- | ------------------ |
-| `close` |             | `CustomEvent<any>` |
+| Event        | Description | Type               |
+| ------------ | ----------- | ------------------ |
+| `scaleClose` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

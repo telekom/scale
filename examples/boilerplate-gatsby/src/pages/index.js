@@ -66,7 +66,11 @@ const IndexPage = () => {
         A title
       </ScaleTag>
       <h3>Input</h3>
-      <ScaleInput styles={{ input: { "& input": { color: "blue" } } }} />
+      <ScaleInput
+        styles={{ input: { "& input": { color: "blue" } } }}
+        value="initial value"
+        onScaleChange={console.log}
+      />
       <h3>Table</h3>
       <ScaleTable variant="regular">
         <div slot="header" style={{ padding: "20px 8px 0px 8px" }}>
