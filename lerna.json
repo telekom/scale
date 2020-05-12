@@ -13,7 +13,7 @@
   "version": "0.1.4",
   "command": {
     "version": {
-      "allowBranch": "development"
+      "allowBranch": "master"
     }
   }
 }
