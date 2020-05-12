@@ -13,7 +13,6 @@ export const styles: JssStyle = {
       borderCollapse: 'collapse',
       width: '100%',
       whiteSpace: 'nowrap',
-      marginBottom: 0,
     },
 
     '& th': {
