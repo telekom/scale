@@ -17,6 +17,17 @@ const input = {
   },
 };
 
+const checkBox = {
+  height: 16,
+  width: 16,
+  margin: 2,
+};
+
+const checkBoxCheckedIcon = {
+  height: 12,
+  width: 12,
+};
+
 const defaultTransition = 'all 0.2s ease-in-out';
 
 const animated = (size: string) => ({
@@ -77,6 +88,18 @@ export const styles: JssStyle = {
           borderColor: ({ colors }) => colors.primary.default,
         },
       },
+      '& .input__checkbox-container': {
+        '&:hover, &:focus': {
+          '& .input__checkbox-placeholder': {
+            borderColor: ({ colors }) => colors.primary.default,
+          },
+        },
+      },
+      '& .input__radio': {
+        '&:hover, &:focus': {
+          borderColor: ({ colors }) => colors.primary.default,
+        },
+      },
     },
   },
   'input--variant-static': {
@@ -104,7 +127,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--status-error': {
-    '&.animated .input__label': {
+    '&.animated .input__label, & label': {
       color: ({ colors }) => `${colors.error.default} !important`,
     },
     '& .input__input:focus + .input__label': {
@@ -138,9 +161,80 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input': {
+    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio': {
       opacity: '0.5',
-      cursor: 'not-allowed',
+      cursor: 'not-allowed!important',
+    },
+  },
+  'input--type-checkbox': {
+    display: 'flex',
+    alignItems: 'center',
+    '& .input__checkbox-container': {
+      height: 24,
+      width: 24,
+      display: 'flex',
+      alignItems: 'center',
+      position: 'relative',
+      '& .input__checkbox': {
+        // define a default checkbox
+        top: 0,
+        left: 0,
+        width: '100%',
+        cursor: 'inherit',
+        height: '100%',
+        margin: 0,
+        opacity: 0,
+        padding: 0,
+        zIndex: 1,
+        position: 'absolute',
+      },
+      '& .input__checkbox-placeholder': {
+        height: checkBox.height,
+        width: checkBox.height,
+        border: '1px solid #cecece',
+        margin: checkBox.margin,
+        borderRadius: 4,
+      },
+    },
+  },
+  'input--checked': {
+    '& scale-icon': {
+      height: checkBoxCheckedIcon.height,
+      width: checkBoxCheckedIcon.width,
+      userSelect: 'none',
+      position: 'absolute',
+      left: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
+      top: checkBox.margin + checkBox.width - checkBoxCheckedIcon.width,
+    },
+    '&$input--disabled': {
+      '& .input__checkbox-placeholder': {
+        backgroundColor: '#cdcdcd',
+      },
+    },
+  },
+  'input--type-radio': {
+    display: 'flex',
+    alignItems: 'center',
+    '& .input__radio': {
+      appearance: 'none',
+      height: 16,
+      width: 16,
+      backgroundColor: '#ffffff',
+      border: '1px solid #cecece',
+      borderRadius: '50%',
+      '&:checked, &:focus': {
+        border: ({ colors }) => `6px solid ${colors.primary.default}`,
+        transition: defaultTransition,
+        outline: 'none',
+      },
+    },
+    '&$input--disabled': {
+      '& .input__radio': {
+        '&:checked': {
+          border: '6px solid #cdcdcd',
+          backgroundColor: '#979797',
+        },
+      },
     },
   },
 };

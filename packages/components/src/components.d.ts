@@ -205,6 +205,14 @@ export namespace Components {
          */
         "helperText"?: string;
         /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
           * (optional) Input label
          */
         "label"?: string;
@@ -225,6 +233,10 @@ export namespace Components {
          */
         "placeholder"?: string;
         /**
+          * (optional) radio checked value
+         */
+        "preChecked"?: boolean;
+        /**
           * (optional) Input required
          */
         "required"?: boolean;
@@ -243,7 +255,7 @@ export namespace Components {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
         /**
           * (optional) Input value
          */
@@ -882,6 +894,14 @@ declare namespace LocalJSX {
          */
         "helperText"?: string;
         /**
+          * (optional) Input checkbox checked icon
+         */
+        "icon"?: string;
+        /**
+          * (optional) Input checkbox id
+         */
+        "inputId"?: string;
+        /**
           * (optional) Input label
          */
         "label"?: string;
@@ -909,6 +929,10 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
         /**
+          * (optional) radio checked value
+         */
+        "preChecked"?: boolean;
+        /**
           * (optional) Input required
          */
         "required"?: boolean;
@@ -927,7 +951,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "url";
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
         /**
           * (optional) Input value
          */

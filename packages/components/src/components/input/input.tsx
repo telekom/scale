@@ -1,4 +1,12 @@
-import { Component, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  Event,
+  h,
+  EventEmitter,
+  Host,
+  State,
+} from '@stencil/core';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './input.styles';
@@ -8,7 +16,7 @@ import Base from '../../utils/base-interface';
 
 @Component({
   tag: 'scale-input',
-  shadow: true,
+  shadow: false,
 })
 export class Input implements Base {
   /** (optional) Input text class */
@@ -21,11 +29,13 @@ export class Input implements Base {
     | 'password'
     | 'tel'
     | 'text'
+    | 'checkbox'
+    | 'radio'
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label variant */
-  @Prop() variant?: 'animated' | 'static' = 'animated';
+  @Prop() variant?: 'animated' | 'static';
   /** (optional) Input label */
   @Prop() label?: string = '';
   /** (optional) Input size */
@@ -46,8 +56,14 @@ export class Input implements Base {
   @Prop() required?: boolean;
   /** (optional) Input counter */
   @Prop() counter?: boolean;
+  /** (optional) radio checked value */
+  @Prop() preChecked?: boolean;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
+  /** (optional) Input checkbox id */
+  @Prop() inputId?: string;
+  /** (optional) Input checkbox checked icon */
+  @Prop() icon?: string;
   /** (optional) Input text event changed */
   @Event() changeEvent: EventEmitter<any>;
   @Event() focusEvent: EventEmitter<any>;
@@ -59,11 +75,18 @@ export class Input implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Input', styles) stylesheet: StyleSheet;
 
+  /** (optional) Input checkbox checked */
+  @State() checked?: boolean = this.preChecked;
+  @State() checkedValue?: string;
+
+  componentWillLoad() {}
   componentWillUpdate() {}
   componentDidUnload() {}
 
   handleChange(event) {
     this.value = event.target ? event.target.value : this.value;
+    this.checked = event.target.checked;
+    this.checkedValue = event.target.value;
     this.changeEvent.emit(event);
   }
 
@@ -80,6 +103,60 @@ export class Input implements Base {
   }
 
   render() {
+    if (this.type === 'checkbox') {
+      return (
+        <Host>
+          <style>{this.stylesheet.toString()}</style>
+          <div class={this.getCssClassMap()}>
+            <div class={classNames('input__checkbox-container')}>
+              <input
+                type="checkbox"
+                name={this.name}
+                class={classNames('input__checkbox')}
+                id={this.inputId}
+                onChange={event => this.handleChange(event)}
+                value={this.value}
+                checked={this.checked}
+                disabled={this.disabled}
+              />
+              <span
+                class={classNames('input__checkbox-placeholder')}
+                tabIndex={1}
+              ></span>
+              {!!this.checked && !!this.icon && (
+                <scale-icon path={this.icon}></scale-icon>
+              )}
+            </div>
+            <label class="input__label" htmlFor={this.name}>
+              {this.label}
+            </label>
+          </div>
+        </Host>
+      );
+    }
+
+    if (this.type === 'radio') {
+      return (
+        <Host>
+          <style>{this.stylesheet.toString()}</style>
+          <div class={this.getCssClassMap()}>
+            <input
+              type="radio"
+              name={this.name}
+              class={classNames('input__radio')}
+              id={this.inputId}
+              onChange={event => this.handleChange(event)}
+              value={this.value}
+              checked={this.preChecked}
+              disabled={this.disabled}
+            />
+            <label class="input__label" htmlFor={this.inputId}>
+              {this.label}
+            </label>
+          </div>
+        </Host>
+      );
+    }
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
@@ -101,7 +178,7 @@ export class Input implements Base {
             onKeyDown={event => this.handleKeyDown(event)}
             placeholder={this.placeholder}
             disabled={this.disabled}
-          ></input>
+          />
           {!!this.label && this.variant === 'animated' && (
             <label class="input__label">{this.label}</label>
           )}
@@ -132,6 +209,7 @@ export class Input implements Base {
       classes.input,
       this.customClass && this.customClass,
       this.type && classes[`input--type-${this.type}`],
+      this.checked && classes[`input--checked`],
       this.size && classes[`input--size-${this.size}`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
