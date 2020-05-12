@@ -5,11 +5,26 @@
 
 ## Properties
 
-| Property  | Attribute | Description             | Type                                     | Default       |
-| --------- | --------- | ----------------------- | ---------------------------------------- | ------------- |
-| `styles`  | --        |                         | `StyleSheet<string \| number \| symbol>` | `undefined`   |
-| `variant` | `variant` | (optional) List variant | `string`                                 | `'unordered'` |
+| Property   | Attribute   | Description                     | Type                                     | Default     |
+| ---------- | ----------- | ------------------------------- | ---------------------------------------- | ----------- |
+| `icon`     | `icon`      | (optional) List item icon       | `string`                                 | `undefined` |
+| `iconSize` | `icon-size` | (optional) list Icon size       | `number`                                 | `16`        |
+| `styles`   | --          | (optional) Injected jss styles  | `StyleSheet<string \| number \| symbol>` | `undefined` |
+| `type`     | `type`      | (optional) List item style type | `string`                                 | `undefined` |
 
+
+## Dependencies
+
+### Depends on
+
+- [scale-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  scale-list-item --> scale-icon
+  style scale-list-item fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
