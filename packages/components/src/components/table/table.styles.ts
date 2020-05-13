@@ -45,7 +45,7 @@ export const styles: JssStyle = {
     },
   },
 
-  'table--size-big': {
+  'table--size-default': {
     '& tbody tr td': {
       padding: '16px 8px',
     },

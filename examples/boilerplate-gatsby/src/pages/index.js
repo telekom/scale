@@ -80,7 +80,7 @@ const IndexPage = () => {
         onScaleChange={console.log}
       />
       <h3>Table</h3>
-      <ScaleTable size="regular" showSort>
+      <ScaleTable showSort>
         <table {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (

@@ -42,9 +42,9 @@
   </table>
 </scale-table>
 
-### Big size
+### Small size
 
-<scale-table size="big">
+<scale-table size="small">
   <table>
     <thead>
     <tr>
@@ -84,7 +84,11 @@
     </div>
     <thead>
     <tr>
+      <!--  Pay attention to the usage of `th` `aria-sort` attribute-->
+      <!--  which supports all the native values: `ascending`, `descending`, `none`, `other`.-->
       <th aria-sort="descending" onclick="sortTable(this)">Title</th>
+      <!--  When you want to disable sorting for a particular column,-->
+      <!--  add the `aria-disabled` attribute to the `th`.-->
       <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
       <th onclick="sortTable(this)">Stats</th>
       <th onclick="sortTable(this)" style="text-align: right;">Time</th>
@@ -264,7 +268,7 @@
 | ------------- | -------------- | ------------------------------------- | ---------------------------------------- | ----------- |
 | `customClass` | `custom-class` | (optional) Tag class                  | `string`                                 | `''`        |
 | `showSort`    | `show-sort`    | (optional) Display sort arrows on/off | `boolean`                                | `false`     |
-| `size`        | `size`         | (optional) Visual size                | `"big" \| "small"`                       | `'small'`   |
+| `size`        | `size`         | (optional) Visual size                | `string`                                 | `'default'` |
 | `styles`      | --             | (optional) Injected jss styles        | `StyleSheet<string \| number \| symbol>` | `undefined` |
 
 

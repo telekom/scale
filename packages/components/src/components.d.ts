@@ -454,7 +454,7 @@ export namespace Components {
         /**
           * (optional) Visual size
          */
-        "size"?: "small" | "big";
+        "size"?: "default" | "small" | string;
         /**
           * (optional) Injected jss styles
          */
@@ -1151,7 +1151,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Visual size
          */
-        "size"?: "small" | "big";
+        "size"?: "default" | "small" | string;
         /**
           * (optional) Injected jss styles
          */

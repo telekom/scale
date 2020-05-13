@@ -31,9 +31,9 @@
   </table>
 </scale-table>
 
-### Big size
+### Small size
 
-<scale-table size="big">
+<scale-table size="small">
   <table>
     <thead>
     <tr>

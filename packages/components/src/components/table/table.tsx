@@ -17,7 +17,7 @@ export class Table implements Base {
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
   /** (optional) Visual size */
-  @Prop() size?: 'small' | 'big' = 'small';
+  @Prop() size?: 'default' | 'small' | string = 'default';
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
