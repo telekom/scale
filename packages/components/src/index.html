@@ -81,6 +81,13 @@
       });
     </script>
 
+    <h3>Input with change handler</h3>
+    <scale-input></scale-input>
+
+    <script>
+      document.querySelector('scale-input').addEventListener('scaleChange', console.log);
+    </script>
+
     <h3>Static input with label</h3>
     <scale-input variant="static" label="Text"></scale-input>
 
