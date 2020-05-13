@@ -1,81 +1,4 @@
-# scale-table
-
-
-
-<!-- Auto Generated Below -->
-
-
-## Usage
-
-### Table
-
-### Default
-
-<scale-table>
-  <table>
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Stats</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Jane</td>
-      <td>9.356</td>
-    </tr>
-    <tr>
-      <td>Jack</td>
-      <td>3.356</td>
-    </tr>
-    <tr>
-      <td>John</td>
-      <td>3.356</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <td>Total</td>
-      <td>100.245,10</td>
-    </tr>
-    </tfoot>
-  </table>
-</scale-table>
-
-### Small size
-
-<scale-table size="small">
-  <table>
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Stats</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Jane</td>
-      <td>9.356</td>
-    </tr>
-    <tr>
-      <td>Jack</td>
-      <td>3.356</td>
-    </tr>
-    <tr>
-      <td>John</td>
-      <td>3.356</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <td>Total</td>
-      <td>100.245,10</td>
-    </tr>
-    </tfoot>
-  </table>
-</scale-table>
-
-### Full sorting example
+### Sorting example
 
 <scale-table show-sort="true">
   <table id="sortable-table">
@@ -84,11 +7,7 @@
     </div>
     <thead>
     <tr>
-      <!--  Pay attention to the usage of `th` `aria-sort` attribute-->
-      <!--  which supports all the native values: `ascending`, `descending`, `none`, `other`.-->
       <th aria-sort="descending" onclick="sortTable(this)">Title</th>
-      <!--  When you want to disable sorting for a particular column,-->
-      <!--  add the `aria-disabled` attribute to the `th`.-->
       <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
       <th onclick="sortTable(this)">Stats</th>
       <th onclick="sortTable(this)" style="text-align: right;">Time</th>
@@ -259,19 +178,3 @@
     }
   </script>
 </scale-table>
-
-
-
-## Properties
-
-| Property      | Attribute      | Description                           | Type                                     | Default     |
-| ------------- | -------------- | ------------------------------------- | ---------------------------------------- | ----------- |
-| `customClass` | `custom-class` | (optional) Tag class                  | `string`                                 | `''`        |
-| `showSort`    | `show-sort`    | (optional) Display sort arrows on/off | `boolean`                                | `false`     |
-| `size`        | `size`         | (optional) Visual size                | `string`                                 | `'default'` |
-| `styles`      | --             | (optional) Injected jss styles        | `StyleSheet<string \| number \| symbol>` | `undefined` |
-
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*

@@ -800,111 +800,109 @@
       }
     </script>
 
-    <scale-table variant="regular" show-sort="true">
-      <div slot="header" style="padding: 20px 8px 0px 8px;">
-        <scale-text variant="h5">Table title</scale-text>
-      </div>
-      <div slot="table">
-        <table id="sortable-table">
-          <thead>
-            <tr>
-              <th aria-sort="descending" onclick="sortTable(this)">Title</th>
-              <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
-              <th onclick="sortTable(this)">Stats</th>
-              <th onclick="sortTable(this)" style="text-align: right;">Time</th>
-              <th onclick="sortTable(this)" style="text-align: right;">
-                Euros
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Jane</td>
-              <td>
-                <scale-tag size="small" style="margin-right: 8px"
-                  >Other</scale-tag
-                >
-                <scale-tag size="small" style="margin-right: 8px"
-                  >N/A</scale-tag
-                >
-                <scale-tag size="small">Demo</scale-tag>
-              </td>
-              <td>
-                <div style="display: inline-flex; align-items: center;">
-                  <span style="margin-right: 8px">9.356</span>
-                  <scale-progress-bar
-                    variant="info"
-                    style=" max-width: 120px;"
-                    stroke-width="6"
-                    percentage="90"
-                  />
-                </div>
-              </td>
-              <td style="text-align: right; font-weight: 100;">00:00:20</td>
-              <td style="text-align: right; font-weight: 100;">100.245,10</td>
-            </tr>
-            <tr>
-              <td>Jack</td>
-              <td>
-                <scale-tag size="small" style="margin-right: 8px"
-                  >Other</scale-tag
-                >
-                <scale-tag size="small" style="margin-right: 8px"
-                  >N/A</scale-tag
-                >
-                <scale-tag size="small">Demo</scale-tag>
-              </td>
-              <td>
-                <div style="display: inline-flex; align-items: center;">
-                  <span style="margin-right: 8px">3.356</span>
-                  <scale-progress-bar
-                    variant="info"
-                    style=" max-width: 120px;"
-                    stroke-width="6"
-                    percentage="90"
-                  />
-                </div>
-              </td>
-              <td style="text-align: right; font-weight: 100;">00:00:30</td>
-              <td style="text-align: right; font-weight: 100;">100.345,10</td>
-            </tr>
-            <tr>
-              <td>John</td>
-              <td>
-                <scale-tag size="small" style="margin-right: 8px"
-                  >Other</scale-tag
-                >
-                <scale-tag size="small" style="margin-right: 8px"
-                  >N/A</scale-tag
-                >
-                <scale-tag size="small">Demo</scale-tag>
-              </td>
-              <td>
-                <div style="display: inline-flex; align-items: center;">
-                  <span style="margin-right: 8px">6.356</span>
-                  <scale-progress-bar
-                    variant="info"
-                    style=" max-width: 120px;"
-                    stroke-width="6"
-                    percentage="90"
-                  />
-                </div>
-              </td>
-              <td style="text-align: right; font-weight: 100;">00:00:40</td>
-              <td style="text-align: right; font-weight: 100;">100.445,10</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Total</td>
-              <td />
-              <td />
-              <td style="text-align: right;">00:00:20</td>
-              <td style="text-align: right;">100.245,10</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+    <scale-table size="small" show-sort="true">
+      <table id="sortable-table">
+        <div style="padding: 20px 8px 0px 8px;">
+          <scale-text variant="h5">Table title</scale-text>
+        </div>
+        <thead>
+        <tr>
+          <th aria-sort="descending" onclick="sortTable(this)">Title</th>
+          <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
+          <th onclick="sortTable(this)">Stats</th>
+          <th onclick="sortTable(this)" style="text-align: right;">Time</th>
+          <th onclick="sortTable(this)" style="text-align: right;">
+            Euros
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Jane</td>
+          <td>
+            <scale-tag size="small" style="margin-right: 8px"
+            >Other</scale-tag
+            >
+            <scale-tag size="small" style="margin-right: 8px"
+            >N/A</scale-tag
+            >
+            <scale-tag size="small">Demo</scale-tag>
+          </td>
+          <td>
+            <div style="display: inline-flex; align-items: center;">
+              <span style="margin-right: 8px">9.356</span>
+              <scale-progress-bar
+                      variant="info"
+                      style=" max-width: 120px;"
+                      stroke-width="6"
+                      percentage="90"
+              />
+            </div>
+          </td>
+          <td style="text-align: right; font-weight: 100;">00:00:20</td>
+          <td style="text-align: right; font-weight: 100;">100.245,10</td>
+        </tr>
+        <tr>
+          <td>Jack</td>
+          <td>
+            <scale-tag size="small" style="margin-right: 8px"
+            >Other</scale-tag
+            >
+            <scale-tag size="small" style="margin-right: 8px"
+            >N/A</scale-tag
+            >
+            <scale-tag size="small">Demo</scale-tag>
+          </td>
+          <td>
+            <div style="display: inline-flex; align-items: center;">
+              <span style="margin-right: 8px">3.356</span>
+              <scale-progress-bar
+                      variant="info"
+                      style=" max-width: 120px;"
+                      stroke-width="6"
+                      percentage="90"
+              />
+            </div>
+          </td>
+          <td style="text-align: right; font-weight: 100;">00:00:30</td>
+          <td style="text-align: right; font-weight: 100;">100.345,10</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>
+            <scale-tag size="small" style="margin-right: 8px"
+            >Other</scale-tag
+            >
+            <scale-tag size="small" style="margin-right: 8px"
+            >N/A</scale-tag
+            >
+            <scale-tag size="small">Demo</scale-tag>
+          </td>
+          <td>
+            <div style="display: inline-flex; align-items: center;">
+              <span style="margin-right: 8px">6.356</span>
+              <scale-progress-bar
+                      variant="info"
+                      style=" max-width: 120px;"
+                      stroke-width="6"
+                      percentage="90"
+              />
+            </div>
+          </td>
+          <td style="text-align: right; font-weight: 100;">00:00:40</td>
+          <td style="text-align: right; font-weight: 100;">100.445,10</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td>Total</td>
+          <td />
+          <td />
+          <td style="text-align: right;">00:00:20</td>
+          <td style="text-align: right;">100.245,10</td>
+        </tr>
+        </tfoot>
+      </table>
     </scale-table>
   </body>
 </html>

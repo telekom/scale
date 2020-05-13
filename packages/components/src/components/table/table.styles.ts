@@ -2,11 +2,11 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   table: {
-    '& [slot="table"]': {
-      overflow: 'auto',
-      borderRadius: '4px 4px 0 0',
-      background: ({ colors }) => colors.grey[100],
-    },
+    display: 'block',
+    overflow: 'auto',
+    borderRadius: '4px 4px 0 0',
+    background: ({ colors }) => colors.grey[100],
+
     '& table': {
       fontFamily: ({ typography }) => typography.fontFamily,
       borderSpacing: 0,
@@ -26,6 +26,10 @@ export const styles: JssStyle = {
       padding: '0 8px',
     },
 
+    '& tbody tr td': {
+      padding: '8px',
+    },
+
     '& tfoot, tbody': {
       background: '#FFFFFF',
     },
@@ -35,17 +39,25 @@ export const styles: JssStyle = {
       padding: '8px',
       borderBottom: '1px solid #000000',
     },
+
+    '& .scale-sort-indicator svg': {
+      display: 'none',
+    },
   },
 
-  'table--variant-compressed': {
-    '& td': {
-      padding: '8px',
+  'table--size-default': {
+    '& tbody tr td': {
+      padding: '16px 8px',
     },
   },
 
   'table--sortable': {
     '& th': {
       cursor: 'pointer',
+
+      '& .scale-sort-indicator svg': {
+        display: 'block',
+      },
       '&[aria-disabled="true"]': {
         pointerEvents: 'none',
       },

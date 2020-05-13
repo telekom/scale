@@ -452,13 +452,13 @@ export namespace Components {
          */
         "showSort"?: boolean;
         /**
+          * (optional) Visual size
+         */
+        "size"?: "default" | "small" | string;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
-        /**
-          * (optional) Visual variant
-         */
-        "variant"?: "regular" | "compressed";
     }
     interface ScaleTag {
         /**
@@ -1149,13 +1149,13 @@ declare namespace LocalJSX {
          */
         "showSort"?: boolean;
         /**
+          * (optional) Visual size
+         */
+        "size"?: "default" | "small" | string;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
-        /**
-          * (optional) Visual variant
-         */
-        "variant"?: "regular" | "compressed";
     }
     interface ScaleTag {
         /**

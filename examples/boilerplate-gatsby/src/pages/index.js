@@ -6,7 +6,7 @@ import {
   ScaleTag,
   ScaleTable,
   ScaleInput,
-  ScaleText
+  ScaleText,
 } from "@scaleds/components-react"
 import { Link } from "gatsby"
 import { useTable, useSortBy } from "react-table"
@@ -20,29 +20,37 @@ const IndexPage = () => {
       {
         id: "x01337",
         Header: "First Name",
-        accessor: "firstName"
+        accessor: "firstName",
       },
       {
         id: "x01338",
         Header: "Last Name",
-        accessor: "lastName"
-      }
+        accessor: "lastName",
+      },
     ],
     []
   )
 
-  const data = React.useMemo(() => [{ firstName: "John", lastName: "Doe" }], [])
+  const data = React.useMemo(
+    () => [
+      { firstName: "John", lastName: "Doe" },
+      { firstName: "Jane", lastName: "Doe" },
+      { firstName: "Jack", lastName: "Doe" },
+      { firstName: "Joe", lastName: "Doe" },
+    ],
+    []
+  )
 
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
-    prepareRow
+    prepareRow,
   } = useTable(
     {
       columns,
-      data
+      data,
     },
     useSortBy
   )
@@ -72,11 +80,8 @@ const IndexPage = () => {
         onScaleChange={console.log}
       />
       <h3>Table</h3>
-      <ScaleTable variant="regular">
-        <div slot="header" style={{ padding: "20px 8px 0px 8px" }}>
-          <ScaleText variant="h5">Table title</ScaleText>
-        </div>
-        <table slot="table" {...getTableProps()}>
+      <ScaleTable showSort>
+        <table {...getTableProps()}>
           <thead>
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
@@ -112,6 +117,7 @@ const IndexPage = () => {
               )
             })}
           </tbody>
+          <tfoot />
         </table>
       </ScaleTable>
     </Layout>
