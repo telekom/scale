@@ -80,11 +80,6 @@ describe('Modal', () => {
     expect(element.opened).toBe(false);
   });
 
-  it('should close the modal', () => {
-    element.closeModal();
-    expect(element.opened).toBe(false);
-  });
-
   it('should not open the modal/ should not render, if the modal is already opened', () => {
     element.opened = true;
     expect(element.root).toBeFalsy();

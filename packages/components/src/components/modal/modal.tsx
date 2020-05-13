@@ -1,4 +1,16 @@
-import { Component, Prop, h, Method, Element, Host } from '@stencil/core';
+import '@proyecto26/animatable-component';
+import { ANIMATIONS, KEYFRAMES } from '@proyecto26/animatable-component';
+import {
+  Component,
+  Prop,
+  h,
+  Method,
+  Element,
+  Host,
+  Watch,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import { CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
@@ -12,6 +24,10 @@ import Base from '../../utils/base-interface';
   shadow: true,
 })
 export class Modal implements Base {
+  hasSlotHeader: boolean;
+  hasSlotClose: boolean;
+  hasSlotActions: boolean;
+
   @Element() hostElement: HTMLStencilElement;
   /** (optional) Modal class */
   @Prop() customClass?: string = '';
@@ -27,24 +43,96 @@ export class Modal implements Base {
   /** decorator Jss stylesheet */
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
-  hasSlotHeader: boolean;
-  hasSlotClose: boolean;
-  hasSlotActions: boolean;
+  /** (optional) Close event */
+  @Event() scaleClose: EventEmitter<MouseEvent>;
 
-  /** Modal method: open() */
+  constructor() {
+    this.close = this.close.bind(this);
+  }
+
+  @Watch('opened')
+  watchHandler(opened: boolean) {
+    if (opened && !this.opened) {
+      return this.open();
+    }
+    if (!opened && this.opened) {
+      return this.close();
+    }
+    return null;
+  }
+
+  /** Open the modal */
   @Method()
   async open() {
     this.opened = true;
+    await this.animateComponent('IN');
   }
 
-  closeModal = () => {
-    this.opened = false;
-  };
-
-  /** Modal method: onCloseModal() */
+  /** Close the modal */
   @Method()
-  async close() {
-    this.closeModal();
+  async close(event?: MouseEvent) {
+    await this.animateComponent('OUT');
+    this.opened = false;
+    this.scaleClose.emit(event);
+  }
+
+  waitForChildren(children) {
+    return new Promise(resolve => {
+      const findChildren = () =>
+        children.length
+          ? resolve()
+          : setTimeout(() => {
+              findChildren();
+            });
+
+      findChildren();
+    });
+  }
+
+  async animateComponent(direction: 'IN' | 'OUT') {
+    const options = {
+      duration: 200,
+    };
+    const { FADE, FADE_LEFT } = {
+      IN: {
+        FADE_LEFT: ANIMATIONS.FADE_IN_LEFT,
+        FADE: ANIMATIONS.FADE_IN,
+      },
+      OUT: {
+        FADE_LEFT: ANIMATIONS.FADE_OUT_LEFT,
+        FADE: ANIMATIONS.FADE_OUT,
+      },
+    }[direction];
+
+    await this.waitForChildren(this.hostElement.shadowRoot.children);
+
+    const animationModal = this.hostElement.shadowRoot
+      .querySelector(`.${this.stylesheet.classes.modal__content}`)
+      .animate(KEYFRAMES[FADE_LEFT], options);
+
+    const animationBackdrop = this.hostElement.shadowRoot
+      .querySelector(`.${this.stylesheet.classes.modal__backdrop}`)
+      .animate(KEYFRAMES[FADE], options);
+
+    const modalClassList = this.hostElement.shadowRoot.querySelector(
+      `.${this.stylesheet.classes.modal}`
+    ).classList;
+
+    if (direction === 'IN') {
+      modalClassList.remove(this.stylesheet.classes['modal--hidden']);
+    }
+
+    animationBackdrop.play();
+    animationModal.play();
+
+    return new Promise(resolve => {
+      animationModal.onfinish = function() {
+        if (direction === 'OUT') {
+          modalClassList.add(this.stylesheet.classes['modal--hidden']);
+        }
+        resolve();
+      }.bind(this);
+    });
   }
 
   componentWillLoad() {
@@ -67,36 +155,38 @@ export class Modal implements Base {
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
-        <div class={this.getCssClassMap()}>
-          <div class={classes.modal__backdrop} onClick={this.closeModal}></div>
+        <animatable-component>
+          <div class={this.getCssClassMap()}>
+            <div class={classes.modal__backdrop} onClick={this.close}></div>
 
-          <div class={classes.modal__content}>
-            {this.hasSlotHeader /* istanbul ignore next */ && (
-              <div class={classes.modal__header}>
-                <slot name="header" />
-                <a class={classes.modal__close} onClick={this.closeModal}>
-                  {this.hasSlotClose ? (
-                    <div class={classes['modal__close-icon']}>
-                      <slot name="close" />
-                    </div>
-                  ) : (
-                    'x'
-                  )}
-                </a>
+            <div class={classes.modal__content}>
+              {this.hasSlotHeader /* istanbul ignore next */ && (
+                <div class={classes.modal__header}>
+                  <slot name="header" />
+                  <a class={classes.modal__close} onClick={this.close}>
+                    {this.hasSlotClose ? (
+                      <div class={classes['modal__close-icon']}>
+                        <slot name="close" />
+                      </div>
+                    ) : (
+                      'x'
+                    )}
+                  </a>
+                </div>
+              )}
+
+              <div class={classes.modal__body}>
+                <slot />
               </div>
-            )}
 
-            <div class={classes.modal__body}>
-              <slot />
+              {this.hasSlotActions /* istanbul ignore next */ && (
+                <div class={classes.modal__actions}>
+                  <slot name="modal-actions" />
+                </div>
+              )}
             </div>
-
-            {this.hasSlotActions /* istanbul ignore next */ && (
-              <div class={classes.modal__actions}>
-                <slot name="modal-actions" />
-              </div>
-            )}
           </div>
-        </div>
+        </animatable-component>
       </Host>
     );
   }
@@ -104,6 +194,7 @@ export class Modal implements Base {
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
     return classNames(
+      classes['modal--hidden'],
       classes.modal,
       this.customClass && this.customClass,
       this.size && classes[`modal--size-${this.size}`],

@@ -16,11 +16,18 @@
 | `variant`     | `variant`      | (optional) Modal variant       | `string`                                 | `''`        |
 
 
+## Events
+
+| Event        | Description            | Type                      |
+| ------------ | ---------------------- | ------------------------- |
+| `scaleClose` | (optional) Close event | `CustomEvent<MouseEvent>` |
+
+
 ## Methods
 
-### `close() => Promise<void>`
+### `close(event?: MouseEvent) => Promise<void>`
 
-Modal method: onCloseModal()
+Close the modal
 
 #### Returns
 
@@ -30,7 +37,7 @@ Type: `Promise<void>`
 
 ### `open() => Promise<void>`
 
-Modal method: open()
+Open the modal
 
 #### Returns
 
@@ -38,6 +45,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Depends on
+
+- animatable-component
+
+### Graph
+```mermaid
+graph TD;
+  scale-modal --> animatable-component
+  style scale-modal fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

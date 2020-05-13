@@ -7,6 +7,7 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@scaleds/components',
       proxiesFile: '../components-react/src/components.ts',
+      excludeComponents: ['animatable-component', 'animatable-cube']
     }),
     {
       type: 'dist',

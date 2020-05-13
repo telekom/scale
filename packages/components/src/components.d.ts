@@ -334,15 +334,15 @@ export namespace Components {
     }
     interface ScaleModal {
         /**
-          * Modal method: onCloseModal()
+          * Close the modal
          */
-        "close": () => Promise<void>;
+        "close": (event?: MouseEvent) => Promise<void>;
         /**
           * (optional) Modal class
          */
         "customClass"?: string;
         /**
-          * Modal method: open()
+          * Open the modal
          */
         "open": () => Promise<void>;
         /**
@@ -1042,6 +1042,10 @@ declare namespace LocalJSX {
           * (optional) Modal class
          */
         "customClass"?: string;
+        /**
+          * (optional) Close event
+         */
+        "onScaleClose"?: (event: CustomEvent<MouseEvent>) => void;
         /**
           * (required) Modal opened
          */

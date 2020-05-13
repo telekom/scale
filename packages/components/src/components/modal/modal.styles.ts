@@ -1,6 +1,7 @@
 import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
+  modal: {},
   modal__content: {
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -80,5 +81,8 @@ export const styles: JssStyle = {
     '& $modal__content': {
       top: '15vh',
     },
+  },
+  'modal--hidden': {
+    display: 'none',
   },
 };
