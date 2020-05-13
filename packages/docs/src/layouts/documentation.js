@@ -30,11 +30,6 @@ export default ({ children, location }) => {
     <Fragment>
       <Helmet>
         <title>{data.title.siteMetadata.title}</title>
-        <script
-          type="module"
-          src="/dist/scale-components/scale-components.esm.js"
-        ></script>
-        <script nomodule="" src="/dist/scale-components.js"></script>
       </Helmet>
       <main className="main">
         <div className="main__sidebar">
