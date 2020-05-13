@@ -32,12 +32,12 @@
 
 ## Events
 
-| Event          | Description                         | Type               |
-| -------------- | ----------------------------------- | ------------------ |
-| `scaleBlur`    |                                     | `CustomEvent<any>` |
-| `scaleChange`  | (optional) Input text event changed | `CustomEvent<any>` |
-| `scaleFocus`   |                                     | `CustomEvent<any>` |
-| `scaleKeyDown` |                                     | `CustomEvent<any>` |
+| Event          | Description                         | Type                         |
+| -------------- | ----------------------------------- | ---------------------------- |
+| `scaleBlur`    | (optional) Input blur event         | `CustomEvent<FocusEvent>`    |
+| `scaleChange`  | (optional) Input text event changed | `CustomEvent<InputEvent>`    |
+| `scaleFocus`   | (optional) Input focus event        | `CustomEvent<FocusEvent>`    |
+| `scaleKeyDown` | (optional) Input keyDown event      | `CustomEvent<KeyboardEvent>` |
 
 
 ## Dependencies

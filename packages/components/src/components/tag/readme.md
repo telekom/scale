@@ -45,9 +45,9 @@
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `scaleClose` |             | `CustomEvent<any>` |
+| Event        | Description                       | Type                      |
+| ------------ | --------------------------------- | ------------------------- |
+| `scaleClose` | (optional) Close icon click event | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies

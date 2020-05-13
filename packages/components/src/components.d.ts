@@ -917,13 +917,22 @@ declare namespace LocalJSX {
           * (optional) Input name
          */
         "name"?: string;
-        "onScaleBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Input blur event
+         */
+        "onScaleBlur"?: (event: CustomEvent<FocusEvent>) => void;
         /**
           * (optional) Input text event changed
          */
-        "onScaleChange"?: (event: CustomEvent<any>) => void;
-        "onScaleFocus"?: (event: CustomEvent<any>) => void;
-        "onScaleKeyDown"?: (event: CustomEvent<any>) => void;
+        "onScaleChange"?: (event: CustomEvent<InputEvent>) => void;
+        /**
+          * (optional) Input focus event
+         */
+        "onScaleFocus"?: (event: CustomEvent<FocusEvent>) => void;
+        /**
+          * (optional) Input keyDown event
+         */
+        "onScaleKeyDown"?: (event: CustomEvent<KeyboardEvent>) => void;
         /**
           * (optional) Input placeHolder
          */
@@ -1165,7 +1174,10 @@ declare namespace LocalJSX {
           * (optional) Tag href
          */
         "href"?: string;
-        "onScaleClose"?: (event: CustomEvent<any>) => void;
+        /**
+          * (optional) Close icon click event
+         */
+        "onScaleClose"?: (event: CustomEvent<MouseEvent>) => void;
         /**
           * (optional) Tag size
          */

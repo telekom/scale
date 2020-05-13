@@ -65,10 +65,13 @@ export class Input implements Base {
   /** (optional) Input checkbox checked icon */
   @Prop() icon?: string;
   /** (optional) Input text event changed */
-  @Event() scaleChange: EventEmitter<any>;
-  @Event() scaleFocus: EventEmitter<any>;
-  @Event() scaleBlur: EventEmitter<any>;
-  @Event() scaleKeyDown: EventEmitter<any>;
+  @Event() scaleChange: EventEmitter<InputEvent>;
+  /** (optional) Input focus event */
+  @Event() scaleFocus: EventEmitter<FocusEvent>;
+  /** (optional) Input blur event */
+  @Event() scaleBlur: EventEmitter<FocusEvent>;
+  /** (optional) Input keyDown event */
+  @Event() scaleKeyDown: EventEmitter<KeyboardEvent>;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;

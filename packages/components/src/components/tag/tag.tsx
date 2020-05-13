@@ -31,8 +31,8 @@ export class Tag implements Base {
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('Tag', styles) stylesheet: StyleSheet;
-
-  @Event() scaleClose: EventEmitter<any>;
+  /** (optional) Close icon click event */
+  @Event() scaleClose: EventEmitter<MouseEvent>;
 
   componentWillUpdate() {}
   componentDidUnload() {}
