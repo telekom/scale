@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table should match snapshot 1`] = `
-<scale-table class="table-0-0-4">
+<scale-table class="table--size-default-0-0-5 table-0-0-4">
   <!---->
   <style>
     .table-0-0-4 {
@@ -41,8 +41,8 @@ exports[`Table should match snapshot 1`] = `
 .table-0-0-4 .scale-sort-indicator svg {
   display: none;
 }
-.table--size-big-0-0-5 {}
-.table--size-big-0-0-5 tbody tr td {
+.table--size-default-0-0-5 {}
+.table--size-default-0-0-5 tbody tr td {
   padding: 16px 8px;
 }
 .table--sortable-0-0-6 {}
