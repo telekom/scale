@@ -12,7 +12,7 @@ const App: React.FC = () => (
     <h3>Card</h3>
       <ScaleCard>A title</ScaleCard>
     <h3>Tag</h3>
-      <ScaleTag dismissable size="small" onClose={(event: any) => console.log(event)}>A title</ScaleTag>
+      <ScaleTag dismissable size="small" onScaleClose={(event: any) => console.log(event)}>A title</ScaleTag>
   </div>
 );
 
