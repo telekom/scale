@@ -15,6 +15,7 @@ class Base {
   _variant?: string;
   _points: any;
   _isClosed?: boolean;
+  _isVisible: boolean = true;
 
   constructor({id}: any = {}) {
     this._class = null;
@@ -100,7 +101,7 @@ class Base {
       isFlippedHorizontal: false,
       isFlippedVertical: false,
       isLocked: this._isLocked,
-      isVisible: true,
+      isVisible: this._isVisible,
       layerListExpandedType: 0,
       name: this._name || this._class,
       nameIsFixed: false,

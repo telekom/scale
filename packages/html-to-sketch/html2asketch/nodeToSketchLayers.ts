@@ -15,7 +15,7 @@ import { isNodeVisible, isTextVisible } from "./helpers/visibility";
 import TextAttributedString from "./model/textAttributedString";
 
 import * as SvgPath from "svgpath";
-import nodeTreeToSketchGroup from "./nodeTreeToSketchGroup";
+import Ref from "./model/ref";
 
 // Converts quadratic bézier curves to cubic bézier curves
 //
@@ -580,7 +580,7 @@ function applyStyle(element: HTMLElement, style: CSSStyleDeclaration) {
   }
 }
 
-export default function nodeToSketchLayers(node: HTMLElement, options: any) {
+export default function nodeToSketchLayers(node: HTMLElement, group: Group, options: any) {
   if (CSSRules === undefined) {
     CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
   }
@@ -743,6 +743,7 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
     if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
       return layers;
     }
+    (node as any).shapeGroup = group;
 
     if (!isSVG && node.ownerSVGElement) {
       // Use the SVG viewbox as the frame for SVG elements.
@@ -762,15 +763,6 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
       clip._points = getRectanglePoints(0);
       clip._isClosed = true;
       layers.push(clip);
-      // Extract the SVG defs and store them on the SVG element.
-      // Is there any better way to store parsing stack state?
-      // 
-      const defsElements = node.getElementsByTagName('defs');
-      if (defsElements.length > 0) {
-        const defsArray = Array.from(defsElements);
-        (node as any).defs = defsArray.map(defs => ({id: defs.id, group: nodeTreeToSketchGroup(defs as unknown as HTMLElement, {})}));
-        defsArray.forEach((defs:any) => defs.style.display = 'none');
-      }
     }
     const parseStyleNumber = (s:string = '', defaultValue:number = 0) => {
       let num = parseFloat(s);
@@ -908,6 +900,9 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
           style.addColorFill(anyStyles.fill, parseStyleNumber(anyStyles.fillOpacity, 1));
         }
         style._windingRule = anyStyles.fillRule === 'nonzero' ? 0 : 1;
+        if (node.getAttribute('clip-rule') !== null) {
+          style._windingRule = node.getAttribute('clip-rule') === 'nonzero' ? 0 : 1;
+        }
       }
       shapeGroup._x = bbox.x;
       shapeGroup._y = bbox.y;
@@ -925,8 +920,26 @@ export default function nodeToSketchLayers(node: HTMLElement, options: any) {
         sg._isClosed = segment.isClosed;
         shapeGroup._layers.push(sg);
       });
+      layers.push(shapeGroup);
+    }
 
-      return [shapeGroup];
+    if (anyStyles.clipPath && anyStyles.clipPath !== 'none') {
+      const clipPath = anyStyles.clipPath.trim();
+      if (/^url\s*\(/.test(clipPath)) {
+        const selector = clipPath.replace(/(^url\s*\(\s*["']?)|(["']?\s*\)$)/g, '');
+        let clipElement = node.ownerSVGElement?.querySelector(selector.replace(/"/g, ''));
+        while (clipElement instanceof SVGUseElement) {
+          const href = clipElement.href.baseVal;
+          clipElement = node.ownerSVGElement?.querySelector(href.trim().replace(/"/g, ''));
+        }
+        if (clipElement) {
+          group._layers.unshift(new Ref(clipElement.shapeGroup, group, true));
+        }
+      }
+    }
+
+    if (pathSegments) {
+      return layers;
     }
   }
 
