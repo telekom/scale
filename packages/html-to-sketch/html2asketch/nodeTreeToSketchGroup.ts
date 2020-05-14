@@ -25,9 +25,10 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;
 
-  // Collect layers for the node level itself
-  const layers = nodeToSketchLayers(node, {...options, layerOpacity: false}) || [];
+  const group = new Group({x: left, y: top, width, height});
 
+  // Collect layers for the node level itself
+  const layers = nodeToSketchLayers(node, group, {...options, layerOpacity: false}) || [];
 
   const processChild = (childNode: HTMLElement) => {
     if (childNode.shadowRoot) {
@@ -75,7 +76,6 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   const styles = getComputedStyle(node);
   const {opacity} = styles;
 
-  const group = new Group({x: left, y: top, width, height});
   const groupStyle = new Style();
 
   groupStyle.addOpacity(opacity);
@@ -109,6 +109,10 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // set group name from node name
   else {
     group.setName(`${node.nodeName.toLowerCase()}`);
+  }
+
+  if (node instanceof SVGClipPathElement || node instanceof SVGDefsElement) { // Hide clipPaths
+    group._isVisible = false;
   }
 
   return group;
