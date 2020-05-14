@@ -18,7 +18,7 @@ This repository uses `lerna` and `typescript`
 cd path-to/folder-name
 git clone git@github.com:telekom/scale.git
 cd scale
-git checkout development
+git checkout master
 ```
 
 #### 2. Install dependencies
