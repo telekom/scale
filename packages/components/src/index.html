@@ -62,12 +62,101 @@
 
   <body>
     <h1>Components</h1>
-    <h3>Tag</h3>
-
-    <button id="change">Change</button>
+    <h3>Checkbox</h3>
+    <scale-input
+      input-id="checkbox"
+      type="checkbox"
+      value="1"
+      label="checkbox"
+      icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+      name="nameOfCheckbox"
+    ></scale-input>
+    <scale-input
+      input-id="checkbox"
+      type="checkbox"
+      value="2"
+      label="another checkbox"
+      icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+      name="nameOfCheckbox"
+    ></scale-input>
+    <scale-input
+      input-id="checkbox"
+      type="checkbox"
+      value="3"
+      disabled="true"
+      label="disabled checkbox"
+      name="nameOfCheckbox"
+    ></scale-input>
+    <scale-input
+      input-id="checkbox"
+      type="checkbox"
+      value="4"
+      status="error"
+      label="checkbox with error"
+      icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+      name="nameOfCheckbox"
+    ></scale-input>
+    <scale-input
+      input-id="checkbox"
+      type="checkbox"
+      value="5"
+      label="disabled checked checkbox"
+      pre-checked="true"
+      disabled="true"
+      icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
+      name="nameOfCheckbox"
+    ></scale-input>
+  <h3>Radio input</h3>
+    <scale-input
+      type="radio"
+      value="1"
+      label="One"
+      name="radioSelect"
+      input-id="choiceOne"
+    ></scale-input>
+    <scale-input
+      type="radio"
+      value="2"
+      label="Two"
+      name="radioSelect"
+      input-id="choiceTwo"
+    ></scale-input>
+    <scale-input
+      type="radio"
+      value="3"
+      label="Three"
+      name="radioSelect"
+      input-id="choiceThree"
+    ></scale-input>
+    <scale-input
+      type="radio"
+      value="3"
+      label="disabled radio"
+      name="radioSelect"
+      input-id="choiceFour"
+      disabled="true"
+    ></scale-input>
+    <scale-input
+      type="radio"
+      value="4"
+      label="radio with error"
+      name="radioSelect"
+      input-id="choiceFive"
+      status="error"
+    ></scale-input>
+    <scale-input
+      type="radio"
+      value="5"
+      label="disabled checked radio"
+      name="radioSelect"
+      disabled="true"
+      pre-checked="true"
+      input-id="choiceSix"
+    ></scale-input>
 
     <h3>Default input</h3>
     <scale-input id="change-input"></scale-input>
+    <button id="change">Change</button>
 
     <script>
       document.getElementById('change').addEventListener('click', () => {
@@ -166,6 +255,7 @@
     <h3>Input small animated</h3>
     <scale-input label="Name" size="small"></scale-input>
 
+    <h3>Tag</h3>
     <scale-tag>default</scale-tag>
     <h3>Tag-primary</h3>
     <scale-tag variant="primary">Primary</scale-tag>
