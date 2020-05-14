@@ -11,8 +11,8 @@ exports[`Modal should match snapshot when opened 1`] = `
 <scale-modal opened="">
   <mock:shadow-root>
     <style>
-      .modal-0-0-82 {}
-.modal__content-0-0-83 {
+      .modal-0-0-86 {}
+.modal__content-0-0-87 {
   top: 10vh;
   left: 25%;
   color: #333;
@@ -34,7 +34,7 @@ exports[`Modal should match snapshot when opened 1`] = `
   pointer-events: none;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-84 {
+.modal__backdrop-0-0-88 {
   top: 0;
   left: 0;
   width: 100%;
@@ -45,7 +45,7 @@ exports[`Modal should match snapshot when opened 1`] = `
   background: rgba(0, 0, 0, 0.75);
   pointer-events: none;
 }
-.modal__header-0-0-85 {
+.modal__header-0-0-89 {
   color: #333;
   margin: 0;
   display: flex;
@@ -54,52 +54,53 @@ exports[`Modal should match snapshot when opened 1`] = `
   border-bottom: 1px solid #333;
   justify-content: space-between;
 }
-.modal__header-0-0-85 ::slotted(*) {
+.modal__header-0-0-89 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-86 {
+.modal__body-0-0-90 {
   display: flex;
   padding: 1rem 0;
   justify-content: space-between;
 }
-.modal__close-0-0-87 {
+.modal__close-0-0-91 {
   cursor: pointer;
   height: 16px;
   opacity: 0.5;
   font-size: 1rem;
 }
-.modal__close-0-0-87:hover {
+.modal__close-0-0-91:hover {
   opacity: 1;
 }
-.modal__actions-0-0-88 {
+.modal__actions-0-0-92 {
   display: flex;
   padding: 1rem 0;
   border-top: 1px solid #ccc;
   justify-content: flex-end;
 }
-.modal__actions-0-0-88 t-button {
+.modal__actions-0-0-92 t-button {
   margin: 0.25rem;
 }
-.modal--opened-0-0-89 {}
-.modal--opened-0-0-89 .modal__backdrop-0-0-84, .modal--opened-0-0-89 .modal__content-0-0-83 {
+.modal--opened-0-0-93 {}
+.modal--opened-0-0-93 .modal__backdrop-0-0-88, .modal--opened-0-0-93 .modal__content-0-0-87 {
   opacity: 1;
   pointer-events: all;
 }
-.modal--opened-0-0-89 .modal__content-0-0-83 {
+.modal--opened-0-0-93 .modal__content-0-0-87 {
   top: 15vh;
 }
-.modal--hidden-0-0-90 {
+.modal--hidden-0-0-94 {
   display: none;
 }
+.animations-0-0-95 {}
     </style>
     <animatable-component>
-      <div class="modal--hidden-0-0-90 modal--opened-0-0-89 modal-0-0-82">
-        <div class="modal__backdrop-0-0-84"></div>
-        <div class="modal__content-0-0-83">
-          <div class="modal__body-0-0-86">
+      <div class="modal--hidden-0-0-94 modal--opened-0-0-93 modal-0-0-86">
+        <div class="modal__backdrop-0-0-88"></div>
+        <div class="modal__content-0-0-87">
+          <div class="modal__body-0-0-90">
             <slot></slot>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import '@proyecto26/animatable-component';
-import { ANIMATIONS, KEYFRAMES } from '@proyecto26/animatable-component';
+import { KEYFRAMES } from '@proyecto26/animatable-component';
 import {
   Component,
   Prop,
@@ -90,29 +90,17 @@ export class Modal implements Base {
   }
 
   async animateComponent(direction: 'IN' | 'OUT') {
-    const options = {
-      duration: 200,
-    };
-    const { FADE, FADE_LEFT } = {
-      IN: {
-        FADE_LEFT: ANIMATIONS.FADE_IN_LEFT,
-        FADE: ANIMATIONS.FADE_IN,
-      },
-      OUT: {
-        FADE_LEFT: ANIMATIONS.FADE_OUT_LEFT,
-        FADE: ANIMATIONS.FADE_OUT,
-      },
-    }[direction];
-
     await this.waitForChildren(this.hostElement.shadowRoot.children);
+    // @ts-ignore getRule will not return the raw value so I'm using untyped properties to get to it.
+    const { options, effects } = this.stylesheet.rules.raw.animations;
 
     const animationModal = this.hostElement.shadowRoot
       .querySelector(`.${this.stylesheet.classes.modal__content}`)
-      .animate(KEYFRAMES[FADE_LEFT], options);
+      .animate(KEYFRAMES[effects[direction].modalContent], options);
 
     const animationBackdrop = this.hostElement.shadowRoot
       .querySelector(`.${this.stylesheet.classes.modal__backdrop}`)
-      .animate(KEYFRAMES[FADE], options);
+      .animate(KEYFRAMES[effects[direction].backDrop], options);
 
     const modalClassList = this.hostElement.shadowRoot.querySelector(
       `.${this.stylesheet.classes.modal}`

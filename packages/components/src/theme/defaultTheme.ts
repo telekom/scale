@@ -1,4 +1,5 @@
 import { Theme } from './interfaces';
+import { ANIMATIONS } from '@proyecto26/animatable-component';
 
 export const defaultTheme: Theme = {
   colors: {
@@ -178,5 +179,22 @@ export const defaultTheme: Theme = {
       'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
     separator:
       'M8.306 22.679a1.137 1.137 0 01-.061-1.481l.06-.07 7.741-8.126-7.74-8.13a1.137 1.137 0 01-.061-1.481l.06-.07c.387-.406 1-.427 1.411-.064l.066.064L19 13.001 9.782 22.68a1.01 1.01 0 01-1.476 0z',
+  },
+  components: {
+    Modal: {
+      animations: {
+        options: { duration: 200 },
+        effects: {
+          IN: {
+            modalContent: ANIMATIONS.FADE_IN_TOP,
+            backDrop: ANIMATIONS.FADE_IN,
+          },
+          OUT: {
+            modalContent: ANIMATIONS.FADE_OUT_UP,
+            backDrop: ANIMATIONS.FADE_OUT,
+          },
+        },
+      },
+    },
   },
 };
