@@ -7,6 +7,14 @@
     <scale-button>Click!</scale-button>
     <h3>Card</h3>
     <scale-card>A tile</scale-card>
+
+    <span>The message is:</span>
+    <p>{{ message }}</p>
+    <br />
+    <scale-input
+      @scaleChange="handleChange"
+      placeholder="add multiple lines"
+    ></scale-input>
   </div>
 </template>
 
@@ -14,12 +22,22 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "app"
+  name: "app",
+  data: () => ({
+    message: "",
+  }),
+  methods: {
+    // @ts-ignore
+    handleChange: function (event) {
+      this.message = event.target.value;
+    },
+  },
 });
 </script>
 
 <style>
-:root {}
+:root {
+}
 
 html {
   margin: 0;
