@@ -13,6 +13,9 @@ class Base {
   _hasClippingMask: any;
   _isLocked: any;
   _variant?: string;
+  _points: any;
+  _isClosed?: boolean;
+  _isVisible: boolean = true;
 
   constructor({id}: any = {}) {
     this._class = null;
@@ -98,7 +101,7 @@ class Base {
       isFlippedHorizontal: false,
       isFlippedVertical: false,
       isLocked: this._isLocked,
-      isVisible: true,
+      isVisible: this._isVisible,
       layerListExpandedType: 0,
       name: this._name || this._class,
       nameIsFixed: false,
@@ -111,6 +114,10 @@ class Base {
       hasClippingMask: this._hasClippingMask,
     };
 
+    if (this._isClosed !== undefined) {
+      result.isClosed = this._isClosed;
+    }
+
     if (this._userInfo) {
       result.userInfo = this._userInfo;
     }
@@ -121,6 +128,10 @@ class Base {
 
     if (this._variant) {
       result.variant = this._variant;
+    }
+
+    if (this._points) {
+      result.points = this._points;
     }
 
     return result;

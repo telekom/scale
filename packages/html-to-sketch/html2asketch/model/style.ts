@@ -7,6 +7,9 @@ class Style {
   _shadows: any;
   _innerShadows: any;
   _opacity: any;
+  _borderOptions: any;
+  _miterLimit: number = 10;
+  _windingRule: number = 0;
 
   constructor() {
     this._fills = [];
@@ -16,8 +19,8 @@ class Style {
     this._opacity = '1';
   }
 
-  addColorFill(color: any) {
-    this._fills.push(makeColorFill(color));
+  addColorFill(color: any, alpha: number = 1) {
+    this._fills.push(makeColorFill(color, alpha));
   }
 
   addGradientFill({angle, stops}: any) {
@@ -49,17 +52,44 @@ class Style {
     });
   }
 
+  addSVGGradientFill(fill: any, alpha: number = 1) {
+    this._fills.push({
+      _class: 'fill',
+      isEnabled: true,
+      fillType: 1,
+      gradient: {
+        _class: 'gradient',
+        ellipseLength: 0,
+        from: `{${fill.gradient.from.x}, ${fill.gradient.from.y}}`,
+        gradientType: fill.gradient.gradientType,
+        shouldSmoothenOpacity: false,
+        stops: fill.gradient.stops.map(({color, position}:{color:string,position:number}) => {
+          return {
+            _class: 'gradientStop',
+            color: makeColorFromCSS(color, alpha),
+            position,
+          }
+        }),
+        to: `{${fill.gradient.to.x}, ${fill.gradient.to.y}}`,
+      },
+      noiseIndex: 0,
+      noiseIntensity: 0,
+      patternFillType: 1,
+      patternTileScale: 1,
+    });
+  }
+
   addImageFill(image: any) {
     const fill = makeImageFill(image);
 
     this._fills.push(fill);
   }
 
-  addBorder({color, thickness}: any) {
+  addBorder({color, thickness, alpha}: {color:any, thickness:number, alpha?:number}) {
     this._borders.push({
       _class: 'border',
       isEnabled: true,
-      color: makeColorFromCSS(color),
+      color: makeColorFromCSS(color, alpha),
       fillType: 0,
       position: 1,
       thickness,
@@ -109,10 +139,12 @@ class Style {
       _class: 'style',
       fills: this._fills,
       borders: this._borders,
+      borderOptions: this._borderOptions,
       shadows: this._shadows,
       innerShadows: this._innerShadows,
       endDecorationType: 0,
-      miterLimit: 10,
+      miterLimit: this._miterLimit,
+      windingRule: this._windingRule,
       startDecorationType: 0,
       contextSettings: {
         _class: 'graphicsContextSettings',

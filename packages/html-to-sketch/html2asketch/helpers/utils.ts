@@ -30,11 +30,11 @@ export const makeColorFromCSS = (input: any, alpha: number = 1) => {
 };
 
 // Solid color fill
-export const makeColorFill = (color: any) => {
+export const makeColorFill = (color: any, alpha: number = 1) => {
   return {
     _class: 'fill',
     isEnabled: true,
-    color: makeColorFromCSS(color),
+    color: makeColorFromCSS(color, alpha),
     fillType: 0,
     noiseIndex: 0,
     noiseIntensity: 0,

@@ -16,6 +16,8 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
   display,
   clip,
 }: any = getComputedStyle(node)) {
+  if (node instanceof SVGClipPathElement) return true;
+  
   // skip node when display is set to none for itself or an ancestor
   // helps us catch things such as <noscript>
   // HTMLSlotElement has a null offsetParent, but should still be visible
@@ -44,6 +46,10 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
 
   // node is detached from the DOM
   if (!node.isConnected) {
+    return false;
+  }
+
+  if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
     return false;
   }
 
