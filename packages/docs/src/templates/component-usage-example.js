@@ -15,8 +15,9 @@ const iframeMarkup = (component) => `
       overflow: hidden;
     }
   </style>
-  <script src="/dist/scale-components/scale-components.js"></script>
-  <script src="/dist/theme.iife.js"></script>
+  <script type="module" src="../../scale-components/scale-components.esm.js"></script>
+  <script nomodule="" src="../../scale-components/scale-components.js"></script>
+  <script src="../../theme.iife.js"></script>
   </head>
   <body>
     ${component}

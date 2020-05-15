@@ -3,7 +3,16 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import "./src/assets/css/prism-ghcolors.css"
+import "prismjs"
+import "prismjs/themes/prism.css"
+import {
+  defineCustomElements,
+  applyPolyfills,
+} from "@scaleds/components/loader"
+
+applyPolyfills().then(() => {
+  defineCustomElements(window)
+})
 
 import wrapWithProvider from "./src/layouts/providers"
 

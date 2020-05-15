@@ -5302,6 +5302,13 @@ create-react-context@0.3.0:
     gud "^1.0.0"
     warning "^4.0.3"
 
+cross-env@^5.0.5:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.1.tgz#b2c76c1ca7add66dc874d11798466094f551b34d"
+  integrity sha512-1yHhtcfAd1r4nwQgknowuUNfIT9E8dOMMspC36g45dN+iD1blloi7xp8X/xAIDnjHWyt1uQ8PHk2fkNaym7soQ==
+  dependencies:
+    cross-spawn "^6.0.5"
+
 cross-fetch@2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.2.tgz#a47ff4f7fc712daba8f6a695a11c948440d45723"
@@ -7645,6 +7652,14 @@ gatsby-page-utils@^0.2.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-copy@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-copy/-/gatsby-plugin-copy-0.0.1.tgz#6fa69ba2b5f8563695fb3b719a84efd55717c442"
+  integrity sha512-nDtfH3crWKZFhdDmfPeSfzY8x036OtY2P+kJMPFUo5WlC1n3Kd4U6NZO+tWOYbFporBT/GHmdoRAObmCtHcIlw==
+  dependencies:
+    cross-env "^5.0.5"
+    fs-extra "^4.0.2"
+
 gatsby-plugin-manifest@^2.2.27:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.2.tgz#0a9605a778a8e30ce047b9b3701031b9bde61d6b"
@@ -7802,15 +7817,6 @@ gatsby-recipes@^0.1.15:
     urql "^1.9.7"
     ws "^7.2.5"
     xstate "^4.9.1"
-
-gatsby-remark-prismjs@^3.3.25:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.5.1.tgz#d71d3a180653f1182531175054e7256418cab2b6"
-  integrity sha512-Sx4aCCil916OVrDz0ZxduHT+hp2KEXxjpyV6UukvZ9q3sszz4u59uhtW4IUftA5OrFF4JWYjB73A6Do2BEZGKg==
-  dependencies:
-    "@babel/runtime" "^7.9.6"
-    parse-numeric-range "^0.0.2"
-    unist-util-visit "^1.4.1"
 
 gatsby-source-filesystem@^2.1.36:
   version "2.3.1"
@@ -13104,11 +13110,6 @@ parse-latin@^4.0.0:
     nlcst-to-string "^2.0.0"
     unist-util-modify-children "^1.0.0"
     unist-util-visit-children "^1.0.0"
-
-parse-numeric-range@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/parse-numeric-range/-/parse-numeric-range-0.0.2.tgz#b4f09d413c7adbcd987f6e9233c7b4b210c938e4"
-  integrity sha1-tPCdQTx6282Yf26SM8e0shDJOOQ=
 
 parse-passwd@^1.0.0:
   version "1.0.0"
