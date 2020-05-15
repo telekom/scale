@@ -106,7 +106,7 @@
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
       name="nameOfCheckbox"
     ></scale-input>
-  <h3>Radio input</h3>
+    <h3>Radio input</h3>
     <scale-input
       type="radio"
       value="1"
@@ -174,7 +174,9 @@
     <scale-input></scale-input>
 
     <script>
-      document.querySelector('scale-input').addEventListener('scaleChange', console.log);
+      document
+        .querySelector('scale-input')
+        .addEventListener('scaleChange', console.log);
     </script>
 
     <h3>Static input with label</h3>
@@ -386,7 +388,9 @@
     <script>
       document
         .getElementById('tag-dismissable')
-        .addEventListener('scaleClose', event => console.log('Tag closed', event));
+        .addEventListener('scaleClose', (event) =>
+          console.log('Tag closed', event)
+        );
     </script>
 
     <h3>List ordered</h3>
@@ -422,12 +426,18 @@
       >
       <scale-list-item
         icon-size="16"
-        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z" id="Path" fill="#000000" fill-rule="nonzero"
+        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z"
+        id="Path"
+        fill="#000000"
+        fill-rule="nonzero"
         >Microsoft</scale-list-item
       >
       <scale-list-item
         icon-size="16"
-        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z" id="Path" fill="#000000" fill-rule="nonzero"
+        icon="M6.79280818,20.9472559 C6.4228823,20.577241 6.40348086,19.9894966 6.73455424,19.5966427 L6.79297827,19.5330423 L14.206547,12.1215935 L6.79289324,4.7071068 C6.42292284,4.33713642 6.40345071,3.74939435 6.73447683,3.35650062 L6.7928932,3.29289324 C7.16286358,2.92292284 7.75060565,2.90345071 8.14349938,3.23447683 L8.20710676,3.2928932 L17.0353925,12.1211785 L8.20702173,20.9474259 C7.81645047,21.3379033 7.1832855,21.3378271 6.79280818,20.9472559 Z"
+        id="Path"
+        fill="#000000"
+        fill-rule="nonzero"
         >Google</scale-list-item
       >
     </scale-list>
@@ -448,13 +458,41 @@
     <scale-button>Hello</scale-button>
 
     <h3>Button variants</h3>
-    <scale-button variant="primary" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
-    <scale-button variant="secondary" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
-    <scale-button variant="error" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
-    <scale-button variant="warning" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
-    <scale-button variant="info" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
-    <scale-button variant="success" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
-    <scale-button variant="custom" icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z">Hello</scale-button>
+    <scale-button
+      variant="primary"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
+    <scale-button
+      variant="secondary"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
+    <scale-button
+      variant="error"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
+    <scale-button
+      variant="warning"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
+    <scale-button
+      variant="info"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
+    <scale-button
+      variant="success"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
+    <scale-button
+      variant="custom"
+      icon-before="M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z"
+      >Hello</scale-button
+    >
 
     <h3>Button icon Before</h3>
     <scale-button
@@ -485,7 +523,7 @@
     <scale-divider></scale-divider>
 
     <h3>Divider vertical</h3>
-    <div style="height: 100px; margin: 1px">
+    <div style="height: 100px; margin: 1px;">
       <scale-divider vertical="true"></scale-divider>
     </div>
 
@@ -706,7 +744,13 @@
     <script>
       const showModal = document.querySelector('#show-modal');
       const modal = document.getElementById('modal-default');
-      showModal.addEventListener('click', () => !modal.opened && modal.open());
+      showModal.addEventListener('click', () => {
+        modal.setAttribute('opened', 'true');
+      });
+
+      modal.addEventListener('scaleClose', () => {
+        modal.removeAttribute('opened');
+      });
     </script>
     <h3>Modal without header</h3>
     <scale-button id="show-modal-without-header">
@@ -720,10 +764,12 @@
       const modalWithoutHeader = document.getElementById(
         'modal-without-header'
       );
-      showModalWithoutHeader.addEventListener(
-        'click',
-        () => !modalWithoutHeader.opened && modalWithoutHeader.open()
-      );
+      showModalWithoutHeader.addEventListener('click', () => {
+        modalWithoutHeader.setAttribute('opened', 'true');
+      });
+      modalWithoutHeader.addEventListener('scaleClose', () => {
+        modalWithoutHeader.removeAttribute('opened');
+      });
     </script>
 
     <h3>Modal with header and buttons</h3>
@@ -747,17 +793,18 @@
       const modalWithHeaderAndButtons = document.getElementById(
         'modal-with-header-and-buttons'
       );
-      const cancelModal = document.getElementById('cancel-btn');
 
-      showModalWithHeaderAndButtons.addEventListener(
-        'click',
-        () =>
-          !modalWithHeaderAndButtons.opened && modalWithHeaderAndButtons.open()
-      );
+      showModalWithHeaderAndButtons.addEventListener('click', () => {
+        modalWithHeaderAndButtons.setAttribute('opened', 'true');
+      });
 
-      cancelModal.addEventListener('click', () =>
-        modalWithHeaderAndButtons.close()
-      );
+      modalWithHeaderAndButtons.addEventListener('scaleClose', () => {
+        modalWithHeaderAndButtons.removeAttribute('opened');
+      });
+
+      document.getElementById('cancel-btn').addEventListener('click', () => {
+        modalWithHeaderAndButtons.removeAttribute('opened');
+      });
     </script>
 
     <h3>Switch</h3>
@@ -816,7 +863,7 @@
     <h3>Table</h3>
 
     <script>
-      const getNextSort = sort => {
+      const getNextSort = (sort) => {
         if (!sort || ['none', 'other'].includes(sort)) {
           return 'descending';
         }
@@ -830,10 +877,10 @@
         const currentSort = th.getAttribute('aria-sort');
         const nextSort = getNextSort(currentSort);
         const tableHeaders = Array.from(document.getElementsByTagName('TH'));
-        const columnIndex = tableHeaders.findIndex(x => x === th);
+        const columnIndex = tableHeaders.findIndex((x) => x === th);
 
         // clean up previous aria-sort value
-        tableHeaders.forEach(tableHeader => {
+        tableHeaders.forEach((tableHeader) => {
           tableHeader.setAttribute('aria-sort', 'none');
         });
 
@@ -896,101 +943,95 @@
           <scale-text variant="h5">Table title</scale-text>
         </div>
         <thead>
-        <tr>
-          <th aria-sort="descending" onclick="sortTable(this)">Title</th>
-          <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
-          <th onclick="sortTable(this)">Stats</th>
-          <th onclick="sortTable(this)" style="text-align: right;">Time</th>
-          <th onclick="sortTable(this)" style="text-align: right;">
-            Euros
-          </th>
-        </tr>
+          <tr>
+            <th aria-sort="descending" onclick="sortTable(this)">Title</th>
+            <th aria-disabled="true" onclick="sortTable(this)">Tags</th>
+            <th onclick="sortTable(this)">Stats</th>
+            <th onclick="sortTable(this)" style="text-align: right;">Time</th>
+            <th onclick="sortTable(this)" style="text-align: right;">
+              Euros
+            </th>
+          </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Jane</td>
-          <td>
-            <scale-tag size="small" style="margin-right: 8px"
-            >Other</scale-tag
-            >
-            <scale-tag size="small" style="margin-right: 8px"
-            >N/A</scale-tag
-            >
-            <scale-tag size="small">Demo</scale-tag>
-          </td>
-          <td>
-            <div style="display: inline-flex; align-items: center;">
-              <span style="margin-right: 8px">9.356</span>
-              <scale-progress-bar
-                      variant="info"
-                      style=" max-width: 120px;"
-                      stroke-width="6"
-                      percentage="90"
-              />
-            </div>
-          </td>
-          <td style="text-align: right; font-weight: 100;">00:00:20</td>
-          <td style="text-align: right; font-weight: 100;">100.245,10</td>
-        </tr>
-        <tr>
-          <td>Jack</td>
-          <td>
-            <scale-tag size="small" style="margin-right: 8px"
-            >Other</scale-tag
-            >
-            <scale-tag size="small" style="margin-right: 8px"
-            >N/A</scale-tag
-            >
-            <scale-tag size="small">Demo</scale-tag>
-          </td>
-          <td>
-            <div style="display: inline-flex; align-items: center;">
-              <span style="margin-right: 8px">3.356</span>
-              <scale-progress-bar
-                      variant="info"
-                      style=" max-width: 120px;"
-                      stroke-width="6"
-                      percentage="90"
-              />
-            </div>
-          </td>
-          <td style="text-align: right; font-weight: 100;">00:00:30</td>
-          <td style="text-align: right; font-weight: 100;">100.345,10</td>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>
-            <scale-tag size="small" style="margin-right: 8px"
-            >Other</scale-tag
-            >
-            <scale-tag size="small" style="margin-right: 8px"
-            >N/A</scale-tag
-            >
-            <scale-tag size="small">Demo</scale-tag>
-          </td>
-          <td>
-            <div style="display: inline-flex; align-items: center;">
-              <span style="margin-right: 8px">6.356</span>
-              <scale-progress-bar
-                      variant="info"
-                      style=" max-width: 120px;"
-                      stroke-width="6"
-                      percentage="90"
-              />
-            </div>
-          </td>
-          <td style="text-align: right; font-weight: 100;">00:00:40</td>
-          <td style="text-align: right; font-weight: 100;">100.445,10</td>
-        </tr>
+          <tr>
+            <td>Jane</td>
+            <td>
+              <scale-tag size="small" style="margin-right: 8px;"
+                >Other</scale-tag
+              >
+              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
+              <scale-tag size="small">Demo</scale-tag>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px;">9.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style="max-width: 120px;"
+                  stroke-width="6"
+                  percentage="90"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 100;">00:00:20</td>
+            <td style="text-align: right; font-weight: 100;">100.245,10</td>
+          </tr>
+          <tr>
+            <td>Jack</td>
+            <td>
+              <scale-tag size="small" style="margin-right: 8px;"
+                >Other</scale-tag
+              >
+              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
+              <scale-tag size="small">Demo</scale-tag>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px;">3.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style="max-width: 120px;"
+                  stroke-width="6"
+                  percentage="90"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 100;">00:00:30</td>
+            <td style="text-align: right; font-weight: 100;">100.345,10</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>
+              <scale-tag size="small" style="margin-right: 8px;"
+                >Other</scale-tag
+              >
+              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
+              <scale-tag size="small">Demo</scale-tag>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px;">6.356</span>
+                <scale-progress-bar
+                  variant="info"
+                  style="max-width: 120px;"
+                  stroke-width="6"
+                  percentage="90"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 100;">00:00:40</td>
+            <td style="text-align: right; font-weight: 100;">100.445,10</td>
+          </tr>
         </tbody>
         <tfoot>
-        <tr>
-          <td>Total</td>
-          <td />
-          <td />
-          <td style="text-align: right;">00:00:20</td>
-          <td style="text-align: right;">100.245,10</td>
-        </tr>
+          <tr>
+            <td>Total</td>
+            <td />
+            <td />
+            <td style="text-align: right;">00:00:20</td>
+            <td style="text-align: right;">100.245,10</td>
+          </tr>
         </tfoot>
       </table>
     </scale-table>

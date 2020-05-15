@@ -20,6 +20,20 @@
         </scale-button>
       </div>
 
+      <scale-button @click="toggleModal">
+        Open modal
+      </scale-button>
+
+      <scale-modal id="modal-with-header-and-buttons" :opened.prop="isOpen" @scaleClose="toggleModal">
+        <span slot="header">Header</span> content of the modal with header and
+        buttons
+        <span slot="close">Close</span>
+        <span slot="modal-actions">
+          <scale-button id="cancel-btn" @click="toggleModal">cancel</scale-button>
+
+          <scale-button id="submit-btn" @click="toggleModal">submit</scale-button>
+        </span>
+      </scale-modal>
       <scale-input
         @scaleChange="handleChange"
         placeholder="add message"
@@ -36,19 +50,26 @@
 import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
 
+
 export default Vue.extend({
   components: {
-    Logo
+    Logo,
   },
   data: () => ({
     message: '',
-    styles: { input: { '& input': { background: 'green' } } }
+    styles: { input: { '& input': { background: 'green' } } },
+    isOpen: false,
   }),
   methods: {
-    handleChange: function(event: any) {
+    handleChange: function (event: any) {
       this.message = event.target.value
-    }
-  }
+    },
+    toggleModal: function () {
+      this.isOpen = !this.isOpen
+
+      console.log(this.isOpen)
+    },
+  },
 })
 </script>
 

@@ -1,3 +1,5 @@
+import { ANIMATIONS } from '@proyecto26/animatable-component';
+
 export default {
   mode: 'universal',
   /*
@@ -11,10 +13,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -42,9 +44,37 @@ export default {
   scaled: {
     theme: {
       shape: {
-        borderRadius: 0
-      }
-    }
+        borderRadius: 0,
+      },
+      components: {
+        Modal: {
+          transitions: {
+            // break it to two
+            modalContent: {
+              IN: {
+                duration: 200,
+                transition: ANIMATIONS.FLIP_IN_HOR_TOP,
+              },
+              OUT: {
+                transition: ANIMATIONS.FLIP_OUT_X,
+                duration: 200,
+              },
+            },
+            backDrop: {
+              IN: {
+                duration: 200,
+                transition: ANIMATIONS.FADE_IN,
+              },
+              OUT: {
+                transition: ANIMATIONS.FADE_OUT,
+                duration: 200,
+              },
+            },
+          },
+        },
+      },
+    },
+
   },
   /*
    ** Build configuration
@@ -53,6 +83,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
 }

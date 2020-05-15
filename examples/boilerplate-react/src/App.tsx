@@ -7,6 +7,8 @@ import {
   ScaleModal,
 } from "@scaleds/components-react";
 import "./App.css";
+import { ANIMATIONS } from '@proyecto26/animatable-component';
+
 
 const App: React.FC = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -18,6 +20,8 @@ const App: React.FC = () => {
       <ScaleLink href="http://example.com" target="_blank" variant="success">
         Success
       </ScaleLink>
+
+
       <h3>Button</h3>
       <ScaleButton variant="primary">Click!</ScaleButton>
       <h3>Card</h3>
@@ -34,7 +38,28 @@ const App: React.FC = () => {
       <h3>Modal</h3>
       <ScaleButton onClick={() => setModalOpen(true)}>Open modal</ScaleButton>
 
-      <ScaleModal opened={isModalOpen} onScaleClose={() => setModalOpen(false)}>
+      <ScaleModal opened={isModalOpen} onScaleClose={() => setModalOpen(false)} transitions={{
+          modalContent: {
+              IN: {
+                  duration: 200,
+                  transition: ANIMATIONS.BOUNCE_IN_TOP,
+              },
+              OUT: {
+                  transition: ANIMATIONS.BOUNCE_OUT,
+                  duration: 200,
+              },
+          },
+          backDrop: {
+              IN: {
+                  duration: 200,
+                  transition: ANIMATIONS.FADE_IN,
+              },
+              OUT: {
+                  transition: ANIMATIONS.FADE_OUT,
+                  duration: 200,
+              },
+          },
+      }}>
         <span slot="header">Header</span> content of the modal with header and
         buttons
         <span slot="close">Close</span>
