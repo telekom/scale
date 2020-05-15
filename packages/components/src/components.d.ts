@@ -334,19 +334,11 @@ export namespace Components {
     }
     interface ScaleModal {
         /**
-          * Close the modal
-         */
-        "close": (event?: MouseEvent) => Promise<void>;
-        /**
           * (optional) Modal class
          */
         "customClass"?: string;
         /**
-          * Open the modal
-         */
-        "open": () => Promise<void>;
-        /**
-          * (required) Modal opened
+          * (optional) If true, the Modal is open.
          */
         "opened"?: boolean;
         /**
@@ -357,6 +349,10 @@ export namespace Components {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Transition overrides
+         */
+        "transitions"?: any;
         /**
           * (optional) Modal variant
          */
@@ -1043,11 +1039,11 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) Close event
+          * (optional) Callback fired when the component requests to be closed.
          */
         "onScaleClose"?: (event: CustomEvent<MouseEvent>) => void;
         /**
-          * (required) Modal opened
+          * (optional) If true, the Modal is open.
          */
         "opened"?: boolean;
         /**
@@ -1058,6 +1054,10 @@ declare namespace LocalJSX {
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
+        /**
+          * (optional) Transition overrides
+         */
+        "transitions"?: any;
         /**
           * (optional) Modal variant
          */

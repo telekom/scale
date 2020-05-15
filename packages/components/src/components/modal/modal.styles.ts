@@ -1,7 +1,9 @@
 import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
-  modal: {},
+  modal: {
+    display: 'none',
+  },
   modal__content: {
     boxSizing: 'border-box',
     overflow: 'hidden',
@@ -20,8 +22,6 @@ export const styles: JssStyle = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    opacity: 0,
-    pointerEvents: 'none',
     transition: 'all 0.5s ease-out',
   },
   modal__backdrop: {
@@ -32,8 +32,6 @@ export const styles: JssStyle = {
     height: '100vh',
     background: 'rgba(0, 0, 0, 0.75)',
     zIndex: 10,
-    opacity: 0,
-    pointerEvents: 'none',
   },
   modal__header: {
     fontSize: '0.8rem',
@@ -73,16 +71,8 @@ export const styles: JssStyle = {
       margin: '0.25rem',
     },
   },
+
   'modal--opened': {
-    '& $modal__backdrop, & $modal__content': {
-      opacity: 1,
-      pointerEvents: 'all',
-    },
-    '& $modal__content': {
-      top: '15vh',
-    },
-  },
-  'modal--hidden': {
-    display: 'none',
+    display: 'block',
   },
 };

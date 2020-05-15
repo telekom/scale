@@ -1,5 +1,4 @@
 import { Theme } from './interfaces';
-import { ANIMATIONS } from '@proyecto26/animatable-component';
 
 export const defaultTheme: Theme = {
   colors: {
@@ -182,16 +181,25 @@ export const defaultTheme: Theme = {
   },
   components: {
     Modal: {
-      animations: {
-        options: { duration: 200 },
-        effects: {
+      transitions: {
+        modalContent: {
           IN: {
-            modalContent: ANIMATIONS.FADE_IN_TOP,
-            backDrop: ANIMATIONS.FADE_IN,
+            duration: 200,
+            transition: 'fade-in-top',
           },
           OUT: {
-            modalContent: ANIMATIONS.FADE_OUT_UP,
-            backDrop: ANIMATIONS.FADE_OUT,
+            transition: 'fadeOutUp',
+            duration: 200,
+          },
+        },
+        backDrop: {
+          IN: {
+            duration: 200,
+            transition: 'fadeIn',
+          },
+          OUT: {
+            transition: 'fadeOut',
+            duration: 200,
           },
         },
       },

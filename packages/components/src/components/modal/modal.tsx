@@ -4,7 +4,6 @@ import {
   Component,
   Prop,
   h,
-  Method,
   Element,
   Host,
   Watch,
@@ -27,52 +26,39 @@ export class Modal implements Base {
   hasSlotHeader: boolean;
   hasSlotClose: boolean;
   hasSlotActions: boolean;
+  combinedTransitions: any;
 
   @Element() hostElement: HTMLStencilElement;
+  /** (optional) Transition overrides */
+  @Prop() transitions?: any;
   /** (optional) Modal class */
   @Prop() customClass?: string = '';
   /** (optional) Modal size */
   @Prop() size?: string = '';
   /** (optional) Modal variant */
   @Prop() variant?: string = '';
-  /** (required) Modal opened */
-  @Prop({ reflectToAttr: true }) opened?: boolean = false;
+  /** (optional) If true, the Modal is open. */
+  @Prop() opened?: boolean = false;
 
   /** (optional) Injected jss styles */
   @Prop() styles?: StyleSheet;
   /** decorator Jss stylesheet */
   @CssInJs('Modal', styles) stylesheet: StyleSheet;
 
-  /** (optional) Close event */
-  @Event() scaleClose: EventEmitter<MouseEvent>;
+  /** (optional) Callback fired when the component requests to be closed. */
+  @Event() scaleClose?: EventEmitter<MouseEvent>;
 
   constructor() {
     this.close = this.close.bind(this);
+    this.animateComponent = this.animateComponent.bind(this);
   }
 
   @Watch('opened')
-  watchHandler(opened: boolean) {
-    if (opened && !this.opened) {
-      return this.open();
-    }
-    if (!opened && this.opened) {
-      return this.close();
-    }
-    return null;
+  async watchHandler() {
+    await this.animateComponent();
   }
 
-  /** Open the modal */
-  @Method()
-  async open() {
-    this.opened = true;
-    await this.animateComponent('IN');
-  }
-
-  /** Close the modal */
-  @Method()
   async close(event?: MouseEvent) {
-    await this.animateComponent('OUT');
-    this.opened = false;
     this.scaleClose.emit(event);
   }
 
@@ -89,25 +75,32 @@ export class Modal implements Base {
     });
   }
 
-  async animateComponent(direction: 'IN' | 'OUT') {
+  async animateComponent() {
+    const direction = this.opened ? 'IN' : 'OUT';
+
     await this.waitForChildren(this.hostElement.shadowRoot.children);
-    // @ts-ignore getRule will not return the raw value so I'm using untyped properties to get to it.
-    const { options, effects } = this.stylesheet.rules.raw.animations;
+    const { backDrop, modalContent } = this.combinedTransitions;
+    const { transition: transitionModal, ...optionsModal } = modalContent[
+      direction
+    ];
+    const { transition: transitionBackDrop, ...optionsBackDrop } = backDrop[
+      direction
+    ];
 
     const animationModal = this.hostElement.shadowRoot
       .querySelector(`.${this.stylesheet.classes.modal__content}`)
-      .animate(KEYFRAMES[effects[direction].modalContent], options);
+      .animate(KEYFRAMES[transitionModal], optionsModal);
 
     const animationBackdrop = this.hostElement.shadowRoot
       .querySelector(`.${this.stylesheet.classes.modal__backdrop}`)
-      .animate(KEYFRAMES[effects[direction].backDrop], options);
+      .animate(KEYFRAMES[transitionBackDrop], optionsBackDrop);
 
     const modalClassList = this.hostElement.shadowRoot.querySelector(
       `.${this.stylesheet.classes.modal}`
     ).classList;
 
     if (direction === 'IN') {
-      modalClassList.remove(this.stylesheet.classes['modal--hidden']);
+      modalClassList.add(this.stylesheet.classes['modal--opened']);
     }
 
     animationBackdrop.play();
@@ -116,7 +109,7 @@ export class Modal implements Base {
     return new Promise(resolve => {
       animationModal.onfinish = function() {
         if (direction === 'OUT') {
-          modalClassList.add(this.stylesheet.classes['modal--hidden']);
+          modalClassList.remove(this.stylesheet.classes['modal--opened']);
         }
         resolve();
       }.bind(this);
@@ -135,10 +128,6 @@ export class Modal implements Base {
 
   render() {
     const { classes } = this.stylesheet;
-
-    if (!this.opened) {
-      return null;
-    }
 
     return (
       <Host>
@@ -182,12 +171,10 @@ export class Modal implements Base {
   getCssClassMap(): CssClassMap {
     const { classes } = this.stylesheet;
     return classNames(
-      classes['modal--hidden'],
       classes.modal,
       this.customClass && this.customClass,
       this.size && classes[`modal--size-${this.size}`],
-      this.variant && classes[`modal--variant-${this.variant}`],
-      this.opened && classes[`modal--opened`]
+      this.variant && classes[`modal--variant-${this.variant}`]
     );
   }
 }

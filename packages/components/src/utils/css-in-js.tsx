@@ -13,7 +13,13 @@ declare type CssInJsDecorator = (
 ) => void;
 
 const getKeys = obj => {
-  const blackListedProps = ['stylesheet', 'value', 'key'];
+  const blackListedProps = [
+    'stylesheet',
+    'value',
+    'key',
+    'combinedTransitions',
+    'opened',
+  ];
   const whiteListedTypes = ['boolean', 'string', 'object'];
   const keys = [];
 
@@ -47,7 +53,7 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     try {
       withDefaultTheme = combineObjects(
         styles,
-        getTheme().components[componentKey]
+        (getTheme().components[componentKey] || {}).styles
       );
     } catch (error) {
       withDefaultTheme = styles;
@@ -71,7 +77,20 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     target.render = function() {
       const newKey = getComponentKey(componentKey, this);
 
+      let parsedTransitions;
+
       if (this.key !== newKey) {
+        try {
+          parsedTransitions = JSON.parse(this.transitions);
+        } catch (err) {
+          parsedTransitions = this.transitions;
+        }
+
+        this.combinedTransitions = combineObjects(
+          (getTheme().components[componentKey] || {}).transitions,
+          parsedTransitions
+        );
+
         this[propertyKey] = sheetManager
           .load(this.key, newKey, withInjectedValues(this))
           .update(getTheme());

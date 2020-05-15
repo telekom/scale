@@ -1,6 +1,24 @@
+interface Transitions {
+  [key: string]: {
+    IN: {
+      duration: number;
+      transition: string;
+      [key: string]: any;
+    };
+    OUT: {
+      duration: number;
+      transition: string;
+      [key: string]: any;
+    };
+  };
+}
+
 export interface Theme {
-  components?: {
-    [key: string]: any;
+  components: {
+    [key: string]: {
+      styles?: any;
+      transitions?: Transitions;
+    };
   };
   colors?: {
     common: {
