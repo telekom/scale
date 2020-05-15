@@ -62,6 +62,9 @@
 
   <body>
     <h1>Components</h1>
+    <h3>Textarea</h3>
+    <scale-input type="textarea" rows="4" cols="50"></scale-input>
+    <scale-input type="textarea" rows="4" cols="50" label='textarea label' variant='animated'></scale-input>
     <h3>Checkbox</h3>
     <scale-input
       input-id="checkbox"
@@ -181,10 +184,10 @@
     <scale-input variant="static" label="Text"></scale-input>
 
     <h3>Animated input</h3>
-    <scale-input label="First Name" placeholder="Hello"></scale-input>
+    <scale-input variant="animated" label="First Name" placeholder="Hello"></scale-input>
 
     <h3>Animated input - max length and counter</h3>
-    <scale-input label="Last Name" max-length="24" counter></scale-input>
+    <scale-input variant="animated" label="Last Name" max-length="24" counter></scale-input>
 
     <h3>Input Text - helper text</h3>
     <scale-input
@@ -192,6 +195,7 @@
       label="address"
       required="true"
       max-length="24"
+      variant="animated"
       counter
     ></scale-input>
     <button id="show-error">Toggle error</button>
@@ -209,6 +213,7 @@
     <scale-input
       label="address"
       required="true"
+      variant="animated"
       status="error"
       max-length="24"
       counter
@@ -217,6 +222,7 @@
     <scale-input
       label="address"
       required="true"
+      variant="animated"
       status="error"
       helper-text="please fill out this field"
     ></scale-input>

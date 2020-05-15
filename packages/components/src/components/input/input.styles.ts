@@ -65,6 +65,18 @@ export const styles: JssStyle = {
       height: input.large.height,
       transition: defaultTransition,
     },
+    '& input__textarea': {
+      display: 'flex',
+      borderRadius: 4,
+      border: '1px solid #cecece',
+      padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
+      fontSize: 16,
+      fontFamily: 'inherit',
+      boxSizing: 'border-box',
+      zIndex: 1,
+      height: input.large.height,
+      transition: defaultTransition,
+    },
     '& .input__counter': {
       display: 'flex',
       justifyContent: 'flex-end',
@@ -83,7 +95,7 @@ export const styles: JssStyle = {
       justifyContent: 'space-between',
     },
     '&:not($input--disabled)': {
-      '& .input__input': {
+      '& .input__input, & .input__textarea': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
@@ -109,7 +121,7 @@ export const styles: JssStyle = {
     },
   },
   'input--variant-animated': {
-    '& .input__input.has-label': {
+    '& .input__input.has-label, & .input__textarea.has-label': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
         .large.paddingY - 1}px`,
     },
@@ -125,15 +137,18 @@ export const styles: JssStyle = {
     '& .input__input:focus + .input__label, &.animated .input__label': animated(
       'large'
     ).end,
+    '& .input__textarea:focus + .input__label, &.animated .input__label': animated(
+      'large'
+    ).end,
   },
   'input--status-error': {
     '&.animated .input__label, & label': {
       color: ({ colors }) => `${colors.error.default} !important`,
     },
-    '& .input__input:focus + .input__label': {
+    '& .input__input:focus + .input__label, & .input__textarea:focus + .input__label': {
       color: ({ colors }) => `${colors.error.default} !important`,
     },
-    '& .input__input': {
+    '& .input__input, & .input__textarea': {
       border: ({ colors }) => `1px solid ${colors.error.default}`,
     },
     '& .input__helper-text': {
@@ -161,7 +176,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio': {
+    '& .input__label, & .input__input, &.input__textarea, & .input__checkbox-container, & .input__radio': {
       opacity: '0.5',
       cursor: 'not-allowed!important',
     },

@@ -189,6 +189,10 @@ export namespace Components {
     }
     interface ScaleInput {
         /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
           * (optional) Input counter
          */
         "counter"?: boolean;
@@ -241,6 +245,10 @@ export namespace Components {
          */
         "required"?: boolean;
         /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
           * (optional) Input size
          */
         "size"?: string;
@@ -255,7 +263,7 @@ export namespace Components {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "textarea" | "url";
         /**
           * (optional) Input value
          */
@@ -878,6 +886,10 @@ declare namespace LocalJSX {
     }
     interface ScaleInput {
         /**
+          * (optional) textarea column
+         */
+        "cols"?: number;
+        /**
           * (optional) Input counter
          */
         "counter"?: boolean;
@@ -946,6 +958,10 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+          * (optional) textarea row
+         */
+        "rows"?: number;
+        /**
           * (optional) Input size
          */
         "size"?: string;
@@ -960,7 +976,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "textarea" | "url";
         /**
           * (optional) Input value
          */

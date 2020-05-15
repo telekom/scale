@@ -31,6 +31,7 @@ export class Input implements Base {
     | 'text'
     | 'checkbox'
     | 'radio'
+    | 'textarea'
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
@@ -40,6 +41,10 @@ export class Input implements Base {
   @Prop() label?: string = '';
   /** (optional) Input size */
   @Prop() size?: string = '';
+  /** (optional) textarea row */
+  @Prop() rows?: number;
+  /** (optional) textarea column */
+  @Prop() cols?: number;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** (optional) Input status */
@@ -160,6 +165,7 @@ export class Input implements Base {
         </Host>
       );
     }
+    const Element = this.type === 'textarea' ? 'textarea' : 'input';
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
@@ -167,11 +173,14 @@ export class Input implements Base {
           {!!this.label && this.variant === 'static' && (
             <label class="input__label">{this.label}</label>
           )}
-          <input
+          <Element
             type={this.type}
-            class={classNames('input__input', this.label && 'has-label')}
+            class={classNames(
+              `input__${this.type === 'textarea' ? 'textarea' : 'input'}`,
+              this.label && 'has-label'
+            )}
             value={this.value}
-            name={this.name}
+            {...(!!this.name ? { name: this.name } : {})}
             required={this.required}
             minLength={this.minLength}
             maxLength={this.maxLength}
@@ -179,8 +188,10 @@ export class Input implements Base {
             onFocus={event => this.handleFocus(event)}
             onBlur={event => this.handleBlur(event)}
             onKeyDown={event => this.handleKeyDown(event)}
-            placeholder={this.placeholder}
+            {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
+            {...(!!this.rows ? { rows: this.rows } : {})}
+            {...(!!this.cols ? { cols: this.cols } : {})}
           />
           {!!this.label && this.variant === 'animated' && (
             <label class="input__label">{this.label}</label>
