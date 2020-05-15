@@ -10,7 +10,8 @@
         "packages/generator-sketch",
         "packages/docs",
         "packages/components-react",
-        "packages/gatsby-plugin"
+        "packages/gatsby-plugin",
+        "packages/nuxt-module"
     ],
     "scripts": {
         "clean": "./scripts/clean.sh",
