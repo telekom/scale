@@ -80,20 +80,7 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     target.render = function() {
       const newKey = getComponentKey(componentKey, this);
 
-      let parsedTransitions;
-
       if (this.key !== newKey) {
-        try {
-          parsedTransitions = JSON.parse(this.transitions);
-        } catch (err) {
-          parsedTransitions = this.transitions;
-        }
-
-        this.combinedTransitions = combineObjects(
-          (getTheme().components[componentKey] || {}).transitions,
-          parsedTransitions
-        );
-
         this[propertyKey] = sheetManager
           .load(this.key, newKey, withInjectedValues(this))
           .update(getTheme());

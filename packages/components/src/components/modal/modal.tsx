@@ -11,12 +11,13 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import { CssClassMap } from '../../utils/utils';
+import { combineObjects, CssClassMap } from '../../utils/utils';
 import classNames from 'classnames';
 import { styles } from './modal.styles';
 import { CssInJs } from '../../utils/css-in-js';
 import { StyleSheet } from 'jss';
 import Base from '../../utils/base-interface';
+import { getTheme } from '../../theme/theme';
 
 @Component({
   tag: 'scale-modal',
@@ -79,7 +80,19 @@ export class Modal implements Base {
     const direction = this.opened ? 'IN' : 'OUT';
 
     await this.waitForChildren(this.hostElement.shadowRoot.children);
-    const { backDrop, modalContent } = this.combinedTransitions;
+    let combinedTransitions;
+
+    try {
+      combinedTransitions = JSON.parse(this.transitions);
+    } catch (err) {
+      combinedTransitions = this.transitions;
+    }
+
+    combinedTransitions = combineObjects(
+      getTheme().components.Modal.transitions,
+      combinedTransitions
+    );
+    const { backDrop, modalContent } = combinedTransitions;
     const { transition: transitionModal, ...optionsModal } = modalContent[
       direction
     ];
