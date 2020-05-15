@@ -17,8 +17,11 @@ const getKeys = obj => {
     'stylesheet',
     'value',
     'key',
+    'transitions',
     'combinedTransitions',
     'opened',
+    'hostElement',
+    's-rc',
   ];
   const whiteListedTypes = ['boolean', 'string', 'object'];
   const keys = [];
