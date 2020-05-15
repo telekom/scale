@@ -66,8 +66,6 @@ export default Vue.extend({
     },
     toggleModal: function () {
       this.isOpen = !this.isOpen
-
-      console.log(this.isOpen)
     },
   },
 })

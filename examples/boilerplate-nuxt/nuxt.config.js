@@ -49,7 +49,6 @@ export default {
       components: {
         Modal: {
           transitions: {
-            // break it to two
             modalContent: {
               IN: {
                 duration: 200,
