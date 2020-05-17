@@ -44,7 +44,7 @@ function renderToStringWithUserTheme() {
     files.map(file => {
       try {
         return renderToString(fs.readFileSync(file, "utf8"), {
-          prettyHtml: false
+          clientHydrateAnnotations: false
         }).then(result => {
           return fs.writeFileSync(file, result.html);
         });
