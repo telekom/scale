@@ -138,6 +138,9 @@ export class Modal implements Base {
   }
   componentWillUpdate() {}
   componentDidUnload() {}
+  componentDidLoad() {
+    this.animateComponent();
+  }
 
   render() {
     const { classes } = this.stylesheet;
