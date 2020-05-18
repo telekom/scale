@@ -201,6 +201,10 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
+          * (optional) textarea disableResize
+         */
+        "disableResize"?: boolean;
+        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -897,6 +901,10 @@ declare namespace LocalJSX {
           * (optional) Input text class
          */
         "customClass"?: string;
+        /**
+          * (optional) textarea disableResize
+         */
+        "disableResize"?: boolean;
         /**
           * (optional) Input disabled
          */

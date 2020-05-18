@@ -65,16 +65,14 @@ export const styles: JssStyle = {
       height: input.large.height,
       transition: defaultTransition,
     },
-    '& input__textarea': {
+    '& .input__textarea': {
       display: 'flex',
-      borderRadius: 4,
-      border: '1px solid #cecece',
       padding: `${input.large.paddingY}px ${input.large.paddingX}px`,
       fontSize: 16,
+      border: '1px solid #cecece',
       fontFamily: 'inherit',
       boxSizing: 'border-box',
       zIndex: 1,
-      height: input.large.height,
       transition: defaultTransition,
     },
     '& .input__counter': {
@@ -114,6 +112,11 @@ export const styles: JssStyle = {
       },
     },
   },
+  'input--disable-resize': {
+    '& .input__textarea': {
+      resize: 'none',
+    },
+  },
   'input--variant-static': {
     '& .input__label': {
       display: 'flex',
@@ -121,9 +124,12 @@ export const styles: JssStyle = {
     },
   },
   'input--variant-animated': {
-    '& .input__input.has-label, & .input__textarea.has-label': {
+    '& .input__input.has-label': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
         .large.paddingY - 1}px`,
+    },
+    '& .input__textarea.has-label': {
+      paddingTop: `${input.large.paddingY * 2}px`,
     },
     '& .input__label': {
       position: 'absolute',
@@ -158,6 +164,30 @@ export const styles: JssStyle = {
       color: ({ colors }) => `${colors.error.default}`,
     },
   },
+  'input--status-info': {
+    '& .input__helper-text': {
+      color: ({ colors }) => `${colors.info.default}`,
+    },
+    '& .input__counter': {
+      color: ({ colors }) => `${colors.info.default}`,
+    },
+  },
+  'input--status-warning': {
+    '& .input__helper-text': {
+      color: ({ colors }) => `${colors.warning.default}`,
+    },
+    '& .input__counter': {
+      color: ({ colors }) => `${colors.warning.default}`,
+    },
+  },
+  'input--status-success': {
+    '& .input__helper-text': {
+      color: ({ colors }) => `${colors.success.default}`,
+    },
+    '& .input__counter': {
+      color: ({ colors }) => `${colors.success.default}`,
+    },
+  },
   'input--size-small': {
     '& .input__input': {
       height: input.small.height,
@@ -176,7 +206,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input, &.input__textarea, & .input__checkbox-container, & .input__radio': {
+    '& .input__label, & .input__input, & .input__textarea, & .input__checkbox-container, & .input__radio': {
       opacity: '0.5',
       cursor: 'not-allowed!important',
     },

@@ -63,6 +63,8 @@ export class Input implements Base {
   @Prop() counter?: boolean;
   /** (optional) radio checked value */
   @Prop() preChecked?: boolean;
+  /** (optional) textarea disableResize */
+  @Prop() disableResize?: boolean;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
   /** (optional) Input checkbox id */
@@ -85,7 +87,6 @@ export class Input implements Base {
 
   /** (optional) Input checkbox checked */
   @State() checked?: boolean = this.preChecked;
-  @State() checkedValue?: string;
 
   componentWillLoad() {}
   componentWillUpdate() {}
@@ -94,7 +95,6 @@ export class Input implements Base {
   handleChange(event) {
     this.value = event.target ? event.target.value : this.value;
     this.checked = event.target.checked;
-    this.checkedValue = event.target.value;
     this.scaleChange.emit(event);
   }
 
@@ -225,6 +225,7 @@ export class Input implements Base {
       this.type && classes[`input--type-${this.type}`],
       this.checked && classes[`input--checked`],
       this.size && classes[`input--size-${this.size}`],
+      this.disableResize && classes[`input--disable-resize`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
       this.status && classes[`input--status-${this.status}`],
