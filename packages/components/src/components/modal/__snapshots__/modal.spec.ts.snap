@@ -77,6 +77,7 @@ exports[`Modal should match snapshot 1`] = `
 .modal--opened-0-0-16 {
   display: block;
 }
+.transitions-0-0-17 {}
     </style>
     <animatable-component>
       <div class="modal-0-0-9">
@@ -170,6 +171,7 @@ exports[`Modal should match snapshot when opened 1`] = `
 .modal--opened-0-0-16 {
   display: block;
 }
+.transitions-0-0-17 {}
     </style>
     <animatable-component>
       <div class="modal-0-0-9">
@@ -190,10 +192,10 @@ exports[`Modal should match snapshot with actions slot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-41 {
+      .modal-0-0-43 {
   display: none;
 }
-.modal__content-0-0-42 {
+.modal__content-0-0-44 {
   top: 10vh;
   left: 25%;
   color: #333;
@@ -213,7 +215,7 @@ exports[`Modal should match snapshot with actions slot 1`] = `
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-43 {
+.modal__backdrop-0-0-45 {
   top: 0;
   left: 0;
   width: 100%;
@@ -222,7 +224,7 @@ exports[`Modal should match snapshot with actions slot 1`] = `
   position: fixed;
   background: rgba(0, 0, 0, 0.75);
 }
-.modal__header-0-0-44 {
+.modal__header-0-0-46 {
   color: #333;
   margin: 0;
   display: flex;
@@ -231,47 +233,48 @@ exports[`Modal should match snapshot with actions slot 1`] = `
   border-bottom: 1px solid #333;
   justify-content: space-between;
 }
-.modal__header-0-0-44 ::slotted(*) {
+.modal__header-0-0-46 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-45 {
+.modal__body-0-0-47 {
   display: flex;
   padding: 1rem 0;
   justify-content: space-between;
 }
-.modal__close-0-0-46 {
+.modal__close-0-0-48 {
   cursor: pointer;
   height: 16px;
   opacity: 0.5;
   font-size: 1rem;
 }
-.modal__close-0-0-46:hover {
+.modal__close-0-0-48:hover {
   opacity: 1;
 }
-.modal__actions-0-0-47 {
+.modal__actions-0-0-49 {
   display: flex;
   padding: 1rem 0;
   border-top: 1px solid #ccc;
   justify-content: flex-end;
 }
-.modal__actions-0-0-47 t-button {
+.modal__actions-0-0-49 t-button {
   margin: 0.25rem;
 }
-.modal--opened-0-0-48 {
+.modal--opened-0-0-50 {
   display: block;
 }
+.transitions-0-0-51 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-41">
-        <div class="modal__backdrop-0-0-43"></div>
-        <div class="modal__content-0-0-42">
-          <div class="modal__body-0-0-45">
+      <div class="modal-0-0-43">
+        <div class="modal__backdrop-0-0-45"></div>
+        <div class="modal__content-0-0-44">
+          <div class="modal__body-0-0-47">
             <slot></slot>
           </div>
-          <div class="modal__actions-0-0-47">
+          <div class="modal__actions-0-0-49">
             <slot name="modal-actions"></slot>
           </div>
         </div>
@@ -289,10 +292,10 @@ exports[`Modal should match snapshot with close slot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-57 {
+      .modal-0-0-60 {
   display: none;
 }
-.modal__content-0-0-58 {
+.modal__content-0-0-61 {
   top: 10vh;
   left: 25%;
   color: #333;
@@ -312,7 +315,7 @@ exports[`Modal should match snapshot with close slot 1`] = `
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-59 {
+.modal__backdrop-0-0-62 {
   top: 0;
   left: 0;
   width: 100%;
@@ -321,7 +324,7 @@ exports[`Modal should match snapshot with close slot 1`] = `
   position: fixed;
   background: rgba(0, 0, 0, 0.75);
 }
-.modal__header-0-0-60 {
+.modal__header-0-0-63 {
   color: #333;
   margin: 0;
   display: flex;
@@ -330,44 +333,45 @@ exports[`Modal should match snapshot with close slot 1`] = `
   border-bottom: 1px solid #333;
   justify-content: space-between;
 }
-.modal__header-0-0-60 ::slotted(*) {
+.modal__header-0-0-63 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-61 {
+.modal__body-0-0-64 {
   display: flex;
   padding: 1rem 0;
   justify-content: space-between;
 }
-.modal__close-0-0-62 {
+.modal__close-0-0-65 {
   cursor: pointer;
   height: 16px;
   opacity: 0.5;
   font-size: 1rem;
 }
-.modal__close-0-0-62:hover {
+.modal__close-0-0-65:hover {
   opacity: 1;
 }
-.modal__actions-0-0-63 {
+.modal__actions-0-0-66 {
   display: flex;
   padding: 1rem 0;
   border-top: 1px solid #ccc;
   justify-content: flex-end;
 }
-.modal__actions-0-0-63 t-button {
+.modal__actions-0-0-66 t-button {
   margin: 0.25rem;
 }
-.modal--opened-0-0-64 {
+.modal--opened-0-0-67 {
   display: block;
 }
+.transitions-0-0-68 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-57">
-        <div class="modal__backdrop-0-0-59"></div>
-        <div class="modal__content-0-0-58">
-          <div class="modal__body-0-0-61">
+      <div class="modal-0-0-60">
+        <div class="modal__backdrop-0-0-62"></div>
+        <div class="modal__content-0-0-61">
+          <div class="modal__body-0-0-64">
             <slot></slot>
           </div>
         </div>
@@ -385,10 +389,10 @@ exports[`Modal should match snapshot with header slot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-25 {
+      .modal-0-0-26 {
   display: none;
 }
-.modal__content-0-0-26 {
+.modal__content-0-0-27 {
   top: 10vh;
   left: 25%;
   color: #333;
@@ -408,7 +412,7 @@ exports[`Modal should match snapshot with header slot 1`] = `
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-27 {
+.modal__backdrop-0-0-28 {
   top: 0;
   left: 0;
   width: 100%;
@@ -417,7 +421,7 @@ exports[`Modal should match snapshot with header slot 1`] = `
   position: fixed;
   background: rgba(0, 0, 0, 0.75);
 }
-.modal__header-0-0-28 {
+.modal__header-0-0-29 {
   color: #333;
   margin: 0;
   display: flex;
@@ -426,50 +430,51 @@ exports[`Modal should match snapshot with header slot 1`] = `
   border-bottom: 1px solid #333;
   justify-content: space-between;
 }
-.modal__header-0-0-28 ::slotted(*) {
+.modal__header-0-0-29 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-29 {
+.modal__body-0-0-30 {
   display: flex;
   padding: 1rem 0;
   justify-content: space-between;
 }
-.modal__close-0-0-30 {
+.modal__close-0-0-31 {
   cursor: pointer;
   height: 16px;
   opacity: 0.5;
   font-size: 1rem;
 }
-.modal__close-0-0-30:hover {
+.modal__close-0-0-31:hover {
   opacity: 1;
 }
-.modal__actions-0-0-31 {
+.modal__actions-0-0-32 {
   display: flex;
   padding: 1rem 0;
   border-top: 1px solid #ccc;
   justify-content: flex-end;
 }
-.modal__actions-0-0-31 t-button {
+.modal__actions-0-0-32 t-button {
   margin: 0.25rem;
 }
-.modal--opened-0-0-32 {
+.modal--opened-0-0-33 {
   display: block;
 }
+.transitions-0-0-34 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-25">
-        <div class="modal__backdrop-0-0-27"></div>
-        <div class="modal__content-0-0-26">
-          <div class="modal__header-0-0-28">
+      <div class="modal-0-0-26">
+        <div class="modal__backdrop-0-0-28"></div>
+        <div class="modal__content-0-0-27">
+          <div class="modal__header-0-0-29">
             <slot name="header"></slot>
-            <a class="modal__close-0-0-30">
+            <a class="modal__close-0-0-31">
               x
             </a>
           </div>
-          <div class="modal__body-0-0-29">
+          <div class="modal__body-0-0-30">
             <slot></slot>
           </div>
         </div>

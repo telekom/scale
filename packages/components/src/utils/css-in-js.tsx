@@ -56,7 +56,8 @@ export function CssInJs(componentKey: string, styles: any): CssInJsDecorator {
     try {
       withDefaultTheme = combineObjects(
         styles,
-        (getTheme().components[componentKey] || {}).styles
+        (getTheme().components[componentKey] || {}).styles ||
+          getTheme().components[componentKey] // fallback for compatibility
       );
     } catch (error) {
       withDefaultTheme = styles;
