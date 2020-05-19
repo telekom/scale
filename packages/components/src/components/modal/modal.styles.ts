@@ -2,28 +2,67 @@ import { JssStyle } from 'jss';
 
 export const styles: JssStyle = {
   modal: {
+    zIndex: 100,
     display: 'none',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    height: 'calc(100% - 160px)',
+    width: 'calc(100% - 62.5%)',
+    margin: '80px 31.25%',
+    alignItems: 'center',
+  },
+  'modal--opened': {
+    display: 'flex',
+  },
+  'modal__scroll-container': {
+    overflow: 'auto',
   },
   modal__content: {
-    boxSizing: 'border-box',
-    overflow: 'hidden',
-    position: 'fixed',
-    background: 'white',
+    background: '#FFFFFF',
     color: '#333',
-    padding: '1rem',
-    textAlign: 'left',
-    top: '10vh',
-    left: '25%',
-    width: '50%',
-    maxWidth: '550px',
     borderRadius: '3px',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.26)',
-    zIndex: 100,
+    maxHeight: '100%',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    transition: 'all 0.5s ease-out',
+    zIndex: 100,
   },
+  modal__header: {
+    fontSize: '1.25rem',
+    color: '#262626',
+    margin: '0 1rem',
+    padding: '1rem 0',
+    lineHeight: '16px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    '& ::slotted(*)': {
+      fontSize: '1rem',
+      color: '#262626',
+      margin: 0,
+      fontWeight: 'bold',
+    },
+  },
+  'modal__header-scroll': {
+    borderBottom: '1px solid #CCC',
+  },
+  modal__body: {
+    padding: '1rem',
+    lineHeight: '1',
+  },
+  modal__close: {
+    cursor: 'pointer',
+  },
+  modal__actions: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: '1rem',
+    background: '#FFF',
+    borderRadius: '0 0 3px 3px',
+  },
+
   modal__backdrop: {
     position: 'fixed',
     top: 0,
@@ -31,48 +70,5 @@ export const styles: JssStyle = {
     width: '100%',
     height: '100vh',
     background: 'rgba(0, 0, 0, 0.75)',
-    zIndex: 10,
-  },
-  modal__header: {
-    fontSize: '0.8rem',
-    color: '#333',
-    margin: 0,
-    borderBottom: '1px solid #333',
-    padding: '0.5rem 0',
-    display: 'flex',
-    justifyContent: 'space-between',
-    '& ::slotted(*)': {
-      margin: 0,
-      fontSize: '1rem',
-      color: '#262626',
-      fontWeight: 'bold',
-    },
-  },
-  modal__body: {
-    padding: '1rem 0',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  modal__close: {
-    fontSize: '1rem',
-    height: '16px',
-    opacity: 0.5,
-    cursor: 'pointer',
-    '&:hover': {
-      opacity: 1,
-    },
-  },
-  modal__actions: {
-    borderTop: '1px solid #ccc',
-    padding: '1rem 0',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    '& t-button': {
-      margin: '0.25rem',
-    },
-  },
-
-  'modal--opened': {
-    display: 'block',
   },
 };

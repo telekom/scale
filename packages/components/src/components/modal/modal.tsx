@@ -35,7 +35,7 @@ export class Modal implements Base {
   /** (optional) Modal class */
   @Prop() customClass?: string = '';
   /** (optional) Modal size */
-  @Prop() size?: string = '';
+  @Prop() size?: string = 'default';
   /** (optional) Modal variant */
   @Prop() variant?: string = '';
   /** (optional) If true, the Modal is open. */
@@ -52,6 +52,7 @@ export class Modal implements Base {
   constructor() {
     this.close = this.close.bind(this);
     this.animateComponent = this.animateComponent.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   @Watch('opened')
@@ -76,22 +77,45 @@ export class Modal implements Base {
     });
   }
 
+  decorateScrollContainer() {
+    const scrollContainer = this.hostElement.shadowRoot.querySelector(
+      `.${this.stylesheet.classes['modal__scroll-container']}`
+    );
+    const modalHeader = this.hostElement.shadowRoot.querySelector(
+      `.${this.stylesheet.classes.modal__header}`
+    );
+    setTimeout(() => {
+      const hasVerticalScrollbar =
+        scrollContainer.scrollHeight > scrollContainer.clientHeight;
+
+      if (hasVerticalScrollbar) {
+        modalHeader.classList.add(
+          this.stylesheet.classes['modal__header-scroll']
+        );
+      }
+    });
+  }
+
   async animateComponent() {
     const direction = this.opened ? 'IN' : 'OUT';
 
     await this.waitForChildren(this.hostElement.shadowRoot.children);
-    let combinedTransitions;
 
+    document.body.style.overflow = this.opened ? 'hidden' : 'auto';
+
+    this.decorateScrollContainer();
+
+    let combinedTransitions;
     try {
       combinedTransitions = JSON.parse(this.transitions);
     } catch (err) {
       combinedTransitions = this.transitions;
     }
-
     combinedTransitions = combineObjects(
       getTheme().components.Modal.transitions,
       combinedTransitions
     );
+
     const { backDrop, modalContent } = combinedTransitions;
     const { transition: transitionModal, ...optionsModal } = modalContent[
       direction
@@ -114,6 +138,7 @@ export class Modal implements Base {
 
     if (direction === 'IN') {
       modalClassList.add(this.stylesheet.classes['modal--opened']);
+      document.addEventListener('keydown', this.handleKeyDown);
     }
 
     animationBackdrop.play();
@@ -123,6 +148,7 @@ export class Modal implements Base {
       animationModal.onfinish = function() {
         if (direction === 'OUT') {
           modalClassList.remove(this.stylesheet.classes['modal--opened']);
+          document.removeEventListener('keydown', this.handleKeyDown);
         }
         resolve();
       }.bind(this);
@@ -138,6 +164,11 @@ export class Modal implements Base {
   }
   componentWillUpdate() {}
   componentDidUnload() {}
+  handleKeyDown(event) {
+    if (event.key === 'Escape') {
+      this.close(event);
+    }
+  }
   componentDidLoad() {
     this.animateComponent();
   }
@@ -168,15 +199,15 @@ export class Modal implements Base {
                 </div>
               )}
 
-              <div class={classes.modal__body}>
-                <slot />
+              <div class={classes['modal__scroll-container']}>
+                <div class={classes.modal__body}>
+                  <slot />
+                </div>
               </div>
 
-              {this.hasSlotActions /* istanbul ignore next */ && (
-                <div class={classes.modal__actions}>
-                  <slot name="modal-actions" />
-                </div>
-              )}
+              <div class={classes.modal__actions}>
+                <slot name="modal-actions" />
+              </div>
             </div>
           </div>
         </animatable-component>

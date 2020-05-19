@@ -4,87 +4,88 @@ exports[`Modal should match snapshot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-9 {
+      .modal-0-0-11 {
+  top: 0;
+  left: 0;
+  width: calc(100% - 62.5%);
+  height: calc(100% - 160px);
+  margin: 80px 31.25%;
   display: none;
-}
-.modal__content-0-0-10 {
-  top: 10vh;
-  left: 25%;
-  color: #333;
-  width: 50%;
-  display: flex;
-  padding: 1rem;
   z-index: 100;
-  overflow: hidden;
   position: fixed;
-  max-width: 550px;
-  background: white;
+  align-items: center;
+}
+.modal--opened-0-0-12 {
+  display: flex;
+}
+.modal__scroll-container-0-0-13 {
+  overflow: auto;
+}
+.modal__content-0-0-14 {
+  color: #333;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  background: #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  text-align: left;
-  transition: all 0.5s ease-out;
+  max-height: 100%;
   border-radius: 3px;
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-11 {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.75);
-}
-.modal__header-0-0-12 {
-  color: #333;
-  margin: 0;
+.modal__header-0-0-15 {
+  color: #262626;
+  margin: 0 1rem;
   display: flex;
-  padding: 0.5rem 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 16px;
   justify-content: space-between;
 }
-.modal__header-0-0-12 ::slotted(*) {
+.modal__header-0-0-15 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-13 {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
+.modal__header-scroll-0-0-16 {
+  border-bottom: 1px solid #CCC;
 }
-.modal__close-0-0-14 {
+.modal__body-0-0-17 {
+  padding: 1rem;
+  line-height: 1;
+}
+.modal__close-0-0-18 {
   cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-  font-size: 1rem;
 }
-.modal__close-0-0-14:hover {
-  opacity: 1;
-}
-.modal__actions-0-0-15 {
+.modal__actions-0-0-19 {
   display: flex;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
+  padding: 1rem;
+  background: #FFF;
+  border-radius: 3px;
   justify-content: flex-end;
 }
-.modal__actions-0-0-15 t-button {
-  margin: 0.25rem;
+.modal__backdrop-0-0-20 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
 }
-.modal--opened-0-0-16 {
-  display: block;
-}
-.transitions-0-0-17 {}
+.transitions-0-0-21 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-9">
-        <div class="modal__backdrop-0-0-11"></div>
-        <div class="modal__content-0-0-10">
-          <div class="modal__body-0-0-13">
-            <slot></slot>
+      <div class="modal-0-0-11">
+        <div class="modal__backdrop-0-0-20"></div>
+        <div class="modal__content-0-0-14">
+          <div class="modal__scroll-container-0-0-13">
+            <div class="modal__body-0-0-17">
+              <slot></slot>
+            </div>
+          </div>
+          <div class="modal__actions-0-0-19">
+            <slot name="modal-actions"></slot>
           </div>
         </div>
       </div>
@@ -98,87 +99,88 @@ exports[`Modal should match snapshot when opened 1`] = `
 <scale-modal opened="true">
   <mock:shadow-root>
     <style>
-      .modal-0-0-9 {
+      .modal-0-0-11 {
+  top: 0;
+  left: 0;
+  width: calc(100% - 62.5%);
+  height: calc(100% - 160px);
+  margin: 80px 31.25%;
   display: none;
-}
-.modal__content-0-0-10 {
-  top: 10vh;
-  left: 25%;
-  color: #333;
-  width: 50%;
-  display: flex;
-  padding: 1rem;
   z-index: 100;
-  overflow: hidden;
   position: fixed;
-  max-width: 550px;
-  background: white;
+  align-items: center;
+}
+.modal--opened-0-0-12 {
+  display: flex;
+}
+.modal__scroll-container-0-0-13 {
+  overflow: auto;
+}
+.modal__content-0-0-14 {
+  color: #333;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  background: #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  text-align: left;
-  transition: all 0.5s ease-out;
+  max-height: 100%;
   border-radius: 3px;
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-11 {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.75);
-}
-.modal__header-0-0-12 {
-  color: #333;
-  margin: 0;
+.modal__header-0-0-15 {
+  color: #262626;
+  margin: 0 1rem;
   display: flex;
-  padding: 0.5rem 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 16px;
   justify-content: space-between;
 }
-.modal__header-0-0-12 ::slotted(*) {
+.modal__header-0-0-15 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-13 {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
+.modal__header-scroll-0-0-16 {
+  border-bottom: 1px solid #CCC;
 }
-.modal__close-0-0-14 {
+.modal__body-0-0-17 {
+  padding: 1rem;
+  line-height: 1;
+}
+.modal__close-0-0-18 {
   cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-  font-size: 1rem;
 }
-.modal__close-0-0-14:hover {
-  opacity: 1;
-}
-.modal__actions-0-0-15 {
+.modal__actions-0-0-19 {
   display: flex;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
+  padding: 1rem;
+  background: #FFF;
+  border-radius: 3px;
   justify-content: flex-end;
 }
-.modal__actions-0-0-15 t-button {
-  margin: 0.25rem;
+.modal__backdrop-0-0-20 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
 }
-.modal--opened-0-0-16 {
-  display: block;
-}
-.transitions-0-0-17 {}
+.transitions-0-0-21 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-9">
-        <div class="modal__backdrop-0-0-11"></div>
-        <div class="modal__content-0-0-10">
-          <div class="modal__body-0-0-13">
-            <slot></slot>
+      <div class="modal-0-0-11">
+        <div class="modal__backdrop-0-0-20"></div>
+        <div class="modal__content-0-0-14">
+          <div class="modal__scroll-container-0-0-13">
+            <div class="modal__body-0-0-17">
+              <slot></slot>
+            </div>
+          </div>
+          <div class="modal__actions-0-0-19">
+            <slot name="modal-actions"></slot>
           </div>
         </div>
       </div>
@@ -192,89 +194,87 @@ exports[`Modal should match snapshot with actions slot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-43 {
+      .modal-0-0-53 {
+  top: 0;
+  left: 0;
+  width: calc(100% - 62.5%);
+  height: calc(100% - 160px);
+  margin: 80px 31.25%;
   display: none;
-}
-.modal__content-0-0-44 {
-  top: 10vh;
-  left: 25%;
-  color: #333;
-  width: 50%;
-  display: flex;
-  padding: 1rem;
   z-index: 100;
-  overflow: hidden;
   position: fixed;
-  max-width: 550px;
-  background: white;
+  align-items: center;
+}
+.modal--opened-0-0-54 {
+  display: flex;
+}
+.modal__scroll-container-0-0-55 {
+  overflow: auto;
+}
+.modal__content-0-0-56 {
+  color: #333;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  background: #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  text-align: left;
-  transition: all 0.5s ease-out;
+  max-height: 100%;
   border-radius: 3px;
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-45 {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.75);
-}
-.modal__header-0-0-46 {
-  color: #333;
-  margin: 0;
+.modal__header-0-0-57 {
+  color: #262626;
+  margin: 0 1rem;
   display: flex;
-  padding: 0.5rem 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 16px;
   justify-content: space-between;
 }
-.modal__header-0-0-46 ::slotted(*) {
+.modal__header-0-0-57 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-47 {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
+.modal__header-scroll-0-0-58 {
+  border-bottom: 1px solid #CCC;
 }
-.modal__close-0-0-48 {
+.modal__body-0-0-59 {
+  padding: 1rem;
+  line-height: 1;
+}
+.modal__close-0-0-60 {
   cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-  font-size: 1rem;
 }
-.modal__close-0-0-48:hover {
-  opacity: 1;
-}
-.modal__actions-0-0-49 {
+.modal__actions-0-0-61 {
   display: flex;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
+  padding: 1rem;
+  background: #FFF;
+  border-radius: 3px;
   justify-content: flex-end;
 }
-.modal__actions-0-0-49 t-button {
-  margin: 0.25rem;
+.modal__backdrop-0-0-62 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
 }
-.modal--opened-0-0-50 {
-  display: block;
-}
-.transitions-0-0-51 {}
+.transitions-0-0-63 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-43">
-        <div class="modal__backdrop-0-0-45"></div>
-        <div class="modal__content-0-0-44">
-          <div class="modal__body-0-0-47">
-            <slot></slot>
+      <div class="modal-0-0-53">
+        <div class="modal__backdrop-0-0-62"></div>
+        <div class="modal__content-0-0-56">
+          <div class="modal__scroll-container-0-0-55">
+            <div class="modal__body-0-0-59">
+              <slot></slot>
+            </div>
           </div>
-          <div class="modal__actions-0-0-49">
+          <div class="modal__actions-0-0-61">
             <slot name="modal-actions"></slot>
           </div>
         </div>
@@ -292,87 +292,88 @@ exports[`Modal should match snapshot with close slot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-60 {
+      .modal-0-0-74 {
+  top: 0;
+  left: 0;
+  width: calc(100% - 62.5%);
+  height: calc(100% - 160px);
+  margin: 80px 31.25%;
   display: none;
-}
-.modal__content-0-0-61 {
-  top: 10vh;
-  left: 25%;
-  color: #333;
-  width: 50%;
-  display: flex;
-  padding: 1rem;
   z-index: 100;
-  overflow: hidden;
   position: fixed;
-  max-width: 550px;
-  background: white;
+  align-items: center;
+}
+.modal--opened-0-0-75 {
+  display: flex;
+}
+.modal__scroll-container-0-0-76 {
+  overflow: auto;
+}
+.modal__content-0-0-77 {
+  color: #333;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  background: #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  text-align: left;
-  transition: all 0.5s ease-out;
+  max-height: 100%;
   border-radius: 3px;
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-62 {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.75);
-}
-.modal__header-0-0-63 {
-  color: #333;
-  margin: 0;
+.modal__header-0-0-78 {
+  color: #262626;
+  margin: 0 1rem;
   display: flex;
-  padding: 0.5rem 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 16px;
   justify-content: space-between;
 }
-.modal__header-0-0-63 ::slotted(*) {
+.modal__header-0-0-78 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-64 {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
+.modal__header-scroll-0-0-79 {
+  border-bottom: 1px solid #CCC;
 }
-.modal__close-0-0-65 {
+.modal__body-0-0-80 {
+  padding: 1rem;
+  line-height: 1;
+}
+.modal__close-0-0-81 {
   cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-  font-size: 1rem;
 }
-.modal__close-0-0-65:hover {
-  opacity: 1;
-}
-.modal__actions-0-0-66 {
+.modal__actions-0-0-82 {
   display: flex;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
+  padding: 1rem;
+  background: #FFF;
+  border-radius: 3px;
   justify-content: flex-end;
 }
-.modal__actions-0-0-66 t-button {
-  margin: 0.25rem;
+.modal__backdrop-0-0-83 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
 }
-.modal--opened-0-0-67 {
-  display: block;
-}
-.transitions-0-0-68 {}
+.transitions-0-0-84 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-60">
-        <div class="modal__backdrop-0-0-62"></div>
-        <div class="modal__content-0-0-61">
-          <div class="modal__body-0-0-64">
-            <slot></slot>
+      <div class="modal-0-0-74">
+        <div class="modal__backdrop-0-0-83"></div>
+        <div class="modal__content-0-0-77">
+          <div class="modal__scroll-container-0-0-76">
+            <div class="modal__body-0-0-80">
+              <slot></slot>
+            </div>
+          </div>
+          <div class="modal__actions-0-0-82">
+            <slot name="modal-actions"></slot>
           </div>
         </div>
       </div>
@@ -389,93 +390,94 @@ exports[`Modal should match snapshot with header slot 1`] = `
 <scale-modal>
   <mock:shadow-root>
     <style>
-      .modal-0-0-26 {
+      .modal-0-0-32 {
+  top: 0;
+  left: 0;
+  width: calc(100% - 62.5%);
+  height: calc(100% - 160px);
+  margin: 80px 31.25%;
   display: none;
-}
-.modal__content-0-0-27 {
-  top: 10vh;
-  left: 25%;
-  color: #333;
-  width: 50%;
-  display: flex;
-  padding: 1rem;
   z-index: 100;
-  overflow: hidden;
   position: fixed;
-  max-width: 550px;
-  background: white;
+  align-items: center;
+}
+.modal--opened-0-0-33 {
+  display: flex;
+}
+.modal__scroll-container-0-0-34 {
+  overflow: auto;
+}
+.modal__content-0-0-35 {
+  color: #333;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  background: #FFFFFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  box-sizing: border-box;
-  text-align: left;
-  transition: all 0.5s ease-out;
+  max-height: 100%;
   border-radius: 3px;
   flex-direction: column;
   justify-content: space-between;
 }
-.modal__backdrop-0-0-28 {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.75);
-}
-.modal__header-0-0-29 {
-  color: #333;
-  margin: 0;
+.modal__header-0-0-36 {
+  color: #262626;
+  margin: 0 1rem;
   display: flex;
-  padding: 0.5rem 0;
-  font-size: 0.8rem;
-  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 16px;
   justify-content: space-between;
 }
-.modal__header-0-0-29 ::slotted(*) {
+.modal__header-0-0-36 ::slotted(*) {
   color: #262626;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
 }
-.modal__body-0-0-30 {
-  display: flex;
-  padding: 1rem 0;
-  justify-content: space-between;
+.modal__header-scroll-0-0-37 {
+  border-bottom: 1px solid #CCC;
 }
-.modal__close-0-0-31 {
+.modal__body-0-0-38 {
+  padding: 1rem;
+  line-height: 1;
+}
+.modal__close-0-0-39 {
   cursor: pointer;
-  height: 16px;
-  opacity: 0.5;
-  font-size: 1rem;
 }
-.modal__close-0-0-31:hover {
-  opacity: 1;
-}
-.modal__actions-0-0-32 {
+.modal__actions-0-0-40 {
   display: flex;
-  padding: 1rem 0;
-  border-top: 1px solid #ccc;
+  padding: 1rem;
+  background: #FFF;
+  border-radius: 3px;
   justify-content: flex-end;
 }
-.modal__actions-0-0-32 t-button {
-  margin: 0.25rem;
+.modal__backdrop-0-0-41 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
 }
-.modal--opened-0-0-33 {
-  display: block;
-}
-.transitions-0-0-34 {}
+.transitions-0-0-42 {}
     </style>
     <animatable-component>
-      <div class="modal-0-0-26">
-        <div class="modal__backdrop-0-0-28"></div>
-        <div class="modal__content-0-0-27">
-          <div class="modal__header-0-0-29">
+      <div class="modal-0-0-32">
+        <div class="modal__backdrop-0-0-41"></div>
+        <div class="modal__content-0-0-35">
+          <div class="modal__header-0-0-36">
             <slot name="header"></slot>
-            <a class="modal__close-0-0-31">
+            <a class="modal__close-0-0-39">
               x
             </a>
           </div>
-          <div class="modal__body-0-0-30">
-            <slot></slot>
+          <div class="modal__scroll-container-0-0-34">
+            <div class="modal__body-0-0-38">
+              <slot></slot>
+            </div>
+          </div>
+          <div class="modal__actions-0-0-40">
+            <slot name="modal-actions"></slot>
           </div>
         </div>
       </div>

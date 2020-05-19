@@ -22,6 +22,8 @@ const getKeys = obj => {
     'opened',
     'hostElement',
     's-rc',
+    'size',
+    'variant',
   ];
   const whiteListedTypes = ['boolean', 'string', 'object'];
   const keys = [];
