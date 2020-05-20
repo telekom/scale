@@ -1,0 +1,12 @@
+{
+  "name": "@scaleds/nuxt-module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/module.js",
+  "peerDependencies": {
+    "@scaleds/components": "latest"
+  }
+}

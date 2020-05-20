@@ -19,9 +19,16 @@ export const ComponentUsage = ({ usageExamples }) => {
               <div key={childIndex}>
                 <ComponentUsageExample {...childExample} />
                 <div className="example__code">
-                  <pre>
-                    <code>{childExample.raw}</code>
-                  </pre>
+                  {typeof Prism !== "undefined" && (
+                    <pre
+                      dangerouslySetInnerHTML={{
+                        __html: Prism.highlight(
+                          childExample.raw,
+                          Prism.languages.html
+                        ),
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             )
