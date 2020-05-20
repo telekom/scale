@@ -73,7 +73,6 @@ export const styles: JssStyle = {
       fontFamily: 'inherit',
       boxSizing: 'border-box',
       zIndex: 1,
-      transition: defaultTransition,
     },
     '& .input__counter': {
       display: 'flex',
