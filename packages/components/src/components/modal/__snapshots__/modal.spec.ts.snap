@@ -62,7 +62,7 @@ exports[`Modal should match snapshot 1`] = `
   display: flex;
   padding: 1rem;
   background: #FFF;
-  border-radius: 3px;
+  border-radius: 0 0 3px 3px;
   justify-content: flex-end;
 }
 .modal__backdrop-0-0-20 {
@@ -157,7 +157,7 @@ exports[`Modal should match snapshot when opened 1`] = `
   display: flex;
   padding: 1rem;
   background: #FFF;
-  border-radius: 3px;
+  border-radius: 0 0 3px 3px;
   justify-content: flex-end;
 }
 .modal__backdrop-0-0-20 {
@@ -252,7 +252,7 @@ exports[`Modal should match snapshot with actions slot 1`] = `
   display: flex;
   padding: 1rem;
   background: #FFF;
-  border-radius: 3px;
+  border-radius: 0 0 3px 3px;
   justify-content: flex-end;
 }
 .modal__backdrop-0-0-62 {
@@ -350,7 +350,7 @@ exports[`Modal should match snapshot with close slot 1`] = `
   display: flex;
   padding: 1rem;
   background: #FFF;
-  border-radius: 3px;
+  border-radius: 0 0 3px 3px;
   justify-content: flex-end;
 }
 .modal__backdrop-0-0-83 {
@@ -448,7 +448,7 @@ exports[`Modal should match snapshot with header slot 1`] = `
   display: flex;
   padding: 1rem;
   background: #FFF;
-  border-radius: 3px;
+  border-radius: 0 0 3px 3px;
   justify-content: flex-end;
 }
 .modal__backdrop-0-0-41 {
