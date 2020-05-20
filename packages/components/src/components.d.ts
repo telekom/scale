@@ -201,10 +201,6 @@ export namespace Components {
          */
         "customClass"?: string;
         /**
-          * (optional) textarea disableResize
-         */
-        "disableResize"?: boolean;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -248,6 +244,10 @@ export namespace Components {
           * (optional) Input required
          */
         "required"?: boolean;
+        /**
+          * (optional) textarea resize
+         */
+        "resize"?: "unset" | "none" | "vertical" | "horizontal";
         /**
           * (optional) textarea row
          */
@@ -902,10 +902,6 @@ declare namespace LocalJSX {
          */
         "customClass"?: string;
         /**
-          * (optional) textarea disableResize
-         */
-        "disableResize"?: boolean;
-        /**
           * (optional) Input disabled
          */
         "disabled"?: boolean;
@@ -965,6 +961,10 @@ declare namespace LocalJSX {
           * (optional) Input required
          */
         "required"?: boolean;
+        /**
+          * (optional) textarea resize
+         */
+        "resize"?: "unset" | "none" | "vertical" | "horizontal";
         /**
           * (optional) textarea row
          */

@@ -111,9 +111,24 @@ export const styles: JssStyle = {
       },
     },
   },
-  'input--disable-resize': {
+  'input--resize-none': {
     '& .input__textarea': {
       resize: 'none',
+    },
+  },
+  'input--resize-unset': {
+    '& .input__textarea': {
+      resize: 'unset',
+    },
+  },
+  'input--resize-vertical': {
+    '& .input__textarea': {
+      resize: 'vertical',
+    },
+  },
+  'input--resize-horizontal': {
+    '& .input__textarea': {
+      resize: 'horizontal',
     },
   },
   'input--variant-static': {
