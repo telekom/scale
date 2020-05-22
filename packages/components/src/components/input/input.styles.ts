@@ -111,26 +111,6 @@ export const styles: JssStyle = {
       },
     },
   },
-  'input--resize-none': {
-    '& .input__textarea': {
-      resize: 'none',
-    },
-  },
-  'input--resize-unset': {
-    '& .input__textarea': {
-      resize: 'unset',
-    },
-  },
-  'input--resize-vertical': {
-    '& .input__textarea': {
-      resize: 'vertical',
-    },
-  },
-  'input--resize-horizontal': {
-    '& .input__textarea': {
-      resize: 'horizontal',
-    },
-  },
   'input--variant-static': {
     '& .input__label': {
       display: 'flex',

@@ -3,10 +3,10 @@
 exports[`Input should match snapshot 1`] = `
 <scale-input>
   <style>
-    .input-0-0-17 {
+    .input-0-0-13 {
   position: relative;
 }
-.input-0-0-17 .input__input {
+.input-0-0-13 .input__input {
   width: 100%;
   border: 1px solid #cecece;
   height: 48px;
@@ -19,7 +19,7 @@ exports[`Input should match snapshot 1`] = `
   font-family: inherit;
   border-radius: 4px;
 }
-.input-0-0-17 .input__textarea {
+.input-0-0-13 .input__textarea {
   border: 1px solid #cecece;
   display: flex;
   padding: 12px 12px;
@@ -28,7 +28,7 @@ exports[`Input should match snapshot 1`] = `
   box-sizing: border-box;
   font-family: inherit;
 }
-.input-0-0-17 .input__counter {
+.input-0-0-13 .input__counter {
   color: #333;
   display: flex;
   font-size: 12px;
@@ -36,58 +36,42 @@ exports[`Input should match snapshot 1`] = `
   margin-left: auto;
   justify-content: flex-end;
 }
-.input-0-0-17 .input__helper-text {
+.input-0-0-13 .input__helper-text {
   font-size: 12px;
   transition: all 0.2s ease-in-out;
 }
-.input-0-0-17 .input__meta {
+.input-0-0-13 .input__meta {
   display: flex;
   margin-top: 6px;
   justify-content: space-between;
 }
-.input-0-0-17:not(.input--disabled-0-0-29) {}
-.input-0-0-17:not(.input--disabled-0-0-29) .input__input, .input-0-0-17:not(.input--disabled-0-0-29) .input__textarea {}
-.input-0-0-17:not(.input--disabled-0-0-29) .input__checkbox-container {}
-.input-0-0-17:not(.input--disabled-0-0-29) .input__radio {}
-.input-0-0-17:not(.input--disabled-0-0-29) .input__radio:hover, .input-0-0-17:not(.input--disabled-0-0-29) .input__radio:focus {
+.input-0-0-13:not(.input--disabled-0-0-21) {}
+.input-0-0-13:not(.input--disabled-0-0-21) .input__input, .input-0-0-13:not(.input--disabled-0-0-21) .input__textarea {}
+.input-0-0-13:not(.input--disabled-0-0-21) .input__checkbox-container {}
+.input-0-0-13:not(.input--disabled-0-0-21) .input__radio {}
+.input-0-0-13:not(.input--disabled-0-0-21) .input__radio:hover, .input-0-0-13:not(.input--disabled-0-0-21) .input__radio:focus {
   border-color: #2962ff;
 }
-.input-0-0-17:not(.input--disabled-0-0-29) .input__checkbox-container:hover, .input-0-0-17:not(.input--disabled-0-0-29) .input__checkbox-container:focus {}
-.input-0-0-17:not(.input--disabled-0-0-29) .input__checkbox-container:hover .input__checkbox-placeholder, .input-0-0-17:not(.input--disabled-0-0-29) .input__checkbox-container:focus .input__checkbox-placeholder {
+.input-0-0-13:not(.input--disabled-0-0-21) .input__checkbox-container:hover, .input-0-0-13:not(.input--disabled-0-0-21) .input__checkbox-container:focus {}
+.input-0-0-13:not(.input--disabled-0-0-21) .input__checkbox-container:hover .input__checkbox-placeholder, .input-0-0-13:not(.input--disabled-0-0-21) .input__checkbox-container:focus .input__checkbox-placeholder {
   border-color: #2962ff;
 }
-.input-0-0-17:not(.input--disabled-0-0-29) .input__input:hover, .input-0-0-17:not(.input--disabled-0-0-29) .input__input:focus, .input-0-0-17:not(.input--disabled-0-0-29) .input__textarea:hover, .input-0-0-17:not(.input--disabled-0-0-29) .input__textarea:focus {
+.input-0-0-13:not(.input--disabled-0-0-21) .input__input:hover, .input-0-0-13:not(.input--disabled-0-0-21) .input__input:focus, .input-0-0-13:not(.input--disabled-0-0-21) .input__textarea:hover, .input-0-0-13:not(.input--disabled-0-0-21) .input__textarea:focus {
   border-color: #2962ff;
 }
-.input--resize-none-0-0-18 {}
-.input--resize-none-0-0-18 .input__textarea {
-  resize: none;
-}
-.input--resize-unset-0-0-19 {}
-.input--resize-unset-0-0-19 .input__textarea {
-  resize: unset;
-}
-.input--resize-vertical-0-0-20 {}
-.input--resize-vertical-0-0-20 .input__textarea {
-  resize: vertical;
-}
-.input--resize-horizontal-0-0-21 {}
-.input--resize-horizontal-0-0-21 .input__textarea {
-  resize: horizontal;
-}
-.input--variant-static-0-0-22 {}
-.input--variant-static-0-0-22 .input__label {
+.input--variant-static-0-0-14 {}
+.input--variant-static-0-0-14 .input__label {
   display: flex;
   margin-bottom: 12px;
 }
-.input--variant-animated-0-0-23 {}
-.input--variant-animated-0-0-23 .input__input.has-label {
+.input--variant-animated-0-0-15 {}
+.input--variant-animated-0-0-15 .input__input.has-label {
   padding: 12px 12px 0 11px;
 }
-.input--variant-animated-0-0-23 .input__textarea.has-label {
+.input--variant-animated-0-0-15 .input__textarea.has-label {
   padding-top: 24px;
 }
-.input--variant-animated-0-0-23 .input__label {
+.input--variant-animated-0-0-15 .input__label {
   top: 0;
   left: 0;
   color: #dfdfdf;
@@ -100,62 +84,62 @@ exports[`Input should match snapshot 1`] = `
   font-weight: 400;
   pointer-events: none;
 }
-.input--variant-animated-0-0-23 .input__input:focus + .input__label, .input--variant-animated-0-0-23.animated .input__label {
+.input--variant-animated-0-0-15 .input__input:focus + .input__label, .input--variant-animated-0-0-15.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 8px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
   color: #2962ff;
 }
-.input--variant-animated-0-0-23 .input__textarea:focus + .input__label, .input--variant-animated-0-0-23.animated .input__label {
+.input--variant-animated-0-0-15 .input__textarea:focus + .input__label, .input--variant-animated-0-0-15.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 8px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
   color: #2962ff;
 }
-.input--status-error-0-0-24 {}
-.input--status-error-0-0-24.animated .input__label, .input--status-error-0-0-24 label {
+.input--status-error-0-0-16 {}
+.input--status-error-0-0-16.animated .input__label, .input--status-error-0-0-16 label {
   color: #f50057 !important;
 }
-.input--status-error-0-0-24 .input__input:focus + .input__label, .input--status-error-0-0-24 .input__textarea:focus + .input__label {
+.input--status-error-0-0-16 .input__input:focus + .input__label, .input--status-error-0-0-16 .input__textarea:focus + .input__label {
   color: #f50057 !important;
 }
-.input--status-error-0-0-24 .input__input, .input--status-error-0-0-24 .input__textarea {
+.input--status-error-0-0-16 .input__input, .input--status-error-0-0-16 .input__textarea {
   border: 1px solid #f50057;
 }
-.input--status-error-0-0-24 .input__helper-text {
+.input--status-error-0-0-16 .input__helper-text {
   color: #f50057;
 }
-.input--status-error-0-0-24 .input__counter {
+.input--status-error-0-0-16 .input__counter {
   color: #f50057;
 }
-.input--status-info-0-0-25 {}
-.input--status-info-0-0-25 .input__helper-text {
+.input--status-info-0-0-17 {}
+.input--status-info-0-0-17 .input__helper-text {
   color: #00b0ff;
 }
-.input--status-info-0-0-25 .input__counter {
+.input--status-info-0-0-17 .input__counter {
   color: #00b0ff;
 }
-.input--status-warning-0-0-26 {}
-.input--status-warning-0-0-26 .input__helper-text {
+.input--status-warning-0-0-18 {}
+.input--status-warning-0-0-18 .input__helper-text {
   color: #ffc400;
 }
-.input--status-warning-0-0-26 .input__counter {
+.input--status-warning-0-0-18 .input__counter {
   color: #ffc400;
 }
-.input--status-success-0-0-27 {}
-.input--status-success-0-0-27 .input__helper-text {
+.input--status-success-0-0-19 {}
+.input--status-success-0-0-19 .input__helper-text {
   color: #00e676;
 }
-.input--status-success-0-0-27 .input__counter {
+.input--status-success-0-0-19 .input__counter {
   color: #00e676;
 }
-.input--size-small-0-0-28 {}
-.input--size-small-0-0-28 .input__input {
+.input--size-small-0-0-20 {}
+.input--size-small-0-0-20 .input__input {
   height: 40px;
 }
-.input--size-small-0-0-28 .input__label {
+.input--size-small-0-0-20 .input__label {
   top: 0;
   left: 0;
   color: #dfdfdf;
@@ -168,30 +152,30 @@ exports[`Input should match snapshot 1`] = `
   font-weight: 400;
   pointer-events: none;
 }
-.input--size-small-0-0-28 .input__input:focus + .input__label, .input--size-small-0-0-28.animated .input__label {
+.input--size-small-0-0-20 .input__input:focus + .input__label, .input--size-small-0-0-20.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 4px);
   transition: all 0.2s ease-in-out;
   font-weight: 700;
   color: #2962ff;
 }
-.input--disabled-0-0-29 {}
-.input--disabled-0-0-29 .input__label, .input--disabled-0-0-29 .input__input, .input--disabled-0-0-29 .input__textarea, .input--disabled-0-0-29 .input__checkbox-container, .input--disabled-0-0-29 .input__radio {
+.input--disabled-0-0-21 {}
+.input--disabled-0-0-21 .input__label, .input--disabled-0-0-21 .input__input, .input--disabled-0-0-21 .input__textarea, .input--disabled-0-0-21 .input__checkbox-container, .input--disabled-0-0-21 .input__radio {
   cursor: not-allowed!important;
   opacity: 0.5;
 }
-.input--type-checkbox-0-0-30 {
+.input--type-checkbox-0-0-22 {
   display: flex;
   align-items: center;
 }
-.input--type-checkbox-0-0-30 .input__checkbox-container {
+.input--type-checkbox-0-0-22 .input__checkbox-container {
   width: 24px;
   height: 24px;
   display: flex;
   position: relative;
   align-items: center;
 }
-.input--type-checkbox-0-0-30 .input__checkbox-container .input__checkbox {
+.input--type-checkbox-0-0-22 .input__checkbox-container .input__checkbox {
   top: 0;
   left: 0;
   width: 100%;
@@ -203,15 +187,15 @@ exports[`Input should match snapshot 1`] = `
   z-index: 1;
   position: absolute;
 }
-.input--type-checkbox-0-0-30 .input__checkbox-container .input__checkbox-placeholder {
+.input--type-checkbox-0-0-22 .input__checkbox-container .input__checkbox-placeholder {
   width: 16px;
   border: 1px solid #cecece;
   height: 16px;
   margin: 2px;
   border-radius: 4px;
 }
-.input--checked-0-0-31 {}
-.input--checked-0-0-31 scale-icon {
+.input--checked-0-0-23 {}
+.input--checked-0-0-23 scale-icon {
   top: 6px;
   left: 6px;
   width: 12px;
@@ -219,15 +203,15 @@ exports[`Input should match snapshot 1`] = `
   position: absolute;
   user-select: none;
 }
-.input--checked-0-0-31.input--disabled-0-0-29 {}
-.input--checked-0-0-31.input--disabled-0-0-29 .input__checkbox-placeholder {
+.input--checked-0-0-23.input--disabled-0-0-21 {}
+.input--checked-0-0-23.input--disabled-0-0-21 .input__checkbox-placeholder {
   background-color: #cdcdcd;
 }
-.input--type-radio-0-0-32 {
+.input--type-radio-0-0-24 {
   display: flex;
   align-items: center;
 }
-.input--type-radio-0-0-32 .input__radio {
+.input--type-radio-0-0-24 .input__radio {
   width: 16px;
   border: 1px solid #cecece;
   height: 16px;
@@ -235,19 +219,20 @@ exports[`Input should match snapshot 1`] = `
   border-radius: 50%;
   background-color: #ffffff;
 }
-.input--type-radio-0-0-32.input--disabled-0-0-29 {}
-.input--type-radio-0-0-32.input--disabled-0-0-29 .input__radio {}
-.input--type-radio-0-0-32.input--disabled-0-0-29 .input__radio:checked {
+.input--type-radio-0-0-24.input--disabled-0-0-21 {}
+.input--type-radio-0-0-24.input--disabled-0-0-21 .input__radio {}
+.input--type-radio-0-0-24.input--disabled-0-0-21 .input__radio:checked {
   border: 6px solid #cdcdcd;
   background-color: #979797;
 }
-.input--type-radio-0-0-32 .input__radio:checked, .input--type-radio-0-0-32 .input__radio:focus {
+.input--type-radio-0-0-24 .input__radio:checked, .input--type-radio-0-0-24 .input__radio:focus {
   outline: none;
   transition: all 0.2s ease-in-out;
   border: 6px solid #2962ff;
 }
+.customResize-0-0-25 {}
   </style>
-  <div class="input-0-0-17">
+  <div class="input-0-0-13">
     <input class="input__input" type="text">
   </div>
 </scale-input>

@@ -87,6 +87,8 @@ export class Input implements Base {
 
   /** (optional) Input checkbox checked */
   @State() checked?: boolean = this.preChecked;
+  @State() prevResize?: string = '';
+  @State() customResize?: any;
 
   componentWillLoad() {}
   componentWillUpdate() {}
@@ -166,6 +168,13 @@ export class Input implements Base {
       );
     }
     const Element = this.type === 'textarea' ? 'textarea' : 'input';
+    if (this.prevResize !== this.resize) {
+      this.customResize = this.stylesheet.addRule('customResize', {
+        resize: this.resize,
+      });
+      this.prevResize = this.resize;
+    }
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
@@ -177,7 +186,7 @@ export class Input implements Base {
             type={this.type}
             class={classNames(
               `input__${this.type === 'textarea' ? 'textarea' : 'input'}`,
-              this.label && 'has-label'
+              this.label && 'has-label' && this.customResize.id
             )}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
@@ -224,7 +233,6 @@ export class Input implements Base {
       this.customClass && this.customClass,
       this.type && classes[`input--type-${this.type}`],
       this.checked && classes[`input--checked`],
-      this.size && classes[`input--size-${this.size}`],
       this.resize && classes[`input--resize-${this.resize}`],
       this.variant && classes[`input--variant-${this.variant}`],
       this.disabled && classes[`input--disabled`],
