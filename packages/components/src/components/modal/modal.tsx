@@ -99,9 +99,11 @@ export class Modal implements Base {
   async animateComponent() {
     const direction = this.opened ? 'IN' : 'OUT';
 
+    if (!this.hostElement.shadowRoot) {
+      // in this case we are doing SSR, so we can skip animations
+      return null;
+    }
     await this.waitForChildren(this.hostElement.shadowRoot.children);
-
-    document.body.style.overflow = this.opened ? 'hidden' : 'auto';
 
     this.decorateScrollContainer();
 
