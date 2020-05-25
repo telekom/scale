@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
-import componentsDocs from "@scaleds/components/dist/scale-components.json"
+import componentsDocs from "../../components.json"
 import DocsLayout from "../layouts/documentation"
 // import { ComponentPlayground } from "./component-playground"
 import { ComponentUsage } from "./component-usage"
@@ -20,11 +20,11 @@ export default function Template({
   const { markdownRemark } = data
   const { fields, frontmatter, htmlAst } = markdownRemark
 
-  const defaultProps = (componentDocs) => {
+  const defaultProps = componentDocs => {
     let obj = {}
     componentDocs &&
       componentDocs.props &&
-      componentDocs.props.map((prop) => {
+      componentDocs.props.map(prop => {
         if (prop.name !== "styles") {
           obj[prop.name] =
             prop.default && prop.default !== "''" ? prop.default : ""
@@ -49,7 +49,7 @@ export default function Template({
 
   const ComponentName = htmlAst.children[0].children[0].value || pageTitle
   const componentDocs = componentsDocs.components.filter(
-    (component) => component.tag === ComponentName
+    component => component.tag === ComponentName
   )[0]
   const [componentState, setComponentState] = useState(
     defaultProps(componentDocs)
@@ -67,7 +67,7 @@ export default function Template({
   const usage = componentDocs && componentDocs.usage ? componentDocs.usage : {}
   const usageExamples =
     Object.keys(usage).length > 0
-      ? Object.keys(usage).map((example) => parse(usage[example]))
+      ? Object.keys(usage).map(example => parse(usage[example]))
       : []
 
   return (
@@ -77,7 +77,10 @@ export default function Template({
 
       <div className="preview">
         <ComponentGeneral componentDocs={componentDocs} />
-        <ComponentUsage usageExamples={usageExamples} />
+        <ComponentUsage
+          usageExamples={usageExamples}
+          namespace={data.site.config.namespace}
+        />
         <ComponentProps componentDocs={componentDocs} />
         <ComponentMethods componentDocs={componentDocs} />
         <ComponentEvents componentDocs={componentDocs} />
@@ -100,6 +103,11 @@ export default function Template({
 }
 export const pageQuery = graphql`
   query($id: String!) {
+    site {
+      config {
+        namespace
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       htmlAst
       frontmatter {

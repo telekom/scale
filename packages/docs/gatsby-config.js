@@ -21,7 +21,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components-data`,
-        path: `${__dirname}/node_modules/@scaleds/components/src/components`,
+        path: `${process.env.CWD}/src/components`,
       },
     },
     {
@@ -60,16 +60,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: "gatsby-plugin-copy",
-      options: {
-        verbose: true,
-        "node_modules/@scaleds/components/dist/scale-components/":
-          "public/scale-components/",
-        "node_modules/@scaleds/components/dist/theme.iife.js":
-          "public/theme.iife.js",
-      },
-    },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
