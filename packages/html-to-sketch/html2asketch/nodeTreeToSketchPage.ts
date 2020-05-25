@@ -2,7 +2,23 @@ import Artboard from './model/artboard';
 import Page from './model/page';
 import nodeTreeToSketchGroup from './nodeTreeToSketchGroup';
 
+function traverse(node: HTMLElement) {
+  if (/^scale-/i.test(node.nodeName)) {
+    const componentName = node.getAttribute('data-sketch-symbol') || node.nodeName.replace(/^scale-/i, '').toLowerCase();
+    node.setAttribute('data-sketch-symbol', `${componentName}`);
+    node.setAttribute('data-sketch-variant', node.getAttribute('data-sketch-variant') || node.getAttribute('variant') || 'Default');
+  }
+  for (let i = 0; i < node.children.length; i++) {
+    traverse(node.children[i] as unknown as HTMLElement);
+  }
+  if (node.shadowRoot) {
+    traverse(node.shadowRoot as unknown as HTMLElement);
+  }
+}
+
 export default function nodeTreeToSketchPage(node: HTMLElement, options: any) {
+  traverse(node);
+
   const rootGroup = nodeTreeToSketchGroup(node, options);
 
   const bcr = node.getBoundingClientRect();

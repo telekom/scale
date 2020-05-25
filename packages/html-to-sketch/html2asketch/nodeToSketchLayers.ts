@@ -16,6 +16,7 @@ import TextAttributedString from "./model/textAttributedString";
 
 import * as SvgPath from "svgpath";
 import Ref from "./model/ref";
+import { removeJssNameFromClass } from "./helpers/utils";
 
 // Converts quadratic bézier curves to cubic bézier curves
 //
@@ -580,6 +581,17 @@ function applyStyle(element: HTMLElement, style: CSSStyleDeclaration) {
   }
 }
 
+function getNameForNode(node: Element | null):string {
+  if (node === null) {
+    return 'custom';
+  }
+  const id = node.getAttribute('id');
+  if (id) return id;
+  const className = node.getAttribute('class');
+  if (className) return removeJssNameFromClass(className.split(' ')[0]);
+  return getNameForNode(node.parentElement);
+}
+
 export default function nodeToSketchLayers(node: HTMLElement, group: Group, options: any) {
   if (CSSRules === undefined) {
     CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
@@ -920,6 +932,8 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         sg._isClosed = segment.isClosed;
         shapeGroup._layers.push(sg);
       });
+
+      shapeGroup.setName(getNameForNode(node));
       layers.push(shapeGroup);
     }
 
@@ -1032,6 +1046,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
 
+    shapeGroup.setName('background');
     shapeGroup.addLayer(rectangle);
 
     // This should return a array once multiple background-images are supported

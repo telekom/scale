@@ -20,6 +20,12 @@ if (!fs.existsSync(directory)) {
 
 const outputFile = `./../${directory}/asketch.json`;
 
+function delay(timeout) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, timeout);
+  });
+}
+
 puppeteer.launch({ headless: !!!DEBUG ? true : false }).then(async browser => {
   const page = await browser.newPage();
 
@@ -53,6 +59,52 @@ puppeteer.launch({ headless: !!!DEBUG ? true : false }).then(async browser => {
     path: "./dist/build/page2layers.bundle.js"
   });
 
+  const cdp = await page.target().createCDPSession();
+
+  const docNodeId = (await cdp.send('DOM.getDocument')).root.nodeId;
+
+  page.evaluate("page2layers.createStates()"); // Create hover/active/focus variants for components
+  await delay(100); // Wait a bit for relayout
+
+  await cdp.send('CSS.enable');
+
+  const states = ['hover'];
+  for (let i = 0; i < states.length; i++) {
+    let state = states[i];
+
+    // cdp.removeAllListeners('DOM.setChildNodes');
+    // cdp.on('DOM.setChildNodes', async ({nodes}) => {
+    //   for (let i = 0; i < nodes.length; i++) {
+    //     const node = nodes[i];
+    //     if (node.shadowRoots && node.shadowRoots.length > 0) {
+    //       for (const shadowRoot of node.shadowRoots) {
+    //         console.log(':', shadowRoot.nodeId);
+    //         await cdp.send('DOM.requestChildNodes', {nodeId: shadowRoot.nodeId, depth: 1, pierce: true});
+    //       }
+    //     }
+    //     console.log('>', node.nodeId);
+    //     await cdp.send('CSS.forcePseudoState', {
+    //       nodeId: node.nodeId,
+    //       forcedPseudoClasses: [state],
+    //     });
+    //   }
+    // });
+
+    const nodeIds = (await cdp.send('DOM.querySelectorAll', {
+      nodeId: docNodeId,
+      selector: `[data-sketch-state="${state}"]`,
+    })).nodeIds;
+
+    for (const nodeId of nodeIds) {
+      await cdp.send('CSS.forcePseudoState', {
+        nodeId: nodeId,
+        forcedPseudoClasses: [state],
+      });
+      // await cdp.send('DOM.requestChildNodes', {nodeId, depth: 1, pierce: true});
+    }
+  }
+  await delay(3000); // Wait a bit for relayout
+
   const asketchPage = await page.evaluate("page2layers.run()");
 
   fs.writeFileSync(
@@ -62,6 +114,6 @@ puppeteer.launch({ headless: !!!DEBUG ? true : false }).then(async browser => {
 
   if (!!!DEBUG) {
     await browser.close();
-    server.close();
   }
+  server.close();
 });

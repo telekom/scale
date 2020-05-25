@@ -96,18 +96,20 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   // set group name from data-sketch-symbol if exists
   else if (node.getAttribute("data-sketch-symbol") && node.getAttribute("data-sketch-symbol") !== '') {
     group.setName(node.getAttribute("data-sketch-symbol"));
-    group.setIsSymbol(true)
-    if (node.getAttribute('data-sketch-variant') && node.getAttribute('data-sketch-variant') !== '') {
-      group.setVariant(node.getAttribute('data-sketch-variant') || '');
+    group.setIsSymbol(true);
+    const variant = node.getAttribute('data-sketch-variant');
+    if (variant !== null && variant !== '') {
+      const state = node.getAttribute('data-sketch-state');
+      group.setVariant(variant + (state ? `:${state}` : ''));
     }
   }
   // set group name from id if exists
   else if (node.id && node.id !== '') {
-    group.setName(`#${node.id}`);
+    group.setName(`${node.nodeName.toLowerCase()}#${node.id}`);
   }
   // set group name from jss class if exists
   else if (node.classList[0] && node.classList[0] !== 'hydrated') {
-    group.setName(`.${removeJssNameFromClass(node.classList[0])}`);
+    group.setName(`${node.nodeName.toLowerCase()}.${removeJssNameFromClass(node.classList[0])}`);
   }
   // set group name from node name
   else {
