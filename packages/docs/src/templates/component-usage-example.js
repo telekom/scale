@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react"
 import ReactDOM from "react-dom"
 import { v4 as uuid } from "uuid"
 import "./component-usage-example.css"
+import theme from "../theme"
 
-const iframeMarkup = (component) => `
+const iframeMarkup = (component, namespace) => `
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,9 +16,11 @@ const iframeMarkup = (component) => `
       overflow: hidden;
     }
   </style>
-  <script type="module" src="../../scale-components/scale-components.esm.js"></script>
-  <script nomodule="" src="../../scale-components/scale-components.js"></script>
-  <script src="../../theme.iife.js"></script>
+   <link rel="stylesheet" href="../../fonts.css">
+  <script type="module" src="../../components/${namespace}.esm.js"></script>
+  <script nomodule="" src="../../components/${namespace}.js"></script>
+  <script src="../../theme.js"></script>
+  <script> scale.useTheme(${JSON.stringify(theme)})</script>
   </head>
   <body>
     ${component}
@@ -25,7 +28,7 @@ const iframeMarkup = (component) => `
 </html>
 `
 
-export const ComponentUsageExample = (childExample) => {
+export const ComponentUsageExample = childExample => {
   const [width, setWidth] = useState("100%")
   const iframeEl = useRef(null)
 
@@ -87,7 +90,7 @@ export const ComponentUsageExample = (childExample) => {
             ref={iframeEl}
             title={uuid()}
             className="preview__frame initial"
-            srcDoc={iframeMarkup(childExample.raw)}
+            srcDoc={iframeMarkup(childExample.raw, childExample.namespace)}
             style={{ width }}
           />
         )}

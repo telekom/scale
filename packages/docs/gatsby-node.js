@@ -3,9 +3,34 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { GraphQLObjectType, GraphQLString } = require("graphql")
+const config = require(process.env.MONUMENT_CONFIG_FILE)
+const { outputDirName } = config
 
 const path = require(`path`)
+const fs = require("fs")
 const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.setFieldsOnGraphQLNodeType = ({ type }) => {
+  if (type.name === `Site`) {
+    return {
+      config: {
+        type: new GraphQLObjectType({
+          name: "Config",
+          fields: () => ({
+            outputDirName: { type: GraphQLString },
+            docsFilePath: { type: GraphQLString },
+            themeFilePath: { type: GraphQLString },
+            namespace: { type: GraphQLString },
+          }),
+        }),
+        resolve: () => config,
+      },
+    }
+  }
+  return {}
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -83,4 +108,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create pagination archive pages
   // await createMdxPagination("blog", "blog", graphql, createPage, reporter)
+}
+
+exports.onPostBuild = async () => {
+  if (process.argv[2] === "build") {
+    fs.renameSync(
+      path.join(__dirname, "public"),
+      path.join(process.env.CWD, outputDirName)
+    )
+  }
 }
