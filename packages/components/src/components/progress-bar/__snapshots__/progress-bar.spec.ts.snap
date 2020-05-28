@@ -56,9 +56,9 @@ exports[`ProgressBar should contain progress-bar-inner-text css class when text 
     </style>
     <div class="progress-bar-0-0-64">
       <div class="progress-bar__outer-0-0-65" style="height: 6px;">
-        <div class="progress-bar-0-0-64 progress-bar__inner-0-0-66" style="width: undefined%;">
+        <div class="progress-bar-0-0-64 progress-bar__inner-0-0-66" style="width: 0%;">
           <div class="progress-bar__inner-text-0-0-67">
-            undefined%
+            0%
           </div>
         </div>
       </div>
@@ -124,10 +124,10 @@ exports[`ProgressBar should contain progress-bar-text css class when show text i
     </style>
     <div class="progress-bar-0-0-46">
       <div class="progress-bar__outer-0-0-47" style="height: 6px;">
-        <div class="progress-bar-0-0-46 progress-bar__inner-0-0-48" style="width: undefined%;"></div>
+        <div class="progress-bar-0-0-46 progress-bar__inner-0-0-48" style="width: 0%;"></div>
       </div>
       <div class="progress-bar__text-0-0-50">
-        undefined%
+        0%
       </div>
     </div>
   </mock:shadow-root>
@@ -191,7 +191,7 @@ exports[`ProgressBar should have css property width 24px when stroke width is se
     </style>
     <div class="progress-bar-0-0-28">
       <div class="progress-bar__outer-0-0-29" style="height: 24px;">
-        <div class="progress-bar-0-0-28 progress-bar__inner-0-0-30" style="width: undefined%;"></div>
+        <div class="progress-bar-0-0-28 progress-bar__inner-0-0-30" style="width: 0%;"></div>
       </div>
     </div>
   </mock:shadow-root>
@@ -255,7 +255,7 @@ exports[`ProgressBar should match snapshot 1`] = `
     </style>
     <div class="progress-bar-0-0-10">
       <div class="progress-bar__outer-0-0-11" style="height: 6px;">
-        <div class="progress-bar-0-0-10 progress-bar__inner-0-0-12" style="width: undefined%;"></div>
+        <div class="progress-bar-0-0-10 progress-bar__inner-0-0-12" style="width: 0%;"></div>
       </div>
     </div>
   </mock:shadow-root>
