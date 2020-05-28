@@ -26,6 +26,7 @@ exports[`Input should match snapshot 1`] = `
   z-index: 1;
   font-size: 16px;
   box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
   font-family: inherit;
 }
 .input-0-0-13 .input__counter {
@@ -233,7 +234,7 @@ exports[`Input should match snapshot 1`] = `
 .customResize-0-0-25 {}
   </style>
   <div class="input-0-0-13">
-    <input class="input__input" type="text">
+    <input class="customResize-0-0-25 input__input" type="text">
   </div>
 </scale-input>
 `;
