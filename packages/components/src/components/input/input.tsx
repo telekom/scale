@@ -186,7 +186,8 @@ export class Input implements Base {
             type={this.type}
             class={classNames(
               `input__${this.type === 'textarea' ? 'textarea' : 'input'}`,
-              this.label && 'has-label' && this.customResize.id
+              this.label && 'has-label',
+              this.customResize.id
             )}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
