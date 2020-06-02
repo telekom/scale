@@ -64,7 +64,7 @@ export class Input implements Base {
   /** (optional) radio checked value */
   @Prop() preChecked?: boolean;
   /** (optional) textarea resize */
-  @Prop() resize?: 'unset' | 'none' | 'vertical' | 'horizontal';
+  @Prop() resize?: 'unset' | 'none' | 'vertical' | 'horizontal' = 'unset';
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string;
   /** (optional) Input checkbox id */
@@ -92,6 +92,16 @@ export class Input implements Base {
 
   componentWillLoad() {}
   componentWillUpdate() {}
+  componentDidLoad() {
+    if (this.type === 'textarea') {
+      if (this.prevResize !== this.resize) {
+        this.customResize = this.stylesheet.addRule('customResize', {
+          resize: this.resize,
+        });
+        this.prevResize = this.resize;
+      }
+    }
+  }
   componentDidUnload() {}
 
   handleChange(event) {
@@ -168,12 +178,6 @@ export class Input implements Base {
       );
     }
     const Element = this.type === 'textarea' ? 'textarea' : 'input';
-    if (this.prevResize !== this.resize) {
-      this.customResize = this.stylesheet.addRule('customResize', {
-        resize: this.resize,
-      });
-      this.prevResize = this.resize;
-    }
 
     return (
       <Host>
@@ -187,7 +191,7 @@ export class Input implements Base {
             class={classNames(
               `input__${this.type === 'textarea' ? 'textarea' : 'input'}`,
               this.label && 'has-label',
-              this.customResize.id
+              this.customResize && this.customResize.id
             )}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
