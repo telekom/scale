@@ -23,7 +23,7 @@
 | `placeholder` | `placeholder`  | (optional) Input placeHolder           | `string`                                                                                                           | `''`        |
 | `preChecked`  | `pre-checked`  | (optional) radio checked value         | `boolean`                                                                                                          | `undefined` |
 | `required`    | `required`     | (optional) Input required              | `boolean`                                                                                                          | `undefined` |
-| `resize`      | `resize`       | (optional) textarea resize             | `"horizontal" \| "none" \| "unset" \| "vertical"`                                                                  | `undefined` |
+| `resize`      | `resize`       | (optional) textarea resize             | `"horizontal" \| "none" \| "unset" \| "vertical"`                                                                  | `'unset'`   |
 | `rows`        | `rows`         | (optional) textarea row                | `number`                                                                                                           | `undefined` |
 | `size`        | `size`         | (optional) Input size                  | `string`                                                                                                           | `''`        |
 | `status`      | `status`       | (optional) Input status                | `string`                                                                                                           | `''`        |

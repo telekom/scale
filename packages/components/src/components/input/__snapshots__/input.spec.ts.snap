@@ -231,10 +231,9 @@ exports[`Input should match snapshot 1`] = `
   transition: all 0.2s ease-in-out;
   border: 6px solid #2962ff;
 }
-.customResize-0-0-25 {}
   </style>
   <div class="input-0-0-13">
-    <input class="customResize-0-0-25 input__input" type="text">
+    <input class="input__input" type="text">
   </div>
 </scale-input>
 `;
