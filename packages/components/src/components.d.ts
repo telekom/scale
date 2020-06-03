@@ -438,6 +438,26 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * (optional) icon when switch is off
+         */
+        "iconOff"?: string;
+        /**
+          * (optional) icon when switch is on
+         */
+        "iconOn"?: string;
+        /**
+          * (optional)  Icon size
+         */
+        "iconSize"?: number;
+        /**
+          * (optional) list Icon size
+         */
+        "offText"?: string;
+        /**
+          * (optional) List item icon
+         */
+        "onText"?: string;
+        /**
           * (optional) Injected jss styles
          */
         "styles"?: StyleSheet;
@@ -1134,6 +1154,26 @@ declare namespace LocalJSX {
           * (optional) Disabled switch
          */
         "disabled"?: boolean;
+        /**
+          * (optional) icon when switch is off
+         */
+        "iconOff"?: string;
+        /**
+          * (optional) icon when switch is on
+         */
+        "iconOn"?: string;
+        /**
+          * (optional)  Icon size
+         */
+        "iconSize"?: number;
+        /**
+          * (optional) list Icon size
+         */
+        "offText"?: string;
+        /**
+          * (optional) List item icon
+         */
+        "onText"?: string;
         /**
           * (optional) Injected jss styles
          */

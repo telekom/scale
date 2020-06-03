@@ -5,18 +5,19 @@ exports[`Switch should match snapshot 1`] = `
   <mock:shadow-root>
     <style>
       .switch-0-0-4 {
-  width: 40px;
-  border: 1px solid #dcdfe6;
+  width: 32px;
+  border: 1px solid #000;
   cursor: pointer;
   height: 20px;
   margin: 0;
-  display: inline-block;
-  outline: none;
+  display: inline-flex;
+  padding: 0 6px;
   position: relative;
-  background: #dcdfe6;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
   border-radius: 10px;
-  vertical-align: middle;
+  justify-content: flex-end;
+  background-color: #fff;
 }
 .switch-0-0-4:after {
   top: 2px;
@@ -25,17 +26,31 @@ exports[`Switch should match snapshot 1`] = `
   height: 16px;
   content: "";
   position: absolute;
-  transition: all 0.3s ease-in-out;
   border-radius: 100%;
-  background-color: #fff;
+  background-color: #000;
+}
+.switch-0-0-4 .switch--off {
+  color: #000;
+  display: inline-flex;
+  align-items: center;
 }
 .switch--active-0-0-5 {
   border-color: #409eff;
+  justify-content: flex-start;
   background-color: #409eff;
 }
 .switch--active-0-0-5:after {
-  left: 100%;
-  margin-left: -17px;
+  left: auto;
+  right: 1px;
+  background-color: #fff;
+}
+.switch--active-0-0-5 .switch--on {
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+}
+.switch--active-0-0-5 scale-icon {
+  --icon-color: #fff;
 }
 .switch--disabled-0-0-6 {
   cursor: not-allowed;

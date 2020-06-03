@@ -51,6 +51,7 @@
  - [scale-input](../input)
  - [scale-link](../link)
  - [scale-list-item](../list/listItem)
+ - [scale-switch](../switch)
  - [scale-tag](../tag)
 
 ### Graph
@@ -60,6 +61,7 @@ graph TD;
   scale-input --> scale-icon
   scale-link --> scale-icon
   scale-list-item --> scale-icon
+  scale-switch --> scale-icon
   scale-tag --> scale-icon
   style scale-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
