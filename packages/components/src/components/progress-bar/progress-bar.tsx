@@ -14,7 +14,7 @@ export class ProgressBar implements Base {
   /** (optional) Progress bar class */
   @Prop() customClass?: string = '';
   /** (required) Progress bar percentage */
-  @Prop() percentage: number;
+  @Prop() percentage: number = 0;
   /** (optional) Progress bar variant */
   @Prop() variant?: string;
   /** (optional) Progress bar stroke width */

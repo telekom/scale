@@ -13,16 +13,11 @@ declare type CssInJsDecorator = (
 ) => void;
 
 const getKeys = obj => {
-  const blackListedProps = ['stylesheet', 'value', 'key'];
-  const whiteListedTypes = ['boolean', 'string', 'object'];
+  const whitelistedProps = ['styles'];
   const keys = [];
 
   for (const key in obj) {
-    if (
-      obj[key] &&
-      whiteListedTypes.includes(typeof obj[key]) &&
-      !blackListedProps.includes(key)
-    ) {
+    if (obj[key] && !whitelistedProps.includes(key)) {
       keys.push(key);
     }
   }
