@@ -70,3 +70,4 @@ yarn-error.log
 
 # Stencil files
 components.json
+loader/

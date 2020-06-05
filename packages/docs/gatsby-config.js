@@ -6,6 +6,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`@scaleds/docs`]
+      }
+    },
+    {
       resolve: "@scaleds/gatsby-plugin",
       options: {
         theme: {

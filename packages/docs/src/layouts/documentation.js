@@ -24,6 +24,11 @@ export default ({ children, location }) => {
           title
         }
       }
+      site {
+        config {
+          featuredComponents
+        }
+      }
     }
   `)
   return (
@@ -37,6 +42,7 @@ export default ({ children, location }) => {
           <Sidebar
             currentPage={location.pathname}
             components={data.sidebar.edges}
+            featuredComponents={data.site.config.featuredComponents}
           />
         </div>
         <section className="main__content">

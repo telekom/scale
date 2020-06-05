@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const { GraphQLObjectType, GraphQLString } = require("graphql")
+const { GraphQLObjectType, GraphQLString, GraphQLList } = require("graphql")
 const config = require(process.env.MONUMENT_CONFIG_FILE)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -18,6 +18,7 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
             docsFilePath: { type: GraphQLString },
             themeFilePath: { type: GraphQLString },
             namespace: { type: GraphQLString },
+            featuredComponents: { type: GraphQLList(GraphQLString) },
           }),
         }),
         resolve: () => config,

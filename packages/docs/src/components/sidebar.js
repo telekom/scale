@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const whiteList = ["button", "card", "link", "icon", "tag", "table"]
 
-const Sidebar = ({ components, currentPage }) => {
+const Sidebar = ({ components, currentPage, featuredComponents }) => {
   const sortedComponents = components.sort((a, b) => {
     if (a.node.fields.filename < b.node.fields.filename) {
       return -1
@@ -15,7 +14,7 @@ const Sidebar = ({ components, currentPage }) => {
   })
 
   const filtered = sortedComponents.filter((c) => {
-    if (whiteList.includes(c.node.fields.filename.replace("/", ""))) {
+    if (featuredComponents.includes(c.node.fields.filename.replace("/", ""))) {
       return true
     } else if (c.node.fields.section !== "components") {
       return true
