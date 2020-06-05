@@ -889,6 +889,13 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.0.0":
+  version "7.10.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
+  integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
@@ -7659,6 +7666,14 @@ gatsby-page-utils@^0.2.1:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
+gatsby-plugin-compile-es6-packages@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-compile-es6-packages/-/gatsby-plugin-compile-es6-packages-2.1.0.tgz#eb6068d8936fd8b404716e47b821d09bf0656af7"
+  integrity sha512-yrYAAjabHWJr3ARi8xzDm01dbBfyOxEWTwGkL3BMdgL/opfLvTrwLmfium4kSelnLs70DYY3rYDwyHjqyFsnFQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    regex-escape "^3.4.8"
 
 gatsby-plugin-manifest@^2.2.27:
   version "2.4.2"
@@ -14622,6 +14637,11 @@ regenerator-transform@^0.14.2:
   dependencies:
     "@babel/runtime" "^7.8.4"
     private "^0.1.8"
+
+regex-escape@^3.4.8:
+  version "3.4.9"
+  resolved "https://registry.yarnpkg.com/regex-escape/-/regex-escape-3.4.9.tgz#407b413562e2373d56994ff213e693658ea4f8f7"
+  integrity sha512-Cv9rjwyQwVhn3L097ysanWsEElurmxDj6Cc4Ut23z7e6hzRbrNvF3Le7yAciMfuzyb0sZwSr0ZHunMNCIoy2/g==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
