@@ -3,11 +3,11 @@ import { JssStyle } from 'jss';
 export const styles: JssStyle = {
   switch: {
     margin: 0,
-    padding: '0 6px',
+    width: 34,
+    height: 14,
+    padding: 2,
     display: 'inline-flex',
     position: 'relative',
-    width: 32,
-    height: 20,
     border: '1px solid #000',
     borderRadius: 10,
     backgroundColor: '#fff',
@@ -18,7 +18,7 @@ export const styles: JssStyle = {
     '&:after': {
       content: '""',
       position: 'absolute',
-      top: 2,
+      top: 1,
       left: 1,
       borderRadius: '100%',
       width: 16,
@@ -29,6 +29,8 @@ export const styles: JssStyle = {
       color: '#000',
       display: 'inline-flex',
       alignItems: 'center',
+      width: 17,
+      justifyContent: 'center',
     },
   },
   'switch--active': {
@@ -44,6 +46,8 @@ export const styles: JssStyle = {
       color: '#fff',
       display: 'inline-flex',
       alignItems: 'center',
+      width: 17,
+      justifyContent: 'center',
     },
     '& scale-icon': {
       '--icon-color': '#fff',
