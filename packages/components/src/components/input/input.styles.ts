@@ -52,7 +52,7 @@ const animated = (size: string) => ({
 export const styles: JssStyle = {
   input: {
     position: 'relative',
-    '& .input__input': {
+    '& .input__input, & .input__select': {
       display: 'flex',
       width: '100%',
       borderRadius: 4,
@@ -64,6 +64,9 @@ export const styles: JssStyle = {
       zIndex: 1,
       height: input.large.height,
       transition: defaultTransition,
+    },
+    '& .input__select': {
+      appearance: 'none',
     },
     '& .input__counter': {
       display: 'flex',
@@ -83,7 +86,7 @@ export const styles: JssStyle = {
       justifyContent: 'space-between',
     },
     '&:not($input--disabled)': {
-      '& .input__input': {
+      '& .input__input, & .input__select': {
         '&:hover, &:focus': {
           borderColor: ({ colors }) => colors.primary.default,
         },
@@ -109,7 +112,7 @@ export const styles: JssStyle = {
     },
   },
   'input--variant-animated': {
-    '& .input__input.has-label': {
+    '& .input__input.has-label, & .input__select.has-label': {
       padding: `${input.large.paddingY}px ${input.large.paddingX}px 0 ${input
         .large.paddingY - 1}px`,
     },
@@ -122,7 +125,7 @@ export const styles: JssStyle = {
       zIndex: 10,
       ...animated('large').start,
     },
-    '& .input__input:focus + .input__label, &.animated .input__label': animated(
+    '& .input__input:focus + .input__label, & .input__select:focus + .input__label, &.animated .input__label': animated(
       'large'
     ).end,
   },

@@ -31,6 +31,7 @@ export class Input implements Base {
     | 'text'
     | 'checkbox'
     | 'radio'
+    | 'select'
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
@@ -64,6 +65,10 @@ export class Input implements Base {
   @Prop() inputId?: string;
   /** (optional) Input checkbox checked icon */
   @Prop() icon?: string;
+  /** (optional) select multiple options */
+  @Prop() multiple?: boolean;
+  /** (optional) the number of visible options in a select drop-down list */
+  @Prop() visibleSize?: number;
   /** (optional) Input text event changed */
   @Event() scaleChange: EventEmitter<InputEvent>;
   /** (optional) Input focus event */
@@ -160,30 +165,50 @@ export class Input implements Base {
         </Host>
       );
     }
+
     return (
       <Host>
         <style>{this.stylesheet.toString()}</style>
         <div class={this.getCssClassMap()}>
           {!!this.label && this.variant === 'static' && (
-            <label class="input__label">{this.label}</label>
+            <label class="input__label" htmlFor={this.inputId}>
+              {this.label}
+            </label>
           )}
-          <input
-            type={this.type}
-            class={classNames('input__input', this.label && 'has-label')}
-            value={this.value}
-            name={this.name}
-            required={this.required}
-            minLength={this.minLength}
-            maxLength={this.maxLength}
-            onInput={event => this.handleChange(event)}
-            onFocus={event => this.handleFocus(event)}
-            onBlur={event => this.handleBlur(event)}
-            onKeyDown={event => this.handleKeyDown(event)}
-            placeholder={this.placeholder}
-            disabled={this.disabled}
-          />
+          {this.type === 'select' ? (
+            <select
+              class={classNames('input__select', this.label && 'has-label')}
+              onChange={event => this.handleChange(event)}
+              disabled={this.disabled}
+              required={this.required}
+              multiple={this.multiple}
+              id={this.inputId}
+              size={this.visibleSize}
+            >
+              <slot />
+            </select>
+          ) : (
+            <input
+              type={this.type}
+              class={classNames('input__input', this.label && 'has-label')}
+              value={this.value}
+              name={this.name}
+              required={this.required}
+              minLength={this.minLength}
+              maxLength={this.maxLength}
+              onInput={event => this.handleChange(event)}
+              onFocus={event => this.handleFocus(event)}
+              onBlur={event => this.handleBlur(event)}
+              onKeyDown={event => this.handleKeyDown(event)}
+              placeholder={this.placeholder}
+              disabled={this.disabled}
+            />
+          )}
+
           {!!this.label && this.variant === 'animated' && (
-            <label class="input__label">{this.label}</label>
+            <label class="input__label" htmlFor={this.inputId}>
+              {this.label}
+            </label>
           )}
           {(!!this.helperText || !!this.counter) && (
             <div class="input__meta">

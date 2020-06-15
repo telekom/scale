@@ -2,11 +2,12 @@
 
 exports[`Input should match snapshot 1`] = `
 <scale-input>
+  <!---->
   <style>
     .input-0-0-10 {
   position: relative;
 }
-.input-0-0-10 .input__input {
+.input-0-0-10 .input__input, .input-0-0-10 .input__select {
   width: 100%;
   border: 1px solid #cecece;
   height: 48px;
@@ -18,6 +19,9 @@ exports[`Input should match snapshot 1`] = `
   transition: all 0.2s ease-in-out;
   font-family: inherit;
   border-radius: 4px;
+}
+.input-0-0-10 .input__select {
+  appearance: none;
 }
 .input-0-0-10 .input__counter {
   color: #333;
@@ -37,7 +41,7 @@ exports[`Input should match snapshot 1`] = `
   justify-content: space-between;
 }
 .input-0-0-10:not(.input--disabled-0-0-15) {}
-.input-0-0-10:not(.input--disabled-0-0-15) .input__input {}
+.input-0-0-10:not(.input--disabled-0-0-15) .input__input, .input-0-0-10:not(.input--disabled-0-0-15) .input__select {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__radio {}
 .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__radio:focus {
@@ -47,7 +51,7 @@ exports[`Input should match snapshot 1`] = `
 .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:hover .input__checkbox-placeholder, .input-0-0-10:not(.input--disabled-0-0-15) .input__checkbox-container:focus .input__checkbox-placeholder {
   border-color: #2962ff;
 }
-.input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus {
+.input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:focus {
   border-color: #2962ff;
 }
 .input--variant-static-0-0-11 {}
@@ -56,7 +60,7 @@ exports[`Input should match snapshot 1`] = `
   margin-bottom: 12px;
 }
 .input--variant-animated-0-0-12 {}
-.input--variant-animated-0-0-12 .input__input.has-label {
+.input--variant-animated-0-0-12 .input__input.has-label, .input--variant-animated-0-0-12 .input__select.has-label {
   padding: 12px 12px 0 11px;
 }
 .input--variant-animated-0-0-12 .input__label {
@@ -72,7 +76,7 @@ exports[`Input should match snapshot 1`] = `
   font-weight: 400;
   pointer-events: none;
 }
-.input--variant-animated-0-0-12 .input__input:focus + .input__label, .input--variant-animated-0-0-12.animated .input__label {
+.input--variant-animated-0-0-12 .input__input:focus + .input__label, .input--variant-animated-0-0-12 .input__select:focus + .input__label, .input--variant-animated-0-0-12.animated .input__label {
   font-size: 10px;
   transform: translate(12px, 8px);
   transition: all 0.2s ease-in-out;

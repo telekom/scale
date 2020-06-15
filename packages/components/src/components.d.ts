@@ -225,6 +225,10 @@ export namespace Components {
          */
         "minLength"?: number;
         /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
           * (optional) Input name
          */
         "name"?: string;
@@ -255,7 +259,7 @@ export namespace Components {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "select" | "url";
         /**
           * (optional) Input value
          */
@@ -264,6 +268,10 @@ export namespace Components {
           * (optional) Input label variant
          */
         "variant"?: "animated" | "static";
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleLink {
         /**
@@ -914,6 +922,10 @@ declare namespace LocalJSX {
          */
         "minLength"?: number;
         /**
+          * (optional) select multiple options
+         */
+        "multiple"?: boolean;
+        /**
           * (optional) Input name
          */
         "name"?: string;
@@ -960,7 +972,7 @@ declare namespace LocalJSX {
         /**
           * (optional) Input type
          */
-        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "url";
+        "type"?: "email" | "hidden" | "number" | "password" | "tel" | "text" | "checkbox" | "radio" | "select" | "url";
         /**
           * (optional) Input value
          */
@@ -969,6 +981,10 @@ declare namespace LocalJSX {
           * (optional) Input label variant
          */
         "variant"?: "animated" | "static";
+        /**
+          * (optional) the number of visible options in a select drop-down list
+         */
+        "visibleSize"?: number;
     }
     interface ScaleLink {
         /**
