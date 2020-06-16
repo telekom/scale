@@ -23,6 +23,9 @@ exports[`Input should match snapshot 1`] = `
 .input-0-0-10 .input__select {
   appearance: none;
 }
+.input-0-0-10 .input__select-wrapper {
+  position: relative;
+}
 .input-0-0-10 .input__counter {
   color: #333;
   display: flex;
@@ -53,6 +56,12 @@ exports[`Input should match snapshot 1`] = `
 }
 .input-0-0-10:not(.input--disabled-0-0-15) .input__input:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__input:focus, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:hover, .input-0-0-10:not(.input--disabled-0-0-15) .input__select:focus {
   border-color: #2962ff;
+}
+.input-0-0-10 .input__select-wrapper scale-icon {
+  top: 50%;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%);
 }
 .input--variant-static-0-0-11 {}
 .input--variant-static-0-0-11 .input__label {

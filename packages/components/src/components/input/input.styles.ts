@@ -68,6 +68,15 @@ export const styles: JssStyle = {
     '& .input__select': {
       appearance: 'none',
     },
+    '& .input__select-wrapper': {
+      position: 'relative',
+      '& scale-icon': {
+        position: 'absolute',
+        right: 0,
+        top: '50%',
+        transform: 'translateY(-50%)',
+      },
+    },
     '& .input__counter': {
       display: 'flex',
       justifyContent: 'flex-end',

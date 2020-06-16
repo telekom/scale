@@ -176,17 +176,20 @@ export class Input implements Base {
             </label>
           )}
           {this.type === 'select' ? (
-            <select
-              class={classNames('input__select', this.label && 'has-label')}
-              onChange={event => this.handleChange(event)}
-              disabled={this.disabled}
-              required={this.required}
-              multiple={this.multiple}
-              id={this.inputId}
-              size={this.visibleSize}
-            >
-              <slot />
-            </select>
+            <div class="input__select-wrapper">
+              <select
+                class={classNames('input__select', this.label && 'has-label')}
+                onChange={event => this.handleChange(event)}
+                disabled={this.disabled}
+                required={this.required}
+                multiple={this.multiple}
+                id={this.inputId}
+                size={this.visibleSize}
+              >
+                <slot />
+              </select>
+              {!!this.icon && <scale-icon path={this.icon}></scale-icon>}
+            </div>
           ) : (
             <input
               type={this.type}
@@ -204,7 +207,6 @@ export class Input implements Base {
               disabled={this.disabled}
             />
           )}
-
           {!!this.label && this.variant === 'animated' && (
             <label class="input__label" htmlFor={this.inputId}>
               {this.label}

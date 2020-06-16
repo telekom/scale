@@ -63,11 +63,42 @@
   <body>
     <h1>Components</h1>
     <h3>Select</h3>
-    <scale-input variant='animated' label="basic select" type="select" input-id='select box'>
+    <scale-input variant='animated' label="basic select with animated label" type="select" input-id='select box'>
       <option hidden selected></option>
       <option value="1">item 1</option>
       <option value="2">item 2</option>
       <option value="3">item 3</option>
+    </scale-input>
+    <h3>Basic select with static label</h3>
+    <scale-input variant='static' label="basic select" type="select" input-id='select box'>
+      <option value="1">item A</option>
+      <option value="2">item B</option>
+      <option value="3">item C</option>
+    </scale-input>
+    <h3>Select with icon</h3>
+    <scale-input variant='animated' label="select with icon" type="select" input-id='select box' icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z">
+      <option hidden selected></option>
+      <option value="1">item A</option>
+      <option value="2">item B</option>
+      <option value="3">item C</option>
+    </scale-input>
+    <h3>Select with opt group</h3>
+    <scale-input variant='static' label="multi select with opt group" type="select" input-id='select box' icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z">
+      <optgroup label=Category 1">
+        <option value="A">option A</option>
+        <option value="B">option B</option>
+      </optgroup>
+      <optgroup label="Category 2">
+        <option value="one">option one</option>
+        <option value="two">option two</option>
+      </optgroup>
+    </scale-input>
+    <h3>Select with icon</h3>
+    <scale-input variant='animated' label="select with error" status="error" helper-text="error occurs" type="select" input-id='select box' icon="M6.19274639,9.03397641 C8.14145643,9.01132547 10.0768839,9 11.9990287,9 C13.9211735,9 15.8572671,9.01134198 17.8073096,9.03402594 C18.050708,9.2495235 18.0635185,9.59186709 17.8457409,9.82071688 L17.8073096,9.85776643 L11.9993017,15 L6.19263449,9.8577169 C5.93574481,9.63021989 5.93579491,9.26141871 6.19274639,9.03397641 Z">
+      <option hidden selected></option>
+      <option value="1">item A</option>
+      <option value="2">item B</option>
+      <option value="3">item C</option>
     </scale-input>
     <h3>Checkbox</h3>
     <scale-input
