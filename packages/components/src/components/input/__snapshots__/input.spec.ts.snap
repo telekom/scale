@@ -133,7 +133,7 @@ exports[`Input should match snapshot 1`] = `
   color: #2962ff;
 }
 .input--disabled-0-0-15 {}
-.input--disabled-0-0-15 .input__label, .input--disabled-0-0-15 .input__input, .input--disabled-0-0-15 .input__checkbox-container, .input--disabled-0-0-15 .input__radio {
+.input--disabled-0-0-15 .input__label, .input--disabled-0-0-15 .input__input, .input--disabled-0-0-15 .input__checkbox-container, .input--disabled-0-0-15 .input__radio, .input--disabled-0-0-15 .input__select {
   cursor: not-allowed!important;
   opacity: 0.5;
 }

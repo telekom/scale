@@ -173,7 +173,7 @@ export const styles: JssStyle = {
     ).end,
   },
   'input--disabled': {
-    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio': {
+    '& .input__label, & .input__input, & .input__checkbox-container, & .input__radio, & .input__select': {
       opacity: '0.5',
       cursor: 'not-allowed!important',
     },
