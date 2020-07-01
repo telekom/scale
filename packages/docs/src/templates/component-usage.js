@@ -2,7 +2,7 @@ import React from "react"
 import { ComponentUsageExample } from "./component-usage-example"
 import "./component-usage.css"
 
-export const ComponentUsage = ({ usageExamples }) => {
+export const ComponentUsage = ({ usageExamples, namespace }) => {
   if (!usageExamples || usageExamples.length === 0) {
     return null
   }
@@ -17,7 +17,7 @@ export const ComponentUsage = ({ usageExamples }) => {
             }
             return (
               <div key={childIndex}>
-                <ComponentUsageExample {...childExample} />
+                <ComponentUsageExample {...childExample} namespace={namespace} />
                 <div className="example__code">
                   {typeof Prism !== "undefined" && (
                     <pre

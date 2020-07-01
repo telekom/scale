@@ -3,9 +3,31 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
-const path = require(`path`)
+const { GraphQLObjectType, GraphQLString, GraphQLList } = require("graphql")
+const config = require(process.env.MONUMENT_CONFIG_FILE)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.setFieldsOnGraphQLNodeType = ({ type }) => {
+  if (type.name === `Site`) {
+    return {
+      config: {
+        type: new GraphQLObjectType({
+          name: "Config",
+          fields: () => ({
+            outputDirName: { type: GraphQLString },
+            docsFilePath: { type: GraphQLString },
+            themeFilePath: { type: GraphQLString },
+            namespace: { type: GraphQLString },
+            featuredComponents: { type: GraphQLList(GraphQLString) },
+          }),
+        }),
+        resolve: () => config,
+      },
+    }
+  }
+  return {}
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {

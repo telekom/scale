@@ -8,7 +8,7 @@ import "prismjs/themes/prism.css"
 import {
   defineCustomElements,
   applyPolyfills,
-} from "@scaleds/components/loader"
+} from "./loader"
 
 applyPolyfills().then(() => {
   defineCustomElements(window)
