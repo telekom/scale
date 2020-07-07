@@ -158,11 +158,11 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
         c0x = coords[0];
         c0y = coords[1];
       }
-      hasCurveFrom = false;
-      isClosed = false;
       if (curvePoints.length > 0) {
         segments.push({ isClosed, points: curvePoints });
       }
+      hasCurveFrom = false;
+      isClosed = false;
       curvePoints = [];
     } else if (command === "C") {
       isClosed = false;

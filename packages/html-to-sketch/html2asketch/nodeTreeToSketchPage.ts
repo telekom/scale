@@ -6,7 +6,16 @@ function traverse(node: HTMLElement) {
   if (/^scale-/i.test(node.nodeName)) {
     const componentName = node.getAttribute('data-sketch-symbol') || node.nodeName.replace(/^scale-/i, '').toLowerCase();
     node.setAttribute('data-sketch-symbol', `${componentName}`);
-    node.setAttribute('data-sketch-variant', node.getAttribute('data-sketch-variant') || node.getAttribute('variant') || 'Default');
+    const attrVariant:string[]= [];
+    for (let i = 0; i < node.attributes.length; i++) {
+      const attr = node.attributes[i];
+      if (!/^class$|^data-|^variant$/.test(attr.name)) {
+        attrVariant.push(`${attr.name}:${attr.value.slice(0,32)}`)
+      }
+    }
+    const variant = node.getAttribute('data-sketch-variant') || node.getAttribute('variant');
+    node.setAttribute('data-sketch-variant', (variant || '') + 
+      (attrVariant.length > 0 ? ((variant ? ' / ' : '') + attrVariant.join(" / ")) : ''));
   }
   for (let i = 0; i < node.children.length; i++) {
     traverse(node.children[i] as unknown as HTMLElement);

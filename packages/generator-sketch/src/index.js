@@ -272,7 +272,7 @@ function enhanceJson(json) {
       symbols.set(enhanced.name, symbolArray);
     }
     let instance;
-    let symbol = symbolArray.find(master => {
+    let symbol = !enhanced.variant && symbolArray.find(master => {
       instance = master.createInstance({name: enhanced.name});
       instance.frame = new Rect(enhanced.frame);
       instance.style = new Style(enhanced.style);
@@ -286,7 +286,7 @@ function enhanceJson(json) {
     });
     if (!symbol) {
       symbol = symbolMaster({...enhanced});
-      symbol.name = enhanced.name + ' / ' + symbolArray.length;
+      symbol.name = enhanced.name + ' / ' + (enhanced.variant || symbolArray.length);
       symbol.variantName = enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || 'Master');
       symbol.resizesContent = true;
       // symbol.groupLayout = {
