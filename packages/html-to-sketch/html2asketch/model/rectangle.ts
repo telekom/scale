@@ -5,13 +5,17 @@ class Rectangle extends Base {
   _width: any;
   _height: any;
   _cornerRadius: any;
+  _x: number;
+  _y: number;
 
-  constructor({width, height, cornerRadius = {topLeft: 0, bottomLeft: 0, topRight: 0, bottomRight: 0}, id}: any) {
+  constructor({width, height, cornerRadius = {topLeft: 0, bottomLeft: 0, topRight: 0, bottomRight: 0}, x, y, id}: any) {
     super({id});
     this._class = 'rectangle';
     this._width = width;
     this._height = height;
     this._cornerRadius = cornerRadius;
+    this._x = x || 0;
+    this._y = y || 0;
   }
 
   toJSON() {
@@ -22,8 +26,8 @@ class Rectangle extends Base {
       constrainProportions: false,
       height: this._height,
       width: this._width,
-      x: 0,
-      y: 0,
+      x: this._x,
+      y: this._y,
     };
 
     obj.path = {

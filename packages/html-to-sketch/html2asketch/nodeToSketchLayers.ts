@@ -1005,28 +1005,60 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       const borderLeftWidthFloat = parseFloat(borderLeftWidth);
 
       if (borderTopWidthFloat !== 0) {
-        style.addInnerShadow({
-          color: borderTopColor,
-          offsetY: borderTopWidthFloat
+        const rectangle = new Rectangle({ 
+          width, height: borderTopWidthFloat, 
+          cornerRadius: 0,
+          x: left,
+          y: top
         });
+        rectangle.setName('border-top');
+        const borderStyle = new Style();
+
+        borderStyle.addColorFill(borderTopColor);
+        rectangle.setStyle(borderStyle);
+        layers.push(rectangle);
       }
       if (borderRightWidthFloat !== 0) {
-        style.addInnerShadow({
-          color: borderRightColor,
-          offsetX: -borderRightWidthFloat
+        const rectangle = new Rectangle({ 
+          width: borderRightWidthFloat, height, 
+          cornerRadius: 0,
+          x: left + width,
+          y: top
         });
+        rectangle.setName('border-right');
+        const borderStyle = new Style();
+
+        borderStyle.addColorFill(borderRightColor);
+        rectangle.setStyle(borderStyle);
+        layers.push(rectangle);
       }
       if (borderBottomWidthFloat !== 0) {
-        style.addInnerShadow({
-          color: borderBottomColor,
-          offsetY: -borderBottomWidthFloat
+        const rectangle = new Rectangle({ 
+          width, height: borderBottomWidthFloat, 
+          cornerRadius: 0,
+          x: left,
+          y: top + height
         });
+        rectangle.setName('border-bottom');
+        const borderStyle = new Style();
+
+        borderStyle.addColorFill(borderBottomColor);
+        rectangle.setStyle(borderStyle);
+        layers.push(rectangle);
       }
       if (borderLeftWidthFloat !== 0) {
-        style.addInnerShadow({
-          color: borderLeftColor,
-          offsetX: borderLeftWidthFloat
+        const rectangle = new Rectangle({ 
+          width: borderLeftWidthFloat, height, 
+          cornerRadius: 0,
+          x: left,
+          y: top
         });
+        rectangle.setName('border-left');
+        const borderStyle = new Style();
+
+        borderStyle.addColorFill(borderLeftColor);
+        rectangle.setStyle(borderStyle);
+        layers.push(rectangle);
       }
     }
 
