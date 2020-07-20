@@ -11,7 +11,6 @@ const {
 } = require("sketch-constructor");
 const fs = require("fs");
 const path = require("path");
-const json = require("../sketch-json/asketch.json");
 const directory = "sketch";
 const sketch = new Sketch();
 const uuid = require("uuid").v4;
@@ -286,8 +285,14 @@ function enhanceJson(json) {
     });
     if (!symbol) {
       symbol = symbolMaster({...enhanced});
-      symbol.name = enhanced.name + ' / ' + (enhanced.variant || symbolArray.length);
-      symbol.variantName = enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || 'Master');
+      symbol.name = enhanced.name.replace(/\s*\/\s*(null)?\s*$/, '');
+      //symbol.variantName = enhanced.name.replace(/\s*\/\s*$/, '') + (enhanced.variant ? ' / ' + enhanced.variant : '');
+      //symbol.name = symbol.variantName;
+      //console.log(enhanced.name);
+      //console.log(enhanced.variant);
+      //console.log(symbol.name);
+      //symbol.name = symbol.name.replace(/ \/ null \/ 0$/, '');
+      //symbol.variantName = symbol.name.replace(/ \/ null \/ 0$/, '');
       symbol.resizesContent = true;
       // symbol.groupLayout = {
       //   "_class": "MSImmutableInferredGroupLayout",
@@ -297,7 +302,7 @@ function enhanceJson(json) {
       //   "minSize": 0
       // };
       symbolArray.push(symbol);
-      instance = symbol.createInstance({name: enhanced.name});
+      instance = symbol.createInstance({name: symbol.name});
       instance.frame = new Rect(enhanced.frame);
       instance.style = new Style(enhanced.style);
       fillInstance(instance, symbol, enhanced, '', symbol.name, symbol.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
@@ -307,28 +312,58 @@ function enhanceJson(json) {
   return enhanced;
 }
 
+function simplifyTree(node, parent) {
+  if (node.layers && !node.isSymbol) {
+    node.layers.forEach(l => simplifyTree(l, node));
+    if ((node.name == 'div' || node.layers.length == 1) && parent) {
+      const idx = parent.layers.indexOf(node);
+      parent.layers = parent.layers.slice(0,idx).concat(node.layers).concat(parent.layers.slice(idx+1));
+      node.layers.forEach(l => {
+        l.frame.x += node.frame.x;
+        l.frame.y += node.frame.y;
+      });
+    }
+  }
+}
+
 const symbolsPage = new Page({
   name: "Symbols"
 });
 
-const componentsPage = new Page({
-  name: "Components"
+sketch.addPage(symbolsPage);
+
+const jsons = fs.readdirSync(path.resolve(__dirname, "../sketch-json")).filter(fn => fn.endsWith('.json'));
+jsons.forEach(jsonFn => {
+  const json = require(`../sketch-json/${jsonFn}`);
+
+  const componentsPage = new Page({
+    name: json.name
+  });
+
+  json.artboards.forEach((artboard, index) => {
+    replaceSystemFonts(artboard);
+    simplifyTree(artboard);
+    const enhanced = enhanceJson(artboard);
+
+    const artboardComponents = new Artboard({
+      name: artboard.name,
+      frame: {
+        x: artboard.frame.x,
+        y: artboard.frame.y,
+        width: artboard.frame.width,
+        height: artboard.frame.height
+      }
+    });
+
+    enhanced.layers.forEach(layer => artboardComponents.addLayer(layer));
+    componentsPage.addArtboard(artboardComponents);
+
+    // fs.writeFileSync(`./debug_${index}.json`, JSON.stringify(enhanced, null, 4))
+  });
+
+  sketch.addPage(componentsPage);
 });
 
-const artboardComponents = new Artboard({
-  name: "Components",
-  frame: {
-    width: json.frame.width,
-    height: json.frame.height
-  }
-});
-
-replaceSystemFonts(json);
-const enhanced = enhanceJson(json);
-
-fs.writeFileSync('./debug.json', JSON.stringify(enhanced, null, 4))
-
-enhanced.layers.forEach(layer => artboardComponents.addLayer(layer));
 const gutter = 32;
 let y = 0;
 for (const symbolArray of symbols.values()) {
@@ -340,9 +375,6 @@ for (const symbolArray of symbols.values()) {
   });
 }
 
-componentsPage.addArtboard(artboardComponents);
-sketch.addPage(symbolsPage);
-sketch.addPage(componentsPage);
 sketch.build("./sketch/scale.sketch").then(() => {
   console.log("Built components sketch document!");
 });

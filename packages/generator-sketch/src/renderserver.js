@@ -1,13 +1,17 @@
 var connect = require("connect");
 var serveStatic = require("serve-static");
 var path = require("path");
+var fs = require("fs");
 
-const root = path.join(__dirname, "../sketch-render");
+module.exports = function(root, port=3334) {
+  const server = connect()
+    .use(serveStatic(root, { index: false }))
+    .listen(port, () => {
+      console.log(`Serving ${root} on port ${port}`);
+    });
 
-const server = connect()
-  .use(serveStatic(root, { index: ["index.html", "index.htm"] }))
-  .listen(3334, () => {
-    console.log("Server running on 3334...");
-  });
 
-module.exports = server;
+  server.rootURL = `http://localhost:${port}/`;
+  server.pageURLs = fs.readdirSync(root).filter(fn => /\.html?$/i.test(fn)).map(fn => server.rootURL + fn);
+  return server;
+};

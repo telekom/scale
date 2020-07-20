@@ -8,16 +8,22 @@ class TextStyle {
   _color: any;
   _fontSize: any;
   _fontFamily: any;
+  _fontWeight: string = '400';
+  _textTransform: string = 'none';
 
   constructor({
     color,
     fontSize,
     fontFamily,
     skipSystemFonts,
+    fontWeight,
+    textTransform,
   }: any) {
     this._color = color;
     this._fontSize = fontSize;
     this._fontFamily = getFirstFont(fontFamily, skipSystemFonts);
+    this._fontWeight = fontWeight || this._fontWeight;
+    this._textTransform = textTransform || this._textTransform;
   }
 
   toJSON() {
@@ -65,11 +71,13 @@ class TextStyle {
         encodedAttributes: {
           MSAttributedStringColorAttribute: makeColorFromCSS(this._color),
           textStyleVerticalAlignmentKey: 0,
+          MSAttributedStringTextTransformAttribute: (this._textTransform === 'uppercase' ? 1 : (this._textTransform === 'lowercase' ? 2 : 0)),
           MSAttributedStringFontAttribute: {
             _class: "fontDescriptor",
             attributes: {
               name: this._fontFamily,
-              size: this._fontSize
+              size: this._fontSize,
+              weight: getFontWeight(this._fontWeight)
             }
           },
           paragraphStyle: {
@@ -79,11 +87,18 @@ class TextStyle {
           kerning: 0
         },
         verticalAlignment: 0
-      }
+      },
     }
 
     return result;
   }
+}
+
+function getFontWeight(s: string):number {
+  if (s == 'normal') return 4;
+  if (s == 'bold') return 7;
+  if (/^\d\d\d$/.test(s)) return (parseInt(s) / 100);
+  return 4;
 }
 
 export default TextStyle;

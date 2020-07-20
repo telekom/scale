@@ -1174,6 +1174,8 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   const textStyle = new TextStyle({
     fontFamily,
     fontSize: parseInt(fontSize, 10),
+    textTransform: styles.textTransform,
+    fontWeight: styles.fontWeight,
     color,
     skipSystemFonts: options && options.skipSystemFonts
   });
@@ -1185,6 +1187,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       text,
       fontFamily,
       fontSize: parseInt(fontSize, 10),
+      textTransform: styles.textTransform,
       skipSystemFonts: options && options.skipSystemFonts,
       color,
       alignment
@@ -1206,7 +1209,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       const numberOfLines = textRanges.length;
       const textBCR = rangeHelper.getBoundingClientRect();
       const lineHeightInt = parseInt(lineHeight, 10);
-      const textBCRHeight = textBCR.bottom - textBCR.top;
+      const textBCRHeight = Math.ceil(textBCR.bottom - textBCR.top);
       let fixY = 0;
 
       // center text inside a box
@@ -1220,12 +1223,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       const text = new Text({
         x: textBCR.left,
         y: textBCR.top + fixY,
-        width: textBCR.right - textBCR.left,
+        width: Math.ceil(textBCR.right - textBCR.left + 2),
         height: textBCRHeight,
         text: textValue,
         style: textStyle,
         attributedString: textAttributedString(textValue),
-        multiline: numberOfLines > 1
+        multiline: numberOfLines > 1,
       });
 
       if (options && options.onTextGenerate) {

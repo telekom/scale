@@ -9,6 +9,7 @@ class TextAttributedString {
   _fontSize: any;
   _fontFamily: any;
   _color: any;
+  _textTransform: any;
   _alignment: 0 | 1 | 2 | 3;
 
   constructor({
@@ -17,6 +18,7 @@ class TextAttributedString {
     fontSize,
     fontFamily,
     skipSystemFonts,
+    textTransform,
     alignment
   }: {
     text: string;
@@ -24,6 +26,7 @@ class TextAttributedString {
     fontSize: number;
     fontFamily: string;
     skipSystemFonts: boolean;
+    textTransform: string;
     alignment: 0 | 1 | 2 | 3;
   }) {
     this._text = text;
@@ -31,6 +34,7 @@ class TextAttributedString {
     this._fontSize = fontSize;
     this._fontFamily = getFirstFont(fontFamily, skipSystemFonts);
     this._alignment = alignment;
+    this._textTransform = textTransform;
   }
 
   toJSON() {
@@ -50,6 +54,7 @@ class TextAttributedString {
                 size: this._fontSize
               }
             },
+            MSAttributedStringTextTransformAttribute: (this._textTransform === 'uppercase' ? 1 : (this._textTransform === 'lowercase' ? 2 : 0)),
             MSAttributedStringColorAttribute: makeColorFromCSS(this._color),
             kerning: 0,
             textStyleVerticalAlignmentKey: 0,

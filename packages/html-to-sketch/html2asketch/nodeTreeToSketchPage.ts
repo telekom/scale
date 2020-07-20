@@ -6,11 +6,15 @@ function traverse(node: HTMLElement) {
   if (/^scale-/i.test(node.nodeName)) {
     const componentName = node.getAttribute('data-sketch-symbol') || node.nodeName.replace(/^scale-/i, '').toLowerCase();
     node.setAttribute('data-sketch-symbol', `${componentName}`);
-    const attrVariant:string[]= [];
+    const attrVariant:string[] = [];
     for (let i = 0; i < node.attributes.length; i++) {
       const attr = node.attributes[i];
       if (!/^class$|^data-|^variant$/.test(attr.name)) {
-        attrVariant.push(`${attr.name}:${attr.value.slice(0,32)}`)
+        if (attr.value.length < 32) {
+          attrVariant.push(`${attr.name}:${attr.value.slice(0,32)}`)
+        } else {
+          attrVariant.push(`${attr.name}`)
+        }
       }
     }
     const variant = node.getAttribute('data-sketch-variant') || node.getAttribute('variant');

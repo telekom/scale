@@ -3,6 +3,8 @@ import Base from './base';
 class Page extends Base {
   _width: any;
   _height: any;
+  _x: 0;
+  _y: 0;
 
   constructor({width, height, id}: any) {
     super({id});
@@ -19,8 +21,8 @@ class Page extends Base {
       constrainProportions: false,
       height: this._height,
       width: this._width,
-      x: 0,
-      y: 0,
+      x: this._x,
+      y: this._y,
     };
 
     obj.style = {

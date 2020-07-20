@@ -95,15 +95,20 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   }
   // set group name from data-sketch-symbol if exists
   else if (node.getAttribute("data-sketch-symbol") && node.getAttribute("data-sketch-symbol") !== '') {
-    group.setName(node.getAttribute("data-sketch-symbol"));
     group.setIsSymbol(true);
     const variant = node.getAttribute('data-sketch-variant');
     if (variant !== null && variant !== '') {
       const state = node.getAttribute('data-sketch-state');
       group.setVariant(variant + (state ? `:${state}` : ''));
     }
+    group.setName(node.getAttribute("data-sketch-symbol") + " / " + variant);
   }
-  // set group name from id if exists
+  else if (node.getAttribute("data-sketch-name") && node.getAttribute("data-sketch-name") !== '') {
+    group.setName(node.getAttribute("data-sketch-name"));
+  }
+  else if (/^H\d$/i.test(node.tagName) && node.textContent != '') {
+    group.setName(node.textContent);
+  }
   else if (node.id && node.id !== '') {
     group.setName(`${node.nodeName.toLowerCase()}#${node.id}`);
   }
