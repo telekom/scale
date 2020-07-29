@@ -751,6 +751,10 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     node.nodeName === "IMG" && (node as HTMLImageElement).currentSrc;
   const isSVG = node.nodeName === "svg";
 
+  if (top > 4610 && top < 4630) {
+    console.log(left, top, width, height);
+  }
+
   if (node instanceof SVGElement) {
     if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
       return layers;
@@ -924,6 +928,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       // Create shapePaths from the curve segments.
       curveSegments.segments.forEach((segment: { isClosed: boolean; points: any[] }) => {
         const sg = new ShapeGroup({x: 0, y: 0, width: bbox.width, height: bbox.height});
+        sg.setStyle(style);
         sg._class = classOverride;
         sg._points = segment.points;
         if (classOverride === 'rectangle') {
@@ -956,6 +961,17 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       return layers;
     }
   }
+
+  if (styles.overflow === 'hidden') {
+    console.log('hidden', node.className);
+    const clip = new ShapeGroup({ x: left, y: top, width, height });
+    clip._class = "shapePath";
+    clip.setHasClippingMask(true);
+    clip._points = getRectanglePoints(0);
+    clip._isClosed = true;
+    layers.push(clip);
+  }
+
 
   // if layer has no background/shadow/border/etc. skip it
   if (isImage || !hasOnlyDefaultStyles(styles)) {
@@ -994,10 +1010,13 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
     // support for one-side borders (using inner shadow because Sketch doesn't support that)
     if (borderWidth.indexOf(" ") === -1) {
-      style.addBorder({
-        color: borderColor,
-        thickness: parseFloat(borderWidth)
-      });
+      const bw = parseFloat(borderWidth);
+      if (!isNaN(bw) && bw > 0) {
+        style.addBorder({
+          color: borderColor,
+          thickness: bw
+        });
+      }
     } else {
       const borderTopWidthFloat = parseFloat(borderTopWidth);
       const borderRightWidthFloat = parseFloat(borderRightWidth);
@@ -1077,6 +1096,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     };
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
+    rectangle.setStyle(style);
 
     shapeGroup.setName('background');
     shapeGroup.addLayer(rectangle);
@@ -1214,7 +1234,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
       // center text inside a box
       // TODO it's possible now in sketch - fix it!
-      if (lineHeightInt && textBCRHeight !== lineHeightInt * numberOfLines) {
+      if (false && lineHeightInt && textBCRHeight !== lineHeightInt * numberOfLines) {
         fixY = (textBCRHeight - lineHeightInt * numberOfLines) / 2;
       }
 
@@ -1224,7 +1244,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         x: textBCR.left,
         y: textBCR.top + fixY,
         width: Math.ceil(textBCR.right - textBCR.left + 2),
-        height: textBCRHeight,
+        height: textBCRHeight + 2,
         text: textValue,
         style: textStyle,
         attributedString: textAttributedString(textValue),
