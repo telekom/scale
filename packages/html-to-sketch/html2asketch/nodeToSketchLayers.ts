@@ -751,10 +751,6 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     node.nodeName === "IMG" && (node as HTMLImageElement).currentSrc;
   const isSVG = node.nodeName === "svg";
 
-  if (top > 4610 && top < 4630) {
-    console.log(left, top, width, height);
-  }
-
   if (node instanceof SVGElement) {
     if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
       return layers;

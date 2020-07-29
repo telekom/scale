@@ -33,22 +33,20 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   const processChild = (childNode: HTMLElement) => {
     if (childNode.shadowRoot) {
       // Get parent shadow root element
-      const root = nodeTreeToSketchGroup(childNode, options)
+      const root = nodeTreeToSketchGroup(childNode, options);
       // Remove slotted content as it is already assigned
-      root._layers = []
+      root._layers = [];
       // Process children
       const children = Array.from(childNode.shadowRoot.children)
         .filter(isNodeVisible)
-        .map(nodeTreeToSketchGroup)
+        .map(nodeTreeToSketchGroup);
       // Align child and root positioning
       children.forEach(layer => {
-        root._width = layer._width
-        root._height = layer._height
-        layer._x = 0
-        layer._y = 0
-        root._layers.push(layer)
+        layer._x -= root._x;
+        layer._y -= root._y;
+        root._layers.push(layer);
       });
-      layers.push(root)
+      layers.push(root);
     } else {
       layers.push(nodeTreeToSketchGroup(childNode, options));
     }
