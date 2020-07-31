@@ -231,9 +231,11 @@ function replaceSystemFonts(json) {
     } else if (typeof jsonValue === 'string') {
       if (key === 'name') { 
         if (jsonValue === 'system-ui') {
-          json[key] = 'Helvetica';
+          json[key] = 'TeleNeo';
         } else if (jsonValue === '-apple-system') {
-          json[key] = 'Helvetica';
+          json[key] = 'TeleNeo';
+        } else if (/^TeleNeoWeb/.test(jsonValue)) {
+          json[key] = jsonValue.replace(/^TeleNeoWeb/, 'TeleNeo');
         }
       }
     } else if (typeof jsonValue === 'object') {
