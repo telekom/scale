@@ -99,7 +99,7 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       const state = node.getAttribute('data-sketch-state');
       group.setVariant(variant + (state ? `:${state}` : ''));
     }
-    group.setName(node.getAttribute("data-sketch-symbol") + " / " + variant);
+    group.setName(node.getAttribute("data-sketch-symbol")); // + " / " + variant);
   }
   else if (node.getAttribute("data-sketch-name") && node.getAttribute("data-sketch-name") !== '') {
     group.setName(node.getAttribute("data-sketch-name"));

@@ -1077,6 +1077,16 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       }
     }
 
+    const ow = parseFloat(styles.outlineWidth);
+    if (!isNaN(ow) && ow > 0) {
+      style.addBorder({
+        color: styles.outlineColor,
+        thickness: ow,
+        position: 2
+      });
+    }
+
+
     if (!options || options.layerOpacity !== false) {
       style.addOpacity(opacity);
     }

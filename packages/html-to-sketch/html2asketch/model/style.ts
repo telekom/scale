@@ -85,13 +85,14 @@ class Style {
     this._fills.push(fill);
   }
 
-  addBorder({color, thickness, alpha}: {color:any, thickness:number, alpha?:number}) {
+  addBorder({color, thickness, alpha, position}: {color:any, thickness:number, alpha?:number, position?:number}) {
+    position = position || 1;
     this._borders.push({
       _class: 'border',
       isEnabled: true,
       color: makeColorFromCSS(color, alpha),
       fillType: 0,
-      position: 1,
+      position,
       thickness,
     });
   }
