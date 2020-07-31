@@ -7,10 +7,19 @@ const URL = require("url").URL;
 const DEBUG = false;
 const crypto = require("crypto");
 
-const root = (process.argv[2] || path.join(__dirname, "../sketch-render"));
-const port = 3334;
+let server;
 
-const server = require("./renderserver")(root, port);
+if (process.argv.length > 2 && /^https?:/i.test(process.argv[2])) {
+  server = {
+      pageURLs: process.argv.slice(2),
+      close: () => {}
+  };
+} else {
+  const root = (process.argv.slice(2) || path.join(__dirname, "../sketch-render"));
+  const port = 3334;
+
+  server = require("./renderserver")(root, port);
+}
 
 let urlObj = null;
 let directory = "sketch-json";
