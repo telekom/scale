@@ -41,11 +41,23 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
         .filter(isNodeVisible)
         .map(nodeTreeToSketchGroup);
       // Align child and root positioning
+      let minX = root._x, maxX = minX + root._width, minY = root._y, maxY = minY + root._height;
       children.forEach(layer => {
-        layer._x -= root._x;
-        layer._y -= root._y;
+        minX = Math.min(minX, layer._x);
+        minY = Math.min(minY, layer._y);
+        maxX = Math.max(maxX, layer._x + layer._width);
+        maxY = Math.max(maxY, layer._y + layer._height);
         root._layers.push(layer);
       });
+      root._x = minX;
+      root._y = minY;
+      root._width = maxX - minX;
+      root._height = maxY - minY;
+      root._layers.forEach((layer:any) => {
+        layer._x -= root._x;
+        layer._y -= root._y;
+      });
+      
       layers.push(root);
     } else {
       layers.push(nodeTreeToSketchGroup(childNode, options));

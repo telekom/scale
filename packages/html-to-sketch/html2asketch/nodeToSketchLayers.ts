@@ -958,16 +958,6 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     }
   }
 
-  if (styles.overflow === 'hidden') {
-    console.log('hidden', node.className);
-    const clip = new ShapeGroup({ x: left, y: top, width, height });
-    clip._class = "shapePath";
-    clip.setHasClippingMask(true);
-    clip._points = getRectanglePoints(0);
-    clip._isClosed = true;
-    layers.push(clip);
-  }
-
 
   // if layer has no background/shadow/border/etc. skip it
   if (isImage || !hasOnlyDefaultStyles(styles)) {
@@ -1107,6 +1097,10 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     shapeGroup.setName('background');
     shapeGroup.addLayer(rectangle);
 
+		if (styles.overflow === 'hidden') {
+			shapeGroup.setHasClippingMask(true);
+		}
+
     // This should return a array once multiple background-images are supported
     const backgroundImageResult = parseBackgroundImage(backgroundImage);
 
@@ -1174,7 +1168,16 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     }
 
     layers.push(layer);
-  }
+  } else {
+		if (styles.overflow === 'hidden') {
+			const clip = new ShapeGroup({ x: left, y: top, width, height });
+			clip._class = "shapePath";
+			clip.setHasClippingMask(true);
+			clip._points = getRectanglePoints(0);
+			clip._isClosed = true;
+			layers.push(clip);
+		}
+	}
 
   if (isSVG) {
     // sketch ignores padding and centering as defined by viewBox and preserveAspectRatio when
