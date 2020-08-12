@@ -15,7 +15,7 @@ if (process.argv.length > 2 && /^https?:/i.test(process.argv[2])) {
       close: () => {}
   };
 } else {
-  const root = (process.argv.slice(2) || path.join(__dirname, "../sketch-render"));
+  const root = (process.argv[2] || path.join(__dirname, "../sketch-render"));
   const port = 3334;
 
   server = require("./renderserver")(root, port);

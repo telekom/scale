@@ -266,35 +266,40 @@ function enhanceJson(json) {
       enhanced[key] = value
     }
   }
+  /*
+    Handle symbol creation and instancing
+  */
   if (enhanced['_class'] === 'group' && enhanced.isSymbol === true) {
+    // Find all symbols with the same name.
     let symbolArray = symbols.get(enhanced.name);
     if (!symbolArray) {
       symbolArray = [];
       symbols.set(enhanced.name, symbolArray);
     }
+    // Try to create a symbol instance.
+    // If the symbol is too different, we create a master symbol instead below.
     let instance;
-    let symbol = !enhanced.variant && symbolArray.find(master => {
+    let symbol = symbolArray.find(master => {
+      if (master.variant !== enhanced.variant) return false;
       instance = master.createInstance({name: enhanced.name});
       instance.frame = new Rect(enhanced.frame);
       instance.style = new Style(enhanced.style);
       try {
         isSymbolInstanceOf(instance, master, enhanced, '', master.name);
-        fillInstance(instance, master, enhanced, '', master.name, master.variantName, enhanced.name.split('/')[0].trim() + ' / ' + (enhanced.variant || uuid()));
+        fillInstance(instance, master, enhanced, '', master.name, master.variantName, uuid());
         return true;
       } catch (err) {
         return false;
       }
     });
+    // Couldn't create a symbol instance, let's create a new master instead.
     if (!symbol) {
       symbol = symbolMaster({...enhanced});
       symbol.name = enhanced.name.replace(/\s*\/\s*(null)?\s*$/, '');
-      //symbol.variantName = enhanced.name.replace(/\s*\/\s*$/, '') + (enhanced.variant ? ' / ' + enhanced.variant : '');
-      //symbol.name = symbol.variantName;
-      //console.log(enhanced.name);
-      //console.log(enhanced.variant);
-      //console.log(symbol.name);
-      //symbol.name = symbol.name.replace(/ \/ null \/ 0$/, '');
-      //symbol.variantName = symbol.name.replace(/ \/ null \/ 0$/, '');
+      symbol.variant = enhanced.variant;
+      symbol.variantName = uuid();
+      if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
+      if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
       symbol.resizesContent = true;
       // symbol.groupLayout = {
       //   "_class": "MSImmutableInferredGroupLayout",
