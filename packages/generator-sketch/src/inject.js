@@ -126,7 +126,7 @@ puppeteer
             }
           }
         }
-        await delay(3000); // Wait a bit for relayout
+        await delay(3000); // Wait a bit for relayout and transitions
 
 
         const asketchPage = await page.evaluate("page2layers.run()");

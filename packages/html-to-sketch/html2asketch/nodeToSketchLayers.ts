@@ -964,7 +964,11 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     const style = new Style();
 
     if (backgroundColor) {
-      style.addColorFill(backgroundColor);
+			if ((node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') && node.getAttribute("disabled") !== null) {
+				style.addColorFill('rgba(239, 239, 239, 0.3)');
+			} else {
+	      style.addColorFill(backgroundColor);
+			}
     }
 
     if (isImage) {
@@ -1097,7 +1101,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     shapeGroup.setName('background');
     shapeGroup.addLayer(rectangle);
 
-		if (styles.overflow === 'hidden') {
+		if (styles.overflow === 'hidden' || node.tagName == 'IFRAME') {
 			shapeGroup.setHasClippingMask(true);
 		}
 
@@ -1223,6 +1227,20 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     });
 
   const rangeHelper = document.createRange();
+
+	// if (node.tagName === 'INPUT' && (node as HTMLInputElement).type.toLowerCase() == 'text') {
+	// 	const inputEl = node as HTMLInputElement;
+	// 	const div = document.createElement('div');
+	// 	if (inputEl.value === '' && inputEl.placeholder !== '') {
+	// 		div.textContent = inputEl.placeholder;
+	// 		div.setAttribute('pseudo', "-webkit-input-placeholder");
+	// 		div.id = "placeholder";
+	// 		div.style.display = "block !important";
+	// 	} else {
+	// 		div.textContent = inputEl.value;
+	// 	}
+	// 	node.appendChild(div);
+	// }
 
   // Text
   Array.from(node.childNodes)

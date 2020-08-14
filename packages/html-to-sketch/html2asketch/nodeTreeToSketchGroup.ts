@@ -39,7 +39,7 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       // Process children
       const children = Array.from(childNode.shadowRoot.children)
         .filter(isNodeVisible)
-        .map(nodeTreeToSketchGroup);
+        .map(c => nodeTreeToSketchGroup(c as HTMLElement, options));
       // Align child and root positioning
       let minX = root._x, maxX = minX + root._width, minY = root._y, maxY = minY + root._height;
       children.forEach(layer => {
@@ -59,6 +59,33 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       });
       
       layers.push(root);
+    } else if (childNode.tagName == 'IFRAME' && (childNode as HTMLIFrameElement).contentDocument) {
+      const iframe = (childNode as HTMLIFrameElement);
+      if (iframe.contentDocument !== null) {
+        const root = nodeTreeToSketchGroup(iframe, options);
+        if (iframe.contentDocument.body.parentElement) {
+
+          iframe.contentDocument.body.parentElement.style.height = '100%';
+          iframe.contentDocument.body.style.height = '100%';
+
+          var cc = iframe.contentDocument.body.offsetHeight;
+          iframe.contentDocument.body.dataset.height = String(cc);
+
+          var cc = iframe.contentDocument.body.parentElement.offsetHeight;
+          iframe.contentDocument.body.parentElement.dataset.height = String(cc);
+
+          // FIXME child symbols are not generated. No idea why. 
+          // Adding iframe body.children as nodeTreeToSketchGroups gets me
+          // the modal text but not the background colors and drop shadows. Again: Why?
+          // The modal divs don't show up but the text is in the right place and with the right style. Why?
+          const iframeOptions = {...options, debugStyle: true};
+          const children = Array.from(iframe.contentDocument.children)
+            .filter(isNodeVisible)
+            .map(c => nodeTreeToSketchGroup(c as HTMLElement, iframeOptions));
+          children.forEach(c => root._layers.push(c));
+        }
+        layers.push(root);
+      }
     } else {
       layers.push(nodeTreeToSketchGroup(childNode, options));
     }

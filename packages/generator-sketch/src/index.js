@@ -279,7 +279,7 @@ function enhanceJson(json) {
     // Try to create a symbol instance.
     // If the symbol is too different, we create a master symbol instead below.
     let instance;
-    let symbol = symbolArray.find(master => {
+    let symbol = false && symbolArray.find(master => {
       if (master.variant !== enhanced.variant) return false;
       instance = master.createInstance({name: enhanced.name});
       instance.frame = new Rect(enhanced.frame);
