@@ -169,7 +169,6 @@
 # Layout constraints to make buttons resize with the text content
     [] Figure out what components not to make resizable (hint, tip: specified width and/or height)
         [] Pass CSS layout info from html-to-sketch
-## Later
     [] Translate flexbox rules to constraints 
         [] layout direction
         [] justify
@@ -197,26 +196,25 @@
         }
 
 # Images
-        - [] SVG
-            - PDFs can be embedded
-            - svg-to-pdfkit...
-## Done
-    [x] Download images https://stackoverflow.com/questions/52542149/how-can-i-download-images-on-a-page-using-puppeteer
-    [x] Inject images into Sketch document - asketch.json has bitmap entries, turn them into sketch-constructor
+    - [] SVG
+        - PDFs can be embedded
+        - svg-to-pdfkit...
+    - [x] Download images https://stackoverflow.com/questions/52542149/how-can-i-download-images-on-a-page-using-puppeteer
+    - [x] Inject images into Sketch document - asketch.json has bitmap entries, turn them into sketch-constructor
         new Bitmap({
             filePath: '/local/path.png',
             frame,
             style
         })
-    [x] IMG
-    [x] Images in CSS
-        [x] url()
-        [x] data:
-        [x] content
-    [x] Cross-origin images
-    [x] Formats
-        [x] PNG
-        [x] JPG
+    - [x] IMG
+    - [x] Images in CSS
+        - [x] url()
+        - [x] data:
+        - [x] content
+    - [x] Cross-origin images
+    - [x] Formats
+        - [x] PNG
+        - [x] JPG
 
 # Smoke test using whatever websites in inject.js
 
@@ -225,11 +223,9 @@
     [x] :-webkit-slider-thumb and friends
     [x] -webkit-slider-track
 
-
-
 # Nested symbols
 
-- [ ] Agent states - compare if has :hover, :focus, :active etc
+- [x] Agent states - compare if has :hover, :focus, :active etc
     - [x] Generate state variant elements
     - [x] getComputedStyle with :foo
     - [x] Create variant names with :foo
@@ -238,9 +234,12 @@
     - [x] Shadow root handling for states
         - Can't get it working correctly
         - Ignore Shadow DOM, scale is deprecating it
-
-- [ ] Symbol names
-    - 
+    - [x] Investigate once more if we can programmatically do them
+    - [x] Add :focus
+    - [x] Add :active                  
+- [x] Symbol names
+    - [x] No crazy /null/0
+    - [x] If param value long, just remove it
 - [x] Override - parse layer name
     - Use layer name as prefix to override style name
     - Deal with instance creation failure
@@ -252,4 +251,21 @@
 - [x] Debug duplicate text styles
     - [x] Instead of name = variant, name = symbol / variant
 - [x] Symbol Master text styles should use variant name if symbol master has one.
+
+# Components tests
+
+- [x] Use document as Sketch library
+    - [x] Stable document ID
+    - [x] Stable symbol IDs
+    - [x] Bump symbol changeIdentifier on build
+
+- [x] Better Sketch library stability
+    - [x] Store document ID in symbol map
+    - [x] Pass in symbol map filename
+    - [x] Use Sqlite DB as symbol map
+    - [ ] Allow renaming symbols
+        - [ ] Use a stable symbol key for components instead of symbol name
+        - [ ] symbolKey -> symbolID -map
+        - [ ] Default symbolKey to symbol name
+
 

@@ -22,6 +22,7 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
   // helps us catch things such as <noscript>
   // HTMLSlotElement has a null offsetParent, but should still be visible
   if (node.tagName !== 'BODY' &&
+      node.tagName !== 'HTML' &&
       node.offsetParent === null &&
       position !== 'fixed' &&
       node.tagName.toLowerCase() !== 'slot') {

@@ -4,7 +4,7 @@ import nodeTreeToSketchGroup from './nodeTreeToSketchGroup';
 
 function traverse(node: HTMLElement) {
   if (/^scale-/i.test(node.nodeName)) {
-    const componentName = node.getAttribute('data-sketch-symbol') || node.nodeName.replace(/^scale-/i, '').toLowerCase();
+    const componentName = node.getAttribute('data-sketch-symbol') || ("Unnamed Components / " + node.nodeName.replace(/^scale-/i, '').toLowerCase());
     node.setAttribute('data-sketch-symbol', `${componentName}`);
     const attrVariant:string[] = [];
     for (let i = 0; i < node.attributes.length; i++) {
