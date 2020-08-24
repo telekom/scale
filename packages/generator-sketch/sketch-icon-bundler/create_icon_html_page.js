@@ -3,7 +3,7 @@ const Path = require('path');
 const { execSync } = require("child_process");
 
 if (process.argv.length < 3) {
-	console.error("USAGE: node logoprocessor.js ICON_DIRECTORY");
+	console.error("USAGE: node create_icon_html_page.js ICON_DIRECTORY");
 	process.exit(1);
 }
 
