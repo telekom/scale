@@ -24,6 +24,8 @@ If you generate a document with the same name, the document ID and the symbol ID
 
 Divs with only one child and no special name are collapsed into their parent element. This is used to make Sketch documents that have a flatter structure and are easier to work with. If you don't like this behaviour, it can be commented out in ```src/index.js``` function ```simplifyTree```.
 
+By default -system-ui and -apple-system fonts are replaced with Helvetica. You can configure this by editing ```src/config.js``` function ```fontReplacer```.
+
 ### Example HTML
 
 If this html is in the file ```http://localhost:5005/index.html``` and you do ```yarn sketch my-doc http://localhost:5005/index.html```, you'll generate the Sketch file ```sketch/my-doc.sketch``` that has a ```Symbols``` page with two symbols on it, named ```Symbol Number Banana``` and ```Symbol Number Kumquat```. The document should also have a page titled ```My Sketch Page``` that has one artboard named ```My Artboard``` that has instances of the two symbols on it.
@@ -80,16 +82,15 @@ Generator-sketch creates a large number of symbols, rather than trying to create
 - Style overrides
 - Replacing system-ui and -apple-system fonts with Helvetica
 - Text alignment
+- Pseudo-classes (:hover, :focus, :active)
+- Multiple pages in output
+- overflow: hidden
 
 
 ## Unsupported features
 
-- Nice auto-generated symbol variant names (now they are `button / 3` instead of `Button / Warning / Label=Hello`
 - Resizable components using layout constraints (there is some preliminary noodling)
 - Flexbox to layout constraints
-- Multiple pages in output
-- overflow: hidden -clip.
-- Pseudo-classes (:hover, :focus, :active)
 - SVGs as images
 - SVG clip path transformations are buggy
 - SVG image fills
