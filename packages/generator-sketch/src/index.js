@@ -17,6 +17,7 @@ const uuid = require("uuid").v4;
 const crypto = require('crypto');
 const sqlite3 = require('sqlite3');
 const sqlite = require('sqlite');
+const config = require('./config');
 
 const documentName = process.argv[2] || "default";
 
@@ -284,13 +285,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         jsonValue.forEach(replaceSystemFonts);
       } else if (typeof jsonValue === 'string') {
         if (key === 'name') { 
-          if (jsonValue === 'system-ui') {
-            json[key] = 'TeleNeo';
-          } else if (jsonValue === '-apple-system') {
-            json[key] = 'TeleNeo';
-          } else if (/^TeleNeoWeb/.test(jsonValue)) {
-            json[key] = jsonValue.replace(/^TeleNeoWeb/, 'TeleNeo');
-          }
+          json[key] = config.fontReplacer(jsonValue) || json[key];
         }
       } else if (typeof jsonValue === 'object') {
         replaceSystemFonts(jsonValue);
