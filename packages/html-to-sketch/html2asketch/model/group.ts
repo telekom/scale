@@ -6,6 +6,7 @@ class Group extends Base {
   _width: any;
   _height: any;
   _isSymbol: boolean;
+  _stableSymbolName?: string;
 
   constructor({x, y, width, height, id, isSymbol = false}: any) {
     super({id});
@@ -19,6 +20,10 @@ class Group extends Base {
 
   setIsSymbol(isSymbol: boolean = false) {
     this._isSymbol = isSymbol
+  }
+
+  setStableSymbolName(name: string) {
+    this._stableSymbolName = name;
   }
 
   toJSON() {
@@ -38,6 +43,7 @@ class Group extends Base {
     obj.hasClippingMask = false;
     obj.windingRule = 1;
     obj.isSymbol = this._isSymbol;
+    obj.stableSymbolName = this._stableSymbolName;
 
     return obj;
   }

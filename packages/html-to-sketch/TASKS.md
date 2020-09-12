@@ -263,9 +263,12 @@
     - [x] Store document ID in symbol map
     - [x] Pass in symbol map filename
     - [x] Use Sqlite DB as symbol map
-    - [ ] Allow renaming symbols
-        - [ ] Use a stable symbol key for components instead of symbol name
-        - [ ] symbolKey -> symbolID -map
-        - [ ] Default symbolKey to symbol name
-
+    - [x] Allow renaming symbols
+        - [x] Use a stable symbol key for components instead of symbol name
+        - [x] symbolKey -> symbolID -map
+        - [x] Default symbolKey to symbol name
+        - [x] Fix symbol renaming
+            - Symbols in dropdown update name on Library update
+            - Document layer names aren't updated on Library update (You need an extension for that (e.g. symbol instance renamer))
+        
 

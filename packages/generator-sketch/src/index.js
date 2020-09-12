@@ -345,16 +345,17 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       if (!symbol) {
         symbol = symbolMaster({...enhanced});
         symbol.name = getSymbolName(enhanced.name);
+        symbol.stableSymbolName = enhanced.stableSymbolName || symbol.name;
         symbol.variant = enhanced.variant;
         symbol.variantName = uuid();
-        if (symbolNameToIdMap[symbol.name]) {
-          console.log("Reusing symbol ID:", symbol.name, "-", symbolNameToIdMap[symbol.name].symbolID, "-", symbolNameToIdMap[symbol.name].changeIdentifier);
-          symbol.symbolID = symbolNameToIdMap[symbol.name].symbolID;
-          symbol.changeIdentifier = (symbolNameToIdMap[symbol.name].changeIdentifier || 0) + 1;
+        if (symbolNameToIdMap[symbol.stableSymbolName]) {
+          console.log("Reusing symbol ID:", symbol.stableSymbolName, '-', symbol.name, "-", symbolNameToIdMap[symbol.stableSymbolName].symbolID, "-", symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier);
+          symbol.symbolID = symbolNameToIdMap[symbol.stableSymbolName].symbolID;
+          symbol.changeIdentifier = (symbolNameToIdMap[symbol.stableSymbolName].changeIdentifier || 0) + 1;
         } else {
-          console.log("Creating symbol ID:", symbol.name, symbol.changeIdentifier || 0);
+          console.log("Creating symbol ID:", symbol.stableSymbolName, symbol.changeIdentifier || 0);
         }
-        symbolNameToIdMap[symbol.name] = {symbolID: symbol.symbolID, changeIdentifier: symbol.changeIdentifier || 0};
+        symbolNameToIdMap[symbol.stableSymbolName] = {symbolID: symbol.symbolID, changeIdentifier: symbol.changeIdentifier || 0};
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;

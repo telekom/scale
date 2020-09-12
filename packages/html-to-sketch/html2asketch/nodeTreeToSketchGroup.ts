@@ -139,6 +139,10 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       group.setVariant(variant + (state ? `:${state}` : ''));
     }
     group.setName(node.getAttribute("data-sketch-symbol")); // + " / " + variant);
+    const stableSymbolName = node.getAttribute("data-sketch-key");
+    if (stableSymbolName && stableSymbolName !== '') {
+      group.setStableSymbolName(stableSymbolName);
+    }
   }
   else if (node.getAttribute("data-sketch-name") && node.getAttribute("data-sketch-name") !== '') {
     group.setName(node.getAttribute("data-sketch-name"));
