@@ -16,14 +16,14 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
   display,
   clip,
 }: any = getComputedStyle(node)) {
-  if (node instanceof SVGClipPathElement) return true;
+  if (node instanceof SVGClipPathElement || node instanceof HTMLSlotElement) return true;
   
   // skip node when display is set to none for itself or an ancestor
   // helps us catch things such as <noscript>
   // HTMLSlotElement has a null offsetParent, but should still be visible
   if (node.tagName !== 'BODY' &&
       node.tagName !== 'HTML' &&
-      node.offsetParent === null &&
+      (node.offsetParent === null && !node.parentElement) &&
       position !== 'fixed' &&
       node.tagName.toLowerCase() !== 'slot') {
     return false;

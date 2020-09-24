@@ -597,7 +597,13 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
   }
   const layers: any[] = [];
-  const bcr = node.getBoundingClientRect();
+  let bcr = node.getBoundingClientRect();
+  if (bcr.width === 0 && bcr.height === 0) {
+    // Possibly broken getBoundingClientRect, let's try selecting the node.
+    const rangeHelper = document.createRange();
+    rangeHelper.selectNodeContents(node);
+    bcr = rangeHelper.getBoundingClientRect();
+  }
   const { left, top } = bcr;
   const width = bcr.right - bcr.left;
   const height = bcr.bottom - bcr.top;

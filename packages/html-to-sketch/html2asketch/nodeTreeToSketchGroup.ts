@@ -4,14 +4,28 @@ import nodeToSketchLayers from './nodeToSketchLayers';
 import {isNodeVisible} from './helpers/visibility';
 import { removeJssNameFromClass } from './helpers/utils';
 
-// Adopt DOM to include slotted content (needed to get slot styles)
-const getAssignedNodes = (node: HTMLElement) => {
-  if (node.nodeName === 'SLOT') {
-    (node as HTMLSlotElement).assignedNodes()
-      .forEach((slotNode: HTMLElement) => node.appendChild(slotNode));
-  }
-  return node
-}
+// const materializeStyles = (node: Element) => {
+//   if (node.children) {
+//     Array.from(node.children).forEach(c => materializeStyles(c));
+//   }
+//   if (node && (node as HTMLElement).style) {
+//     const style = getComputedStyle(node);
+//     if (style) {
+//       Array.from(style).forEach(key => (node as HTMLElement).style.setProperty(key, style.getPropertyValue(key), style.getPropertyPriority(key)));
+//     }
+//   }
+//   return node;
+// }
+
+// // Adopt DOM to include slotted content (needed to get slot styles)
+// // This ain't gonna work, slot should rather descend into its assignedNodes()
+// const getAssignedNodes = (node: HTMLElement) => {
+//   if (node.nodeName === 'SLOT') {
+//     (node as HTMLSlotElement).assignedNodes()
+//       .forEach((slotNode: HTMLElement) => node.appendChild(materializeStyles(slotNode)));
+//   }
+//   return node
+// }
 
 export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
   let bcr = node.getBoundingClientRect();
@@ -86,14 +100,51 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
         }
         layers.push(root);
       }
+    } else if (childNode.tagName === 'SLOT') {
+      // Push slotted text nodes directly into the slot
+      const childNodes = Array.from((childNode as HTMLSlotElement).assignedNodes())
+        .filter(n => {
+          if (n.nodeType === 3) {
+            childNode.appendChild(n);
+            return false;
+          } else {
+            return true;
+          }
+        });
+      // Get parent shadow root element
+      const root = nodeTreeToSketchGroup(childNode, options);
+      // Process children
+      if (childNodes.length > 0) {
+        const children = childNodes
+          .filter(isNodeVisible)
+          .map(c => {console.log(c, c.nodeName, c.nodeType, c.nodeValue); return nodeTreeToSketchGroup(c as HTMLElement, options)});
+        // Align child and root positioning
+        let minX = root._x, maxX = minX + root._width, minY = root._y, maxY = minY + root._height;
+        children.forEach(layer => {
+          minX = Math.min(minX, layer._x);
+          minY = Math.min(minY, layer._y);
+          maxX = Math.max(maxX, layer._x + layer._width);
+          maxY = Math.max(maxY, layer._y + layer._height);
+          root._layers.push(layer);
+        });
+        root._x = minX;
+        root._y = minY;
+        root._width = maxX - minX;
+        root._height = maxY - minY;
+        root._layers.forEach((layer:any) => {
+          layer._x -= root._x;
+          layer._y -= root._y;
+        });
+      }
+      layers.push(root);
     } else {
       layers.push(nodeTreeToSketchGroup(childNode, options));
     }
   };
   const children = Array.from(node.children);
   children
-    .map(getAssignedNodes)
     .filter(isNodeVisible)
+    // .map(getAssignedNodes)
     // sort the children by computed z-index so that nodes with lower z-indexes are added
     // to the group first, "beneath" those with higher z-indexes
     .sort((a, b) => {

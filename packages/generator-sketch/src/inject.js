@@ -90,6 +90,19 @@ puppeteer
         const domNodes = {};
         const nodesByParent = {};
 
+        async function recursivelyForcePseudoState(node, state) {
+          await cdp.send("CSS.forcePseudoState", {
+            nodeId: node.nodeId,
+            forcedPseudoClasses: [state],
+          });
+          if (state !== 'focus' && state !== 'focus-within') {
+            if (node.shadowRoots && node.shadowRoots[0]) {
+              await Promise.all((nodesByParent[node.shadowRoots[0].nodeId] || []).map(n => recursivelyForcePseudoState(n, state).catch(e => {})));
+            }
+            await Promise.all((nodesByParent[node.nodeId] || []).map(n => recursivelyForcePseudoState(n, state).catch(e => {})));
+          }
+        }
+
         const nodes = (await cdp.send("DOM.getFlattenedDocument", {depth: -1, pierce: true})).nodes;
         nodes.forEach(n => {
           domNodes[n.nodeId] = n;
@@ -110,20 +123,8 @@ puppeteer
           ).nodeIds;
 
           for (const nodeId of nodeIds) {
-            await cdp.send("CSS.forcePseudoState", {
-              nodeId: nodeId,
-              forcedPseudoClasses: [state],
-            });
             const node = domNodes[nodeId];
-            if (node.shadowRoots && node.shadowRoots[0]) {
-              const shadowNodes = nodesByParent[node.shadowRoots[0].nodeId];
-              for (const node of shadowNodes) {
-                await cdp.send("CSS.forcePseudoState", {
-                  nodeId: node.nodeId,
-                  forcedPseudoClasses: [state],
-                });
-              }
-            }
+            await recursivelyForcePseudoState(node, state);
           }
         }
         await delay(3000); // Wait a bit for relayout and transitions

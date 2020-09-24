@@ -270,5 +270,10 @@
         - [x] Fix symbol renaming
             - Symbols in dropdown update name on Library update
             - Document layer names aren't updated on Library update (You need an extension for that (e.g. symbol instance renamer))
-        
 
+- [x] Propagate :hover states through Shadow DOM (including slot content)
+
+- [x] Handle slot content better (copying the content tree under the slot element breaks styles, materializing the styles breaks the stylesheet overrides as style attribute takes precedence)
+    - Slot content is now traversed similarly to shadow roots
+
+- [ ] SVG styles shouldn't be materialized to DOM
