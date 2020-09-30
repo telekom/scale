@@ -89,13 +89,14 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       },
       ...args
     });
-    // symbol.groupLayout = {
-    //   _class: "MSImmutableInferredGroupLayout",
-    //   axis: 0,
-    //   layoutAnchor: 0,
-    //   maxSize: 0,
-    //   minSize: 0
-    // }
+    symbol.groupLayout = {
+      _class: "MSImmutableInferredGroupLayout",
+      axis: 0,
+      layoutAnchor: 1,
+      maxSize: 0,
+      minSize: 0
+    };
+    symbol.layers[0].groupLayout = {...symbol.groupLayout};
     return symbol;
   };
 
@@ -359,13 +360,13 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         if (symbolArray.length == 1) symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
-        // symbol.groupLayout = {
-        //   "_class": "MSImmutableInferredGroupLayout",
-        //   "axis": 0,
-        //   "layoutAnchor": 0,
-        //   "maxSize": 0,
-        //   "minSize": 0
-        // };
+        symbol.groupLayout = {
+          "_class": "MSImmutableInferredGroupLayout",
+          "axis": 1,
+          "layoutAnchor": 1,
+          "maxSize": 0,
+          "minSize": 0
+        };
         symbolArray.push(symbol);
         instance = symbol.createInstance({name: symbol.name});
         instance.frame = new Rect(enhanced.frame);
