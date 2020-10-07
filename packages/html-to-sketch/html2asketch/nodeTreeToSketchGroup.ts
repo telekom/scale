@@ -117,7 +117,7 @@ export default function nodeTreeToSketchGroup(node: HTMLElement, options: any) {
       if (childNodes.length > 0) {
         const children = childNodes
           .filter(isNodeVisible)
-          .map(c => {console.log(c, c.nodeName, c.nodeType, c.nodeValue); return nodeTreeToSketchGroup(c as HTMLElement, options)});
+          .map(c => nodeTreeToSketchGroup(c as HTMLElement, options));
         // Align child and root positioning
         let minX = root._x, maxX = minX + root._width, minY = root._y, maxY = minY + root._height;
         children.forEach(layer => {
