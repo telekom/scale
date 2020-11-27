@@ -1,3 +1,5 @@
+> Please note that we currently moved development into a private repository for corporate reasons, we hope we can come back and work on our public version again soon! Thank you for your support and feedback.
+
 ![Scale](assets/scale-banner-ascii-light.png)
 
 The `scale` library offers a set of customizable UI components written in `TypeScript`. The default `theme` of the library can be easily replaced so that a corresponding corporate identity of a dedicated brand can be represented.
