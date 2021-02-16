@@ -1,8 +1,0 @@
-/dist
-/node_modules
-.editorconfig
-*.asketch.json
-sketch
-sketch-json
-sketch-render/build
-debug.json
