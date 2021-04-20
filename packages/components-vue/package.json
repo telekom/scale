@@ -4,7 +4,7 @@
     "access": "public"
   },
   "sideEffects": false,
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Vue specific wrapper for @telekom/scale-components",
   "scripts": {
     "prebuild": "rimraf dist",
