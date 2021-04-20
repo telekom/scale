@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+        --icon-color: black;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+
+      hr {
+        margin: 3rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-date-picker
+      label="date"
+      name="daniel"
+      value="2021-03-24"
+    ></scale-date-picker>
+    <scale-button id="show">show</scale-button>
+    <scale-button id="hide">hide</scale-button>
+    <scale-button id="focus">focus</scale-button>
+    <script>
+      const picker = document.querySelector('scale-date-picker');
+      const show = document.getElementById('show');
+      const hide = document.getElementById('hide');
+      const focus = document.getElementById('focus');
+
+      const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
+
+      picker.dateAdapter = {
+        parse(value = '', createDate) {
+          const matches = value.match(DATE_FORMAT);
+
+          if (matches) {
+            return createDate(matches[3], matches[2], matches[1]);
+          }
+        },
+        format(date) {
+          return `${date.getDate()}.${date.getMonth() +
+            1}.${date.getFullYear()}`;
+        },
+      };
+
+      picker.localization = {
+        buttonLabel: 'Datum wählen',
+        placeholder: 'DD-MM-YYYY',
+        selectedDateMessage: 'Gewähltes Datum',
+        prevMonthLabel: 'Vorheriger Monat',
+        nextMonthLabel: 'Nächster Monat',
+        monthSelectLabel: 'Monat',
+        yearSelectLabel: 'Jahr',
+        closeLabel: 'Fenster schließen',
+        keyboardInstruction:
+          'Sie können mit den Pfeiltasten vor und zurück navigieren',
+        calendarHeading: 'Datum wählen',
+        dayNames: [
+          'Sonntag',
+          'Montag',
+          'Dienstag',
+          'Mittwoch',
+          'Donnerstag',
+          'Freitag',
+          'Samstag',
+        ],
+        monthNames: [
+          'Januar',
+          'Februar',
+          'März',
+          'April',
+          'Mai',
+          'Juni',
+          'Juli',
+          'August',
+          'September',
+          'Oktober',
+          'November',
+          'Dezember',
+        ],
+        monthNamesShort: [
+          'Jan',
+          'Feb',
+          'Mär',
+          'Apr',
+          'Mai',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Okt',
+          'Nov',
+          'Dez',
+        ],
+        locale: 'de-DE',
+      };
+
+      show.addEventListener('click', () => {
+        picker.show();
+      });
+      hide.addEventListener('click', () => {
+        picker.hide();
+      });
+      focus.addEventListener('click', () => {
+        picker.setFocus();
+      });
+
+      // Listen for when date is selected
+      picker.addEventListener('scaleChange', function(e) {
+        console.log('scaleChange selected date', e.detail.valueAsDate);
+      });
+      picker.addEventListener('scaleFocus', function(e) {
+        console.log('scaleFocus', e);
+      });
+
+      picker.addEventListener('scaleBlur', function(e) {
+        console.log('scaleBlur', e);
+      });
+    </script>
+  </body>
+</html>

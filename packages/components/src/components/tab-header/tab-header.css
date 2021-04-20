@@ -1,0 +1,100 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  outline: none;
+
+  --font-family: var(--scl-font-family-sans, TeleNeoWeb);
+  --font-weight: var(--scl-font-weight-bold);
+  --height-small: 2rem;
+  --color-hover: var(--scl-color-primary-hover);
+  --color-selected: var(--scl-color-primary);
+  --background-underline-hover: var(--scl-color-primary-hover);
+  --background-underline-active: var(--scl-color-primary-active);
+  --color-active: var(--scl-color-primary-active);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --spacing-right-slotted: var(--scl-spacing-8);
+}
+
+.tab-header {
+  cursor: pointer;
+  display: inline-flex;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  padding-left: 0;
+  height: var(--tab-height);
+  margin-right: var(--tab-spacing);
+  padding-right: var(--tab-spacing);
+  font-family: var(--font-family);
+  font-size: calc(var(--tab-height) / 2);
+  font-weight: var(--scl-font-weight-bold);
+  border-radius: var(--tab-radius);
+}
+
+.tab-header--small {
+  --tab-height: var(--height-small);
+}
+
+.tab-header:after {
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  height: var(--tab-border-size);
+  background-color: var(--tab-border-color);
+}
+.tab-header:before {
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  height: 0;
+  content: '';
+  display: block;
+  z-index: 1;
+  position: absolute;
+  border-top: 1px solid transparent;
+}
+.tab-header:hover {
+  color: var(--color-hover);
+}
+.tab-header:hover:after {
+  background-color: var(--background-underline-hover);
+}
+.tab-header:active {
+  color: var(--color-active);
+}
+.tab-header:active:after {
+  background-color: var(--background-underline-active);
+}
+.tab-header ::slotted(*) {
+  margin-right: var(--spacing-right-slotted);
+}
+.tab-header--has-focus {
+  box-shadow: var(--box-shadow-focus);
+}
+.tab-header--selected {
+  color: var(--color-selected);
+}
+.tab-header--selected:after {
+  border-top-left-radius: var(--scl-radius-8);
+  border-top-right-radius: var(--scl-radius-8);
+  height: var(--tab-border-size-selected);
+  background-color: var(--color-selected);
+}
+.tab-header--selected:before {
+  border-top: var(--tab-border-size-selected) solid transparent;
+}

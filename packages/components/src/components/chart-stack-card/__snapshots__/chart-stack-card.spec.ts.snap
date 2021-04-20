@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartStack should match snapshot 1`] = `
+<scale-chart-stack-card data="[{&quot;type&quot;:&quot;Android&quot;,&quot;value&quot;:&quot;55&quot;,&quot;percentage&quot;:&quot;55&quot;},{&quot;type&quot;:&quot;IOS&quot;,&quot;value&quot;:&quot;35&quot;,&quot;percentage&quot;:&quot;35&quot;},{&quot;type&quot;:&quot;Other&quot;,&quot;value&quot;:&quot;10&quot;,&quot;percentage&quot;:&quot;10&quot;}]" heading="Operating System">
+  <div class="chart-stack-card">
+    <scale-card styles="
+      .card:after {
+          content: '';
+          display: block;
+          background: linear-gradient(0deg, white, rgba(255,255,255, 0));
+          height: 2rem;
+          margin-top: -2rem;
+          position: relative;
+        }
+
+      .card__body: {
+        padding-bottom: 0 !important;
+      }
+  ">
+      <div class="header">
+        Operating System
+      </div>
+      <div class="bar">
+        <div class="bar__item" style="opacity: 1; flex: 55;"></div>
+        <div class="bar__item" style="opacity: 0.35; flex: 35;"></div>
+        <div class="bar__item" style="opacity: 0.1; flex: 10;"></div>
+      </div>
+      <div class="legend">
+        <div class="legend__row">
+          <div class="legend__row__item">
+            <div class="legend__item" style="opacity: 1;"></div>
+            <div class="legend__label spacer">
+              Android
+            </div>
+          </div>
+          <div class="legend__row__item">
+            <div class="spacer">
+              55
+            </div>
+            <div class="spacer">
+              55%
+            </div>
+          </div>
+        </div>
+        <div class="legend__row">
+          <div class="legend__row__item">
+            <div class="legend__item" style="opacity: 0.35;"></div>
+            <div class="legend__label spacer">
+              IOS
+            </div>
+          </div>
+          <div class="legend__row__item">
+            <div class="spacer">
+              35
+            </div>
+            <div class="spacer">
+              35%
+            </div>
+          </div>
+        </div>
+        <div class="legend__row">
+          <div class="legend__row__item">
+            <div class="legend__item" style="opacity: 0.1;"></div>
+            <div class="legend__label spacer">
+              Other
+            </div>
+          </div>
+          <div class="legend__row__item">
+            <div class="spacer">
+              10
+            </div>
+            <div class="spacer">
+              10%
+            </div>
+          </div>
+        </div>
+      </div>
+    </scale-card>
+  </div>
+</scale-chart-stack-card>
+`;

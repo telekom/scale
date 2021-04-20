@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion should match snapshot 1`] = `
+<scale-accordion>
+  <mock:shadow-root>
+    <div class="accordion" part="base">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+</scale-accordion>
+`;
+
+exports[`Handle dependent prop match snapshot 1`] = `
+<scale-accordion dependent="" headline="multi">
+  <mock:shadow-root>
+    <div class="accordion" part="base">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-collapsible is-expanded="">
+    <scale-text slot="headline" variant="collapsible">
+      Accordion with multi
+    </scale-text>
+    <scale-input label="First Name" placeholder="Hello" slot="content"></scale-input>
+  </scale-collapsible>
+  <scale-collapsible>
+    <scale-text slot="headline" variant="collapsible">
+      Accordion with multi
+    </scale-text>
+    <scale-input label="First Name" placeholder="Hello" slot="content"></scale-input>
+  </scale-collapsible>
+</scale-accordion>
+`;
+
+exports[`Handle expanded prop match snapshot 1`] = `
+<scale-accordion expanded="">
+  <mock:shadow-root>
+    <div class="accordion" part="base">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-collapsible>
+    <h3>
+      Leo integer malesuada nunc vel risus
+    </h3>
+    <p>
+      Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>
+      Dolor purus non enim
+    </h3>
+    <p>
+      Bespoke austin pork belly yuccie pop-up…
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <h3>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    </h3>
+    <p>
+      Biodiesel chia af hoodie tumeric bespoke letterpress…
+    </p>
+  </scale-collapsible>
+</scale-accordion>
+`;

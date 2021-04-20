@@ -1,0 +1,54 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+app-navigation-sector-mobile {
+  --border-bottom: 1px solid #efefef;
+  --color: var(--scl-color-text-standard);
+  --font-weight: var(--scl-font-weight-bold);
+  --font-size: var(--scl-font-size-16);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --border-bottom-selected: 1px solid var(--scl-color-primary);
+  --color-selected: var(--scl-color-primary);
+  width: 100%;
+}
+
+.sector-navigation-mobile {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: var(--border-bottom);
+}
+
+.sector-navigation-mobile__item {
+  width: 100%;
+}
+
+.sector-navigation-mobile__item-link {
+  color: var(--color);
+  text-decoration: none;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  width: 100%;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.sector-navigation-mobile__item-link--selected {
+  border-bottom: var(--border-bottom-selected);
+  color: var(--color-selected);
+  transition: var(--transition);
+}

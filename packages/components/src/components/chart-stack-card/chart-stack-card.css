@@ -1,0 +1,82 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --scl-chart-stack-card-color: var(--scl-color-blue-60);
+}
+.chart-stack-card {
+  color: var(--color-text);
+  --scl-chart-stack-card-color: var(--scl-color-blue-60);
+}
+.chart-stack-card .header {
+  height: var(--scl-spacing-24);
+  font-size: var(--scl-font-size-24);
+  font-weight: var(--scl-font-weight-extrabold);
+  line-height: var(--scl-font-line-height-114);
+  margin-bottom: var(--scl-spacing-24);
+}
+
+.chart-stack-card .bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--scl-spacing-16);
+}
+
+.chart-stack-card .bar__item {
+  background-color: var(--scl-chart-stack-card-color);
+  height: var(--scl-spacing-32);
+  flex: 1;
+}
+
+.chart-stack-card .bar__item:first-of-type {
+  border-top-left-radius: var(--scl-radius-4);
+  border-bottom-left-radius: var(--scl-radius-4);
+}
+
+.chart-stack-card .bar__item:last-of-type {
+  border-top-right-radius: var(--scl-radius-4);
+  border-bottom-right-radius: var(--scl-radius-4);
+}
+
+.chart-stack-card .legend {
+  display: flex;
+  flex-direction: column;
+  height: calc(var(--scl-spacing-16) * 10);
+}
+.chart-stack-card .spacer {
+  padding: 0 var(--scl-spacing-8);
+}
+.chart-stack-card .legend .legend__row__item {
+  display: flex;
+  line-height: var(--scl-font-line-height-133);
+}
+.chart-stack-card .legend .legend__row {
+  display: flex;
+  justify-content: space-between;
+}
+.chart-stack-card .legend .legend__row:last-child {
+  padding-bottom: var(--scl-spacing-32);
+}
+
+.chart-stack-card .legend .legend__item {
+  height: 10px;
+  width: 10px;
+  background-color: var(--scl-chart-stack-card-color);
+  border-radius: 100%;
+  align-self: center;
+  margin-right: var(--scl-spacing-4);
+}
+
+.chart-stack-card .legend .legend__label {
+  font-weight: var(--type-weight-bold);
+  font-size: var(--scl-spacing-16);
+  line-height: 200%;
+}

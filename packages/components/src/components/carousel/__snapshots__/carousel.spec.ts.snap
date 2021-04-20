@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel should match snapshot 1`] = `
+<scale-carousel>
+  <mock:shadow-root>
+    <div class="carousel">
+      <div class="carousel__container">
+        <div class="carousel__arrow carousel__arrow--left">
+          <slot name="arrow-left"></slot>
+        </div>
+        <div class="carousel__arrow carousel__arrow--right">
+          <slot name="arrow-right"></slot>
+        </div>
+      </div>
+      <ul class="carousel__indicators"></ul>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-carousel>
+`;

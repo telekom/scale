@@ -1,0 +1,118 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --color-error: var(--scl-color-text-error);
+  --color-disabled: var(--scl-color-grey-50);
+  --background: var(--scl-color-primary);
+  --color-inner-status: var(--scl-color-background-standard);
+  --font-size-inner-status: var(--scl-font-size-12);
+  --font-size-status: var(--scl-font-size-12);
+  --font-weight-status: var(--scl-font-weight-extrabold);
+  --color-status: var(--scl-color-grey-60);
+  --color-status-description: var(--scl-color-grey-60);
+  --font-size-status-description: var(--scl-font-size-12);
+  --font-weight-status-description: var(--scl-font-weight-bold);
+  --spacing-label: var(--scl-spacing-8) 0;
+  --border: 1px solid var(--scl-color-grey-60);
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.progress-bar--has-error .progress-bar__outer {
+  border: 1px solid var(--color-error);
+}
+
+.progress-bar--has-error .progress-bar__status-description {
+  color: var(--color-error);
+}
+
+.progress-bar--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.progress-bar--disabled .progress-bar__label {
+  color: var(--color-disabled);
+}
+
+.progress-bar__label {
+  display: block;
+  padding: var(--spacing-label);
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.progress-bar__outer {
+  width: 100%;
+  height: var(--scl-spacing-8);
+  margin: var(--scl-spacing-8);
+  margin-left: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 100px;
+  border: var(--border);
+}
+
+.progress-bar__inner {
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: flex-end;
+  animation-fill-mode: both;
+  background: var(--background);
+}
+
+.progress-bar__inner-status {
+  color: var(--color-inner-status);
+  padding: 0 12px;
+  font-size: var(--font-size-inner-status);
+}
+
+.progress-bar__status {
+  display: inline-block;
+  font-size: var(--font-size-status);
+  font-weight: var(--font-weight-status);
+  color: var(--color-status);
+}
+
+.progress-bar__icon {
+  height: 16px;
+}
+
+.progress-bar__status-description {
+  color: var(--color-status-description);
+  font-size: var(--font-size-status-description);
+  font-weight: var(--font-weight-status-description);
+}
+
+.progress-bar__aria-live {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+}

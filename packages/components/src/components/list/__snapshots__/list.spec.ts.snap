@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should handle listItem 1`] = `
+<scale-list ordered="">
+  <mock:shadow-root>
+    <ol class="list list--type-ordered" part="base ordered">
+      <slot></slot>
+    </ol>
+  </mock:shadow-root>
+  <scale-list-item></scale-list-item>
+</scale-list>
+`;
+
+exports[`List should match snapshot 1`] = `
+<scale-list>
+  <mock:shadow-root>
+    <ul class="list" part="base">
+      <slot></slot>
+    </ul>
+  </mock:shadow-root>
+  default
+</scale-list>
+`;

@@ -1,0 +1,86 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host(scale-list-item) {
+  --display: block;
+  --font-size: var(--scl-font-size-16);
+  --line-height: var(--scl-font-line-height-150);
+  --spacing-left: calc(0.25ch + var(--scl-spacing-16));
+
+  --font-size-marker-ordered: var(--scl-font-size-16);
+  --font-weight-marker-ordered: var(--scl-font-weight-bold);
+  --font-size-marker-ordered-nested: var(--scl-font-size-12);
+  --line-height-marker-ordered-nested: var(--scl-font-line-height-150);
+  --spacing-top-marker-ordered-nested: calc(
+    var(--scl-spacing-16) - var(--scl-spacing-12)
+  );
+
+  --spacing-right-no-marker: var(--scl-spacing-8);
+
+  display: var(--display);
+}
+
+.list-item {
+  position: relative;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  padding-left: var(--spacing-left);
+}
+
+.list-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.list-item--unordered:before {
+  top: 0.5em;
+  border: var(--scl-spacing-1) solid currentColor;
+  display: block;
+  transform: scale(0.66);
+  background: currentColor;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: var(--scl-spacing-8);
+  height: var(--scl-spacing-8);
+}
+
+.list-item--nested.list-item--unordered:before {
+  border: var(--scl-spacing-1) solid currentColor;
+  background: transparent;
+}
+
+.list-item--ordered:before {
+  content: attr(data-index) '.';
+  font-size: var(--font-size-marker-ordered);
+  font-weight: var(--font-weight-marker-ordered);
+}
+
+.list-item--nested.list-item--ordered:before {
+  font-size: var(--font-size-marker-ordered-nested);
+  line-height: var(--line-height-marker-ordered-nested);
+  padding-top: var(--spacing-top-marker-ordered-nested);
+}
+
+.list-item--no-marker {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.list-item--no-marker:before {
+  display: none;
+}
+
+.list-item--no-marker > ::slotted(*) {
+  margin-right: var(--spacing-right-no-marker);
+}

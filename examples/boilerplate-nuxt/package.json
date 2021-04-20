@@ -1,0 +1,30 @@
+{
+  "name": "@telekom/scale-boilerplate-nuxt",
+  "version": "1.0.0",
+  "description": "My legendary Nuxt.js project",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxt/ufo": "^0.5.4",
+    "@telekom/scale-components-neutral": "^3.0.0-beta.1",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxtjs/eslint-config-typescript": "^1.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nuxt-stencil": "^0.1.1",
+    "prettier": "^1.19.1"
+  }
+}

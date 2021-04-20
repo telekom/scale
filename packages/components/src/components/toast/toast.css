@@ -1,0 +1,65 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: 400px;
+  --radius: var(--scl-radius-4);
+  --background: var(--scl-color-background-standard);
+  --box-shadow: var(--scl-shadow-level-0);
+  --spacing: var(--scl-spacing-16);
+  /*header*/
+  --border-header: 1px solid var(--scl-color-grey-20);
+  --font-size-header: var(--scl-font-variant-heading-4-size);
+  --font-size-header-small: var(--scl-font-variant-smaller-size);
+  /*progress*/
+  --height-progress: var(--scl-spacing-2);
+}
+.toast {
+  width: var(--width);
+  display: flex;
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  border-radius: var(--radius);
+  flex-direction: column;
+  justify-content: space-between;
+}
+.toast__body {
+  padding: var(--spacing);
+}
+.toast__header {
+  margin: 0;
+  display: flex;
+  padding: var(--spacing);
+  border-bottom: var(--border-header);
+  justify-content: space-between;
+  font-size: var(--font-size-header);
+}
+.toast__header a {
+  cursor: pointer;
+}
+.toast__header small {
+  margin-top: 5px;
+  margin-left: 120px;
+  font-size: var(--font-size-header-small);
+}
+.toast__progress {
+  left: 0;
+  bottom: 0;
+  height: var(--height-progress);
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  background: red;
+}

@@ -1,0 +1,216 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+scale-table {
+  --radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
+  --background: var(--scl-color-background-light);
+  --color: var(--scl-color-text-standard);
+  --color-hover: var(--scl-color-primary-hover);
+  --color-active: var(--scl-color-primary-active);
+  --font-size: var(--scl-font-size-12);
+
+  --spacing-tbody-td: 16px 8px;
+  --border-bottom-tbody-td: 1px solid var(--scl-color-grey-20);
+  --background-tbody: var(--scl-color-background-standard);
+  --background-tbody-tr-hover: #ededed;
+
+  --background-tfoot: var(--scl-color-background-standard);
+  --border-bottom-tfoot-td: 1px solid var(--scl-color-text-standard);
+
+  --spacing-th-sortable: 0 8px 0 0;
+  --background-th-sortable-hover: #ededed;
+  --background-th-sortable-active: #dcdcdc;
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
+}
+.table {
+  display: block;
+  overflow: auto;
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--color);
+}
+.table table {
+  width: 100%;
+  white-space: nowrap;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.table th {
+  padding: 0 8px;
+  text-align: left;
+  line-height: 32px; /*  TODO: revise, this is weird */
+  color: var(--color);
+  font-size: var(--font-size);
+}
+.table td {
+  padding: 0 8px;
+}
+.table tbody tr td {
+  padding: 8px;
+}
+.table tbody td {
+  border-bottom: var(--border-bottom-tbody-td);
+}
+
+.table tfoot {
+  background: var(--background-tfoot);
+}
+.table tbody {
+  background: var(--background-tbody);
+}
+.table tfoot tr td {
+  padding: 8px;
+  font-weight: 600;
+  border-bottom: var(--border-bottom-tfoot-td);
+}
+.table .scale-sort-indicator svg {
+  display: none;
+}
+.table tbody tr:hover {
+  background: var(--background-tbody-tr-hover);
+}
+.table th:focus {
+  outline: none;
+}
+.table--size-default {
+}
+.table--size-default tbody tr td {
+  padding: var(--spacing-tbody-td);
+}
+.table--sortable {
+}
+.table--sortable th {
+  cursor: pointer;
+  padding: var(--spacing-th-sortable);
+  border-radius: var(--radius);
+}
+.table--sortable th:hover {
+  padding: var(--spacing-th-sortable);
+  background: var(--background-th-sortable-hover);
+}
+.table--sortable th:active {
+  background: var(--background-th-sortable-active);
+}
+.table--sortable th:focus {
+  box-shadow: var(--box-shadow-th-sortable-focus);
+}
+.table--sortable th .scale-sort-indicator svg {
+  display: block;
+}
+.table--sortable th[aria-disabled] {
+  padding: 0 8px;
+  pointer-events: none;
+}
+.table--sortable th:not([aria-sort]) {
+  padding: 0 8px;
+}
+.table--sortable th[aria-sort='none'] {
+  padding: 0 8px;
+}
+.table--sortable
+  th[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: var(--color);
+}
+.table--sortable th:hover .scale-sort-indicator polygon:first-of-type {
+  fill: var(--color-hover);
+}
+.table--sortable
+  th:hover[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: var(--color-hover);
+}
+.table--sortable
+  th:active[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: var(--color-active);
+}
+.table--sortable th[aria-sort='ascending'] .scale-sort-indicator polygon {
+  fill: transparent;
+}
+.table--sortable th:hover[aria-sort='ascending'] .scale-sort-indicator polygon {
+  fill: transparent;
+}
+.table--sortable
+  th:active[aria-sort='ascending']
+  .scale-sort-indicator
+  polygon {
+  fill: transparent;
+}
+.table--sortable
+  th[aria-sort='descending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: transparent;
+}
+.table--sortable
+  th:hover[aria-sort='descending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: transparent;
+}
+.table--sortable
+  th:active[aria-sort='descending']
+  .scale-sort-indicator
+  polygon:first-of-type {
+  fill: transparent;
+}
+.table--sortable th[aria-sort='descending'] .scale-sort-indicator polygon {
+  fill: var(--color);
+}
+.table--sortable
+  th:hover[aria-sort='descending']
+  .scale-sort-indicator
+  polygon {
+  fill: var(--color-hover);
+}
+.table--sortable
+  th:active[aria-sort='descending']
+  .scale-sort-indicator
+  polygon {
+  fill: var(--color-active);
+}
+.table--sortable th .scale-sort-indicator {
+  width: 16px;
+  height: 16px;
+  margin: 0 0 0 4px;
+  display: inline-block;
+  position: relative;
+}
+.table--sortable th .scale-sort-indicator > svg {
+  top: 4px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+.table--sortable th .scale-sort-indicator polygon {
+  fill: transparent;
+}
+.table--sortable th[aria-sort='none']:hover {
+  padding: 0 8px 0 0;
+}
+.table--sortable th[aria-sort='none'] .scale-sort-indicator {
+  display: none;
+}
+.table--sortable th:not([aria-sort]):hover {
+  padding: 0 8px 0 0;
+}
+.table--sortable th:not([aria-sort]) .scale-sort-indicator {
+  display: none;
+}
+.table--sortable th:hover .scale-sort-indicator {
+  display: inline-block;
+}

@@ -1,0 +1,33 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --logo-size: 36px;
+}
+
+.logo {
+  display: inline-flex;
+  height: var(--logo-size);
+  padding: calc(var(--logo-size) / 3);
+  position: relative;
+}
+
+.logo--variant-magenta {
+  background-color: var(--scl-color-white);
+}
+
+.logo--variant-white {
+  background-color: var(--scl-color-primary);
+}
+
+.logo--transparent {
+  background-color: transparent;
+}

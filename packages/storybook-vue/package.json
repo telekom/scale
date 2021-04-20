@@ -1,0 +1,41 @@
+{
+  "name": "@telekom/scale-storybook-vue",
+  "private": true,
+  "version": "3.0.0-beta.1",
+  "main": "index.js",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@storybook/addon-actions": "^6.2.7",
+    "@storybook/addon-controls": "^6.2.7",
+    "@storybook/addon-docs": "^6.2.7",
+    "@storybook/addon-links": "^6.2.7",
+    "@storybook/addons": "^6.2.7",
+    "@storybook/api": "^6.2.7",
+    "@storybook/components": "^6.2.7",
+    "@storybook/theming": "^6.2.7",
+    "@storybook/vue": "^6.2.7",
+    "babel-loader": "^8.1.0",
+    "babel-preset-vue": "^2.0.2",
+    "copy-webpack-plugin": "^6.0.3",
+    "http-server": "^0.12.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-is": "^16.13.1",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "@telekom/scale-components": "^3.0.0-beta.1",
+    "@telekom/scale-components-vue": "^3.0.0-beta.1"
+  },
+  "scripts": {
+    "prestart": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
+    "prebuild": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
+    "start": "start-storybook -s ./public -p 6006",
+    "build": "build-storybook -s ./public",
+    "preserve": "yarn build",
+    "serve": "http-server storybook-static"
+  }
+}

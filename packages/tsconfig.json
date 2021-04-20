@@ -1,0 +1,21 @@
+{
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./config"
+    },
+    {
+      "path": "./components"
+    },
+    {
+      "path": "./components-react"
+    },
+    {
+      "path": "./components-vue"
+    },
+    {
+      "path": "./components-sketch"
+    }
+  ]
+}

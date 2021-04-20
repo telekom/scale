@@ -1,0 +1,96 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --border-bottom-color: var(--scl-color-grey-10);
+  --border-left-color-third-nesting: var(--scl-color-grey-70);
+  --color-active: var(--scl-color-primary-active);
+  --color-primary: var(--scl-color-primary);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--scl-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.sidebar-nav-item {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--border-bottom-color);
+}
+
+.sidebar-nav-item--active {
+  position: relative;
+  color: var(--color-primary);
+}
+.sidebar-nav-item--active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: var(--left-current-border, 0);
+  width: 0; /* The transparent border makes the 2px */
+  height: 100%;
+  background-color: var(--background-color-before-active);
+  /* Accessibility: extra transparent line for Windows HCM */
+  border-left: 2px solid transparent;
+}
+
+.sidebar-nav-item--condensed.sidebar-nav-item--active::before {
+  left: -1px;
+}
+
+:host([nesting-level='1']) .sidebar-nav-item,
+.sidebar-nav-item--bold {
+  font-weight: var(--font-weight-bold);
+}
+
+:host([nesting-level='3']) .sidebar-nav-item {
+  border-left-color: var(--border-left-color-third-nesting);
+  border-left-style: solid;
+  border-left-width: 0.0625rem;
+}
+
+::slotted(a) {
+  color: currentColor;
+  display: block;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: var(--spacing-indent);
+  border-radius: 2px;
+  text-decoration: none;
+  outline: none;
+}
+
+:host([nesting-level='2']) ::slotted(a) {
+  padding-left: calc(var(--spacing-indent) + 0.75rem);
+}
+
+::slotted(a:hover) {
+  color: var(--color-primary);
+}
+
+::slotted(a:focus) {
+  box-shadow: var(--box-shadow-focus);
+}
+
+::slotted(a:active) {
+  color: var(--color-active);
+}
+
+.sidebar-nav-item--condensed {
+  border-bottom-width: 0;
+}
+
+.sidebar-nav-item--condensed ::slotted(a) {
+  padding-top: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+}

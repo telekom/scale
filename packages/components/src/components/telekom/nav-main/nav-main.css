@@ -1,0 +1,97 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+scale-nav-main {
+  --spacing-x: var(--scl-font-size-16);
+
+  --color: var(--scl-color-text-standard);
+  --color-hover: var(--scl-color-primary-hover);
+  --color-active: var(--scl-color-primary-hover);
+  --color-selected: var(--scl-color-primary);
+  --font-size: var(--scl-font-variant-body-large-size);
+  --font-weight: var(--scl-font-weight-extrabold);
+  --line-height: var(--scl-font-line-height-120);
+}
+
+.main-navigation__item {
+  height: 100%;
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+}
+.main-navigation__item:has(a[href]) {
+  cursor: pointer;
+}
+.main-navigation__item-link-text {
+  white-space: nowrap;
+}
+
+.main-navigation__item.mega-menu--visible .mega-menu {
+  display: block;
+}
+.main-navigation__item.mega-menu--visible .mega-menu__wrapper {
+  pointer-events: visible;
+}
+.main-navigation__item .main-navigation__item-link {
+  display: flex;
+  height: 100%;
+  color: var(--color);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  transition: color, border 0.2s ease-in-out;
+  align-items: center;
+  text-decoration: none;
+}
+.main-navigation__item:hover .main-navigation__item-link {
+  color: var(--color-hover);
+}
+.main-navigation__item:hover .main-navigation__item-link-text {
+  border-bottom: 2px solid var(--color-hover);
+  margin-bottom: -2px;
+  height: calc(100% - 4px);
+  display: flex;
+  align-items: center;
+}
+.main-navigation__item:active .main-navigation__item-link {
+  color: var(--color-active);
+}
+.main-navigation__item:active .main-navigation__item-link-text {
+  border-bottom: 2px solid var(--color-active);
+  margin-bottom: -2px;
+  height: calc(100% - 4px);
+  display: flex;
+  align-items: center;
+}
+.main-navigation__item.selected .main-navigation__item-link {
+  color: var(--color-selected);
+}
+.main-navigation__item.mega-menu--visible .main-navigation__item-link {
+  color: var(--color-selected);
+}
+.main-navigation__item.selected .main-navigation__item-link-text {
+  border-bottom: 2px solid var(--color-selected);
+  margin-bottom: -2px;
+  height: calc(100% - 4px);
+  display: flex;
+  align-items: center;
+}
+.main-navigation__item.mega-menu--visible .main-navigation__item-link-text {
+  border-bottom: 2px solid var(--color-selected);
+  margin-bottom: -2px;
+  height: calc(100% - 4px);
+  display: flex;
+  align-items: center;
+}
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  overflow: hidden;
+}

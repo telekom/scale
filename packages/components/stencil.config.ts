@@ -1,0 +1,77 @@
+import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+import { frameworkTargets } from './framework-targets';
+import { inlineSvg } from 'stencil-inline-svg';
+
+export const config: Config = {
+  tsconfig: process.env.WHITELABEL
+    ? 'tsconfig.whitelabel.json'
+    : 'tsconfig.json',
+  testing: {
+    testRegex: '/src/.*\\.(spec|e2e)\\.(ts|tsx)$',
+    collectCoverageFrom: [
+      '**/src/**/*.{ts,tsx}',
+      '!**/node_modules/**',
+      '!**/*.{d,esm,iife,styles}.ts',
+    ],
+  },
+  namespace: 'scale-components',
+  globalScript: 'src/global/scale.ts',
+  globalStyle: process.env.WHITELABEL
+    ? 'src/global/whitelabel.css'
+    : 'src/global/scale.css',
+  plugins: [
+    inlineSvg(),
+    postcss({
+      plugins: [], // TODO
+    }),
+  ],
+  outputTargets: [
+    ...frameworkTargets,
+    {
+      type: 'dist',
+      esmLoaderPath: '../loader',
+      copy: [
+        // do not include fonts files for whitelabel build
+        ...(process.env.WHITELABEL
+          ? []
+          : [
+              {
+                src: 'telekom/fonts/TeleNeoWeb',
+                dest: 'fonts/TeleNeoWeb',
+                warn: true,
+              },
+            ]),
+        // index file with icon information, useful for docs
+        { src: 'components/icons/scale-icons.json', warn: true },
+        // do not publish the telekom/ brand assets folder (in dist/collections/)
+        { src: '.npmignore', warn: true },
+      ],
+    },
+    {
+      type: 'www',
+      serviceWorker: null, // disable service workers
+      copy: [
+        {
+          src: 'telekom/fonts/TeleNeoWeb',
+          dest: 'build/fonts/TeleNeoWeb',
+          warn: true,
+        },
+        { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
+        { src: './html/*', dest: './', warn: true },
+      ],
+    },
+    {
+      type: 'docs-readme',
+    },
+    {
+      type: 'docs-vscode',
+      file: 'custom-elements.json',
+    },
+    {
+      type: 'docs-json',
+      file: './dist/scale-components.json',
+    },
+    { type: 'dist-hydrate-script' },
+  ],
+};

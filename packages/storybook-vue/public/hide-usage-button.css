@@ -1,0 +1,4 @@
+div.css-11sh1n2 > span:nth-child(2),
+div.css-11sh1n2 > div > a {
+  display: none !important;
+}

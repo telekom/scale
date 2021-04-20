@@ -1,0 +1,69 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --font-weight: var(--scl-font-weight-medium);
+  --color: var(--scl-color-text-link);
+  --color-visited: var(--scl-color-text-link-visited);
+  --color-hover: var(--scl-color-text-link-hover);
+  --color-active: var(--scl-color-text-link-active);
+  --border: var(--scl-spacing-1) solid currentColor;
+  --border-focus: var(--scl-spacing-2) solid currentColor;
+  --color-disabled: var(--scl-color-grey-50);
+
+  --spacing-x-icon: var(--scl-spacing-4);
+}
+
+.link {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  font-weight: var(--font-weight);
+  color: var(--color);
+  border-bottom: var(--border);
+}
+
+/* order is important */
+.link:visited {
+  color: var(--color-visited);
+}
+.link:hover {
+  color: var(--color-hover);
+}
+.link:active {
+  color: var(--color-active);
+}
+.link:focus:not(.link--disabled) {
+  border-bottom: var(--border-focus);
+}
+
+.link__wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link__wrapper > slot[name='icon']::slotted(*) {
+  margin-inline-start: var(--spacing-x-icon);
+}
+
+.link--block {
+  display: block;
+}
+
+.link--disabled {
+  cursor: not-allowed;
+  color: var(--color-disabled);
+}
+.link--disabled:visited,
+.link--disabled:hover,
+.link--disabled:active {
+  color: var(--color-disabled);
+}

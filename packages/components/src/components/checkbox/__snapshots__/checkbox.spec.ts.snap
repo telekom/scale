@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should match snapshot 1`] = `
+<scale-checkbox>
+  <!---->
+  <div class="checkbox">
+    <label class="checkbox__label-wrapper" htmlfor="input-checkbox-0">
+      <input aria-describedby="helper-message-1" id="input-checkbox-0" type="checkbox" value="">
+      <div class="checkbox__control-wrapper">
+        <span class="checkbox__control"></span>
+      </div>
+      <span class="checkbox__label"></span>
+    </label>
+  </div>
+</scale-checkbox>
+`;

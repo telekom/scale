@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast should match snapshot 1`] = `
+<scale-toast>
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+      from {
+        opacity: 0;
+        top: -0px;
+      }
+      to {
+        opacity: 1;
+        top: 12px;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        top: 12px;
+      }
+      to {
+        opacity: 0;
+        top: -0px;
+      }
+    }
+    </style>
+    <style>
+      .toast--show {
+        right: 12px;
+        animation: fadeIn 0.5s ease-in-out;
+        top: 12px;
+        opacity: 1;
+      },
+      .toast--show {
+        right: 12px;
+        animation: fadeOut 0.5s ease-in-out;
+        top: -0px;
+        opacity: 0;
+      }
+    </style>
+    <div class="toast toast--show" part="base --show">
+      <div class="toast__header" part="header">
+        <slot name="header"></slot>
+        <small></small>
+        <a>
+          <span aria-hidden="true">
+            ×
+          </span>
+        </a>
+      </div>
+      <div class="toast__body" part="body">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Toast message
+</scale-toast>
+`;
+
+exports[`Toast should match snapshot when opened 1`] = `
+<scale-toast opened="">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+      from {
+        opacity: 0;
+        top: -0px;
+      }
+      to {
+        opacity: 1;
+        top: 12px;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        top: 12px;
+      }
+      to {
+        opacity: 0;
+        top: -0px;
+      }
+    }
+    </style>
+    <style>
+      .toast--show {
+        right: 12px;
+        animation: fadeIn 0.5s ease-in-out;
+        top: 12px;
+        opacity: 1;
+      },
+      .toast--show {
+        right: 12px;
+        animation: fadeOut 0.5s ease-in-out;
+        top: -0px;
+        opacity: 0;
+      }
+    </style>
+    <div class="toast toast--opened toast--show" part="base --opened --show">
+      <div class="toast__header" part="header">
+        <slot name="header"></slot>
+        <small></small>
+        <a>
+          <span aria-hidden="true">
+            ×
+          </span>
+        </a>
+      </div>
+      <div class="toast__body" part="body">
+        <slot></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-toast>
+`;

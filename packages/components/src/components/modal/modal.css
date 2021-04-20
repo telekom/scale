@@ -1,0 +1,237 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --spacing-x: var(--scl-spacing-16);
+  --background-overlay: var(
+    --scl-color-background-overlay,
+    rgba(108, 108, 108, 0.7)
+  );
+
+  --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
+  --radius-window: var(--scl-radius-8);
+  --box-shadow-window: var(--scl-shadow-level-5);
+
+  /*
+    we're rudimentarily creating a grid here
+    in the following modal--size-*,
+    with 6, 8 and 12 columns
+  */
+  --size-window-small: calc(
+    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
+  );
+  --size-window-default: calc(
+    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
+  );
+  --size-window-large: calc(
+    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
+  );
+
+  --spacing-x-header: var(--scl-spacing-24);
+  --spacing-y-header: var(--scl-spacing-24);
+
+  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid
+    var(--scl-color-grey-20);
+
+  --font-family-heading: var(--scl-font-family-sans);
+  --font-size-heading: var(--scl-font-size-20);
+  --font-weight-heading: var(--scl-font-weight-extrabold);
+
+  --spacing-close-button: var(--scl-spacing-8);
+  --radius-close-button: var(--scl-radius-8);
+  --transition-close-button: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
+  --color-close-button-hover: var(--scl-color-primary-hover);
+  --color-close-button-active: var(--scl-color-primary-active);
+
+  --spacing-x-body-wrapper: var(--scl-spacing-24);
+  --spacing-y-body: var(--scl-spacing-24);
+
+  --spacing-actions: var(--scl-spacing-24);
+
+  --spacing-x-actions-slotted: var(--scl-spacing-8);
+  --background-actions-has-scroll: var(--scl-color-background-light);
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  display: none;
+  z-index: 100;
+  position: fixed;
+  background: var(--background-overlay);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+}
+
+.modal.modal--is-open {
+  display: flex;
+}
+
+.modal__backdrop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+}
+
+.modal__window {
+  width: 100%;
+  height: auto;
+  display: flex;
+  z-index: 1;
+  position: relative;
+  overflow-y: auto;
+  flex-direction: column;
+  background-color: white;
+  max-height: var(--max-height-window);
+  border-radius: var(--radius-window);
+  box-shadow: var(--box-shadow-window);
+}
+
+.modal__window .modal__body-wrapper {
+  overflow-y: auto;
+  flex-shrink: 1;
+}
+
+.modal--size-small .modal__window {
+  max-width: var(--size-window-small);
+}
+
+.modal--size-default .modal__window {
+  max-width: var(--size-window-default);
+}
+
+.modal--size-large .modal__window {
+  max-width: var(--size-window-large);
+}
+
+@media (max-height: 30em) {
+  .modal__window {
+    max-height: calc(100vh - var(--scl-spacing-24));
+  }
+}
+
+/* a11y: transparent border for Windows HCM */
+.modal__window:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid transparent;
+  height: 100%;
+  content: '';
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  border-radius: var(--radius-window);
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-left: var(--spacing-x-header);
+  margin-right: var(--spacing-x-header);
+  padding-top: var(--spacing-y-header);
+  padding-bottom: var(--spacing-y-header);
+}
+
+.modal--has-scroll .modal__header {
+  border-bottom: var(--border-bottom-header-has-scroll);
+}
+
+.modal__heading {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-heading);
+}
+
+.modal__close-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-close-button);
+  margin-bottom: calc(-2 * var(--spacing-close-button));
+  border: 0;
+  border-radius: var(--radius-close-button);
+  outline: none;
+  background: transparent;
+  transition: var(--transition-close-button);
+  transform: translate(
+    var(--spacing-close-button),
+    calc(-1 * var(--spacing-close-button))
+  );
+  appearance: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.modal__close-button:focus {
+  box-shadow: var(--box-shadow-close-button-focus);
+}
+
+.modal__close-button:hover {
+  color: var(--color-close-button-hover);
+}
+
+.modal__close-button:active {
+  color: var(--color-close-button-active);
+}
+
+.modal__body-wrapper {
+  padding-left: var(--spacing-x-body-wrapper);
+  padding-right: var(--spacing-x-body-wrapper);
+}
+
+.modal--has-body .modal__body-wrapper {
+  min-height: var(--scl-spacing-48);
+}
+
+.modal--has-body .modal__body {
+  margin-top: var(--spacing-y-body);
+  margin-bottom: var(--spacing-y-body);
+}
+
+.modal__actions {
+  display: none;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  padding: var(--spacing-actions);
+}
+
+.modal__actions ::slotted(*) {
+  margin-left: var(--spacing-x-actions-slotted);
+}
+
+.modal--has-actions .modal__actions {
+  display: flex;
+}
+
+.modal--align-actions-left .modal__actions {
+  justify-content: flex-start;
+}
+
+.modal--has-scroll .modal__actions {
+  background-color: var(--background-actions-has-scroll);
+}

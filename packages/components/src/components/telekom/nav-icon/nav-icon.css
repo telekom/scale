@@ -1,0 +1,80 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+scale-nav-icon {
+  --spacing-mobile: 0 6px;
+  --font-size-mobile: var(--scl-font-size-10);
+  --line-height-mobile: var(--scl-font-line-height-120);
+  --font-weight-mobile: var(--scl-font-weight-bold);
+
+  --spacing-desktop: 0 0 0 var(--scl-spacing-16);
+  --font-size-desktop: var(--scl-font-size-12);
+  --line-height-desktop: var(--scl-font-line-height-133);
+
+  --color: var(--scl-color-primary);
+  --color-hover: var(--scl-color-primary-hover);
+  --color-active: var(--scl-color-primary-active);
+}
+
+@media (max-width: 1023px) {
+  .meta-navigation__item-link {
+    min-width: 24px;
+  }
+  .meta-navigation__item-link {
+    margin: var(--spacing-mobile);
+    font-size: var(--font-size-mobile);
+    line-height: var(--line-height-mobile);
+    flex-direction: column;
+  }
+  .meta-navigation__item.mobile-menu {
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .meta-navigation
+    .meta-navigation__item.mobile-menu.open
+    .meta-navigation__item-link-icon,
+  .header
+    .meta-navigation
+    .meta-navigation__item.mobile-menu.open
+    .meta-navigation__item-label {
+    color: var(--color);
+  }
+  .meta-navigation__item-link .meta-navigation__item-link-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 4px;
+  }
+}
+.meta-navigation__item-link {
+  color: var(--scl-color-text-standard);
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+  font-weight: var(--font-weight-mobile);
+  text-decoration: none;
+}
+@media (min-width: 1024px) {
+  .meta-navigation__item-link:hover {
+    color: var(--color-hover);
+  }
+  .meta-navigation__item-link:active {
+    color: var(--color-active);
+  }
+  .meta-navigation__item-link {
+    margin: var(--spacing-desktop);
+    font-size: var(--font-size-desktop);
+    line-height: var(--line-height-desktop);
+  }
+  .meta-navigation__item-link .meta-navigation__item-link-icon {
+    margin-right: 6px;
+  }
+}

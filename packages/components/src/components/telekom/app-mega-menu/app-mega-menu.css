@@ -1,0 +1,99 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+app-mega-menu {
+  --box-shadow: var(--scl-shadow-level-4);
+  --spacing-y: 34px;
+  --spacing-right: var(--scl-spacing-16);
+  --spacing-left: var(--scl-spacing-24);
+  --background: var(--scl-color-white);
+  --color-active: var(--scl-color-primary);
+
+  --font-size-row-title: var(--scl-font-size-16);
+  --spacing-bottom-row-title: 18px;
+  --font-weight-row-title: var(--scl-font-weight-extrabold);
+  --color-row-title: var(--scl-color-text-standard);
+
+  --font-size-row-item: var(--scl-font-size-16);
+  --line-height-row-item: var(--scl-font-line-height-150);
+  --font-weight-row-item: var(--scl-font-weight-medium);
+  --color-row-item: var(--scl-color-text-standard);
+  --spacing-bottom-row-item: var(--scl-spacing-8);
+}
+.mega-menu {
+  width: 100%;
+  position: absolute;
+  top: calc(var(--header-brand-height) * -1);
+  left: 0;
+  border-radius: 0 0 var(--header-border-radius) var(--header-border-radius);
+  padding-top: calc(var(--header-nav-height) + var(--header-brand-height));
+  display: none;
+  pointer-events: none;
+  transition: none;
+  box-shadow: var(--box-shadow);
+}
+.mega-menu__wrapper {
+  padding: var(--spacing-y) var(--spacing-right) var(--spacing-y)
+    var(--spacing-left);
+  background: var(--background);
+  pointer-events: none;
+  border-bottom-left-radius: var(--header-border-radius);
+  border-bottom-right-radius: var(--header-border-radius);
+}
+.mega-menu__container {
+  max-width: 1168px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(min-content, 240px));
+  list-style: none;
+  padding-left: var(--scl-spacing-32);
+}
+
+.mega-menu__row-title {
+  cursor: default;
+  font-size: var(--font-size-row-title);
+  margin-bottom: var(--spacing-bottom-row-title);
+  font-weight: var(--font-weight-row-title);
+  color: var(--color-row-title);
+}
+
+.mega-menu__row-item {
+  font-size: var(--font-size-row-item);
+  line-height: var(--line-height-row-item);
+  font-weight: var(--font-weight-row-item);
+  color: var(--color-row-item);
+  margin-bottom: var(--spacing-bottom-row-item);
+  text-decoration: none;
+  transition: color, border 0.15s ease-in-out;
+  display: block;
+}
+
+.mega-menu__row-item.active,
+.mega-menu__row-item:hover {
+  color: var(--color-active);
+  margin-bottom: 7px;
+}
+
+.mega-menu__row-item.active span,
+.mega-menu__row-item:hover span {
+  padding-bottom: 2px;
+  margin-bottom: -2px;
+  display: inline-block;
+  border-bottom: 1px solid var(--color-active);
+}
+
+.mega-menu__row li {
+  list-style: none;
+}
+
+.mega-menu__row ul {
+  padding-inline-start: 0;
+}

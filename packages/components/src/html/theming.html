@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Theming Examples</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        padding: 4rem;
+      }
+
+      a-divider {
+        display: block;
+        width: 100%;
+        height: var(--scl-spacing-48);
+        background: transparent;
+      }
+
+      a-divider[small] {
+        height: var(--scl-spacing-16);
+      }
+
+      a-heading {
+        display: block;
+        margin-bottom: var(--scl-spacing-16);
+        font-family: 'Input Mono Condensed', monospace;
+      }
+      a-heading > code {
+        font: inherit;
+        color: var(--scl-color-grey-60);
+      }
+
+      /* Overriding token within "component variant" */
+
+      scale-button[jeez='sea'] {
+        --scl-color-focus: var(--scl-color-orange-60);
+      }
+
+      /* Variant + parts example */
+      scale-button[jeez='sea'] {
+        --radius: 22px;
+      }
+
+      scale-button[jeez='sea']::part(base) {
+        background: var(--scl-color-green-80);
+        color: white;
+      }
+
+      scale-button[jeez='sea']::part(base):hover {
+        background: var(--scl-color-green-70);
+      }
+      scale-button[jeez='sea']::part(base, has-scroll):active {
+        background: var(--scl-color-green-90);
+      }
+
+      /* Theme class example */
+
+      .theme-wood {
+        --scl-color-focus: gold;
+      }
+
+      /* Just variables, no parts */
+
+      .theme-wood scale-button {
+        --spacing-x: var(--scl-spacing-32);
+        --radius: 2em;
+        --background-primary: var(--scl-color-rose-90);
+        --background-primary-hover: var(--scl-color-rose-80);
+        --background-primary-active: var(--scl-color-rose-100);
+
+        --color-secondary-hover: var(--scl-color-rose-80);
+        --color-secondary-active: var(--scl-color-rose-100);
+        --color-secondary-disabled: var(--scl-color-background-disabled);
+      }
+
+      /* Part, any CSS goes in */
+
+      .theme-wood scale-button::part(base) {
+        padding-top: var(--scl-spacing-16);
+        padding-bottom: var(--scl-spacing-16);
+        min-height: auto;
+      }
+
+      .theme-wood scale-button::part(variant-secondary) {
+        color: var(--scl-color-rose-90);
+      }
+
+      .theme-fat scale-button {
+        --font-size: 200%;
+        --font-weight: var(--scl-font-weight-extrabold);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+      - dev docs https://gitlab.com/scale-ds/scale-telekom/-/merge_requests/389
+      - `button` variables  
+      - this page
+      - `modal` part naming exercise
+    -->
+
+    <a-heading>plain</a-heading>
+    <scale-button>Click here</scale-button>
+
+    <a-divider></a-divider>
+
+    <a-heading
+      >variable inline -> <code>style="--spacing-x: 4rem"</code></a-heading
+    >
+    <scale-button style="--spacing-x: 4rem">Click here</scale-button>
+
+    <a-divider></a-divider>
+
+    <a-heading>variables + parts -> <code>jeez="sea"</code></a-heading>
+    <scale-button jeez="sea">Click there, once</scale-button>
+
+    <a-divider></a-divider>
+
+    <a-heading
+      >theme class (variables + parts) ->
+      <code>class="theme-wood"</code></a-heading
+    >
+    <div class="theme-wood">
+      <scale-button>Click below</scale-button>&emsp;
+      <scale-button variant="secondary"
+        ><scale-icon-action-remove></scale-icon-action-remove>
+        Remove</scale-button
+      >
+    </div>
+
+    <a-divider></a-divider>
+
+    <h2 class="scl-font-variant-heading-2">More testing…</h2>
+
+    <a-heading>Accordion/collapsible</a-heading>
+
+    <style>
+      /* accordion/collapsible */
+      scale-collapsible::part(base) {
+        border: 2px dotted var(--scl-color-orange-60);
+      }
+      scale-collapsible::part(base expanded) {
+        border: 2px dotted var(--scl-color-orange-80);
+      }
+      scale-collapsible::part(icon expanded) {
+        transform: rotate(0.25turn);
+      }
+      scale-collapsible::part(button-text) {
+        font-family: 'Comic Sans', serif;
+      }
+    </style>
+
+    <scale-accordion>
+      <scale-collapsible>
+        <h2>Heading 1</h2>
+        <p>OK</p>
+      </scale-collapsible>
+      <scale-collapsible>
+        <h2>Heading 2</h2>
+        <p>OK, 2</p>
+      </scale-collapsible>
+    </scale-accordion>
+
+    <a-divider></a-divider>
+
+    <a-heading>Breadcrumb</a-heading>
+
+    <style>
+      /* scale-breadcrumb */
+      scale-breadcrumb::part(list) {
+        border: 1px solid gold;
+      }
+      scale-breadcrumb::part(list-item) {
+        border: 1px solid blue;
+      }
+      scale-breadcrumb::part(link) {
+        color: magenta;
+      }
+      scale-breadcrumb::part(link current) {
+        color: limegreen;
+      }
+      scale-breadcrumb::part(separator) {
+        background: red;
+      }
+    </style>
+
+    <scale-breadcrumb>
+      <a href="#a">A link</a>
+      <a href="#b">B link</a>
+      <a href="#c">C link</a>
+    </scale-breadcrumb>
+
+    <a-divider></a-divider>
+
+    <a-heading>Card</a-heading>
+
+    <style>
+      /* scale-card */
+      scale-card::part(interactive) {
+        border: 1px solid gold;
+      }
+    </style>
+
+    <scale-card style="--spacing-body: 1rem; --background: lime">
+      OK, what's up?
+    </scale-card>
+
+    <a-divider small></a-divider>
+
+    <scale-card to="https://example.com" style="">
+      Linking to that example page.
+    </scale-card>
+
+    <a-divider></a-divider>
+
+    <a-heading>Divider</a-heading>
+
+    <scale-divider style="--spacing: 0; --color: blue"></scale-divider>
+
+    <div style="height: 500px; background: rgba(0, 0, 0, 0.1)">
+      <scale-divider
+        vertical
+        style="--spacing: 0; --color: #191919"
+      ></scale-divider>
+    </div>
+
+    <a-divider></a-divider>
+
+    <a-heading>Link</a-heading>
+
+    <style>
+      scale-link {
+        --color: red;
+        --color-visited: red;
+      }
+      scale-link::part(wrapper) {
+        border: 1px dotted turquoise;
+      }
+    </style>
+
+    <p><scale-link href="/theming.html">Theming page</scale-link></p>
+    <p>
+      <scale-link disabled href="https://example.com"
+        >Somewhere else</scale-link
+      >
+    </p>
+
+    <a-divider></a-divider>
+
+    <a-heading>List</a-heading>
+
+    <style>
+      scale-list::part(nested) {
+        border-left: 1px solid cyan;
+      }
+      scale-list-item::part(base unordered)::before {
+        color: red;
+      }
+    </style>
+
+    <scale-list
+      ><scale-list-item role="listitem">Lorem ipsum dolor</scale-list-item>
+      <scale-list-item role="listitem"
+        >Sit amet
+        <scale-list
+          ><scale-list-item role="listitem">Elementum nibh</scale-list-item>
+          <scale-list-item role="listitem"
+            >Penatibus et magnis
+            <scale-list
+              ><scale-list-item role="listitem">Nulla facilisi</scale-list-item>
+              <scale-list-item role="listitem"
+                >Aliquam etiam</scale-list-item
+              ></scale-list
+            ></scale-list-item
+          ></scale-list
+        ></scale-list-item
+      >
+      <scale-list-item role="listitem"
+        >Consetetur sadipscing</scale-list-item
+      ></scale-list
+    >
+
+    <a-divider></a-divider>
+
+    <scale-sidebar-nav
+      :arial-label="ariaLabel"
+      :collapsible="collapsible"
+      :collapsible-label="collapsibleLabel"
+      :collapsible-media-query="collapsibleMediaQuery"
+      :styles="styles"
+    >
+      <scale-sidebar-nav-item>
+        <a href="#">Overview</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-collapsible label="Reference" expanded>
+        <scale-sidebar-nav-collapsible label="Function A" expanded>
+          <scale-sidebar-nav-item current>
+            <a href="#">Endpoint 1</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Endpoint 2</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Endpoint 3</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-collapsible label="Function B">
+          <scale-sidebar-nav-item>
+            <a href="#">Endpoint 4</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Endpoint 5</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Endpoint 6</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav-collapsible>
+      </scale-sidebar-nav-collapsible>
+      <scale-sidebar-nav-collapsible label="Etcetera">
+        <scale-sidebar-nav-item>
+          <a href="#">Some foo</a>
+        </scale-sidebar-nav-item>
+        <scale-sidebar-nav-item>
+          <a href="#">More bar</a>
+        </scale-sidebar-nav-item>
+        <scale-sidebar-nav-item>
+          <a href="#">Links baz</a>
+        </scale-sidebar-nav-item>
+      </scale-sidebar-nav-collapsible>
+      <scale-sidebar-nav-item>
+        <a href="#">Console</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+app-navigation-main-mobile {
+  --min-height: calc(100vh - 56px - 56px);
+  --font-size: var(--scl-font-size-24);
+  --font-weight: var(--scl-font-weight-extrabold);
+  --line-height: 3.333;
+  --border-bottom: 1px solid #efefef;
+  --color: var(--scl-color-text-standard);
+  --color-selected: var(--scl-color-primary);
+
+  --font-size-child: var(--scl-font-size-24);
+  --line-height-child: 2.5;
+  --font-weight-child: var(--scl-font-weight-regular);
+
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  width: 100%;
+}
+
+.main-navigation-mobile {
+  width: 100%;
+  position: relative;
+}
+
+.main-navigation-mobile__main-menu {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-height: var(--min-height);
+}
+
+.main-navigation-mobile__item {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+.main-navigation-mobile__item-wrapper {
+  box-sizing: border-box;
+  width: calc(100% - 34px);
+  display: flex;
+  justify-content: space-between;
+  margin-left: 34px;
+  border-bottom: var(--border-bottom);
+  padding-right: 34px;
+  align-items: center;
+}
+
+.main-navigation-mobile__item-link {
+  text-decoration: none;
+  color: var(--color);
+  transition: var(--transition);
+}
+
+.main-navigation-mobile__item-link--selected {
+  color: var(--color-selected);
+  transition: var(--transition);
+}
+
+.main-navigation-mobile__item-link--selected .main-navigation-mobile__item {
+  border-right: 2px solid var(--color-selected);
+}
+
+.main-navigation-mobile__item-link--selected svg {
+  margin-right: -2px;
+}
+
+.main-navigation-mobile__child-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--scl-color-white);
+  width: 100%;
+  min-height: var(--min-height);
+}
+
+.main-navigation-mobile__child-menu-current-item {
+  line-height: var(--line-height);
+}
+
+.main-navigation-mobile__child-menu-current-item svg {
+  margin-right: 6px;
+  margin-top: -4px;
+}
+
+.main-navigation-mobile__child-menu-current {
+  font-size: var(--scl-font-size-24);
+  font-weight: var(--scl-font-weight-extrabold);
+  color: var(--color-selected);
+  text-decoration: none;
+}
+
+.main-navigation-mobile__child-menu-current-wrapper {
+  width: calc(100% - 34px);
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-bottom);
+  margin-left: 34px;
+}
+
+.main-navigation-mobile__child-menu-current app-icon {
+  margin-right: var(--scl-spacing-8);
+}
+
+svg path {
+  fill: inherit;
+}
+
+.main-navigation-mobile__child-menu-current .icon-back {
+  fill: var(--color-selected);
+}
+
+.main-navigation-mobile__child-menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation-mobile__child-menu-item-link {
+  text-decoration: none;
+  color: var(--color);
+}
+
+.main-navigation-mobile__child-menu-item-link.selected {
+  color: var(--color-selected);
+}
+
+.main-navigation-mobile__child-menu-item-link.selected
+  .main-navigation-mobile__child-menu-item-wrapper {
+  border-right: 2px solid var(--color-selected);
+}
+
+.main-navigation-mobile__child-menu-item-link.selected svg {
+  margin-right: 38px;
+}
+
+.main-navigation-mobile__child-menu-item {
+  font-size: var(--font-size-child);
+  line-height: var(--line-height-child);
+  font-weight: var(--font-weight-child);
+}
+
+.main-navigation-mobile__child-menu-item-wrapper {
+  width: calc(100% - 64px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-bottom);
+  margin-left: var(--scl-spacing-64);
+  box-sizing: border-box;
+}
+
+.main-navigation-mobile__child-menu-item-wrapper svg {
+  margin-right: var(--scl-spacing-40);
+}

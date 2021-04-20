@@ -1,0 +1,38 @@
+{
+  "de": [
+    {
+      "title": "Kontaktformular",
+      "href": "https://www.brand-design.telekom.com/kontaktformular/"
+    },
+    {
+      "title": "Nutzungsbedingungen",
+      "href": "https://www.brand-design.telekom.com/nutzungsbedingungen/"
+    },
+    {
+      "title": "Impressum",
+      "href": "https://www.brand-design.telekom.com/impressum/"
+    },
+    {
+      "title": "Datenschutz",
+      "href": "https://www.brand-design.telekom.com/datenschutz/"
+    }
+  ],
+  "en": [
+    {
+      "title": "Contact form",
+      "href": "https://www.brand-design.telekom.com/en/contact-form/"
+    },
+    {
+      "title": "Terms of Use",
+      "href": "https://www.brand-design.telekom.com/en/terms-of-use/"
+    },
+    {
+      "title": "Legal Notice",
+      "href": "https://www.brand-design.telekom.com/en/legal-notice/"
+    },
+    {
+      "title": "Privacy",
+      "href": "https://www.brand-design.telekom.com/en/privacy/"
+    }
+  ]
+}

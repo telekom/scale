@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Menu Component Examples</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+        --icon-color: black;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Icon Button Trigger</p>
+    <scale-menu-flyout>
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-service-settings></scale-icon-service-settings
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Primary Button Trigger</p>
+    <scale-menu-flyout>
+      <scale-button slot="trigger"
+        >Menu<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Menu Item Trigger</p>
+    <scale-menu-flyout-list style="position: relative; z-index: 1;">
+      <scale-menu-flyout>
+        <scale-menu-flyout-item slot="trigger" cascade
+          >Item Trigger</scale-menu-flyout-item
+        >
+        <scale-menu-flyout-list>
+          <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+          <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+          <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+        </scale-menu-flyout-list>
+      </scale-menu-flyout>
+    </scale-menu-flyout-list>
+
+    <p>Text Trigger</p>
+    <scale-menu-flyout>
+      <p
+        slot="trigger"
+        style="cursor: pointer; color: var(--scl-color-blue-40)"
+      >
+        Open Settings >
+      </p>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Div Trigger</p>
+    <scale-menu-flyout>
+      <div
+        slot="trigger"
+        style="padding: 20px; cursor: pointer; background: var(--scl-color-blue-40)"
+      ></div>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Menu Item Options</p>
+    <scale-menu-flyout-list>
+      <scale-menu-flyout-item>Item Title</scale-menu-flyout-item>
+      <scale-menu-flyout-item
+        >Really Quite Long Item Title Yes</scale-menu-flyout-item
+      >
+      <scale-menu-flyout-item
+        >Item With Suffix
+        <span slot="suffix">⌘F</span>
+      </scale-menu-flyout-item>
+      <scale-menu-flyout-item cascade
+        >Item With Cascade
+      </scale-menu-flyout-item>
+      <scale-menu-flyout-item
+        ><scale-icon-action-edit slot="prefix"></scale-icon-action-edit>Custom
+        prefix</scale-menu-flyout-item
+      >
+      <scale-menu-flyout-divider></scale-menu-flyout-divider>
+      <scale-menu-flyout-item checked="true"
+        >Checked Prefix True</scale-menu-flyout-item
+      >
+      <scale-menu-flyout-item checked="false"
+        >Checked Prefix False</scale-menu-flyout-item
+      >
+      <scale-menu-flyout-item disabled
+        >Disabled Large Suffix
+        <span slot="suffix">⌘Space</span>
+      </scale-menu-flyout-item>
+      <scale-menu-flyout-item
+        ><scale-icon-action-logout slot="prefix"></scale-icon-action-logout
+        >Prefix And Suffix
+        <span slot="suffix">⌘F</span>
+      </scale-menu-flyout-item>
+    </scale-menu-flyout-list>
+
+    <p>Direction</p>
+    <scale-menu-flyout direction="right">
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-navigation-right></scale-icon-navigation-right
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Right</scale-menu-flyout-item>
+        <scale-menu-flyout-item>I'm Over Here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Yes Me Too</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Me Three</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <scale-menu-flyout direction="top-right">
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-navigation-collapse-up></scale-icon-navigation-collapse-up
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Top Right</scale-menu-flyout-item>
+        <scale-menu-flyout-item>I'm Over Here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Yes Me Too</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Me Three</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <scale-menu-flyout direction="bottom-right">
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-navigation-collapse-down></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Bottom Right</scale-menu-flyout-item>
+        <scale-menu-flyout-item>I'm Over Here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Yes Me Too</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Me Three</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <scale-menu-flyout direction="bottom-left">
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-navigation-collapse-down></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Bottom Left</scale-menu-flyout-item>
+        <scale-menu-flyout-item>I'm Over Here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Yes Me Too</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Me Three</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <scale-menu-flyout direction="top-left">
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-navigation-collapse-up></scale-icon-navigation-collapse-up
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Top Left</scale-menu-flyout-item>
+        <scale-menu-flyout-item>I'm Over Here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Yes Me Too</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Me Three</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <scale-menu-flyout direction="left">
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-navigation-left></scale-icon-navigation-left
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Left</scale-menu-flyout-item>
+        <scale-menu-flyout-item>I'm Over Here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Yes Me Too</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Me Three</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Close On Select</p>
+    <scale-menu-flyout>
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Don't Close On Select</p>
+    <scale-menu-flyout close-on-select="false">
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Scrolling Menu</p>
+    <scale-menu-flyout direction="right">
+      <scale-button slot="trigger"
+        >Open<scale-icon-navigation-right
+          size="16"
+        ></scale-icon-navigation-right
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Quite A Lot Of Items</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 4</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 5</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 6</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 7</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 8</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 9</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 10</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 11</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 12</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 13</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 14</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 15</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 16</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 17</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 18</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 19</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 20</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 21</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 22</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 23</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 24</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 25</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 26</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 27</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 28</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Cascading Menu</p>
+    <scale-menu-flyout>
+      <scale-button slot="trigger" variant="secondary" icon-only
+        ><scale-icon-service-settings></scale-icon-service-settings
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1 </scale-menu-flyout-item>
+        <scale-menu-flyout>
+          <scale-menu-flyout-item slot="trigger" cascade
+            >More Options</scale-menu-flyout-item
+          >
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+            <scale-menu-flyout>
+              <scale-menu-flyout-item slot="trigger" cascade
+                >Even More</scale-menu-flyout-item
+              >
+              <scale-menu-flyout-list>
+                <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                <scale-menu-flyout>
+                  <scale-menu-flyout-item slot="trigger" cascade
+                    >Very Specific Options</scale-menu-flyout-item
+                  >
+                  <scale-menu-flyout-list>
+                    <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                    <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                    <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                  </scale-menu-flyout-list>
+                </scale-menu-flyout>
+                <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+        <scale-menu-flyout close-on-select="false">
+          <scale-menu-flyout-item slot="trigger" cascade
+            >Toggle Visibility</scale-menu-flyout-item
+          >
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item checked="true"
+              >Column 1</scale-menu-flyout-item
+            >
+            <scale-menu-flyout-item checked="true"
+              >Column 2</scale-menu-flyout-item
+            >
+            <scale-menu-flyout-item checked="true"
+              >Column 3</scale-menu-flyout-item
+            >
+            <scale-menu-flyout-item checked="true"
+              >Column 4</scale-menu-flyout-item
+            >
+            <scale-menu-flyout-item checked="true"
+              >Column 5</scale-menu-flyout-item
+            >
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+        <scale-menu-flyout-item disabled
+          >Item 5
+          <span slot="suffix">⌘Space</span>
+        </scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <p>Select Event</p>
+    <scale-menu-flyout id="select-example-menu">
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <script>
+      {
+        const el = document.querySelector('#select-example-menu');
+        el.addEventListener('scaleSelect', e => alert(e.detail.item.innerText));
+      }
+    </script>
+
+    <p>Open Close Events</p>
+    <scale-menu-flyout id="open-close-example-menu">
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <script>
+      {
+        const el = document.querySelector('#open-close-example-menu');
+        el.addEventListener('scaleOpen', () => alert('open'));
+        el.addEventListener('scaleClose', () => alert('close'));
+      }
+    </script>
+
+    <p>Checked Toggle</p>
+    <scale-menu-flyout close-on-select="false" id="checked-toggle-example-menu">
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item checked="true">Toggle 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item checked="true">Toggle 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item checked="true">Toggle 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+    <script>
+      {
+        const el = document.querySelector('#checked-toggle-example-menu');
+        el.addEventListener(
+          'scaleSelect',
+          ({ detail }) => (detail.item.checked = !detail.item.checked)
+        );
+      }
+    </script>
+
+    <p>Individual Item Select Events</p>
+    <scale-menu-flyout>
+      <scale-button slot="trigger" variant="secondary"
+        >Open<scale-icon-navigation-collapse-down
+          size="16"
+        ></scale-icon-navigation-collapse-down
+      ></scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item onclick="alert('Item 1 selected');"
+          >Item 1</scale-menu-flyout-item
+        >
+        <scale-menu-flyout-item onclick="alert('Item 2 selected');"
+          >Item 2</scale-menu-flyout-item
+        >
+        <scale-menu-flyout-item onclick="alert('Item 3 selected');"
+          >Item 3</scale-menu-flyout-item
+        >
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+  </body>
+</html>

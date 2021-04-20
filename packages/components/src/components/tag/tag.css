@@ -1,0 +1,154 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --background: var(--scl-color-text-standard);
+  --color: var(--scl-color-white);
+  --font-size: var(--scl-font-variant-body-size);
+  --line-height: var(--scl-font-variant-body-line-height);
+  --font-weight: var(--scl-font-weight-bold);
+  --radius: var(--scl-radius-4);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
+  --icon-color: var(--color);
+  --icon-color-hover: var(--scl-color-primary-active);
+  --background-secondary: var(--scl-color-teal-80);
+
+  --background-disabled: var(--scl-color-background-disabled);
+  --color-disabled: var(--scl-color-grey-60);
+
+  --spacing-left-dismissable: var(--scl-spacing-2);
+
+  --border-button-dismissable-focus: 1px solid
+    var(--scl-color-background-standard);
+  --background-button-dismissable-focus: var(--scl-color-black);
+  --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
+  --background-button-dismissable-hover: var(--scl-color-black);
+  --height-button-dismissable-small: 20px;
+
+  --spacing-small: 0 var(--scl-spacing-8);
+  --font-size-small: var(--scl-font-size-12);
+  --line-height-small: var(--scl-font-line-height-160);
+}
+
+.tag {
+  border: 1px solid transparent;
+  display: inline-flex;
+  outline: none;
+  padding: 0 10px;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: var(--scl-radius-4);
+  vertical-align: baseline;
+  justify-content: center;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  background: var(--background);
+  color: var(--color);
+  cursor: default;
+}
+
+.tag--variant-secondary {
+  background: var(--background-secondary);
+}
+
+.tag scale-icon-action-close {
+  color: var(--icon-color);
+  transition: all 0.15s ease-in-out;
+}
+
+.tag:not(.tag--disabled) scale-icon-action-close:hover {
+  color: var(--icon-color-hover);
+}
+.tag--dismissable {
+  padding-right: 0;
+}
+.tag--dismissable button {
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  margin-left: var(--spacing-left-dismissable);
+  border-radius: var(--radius);
+}
+
+.tag--dismissable scale-icon-action-close svg {
+  outline: none;
+}
+.tag--dismissable button:focus {
+  border: var(--border-button-dismissable-focus);
+  background: var(--background-button-dismissable-focus);
+  box-shadow: var(--box-shadow-button-dismissable-focus);
+}
+.tag--dismissable button:hover {
+  background: var(--background-button-dismissable-hover);
+}
+.tag--dismissable button:focus scale-icon-action-close {
+  top: -1px;
+  position: relative;
+}
+.tag--size-small {
+  padding: var(--spacing-small);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+.tag--size-small.tag--dismissable {
+  padding-right: 0;
+}
+.tag--size-small.tag--dismissable button {
+  height: var(--height-button-dismissable-small);
+}
+
+.tag--variant-secondary.tag--dismissable {
+  background: var(--background-secondary);
+}
+
+.tag--variant-secondary.tag--disabled {
+  opacity: 0.5;
+}
+.tag--link {
+  text-decoration: none;
+}
+.tag--link:focus {
+  border: 1px solid white;
+  box-shadow: var(--box-shadow-focus);
+}
+.tag--link.tag--variant-secondary {
+  background: var(--background-secondary);
+}
+.tag--link.tag--variant-secondary:hover {
+  background: var(--background-secondary);
+}
+.tag--link.tag--variant-secondary:focus {
+  border: 1px solid white;
+}
+.tag--disabled {
+  background: var(--background-disabled);
+  color: var(--color-disabled);
+  cursor: not-allowed;
+  color: var(--color-disabled);
+}
+.tag--disabled scale-icon-action-close {
+  color: var(--color-disabled);
+}
+.tag--disabled button {
+  cursor: not-allowed;
+}
+.tag--disabled button:hover {
+  cursor: not-allowed;
+  background: var(--background-disabled);
+}

@@ -1,0 +1,148 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --border: 1px solid var(--scl-color-grey-60);
+  --background-bar: var(--scl-color-primary);
+  --border-color-thumb: var(--scl-color-grey-60);
+  --box-shadow-thumb: var(--scl-shadow-level-0);
+  --border-color-thumb-hover: var(--scl-color-primary-hover);
+  --border-color-thumb-active: var(--scl-color-primary-active);
+  --box-shadow-thumb-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --color-display-value: var(--scl-color-grey-60);
+  --font-weight-display-value: var(--scl-font-weight-bold);
+  --font-size-display-value: var(--scl-font-size-12);
+  --background-track: var(--scl-color-grey-50);
+  --background-bar-disabled: var(--scl-color-grey-50);
+  --color-label-disabled: var(--scl-color-grey-50);
+}
+
+.slider {
+  width: 100%;
+  display: block;
+  align-items: center;
+}
+
+.slider .slider__track-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.slider .slider__track {
+  width: 303px;
+  border: var(--border);
+  height: 6px;
+  margin: 16px 0;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 100px;
+}
+
+.slider .slider__bar {
+  height: 6px;
+  z-index: -1;
+  position: absolute;
+  border-radius: 100px;
+  background-color: var(--background-bar);
+}
+
+.slider .slider__thumb-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  z-index: 100;
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  margin-left: -16px;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.slider .slider__thumb {
+  width: 16px;
+  border: 1px solid;
+  height: 16px;
+  outline: none;
+  box-sizing: border-box;
+  border-color: var(--border-color-thumb);
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: var(--scl-shadow-level-0);
+}
+
+.slider .slider__display-value {
+  color: var(--color-display-value);
+  margin-left: 24px;
+  font-weight: var(--font-weight-display-value);
+  font-size: var(--font-size-display-value);
+}
+
+.slider .slider__thumb:hover {
+  border-color: var(--border-color-thumb-hover);
+}
+
+.slider .slider__thumb:active {
+  border-color: var(--border-color-thumb-active);
+}
+
+.slider .slider__thumb:focus {
+  box-shadow: var(--box-shadow-thumb-focus);
+}
+
+.slider .slider__thumb-wrapper:hover {
+  cursor: grab;
+}
+
+.slider .slider__thumb-wrapper:active {
+  cursor: grabbing;
+}
+
+.slider--track-small .slider__track {
+  border: none;
+  height: 1px;
+  border-top: 1px solid transparent;
+  background-color: var(--background-track);
+}
+
+.slider--track-small .slider__bar {
+  border: 1px solid transparent;
+  height: 3px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.slider--thumb-large .slider__thumb {
+  width: 24px;
+  height: 24px;
+}
+
+.slider--disabled .slider__track-wrapper {
+  cursor: not-allowed;
+}
+
+.slider--disabled .slider__bar {
+  background-color: var(--background-bar-disabled);
+}
+
+.slider--disabled .slider__thumb {
+  display: none;
+}
+
+.slider--disabled .slider__label {
+  color: var(--color-label-disabled);
+}
+
+.slider--disabled .slider__thumb-wrapper:hover {
+  cursor: not-allowed;
+}

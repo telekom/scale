@@ -1,0 +1,115 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+.carousel {
+  width: 400px;
+  height: 300px;
+  position: relative;
+}
+
+.carousel__container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.carousel__slide {
+  height: 100%;
+  position: relative;
+  min-width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel__arrow {
+  top: 50%;
+  color: #fff;
+  width: 24px;
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  display: flex;
+  outline: none;
+  z-index: 99;
+  position: absolute;
+  transform: translateY(-50%);
+  background: rgba(31, 45, 61, 0.11);
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.carousel__arrow--left {
+  left: 12px;
+}
+
+.carousel__arrow--right {
+  right: 12px;
+}
+
+.carousel__indicators {
+  left: 50%;
+  bottom: 12px;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateX(-50%);
+  list-style: none;
+}
+
+.carousel__indicator {
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  height: 4px;
+  margin: 0 6px;
+  display: block;
+  opacity: 0.5;
+  outline: none;
+  padding: 0;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.carousel__indicator--active {
+  opacity: 1;
+}
+
+.carousel--vertical .carousel__container {
+  flex-direction: column;
+}
+
+.carousel--vertical .carousel__arrow {
+  display: none;
+}
+
+.carousel--vertical .carousel__indicators {
+  top: 50%;
+  left: unset;
+  right: 12px;
+  bottom: 0;
+  display: flex;
+  transform: translateY(-50%);
+  flex-direction: column;
+}
+
+.carousel--vertical .carousel__indicator {
+  width: 4px;
+  height: 30px;
+  margin: 6px 0;
+}

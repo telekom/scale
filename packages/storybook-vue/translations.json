@@ -1,0 +1,132 @@
+[
+  {
+    "elementSelector": "#scale-design-system--page",
+    "en": "Scale Design System",
+    "de": "Scale Design System"
+  },
+  {
+    "elementSelector": "#about-scale--page",
+    "en": "About Scale",
+    "de": "Über Scale"
+  },
+  {
+    "elementSelector": "#faq--page",
+    "en": "FAQ",
+    "de": "FAQ"
+  },
+  {
+    "elementSelector": "#scale-for-designers",
+    "en": "Scale for Designers",
+    "de": "Design mit Scale"
+  },
+  {
+    "elementSelector": "#scale-for-designers-getting-started--page",
+    "en": "Getting Started for Designers",
+    "de": "Erste Schritte für Designer*innen"
+  },
+  {
+    "elementSelector": "#scale-for-designers-grid--page",
+    "en": "Grid",
+    "de": "Gestaltungsraster"
+  },
+  {
+    "elementSelector": "#scale-for-designers-spacing--page",
+    "en": "Spacing",
+    "de": "Abstände"
+  },
+  {
+    "elementSelector": "#scale-for-designers-typography--page",
+    "en": "Typography",
+    "de": "Typografie"
+  },
+  {
+    "elementSelector": "#scale-for-designers-colors--page",
+    "en": "Colors",
+    "de": "Farben"
+  },
+  {
+    "elementSelector": "#scale-for-developers",
+    "en": "Scale for Developers",
+    "de": "Entwicklung mit Scale"
+  },
+  {
+    "elementSelector": "#scale-for-developers-setup--page",
+    "en": "Setup for Developers",
+    "de": "Setup für Entwickler*innen"
+  },
+  {
+    "elementSelector": "#scale-for-developers-icon-library--page",
+    "en": "Icon Library",
+    "de": "Icon Library"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "en": "Scale and Vue",
+    "de": "Scale und Vue"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "en": "Scale and Vue",
+    "de": "Scale und Vue"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-angular--page",
+    "en": "Scale and Angular",
+    "de": "Scale und Angular"
+  },
+  {
+    "elementSelector": "#scale-for-developers-scale-and-react--page",
+    "en": "Scale and React",
+    "de": "Scale und React"
+  },
+  {
+    "elementSelector": "#scale-for-developers-accessibility--page",
+    "en": "Accessibility",
+    "de": "Barrierefreiheit"
+  },
+  {
+    "elementSelector": "#scale-for-developers-design-tokens--page",
+    "en": "Design Tokens",
+    "de": "Design Tokens"
+  },
+  {
+    "elementSelector": "#scale-for-developers-customization-and-themes--page",
+    "en": "Customization and Themes",
+    "de": "Anpassungen und Themes"
+  },
+  {
+    "elementSelector": "#scale-for-developers-browser-support--page",
+    "en": "Browser Support",
+    "de": "Unterstützte Internet-Browser"
+  },
+  {
+    "elementSelector": "#scale-for-developers-migration-guide-to-v2--page",
+    "en": "Migration Guide v2",
+    "de": "Migration Guide v2"
+  },
+  {
+    "elementSelector": "#components",
+    "en": "Components",
+    "de": "Komponenten"
+  },
+  {
+    "elementSelector": "#beta-components",
+    "en": "Beta Components",
+    "de": "Beta Komponenten"
+  },
+  {
+    "elementSelector": "#contact",
+    "en": "Contact",
+    "de": "Kontakt"
+  },
+  {
+    "elementSelector": "#contact-contributing-to-scale--page",
+    "en": "Contributing to Scale",
+    "de": "An Scale mitwirken"
+  },
+  {
+    "elementSelector": "#contact-your-feedback--page",
+    "en": "Your Feedback",
+    "de": "Feedback"
+  }
+]

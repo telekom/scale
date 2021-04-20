@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert should match snapshot 1`] = `
+<scale-alert>
+  <mock:shadow-root></mock:shadow-root>
+  Notifications
+</scale-alert>
+`;
+
+exports[`Alert should match snapshot when opened 1`] = `
+<scale-alert opened="">
+  <mock:shadow-root>
+    <div class="alert">
+      <div class="alert__body">
+        <div class="alert__icon"></div>
+        <div class="alert__content">
+          <div class="alert__headline"></div>
+          <slot></slot>
+        </div>
+      </div>
+      <a class="alert__close">
+        x
+      </a>
+    </div>
+  </mock:shadow-root>
+  Notifications
+</scale-alert>
+`;
+
+exports[`Alert should match snapshot with hasSlotClose 1`] = `
+<scale-alert opened="">
+  <mock:shadow-root>
+    <div class="alert">
+      <div class="alert__body">
+        <div class="alert__icon"></div>
+        <div class="alert__content">
+          <div class="alert__headline"></div>
+          <slot></slot>
+        </div>
+      </div>
+      <a class="alert__close">
+        <div class="alert__close-icon">
+          <slot name="close"></slot>
+        </div>
+      </a>
+    </div>
+  </mock:shadow-root>
+  Notifications
+  <div slot="close">
+    Close
+  </div>
+</scale-alert>
+`;

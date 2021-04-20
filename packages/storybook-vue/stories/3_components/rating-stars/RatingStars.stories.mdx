@@ -1,0 +1,136 @@
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import ScaleRatingStars from "./ScaleRatingStars.vue";
+
+<Meta
+  title="Beta Components/Rating Stars"
+  component={ScaleRatingStars}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleRatingStars },
+  props: {
+    label: String,
+    ...ScaleRatingStars.props,
+  },
+  template: `
+  <scale-rating-stars
+    :num-of-stars="numOfStars"
+    :rating="rating"
+    :small="small"
+    :disabled="disabled"
+    :aria-translation="ariaTranslation"
+  >
+  </scale-rating-stars>
+    `,
+});
+
+# Rating Stars
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      rating: 3,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-rating-stars rating="3"></scale-rating-stars>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      rating: 2
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="2" disabled></scale-rating-stars>
+```
+
+## Small
+
+<Canvas withSource="none">
+  <Story
+    name="Small"
+    args={{
+      rating: 4,
+      small: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="4" small></scale-rating-stars>
+```
+
+## Number of Stars
+
+<Canvas withSource="none">
+  <Story
+    name="Number of Stars"
+    args={{
+      rating: 6,
+      numOfStars: 10
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="6" num-of-stars="10"></scale-rating-stars>
+```
+
+## Spacing
+
+<Canvas withSource="none">
+  <Story
+    name="Spacing"
+    args={{
+      rating: 1
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="1" class="custom-styles"></scale-rating-stars>
+```
+
+## Aria Translation
+
+<Canvas withSource="none">
+  <Story
+    name="Aria Translation"
+    args={{
+      rating: 1,
+      ariaTranslation: "${x} out of ${y} stars",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="1" aria-translation="${x} out of ${y} stars"></scale-rating-stars>
+```

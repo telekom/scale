@@ -1,0 +1,80 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --spacing-left: calc(-1 * var(--scl-spacing-8));
+
+  --font-size-list-item: var(--scl-font-size-14);
+
+  --color-separator: var(--scl-color-grey-60);
+
+  --spacing-y-item: var(--scl-spacing-4);
+  --spacing-x-item: var(--scl-spacing-8);
+
+  --color-link: var(--scl-color-grey-60);
+  --radius-link: var(--scl-radius-8);
+  --color-link-hover: var(--scl-color-primary-hover);
+  --color-link-active: var(--scl-color-primary-active);
+  --box-shadow-link-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
+  --color-current: var(--scl-color-text-standard);
+}
+
+.breadcrumb {
+  margin-left: var(--spacing-left);
+}
+
+.breadcrumb__list {
+  display: flex;
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.breadcrumb__list-item {
+  display: inline-flex;
+  font-size: var(--font-size-list-item);
+  align-items: center;
+}
+
+.breadcrumb__separator {
+  display: flex;
+  color: var(--color-separator);
+}
+
+.breadcrumb__item,
+.breadcrumb__link {
+  padding: var(--spacing-y-item) var(--spacing-x-item);
+}
+
+.breadcrumb__link {
+  text-decoration: none;
+  color: var(--color-link);
+  border-radius: var(--radius-link);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-link-hover);
+}
+
+.breadcrumb__link:active {
+  color: var(--color-link-active);
+}
+
+.breadcrumb__link:focus {
+  outline: none;
+  box-shadow: var(--box-shadow-link-focus);
+}
+
+.breadcrumb__current {
+  color: var(--color-current);
+}

@@ -1,0 +1,174 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+.switch {
+  /* TODO these variables placed in here are no use, they should be placed inside scale-switch */
+  --size: 20px;
+  --offset: 2px;
+  --color-off: var(--scl-color-text-standard);
+  --color-on: var(--scl-color-primary);
+  --color-active: var(--scl-color-primary-active);
+  --color-hover: var(--scl-color-primary-hover);
+  --color-disabled: var(--scl-color-background-disabled);
+  --color-state: var(--color-off);
+  --color-state-contrast: var(--scl-color-background-standard);
+  --color-background: var(--color-state-contrast);
+  --color-toggle: var(--color-state);
+  --color-text: var(--color-state);
+  --transition-duration: var(--scl-motion-duration-fast);
+  --transition-timing-function: var(--scl-motion-easing-standard);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --spacing-left: var(--scl-spacing-8);
+  --font-weight: var(--scl-font-weight-medium);
+
+  display: inline-block;
+  position: relative;
+}
+
+.switch label {
+  cursor: pointer;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.switch .switch__wrapper {
+  position: relative;
+  border: 1px solid var(--color-state);
+  border-radius: calc(var(--size) / 2);
+  width: calc(2 * var(--size) - var(--offset));
+  height: calc(var(--size) - var(--offset));
+  display: inline-flex;
+  justify-content: space-between;
+  background: var(--color-background);
+  transition-property: background;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.switch .switch__text {
+  display: flex;
+  width: 100%;
+  color: var(--color-text);
+  justify-content: space-evenly;
+  font-size: var(--scl-font-size-12);
+  line-height: calc(var(--size) - var(--offset));
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.switch .switch__text:before {
+  content: 'I';
+}
+
+.switch .switch__text:after {
+  content: '0';
+  position: relative;
+  right: -1px;
+}
+
+.switch .switch__toggle {
+  position: absolute;
+  border-radius: 50%;
+  padding: calc(0.5 * var(--size) - var(--offset));
+  margin: calc(-0.5 * var(--size) + var(--offset));
+  background: var(--color-toggle);
+  left: calc(0.5 * var(--size) - 0.5 * var(--offset));
+  top: 50%;
+  transition-property: transform, background;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.switch input:checked:disabled + .switch__wrapper .switch__toggle,
+.switch
+  input:not(:checked):not(:disabled):active
+  + .switch__wrapper
+  .switch__toggle,
+.switch
+  input:checked:not(:disabled):not(:active)
+  + .switch__wrapper
+  .switch__toggle {
+  transform: translateX(var(--size));
+}
+
+.switch .switch__label {
+  cursor: inherit;
+  color: var(--color-text);
+  margin-left: var(--spacing-left);
+  font-weight: var(--font-weight);
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
+  box-shadow: var(--box-shadow-focus);
+}
+
+.switch--focus-visible-supported input:focus-visible ~ .switch__wrapper {
+  box-shadow: var(--box-shadow-focus);
+}
+
+.switch input:checked ~ .switch__wrapper {
+  --color-state: var(--color-on);
+  --color-background: var(--color-state);
+  --color-toggle: var(--color-state-contrast);
+  --color-text: var(--color-state-contrast);
+}
+
+/* Needs to placed after :checked but before :active */
+.switch:hover,
+.switch:hover input ~ .switch__wrapper {
+  --color-state: var(--color-hover);
+}
+
+.switch input:not(:disabled):active ~ .switch__wrapper {
+  --color-state: var(--color-active);
+  --color-background: var(--color-state);
+  --color-toggle: var(--color-state-contrast);
+  --color-text: var(--color-state-contrast);
+}
+
+.switch input:checked:not(:disabled):active ~ .switch__wrapper {
+  --color-state: var(--color-active);
+  --color-background: var(--color-state-contrast);
+  --color-toggle: var(--color-active);
+  --color-text: var(--color-active);
+}
+
+.switch input:not(:disabled):active ~ .switch__label {
+  --color-text: var(--color-active);
+}
+
+/* disabled states */
+
+.switch.switch--disabled {
+  --color-state: var(--color-disabled);
+  --color-hover: var(--color-disabled);
+  --color-toggle: var(--color-disabled);
+  --color-text: var(--color-disabled);
+}
+
+.switch.switch--disabled label {
+  cursor: not-allowed;
+}
+
+.switch.switch--disabled input:checked ~ .switch__wrapper {
+  --color-state: var(--color-disabled);
+  --color-toggle: var(--color-state-contrast);
+  --color-text: var(--color-state-contrast);
+}

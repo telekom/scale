@@ -1,0 +1,60 @@
+.addon-usage p,
+.addon-usage h1,
+.addon-usage h2,
+.addon-usage h3,
+.addon-usage h4,
+.addon-usage h5,
+.addon-usage h6,
+.addon-usage li {
+  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+  color: var(--scl-color-text-standard) !important;
+}
+
+.addon-usage h1,
+.addon-usage h2,
+.addon-usage h3,
+.addon-usage h4,
+.addon-usage h5,
+.addon-usage h6 {
+  font-weight: 800 !important;
+}
+
+.addon-usage h1 {
+  font-size: 56px !important;
+  line-height: 64px !important;
+}
+.addon-usage h2 {
+  font-size: 32px !important;
+  line-height: 40px !important;
+  margin-top: 40px !important;
+}
+.addon-usage h3 {
+  font-size: 24px !important;
+  line-height: 32px !important;
+}
+.addon-usage h4 {
+  font-size: 20px !important;
+  line-height: 24px !important;
+}
+.addon-usage h5 {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+.addon-usage h6 {
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+
+.addon-usage a {
+  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+  text-decoration: none !important;
+  color: var(--scl-color-text-link) !important;
+}
+
+.addon-usage p,
+.addon-usage ul,
+.addon-usage li,
+.addon-usage a {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}

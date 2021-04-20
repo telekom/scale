@@ -1,0 +1,44 @@
+{
+  "name": "@telekom/scale-components-vue",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "version": "3.0.0-beta.1",
+  "description": "Vue specific wrapper for @telekom/scale-components",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p .",
+    "test": "jest"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.8.0",
+    "jest": "^26.1.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^26.2.0",
+    "typescript": "^3.3.4000"
+  },
+  "dependencies": {
+    "@vue/test-utils": "^1.0.3",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist"
+    ]
+  }
+}

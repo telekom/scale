@@ -1,0 +1,73 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --background: var(--scl-color-background-standard);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --radius: var(--scl-radius-8);
+  --box-shadow: var(--scl-shadow-level-1);
+  --box-shadow-hover: var(--scl-shadow-level-1-hover);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --box-shadow-active: var(--scl-shadow-level-1-active);
+
+  --spacing-body: var(--scl-spacing-24);
+
+  --spacing-body-slotted: 0;
+  --spacing-body-slotted-interactive: 0;
+}
+
+.card-border {
+  /* a11y: add border for high contrast mode */
+  border: 1px solid transparent;
+}
+.card {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--background);
+  transition: var(--transition);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+}
+
+.card__body {
+  padding: var(--spacing-body);
+}
+
+.card__body ::slotted(*) {
+  margin: var(--spacing-body-slotted);
+}
+
+.card--interactive {
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  text-decoration: none;
+}
+
+.card--interactive:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card--interactive:focus {
+  box-shadow: var(--scl-shadow-level-1-hover), var(--box-shadow-focus);
+}
+
+.card--interactive:active {
+  border: none;
+  box-shadow: var(--box-shadow-active);
+}
+
+.card--interactive .card__body ::slotted(*) {
+  margin: var(--spacing-body-slotted-interactive);
+}

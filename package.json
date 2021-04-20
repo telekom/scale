@@ -1,0 +1,32 @@
+{
+    "name": "telekom",
+    "version": "0.0.1",
+    "license": "MPL-2.0",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "clean": "./scripts/clean.sh",
+        "build": "./scripts/build.sh",
+        "build:storybook:staging": "./scripts/storybook-staging-build.sh",
+        "build:components": "yarn workspace @telekom/scale-components build",
+        "watch:components": "yarn workspace @telekom/scale-components start",
+        "bootstrap": "lerna bootstrap",
+        "postbootstrap": "lerna run generate",
+        "test": "lerna run test --scope @telekom/scale-components",
+        "new-version": "lerna version --conventional-commits --no-push",
+        "force-version": "lerna version --conventional-commits --force-publish --no-push"
+    },
+    "devDependencies": {
+        "lerna": "^3.20.2",
+        "husky": "^3.0.9",
+        "rimraf": "2.6.3"
+    },
+    "dependencies": {},
+    "husky": {
+        "hooks": {
+            "pre-push": "cd packages/components && yarn lint"
+        }
+    }
+}

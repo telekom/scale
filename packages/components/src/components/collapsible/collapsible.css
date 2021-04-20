@@ -1,0 +1,120 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --spacing-y: var(--scl-spacing-16);
+
+  /* button */
+  --font-size-button: var(--scl-font-size-20);
+  --font-weight-button: var(--scl-font-weight-extrabold);
+  --line-height-button: var(--scl-font-line-height-125);
+  --border-width-button: var(--scl-spacing-2);
+  --radius-button: var(--scl-radius-4);
+  --spacing-left-button: var(--scl-spacing-4);
+  --spacing-left-button-text: var(--scl-spacing-8);
+  --color-button-hover: var(--scl-color-primary-hover);
+  --color-button-active: var(--scl-color-primary-active);
+  --background-button-hover: var(--scl-color-background-light);
+  --border-color-button-focus: var(--scl-color-focus);
+
+  /* icon */
+  --spacing-top-icon: calc(var(--scl-spacing-4) + 1px);
+
+  /* content */
+  --spacing-right-content: var(--scl-spacing-48);
+  --spacing-left-content: var(--scl-spacing-32);
+  --spacing-top-content: var(--scl-spacing-16);
+  --spacing-bottom-content: var(--scl-spacing-24);
+}
+
+.collapsible {
+  position: relative;
+  margin: var(--spacing-y) 0;
+}
+
+.collapsible--expanded:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border: var(--scl-spacing-1) solid transparent;
+  content: '';
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  bottom: calc(-1 * var(--spacing-y));
+}
+
+.collapsible__heading {
+  margin: 0;
+}
+
+.collapsible__button {
+  color: currentColor;
+  width: 100%;
+  display: flex;
+  text-align: left;
+  align-items: flex-start;
+  padding-top: 0;
+  border-color: transparent;
+  border-style: solid;
+  padding-right: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button);
+  border-width: var(--border-width-button);
+  border-radius: var(--radius-button);
+  padding-left: var(--spacing-left-button);
+  /* a11y: allows some "external" typographic styles to leak in
+   https://www.w3.org/TR/WCAG21/#text-spacing */
+  font-family: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+}
+
+.collapsible__button > span {
+  margin-left: var(--spacing-left-button-text);
+}
+
+.collapsible__button:hover {
+  cursor: pointer;
+  color: var(--color-button-hover);
+  background-color: var(--background-button-hover);
+}
+
+.collapsible__button:active {
+  color: var(--color-button-active);
+}
+
+.collapsible__button:focus {
+  outline: none;
+  border-color: var(--border-color-button-focus);
+}
+
+.collapsible__icon {
+  transform: rotate(0.75turn);
+  flex-shrink: 0;
+  margin-top: var(--spacing-top-icon);
+}
+
+.collapsible__button[aria-expanded='true'] .collapsible__icon {
+  transform: none;
+}
+
+.collapsible__content {
+  padding-right: var(--spacing-right-content);
+  padding-left: var(--spacing-left-content);
+  /* These should collapse with tags like p, that's what we want */
+  margin-top: var(--spacing-top-content);
+  margin-bottom: var(--spacing-bottom-content);
+}

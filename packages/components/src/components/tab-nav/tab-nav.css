@@ -1,0 +1,19 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --tab-height: var(--scl-spacing-40);
+  --tab-spacing: var(--scl-spacing-24);
+  --tab-radius: var(--scl-radius-4);
+  --tab-border-size: var(--scl-spacing-2);
+  --tab-border-size-selected: var(--scl-spacing-4);
+  --tab-border-color: var(--scl-color-grey-20);
+}

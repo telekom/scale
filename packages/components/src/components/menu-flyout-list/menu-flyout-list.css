@@ -1,0 +1,52 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  display: inline-flex;
+  background: var(--scl-color-white);
+  border-radius: var(--scl-radius-8);
+  box-shadow: var(--scl-shadow-level-4);
+  overflow-y: hidden;
+}
+.menu-list {
+  padding: 20px 0;
+  overflow-y: auto;
+  overflow-y: overlay;
+  overscroll-behavior: contain;
+}
+.menu-list:focus {
+  outline: none;
+}
+.menu-list__scroll-up-indicator,
+.menu-list__scroll-down-indicator {
+  position: absolute;
+  width: 0;
+  border: 5px solid transparent;
+  pointer-events: none;
+  opacity: 0;
+  left: 50%;
+}
+.menu-list__scroll-up-indicator {
+  top: var(--scl-spacing-8);
+  border-bottom: 5px solid var(--scl-color-grey-40);
+  border-top: 0;
+}
+.menu-list__scroll-down-indicator {
+  bottom: var(--scl-spacing-8);
+  border-top: 5px solid var(--scl-color-grey-40);
+  border-bottom: 0;
+}
+.menu-list--can-scroll-up .menu-list__scroll-up-indicator {
+  opacity: 1;
+}
+.menu-list--can-scroll-down .menu-list__scroll-down-indicator {
+  opacity: 1;
+}

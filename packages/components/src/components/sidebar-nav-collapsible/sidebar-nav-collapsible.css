@@ -1,0 +1,133 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --border-bottom-color: var(--scl-color-grey-10);
+  --border-left-color-third-nesting: var(--scl-color-grey-70);
+  --color-active: var(--scl-color-primary-active);
+  --color-primary: var(--scl-color-primary);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--scl-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.sidebar-nav-collapsible {
+  margin: 0;
+  border-bottom-color: var(--border-bottom-color);
+  border-bottom-style: solid;
+  border-bottom-width: 0;
+}
+
+.sidebar-nav-collapsible--condensed {
+  border-bottom-width: 1px;
+}
+
+.sidebar-nav-collapsible__wrapper {
+  border-bottom-color: var(--border-bottom-color);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.sidebar-nav-collapsible--condensed .sidebar-nav-collapsible__wrapper {
+  border-bottom-width: 0;
+}
+
+.sidebar-nav-collapsible__button {
+  color: currentColor;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 1rem;
+  padding-right: calc(0.5 * var(--spacing-indent));
+  padding-bottom: 1rem;
+  padding-left: var(--spacing-indent);
+  justify-content: space-between;
+  text-decoration: none;
+  font-family: inherit;
+  border-radius: 2px;
+}
+
+.sidebar-nav-collapsible__button:hover {
+  color: var(--color-primary);
+}
+
+.sidebar-nav-collapsible__button:active {
+  color: var(--color-active);
+}
+
+.sidebar-nav-collapsible__button:focus {
+  outline: none;
+  box-shadow: var(--box-shadow-focus);
+}
+
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button {
+  position: relative;
+  color: var(--color-primary);
+}
+
+.sidebar-nav-collapsible--active .sidebar-nav-collapsible__button::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: var(--left-current-border, 0);
+  width: 0; /* The transparent border makes the 2px */
+  height: 100%;
+  background-color: var(--color-primary);
+  /* Accessibility: extra transparent line for Windows HCM */
+  border-left: 2px solid transparent;
+}
+
+:host([nesting-level='1']) .sidebar-nav-collapsible__button,
+.sidebar-nav-collapsible--bold .sidebar-nav-collapsible__button {
+  font-weight: var(--font-weight-bold);
+}
+
+:host([nesting-level='2']) .sidebar-nav-collapsible__button {
+  padding-left: calc(var(--spacing-indent) + 0.75rem);
+}
+
+.sidebar-nav-collapsible__icon {
+  transition: opacity 150ms;
+}
+
+[aria-expanded='true'] .sidebar-nav-collapsible__icon {
+  transform: rotate(0.5turn);
+}
+
+@media (hover: hover) {
+  [aria-expanded='false'] .sidebar-nav-collapsible__icon {
+    opacity: var(--opacity-chevron, 1);
+  }
+
+  .sidebar-nav-collapsible__button:hover .sidebar-nav-collapsible__icon {
+    opacity: 1;
+  }
+
+  .sidebar-nav-collapsible__button:focus .sidebar-nav-collapsible__icon {
+    opacity: 1;
+  }
+}
+
+.sidebar-nav-collapsible__list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom-width: 1px; /* ? */
+}
+
+.sidebar-nav-collapsible--condensed .sidebar-nav-collapsible__list {
+  margin-top: 1em;
+  margin-left: var(--spacing-indent);
+  margin-bottom: 2em;
+}

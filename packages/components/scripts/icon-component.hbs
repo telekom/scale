@@ -1,0 +1,51 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+import { Component, Prop, Host, Element, h } from '@stencil/core';
+
+@Component({
+  tag: '{{tagName}}'
+})
+export class {{className}} {
+  @Element() hostElement: HTMLElement;
+
+  /** (optional) The width and height in pixels */
+  @Prop() size?: number = 24;
+  /** (optional) Sets the icon color via the `fill` attribute */
+  @Prop() color?: string = 'currentColor'; 
+  /** (optional) If `true`, the icon changes visually */
+  @Prop() selected?: boolean = false;
+  /** (optional) If `true` the SVG element will get `aria-hidden="true"` */
+  @Prop() decorative?: boolean = false;
+  /** (optional) When using the icon standalone, make it meaningful for accessibility */
+  @Prop() accessibilityTitle?: string;
+
+  connectedCallback() {
+    if (!this.hostElement.hasAttribute('styles')) {
+      this.hostElement.style.display = 'inline-flex';
+    }
+  }
+
+  render() {
+    const ariaHidden = this.decorative ? { 'aria-hidden': 'true' } : {}
+
+    return (
+      <Host>
+        <svg xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="{{viewBox}}" {...ariaHidden}>
+          {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
+          <g fill={this.color}>
+            {this.selected ? (<g>{{{markup.selected}}}</g>) : (<g>{{{markup.default}}}</g>)}
+          </g>
+        </svg>
+      </Host>
+    );
+  }
+}

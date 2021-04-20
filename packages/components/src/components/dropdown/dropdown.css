@@ -1,0 +1,195 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+scale-dropdown {
+  --font-weight: var(--scl-font-weight-bold);
+  --height: var(--scl-spacing-48);
+  --height-small: var(--scl-spacing-40);
+  --spacing-x: var(--scl-spacing-12);
+  --spacing-dropdown: var(--scl-spacing-12) var(--scl-spacing-40) 0
+    calc(var(--spacing-x) - 1px);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --radius: var(--scl-radius-4);
+  --border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  --border-error: var(--scl-spacing-2) solid var(--scl-color-background-error);
+  --border-color-hover: var(--scl-color-primary-hover, #f90984);
+  --border-color-focus: var(--scl-color-primary-hover, #f90984);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --color-disabled: var(--scl-color-background-disabled);
+  --background-disabled: var(--scl-color-white);
+
+  /*input*/
+  --transition-input: var(--transition);
+  --font-size-input: var(--scl-font-size-16);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--scl-font-size-12);
+  --line-height-helper-text: var(--scl-font-line-height-133);
+  --color-helper-text: var(--scl-color-blue-70);
+  --color-helper-text-error: var(--scl-color-text-error);
+
+  /*meta*/
+  --spacing-y-meta: var(--scl-spacing-4);
+  --color-meta: var(--scl-color-text-standard);
+
+  /*icon*/
+  --height-icon: var(--scl-spacing-24);
+  --color-icon: var(--scl-color-text-standard);
+  --color-icon-hover: var(--scl-color-primary-hover, #f90984);
+  --color-icon-active: var(--scl-color-primary-active, #cb0068);
+  --transition-icon: var(--transition);
+
+  /*label*/
+  --color-label: var(--scl-color-grey-60);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--scl-font-size-16);
+  --font-size-label-small: var(--scl-font-size-16);
+  --font-weight-label: var(--scl-font-weight-medium);
+  --font-size-label-focus: var(--scl-font-size-10);
+  --font-weight-label-focus: var(--scl-font-weight-bold);
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown .input__helper-text {
+  font-weight: var(--font-weight);
+}
+.dropdown .input__dropdown {
+  width: 100%;
+  height: var(--height);
+  margin: 0;
+  display: flex;
+  outline: none;
+  padding: var(--spacing-dropdown);
+  z-index: 1;
+  box-sizing: border-box;
+  transition: var(--transition-input);
+  font-family: inherit;
+  font-size: var(--font-size-input);
+  border-radius: var(--radius);
+  border: var(--border);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.dropdown .input__dropdown-wrapper {
+  position: relative;
+}
+.dropdown .input__helper-text {
+  transition: var(--transition-helper-text);
+  padding-left: var(--spacing-x);
+  font-size: var(--font-size-helper-text);
+  line-height: var(--line-height-helper-text);
+  color: var(--color-helper-text);
+}
+.dropdown .input__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-y-meta);
+  color: var(--color-meta);
+}
+
+.dropdown.dropdown--disabled .input__dropdown-wrapper .input__dropdown-icon {
+  color: var(--color-disabled);
+}
+
+.dropdown:not(.dropdown--disabled):hover .input__dropdown-icon {
+  color: var(--color-icon-hover);
+}
+.dropdown:not(.dropdown--disabled):active .input__dropdown-icon {
+  color: var(--color-icon-active);
+}
+.dropdown:not(.dropdown--disabled) .input__dropdown:hover {
+  border-color: var(--border-color-hover);
+}
+
+.dropdown:not(.dropdown--disabled) .input__dropdown:focus {
+  border-color: var(--border-color-focus);
+}
+.dropdown:not(.dropdown--disabled) .input__dropdown:focus {
+  box-shadow: var(--box-shadow-focus);
+}
+.dropdown .input__dropdown-wrapper .input__dropdown-icon {
+  top: 50%;
+  right: var(--spacing-x);
+  position: absolute;
+  transform: translateY(-50%);
+  pointer-events: none;
+  height: var(--height-icon);
+  color: var(--color-icon);
+  transition: var(--transition-icon);
+}
+
+.input__label {
+  top: 0;
+  left: 0;
+  color: var(--color-label);
+  display: flex;
+  z-index: var(--z-index-label);
+  position: absolute;
+  transition: var(--transition-label);
+  pointer-events: none;
+  font-size: var(--font-size-label);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--scl-spacing-48) - var(--font-size-label)) / 2)
+  );
+  font-weight: var(--font-weight-label);
+}
+
+.animated .input__label {
+  transform: translate(var(--spacing-x), var(--scl-spacing-8));
+  font-size: var(--font-size-label-focus);
+  font-weight: var(--font-weight-label-focus);
+}
+
+.dropdown--status-error .input__dropdown {
+  border: var(--border-error);
+}
+.dropdown--status-error .input__helper-text {
+  color: var(--color-helper-text-error);
+}
+.dropdown--size-small .input__dropdown {
+  height: var(--height-small);
+}
+.dropdown--size-small .input__label {
+  font-size: var(--font-size-label-small);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--height-small) - var(--font-size-label-small)) / 2)
+  );
+  font-weight: var(--font-weight-label-small);
+}
+
+.dropdown--size-small.animated .input__label {
+  transform: translate(var(--spacing-x), var(--scl-spacing-4));
+  font-size: var(--font-size-label-focus);
+}
+
+.dropdown--transparent .input__dropdown {
+  background-color: transparent;
+}
+.dropdown--disabled label,
+.dropdown--disabled .input__label,
+.dropdown--disabled input,
+.dropdown--disabled .input__dropdown,
+.dropdown--disabled .input__helper-text {
+  cursor: not-allowed;
+  border-color: var(--color-disabled);
+  color: var(--color-disabled);
+  background: var(--background-disabled);
+}

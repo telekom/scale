@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should match snapshot 1`] = `
+<scale-table class="table table--size-default">
+  <!---->
+  <div>
+    Table header
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <span aria-hidden="" class="scale-sort-indicator">
+            <svg viewBox="0 0 16 16">
+              <polygon points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407" transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) "></polygon>
+              <polygon points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069" transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) "></polygon>
+            </svg>
+          </span>
+          Title
+        </th>
+        <th>
+          <span aria-hidden="" class="scale-sort-indicator">
+            <svg viewBox="0 0 16 16">
+              <polygon points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407" transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) "></polygon>
+              <polygon points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069" transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) "></polygon>
+            </svg>
+          </span>
+          Time
+        </th>
+        <th>
+          <span aria-hidden="" class="scale-sort-indicator">
+            <svg viewBox="0 0 16 16">
+              <polygon points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407" transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) "></polygon>
+              <polygon points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069" transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) "></polygon>
+            </svg>
+          </span>
+          Euros
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          University of Plymouth
+        </td>
+        <td>
+          00:00:20
+        </td>
+        <td>
+          100.245,10
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          Total
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          00:00:20
+        </td>
+        <td>
+          100.245,10
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</scale-table>
+`;

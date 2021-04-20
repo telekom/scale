@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing form submissions</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+  </head>
+  <body>
+    <form style="max-width: 40ch; padding: 2rem">
+      <h1>Say hello</h1>
+      <p>
+        <scale-input label="Name" name="name" variant="animated"></scale-input>
+      </p>
+      <p>
+        <scale-input
+          label="Email"
+          name="email"
+          type="email"
+          variant="animated"
+        ></scale-input>
+      </p>
+      <p>
+        <scale-button>Submit</scale-button>
+      </p>
+      <p>
+        <scale-button onclick="handleClick(event)"
+          >Submit (with click handler)</scale-button
+        >
+      </p>
+      <p>
+        <button>Submit for real</button>
+      </p>
+    </form>
+    <script>
+      function handleClick(event) {
+        const form = event.target.closest('form');
+        if (form) form.submit();
+      }
+    </script>
+  </body>
+</html>

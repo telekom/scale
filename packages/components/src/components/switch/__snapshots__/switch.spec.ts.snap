@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should match snapshot 1`] = `
+<scale-switch>
+  <div class="switch switch--focus-visible-not-supported">
+    <label id="switch-0-label">
+      <input aria-labelledby="switch-0-label" id="switch-0" type="checkbox">
+      <div class="switch__wrapper">
+        <div class="switch__toggle"></div>
+        <div class="switch__text"></div>
+      </div>
+    </label>
+  </div>
+</scale-switch>
+`;

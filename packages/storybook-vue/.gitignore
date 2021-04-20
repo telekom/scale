@@ -1,0 +1,5 @@
+storybook-static/
+node_modules/
+yarn-error.log
+public/fonts/TeleNeoWeb/
+public/scale-components.css

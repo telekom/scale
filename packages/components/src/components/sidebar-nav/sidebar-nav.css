@@ -1,0 +1,84 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --max-width: 15rem;
+  --spacing-indent: var(--scl-spacing-24);
+  --spacing-collapsible: var(--scl-spacing-16);
+  --opacity-chevron: 0;
+  --left-current-border: 0;
+
+  --color: var(--scl-color-primary);
+  --color-active: var(--scl-color-primary-active);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --color-toggle-button: var(--scl-color-grey-60);
+  --border-y-toggle-button: 1px solid var(--scl-color-grey-10);
+  --radius-toggle-button: var(--scl-radius-2);
+}
+
+.sidebar-nav--collapsible {
+  --max-width: none;
+  --spacing-indent: 0;
+  --opacity-chevron: 1;
+  --left-current-border: calc(-1 * var(--spacing-collapsible));
+
+  padding-right: var(--spacing-collapsible);
+  padding-left: var(--spacing-collapsible);
+}
+
+.sidebar-nav__list {
+  list-style: none;
+  max-width: var(--max-width);
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sidebar-nav__toggle-button {
+  box-sizing: border-box;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  color: var(--color-toggle-button);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-right: calc(0.5 * var(--spacing-indent));
+  padding-bottom: 1rem;
+  padding-left: var(--spacing-indent);
+  border-radius: var(--radius-toggle-button);
+  border-bottom: var(--border-y-toggle-button);
+  border-top: var(--border-y-toggle-button);
+  cursor: pointer;
+}
+
+.sidebar-nav__toggle-button:hover {
+  color: var(--color); /* TODO: shouldn't this be hover color? */
+}
+
+.sidebar-nav__toggle-button:active {
+  color: var(--color-active);
+}
+
+.sidebar-nav__toggle-button:focus {
+  outline: none;
+  box-shadow: var(--box-shadow-focus);
+}
+
+[aria-expanded='true'] .sidebar-nav__icon {
+  transform: rotate(0.5turn);
+}

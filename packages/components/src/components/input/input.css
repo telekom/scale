@@ -1,0 +1,505 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+.input {
+  position: relative;
+}
+.input .input__helper-text,
+.input .input__counter {
+  font-weight: var(--scl-font-weight-bold);
+}
+.input .input__input,
+.input .input__select {
+  width: 100%;
+  height: var(--scl-spacing-48);
+  margin: 0;
+  display: flex;
+  outline: none;
+  padding: var(--scl-spacing-12) var(--scl-spacing-12);
+  z-index: 1;
+  box-sizing: border-box;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-family: inherit;
+  font-size: var(--scl-font-size-16);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-black);
+}
+.input .input__textarea {
+  width: 100%;
+  margin: 0;
+  resize: vertical;
+  display: flex;
+  outline: none;
+  padding: var(--scl-spacing-12) var(--scl-spacing-12);
+  z-index: 1;
+  box-sizing: border-box;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-family: inherit;
+  font-size: var(--scl-font-size-16);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+}
+.input .input__select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+.input .input__select-wrapper {
+  position: relative;
+}
+.input .input__counter {
+  display: flex;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  margin-left: auto;
+  padding-right: var(--scl-spacing-12);
+  justify-content: flex-end;
+  font-size: var(--scl-font-size-12);
+  line-height: var(--scl-font-line-height-133);
+  color: var(--scl-color-text-standard);
+}
+.input .input__helper-text {
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  padding-left: var(--scl-spacing-12);
+  font-size: var(--scl-font-size-12);
+  line-height: var(--scl-font-line-height-133);
+  color: var(--scl-color-blue-70);
+}
+.input .input__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--scl-spacing-4);
+}
+.input:not(.input--disabled):hover .input__select-wrapper {
+  --icon-color: var(--scl-color-primary-hover, #f90984);
+}
+.input:not(.input--disabled):active .input__select-wrapper {
+  --icon-color: var(--scl-color-primary-active, #cb0068);
+}
+.input:not(.input--disabled) .input__input:hover,
+.input:not(.input--disabled) .input__input:focus,
+.input:not(.input--disabled) .input__select:hover,
+.input:not(.input--disabled) .input__select:focus,
+.input:not(.input--disabled) .input__textarea:hover,
+.input:not(.input--disabled) .input__textarea:focus {
+  border-color: var(--scl-color-primary-hover, #f90984);
+}
+.input:not(.input--disabled) .input__input:focus,
+.input:not(.input--disabled) .input__select:focus,
+.input:not(.input--disabled) .input__textarea:focus {
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.input:not(.input--disabled) .input__input:focus::placeholder,
+.input:not(.input--disabled) .input__select:focus::placeholder,
+.input:not(.input--disabled) .input__textarea:focus::placeholder {
+  color: var(--scl-color-grey-60);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+}
+.input .input__select-wrapper scale-icon {
+  top: 50%;
+  right: var(--scl-spacing-12);
+  position: absolute;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.input .input__input::placeholder,
+.input .input__select::placeholder,
+.input .input__textarea::placeholder,
+.input ::placeholder {
+  color: transparent;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+}
+.input--variant-static .input__label {
+  color: var(--scl-color-grey-60);
+  display: flex;
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--variant-animated .input__input,
+.input--variant-animated .input__select {
+  padding: var(--scl-spacing-12) var(--scl-spacing-12) 0
+    calc(var(--scl-spacing-12) - 1px);
+}
+.input--variant-animated .input__textarea {
+  padding-top: var(--scl-spacing-24);
+}
+.input--variant-animated .input__label {
+  top: 0;
+  left: 0;
+  color: var(--scl-color-grey-60);
+  display: flex;
+  z-index: var(--scl-z-index-10);
+  position: absolute;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  pointer-events: none;
+  font-size: var(--scl-font-size-16);
+  /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
+  transform: translate(
+    var(--scl-spacing-12),
+    calc((var(--scl-spacing-48) - var(--scl-font-size-16)) / 2)
+  );
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--variant-animated.input--has-focus .input__label,
+.input--variant-animated.animated .input__label {
+  color: var(--scl-color-grey-60);
+  transform: translate(var(--scl-spacing-12), var(--scl-spacing-8));
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-size: var(--scl-font-size-10);
+  font-weight: var(--scl-font-weight-bold);
+}
+.input--status-error .input__input,
+.input--status-error .input__textarea,
+.input--status-error .input__select {
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+}
+.input--status-error .input__helper-text {
+  color: var(--scl-color-text-error);
+}
+.input--status-error .input__counter {
+  color: var(--scl-color-text-error);
+}
+.input--size-small .input__input {
+  height: var(--scl-spacing-40);
+}
+.input--size-small .input__select {
+  height: var(--scl-spacing-40);
+}
+.input--size-small .input__label {
+  top: 0;
+  left: 0;
+  color: var(--scl-color-grey-60);
+  display: flex;
+  z-index: var(--scl-z-index-10);
+  position: absolute;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  pointer-events: none;
+  font-size: var(--scl-font-size-16);
+  /* previously: transform: translate(
+    13px,
+    calc((var(--input-small-height, 40px) - 1rem) / 2)
+  ); */
+  transform: translate(
+    var(--scl-spacing-12),
+    calc((var(--scl-spacing-40) - var(--scl-font-size-16)) / 2)
+  );
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--size-small.input--has-focus .input__label,
+.input--size-small.animated .input__label {
+  color: var(--scl-color-grey-60);
+  transform: translate(var(--scl-spacing-12), var(--scl-spacing-4));
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-size: var(--scl-font-size-10);
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--transparent .input__input,
+.input--transparent .input__textarea,
+.input--transparent.input--type-radio .input__radio,
+.input--transparent .input__select {
+  background-color: transparent;
+}
+.input--type-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.input--type-checkbox input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+.input--type-checkbox .input__meta {
+  width: 100%;
+}
+.input--type-checkbox .input__helper-text {
+  padding-left: var(--scl-spacing-32);
+}
+.input--type-checkbox label {
+  color: var(--scl-color-text-standard);
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--type-checkbox .input__checkbox-container {
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-right: var(--scl-spacing-8);
+}
+.input--type-checkbox input:disabled ~ label {
+  /* FIXME make sure color is right */
+  color: var(--scl-color-background-disabled);
+}
+.input--type-checkbox input:checked:disabled ~ label {
+  color: var(--scl-color-background-disabled);
+}
+.input--type-checkbox
+  input:checked:disabled
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  background: var(--scl-color-background-disabled);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--type-checkbox
+  input:checked:disabled
+  ~ .input__checkbox-container
+  scale-icon {
+  --icon-color: var(--scl-color-grey-30);
+}
+.input--type-checkbox
+  input:checked:not([disabled]):hover
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container:hover
+  .input__checkbox-placeholder {
+  box-shadow: none;
+  border-color: var(--scl-color-primary-hover, #f90984);
+  background: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-checkbox
+  input:checked:not([disabled]):active
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container:active
+  .input__checkbox-placeholder {
+  border-color: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-color-primary-active, #cb0068);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--type-checkbox
+  input:checked:not([disabled]):active
+  ~ .input__checkbox-container
+  scale-icon,
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container:active
+  scale-icon {
+  --icon-color: var(--scl-color-white);
+}
+.input--type-checkbox
+  input:checked:not([disabled])
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  border: var(--scl-spacing-1) solid var(--scl-color-primary, #e20074);
+  background: var(--scl-color-primary, #e20074);
+}
+.input--type-checkbox
+  input:disabled
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  border-color: var(--scl-color-background-disabled);
+}
+.input--type-checkbox
+  input:focus
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder {
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.input--type-checkbox
+  input:not([disabled]):hover
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:hover
+  .input__checkbox-placeholder {
+  box-shadow: none;
+  border-color: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-checkbox
+  input:not([disabled]):hover
+  ~ .input__checkbox-container
+  ~ label,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:hover
+  ~ label {
+  color: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-checkbox
+  input:not([disabled]):active
+  ~ .input__checkbox-container
+  .input__checkbox-placeholder,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:active
+  .input__checkbox-placeholder {
+  border-color: var(--scl-color-primary-active, #cb0068);
+  background: var(--scl-color-primary-active, #cb0068);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--type-checkbox
+  input:not([disabled]):active
+  ~ .input__checkbox-container
+  scale-icon,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:active
+  scale-icon {
+  --icon-color: var(--scl-color-primary-active, #cb0068);
+}
+.input--type-checkbox
+  input:not([disabled]):active
+  ~ .input__checkbox-container
+  ~ label,
+.input--type-checkbox
+  input:not([disabled])
+  ~ .input__checkbox-container:active
+  ~ label {
+  color: var(--scl-color-primary-active, #cb0068);
+}
+.input--type-checkbox .input__checkbox-container .input__checkbox-placeholder {
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
+  margin: 0;
+  box-sizing: border-box;
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  border-radius: var(--scl-radius-4);
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  background: var(--scl-color-background-standard);
+}
+.input--type-checkbox .input__checkbox-container scale-icon {
+  top: calc(0.5 * var(--scl-spacing-12));
+  left: calc(0.5 * var(--scl-spacing-12));
+  width: var(--scl-spacing-12);
+  height: var(--scl-spacing-12);
+  position: absolute;
+  user-select: none;
+  /* TODO this could removed once scale-icon is removed */
+  --icon-color: var(--scl-color-background-standard);
+}
+.input--type-checkbox .input__checkbox-container ~ label {
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+}
+.input--type-checkbox.input--status-error
+  .input__checkbox-container
+  .input__checkbox-placeholder {
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+}
+.input--type-radio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.input--type-radio .input__meta {
+  width: 100%;
+}
+.input--type-radio .input__helper-text {
+  margin-top: var(--scl-spacing-4);
+  padding-left: var(--scl-spacing-24);
+}
+.input--type-radio label {
+  color: var(--scl-color-text-standard);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  font-weight: var(--scl-font-weight-medium);
+}
+.input--type-radio input {
+  width: var(--scl-spacing-16);
+  height: var(--scl-spacing-16);
+  transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  margin: 0 var(--scl-spacing-8) 0 0;
+}
+.input--type-radio input:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+.input--type-radio:hover input:not(:checked):not([disabled]) {
+  box-shadow: none;
+  border-color: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-radio:hover input:not(:checked):not([disabled]) ~ label {
+  color: var(--scl-color-primary-hover, #f90984);
+}
+.input--type-radio input:active {
+  border: var(--scl-spacing-8) solid var(--scl-color-primary-active);
+}
+.input--type-radio input:not(:checked):not([disabled]):active ~ label {
+  color: var(--scl-color-primary-active);
+}
+.input--type-radio input:disabled {
+  border: var(--scl-spacing-1) solid var(--scl-color-background-disabled);
+}
+.input--type-radio input:disabled ~ label {
+  color: var(--scl-color-grey-30);
+}
+.input--type-radio.input--status-error input {
+  border: var(--scl-spacing-2) solid var(--scl-color-background-error);
+}
+.input--type-radio input:checked {
+  border: calc(0.5 * var(--scl-spacing-12)) solid var(--scl-color-primary);
+}
+.input--type-radio input:checked:active {
+  border: calc(0.5 * var(--scl-spacing-12)) solid
+    var(--scl-color-primary-active, #cb0068);
+}
+.input--type-radio input:checked:disabled {
+  background: var(--scl-color-grey-30);
+  border: calc(0.5 * var(--scl-spacing-12)) solid
+    var(--scl-color-background-disabled);
+}
+.input--type-radio input:checked:disabled ~ label {
+  color: var(--scl-color-grey-30);
+}
+.input__textarea-label-safety-background {
+  top: var(--scl-spacing-2);
+  left: var(--scl-spacing-2);
+  right: var(--scl-spacing-2);
+  position: absolute;
+  pointer-events: none;
+  border-radius: var(--scl-radius-4);
+  height: var(--scl-spacing-24);
+  background-color: var(--scl-color-background-standard, #ffffff);
+}
+.input--disabled .input__textarea-label-safety-background {
+  background-color: transparent;
+}
+.input--disabled label,
+.input--disabled .input__label,
+.input--disabled input,
+.input--disabled .input__input,
+.input--disabled .input__checkbox-container,
+.input--disabled .input__radio,
+.input--disabled .input__select,
+.input--disabled .input__textarea,
+.input--disabled .input__helper-text {
+  cursor: not-allowed;
+  border-color: var(--scl-color-background-disabled);
+  color: var(--scl-color-background-disabled);
+  background: var(--scl-color-white);
+}
+/* TODO this could removed once scale-icon is removed */
+.input--disabled .input__select-wrapper {
+  --icon-color: var(--scl-color-background-disabled);
+}
+.input--disabled.animated label.input__label {
+  color: var(--scl-color-background-disabled);
+}

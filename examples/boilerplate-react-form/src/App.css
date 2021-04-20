@@ -1,0 +1,16 @@
+:root {}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'TeleNeo-Regular', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 4rem;
+}
+
+hr {
+  margin: 3rem 0;
+}

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should match snapshot 1`] = `
+<scale-slider>
+  <mock:shadow-root>
+    <div class="slider" part="slider">
+      <div class="slider__track-wrapper" part="track-wrapper">
+        <div class="slider__track" part="track">
+          <div class="slider__bar" part="bar" style="width: undefined%;"></div>
+          <div class="slider__thumb-wrapper" part="thumb-wrapper" style="left: undefined%;">
+            <div aria-labelledby="slider-0-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuetext="undefined%" class="slider__thumb" id="slider-0" part="thumb" role="slider" tabindex="0"></div>
+          </div>
+        </div>
+        <div class="slider__display-value" part="display-value">
+          %
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-slider>
+`;
+
+exports[`Slider should match snapshot 2`] = `
+<scale-slider value="10">
+  <mock:shadow-root>
+    <div class="slider" part="slider">
+      <div class="slider__track-wrapper" part="track-wrapper">
+        <div class="slider__track" part="track">
+          <div class="slider__bar" part="bar" style="width: 10%;"></div>
+          <div class="slider__thumb-wrapper" part="thumb-wrapper" style="left: 10%;">
+            <div aria-labelledby="slider-1-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" aria-valuetext="10%" class="slider__thumb" id="slider-1" part="thumb" role="slider" tabindex="0"></div>
+          </div>
+        </div>
+        <div class="slider__display-value" part="display-value">
+          10%
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-slider>
+`;
