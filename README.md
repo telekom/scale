@@ -1,4 +1,4 @@
-![Scale](assets/Scale%20-%20The%20Telekom%20Digital%20Design%20System.png)
+![Scale](https://raw.githubusercontent.com/telekom/scale/main/assets/Scale%20-%20The%20Telekom%20Digital%20Design%20System.png)
 
 Scale is the Telekom Digital Design System for products and experiences. Scale is built by default for complying with the Telekom corporate brand and Telekom corporate design but allows for easy customization to represent your brand. It helps you build your online products faster and create superior experiences with ease. With production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
 
