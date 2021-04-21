@@ -238,3 +238,6 @@ In order to satisfy the `CI` pipeline it is advised to run some scripts before p
 - Add the test for the new component - take a previous test as an example
 - Run the tests, check if the new snapshot looks as expected
 - Check in the new snapshot image to git
+
+---
+Find [Telekom Scale on GitHub](https://github.com/telekom/scale).

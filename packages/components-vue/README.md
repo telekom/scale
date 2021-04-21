@@ -55,3 +55,6 @@ In order to prevent collisions with standard events and compatibility with other
 some components of `Scale` are using custom event names. You can find documentation for the custom events on the respective component pages in the `docs` section.
 
 Events in Vue are prefixed with: `scale-{event-name}`
+
+---
+Find [Telekom Scale on GitHub](https://github.com/telekom/scale).
