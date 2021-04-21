@@ -1,15 +1,6 @@
-Although the code for Scale is free and available under the MPL-2.0 License, 
-it is very important to understand that the code for Scale is built in Deutsche Telekom's 
-corporate brand and Deutsche Telekom's corporate design. For keeping the exclusivity 
-of the Telekom brand and design and to protect our users against confusion about 
-the origin of a digital product or experience, there are tight restrictions on 
-your or your clients ability to use the Deutsche Telekom rights which fall in the 
-domain of its corporate brand or corporate design, even when built into binaries 
-that we provide. For any customization other than for Deutsche Telekom you must 
-replace the Deutsche Telekom default theme.
+Although the code for Scale is free and available under the MPL 2.0 license, Deutsche Telekom fully reserves all rights to the Telekom brand. To prevent users from getting confused about the source of a digital product or experience, there are strict restrictions on using the Telekom brand and design, even when built into code that we provide. For any customization other than explicitly for the Telekom, you must replace the Deutsche Telekom default theme.
 
-To use Scale as Open Source Software, by customizing it with a neutral theme, 
-please follow the instructions for our Open Source Version in README.md.
+To use Scale as open source software and customize it with a neutral theme, please follow the instructions for our open source version in README.md.
 
 
 Mozilla Public License Version 2.0
