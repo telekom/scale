@@ -57,9 +57,9 @@ applyPolyfills().then(() => {
 | Package Name                | Description                   |
 | --------------------------- | ----------------------------- |
 | @telekom/scale-components-neutral         | Stencil components            |
-| @telekom/scale-components-neutral-react   | Component proxies for React   |
-| @telekom/scale-components-neutral-vue     | Component proxies for Vue     |
-| @telekom/scale-components-neutral-angular | Component proxies for Angular | 
+| @telekom/scale-components-react-neutral   | Component proxies for React   |
+| @telekom/scale-components-vue-neutral     | Component proxies for Vue     |
+| @telekom/scale-components-angular-neutral | Component proxies for Angular | 
 | @telekom/scale-design-tokens-neutral      | Design tokens                 |
 
 ### Using the source code directly
