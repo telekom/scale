@@ -1,33 +1,32 @@
 ![Scale](https://raw.githubusercontent.com/telekom/scale/main/assets/Scale%20-%20The%20Telekom%20Digital%20Design%20System.png)
 
-Scale is the Telekom Digital Design System for products and experiences. Scale is built by default for complying with the Telekom corporate brand and Telekom corporate design but allows for easy customization to represent your brand. It helps you build your online products faster and create superior experiences with ease. With production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
+Scale is the digital design system for Telekom products and experiences. By default, Scale is built to align with our corporate brand and design but allows for easy customization to fit your particular product. It helps you build your digital products faster and create superior experiences with ease. With production-ready components for code and design, a central library, and comprehensive documentation, Scale has everything you need. Currently, Scale is an open beta.
 
-The Scale UI components are customizable and written in TypeScript. You must replace the Telekom default theme if you want to represent the corporate identity of a dedicated brand (see detailed instructions below).
+Scale components are customizable and written in TypeScript. If you want to represent the corporate identity of a separate brand, you need to replace the Telekom default theme (see detailed instructions below).
 
 ![Scale badge](https://img.shields.io/badge/telekom-scale-%23e20074.svg) [![License: MPL-2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](./LICENSE) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/telekom/scale.svg?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/telekom/scale.svg?style=flat-square)
 
 
 # Welcome to Scale
 
-Access the [comprehensive documentation of Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
+Access the [comprehensive documentation for Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
 
 
-# Customization of Brand and Design (Trademarks) & Usage as Open Source Software
+# Customization of brand and design (trademarks) & usage as open source software
 
-Although the code for Scale is free and available under the MPL-2.0 License, it is very important to understand that the code for Scale is built in Deutsche Telekom's corporate brand and Deutsche Telekom's corporate design. For keeping the exclusivity of the Telekom brand and design and to protect our users against confusion about the origin of a digital product or experience, there are tight restrictions on your or your clients ability to use the Deutsche Telekom rights which fall in the domain of its corporate brand or corporate design, even when built into binaries that we provide. For any customization other than for Deutsche Telekom you must replace the Deutsche Telekom default theme.
+Although the code for Scale is free and available under the MPL-2.0 license, it is very important to understand that the code for Scale is built in Deutsche Telekom's corporate brand and Deutsche Telekom's corporate design. For keeping the exclusivity of the Telekom brand and design and to protect our users against confusion about the origin of a digital product or experience, there are tight restrictions on your or your clients ability to use the Deutsche Telekom rights which fall in the domain of its corporate brand or corporate design, even when built into binaries that we provide. For any customization other than for Deutsche Telekom you must replace the Deutsche Telekom default theme.
 
-To use Scale as Open Source Software, by customizing it with a neutral theme, please follow the instructions for our [Open Source Version](#open-source-version).
+To use Scale as open source software, by customizing it with a neutral theme, please follow the instructions for our [open source version](#open-source-version).
 
 
-## Open Source Version
+## Open source version
 
 By following the instructions for the Open Source Version you obtain source code/packages that use a neutral theme and are fully covered by the MPL-2.0 License.
-
 
 ### Setup with NPM
 
 ```
-npm install @telekom/scale-components
+npm install @telekom/scale-components-neutral
 ```
 
 To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and design tokens.
@@ -36,16 +35,16 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ### Setup with plain HTML
 
 ```html
-<link rel="stylesheet" href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css">
-<script type="module" src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.js"></script>
+<link rel="stylesheet" href="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css">
+<script type="module" src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.js"></script>
 ```
 
 
 ### Setup with a bundler or ES modules
 
 ```javascript
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+import "@telekom/scale-components-neutral/dist/scale-components/scale-components.css";
+import { applyPolyfills, defineCustomElements } from "@telekom/scale-components-neutral/loader";
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
@@ -57,15 +56,15 @@ applyPolyfills().then(() => {
 
 | Package Name                | Description                   |
 | --------------------------- | ----------------------------- |
-| @telekom/scale-components         | Stencil components            |
-| @telekom/scale-components-react   | Component proxies for React   |
-| @telekom/scale-components-vue     | Component proxies for Vue     |
-| @telekom/scale-components-angular | Component proxies for Angular | 
-| @telekom/scale-design-tokens      | Design tokens                 |
+| @telekom/scale-components-neutral         | Stencil components            |
+| @telekom/scale-components-react-neutral   | Component proxies for React   |
+| @telekom/scale-components-vue-neutral     | Component proxies for Vue     |
+| @telekom/scale-components-angular-neutral | Component proxies for Angular | 
+| @telekom/scale-design-tokens-neutral      | Design tokens                 |
 
 ### Using the source code directly
 
-If you want to use the source code, remove the following folders. These folders contain all the protected brand and design assets of Telekom and are **not** available under the MPL-2.0 License:
+If you want to use the source code, remove the following folders. These folders contain all the protected brand and design assets of Telekom and are not available under the MPL-2.0 License:
 
 | Folder                                     | Content                       |
 | ------------------------------------------ | ----------------------------- |
@@ -79,8 +78,7 @@ If you want to use the source code, remove the following folders. These folders 
 
 ## Telekom Version
 
-Please note that the use of the Telekom brand and design assets, including but not limited to the logos, the colour magenta, the typeface and icons as well as the footer and header components are **not** available for free use and require Deutsche Telekom's authorization for use in commerce. 
-
+Please note that the use of the Telekom brand and design assets – including but not limited to the logos, the color Magenta, the typeface and icons, as well as the footer and header components – are not available for free use and require Deutsche Telekom's express permission for use in commerce.
 
 ### Setup with NPM
 
@@ -139,7 +137,7 @@ Simply clone/download this repository and use the source code as-is.
 | generator-sketch   | Sketch generator                                           |
 | html-to-sketch     | Component template Sketch conversion utilities             |
 | storybook-vue      | Our Storybook                                              |
-| visual-tests       | Visual Snapshot Testing                                    |
+| visual-tests       | Visual snapshot testing                                    |
 
 
 # Contributing
