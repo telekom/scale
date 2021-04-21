@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-components",
   "version": "3.0.0-beta.2",
-  "description": "Scale Components Telekom",
+  "description": "Scale is the Telekom Digital Design System for products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
     "type" : "git",
