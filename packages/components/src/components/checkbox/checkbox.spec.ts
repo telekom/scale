@@ -57,4 +57,13 @@ describe('Checkbox', () => {
     element.status = 'error';
     expect(element.getCssClassMap()).toContain('checkbox--status-error');
   });
+
+  it('should emit on change', async () => {
+    const changeSpy = jest.fn();
+    page.doc.addEventListener('scaleChange', changeSpy);
+    const buttonElement = page.root.querySelector('input');
+    buttonElement.dispatchEvent(new Event('change'));
+    await page.waitForChanges();
+    expect(changeSpy).toHaveBeenCalled();
+  });
 });
