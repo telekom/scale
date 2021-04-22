@@ -66,4 +66,16 @@ describe('Checkbox', () => {
     await page.waitForChanges();
     expect(changeSpy).toHaveBeenCalled();
   });
+
+  it('should handle inputId with value null', async () => {
+    page = await newSpecPage({
+      components: [Checkbox],
+      html: `
+        <scale-checkbox 
+         input-id
+         >
+        </scale-checkbox>`,
+    });
+    expect(page.rootInstance.inputId).toBe('');
+  });
 });
