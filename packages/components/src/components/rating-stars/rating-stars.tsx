@@ -183,7 +183,7 @@ export class RatingStars {
             innerHTML={this.getAriaLabel()}
             hidden
           ></span>
-          <span class="rating__symbols">
+          <span class="rating__symbols" aria-hidden="true">
             {counter.map(index => (
               <span
                 class="rating__symbol__wrapper"
@@ -209,7 +209,10 @@ export class RatingStars {
               </span>
             ))}
           </span>
-          <span class="rating__symbols rating__symbols--indicator">
+          <span
+            class="rating__symbols rating__symbols--indicator"
+            aria-hidden="true"
+          >
             {counter.map(index => (
               <span
                 class="rating__symbol__wrapper"
