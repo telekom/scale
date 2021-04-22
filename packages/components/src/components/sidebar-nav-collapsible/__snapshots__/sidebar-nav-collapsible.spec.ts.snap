@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarNavCollapsible emitter exit handleKeydown if event metaKey 1`] = `
+<scale-sidebar-nav-collapsible>
+  <mock:shadow-root>
+    <li class="sidebar-nav-collapsible" part="sidebar-nav-collapsible" role="listitem">
+      <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
+        <a aria-expanded="false" class="sidebar-nav-collapsible__button" href="#" part="button" role="button">
+          <scale-icon-navigation-collapse-down class="sidebar-nav-collapsible__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        </a>
+      </div>
+      <ul class="sidebar-nav-collapsible__list" hidden="" part="list">
+        <slot></slot>
+      </ul>
+    </li>
+  </mock:shadow-root>
+</scale-sidebar-nav-collapsible>
+`;
+
+exports[`SidebarNavCollapsible snapshots smoke test 1`] = `
+<scale-sidebar-nav-collapsible>
+  <mock:shadow-root>
+    <li class="sidebar-nav-collapsible" part="sidebar-nav-collapsible" role="listitem">
+      <div class="sidebar-nav-collapsible__wrapper" part="wrapper">
+        <a aria-expanded="false" class="sidebar-nav-collapsible__button" href="#" part="button" role="button">
+          <scale-icon-navigation-collapse-down class="sidebar-nav-collapsible__icon" part="icon" size="16"></scale-icon-navigation-collapse-down>
+        </a>
+      </div>
+      <ul class="sidebar-nav-collapsible__list" hidden="" part="list">
+        <slot></slot>
+      </ul>
+    </li>
+  </mock:shadow-root>
+</scale-sidebar-nav-collapsible>
+`;
