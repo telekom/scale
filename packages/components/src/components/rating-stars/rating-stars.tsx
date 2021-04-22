@@ -173,9 +173,9 @@ export class RatingStars {
           tabIndex={this.disabled ? -1 : 0}
           role="figure"
           aria-describedby="rating__description"
-          aria-labelledby="rating__label"
+          aria-label={this.label}
         >
-          <label id="rating__label" class="rating__label">
+          <label class="rating__label" aria-hidden="true">
             {this.label}
           </label>
           <span
@@ -216,6 +216,7 @@ export class RatingStars {
                 onMouseEnter={this.handleMouseEnter}
               >
                 <span
+                  role="presentation"
                   style={{
                     clipPath:
                       displayValue > index + 1
