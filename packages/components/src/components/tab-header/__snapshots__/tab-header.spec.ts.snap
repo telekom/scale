@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabHeader should handle change of selected 1`] = `
+<scale-tab-header aria-selected="undefined" id="scale-tab-header-5" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <span class="tab-header" part="tab-header">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+</scale-tab-header>
+`;
+
+exports[`TabHeader should handle slot 1`] = `
+<scale-tab-header aria-selected="undefined" id="scale-tab-header-6" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <span class="tab-header" part="tab-header">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+  <h1></h1>
+  <h1></h1>
+</scale-tab-header>
+`;
+
+exports[`TabHeader should match snapshot 1`] = `
+<scale-tab-header aria-selected="undefined" id="scale-tab-header-0" role="tab" tabindex="-1">
+  <mock:shadow-root>
+    <span class="tab-header" part="tab-header">
+      <slot></slot>
+    </span>
+  </mock:shadow-root>
+</scale-tab-header>
+`;
