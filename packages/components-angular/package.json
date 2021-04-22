@@ -1,10 +1,15 @@
 {
   "name": "@telekom/scale-components-angular",
+  "version": "3.0.0-beta.2",
+  "description": "Angular specific wrapper for @telekom/scale-components",
+  "homepage": "https://github.com/telekom/scale",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/telekom/scale.git"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.0.0-beta.2",
-  "description": "Angular specific wrapper for @telekom/scale-components",
   "scripts": {
     "build": "yarn build.ng",
     "build.fesm": "rollup --config ./scripts/rollup.config.js",
