@@ -243,7 +243,8 @@ export class RatingStars {
       'rating',
       this.disabled && 'rating--disabled',
       this.isHovering && 'rating--hover',
-      this.small && 'rating--small'
+      this.small && 'rating--small',
+      this.label && 'label'
     );
   }
 }
