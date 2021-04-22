@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppFooter should match snapshot 1`] = `
+<scale-app-footer>
+  <mock:shadow-root>
+    <div class="footer--variant-standard footer-container">
+      <div class="footer-mask"></div>
+      <footer class="footer"><template></template>
+        <div class="footer-content">
+          <div class="footer-branding">
+            <app-logo claim=""></app-logo>
+          </div>
+          <div class="footer-copyright">
+            © Deutsche Telekom GmbH
+          </div>
+          <nav aria-label="bottom" class="footer-navigation">
+            <ul></ul>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </mock:shadow-root>
+</scale-app-footer>
+`;
