@@ -3,7 +3,11 @@
 exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
 <scale-rating-stars rating="0">
   <mock:shadow-root>
-    <div aria-label="0 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
+    <div aria-describedby="rating__description" aria-labelledby="rating__label" class="rating" id="rating" role="figure" tabindex="0">
+      <label class="rating__label" id="rating__label"></label>
+      <span hidden="" id="rating__description">
+        0 out of 5 stars
+      </span>
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation">
@@ -66,7 +70,11 @@ exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
 exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] = `
 <scale-rating-stars disabled="" rating="2">
   <mock:shadow-root>
-    <div aria-label="2 out of 5 stars" class="rating rating--disabled" id="rating" role="img" tabindex="-1">
+    <div aria-describedby="rating__description" aria-labelledby="rating__label" class="rating rating--disabled" id="rating" role="figure" tabindex="-1">
+      <label class="rating__label" id="rating__label"></label>
+      <span hidden="" id="rating__description">
+        2 out of 5 stars
+      </span>
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 200% 0 0);">
@@ -129,7 +137,11 @@ exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] =
 exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
 <scale-rating-stars rating="3">
   <mock:shadow-root>
-    <div aria-label="3 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
+    <div aria-describedby="rating__description" aria-labelledby="rating__label" class="rating" id="rating" role="figure" tabindex="0">
+      <label class="rating__label" id="rating__label"></label>
+      <span hidden="" id="rating__description">
+        3 out of 5 stars
+      </span>
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 300% 0 0);">
@@ -192,7 +204,11 @@ exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
 exports[`RatingStars snapshots rating 4 and small should match snapshot 1`] = `
 <scale-rating-stars rating="4" small="">
   <mock:shadow-root>
-    <div aria-label="4 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
+    <div aria-describedby="rating__description" aria-labelledby="rating__label" class="rating rating--small" id="rating" role="figure" tabindex="0">
+      <label class="rating__label" id="rating__label"></label>
+      <span hidden="" id="rating__description">
+        4 out of 5 stars
+      </span>
       <span class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 400% 0 0);">

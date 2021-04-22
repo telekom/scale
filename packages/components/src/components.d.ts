@@ -4991,13 +4991,41 @@ export namespace Components {
         "value"?: string | number | null;
     }
     interface ScaleRatingStars {
+        /**
+          * (optional) ariaTranslation
+         */
         "ariaTranslation": string;
+        /**
+          * (optional) disabled
+         */
         "disabled": boolean;
+        /**
+          * (optional) hoverValue
+         */
         "hoverValue": number;
+        /**
+          * (optional) isHovering
+         */
         "isHovering": boolean;
+        /**
+          * (optional) slider label
+         */
+        "label"?: string;
+        /**
+          * (optional) numOfStars
+         */
         "numOfStars": number;
+        /**
+          * (optional) precision
+         */
         "precision": number;
+        /**
+          * (optional) rating
+         */
         "rating": number;
+        /**
+          * (optional) small
+         */
         "small": boolean;
     }
     interface ScaleSidebarNav {
@@ -12123,13 +12151,41 @@ declare namespace LocalJSX {
         "value"?: string | number | null;
     }
     interface ScaleRatingStars {
+        /**
+          * (optional) ariaTranslation
+         */
         "ariaTranslation"?: string;
+        /**
+          * (optional) disabled
+         */
         "disabled"?: boolean;
+        /**
+          * (optional) hoverValue
+         */
         "hoverValue"?: number;
+        /**
+          * (optional) isHovering
+         */
         "isHovering"?: boolean;
+        /**
+          * (optional) slider label
+         */
+        "label"?: string;
+        /**
+          * (optional) numOfStars
+         */
         "numOfStars"?: number;
+        /**
+          * (optional) precision
+         */
         "precision"?: number;
+        /**
+          * (optional) rating
+         */
         "rating"?: number;
+        /**
+          * (optional) small
+         */
         "small"?: boolean;
     }
     interface ScaleSidebarNav {

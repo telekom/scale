@@ -21,16 +21,27 @@ import statusNote from '../../utils/status-note';
 })
 export class RatingStars {
   element: HTMLElement;
+
   @Element() hostElement: HTMLElement;
+  /** (optional) hoverValue  */
   @Prop({ mutable: true }) hoverValue = 0;
+  /** (optional) isHovering  */
   @Prop({ mutable: true }) isHovering = false;
+  /** (optional) numOfStars  */
   @Prop({ mutable: true }) numOfStars = 5;
+  /** (optional) rating  */
   @Prop({ mutable: true }) rating = 0;
+  /** (optional) small  */
   @Prop({ mutable: true }) small = false;
+  /** (optional) disabled  */
   @Prop({ mutable: true }) disabled = false;
+  /** (optional) ariaTranslation  */
   @Prop({ mutable: true })
   ariaTranslation = `${this.rating} out of ${this.numOfStars} stars`;
+  /** (optional) precision  */
   @Prop() precision = 1;
+  /** (optional) slider label */
+  @Prop() label?: string;
 
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
@@ -146,12 +157,8 @@ export class RatingStars {
 
   render() {
     const counter = Array.from(Array(this.numOfStars).keys());
-    let displayValue = 0;
-    if (this.disabled) {
-      displayValue = this.rating;
-    } else {
-      displayValue = this.isHovering ? this.hoverValue : this.rating;
-    }
+    const displayValue = this.isHovering ? this.hoverValue : this.rating;
+
     return (
       <Host>
         <div
@@ -164,9 +171,18 @@ export class RatingStars {
           onClick={this.handleMouseClick}
           onKeyDown={this.handleKeyDown}
           tabIndex={this.disabled ? -1 : 0}
-          role="img"
-          aria-label={this.getAriaLabel()}
+          role="figure"
+          aria-describedby="rating__description"
+          aria-labelledby="rating__label"
         >
+          <label id="rating__label" class="rating__label">
+            {this.label}
+          </label>
+          <span
+            id="rating__description"
+            innerHTML={this.getAriaLabel()}
+            hidden
+          ></span>
           <span class="rating__symbols">
             {counter.map(index => (
               <span
@@ -225,7 +241,8 @@ export class RatingStars {
     return classNames(
       'rating',
       this.disabled && 'rating--disabled',
-      this.isHovering && 'rating--hover'
+      this.isHovering && 'rating--hover',
+      this.small && 'rating--small'
     );
   }
 }
