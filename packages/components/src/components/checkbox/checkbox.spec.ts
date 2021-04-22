@@ -61,8 +61,8 @@ describe('Checkbox', () => {
   it('should emit on change', async () => {
     const changeSpy = jest.fn();
     page.doc.addEventListener('scaleChange', changeSpy);
-    const buttonElement = page.root.querySelector('input');
-    buttonElement.dispatchEvent(new Event('change'));
+    const element = page.root.querySelector('input');
+    element.dispatchEvent(new Event('change'));
     await page.waitForChanges();
     expect(changeSpy).toHaveBeenCalled();
   });
