@@ -19,33 +19,29 @@ export function clamp(value: number, min: number, max: number) {
   return value;
 }
 
+export const addListener = (key: string, element: HTMLElement) => {
+  return element.addEventListener(key, (event: KeyboardEvent) =>
+    handleClassOnFocus(event, element, 'add')
+  );
+};
+
+export const removeListener = (key: string, element: HTMLElement) => {
+  return element.addEventListener(key, (event: KeyboardEvent) =>
+    handleClassOnFocus(event, element, 'remove')
+  );
+};
+
 export function handleListeners(element: HTMLElement, handleListener: string) {
   if (handleListener === 'addListeners') {
-    element.addEventListener('keydown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.addEventListener('keyup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.addEventListener('mousedown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
-    element.addEventListener('mouseup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
+    addListener('keydown', element);
+    addListener('keyup', element);
+    addListener('mousedown', element);
+    addListener('mouseup', element);
   } else if (handleListener === 'removeListeners') {
-    element.removeEventListener('keydown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.removeEventListener('keyup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.removeEventListener('mousedown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
-    element.removeEventListener('mouseup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
+    removeListener('keydown', element);
+    removeListener('keyup', element);
+    removeListener('mousedown', element);
+    removeListener('mouseup', element);
   }
 }
 
