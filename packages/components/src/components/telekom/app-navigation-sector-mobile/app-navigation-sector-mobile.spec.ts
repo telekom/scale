@@ -31,11 +31,34 @@ describe('NavigationSectorMobile', () => {
   it('should match snapshot', async () => {
     expect(page.root).toMatchSnapshot();
   });
-  it('should handle menuitem', async () => {
+  it('should handle menuItem', async () => {
     const navigation: MenuItem[] = [nav];
     page.root.navigation = navigation;
     page.root.activeSectorId = nav.children[0].id;
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
+  });
+  it('should handle menuItem w/o children', async () => {
+    const { children, ...navWoChildren } = nav;
+    const navigation: MenuItem[] = [navWoChildren];
+    page.root.navigation = navigation;
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should handle on keydown esc', async () => {
+    page.root.navigation = [nav];
+    page.root.hide = jest.fn();
+    await page.waitForChanges();
+    const anchor = page.root.querySelector('a');
+    anchor.dispatchEvent(
+      new KeyboardEvent('keydown', {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+        key: 'Escape',
+      })
+    );
+    await page.waitForChanges();
+    expect(page.root.hide).toHaveBeenCalled();
   });
 });
