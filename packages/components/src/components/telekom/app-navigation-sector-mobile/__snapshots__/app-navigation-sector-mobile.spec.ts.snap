@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationSectorMobile should handle menuItem 1`] = `
+<app-navigation-sector-mobile>
+  <ul class="sector-navigation-mobile">
+    <li class="sector-navigation-mobile__item">
+      <a aria-current="true" class="sector-navigation-mobile__item-link sector-navigation-mobile__item-link--selected" href="#">
+        nav1
+        <span class="sr-only">
+          active
+        </span>
+      </a>
+    </li>
+  </ul>
+</app-navigation-sector-mobile>
+`;
+
+exports[`NavigationSectorMobile should handle menuItem w/o children 1`] = `
+<app-navigation-sector-mobile>
+  <ul class="sector-navigation-mobile">
+    <li class="sector-navigation-mobile__item">
+      <a aria-current="false" class="sector-navigation-mobile__item-link" href="#">
+        nav1
+      </a>
+    </li>
+  </ul>
+</app-navigation-sector-mobile>
+`;
+
+exports[`NavigationSectorMobile should match snapshot 1`] = `
+<app-navigation-sector-mobile>
+  <ul class="sector-navigation-mobile"></ul>
+</app-navigation-sector-mobile>
+`;
