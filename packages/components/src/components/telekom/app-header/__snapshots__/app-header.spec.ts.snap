@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-Header snapshots hasSlots 1`] = `
+<scale-app-header>
+  <!---->
+  <header class="header">
+    <div class="header__brand">
+      <span class="header__brand-before"></span>
+      <span class="header__brand-after"></span>
+      <div class="header__brand-content">
+        <div class="header__brand-branding">
+          <div slot="logo"></div>
+        </div>
+        <div class="header__brand-sector">
+          <ul class="sector-navigation">
+            <div slot="menu-sector"></div>
+          </ul>
+        </div>
+        <div class="header__brand-meta">
+          <ul class="addon-navigation">
+            <div slot="menu-addon"></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="top" class="header__nav">
+      <span class="header__nav-before"></span>
+      <span class="header__nav-after"></span>
+      <div class="header__nav-content">
+        <div class="header__nav-logo">
+          <app-logo color="#e20074"></app-logo>
+        </div>
+        <div class="header__nav-menu-wrapper">
+          <div class="header__nav-menu-main">
+            <ul class="main-navigation">
+              <div slot="menu-main"></div>
+            </ul>
+          </div>
+          <div class="header__nav-menu-icon">
+            <ul class="meta-navigation">
+              <div slot="menu-icon"></div>
+              <scale-nav-icon icon="action-menu">
+                Menu
+              </scale-nav-icon>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav aria-label="main" class="header__nav__mobile-menu">
+      <div slot="menu-mobile"></div>
+    </nav>
+  </header>
+</scale-app-header>
+`;
+
+exports[`app-Header snapshots smoke test 1`] = `
+<scale-app-header>
+  <!---->
+  <header class="header">
+    <div class="header__brand">
+      <span class="header__brand-before"></span>
+      <span class="header__brand-after"></span>
+      <div class="header__brand-content">
+        <div class="header__brand-branding">
+          <app-logo claim=""></app-logo>
+        </div>
+        <div class="header__brand-sector">
+          <ul class="sector-navigation"></ul>
+        </div>
+        <div class="header__brand-meta">
+          <ul class="addon-navigation"></ul>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="top" class="header__nav">
+      <span class="header__nav-before"></span>
+      <span class="header__nav-after"></span>
+      <div class="header__nav-content">
+        <div class="header__nav-logo">
+          <app-logo color="#e20074"></app-logo>
+        </div>
+        <div class="header__nav-menu-wrapper">
+          <div class="header__nav-menu-main">
+            <ul class="main-navigation"></ul>
+          </div>
+          <div class="header__nav-menu-icon">
+            <ul class="meta-navigation"></ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav aria-label="main" class="header__nav__mobile-menu">
+      <div>
+        <app-navigation-sector-mobile></app-navigation-sector-mobile>
+        <app-navigation-main-mobile></app-navigation-main-mobile>
+      </div>
+    </nav>
+  </header>
+</scale-app-header>
+`;
