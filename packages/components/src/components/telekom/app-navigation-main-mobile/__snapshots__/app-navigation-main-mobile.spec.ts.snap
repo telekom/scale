@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppNavigationMainMobile should handle menuitem 1`] = `
+<app-navigation-main-mobile>
+  <div class="main-navigation-mobile">
+    <div class="main-navigation-mobile__child-menu">
+      <a class="main-navigation-mobile__child-menu-current" href="#" tabindex="0">
+        <div class="main-navigation-mobile__child-menu-current-item">
+          <div class="main-navigation-mobile__child-menu-current-wrapper">
+            <scale-icon-navigation-left></scale-icon-navigation-left>
+            <div>
+              nav1
+            </div>
+          </div>
+        </div>
+      </a>
+      <ul class="main-navigation-mobile__child-menu-items">
+        <a aria-current="true" aria-haspopup="false" class="main-navigation-mobile__child-menu-item-link selected" href="#" tabindex="0">
+          <li class="main-navigation-mobile__child-menu-item">
+            <div class="main-navigation-mobile__child-menu-item-wrapper">
+              <span>
+                menuItem1-1
+              </span>
+              <span class="sr-only">
+                active
+              </span>
+            </div>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <ul class="main-navigation-mobile__main-menu">
+      <a aria-current="true" aria-haspopup="true" class="main-navigation-mobile__item-link main-navigation-mobile__item-link--selected" href="#" tabindex="-1">
+        <li class="main-navigation-mobile__item">
+          <div class="main-navigation-mobile__item-wrapper">
+            <span>
+              nav1
+            </span>
+            <span class="sr-only">
+              active
+            </span>
+            <scale-icon-navigation-right></scale-icon-navigation-right>
+          </div>
+        </li>
+      </a>
+    </ul>
+  </div>
+</app-navigation-main-mobile>
+`;
+
+exports[`AppNavigationMainMobile should handle without childs 1`] = `
+<app-navigation-main-mobile>
+  <div class="main-navigation-mobile">
+    <div></div>
+    <ul class="main-navigation-mobile__main-menu">
+      <a aria-current="false" aria-haspopup="false" class="main-navigation-mobile__item-link" href="#" tabindex="0">
+        <li class="main-navigation-mobile__item">
+          <div class="main-navigation-mobile__item-wrapper">
+            <span>
+              nav1
+            </span>
+          </div>
+        </li>
+      </a>
+    </ul>
+  </div>
+</app-navigation-main-mobile>
+`;
+
+exports[`AppNavigationMainMobile should match snapshot 1`] = `
+<app-navigation-main-mobile>
+  <div class="main-navigation-mobile">
+    <div></div>
+    <ul class="main-navigation-mobile__main-menu"></ul>
+  </div>
+</app-navigation-main-mobile>
+`;
