@@ -247,7 +247,7 @@ export class RatingStars {
       this.disabled && 'rating--disabled',
       this.isHovering && 'rating--hover',
       this.small && 'rating--small',
-      this.label && 'label'
+      this.label && 'rating--has-label'
     );
   }
 }

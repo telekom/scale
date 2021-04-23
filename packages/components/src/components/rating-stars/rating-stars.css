@@ -31,7 +31,7 @@
   display: inline-flex;
 }
 
-.rating.label {
+.rating--has-label {
   margin-top: var(--scl-spacing-24, 1.5rem);
 }
 
