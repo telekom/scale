@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MegaMenu snapshots MenuItem w/o children 1`] = `
+<app-mega-menu>
+  <!---->
+  <div class="mega-menu">
+    <div class="mega-menu__wrapper">
+      <ul class="mega-menu__container">
+        <li class="mega-menu__row">
+          <div class="mega-menu__row-title">
+            nav1
+          </div>
+          <ul></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</app-mega-menu>
+`;
+
+exports[`MegaMenu snapshots MenuItem with children 1`] = `
+<app-mega-menu>
+  <!---->
+  <div class="mega-menu">
+    <div class="mega-menu__wrapper">
+      <ul class="mega-menu__container">
+        <li class="mega-menu__row">
+          <div class="mega-menu__row-title">
+            nav1
+          </div>
+          <ul>
+            <li>
+              <a aria-current="true" class="active mega-menu__row-item" href="#" tabindex="-1">
+                <span>
+                  menuItem1-1
+                </span>
+                <span class="sr-only">
+                  active
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</app-mega-menu>
+`;
+
+exports[`MegaMenu snapshots hasSlots 1`] = `
+<app-mega-menu>
+  <!---->
+  <div class="mega-menu">
+    <div class="mega-menu__wrapper">
+      <div slot="custom-body"></div>
+    </div>
+  </div>
+</app-mega-menu>
+`;
+
+exports[`MegaMenu snapshots smoke test 1`] = `
+<app-mega-menu>
+  <!---->
+  <div class="mega-menu">
+    <div class="mega-menu__wrapper">
+      <ul class="mega-menu__container"></ul>
+    </div>
+  </div>
+</app-mega-menu>
+`;
