@@ -49,6 +49,6 @@ describe('AppLogo', () => {
     window.scrollTo = jest.fn();
     await element.dispatchEvent(new Event('focus'));
     await page.waitForChanges();
-    expect(window.scrollTo).toBeCalledWith({ top: 0 });
+    expect(window.scrollTo).toBeCalled();
   });
 });
