@@ -11,6 +11,12 @@
   "command": {
     "version": {
       "allowBranch": "main"
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "allowBranch": "release",
+      "access": "public"
     }
   }
 }
