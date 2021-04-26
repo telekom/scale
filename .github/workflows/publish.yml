@@ -1,0 +1,136 @@
+name: publish to NPM
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  publish-telekom:
+    runs-on: ubuntu-latest
+    environment: RELEASE
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name '@telekom'
+          git config --global user.email 'telekom@users.noreply.github.com'
+
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          touch .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
+      - name: Generate files
+        run: |
+          lerna run generate
+
+      - name: Build Components
+        run: |
+          yarn workspace @telekom/scale-components build
+
+      - name: Build Angular Proxy
+        run: |
+          yarn workspace @telekom/scale-components-angular build
+
+      - name: Build React Proxy
+        run: |
+          yarn workspace @telekom/scale-components-react build
+
+      - name: Build Vue Proxy
+        run: |
+          yarn workspace @telekom/scale-components-vue build
+
+      - name: Publish to NPM
+        run: |
+          yarn publish-telekom
+
+  publish-neutral:
+    runs-on: ubuntu-latest
+    environment: RELEASE
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name '@telekom'
+          git config --global user.email 'telekom@users.noreply.github.com'
+
+      - name: Authenticate with Registry
+        run: |
+          yarn logout
+          touch .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          WHITELABEL=1 yarn bootstrap
+
+      - name: Generate files
+        run: |
+          WHITELABEL=1 lerna run generate
+
+      - name: Build Components
+        run: |
+          WHITELABEL=1 yarn workspace @telekom/scale-components build
+
+      - name: Prepare neutral packages
+        run: |
+          yarn prepare-neutral
+
+      - name: Build Angular Proxy
+        run: |
+          yarn workspace @telekom/scale-components-angular-neutral build
+
+      - name: Build React Proxy
+        run: |
+          yarn workspace @telekom/scale-components-react-neutral build
+
+      - name: Build Vue Proxy
+        run: |
+          yarn workspace @telekom/scale-components-vue-neutral build
+
+      - name: Publish to NPM
+        run: |
+          yarn publish-neutral
