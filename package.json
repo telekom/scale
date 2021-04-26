@@ -15,7 +15,7 @@
     "postbootstrap": "lerna run generate",
     "new-version": "lerna version --conventional-commits --no-push",
     "force-version": "lerna version --conventional-commits --force-publish --no-push",
-    "format": "lerna run format --since master"
+    "format": "lerna run format --since main"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
