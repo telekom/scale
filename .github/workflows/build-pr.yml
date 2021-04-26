@@ -124,6 +124,10 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components build
 
+      - name: Check for uncommitted changes
+        run: |
+          sh scripts/porcelain.sh
+
       - name: Build Storybook
         run: |
           yarn workspace @telekom/scale-storybook-vue build --quiet
