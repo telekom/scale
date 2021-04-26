@@ -80,56 +80,56 @@ describe('SidebarNavCollapsible', () => {
       await page.waitForChanges();
       expect(page.rootInstance.expanded).toBe(false);
     });
+  });
 
-    describe('functions', () => {
-      it('nestingLevelChanged turns bold to true', async () => {
-        const element = new SidebarNavCollapsible();
-        element.bold = false;
-        element.nestingLevelChanged(1);
-        expect(element.bold).toBe(true);
-      });
+  describe('functions', () => {
+    it('nestingLevelChanged turns bold to true', async () => {
+      const element = new SidebarNavCollapsible();
+      element.bold = false;
+      element.nestingLevelChanged(1);
+      expect(element.bold).toBe(true);
+    });
+  });
+
+  describe('has css classes -> getCssClassMap()', () => {
+    it('has class component', () => {
+      const element = new SidebarNavCollapsible();
+      expect(element.getCssClassMap()).toContain('sidebar-nav-collapsible');
     });
 
-    describe('has css classes -> getCssClassMap()', () => {
-      it('has class component', () => {
-        const element = new SidebarNavCollapsible();
-        expect(element.getCssClassMap()).toContain('sidebar-nav-collapsible');
-      });
-
-      it('has class sidebar-nav-collapsible--condensed', () => {
-        const element = new SidebarNavCollapsible();
-        element.condensed = true;
-        expect(element.getCssClassMap()).toContain(
-          'sidebar-nav-collapsible--condensed'
-        );
-      });
-
-      it('has class sidebar-nav-collapsible--active', () => {
-        const element = new SidebarNavCollapsible();
-        element.active = true;
-        expect(element.getCssClassMap()).toContain(
-          'sidebar-nav-collapsible--active'
-        );
-      });
+    it('has class sidebar-nav-collapsible--condensed', () => {
+      const element = new SidebarNavCollapsible();
+      element.condensed = true;
+      expect(element.getCssClassMap()).toContain(
+        'sidebar-nav-collapsible--condensed'
+      );
     });
 
-    describe('has css classes -> getBasePartMap()', () => {
-      it('has class component', () => {
-        const element = new SidebarNavCollapsible();
-        expect(element.getBasePartMap()).toContain('sidebar-nav-collapsible');
-      });
+    it('has class sidebar-nav-collapsible--active', () => {
+      const element = new SidebarNavCollapsible();
+      element.active = true;
+      expect(element.getCssClassMap()).toContain(
+        'sidebar-nav-collapsible--active'
+      );
+    });
+  });
 
-      it('has class sidebar-nav-collapsible--condensed', () => {
-        const element = new SidebarNavCollapsible();
-        element.condensed = true;
-        expect(element.getBasePartMap()).toContain('condensed');
-      });
+  describe('has css classes -> getBasePartMap()', () => {
+    it('has class component', () => {
+      const element = new SidebarNavCollapsible();
+      expect(element.getBasePartMap()).toContain('sidebar-nav-collapsible');
+    });
 
-      it('has class sidebar-nav-collapsible--active', () => {
-        const element = new SidebarNavCollapsible();
-        element.active = true;
-        expect(element.getBasePartMap()).toContain('active');
-      });
+    it('has class sidebar-nav-collapsible--condensed', () => {
+      const element = new SidebarNavCollapsible();
+      element.condensed = true;
+      expect(element.getBasePartMap()).toContain('condensed');
+    });
+
+    it('has class sidebar-nav-collapsible--active', () => {
+      const element = new SidebarNavCollapsible();
+      element.active = true;
+      expect(element.getBasePartMap()).toContain('active');
     });
   });
 });
