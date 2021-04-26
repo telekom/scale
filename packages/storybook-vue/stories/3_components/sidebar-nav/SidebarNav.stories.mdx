@@ -4,38 +4,38 @@ import ScaleSidebarNavCollapsible from './SidebarNavCollapsible.vue';
 import ScaleSidebarNavItem from './SidebarNavItem.vue';
 
 <Meta
-  title="Components/Sidebar Navigation"
+  title='Components/Sidebar Navigation'
   component={ScaleSidebarNav}
   subcomponents={{
     'scale-sidebar-nav-collapsible': ScaleSidebarNavCollapsible,
-    'scale-sidebar-nav-item': ScaleSidebarNavItem,
+    'scale-sidebar-nav-item': ScaleSidebarNavItem
   }}
   argTypes={{
     width: {
       control: {
         type: 'radio',
-        options: ['256px', '25rem', '100%'],
+        options: ['256px', '25rem', '100%']
       },
       defaultValue: '100%',
-      description: 'Example width for wrapper element',
+      description: 'Example width for wrapper element'
     },
     styles: {
-      control: { disable: true },
-    },
+      control: { disable: true }
+    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
   props: {
     width: { type: String },
-    ...ScaleSidebarNav.props,
+    ...ScaleSidebarNav.props
   },
   computed: {
     wrapperStyles() {
       return {
-        maxWidth: this.width,
-      };
-    },
+        maxWidth: this.width
+      }
+    }
   },
   template: `
     <div :style="wrapperStyles">
@@ -89,30 +89,23 @@ export const Template = (args, { argTypes }) => ({
         </scale-sidebar-nav-item>
       </scale-sidebar-nav>
     </div>
-  `,
-});
+  `
+})
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Sidebar Navigation</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Sidebar Navigation</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard" args={{ collapsibleLabel: 'Explore this topic' }}>
+  <Story name='Standard' args={{ collapsibleLabel: 'Explore this topic' }}>
     {Template.bind()}
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard" />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-sidebar-nav collapsible-label="Explore this topic">
@@ -207,7 +200,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Active on Level 1
 
 <Canvas withSource="none">
-  <Story name="Active on Level 1">
+  <Story name='Active on Level 1'>
     {{
       template: `
         <scale-sidebar-nav>
@@ -221,7 +214,7 @@ For Shadow Parts, please inspect the element's #shadow.
             <a href="#">Console</a>
           </scale-sidebar-nav-item>
         </scale-sidebar-nav>
-      `,
+      `
     }}
   </Story>
 </Canvas>
@@ -243,7 +236,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Active on Level 2
 
 <Canvas withSource="none">
-  <Story name="Active on Level 2">
+  <Story name='Active on Level 2'>
     {{
       template: `
         <scale-sidebar-nav>
@@ -262,7 +255,7 @@ For Shadow Parts, please inspect the element's #shadow.
             <a href="#">Console</a>
           </scale-sidebar-nav-item>
         </scale-sidebar-nav>
-      `,
+      `
     }}
   </Story>
 </Canvas>
@@ -289,22 +282,13 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Custom Media Query
 
 <Canvas withSource="none">
-  <Story
-    name="Custom Media Query"
-    args={{
-      collapsibleLabel: 'Menu',
-      collapsibleMediaQuery: '(max-width: 44em)',
-    }}
-  >
+  <Story name='Custom Media Query' args={{ collapsibleLabel: 'Menu', collapsibleMediaQuery: '(max-width: 44em)' }}>
     {Template.bind()}
   </Story>
 </Canvas>
 
 ```html
-<scale-sidebar-nav
-  collapsible-label="Menu"
-  collapsible-media-query="(max-width: 44em)"
->
+<scale-sidebar-nav collapsible-label="Menu" collapsible-media-query="(max-width: 44em)">
   <scale-sidebar-nav-item>
     <a href="#">Overview</a>
   </scale-sidebar-nav-item>

@@ -1,40 +1,34 @@
-import {
-  Meta,
-  Story,
-  ArgsTable,
-  Canvas,
-  Description,
-} from '@storybook/addon-docs/blocks';
-import ScaleButton from './ScaleButton.vue';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import ScaleButton from "./ScaleButton.vue";
 
 <Meta
-  title="Components/Button"
-  component={ScaleButton}
-  argTypes={{
-    variant: {
-      control: { type: 'select', options: ['primary', 'secondary', 'ghost'] },
-    },
-    type: {
-      control: { type: 'select', options: ['reset', 'submit', 'button'] },
-    },
-    label: {
-      defaultValue: 'Label',
-      control: { type: 'text' },
-    },
-    disabled: {
-      control: { type: 'boolean' },
-    },
-  }}
+    title='Components/Button'
+    component={ScaleButton}
+    argTypes={{
+        variant: {
+            control: { type: 'select', options: ['primary', 'secondary', 'ghost'] }
+        },
+        type: {
+            control: { type: 'select', options: ['reset', 'submit', 'button'] }
+        },
+        label: {
+            defaultValue: 'Label',
+            control: { type: 'text' }
+        },
+        disabled: {
+            control: { type: 'boolean' }
+        }
+    }}
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleButton },
-  props: {
-    label: String,
-    icon: String,
-    ...ScaleButton.props,
-  },
-  template: `
+    components: { ScaleButton },
+    props: {
+        label: String,
+        icon: String,
+        ...ScaleButton.props
+    },
+    template: `
     <scale-button
       :title="title"
       :disabled="disabled"
@@ -55,35 +49,28 @@ export const Template = (args, { argTypes }) => ({
       <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
-  `,
-});
+  `
+})
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Button</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Button</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name="Standard"
-    args={{
-      label: 'Label',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Standard'
+        args={{
+            label: 'Label'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
-<ArgsTable story="Standard" />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-button>Label</scale-button>
@@ -97,9 +84,8 @@ export const Template = (args, { argTypes }) => ({
   --spacing-x-icon-only: var(--scl-spacing-8);
   --min-height: var(--scl-spacing-40);
   --radius: var(--scl-radius-8);
-  --transition: all var(--scl-motion-duration-fast) var(
-      --scl-motion-easing-standard
-    );
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
   --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --font-weight: var(--scl-font-weight-bold);
   --font-size: var(--scl-font-size-16);
@@ -137,14 +123,14 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Secondary
 
 <Canvas withSource="none">
-  <Story
-    name="Secondary"
-    args={{
-      variant: 'secondary',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Secondary'
+        args={{
+            variant: 'secondary'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -154,14 +140,14 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Disabled
 
 <Canvas withSource="none">
-  <Story
-    name="Disabled"
-    args={{
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Disabled'
+        args={{
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -171,15 +157,15 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Secondary Disabled
 
 <Canvas withSource="none">
-  <Story
-    name="Secondary Disabled"
-    args={{
-      variant: 'secondary',
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Secondary Disabled'
+        args={{
+            variant: 'secondary',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -189,31 +175,34 @@ For Shadow Parts, please inspect the element's #shadow.
 ## With Icon Before
 
 <Canvas withSource="none">
-  <Story
-    name="With Icon Before"
-    args={{
-      icon: 'before',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='With Icon Before'
+        args={{
+            icon: 'before'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
-<scale-button> <scale-icon-action-search /> Label </scale-button>
+<scale-button>
+  <scale-icon-action-search /> Label
+</scale-button>
 ```
+
 
 ## With Icon After
 
 <Canvas withSource="none">
-  <Story
-    name="With Icon After"
-    args={{
-      icon: 'after',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='With Icon After'
+        args={{
+            icon: 'after'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -222,41 +211,41 @@ For Shadow Parts, please inspect the element's #shadow.
 </scale-button>
 ```
 
+
 ## Icon Only
 
 <Canvas withSource="none">
-  <Story
-    name="Icon Only"
-    args={{
-      iconOnly: true,
-      title: 'Search',
-      ariaLabel: 'Search',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Icon Only'
+        args={{
+            iconOnly: true,
+            title: 'Search',
+            ariaLabel: 'Search'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
 <scale-button>
-  <scale-icon-navigation-external-link
-    accessibility-title="External link, opens in new tab"
-  />
+  <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" />
 </scale-button>
 ```
+
 
 ## Link
 
 <Canvas withSource="none">
-  <Story
-    name="Link"
-    args={{
-      href: 'https://example.com',
-      target: '_blank',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Link'
+        args={{
+            href: 'https://example.com',
+            target: '_blank'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -270,25 +259,21 @@ We recommend using an icon (visually) and an additional caption for screen reade
 If the icon is an `img` element, its `alt` attribute should be empty.
 
 <Canvas withSource="none">
-  <Story
-    name="External link"
-    args={{
-      href: 'https://example.com',
-      target: '_blank',
-      label: 'Label',
-      icon: 'external',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='External link'
+        args={{
+            href: 'https://example.com',
+            target: '_blank',
+            label: 'Label',
+            icon: 'external'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
-<scale-button
-  href="https://example.com"
-  target="_blank"
-  title="External link, opens in new tab"
->
+<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
   External link, opens in new tab
   <scale-icon-navigation-external-link size="24" />
 </scale-button>
@@ -297,16 +282,17 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small Standard
 
 <Canvas withSource="none">
-  <Story
-    name="Small Standard"
-    args={{
-      size: 'small',
-      label: 'Label',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Standard'
+        args={{
+            size: 'small',
+            label: 'Label'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
+
 
 ```html
 <scale-button size="small">Label</scale-button>
@@ -315,15 +301,15 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small Secondary
 
 <Canvas withSource="none">
-  <Story
-    name="Small Secondary"
-    args={{
-      size: 'small',
-      variant: 'secondary',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Secondary'
+        args={{
+            size: 'small',
+            variant: 'secondary'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -333,15 +319,15 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small Disabled
 
 <Canvas withSource="none">
-  <Story
-    name="Small Disabled"
-    args={{
-      size: 'small',
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Disabled'
+        args={{
+            size: 'small',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -351,16 +337,16 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small Secondary Disabled
 
 <Canvas withSource="none">
-  <Story
-    name="Small Secondary Disabled"
-    args={{
-      size: 'small',
-      variant: 'secondary',
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Secondary Disabled'
+        args={{
+            size: 'small',
+            variant: 'secondary',
+            disabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -370,15 +356,15 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small With Icon Before
 
 <Canvas withSource="none">
-  <Story
-    name="Small With Icon Before"
-    args={{
-      size: 'small',
-      icon: 'before',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small With Icon Before'
+        args={{
+            size: 'small',
+            icon: 'before'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -390,15 +376,15 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small With Icon After
 
 <Canvas withSource="none">
-  <Story
-    name="Small With Icon After"
-    args={{
-      size: 'small',
-      icon: 'after',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small With Icon After'
+        args={{
+            size: 'small',
+            icon: 'after'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
@@ -410,45 +396,40 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ## Small Icon Only
 
 <Canvas withSource="none">
-  <Story
-    name="Small Icon Only"
-    args={{
-      size: 'small',
-      iconOnly: true,
-      title: 'Search',
-      ariaLabel: 'Search',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Icon Only'
+        args={{
+            size: 'small',
+            iconOnly: true,
+            title: 'Search',
+            ariaLabel: 'Search'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
 <scale-button size="small">
-  <scale-icon-navigation-external-link
-    accessibility-title="External link, opens in new tab"
-    size="16"
-  />
+  <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" size="16" />
 </scale-button>
 ```
 
 ## Small Link
 
 <Canvas withSource="none">
-  <Story
-    name="Small Link"
-    args={{
-      size: 'small',
-      href: 'https://example.com',
-      target: '_blank',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name='Small Link'
+        args={{
+            size: 'small',
+            href: 'https://example.com',
+            target: '_blank'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ```html
-<scale-button size="small" href="https://example.com" target="_blank"
-  >Label</scale-button
->
+<scale-button size="small" href="https://example.com" target="_blank">Label</scale-button>
 ```

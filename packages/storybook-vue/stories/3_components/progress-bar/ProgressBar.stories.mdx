@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Story,
-  ArgsTable,
-  Canvas,
-  Description,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
 import ScaleProgressBar from './ScaleProgressBar.vue';
 
 <Meta
@@ -13,12 +7,12 @@ import ScaleProgressBar from './ScaleProgressBar.vue';
   argTypes={{}}
 />
 
-export const Template = (args, { argTypes }) => ({
-  components: { ScaleProgressBar },
-  props: {
-    ...ScaleProgressBar.props,
-  },
-  template: `
+export const Template = (args, {argTypes}) => ({
+    components:{ ScaleProgressBar },
+    props: {
+        ...ScaleProgressBar.props
+    },
+    template: `
       <scale-progress-bar
         :custom-color="customColor"
         :disabled="disabled"
@@ -34,11 +28,11 @@ export const Template = (args, { argTypes }) => ({
         <scale-icon-action-success v-if="statusDescription === 'Upload complete'" slot="icon" decorative size="16"></scale-icon-action-success>
         <scale-icon-action-circle-close v-if="statusDescription === 'Upload fail'" color="#d82a48" slot="icon" decorative size="16"></scale-icon-action-circle-close>
       </scale-progress-bar>
-  `,
-});
-export const TemplateInteractive = (args, { argTypes }) => ({
-  components: { ScaleProgressBar },
-  template: `
+  `
+})
+export const TemplateInteractive = (args, {argTypes}) => ({
+    components:{ ScaleProgressBar },
+    template: `
       <div>
           <scale-progress-bar
             label="Download progress example"
@@ -57,64 +51,57 @@ export const TemplateInteractive = (args, { argTypes }) => ({
           <scale-button variant="secondary" size="small" @click="reset">Reset</scale-button>
       </div>
   `,
-  methods: {
-    startSuccess() {
-      this.start('success');
-    },
-    startFailure() {
-      this.start('failure');
-    },
-    start(outcome) {
-      const xxx = setInterval(() => {
-        if (this.$data.percentage === 100) {
-          clearInterval(this.interval);
-          this.$data.state = outcome;
-          this.interval = null;
-          return;
+    methods: {
+        startSuccess() {
+            this.start('success');
+        },
+        startFailure() {
+            this.start('failure');
+        },
+        start(outcome) {
+            const xxx = setInterval(()  => {
+                if (this.$data.percentage === 100) {
+                    clearInterval(this.interval);
+                    this.$data.state = outcome;
+                    this.interval = null;
+                    return;
+                }
+                this.$data.percentage += 1;
+            }, 100);
+            this.interval = xxx;
+            return xxx;
+        },
+        reset() {
+            clearInterval(this.interval);
+            this.interval = null;
+            this.$data.state = 'initial';
+            this.$data.percentage = 0;
         }
-        this.$data.percentage += 1;
-      }, 100);
-      this.interval = xxx;
-      return xxx;
     },
-    reset() {
-      clearInterval(this.interval);
-      this.interval = null;
-      this.$data.state = 'initial';
-      this.$data.percentage = 0;
-    },
-  },
-  data: () => ({
-    interval: null,
-    success: {
-      showStatus: false,
-      statusDescription: 'Upload complete',
-      customColor: '#67c23a',
-    },
-    failure: {
-      showStatus: false,
-      hasError: true,
-      statusDescription: 'Upload fail',
-    },
-    initial: {
-      showStatus: true,
-    },
-    percentage: 0,
-    state: 'initial',
-    busy: false,
-  }),
-});
+    data: () => ({
+        interval: null,
+        success: {
+            showStatus: false,
+            statusDescription: 'Upload complete',
+            customColor: "#67c23a",
+        },
+        failure: {
+            showStatus: false,
+            hasError: true,
+            statusDescription: 'Upload fail',
+        },
+        initial: {
+            showStatus: true,
+        },
+        percentage: 0,
+        state: 'initial',
+        busy: false,
+    })
+})
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Progress Bar</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Progress Bar</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -131,7 +118,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story="Determinate" />
+<ArgsTable story='Determinate' />
 
 ### Scoped CSS variables
 
@@ -162,8 +149,8 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Progress custom"
     args={{
       percentage: 20,
-      customColor: '#009DE0',
-      label: 'Progress custom',
+      customColor: "#009DE0",
+      label:"Progress custom"
     }}
   >
     {Template.bind({})}
@@ -171,12 +158,9 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-progress-bar
-  percentage="20"
-  custom-color="#009DE0"
-  label="Progress custom"
-></scale-progress-bar>
+<scale-progress-bar percentage="20" custom-color="#009DE0" label="Progress custom"></scale-progress-bar>
 ```
+
 
 ## Progress with description
 
@@ -186,7 +170,7 @@ For Shadow Parts, please inspect the element's #shadow.
     args={{
       percentage: 40,
       statusDescription: 'Progress status description text',
-      label: 'Progress with description',
+      label: 'Progress with description'
     }}
   >
     {Template.bind({})}
@@ -194,12 +178,9 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-progress-bar
-  percentage="40"
-  stroke-width="40"
-  status-description="Progress status description text"
-></scale-progress-bar>
+<scale-progress-bar percentage="40" stroke-width="40" status-description="Progress status description text"></scale-progress-bar>
 ```
+
 
 ## Complete default
 
@@ -210,7 +191,7 @@ For Shadow Parts, please inspect the element's #shadow.
       percentage: 100,
       showStatus: false,
       statusDescription: 'Upload complete',
-      label: 'Complete default',
+      label: 'Complete default'
     }}
   >
     {Template.bind({})}
@@ -218,20 +199,11 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-progress-bar
-  percentage="40"
-  show-status="false"
-  status-description="Upload complete"
-  label="Complete default"
->
-  <scale-icon-action-success
-    v-if="statusDescription === 'Upload complete'"
-    slot="icon"
-    decorative
-    size="16"
-  ></scale-icon-action-success>
+<scale-progress-bar percentage="40" show-status="false" status-description="Upload complete" label="Complete default">
+    <scale-icon-action-success v-if="statusDescription === 'Upload complete'" slot="icon" decorative size="16"></scale-icon-action-success>
 </scale-progress-bar>
 ```
+
 
 ## Complete green
 
@@ -242,8 +214,8 @@ For Shadow Parts, please inspect the element's #shadow.
       percentage: 100,
       showStatus: false,
       statusDescription: 'Upload complete',
-      customColor: '#67c23a',
-      label: 'Complete green',
+      customColor: "#67c23a",
+      label: 'Complete green'
     }}
   >
     {Template.bind({})}
@@ -251,20 +223,11 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-progress-bar
-  label="Complete green"
-  percentage="40"
-  show-status="false"
-  status-description="Upload complete"
-  custom-color="#67c23a"
->
-  <scale-icon-action-success
-    slot="icon"
-    decorative
-    size="16"
-  ></scale-icon-action-success>
+<scale-progress-bar label="Complete green" percentage="40" show-status="false" status-description="Upload complete" custom-color="#67c23a">
+  <scale-icon-action-success slot="icon" decorative size="16"></scale-icon-action-success>
 </scale-progress-bar>
 ```
+
 
 ## Complete error
 
@@ -276,7 +239,7 @@ For Shadow Parts, please inspect the element's #shadow.
       hasError: true,
       showStatus: false,
       statusDescription: 'Upload fail',
-      label: 'Complete error',
+      label: 'Complete error'
     }}
   >
     {Template.bind({})}
@@ -284,21 +247,11 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-progress-bar
-  percentage="40"
-  has-error
-  show-status="false"
-  status-description="Upload fail"
-  label="Complete error"
->
-  <scale-icon-action-circle-close
-    color="#d82a48"
-    slot="icon"
-    decorative
-    size="16"
-  ></scale-icon-action-circle-close>
+<scale-progress-bar percentage="40" has-error show-status="false" status-description="Upload fail" label="Complete error">
+    <scale-icon-action-circle-close color="#d82a48" slot="icon" decorative size="16"></scale-icon-action-circle-close>
 </scale-progress-bar>
 ```
+
 
 ## Interactive
 
@@ -310,7 +263,7 @@ For Shadow Parts, please inspect the element's #shadow.
       hasError: true,
       showStatus: false,
       statusDescription: 'Upload fail',
-      label: 'Interactive',
+      label: 'Interactive'
     }}
   >
     {TemplateInteractive.bind({})}

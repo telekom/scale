@@ -4,17 +4,17 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
-import ScaleTable from './ScaleTable.vue';
+} from "@storybook/addon-docs/blocks";
+import ScaleTable from "./ScaleTable.vue";
 export const ICON =
-  'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+  "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
 
 <Meta
   title="Components/Table"
   component={ScaleTable}
   argTypes={{
     size: {
-      control: { type: 'select', options: ['default', 'small'] },
+      control: { type: "select", options: ["default", "small"] },
     },
   }}
 />
@@ -143,48 +143,48 @@ export const Template = (args, { argTypes }) => ({
   `,
   methods: {
     handleKeyUp: function (e, th) {
-      if (['Space', 'Enter'].includes(e.code)) {
+      if (["Space", "Enter"].includes(e.code)) {
         this.sortTable(th);
       }
     },
-    sortTable: function (className) {
-      const getNextSort = (sort) => {
-        if (sort === 'ascending') {
-          return 'descending';
-        }
-        return 'ascending';
-      };
-      const ths = document.getElementsByClassName(className);
-      const th = ths[ths.length - 1];
-      const currentSort = th.getAttribute('aria-sort');
-      const nextSort = getNextSort(currentSort);
-      const tableHeaders = Array.from(document.getElementsByTagName('TH'));
-      const columnIndex = tableHeaders.findIndex((x) => x === th);
-      tableHeaders.forEach((tableHeader) => {
+    sortTable: function(className) {
+      const getNextSort = sort => {
+          if (sort === 'ascending') {
+              return 'descending';
+          }
+          return 'ascending';
+      }
+      const ths = document.getElementsByClassName(className)
+      const th = ths[ths.length - 1]
+      const currentSort = th.getAttribute('aria-sort')
+      const nextSort = getNextSort(currentSort)
+      const tableHeaders = Array.from(document.getElementsByTagName('TH'))
+      const columnIndex = tableHeaders.findIndex(x => x === th)
+      tableHeaders.forEach(tableHeader => {
         tableHeader.setAttribute('aria-sort', 'none');
-      });
-      th.setAttribute('aria-sort', nextSort);
-      var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById('sortable-table');
-      switching = true;
+      })
+      th.setAttribute('aria-sort', nextSort)
+      var table, rows, switching, i, x, y, shouldSwitch
+      table = document.getElementById('sortable-table')
+      switching = true
       try {
         while (switching) {
           switching = false;
           rows = table.rows;
           for (i = 1; i < rows.length - 1; i++) {
             shouldSwitch = false;
-            x = rows[i].getElementsByTagName('TD')[columnIndex];
-            y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
+            x = rows[i].getElementsByTagName("TD")[columnIndex];
+            y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
             if (
-              !['ascending', 'descending'].includes(nextSort) ||
-              x.parentElement.parentElement.tagName === 'TFOOT' ||
-              y.parentElement.parentElement.tagName === 'TFOOT'
+              !["ascending", "descending"].includes(nextSort) ||
+              x.parentElement.parentElement.tagName === "TFOOT" ||
+              y.parentElement.parentElement.tagName === "TFOOT"
             ) {
               break;
             }
             if (
-              (nextSort === 'descending' ? y : x).innerHTML.toLowerCase() >
-              (nextSort === 'descending' ? x : y).innerHTML.toLowerCase()
+              (nextSort === "descending" ? y : x).innerHTML.toLowerCase() >
+              (nextSort === "descending" ? x : y).innerHTML.toLowerCase()
             ) {
               shouldSwitch = true;
               break;
@@ -200,16 +200,9 @@ export const Template = (args, { argTypes }) => ({
   },
 });
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Table</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Table</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -244,9 +237,8 @@ scale-table {
   --spacing-th-sortable: 0 8px 0 0;
   --background-th-sortable-hover: #ededed;
   --background-th-sortable-active: #dcdcdc;
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2) var(
-      --scl-color-focus
-    );
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2)
+    var(--scl-color-focus);
 }
 ```
 
@@ -256,7 +248,7 @@ scale-table {
   <Story
     name="Small"
     args={{
-      size: 'small',
+      size: "small",
     }}
   >
     {Template.bind({})}

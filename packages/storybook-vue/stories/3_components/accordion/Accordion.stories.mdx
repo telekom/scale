@@ -4,8 +4,8 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
-import ScaleAccordion from './ScaleAccordion.vue';
+} from "@storybook/addon-docs/blocks";
+import ScaleAccordion from "./ScaleAccordion.vue";
 
 <Meta
   title="Components/Accordion"
@@ -13,11 +13,11 @@ import ScaleAccordion from './ScaleAccordion.vue';
   argTypes={{
     dependent: {
       defaultValue: false,
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
     expanded: {
       defaultValue: false,
-      control: { type: 'boolean' },
+      control: { type: "boolean" },
     },
   }}
 />
@@ -49,16 +49,9 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Accordion</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Accordion</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -73,10 +66,7 @@ export const Template = (args, { argTypes }) => ({
 <scale-accordion>
   <scale-collapsible>
     <h3>Leo integer malesuada nunc vel risus</h3>
-    <p>
-      Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch
-      pabst…
-    </p>
+    <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>
   </scale-collapsible>
   <scale-collapsible>
     <h3>Dolor purus non enim</h3>
@@ -139,10 +129,7 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-accordion dependent>
   <scale-collapsible>
     <h3>Leo integer malesuada nunc vel risus</h3>
-    <p>
-      Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch
-      pabst…
-    </p>
+    <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>
   </scale-collapsible>
   <scale-collapsible>
     <h3>Dolor purus non enim</h3>
@@ -154,6 +141,7 @@ For Shadow Parts, please inspect the element's #shadow.
   </scale-collapsible>
 </scale-accordion>
 ```
+
 
 ## Expanded
 
@@ -172,10 +160,7 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-accordion expanded>
   <scale-collapsible>
     <h3>Leo integer malesuada nunc vel risus</h3>
-    <p>
-      Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch
-      pabst…
-    </p>
+    <p>Freegan kinfolk farm-to-table humblebrag cred, hammock bespoke small batch pabst…</p>
   </scale-collapsible>
   <scale-collapsible>
     <h3>Dolor purus non enim</h3>

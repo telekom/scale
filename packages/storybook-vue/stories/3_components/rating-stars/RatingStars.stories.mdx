@@ -1,5 +1,5 @@
-import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import ScaleRatingStars from './ScaleRatingStars.vue';
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import ScaleRatingStars from "./ScaleRatingStars.vue";
 
 <Meta
   title="Beta Components/Rating Stars"
@@ -53,7 +53,7 @@ export const Template = (args, { argTypes }) => ({
     name="Disabled"
     args={{
       disabled: true,
-      rating: 2,
+      rating: 2
     }}
   >
     {Template.bind({})}
@@ -71,7 +71,7 @@ export const Template = (args, { argTypes }) => ({
     name="Small"
     args={{
       rating: 4,
-      small: true,
+      small: true
     }}
   >
     {Template.bind({})}
@@ -89,7 +89,7 @@ export const Template = (args, { argTypes }) => ({
     name="Number of Stars"
     args={{
       rating: 6,
-      numOfStars: 10,
+      numOfStars: 10
     }}
   >
     {Template.bind({})}
@@ -106,7 +106,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Spacing"
     args={{
-      rating: 1,
+      rating: 1
     }}
   >
     {Template.bind({})}
@@ -124,7 +124,7 @@ export const Template = (args, { argTypes }) => ({
     name="Aria Translation"
     args={{
       rating: 1,
-      ariaTranslation: '${x} out of ${y} stars',
+      ariaTranslation: "${x} out of ${y} stars",
     }}
   >
     {Template.bind({})}
@@ -132,8 +132,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars
-  rating="1"
-  aria-translation="${x} out of ${y} stars"
-></scale-rating-stars>
+<scale-rating-stars rating="1" aria-translation="${x} out of ${y} stars"></scale-rating-stars>
 ```

@@ -1,11 +1,11 @@
-import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
-} from '../brand-header/fixtures';
+} from "../brand-header/fixtures";
 
-import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
+import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 
 <Meta
   title="Beta Components/Flyout Menu"
@@ -13,7 +13,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
   argTypes={{
     closeOnSelect: {
       table: {
-        type: { summary: 'boolean' },
+        type: { summary: "boolean" },
         defaultValue: { summary: true },
       },
       description: `(optional) Determines whether the dropdown should close when a menu item is selected`,
@@ -21,9 +21,9 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
     },
     direction: {
       table: {
-        type: { summary: 'string' },
+        type: { summary: "string" },
         defaultValue: {
-          summary: 'bottom-right',
+          summary: "bottom-right",
           detail: `'bottom-right' for regular triggers, 'right' when trigger is a <scale-menu-flyout-item>`,
         },
       },
@@ -32,47 +32,47 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
     },
     styles: {
       table: {
-        type: { summary: 'string' },
+        type: { summary: "string" },
       },
       description: `(optional) Injected styles`,
       control: { type: null },
     },
     eventScaleOpen: {
-      name: '[event] scaleOpen',
+      name: "[event] scaleOpen",
       table: {
-        type: { summary: 'event' },
+        type: { summary: "event" },
       },
       description: `Event triggered when menu list opened`,
       control: { type: null },
     },
     eventScaleClose: {
-      name: '[event] scaleClose',
+      name: "[event] scaleClose",
       table: {
-        type: { summary: 'event' },
+        type: { summary: "event" },
       },
       description: `Event triggered when menu list closed`,
       control: { type: null },
     },
     eventScaleSelect: {
-      name: '[event] scaleSelect',
+      name: "[event] scaleSelect",
       table: {
-        type: { summary: 'event' },
+        type: { summary: "event" },
       },
       description: `Event triggered when nested menu item selected`,
       control: { type: null },
     },
     slotTrigger: {
-      name: '[slot] trigger',
+      name: "[slot] trigger",
       table: {
-        type: { summary: 'scale-button' },
+        type: { summary: "scale-button" },
       },
       description: `Used for adding an element that, upon triggering a click event, will open the associated scale-menu-flyout-list element`,
       control: { type: null },
     },
     slotDefault: {
-      name: '[slot] default',
+      name: "[slot] default",
       table: {
-        type: { summary: 'scale-menu-flyout-list' },
+        type: { summary: "scale-menu-flyout-list" },
       },
       description: `Used for adding scale-menu-flyout-list that will open when trigger activated`,
       control: { type: null },
@@ -82,10 +82,10 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
 
 <div
   style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
   }}
 >
   <h1>Flyout Menu</h1>

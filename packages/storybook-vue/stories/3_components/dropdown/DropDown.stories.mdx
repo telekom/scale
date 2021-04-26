@@ -1,8 +1,12 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import ScaleDropDown from './ScaleDropDown.vue';
-import { action } from '@storybook/addon-actions';
+import ScaleDropDown from "./ScaleDropDown.vue";
+import { action } from "@storybook/addon-actions";
 
-<Meta title="Components/Dropdown" component={ScaleDropDown} argTypes={{}} />
+<Meta
+  title='Components/Dropdown'
+  component={ScaleDropDown}
+  argTypes={{}}
+/>
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleDropDown },
@@ -40,26 +44,19 @@ export const Template = (args, { argTypes }) => ({
     scaleFocus: action('scaleFocus'),
     scaleBlur: action('scaleBlur'),
     scaleKeyDown: action('scaleKeyDown'),
-  },
-});
+  }
+})
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Dropdown</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Dropdown</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
   <Story
-    name="Standard"
+    name='Standard'
     args={{
       label: 'Select',
     }}
@@ -68,7 +65,7 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard" />
+<ArgsTable story='Standard' />
 
 ```html
 <scale-dropdown label="select">
@@ -78,11 +75,12 @@ export const Template = (args, { argTypes }) => ({
 </scale-dropdown>
 ```
 
+
 ## Small
 
 <Canvas withSource="none">
   <Story
-    name="Small"
+    name='Small'
     args={{
       label: 'Small',
       size: 'small',
@@ -92,6 +90,7 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
+
 ```html
 <scale-dropdown label="Small" size="small">
   <option value="1">item 1</option>
@@ -100,6 +99,7 @@ export const Template = (args, { argTypes }) => ({
 </scale-dropdown>
 ```
 
+
 ## Disabled
 
 Known issues: The dropdown is ready for use. The component in disabled state is displayed incorrectly with white background in Firefox 85.0.2 (64-bit) in HCM (high contrast mode).
@@ -107,7 +107,7 @@ The display error is on the browser side.
 
 <Canvas withSource="none">
   <Story
-    name="Disabled"
+    name='Disabled'
     args={{
       label: 'Disabled',
       disabled: true,
@@ -117,6 +117,7 @@ The display error is on the browser side.
   </Story>
 </Canvas>
 
+
 ```html
 <scale-dropdown label="Disabled" disabled>
   <option value="1">item 1</option>
@@ -125,11 +126,12 @@ The display error is on the browser side.
 </scale-dropdown>
 ```
 
+
 ## Error
 
 <Canvas withSource="none">
   <Story
-    name="Error"
+    name='Error'
     args={{
       label: 'Error',
       status: 'error',
@@ -140,23 +142,21 @@ The display error is on the browser side.
   </Story>
 </Canvas>
 
+
 ```html
-<scale-dropdown
-  label="Error"
-  status="error"
-  helper-text="Something went wrong..."
->
+<scale-dropdown label="Error" status="error" helper-text="Something went wrong...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
 </scale-dropdown>
 ```
 
+
 ## With Custom Icon
 
 <Canvas withSource="none">
   <Story
-    name="With Custom Icon"
+    name='With Custom Icon'
     args={{
       label: 'With Custom Icon',
     }}
@@ -165,11 +165,12 @@ The display error is on the browser side.
   </Story>
 </Canvas>
 
+
 ```html
 <scale-dropdown label="With Custom Icon">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
-  <scale-icon-content-calendar slot="icon"></scale-icon-content-calendar>
+   <scale-icon-content-calendar slot="icon"></scale-icon-content-calendar>
 </scale-dropdown>
 ```

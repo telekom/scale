@@ -4,15 +4,15 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
-import ScaleTag from './ScaleTag.vue';
+} from "@storybook/addon-docs/blocks";
+import ScaleTag from "./ScaleTag.vue";
 
 <Meta
   title="Components/Tag"
   component={ScaleTag}
   argTypes={{
     label: {
-      control: { type: 'text' },
+      control: { type: "text" },
     },
     styles: {
       control: { disable: true },
@@ -60,25 +60,25 @@ export const TemplateInteractive = (args, { argTypes }) => ({
     removeFruit(fruit) {
       this.fruits = this.fruits.filter((x) => x !== fruit);
       setTimeout(() => {
-        this.$el.querySelector('#root > ul > li > scale-tag') &&
+        this.$el.querySelector("#root > ul > li > scale-tag") &&
           this.$el
-            .querySelector('#root > ul > li > scale-tag')
-            .shadowRoot.querySelector('span > button')
+            .querySelector("#root > ul > li > scale-tag")
+            .shadowRoot.querySelector("span > button")
             .focus();
       });
     },
   },
   data: () => ({
-    fruits: ['Melon', 'Banana', 'Pear'],
+    fruits: ["Melon", "Banana", "Pear"],
   }),
 });
 
 <div
   style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
   }}
 >
   <h1>Chip</h1>
@@ -91,7 +91,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: 'A tag',
+      label: "A tag",
     }}
   >
     {Template.bind({})}
@@ -141,7 +141,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="A dissmisable tag"
     args={{
-      label: 'A dissmisable tag',
+      label: "A dissmisable tag",
       dismissable: true,
     }}
   >
@@ -159,8 +159,8 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="A small tag"
     args={{
-      label: 'A small tag',
-      size: 'small',
+      label: "A small tag",
+      size: "small",
     }}
   >
     {Template.bind({})}
@@ -177,8 +177,8 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="A small dismissable tag"
     args={{
-      label: 'A small dismissable tag',
-      size: 'small',
+      label: "A small dismissable tag",
+      size: "small",
       dismissable: true,
     }}
   >
@@ -196,7 +196,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Disabled dismissable tag"
     args={{
-      label: 'Disabled dismissable tag',
+      label: "Disabled dismissable tag",
       disabled: true,
       dismissable: true,
     }}
@@ -215,8 +215,8 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Variant secondary tag"
     args={{
-      label: 'Variant secondary tag',
-      variant: 'secondary',
+      label: "Variant secondary tag",
+      variant: "secondary",
     }}
   >
     {Template.bind({})}
@@ -233,10 +233,10 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Variant secondary link"
     args={{
-      label: 'Variant secondary link',
-      variant: 'secondary',
-      href: 'https://www.example.com',
-      target: '_blank',
+      label: "Variant secondary link",
+      variant: "secondary",
+      href: "https://www.example.com",
+      target: "_blank",
     }}
   >
     {Template.bind({})}
@@ -255,8 +255,8 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Variant secondary dismissable"
     args={{
-      label: 'Variant secondary dismissable',
-      variant: 'secondary',
+      label: "Variant secondary dismissable",
+      variant: "secondary",
       dismissable: true,
     }}
   >
@@ -276,9 +276,9 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Variant secondary small"
     args={{
-      label: 'Variant secondary small',
-      variant: 'secondary',
-      size: 'small',
+      label: "Variant secondary small",
+      variant: "secondary",
+      size: "small",
     }}
   >
     {Template.bind({})}
@@ -295,10 +295,10 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Variant secondary dismissable small"
     args={{
-      label: 'Variant secondary dismissable small',
-      variant: 'secondary',
+      label: "Variant secondary dismissable small",
+      variant: "secondary",
       dismissable: true,
-      size: 'small',
+      size: "small",
     }}
   >
     {Template.bind({})}

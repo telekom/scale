@@ -1,6 +1,6 @@
-import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import { footerNavigation } from '../brand-header/fixtures';
-import AppFooter from './AppFooter.vue';
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import { footerNavigation } from "../brand-header/fixtures";
+import AppFooter from "./AppFooter.vue";
 
 <Meta
   title="Components/Footer"
@@ -8,18 +8,18 @@ import AppFooter from './AppFooter.vue';
   argTypes={{
     footerNavigation: {
       control: {
-        type: 'text',
+        type: "text",
       },
-      description: 'each item takes an optional onClick handler',
+      description: "each item takes an optional onClick handler",
     },
     claimLang: {
       control: {
-        type: 'select',
-        options: ['en', 'de'],
+        type: "select",
+        options: ["en", "de"],
       },
     },
     variant: {
-      control: { type: 'select', options: ['angular', 'standard', 'minimal'] },
+      control: { type: "select", options: ["angular", "standard", "minimal"] },
     },
   }}
 />
@@ -41,10 +41,10 @@ export const Template = (args, { argTypes }) => ({
 
 <div
   style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
   }}
 >
   <h1>Footer</h1>
@@ -59,7 +59,7 @@ export const Template = (args, { argTypes }) => ({
     inline={false}
     height={500}
     args={{
-      claimLang: 'en',
+      claimLang: "en",
       footerNavigation: JSON.stringify(footerNavigation),
     }}
   >
@@ -129,9 +129,9 @@ For Shadow Parts, please inspect the element's #shadow.
     inline={false}
     height={500}
     args={{
-      claimLang: 'en',
+      claimLang: "en",
       footerNavigation: JSON.stringify(footerNavigation),
-      variant: 'minimal',
+      variant: "minimal",
     }}
   >
     {Template.bind({})}

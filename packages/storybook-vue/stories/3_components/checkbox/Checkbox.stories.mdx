@@ -1,20 +1,18 @@
-import {
-  Meta,
-  Story,
-  ArgsTable,
-  Canvas,
-  Description,
-} from '@storybook/addon-docs/blocks';
-import ScaleCheckbox from './ScaleCheckbox.vue';
-import { action } from '@storybook/addon-actions';
+import { Meta, Story, ArgsTable, Canvas, Description } from "@storybook/addon-docs/blocks";
+import ScaleCheckbox from "./ScaleCheckbox.vue";
+import { action } from "@storybook/addon-actions";
 
-<Meta title="Components/Checkbox" component={ScaleCheckbox} argTypes={{}} />
+<Meta
+  title="Components/Checkbox"
+  component={ScaleCheckbox}
+  argTypes={{}}
+/>
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleCheckbox },
   props: {
     label: String,
-    ...ScaleCheckbox.props,
+    ...ScaleCheckbox.props
   },
   template: `
     <scale-checkbox
@@ -30,23 +28,17 @@ export const Template = (args, { argTypes }) => ({
     ></scale-checkbox>
   `,
   methods: {
-    scaleChange: function () {
+    scaleChange: function() {
       action('scaleChange')();
     },
   },
-});
+})
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Checkbox</h1>
-  <img src="assets/aa.png" alt="Accessible AA" />
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Checkbox</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
+
 
 ## Standard
 
@@ -54,7 +46,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: 'Checkbox',
+      label: "Checkbox",
     }}
   >
     {Template.bind({})}
@@ -68,9 +60,7 @@ export const Template = (args, { argTypes }) => ({
 ```css
 scale-checkbox {
   --spacing-x: var(--scl-spacing-8);
-  --transition: all var(--scl-motion-duration-fast) var(
-      --scl-motion-easing-standard
-    );
+  --transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
   --color-text: var(--scl-color-text-standard);
   --color-error: var(--scl-color-text-error);
   --color-disabled: var(--scl-color-background-disabled);
@@ -119,8 +109,8 @@ scale-checkbox {
   <Story
     name="Standard Disabled"
     args={{
-      label: 'Standard Disabled',
-      disabled: true,
+      label: "Standard Disabled",
+      disabled: true
     }}
   >
     {Template.bind({})}
@@ -128,11 +118,7 @@ scale-checkbox {
 </Canvas>
 
 ```html
-<scale-checkbox
-  disabled
-  @scaleChange="handleChange"
-  label="Standard Disabled"
-></scale-checkbox>
+<scale-checkbox disabled @scaleChange="handleChange" label="Standard Disabled"></scale-checkbox>
 ```
 
 ## Selected
@@ -141,8 +127,8 @@ scale-checkbox {
   <Story
     name="Selected"
     args={{
-      label: 'Selected',
-      checked: true,
+      label: "Selected",
+      checked: true
     }}
   >
     {Template.bind({})}
@@ -150,11 +136,7 @@ scale-checkbox {
 </Canvas>
 
 ```html
-<scale-checkbox
-  checked
-  @scaleChange="handleChange"
-  label="Selected"
-></scale-checkbox>
+<scale-checkbox checked @scaleChange="handleChange" label="Selected"></scale-checkbox>
 ```
 
 ## Selected Disabled
@@ -163,7 +145,7 @@ scale-checkbox {
   <Story
     name="Selected Disabled"
     args={{
-      label: 'Selected Disabled',
+      label: "Selected Disabled",
       checked: true,
       disabled: true,
     }}
@@ -173,13 +155,9 @@ scale-checkbox {
 </Canvas>
 
 ```html
-<scale-checkbox
-  checked
-  disabled
-  @scaleChange="handleChange"
-  label="Selected Disabled"
-></scale-checkbox>
+<scale-checkbox checked disabled @scaleChange="handleChange" label="Selected Disabled"></scale-checkbox>
 ```
+
 
 ## Error
 
@@ -187,9 +165,9 @@ scale-checkbox {
   <Story
     name="Error"
     args={{
-      label: 'Standard with error',
-      status: 'error',
-      helperText: 'This is the error message',
+      label: "Standard with error",
+      status: "error",
+      helperText: "This is the error message"
     }}
   >
     {Template.bind({})}
@@ -197,32 +175,28 @@ scale-checkbox {
 </Canvas>
 
 ```html
-<scale-checkbox
-  status="error"
-  @scaleChange="handleChange"
-  label="Standard with error"
-></scale-checkbox>
+<scale-checkbox status="error" @scaleChange="handleChange" label="Standard with error"></scale-checkbox>
 ```
+
 
 ## Custom Label Slot
 
 <Canvas withSource="none">
-  <Story name="Custom Label Slot" args={{}}>
+  <Story
+    name="Custom Label Slot"
+    args={{}}
+  >
     {() => ({
-      components: { ScaleCheckbox },
-      props: {
-        label: String,
-        ...ScaleCheckbox.props,
-      },
-      template: `<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>`,
+        components: { ScaleCheckbox },
+        props: {
+            label: String,
+            ...ScaleCheckbox.props
+        },
+        template: `<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>`,
     })}
   </Story>
 </Canvas>
 
 ```html
-<scale-checkbox
-  ><span style="cursor: pointer; display: flex; align-items: center;"
-    >Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy
-    ></scale-icon-alert-imprint-dataprivacy></span
-></scale-checkbox>
+<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>
 ```
