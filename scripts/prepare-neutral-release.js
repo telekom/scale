@@ -17,12 +17,14 @@ replace.sync({
     /@telekom\/scale\-components\-angular/g,
     /@telekom\/scale\-components\-vue/g,
     /@telekom\/scale\-components\//g,
+    /\`@telekom\/scale\-components\`/g,
   ],
   to: [
     `@telekom/scale-components-react-neutral`,
     `@telekom/scale-components-angular-neutral`,
     `@telekom/scale-components-vue-neutral`,
     `@telekom/scale-components-neutral/`,
+    '`telekom/scale-components-neutral`',
   ],
 });
 
