@@ -42,12 +42,6 @@
     <h3>Alert</h3>
     <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
-    <h3>Toast</h3>
-    <scale-toast>
-      <h4 slot="header">Toast header</h4>
-      <p>Toast description text</p>
-    </scale-toast>
-
     <h3>Rating Stars</h3>
     <h4>rating = 1</h4>
     <scale-rating-stars rating="1" label="Rating Label"></scale-rating-stars>
@@ -431,7 +425,7 @@
     <script>
       document
         .getElementById('tag-dismissable')
-        .addEventListener('scaleClose', event =>
+        .addEventListener('scaleClose', (event) =>
           console.log('Tag closed', event)
         );
     </script>
@@ -604,7 +598,7 @@
     <scale-divider></scale-divider>
 
     <h3>Divider vertical</h3>
-    <div style="height: 100px; margin: 1px;">
+    <div style="height: 100px; margin: 1px">
       <scale-divider vertical="true"></scale-divider>
     </div>
     <h3>Button</h3>
@@ -633,13 +627,13 @@
 
     <div style="width: 150px">
       <scale-card to="https://example.com" target="_blank">
-        <div style="margin: -24px;">
+        <div style="margin: -24px">
           <img
             style="margin-bottom: -4px"
             src="https://via.placeholder.com/150"
             alt="placeholder"
           />
-          <div style="padding: 24px;">A title</div>
+          <div style="padding: 24px">A title</div>
         </div>
       </scale-card>
     </div>
@@ -729,9 +723,7 @@
     </scale-link>
 
     <h3>Modal with header</h3>
-    <scale-button id="show-modal">
-      show modal
-    </scale-button>
+    <scale-button id="show-modal"> show modal </scale-button>
     <scale-modal id="modal-default" opened="false">
       <span slot="header">Header content</span> content in the modal slot
     </scale-modal>
@@ -891,7 +883,7 @@
     <h3>Table</h3>
 
     <script>
-      const getNextSort = sort => {
+      const getNextSort = (sort) => {
         if (!sort || ['none', 'other'].includes(sort)) {
           return 'descending';
         }
@@ -905,10 +897,10 @@
         const currentSort = th.getAttribute('aria-sort');
         const nextSort = getNextSort(currentSort);
         const tableHeaders = Array.from(document.getElementsByTagName('TH'));
-        const columnIndex = tableHeaders.findIndex(x => x === th);
+        const columnIndex = tableHeaders.findIndex((x) => x === th);
 
         // clean up previous aria-sort value
-        tableHeaders.forEach(tableHeader => {
+        tableHeaders.forEach((tableHeader) => {
           tableHeader.setAttribute('aria-sort', 'none');
         });
 
@@ -972,7 +964,7 @@ no switching has been done:*/
 
     <scale-table size="small" show-sort="true">
       <table id="sortable-table">
-        <div style="padding: 20px 8px 0px 8px;">
+        <div style="padding: 20px 8px 0px 8px">
           <scale-text variant="h5">Table title</scale-text>
         </div>
         <thead>
@@ -985,9 +977,7 @@ no switching has been done:*/
             >
               Title
             </th>
-            <th aria-disabled="true">
-              Tags
-            </th>
+            <th aria-disabled="true">Tags</th>
             <th
               onclick="sortTable(this)"
               onkeydown="handleKeyDown(event, this)"
@@ -998,7 +988,7 @@ no switching has been done:*/
             <th
               onclick="sortTable(this)"
               onkeydown="handleKeyDown(event, this)"
-              style="text-align: right;"
+              style="text-align: right"
               tabindex="0"
             >
               Time
@@ -1006,7 +996,7 @@ no switching has been done:*/
             <th
               onclick="sortTable(this)"
               onkeydown="handleKeyDown(event, this)"
-              style="text-align: right;"
+              style="text-align: right"
               tabindex="0"
             >
               Euros
@@ -1017,71 +1007,71 @@ no switching has been done:*/
           <tr>
             <td>Jane</td>
             <td>
-              <scale-tag size="small" style="margin-right: 8px;"
+              <scale-tag size="small" style="margin-right: 8px"
                 >Other</scale-tag
               >
-              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
+              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
               <scale-tag size="small">Demo</scale-tag>
             </td>
             <td>
-              <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px;">9.356</span>
+              <div style="display: inline-flex; align-items: center">
+                <span style="margin-right: 8px">9.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style="max-width: 120px;"
+                  style="max-width: 120px"
                   stroke-width="6"
                   percentage="90"
                 />
               </div>
             </td>
-            <td style="text-align: right; font-weight: 100;">00:00:20</td>
-            <td style="text-align: right; font-weight: 100;">100.245,10</td>
+            <td style="text-align: right; font-weight: 100">00:00:20</td>
+            <td style="text-align: right; font-weight: 100">100.245,10</td>
           </tr>
           <tr>
             <td>Jack</td>
             <td>
-              <scale-tag size="small" style="margin-right: 8px;"
+              <scale-tag size="small" style="margin-right: 8px"
                 >Other</scale-tag
               >
-              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
+              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
               <scale-tag size="small">Demo</scale-tag>
             </td>
             <td>
-              <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px;">3.356</span>
+              <div style="display: inline-flex; align-items: center">
+                <span style="margin-right: 8px">3.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style="max-width: 120px;"
+                  style="max-width: 120px"
                   stroke-width="6"
                   percentage="90"
                 />
               </div>
             </td>
-            <td style="text-align: right; font-weight: 100;">00:00:30</td>
-            <td style="text-align: right; font-weight: 100;">100.345,10</td>
+            <td style="text-align: right; font-weight: 100">00:00:30</td>
+            <td style="text-align: right; font-weight: 100">100.345,10</td>
           </tr>
           <tr>
             <td>John</td>
             <td>
-              <scale-tag size="small" style="margin-right: 8px;"
+              <scale-tag size="small" style="margin-right: 8px"
                 >Other</scale-tag
               >
-              <scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag>
+              <scale-tag size="small" style="margin-right: 8px">N/A</scale-tag>
               <scale-tag size="small">Demo</scale-tag>
             </td>
             <td>
-              <div style="display: inline-flex; align-items: center;">
-                <span style="margin-right: 8px;">6.356</span>
+              <div style="display: inline-flex; align-items: center">
+                <span style="margin-right: 8px">6.356</span>
                 <scale-progress-bar
                   variant="info"
-                  style="max-width: 120px;"
+                  style="max-width: 120px"
                   stroke-width="6"
                   percentage="90"
                 />
               </div>
             </td>
-            <td style="text-align: right; font-weight: 100;">00:00:40</td>
-            <td style="text-align: right; font-weight: 100;">100.445,10</td>
+            <td style="text-align: right; font-weight: 100">00:00:40</td>
+            <td style="text-align: right; font-weight: 100">100.445,10</td>
           </tr>
         </tbody>
         <tfoot>
@@ -1089,8 +1079,8 @@ no switching has been done:*/
             <td>Total</td>
             <td />
             <td />
-            <td style="text-align: right;">00:00:20</td>
-            <td style="text-align: right;">100.245,10</td>
+            <td style="text-align: right">00:00:20</td>
+            <td style="text-align: right">100.245,10</td>
           </tr>
         </tfoot>
       </table>
@@ -1098,7 +1088,7 @@ no switching has been done:*/
 
     <h2>Sidebar Nav</h2>
 
-    <div style="max-width: 22rem;">
+    <div style="max-width: 22rem">
       <scale-sidebar-nav>
         <scale-sidebar-nav-item bold>
           <a href="/overview">Overview</a>

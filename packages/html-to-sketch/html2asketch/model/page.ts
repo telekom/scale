@@ -17,8 +17,8 @@ class Page extends Base {
   _x: 0;
   _y: 0;
 
-  constructor({width, height, id}: any) {
-    super({id});
+  constructor({ width, height, id }: any) {
+    super({ id });
     this._class = 'page';
     this._width = width;
     this._height = height;

@@ -13,17 +13,17 @@ An accordion holds a list of headlines stacked vertically and offers a general o
 
 Use an accordion to:
 
-*	help users find relevant content more quickly,
-*	organize a large amount of related content in a small space, or
-*	show content which users don't necessarily need to read all the way through.
+- help users find relevant content more quickly,
+- organize a large amount of related content in a small space, or
+- show content which users don't necessarily need to read all the way through.
 
 ### When not to use
 
 Bear in mind that accordions require a great deal of interaction. Don't use an accordion when:
 
-*	users might need to open the majority of the subtopics,
-*	users might want to print out the entire page, or
-*	you're only trying to shorten the page.
+- users might need to open the majority of the subtopics,
+- users might want to print out the entire page, or
+- you're only trying to shorten the page.
 
 ## Elements
 

@@ -260,8 +260,9 @@ export class DataGrid {
       if (this.rows[i].length !== this.fields.length) {
         // tslint:disable-next-line: no-console
         console.warn(
-          `Unable to render ${this.heading &&
-            `"${this.heading}" `}table: row data length not equal to supplied fields.`
+          `Unable to render ${
+            this.heading && `"${this.heading}" `
+          }table: row data length not equal to supplied fields.`
         );
         return false;
       }
@@ -324,7 +325,7 @@ export class DataGrid {
   getDefaultLongestContent({ rows, columnIndex }) {
     let maxLength = 0;
     let longestContent;
-    rows.forEach(row => {
+    rows.forEach((row) => {
       const length = row[columnIndex].toString().length;
       if (length > maxLength) {
         longestContent = row[columnIndex];
@@ -339,7 +340,7 @@ export class DataGrid {
     if (!this.elToggleSelectAll) {
       return;
     }
-    this.rows.forEach(row => (row.selected = this.elToggleSelectAll.checked));
+    this.rows.forEach((row) => (row.selected = this.elToggleSelectAll.checked));
     this.updateReadableSelection();
     this.forceRender++;
   }
@@ -352,7 +353,7 @@ export class DataGrid {
 
   updateReadableSelection() {
     this.selection.length = 0;
-    this.rows.forEach(row => row.selected && this.selection.push(row));
+    this.rows.forEach((row) => row.selected && this.selection.push(row));
 
     // Check header checkbox if any or none are selected
     const selectAll = this.hostElement.shadowRoot.querySelector(
@@ -609,7 +610,7 @@ export class DataGrid {
     const diff = containerWidth - targetContentWidth;
     if (diff <= 0) {
       // content larger than container (scrollbar), remove all stretching
-      this.fields.forEach(field => (field.stretchWidth = 0));
+      this.fields.forEach((field) => (field.stretchWidth = 0));
     } else {
       // container larger than content (gap to the right), calculate stretching
       // If stretchWeight set, divide value between total to get final weight
@@ -630,7 +631,7 @@ export class DataGrid {
       const remainderWeight = Math.max(0, 1 - totalSetWeight);
       // Set total to be divided against to be above 1 to keep total set/unset weights equal to 1
       totalSetWeight = Math.max(1, totalSetWeight);
-      this.fields.forEach(field => {
+      this.fields.forEach((field) => {
         const { visible = true, stretchWeight } = field;
         if (!visible) {
           return;
@@ -834,7 +835,7 @@ export class DataGrid {
     }
     return (
       <div
-        ref={el => (this.elScrollContainer = el)}
+        ref={(el) => (this.elScrollContainer = el)}
         class={`${name}__scroll-container`}
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
@@ -878,7 +879,7 @@ export class DataGrid {
     return (
       <table class={`${name}__auto-width-check ${name}__table`}>
         <tr class={`tbody__row`}>
-          {autoCols.map(columnIndex => {
+          {autoCols.map((columnIndex) => {
             const field = this.fields[columnIndex];
             const { type, cell = CELL_TYPES[type] } = field;
             // Find largest content of each type. Use custom getter if exists
@@ -913,7 +914,7 @@ export class DataGrid {
   renderTableHead() {
     return (
       <thead
-        ref={el => (this.elTableHead = el)}
+        ref={(el) => (this.elTableHead = el)}
         class={`thead`}
         role="rowgroup"
       >
@@ -991,8 +992,8 @@ export class DataGrid {
                       data-width={width}
                       data-min={minWidth}
                       data-max={maxWidth}
-                      onMouseDown={e => this.onDividerDown(e)}
-                      onTouchStart={e => this.onDividerDown(e)}
+                      onMouseDown={(e) => this.onDividerDown(e)}
+                      onTouchStart={(e) => this.onDividerDown(e)}
                     >
                       <div class={`thead__divider-line`}></div>
                     </div>
@@ -1028,7 +1029,7 @@ export class DataGrid {
     return (
       <th class={`thead__cell thead__cell--selection`} style={style}>
         <scale-checkbox
-          ref={el => (this.elToggleSelectAll = el)}
+          ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
         ></scale-checkbox>
       </th>
@@ -1098,7 +1099,7 @@ export class DataGrid {
                     {rowNestedContent.map(({ content }) => {
                       return (
                         <div
-                          ref={el => {
+                          ref={(el) => {
                             if (el) {
                               // Remove content from other pages
                               let child = el.lastElementChild;
@@ -1158,7 +1159,7 @@ export class DataGrid {
       <td class={`tbody__cell tbody__cell--selection`} style={style}>
         <scale-checkbox
           checked={this.rows[rowIndex].selected}
-          onScaleChange={e => this.toggleRowSelect(e, rowIndex)}
+          onScaleChange={(e) => this.toggleRowSelect(e, rowIndex)}
         ></scale-checkbox>
       </td>
     );

@@ -58,14 +58,14 @@ export class Breadcrumb {
 
   setLinksArray() {
     this.linksArray = Array.from(this.hostElement.children).filter(
-      element => element.slot === ''
+      (element) => element.slot === ''
     );
   }
 
   render() {
-    const isLast = index => index === this.linksArray.length - 1;
+    const isLast = (index) => index === this.linksArray.length - 1;
     // Set aria-current="page" to the last item if it's a link
-    const getCurrentAttr = index =>
+    const getCurrentAttr = (index) =>
       isLast(index) === true ? { 'aria-current': 'page' } : undefined;
 
     return (

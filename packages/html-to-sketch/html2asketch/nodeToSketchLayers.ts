@@ -9,34 +9,34 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import Rectangle from "./model/rectangle";
-import Bitmap from "./model/bitmap";
-import SVG from "./model/svg";
-import ShapeGroup from "./model/shapeGroup";
-import Group from "./model/group";
-import Style from "./model/style";
-import Text from "./model/text";
-import TextStyle from "./model/textStyle";
-import { parseBackgroundImage, getActualImageSize } from "./helpers/background";
-import { splitShadowString, shadowStringToObject } from "./helpers/shadow";
-import { getSVGString } from "./helpers/svg";
-import { getGroupBCR } from "./helpers/bcr";
-import { fixWhiteSpace } from "./helpers/text";
-import { isNodeVisible, isTextVisible } from "./helpers/visibility";
-import TextAttributedString from "./model/textAttributedString";
+import Rectangle from './model/rectangle';
+import Bitmap from './model/bitmap';
+import SVG from './model/svg';
+import ShapeGroup from './model/shapeGroup';
+import Group from './model/group';
+import Style from './model/style';
+import Text from './model/text';
+import TextStyle from './model/textStyle';
+import { parseBackgroundImage, getActualImageSize } from './helpers/background';
+import { splitShadowString, shadowStringToObject } from './helpers/shadow';
+import { getSVGString } from './helpers/svg';
+import { getGroupBCR } from './helpers/bcr';
+import { fixWhiteSpace } from './helpers/text';
+import { isNodeVisible, isTextVisible } from './helpers/visibility';
+import TextAttributedString from './model/textAttributedString';
 
-import * as SvgPath from "svgpath";
-import Ref from "./model/ref";
-import { removeJssNameFromClass } from "./helpers/utils";
+import * as SvgPath from 'svgpath';
+import Ref from './model/ref';
+import { removeJssNameFromClass } from './helpers/utils';
 
 // Converts quadratic bézier curves to cubic bézier curves
 //
-SvgPath.prototype.unquad = function() {
+SvgPath.prototype.unquad = function () {
   var segments = this.segments;
   var nextPointX, nextPointY;
   var curControlX, curControlY;
 
-  this.iterate(function(
+  this.iterate(function (
     s: [string, ...number[]],
     idx: number,
     x: number,
@@ -44,7 +44,7 @@ SvgPath.prototype.unquad = function() {
   ) {
     var name = s[0];
 
-    if (name === "Q") {
+    if (name === 'Q') {
       // quadratic curve
 
       nextPointX = s[3];
@@ -54,13 +54,13 @@ SvgPath.prototype.unquad = function() {
       curControlY = s[2];
 
       segments[idx] = [
-        "C",
+        'C',
         x + (2 / 3) * (curControlX - x),
         y + (2 / 3) * (curControlY - y),
         nextPointX + (2 / 3) * (curControlX - nextPointX),
         nextPointY + (2 / 3) * (curControlY - nextPointY),
         nextPointX,
-        nextPointY
+        nextPointY,
       ];
     }
   });
@@ -70,10 +70,10 @@ SvgPath.prototype.unquad = function() {
 
 // Converts line segments to cubic bézier curves
 //
-SvgPath.prototype.unline = function() {
+SvgPath.prototype.unline = function () {
   var segments = this.segments;
 
-  this.iterate(function(
+  this.iterate(function (
     s: [string, ...number[]],
     idx: number,
     x: number,
@@ -81,22 +81,25 @@ SvgPath.prototype.unline = function() {
   ) {
     var name = s[0];
 
-    if (name === "L") {
+    if (name === 'L') {
       // line segment
-      segments[idx] = ["C", x, y, s[1], s[2], s[1], s[2]];
-    } else if (name === "H") {
+      segments[idx] = ['C', x, y, s[1], s[2], s[1], s[2]];
+    } else if (name === 'H') {
       // horizontal line segment
-      segments[idx] = ["C", x, y, s[1], y, s[1], y];
-    } else if (name === "V") {
+      segments[idx] = ['C', x, y, s[1], y, s[1], y];
+    } else if (name === 'V') {
       // vertical line segment
-      segments[idx] = ["C", x, y, x, s[1], x, s[1]];
+      segments[idx] = ['C', x, y, x, s[1], x, s[1]];
     }
   });
 
   return this;
 };
 
-SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:number) {
+SvgPath.prototype.toCurvePoints = function (
+  node: SVGPathElement,
+  cornerRadius: number
+) {
   const root = node.ownerSVGElement;
   const ctm = node.getCTM();
   if (!root || !ctm) return [];
@@ -106,13 +109,13 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
   let maxY = -Infinity;
   for (let i = 0; i < this.segments.length; i++) {
     const segment = this.segments[i];
-    for (let j = 1; j < segment.length; j+=2) {
+    for (let j = 1; j < segment.length; j += 2) {
       const point = root.createSVGPoint();
       point.x = segment[j];
-      point.y = segment[j+1];
+      point.y = segment[j + 1];
       const transformedPoint = point.matrixTransform(ctm);
       segment[j] = transformedPoint.x;
-      segment[j+1] = transformedPoint.y;
+      segment[j + 1] = transformedPoint.y;
       if (minX > transformedPoint.x) minX = transformedPoint.x;
       if (maxX < transformedPoint.x) maxX = transformedPoint.x;
       if (minY > transformedPoint.y) minY = transformedPoint.y;
@@ -125,9 +128,9 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
   const bboxHeight = maxY - minY;
   for (let i = 0; i < this.segments.length; i++) {
     const segment = this.segments[i];
-    for (let j = 1; j < segment.length; j+=2) {
+    for (let j = 1; j < segment.length; j += 2) {
       segment[j] = (segment[j] - bboxX) / bboxWidth;
-      segment[j+1] = (segment[j+1] - bboxY) / bboxHeight;
+      segment[j + 1] = (segment[j + 1] - bboxY) / bboxHeight;
     }
   }
   let c0x = 0;
@@ -143,7 +146,7 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
   const segments: any[] = [];
   let curvePoints: any[] = [];
   let isClosed = false;
-  this.iterate(function(
+  this.iterate(function (
     s: [string, ...number[]],
     idx: number,
     x: number,
@@ -151,17 +154,17 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
   ) {
     const [command, ...coords] = s;
     idx;
-    if (command === "M") {
+    if (command === 'M') {
       if (hasCurveFrom) {
         const cmd = {
-          _class: "curvePoint",
+          _class: 'curvePoint',
           cornerRadius,
           curveFrom: `{${c0x}, ${c0y}}`,
           curveMode: 5,
           curveTo: `{${lastX}, ${lastY}}`,
           hasCurveFrom: hasCurveFrom,
           hasCurveTo: false,
-          point: `{${lastX}, ${lastY}}`
+          point: `{${lastX}, ${lastY}}`,
         };
         curvePoints.push(cmd);
         lastX = 0;
@@ -175,17 +178,17 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
       hasCurveFrom = false;
       isClosed = false;
       curvePoints = [];
-    } else if (command === "C") {
+    } else if (command === 'C') {
       isClosed = false;
       const cmd = {
-        _class: "curvePoint",
+        _class: 'curvePoint',
         cornerRadius,
         curveFrom: `{${c0x}, ${c0y}}`,
         curveMode: 5,
         curveTo: `{${coords[0]}, ${coords[1]}}`,
         hasCurveFrom: hasCurveFrom,
         hasCurveTo: true,
-        point: `{${x}, ${y}}`
+        point: `{${x}, ${y}}`,
       };
       hasCurveFrom = true;
       c0x = coords[2];
@@ -193,20 +196,20 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
       lastX = coords[4];
       lastY = coords[5];
       curvePoints.push(cmd);
-    } else if (command === "z" || command === "Z") {
+    } else if (command === 'z' || command === 'Z') {
       isClosed = true;
     }
   });
   if (hasCurveFrom) {
     const cmd = {
-      _class: "curvePoint",
+      _class: 'curvePoint',
       cornerRadius,
       curveFrom: `{${c0x}, ${c0y}}`,
       curveMode: 5,
       curveTo: `{${lastX}, ${lastY}}`,
       hasCurveFrom: hasCurveFrom,
       hasCurveTo: false,
-      point: `{${lastX}, ${lastY}}`
+      point: `{${lastX}, ${lastY}}`,
     };
     curvePoints.push(cmd);
   }
@@ -214,101 +217,133 @@ SvgPath.prototype.toCurvePoints = function(node: SVGPathElement, cornerRadius:nu
     segments.push({ isClosed, points: curvePoints });
   }
   segments.reverse();
-  segments.forEach(s => s.points.reverse());
-  return {bbox: {x: bboxX, y: bboxY, width: bboxWidth, height: bboxHeight}, segments};
+  segments.forEach((s) => s.points.reverse());
+  return {
+    bbox: { x: bboxX, y: bboxY, width: bboxWidth, height: bboxHeight },
+    segments,
+  };
 };
 
-function getRectanglePoints(cornerRadius:number) {
+function getRectanglePoints(cornerRadius: number) {
   return [
     {
-      _class: "curvePoint",
+      _class: 'curvePoint',
       cornerRadius,
       curveFrom: `{0,0}`,
       curveMode: 1,
       curveTo: `{0,0}`,
       hasCurveFrom: false,
       hasCurveTo: false,
-      point: `{0,0}`
+      point: `{0,0}`,
     },
     {
-      _class: "curvePoint",
+      _class: 'curvePoint',
       cornerRadius,
       curveFrom: `{1,0}`,
       curveMode: 1,
       curveTo: `{1,0}`,
       hasCurveFrom: false,
       hasCurveTo: false,
-      point: `{1,0}`
+      point: `{1,0}`,
     },
     {
-      _class: "curvePoint",
+      _class: 'curvePoint',
       cornerRadius,
       curveFrom: `{1,1}`,
       curveMode: 1,
       curveTo: `{1,1}`,
       hasCurveFrom: false,
       hasCurveTo: false,
-      point: `{1,1}`
+      point: `{1,1}`,
     },
     {
-      _class: "curvePoint",
+      _class: 'curvePoint',
       cornerRadius,
       curveFrom: `{0,1}`,
       curveMode: 1,
       curveTo: `{0,1}`,
       hasCurveFrom: false,
       hasCurveTo: false,
-      point: `{0,1}`
-    }
+      point: `{0,1}`,
+    },
   ];
 }
 
-function parseSVGGradientStops(node:(SVGLinearGradientElement|SVGRadialGradientElement)) {
-  const stopArray = [] as {position:number, color:string}[];
+function parseSVGGradientStops(
+  node: SVGLinearGradientElement | SVGRadialGradientElement
+) {
+  const stopArray = [] as { position: number; color: string }[];
   const stops = node.getElementsByTagName('stop');
   for (let i = 0; i < stops.length; i++) {
     const stopEl = stops[i];
-    const stop = {position: 0, color: '#000000'};
+    const stop = { position: 0, color: '#000000' };
     stop.position = stopEl.offset.baseVal;
-    stop.color = getComputedStyle(stopEl).getPropertyValue('stop-color') || '#000000';
+    stop.color =
+      getComputedStyle(stopEl).getPropertyValue('stop-color') || '#000000';
     stopArray.push(stop);
   }
   return stopArray;
 }
 
-function convertSVGPointToObjectBoundingBox(point: DOMPoint, x: SVGAnimatedLength, y: SVGAnimatedLength, node:SVGElement, bbox:{x:number,y:number,width:number,height:number}) {
-    if (x.baseVal.unitType === 2) { // Percent value, scale to bbox.
-      point.x = bbox.x + (point.x - bbox.x) / (node.ownerSVGElement!.getBBox().width / bbox.width);
-    } else { // pixel value, move origin to bbox
-      point.x = bbox.x + point.x * bbox.width;
-    }
-    if (y.baseVal.unitType === 2) { // Percent value, scale to bbox.
-      point.y = bbox.y + (point.y - bbox.y) / (node.ownerSVGElement!.getBBox().height / bbox.height);
-    } else {
-      point.y = bbox.y + point.y * bbox.height;
-    }
+function convertSVGPointToObjectBoundingBox(
+  point: DOMPoint,
+  x: SVGAnimatedLength,
+  y: SVGAnimatedLength,
+  node: SVGElement,
+  bbox: { x: number; y: number; width: number; height: number }
+) {
+  if (x.baseVal.unitType === 2) {
+    // Percent value, scale to bbox.
+    point.x =
+      bbox.x +
+      (point.x - bbox.x) / (node.ownerSVGElement!.getBBox().width / bbox.width);
+  } else {
+    // pixel value, move origin to bbox
+    point.x = bbox.x + point.x * bbox.width;
+  }
+  if (y.baseVal.unitType === 2) {
+    // Percent value, scale to bbox.
+    point.y =
+      bbox.y +
+      (point.y - bbox.y) /
+        (node.ownerSVGElement!.getBBox().height / bbox.height);
+  } else {
+    point.y = bbox.y + point.y * bbox.height;
+  }
 }
 
-function parseSVGLinearGradient(node:SVGLinearGradientElement, ctm:DOMMatrix, bbox:{x:number,y:number,width:number,height:number}) {
+function parseSVGLinearGradient(
+  node: SVGLinearGradientElement,
+  ctm: DOMMatrix,
+  bbox: { x: number; y: number; width: number; height: number }
+) {
   const template = {
     fillType: 1,
     gradient: {
       gradientType: 0,
-      from: {x: 0, y: 0},
-      to: {x: 0, y: 0},
-      stops: [] as {position:number, color:string}[]
-    }
+      from: { x: 0, y: 0 },
+      to: { x: 0, y: 0 },
+      stops: [] as { position: number; color: string }[],
+    },
   };
   ctm;
   const gtm = new DOMMatrix(getComputedStyle(node).transform);
-  const point = new DOMPoint(node.x1.baseVal.value, node.y1.baseVal.value).matrixTransform(gtm); // .matrixTransform(ctm);
-  if (node.gradientUnits.baseVal === 2) { // Object bounding box units.
+  const point = new DOMPoint(
+    node.x1.baseVal.value,
+    node.y1.baseVal.value
+  ).matrixTransform(gtm); // .matrixTransform(ctm);
+  if (node.gradientUnits.baseVal === 2) {
+    // Object bounding box units.
     convertSVGPointToObjectBoundingBox(point, node.x1, node.y1, node, bbox);
   }
   template.gradient.from.x = (point.x - bbox.x) / bbox.width;
   template.gradient.from.y = (point.y - bbox.y) / bbox.height;
-  const point2 = new DOMPoint(node.x2.baseVal.value, node.y2.baseVal.value).matrixTransform(gtm); // .matrixTransform(ctm);
-  if (node.gradientUnits.baseVal === 2) { // Object bounding box units.
+  const point2 = new DOMPoint(
+    node.x2.baseVal.value,
+    node.y2.baseVal.value
+  ).matrixTransform(gtm); // .matrixTransform(ctm);
+  if (node.gradientUnits.baseVal === 2) {
+    // Object bounding box units.
     convertSVGPointToObjectBoundingBox(point2, node.x2, node.y2, node, bbox);
   }
   template.gradient.to.x = (point2.x - bbox.x) / bbox.width;
@@ -317,36 +352,52 @@ function parseSVGLinearGradient(node:SVGLinearGradientElement, ctm:DOMMatrix, bb
   return template;
 }
 
-function parseSVGRadialGradient(node:SVGRadialGradientElement, ctm:DOMMatrix, bbox:{x:number,y:number,width:number,height:number}) {
+function parseSVGRadialGradient(
+  node: SVGRadialGradientElement,
+  ctm: DOMMatrix,
+  bbox: { x: number; y: number; width: number; height: number }
+) {
   const template = {
     fillType: 1,
     gradient: {
       gradientType: 1,
-      from: {x: 0, y: 0},
-      to: {x: 0, y: 0},
-      stops: [] as {position:number, color:string}[]
-    }
+      from: { x: 0, y: 0 },
+      to: { x: 0, y: 0 },
+      stops: [] as { position: number; color: string }[],
+    },
   };
   ctm; // Do we need to use the node CTM for anything?
   const style = getComputedStyle(node) as any;
   const gtm = new DOMMatrix(style.transform);
   //.matrixTransform(ctm);
-  const center = new DOMPoint(node.cx.baseVal.value, node.cy.baseVal.value).matrixTransform(gtm);
-  if (node.gradientUnits.baseVal === 2) { // Object bounding box units.
+  const center = new DOMPoint(
+    node.cx.baseVal.value,
+    node.cy.baseVal.value
+  ).matrixTransform(gtm);
+  if (node.gradientUnits.baseVal === 2) {
+    // Object bounding box units.
     convertSVGPointToObjectBoundingBox(center, node.cx, node.cy, node, bbox);
   }
   template.gradient.from.x = (center.x - bbox.x) / bbox.width;
   template.gradient.from.y = (center.y - bbox.y) / bbox.height;
   //.matrixTransform(ctm);
-  const radiusPoint = new DOMPoint(node.r.baseVal.value, 0).matrixTransform(gtm);
-  if (node.gradientUnits.baseVal === 2 && node.r.baseVal.unitType === 2) { // Percent value in OBB units.
-    let d = new DOMPoint(node.r.baseVal.valueInSpecifiedUnits * 0.01 * bbox.width, 0).matrixTransform(gtm);
+  const radiusPoint = new DOMPoint(node.r.baseVal.value, 0).matrixTransform(
+    gtm
+  );
+  if (node.gradientUnits.baseVal === 2 && node.r.baseVal.unitType === 2) {
+    // Percent value in OBB units.
+    let d = new DOMPoint(
+      node.r.baseVal.valueInSpecifiedUnits * 0.01 * bbox.width,
+      0
+    ).matrixTransform(gtm);
     radiusPoint.x = center.x + d.x;
     radiusPoint.y = center.y + d.y;
-  } else if (node.gradientUnits.baseVal === 2) { // Add radius vector to center point.
+  } else if (node.gradientUnits.baseVal === 2) {
+    // Add radius vector to center point.
     radiusPoint.x = radiusPoint.x * bbox.width + center.x;
     radiusPoint.y = radiusPoint.y * bbox.height + center.y;
-  } else { // Add radius vector to center point.
+  } else {
+    // Add radius vector to center point.
     radiusPoint.x += center.x;
     radiusPoint.y += center.y;
   }
@@ -357,10 +408,10 @@ function parseSVGRadialGradient(node:SVGRadialGradientElement, ctm:DOMMatrix, bb
 }
 
 const DEFAULT_VALUES = {
-  backgroundColor: "rgba(0, 0, 0, 0)",
-  backgroundImage: "none",
-  borderWidth: "0px",
-  boxShadow: "none"
+  backgroundColor: 'rgba(0, 0, 0, 0)',
+  backgroundImage: 'none',
+  borderWidth: '0px',
+  boxShadow: 'none',
 };
 
 const ALIGNMENTS = {
@@ -368,14 +419,14 @@ const ALIGNMENTS = {
   right: 1,
   center: 2,
   justify: 3,
-  "flex-start": 0,
-  "flex-end": 1,
+  'flex-start': 0,
+  'flex-end': 1,
   start: 0,
-  end: 1
+  end: 1,
 };
 
 function hasOnlyDefaultStyles(styles: object) {
-  return Object.keys(DEFAULT_VALUES).every(key => {
+  return Object.keys(DEFAULT_VALUES).every((key) => {
     const defaultValue = DEFAULT_VALUES[key];
     const value = styles[key];
 
@@ -387,7 +438,7 @@ function fixBorderRadius(borderRadius: string, width: number, height: number) {
   const matches = borderRadius.match(/^([0-9.]+)(.+)$/);
 
   // Sketch uses 'px' units for border radius, so we need to convert % to px
-  if (matches && matches[2] === "%") {
+  if (matches && matches[2] === '%') {
     const baseVal = Math.max(width, height);
     const percentageApplied = baseVal * (parseInt(matches[1], 10) / 100);
 
@@ -397,10 +448,10 @@ function fixBorderRadius(borderRadius: string, width: number, height: number) {
 }
 
 function isSVGDescendant(node: HTMLElement) {
-  return node instanceof SVGElement && node.matches("svg *");
+  return node instanceof SVGElement && node.matches('svg *');
 }
 
-const PSEUDO_ELEMENTS = [":after", ":before"];
+const PSEUDO_ELEMENTS = [':after', ':before'];
 
 function gatherCSSRules(
   rules: CSSStyleRule[],
@@ -409,7 +460,7 @@ function gatherCSSRules(
   if (styleSheet instanceof CSSStyleSheet && !styleSheet.disabled) {
     Array.from(styleSheet.cssRules)
       .reverse()
-      .forEach(rule => {
+      .forEach((rule) => {
         if (
           rule instanceof CSSStyleRule &&
           /::?-webkit-slider-/.test(rule.selectorText)
@@ -433,8 +484,8 @@ let CSSRules: CSSStyleRule[] | undefined = undefined;
 function findSliderThumbCSSRules(el: Element): CSSStyleRule[] {
   if (!CSSRules) return [];
   return CSSRules.filter(
-    r =>
-      el.matches(r.selectorText.replace(/::?(-webkit-slider-thumb)/g, "")) &&
+    (r) =>
+      el.matches(r.selectorText.replace(/::?(-webkit-slider-thumb)/g, '')) &&
       !el.matches(r.selectorText)
   );
 }
@@ -442,26 +493,26 @@ function findSliderThumbCSSRules(el: Element): CSSStyleRule[] {
 function findSliderTrackCSSRules(el: Element): CSSStyleRule[] {
   if (!CSSRules) return [];
   return CSSRules.filter(
-    r =>
+    (r) =>
       el.matches(
-        r.selectorText.replace(/::?(-webkit-slider-runnable-track)/g, "")
+        r.selectorText.replace(/::?(-webkit-slider-runnable-track)/g, '')
       ) && !el.matches(r.selectorText)
   );
 }
 
 const MODES = {
-  ESCAPE: "\\".charCodeAt(0),
-  OPENPAREN: "(".charCodeAt(0),
-  CLOSEPAREN: ")".charCodeAt(0),
+  ESCAPE: '\\'.charCodeAt(0),
+  OPENPAREN: '('.charCodeAt(0),
+  CLOSEPAREN: ')'.charCodeAt(0),
   DOUBLEQUOTE: '"'.charCodeAt(0),
   QUOTE: "'".charCodeAt(0),
-  TOP: -1
+  TOP: -1,
 };
 
 function parseContentString(content: string) {
   let astStack = [];
   let currentMode = null;
-  let currentNode = { mode: MODES.TOP, name: "", children: [] as any[] };
+  let currentNode = { mode: MODES.TOP, name: '', children: [] as any[] };
   const top = currentNode;
   const re = /[^"'()\\\s]*.?/y;
   while (true) {
@@ -493,15 +544,15 @@ function parseContentString(content: string) {
         treeEnd = true;
       } else {
         astStack.push({ node: currentNode, mode: currentMode });
-        currentNode = { mode, name: "", children: [] as any[] };
+        currentNode = { mode, name: '', children: [] as any[] };
         currentMode = mode;
       }
     } else if (mode !== 32 && mode !== 9 && mode !== 10) {
       astStack.push({ node: currentNode, mode: currentMode });
       currentNode = {
         mode,
-        name: mode === MODES.OPENPAREN ? currentNode.children.pop() : "",
-        children: [] as any[]
+        name: mode === MODES.OPENPAREN ? currentNode.children.pop() : '',
+        children: [] as any[],
       };
       currentMode = mode;
     } else {
@@ -521,56 +572,56 @@ function parseContentString(content: string) {
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/image
 const IMAGE_FUNCS = [
-  "url",
-  "element",
-  "linear-gradient",
-  "radial-gradient",
-  "repeating-linear-gradient",
-  "repeating-radial-gradient",
-  "conic-gradient",
-  "image",
-  "cross-fade",
-  "image-set"
+  'url',
+  'element',
+  'linear-gradient',
+  'radial-gradient',
+  'repeating-linear-gradient',
+  'repeating-radial-gradient',
+  'conic-gradient',
+  'image',
+  'cross-fade',
+  'image-set',
 ];
 
 function astToString(node: HTMLElement, ast: any): string {
-  if (typeof ast === "string") return ast;
-  let string = "";
+  if (typeof ast === 'string') return ast;
+  let string = '';
   if (ast.mode === MODES.QUOTE || ast.mode === MODES.DOUBLEQUOTE) {
-    return JSON.stringify(ast.children.join(""));
+    return JSON.stringify(ast.children.join(''));
   }
   if (ast.name) {
-    if (ast.name === "attr") {
+    if (ast.name === 'attr') {
       return (
         node.getAttribute(
-          ast.children.map((c: any) => astToString(node, c)).join("")
-        ) || ""
+          ast.children.map((c: any) => astToString(node, c)).join('')
+        ) || ''
       );
     }
     string += ast.name;
   }
   if (ast.mode === MODES.OPENPAREN) {
-    string += "(";
+    string += '(';
   }
-  string += ast.children.map((c: any) => astToString(node, c)).join("");
+  string += ast.children.map((c: any) => astToString(node, c)).join('');
   if (ast.mode === MODES.OPENPAREN) {
-    string += ")";
+    string += ')';
   }
   return string;
 }
 
 function applyAST(element: HTMLElement, node: HTMLElement, ast: any) {
-  if (typeof ast === "string") {
-    if (ast === "open-quote") element.textContent += '"';
-    if (ast === "close-quote") element.textContent += '"';
+  if (typeof ast === 'string') {
+    if (ast === 'open-quote') element.textContent += '"';
+    if (ast === 'close-quote') element.textContent += '"';
     return;
   }
   if (ast.mode === MODES.QUOTE || ast.mode === MODES.DOUBLEQUOTE) {
-    element.textContent += ast.children.join("");
+    element.textContent += ast.children.join('');
   } else if (ast.mode === MODES.OPENPAREN) {
     if (IMAGE_FUNCS.includes(ast.name)) {
       element.style.backgroundImage = astToString(node, ast);
-    } else if (ast.name === "attr") {
+    } else if (ast.name === 'attr') {
       element.textContent += astToString(node, ast);
     }
   }
@@ -596,7 +647,7 @@ function applyStyle(element: HTMLElement, style: CSSStyleDeclaration) {
   }
 }
 
-function getNameForNode(node: Element | null):string {
+function getNameForNode(node: Element | null): string {
   if (node === null) {
     return 'custom';
   }
@@ -607,7 +658,11 @@ function getNameForNode(node: Element | null):string {
   return getNameForNode(node.parentElement);
 }
 
-export default function nodeToSketchLayers(node: HTMLElement, group: Group, options: any) {
+export default function nodeToSketchLayers(
+  node: HTMLElement,
+  group: Group,
+  options: any
+) {
   if (CSSRules === undefined) {
     CSSRules = Array.from(document.styleSheets).reduce(gatherCSSRules, []);
   }
@@ -625,22 +680,22 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   const height = bcr.bottom - bcr.top;
 
   let hidePseudo = false;
-  PSEUDO_ELEMENTS.forEach(pseudo => {
+  PSEUDO_ELEMENTS.forEach((pseudo) => {
     const pseudoStyle = getComputedStyle(node, pseudo);
-    if (pseudoStyle.content !== "normal" && pseudoStyle.content !== "none") {
-      const element = document.createElement("span");
+    if (pseudoStyle.content !== 'normal' && pseudoStyle.content !== 'none') {
+      const element = document.createElement('span');
       applyStyle(element, pseudoStyle);
-      element.style.content = "normal";
+      element.style.content = 'normal';
       resolveCSSContentString(element, node, pseudoStyle.content);
       if (
-        element.style.backgroundImage !== "" &&
-        element.style.display !== "block"
+        element.style.backgroundImage !== '' &&
+        element.style.display !== 'block'
       ) {
-        element.style.display = "inline-block";
+        element.style.display = 'inline-block';
       }
-      if (pseudo === ":before") {
+      if (pseudo === ':before') {
         node.insertBefore(element, node.firstChild);
-      } else if (pseudo === ":after") {
+      } else if (pseudo === ':after') {
         node.appendChild(element);
       }
       hidePseudo = true;
@@ -648,19 +703,28 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   });
   if (hidePseudo) {
     // Hide pseudo elements after recreating them.
-    node.classList.add("hide-pseudo");
+    node.classList.add('hide-pseudo');
   }
 
   if (node instanceof HTMLSelectElement) {
-    const selectedOption = Array.from(node.getElementsByTagName("option")).find(o => o.selected);
+    const selectedOption = Array.from(node.getElementsByTagName('option')).find(
+      (o) => o.selected
+    );
     const textValue = selectedOption?.textContent;
     if (textValue) {
       const element = document.createElement('div');
-      element.appendChild(document.createTextNode("Dropdown Value"));
+      element.appendChild(document.createTextNode('Dropdown Value'));
       applyStyle(element, getComputedStyle(node));
       element.style.background = 'none';
-      element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
-      element.style.top = (parseInt(element.style.borderTopWidth)-parseInt(element.style.marginTop)+4) + "px";
+      element.style.left =
+        parseInt(element.style.borderLeftWidth) -
+        parseInt(element.style.marginLeft) +
+        'px';
+      element.style.top =
+        parseInt(element.style.borderTopWidth) -
+        parseInt(element.style.marginTop) +
+        4 +
+        'px';
       element.style.border = '0px';
       element.style.outline = '0px';
       element.style.textShadow = 'none';
@@ -680,11 +744,18 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     const textValue = node.value;
     if (textValue) {
       const element = document.createElement('div');
-      element.appendChild(document.createTextNode("Input Value"));
+      element.appendChild(document.createTextNode('Input Value'));
       applyStyle(element, getComputedStyle(node));
       element.style.background = 'none';
-      element.style.left = (parseInt(element.style.borderLeftWidth)-parseInt(element.style.marginLeft)) + "px";
-      element.style.top = (parseInt(element.style.borderTopWidth)-parseInt(element.style.marginTop)+4) + "px";
+      element.style.left =
+        parseInt(element.style.borderLeftWidth) -
+        parseInt(element.style.marginLeft) +
+        'px';
+      element.style.top =
+        parseInt(element.style.borderTopWidth) -
+        parseInt(element.style.marginTop) +
+        4 +
+        'px';
       element.style.border = '0px';
       element.style.outline = '0px';
       element.style.textShadow = 'none';
@@ -703,7 +774,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   let haveTrack = false;
   const sliderTrackCSSRules = findSliderTrackCSSRules(node);
   if (sliderTrackCSSRules.length > 0) {
-    const track = document.createElement("div");
+    const track = document.createElement('div');
     const rules = [];
     let rule: false | CSSStyleDeclaration = sliderTrackCSSRules[0].style;
     while (rule) {
@@ -713,22 +784,22 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         rule.parentRule.style !== rule &&
         rule.parentRule.style;
     }
-    rules.forEach(rule => applyStyle(track, rule));
-    track.style.boxSizing = "border-box";
-    track.style.display = "block";
-    track.style.position = "absolute";
-    track.style.minWidth = "0px";
-    track.style.alignSelf = "center";
-    track.style.flex = "1 1 0%";
+    rules.forEach((rule) => applyStyle(track, rule));
+    track.style.boxSizing = 'border-box';
+    track.style.display = 'block';
+    track.style.position = 'absolute';
+    track.style.minWidth = '0px';
+    track.style.alignSelf = 'center';
+    track.style.flex = '1 1 0%';
     if (node.parentElement) {
       if (
         !/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)
       ) {
-        node.parentElement.style.position = "relative";
+        node.parentElement.style.position = 'relative';
       }
-      track.style.top = node.offsetTop - node.offsetHeight / 2 + "px";
-      track.style.left = node.offsetLeft + "px";
-      track.style.width = node.getBoundingClientRect().width + "px";
+      track.style.top = node.offsetTop - node.offsetHeight / 2 + 'px';
+      track.style.left = node.offsetLeft + 'px';
+      track.style.width = node.getBoundingClientRect().width + 'px';
       haveTrack = true;
       node.parentElement.appendChild(track);
     }
@@ -736,7 +807,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
   const sliderThumbCSSRules = findSliderThumbCSSRules(node);
   if (sliderThumbCSSRules.length > 0) {
-    const thumb = document.createElement("div");
+    const thumb = document.createElement('div');
     const rules = [];
     let rule: false | CSSStyleDeclaration = sliderThumbCSSRules[0].style;
     while (rule) {
@@ -746,15 +817,15 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         rule.parentRule.style !== rule &&
         rule.parentRule.style;
     }
-    rules.forEach(rule => applyStyle(thumb, rule));
-    thumb.style.boxSizing = "border-box";
-    thumb.style.display = "block";
-    thumb.style.position = "absolute";
+    rules.forEach((rule) => applyStyle(thumb, rule));
+    thumb.style.boxSizing = 'border-box';
+    thumb.style.display = 'block';
+    thumb.style.position = 'absolute';
     if (node.parentElement) {
       if (
         !/^(relative|absolute|fixed)$/.test(node.parentElement.style.position)
       ) {
-        node.parentElement.style.position = "relative";
+        node.parentElement.style.position = 'relative';
       }
       thumb.style.top =
         node.offsetTop -
@@ -762,8 +833,8 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         (haveTrack
           ? 0
           : parseFloat(thumb.style.height) / 2 - node.offsetHeight) +
-        "px";
-      thumb.style.left = node.offsetLeft + "px";
+        'px';
+      thumb.style.left = node.offsetLeft + 'px';
       node.parentElement.appendChild(thumb);
     }
   }
@@ -797,7 +868,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     color,
     boxShadow,
     opacity,
-    whiteSpace
+    whiteSpace,
   }: any = styles;
 
   // skip SVG child nodes as they are already covered by `new SVG(…)`
@@ -814,15 +885,19 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
   if (options && options.getRectangleName) {
     shapeGroup.setName(options.getRectangleName(node));
   } else {
-    shapeGroup.setName("custom");
+    shapeGroup.setName('custom');
   }
 
   const isImage =
-    node.nodeName === "IMG" && (node as HTMLImageElement).currentSrc;
-  const isSVG = node.nodeName === "svg";
+    node.nodeName === 'IMG' && (node as HTMLImageElement).currentSrc;
+  const isSVG = node.nodeName === 'svg';
 
   if (node instanceof SVGElement) {
-    if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
+    if (
+      node instanceof SVGLinearGradientElement ||
+      node instanceof SVGRadialGradientElement ||
+      node instanceof SVGStopElement
+    ) {
       return layers;
     }
     (node as any).shapeGroup = group;
@@ -840,53 +915,65 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     } else if (isSVG) {
       // Create a clip rect for the SVG viewbox
       const clip = new ShapeGroup({ x: left, y: top, width, height });
-      clip._class = "shapePath";
+      clip._class = 'shapePath';
       clip.setHasClippingMask(true);
       clip._points = getRectanglePoints(0);
       clip._isClosed = true;
       layers.push(clip);
     }
-    const parseStyleNumber = (s:string = '', defaultValue:number = 0) => {
+    const parseStyleNumber = (s: string = '', defaultValue: number = 0) => {
       let num = parseFloat(s);
       if (isNaN(num)) return defaultValue;
       return num;
     };
-    const ellipseAttrsToPath = (rx:number,cx:number,ry:number,cy:number) => (
-      `M${cx-rx},${cy}a${rx},${ry} 0 1,0 ${rx*2},0a${rx},${ry} 0 1,0 -${rx*2},0`
-    );
+    const ellipseAttrsToPath = (
+      rx: number,
+      cx: number,
+      ry: number,
+      cy: number
+    ) =>
+      `M${cx - rx},${cy}a${rx},${ry} 0 1,0 ${rx * 2},0a${rx},${ry} 0 1,0 -${
+        rx * 2
+      },0`;
     let pathSegments: string | null = null;
     let cornerRadiusPx = 0;
     let classOverride = 'shapePath';
     const anyStyles = styles as any;
     switch (node.tagName) {
-      case "rect":
+      case 'rect':
         classOverride = 'rectangle';
-        const x = parseStyleNumber(anyStyles.x), y = parseStyleNumber(anyStyles.y);
-        const rectWidth = parseStyleNumber(anyStyles.width), rectHeight = parseStyleNumber(anyStyles.height);
-        pathSegments = `M ${x} ${y} L ${x+rectWidth} ${y} L ${x+rectWidth} ${y+rectHeight} L ${x} ${y+rectHeight} z`;
+        const x = parseStyleNumber(anyStyles.x),
+          y = parseStyleNumber(anyStyles.y);
+        const rectWidth = parseStyleNumber(anyStyles.width),
+          rectHeight = parseStyleNumber(anyStyles.height);
+        pathSegments = `M ${x} ${y} L ${x + rectWidth} ${y} L ${
+          x + rectWidth
+        } ${y + rectHeight} L ${x} ${y + rectHeight} z`;
         cornerRadiusPx = parseStyleNumber(anyStyles.rx || anyStyles.ry);
         break;
-      case "polygon":
-      case "polyline":
-        const points = (node.getAttribute('points') || '').trim().split(/\s*[,\s]\s*/);
+      case 'polygon':
+      case 'polyline':
+        const points = (node.getAttribute('points') || '')
+          .trim()
+          .split(/\s*[,\s]\s*/);
         if (points.length > 2) {
           pathSegments = `M ${points[0]} ${points[1]}`;
-          for (let i = 2; i < points.length; i+=2) {
-            pathSegments += `L ${points[i]} ${points[i+1]}`;
+          for (let i = 2; i < points.length; i += 2) {
+            pathSegments += `L ${points[i]} ${points[i + 1]}`;
           }
           if (node.tagName === 'polygon') {
             pathSegments += 'z';
           }
         }
         break;
-      case "circle": {
+      case 'circle': {
         const r = parseStyleNumber(anyStyles.r);
         const cx = parseStyleNumber(anyStyles.cx);
         const cy = parseStyleNumber(anyStyles.cy);
         pathSegments = ellipseAttrsToPath(r, cx, r, cy);
         break;
       }
-      case "ellipse": {
+      case 'ellipse': {
         const rx = parseStyleNumber(anyStyles.rx);
         const ry = parseStyleNumber(anyStyles.ry);
         const cx = parseStyleNumber(anyStyles.cx);
@@ -894,7 +981,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         pathSegments = ellipseAttrsToPath(rx, cx, ry, cy);
         break;
       }
-      case "line": {
+      case 'line': {
         const x1 = parseStyleNumber(anyStyles.x1);
         const x2 = parseStyleNumber(anyStyles.x2);
         const y1 = parseStyleNumber(anyStyles.y1);
@@ -902,10 +989,10 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         pathSegments = `M ${x1} ${y1} L ${x2} ${y2}`;
         break;
       }
-      case "path":
-        pathSegments = node.getAttribute("d");
+      case 'path':
+        pathSegments = node.getAttribute('d');
         break;
-      case "text":
+      case 'text':
         break;
     }
     if (pathSegments) {
@@ -915,17 +1002,17 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         .unarc()
         .unquad()
         .unline();
-      node.setAttribute("d", path.toString());
+      node.setAttribute('d', path.toString());
       const style = new Style();
       shapeGroup._isClosed = true;
       style._borderOptions = {
-        _class: "borderOptions",
+        _class: 'borderOptions',
         isEnabled: true,
         dashPattern: [],
         lineCapStyle: 0,
-        lineJoinStyle: 0
+        lineJoinStyle: 0,
       };
-      const ctm = (node as unknown as SVGPathElement).getCTM();
+      const ctm = ((node as unknown) as SVGPathElement).getCTM();
       // Do we need to deal with X-Y scales separately?
       // Sketch doesn't support transform matrices, so can't do full SVG transform stack.
       // Well, you could SVD the matrix into a rotate-scale-rotate sequence if really needed.
@@ -937,29 +1024,45 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
       // Set stroke parameters
       if (anyStyles.stroke && anyStyles.stroke !== 'none') {
-        style.addBorder({ color: anyStyles.stroke, alpha: parseStyleNumber(anyStyles.strokeOpacity, 1), thickness: parseStyleNumber(anyStyles.strokeWidth) * nodeScale });
-        style._borders[style._borders.length-1].position = 0;
+        style.addBorder({
+          color: anyStyles.stroke,
+          alpha: parseStyleNumber(anyStyles.strokeOpacity, 1),
+          thickness: parseStyleNumber(anyStyles.strokeWidth) * nodeScale,
+        });
+        style._borders[style._borders.length - 1].position = 0;
         switch (anyStyles.strokeLinecap) {
-          case 'round': style._borderOptions.lineCapStyle = 1; break;
-          case 'square': style._borderOptions.lineCapStyle = 2; break;
-          case 'butt': 
+          case 'round':
+            style._borderOptions.lineCapStyle = 1;
+            break;
+          case 'square':
+            style._borderOptions.lineCapStyle = 2;
+            break;
+          case 'butt':
           default:
             style._borderOptions.lineCapStyle = 0;
             break;
         }
         switch (anyStyles.strokeLinejoin) {
-          case 'bevel': style._borderOptions.lineJoinStyle = 2; break;
-          case 'round': style._borderOptions.lineJoinStyle = 1; break;
-          case 'arcs': style._borderOptions.lineJoinStyle = 1; break;
+          case 'bevel':
+            style._borderOptions.lineJoinStyle = 2;
+            break;
+          case 'round':
+            style._borderOptions.lineJoinStyle = 1;
+            break;
+          case 'arcs':
+            style._borderOptions.lineJoinStyle = 1;
+            break;
           case 'miter-clip':
-          case 'miter': 
+          case 'miter':
           default:
             style._borderOptions.lineJoinStyle = 0;
             break;
         }
-        const dashArray = (anyStyles.strokeDasharray || '').split(" ").map((c:string) => parseInt(c));
-        if (dashArray.length > 0 && dashArray.every((c:number) => !isNaN(c))) {
-          style._borderOptions.dashPattern = dashArray.join("-");
+        const dashArray = (anyStyles.strokeDasharray || '')
+          .split(' ')
+          .map((c: string) => parseInt(c));
+        if (dashArray.length > 0 && dashArray.every((c: number) => !isNaN(c))) {
+          style._borderOptions.dashPattern = dashArray.join('-');
         }
         style._miterLimit = parseStyleNumber(anyStyles.strokeMiterlimit);
       }
@@ -967,23 +1070,44 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       if (anyStyles.fill && anyStyles.fill !== 'none') {
         const fill = anyStyles.fill.trim();
         if (/^url\s*\(/.test(fill)) {
-          const selector = fill.replace(/(^url\s*\(\s*["']?)|(["']?\s*\)$)/g, '');
-          const fillElement = node.ownerSVGElement?.querySelector(selector.replace(/"/g, ''));
+          const selector = fill.replace(
+            /(^url\s*\(\s*["']?)|(["']?\s*\)$)/g,
+            ''
+          );
+          const fillElement = node.ownerSVGElement?.querySelector(
+            selector.replace(/"/g, '')
+          );
           if (fillElement instanceof SVGLinearGradientElement) {
-            const gradient = parseSVGLinearGradient(fillElement, ctm || new DOMMatrix(), {...bbox,
-            x: bbox.x - shapeGroup._x, y: bbox.y - shapeGroup._y});
-            style.addSVGGradientFill(gradient, parseStyleNumber(anyStyles.fillOpacity, 1));
+            const gradient = parseSVGLinearGradient(
+              fillElement,
+              ctm || new DOMMatrix(),
+              { ...bbox, x: bbox.x - shapeGroup._x, y: bbox.y - shapeGroup._y }
+            );
+            style.addSVGGradientFill(
+              gradient,
+              parseStyleNumber(anyStyles.fillOpacity, 1)
+            );
           } else if (fillElement instanceof SVGRadialGradientElement) {
-            const gradient = parseSVGRadialGradient(fillElement, ctm || new DOMMatrix(), {...bbox,
-            x: bbox.x - shapeGroup._x, y: bbox.y - shapeGroup._y});
-            style.addSVGGradientFill(gradient, parseStyleNumber(anyStyles.fillOpacity, 1));
+            const gradient = parseSVGRadialGradient(
+              fillElement,
+              ctm || new DOMMatrix(),
+              { ...bbox, x: bbox.x - shapeGroup._x, y: bbox.y - shapeGroup._y }
+            );
+            style.addSVGGradientFill(
+              gradient,
+              parseStyleNumber(anyStyles.fillOpacity, 1)
+            );
           }
         } else {
-          style.addColorFill(anyStyles.fill, parseStyleNumber(anyStyles.fillOpacity, 1));
+          style.addColorFill(
+            anyStyles.fill,
+            parseStyleNumber(anyStyles.fillOpacity, 1)
+          );
         }
         style._windingRule = anyStyles.fillRule === 'nonzero' ? 0 : 1;
         if (node.getAttribute('clip-rule') !== null) {
-          style._windingRule = node.getAttribute('clip-rule') === 'nonzero' ? 0 : 1;
+          style._windingRule =
+            node.getAttribute('clip-rule') === 'nonzero' ? 0 : 1;
         }
       }
       shapeGroup._x = bbox.x;
@@ -992,17 +1116,24 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       shapeGroup._height = bbox.height;
       shapeGroup.setStyle(style);
       // Create shapePaths from the curve segments.
-      curveSegments.segments.forEach((segment: { isClosed: boolean; points: any[] }) => {
-        const sg = new ShapeGroup({x: 0, y: 0, width: bbox.width, height: bbox.height});
-        sg.setStyle(style);
-        sg._class = classOverride;
-        sg._points = segment.points;
-        if (classOverride === 'rectangle') {
-          sg._points.forEach((p:{curveMode:number}) => p.curveMode = 1);
+      curveSegments.segments.forEach(
+        (segment: { isClosed: boolean; points: any[] }) => {
+          const sg = new ShapeGroup({
+            x: 0,
+            y: 0,
+            width: bbox.width,
+            height: bbox.height,
+          });
+          sg.setStyle(style);
+          sg._class = classOverride;
+          sg._points = segment.points;
+          if (classOverride === 'rectangle') {
+            sg._points.forEach((p: { curveMode: number }) => (p.curveMode = 1));
+          }
+          sg._isClosed = segment.isClosed;
+          shapeGroup._layers.push(sg);
         }
-        sg._isClosed = segment.isClosed;
-        shapeGroup._layers.push(sg);
-      });
+      );
 
       shapeGroup.setName(getNameForNode(node));
       layers.push(shapeGroup);
@@ -1011,11 +1142,18 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     if (anyStyles.clipPath && anyStyles.clipPath !== 'none') {
       const clipPath = anyStyles.clipPath.trim();
       if (/^url\s*\(/.test(clipPath)) {
-        const selector = clipPath.replace(/(^url\s*\(\s*["']?)|(["']?\s*\)$)/g, '');
-        let clipElement = node.ownerSVGElement?.querySelector(selector.replace(/"/g, ''));
+        const selector = clipPath.replace(
+          /(^url\s*\(\s*["']?)|(["']?\s*\)$)/g,
+          ''
+        );
+        let clipElement = node.ownerSVGElement?.querySelector(
+          selector.replace(/"/g, '')
+        );
         while (clipElement instanceof SVGUseElement) {
           const href = clipElement.href.baseVal;
-          clipElement = node.ownerSVGElement?.querySelector(href.trim().replace(/"/g, ''));
+          clipElement = node.ownerSVGElement?.querySelector(
+            href.trim().replace(/"/g, '')
+          );
         }
         if (clipElement) {
           group._layers.unshift(new Ref(clipElement.shapeGroup, group, true));
@@ -1027,7 +1165,6 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       return layers;
     }
   }
-
 
   // if layer has no background/shadow/border/etc. skip it
   if (isImage || !hasOnlyDefaultStyles(styles)) {
@@ -1054,7 +1191,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         const shadowObject: any = shadowStringToObject(shadowString);
 
         if (shadowObject.inset) {
-          if (borderWidth.indexOf(" ") === -1) {
+          if (borderWidth.indexOf(' ') === -1) {
             shadowObject.spread += parseFloat(borderWidth);
           }
           style.addInnerShadow(shadowObject);
@@ -1065,12 +1202,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     }
 
     // support for one-side borders (using inner shadow because Sketch doesn't support that)
-    if (borderWidth.indexOf(" ") === -1) {
+    if (borderWidth.indexOf(' ') === -1) {
       const bw = parseFloat(borderWidth);
       if (!isNaN(bw) && bw > 0) {
         style.addBorder({
           color: borderColor,
-          thickness: bw
+          thickness: bw,
         });
       }
     } else {
@@ -1080,11 +1217,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       const borderLeftWidthFloat = parseFloat(borderLeftWidth);
 
       if (borderTopWidthFloat !== 0) {
-        const rectangle = new Rectangle({ 
-          width, height: borderTopWidthFloat, 
+        const rectangle = new Rectangle({
+          width,
+          height: borderTopWidthFloat,
           cornerRadius: 0,
           x: left,
-          y: top
+          y: top,
         });
         rectangle.setName('border-top');
         const borderStyle = new Style();
@@ -1094,11 +1232,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         layers.push(rectangle);
       }
       if (borderRightWidthFloat !== 0) {
-        const rectangle = new Rectangle({ 
-          width: borderRightWidthFloat, height, 
+        const rectangle = new Rectangle({
+          width: borderRightWidthFloat,
+          height,
           cornerRadius: 0,
           x: left + width,
-          y: top
+          y: top,
         });
         rectangle.setName('border-right');
         const borderStyle = new Style();
@@ -1108,11 +1247,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         layers.push(rectangle);
       }
       if (borderBottomWidthFloat !== 0) {
-        const rectangle = new Rectangle({ 
-          width, height: borderBottomWidthFloat, 
+        const rectangle = new Rectangle({
+          width,
+          height: borderBottomWidthFloat,
           cornerRadius: 0,
           x: left,
-          y: top + height
+          y: top + height,
         });
         rectangle.setName('border-bottom');
         const borderStyle = new Style();
@@ -1122,11 +1262,12 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
         layers.push(rectangle);
       }
       if (borderLeftWidthFloat !== 0) {
-        const rectangle = new Rectangle({ 
-          width: borderLeftWidthFloat, height, 
+        const rectangle = new Rectangle({
+          width: borderLeftWidthFloat,
+          height,
           cornerRadius: 0,
           x: left,
-          y: top
+          y: top,
         });
         rectangle.setName('border-left');
         const borderStyle = new Style();
@@ -1142,10 +1283,9 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       style.addBorder({
         color: styles.outlineColor,
         thickness: ow,
-        position: 2
+        position: 2,
       });
     }
-
 
     if (!options || options.layerOpacity !== false) {
       style.addOpacity(opacity);
@@ -1158,23 +1298,29 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       topLeft: fixBorderRadius(borderTopLeftRadius, width, height),
       topRight: fixBorderRadius(borderTopRightRadius, width, height),
       bottomLeft: fixBorderRadius(borderBottomLeftRadius, width, height),
-      bottomRight: fixBorderRadius(borderBottomRightRadius, width, height)
+      bottomRight: fixBorderRadius(borderBottomRightRadius, width, height),
     };
 
     const rectangle = new Rectangle({ width, height, cornerRadius });
-    const borderAddWidth = Math.max(parseFloat(borderLeftWidth), parseFloat(borderRightWidth), parseFloat(borderTopWidth), parseFloat(borderBottomWidth));
+    const borderAddWidth = Math.max(
+      parseFloat(borderLeftWidth),
+      parseFloat(borderRightWidth),
+      parseFloat(borderTopWidth),
+      parseFloat(borderBottomWidth)
+    );
     rectangle.setStyle(style);
-    rectangle.setName("Background");
+    rectangle.setName('Background');
 
-    const overflowHidden = styles.overflow === 'hidden' || node.tagName == 'IFRAME';
+    const overflowHidden =
+      styles.overflow === 'hidden' || node.tagName == 'IFRAME';
 
     if (overflowHidden && borderAddWidth > 0) {
-      const borderRect = new Rectangle({ 
+      const borderRect = new Rectangle({
         width: rectangle._width,
         height: rectangle._height,
         x: rectangle._x,
         y: rectangle._y,
-        cornerRadius
+        cornerRadius,
       });
       const borderStyle = new Style();
       borderStyle._borders = style._borders;
@@ -1192,16 +1338,16 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       sg2.setStyle(borderStyle);
       layers.push(sg2);
       (sg2 as any)._onTop = true;
-      borderRect.setName("Border");
+      borderRect.setName('Border');
       sg2.addLayer(borderRect);
     }
 
     shapeGroup.setName('Background');
     shapeGroup.addLayer(rectangle);
 
-		if (overflowHidden) {
-			shapeGroup.setHasClippingMask(true);
-		}
+    if (overflowHidden) {
+      shapeGroup.setHasClippingMask(true);
+    }
 
     // This should return a array once multiple background-images are supported
     const backgroundImageResult = parseBackgroundImage(backgroundImage);
@@ -1210,7 +1356,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
     if (backgroundImageResult) {
       switch (backgroundImageResult.type) {
-        case "Image": {
+        case 'Image': {
           const img: any = new Image();
 
           img.src = backgroundImageResult.value;
@@ -1240,10 +1386,10 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
               x: bitmapX,
               y: bitmapY,
               width: actualImgSize.width,
-              height: actualImgSize.height
+              height: actualImgSize.height,
             });
 
-            bm.setName("background-image");
+            bm.setName('background-image');
             shapeGroup.setHasClippingMask(true);
 
             const group = new Group({ x: left, y: top, width, height });
@@ -1258,7 +1404,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
           break;
         }
-        case "LinearGradient":
+        case 'LinearGradient':
           style.addGradientFill(backgroundImageResult.value);
           break;
         default:
@@ -1271,15 +1417,15 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
     layers.push(layer);
   } else {
-		if (styles.overflow === 'hidden') {
-			const clip = new ShapeGroup({ x: left, y: top, width, height });
-			clip._class = "shapePath";
-			clip.setHasClippingMask(true);
-			clip._points = getRectanglePoints(0);
-			clip._isClosed = true;
-			layers.push(clip);
-		}
-	}
+    if (styles.overflow === 'hidden') {
+      const clip = new ShapeGroup({ x: left, y: top, width, height });
+      clip._class = 'shapePath';
+      clip.setHasClippingMask(true);
+      clip._points = getRectanglePoints(0);
+      clip._isClosed = true;
+      layers.push(clip);
+    }
+  }
 
   if (isSVG) {
     // sketch ignores padding and centering as defined by viewBox and preserveAspectRatio when
@@ -1290,7 +1436,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       y: childrenBCR.top,
       width: childrenBCR.width,
       height: childrenBCR.height,
-      rawSVGString: getSVGString(node)
+      rawSVGString: getSVGString(node),
     });
 
     layers.push(svgLayer);
@@ -1309,7 +1455,7 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
     fontWeight: styles.fontWeight,
     fontStyle: styles.fontStyle,
     color,
-    skipSystemFonts: options && options.skipSystemFonts
+    skipSystemFonts: options && options.skipSystemFonts,
   });
 
   const fullFontFamily = textStyle.getFontFamily();
@@ -1324,25 +1470,28 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
       textTransform: styles.textTransform,
       skipSystemFonts: options && options.skipSystemFonts,
       color,
-      alignment
+      alignment,
     });
 
   const rangeHelper = document.createRange();
 
-	if (node.tagName === 'INPUT' && (node as HTMLInputElement).type.toLowerCase() == 'text') {
-		const inputEl = node as HTMLInputElement;
-		// const div = document.createElement('div');
-		if (inputEl.value === '' && inputEl.placeholder !== '') {
+  if (
+    node.tagName === 'INPUT' &&
+    (node as HTMLInputElement).type.toLowerCase() == 'text'
+  ) {
+    const inputEl = node as HTMLInputElement;
+    // const div = document.createElement('div');
+    if (inputEl.value === '' && inputEl.placeholder !== '') {
       inputEl.value = inputEl.placeholder;
-		// 	div.textContent = inputEl.placeholder;
-		// 	div.setAttribute('pseudo', "-webkit-input-placeholder");
-		// 	div.id = "placeholder";
-		// 	div.style.display = "block !important";
-		// } else {
-		// 	div.textContent = inputEl.value;
-		}
-		// node.appendChild(div);
-	}
+      // 	div.textContent = inputEl.placeholder;
+      // 	div.setAttribute('pseudo', "-webkit-input-placeholder");
+      // 	div.id = "placeholder";
+      // 	div.style.display = "block !important";
+      // } else {
+      // 	div.textContent = inputEl.value;
+    }
+    // node.appendChild(div);
+  }
 
   // Text
   Array.from(node.childNodes)
@@ -1363,11 +1512,15 @@ export default function nodeToSketchLayers(node: HTMLElement, group: Group, opti
 
       // center text inside a box
       // TODO it's possible now in sketch - fix it!
-      if (false && lineHeightInt && textBCRHeight !== lineHeightInt * numberOfLines) {
+      if (
+        false &&
+        lineHeightInt &&
+        textBCRHeight !== lineHeightInt * numberOfLines
+      ) {
         fixY = (textBCRHeight - lineHeightInt * numberOfLines) / 2;
       }
 
-      const textValue = fixWhiteSpace(textNode.nodeValue || "", whiteSpace);
+      const textValue = fixWhiteSpace(textNode.nodeValue || '', whiteSpace);
 
       const text = new Text({
         x: textBCR.left,

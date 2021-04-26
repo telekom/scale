@@ -5297,6 +5297,10 @@ export namespace Components {
          */
         "placeholder"?: string;
         /**
+          * (optional) Input readonly
+         */
+        "readonly"?: boolean;
+        /**
           * (optional) Input required
          */
         "required"?: boolean;
@@ -12485,6 +12489,10 @@ declare namespace LocalJSX {
           * (optional) Input placeHolder
          */
         "placeholder"?: string;
+        /**
+          * (optional) Input readonly
+         */
+        "readonly"?: boolean;
         /**
           * (optional) Input required
          */

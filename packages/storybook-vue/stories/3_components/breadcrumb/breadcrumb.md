@@ -19,7 +19,6 @@ Use a breadcrumb particularly for complex products or services with three or mor
 
 If your product or service has a flat architecture with only one or two levels of hierarchy, a breadcrumb will not necessarily enhance the user experience. Never use it as a replacement for the primary navigation.
 
-
 ## Elements
 
 ![Image Name](assets/3_components/breadcrumb/elements.png)

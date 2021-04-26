@@ -134,7 +134,7 @@ export class Slider {
     return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
   }
 
-  onKeyDown = event => {
+  onKeyDown = (event) => {
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
       this.setPosition(
         this.value + (event.key === 'ArrowRight' ? this.step : -this.step)
@@ -186,7 +186,7 @@ export class Slider {
             <div
               part="track"
               class="slider__track"
-              ref={el => (this.sliderTrack = el as HTMLDivElement)}
+              ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
             >
               <div
                 part="bar"

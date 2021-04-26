@@ -60,6 +60,8 @@ export class TextField {
   @Prop() placeholder?: string = '';
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
+  /** (optional) Input readonly */
+  @Prop() readonly?: boolean;
   /** (optional) Input required */
   @Prop() required?: boolean;
   /** (optional) Input counter */
@@ -165,6 +167,7 @@ export class TextField {
             onKeyDown={this.handleKeyDown}
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
+            readonly={this.readonly}
             {...ariaInvalidAttr}
             {...ariaDescribedByAttr}
           />

@@ -15,10 +15,10 @@ You can choose between an ordered, unordered, or definition list.
 
 Use a list to:
 
-*	avoid large bulks of information in paragraphs,
-*	highlight content that would otherwise be lost in the body text,
-*	communicate complicated content or processes step by step, or
-*	provide the definition of terms.
+- avoid large bulks of information in paragraphs,
+- highlight content that would otherwise be lost in the body text,
+- communicate complicated content or processes step by step, or
+- provide the definition of terms.
 
 ### When not to use
 

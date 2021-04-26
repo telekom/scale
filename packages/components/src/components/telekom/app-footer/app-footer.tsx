@@ -13,7 +13,7 @@ import { Component, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
 import { renderIcon } from '../../../utils/render-icon';
 
-const readData = data => {
+const readData = (data) => {
   let parsedData;
   try {
     parsedData = JSON.parse(data);
@@ -38,12 +38,12 @@ export class AppFooter {
   footerMenu() {
     return (
       <ul>
-        {readData(this.footerNavigation).map(item => (
+        {readData(this.footerNavigation).map((item) => (
           <li class="footer-navigation__item">
             <a
               class="footer-navigation__item-link"
               href={item.href || 'javascript:void(0);'}
-              onClick={event => {
+              onClick={(event) => {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }

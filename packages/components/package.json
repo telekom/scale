@@ -1,10 +1,15 @@
 {
   "name": "@telekom/scale-components",
+  "version": "3.0.0-beta.2",
+  "description": "Scale is the digital design system for Telekom products and experiences.",
+  "homepage": "https://github.com/telekom/scale",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/telekom/scale.git"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.0.0-beta.2",
-  "description": "Scale Components Telekom",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -27,17 +32,10 @@
     "dev": "stencil build --dev --watch --serve -c stencil-dev.config.ts",
     "test": "stencil test --max-workers=2",
     "format": "prettier --write \"*.ts\" \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "lint": "yarn lint:types && yarn lint:style && yarn lint:format",
     "lint:fix": "yarn lint:style --fix",
-    "lint:types": "tsc --noEmit",
-    "lint:style": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "lint:format": "prettier --list-different \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "verify": "yarn format && yarn lint:fix",
+    "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "develop": "stencil build --docs --watch",
-    "storybook": "start-storybook -p 6006 -s ./build",
-    "build-storybook": "build-storybook -s ./build",
-    "generate": "yarn generate-icons",
-    "generate-icons": "node ./scripts/generate-icons.js"
+    "generate": "node ./scripts/generate-icons.js"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
@@ -63,7 +61,6 @@
     "hast-util-to-html": "^7.1.1",
     "jsx-dom": "^6.4.17",
     "lodash": "^4.17.15",
-    "prettier": "^1.18.2",
     "puppeteer": "^4.0.0",
     "rimraf": "^3.0.2",
     "svg-parser": "^2.0.4",

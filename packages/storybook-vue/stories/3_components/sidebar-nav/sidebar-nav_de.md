@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Die Sidebar-Navigation ergänzt die Hauptnavigation bei umfangreichen Informationsarchitekturen. Sie hilft Nutzer*innen, Inhalte innerhalb eines Bereichs der Webseite schnell zu finden.
+Die Sidebar-Navigation ergänzt die Hauptnavigation bei umfangreichen Informationsarchitekturen. Sie hilft Nutzer\*innen, Inhalte innerhalb eines Bereichs der Webseite schnell zu finden.
 
 ## Allgemein
 
@@ -11,12 +11,12 @@ Der Einsatz der Sidebar-Navigation ist optional. Sie bietet die Möglichkeit, ei
 
 ### Verwende die Sidebar-Navigation, wenn
 
-* deine Sekundärnavigation mehr als 7 Menüpunkte enthält und/oder
-* die Sekundärnavigation eines Bereichs immer sichtbar sein soll.
+- deine Sekundärnavigation mehr als 7 Menüpunkte enthält und/oder
+- die Sekundärnavigation eines Bereichs immer sichtbar sein soll.
 
 ### Verwende die Sidebar-Navigation besser nicht, wenn
 
-* die Hauptnavigation leicht alle Hierarchieebenen abbilden kann.
+- die Hauptnavigation leicht alle Hierarchieebenen abbilden kann.
 
 ## Elemente
 

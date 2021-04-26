@@ -36,6 +36,7 @@
     "start": "start-storybook -s ./public -p 6006",
     "build": "build-storybook -s ./public",
     "preserve": "yarn build",
-    "serve": "http-server storybook-static"
+    "serve": "http-server storybook-static",
+    "format": "prettier --write \"package.json\" \"stories/**/*.md\""
   }
 }

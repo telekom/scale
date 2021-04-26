@@ -9,16 +9,16 @@ Der Date Picker ermöglicht die einfache Auswahl eines Datums oder einer Zeitspa
 
 Eine Kalenderansicht zeigt vergangene, aktuelle und zukünftige Zeiten an.
 
-### Verwende einen Date Picker, wenn 
+### Verwende einen Date Picker, wenn
 
-* Nutzer*innen ein Datum oder eine Zeitspanne eingeben sollen, 
-* du alle Bestandteile eines Datums (Tag, Monat, Jahr) abfragen möchtest und
-* das abgefragte Datum variabel sein kann. 
+- Nutzer\*innen ein Datum oder eine Zeitspanne eingeben sollen,
+- du alle Bestandteile eines Datums (Tag, Monat, Jahr) abfragen möchtest und
+- das abgefragte Datum variabel sein kann.
 
-### Verwende besser keine Date Picker, wenn 
+### Verwende besser keine Date Picker, wenn
 
-* nicht alle der Angaben (Tag, Monat, Jahr) notwendig sind oder
-* ein Datum bekannt und nicht variabel ist.
+- nicht alle der Angaben (Tag, Monat, Jahr) notwendig sind oder
+- ein Datum bekannt und nicht variabel ist.
 
 ## Varianten
 
@@ -34,7 +34,7 @@ Das Input-Feld ist das wesentliche Element des Date Pickers. Per Klick/Tap oder 
 
 #### Monats-/Jahres-Dropdowns (2)
 
-Die Nutzer*innen können über die Dropdowns am oberen Rand des Fly-Outs den gewünschten Monat und das Jahr auswählen.
+Die Nutzer\*innen können über die Dropdowns am oberen Rand des Fly-Outs den gewünschten Monat und das Jahr auswählen.
 
 #### Monatskalender (3)
 

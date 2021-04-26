@@ -95,7 +95,7 @@ export class MainNavigationMobile {
       return <div></div>;
     }
 
-    const isActive = child =>
+    const isActive = (child) =>
       (selected && child.id === selected.id) ||
       (parent && parent.id === child.id);
     return (
@@ -103,11 +103,11 @@ export class MainNavigationMobile {
         <a
           class="main-navigation-mobile__child-menu-current"
           href={section.href || 'javascript:void(0);'}
-          onClick={event => {
+          onClick={(event) => {
             this.handlePrevSelected(event, section);
           }}
           tabIndex={0}
-          onKeyDown={event => {
+          onKeyDown={(event) => {
             if (['Enter', ' '].includes(event.key)) {
               event.preventDefault();
               this.handlePrevSelected(event, section);
@@ -130,11 +130,11 @@ export class MainNavigationMobile {
         </a>
         <ul
           class="main-navigation-mobile__child-menu-items"
-          ref={el => {
+          ref={(el) => {
             this.childrenWrapper = el;
           }}
         >
-          {section.children.map(child => (
+          {section.children.map((child) => (
             <a
               aria-current={isActive(child) ? 'true' : 'false'}
               aria-haspopup={child.children ? 'true' : 'false'}
@@ -143,10 +143,10 @@ export class MainNavigationMobile {
               }`}
               href={child.href || 'javascript:void(0);'}
               tabIndex={0}
-              onClick={event => {
+              onClick={(event) => {
                 this.handleSelect(event, child);
               }}
-              onKeyDown={event => {
+              onKeyDown={(event) => {
                 if (['Enter', ' '].includes(event.key)) {
                   this.handleSelect(event, child);
                   setTimeout(() => {
@@ -183,17 +183,17 @@ export class MainNavigationMobile {
   render() {
     const { selected } = findSelected(this.navigation, this.activeRouteId);
     const rootNode = selected && findRootNode(this.navigation, selected.id);
-    const isActive = itemId => rootNode && rootNode.id === itemId;
+    const isActive = (itemId) => rootNode && rootNode.id === itemId;
     return (
       <div class="main-navigation-mobile">
         {this.childMenuPage()}
         <ul
           class="main-navigation-mobile__main-menu"
-          ref={el => {
+          ref={(el) => {
             this.mainNavigationWrapper = el;
           }}
         >
-          {(this.navigation || []).map(item => (
+          {(this.navigation || []).map((item) => (
             <a
               aria-current={isActive(item.id) ? 'true' : 'false'}
               aria-haspopup={item.children ? 'true' : 'false'}
@@ -203,10 +203,10 @@ export class MainNavigationMobile {
                   : ''
               }`}
               href={item.href || 'javascript:void(0);'}
-              onClick={event => {
+              onClick={(event) => {
                 this.handleSelect(event, item);
               }}
-              onKeyDown={event => {
+              onKeyDown={(event) => {
                 if (['Enter', ' '].includes(event.key)) {
                   this.handleSelect(event, item);
                   setTimeout(() => {
