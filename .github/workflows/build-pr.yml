@@ -1,0 +1,140 @@
+name: build-pr
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Prettier
+        run: |
+          yarn format
+
+      - name: Check for uncommitted changes
+        run: |
+          scripts/porcelain.sh
+  tslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run TSLint
+        run: |
+          yarn workspace @telekom/scale-components lint
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run TSLint
+        run: |
+          yarn workspace @telekom/scale-components test --spec
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run TSLint
+        run: |
+          yarn workspace @telekom/scale-components test --e2e
+  visual-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Lerna bootstrap
+        run: |
+          yarn bootstrap
+
+      - name: Build Components
+        run: |
+          yarn workspace @telekom/scale-components build
+
+      - name: Check for uncommitted changes
+        run: |
+          scripts/porcelain.sh
+
+      - name: Build Storybook
+        run: |
+          yarn workspace @telekom/scale-storybook-vue build
+
+      - name: Run visual tests
+        run: |
+          yarn workspace @telekom/scale-visual-test copy
+          yarn workspace @telekom/scale-visual-test test:ci
+
+      - name: Upload Diff output
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: diff-output
+          path: packages/visual-tests/src/__image_snapshots__/__diff_output__
