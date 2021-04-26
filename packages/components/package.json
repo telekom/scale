@@ -1,11 +1,11 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/telekom/scale.git"
+    "type": "git",
+    "url": "https://github.com/telekom/scale.git"
   },
   "publishConfig": {
     "access": "public"
@@ -72,7 +72,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.2",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.3",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1",
     "web-animations-js": "^2.3.2"

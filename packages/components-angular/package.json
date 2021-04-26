@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components-angular",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "description": "Angular specific wrapper for @telekom/scale-components",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
