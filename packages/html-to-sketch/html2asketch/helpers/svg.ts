@@ -96,18 +96,19 @@ const SVG_STYLE_PROPERTIES = [
 function inlineStyles(node: any) {
   const styles = getComputedStyle(node);
 
-  SVG_STYLE_PROPERTIES.forEach(prop => {
+  SVG_STYLE_PROPERTIES.forEach((prop) => {
     const propName: any = prop[0];
     const propDefaultValue = prop[1];
     const propCurrentValue = styles[propName];
     const propAttributeValue = node.getAttribute(propName);
 
-    if (propCurrentValue !== propDefaultValue &&
-    propCurrentValue !== propAttributeValue) {
+    if (
+      propCurrentValue !== propDefaultValue &&
+      propCurrentValue !== propAttributeValue
+    ) {
       node.style[propName] = propCurrentValue;
     }
   });
-
 }
 
 function getUseReplacement(node: any) {
@@ -124,9 +125,16 @@ function getUseReplacement(node: any) {
 
   if (refNode) {
     if (refNode instanceof SVGSymbolElement) {
-      resultNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      Array.from(refNode.attributes).forEach(attr => resultNode.setAttribute(attr.name, attr.value));
-      Array.from((refNode.cloneNode(true) as any).children).forEach(child => resultNode.appendChild(child));
+      resultNode = document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'svg'
+      );
+      Array.from(refNode.attributes).forEach((attr) =>
+        resultNode.setAttribute(attr.name, attr.value)
+      );
+      Array.from((refNode.cloneNode(true) as any).children).forEach((child) =>
+        resultNode.appendChild(child)
+      );
     } else {
       resultNode = refNode.cloneNode(true);
     }
@@ -163,7 +171,7 @@ export function getSVGString(svgNode: any) {
 
     inlineStyles(node);
 
-    Array.from(node.children).forEach(child => queue.push(child));
+    Array.from(node.children).forEach((child) => queue.push(child));
   }
 
   return svgNode.outerHTML;

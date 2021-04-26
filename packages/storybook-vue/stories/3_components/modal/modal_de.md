@@ -3,24 +3,23 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Modale Dialoge erfordern sofortige Aufmerksamkeit und unterbrechen die Nutzer\*innen in ihrem Workflow. Sie erscheinen immer dann, wenn Nutzer*innen für die Erledigung einer Aufgabe eine Information benötigen oder sie eine Entscheidung treffen müssen.
+Modale Dialoge erfordern sofortige Aufmerksamkeit und unterbrechen die Nutzer\*innen in ihrem Workflow. Sie erscheinen immer dann, wenn Nutzer\*innen für die Erledigung einer Aufgabe eine Information benötigen oder sie eine Entscheidung treffen müssen.
 
 ## Allgemein
 
-Der modale Dialog wird als Overlay angezeigt. Der Hauptinhalt der Seite ist nicht mehr bedienbar, bis der\*die Nutzer*in darauf reagiert.
+Der modale Dialog wird als Overlay angezeigt. Der Hauptinhalt der Seite ist nicht mehr bedienbar, bis der\*die Nutzer\*in darauf reagiert.
 
 ### Verwende einen modalen Dialog, wenn
 
-*	du Warnungen oder dringende Informationen ausgeben musst (zum Beispiel Systemfehler oder Konsequenzen einer Aktion),
-*	das System Informationen der Nutzer*innen benötigt, um einen Prozess auszuführen,
-*	die Eingabe bestimmter Informationen die Fortsetzung eines Prozesses für die Nutzer*innen erleichtert oder
-*	Nutzer*innen eine Entscheidung bestätigen müssen, um mögliche Fehler zu verhindern oder zu korrigieren.
+- du Warnungen oder dringende Informationen ausgeben musst (zum Beispiel Systemfehler oder Konsequenzen einer Aktion),
+- das System Informationen der Nutzer\*innen benötigt, um einen Prozess auszuführen,
+- die Eingabe bestimmter Informationen die Fortsetzung eines Prozesses für die Nutzer\*innen erleichtert oder
+- Nutzer\*innen eine Entscheidung bestätigen müssen, um mögliche Fehler zu verhindern oder zu korrigieren.
 
 ### Verwende modale Dialoge besser nicht, wenn
 
-*	die gezeigten Informationen in keinem Zusammenhang mit dem aktuellen User Flow stehen (dies könnte Nutzer*innen daran hindern, eine Aufgabe fertigzustellen) oder
-*	es um komplexe Entscheidungen geht, die mehr Informationen benötigen, als ein modaler Dialog bereitstellen kann (dies könnte Nutzer*innen dazu zwingen, zwischen dem modalen Dialog und der Hauptseite zu wechseln, was die User Experience negativ beeinflussen würde).
-
+- die gezeigten Informationen in keinem Zusammenhang mit dem aktuellen User Flow stehen (dies könnte Nutzer\*innen daran hindern, eine Aufgabe fertigzustellen) oder
+- es um komplexe Entscheidungen geht, die mehr Informationen benötigen, als ein modaler Dialog bereitstellen kann (dies könnte Nutzer\*innen dazu zwingen, zwischen dem modalen Dialog und der Hauptseite zu wechseln, was die User Experience negativ beeinflussen würde).
 
 ## Elemente
 
@@ -36,7 +35,7 @@ Es sind verschiedene Längen von Inhalten möglich. Wenn der Inhalt den Inhaltsb
 
 #### Aktionsbereich (3)
 
-Im Aktionsbereich der Nutzer*innen können eine primäre und bis zu zwei sekundäre Schaltflächen stehen. Die primäre Schaltfläche sollte eine positive Aktion darstellen, wie zum Beispiel „Bestätigen“ oder „Speichern“. Sekundär-Schaltflächen können negative oder weniger wichtige Aktionen anzeigen, wie „Löschen" oder „Abbrechen".
+Im Aktionsbereich der Nutzer\*innen können eine primäre und bis zu zwei sekundäre Schaltflächen stehen. Die primäre Schaltfläche sollte eine positive Aktion darstellen, wie zum Beispiel „Bestätigen“ oder „Speichern“. Sekundär-Schaltflächen können negative oder weniger wichtige Aktionen anzeigen, wie „Löschen" oder „Abbrechen".
 
 ### Schließen-Symbol (4)
 
@@ -67,6 +66,6 @@ Auf kleinen Geräten werden alle modalen Dialoge über die volle Breite (4 Spalt
 
 ## Best Practices
 
-*	Beschreibe die Handlungsmöglichkeiten und die resultierenden Folgen klar und deutlich.
-*	Sowohl der Titel als auch die Schaltflächen beschreiben, welche Aktion danach erfolgt. 
-*	Benutze niemals eine primäre Schaltfläche für destruktive oder irreversible Aktionen.
+- Beschreibe die Handlungsmöglichkeiten und die resultierenden Folgen klar und deutlich.
+- Sowohl der Titel als auch die Schaltflächen beschreiben, welche Aktion danach erfolgt.
+- Benutze niemals eine primäre Schaltfläche für destruktive oder irreversible Aktionen.

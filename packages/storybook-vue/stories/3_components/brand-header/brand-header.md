@@ -19,7 +19,7 @@ The brand bar contains our logo and slogan, metalinks, and other functions. When
 
 The logo, slogan, and Magenta background are required for any Telekom webpage and cannot be changed. The logo should always link to the homepage or the entry point of the current process.
 
-#### Personal/business switch  (2)
+#### Personal/business switch (2)
 
 If the website for your product includes personal and business sections, use this element to link to the respective start pages. An underline marks the current page as active.
 
@@ -117,7 +117,6 @@ The core functions are still displayed at the top level. The main navigation, th
 
 By clicking the menu icon, the user opens a list view with all items from the first level of hierarchy. The personal and business section tabs are in the first position, followed by a list with the navigation points for the first level of hierarchy. The language selection is at the bottom of the list.
 Websites without subpages (only one page) do not have navigation. On these pages, the user navigates by scrolling.
-
 
 #### Navigation level 3 (4)
 

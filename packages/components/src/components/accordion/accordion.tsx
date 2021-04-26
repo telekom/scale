@@ -33,7 +33,7 @@ export class Accordion {
     if (!this.dependent || expanded === false) {
       return;
     }
-    this.getCollapsibleChildren().forEach(child => {
+    this.getCollapsibleChildren().forEach((child) => {
       if (child !== event.target && child.hasAttribute('expanded')) {
         child.expanded = false;
       }
@@ -45,7 +45,7 @@ export class Accordion {
      * Handle `expanded`
      */
     if (!this.dependent) {
-      this.getCollapsibleChildren().forEach(child => {
+      this.getCollapsibleChildren().forEach((child) => {
         child.expanded = this.expanded;
       });
     }

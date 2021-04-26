@@ -13,18 +13,18 @@ The dropdown temporarily displays a selection list. Thus, the dropdown helps sav
 
 Use a dropdown when users:
 
-* can select options within a form,
-* should only select one of the options, or
-* should filter or sort content.
+- can select options within a form,
+- should only select one of the options, or
+- should filter or sort content.
 
 ### When not to use
 
 Don’t use dropdowns, when users:
 
-* should only have a few options (radio buttons may be better),
-* should have a lot of choices (an input field with auto-fill is more helpful),
-* should have several options (use checkboxes instead), or
-* should navigate (use a navigation component like the sidebar navigation).
+- should only have a few options (radio buttons may be better),
+- should have a lot of choices (an input field with auto-fill is more helpful),
+- should have several options (use checkboxes instead), or
+- should navigate (use a navigation component like the sidebar navigation).
 
 ## Basic Types
 
@@ -85,6 +85,7 @@ When space is limited, use the small dropdown consistently.
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
 ## Known issues
+
 The dropdown is ready for use. The component in disabled state is displayed incorrectly with white background in Firefox 85.0.2 (64-bit) in HCM (high contrast mode).
 The display error is on the browser side.
 

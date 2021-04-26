@@ -102,7 +102,7 @@ export class Modal {
     const actionSlots = this.hostElement.querySelectorAll('[slot="action"]');
     const bodySlot = Array.from(
       this.hostElement.shadowRoot.querySelectorAll('slot')
-    ).find(x => !x.name);
+    ).find((x) => !x.name);
 
     this.hasActionsSlot = actionSlots.length > 0;
     if (bodySlot != null) {
@@ -115,7 +115,7 @@ export class Modal {
     // Needed for the "focus trap" functionality.
     this.focusableElements = queryShadowRoot(
       this.hostElement.shadowRoot,
-      el => isHidden(el) || el.matches('[data-focus-trap-edge]'),
+      (el) => isHidden(el) || el.matches('[data-focus-trap-edge]'),
       isFocusable
     );
     // Set `hasScroll` state dynamically on resize.
@@ -207,7 +207,7 @@ export class Modal {
         {this.styles && <style>{this.styles}</style>}
 
         <div
-          ref={el => (this.modalContainer = el)}
+          ref={(el) => (this.modalContainer = el)}
           class={this.getCssClassMap()}
           part={classNames('base', this.isOpen && 'open')}
         >
@@ -224,7 +224,7 @@ export class Modal {
           <div
             class="modal__window"
             part={classNames('window', this.size && `size-${this.size}`)}
-            ref={el => (this.modalWindow = el)}
+            ref={(el) => (this.modalWindow = el)}
             role="dialog"
             aria-modal="true"
           >
@@ -236,7 +236,7 @@ export class Modal {
                 {this.heading}
               </h2>
               <button
-                ref={el => (this.closeButton = el)}
+                ref={(el) => (this.closeButton = el)}
                 class="modal__close-button"
                 part="close-button"
                 onClick={() => (this.opened = false)}
@@ -248,7 +248,7 @@ export class Modal {
               </button>
             </div>
             <div
-              ref={el => (this.modalBody = el)}
+              ref={(el) => (this.modalBody = el)}
               class="modal__body-wrapper"
               part={classNames('body-wrapper', this.hasBody && 'has-body')}
             >

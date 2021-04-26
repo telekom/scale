@@ -213,7 +213,7 @@ export class Dropdown {
           </label>
           <div class="input__dropdown-wrapper">
             <select
-              ref={el => (this.selectElement = el)}
+              ref={(el) => (this.selectElement = el)}
               class="input__dropdown"
               // @ts-ignore
               value={this.value}

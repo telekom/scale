@@ -9,41 +9,60 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-export function isTextVisible({textIndent, overflowX, overflowY}: any) {
+export function isTextVisible({ textIndent, overflowX, overflowY }: any) {
   // NOTE overflow:hidden is not needed if text-indent is huge, but how to define 'huge'?
-  if (parseFloat(textIndent) < 0 && overflowX === 'hidden' && overflowY === 'hidden') {
+  if (
+    parseFloat(textIndent) < 0 &&
+    overflowX === 'hidden' &&
+    overflowY === 'hidden'
+  ) {
     return false;
   }
 
   return true;
 }
 
-export function isNodeVisible(node: any, {width, height} = node.getBoundingClientRect(), {
-  position,
-  overflowX,
-  overflowY,
-  opacity,
-  visibility,
-  display,
-  clip,
-}: any = getComputedStyle(node)) {
-  if (node instanceof SVGClipPathElement || node instanceof HTMLSlotElement) return true;
-  
+export function isNodeVisible(
+  node: any,
+  { width, height } = node.getBoundingClientRect(),
+  {
+    position,
+    overflowX,
+    overflowY,
+    opacity,
+    visibility,
+    display,
+    clip,
+  }: any = getComputedStyle(node)
+) {
+  if (node instanceof SVGClipPathElement || node instanceof HTMLSlotElement)
+    return true;
+
   // skip node when display is set to none for itself or an ancestor
   // helps us catch things such as <noscript>
   // HTMLSlotElement has a null offsetParent, but should still be visible
-  if (node.tagName !== 'BODY' &&
-      node.tagName !== 'HTML' &&
-      (node.offsetParent === null && !node.parentElement) &&
-      position !== 'fixed' &&
-      node.tagName.toLowerCase() !== 'slot') {
+  if (
+    node.tagName !== 'BODY' &&
+    node.tagName !== 'HTML' &&
+    node.offsetParent === null &&
+    !node.parentElement &&
+    position !== 'fixed' &&
+    node.tagName.toLowerCase() !== 'slot'
+  ) {
     return false;
   }
-  if (node.tagName.toLowerCase() === 'option' || node.tagName.toLowerCase() === 'optgroup') {
+  if (
+    node.tagName.toLowerCase() === 'option' ||
+    node.tagName.toLowerCase() === 'optgroup'
+  ) {
     return false;
   }
 
-  if ((width === 0 || height === 0) && overflowX === 'hidden' && overflowY === 'hidden') {
+  if (
+    (width === 0 || height === 0) &&
+    overflowX === 'hidden' &&
+    overflowY === 'hidden'
+  ) {
     return false;
   }
 
@@ -51,7 +70,8 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
     display === 'none' ||
     visibility === 'hidden' ||
     visibility === 'collapse' ||
-    parseFloat(opacity) < 0.1) {
+    parseFloat(opacity) < 0.1
+  ) {
     return false;
   }
 
@@ -64,17 +84,17 @@ export function isNodeVisible(node: any, {width, height} = node.getBoundingClien
     return false;
   }
 
-  if (node instanceof SVGLinearGradientElement || node instanceof SVGRadialGradientElement || node instanceof SVGStopElement) {
+  if (
+    node instanceof SVGLinearGradientElement ||
+    node instanceof SVGRadialGradientElement ||
+    node instanceof SVGStopElement
+  ) {
     return false;
   }
 
   const parent = node.parentElement;
 
-  if (
-    parent &&
-    parent.nodeName !== 'HTML' &&
-    !isNodeVisible(parent)
-  ) {
+  if (parent && parent.nodeName !== 'HTML' && !isNodeVisible(parent)) {
     return false;
   }
 

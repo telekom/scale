@@ -9,7 +9,11 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {generateID, RESIZING_CONSTRAINTS, calculateResizingConstraintValue} from '../helpers/utils';
+import {
+  generateID,
+  RESIZING_CONSTRAINTS,
+  calculateResizingConstraintValue,
+} from '../helpers/utils';
 
 const DEFAULT_USER_INFO_SCOPE = 'html-sketchapp';
 
@@ -29,7 +33,7 @@ class Base {
   _isVisible: boolean = true;
   _rotation: number = 0;
 
-  constructor({id}: any = {}) {
+  constructor({ id }: any = {}) {
     this._class = null;
     this._layers = [];
     this._style = null;
@@ -42,7 +46,10 @@ class Base {
   }
 
   setFixedWidthAndHeight() {
-    this.setResizingConstraint(RESIZING_CONSTRAINTS.WIDTH, RESIZING_CONSTRAINTS.HEIGHT);
+    this.setResizingConstraint(
+      RESIZING_CONSTRAINTS.WIDTH,
+      RESIZING_CONSTRAINTS.HEIGHT
+    );
   }
 
   setResizingConstraint(...constraints: any) {
@@ -68,7 +75,9 @@ class Base {
   }
 
   getUserInfo(key: any, scope = DEFAULT_USER_INFO_SCOPE) {
-    return this._userInfo && this._userInfo[scope] && this._userInfo[scope][key];
+    return (
+      this._userInfo && this._userInfo[scope] && this._userInfo[scope][key]
+    );
   }
 
   setName(name: any) {
@@ -145,7 +154,6 @@ class Base {
     if (this._points) {
       result.points = this._points;
     }
-
 
     const newLayers = [];
     const suffix = [];

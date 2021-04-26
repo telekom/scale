@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {FillType} from 'sketch-constants';
+import { FillType } from 'sketch-constants';
 const normalizeColor = require('normalize-css-color');
 const uuid = require('uuid').v4;
 
@@ -29,7 +29,7 @@ const safeToLower = (input: any) => {
 export const makeColorFromCSS = (input: any, alpha: number = 1) => {
   const nullableColor = normalizeColor(safeToLower(input));
   const colorInt = nullableColor === null ? 0x00000000 : nullableColor;
-  const {r, g, b, a} = normalizeColor.rgba(colorInt);
+  const { r, g, b, a } = normalizeColor.rgba(colorInt);
 
   return {
     _class: 'color',
@@ -51,7 +51,7 @@ export const makeColorFill = (color: any, alpha: number = 1) => {
     noiseIntensity: 0,
     patternFillType: 1,
     patternTileScale: 1,
-  }
+  };
 };
 
 const ensureBase64DataURL = (url: any) => {
@@ -93,24 +93,33 @@ export const makeImageFill = (url: any, patternFillType: number = 1) => ({
   patternTileScale: 1,
 });
 
-const containsAllItems = (needles: any, haystack: any) => needles.every((needle: any) => haystack.includes(needle));
+const containsAllItems = (needles: any, haystack: any) =>
+  needles.every((needle: any) => haystack.includes(needle));
 
 export const calculateResizingConstraintValue = (...args: any) => {
-  const noHeight =
-    [RESIZING_CONSTRAINTS.TOP, RESIZING_CONSTRAINTS.BOTTOM, RESIZING_CONSTRAINTS.HEIGHT];
-  const noWidth =
-    [RESIZING_CONSTRAINTS.LEFT, RESIZING_CONSTRAINTS.RIGHT, RESIZING_CONSTRAINTS.WIDTH];
+  const noHeight = [
+    RESIZING_CONSTRAINTS.TOP,
+    RESIZING_CONSTRAINTS.BOTTOM,
+    RESIZING_CONSTRAINTS.HEIGHT,
+  ];
+  const noWidth = [
+    RESIZING_CONSTRAINTS.LEFT,
+    RESIZING_CONSTRAINTS.RIGHT,
+    RESIZING_CONSTRAINTS.WIDTH,
+  ];
   const validValues = Object.values(RESIZING_CONSTRAINTS);
 
   if (!args.every((arg: any) => validValues.includes(arg))) {
     throw new Error('Unknown resizing constraint');
   } else if (containsAllItems(noHeight, args)) {
-    throw new Error('Can\'t fix height when top & bottom are fixed');
+    throw new Error("Can't fix height when top & bottom are fixed");
   } else if (containsAllItems(noWidth, args)) {
-    throw new Error('Can\'t fix width when left & right are fixed');
+    throw new Error("Can't fix width when left & right are fixed");
   }
 
-  return args.length > 0 ? args.reduce((acc: any, item: any) => acc & item, args[0]) : RESIZING_CONSTRAINTS.NONE;
+  return args.length > 0
+    ? args.reduce((acc: any, item: any) => acc & item, args[0])
+    : RESIZING_CONSTRAINTS.NONE;
 };
 
 export const RESIZING_CONSTRAINTS = {
@@ -151,27 +160,39 @@ const VERTICAL_AXIS = {
 export const getGroupLayout = (layoutType?: any) => {
   switch (layoutType) {
     case SMART_LAYOUT.LEFT_TO_RIGHT: {
-      return Object.assign({}, smartLayoutBase, HORIZONTAL_AXIS, {layoutAnchor: 0});
+      return Object.assign({}, smartLayoutBase, HORIZONTAL_AXIS, {
+        layoutAnchor: 0,
+      });
     }
 
     case SMART_LAYOUT.HORIZONTALLY_CENTER: {
-      return Object.assign({}, smartLayoutBase, HORIZONTAL_AXIS, {layoutAnchor: 1});
+      return Object.assign({}, smartLayoutBase, HORIZONTAL_AXIS, {
+        layoutAnchor: 1,
+      });
     }
 
     case SMART_LAYOUT.RIGHT_TO_LEFT: {
-      return Object.assign({}, smartLayoutBase, HORIZONTAL_AXIS, {layoutAnchor: 2});
+      return Object.assign({}, smartLayoutBase, HORIZONTAL_AXIS, {
+        layoutAnchor: 2,
+      });
     }
 
     case SMART_LAYOUT.TOP_TO_BOTTOM: {
-      return Object.assign({}, smartLayoutBase, VERTICAL_AXIS, {layoutAnchor: 0});
+      return Object.assign({}, smartLayoutBase, VERTICAL_AXIS, {
+        layoutAnchor: 0,
+      });
     }
 
     case SMART_LAYOUT.VERTICALLY_CENTER: {
-      return Object.assign({}, smartLayoutBase, VERTICAL_AXIS, {layoutAnchor: 1});
+      return Object.assign({}, smartLayoutBase, VERTICAL_AXIS, {
+        layoutAnchor: 1,
+      });
     }
 
     case SMART_LAYOUT.BOTTOM_TO_TOP: {
-      return Object.assign({}, smartLayoutBase, VERTICAL_AXIS, {layoutAnchor: 2});
+      return Object.assign({}, smartLayoutBase, VERTICAL_AXIS, {
+        layoutAnchor: 2,
+      });
     }
 
     default:
@@ -179,8 +200,8 @@ export const getGroupLayout = (layoutType?: any) => {
   }
 };
 
-export const removeJssNameFromClass = (className: string) => className.replace(/-\d-\d-\d*/g, '')
-
+export const removeJssNameFromClass = (className: string) =>
+  className.replace(/-\d-\d-\d*/g, '');
 
 const SYSTEM_FONTS = [
   // Apple

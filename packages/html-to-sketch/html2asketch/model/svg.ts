@@ -18,8 +18,8 @@ class SVG extends Base {
   _x: any;
   _y: any;
 
-  constructor({x, y, width, height, rawSVGString, id}: any) {
-    super({id});
+  constructor({ x, y, width, height, rawSVGString, id }: any) {
+    super({ id });
     this._rawSVGString = rawSVGString;
     this._width = width;
     this._height = height;

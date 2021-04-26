@@ -5,8 +5,8 @@
   "description": "Design Tokens for the Scale Design System",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/telekom/scale.git"
+    "type": "git",
+    "url": "https://github.com/telekom/scale.git"
   },
   "publishConfig": {
     "access": "public"
@@ -18,7 +18,7 @@
   "scripts": {
     "generate": "node ./scripts/build.js",
     "postgenerate": "yarn format",
-    "format": "prettier --write \"**/*.js\" \"!**/*.d.ts\""
+    "format": "prettier --write \"package.json\" \"{src,scripts}/**/*.js\""
   },
   "devDependencies": {
     "fs-extra": "^9.1.0",
@@ -26,7 +26,6 @@
   },
   "license": "MPL-2.0",
   "dependencies": {
-    "color": "^3.1.3",
-    "prettier": "^2.2.1"
+    "color": "^3.1.3"
   }
 }

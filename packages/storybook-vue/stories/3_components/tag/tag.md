@@ -13,16 +13,16 @@ Tags consist of relevant keywords in a container. A static tag indicates a categ
 
 Use tags to:
 
-* draw a user's attention to certain elements they might otherwise overlook,
-* make it easier for users to recognize content, for instance in tables, or
-* show users selected filters.
+- draw a user's attention to certain elements they might otherwise overlook,
+- make it easier for users to recognize content, for instance in tables, or
+- show users selected filters.
 
 ### When not to use
 
 In general, be careful using tags. Don't use them when:
 
-* users could confuse them with buttons or
-* users might not be able to recognize relevant content (particularly if there are too many tags).
+- users could confuse them with buttons or
+- users might not be able to recognize relevant content (particularly if there are too many tags).
 
 ## Basic types
 
@@ -82,6 +82,6 @@ Only use small tags if you don't have enough space for the standard size.
 
 ### Best practices
 
-* Don't mix interactive and static tags within a product or service.
-* Decide on one size for your tags.
-* Use a clear keyword for the label.
+- Don't mix interactive and static tags within a product or service.
+- Decide on one size for your tags.
+- Use a clear keyword for the label.

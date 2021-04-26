@@ -139,12 +139,14 @@ export class Input {
       tag: 'deprecated',
       source: this.el,
       type: 'warn',
-      extraMessage: `Please use <${{
-        select: 'scale-dropdown',
-        checkbox: 'scale-checkbox',
-        radio: 'scale-radio-button',
-        textarea: 'scale-textarea',
-      }[this.type] || 'scale-text-field'}> instead.`,
+      extraMessage: `Please use <${
+        {
+          select: 'scale-dropdown',
+          checkbox: 'scale-checkbox',
+          radio: 'scale-radio-button',
+          textarea: 'scale-textarea',
+        }[this.type] || 'scale-text-field'
+      }> instead.`,
     });
     // Keep this.value up-to-date for type="select".
     // This is important also for React, where `value` is used to control the element state.
@@ -215,7 +217,7 @@ export class Input {
   }
 
   // Handle checkbox/radio change (click on label)
-  handleCheckChange = event => {
+  handleCheckChange = (event) => {
     this.checked = event.target.checked;
   };
 
@@ -364,7 +366,7 @@ export class Input {
           {this.type === 'select' ? (
             <div class="input__select-wrapper">
               <select
-                ref={el => (this.selectElement = el)}
+                ref={(el) => (this.selectElement = el)}
                 class={classNames('input__select')}
                 // @ts-ignore
                 value={this.value}

@@ -23,7 +23,7 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
 import { findRootNode } from '../../../utils/menu-utils';
 
-const readData = data => {
+const readData = (data) => {
   let parsedData;
 
   try {
@@ -163,7 +163,7 @@ export class Header {
       readData(this.mainNavigation),
       this.activeRouteId
     );
-    const isActive = item =>
+    const isActive = (item) =>
       rootNode &&
       rootNode.id === item.id &&
       !this.visibleMegaMenu &&
@@ -171,7 +171,7 @@ export class Header {
     return (
       <ul
         class="main-navigation"
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if (e.key === 'Escape') {
             this.visibleMegaMenu = '';
           }
@@ -180,7 +180,7 @@ export class Header {
         {this.hasSlotMenuMain ? (
           <slot name="menu-main"></slot>
         ) : (
-          readData(this.mainNavigation).map(item => (
+          readData(this.mainNavigation).map((item) => (
             <scale-nav-main
               isActive={isActive(item)}
               isMegaMenuVisible={this.visibleMegaMenu === item.id}
@@ -190,7 +190,7 @@ export class Header {
               onMouseLeave={() => {
                 this.visibleMegaMenu = '';
               }}
-              clickLink={event => {
+              clickLink={(event) => {
                 if (item.href) {
                   this.visibleMegaMenu = '';
                 }
@@ -230,11 +230,11 @@ export class Header {
         ) : (
           readData(this.iconNavigation)
             .filter(({ id }) => id !== 'menu')
-            .map(item => (
+            .map((item) => (
               <scale-nav-icon
                 icon={item.icon}
                 href={item.href}
-                clickLink={event => {
+                clickLink={(event) => {
                   if (typeof item.onClick === 'function') {
                     item.onClick(event);
                   }
@@ -249,8 +249,8 @@ export class Header {
           <scale-nav-icon
             isMobileMenuOpen={this.mobileMenu}
             icon={this.mobileMenu ? 'action-circle-close' : 'action-menu'}
-            clickLink={event => this.handleMobileMenu(event)}
-            refMobileMenuToggle={el => (this.mobileMenuToggle = el)}
+            clickLink={(event) => this.handleMobileMenu(event)}
+            refMobileMenuToggle={(el) => (this.mobileMenuToggle = el)}
           >
             {this.mobileMenu ? openedName : defaultName}
           </scale-nav-icon>
@@ -267,11 +267,11 @@ export class Header {
         ) : this.portalName ? (
           <li class="sector-navigation__portal-name">{this.portalName}</li>
         ) : (
-          readData(this.sectorNavigation).map(item => (
+          readData(this.sectorNavigation).map((item) => (
             <scale-nav-segment
               isActive={this.activeSegment.id === item.id}
               href={item.href}
-              onClick={event => this.handleSelectedSegment(event, item)}
+              onClick={(event) => this.handleSelectedSegment(event, item)}
               onFocus={() => {
                 window.scrollTo({ top: 0 });
               }}
@@ -290,10 +290,10 @@ export class Header {
         {this.hasSlotMenuAddon ? (
           <slot name="menu-addon"></slot>
         ) : (
-          readData(this.addonNavigation).map(item => (
+          readData(this.addonNavigation).map((item) => (
             <scale-nav-segment
               href={item.href}
-              onClick={event => {
+              onClick={(event) => {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }

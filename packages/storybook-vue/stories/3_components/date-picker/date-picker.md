@@ -9,16 +9,16 @@ A date picker allows users to easily select a date or a period of time.
 
 A calendar view shows current, past, and future times.
 
-### Usa a date picker when: 
+### Usa a date picker when:
 
-* users should enter a date or period of time and
-* all components of the date (day, month, year) are needed and
-* the required date can be variable. 
+- users should enter a date or period of time and
+- all components of the date (day, month, year) are needed and
+- the required date can be variable.
 
-### Don't use a date picker when: 
+### Don't use a date picker when:
 
-* not all of the information (day, month, year) is necessary or
-* a date is set and not variable.
+- not all of the information (day, month, year) is necessary or
+- a date is set and not variable.
 
 ## Variants
 
