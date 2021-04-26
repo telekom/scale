@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavSegment has slot 1`] = `
+<scale-nav-segment is-active="">
+  <!---->
+  <li class="segment-navigation__item">
+    <a aria-current="true" class="active segment-navigation__item-link" href="javascript:void(0);">
+      <div></div>
+      <span class="sr-only">
+        active
+      </span>
+    </a>
+  </li>
+</scale-nav-segment>
+`;
+
+exports[`NavSegment smoke test 1`] = `
+<scale-nav-segment>
+  <!---->
+  <li class="segment-navigation__item">
+    <a aria-current="false" class="segment-navigation__item-link" href="javascript:void(0);"></a>
+  </li>
+</scale-nav-segment>
+`;
