@@ -69,7 +69,7 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Run TSLint
+      - name: Run unit tests
         run: |
           yarn workspace @telekom/scale-components test --spec
   e2e-tests:
@@ -94,9 +94,9 @@ jobs:
         run: |
           yarn bootstrap
 
-      - name: Run TSLint
+      - name: Run e2e tests
         run: |
-          yarn workspace @telekom/scale-components test --e2e
+          yarn workspace @telekom/scale-components test --e2e --debug
   visual-tests:
     runs-on: ubuntu-latest
     steps:
@@ -123,18 +123,17 @@ jobs:
         run: |
           yarn workspace @telekom/scale-components build
 
-      - name: Check for uncommitted changes
-        run: |
-          sh scripts/porcelain.sh
-
       - name: Build Storybook
         run: |
-          yarn workspace @telekom/scale-storybook-vue build
+          yarn workspace @telekom/scale-storybook-vue build --quiet
+
+      - name: Copy Storybook for visual tests
+        run: |
+          yarn workspace @telekom/scale-visual-tests copy
 
       - name: Run visual tests
         run: |
-          yarn workspace @telekom/scale-visual-test copy
-          yarn workspace @telekom/scale-visual-test test:ci
+          yarn workspace @telekom/scale-visual-tests test:ci
 
       - name: Upload Diff output
         uses: actions/upload-artifact@v2
