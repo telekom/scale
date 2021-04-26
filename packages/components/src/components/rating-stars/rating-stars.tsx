@@ -157,7 +157,7 @@ export class RatingStars {
         <div
           class={this.getCssClassMap()}
           id="rating"
-          ref={el => (this.element = el)}
+          ref={(el) => (this.element = el)}
           onMouseMove={this.handleMouseMove}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
@@ -168,7 +168,7 @@ export class RatingStars {
           aria-label={this.getAriaLabel()}
         >
           <span class="rating__symbols">
-            {counter.map(index => (
+            {counter.map((index) => (
               <span
                 class="rating__symbol__wrapper"
                 onMouseEnter={this.handleMouseEnter}
@@ -178,8 +178,9 @@ export class RatingStars {
                   style={{
                     clipPath:
                       Math.ceil(displayValue) >= index + 1
-                        ? `inset(0 ${(Math.ceil(displayValue) - index) *
-                            100}% 0 0)`
+                        ? `inset(0 ${
+                            (Math.ceil(displayValue) - index) * 100
+                          }% 0 0)`
                         : null,
                   }}
                   class={{
@@ -194,7 +195,7 @@ export class RatingStars {
             ))}
           </span>
           <span class="rating__symbols rating__symbols--indicator">
-            {counter.map(index => (
+            {counter.map((index) => (
               <span
                 class="rating__symbol__wrapper"
                 onMouseEnter={this.handleMouseEnter}

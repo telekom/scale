@@ -17,16 +17,16 @@ class ShapeGroup extends Base {
   _height: any;
   _x: any;
   _y: any;
-  
-  constructor({x, y, width, height, id}: any) {
-    super({id});
+
+  constructor({ x, y, width, height, id }: any) {
+    super({ id });
     this._class = 'shapeGroup';
     this._width = width;
     this._height = height;
-    this.setPosition({x, y});
+    this.setPosition({ x, y });
   }
 
-  setPosition({x, y}: any) {
+  setPosition({ x, y }: any) {
     this._x = x;
     this._y = y;
   }

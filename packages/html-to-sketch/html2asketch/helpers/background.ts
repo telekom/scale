@@ -46,7 +46,7 @@ const parseBackgroundImage = (value: string) => {
     }
   }
 
-  return
+  return;
 };
 
 // Parser for a linear gradient:
@@ -116,11 +116,20 @@ const parseLinearGradient = (value: string) => {
  * @param {{width: number, height: number}} containerSize size of the container
  * @return {{width: number, height: number}} actual image size
  */
-const getActualImageSize = (backgroundSize: string, imageSize: {width: number, height: number}, containerSize: {width: number, height: number}) => {
+const getActualImageSize = (
+  backgroundSize: string,
+  imageSize: { width: number; height: number },
+  containerSize: { width: number; height: number }
+) => {
   let width: any, height: any;
 
   // sanity check
-  if (imageSize.width === 0 || imageSize.height === 0 || containerSize.width === 0 || containerSize.height === 0) {
+  if (
+    imageSize.width === 0 ||
+    imageSize.height === 0 ||
+    containerSize.width === 0 ||
+    containerSize.height === 0
+  ) {
     width = 0;
     height = 0;
   } else if (backgroundSize === 'cover') {
@@ -145,12 +154,16 @@ const getActualImageSize = (backgroundSize: string, imageSize: {width: number, h
   } else {
     // we currently don't support multiple backgrounds
     const [singleBackgroundSize]: any = backgroundSize.split(',');
-    let [backgroundSizeWidth, backgroundSizeHeight]: any = singleBackgroundSize.trim().split(' ');
+    let [
+      backgroundSizeWidth,
+      backgroundSizeHeight,
+    ]: any = singleBackgroundSize.trim().split(' ');
 
     if (backgroundSizeWidth === 'auto' || backgroundSizeWidth === undefined) {
       backgroundSizeWidth = null;
     } else if (backgroundSizeWidth.endsWith('%')) {
-      backgroundSizeWidth = (parseFloat(backgroundSizeWidth) / 100) * containerSize.width;
+      backgroundSizeWidth =
+        (parseFloat(backgroundSizeWidth) / 100) * containerSize.width;
     } else if (backgroundSizeWidth.endsWith('px')) {
       backgroundSizeWidth = parseFloat(backgroundSizeWidth);
     }
@@ -158,7 +171,8 @@ const getActualImageSize = (backgroundSize: string, imageSize: {width: number, h
     if (backgroundSizeHeight === 'auto' || backgroundSizeHeight === undefined) {
       backgroundSizeHeight = null;
     } else if (backgroundSizeHeight.endsWith('%')) {
-      backgroundSizeHeight = (parseFloat(backgroundSizeHeight) / 100) * containerSize.height;
+      backgroundSizeHeight =
+        (parseFloat(backgroundSizeHeight) / 100) * containerSize.height;
     } else if (backgroundSizeHeight.endsWith('px')) {
       backgroundSizeHeight = parseFloat(backgroundSizeHeight);
     }
@@ -181,7 +195,4 @@ const getActualImageSize = (backgroundSize: string, imageSize: {width: number, h
   };
 };
 
-export {
-  parseBackgroundImage,
-  getActualImageSize,
-};
+export { parseBackgroundImage, getActualImageSize };

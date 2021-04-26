@@ -277,7 +277,7 @@ export class MenuFlyout {
     }
     const slottedNodes = this.triggerSlot.assignedNodes();
     const slottedTrigger = slottedNodes.find(
-      el => el.nodeType !== Node.TEXT_NODE
+      (el) => el.nodeType !== Node.TEXT_NODE
     ) as HTMLScaleMenuFlyoutItemElement;
     if (!slottedTrigger) {
       return;
@@ -466,7 +466,7 @@ export class MenuFlyout {
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
-          ref={el => (this.main = el)}
+          ref={(el) => (this.main = el)}
           // onClick={this.handleClick}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
@@ -481,11 +481,11 @@ export class MenuFlyout {
           ></div>
           <div
             class={`${name}__list-wrapper`}
-            ref={el => (this.listWrapper = el)} //
+            ref={(el) => (this.listWrapper = el)} //
           >
             <div
               class={`${name}__list`}
-              ref={el => (this.list = el)}
+              ref={(el) => (this.list = el)}
               onClick={this.onMenuClick}
             >
               <slot
@@ -493,7 +493,7 @@ export class MenuFlyout {
                   this.listSlot = e.target;
                   const slottedNodes = this.listSlot.assignedNodes();
                   const slottedList = slottedNodes.find(
-                    el => el.nodeType !== Node.TEXT_NODE
+                    (el) => el.nodeType !== Node.TEXT_NODE
                   ) as HTMLScaleMenuFlyoutListElement;
                   if (slottedList) {
                     this.slottedList = slottedList;
@@ -505,7 +505,7 @@ export class MenuFlyout {
           <span
             class={`${name}__trigger`}
             onClick={this.onTriggerClick} //
-            ref={el => (this.trigger = el)}
+            ref={(el) => (this.trigger = el)}
           >
             <slot
               name="trigger"

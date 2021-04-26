@@ -1,41 +1,47 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
 import ScaleModal from './ScaleModal.vue';
 
 <Meta
-  title='Components/Modal'
+  title="Components/Modal"
   component={ScaleModal}
   argTypes={{
     size: {
       control: {
-        type: "select",
-        options: ["small", "default", "large"]
+        type: 'select',
+        options: ['small', 'default', 'large'],
       },
     },
     alignActions: {
       control: {
-        type: "select",
-        options: ["right", "left"]
+        type: 'select',
+        options: ['right', 'left'],
       },
     },
     opened: {
       control: {
-        disable: true
+        disable: true,
       },
     },
     showActions: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     shortBody: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     longBody: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
   }}
 />
@@ -46,17 +52,17 @@ export const Template = (args, context) => ({
     showActions: Boolean,
     shortBody: Boolean,
     longBody: Boolean,
-    ...ScaleModal.props
+    ...ScaleModal.props,
   },
   data() {
     return {
-      isOpen: args.opened
-    }
+      isOpen: args.opened,
+    };
   },
   methods: {
     close() {
-      this.isOpen = false
-    }
+      this.isOpen = false;
+    },
   },
   template: `
     <div>
@@ -98,40 +104,49 @@ export const Template = (args, context) => ({
         Open Modal
       </scale-button>
     </div>
-  `
-})
+  `,
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Modal</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Modal</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
   <Story
-    name='Standard'
+    name="Standard"
     args={{
       opened: false,
       showActions: true,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
+<ArgsTable story="Standard" />
 
 ```html
-<scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
+<scale-modal
+  heading="Today is your lucky day"
+  :opened="opened"
+  @scaleClose="opened = false"
+>
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
   <scale-button variant="secondary" @click="opened = false">
     Cancel
   </scale-button>
-  <scale-button @click="handlePrimaryAction">
-    Primary Action
-  </scale-button>
+  <scale-button @click="handlePrimaryAction"> Primary Action </scale-button>
 </scale-modal>
 ```
 
@@ -162,8 +177,9 @@ export const Template = (args, context) => ({
   --spacing-x-header: var(--scl-spacing-24);
   --spacing-y-header: var(--scl-spacing-24);
 
-  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid
-    var(--scl-color-grey-20);
+  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid var(
+      --scl-color-grey-20
+    );
 
   --font-family-heading: var(--scl-font-family-sans);
   --font-size-heading: var(--scl-font-size-20);
@@ -171,10 +187,12 @@ export const Template = (args, context) => ({
 
   --spacing-close-button: var(--scl-spacing-8);
   --radius-close-button: var(--scl-radius-8);
-  --transition-close-button: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2)
-    var(--scl-color-focus);
+  --transition-close-button: all var(--scl-motion-duration-fast) var(
+      --scl-motion-easing-standard
+    );
+  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2) var(
+      --scl-color-focus
+    );
   --color-close-button-hover: var(--scl-color-primary-hover);
   --color-close-button-active: var(--scl-color-primary-active);
 
@@ -194,12 +212,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='Standard Small'
+    name="Standard Small"
     args={{
       opened: false,
       size: 'small',
       showActions: true,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
@@ -207,14 +225,17 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+<scale-modal
+  heading="Today is your lucky day"
+  size="small"
+  :opened="opened"
+  @scaleClose="opened = false"
+>
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
   <scale-button variant="secondary" @click="opened = false">
     Cancel
   </scale-button>
-  <scale-button @click="handlePrimaryAction">
-    Primary Action
-  </scale-button>
+  <scale-button @click="handlePrimaryAction"> Primary Action </scale-button>
 </scale-modal>
 ```
 
@@ -222,12 +243,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='Standard Large'
+    name="Standard Large"
     args={{
       opened: false,
       size: 'large',
       showActions: true,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
@@ -235,7 +256,12 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="large" :opened="opened" @scaleClose="opened = false">
+<scale-modal
+  heading="Today is your lucky day"
+  size="large"
+  :opened="opened"
+  @scaleClose="opened = false"
+>
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
   <scale-button slot="action" variant="secondary" @click="opened = false">
     Cancel
@@ -250,12 +276,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='No Actions'
+    name="No Actions"
     args={{
       opened: false,
       size: 'small',
       showActions: false,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
@@ -263,7 +289,12 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+<scale-modal
+  heading="Today is your lucky day"
+  size="small"
+  :opened="opened"
+  @scaleClose="opened = false"
+>
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
 </scale-modal>
 ```
@@ -272,12 +303,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='With No Body'
+    name="With No Body"
     args={{
       opened: false,
       size: 'small',
       showActions: true,
-      shortBody: false
+      shortBody: false,
     }}
   >
     {Template.bind({})}
@@ -285,7 +316,12 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+<scale-modal
+  heading="Today is your lucky day"
+  size="small"
+  :opened="opened"
+  @scaleClose="opened = false"
+>
   <scale-button slot="action" variant="secondary" @click="opened = false">
     Cancel
   </scale-button>
@@ -299,7 +335,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='Scrolling With Actions'
+    name="Scrolling With Actions"
     args={{
       opened: false,
       showActions: true,
@@ -311,7 +347,11 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
+<scale-modal
+  heading="Today is your lucky day"
+  :opened="opened"
+  @scaleClose="opened = false"
+>
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
   <p>...</p>
   <p>...</p>

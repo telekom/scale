@@ -19,10 +19,10 @@ export const TagsCell: Cell = {
     sortBy: 'text',
   },
   render: ({ content }) => {
-    const tags = content.split(',').map(s => s.trim());
+    const tags = content.split(',').map((s) => s.trim());
     return (
       <ul class={`tbody__tag-list`}>
-        {tags.map(tag => (
+        {tags.map((tag) => (
           <li>
             <scale-tag size="small">{tag}</scale-tag>
           </li>

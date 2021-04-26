@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Ein Text-Link ist ein interaktives Element, das Nutzer*innen per Klick/Tap zu einem bestimmten Ort oder Dokument führt.
+Ein Text-Link ist ein interaktives Element, das Nutzer\*innen per Klick/Tap zu einem bestimmten Ort oder Dokument führt.
 
 ## Allgemein
 
@@ -11,13 +11,13 @@ Der Text-Link bietet eine zusätzliche Möglichkeit zur Navigation. Er kann als 
 
 ### Verwende einen Text-Link, um
 
-- Nutzer*innen an einen anderen Ort weiterzuleiten (innerhalb eines Produkts, Dienstes oder auf eine externe Webseite) oder
+- Nutzer\*innen an einen anderen Ort weiterzuleiten (innerhalb eines Produkts, Dienstes oder auf eine externe Webseite) oder
 - zu einem anderen Abschnitt innerhalb einer Seite zu führen und
 - Telefonnummern oder E-Mail-Adressen direkt zugänglich zu machen.
 
 ### Verwende Text-Links besser nicht, wenn
 
-- Nutzer*innen Aktionen ausführen sollen. Nutze in diesem Fall Buttons.
+- Nutzer\*innen Aktionen ausführen sollen. Nutze in diesem Fall Buttons.
 
 ## Varianten
 

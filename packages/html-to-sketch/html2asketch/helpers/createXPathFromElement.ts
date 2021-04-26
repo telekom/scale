@@ -30,10 +30,14 @@ export default function createXPathFromElement(elm: any) {
         segs.unshift(`id("${elm.getAttribute('id')}")`);
         return segs.join('/');
       } else {
-        segs.unshift(`${elm.localName.toLowerCase()}[@id="${elm.getAttribute('id')}"]`);
+        segs.unshift(
+          `${elm.localName.toLowerCase()}[@id="${elm.getAttribute('id')}"]`
+        );
       }
     } else if (elm.hasAttribute('class')) {
-      segs.unshift(`${elm.localName.toLowerCase()}[@class="${elm.getAttribute('class')}"]`);
+      segs.unshift(
+        `${elm.localName.toLowerCase()}[@class="${elm.getAttribute('class')}"]`
+      );
     } else {
       let i = 1;
 

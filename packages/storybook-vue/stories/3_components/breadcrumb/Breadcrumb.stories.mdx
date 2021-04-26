@@ -1,12 +1,18 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
 import ScaleBreadcrumb from './ScaleBreadcrumb.vue';
 
 <Meta
-  title='Components/Breadcrumb'
+  title="Components/Breadcrumb"
   component={ScaleBreadcrumb}
   argTypes={{
     separator: {
-      control: { type: "text" }
+      control: { type: 'text' },
     },
   }}
 />
@@ -15,7 +21,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleBreadcrumb },
   props: {
     label: String,
-    ...ScaleBreadcrumb.props
+    ...ScaleBreadcrumb.props,
   },
   template: `
     <scale-breadcrumb
@@ -31,26 +37,30 @@ export const Template = (args, { argTypes }) => ({
         </span>
       </template>
     </scale-breadcrumb>
-  `
-})
+  `,
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Breadcrumb</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Breadcrumb</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name='Standard'
-    args={{}}
-  >
+  <Story name="Standard" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
+<ArgsTable story="Standard" />
 
 ```html
 <scale-breadcrumb separator="---">

@@ -141,7 +141,7 @@ export class Toast {
     );
   }
 
-  transitions = offset => `
+  transitions = (offset) => `
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -165,7 +165,7 @@ export class Toast {
     }
   `;
 
-  animationStyle = offset => {
+  animationStyle = (offset) => {
     return `
       .toast--show {
         right: ${this.positionRight}px;

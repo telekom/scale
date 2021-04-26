@@ -1,7 +1,14 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from "@storybook/addon-docs/blocks";
-import ScaleTextField from "./ScaleTextField.vue";
-import { action } from "@storybook/addon-actions";
-export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleTextField from './ScaleTextField.vue';
+import { action } from '@storybook/addon-actions';
+export const ICON =
+  'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
 
 <Meta
   title="Components/Text Field"
@@ -9,23 +16,16 @@ export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435
   argTypes={{
     resize: {
       control: {
-        type: "select",
-        options: ["unset", "none", "vertical", "horizontal"]
-      }
+        type: 'select',
+        options: ['unset', 'none', 'vertical', 'horizontal'],
+      },
     },
     type: {
       control: {
-        type: "select",
-        options: [
-          "email",
-          "hidden",
-          "number",
-          "password",
-          "tel",
-          "text",
-        ]
-      }
-    }
+        type: 'select',
+        options: ['email', 'hidden', 'number', 'password', 'tel', 'text'],
+      },
+    },
   }}
 />
 
@@ -33,7 +33,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTextField },
   props: {
     label: String,
-    ...ScaleTextField.props
+    ...ScaleTextField.props,
   },
   template: `
     <scale-text-field
@@ -58,16 +58,23 @@ export const Template = (args, { argTypes }) => ({
     ></scale-text-field>
   `,
   methods: {
-    scaleChange: action("scaleChange"),
-    scaleFocus: action("scaleFocus"),
-    scaleBlur: action("scaleBlur"),
-    scaleKeyDown: action("scaleKeyDown"),
-  }
-})
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Text Field</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Text Field</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -76,7 +83,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "An input"
+      label: 'An input',
     }}
   >
     {Template.bind({})}
@@ -89,7 +96,9 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 scale-text-field {
-  --transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
+  --transition: all var(--scl-motion-duration-fast) var(
+      --scl-motion-easing-standard
+    );
   --radius: var(--scl-radius-4);
   --border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   --border-error: var(--scl-spacing-2) solid var(--scl-color-background-error);
@@ -111,8 +120,9 @@ scale-text-field {
   --color-meta-error: var(--scl-color-text-error);
 
   /*control*/
-  --spacing-control: var(--scl-spacing-12) var(--spacing-x) 0
-    calc(var(--spacing-x) - 1px);
+  --spacing-control: var(--scl-spacing-12) var(--spacing-x) 0 calc(var(
+          --spacing-x
+        ) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--scl-font-size-16);
 
@@ -152,7 +162,7 @@ scale-text-field {
   <Story
     name="Text With Events"
     args={{
-      label: "Text With Events"
+      label: 'Text With Events',
     }}
   >
     {Template.bind({})}
@@ -160,9 +170,13 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-text-field>
+<scale-text-field
+  @scaleChange="handleChange"
+  @scaleBlur="handleBlur"
+  @scaleFocus="handleFocus"
+  @scaleKeyDown="handleKeyDown"
+></scale-text-field>
 ```
-
 
 ## Placeholder
 
@@ -170,8 +184,8 @@ scale-text-field {
   <Story
     name="Placeholder"
     args={{
-      label: "Placeholder",
-      placeholder: "this is the placeholder"
+      label: 'Placeholder',
+      placeholder: 'this is the placeholder',
     }}
   >
     {Template.bind({})}
@@ -179,9 +193,11 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field label="Placeholder" placeholder="this is the placeholder"></scale-text-field>
+<scale-text-field
+  label="Placeholder"
+  placeholder="this is the placeholder"
+></scale-text-field>
 ```
-
 
 ## Helper Text
 
@@ -189,8 +205,8 @@ scale-text-field {
   <Story
     name="Helper Text"
     args={{
-      label: "Helper Text",
-      helperText: "Make sure to fill this"
+      label: 'Helper Text',
+      helperText: 'Make sure to fill this',
     }}
   >
     {Template.bind({})}
@@ -198,9 +214,11 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field label="Helper Text" helperText="Make sure to fill this"></scale-text-field>
+<scale-text-field
+  label="Helper Text"
+  helperText="Make sure to fill this"
+></scale-text-field>
 ```
-
 
 ## Small
 
@@ -208,8 +226,8 @@ scale-text-field {
   <Story
     name="Small"
     args={{
-      label: "Small",
-      size: 'small'
+      label: 'Small',
+      size: 'small',
     }}
   >
     {Template.bind({})}
@@ -220,16 +238,15 @@ scale-text-field {
 <scale-text-field label="Small" size="small"></scale-text-field>
 ```
 
-
 ## With Error
 
 <Canvas withSource="none">
   <Story
     name="With Error"
     args={{
-      label: "With Error",
-      status: "error",
-      helperText: "something is wrong"
+      label: 'With Error',
+      status: 'error',
+      helperText: 'something is wrong',
     }}
   >
     {Template.bind({})}
@@ -237,9 +254,12 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field label="With Error" helper-text="something is wrong" status="error"></scale-text-field>
+<scale-text-field
+  label="With Error"
+  helper-text="something is wrong"
+  status="error"
+></scale-text-field>
 ```
-
 
 ## Disabled
 
@@ -247,8 +267,8 @@ scale-text-field {
   <Story
     name="Disabled"
     args={{
-      label: "Disabled",
-      disabled: true
+      label: 'Disabled',
+      disabled: true,
     }}
   >
     {Template.bind({})}
@@ -259,16 +279,15 @@ scale-text-field {
 <scale-text-field label="Disabled" disabled></scale-text-field>
 ```
 
-
 ## Max Length With Counter
 
 <Canvas withSource="none">
   <Story
     name="Max Length With Counter"
     args={{
-      label: "Max Length With Counter",
+      label: 'Max Length With Counter',
       maxLength: 10,
-      counter: true
+      counter: true,
     }}
   >
     {Template.bind({})}
@@ -276,5 +295,9 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field label="Max Length With Counter" max-length="10" counter></scale-text-field>
+<scale-text-field
+  label="Max Length With Counter"
+  max-length="10"
+  counter
+></scale-text-field>
 ```

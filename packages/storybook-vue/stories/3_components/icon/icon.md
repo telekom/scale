@@ -12,8 +12,8 @@ Deutsche Telekom has its own icon style to convey the brand’s values in a subt
 
 Use icons to help our users grasp the core idea of content and functions quickly. Icons are meant to:
 
-* simplify the use of our products and services by drawing attention to important actions or content and
-* enhance the aesthetic appeal of our user interfaces.
+- simplify the use of our products and services by drawing attention to important actions or content and
+- enhance the aesthetic appeal of our user interfaces.
 
 ### When not to use
 
@@ -53,6 +53,7 @@ Interactive icon
 ## Accessibility
 
 ### Special feature in the code
+
 As soon as single icons convey relevant information in interfaces, create a corresponding alternative text with the code property "accessibilityTitle". This way, the information is also accessible to blind users with screen readers.
 
 You need to include an alternative text if the icon has no visible label (see Close Icon) or contains additional information (e.g., if it’s an external link).

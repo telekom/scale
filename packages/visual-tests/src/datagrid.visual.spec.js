@@ -18,7 +18,7 @@ describe('DataGrid', () => {
     ['menu-slot'],
     ['column-stretch'],
     ['show-more'],
-  ])('%p', async variant => {
+  ])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=beta-components-data-grid--${variant}&viewMode=story`
     );

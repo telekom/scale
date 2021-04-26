@@ -35,7 +35,7 @@ export class NavIcon {
           ref={this.refMobileMenuToggle}
           href={this.href}
           onClick={this.clickLink}
-          onKeyDown={event => {
+          onKeyDown={(event) => {
             if (!this.refMobileMenuToggle) {
               return;
             }

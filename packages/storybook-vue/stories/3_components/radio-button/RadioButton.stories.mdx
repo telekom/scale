@@ -1,7 +1,14 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from "@storybook/addon-docs/blocks";
-import ScaleRadioButton from "./ScaleRadioButton.vue";
-import { action } from "@storybook/addon-actions";
-export const ICON = "M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z";
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleRadioButton from './ScaleRadioButton.vue';
+import { action } from '@storybook/addon-actions';
+export const ICON =
+  'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
 
 <Meta
   title="Components/Radio Button"
@@ -13,7 +20,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleRadioButton },
   props: {
     label: String,
-    ...ScaleRadioButton.props
+    ...ScaleRadioButton.props,
   },
   template: `
     <scale-radio-button
@@ -29,13 +36,20 @@ export const Template = (args, { argTypes }) => ({
     ></scale-radio-button>
   `,
   methods: {
-    scaleChange: action("scaleChange"),
-  }
-})
+    scaleChange: action('scaleChange'),
+  },
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Radio Button</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Radio Button</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -44,7 +58,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "Radio"
+      label: 'Radio',
     }}
   >
     {Template.bind({})}
@@ -60,8 +74,9 @@ scale-radio-button {
   --color-disabled: var(--scl-color-background-disabled);
   --background-disabled: var(--scl-color-white);
   --color-error: var(--scl-color-text-error);
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  --transition: all var(--scl-motion-duration-fast) var(
+      --scl-motion-easing-standard
+    );
   --color-primary: var(--scl-color-primary, #e20074);
   --color-primary-hover: var(--scl-color-primary-hover, #f90984);
   --color-primary-active: var(--scl-color-primary-active);
@@ -89,18 +104,24 @@ scale-radio-button {
   --spacing-control: 0 var(--scl-spacing-8) 0 0;
   --background-color-control: var(--scl-color-white);
   --border-control: var(--scl-spacing-1) solid var(--color-text);
-  --border-control-checked: calc(0.5 * var(--scl-spacing-12)) solid
-    var(--color-primary);
-  --border-control-checked-active: calc(0.5 * var(--scl-spacing-12)) solid
-    var(--color-primary-active, #cb0068);
-  --border-control-checked-disabled: calc(0.5 * var(--scl-spacing-12)) solid
-    var(--color-disabled);
+  --border-control-checked: calc(0.5 * var(--scl-spacing-12)) solid var(
+      --color-primary
+    );
+  --border-control-checked-active: calc(0.5 * var(--scl-spacing-12)) solid var(
+      --color-primary-active,
+      #cb0068
+    );
+  --border-control-checked-disabled: calc(0.5 * var(--scl-spacing-12)) solid var(
+      --color-disabled
+    );
   --background-control-checked-disabled: var(--scl-color-grey-30);
-  --border-control-active: var(--scl-spacing-8) solid
-    var(--color-primary-active);
+  --border-control-active: var(--scl-spacing-8) solid var(
+      --color-primary-active
+    );
   --border-control-disabled: var(--scl-spacing-1) solid var(--color-disabled);
-  --border-control-error: var(--scl-spacing-2) solid
-    var(--scl-color-background-error);
+  --border-control-error: var(--scl-spacing-2) solid var(
+      --scl-color-background-error
+    );
   --box-shadow-control-focus: 0 0 0 var(--scl-spacing-2) var(--color-focus);
 }
 ```
@@ -111,8 +132,8 @@ scale-radio-button {
   <Story
     name="Standard Disabled"
     args={{
-      label: "Standard Disabled",
-      disabled: true
+      label: 'Standard Disabled',
+      disabled: true,
     }}
   >
     {Template.bind({})}
@@ -123,15 +144,14 @@ scale-radio-button {
 <scale-radio-button disabled @scaleChange="handleChange"></scale-radio-button>
 ```
 
-
 ## Selected
 
 <Canvas withSource="none">
   <Story
     name="Selected"
     args={{
-      label: "Selected",
-      checked: true
+      label: 'Selected',
+      checked: true,
     }}
   >
     {Template.bind({})}
@@ -142,16 +162,15 @@ scale-radio-button {
 <scale-radio-button checked @scaleChange="handleChange"></scale-radio-button>
 ```
 
-
 ## Selected Disabled
 
 <Canvas withSource="none">
   <Story
     name="Selected Disabled"
     args={{
-      label: "Selected Disabled",
+      label: 'Selected Disabled',
       checked: true,
-      disabled: true
+      disabled: true,
     }}
   >
     {Template.bind({})}
@@ -159,9 +178,12 @@ scale-radio-button {
 </Canvas>
 
 ```html
-<scale-radio-button checked disabled @scaleChange="handleChange"></scale-radio-button>
+<scale-radio-button
+  checked
+  disabled
+  @scaleChange="handleChange"
+></scale-radio-button>
 ```
-
 
 ## Error
 
@@ -169,9 +191,9 @@ scale-radio-button {
   <Story
     name="Error"
     args={{
-      label: "Standard with error",
-      status: "error",
-      helperText: "This is the error message"
+      label: 'Standard with error',
+      status: 'error',
+      helperText: 'This is the error message',
     }}
   >
     {Template.bind({})}
@@ -179,5 +201,9 @@ scale-radio-button {
 </Canvas>
 
 ```html
-<scale-radio-button status="error" helper-text="This is the error message" @scaleChange="handleChange"></scale-radio-button>
+<scale-radio-button
+  status="error"
+  helper-text="This is the error message"
+  @scaleChange="handleChange"
+></scale-radio-button>
 ```

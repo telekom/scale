@@ -35,7 +35,7 @@ width: 100%; */
   <body>
     <scale-app-shell id="app">
       <div class="block">
-        <button id="change-button" style="margin: 1em;">change sector</button>
+        <button id="change-button" style="margin: 1em">change sector</button>
       </div>
       <div class="block">Two</div>
       <scale-app-header slot="header" id="header">
@@ -53,34 +53,20 @@ width: 100%; */
           <scale-nav-main name="Menu item #4"></scale-nav-main>
         </div>
         <div slot="menu-icon">
-          <scale-nav-icon icon="action-mute">
-            Mute
-          </scale-nav-icon>
-          <scale-nav-icon icon="action-play">
-            Play
-          </scale-nav-icon>
-          <scale-nav-icon icon="action-pause">
-            Pause
-          </scale-nav-icon>
-          <scale-nav-icon icon="action-fast-forward">
-            Forward
-          </scale-nav-icon>
-          <scale-nav-icon icon="action-favorite">
-            Favorite
-          </scale-nav-icon>
+          <scale-nav-icon icon="action-mute"> Mute </scale-nav-icon>
+          <scale-nav-icon icon="action-play"> Play </scale-nav-icon>
+          <scale-nav-icon icon="action-pause"> Pause </scale-nav-icon>
+          <scale-nav-icon icon="action-fast-forward"> Forward </scale-nav-icon>
+          <scale-nav-icon icon="action-favorite"> Favorite </scale-nav-icon>
         </div>
         <div slot="menu-sector">
           <scale-nav-segment is-active="true" href="/private">
             Private
           </scale-nav-segment>
-          <scale-nav-segment href="/business">
-            Business
-          </scale-nav-segment>
+          <scale-nav-segment href="/business"> Business </scale-nav-segment>
         </div>
         <div slot="menu-addon">
-          <scale-nav-segment href="/shop">
-            Shop
-          </scale-nav-segment>
+          <scale-nav-segment href="/shop"> Shop </scale-nav-segment>
           <scale-nav-segment is-active="true" href="/contact">
             Contact
           </scale-nav-segment>
@@ -470,7 +456,7 @@ width: 100%; */
       ];
       header.logoHref = '/hello';
       header.logoTitle = 'Logo';
-      header.logoClick = e => {
+      header.logoClick = (e) => {
         e.preventDefault();
         console.log('hello');
       };
@@ -479,7 +465,7 @@ width: 100%; */
           name: 'Privatkunden',
           id: 'Privatkunden',
           href: '/',
-          onClick: event => {
+          onClick: (event) => {
             event.preventDefault();
             app.activeSectorId = 'Privatkunden';
           },
@@ -488,7 +474,7 @@ width: 100%; */
           name: 'Geschäftskunden',
           id: 'Geschäftskunden',
           href: '/',
-          onClick: event => {
+          onClick: (event) => {
             event.preventDefault();
             app.activeSectorId = 'Geschäftskunden';
           },
@@ -530,15 +516,15 @@ width: 100%; */
         },
       ];
       footer.claimLang = 'de';
-      navMainWithMegaMenu.addEventListener('mouseenter', function() {
+      navMainWithMegaMenu.addEventListener('mouseenter', function () {
         navMainWithMegaMenu.isMegaMenuVisible = true;
         header.isMegaMenuVisible = true;
       });
-      navMainWithMegaMenu.addEventListener('mouseleave', function() {
+      navMainWithMegaMenu.addEventListener('mouseleave', function () {
         navMainWithMegaMenu.isMegaMenuVisible = false;
         header.isMegaMenuVisible = false;
       });
-      document.body.addEventListener('keydown', function(event) {
+      document.body.addEventListener('keydown', function (event) {
         if (['Escape', 'Esc'].includes(event.key)) {
           event.preventDefault();
           header.dispatchEvent(new Event('closeMenu'));

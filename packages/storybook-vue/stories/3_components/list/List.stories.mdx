@@ -4,9 +4,9 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from "@storybook/addon-docs/blocks";
-import ScaleList from "./ScaleList.vue";
-import ScaleListItem from "./ScaleListItem.vue";
+} from '@storybook/addon-docs/blocks';
+import ScaleList from './ScaleList.vue';
+import ScaleListItem from './ScaleListItem.vue';
 
 <Meta
   title="Components/List"
@@ -14,10 +14,10 @@ import ScaleListItem from "./ScaleListItem.vue";
   subcomponents={{ ScaleListItem }}
   argTypes={{
     ordered: {
-      control: { type: "boolean" },
+      control: { type: 'boolean' },
     },
     styles: {
-      control: { type: "string", disable: true },
+      control: { type: 'string', disable: true },
     },
   }}
 />
@@ -58,9 +58,16 @@ export const TemplateCustomIcon = (args) => ({
   `,
 });
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>List</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>List</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Ordered

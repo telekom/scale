@@ -9,7 +9,11 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {makeImageFill, makeColorFromCSS, makeColorFill} from '../helpers/utils';
+import {
+  makeImageFill,
+  makeColorFromCSS,
+  makeColorFill,
+} from '../helpers/utils';
 import convertAngleToFromAndTo from '../helpers/convertAngleToFromAndTo';
 
 class Style {
@@ -34,8 +38,8 @@ class Style {
     this._fills.push(makeColorFill(color, alpha));
   }
 
-  addGradientFill({angle, stops}: any) {
-    const {from, to} = convertAngleToFromAndTo(angle);
+  addGradientFill({ angle, stops }: any) {
+    const { from, to } = convertAngleToFromAndTo(angle);
 
     this._fills.push({
       _class: 'fill',
@@ -52,7 +56,7 @@ class Style {
             _class: 'gradientStop',
             color: makeColorFromCSS(color),
             position: index,
-          }
+          };
         }),
         to: `{${to.x}, ${to.y}}`,
       },
@@ -74,13 +78,15 @@ class Style {
         from: `{${fill.gradient.from.x}, ${fill.gradient.from.y}}`,
         gradientType: fill.gradient.gradientType,
         shouldSmoothenOpacity: false,
-        stops: fill.gradient.stops.map(({color, position}:{color:string,position:number}) => {
-          return {
-            _class: 'gradientStop',
-            color: makeColorFromCSS(color, alpha),
-            position,
+        stops: fill.gradient.stops.map(
+          ({ color, position }: { color: string; position: number }) => {
+            return {
+              _class: 'gradientStop',
+              color: makeColorFromCSS(color, alpha),
+              position,
+            };
           }
-        }),
+        ),
         to: `{${fill.gradient.to.x}, ${fill.gradient.to.y}}`,
       },
       noiseIndex: 0,
@@ -96,7 +102,17 @@ class Style {
     this._fills.push(fill);
   }
 
-  addBorder({color, thickness, alpha, position}: {color:any, thickness:number, alpha?:number, position?:number}) {
+  addBorder({
+    color,
+    thickness,
+    alpha,
+    position,
+  }: {
+    color: any;
+    thickness: number;
+    alpha?: number;
+    position?: number;
+  }) {
     position = position || 1;
     this._borders.push({
       _class: 'border',
@@ -108,7 +124,13 @@ class Style {
     });
   }
 
-  addShadow({color = '#000', blur = 1, offsetX = 0, offsetY = 0, spread = 0}: any) {
+  addShadow({
+    color = '#000',
+    blur = 1,
+    offsetX = 0,
+    offsetY = 0,
+    spread = 0,
+  }: any) {
     this._shadows.push({
       _class: 'shadow',
       isEnabled: true,
@@ -125,7 +147,13 @@ class Style {
     });
   }
 
-  addInnerShadow({color = '#000', blur = 0, offsetX = 0, offsetY = 0, spread = 0}: any) {
+  addInnerShadow({
+    color = '#000',
+    blur = 0,
+    offsetX = 0,
+    offsetY = 0,
+    spread = 0,
+  }: any) {
     this._innerShadows.push({
       _class: 'innerShadow',
       isEnabled: true,

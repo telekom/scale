@@ -52,7 +52,7 @@ export class Carousel {
     }
   }
 
-  handleSlideChange = direction => {
+  handleSlideChange = (direction) => {
     const val = this.value;
     if (direction === 'prev') {
       val === 0
@@ -67,7 +67,7 @@ export class Carousel {
     }
   };
 
-  setActiveSlide = index => {
+  setActiveSlide = (index) => {
     this.value = -100 * index;
   };
 
@@ -78,7 +78,7 @@ export class Carousel {
     return `translateX(${this.value}%)`;
   };
 
-  setActiveCssClass = index => {
+  setActiveCssClass = (index) => {
     if (Math.abs(this.value) / 100 === index) {
       return 'carousel__indicator--active';
     }
@@ -98,7 +98,7 @@ export class Carousel {
             >
               <slot name="arrow-left" />
             </div>
-            {this.slidesArray.map(element => (
+            {this.slidesArray.map((element) => (
               <div
                 class="carousel__slide"
                 style={{ transform: this.setTransformValue() }}
@@ -114,7 +114,7 @@ export class Carousel {
             </div>
           </div>
           <ul class="carousel__indicators">
-            {Array.from(Array(this.slidesArray.length).keys()).map(index => (
+            {Array.from(Array(this.slidesArray.length).keys()).map((index) => (
               <li
                 key={index}
                 class={`carousel__indicator ${this.setActiveCssClass(index)}`}

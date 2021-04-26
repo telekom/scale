@@ -1,4 +1,10 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
 import ScaleCard from './ScaleCard.vue';
 
 <!--
@@ -20,15 +26,15 @@ import ScaleCard from './ScaleCard.vue';
 -->
 
 <Meta
-  title='Components/Card'
+  title="Components/Card"
   component={ScaleCard}
   argTypes={{
     label: {
-      control: { type: 'text' }
+      control: { type: 'text' },
     },
     styles: {
-      control: { type: String }
-    }
+      control: { type: String },
+    },
   }}
 />
 
@@ -36,7 +42,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleCard },
   props: {
     slot: String,
-    ...ScaleCard.props
+    ...ScaleCard.props,
   },
   template: `
     <div :style="{ maxWidth: slot.startsWith('<div') ? '300px'  : 'auto' }">
@@ -58,36 +64,45 @@ export const Template = (args, { argTypes }) => ({
                 </div>
         </scale-card>
     </div>
-  `
-})
+  `,
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Card</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Card</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
   <Story
-    name='Standard'
+    name="Standard"
     args={{
-        slot: 'A card',
-        label: 'Example Card',
+      slot: 'A card',
+      label: 'Example Card',
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
+<ArgsTable story="Standard" />
 
 ### Scoped CSS variables
 
 ```css
 :host {
   --background: var(--scl-color-background-standard);
-  --transition: all var(--scl-motion-duration-fast) var(--scl-motion-easing-standard);
+  --transition: all var(--scl-motion-duration-fast) var(
+      --scl-motion-easing-standard
+    );
   --radius: var(--scl-radius-8);
   --box-shadow: var(--scl-shadow-level-1);
   --box-shadow-hover: var(--scl-shadow-level-1-hover);
@@ -107,12 +122,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='With Link'
+    name="With Link"
     args={{
       slot: 'A card with a link to example.com',
       to: 'https://example.com',
       target: '_blank',
-      rel: 'noopener noreferrer'
+      rel: 'noopener noreferrer',
     }}
   >
     {Template.bind({})}
@@ -120,15 +135,21 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-card to="https://example.com" to="_blank" target="_blank" rel="noopener noreferrer" label="Example Card">A card with a link to example.com</scale-card>
+<scale-card
+  to="https://example.com"
+  to="_blank"
+  target="_blank"
+  rel="noopener noreferrer"
+  label="Example Card"
+  >A card with a link to example.com</scale-card
+>
 ```
-
 
 ## With Image
 
 <Canvas withSource="none">
   <Story
-    name='With Image'
+    name="With Image"
     args={{
       slot: `<div style="margin: -24px;">
         <img style="margin-bottom: -4px; width:100%;" src="https://placeimg.com/200/200/tech/grayscale" alt="placeholder" />
@@ -137,7 +158,7 @@ For Shadow Parts, please inspect the element's #shadow.
       `,
       to: 'https://example.com',
       target: '_blank',
-      rel: 'noopener noreferrer'
+      rel: 'noopener noreferrer',
     }}
   >
     {Template.bind({})}
@@ -148,31 +169,33 @@ For Shadow Parts, please inspect the element's #shadow.
 <div style="max-width: 200px;">
   <scale-card to="https://example.com" target="_blank">
     <div style="margin: -24px;">
-      <img style="margin-bottom: -4px; width:100%;" src="https://via.placeholder.com/150" alt="placeholder" />
+      <img
+        style="margin-bottom: -4px; width:100%;"
+        src="https://via.placeholder.com/150"
+        alt="placeholder"
+      />
       <div style="padding: 24px;">A card with a full width image</div>
     </div>
   </scale-card>
 </div>
 ```
 
-
 ## With Further Functions
 
-
 <Canvas withSource="none">
-    <Story
-        name='With Further Functions'
-        args={{
-            label: 'Example Card with further functions',
-        }}
-    >
-        {(args, { argTypes }) => ({
-            components: { ScaleCard },
-            props: {
-                slot: String,
-                ...ScaleCard.props
-            },
-            template: `
+  <Story
+    name="With Further Functions"
+    args={{
+      label: 'Example Card with further functions',
+    }}
+  >
+    {(args, { argTypes }) => ({
+      components: { ScaleCard },
+      props: {
+        slot: String,
+        ...ScaleCard.props,
+      },
+      template: `
                 <div :style="{ maxWidth: '300px' }">
                     <scale-card
                           :to="to"
@@ -191,22 +214,37 @@ For Shadow Parts, please inspect the element's #shadow.
                           </div>
                     </scale-card>
                 </div>
-              `
-        })}
-    </Story>
+              `,
+    })}
+  </Story>
 </Canvas>
 
 ```html
 <div :style="{ maxWidth: '300px' }">
-    <scale-card label="Example Card with further functions">
-      <article style="margin: -24px;">
-          <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
-          <div style="padding: 24px;">
-            <div style="padding: 0 0 24px 0;">A card with with further functions</div>
-            <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>Label</scale-button></div><EXTERNAL_FRAGMENT></EXTERNAL_FRAGMENT>
-            <div style="display: flex; justify-content: flex-end;"><scale-link href="https://example.com" tabindex=0>More...</scale-link></div>
-          </div>
-      </article>
-    </scale-card>
+  <scale-card label="Example Card with further functions">
+    <article style="margin: -24px;">
+      <img
+        style="margin-bottom: -4px; width:100%;"
+        src="assets/card-grayscale.jpeg"
+        alt="placeholder"
+      />
+      <div style="padding: 24px;">
+        <div style="padding: 0 0 24px 0;">
+          A card with with further functions
+        </div>
+        <div
+          style="padding: 0 0 24px 0; display: flex; justify-content: center;"
+        >
+          <scale-button>Label</scale-button>
+        </div>
+        <EXTERNAL_FRAGMENT></EXTERNAL_FRAGMENT>
+        <div style="display: flex; justify-content: flex-end;">
+          <scale-link href="https://example.com" tabindex="0"
+            >More...</scale-link
+          >
+        </div>
+      </div>
+    </article>
+  </scale-card>
 </div>
 ```

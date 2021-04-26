@@ -6,6 +6,7 @@
 A progress bar indicates that the system is running a process. This make users feel in control and can help to estimate how long it takes to accomplish a task.
 
 ## General
+
 A progress bar is a non-interactive, visual indicator. Depending on whether or not you know the duration of the process, you can use a determinate or indeterminate progress bar.
 
 ## Basic Types

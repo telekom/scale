@@ -4,8 +4,8 @@
   "description": "Angular specific wrapper for @telekom/scale-components",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/telekom/scale.git"
+    "type": "git",
+    "url": "https://github.com/telekom/scale.git"
   },
   "publishConfig": {
     "access": "public"
@@ -21,7 +21,8 @@
     "lint.fix": "tslint --project . --fix",
     "test": "jest",
     "tsc": "tsc -p .",
-    "validate": "yarn && yarn lint && yarn test && yarn build"
+    "validate": "yarn && yarn lint && yarn test && yarn build",
+    "format": "prettier --write \"package.json\""
   },
   "module": "dist/fesm5.js",
   "main": "dist/fesm5.js",
