@@ -71,7 +71,7 @@ jobs:
 
       - name: Run unit tests
         run: |
-          yarn workspace @telekom/scale-components test --spec
+          yarn workspace @telekom/scale-components test --spec --max-workers=8
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
@@ -96,7 +96,7 @@ jobs:
 
       - name: Run e2e tests
         run: |
-          yarn workspace @telekom/scale-components test --e2e
+          yarn workspace @telekom/scale-components test --e2e --max-workers=8 --debug
 
   visual-tests:
     runs-on: ubuntu-latest
