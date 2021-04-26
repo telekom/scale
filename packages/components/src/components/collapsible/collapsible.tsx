@@ -121,7 +121,10 @@ export class Collapsible {
                 class="collapsible__icon"
                 part={classNames('icon', this.expanded && 'expanded')}
               />
-              <span ref={el => (this.headingElement = el)} part="button-text" />
+              <span
+                ref={(el) => (this.headingElement = el)}
+                part="button-text"
+              />
             </button>
           </h2>
           <div

@@ -12,15 +12,14 @@
 import Base from './base';
 
 class Artboard extends Base {
-
   _class: any;
   _x: any;
   _y: any;
   _width: any;
   _height: any;
 
-  constructor({x, y, width, height, id}: any) {
-    super({id});
+  constructor({ x, y, width, height, id }: any) {
+    super({ id });
     this._class = 'artboard';
     this._x = x;
     this._y = y;

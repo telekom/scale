@@ -10,7 +10,7 @@
  */
 
 import Base from './base';
-import {RESIZING_CONSTRAINTS} from '../helpers/utils';
+import { RESIZING_CONSTRAINTS } from '../helpers/utils';
 
 class Text extends Base {
   _x: any;
@@ -23,8 +23,18 @@ class Text extends Base {
   _multiline: any;
   _attributedString: any;
 
-  constructor({x, y, width, height, text, style, multiline, id, attributedString}: any) {
-    super({id});
+  constructor({
+    x,
+    y,
+    width,
+    height,
+    text,
+    style,
+    multiline,
+    id,
+    attributedString,
+  }: any) {
+    super({ id });
     this._class = 'text';
     this._x = x;
     this._y = y;

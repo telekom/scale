@@ -19,8 +19,15 @@ class Rectangle extends Base {
   _x: number;
   _y: number;
 
-  constructor({width, height, cornerRadius = {topLeft: 0, bottomLeft: 0, topRight: 0, bottomRight: 0}, x, y, id}: any) {
-    super({id});
+  constructor({
+    width,
+    height,
+    cornerRadius = { topLeft: 0, bottomLeft: 0, topRight: 0, bottomRight: 0 },
+    x,
+    y,
+    id,
+  }: any) {
+    super({ id });
     this._class = 'rectangle';
     this._width = width;
     this._height = height;
@@ -88,7 +95,7 @@ class Rectangle extends Base {
         hasCurveTo: false,
         point: '{0, 1}',
       },
-    ]
+    ];
 
     obj.hasConvertedToNewRoundCorners = true;
     obj.fixedRadius = 0;

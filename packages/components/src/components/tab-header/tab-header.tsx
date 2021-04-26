@@ -52,13 +52,13 @@ export class TabHeader {
       return;
     }
     const children = Array.from(slot.assignedNodes())
-      .filter(node => node.nodeType === 1)
-      .filter(node => node.nodeName.toUpperCase().indexOf('ICON') > -1);
+      .filter((node) => node.nodeType === 1)
+      .filter((node) => node.nodeName.toUpperCase().indexOf('ICON') > -1);
     if (children.length === 0) {
       return;
     }
     const action = this.selected ? 'setAttribute' : 'removeAttribute';
-    children.forEach(child => child[action]('selected', ''));
+    children.forEach((child) => child[action]('selected', ''));
   }
 
   render() {
@@ -75,7 +75,7 @@ export class TabHeader {
 
         <span
           part={this.getBasePartMap()}
-          ref={el => (this.container = el)}
+          ref={(el) => (this.container = el)}
           class={this.getCssClassMap()}
         >
           <slot />

@@ -56,7 +56,7 @@ export class Tag {
       : {};
     const iconProps = !this.disabled
       ? {
-          onClick: event => this.handleClose(event),
+          onClick: (event) => this.handleClose(event),
         }
       : {};
 

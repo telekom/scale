@@ -19,35 +19,45 @@ function findComponentPath(node: HTMLElement): string {
   } else if (node.parentElement) {
     return findComponentPath(node.parentElement);
   } else {
-    return "Unnamed Components";
+    return 'Unnamed Components';
   }
 }
 
 function traverse(node: HTMLElement): void {
   if (/^scale-icon/i.test(node.nodeName)) {
     const componentPath = findComponentPath(node);
-    const componentName = node.getAttribute('data-sketch-symbol') || (componentPath + " / " + node.nodeName.replace(/^scale-/i, '').toLowerCase());
+    const componentName =
+      node.getAttribute('data-sketch-symbol') ||
+      componentPath +
+        ' / ' +
+        node.nodeName.replace(/^scale-/i, '').toLowerCase();
     node.setAttribute('data-sketch-symbol', `${componentName}`);
-    const attrVariant:string[] = [];
+    const attrVariant: string[] = [];
     for (let i = 0; i < node.attributes.length; i++) {
       const attr = node.attributes[i];
       if (!/^class$|^data-|^variant|^display$/.test(attr.name)) {
         if (attr.value.length < 32) {
-          attrVariant.push(`${attr.name}:${attr.value.slice(0,32)}`)
+          attrVariant.push(`${attr.name}:${attr.value.slice(0, 32)}`);
         } else {
-          attrVariant.push(`${attr.name}`)
+          attrVariant.push(`${attr.name}`);
         }
       }
     }
-    const variant = node.getAttribute('data-sketch-variant') || node.getAttribute('variant');
-    node.setAttribute('data-sketch-variant', (variant || '') + 
-      (attrVariant.length > 0 ? ((variant ? ' / ' : '') + attrVariant.join(" / ")) : ''));
+    const variant =
+      node.getAttribute('data-sketch-variant') || node.getAttribute('variant');
+    node.setAttribute(
+      'data-sketch-variant',
+      (variant || '') +
+        (attrVariant.length > 0
+          ? (variant ? ' / ' : '') + attrVariant.join(' / ')
+          : '')
+    );
   }
   for (let i = 0; i < node.children.length; i++) {
-    traverse(node.children[i] as unknown as HTMLElement);
+    traverse((node.children[i] as unknown) as HTMLElement);
   }
   if (node.shadowRoot) {
-    traverse(node.shadowRoot as unknown as HTMLElement);
+    traverse((node.shadowRoot as unknown) as HTMLElement);
   }
 }
 
