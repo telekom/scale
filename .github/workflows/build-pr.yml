@@ -29,7 +29,7 @@ jobs:
 
       - name: Check for uncommitted changes
         run: |
-          scripts/porcelain.sh
+          sh scripts/porcelain.sh
   tslint:
     runs-on: ubuntu-latest
     steps:
@@ -90,6 +90,10 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
+      - name: Run Lerna bootstrap
+        run: |
+          yarn bootstrap
+
       - name: Run TSLint
         run: |
           yarn workspace @telekom/scale-components test --e2e
@@ -121,7 +125,7 @@ jobs:
 
       - name: Check for uncommitted changes
         run: |
-          scripts/porcelain.sh
+          sh scripts/porcelain.sh
 
       - name: Build Storybook
         run: |
