@@ -90,13 +90,14 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Run Lerna bootstrap
+      - name: Generate files
         run: |
-          yarn bootstrap
+          yarn lerna run generate
 
       - name: Run e2e tests
         run: |
-          yarn workspace @telekom/scale-components test --e2e --debug
+          yarn workspace @telekom/scale-components test --e2e
+
   visual-tests:
     runs-on: ubuntu-latest
     steps:
@@ -115,9 +116,9 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
-      - name: Run Lerna bootstrap
+      - name: Generate files
         run: |
-          yarn bootstrap
+          yarn lerna run generate
 
       - name: Build Components
         run: |
