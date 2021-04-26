@@ -23,6 +23,11 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
       - name: Run Prettier
         run: |
           yarn format
@@ -48,6 +53,11 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
       - name: Run TSLint
         run: |
           yarn workspace @telekom/scale-components lint
@@ -69,6 +79,11 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
       - name: Run unit tests
         run: |
           yarn workspace @telekom/scale-components test --spec --max-workers=8
@@ -89,6 +104,11 @@ jobs:
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
 
       - name: Generate files
         run: |
@@ -115,6 +135,11 @@ jobs:
       - name: Install project dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
 
       - name: Generate files
         run: |
