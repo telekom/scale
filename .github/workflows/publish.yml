@@ -40,13 +40,8 @@ jobs:
         run: yarn
 
       - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
-
-      - name: Generate files
-        run: |
-          lerna run generate
 
       - name: Build Components
         run: |
@@ -103,13 +98,8 @@ jobs:
         run: yarn
 
       - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           WHITELABEL=1 yarn bootstrap
-
-      - name: Generate files
-        run: |
-          WHITELABEL=1 lerna run generate
 
       - name: Build Components
         run: |
