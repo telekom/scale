@@ -1,84 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProgressBar should contain progress-bar-inner-text css class when text inside is set true 1`] = `
-<scale-progress-bar text-inside="true">
+exports[`ProgressBar check props 1`] = `
+<scale-progress-bar label="testLabel" percentage="18" show-status="" status-description="statusDescription" status-inside="" stroke-width="24" styles="color:blue;" text-inside="">
   <mock:shadow-root>
+    <style>
+      color:blue;
+    </style>
     <style>
       @keyframes showProgress {
       from {
         width: 0;
       }
       to {
-        width: 0%;
+        width: 18%;
       }
     }
     </style>
     <div class="progress-bar" part="progress-bar">
+      <label class="progress-bar__label" htmlfor="progress-bar-1" part="label">
+        testLabel
+      </label>
       <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-7" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
-        </div>
-        <slot name="icon"></slot>
-      </div>
-    </div>
-    <span aria-live="polite" class="progress-bar__aria-live"></span>
-  </mock:shadow-root>
-  Label
-</scale-progress-bar>
-`;
-
-exports[`ProgressBar should contain progress-bar-text css class when show text is set true 1`] = `
-<scale-progress-bar show-status="true">
-  <mock:shadow-root>
-    <style>
-      @keyframes showProgress {
-      from {
-        width: 0;
-      }
-      to {
-        width: 0%;
-      }
-    }
-    </style>
-    <div class="progress-bar" part="progress-bar">
-      <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-6" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
+        <div aria-label="testLabel" aria-valuemax="100" aria-valuemin="0" aria-valuenow="18" aria-valuetext="18%" class="progress-bar__outer" id="progress-bar-1" part="outer" role="progressbar" style="height: 24px;">
+          <div class="progress-bar__inner" part="inner" style="width: 18%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;">
+            <div aria-hidden="true" class="progress-bar__inner-status" part="inner-status">
+              18%
+            </div>
+          </div>
         </div>
         <div aria-hidden="true" class="progress-bar__status" part="status">
-          0%
+          18%
         </div>
         <slot name="icon"></slot>
       </div>
     </div>
-    <span aria-live="polite" class="progress-bar__aria-live"></span>
-  </mock:shadow-root>
-  Label
-</scale-progress-bar>
-`;
-
-exports[`ProgressBar should have css property width 24px when stroke width is set to 24 1`] = `
-<scale-progress-bar stroke-width="24">
-  <mock:shadow-root>
-    <style>
-      @keyframes showProgress {
-      from {
-        width: 0;
-      }
-      to {
-        width: 0%;
-      }
-    }
-    </style>
-    <div class="progress-bar" part="progress-bar">
-      <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-5" part="outer" role="progressbar" style="height: 24px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
-        </div>
-        <slot name="icon"></slot>
-      </div>
+    <div class="progress-bar__status-description" part="status-description" role="alert">
+      statusDescription
     </div>
-    <span aria-live="polite" class="progress-bar__aria-live"></span>
+    <span aria-live="polite" class="progress-bar__aria-live">
+      20%
+    </span>
   </mock:shadow-root>
   Label
 </scale-progress-bar>
@@ -101,126 +62,6 @@ exports[`ProgressBar should match snapshot 1`] = `
       <div class="progress-bar-wrapper" part="wrapper">
         <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-0" part="outer" role="progressbar" style="height: 6px;">
           <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
-        </div>
-        <slot name="icon"></slot>
-      </div>
-    </div>
-    <span aria-live="polite" class="progress-bar__aria-live"></span>
-  </mock:shadow-root>
-  Label
-</scale-progress-bar>
-`;
-
-exports[`ProgressBar should match snapshot with label set 1`] = `
-<scale-progress-bar label="testLabel">
-  <mock:shadow-root>
-    <style>
-      @keyframes showProgress {
-      from {
-        width: 0;
-      }
-      to {
-        width: 0%;
-      }
-    }
-    </style>
-    <div class="progress-bar" part="progress-bar">
-      <label class="progress-bar__label" htmlfor="progress-bar-1" part="label">
-        testLabel
-      </label>
-      <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-label="testLabel" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-1" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
-        </div>
-        <slot name="icon"></slot>
-      </div>
-    </div>
-    <span aria-live="polite" class="progress-bar__aria-live"></span>
-  </mock:shadow-root>
-  Label
-</scale-progress-bar>
-`;
-
-exports[`ProgressBar should match snapshot with percentage set 1`] = `
-<scale-progress-bar percentage="18">
-  <mock:shadow-root>
-    <style>
-      @keyframes showProgress {
-      from {
-        width: 0;
-      }
-      to {
-        width: 18%;
-      }
-    }
-    </style>
-    <div class="progress-bar" part="progress-bar">
-      <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="18" aria-valuetext="18%" class="progress-bar__outer" id="progress-bar-4" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 18%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
-        </div>
-        <slot name="icon"></slot>
-      </div>
-    </div>
-    <span aria-live="polite" class="progress-bar__aria-live">
-      20%
-    </span>
-  </mock:shadow-root>
-  Label
-</scale-progress-bar>
-`;
-
-exports[`ProgressBar should match snapshot with statusDescription set 1`] = `
-<scale-progress-bar status-description="statusDescription">
-  <mock:shadow-root>
-    <style>
-      @keyframes showProgress {
-      from {
-        width: 0;
-      }
-      to {
-        width: 0%;
-      }
-    }
-    </style>
-    <div class="progress-bar" part="progress-bar">
-      <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-2" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
-        </div>
-        <slot name="icon"></slot>
-      </div>
-    </div>
-    <div class="progress-bar__status-description" part="status-description" role="alert">
-      statusDescription
-    </div>
-    <span aria-live="polite" class="progress-bar__aria-live"></span>
-  </mock:shadow-root>
-  Label
-</scale-progress-bar>
-`;
-
-exports[`ProgressBar should match snapshot with statusInside set 1`] = `
-<scale-progress-bar status-inside="">
-  <mock:shadow-root>
-    <style>
-      @keyframes showProgress {
-      from {
-        width: 0;
-      }
-      to {
-        width: 0%;
-      }
-    }
-    </style>
-    <div class="progress-bar" part="progress-bar">
-      <div class="progress-bar-wrapper" part="wrapper">
-        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-3" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;">
-            <div aria-hidden="true" class="progress-bar__inner-status" part="inner-status">
-              0%
-            </div>
-          </div>
         </div>
         <slot name="icon"></slot>
       </div>
