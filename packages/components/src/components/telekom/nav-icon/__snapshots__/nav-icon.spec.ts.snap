@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nav-icon should match snapshot 1`] = `
+<scale-nav-icon>
+  <!---->
+  <li class="meta-navigation__item">
+    <a class="meta-navigation__item-link" href="javascript:void(0);">
+      <scale-icon-undefined class="meta-navigation__item-link-icon"></scale-icon-undefined>
+      <span class="meta-navigation__item-label"></span>
+    </a>
+  </li>
+</scale-nav-icon>
+`;
