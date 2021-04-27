@@ -340,7 +340,12 @@ export class Header {
             <span class="header__nav-after"></span>
             <div class="header__nav-content">
               <div class="header__nav-logo">
-                <app-logo color="#e20074"></app-logo>
+                <app-logo
+                  color="#e20074"
+                  href={this.logoHref}
+                  logoTitle={this.logoTitle}
+                  onClick={this.logoClick}
+                ></app-logo>
               </div>
               <div class="header__nav-menu-wrapper">
                 <div class="header__nav-menu-main">{this.menuMain()}</div>
