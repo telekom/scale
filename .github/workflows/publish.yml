@@ -109,6 +109,7 @@ jobs:
           WHITELABEL=1 yarn bootstrap
 
       - name: Generate files
+        if: steps.yarn-cache.outputs.cache-hit == 'true'
         run: |
           WHITELABEL=1 lerna run generate
 
