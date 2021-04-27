@@ -175,4 +175,38 @@ describe('RatingStars', () => {
       expect(element.getCssClassMap()).toContain('rating--hover');
     });
   });
+
+  describe('emitter', () => {
+    beforeEach(async () => {
+      page = await newSpecPage({
+        components: [RatingStars],
+        html: `<scale-rating-stars></scale-rating-stars>`,
+      });
+    });
+
+    it('should set isHovering to false onClick', async () => {
+      page.rootInstance.isHovering = true;
+      const ratingStars = page.root.shadowRoot.querySelector('#rating');
+      await page.waitForChanges();
+      ratingStars.dispatchEvent(new Event('click'));
+      await page.waitForChanges();
+      expect(page.rootInstance.isHovering).toBe(false);
+    });
+
+    it('should change rating onKeyDown', async () => {
+      page.rootInstance.rating = 1;
+      const ratingStars = page.root.shadowRoot.querySelector('#rating');
+      await page.waitForChanges();
+      ratingStars.dispatchEvent(
+        new KeyboardEvent('keydown', {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          key: 'ArrowRight',
+        })
+      );
+      await page.waitForChanges();
+      expect(page.rootInstance.rating).toBe(2);
+    });
+  });
 });

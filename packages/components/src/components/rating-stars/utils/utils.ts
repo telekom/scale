@@ -19,33 +19,37 @@ export function clamp(value: number, min: number, max: number) {
   return value;
 }
 
+export const addListener = (
+  key: string,
+  element: HTMLElement,
+  action: string
+) => {
+  return element.addEventListener(key, (event: KeyboardEvent) =>
+    handleClassOnFocus(event, element, action)
+  );
+};
+
+export const removeListener = (
+  key: string,
+  element: HTMLElement,
+  action: string
+) => {
+  return element.removeEventListener(key, (event: KeyboardEvent) =>
+    handleClassOnFocus(event, element, action)
+  );
+};
+
 export function handleListeners(element: HTMLElement, handleListener: string) {
   if (handleListener === 'addListeners') {
-    element.addEventListener('keydown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.addEventListener('keyup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.addEventListener('mousedown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
-    element.addEventListener('mouseup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
+    addListener('keydown', element, 'add');
+    addListener('keyup', element, 'add');
+    addListener('mousedown', element, 'remove');
+    addListener('mouseup', element, 'remove');
   } else if (handleListener === 'removeListeners') {
-    element.removeEventListener('keydown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.removeEventListener('keyup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'add')
-    );
-    element.removeEventListener('mousedown', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
-    element.removeEventListener('mouseup', (event: KeyboardEvent) =>
-      handleClassOnFocus(event, element, 'remove')
-    );
+    removeListener('keydown', element, 'add');
+    removeListener('keyup', element, 'add');
+    removeListener('mousedown', element, 'remove');
+    removeListener('mouseup', element, 'remove');
   }
 }
 
