@@ -24,48 +24,68 @@ describe('functions', () => {
     utils.addListener = jest.fn();
     utils.handleListeners(testDiv, 'addListeners');
     expect(utils.addListener).toHaveBeenCalled();
-    expect(utils.addListener).toHaveBeenCalledWith('keydown', testDiv);
+    expect(utils.addListener).toHaveBeenCalledWith('keydown', testDiv, 'add');
   });
   it('addListener is called with keyup', () => {
     utils.addListener = jest.fn();
     utils.handleListeners(testDiv, 'addListeners');
     expect(utils.addListener).toHaveBeenCalled();
-    expect(utils.addListener).toHaveBeenCalledWith('keyup', testDiv);
+    expect(utils.addListener).toHaveBeenCalledWith('keyup', testDiv, 'add');
   });
   it('addListener is called with mousedown', () => {
     utils.addListener = jest.fn();
     utils.handleListeners(testDiv, 'addListeners');
     expect(utils.addListener).toHaveBeenCalled();
-    expect(utils.addListener).toHaveBeenCalledWith('mousedown', testDiv);
+    expect(utils.addListener).toHaveBeenCalledWith(
+      'mousedown',
+      testDiv,
+      'remove'
+    );
   });
   it('addListener is called with mouseup', () => {
     utils.addListener = jest.fn();
     utils.handleListeners(testDiv, 'addListeners');
     expect(utils.addListener).toHaveBeenCalled();
-    expect(utils.addListener).toHaveBeenCalledWith('mouseup', testDiv);
+    expect(utils.addListener).toHaveBeenCalledWith(
+      'mouseup',
+      testDiv,
+      'remove'
+    );
   });
   it('removeListener is called with keydown', () => {
     utils.removeListener = jest.fn();
     utils.handleListeners(testDiv, 'removeListeners');
     expect(utils.removeListener).toHaveBeenCalled();
-    expect(utils.removeListener).toHaveBeenCalledWith('keydown', testDiv);
+    expect(utils.removeListener).toHaveBeenCalledWith(
+      'keydown',
+      testDiv,
+      'add'
+    );
   });
   it('removeListener is called with keyup', () => {
     utils.removeListenerListener = jest.fn();
     utils.handleListeners(testDiv, 'removeListeners');
     expect(utils.removeListener).toHaveBeenCalled();
-    expect(utils.removeListener).toHaveBeenCalledWith('keyup', testDiv);
+    expect(utils.removeListener).toHaveBeenCalledWith('keyup', testDiv, 'add');
   });
   it('removeListener is called with mousedown', () => {
     utils.removeListener = jest.fn();
     utils.handleListeners(testDiv, 'removeListeners');
     expect(utils.removeListener).toHaveBeenCalled();
-    expect(utils.removeListener).toHaveBeenCalledWith('mousedown', testDiv);
+    expect(utils.removeListener).toHaveBeenCalledWith(
+      'mousedown',
+      testDiv,
+      'remove'
+    );
   });
   it('removeListener is called with mouseup', () => {
     utils.removeListener = jest.fn();
     utils.handleListeners(testDiv, 'removeListeners');
     expect(utils.removeListener).toHaveBeenCalled();
-    expect(utils.removeListener).toHaveBeenCalledWith('mouseup', testDiv);
+    expect(utils.removeListener).toHaveBeenCalledWith(
+      'mouseup',
+      testDiv,
+      'remove'
+    );
   });
 });
