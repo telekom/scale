@@ -5,6 +5,7 @@
     :small="small"
     :disabled="disabled"
     :aria-translation="ariaTranslation"
+    :label="label"
   >
   </scale-rating-stars>
 </template>
@@ -17,6 +18,7 @@ export default {
     small: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     ariaTranslation: { type: String },
+    label: { type: String },
   },
 };
 </script>
