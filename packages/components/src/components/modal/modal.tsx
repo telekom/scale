@@ -40,16 +40,7 @@ const supportsResizeObserver = 'ResizeObserver' in window;
   shadow: true,
 })
 export class Modal {
-  closeButton: HTMLButtonElement | HTMLScaleButtonElement;
-  modalContainer: HTMLElement;
-  modalWindow: HTMLElement;
-  modalBody: HTMLElement;
-  focusableElements: HTMLElement[] = [];
-  // @ts-ignore
-  resizeObserver: ResizeObserver;
-
   @Element() hostElement: HTMLElement;
-
   /** (optional) Custom class */
   @Prop() customClass?: string = '';
   /** Modal heading */
@@ -78,6 +69,14 @@ export class Modal {
 
   @Event() scaleOpen?: EventEmitter;
   @Event() scaleClose?: EventEmitter;
+
+  private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
+  private modalContainer: HTMLElement;
+  private modalWindow: HTMLElement;
+  private modalBody: HTMLElement;
+  private focusableElements: HTMLElement[] = [];
+  // @ts-ignore
+  private resizeObserver: ResizeObserver;
 
   @Listen('keydown', { target: 'window' })
   handleKeypress(event: KeyboardEvent) {
