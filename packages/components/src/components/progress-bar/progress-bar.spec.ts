@@ -26,58 +26,22 @@ describe('ProgressBar', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should match snapshot with label set', async () => {
+  it('check props', async () => {
     const page = await newSpecPage({
       components: [ProgressBar],
-      html: `<scale-progress-bar label="testLabel">Label</scale-progress-bar>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should match snapshot with statusDescription set', async () => {
-    const page = await newSpecPage({
-      components: [ProgressBar],
-      html: `<scale-progress-bar status-description="statusDescription">Label</scale-progress-bar>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should match snapshot with statusInside set', async () => {
-    const page = await newSpecPage({
-      components: [ProgressBar],
-      html: `<scale-progress-bar status-inside>Label</scale-progress-bar>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should match snapshot with percentage set', async () => {
-    const page = await newSpecPage({
-      components: [ProgressBar],
-      html: `<scale-progress-bar percentage="18">Label</scale-progress-bar>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should have css property width 24px when stroke width is set to 24', async () => {
-    const page = await newSpecPage({
-      components: [ProgressBar],
-      html: `<scale-progress-bar stroke-width=24>Label</scale-progress-bar>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should contain progress-bar-text css class when show text is set true', async () => {
-    const page = await newSpecPage({
-      components: [ProgressBar],
-      html: `<scale-progress-bar show-status=true>Label</scale-progress-bar>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should contain progress-bar-inner-text css class when text inside is set true', async () => {
-    const page = await newSpecPage({
-      components: [ProgressBar],
-      html: `<scale-progress-bar text-inside=true>Label</scale-progress-bar>`,
+      html: `
+        <scale-progress-bar 
+          label="testLabel"
+          status-description="statusDescription"
+          status-inside
+          percentage="18"
+          text-inside 
+          stroke-width=24
+          show-status
+          styles="color:blue;"
+          >
+            Label
+        </scale-progress-bar>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -115,7 +79,7 @@ describe('ProgressBar', () => {
 
   // Does not effect coverage
   it('this.progressBarId is set on componentWillLoad() -> element', () => {
-    // element.progressBarId = null;
+    // element.progressBarId = 'null';
     element.componentWillLoad();
     expect(element.progressBarId.substr(0, 13)).toBe('progress-bar-');
   });
