@@ -116,43 +116,41 @@ export class DataGrid {
 
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
-  activeDivider: any;
+  private activeDivider: any;
   /** Stored active sorting column index, for state removal */
-  activeSortingIndex = -1;
+  private activeSortingIndex = -1;
   /** Track component width to constrict nested content, which is necessary with table layout */
-  contentWidth: number = 100;
+  private contentWidth: number = 100;
   /** Flag to know to check for data completeness */
-  dataNeedsCheck: boolean = true;
+  private dataNeedsCheck: boolean = true;
   /** Track main container for element resize */
-  elMmainContainer?: any;
+  private elMmainContainer?: any;
   /** Track table container for scroll */
-  elScrollContainer?: HTMLElement;
+  private elScrollContainer?: HTMLElement;
   /** Table head for frozen header */
-  elTableHead?: HTMLElement;
+  private elTableHead?: HTMLElement;
   /** Checkbox for getting toggle-all state */
-  elToggleSelectAll?: HTMLScaleCheckboxElement;
+  private elToggleSelectAll?: HTMLScaleCheckboxElement;
   /** Flag to know if rendering can commence */
-  hasData: boolean = false;
+  private hasData: boolean = false;
   /** Flag that is true when width below a certain limit */
-  isMobile: boolean = false;
+  private isMobile: boolean = false;
   /** Flag that enough data supplied to warrant pagination */
-  isPagination: boolean = false;
+  private isPagination: boolean = false;
   /** Flag that is true if any fields are sortable */
-  isSortable: boolean = false;
-  /** Prevent multiple interactions before rendered */
-  isWaitPaginationUpdate: boolean = false;
+  private isSortable: boolean = false;
   /** Track container width to avoid re-calculating column stretching */
-  lastContainerWidth: number = 100;
+  private lastContainerWidth: number = 100;
   /** Index of field to use as mobile title, if any */
-  mobileTitleIndex: number = -1;
+  private mobileTitleIndex: number = -1;
   /** Determine if auto-width parsing needed */
-  needsAutoWidthParse: boolean = false;
+  private needsAutoWidthParse: boolean = false;
   /** Force column resize after render */
-  needsColumnResize: boolean = false;
+  private needsColumnResize: boolean = false;
   /** Auto-calculated number column width */
-  numberColumnWidth: number = 0;
+  private numberColumnWidth: number = 0;
   /** Selection column width */
-  selectionColumnWidth: number = 20;
+  private selectionColumnWidth: number = 20;
 
   /* 6. Lifecycle Events (call order) */
   constructor() {

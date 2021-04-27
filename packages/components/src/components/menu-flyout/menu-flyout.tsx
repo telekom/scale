@@ -82,35 +82,35 @@ export class MenuFlyout {
 
   /* 5. Private Properties (alphabetical) */
   /** Cascade level to help with closing when siblings are opened */
-  cascadeLevel = 0;
+  private cascadeLevel = 0;
   /** When menu off the screen horizontally */
-  flipHorizontal = false;
+  private flipHorizontal = false;
   /** When menu off the screen vertically */
-  flipVertical = false;
+  private flipVertical = false;
   /** Unique ID of component */
-  id = idCounter++;
+  private id = idCounter++;
   /** True if menu a nested menu */
-  isCascaded = false;
+  private isCascaded = false;
   /** Keep track of list element */
-  list: HTMLElement;
+  private list: HTMLElement;
   /** Keep track of list slot */
-  listSlot: HTMLSlotElement;
+  private listSlot: HTMLSlotElement;
   /** Get access to force height of trigger - solving relative issues with cascade menus */
-  listWrapper: HTMLElement;
+  private listWrapper: HTMLElement;
   /** Store for switching classes after boundary checks */
-  main: HTMLElement;
+  private main: HTMLElement;
   /** Set true when resize or when opened */
-  needsCheckPlacement = true;
+  private needsCheckPlacement = true;
   /** Keep track of slotted list */
-  slottedList: HTMLScaleMenuFlyoutListElement;
+  private slottedList: HTMLScaleMenuFlyoutListElement;
   /** Keep track of trigger */
-  trigger: HTMLElement;
+  private trigger: HTMLElement;
   /** Keep track of trigger slot */
-  triggerSlot: HTMLSlotElement;
+  private triggerSlot: HTMLSlotElement;
   /** Track height to see if menus are off screen */
-  windowHeight: number;
+  private windowHeight: number;
   /** Track width to see if menus are off screen */
-  windowWidth: number;
+  private windowWidth: number;
 
   /* 6. Lifecycle Events (call order) */
   constructor() {
