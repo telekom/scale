@@ -194,9 +194,8 @@ export class RatingStars {
                   style={{
                     clipPath:
                       Math.ceil(displayValue) >= index + 1
-                        ? `inset(0 ${
-                            (Math.ceil(displayValue) - index) * 100
-                          }% 0 0)`
+                        ? `inset(0 ${(Math.ceil(displayValue) - index) *
+                            100}% 0 0)`
                         : null,
                   }}
                   class={{
