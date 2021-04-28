@@ -26,15 +26,15 @@
     "hydrate/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "build:whitelabel": "WHITELABEL=1 stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
-    "dev": "stencil build --dev --watch --serve -c stencil-dev.config.ts",
+    "build": "stencil build --docs-readme",
+    "build:whitelabel": "WHITELABEL=1 stencil build --docs-readme",
+    "build:watch": "stencil build --watch",
+    "start": "stencil build --dev --watch --serve --config stencil-dev.config.ts",
+    "dev": "yarn start", 
     "test": "stencil test --max-workers=2",
     "format": "prettier --write \"*.ts\" \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "develop": "stencil build --docs --watch",
     "generate": "node ./scripts/generate-icons.js"
   },
   "devDependencies": {
