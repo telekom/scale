@@ -26,6 +26,14 @@ describe('Checkbox', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should match snapshot', async () => {
+    const specPage = await newSpecPage({
+      components: [Checkbox],
+      html: `<scale-checkbox helper-text="helpertext"></scale-checkbox>`,
+    });
+    expect(specPage.root).toMatchSnapshot();
+  });
+
   it('should reflect attributes', async () => {
     page = await newSpecPage({
       components: [Checkbox],

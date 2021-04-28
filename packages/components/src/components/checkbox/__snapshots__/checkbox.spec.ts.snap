@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox should handle inputId with value null and helperText 1`] = `
-<scale-checkbox helpertext="helper" input-id="">
-  <!---->
-  <div class="checkbox">
-    <label class="checkbox__label-wrapper" htmlfor="">
-      <input aria-describedby="helper-message-6" type="checkbox" value="">
-      <div class="checkbox__control-wrapper">
-        <span class="checkbox__control"></span>
-      </div>
-      <span class="checkbox__label">
-      </span>
-    </label>
-  </div>
-</scale-checkbox>
-`;
-
 exports[`Checkbox should match snapshot 1`] = `
 <scale-checkbox>
   <!---->
@@ -26,6 +10,26 @@ exports[`Checkbox should match snapshot 1`] = `
         <span class="checkbox__control"></span>
       </div>
       <span class="checkbox__label"></span>
+    </label>
+  </div>
+</scale-checkbox>
+`;
+
+exports[`Checkbox should match snapshot 2`] = `
+<scale-checkbox helper-text="helpertext">
+  <!---->
+  <div class="checkbox">
+    <label class="checkbox__label-wrapper" htmlfor="input-checkbox-2">
+      <input aria-describedby="helper-message-3" id="input-checkbox-2" type="checkbox" value="">
+      <div class="checkbox__control-wrapper">
+        <span class="checkbox__control"></span>
+      </div>
+      <span class="checkbox__label"></span>
+      <div aria-live="polite" aria-relevant="additions removals" class="checkbox__meta" id="helper-message-3">
+        <div class="checkbox__helper-text">
+          helpertext
+        </div>
+      </div>
     </label>
   </div>
 </scale-checkbox>
