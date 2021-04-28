@@ -30,6 +30,7 @@ export const Template = (args, { argTypes }) => ({
       :min-length="minLength"
       :placeholder="placeholder"
       :disabled="disabled"
+      :readonly="readonly"
       :required="required"
       :counter="counter"
       :resize="resize"
@@ -206,6 +207,26 @@ scale-textarea {
 
 ```html
 <scale-textarea label="Disabled" disabled></scale-textarea>
+```
+
+
+## Readonly 
+
+<Canvas withSource="none">
+  <Story
+    name="Readonly"
+    args={{
+      label: "Readonly",
+      readonly: true,
+      value: "This cannot be changed"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea label="Readonly" value="This cannot be changed" readonly></scale-textarea>
 ```
 
 

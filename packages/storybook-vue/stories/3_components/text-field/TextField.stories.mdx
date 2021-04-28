@@ -46,6 +46,7 @@ export const Template = (args, { argTypes }) => ({
       :min-length="minLength"
       :placeholder="placeholder"
       :disabled="disabled"
+      :readonly="readonly"
       :required="required"
       :counter="counter"
       :size="size"
@@ -257,6 +258,26 @@ scale-text-field {
 
 ```html
 <scale-text-field label="Disabled" disabled></scale-text-field>
+```
+
+
+## Readonly 
+
+<Canvas withSource="none">
+  <Story
+    name="Readonly"
+    args={{
+      label: "Readonly",
+      readonly: true,
+      value: "This cannot be changed"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field label="Readonly" value="This cannot be changed" readonly></scale-text-field>
 ```
 
 
