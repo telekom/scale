@@ -13,16 +13,13 @@ Dividers have a subtle visual effect – visible but never dominant.
 
 Only use a divider:
 
-*	when using whitespace is not sufficient to create a content group or
-*	when using whitespace is not possible, e.g., when there's not enough space.
-
+- when using whitespace is not sufficient to create a content group or
+- when using whitespace is not possible, e.g., when there's not enough space.
 
 ### When not to use
 
 Only use a divider when really necessary. To avoid clutter and fragmentation, use as few dividers as possible.
 
-
 ## Variants
 
 ![Image Name](assets/3_components/divider/divider.png)
-

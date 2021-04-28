@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-html-to-sketch",
   "private": true,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.4",
   "description": "HTML to Sketch",
   "keywords": [
     "sketch",
@@ -12,7 +12,8 @@
   "author": "eeegor",
   "license": "MPL-2.0",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"package.json\" \"html2asketch/**/*.{js,ts}\""
   },
   "devDependencies": {
     "typescript": "^3.8.3"

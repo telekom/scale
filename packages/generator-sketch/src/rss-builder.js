@@ -18,21 +18,16 @@ const source = fs.readFileSync(path.join(__dirname, 'rss_template.xml.hbs'));
 const template = hbs.compile(source.toString());
 
 module.exports = {
-    build: function(outputFile, options) {
+  build: function (outputFile, options) {
+    const output = template({
+      title: 'Sketch Library',
+      description: 'Sketch Library',
+      url: 'http://localhost/sketch_library.sketch',
+      version: 1,
+      publicationDate: new Date().toUTCString(),
+      ...options,
+    });
 
-        const output = template({
-            title: "Sketch Library",
-            description: "Sketch Library",
-            url: "http://localhost/sketch_library.sketch",
-            version: 1,
-            publicationDate: new Date().toUTCString(),
-            ...options
-        });
-
-        fs.writeFileSync(
-            outputFile,
-            output
-        );
-
-    }
+    fs.writeFileSync(outputFile, output);
+  },
 };

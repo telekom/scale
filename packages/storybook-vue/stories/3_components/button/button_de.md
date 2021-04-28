@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Der Button ist das wichtigste Interaktionselement eines User Interfaces. Per Klick/Tap lösen Nutzer*innen die dazugehörige Aktion aus.
+Der Button ist das wichtigste Interaktionselement eines User Interfaces. Per Klick/Tap lösen Nutzer\*innen die dazugehörige Aktion aus.
 
 ## Allgemein
 
@@ -11,16 +11,16 @@ Es gibt zwei Basistypen und drei Varianten, um eine klare visuelle Hierarchie he
 
 ![Image Name](assets/3_components/button/Button_BasicTypes.png)
 
-### Verwende einen Button, wenn 
+### Verwende einen Button, wenn
 
-* Nutzer*innen eine Aktion ausführen sollen oder
-* damit eine wichtige Seite öffnen können (z. B. eine Landingpage).
+- Nutzer\*innen eine Aktion ausführen sollen oder
+- damit eine wichtige Seite öffnen können (z. B. eine Landingpage).
 
 Bitte beachte: Der sichtbare Bereich sollte maximal einen Primär-Button enthalten, um die wichtigste Aktion hervorzuheben und die Orientierung zu erleichtern. Nutze für untergeordnete Aktionen einen Sekundär-Button.
 
 ### Verwende besser keine Buttons, wenn
 
-* Nutzer*innen auf eine neue Seite geführt werden sollen, ohne diese besonders hervorzuheben (hier eignet sich ein Text-Link).
+- Nutzer\*innen auf eine neue Seite geführt werden sollen, ohne diese besonders hervorzuheben (hier eignet sich ein Text-Link).
 
 ## Basistypen
 
@@ -52,7 +52,7 @@ Füge ein passendes Icon hinzu, um eine Aktion zu verdeutlichen und hervorzuhebe
 
 ![Image Name](assets/3_components/button/Button_Icon-Text.png)
 
-### Button mit Icon 
+### Button mit Icon
 
 In manchen Fällen kannst du auch ein Icon ohne Text verwenden. Das ist zum Beispiel möglich, wenn der Platz begrenzt ist und das Icon die Aktion unmissverständlich kommuniziert. Bitte beachte, dass Icon-Only-Buttons ein Label benötigen, um Screen Reader zu unterstützen.
 
@@ -74,15 +74,13 @@ Im deaktivierten Zustand ist die interaktive Funktion des Buttons ausgeschaltet.
 
 ### Label
 
-Das Label eines Buttons enthält eine klare Handlungsaufforderung. Es beschreibt einfach und präzise die Aktion, die Nutzer&ast;innen mit diesem Button ausführen können. Im besten Fall besteht das Label aus maximal drei Wörtern. Für einen klaren Kontext verwende ein Verb mit Substantiv. Der Zusatz „Jetzt” wirkt auffordernd und kann die Motivation der Nutzer*innen steigern, zum Beispiel bei einer Anmeldung oder Registrierung. Weitere Informationen findest du in dem Artikel <a href="https://www.brand-design.telekom.com/en/articles/button-texts-and-text-links/" target="_blank">Button Texts and Text Links</a> in Brand & Design.
-
+Das Label eines Buttons enthält eine klare Handlungsaufforderung. Es beschreibt einfach und präzise die Aktion, die Nutzer\*innen mit diesem Button ausführen können. Im besten Fall besteht das Label aus maximal drei Wörtern. Für einen klaren Kontext verwende ein Verb mit Substantiv. Der Zusatz „Jetzt” wirkt auffordernd und kann die Motivation der Nutzer\*innen steigern, zum Beispiel bei einer Anmeldung oder Registrierung. Weitere Informationen findest du in dem Artikel <a href="https://www.brand-design.telekom.com/en/articles/button-texts-and-text-links/" target="_blank">Button Texts and Text Links</a> in Brand & Design.
 
 ![Image Name](assets/3_components/button/Button_Label.png)
 
 ### Icons
 
 Lese die Richtlinie <a href="https://www.brand-design.telekom.com/en/articles/i/icons-for-user-interfaces/" target="_blank">Icons for User Interfaces</a> in Brand & Design um mehr über die Verwendung und Gestaltung von Icons zu erfahren.
-
 
 ![Image Name](assets/3_components/button/Button_Icons.png)
 
@@ -92,7 +90,7 @@ Lese die Richtlinie <a href="https://www.brand-design.telekom.com/en/articles/i/
 
 Stehen Buttons in direkter Beziehung zueinander, dann ordne sie als Gruppe an. Wichtig ist, dass du pro Gruppe nur einen Primär-Button verwendest.
 
-In Prozessen und modalen Dialogen sind Buttons rechtsbündig angeordnet, um den Fortschritt anzuzeigen. Platziere den Primär-Button rechts und den Sekundär-Button links. Bei Formularen sind Buttons linksbündig am Inhalt ausgerichtet. Hier setzt du den Primär-Button links und den Sekundär-Button rechts. 
+In Prozessen und modalen Dialogen sind Buttons rechtsbündig angeordnet, um den Fortschritt anzuzeigen. Platziere den Primär-Button rechts und den Sekundär-Button links. Bei Formularen sind Buttons linksbündig am Inhalt ausgerichtet. Hier setzt du den Primär-Button links und den Sekundär-Button rechts.
 
 ![Image Name](assets/3_components/button/Button_Group.png)
 

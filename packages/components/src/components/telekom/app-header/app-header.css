@@ -226,6 +226,7 @@ scale-app-header {
     pointer-events: none;
   }
   .header.sticky .header__nav-logo {
+    pointer-events: all;
     margin-right: var(--scl-spacing-32);
   }
 

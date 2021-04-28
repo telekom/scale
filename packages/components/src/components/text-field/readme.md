@@ -18,6 +18,7 @@
 | `minLength`   | `min-length`  | (optional) Input min length             | `number`                                                                              | `undefined` |
 | `name`        | `name`        | (optional) Input name                   | `string`                                                                              | `''`        |
 | `placeholder` | `placeholder` | (optional) Input placeHolder            | `string`                                                                              | `''`        |
+| `readonly`    | `readonly`    | (optional) Input readonly               | `boolean`                                                                             | `undefined` |
 | `required`    | `required`    | (optional) Input required               | `boolean`                                                                             | `undefined` |
 | `size`        | `size`        | (optional) Input size                   | `string`                                                                              | `''`        |
 | `status`      | `status`      | (optional) Input status                 | `string`                                                                              | `''`        |

@@ -3,11 +3,11 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Radio-Buttons ermöglichen es Nutzer*innen, eine Option aus einer Reihe von Alternativen auszuwählen.
+Radio-Buttons ermöglichen es Nutzer\*innen, eine Option aus einer Reihe von Alternativen auszuwählen.
 
 ## Allgemein
 
-Ein Radio-Button ist ein Steuerelement und besteht aus einem runden Button mit einem Label. Die Nutzer*innen können per Klick/Tap eine Option auswählen (Kreis ist gefüllt) oder wieder abwählen (Kreis ist leer).
+Ein Radio-Button ist ein Steuerelement und besteht aus einem runden Button mit einem Label. Die Nutzer\*innen können per Klick/Tap eine Option auswählen (Kreis ist gefüllt) oder wieder abwählen (Kreis ist leer).
 
 Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons wird die zuvor gewählte Option automatisch abgewählt.
 
@@ -15,12 +15,12 @@ Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons
 
 ### Verwende Radio-Buttons, um
 
-* Nutzer*innen eine Reihe von verwandten, aber sich gegenseitig ausschließenden Auswahlmöglichkeiten anzubieten.
+- Nutzer\*innen eine Reihe von verwandten, aber sich gegenseitig ausschließenden Auswahlmöglichkeiten anzubieten.
 
 ### Verwende Radio-Buttons besser nicht, wenn
 
-* Nutzer*innen mehr als eine Option auswählen sollen (nutze hierfür Checkboxen) oder 
-* eine Aktion ausführen müssen (nutze hierfür einen Button).
+- Nutzer\*innen mehr als eine Option auswählen sollen (nutze hierfür Checkboxen) oder
+- eine Aktion ausführen müssen (nutze hierfür einen Button).
 
 ## Label
 
@@ -32,8 +32,8 @@ Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. 
 
 Deaktiviere den Radio-Button, wenn
 
-* eine andere Aktion erfolgen muss, bevor der Radio-Button nutzbar ist oder
-* die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
+- eine andere Aktion erfolgen muss, bevor der Radio-Button nutzbar ist oder
+- die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
 
 ![Image Name](assets/3_components/radio-button/disabled_radiobutton.png)
 
@@ -43,7 +43,7 @@ Treffe eine Vorauswahl durch die Default-Aktivierung einer Option. Entspricht di
 
 Es gibt ein paar wenige Fälle, in denen du besser keine Vorauswahl triffst, zum Beispiel bei der Auswahl des Titels in einem Formular (Herr, Frau etc.).
 
-In vielen Fällen ist es für Nutzer*innen hilfreich, wenn du eine Headline verwendest.
+In vielen Fällen ist es für Nutzer\*innen hilfreich, wenn du eine Headline verwendest.
 
 ![Image Name](assets/3_components/radio-button/radiobuttons_bestpractice.png)
 

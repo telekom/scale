@@ -1,7 +1,7 @@
 describe('List', () => {
   test.each([['ordered'], ['unordered'], ['unordered-with-custom-icon']])(
     '%p',
-    async variant => {
+    async (variant) => {
       await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-list--${variant}&viewMode=story`
       );

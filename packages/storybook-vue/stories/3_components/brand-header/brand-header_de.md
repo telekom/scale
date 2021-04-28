@@ -3,15 +3,15 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Der Brand-Header vermittelt Absender und Angebot einer Webseite auf einen Blick. Er macht Telekom Webseiten für Nutzer*innen wiedererkennbar und bietet ein einheitliches Erlebnis für alle unsere Produkte und Services.
+Der Brand-Header vermittelt Absender und Angebot einer Webseite auf einen Blick. Er macht Telekom Webseiten für Nutzer\*innen wiedererkennbar und bietet ein einheitliches Erlebnis für alle unsere Produkte und Services.
 
 ## Allgemein
 
-Der Brand-Header setzt sich aus der Brand-Bar und der Navigation-Bar zusammen. Er ist die zentrale Komponente für den Einstieg in die Markenwelt der Deutschen Telekom. Die Brand-Bar in der Unternehmensfarbe Magenta kennzeichnet unsere Marke eindeutig. In der Navigation-Bar finden die Nutzer*innen die wichtigsten Navigationselemente und Kernfunktionen der Webseite.
+Der Brand-Header setzt sich aus der Brand-Bar und der Navigation-Bar zusammen. Er ist die zentrale Komponente für den Einstieg in die Markenwelt der Deutschen Telekom. Die Brand-Bar in der Unternehmensfarbe Magenta kennzeichnet unsere Marke eindeutig. In der Navigation-Bar finden die Nutzer\*innen die wichtigsten Navigationselemente und Kernfunktionen der Webseite.
 
 ## Brand-Bar
 
-Neben Logo und Claim enthält die Brand-Bar weitere Telekom Links und Funktionen. Beim Scrollen der Seite auf Desktop-Geräten verkleinert sich die Brand-Bar und gibt Raum für Navigation und Inhalt. Das Logo wechselt die Position und erscheint dann in der Navigation-Bar. Der gesamte Header bleibt am oberen Bildschirmrand fixiert. Scrollen die Nutzer*innen zurück, wird der Ausgangszustand wieder hergestellt. Die Minimierung der Brand-Bar ist ein typisches Kennzeichen für den Brand-Header und funktioniert auf allen Geräten gleich.
+Neben Logo und Claim enthält die Brand-Bar weitere Telekom Links und Funktionen. Beim Scrollen der Seite auf Desktop-Geräten verkleinert sich die Brand-Bar und gibt Raum für Navigation und Inhalt. Das Logo wechselt die Position und erscheint dann in der Navigation-Bar. Der gesamte Header bleibt am oberen Bildschirmrand fixiert. Scrollen die Nutzer\*innen zurück, wird der Ausgangszustand wieder hergestellt. Die Minimierung der Brand-Bar ist ein typisches Kennzeichen für den Brand-Header und funktioniert auf allen Geräten gleich.
 
 ![Image Name](assets/3_components/brand-header/EN_brandheader_brandbar.png)
 
@@ -19,9 +19,9 @@ Neben Logo und Claim enthält die Brand-Bar weitere Telekom Links und Funktionen
 
 Das Logo, der Claim und der magentafarbene Hintergrund sind für jede Seite der Telekom verbindlich und können nicht verändert werden. Das Logo ist immer mit der Homepage oder dem Einstiegspunkt des aktuellen Prozesses verlinkt.
 
-#### Element für die Bereiche Privat- und Geschäftskund*innen (2)
+#### Element für die Bereiche Privat- und Geschäftskund\*innen (2)
 
-Verwende dieses Element, wenn die Webseite Bereiche für Privat- und Geschäftskund\*innen enthält. Damit werden die Nutzer*innen auf die jeweilige Startseite weitergeleitet. Ein Unterstrich kennzeichnet den gewählten Bereich als aktiv.
+Verwende dieses Element, wenn die Webseite Bereiche für Privat- und Geschäftskund\*innen enthält. Damit werden die Nutzer\*innen auf die jeweilige Startseite weitergeleitet. Ein Unterstrich kennzeichnet den gewählten Bereich als aktiv.
 
 #### Telekom Links (3)
 
@@ -29,7 +29,7 @@ Hier kannst du weitere globale Links zu Telekom Inhalten ausserhalb der Webseite
 
 #### Sprachenwechsel-Element (4)
 
-Mit dem Sprachenwechsel-Element wählen Nutzer*innen die gewünschte Sprache für die Webseite aus. Es gibt zwei Varianten: Du kannst dafür einfache Text-Links oder eine Dropdown-Navigation verwenden.
+Mit dem Sprachenwechsel-Element wählen Nutzer\*innen die gewünschte Sprache für die Webseite aus. Es gibt zwei Varianten: Du kannst dafür einfache Text-Links oder eine Dropdown-Navigation verwenden.
 
 ## Varianten für das Sprachenwechsel-Element
 
@@ -51,7 +51,7 @@ Setze eine Dropdown-Navigation mit Länderkürzeln ein, wenn mehr als vier Sprac
 
 > Diese Funktion ist bald verfügbar.
 
-Benötigst du keinen Wechsel zwischen den Bereichen von Privat- und Geschäftskund\*innen, dann kannst du an dieser Stelle den Portalnamen ausweisen. Das gibt den Nutzer*innen eine zusätzliche Hilfe zur Orientierung.
+Benötigst du keinen Wechsel zwischen den Bereichen von Privat- und Geschäftskund\*innen, dann kannst du an dieser Stelle den Portalnamen ausweisen. Das gibt den Nutzer\*innen eine zusätzliche Hilfe zur Orientierung.
 
 ![Image Name](assets/3_components/brand-header/EN_brandheader_portalname.png)
 
@@ -67,7 +67,7 @@ Die Hauptnavigation enthält alle Navigationspunkte der ersten Ebene.
 
 #### Metanavigation (2)
 
-In der Metanavigation finden Nutzer*innen die Kern- und globalen Funktionen der Webseite, wie beispielsweise Suche, Warenkorb oder Login. Der Login ist immer rechts platziert.
+In der Metanavigation finden Nutzer\*innen die Kern- und globalen Funktionen der Webseite, wie beispielsweise Suche, Warenkorb oder Login. Der Login ist immer rechts platziert.
 
 ## Navigationsarten
 
@@ -81,7 +81,7 @@ Die Navigationspunkte dienen der Gliederung und fungieren als Sprungmarken.
 
 ### Webseiten ohne Untermenü
 
-Bei Webseiten mit nur einer Hierarchieebene gelangen die Nutzer*innen per Klick/Tap auf einen Menüpunkt direkt zum Inhalt.
+Bei Webseiten mit nur einer Hierarchieebene gelangen die Nutzer\*innen per Klick/Tap auf einen Menüpunkt direkt zum Inhalt.
 
 ![Image Name](assets/3_components/brand-header/EN-brandheader_nav2_nosubmenu.png)
 
@@ -107,20 +107,19 @@ Bei dieser Variante wird die Navigation automatisch nach dem Seitenaufruf minimi
 
 #### Ausgangszustand (1)
 
-Die Kernfunktionen werden weiterhin auf der obersten Ebene dargestellt. Die Hauptnavigation, die Tabs für Privat- und Geschäftskund*innen sowie die Telekom Links sind unter dem Menü-Icon zusammengefasst.
+Die Kernfunktionen werden weiterhin auf der obersten Ebene dargestellt. Die Hauptnavigation, die Tabs für Privat- und Geschäftskund\*innen sowie die Telekom Links sind unter dem Menü-Icon zusammengefasst.
 
 #### Minimierte Navigation (2)
 
-Die Kernfunktionen werden weiterhin auf der obersten Ebene dargestellt. Die Hauptnavigation, die Tabs für Privat- und Geschäftskund*innen sowie die Telekom Links sind unter dem Menü-Icon zusammengefasst.
+Die Kernfunktionen werden weiterhin auf der obersten Ebene dargestellt. Die Hauptnavigation, die Tabs für Privat- und Geschäftskund\*innen sowie die Telekom Links sind unter dem Menü-Icon zusammengefasst.
 
 #### Geöffnete Navigation (3)
 
-Durch einen Klick/Tap auf das Menü-Icon öffnet sich eine Listenansicht. An erster Stelle sind die Tabs für Privat- und Geschäftskund\*innen platziert. Darunter folgt eine Liste mit Navigationspunkten der ersten Hierarchieebene. Das Element für den Sprachenwechsel befindet sich am unteren Ende der Liste. Webseiten ohne Unterseiten (One-Page) haben keine Navigation – hier navigieren die Nutzer*innen durch Scrollen.
-
+Durch einen Klick/Tap auf das Menü-Icon öffnet sich eine Listenansicht. An erster Stelle sind die Tabs für Privat- und Geschäftskund\*innen platziert. Darunter folgt eine Liste mit Navigationspunkten der ersten Hierarchieebene. Das Element für den Sprachenwechsel befindet sich am unteren Ende der Liste. Webseiten ohne Unterseiten (One-Page) haben keine Navigation – hier navigieren die Nutzer\*innen durch Scrollen.
 
 #### Hierarchieebenen (4)
 
-Je nach Anzahl der Hierarchieebenen navigieren die Nutzer*innen sich durch weitere Listen bis zum gewünschten Inhalt.
+Je nach Anzahl der Hierarchieebenen navigieren die Nutzer\*innen sich durch weitere Listen bis zum gewünschten Inhalt.
 
 ## Verwandte Komponenten
 

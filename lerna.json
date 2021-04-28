@@ -7,10 +7,16 @@
     "--pure-lockfile"
   ],
   "useWorkspaces": true,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.4",
   "command": {
     "version": {
       "allowBranch": "main"
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "allowBranch": "release",
+      "access": "public"
     }
   }
 }

@@ -44,7 +44,7 @@ export class NavigationSectorMobile {
   render() {
     return (
       <ul class="sector-navigation-mobile">
-        {(this.navigation || []).map(item => (
+        {(this.navigation || []).map((item) => (
           <li class="sector-navigation-mobile__item">
             <a
               class={`sector-navigation-mobile__item-link${
@@ -53,8 +53,8 @@ export class NavigationSectorMobile {
                   : ''
               }`}
               href={item.href || 'javascript:void(0);'}
-              onClick={event => this.handleSelected(event, item)}
-              onKeyDown={event => {
+              onClick={(event) => this.handleSelected(event, item)}
+              onKeyDown={(event) => {
                 if (['Escape', 'Esc'].includes(event.key)) {
                   this.hide();
                 }

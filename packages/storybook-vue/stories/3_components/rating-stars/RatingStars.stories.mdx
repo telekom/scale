@@ -20,6 +20,7 @@ export const Template = (args, { argTypes }) => ({
     :small="small"
     :disabled="disabled"
     :aria-translation="ariaTranslation"
+    :label="label"
   >
   </scale-rating-stars>
     `,
@@ -33,6 +34,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
+      label: "Rating Label",
       rating: 3,
     }}
   >
@@ -52,8 +54,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
+      label: "Rating Label",
       disabled: true,
-      rating: 2
+      rating: 2,
     }}
   >
     {Template.bind({})}
@@ -70,8 +73,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Small"
     args={{
+      label: "Rating Label",
       rating: 4,
-      small: true
+      small: true,
     }}
   >
     {Template.bind({})}
@@ -88,8 +92,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Number of Stars"
     args={{
+      label: "Rating Label",
       rating: 6,
-      numOfStars: 10
+      numOfStars: 10,
     }}
   >
     {Template.bind({})}
@@ -106,7 +111,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Spacing"
     args={{
-      rating: 1
+      label: "Rating Label",
+      rating: 1,
+      style: "--rating-spacing: 1rem",
     }}
   >
     {Template.bind({})}
@@ -114,7 +121,10 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars rating="1" class="custom-styles"></scale-rating-stars>
+<scale-rating-stars
+  rating="1"
+  style="--rating-spacing: 1rem"
+></scale-rating-stars>
 ```
 
 ## Aria Translation
@@ -123,6 +133,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Aria Translation"
     args={{
+      label: "Rating Label",
       rating: 1,
       ariaTranslation: "${x} out of ${y} stars",
     }}
@@ -132,5 +143,25 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars rating="1" aria-translation="${x} out of ${y} stars"></scale-rating-stars>
+<scale-rating-stars
+  rating="1"
+  aria-translation="${x} out of ${y} stars"
+></scale-rating-stars>
+```
+
+## No Label
+
+<Canvas withSource="none">
+  <Story
+    name="No Label"
+    args={{
+      rating: 4,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="4"></scale-rating-stars>
 ```

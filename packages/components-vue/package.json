@@ -1,12 +1,13 @@
 {
   "name": "@telekom/scale-components-vue",
   "sideEffects": false,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.4",
   "description": "Vue specific wrapper for @telekom/scale-components",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/telekom/scale.git"
+    "type": "git",
+    "url": "https://github.com/telekom/scale.git"
   },
   "publishConfig": {
     "access": "public"
@@ -14,7 +15,8 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p .",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"package.json\""
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",

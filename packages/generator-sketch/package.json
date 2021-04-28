@@ -1,10 +1,9 @@
 {
   "name": "@telekom/scale-generator-sketch",
   "private": true,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.4",
   "description": "Convert the web-components to a sketch file",
   "scripts": {
-    "test": "eslint src/",
     "build": "webpack",
     "preinject": "cp -R ../components/www/build ./sketch-render",
     "inject": "node ./src/inject.js",
@@ -12,7 +11,8 @@
     "sketch-dev": "yarn build && yarn sketch",
     "sketch": "node ./src/sketch-cmd.js",
     "diff": "node ./src/diff-builds.js",
-    "build-scale": "node ./src/build-scale.js"
+    "build-scale": "node ./src/build-scale.js",
+    "format": "prettier --write \"package.json\" \"src/**/*.js\""
   },
   "license": "MPL-2.0",
   "devDependencies": {

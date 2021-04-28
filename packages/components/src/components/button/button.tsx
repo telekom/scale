@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Host, Listen, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { hasShadowDom } from '../../utils/utils';
 
@@ -43,11 +43,23 @@ export class Button {
   @Prop() styles?: string;
 
   /**
+   * Prevent clicks from being emitted from the host
+   * when the component is `disabled`.
+   */
+  @Listen('click', { capture: true })
+  handleHostClick(event: Event) {
+    if (this.disabled === true) {
+      event.stopImmediatePropagation();
+    }
+  }
+
+  /**
    * Hack to make the button behave has expected when inside forms.
    * @see https://github.com/ionic-team/ionic-framework/blob/master/core/src/components/button/button.tsx#L155-L175
    */
   handleClick = (ev: Event) => {
-    if (hasShadowDom(this.hostElement) && this.disabled === false) {
+    // No need to check for `disabled` because disabled buttons won't emit clicks
+    if (hasShadowDom(this.hostElement)) {
       const form = this.hostElement.closest('form');
       if (form) {
         ev.preventDefault();

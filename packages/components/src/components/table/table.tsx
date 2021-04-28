@@ -27,7 +27,7 @@ export class Table {
   slots: { header?: Element; table?: Element } = {};
 
   componentWillLoad() {
-    this.hostElement.querySelectorAll('th').forEach(th => {
+    this.hostElement.querySelectorAll('th').forEach((th) => {
       th.insertAdjacentHTML(
         'afterbegin',
         `

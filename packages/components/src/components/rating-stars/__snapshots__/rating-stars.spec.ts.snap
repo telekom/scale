@@ -3,8 +3,12 @@
 exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
 <scale-rating-stars rating="0">
   <mock:shadow-root>
-    <div aria-label="0 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
-      <span class="rating__symbols">
+    <div aria-describedby="rating__description" class="rating" id="rating" role="figure" tabindex="0">
+      <label aria-hidden="true" class="rating__label"></label>
+      <span hidden="" id="rating__description">
+        0 out of 5 stars
+      </span>
+      <span aria-hidden="true" class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
@@ -31,29 +35,29 @@ exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
           </span>
         </span>
       </span>
-      <span class="rating__symbols rating__symbols--indicator">
+      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 100% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 200% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 200% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 300% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 300% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 400% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 400% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 500% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 500% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
@@ -66,8 +70,12 @@ exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
 exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] = `
 <scale-rating-stars disabled="" rating="2">
   <mock:shadow-root>
-    <div aria-label="2 out of 5 stars" class="rating rating--disabled" id="rating" role="img" tabindex="-1">
-      <span class="rating__symbols">
+    <div aria-describedby="rating__description" class="rating rating--disabled" id="rating" role="figure" tabindex="-1">
+      <label aria-hidden="true" class="rating__label"></label>
+      <span hidden="" id="rating__description">
+        2 out of 5 stars
+      </span>
+      <span aria-hidden="true" class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 200% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
@@ -94,29 +102,29 @@ exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] =
           </span>
         </span>
       </span>
-      <span class="rating__symbols rating__symbols--indicator">
+      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol">
+          <span class="rating__symbol" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 0% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 0% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 100% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 200% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 200% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 300% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 300% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
@@ -129,8 +137,12 @@ exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] =
 exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
 <scale-rating-stars rating="3">
   <mock:shadow-root>
-    <div aria-label="3 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
-      <span class="rating__symbols">
+    <div aria-describedby="rating__description" class="rating" id="rating" role="figure" tabindex="0">
+      <label aria-hidden="true" class="rating__label"></label>
+      <span hidden="" id="rating__description">
+        3 out of 5 stars
+      </span>
+      <span aria-hidden="true" class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 300% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
@@ -157,29 +169,29 @@ exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
           </span>
         </span>
       </span>
-      <span class="rating__symbols rating__symbols--indicator">
+      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol">
+          <span class="rating__symbol" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol">
+          <span class="rating__symbol" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 0% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 0% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 100% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 200% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 200% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
           </span>
         </span>
@@ -192,8 +204,12 @@ exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
 exports[`RatingStars snapshots rating 4 and small should match snapshot 1`] = `
 <scale-rating-stars rating="4" small="">
   <mock:shadow-root>
-    <div aria-label="4 out of 5 stars" class="rating" id="rating" role="img" tabindex="0">
-      <span class="rating__symbols">
+    <div aria-describedby="rating__description" class="rating rating--small" id="rating" role="figure" tabindex="0">
+      <label aria-hidden="true" class="rating__label"></label>
+      <span hidden="" id="rating__description">
+        4 out of 5 stars
+      </span>
+      <span aria-hidden="true" class="rating__symbols">
         <span class="rating__symbol__wrapper">
           <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 400% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px"></scale-icon-action-favorite>
@@ -220,29 +236,29 @@ exports[`RatingStars snapshots rating 4 and small should match snapshot 1`] = `
           </span>
         </span>
       </span>
-      <span class="rating__symbols rating__symbols--indicator">
+      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol">
+          <span class="rating__symbol" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol">
+          <span class="rating__symbol" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol">
+          <span class="rating__symbol" role="presentation">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 0% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 0% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
           </span>
         </span>
         <span class="rating__symbol__wrapper">
-          <span class="rating__symbol" style="clip-path: inset(0 100% 0 0);">
+          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
             <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
           </span>
         </span>

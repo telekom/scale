@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Eine Text-Area ermöglicht Nutzer*innen die Eingabe einer oder mehrerer Textzeilen.
+Eine Text-Area ermöglicht Nutzer\*innen die Eingabe einer oder mehrerer Textzeilen.
 
 ## Allgemein
 
@@ -11,11 +11,11 @@ Eine Text-Area ist ein Eingabefeld für mehrere Textzeilen. Sie kann in der Brei
 
 ### Verwende eine Text-Area, wenn
 
-Nutzer*innen die Möglichkeit haben sollen, einen längeren Text einzugeben (z. B. für Kommentar- oder Nachrichtenfelder).
+Nutzer\*innen die Möglichkeit haben sollen, einen längeren Text einzugeben (z. B. für Kommentar- oder Nachrichtenfelder).
 
 ### Verwende besser keine Text-Areas, wenn
 
-Nutzer*innen nur sehr kurze Texte eingeben müssen (hier eigenen sich Text-Fields).
+Nutzer\*innen nur sehr kurze Texte eingeben müssen (hier eigenen sich Text-Fields).
 
 ## Elemente
 
@@ -23,11 +23,11 @@ Nutzer*innen nur sehr kurze Texte eingeben müssen (hier eigenen sich Text-Field
 
 ### Label (1)
 
-Das Label gibt eindeutig an, welche Informationen die Nutzer*innen eingeben sollen (z. B. „Ihre Nachricht“).
+Das Label gibt eindeutig an, welche Informationen die Nutzer\*innen eingeben sollen (z. B. „Ihre Nachricht“).
 
 ### Platzhaltertext (2) (optional)
 
-Per Klick/Tap auf die Text-Area erscheint ein Platzhaltertext mit einer kurzen Erklärung, welche Informationen genau benötigt werden. 
+Per Klick/Tap auf die Text-Area erscheint ein Platzhaltertext mit einer kurzen Erklärung, welche Informationen genau benötigt werden.
 
 ### Informationstext (3) (optional)
 
@@ -43,7 +43,7 @@ Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldu
 
 ### Variable Größe (6) (optional)
 
-Mit diesem Element können Nutzer*innen den gesamten Text sichtbar machen.
+Mit diesem Element können Nutzer\*innen den gesamten Text sichtbar machen.
 
 ## Scrollen
 
@@ -53,7 +53,7 @@ Ist der Text länger als der sichtbare Bereich, kannst du ihn scrollbar machen. 
 
 ## Deaktivierter Zustand
 
-Ist die Text-Area deaktiviert, können Nutzer*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
+Ist die Text-Area deaktiviert, können Nutzer\*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
 
 ![Image Name](assets/3_components/text-area/text_area_disabled.png)
 

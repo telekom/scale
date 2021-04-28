@@ -13,7 +13,7 @@
 export function getGroupBCR(nodes: any) {
   const groupBCR = nodes.reduce((result: any, node: any) => {
     const bcr = node.getBoundingClientRect();
-    const {left, top, right, bottom} = bcr;
+    const { left, top, right, bottom } = bcr;
     const width = bcr.right - bcr.left;
     const height = bcr.bottom - bcr.top;
 
@@ -22,7 +22,7 @@ export function getGroupBCR(nodes: any) {
     }
 
     if (!result) {
-      return {left, top, right, bottom};
+      return { left, top, right, bottom };
     }
 
     if (left < result.left) {

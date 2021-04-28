@@ -116,43 +116,41 @@ export class DataGrid {
 
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
-  activeDivider: any;
+  private activeDivider: any;
   /** Stored active sorting column index, for state removal */
-  activeSortingIndex = -1;
+  private activeSortingIndex = -1;
   /** Track component width to constrict nested content, which is necessary with table layout */
-  contentWidth: number = 100;
+  private contentWidth: number = 100;
   /** Flag to know to check for data completeness */
-  dataNeedsCheck: boolean = true;
+  private dataNeedsCheck: boolean = true;
   /** Track main container for element resize */
-  elMmainContainer?: any;
+  private elMmainContainer?: any;
   /** Track table container for scroll */
-  elScrollContainer?: HTMLElement;
+  private elScrollContainer?: HTMLElement;
   /** Table head for frozen header */
-  elTableHead?: HTMLElement;
+  private elTableHead?: HTMLElement;
   /** Checkbox for getting toggle-all state */
-  elToggleSelectAll?: HTMLScaleCheckboxElement;
+  private elToggleSelectAll?: HTMLScaleCheckboxElement;
   /** Flag to know if rendering can commence */
-  hasData: boolean = false;
+  private hasData: boolean = false;
   /** Flag that is true when width below a certain limit */
-  isMobile: boolean = false;
+  private isMobile: boolean = false;
   /** Flag that enough data supplied to warrant pagination */
-  isPagination: boolean = false;
+  private isPagination: boolean = false;
   /** Flag that is true if any fields are sortable */
-  isSortable: boolean = false;
-  /** Prevent multiple interactions before rendered */
-  isWaitPaginationUpdate: boolean = false;
+  private isSortable: boolean = false;
   /** Track container width to avoid re-calculating column stretching */
-  lastContainerWidth: number = 100;
+  private lastContainerWidth: number = 100;
   /** Index of field to use as mobile title, if any */
-  mobileTitleIndex: number = -1;
+  private mobileTitleIndex: number = -1;
   /** Determine if auto-width parsing needed */
-  needsAutoWidthParse: boolean = false;
+  private needsAutoWidthParse: boolean = false;
   /** Force column resize after render */
-  needsColumnResize: boolean = false;
+  private needsColumnResize: boolean = false;
   /** Auto-calculated number column width */
-  numberColumnWidth: number = 0;
+  private numberColumnWidth: number = 0;
   /** Selection column width */
-  selectionColumnWidth: number = 20;
+  private selectionColumnWidth: number = 20;
 
   /* 6. Lifecycle Events (call order) */
   constructor() {
@@ -260,8 +258,9 @@ export class DataGrid {
       if (this.rows[i].length !== this.fields.length) {
         // tslint:disable-next-line: no-console
         console.warn(
-          `Unable to render ${this.heading &&
-            `"${this.heading}" `}table: row data length not equal to supplied fields.`
+          `Unable to render ${
+            this.heading && `"${this.heading}" `
+          }table: row data length not equal to supplied fields.`
         );
         return false;
       }
@@ -324,7 +323,7 @@ export class DataGrid {
   getDefaultLongestContent({ rows, columnIndex }) {
     let maxLength = 0;
     let longestContent;
-    rows.forEach(row => {
+    rows.forEach((row) => {
       const length = row[columnIndex].toString().length;
       if (length > maxLength) {
         longestContent = row[columnIndex];
@@ -339,7 +338,7 @@ export class DataGrid {
     if (!this.elToggleSelectAll) {
       return;
     }
-    this.rows.forEach(row => (row.selected = this.elToggleSelectAll.checked));
+    this.rows.forEach((row) => (row.selected = this.elToggleSelectAll.checked));
     this.updateReadableSelection();
     this.forceRender++;
   }
@@ -352,7 +351,7 @@ export class DataGrid {
 
   updateReadableSelection() {
     this.selection.length = 0;
-    this.rows.forEach(row => row.selected && this.selection.push(row));
+    this.rows.forEach((row) => row.selected && this.selection.push(row));
 
     // Check header checkbox if any or none are selected
     const selectAll = this.hostElement.shadowRoot.querySelector(
@@ -609,7 +608,7 @@ export class DataGrid {
     const diff = containerWidth - targetContentWidth;
     if (diff <= 0) {
       // content larger than container (scrollbar), remove all stretching
-      this.fields.forEach(field => (field.stretchWidth = 0));
+      this.fields.forEach((field) => (field.stretchWidth = 0));
     } else {
       // container larger than content (gap to the right), calculate stretching
       // If stretchWeight set, divide value between total to get final weight
@@ -630,7 +629,7 @@ export class DataGrid {
       const remainderWeight = Math.max(0, 1 - totalSetWeight);
       // Set total to be divided against to be above 1 to keep total set/unset weights equal to 1
       totalSetWeight = Math.max(1, totalSetWeight);
-      this.fields.forEach(field => {
+      this.fields.forEach((field) => {
         const { visible = true, stretchWeight } = field;
         if (!visible) {
           return;
@@ -834,7 +833,7 @@ export class DataGrid {
     }
     return (
       <div
-        ref={el => (this.elScrollContainer = el)}
+        ref={(el) => (this.elScrollContainer = el)}
         class={`${name}__scroll-container`}
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
@@ -878,7 +877,7 @@ export class DataGrid {
     return (
       <table class={`${name}__auto-width-check ${name}__table`}>
         <tr class={`tbody__row`}>
-          {autoCols.map(columnIndex => {
+          {autoCols.map((columnIndex) => {
             const field = this.fields[columnIndex];
             const { type, cell = CELL_TYPES[type] } = field;
             // Find largest content of each type. Use custom getter if exists
@@ -913,7 +912,7 @@ export class DataGrid {
   renderTableHead() {
     return (
       <thead
-        ref={el => (this.elTableHead = el)}
+        ref={(el) => (this.elTableHead = el)}
         class={`thead`}
         role="rowgroup"
       >
@@ -991,8 +990,8 @@ export class DataGrid {
                       data-width={width}
                       data-min={minWidth}
                       data-max={maxWidth}
-                      onMouseDown={e => this.onDividerDown(e)}
-                      onTouchStart={e => this.onDividerDown(e)}
+                      onMouseDown={(e) => this.onDividerDown(e)}
+                      onTouchStart={(e) => this.onDividerDown(e)}
                     >
                       <div class={`thead__divider-line`}></div>
                     </div>
@@ -1028,7 +1027,7 @@ export class DataGrid {
     return (
       <th class={`thead__cell thead__cell--selection`} style={style}>
         <scale-checkbox
-          ref={el => (this.elToggleSelectAll = el)}
+          ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
         ></scale-checkbox>
       </th>
@@ -1098,7 +1097,7 @@ export class DataGrid {
                     {rowNestedContent.map(({ content }) => {
                       return (
                         <div
-                          ref={el => {
+                          ref={(el) => {
                             if (el) {
                               // Remove content from other pages
                               let child = el.lastElementChild;
@@ -1158,7 +1157,7 @@ export class DataGrid {
       <td class={`tbody__cell tbody__cell--selection`} style={style}>
         <scale-checkbox
           checked={this.rows[rowIndex].selected}
-          onScaleChange={e => this.toggleRowSelect(e, rowIndex)}
+          onScaleChange={(e) => this.toggleRowSelect(e, rowIndex)}
         ></scale-checkbox>
       </td>
     );

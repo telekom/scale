@@ -7,27 +7,27 @@ Pagination divides content across multiple pages. Users can also navigate throug
 
 ## General
 
-Pagination is an interactive element for users to navigate through several pages of related content. With multiple pages, numbering also helps to keep track of things. The arrows help users navigate quickly.  
+Pagination is an interactive element for users to navigate through several pages of related content. With multiple pages, numbering also helps to keep track of things. The arrows help users navigate quickly.
 
 The default number displayed will vary depending on the context.
 
 ### Use pagination when:
 
-* content is too long for a URL or viewport to display or
-* you want to provide additional functions for users to interact with the data. 
+- content is too long for a URL or viewport to display or
+- you want to provide additional functions for users to interact with the data.
 
-### Don't use pagination when: 
+### Don't use pagination when:
 
-* all the content is relevant, since users don't necessarily click through all pages, or
-* all the content is important for search engines, since this classifies content as less relevant on subsequent pages.
+- all the content is relevant, since users don't necessarily click through all pages, or
+- all the content is important for search engines, since this classifies content as less relevant on subsequent pages.
 
 ## Variants
 
-![Image Name](assets/3_components/pagination/Basic-types-en.png) 
+![Image Name](assets/3_components/pagination/Basic-types-en.png)
 
 ## Elements
 
-![Image Name](assets/3_components/pagination/Elements.png) 
+![Image Name](assets/3_components/pagination/Elements.png)
 
 #### Back to the beginning (1)
 
@@ -55,9 +55,9 @@ This button always takes users to the last page.
 
 ## Beta components
 
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future. 
+This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
 
-## Related components 
+## Related components
 
 <a href="?path=/usage/components-table--standard">Table, </a>
 <a href="?path=/usage/beta-components-data-grid--standard">Data Grid</a>

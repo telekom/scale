@@ -21,16 +21,27 @@ import statusNote from '../../utils/status-note';
 })
 export class RatingStars {
   element: HTMLElement;
+
   @Element() hostElement: HTMLElement;
+  /** (optional) hoverValue  */
   @Prop({ mutable: true }) hoverValue = 0;
+  /** (optional) isHovering  */
   @Prop({ mutable: true }) isHovering = false;
+  /** (optional) numOfStars  */
   @Prop({ mutable: true }) numOfStars = 5;
+  /** (optional) rating  */
   @Prop({ mutable: true }) rating = 0;
+  /** (optional) small  */
   @Prop({ mutable: true }) small = false;
+  /** (optional) disabled  */
   @Prop({ mutable: true }) disabled = false;
+  /** (optional) ariaTranslation  */
   @Prop({ mutable: true })
   ariaTranslation = `${this.rating} out of ${this.numOfStars} stars`;
+  /** (optional) precision  */
   @Prop() precision = 1;
+  /** (optional) slider label */
+  @Prop() label?: string;
 
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
@@ -146,29 +157,34 @@ export class RatingStars {
 
   render() {
     const counter = Array.from(Array(this.numOfStars).keys());
-    let displayValue = 0;
-    if (this.disabled) {
-      displayValue = this.rating;
-    } else {
-      displayValue = this.isHovering ? this.hoverValue : this.rating;
-    }
+    const displayValue = this.isHovering ? this.hoverValue : this.rating;
+
     return (
       <Host>
         <div
           class={this.getCssClassMap()}
           id="rating"
-          ref={el => (this.element = el)}
+          ref={(el) => (this.element = el)}
           onMouseMove={this.handleMouseMove}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
           onClick={this.handleMouseClick}
           onKeyDown={this.handleKeyDown}
           tabIndex={this.disabled ? -1 : 0}
-          role="img"
-          aria-label={this.getAriaLabel()}
+          role="figure"
+          aria-describedby="rating__description"
+          aria-label={this.label}
         >
-          <span class="rating__symbols">
-            {counter.map(index => (
+          <label class="rating__label" aria-hidden="true">
+            {this.label}
+          </label>
+          <span
+            id="rating__description"
+            innerHTML={this.getAriaLabel()}
+            hidden
+          ></span>
+          <span class="rating__symbols" aria-hidden="true">
+            {counter.map((index) => (
               <span
                 class="rating__symbol__wrapper"
                 onMouseEnter={this.handleMouseEnter}
@@ -178,8 +194,9 @@ export class RatingStars {
                   style={{
                     clipPath:
                       Math.ceil(displayValue) >= index + 1
-                        ? `inset(0 ${(Math.ceil(displayValue) - index) *
-                            100}% 0 0)`
+                        ? `inset(0 ${
+                            (Math.ceil(displayValue) - index) * 100
+                          }% 0 0)`
                         : null,
                   }}
                   class={{
@@ -193,13 +210,17 @@ export class RatingStars {
               </span>
             ))}
           </span>
-          <span class="rating__symbols rating__symbols--indicator">
-            {counter.map(index => (
+          <span
+            class="rating__symbols rating__symbols--indicator"
+            aria-hidden="true"
+          >
+            {counter.map((index) => (
               <span
                 class="rating__symbol__wrapper"
                 onMouseEnter={this.handleMouseEnter}
               >
                 <span
+                  role="presentation"
                   style={{
                     clipPath:
                       displayValue > index + 1
@@ -225,7 +246,9 @@ export class RatingStars {
     return classNames(
       'rating',
       this.disabled && 'rating--disabled',
-      this.isHovering && 'rating--hover'
+      this.isHovering && 'rating--hover',
+      this.small && 'rating--small',
+      this.label && 'rating--has-label'
     );
   }
 }

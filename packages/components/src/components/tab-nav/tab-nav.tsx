@@ -116,13 +116,13 @@ export class TabNav {
 
   getPreviousTab() {
     const tabs = this.getAllTabs();
-    const index = tabs.findIndex(tab => tab.selected) - 1;
+    const index = tabs.findIndex((tab) => tab.selected) - 1;
     return tabs[(index + tabs.length) % tabs.length];
   }
 
   getNextTab() {
     const tabs = this.getAllTabs();
-    const index = tabs.findIndex(tab => tab.selected) + 1;
+    const index = tabs.findIndex((tab) => tab.selected) + 1;
     return tabs[index % tabs.length];
   }
 
@@ -138,9 +138,9 @@ export class TabNav {
 
   linkPanels() {
     const tabs = this.getAllTabs();
-    const selectedTab = tabs.find(x => x.selected) || tabs[0];
+    const selectedTab = tabs.find((x) => x.selected) || tabs[0];
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
@@ -152,8 +152,8 @@ export class TabNav {
     const tabs = this.getAllTabs();
     const panels = this.getAllPanels();
 
-    tabs.forEach(tab => (tab.selected = false));
-    panels.forEach(panel => (panel.hidden = true));
+    tabs.forEach((tab) => (tab.selected = false));
+    panels.forEach((panel) => (panel.hidden = true));
   }
 
   findPanelForTab(tab: HTMLScaleTabHeaderElement): HTMLScaleTabPanelElement {
@@ -176,7 +176,7 @@ export class TabNav {
     const action = this.small ? 'setAttribute' : 'removeAttribute';
     const tabs = this.getAllTabs();
     const panels = this.getAllPanels();
-    [...tabs, ...panels].forEach(child => child[action]('small', ''));
+    [...tabs, ...panels].forEach((child) => child[action]('small', ''));
   }
 
   render() {

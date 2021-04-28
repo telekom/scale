@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {generateID, makeColorFromCSS} from '../helpers/utils';
+import { generateID, makeColorFromCSS } from '../helpers/utils';
 
 function pageToPageReference(page: any) {
   return {

@@ -7,7 +7,7 @@ describe('Textfield', () => {
     ['disabled'],
     ['small'],
     ['max-length-with-counter'],
-  ])('%p', async variant => {
+  ])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-text-field--${variant}&viewMode=story`
     );

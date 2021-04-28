@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { getFirstFont, makeColorFromCSS } from "../helpers/utils";
+import { getFirstFont, makeColorFromCSS } from '../helpers/utils';
 
 // Some websites or component libraries use font-family lists starting with OS-specific fonts.
 // If the option 'skipSystemFonts' is enabled, we skip those fonts to choose a font
@@ -30,7 +30,7 @@ class TextAttributedString {
     fontFamily,
     skipSystemFonts,
     textTransform,
-    alignment
+    alignment,
   }: {
     text: string;
     color: string;
@@ -50,32 +50,37 @@ class TextAttributedString {
 
   toJSON() {
     const result: any = {
-      _class: "attributedString",
+      _class: 'attributedString',
       string: this._text,
       attributes: [
         {
-          _class: "stringAttribute",
+          _class: 'stringAttribute',
           location: 0,
           length: this._text.length,
           attributes: {
             MSAttributedStringFontAttribute: {
-              _class: "fontDescriptor",
+              _class: 'fontDescriptor',
               attributes: {
                 name: this._fontFamily,
-                size: this._fontSize
-              }
+                size: this._fontSize,
+              },
             },
-            MSAttributedStringTextTransformAttribute: (this._textTransform === 'uppercase' ? 1 : (this._textTransform === 'lowercase' ? 2 : 0)),
+            MSAttributedStringTextTransformAttribute:
+              this._textTransform === 'uppercase'
+                ? 1
+                : this._textTransform === 'lowercase'
+                ? 2
+                : 0,
             MSAttributedStringColorAttribute: makeColorFromCSS(this._color),
             kerning: 0,
             textStyleVerticalAlignmentKey: 0,
             paragraphStyle: {
-              _class: "paragraphStyle",
-              alignment: this._alignment
-            }
-          }
-        }
-      ]
+              _class: 'paragraphStyle',
+              alignment: this._alignment,
+            },
+          },
+        },
+      ],
     };
 
     return result;

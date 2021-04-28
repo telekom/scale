@@ -13,10 +13,26 @@
   --rating-spacing: 0.125rem;
 }
 
+.rating__label {
+  position: absolute;
+  bottom: var(--scl-spacing-32, 2rem);
+}
+
+.rating--disabled .rating__label {
+  color: var(--scl-color-grey-50, #7c7c7c);
+}
+
+.rating--small .rating__label {
+  bottom: var(--scl-spacing-24, 1.5rem);
+}
+
 .rating {
   position: relative;
   display: inline-flex;
-  border-radius: 0.25rem;
+}
+
+.rating--has-label {
+  margin-top: var(--scl-spacing-24, 1.5rem);
 }
 
 .rating:focus {
