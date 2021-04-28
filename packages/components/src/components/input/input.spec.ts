@@ -121,6 +121,18 @@ describe('Input', () => {
       await page.waitForChanges();
       expect(page.root).toMatchSnapshot();
     });
+
+    it('should handle inputId with value null', async () => {
+      const page = await newSpecPage({
+        components: [Input],
+        html: `
+          <scale-input 
+           input-id
+           >
+          </scale-input>`,
+      });
+      expect(page.rootInstance.inputId).toBe('');
+    });
   });
 
   describe('props', () => {
