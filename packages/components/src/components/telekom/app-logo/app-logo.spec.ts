@@ -3,10 +3,18 @@ import { Logo } from './app-logo';
 
 describe('AppLogo', () => {
   let page;
+  let claimTruePage;
   beforeEach(async () => {
     page = await newSpecPage({
       components: [Logo],
       html: `<app-logo></app-logo>`,
+    });
+    claimTruePage = await newSpecPage({
+      components: [Logo],
+      html: `
+          <app-logo
+              claim=true
+          ></app-logo>`,
     });
   });
   it('should match snapshot', async () => {
@@ -14,18 +22,11 @@ describe('AppLogo', () => {
   });
 
   it('should handle claim propertie', async () => {
-    const page = await newSpecPage({
-      components: [Logo],
-      html: `
-        <app-logo
-            claim=true
-        ></app-logo>`,
-    });
-    expect(page.root).toMatchSnapshot();
+    expect(claimTruePage.root).toMatchSnapshot();
   });
 
   it('should handle de language', async () => {
-    const page = await newSpecPage({
+    const specPage = await newSpecPage({
       components: [Logo],
       html: `
             <app-logo
@@ -33,22 +34,15 @@ describe('AppLogo', () => {
                 claim-lang='de'
             ></app-logo>`,
     });
-    expect(page.rootInstance.claimLang).toBe('de');
+    expect(specPage.rootInstance.claimLang).toBe('de');
   });
 
   it('should emit on focus', async () => {
-    const page = await newSpecPage({
-      components: [Logo],
-      html: `
-          <app-logo
-              claim=true
-          ></app-logo>`,
-    });
-    expect(page.root).toMatchSnapshot();
-    const element = page.doc.querySelector('a');
+    expect(claimTruePage.root).toMatchSnapshot();
+    const element = claimTruePage.doc.querySelector('a');
     window.scrollTo = jest.fn();
     await element.dispatchEvent(new Event('focus'));
-    await page.waitForChanges();
+    await claimTruePage.waitForChanges();
     expect(window.scrollTo).toBeCalled();
   });
 });
