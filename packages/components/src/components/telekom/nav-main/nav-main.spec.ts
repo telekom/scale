@@ -13,7 +13,7 @@ describe('NavMain', () => {
     expect(page.root).toMatchSnapshot();
   });
   it('should handle is active props', async () => {
-    const page = await newSpecPage({
+    const specPage = await newSpecPage({
       components: [NavMain],
       html: `
       <scale-nav-main
@@ -22,7 +22,7 @@ describe('NavMain', () => {
         name='nameDummy'
       ></scale-nav-main>`,
     });
-    expect(page.root).toMatchSnapshot();
+    expect(specPage.root).toMatchSnapshot();
   });
   it('should handle css classes', () => {
     const element = new NavMain();
