@@ -14,14 +14,14 @@ describe('TabHeader', () => {
   });
 
   it('should handle selected', async () => {
-    const page = await newSpecPage({
+    const specPage = await newSpecPage({
       components: [TabHeader],
       html: `<scale-tab-header selected=true></scale-tab-header>`,
     });
-    page.root.shadowRoot.querySelector('slot').remove();
-    page.rootInstance.selected = false;
-    await page.waitForChanges();
-    expect(page.root).toMatchSnapshot();
+    specPage.root.shadowRoot.querySelector('slot').remove();
+    specPage.rootInstance.selected = false;
+    await specPage.waitForChanges();
+    expect(specPage.root).toMatchSnapshot();
   });
 
   it('should handle css classes', () => {
@@ -41,13 +41,13 @@ describe('TabHeader', () => {
     const element = page.root.shadowRoot.host;
     await element.dispatchEvent(new Event('blur'));
     await page.waitForChanges();
-    expect(page.rootInstance.hasFocus).toBeFalsy;
+    expect(page.rootInstance.hasFocus).toBeFalsy();
   });
 
   it('should handle focus event', async () => {
     const element = page.root.shadowRoot.host;
     await element.dispatchEvent(new Event('focus'));
     await page.waitForChanges();
-    expect(page.rootInstance.hasFocus).toBeTruthy;
+    expect(page.rootInstance.hasFocus).toBeTruthy();
   });
 });
