@@ -12,10 +12,18 @@
 import { newSpecPage, SpecPage } from '@stencil/core/testing';
 import { Header } from './app-header';
 
+const keyboardEvent = key =>
+  new KeyboardEvent('keydown', {
+    view: window,
+    bubbles: true,
+    cancelable: true,
+    key,
+  });
+
 describe('app-Header', () => {
   let page: SpecPage;
 
-  describe('snapshots', async () => {
+  describe('snapshots', () => {
     it('smoke test', async () => {
       page = await newSpecPage({
         components: [Header],
@@ -97,12 +105,7 @@ describe('app-Header', () => {
       });
 
       it('handleMobileMenu(event) toggles mobileMenu', async () => {
-        const event = new KeyboardEvent('keydown', {
-          view: window,
-          bubbles: true,
-          cancelable: true,
-          key: 'Enter',
-        });
+        const event = keyboardEvent('Enter');
         page.rootInstance.mobileMenu = false;
         page.rootInstance.handleMobileMenu(event);
         await page.waitForChanges();
@@ -110,12 +113,7 @@ describe('app-Header', () => {
       });
 
       it('handleMobileMenu(event) does not toggle mobileMenu', async () => {
-        const event = new KeyboardEvent('keydown', {
-          view: window,
-          bubbles: true,
-          cancelable: true,
-          key: 'Enter',
-        });
+        const event = keyboardEvent('Enter');
         page.rootInstance.mobileMenu = true;
         page.rootInstance.handleMobileMenu(event);
         await page.waitForChanges();
@@ -123,13 +121,16 @@ describe('app-Header', () => {
       });
 
       it('handleMobileMenu(event) does not toggle mobileMenu', async () => {
-        const event = new KeyboardEvent('keydown', {
-          view: window,
-          bubbles: true,
-          cancelable: true,
-          key: 'Escape',
-        });
+        const event = keyboardEvent('Escape');
         page.rootInstance.mobileMenu = false;
+        page.rootInstance.handleMobileMenu(event);
+        await page.waitForChanges();
+        expect(page.rootInstance.mobileMenu).toBe(false);
+      });
+
+      it('handleMobileMenu(event) does toggle mobileMenu', async () => {
+        const event = keyboardEvent('Escape');
+        page.rootInstance.mobileMenu = true;
         page.rootInstance.handleMobileMenu(event);
         await page.waitForChanges();
         expect(page.rootInstance.mobileMenu).toBe(false);
@@ -138,17 +139,29 @@ describe('app-Header', () => {
       it('Escape sets visibleMegaMenu to "" ', async () => {
         page.root.visibleMegaMenu = 'test';
         const ul = page.root.querySelector('.main-navigation');
-        ul.dispatchEvent(
-          new KeyboardEvent('keydown', {
-            view: window,
-            bubbles: true,
-            cancelable: true,
-            key: 'Escape',
-          })
-        );
+        const event = keyboardEvent('Escape');
+        ul.dispatchEvent(event);
         await page.waitForChanges();
         expect(page.rootInstance.visibleMegaMenu).toBe('');
       });
+
+      it('triggers closeMenu Listener', async () => {
+        page.root.dispatchEvent(new Event('closeMenu', { bubbles: true }));
+        await page.waitForChanges();
+        expect(page.rootInstance.mobileMenu).toBe(false);
+      });
+
+      /* ToDo
+      it('triggers closeMenu Listener', async () => {
+        
+      });
+      */
+
+      /* ToDo
+      it('raise test coverage', async () => {
+        
+      });
+      */
     });
   });
 });
