@@ -34,7 +34,7 @@
     "format": "prettier --write \"*.ts\" \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "develop": "stencil build --docs --watch -c stencil-dev.config.ts",
+    "develop": "stencil build --docs --watch",
     "generate": "node ./scripts/generate-icons.js"
   },
   "devDependencies": {
