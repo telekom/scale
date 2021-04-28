@@ -81,7 +81,7 @@ describe('ProgressBar', () => {
   it('this.progressBarId is set on componentWillLoad() -> element', () => {
     // element.progressBarId = 'null';
     element.componentWillLoad();
-    expect(element.progressBarId.substr(0, 13)).toBe('progress-barr');
+    expect(element.progressBarId.substr(0, 13)).toBe('progress-bar-');
   });
 
   // Does not effect coverage
