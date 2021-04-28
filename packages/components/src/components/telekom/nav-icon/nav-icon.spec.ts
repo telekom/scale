@@ -12,7 +12,7 @@ describe('nav-icon', () => {
     expect(page.root).toMatchSnapshot();
   });
   it('should reflect to set attributes/props', async () => {
-    const page = await newSpecPage({
+    const specPage = await newSpecPage({
       components: [NavIcon],
       html: `<scale-nav-icon
                 is-active="true"
@@ -23,12 +23,12 @@ describe('nav-icon', () => {
                 ref-mobile-menu-toggle="">
               </scale-nav-icon>`,
     });
-    expect(page.rootInstance.isActive).toBe(true);
-    expect(page.rootInstance.href).toBe('href');
-    expect(page.rootInstance.clickLink).toBe('true');
-    expect(page.rootInstance.icon).toBe('icon');
-    expect(page.rootInstance.isMobileMenuOpen).toBe(true);
-    expect(page.rootInstance.refMobileMenuToggle).toBe('');
+    expect(specPage.rootInstance.isActive).toBe(true);
+    expect(specPage.rootInstance.href).toBe('href');
+    expect(specPage.rootInstance.clickLink).toBe('true');
+    expect(specPage.rootInstance.icon).toBe('icon');
+    expect(specPage.rootInstance.isMobileMenuOpen).toBe(true);
+    expect(specPage.rootInstance.refMobileMenuToggle).toBe('');
   });
   it('should trigger onClick()', async () => {
     page.root.clickLink = jest.fn();
