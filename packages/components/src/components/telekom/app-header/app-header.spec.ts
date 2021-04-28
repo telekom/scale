@@ -150,12 +150,11 @@ describe('app-Header', () => {
         await page.waitForChanges();
         expect(page.rootInstance.mobileMenu).toBe(false);
       });
-      // prettier-ignore
+
       /* ToDo
       it('triggers closeMenu Listener', async () => { });
       */
 
-      // prettier-ignore
       /* ToDo
       it('raise test coverage', async () => {});
       */
