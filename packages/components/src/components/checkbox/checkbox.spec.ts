@@ -26,6 +26,14 @@ describe('Checkbox', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should match snapshot', async () => {
+    const specPage = await newSpecPage({
+      components: [Checkbox],
+      html: `<scale-checkbox helper-text="helpertext"></scale-checkbox>`,
+    });
+    expect(specPage.root).toMatchSnapshot();
+  });
+
   it('should reflect attributes', async () => {
     page = await newSpecPage({
       components: [Checkbox],
@@ -56,5 +64,26 @@ describe('Checkbox', () => {
     expect(element.getCssClassMap()).toContain('checkbox--disabled');
     element.status = 'error';
     expect(element.getCssClassMap()).toContain('checkbox--status-error');
+  });
+
+  it('should emit on change', async () => {
+    const changeSpy = jest.fn();
+    page.doc.addEventListener('scaleChange', changeSpy);
+    const element = page.root.querySelector('input');
+    element.dispatchEvent(new Event('change'));
+    await page.waitForChanges();
+    expect(changeSpy).toHaveBeenCalled();
+  });
+
+  it('should handle inputId with value null', async () => {
+    page = await newSpecPage({
+      components: [Checkbox],
+      html: `
+        <scale-checkbox 
+         input-id
+         >
+        </scale-checkbox>`,
+    });
+    expect(page.rootInstance.inputId).toBe('');
   });
 });

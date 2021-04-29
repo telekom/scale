@@ -29,4 +29,18 @@ describe('RadioButton', () => {
     page.rootInstance.checked = true;
     expect(page.root).toMatchSnapshot();
   });
+
+  it('should emit on change', async () => {
+    const page = await newSpecPage({
+      components: [RadioButton],
+      html: `<scale-radio-button></scale-radio-button>`,
+    });
+    const changeSpy = jest.fn();
+    page.rootInstance.checked = true;
+    page.doc.addEventListener('scaleChange', changeSpy);
+    const element = page.root.querySelector('input');
+    element.dispatchEvent(new Event('change'));
+    await page.waitForChanges();
+    expect(changeSpy).toHaveBeenCalled();
+  });
 });

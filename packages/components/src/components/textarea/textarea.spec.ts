@@ -25,7 +25,8 @@ describe('Textarea', () => {
       components: [Textarea],
       html: `
         <scale-textarea
-          helpertext="helpertext"
+          status="error"
+          helper-text="helpertext"
           >
         </scale-textarea>`,
     });
@@ -42,32 +43,31 @@ describe('Textarea', () => {
     });
     expect(page.root).toMatchSnapshot();
   });
-});
 
-describe('classes', () => {
-  it('should handle getCssClassMap()', () => {
-    const element = new Textarea();
-    expect(element.getCssClassMap()).toContain('textarea');
+  describe('classes', () => {
+    it('should handle getCssClassMap()', () => {
+      const element = new Textarea();
+      expect(element.getCssClassMap()).toContain('textarea');
 
-    element.hasFocus = true;
-    expect(element.getCssClassMap()).toContain('textarea--has-focus');
+      element.hasFocus = true;
+      expect(element.getCssClassMap()).toContain('textarea--has-focus');
 
-    element.resize = 'vertical';
-    expect(element.getCssClassMap()).toContain('textarea--resize-vertical');
+      element.resize = 'vertical';
+      expect(element.getCssClassMap()).toContain('textarea--resize-vertical');
 
-    element.disabled = true;
-    expect(element.getCssClassMap()).toContain('textarea--disabled');
+      element.disabled = true;
+      expect(element.getCssClassMap()).toContain('textarea--disabled');
 
-    element.transparent = true;
-    expect(element.getCssClassMap()).toContain('textarea--transparent');
+      element.transparent = true;
+      expect(element.getCssClassMap()).toContain('textarea--transparent');
 
-    element.status = 'error';
-    expect(element.getCssClassMap()).toContain('textarea--status-error');
+      element.status = 'error';
+      expect(element.getCssClassMap()).toContain('textarea--status-error');
 
-    element.value = 'value';
-    expect(element.getCssClassMap()).toContain('animated');
+      element.value = 'value';
+      expect(element.getCssClassMap()).toContain('animated');
+    });
   });
-
   describe('props', () => {
     it('check default props', async () => {
       const page = await newSpecPage({
@@ -120,7 +120,6 @@ describe('classes', () => {
       expect(page.rootInstance.styles).toBe('background : red');
     });
   });
-
   describe('functions', () => {
     it('handleFocus() sets focus to true', () => {
       const element = new Textarea();
@@ -133,6 +132,85 @@ describe('classes', () => {
       element.hasFocus = true;
       element.handleBlur();
       expect(element.hasFocus).toBe(false);
+    });
+  });
+  describe('events', () => {
+    let page;
+    beforeEach(async () => {
+      page = await newSpecPage({
+        components: [Textarea],
+        html: `<scale-textarea></scale-textarea>`,
+      });
+    });
+
+    it('onKeyDown', async () => {
+      const mock = jest.fn();
+      page.root.addEventListener('scaleKeyDown', mock);
+      const target = page.root.querySelector('.textarea__control');
+      await page.waitForChanges();
+      target.dispatchEvent(new KeyboardEvent('keydown'));
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
+    });
+
+    it('onBlur', async () => {
+      const mock = jest.fn();
+      page.root.addEventListener('scaleBlur', mock);
+      const target = page.root.querySelector('.textarea__control');
+      await page.waitForChanges();
+      target.dispatchEvent(new Event('blur'));
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
+    });
+
+    it('onFocus', async () => {
+      const mock = jest.fn();
+      page.root.addEventListener('scaleFocus', mock);
+      const target = page.root.querySelector('.textarea__control');
+      await page.waitForChanges();
+      target.dispatchEvent(new Event('focus'));
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
+    });
+
+    it('onInput', async () => {
+      const mock = jest.fn();
+      page.root.addEventListener('scaleInput', mock);
+      const target = page.root.querySelector('.textarea__control');
+      await page.waitForChanges();
+      target.dispatchEvent(new Event('input'));
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
+    });
+
+    it('onChange', async () => {
+      const mock = jest.fn();
+      page.root.emitChange = jest.fn();
+      page.root.addEventListener('scaleChange', mock);
+      const target = page.root.querySelector('.textarea__control');
+      await page.waitForChanges();
+      target.dispatchEvent(new Event('change'));
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
+      expect(page.root.emitChange).not.toHaveBeenCalled();
+    });
+  });
+  describe('branches', () => {
+    let page;
+    beforeEach(async () => {
+      page = await newSpecPage({
+        components: [Textarea],
+        html: `<scale-textarea></scale-textarea>`,
+      });
+    });
+    it('...', async () => {
+      const mock = jest.fn();
+      page.root.addEventListener('scaleChange', mock);
+      page.root.value = null;
+      await page.waitForChanges();
+      page.rootInstance.emitChange();
+      await page.waitForChanges();
+      expect(mock).toHaveBeenCalled();
     });
   });
 });
