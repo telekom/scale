@@ -23,7 +23,7 @@ export class ChartStackCard {
   /** Chart Title */
   @Prop() heading: string;
 
-  readData = data => {
+  readData = (data) => {
     try {
       return Array.isArray(JSON.parse(data)) ? JSON.parse(data) : [];
     } catch (error) {

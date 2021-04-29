@@ -9,11 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  generateID,
-  getGroupLayout,
-  SMART_LAYOUT,
-} from '../helpers/utils';
+import { generateID, getGroupLayout, SMART_LAYOUT } from '../helpers/utils';
 import Base from './base';
 import SymbolInstance from './symbolInstance';
 
@@ -27,8 +23,8 @@ class SymbolMaster extends Base {
   _symbolID: any;
   _groupLayout: any;
 
-  constructor({x, y, width = null, height = null, id}: any) {
-    super({id});
+  constructor({ x, y, width = null, height = null, id }: any) {
+    super({ id });
     this._class = 'symbolMaster';
     this._x = x;
     this._y = y;
@@ -42,14 +38,20 @@ class SymbolMaster extends Base {
     this._symbolID = id;
   }
 
-  getSymbolInstance({x, y, width = null, height = null}: any) {
+  getSymbolInstance({ x, y, width = null, height = null }: any) {
     // if no size will be requested, use the size of the master symbol
-    const {width: masterWidth, height: masterHeight} = this.getSize();
+    const { width: masterWidth, height: masterHeight } = this.getSize();
 
     width = width === null ? masterWidth : width;
     height = height === null ? masterHeight : height;
 
-    return new SymbolInstance({x, y, width, height, symbolID: this._symbolID});
+    return new SymbolInstance({
+      x,
+      y,
+      width,
+      height,
+      symbolID: this._symbolID,
+    });
   }
 
   addLayer(layer: any) {
@@ -79,7 +81,7 @@ class SymbolMaster extends Base {
       });
     }
 
-    return {width, height};
+    return { width, height };
   }
 
   setGroupLayout(layoutType: any) {
@@ -88,7 +90,7 @@ class SymbolMaster extends Base {
 
   toJSON() {
     const obj = super.toJSON();
-    const {width, height} = this.getSize();
+    const { width, height } = this.getSize();
 
     obj.frame = {
       _class: 'rect',

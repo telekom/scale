@@ -52,6 +52,8 @@ export class Textarea {
   @Prop() placeholder?: string = '';
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
+  /** (optional) Input readonly */
+  @Prop() readonly?: boolean;
   /** (optional) Input required */
   @Prop() required?: boolean;
   /** (optional) Input counter */
@@ -133,6 +135,7 @@ export class Textarea {
       this.status === 'error' ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
 
     return (
       <Host>
@@ -157,6 +160,7 @@ export class Textarea {
             onKeyDown={this.handleKeyDown}
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
+            {...readonlyAttr}
             {...(!!this.rows ? { rows: this.rows } : {})}
             {...(!!this.cols ? { cols: this.cols } : {})}
             {...ariaInvalidAttr}

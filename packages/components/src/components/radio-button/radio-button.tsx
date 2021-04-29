@@ -76,7 +76,7 @@ export class RadioButton {
   }
 
   // Handle checkbox/radio change (click on label)
-  handleCheckChange = event => {
+  handleCheckChange = (event) => {
     this.checked = event.target.checked;
   };
 

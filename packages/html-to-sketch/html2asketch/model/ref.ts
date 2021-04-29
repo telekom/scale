@@ -23,9 +23,9 @@ class Ref {
     this._hasClippingMask = hasClippingMask;
   }
 
-  traverse(obj:any) {
+  traverse(obj: any) {
     if (obj instanceof Array) {
-      obj.forEach(v => this.traverse(v));
+      obj.forEach((v) => this.traverse(v));
     } else if (typeof obj === 'object') {
       for (const k in obj) {
         if (k === 'do_objectID') {

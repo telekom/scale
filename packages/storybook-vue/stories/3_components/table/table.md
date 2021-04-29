@@ -9,20 +9,18 @@ Tables help the user grasp and compare data easily.
 
 A table view organizes data into rows and columns. Additional functions like filtering or sorting offer the user the option to adjust the presentation of the data to their own needs.
 
-### When  to use
+### When to use
 
 Use a table to:
 
-*	organize data so users can easily understand, analyze, and compare it.
-
+- organize data so users can easily understand, analyze, and compare it.
 
 ### When not to use
 
 Don't use a table when:
 
-*	a simple table can't map the complexity of the individual data and functions or
-*	you can show a data visualization instead.
-
+- a simple table can't map the complexity of the individual data and functions or
+- you can show a data visualization instead.
 
 ## Elements
 

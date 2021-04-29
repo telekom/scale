@@ -13,17 +13,17 @@ A text field is an input control for a single line of text. It can vary in width
 
 Use input fields when users should enter information like:
 
-* email addresses,
-* passwords,
-* phone numbers,
-* or any other kind of information as free text.
+- email addresses,
+- passwords,
+- phone numbers,
+- or any other kind of information as free text.
 
 ### When not to use
 
 Don't use a text field when users need to:
 
-* search for something (here use the search component) or
-* enter more than one line of input (use a text area instead).
+- search for something (here use the search component) or
+- enter more than one line of input (use a text area instead).
 
 ## Elements
 
@@ -47,7 +47,7 @@ If the number of characters is limited, the counter shows the max number of char
 
 ### Error (5)
 
-If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please enter your name".  If the input field has an information text, the error text will temporarily take its place.
+If an error occurs, a corresponding text indicates what a user still needs to do, e.g., "Please enter your name". If the input field has an information text, the error text will temporarily take its place.
 
 ## Disabled state
 
@@ -75,15 +75,15 @@ Important: Use either only small or only large elements within groups.
 
 ## Best practices
 
-* Declare text fields for specific data formats accordingly (e.g., for types like text, number, email, or password).
+- Declare text fields for specific data formats accordingly (e.g., for types like text, number, email, or password).
 
-* Group text fields that are related to the same topic.
+- Group text fields that are related to the same topic.
 
-* Arrange input fields in a single-column layout to not disturb the user's editing flow. Exceptions are logically related fields like postal code and city.
+- Arrange input fields in a single-column layout to not disturb the user's editing flow. Exceptions are logically related fields like postal code and city.
 
-* Mark mandatory inputs and reduce optional inputs as much as possible.
+- Mark mandatory inputs and reduce optional inputs as much as possible.
 
-* Explain all input requirements, for example for passwords or credit card numbers.
+- Explain all input requirements, for example for passwords or credit card numbers.
 
 ## Related components
 

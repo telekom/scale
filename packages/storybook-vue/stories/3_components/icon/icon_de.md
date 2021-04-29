@@ -10,12 +10,12 @@ Die Deutsche Telekom hat einen eigenen Icon-Stil, um die Werte der Marke auf ein
 
 ### Verwende ein Icon, um
 
-* Nutzer*innen dabei zu unterstützen, die Kerngedanken von Inhalten und Funktionen schnell zu erfassen und
-* die Nutzung unserer Produkte und Dienstleistungen zu vereinfachen und auf wichtige Funktionen oder Inhalte aufmerksam zu machen.
+- Nutzer\*innen dabei zu unterstützen, die Kerngedanken von Inhalten und Funktionen schnell zu erfassen und
+- die Nutzung unserer Produkte und Dienstleistungen zu vereinfachen und auf wichtige Funktionen oder Inhalte aufmerksam zu machen.
 
 ### Verwende Icons besser nicht, wenn
 
-* du sie nur aus rein ästhetischen Gründen einsetzt. Der Zweck eines Icons muss sofort erkennbar sein, um Nutzer*innen bei der Interaktion mit dem Interface zu unterstützen.
+- du sie nur aus rein ästhetischen Gründen einsetzt. Der Zweck eines Icons muss sofort erkennbar sein, um Nutzer\*innen bei der Interaktion mit dem Interface zu unterstützen.
 
 ## Varianten
 
@@ -25,7 +25,7 @@ Verwende standardmäßig Outline-Icons für User Interfaces. Sie sind für helle
 
 ## Statische und interaktive Icons
 
-Interaktive Icons haben, im Gegensatz zu statischen, eine Funktionalität. Per Klick/Tap lösen Nutzer*innen eine Aktion aus. Ist ein Icon interaktiv, zeigt die flächige Version den aktiven Zustand an.
+Interaktive Icons haben, im Gegensatz zu statischen, eine Funktionalität. Per Klick/Tap lösen Nutzer\*innen eine Aktion aus. Ist ein Icon interaktiv, zeigt die flächige Version den aktiven Zustand an.
 
 ![Image Name](assets/3_components/icon/icon_interactive.png)
 
@@ -51,7 +51,8 @@ Interaktive Icons
 ## Barrierefreiheit
 
 ### Besonderheit im Code
-Wenn alleinstehende Icons in Interfaces relevante Informationen übermitteln, formuliere einen entsprechenden Alternativtext im Code-Property „accessibilityTitle“. So machst du auch blinden Nutzer*innen alle Informationen zugänglich.
+
+Wenn alleinstehende Icons in Interfaces relevante Informationen übermitteln, formuliere einen entsprechenden Alternativtext im Code-Property „accessibilityTitle“. So machst du auch blinden Nutzer\*innen alle Informationen zugänglich.
 
 Füge ebenfalls einen Alternativtext hinzu, wenn das Icon keine sichtbare Beschriftung hat (vgl. Schließen-Icon) oder zusätzliche Informationen notwendig sind (z. B. bei externen Links).
 

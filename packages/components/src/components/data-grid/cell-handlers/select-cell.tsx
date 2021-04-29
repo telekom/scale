@@ -58,7 +58,7 @@ export const SelectCell: Cell = {
 
     return (
       <scale-dropdown size="small" {...props}>
-        {options.map(option => {
+        {options.map((option) => {
           return (
             <option value={option} selected={option === content}>
               {option}

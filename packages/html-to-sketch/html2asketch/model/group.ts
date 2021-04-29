@@ -19,8 +19,8 @@ class Group extends Base {
   _isSymbol: boolean;
   _stableSymbolName?: string;
 
-  constructor({x, y, width, height, id, isSymbol = false}: any) {
-    super({id});
+  constructor({ x, y, width, height, id, isSymbol = false }: any) {
+    super({ id });
     this._class = 'group';
     this._x = x;
     this._y = y;
@@ -30,7 +30,7 @@ class Group extends Base {
   }
 
   setIsSymbol(isSymbol: boolean = false) {
-    this._isSymbol = isSymbol
+    this._isSymbol = isSymbol;
   }
 
   setStableSymbolName(name: string) {

@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Tabellen helfen Nutzer*innen, Daten leicht zu erfassen und zu vergleichen.
+Tabellen helfen Nutzer\*innen, Daten leicht zu erfassen und zu vergleichen.
 
 ## Allgemein
 
@@ -11,14 +11,12 @@ Eine Tabelle organisiert Daten in Zeilen und Spalten. Zusätzliche Funktionen wi
 
 ### Verwende eine Tabelle, um
 
-*	Daten so zu organisieren, dass Nutzer*innen sie leicht verstehen, analysieren und vergleichen können.
-
+- Daten so zu organisieren, dass Nutzer\*innen sie leicht verstehen, analysieren und vergleichen können.
 
 ### Verwende Tabellen besser nicht, wenn
 
-*	die Komplexität der einzelnen Daten und Funktionen mit einer einfachen Tabelle nicht abbildbar ist oder
-*	du stattdessen eine Datenvisualisierung zeigen kannst.
-
+- die Komplexität der einzelnen Daten und Funktionen mit einer einfachen Tabelle nicht abbildbar ist oder
+- du stattdessen eine Datenvisualisierung zeigen kannst.
 
 ## Elemente
 
@@ -26,9 +24,9 @@ Eine Tabelle organisiert Daten in Zeilen und Spalten. Zusätzliche Funktionen wi
 
 ### Spalten-Header (1)
 
-Der Titel im Spalten-Header beschreibt den Inhalt der jeweiligen Spalte. Standardmäßig ist der Spalten-Header statisch. Du kannst aber auch die Sortierfunktion verwenden, damit Nutzer*innen die Inhalte der Spalte nach aufsteigender oder absteigender Reihenfolge sortieren können.
+Der Titel im Spalten-Header beschreibt den Inhalt der jeweiligen Spalte. Standardmäßig ist der Spalten-Header statisch. Du kannst aber auch die Sortierfunktion verwenden, damit Nutzer\*innen die Inhalte der Spalte nach aufsteigender oder absteigender Reihenfolge sortieren können.
 
-Das Sortier-Icon zeigt an, wenn Nutzer*innen einen Spalteninhalt bereits sortiert haben.
+Das Sortier-Icon zeigt an, wenn Nutzer\*innen einen Spalteninhalt bereits sortiert haben.
 
 ### Tabellenzeile (2)
 
@@ -44,14 +42,14 @@ Eine Trennlinie trennt die Tabellenzeilen voneinander.
 
 ## Mobil
 
-Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darstellung auf Desktop-Geräten. Um die gesamte Tabelle zu sehen, können Nutzer*innen horizontal swipen.
+Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darstellung auf Desktop-Geräten. Um die gesamte Tabelle zu sehen, können Nutzer\*innen horizontal swipen.
 
 ![Image Name](assets/3_components/data-table/data-table-mobile.png)
 
 ## Best Practices
 
-*	Richte den Inhalt der ersten Spalte immer linksbündig aus.
-*	Je nach Kontext oder Art des Inhalts kannst du den Inhalt der anderen Spalten auch rechtsbündig ausrichten.
+- Richte den Inhalt der ersten Spalte immer linksbündig aus.
+- Je nach Kontext oder Art des Inhalts kannst du den Inhalt der anderen Spalten auch rechtsbündig ausrichten.
 
 ## Verwandte Komponenten
 

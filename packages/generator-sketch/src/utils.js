@@ -10,8 +10,9 @@
  */
 
 function printSymbolStructure(symbol, indent = 0) {
-  console.log("".padStart(indent) + symbol.name);
-  if (symbol.layers) symbol.layers.forEach(s => printSymbolStructure(s, indent+2));
+  console.log(''.padStart(indent) + symbol.name);
+  if (symbol.layers)
+    symbol.layers.forEach((s) => printSymbolStructure(s, indent + 2));
 }
 
 function _findLayer(symbol, predicate, action) {
@@ -28,13 +29,13 @@ function _findLayer(symbol, predicate, action) {
   return undefined;
 }
 
-function findLayer(symbol, predicate, action=undefined) {
+function findLayer(symbol, predicate, action = undefined) {
   if (typeof predicate === 'string') {
     var str = predicate;
-    predicate = l => l.name === str;
+    predicate = (l) => l.name === str;
   } else if (predicate instanceof RegExp) {
     var re = predicate;
-    predicate = l => re.test(l.name);
+    predicate = (l) => re.test(l.name);
   }
   return _findLayer(symbol, predicate, action);
 }
@@ -52,13 +53,13 @@ function _findLayers(symbol, predicate, action, results) {
   return results;
 }
 
-function findLayers(symbol, predicate, action=undefined) {
+function findLayers(symbol, predicate, action = undefined) {
   if (typeof predicate === 'string') {
     var str = predicate;
-    predicate = l => l.name === str;
+    predicate = (l) => l.name === str;
   } else if (predicate instanceof RegExp) {
     var re = predicate;
-    predicate = l => re.test(l.name);
+    predicate = (l) => re.test(l.name);
   }
   return _findLayers(symbol, predicate, action, []);
 }
@@ -66,5 +67,5 @@ function findLayers(symbol, predicate, action=undefined) {
 module.exports = {
   findLayer,
   findLayers,
-  printSymbolStructure
+  printSymbolStructure,
 };

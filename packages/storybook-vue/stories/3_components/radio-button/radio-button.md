@@ -32,8 +32,8 @@ The label clearly describes the effect of activating the radio button. Labels no
 
 Disable the radio button if:
 
-* another action has to take place before the radio button is usable or
-*	the option needs to be listed but is currently unavailable.
+- another action has to take place before the radio button is usable or
+- the option needs to be listed but is currently unavailable.
 
 ![Image Name](assets/3_components/radio-button/disabled_radiobutton.png)
 
@@ -42,7 +42,6 @@ Disable the radio button if:
 Consider using a headline to provide more clarity to the user.
 
 Display one option as a default selection to align with user expectations and reduce the time and clicks needed. This is also a good way of making suggestions to the user. There are a few cases where you don't have to select a radio button by default, e.g., when selecting titles in a form (Mr., Ms., etc.).
-
 
 ![Image Name](assets/3_components/radio-button/radiobuttons_bestpractice.png)
 

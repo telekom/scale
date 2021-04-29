@@ -35,7 +35,7 @@ width: 100%; */
   <body>
     <scale-app-shell id="app">
       <div class="block">
-        <button id="change-button" style="margin: 1em;">change sector</button>
+        <button id="change-button" style="margin: 1em">change sector</button>
       </div>
       <div class="block">Two</div>
     </scale-app-shell>
@@ -56,7 +56,7 @@ width: 100%; */
       app.activeSectorId = 'Privatkunden';
       app.logoHref = '/hello';
       app.logoTitle = 'Logo';
-      app.logoClick = e => {
+      app.logoClick = (e) => {
         e.preventDefault();
         console.log('hello');
       };
@@ -418,7 +418,7 @@ width: 100%; */
           name: 'Privatkunden',
           id: 'Privatkunden',
           href: '/',
-          onClick: event => {
+          onClick: (event) => {
             event.preventDefault();
             app.activeSectorId = 'Privatkunden';
           },
@@ -427,7 +427,7 @@ width: 100%; */
           name: 'Geschäftskunden',
           id: 'Geschäftskunden',
           href: '/',
-          onClick: event => {
+          onClick: (event) => {
             event.preventDefault();
             app.activeSectorId = 'Geschäftskunden';
           },

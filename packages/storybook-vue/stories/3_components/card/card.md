@@ -15,16 +15,15 @@ Cards can hold any kind of content in a flexibly sized container. One card commu
 
 Cards are best suited to:
 
-*	to present content in an easily understandable way to encourage users to take a closer look at pages (e.g., shop, social media, etc.) and
-*	to provide content summaries (for example in dashboards).
+- to present content in an easily understandable way to encourage users to take a closer look at pages (e.g., shop, social media, etc.) and
+- to provide content summaries (for example in dashboards).
 
 ### When not to use
 
 Don't use cards:
 
-*	soley as an aesthetic element or
-*	as purely navigational elements.
-
+- soley as an aesthetic element or
+- as purely navigational elements.
 
 ## Basic types
 
@@ -58,13 +57,14 @@ By default, a card has padding to align the typography and visual elements. If y
 
 ![Image Name](assets/3_components/card/cards-padding.png)
 
-
 ## Accessibility
 
 ### General
+
 So users can immediately recognize a card, the content needs to visually form a compact unit. It is especially important that cards without pictures are immediately recognizable as one topic. A helpful tip: install the free screen reader NVDA. Once you’re familiar with how it works, close your eyes and test for yourself whether the screen reader clearly reads your cards in their entirety.
 
 ### Navigating with a keyboard
+
 Functionality must always be accessible via the keyboard. If you offer several additional interactions, make sure to label them concisely and definitively, so users can focus on and operate them with the keyboard in the proper order.
 
 ### Screen reader
@@ -73,7 +73,7 @@ If an image on the card is purely for design purposes, mark it with an empty alt
 
 https://bik-fuer-alle.de/alternativtexte-fuer-grafiken.html
 
-https://www.barrierefreies-webdesign.de/knowhow/textalternative/herausforderung.html 
+https://www.barrierefreies-webdesign.de/knowhow/textalternative/herausforderung.html
 
 ## Best practice
 

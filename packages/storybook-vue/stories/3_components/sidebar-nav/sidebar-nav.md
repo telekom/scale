@@ -3,7 +3,6 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-
 The sidebar navigation complements the main navigation in an extensive information architecture. It helps users quickly find content within an area of the website.
 
 ## General
@@ -14,14 +13,14 @@ Using the sidebar navigation is optional. It offers the option of mapping second
 
 Use the sidebar navigation if:
 
-* your secondary navigation contains more than seven menu items or
-* the secondary navigation of an area should always be visible.
+- your secondary navigation contains more than seven menu items or
+- the secondary navigation of an area should always be visible.
 
 ### When not to use
 
 Don't use the sidebar navigation if:
 
-* the main navigation can easily map all hierarchy levels.
+- the main navigation can easily map all hierarchy levels.
 
 ## Elements
 

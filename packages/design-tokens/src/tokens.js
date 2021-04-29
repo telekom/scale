@@ -124,34 +124,36 @@ tokens[TYPE_VARIANT] = {
   heading_6: {
     ...defaultVariant,
     weight: weight.bold,
-    lineHeight: lineHeight['133'],
+    lineHeight: lineHeight['150'],
   },
   heading_5: {
     ...defaultVariant,
+    size: size['20'],
+    lineHeight: lineHeight['125'],
     weight: weight.extrabold,
   },
   heading_4: {
-    ...defaultVariant,
-    size: size['20'],
-    lineHeight: lineHeight['120'],
-    weight: weight.extrabold,
-  },
-  heading_3: {
     ...defaultVariant,
     size: size['24'],
     lineHeight: lineHeight['133'],
     weight: weight.extrabold,
   },
-  heading_2: {
+  heading_3: {
     ...defaultVariant,
     size: size['32'],
     lineHeight: lineHeight['125'],
     weight: weight.extrabold,
   },
-  heading_1: {
+  heading_2: {
     ...defaultVariant,
     size: size['40'],
     lineHeight: lineHeight['120'],
+    weight: weight.extrabold,
+  },
+  heading_1: {
+    ...defaultVariant,
+    size: size['56'],
+    lineHeight: lineHeight['114'],
     weight: weight.extrabold,
   },
 };

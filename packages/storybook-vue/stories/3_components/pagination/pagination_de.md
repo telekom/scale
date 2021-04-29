@@ -7,21 +7,21 @@ Die Pagination zeigt an, dass ein Inhalt auf mehrere Seiten aufgeteilt ist und w
 
 ## Allgemein
 
-Eine Datentabelle ist ein erweiterter Tabellentyp. Die Daten sind dabei in Zeilen und Spalten organisiert. Neben der Standardfunktion Filtern können Nutzer*innen die Pagination als interaktives Element nutzen, um durch mehrere Seiten eines zusammenhängenden Inhalts zu navigieren. Bei vielen Seiten hilft eine Nummerierung, um den Überblick zu behalten. Pfeile unterstützen zusätzlich ein schnelles Navigieren. 
+Eine Datentabelle ist ein erweiterter Tabellentyp. Die Daten sind dabei in Zeilen und Spalten organisiert. Neben der Standardfunktion Filtern können Nutzer\*innen die Pagination als interaktives Element nutzen, um durch mehrere Seiten eines zusammenhängenden Inhalts zu navigieren. Bei vielen Seiten hilft eine Nummerierung, um den Überblick zu behalten. Pfeile unterstützen zusätzlich ein schnelles Navigieren.
 
 ### Verwende eine Pagination, wenn
 
-* Inhalte zu umfangreich sind, um sie in einer URL oder einem Viewport ausgeben zu können und
-* du zusätzlich Funktionen bereitstellen möchtest, damit Nutzer*innen mit den Daten interagieren können.
+- Inhalte zu umfangreich sind, um sie in einer URL oder einem Viewport ausgeben zu können und
+- du zusätzlich Funktionen bereitstellen möchtest, damit Nutzer\*innen mit den Daten interagieren können.
 
-### Verwende besser keine Pagination, wenn 
+### Verwende besser keine Pagination, wenn
 
-* alle Inhalte relevant sind, da Nutzer*innen nicht zwingend alle Seiten durchklicken oder
-* alle Inhalte wichtig für Suchmaschinen sind, da diese Inhalte auf Folgeseiten als weniger relevant einstufen.
+- alle Inhalte relevant sind, da Nutzer\*innen nicht zwingend alle Seiten durchklicken oder
+- alle Inhalte wichtig für Suchmaschinen sind, da diese Inhalte auf Folgeseiten als weniger relevant einstufen.
 
 ## Varianten
 
-![Image Name](assets/3_components/pagination/Basic-types-de.png) 
+![Image Name](assets/3_components/pagination/Basic-types-de.png)
 
 ## Elemente
 

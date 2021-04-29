@@ -1,12 +1,13 @@
 {
   "name": "@telekom/scale-components-react",
   "sideEffects": false,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.5",
   "description": "React proxy for @telekom/scale-components",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/telekom/scale.git"
+    "type": "git",
+    "url": "https://github.com/telekom/scale.git"
   },
   "publishConfig": {
     "access": "public"
@@ -15,7 +16,8 @@
     "build": "yarn clean && yarn compile",
     "clean": "rimraf dist",
     "compile": "yarn tsc",
-    "tsc": "tsc -p ."
+    "tsc": "tsc -p .",
+    "format": "prettier --write \"package.json\""
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -32,8 +34,8 @@
     "@types/vfile-message": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
   },
   "jest": {
     "preset": "ts-jest",

@@ -3,7 +3,7 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Mit der Flyout-Menü-Komponente können sich Nutzer*innen eine Reihe von Funktionen anzeigen lassen und diese ausführen.
+Mit der Flyout-Menü-Komponente können sich Nutzer\*innen eine Reihe von Funktionen anzeigen lassen und diese ausführen.
 
 ## Allgemein
 

@@ -13,18 +13,17 @@ A modal dialog appears as an overlay. The main content of the page is disabled u
 
 Use a modal if:
 
-*	you need to provide warnings and urgent information about the user's current task (e.g., system errors or the consequence of a user's action),
-*	the system requires critical information from the user to execute the current process,
-*	particular information from the user would make a process easier for them to continue, or
-*	the user needs to confirm a decision to prevent or correct critical errors.
+- you need to provide warnings and urgent information about the user's current task (e.g., system errors or the consequence of a user's action),
+- the system requires critical information from the user to execute the current process,
+- particular information from the user would make a process easier for them to continue, or
+- the user needs to confirm a decision to prevent or correct critical errors.
 
 ### When not to use
 
 Don't use a modal for:
 
-*	information or actions that are not related to the current user flow (this might prevent users from completing their task) or
-*	complex decision making that requires information the modal doesn't provide (this might force users to switch between the modal and main page, which would critically affect the user experience).
-
+- information or actions that are not related to the current user flow (this might prevent users from completing their task) or
+- complex decision making that requires information the modal doesn't provide (this might force users to switch between the modal and main page, which would critically affect the user experience).
 
 ## Elements
 
@@ -71,6 +70,6 @@ On mobile, all modals have the same size: full width (4 columns).
 
 ## Best practices
 
-*	Clearly describe the confirmed action and explain the potential consequences.
-*	Both title and button should indicate which action will occur.
-*	Never use a primary button if the action is destructive or irreversible.
+- Clearly describe the confirmed action and explain the potential consequences.
+- Both title and button should indicate which action will occur.
+- Never use a primary button if the action is destructive or irreversible.

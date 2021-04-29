@@ -12,8 +12,8 @@
 // Keep this pure for easy testing in the future.
 export default function convertAngleToFromAndTo(angle: any) {
   // default 180deg
-  const from = {x: 0.5, y: 0};
-  const to = {x: 0.5, y: 1};
+  const from = { x: 0.5, y: 0 };
+  const to = { x: 0.5, y: 1 };
 
   // Learn math or find someone smarter to figure this out correctly
   switch (angle) {

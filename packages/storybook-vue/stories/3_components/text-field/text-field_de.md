@@ -11,15 +11,15 @@ Ein Text-Field ist ein Eingabefeld für eine einzelne Textzeile. Das Feld kann i
 
 ### Verwende ein Text-Field für Abfragen, wie
 
-* E-Mail Adresse,
-* Passwort,
-* Telefonnummer und
-* sonstiges als Freitext.
+- E-Mail Adresse,
+- Passwort,
+- Telefonnummer und
+- sonstiges als Freitext.
 
 ### Verwende besser keine Text-Fields, wenn
 
-* Nutzer*innen etwas suchen sollen (hier eignet sich ein Suchfeld) oder
-* sie mehr als eine Zeile eingeben müssen (hier eignet sich die Text-Area).
+- Nutzer\*innen etwas suchen sollen (hier eignet sich ein Suchfeld) oder
+- sie mehr als eine Zeile eingeben müssen (hier eignet sich die Text-Area).
 
 ## Elemente
 
@@ -27,7 +27,7 @@ Ein Text-Field ist ein Eingabefeld für eine einzelne Textzeile. Das Feld kann i
 
 ### Label (1)
 
-Das Label gibt eindeutig an, welche Informationen die Nutzer*innen eingeben sollen (z. B. „Nachname“).
+Das Label gibt eindeutig an, welche Informationen die Nutzer\*innen eingeben sollen (z. B. „Nachname“).
 
 ### Platzhaltertext (2) (optional)
 
@@ -43,11 +43,11 @@ Wenn die Anzahl der Zeichen begrenzt ist, zeige die maximale und die aktuell ver
 
 ### Fehlermeldung (5)
 
-Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldung (z. B. „Bitte füllen Sie dieses Feld aus"). Wenn das Text-Field einen Informationstext besitzt, erscheint der Fehlertext vorübergehend an dessen Stelle. 
+Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldung (z. B. „Bitte füllen Sie dieses Feld aus"). Wenn das Text-Field einen Informationstext besitzt, erscheint der Fehlertext vorübergehend an dessen Stelle.
 
 ## Deaktivierter Zustand
 
-Ist das Text-Field deaktiviert, können Nutzer*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
+Ist das Text-Field deaktiviert, können Nutzer\*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
 
 ![Image Name](assets/3_components/text-input/input_disabled.png)
 
@@ -69,15 +69,15 @@ Verwende kleine Text-Fields, wenn du nicht genug Platz für die Standardgröße 
 
 ## Best Practices
 
-* Kennzeichne Text-Fields entsprechend der benötigten Eingabe (z. B. für Texte, Zahlen, E-Mail-Adressen oder Passwörter).
+- Kennzeichne Text-Fields entsprechend der benötigten Eingabe (z. B. für Texte, Zahlen, E-Mail-Adressen oder Passwörter).
 
-* Gruppiere Text-Fields, die sich auf dasselbe Thema beziehen.
+- Gruppiere Text-Fields, die sich auf dasselbe Thema beziehen.
 
-* Ordne Text-Fields in einem einspaltigen Layout an, um den Bearbeitungsfluss der Nutzer*innen nicht zu stören. Ausnahmen sind logisch zusammenhängende Felder, wie Postleitzahl und Ort.
+- Ordne Text-Fields in einem einspaltigen Layout an, um den Bearbeitungsfluss der Nutzer\*innen nicht zu stören. Ausnahmen sind logisch zusammenhängende Felder, wie Postleitzahl und Ort.
 
-* Markiere Pflichtangaben und reduziere optionale Angaben so weit wie möglich.
+- Markiere Pflichtangaben und reduziere optionale Angaben so weit wie möglich.
 
-* Erkläre alle Eingabebedingungen, zum Beispiel bei Passwörtern oder Kreditkartennummern.
+- Erkläre alle Eingabebedingungen, zum Beispiel bei Passwörtern oder Kreditkartennummern.
 
 ## Verwandte Komponenten
 

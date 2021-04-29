@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Die Breadcrumb ist ein sekundäres Navigationselement, das zusätzliche Orientierung bietet. Sie zeigt Nutzer*innen jederzeit an, wo sie sich in der Informationsarchitektur befinden und ermöglicht es ihnen, leicht zurück zu navigieren.
+Die Breadcrumb ist ein sekundäres Navigationselement, das zusätzliche Orientierung bietet. Sie zeigt Nutzer\*innen jederzeit an, wo sie sich in der Informationsarchitektur befinden und ermöglicht es ihnen, leicht zurück zu navigieren.
 
 ## Allgemein
 
@@ -13,14 +13,13 @@ Die Breadcrumb spiegelt die Informationshierarchie des Produkts oder Services wi
 
 ### Verwende die Breadcrumb
 
-*	insbesondere für komplexe Produkte oder Dienstleistungen mit drei oder mehr Hierarchieebenen,
-*	immer auf allen Seiten einer Webseite.
+- insbesondere für komplexe Produkte oder Dienstleistungen mit drei oder mehr Hierarchieebenen,
+- immer auf allen Seiten einer Webseite.
 
-### Verwende besser keine Breadcrumb, wenn 
+### Verwende besser keine Breadcrumb, wenn
 
-*	Produkte oder Dienstleistungen eine flache Architektur mit nur einer oder zwei Hierarchieebenen haben oder
-*	dieses Element als Haupt-Navigation dienen soll.
-
+- Produkte oder Dienstleistungen eine flache Architektur mit nur einer oder zwei Hierarchieebenen haben oder
+- dieses Element als Haupt-Navigation dienen soll.
 
 ## Elemente
 

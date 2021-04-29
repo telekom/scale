@@ -57,7 +57,7 @@ export class SidebarNav {
    */
   setNestingLevelOnChildren() {
     function setNestingLevel(el: Element, level: number = 1) {
-      Array.from(el.children).forEach(child => {
+      Array.from(el.children).forEach((child) => {
         if (child.tagName.toUpperCase() === 'SCALE-SIDEBAR-NAV-COLLAPSIBLE') {
           setNestingLevel(child, level + 1);
           if (!child.hasAttribute('nesting-level')) {

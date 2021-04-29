@@ -19,8 +19,8 @@ Use a switch whenever the user may want to immediately activate or deactivate so
 
 Use radio buttons or a single checkbox if
 
-* the user has to confirm by saving or submitting to apply the new state or
-* immediate results are not possible.
+- the user has to confirm by saving or submitting to apply the new state or
+- immediate results are not possible.
 
 ## Label
 

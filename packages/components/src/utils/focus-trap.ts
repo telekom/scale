@@ -34,7 +34,7 @@ export function queryShadowRoot(
     // Read more here https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
     const assignedNodes = $slot
       .assignedNodes()
-      .filter(node => node.nodeType === 1);
+      .filter((node) => node.nodeType === 1);
     if (assignedNodes.length > 0) {
       const $slotParent = assignedNodes[0].parentElement!;
       return queryShadowRoot(

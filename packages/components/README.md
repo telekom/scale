@@ -223,21 +223,5 @@ In order to satisfy the `CI` pipeline it is advised to run some scripts before p
 
 > If any of the above commands throw an error, please fix the errors before pushing to remote
 
-## Adding the components to Storybook
-
-- Create new folder in packages/storybook-vue/stories/3_components
-- Create new dummy Vue component enlisting all props and events
-- Create stories
-- Add placeholder English and German md files and register them in .storybook/usage-addon/usage.js for the Docs tab to work.
-- You might have to delete storybook-vue/node_modules/.cache to see your changes
-- Restart storybook to test
-
-## Adding visual snapshot tests
-
-- Switch to packages/visual-tests
-- Add the test for the new component - take a previous test as an example
-- Run the tests, check if the new snapshot looks as expected
-- Check in the new snapshot image to git
-
 ---
 Find [Telekom Scale on GitHub](https://github.com/telekom/scale).

@@ -95,7 +95,7 @@ export class MenuFlyoutItem {
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
-          ref={el => (this.menuItem = el)}
+          ref={(el) => (this.menuItem = el)}
           part="base"
           role="menuitem"
           tabindex="-1"
