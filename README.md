@@ -13,7 +13,7 @@ Access the [comprehensive documentation for Scale](https://www.brand-design.tele
 
 # Are you a designer?
 
-We provide a comprehensive Sketch library for designers building Telekom software.  All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. Access the [Scale website](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-designers-getting-started--page) with your Brand & Design credentials.
+We provide a comprehensive Sketch library for designers building Telekom software.  All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-designers-getting-started--page) with your Brand & Design credentials.
 
 
 # Customizing Scale for open source software
