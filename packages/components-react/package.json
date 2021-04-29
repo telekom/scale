@@ -1,8 +1,9 @@
 {
   "name": "@telekom/scale-components-react",
   "sideEffects": false,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.5",
   "description": "React proxy for @telekom/scale-components",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
     "type": "git",
@@ -33,8 +34,8 @@
     "@types/vfile-message": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1"
   },
   "jest": {
     "preset": "ts-jest",

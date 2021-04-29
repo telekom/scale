@@ -1,7 +1,8 @@
 {
   "name": "@telekom/scale-components-angular",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.5",
   "description": "Angular specific wrapper for @telekom/scale-components",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
     "type": "git",

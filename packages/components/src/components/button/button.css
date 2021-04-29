@@ -10,6 +10,7 @@
  */
 
 :host {
+  --width: auto;
   --spacing-x: var(--scl-spacing-24);
   --spacing-x-icon-only: var(--scl-spacing-8);
   --min-height: var(--scl-spacing-40);
@@ -74,6 +75,7 @@
   font-size: var(--font-size);
   line-height: var(--line-height);
   min-height: var(--min-height);
+  width: var(--width);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
   vertical-align: var(--vertical-align);
