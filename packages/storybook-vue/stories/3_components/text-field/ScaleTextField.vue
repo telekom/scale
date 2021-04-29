@@ -9,6 +9,7 @@
     :min-length="minLength"
     :placeholder="placeholder"
     :disabled="disabled"
+    :readonly="readonly"
     :required="required"
     :counter="counter"
     :size="size"
@@ -37,6 +38,7 @@ export default {
     minLength: { type: Number },
     placeholder: { type: String },
     disabled: { type: Boolean },
+    readonly: { type: Boolean },
     required: { type: Boolean },
     counter: { type: Boolean },
     size: { type: String },
