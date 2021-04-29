@@ -15,18 +15,18 @@ Use tabs to separate a large amount of content without having to reload the page
 
 When creating tabs, make sure the different sections of content are:
 
-*	related to each other,
-*	from the same level of hierarchy,
-*	clearly distinguished from one another, and
-*	easily understood as stand-alone content.
+- related to each other,
+- from the same level of hierarchy,
+- clearly distinguished from one another, and
+- easily understood as stand-alone content.
 
 ### When not to use
 
 Don't use tabs if:
 
-*	users might want to compare the content,
-*	users need to read the content in a particular order (e.g., with processes), or
-*	you have the option to optimize the content and display it within one viewing element.
+- users might want to compare the content,
+- users need to read the content in a particular order (e.g., with processes), or
+- you have the option to optimize the content and display it within one viewing element.
 
 ## Basic Types
 
@@ -61,9 +61,9 @@ The label clearly describes the content which a particular tab represents. Since
 
 ## Best practices
 
-*	When the user switches between sections, only the tab and its content area should change – nothing else.
-*	Arrange the tabs according to the needs of our users.
-*	Don't mix different types of tabs: for one set of tabs, decide on either having icons or not.
+- When the user switches between sections, only the tab and its content area should change – nothing else.
+- Arrange the tabs according to the needs of our users.
+- Don't mix different types of tabs: for one set of tabs, decide on either having icons or not.
 
 ## Related components
 

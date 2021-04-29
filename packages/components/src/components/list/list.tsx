@@ -51,7 +51,7 @@ export class List {
   }
 
   propagatePropsToChildren(ordered: boolean) {
-    const items = Array.from(this.el.children).filter(child =>
+    const items = Array.from(this.el.children).filter((child) =>
       child.matches('scale-list-item')
     );
     (items as HTMLScaleListItemElement[]).forEach((item, index) => {

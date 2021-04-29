@@ -14,7 +14,7 @@ export const hasShadowDom = (el: HTMLElement) => {
 };
 
 // eg isPseudoClassSupported(':focus-visible') // true for chrome, false for safari
-export const isPseudoClassSupported = pseudoClass => {
+export const isPseudoClassSupported = (pseudoClass) => {
   // Get the document stylesheet1
   let ss = document.styleSheets[0] as CSSStyleSheet;
 

@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Mit einem Dropdown wählen Nutzer*innen eine Option aus einer Liste aus.
+Mit einem Dropdown wählen Nutzer\*innen eine Option aus einer Liste aus.
 
 ## Allgemein
 
@@ -11,16 +11,16 @@ Die Auswahlliste des Dropdowns wird temporär angezeigt. Das macht ein Dropdown 
 
 ### Verwende ein Dropdown, wenn
 
-* innerhalb eines Formulars Optionen zur Auswahl stehen,
-* Nutzer*innen nur eine der Optionen auswählen sollen oder
-* Nutzer*innen Inhalte filtern oder sortieren müssen.
+- innerhalb eines Formulars Optionen zur Auswahl stehen,
+- Nutzer\*innen nur eine der Optionen auswählen sollen oder
+- Nutzer\*innen Inhalte filtern oder sortieren müssen.
 
 ### Verwende Dropdowns besser nicht, wenn
 
-* du nur sehr wenige Optionen anbieten möchtest (Radio-Buttons sind hier eventuell die bessere Wahl),
-* du sehr viele Auswahlmöglichkeiten anbieten möchtest (ein Eingabefeld mit automatischer Vervollständigung ist hilfreicher),
-* Nutzer*innen mehrere Auswahlmöglichkeiten haben sollen (Checkboxen sind in dem Fall sinnvoller) oder
-* Nutzer*innen navigieren sollen (hier ist eine Navigationskomponente wie bspw. die Sidebar-Navigation geeigneter).
+- du nur sehr wenige Optionen anbieten möchtest (Radio-Buttons sind hier eventuell die bessere Wahl),
+- du sehr viele Auswahlmöglichkeiten anbieten möchtest (ein Eingabefeld mit automatischer Vervollständigung ist hilfreicher),
+- Nutzer\*innen mehrere Auswahlmöglichkeiten haben sollen (Checkboxen sind in dem Fall sinnvoller) oder
+- Nutzer\*innen navigieren sollen (hier ist eine Navigationskomponente wie bspw. die Sidebar-Navigation geeigneter).
 
 ## Varianten
 
@@ -54,7 +54,7 @@ Eine zusätzliche Information kann helfen, den Inhalt oder Zweck eines Dropdowns
 
 ### Fehlermeldung (4)
 
-Wenn die Auswahl einer Option für Nutzer*innen verpflichtend ist, führt das Absenden eines Formulars ohne getätigte Auswahl zu einer Fehlermeldung. Besitzt das Dropdown bereits einen Informationstext, wird dieser kurzzeitig überschrieben.
+Wenn die Auswahl einer Option für Nutzer\*innen verpflichtend ist, führt das Absenden eines Formulars ohne getätigte Auswahl zu einer Fehlermeldung. Besitzt das Dropdown bereits einen Informationstext, wird dieser kurzzeitig überschrieben.
 
 ### Titel (5)
 
@@ -81,6 +81,7 @@ Wenn nur wenig Platz zur Verfügung steht, setze das kleine Dropdown ein.
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
 ## Bekannte Einschränkungen
+
 Das Dropdown ist fertig zum Gebrauch. Die Komponente im disabled State wird im Firefox 85.0.2 (64-Bit) im HCM (Hochkontrastmodus) fehlerhaft mit weißem Hintergrund dargestellt.
 Der Darstellungsfehler liegt auf Seiten des Browsers.
 

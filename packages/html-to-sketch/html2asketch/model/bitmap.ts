@@ -10,7 +10,7 @@
  */
 
 import Base from './base';
-import {generateID} from '../helpers/utils';
+import { generateID } from '../helpers/utils';
 
 class Bitmap extends Base {
   _class: any;
@@ -20,8 +20,8 @@ class Bitmap extends Base {
   _width: any;
   _height: any;
 
-  constructor({url, x, y, width, height, id}: any) {
-    super({id});
+  constructor({ url, x, y, width, height, id }: any) {
+    super({ id });
     this._class = 'bitmap';
     this._url = url;
     this._x = x;

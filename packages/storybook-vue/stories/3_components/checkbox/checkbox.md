@@ -15,12 +15,12 @@ A checkbox is a selection control that allows users to choose between two states
 
 There are two main use cases for checkboxes:
 
-* Single: Use a stand-alone checkbox if users are to turn an option on or off. For instance, this could be a request in a form or the agreement of general terms and conditions before buying a product.
-* Multiple: Use a number of checkboxes if users are to select one or more options from a list. For instance, this could be a filter panel in a shop, a collection of settings, or a list of items to edit.
+- Single: Use a stand-alone checkbox if users are to turn an option on or off. For instance, this could be a request in a form or the agreement of general terms and conditions before buying a product.
+- Multiple: Use a number of checkboxes if users are to select one or more options from a list. For instance, this could be a filter panel in a shop, a collection of settings, or a list of items to edit.
 
 ### When not to use
 
-* When states are mutually exclusive, use radio buttons instead.
+- When states are mutually exclusive, use radio buttons instead.
 
 ## Checkbox label
 
@@ -32,8 +32,8 @@ The label explicitly describes what happens when users select or deselect a chec
 
 Disable the checkbox if:
 
-* another action has to take place before the checkbox is usable or
-* the option needs to be listed but is currently unavailable.
+- another action has to take place before the checkbox is usable or
+- the option needs to be listed but is currently unavailable.
 
 ![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
 
@@ -47,7 +47,7 @@ When checkboxes are related to a parent checkbox, you can nest them. Selecting t
 
 ## Required input
 
-When checking a box is required, use an asterisk (*) in the text label.
+When checking a box is required, use an asterisk (\*) in the text label.
 
 ![Image Name](assets/3_components/checkbox/checkbox_required_input.png)
 

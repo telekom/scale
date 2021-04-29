@@ -19,8 +19,8 @@ class SymbolInstance extends Base {
   _height: any;
   _symbolID: any;
 
-  constructor({x, y, width, height, symbolID, id}: any) {
-    super({id});
+  constructor({ x, y, width, height, symbolID, id }: any) {
+    super({ id });
     this._class = 'symbolInstance';
     this._x = x;
     this._y = y;

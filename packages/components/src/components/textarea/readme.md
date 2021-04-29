@@ -19,6 +19,7 @@
 | `minLength`   | `min-length`  | (optional) Input min length             | `number`                                          | `undefined` |
 | `name`        | `name`        | (optional) Input name                   | `string`                                          | `''`        |
 | `placeholder` | `placeholder` | (optional) Input placeHolder            | `string`                                          | `''`        |
+| `readonly`    | `readonly`    | (optional) Input readonly               | `boolean`                                         | `undefined` |
 | `required`    | `required`    | (optional) Input required               | `boolean`                                         | `undefined` |
 | `resize`      | `resize`      | (optional) textarea resize              | `"horizontal" \| "none" \| "unset" \| "vertical"` | `undefined` |
 | `rows`        | `rows`        | (optional) textarea row                 | `number`                                          | `undefined` |

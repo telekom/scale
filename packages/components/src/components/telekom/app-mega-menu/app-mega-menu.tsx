@@ -39,13 +39,13 @@ export class MegaMenu {
             <slot name="custom-body"></slot>
           ) : (
             <ul class="mega-menu__container">
-              {this.navigation.map(child => (
+              {this.navigation.map((child) => (
                 <li class="mega-menu__row">
                   <div class="mega-menu__row-title">{child.name}</div>
                   <ul>
                     {child.children &&
                       child.children.length > 0 &&
-                      child.children.map(menuItem => (
+                      child.children.map((menuItem) => (
                         <li>
                           <a
                             class={`mega-menu__row-item ${
@@ -58,13 +58,13 @@ export class MegaMenu {
                             }
                             href={menuItem.href || 'javascript:void(0);'}
                             tabIndex={this.isActive ? 0 : -1}
-                            onClick={event => {
+                            onClick={(event) => {
                               this.hide();
                               if (typeof menuItem.onClick === 'function') {
                                 menuItem.onClick(event);
                               }
                             }}
-                            onKeyDown={event => {
+                            onKeyDown={(event) => {
                               if (['Escape', 'Esc'].includes(event.key)) {
                                 this.hide();
                               }

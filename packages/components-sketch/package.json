@@ -1,12 +1,13 @@
 {
   "name": "@telekom/scale-components-sketch-telekom",
   "private": true,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.5",
   "description": "",
   "license": "MPL-2.0",
   "scripts": {
     "prestart": "rimraf public/components && cp -r ../components/dist public/components && cp ../components/src/components/icons/scale-icons.json public/components/scale-icons.json",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "format": "prettier --write \"package.json\""
   },
   "dependencies": {
     "express": "^4.17.1",

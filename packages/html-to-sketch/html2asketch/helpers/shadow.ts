@@ -10,8 +10,9 @@
  */
 
 const splitShadowString = (boxShadow: any) => {
-  const shadowStrings = boxShadow.split(/x, |t, /).map(
-    (str: string, i: number, array: any[]) => {
+  const shadowStrings = boxShadow
+    .split(/x, |t, /)
+    .map((str: string, i: number, array: any[]) => {
       if (i + 1 < array.length) {
         if (str.match(/inse$/)) {
           return `${str}t`;
@@ -20,8 +21,8 @@ const splitShadowString = (boxShadow: any) => {
         }
       }
       return str;
-    }
-  ).filter((shadow: string) => shadow.length > 0);
+    })
+    .filter((shadow: string) => shadow.length > 0);
 
   return shadowStrings;
 };
@@ -44,7 +45,4 @@ const shadowStringToObject = (shadowString: string) => {
   return;
 };
 
-export {
-  splitShadowString,
-  shadowStringToObject,
-};
+export { splitShadowString, shadowStringToObject };

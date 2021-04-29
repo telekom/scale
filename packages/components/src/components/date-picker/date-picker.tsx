@@ -247,15 +247,15 @@ export class DatePicker {
           {this.label}
         </label>
         <duet-date-picker
-          onDuetChange={e => {
+          onDuetChange={(e) => {
             this.scaleChange.emit(e.detail);
             this.handleKeyPress(e);
           }}
-          onDuetFocus={e => {
+          onDuetFocus={(e) => {
             this.scaleFocus.emit(e.detail);
             this.hasFocus = true;
           }}
-          onDuetBlur={e => {
+          onDuetBlur={(e) => {
             this.scaleBlur.emit(e.detail);
             this.hasFocus = false;
           }}
@@ -272,7 +272,7 @@ export class DatePicker {
           disabled={this.disabled}
           value={this.value}
           // @ts-ignore
-          ref={element => (this.duetInput = element)}
+          ref={(element) => (this.duetInput = element)}
           {...ariaInvalidAttr}
           {...ariaDescribedByAttr}
         ></duet-date-picker>

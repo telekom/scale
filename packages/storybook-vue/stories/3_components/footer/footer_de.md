@@ -3,11 +3,11 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Der Footer schließt alle Telekom Webseiten ab. Nutzer*innen finden im Footer wichtige Informationen, globale Links und Zusatzfunktionen.
+Der Footer schließt alle Telekom Webseiten ab. Nutzer\*innen finden im Footer wichtige Informationen, globale Links und Zusatzfunktionen.
 
 ## Allgemein
 
-Es gibt verschiedene Varianten des Footers. Links zu Datenschutz und Impressum sowie die Kennzeichnung der Deutschen Telekom als Absender sind für alle Varianten verbindlich. 
+Es gibt verschiedene Varianten des Footers. Links zu Datenschutz und Impressum sowie die Kennzeichnung der Deutschen Telekom als Absender sind für alle Varianten verbindlich.
 
 ## Varianten
 

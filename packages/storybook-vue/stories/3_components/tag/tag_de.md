@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer*innen auf markierte und kategorisierte Inhalte.
+Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer\*innen auf markierte und kategorisierte Inhalte.
 
 ## Allgemein
 
@@ -11,14 +11,14 @@ Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statisch
 
 ### Verwende einen Tag, um
 
-* die Aufmerksamkeit der Nutzer*innen auf bestimmte Elemente zu lenken, die sonst möglicherweise übersehen werden,
-* Nutzer*innen die Zuordnung von Inhalten zu erleichtern (beispielsweise in Tabellen) und
-* Nutzer*innen ausgewählte Filter anzuzeigen.
+- die Aufmerksamkeit der Nutzer\*innen auf bestimmte Elemente zu lenken, die sonst möglicherweise übersehen werden,
+- Nutzer\*innen die Zuordnung von Inhalten zu erleichtern (beispielsweise in Tabellen) und
+- Nutzer\*innen ausgewählte Filter anzuzeigen.
 
-### Verwende Tags besser nicht, wenn 
+### Verwende Tags besser nicht, wenn
 
-* sie mit Buttons verwechselt werden könnten oder
-* relevante Inhalte dadurch nicht mehr erkennbar sind (insbesondere, wenn es zu viele Tags gibt).
+- sie mit Buttons verwechselt werden könnten oder
+- relevante Inhalte dadurch nicht mehr erkennbar sind (insbesondere, wenn es zu viele Tags gibt).
 
 ## Varianten
 
@@ -48,7 +48,7 @@ Formuliere das Label eindeutig und kurz.
 
 ### Icon (3)
 
-Per Klick/Tap auf das Icon blenden Nutzer*innen den Tag aus.
+Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
 
 ## Farben
 
@@ -78,6 +78,6 @@ Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße has
 
 ### Best Practices
 
-* Mische keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
-* Entscheide dich für eine Größe.
-* Verwende ein eindeutiges Schlüsselwort für das Label.
+- Mische keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
+- Entscheide dich für eine Größe.
+- Verwende ein eindeutiges Schlüsselwort für das Label.
