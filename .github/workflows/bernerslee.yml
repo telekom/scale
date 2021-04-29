@@ -25,8 +25,14 @@ jobs:
         run: yarn
 
       - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
+
+      - name: Generate files
+        if: steps.yarn-cache.outputs.cache-hit == 'true'
+        run: |
+          lerna run generate
 
       - name: Build Components
         run: |
@@ -49,3 +55,10 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Upload storybook artifact
+        uses: actions/upload-artifact@v2
+        if: success()
+        with:
+          name: storybook
+          path: packages/storybook-vue/storybook-static/deploy.zip
