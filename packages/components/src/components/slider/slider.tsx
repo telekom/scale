@@ -146,6 +146,10 @@ export class Slider {
   }
 
   setPosition = () => {
+    if (!this.value) {
+      this.position = 0;
+      return;
+    }
     const clampedValue = this.clamp(this.value);
     // https://stackoverflow.com/a/25835683
     this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
