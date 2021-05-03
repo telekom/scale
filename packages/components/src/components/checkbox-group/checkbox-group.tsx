@@ -20,30 +20,50 @@ export class CheckboxGroup {
   @Element() hostElement: HTMLElement;
   @Listen('scaleChange')
   scaleChangeHandler(event: CustomEvent<any>) {
-    console.log('Received the scaleChange event: ', event.detail);
-    this.setCheckboxes(event);
+    // console.log('Received the scaleChange event: ', event.detail);
+    this.handleCheckboxChange(event);
   }
 
-  connectedCallback() {
-    this.setCheckboxes = this.setCheckboxes.bind(this);
+  componentDidLoad() {
+    this.handleCheckboxGroupStatus();
   }
 
-  setCheckboxes(event: CustomEvent<any>) {
+  handleCheckboxChange(event: CustomEvent<any>) {
+    this.handleCheckboxGroupStatus(event);
+  }
+
+  handleCheckboxGroupStatus(event?: CustomEvent<any>) {
     const checkboxes = Array.from(
       this.hostElement.shadowRoot.querySelectorAll('scale-checkbox')
     );
     const labelBox = checkboxes[0];
-    const checked = event.detail.checked;
     let countChecked = 0;
     let countUnchecked = 0;
-    if (event.detail.id === 'checkbox1') {
-      labelBox.removeAttribute('indeterminate');
-      checkboxes.forEach((checkbox) => {
-        checkbox.checked = checked;
-      });
-      return;
+    if (event) {
+      if (event.detail.id === 'checkbox1') {
+        const checked = labelBox.checked;
+        console.log('checkbox1 clicked; checked = ', checked);
+        labelBox.removeAttribute('indeterminate');
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = checked;
+          if (checked) {
+            labelBox.setAttribute('checked', 'true');
+          } else {
+            labelBox.removeAttribute('checked');
+          }
+        });
+        return;
+      }
+    } else {
+      if (labelBox.checked) {
+        labelBox.removeAttribute('indeterminate');
+        labelBox.setAttribute('checked', 'true');
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = true;
+        });
+        return;
+      }
     }
-
     for (let i = 1; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         countChecked += 1;
@@ -51,7 +71,6 @@ export class CheckboxGroup {
         countUnchecked += 1;
       }
     }
-
     if (countChecked === checkboxes.length - 1) {
       labelBox.removeAttribute('indeterminate');
       labelBox.checked = true;
@@ -64,7 +83,7 @@ export class CheckboxGroup {
     }
     console.log('indeterminated state');
     labelBox.setAttribute('indeterminate', 'true');
-	labelBox.removeAttribute('checked');
+    labelBox.removeAttribute('checked');
   }
 
   render() {
