@@ -47,7 +47,7 @@
   overflow: hidden;
 }
 
-.spinner  .spinner__circle-background {
+.spinner .spinner__circle-background {
   display: block;
   position: absolute;
   width: var(--size-inner);
