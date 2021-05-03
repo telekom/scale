@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.5",
+  "version": "3.0.0-beta.6",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
@@ -30,7 +30,7 @@
     "build:whitelabel": "WHITELABEL=1 stencil build --docs-readme",
     "build:watch": "stencil build --watch",
     "start": "stencil build --dev --watch --serve --config stencil-dev.config.ts",
-    "dev": "yarn start", 
+    "dev": "yarn start",
     "test": "stencil test --max-workers=2",
     "format": "prettier --write \"*.ts\" \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:fix": "yarn lint:style --fix",
@@ -72,7 +72,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.5",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.6",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1",
     "web-animations-js": "^2.3.2"

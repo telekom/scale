@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.6](https://github.com/telekom/scale/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2021-05-03)
+
+
+### Features
+
+* **footer:** dynamic copyright text ([#318](https://github.com/telekom/scale/issues/318)) ([04d1ad3](https://github.com/telekom/scale/commit/04d1ad3b247159e10a51db88ce56e658b42147ed))
+
+
+
+
+
 # [3.0.0-beta.5](https://github.com/telekom/scale/compare/v3.0.0-beta.4...v3.0.0-beta.5) (2021-04-28)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests
