@@ -1,0 +1,15 @@
+.checkbox-group {
+  display: inline-flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.checkbox-group__container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+}
+
+.checkbox-group__checkbox {
+	margin-top: 0.5rem;
+}

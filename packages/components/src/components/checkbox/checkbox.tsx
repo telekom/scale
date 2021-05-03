@@ -41,6 +41,8 @@ export class Checkbox {
   @Prop() disabled?: boolean;
   /** (optional) Active switch */
   @Prop({ reflect: true }) checked?: boolean = false;
+  /** (optional) indeterminate */
+  @Prop({ reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string | number | null = '';
   /** (optional) Input checkbox id */
@@ -73,7 +75,11 @@ export class Checkbox {
               onChange={(e: any) => {
                 this.checked = e.target.checked;
                 // bubble event through the shadow dom
-                this.scaleChange.emit({ value: this.checked });
+                this.scaleChange.emit({
+                  value: this.checked,
+                  id: e.target.id,
+                  checked: e.target.checked,
+                });
               }}
               value={this.value}
               checked={this.checked}
@@ -84,10 +90,14 @@ export class Checkbox {
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {this.checked && (
+              {this.checked && !this.indeterminate && (
                 <scale-icon-action-success
+                  class="icon"
                   decorative
                 ></scale-icon-action-success>
+              )}
+              {this.indeterminate && (
+                <scale-icon-action-play class="icon"></scale-icon-action-play>
               )}
             </div>
             <span class="checkbox__label">
