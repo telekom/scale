@@ -7,7 +7,9 @@ exports[`TextField should match snapshot 1`] = `
       <h2 aria-level="2" class="collapsible__heading" part="heading">
         <button aria-controls="collapsable-panel-0" aria-expanded="false" class="collapsible__button" id="collapsable-heading-0" part="button">
           <scale-icon-navigation-collapse-down class="collapsible__icon" decorative="" part="icon" size="16"></scale-icon-navigation-collapse-down>
-          <span part="button-text"></span>
+          <span class="collapsible__button-text" part="button-text">
+            <slot name="heading"></slot>
+          </span>
         </button>
       </h2>
       <div aria-labelledby="collapsable-heading-0" class="collapsible__content" hidden="" id="collapsable-panel-0" part="content" role="region">

@@ -9,16 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  h,
-  Prop,
-  Host,
-  Event,
-  State,
-  Element,
-  EventEmitter,
-} from '@stencil/core';
+import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
 
 export interface CollapsibleEventDetail {
@@ -33,19 +24,15 @@ let i = 0;
   shadow: true,
 })
 export class Collapsible {
-  headingElement: HTMLElement;
   headingId: string;
   panelId: string;
 
-  @Element() el: HTMLElement;
-
   /** Set to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
+  /** Default aria-level for heading */
+  @Prop() headingLevel: number = 2;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  /** Default aria-level for heading */
-  @State() level: number = 2;
 
   /** Emitted so parent <scale-accordion> knows about it */
   @Event() scaleExpand: EventEmitter<CollapsibleEventDetail>;
@@ -54,38 +41,6 @@ export class Collapsible {
     const j = i++;
     this.headingId = 'collapsable-heading-' + j;
     this.panelId = 'collapsable-panel-' + j;
-  }
-
-  componentDidLoad() {
-    this.setHeadingFromLightDOM();
-  }
-
-  /**
-   * In this method we:
-   * - query the first element from the light DOM, it should be a heading (e.g. h2)
-   * - take its content and place it into our own heading element
-   * - set aria-level to the level of that provided in the light DOM
-   * - remove the original heading
-   * @see https://inclusive-components.design/collapsible-sections/
-   */
-  setHeadingFromLightDOM() {
-    const lightHeading = this.el.querySelector(':first-child');
-    if (lightHeading == null) {
-      return;
-    }
-    const level = parseInt(lightHeading.tagName.substr(1), 10);
-
-    if (!level) {
-      // tslint:disable-next-line
-      console.warn(
-        'The first element inside each <scale-collapsible> should be a heading of an appropriate level.'
-      );
-    }
-    if (level !== this.level) {
-      this.level = level;
-    }
-    this.headingElement.innerHTML = lightHeading.innerHTML;
-    lightHeading.parentNode.removeChild(lightHeading);
   }
 
   handleClick = () => {
@@ -103,7 +58,7 @@ export class Collapsible {
           part={classNames('base', this.expanded && 'expanded')}
         >
           <h2
-            aria-level={this.level}
+            aria-level={this.headingLevel}
             class="collapsible__heading"
             part="heading"
           >
@@ -121,10 +76,9 @@ export class Collapsible {
                 class="collapsible__icon"
                 part={classNames('icon', this.expanded && 'expanded')}
               />
-              <span
-                ref={(el) => (this.headingElement = el)}
-                part="button-text"
-              />
+              <span class="collapsible__button-text" part="button-text">
+                <slot name="heading"></slot>
+              </span>
             </button>
           </h2>
           <div
