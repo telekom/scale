@@ -16,7 +16,13 @@ export class Loading {
       <Host>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div part="container" class="spinner__container">
-            <div part="circle" class="spinner__circle"></div>
+            <div class="spinner__circle-background"></div>
+            <div part="circle" class="spinner__circle">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
           <div
             part="text"
