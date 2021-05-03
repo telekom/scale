@@ -90,7 +90,7 @@ export class Checkbox {
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {this.checked && !this.indeterminate && (
+              {this.checked && (
                 <scale-icon-action-success
                   class="icon"
                   decorative

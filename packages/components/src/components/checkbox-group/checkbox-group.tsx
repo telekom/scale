@@ -32,31 +32,39 @@ export class CheckboxGroup {
     const checkboxes = Array.from(
       this.hostElement.shadowRoot.querySelectorAll('scale-checkbox')
     );
+    const labelBox = checkboxes[0];
     const checked = event.detail.checked;
     let countChecked = 0;
     let countUnchecked = 0;
     if (event.detail.id === 'checkbox1') {
+      labelBox.removeAttribute('indeterminate');
       checkboxes.forEach((checkbox) => {
         checkbox.checked = checked;
       });
-    } else {
-      for (let i = 1; i < checkboxes.length; i++) {
-        if (checkboxes[i].checked) {
-          countChecked = countChecked + 1;
-        } else {
-          countUnchecked = countUnchecked + 1;
-        }
+      return;
+    }
+
+    for (let i = 1; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        countChecked += 1;
+      } else {
+        countUnchecked += 1;
       }
     }
 
     if (countChecked === checkboxes.length - 1) {
-      checkboxes[0].checked = true;
+      labelBox.removeAttribute('indeterminate');
+      labelBox.checked = true;
       return;
     }
     if (countUnchecked === checkboxes.length - 1) {
-      checkboxes[0].checked = false;
+      labelBox.removeAttribute('indeterminate');
+      labelBox.checked = false;
       return;
     }
+    console.log('indeterminated state');
+    labelBox.setAttribute('indeterminate', 'true');
+	labelBox.removeAttribute('checked');
   }
 
   render() {
@@ -101,9 +109,6 @@ export class CheckboxGroup {
             </div>
           </div>
         </div>
-        {/* <button class="button" onClick={this.setCheckboxes}> 
-          click
-        </button>*/}
       </Host>
     );
   }
