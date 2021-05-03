@@ -32,6 +32,7 @@ export class AppFooter {
   @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
+  @Prop() copyright?: string = '© Deutsche Telekom AG';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -89,7 +90,7 @@ export class AppFooter {
               <div class="footer-branding">
                 <app-logo claim claimLang={this.claimLang}></app-logo>
               </div>
-              <div class="footer-copyright">© Deutsche Telekom GmbH</div>
+              <div class="footer-copyright">{this.copyright}</div>
               <nav aria-label="bottom" class="footer-navigation">
                 {this.footerMenu()}
               </nav>
