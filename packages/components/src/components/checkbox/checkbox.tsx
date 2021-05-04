@@ -92,12 +92,12 @@ export class Checkbox {
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
               {this.checked && (
                 <scale-icon-action-success
-                  class="icon"
+                  class="checkbox__icon"
                   decorative
                 ></scale-icon-action-success>
               )}
               {this.indeterminate && (
-                <scale-icon-action-play class="icon"></scale-icon-action-play>
+                <scale-icon-action-play class="checkbox__icon"></scale-icon-action-play>
               )}
             </div>
             <span class="checkbox__label">
@@ -122,8 +122,9 @@ export class Checkbox {
   getCssClassMap() {
     return classNames(
       'checkbox',
-      this.checked && `checkbox--checked`,
-      this.disabled && `checkbox--disabled`,
+      this.checked ?  `checkbox--checked` : `checkbox--not-checked`,
+      this.indeterminate && `checkbox--indeterminate`,
+      this.disabled ? `checkbox--disabled` : `checkbox--enabled`,
       this.status && `checkbox--status-${this.status}`
     );
   }
