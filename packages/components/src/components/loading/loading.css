@@ -4,6 +4,8 @@
   --size-inner-large: 40px;
   --border-size-small: 3px;
   --border-size-large: 4px;
+  --line-height-size-small: 24px;
+  --line-height-size-large: 48px;
   --font-weight: var(--scl-font-weight-bold);
   --font-size: var(--scl-font-size-16);
   --spacing: var(--scl-spacing-8);
@@ -37,17 +39,19 @@
   padding-top: var(--spacing);
 }
 
-.spinner.spinner--alignment-horizontal .spinner__text {
+.spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
   display: flex;
   align-self: center;
   padding-left: var(--spacing);
+  line-height: var(--line-height-size-small);
+  padding-bottom: 2px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
   display: flex;
   align-self: center;
   padding-left: 35px;
-  line-height: 48px;
+  line-height: var(--line-height-size-large);
 }
 
 .spinner.spinner--text-hidden .spinner__text {
@@ -109,26 +113,23 @@
   border-color: var(--color-circle-primary) transparent transparent transparent;
 }
 
-.spinner--size-small .spinner__circle > div {
+.spinner__circle > div {
   display: block;
   position: absolute;
+  border-radius: 50%;
+  animation: rotation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner--size-small .spinner__circle > div {
   width: var(--size-inner-small);
   height: var(--size-inner-small);
   border: var(--border-size-small) solid var(--color-circle-white);
-  border-radius: 50%;
-  animation: rotation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--color-circle-white) transparent transparent transparent;
 }
 
 .spinner--size-large .spinner__circle > div {
-  display: block;
-  position: absolute;
   width: var(--size-inner-large);
   height: var(--size-inner-large);
   border: var(--border-size-large) solid var(--color-circle-white);
-  border-radius: 50%;
-  animation: rotation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--color-circle-white) transparent transparent transparent;
 }
 
 .spinner__circle > div:nth-child(1) {
