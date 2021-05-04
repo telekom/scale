@@ -97,7 +97,6 @@ export class CheckboxGroup {
               label="checkbox"
               name="nameOfCheckbox"
               helper-text="helperText"
-              checked
             ></scale-checkbox>
           </div>
           <div class="checkbox-group__container">
@@ -113,14 +112,22 @@ export class CheckboxGroup {
               <scale-checkbox
                 input-id="checkbox3"
                 value="3"
-                label="checkbox"
                 name="nameOfCheckbox"
-              ></scale-checkbox>
+				checked
+              >Checkbox Slot</scale-checkbox>
             </div>
             <div class="checkbox-group__checkbox">
               <scale-checkbox
                 input-id="checkbox4"
                 value="4"
+                label="checkbox"
+                name="nameOfCheckbox"
+              ></scale-checkbox>
+            </div>
+			<div class="checkbox-group__checkbox">
+              <scale-checkbox
+                input-id="checkbox5"
+                value="5"
                 label="checkbox"
                 name="nameOfCheckbox"
                 checked
