@@ -20,7 +20,6 @@ export class CheckboxGroup {
   @Element() hostElement: HTMLElement;
   @Listen('scaleChange')
   scaleChangeHandler(event: CustomEvent<any>) {
-    // console.log('Received the scaleChange event: ', event.detail);
     this.handleCheckboxChange(event);
   }
 
@@ -34,15 +33,14 @@ export class CheckboxGroup {
 
   handleCheckboxGroupStatus(event?: CustomEvent<any>) {
     const checkboxes = Array.from(
-      this.hostElement.shadowRoot.querySelectorAll('scale-checkbox')
+      this.hostElement.querySelectorAll('scale-checkbox')
     );
     const labelBox = checkboxes[0];
     let countChecked = 0;
     let countUnchecked = 0;
     if (event) {
-      if (event.detail.id === 'checkbox1') {
+      if (event.detail.id === 'input-checkbox-0') {
         const checked = labelBox.checked;
-        console.log('checkbox1 clicked; checked = ', checked);
         labelBox.removeAttribute('indeterminate');
         checkboxes.forEach((checkbox) => {
           checkbox.checked = checked;
@@ -81,7 +79,6 @@ export class CheckboxGroup {
       labelBox.checked = false;
       return;
     }
-    console.log('indeterminated state');
     labelBox.setAttribute('indeterminate', 'true');
     labelBox.removeAttribute('checked');
   }
@@ -91,48 +88,10 @@ export class CheckboxGroup {
       <Host>
         <div class="checkbox-group">
           <div class="checkbox-group__label">
-            <scale-checkbox
-              input-id="checkbox1"
-              value="1"
-              label="checkbox"
-              name="nameOfCheckbox"
-              helper-text="helperText"
-            ></scale-checkbox>
+            <slot name="checkbox-header" />
           </div>
           <div class="checkbox-group__container">
-            <div class="checkbox-group__checkbox">
-              <scale-checkbox
-                input-id="checkbox2"
-                value="2"
-                label="checkbox"
-                name="nameOfCheckbox"
-              ></scale-checkbox>
-            </div>
-            <div class="checkbox-group__checkbox">
-              <scale-checkbox
-                input-id="checkbox3"
-                value="3"
-                name="nameOfCheckbox"
-				checked
-              >Checkbox Slot</scale-checkbox>
-            </div>
-            <div class="checkbox-group__checkbox">
-              <scale-checkbox
-                input-id="checkbox4"
-                value="4"
-                label="checkbox"
-                name="nameOfCheckbox"
-              ></scale-checkbox>
-            </div>
-			<div class="checkbox-group__checkbox">
-              <scale-checkbox
-                input-id="checkbox5"
-                value="5"
-                label="checkbox"
-                name="nameOfCheckbox"
-                checked
-              ></scale-checkbox>
-            </div>
+            <slot name="checkbox-list" />
           </div>
         </div>
       </Host>
