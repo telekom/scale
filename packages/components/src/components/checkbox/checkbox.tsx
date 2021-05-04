@@ -122,7 +122,7 @@ export class Checkbox {
   getCssClassMap() {
     return classNames(
       'checkbox',
-      this.checked ?  `checkbox--checked` : `checkbox--not-checked`,
+      this.checked ? `checkbox--checked` : `checkbox--not-checked`,
       this.indeterminate && `checkbox--indeterminate`,
       this.disabled ? `checkbox--disabled` : `checkbox--enabled`,
       this.status && `checkbox--status-${this.status}`
