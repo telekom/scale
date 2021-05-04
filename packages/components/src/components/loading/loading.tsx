@@ -10,6 +10,7 @@ export class Loading {
   @Prop() variant: 'white' | 'primary' = 'primary';
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string = 'Loading...';
+  @Prop() size: 'small' | 'large' = 'small';
 
   render() {
     return (
@@ -53,6 +54,7 @@ export class Loading {
       name,
       this.alignment && `${prefix}alignment-${this.alignment}`,
       this.variant && `${prefix}variant-${this.variant}`,
+      this.size && `${prefix}size-${this.size}`,
       !this.text && `${prefix}text-hidden`
     );
   }
