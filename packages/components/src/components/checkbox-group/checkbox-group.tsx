@@ -36,10 +36,11 @@ export class CheckboxGroup {
       this.hostElement.querySelectorAll('scale-checkbox')
     );
     const labelBox = checkboxes[0];
+	const labelBoxInputId = labelBox.inputId;
     let countChecked = 0;
     let countUnchecked = 0;
     if (event) {
-      if (event.detail.id === 'input-checkbox-0') {
+      if (event.detail.id === labelBoxInputId) {
         const checked = labelBox.checked;
         labelBox.removeAttribute('indeterminate');
         checkboxes.forEach((checkbox) => {
