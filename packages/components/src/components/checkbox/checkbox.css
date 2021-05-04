@@ -122,6 +122,11 @@ scale-checkbox {
   .checkbox__control {
   background: var(--color-disabled);
 }
+.checkbox--disabled.checkbox--indeterminate
+  .checkbox__control-wrapper
+  .checkbox__control {
+  background: var(--color-disabled);
+}
 .checkbox--disabled.checkbox--checked
   .checkbox__control-wrapper 
   .checkbox__icon {
@@ -139,7 +144,26 @@ scale-checkbox {
   border-color: var(--color-primary-hover);
   background: var(--color-primary-hover);
 }
+.checkbox--enabled.checkbox--indeterminate
+  input:hover
+  ~ .checkbox__control-wrapper
+  .checkbox__control {
+  box-shadow: none;
+  border-color: var(--color-primary-hover);
+  background: var(--color-primary-hover);
+}
 .checkbox--checked.checkbox--eanabled
+  input:active
+  ~ .checkbox__control-wrapper
+  .checkbox__control/* ,
+.checkbox
+  input:checked:not([disabled])
+  ~ .checkbox__control-wrapper:active
+  .checkbox__control  */{
+  border-color: var(--color-primary-active);
+  background: var(--color-primary-active);
+}
+.checkbox--indeterminate.checkbox--eanabled
   input:active
   ~ .checkbox__control-wrapper
   .checkbox__control/* ,
@@ -162,6 +186,12 @@ scale-checkbox {
 }
 
 .checkbox--enabled.checkbox--checked
+.checkbox__control-wrapper
+.checkbox__control {
+  border: var(--scl-spacing-1) solid var(--color-primary);
+  background: var(--color-primary);
+}
+.checkbox--enabled.checkbox--indeterminate
 .checkbox__control-wrapper
 .checkbox__control {
   border: var(--scl-spacing-1) solid var(--color-primary);
