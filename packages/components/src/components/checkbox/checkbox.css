@@ -128,7 +128,7 @@ scale-checkbox {
   background: var(--color-disabled);
 }
 .checkbox--disabled.checkbox--checked
-  .checkbox__control-wrapper 
+  .checkbox__control-wrapper
   .checkbox__icon {
   color: var(--color-icon-checked-disabled);
 }
@@ -139,7 +139,7 @@ scale-checkbox {
 .checkbox
   input:checked:not([disabled])
   ~ .checkbox__control-wrapper:hover
-  .checkbox__control  */{
+  .checkbox__control  */ {
   box-shadow: none;
   border-color: var(--color-primary-hover);
   background: var(--color-primary-hover);
@@ -159,7 +159,7 @@ scale-checkbox {
 .checkbox
   input:checked:not([disabled])
   ~ .checkbox__control-wrapper:active
-  .checkbox__control  */{
+  .checkbox__control  */ {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
@@ -170,7 +170,7 @@ scale-checkbox {
 .checkbox
   input:checked:not([disabled])
   ~ .checkbox__control-wrapper:active
-  .checkbox__control  */{
+  .checkbox__control  */ {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
@@ -186,14 +186,14 @@ scale-checkbox {
 }
 
 .checkbox--enabled.checkbox--checked
-.checkbox__control-wrapper
-.checkbox__control {
+  .checkbox__control-wrapper
+  .checkbox__control {
   border: var(--scl-spacing-1) solid var(--color-primary);
   background: var(--color-primary);
 }
 .checkbox--enabled.checkbox--indeterminate
-.checkbox__control-wrapper
-.checkbox__control {
+  .checkbox__control-wrapper
+  .checkbox__control {
   border: var(--scl-spacing-1) solid var(--color-primary);
   background: var(--color-primary);
 }
@@ -221,7 +221,7 @@ scale-checkbox {
 .checkbox
   input:not([disabled])
   ~ .checkbox__control-wrapper:hover
-  ~ .checkbox__label  */{
+  ~ .checkbox__label  */ {
   color: var(--color-primary-hover);
 }
 .checkbox.checkbox--enabled
@@ -231,7 +231,7 @@ scale-checkbox {
 .checkbox
   input:not([disabled])
   ~ .checkbox__control-wrapper:active
-  .checkbox__control  */{
+  .checkbox__control  */ {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }

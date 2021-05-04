@@ -1,7 +1,6 @@
 .checkbox-group {
   display: inline-flex;
   flex-direction: column;
-  width: 300px;
 }
 
 .checkbox-group__container {
