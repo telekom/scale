@@ -8,19 +8,19 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+import { Color, Shadow } from '../factories.js';
 
-import { Color, Shadow } from './factories.js';
-
-export const NAMESPACE_PREFIX = 'scl';
-export const SPACING = 'spacing';
-export const TYPOGRAPHY = 'font';
-export const TYPE_VARIANT = 'font-variant';
-export const COLOR = 'color';
-export const SHADOW = 'shadow';
-export const RADIUS = 'radius';
-export const OPACITY = 'opacity';
-export const MOTION = 'motion';
-export const Z_INDEX = 'z-index';
+import {
+  SPACING,
+  TYPOGRAPHY,
+  TYPE_VARIANT,
+  COLOR,
+  SHADOW,
+  RADIUS,
+  OPACITY,
+  MOTION,
+  Z_INDEX,
+} from '../tokens.js';
 
 const tokens = {};
 
@@ -45,7 +45,7 @@ tokens[SPACING] = {
 
 /* TYPOGRAPHY */
 const family = {
-  sans: 'sans-serif',
+  sans: 'TeleNeoWeb, sans-serif',
   mono: 'monospace',
 };
 
@@ -161,7 +161,7 @@ tokens[TYPE_VARIANT] = {
 /* COLOR */
 
 const palette = {
-  primary: Color('#5300ff'),
+  primary: Color('#E20074'),
   black: Color('#000000'),
   white: Color('#FFFFFF'),
   grey0: Color('#F2F2F2'),
@@ -301,8 +301,8 @@ const palette = {
 tokens[COLOR] = {
   DEFAULT: {
     ...palette,
-    primaryHover: Color('#7633ff'),
-    primaryActive: Color('#5e29cc'),
+    primaryHover: Color('#F90984'),
+    primaryActive: Color('#CB0068'),
     focus: palette.blue50,
   },
   text: {
