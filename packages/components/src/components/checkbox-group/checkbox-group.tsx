@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Listen, Element } from '@stencil/core';
+import { Component, h, Host, Listen, Element, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'scale-checkbox-group',
@@ -19,50 +19,83 @@ import { Component, h, Host, Listen, Element } from '@stencil/core';
 export class CheckboxGroup {
   @Element() hostElement: HTMLElement;
   @Listen('scaleChange')
-  scaleChangeHandler(event: CustomEvent<any>) {
-    this.handleCheckboxChange(event);
+  scaleChangeHandler() {
+	// console.log('this.masterChangedListener', this.masterChanged)
+	this.masterChanged = false;
+	this.setGroupStatusState();
   }
+
+  @State() groupStatus = [];
+  @Watch('groupStatus')
+  watchHandler(newValue: boolean, oldValue: boolean) {
+	  if (newValue != oldValue) {
+		// console.log('The old value of groupStatus is: ', oldValue);
+		// console.log('The new value of groupStatus is: ', newValue);
+		if ( oldValue[0] && newValue[0].checked !== oldValue[0].checked) {
+			// console.log('new vs old: ', newValue[0], oldValue[0]);
+			this.masterChanged = true;
+			// console.log('masterChanged: ', this.masterChanged);
+		}
+		if (this.callFuncOnStateChange) {
+			this.handleCheckboxGroupStatus();
+		}
+		this.callFuncOnStateChange = true;
+	  }
+  }
+
+  masterChanged = false;
+  callFuncOnStateChange = true;
 
   componentDidLoad() {
-    this.handleCheckboxGroupStatus();
+	this.setGroupStatusState()
+	this.handleCheckboxGroupStatus();
   }
 
-  handleCheckboxChange(event: CustomEvent<any>) {
-    this.handleCheckboxGroupStatus(event);
+  setGroupStatusState() {
+	// console.log('setGroupStatusState() started');
+	const newState = [];
+	const checkboxes = Array.from(
+		this.hostElement.querySelectorAll('scale-checkbox')
+	  );
+	  for (let i = 0; i < checkboxes.length; i++) {
+		newState[i] = {
+			id: checkboxes[i].inputId,
+			checked: checkboxes[i].checked,
+			disabled: checkboxes[i].disabled
+		}
+	  }
+	  this.groupStatus = newState;
   }
 
-  handleCheckboxGroupStatus(event?: CustomEvent<any>) {
+  handleCheckboxGroupStatus() {
+	// console.log('handleCheckboxGroupStatus() started');
     const checkboxes = Array.from(
       this.hostElement.querySelectorAll('scale-checkbox')
     );
-    const labelBox = checkboxes[0];
-	const labelBoxInputId = labelBox.inputId;
+    const master = checkboxes[0];
     let countChecked = 0;
     let countUnchecked = 0;
-    if (event) {
-      if (event.detail.id === labelBoxInputId) {
-        const checked = labelBox.checked;
-        labelBox.removeAttribute('indeterminate');
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked = checked;
-          if (checked) {
-            labelBox.setAttribute('checked', 'true');
-          } else {
-            labelBox.removeAttribute('checked');
-          }
-        });
-        return;
-      }
-    } else {
-      if (labelBox.checked) {
-        labelBox.removeAttribute('indeterminate');
-        labelBox.setAttribute('checked', 'true');
-        checkboxes.forEach((checkbox) => {
-          checkbox.checked = true;
-        });
-        return;
-      }
-    }
+	if (this.masterChanged) {
+		// console.log('this.masterChanged', this.masterChanged)
+		master.removeAttribute('indeterminate');
+		if (master.checked) {
+			master.setAttribute('checked', 'true');
+			checkboxes.forEach((checkbox) => {
+			  checkbox.checked = true;
+			});
+		  } else {
+			master.removeAttribute('checked');
+			checkboxes.forEach((checkbox) => {
+			  checkbox.checked = false;
+			});
+		  }
+		  this.callFuncOnStateChange = false;
+		  this.masterChanged = false;
+		  this.setGroupStatusState();
+		  return;
+	}
+      
+    
     for (let i = 1; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         countChecked += 1;
@@ -70,18 +103,30 @@ export class CheckboxGroup {
         countUnchecked += 1;
       }
     }
+	// console.log('countChecked', countChecked);
+	// console.log('countUnchecked', countUnchecked);
+
     if (countChecked === checkboxes.length - 1) {
-      labelBox.removeAttribute('indeterminate');
-      labelBox.checked = true;
+		master.removeAttribute('indeterminate');
+		master.checked = true;
+		this.callFuncOnStateChange = false;
+		this.setGroupStatusState();
+		// console.log('all checked', this.groupStatus);
       return;
     }
     if (countUnchecked === checkboxes.length - 1) {
-      labelBox.removeAttribute('indeterminate');
-      labelBox.checked = false;
+		master.removeAttribute('indeterminate');
+		master.checked = false;
+		this.callFuncOnStateChange = false;
+		this.setGroupStatusState();
+		// console.log('all not checked', this.groupStatus);
       return;
     }
-    labelBox.setAttribute('indeterminate', 'true');
-    labelBox.removeAttribute('checked');
+    master.setAttribute('indeterminate', 'true');
+    master.removeAttribute('checked');
+	this.callFuncOnStateChange = false;
+	this.setGroupStatusState();
+	// console.log('not all checked', this.groupStatus);
   }
 
   render() {

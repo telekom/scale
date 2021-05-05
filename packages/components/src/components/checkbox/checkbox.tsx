@@ -75,11 +75,7 @@ export class Checkbox {
               onChange={(e: any) => {
                 this.checked = e.target.checked;
                 // bubble event through the shadow dom
-                this.scaleChange.emit({
-                  value: this.checked,
-                  id: e.target.id,
-                  checked: e.target.checked,
-                });
+                this.scaleChange.emit({ value: this.checked });
               }}
               value={this.value}
               checked={this.checked}
