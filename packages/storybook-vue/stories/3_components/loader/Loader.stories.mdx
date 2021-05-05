@@ -12,12 +12,30 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-loader
-       :variant="variant"
-    :alignment="alignment"
-    :text="text"
-    :size="size"
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
     >
     </scale-loader>
+    `,
+});
+export const BlackTemplate = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+  <div style="background-color: black; padding: 10px">
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    </div>
     `,
 });
 
@@ -33,11 +51,28 @@ export const Template = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
-## Large Size & Text
+## Small Size & Text Magenta
 
 <Canvas withSource="none">
   <Story
-    name="White"
+    name="Small Text"
+    args={{
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo text="Loading..."></scale-logo>
+```
+
+## Large Size & Text Magenta
+
+<Canvas withSource="none">
+  <Story
+    name="Large Text"
     args={{
       size: 'large',
       text: 'Loading...',
@@ -49,4 +84,60 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-logo size="large" text="Loading..."></scale-logo>
+```
+
+## Small Size White
+
+<Canvas withSource="none">
+  <Story
+    name="Small White"
+    args={{
+      size: 'small',
+      variant: 'white',
+    }}
+  >
+    {BlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="small" variant="white"></scale-logo>
+```
+
+## Small Size & Text White
+
+<Canvas withSource="none">
+  <Story
+    name="Small Text White"
+    args={{
+      size: 'small',
+      text: 'Loading...',
+      variant: 'white',
+    }}
+  >
+    {BlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="small" text="Loading..." variant="white"></scale-logo>
+```
+
+## Large Size & Text White
+
+<Canvas withSource="none">
+  <Story
+    name="Large Text White"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+      variant: 'white',
+    }}
+  >
+    {BlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" text="Loading..." variant="white"></scale-logo>
 ```
