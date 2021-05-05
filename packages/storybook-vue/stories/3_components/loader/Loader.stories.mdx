@@ -1,0 +1,52 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import ScaleLoader from './ScaleLoader.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta title="Beta Components/Loader" component={ScaleLoader} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+    <scale-loader
+       :variant="variant"
+    :alignment="alignment"
+    :text="text"
+    :size="size"
+    >
+    </scale-loader>
+    `,
+});
+
+# Loader
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+## Large Size & Text
+
+<Canvas withSource="none">
+  <Story
+    name="White"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" text="Loading..."></scale-logo>
+```
