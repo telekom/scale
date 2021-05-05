@@ -29,12 +29,12 @@ export class CheckboxGroup {
   @Watch('groupStatus')
   watchHandler(newValue: boolean, oldValue: boolean) {
 	  if (newValue != oldValue) {
-		// console.log('The old value of groupStatus is: ', oldValue);
-		// console.log('The new value of groupStatus is: ', newValue);
+		console.log('The old value of groupStatus is: ', oldValue);
+		console.log('The new value of groupStatus is: ', newValue);
 		if ( oldValue[0] && newValue[0].checked !== oldValue[0].checked) {
-			// console.log('new vs old: ', newValue[0], oldValue[0]);
+			console.log('new vs old: ', newValue[0], oldValue[0]);
 			this.masterChanged = true;
-			// console.log('masterChanged: ', this.masterChanged);
+			console.log('masterChanged: ', this.masterChanged);
 		}
 		if (this.callFuncOnStateChange) {
 			this.handleCheckboxGroupStatus();
@@ -45,10 +45,12 @@ export class CheckboxGroup {
 
   masterChanged = false;
   callFuncOnStateChange = true;
+  initialLoad = false;
 
   componentDidLoad() {
+	this.initialLoad = true;
 	this.setGroupStatusState()
-	this.handleCheckboxGroupStatus();
+	//this.handleCheckboxGroupStatus();
   }
 
   setGroupStatusState() {
@@ -61,7 +63,7 @@ export class CheckboxGroup {
 		newState[i] = {
 			id: checkboxes[i].inputId,
 			checked: checkboxes[i].checked,
-			disabled: checkboxes[i].disabled
+			disabled: checkboxes[i].disabled ?  checkboxes[i].disabled : false
 		}
 	  }
 	  this.groupStatus = newState;
@@ -75,23 +77,38 @@ export class CheckboxGroup {
     const master = checkboxes[0];
     let countChecked = 0;
     let countUnchecked = 0;
-	if (this.masterChanged) {
+    let countEnabled = 0;
+	if (this.masterChanged || this.initialLoad) {
 		// console.log('this.masterChanged', this.masterChanged)
 		master.removeAttribute('indeterminate');
 		if (master.checked) {
-			master.setAttribute('checked', 'true');
+			// master.setAttribute('checked', 'true');
 			checkboxes.forEach((checkbox) => {
-			  checkbox.checked = true;
+				if (!checkbox.disabled) {
+					checkbox.checked = true;
+					countEnabled += 1;
+				}
 			});
+			if (countEnabled < checkboxes.length) {
+				master.setAttribute('indeterminate', 'true');
+				master.removeAttribute('checked');
+			}
 		  } else {
 			master.removeAttribute('checked');
 			checkboxes.forEach((checkbox) => {
 			  checkbox.checked = false;
 			});
 		  }
+		  if (master.disabled) {
+			checkboxes.forEach((checkbox) => {
+			  checkbox.disabled = true;
+			});
+		  }
 		  this.callFuncOnStateChange = false;
 		  this.masterChanged = false;
+		  this.initialLoad = false;
 		  this.setGroupStatusState();
+		  countEnabled = 0;
 		  return;
 	}
       
@@ -127,6 +144,14 @@ export class CheckboxGroup {
 	this.callFuncOnStateChange = false;
 	this.setGroupStatusState();
 	// console.log('not all checked', this.groupStatus);
+  }
+
+  change() {
+	const checkboxes = Array.from(
+		this.hostElement.querySelectorAll('scale-checkbox')
+	  );
+	  const master = checkboxes[0];
+	  master.disabled = !master.disabled;
   }
 
   render() {
