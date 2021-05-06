@@ -20,14 +20,52 @@ export const Template = (args, { argTypes }) => ({
     </scale-loader>
     `,
 });
-export const BlackTemplate = (args, { argTypes }) => ({
+export const LargeBlackTemplate = (args, { argTypes }) => ({
   components: { ScaleLoader },
   props: {
     label: String,
     ...ScaleLoader.props,
   },
   template: `
-  <div style="background-color: black; padding: 10px">
+  <div style="background-color: black; height:52px; padding:5px">
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    </div>
+    `,
+});
+
+export const LargeVerticalBlackTemplate = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+  <div style="background-color: black; height:70px; padding:5px">
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    </div>
+    `,
+});
+
+export const SmallBlackTemplate = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+  <div style="background-color: black; padding:5px">
     <scale-loader
        :variant='variant'
     :alignment='alignment'
@@ -51,11 +89,11 @@ export const BlackTemplate = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
-## Small Size & Text Magenta
+## Small Size & Horizontal Text (Magenta)
 
 <Canvas withSource="none">
   <Story
-    name="Small Text"
+    name="Small Magenta (horizontal)"
     args={{
       text: 'Loading...',
     }}
@@ -68,11 +106,29 @@ export const BlackTemplate = (args, { argTypes }) => ({
 <scale-logo text="Loading..."></scale-logo>
 ```
 
-## Large Size & Text Magenta
+## Small Size & Vertical Text (Magenta)
 
 <Canvas withSource="none">
   <Story
-    name="Large Text"
+    name="Small Magenta (vertical)"
+    args={{
+      text: 'Loading...',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo text="Loading..." alignment="vertical"></scale-logo>
+```
+
+## Large Size & Horizontal Text (Magenta)
+
+<Canvas withSource="none">
+  <Story
+    name="Large Magenta (horizontal)"
     args={{
       size: 'large',
       text: 'Loading...',
@@ -86,7 +142,26 @@ export const BlackTemplate = (args, { argTypes }) => ({
 <scale-logo size="large" text="Loading..."></scale-logo>
 ```
 
-## Small Size White
+## Large Size & Vertical Text (Magenta)
+
+<Canvas withSource="none">
+  <Story
+    name="Large Magenta (vertical)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" text="Loading..." alignment="vertical"></scale-logo>
+```
+
+## Small Size (White)
 
 <Canvas withSource="none">
   <Story
@@ -96,7 +171,7 @@ export const BlackTemplate = (args, { argTypes }) => ({
       variant: 'white',
     }}
   >
-    {BlackTemplate.bind({})}
+    {SmallBlackTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -104,18 +179,18 @@ export const BlackTemplate = (args, { argTypes }) => ({
 <scale-logo size="small" variant="white"></scale-logo>
 ```
 
-## Small Size & Text White
+## Small Size & Horizontal Text (White)
 
 <Canvas withSource="none">
   <Story
-    name="Small Text White"
+    name="Small White (horizontal)"
     args={{
       size: 'small',
       text: 'Loading...',
       variant: 'white',
     }}
   >
-    {BlackTemplate.bind({})}
+    {SmallBlackTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -123,21 +198,89 @@ export const BlackTemplate = (args, { argTypes }) => ({
 <scale-logo size="small" text="Loading..." variant="white"></scale-logo>
 ```
 
-## Large Size & Text White
+## Small Size & Vertical Text (White)
 
 <Canvas withSource="none">
   <Story
-    name="Large Text White"
+    name="Small White (vertical)"
+    args={{
+      size: 'small',
+      text: 'Loading...',
+      variant: 'white',
+      alignment: 'vertical',
+    }}
+  >
+    {SmallBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo
+  size="small"
+  text="Loading..."
+  variant="white"
+  alignment="vertical"
+></scale-logo>
+```
+
+## Large Size (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White"
+    args={{
+      size: 'large',
+      variant: 'white',
+    }}
+  >
+    {LargeBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" variant="white"></scale-logo>
+```
+
+## Large Size & Horizontal Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White (horizontal)"
     args={{
       size: 'large',
       text: 'Loading...',
       variant: 'white',
     }}
   >
-    {BlackTemplate.bind({})}
+    {LargeBlackTemplate.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-logo size="large" text="Loading..." variant="white"></scale-logo>
+```
+
+## Large Size & Vertical Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White (vertical)"
+    args={{
+      size: 'large',
+      variant: 'white',
+      alignment: 'vertical',
+      text: 'Loading...',
+    }}
+  >
+    {LargeVerticalBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo
+  size="large"
+  variant="white"
+  alignment="vertical"
+  text="Loading..."
+></scale-logo>
 ```
