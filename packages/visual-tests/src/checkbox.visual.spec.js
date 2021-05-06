@@ -4,6 +4,7 @@ describe('Checkbox', () => {
     ['standard-disabled'],
     ['selected'],
     ['selected-disabled'],
+    ['helper-text'],
     ['error'],
     ['custom-label-slot'],
   ])('%p', async (variant) => {

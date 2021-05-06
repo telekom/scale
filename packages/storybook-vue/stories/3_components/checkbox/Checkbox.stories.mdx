@@ -158,6 +158,24 @@ scale-checkbox {
 <scale-checkbox checked disabled @scaleChange="handleChange" label="Selected Disabled"></scale-checkbox>
 ```
 
+## Helper Text
+
+<Canvas withSource="none">
+    <Story
+        name="Helper Text"
+        args={{
+            label: "Helper Text",
+            helperText: "Make sure to check this"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-checkbox label="Helper Text" helper-text="Make sure to check this"></scale-checkbox>
+```
+
 
 ## Error
 
