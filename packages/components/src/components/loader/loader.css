@@ -87,7 +87,7 @@
   width: var(--size-outer);
 }
 
-.spinner.spinner--variant-magenta.spinner--size-small
+.spinner.spinner--variant-primary.spinner--size-small
   .spinner__circle-background {
   border: var(--border-size-small) solid var(--color-circle-primary-inner);
   border-color: var(--color-circle-primary-inner);
@@ -98,7 +98,7 @@
   border-color: var(--color-circle-white-inner);
 }
 
-.spinner.spinner--variant-magenta.spinner--size-large
+.spinner.spinner--variant-primary.spinner--size-large
   .spinner__circle-background {
   border: var(--border-size-large) solid var(--color-circle-primary-inner);
   border-color: var(--color-circle-primary-inner);
@@ -113,7 +113,7 @@
   border-color: var(--color-circle-white) transparent transparent transparent;
 }
 
-.spinner.spinner--variant-magenta .spinner__circle > div {
+.spinner.spinner--variant-primary .spinner__circle > div {
   border-color: var(--color-circle-primary) transparent transparent transparent;
 }
 
