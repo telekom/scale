@@ -13,7 +13,7 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   props: {
-    variant: { type: 'white' | 'magenta', default: 'magenta' },
+    variant: { type: 'white' | 'primary', default: 'primary' },
     alignment: {
       type: 'horizontal' | 'vertical',
       default: 'horizontal',

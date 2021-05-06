@@ -7,7 +7,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Loader {
-  @Prop() variant: 'white' | 'magenta' = 'magenta';
+  @Prop() variant: 'white' | 'primary' = 'primary';
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string;
   @Prop() size: 'small' | 'large' = 'small';
