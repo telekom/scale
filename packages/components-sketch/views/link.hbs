@@ -65,23 +65,43 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
     <div class="agent-states--grid" data-category="Not Visited">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
-            <scale-link data-sketch-key="link-10" icon="{{>icon}}" href="#">Link Text</scale-link>
+            <scale-link data-sketch-key="link-10" data-has-icon="true" href="#">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <scale-link data-sketch-key="link-11" icon="{{>icon}}" href="#" data-sketch-state="hover">Link Text</scale-link>
+            <scale-link data-sketch-key="link-11" data-has-icon="true" href="#" data-sketch-state="hover">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <scale-link data-sketch-key="link-12" icon="{{>icon}}" href="#" data-sketch-state="focus">Link Text</scale-link>
+            <scale-link data-sketch-key="link-12" data-has-icon="true" href="#" data-sketch-state="focus">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:active/:selected</p>
-            <scale-link data-sketch-key="link-13" icon="{{>icon}}" href="#" data-sketch-state="active">Link Text</scale-link>
+            <scale-link data-sketch-key="link-13" data-has-icon="true" href="#" data-sketch-state="active">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <scale-link data-sketch-key="link-14" icon="{{>icon}}" href="#" disabled="true">Link Text</scale-link>
+            <scale-link data-sketch-key="link-14" data-has-icon="true" href="#" disabled="true">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
     </div>
 
@@ -89,23 +109,43 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
     <div class="agent-states--grid" data-category="Visited">
         <div class="agent-states--item">
             <p class="agent-states--label">:enabled</p>
-            <scale-link data-sketch-key="link-15" icon="{{>icon}}" href="/link">Link Text</scale-link>
+            <scale-link data-sketch-key="link-15" data-has-icon="true" href="/link">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:hover</p>
-            <scale-link data-sketch-key="link-16" icon="{{>icon}}" href="/link" data-sketch-state="hover">Link Text</scale-link>
+            <scale-link data-sketch-key="link-16" data-has-icon="true" href="/link" data-sketch-state="hover">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:focus</p>
-            <scale-link data-sketch-key="link-17" icon="{{>icon}}" href="/link" data-sketch-state="focus">Link Text</scale-link>
+            <scale-link data-sketch-key="link-17" data-has-icon="true" href="/link" data-sketch-state="focus">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:active/:selected</p>
-            <scale-link data-sketch-key="link-18" icon="{{>icon}}" href="/link" data-sketch-state="active">Link Text</scale-link>
+            <scale-link data-sketch-key="link-18" data-has-icon="true" href="/link" data-sketch-state="active">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
         <div class="agent-states--item">
             <p class="agent-states--label">:disabled</p>
-            <scale-link data-sketch-key="link-19" icon="{{>icon}}" href="/link" disabled="true">Link Text</scale-link>
+            <scale-link data-sketch-key="link-19" data-has-icon="true" href="/link" disabled="true">Link Text <scale-icon-navigation-external-link
+        size="16"
+        accessibility-title="open link in new tab"
+        slot="icon"
+    ></scale-icon-navigation-external-link></scale-link>
         </div>
     </div>
 </div>
@@ -116,7 +156,7 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
         btn.dataset.sketchSymbol = `Link / ${
                 order(1, getCategoryName(btn))
             } / ${
-                order(2, btn.getAttribute('icon') ? 'With Icon' : 'Without Icon')
+                order(2, btn.dataset.hasIcon ? 'With Icon' : 'Without Icon')
             } / ${
                 order(4, getStateName(btn))
             }`;
