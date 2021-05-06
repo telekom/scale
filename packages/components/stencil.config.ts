@@ -59,9 +59,9 @@ export const config: Config = {
         },
         { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
         { src: './html/*', dest: './', warn: true },
-        !process.env.WHITELABEL
-          ? { src: './html/telekom/*', dest: './', warn: true }
-          : {},
+        ...(!process.env.WHITELABEL
+          ? [{ src: './html/telekom/*', dest: './', warn: true }]
+          : []),
       ],
     },
     {
