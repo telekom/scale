@@ -162,6 +162,23 @@ scale-radio-button {
 <scale-radio-button checked disabled @scaleChange="handleChange"></scale-radio-button>
 ```
 
+## Helper Text
+
+<Canvas withSource="none">
+    <Story
+        name="Helper Text"
+        args={{
+            label: "Helper Text",
+            helperText: "Make sure to select this"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-radio-button label="Helper Text" helper-text="Make sure to select this"></scale-radio-button>
+```
 
 ## Error
 
