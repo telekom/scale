@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, State } from '@stencil/core';
+import { Component, h, Host, Prop, Element, State, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
@@ -16,18 +16,18 @@ export class Alertbox {
 
   @State() content: boolean = true;
   @Element() element: HTMLElement;
+  @Event() scaleCloseAlert: EventEmitter<MouseEvent>; 
 
   componentDidLoad() {
     this.content = !!this.element.querySelector("p[slot='text']");
   }
 
-  // loadButton(){
-  //   if (this.hasCloseButton) {
-  //     this.button = true;
-  //   }else{
-  //     this.button = false;
-  //   }
-  // }
+  handleClose(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.scaleCloseAlert.emit(event);
+  }
+  
 
   render() {
     return (
@@ -37,8 +37,12 @@ export class Alertbox {
             <div class="alertbox_container_header">
               <header class="alert_heading">
                 <slot name="header">Missing Title</slot>
-
-                {this.hasCloseButton && <button type="button">test</button>}
+                
+                {this.hasCloseButton && <scale-icon-action-circle-close 
+                onClick={()=>{
+                  this.handleClose(event);
+                }}
+                accessibility-title="circle-close" />}
               </header>
             </div>
             {this.content && (
