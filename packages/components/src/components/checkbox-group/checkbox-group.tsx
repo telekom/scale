@@ -25,16 +25,13 @@
 	shadow: true,
   })
   export class CheckboxGroup {
-	masterChanged = false;
-	callFuncOnStateChange = true;
 	initialLoad = false;
 	masterIndeterminate = false;
 	@State() groupStatus = [];
 	@Element() hostElement: HTMLElement;
 	@Listen('scaleChange')
 	scaleChangeHandler() {
-	  // console.log('this.masterChangedListener', this.masterChanged)
-	  this.masterChanged = false;
+	  // console.log('scaleChangeHandler() called');
 	  this.setGroupStatusState();
 	}
   
@@ -47,13 +44,10 @@
 		console.log('The new value of groupStatus is: ', newValue); */
 		if (oldValue[0] || this.initialLoad) {
 		  // console.log('new vs old: ', newValue[0], oldValue[0]);
-		  this.masterChanged = true;
-		  // console.log('masterChanged: ', this.masterChanged);
 		  this.initialLoad = false;
 		  this.adaptNewState(newValue, oldValue);
 		}
 		this.handleCheckboxGroupStatus();
-		this.callFuncOnStateChange = true;
 		this.initialLoad = false;
 	  }
 	}
@@ -84,9 +78,14 @@
 	  const tempState = [...newState];
 	  let countChecked = 0;
 	  let countUnchecked = 0;
+	  
+	  if (newState[0].disabled) {
+		  tempState.forEach(checkbox => {
+			  checkbox.disabled = true;
+		  })
+	  }
 	  if (newState[0].checked !== oldState[0]?.checked) {
 		const isMasterChecked = newState[0].checked;
-		// new master checked
 		if (isMasterChecked) {
 		  // console.log('master is checked');
 		  for (let i = 0; i < newState.length; i++) {
