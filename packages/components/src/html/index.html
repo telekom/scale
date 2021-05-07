@@ -35,13 +35,9 @@
   <h1>Components</h1>
 
   <h1>DENIS KUTLOVCI ALERTBOX SMALL</h1>
-  <script>
-    const alertBox = document.querySelector('scale-alertbox')
-    alertBox.addEventListener('scaleCloseAlert', alertBox.removeAttribute("has-close-button"));
-  </script>
   <scale-alertbox size="small" has-close-button>
     <p slot="header">Message with icon, title and text</p>
-    <p slot="text">
+    <p slot="text" id="testing">
       Warning: This is a warning text<br />
       more text
     </p>
@@ -861,6 +857,12 @@ first, which contains table headers):*/
       <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
     </scale-collapsible>
   </div>
+
+<script>
+  const alertBox = document.querySelector('#testing');
+  alertBox.addEventListener('scaleCloseAlert', () => alertBox.remove());
+</script>
+  
 </body>
 
 </html>
