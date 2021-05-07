@@ -12,7 +12,7 @@
 | `alignment` | `alignment` |             | `"horizontal" \| "vertical"` | `'horizontal'` |
 | `size`      | `size`      |             | `"large" \| "small"`         | `'small'`      |
 | `text`      | `text`      |             | `string`                     | `undefined`    |
-| `variant`   | `variant`   |             | `"magenta" \| "white"`       | `'magenta'`    |
+| `variant`   | `variant`   |             | `"primary" \| "white"`       | `'primary'`    |
 
 
 ## Shadow Parts
