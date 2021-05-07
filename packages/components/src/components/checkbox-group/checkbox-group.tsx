@@ -18,6 +18,7 @@
 	State,
 	Watch,
   } from '@stencil/core';
+  import { objDiffer, CheckboxState } from './utils/utils'
   
   @Component({
 	tag: 'scale-checkbox-group',
@@ -27,7 +28,7 @@
   export class CheckboxGroup {
 	initialLoad = false;
 	masterIndeterminate = false;
-	@State() groupStatus = [];
+	@State() groupStatus: CheckboxState[] = [];
 	@Element() hostElement: HTMLElement;
 	@Listen('scaleChange')
 	scaleChangeHandler() {
@@ -36,9 +37,9 @@
 	}
   
 	@Watch('groupStatus')
-	watchHandler(newValue, oldValue) {
+	watchHandler(newValue: CheckboxState[], oldValue: CheckboxState[]) {
 	  // console.log('status watcher called');
-	  if (this.objDiffer(oldValue, newValue) || this.initialLoad) {
+	  if (objDiffer(oldValue, newValue) || this.initialLoad) {
 		/* console.log('objects differ, this.initialLoad = ', this.initialLoad);
 		console.log('The old value of groupStatus is: ', oldValue);
 		console.log('The new value of groupStatus is: ', newValue); */
@@ -62,7 +63,7 @@
 	  const checkboxes = Array.from(
 		this.hostElement.querySelectorAll('scale-checkbox')
 	  );
-	  const newState = [];
+	  const newState: CheckboxState[] = [];
 	  for (let i = 0; i < checkboxes.length; i++) {
 		newState[i] = {
 		  id: checkboxes[i].inputId,
@@ -73,12 +74,12 @@
 	  this.groupStatus = newState;
 	}
   
-	adaptNewState(newState, oldState) {
+	adaptNewState(newState: CheckboxState[], oldState: CheckboxState[]) {
 	  // console.log(' adaptNewState() called');
 	  const tempState = [...newState];
 	  let countChecked = 0;
 	  let countUnchecked = 0;
-	  
+
 	  if (newState[0].disabled) {
 		  tempState.forEach(checkbox => {
 			  checkbox.disabled = true;
@@ -173,24 +174,6 @@
 		  checkboxes[i].disabled = this.groupStatus[i].disabled;
 		}
 	  }
-	}
-  
-	objectsEqual = (o1, o2) => {
-	  return typeof o1 === 'object' && Object.keys(o1).length > 0
-		? Object.keys(o1).length === Object.keys(o2).length &&
-			Object.keys(o1).every((p) => this.objectsEqual(o1[p], o2[p]))
-		: o1 === o2;
-	};
-  
-	objDiffer(obj1, obj2) {
-	  let isEqual = false;
-	  for (let i = 0; i < obj1.length; i++) {
-		if (!this.objectsEqual(obj1[i], obj2[i])) {
-		  isEqual = true;
-		  break;
-		}
-	  }
-	  return isEqual;
 	}
   
 	render() {
