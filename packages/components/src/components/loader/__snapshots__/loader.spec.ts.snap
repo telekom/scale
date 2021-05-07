@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List should match snapshot 1`] = `
+exports[`Loader should match snapshot 1`] = `
 <scale-loader>
   <mock:shadow-root>
-    <div class="spinner spinner--alignment-horizontal spinner--size-small spinner--variant-magenta" part="spinner alignment-horizontal variant-magenta size-small">
+    <div class="spinner spinner--alignment-horizontal spinner--size-small spinner--variant-primary" part="spinner alignment-horizontal variant-primary size-small">
       <div class="spinner__container" part="container">
         <div class="spinner__circle-background"></div>
         <div class="spinner__circle" part="circle">
