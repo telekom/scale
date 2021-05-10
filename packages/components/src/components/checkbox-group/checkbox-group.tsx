@@ -32,19 +32,13 @@ export class CheckboxGroup {
   @Element() hostElement: HTMLElement;
   @Listen('scaleChange')
   scaleChangeHandler() {
-    // console.log('scaleChangeHandler() called');
     this.setGroupStatusState();
   }
 
   @Watch('groupStatus')
   watchHandler(newValue: CheckboxState[], oldValue: CheckboxState[]) {
-    // console.log('status watcher called');
     if (objDiffer(oldValue, newValue) || this.initialLoad) {
-      /* console.log('objects differ, this.initialLoad = ', this.initialLoad);
-		console.log('The old value of groupStatus is: ', oldValue);
-		console.log('The new value of groupStatus is: ', newValue); */
       if (oldValue[0] || this.initialLoad) {
-        // console.log('new vs old: ', newValue[0], oldValue[0]);
         this.initialLoad = false;
         this.adaptNewState(newValue, oldValue);
       }
@@ -59,7 +53,6 @@ export class CheckboxGroup {
   }
 
   setGroupStatusState() {
-    // console.log('setGroupStatusState() started');
     const checkboxes = Array.from(
       this.hostElement.querySelectorAll('scale-checkbox')
     );
@@ -81,8 +74,8 @@ export class CheckboxGroup {
     masterChecked: boolean
   ) {
     let numberDisabled: number;
-    numberDisabled + this.getCheckedDisabledCheckBoxes(newState).length;
-    numberDisabled + this.getUnCheckedDisabledCheckBoxes(newState).length;
+    numberDisabled + this.getDisabledCheckBoxes(newState, true).length;
+    numberDisabled + this.getDisabledCheckBoxes(newState, false).length;
     for (let i = 0; i < newState.length; i++) {
       if (!newState[i].disabled) {
         newState[i].checked = masterChecked;
@@ -103,19 +96,10 @@ export class CheckboxGroup {
     return tempState;
   }
 
-  getCheckedDisabledCheckBoxes(newState: CheckboxState[]) {
+  getDisabledCheckBoxes(newState: CheckboxState[], checked: boolean) {
     let disabledPositions = [];
     for (let i = 1; i < newState.length; i++) {
-      if (newState[i].disabled && newState[i].checked === true) {
-        disabledPositions.push(i);
-      }
-    }
-    return disabledPositions;
-  }
-  getUnCheckedDisabledCheckBoxes(newState: CheckboxState[]) {
-    let disabledPositions = [];
-    for (let i = 1; i < newState.length; i++) {
-      if (newState[i].disabled && !newState[i].checked === true) {
+      if (newState[i].disabled && newState[i].checked === checked) {
         disabledPositions.push(i);
       }
     }
@@ -123,22 +107,9 @@ export class CheckboxGroup {
   }
 
   adaptNewState(newState: CheckboxState[], oldState: CheckboxState[]) {
-    // console.log(' adaptNewState() called');
     const tempState = [...newState];
     let countChecked = 0;
     let countUnchecked = 0;
-
-    let disabledCheckedCount = this.getCheckedDisabledCheckBoxes(newState)
-      .length;
-    let disabledUnCheckedCount = this.getUnCheckedDisabledCheckBoxes(newState)
-      .length;
-
-    console.log(
-      'count of disabled checked Checkboxes  ' + disabledCheckedCount
-    );
-    console.log(
-      'count of disabled unChecked Checkboxes  ' + disabledUnCheckedCount
-    );
 
     if (newState[0].disabled) {
       tempState.forEach((checkbox) => {
@@ -148,8 +119,6 @@ export class CheckboxGroup {
     if (newState[0].checked !== oldState[0]?.checked) {
       const isMasterChecked = newState[0].checked;
       if (isMasterChecked) {
-        // console.log('master is checked');
-
         this.groupStatus = this.getGroupStatus(
           newState,
           tempState,
@@ -157,8 +126,6 @@ export class CheckboxGroup {
           true
         );
       } else {
-        // console.log('master is not checked');
-        // new master unchecked and maybe indeterminate
         this.groupStatus = this.getGroupStatus(
           newState,
           tempState,
@@ -167,8 +134,6 @@ export class CheckboxGroup {
         );
       }
     } else {
-      // console.log('sub box has been clicked');
-      // sub box has been clicked
       for (let i = 1; i < newState.length; i++) {
         tempState[i].checked = newState[i].checked;
         if (newState[i].checked) {
@@ -177,30 +142,42 @@ export class CheckboxGroup {
           countUnchecked += 1;
         }
       }
-      if (countChecked + disabledUnCheckedCount === newState.length - 1) {
-        console.log('Case 1');
-        tempState[0].checked = true;
-        this.masterIndeterminate = false;
-      } else if (
-        countUnchecked + disabledCheckedCount ===
-        newState.length - 1
-      ) {
-        console.log('Case 2');
-        tempState[0].checked = false;
-        this.masterIndeterminate = false;
-      } else {
-        console.log('Case 3');
-        tempState[0].checked = false;
-        this.masterIndeterminate = true;
-      }
+      this.setMasterIndeterminateStatus(
+        newState,
+        tempState,
+        countChecked,
+        countUnchecked
+      );
       this.groupStatus = tempState;
       countUnchecked = 0;
       countChecked = 0;
     }
   }
 
+  setMasterIndeterminateStatus(
+    newState: CheckboxState[],
+    tempState: CheckboxState[],
+    countChecked: number,
+    countUnchecked: number
+  ) {
+    let disabledCheckedCount = this.getDisabledCheckBoxes(newState, true)
+      .length;
+    let disabledUnCheckedCount = this.getDisabledCheckBoxes(newState, false)
+      .length;
+
+    if (countChecked + disabledUnCheckedCount === newState.length - 1) {
+      tempState[0].checked = true;
+      this.masterIndeterminate = false;
+    } else if (countUnchecked + disabledCheckedCount === newState.length - 1) {
+      tempState[0].checked = false;
+      this.masterIndeterminate = false;
+    } else {
+      tempState[0].checked = false;
+      this.masterIndeterminate = true;
+    }
+  }
+
   handleCheckboxGroupStatus() {
-    // console.log('handleCheckboxGroupStatus() started');
     const checkboxes = Array.from(
       this.hostElement.querySelectorAll('scale-checkbox')
     );
