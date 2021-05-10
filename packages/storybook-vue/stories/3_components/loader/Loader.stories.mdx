@@ -1,0 +1,286 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import ScaleLoader from './ScaleLoader.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta title="Beta Components/Loader" component={ScaleLoader} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    `,
+});
+export const LargeBlackTemplate = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+  <div style="background-color: black; height:52px; padding:5px">
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    </div>
+    `,
+});
+
+export const LargeVerticalBlackTemplate = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+  <div style="background-color: black; height:70px; padding:5px">
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    </div>
+    `,
+});
+
+export const SmallBlackTemplate = (args, { argTypes }) => ({
+  components: { ScaleLoader },
+  props: {
+    label: String,
+    ...ScaleLoader.props,
+  },
+  template: `
+  <div style="background-color: black; padding:5px">
+    <scale-loader
+       :variant='variant'
+    :alignment='alignment'
+    :text='text'
+    :size='size'
+    >
+    </scale-loader>
+    </div>
+    `,
+});
+
+# Loader
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+## Small Size & Horizontal Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Small Primary (horizontal)"
+    args={{
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo text="Loading..."></scale-logo>
+```
+
+## Small Size & Vertical Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Small Primary (vertical)"
+    args={{
+      text: 'Loading...',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo text="Loading..." alignment="vertical"></scale-logo>
+```
+
+## Large Size & Horizontal Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Large Primary (horizontal)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" text="Loading..."></scale-logo>
+```
+
+## Large Size & Vertical Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Large Primary (vertical)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" text="Loading..." alignment="vertical"></scale-logo>
+```
+
+## Small Size (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Small White"
+    args={{
+      size: 'small',
+      variant: 'white',
+    }}
+  >
+    {SmallBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="small" variant="white"></scale-logo>
+```
+
+## Small Size & Horizontal Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Small White (horizontal)"
+    args={{
+      size: 'small',
+      text: 'Loading...',
+      variant: 'white',
+    }}
+  >
+    {SmallBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="small" text="Loading..." variant="white"></scale-logo>
+```
+
+## Small Size & Vertical Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Small White (vertical)"
+    args={{
+      size: 'small',
+      text: 'Loading...',
+      variant: 'white',
+      alignment: 'vertical',
+    }}
+  >
+    {SmallBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo
+  size="small"
+  text="Loading..."
+  variant="white"
+  alignment="vertical"
+></scale-logo>
+```
+
+## Large Size (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White"
+    args={{
+      size: 'large',
+      variant: 'white',
+    }}
+  >
+    {LargeBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" variant="white"></scale-logo>
+```
+
+## Large Size & Horizontal Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White (horizontal)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+      variant: 'white',
+    }}
+  >
+    {LargeBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="large" text="Loading..." variant="white"></scale-logo>
+```
+
+## Large Size & Vertical Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White (vertical)"
+    args={{
+      size: 'large',
+      variant: 'white',
+      alignment: 'vertical',
+      text: 'Loading...',
+    }}
+  >
+    {LargeVerticalBlackTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo
+  size="large"
+  variant="white"
+  alignment="vertical"
+  text="Loading..."
+></scale-logo>
+```

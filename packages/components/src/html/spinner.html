@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Loading spinners</title>
+
+    <script type="module" src="build/scale-components.esm.js"></script>
+    <script nomodule src="build/scale-components.js"></script>
+    <link rel="stylesheet" href="build/scale-components.css" />
+    <style>
+      section {
+        padding: 1rem;
+      }
+      .bg-black {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Loading spinners</h1>
+
+    <section class="bg-black">
+      <h2>Horizontal & White</h2>
+      <scale-loading alignment="horizontal" variant="white"></scale-loading>
+
+      <h2>Vertical & White</h2>
+      <scale-loading alignment="vertical" variant="white"></scale-loading>
+
+      <h2>Vertical & White & Custom text</h2>
+      <scale-loading
+        alignment="vertical"
+        variant="white"
+        text="Please wait"
+      ></scale-loading>
+      <h2>Vertical & White & No text</h2>
+      <scale-loading
+        alignment="vertical"
+        variant="white"
+        text=""
+      ></scale-loading>
+    </section>
+
+    <section>
+      <h2>Horizontal & Magenta</h2>
+      <scale-loading alignment="horizontal" variant="primary"></scale-loading>
+
+      <h2>Vertical & Magenta</h2>
+      <scale-loading alignment="vertical" variant="primary"></scale-loading>
+
+      <h2>Vertical & Magenta & Custom text</h2>
+      <scale-loading
+        alignment="vertical"
+        variant="primary"
+        text="Please wait"
+      ></scale-loading>
+      <h2>Vertical & Magenta & No text</h2>
+      <scale-loading
+        alignment="vertical"
+        variant="primary"
+        text=""
+      ></scale-loading>
+    </section>
+  </body>
+</html>

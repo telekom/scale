@@ -1,0 +1,156 @@
+:host {
+  --size-outer: var(--scl-spacing-24);
+  --size-inner-small: 18px;
+  --size-inner-large: 40px;
+  --border-size-small: 3px;
+  --border-size-large: 4px;
+  --line-height-size-small: 24px;
+  --line-height-size-large: 48px;
+  --font-weight: var(--scl-font-weight-bold);
+  --font-size: var(--scl-font-size-16);
+  --spacing: var(--scl-spacing-8);
+  --color-circle-primary: var(--scl-color-primary);
+  --color-circle-primary-inner: var(--scl-color-grey-20);
+  --color-text-primary: var(--scl-color-grey-60);
+  --color-circle-white: var(--scl-color-white);
+  --color-circle-white-inner: var(--scl-color-grey-60);
+  --color-text-white: var(--scl-color-white);
+}
+
+.spinner {
+  display: inline-flex;
+}
+
+.spinner.spinner--alignment-vertical {
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinner .spinner__text {
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  color: var(--color-text-primary);
+}
+.spinner.spinner--variant-white .spinner__text {
+  color: var(--color-circle-white);
+}
+
+.spinner.spinner--alignment-vertical .spinner__text {
+  padding-top: var(--spacing);
+}
+
+.spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
+  display: flex;
+  align-self: center;
+  padding-left: var(--spacing);
+  line-height: var(--line-height-size-small);
+  padding-bottom: 2px;
+}
+
+.spinner.spinner--alignment-vertical.spinner--size-large {
+  margin-left: -30px;
+}
+
+.spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
+  display: flex;
+  align-self: center;
+  padding-left: 35px;
+  line-height: var(--line-height-size-large);
+}
+
+.spinner .spinner__circle-background {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.spinner.spinner--size-large.spinner.spinner--alignment-vertical.spinner--text
+  .spinner__text {
+  padding-top: 30px;
+  margin-left: 35px;
+}
+
+.spinner.spinner--size-large .spinner__circle-background {
+  width: var(--size-inner-large);
+  height: var(--size-inner-large);
+}
+
+.spinner.spinner--size-small .spinner__circle-background {
+  width: var(--size-inner-small);
+  height: var(--size-inner-small);
+}
+
+.spinner .spinner__circle {
+  display: inline-block;
+  position: relative;
+  height: var(--size-outer);
+  width: var(--size-outer);
+}
+
+.spinner.spinner--variant-primary.spinner--size-small
+  .spinner__circle-background {
+  border: var(--border-size-small) solid var(--color-circle-primary-inner);
+  border-color: var(--color-circle-primary-inner);
+}
+.spinner.spinner--variant-white.spinner--size-small
+  .spinner__circle-background {
+  border: var(--border-size-small) solid var(--color-circle-white-inner);
+  border-color: var(--color-circle-white-inner);
+}
+
+.spinner.spinner--variant-primary.spinner--size-large
+  .spinner__circle-background {
+  border: var(--border-size-large) solid var(--color-circle-primary-inner);
+  border-color: var(--color-circle-primary-inner);
+}
+.spinner.spinner--variant-white.spinner--size-large
+  .spinner__circle-background {
+  border: var(--border-size-large) solid var(--color-circle-white-inner);
+  border-color: var(--color-circle-white-inner);
+}
+
+.spinner.spinner--variant-white .spinner__circle > div {
+  border-color: var(--color-circle-white) transparent transparent transparent;
+}
+
+.spinner.spinner--variant-primary .spinner__circle > div {
+  border-color: var(--color-circle-primary) transparent transparent transparent;
+}
+
+.spinner__circle > div {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  animation: rotation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner--size-small .spinner__circle > div {
+  width: var(--size-inner-small);
+  height: var(--size-inner-small);
+  border: var(--border-size-small) solid var(--color-circle-white);
+}
+
+.spinner--size-large .spinner__circle > div {
+  width: var(--size-inner-large);
+  height: var(--size-inner-large);
+  border: var(--border-size-large) solid var(--color-circle-white);
+}
+
+.spinner__circle > div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner__circle > div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner__circle > div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
