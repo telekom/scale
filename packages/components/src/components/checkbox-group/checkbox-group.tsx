@@ -80,6 +80,9 @@ export class CheckboxGroup {
     count: number,
     masterChecked: boolean
   ) {
+    let numberDisabled: number;
+    numberDisabled + this.getCheckedDisabledCheckBoxes(newState).length;
+    numberDisabled + this.getUnCheckedDisabledCheckBoxes(newState).length;
     for (let i = 0; i < newState.length; i++) {
       if (!newState[i].disabled) {
         newState[i].checked = masterChecked;
@@ -90,7 +93,7 @@ export class CheckboxGroup {
         count += 1;
       }
     }
-    if (count < newState.length) {
+    if (count + numberDisabled < newState.length) {
       this.masterIndeterminate = true;
       if (masterChecked === true) {
         tempState[0].checked = false;
@@ -100,11 +103,42 @@ export class CheckboxGroup {
     return tempState;
   }
 
+  getCheckedDisabledCheckBoxes(newState: CheckboxState[]) {
+    let disabledPositions = [];
+    for (let i = 1; i < newState.length; i++) {
+      if (newState[i].disabled && newState[i].checked === true) {
+        disabledPositions.push(i);
+      }
+    }
+    return disabledPositions;
+  }
+  getUnCheckedDisabledCheckBoxes(newState: CheckboxState[]) {
+    let disabledPositions = [];
+    for (let i = 1; i < newState.length; i++) {
+      if (newState[i].disabled && !newState[i].checked === true) {
+        disabledPositions.push(i);
+      }
+    }
+    return disabledPositions;
+  }
+
   adaptNewState(newState: CheckboxState[], oldState: CheckboxState[]) {
     // console.log(' adaptNewState() called');
     const tempState = [...newState];
     let countChecked = 0;
     let countUnchecked = 0;
+
+    let disabledCheckedCount = this.getCheckedDisabledCheckBoxes(newState)
+      .length;
+    let disabledUnCheckedCount = this.getUnCheckedDisabledCheckBoxes(newState)
+      .length;
+
+    console.log(
+      'count of disabled checked Checkboxes  ' + disabledCheckedCount
+    );
+    console.log(
+      'count of disabled unChecked Checkboxes  ' + disabledUnCheckedCount
+    );
 
     if (newState[0].disabled) {
       tempState.forEach((checkbox) => {
@@ -143,15 +177,21 @@ export class CheckboxGroup {
           countUnchecked += 1;
         }
       }
-      if (countChecked === newState.length - 1) {
+      if (countChecked + disabledUnCheckedCount === newState.length - 1) {
+        console.log('Case 1');
         tempState[0].checked = true;
         this.masterIndeterminate = false;
-      } else if (countUnchecked === newState.length - 1) {
+      } else if (
+        countUnchecked + disabledCheckedCount ===
+        newState.length - 1
+      ) {
+        console.log('Case 2');
         tempState[0].checked = false;
         this.masterIndeterminate = false;
       } else {
-        this.masterIndeterminate = true;
+        console.log('Case 3');
         tempState[0].checked = false;
+        this.masterIndeterminate = true;
       }
       this.groupStatus = tempState;
       countUnchecked = 0;
@@ -168,12 +208,12 @@ export class CheckboxGroup {
     for (let i = 0; i < checkboxes.length; i++) {
       if (i === 0) {
         if (this.masterIndeterminate) {
-          // console.log('this.masterIndeterminate === true');
+          console.log('this.masterIndeterminate === true');
           checkboxes[0].setAttribute('indeterminate', 'true');
           checkboxes[0].checked = false;
           this.masterIndeterminate = false;
         } else {
-          // console.log('this.masterIndeterminate === false');
+          console.log('this.masterIndeterminate === false');
           checkboxes[0].removeAttribute('indeterminate');
           checkboxes[0].checked = this.groupStatus[0].checked;
         }
