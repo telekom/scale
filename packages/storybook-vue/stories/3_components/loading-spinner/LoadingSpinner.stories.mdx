@@ -1,83 +1,87 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import ScaleLoader from './ScaleLoader.vue';
+import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
 import { action } from '@storybook/addon-actions';
 
-<Meta title="Beta Components/Loader" component={ScaleLoader} argTypes={{}} />
+<Meta
+  title="Beta Components/Loading-Spinner"
+  component={ScaleLoadingSpinner}
+  argTypes={{}}
+/>
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleLoader },
+  components: { ScaleLoadingSpinner },
   props: {
     label: String,
-    ...ScaleLoader.props,
+    ...ScaleLoadingSpinner.props,
   },
   template: `
-    <scale-loader
+    <scale-loading-spinner
        :variant='variant'
     :alignment='alignment'
     :text='text'
     :size='size'
     >
-    </scale-loader>
+    </scale-loading-spinner>
     `,
 });
 export const LargeBlackTemplate = (args, { argTypes }) => ({
-  components: { ScaleLoader },
+  components: { ScaleLoadingSpinner },
   props: {
     label: String,
-    ...ScaleLoader.props,
+    ...ScaleLoadingSpinner.props,
   },
   template: `
   <div style="background-color: black; height:52px; padding:5px">
-    <scale-loader
+    <scale-loading-spinner
        :variant='variant'
     :alignment='alignment'
     :text='text'
     :size='size'
     >
-    </scale-loader>
+    </scale-loading-spinner>
     </div>
     `,
 });
 
 export const LargeVerticalBlackTemplate = (args, { argTypes }) => ({
-  components: { ScaleLoader },
+  components: { ScaleLoadingSpinner },
   props: {
     label: String,
-    ...ScaleLoader.props,
+    ...ScaleLoadingSpinner.props,
   },
   template: `
   <div style="background-color: black; height:70px; padding:5px">
-    <scale-loader
+    <scale-loading-spinner
        :variant='variant'
     :alignment='alignment'
     :text='text'
     :size='size'
     >
-    </scale-loader>
+    </scale-loading-spinner>
     </div>
     `,
 });
 
 export const SmallBlackTemplate = (args, { argTypes }) => ({
-  components: { ScaleLoader },
+  components: { ScaleLoadingSpinner },
   props: {
     label: String,
-    ...ScaleLoader.props,
+    ...ScaleLoadingSpinner.props,
   },
   template: `
   <div style="background-color: black; padding:5px">
-    <scale-loader
+    <scale-loading-spinner
        :variant='variant'
     :alignment='alignment'
     :text='text'
     :size='size'
     >
-    </scale-loader>
+    </scale-loading-spinner>
     </div>
     `,
 });
 
-# Loader
+# Loading-Spinner
 
 ## Standard
 
@@ -103,7 +107,7 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader text="Loading..."></scale-loader>
+<scale-loading-spinner text="Loading..."></scale-loading-spinner>
 ```
 
 ## Small Size & Vertical Text (Primary)
@@ -121,7 +125,10 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader text="Loading..." alignment="vertical"></scale-loader>
+<scale-loading-spinner
+  text="Loading..."
+  alignment="vertical"
+></scale-loading-spinner>
 ```
 
 ## Large Size & Horizontal Text (Primary)
@@ -139,7 +146,7 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader size="large" text="Loading..."></scale-loader>
+<scale-loading-spinner size="large" text="Loading..."></scale-loading-spinner>
 ```
 
 ## Large Size & Vertical Text (Primary)
@@ -158,11 +165,11 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader
+<scale-loading-spinner
   size="large"
   text="Loading..."
   alignment="vertical"
-></scale-loader>
+></scale-loading-spinner>
 ```
 
 ## Small Size (White)
@@ -180,7 +187,7 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader size="small" variant="white"></scale-loader>
+<scale-loading-spinner size="small" variant="white"></scale-loading-spinner>
 ```
 
 ## Small Size & Horizontal Text (White)
@@ -199,7 +206,11 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader size="small" text="Loading..." variant="white"></scale-loader>
+<scale-loading-spinner
+  size="small"
+  text="Loading..."
+  variant="white"
+></scale-loading-spinner>
 ```
 
 ## Small Size & Vertical Text (White)
@@ -219,12 +230,12 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader
+<scale-loading-spinner
   size="small"
   text="Loading..."
   variant="white"
   alignment="vertical"
-></scale-loader>
+></scale-loading-spinner>
 ```
 
 ## Large Size (White)
@@ -242,7 +253,7 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader size="large" variant="white"></scale-loader>
+<scale-loading-spinner size="large" variant="white"></scale-loading-spinner>
 ```
 
 ## Large Size & Horizontal Text (White)
@@ -261,7 +272,11 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader size="large" text="Loading..." variant="white"></scale-loader>
+<scale-loading-spinner
+  size="large"
+  text="Loading..."
+  variant="white"
+></scale-loading-spinner>
 ```
 
 ## Large Size & Vertical Text (White)
@@ -281,10 +296,10 @@ export const SmallBlackTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-loader
+<scale-loading-spinner
   size="large"
   variant="white"
   alignment="vertical"
   text="Loading..."
-></scale-loader>
+></scale-loading-spinner>
 ```

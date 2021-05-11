@@ -2,11 +2,11 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
-  tag: 'scale-loader',
-  styleUrl: './loader.css',
+  tag: 'scale-loading-spinner',
+  styleUrl: './loading-spinner.css',
   shadow: true,
 })
-export class Loader {
+export class LoadingSpinner {
   @Prop() variant: 'white' | 'primary' = 'primary';
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string;

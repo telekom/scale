@@ -1,9 +1,9 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Loader</h1>
+    <h1>Loading Spinner</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Diese Komponente enthält den Telekom Loader in verschiedenen Varianten: In unterschiedlichen Farben, Größen, ohne Text oder mit mit variablem Text.
+Diese Komponente enthält den Telekom Loading Spinner in verschiedenen Varianten: In unterschiedlichen Farben, Größen, ohne Text oder mit mit variablem Text.
 
 ## Beta-Komponente
 
