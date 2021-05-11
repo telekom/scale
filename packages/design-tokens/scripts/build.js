@@ -15,7 +15,6 @@ import { join } from 'path';
 import fs from 'fs-extra';
 import each from 'lodash/each.js';
 
-import getTokens from '../src/tokens.js';
 import { outputCSS } from './output-css.js';
 import { outputJSS } from './output-jss.js';
 
@@ -26,11 +25,15 @@ const OUTPUT_PATH = './dist';
 main();
 
 async function main() {
+  const { default: getTokens } = await import(
+    isWhitelabel ? '../src/tokens.js' : '../src/telekom/tokens.js'
+  );
+
+  const tokens = getTokens();
   await fs.emptyDir(OUTPUT_PATH);
   await fs.mkdirp(OUTPUT_PATH);
 
   const outputs = [outputCSS, outputJSS];
-  const tokens = getTokens({ isWhitelabel });
 
   try {
     // Loop through categories (level 1)

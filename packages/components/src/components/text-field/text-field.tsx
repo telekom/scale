@@ -208,6 +208,7 @@ export class TextField {
       this.transparent && 'text-field--transparent',
       this.status && `text-field--status-${this.status}`,
       this.size && `text-field--size-${this.size}`,
+      this.readonly && `text-field--readonly`,
       animated && 'animated'
     );
   }
