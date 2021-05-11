@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader should match snapshot 1`] = `
-<scale-loader>
+exports[`LoadingSpinner should match snapshot 1`] = `
+<scale-loading-spinner>
   <mock:shadow-root>
     <div class="spinner spinner--alignment-horizontal spinner--size-small spinner--variant-primary" part="spinner alignment-horizontal variant-primary size-small">
       <div class="spinner__container" part="container">
@@ -16,5 +16,5 @@ exports[`Loader should match snapshot 1`] = `
       <div aria-busy="true" aria-live="polite" class="spinner__text" part="text"></div>
     </div>
   </mock:shadow-root>
-</scale-loader>
+</scale-loading-spinner>
 `;

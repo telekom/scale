@@ -1,16 +1,16 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Loader } from './loader';
+import { LoadingSpinner } from './loading-spinner';
 
-describe('Loader', () => {
+describe('LoadingSpinner', () => {
   let element;
   beforeEach(async () => {
-    element = new Loader();
+    element = new LoadingSpinner();
   });
 
   it('should match snapshot', async () => {
     const page = await newSpecPage({
-      components: [Loader],
-      html: `<scale-loader></scale-loader>`,
+      components: [LoadingSpinner],
+      html: `<scale-loading-spinner></scale-loading-spinner>`,
     });
     expect(page.root).toMatchSnapshot();
   });
