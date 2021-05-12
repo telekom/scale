@@ -7,9 +7,9 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Alertbox {
-  @Prop() size?: 'small' | 'big' = 'small';
+  @Prop() size?: 'small' | 'large' = 'small';
   @Prop() color?: 'white' | 'black' | 'error' = 'black';
-  @Prop() variant?: 'floatingShadow' | 'outline';
+  @Prop() variant?: 'floating' | 'outline';
   @Prop() icon: boolean = false;
   @Prop({ reflect: true }) close? = false;
   @State() content: boolean = true;
