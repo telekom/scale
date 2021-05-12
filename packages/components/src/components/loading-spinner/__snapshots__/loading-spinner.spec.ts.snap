@@ -13,7 +13,10 @@ exports[`LoadingSpinner should match snapshot 1`] = `
           <div></div>
         </div>
       </div>
-      <div aria-busy="true" aria-live="polite" class="spinner__text" part="text"></div>
+      <div aria-live="polite" class="sr-only">
+        Loading
+      </div>
+      <div aria-hidden="true" class="spinner__text" part="text"></div>
     </div>
   </mock:shadow-root>
 </scale-loading-spinner>
