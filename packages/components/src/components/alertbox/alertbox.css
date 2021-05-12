@@ -2,21 +2,9 @@
   background-color: var(--alertbox-color);
   color: white;
   width: 100%;
-  /* width: var(--alertbox-size);
-    height: var(--alertbox-size); */
 }
 
-/* .alertbox-size-big {
-    width: 343px;
-    max-height: 158px;
-  }
-  
-  .alertbox-size-small {
-    width: 278px;
-    max-height: 100px;
-  } */
-
-.alertbox--color-magenta {
+.alertbox--color-red {
   background-color: var(--scl-color-primary);
 }
 
@@ -27,3 +15,4 @@
 .alertbox--color-white {
   background-color: var(--scl-color-white);
 }
+
