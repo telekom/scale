@@ -1,5 +1,7 @@
 :host {
-  --size-outer: var(--scl-spacing-24);
+  display: inline-flex;
+  --size-outer-small: 24px;
+  --size-outer-large: 50px;
   --size-inner-small: 18px;
   --size-inner-large: 40px;
   --border-size-small: 3px;
@@ -17,6 +19,12 @@
   --color-text-white: var(--scl-color-white);
 }
 
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  overflow: hidden;
+}
+
 .spinner {
   display: inline-flex;
 }
@@ -26,6 +34,9 @@
   flex-direction: column;
 }
 
+.spinner.spinner--alignment-vertical .spinner__text{
+  margin-top: var(--spacing);
+}
 .spinner .spinner__text {
   font-weight: var(--font-weight);
   font-size: var(--font-size);
@@ -35,26 +46,17 @@
   color: var(--color-circle-white);
 }
 
-.spinner.spinner--alignment-vertical .spinner__text {
-  padding-top: var(--spacing);
+.spinner.spinner--alignment-horizontal .spinner__text {
+  display: flex;
+  align-self: center;
+  margin-left: var(--spacing);
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
-  display: flex;
-  align-self: center;
-  padding-left: var(--spacing);
   line-height: var(--line-height-size-small);
-  padding-bottom: 2px;
-}
-
-.spinner.spinner--alignment-vertical.spinner--size-large {
-  margin-left: -30px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
-  display: flex;
-  align-self: center;
-  padding-left: 35px;
   line-height: var(--line-height-size-large);
 }
 
@@ -62,12 +64,6 @@
   display: block;
   position: absolute;
   border-radius: 50%;
-}
-
-.spinner.spinner--size-large.spinner.spinner--alignment-vertical.spinner--text
-  .spinner__text {
-  padding-top: 30px;
-  margin-left: 35px;
 }
 
 .spinner.spinner--size-large .spinner__circle-background {
@@ -80,11 +76,19 @@
   height: var(--size-inner-small);
 }
 
+.spinner .spinner__container,
 .spinner .spinner__circle {
-  display: inline-block;
-  position: relative;
-  height: var(--size-outer);
-  width: var(--size-outer);
+  display: inline-flex;
+  align-items: center;
+}
+
+.spinner.spinner--size-small .spinner__circle {
+  height: var(--size-outer-small);
+  width: var(--size-outer-small);
+}
+.spinner.spinner--size-large .spinner__circle {
+  height: var(--size-outer-large);
+  width: var(--size-outer-large);
 }
 
 .spinner.spinner--variant-primary.spinner--size-small
