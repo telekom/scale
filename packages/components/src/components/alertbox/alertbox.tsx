@@ -1,13 +1,4 @@
-import {
-  Component,
-  h,
-  Host,
-  Prop,
-  Element,
-  State,
-  Event,
-  EventEmitter,
-} from '@stencil/core';
+import { Component, h, Host, Prop, Element, State } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
@@ -23,14 +14,9 @@ export class Alertbox {
   @Prop({ reflect: true }) close? = false;
   @State() content: boolean = true;
   @Element() element: HTMLElement;
-  @Event() scaleCloseAlert: EventEmitter<MouseEvent>;
 
   componentDidLoad() {
     this.content = !!this.element.querySelector("p[slot='text']");
-  }
-
-  handleClose() {
-    this.scaleCloseAlert.emit();
   }
 
   handleIcons() {
@@ -60,7 +46,7 @@ export class Alertbox {
                 {this.close && (
                   <scale-icon-action-circle-close
                     onClick={() => {
-                      this.handleClose();
+                      document.querySelector('scale-alertbox').remove();
                     }}
                     accessibility-title="circle-close"
                   />
