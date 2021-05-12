@@ -34,7 +34,7 @@
   flex-direction: column;
 }
 
-.spinner.spinner--alignment-vertical .spinner__text{
+.spinner.spinner--alignment-vertical .spinner__text {
   margin-top: var(--spacing);
 }
 .spinner .spinner__text {
