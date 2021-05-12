@@ -4,8 +4,8 @@
   width: 100%;
 }
 
-.alertbox--color-red {
-  background-color: var(--scl-color-primary);
+.alertbox--color-error {
+  background-color: var(--scl-color-red-70);
 }
 
 .alertbox--color-black {
@@ -15,4 +15,3 @@
 .alertbox--color-white {
   background-color: var(--scl-color-white);
 }
-

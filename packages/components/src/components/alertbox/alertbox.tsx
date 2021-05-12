@@ -17,26 +17,35 @@ import classNames from 'classnames';
 })
 export class Alertbox {
   @Prop() size?: 'small' | 'big' = 'small';
-  @Prop() color?: 'white' | 'black' | 'error'  = 'black';
+  @Prop() color?: 'white' | 'black' | 'error' = 'black';
   @Prop() variant?: 'floatingShadow' | 'outline';
-  @Prop() iconVariant: boolean;
-  @Prop({ reflect: true }) hasCloseButton? = false;
+  @Prop() icon: boolean = false;
+  @Prop({ reflect: true }) close? = false;
   @State() content: boolean = true;
   @Element() element: HTMLElement;
   @Event() scaleCloseAlert: EventEmitter<MouseEvent>;
 
   componentDidLoad() {
     this.content = !!this.element.querySelector("p[slot='text']");
-    if(this.color === "error"){
-      this.iconVariant = true;
-    }
   }
 
-  handleClose(event) {
+  handleClose() {
     this.scaleCloseAlert.emit();
-    console.log(event);
   }
 
+  handleIcons() {
+    if (this.icon) {
+      switch (this.color) {
+        case 'white':
+          return <scale-icon-action-success accessibility-title="success" />;
+        case 'black':
+          return <scale-icon-action-success accessibility-title="success" />;
+        case 'error':
+          return <scale-icon-alert-error accessibility-title="error" />;
+      }
+    }
+    return;
+  }
 
   render() {
     return (
@@ -44,19 +53,14 @@ export class Alertbox {
         <div class={this.getCssClassMap()}>
           <div class="alertbox_container">
             <div class="alertbox_container_header">
-
-              {this.iconVariant ? (
-                <scale-icon-alert-error accessibility-title="error" />
-              ) : ( 
-                <scale-icon-action-success accessibility-title="success" />
-              )}
+              {this.handleIcons()}
 
               <header class="alert_heading">
                 <slot name="header">Missing Title</slot>
-                {this.hasCloseButton && (
+                {this.close && (
                   <scale-icon-action-circle-close
-                    onClick={(event) => {
-                      this.handleClose(event);
+                    onClick={() => {
+                      this.handleClose();
                     }}
                     accessibility-title="circle-close"
                   />
