@@ -77,8 +77,10 @@ export class RatingStars {
   }
 
   handleMouseEnter() {
-    this.isHovering = true;
-    return true;
+    if (!this.disabled) {
+      this.isHovering = true;
+      return true;
+    }
   }
 
   handleMouseMove(event: MouseEvent) {
