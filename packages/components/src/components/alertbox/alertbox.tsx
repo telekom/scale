@@ -37,11 +37,11 @@ export class Alertbox {
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-          <div class="alertbox_container">
-            <div class="alertbox_container_header">
+          <div class="alertbox__container">
+            <div class="alertbox__container-header">
               {this.handleIcons()}
 
-              <header class="alert_heading">
+              <header class="alertbox__heading">
                 <slot name="header">Missing Title</slot>
                 {this.close && (
                   <scale-icon-action-circle-close
@@ -54,7 +54,7 @@ export class Alertbox {
               </header>
             </div>
             {this.content && (
-              <p class="alertbox_container_content">
+              <p class="alertbox__container-content">
                 <slot name="text" />
               </p>
             )}
@@ -66,7 +66,7 @@ export class Alertbox {
 
   getCssClassMap() {
     return classNames(
-      'Alertbox',
+      'alertbox',
       this.color && `alertbox--color-${this.color}`
     );
   }

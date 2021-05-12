@@ -1,4 +1,4 @@
-.alertbox_container {
+.alertbox__container {
   background-color: var(--alertbox-color);
   color: white;
   width: 100%;
