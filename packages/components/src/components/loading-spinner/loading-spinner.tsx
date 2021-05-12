@@ -25,12 +25,10 @@ export class LoadingSpinner {
               <div></div>
             </div>
           </div>
-          <div
-            part="text"
-            class="spinner__text"
-            aria-live="polite"
-            aria-busy="true"
-          >
+          <div class="sr-only" aria-live="polite">
+            {this.text || 'Loading'}
+          </div>
+          <div part="text" class="spinner__text" aria-hidden="true">
             {this.text}
           </div>
         </div>
