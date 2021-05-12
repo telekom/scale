@@ -1,7 +1,21 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
 
-<Meta title="Beta Components/Loading-Spinner" component={ScaleLoadingSpinner} />
+<Meta
+  title="Beta Components/Loading-Spinner"
+  component={ScaleLoadingSpinner}
+  argTypes={{
+    variant: {
+      control: { type: 'select', options: ['primary', 'white'] },
+    },
+    size: {
+      control: { type: 'select', options: ['small', 'large', 'button'] },
+    },
+    alignment: {
+      control: { type: 'select', options: ['vertical', 'horizontal'] },
+    },
+  }}
+/>
 
 export const Template = () => ({
   components: { ScaleLoadingSpinner },
