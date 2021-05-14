@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.8](https://github.com/telekom/scale/compare/v3.0.0-beta.7...v3.0.0-beta.8) (2021-05-12)
+
+
+### Bug Fixes
+
+* **rating-stars:** no hover while disable ([#336](https://github.com/telekom/scale/issues/336)) ([138c6e8](https://github.com/telekom/scale/commit/138c6e850b615865d83e8b12252f89a1b088a35f))
+* **select:** add  -moz query for rendering visual padding correctly ([#323](https://github.com/telekom/scale/issues/323)) ([808678b](https://github.com/telekom/scale/commit/808678bc72e47fcbb0c4e6a0c9f67a12c766c27b))
+
+
+
+
+
+# [3.0.0-beta.7](https://github.com/telekom/scale/compare/v3.0.0-beta.6...v3.0.0-beta.7) (2021-05-06)
+
+
+### Features
+
+* **text-field:** styled read-only attribute w/ tokens ([#313](https://github.com/telekom/scale/issues/313)) ([1abbdd6](https://github.com/telekom/scale/commit/1abbdd6c2bbda810ab3529026d0f837e649ae792))
+
+
+
+
+
 # [3.0.0-beta.6](https://github.com/telekom/scale/compare/v3.0.0-beta.5...v3.0.0-beta.6) (2021-05-03)
 
 

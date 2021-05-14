@@ -5,6 +5,7 @@ describe('Textfield', () => {
     ['helper-text'],
     ['with-error'],
     ['disabled'],
+    ['read-only'],
     ['small'],
     ['max-length-with-counter'],
   ])('%p', async (variant) => {
