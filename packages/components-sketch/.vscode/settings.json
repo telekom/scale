@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.hbs": "html"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
