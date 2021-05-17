@@ -254,7 +254,9 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         'Fill ' + override.fills.map((b) => `${colorString(b)}`).join(', ');
     }
     if (override.borders && override.borders.length > 0) {
-      if (override.fills) styleName += ' / ';
+      if (override.fills) {
+        styleName += ' / ';
+      }
       styleName +=
         'Border ' +
         override.borders

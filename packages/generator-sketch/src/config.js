@@ -424,12 +424,15 @@ module.exports = {
         var helperMessage = findLayer(symbol, (s) =>
           /^div#helper-message/.test(s.name)
         );
-        if (helperMessage)
+        if (helperMessage) {
           helperMessage.resizingConstraint = BOTTOM_LEFT_RIGHT_FIXED_HEIGHT;
-        if (!helperMessage && info)
+        }
+        if (!helperMessage && info) {
           info.resizingConstraint = BOTTOM_LEFT_RIGHT_FIXED_HEIGHT;
-        if (!helperMessage && count)
+        }
+        if (!helperMessage && count) {
           count.resizingConstraint = BOTTOM_LEFT_RIGHT_FIXED_HEIGHT;
+        }
         var inputValue = findLayer(symbol, (s) => /^Input Value/.test(s.name));
         if (inputValue) inputValue.resizingConstraint = TOP_LEFT_FIXED_SIZE;
         findLayers(
