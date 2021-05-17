@@ -2,6 +2,7 @@ export interface CheckboxState {
   id: string;
   checked: boolean;
   disabled: boolean;
+  indeterminate: boolean;
 }
 
 const objectsEqual = (o1: CheckboxState, o2: CheckboxState) => {
