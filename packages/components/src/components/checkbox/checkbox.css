@@ -59,6 +59,7 @@ scale-checkbox {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  cursor: pointer;
 }
 
 .checkbox .checkbox__control-wrapper {
@@ -67,19 +68,21 @@ scale-checkbox {
   display: flex;
   position: relative;
   align-items: center;
-  margin-right: var(--spacing-x);
 }
 
 .checkbox__label-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  cursor: pointer;
+  gap: var(--spacing-x);
 }
 
 .checkbox .checkbox__label {
   color: var(--color-text);
   font-weight: var(--font-weight-label);
   transition: var(--transition-label);
+  cursor: pointer;
 }
 
 .checkbox .checkbox__meta {

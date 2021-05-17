@@ -73,6 +73,7 @@ export class Checkbox {
               name={this.name}
               id={this.inputId}
               onChange={(e: any) => {
+                if(this.indeterminate) this.indeterminate = false
                 this.checked = e.target.checked;
                 // bubble event through the shadow dom
                 this.scaleChange.emit({ value: this.checked });
@@ -86,14 +87,14 @@ export class Checkbox {
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {this.checked && (
+              {this.checked && !this.indeterminate && (
                 <scale-icon-action-success
                   class="checkbox__icon"
                   decorative
                 ></scale-icon-action-success>
               )}
               {this.indeterminate && (
-                <scale-icon-action-play class="checkbox__icon"></scale-icon-action-play>
+                <scale-icon-action-indeterminate class="checkbox__icon"></scale-icon-action-indeterminate>
               )}
             </div>
             <span class="checkbox__label">
