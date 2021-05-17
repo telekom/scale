@@ -65,7 +65,7 @@ exports[`SidebarNavItem should match snapshot after using currentChanged() 1`] =
   <a aria-current="page" href="#">
     Some foo
     <span style="position: absolute; left: -10000px; overflow: hidden;">
-      null
+      Zurzeit aktiv
     </span>
   </a>
 </scale-sidebar-nav-item>
