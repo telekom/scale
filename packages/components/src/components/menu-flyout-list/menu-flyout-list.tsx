@@ -38,8 +38,6 @@ export class MenuFlyoutList {
   @State() forceRender = 0;
 
   /* 3. Public Properties (alphabetical) */
-  /** (optional) Injected styles */
-  @Prop() styles?: string;
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
@@ -148,7 +146,6 @@ export class MenuFlyoutList {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
           ref={(el) => (this.menu = el)}

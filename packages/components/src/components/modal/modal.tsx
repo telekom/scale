@@ -55,8 +55,6 @@ export class Modal {
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = false;
@@ -203,8 +201,6 @@ export class Modal {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div
           ref={(el) => (this.modalContainer = el)}
           class={this.getCssClassMap()}

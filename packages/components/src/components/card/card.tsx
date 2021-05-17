@@ -25,8 +25,6 @@ export class Card {
   @Prop() target?: string = '_self';
   /** (optional) Link card rel */
   @Prop() rel?: string = '';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @Prop() clickCard?: any;
 
@@ -35,7 +33,6 @@ export class Card {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div class="card-border" part="border">
           <Tag
             class={this.getCssClassMap()}

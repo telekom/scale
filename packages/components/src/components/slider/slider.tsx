@@ -52,8 +52,6 @@ export class Slider {
   @Prop() thumbLarge?: boolean = false;
   /** (optional) Slider id */
   @Prop() sliderId?: string;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @State() dragging: boolean;
   @State() startX: number;
@@ -169,8 +167,6 @@ export class Slider {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {!!this.label && (
             <label

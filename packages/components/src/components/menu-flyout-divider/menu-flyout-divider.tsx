@@ -25,8 +25,6 @@ export class MenuFlyoutDivider {
   /* 2. State Variables (alphabetical) */
 
   /* 3. Public Properties (alphabetical) */
-  /** (optional) Injected styles */
-  @Prop() styles?: string;
 
   /* 4. Events (alphabetical) */
 
@@ -55,7 +53,6 @@ export class MenuFlyoutDivider {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
           part="base"

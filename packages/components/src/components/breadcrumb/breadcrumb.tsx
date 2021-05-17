@@ -25,8 +25,6 @@ export class Breadcrumb {
 
   @Element() hostElement: HTMLElement;
   @Prop() separator?: string;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @State() linksArray = [];
   @State() separatorSlot: HTMLElement = null;
@@ -70,8 +68,6 @@ export class Breadcrumb {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <nav aria-label="Breadcrumb" class={this.getCssClassMap()} part="base">
           <ol class="breadcrumb__list" part="list">
             {this.linksArray.map((element, index) => {

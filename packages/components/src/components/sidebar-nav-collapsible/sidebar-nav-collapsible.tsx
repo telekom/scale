@@ -36,8 +36,6 @@ export class SidebarNavCollapsible {
   @Prop() condensed: boolean = false;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
-  /** (optional) Extra styles */
-  @Prop() styles?: string;
 
   @Watch('nestingLevel')
   nestingLevelChanged(newValue: number) {
@@ -71,7 +69,6 @@ export class SidebarNavCollapsible {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <Tag
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}

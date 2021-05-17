@@ -30,13 +30,10 @@ export class Link {
   @Prop() target?: string = '_self';
   /** (optional) Link variant */
   @Prop() variant?: string = '';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <a
           class={this.getCssClassMap()}
           part={classNames('base', this.disabled && 'disabled')}

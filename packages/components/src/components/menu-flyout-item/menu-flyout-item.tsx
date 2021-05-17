@@ -42,8 +42,7 @@ export class MenuFlyoutItem {
   @Prop() checked?: any;
   /** (optional) Disabled */
   @Prop() disabled? = false;
-  /** (optional) Injected styles */
-  @Prop() styles?: string;
+
   /** (optional) value */
   @Prop() value?: string;
 
@@ -92,7 +91,6 @@ export class MenuFlyoutItem {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
           ref={(el) => (this.menuItem = el)}

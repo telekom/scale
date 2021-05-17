@@ -34,8 +34,6 @@ export class SidebarNav {
   @Prop() collapsibleMediaQuery?: string = '(max-width: 30em)';
   /** Label for toggle button */
   @Prop() collapsibleLabel?: string = 'Menu';
-  /** (optional) Extra styles */
-  @Prop() styles?: string;
 
   @State() collapsed: boolean = true;
 
@@ -104,7 +102,6 @@ export class SidebarNav {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {this.collapsible === true && (
             <button

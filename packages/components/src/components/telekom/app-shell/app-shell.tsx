@@ -40,8 +40,7 @@ export class Shell {
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
   @State() scrolled: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
+
   hasSlotHeader: boolean;
 
   @Listen('scroll', { target: 'window' })
@@ -58,8 +57,6 @@ export class Shell {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div
           part={classNames('base', this.scrolled && 'sticky')}
           class={this.getCssClassMap()}

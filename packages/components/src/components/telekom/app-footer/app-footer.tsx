@@ -33,8 +33,6 @@ export class AppFooter {
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
   @Prop() copyright?: string = '© Deutsche Telekom AG';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   footerMenu() {
     return (
@@ -80,8 +78,6 @@ export class AppFooter {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div class={this.getCssClassMap()}>
           <div class="footer-mask"></div>
           <footer class="footer">

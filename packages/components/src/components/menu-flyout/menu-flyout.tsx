@@ -61,8 +61,6 @@ export class MenuFlyout {
     | 'left';
   /** (optional) Tracks the menu list open state */
   @Prop({ mutable: true, reflect: true }) open = false;
-  /** (optional) Injected styles */
-  @Prop() styles?: string;
 
   /* 4. Events (alphabetical) */
   /** Event triggered when menu list opened */
@@ -463,7 +461,6 @@ export class MenuFlyout {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
           ref={(el) => (this.main = el)}

@@ -27,8 +27,6 @@ export class TabHeader {
 
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
   @Prop() selected: boolean;
 
   @State() hasFocus: boolean = false;
@@ -71,8 +69,6 @@ export class TabHeader {
         onFocus={() => (this.hasFocus = true)}
         onBlur={() => (this.hasFocus = false)}
       >
-        {this.styles && <style>{this.styles}</style>}
-
         <span
           part={this.getBasePartMap()}
           ref={(el) => (this.container = el)}

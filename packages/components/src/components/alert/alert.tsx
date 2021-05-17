@@ -32,8 +32,6 @@ export class Alert {
   @Prop() timeout?: boolean | number = false;
   /** (optional) Alert icon */
   @Prop() icon?: string = '';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   defaultTimeout = 2000;
   hasSlotClose: boolean;
@@ -77,8 +75,6 @@ export class Alert {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div class={this.getCssClassMap()}>
           <div class="alert__body">
             <div class="alert__icon">{this.icon}</div>

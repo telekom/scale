@@ -39,8 +39,6 @@ export class TabNav {
 
   /** True for smaller height and font size in tab headers. */
   @Prop() small: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @Watch('small')
   smallChanged() {
@@ -182,8 +180,6 @@ export class TabNav {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <slot name="tab" />
           <slot name="panel" />

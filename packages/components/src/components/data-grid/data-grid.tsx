@@ -103,8 +103,6 @@ export class DataGrid {
   @Prop() selection: string[] = [];
   /** (optional) Shade every second row darker */
   @Prop() shadeAlternate?: boolean = true;
-  /** (optional) Injected css styles */
-  @Prop() styles: any;
   /** (optional) Set to falseto hide table, used for nested tables to re-render upon toggle */
   @Prop() visible?: boolean = true;
 
@@ -1231,7 +1229,6 @@ export class DataGrid {
           display: this.visible ? 'block' : 'none',
         }}
       >
-        {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           <div class={`${name}__title-block`}>
             {/* h4 tag + h5 styles feels weird, ideally one should be able to set the tag with an attribute */}

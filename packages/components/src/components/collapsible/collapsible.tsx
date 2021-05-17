@@ -41,8 +41,6 @@ export class Collapsible {
 
   /** Set to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   /** Default aria-level for heading */
   @State() level: number = 2;
@@ -96,8 +94,6 @@ export class Collapsible {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div
           class={this.getCssClassMap()}
           part={classNames('base', this.expanded && 'expanded')}

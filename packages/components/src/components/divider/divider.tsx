@@ -20,14 +20,10 @@ import classNames from 'classnames';
 export class Divider {
   /** (optional) Divider vertical */
   @Prop() vertical?: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div
           class={this.getCssClassMap()}
           aria-hidden

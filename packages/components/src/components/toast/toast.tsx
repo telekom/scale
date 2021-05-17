@@ -46,8 +46,6 @@ export class Toast {
   @Prop() positionRight?: number = 12;
   /** (optional) Toast fade duration */
   @Prop() fadeDuration?: number = 500;
-  /** (optional) Injected CSS styles */
-  @Prop({ reflect: true }) styles?: string;
 
   /** (optional) Toast state progress */
   @State() progress: number = 0;
@@ -111,7 +109,6 @@ export class Toast {
     this.setToastTimeout();
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <style>{this.transitions(this.toastHeightWithOffset)}</style>
         <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
 

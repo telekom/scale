@@ -31,8 +31,6 @@ export class Tag {
   @Prop() disabled?: boolean = false;
   /** (optional) Dismiss label */
   @Prop() dismissText?: string = 'dismiss';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   /** (optional) Close icon click event */
   @Event() scaleClose: EventEmitter<MouseEvent>;
@@ -62,8 +60,6 @@ export class Tag {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <Element
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}

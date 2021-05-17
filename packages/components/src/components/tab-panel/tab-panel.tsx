@@ -24,14 +24,10 @@ export class TabPanel {
 
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   render() {
     return (
       <Host id={`scale-tab-panel-${this.generatedId}`} role="tabpanel">
-        {this.styles && <style>{this.styles}</style>}
-
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <slot />
         </div>

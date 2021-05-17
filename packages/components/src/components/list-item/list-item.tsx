@@ -31,8 +31,6 @@ export class ListItem {
   @Prop({ mutable: true }) index?: number;
   /** If `false`, no marker or left padding will be visible */
   @Prop() marker: boolean = true;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @State() hasNestedChild: boolean = false;
   @State() isNested: boolean = false;
@@ -60,8 +58,6 @@ export class ListItem {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div
           class={this.getCssClassMap()}
           data-index={this.index}

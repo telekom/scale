@@ -65,9 +65,6 @@ export class Dropdown {
   /** (optional) Makes type `select` behave as a controlled component in React */
   @Prop() controlled?: boolean = false;
 
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
-
   /** Emitted when a keyboard input occurred. */
   @Event() scaleInput!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */

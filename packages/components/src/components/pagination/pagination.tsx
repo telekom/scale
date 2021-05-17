@@ -55,8 +55,6 @@ export class Pagination {
   @Prop() startElement?: number = 0;
   /** (optional) Total number of rows/elements used to calculate page displays */
   @Prop() totalElements?: number = 1;
-  /** (optional) Injected styles */
-  @Prop() styles?: string;
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
@@ -132,7 +130,6 @@ export class Pagination {
     const isAtEnd = end === total;
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <button
             class={`${name}__first-prompt`}

@@ -39,8 +39,6 @@ export class Button {
   @Prop() href?: string;
   /** (optional) The target attribute for the <a> tag */
   @Prop() target?: string = '_self';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   /**
    * Prevent clicks from being emitted from the host
@@ -106,8 +104,6 @@ export class Button {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         {this.href ? (
           <a
             class={this.getCssClassMap()}

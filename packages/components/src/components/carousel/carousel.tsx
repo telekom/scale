@@ -22,8 +22,6 @@ export class Carousel {
 
   /** (optional) carousel display direction */
   @Prop() vertical?: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @State() slidesArray = [];
   @State() value = 0;
@@ -88,8 +86,6 @@ export class Carousel {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <div class={this.getCssClassMap()}>
           <div class="carousel__container">
             <div

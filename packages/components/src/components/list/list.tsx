@@ -28,8 +28,6 @@ export class List {
 
   /** (optional) Make the list ordered (ol) */
   @Prop() ordered?: boolean = false;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   @Watch('ordered')
   orderedChanged(newValue) {
@@ -65,8 +63,6 @@ export class List {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-
         <Tag
           class={this.getCssClassMap()}
           part={classNames(

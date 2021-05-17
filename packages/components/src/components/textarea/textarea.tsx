@@ -66,8 +66,6 @@ export class Textarea {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   /** Emitted when a keyboard input occurred. */
   @Event() scaleInput!: EventEmitter<KeyboardEvent>;

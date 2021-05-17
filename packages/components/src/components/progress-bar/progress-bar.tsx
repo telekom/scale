@@ -42,8 +42,6 @@ export class ProgressBar {
   @Prop() progressBarId?: string;
   /** (optional) Progress bar label */
   @Prop() label?: string;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
 
   componentWillLoad() {
     if (this.progressBarId == null) {
@@ -76,7 +74,6 @@ export class ProgressBar {
   render() {
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <style>{this.transitions(this.percentage)}</style>
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>

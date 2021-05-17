@@ -45,8 +45,6 @@ export class Checkbox {
   @Prop({ mutable: true }) value?: string | number | null = '';
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
   /** Emitted when the value has changed. */
   @Event() scaleChange!: EventEmitter;
 

@@ -73,9 +73,6 @@ export class TextField {
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
 
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
-
   /** Emitted when a keyboard input occurred. */
   @Event() scaleInput!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
@@ -145,7 +142,6 @@ export class TextField {
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           {/* Accessibility: label should be always *before* the actual input */}
           <label class="text-field__label" htmlFor={this.inputId}>
