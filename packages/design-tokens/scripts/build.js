@@ -11,6 +11,32 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/**
+ * Creating an output target
+ * -------------------------
+ * An output target is a plain object with 4 methods and 4 props. The callbacks 
+ * will fire as the tokens tree is being traversed, so you can build the contents 
+ * of the output file accordingly. It has the following signature:
+ * 
+ * - filename (string) the name of the generated file
+ * - ext (string) is the extension of the output file, eg. .css
+ * - suffix (string) optional if present, will be appended to the filename
+ * - content (string) the actual content of the file
+ * 
+ * ```js
+ *   export const target = {
+ *     onCategory: ({ categoryName, tokens }) => {},
+ *     onSection: ({ categoryName, sectionName, tokens }) => {},
+ *     onValue: ({ categoryName, sectionName, key, value, tokens }) => {},
+ *     onComplete: () => {},
+ *     filename: 'design-tokens-telekom',
+ *     ext: '',
+ *     suffix: '',
+ *     content: null,
+ *   };
+ * ```
+ */
+
 import { join } from 'path';
 import fs from 'fs-extra';
 import each from 'lodash/each.js';
