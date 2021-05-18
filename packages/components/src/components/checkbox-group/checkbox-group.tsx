@@ -45,16 +45,16 @@ export class CheckboxGroup {
       };
     }
 
-    //initial Loading
+    // initial Loading
     if (!newState[0].disabled) {
       if (this.initialLoad) {
         this.handleMasterCheckBoxState(newState);
         this.initialLoad = false;
         this.statusChanged = true;
       }
-      //not initial Loading
-      else if (this.initialLoad == false) {
-        //if master have been changed
+      // not initial Loading
+      else if (this.initialLoad === false) {
+        // if master have been changed
         if (this.checkForSubChange(newState)) {
           this.handleMasterCheckBoxState(newState);
         } else {
@@ -116,11 +116,11 @@ export class CheckboxGroup {
       }
     }
     if (
-      checkedCounterNewState == checkedCounterOldState - 1 ||
-      checkedCounterNewState == checkedCounterOldState + 1 ||
-      checkedCounterNewState ==
+      checkedCounterNewState === checkedCounterOldState - 1 ||
+      checkedCounterNewState === checkedCounterOldState + 1 ||
+      checkedCounterNewState ===
         checkedCounterOldState - this.groupStatus.length - 2 ||
-      checkedCounterNewState ==
+      checkedCounterNewState ===
         checkedCounterOldState - this.groupStatus.length + 2
     ) {
       return true;
@@ -142,23 +142,23 @@ export class CheckboxGroup {
     let checkboxes;
     checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
 
-    //checked
-    if (checkedCounter + disabledCounter == newState.length - 1) {
+    // checked
+    if (checkedCounter + disabledCounter === newState.length - 1) {
       checkboxes[0].setAttribute('checked', 'true');
       checkboxes[0].removeAttribute('indeterminate');
       this.setMasterChanges();
     }
-    //indeterminate
+    // indeterminate
     else if (
       checkedCounter + disabledCounter < newState.length &&
-      checkedCounter != 0
+      checkedCounter !== 0
     ) {
       checkboxes[0].setAttribute('indeterminate', 'true');
       checkboxes[0].removeAttribute('checked');
       this.setMasterChanges();
     }
-    //empty
-    else if (checkedCounter == 0) {
+    // empty
+    else if (checkedCounter === 0) {
       checkboxes[0].removeAttribute('indeterminate');
       checkboxes[0].removeAttribute('checked');
       this.setMasterChanges();

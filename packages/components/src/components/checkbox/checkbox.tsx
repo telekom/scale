@@ -73,7 +73,9 @@ export class Checkbox {
               name={this.name}
               id={this.inputId}
               onChange={(e: any) => {
-                if(this.indeterminate) this.indeterminate = false
+                if (this.indeterminate) {
+                  this.indeterminate = false;
+                }
                 this.checked = e.target.checked;
                 // bubble event through the shadow dom
                 this.scaleChange.emit({ value: this.checked });
