@@ -46,20 +46,34 @@ export class CheckboxGroup {
     }
 
     //initial Loading
-    if (this.initialLoad) {
-      this.handleMasterCheckBoxState(newState);
-      this.initialLoad = false;
-      this.statusChanged = true;
-    }
-    //not initial Loading
-    else if (this.initialLoad == false) {
-      //if master have been changed
-      if (this.checkForSubChange(newState)) {
+    if (!newState[0].disabled) {
+      if (this.initialLoad) {
         this.handleMasterCheckBoxState(newState);
-      } else {
-        this.checkForMasterChange(newState);
+        this.initialLoad = false;
+        this.statusChanged = true;
       }
+      //not initial Loading
+      else if (this.initialLoad == false) {
+        //if master have been changed
+        if (this.checkForSubChange(newState)) {
+          this.handleMasterCheckBoxState(newState);
+        } else {
+          this.checkForMasterChange(newState);
+        }
+      }
+    } else {
+      this.handleMasterDisableProp();
     }
+  }
+
+  handleMasterDisableProp() {
+    let checkboxes;
+    checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+
+    for (let i = 1; i < checkboxes.length; i++) {
+      checkboxes[i].setAttribute('disabled', 'true');
+    }
+    this.setMasterChanges();
   }
 
   checkForMasterChange(newState: CheckboxState[]) {
@@ -125,9 +139,6 @@ export class CheckboxGroup {
         disabledCounter += 1;
       }
     }
-    console.log('length' + newState.length);
-    console.log('checked ' + checkedCounter);
-    console.log('disabled ' + disabledCounter);
     let checkboxes;
     checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
 
