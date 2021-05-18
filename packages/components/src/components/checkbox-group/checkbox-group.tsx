@@ -115,22 +115,31 @@ export class CheckboxGroup {
 
   handleMasterCheckBoxState(newState: CheckboxState[]) {
     let checkedCounter = 0;
-    for (let i = 1; i < newState.length; i++) {
-      if (newState[i].checked) {
-        checkedCounter += 1;
-      }
-    }
     let disabledCounter = 0;
     for (let i = 1; i < newState.length; i++) {
-      if (newState[i].disabled) {
+      if (!newState[i].disabled) {
+        if (newState[i].checked) {
+          checkedCounter += 1;
+        }
+      } else if (newState[i].disabled) {
         disabledCounter += 1;
       }
     }
+    console.log('length' + newState.length);
+    console.log('checked ' + checkedCounter);
+    console.log('disabled ' + disabledCounter);
     let checkboxes;
     checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+
+    //checked
+    if (checkedCounter + disabledCounter == newState.length - 1) {
+      checkboxes[0].setAttribute('checked', 'true');
+      checkboxes[0].removeAttribute('indeterminate');
+      this.setMasterChanges();
+    }
     //indeterminate
-    if (
-      checkedCounter < newState.length - disabledCounter + 1 &&
+    else if (
+      checkedCounter + disabledCounter < newState.length &&
       checkedCounter != 0
     ) {
       checkboxes[0].setAttribute('indeterminate', 'true');
@@ -141,13 +150,6 @@ export class CheckboxGroup {
     else if (checkedCounter == 0) {
       checkboxes[0].removeAttribute('indeterminate');
       checkboxes[0].removeAttribute('checked');
-      this.setMasterChanges();
-    }
-    //checked
-    if (checkedCounter + disabledCounter == newState.length - 1) {
-      console.log('Klappt');
-      checkboxes[0].setAttribute('checked', 'true');
-      checkboxes[0].removeAttribute('indeterminate');
       this.setMasterChanges();
     }
   }
