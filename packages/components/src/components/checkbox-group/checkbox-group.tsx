@@ -19,7 +19,6 @@ import { CheckboxState } from './utils/utils';
 })
 export class CheckboxGroup {
   initialLoad: boolean = true;
-  statusChanged: boolean = false;
   @State() groupStatus: CheckboxState[] = [];
   @Element() hostElement: HTMLElement;
   @Listen('scaleChange')
@@ -44,21 +43,21 @@ export class CheckboxGroup {
         indeterminate: checkboxes[i].indeterminate,
       };
     }
-
-    // initial Loading
     if (!newState[0].disabled) {
+      // initial Loading
       if (this.initialLoad) {
-        this.handleMasterCheckBoxState(newState);
+        this.setMasterCheckBoxState(newState);
         this.initialLoad = false;
-        this.statusChanged = true;
       }
       // not initial Loading
       else if (this.initialLoad === false) {
-        // if master have been changed
-        if (this.checkForSubChange(newState)) {
-          this.handleMasterCheckBoxState(newState);
-        } else {
-          this.checkForMasterChange(newState);
+        // sub has been changed
+        if (this.checkForSubCheckboxChange(newState)) {
+          this.setMasterCheckBoxState(newState);
+        }
+        // master has been changed
+        else {
+          this.checkForMasterCkeckboxChange(newState);
         }
       }
     } else {
@@ -69,18 +68,17 @@ export class CheckboxGroup {
   handleMasterDisableProp() {
     let checkboxes;
     checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
-
+    // set all subs to disabled
     for (let i = 1; i < checkboxes.length; i++) {
       checkboxes[i].setAttribute('disabled', 'true');
     }
-    this.setMasterChanges();
+    this.setChanges();
   }
 
-  checkForMasterChange(newState: CheckboxState[]) {
-    // set master to checked
+  checkForMasterCkeckboxChange(newState: CheckboxState[]) {
     let checkboxes;
     checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
-
+    // set master and subs to checked
     if (this.groupStatus[0].indeterminate || !this.groupStatus[0].checked) {
       for (let i = 1; i < checkboxes.length; i++) {
         if (!newState[i].disabled) {
@@ -88,9 +86,9 @@ export class CheckboxGroup {
           checkboxes[i].removeAttribute('indeterminate');
         }
       }
-      this.setMasterChanges();
+      this.setChanges();
     }
-    // set master to empty
+    // set master and subs to empty
     else if (this.groupStatus[0].checked) {
       for (let i = 1; i < checkboxes.length; i++) {
         if (!newState[i].disabled) {
@@ -98,11 +96,11 @@ export class CheckboxGroup {
           checkboxes[i].removeAttribute('indeterminate');
         }
       }
-      this.setMasterChanges();
+      this.setChanges();
     }
   }
 
-  checkForSubChange(newState: CheckboxState[]) {
+  checkForSubCheckboxChange(newState: CheckboxState[]) {
     let checkedCounterOldState = 0;
     for (let i = 1; i < this.groupStatus.length; i++) {
       if (this.groupStatus[i].checked) {
@@ -127,7 +125,7 @@ export class CheckboxGroup {
     }
   }
 
-  handleMasterCheckBoxState(newState: CheckboxState[]) {
+  setMasterCheckBoxState(newState: CheckboxState[]) {
     let checkedCounter = 0;
     let disabledCounter = 0;
     for (let i = 1; i < newState.length; i++) {
@@ -142,30 +140,30 @@ export class CheckboxGroup {
     let checkboxes;
     checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
 
-    // checked
+    // set master to checked
     if (checkedCounter + disabledCounter === newState.length - 1) {
       checkboxes[0].setAttribute('checked', 'true');
       checkboxes[0].removeAttribute('indeterminate');
-      this.setMasterChanges();
+      this.setChanges();
     }
-    // indeterminate
+    // set master to indeterminate
     else if (
       checkedCounter + disabledCounter < newState.length &&
       checkedCounter !== 0
     ) {
       checkboxes[0].setAttribute('indeterminate', 'true');
       checkboxes[0].removeAttribute('checked');
-      this.setMasterChanges();
+      this.setChanges();
     }
-    // empty
+    // set master to empty
     else if (checkedCounter === 0) {
       checkboxes[0].removeAttribute('indeterminate');
       checkboxes[0].removeAttribute('checked');
-      this.setMasterChanges();
+      this.setChanges();
     }
   }
 
-  setMasterChanges() {
+  setChanges() {
     const checkboxes = Array.from(
       this.hostElement.querySelectorAll('scale-checkbox')
     );
