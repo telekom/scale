@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                    | Type      | Default     |
-| ---------- | ---------- | ------------------------------ | --------- | ----------- |
-| `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
-| `vertical` | `vertical` | (optional) Divider vertical    | `boolean` | `false`     |
+| Property   | Attribute  | Description                 | Type      | Default |
+| ---------- | ---------- | --------------------------- | --------- | ------- |
+| `vertical` | `vertical` | (optional) Divider vertical | `boolean` | `false` |
 
 
 ## Shadow Parts

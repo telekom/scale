@@ -19,7 +19,6 @@
 | `required`    | `required`     | (optional) Input required                                                | `boolean`          | `undefined` |
 | `size`        | `size`         | (optional) Input size                                                    | `string`           | `''`        |
 | `status`      | `status`       | (optional) Input status                                                  | `string`           | `''`        |
-| `styles`      | `styles`       | (optional) Injected CSS styles                                           | `string`           | `undefined` |
 | `transparent` | `transparent`  | (optional) input background transparent                                  | `boolean`          | `undefined` |
 | `value`       | `value`        | (optional) Input value                                                   | `number \| string` | `''`        |
 | `visibleSize` | `visible-size` | (optional) the number of visible options in a select drop-down list      | `number`           | `undefined` |

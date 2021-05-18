@@ -16,7 +16,6 @@
 | `heading`          | `heading`            | Modal heading                            | `string`            | `undefined`      |
 | `opened`           | `opened`             | (optional) If `true`, the Modal is open. | `boolean`           | `false`          |
 | `size`             | `size`               | (optional) Modal size                    | `string`            | `'default'`      |
-| `styles`           | `styles`             | (optional) Injected CSS styles           | `string`            | `undefined`      |
 
 
 ## Events

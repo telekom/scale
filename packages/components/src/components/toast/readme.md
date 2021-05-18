@@ -16,7 +16,6 @@
 | `positionRight` | `position-right` | (optional) Toast position right      | `number`            | `12`        |
 | `positionTop`   | `position-top`   | (optional) Toast position at the top | `number`            | `12`        |
 | `size`          | `size`           | (optional) Toast size                | `string`            | `''`        |
-| `styles`        | `styles`         | (optional) Injected CSS styles       | `string`            | `undefined` |
 | `time`          | `time`           | (optional) Toast time                | `number`            | `undefined` |
 | `variant`       | `variant`        | (optional) Toast variant             | `string`            | `''`        |
 

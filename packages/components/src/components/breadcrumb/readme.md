@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                    | Type     | Default     |
-| ----------- | ----------- | ------------------------------ | -------- | ----------- |
-| `separator` | `separator` |                                | `string` | `undefined` |
-| `styles`    | `styles`    | (optional) Injected CSS styles | `string` | `undefined` |
+| Property    | Attribute   | Description | Type     | Default     |
+| ----------- | ----------- | ----------- | -------- | ----------- |
+| `separator` | `separator` |             | `string` | `undefined` |
 
 
 ## Shadow Parts

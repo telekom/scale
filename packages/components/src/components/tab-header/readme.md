@@ -11,7 +11,6 @@
 | ---------- | ---------- | ------------------------------------- | --------- | ----------- |
 | `selected` | `selected` |                                       | `boolean` | `undefined` |
 | `small`    | `small`    | True for smaller height and font size | `boolean` | `false`     |
-| `styles`   | `styles`   | (optional) Injected CSS styles        | `string`  | `undefined` |
 
 
 ----------------------------------------------

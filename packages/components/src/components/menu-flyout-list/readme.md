@@ -5,13 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property | Attribute | Description                | Type     | Default     |
-| -------- | --------- | -------------------------- | -------- | ----------- |
-| `styles` | `styles`  | (optional) Injected styles | `string` | `undefined` |
-
-
 ## Events
 
 | Event         | Description                                                                | Type                                  |

@@ -19,7 +19,6 @@ We tried adding ::-moz-focus-inner for the button but JSS fails to parse that se
 | `href`         | `href`          | The URL where the link should point to                                      | `string`  | `'#'`       |
 | `label`        | `label`         | The text for the button                                                     | `string`  | `undefined` |
 | `nestingLevel` | `nesting-level` | Nesting level within the <scale-sidebar-nav> parent, gets set automatically | `number`  | `undefined` |
-| `styles`       | `styles`        | (optional) Extra styles                                                     | `string`  | `undefined` |
 | `tag`          | `tag`           | The parent wrapper                                                          | `string`  | `'li'`      |
 
 

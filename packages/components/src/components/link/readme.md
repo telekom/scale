@@ -60,7 +60,6 @@
 | `block`    | `block`    | (optional) Block link          | `boolean` | `false`     |
 | `disabled` | `disabled` | (optional) Disabled link       | `boolean` | `false`     |
 | `href`     | `href`     | (optional) Link href           | `string`  | `undefined` |
-| `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
 | `target`   | `target`   | (optional) Link open a new tag | `string`  | `'_self'`   |
 | `variant`  | `variant`  | (optional) Link variant        | `string`  | `''`        |
 

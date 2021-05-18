@@ -13,7 +13,6 @@
 | `collapsible`           | `collapsible`             | Set to `true` to make the sidebar toggleable (useful for small screens)                                                                                                     | `boolean` | `false`               |
 | `collapsibleLabel`      | `collapsible-label`       | Label for toggle button                                                                                                                                                     | `string`  | `'Menu'`              |
 | `collapsibleMediaQuery` | `collapsible-media-query` | Automatically set `collapsible` based on this media query                                                                                                                   | `string`  | `'(max-width: 30em)'` |
-| `styles`                | `styles`                  | (optional) Extra styles                                                                                                                                                     | `string`  | `undefined`           |
 
 
 ## Shadow Parts

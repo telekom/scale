@@ -21,7 +21,6 @@
 | `statusDescription` | `status-description` | (optional) Progress bar status description text | `string`  | `undefined` |
 | `statusInside`      | `status-inside`      | (optional) Progress text display inside bar     | `boolean` | `undefined` |
 | `strokeWidth`       | `stroke-width`       | (optional) Progress bar stroke width            | `number`  | `6`         |
-| `styles`            | `styles`             | (optional) Injected CSS styles                  | `string`  | `undefined` |
 
 
 ## Shadow Parts

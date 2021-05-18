@@ -23,7 +23,6 @@
 | `selectable`     | `selectable`      | (optional) Set to true to add selection column                                               | `boolean`  | `false`     |
 | `selection`      | --                | Read-only selection array - populated with raw data from selected rows                       | `string[]` | `[]`        |
 | `shadeAlternate` | `shade-alternate` | (optional) Shade every second row darker                                                     | `boolean`  | `true`      |
-| `styles`         | `styles`          | (optional) Injected css styles                                                               | `any`      | `undefined` |
 | `visible`        | `visible`         | (optional) Set to falseto hide table, used for nested tables to re-render upon toggle        | `boolean`  | `true`      |
 
 

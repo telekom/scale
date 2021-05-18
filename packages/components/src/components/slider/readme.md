@@ -17,7 +17,6 @@
 | `showValue`   | `show-value`   | (optional) slider display value                                       | `boolean` | `true`      |
 | `sliderId`    | `slider-id`    | (optional) Slider id                                                  | `string`  | `undefined` |
 | `step`        | `step`         | (optional) the step size to increase or decrease when dragging slider | `number`  | `1`         |
-| `styles`      | `styles`       | (optional) Injected CSS styles                                        | `string`  | `undefined` |
 | `thumbLarge`  | `thumb-large`  | (optional) larger thumb                                               | `boolean` | `false`     |
 | `trackSmall`  | `track-small`  | (optional) smaller track                                              | `boolean` | `false`     |
 | `value`       | `value`        | (optional) the display value of the slider                            | `number`  | `undefined` |

@@ -5,10 +5,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description                           | Type      | Default     |
-| --------- | --------- | ------------------------------------- | --------- | ----------- |
-| `ordered` | `ordered` | (optional) Make the list ordered (ol) | `boolean` | `false`     |
-| `styles`  | `styles`  | (optional) Injected CSS styles        | `string`  | `undefined` |
+| Property  | Attribute | Description                           | Type      | Default |
+| --------- | --------- | ------------------------------------- | --------- | ------- |
+| `ordered` | `ordered` | (optional) Make the list ordered (ol) | `boolean` | `false` |
 
 
 ----------------------------------------------

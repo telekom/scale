@@ -13,7 +13,6 @@
 | `cascade`  | `cascade`  | (optional) Set to true to display arrow icon suffix                           | `boolean` | `false`     |
 | `checked`  | `checked`  | (optional) Set to true to display check prefix, false to display empty prefix | `any`     | `undefined` |
 | `disabled` | `disabled` | (optional) Disabled                                                           | `boolean` | `false`     |
-| `styles`   | `styles`   | (optional) Injected styles                                                    | `string`  | `undefined` |
 | `value`    | `value`    | (optional) value                                                              | `string`  | `undefined` |
 
 
