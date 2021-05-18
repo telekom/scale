@@ -45,15 +45,67 @@ export class CheckboxGroup {
       };
     }
 
+    //initial Loading
     if (this.initialLoad) {
       this.handleMasterCheckBoxState(newState);
       this.initialLoad = false;
       this.statusChanged = true;
-    } else if (this.initialLoad == false) {
-      this.handleMasterCheckBoxState(newState);
-      this.statusChanged = true;
     }
-    this.groupStatus = newState;
+    //not initial Loading
+    else if (this.initialLoad == false) {
+      //if master have been changed
+      if (this.checkForSubChange(newState)) {
+        this.handleMasterCheckBoxState(newState);
+      } else {
+        this.checkForMasterChange();
+      }
+    }
+  }
+
+  checkForMasterChange() {
+    // set master to checked
+    let checkboxes;
+    checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    if (this.groupStatus[0].indeterminate || !this.groupStatus[0].checked) {
+      for (let i = 1; i < checkboxes.length; i++) {
+        checkboxes[i].setAttribute('checked', 'true');
+        checkboxes[i].removeAttribute('indeterminate');
+      }
+      this.setMasterChanges();
+    }
+    // set master to empty
+    else if (this.groupStatus[0].checked) {
+      for (let i = 1; i < checkboxes.length; i++) {
+        checkboxes[i].removeAttribute('checked');
+        checkboxes[i].removeAttribute('indeterminate');
+      }
+      this.setMasterChanges();
+    }
+  }
+
+  checkForSubChange(newState: CheckboxState[]) {
+    let checkedCounterOldState = 0;
+    for (let i = 1; i < this.groupStatus.length; i++) {
+      if (this.groupStatus[i].checked) {
+        checkedCounterOldState += 1;
+      }
+    }
+    let checkedCounterNewState = 0;
+    for (let i = 1; i < newState.length; i++) {
+      if (newState[i].checked) {
+        checkedCounterNewState += 1;
+      }
+    }
+    if (
+      checkedCounterNewState == checkedCounterOldState - 1 ||
+      checkedCounterNewState == checkedCounterOldState + 1 ||
+      checkedCounterNewState ==
+        checkedCounterOldState - this.groupStatus.length - 2 ||
+      checkedCounterNewState ==
+        checkedCounterOldState - this.groupStatus.length + 2
+    ) {
+      return true;
+    }
   }
 
   handleMasterCheckBoxState(newState: CheckboxState[]) {
@@ -63,24 +115,24 @@ export class CheckboxGroup {
         checkedCounter += 1;
       }
     }
-    let masterCheckbox;
-    masterCheckbox = this.hostElement.querySelectorAll('scale-checkbox');
+    let checkboxes;
+    checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
     //indeterminate
     if (checkedCounter < newState.length - 1 && checkedCounter != 0) {
-      masterCheckbox[0].setAttribute('indeterminate', 'true');
-      masterCheckbox[0].removeAttribute('checked');
+      checkboxes[0].setAttribute('indeterminate', 'true');
+      checkboxes[0].removeAttribute('checked');
       this.setMasterChanges();
     }
     //empty
     else if (checkedCounter == 0) {
-      masterCheckbox[0].removeAttribute('indeterminate');
-      masterCheckbox[0].removeAttribute('checked');
+      checkboxes[0].removeAttribute('indeterminate');
+      checkboxes[0].removeAttribute('checked');
       this.setMasterChanges();
     }
     //checked
     else if (checkedCounter == newState.length - 1) {
-      masterCheckbox[0].setAttribute('checked', 'true');
-      masterCheckbox[0].removeAttribute('indeterminate');
+      checkboxes[0].setAttribute('checked', 'true');
+      checkboxes[0].removeAttribute('indeterminate');
       this.setMasterChanges();
     }
   }
@@ -99,9 +151,6 @@ export class CheckboxGroup {
       };
     }
     this.groupStatus = newState;
-    for (let i = 0; i < newState.length; i++) {
-      console.log(newState[i]);
-    }
   }
 
   render() {
