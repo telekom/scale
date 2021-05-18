@@ -35,18 +35,7 @@ export const GraphCell: Cell = {
           <div class={`tbody__bar-cell`}>
             <scale-progress-bar
               percentage={progress}
-              // showStatus={true}
               style={{ maxWidth: '200px' }}
-              styles={
-                /* css */ `.progress-bar__outer {
-                min-width: 50px;
-                max-width: 200px;
-              }
-              .progress-bar__inner {
-                background: var(--scl-color-grey-80) !important;
-              }
-              `
-              }
             ></scale-progress-bar>
             <p class={`scl-body`}>{content}</p>
           </div>
@@ -57,16 +46,6 @@ export const GraphCell: Cell = {
           <scale-progress-bar
             percentage={progress}
             showStatus={true}
-            styles={
-              /* css */ `.progress-bar__outer {
-              min-width: 50px;
-              max-width: 200px;
-            }
-            .progress-bar__inner {
-                background: var(--scl-color-blue-60) !important;
-              }
-            `
-            }
           ></scale-progress-bar>
         );
     }

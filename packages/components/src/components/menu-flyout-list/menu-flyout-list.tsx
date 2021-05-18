@@ -11,7 +11,6 @@
 
 import {
   Component,
-  Prop,
   h,
   Host,
   Method,

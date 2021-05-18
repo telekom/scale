@@ -40,11 +40,10 @@ describe('TextField', () => {
                  placeholder ="placeholder"
                  disabled ="true"
                  required ="true"
-                 counter ="true" 
+                 counter ="true"
                  value ="value"
                  input-id ="input-text-field1"
-                 transparent ="true"
-                 styles ="styles"
+                 transparent ="true">
                </scale-text-field>`,
     });
 
@@ -61,7 +60,6 @@ describe('TextField', () => {
     expect(specPage.rootInstance.counter).toBe(true);
     expect(specPage.rootInstance.value).toBe('value');
     expect(specPage.rootInstance.transparent).toBe(true);
-    expect(specPage.rootInstance.styles).toBe('styles');
     expect(specPage.rootInstance.inputId).toBe('input-text-field1');
     expect(specPage.rootInstance.hasFocus).toBe(false);
   });

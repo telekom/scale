@@ -1,11 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBar check props 1`] = `
-<scale-progress-bar label="testLabel" percentage="18" show-status="" status-description="statusDescription" status-inside="" stroke-width="24" styles="color:blue;" text-inside="">
+<scale-progress-bar label="testLabel" percentage="18" show-status="" status-description="statusDescription" status-inside="" stroke-width="24" text-inside="">
   <mock:shadow-root>
-    <style>
-      color:blue;
-    </style>
     <style>
       @keyframes showProgress {
       from {

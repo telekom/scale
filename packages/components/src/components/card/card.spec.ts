@@ -39,15 +39,6 @@ describe('Card', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should handle styles prop', async () => {
-    const page = await newSpecPage({
-      components: [Card],
-      html: `<scale-card styles="color=red">Label</scale-card>`,
-    });
-    expect(page.rootInstance.styles).toBe('color=red');
-    expect(page.root).toMatchSnapshot();
-  });
-
   it('should handle rel prop', async () => {
     const page = await newSpecPage({
       components: [Card],

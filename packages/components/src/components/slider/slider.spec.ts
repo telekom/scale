@@ -109,7 +109,6 @@ describe('Slider', () => {
       page.root.trackSmall = 'true';
       page.root.thumbLarge = 'true';
       page.root.sliderId = 'sliderID';
-      page.root.styles = 'background : red';
       await page.waitForChanges();
       expect(page.rootInstance.value).toBe(50);
       expect(page.rootInstance.min).toBe(10);
@@ -122,7 +121,6 @@ describe('Slider', () => {
       expect(page.rootInstance.trackSmall).toBe(true);
       expect(page.rootInstance.thumbLarge).toBe(true);
       expect(page.rootInstance.sliderId).toBe('sliderID');
-      expect(page.rootInstance.styles).toBe('background : red');
     });
   });
 

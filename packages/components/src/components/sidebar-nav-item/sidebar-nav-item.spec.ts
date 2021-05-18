@@ -88,14 +88,12 @@ describe('SidebarNavItem', () => {
     page.root.active = true;
     page.root.current = 'current';
     page.root.nestingLevel = 2;
-    page.root.styles = 'background : red';
     await page.waitForChanges();
     expect(page.rootInstance.condensed).toBe(true);
     expect(page.rootInstance.bold).toBe(true);
     expect(page.rootInstance.active).toBe(true);
     expect(page.rootInstance.current).toBe('current');
     expect(page.rootInstance.nestingLevel).toBe(2);
-    expect(page.rootInstance.styles).toBe('background : red');
   });
 
   describe('classes', () => {

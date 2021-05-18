@@ -30,16 +30,14 @@ describe('ProgressBar', () => {
     const page = await newSpecPage({
       components: [ProgressBar],
       html: `
-        <scale-progress-bar 
+        <scale-progress-bar
           label="testLabel"
           status-description="statusDescription"
           status-inside
           percentage="18"
-          text-inside 
+          text-inside
           stroke-width=24
-          show-status
-          styles="color:blue;"
-          >
+          show-status>
             Label
         </scale-progress-bar>`,
     });

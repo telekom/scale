@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Divider should handle style 1`] = `
-<scale-divider styles="color:blue;">
-  <mock:shadow-root>
-    <style>
-      color:blue;
-    </style>
-    <div aria-hidden="" class="divider" part="base">
-      <hr class="divider__horizontal" part="rule-horizontal">
-    </div>
-  </mock:shadow-root>
-</scale-divider>
-`;
-
 exports[`Divider should match snapshot 1`] = `
 <scale-divider>
   <mock:shadow-root>

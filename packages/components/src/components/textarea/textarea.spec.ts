@@ -101,7 +101,6 @@ describe('Textarea', () => {
       page.root.transparent = 'true';
       page.root.value = 'value';
       page.root.inputId = 'inputId';
-      page.root.styles = 'background : red';
       await page.waitForChanges();
       expect(page.rootInstance.name).toBe('name');
       expect(page.rootInstance.label).toBe('label');
@@ -117,7 +116,6 @@ describe('Textarea', () => {
       expect(page.rootInstance.value).toBe('value');
       expect(page.rootInstance.transparent).toBe(true);
       expect(page.rootInstance.inputId).toBe('inputId');
-      expect(page.rootInstance.styles).toBe('background : red');
     });
   });
   describe('functions', () => {

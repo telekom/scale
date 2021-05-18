@@ -23,11 +23,6 @@ describe('TabPanel', () => {
   it('should match snapshot', async () => {
     expect(page.root).toMatchSnapshot();
   });
-  it('should handle styles', async () => {
-    page.rootInstance.styles = 'background-color:red';
-    await page.waitForChanges();
-    expect(page.root).toMatchSnapshot();
-  });
   it('should handle css classes', async () => {
     const tabPanel = new TabPanel();
     tabPanel.small = true;
