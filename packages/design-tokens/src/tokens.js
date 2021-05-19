@@ -10,16 +10,16 @@
  */
 
 /**
- * The tokens are organized in categories, and each category has sections, 
+ * The tokens are organized in categories, and each category has sections,
  * which include the actual key/value pairs.
- * 
+ *
  * CATEGORY-SECTION-KEY: VALUE
- * 
- * The name of the token is determined by this structure. For example, 
- * if we look at the family section within the font category, we'll find 
- * at least the sans and mono values, so the tokens —in the CSS output— 
+ *
+ * The name of the token is determined by this structure. For example,
+ * if we look at the family section within the font category, we'll find
+ * at least the sans and mono values, so the tokens —in the CSS output—
  * look like this:
- * 
+ *
  * ```css
  *   :root {
  *     --{namespace}-{category}-{section}-{key}: {value};
@@ -27,9 +27,9 @@
  *     --scl-font-family-mono: monospace;
  *   }
  * ```
- * 
- * Sometimes you don't need a section, for this there's the special 
- * keyword DEFAULT we can use to omit the section name in the 
+ *
+ * Sometimes you don't need a section, for this there's the special
+ * keyword DEFAULT we can use to omit the section name in the
  * resulting token name.
  */
 
