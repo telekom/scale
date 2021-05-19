@@ -8,10 +8,10 @@
     <script type="module" src="/build/scale-components.esm.js"></script>
     <link rel="stylesheet" href="/build/scale-components.css" />
     <style>
-      haha-hue {
+      demo-hue {
         display: flex;
       }
-      haha-color-display {
+      demo-color-display {
         display: block;
         width: 120px;
         height: 120px;
@@ -24,11 +24,11 @@
   </head>
   <body>
     <h1 class="scl-font-variant-heading-3">Color thingy</h1>
-    <haha-hue>
-      <haha-color-display
+    <demo-hue>
+      <demo-color-display
         style="--h: 110deg; --s: 100%; --l: 44.3%; --a: 1"
-      ></haha-color-display>
-      <haha-controls>
+      ></demo-color-display>
+      <demo-controls>
         <scale-slider
           id="h"
           label="Hue"
@@ -56,15 +56,15 @@
           max="1"
           step="0.01"
         ></scale-slider>
-      </haha-controls>
-    </haha-hue>
+      </demo-controls>
+    </demo-hue>
 
     <script>
       const h = document.getElementById('h');
       const s = document.getElementById('s');
       const l = document.getElementById('l');
       const a = document.getElementById('a');
-      const display = document.querySelector('haha-color-display');
+      const display = document.querySelector('demo-color-display');
 
       h.addEventListener('scaleInput', () => {
         display.style.setProperty('--h', h.value + 'deg');
