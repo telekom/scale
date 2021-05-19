@@ -132,42 +132,6 @@ describe('Slider', () => {
     });
   });
 
-  // I think it's OK to remove this since it was testing internals…
-  /* describe('functions', () => {
-    it('setPosition(-20) returns 0', () => {
-      const element = new Slider();
-      element.setPosition(-20);
-      expect(element.value).toBe(0);
-    });
-
-    it('setPosition(120) returns 100', () => {
-      const element = new Slider();
-      element.setPosition(120);
-      expect(element.value).toBe(100);
-    });
-
-    it('setPosition(50) returns 50', () => {
-      const element = new Slider();
-      element.setPosition(50);
-      expect(element.value).toBe(50);
-    });
-
-    it('currentPosition()', () => {
-      const element = new Slider();
-      element.value = 22;
-      element.max = 90;
-      element.min = 10;
-      expect(element.currentPosition()).toBe('15%');
-    });
-
-    it('onDragEnd()', () => {
-      const element = new Slider();
-      element.dragging = true;
-      element.onDragEnd();
-      expect(element.dragging).toBe(false);
-    });
-  }); */
-
   it('keydown .slider__thumb with ArrowRight', async () => {
     const page = await newSpecPage({
       components: [Slider],
