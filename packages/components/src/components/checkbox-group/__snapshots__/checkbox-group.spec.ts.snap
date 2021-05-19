@@ -25,22 +25,7 @@ exports[`CheckboxGroup should match standard snapshot 1`] = `
       </scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="6"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="7"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="8"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="" disabled="" label="checkbox" name="nameOfCheckbox" value="9"></scale-checkbox>
+      <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
 </scale-checkbox-group>
