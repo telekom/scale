@@ -44,7 +44,7 @@ export class Slider {
   /** (optional) slider label */
   @Prop() label?: string;
   /** (optional) slider display value */
-  @Prop() hideValue?: boolean = false;
+  @Prop() showValue?: boolean = true;
   /** (optional) slider value unit */
   @Prop() unit?: string = '%';
   /** (optional) number of decimal places */
@@ -223,7 +223,7 @@ export class Slider {
                 />
               </div>
             </div>
-            {!this.hideValue && (
+            {this.showValue && (
               <div part="display-value" class="slider__display-value">
                 {this.value != null && this.value.toFixed(this.decimals)}
                 {this.value != null && this.unit}
