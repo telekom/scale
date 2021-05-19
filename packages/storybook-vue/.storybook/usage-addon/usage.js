@@ -109,6 +109,8 @@ const Usage = (props) => {
     card_de,
     checkbox_en,
     checkbox_de,
+    'checkbox-group_en': checkboxGroup_en,
+    'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
     badge_en,
