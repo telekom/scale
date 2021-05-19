@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style>
+      demo-hue {
+        display: flex;
+      }
+      demo-color-display {
+        display: block;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        background: hsla(var(--h) var(--s) var(--l) / var(--a));
+        margin-right: 2rem;
+        box-shadow: var(--scl-shadow-level-2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="scl-font-variant-heading-3">Color thingy</h1>
+    <demo-hue>
+      <demo-color-display
+        style="--h: 110deg; --s: 100%; --l: 44.3%; --a: 1"
+      ></demo-color-display>
+      <demo-controls>
+        <scale-slider
+          id="h"
+          label="Hue"
+          value="110"
+          max="360"
+          step="0.1"
+          decimals="1"
+          unit="deg"
+        ></scale-slider>
+        <scale-slider id="s" label="Saturation" value="100"></scale-slider>
+        <scale-slider
+          id="l"
+          label="Lightness"
+          value="44.3"
+          step="0.1"
+          decimals="1"
+        ></scale-slider>
+        <scale-slider
+          id="a"
+          label="Alpha"
+          unit=""
+          decimals="2"
+          value="1"
+          min="0"
+          max="1"
+          step="0.01"
+        ></scale-slider>
+      </demo-controls>
+    </demo-hue>
+
+    <script>
+      const h = document.getElementById('h');
+      const s = document.getElementById('s');
+      const l = document.getElementById('l');
+      const a = document.getElementById('a');
+      const display = document.querySelector('demo-color-display');
+
+      h.addEventListener('scaleInput', () => {
+        display.style.setProperty('--h', h.value + 'deg');
+      });
+      s.addEventListener('scaleInput', () => {
+        display.style.setProperty('--s', s.value + '%');
+      });
+      l.addEventListener('scaleInput', () => {
+        display.style.setProperty('--l', l.value + '%');
+      });
+      a.addEventListener('scaleInput', () => {
+        display.style.setProperty('--a', a.value);
+      });
+    </script>
+  </body>
+</html>
