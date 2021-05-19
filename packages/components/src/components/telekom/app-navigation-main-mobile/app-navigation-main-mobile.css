@@ -113,10 +113,6 @@ app-navigation-main-mobile {
   margin-right: var(--scl-spacing-8);
 }
 
-svg path {
-  fill: inherit;
-}
-
 .main-navigation-mobile__child-menu-current .icon-back {
   fill: var(--color-selected);
 }
