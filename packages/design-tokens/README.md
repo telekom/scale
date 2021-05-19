@@ -37,7 +37,7 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 />
 <script
   type="module"
-  src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.js"
+  src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.esm.js"
 ></script>
 ```
 
@@ -101,7 +101,7 @@ npm install @telekom/scale-components
 />
 <script
   type="module"
-  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.js"
+  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
 ></script>
 ```
 

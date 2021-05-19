@@ -9,6 +9,30 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/**
+ * The tokens are organized in categories, and each category has sections,
+ * which include the actual key/value pairs.
+ *
+ * CATEGORY-SECTION-KEY: VALUE
+ *
+ * The name of the token is determined by this structure. For example,
+ * if we look at the family section within the font category, we'll find
+ * at least the sans and mono values, so the tokens —in the CSS output—
+ * look like this:
+ *
+ * ```css
+ *   :root {
+ *     --{namespace}-{category}-{section}-{key}: {value};
+ *     --scl-font-family-sans: TeleNeoWeb, sans-serif;
+ *     --scl-font-family-mono: monospace;
+ *   }
+ * ```
+ *
+ * Sometimes you don't need a section, for this there's the special
+ * keyword DEFAULT we can use to omit the section name in the
+ * resulting token name.
+ */
+
 import { Color, Shadow } from './factories.js';
 
 export const NAMESPACE_PREFIX = 'scl';
@@ -129,7 +153,7 @@ tokens[TYPE_VARIANT] = {
   heading_5: {
     ...defaultVariant,
     size: size['20'],
-    lineHeight: lineHeight['125'],
+    lineHeight: lineHeight['120'],
     weight: weight.extrabold,
   },
   heading_4: {
