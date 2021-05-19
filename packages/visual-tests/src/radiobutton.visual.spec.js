@@ -4,6 +4,7 @@ describe('RadioButton', () => {
     ['standard-disabled'],
     ['selected'],
     ['selected-disabled'],
+    ['helper-text'],
     ['error'],
   ])('%p', async (variant) => {
     await global.page.goto(

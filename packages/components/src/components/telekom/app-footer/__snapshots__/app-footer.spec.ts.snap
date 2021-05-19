@@ -11,7 +11,7 @@ exports[`AppFooter should match snapshot 1`] = `
             <app-logo claim=""></app-logo>
           </div>
           <div class="footer-copyright">
-            © Deutsche Telekom GmbH
+            © Deutsche Telekom AG
           </div>
           <nav aria-label="bottom" class="footer-navigation">
             <ul></ul>
