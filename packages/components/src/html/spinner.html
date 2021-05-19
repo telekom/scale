@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Loading spinners</title>
+
+    <script type="module" src="build/scale-components.esm.js"></script>
+    <script nomodule src="build/scale-components.js"></script>
+    <link rel="stylesheet" href="build/scale-components.css" />
+    <style>
+      section {
+        padding: 1rem;
+      }
+      .bg-black {
+        background: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Loading spinners</h1>
+
+    <section class="bg-black">
+      <h2>Horizontal & White</h2>
+      <scale-loading-spinner
+        alignment="horizontal"
+        variant="white"
+        text="Loading..."
+      ></scale-loading-spinner>
+      <h2>Horizontal & White & Large</h2>
+      <scale-loading-spinner
+        alignment="horizontal"
+        variant="white"
+        size="large"
+        text="Loading..."
+      ></scale-loading-spinner>
+
+      <h2>Vertical & White</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="white"
+      ></scale-loading-spinner>
+
+      <h2>Vertical & White & Large</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="white"
+        size="large"
+      ></scale-loading-spinner>
+
+      <h2>Vertical & White & Custom text</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="white"
+        text="Please wait"
+      ></scale-loading-spinner>
+      <h2>Vertical & White & Custom text & Large</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="white"
+        text="Please wait"
+        size="large"
+      ></scale-loading-spinner>
+      <h2>Vertical & White & No text</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="white"
+        text=""
+      ></scale-loading-spinner>
+      <h2>Vertical & White & No text & Large</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="white"
+        text=""
+        size="large"
+      ></scale-loading-spinner>
+    </section>
+
+    <section>
+      <h2>Horizontal & Magenta</h2>
+      <scale-loading-spinner
+        alignment="horizontal"
+        variant="primary"
+        text="Loading..."
+      ></scale-loading-spinner>
+      <h2>Horizontal & Magenta & Large</h2>
+      <scale-loading-spinner
+        alignment="horizontal"
+        variant="primary"
+        size="large"
+        text="Loading..."
+      ></scale-loading-spinner>
+
+      <h2>Vertical & Magenta</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="primary"
+      ></scale-loading-spinner>
+      <h2>Vertical & Magenta & Large</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="primary"
+        size="large"
+      ></scale-loading-spinner>
+
+      <h2>Vertical & Magenta & Custom text</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="primary"
+        text="Please wait"
+      ></scale-loading-spinner>
+      <h2>Vertical & Magenta & Custom text & Large</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="primary"
+        text="Please wait"
+        size="large"
+      ></scale-loading-spinner>
+      <h2>Vertical & Magenta & No text</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="primary"
+        text=""
+      ></scale-loading-spinner>
+
+      <h2>Vertical & Magenta & No text & Large</h2>
+      <scale-loading-spinner
+        alignment="vertical"
+        variant="primary"
+        text=""
+        size="large"
+      ></scale-loading-spinner>
+    </section>
+  </body>
+</html>

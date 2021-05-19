@@ -246,9 +246,9 @@ export const footerNavigation = [
     href: "#terms-and-conditions"
   },
   {
-    name: "Imprint",
-    id: "Imprint",
-    href: "#imprint"
+    name: "Legal notice",
+    id: "Legal notice",
+    href: "#legal-notice"
   },
   {
     name: "Data privacy",
