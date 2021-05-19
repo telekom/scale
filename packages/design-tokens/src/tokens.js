@@ -129,7 +129,7 @@ tokens[TYPE_VARIANT] = {
   heading_5: {
     ...defaultVariant,
     size: size['20'],
-    lineHeight: lineHeight['125'],
+    lineHeight: lineHeight['120'],
     weight: weight.extrabold,
   },
   heading_4: {
