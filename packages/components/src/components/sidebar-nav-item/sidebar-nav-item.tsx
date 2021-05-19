@@ -14,6 +14,30 @@ import classNames from 'classnames';
 
 const SR_ACTIVE_TEXT = ' Zurzeit aktiv';
 
+const isActive = (current) => {
+  try {
+    return !!JSON.parse(current);
+  } catch (e) {
+    if (typeof current === 'string') {
+      return true;
+    }
+    return !!current;
+  }
+};
+
+const getScreenReaderText = (current) => {
+  let text;
+  try {
+    text = JSON.parse(current);
+  } catch (e) {
+    text = current;
+  }
+
+  return typeof text === 'string' && text.length > 0
+    ? ` ${text}`
+    : SR_ACTIVE_TEXT;
+};
+
 @Component({
   tag: 'scale-sidebar-nav-item',
   styleUrl: 'sidebar-nav-item.css',
@@ -34,7 +58,7 @@ export class SidebarNavItem {
    * Mark the child link as "current" with `aria-current=page`.
    * Provide the text hint if needed, default is: "Zurzeit aktiv"
    */
-  @Prop() current: string | null = null;
+  @Prop() current: string | null | boolean = null;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
   /** (optional) Extra styles */
@@ -48,14 +72,14 @@ export class SidebarNavItem {
   }
 
   @Watch('current')
-  currentChanged(newValue: string | null) {
+  currentChanged(newValue) {
     this.handleAriaCurrentInSlottedA(newValue);
     this.syncActiveToCurrent(newValue);
   }
 
   componentDidLoad() {
     this.handleAriaCurrentInSlottedA(this.current);
-    if (this.current != null) {
+    if (this.current) {
       this.syncActiveToCurrent(this.current);
     }
   }
@@ -63,8 +87,8 @@ export class SidebarNavItem {
   /**
    * If an item is `current`, it should be `active` as well
    */
-  syncActiveToCurrent(newValue: string | null) {
-    this.active = newValue === null ? false : true;
+  syncActiveToCurrent(newValue) {
+    this.active = isActive(newValue);
   }
 
   /**
@@ -77,18 +101,17 @@ export class SidebarNavItem {
    * </a>
    * @param current this.current
    */
-  handleAriaCurrentInSlottedA(current: string | null) {
+  handleAriaCurrentInSlottedA(current) {
     const a = this.el.querySelector('a');
 
     if (this.srOnlyElement != null) {
       a.removeChild(this.srOnlyElement);
       this.srOnlyElement = null;
     }
-    if (current === null && a != null) {
+    if (a != null) {
       a.removeAttribute('aria-current');
-      return;
     }
-    if (current != null && a != null) {
+    if (isActive(current) && a != null) {
       this.srOnlyElement = this.createScreenReaderOnlySpan();
       a.appendChild(this.srOnlyElement);
       a.setAttribute('aria-current', 'page');
@@ -96,7 +119,7 @@ export class SidebarNavItem {
   }
 
   createScreenReaderOnlySpan() {
-    const text = this.current !== '' ? ` ${this.current}` : SR_ACTIVE_TEXT;
+    const text = getScreenReaderText(this.current);
     const span = document.createElement('span');
     // .sr-only but inline
     Object.assign(span.style, {

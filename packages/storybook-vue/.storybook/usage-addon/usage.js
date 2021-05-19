@@ -39,6 +39,8 @@ import linkMarkdown_en from 'raw-loader!../../stories/3_components/link/link.md'
 import linkMarkdown_de from 'raw-loader!../../stories/3_components/link/link_de.md';
 import logo_en from 'raw-loader!../../stories/3_components/logo/logo.md';
 import logo_de from 'raw-loader!../../stories/3_components/logo/logo_de.md';
+import loadingSpinner_en from 'raw-loader!../../stories/3_components/loading-spinner/loading-spinner.md';
+import loadingSpinner_de from 'raw-loader!../../stories/3_components/loading-spinner/loading-spinner_de.md';
 import list_en from 'raw-loader!../../stories/3_components/list/list.md';
 import list_de from 'raw-loader!../../stories/3_components/list/list_de.md';
 import menuFlyout_en from 'raw-loader!../../stories/3_components/menu-flyout/menu-flyout.md';
@@ -123,6 +125,8 @@ const Usage = (props) => {
     link_de: linkMarkdown_de,
     logo_en,
     logo_de,
+    'loading-spinner_de': loadingSpinner_de,
+    'loading-spinner_en': loadingSpinner_en,
     list_en,
     list_de,
     'flyout-menu_en': menuFlyout_en,
