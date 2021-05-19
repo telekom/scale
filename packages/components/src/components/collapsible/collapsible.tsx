@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  Host,
+  Element,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 
 export interface CollapsibleEventDetail {
@@ -26,6 +34,9 @@ let i = 0;
 export class Collapsible {
   headingId: string;
   panelId: string;
+  headingElement: HTMLElement;
+
+  @Element() hostElement: HTMLElement;
 
   /** Set to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
@@ -43,10 +54,34 @@ export class Collapsible {
     this.panelId = 'collapsable-panel-' + j;
   }
 
+  componentDidLoad() {
+    this.setHeadingFromLightDOM();
+  }
+
   handleClick = () => {
     this.expanded = !this.expanded;
     this.scaleExpand.emit({ expanded: this.expanded });
   };
+
+  /**
+   * @deprecated Safe to remove in 4.0
+   * @see https://github.com/telekom/scale/pull/319
+   */
+  setHeadingFromLightDOM() {
+    const lightHeading: HTMLElement = this.hostElement.querySelector(
+      ':first-child'
+    );
+    if (lightHeading == null) {
+      return;
+    }
+    // Only proceed if the element is not a heading and has no `slot` attribute
+    const isHeading = lightHeading.tagName.charAt(0).toUpperCase() === 'H';
+    const hasSlotAttr = lightHeading.hasAttribute('slot');
+    if (isHeading && !hasSlotAttr) {
+      this.headingElement.innerHTML = lightHeading.innerHTML;
+      lightHeading.style.display = 'none';
+    }
+  }
 
   render() {
     return (
@@ -76,7 +111,11 @@ export class Collapsible {
                 class="collapsible__icon"
                 part={classNames('icon', this.expanded && 'expanded')}
               />
-              <span class="collapsible__button-text" part="button-text">
+              <span
+                ref={(el) => (this.headingElement = el)}
+                class="collapsible__button-text"
+                part="button-text"
+              >
                 <slot name="heading"></slot>
               </span>
             </button>
