@@ -33,57 +33,11 @@ describe('CheckboxGroup', () => {
         </div>
         <div style="margin-top: 0.5rem">
           <scale-checkbox
-            value="4"
+            value="3"
             label="checkbox"
             name="nameOfCheckbox"
             disabled
           ></scale-checkbox>
-        </div>
-        <div style="margin-top: 0.5rem">
-          <scale-checkbox
-            value="5"
-            label="checkbox"
-            name="nameOfCheckbox"
-            checked
-          >
-          </scale-checkbox>
-        </div>
-        <div style="margin-top: 0.5rem">
-          <scale-checkbox
-            value="6"
-            label="checkbox"
-            name="nameOfCheckbox"
-            checked
-          >
-          </scale-checkbox>
-        </div>
-        <div style="margin-top: 0.5rem">
-          <scale-checkbox
-            value="7"
-            label="checkbox"
-            name="nameOfCheckbox"
-            checked
-          >
-          </scale-checkbox>
-        </div>
-        <div style="margin-top: 0.5rem">
-          <scale-checkbox
-            value="8"
-            label="checkbox"
-            name="nameOfCheckbox"
-            checked
-          >
-          </scale-checkbox>
-        </div>
-        <div style="margin-top: 0.5rem">
-          <scale-checkbox
-            value="9"
-            label="checkbox"
-            name="nameOfCheckbox"
-            disabled
-            checked
-          >
-          </scale-checkbox>
         </div>
       </div>
     </scale-checkbox-group>`,
