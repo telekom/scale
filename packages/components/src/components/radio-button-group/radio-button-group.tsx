@@ -4,7 +4,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
   styleUrl: './radio-button-group.css',
   shadow: true,
 })
-export class CheckboxGroup {
+export class RadioButtonGroup {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input helper text */
