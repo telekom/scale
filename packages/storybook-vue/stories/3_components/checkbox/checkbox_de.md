@@ -23,6 +23,26 @@ Eine Checkbox ist ein Steuerelement mit dem Nutzer\*innen zwischen zwei Optionen
 
 - zwei Optionen sich gegenseitig ausschließen. Nutze dafür einen Radio-Button.
 
+## Elemente
+
+![Image Name](assets/3_components/checkbox/checkbox-elements.png)
+
+### Checkbox ausgeschaltet (1)
+
+Wenn kein Häkchen vorhanden ist, gilt eine Checkbox als abgewählt.
+
+### Checkbox angeschaltet (2)
+
+Ist eine Checkbox mit einem Häkchen versehen, so gilt sie als ausgewählt.
+
+### Information (3) (optional)
+
+Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
+
+### Fehlermeldung (4)
+
+Bei nicht angeschalteter, aber verpflichtender Auswahl einer Option, die z.B. notwendig ist um die nächsten Schritte im Prozess ausführen zu können, erscheint eine Fehlermeldung.
+
 ## Label der Checkbox
 
 Das Label beschreibt klar, was geschieht, wenn die Checkbox ein- oder ausgeschaltet ist. Es vermittelt somit zwei gegensätzliche Zustände. Das Label ist immer positiv formuliert, um eine doppelte Verneinung zu vermeiden.

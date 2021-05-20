@@ -92,29 +92,12 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-<ArgsTable story="Icon Button Trigger" />
+<ArgsTable story="Standard" />
 
-## Icon Button Trigger
-
-<Canvas withSource="close">
-  <Story name="Icon Button Trigger">
-    {`<scale-menu-flyout>
-    <scale-button slot="trigger" variant="secondary" icon-only>
-        <scale-icon-service-settings></scale-icon-service-settings>
-    </scale-button>
-    <scale-menu-flyout-list>
-        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
-    </scale-menu-flyout-list>
-</scale-menu-flyout>`}
-  </Story>
-</Canvas>
-
-## Primary Button Trigger
+## Standard
 
 <Canvas withSource="close">
-  <Story name="Primary Button Trigger">
+  <Story name="Standard">
     {`<scale-menu-flyout>
     <scale-button slot="trigger">
         Menu<scale-icon-navigation-collapse-down size="16"></scale-icon-navigation-collapse-down>
@@ -128,44 +111,14 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   </Story>
 </Canvas>
 
-## Menu Item Trigger
+## Icon-Only Trigger
 
 <Canvas withSource="close">
-  <Story name="Menu Item Trigger">
-    {`<scale-menu-flyout-list style="position: relative; z-index: 1;">
-    <scale-menu-flyout>
-        <scale-menu-flyout-item slot="trigger" cascade>Item Trigger</scale-menu-flyout-item>
-        <scale-menu-flyout-list>
-            <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
-            <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
-            <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
-        </scale-menu-flyout-list>
-    </scale-menu-flyout>
-</scale-menu-flyout-list>`}
-  </Story>
-</Canvas>
-
-## Text Trigger
-
-<Canvas withSource="close">
-  <Story name="Text Trigger">
+  <Story name="Icon-Only Trigger">
     {`<scale-menu-flyout>
-    <p slot="trigger" style="cursor: pointer; color: var(--scl-color-blue-40)">Open Settings ></p>
-    <scale-menu-flyout-list>
-        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
-    </scale-menu-flyout-list>
-</scale-menu-flyout>`}
-  </Story>
-</Canvas>
-
-## Div Trigger
-
-<Canvas withSource="close">
-  <Story name="Div Trigger">
-    {`<scale-menu-flyout>
-    <div slot="trigger" style="padding: 20px; cursor: pointer; background: var(--scl-color-blue-40)"></div>
+    <scale-button slot="trigger" variant="secondary" icon-only aria-label="Settings Menu">
+        <scale-icon-service-settings accessibility-title="Settings"></scale-icon-service-settings>
+    </scale-button>
     <scale-menu-flyout-list>
         <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
         <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
@@ -194,6 +147,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   </Story>
 </Canvas>
 
+<!--
 ## Direction
 
 <Canvas withSource="close">
@@ -285,6 +239,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 </scale-menu-flyout>`}
   </Story>
 </Canvas>
+-->
 
 ## Don't Close On Select
 
@@ -395,6 +350,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   </Story>
 </Canvas>
 
+<!--
 ## Select Event
 
 <Canvas withSource="close">
@@ -445,6 +401,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 </content>`}
   </Story>
 </Canvas>
+-->
 
 ## Checked Toggle
 
@@ -471,6 +428,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   </Story>
 </Canvas>
 
+<!--
 ## Individual Item Select Events
 
 <Canvas withSource="close">
@@ -487,6 +445,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 </scale-menu-flyout>`}
   </Story>
 </Canvas>
+-->
 
 ## Brand Header Cascading Menu
 

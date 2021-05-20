@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingSpinner should match snapshot 1`] = `
+<scale-loading-spinner>
+  <mock:shadow-root>
+    <div class="spinner spinner--alignment-horizontal spinner--size-small spinner--variant-primary" part="spinner alignment-horizontal variant-primary size-small">
+      <div class="spinner__container" part="container">
+        <div class="spinner__circle-background"></div>
+        <div class="spinner__circle" part="circle">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div aria-live="polite" class="sr-only">
+        Loading
+      </div>
+      <div aria-hidden="true" class="spinner__text" part="text"></div>
+    </div>
+  </mock:shadow-root>
+</scale-loading-spinner>
+`;
