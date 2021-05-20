@@ -1,3 +1,9 @@
+radio-button-group {
+  /*label*/
+  --font-weight-label: var(--scl-font-weight-medium);
+  --font-size-label: 16px;
+}
+
 .radio-button-group {
   display: inline-flex;
   flex-direction: column;
@@ -6,9 +12,16 @@
 .radio-button-group__container {
   display: flex;
   flex-direction: column;
-  margin-left: 1.5rem;
 }
 
-.radio-button-group__checkbox {
-  margin-top: 0.5rem;
+.radio-button-group__helper-text {
+  color: red;
+  font-size: 12px;
+  margin-top: -0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+.radio-button-group__title {
+  font-size: var(--font-size-label);
+  font-weight: 500;
 }
