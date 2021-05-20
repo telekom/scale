@@ -11,6 +11,7 @@ describe('CheckboxGroup', () => {
       <div slot="checkbox-header">
         <scale-checkbox
           input-id="header-checkbox"
+          class="testing"
           value="1"
           label="checkbox"
           name="nameOfCheckbox"
@@ -23,6 +24,7 @@ describe('CheckboxGroup', () => {
           <scale-checkbox
             value="2"
             label="checkbox"
+            checked
             name="nameOfCheckbox"
           ></scale-checkbox>
         </div>
@@ -42,6 +44,12 @@ describe('CheckboxGroup', () => {
       </div>
     </scale-checkbox-group>`,
     });
+    let element = page.root.querySelectorAll('scale-checkbox');
+    element[1].removeAttribute('checked');
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    element[1].setAttribute('checked', 'true');
+    await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
   });
 });
