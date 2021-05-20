@@ -1,7 +1,10 @@
-radio-button-group {
+:host {
   /*label*/
   --font-weight-label: var(--scl-font-weight-medium);
-  --font-size-label: 16px;
+  --font-size-label: var(--scl-font-size-16);
+  /*helper-text*/
+  --font-size-helper-text: var(--scl-font-size-12);
+  --color-error-helper-text: #d90000;
 }
 
 .radio-button-group {
@@ -15,10 +18,11 @@ radio-button-group {
 }
 
 .radio-button-group__helper-text {
-  color: red;
-  font-size: 12px;
+  color: hsl(351.20000000000005, 82.6%, 59.4%);
+  font-size: var(--font-size-helper-text);
   margin-top: -0.7rem;
   padding-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .radio-button-group__title {
