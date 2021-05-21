@@ -1,0 +1,271 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleRadioButtonGroup from './ScaleRadioButtonGroup.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Beta Components/RadioButton Group"
+  component={ScaleRadioButtonGroup}
+  argTypes={{}}
+/>
+
+export const StandardTemplate = (args, { argTypes }) => ({
+  props: {
+    width: { type: String },
+    ...ScaleRadioButtonGroup.props,
+  },
+  computed: {
+    wrapperStyles() {
+      return {
+        maxWidth: this.width,
+      };
+    },
+  },
+  template: `
+    <div :style="wrapperStyles">
+  <scale-radio-button-group label="Group Label">
+      <div slot="radio-button-list">
+        <scale-radio-button
+          value="1"
+          label="Radio Button"
+          name="radioStandard"
+          transparent="true"
+          input-id="choiceOne"
+        ></scale-radio-button>
+        <div style="margin-top: 0.5rem"></div>
+        <scale-radio-button
+          value="2"
+          label="Radio Button"
+          name="radioStandard"
+          input-id="choiceTwo"
+        ></scale-radio-button>
+      </div>
+    </scale-radio-button-group>
+    </div>
+  `,
+});
+
+export const MoreSelectTemplate = (args, { argTypes }) => ({
+  props: {
+    width: { type: String },
+    ...ScaleRadioButtonGroup.props,
+  },
+  computed: {
+    wrapperStyles() {
+      return {
+        maxWidth: this.width,
+      };
+    },
+  },
+  template: `
+    <div :style="wrapperStyles">
+  <scale-radio-button-group label="Group Label">
+      <div slot="radio-button-list">
+        <scale-radio-button
+          value="1"
+          label="Radio Button"
+          name="radioStandardOne"
+          transparent="true"
+          input-id="choiceOne"
+        ></scale-radio-button>
+        <div style="margin-top: 0.5rem"></div>
+        <scale-radio-button
+          value="2"
+          label="Radio Button"
+          name="radioStandardTwo"
+          input-id="choiceTwo"
+        ></scale-radio-button>
+      </div>
+    </scale-radio-button-group>
+    </div>
+  `,
+});
+
+export const ErrorTemplate = (args, { argTypes }) => ({
+  props: {
+    width: { type: String },
+    ...ScaleRadioButtonGroup.props,
+  },
+  computed: {
+    wrapperStyles() {
+      return {
+        maxWidth: this.width,
+      };
+    },
+  },
+  template: `
+    <div :style="wrapperStyles">
+   <scale-radio-button-group
+      label="Group Label"
+      helper-text="Hilfe es gab einen Fehler"
+    >
+      <div slot="radio-button-list">
+        <scale-radio-button
+          value="1"
+          status="error"
+          label="Radio Button"
+          name="radioError"
+          transparent="true"
+          input-id="choiceOne"
+        ></scale-radio-button>
+        <div style="margin-top: 0.5rem"></div>
+        <scale-radio-button
+          value="2"
+          status="error"
+          label="Radio Button"
+          name="radioError"
+          input-id="choiceTwo"
+        ></scale-radio-button>
+      </div>
+    </scale-radio-button-group>
+    </div>
+  `,
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'RadioButton Group',
+    }}
+  >
+    {StandardTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-radio-button-group label="Group Label">
+  <div slot="radio-button-list">
+    <scale-radio-button
+      value="1"
+      label="Radio Button"
+      name="radioStandard"
+      transparent="true"
+      input-id="choiceOne"
+    ></scale-radio-button>
+    <div style="margin-top: 0.5rem"></div>
+    <scale-radio-button
+      value="2"
+      label="Radio Button"
+      name="radioStandard"
+      input-id="choiceTwo"
+    ></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+```
+
+## One Selectable
+
+<Canvas withSource="none">
+  <Story
+    name="OneSelect"
+    args={{
+      label: 'RadioButton Group',
+    }}
+  >
+    {StandardTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button-group label="Group Label">
+  <div slot="radio-button-list">
+    <scale-radio-button
+      value="1"
+      label="Radio Button"
+      name="radioStandard"
+      transparent="true"
+      input-id="choiceOne"
+    ></scale-radio-button>
+    <div style="margin-top: 0.5rem"></div>
+    <scale-radio-button
+      value="2"
+      label="Radio Button"
+      name="radioStandard"
+      input-id="choiceTwo"
+    ></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+```
+
+## All Selectable
+
+<Canvas withSource="none">
+  <Story
+    name="MoreSelect"
+    args={{
+      label: 'RadioButton Group',
+    }}
+  >
+    {MoreSelectTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button-group label="Group Label">
+  <div slot="radio-button-list">
+    <scale-radio-button
+      value="1"
+      label="Radio Button"
+      name="radioStandardOne"
+      transparent="true"
+      input-id="choiceOne"
+    ></scale-radio-button>
+    <div style="margin-top: 0.5rem"></div>
+    <scale-radio-button
+      value="2"
+      label="Radio Button"
+      name="radioStandardTwo"
+      input-id="choiceTwo"
+    ></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+```
+
+## Error
+
+<Canvas withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: 'RadioButton Group',
+    }}
+  >
+    {ErrorTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button-group
+  label="Group Label"
+  helper-text="Hilfe es gab einen Fehler"
+>
+  <div slot="radio-button-list">
+    <scale-radio-button
+      value="1"
+      status="error"
+      label="Radio Button"
+      name="radioError"
+      transparent="true"
+      input-id="choiceOne"
+    ></scale-radio-button>
+    <div style="margin-top: 0.5rem"></div>
+    <scale-radio-button
+      value="2"
+      status="error"
+      label="Radio Button"
+      name="radioError"
+      input-id="choiceTwo"
+    ></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+```
