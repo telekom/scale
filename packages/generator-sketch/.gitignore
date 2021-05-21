@@ -1,5 +1,6 @@
 /dist
 /node_modules
+/ChangeLog
 .editorconfig
 *.asketch.json
 sketch
