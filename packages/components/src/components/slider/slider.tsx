@@ -9,6 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+// ((input - min) * 100) / (max - min)
+
 import {
   Component,
   h,
@@ -16,6 +18,7 @@ import {
   Prop,
   Host,
   Event,
+  Watch,
   EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
@@ -42,6 +45,10 @@ export class Slider {
   @Prop() label?: string;
   /** (optional) slider display value */
   @Prop() showValue?: boolean = true;
+  /** (optional) slider value unit */
+  @Prop() unit?: string = '%';
+  /** (optional) number of decimal places */
+  @Prop() decimals?: 0 | 1 | 2 = 0;
   /** (optional) slider custom color */
   @Prop() customColor?: string = '';
   /** (optional) disabled  */
@@ -55,13 +62,14 @@ export class Slider {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @State() dragging: boolean;
-  @State() startX: number;
-  @State() currentX: number;
-  @State() startPosition: number;
-  @State() newPosition: number;
+  // The actual position in % of the slider thumb
+  @State() position: number;
 
   @Event() scaleChange: EventEmitter<number>;
+  @Event() scaleInput: EventEmitter<number>;
+
+  private dragging: boolean;
+  private offsetLeft: number;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -72,48 +80,79 @@ export class Slider {
     if (this.sliderId == null) {
       this.sliderId = 'slider-' + i++;
     }
+    this.setPosition();
   }
 
   disconnectedCallback() {
     this.removeGlobalListeners();
   }
 
-  onButtonDown = (event: any) => {
+  onButtonDown = () => {
     if (this.disabled) {
       return;
     }
-    this.onDragStart(event);
+    this.onDragStart();
     this.addGlobalListeners();
   };
 
-  onDragStart = (event: any) => {
+  onKeyDown = (event: KeyboardEvent) => {
+    let steps = 0;
+    if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
+      steps = event.key === 'ArrowRight' ? this.step : -this.step;
+    }
+    if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
+      steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
+    }
+    this.setValue(this.value + steps);
+  };
+
+  onDragStart = () => {
     this.dragging = true;
-    this.startX = this.handleTouchEvent(event).clientX;
-    this.startPosition = parseInt(this.currentPosition(), 10);
+    this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
   };
 
   onDragging = (event: any) => {
-    const { dragging, startX, startPosition } = this;
+    const { dragging, offsetLeft } = this;
 
     if (dragging) {
-      this.currentX = this.handleTouchEvent(event).clientX;
-
-      let diff: number;
-
-      diff = ((this.currentX - startX) / this.sliderTrack.offsetWidth) * 100;
-
-      this.newPosition = startPosition + diff;
-      this.setPosition(this.newPosition);
+      const currentX = this.handleTouchEvent(event).clientX;
+      const position: number =
+        ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
+      const nextValue = (position * (this.max - this.min)) / 100 + this.min;
+      // https://stackoverflow.com/q/14627566
+      const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
+      this.setValue(roundedNextValue);
     }
   };
 
   onDragEnd = () => {
-    const { dragging, newPosition } = this;
-    if (dragging) {
-      this.dragging = false;
-    }
-    this.setPosition(newPosition || this.startPosition);
+    this.dragging = false;
+    this.scaleChange.emit(this.value);
     this.removeGlobalListeners();
+  };
+
+  handleTouchEvent(event: any): MouseEvent | Touch {
+    return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
+  }
+
+  setValue = (nextValue: number) => {
+    this.value = this.clamp(nextValue);
+    this.scaleInput.emit(this.value);
+  };
+
+  @Watch('value')
+  handleValueChange() {
+    this.setPosition();
+  }
+
+  setPosition = () => {
+    if (!this.value) {
+      this.position = 0;
+      return;
+    }
+    const clampedValue = this.clamp(this.value);
+    // https://stackoverflow.com/a/25835683
+    this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
   };
 
   addGlobalListeners() {
@@ -128,42 +167,6 @@ export class Slider {
     window.removeEventListener('mouseup', this.onDragEnd);
     window.removeEventListener('touchmove', this.onDragging);
     window.removeEventListener('touchend', this.onDragEnd);
-  }
-
-  handleTouchEvent(event: any): MouseEvent | Touch {
-    return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
-  }
-
-  onKeyDown = (event) => {
-    if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
-      this.setPosition(
-        this.value + (event.key === 'ArrowRight' ? this.step : -this.step)
-      );
-    }
-    if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
-      this.setPosition(
-        this.value +
-          (event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10)
-      );
-    }
-  };
-
-  setPosition = (newPosition: number) => {
-    if (newPosition < 0) {
-      newPosition = 0;
-    } else if (newPosition > 100) {
-      newPosition = 100;
-    }
-
-    const lengthPerStep = 100 / ((this.max - this.min) / this.step);
-    const steps = Math.round(newPosition / lengthPerStep);
-    this.value =
-      steps * lengthPerStep * (this.max - this.min) * 0.01 + this.min;
-    this.scaleChange.emit(Math.abs(this.value));
-  };
-
-  currentPosition(): string {
-    return `${((this.value - this.min) / (this.max - this.min)) * 100}%`;
   }
 
   render() {
@@ -192,14 +195,14 @@ export class Slider {
                 part="bar"
                 class="slider__bar"
                 style={{
-                  width: `${this.value}%`,
+                  width: `${this.position}%`,
                   backgroundColor: this.customColor,
                 }}
               ></div>
               <div
                 part="thumb-wrapper"
                 class="slider__thumb-wrapper"
-                style={{ left: `${this.value}%` }}
+                style={{ left: `${this.position}%` }}
                 onMouseDown={this.onButtonDown}
                 onTouchStart={this.onButtonDown}
               >
@@ -212,7 +215,7 @@ export class Slider {
                   aria-valuemin={this.min}
                   aria-valuenow={this.value}
                   aria-valuemax={this.max}
-                  aria-valuetext={`${this.value}%`}
+                  aria-valuetext={`${this.value}`}
                   aria-labelledby={`${this.sliderId}-label`}
                   aria-orientation="horizontal"
                   aria-disabled={this.disabled}
@@ -222,7 +225,8 @@ export class Slider {
             </div>
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
-                {this.value}%
+                {this.value != null && this.value.toFixed(this.decimals)}
+                {this.value != null && this.unit}
               </div>
             )}
           </div>
@@ -250,4 +254,8 @@ export class Slider {
       this.thumbLarge && `${prefix}thumb-large`
     );
   }
+
+  private clamp = (val: number) => {
+    return Math.min(Math.max(val, this.min), this.max);
+  };
 }

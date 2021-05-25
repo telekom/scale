@@ -41,7 +41,7 @@ duet-date-picker .duet-date__input:focus {
 }
 
 duet-date-picker .duet-date__toggle {
-  border-radius: var(--scl-radius-4);
+  border-radius: 0 var(--scl-radius-4) var(--scl-radius-4) 0;
 }
 
 duet-date-picker .duet-date__toggle:focus {
