@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.10](https://github.com/telekom/scale/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2021-05-25)
+
+
+### Features
+
+* **sketch-generator:** add icon merging to generator ([#324](https://github.com/telekom/scale/issues/324)) ([3b7cbd6](https://github.com/telekom/scale/commit/3b7cbd6fbb92393a408126601c909ee6b4a1e89f))
+
+
+
+
+
 # [3.0.0-beta.9](https://github.com/telekom/scale/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2021-05-17)
 
 **Note:** Version bump only for package @telekom/scale-generator-sketch
