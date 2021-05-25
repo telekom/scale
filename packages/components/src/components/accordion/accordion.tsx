@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
+import {
+  Element,
+  Component,
+  h,
+  Prop,
+  Host,
+  Listen,
+  Watch,
+} from '@stencil/core';
 import classnames from 'classnames';
 @Component({
   tag: 'scale-accordion',
@@ -23,6 +31,9 @@ export class Accordion {
   @Prop() dependent: boolean = false;
   /** If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant */
   @Prop() expanded: boolean = false;
+  /** Heading level for scale-collapsible descendants */
+  @Prop() headingLevel: number | null = null;
+
   /**
    * Handle `dependent`
    */
@@ -40,6 +51,11 @@ export class Accordion {
     });
   }
 
+  @Watch('headingLevel')
+  headingLevelChanged(newValue: number | null) {
+    this.propagatePropsToChildren(newValue);
+  }
+
   connectedCallback() {
     /**
      * Handle `expanded`
@@ -51,8 +67,20 @@ export class Accordion {
     }
   }
 
+  componentDidLoad() {
+    if (this.headingLevel !== null) {
+      this.propagatePropsToChildren(this.headingLevel);
+    }
+  }
+
   getCollapsibleChildren(): HTMLScaleCollapsibleElement[] {
     return Array.from(this.el.querySelectorAll('scale-collapsible'));
+  }
+
+  propagatePropsToChildren(headingLevel: number) {
+    this.getCollapsibleChildren().forEach((item) => {
+      item.headingLevel = headingLevel;
+    });
   }
 
   render() {

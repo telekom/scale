@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.10](https://github.com/telekom/scale/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2021-05-25)
+
+
+### Bug Fixes
+
+* deprecate direct DOM manipulation in Collapsible, fixes [#316](https://github.com/telekom/scale/issues/316) ([06e8e2c](https://github.com/telekom/scale/commit/06e8e2c34e8449b37cdf4b9b52f2131b30dffad2))
+
+
+
+
+
 # [3.0.0-beta.9](https://github.com/telekom/scale/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2021-05-17)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
