@@ -88,6 +88,7 @@ scale-radio-button {
   color: var(--color-label);
   transition: var(--transition-label);
   font-weight: var(--font-weight-label);
+  cursor: pointer;
 }
 .radio-button input {
   width: var(--width-control);
@@ -98,6 +99,7 @@ scale-radio-button {
   background-color: var(--background-color-control);
   border: var(--border-control);
   margin: var(--spacing-control);
+  cursor: pointer;
 }
 .radio-button input:focus {
   outline: none;
