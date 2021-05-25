@@ -61,6 +61,7 @@ scale-radio-button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  cursor: pointer;
 }
 
 .radio-button .radio-button__meta {
