@@ -324,7 +324,12 @@ tokens[COLOR] = {
     overlay: Color('rgba(108, 108, 108, 0.7)'),
     disabled: palette.grey20,
     success: palette.green100,
-    error: palette.red60,
+    error: palette.red70,
+  },
+  functional: {
+    red: palette.red70,
+    green: palette.green100,
+    blue: palette.blue70,
   },
 };
 
