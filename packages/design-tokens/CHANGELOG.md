@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.11](https://github.com/telekom/scale/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2021-05-26)
+
+
+### Features
+
+* **design-tokens:** add functional colors to match current documentation ([#364](https://github.com/telekom/scale/issues/364)) ([a3a0821](https://github.com/telekom/scale/commit/a3a08216e872732ad81a1f555a9a2b65a06c7f97))
+
+
+
+
+
 # [3.0.0-beta.10](https://github.com/telekom/scale/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2021-05-25)
 
 

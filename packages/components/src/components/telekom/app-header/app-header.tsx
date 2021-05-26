@@ -182,6 +182,7 @@ export class Header {
         ) : (
           readData(this.mainNavigation).map((item) => (
             <scale-nav-main
+              href={item.href}
               isActive={isActive(item)}
               isMegaMenuVisible={this.visibleMegaMenu === item.id}
               onMouseEnter={() => {
