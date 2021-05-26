@@ -1,7 +1,7 @@
 <div data-sketch-artboard="Checkbox Groups" class="artboard">
     <h1 class="title--artboard">Checkbox Groups</h1>
 
-    <h2 class="title--artboard-section">Standard</h2>
+    <h2 class="title--artboard-section">Group Selected Off</h2>
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
@@ -25,7 +25,7 @@
           ></scale-checkbox>
         </div>
         <div style="margin-top: 0.5rem">
-          <scale-checkbox value="3" name="nameOfCheckbox" checked
+          <scale-checkbox value="3" name="nameOfCheckbox" 
             >Checkbox Slot</scale-checkbox
           >
         </div>
@@ -54,7 +54,7 @@
           ></scale-checkbox>
         </div>
         <div style="margin-top: 0.5rem">
-          <scale-checkbox value="3" name="nameOfCheckbox" checked
+          <scale-checkbox value="3" name="nameOfCheckbox" 
             >Checkbox Slot</scale-checkbox
           >
         </div>
@@ -83,7 +83,7 @@
           ></scale-checkbox>
         </div>
         <div style="margin-top: 0.5rem">
-          <scale-checkbox value="3" name="nameOfCheckbox" checked
+          <scale-checkbox value="3" name="nameOfCheckbox" 
             >Checkbox Slot</scale-checkbox
           >
         </div>
@@ -112,7 +112,7 @@
           ></scale-checkbox>
         </div>
         <div style="margin-top: 0.5rem">
-          <scale-checkbox value="3" name="nameOfCheckbox" checked
+          <scale-checkbox value="3" name="nameOfCheckbox" 
             >Checkbox Slot</scale-checkbox
           >
         </div>
@@ -124,6 +124,7 @@
            <scale-checkbox-group data-sketch-key="checkbox-group-5" label="Checkbox Group Label">
       <div slot="checkbox-header">
         <scale-checkbox
+            disabled
           input-id="header-checkbox"
           value="1"
           label="checkbox"
@@ -141,7 +142,7 @@
           ></scale-checkbox>
         </div>
         <div style="margin-top: 0.5rem">
-          <scale-checkbox value="3" name="nameOfCheckbox" checked
+          <scale-checkbox value="3" name="nameOfCheckbox" 
             >Checkbox Slot</scale-checkbox
           >
         </div>
@@ -150,13 +151,14 @@
         </div>
     </div>
 
-    <h2 class="title--artboard-section">Standard Error</h2>
+    <h2 class="title--artboard-section">Group Selected On</h2>
     <div class="agent-states--grid">
         <div class="agent-states--item">
             <p class="agent-states--label">:available</p>
             <scale-checkbox-group data-sketch-key="checkbox-group-6" label="Checkbox Group Label">
       <div slot="checkbox-header">
         <scale-checkbox
+          checked
           input-id="header-checkbox"
           value="1"
           label="checkbox"
@@ -168,6 +170,7 @@
       <div slot="checkbox-list">
         <div style="margin-top: 0.5rem">
           <scale-checkbox
+            checked
             value="2"
             label="checkbox"
             name="nameOfCheckbox"
@@ -186,6 +189,7 @@
            <scale-checkbox-group data-sketch-key="checkbox-group-7" label="Checkbox Group Label">
       <div slot="checkbox-header">
         <scale-checkbox
+          checked
           input-id="header-checkbox"
           value="1"
           label="checkbox"
@@ -197,6 +201,7 @@
       <div slot="checkbox-list">
         <div style="margin-top: 0.5rem">
           <scale-checkbox
+            checked
             value="2"
             label="checkbox"
             name="nameOfCheckbox"
@@ -215,6 +220,7 @@
            <scale-checkbox-group>
       <div slot="checkbox-header">
         <scale-checkbox
+          checked
           input-id="header-checkbox"
           value="1"
           label="checkbox"
@@ -226,6 +232,7 @@
       <div slot="checkbox-list">
         <div style="margin-top: 0.5rem">
           <scale-checkbox
+            checked
             value="2"
             label="checkbox"
             name="nameOfCheckbox"
@@ -255,6 +262,7 @@
       <div slot="checkbox-list">
         <div style="margin-top: 0.5rem">
           <scale-checkbox
+            checked
             value="2"
             label="checkbox"
             name="nameOfCheckbox"
@@ -273,6 +281,8 @@
                <scale-checkbox-group data-sketch-key="checkbox-group-10" label="Checkbox Group Label">
       <div slot="checkbox-header">
         <scale-checkbox
+          disabled
+          checked
           input-id="header-checkbox"
           value="1"
           label="checkbox"
@@ -284,6 +294,7 @@
       <div slot="checkbox-list">
         <div style="margin-top: 0.5rem">
           <scale-checkbox
+            checked
             value="2"
             label="checkbox"
             name="nameOfCheckbox"
@@ -299,7 +310,7 @@
         </div>
     </div>
 
-  <h2 class="title--artboard-section">Selected</h2>
+  <h2 class="title--artboard-section">Group intermediate</h2>
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
@@ -422,6 +433,7 @@
       <scale-checkbox-group data-sketch-key="checkbox-group-15" label="Checkbox Group Label">
       <div slot="checkbox-header">
         <scale-checkbox
+          disabled
           input-id="header-checkbox"
           value="1"
           label="checkbox"
