@@ -61,6 +61,7 @@ export class CheckboxGroup {
         }
       }
     } else {
+      this.setMasterCheckBoxState(newState);
       this.handleMasterDisableProp();
     }
   }
