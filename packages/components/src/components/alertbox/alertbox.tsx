@@ -36,10 +36,10 @@ export class Alertbox {
   render() {
     return (
       <Host>
-        <div class={this.getCssClassMap()}>
-          <div class="alertbox__container-header">
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
+          <div part="container" class="alertbox__container">
             {this.handleIcons()}
-            <header class="alertbox__heading">
+            <header part="header" class="alertbox__container-header">
               <slot name="header">Missing Title</slot>
               {this.close && (
                 <scale-icon-action-circle-close
@@ -52,7 +52,7 @@ export class Alertbox {
             </header>
           </div>
           {this.content && (
-            <p class="alertbox__container-content">
+            <p part="content" class="alertbox__content">
               <slot name="text" />
             </p>
           )}
@@ -61,12 +61,23 @@ export class Alertbox {
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const name = 'alertbox';
+    const prefix = mode === 'basePart' ? '' : `${name}--`;
+
     return classNames(
-      'alertbox',
-      this.color && `alertbox--color-${this.color}`,
-      this.variant && `alertbox--variant-${this.variant}`,
-      !this.content && `alertbox--content-missing`
+      name,
+      this.color && `${prefix}color-${this.color}`,
+      this.variant && `${prefix}variant-${this.variant}`,
+      !this.content && `${prefix}content-missing`
     );
   }
 }
