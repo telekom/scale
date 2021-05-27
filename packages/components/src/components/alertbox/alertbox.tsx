@@ -43,6 +43,7 @@ export class Alertbox {
               <slot name="header">Missing Title</slot>
               {this.close && (
                 <scale-icon-action-circle-close
+                  class="alertbox__icon-close"
                   onClick={() => {
                     document.querySelector('scale-alertbox').remove();
                   }}
@@ -77,6 +78,7 @@ export class Alertbox {
       name,
       this.color && `${prefix}color-${this.color}`,
       this.variant && `${prefix}variant-${this.variant}`,
+      this.icon && `${prefix}icon`,
       !this.content && `${prefix}content-missing`
     );
   }

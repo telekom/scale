@@ -3,8 +3,6 @@
 }
 
 .alertbox {
-  color: #ffffff;
-  width: 100%;
   border: 1px solid var(--scl-color-white);
   border-radius: var(--corner-radius);
   width: 278px;
@@ -14,6 +12,7 @@
 
 .alertbox.alertbox--color-error {
   background-color: var(--scl-color-red-70);
+  color: var(--scl-color-white);
 }
 
 .alertbox.alertbox--color-black {
@@ -52,28 +51,39 @@
 }
 
 .alertbox.alertbox--content-missing {
-  height: 36px;
+  height: 32px;
+}
+
+.alertbox.alertbox--content-missing .alertbox__container-header {
+  margin-top: -2.5px;
 }
 
 .alertbox .alertbox__container-header {
-  padding-left: 16px;
-  padding-right: 32px;
   font-weight: bold;
+  padding: 0 32px 0 16px;
 }
 
 .alertbox .alertbox__content {
-  margin-top: -30px;
-  padding-left: 16px;
-  padding-right: 32px;
-  margin-bottom: -5px;
+  margin-top: -8px;
+  padding: 0 32px 0 16px;
 }
 
-.alertbox .alertbox__container-header svg {
+.alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
   top: 0;
   right: 0;
-  padding-top: 9px;
-  padding-right: 9px;
+  padding: 5px 9px 0 0;
   height: 16px;
   width: 16px;
+}
+
+.alertbox.alertbox--content-missing
+  .alertbox__container-header
+  .alertbox__icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 16px;
+  width: 16px;
+  padding-top: 4.5px;
 }
