@@ -283,6 +283,7 @@ scale-app-header {
   .header .sector-navigation .sector-navigation__portal-name {
     font-weight: var(--scl-font-weight-extrabold);
     font-size: var(--scl-font-variant-body-large-size);
+    list-style-type: none;
   }
 
   .header *[slot='menu-main'],
