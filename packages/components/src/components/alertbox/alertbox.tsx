@@ -37,25 +37,25 @@ export class Alertbox {
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-            <div class="alertbox__container-header">
-              {this.handleIcons()}
-              <header class="alertbox__heading">
-                <slot name="header">Missing Title</slot>
-                {this.close && (
-                  <scale-icon-action-circle-close
-                    onClick={() => {
-                      document.querySelector('scale-alertbox').remove();
-                    }}
-                    accessibility-title="circle-close"
-                  />
-                )}
-              </header>
-            </div>
-            {this.content && (
-              <p class="alertbox__container-content">
-                <slot name="text" />
-              </p>
-            )}
+          <div class="alertbox__container-header">
+            {this.handleIcons()}
+            <header class="alertbox__heading">
+              <slot name="header">Missing Title</slot>
+              {this.close && (
+                <scale-icon-action-circle-close
+                  onClick={() => {
+                    document.querySelector('scale-alertbox').remove();
+                  }}
+                  accessibility-title="circle-close"
+                />
+              )}
+            </header>
+          </div>
+          {this.content && (
+            <p class="alertbox__container-content">
+              <slot name="text" />
+            </p>
+          )}
         </div>
       </Host>
     );
@@ -65,7 +65,8 @@ export class Alertbox {
     return classNames(
       'alertbox',
       this.color && `alertbox--color-${this.color}`,
-      this.variant && `alertbox--variant-${this.variant}`
+      this.variant && `alertbox--variant-${this.variant}`,
+      !this.content && `alertbox--content-missing`
     );
   }
 }

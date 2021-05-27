@@ -51,6 +51,10 @@
   box-shadow: 0px 5px 20;
 }
 
+.alertbox--content-missing {
+  height: 36px;
+}
+
 .alertbox__heading {
   padding-left: 16px;
   padding-right: 32px;
