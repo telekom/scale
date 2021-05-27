@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
+
+
+### Bug Fixes
+
+* **app-header:** remove list bullet point from portal name ([#367](https://github.com/telekom/scale/issues/367)) ([fc5364d](https://github.com/telekom/scale/commit/fc5364df90a9c84ec794948e67e05af6f7c21609))
+
+
+
+
+
 # [3.0.0-beta.11](https://github.com/telekom/scale/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2021-05-26)
 
 
