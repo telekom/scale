@@ -164,6 +164,48 @@ export const DisabledTemplate = (args, { argTypes }) => ({
   `,
 });
 
+export const ErrorTemplate = (args, { argTypes }) => ({
+  props: {
+    width: { type: String },
+    ...ScaleCheckboxGroup.props,
+  },
+  computed: {
+    wrapperStyles() {
+      return {
+        maxWidth: this.width,
+      };
+    },
+  },
+  template: `
+    <div :style="wrapperStyles">
+    <scale-checkbox-group>
+  <div slot="checkbox-header">
+    <scale-checkbox status="error"
+      input-id="header-checkbox-2"
+      helper-text="Error helperText"
+      value="1"
+      label="checkbox"
+      name="nameOfCheckbox"
+      checked
+      helper-text="helperText"
+    >
+    </scale-checkbox>
+  </div>
+  <div slot="checkbox-list">
+    <div style="margin-top: 0.5rem">
+      <scale-checkbox
+        disabled
+        value="2"
+        label="checkbox"
+        name="nameOfCheckbox"
+      ></scale-checkbox>
+    </div>
+  </div>
+</scale-checkbox-group>
+    </div>
+  `,
+});
+
 ## Standard
 
 <Canvas withSource="none">
@@ -183,6 +225,50 @@ export const DisabledTemplate = (args, { argTypes }) => ({
 <scale-checkbox-group>
   <div slot="checkbox-header">
     <scale-checkbox
+      input-id="header-checkbox-0"
+      value="1"
+      label="checkbox"
+      name="nameOfCheckbox"
+      checked
+      helper-text="helperText"
+    >
+    </scale-checkbox>
+  </div>
+  <div slot="checkbox-list">
+    <div style="margin-top: 0.5rem">
+      <scale-checkbox
+        value="2"
+        label="checkbox"
+        name="nameOfCheckbox"
+      ></scale-checkbox>
+    </div>
+    <div style="margin-top: 0.5rem">
+      <scale-checkbox value="3" name="nameOfCheckbox" checked
+        >Checkbox Slot</scale-checkbox
+      >
+    </div>
+  </div>
+</scale-checkbox-group>
+```
+
+## Error
+
+<Canvas withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: 'Checkbox Group',
+    }}
+  >
+    {ErrorTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox-group>
+  <div slot="checkbox-header">
+    <scale-checkbox
+      status="error"
       input-id="header-checkbox-0"
       value="1"
       label="checkbox"
