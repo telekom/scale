@@ -258,7 +258,8 @@ scale-table {
 ```html
 <scale-table size="small">
   <table>
-    <h5>Table title</h5>
+    <!-- Add visibility CSS to caption, to not show the caption. For example shifting it out of the view -->
+    <caption>Table title</caption>
     <thead>
       <tr>
         <th>Title</th>
@@ -302,7 +303,7 @@ Please switch to the Canvas view for a working example
 ```html
 <scale-table show-sort>
   <table>
-    <h5>Table title</h5>
+    <caption>Table title</caption>
     <thead>
       <tr>
         <!-- aria-sort can be descending or ascending -->
