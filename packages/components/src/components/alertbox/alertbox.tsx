@@ -23,11 +23,26 @@ export class Alertbox {
     if (this.icon) {
       switch (this.color) {
         case 'white':
-          return <scale-icon-action-success accessibility-title="success" />;
+          return (
+            <scale-icon-action-success
+              class="alertbox__icon-sucess"
+              accessibility-title="success"
+            />
+          );
         case 'black':
-          return <scale-icon-action-success accessibility-title="success" />;
+          return (
+            <scale-icon-action-success
+              class="alertbox__icon-sucess"
+              accessibility-title="success"
+            />
+          );
         case 'error':
-          return <scale-icon-alert-error accessibility-title="error" />;
+          return (
+            <scale-icon-alert-error
+              class="alertbox__icon-error"
+              accessibility-title="error"
+            />
+          );
       }
     }
     return;
@@ -78,8 +93,7 @@ export class Alertbox {
       name,
       this.color && `${prefix}color-${this.color}`,
       this.variant && `${prefix}variant-${this.variant}`,
-      this.icon && `${prefix}icon`,
-      !this.content && `${prefix}content-missing`
+      this.icon && `${prefix}icon`
     );
   }
 }

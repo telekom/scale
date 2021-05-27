@@ -1,16 +1,21 @@
 :host {
   --corner-radius: 10px;
+  --floating-height: 120px;
+  --box-height-missing-content: 32px;
+  --text-padding: 0 32px 0 16px;
+  --close-icon-size: 16px;
 }
 
 .alertbox {
   border: 1px solid var(--scl-color-white);
   border-radius: var(--corner-radius);
-  width: 278px;
-  font-size: 12px;
+  width: 100%;
+  font-size: var(--scl-font-size-12);
   position: relative;
 }
 
-.alertbox.alertbox--color-error {
+/*coloring*/
+.alertbox--color-error {
   background-color: var(--scl-color-red-70);
   color: var(--scl-color-white);
 }
@@ -25,6 +30,7 @@
   color: var(--scl-color-black);
 }
 
+/*variants*/
 .alertbox.alertbox--variant-outline.alertbox--color-white {
   border: 1px solid var(--scl-color-black);
   border-radius: var(--corner-radius);
@@ -36,54 +42,38 @@
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-error {
-  height: 120px;
+  height: var(--floating-height);
   box-shadow: 0px 5px 20;
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-white {
-  height: 120px;
+  height: var(--floating-height);
   box-shadow: 0px 5px 20;
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-black {
-  height: 120px;
+  height: var(--floating-height);
   box-shadow: 0px 5px 20;
 }
 
-.alertbox.alertbox--content-missing {
-  height: 32px;
-}
-
-.alertbox.alertbox--content-missing .alertbox__container-header {
-  margin-top: -2.5px;
-}
-
+/*header*/
 .alertbox .alertbox__container-header {
   font-weight: bold;
-  padding: 0 32px 0 16px;
+  padding: var(--text-padding);
 }
 
+/*content*/
 .alertbox .alertbox__content {
   margin-top: -8px;
-  padding: 0 32px 0 16px;
+  padding: var(--text-padding);
 }
 
+/*icon*/
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5px 9px 0 0;
-  height: 16px;
-  width: 16px;
-}
-
-.alertbox.alertbox--content-missing
-  .alertbox__container-header
-  .alertbox__icon-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 16px;
-  width: 16px;
-  padding-top: 4.5px;
+  padding: 6.5px 9px 0 0;
+  height: var(--close-icon-size);
+  width: var(--close-icon-size);
 }
