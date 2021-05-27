@@ -1,6 +1,9 @@
-.alertbox__container {
-  background-color: var(--alertbox-color);
-  color: white;
+:host {
+  --corner-radius:25px;
+}
+
+.alertbox {
+  color: #ffffff;
   width: 100%;
 }
 
@@ -15,3 +18,30 @@
 .alertbox--color-white {
   background-color: var(--scl-color-white);
 }
+
+
+.alertbox--variant-outline.alertbox--color-error {
+  border: 2px solid greenyellow;
+  border-radius: var(--corner-radius);
+}
+
+.alertbox--color-black.alertbox--variant--floating.alertbox__container{
+  height:120px;
+  box-shadow: 0px 5px 20
+}
+
+.alertbox--color-white.alertbox--variant--outline.alertbox__container{
+  border: 2px solid white;
+  border-radius: 23px;
+}
+
+.alertbox--color-white.alertbox--variant--floating.alertbox__container{
+  height:120px;
+  box-shadow: 0px 5px 20
+}
+
+.alertbox.alertbox--color-error.alertbox--variant--floating.alertbox__container{
+  height:120px;
+  box-shadow: 0px 5px 20
+}
+
