@@ -1,10 +1,3 @@
-const color = {
-  magenta: '#E20074',
-  white: '#FFFFFF',
-  black: '#191919',
-  blue: '#00739F',
-};
-
 import { Component, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 
