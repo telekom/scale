@@ -15,9 +15,11 @@
 }
 
 .tab-panel {
-  padding-top: var(--spacing-top);
+  /* we use `margin` and top padding because we want to allow "margin collapse" */
+  /* @see https://web.dev/learn/css/spacing/#margin-collapse */
+  margin-top: var(--spacing-top);
 }
 
 .tab-panel--small {
-  padding-top: var(--spacing-top-small);
+  margin-top: var(--spacing-top-small);
 }
