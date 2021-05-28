@@ -1,11 +1,9 @@
-import { newSpecPage, SpecPage } from '@stencil/core/testing';
+import { newSpecPage } from '@stencil/core/testing';
 import { CheckboxGroup } from './checkbox-group';
 
 describe('CheckboxGroup', () => {
-  let page: SpecPage;
-
   it('should match standard snapshot', async () => {
-    page = await newSpecPage({
+    const page = await newSpecPage({
       components: [CheckboxGroup],
       html: ` <scale-checkbox-group>
       <div slot="checkbox-header">
@@ -44,7 +42,7 @@ describe('CheckboxGroup', () => {
       </div>
     </scale-checkbox-group>`,
     });
-    let element = page.root.querySelectorAll('scale-checkbox');
+    const element = page.root.querySelectorAll('scale-checkbox');
     element[1].removeAttribute('checked');
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
