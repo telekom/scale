@@ -17,22 +17,13 @@ export class Badge {
   /** (optional) Variant size of the badge itself */
   @Prop({ mutable: true }) size: 'big' | 'small' = 'big';
   /** (optional) Variant color/filling of the badge */
-  @Prop({ mutable: true }) color: 'magenta' | 'white' | 'black' | string =
-    'magenta';
+  @Prop({ mutable: true }) color: 'magenta' | 'white' | 'black' | 'blue';
   /** (optional) Variant rotation of the badge/circle */
   @Prop({ mutable: true }) rotation: number = 0;
 
   displayStyle() {
     return `:host {
       --badge-rotation: ${this.rotation}deg;
-      --badge-color: ${
-        this.color === 'magenta' ||
-        this.color === 'black' ||
-        this.color === 'white' ||
-        this.color === 'blue'
-          ? color[this.color]
-          : this.color
-      };
     }`;
   }
 

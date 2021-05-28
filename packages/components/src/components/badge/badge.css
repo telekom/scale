@@ -7,6 +7,7 @@
   --big-inner-width: 126.5px;
   --small-inner-height: 88px;
   --small-inner-width: 86px;
+  --badge-color: #e20074;
 }
 
 .badge {
@@ -16,6 +17,19 @@
   border-radius: 100%;
   background: var(--badge-color);
   border-style: solid;
+}
+
+.badge.badge--color-magenta {
+  background: #e20074;
+}
+.badge.badge--color-white {
+  background: #ffffff;
+}
+.badge.badge--color-blue {
+  background: #00739f;
+}
+.badge.badge--color-black {
+  background: #191919;
 }
 
 .badge.badge--size-big {
