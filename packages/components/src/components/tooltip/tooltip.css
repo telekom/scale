@@ -11,24 +11,34 @@
   color: #fff;
   text-align: center;
   padding: 3px 0;
-  margin-bottom: 5px;
+  margin: 4px 0px 4px 0px;
   border-radius: 6px;
 
   position: absolute;
   z-index: 1;
 }
 
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .tooltip .tooltiptext {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+
+/*Top*/
+.tooltip.tooltip--alignment-top .tooltiptext {
   bottom: 100%;
   left: 50%;
   margin-left: calc(-66px / 2);
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-.tooltip .tooltiptext::after {
+.tooltip.tooltip--alignment-top .tooltiptext::after {
   content: ' ';
   position: absolute;
   top: 100%;
@@ -37,4 +47,56 @@
   border-width: 5px;
   border-style: solid;
   border-color: black transparent transparent transparent;
+}
+
+/*Bottom*/
+.tooltip.tooltip--alignment-bottom .tooltiptext {
+  top: 100%;
+  left: 50%;
+  margin-left: calc(-66px / 2);
+}
+
+.tooltip.tooltip--alignment-bottom .tooltiptext::after {
+  content: ' ';
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/*Right*/
+.tooltip.tooltip.tooltip--alignment-right .tooltiptext {
+  top: 9px;
+  left: 105%;
+}
+
+.tooltip.tooltip.tooltip--alignment-right .tooltiptext::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/*Left*/
+.tooltip.tooltip.tooltip--alignment-left .tooltiptext {
+  top: 10px;
+  right: 105%;
+}
+
+.tooltip.tooltip.tooltip--alignment-left .tooltiptext::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
 }

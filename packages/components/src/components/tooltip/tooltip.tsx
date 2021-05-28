@@ -1,4 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
+import classNames from 'classnames';
 
 @Component({
   tag: 'scale-tooltip',
@@ -11,11 +12,31 @@ export class Tooltip {
   render() {
     return (
       <Host>
-        <div class="tooltip">
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <slot></slot>
-          <span class="tooltiptext">Tooltip was ist das ?</span>
+          <span part="text" class="tooltiptext">
+            Tooltip
+          </span>
         </div>
       </Host>
+    );
+  }
+
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
+  getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const name = 'tooltip';
+    const prefix = mode === 'basePart' ? '' : `${name}--`;
+
+    return classNames(
+      name,
+      this.alignment && `${prefix}alignment-${this.alignment}`
     );
   }
 }
