@@ -25,14 +25,14 @@ export class Alertbox {
         case 'white':
           return (
             <scale-icon-action-success
-              class="alertbox__icon-sucess"
+              class="alertbox__icon-success"
               accessibility-title="success"
             />
           );
         case 'black':
           return (
             <scale-icon-action-success
-              class="alertbox__icon-sucess"
+              class="alertbox__icon-success"
               accessibility-title="success"
             />
           );
