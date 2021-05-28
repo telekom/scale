@@ -40,7 +40,6 @@
     "@babel/plugin-transform-react-jsx": "7.10.1",
     "@nowseemee/vue-output-target": "0.0.4",
     "@stencil/angular-output-target": "^0.0.5",
-    "@stencil/core": "~2.3.0",
     "@stencil/postcss": "^2.0.0",
     "@stencil/react-output-target": "^0.0.9",
     "@types/classnames": "2.2.8",
