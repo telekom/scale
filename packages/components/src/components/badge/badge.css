@@ -1,0 +1,39 @@
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--badge-size);
+    height: var(--badge-size);
+    border-radius: 100%;
+    background: var(--badge-color);
+  }
+  
+  .badge--inner {
+    width: var(--badge-text-width);
+    height: var(--badge-text-height);
+    transform: rotateZ(var(--badge-rotation));
+    overflow: hidden;
+  }
+  
+  .badge--color-magenta {
+    background-color: var(--scl-color-primary);
+  }
+  
+  .badge--color-black {
+    background-color: var(--scl-color-black);
+  }
+  
+  .badge--color-white {
+    background-color: var(--scl-color-white);
+  }
+  
+  .badge-size-big {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .badge-size-small {
+    width: 120px;
+    height: 120px;
+  }
+  
