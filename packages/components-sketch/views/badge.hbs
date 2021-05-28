@@ -1,0 +1,51 @@
+
+
+<div data-sketch-artboard="Badge" class="artboard">
+  <h1 class="title--artboard">Badge</h1>
+
+  <h2 class="title--artboard-section">Badge</h2>
+  <div class="agent-states--grid" data-category="Not Visited">
+    <div class="agent-states--item">
+      <p class="agent-states--label">Big Magenta</p>
+       <scale-badge size="big" style="--badge-color: magenta" rotation="0">
+      <div>
+        <div
+          style="
+            text-align: center;
+            font-size: 20px;
+            font-family: TeleNeo;
+            color: white;
+            font-weight: 400;
+          "
+        >
+          Für nur
+        </div>
+        <div
+          style="
+            text-align: center;
+            font-size: 60px;
+            font-family: TeleNeo;
+            color: white;
+            font-weight: 700;
+          "
+        >
+          <span> 15 € </span>
+        </div>
+      </div>
+    </scale-badge>
+    </div>
+  </div>
+</div>
+
+<script src="/symbol_names.js"></script>
+<script>
+  Array.from(document.querySelectorAll('scale-link')).forEach((btn, i) => {
+    btn.dataset.sketchSymbol = `Link / ${order(
+      1,
+      getCategoryName(btn)
+    )} / ${order(
+      2,
+      btn.dataset.hasIcon ? 'With Icon' : 'Without Icon'
+    )} / ${order(4, getStateName(btn))}`;
+  });
+</script>
