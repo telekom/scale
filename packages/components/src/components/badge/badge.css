@@ -1,39 +1,44 @@
+:host {
+  --big-badge-height: 160px;
+  --big-badge-width: 160px;
+  --small-badge-height: 120px;
+  --small-badge-width: 120px;
+  --big-inner-height: 96px;
+  --big-inner-width: 126.5px;
+  --small-inner-height: 88px;
+  --small-inner-width: 86px;
+}
+
 .badge {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--badge-size);
-    height: var(--badge-size);
-    border-radius: 100%;
-    background: var(--badge-color);
-  }
-  
-  .badge--inner {
-    width: var(--badge-text-width);
-    height: var(--badge-text-height);
-    transform: rotateZ(var(--badge-rotation));
-    overflow: hidden;
-  }
-  
-  .badge--color-magenta {
-    background-color: var(--scl-color-primary);
-  }
-  
-  .badge--color-black {
-    background-color: var(--scl-color-black);
-  }
-  
-  .badge--color-white {
-    background-color: var(--scl-color-white);
-  }
-  
-  .badge-size-big {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .badge-size-small {
-    width: 120px;
-    height: 120px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: var(--badge-color);
+  border-style: solid;
+}
+
+.badge.badge--size-big {
+  width: var(--big-badge-width);
+  height: var(--big-badge-height);
+}
+
+.badge.badge--size-small {
+  width: var(--small-badge-width);
+  height: var(--small-badge-height);
+}
+
+.badge.badge--size-big .badge--inner {
+  width: var(--big-inner-width);
+  height: var(--big-inner-height);
+}
+
+.badge.badge--size-small .badge--inner {
+  width: var(--small-inner-width);
+  height: var(--small-inner-height);
+}
+
+.badge--inner {
+  transform: rotateZ(var(--badge-rotation));
+  overflow: hidden;
+}

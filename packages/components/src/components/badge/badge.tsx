@@ -1,15 +1,12 @@
+const color = {
+  magenta: '#E20074',
+  white: '#FFFFFF',
+  black: '#191919',
+  blue: '#00739F',
+};
+
 import { Component, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
-
-const bigTextBox = {
-  width: 126.5,
-  height: 96,
-};
-
-const smallTextBox = {
-  width: 86,
-  height: 88,
-};
 
 @Component({
   tag: 'scale-badge',
@@ -27,13 +24,15 @@ export class Badge {
 
   displayStyle() {
     return `:host {
-      --badge-rotation: ${this.rotation}deg; 
-      --badge-text-width:${
-        this.size === 'big' ? bigTextBox.width : smallTextBox.width
-      }px;
-      --badge-text-height:${
-        this.size === 'big' ? bigTextBox.height : smallTextBox.height
-      }px;
+      --badge-rotation: ${this.rotation}deg;
+      --badge-color: ${
+        this.color === 'magenta' ||
+        this.color === 'black' ||
+        this.color === 'white' ||
+        this.color === 'blue'
+          ? color[this.color]
+          : this.color
+      };
     }`;
   }
 
@@ -41,21 +40,31 @@ export class Badge {
     return (
       <Host>
         <style>{this.displayStyle()}</style>
-        <div class={this.getCssClassMap()}>
-          <div class="badge--inner">
+        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
+          <div part="inner" class="badge--inner">
             <slot></slot>
           </div>
         </div>
-        ‚
       </Host>
     );
   }
 
+  getBasePartMap() {
+    return this.getCssOrBasePartMap('basePart');
+  }
+
   getCssClassMap() {
+    return this.getCssOrBasePartMap('css');
+  }
+
+  getCssOrBasePartMap(mode: 'basePart' | 'css') {
+    const name = 'badge';
+    const prefix = mode === 'basePart' ? '' : `${name}--`;
+
     return classNames(
-      'badge',
-      this.color && `badge--color-${this.color}`,
-      this.size && `badge-size-${this.size}`
+      name,
+      this.color && `${prefix}color-${this.color}`,
+      this.size && `${prefix}size-${this.size}`
     );
   }
 }
