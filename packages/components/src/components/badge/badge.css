@@ -16,7 +16,6 @@
   align-items: center;
   border-radius: 100%;
   background: var(--badge-color);
-  border-style: solid;
 }
 
 .badge.badge--color-magenta {
