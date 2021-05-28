@@ -72,6 +72,7 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
+    "@stencil/core": "~2.3.0",
     "@telekom/scale-design-tokens": "^3.0.0-beta.12",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1",
