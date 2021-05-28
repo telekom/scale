@@ -209,6 +209,8 @@
 }
 
 .modal--has-body .modal__body {
+  /* we use `margin` and top padding because we want to allow "margin collapse" */
+  /* @see https://web.dev/learn/css/spacing/#margin-collapse */
   margin-top: var(--spacing-y-body);
   margin-bottom: var(--spacing-y-body);
 }
