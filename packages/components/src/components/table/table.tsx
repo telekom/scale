@@ -23,6 +23,8 @@ export class Table {
   @Prop() showSort?: boolean = false;
   /** (optional) Visual size */
   @Prop() size?: 'default' | 'small' | string = 'default';
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
@@ -44,6 +46,7 @@ export class Table {
   render() {
     return (
       <Host class={this.getCssClassMap()}>
+        {this.styles && <style>{this.styles}</style>}
         <slot />
       </Host>
     );
