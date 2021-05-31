@@ -1,102 +1,89 @@
 .tooltip {
+  background-color: #ffaffc;
+  border-radius: 10px;
   position: relative;
+
+  text-align: center;
   display: inline-block;
 }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 66px;
-  background-color: black;
-  font-size: 12px;
-  color: #fff;
+.tooltip::after {
+  background-color: #333;
+  border-radius: 10px;
+  color: #b254ff;
+  display: none;
+  padding: 10px 15px;
+  position: absolute;
   text-align: center;
-  padding: 3px 0;
-  margin: 4px 0px 4px 0px;
-  border-radius: 6px;
-
-  position: absolute;
-  z-index: 1;
+  z-index: 999;
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-.tooltip .tooltiptext {
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.tooltip:hover .tooltiptext {
-  opacity: 1;
-}
-
-/*Top*/
-.tooltip.tooltip--alignment-top .tooltiptext {
-  bottom: 100%;
-  left: 50%;
-  margin-left: calc(-66px / 2);
-}
-
-.tooltip.tooltip--alignment-top .tooltiptext::after {
+.tooltip::before {
+  background-color: #333;
   content: ' ';
+  display: none;
   position: absolute;
-  top: 100%;
+  width: 15px;
+  height: 15px;
+  z-index: 999;
+}
+
+.tooltip:hover::after {
+  display: block;
+}
+
+.tooltip:hover::before {
+  display: block;
+}
+
+.tooltip--alignment-top::after {
+  content: 'top';
+  top: 0;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
+  transform: translate(-50%, calc(-100% - 10px));
 }
 
-/*Bottom*/
-.tooltip.tooltip--alignment-bottom .tooltiptext {
-  top: 100%;
+.tooltip--alignment-top::before {
+  top: 0;
   left: 50%;
-  margin-left: calc(-66px / 2);
+  transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
 }
 
-.tooltip.tooltip--alignment-bottom .tooltiptext::after {
-  content: ' ';
-  position: absolute;
-  bottom: 100%; /* At the top of the tooltip */
+.tooltip--alignment-bottom::after {
+  content: 'bottom';
+  bottom: 0;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
+  transform: translate(-50%, calc(100% + 10px));
 }
 
-/*Right*/
-.tooltip.tooltip.tooltip--alignment-right .tooltiptext {
-  top: 9px;
-  left: 105%;
+.tooltip--alignment-bottom::before {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, calc(100% + 5px)) rotate(45deg);
 }
 
-.tooltip.tooltip.tooltip--alignment-right .tooltiptext::after {
-  content: ' ';
-  position: absolute;
+.tooltip--alignment-right::after {
+  content: 'right  sdsadsadsa asdasdada asdsadsa';
   top: 50%;
-  right: 100%; /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent;
+  right: 0;
+  transform: translate(calc(100% + 10px), -50%);
 }
 
-/*Left*/
-.tooltip.tooltip.tooltip--alignment-left .tooltiptext {
-  top: 10px;
-  right: 105%;
-}
-
-.tooltip.tooltip.tooltip--alignment-left .tooltiptext::after {
-  content: ' ';
-  position: absolute;
+.tooltip--alignment-right::before {
   top: 50%;
-  left: 100%; /* To the right of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent black;
+  right: 0;
+  transform: translate(calc(100% + 5px), -50%) rotate(45deg);
+}
+
+.tooltip--alignment-left .text {
+  content: 'left asadsadsadsa';
+  top: 50%;
+  right: 0;
+  transform: translate(calc(-100% + 20px), -50%);
+}
+
+.tooltip--alignment-left .text {
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
 }
