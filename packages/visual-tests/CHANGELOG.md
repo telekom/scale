@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.11](https://github.com/telekom/scale/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2021-05-26)
+
+
+### Features
+
+* **design-tokens:** add functional colors to match current documentation ([#364](https://github.com/telekom/scale/issues/364)) ([a3a0821](https://github.com/telekom/scale/commit/a3a08216e872732ad81a1f555a9a2b65a06c7f97))
+
+
+
+
+
+# [3.0.0-beta.10](https://github.com/telekom/scale/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2021-05-25)
+
+
+### Features
+
+* **date-picker:** flatten top/bottom left border radius ([#355](https://github.com/telekom/scale/issues/355)) ([2345728](https://github.com/telekom/scale/commit/23457285b6d07ba94647c139bf5276cae801f94f))
+
+
+
+
+
 # [3.0.0-beta.9](https://github.com/telekom/scale/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2021-05-17)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests
