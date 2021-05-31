@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, Element, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
@@ -8,12 +8,20 @@ import classNames from 'classnames';
 })
 export class Tooltip {
   @Prop() alignment: 'left' | 'right' | 'top' | 'bottom' = 'top';
+  @Element() hostElement: HTMLElement;
+  componentDidLoad() {
+    let box = this.hostElement.shadowRoot.getElementById('slot_container_id');
+    console.log(box.offsetHeight);
+    console.log(box.offsetWidth);
+  }
 
   render() {
     return (
       <Host>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <slot></slot>
+          <div id="slot_container_id">
+            <slot></slot>
+          </div>
           <span part="text" class="tooltiptext">
             Tooltip
           </span>
