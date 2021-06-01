@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
+
+
+### Bug Fixes
+
+* **app-header:** remove list bullet point from portal name ([#367](https://github.com/telekom/scale/issues/367)) ([fc5364d](https://github.com/telekom/scale/commit/fc5364df90a9c84ec794948e67e05af6f7c21609))
+
+
+
+
+
+# [3.0.0-beta.11](https://github.com/telekom/scale/compare/v3.0.0-beta.10...v3.0.0-beta.11) (2021-05-26)
+
+
+### Bug Fixes
+
+* **app-header:** pass href to nav-main ([#363](https://github.com/telekom/scale/issues/363)) ([a122036](https://github.com/telekom/scale/commit/a1220365d7cb7ed9d9fff54c9e8b4b6b518330c6))
+
+
+
+
+
+# [3.0.0-beta.10](https://github.com/telekom/scale/compare/v3.0.0-beta.9...v3.0.0-beta.10) (2021-05-25)
+
+
+### Bug Fixes
+
+* **footer:** accept any icon ([#359](https://github.com/telekom/scale/issues/359)) ([a94f90c](https://github.com/telekom/scale/commit/a94f90c442ac3a57098cdd51d3a9ae893906db75))
+* broken `min` and `max` attributes in Slider and more ([66543d0](https://github.com/telekom/scale/commit/66543d0ec36cfdd9f57ce14d85f6e9bedae4ea43))
+* deprecate direct DOM manipulation in Collapsible, fixes [#316](https://github.com/telekom/scale/issues/316) ([06e8e2c](https://github.com/telekom/scale/commit/06e8e2c34e8449b37cdf4b9b52f2131b30dffad2))
+
+
+### Features
+
+* **date-picker:** flatten top/bottom left border radius ([#355](https://github.com/telekom/scale/issues/355)) ([2345728](https://github.com/telekom/scale/commit/23457285b6d07ba94647c139bf5276cae801f94f))
+
+
+
+
+
 # [3.0.0-beta.9](https://github.com/telekom/scale/compare/v3.0.0-beta.8...v3.0.0-beta.9) (2021-05-17)
 
 

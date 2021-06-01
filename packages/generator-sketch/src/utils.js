@@ -64,8 +64,48 @@ function findLayers(symbol, predicate, action = undefined) {
   return _findLayers(symbol, predicate, action, []);
 }
 
+const Resize = {
+  NONE: 0,
+  TOP_LEFT_FIXED_SIZE: 9,
+  TOP_LEFT_RIGHT_FIXED_HEIGHT: 10,
+  TOP_LEFT_FIXED_HEIGHT: 11,
+  TOP_RIGHT_FIXED_SIZE: 12,
+
+  TOP_RIGHT_FIXED_HEIGHT: 14,
+
+  FILL_SPACE: 18,
+  BOTTOM_LEFT_RIGHT_FIXED_HEIGHT: 34,
+
+  RIGHT_FIXED_SIZE: 44,
+  FIXED_SIZE: 45,
+
+  FIXED_HEIGHT: 47,
+  FIXED_WIDTH: 61,
+
+  LEFT_RIGHT: 58,
+  LEFT: 59,
+};
+
+function setResizingConstraints(symbol, ...predicateActionPairs) {
+  for (var i = 0; i < predicateActionPairs.length; i += 2) {
+    const predicate = predicateActionPairs[i];
+    const action = predicateActionPairs[i + 1];
+    if (typeof action === 'function') {
+      findLayers(symbol, predicateActionPairs[i], action);
+    } else {
+      findLayers(
+        symbol,
+        predicateActionPairs[i],
+        (l) => (l.resizingConstraint = action)
+      );
+    }
+  }
+}
+
 module.exports = {
   findLayer,
   findLayers,
   printSymbolStructure,
+  setResizingConstraints,
+  Resize,
 };

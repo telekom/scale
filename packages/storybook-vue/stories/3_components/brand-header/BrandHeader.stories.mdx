@@ -4,14 +4,14 @@ import {
   ArgsTable,
   Description,
   Canvas,
-} from "@storybook/addon-docs/blocks";
+} from '@storybook/addon-docs/blocks';
 import {
   mainNavigation,
   iconNavigation,
   addonNavigation,
   sectorNavigation,
-} from "./fixtures";
-import AppShell from "./AppShell.vue";
+} from './fixtures';
+import AppShell from './AppShell.vue';
 
 <Meta
   title="Components/Brand Header & Navigation"
@@ -19,65 +19,65 @@ import AppShell from "./AppShell.vue";
   argTypes={{
     activeRouteId: {
       control: {
-        type: "text",
+        type: 'text',
       },
     },
     activeSectorId: {
       control: {
-        type: "text",
+        type: 'text',
       },
     },
     logoTitle: {
       control: {
-        type: "text",
+        type: 'text',
       },
     },
     logoHref: {
       control: {
-        type: "text",
+        type: 'text',
       },
     },
     logoClick: {
       control: {
-        type: "disabled",
+        type: 'disabled',
       },
-      description: "logo click event handler custom function",
+      description: 'logo click event handler custom function',
     },
     mainNavigation: {
       control: {
-        type: "text",
+        type: 'text',
       },
-      description: "each item takes an optional onClick handler",
+      description: 'each item takes an optional onClick handler',
     },
     iconNavigation: {
       control: {
-        type: "text",
+        type: 'text',
       },
-      description: "each item takes an optional onClick handler",
+      description: 'each item takes an optional onClick handler',
     },
     sectorNavigation: {
       control: {
-        type: "text",
+        type: 'text',
       },
-      description: "each item takes an optional onClick handler",
+      description: 'each item takes an optional onClick handler',
     },
     addonNavigation: {
       control: {
-        type: "text",
+        type: 'text',
       },
-      description: "each item takes an optional onClick handler",
+      description: 'each item takes an optional onClick handler',
     },
     portalName: {
       control: {
-        type: "text",
+        type: 'text',
       },
       description:
-        "optionally replaces the sectorNavigation with a single bold title",
+        'optionally replaces the sectorNavigation with a single bold title',
     },
     claimLang: {
       control: {
-        type: "select",
-        options: ["en", "de"],
+        type: 'select',
+        options: ['en', 'de'],
       },
     },
   }}
@@ -85,10 +85,10 @@ import AppShell from "./AppShell.vue";
 
 <div
   style={{
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
   }}
 >
   <h1>Brand Header & Navigation</h1>
@@ -103,16 +103,16 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
-      logoTitle: "Custom Logo Title",
-      logoHref: "#custom-href",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+      logoTitle: 'Custom Logo Title',
+      logoHref: '#custom-href',
     }}
   >
     {() => ({
@@ -175,14 +175,14 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {() => ({
@@ -264,26 +264,26 @@ import AppShell from "./AppShell.vue";
     </div>
   </scale-app-shell>
   <script>
-    const header = document.getElementById("header");
+    const header = document.getElementById('header');
     const navMainWithMegaMenu = document.getElementById(
-      "nav-main-with-mega-menu"
+      'nav-main-with-mega-menu'
     );
-    header.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
+    header.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
         navMainWithMegaMenu.isMegaMenuVisible = false;
         header.isMegaMenuVisible = false;
       }
     });
-    navMainWithMegaMenu.addEventListener("mouseenter", function () {
+    navMainWithMegaMenu.addEventListener('mouseenter', function () {
       navMainWithMegaMenu.isMegaMenuVisible = true;
       header.isMegaMenuVisible = true;
     });
-    navMainWithMegaMenu.addEventListener("mouseleave", function () {
+    navMainWithMegaMenu.addEventListener('mouseleave', function () {
       navMainWithMegaMenu.isMegaMenuVisible = false;
       header.isMegaMenuVisible = false;
     });
-    navMainWithMegaMenu.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
+    navMainWithMegaMenu.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
         navMainWithMegaMenu.isMegaMenuVisible = true;
         header.isMegaMenuVisible = true;
       }
@@ -300,14 +300,14 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {() => ({
@@ -390,14 +390,14 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {() => ({
@@ -475,14 +475,14 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {() => ({
@@ -560,14 +560,14 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {() => ({
@@ -640,14 +640,14 @@ import AppShell from "./AppShell.vue";
     inline={false}
     height={500}
     args={{
-      portalName: "",
-      claimLang: "en",
+      portalName: '',
+      claimLang: 'en',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
-      activeRouteId: "Third Level 24",
-      activeSectorId: "Personal38",
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
     }}
   >
     {() => ({
@@ -674,11 +674,11 @@ import AppShell from "./AppShell.vue";
         </div>
       `,
       mounted() {
-        document.body.addEventListener("keydown", (event) => {
-          if (["Escape", "Esc"].includes(event.key)) {
+        document.body.addEventListener('keydown', (event) => {
+          if (['Escape', 'Esc'].includes(event.key)) {
             event.preventDefault();
             this.$refs.header &&
-              this.$refs.header.dispatchEvent(new Event("closeMenu"));
+              this.$refs.header.dispatchEvent(new Event('closeMenu'));
           }
         });
       },
@@ -709,13 +709,69 @@ import AppShell from "./AppShell.vue";
     </div>
   </scale-app-shell>
   <script>
-    const header = document.getElementById("header");
-    document.body.addEventListener("keydown", function (event) {
-      if (["Escape", "Esc"].includes(event.key)) {
+    const header = document.getElementById('header');
+    document.body.addEventListener('keydown', function (event) {
+      if (['Escape', 'Esc'].includes(event.key)) {
         event.preventDefault();
-        header.dispatchEvent(new Event("closeMenu"));
+        header.dispatchEvent(new Event('closeMenu'));
       }
     });
   </script>
 </body>
 ```
+
+## Brand Header With User Menu
+
+<Canvas withSource="close">
+  <Story name="Brand Header With User Menu" inline={false} height={500}>
+    {() => ({
+      data() {
+        return {
+          portalName: '',
+          claimLang: 'en',
+          mainNavigation: JSON.stringify(mainNavigation),
+          addonNavigation: JSON.stringify(addonNavigation),
+          sectorNavigation: JSON.stringify(sectorNavigation),
+          activeRouteId: 'Third Level 24',
+          activeSectorId: 'Personal38',
+        };
+      },
+      template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                ref="header"
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :sector-navigation="sectorNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="menu-icon">
+                    <scale-menu-flyout @scaleClose="$refs.userIcon.isActive=false" >
+                        <div slot="trigger" >
+                         <scale-nav-icon icon="user-file-user" ref="userIcon" @click="$refs.userIcon.isActive=true">
+                           Alexander
+                         </scale-nav-icon>
+                        </div>
+                        <scale-menu-flyout-list>
+                            <scale-menu-flyout-item disabled styles=".menu-item__label { color: var(--scl-color-text-standard); } .menu-item { cursor: auto !important; }">Alexander Dreyer</scale-menu-flyout-item>
+                            <scale-menu-flyout-item disabled styles=".menu-item { cursor: auto !important; }">alexander.dreyer@t-online.de</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Kundencenter</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Login-Einstellungen</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Misc.</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Logout<scale-icon-action-logout slot="prefix"></scale-icon-action-logout></scale-menu-flyout-item>
+                        </scale-menu-flyout-list>
+                    </scale-menu-flyout>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>

@@ -19,12 +19,12 @@ function findComponentPath(node: HTMLElement): string {
   } else if (node.parentElement) {
     return findComponentPath(node.parentElement);
   } else {
-    return 'Unnamed Components';
+    return 'X';
   }
 }
 
 function traverse(node: HTMLElement): void {
-  if (/^scale-icon/i.test(node.nodeName)) {
+  if (/^scale-icon-/i.test(node.nodeName)) {
     const componentPath = findComponentPath(node);
     const componentName =
       node.getAttribute('data-sketch-symbol') ||

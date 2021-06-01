@@ -82,7 +82,7 @@
   letter-spacing: inherit;
 }
 
-.collapsible__button > span {
+.collapsible__button-text {
   margin-left: var(--spacing-left-button-text);
 }
 

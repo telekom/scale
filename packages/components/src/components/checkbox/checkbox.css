@@ -35,11 +35,11 @@ scale-checkbox {
   /*helper-text*/
   --transition-helper-text: var(--transition);
   --spacing-left-helper-text: calc(var(--width-control) + var(--spacing-x));
+  --spacing-top-helper-text: var(--scl-spacing-4);
   --font-size-helper-text: var(--scl-font-size-12);
   --font-weight-helper-text: var(--scl-font-weight-bold);
   --line-height-helper-text: var(--scl-font-line-height-133);
   --color-helper-text: var(--scl-color-blue-70);
-
   /*label*/
   --font-weight-label: var(--scl-font-weight-medium);
   --transition-label: var(--transition);
@@ -98,6 +98,7 @@ scale-checkbox {
   font-weight: var(--font-weight-helper-text);
   line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
+  margin-top: var(--spacing-top-helper-text);
 }
 
 .checkbox--status-error .checkbox__helper-text {
