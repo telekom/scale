@@ -891,57 +891,52 @@ first, which contains table headers):*/
       <scale-tab-panel slot="panel">Content goes here for tab 3</scale-tab-panel>
     </scale-tab-nav>
 
-    <h3>Checkbox Group</h3>
-    <scale-checkbox-group>
-        <div slot="checkbox-header">
-          <scale-checkbox
-            input-id="header-checkbox"
-            value="1"
-            label="checkbox"
-            name="nameOfCheckbox"
-            checked
-            helper-text="helperText"
+      <h3>Accordion</h3>
+      <scale-accordion headline="multi">
+        <scale-collapsible is-expanded>
+          <scale-text slot="headline" variant="collapsible"
+            >Accordion with multi</scale-text
           >
-          </scale-checkbox>
-        </div>
-        <div slot="checkbox-list">
-          <div style="margin-top: 0.5rem">
-            <scale-checkbox
-              value="2"
-              label="checkbox"
-              name="nameOfCheckbox"
-            ></scale-checkbox>
-          </div>
-          <div style="margin-top: 0.5rem">
-            <scale-checkbox value="3" name="nameOfCheckbox" checked
-              >Checkbox Slot</scale-checkbox
-            >
-          </div>
-          <div style="margin-top: 0.5rem">
-            <scale-checkbox
-              value="4"
-              label="checkbox"
-              name="nameOfCheckbox"
-            ></scale-checkbox>
-          </div>
-          <div style="margin-top: 0.5rem">
-            <scale-checkbox
-              value="5"
-              label="checkbox"
-              name="nameOfCheckbox"
-              checked
-            >
-            </scale-checkbox>
-          </div>
-        </div>
-      </scale-checkbox-group>
-
-    <h3>Accordion</h3>
-    <scale-accordion headline="multi">
-      <scale-collapsible is-expanded>
-        <scale-text slot="headline" variant="collapsible">Accordion with multi</scale-text>
-        <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
-      </scale-collapsible>
+          <scale-input
+            slot="content"
+            label="First Name"
+            placeholder="Hello"
+          ></scale-input>
+        </scale-collapsible>
+        <scale-collapsible>
+          <scale-text slot="headline" variant="collapsible"
+            >Accordion with multi</scale-text
+          >
+          <scale-input
+            slot="content"
+            label="First Name"
+            placeholder="Hello"
+          ></scale-input>
+        </scale-collapsible>
+      </scale-accordion>
+      <scale-accordion headline="single" dependend>
+        <scale-collapsible is-expanded>
+          <scale-text slot="headline" variant="collapsible"
+            >Accordion with single</scale-text
+          >
+          <scale-input
+            slot="content"
+            label="First Name"
+            placeholder="Hello"
+          ></scale-input>
+        </scale-collapsible>
+        <scale-collapsible>
+          <scale-text slot="headline" variant="collapsible"
+            >Accordion with single</scale-text
+          >
+          <scale-input
+            slot="content"
+            label="First Name"
+            placeholder="Hello"
+          ></scale-input>
+        </scale-collapsible>
+      </scale-accordion>
+      <h3>collapsible</h3>
       <scale-collapsible>
         <scale-text slot="headline" variant="collapsible">Accordion with multi</scale-text>
         <scale-input slot="content" label="First Name" placeholder="Hello"></scale-input>
