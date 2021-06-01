@@ -9,13 +9,15 @@ import classNames from 'classnames';
 export class Tooltip {
   @Prop() alignment: 'left' | 'right' | 'top' | 'bottom' = 'top';
 
+  getStyle() {}
+
   render() {
     return (
       <Host>
-        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <div class="text"></div>
+        <style>{this.getStyle()}</style>
+        <a class={this.getCssClassMap()}>
           <slot></slot>
-        </div>
+        </a>
       </Host>
     );
   }

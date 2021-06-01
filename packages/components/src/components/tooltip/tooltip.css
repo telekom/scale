@@ -1,89 +1,102 @@
-.tooltip {
-  background-color: #ffaffc;
-  border-radius: 10px;
+:host {
+  --tooltip-content: 'No content at the moment!';
+}
+
+.tooltip--alignment-bottom:hover,
+.tooltip--alignment-left:hover,
+.tooltip--alignment-right:hover,
+.tooltip--alignment-top:hover {
   position: relative;
-
-  text-align: center;
+}
+.tooltip--alignment-bottom:hover::after,
+.tooltip--alignment-left:hover::after,
+.tooltip--alignment-right:hover::after,
+.tooltip--alignment-top:hover::after {
+  all: initial;
   display: inline-block;
-}
-
-.tooltip::after {
-  background-color: #333;
-  border-radius: 10px;
-  color: #b254ff;
-  display: none;
-  padding: 10px 15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #1a1a1a;
   position: absolute;
+  bottom: 100%;
+  content: '';
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-bottom: 10px;
+}
+.tooltip--alignment-right:hover::after {
+  margin-bottom: 0;
+  bottom: auto;
+  transform: rotate(90deg) translate(0, -50%);
+  left: 100%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+.tooltip--alignment-left:hover::after {
+  margin-bottom: 0;
+  bottom: auto;
+  transform: rotate(-90deg) translate(0, -50%);
+  left: auto;
+  right: 100%;
+  top: 50%;
+  margin-right: -5px;
+  margin-top: -5px;
+}
+.tooltip--alignment-bottom:hover::after {
+  margin-bottom: 0;
+  bottom: auto;
+  transform: rotate(180deg) translate(-50%, 0);
+  top: 100%;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+.tooltip--alignment-bottom:hover::before,
+.tooltip--alignment-left:hover::before,
+.tooltip--alignment-top:hover::before,
+.tooltip--alignment-right:hover::before {
+  all: initial;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1a1a1a;
+  content: var(--tooltip-content);
+  color: #f9f9f9;
+  position: absolute;
+  bottom: 100%;
+  width: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-bottom: 15px;
   text-align: center;
-  z-index: 999;
+  font-size: 14px;
 }
-
-.tooltip::before {
-  background-color: #333;
-  content: ' ';
-  display: none;
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  z-index: 999;
-}
-
-.tooltip:hover::after {
-  display: block;
-}
-
-.tooltip:hover::before {
-  display: block;
-}
-
-.tooltip--alignment-top::after {
-  content: 'top';
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, calc(-100% - 10px));
-}
-
-.tooltip--alignment-top::before {
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
-}
-
-.tooltip--alignment-bottom::after {
-  content: 'bottom';
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, calc(100% + 10px));
-}
-
-.tooltip--alignment-bottom::before {
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, calc(100% + 5px)) rotate(45deg);
-}
-
-.tooltip--alignment-right::after {
-  content: 'right  sdsadsadsa asdasdada asdsadsa';
+.tooltip--alignment-right:hover::before {
+  margin-bottom: 0;
+  bottom: auto;
+  transform: translate(0, -50%);
+  left: 100%;
   top: 50%;
-  right: 0;
-  transform: translate(calc(100% + 10px), -50%);
+  content: var(--tooltip-content);
+  margin-left: 12px;
 }
-
-.tooltip--alignment-right::before {
+.tooltip--alignment-left:hover::before {
+  margin-bottom: 0;
+  bottom: auto;
+  transform: translate(0, -50%);
+  left: auto;
+  right: 100%;
   top: 50%;
-  right: 0;
-  transform: translate(calc(100% + 5px), -50%) rotate(45deg);
+  content: var(--tooltip-content);
+  margin-right: 12px;
 }
-
-.tooltip--alignment-left .text {
-  content: 'left asadsadsadsa';
-  top: 50%;
-  right: 0;
-  transform: translate(calc(-100% + 20px), -50%);
-}
-
-.tooltip--alignment-left .text {
-  top: 50%;
-  left: 0;
-  transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
+.tooltip--alignment-bottom:hover::before {
+  margin-bottom: 0;
+  bottom: auto;
+  top: 100%;
+  content: var(--tooltip-content);
+  margin-top: 15px;
 }
