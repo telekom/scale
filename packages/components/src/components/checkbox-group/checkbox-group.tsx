@@ -10,7 +10,7 @@
  */
 
 import { Component, h, Host, Listen, Element, State } from '@stencil/core';
-import { CheckboxState } from './utils/utils';
+import { CheckboxState, objDiffer } from './utils/utils';
 
 @Component({
   tag: 'scale-checkbox-group',
@@ -67,8 +67,7 @@ export class CheckboxGroup {
   }
 
   handleMasterDisableProp() {
-    let checkboxes;
-    checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    const checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
     // set all subs to disabled
     for (let i = 1; i < checkboxes.length; i++) {
       checkboxes[i].setAttribute('disabled', 'true');
@@ -77,8 +76,7 @@ export class CheckboxGroup {
   }
 
   checkForMasterCkeckboxChange(newState: CheckboxState[]) {
-    let checkboxes;
-    checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    const checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
     // set master and subs to checked
     if (this.groupStatus[0].indeterminate || !this.groupStatus[0].checked) {
       for (let i = 1; i < checkboxes.length; i++) {
@@ -102,26 +100,12 @@ export class CheckboxGroup {
   }
 
   checkForSubCheckboxChange(newState: CheckboxState[]) {
-    let checkedCounterOldState = 0;
-    for (let i = 1; i < this.groupStatus.length; i++) {
-      if (this.groupStatus[i].checked) {
-        checkedCounterOldState += 1;
-      }
-    }
-    let checkedCounterNewState = 0;
-    for (let i = 1; i < newState.length; i++) {
-      if (newState[i].checked) {
-        checkedCounterNewState += 1;
-      }
-    }
-    if (
-      checkedCounterNewState === checkedCounterOldState - 1 ||
-      checkedCounterNewState === checkedCounterOldState + 1 ||
-      checkedCounterNewState ===
-        checkedCounterOldState - this.groupStatus.length - 2 ||
-      checkedCounterNewState ===
-        checkedCounterOldState - this.groupStatus.length + 2
-    ) {
+    const [, ...subOld] = this.groupStatus;
+    const [, ...subNew] = newState;
+
+    // console.log('restOld', subOld)
+    // console.log('restNew', subNew)
+    if (objDiffer(subOld, subNew)) {
       return true;
     }
   }
@@ -138,8 +122,7 @@ export class CheckboxGroup {
         disabledCounter += 1;
       }
     }
-    let checkboxes;
-    checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    const checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
 
     // set master to checked
     if (checkedCounter + disabledCounter === newState.length - 1) {
