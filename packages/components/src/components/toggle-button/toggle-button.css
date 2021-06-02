@@ -1,0 +1,83 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: auto;
+  --spacing-x: var(--scl-spacing-24);
+  --spacing-x-icon-only: var(--scl-spacing-8);
+  --min-height: var(--scl-spacing-40);
+  --radius: var(--scl-radius-8);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --font-weight: var(--scl-font-weight-bold);
+  --font-size: var(--scl-font-size-16);
+  --line-height: var(--scl-font-line-height-150);
+  --spacing-icon-x: var(--scl-spacing-8);
+  --vertical-align: middle;
+
+  /* size: small */
+  --font-size-small: var(--scl-font-size-12);
+  --line-height-small: var(--scl-font-line-height-133);
+  --min-height-small: var(--scl-spacing-32);
+
+  /* variant: primary */
+  --radius-primary: var(--radius);
+  --background-primary: var(--scl-color-primary);
+  --background-primary-hover: var(--scl-color-primary-hover);
+  --background-primary-active: var(--scl-color-primary-active);
+  --background-primary-disabled: var(--scl-color-background-disabled);
+  --color-primary: var(--scl-color-white);
+  --color-primary-disabled: var(--scl-color-grey-40);
+
+  /* variant: secondary */
+  --radius-secondary: var(--radius);
+  --border-width-secondary: var(--scl-spacing-1);
+  --background-secondary: transparent;
+  --color-secondary: var(--scl-color-text-standard);
+  --color-secondary-hover: var(--scl-color-primary-hover);
+  --color-secondary-active: var(--scl-color-primary-active);
+  --color-secondary-disabled: var(--scl-color-background-disabled);
+
+  /* variant: ghost */
+  --radius-ghost: var(--radius);
+  --border-width-ghost: var(--scl-spacing-1);
+  --spacing-x-ghost: var(--scl-spacing-8);
+  --color-ghost: var(--scl-color-primary);
+  --color-ghost-hover: var(--scl-color-primary-hover);
+  --color-ghost-active: var(--scl-color-primary-active);
+  --color-ghost-disabled: var(--scl-color-text-disabled);
+}
+
+.toggle-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  min-height: var(--min-height);
+  width: var(--width);
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+  vertical-align: var(--vertical-align);
+  transition: var(--transition);
+}
