@@ -1,5 +1,3 @@
-rimraf ./examples/*/node_modules;
-rimraf ./examples/*/*.lock;
 rimraf ./packages/*/yarn-error.log;
 rimraf ./packages/*/node_modules;
 rimraf ./packages/*/.cache;
