@@ -7,15 +7,28 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Tooltip {
+  /** (optional) Alignment of the tooltip*/
   @Prop() alignment: 'left' | 'right' | 'top' | 'bottom' = 'top';
+  /** (optional) Text that is displayed in the tooltip*/
+  @Prop() label: string = 'Tooltip is missing';
+  /** (optional) Width of the tooltip (Text aligns to tooltip width)*/
+  @Prop() width: number = 66;
 
-  getStyle() {}
+  getStyle() {
+    return `:host {
+      --tooltip-width: ${this.width}px;
+    }`;
+  }
 
   render() {
     return (
       <Host>
         <style>{this.getStyle()}</style>
-        <a class={this.getCssClassMap()}>
+        <a
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          data-tooltip={this.label}
+        >
           <slot></slot>
         </a>
       </Host>

@@ -1,5 +1,5 @@
 :host {
-  --tooltip-content: 'No content at the moment!';
+  --tooltip-width: 66px;
 }
 
 .tooltip--alignment-bottom:hover,
@@ -18,7 +18,7 @@
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #1a1a1a;
+  border-top: 10px solid #6c6c6c;
   position: absolute;
   bottom: 100%;
   content: '';
@@ -58,21 +58,24 @@
 .tooltip--alignment-top:hover::before,
 .tooltip--alignment-right:hover::before {
   all: initial;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12;
   display: inline-block;
   border-radius: 5px;
-  padding: 10px;
-  background-color: #1a1a1a;
-  content: var(--tooltip-content);
+  padding: 2px 8px 2px 8px;
+  background-color: #6c6c6c;
+  content: attr(data-tooltip);
   color: #f9f9f9;
   position: absolute;
   bottom: 100%;
-  width: 100px;
   left: 50%;
+  min-width: var(--tooltip-width);
   transform: translate(-50%, 0);
-  margin-bottom: 15px;
+  margin-bottom: 19px;
   text-align: center;
-  font-size: 14px;
+  overflow: hidden;
+  z-index: 1;
+  white-space: pre-wrap;
+  /*text-overflow: ellipsis;*/
 }
 .tooltip--alignment-right:hover::before {
   margin-bottom: 0;
@@ -80,8 +83,9 @@
   transform: translate(0, -50%);
   left: 100%;
   top: 50%;
-  content: var(--tooltip-content);
-  margin-left: 12px;
+  margin-left: 11px;
+  white-space: pre-wrap;
+  /*text-overflow: ellipsis;*/
 }
 .tooltip--alignment-left:hover::before {
   margin-bottom: 0;
@@ -90,13 +94,15 @@
   left: auto;
   right: 100%;
   top: 50%;
-  content: var(--tooltip-content);
-  margin-right: 12px;
+  margin-right: 11px;
+  white-space: pre-wrap;
+  /*text-overflow: ellipsis;*/
 }
 .tooltip--alignment-bottom:hover::before {
   margin-bottom: 0;
   bottom: auto;
   top: 100%;
-  content: var(--tooltip-content);
-  margin-top: 15px;
+  margin-top: 19px;
+  white-space: pre-wrap;
+  /*text-overflow: ellipsis;*/
 }
