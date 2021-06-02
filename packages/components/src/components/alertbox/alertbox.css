@@ -1,9 +1,8 @@
 :host {
-  --corner-radius: 10px;
+  --corner-radius: 6px;
   --floating-height: 120px;
   --box-height-missing-content: 32px;
-  --text-padding: 0 32px 0 16px;
-  --close-icon-size: 16px;
+  
 }
 
 .alertbox {
@@ -59,33 +58,43 @@
 
 /*content*/
 .alertbox .alertbox__content {
-  margin-top: -8px;
-  padding: var(--text-padding);
+  margin-top: -4.2px;
+  margin-left: 32px;
+  margin-right: 32px;
 }
-
-/*Icon success or error*/
-.alertbox .alertbox__container-header .alertbox__icon-success {
-  
-}
-
-
 
 /*header*/
 .alertbox .alertbox__container-header {
-  
-  top: 0;
   font-weight: bold;
-  padding: var(--text-padding);
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: -5px;
+  margin-bottom: 4.2px;
+
 }
-
-
-/* close icon*/
+/* Close Icon/Button */
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 6.5px 9px 0 0;
-  height: var(--close-icon-size);
-  width: var(--close-icon-size);
+  height: 15px;
+  width: 15px;
+  margin-right:33px;
+  margin-left: 220px;
+  top: 3px;
 }
 
+/* Success Icon */
+.alertbox .alertbox__icon-success {
+  position: absolute;
+  margin-top: -5px;
+  margin-left: 9px;
+  height: 10px;
+  width: 14px;
+}
+/* Error Icon */
+.alertbox .alertbox__icon-error {
+  position: absolute;
+  margin-top: -5px;
+  margin-left: 9px;
+  height: 10px;
+  width: 14px;
+}

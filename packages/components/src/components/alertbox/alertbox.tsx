@@ -47,6 +47,7 @@ export class Alertbox {
     }
     return;
   }
+  
 
   render() {
     return (
@@ -62,7 +63,7 @@ export class Alertbox {
                   onClick={() => {
                     document.querySelector('scale-alertbox').remove();
                   }}
-                  accessibility-title="circle-close"
+                  accessibility-title="close"
                 />
               )}
             </header>
