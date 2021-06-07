@@ -60,8 +60,9 @@ export class NavIcon {
   getCssClassMap() {
     return classNames(
       'meta-navigation__item',
-      !!this.refMobileMenuToggle && 'mobile-menu',
-      this.isMobileMenuOpen && 'open'
+      (this.isActive || this.isMobileMenuOpen) &&
+        'meta-navigation__item--selected',
+      !!this.refMobileMenuToggle && 'mobile-menu'
     );
   }
 }
