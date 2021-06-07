@@ -31,30 +31,32 @@
 
   /* variant: primary */
   --radius-primary: var(--radius);
-  --background-primary: var(--scl-color-primary);
-  --background-primary-hover: var(--scl-color-primary-hover);
-  --background-primary-active: var(--scl-color-primary-active);
-  --background-primary-disabled: var(--scl-color-background-disabled);
-  --color-primary: var(--scl-color-white);
-  --color-primary-disabled: var(--scl-color-grey-40);
+  --background-primary: #dcdcdc;
+  /*  --background-primary-hover: var(--scl-color-primary-hover);
+  --background-primary-active: var(--scl-color-primary-active); */
+  --background-primary-disabled: #f4f4f4;
+  --color-primary: #262626;
+  --color-primary-hover: var(--scl-color-primary-hover);
+  --color-primary-active: var(--scl-color-primary-active);
+  --color-primary-disabled: #d0d0d0;
 
   /* variant: secondary */
   --radius-secondary: var(--radius);
-  --border-width-secondary: var(--scl-spacing-1);
-  --background-secondary: transparent;
-  --color-secondary: var(--scl-color-text-standard);
+  --border-width-secondary: 0;
+  --background-secondary: var(--scl-color-white);
+  --color-secondary: #262626;
   --color-secondary-hover: var(--scl-color-primary-hover);
   --color-secondary-active: var(--scl-color-primary-active);
   --color-secondary-disabled: var(--scl-color-background-disabled);
 
   /* variant: ghost */
-  --radius-ghost: var(--radius);
+  /*   --radius-ghost: var(--radius);
   --border-width-ghost: var(--scl-spacing-1);
   --spacing-x-ghost: var(--scl-spacing-8);
   --color-ghost: var(--scl-color-primary);
   --color-ghost-hover: var(--scl-color-primary-hover);
   --color-ghost-active: var(--scl-color-primary-active);
-  --color-ghost-disabled: var(--scl-color-text-disabled);
+  --color-ghost-disabled: var(--scl-color-text-disabled); */
 }
 
 .toggle-button {
@@ -80,4 +82,21 @@
   padding-right: var(--spacing-x);
   vertical-align: var(--vertical-align);
   transition: var(--transition);
+  background: #fff;
+}
+
+.toggle-button--primary {
+  background: var(--background-primary);
+}
+
+.toggle-button--secondary {
+  background: var(--background-secondary);
+}
+
+.toggle-button--icon-before ::slotted(*) {
+  margin-right: var(--spacing-icon-x);
+}
+
+.toggle-button--icon-after ::slotted(*) {
+  margin-left: var(--spacing-icon-x);
 }
