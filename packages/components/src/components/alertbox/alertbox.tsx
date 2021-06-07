@@ -56,7 +56,7 @@ export class Alertbox {
           <div part="container" class="alertbox__container">
             {this.handleIcons()}
             <header part="header" class="alertbox__container-header">
-              <slot name="header">Missing Title</slot>
+              <slot name="header"><p>Missing Title</p></slot>
               {this.close && (
                 <scale-icon-action-circle-close
                   class="alertbox__icon-close"

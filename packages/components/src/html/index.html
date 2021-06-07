@@ -34,17 +34,46 @@
   </head>
 
   <body>
-    <h1>Components</h1>
+    <h1>Alertbox Component</h1>
 
-  
-
-    <h3>Alert Box 1 white/icon/closeOn/outline</h3>
+    <h3>1 white/icon/closeOn/outline</h3>
       <scale-alertbox close="true" icon color="white" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+
+      <h3>2 black/icon/closeOn/floating</h3>
+      <scale-alertbox close="true" icon color="black" variant="floating">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+
+      <h3>3 error-red/icon/closeOn/floating</h3>
+      <scale-alertbox close="true" icon color="error" variant="floating">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+
+      <h3>4 icon/noClose/noIcon/message</h3>
+      <scale-alertbox color="white" variant="outline">
         <p slot="header">
           Message with title, text and closeMessage with title, text and
           closeMessage with title, text and closeMessage with title, text and
           close
         </p>
+
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+      </scale-alertbox>
+
+      <h3>5 missing title deafault/black/icon/closeOn/Variant-Floating</h3>
+      <scale-alertbox close="true" icon color="black" variant="floating" >
+    
 
         <p slot="text">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

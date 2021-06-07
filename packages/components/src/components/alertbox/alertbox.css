@@ -1,8 +1,7 @@
 :host {
-  --corner-radius: 6px;
-  --floating-height: 120px;
+  --corner-radius: 8px;
   --box-height-missing-content: 32px;
-  
+  --font-family: TeleNeo;
 }
 
 .alertbox {
@@ -31,70 +30,76 @@
 
 /*variants*/
 .alertbox.alertbox--variant-outline.alertbox--color-white {
-  border: 1px solid var(--scl-color-black);
+  /* border: 1px solid var(--scl-color-black); */
   border-radius: var(--corner-radius);
+  border: solid 1px #979797;
 }
 
 .alertbox.alertbox--variant-outline.alertbox--color-black {
-  border: 1px solid var(--scl-color-white);
+  /* border: 1px solid var(--scl-color-white); */
+  border: solid 1px #979797;
   border-radius: var(--corner-radius);
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-error {
-  height: var(--floating-height);
-  box-shadow: 0px 5px 20;
+  
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-white {
   height: var(--floating-height);
   box-shadow: 0px 5px 20;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-black {
-  height: var(--floating-height);
-  box-shadow: 0px 5px 20;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
 }
 
 
 /*content*/
 .alertbox .alertbox__content {
-  margin-top: -4.2px;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-top: 8px;
+  margin-left: 40px;
+  margin-right: 48px;
+  margin-bottom: 15px;
+  font-family: var(--font-family);
+  font-size: 16px;
 }
 
 /*header*/
 .alertbox .alertbox__container-header {
   font-weight: bold;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: -5px;
-  margin-bottom: 4.2px;
-
+  margin-left: 40px;
+  margin-right: 48px;
+  margin-top: 15px;
+  font-family: var(--font-family);
+  font-size: 16px;
 }
+
+
 /* Close Icon/Button */
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
   height: 15px;
   width: 15px;
-  margin-right:33px;
-  margin-left: 220px;
-  top: 3px;
+  top: 13px;
+  right: 16px;
 }
 
 /* Success Icon */
 .alertbox .alertbox__icon-success {
   position: absolute;
-  margin-top: -5px;
-  margin-left: 9px;
+  top: 13px;
+  left: 17px;
   height: 10px;
   width: 14px;
 }
 /* Error Icon */
 .alertbox .alertbox__icon-error {
   position: absolute;
-  margin-top: -5px;
-  margin-left: 9px;
+  top: 13px;
+  left: 17px;
   height: 10px;
   width: 14px;
 }
