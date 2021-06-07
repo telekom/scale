@@ -199,7 +199,7 @@ export class Header {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
-                this.visibleMegaMenu = item.children ? item.name : null;
+                this.visibleMegaMenu = item.children ? item.id : null;
               }}
               name={item.name}
             >
