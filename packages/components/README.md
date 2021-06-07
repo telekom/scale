@@ -55,6 +55,8 @@ applyPolyfills().then(() => {
 });
 ```
 
+Find working app examples in the [telekom/scale-examples repo](https://github.com/telekom/scale-examples).
+
 ### NPM Packages
 
 | Package Name                              | Description                   |
