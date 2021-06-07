@@ -22,19 +22,46 @@ export class ToggleButton {
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button variant */
-  @Prop() variant?: string = 'primary';
+  @Prop() variant?: 'primary' | 'secondary' = 'primary';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) If `true`, the button is selected */
+  @Prop() selected?: boolean = false;
   /** (optional) Button type */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
-  @Prop({ reflect: true }) iconPosition: 'before' | 'after' = 'before';
+  @Prop({ reflect: true, mutable: true }) iconPosition: 'before' | 'after' =
+    'before';
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  connectedCallback() {
+    this.setIconPositionProp();
+  }
+
   handleClick() {}
+
+  /**
+   * Detect whether the last node is an element (not text).
+   * If so, it's probably an icon, so we set `iconPosition` to `after`.
+   */
+  setIconPositionProp() {
+    const nodes = Array.from(this.hostElement.childNodes);
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].nodeType === 3 && nodes[i].nodeValue.trim() === '') {
+        nodes.splice(i, 1);
+      }
+    }
+    if (nodes.length < 2) {
+      return;
+    }
+    const lastNode = nodes[nodes.length - 1];
+    if (lastNode != null && lastNode.nodeType === 1) {
+      this.iconPosition = 'after';
+    }
+  }
 
   render() {
     return (
@@ -65,6 +92,13 @@ export class ToggleButton {
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const prefix = mode === 'basePart' ? '' : 'toggle-button--';
 
-    return classNames('toggle-button', this.size && `${prefix}${this.size}`);
+    return classNames(
+      'toggle-button',
+      this.size && `${prefix}${this.size}`,
+      this.variant && `${prefix}${this.variant}`,
+      !this.iconOnly &&
+        this.iconPosition &&
+        `toggle-button--icon-${this.iconPosition}`
+    );
   }
 }
