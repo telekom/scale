@@ -86,6 +86,12 @@ export class Button {
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes);
+    // delete empty text nodes, which are due to formatting
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].nodeType === 3 && nodes[i].nodeValue.trim() === '') {
+        nodes.splice(i, 1);
+      }
+    }
     if (nodes.length < 2) {
       return;
     }
