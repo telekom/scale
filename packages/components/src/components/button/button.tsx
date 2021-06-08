@@ -85,13 +85,10 @@ export class Button {
    * If so, it's probably an icon, so we set `iconPosition` to `after`.
    */
   setIconPositionProp() {
-    const nodes = Array.from(this.hostElement.childNodes);
-    // delete empty text nodes, which are due to formatting
-    for (let i = 0; i < nodes.length; i++) {
-      if (nodes[i].nodeType === 3 && nodes[i].nodeValue.trim() === '') {
-        nodes.splice(i, 1);
-      }
-    }
+    const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
+      // ignore empty text nodes, which are probably due to formatting
+      return !(node.nodeType === 3 && node.nodeValue.trim() === '');
+    });
     if (nodes.length < 2) {
       return;
     }
