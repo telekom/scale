@@ -45,6 +45,7 @@
   --color-primary-hover: var(--scl-color-primary-hover);
   --color-primary-active: var(--scl-color-primary-active);
   --color-primary-disabled: #d0d0d0;
+  --color-primary-background-disabled: #f4f4f4;
 
   /* variant: secondary */
   --radius-secondary: var(--radius);
@@ -102,10 +103,16 @@
 
 .toggle-button--icon-before ::slotted(*) {
   margin-right: var(--spacing-icon-x);
+  pointer-events: none;
 }
 
 .toggle-button--icon-after ::slotted(*) {
   margin-left: var(--spacing-icon-x);
+  pointer-events: none;
+}
+
+.toggle-button--icon-only ::slotted(*) {
+  pointer-events: none;
 }
 
 .toggle-button--xs {
@@ -118,10 +125,6 @@
   font-size: var(--font-size-small);
 }
 
-.toggle-button--small ::slotted(*) {
-  size: 6px;
-}
-
 .toggle-button--regular {
   height: var(--regular-height);
   font-size: var(--font-size-large);
@@ -130,4 +133,25 @@
 .toggle-button--large {
   height: var(--large-height);
   font-size: var(--font-size-large);
+}
+
+.toggle-button:not(.button--disabled):focus {
+  box-shadow: var(--box-shadow-focus);
+}
+
+.toggle-button:not(.button--disabled):hover {
+  color: var(--color-primary-hover);
+}
+
+.toggle-button:not(.button--disabled):active {
+  color: var(--scl-color-primary-active);
+}
+
+.toggle-button:disabled {
+  color: var(--color-primary-disabled);
+  pointer-events: none;
+}
+
+.toggle-button:disabled.toggle-button--primary {
+  background: var(--color-primary-background-disabled);
 }

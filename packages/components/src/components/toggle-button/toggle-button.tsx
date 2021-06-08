@@ -98,7 +98,8 @@ export class ToggleButton {
       this.variant && `${prefix}${this.variant}`,
       !this.iconOnly &&
         this.iconPosition &&
-        `toggle-button--icon-${this.iconPosition}`
+        `toggle-button--icon-${this.iconPosition}`,
+      this.iconOnly && `${prefix}icon-only`
     );
   }
 }
