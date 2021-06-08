@@ -38,8 +38,6 @@
   /* variant: primary */
   --radius-primary: var(--radius);
   --background-primary: #dcdcdc;
-  /*  --background-primary-hover: var(--scl-color-primary-hover);
-  --background-primary-active: var(--scl-color-primary-active); */
   --background-primary-disabled: #f4f4f4;
   --color-primary: #262626;
   --color-primary-hover: var(--scl-color-primary-hover);
@@ -47,23 +45,14 @@
   --color-primary-disabled: #d0d0d0;
   --color-primary-background-disabled: #f4f4f4;
 
-  /* variant: secondary */
-  --radius-secondary: var(--radius);
-  --border-width-secondary: 0;
+  /* variant: secondary different from primary*/
   --background-secondary: var(--scl-color-white);
-  --color-secondary: #262626;
-  --color-secondary-hover: var(--scl-color-primary-hover);
-  --color-secondary-active: var(--scl-color-primary-active);
-  --color-secondary-disabled: var(--scl-color-background-disabled);
 
-  /* variant: ghost */
-  /*   --radius-ghost: var(--radius);
-  --border-width-ghost: var(--scl-spacing-1);
-  --spacing-x-ghost: var(--scl-spacing-8);
-  --color-ghost: var(--scl-color-primary);
-  --color-ghost-hover: var(--scl-color-primary-hover);
-  --color-ghost-active: var(--scl-color-primary-active);
-  --color-ghost-disabled: var(--scl-color-text-disabled); */
+  /* selected */
+  --color-selected: var(--scl-color-white);
+  --color-background-selected: var(--scl-color-primary);
+  --color-background-selected-hover: var(--color-primary-hover);
+  --color-background-selected-active: var(--scl-color-primary-active);
 }
 
 .toggle-button {
@@ -157,16 +146,16 @@
 }
 
 .toggle-button--selected {
-  color: white;
-  background: var( --scl-color-primary);
+  color: var(--color-selected);
+  background: var(--color-background-selected);
 }
 
 .toggle-button--selected:not(.button--disabled):hover {
-  color: white;
-  background: var(--color-primary-hover);
+  color: var(--color-selected);
+  background: var(--color-background-selected-hover);
 }
 
 .toggle-button--selected:not(.button--disabled):active {
-  color: white;
+  color: var(--color-selected);
   background: var(--scl-color-primary-active);
 }
