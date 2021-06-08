@@ -1,0 +1,234 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleBadge from './ScaleBadge.vue';
+
+<Meta title="Beta Components/Badge" component={ScaleBadge} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleBadge },
+  props: {
+    label: String,
+    ...ScaleBadge.props,
+  },
+  template: `
+      <scale-badge :size="size" :color="color" :rotation="rotation">
+      <div>
+        <div style="text-align:center; font-size:20px; font-family:TeleNeo; color:white; font-weight:400;">
+          Für nur 
+        </div>
+        <div style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;">
+          <span>
+            15 €
+          </span>
+        </div>
+      </div>
+    </scale-badge>
+  `,
+});
+
+export const Template2 = (args, { argTypes }) => ({
+  components: { ScaleBadge },
+  props: {
+    label: String,
+    ...ScaleBadge.props,
+  },
+  template: `
+      <scale-badge :size="size" :color="color" :rotation="rotation">
+      <div>
+        <div style="text-align: center; font-size: 15px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
+          Für nur
+        </div>
+        <div style="text-align: center; font-size: 40px; font-family: TeleNeo; color: white; font-weight: 700;">
+          <span>
+            15 €
+          </span>
+        </div>
+      </div>
+    </scale-badge>
+  `,
+});
+
+export const Template3 = (args, { argTypes }) => ({
+  components: { ScaleBadge },
+  props: {
+    label: String,
+    ...ScaleBadge.props,
+  },
+  template: `
+      <scale-badge :size="size" :color="color" :rotation="rotation">
+      <div>
+        <div style="text-align: center; font-size: 25px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
+          ab
+        </div>
+        <div style="text-align: center; font-size: 35px; font-family: TeleNeo; color: white; font-weight: 700;">
+          <span>
+            19,95 €
+          </span>
+          <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
+        </div>
+      </div>
+    </scale-badge>
+  `,
+});
+
+
+## Standard
+### All default values
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-badge>
+  <div>
+    <div
+      style="text-align:center; font-size:20px; font-family:TeleNeo; color:white; font-weight:400;"
+    >
+      Für nur
+    </div>
+    <div
+      style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;"
+    >
+      <span> 15 € </span>
+    </div>
+  </div>
+</scale-badge>
+```
+
+
+## Size
+There are two sizes: 
+big / small. Big has the size 160x160 and small 120x120. In the example below, the badge is small
+
+<Canvas withSource="none">
+  <Story
+    name="Sizes"
+    args={{
+      size: "small",
+      color: "black",
+    }}
+  >
+    {Template2.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-badge style="--badge-color:blue" size:"small" >
+  <div>
+    <div
+      style="text-align:center; font-size:20px; font-family:TeleNeo; color:blwhiteack; font-weight:400;"
+    >
+      Für nur
+    </div>
+    <div
+      style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;"
+    >
+      <span> 15 € </span>
+    </div>
+  </div>
+</scale-badge>
+```
+
+## Rotation
+
+<Canvas withSource="none">
+  <Story
+    name="Rotation"
+    args={{
+      size: "small",
+      color: "blue",
+      rotation: 33,
+    }}
+  >
+    {Template2.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-badge color:"blue" size:"small" rotation:"33" >
+  <div>
+    <div
+      style="text-align:center; font-size:20px; font-family:TeleNeo; color:blwhiteack; font-weight:400;"
+    >
+      Für nur
+    </div>
+    <div
+      style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;"
+    >
+      <span> 15 € </span>
+    </div>
+  </div>
+</scale-badge>
+```
+
+## Color Choosing
+There are 4 standard colors (Magenta - default, black, white, blue). The user also has the possibilty to determine another color by accessing the specific css class. 
+
+<Canvas withSource="none">
+  <Story
+    name="Color Choosing"
+    args={{
+      size: "small",
+    }}
+  >
+    {Template2.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-badge size="big" style="--badge-color:blue" rotation="0">
+      <div>
+        <div style="text-align:center; font-size:20px; font-family:TeleNeo; color:white; font-weight:400;">
+          Für nur
+        </div>
+        <div style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;">
+          <span>
+            15 €
+          </span>
+        </div>
+      </div>
+    </scale-badge>
+```
+
+## Asterisk
+
+<Canvas withSource="none">
+  <Story
+    name="Asterisk"
+    args={{
+      size: "big",
+    }}
+  >
+    {Template3.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-badge size="big" color="magenta" rotation="0">
+      <div>
+        <div style="text-align: center; font-size: 25px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
+          ab
+        </div>
+        <div style="text-align: center; font-size: 35px; font-family: TeleNeo; color: white; font-weight: 700;">
+          <span>
+            19,95 €
+          </span>
+          <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
+        </div>
+      </div>
+    </scale-badge>
+```

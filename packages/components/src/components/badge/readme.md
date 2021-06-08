@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                     | Type               | Default     |
-| ---------- | ---------- | ----------------------------------------------- | ------------------ | ----------- |
-| `color`    | `color`    | (optional) Variant color/filling of the badge   | `string`           | `'magenta'` |
-| `rotation` | `rotation` | (optional) Variant rotation of the badge/circle | `number`           | `0`         |
-| `size`     | `size`     | (optional) Variant size of the badge itself     | `"big" \| "small"` | `'big'`     |
+| Property   | Attribute  | Description                                     | Type                                        | Default     |
+| ---------- | ---------- | ----------------------------------------------- | ------------------------------------------- | ----------- |
+| `color`    | `color`    | (optional) Variant color/filling of the badge   | `"black" \| "blue" \| "magenta" \| "white"` | `undefined` |
+| `rotation` | `rotation` | (optional) Variant rotation of the badge/circle | `number`                                    | `0`         |
+| `size`     | `size`     | (optional) Variant size of the badge itself     | `"big" \| "small"`                          | `'big'`     |
 
 
 ## Shadow Parts
