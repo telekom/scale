@@ -159,3 +159,15 @@
   color: var(--color-selected);
   background: var(--scl-color-primary-active);
 }
+
+.toggle-button--left {
+  border-radius: var(--radius-primary) 0 0 var(--radius-primary);
+}
+
+.toggle-button--right {
+  border-radius: 0 var(--radius-primary) var(--radius-primary) 0;
+}
+
+.toggle-button--both {
+  border-radius: var(--radius-primary);
+}
