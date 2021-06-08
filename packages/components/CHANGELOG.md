@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.13](https://github.com/telekom/scale/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2021-06-07)
+
+
+### Bug Fixes
+
+* **app-header:** use ID as visible mega-menu matcher ([#391](https://github.com/telekom/scale/issues/391)) ([d806408](https://github.com/telekom/scale/commit/d8064080be09d34faae81f5e2f99e395a6d26df1))
+* **slider:** z-index for thumb, it was clashing with the modal ([#386](https://github.com/telekom/scale/issues/386)) ([a681b98](https://github.com/telekom/scale/commit/a681b98e09c4135097b759357915979a7abc2e90))
+
+
+### Features
+
+* add styles attributes to table and switch ([#378](https://github.com/telekom/scale/issues/378)) ([e40e2f4](https://github.com/telekom/scale/commit/e40e2f42f77e8cd699f4351e623c43a3b637d786))
+* **config:** add dist-custom-elements-bundle output ([#371](https://github.com/telekom/scale/issues/371)) ([2d68e3f](https://github.com/telekom/scale/commit/2d68e3f9db7aea57e90772fe5c7744a9ccce27e6)), closes [#369](https://github.com/telekom/scale/issues/369)
+
+
+
+
+
 # [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
 
 
