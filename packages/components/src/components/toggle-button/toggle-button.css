@@ -155,3 +155,18 @@
 .toggle-button:disabled.toggle-button--primary {
   background: var(--color-primary-background-disabled);
 }
+
+.toggle-button--selected {
+  color: white;
+  background: var( --scl-color-primary);
+}
+
+.toggle-button--selected:not(.button--disabled):hover {
+  color: white;
+  background: var(--color-primary-hover);
+}
+
+.toggle-button--selected:not(.button--disabled):active {
+  color: white;
+  background: var(--scl-color-primary-active);
+}

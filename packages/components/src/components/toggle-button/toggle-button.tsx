@@ -26,7 +26,7 @@ export class ToggleButton {
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */
-  @Prop() selected?: boolean = false;
+  @Prop({ mutable: true }) selected?: boolean = true;
   /** (optional) Button type */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
@@ -41,7 +41,11 @@ export class ToggleButton {
     this.setIconPositionProp();
   }
 
-  handleClick() {}
+  handleClick(event: MouseEvent) {
+    event.preventDefault();
+    this.selected = !this.selected;
+    // console.log(this.selected)
+  }
 
   /**
    * Detect whether the last node is an element (not text).
@@ -64,6 +68,7 @@ export class ToggleButton {
   }
 
   render() {
+    console.log('render called!')
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -99,7 +104,9 @@ export class ToggleButton {
       !this.iconOnly &&
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,
-      this.iconOnly && `${prefix}icon-only`
+      this.iconOnly && `${prefix}icon-only`,
+      !this.disabled &&
+        this.selected && `${prefix}selected`,
     );
   }
 }
