@@ -12,6 +12,13 @@
 import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 
+enum iconSizes {
+  xs = '12',
+  small = '16',
+  regular = '22',
+  large = '24'
+}
+
 @Component({
   tag: 'scale-toggle-button',
   styleUrl: 'toggle-button.css',
@@ -43,6 +50,21 @@ export class ToggleButton {
     this.setIconPositionProp();
   }
 
+  componentDidLoad() {
+    this.handleIconSize();
+  }
+
+  componentDidRender() {
+    this.handleIconSize();
+  }
+
+  handleIconSize() {
+    const icon = this.hostElement.children[0] && this.hostElement.children[0]; 
+    if (icon) {
+      icon.setAttribute('size', iconSizes[this.size]);
+    }
+  }
+
   handleClick(event: MouseEvent) {
     event.preventDefault();
     this.selected = !this.selected;
@@ -54,12 +76,10 @@ export class ToggleButton {
    * If so, it's probably an icon, so we set `iconPosition` to `after`.
    */
   setIconPositionProp() {
-    const nodes = Array.from(this.hostElement.childNodes);
-    for (let i = 0; i < nodes.length; i++) {
-      if (nodes[i].nodeType === 3 && nodes[i].nodeValue.trim() === '') {
-        nodes.splice(i, 1);
-      }
-    }
+    const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
+      // ignore empty text nodes, which are probably due to formatting
+      return !(node.nodeType === 3 && node.nodeValue.trim() === '');
+    });
     if (nodes.length < 2) {
       return;
     }
@@ -70,7 +90,6 @@ export class ToggleButton {
   }
 
   render() {
-    console.log('render called!')
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
