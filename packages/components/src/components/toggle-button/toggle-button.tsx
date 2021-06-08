@@ -26,12 +26,14 @@ export class ToggleButton {
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */
-  @Prop({ mutable: true }) selected?: boolean = true;
+  @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) Button type */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
   @Prop({ reflect: true, mutable: true }) iconPosition: 'before' | 'after' =
     'before';
+  /** (optional) set the border-radius left, right or both */
+  @Prop() radius: 'left' | 'right' | 'both' | null = null;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
@@ -107,6 +109,7 @@ export class ToggleButton {
       this.iconOnly && `${prefix}icon-only`,
       !this.disabled &&
         this.selected && `${prefix}selected`,
+      this.radius && `${prefix}${this.radius}`,
     );
   }
 }
