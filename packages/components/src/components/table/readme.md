@@ -268,6 +268,7 @@
 | ---------- | ----------- | ------------------------------------- | --------- | ----------- |
 | `showSort` | `show-sort` | (optional) Display sort arrows on/off | `boolean` | `false`     |
 | `size`     | `size`      | (optional) Visual size                | `string`  | `'default'` |
+| `styles`   | `styles`    | (optional) Injected CSS styles        | `string`  | `undefined` |
 
 
 ----------------------------------------------
