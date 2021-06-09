@@ -9,7 +9,6 @@ import {
   Watch,
   h,
 } from '@stencil/core';
-import classNames from 'classnames';
 import Popover from './utilities/popover';
 
 let id = 0;
@@ -46,19 +45,7 @@ export class Tooltip {
    * The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip
    * inside of the viewport.
    */
-  @Prop() placement:
-    | 'top'
-    | 'top-start'
-    | 'top-end'
-    | 'right'
-    | 'right-start'
-    | 'right-end'
-    | 'bottom'
-    | 'bottom-start'
-    | 'bottom-end'
-    | 'left'
-    | 'left-start'
-    | 'left-end' = 'top';
+  @Prop() placement: 'top' | 'right' | 'bottom' | 'left' = 'top';
 
   /** Set to true to disable the tooltip so it won't show when triggered. */
   @Prop() disabled = false;
@@ -265,7 +252,7 @@ export class Tooltip {
         {!this.disabled && (
           <div
             ref={(el) => (this.tooltipPositioner = el)}
-            class={this.getCssClassMap()}
+            class="tooltip-positioner"
           >
             <div
               part="base"
@@ -283,13 +270,6 @@ export class Tooltip {
           </div>
         )}
       </Host>
-    );
-  }
-
-  getCssClassMap() {
-    return classNames(
-      `tooltip-positioner`,
-      this.placement && `tooltip-positioner--placement-${this.placement}`
     );
   }
 }
