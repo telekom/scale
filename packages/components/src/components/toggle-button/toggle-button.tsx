@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Host, Element, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
 
 enum iconSizes {
@@ -18,6 +18,8 @@ enum iconSizes {
   regular = '22',
   large = '24'
 }
+
+let i = 0;
 
 @Component({
   tag: 'scale-toggle-button',
@@ -41,10 +43,14 @@ export class ToggleButton {
     'before';
   /** (optional) set the border-radius left, right or both */
   @Prop() radius: 'left' | 'right' | 'both' | null = null;
+  /** (optional) toggle button's id */
+  @Prop() toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** Emitted when button is clicked */
+  @Event() scaleClick!: EventEmitter;
 
   connectedCallback() {
     this.setIconPositionProp();
@@ -58,6 +64,12 @@ export class ToggleButton {
     this.handleIconSize();
   }
 
+  componentWillLoad() {
+    if (this.toggleButtonId == null) {
+      this.toggleButtonId = 'toggle-button-' + i++;
+    }
+  }
+
   handleIconSize() {
     const icon = this.hostElement.children[0] && this.hostElement.children[0]; 
     if (icon) {
@@ -68,7 +80,7 @@ export class ToggleButton {
   handleClick(event: MouseEvent) {
     event.preventDefault();
     this.selected = !this.selected;
-    // console.log(this.selected)
+    this.scaleClick.emit({id: this.toggleButtonId, selected: this.selected})
   }
 
   /**
@@ -95,6 +107,7 @@ export class ToggleButton {
         {this.styles && <style>{this.styles}</style>}
         <button
           class={this.getCssClassMap()}
+          id={this.toggleButtonId}
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
