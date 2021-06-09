@@ -114,6 +114,7 @@ export class ToggleButton {
           disabled={this.disabled}
           type="button"
           aria-label={this.ariaLabel}
+          aria-pressed={this.selected}
           part={this.getBasePartMap()}
         >
           <slot />
