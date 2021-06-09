@@ -33,9 +33,11 @@ export class ToggleButton {
   /** (optional) Button variant */
   @Prop() variant?: 'primary' | 'secondary' = 'primary';
   /** (optional) If `true`, the button is disabled */
+  @Prop() colorScheme?: 'magenta' | 'black' = 'black';
+  /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */
-  @Prop({ mutable: true }) selected?: boolean = false;
+  @Prop({ mutable: true }) selected?: boolean = true;
   /** (optional) Button type */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
@@ -142,6 +144,7 @@ export class ToggleButton {
       !this.disabled &&
         this.selected && `${prefix}selected`,
       this.radius && `${prefix}${this.radius}`,
+      this.colorScheme && `${prefix}${this.colorScheme}`
     );
   }
 }
