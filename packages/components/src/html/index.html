@@ -36,90 +36,8 @@
   <body>
     <h1>Components</h1>
 
-
-    <h3>BADGE COMPONENT </h3>
-    <h1>Badge 1 Orange/big</h1>
-    <scale-badge size="big" style="--color-badge:orange" rotation="0">
-      <div>
-        <div style="text-align:center; font-size:20px; font-family:TeleNeo; color:white; font-weight:400;">
-          Für nur
-        </div>
-        <div style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;">
-          <span>
-            15 €
-          </span>
-        </div>
-      </div>
-    </scale-badge>
-    <h1>Badge 2: White/small/rotation</h1>
-    <scale-badge size="small" color="magenta" rotation="30">
-      <div>
-        <div style="text-align: center; font-size: 15px; font-family: TeleNeo; color: black; font-weight: 400; margin-bottom: 10px;">
-          Für nur
-        </div>
-        <div style="text-align: center; font-size: 40px; font-family: TeleNeo; color: black; font-weight: 700;">
-          <span>
-            15 €
-          </span>
-        </div>
-      </div>
-    </scale-badge>
-    <h1>Badge 3: Black/rotation/big</h1>
-    <scale-badge size="big" color="black" rotation="50">
-      <div>
-        <div style="text-align:center; font-size:20px; font-family:TeleNeo; color:white; font-weight:400;">
-          Für nur
-        </div>
-        <div style="text-align:center; font-size: 60px; font-family: TeleNeo; color: white; font-weight: 700;">
-          <span>
-            15 €
-          </span>
-        </div>
-      </div>
-    </scale-badge>
-    <h1>Badge 4: Any color chosen</h1>
-    <scale-badge size="small" color="orange" rotation="0">
-      <div>
-        <div style="text-align: center; font-size: 15px; font-family: TeleNeo; color: black; font-weight: 400; margin-bottom: 10px;">
-          Für nur
-        </div>
-        <div style="text-align: center; font-size: 40px; font-family: TeleNeo; color: black; font-weight: 700;">
-          <span>15 €</span>
-        </div>
-      </div>
-    </scale-badge>
-    <h1>Badge 5 Datum: Black/rotation/big</h1>
-    <scale-badge size="big" color="skyblue">
-      <div>
-        <div style=" text-align: center; font-size: 25px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
-          BIS
-        </div>
-        <div style="text-align: center; font-size: 25px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
-          <span>
-            31.01.2021
-          </span>
-        </div>
-      </div>
-    </scale-badge>
-    <h1>Badge 6: Star Hover Info</h1>
-    <scale-badge size="big" color="magenta" rotation="0">
-      <div>
-        <div style="text-align: center; font-size: 25px; font-family: TeleNeo; color: black; font-weight: 400; margin-bottom: 10px;">
-          ab
-        </div>
-        <div style="text-align: center; font-size: 35px; font-family: TeleNeo; color: black; font-weight: 700;">
-          <span>
-            19,95 €
-          </span>
-          <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: black; cursor: help;">*</sup>
-        </div>
-      </div>
-    </scale-badge>
-
-
-
-
-
+    <h3>Alert</h3>
+    <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
     <h3>Rating Stars</h3>
     <h4>rating = 1</h4>
@@ -653,28 +571,25 @@
     <scale-button>Hello</scale-button>
 
     <h3>Button variants</h3>
-    <scale-button
-      variant="primary"
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="secondary"
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-      >Hello</scale-button
-    >
+    <scale-button variant="primary">Hello</scale-button>
+    <scale-button variant="secondary">Hello</scale-button>
 
     <h3>Button icon Before</h3>
-    <scale-button
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    >
-      Hello
+    <scale-button>
+      <scale-icon-action-search></scale-icon-action-search> Label
+    </scale-button>
+
+    <h3>Button icon After</h3>
+    <scale-button icon-position="after">
+      Label <scale-icon-navigation-right></scale-icon-navigation-right>
     </scale-button>
 
     <h3>Button icon only</h3>
-    <scale-button
-      icon="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    ></scale-button>
+    <scale-button icon-only="true">
+      <scale-icon-navigation-external-link
+        accessibility-title="External link, opens in new tab"
+      ></scale-icon-navigation-external-link>
+    </scale-button>
 
     <h3>Button Link</h3>
     <scale-button href="http://google.com" target="_blank">
