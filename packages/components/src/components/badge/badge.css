@@ -1,13 +1,13 @@
 :host {
-  --big-badge-height: 160px;
-  --big-badge-width: 160px;
-  --small-badge-height: 120px;
-  --small-badge-width: 120px;
-  --big-inner-height: 96px;
-  --big-inner-width: 126.5px;
-  --small-inner-height: 88px;
-  --small-inner-width: 86px;
-  --badge-color: #e20074;
+  --color-badge:#e20074;
+  --inner-width-small: 86px;
+  --inner-height-small: 88px;
+  --inner-width-big: 126.5px;
+  --inner-height-big: 96px;
+  --width-small: 120px;
+  --height-small: 120px;
+  --height-big: 160px;
+  --width-big: 160px;
 }
 
 .badge {
@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  background: var(--badge-color);
+  background: var(--color-badge);
 }
 
 .badge.badge--color-magenta {
@@ -32,23 +32,27 @@
 }
 
 .badge.badge--size-big {
-  width: var(--big-badge-width);
-  height: var(--big-badge-height);
+  width: var(--width-big);
+  height: var(--height-big);
+  
 }
 
 .badge.badge--size-small {
-  width: var(--small-badge-width);
-  height: var(--small-badge-height);
+  width: var(--width-small);
+  height: var(--height-small);
+  
 }
 
 .badge.badge--size-big .badge--inner {
-  width: var(--big-inner-width);
-  height: var(--big-inner-height);
+  width: var(--inner-width-big);
+  height: var(--inner-height-big);
+  
 }
 
 .badge.badge--size-small .badge--inner {
-  width: var(--small-inner-width);
-  height: var(--small-inner-height);
+  width: var(--inner-width-small);
+  height: var(--inner-height-small);
+ 
 }
 
 .badge--inner {
