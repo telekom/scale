@@ -1,5 +1,5 @@
 :host {
-  --color-badge:#e20074;
+  --color-badge: #e20074;
   --inner-width-small: 86px;
   --inner-height-small: 88px;
   --inner-width-big: 126.5px;
@@ -34,25 +34,21 @@
 .badge.badge--size-big {
   width: var(--width-big);
   height: var(--height-big);
-  
 }
 
 .badge.badge--size-small {
   width: var(--width-small);
   height: var(--height-small);
-  
 }
 
 .badge.badge--size-big .badge--inner {
   width: var(--inner-width-big);
   height: var(--inner-height-big);
-  
 }
 
 .badge.badge--size-small .badge--inner {
   width: var(--inner-width-small);
   height: var(--inner-height-small);
- 
 }
 
 .badge--inner {
