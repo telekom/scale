@@ -50,9 +50,12 @@
 
   /* selected */
   --color-selected: var(--scl-color-white);
-  --color-background-selected: var(--scl-color-primary);
-  --color-background-selected-hover: var(--color-primary-hover);
-  --color-background-selected-active: var(--scl-color-primary-active);
+  --color-background-selected-magenta: var(--scl-color-primary);
+  --color-background-selected-hover-magenta: var(--color-primary-hover);
+  --color-background-selected-active-magenta: var(--scl-color-primary-active);
+  --color-background-selected-black: #262626;
+  --color-background-selected-hover-black: #726c6c;
+  --color-background-selected-active-black: #000000;
 }
 
 .toggle-button {
@@ -145,19 +148,34 @@
   background: var(--color-primary-background-disabled);
 }
 
-.toggle-button--selected {
+.toggle-button--selected.toggle-button--magenta {
   color: var(--color-selected);
-  background: var(--color-background-selected);
+  background: var(--color-background-selected-magenta);
 }
 
-.toggle-button--selected:not(.button--disabled):hover {
+.toggle-button--selected:not(.button--disabled).toggle-button--magenta:hover {
   color: var(--color-selected);
-  background: var(--color-background-selected-hover);
+  background: var(--color-background-selected-hover-magenta);
 }
 
-.toggle-button--selected:not(.button--disabled):active {
+.toggle-button--selected:not(.button--disabled).toggle-button--magenta:active {
   color: var(--color-selected);
-  background: var(--scl-color-primary-active);
+  background: var(--scl-color-primary-active-magenta);
+}
+
+.toggle-button--selected.toggle-button--black {
+  color: var(--color-selected);
+  background: var(--color-background-selected-black);
+}
+
+.toggle-button--selected:not(.button--disabled).toggle-button--black:hover {
+  color: var(--color-selected);
+  background: var(--color-background-selected-hover-black);
+}
+
+.toggle-button--selected:not(.button--disabled).toggle-button--black:active {
+  color: var(--color-selected);
+  background: var(--color-background-selected-active-black);
 }
 
 .toggle-button--left {
