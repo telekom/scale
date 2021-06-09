@@ -32,12 +32,12 @@ export class ToggleButton {
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button variant */
   @Prop() variant?: 'primary' | 'secondary' = 'primary';
-  /** (optional) If `true`, the button is disabled */
-  @Prop() colorScheme?: 'magenta' | 'black' = 'black';
+  /** (optional) background color scheme of a selected button */
+  @Prop() colorScheme?: 'magenta' | 'black' = 'magenta';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */
-  @Prop({ mutable: true }) selected?: boolean = true;
+  @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) Button type */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
@@ -79,7 +79,7 @@ export class ToggleButton {
     }
   }
 
-  handleClick(event: MouseEvent) {
+  handleClick = (event: MouseEvent)  => {
     event.preventDefault();
     this.selected = !this.selected;
     this.scaleClick.emit({id: this.toggleButtonId, selected: this.selected})
