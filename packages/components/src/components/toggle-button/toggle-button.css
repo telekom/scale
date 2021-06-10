@@ -21,7 +21,7 @@
   --radius: var(--scl-radius-8);
   --transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --font-weight: var(--scl-font-weight-bold);
   --font-size-large: var(--scl-font-size-16);
   --font-size-small: var(--scl-font-size-14);
@@ -82,6 +82,7 @@
   vertical-align: var(--vertical-align);
   transition: var(--transition);
   background: #fff;
+  margin: 0;
 }
 
 .toggle-button--primary {
@@ -90,7 +91,6 @@
 
 .toggle-button--secondary {
   background: var(--background-secondary);
-  border: 1px solid red;
 }
 
 .toggle-button--icon-before ::slotted(*) {

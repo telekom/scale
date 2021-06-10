@@ -9,14 +9,22 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Element,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 
 enum iconSizes {
   xs = '12',
   small = '16',
   regular = '22',
-  large = '24'
+  large = '24',
 }
 
 let i = 0;
@@ -73,17 +81,17 @@ export class ToggleButton {
   }
 
   handleIconSize() {
-    const icon = this.hostElement.children[0] && this.hostElement.children[0]; 
+    const icon = this.hostElement.children[0] && this.hostElement.children[0];
     if (icon) {
       icon.setAttribute('size', iconSizes[this.size]);
     }
   }
 
-  handleClick = (event: MouseEvent)  => {
+  handleClick = (event: MouseEvent) => {
     event.preventDefault();
     this.selected = !this.selected;
-    this.scaleClick.emit({id: this.toggleButtonId, selected: this.selected})
-  }
+    this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
+  };
 
   /**
    * Detect whether the last node is an element (not text).
@@ -142,8 +150,7 @@ export class ToggleButton {
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,
       this.iconOnly && `${prefix}icon-only`,
-      !this.disabled &&
-        this.selected && `${prefix}selected`,
+      !this.disabled && this.selected && `${prefix}selected`,
       this.radius && `${prefix}${this.radius}`,
       this.colorScheme && `${prefix}${this.colorScheme}`
     );
