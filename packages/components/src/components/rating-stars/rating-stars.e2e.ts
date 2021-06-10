@@ -123,12 +123,4 @@ describe('rating-stars', () => {
     await container.press('Home');
     expect(await component.getProperty('rating')).toEqual(0);
   });
-  // implicite test of getValueFromMousePosition as used in handleMouseClick;
-  test('hoverValue and rating change on click', async () => {
-    const star = await page.find('scale-rating-stars >>> #star-3');
-    expect(await component.getProperty('hoverValue')).toEqual(0);
-    await star.click();
-    expect(await component.getProperty('hoverValue')).toEqual(3);
-    expect(await component.getProperty('rating')).toEqual(3);
-  });
 });

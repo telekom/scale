@@ -23,10 +23,6 @@ export class RatingStars {
   element: HTMLElement;
 
   @Element() hostElement: HTMLElement;
-  /** (optional) hoverValue  */
-  @Prop({ mutable: true }) hoverValue = 0;
-  /** (optional) isHovering  */
-  @Prop({ mutable: true }) isHovering = false;
   /** (optional) numOfStars  */
   @Prop({ mutable: true }) numOfStars = 5;
   /** (optional) rating  */
@@ -46,6 +42,8 @@ export class RatingStars {
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
+  hoverValue = 0;
+  isHovering = false;
 
   getSymbol = (color: string, size: string, selected?: boolean) => {
     if (selected) {
