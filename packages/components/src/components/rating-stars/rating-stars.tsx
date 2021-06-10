@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Element } from '@stencil/core';
+import { Component, h, Prop, Host, Element, State } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -23,14 +23,16 @@ export class RatingStars {
   element: HTMLElement;
 
   @Element() hostElement: HTMLElement;
+  /** (optional) hoverValue  */
+  @State() hoverValue = 0;
   /** (optional) max  */
-  @Prop({ mutable: true }) max = 5;
+  @Prop() max = 5;
   /** (optional) value  */
   @Prop({ mutable: true }) value = 0;
   /** (optional) small  */
-  @Prop({ mutable: true }) small = false;
+  @Prop() small = false;
   /** (optional) disabled  */
-  @Prop({ mutable: true }) disabled = false;
+  @Prop() disabled = false;
   /** (optional) ariaLabelTranslation  */
   @Prop({ mutable: true })
   ariaLabelTranslation = `${this.value} out of ${this.max} stars`;
@@ -42,10 +44,9 @@ export class RatingStars {
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
-  hoverValue = 0;
   isHovering = false;
 
-  getSymbol = (color: string, size: string, selected?: boolean) => {
+  renderIcon = (color: string, size: string, selected?: boolean) => {
     if (selected) {
       return `<scale-icon-action-favorite color=${color} size=${size} selected />`;
     } else {
@@ -185,7 +186,7 @@ export class RatingStars {
           <span class="rating__symbols" aria-hidden="true">
             {counter.map((index) => (
               <span
-                class="rating__symbol__wrapper"
+                class="rating__symbol-wrapper"
                 onMouseEnter={this.handleMouseEnter}
               >
                 <span
@@ -203,7 +204,7 @@ export class RatingStars {
                     'rating__symbol--hover':
                       this.isHovering && Math.ceil(displayValue) === index + 1,
                   }}
-                  innerHTML={this.getSymbol(this.colorBlank, this.size)}
+                  innerHTML={this.renderIcon(this.colorBlank, this.size)}
                   id={`star-${index + 1}`}
                 />
               </span>
@@ -215,7 +216,7 @@ export class RatingStars {
           >
             {counter.map((index) => (
               <span
-                class="rating__symbol__wrapper"
+                class="rating__symbol-wrapper"
                 onMouseEnter={this.handleMouseEnter}
               >
                 <span
@@ -231,7 +232,7 @@ export class RatingStars {
                     'rating__symbol--hover':
                       this.isHovering && Math.ceil(displayValue) === index + 1,
                   }}
-                  innerHTML={this.getSymbol(this.colorFilled, this.size, true)}
+                  innerHTML={this.renderIcon(this.colorFilled, this.size, true)}
                 />
               </span>
             ))}
