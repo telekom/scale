@@ -23,17 +23,17 @@ export class RatingStars {
   element: HTMLElement;
 
   @Element() hostElement: HTMLElement;
-  /** (optional) numOfStars  */
-  @Prop({ mutable: true }) numOfStars = 5;
-  /** (optional) rating  */
-  @Prop({ mutable: true }) rating = 0;
+  /** (optional) max  */
+  @Prop({ mutable: true }) max = 5;
+  /** (optional) value  */
+  @Prop({ mutable: true }) value = 0;
   /** (optional) small  */
   @Prop({ mutable: true }) small = false;
   /** (optional) disabled  */
   @Prop({ mutable: true }) disabled = false;
-  /** (optional) ariaTranslation  */
+  /** (optional) ariaLabelTranslation  */
   @Prop({ mutable: true })
-  ariaTranslation = `${this.rating} out of ${this.numOfStars} stars`;
+  ariaLabelTranslation = `${this.value} out of ${this.max} stars`;
   /** (optional) precision  */
   @Prop() precision = 1;
   /** (optional) slider label */
@@ -91,8 +91,8 @@ export class RatingStars {
     }
 
     this.isHovering = false;
-    this.rating =
-      this.rating === this.hoverValue
+    this.value =
+      this.value === this.hoverValue
         ? 0
         : this.getValueFromMousePosition(event);
   }
@@ -103,24 +103,24 @@ export class RatingStars {
     }
 
     if (event.key === 'ArrowRight') {
-      const ratingPlus = this.rating + this.precision;
-      this.rating = clamp(ratingPlus, 0, this.numOfStars);
+      const valuePlus = this.value + this.precision;
+      this.value = clamp(valuePlus, 0, this.max);
       event.preventDefault();
     }
 
     if (event.key === 'ArrowLeft') {
-      const ratingMinus = this.rating - this.precision;
-      this.rating = clamp(ratingMinus, 0, this.numOfStars);
+      const ratingMinus = this.value - this.precision;
+      this.value = clamp(ratingMinus, 0, this.max);
       event.preventDefault();
     }
 
     if (event.key === 'Home') {
-      this.rating = 0;
+      this.value = 0;
       event.preventDefault();
     }
 
     if (event.key === 'End') {
-      this.rating = this.numOfStars;
+      this.value = this.max;
       event.preventDefault();
     }
   }
@@ -129,7 +129,7 @@ export class RatingStars {
     const containerLeft = this.element.getBoundingClientRect().left;
     const containerWidth = this.element.getBoundingClientRect().width;
 
-    const numOfSections = this.numOfStars / this.precision;
+    const numOfSections = this.max / this.precision;
     const sectionWidth = containerWidth / numOfSections;
     const positionOfMousePointer =
       (event.clientX - containerLeft) / sectionWidth;
@@ -139,7 +139,7 @@ export class RatingStars {
         this.precision
       ),
       0,
-      this.numOfStars
+      this.max
     );
     return star;
   }
@@ -150,20 +150,19 @@ export class RatingStars {
   }
 
   getAriaLabel() {
-    return this.ariaTranslation
-      .replace(/\$\{x\}/gi, this.rating.toString())
-      .replace(/\$\{y\}/gi, this.numOfStars.toString());
+    return this.ariaLabelTranslation
+      .replace(/\$\{x\}/gi, this.value.toString())
+      .replace(/\$\{y\}/gi, this.max.toString());
   }
 
   render() {
-    const counter = Array.from(Array(this.numOfStars).keys());
-    const displayValue = this.isHovering ? this.hoverValue : this.rating;
+    const counter = Array.from(Array(this.max).keys());
+    const displayValue = this.isHovering ? this.hoverValue : this.value;
 
     return (
       <Host>
         <div
           class={this.getCssClassMap()}
-          id="rating"
           ref={(el) => (this.element = el)}
           onMouseMove={this.handleMouseMove}
           onMouseEnter={this.handleMouseEnter}

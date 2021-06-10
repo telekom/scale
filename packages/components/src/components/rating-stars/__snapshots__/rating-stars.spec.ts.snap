@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
-<scale-rating-stars rating="0">
+<scale-rating-stars value="0">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating" id="rating" role="figure" tabindex="0">
+    <div aria-describedby="rating__description" class="rating" role="figure" tabindex="0">
       <label aria-hidden="true" class="rating__label"></label>
       <span hidden="" id="rating__description">
         0 out of 5 stars
@@ -68,9 +68,9 @@ exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
 `;
 
 exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] = `
-<scale-rating-stars disabled="" rating="2">
+<scale-rating-stars disabled="" value="2">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating rating--disabled" id="rating" role="figure" tabindex="-1">
+    <div aria-describedby="rating__description" class="rating rating--disabled" role="figure" tabindex="-1">
       <label aria-hidden="true" class="rating__label"></label>
       <span hidden="" id="rating__description">
         2 out of 5 stars
@@ -135,9 +135,9 @@ exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] =
 `;
 
 exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
-<scale-rating-stars rating="3">
+<scale-rating-stars value="3">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating" id="rating" role="figure" tabindex="0">
+    <div aria-describedby="rating__description" class="rating" role="figure" tabindex="0">
       <label aria-hidden="true" class="rating__label"></label>
       <span hidden="" id="rating__description">
         3 out of 5 stars
@@ -202,9 +202,9 @@ exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
 `;
 
 exports[`RatingStars snapshots rating 4 and small should match snapshot 1`] = `
-<scale-rating-stars rating="4" small="">
+<scale-rating-stars small="" value="4">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating rating--small" id="rating" role="figure" tabindex="0">
+    <div aria-describedby="rating__description" class="rating rating--small" role="figure" tabindex="0">
       <label aria-hidden="true" class="rating__label"></label>
       <span hidden="" id="rating__description">
         4 out of 5 stars
