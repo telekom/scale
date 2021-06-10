@@ -164,7 +164,15 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-text-field>
+<scale-text-field id="text-field" label="Text With Events"></scale-text-field>
+
+<script>
+  const textField = document.getElementById('text-field')
+  textField.addEventListener('scaleChange', () => { /* ... */ })
+  textField.addEventListener('scaleBlur', () => { /* ... */ })
+  textField.addEventListener('scaleFocus', () => { /* ... */ })
+  textField.addEventListener('scaleKeyDown', () => { /* ... */ })
+</script>
 ```
 
 
