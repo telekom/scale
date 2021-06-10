@@ -4,21 +4,12 @@ host*,
   box-sizing: inherit;
 }
 
-/**
- * @prop --hide-delay: The amount of time to wait before hiding the tooltip.
- * @prop --hide-duration: The amount of time the hide transition takes to complete.
- * @prop --hide-timing-function: The timing function (easing) to use for the hide transition.
- * @prop --max-width: The maximum width of the tooltip.
- * @prop --show-delay: The amount of time to wait before showing the tooltip.
- * @prop --show-duration: The amount of time the show transition takes to complete.
- * @prop --show-timing-function: The timing function (easing) to use for the show transition.
- */
 :host {
   --scale-tooltip-border-radius: 0.25rem;
-  --scale-tooltip-background-color: #111827;
+  --scale-tooltip-background-color: #6c6c6c;
   --scale-tooltip-color: #fff;
   --scale-tooltip-font-weight: 400;
-  --scale-tooltip-font-size: 0.875rem;
+  --scale-tooltip-font-size: 12px;
   --scale-tooltip-line-height: 1.4;
   --scale-tooltip-padding: 0.125rem 0.5rem;
   --scale-tooltip-arrow-size: 5px;
@@ -28,7 +19,6 @@ host*,
   --hide-delay: 0s;
   --hide-duration: 0.125s;
   --hide-timing-function: ease;
-  --show-delay: 0.125s;
   --show-duration: 0.125s;
   --show-timing-function: ease;
 
@@ -36,10 +26,16 @@ host*,
   position: relative;
   box-sizing: border-box;
 }
+
 .tooltip-positioner {
   position: absolute;
   z-index: var(--scale-z-index-tooltip);
   pointer-events: none;
+}
+
+#slot-container {
+  width: max-content;
+  height: max-content;
 }
 
 .tooltip {
@@ -67,28 +63,30 @@ host*,
   height: 0;
 }
 
-.tooltip-positioner[data-popper-placement^='top'] .tooltip {
-  transform-origin: bottom;
-}
-.tooltip-positioner[data-popper-placement^='bottom'] .tooltip {
-  transform-origin: top;
-}
-.tooltip-positioner[data-popper-placement^='left'] .tooltip {
-  transform-origin: right;
-}
-.tooltip-positioner[data-popper-placement^='right'] .tooltip {
-  transform-origin: left;
-}
-
 .tooltip-positioner.popover-visible .tooltip {
   opacity: 1;
   transform: none;
-  transition-delay: var(--show-delay);
   transition-duration: var(--show-duration);
   transition-timing-function: var(--show-timing-function);
 }
 
-.tooltip-positioner[data-popper-placement^='bottom'] .tooltip::after {
+.tooltip-positioner--placement-top .tooltip {
+  transform-origin: bottom;
+}
+
+.tooltip-positioner--placement-bottom .tooltip {
+  transform-origin: top;
+}
+
+.tooltip-positioner--placement-left .tooltip {
+  transform-origin: right;
+}
+
+.tooltip-positioner--placement-right .tooltip {
+  transform-origin: left;
+}
+
+.tooltip-positioner--placement-bottom .tooltip::after {
   bottom: 100%;
   left: calc(50% - var(--scale-tooltip-arrow-size));
   border-bottom: var(--scale-tooltip-arrow-size) solid
@@ -97,7 +95,26 @@ host*,
   border-right: var(--scale-tooltip-arrow-size) solid transparent;
 }
 
-.tooltip-positioner[data-popper-placement='top'] .tooltip::after {
+.tooltip-positioner--placement-bottom-start .tooltip::after {
+  left: var(--scale-tooltip-arrow-start-end-offset);
+  bottom: 100%;
+  border-bottom: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-left: var(--scale-tooltip-arrow-size) solid transparent;
+  border-right: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-bottom-end .tooltip::after {
+  right: var(--scale-tooltip-arrow-start-end-offset);
+  left: auto;
+  bottom: 100%;
+  border-bottom: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-left: var(--scale-tooltip-arrow-size) solid transparent;
+  border-right: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-top .tooltip::after {
   top: 100%;
   left: calc(50% - var(--scale-tooltip-arrow-size));
   border-top: var(--scale-tooltip-arrow-size) solid
@@ -106,7 +123,26 @@ host*,
   border-right: var(--scale-tooltip-arrow-size) solid transparent;
 }
 
-.tooltip-positioner[data-popper-placement='left'] .tooltip::after {
+.tooltip-positioner--placement-top-start .tooltip::after {
+  left: var(--scale-tooltip-arrow-start-end-offset);
+  top: 100%;
+  border-top: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-left: var(--scale-tooltip-arrow-size) solid transparent;
+  border-right: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-top-end .tooltip::after {
+  right: var(--scale-tooltip-arrow-start-end-offset);
+  left: auto;
+  top: 100%;
+  border-top: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-left: var(--scale-tooltip-arrow-size) solid transparent;
+  border-right: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-left .tooltip::after {
   top: calc(50% - var(--scale-tooltip-arrow-size));
   left: 100%;
   border-left: var(--scale-tooltip-arrow-size) solid
@@ -115,8 +151,46 @@ host*,
   border-bottom: var(--scale-tooltip-arrow-size) solid transparent;
 }
 
-.tooltip-positioner[data-popper-placement='right'] .tooltip::after {
+.tooltip-positioner--placement-left-start .tooltip::after {
+  top: var(--scale-tooltip-arrow-start-end-offset);
+  left: 100%;
+  border-left: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-top: var(--scale-tooltip-arrow-size) solid transparent;
+  border-bottom: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-left-end .tooltip::after {
+  top: auto;
+  bottom: var(--scale-tooltip-arrow-start-end-offset);
+  left: 100%;
+  border-left: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-top: var(--scale-tooltip-arrow-size) solid transparent;
+  border-bottom: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-right .tooltip::after {
   top: calc(50% - var(--scale-tooltip-arrow-size));
+  right: 100%;
+  border-right: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-top: var(--scale-tooltip-arrow-size) solid transparent;
+  border-bottom: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-right-start .tooltip::after {
+  top: var(--scale-tooltip-arrow-start-end-offset);
+  right: 100%;
+  border-right: var(--scale-tooltip-arrow-size) solid
+    var(--scale-tooltip-background-color);
+  border-top: var(--scale-tooltip-arrow-size) solid transparent;
+  border-bottom: var(--scale-tooltip-arrow-size) solid transparent;
+}
+
+.tooltip-positioner--placement-right-end .tooltip::after {
+  top: auto;
+  bottom: var(--scale-tooltip-arrow-start-end-offset);
   right: 100%;
   border-right: var(--scale-tooltip-arrow-size) solid
     var(--scale-tooltip-background-color);

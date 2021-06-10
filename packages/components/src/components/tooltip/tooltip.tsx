@@ -9,6 +9,7 @@ import {
   Watch,
   h,
 } from '@stencil/core';
+import classNames from 'classnames';
 import Popover from './utilities/popover';
 
 let id = 0;
@@ -45,7 +46,19 @@ export class Tooltip {
    * The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip
    * inside of the viewport.
    */
-  @Prop() placement: 'top' | 'right' | 'bottom' | 'left' = 'top';
+  @Prop() placement:
+    | 'top'
+    | 'top-start'
+    | 'top-end'
+    | 'right'
+    | 'right-start'
+    | 'right-end'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left'
+    | 'left-start'
+    | 'left-end' = 'top';
 
   /** Set to true to disable the tooltip so it won't show when triggered. */
   @Prop() disabled = false;
@@ -161,11 +174,14 @@ export class Tooltip {
 
   getTarget() {
     // Get the first child that isn't a <style> or content slot
-    const target = [...this.host.children].find(
-      (el) =>
-        el.tagName.toLowerCase() !== 'style' &&
-        el.getAttribute('slot') !== 'content'
-    ) as HTMLElement;
+    // const target = Array.from(this.host.children).find(
+    //   (el) =>
+    //     el.tagName.toLowerCase() !== 'style' &&
+    //     el.getAttribute('div') !== 'content'
+    // ) as HTMLElement;
+    const target = this.host.shadowRoot.getElementById('slot-container');
+
+    console.log(target);
 
     if (!target) {
       throw new Error('Invalid tooltip target: no child element was found.');
@@ -243,16 +259,18 @@ export class Tooltip {
   render() {
     return (
       <Host
+        class="host-container"
         onKeyDown={this.handleKeyDown}
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
       >
-        <slot onSlotchange={this.handleSlotChange} />
-
+        <div id="slot-container">
+          <slot onSlotchange={this.handleSlotChange}></slot>
+        </div>
         {!this.disabled && (
           <div
             ref={(el) => (this.tooltipPositioner = el)}
-            class="tooltip-positioner"
+            class={this.getCssClassMap()}
           >
             <div
               part="base"
@@ -270,6 +288,13 @@ export class Tooltip {
           </div>
         )}
       </Host>
+    );
+  }
+
+  getCssClassMap() {
+    return classNames(
+      `tooltip-positioner`,
+      this.placement && `tooltip-positioner--placement-${this.placement}`
     );
   }
 }
