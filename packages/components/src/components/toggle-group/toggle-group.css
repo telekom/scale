@@ -1,0 +1,22 @@
+:host {
+  --border-color: #262626;
+  --border: var(--scl-spacing-1) solid var(--border-color);
+  --radius: var(--scl-radius-8);
+}
+
+.toggle-group--border {
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+.toggle-group--inline {
+  display: inline-flex;
+}
+
+.toggle-group--block {
+  display: flex;
+}
+
+.toggle-group--block ::slotted(*) {
+  flex-grow: 1;
+}
