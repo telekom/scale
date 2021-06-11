@@ -12,8 +12,8 @@ import ScaleBadge from './ScaleBadge.vue';
   component={ScaleBadge}
   argTypes={{
     color: {
-      defaultValue: 'magenta',
-      options: ['magenta', 'white', 'black', 'blue'],
+      defaultValue: 'primary',
+      options: ['primary', 'white', 'black', 'blue'],
       control: {
         type: 'select',
       },
@@ -32,20 +32,6 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleBadge },
   props: {
     ...ScaleBadge.props,
-    color: {
-      defaultValue: 'magenta',
-      control: {
-        type: 'select',
-        options: ['magenta', 'white', 'black', 'blue'],
-      },
-    },
-    size: {
-      defaultValue: 'big',
-      control: {
-        type: 'select',
-        options: ['small', 'big'],
-      },
-    },
   },
   template: `
       <scale-badge :size="size" :color="color" :rotation="rotation">
@@ -66,7 +52,6 @@ export const Template = (args, { argTypes }) => ({
 export const Template2 = (args, { argTypes }) => ({
   components: { ScaleBadge },
   props: {
-    label: String,
     ...ScaleBadge.props,
   },
   template: `
@@ -88,7 +73,6 @@ export const Template2 = (args, { argTypes }) => ({
 export const Template3 = (args, { argTypes }) => ({
   components: { ScaleBadge },
   props: {
-    label: String,
     ...ScaleBadge.props,
   },
   template: `
@@ -108,10 +92,8 @@ export const Template3 = (args, { argTypes }) => ({
   `,
 });
 
-
 ## Standard
 ### All default values
-
 <Canvas withSource="none">
   <Story
     name="Standard"
@@ -141,10 +123,7 @@ export const Template3 = (args, { argTypes }) => ({
 </scale-badge>
 ```
 
-
-
 ### Scoped CSS variables
-
 ```css
  :host {
   --color-badge:#e20074;
@@ -158,13 +137,6 @@ export const Template3 = (args, { argTypes }) => ({
   --width-big: 160px;
 }
 ```
-
-
-
-
-
-
-
 ## Size
 There are two sizes: 
 big / small. Big has the size 160x160 and small 120x120. In the example below, the badge is small
@@ -174,7 +146,7 @@ big / small. Big has the size 160x160 and small 120x120. In the example below, t
     name="Sizes"
     args={{
       size: "small",
-      color: "black",
+      color: "blue",
     }}
   >
     {Template2.bind({})}
@@ -182,7 +154,7 @@ big / small. Big has the size 160x160 and small 120x120. In the example below, t
 </Canvas>
 
 ```html
-<scale-badge style="--badge-color:blue" size:"small" >
+<scale-badge color="blue" size:"small" >
   <div>
     <div
       style="text-align:center; font-size:20px; font-family:TeleNeo; color:blwhiteack; font-weight:400;"
@@ -199,7 +171,6 @@ big / small. Big has the size 160x160 and small 120x120. In the example below, t
 ```
 
 ## Rotation
-
 <Canvas withSource="none">
   <Story
     name="Rotation"
@@ -231,7 +202,7 @@ big / small. Big has the size 160x160 and small 120x120. In the example below, t
 ```
 
 ## Color Choosing
-There are 4 standard colors (Magenta - default, black, white, blue). The user also has the possibilty to determine another color by accessing the specific css class. 
+There are 4 standard colors (Primary - default, black, white, blue). The user also has the possibilty to determine another color by accessing the specific css class. 
 
 <Canvas withSource="none">
   <Story
@@ -256,11 +227,10 @@ There are 4 standard colors (Magenta - default, black, white, blue). The user al
           </span>
         </div>
       </div>
-    </scale-badge>
+</scale-badge>
 ```
 
 ## Asterisk
-
 <Canvas withSource="none">
   <Story
     name="Asterisk"
@@ -273,7 +243,7 @@ There are 4 standard colors (Magenta - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-badge size="big" color="magenta" rotation="0">
+<scale-badge size="big" color="primary" rotation="0">
       <div>
         <div style="text-align: center; font-size: 25px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
           ab
@@ -285,5 +255,5 @@ There are 4 standard colors (Magenta - default, black, white, blue). The user al
           <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
         </div>
       </div>
-    </scale-badge>
+</scale-badge>
 ```

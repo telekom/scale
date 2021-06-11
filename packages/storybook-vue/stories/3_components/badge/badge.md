@@ -26,9 +26,9 @@ Don't use cards:
 ## Variants
 ## Color
 
-### Magenta / White / Black / Colored
+### Primary / White / Black / Colored
 
-Magenta is the default color but the user also has the possibility to determine any other color as well.
+Primary is the default color but the user also has the possibility to determine any other color as well.
 IMAGE EXAMPLES
 
 

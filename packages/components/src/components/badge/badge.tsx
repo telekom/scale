@@ -8,9 +8,9 @@ import classNames from 'classnames';
 })
 export class Badge {
   /** (optional) Variant size of the badge itself */
-  @Prop({ mutable: true }) size: 'big' | 'small' = 'big';
+  @Prop({ mutable: true }) size: 'large' | 'small' = 'large';
   /** (optional) Variant color/filling of the badge */
-  @Prop({ mutable: true }) color: 'magenta' | 'white' | 'black' | 'blue';
+  @Prop({ mutable: true }) color: 'primary' | 'white' | 'black' | 'blue';
   /** (optional) Variant rotation of the badge/circle */
   @Prop({ mutable: true }) rotation: number = 0;
 

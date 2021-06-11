@@ -18,8 +18,8 @@
   background: var(--color-badge);
 }
 
-.badge.badge--color-magenta {
-  background: #e20074;
+.badge.badge--color-primary {
+  background: var(--scl-color-primary, #e20074);
 }
 .badge.badge--color-white {
   background: #ffffff;
@@ -31,7 +31,7 @@
   background: #191919;
 }
 
-.badge.badge--size-big {
+.badge.badge--size-large {
   width: var(--width-big);
   height: var(--height-big);
 }
@@ -41,7 +41,7 @@
   height: var(--height-small);
 }
 
-.badge.badge--size-big .badge--inner {
+.badge.badge--size-large .badge--inner {
   width: var(--inner-width-big);
   height: var(--inner-height-big);
 }

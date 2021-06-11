@@ -12,7 +12,7 @@
 export default {
   props: {
     size: { type: String, default: "big" },
-    color: {type: String, default: "magenta"},
+    color: {type: String, default: "primary"},
     rotation:{type: Number, default: 0},
   },
 };
