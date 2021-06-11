@@ -9,7 +9,12 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Element, State } from '@stencil/core';
+/*
+adapted from shoelace's rating component
+https://github.com/shoelace-style/shoelace/blob/next/src/components/rating/rating.ts
+*/
+
+import { Component, h, Prop, Host, Element, State, Event, EventEmitter, Watch } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -40,6 +45,14 @@ export class RatingStars {
   @Prop() precision = 1;
   /** (optional) slider label */
   @Prop() label?: string;
+  /** Emitted when the value has changed. */
+  @Event() scaleChange!: EventEmitter<void>;
+
+  @Watch('value')
+  handleValueChange() {
+    this.scaleChange.emit();
+  }
+
 
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
@@ -60,6 +73,9 @@ export class RatingStars {
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleMouseClick = this.handleMouseClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleTouchStart = this.handleTouchStart.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
+    this.handleTouchMove = this.handleTouchMove.bind(this);
   }
 
   componentDidLoad() {
@@ -87,15 +103,7 @@ export class RatingStars {
   }
 
   handleMouseClick(event: MouseEvent) {
-    if (this.disabled) {
-      return;
-    }
-
-    this.isHovering = false;
-    this.value =
-      this.value === this.hoverValue
-        ? 0
-        : this.getValueFromMousePosition(event);
+    this.setValue(this.getValueFromMousePosition(event));
   }
 
   handleKeyDown(event: KeyboardEvent) {
@@ -126,6 +134,39 @@ export class RatingStars {
     }
   }
 
+  getValueFromTouchPosition(event: TouchEvent) {
+    return this.getValueFromXCoordinate(event.touches[0].clientX);
+  }
+
+  handleTouchStart(event: TouchEvent) {
+    this.hoverValue = this.getValueFromTouchPosition(event);
+
+    // Prevent scrolling when touch is initiated
+    event.preventDefault();
+  }
+
+  handleTouchMove(event: TouchEvent) {
+    this.isHovering = true;
+    this.hoverValue = this.getValueFromTouchPosition(event);
+  }
+
+  handleTouchEnd(event: TouchEvent) {
+    this.isHovering = false;
+    this.setValue(this.hoverValue);
+
+    // Prevent click on mobile devices
+    event.preventDefault();
+  }
+
+  setValue(newValue: number) {
+    if (this.disabled) {
+      return;
+    }
+
+    this.value = newValue === this.value ? 0 : newValue;
+    this.isHovering = false;
+  }
+
   getValueFromMousePosition(event: MouseEvent) {
     const containerLeft = this.element.getBoundingClientRect().left;
     const containerWidth = this.element.getBoundingClientRect().width;
@@ -143,6 +184,19 @@ export class RatingStars {
       this.max
     );
     return star;
+  }
+
+  getValueFromXCoordinate(coordinate: number) {
+    const containerLeft = this.element.getBoundingClientRect().left;
+    const containerWidth = this.element.getBoundingClientRect().width;
+    return clamp(
+      this.roundToPrecision(
+        ((coordinate - containerLeft) / containerWidth) * this.max,
+        this.precision
+      ),
+      0,
+      this.max
+    );
   }
 
   roundToPrecision(numberToRound: number, precision = 1) {
@@ -170,6 +224,9 @@ export class RatingStars {
           onMouseLeave={this.handleMouseLeave}
           onClick={this.handleMouseClick}
           onKeyDown={this.handleKeyDown}
+          onTouchStart={this.handleTouchStart}
+          onTouchEnd={this.handleTouchEnd}
+          onTouchMove={this.handleTouchMove}
           tabIndex={this.disabled ? -1 : 0}
           role="figure"
           aria-describedby="rating__description"
