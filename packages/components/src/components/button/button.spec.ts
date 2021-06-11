@@ -38,12 +38,27 @@ describe('Button', () => {
     expect(element.getCssClassMap()).toContain('button--disabled');
   });
 
-  it('should handle more than 1 node', async () => {
+  it('should handle icon before', async () => {
     const page = await newSpecPage({
       components: [Button],
       html: `    
       <scale-button size="small">
-        <scale-icon-action-search size="16" /> Label
+        <scale-icon-action-search size="16" /> 
+        Label
+      </scale-button>
+      `,
+    });
+    expect(page.rootInstance.iconPosition).toBe('before');
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle icon after', async () => {
+    const page = await newSpecPage({
+      components: [Button],
+      html: `    
+      <scale-button size="small">
+        Label 
+        <scale-icon-action-search size="16" />
       </scale-button>
       `,
     });
