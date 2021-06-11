@@ -4,7 +4,7 @@
 
 All members of the project community must abide by the [Contributor Covenant, version 2.0](CODE_OF_CONDUCT.md).
 Only by respecting each other can we develop a productive, collaborative community.
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting [opensource@telekom.de](mailto:opensource@telekom.de) and/or a project maintainer.
+Instances of abusive, harassing or otherwise unacceptable behavior may be reported by contacting [opensource@telekom.de](mailto:opensource@telekom.de) and/or a project maintainer.
 
 We appreciate your courtesy of avoiding political questions here. Issues which are not related to the project itself will be closed by our community managers.
 
@@ -12,7 +12,7 @@ We appreciate your courtesy of avoiding political questions here. Issues which a
 
 We use GitHub to manage reviews of pull requests.
 
-* If you are a new contributor, see: [Steps to Contribute](#steps-to-contribute)
+* If you are a new contributor, see: [Steps to contribute](#steps-to-contribute)
 
 * If you have a trivial fix or improvement, go ahead and create a pull request, addressing (with `@...`) a suitable maintainer of this repository (see [CODEOWNERS](CODEOWNERS) of the  repository you want to contribute to) in the description of the pull request.
 
@@ -20,15 +20,15 @@ We use GitHub to manage reviews of pull requests.
 
 * Relevant coding style guidelines are available in the respective sub-repositories as they are programming language-dependent.
 
-## Steps to Contribute
+## Steps to contribute
 
 Should you wish to work on an issue, please claim it first by commenting on the GitHub issue that you want to work on. This is to prevent duplicated efforts from other contributors on the same issue.
 
 If you have questions about one of the issues, please comment on them, and one of the maintainers will clarify.
 
-We kindly ask you to follow the [Pull Request Checklist](#Pull-Request-Checklist) to ensure reviews can happen accordingly.
+We kindly ask you to follow the [Pull request checklist](#Pull-request-checklist) to ensure reviews can happen accordingly.
 
-## Contributing Code
+## Contributing code
 
 You are welcome to contribute code in order to fix a bug or to implement a new feature.
 
@@ -46,7 +46,7 @@ The following rule governs documentation contributions:
 
 * Contributions should be licensed under the same license as code (= [Mozilla Public License 2.0](LICENSE))
 
-## Pull Request Checklist
+## Pull request checklist
 
 * Branch from the master branch and, if needed, rebase to the current master branch before submitting your pull request. If it doesn't merge cleanly with master you may be asked to rebase your changes.
 
@@ -64,7 +64,7 @@ The following rule governs documentation contributions:
   * Set respective comments in your GitHub review to resolved.
   * Create a general PR comment to notify the reviewers that your amendments are ready for another round of review.
 
-## Issues and Planning
+## Issues and planning
 
 * We use GitHub issues to track bugs and enhancement requests.
 
