@@ -30,6 +30,8 @@ export class RatingStars {
   @Element() hostElement: HTMLElement;
   /** (optional) hoverValue  */
   @State() hoverValue = 0;
+  /** (optional) hoverValue  */
+  @State() isHovering = false;
   /** (optional) max  */
   @Prop() max = 5;
   /** (optional) value  */
@@ -57,7 +59,6 @@ export class RatingStars {
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
-  isHovering = false;
 
   renderIcon = (color: string, size: string, selected?: boolean) => {
     if (selected) {

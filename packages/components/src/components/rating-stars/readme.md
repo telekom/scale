@@ -18,6 +18,13 @@
 | `value`                | `value`                  | (optional) value                | `number`  | `0`                                        |
 
 
+## Events
+
+| Event         | Description                         | Type                |
+| ------------- | ----------------------------------- | ------------------- |
+| `scaleChange` | Emitted when the value has changed. | `CustomEvent<void>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
