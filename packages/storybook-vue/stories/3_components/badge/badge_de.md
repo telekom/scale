@@ -3,9 +3,6 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-
-
-
 Statische Rating Stars können eine Bewertung abbilden. Interaktive Rating Stars ermöglichen es Nutzer\*innen, eine eigene Bewertung abzugeben.
 
 ## Beta-Komponente
