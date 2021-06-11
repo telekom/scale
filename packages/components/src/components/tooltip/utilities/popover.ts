@@ -56,8 +56,14 @@ export default class Popover {
 
   private handleTransitionEnd(event: TransitionEvent) {
     const target = event.target as HTMLElement;
+
+    // Make sure the transition event originates from from the correct element, and not one that has bubbled up
     if (target === this.options.transitionElement) {
+      // This is called before the element is hidden so users can do things like reset scroll. It will fire once for
+      // every transition property. Use `event.propertyName` to determine which property has finished transitioning.
       this.options.onTransitionEnd.call(this, event);
+
+      // Make sure we only do this once, since transitionend will fire for every transition
       if (!this.isVisible && !this.popover.hidden) {
         this.popover.hidden = true;
         this.popover.classList.remove(this.options.visibleClass);
@@ -78,7 +84,7 @@ export default class Popover {
   show() {
     this.isVisible = true;
     this.popover.hidden = false;
-    this.popover.clientWidth;
+    this.popover.clientWidth; // force reflow
     requestAnimationFrame(() =>
       this.popover.classList.add(this.options.visibleClass)
     );
@@ -112,10 +118,12 @@ export default class Popover {
       { once: true }
     );
 
+    // Reposition the menu after it appears in case a modifier kicked in
     requestAnimationFrame(() => this.popper.update());
   }
 
   hide() {
+    // Apply the hidden styles and wait for the transition before hiding completely
     this.isVisible = false;
     this.popover.classList.remove(this.options.visibleClass);
   }
@@ -129,6 +137,8 @@ export default class Popover {
     this.isVisible
       ? this.popover.classList.add(this.options.visibleClass)
       : this.popover.classList.remove(this.options.visibleClass);
+
+    // Update popper options
     if (this.popper) {
       this.popper.setOptions({
         placement: this.options.placement,

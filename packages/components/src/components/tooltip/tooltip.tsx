@@ -155,7 +155,7 @@ export class Tooltip {
   handleKeyDown(event: KeyboardEvent) {
     if (this.open && event.key === 'Escape') {
       event.stopPropagation();
-      this.showTooltip();
+      this.hideTooltip();
     }
   }
 
