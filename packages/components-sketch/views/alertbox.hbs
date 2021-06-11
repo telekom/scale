@@ -1,0 +1,144 @@
+<div data-sketch-artboard="Alertbox" class="artboard">
+  <h1 class="title--artboard">Overview</h1>
+
+
+<h2 class="title--artboard-section">Colors</h2>
+    <div class="agent-states--grid" data-category="Text only">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:White</p>
+            <scale-alertbox close="true" icon="true" color="white" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+        </div>
+        
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Black</p>
+<scale-alertbox close="true" iicon="true"con color="black" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>        </div>
+        <div class="agent-states--item">
+            <p class="agent-states--label">Error</p>
+<scale-alertbox close="true" icon="true" color="error" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>        
+      </div>
+    </div>
+
+    <h2 class="title--artboard-section">Varriant</h2>
+    <div class="agent-states--grid" data-category="Text only">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Floating</p>
+            <scale-alertbox close="true" icon="true" color="white" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+        </div>
+        
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Outline</p>
+<scale-alertbox close="true" icon="true" color="black" variant="floating">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>        </div>
+    </div>
+
+
+
+
+
+    <h2 class="title--artboard-section">Icons</h2>
+    <div class="agent-states--grid" data-category="Text only">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Success</p>
+            <scale-alertbox close="true" icon="true" color="white" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+        </div>
+        
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Error</p>
+<scale-alertbox close="true" icon="true" color="error" variant="floating">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>        </div>
+    </div>
+
+    <h2 class="title--artboard-section">Close button</h2>
+    <div class="agent-states--grid" data-category="Text only">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Close</p>
+            <scale-alertbox close="true" icon="true" color="white" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+        </div>
+        
+        <div class="agent-states--item">
+            <p class="agent-states--label">:No close</p>
+<scale-alertbox icon="true" color="error" variant="floating">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>        </div>
+    </div>
+
+    <h2 class="title--artboard-section">Content</h2>
+    <div class="agent-states--grid" data-category="Text only">
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Only title</p>
+            <scale-alertbox close="true" icon="true" color="white" variant="outline">
+        <p slot="header">
+          Message with title only
+        </p>
+      </scale-alertbox>
+        </div>
+        
+        <div class="agent-states--item">
+            <p class="agent-states--label">:Title and content</p>
+<scale-alertbox color="white" variant="outline">
+        <p slot="header">
+          Message Title
+        </p>
+
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+      </scale-alertbox>       </div>
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+<script src="/symbol_names.js"></script>
+<script>
+  Array.from(document.querySelectorAll('scale-alertbox')).forEach((btn, i) => {
+    btn.dataset.sketchSymbol = `Alertbox / ${order(
+      1,
+      getCategoryName(btn)
+    )} / ${order(
+      2,
+      btn.dataset.hasIcon ? 'With Icon' : 'Without Icon'
+    )} / ${order(4, getStateName(btn))}`;
+  });
+</script>

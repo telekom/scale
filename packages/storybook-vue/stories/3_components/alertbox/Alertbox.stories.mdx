@@ -1,0 +1,219 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleAlertbox from './ScaleAlertbox.vue';
+
+<Meta
+  title="Beta Components/Alertbox"
+  component={ScaleAlertbox}
+  argTypes={{
+    color: {
+      defaultValue: 'black',
+      options: ['white', 'black', 'error'],
+      control: {
+        type: 'select',
+      },
+    },
+    variant: {
+      options: ['outline', 'floating'],
+      control: {
+        type: 'select',
+      },
+    },
+    icon: {
+      defaultValue: 'false',
+      options: ['true', 'false'],
+      control: {
+        type: 'select',
+      },
+    },
+    close: {
+      defaultValue: 'false',
+      options: ['true', 'false'],
+      control: {
+        type: 'select',
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleAlertbox },
+  props: {
+    ...ScaleAlertbox.props,
+    color: {
+      defaultValue: 'white',
+      options: ['white', 'black', 'error'],
+      control: {
+        type: 'select',
+      },
+    },
+    variant: {
+      options: ['outline', 'floating'],
+      control: {
+        type: 'select',
+      },
+    },
+    icon: {
+      defaultValue: 'true',
+      options: ['true', 'false'],
+      control: {
+        type: 'select',
+      },
+    },
+    close: {
+      defaultValue: 'true',
+      options: ['true', 'false'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
+  template: `
+      <scale-alertbox color="white" icon close variant="floating">
+        <p slot="header">
+          Message with title, text and closeMessage with title, text and
+          closeMessage with title, text and closeMessage with title, text and
+          close
+        </p>
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+      </scale-alertbox>
+  `,
+});
+
+## Standard
+### All default values
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-alertbox color="white" icon close variant="outline">
+        <p slot="header">
+          Message with title, text and closeMessage with title, text and
+          closeMessage with title, text and closeMessage with title, text and
+          close
+        </p>
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+      </scale-alertbox>
+```
+
+
+
+### Scoped CSS variables
+
+```css
+ :host {
+ --corner-radius: 8px;
+  --box-height-missing-content: 32px;
+  --font-family: TeleNeo;
+}
+```
+
+
+## Color
+There are three colors. White, black & error.
+
+<Canvas withSource="none">
+  <Story
+    name="Colors"
+    args={{
+      color: "error",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+ <scale-alertbox color="white" icon close variant="floating">
+        <p slot="header">
+          Message with title, text and closeMessage with title, text and
+          closeMessage with title, text and closeMessage with title, text and
+          close
+        </p>
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+      </scale-alertbox>
+```
+
+## Icon - Success & Error
+There is a success & error icons 
+
+<Canvas withSource="none">
+  <Story
+    name="Colors"
+    args={{
+      color: "error",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+ <scale-alertbox color="white" icon close variant="floating">
+        <p slot="header">
+          Message with title, text and closeMessage with title, text and
+          closeMessage with title, text and closeMessage with title, text and
+          close
+        </p>
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+     
+```
+
+
+## Close Button - Enalbled & Dissabled
+
+The user has the possibility to either enable or dissable the close button
+
+<Canvas withSource="none">
+  <Story
+    name="Colors"
+    args={{
+      color: "error",
+      close: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+ <scale-alertbox color="white" icon variant="floating">
+        <p slot="header">
+          Message with title, text and closeMessage with title, text and
+          closeMessage with title, text and closeMessage with title, text and
+          close
+        </p>
+        <p slot="text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        </p>
+     
+```
+

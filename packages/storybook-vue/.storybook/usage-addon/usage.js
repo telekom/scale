@@ -15,6 +15,8 @@ import { Description } from "@storybook/addon-docs/blocks";
 import { useStorybookState, useGlobals } from "@storybook/api";
 import accordion_en from "raw-loader!../../stories/3_components/accordion/accordion.md";
 import accordion_de from "raw-loader!../../stories/3_components/accordion/accordion_de.md";
+import alertbox_en from "raw-loader!../../stories/3_components/alertbox/alertbox.md";
+import alertbox_de from "raw-loader!../../stories/3_components/alertbox/alertbox_de.md";
 import brandHeader_en from "raw-loader!../../stories/3_components/brand-header/brand-header.md";
 import brandHeader_de from "raw-loader!../../stories/3_components/brand-header/brand-header_de.md";
 import breadcrumb_en from "raw-loader!../../stories/3_components/breadcrumb/breadcrumb.md";
@@ -72,6 +74,7 @@ import textField_de from "raw-loader!../../stories/3_components/text-field/text-
 import footer_en from "raw-loader!../../stories/3_components/footer/footer.md";
 import footer_de from "raw-loader!../../stories/3_components/footer/footer_de.md";
 
+
 const NOT_A_COMPONENT_MD = "`Browse to any component to see usage.`";
 const COMPONENT_NOT_MAPPED_MD =
   "`Please import and add this component's usage markdown to the componentMap in .storybook/usage-addon/usage.js.`";
@@ -97,6 +100,8 @@ const Usage = props => {
     accordion_de,
     "brand-header-navigation_en": brandHeader_en,
     "brand-header-navigation_de": brandHeader_de,
+    alertbox_de,
+    alertbox_en,
     breadcrumb_en,
     breadcrumb_de,
     button_en,

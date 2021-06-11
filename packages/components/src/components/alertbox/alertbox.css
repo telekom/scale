@@ -12,7 +12,7 @@
   position: relative;
 }
 
-/*coloring*/
+/*Alertbox Color*/
 .alertbox--color-error {
   background-color: var(--scl-color-red-70);
   color: var(--scl-color-white);
@@ -30,25 +30,20 @@
 
 /*variants*/
 .alertbox.alertbox--variant-outline.alertbox--color-white {
-  /* border: 1px solid var(--scl-color-black); */
   border-radius: var(--corner-radius);
   border: solid 1px #979797;
 }
 
 .alertbox.alertbox--variant-outline.alertbox--color-black {
-  /* border: 1px solid var(--scl-color-white); */
   border: solid 1px #979797;
   border-radius: var(--corner-radius);
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-error {
-  
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
 }
 
 .alertbox.alertbox--variant-floating.alertbox--color-white {
-  height: var(--floating-height);
-  box-shadow: 0px 5px 20;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
 }
 
