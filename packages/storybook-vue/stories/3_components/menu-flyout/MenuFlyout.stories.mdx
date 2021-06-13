@@ -3,7 +3,7 @@ import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
-  mainNavigation
+  mainNavigation,
 } from '../brand-header/fixtures';
 
 import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
@@ -101,7 +101,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
   <Story name="Icon Button Trigger">
     {`<scale-menu-flyout>
     <scale-button slot="trigger" variant="secondary" icon-only>
-        <scale-icon-service-settings></scale-icon-service-settings>
+        <scale-icon-service-settings accessibility-title="Open Flyout menu"></scale-icon-service-settings>
     </scale-button>
     <scale-menu-flyout-list>
         <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
@@ -353,7 +353,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
   <Story name="Cascading Menu">
     {`<scale-menu-flyout>
     <scale-button slot="trigger" variant="secondary" icon-only>
-        <scale-icon-service-settings></scale-icon-service-settings>
+        <scale-icon-service-settings accessibility-title="Open Flyout menu"></scale-icon-service-settings>
     </scale-button>
     <scale-menu-flyout-list>
         <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>

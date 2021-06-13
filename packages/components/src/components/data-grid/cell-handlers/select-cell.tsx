@@ -30,7 +30,7 @@ export const SelectCell: Cell = {
     columnIndex,
     isAutoWidthCheck,
   }) => {
-    const { options, editable = false } = field;
+    const { options, editable = false, label } = field;
 
     // Select component doesn't expand with content, so need to return a fake element that simulates width
     if (isAutoWidthCheck) {
@@ -44,6 +44,7 @@ export const SelectCell: Cell = {
     const props = {
       disabled: !editable,
       value: content,
+      label,
     } as any;
 
     if (editable) {

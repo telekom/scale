@@ -98,7 +98,7 @@ export class RadioButton {
             checked={this.checked}
             disabled={this.disabled}
             {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           />
           <label htmlFor={this.inputId}>{this.label}</label>
           {!!this.helperText && (
