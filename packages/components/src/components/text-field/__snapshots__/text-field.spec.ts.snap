@@ -4,7 +4,7 @@ exports[`TextField should match snapshot 1`] = `
 <scale-text-field>
   <div class="text-field text-field--type-text">
     <label class="text-field__label" htmlfor="input-text-field0"></label>
-    <input aria-describedby="helper-message-1" class="text-field__control" id="input-text-field0" type="text" value="">
+    <input class="text-field__control" id="input-text-field0" type="text" value="">
   </div>
 </scale-text-field>
 `;

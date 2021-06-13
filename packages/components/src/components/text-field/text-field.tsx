@@ -169,7 +169,7 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           />
 
           {(!!this.helperText || !!this.counter) && (

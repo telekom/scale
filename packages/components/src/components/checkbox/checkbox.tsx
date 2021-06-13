@@ -79,7 +79,7 @@ export class Checkbox {
               checked={this.checked}
               disabled={this.disabled}
               {...ariaInvalidAttr}
-              {...ariaDescribedByAttr}
+              {...(this.helperText ? ariaDescribedByAttr : {})}
             />
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>

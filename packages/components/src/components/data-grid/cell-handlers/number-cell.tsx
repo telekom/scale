@@ -40,6 +40,7 @@ export const NumberCell: Cell = {
       prefix = '',
       suffix = '',
       editable = false,
+      label,
     } = field;
 
     // Input component doesn't expand with content, so need to return a fake element that simulates width
@@ -59,6 +60,7 @@ export const NumberCell: Cell = {
         styles: /* css */ `.text-field__control {
           text-align: right !important;
         }`,
+        label,
       } as any;
 
       // TODO: use blur to reduce number of changes - but doesn't pass value
