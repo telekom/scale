@@ -160,7 +160,7 @@
 
 .toggle-button--selected:not(.button--disabled).toggle-button--magenta:active {
   color: var(--color-selected);
-  background: var(--scl-color-primary-active-magenta);
+  background: var(--color-background-selected-active-magenta);
 }
 
 .toggle-button--selected.toggle-button--black {
