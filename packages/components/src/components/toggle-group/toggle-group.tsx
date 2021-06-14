@@ -9,7 +9,17 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Element,
+  State,
+  Listen,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
@@ -19,6 +29,8 @@ import classNames from 'classnames';
 })
 export class ToggleGroup {
   @Element() hostElement: HTMLElement;
+  /** state */
+  @State() status = [];
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button variant */
@@ -29,18 +41,39 @@ export class ToggleGroup {
   @Prop() border?: boolean = true;
   /** (optional) set the border-radius left, right or both */
   @Prop() radius: 'left' | 'right' | 'both' | null = null;
+  /** (optional) more than one button selected possible */
+  @Prop() multi: boolean = false;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** Emitted when button is clicked */
+  @Event() scaleClick!: EventEmitter;
 
-  /* connectedCallback() {
-    if (this.variant === 'block') {
-      this.setButtonWidth();
-    }
-  } */
+  @Listen('scaleClick')
+  scaleCickHandler(ev) {
+    const tempState = [...this.status];
+    tempState.forEach((button) => {
+      if (button.id === ev.detail.id) {
+        button.selected = ev.detail.selected;
+      }
+    });
+    // console.log('tempState', tempState)
+  }
 
-  componentDidLoad() {}
+  componentDidLoad() {
+    const tempState = [];
+    const children = Array.from(this.hostElement.children);
+    children.forEach((child) => {
+      const button = child.shadowRoot.querySelector('button');
+      tempState.push({
+        id: button.getAttribute('id'),
+        selected: child.hasAttribute('selected'),
+      });
+    });
+    this.status = tempState;
+    // console.log(this.status)
+  }
 
   componentDidRender() {
     if (this.variant === 'block') {
