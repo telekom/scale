@@ -66,8 +66,9 @@ export const Template = (args, { argTypes }) => ({
     :icon="icon"
     :hasclose="hasclose"
     :timeout="timeout"
+    opened
     >
-      <p>Message with title only</p>
+      <p slot="header">Message with title only</p>
     </scale-alertbox>
   `,
 });
