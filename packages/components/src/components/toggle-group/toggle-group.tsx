@@ -54,8 +54,22 @@ export class ToggleGroup {
   scaleCickHandler(ev) {
     const tempState = [...this.status];
     tempState.forEach((button) => {
-      if (button.id === ev.detail.id) {
-        button.selected = ev.detail.selected;
+      if (!ev.detail.selected) {
+        if (button.id === ev.detail.id) {
+          button.selected = false;
+        }
+      } else {
+        if (this.multi) {
+          if (button.id === ev.detail.id) { 
+            button.selected = true;
+          }
+        } else {
+          if (button.id === ev.detail.id) { 
+            button.selected = true;
+          } else {
+            button.selected = false;
+          }
+        }
       }
     });
     // console.log('tempState', tempState)
