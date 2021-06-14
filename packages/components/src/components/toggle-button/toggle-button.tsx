@@ -60,7 +60,7 @@ export class ToggleButton {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
-  @Event() scaleClick!: EventEmitter;
+  @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
   connectedCallback() {
     this.setIconPositionProp();

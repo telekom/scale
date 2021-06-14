@@ -22,6 +22,11 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 
+interface ButtonStatus {
+  id: string;
+  selected: boolean;
+}
+
 @Component({
   tag: 'scale-toggle-group',
   styleUrl: 'toggle-group.css',
@@ -30,7 +35,7 @@ import classNames from 'classnames';
 export class ToggleGroup {
   @Element() hostElement: HTMLElement;
   /** state */
-  @State() status = [];
+  @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button variant */
@@ -48,7 +53,7 @@ export class ToggleGroup {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
-  @Event() scaleClick!: EventEmitter;
+  @Event() scaleClickGroup!: EventEmitter;
 
   @Listen('scaleClick')
   scaleCickHandler(ev) {
@@ -60,11 +65,11 @@ export class ToggleGroup {
         }
       } else {
         if (this.multi) {
-          if (button.id === ev.detail.id) { 
+          if (button.id === ev.detail.id) {
             button.selected = true;
           }
         } else {
-          if (button.id === ev.detail.id) { 
+          if (button.id === ev.detail.id) {
             button.selected = true;
           } else {
             button.selected = false;
@@ -72,7 +77,8 @@ export class ToggleGroup {
         }
       }
     });
-    // console.log('tempState', tempState)
+    this.setNewState(tempState);
+    this.scaleClickGroup.emit(this.status);
   }
 
   componentDidLoad() {
@@ -86,7 +92,6 @@ export class ToggleGroup {
       });
     });
     this.status = tempState;
-    // console.log(this.status)
   }
 
   componentDidRender() {
@@ -94,6 +99,16 @@ export class ToggleGroup {
       this.setButtonWidth();
     }
     this.setChildrenCorners();
+  }
+
+  setNewState(tempState: ButtonStatus[]) {
+    const toggleButtons = Array.from(
+      this.hostElement.querySelectorAll('scale-toggle-button')
+    );
+    toggleButtons.forEach((button, i) => {
+      button.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
+    });
+    this.status = tempState;
   }
 
   setButtonWidth() {
