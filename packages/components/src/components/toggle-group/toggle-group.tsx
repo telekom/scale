@@ -38,16 +38,16 @@ export class ToggleGroup {
   @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
-  /** (optional) Button variant */
-  @Prop() variant?: 'inline' | 'block' = 'inline';
+  /** (optional) Button Group variant */
+  @Prop() variant?: 'primary' | 'secondary' = 'primary';
+  /** (optional) inline or block element */
+  @Prop() boxType?: 'inline' | 'block' = 'inline';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the group has a border */
-  @Prop() border?: boolean = true;
-  /** (optional) set the border-radius left, right or both */
-  @Prop() radius: 'left' | 'right' | 'both' | null = null;
+  @Prop() border?: boolean = false;
   /** (optional) more than one button selected possible */
-  @Prop() multi: boolean = false;
+  @Prop() multi: boolean = true;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
@@ -83,19 +83,25 @@ export class ToggleGroup {
 
   componentDidLoad() {
     const tempState = [];
-    const children = Array.from(this.hostElement.children);
-    children.forEach((child) => {
-      const button = child.shadowRoot.querySelector('button');
+    const toggleButtons = Array.from(
+      this.hostElement.querySelectorAll('scale-toggle-button')
+    );
+    toggleButtons.forEach((toggleButton) => {
+      const button = toggleButton.shadowRoot.querySelector('button');
       tempState.push({
         id: button.getAttribute('id'),
-        selected: child.hasAttribute('selected'),
+        selected: toggleButton.hasAttribute('selected'),
       });
+      toggleButton.setAttribute('size', this.size);
+      toggleButton.setAttribute('variant', this.variant);
+      toggleButton.setAttribute('disabled', this.disabled && 'disabled');
     });
+    // console.log('tempState', tempState)
     this.status = tempState;
   }
 
   componentDidRender() {
-    if (this.variant === 'block') {
+    if (this.boxType === 'block') {
       this.setButtonWidth();
     }
     this.setChildrenCorners();
@@ -154,7 +160,7 @@ export class ToggleGroup {
 
     return classNames(
       'toggle-group',
-      this.variant && `${prefix}${this.variant}`,
+      this.boxType && `${prefix}${this.boxType}`,
       this.border && `${prefix}border`
     );
   }
