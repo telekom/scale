@@ -11,7 +11,7 @@ export class Alertbox {
   @Prop() color?: 'white' | 'black' | 'error' = 'white';
   @Prop() variant?: 'floating' | 'outline';
   @Prop() icon: boolean = false;
-  @Prop({ reflect: true }) hasClose? = false;
+  @Prop({ reflect: true }) hasclose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
   @State() content: boolean = true;
@@ -89,7 +89,7 @@ export class Alertbox {
               <slot name="header">
                 <p>Missing Title</p>
               </slot>
-              {this.hasClose && (
+              {this.hasclose && (
                 <scale-icon-action-circle-close
                   class="alertbox__icon-close"
                   onClick={() => {

@@ -3,21 +3,24 @@
     :color="color"
     :variant="variant"
     :icon="icon"
-    :close="close"
-    :content="content"
+    :hasclose="hasclose"
+    :timeout="timeout"
+    :opened="opened"
   >
-    <slot></slot>
+    <slot name="header"></slot>
+    <slot name="text"></slot>
   </scale-alertbox>
 </template>
 
 <script>
 export default {
   props: {
-    color: {type: String, default: "black"},
-    variant: {type: String},
-    icon: {type: Boolean, default: "false"}, 
-    close: {type: Boolean, default: "false"},
-    content: {type: Boolean, default: "true"},
+    color: { type: 'white' | 'black' | 'error', default: 'white' },
+    variant: { type: 'floating' | 'outline' },
+    icon: { type: Boolean, default: false },
+    hasclose: { type: Boolean, default: false },
+    opened: { type: Boolean },
+    timeout: { type: Boolean | Number, default: false },
   },
 };
 </script>
