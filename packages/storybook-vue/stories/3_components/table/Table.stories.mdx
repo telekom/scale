@@ -310,8 +310,8 @@ Please switch to the Canvas view for a working example
         <th
           tabindex="0"
           aria-sort="descending"
-          @keyup="handleKeyUp($event, 'title')"
-          @click="sortTable('title')"
+          onkeyup="handleKeyUp(event, 'title')"
+          onclick="sortTable('title')"
           id="title"
         >
           Title
@@ -320,24 +320,24 @@ Please switch to the Canvas view for a working example
         <th aria-disabled>Tags</th>
         <th
           tabindex="0"
-          @keyup="handleKeyUp($event, 'stats')"
-          @click="sortTable('stats')"
+          onkeyup="handleKeyUp(event, 'stats')"
+          onclick="sortTable('stats')"
           id="stats"
         >
           Stats
         </th>
         <th
           tabindex="0"
-          @keyup="handleKeyUp($event, 'time')"
-          @click="sortTable('time')"
+          onkeyup="handleKeyUp(event, 'time')"
+          onclick="sortTable('time')"
           id="time"
         >
           Time
         </th>
         <th
           tabindex="0"
-          @keyup="handleKeyUp($event, 'euros')"
-          @click="sortTable('euros')"
+          onkeyup="handleKeyUp(event, 'euros')"
+          onclick="sortTable('euros')"
           id="euros"
         >
           Euros
@@ -358,4 +358,13 @@ Please switch to the Canvas view for a working example
     </tfoot>
   </table>
 </scale-table>
+
+<script>
+  function handleKeyUp(event, id) {
+    /* ... */
+  }
+  function sortTable(id) {
+    /* ... */
+  }
+</script>
 ```

@@ -147,16 +147,8 @@ import AppShell from './AppShell.vue';
 ```html
 <scale-app-shell
   claim-lang="en"
-  :logo-title="logoTitle"
-  :logo-href="logoHref"
-  :logo-click="onLogoClick"
-  :portal-name="portalName"
-  :main-navigation="mainNavigation"
-  :icon-navigation="iconNavigation"
-  :sector-navigation="sectorNavigation"
-  :addon-navigation="addonNavigation"
-  active-route-id="Third Level 24"
-  active-sector-id="Personal38"
+  logo-title="App Name"
+  logo-href="/"
 >
   <div style="height: 800px; padding: 48px 0;">
     Scroll to test header behavior
@@ -239,16 +231,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 ```html
 <body>
   <scale-app-shell>
-    <scale-app-header
-      slot="header"
-      id="header"
-      :main-navigation="mainNavigation"
-      :icon-navigation="iconNavigation"
-      :sector-navigation="sectorNavigation"
-      :addon-navigation="addonNavigation"
-      :active-route-id="activeRouteId"
-      :active-sector-id="activeSectorId"
-    >
+    <scale-app-header slot="header" id="header">
       <div slot="menu-main">
         <scale-nav-main name="Custom Item #1"></scale-nav-main>
         <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu">
@@ -269,6 +252,10 @@ You can find code examples where the Flyout Menu Beta component is implemented i
   </scale-app-shell>
   <script>
     const header = document.getElementById('header');
+    header.mainNavigation = [/* ... */];
+    header.iconNavigation = [/* ... */];
+    header.addonNavigation = [/* ... */];
+    header.sectionNavigation = [/* ... */];
     const navMainWithMegaMenu = document.getElementById(
       'nav-main-with-mega-menu'
     );
@@ -359,16 +346,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 
 ```html
 <scale-app-shell>
-  <scale-app-header
-    slot="header"
-    id="header"
-    :main-navigation="mainNavigation"
-    :sector-navigation="sectorNavigation"
-    :addon-navigation="addonNavigation"
-    :custom-class="customClass"
-    :active-route-id="activeRouteId"
-    :active-sector-id="activeSectorId"
-  >
+  <scale-app-header slot="header" id="header">
     <div slot="menu-icon">
       <scale-nav-icon icon="action-mute"> Mute </scale-nav-icon>
       <scale-nav-icon icon="action-play"> Play </scale-nav-icon>
@@ -439,25 +417,19 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 
 ```html
 <scale-app-shell>
-  <scale-app-header
-    slot="header"
-    id="header"
-    :main-navigation="mainNavigation"
-    :icon-navigation="iconNavigation"
-    :addon-navigation="addonNavigation"
-    :custom-class="customClass"
-    :active-route-id="activeRouteId"
-    :active-sector-id="activeSectorId"
-  >
+  <scale-app-header slot="header" id="header">
     <div slot="menu-sector">
       <scale-nav-segment
         is-active="true"
         href="#custom-sector-1"
-        @click="handleClick"
+        onclick="handleClick()"
       >
         Custom Sector #1
       </scale-nav-segment>
-      <scale-nav-segment href="#custom-sector-2" @click="handleClick">
+      <scale-nav-segment
+        href="#custom-sector-2"
+        onclick="handleClick()"
+      >
         Custom Sector #2
       </scale-nav-segment>
     </div>
@@ -469,6 +441,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     Scroll more to test header behavior
   </div>
 </scale-app-shell>
+
+<script>
+  function handleClick() {
+    /* ... */
+  }
+</script>
 ```
 
 ## Custom Addon Navigation
@@ -524,25 +502,19 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 
 ```html
 <scale-app-shell>
-  <scale-app-header
-    slot="header"
-    id="header"
-    :main-navigation="mainNavigation"
-    :icon-navigation="iconNavigation"
-    :sector-navigation="sectorNavigation"
-    :custom-class="customClass"
-    :active-route-id="activeRouteId"
-    :active-sector-id="activeSectorId"
-  >
+  <scale-app-header slot="header" id="header">
     <div slot="menu-addon">
       <scale-nav-segment
         is-active="true"
         href="#custom-addon-1"
-        @click="handleClick"
+        onclick="handleClick()"
       >
         Custom Addon #1
       </scale-nav-segment>
-      <scale-nav-segment href="#custom-addon-2" @click="handleClick">
+      <scale-nav-segment
+        href="#custom-addon-2"
+        onclick="handleClick()"
+      >
         Custom Addon #2
       </scale-nav-segment>
     </div>
@@ -554,6 +526,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     Scroll more to test header behavior
   </div>
 </scale-app-shell>
+
+<script>
+  function handleClick() {
+    /* ... */
+  }
+</script>
 ```
 
 ## Custom Logo
@@ -608,22 +586,13 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 
 ```html
 <scale-app-shell>
-  <scale-app-header
-    slot="header"
-    id="header"
-    :main-navigation="mainNavigation"
-    :icon-navigation="iconNavigation"
-    :sector-navigation="sectorNavigation"
-    :custom-class="customClass"
-    :active-route-id="activeRouteId"
-    :active-sector-id="activeSectorId"
-  >
+  <scale-app-header slot="header" id="header">
     <div slot="logo">
       <app-logo
         claim
         href="#custom"
         logo-title="Custom"
-        @click="handleClick"
+        onclick="handleClick()"
       ></app-logo>
     </div>
   </scale-app-header>
@@ -634,6 +603,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     Scroll more to test header behavior
   </div>
 </scale-app-shell>
+
+<script>
+  function handleClick() {
+    /* ... */
+  }
+</script>
 ```
 
 ## Custom Mobile Menu
@@ -693,16 +668,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 ```html
 <body>
   <scale-app-shell>
-    <scale-app-header
-      slot="header"
-      id="header"
-      :main-navigation="mainNavigation"
-      :icon-navigation="iconNavigation"
-      :sector-navigation="sectorNavigation"
-      :custom-class="customClass"
-      :active-route-id="activeRouteId"
-      :active-sector-id="activeSectorId"
-    >
+    <scale-app-header slot="header" id="header">
       <div slot="menu-mobile"><pre>menu-mobile</pre></div>
     </scale-app-header>
     <div style="height: 800px; padding: 48px 0;">
