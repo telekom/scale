@@ -15,7 +15,7 @@ const vueComponentModels: ComponentModelConfig[] = [
       'scale-text-field',
       'scale-textarea',
       'scale-dropdown',
-      'scale-switch'
+      'scale-switch',
     ],
     event: 'scaleChange',
     targetAttr: 'value',
