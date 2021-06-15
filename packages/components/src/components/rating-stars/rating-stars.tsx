@@ -14,7 +14,17 @@ adapted from shoelace's rating component
 https://github.com/shoelace-style/shoelace/blob/next/src/components/rating/rating.ts
 */
 
-import { Component, h, Prop, Host, Element, State, Event, EventEmitter, Watch } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  Host,
+  Element,
+  State,
+  Event,
+  EventEmitter,
+  Watch,
+} from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -50,15 +60,14 @@ export class RatingStars {
   /** Emitted when the value has changed. */
   @Event() scaleChange!: EventEmitter<void>;
 
+  colorFilled = `var(--scl-color-primary)`;
+  colorBlank = `var(--scl-color-grey-50)`;
+  size = this.small ? '16px' : '24px';
+
   @Watch('value')
   handleValueChange() {
     this.scaleChange.emit();
   }
-
-
-  colorFilled = `var(--scl-color-primary)`;
-  colorBlank = `var(--scl-color-grey-50)`;
-  size = this.small ? '16px' : '24px';
 
   renderIcon = (color: string, size: string, selected?: boolean) => {
     if (selected) {
