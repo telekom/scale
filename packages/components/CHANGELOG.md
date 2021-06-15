@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.14](https://github.com/telekom/scale/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2021-06-15)
+
+
+### Bug Fixes
+
+* **components-vue:** update proxies form control config ([#407](https://github.com/telekom/scale/issues/407)) ([acf7e22](https://github.com/telekom/scale/commit/acf7e22395634cdc5b54c0600631959fa0063460))
+* ignore empty text nodes while setting icon-position attribute in button ([#390](https://github.com/telekom/scale/issues/390)) ([d88c2b8](https://github.com/telekom/scale/commit/d88c2b80da831a67033fc34c20e8e5b133320024))
+
+
+### Features
+
+* **button:** add download attribute ([#380](https://github.com/telekom/scale/issues/380)) ([49b14c0](https://github.com/telekom/scale/commit/49b14c0e1c211f7fa882943d2c82ab93699cc7f0))
+
+
+
+
+
 # [3.0.0-beta.13](https://github.com/telekom/scale/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2021-06-07)
 
 
