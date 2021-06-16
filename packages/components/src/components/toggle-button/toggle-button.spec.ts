@@ -12,7 +12,7 @@
 import { newSpecPage, SpecPage } from '@stencil/core/testing';
 import { ToggleButton } from './toggle-button';
 
-describe('RatingStars', () => {
+describe('Toggle Button', () => {
   let page: SpecPage;
   describe('snapshots', () => {
     it('default props', async () => {

@@ -54,7 +54,7 @@ export class ToggleButton {
   /** (optional) set the border-radius left, right or both */
   @Prop() radius: 'left' | 'right' | 'both' | null = null;
   /** (optional) toggle button's id */
-  @Prop() toggleButtonId?: string;
+  @Prop({ reflect: true }) toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
