@@ -10,7 +10,7 @@
 | Property         | Attribute          | Description                                                  | Type                                      | Default     |
 | ---------------- | ------------------ | ------------------------------------------------------------ | ----------------------------------------- | ----------- |
 | `ariaLabel`      | `aria-label`       | (optional) aria-label attribute needed for icon-only buttons | `string`                                  | `undefined` |
-| `colorScheme`    | `color-scheme`     | (optional) background color scheme of a selected button      | `"black" \| "magenta"`                    | `'magenta'` |
+| `colorScheme`    | `color-scheme`     | (optional) background color scheme of a selected button      | `"dark" \| "light"`                       | `'light'`   |
 | `disabled`       | `disabled`         | (optional) If `true`, the button is disabled                 | `boolean`                                 | `false`     |
 | `iconOnly`       | `icon-only`        | (optional) Button type                                       | `boolean`                                 | `false`     |
 | `iconPosition`   | `icon-position`    | (optional) Icon position related to the label                | `"after" \| "before"`                     | `'before'`  |
