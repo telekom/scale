@@ -15,7 +15,7 @@ import ScaleToggleButton from './ScaleToggleButton.vue';
       control: { type: 'select', options: ['left', 'right', 'both'] },
     },
 	colorScheme: {
-      control: { type: 'select', options: ['magenta', 'black'] },
+      control: { type: 'select', options: ['light', 'dark'] },
     },
   }}
 />
@@ -191,15 +191,15 @@ export const Template = (args, { argTypes }) => ({
 </scale-toggle-button>
 ```
 
-## Color Scheme Black 
+## Color Scheme Dark 
 ### (...click toggle button)
 
 <Canvas withSource="none">
   <Story
-    name="Color Scheme Black"
+    name="Color Scheme Dark"
     args={{
       label: 'Label',
-	  colorScheme: 'black'
+	  colorScheme: 'dark'
     }}
   >
     {Template.bind({})}
@@ -207,7 +207,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-button color-scheme="black">Label</scale-toggle-button>
+<scale-toggle-button color-scheme="dark">Label</scale-toggle-button>
 ```
 
 ## Regular With Icon Before
