@@ -84,21 +84,19 @@ describe('RatingStars', () => {
       expect(element.getCssClassMap()).toContain('toggle-button');
       expect(element.getCssClassMap()).toContain('toggle-button--primary');
       expect(element.getCssClassMap()).toContain('toggle-button--icon-before');
-      expect(element.getCssClassMap()).toContain('toggle-button--magenta');
+      expect(element.getCssClassMap()).toContain('toggle-button--light');
 
       expect(element.getBasePartMap()).toContain('toggle-button');
       expect(element.getBasePartMap()).toContain('primary');
       expect(element.getBasePartMap()).toContain('icon-before');
-      expect(element.getBasePartMap()).toContain('magenta');
-	  element.iconOnly = true;
-	  expect(element.getCssClassMap()).toContain('toggle-button--icon-only');
-	  expect(element.getBasePartMap()).toContain('icon-only');
+      expect(element.getBasePartMap()).toContain('light');
+      element.iconOnly = true;
+      expect(element.getCssClassMap()).toContain('toggle-button--icon-only');
+      expect(element.getBasePartMap()).toContain('icon-only');
     });
   });
 
   describe('functions', () => {
-    let page: SpecPage;
-
     beforeEach(async () => {
       page = await newSpecPage({
         components: [ToggleButton],
@@ -119,7 +117,7 @@ describe('RatingStars', () => {
       toggleButton.dispatchEvent(new Event('click'));
       await page.waitForChanges();
       expect(page.rootInstance.selected).toBe(true);
-	  toggleButton.dispatchEvent(new Event('click'));
+      toggleButton.dispatchEvent(new Event('click'));
       await page.waitForChanges();
       expect(page.rootInstance.selected).toBe(false);
     });

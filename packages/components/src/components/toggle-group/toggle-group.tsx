@@ -56,7 +56,7 @@ export class ToggleGroup {
   @Event() scaleClickGroup!: EventEmitter;
 
   @Listen('scaleClick')
-  scaleCickHandler(ev) {
+  scaleClickHandler(ev) {
     const tempState = [...this.status];
     tempState.forEach((button) => {
       if (!ev.detail.selected) {
@@ -96,7 +96,6 @@ export class ToggleGroup {
       toggleButton.setAttribute('variant', this.variant);
       toggleButton.setAttribute('disabled', this.disabled && 'disabled');
     });
-    // console.log('tempState', tempState)
     this.status = tempState;
   }
 
