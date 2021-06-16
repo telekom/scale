@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle Group snapshots default props 1`] = `
+<scale-toggle-group>
+  <mock:shadow-root>
+    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-toggle-button disabled="false" radius="left" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="false" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="false" radius="right" selected="" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+</scale-toggle-group>
+`;
+
+exports[`Toggle Group snapshots disabled 1`] = `
+<scale-toggle-group aria-label="Aria Label" disabled="">
+  <mock:shadow-root>
+    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-toggle-button disabled="disabled" radius="left" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="disabled" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="disabled" radius="right" selected="" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+</scale-toggle-group>
+`;
+
+exports[`Toggle Group snapshots size small, multi false 1`] = `
+<scale-toggle-group multi="false" size="small">
+  <mock:shadow-root>
+    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-toggle-button disabled="false" radius="left" size="small" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="false" size="small" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="false" radius="right" selected="" size="small" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+</scale-toggle-group>
+`;
+
+exports[`Toggle Group snapshots styles 1`] = `
+<scale-toggle-group styles="color:red">
+  <mock:shadow-root>
+    <style>
+      color:red
+    </style>
+    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+      <slot></slot>
+    </div>
+  </mock:shadow-root>
+  <scale-toggle-button disabled="false" radius="left" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="false" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+  <scale-toggle-button disabled="false" radius="right" selected="" size="large" variant="primary">
+    Click Me!
+  </scale-toggle-button>
+</scale-toggle-group>
+`;

@@ -87,9 +87,8 @@ export class ToggleGroup {
       this.hostElement.querySelectorAll('scale-toggle-button')
     );
     toggleButtons.forEach((toggleButton) => {
-      const button = toggleButton.shadowRoot.querySelector('button');
       tempState.push({
-        id: button.getAttribute('id'),
+        id: toggleButton.getAttribute('toggle-button-id'),
         selected: toggleButton.hasAttribute('selected'),
       });
       toggleButton.setAttribute('size', this.size);
