@@ -20,7 +20,9 @@ export class {{className}} {
   /** (optional) The width and height in pixels */
   @Prop() size?: number = 24;
   /** (optional) Sets the icon color via the `fill` attribute */
-  @Prop() color?: string = 'currentColor'; 
+  @Prop() color?: string = 'currentColor';
+  /** (optional) Sets the icon color via the `fill` attribute */
+  @Prop() fill?: string = 'currentColor'; 
   /** (optional) If `true`, the icon changes visually */
   @Prop() selected?: boolean = false;
   /** (optional) If `true` the SVG element will get `aria-hidden="true"` */
@@ -41,7 +43,7 @@ export class {{className}} {
       <Host>
         <svg xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="{{viewBox}}" {...ariaHidden}>
           {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
-          <g fill={this.color}>
+          <g fill={((this.fill === 'currentColor') ? this.color : this.fill)}>
             {this.selected ? (<g>{{{markup.selected}}}</g>) : (<g>{{{markup.default}}}</g>)}
           </g>
         </svg>
