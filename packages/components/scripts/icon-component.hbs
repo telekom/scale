@@ -20,9 +20,9 @@ export class {{className}} {
   /** (optional) The width and height in pixels */
   @Prop() size?: number = 24;
   /** (optional) Sets the icon color via the `fill` attribute */
-  @Prop() color?: string = 'currentColor';
-  /** (optional) Sets the icon color via the `fill` attribute */
   @Prop() fill?: string = 'currentColor'; 
+  /** (optional) Alias for `fill` */
+  @Prop() color?: string = 'currentColor';
   /** (optional) If `true`, the icon changes visually */
   @Prop() selected?: boolean = false;
   /** (optional) If `true` the SVG element will get `aria-hidden="true"` */
