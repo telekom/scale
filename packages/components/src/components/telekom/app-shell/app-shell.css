@@ -12,6 +12,7 @@
 :host {
   --background: var(--scl-color-background-standard, #fff);
   --spacing-x: var(--scl-spacing-24);
+  --min-height: 100vh;
 }
 
 .sr-only {
@@ -22,7 +23,7 @@
 
 .shell {
   display: flex;
-  min-height: 100%;
+  min-height: var(--min-height);
   flex-direction: column;
 }
 
@@ -30,6 +31,7 @@
   background: var(--background);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
+  flex: 1;
 }
 
 @media (min-width: 1552px) {

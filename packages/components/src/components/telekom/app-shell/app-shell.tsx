@@ -65,6 +65,7 @@ export class Shell {
           <main class="content">
             <slot></slot>
           </main>
+          <slot name="footer"></slot>
         </div>
       </Host>
     );
