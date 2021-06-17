@@ -27,8 +27,9 @@ export class Tooltip {
   tooltip: any;
 
   @Element() host: HTMLScaleTooltipElement;
-
+  /** (optional) The content of the Tooltip supporting Text only */
   @Prop() content = '';
+  /** (optional) Position of the Tooltip on the Object */
   @Prop() placement:
     | 'top'
     | 'top-start'
@@ -42,10 +43,16 @@ export class Tooltip {
     | 'left'
     | 'left-start'
     | 'left-end' = 'top';
+  /** (optional) Disable Tooltip */
   @Prop() disabled = false;
+  /** (optional) Distance of the Tooltip from the Target Object (related to the `placement`) */
   @Prop() distance = 5;
+  /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
+  /** (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either on an x-axis (at `placement` top/down)
+  or on a y-axis (for output `placement` left/right) */
   @Prop() skidding = 0;
+  /** (optional) Set custom trigger Event selection */
   @Prop() trigger: string = 'hover focus';
 
   @Watch('open')

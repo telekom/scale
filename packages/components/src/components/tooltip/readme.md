@@ -7,32 +7,32 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                                                                                                                                                                                                                                   | Type                                                                                                                                                                 | Default         |
-| ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `content`   | `content`   | The tooltip's content. Alternatively, you can use the content slot.                                                                                                                                                                           | `string`                                                                                                                                                             | `''`            |
-| `disabled`  | `disabled`  | Set to true to disable the tooltip so it won't show when triggered.                                                                                                                                                                           | `boolean`                                                                                                                                                            | `false`         |
-| `distance`  | `distance`  | The distance in pixels from which to offset the tooltip away from its target.                                                                                                                                                                 | `number`                                                                                                                                                             | `10`            |
-| `open`      | `open`      | Indicates whether or not the tooltip is open. You can use this in lieu of the show/hide methods.                                                                                                                                              | `boolean`                                                                                                                                                            | `false`         |
-| `placement` | `placement` | The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip inside of the viewport.                                                                                                         | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`         |
-| `skidding`  | `skidding`  | The distance in pixels from which to offset the tooltip along its target.                                                                                                                                                                     | `number`                                                                                                                                                             | `0`             |
-| `trigger`   | `trigger`   | Controls how the tooltip is activated. Possible options include `click`, `hover`, `focus`, and `manual`. Multiple options can be passed by separating them with a space. When manual is used, the tooltip must be activated programmatically. | `string`                                                                                                                                                             | `'hover focus'` |
+| Property    | Attribute   | Description                                                                                                                                                                                           | Type                                                                                                                                                                 | Default         |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `content`   | `content`   | (optional) The content of the Tooltip supporting Text only                                                                                                                                            | `string`                                                                                                                                                             | `''`            |
+| `disabled`  | `disabled`  | (optional) Disable Tooltip                                                                                                                                                                            | `boolean`                                                                                                                                                            | `false`         |
+| `distance`  | `distance`  | (optional) Distance of the Tooltip from the Target Object (related to the `placement`)                                                                                                                | `number`                                                                                                                                                             | `5`             |
+| `open`      | `open`      | (optional) Set the Tooltip to open per default (will still be closed on closing Events)                                                                                                               | `boolean`                                                                                                                                                            | `false`         |
+| `placement` | `placement` | (optional) Position of the Tooltip on the Object                                                                                                                                                      | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`         |
+| `skidding`  | `skidding`  | (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either on an x-axis (at `placement` top/down) or on a y-axis (for output `placement` left/right) | `number`                                                                                                                                                             | `0`             |
+| `trigger`   | `trigger`   | (optional) Set custom trigger Event selection                                                                                                                                                         | `string`                                                                                                                                                             | `'hover focus'` |
 
 
 ## Events
 
-| Event           | Description                                                                                                  | Type               |
-| --------------- | ------------------------------------------------------------------------------------------------------------ | ------------------ |
-| `sl-after-hide` | Emitted after the tooltip has hidden and all transitions are complete.                                       | `CustomEvent<any>` |
-| `sl-aftershow`  | Emitted after the tooltip has shown and all transitions are complete.                                        | `CustomEvent<any>` |
-| `sl-hide`       | Emitted when the tooltip begins to hide. Calling `event.preventDefault()` will prevent it from being hidden. | `CustomEvent<any>` |
-| `sl-show`       | Emitted when the tooltip begins to show. Calling `event.preventDefault()` will prevent it from being shown.  | `CustomEvent<any>` |
+| Event              | Description | Type               |
+| ------------------ | ----------- | ------------------ |
+| `scale-after-hide` |             | `CustomEvent<any>` |
+| `scale-aftershow`  |             | `CustomEvent<any>` |
+| `scale-hide`       |             | `CustomEvent<any>` |
+| `scale-show`       |             | `CustomEvent<any>` |
 
 
 ## Methods
 
-### `hide() => Promise<void>`
+### `hideTooltip() => Promise<void>`
 
-Shows the tooltip.
+
 
 #### Returns
 
@@ -40,43 +40,22 @@ Type: `Promise<void>`
 
 
 
-### `show() => Promise<void>`
+### `showTooltip() => Promise<void>`
 
-Shows the tooltip.
+
 
 #### Returns
 
 Type: `Promise<void>`
 
 
-
-
-## Slots
-
-| Slot        | Description                                                                      |
-| ----------- | -------------------------------------------------------------------------------- |
-|             | The tooltip's target element. Only the first element will be used as the target. |
-| `"content"` | The tooltip's content. Alternatively, you can use the content prop.              |
 
 
 ## Shadow Parts
 
-| Part     | Description                   |
-| -------- | ----------------------------- |
-| `"base"` | The component's base wrapper. |
-
-
-## CSS Custom Properties
-
-| Name                     | Description                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| `--hide-delay`           | The amount of time to wait before hiding the tooltip.        |
-| `--hide-duration`        | The amount of time the hide transition takes to complete.    |
-| `--hide-timing-function` | The timing function (easing) to use for the hide transition. |
-| `--max-width`            | The maximum width of the tooltip.                            |
-| `--show-delay`           | The amount of time to wait before showing the tooltip.       |
-| `--show-duration`        | The amount of time the show transition takes to complete.    |
-| `--show-timing-function` | The timing function (easing) to use for the show transition. |
+| Part     | Description |
+| -------- | ----------- |
+| `"base"` |             |
 
 
 ----------------------------------------------
