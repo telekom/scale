@@ -57,32 +57,28 @@ export class ToggleGroup {
 
   @Listen('scaleClick')
   scaleClickHandler(ev) {
-    const tempState = [...this.status];
-    tempState.forEach((button) => {
+    let tempState: ButtonStatus[];
+    if (this.multi) {
+      tempState = this.status.map((obj) =>
+        ev.detail.id === obj.id ? ev.detail : { ...obj }
+      );
+    } else {
       if (!ev.detail.selected) {
-        if (button.id === ev.detail.id) {
-          button.selected = false;
-        }
+        tempState = this.status.map((obj) =>
+          ev.detail.id === obj.id ? ev.detail : { ...obj }
+        );
+        /* clicked button has now selected state */
       } else {
-        if (this.multi) {
-          if (button.id === ev.detail.id) {
-            button.selected = true;
-          }
-        } else {
-          if (button.id === ev.detail.id) {
-            button.selected = true;
-          } else {
-            button.selected = false;
-          }
-        }
+        tempState = this.status.map((obj) =>
+          ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
+        );
       }
-    });
+    }
     this.setNewState(tempState);
-    this.scaleClickGroup.emit(this.status);
   }
 
   componentDidLoad() {
-    const tempState = [];
+    const tempState: ButtonStatus[] = [];
     const toggleButtons = Array.from(
       this.hostElement.querySelectorAll('scale-toggle-button')
     );
@@ -113,6 +109,7 @@ export class ToggleGroup {
       button.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
     });
     this.status = tempState;
+    this.scaleClickGroup.emit(this.status);
   }
 
   setButtonWidth() {
