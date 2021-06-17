@@ -109,11 +109,11 @@ export class RatingStars {
   }
 
   handleMouseMove(event: MouseEvent) {
-    this.hoverValue = this.getValueFromMousePosition(event);
+    this.hoverValue = this.getValueFromXPosition(event);
   }
 
   handleMouseClick(event: MouseEvent) {
-    this.setValue(this.getValueFromMousePosition(event));
+    this.setValue(this.getValueFromXPosition(event));
   }
 
   handleKeyDown(event: KeyboardEvent) {
@@ -145,7 +145,7 @@ export class RatingStars {
   }
 
   getValueFromTouchPosition(event: TouchEvent) {
-    return this.getValueFromXCoordinate(event.touches[0].clientX);
+    return this.getValueFromXPosition(event);
   }
 
   handleTouchStart(event: TouchEvent) {
@@ -176,32 +176,14 @@ export class RatingStars {
     this.value = newValue === this.value ? 0 : newValue;
     this.isHovering = false;
   }
-
-  getValueFromMousePosition(event: MouseEvent) {
-    const containerLeft = this.element.getBoundingClientRect().left;
-    const containerWidth = this.element.getBoundingClientRect().width;
-
-    const numOfSections = this.max / this.precision;
-    const sectionWidth = containerWidth / numOfSections;
-    const positionOfMousePointer =
-      (event.clientX - containerLeft) / sectionWidth;
-    const star = clamp(
-      this.roundToPrecision(
-        positionOfMousePointer * this.precision,
-        this.precision
-      ),
-      0,
-      this.max
-    );
-    return star;
-  }
-
-  getValueFromXCoordinate(coordinate: number) {
+  
+  getValueFromXPosition(event: any) {
+    const positionX = event.clientX ? event.clientX : event.touches[0].clientX;
     const containerLeft = this.element.getBoundingClientRect().left;
     const containerWidth = this.element.getBoundingClientRect().width;
     return clamp(
       this.roundToPrecision(
-        ((coordinate - containerLeft) / containerWidth) * this.max,
+        ((positionX - containerLeft) / containerWidth) * this.max,
         this.precision
       ),
       0,
