@@ -10,7 +10,7 @@ exports[`Table should match snapshot 1`] = `
     <thead>
       <tr>
         <th>
-          <span aria-hidden="" class="scale-sort-indicator">
+          <span aria-hidden="true" class="scale-sort-indicator">
             <svg viewBox="0 0 16 16">
               <polygon points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407" transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) "></polygon>
               <polygon points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069" transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) "></polygon>
@@ -19,7 +19,7 @@ exports[`Table should match snapshot 1`] = `
           Title
         </th>
         <th>
-          <span aria-hidden="" class="scale-sort-indicator">
+          <span aria-hidden="true" class="scale-sort-indicator">
             <svg viewBox="0 0 16 16">
               <polygon points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407" transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) "></polygon>
               <polygon points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069" transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) "></polygon>
@@ -28,7 +28,7 @@ exports[`Table should match snapshot 1`] = `
           Time
         </th>
         <th>
-          <span aria-hidden="" class="scale-sort-indicator">
+          <span aria-hidden="true" class="scale-sort-indicator">
             <svg viewBox="0 0 16 16">
               <polygon points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407" transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) "></polygon>
               <polygon points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069" transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) "></polygon>

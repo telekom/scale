@@ -42,7 +42,7 @@ export class Link {
           part={classNames('base', this.disabled && 'disabled')}
           href={this.disabled ? 'javascript:void(0)' : this.href}
           {...(!this.disabled ? { target: this.target } : {})}
-          aria-disabled={this.disabled}
+          aria-disabled={String(this.disabled)}
         >
           <span class="link__wrapper" part="wrapper">
             <slot />

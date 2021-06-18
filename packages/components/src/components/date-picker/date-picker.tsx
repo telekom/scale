@@ -274,7 +274,7 @@ export class DatePicker {
           // @ts-ignore
           ref={(element) => (this.duetInput = element)}
           {...ariaInvalidAttr}
-          {...ariaDescribedByAttr}
+          {...(this.helperText ? ariaDescribedByAttr : {})}
         ></duet-date-picker>
         {!!this.helperText && (
           <div

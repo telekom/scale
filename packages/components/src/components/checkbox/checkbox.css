@@ -260,5 +260,4 @@ scale-checkbox {
   cursor: not-allowed;
   border-color: var(--color-disabled);
   color: var(--color-disabled);
-  background: var(--background-disabled);
 }

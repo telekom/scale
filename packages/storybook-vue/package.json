@@ -6,6 +6,7 @@
   "license": "MPL-2.0",
   "devDependencies": {
     "@babel/core": "^7.10.4",
+    "@storybook/addon-a11y": "^6.2.9",
     "@storybook/addon-actions": "^6.2.7",
     "@storybook/addon-controls": "^6.2.7",
     "@storybook/addon-docs": "^6.2.7",

@@ -54,7 +54,6 @@ export class Switch {
               type="checkbox"
               checked={this.checked}
               disabled={this.disabled}
-              aria-pressed={this.checked}
               aria-labelledby={`${this.inputId}-label`}
               id={this.inputId}
               onChange={(e: any) => {

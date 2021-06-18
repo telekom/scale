@@ -162,6 +162,7 @@ scale-dropdown {
   transform: translate(var(--spacing-x), var(--scl-spacing-8));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
+  line-height: var(--scl-font-variant-label-size);
 }
 
 .dropdown--status-error .input__dropdown {
@@ -185,6 +186,8 @@ scale-dropdown {
 .dropdown--size-small.animated .input__label {
   transform: translate(var(--spacing-x), var(--scl-spacing-4));
   font-size: var(--font-size-label-focus);
+  font-weight: var(--font-weight-label-focus);
+  line-height: var(--scl-font-variant-label-size);
 }
 
 .dropdown--transparent .input__dropdown {
