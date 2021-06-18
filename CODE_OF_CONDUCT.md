@@ -1,7 +1,7 @@
 
 # Contributor Covenant Code of Conduct
 
-## Our Pledge
+## Our pledge
 
 We as members, contributors, and leaders pledge to make participation in our
 community a harassment-free experience for everyone, regardless of age, body
@@ -13,7 +13,7 @@ and orientation.
 We pledge to act and interact in ways that contribute to an open, welcoming,
 diverse, inclusive, and healthy community.
 
-## Our Standards
+## Our standards
 
 Examples of behavior that contributes to a positive environment for our
 community include:
@@ -37,7 +37,7 @@ Examples of unacceptable behavior include:
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
-## Enforcement Responsibilities
+## Enforcement responsibilities
 
 Community leaders are responsible for clarifying and enforcing our standards of
 acceptable behavior and will take appropriate and fair corrective action in
@@ -67,14 +67,14 @@ All complaints will be reviewed and investigated promptly and fairly.
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
 
-## Enforcement Guidelines
+## Enforcement guidelines
 
 Community leaders will follow these Community Impact Guidelines in determining
 the consequences for any action they deem in violation of this Code of Conduct:
 
 ### 1. Correction
 
-**Community Impact**: Use of inappropriate language or other behavior deemed
+**Community impact**: Use of inappropriate language or other behavior deemed
 unprofessional or unwelcome in the community.
 
 **Consequence**: A private, written warning from community leaders, providing
@@ -83,7 +83,7 @@ behavior was inappropriate. A public apology may be requested.
 
 ### 2. Warning
 
-**Community Impact**: A violation through a single incident or series
+**Community impact**: A violation through a single incident or series
 of actions.
 
 **Consequence**: A warning with consequences for continued behavior. No
@@ -93,9 +93,9 @@ includes avoiding interactions in community spaces as well as external channels
 like social media. Violating these terms may lead to a temporary or
 permanent ban.
 
-### 3. Temporary Ban
+### 3. Temporary ban
 
-**Community Impact**: A serious violation of community standards, including
+**Community impact**: A serious violation of community standards, including
 sustained inappropriate behavior.
 
 **Consequence**: A temporary ban from any sort of interaction or public
@@ -104,9 +104,9 @@ private interaction with the people involved, including unsolicited interaction
 with those enforcing the Code of Conduct, is allowed during this period.
 Violating these terms may lead to a permanent ban.
 
-### 4. Permanent Ban
+### 4. Permanent ban
 
-**Community Impact**: Demonstrating a pattern of violation of community
+**Community impact**: Demonstrating a pattern of violation of community
 standards, including sustained inappropriate behavior,  harassment of an
 individual, or aggression toward or disparagement of classes of individuals.
 
@@ -119,7 +119,7 @@ This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.0, available at
 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct
+Community impact guidelines were inspired by [Mozilla's code of conduct
 enforcement ladder](https://github.com/mozilla/diversity).
 
 [homepage]: https://www.contributor-covenant.org

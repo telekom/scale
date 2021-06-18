@@ -124,15 +124,25 @@ export const Template = (args, context) => ({
 <ArgsTable story='Standard' />
 
 ```html
-<scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
+<scale-modal heading="Today is your lucky day" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
-  <scale-button variant="secondary" @click="opened = false">
+  <scale-button variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button @click="handlePrimaryAction">
+  <scale-button>
     Primary Action
   </scale-button>
 </scale-modal>
+
+<script>
+  const modal = document.getElementById('modal');
+  function openModal() {
+    modal.opened = true;
+  }
+  function closeModal() {
+    modal.opened = false;
+  }
+</script>
 ```
 
 ### Scoped CSS variables
@@ -207,15 +217,25 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+<scale-modal heading="Today is your lucky day" size="small" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
-  <scale-button variant="secondary" @click="opened = false">
+  <scale-button variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button @click="handlePrimaryAction">
+  <scale-button>
     Primary Action
   </scale-button>
 </scale-modal>
+
+<script>
+  const modal = document.getElementById('modal');
+  function openModal() {
+    modal.opened = true;
+  }
+  function closeModal() {
+    modal.opened = false;
+  }
+</script>
 ```
 
 ## Standard Large
@@ -235,15 +255,25 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="large" :opened="opened" @scaleClose="opened = false">
+<scale-modal heading="Today is your lucky day" size="large" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
-  <scale-button slot="action" variant="secondary" @click="opened = false">
+  <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button slot="action" @click="handlePrimaryAction">
+  <scale-button slot="action">
     Primary Action
   </scale-button>
 </scale-modal>
+
+<script>
+  const modal = document.getElementById('modal');
+  function openModal() {
+    modal.opened = true;
+  }
+  function closeModal() {
+    modal.opened = false;
+  }
+</script>
 ```
 
 ## With No Actions
@@ -263,9 +293,19 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
+<scale-modal heading="Today is your lucky day" size="small" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
 </scale-modal>
+
+<script>
+  const modal = document.getElementById('modal');
+  function openModal() {
+    modal.opened = true;
+  }
+  function closeModal() {
+    modal.opened = false;
+  }
+</script>
 ```
 
 ## With No Body
@@ -285,14 +325,24 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" size="small" :opened="opened" @scaleClose="opened = false">
-  <scale-button slot="action" variant="secondary" @click="opened = false">
+<scale-modal heading="Today is your lucky day" size="small" id="modal">
+  <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button slot="action" @click="handlePrimaryAction">
+  <scale-button slot="action">
     Primary Action
   </scale-button>
 </scale-modal>
+
+<script>
+  const modal = document.getElementById('modal');
+  function openModal() {
+    modal.opened = true;
+  }
+  function closeModal() {
+    modal.opened = false;
+  }
+</script>
 ```
 
 ## Scrolling With Actions
@@ -311,17 +361,27 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-modal heading="Today is your lucky day" :opened="opened" @scaleClose="opened = false">
+<scale-modal heading="Today is your lucky day" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
   <p>...</p>
   <p>...</p>
   <p>...</p>
   <p>...</p>
-  <scale-button slot="action" variant="secondary" @click="opened = false">
+  <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button slot="action" @click="handlePrimaryAction">
+  <scale-button slot="action">
     Primary Action
   </scale-button>
 </scale-modal>
+
+<script>
+  const modal = document.getElementById('modal');
+  function openModal() {
+    modal.opened = true;
+  }
+  function closeModal() {
+    modal.opened = false;
+  }
+</script>
 ```

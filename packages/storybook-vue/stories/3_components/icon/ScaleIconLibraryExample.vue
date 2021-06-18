@@ -1,7 +1,7 @@
 <template>
   <div>
     <scale-icon-action-favorite
-      :color="color"
+      :fill="fill"
       :size="size"
       :selected="selected"
       :decorative="decorative"
@@ -13,6 +13,7 @@
 <script>
 export default {
   props: {
+    fill: { type: String, default: 'currentColor'},
     color: { type: String, default: 'currentColor' },
     size: { type: Number, default: 24 },
     selected: { type: Boolean, default: false },

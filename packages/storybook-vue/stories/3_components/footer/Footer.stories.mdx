@@ -71,8 +71,7 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-footer claim-lang="en" :footer-navigation="footerNavigation">
-</scale-app-footer>
+<scale-app-footer claim-lang="en"></scale-app-footer>
 ```
 
 ### Scoped CSS variables
@@ -141,9 +140,28 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-app-footer
+  id="footer"
   claim-lang="en"
-  :footer-navigation="footerNavigation"
   variant="minimal"
 >
 </scale-app-footer>
+
+<script>
+  const footer = document.getElementById('footer');
+  footer.footerNavigation = [
+    { name: "Contact", id: "Contact", href: "#contact" },
+    {
+      name: "Terms and conditions",
+      id: "Terms and conditions",
+      href: "#terms-and-conditions",
+    },
+    { name: "Legal notice", id: "Legal notice", href: "#legal-notice" },
+    {
+      name: "Data privacy",
+      id: "Data privacy",
+      href: "#data-privacy",
+      icon: "alert-imprint-dataprivacy",
+    },
+  ];
+</script>
 ```

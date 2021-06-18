@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.14](https://github.com/telekom/scale/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2021-06-15)
+
+
+### Features
+
+* **button:** add download attribute ([#380](https://github.com/telekom/scale/issues/380)) ([49b14c0](https://github.com/telekom/scale/commit/49b14c0e1c211f7fa882943d2c82ab93699cc7f0))
+
+
+
+
+
+# [3.0.0-beta.13](https://github.com/telekom/scale/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2021-06-07)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
