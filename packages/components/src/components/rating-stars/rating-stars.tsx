@@ -23,7 +23,6 @@ import {
   State,
   Event,
   EventEmitter,
-  Watch,
 } from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
@@ -58,16 +57,11 @@ export class RatingStars {
   /** (optional) slider label */
   @Prop() label?: string;
   /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter<void>;
+  @Event() scaleRatingChange!: EventEmitter<{ value: number }>;
 
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
-
-  @Watch('value')
-  handleValueChange() {
-    this.scaleChange.emit();
-  }
 
   renderIcon = (color: string, size: string, selected?: boolean) => {
     if (selected) {
@@ -124,22 +118,26 @@ export class RatingStars {
     if (event.key === 'ArrowRight') {
       const valuePlus = this.value + this.precision;
       this.value = clamp(valuePlus, 0, this.max);
+      this.emitRatingValue();
       event.preventDefault();
     }
 
     if (event.key === 'ArrowLeft') {
       const ratingMinus = this.value - this.precision;
       this.value = clamp(ratingMinus, 0, this.max);
+      this.emitRatingValue();
       event.preventDefault();
     }
 
     if (event.key === 'Home') {
       this.value = 0;
+      this.emitRatingValue();
       event.preventDefault();
     }
 
     if (event.key === 'End') {
       this.value = this.max;
+      this.emitRatingValue();
       event.preventDefault();
     }
   }
@@ -174,9 +172,10 @@ export class RatingStars {
     }
 
     this.value = newValue === this.value ? 0 : newValue;
+    this.emitRatingValue();
     this.isHovering = false;
   }
-  
+
   getValueFromXPosition(evTou?: TouchEvent, evKey?: MouseEvent) {
     const positionX = evTou ? evTou.touches[0].clientX : evKey.clientX;
     const containerLeft = this.element.getBoundingClientRect().left;
@@ -200,6 +199,10 @@ export class RatingStars {
     return this.ariaLabelTranslation
       .replace(/\$\{x\}/gi, this.value.toString())
       .replace(/\$\{y\}/gi, this.max.toString());
+  }
+
+  emitRatingValue() {
+    this.scaleRatingChange.emit({ value: this.value });
   }
 
   render() {
