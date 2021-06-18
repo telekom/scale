@@ -17,6 +17,9 @@ import ScaleButton from "./ScaleButton.vue";
         },
         disabled: {
             control: { type: 'boolean' }
+        },
+        download: {
+            control: { type: 'boolean' }
         }
     }}
 />
@@ -34,6 +37,7 @@ export const Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :size="size"
       :href="href"
+      :download="download"
       :target="target"
       :type="type"
       :variant="variant"
@@ -253,6 +257,25 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-button href="https://example.com" target="_blank">Label</scale-button>
 ```
 
+## Link Download
+
+<Canvas withSource="none">
+    <Story
+        name='Link Download'
+        args={{
+            href: 'assets/welcome.png',
+            download: true,
+            label: 'Download'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-button href="assets/welcome.png" download>Download</scale-button>
+```
+
 ## External Link
 
 If the button with a link is used to point the user to an external address, then the user should be informed of this.
@@ -433,4 +456,24 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 
 ```html
 <scale-button size="small" href="https://example.com" target="_blank">Label</scale-button>
+```
+
+## Small Link Download
+
+<Canvas withSource="none">
+    <Story
+        name='Small Link Download'
+        args={{
+            size: 'small',
+            href: 'assets/welcome.png',
+            download: true,
+            label: 'Download'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-button size="small" href="assets/welcome.png" download>Download</scale-button>
 ```
