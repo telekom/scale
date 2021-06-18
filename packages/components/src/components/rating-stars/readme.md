@@ -20,9 +20,9 @@
 
 ## Events
 
-| Event         | Description                         | Type                |
-| ------------- | ----------------------------------- | ------------------- |
-| `scaleChange` | Emitted when the value has changed. | `CustomEvent<void>` |
+| Event               | Description                         | Type                              |
+| ------------------- | ----------------------------------- | --------------------------------- |
+| `scaleRatingChange` | Emitted when the value has changed. | `CustomEvent<{ value: number; }>` |
 
 
 ----------------------------------------------
