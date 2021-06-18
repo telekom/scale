@@ -109,11 +109,11 @@ export class RatingStars {
   }
 
   handleMouseMove(event: MouseEvent) {
-    this.hoverValue = this.getValueFromXPosition(event);
+    this.hoverValue = this.getValueFromXPosition(null, event);
   }
 
   handleMouseClick(event: MouseEvent) {
-    this.setValue(this.getValueFromXPosition(event));
+    this.setValue(this.getValueFromXPosition(null, event));
   }
 
   handleKeyDown(event: KeyboardEvent) {
@@ -177,8 +177,8 @@ export class RatingStars {
     this.isHovering = false;
   }
   
-  getValueFromXPosition(event: any) {
-    const positionX = event.clientX ? event.clientX : event.touches[0].clientX;
+  getValueFromXPosition(evTou?: TouchEvent, evKey?: MouseEvent) {
+    const positionX = evTou ? evTou.touches[0].clientX : evKey.clientX;
     const containerLeft = this.element.getBoundingClientRect().left;
     const containerWidth = this.element.getBoundingClientRect().width;
     return clamp(
