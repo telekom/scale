@@ -76,15 +76,15 @@
   fill: var(--scl-color-grey-50, #7c7c7c);
 }
 
-.rating__symbol__wrapper {
+.rating__symbol-wrapper {
   display: flex;
   padding: 0 var(--rating-spacing, 0.125rem);
 }
 
-.rating__symbol__wrapper:first-of-type {
+.rating__symbol-wrapper:first-of-type {
   padding-left: 0;
 }
 
-.rating__symbol__wrapper:last-of-type {
+.rating__symbol-wrapper:last-of-type {
   padding-right: 0;
 }

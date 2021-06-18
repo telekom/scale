@@ -9,7 +9,21 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host, Element } from '@stencil/core';
+/*
+adapted from shoelace's rating component
+https://github.com/shoelace-style/shoelace/blob/next/src/components/rating/rating.ts
+*/
+
+import {
+  Component,
+  h,
+  Prop,
+  Host,
+  Element,
+  State,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import { clamp, handleListeners } from './utils/utils';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -24,30 +38,32 @@ export class RatingStars {
 
   @Element() hostElement: HTMLElement;
   /** (optional) hoverValue  */
-  @Prop({ mutable: true }) hoverValue = 0;
-  /** (optional) isHovering  */
-  @Prop({ mutable: true }) isHovering = false;
-  /** (optional) numOfStars  */
-  @Prop({ mutable: true }) numOfStars = 5;
-  /** (optional) rating  */
-  @Prop({ mutable: true }) rating = 0;
+  @State() hoverValue = 0;
+  /** (optional) hoverValue  */
+  @State() isHovering = false;
+  /** (optional) max  */
+  @Prop() max = 5;
+  /** (optional) value  */
+  @Prop({ mutable: true }) value = 0;
   /** (optional) small  */
-  @Prop({ mutable: true }) small = false;
+  @Prop() small = false;
   /** (optional) disabled  */
-  @Prop({ mutable: true }) disabled = false;
-  /** (optional) ariaTranslation  */
+  @Prop() disabled = false;
+  /** (optional) ariaLabelTranslation  */
   @Prop({ mutable: true })
-  ariaTranslation = `${this.rating} out of ${this.numOfStars} stars`;
+  ariaLabelTranslation = `${this.value} out of ${this.max} stars`;
   /** (optional) precision  */
   @Prop() precision = 1;
   /** (optional) slider label */
   @Prop() label?: string;
+  /** Emitted when the value has changed. */
+  @Event() scaleRatingChange!: EventEmitter<{ value: number }>;
 
   colorFilled = `var(--scl-color-primary)`;
   colorBlank = `var(--scl-color-grey-50)`;
   size = this.small ? '16px' : '24px';
 
-  getSymbol = (color: string, size: string, selected?: boolean) => {
+  renderIcon = (color: string, size: string, selected?: boolean) => {
     if (selected) {
       return `<scale-icon-action-favorite color=${color} size=${size} selected />`;
     } else {
@@ -61,6 +77,9 @@ export class RatingStars {
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleMouseClick = this.handleMouseClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleTouchStart = this.handleTouchStart.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
+    this.handleTouchMove = this.handleTouchMove.bind(this);
   }
 
   componentDidLoad() {
@@ -84,19 +103,11 @@ export class RatingStars {
   }
 
   handleMouseMove(event: MouseEvent) {
-    this.hoverValue = this.getValueFromMousePosition(event);
+    this.hoverValue = this.getValueFromXPosition(null, event);
   }
 
   handleMouseClick(event: MouseEvent) {
-    if (this.disabled) {
-      return;
-    }
-
-    this.isHovering = false;
-    this.rating =
-      this.rating === this.hoverValue
-        ? 0
-        : this.getValueFromMousePosition(event);
+    this.setValue(this.getValueFromXPosition(null, event));
   }
 
   handleKeyDown(event: KeyboardEvent) {
@@ -105,45 +116,78 @@ export class RatingStars {
     }
 
     if (event.key === 'ArrowRight') {
-      const ratingPlus = this.rating + this.precision;
-      this.rating = clamp(ratingPlus, 0, this.numOfStars);
+      const valuePlus = this.value + this.precision;
+      this.value = clamp(valuePlus, 0, this.max);
+      this.emitRatingValue();
       event.preventDefault();
     }
 
     if (event.key === 'ArrowLeft') {
-      const ratingMinus = this.rating - this.precision;
-      this.rating = clamp(ratingMinus, 0, this.numOfStars);
+      const ratingMinus = this.value - this.precision;
+      this.value = clamp(ratingMinus, 0, this.max);
+      this.emitRatingValue();
       event.preventDefault();
     }
 
     if (event.key === 'Home') {
-      this.rating = 0;
+      this.value = 0;
+      this.emitRatingValue();
       event.preventDefault();
     }
 
     if (event.key === 'End') {
-      this.rating = this.numOfStars;
+      this.value = this.max;
+      this.emitRatingValue();
       event.preventDefault();
     }
   }
 
-  getValueFromMousePosition(event: MouseEvent) {
+  getValueFromTouchPosition(event: TouchEvent) {
+    return this.getValueFromXPosition(event);
+  }
+
+  handleTouchStart(event: TouchEvent) {
+    this.hoverValue = this.getValueFromTouchPosition(event);
+
+    // Prevent scrolling when touch is initiated
+    event.preventDefault();
+  }
+
+  handleTouchMove(event: TouchEvent) {
+    this.isHovering = true;
+    this.hoverValue = this.getValueFromTouchPosition(event);
+  }
+
+  handleTouchEnd(event: TouchEvent) {
+    this.isHovering = false;
+    this.setValue(this.hoverValue);
+
+    // Prevent click on mobile devices
+    event.preventDefault();
+  }
+
+  setValue(newValue: number) {
+    if (this.disabled) {
+      return;
+    }
+
+    this.value = newValue === this.value ? 0 : newValue;
+    this.emitRatingValue();
+    this.isHovering = false;
+  }
+
+  getValueFromXPosition(evTou?: TouchEvent, evKey?: MouseEvent) {
+    const positionX = evTou ? evTou.touches[0].clientX : evKey.clientX;
     const containerLeft = this.element.getBoundingClientRect().left;
     const containerWidth = this.element.getBoundingClientRect().width;
-
-    const numOfSections = this.numOfStars / this.precision;
-    const sectionWidth = containerWidth / numOfSections;
-    const positionOfMousePointer =
-      (event.clientX - containerLeft) / sectionWidth;
-    const star = clamp(
+    return clamp(
       this.roundToPrecision(
-        positionOfMousePointer * this.precision,
+        ((positionX - containerLeft) / containerWidth) * this.max,
         this.precision
       ),
       0,
-      this.numOfStars
+      this.max
     );
-    return star;
   }
 
   roundToPrecision(numberToRound: number, precision = 1) {
@@ -152,26 +196,32 @@ export class RatingStars {
   }
 
   getAriaLabel() {
-    return this.ariaTranslation
-      .replace(/\$\{x\}/gi, this.rating.toString())
-      .replace(/\$\{y\}/gi, this.numOfStars.toString());
+    return this.ariaLabelTranslation
+      .replace(/\$\{value\}/gi, this.value.toString())
+      .replace(/\$\{max\}/gi, this.max.toString());
+  }
+
+  emitRatingValue() {
+    this.scaleRatingChange.emit({ value: this.value });
   }
 
   render() {
-    const counter = Array.from(Array(this.numOfStars).keys());
-    const displayValue = this.isHovering ? this.hoverValue : this.rating;
+    const counter = Array.from(Array(this.max).keys());
+    const displayValue = this.isHovering ? this.hoverValue : this.value;
 
     return (
       <Host>
         <div
           class={this.getCssClassMap()}
-          id="rating"
           ref={(el) => (this.element = el)}
           onMouseMove={this.handleMouseMove}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
           onClick={this.handleMouseClick}
           onKeyDown={this.handleKeyDown}
+          onTouchStart={this.handleTouchStart}
+          onTouchEnd={this.handleTouchEnd}
+          onTouchMove={this.handleTouchMove}
           tabIndex={this.disabled ? -1 : 0}
           role="figure"
           aria-describedby="rating__description"
@@ -188,7 +238,7 @@ export class RatingStars {
           <span class="rating__symbols" aria-hidden="true">
             {counter.map((index) => (
               <span
-                class="rating__symbol__wrapper"
+                class="rating__symbol-wrapper"
                 onMouseEnter={this.handleMouseEnter}
               >
                 <span
@@ -206,7 +256,7 @@ export class RatingStars {
                     'rating__symbol--hover':
                       this.isHovering && Math.ceil(displayValue) === index + 1,
                   }}
-                  innerHTML={this.getSymbol(this.colorBlank, this.size)}
+                  innerHTML={this.renderIcon(this.colorBlank, this.size)}
                   id={`star-${index + 1}`}
                 />
               </span>
@@ -218,7 +268,7 @@ export class RatingStars {
           >
             {counter.map((index) => (
               <span
-                class="rating__symbol__wrapper"
+                class="rating__symbol-wrapper"
                 onMouseEnter={this.handleMouseEnter}
               >
                 <span
@@ -234,7 +284,7 @@ export class RatingStars {
                     'rating__symbol--hover':
                       this.isHovering && Math.ceil(displayValue) === index + 1,
                   }}
-                  innerHTML={this.getSymbol(this.colorFilled, this.size, true)}
+                  innerHTML={this.renderIcon(this.colorFilled, this.size, true)}
                 />
               </span>
             ))}

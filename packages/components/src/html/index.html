@@ -40,28 +40,35 @@
     <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
     <h3>Rating Stars</h3>
-    <h4>rating = 1</h4>
-    <scale-rating-stars rating="1" label="Rating Label"></scale-rating-stars>
+    <h4>value = 1</h4>
+    <scale-rating-stars value="1" label="Rating Label"> </scale-rating-stars>
     <h4>disabled</h4>
     <scale-rating-stars
-      rating="2"
+      value="2"
       disabled
       label="Rating Label"
     ></scale-rating-stars>
     <h4>spacing by custom styles</h4>
     <scale-rating-stars
       class="custom-styles"
-      rating="3"
+      value="3"
       label="Rating Label"
     ></scale-rating-stars>
     <h4>small</h4>
     <scale-rating-stars
-      rating="4"
+      value="4"
       small
       label="Rating Label"
     ></scale-rating-stars>
     <h4>No Label</h4>
-    <scale-rating-stars rating="5"></scale-rating-stars>
+    <scale-rating-stars value="5"></scale-rating-stars>
+    <h4>Aria Translation</h4>
+    <scale-rating-stars
+      value="1"
+      label="Rating Label"
+      aria-label-translation="${value} out of ${max} stars"
+    >
+    </scale-rating-stars>
 
     <h3>Chart - Stack</h3>
     <scale-chart-stack-card
