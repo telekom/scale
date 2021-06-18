@@ -197,8 +197,8 @@ export class RatingStars {
 
   getAriaLabel() {
     return this.ariaLabelTranslation
-      .replace(/\$\{x\}/gi, this.value.toString())
-      .replace(/\$\{y\}/gi, this.max.toString());
+      .replace(/\$\{value\}/gi, this.value.toString())
+      .replace(/\$\{max\}/gi, this.max.toString());
   }
 
   emitRatingValue() {
