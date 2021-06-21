@@ -10,6 +10,13 @@
  */
 
 scale-app-header {
+  --header-nav-height: 56px;
+  --header-brand-height: 72px;
+  --header-border-radius: var(--scl-radius-8);
+  --header-transition-speed: 0.3s;
+  --header-brand-collapsed-height: 4px;
+  --header-max-width: inherit;
+
   --background: var(--scl-color-primary);
   --font-weight: var(--scl-font-weight-regular);
   --border: 1px solid #dfdfdf;
@@ -29,6 +36,19 @@ scale-app-header {
     top: -56px;
   }
 }
+
+.header__container {
+  width: 100%;
+  height: 128px;
+}
+
+@media (max-width: 1023px) {
+  .header__container {
+    width: 100%;
+    height: 66px;
+  }
+}
+
 .header {
   width: 100%;
   z-index: 99;
@@ -36,6 +56,7 @@ scale-app-header {
   background: var(--background);
   font-weight: var(--font-weight);
 }
+
 .header .header__brand {
   color: var(--color-brand);
   background: var(--background-brand);
