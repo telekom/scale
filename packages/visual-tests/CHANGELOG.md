@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.15](https://github.com/telekom/scale/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2021-06-21)
+
+
+### Bug Fixes
+
+* **a11y:** axe audit ([#421](https://github.com/telekom/scale/issues/421)) ([39a0021](https://github.com/telekom/scale/commit/39a002141aa909eb1100bc5a8f727e0a1ba462a0))
+
+
+
+
+
 # [3.0.0-beta.14](https://github.com/telekom/scale/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2021-06-15)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

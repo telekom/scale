@@ -3,7 +3,7 @@
 exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 <scale-link href="http://example.com" open-new-tab="true">
   <mock:shadow-root>
-    <a class="link" href="http://example.com" part="base" target="_self">
+    <a aria-disabled="false" class="link" href="http://example.com" part="base" target="_self">
       <span class="link__wrapper" part="wrapper">
         <slot></slot>
         <slot name="icon"></slot>
@@ -17,7 +17,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 exports[`Link should handle disabled link 1`] = `
 <scale-link disabled="true" href="http://example.com">
   <mock:shadow-root>
-    <a aria-disabled="" class="link link--disabled" href="javascript:void(0)" part="base disabled">
+    <a aria-disabled="true" class="link link--disabled" href="javascript:void(0)" part="base disabled">
       <span class="link__wrapper" part="wrapper">
         <slot></slot>
         <slot name="icon"></slot>
@@ -34,7 +34,7 @@ exports[`Link should handle setted styles 1`] = `
     <style>
       color:red
     </style>
-    <a class="link" href="http://example.com" part="base" target="_self">
+    <a aria-disabled="false" class="link" href="http://example.com" part="base" target="_self">
       <span class="link__wrapper" part="wrapper">
         <slot></slot>
         <slot name="icon"></slot>
@@ -48,7 +48,7 @@ exports[`Link should handle setted styles 1`] = `
 exports[`Link should have link href value when href value is set 1`] = `
 <scale-link href="http://example.com">
   <mock:shadow-root>
-    <a class="link" href="http://example.com" part="base" target="_self">
+    <a aria-disabled="false" class="link" href="http://example.com" part="base" target="_self">
       <span class="link__wrapper" part="wrapper">
         <slot></slot>
         <slot name="icon"></slot>
@@ -62,7 +62,7 @@ exports[`Link should have link href value when href value is set 1`] = `
 exports[`Link should match snapshot 1`] = `
 <scale-link>
   <mock:shadow-root>
-    <a class="link" part="base" target="_self">
+    <a aria-disabled="false" class="link" part="base" target="_self">
       <span class="link__wrapper" part="wrapper">
         <slot></slot>
         <slot name="icon"></slot>
