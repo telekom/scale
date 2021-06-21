@@ -13,11 +13,9 @@ export class Alertbox {
   @Prop() icon: boolean = false;
   @Prop({ reflect: true }) hasclose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = true;
+  @Prop() timeout: number = 0;
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
-
-  defaultTimeout = 2000;
 
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
@@ -57,20 +55,10 @@ export class Alertbox {
   }
 
   close = () => {
-    this.opened = false;
+    setTimeout(() => {
+      this.opened = false;
+    }, this.timeout);
   }
-
-  onCloseAlertWithTimeout = () => {
-    if (this.timeout !== false) {
-      if (typeof this.timeout === 'number') {
-        setTimeout(this.close, this.timeout);
-      } else {
-        setTimeout(this.close, this.defaultTimeout);
-      }
-    } else {
-      return null;
-    }
-  };
 
   render() {
     if (!this.opened) {
@@ -90,7 +78,7 @@ export class Alertbox {
                 <scale-icon-action-circle-close
                   class="alertbox__icon-close"
                   onClick={() => {
-                    this.onCloseAlertWithTimeout();
+                    this.close();
                   }}
                   accessibility-title="close"
                 />
