@@ -30,7 +30,7 @@ export class Divider {
 
         <div
           class={this.getCssClassMap()}
-          aria-hidden
+          aria-hidden="true"
           part={classNames('base', this.vertical && 'vertical')}
         >
           {!this.vertical ? (

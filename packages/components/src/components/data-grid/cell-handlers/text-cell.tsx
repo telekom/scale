@@ -37,6 +37,7 @@ export const TextCell: Cell = {
       editable = false,
       iconPrefix,
       iconSuffix,
+      label,
     } = field;
 
     // Input component doesn't expand with content, so need to return a fake element that simulates width
@@ -53,6 +54,7 @@ export const TextCell: Cell = {
         type: 'text',
         size: 'small',
         value: content,
+        label,
       } as any;
 
       // TODO: use blur to reduce number of changes - but doesn't pass value
