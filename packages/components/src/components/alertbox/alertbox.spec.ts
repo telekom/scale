@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { remove } from 'lodash';
+// import { remove } from 'lodash';
 import { Alertbox } from './alertbox';
 
 
@@ -30,7 +30,7 @@ describe('Alertbox', () => {
     expect(element.getCssClassMap()).toContain('button--disabled');
   });
 
-  it('should handle click remove', async () => {
+  /* it('should handle click remove', async () => {
     const page = await newSpecPage({
       components: [Alertbox],
       html: `
@@ -48,7 +48,7 @@ describe('Alertbox', () => {
       const element = new Alertbox();
       element.componentDidLoad();
       expect(element.content).toBe("p[slot='text']");
-    });
+    }); */
 
 
 

@@ -13,7 +13,7 @@ export class Alertbox {
   @Prop() icon: boolean = false;
   @Prop({ reflect: true }) hasclose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = false;
+  @Prop() timeout?: boolean | number = true;
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
 
@@ -56,9 +56,8 @@ export class Alertbox {
     return;
   }
 
-  close() {
+  close = () => {
     this.opened = false;
-    console.log('close');
   }
 
   onCloseAlertWithTimeout = () => {
@@ -74,8 +73,6 @@ export class Alertbox {
   };
 
   render() {
-    this.onCloseAlertWithTimeout();
-
     if (!this.opened) {
       return null;
     }
@@ -93,7 +90,7 @@ export class Alertbox {
                 <scale-icon-action-circle-close
                   class="alertbox__icon-close"
                   onClick={() => {
-                    this.close();
+                    this.onCloseAlertWithTimeout();
                   }}
                   accessibility-title="close"
                 />
