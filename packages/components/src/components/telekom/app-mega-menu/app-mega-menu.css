@@ -52,7 +52,7 @@ app-mega-menu {
   max-width: 1168px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, minmax(min-content, 240px));
+  grid-template-columns: repeat(5, 233px);
   list-style: none;
   padding-left: var(--scl-spacing-32);
 }
