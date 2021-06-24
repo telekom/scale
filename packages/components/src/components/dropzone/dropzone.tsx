@@ -6,7 +6,6 @@ import {
   Event,
   EventEmitter,
   Host,
-  Prop,
 } from '@stencil/core';
 
 const MAX_UPLOAD_SIZE = 3000000; // bytes
@@ -24,7 +23,8 @@ const ALLOWED_FILE_TYPES = [
 })
 export class Dropzone {
   @Element() public dropArea: HTMLElement;
-
+  @State() uploadedFiles: Array<string> = [];
+  @State() uploadedFilesNames: Array<string> = [];
   @State() public highlighted: boolean = false;
   @Event() onUploadCompleted: EventEmitter<Blob>;
 
@@ -66,6 +66,9 @@ export class Dropzone {
     files = [...files];
     console.log('handleFiles()');
     console.log(files);
+    this.uploadedFiles.push(files);
+    console.log(this.uploadedFiles);
+
     for (let i = 0; i < files.length; i++) {
       this.uploadFile(files[i]);
     }
@@ -120,9 +123,11 @@ export class Dropzone {
       const fileContainer: HTMLElement = this.dropArea.shadowRoot.querySelector(
         '#file_list'
       );
-      const p = document.createElement('p');
-      fileContainer.append(p);
-      fileContainer.append(file.name);
+
+      this.uploadedFilesNames.push(file.name);
+      console.log(this.uploadedFilesNames);
+      fileContainer.innerHTML = '';
+      fileContainer.append(this.handleList());
 
       console.log(
         'uploading finished, emitting an image blob to the outside world'
@@ -138,6 +143,28 @@ export class Dropzone {
       console.error('something went wrong...', err);
     };
     reader.readAsDataURL(file);
+  }
+
+  handleList() {
+    // Create the list element:
+    var list = document.createElement('ul');
+    list.setAttribute('id', 'uploadList');
+
+    for (var i = 0; i < this.uploadedFilesNames.length; i++) {
+      // Create the list item:
+      var item = document.createElement('li');
+
+      // Set its contents:
+      item.appendChild(document.createTextNode(this.uploadedFilesNames[i]));
+
+      // Add it to the list:
+      list.appendChild(item);
+    }
+
+    // Finally, return the constructed list:
+    console.log('here');
+    console.log(list);
+    return list;
   }
 
   private checkFileSize(size: number): boolean {
