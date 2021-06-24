@@ -146,25 +146,45 @@ export class Dropzone {
   }
 
   handleList() {
-    // Create the list element:
-    var list = document.createElement('ul');
+    let list = document.createElement('ul');
+
     list.setAttribute('id', 'uploadList');
 
-    for (var i = 0; i < this.uploadedFilesNames.length; i++) {
-      // Create the list item:
-      var item = document.createElement('li');
+    for (let i = 0; i < this.uploadedFilesNames.length; i++) {
+      if (this.uploadedFilesNames[i] != '') {
+        let item = document.createElement('li');
 
-      // Set its contents:
-      item.appendChild(document.createTextNode(this.uploadedFilesNames[i]));
-
-      // Add it to the list:
-      list.appendChild(item);
+        item.appendChild(document.createTextNode(this.uploadedFilesNames[i]));
+        let button = document.createElement('scale-button');
+        button.onclick = () => {
+          this.handleButtonClicked(button.id);
+        };
+        button.setAttribute('id', `button_${i}`);
+        item.appendChild(button);
+        list.appendChild(item);
+      }
     }
-
-    // Finally, return the constructed list:
     console.log('here');
     console.log(list);
     return list;
+  }
+
+  handleButtonClicked(id: string) {
+    console.log('clicked button' + id);
+    const position = id.match(/\d+$/)[0];
+    this.uploadedFilesNames.splice(parseInt(position), 1, '');
+    const fileContainer: HTMLElement = this.dropArea.shadowRoot.querySelector(
+      '#file_list'
+    );
+    const button: HTMLElement = this.dropArea.shadowRoot.querySelector(
+      `#${id}`
+    );
+    button.outerHTML = '';
+    console.log(this.uploadedFilesNames);
+    fileContainer.innerHTML = '';
+    fileContainer.append(this.handleList());
+
+    console.log(this.uploadedFilesNames);
   }
 
   private checkFileSize(size: number): boolean {
