@@ -59,7 +59,7 @@ Ist die Text-Area deaktiviert, können Nutzer\*innen keinen Text eingeben, bezie
 
 ## Read-Only
 
-Read-Only-Text-Areas zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
+Read-Only-Text-Areas zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer\*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
 
 ![Image Name](assets/3_components/text-area/text-area-read-only.png)
 

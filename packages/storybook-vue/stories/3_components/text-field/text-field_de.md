@@ -53,7 +53,7 @@ Ist das Text-Field deaktiviert, können Nutzer\*innen keinen Text eingeben, bezi
 
 ## Read-Only
 
-Read-Only-Text-Fields zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
+Read-Only-Text-Fields zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer\*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
 
 ![Image Name](assets/3_components/text-input/text-field-read-only.png)
 

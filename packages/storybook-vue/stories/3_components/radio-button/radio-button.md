@@ -30,7 +30,7 @@ To initiate an action, use a button.
 
 An empty circle is considered to be deselected.
 
-### Radio  button selected (2)
+### Radio button selected (2)
 
 If the circle is filled, the option is considered to be selected.
 
