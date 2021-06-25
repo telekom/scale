@@ -51,7 +51,7 @@ export class RadioButton {
     }
   }
 
-  handleCheckChange = (event: any) => {
+  handleCheckedChange = (event: any) => {
     this.checked = event.target.checked;
     // I don't think this is ever going to be `false` but well...
     if (this.checked) {
@@ -96,7 +96,7 @@ export class RadioButton {
             type="radio"
             name={this.name}
             id={this.inputId}
-            onChange={this.handleCheckChange}
+            onChange={this.handleCheckedChange}
             value={this.value}
             checked={this.checked}
             disabled={this.disabled}
