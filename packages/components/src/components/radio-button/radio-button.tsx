@@ -63,7 +63,7 @@ export class RadioButton {
   };
 
   // Prevent click event being fired twice when the target is the label.
-  handleLabelClick = (event) => {
+  handleLabelClick = (event: any) => {
     event.stopPropagation();
   };
 
