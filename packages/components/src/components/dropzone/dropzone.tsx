@@ -55,6 +55,32 @@ export class Dropzone {
     this.dropArea.addEventListener('drop', this.handleDrop, false);
   }
 
+  /**
+   *
+   * check for file parameter
+   *
+   */
+
+  private checkFileSize(size: number): boolean {
+    return size <= MAX_UPLOAD_SIZE;
+  }
+
+  private checkFileType(type: string): boolean {
+    for (let i = 0; i < ALLOWED_FILE_TYPES.length; i++) {
+      let file_checker = ALLOWED_FILE_TYPES[i];
+      if (type === file_checker) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   *
+   * upload handling
+   *
+   */
+
   handleDrop = (e) => {
     var dt = e.dataTransfer;
     var files = dt.files;
@@ -64,11 +90,6 @@ export class Dropzone {
 
   handleFiles = (files) => {
     files = [...files];
-    console.log('handleFiles()');
-    console.log(files);
-    this.uploadedFiles.push(files);
-    console.log(this.uploadedFiles);
-
     for (let i = 0; i < files.length; i++) {
       this.uploadFile(files[i]);
     }
@@ -83,8 +104,7 @@ export class Dropzone {
     // check if 1 file is uploaded
     if (files.length === 1) {
       const file = files[0];
-      console.log('onInputChange()');
-      console.log(file);
+
       // check if the user isn't trying to upload a file larger then the MAX_UPLOAD_SIZE
       if (!this.checkFileSize(file.size)) {
         console.error(
@@ -123,8 +143,9 @@ export class Dropzone {
       const fileContainer: HTMLElement = this.dropArea.shadowRoot.querySelector(
         '#file_list'
       );
-
+      this.uploadedFiles.push(file);
       this.uploadedFilesNames.push(file.name);
+      console.log(this.uploadedFiles);
       console.log(this.uploadedFilesNames);
       fileContainer.innerHTML = '';
       fileContainer.append(this.handleList());
@@ -145,34 +166,40 @@ export class Dropzone {
     reader.readAsDataURL(file);
   }
 
+  /**
+   *
+   * file list visual handling
+   *
+   */
+
   handleList() {
     let list = document.createElement('ul');
-
     list.setAttribute('id', 'uploadList');
 
     for (let i = 0; i < this.uploadedFilesNames.length; i++) {
       if (this.uploadedFilesNames[i] != '') {
         let item = document.createElement('li');
-
+        item.setAttribute('class', 'list_element');
         item.appendChild(document.createTextNode(this.uploadedFilesNames[i]));
-        let button = document.createElement('scale-button');
+        let button = document.createElement('button');
         button.onclick = () => {
           this.handleButtonClicked(button.id);
         };
         button.setAttribute('id', `button_${i}`);
+        button.setAttribute('class', 'delete_button');
         item.appendChild(button);
         list.appendChild(item);
       }
     }
-    console.log('here');
-    console.log(list);
     return list;
   }
 
   handleButtonClicked(id: string) {
-    console.log('clicked button' + id);
     const position = id.match(/\d+$/)[0];
     this.uploadedFilesNames.splice(parseInt(position), 1, '');
+    this.uploadedFiles.splice(parseInt(position), 1, '');
+    console.log(this.uploadedFilesNames);
+    console.log(this.uploadedFiles);
     const fileContainer: HTMLElement = this.dropArea.shadowRoot.querySelector(
       '#file_list'
     );
@@ -180,25 +207,8 @@ export class Dropzone {
       `#${id}`
     );
     button.outerHTML = '';
-    console.log(this.uploadedFilesNames);
     fileContainer.innerHTML = '';
     fileContainer.append(this.handleList());
-
-    console.log(this.uploadedFilesNames);
-  }
-
-  private checkFileSize(size: number): boolean {
-    return size <= MAX_UPLOAD_SIZE;
-  }
-
-  private checkFileType(type: string): boolean {
-    for (let i = 0; i < ALLOWED_FILE_TYPES.length; i++) {
-      let file_checker = ALLOWED_FILE_TYPES[i];
-      if (type === file_checker) {
-        return true;
-      }
-    }
-    return false;
   }
 
   render() {

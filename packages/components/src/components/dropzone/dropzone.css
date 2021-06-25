@@ -10,6 +10,29 @@
   margin-bottom: 0px;
 }
 
+.delete_button {
+  position: absolute;
+  right: 60px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin-top: 0px;
+}
+
+.delete_button::after {
+  display: inline-block;
+  transform: scale(2);
+  content: '\00d7'; /* This will render the 'X' */
+}
+
+.list_element {
+  padding: 10px;
+  margin-left: -25px;
+}
+
 * {
   box-sizing: border-box;
 }
