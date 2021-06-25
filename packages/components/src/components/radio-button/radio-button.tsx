@@ -13,7 +13,6 @@ import {
   Component,
   Event,
   EventEmitter,
-  Element,
   h,
   Host,
   Prop,
@@ -32,8 +31,6 @@ let i = 0;
   shadow: false,
 })
 export class RadioButton {
-  @Element() hostElement: HTMLElement;
-
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
