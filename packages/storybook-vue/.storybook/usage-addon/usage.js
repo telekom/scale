@@ -73,6 +73,8 @@ import textField_en from 'raw-loader!../../stories/3_components/text-field/text-
 import textField_de from 'raw-loader!../../stories/3_components/text-field/text-field_de.md';
 import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
+import tooltip_en from 'raw-loader!../../stories/3_components/tooltip/tooltip.md';
+import tooltip_de from 'raw-loader!../../stories/3_components/tooltip/tooltip_de.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -157,6 +159,8 @@ const Usage = (props) => {
     'text-field_de': textField_de,
     footer_en,
     footer_de,
+    tooltip_en,
+    tooltip_de
   };
 
   // Select the most appropriate markdown text based on if this is a component story and

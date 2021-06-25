@@ -1,0 +1,33 @@
+import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import ScaleTooltip from './ScaleTooltip.vue';
+
+<Meta
+    title='Beta Components/Tooltip'
+    component={ScaleTooltip}
+/>
+
+export const Template = (args, { argTypes }) => ({
+    components: { ScaleTooltip },
+    template: `
+    <scale-tooltip>
+      <scale-button>
+        Hover for Tooltip
+      </scale-button>
+    </scale-tooltip>
+  `
+})
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name='Standard'
+    args={{
+      opened: false,
+      showActions: true,
+      shortBody: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

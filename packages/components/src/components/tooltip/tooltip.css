@@ -9,7 +9,7 @@ host*,
   --scale-tooltip-background-color: var(--scl-color-grey-60);
   --scale-tooltip-color: var(--scl-color-white);
   --scale-tooltip-font-weight: var(--scl-font-weight-regular);
-  --scale-tooltip-font-size: var(--scl-font-size-12);
+  --scale-tooltip-font-size: var(--scl-font-size-16);
   --scale-tooltip-line-height: 1.4;
   --scale-tooltip-padding: var(--scl-spacing-2) var(--scl-spacing-8);
   --scale-tooltip-arrow-size: 5px;
@@ -21,6 +21,7 @@ host*,
   --scale-tooltip-hide-timing-function: ease;
   --scale-tooltip-show-duration: 0.125s;
   --scale-tooltip-show-timing-function: ease;
+  --scale-tooltip-z-index: var(--scl-z-index-70);
 
   display: contents;
   position: relative;
@@ -29,7 +30,7 @@ host*,
 
 .tooltip-positioner {
   position: absolute;
-  z-index: var(--scale-z-index-tooltip);
+  z-index: var(--scale-tooltip-z-index);
   pointer-events: none;
 }
 
