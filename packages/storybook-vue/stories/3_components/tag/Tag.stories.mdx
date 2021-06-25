@@ -11,6 +11,12 @@ import ScaleTag from "./ScaleTag.vue";
   title="Components/Tag"
   component={ScaleTag}
   argTypes={{
+    variant: {
+      control: { type: 'select', options: ['', 'secondary'] }
+    },
+    size: {
+      control: { type: 'select', options: ['', 'small']}
+    },
     label: {
       control: { type: "text" },
     },
