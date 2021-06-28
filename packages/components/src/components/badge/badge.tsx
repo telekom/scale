@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, Element } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-badge',
@@ -7,12 +8,17 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class Badge {
+  @Element() hostElement: HTMLElement;
   /** (optional) Variant size of the badge itself */
   @Prop({ mutable: true }) size: 'large' | 'small' = 'large';
   /** (optional) Variant color/filling of the badge */
   @Prop({ mutable: true }) color: 'primary' | 'white' | 'black' | 'blue';
   /** (optional) Variant rotation of the badge/circle */
   @Prop({ mutable: true }) rotation: number = 0;
+
+  connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
+  }
 
   displayStyle() {
     return `:host {
