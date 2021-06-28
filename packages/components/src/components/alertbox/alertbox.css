@@ -14,7 +14,7 @@
 
 /*Alertbox Color*/
 .alertbox--color-error {
-  background-color: var(--scl-color-red-70);
+  background-color: var(--scl-color-text-error);
   color: var(--scl-color-white);
 }
 
@@ -26,6 +26,18 @@
 .alertbox.alertbox--color-white {
   background-color: var(--scl-color-white);
   color: var(--scl-color-black);
+}
+.alertbox.alertbox--color-yellow {
+  background-color: yellow;
+  color: var(--scl-color-black);
+}
+.alertbox.alertbox--color-blue {
+  background-color: blue;
+  color: var(--scl-color-white);
+}
+.alertbox.alertbox--color-green {
+  background-color: green;
+  color: var(--scl-color-white);
 }
 
 /*variants*/
@@ -81,6 +93,15 @@
   top: 13px;
   right: 16px;
 }
+.alertbox .alertbox__container-header .alertbox__icon-close :hover {
+  background-color: #4CAF50; 
+}
+alertbox .alertbox__container-header .alertbox__icon-close :focus {
+  background-color: #4CAF50; 
+}
+alertbox .alertbox__container-header .alertbox__icon-close :active {
+  background-color: #4CAF50; 
+}
 
 /* Success Icon */
 .alertbox .alertbox__icon-success {
@@ -92,6 +113,14 @@
 }
 /* Error Icon */
 .alertbox .alertbox__icon-error {
+  position: absolute;
+  top: 13px;
+  left: 17px;
+  height: 10px;
+  width: 14px;
+}
+/* Info Icon */
+.alertbox .alertbox__icon-warning {
   position: absolute;
   top: 13px;
   left: 17px;

@@ -1,30 +1,27 @@
 import { Component, h, Host, Prop, Element, State } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-
 @Component({
   tag: 'scale-alertbox',
   styleUrl: 'alertbox.css',
   shadow: true,
 })
 export class Alertbox {
-  @Prop() color?: 'white' | 'black' | 'error' = 'white';
+  @Prop() color?: 'white' | 'yellow' | 'green' | 'blue' | 'black' | 'error' = 'white';
   @Prop() variant?: 'floating' | 'outline';
   @Prop() icon: boolean = false;
   @Prop({ reflect: true }) hasclose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout: number = 0;
+  @Prop() timeout?: boolean | number = false;
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
-
+  defaultTimeout = 20000;
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
   }
-
   connectedCallback() {
     statusNote({ source: this.hostElement, type: 'warn' });
   }
-
   handleIcons() {
     if (this.icon) {
       switch (this.color) {
@@ -42,6 +39,27 @@ export class Alertbox {
               accessibility-title="success"
             />
           );
+          case 'yellow':
+            return (
+              <scale-icon-action-warning
+                class="alertbox__icon-warning"
+                accessibility-title="warning"
+              />
+            );
+            case 'blue':
+            return (
+              <scale-icon-action-informational
+                class="alertbox__icon-info"
+                accessibility-title="info"
+              />
+            );
+            case 'green':
+            return (
+              <scale-icon-action-success
+                class="alertbox__icon-success"
+                accessibility-title="warsuccessning"
+              />
+            );
         case 'error':
           return (
             <scale-icon-alert-error
@@ -53,18 +71,26 @@ export class Alertbox {
     }
     return;
   }
-
   close = () => {
-    setTimeout(() => {
-      this.opened = false;
-    }, this.timeout);
+    this.opened = false;
+    console.log('close');
   }
-
+  onCloseAlertWithTimeout = () => {
+    if (this.timeout !== false) {
+      if (typeof this.timeout === 'number') {
+        setTimeout(this.close, this.timeout);
+      } else {
+        setTimeout(this.close, this.defaultTimeout);
+      }
+    } else {
+      return null;
+    }
+  };
   render() {
+    this.onCloseAlertWithTimeout();
     if (!this.opened) {
       return null;
     }
-
     return (
       <Host>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
@@ -94,19 +120,15 @@ export class Alertbox {
       </Host>
     );
   }
-
   getBasePartMap() {
     return this.getCssOrBasePartMap('basePart');
   }
-
   getCssClassMap() {
     return this.getCssOrBasePartMap('css');
   }
-
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const name = 'alertbox';
     const prefix = mode === 'basePart' ? '' : `${name}--`;
-
     return classNames(
       name,
       this.color && `${prefix}color-${this.color}`,
