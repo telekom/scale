@@ -19,8 +19,8 @@ import ScaleBadge from './ScaleBadge.vue';
       },
     },
     size: {
-      defaultValue: 'big',
-      options: ['small', 'big'],
+      defaultValue: 'large',
+      options: ['small', 'large'],
       control: {
         type: 'select',
       },
@@ -30,9 +30,7 @@ import ScaleBadge from './ScaleBadge.vue';
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleBadge },
-  props: {
-    ...ScaleBadge.props,
-  },
+  props: ScaleBadge.props,
   template: `
       <scale-badge :size="size" :color="color" :rotation="rotation">
       <div>
@@ -51,9 +49,7 @@ export const Template = (args, { argTypes }) => ({
 
 export const Template2 = (args, { argTypes }) => ({
   components: { ScaleBadge },
-  props: {
-    ...ScaleBadge.props,
-  },
+  props: ScaleBadge.props,
   template: `
       <scale-badge :size="size" :color="color" :rotation="rotation">
       <div>
@@ -72,9 +68,7 @@ export const Template2 = (args, { argTypes }) => ({
 
 export const Template3 = (args, { argTypes }) => ({
   components: { ScaleBadge },
-  props: {
-    ...ScaleBadge.props,
-  },
+  props: ScaleBadge.props,
   template: `
       <scale-badge :size="size" :color="color" :rotation="rotation">
       <div>
@@ -129,17 +123,17 @@ export const Template3 = (args, { argTypes }) => ({
   --color-badge:#e20074;
   --inner-width-small: 86px;
   --inner-height-small: 88px;
-  --inner-width-big: 126.5px;
-  --inner-height-big: 96px;
+  --inner-width-large: 126.5px;
+  --inner-height-large: 96px;
   --width-small: 120px;
   --height-small: 120px;
-  --height-big: 160px;
-  --width-big: 160px;
+  --height-large: 160px;
+  --width-large: 160px;
 }
 ```
 ## Size
 There are two sizes: 
-big / small. Big has the size 160x160 and small 120x120. In the example below, the badge is small
+Large / small. Large has the size 160x160 and small 120x120. In the example below, the badge is small
 
 <Canvas withSource="none">
   <Story
@@ -154,7 +148,7 @@ big / small. Big has the size 160x160 and small 120x120. In the example below, t
 </Canvas>
 
 ```html
-<scale-badge color="blue" size:"small" >
+<scale-badge color="blue" size="small" >
   <div>
     <div
       style="text-align:center; font-size:20px; font-family:TeleNeo; color:blwhiteack; font-weight:400;"
@@ -185,10 +179,10 @@ big / small. Big has the size 160x160 and small 120x120. In the example below, t
 </Canvas>
 
 ```html
-<scale-badge color:"blue" size:"small" rotation:"33" >
+<scale-badge color="blue" size="small" rotation="33" >
   <div>
     <div
-      style="text-align:center; font-size:20px; font-family:TeleNeo; color:blwhiteack; font-weight:400;"
+      style="text-align:center; font-size:20px; font-family:TeleNeo; color:blue; font-weight:400;"
     >
       Für nur
     </div>
@@ -216,7 +210,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-badge size="big"  rotation="0">
+<scale-badge size="lare"  rotation="0">
       <div>
         <div style="text-align:center; font-size:20px; font-family:TeleNeo; color:white; font-weight:400;">
           Für nur
@@ -235,7 +229,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
   <Story
     name="Asterisk"
     args={{
-      size: "big",
+      size: "large",
     }}
   >
     {Template3.bind({})}
@@ -243,7 +237,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-badge size="big" color="primary" rotation="0">
+<scale-badge size="large" color="primary" rotation="0">
       <div>
         <div style="text-align: center; font-size: 25px; font-family: TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
           ab

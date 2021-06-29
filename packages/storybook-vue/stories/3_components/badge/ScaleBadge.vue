@@ -11,7 +11,7 @@
 <script>
 export default {
   props: {
-    size: { type: String, default: "big" },
+    size: { type: String, default: "large" },
     color: {type: String, default: "primary"},
     rotation:{type: Number, default: 0},
   },

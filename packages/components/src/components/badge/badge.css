@@ -2,12 +2,12 @@
   --color-badge: #e20074;
   --inner-width-small: 86px;
   --inner-height-small: 88px;
-  --inner-width-big: 126.5px;
-  --inner-height-big: 96px;
+  --inner-width-large: 126.5px;
+  --inner-height-large: 96px;
   --width-small: 120px;
   --height-small: 120px;
-  --height-big: 160px;
-  --width-big: 160px;
+  --height-large: 160px;
+  --width-large: 160px;
 }
 
 .badge {
@@ -32,8 +32,8 @@
 }
 
 .badge.badge--size-large {
-  width: var(--width-big);
-  height: var(--height-big);
+  width: var(--width-large);
+  height: var(--height-large);
 }
 
 .badge.badge--size-small {
@@ -42,8 +42,8 @@
 }
 
 .badge.badge--size-large .badge--inner {
-  width: var(--inner-width-big);
-  height: var(--inner-height-big);
+  width: var(--inner-width-large);
+  height: var(--inner-height-large);
 }
 
 .badge.badge--size-small .badge--inner {
