@@ -6,9 +6,10 @@ import {
   Event,
   EventEmitter,
   Host,
+  Prop,
 } from '@stencil/core';
 
-const MAX_UPLOAD_SIZE = 3000000; // bytes
+const MAX_UPLOAD_SIZE = 20000000; // bytes
 const ALLOWED_FILE_TYPES = [
   'image/jpeg',
   'image/png',
@@ -22,22 +23,23 @@ const ALLOWED_FILE_TYPES = [
   shadow: true,
 })
 export class Dropzone {
-  @Element() public dropArea: HTMLElement;
-  @State() uploadedFiles: Array<string> = [];
-  @State() uploadedFilesNames: Array<string> = [];
+  @Element() public element: HTMLElement;
+  @Prop() uploadedFiles: Array<string> = [];
+  @State() droppedFiles: Array<string> = [];
+  @State() droppedFileNames: Array<string> = [];
   @State() public highlighted: boolean = false;
   @Event() onUploadCompleted: EventEmitter<Blob>;
 
   componentDidLoad() {
     // Prevent default drag behaviors
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => {
-      this.dropArea.addEventListener(eventName, this.preventDefaults, false);
+      this.element.addEventListener(eventName, this.preventDefaults, false);
       document.body.addEventListener(eventName, this.preventDefaults, false);
     });
 
     // // Highlight drop area when item is dragged over it
     ['dragenter', 'dragover'].forEach((eventName) => {
-      this.dropArea.addEventListener(
+      this.element.addEventListener(
         eventName,
         () => (this.highlighted = true),
         false
@@ -45,14 +47,14 @@ export class Dropzone {
     });
 
     ['dragleave', 'drop'].forEach((eventName) => {
-      this.dropArea.addEventListener(
+      this.element.addEventListener(
         eventName,
         () => (this.highlighted = false),
         false
       );
     });
 
-    this.dropArea.addEventListener('drop', this.handleDrop, false);
+    this.element.addEventListener('drop', this.handleDrop, false);
   }
 
   /**
@@ -75,12 +77,6 @@ export class Dropzone {
     return false;
   }
 
-  /**
-   *
-   * upload handling
-   *
-   */
-
   handleDrop = (e) => {
     var dt = e.dataTransfer;
     var files = dt.files;
@@ -91,7 +87,15 @@ export class Dropzone {
   handleFiles = (files) => {
     files = [...files];
     for (let i = 0; i < files.length; i++) {
-      this.uploadFile(files[i]);
+      if (this.checkFileType(files[i].type)) {
+        if (this.checkFileSize(files[i].size)) {
+          this.uploadFile(files[i]);
+        } else {
+          console.error('wrong file size' + files[i].size);
+        }
+      } else {
+        console.error('wrong file type' + files[i].type);
+      }
     }
   };
 
@@ -99,13 +103,15 @@ export class Dropzone {
     e.preventDefault();
     e.stopPropagation();
   }
-
+  /**
+   *
+   * file upload handling
+   *
+   */
   public onInputChange(files: FileList) {
     // check if 1 file is uploaded
     if (files.length === 1) {
       const file = files[0];
-
-      // check if the user isn't trying to upload a file larger then the MAX_UPLOAD_SIZE
       if (!this.checkFileSize(file.size)) {
         console.error(
           'Maximum file size exceeded. Max file size is: ' +
@@ -113,15 +119,13 @@ export class Dropzone {
             'bytes'
         );
         return false;
-      }
-      // check if the user isn't trying to upload anything else then an image
-      else if (!this.checkFileType(file.type)) {
+      } else if (!this.checkFileType(file.type)) {
         console.error('File type is not allowed');
         return false;
       }
-
-      // upload image
-      this.uploadFile(file);
+      if (this.checkFileType(file.type)) {
+        this.uploadFile(file);
+      }
     } else {
       console.error(
         files.length === 0
@@ -131,6 +135,11 @@ export class Dropzone {
       return false;
     }
   }
+  /**
+   *
+   * drag and drop file upload handling
+   *
+   */
   private uploadFile(file) {
     // create a new instance of HTML5 FileReader api to handle uploading
     const reader = new FileReader();
@@ -140,13 +149,13 @@ export class Dropzone {
     };
 
     reader.onload = () => {
-      const fileContainer: HTMLElement = this.dropArea.shadowRoot.querySelector(
-        '#file_list'
+      const fileContainer: HTMLElement = this.element.shadowRoot.querySelector(
+        '.dropzone_file_list'
       );
-      this.uploadedFiles.push(file);
-      this.uploadedFilesNames.push(file.name);
-      console.log(this.uploadedFiles);
-      console.log(this.uploadedFilesNames);
+      this.droppedFiles.push(file);
+      this.droppedFileNames.push(file.name);
+      console.log(this.droppedFiles);
+      console.log(this.droppedFileNames);
       fileContainer.innerHTML = '';
       fileContainer.append(this.handleList());
 
@@ -174,67 +183,86 @@ export class Dropzone {
 
   handleList() {
     let list = document.createElement('ul');
-    list.setAttribute('id', 'uploadList');
+    list.setAttribute('id', 'dropzone_upload_list');
 
-    for (let i = 0; i < this.uploadedFilesNames.length; i++) {
-      if (this.uploadedFilesNames[i] != '') {
+    for (let i = 0; i < this.droppedFileNames.length; i++) {
+      if (this.droppedFileNames[i] != '') {
         let item = document.createElement('li');
-        item.setAttribute('class', 'list_element');
-        item.appendChild(document.createTextNode(this.uploadedFilesNames[i]));
-        let button = document.createElement('button');
-        button.onclick = () => {
-          this.handleButtonClicked(button.id);
+        item.setAttribute('class', 'dropzone_upload_list_element');
+        item.appendChild(document.createTextNode(this.droppedFileNames[i]));
+        let closeButton = document.createElement('button');
+        closeButton.onclick = () => {
+          this.handleButtonClicked(closeButton.id);
         };
-        button.setAttribute('id', `button_${i}`);
-        button.setAttribute('class', 'delete_button');
-        item.appendChild(button);
+        closeButton.setAttribute('id', `button_${i}`);
+        closeButton.setAttribute('class', 'dropzone_delete_button');
+        item.appendChild(closeButton);
         list.appendChild(item);
       }
     }
     return list;
   }
-
+  /**
+   *
+   * button handling
+   *
+   */
   handleButtonClicked(id: string) {
     const position = id.match(/\d+$/)[0];
-    this.uploadedFilesNames.splice(parseInt(position), 1, '');
-    this.uploadedFiles.splice(parseInt(position), 1, '');
-    console.log(this.uploadedFilesNames);
-    console.log(this.uploadedFiles);
-    const fileContainer: HTMLElement = this.dropArea.shadowRoot.querySelector(
-      '#file_list'
+    this.droppedFileNames.splice(parseInt(position), 1, '');
+    this.droppedFiles.splice(parseInt(position), 1, '');
+    console.log(this.droppedFileNames);
+    console.log(this.droppedFiles);
+    const fileContainer: HTMLElement = this.element.shadowRoot.querySelector(
+      '.dropzone_file_list'
     );
-    const button: HTMLElement = this.dropArea.shadowRoot.querySelector(
-      `#${id}`
-    );
+    const button: HTMLElement = this.element.shadowRoot.querySelector(`#${id}`);
     button.outerHTML = '';
     fileContainer.innerHTML = '';
     fileContainer.append(this.handleList());
   }
 
+  handleUploadButtonClick() {
+    let uploaded: Array<string> = [];
+    for (let i = 0; i < this.droppedFiles.length; i++) {
+      if (this.droppedFiles[i] != '') {
+        uploaded.push(this.droppedFiles[i]);
+      }
+    }
+    console.log(uploaded);
+    this.uploadedFiles = uploaded;
+  }
+
   render() {
     return (
       <Host>
-        <div id="drop-area">
-          <form class={{ highlight: this.highlighted }}>
-            <input
-              type="file"
-              name="files[]"
-              id="fileElem"
-              class="upload__input"
-              onChange={($event: any) =>
-                this.onInputChange($event.target.files)
-              }
-            />
-            <label class="button retry" htmlFor="fileElem">
-              <img src="https://img.icons8.com/android/24/000000/upload.png" />
-            </label>
-            <p class="dropzone-title">
-              Click or drag to select file for upload
-            </p>
-            <p class="dropzone-subtitle">20 mb maximum tile size.</p>
-          </form>
+        <div class="dropzone">
+          <label class="dropzone_clickarea" htmlFor="fileElem">
+            <form class={{ highlight: this.highlighted }}>
+              <input
+                type="file"
+                name="files[]"
+                id="fileElem"
+                class="dropzone_upload_input"
+                onChange={($event: any) =>
+                  this.onInputChange($event.target.files)
+                }
+              />
+              <img
+                class="dropzone_image"
+                src="https://img.icons8.com/android/24/000000/upload.png"
+              />
+              <p class="dropzone_title">
+                Click or drag to select file for upload
+              </p>
+              <p class="dropzone_subtitle">20 mb maximum tile size.</p>
+            </form>
+          </label>
         </div>
-        <div id="file_list" class="file_list"></div>
+        <div class="dropzone_file_list"></div>
+        <scale-button onClick={() => this.handleUploadButtonClick()}>
+          Upload
+        </scale-button>
       </Host>
     );
   }

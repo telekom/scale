@@ -1,16 +1,16 @@
-.file_list {
+.dropzone_file_list {
   margin: 5px;
   min-height: 10px;
   border-radius: 5px;
 }
 
-.file_list p {
+.dropzone_file_list p {
   border: solid 0.5px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-.delete_button {
+.dropzone_delete_button {
   position: absolute;
   right: 60px;
   background-color: Transparent;
@@ -22,13 +22,13 @@
   margin-top: 0px;
 }
 
-.delete_button::after {
+.dropzone_delete_button::after {
   display: inline-block;
   transform: scale(2);
   content: '\00d7'; /* This will render the 'X' */
 }
 
-.list_element {
+.dropzone_upload_list_element {
   padding: 10px;
   margin-left: -25px;
 }
@@ -36,7 +36,7 @@
 * {
   box-sizing: border-box;
 }
-#drop-area form {
+.dropzone form {
   border: 2px dashed lightgray;
   overflow: scroll;
   display: flex;
@@ -49,40 +49,40 @@
   padding: 50px 0px;
   margin: 0px;
 }
-#drop-area form.highlight {
+.dropzone form.highlight {
   border-color: #fff;
   background: rgba(255, 85, 102, 0.1);
 }
-#drop-area form p {
-  font-weight: bolder;
+.dropzone form p {
+  font-weight: bold;
   color: #000;
   margin: 0px;
   padding: 0px;
 }
-#drop-area form p:nth-child(2) {
+.dropzone form p:nth-child(2) {
   color: lightgray;
   font-size: 1em;
   margin: 15px 0px;
 }
-#drop-area form #fileElem {
+.dropzone form #fileElem {
   display: none;
 }
-#drop-area #gallery {
-  margin-top: 25px;
-  display: grid;
-  grid-template-columns: auto;
-  grid-column-gap: 3ch;
-  grid-row-gap: 3ch;
-}
-#drop-area .retry {
+.dropzone .retry {
   border: none;
   border-radius: 4px;
-  text-transform: uppercase;
   padding: 15px 50px;
   color: white;
   font-weight: 600;
 }
 
-.dropzone-title {
+.dropzone_title {
   font-size: 16px;
+}
+
+.dropzone_subtitle {
+  font-size: 12px;
+}
+
+.dropzone_image {
+  padding-bottom: 20px;
 }
