@@ -57,6 +57,8 @@ export class Modal {
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) Enable/disable Modal closing on outside click */
+  @Prop() closeClickOutside?: boolean = true;
 
   /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = false;
@@ -69,6 +71,7 @@ export class Modal {
 
   @Event() scaleOpen?: EventEmitter;
   @Event() scaleClose?: EventEmitter;
+  @Event() scaleCloseAttempt?: EventEmitter;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;
@@ -106,6 +109,14 @@ export class Modal {
     this.hasActionsSlot = actionSlots.length > 0;
     if (bodySlot != null) {
       this.hasBody = bodySlot.assignedElements().length > 0;
+    }
+  }
+
+  clickOutside() {
+    if (this.closeClickOutside) {
+      this.opened = false;
+    } else {
+      this.scaleCloseAttempt.emit();
     }
   }
 
@@ -213,7 +224,7 @@ export class Modal {
           <div
             class="modal__backdrop"
             part="backdrop"
-            onClick={() => (this.opened = false)}
+            onClick={() => this.clickOutside()}
           ></div>
           <div
             data-focus-trap-edge

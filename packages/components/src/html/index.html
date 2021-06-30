@@ -819,6 +819,38 @@
       });
     </script>
 
+    <h3>Modal without Click Outside</h3>
+    <scale-button id="show-modal-clickoutside"> show modal </scale-button>
+    <scale-modal
+      id="modal-clickoutside"
+      opened="false"
+      close-click-outside="false"
+    >
+      <span slot="header">Header content</span> content in the modal slot
+    </scale-modal>
+
+    <script>
+      const showModalclickoutside = document.querySelector(
+        '#show-modal-clickoutside'
+      );
+      const Modalclickoutside = document.getElementById('modal-clickoutside');
+      showModalclickoutside.addEventListener('click', () => {
+        Modalclickoutside.setAttribute('opened', 'true');
+      });
+
+      Modalclickoutside.addEventListener('scaleClose', () => {
+        Modalclickoutside.removeAttribute('opened');
+      });
+
+      Modalclickoutside.addEventListener('scaleCloseAttempt', () => {
+        alert('Close by click outside attempted');
+      });
+
+      document.getElementById('cancel-btn').addEventListener('click', () => {
+        Modalclickoutside.removeAttribute('opened');
+      });
+    </script>
+
     <h3>Switch</h3>
     <scale-switch label="Switch label"></scale-switch>
     <h3>Switch disabled</h3>
