@@ -100,7 +100,7 @@ export class Tag {
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const component = 'tag';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
-    
+
     return classNames(
       mode === 'basePart' ? 'base' : component,
       this.size && `${prefix}size-${this.size}`,
