@@ -18,9 +18,9 @@ import classNames from 'classnames';
 })
 export class Tag {
   /** (optional) Tag size */
-  @Prop() size?: '' | 'small' = '';
+  @Prop() size?: 'small';
   /** (optional) Tag variant */
-  @Prop() variant?: '' | 'secondary' = '';
+  @Prop() variant?: 'secondary';
   /** (optional) Tag href */
   @Prop() href?: string = '';
   /** (optional) Tag target */
@@ -100,7 +100,7 @@ export class Tag {
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const component = 'tag';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
-
+    
     return classNames(
       mode === 'basePart' ? 'base' : component,
       this.size && `${prefix}size-${this.size}`,
