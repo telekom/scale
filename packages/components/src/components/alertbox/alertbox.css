@@ -96,10 +96,10 @@
 .alertbox .alertbox__container-header .alertbox__icon-close :hover {
   background-color: #4CAF50; 
 }
-alertbox .alertbox__container-header .alertbox__icon-close :focus {
+.alertbox .alertbox__container-header .alertbox__icon-close :focus {
   background-color: #4CAF50; 
 }
-alertbox .alertbox__container-header .alertbox__icon-close :active {
+.alertbox .alertbox__container-header .alertbox__icon-close :active {
   background-color: #4CAF50; 
 }
 

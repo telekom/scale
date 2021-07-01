@@ -14,7 +14,7 @@ describe('Alertbox', () => {
  it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Alertbox],
-      html: `<scale-alertbox>Label</scale-alertbox>`,
+      html: `<scale-alertbox opened="true">Label</scale-alertbox>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -24,10 +24,10 @@ describe('Alertbox', () => {
     expect(element.getCssClassMap()).toContain('color-magenta');
 
     element.variant = 'variant';
-    expect(element.getCssClassMap()).toContain('variant-outline');
+    expect(element.getCssClassMap()).toContain('variant-variant');
 
     element.icon = true;
-    expect(element.getCssClassMap()).toContain('button--disabled');
+    expect(element.getCssClassMap()).toContain('icon');
   });
 
   /* it('should handle click remove', async () => {
@@ -50,25 +50,53 @@ describe('Alertbox', () => {
       expect(element.content).toBe("p[slot='text']");
     }); */
 
+    // it('should close the alertbox', () => {
+    //   expect(element.opened).toBe();
+    //   element.close();
+    //   expect(element.opened).toBe(false);
+    // });
 
+
+    it('handle color prop', async () => {
+      let page = await newSpecPage({
+        components: [Alertbox],
+        html: `<scale-alertbox opened="true" icon="true">Label</scale-alertbox>`,
+      });
+      page.root.color="black";
+      await page.waitForChanges();
+      expect(page.root).toMatchSnapshot();
+      page.root.color="blue";
+      await page.waitForChanges();
+
+      expect(page.root).toMatchSnapshot();
+      page.root.color="error";
+      await page.waitForChanges();
+      expect(page.root).toMatchSnapshot();
+      page.root.color="yellow";
+      await page.waitForChanges();
+      expect(page.root).toMatchSnapshot();
+      page.root.color="green";
+      await page.waitForChanges();
+      expect(page.root).toMatchSnapshot();
+      
+    });
 
  it('should reflect attributes/props', async () => {
   const page = await newSpecPage({
     components: [Alertbox],
     html: `<scale-alertbox
-                size ="large"
                 color ="black"
                 variant ="outline"
                 icon ="true"
-                close ="true"
+                hasClose ="true"
                 content ="false">
               </scale-alertbox>`,
   });
-  expect(page.rootInstance.size).toBe('large');
+  
   expect(page.rootInstance.color).toBe('black');
   expect(page.rootInstance.variant).toBe('outline');
-  expect(page.rootInstance.icon).toBe('true');
-  expect(page.rootInstance.close).toBe('true');
-  expect(page.rootInstance.content).toBe('false');
+  expect(page.rootInstance.icon).toBe(true);
+  expect(page.rootInstance.hasclose).toBe(true);
+  expect(page.rootInstance.content).toBe(false);
  });
 });
