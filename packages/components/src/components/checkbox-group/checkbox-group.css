@@ -12,3 +12,7 @@
 .checkbox-group__checkbox {
   margin-top: 0.5rem;
 }
+
+::slotted(*) {
+  padding-top: 5px;
+}
