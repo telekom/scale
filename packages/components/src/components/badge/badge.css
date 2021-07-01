@@ -12,6 +12,7 @@
   --white-badge: var(--scl-color-white);
   --black-badge: var(--scl-color-black);
   --primary-badge: var(--scl-color-primary);
+  --font-content: var('TeleNeoWeb', 'TeleNeo', sans-serif);
 }
 
 .badge {
@@ -20,6 +21,7 @@
   align-items: center;
   border-radius: 100%;
   background: var(--color-badge);
+  font-family: var(--font-content);
 }
 
 .badge.badge--color-primary {
