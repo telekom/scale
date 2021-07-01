@@ -28,33 +28,28 @@ export const StandardTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      input-id="header-checkbox-0"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox value="3" name="nameOfCheckbox" checked
-        >Checkbox Slot</scale-checkbox
-      >
-    </div>
-  </div>
-</scale-checkbox-group>
+      <scale-checkbox-group>
+        <scale-checkbox label="Group Label" name="group"></scale-checkbox>
+        <scale-checkbox
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="a"
+        ></scale-checkbox>
+        <scale-checkbox
+          checked
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="b"
+        ></scale-checkbox>
+        <scale-checkbox
+          slot="group-item"
+           label="Another Checkbox"
+          name="group-item"
+          value="c"
+        ></scale-checkbox>
+      </scale-checkbox-group>
     </div>
   `,
 });
@@ -73,52 +68,24 @@ export const CheckboxDisableTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      input-id="header-checkbox-1"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-     <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="3"
-        label="checkbox"
-        name="nameOfCheckbox"
-        disabled
-      ></scale-checkbox>
-    </div>
-     <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="4"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-       <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="5"
-        label="checkbox"
-        name="nameOfCheckbox"
-        checked
-        disabled
-      ></scale-checkbox>
-    </div>
-  </div>
-</scale-checkbox-group>
+      <scale-checkbox-group>
+        <scale-checkbox checked label="Group Label" name="group"></scale-checkbox>
+        <scale-checkbox
+          checked
+          disabled
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="a"
+        ></scale-checkbox>
+        <scale-checkbox
+          checked
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="b"
+        ></scale-checkbox>
+      </scale-checkbox-group>
     </div>
   `,
 });
@@ -137,29 +104,23 @@ export const DisabledTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      input-id="header-checkbox-2"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-      disabled
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-  </div>
-</scale-checkbox-group>
+      <scale-checkbox-group>
+        <scale-checkbox checked disabled label="Group Label" name="group"></scale-checkbox>
+        <scale-checkbox
+          checked
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="a"
+        ></scale-checkbox>
+        <scale-checkbox
+          checked
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="b"
+        ></scale-checkbox>
+      </scale-checkbox-group>
     </div>
   `,
 });
@@ -178,30 +139,26 @@ export const ErrorTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox status="error"
-      input-id="header-checkbox-2"
-      helper-text="Error helperText"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        disabled
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-  </div>
-</scale-checkbox-group>
+      <scale-checkbox-group>
+        <scale-checkbox 
+          status="error" 
+          label="Group Label" 
+          name="group" 
+          helper-text="helperText"
+        ></scale-checkbox>
+        <scale-checkbox
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="a"
+        ></scale-checkbox>
+        <scale-checkbox
+          slot="group-item"
+          label="Another Checkbox"
+          name="group-item"
+          value="b"
+        ></scale-checkbox>
+      </scale-checkbox-group>
     </div>
   `,
 });
@@ -223,31 +180,26 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      input-id="header-checkbox-0"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox value="3" name="nameOfCheckbox" checked
-        >Checkbox Slot</scale-checkbox
-      >
-    </div>
-  </div>
+  <scale-checkbox label="Group Label" name="group"></scale-checkbox>
+  <scale-checkbox
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="a"
+  ></scale-checkbox>
+  <scale-checkbox
+    checked
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="b"
+  ></scale-checkbox>
+  <scale-checkbox
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="c"
+  ></scale-checkbox>
 </scale-checkbox-group>
 ```
 
@@ -266,32 +218,24 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      status="error"
-      input-id="header-checkbox-0"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox value="3" name="nameOfCheckbox" checked
-        >Checkbox Slot</scale-checkbox
-      >
-    </div>
-  </div>
+  <scale-checkbox
+    status="error"
+    label="Group Label"
+    name="group"
+    helper-text="helperText"
+  ></scale-checkbox>
+  <scale-checkbox
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="a"
+  ></scale-checkbox>
+  <scale-checkbox
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="b"
+  ></scale-checkbox>
 </scale-checkbox-group>
 ```
 
@@ -310,50 +254,22 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      input-id="header-checkbox-1"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="3"
-        label="checkbox"
-        name="nameOfCheckbox"
-        disabled
-      ></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="4"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="5"
-        label="checkbox"
-        name="nameOfCheckbox"
-        checked
-        disabled
-      ></scale-checkbox>
-    </div>
-  </div>
+  <scale-checkbox checked label="Group Label" name="group"></scale-checkbox>
+  <scale-checkbox
+    checked
+    disabled
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="a"
+  ></scale-checkbox>
+  <scale-checkbox
+    checked
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="b"
+  ></scale-checkbox>
 </scale-checkbox-group>
 ```
 
@@ -372,26 +288,25 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-checkbox-group>
-  <div slot="checkbox-header">
-    <scale-checkbox
-      input-id="header-checkbox-2"
-      value="1"
-      label="checkbox"
-      name="nameOfCheckbox"
-      checked
-      helper-text="helperText"
-      disabled
-    >
-    </scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem">
-      <scale-checkbox
-        value="2"
-        label="checkbox"
-        name="nameOfCheckbox"
-      ></scale-checkbox>
-    </div>
-  </div>
+  <scale-checkbox
+    checked
+    disabled
+    label="Group Label"
+    name="group"
+  ></scale-checkbox>
+  <scale-checkbox
+    checked
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="a"
+  ></scale-checkbox>
+  <scale-checkbox
+    checked
+    slot="group-item"
+    label="Another Checkbox"
+    name="group-item"
+    value="b"
+  ></scale-checkbox>
 </scale-checkbox-group>
 ```
