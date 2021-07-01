@@ -1,6 +1,6 @@
-import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
-import { footerNavigation } from "../brand-header/fixtures";
-import AppFooter from "./AppFooter.vue";
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import { footerNavigation } from '../brand-header/fixtures';
+import AppFooter from './AppFooter.vue';
 
 <Meta
   title="Components/Footer"
@@ -8,18 +8,18 @@ import AppFooter from "./AppFooter.vue";
   argTypes={{
     footerNavigation: {
       control: {
-        type: "text",
+        type: 'text',
       },
-      description: "each item takes an optional onClick handler",
+      description: 'each item takes an optional onClick handler',
     },
     claimLang: {
       control: {
-        type: "select",
-        options: ["en", "de"],
+        type: 'select',
+        options: ['en', 'de'],
       },
     },
     variant: {
-      control: { type: "select", options: ["angular", "standard", "minimal"] },
+      control: { type: 'select', options: ['angular', 'standard', 'minimal'] },
     },
   }}
 />
@@ -42,10 +42,10 @@ export const Template = (args, { argTypes }) => ({
 
 <div
   style={{
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
   }}
 >
   <h1>Footer</h1>
@@ -60,7 +60,7 @@ export const Template = (args, { argTypes }) => ({
     inline={false}
     height={500}
     args={{
-      claimLang: "en",
+      claimLang: 'en',
       footerNavigation: JSON.stringify(footerNavigation),
     }}
   >
@@ -129,9 +129,9 @@ For Shadow Parts, please inspect the element's #shadow.
     inline={false}
     height={500}
     args={{
-      claimLang: "en",
+      claimLang: 'en',
       footerNavigation: JSON.stringify(footerNavigation),
-      variant: "minimal",
+      variant: 'minimal',
     }}
   >
     {Template.bind({})}
@@ -139,29 +139,74 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-app-footer
-  id="footer"
-  claim-lang="en"
-  variant="minimal"
->
+<scale-app-footer id="footer" claim-lang="en" variant="minimal">
 </scale-app-footer>
 
 <script>
   const footer = document.getElementById('footer');
   footer.footerNavigation = [
-    { name: "Contact", id: "Contact", href: "#contact" },
+    { name: 'Contact', id: 'Contact', href: '#contact' },
     {
-      name: "Terms and conditions",
-      id: "Terms and conditions",
-      href: "#terms-and-conditions",
+      name: 'Terms and conditions',
+      id: 'Terms and conditions',
+      href: '#terms-and-conditions',
     },
-    { name: "Legal notice", id: "Legal notice", href: "#legal-notice" },
+    { name: 'Legal notice', id: 'Legal notice', href: '#legal-notice' },
     {
-      name: "Data privacy",
-      id: "Data privacy",
-      href: "#data-privacy",
-      icon: "alert-imprint-dataprivacy",
+      name: 'Data privacy',
+      id: 'Data privacy',
+      href: '#data-privacy',
+      icon: 'alert-imprint-dataprivacy',
     },
   ];
 </script>
+```
+
+## Custom Slots
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Slots"
+    inline={false}
+    height={500}
+    args={{
+      claimLang: 'en',
+    }}
+  >
+    {() => ({
+      components: { AppFooter },
+      props: AppFooter.props,
+      template: `
+        <div style="margin: -1rem;">
+          <scale-app-footer
+            :claim-lang="claimLang"
+            :variant="variant"
+            :copyright="copyright"
+          >
+            <div slot="navigation">
+              <span>custom navigation placeholder</span>
+            </div>
+            <div slot="logo">
+              <span>custom logo placeholder</span>
+            </div>
+          </scale-app-footer>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-app-footer
+  :claim-lang="claimLang"
+  :variant="variant"
+  :copyright="copyright"
+>
+  <div slot="navigation">
+    <span>custom navigation placeholder</span>
+  </div>
+  <div slot="logo">
+    <span>custom logo placeholder</span>
+  </div>
+</scale-app-footer>
 ```
