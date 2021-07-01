@@ -56,7 +56,7 @@ export class Logo {
      }`;
   }
 
-  getLogoSvg() {
+  getLogoSvg(role: 'link' | 'img') {
     if (this.accessibilityTitle) {
       return (
         <scale-logo-svg
@@ -64,6 +64,7 @@ export class Logo {
           color={this.variant}
           size={this.size}
           accessibilityTitle={this.accessibilityTitle}
+          role={role}
         ></scale-logo-svg>
       );
     } else {
@@ -72,6 +73,7 @@ export class Logo {
           language={this.language}
           color={this.variant}
           size={this.size}
+          role={role}
         ></scale-logo-svg>
       );
     }
@@ -83,7 +85,7 @@ export class Logo {
         <style>{this.styles()}</style>
         {this.href === '' ? (
           <div class={this.getCssClassMap()} onClick={this.clickHandler}>
-            {this.getLogoSvg()}
+            {this.getLogoSvg('img')}
           </div>
         ) : (
           <a
@@ -91,7 +93,7 @@ export class Logo {
             class={this.getCssClassMap()}
             onClick={this.clickHandler}
           >
-            {this.getLogoSvg()}
+            {this.getLogoSvg('link')}
           </a>
         )}
       </Host>
