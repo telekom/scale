@@ -31,9 +31,7 @@ export class CheckboxGroup {
   }
 
   createNewState() {
-    const checkboxes = Array.from(
-      this.hostElement.querySelectorAll('scale-checkbox')
-    );
+    const checkboxes = Array.from(this.getCheckboxes());
     const newState: CheckboxState[] = [];
     for (let i = 0; i < checkboxes.length; i++) {
       newState[i] = {
@@ -71,7 +69,7 @@ export class CheckboxGroup {
   }
 
   handleMasterDisableProp() {
-    const checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    const checkboxes = this.getCheckboxes();
     // set all subs to disabled
     for (let i = 1; i < checkboxes.length; i++) {
       checkboxes[i].setAttribute('disabled', 'true');
@@ -80,7 +78,7 @@ export class CheckboxGroup {
   }
 
   checkForMasterCheckboxChange(newState: CheckboxState[]) {
-    const checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    const checkboxes = this.getCheckboxes();
     // set master and subs to checked
     if (this.groupStatus[0].indeterminate || !this.groupStatus[0].checked) {
       for (let i = 1; i < checkboxes.length; i++) {
@@ -126,7 +124,7 @@ export class CheckboxGroup {
         disabledCounter += 1;
       }
     }
-    const checkboxes = this.hostElement.querySelectorAll('scale-checkbox');
+    const checkboxes = this.getCheckboxes();
 
     // set master to checked
     if (checkedCounter + disabledCounter === newState.length - 1) {
@@ -152,9 +150,7 @@ export class CheckboxGroup {
   }
 
   setGroupStatusState() {
-    const checkboxes = Array.from(
-      this.hostElement.querySelectorAll('scale-checkbox')
-    );
+    const checkboxes = Array.from(this.getCheckboxes());
     const changedState: CheckboxState[] = [];
     for (let i = 0; i < checkboxes.length; i++) {
       changedState[i] = {
@@ -165,6 +161,10 @@ export class CheckboxGroup {
       };
     }
     this.groupStatus = changedState;
+  }
+
+  getCheckboxes() {
+    return this.hostElement.querySelectorAll('scale-checkbox');
   }
 
   render() {
