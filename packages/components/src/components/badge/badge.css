@@ -1,13 +1,17 @@
 :host {
-  --color-badge: #e20074;
-  --inner-width-small: 86px;
-  --inner-height-small: 88px;
+  --color-badge: var(--scl-color-primary);
+  --inner-width-small: var(--scl-spacing-80);
+  --inner-height-small: var(--scl-spacing-80);
   --inner-width-large: 126.5px;
   --inner-height-large: 96px;
   --width-small: 120px;
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
+  --blue-badge: var(--scl-color-blue-60);
+  --white-badge: var(--scl-color-white);
+  --black-badge: var(--scl-color-black);
+  --primary-badge: var(--scl-color-primary);
 }
 
 .badge {
@@ -19,16 +23,16 @@
 }
 
 .badge.badge--color-primary {
-  background: var(--scl-color-primary, #e20074);
+  background: var(--primary-badge);
 }
 .badge.badge--color-white {
-  background: #ffffff;
+  background: var(--white-badge);
 }
 .badge.badge--color-blue {
-  background: #00739f;
+  background: var(--blue-badge);
 }
 .badge.badge--color-black {
-  background: #191919;
+  background: var(--black-badge);
 }
 
 .badge.badge--size-large {

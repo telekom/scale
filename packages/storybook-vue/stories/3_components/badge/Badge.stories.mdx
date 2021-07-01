@@ -120,15 +120,20 @@ export const Template3 = (args, { argTypes }) => ({
 ### Scoped CSS variables
 ```css
  :host {
-  --color-badge:#e20074;
-  --inner-width-small: 86px;
-  --inner-height-small: 88px;
+  --color-badge: var(--scl-color-primary);
+  --inner-width-small: var(--scl-spacing-80);
+  --inner-height-small: var(--scl-spacing-80);
   --inner-width-large: 126.5px;
   --inner-height-large: 96px;
   --width-small: 120px;
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
+  --blue-badge: var(--scl-color-blue-60);
+  --white-badge: var(--scl-color-white);
+  --black-badge: var(--scl-color-black);
+  --primary-badge: var(--scl-color-primary);
+}
 }
 ```
 ## Size
