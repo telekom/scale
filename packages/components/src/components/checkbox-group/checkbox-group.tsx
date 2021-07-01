@@ -172,10 +172,10 @@ export class CheckboxGroup {
       <Host>
         <div class="checkbox-group">
           <div class="checkbox-group__label">
-            <slot name="checkbox-header" />
+            <slot />
           </div>
           <div class="checkbox-group__container">
-            <slot name="checkbox-list" />
+            <slot name="group-item" />
           </div>
         </div>
       </Host>
