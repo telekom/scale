@@ -57,8 +57,6 @@ export class Modal {
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  /** (optional) Enable/disable Modal closing on outside click */
-  @Prop() closeClickOutside?: boolean = true;
 
   /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = false;
@@ -71,7 +69,8 @@ export class Modal {
 
   @Event() scaleOpen?: EventEmitter;
   @Event() scaleClose?: EventEmitter;
-  @Event() scaleCloseAttempt?: EventEmitter;
+  /** Event firing before an Modal Action is called. Propagation to closing the Event can be stoped. Possible actions: `buttonClose` `escapePressed` `backdrop` */
+  @Event() scaleBeforeClose?: EventEmitter;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;
@@ -87,7 +86,7 @@ export class Modal {
       return;
     }
     if (event.key === 'Escape') {
-      this.opened = false;
+      this.closeEvent('escapePressed');
     }
   }
 
@@ -112,11 +111,9 @@ export class Modal {
     }
   }
 
-  clickOutside() {
-    if (this.closeClickOutside) {
+  closeEvent(type: string) {
+    if (!this.scaleBeforeClose.emit(type).defaultPrevented) {
       this.opened = false;
-    } else {
-      this.scaleCloseAttempt.emit();
     }
   }
 
@@ -215,7 +212,6 @@ export class Modal {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-
         <div
           ref={(el) => (this.modalContainer = el)}
           class={this.getCssClassMap()}
@@ -224,7 +220,7 @@ export class Modal {
           <div
             class="modal__backdrop"
             part="backdrop"
-            onClick={() => this.clickOutside()}
+            onClick={() => this.closeEvent('backdrop')}
           ></div>
           <div
             data-focus-trap-edge
@@ -251,7 +247,7 @@ export class Modal {
                 ref={(el) => (this.closeButton = el)}
                 class="modal__close-button"
                 part="close-button"
-                onClick={() => (this.opened = false)}
+                onClick={() => this.closeEvent('buttonClose')}
                 aria-label={this.closeButtonLabel}
               >
                 <slot name="close-icon">

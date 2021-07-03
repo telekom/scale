@@ -7,26 +7,25 @@
 
 ## Properties
 
-| Property            | Attribute             | Description                                              | Type                | Default          |
-| ------------------- | --------------------- | -------------------------------------------------------- | ------------------- | ---------------- |
-| `alignActions`      | `align-actions`       | (optional) Alignment of action buttons                   | `"left" \| "right"` | `'right'`        |
-| `closeButtonLabel`  | `close-button-label`  | (optional) Label for close button                        | `string`            | `'Close Pop-up'` |
-| `closeClickOutside` | `close-click-outside` | (optional) Enable/disable Modal closing on outside click | `boolean`           | `true`           |
-| `customClass`       | `custom-class`        | (optional) Custom class                                  | `string`            | `''`             |
-| `duration`          | `duration`            | (optional) Transition duration                           | `number`            | `200`            |
-| `heading`           | `heading`             | Modal heading                                            | `string`            | `undefined`      |
-| `opened`            | `opened`              | (optional) If `true`, the Modal is open.                 | `boolean`           | `false`          |
-| `size`              | `size`                | (optional) Modal size                                    | `string`            | `'default'`      |
-| `styles`            | `styles`              | (optional) Injected CSS styles                           | `string`            | `undefined`      |
+| Property           | Attribute            | Description                              | Type                | Default          |
+| ------------------ | -------------------- | ---------------------------------------- | ------------------- | ---------------- |
+| `alignActions`     | `align-actions`      | (optional) Alignment of action buttons   | `"left" \| "right"` | `'right'`        |
+| `closeButtonLabel` | `close-button-label` | (optional) Label for close button        | `string`            | `'Close Pop-up'` |
+| `customClass`      | `custom-class`       | (optional) Custom class                  | `string`            | `''`             |
+| `duration`         | `duration`           | (optional) Transition duration           | `number`            | `200`            |
+| `heading`          | `heading`            | Modal heading                            | `string`            | `undefined`      |
+| `opened`           | `opened`             | (optional) If `true`, the Modal is open. | `boolean`           | `false`          |
+| `size`             | `size`               | (optional) Modal size                    | `string`            | `'default'`      |
+| `styles`           | `styles`             | (optional) Injected CSS styles           | `string`            | `undefined`      |
 
 
 ## Events
 
-| Event               | Description | Type               |
-| ------------------- | ----------- | ------------------ |
-| `scaleClose`        |             | `CustomEvent<any>` |
-| `scaleCloseAttempt` |             | `CustomEvent<any>` |
-| `scaleOpen`         |             | `CustomEvent<any>` |
+| Event              | Description                                                                                                                                               | Type               |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `scaleBeforeClose` | Event firing before an Modal Action is called. Propagation to closing the Event can be stoped. Possible actions: `buttonClose` `escapePressed` `backdrop` | `CustomEvent<any>` |
+| `scaleClose`       |                                                                                                                                                           | `CustomEvent<any>` |
+| `scaleOpen`        |                                                                                                                                                           | `CustomEvent<any>` |
 
 
 ## Shadow Parts

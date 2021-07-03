@@ -819,14 +819,14 @@
       });
     </script>
 
-    <h3>Modal without Click Outside</h3>
+    <h3>Modal with scaleBeforeClose</h3>
     <scale-button id="show-modal-clickoutside"> show modal </scale-button>
     <scale-modal
       id="modal-clickoutside"
       opened="false"
       close-click-outside="false"
     >
-      <span slot="header">Header content</span> content in the modal slot
+      <span slot="header">Header content</span> Click close to close Modal
     </scale-modal>
 
     <script>
@@ -842,8 +842,19 @@
         Modalclickoutside.removeAttribute('opened');
       });
 
-      Modalclickoutside.addEventListener('scaleCloseAttempt', () => {
-        alert('Close by click outside attempted');
+      Modalclickoutside.addEventListener('scaleBeforeClose', (event) => {
+        console.log(event);
+        if (event.detail === 'backdrop') {
+          event.preventDefault();
+          alert('Close by Backdrop prevented');
+        }
+        if (event.detail === 'escapePressed') {
+          event.preventDefault();
+          alert('Close by Escape button prevented');
+        }
+        if (event.detail === 'buttonClose') {
+          alert('Close by buttonClose detected but not prevented');
+        }
       });
 
       document.getElementById('cancel-btn').addEventListener('click', () => {
