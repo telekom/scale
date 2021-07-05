@@ -28,9 +28,27 @@
   content: '\00d7'; /* This will render the 'X' */
 }
 
+.dropzone_file_button {
+  position: absolute;
+  left: 60px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin-top: -6px;
+}
+
+.dropzone_file_button::after {
+  display: inline-block;
+  transform: scale(2);
+}
+
 .dropzone_upload_list_element {
   padding: 10px;
   margin-left: -25px;
+  list-style-type: none;
 }
 
 * {
@@ -85,4 +103,18 @@
 
 .dropzone_image {
   padding-bottom: 20px;
+}
+
+.image-upload__preview {
+  width: 200px;
+  height: 200px;
+}
+
+.image-upload__preview > div {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

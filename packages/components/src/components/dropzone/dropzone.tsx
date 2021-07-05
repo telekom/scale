@@ -27,6 +27,7 @@ export class Dropzone {
   @Prop() uploadedFiles: Array<string> = [];
   @State() droppedFiles: Array<string> = [];
   @State() droppedFileNames: Array<string> = [];
+  @State() previewView: boolean = false;
   @State() public highlighted: boolean = false;
   @Event() onUploadCompleted: EventEmitter<Blob>;
 
@@ -192,10 +193,18 @@ export class Dropzone {
         item.appendChild(document.createTextNode(this.droppedFileNames[i]));
         let closeButton = document.createElement('button');
         closeButton.onclick = () => {
-          this.handleButtonClicked(closeButton.id);
+          this.handleDeleteButtonClicked(closeButton.id);
         };
         closeButton.setAttribute('id', `button_${i}`);
         closeButton.setAttribute('class', 'dropzone_delete_button');
+        let fileButton = document.createElement('button');
+        fileButton.onclick = () => {
+          this.handleFileButtonClicked(fileButton.id);
+        };
+        fileButton.setAttribute('id', `file_button_${i}`);
+        fileButton.setAttribute('class', 'dropzone_file_button');
+        fileButton.innerHTML = '<scale-icon-user-file-attachment/>';
+        item.appendChild(fileButton);
         item.appendChild(closeButton);
         list.appendChild(item);
       }
@@ -207,7 +216,7 @@ export class Dropzone {
    * button handling
    *
    */
-  handleButtonClicked(id: string) {
+  handleDeleteButtonClicked(id: string) {
     const position = id.match(/\d+$/)[0];
     this.droppedFileNames.splice(parseInt(position), 1, '');
     this.droppedFiles.splice(parseInt(position), 1, '');
@@ -220,6 +229,38 @@ export class Dropzone {
     button.outerHTML = '';
     fileContainer.innerHTML = '';
     fileContainer.append(this.handleList());
+  }
+
+  handleFileButtonClicked(id: string) {
+    this.previewView = !this.previewView;
+    console.log('File Preview for:');
+    const position = id.match(/\d+$/)[0];
+    console.log(this.droppedFileNames[position]);
+    console.log(this.droppedFiles[position]);
+
+    console.log(typeof this.droppedFiles[position]);
+    // create a new instance of HTML5 FileReader api to handle uploading
+    const reader = new FileReader();
+
+    reader.onloadstart = () => {
+      console.log('started uploading');
+    };
+
+    reader.onload = () => {
+      const imagePreviewContainer: HTMLElement = this.element.shadowRoot.querySelector(
+        '#preview'
+      );
+      imagePreviewContainer.style.backgroundImage = `url(${reader.result})`;
+    };
+
+    reader.onloadend = () => {
+      console.log('upload finished');
+    };
+
+    reader.onerror = (err) => {
+      console.error('something went wrong...', err);
+    };
+    reader.readAsDataURL(this.droppedFiles[position]);
   }
 
   handleUploadButtonClick() {
@@ -263,6 +304,11 @@ export class Dropzone {
         <scale-button onClick={() => this.handleUploadButtonClick()}>
           Upload
         </scale-button>
+        {this.previewView ? (
+          <div class="image-upload__preview">
+            <div id="preview"></div>
+          </div>
+        ) : null}
       </Host>
     );
   }
