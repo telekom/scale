@@ -844,15 +844,15 @@
 
       Modalclickoutside.addEventListener('scaleBeforeClose', (event) => {
         console.log(event);
-        if (event.detail === 'backdrop') {
+        if (event.detail.trigger === 'BACKDROP') {
           event.preventDefault();
           alert('Close by Backdrop prevented');
         }
-        if (event.detail === 'escapePressed') {
+        if (event.detail.trigger === 'ESCAPE_KEY') {
           event.preventDefault();
           alert('Close by Escape button prevented');
         }
-        if (event.detail === 'buttonClose') {
+        if (event.detail.trigger === 'CLOSE_BUTTON') {
           alert('Close by buttonClose detected but not prevented');
         }
       });

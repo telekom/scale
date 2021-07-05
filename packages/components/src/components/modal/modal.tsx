@@ -27,6 +27,12 @@ import { animateTo, KEYFRAMES } from '../../utils/animate';
 
 const supportsResizeObserver = 'ResizeObserver' in window;
 
+type CloseEventTrigger = 'CLOSE_BUTTON' | 'ESCAPE_KEY' | 'BACKDROP';
+
+export interface BeforeCloseEventDetail {
+  trigger: CloseEventTrigger;
+}
+
 /*
   TODO
   ====
@@ -67,10 +73,12 @@ export class Modal {
   /** Useful for toggling scroll-specific styles */
   @State() hasScroll: boolean = false;
 
-  @Event() scaleOpen?: EventEmitter;
-  @Event() scaleClose?: EventEmitter;
+  /** Fires when the modal has been opened */
+  @Event() scaleOpen: EventEmitter<void>;
   /** Event firing before an Modal Action is called. Propagation to closing the Event can be stoped. Possible actions: `buttonClose` `escapePressed` `backdrop` */
-  @Event() scaleBeforeClose?: EventEmitter;
+  @Event() scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
+  /** Fires when the modal has been closed */
+  @Event() scaleClose: EventEmitter<void>;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;
@@ -86,7 +94,7 @@ export class Modal {
       return;
     }
     if (event.key === 'Escape') {
-      this.closeEvent('escapePressed');
+      this.emitBeforeClose('ESCAPE_KEY');
     }
   }
 
@@ -111,8 +119,8 @@ export class Modal {
     }
   }
 
-  closeEvent(type: string) {
-    if (!this.scaleBeforeClose.emit(type).defaultPrevented) {
+  emitBeforeClose(trigger: CloseEventTrigger) {
+    if (!this.scaleBeforeClose.emit({ trigger }).defaultPrevented) {
       this.opened = false;
     }
   }
@@ -220,7 +228,7 @@ export class Modal {
           <div
             class="modal__backdrop"
             part="backdrop"
-            onClick={() => this.closeEvent('backdrop')}
+            onClick={() => this.emitBeforeClose('BACKDROP')}
           ></div>
           <div
             data-focus-trap-edge
@@ -247,7 +255,7 @@ export class Modal {
                 ref={(el) => (this.closeButton = el)}
                 class="modal__close-button"
                 part="close-button"
-                onClick={() => this.closeEvent('buttonClose')}
+                onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
                 aria-label={this.closeButtonLabel}
               >
                 <slot name="close-icon">
