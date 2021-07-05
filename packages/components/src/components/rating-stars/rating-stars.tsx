@@ -9,298 +9,123 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/*
-adapted from shoelace's rating component
-https://github.com/shoelace-style/shoelace/blob/next/src/components/rating/rating.ts
-*/
-
 import {
   Component,
   h,
   Prop,
   Host,
   Element,
-  State,
   Event,
   EventEmitter,
+  Watch,
 } from '@stencil/core';
-import { clamp, handleListeners } from './utils/utils';
-import classNames from 'classnames';
-import statusNote from '../../utils/status-note';
 
+export interface StarInterface extends HTMLDivElement {
+  dataset: {
+    value: string;
+    selected?: string;
+  };
+}
+
+let ratingStarCount = 0;
 @Component({
   tag: 'scale-rating-stars',
   styleUrl: 'rating-stars.css',
   shadow: true,
 })
 export class RatingStars {
-  element: HTMLElement;
+  @Element() host: HTMLElement;
 
-  @Element() hostElement: HTMLElement;
-  /** (optional) hoverValue  */
-  @State() hoverValue = 0;
-  /** (optional) hoverValue  */
-  @State() isHovering = false;
-  /** (optional) max  */
-  @Prop() max = 5;
-  /** (optional) value  */
-  @Prop({ mutable: true }) value = 0;
-  /** (optional) small  */
-  @Prop() small = false;
-  /** (optional) disabled  */
-  @Prop() disabled = false;
-  /** (optional) ariaLabelTranslation  */
-  @Prop({ mutable: true })
-  ariaLabelTranslation = `${this.value} out of ${this.max} stars`;
-  /** (optional) precision  */
-  @Prop() precision = 1;
-  /** (optional) slider label */
-  @Prop() label?: string;
-  /** Emitted when the value has changed. */
-  @Event() scaleRatingChange!: EventEmitter<{ value: number }>;
+  ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
-  colorFilled = `var(--scl-color-primary)`;
-  colorBlank = `var(--scl-color-grey-50)`;
-  size = this.small ? '16px' : '24px';
+  /** The lower limit of the rating. In cases where  */
+  @Prop({ reflect: true }) starSize: 'small' | 'big' = 'small';
+  /** The lower limit of the rating. In cases where  */
+  @Prop({ reflect: true }) minRating = 0;
+  /** The upper limit of the rating */
+  @Prop({ reflect: true }) maxRating = 5;
+  /** Represents the current value of the rating */
+  @Prop({ mutable: true, reflect: true }) rating = 3;
+  /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
+  @Prop({ mutable: true, reflect: true }) ariaText =
+    '$rating out of $maxRating stars';
 
-  renderIcon = (color: string, size: string, selected?: boolean) => {
-    if (selected) {
-      return `<scale-icon-action-favorite color=${color} size=${size} selected />`;
-    } else {
-      return `<scale-icon-action-favorite color=${color} size=${size} />`;
-    }
+  /** Emitted when the rating has changed */
+  @Event() scaleChange: EventEmitter;
+
+  @Watch('rating') ratingWatcher() {
+    this.scaleChange.emit({ rating: this.rating });
+  }
+
+  // constructs the aria message for the current rating
+  getRatingText() {
+    const filledText = this.ariaText
+      .replace('/$rating/g', `${this.rating}`)
+      .replace('/$maxRating/g', `${this.maxRating}`);
+    return filledText;
+  }
+
+  handleInput = (ev: InputEvent) => {
+    const input = ev.composedPath()[0] as HTMLInputElement;
+    const rating = input.value;
+
+    this.rating = Number(rating);
   };
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.handleMouseClick = this.handleMouseClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
-  }
 
-  componentDidLoad() {
-    handleListeners(this.element, 'addListeners');
-  }
+  handleStarClick = (ev: MouseEvent) => {
+    const star = ev.composedPath()[0] as StarInterface;
+    this.rating = Number(star.dataset.value);
+  };
 
-  disconnectedCallback() {
-    handleListeners(this.element, 'removeListeners');
-  }
-
-  handleMouseLeave() {
-    this.isHovering = false;
-    return false;
-  }
-
-  handleMouseEnter() {
-    if (!this.disabled) {
-      this.isHovering = true;
-      return true;
-    }
-  }
-
-  handleMouseMove(event: MouseEvent) {
-    this.hoverValue = this.getValueFromXPosition(null, event);
-  }
-
-  handleMouseClick(event: MouseEvent) {
-    this.setValue(this.getValueFromXPosition(null, event));
-  }
-
-  handleKeyDown(event: KeyboardEvent) {
-    if (this.disabled) {
-      return;
-    }
-
-    if (event.key === 'ArrowRight') {
-      const valuePlus = this.value + this.precision;
-      this.value = clamp(valuePlus, 0, this.max);
-      this.emitRatingValue();
-      event.preventDefault();
-    }
-
-    if (event.key === 'ArrowLeft') {
-      const ratingMinus = this.value - this.precision;
-      this.value = clamp(ratingMinus, 0, this.max);
-      this.emitRatingValue();
-      event.preventDefault();
-    }
-
-    if (event.key === 'Home') {
-      this.value = 0;
-      this.emitRatingValue();
-      event.preventDefault();
-    }
-
-    if (event.key === 'End') {
-      this.value = this.max;
-      this.emitRatingValue();
-      event.preventDefault();
-    }
-  }
-
-  getValueFromTouchPosition(event: TouchEvent) {
-    return this.getValueFromXPosition(event);
-  }
-
-  handleTouchStart(event: TouchEvent) {
-    this.hoverValue = this.getValueFromTouchPosition(event);
-
-    // Prevent scrolling when touch is initiated
-    event.preventDefault();
-  }
-
-  handleTouchMove(event: TouchEvent) {
-    this.isHovering = true;
-    this.hoverValue = this.getValueFromTouchPosition(event);
-  }
-
-  handleTouchEnd(event: TouchEvent) {
-    this.isHovering = false;
-    this.setValue(this.hoverValue);
-
-    // Prevent click on mobile devices
-    event.preventDefault();
-  }
-
-  setValue(newValue: number) {
-    if (this.disabled) {
-      return;
-    }
-
-    this.value = newValue === this.value ? 0 : newValue;
-    this.emitRatingValue();
-    this.isHovering = false;
-  }
-
-  getValueFromXPosition(evTou?: TouchEvent, evKey?: MouseEvent) {
-    const positionX = evTou ? evTou.touches[0].clientX : evKey.clientX;
-    const containerLeft = this.element.getBoundingClientRect().left;
-    const containerWidth = this.element.getBoundingClientRect().width;
-    return clamp(
-      this.roundToPrecision(
-        ((positionX - containerLeft) / containerWidth) * this.max,
-        this.precision
-      ),
-      0,
-      this.max
+  renderStar(value: number, selected = false) {
+    return (
+      <div
+        part="star"
+        data-value={value}
+        data-selected={selected}
+        onClick={this.handleStarClick}
+      >
+        <scale-icon-action-favorite part="placeholder-star" />
+        <scale-icon-action-favorite selected part="selected-star" />
+      </div>
     );
   }
 
-  roundToPrecision(numberToRound: number, precision = 1) {
-    const multiplier = 1 / precision;
-    return Math.ceil(numberToRound * multiplier) / multiplier;
-  }
+  renderRating() {
+    const stars = [];
+    const min = this.minRating === 0 ? this.minRating + 1 : this.minRating;
+    const max = this.maxRating;
 
-  getAriaLabel() {
-    return this.ariaLabelTranslation
-      .replace(/\$\{value\}/gi, this.value.toString())
-      .replace(/\$\{max\}/gi, this.max.toString());
-  }
+    for (let rating = min; rating <= max; rating++) {
+      const isSelected = this.rating >= rating;
+      stars.push(this.renderStar(rating, isSelected));
+    }
 
-  emitRatingValue() {
-    this.scaleRatingChange.emit({ value: this.value });
+    return stars;
   }
 
   render() {
-    const counter = Array.from(Array(this.max).keys());
-    const displayValue = this.isHovering ? this.hoverValue : this.value;
-
     return (
       <Host>
-        <div
-          class={this.getCssClassMap()}
-          ref={(el) => (this.element = el)}
-          onMouseMove={this.handleMouseMove}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-          onClick={this.handleMouseClick}
-          onKeyDown={this.handleKeyDown}
-          onTouchStart={this.handleTouchStart}
-          onTouchEnd={this.handleTouchEnd}
-          onTouchMove={this.handleTouchMove}
-          tabIndex={this.disabled ? -1 : 0}
-          role="figure"
-          aria-describedby="rating__description"
-          aria-label={this.label}
-        >
-          <label class="rating__label" aria-hidden="true">
-            {this.label}
-          </label>
-          <span
-            id="rating__description"
-            innerHTML={this.getAriaLabel()}
-            hidden
-          ></span>
-          <span class="rating__symbols" aria-hidden="true">
-            {counter.map((index) => (
-              <span
-                class="rating__symbol-wrapper"
-                onMouseEnter={this.handleMouseEnter}
-              >
-                <span
-                  role="presentation"
-                  style={{
-                    clipPath:
-                      Math.ceil(displayValue) >= index + 1
-                        ? `inset(0 ${
-                            (Math.ceil(displayValue) - index) * 100
-                          }% 0 0)`
-                        : null,
-                  }}
-                  class={{
-                    rating__symbol: true,
-                    'rating__symbol--hover':
-                      this.isHovering && Math.ceil(displayValue) === index + 1,
-                  }}
-                  innerHTML={this.renderIcon(this.colorBlank, this.size)}
-                  id={`star-${index + 1}`}
-                />
-              </span>
-            ))}
-          </span>
-          <span
-            class="rating__symbols rating__symbols--indicator"
-            aria-hidden="true"
-          >
-            {counter.map((index) => (
-              <span
-                class="rating__symbol-wrapper"
-                onMouseEnter={this.handleMouseEnter}
-              >
-                <span
-                  role="presentation"
-                  style={{
-                    clipPath:
-                      displayValue > index + 1
-                        ? null
-                        : `inset(0 ${100 - (displayValue - index) * 100}% 0 0)`,
-                  }}
-                  class={{
-                    rating__symbol: true,
-                    'rating__symbol--hover':
-                      this.isHovering && Math.ceil(displayValue) === index + 1,
-                  }}
-                  innerHTML={this.renderIcon(this.colorFilled, this.size, true)}
-                />
-              </span>
-            ))}
-          </span>
-        </div>
+        <label part="label" htmlFor={this.ratingStarId}>
+          <slot>Rating Label</slot>
+        </label>
+        <input
+          part="range-slider"
+          type="range"
+          id={this.ratingStarId}
+          min={this.minRating}
+          max={this.maxRating}
+          value={this.rating}
+          step="1"
+          aria-valuemin={this.minRating}
+          aria-valuemax={this.maxRating}
+          aria-valuenow={this.rating}
+          aria-valuetext={this.getRatingText()}
+          onInput={this.handleInput}
+        />
+        <div part="wrapper">{this.renderRating()}</div>
       </Host>
-    );
-  }
-
-  getCssClassMap() {
-    return classNames(
-      'rating',
-      this.disabled && 'rating--disabled',
-      this.isHovering && 'rating--hover',
-      this.small && 'rating--small',
-      this.label && 'rating--has-label'
     );
   }
 }

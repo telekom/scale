@@ -1,10 +1,15 @@
-import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
-import ScaleRatingStars from "./ScaleRatingStars.vue";
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import ScaleRatingStars from './ScaleRatingStars.vue';
 
 <Meta
   title="Beta Components/Rating Stars"
   component={ScaleRatingStars}
-  argTypes={{}}
+  argTypes={{
+    label: 'string',
+    rating: 'number'
+    minRating: 'number'
+    maxRating: 'number'
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -22,6 +27,7 @@ export const Template = (args, { argTypes }) => ({
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
   >
+  ${label}
   </scale-rating-stars>
     `,
 });
@@ -34,7 +40,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "Rating Label",
+      label: 'Rating Label',
       value: 3,
     }}
   >
@@ -54,7 +60,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
-      label: "Rating Label",
+      label: 'Rating Label',
       disabled: true,
       value: 2,
     }}
@@ -73,7 +79,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Small"
     args={{
-      label: "Rating Label",
+      label: 'Rating Label',
       value: 4,
       small: true,
     }}
@@ -92,7 +98,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Number of Stars"
     args={{
-      label: "Rating Label",
+      label: 'Rating Label',
       value: 6,
       max: 10,
     }}
@@ -111,9 +117,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Spacing"
     args={{
-      label: "Rating Label",
+      label: 'Rating Label',
       value: 1,
-      style: "--rating-spacing: 1rem",
+      style: '--rating-spacing: 1rem',
     }}
   >
     {Template.bind({})}
@@ -133,9 +139,9 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Aria Label Translation"
     args={{
-      label: "Rating Label",
+      label: 'Rating Label',
       value: 1,
-      ariaLabelTranslation: "${x} out of ${y} stars",
+      ariaLabelTranslation: '${x} out of ${y} stars',
     }}
   >
     {Template.bind({})}
