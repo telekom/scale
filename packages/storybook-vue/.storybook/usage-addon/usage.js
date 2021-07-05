@@ -13,6 +13,8 @@ import React from 'react';
 import { DocsWrapper, DocsContent } from '@storybook/components';
 import { Description } from '@storybook/addon-docs/blocks';
 import { useStorybookState, useGlobals } from '@storybook/api';
+import appshell_en from 'raw-loader!../../stories/3_components/app-shell/app-shell.md';
+import appshell_de from 'raw-loader!../../stories/3_components/app-shell/app-shell_de.md';
 import accordion_en from 'raw-loader!../../stories/3_components/accordion/accordion.md';
 import accordion_de from 'raw-loader!../../stories/3_components/accordion/accordion_de.md';
 import brandHeader_en from 'raw-loader!../../stories/3_components/brand-header/brand-header.md';
@@ -95,6 +97,8 @@ const Usage = (props) => {
   // or:
   // ?path=/story/components-brandheader--standard > brandheader_de
   const componentMap = {
+    'app-shell_en': appshell_en,
+    'app-shell_de': appshell_de,
     accordion_en,
     accordion_de,
     'brand-header-navigation_en': brandHeader_en,
