@@ -716,13 +716,17 @@ export default function nodeToSketchLayers(
       element.appendChild(document.createTextNode('Dropdown Value'));
       applyStyle(element, getComputedStyle(node));
       element.style.background = 'none';
-      element.style.left =
-        "0"
+      element.style.left = '0';
       element.style.top =
         // parseInt(element.style.borderTopWidth) -
         // parseInt(element.style.marginTop) +
-        "0";
-      element.style.lineHeight = parseInt(element.style.height) - (parseInt(element.style.borderTopWidth) + parseInt(element.style.borderBottomWidth) + parseInt(element.style.paddingTop)) + "px"
+        '0';
+      element.style.lineHeight =
+        parseInt(element.style.height) -
+        (parseInt(element.style.borderTopWidth) +
+          parseInt(element.style.borderBottomWidth) +
+          parseInt(element.style.paddingTop)) +
+        'px';
       // element.style.border = '1px solid transparent';
       element.style.outline = '0px';
       element.style.textShadow = 'none';
