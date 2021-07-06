@@ -11,6 +11,7 @@
 | ------------ | ------------- | ---------------------------- | -------- | ------- |
 | `helperText` | `helper-text` | (optional) Input helper text | `string` | `''`    |
 | `label`      | `label`       | (optional) Input label       | `string` | `''`    |
+| `status`     | `status`      | (optional) Input status      | `string` | `''`    |
 
 
 ----------------------------------------------
