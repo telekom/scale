@@ -29,6 +29,10 @@
 .radio-button-group__title {
   font-size: var(--font-size-label);
   font-weight: 500;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   margin-left: -2px;
+}
+
+::slotted(*) {
+  margin-top: 10px;
 }

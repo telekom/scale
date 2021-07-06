@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'scale-radio-button-group',
   styleUrl: './radio-button-group.css',
