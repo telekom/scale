@@ -1,6 +1,6 @@
-import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
-import ScaleLogo from "./ScaleLogo.vue";
-import { action } from "@storybook/addon-actions";
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import ScaleLogo from './ScaleLogo.vue';
+import { action } from '@storybook/addon-actions';
 
 <Meta
   title="Beta Components/Logo"
@@ -8,19 +8,19 @@ import { action } from "@storybook/addon-actions";
   argTypes={{
     language: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "de",
-          "en",
-          "cz",
-          "hr",
-          "hu",
-          "me",
-          "mk_kyr",
-          "mk_lat",
-          "ro",
-          "sk",
-          "",
+          'de',
+          'en',
+          'cz',
+          'hr',
+          'hu',
+          'me',
+          'mk_kyr',
+          'mk_lat',
+          'ro',
+          'sk',
+          '',
         ],
       },
     },
@@ -45,9 +45,9 @@ export const Template = (args, { argTypes }) => ({
     >
     </scale-logo>
     `,
-    methods: {
-        clickHandler: action("clickHandler")
-    }
+  methods: {
+    clickHandler: action('clickHandler'),
+  },
 });
 
 # Logo
@@ -68,7 +68,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="White"
     args={{
-      variant: "white",
+      variant: 'white',
     }}
   >
     {Template.bind({})}
@@ -102,7 +102,10 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Link"
     args={{
-      href: "https://www.telekom.de/start",
+      language: 'de',
+      href: 'https://www.telekom.de/start',
+      accessibilityTitle:
+        'Telekom Logo – Erleben, was verbindet – Zur Startseite',
     }}
   >
     {Template.bind({})}
@@ -110,7 +113,11 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-logo href="https://www.telekom.de/start"></scale-logo>
+<scale-logo
+  language="de"
+  href="https://www.telekom.de/start"
+  accessibility-title="Telekom Logo – Erleben, was verbindet – Zur Startseite"
+></scale-logo>
 ```
 
 ## Macedonia (MK) - Cyrillic
@@ -119,7 +126,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Macedonia (MK) - Cyrillic"
     args={{
-      language: "mk_kyr",
+      language: 'mk_kyr',
     }}
   >
     {Template.bind({})}
@@ -136,7 +143,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Macedonia (MK) - Latin script"
     args={{
-      language: "mk_lat",
+      language: 'mk_lat',
     }}
   >
     {Template.bind({})}
