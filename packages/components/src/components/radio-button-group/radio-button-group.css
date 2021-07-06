@@ -28,7 +28,7 @@
   font-weight: 500;
 }
 
-.radio-button-group__error-helper-text {
+.radio-button-group__helper-text--status-error {
   color: var(--color-error-helper-text);
   font-size: var(--font-size-helper-text);
   margin-top: -0.2rem;
