@@ -61,8 +61,8 @@ export class RatingStars {
   // constructs the aria message for the current rating
   getRatingText() {
     const filledText = this.ariaText
-      .replace('/$rating/g', `${this.rating}`)
-      .replace('/$maxRating/g', `${this.maxRating}`);
+      .replace(/\$rating/g, `${this.rating}`)
+      .replace(/\$maxRating/g, `${this.maxRating}`);
     return filledText;
   }
 
@@ -83,19 +83,6 @@ export class RatingStars {
     }
   };
 
-  getPartlyWidth(value: number, rating: number) {
-    const isLastWholeNumber = Math.ceil(rating) === value;
-    const isWholeNumber = rating % 1 === 0;
-
-    const decimal = rating - Math.floor(rating);
-
-    if (isLastWholeNumber && !isWholeNumber) {
-      return `${decimal * 100}%`;
-    }
-
-    return null;
-  }
-
   renderStar(index: number, selected = false, rating: number) {
     const isWholeNumber = rating % 1 === 0;
     const isLastNumber = Math.ceil(rating) === index;
@@ -105,10 +92,11 @@ export class RatingStars {
         part="star"
         data-value={index}
         data-selected={selected}
+        data-half={isLastNumber && !isWholeNumber}
         onClick={this.handleStarClick}
       >
         <scale-icon-action-favorite part="placeholder-star" />
-        <div class="clippy" data-half={isLastNumber && !isWholeNumber}>
+        <div class="clippy">
           <scale-icon-action-favorite selected part="selected-star" />
         </div>
       </div>
