@@ -11,10 +11,10 @@ export class RadioButtonGroup {
   @Prop() helperText?: string = '';
   render() {
     return (
-      <Host>
-        <div class="radio-button-group">
+      <form>
+        <fieldset class="radio-button-group">
           <div class="radio-button-group__label">
-            <h1 class="radio-button-group__title">{this.label}</h1>
+            <legend class="radio-button-group__title">{this.label}</legend>
             {this.helperText && (
               <div class="radio-button-group__helper-text">
                 {this.helperText}
@@ -22,10 +22,10 @@ export class RadioButtonGroup {
             )}
           </div>
           <div class="radio-button-group__container">
-            <slot name="radio-button-list" />
+            <slot />
           </div>
-        </div>
-      </Host>
+        </fieldset>
+      </form>
     );
   }
 }
