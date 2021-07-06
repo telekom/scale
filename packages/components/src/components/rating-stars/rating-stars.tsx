@@ -39,7 +39,7 @@ export class RatingStars {
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
   /** The lower limit of the rating. In cases where  */
-  @Prop({ reflect: true }) starSize: 'small' | 'big' = 'small';
+  @Prop({ reflect: true }) starSize: 'small' | 'big' = 'big';
   /** The lower limit of the rating. In cases where  */
   @Prop({ reflect: true }) minRating = 0;
   /** The upper limit of the rating */
@@ -50,6 +50,8 @@ export class RatingStars {
   @Prop({ reflect: true }) disabled = false;
   /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
   @Prop() ariaText = '$rating out of $maxRating stars';
+  /** (optional) rating label */
+  @Prop({ reflect: true }) label?: string;
 
   /** Emitted when the rating has changed */
   @Event() scaleChange: EventEmitter;
@@ -84,6 +86,7 @@ export class RatingStars {
   };
 
   renderStar(index: number, selected = false, rating: number) {
+    const size = this.starSize === 'big' ? 24 : 16;
     const isWholeNumber = rating % 1 === 0;
     const isLastNumber = Math.ceil(rating) === index;
 
@@ -93,11 +96,15 @@ export class RatingStars {
         data-value={index}
         data-selected={selected}
         data-half={isLastNumber && !isWholeNumber}
-        onClick={this.handleStarClick}
+        onMouseUp={this.handleStarClick}
       >
-        <scale-icon-action-favorite part="placeholder-star" />
-        <div class="clippy">
-          <scale-icon-action-favorite selected part="selected-star" />
+        <scale-icon-action-favorite size={size} part="placeholder-star" />
+        <div class="icon-clip">
+          <scale-icon-action-favorite
+            size={size}
+            selected
+            part="selected-star"
+          />
         </div>
       </div>
     );
@@ -118,11 +125,10 @@ export class RatingStars {
   }
 
   render() {
+    console.log(this.label);
     return (
       <Host>
-        <label part="label" htmlFor={this.ratingStarId}>
-          <slot>Rating Label</slot>
-        </label>
+        {this.label && <label part="label" htmlFor={this.ratingStarId}>{this.label}</label>}
         <input
           disabled={this.disabled}
           part="range-slider"
