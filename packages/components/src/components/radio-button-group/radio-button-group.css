@@ -4,7 +4,8 @@
   --font-size-label: var(--scl-font-size-16);
   /*helper-text*/
   --font-size-helper-text: var(--scl-font-size-12);
-  --color-error-helper-text: #d90000;
+  --color-error-helper-text: hsl(351.20000000000005, 82.6%, 59.4%);
+  --color-helper-text: var(--scl-color-blue-70);
 }
 
 .radio-button-group {
@@ -19,9 +20,19 @@
 }
 
 .radio-button-group__helper-text {
-  color: hsl(351.20000000000005, 82.6%, 59.4%);
+  color: var(--color-helper-text);
   font-size: var(--font-size-helper-text);
-  margin-top: -0.7rem;
+  margin-top: -0.2rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: -0.5rem;
+  font-weight: 500;
+}
+
+.radio-button-group__error-helper-text {
+  color: var(--color-error-helper-text);
+  font-size: var(--font-size-helper-text);
+  margin-top: -0.2rem;
+  margin-bottom: -0.5rem;
   padding-bottom: 0.5rem;
   font-weight: 500;
 }
