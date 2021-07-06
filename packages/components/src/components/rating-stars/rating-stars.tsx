@@ -45,10 +45,11 @@ export class RatingStars {
   /** The upper limit of the rating */
   @Prop({ reflect: true }) maxRating = 5;
   /** Represents the current value of the rating */
-  @Prop({ mutable: true, reflect: true }) rating = 3;
+  @Prop({ mutable: true, reflect: true }) rating = 3.5;
+  /** disables input  */
+  @Prop({ reflect: true }) disabled = false;
   /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
-  @Prop({ mutable: true, reflect: true }) ariaText =
-    '$rating out of $maxRating stars';
+  @Prop() ariaText = '$rating out of $maxRating stars';
 
   /** Emitted when the rating has changed */
   @Event() scaleChange: EventEmitter;
@@ -74,31 +75,55 @@ export class RatingStars {
 
   handleStarClick = (ev: MouseEvent) => {
     const star = ev.composedPath()[0] as StarInterface;
-    this.rating = Number(star.dataset.value);
+    const starValue = Number(star.dataset.value);
+    if (starValue === this.rating) {
+      this.rating = this.minRating;
+    } else {
+      this.rating = starValue;
+    }
   };
 
-  renderStar(value: number, selected = false) {
+  getPartlyWidth(value: number, rating: number) {
+    const isLastWholeNumber = Math.ceil(rating) === value;
+    const isWholeNumber = rating % 1 === 0;
+
+    const decimal = rating - Math.floor(rating);
+
+    if (isLastWholeNumber && !isWholeNumber) {
+      return `${decimal * 100}%`;
+    }
+
+    return null;
+  }
+
+  renderStar(index: number, selected = false, rating: number) {
+    const isWholeNumber = rating % 1 === 0;
+    const isLastNumber = Math.ceil(rating) === index;
+
     return (
       <div
         part="star"
-        data-value={value}
+        data-value={index}
         data-selected={selected}
         onClick={this.handleStarClick}
       >
         <scale-icon-action-favorite part="placeholder-star" />
-        <scale-icon-action-favorite selected part="selected-star" />
+        <div class="clippy" data-half={isLastNumber && !isWholeNumber}>
+          <scale-icon-action-favorite selected part="selected-star" />
+        </div>
       </div>
     );
   }
 
   renderRating() {
     const stars = [];
+    const roundedRating = Math.ceil(this.rating);
     const min = this.minRating === 0 ? this.minRating + 1 : this.minRating;
     const max = this.maxRating;
 
-    for (let rating = min; rating <= max; rating++) {
-      const isSelected = this.rating >= rating;
-      stars.push(this.renderStar(rating, isSelected));
+    for (let index = min; index <= max; index++) {
+      const isSelected = roundedRating >= index;
+      stars.push(this.renderStar(index, isSelected, this.rating));
     }
 
     return stars;
@@ -111,6 +136,7 @@ export class RatingStars {
           <slot>Rating Label</slot>
         </label>
         <input
+          disabled={this.disabled}
           part="range-slider"
           type="range"
           id={this.ratingStarId}
@@ -118,6 +144,7 @@ export class RatingStars {
           max={this.maxRating}
           value={this.rating}
           step="1"
+          aria-orientation="horizontal"
           aria-valuemin={this.minRating}
           aria-valuemax={this.maxRating}
           aria-valuenow={this.rating}

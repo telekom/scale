@@ -22,6 +22,26 @@
   flex-direction: column;
 }
 
+.clippy {
+  overflow: hidden;
+  width: 100%;
+  width: var(--scl-stars-decimal-width);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  box-sizing: content-box;
+  height: 100%;
+}
+
+.clippy[data-half] {
+  width: 50%;
+}
+
+[part='wrapper']:hover .clippy {
+  --scl-stars-decimal-width: 100% !important;
+}
+
 [part='range-slider'] {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -53,7 +73,9 @@
   position: relative;
   color: var(--scl-stars-color);
   cursor: pointer;
-  padding: 0 var(--scl-stars-spacing);
+  border: var(--scl-stars-spacing) solid transparent;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 [part='placeholder-star'] {
@@ -63,11 +85,9 @@
 }
 
 [part='selected-star'] {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   opacity: 0;
+  margin-left: 0px;
+  postion: relative;
   transition: opacity 0.1s ease-in-out;
 }
 
@@ -107,4 +127,13 @@
 
 :host(:focus-within) [part='wrapper'] {
   box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+
+/* disabled states */
+
+:host([disabled]) [part='wrapper'] {
+  --scl-stars-color: var(--scl-stars-disabled-color);
+  --scl-stars-placeholder-color: var(--scl-stars-disabled-color);
+
+  pointer-events: none;
 }
