@@ -39,32 +39,28 @@ export class RatingStars {
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
   /** The lower limit of the rating. In cases where  */
-  @Prop({ reflect: true }) starSize: 'small' | 'big' = 'big';
+  @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
   /** The lower limit of the rating. In cases where  */
-  @Prop({ reflect: true }) minRating = 0;
+  @Prop({ reflect: true }) minValue = 0;
   /** The upper limit of the rating */
-  @Prop({ reflect: true }) maxRating = 5;
+  @Prop({ reflect: true }) maxValue = 5;
   /** Represents the current value of the rating */
-  @Prop({ mutable: true, reflect: true }) rating = 3.5;
+  @Prop({ mutable: true, reflect: true }) value = 3;
   /** disables input  */
   @Prop({ reflect: true }) disabled = false;
   /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaText = '$rating out of $maxRating stars';
+  @Prop() ariaLabelTranslation = '$value out of $maxValue stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label?: string;
 
   /** Emitted when the rating has changed */
   @Event() scaleChange: EventEmitter;
 
-  @Watch('rating') ratingWatcher() {
-    this.scaleChange.emit({ rating: this.rating });
-  }
-
   // constructs the aria message for the current rating
   getRatingText() {
-    const filledText = this.ariaText
-      .replace(/\$rating/g, `${this.rating}`)
-      .replace(/\$maxRating/g, `${this.maxRating}`);
+    const filledText = this.ariaLabelTranslation
+      .replace(/\$value/g, `${this.value}`)
+      .replace(/\$maxValue/g, `${this.maxValue}`);
     return filledText;
   }
 
@@ -72,7 +68,8 @@ export class RatingStars {
     const input = ev.composedPath()[0] as HTMLInputElement;
     const rating = input.value;
 
-    this.rating = Number(rating);
+    this.value = Number(rating);
+    this.scaleChange.emit({ value: this.value });
   };
 
   handleStarClick = (ev: MouseEvent) => {
@@ -82,21 +79,25 @@ export class RatingStars {
       const starOneSelected = this.host.shadowRoot.querySelector('[data-value="1"][data-selected]') ? true : false;
       const starTwoSelected = this.host.shadowRoot.querySelector('[data-value="2"][data-selected]') ? true : false;
       if(starOneSelected && ! starTwoSelected) {
-        if (this.minRating > 0) {
-          this.rating = this.minRating;
+        if (this.minValue > 0) {
+          this.value = this.minValue;
+          this.scaleChange.emit({ value: this.value });
         } else {
-          this.rating = this.minRating;
+          this.value = this.minValue;
+          this.scaleChange.emit({ value: this.value });
         }
       } else {
-        this.rating = starValue;
+        this.value = starValue;
+        this.scaleChange.emit({ value: this.value });
       }
     } else {
-      this.rating = starValue;
+      this.value = starValue;
+      this.scaleChange.emit({ value: this.value });
     }
   };
 
   renderStar(index: number, selected = false, rating: number) {
-    const size = this.starSize === 'big' ? 24 : 16;
+    const size = this.starSize === 'large' ? 24 : 16;
     const isWholeNumber = rating % 1 === 0;
     const isLastNumber = Math.ceil(rating) === index;
 
@@ -122,13 +123,13 @@ export class RatingStars {
 
   renderRating() {
     const stars = [];
-    const roundedRating = Math.ceil(this.rating);
-    const min = this.minRating === 0 ? this.minRating + 1 : this.minRating;
-    const max = this.maxRating;
+    const roundedRating = Math.ceil(this.value);
+    const min = this.minValue === 0 ? this.minValue + 1 : this.minValue;
+    const max = this.maxValue;
 
     for (let index = min; index <= max; index++) {
       const isSelected = roundedRating >= index;
-      stars.push(this.renderStar(index, isSelected, this.rating));
+      stars.push(this.renderStar(index, isSelected, this.value));
     }
 
     return stars;
@@ -143,14 +144,14 @@ export class RatingStars {
           part="range-slider"
           type="range"
           id={this.ratingStarId}
-          min={this.minRating}
-          max={this.maxRating}
-          value={this.rating}
+          min={this.minValue}
+          max={this.maxValue}
+          value={this.value}
           step="1"
           aria-orientation="horizontal"
-          aria-valuemin={this.minRating}
-          aria-valuemax={this.maxRating}
-          aria-valuenow={this.rating}
+          aria-valuemin={this.minValue}
+          aria-valuemax={this.maxValue}
+          aria-valuenow={this.value}
           aria-valuetext={this.getRatingText()}
           onInput={this.handleInput}
         />
