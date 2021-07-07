@@ -24,17 +24,17 @@ describe('RatingStars', () => {
     });
 
     it('check non default props', async () => {
-      page.root.maxValue = 7;
-      page.root.minValue = 1;
-      page.root.value = 4;
+      page.root.maxRating = 7;
+      page.root.minRating = 1;
+      page.root.rating = 4;
       page.root.starSize = 'small';
       page.root.disabled = true;
       page.root.ariaLabelTranslation = '$value aus $maxValue Sternen';
       page.root.label = 'Rating Label';
       await page.waitForChanges();
-      expect(page.rootInstance.maxValue).toBe(7);
-      expect(page.rootInstance.minValue).toBe(1);
-      expect(page.rootInstance.value).toBe(4);
+      expect(page.rootInstance.maxRating).toBe(7);
+      expect(page.rootInstance.minRating).toBe(1);
+      expect(page.rootInstance.rating).toBe(4);
       expect(page.rootInstance.starSize).toBe('small');
       expect(page.rootInstance.disabled).toBe(true);
       expect(page.rootInstance.ariaLabelTranslation).toBe(
@@ -48,28 +48,28 @@ describe('RatingStars', () => {
     it('rating 2', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars value="2"></scale-rating-stars>`,
+        html: `<scale-rating-stars rating="2"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
 
-    it('rating 3, minValue 1', async () => {
+    it('rating 3, minRating 1', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars value="3" minValue="1"></scale-rating-stars>`,
+        html: `<scale-rating-stars rating="3" min-rating="1"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
 
-    it('rating 2, maxValue 7', async () => {
+    it('rating 2, maxRating 7', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars value="2" max-value="7"></scale-rating-stars>`,
+        html: `<scale-rating-stars rating="2" max-rating="7"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
 
-    it('rating 4, disabled', async () => {
+    it('rating 3, disabled', async () => {
       page = await newSpecPage({
         components: [RatingStars],
         html: `<scale-rating-stars disabled></scale-rating-stars>`,
