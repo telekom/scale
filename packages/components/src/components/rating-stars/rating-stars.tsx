@@ -78,8 +78,18 @@ export class RatingStars {
   handleStarClick = (ev: MouseEvent) => {
     const star = ev.composedPath()[0] as StarInterface;
     const starValue = Number(star.dataset.value);
-    if (starValue === this.rating) {
-      this.rating = this.minRating;
+    if (starValue === 1) {
+      const starOneSelected = this.host.shadowRoot.querySelector('[data-value="1"][data-selected]') ? true : false;
+      const starTwoSelected = this.host.shadowRoot.querySelector('[data-value="2"][data-selected]') ? true : false;
+      if(starOneSelected && ! starTwoSelected) {
+        if (this.minRating > 0) {
+          this.rating = this.minRating;
+        } else {
+          this.rating = this.minRating;
+        }
+      } else {
+        this.rating = starValue;
+      }
     } else {
       this.rating = starValue;
     }
@@ -125,7 +135,6 @@ export class RatingStars {
   }
 
   render() {
-    console.log(this.label);
     return (
       <Host>
         {this.label && <label part="label" htmlFor={this.ratingStarId}>{this.label}</label>}
