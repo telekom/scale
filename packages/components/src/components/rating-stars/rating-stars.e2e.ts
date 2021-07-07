@@ -34,9 +34,9 @@ describe('rating-stars', () => {
 
   test('click star 3 will return a rating of 5', async () => {
     const star = await page.find('scale-rating-stars >>> [data-value="5"]');
-    expect(await component.getProperty('value')).toEqual(3);
+    expect(await component.getProperty('rating')).toEqual(3);
     await star.click();
-    expect(await component.getProperty('value')).toEqual(5);
+    expect(await component.getProperty('rating')).toEqual(5);
   });
 
   test('gets rating of 5 when navigating two to the right with ArrowRight', async () => {
@@ -44,31 +44,31 @@ describe('rating-stars', () => {
       'scale-rating-stars >>> [part="range-slider"]'
     );
     await container.press('Tab');
-    expect(await component.getProperty('value')).toEqual(3);
+    expect(await component.getProperty('rating')).toEqual(3);
     await container.press('ArrowRight');
-    expect(await component.getProperty('value')).toEqual(4);
+    expect(await component.getProperty('rating')).toEqual(4);
     await container.press('ArrowRight');
-    expect(await component.getProperty('value')).toEqual(5);
+    expect(await component.getProperty('rating')).toEqual(5);
   });
 
   test('clearing stars with two clicks', async () => {
     const star = await page.find('scale-rating-stars >>> [data-value="1"]');
-    expect(await component.getProperty('value')).toEqual(3);
+    expect(await component.getProperty('rating')).toEqual(3);
     await star.click();
-    expect(await component.getProperty('value')).toEqual(1);
+    expect(await component.getProperty('rating')).toEqual(1);
     await star.click();
-    expect(await component.getProperty('value')).toEqual(0);
+    expect(await component.getProperty('rating')).toEqual(0);
   });
 
   test('gets rating of max when pressing End', async () => {
     const container = await page.find(
       'scale-rating-stars >>> [part="range-slider"]'
     );
-    expect(await component.getProperty('value')).toEqual(3);
+    expect(await component.getProperty('rating')).toEqual(3);
     await container.press('Tab');
     await container.press('End');
-    expect(await component.getProperty('value')).toEqual(5);
+    expect(await component.getProperty('rating')).toEqual(5);
     await container.press('Home');
-    expect(await component.getProperty('value')).toEqual(0);
+    expect(await component.getProperty('rating')).toEqual(0);
   });
 });
