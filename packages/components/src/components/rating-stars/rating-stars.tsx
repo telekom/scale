@@ -17,6 +17,7 @@ import {
   Element,
   Event,
   EventEmitter,
+  State,
 } from '@stencil/core';
 
 export interface StarInterface extends HTMLDivElement {
@@ -55,9 +56,15 @@ export class RatingStars {
   @Prop() ariaLabelTranslation = '$rating out of $maxRating stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label?: string;
+  /** switch to define behaviour onTouch */
+  @State() firstStarSelected: boolean;
 
   /** Emitted when the rating has changed */
   @Event() scaleChange: EventEmitter;
+
+  connectedCallback() {
+    this.firstStarSelected = false;
+  }
 
   // constructs the aria message for the current rating
   getRatingText() {
@@ -75,6 +82,23 @@ export class RatingStars {
     this.scaleChange.emit({ value: this.rating });
   };
 
+  handleTouchEnd = (ev: TouchEvent) => {
+    const star = ev.composedPath()[0] as StarInterface;
+    const starValue = Number(star.dataset.value);
+    if (starValue === 1) {
+      if (this.firstStarSelected) {
+        this.rating = starValue;
+        this.firstStarSelected = !this.firstStarSelected;
+      } else {
+        this.rating = this.minRating;
+        this.firstStarSelected = !this.firstStarSelected;
+      }
+    } else {
+      this.rating = starValue;
+      this.scaleChange.emit({ value: this.rating });
+    }
+  };
+
   handleStarClick = (ev: MouseEvent) => {
     const star = ev.composedPath()[0] as StarInterface;
     const starValue = Number(star.dataset.value);
@@ -89,6 +113,7 @@ export class RatingStars {
       )
         ? true
         : false;
+
       if (starOneSelected && !starTwoSelected) {
         if (this.minRating > 0) {
           this.rating = this.minRating;
@@ -119,6 +144,7 @@ export class RatingStars {
         data-selected={selected}
         data-half={isLastNumber && !isWholeNumber}
         onMouseUp={this.handleStarClick}
+        onTouchEnd={this.handleTouchEnd}
       >
         <scale-icon-action-favorite size={size} part="placeholder-star" />
         <div class="icon-clip">
