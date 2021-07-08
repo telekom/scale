@@ -49,7 +49,7 @@ export class RatingStars {
   /** The upper limit of the rating */
   @Prop({ reflect: true }) maxRating = 5;
   /** Represents the current value of the rating */
-  @Prop({ mutable: true, reflect: true }) rating = 3;
+  @Prop({ mutable: true, reflect: true }) rating = 0;
   /** makes the rating non-interactive (but still accessible)  */
   @Prop({ reflect: true }) readonly = false;
   /** disables input  */
@@ -80,7 +80,12 @@ export class RatingStars {
     const input = ev.composedPath()[0] as HTMLInputElement;
     const rating = input.value;
 
-    this.rating = Number(rating);
+    if (this.rating === 0) {
+      this.rating = 1;
+    } else {
+      this.rating = Number(rating);
+    }
+
     this.scaleChange.emit({ value: this.rating });
   };
 
@@ -104,34 +109,14 @@ export class RatingStars {
   handleStarClick = (ev: MouseEvent) => {
     const star = ev.composedPath()[0] as StarInterface;
     const starValue = Number(star.dataset.value);
-    if (starValue === 1) {
-      const starOneSelected = this.host.shadowRoot.querySelector(
-        '[data-value="1"][data-selected]'
-      )
-        ? true
-        : false;
-      const starTwoSelected = this.host.shadowRoot.querySelector(
-        '[data-value="2"][data-selected]'
-      )
-        ? true
-        : false;
 
-      if (starOneSelected && !starTwoSelected) {
-        if (this.minRating > 0) {
-          this.rating = this.minRating;
-          this.scaleChange.emit({ value: this.rating });
-        } else {
-          this.rating = this.minRating;
-          this.scaleChange.emit({ value: this.rating });
-        }
-      } else {
-        this.rating = starValue;
-        this.scaleChange.emit({ value: this.rating });
-      }
+    if (starValue === 1 && this.rating === 1 && this.minRating === 0) {
+      this.rating = this.minRating;
     } else {
       this.rating = starValue;
-      this.scaleChange.emit({ value: this.rating });
     }
+
+    this.scaleChange.emit({ value: this.rating });
   };
 
   renderStar(index: number, selected = false, rating: number) {
