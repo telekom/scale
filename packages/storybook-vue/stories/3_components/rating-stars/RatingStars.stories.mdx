@@ -4,7 +4,17 @@ import ScaleRatingStars from "./ScaleRatingStars.vue";
 <Meta
   title="Beta Components/Rating Stars"
   component={ScaleRatingStars}
-  argTypes={{}}
+  argTypes={{
+    starSize: {
+      control: {
+        type: "select",
+        options: [
+          "small",
+          "large",
+        ],
+      },
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -15,12 +25,36 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
   <scale-rating-stars
-    :max="max"
-    :value="value"
-    :small="small"
+    :max-rating="maxRating"
+    :min-rating="minRating"
+    :rating="rating"
+    :star-size="starSize"
     :disabled="disabled"
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
+    custom-styles
+  >
+  </scale-rating-stars>
+    `,
+});
+
+export const TemplateSpacing = (args, { argTypes }) => ({
+  components: { ScaleRatingStars },
+  props: {
+    label: String,
+    ...ScaleRatingStars.props,
+  },
+  template: `
+  <scale-rating-stars
+    :max-rating="maxRating"
+    :min-rating="minRating"
+    :rating="rating"
+    :star-size="starSize"
+    :disabled="disabled"
+    :aria-label-translation="ariaLabelTranslation"
+    :label="label"
+    custom-styles
+    style="--scl-stars-spacing: 1rem"
   >
   </scale-rating-stars>
     `,
@@ -35,7 +69,7 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: "Rating Label",
-      value: 3,
+      rating: 3,
     }}
   >
     {Template.bind({})}
@@ -45,7 +79,7 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-rating-stars value="3"></scale-rating-stars>
+<scale-rating-stars rating="3"></scale-rating-stars>
 ```
 
 ## Disabled
@@ -56,7 +90,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Rating Label",
       disabled: true,
-      value: 2,
+      rating: 2,
     }}
   >
     {Template.bind({})}
@@ -64,7 +98,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="2" disabled></scale-rating-stars>
+<scale-rating-stars rating="2" disabled></scale-rating-stars>
 ```
 
 ## Small
@@ -74,8 +108,8 @@ export const Template = (args, { argTypes }) => ({
     name="Small"
     args={{
       label: "Rating Label",
-      value: 4,
-      small: true,
+      rating: 4,
+      starSize: 'small',
     }}
   >
     {Template.bind({})}
@@ -83,7 +117,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="4" small></scale-rating-stars>
+<scale-rating-stars rating="4" star-size="small"></scale-rating-stars>
 ```
 
 ## Number of Stars
@@ -93,8 +127,8 @@ export const Template = (args, { argTypes }) => ({
     name="Number of Stars"
     args={{
       label: "Rating Label",
-      value: 6,
-      max: 10,
+      rating: 6,
+      maxRating: 10,
     }}
   >
     {Template.bind({})}
@@ -102,7 +136,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="6" max="10"></scale-rating-stars>
+<scale-rating-stars rating="6" max-rating="10"></scale-rating-stars>
 ```
 
 ## Spacing
@@ -112,18 +146,18 @@ export const Template = (args, { argTypes }) => ({
     name="Spacing"
     args={{
       label: "Rating Label",
-      value: 1,
-      style: "--rating-spacing: 1rem",
+      rating: 1,
+      style: "--scl-stars-spacing: 1rem",
     }}
   >
-    {Template.bind({})}
+    {TemplateSpacing.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-rating-stars
-  value="1"
-  style="--rating-spacing: 1rem"
+  rating="1"
+  style="--scl-stars-spacing: 1rem"
 ></scale-rating-stars>
 ```
 
@@ -134,8 +168,8 @@ export const Template = (args, { argTypes }) => ({
     name="Aria Label Translation"
     args={{
       label: "Rating Label",
-      value: 1,
-      ariaLabelTranslation: "${x} out of ${y} stars",
+      rating: 1,
+      ariaLabelTranslation: "${rating} out of ${maxRating} stars",
     }}
   >
     {Template.bind({})}
@@ -144,8 +178,8 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-rating-stars
-  value="1"
-  aria-label-translation="${value} out of ${max} stars"
+  rating="1"
+  aria-label-translation="${rating} out of ${maxRating} stars"
 ></scale-rating-stars>
 ```
 
@@ -155,7 +189,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="No Label"
     args={{
-      value: 4,
+      rating: 4,
     }}
   >
     {Template.bind({})}
@@ -163,5 +197,5 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="4"></scale-rating-stars>
+<scale-rating-stars rating="4"></scale-rating-stars>
 ```
