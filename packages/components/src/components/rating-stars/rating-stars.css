@@ -138,8 +138,16 @@
 
 /* focus states */
 
-:host(:focus-within) [part='wrapper'] {
+:host(:focus-within) [part='wrapper'],
+[part='wrapper']:focus {
   box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  outline: none;
+}
+
+/* readonly states */
+
+:host([readonly]) [part='wrapper'] {
+  pointer-events: none;
 }
 
 /* disabled states */

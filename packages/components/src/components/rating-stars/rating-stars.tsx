@@ -50,6 +50,8 @@ export class RatingStars {
   @Prop({ reflect: true }) maxRating = 5;
   /** Represents the current value of the rating */
   @Prop({ mutable: true, reflect: true }) rating = 3;
+  /** makes the rating non-interactive (but still accessible)  */
+  @Prop({ reflect: true }) readonly = false;
   /** disables input  */
   @Prop({ reflect: true }) disabled = false;
   /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
@@ -143,8 +145,8 @@ export class RatingStars {
         data-value={index}
         data-selected={selected}
         data-half={isLastNumber && !isWholeNumber}
-        onMouseUp={this.handleStarClick}
-        onTouchEnd={this.handleTouchEnd}
+        onMouseUp={!this.readonly && this.handleStarClick}
+        onTouchEnd={!this.readonly && this.handleTouchEnd}
       >
         <scale-icon-action-favorite size={size} part="placeholder-star" />
         <div class="icon-clip">
@@ -176,12 +178,16 @@ export class RatingStars {
     return (
       <Host>
         {this.label && (
-          <label part="label" htmlFor={this.ratingStarId}>
+          <label
+            id={`${this.ratingStarId}-label`}
+            part="label"
+            htmlFor={this.ratingStarId}
+          >
             {this.label}
           </label>
         )}
         <input
-          disabled={this.disabled}
+          disabled={this.disabled || this.readonly}
           part="range-slider"
           type="range"
           id={this.ratingStarId}
@@ -196,7 +202,16 @@ export class RatingStars {
           aria-valuetext={this.getRatingText()}
           onInput={this.handleInput}
         />
-        <div part="wrapper">{this.renderRating()}</div>
+        <div
+          part="wrapper"
+          tabIndex={this.readonly ? 0 : -1}
+          role="figure"
+          aria-labeledby={`${this.ratingStarId}-label`}
+          aria-valuetext={this.getRatingText()}
+          aria-orientation="horizontal"
+        >
+          {this.renderRating()}
+        </div>
       </Host>
     );
   }
