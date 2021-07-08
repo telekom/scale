@@ -18,6 +18,7 @@ import {
   Event,
   EventEmitter,
   State,
+  Watch,
 } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 
@@ -181,6 +182,14 @@ export class DatePicker {
    */
   @Method() async hide(moveFocusToButton = true) {
     return this.duetInput.hide(moveFocusToButton);
+  }
+
+  /**
+   * Watch Value property for changes from outside and change hasValue based on that
+   */
+  @Watch('value')
+  onValueChange() {
+    this.hasValue = this.value != null && this.value !== '';
   }
 
   componentWillLoad() {
