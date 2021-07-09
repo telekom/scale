@@ -1,5 +1,6 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
+import ScaleLoadingSpinnerAccess from './ScaleLoadingSpinnerAccess.vue';
 
 <Meta
   title="Beta Components/Loading-Spinner"
@@ -17,11 +18,30 @@ import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
   }}
 />
 
-export const Template = () => ({
+export const AccessTemplate = () => ({
   components: { ScaleLoadingSpinner },
   props: {
     label: String,
     ...ScaleLoadingSpinner.props,
+  },
+  template: `
+    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
+        <scale-loading-spinner
+            :variant='variant'
+            :alignment='alignment'
+            :text='text'
+            :size='size'
+        >
+        </scale-loading-spinner>
+    </div>
+    `,
+});
+
+export const Template = () => ({
+  components: { ScaleLoadingSpinnerAccess },
+  props: {
+    label: String,
+    ...ScaleLoadingSpinnerAccess.props,
   },
   template: `
     <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
@@ -258,3 +278,17 @@ export const Template = () => ({
   text="Loading..."
 ></scale-loading-spinner>
 ```
+
+## Accessibility
+
+<Canvas withSource="none">
+  <Story
+    name="Accessibility"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+    }}
+  >
+    {AccessTemplate.bind({})}
+  </Story>
+</Canvas>
