@@ -64,7 +64,7 @@ describe('Alertbox', () => {
                 color ="black"
                 variant ="outline"
                 icon ="true"
-                hasClose ="true"
+                has-close ="true"
                 content ="false">
               </scale-alertbox>`,
     });
@@ -72,28 +72,60 @@ describe('Alertbox', () => {
     expect(page.rootInstance.color).toBe('black');
     expect(page.rootInstance.variant).toBe('outline');
     expect(page.rootInstance.icon).toBe(true);
-    expect(page.rootInstance.hasclose).toBe(true);
+    expect(page.rootInstance.hasClose).toBe(true);
     expect(page.rootInstance.content).toBe(false);
   });
 
-  
-    // it('should emit onClick and set opened to false', async () => {
-    //   element.rootInstance.opened = true;
-    //   await element.waitForChanges();
-    //   element.dispatchEvent(new Event('click'));
-    //   await element.waitForChanges();
-    //   expect(element.rootInstance.opened).toBe(false);
-    // });
+  it('should emit onClick and set opened to false', async () => {
+    let page = await newSpecPage({
+      components: [Alertbox],
+      html: `<scale-alertbox opened="true" has-close="true">Label</scale-alertbox>`,
+    });
+    const icon = page.root.shadowRoot.querySelector('.alertbox__icon-close');
+    await page.waitForChanges();
+    icon.dispatchEvent(new Event('click'));
+    await page.waitForChanges();
+    expect(page.rootInstance.opened).toBe(false);
+  });
 
-    // it('should emit onClick and set opened to false', async () => {
-    //   let page = await newSpecPage({
-    //     components: [Alertbox],
-    //     html: `<scale-alertbox opened="true">Label</scale-alertbox>`,
-    //   });
-    //   await page.waitForChanges();
-    //   element.dispatchEvent(new Event('click'));
-    //   await page.waitForChanges();
-    //   expect(element.rootInstance.opened).toBe(false);
-    // });
+  it('should set timeout of the FIRST argument on function onCloseAlertWithTimeout()', async () => {
+    let page = await newSpecPage({
+      components: [Alertbox],
+      html: `<scale-alertbox opened="true" >Label</scale-alertbox>`,
+    });
+    page.rootInstance.defaultTimeout = 1;
+    page.rootInstance.timeout = true;
+    await page.waitForChanges();
+    expect(page.rootInstance.defaultTimeout).toBe(1);
+    setTimeout(() => {
+      expect(page.root.opened).toEqual(false);
+    }, 1);
+  });
+
+  // it('should set timeout of the SECOND argument on function onCloseAlertWithTimeout()', async () => {
+  //   let page = await newSpecPage({
+  //     components: [Alertbox],
+  //     html: `<scale-alertbox timeout="200" opened="true" >Label</scale-alertbox>`,
+  //   });
+  //   await page.waitForChanges();
+  //   expect(page.root.timeout).toBe("200");
+  //   setTimeout(() => {
+  //     expect(page.root.opened).toBe(false);
+  //   }, page.root.timeout);
+  // });
+
+  // it('should set timeout of the SECOND argument on function onCloseAlertWithTimeout()', async () => {
+  //   let page = await newSpecPage({
+  //     components: [Alertbox],
+  //     html: `<scale-alertbox>Label</scale-alertbox>`,
+  //   });
+  //   page.rootInstance.timeout = 200;
+  //   page.rootInstance.opened = true;
+  //   await page.waitForChanges();
+  //   expect(page.rootInstance.timeout).toBe(200);
+  //   setTimeout(() => {
+  //     expect(page.rootInstance.opened).toBe(false);
+  //   }, 200);
+  // });
+
 });
-  

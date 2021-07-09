@@ -2,8 +2,9 @@
     <h1>Alertbox</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
-Statische Rating Stars können eine Bewertung abbilden. Interaktive Rating Stars ermöglichen es Nutzer\innen, eine eigene Bewertung abzugeben.
 
-## Beta-Komponente
+Static Rating Stars can display a rating while interactive Rating Stars enable the user to easily input their own.
 
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
+## Beta components
+
+This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.

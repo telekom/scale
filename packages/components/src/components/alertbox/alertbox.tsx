@@ -10,7 +10,7 @@ export class Alertbox {
   @Prop() color?: 'white' | 'yellow' | 'green' | 'blue' | 'black' | 'error' = 'white';
   @Prop() variant?: 'floating' | 'outline';
   @Prop() icon: boolean = false;
-  @Prop({ reflect: true }) hasclose?: boolean = false;
+  @Prop({ reflect: true }) hasClose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
   @State() content: boolean = true;
@@ -73,7 +73,6 @@ export class Alertbox {
   }
   close = () => {
     this.opened = false;
-    console.log('close');
   }
   onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
@@ -100,7 +99,7 @@ export class Alertbox {
               <slot name="header">
                 <p>Missing Title</p>
               </slot>
-              {this.hasclose && (
+              {this.hasClose && (
                 <scale-icon-action-circle-close
                   class="alertbox__icon-close"
                   onClick={() => {
