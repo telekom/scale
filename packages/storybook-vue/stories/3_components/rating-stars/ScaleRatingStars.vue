@@ -7,6 +7,7 @@
     :disabled="disabled"
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
+    :readonly="readonly"
   >
   </scale-rating-stars>
 </template>
@@ -21,6 +22,7 @@ export default {
     disabled: { type: Boolean, default: false },
     ariaLabelTranslation: { type: String },
     label: { type: String },
+    readonly: { type: Boolean, default: false },
   },
 };
 </script>

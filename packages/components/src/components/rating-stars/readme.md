@@ -14,7 +14,8 @@
 | `label`                | `label`                  | (optional) rating label                                                                                                                           | `string`             | `undefined`                         |
 | `maxRating`            | `max-rating`             | The upper limit of the rating                                                                                                                     | `number`             | `5`                                 |
 | `minRating`            | `min-rating`             | The lower limit of the rating. In cases where                                                                                                     | `number`             | `0`                                 |
-| `rating`               | `rating`                 | Represents the current value of the rating                                                                                                        | `number`             | `3`                                 |
+| `rating`               | `rating`                 | Represents the current value of the rating                                                                                                        | `number`             | `0`                                 |
+| `readonly`             | `readonly`               | makes the rating non-interactive (but still accessible)                                                                                           | `boolean`            | `false`                             |
 | `starSize`             | `star-size`              | The lower limit of the rating. In cases where                                                                                                     | `"large" \| "small"` | `'large'`                           |
 
 

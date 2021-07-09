@@ -32,6 +32,7 @@ export const Template = (args, { argTypes }) => ({
     :disabled="disabled"
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
+    :readonly="readonly"
     custom-styles
   >
   </scale-rating-stars>
@@ -53,6 +54,7 @@ export const TemplateSpacing = (args, { argTypes }) => ({
     :disabled="disabled"
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
+    :readonly="readonly"
     custom-styles
     style="--scl-stars-spacing: 1rem"
   >
@@ -198,4 +200,23 @@ export const TemplateSpacing = (args, { argTypes }) => ({
 
 ```html
 <scale-rating-stars rating="4"></scale-rating-stars>
+```
+
+## Readonly
+
+<Canvas withSource="none">
+  <Story
+    name="Readonly"
+    args={{
+      label: "Rating Label",
+      rating: 3,
+      readonly: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="3" readonly></scale-rating-stars>
 ```
