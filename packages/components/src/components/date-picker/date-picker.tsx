@@ -185,7 +185,7 @@ export class DatePicker {
   }
 
   /**
-   * Watch Value property for changes from outside and change hasValue based on that
+   * Watch `value` property for changes and update `hasValue` based on that.
    */
   @Watch('value')
   onValueChange() {
