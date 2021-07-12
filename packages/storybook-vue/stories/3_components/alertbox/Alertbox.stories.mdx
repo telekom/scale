@@ -25,28 +25,28 @@ import ScaleAlertbox from './ScaleAlertbox.vue';
       },
     },
     icon: {
-      defaultValue: 'false',
-      options: ['true', 'false'],
+      defaultValue: false,
+      options: [true, false],
       control: {
         type: 'select',
       },
     },
     hasclose: {
-      defaultValue: 'false',
-      options: ['true', 'false'],
+      defaultValue: false,
+      options: [true, false],
       control: {
         type: 'select',
       },
     },
     opened: {
-      options: ['true', 'false'],
+      options: [true, false],
       control: {
         type: 'select',
       },
     },
     timout: {
-      defaultValue: 'false',
-      options: ['false', 'true', Number],
+      defaultValue: false,
+      options: [false, true, Number],
       control: {
         type: 'select',
       },
@@ -68,7 +68,8 @@ export const Template = (args, { argTypes }) => ({
     :timeout="timeout"
     opened
     >
-      <p slot="header">Message with title only</p>
+      <p slot="header">Hey</p>
+      <p slot="text">Here I am</p>
     </scale-alertbox>
   `,
 });
