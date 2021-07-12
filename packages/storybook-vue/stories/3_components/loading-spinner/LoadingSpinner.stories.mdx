@@ -1,6 +1,6 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
-import ScaleLoadingSpinnerAccess from './ScaleLoadingSpinnerAccess.vue';
+import ScaleLoadingSpinnerTemplate from './ScaleLoadingSpinner.vue';
+import ScaleLoadingSpinner from './ScaleLoadingSpinnerAccess.vue';
 
 <Meta
   title="Beta Components/Loading-Spinner"
@@ -10,7 +10,7 @@ import ScaleLoadingSpinnerAccess from './ScaleLoadingSpinnerAccess.vue';
       control: { type: 'select', options: ['primary', 'white'] },
     },
     size: {
-      control: { type: 'select', options: ['small', 'large', 'button'] },
+      control: { type: 'select', options: ['small', 'large'] },
     },
     alignment: {
       control: { type: 'select', options: ['vertical', 'horizontal'] },
@@ -38,10 +38,10 @@ export const AccessTemplate = () => ({
 });
 
 export const Template = () => ({
-  components: { ScaleLoadingSpinnerAccess },
+  components: { ScaleLoadingSpinnerTemplate },
   props: {
     label: String,
-    ...ScaleLoadingSpinnerAccess.props,
+    ...ScaleLoadingSpinnerTemplate.props,
   },
   template: `
     <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">

@@ -6,6 +6,7 @@
       :alignment="alignment"
       :text="text"
       :size="size"
+      style="padding-left: 25px"
     ></scale-loading-spinner>
     <div
       id="loaded-example-page"
@@ -13,7 +14,7 @@
       style="display: none"
       aria-label=""
     >
-      <div>Dummy for a loaded page</div>
+      <scale-tag style="padding-left: 30px">Loaded Page</scale-tag>
     </div>
     <div style="padding: 10px"></div>
     <button
@@ -21,10 +22,12 @@
       aria-hidden="true"
       id="loading_button"
       style="
+        height: 50px;
         background-color: #cb0068;
         border: 2px solid white;
-        border-radius: 25px;
+        border-radius: 12.5px;
         color: white;
+        font-weight: bold;
       "
     >
       simulate loading finished
@@ -34,11 +37,14 @@
       aria-hidden="true"
       id="reloading_button"
       style="
+        height: 50px;
         display: none;
         background-color: #cb0068;
         border: 2px solid white;
         border-radius: 25px;
         color: white;
+        border-radius: 12.5px;
+        font-weight: bold;
       "
     >
       back to loading spinner
