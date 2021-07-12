@@ -13,11 +13,11 @@ import { Component, Prop, h, State, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 @Component({
-  tag: 'scale-carousel',
-  styleUrl: './carousel.css',
+  tag: 'scale-carousel1',
+  styleUrl: './carousel1.css',
   shadow: true,
 })
-export class Carousel {
+export class Carousel1 {
   @Element() hostElement: HTMLElement;
 
   /** (optional) carousel display direction */
@@ -89,31 +89,30 @@ export class Carousel {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
+
         <div class={this.getCssClassMap()}>
-          <ul class="carousel__slides">
-            {this.slidesArray.map((element) => (
-              <li
-                class="carousel__slide"
-                style={{ transform: this.setTransformValue() }}
-              >
-                <div innerHTML={element.outerHTML}></div>
-              </li>
-            ))}
-          </ul>
-          <ul class="carousel__arrows">
-            <li
+          <div class="carousel__container">
+            <div
               class="carousel__arrow carousel__arrow--left"
               onClick={() => this.handleSlideChange('prev')}
             >
               <slot name="arrow-left" />
-            </li>
-            <li
+            </div>
+            {this.slidesArray.map((element) => (
+              <div
+                class="carousel__slide"
+                style={{ transform: this.setTransformValue() }}
+              >
+                <div innerHTML={element.outerHTML}></div>
+              </div>
+            ))}
+            <div
               class="carousel__arrow carousel__arrow--right"
               onClick={() => this.handleSlideChange('next')}
             >
               <slot name="arrow-right" />
-            </li>
-          </ul>
+            </div>
+          </div>
           <ul class="carousel__indicators">
             {Array.from(Array(this.slidesArray.length).keys()).map((index) => (
               <li
@@ -123,11 +122,6 @@ export class Carousel {
               ></li>
             ))}
           </ul>
-          <div
-            aria-live="polite"
-            aria-atomic="true"
-            class="liveregion visuallyhidden"
-          ></div>
         </div>
       </Host>
     );

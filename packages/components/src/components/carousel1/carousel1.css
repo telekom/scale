@@ -9,22 +9,14 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/* .carousel {
-  width: 400px;
-  height: 300px;
-  position: relative;
-} */
-
 .carousel {
-  display: flex;
-  flex-direction: column;
   width: 400px;
   height: 300px;
   position: relative;
-  overflow: hidden;
+  background: beige;
 }
 
-/* .carousel__container {
+.carousel__container {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -34,45 +26,18 @@
   position: relative;
   box-sizing: border-box;
   align-items: center;
-} */
-
-.carousel__slides {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  background-color: beige;
 }
 
 .carousel__slide {
   height: 100%;
-  width: 100%;
   position: relative;
+  min-width: 100%;
   transition: all 0.3s ease-in-out;
 }
 
-.carousel__arrows {
-  width: 100%;
-  background: beige;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-}
-
-.carousel__indicators {
-  height: 50px;
-  margin: 0;
-  display: inline-flex;
-  padding: 0;
-  z-index: 2;
-  list-style: none;
-  background: rgb(248, 225, 210);
-}
-
 .carousel__arrow {
+  top: 50%;
   color: #fff;
   width: 24px;
   border: none;
@@ -97,7 +62,19 @@
   right: 12px;
 }
 
-/* .carousel__indicator {
+.carousel__indicators {
+  left: 50%;
+  bottom: 12px;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateX(-50%);
+  list-style: none;
+}
+
+.carousel__indicator {
   width: 30px;
   border: none;
   cursor: pointer;
@@ -137,4 +114,4 @@
   width: 4px;
   height: 30px;
   margin: 6px 0;
-} */
+}
