@@ -8,20 +8,29 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+ :host {
+  --spacing-left: calc(-1 * var(--scl-spacing-8));
 
-/* .carousel {
-  width: 400px;
-  height: 300px;
-  position: relative;
-} */
+  --font-size-list-item: var(--scl-font-size-14);
+
+  --color-separator: var(--scl-color-grey-60);
+
+  --spacing-y-item: var(--scl-spacing-4);
+  --spacing-x-item: var(--scl-spacing-8);
+
+  --color-link: var(--scl-color-grey-60);
+  --radius-link: var(--scl-radius-8);
+  --color-indicator-hover: var(--scl-color-primary-hover);
+  --color-indicator-active: var(--scl-color-primary-active);
+}
 
 .carousel {
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 300px;
+  height: 400px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* .carousel__container {
@@ -63,13 +72,21 @@
 }
 
 .carousel__indicators {
-  height: 50px;
+  width: 100%;
   margin: 0;
-  display: inline-flex;
-  padding: 0;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
   list-style: none;
-  background: rgb(248, 225, 210);
+  position: absolute;
+  top: 300px;
+}
+
+.carousel__indicator {
+  cursor: pointer;
+  padding: 0 8px;
+  transition: 0.3s;
+  opacity: 50%;
 }
 
 .carousel__arrow {
@@ -97,44 +114,8 @@
   right: 12px;
 }
 
-/* .carousel__indicator {
-  width: 30px;
-  border: none;
-  cursor: pointer;
-  height: 4px;
-  margin: 0 6px;
-  display: block;
-  opacity: 0.5;
-  outline: none;
-  padding: 0;
-  background: #fff;
-  transition: 0.3s;
-}
-
 .carousel__indicator--active {
   opacity: 1;
 }
 
-.carousel--vertical .carousel__container {
-  flex-direction: column;
-}
 
-.carousel--vertical .carousel__arrow {
-  display: none;
-}
-
-.carousel--vertical .carousel__indicators {
-  top: 50%;
-  left: unset;
-  right: 12px;
-  bottom: 0;
-  display: flex;
-  transform: translateY(-50%);
-  flex-direction: column;
-}
-
-.carousel--vertical .carousel__indicator {
-  width: 4px;
-  height: 30px;
-  margin: 6px 0;
-} */

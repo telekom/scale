@@ -120,7 +120,7 @@ export class Carousel {
                 key={index}
                 class={`carousel__indicator ${this.setActiveCssClass(index)}`}
                 onClick={() => this.setActiveSlide(index)}
-              ></li>
+              >&#9679;</li>
             ))}
           </ul>
           <div
