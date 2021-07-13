@@ -41,7 +41,7 @@ export class RatingStars {
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
   /** switch to define behaviour onTouch */
-  firstStarSelected: boolean;
+  firstStarSelected = false;
 
   /** The lower limit of the rating. In cases where  */
   @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
@@ -62,10 +62,6 @@ export class RatingStars {
 
   /** Emitted when the rating has changed */
   @Event() scaleChange: EventEmitter;
-
-  connectedCallback() {
-    this.firstStarSelected = false;
-  }
 
   // constructs the aria message for the current rating
   getRatingText() {
