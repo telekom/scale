@@ -1,0 +1,94 @@
+
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleAlertbox from './ScaleAlertbox.vue';
+
+<Meta
+  title="Beta Components/Alertbox"
+  component={ScaleAlertbox}
+  argTypes={{
+    color: {
+      defaultValue: 'white',
+      options: ['white', 'black', 'error'],
+      control: {
+        type: 'select',
+      },
+    },
+    variant: {
+      options: ['outline', 'floating'],
+      control: {
+        type: 'select',
+      },
+    },
+    icon: {
+      defaultValue: false,
+      options: [true, false],
+      control: {
+        type: 'select',
+      },
+    },
+    hasclose: {
+      defaultValue: false,
+      options: [true, false],
+      control: {
+        type: 'select',
+      },
+    },
+    opened: {
+      options: [true, false],
+      control: {
+        type: 'select',
+      },
+    },
+    timout: {
+      defaultValue: false,
+      options: [false, true, Number],
+      control: {
+        type: 'select',
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleAlertbox },
+  props: {
+    ...ScaleAlertbox.props,
+  },
+  template: `
+    <scale-alertbox   
+    :color="color"
+    :variant="variant"
+    :icon="icon"
+    :hasclose="hasclose"
+    :timeout="timeout"
+    opened
+    >
+      <p slot="header">Hey</p>
+      <p slot="text">Here I am</p>
+    </scale-alertbox>
+  `,
+});
+
+## Standard
+
+### All default values
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-alertbox hasclose icon color="white" variant="outline" opened>
+  <p slot="header">Message with title only</p>
+</scale-alertbox>
+```
