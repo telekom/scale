@@ -82,8 +82,6 @@ export class Tooltip {
   componentDidLoad() {
     this.target = this.getTarget();
     this.popover = new Popover(this.target, this.tooltipPositioner);
-    this.synchPopoverFlip();
-    this.synchPopoverPreventOverflow();
     this.syncPopoverOptions();
 
     this.host.addEventListener('blur', this.handleBlur, true);
@@ -98,13 +96,10 @@ export class Tooltip {
 
   componentDidUpdate() {
     this.syncPopoverOptions();
-    this.synchPopoverFlip();
-    this.synchPopoverPreventOverflow();
   }
 
   disconnectedCallback() {
     this.popover.destroy();
-
     this.host.removeEventListener('blur', this.handleBlur, true);
     this.host.removeEventListener('click', this.handleClick, true);
     this.host.removeEventListener('focus', this.handleFocus, true);
@@ -212,13 +207,7 @@ export class Tooltip {
       onAfterHide: () => this.tooltipAfterHide.emit(),
       onAfterShow: () => this.tooltipAfterShow.emit(),
     });
-  }
-
-  synchPopoverPreventOverflow() {
     this.popover.setPreventOverflow(this.preventOverflow);
-  }
-
-  synchPopoverFlip() {
     this.popover.setFlip(this.flip);
   }
 

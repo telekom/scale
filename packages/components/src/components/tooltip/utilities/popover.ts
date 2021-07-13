@@ -38,8 +38,6 @@ export default class Popover {
       {
         skidding: 0,
         distance: 0,
-        flip: true,
-        preventOverflow: true,
         placement: 'bottom-start',
         strategy: 'absolute',
         transitionElement: this.popover,
