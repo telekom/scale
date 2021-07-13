@@ -385,7 +385,7 @@
   flex-grow: 1;
 }
 .tbody__actions scale-button {
-  margin-right: 0.5em;
+  margin-right: var(--scl-spacing-8);
 }
 
 /* Info block */
