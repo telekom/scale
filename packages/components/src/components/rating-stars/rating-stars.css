@@ -10,20 +10,18 @@
  */
 
 :host {
-  --scl-stars-color: var(--scl-color-primary);
-  --scl-stars-hover-color: var(--scl-color-primary-hover);
-  --scl-stars-active-color: var(--scl-color-primary-active);
-  --scl-stars-placeholder-color: var(--scl-color-black);
-  --scl-stars-placeholder-revert-color: var(--scl-color-black);
-  --scl-stars-disabled-color: var(--scl-color-grey-50);
-  --scl-stars-spacing: var(--scl-spacing-2);
-
-  display: inline-flex;
-  flex-direction: column;
+  --stars-color: var(--scl-color-primary);
+  --stars-hover-color: var(--scl-color-primary-hover);
+  --stars-active-color: var(--scl-color-primary-active);
+  --stars-placeholder-color: var(--scl-color-black);
+  --stars-placeholder-revert-color: var(--scl-color-black);
+  --stars-disabled-color: var(--scl-color-grey-50);
+  --stars-spacing: var(--scl-spacing-2);
 }
 
-[part='wrapper']:hover .icon-clip {
-  --decimal-width: 100% !important;
+[part='container'] {
+  display: inline-flex;
+  flex-direction: column;
 }
 
 [part='range-slider'] {
@@ -38,9 +36,9 @@
 }
 
 [part='wrapper'] {
-  border-radius: var(--scl-spacing-4);
+  border-radius: var(test);
   display: inline-flex;
-  margin-left: calc(-1 * var(--scl-stars-spacing));
+  margin-left: calc(-1 * var(--stars-spacing));
 }
 
 [part='wrapper']:hover [part='star'] [part='selected-star'] {
@@ -61,16 +59,16 @@
 
   display: inline-flex;
   position: relative;
-  color: var(--scl-stars-color);
+  color: var(--stars-color);
   cursor: pointer;
-  border: var(--scl-stars-spacing) solid transparent;
+  border: var(--stars-spacing) solid transparent;
   border-top: 0;
   border-bottom: 0;
 }
 
 [part='placeholder-star'] {
   display: inline-flex;
-  color: var(--scl-stars-placeholder-color);
+  color: var(--stars-placeholder-color);
   transition: color 0.1s ease-in-out;
 }
 
@@ -95,11 +93,11 @@
 /* selected state */
 
 [part='star'][data-selected] {
-  --scl-stars-placeholder-color: transparent;
+  --stars-placeholder-color: transparent;
 }
 
 [part='star'][data-half] {
-  --scl-stars-placeholder-color: currentColor;
+  --stars-placeholder-color: currentColor;
 }
 
 [part='star'][data-selected] [part='selected-star'] {
@@ -109,8 +107,8 @@
 /* hover states */
 
 [part='wrapper']:hover {
-  --scl-stars-color: var(--scl-stars-hover-color);
-  --scl-stars-placeholder-color: transparent;
+  --stars-color: var(--stars-hover-color);
+  --stars-placeholder-color: transparent;
 }
 
 [part='wrapper']:hover [part='star'] {
@@ -118,7 +116,7 @@
 }
 
 [part='wrapper']:hover [part='star'][data-half] {
-  --scl-stars-placeholder-color: transparent;
+  --stars-placeholder-color: transparent;
 }
 
 [part='star']:hover ~ [part='star'] [part='selected-star'] {
@@ -126,14 +124,14 @@
 }
 
 [part='star']:hover ~ [part='star'] [part='placeholder-star'] {
-  --scl-stars-placeholder-color: var(--scl-stars-placeholder-revert-color);
+  --stars-placeholder-color: var(--stars-placeholder-revert-color);
 }
 
 /* active states */
 
 [part='wrapper']:active {
-  --scl-stars-color: var(--scl-stars-active-color);
-  --scl-stars-placeholder-color: transparent;
+  --stars-color: var(--stars-active-color);
+  --stars-placeholder-color: transparent;
 }
 
 /* focus states */
@@ -153,8 +151,8 @@
 /* disabled states */
 
 :host([disabled]) [part='wrapper'] {
-  --scl-stars-color: var(--scl-stars-disabled-color);
-  --scl-stars-placeholder-color: var(--scl-stars-disabled-color);
+  --stars-color: var(--stars-disabled-color);
+  --stars-placeholder-color: var(--stars-disabled-color);
 
   pointer-events: none;
 }
