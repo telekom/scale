@@ -9,6 +9,11 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/*
+accessibility as proposed on 
+https://www.w3.org/WAI/tutorials/carousels/working-example/
+*/
+
 import { Component, Prop, h, State, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
@@ -102,21 +107,30 @@ export class Carousel {
           </ul>
           <ul class="carousel__arrows">
             <li>
-              <button type="button" class="carousel__arrow carousel__arrow--left">
+              <button 
+                type="button" 
+                class="carousel__arrow carousel__arrow--left"
+                onClick={() => {
+                  this.handleSlideChange('prev');
+                }}
+                >
                 <scale-icon-navigation-left
-                  onClick={() => {
-                    this.handleSlideChange('prev');
-                  }}
+                  class="carousel__arrow-icon"
+                  size={16}
                   accessibility-title="previous item"
                 />
               </button>
             </li>
             <li>
-              <button type="button" class="carousel__arrow carousel__arrow--right">
-                <scale-icon-navigation-right
-                  onClick={() => {
+              <button 
+                type="button" 
+                class="carousel__arrow carousel__arrow--right"  
+                onClick={() => {
                     this.handleSlideChange('next');
-                  }}
+                  }}>
+                <scale-icon-navigation-right
+                  class="carousel__arrow-icon"
+                  size={16} 
                   accessibility-title="next item"
                 />
               </button>
@@ -124,12 +138,13 @@ export class Carousel {
           </ul>
           <ul class="carousel__indicators">
             {Array.from(Array(this.slidesArray.length).keys()).map((index) => (
-              <li
-                key={index}
-                class={`carousel__indicator ${this.setActiveCssClass(index)}`}
-                onClick={() => this.setActiveSlide(index)}
-              >
-                &#9679;
+              <li key={index}>
+                <button 
+                  class={`carousel__indicator ${this.setActiveCssClass(index)}`}
+                  onClick={() => this.setActiveSlide(index)}>
+                    <span class="carousel__indicator-span--hidden">News</span>
+                    {index + 1}
+                </button>
               </li>
             ))}
           </ul>
