@@ -22,6 +22,8 @@ export default class Popover {
   popover: HTMLElement;
   popper: PopperInstance;
   options: PopoverOptions;
+  flip: boolean;
+  preventOverflow: boolean;
 
   constructor(
     anchor: HTMLElement,
@@ -36,6 +38,8 @@ export default class Popover {
       {
         skidding: 0,
         distance: 0,
+        flip: true,
+        preventOverflow: true,
         placement: 'bottom-start',
         strategy: 'absolute',
         transitionElement: this.popover,
@@ -99,9 +103,14 @@ export default class Popover {
       modifiers: [
         {
           name: 'flip',
+          enabled: this.flip,
           options: {
             boundary: 'viewport',
           },
+        },
+        {
+          name: 'preventOverflow',
+          enabled: this.preventOverflow,
         },
         {
           name: 'offset',
@@ -130,6 +139,14 @@ export default class Popover {
 
   reposition() {
     this.popper.update();
+  }
+
+  setFlip(flip: boolean) {
+    this.flip = flip;
+  }
+
+  setPreventOverflow(preventOverflow: boolean) {
+    this.preventOverflow = preventOverflow;
   }
 
   setOptions(options: PopoverOptions) {

@@ -54,6 +54,10 @@ export class Tooltip {
   @Prop() skidding = 0;
   /** (optional) Set custom trigger Event selection */
   @Prop() trigger: string = 'hover focus';
+  /** (optional) Switching the flip option of the tooltip on and off*/
+  @Prop() flip: boolean = true;
+  /** (optional) Switching the preventOverflow option of the tooltip on and off*/
+  @Prop() preventOverflow: boolean = false;
 
   @Watch('open')
   handleOpenChange() {
@@ -78,6 +82,8 @@ export class Tooltip {
   componentDidLoad() {
     this.target = this.getTarget();
     this.popover = new Popover(this.target, this.tooltipPositioner);
+    this.synchPopoverFlip();
+    this.synchPopoverPreventOverflow();
     this.syncPopoverOptions();
 
     this.host.addEventListener('blur', this.handleBlur, true);
@@ -92,6 +98,8 @@ export class Tooltip {
 
   componentDidUpdate() {
     this.syncPopoverOptions();
+    this.synchPopoverFlip();
+    this.synchPopoverPreventOverflow();
   }
 
   disconnectedCallback() {
@@ -204,6 +212,14 @@ export class Tooltip {
       onAfterHide: () => this.tooltipAfterHide.emit(),
       onAfterShow: () => this.tooltipAfterShow.emit(),
     });
+  }
+
+  synchPopoverPreventOverflow() {
+    this.popover.setPreventOverflow(this.preventOverflow);
+  }
+
+  synchPopoverFlip() {
+    this.popover.setFlip(this.flip);
   }
 
   render() {
