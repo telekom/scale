@@ -17,7 +17,6 @@ import {
   Element,
   Event,
   EventEmitter,
-  State,
 } from '@stencil/core';
 
 export interface StarInterface extends HTMLDivElement {
@@ -41,6 +40,8 @@ export class RatingStars {
   @Element() host: HTMLElement;
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
+  /** switch to define behaviour onTouch */
+  firstStarSelected: boolean;
 
   /** The lower limit of the rating. In cases where  */
   @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
@@ -58,8 +59,6 @@ export class RatingStars {
   @Prop() ariaLabelTranslation = '$rating out of $maxRating stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label?: string;
-  /** switch to define behaviour onTouch */
-  @State() firstStarSelected: boolean;
 
   /** Emitted when the rating has changed */
   @Event() scaleChange: EventEmitter;
@@ -155,47 +154,48 @@ export class RatingStars {
       const isSelected = roundedRating >= index;
       stars.push(this.renderStar(index, isSelected, this.rating));
     }
-
     return stars;
   }
 
   render() {
     return (
       <Host>
-        {this.label && (
-          <label
-            id={`${this.ratingStarId}-label`}
-            part="label"
-            htmlFor={this.ratingStarId}
+        <div part="container">
+          {this.label && (
+            <label
+              id={`${this.ratingStarId}-label`}
+              part="label"
+              htmlFor={this.ratingStarId}
+            >
+              {this.label}
+            </label>
+          )}
+          <input
+            disabled={this.disabled || this.readonly}
+            part="range-slider"
+            type="range"
+            id={this.ratingStarId}
+            min={this.minRating}
+            max={this.maxRating}
+            value={this.rating}
+            step="1"
+            aria-orientation="horizontal"
+            aria-valuemin={this.minRating}
+            aria-valuemax={this.maxRating}
+            aria-valuenow={this.rating}
+            aria-valuetext={this.getRatingText()}
+            onInput={this.handleInput}
+          />
+          <div
+            part="wrapper"
+            tabIndex={this.readonly ? 0 : -1}
+            role="figure"
+            aria-labeledby={`${this.ratingStarId}-label`}
+            aria-valuetext={this.getRatingText()}
+            aria-orientation="horizontal"
           >
-            {this.label}
-          </label>
-        )}
-        <input
-          disabled={this.disabled || this.readonly}
-          part="range-slider"
-          type="range"
-          id={this.ratingStarId}
-          min={this.minRating}
-          max={this.maxRating}
-          value={this.rating}
-          step="1"
-          aria-orientation="horizontal"
-          aria-valuemin={this.minRating}
-          aria-valuemax={this.maxRating}
-          aria-valuenow={this.rating}
-          aria-valuetext={this.getRatingText()}
-          onInput={this.handleInput}
-        />
-        <div
-          part="wrapper"
-          tabIndex={this.readonly ? 0 : -1}
-          role="figure"
-          aria-labeledby={`${this.ratingStarId}-label`}
-          aria-valuetext={this.getRatingText()}
-          aria-orientation="horizontal"
-        >
-          {this.renderRating()}
+            {this.renderRating()}
+          </div>
         </div>
       </Host>
     );

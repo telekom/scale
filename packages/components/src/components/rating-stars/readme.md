@@ -30,6 +30,7 @@
 
 | Part                 | Description |
 | -------------------- | ----------- |
+| `"container"`        |             |
 | `"label"`            |             |
 | `"placeholder-star"` |             |
 | `"range-slider"`     |             |
