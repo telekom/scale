@@ -9,29 +9,23 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- import { h } from '@stencil/core';
- import { Cell } from './cell-interface';
- 
- export const ActionsCell: Cell = {
-   defaults: {},
-   getLongestContent({ rows, columnIndex }) {
-     // Skip check as content width is always the same
-     return rows[0][columnIndex];
-   },
-   render: ({content}) => {
-     
-     return (
-        <div class={`tbody__actions`}>
-            {content.map((action) => {
-                const {label, ...props} = action
-                return (
-                    <scale-button {...props}>
-                            {label}
-                    </scale-button>
-                )   
-            })}
-        </div>
-     );
-   },
- };
- 
+import { h } from '@stencil/core';
+import { Cell } from './cell-interface';
+
+export const ActionsCell: Cell = {
+  defaults: {},
+  getLongestContent({ rows, columnIndex }) {
+    // Skip check as content width is always the same
+    return rows[0][columnIndex];
+  },
+  render: ({ content }) => {
+    return (
+      <div class={`tbody__actions`}>
+        {content.map((action) => {
+          const { label, ...props } = action;
+          return <scale-button {...props}>{label}</scale-button>;
+        })}
+      </div>
+    );
+  },
+};

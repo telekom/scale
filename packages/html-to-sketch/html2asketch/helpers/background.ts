@@ -154,10 +154,9 @@ const getActualImageSize = (
   } else {
     // we currently don't support multiple backgrounds
     const [singleBackgroundSize]: any = backgroundSize.split(',');
-    let [
-      backgroundSizeWidth,
-      backgroundSizeHeight,
-    ]: any = singleBackgroundSize.trim().split(' ');
+    let [backgroundSizeWidth, backgroundSizeHeight]: any = singleBackgroundSize
+      .trim()
+      .split(' ');
 
     if (backgroundSizeWidth === 'auto' || backgroundSizeWidth === undefined) {
       backgroundSizeWidth = null;
