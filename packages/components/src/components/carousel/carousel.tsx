@@ -101,17 +101,25 @@ export class Carousel {
             ))}
           </ul>
           <ul class="carousel__arrows">
-            <li
-              class="carousel__arrow carousel__arrow--left"
-              onClick={() => this.handleSlideChange('prev')}
-            >
-              <slot name="arrow-left" />
+            <li>
+              <button type="button" class="carousel__arrow carousel__arrow--left">
+                <scale-icon-navigation-left
+                  onClick={() => {
+                    this.handleSlideChange('prev');
+                  }}
+                  accessibility-title="previous item"
+                />
+              </button>
             </li>
-            <li
-              class="carousel__arrow carousel__arrow--right"
-              onClick={() => this.handleSlideChange('next')}
-            >
-              <slot name="arrow-right" />
+            <li>
+              <button type="button" class="carousel__arrow carousel__arrow--right">
+                <scale-icon-navigation-right
+                  onClick={() => {
+                    this.handleSlideChange('next');
+                  }}
+                  accessibility-title="next item"
+                />
+              </button>
             </li>
           </ul>
           <ul class="carousel__indicators">
@@ -120,7 +128,9 @@ export class Carousel {
                 key={index}
                 class={`carousel__indicator ${this.setActiveCssClass(index)}`}
                 onClick={() => this.setActiveSlide(index)}
-              >&#9679;</li>
+              >
+                &#9679;
+              </li>
             ))}
           </ul>
           <div
