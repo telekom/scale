@@ -147,7 +147,7 @@ export class Pagination {
               viewBox="0 0 48 52"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              stroke={isAtStart ? 'grey' : 'black'}
             >
               <path
                 d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5"
@@ -168,7 +168,7 @@ export class Pagination {
               viewBox="0 0 37 52"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              stroke={isAtStart ? 'grey' : 'black'}
             >
               <path
                 d="M33 48L6 26L33 4"
@@ -199,7 +199,7 @@ export class Pagination {
               viewBox="0 0 37 52"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              stroke={isAtEnd ? 'grey' : 'black'}
             >
               <path
                 d="M4 4L31 26L4 48"
@@ -220,7 +220,7 @@ export class Pagination {
               viewBox="0 0 48 52"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              stroke={isAtEnd ? 'grey' : 'black'}
             >
               <path
                 d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5"
