@@ -69,9 +69,6 @@ button svg {
 button:not(:disabled) {
   cursor: pointer;
 }
-button:not(:disabled) svg {
-  stroke: var(--stroke-svg);
-}
 button:not(:disabled):hover {
   border-color: var(--color-hover);
   z-index: 1;
