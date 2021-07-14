@@ -104,13 +104,15 @@ export class RatingStars {
   handleStarClick = (ev: MouseEvent) => {
     const star = ev.composedPath()[0] as StarInterface;
     const starValue = Number(star.dataset.value);
+    // set focus on input to make arrow keys work to select stars
+    const input = this.host.shadowRoot.querySelector('input');
+    input.focus();
 
     if (starValue === 1 && this.rating === 1 && this.minRating === 0) {
       this.rating = this.minRating;
     } else {
       this.rating = starValue;
     }
-
     this.scaleChange.emit({ value: this.rating });
   };
 
@@ -128,7 +130,7 @@ export class RatingStars {
         onMouseUp={!this.readonly && this.handleStarClick}
         onTouchEnd={!this.readonly && this.handleTouchEnd}
       >
-        <scale-icon-action-favorite size={size} part="placeholder-star" />
+        <scale-icon-action-favorite size={size} part="placeholder-star"/>
         <div class="icon-clip">
           <scale-icon-action-favorite
             size={size}
