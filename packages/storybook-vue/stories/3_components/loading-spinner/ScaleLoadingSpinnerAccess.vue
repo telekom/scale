@@ -14,41 +14,32 @@
       style="display: none"
       aria-label=""
     >
-      <scale-tag style="padding-left: 30px">Loaded Page</scale-tag>
+      <scale-button
+        v-on:click="back()"
+        aria-hidden="true"
+        style="width: 170px"
+        disabled
+      >
+        &nbsp;&nbsp;Loaded Page &nbsp;&nbsp;
+      </scale-button>
     </div>
     <div style="padding: 10px"></div>
-    <button
+    <scale-button
       v-on:click="loaded()"
       aria-hidden="true"
       id="loading_button"
-      style="
-        height: 50px;
-        background-color: #cb0068;
-        border: 2px solid white;
-        border-radius: 12.5px;
-        color: white;
-        font-weight: bold;
-      "
+      style="display: block; width: 170px"
     >
       simulate loading finished
-    </button>
-    <button
+    </scale-button>
+    <scale-button
       v-on:click="back()"
       aria-hidden="true"
       id="reloading_button"
-      style="
-        height: 50px;
-        display: none;
-        background-color: #cb0068;
-        border: 2px solid white;
-        border-radius: 25px;
-        color: white;
-        border-radius: 12.5px;
-        font-weight: bold;
-      "
+      style="display: none; width: 170px"
     >
-      back to loading spinner
-    </button>
+      back to <br />loading spinner
+    </scale-button>
   </div>
 </template>
 
