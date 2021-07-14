@@ -87,7 +87,8 @@ export class Pagination {
   @Watch('totalElements')
   calculateWidth() {
     // calculate max possible width
-    this.maxWidth = (this.totalElements.toString().length * 3 + 3) * 9;
+    this.maxWidth = (this.totalElements.toString().length * 4 + 3) * 9;
+    console.log(this.maxWidth)
   }
 
   /* 8. Public Methods */
