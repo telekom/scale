@@ -40,8 +40,6 @@ export class RatingStars {
   @Element() host: HTMLElement;
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
-  /** switch to define behaviour onTouch */
-  firstStarSelected = false;
 
   /** The lower limit of the rating. In cases where  */
   @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
@@ -73,37 +71,27 @@ export class RatingStars {
 
   handleInput = (ev: InputEvent) => {
     const input = ev.composedPath()[0] as HTMLInputElement;
-    const rating = input.value;
+    const value = Number(input.value);
 
-    if (this.rating === 0) {
-      this.rating = 1;
-    } else {
-      this.rating = Number(rating);
+    switch (true) {
+      case value < this.minRating:
+        input.value = this.minRating.toString();
+        break;
+
+      case value > this.maxRating:
+        input.value = this.maxRating.toString();
+        break;
     }
+
+    this.rating = Number(input.value);
 
     this.scaleChange.emit({ value: this.rating });
-  };
-
-  handleTouchEnd = (ev: TouchEvent) => {
-    const star = ev.composedPath()[0] as StarInterface;
-    const starValue = Number(star.dataset.value);
-    if (starValue === 1) {
-      if (this.firstStarSelected) {
-        this.rating = starValue;
-        this.firstStarSelected = !this.firstStarSelected;
-      } else {
-        this.rating = this.minRating;
-        this.firstStarSelected = !this.firstStarSelected;
-      }
-    } else {
-      this.rating = starValue;
-      this.scaleChange.emit({ value: this.rating });
-    }
   };
 
   handleStarClick = (ev: MouseEvent) => {
     const star = ev.composedPath()[0] as StarInterface;
     const starValue = Number(star.dataset.value);
+
     // set focus on input to make arrow keys work to select stars
     const input = this.host.shadowRoot.querySelector('input');
     input.focus();
@@ -128,9 +116,10 @@ export class RatingStars {
         data-selected={selected}
         data-half={isLastNumber && !isWholeNumber}
         onMouseUp={!this.readonly && this.handleStarClick}
-        onTouchEnd={!this.readonly && this.handleTouchEnd}
+        // sets up first star to be the resetter above the input element
+        style={{ zIndex: index === 1 ? '5' : 'auto' }}
       >
-        <scale-icon-action-favorite size={size} part="placeholder-star"/>
+        <scale-icon-action-favorite size={size} part="placeholder-star" />
         <div class="icon-clip">
           <scale-icon-action-favorite
             size={size}
@@ -168,22 +157,7 @@ export class RatingStars {
               {this.label}
             </label>
           )}
-          <input
-            disabled={this.disabled || this.readonly}
-            part="range-slider"
-            type="range"
-            id={this.ratingStarId}
-            min={this.minRating}
-            max={this.maxRating}
-            value={this.rating}
-            step="1"
-            aria-orientation="horizontal"
-            aria-valuemin={this.minRating}
-            aria-valuemax={this.maxRating}
-            aria-valuenow={this.rating}
-            aria-valuetext={this.getRatingText()}
-            onInput={this.handleInput}
-          />
+
           <div
             part="wrapper"
             tabIndex={this.readonly ? 0 : -1}
@@ -192,6 +166,22 @@ export class RatingStars {
             aria-valuetext={this.getRatingText()}
             aria-orientation="horizontal"
           >
+            <input
+              disabled={this.disabled || this.readonly}
+              part="range-slider"
+              type="range"
+              id={this.ratingStarId}
+              min={0}
+              max={this.maxRating + 1}
+              value={this.rating}
+              step="1"
+              aria-orientation="horizontal"
+              aria-valuemin={this.minRating}
+              aria-valuemax={this.maxRating}
+              aria-valuenow={this.rating}
+              aria-valuetext={this.getRatingText()}
+              onInput={!this.readonly && this.handleInput}
+            />
             {this.renderRating()}
           </div>
         </div>
