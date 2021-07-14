@@ -18,6 +18,13 @@
         --icon-color: black;
       }
 
+      /* scale-toggle-button {
+        --color-selected: yellow;
+        --color-background-selected: green;
+        --color-background-selected-hover: var(--color-primary-hover);
+        --color-background-selected-active: var(--scl-color-primary-active);
+      } */
+
       body {
         margin: 0;
         padding: 4rem;
@@ -179,7 +186,6 @@
     ></scale-textarea>
     <h3>Checkbox</h3>
     <scale-checkbox
-      input-id="checkbox1"
       value="1"
       label="checkbox"
       icon="M21.15,4.85 L9,17.05 L3.3,11.3 C2.9,10.9 2.3,10.9 1.9,11.3 C1.5,11.7 1.5,12.3 1.9,12.7 L9,19.85 L22.6,6.25 C23,5.85 23,5.25 22.6,4.85 C22.2,4.45 21.55,4.5 21.15,4.85 Z"
@@ -583,16 +589,19 @@
     >
 
     <h3>Button icon Before</h3>
-    <scale-button
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    >
-      Hello
+    <scale-button>
+      <scale-icon-action-search></scale-icon-action-search> Hello
+    </scale-button>
+
+    <h3>Button icon After</h3>
+    <scale-button>
+      Hello <scale-icon-action-search></scale-icon-action-search>
     </scale-button>
 
     <h3>Button icon only</h3>
-    <scale-button
-      icon="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    ></scale-button>
+    <scale-button>
+      <scale-icon-action-search icon-only="true"></scale-icon-action-search>
+    </scale-button>
 
     <h3>Button Link</h3>
     <scale-button href="http://google.com" target="_blank">
@@ -1240,7 +1249,86 @@ no switching has been done:*/
         ></scale-input>
       </scale-collapsible>
     </div>
+
     <h3>Toggle Button</h3>
+
+    <h4>Toggle Button Default</h4>
     <scale-toggle-button>Click Me!</scale-toggle-button>
+    <scale-toggle-button variant="secondary">Click Me!</scale-toggle-button>
+
+    <h4>Icon Before</h4>
+    <scale-toggle-button size="regular">
+      <scale-icon-action-search></scale-icon-action-search> Label
+    </scale-toggle-button>
+    <scale-toggle-button variant="secondary" size="regular">
+      <scale-icon-action-search></scale-icon-action-search> Label
+    </scale-toggle-button>
+
+    <h4>Icon After</h4>
+    <scale-toggle-button size="xs">
+      Label <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+    <scale-toggle-button variant="secondary" size="xs">
+      Label <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+
+    <h4>Icon Only</h4>
+    <scale-toggle-button icon-only size="small">
+      <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+    <scale-toggle-button variant="secondary" icon-only size="small">
+      <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+
+    <h4>Disabled</h4>
+    <scale-toggle-button size="xs" disabled>
+      Label <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+    <scale-toggle-button variant="secondary" size="xs" disabled>
+      Label <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+
+    <h3>Toggle Group</h3>
+    <h4>Default (Large)</h4>
+    <scale-toggle-group>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
+
+    <h4>Small Secondary</h4>
+    <scale-toggle-group size="small" variant="secondary">
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
+
+    <h4>XS Block</h4>
+    <scale-toggle-group size="xs" box-type="block" >
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
+
+    <h4>Regular Secondary Block Border</h4>
+    <scale-toggle-group size="regular" box-type="block" variant="secondary" border>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
+
+    <h4>Disabled Border</h4>
+    <scale-toggle-group disabled border>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
+
+    <h4>Regular Non-Multi</h4>
+    <scale-toggle-group multi="false">
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button>Click Me!</scale-toggle-button>
+      <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
   </body>
 </html>
