@@ -21,6 +21,8 @@ scale-textarea {
   --spacing-x: var(--scl-spacing-12);
   --color-disabled: var(--scl-color-background-disabled);
   --background-disabled: var(--scl-color-white);
+  --border-color-readonly: var(--scl-color-grey-0);
+  --background-readonly: var(--scl-color-grey-0);
 
   /*meta*/
   --font-weight-meta: var(--scl-font-weight-bold);
@@ -55,6 +57,7 @@ scale-textarea {
 
   /*label*/
   --color-label: var(--scl-color-grey-60);
+  --color-label-readonly: var(--scl-color-text-standard);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--scl-font-size-16);
@@ -112,11 +115,13 @@ scale-textarea {
   color: var(--color-meta);
 }
 
-.textarea:not(.textarea--disabled) .textarea__control:hover {
+.textarea:not(.textarea--disabled):not(.textarea--readonly)
+  .textarea__control:hover {
   border-color: var(--border-color-hover);
 }
 
-.textarea:not(.textarea--disabled) .textarea__control:focus {
+.textarea:not(.textarea--disabled):not(.textarea--readonly)
+  .textarea__control:focus {
   border-color: var(--border-color-focus);
   box-shadow: var(--box-shadow-focus);
 }
@@ -176,12 +181,25 @@ scale-textarea {
   background-color: var(--scl-color-background-standard, #ffffff);
 }
 .textarea--transparent .textarea__label-safety-background,
+.textarea--readonly .textarea__label-safety-background,
 .textarea--disabled .textarea__label-safety-background {
   background-color: transparent;
 }
+
+.textarea--readonly textarea,
+.textarea--readonly .textarea__control {
+  color: var(--color-label-readonly);
+  border-color: var(--border-color-readonly);
+  background: var(--background-readonly);
+}
+
+.textarea--readonly .textarea__control:focus {
+  box-shadow: var(--box-shadow-focus);
+}
+
 .textarea--disabled label,
 .textarea--disabled .textarea__label,
-.textarea--disabled input,
+.textarea--disabled textarea,
 .textarea--disabled .textarea__control,
 .textarea--disabled .textarea__meta,
 .textarea--disabled .textarea__helper-text {

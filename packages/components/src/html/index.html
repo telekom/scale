@@ -848,6 +848,49 @@
       });
     </script>
 
+    <h3>Modal with scaleBeforeClose</h3>
+    <scale-button id="show-modal-clickoutside"> show modal </scale-button>
+    <scale-modal
+      id="modal-clickoutside"
+      opened="false"
+      close-click-outside="false"
+    >
+      <span slot="header">Header content</span> Click close to close Modal
+    </scale-modal>
+
+    <script>
+      const showModalclickoutside = document.querySelector(
+        '#show-modal-clickoutside'
+      );
+      const Modalclickoutside = document.getElementById('modal-clickoutside');
+      showModalclickoutside.addEventListener('click', () => {
+        Modalclickoutside.setAttribute('opened', 'true');
+      });
+
+      Modalclickoutside.addEventListener('scaleClose', () => {
+        Modalclickoutside.removeAttribute('opened');
+      });
+
+      Modalclickoutside.addEventListener('scaleBeforeClose', (event) => {
+        console.log(event);
+        if (event.detail.trigger === 'BACKDROP') {
+          event.preventDefault();
+          alert('Close by Backdrop prevented');
+        }
+        if (event.detail.trigger === 'ESCAPE_KEY') {
+          event.preventDefault();
+          alert('Close by Escape button prevented');
+        }
+        if (event.detail.trigger === 'CLOSE_BUTTON') {
+          alert('Close by buttonClose detected but not prevented');
+        }
+      });
+
+      document.getElementById('cancel-btn').addEventListener('click', () => {
+        Modalclickoutside.removeAttribute('opened');
+      });
+    </script>
+
     <h3>Switch</h3>
     <scale-switch label="Switch label"></scale-switch>
     <h3>Switch disabled</h3>
