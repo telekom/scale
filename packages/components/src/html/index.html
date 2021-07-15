@@ -36,6 +36,31 @@
   <body>
     <h1>Components</h1>
 
+    <h3>Checkbox Group</h3>
+    <scale-checkbox-group>
+        <scale-checkbox label="Group Label" name="group"></scale-checkbox>
+        <scale-checkbox
+                slot="group-item"
+                label="Another Checkbox"
+                name="group-item"
+                value="a"
+        ></scale-checkbox>
+        <scale-checkbox
+                slot="group-item"
+                label="Another Checkbox"
+                name="group-item"
+                value="b"
+        ></scale-checkbox>
+        <scale-checkbox
+                slot="group-item"
+                label="Another Checkbox"
+                name="group-item"
+                value="c"
+        ></scale-checkbox>
+    </scale-checkbox-group>
+    <h3>Logo</h3>
+    <scale-logo></scale-logo>
+
     <h3>Alert</h3>
     <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
