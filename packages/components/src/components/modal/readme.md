@@ -21,10 +21,11 @@
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `scaleClose` |             | `CustomEvent<any>` |
-| `scaleOpen`  |             | `CustomEvent<any>` |
+| Event              | Description                                                                                                                                               | Type                                  |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scaleBeforeClose` | Event firing before an Modal Action is called. Propagation to closing the Event can be stoped. Possible actions: `buttonClose` `escapePressed` `backdrop` | `CustomEvent<BeforeCloseEventDetail>` |
+| `scaleClose`       | Fires when the modal has been closed                                                                                                                      | `CustomEvent<void>`                   |
+| `scaleOpen`        | Fires when the modal has been opened                                                                                                                      | `CustomEvent<void>`                   |
 
 
 ## Shadow Parts
