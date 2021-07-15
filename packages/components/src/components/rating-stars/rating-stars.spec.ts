@@ -62,6 +62,7 @@ describe('RatingStars', () => {
   it('builds', () => {
     expect(new RatingStars()).toBeTruthy();
   });
+
   describe('props', () => {
     beforeEach(async () => {
       page = await newSpecPage({
@@ -86,7 +87,7 @@ describe('RatingStars', () => {
     });
 
     it('isHovering is set to false on Mouseleave', async () => {
-      simulateMouseEvent(page, 'mouseleave', 'rating');
+      simulateMouseEvent(page, 'mouseleave', '.rating');
       expect(page.rootInstance.isHovering).toBe(false);
     });
 
