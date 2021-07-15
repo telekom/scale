@@ -19,8 +19,11 @@ import { CheckboxState, objDiffer } from './utils/utils';
 })
 export class CheckboxGroup {
   initialLoad: boolean = true;
-  @State() groupStatus: CheckboxState[] = [];
+
   @Element() hostElement: HTMLElement;
+
+  @State() groupStatus: CheckboxState[] = [];
+
   @Listen('scaleChange')
   scaleChangeHandler() {
     this.createNewState();
