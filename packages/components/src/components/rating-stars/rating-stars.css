@@ -13,31 +13,65 @@
   --stars-color: var(--scl-color-primary);
   --stars-hover-color: var(--scl-color-primary-hover);
   --stars-active-color: var(--scl-color-primary-active);
+  --stars-inactive-color: transparent;
   --stars-placeholder-color: var(--scl-color-black);
   --stars-placeholder-revert-color: var(--scl-color-black);
   --stars-disabled-color: var(--scl-color-grey-50);
   --stars-spacing: var(--scl-spacing-2);
+  --stars-transition: color 0.1s;
+  --stars-size: 24px;
+}
+
+:host([star-size='small']) {
+  --stars-size: 16px;
 }
 
 [part='container'] {
   display: inline-flex;
   flex-direction: column;
+  position: relative;
 }
 
 [part='range-slider'] {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
+  border: 0;
+  margin: 0;
+  left: calc(-1 * var(--stars-size));
+  bottom: 0;
+  transform: ;
+  z-index: 2;
+  width: calc(100% + var(--stars-size) * 2);
   opacity: 0;
+  height: var(--stars-size);
+}
+
+@media (hover: hover) {
+  /* hide the range slider from pointing device */
+  [part='range-slider'] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 0;
+  height: var(--stars-size);
+  width: var(--stars-size);
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  margin-left: 0px;
+  margin-top: 0;
 }
 
 [part='wrapper'] {
-  border-radius: var(test);
   display: inline-flex;
+  border-radius: var(--scl-spacing-4);
   margin-left: calc(-1 * var(--stars-spacing));
 }
 
@@ -51,6 +85,7 @@
 }
 
 [part='label'] {
+  margin-bottom: var(--scl-spacing-8);
   white-space: nowrap;
 }
 
@@ -61,22 +96,20 @@
   position: relative;
   color: var(--stars-color);
   cursor: pointer;
-  border: var(--stars-spacing) solid transparent;
-  border-top: 0;
-  border-bottom: 0;
+  padding: 0 var(--stars-spacing);
 }
 
 [part='placeholder-star'] {
   display: inline-flex;
   color: var(--stars-placeholder-color);
-  transition: color 0.1s ease-in-out;
+  transition: var(--stars-transition);
 }
 
 [part='selected-star'] {
-  opacity: 0;
+  color: var(--stars-inactive-color);
   margin-left: 0px;
   position: relative;
-  transition: opacity 0.1s ease-in-out;
+  transition: var(--stars-transition);
 }
 
 .icon-clip {
@@ -87,7 +120,7 @@
 }
 
 [part='star'][data-half] {
-  --decimal-width: 50%;
+  --decimal-width: calc(50% - var(--stars-spacing));
 }
 
 /* selected state */
@@ -101,37 +134,41 @@
 }
 
 [part='star'][data-selected] [part='selected-star'] {
-  opacity: 1;
+  color: var(--stars-color);
 }
 
 /* hover states */
+@media (hover: hover) {
+  [part='wrapper']:hover {
+    --stars-color: var(--stars-hover-color);
+    --stars-placeholder-color: transparent;
+  }
 
-[part='wrapper']:hover {
-  --stars-color: var(--stars-hover-color);
-  --stars-placeholder-color: transparent;
-}
+  [part='wrapper']:hover [part='star'] {
+    --decimal-width: 100%;
+  }
 
-[part='wrapper']:hover [part='star'] {
-  --decimal-width: 100%;
-}
+  [part='wrapper']:hover [part='star'][data-half] {
+    --stars-placeholder-color: transparent;
+  }
 
-[part='wrapper']:hover [part='star'][data-half] {
-  --stars-placeholder-color: transparent;
-}
+  [part='wrapper']:hover [part='selected-star'] {
+    color: var(--stars-color);
+  }
 
-[part='star']:hover ~ [part='star'] [part='selected-star'] {
-  opacity: 0;
-}
+  [part='star']:hover ~ [part='star'] [part='selected-star'] {
+    color: var(--stars-inactive-color);
+  }
 
-[part='star']:hover ~ [part='star'] [part='placeholder-star'] {
-  --stars-placeholder-color: var(--stars-placeholder-revert-color);
+  [part='star']:hover ~ [part='star'] [part='placeholder-star'] {
+    --stars-placeholder-color: var(--stars-placeholder-revert-color);
+  }
 }
 
 /* active states */
 
 [part='wrapper']:active {
   --stars-color: var(--stars-active-color);
-  --stars-placeholder-color: transparent;
 }
 
 /* focus states */
@@ -145,6 +182,8 @@
 /* readonly states */
 
 :host([readonly]) [part='wrapper'] {
+  --stars-placeholder-color: var(--stars-disabled-color);
+
   pointer-events: none;
 }
 
