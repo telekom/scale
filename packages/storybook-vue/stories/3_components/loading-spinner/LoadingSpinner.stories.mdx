@@ -292,3 +292,27 @@ export const Template = () => ({
     {AccessTemplate.bind({})}
   </Story>
 </Canvas>
+
+```html
+<scale-loading-spinner id="loader"></scale-loading-spinner>
+<div id="loaded-example-page" role="alert" style="display: none" aria-label="">
+  <div>Loaded Page</div>
+</div>
+
+<script>
+  var myVar;
+
+  function myFunction() {
+    myVar = setTimeout(showPage, 6000);
+    console.log('timeout works');
+  }
+
+  function showPage() {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('loaded-example-page').style.display = 'block';
+    document
+      .getElementById('loaded-example-page')
+      .setAttribute('aria-label', 'Loading completed for ');
+  }
+</script>
+```

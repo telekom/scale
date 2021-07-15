@@ -8,25 +8,15 @@
       :size="size"
       style="padding-left: 25px"
     ></scale-loading-spinner>
-    <div
-      id="loaded-example-page"
-      role="alert"
-      style="display: none"
-      aria-label=""
-    >
-      <scale-button
-        v-on:click="back()"
-        aria-hidden="true"
-        style="width: 170px"
-        disabled
-      >
+    <div id="loaded-example-page" role="alert" style="display: none">
+      <scale-button v-on:click="back()" style="width: 170px" aria-hidden="true">
         &nbsp;&nbsp;Loaded Page &nbsp;&nbsp;
       </scale-button>
     </div>
     <div style="padding: 10px"></div>
     <scale-button
       v-on:click="loaded()"
-      aria-hidden="true"
+      aria-disabled="true"
       id="loading_button"
       style="display: block; width: 170px"
     >
@@ -34,7 +24,7 @@
     </scale-button>
     <scale-button
       v-on:click="back()"
-      aria-hidden="true"
+      aria-disabled="true"
       id="reloading_button"
       style="display: none; width: 170px"
     >
@@ -61,7 +51,7 @@ export default {
       document.getElementById('loading_button').style.display = 'none';
       document
         .getElementById('loaded-example-page')
-        .setAttribute('aria-label', 'Loading completed for ');
+        .setAttribute('aria-label', 'Loading completed');
     },
     back: function () {
       let myVar;
