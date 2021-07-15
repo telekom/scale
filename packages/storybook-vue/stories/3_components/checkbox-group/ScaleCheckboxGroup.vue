@@ -1,15 +1,6 @@
 <template>
-  <scale-checkbox-group>
+  <div>
     <slot></slot>
-    <slot></slot>
-  </scale-checkbox-group>
+    <slot name="group-item"></slot>
+  </div>
 </template>
-
-<script>
-import { action } from '@storybook/addon-actions';
-
-export default {
-  props: {},
-  methods: {},
-};
-</script>
