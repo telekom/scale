@@ -139,6 +139,7 @@ export class Pagination {
             part="first-prompt"
             disabled={isAtStart}
             onClick={() => this.goFirstPage()}
+            aria-label="Go to first page"
           >
             <svg
               height="17"
@@ -159,6 +160,7 @@ export class Pagination {
             part="prev-prompt"
             disabled={isAtStart}
             onClick={() => this.goPreviousPage()}
+            aria-label="Go to previous page"
           >
             <svg
               height="17"
@@ -189,6 +191,7 @@ export class Pagination {
             part="next-prompt"
             disabled={isAtEnd}
             onClick={() => this.goNextPage()}
+            aria-label="Go to next page"
           >
             <svg
               height="17"
@@ -209,6 +212,7 @@ export class Pagination {
             part="last-prompt"
             disabled={isAtEnd}
             onClick={() => this.goLastPage()}
+            aria-label="Go to last page"
           >
             <svg
               height="17"

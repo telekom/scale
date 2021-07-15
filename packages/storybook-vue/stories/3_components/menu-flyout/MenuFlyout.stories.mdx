@@ -1,11 +1,12 @@
-import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
-} from "../brand-header/fixtures";
+  mainNavigation,
+} from '../brand-header/fixtures';
 
-import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
+import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
 
 <Meta
   title="Beta Components/Flyout Menu"
@@ -13,7 +14,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   argTypes={{
     closeOnSelect: {
       table: {
-        type: { summary: "boolean" },
+        type: { summary: 'boolean' },
         defaultValue: { summary: true },
       },
       description: `(optional) Determines whether the dropdown should close when a menu item is selected`,
@@ -21,9 +22,9 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
     },
     direction: {
       table: {
-        type: { summary: "string" },
+        type: { summary: 'string' },
         defaultValue: {
-          summary: "bottom-right",
+          summary: 'bottom-right',
           detail: `'bottom-right' for regular triggers, 'right' when trigger is a <scale-menu-flyout-item>`,
         },
       },
@@ -32,47 +33,47 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
     },
     styles: {
       table: {
-        type: { summary: "string" },
+        type: { summary: 'string' },
       },
       description: `(optional) Injected styles`,
       control: { type: null },
     },
     eventScaleOpen: {
-      name: "[event] scaleOpen",
+      name: '[event] scaleOpen',
       table: {
-        type: { summary: "event" },
+        type: { summary: 'event' },
       },
       description: `Event triggered when menu list opened`,
       control: { type: null },
     },
     eventScaleClose: {
-      name: "[event] scaleClose",
+      name: '[event] scaleClose',
       table: {
-        type: { summary: "event" },
+        type: { summary: 'event' },
       },
       description: `Event triggered when menu list closed`,
       control: { type: null },
     },
     eventScaleSelect: {
-      name: "[event] scaleSelect",
+      name: '[event] scaleSelect',
       table: {
-        type: { summary: "event" },
+        type: { summary: 'event' },
       },
       description: `Event triggered when nested menu item selected`,
       control: { type: null },
     },
     slotTrigger: {
-      name: "[slot] trigger",
+      name: '[slot] trigger',
       table: {
-        type: { summary: "scale-button" },
+        type: { summary: 'scale-button' },
       },
       description: `Used for adding an element that, upon triggering a click event, will open the associated scale-menu-flyout-list element`,
       control: { type: null },
     },
     slotDefault: {
-      name: "[slot] default",
+      name: '[slot] default',
       table: {
-        type: { summary: "scale-menu-flyout-list" },
+        type: { summary: 'scale-menu-flyout-list' },
       },
       description: `Used for adding scale-menu-flyout-list that will open when trigger activated`,
       control: { type: null },
@@ -82,10 +83,10 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 
 <div
   style={{
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
   }}
 >
   <h1>Flyout Menu</h1>
@@ -97,7 +98,24 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 ## Standard
 
 <Canvas withSource="close">
-  <Story name="Standard">
+  <Story name="Icon Button Trigger">
+    {`<scale-menu-flyout>
+    <scale-button slot="trigger" variant="secondary" icon-only>
+        <scale-icon-service-settings accessibility-title="Open Flyout menu"></scale-icon-service-settings>
+    </scale-button>
+    <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Item 3</scale-menu-flyout-item>
+    </scale-menu-flyout-list>
+</scale-menu-flyout>`}
+  </Story>
+</Canvas>
+
+## Primary Button Trigger
+
+<Canvas withSource="close">
+  <Story name="Primary Button Trigger">
     {`<scale-menu-flyout>
     <scale-button slot="trigger">
         Menu<scale-icon-navigation-collapse-down size="16"></scale-icon-navigation-collapse-down>
@@ -307,7 +325,7 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
   <Story name="Cascading Menu">
     {`<scale-menu-flyout>
     <scale-button slot="trigger" variant="secondary" icon-only>
-        <scale-icon-service-settings></scale-icon-service-settings>
+        <scale-icon-service-settings accessibility-title="Open Flyout menu"></scale-icon-service-settings>
     </scale-button>
     <scale-menu-flyout-list>
         <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
@@ -447,10 +465,10 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
 </Canvas>
 -->
 
-## Brand Header Cascading Menu
+## Brand Header Primary Navigation
 
 <Canvas withSource="close">
-  <Story name="Brand Header Cascading Menu" inline={false} height={500}>
+  <Story name="Brand Header Primary Navigation" inline={false} height={500}>
     {() => ({
       data() {
         return {
@@ -532,6 +550,62 @@ import ScaleMenuFlyout from "./ScaleMenuFlyout.vue";
               </scale-app-shell>
             </div>
           `,
+    })}
+  </Story>
+</Canvas>
+
+## Brand Header User Menu
+
+<Canvas withSource="close">
+  <Story name="Brand Header User Menu" inline={false} height={500}>
+    {() => ({
+      data() {
+        return {
+          portalName: '',
+          claimLang: 'en',
+          mainNavigation: JSON.stringify(mainNavigation),
+          addonNavigation: JSON.stringify(addonNavigation),
+          sectorNavigation: JSON.stringify(sectorNavigation),
+          activeRouteId: 'Third Level 24',
+          activeSectorId: 'Personal38',
+        };
+      },
+      template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                ref="header"
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :sector-navigation="sectorNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="menu-icon">
+                    <scale-menu-flyout @scaleClose="$refs.userIcon.isActive=false" >
+                        <div slot="trigger" >
+                         <scale-nav-icon icon="user-file-user" ref="userIcon" @click="$refs.userIcon.isActive=true">
+                           Alexander
+                         </scale-nav-icon>
+                        </div>
+                        <scale-menu-flyout-list>
+                            <scale-menu-flyout-item disabled styles=".menu-item__label { color: var(--scl-color-text-standard); } .menu-item { cursor: auto !important; }">Alexander Dreyer</scale-menu-flyout-item>
+                            <scale-menu-flyout-item disabled styles=".menu-item { cursor: auto !important; }">alexander.dreyer@t-online.de</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Kundencenter</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Login-Einstellungen</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Misc.</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Logout<scale-icon-action-logout slot="prefix"></scale-icon-action-logout></scale-menu-flyout-item>
+                        </scale-menu-flyout-list>
+                    </scale-menu-flyout>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
     })}
   </Story>
 </Canvas>

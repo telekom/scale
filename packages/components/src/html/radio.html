@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <script nomodule src="/build/scale-components.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+        --icon-color: black;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+
+      .custom-styles {
+        --rating-spacing: 1rem;
+      }
+
+      hr {
+        margin: 3rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-radio-button label="A" value="a" name="letter"></scale-radio-button>
+    <scale-radio-button label="B" value="b" name="letter"></scale-radio-button>
+
+    <script>
+      const radios = [...document.querySelectorAll('scale-radio-button')];
+      radios.forEach((radio) => {
+        radio.addEventListener('scaleChange', () => {
+          console.log('scaleChange', radio);
+          radios.forEach((x) => console.log(x.checked));
+        });
+        radio.addEventListener('click', (event) => {
+          console.log('click', event.path);
+        });
+      });
+    </script>
+  </body>
+</html>

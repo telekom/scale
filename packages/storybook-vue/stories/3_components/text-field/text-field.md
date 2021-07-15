@@ -55,6 +55,12 @@ If the text field is disabled, the user can't enter or change text. Use this sta
 
 ![Image Name](assets/3_components/text-input/input_disabled.png)
 
+## Read only
+
+Read-only text fields show prefilled text that users cannot edit or change. However, the content is accessible for screen readers. Use this state when you want users to read, but not edit, a particular piece of content.
+
+![Image Name](assets/3_components/text-input/text-field-read-only.png)
+
 ## Sizes
 
 Scale provides two sizes of text fields. Only use one size within a group.

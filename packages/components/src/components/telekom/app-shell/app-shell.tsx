@@ -9,17 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  h,
-  Prop,
-  Host,
-  State,
-  Listen,
-  Element,
-} from '@stencil/core';
+import { Component, h, Prop, Host, State, Element } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
-import classNames from 'classnames';
 
 @Component({
   tag: 'scale-app-shell',
@@ -44,26 +35,16 @@ export class Shell {
   @Prop() styles?: string;
   hasSlotHeader: boolean;
 
-  @Listen('scroll', { target: 'window' })
-  onScroll() {
-    this.scrolled = window.pageYOffset > 2;
-  }
-
   componentWillLoad() {
     this.hasSlotHeader = !!this.hostElement.querySelector('[slot="header"]');
   }
-  componentWillUpdate() {}
-  disconnectedCallback() {}
 
   render() {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div
-          part={classNames('base', this.scrolled && 'sticky')}
-          class={this.getCssClassMap()}
-        >
+        <div part="base" class="shell">
           {this.hasSlotHeader ? (
             <slot name="header"></slot>
           ) : (
@@ -84,12 +65,9 @@ export class Shell {
           <main class="content">
             <slot></slot>
           </main>
+          <slot name="footer"></slot>
         </div>
       </Host>
     );
-  }
-
-  getCssClassMap() {
-    return classNames('shell', this.scrolled && 'shell--sticky');
   }
 }

@@ -1,5 +1,5 @@
 const replace = require('replace-in-file');
-var fs = require('fs');
+const fs = require('fs');
 
 fs.rename(
   'packages/components-angular/src/component-library-module-neutral.ts',

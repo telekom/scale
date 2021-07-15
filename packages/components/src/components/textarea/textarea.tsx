@@ -164,7 +164,7 @@ export class Textarea {
             {...(!!this.rows ? { rows: this.rows } : {})}
             {...(!!this.cols ? { cols: this.cols } : {})}
             {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           />
 
           {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
