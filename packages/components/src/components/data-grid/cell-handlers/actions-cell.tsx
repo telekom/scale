@@ -23,6 +23,11 @@ export const ActionsCell: Cell = {
       <div class={`tbody__actions`}>
         {content.map((action) => {
           const { label, ...props } = action;
+          if (typeof label === 'object' && '__html' in label) {
+            return (
+              <scale-button innerHTML={label.__html} {...props}></scale-button>
+            );
+          }
           return <scale-button {...props}>{label}</scale-button>;
         })}
       </div>
