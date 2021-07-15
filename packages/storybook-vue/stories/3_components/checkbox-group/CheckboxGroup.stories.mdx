@@ -14,6 +14,11 @@ import { action } from '@storybook/addon-actions';
   argTypes={{}}
 />
 
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Checkbox Group</h1>
+    <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
 export const StandardTemplate = (args, { argTypes }) => ({
   props: {
     width: { type: String },
@@ -33,20 +38,20 @@ export const StandardTemplate = (args, { argTypes }) => ({
         <scale-checkbox
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="a"
         ></scale-checkbox>
         <scale-checkbox
-          checked
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="b"
+          checked
         ></scale-checkbox>
         <scale-checkbox
           slot="group-item"
            label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="c"
         ></scale-checkbox>
       </scale-checkbox-group>
@@ -75,14 +80,14 @@ export const CheckboxDisableTemplate = (args, { argTypes }) => ({
           disabled
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="a"
         ></scale-checkbox>
         <scale-checkbox
           checked
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="b"
         ></scale-checkbox>
       </scale-checkbox-group>
@@ -110,14 +115,14 @@ export const DisabledTemplate = (args, { argTypes }) => ({
           checked
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="a"
         ></scale-checkbox>
         <scale-checkbox
           checked
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="b"
         ></scale-checkbox>
       </scale-checkbox-group>
@@ -149,13 +154,13 @@ export const ErrorTemplate = (args, { argTypes }) => ({
         <scale-checkbox
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="a"
         ></scale-checkbox>
         <scale-checkbox
           slot="group-item"
           label="Another Checkbox"
-          name="group-item"
+          name="example"
           value="b"
         ></scale-checkbox>
       </scale-checkbox-group>
@@ -179,52 +184,21 @@ export const ErrorTemplate = (args, { argTypes }) => ({
   <scale-checkbox
     slot="group-item"
     label="Another Checkbox"
-    name="group-item"
+    name="example"
     value="a"
   ></scale-checkbox>
   <scale-checkbox
+    slot="group-item"
+    label="Another Checkbox"
+    name="example"
+    value="b"
     checked
-    slot="group-item"
-    label="Another Checkbox"
-    name="group-item"
-    value="b"
   ></scale-checkbox>
   <scale-checkbox
     slot="group-item"
     label="Another Checkbox"
-    name="group-item"
+    name="example"
     value="c"
-  ></scale-checkbox>
-</scale-checkbox-group>
-```
-
-## Error
-
-<Canvas withSource="none">
-  <Story name="Error" args={{}}>
-    {ErrorTemplate.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-checkbox-group>
-  <scale-checkbox
-    status="error"
-    label="Group Label"
-    name="group"
-    helper-text="helperText"
-  ></scale-checkbox>
-  <scale-checkbox
-    slot="group-item"
-    label="Another Checkbox"
-    name="group-item"
-    value="a"
-  ></scale-checkbox>
-  <scale-checkbox
-    slot="group-item"
-    label="Another Checkbox"
-    name="group-item"
-    value="b"
   ></scale-checkbox>
 </scale-checkbox-group>
 ```
@@ -245,14 +219,14 @@ export const ErrorTemplate = (args, { argTypes }) => ({
     disabled
     slot="group-item"
     label="Another Checkbox"
-    name="group-item"
+    name="example"
     value="a"
   ></scale-checkbox>
   <scale-checkbox
     checked
     slot="group-item"
     label="Another Checkbox"
-    name="group-item"
+    name="example"
     value="b"
   ></scale-checkbox>
 </scale-checkbox-group>
@@ -261,7 +235,7 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 ## Checkbox Group Disabled
 
 <Canvas withSource="none">
-  <Story name="Checkbox-Group Disabled" args={{}}>
+  <Story name="Checkbox Group Disabled" args={{}}>
     {DisabledTemplate.bind({})}
   </Story>
 </Canvas>
@@ -278,14 +252,14 @@ export const ErrorTemplate = (args, { argTypes }) => ({
     checked
     slot="group-item"
     label="Another Checkbox"
-    name="group-item"
+    name="example"
     value="a"
   ></scale-checkbox>
   <scale-checkbox
     checked
     slot="group-item"
     label="Another Checkbox"
-    name="group-item"
+    name="example"
     value="b"
   ></scale-checkbox>
 </scale-checkbox-group>
