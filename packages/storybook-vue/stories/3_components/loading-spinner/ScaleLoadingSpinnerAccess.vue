@@ -9,7 +9,12 @@
       style="padding-left: 25px"
     ></scale-loading-spinner>
     <div id="loaded-example-page" role="alert" style="display: none">
-      <scale-button v-on:click="back()" style="width: 170px" aria-hidden="true">
+      <scale-button
+        v-on:click="back()"
+        style="width: 170px"
+        aria-hidden="true"
+        disabled
+      >
         &nbsp;&nbsp;Loaded Page &nbsp;&nbsp;
       </scale-button>
     </div>
