@@ -46,6 +46,10 @@ function getStateName(btn) {
   if (btn.dataset.sketchState) {
     return capitalize(btn.dataset.sketchState);
   }
+
+  if (btn.dataset.fakeState) {
+    return capitalize(btn.dataset.fakeState);
+  }
   return 'Standard';
 }
 
