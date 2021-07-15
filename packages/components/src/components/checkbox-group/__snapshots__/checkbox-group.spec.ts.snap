@@ -5,10 +5,10 @@ exports[`CheckboxGroup function chain 1`] = `
   <mock:shadow-root>
     <div class="checkbox-group">
       <div class="checkbox-group__label">
-        <slot name="checkbox-header"></slot>
+        <slot></slot>
       </div>
       <div class="checkbox-group__container">
-        <slot name="checkbox-list"></slot>
+        <slot name="group-item"></slot>
       </div>
     </div>
   </mock:shadow-root>
@@ -36,10 +36,10 @@ exports[`CheckboxGroup function checkForMasterCheckboxChange 1`] = `
   <mock:shadow-root>
     <div class="checkbox-group">
       <div class="checkbox-group__label">
-        <slot name="checkbox-header"></slot>
+        <slot></slot>
       </div>
       <div class="checkbox-group__container">
-        <slot name="checkbox-list"></slot>
+        <slot name="group-item"></slot>
       </div>
     </div>
   </mock:shadow-root>
@@ -67,10 +67,10 @@ exports[`CheckboxGroup should match standard snapshot 1`] = `
   <mock:shadow-root>
     <div class="checkbox-group">
       <div class="checkbox-group__label">
-        <slot name="checkbox-header"></slot>
+        <slot></slot>
       </div>
       <div class="checkbox-group__container">
-        <slot name="checkbox-list"></slot>
+        <slot name="group-item"></slot>
       </div>
     </div>
   </mock:shadow-root>
@@ -98,10 +98,10 @@ exports[`CheckboxGroup should match standard snapshot 2`] = `
   <mock:shadow-root>
     <div class="checkbox-group">
       <div class="checkbox-group__label">
-        <slot name="checkbox-header"></slot>
+        <slot></slot>
       </div>
       <div class="checkbox-group__container">
-        <slot name="checkbox-list"></slot>
+        <slot name="group-item"></slot>
       </div>
     </div>
   </mock:shadow-root>
@@ -129,10 +129,10 @@ exports[`CheckboxGroup should select all on master click 1`] = `
   <mock:shadow-root>
     <div class="checkbox-group">
       <div class="checkbox-group__label">
-        <slot name="checkbox-header"></slot>
+        <slot></slot>
       </div>
       <div class="checkbox-group__container">
-        <slot name="checkbox-list"></slot>
+        <slot name="group-item"></slot>
       </div>
     </div>
   </mock:shadow-root>
@@ -163,10 +163,10 @@ exports[`CheckboxGroup should select all on master click 2`] = `
   <mock:shadow-root>
     <div class="checkbox-group">
       <div class="checkbox-group__label">
-        <slot name="checkbox-header"></slot>
+        <slot></slot>
       </div>
       <div class="checkbox-group__container">
-        <slot name="checkbox-list"></slot>
+        <slot name="group-item"></slot>
       </div>
     </div>
   </mock:shadow-root>
