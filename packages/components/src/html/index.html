@@ -24,7 +24,7 @@
       }
 
       .custom-styles {
-        --rating-spacing: 1rem;
+        --scl-stars-spacing: 1rem;
       }
 
       hr {
@@ -46,33 +46,54 @@
     <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
     <h3>Rating Stars</h3>
-    <h4>value = 1</h4>
-    <scale-rating-stars value="1" label="Rating Label"> </scale-rating-stars>
+
+    <h4><code>value=3.5</code></h4>
+    <scale-rating-stars rating="3.5" label="Rating Label"> </scale-rating-stars>
+    <h4><code>readonly</code></h4>
+    <scale-rating-stars rating="3.5" readonly label="Rating Label"> </scale-rating-stars>
+
+    <h4><code>minRating=1</code></h4>
+    <scale-rating-stars min-rating="1" label="Rating Label">
+    </scale-rating-stars>
+
     <h4>disabled</h4>
     <scale-rating-stars
-      value="2"
+      rating="2"
       disabled
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>spacing by custom styles</h4>
     <scale-rating-stars
       class="custom-styles"
-      value="3"
+      rating="3"
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>small</h4>
     <scale-rating-stars
-      value="4"
-      small
+      rating="4"
+      star-size="small"
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>No Label</h4>
     <scale-rating-stars value="5"></scale-rating-stars>
+
     <h4>Aria Translation</h4>
     <scale-rating-stars
-      value="1"
+      rating="1"
       label="Rating Label"
       aria-label-translation="${value} out of ${max} stars"
+    >
+    </scale-rating-stars>
+
+    <h4>min rating</h4>
+    <scale-rating-stars
+      rating="4"
+      label="Rating Label"
+      max-rating="10"
+      min-rating="0"
     >
     </scale-rating-stars>
 

@@ -35,11 +35,22 @@ function order(category, title) {
 function getStateName(btn) {
   if (btn.hasAttribute('disabled')) {
     return 'Disabled';
-  } else if (btn.dataset.sketchState) {
-    return capitalize(btn.dataset.sketchState);
-  } else {
-    return 'Standard';
   }
+  if (btn.hasAttribute('readonly')) {
+
+    if (btn.dataset.sketchState) {
+      return `Read only ${btn.dataset.sketchState}`;
+    }
+    return 'Read only';
+  }
+  if (btn.dataset.sketchState) {
+    return capitalize(btn.dataset.sketchState);
+  }
+
+  if (btn.dataset.fakeState) {
+    return capitalize(btn.dataset.fakeState);
+  }
+  return 'Standard';
 }
 
 function getSizeName(btn) {
