@@ -178,6 +178,21 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
+### Scoped CSS variables
+
+```css
+:host {
+  /* checkbox-group container */
+  --spacing-left-container: var(--scl-spacing-24);
+
+  /* checkbox-group checkbox */
+  --spacing-left-checkbox: var(--scl-spacing-8);
+
+  /* slotted item */
+  --spacing-top-slotted-item: var(--scl-spacing-4);
+}
+```
+
 ```html
 <scale-checkbox-group>
   <scale-checkbox label="Group Label" name="group"></scale-checkbox>
