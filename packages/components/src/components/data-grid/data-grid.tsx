@@ -809,8 +809,8 @@ export class DataGrid {
           {this.selectable && (
             <scale-menu-flyout-item
               onClick={() => {
-                this.elToggleSelectAll.checked =
-                  !this.elToggleSelectAll.checked;
+                this.elToggleSelectAll.checked = !this.elToggleSelectAll
+                  .checked;
                 this.toggleSelectAll();
               }}
             >
