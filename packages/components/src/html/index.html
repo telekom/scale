@@ -106,7 +106,8 @@
     <scale-chart-stack-card
       heading="Operating System"
       data='[{"type":"Example 1","value":"55.000","percentage":"55"},{"type":"Android","value":"55.000","percentage":"55"},{"type":"IOS","value":"35.000","percentage":"35"},{"type":"Other","value":"10.000","percentage":"10"}]'
-    ></scale-chart-stack-card>
+    >
+    </scale-chart-stack-card>
 
     <h3>Select</h3>
     <scale-dropdown
@@ -197,7 +198,8 @@
       label="textarea with helper info text"
       status="error"
       helper-text="error occurs"
-    ></scale-textarea>
+    >
+    </scale-textarea>
     <h3>textarea with max length</h3>
     <scale-textarea
       rows="4"
@@ -215,7 +217,8 @@
       counter="true"
       max-length="512"
       disabled="true"
-    ></scale-textarea>
+    >
+    </scale-textarea>
     <h3>Checkbox</h3>
     <scale-checkbox
       input-id="checkbox1"
@@ -238,7 +241,8 @@
       disabled="true"
       label="disabled checkbox"
       name="nameOfCheckbox"
-    ></scale-checkbox>
+    >
+    </scale-checkbox>
     <scale-checkbox
       input-id="checkbox4"
       value="4"
@@ -263,7 +267,8 @@
       name="radioSelect"
       transparent="true"
       input-id="choiceOne"
-    ></scale-radio-button>
+    >
+    </scale-radio-button>
     <scale-radio-button
       value="2"
       label="Two"
@@ -282,14 +287,16 @@
       name="radioSelect"
       input-id="choiceFour"
       disabled="true"
-    ></scale-radio-button>
+    >
+    </scale-radio-button>
     <scale-radio-button
       value="4"
       label="radio with error"
       name="radioSelect"
       input-id="choiceFive"
       status="error"
-    ></scale-radio-button>
+    >
+    </scale-radio-button>
     <scale-radio-button
       value="5"
       label="disabled checked radio"
@@ -363,7 +370,8 @@
       required="true"
       status="error"
       helper-text="please fill out this field"
-    ></scale-text-field>
+    >
+    </scale-text-field>
 
     <h3>Input Text - place holder text</h3>
     <scale-text-field
@@ -379,23 +387,6 @@
       label="input text disabled"
     ></scale-text-field>
 
-    <h3>Input Text - read only</h3>
-    <scale-text-field
-      type="string"
-      label="input text read only"
-      value="hello"
-      readonly
-    ></scale-text-field>
-
-    <h3>Input Text - read only empty</h3>
-
-    <scale-text-field
-      type="string"
-      label="input text read only empty"
-      readonly
-    ></scale-text-field>
-
-    <h3>Input Text - small</h3>
     <scale-text-field type="email" label="email"></scale-text-field>
     <scale-text-field type="number" label="number"></scale-text-field>
     <scale-text-field type="password" label="password"></scale-text-field>
@@ -610,6 +601,7 @@
     <scale-button>Hello</scale-button>
 
     <h3>Button variants</h3>
+
     <scale-button variant="primary">Hello</scale-button>
     <scale-button variant="secondary">Hello</scale-button>
 
@@ -624,6 +616,7 @@
     </scale-button>
 
     <h3>Button icon only</h3>
+
     <scale-button icon-only="true">
       <scale-icon-navigation-external-link
         accessibility-title="External link, opens in new tab"
@@ -650,7 +643,8 @@
     <h3>Icon</h3>
     <scale-icon
       path="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    ></scale-icon>
+    >
+    </scale-icon>
 
     <h3>Divider horizontal default</h3>
     <scale-divider></scale-divider>
@@ -703,7 +697,8 @@
       stroke-width="8"
       show-status="true"
       status-description="upload in progress"
-    ></scale-progress-bar>
+    >
+    </scale-progress-bar>
     <scale-progress-bar
       percentage="80"
       stroke-width="6"
@@ -751,7 +746,8 @@
       status-inside="true"
       custom-color="#ffc400"
       stroke-width="18"
-    ></scale-progress-bar>
+    >
+    </scale-progress-bar>
     <h3>Link</h3>
     <scale-link href="http://example.com" target="true">default</scale-link>
     <scale-link variant="primary">primary</scale-link>
@@ -777,7 +773,8 @@
         size="16"
         accessibility-title="open link in new tab"
         slot="icon"
-      ></scale-icon-navigation-external-link>
+      >
+      </scale-icon-navigation-external-link>
     </scale-link>
 
     <h3>Modal with header</h3>
@@ -925,7 +922,8 @@
       track-height="2"
       displayValue="true"
       label="slider track small"
-    ></scale-slider>
+    >
+    </scale-slider>
     <scale-slider
       min="0"
       max="100"
@@ -1020,13 +1018,13 @@ no switching has been done:*/
           switching = false;
           rows = table.rows;
           /*Loop through all table rows (except the
-  first, which contains table headers):*/
+first, which contains table headers):*/
           for (i = 1; i < rows.length - 1; i++) {
             //start by saying there should be no switching:
             shouldSwitch = false;
 
             /*Get the two elements you want to compare,
-    one from current row and one from the next:*/
+  one from current row and one from the next:*/
             x = rows[i].getElementsByTagName('TD')[columnIndex];
             y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
 
@@ -1050,7 +1048,7 @@ no switching has been done:*/
           }
           if (shouldSwitch) {
             /*If a switch has been marked, make the switch
-    and mark that a switch has been done:*/
+  and mark that a switch has been done:*/
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
           }
