@@ -1,0 +1,29 @@
+:host {
+  /* checkbox-group container */
+  --spacing-left-container: var(--scl-spacing-24);
+
+  /* checkbox-group checkbox */
+  --spacing-left-checkbox: var(--scl-spacing-8);
+
+  /* slotted item */
+  --spacing-top-slotted-item: var(--scl-spacing-4);
+}
+
+.checkbox-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.checkbox-group__container {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--spacing-left-container);
+}
+
+.checkbox-group__checkbox {
+  margin-top: var(--spacing-left-checkbox);
+}
+
+::slotted(*) {
+  padding-top: var(--spacing-top-slotted-item);
+}
