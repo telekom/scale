@@ -18,6 +18,7 @@ import { NumberCell } from './cell-handlers/number-cell';
 import { SelectCell } from './cell-handlers/select-cell';
 import { TagsCell } from './cell-handlers/tags-cell';
 import { TextCell } from './cell-handlers/text-cell';
+import { ActionsCell } from './cell-handlers/actions-cell';
 
 export const CELL_TYPES = {
   checkbox: CheckboxCell,
@@ -29,6 +30,7 @@ export const CELL_TYPES = {
   select: SelectCell,
   tags: TagsCell,
   text: TextCell,
+  actions: ActionsCell,
 };
 
 // Fallback if no type set on field
