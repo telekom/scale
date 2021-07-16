@@ -270,7 +270,7 @@ const rows = [
 
 ## Field Options
 
-### Common options, and their defaults
+##### Common options, and their defaults
 
 - `type: string`
 - `label?: string`
@@ -287,15 +287,14 @@ const rows = [
 
 ## Cell Type Options
 
-### Checkbox Cell
+## Checkbox Cell
 
 Expected format: `boolean`, eg `true`
 
-#### Unique options, and their defaults
+##### Unique options, and their defaults
 - `style?: 'checkbox' | 'switch' = 'checkbox'`
 - `editable?: boolean = false`
 
-<!--
 <Canvas withSource="close">
     <Story name="Checkbox Cell">
 {`<content>
@@ -340,13 +339,11 @@ Expected format: `boolean`, eg `true`
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Date Cell
+## Date Cell
 
 Expected format: date/time `string`, eg `'10:23:00'`
 
-<!--
 <Canvas withSource="close">
     <Story name="Date Cell">
 {`<content>
@@ -373,18 +370,16 @@ Expected format: date/time `string`, eg `'10:23:00'`
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Graph Cell
+## Graph Cell
 
 Expected format: `number`, eg `10230.32`
 
-#### Unique options, and their defaults
+##### Unique options, and their defaults
 - `style?: 'progress' | 'bar' = 'progress'`
 - `min?: number = 0`
 - `max?: number = 100`
 
-<!--
 <Canvas withSource="close">
     <Story name="Graph Cell">
 {`<content>
@@ -415,13 +410,11 @@ Expected format: `number`, eg `10230.32`
 </content>`}
     </Story>
 </Canvas>
--->
 
-### HTML Cell
+## HTML Cell
 
 Expected format: `HTMLElement`
 
-<!--
 <Canvas withSource="close">
     <Story name="HTML Cell">
 {`<content>
@@ -446,15 +439,13 @@ Expected format: `HTMLElement`
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Link Cell
+## Link Cell
 
 Expected format: a url `string`, eg: `'https://sample.com'`
 
 Link label is partially beautified by automatically removing the protocol (`http://` / `https://`)
 
-<!--
 <Canvas withSource="close">
     <Story name="Link Cell">
 {`<content>
@@ -481,13 +472,12 @@ Link label is partially beautified by automatically removing the protocol (`http
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Number Cell
+## Number Cell
 
 Expected format: `number` or `string`, eg `120.0`
 
-#### Unique options, and their defaults
+##### Unique options, and their defaults
 - `decimalSymbol?: string = '.'`
 - `groupSymbol?: string = ''`
 - `precision?: number Infinity`
@@ -495,7 +485,6 @@ Expected format: `number` or `string`, eg `120.0`
 - `suffix?: string`
 - `editable?: boolean = false`
 
-<!--
 <Canvas withSource="close">
     <Story name="Number Cell">
 {`<content>
@@ -539,17 +528,15 @@ Expected format: `number` or `string`, eg `120.0`
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Select Cell
+## Select Cell
 
 Expected format: string
 
-#### Unique options, and their defaults
+##### Unique options, and their defaults
 - `options: string[]`
 - `editable?: boolean = false`
 
-<!--
 <Canvas withSource="close">
     <Story name="Select Cell">
 {`<content>
@@ -581,13 +568,11 @@ Expected format: string
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Tags Cell
+## Tags Cell
 
 Expected format: comma delimited `string`, eg `'one, two, three'`
 
-<!--
 <Canvas withSource="close">
     <Story name="Tags Cell">
 {`<content>
@@ -615,19 +600,17 @@ Expected format: comma delimited `string`, eg `'one, two, three'`
 </content>`}
     </Story>
 </Canvas>
--->
 
-### Text Cell
+## Text Cell
 
 Expected format: unformatted `string`, eg `'this is a string'`
 
-#### Unique options, and their defaults
+##### Unique options, and their defaults
 - `variant?: 'body' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'body'`
 - `iconPrefix?: scale-icon-string (eg 'action-download')`
 - `iconSuffix?: scale-icon-string (eg 'action-download')`
 - `editable?: boolean = false`
 
-<!--
 <Canvas withSource="close">
     <Story name="Text Cell">
 {`<content>
@@ -668,11 +651,12 @@ Expected format: unformatted `string`, eg `'this is a string'`
 </content>`}
     </Story>
 </Canvas>
--->
 
-## Freeze Header
+## Component Properties
+
+## Freeze Header And Height
 <Canvas withSource="close">
-    <Story name="Freeze Header / Custom Height">
+    <Story name="Freeze Header">
 {`<content>
     <scale-data-grid
         id="freeze-header-example"
@@ -802,6 +786,114 @@ Expected format: unformatted `string`, eg `'this is a string'`
     </Story>
 </Canvas>
 
+## Heading
+<Canvas withSource="close">
+    <Story name="Heading">
+{`<content>
+    <scale-data-grid
+        id="heading-example"
+        heading="Data Grid Heading"
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#heading-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+        ];
+    }
+    </script>
+</content>`}
+    </Story>
+</Canvas>
+
+## Hide Extras
+<Canvas withSource="close">
+    <Story name="Hide Extras">
+{`<content>
+    <scale-data-grid
+        id="hide-extras-example"
+        hide-border
+        hide-header
+        hide-info
+        hide-menu
+        shade-alternate="false"
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#hide-extras-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+        ];
+    }
+    </script>
+</content>`}
+    </Story>
+</Canvas>
+
+
+## Numbered
+<Canvas withSource="close">
+    <Story name="Numbered">
+{`<content>
+    <scale-data-grid
+        id="numbered-example"
+        numbered
+        hide-menu
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#numbered-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+        ];
+    }
+    </script>
+</content>`}
+    </Story>
+</Canvas>
+
 ## Pagination
 <Canvas withSource="close">
     <Story name="Pagination">
@@ -885,9 +977,9 @@ Expected format: unformatted `string`, eg `'this is a string'`
     </Story>
 </Canvas>
 
-## Selection
+## Selection Export
 <Canvas withSource="close">
-    <Story name="Selection">
+    <Story name="Selection Export">
 {`<content>
     <scale-data-grid
         id="selection-export-example"
@@ -1043,6 +1135,43 @@ Expected format: unformatted `string`, eg `'this is a string'`
     </Story>
 </Canvas>
 
+## Column Stretch
+<Canvas withSource="close">
+    <Story name="Column Stretch">
+{`<content>
+    <scale-data-grid heading="Column Stretch" id="column-stretch-example"></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#column-stretch-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                stretchWeight: 1,
+            },
+            {
+                type: 'number',
+                label: 'ID',
+            },
+            {
+                type: 'date',
+                label: 'Time',
+            },
+        ];
+        dataGrid.rows = [
+            ['John', 1, '12:30'],
+            ['Mary', 2, '2:12'],
+            ['Patek', 3, '16:01'],
+            ['Heidi', 4, '3:15'],
+            ['Muhammad', 5, '21:45'],
+        ];
+    }
+    </script>
+</content>`}
+    </Story>
+</Canvas>
+
+
 ## Show More
 <Canvas withSource="close">
     <Story name="Show More">
@@ -1140,46 +1269,6 @@ Expected format: unformatted `string`, eg `'this is a string'`
     </Story>
 </Canvas>
 
-<!--
-## Hide Extras
-<Canvas withSource="close">
-    <Story name="Hide Extras">
-{`<content>
-    <scale-data-grid
-        id="hide-extras-example"
-        hide-border
-        hide-header
-        hide-info
-        hide-menu
-        shade-alternate="false"
-    ></scale-data-grid>
-    <script type="application/javascript">
-    {
-        const dataGrid = document.querySelector('#hide-extras-example');
-        dataGrid.fields = [
-            {
-                type: 'text',
-                label: 'Name',
-            },
-            {
-                type: 'checkbox',
-                label: 'Toggle',
-                style: 'switch',
-            },
-        ];
-        dataGrid.rows = [
-            ['Adrienne Hopper', true],
-            ['Merritt Hardin', true],
-            ['Randall Copeland', false],
-            ['Hope Bass', false],
-        ];
-    }
-    </script>
-</content>`}
-    </Story>
-</Canvas>
--->
-
 <!-- TODO -->
 <!-- manual pagination example -->
 <!-- search filtering example -->
@@ -1202,3 +1291,4 @@ Expected format: unformatted `string`, eg `'this is a string'`
 </content>`}
     </Story>
 </Canvas> -->
+

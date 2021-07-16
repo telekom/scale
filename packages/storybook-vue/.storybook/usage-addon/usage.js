@@ -13,8 +13,6 @@ import React from 'react';
 import { DocsWrapper, DocsContent } from '@storybook/components';
 import { Description } from '@storybook/addon-docs/blocks';
 import { useStorybookState, useGlobals } from '@storybook/api';
-import appshell_en from 'raw-loader!../../stories/3_components/app-shell/app-shell.md';
-import appshell_de from 'raw-loader!../../stories/3_components/app-shell/app-shell_de.md';
 import accordion_en from 'raw-loader!../../stories/3_components/accordion/accordion.md';
 import accordion_de from 'raw-loader!../../stories/3_components/accordion/accordion_de.md';
 import brandHeader_en from 'raw-loader!../../stories/3_components/brand-header/brand-header.md';
@@ -27,8 +25,6 @@ import card_en from 'raw-loader!../../stories/3_components/card/card.md';
 import card_de from 'raw-loader!../../stories/3_components/card/card_de.md';
 import checkbox_en from 'raw-loader!../../stories/3_components/checkbox/checkbox.md';
 import checkbox_de from 'raw-loader!../../stories/3_components/checkbox/checkbox_de.md';
-import checkboxGroup_en from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group.md';
-import checkboxGroup_de from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group_de.md';
 import datagrid_en from 'raw-loader!../../stories/3_components/data-grid/data-grid.md';
 import datagrid_de from 'raw-loader!../../stories/3_components/data-grid/data-grid_de.md';
 import date_picker_en from 'raw-loader!../../stories/3_components/date-picker/date-picker.md';
@@ -101,8 +97,6 @@ const Usage = (props) => {
   // or:
   // ?path=/story/components-brandheader--standard > brandheader_de
   const componentMap = {
-    'app-shell_en': appshell_en,
-    'app-shell_de': appshell_de,
     accordion_en,
     accordion_de,
     'brand-header-navigation_en': brandHeader_en,
@@ -115,8 +109,6 @@ const Usage = (props) => {
     card_de,
     checkbox_en,
     checkbox_de,
-    'checkbox-group_en': checkboxGroup_en,
-    'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
     badge_en,
