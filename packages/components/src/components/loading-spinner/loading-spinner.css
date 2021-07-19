@@ -158,3 +158,16 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (-ms-high-contrast: active) {
+  .spinner.spinner--variant-primary.spinner--size-large
+    .spinner__circle-background {
+    border: var(--border-size-large) solid transparent;
+    border-color: transparent;
+  }
+  .spinner.spinner--variant-primary.spinner--size-small
+    .spinner__circle-background {
+    border: var(--border-size-small) solid transparent;
+    border-color: transparent;
+  }
+}
