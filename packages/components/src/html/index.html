@@ -24,7 +24,7 @@
       }
 
       .custom-styles {
-        --rating-spacing: 1rem;
+        --scl-stars-spacing: 1rem;
       }
 
       hr {
@@ -46,33 +46,52 @@
     <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
     <h3>Rating Stars</h3>
-    <h4>value = 1</h4>
-    <scale-rating-stars value="1" label="Rating Label"> </scale-rating-stars>
+
+    <h4><code>value=3.5</code></h4>
+    <scale-rating-stars rating="3.5" label="Rating Label"> </scale-rating-stars>
+
+    <h4><code>minRating=1</code></h4>
+    <scale-rating-stars min-rating="1" label="Rating Label">
+    </scale-rating-stars>
+
     <h4>disabled</h4>
     <scale-rating-stars
-      value="2"
+      rating="2"
       disabled
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>spacing by custom styles</h4>
     <scale-rating-stars
       class="custom-styles"
-      value="3"
+      rating="3"
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>small</h4>
     <scale-rating-stars
-      value="4"
-      small
+      rating="4"
+      star-size="small"
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>No Label</h4>
     <scale-rating-stars value="5"></scale-rating-stars>
+
     <h4>Aria Translation</h4>
     <scale-rating-stars
-      value="1"
+      rating="1"
       label="Rating Label"
       aria-label-translation="${value} out of ${max} stars"
+    >
+    </scale-rating-stars>
+
+    <h4>min rating</h4>
+    <scale-rating-stars
+      rating="4"
+      label="Rating Label"
+      max-rating="10"
+      min-rating="0"
     >
     </scale-rating-stars>
 
@@ -822,6 +841,49 @@
 
       document.getElementById('cancel-btn').addEventListener('click', () => {
         modalWithHeaderAndButtons.removeAttribute('opened');
+      });
+    </script>
+
+    <h3>Modal with scaleBeforeClose</h3>
+    <scale-button id="show-modal-clickoutside"> show modal </scale-button>
+    <scale-modal
+      id="modal-clickoutside"
+      opened="false"
+      close-click-outside="false"
+    >
+      <span slot="header">Header content</span> Click close to close Modal
+    </scale-modal>
+
+    <script>
+      const showModalclickoutside = document.querySelector(
+        '#show-modal-clickoutside'
+      );
+      const Modalclickoutside = document.getElementById('modal-clickoutside');
+      showModalclickoutside.addEventListener('click', () => {
+        Modalclickoutside.setAttribute('opened', 'true');
+      });
+
+      Modalclickoutside.addEventListener('scaleClose', () => {
+        Modalclickoutside.removeAttribute('opened');
+      });
+
+      Modalclickoutside.addEventListener('scaleBeforeClose', (event) => {
+        console.log(event);
+        if (event.detail.trigger === 'BACKDROP') {
+          event.preventDefault();
+          alert('Close by Backdrop prevented');
+        }
+        if (event.detail.trigger === 'ESCAPE_KEY') {
+          event.preventDefault();
+          alert('Close by Escape button prevented');
+        }
+        if (event.detail.trigger === 'CLOSE_BUTTON') {
+          alert('Close by buttonClose detected but not prevented');
+        }
+      });
+
+      document.getElementById('cancel-btn').addEventListener('click', () => {
+        Modalclickoutside.removeAttribute('opened');
       });
     </script>
 
