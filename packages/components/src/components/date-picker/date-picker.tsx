@@ -57,6 +57,11 @@ export class DatePicker {
   @Prop() name: string = 'date';
 
   /**
+   * Name of the date picker input.
+   */
+  @Prop() popupTitle: string = 'Pick a date';
+
+  /**
    * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
    */
   @Prop() identifier: string = '';
@@ -158,6 +163,8 @@ export class DatePicker {
    */
   @Event() scaleFocus: EventEmitter<DuetDatePickerFocusEvent>;
 
+  private helperTextId = `helper-message-${i}`;
+
   /**
    * Public methods API
    */
@@ -192,6 +199,7 @@ export class DatePicker {
     this.hasValue = this.value != null && this.value !== '';
   }
 
+
   componentWillLoad() {
     this.handleKeyPress = this.handleKeyPress.bind(this);
     if (this.identifier == null) {
@@ -215,6 +223,30 @@ export class DatePicker {
     if (input) {
       input.addEventListener('keyup', this.handleKeyPress);
     }
+
+    if (input && this.helperText) {
+      input.setAttribute('aria-describedby', this.helperTextId);
+    }
+
+    if (input && this.status === 'error') {
+      input.setAttribute('aria-invalid', 'true');
+    }
+
+    const dialog = this.hostElement.querySelector('.duet-date__dialog-content');
+    if (dialog) {
+      const heading = document.createElement('h2');
+      heading.className = 'scale-date-picker__popup-heading';
+      heading.innerHTML = this.popupTitle;
+      dialog.insertBefore(heading, dialog.firstChild);
+    }
+
+    const today = this.hostElement.querySelector(
+      '.duet-date__day.is-today span.duet-date__vhidden'
+    );
+
+    if (today) {
+      today.innerHTML = `${today.innerHTML}, today`;
+    }
   }
 
   connectedCallback() {
@@ -236,11 +268,6 @@ export class DatePicker {
   }
 
   render() {
-    const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-
     return (
       <div
         class={classNames(
@@ -282,13 +309,11 @@ export class DatePicker {
           value={this.value}
           // @ts-ignore
           ref={(element) => (this.duetInput = element)}
-          {...ariaInvalidAttr}
-          {...(this.helperText ? ariaDescribedByAttr : {})}
         ></duet-date-picker>
         {!!this.helperText && (
           <div
             class="date-picker__meta"
-            id={helperTextId}
+            id={this.helperTextId}
             aria-live="polite"
             aria-relevant="additions removals"
           >
