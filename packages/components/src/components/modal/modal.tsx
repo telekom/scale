@@ -75,7 +75,7 @@ export class Modal {
 
   /** Fires when the modal has been opened */
   @Event() scaleOpen: EventEmitter<void>;
-  /** Event firing before an Modal Action is called. Propagation to closing the Event can be stoped. Possible actions: `buttonClose` `escapePressed` `backdrop` */
+  /** Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing */
   @Event() scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
   /** Fires when the modal has been closed */
   @Event() scaleClose: EventEmitter<void>;
