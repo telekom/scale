@@ -54,7 +54,7 @@ export const Template = (args, context) => ({
     }
   },
   methods: {
-    close() {
+    scaleClose() {
       this.isOpen = false
     }
   },
@@ -70,7 +70,7 @@ export const Template = (args, context) => ({
         :close-button-label="closeButtonLabel"
         :align-actions="alignActions"
         :styles="styles"
-        @close="close()"
+        @scaleClose="scaleClose()"
       >
         <template v-if="shortBody">
           <p>Hello. Welcome. What a pleasure it is to have you.</p>
@@ -85,10 +85,10 @@ export const Template = (args, context) => ({
           <p>Look, let's start with some tough love, alright? Ready for this? Here it goes: you two suck at peddling meth. Period. Good! 'Oh boo-hoo, I won't cook meth anymore!' You're a crybaby! Who needs you?! Hey, I'm unplugging the website, so no more money laundering! How do you like that?!</p>
         </template>
         <template #actions v-if="showActions">
-          <scale-button slot="action" variant="secondary" @click="close">
+          <scale-button slot="action" variant="secondary" @click="scaleClose">
             Cancel
           </scale-button>
-          <scale-button slot="action"@click="close">
+          <scale-button slot="action" @click="scaleClose">
             Primary Action
           </scale-button>
         </template>
