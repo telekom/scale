@@ -110,3 +110,17 @@ export const Template = (args, { argTypes }) => ({
   --scale-tooltip-z-index: var(--scl-z-index-70);
 }
 ```
+
+## Open by default
+
+<Canvas withSource="none">
+  <Story
+    name="opendefault"
+    args={{
+      open: true,
+      slot: "Tooltip"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
