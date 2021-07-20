@@ -64,7 +64,7 @@ export class DatePicker {
   /**
    * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
    */
-  @Prop() identifier: string = '';
+  @Prop() identifier: string;
 
   /**
    * Makes the date picker input component disabled. This prevents users from being able to
@@ -198,7 +198,6 @@ export class DatePicker {
   onValueChange() {
     this.hasValue = this.value != null && this.value !== '';
   }
-
 
   componentWillLoad() {
     this.handleKeyPress = this.handleKeyPress.bind(this);
