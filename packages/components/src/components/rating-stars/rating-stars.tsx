@@ -166,7 +166,8 @@ export class RatingStars {
             aria-orientation="horizontal"
           >
             <input
-              disabled={this.disabled || this.readonly}
+              disabled={this.disabled}
+              readonly={this.readonly}
               part="range-slider"
               type="range"
               id={this.ratingStarId}
