@@ -6,7 +6,7 @@ describe('Brand Header', () => {
     await page.waitForSelector('html.hydrated');
 
     const firstLink = await page.evaluateHandle(
-      `document.querySelector("#root > div > scale-app-shell").shadowRoot.querySelector("scale-app-header nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a")`
+      `document.querySelector("#root > div > scale-app-header > header > div > nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a")`
     );
     await firstLink.hover();
 
