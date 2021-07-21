@@ -37,6 +37,12 @@ scale-nav-icon {
   color: var(--color);
 }
 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .meta-navigation__item-link {
+    color: var(--scl-color-white);
+  }
+}
+
 .meta-navigation__item-link:hover {
   color: var(--color-hover);
 }
