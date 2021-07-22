@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.16](https://github.com/telekom/scale/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2021-07-20)
+
+
+### Bug Fixes
+
+* datepicker not updating on outside value change ([#441](https://github.com/telekom/scale/issues/441)) ([cb5773c](https://github.com/telekom/scale/commit/cb5773ce7ab9ca097a667c8c6ab849f19954dc37))
+* events and `checked` prop in Radio ([#426](https://github.com/telekom/scale/issues/426)) ([c9e780c](https://github.com/telekom/scale/commit/c9e780c1841590320d1bfd8d5ea618a406eef9d5))
+* format ([#453](https://github.com/telekom/scale/issues/453)) ([de170f7](https://github.com/telekom/scale/commit/de170f7e159e7bc05a804b0e391dc7d3b7af6c3f))
+
+
+### Features
+
+* add documentation for new Actions data-grid cell type ([#464](https://github.com/telekom/scale/issues/464)) ([5f9f6ef](https://github.com/telekom/scale/commit/5f9f6ef04c20a8892b55850017e65bfeea6937ef))
+* badge ([#394](https://github.com/telekom/scale/issues/394)) ([686ac2d](https://github.com/telekom/scale/commit/686ac2d6f366e2676ad0d96abce2714a02c334e1))
+* implement scaleBeforeClose event in Modal ([#430](https://github.com/telekom/scale/issues/430)) ([bdc6786](https://github.com/telekom/scale/commit/bdc678655e4d3921ab546448cca70f38ae4057ee))
+
+
+
+
+
 # [3.0.0-beta.15](https://github.com/telekom/scale/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2021-06-21)
 
 
