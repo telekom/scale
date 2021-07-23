@@ -140,35 +140,29 @@
   border: var(--border-size-large) solid var(--color-circle-white);
 }
 
-.spinner__circle > div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.spinner__circle > div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.spinner__circle > div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 svg {
-  width: 2rem;
-  height: 2rem;
+  width: 25px;
+  height: 24.5px;
 }
+
 svg.spinner {
   animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
 }
+
 svg.spinner .path {
-  stroke-linecap: round;
   animation: dash 1.5s ease-in-out infinite;
+  stroke: var(--color-circle-primary);
+}
+
+svg.spinner-background {
+  animation: rotate 2s linear infinite;
+  position: absolute;
+}
+
+svg.spinner-background .path {
+  stroke: var(--color-circle-primary-inner);
 }
 
 @keyframes rotate {
@@ -176,6 +170,7 @@ svg.spinner .path {
     transform: rotate(360deg);
   }
 }
+
 @keyframes dash {
   0% {
     stroke-dasharray: 1, 150;
@@ -188,5 +183,15 @@ svg.spinner .path {
   100% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  svg.spinner-background .path {
+    stroke: none;
+  }
+
+  svg.spinner .path {
+    stroke: yellow;
   }
 }
