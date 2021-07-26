@@ -50,6 +50,7 @@
   display: flex;
   align-self: center;
   margin-left: var(--spacing);
+  margin-top: 3px;
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
@@ -60,108 +61,31 @@
   line-height: var(--line-height-size-large);
 }
 
-.spinner .spinner__circle-background {
-  display: block;
-  position: absolute;
-  border-radius: 50%;
+.spinner .spinner__container {
+  padding-right: 30px;
 }
 
-.spinner.spinner--size-large .spinner__circle-background {
-  width: var(--size-inner-large);
-  height: var(--size-inner-large);
-}
-
-.spinner.spinner--size-small .spinner__circle-background {
-  width: var(--size-inner-small);
-  height: var(--size-inner-small);
-}
-
-.spinner .spinner__container,
-.spinner .spinner__circle {
-  display: inline-flex;
-  align-items: center;
-}
-
-.spinner.spinner--size-small .spinner__circle {
-  height: var(--size-outer-small);
-  width: var(--size-outer-small);
-}
-.spinner.spinner--size-large .spinner__circle {
-  height: var(--size-outer-large);
-  width: var(--size-outer-large);
-}
-
-.spinner.spinner--variant-primary.spinner--size-small
-  .spinner__circle-background {
-  border: var(--border-size-small) solid var(--color-circle-primary-inner);
-  border-color: var(--color-circle-primary-inner);
-}
-.spinner.spinner--variant-white.spinner--size-small
-  .spinner__circle-background {
-  border: var(--border-size-small) solid var(--color-circle-white-inner);
-  border-color: var(--color-circle-white-inner);
-}
-
-.spinner.spinner--variant-primary.spinner--size-large
-  .spinner__circle-background {
-  border: var(--border-size-large) solid var(--color-circle-primary-inner);
-  border-color: var(--color-circle-primary-inner);
-}
-.spinner.spinner--variant-white.spinner--size-large
-  .spinner__circle-background {
-  border: var(--border-size-large) solid var(--color-circle-white-inner);
-  border-color: var(--color-circle-white-inner);
-}
-
-.spinner.spinner--variant-white .spinner__circle > div {
-  border-color: var(--color-circle-white) transparent transparent transparent;
-}
-
-.spinner.spinner--variant-primary .spinner__circle > div {
-  border-color: var(--color-circle-primary) transparent transparent transparent;
-}
-
-.spinner__circle > div {
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-  animation: rotation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-}
-
-.spinner--size-small .spinner__circle > div {
-  width: var(--size-inner-small);
-  height: var(--size-inner-small);
-  border: var(--border-size-small) solid var(--color-circle-white);
-}
-
-.spinner--size-large .spinner__circle > div {
-  width: var(--size-inner-large);
-  height: var(--size-inner-large);
-  border: var(--border-size-large) solid var(--color-circle-white);
-}
-
-svg {
-  width: 25px;
-  height: 24.5px;
-}
-
-svg.spinner {
+.spinner .spinner__container .spinner__circle {
   animation: rotate 2s linear infinite;
   z-index: 2;
   position: absolute;
+  width: 28px;
+  height: 28px;
 }
 
-svg.spinner .path {
+.spinner .spinner__container .spinner__circle-background {
+  animation: rotate 2s linear infinite;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+
+.spinner .spinner__container .spinner__circle .path {
   animation: dash 1.5s ease-in-out infinite;
   stroke: var(--color-circle-primary);
 }
 
-svg.spinner-background {
-  animation: rotate 2s linear infinite;
-  position: absolute;
-}
-
-svg.spinner-background .path {
+.spinner .spinner__container .spinner__circle-background .path {
   stroke: var(--color-circle-primary-inner);
 }
 

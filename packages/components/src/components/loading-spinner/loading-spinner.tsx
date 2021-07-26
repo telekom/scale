@@ -17,28 +17,26 @@ export class LoadingSpinner {
       <Host>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div part="container" class="spinner__container">
-            <div part="circle" class="spinner__circle">
-              <svg class="spinner" viewBox="0 0 50 50">
-                <circle
-                  class="path"
-                  cx="25"
-                  cy="25"
-                  r="20"
-                  fill="none"
-                  stroke-width="5"
-                ></circle>
-              </svg>
-              <svg class="spinner-background" viewBox="0 0 50 50">
-                <circle
-                  class="path"
-                  cx="25"
-                  cy="25"
-                  r="20"
-                  fill="none"
-                  stroke-width="5"
-                ></circle>
-              </svg>
-            </div>
+            <svg class="spinner__circle" viewBox="0 0 50 50">
+              <circle
+                class="path"
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="4"
+              ></circle>
+            </svg>
+            <svg class="spinner__circle-background" viewBox="0 0 50 50">
+              <circle
+                class="path"
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke-width="4"
+              ></circle>
+            </svg>
           </div>
           <div class="sr-only" aria-live="polite">
             {this.text || 'Loading'}
