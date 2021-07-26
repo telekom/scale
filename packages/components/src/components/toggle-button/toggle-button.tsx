@@ -61,6 +61,8 @@ export class ToggleButton {
   @Prop() styles?: string;
   /** (optional) position within group */
   @Prop() position?: number;
+  /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
+  @Prop() ariaDescriptionTranslation = 'button at position $position; selected: $selected';
   /** Emitted when button is clicked */
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
@@ -80,6 +82,13 @@ export class ToggleButton {
     if (this.toggleButtonId == null) {
       this.toggleButtonId = 'toggle-button-' + i++;
     }
+  }
+
+  getAriaDescriptionTranslation() {
+    const filledText = this.ariaDescriptionTranslation
+      .replace(/\$position/g, `${this.position}`)
+      .replace(/\$selected/g, `${this.selected}`);
+    return filledText;
   }
 
   handleIconSize() {
@@ -126,7 +135,7 @@ export class ToggleButton {
           aria-label={this.ariaLabel}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
-          aria-description={`button number ${this.position} ${this.selected ? 'is selected' : 'is deselected'}` }
+          aria-description={this.getAriaDescriptionTranslation()}
         >
           <slot />
         </button>
