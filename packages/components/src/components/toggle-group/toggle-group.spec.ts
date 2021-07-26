@@ -77,7 +77,7 @@ describe('Toggle Group', () => {
   });
   describe('emitter', () => {
     it('state changes with event listened to (multi)', async () => {
-      const page = await newSpecPage({
+      page = await newSpecPage({
         components: [ToggleGroup],
         html: `<scale-toggle-group multi>
           <scale-toggle-button toggle-button-id="toggle-button-1">Click Me!</scale-toggle-button>
@@ -90,14 +90,18 @@ describe('Toggle Group', () => {
         { id: 'toggle-button-2', selected: false },
         { id: 'toggle-button-3', selected: true },
       ]);
-      page.rootInstance.scaleClickHandler({detail: { id: 'toggle-button-1', selected: true }});
+      page.rootInstance.scaleClickHandler({
+        detail: { id: 'toggle-button-1', selected: true },
+      });
       await page.waitForChanges();
       expect(page.rootInstance.status).toEqual([
         { id: 'toggle-button-1', selected: true },
         { id: 'toggle-button-2', selected: false },
         { id: 'toggle-button-3', selected: true },
       ]);
-      page.rootInstance.scaleClickHandler({detail: { id: 'toggle-button-2', selected: true }});
+      page.rootInstance.scaleClickHandler({
+        detail: { id: 'toggle-button-2', selected: true },
+      });
       await page.waitForChanges();
       expect(page.rootInstance.status).toEqual([
         { id: 'toggle-button-1', selected: true },
@@ -106,7 +110,7 @@ describe('Toggle Group', () => {
       ]);
     });
     it('state changes with event listened to (non-multi)', async () => {
-      const page = await newSpecPage({
+      page = await newSpecPage({
         components: [ToggleGroup],
         html: `<scale-toggle-group multi="false">
           <scale-toggle-button toggle-button-id="toggle-button-1">Click Me!</scale-toggle-button>
@@ -119,21 +123,27 @@ describe('Toggle Group', () => {
         { id: 'toggle-button-2', selected: false },
         { id: 'toggle-button-3', selected: true },
       ]);
-      page.rootInstance.scaleClickHandler({detail: { id: 'toggle-button-3', selected: false }});
+      page.rootInstance.scaleClickHandler({
+        detail: { id: 'toggle-button-3', selected: false },
+      });
       await page.waitForChanges();
       expect(page.rootInstance.status).toEqual([
         { id: 'toggle-button-1', selected: false },
         { id: 'toggle-button-2', selected: false },
         { id: 'toggle-button-3', selected: false },
       ]);
-      page.rootInstance.scaleClickHandler({detail: { id: 'toggle-button-2', selected: true }});
+      page.rootInstance.scaleClickHandler({
+        detail: { id: 'toggle-button-2', selected: true },
+      });
       await page.waitForChanges();
       expect(page.rootInstance.status).toEqual([
         { id: 'toggle-button-1', selected: false },
         { id: 'toggle-button-2', selected: true },
         { id: 'toggle-button-3', selected: false },
       ]);
-      page.rootInstance.scaleClickHandler({detail: { id: 'toggle-button-1', selected: true }});
+      page.rootInstance.scaleClickHandler({
+        detail: { id: 'toggle-button-1', selected: true },
+      });
       await page.waitForChanges();
       expect(page.rootInstance.status).toEqual([
         { id: 'toggle-button-1', selected: true },

@@ -62,7 +62,8 @@ export class ToggleButton {
   /** (optional) position within group */
   @Prop() position?: number;
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaDescriptionTranslation = 'button at position $position; selected: $selected';
+  @Prop() ariaDescriptionTranslation =
+    'button at position $position; selected: $selected';
   /** Emitted when button is clicked */
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 

@@ -54,12 +54,12 @@ export class ToggleGroup {
   /** (optional) more than one button selected possible */
   @Prop() multi: boolean = true;
   /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabelTranslation =  `toggle button group with $slottedButtons buttons`;
+  @Prop()
+  ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
   @Event() scaleClickGroup!: EventEmitter;
-
 
   @Listen('scaleClick')
   scaleClickHandler(ev) {
@@ -98,15 +98,17 @@ export class ToggleGroup {
       toggleButton.setAttribute('size', this.size);
       toggleButton.setAttribute('variant', this.variant);
       toggleButton.setAttribute('disabled', this.disabled && 'disabled');
-      toggleButton.setAttribute('position', (this.position).toString());
+      toggleButton.setAttribute('position', this.position.toString());
     });
     this.position = 0;
     this.status = tempState;
   }
 
   getAriaLabelTranslation() {
-    const filledText = this.ariaLabelTranslation
-      .replace(/\$slottedButtons/g, `${this.slottedButtons}`)
+    const filledText = this.ariaLabelTranslation.replace(
+      /\$slottedButtons/g,
+      `${this.slottedButtons}`
+    );
     return filledText;
   }
 
@@ -151,11 +153,12 @@ export class ToggleGroup {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div 
-          class={this.getCssClassMap()} 
-          part={this.getBasePartMap()} 
+        <div
+          class={this.getCssClassMap()}
+          part={this.getBasePartMap()}
           aria-label={this.getAriaLabelTranslation()}
-          role="group">
+          role="group"
+        >
           <slot />
         </div>
       </Host>
