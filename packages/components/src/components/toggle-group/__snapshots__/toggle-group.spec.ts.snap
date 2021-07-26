@@ -3,17 +3,17 @@
 exports[`Toggle Group snapshots default props 1`] = `
 <scale-toggle-group>
   <mock:shadow-root>
-    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="false" radius="left" size="large" variant="primary">
+  <scale-toggle-button disabled="false" position="1" radius="left" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" size="large" variant="primary">
+  <scale-toggle-button disabled="false" position="2" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" radius="right" selected="" size="large" variant="primary">
+  <scale-toggle-button disabled="false" position="3" radius="right" selected="" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -22,17 +22,17 @@ exports[`Toggle Group snapshots default props 1`] = `
 exports[`Toggle Group snapshots disabled 1`] = `
 <scale-toggle-group aria-label="Aria Label" disabled="">
   <mock:shadow-root>
-    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="disabled" radius="left" size="large" variant="primary">
+  <scale-toggle-button disabled="disabled" position="1" radius="left" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="disabled" size="large" variant="primary">
+  <scale-toggle-button disabled="disabled" position="2" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="disabled" radius="right" selected="" size="large" variant="primary">
+  <scale-toggle-button disabled="disabled" position="3" radius="right" selected="" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -41,17 +41,17 @@ exports[`Toggle Group snapshots disabled 1`] = `
 exports[`Toggle Group snapshots size small, multi false 1`] = `
 <scale-toggle-group multi="false" size="small">
   <mock:shadow-root>
-    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="false" radius="left" size="small" variant="primary">
+  <scale-toggle-button disabled="false" position="1" radius="left" size="small" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" size="small" variant="primary">
+  <scale-toggle-button disabled="false" position="2" size="small" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" radius="right" selected="" size="small" variant="primary">
+  <scale-toggle-button disabled="false" position="3" radius="right" selected="" size="small" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -63,17 +63,17 @@ exports[`Toggle Group snapshots styles 1`] = `
     <style>
       color:red
     </style>
-    <div class="toggle-group toggle-group--inline" part="toggle-group inline">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="false" radius="left" size="large" variant="primary">
+  <scale-toggle-button disabled="false" position="1" radius="left" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" size="large" variant="primary">
+  <scale-toggle-button disabled="false" position="2" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" radius="right" selected="" size="large" variant="primary">
+  <scale-toggle-button disabled="false" position="3" radius="right" selected="" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
