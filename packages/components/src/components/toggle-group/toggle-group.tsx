@@ -54,7 +54,7 @@ export class ToggleGroup {
   /** (optional) more than one button selected possible */
   @Prop() multi: boolean = true;
   /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabel = `toggle button group`;
+  @Prop() ariaLabelTranslation =  `toggle button group with $slottedButtons buttons`;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
@@ -102,11 +102,12 @@ export class ToggleGroup {
     });
     this.position = 0;
     this.status = tempState;
-    this.setAriaLabel(toggleButtons.length);
   }
 
-  setAriaLabel(toggleButtons: number) {
-    this.ariaLabel = `toggle button group with ${toggleButtons} buttons`
+  getAriaLabelTranslation() {
+    const filledText = this.ariaLabelTranslation
+      .replace(/\$slottedButtons/g, `${this.slottedButtons}`)
+    return filledText;
   }
 
   componentDidRender() {
@@ -153,7 +154,7 @@ export class ToggleGroup {
         <div 
           class={this.getCssClassMap()} 
           part={this.getBasePartMap()} 
-          aria-label={this.ariaLabel}
+          aria-label={this.getAriaLabelTranslation()}
           role="group">
           <slot />
         </div>
