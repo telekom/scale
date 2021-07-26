@@ -1,16 +1,18 @@
 :host {
   display: inline-flex;
-  --size-outer-small: 24px;
-  --size-outer-large: 50px;
-  --size-inner-small: 18px;
-  --size-inner-large: 40px;
-  --border-size-small: 3px;
-  --border-size-large: 4px;
+  --size-outer-small: 28px;
+  --size-outer-large: 56px;
+  --size-inner-small: 28px;
+  --size-inner-large: 56px;
+
   --line-height-size-small: 24px;
   --line-height-size-large: 48px;
+
   --font-weight: var(--scl-font-weight-bold);
   --font-size: var(--scl-font-size-16);
+
   --spacing: var(--scl-spacing-8);
+
   --color-circle-primary: var(--scl-color-primary);
   --color-circle-primary-inner: var(--scl-color-grey-20);
   --color-text-primary: var(--scl-color-grey-60);
@@ -34,14 +36,12 @@
   flex-direction: column;
 }
 
-.spinner.spinner--alignment-vertical .spinner__text {
-  margin-top: var(--spacing);
-}
 .spinner .spinner__text {
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   color: var(--color-text-primary);
 }
+
 .spinner.spinner--variant-white .spinner__text {
   color: var(--color-circle-white);
 }
@@ -53,8 +53,17 @@
   margin-top: 3px;
 }
 
+.spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
+  line-height: var(--line-height-size-small);
+}
+
 .spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
+  line-height: var(--line-height-size-large);
   margin-top: 5px;
+}
+
+.spinner.spinner--alignment-vertical .spinner__text {
+  margin-top: var(--spacing);
 }
 
 .spinner.spinner--alignment-vertical.spinner--size-small .spinner__text {
@@ -63,14 +72,6 @@
 
 .spinner.spinner--alignment-vertical.spinner--size-large .spinner__text {
   margin-top: 60px;
-}
-
-.spinner.spinner--alignment-horizontal.spinner--size-small .spinner__text {
-  line-height: var(--line-height-size-small);
-}
-
-.spinner.spinner--alignment-horizontal.spinner--size-large .spinner__text {
-  line-height: var(--line-height-size-large);
 }
 
 .spinner.spinner--alignment-horizontal.spinner--size-small .spinner__container {
@@ -85,56 +86,60 @@
   animation: rotate 2s linear infinite;
   z-index: 2;
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: var(--size-inner-small);
+  height: var(--size-inner-small);
 }
 
 .spinner .spinner__container .spinner__circle-background {
   animation: rotate 2s linear infinite;
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: var(--size-outer-small);
+  height: var(--size-outer-small);
 }
 
 .spinner.spinner.spinner--alignment-vertical
   .spinner__container
   .spinner__circle-background {
   margin-left: -15px;
-}
-
-.spinner.spinner.spinner--alignment-vertical
-  .spinner__container
-  .spinner__circle {
-  margin-left: -15px;
-}
-
-.spinner.spinner--alignment-vertical.spinner--size-large
-  .spinner__container
-  .spinner__circle {
-  margin-left: -30px;
-}
-
-.spinner.spinner--alignment-vertical.spinner--size-large
-  .spinner__container
-  .spinner__circle-background {
-  margin-left: -30px;
 }
 
 .spinner.spinner--size-large .spinner__container .spinner__circle-background {
-  width: 56px;
-  height: 56px;
+  width: var(--size-outer-large);
+  height: var(--size-outer-large);
+}
+
+.spinner.spinner--alignment-vertical.spinner--size-large
+  .spinner__container
+  .spinner__circle-background {
+  margin-left: -30px;
+}
+
+.spinner.spinner.spinner--alignment-vertical
+  .spinner__container
+  .spinner__circle {
+  margin-left: -15px;
+}
+
+.spinner.spinner--alignment-vertical.spinner--size-large
+  .spinner__container
+  .spinner__circle {
+  margin-left: -30px;
 }
 
 .spinner.spinner--size-large .spinner__container .spinner__circle {
-  width: 56px;
-  height: 56px;
+  width: var(--size-inner-large);
+  height: var(--size-inner-large);
 }
 
 .spinner.spinner--variant-white
   .spinner__container
   .spinner__circle-background
   .path {
-  stroke: #6c6c6c;
+  stroke: var(--color-circle-white-inner);
+}
+
+.spinner .spinner__container .spinner__circle-background .path {
+  stroke: var(--color-circle-primary-inner);
 }
 
 .spinner.spinner--variant-white .spinner__container .spinner__circle .path {
@@ -144,10 +149,6 @@
 .spinner .spinner__container .spinner__circle .path {
   animation: dash 1.5s ease-in-out infinite;
   stroke: var(--color-circle-primary);
-}
-
-.spinner .spinner__container .spinner__circle-background .path {
-  stroke: var(--color-circle-primary-inner);
 }
 
 @keyframes rotate {
@@ -172,11 +173,14 @@
 }
 
 @media screen and (-ms-high-contrast: active) {
-  svg.spinner-background .path {
+  .spinner.spinner--variant-white
+    .spinner__container
+    .spinner__circle-background
+    .path {
     stroke: none;
   }
 
-  svg.spinner .path {
+  .spinner.spinner--variant-white .spinner__container .spinner__circel .path {
     stroke: yellow;
   }
 }
