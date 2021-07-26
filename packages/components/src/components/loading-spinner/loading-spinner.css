@@ -80,6 +80,17 @@
   height: 28px;
 }
 
+.spinner.spinner--variant-white
+  .spinner__container
+  .spinner__circle-background
+  .path {
+  stroke: #6c6c6c;
+}
+
+.spinner.spinner--variant-white .spinner__container .spinner__circle .path {
+  stroke: white;
+}
+
 .spinner .spinner__container .spinner__circle .path {
   animation: dash 1.5s ease-in-out infinite;
   stroke: var(--color-circle-primary);
