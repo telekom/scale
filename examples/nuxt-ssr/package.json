@@ -1,8 +1,8 @@
 {
-  "name": "@telekom/scale-boilerplate-nuxt",
+  "name": "%TODO%",
   "version": "1.0.0",
-  "description": "My legendary Nuxt.js project",
   "private": true,
+  "description": "My legendary Nuxt.js project",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

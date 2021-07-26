@@ -1,6 +1,6 @@
 {
-  "name": "vue-boilerplate",
-  "version": "0.1.0",
+  "name": "%TODO%",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
