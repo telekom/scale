@@ -33,6 +33,11 @@ interface ButtonStatus {
   shadow: true,
 })
 export class ToggleGroup {
+  /** toggle button position within group */
+  position = 0;
+  /** number of slotted toggle-buttons */
+  slottedButtons = 0;
+
   @Element() hostElement: HTMLElement;
   /** state */
   @State() status: ButtonStatus[] = [];
@@ -49,11 +54,12 @@ export class ToggleGroup {
   /** (optional) more than one button selected possible */
   @Prop() multi: boolean = true;
   /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabel: string;
+  @Prop() ariaLabel = `toggle button group`;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
   @Event() scaleClickGroup!: EventEmitter;
+
 
   @Listen('scaleClick')
   scaleClickHandler(ev) {
@@ -82,7 +88,9 @@ export class ToggleGroup {
     const toggleButtons = Array.from(
       this.hostElement.querySelectorAll('scale-toggle-button')
     );
+    this.slottedButtons = toggleButtons.length;
     toggleButtons.forEach((toggleButton) => {
+      this.position++;
       tempState.push({
         id: toggleButton.getAttribute('toggle-button-id'),
         selected: toggleButton.hasAttribute('selected'),
@@ -90,8 +98,15 @@ export class ToggleGroup {
       toggleButton.setAttribute('size', this.size);
       toggleButton.setAttribute('variant', this.variant);
       toggleButton.setAttribute('disabled', this.disabled && 'disabled');
+      toggleButton.setAttribute('position', (this.position).toString());
     });
+    this.position = 0;
     this.status = tempState;
+    this.setAriaLabel(toggleButtons.length);
+  }
+
+  setAriaLabel(toggleButtons: number) {
+    this.ariaLabel = `toggle button group with ${toggleButtons} buttons`
   }
 
   componentDidRender() {
@@ -135,7 +150,11 @@ export class ToggleGroup {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
+        <div 
+          class={this.getCssClassMap()} 
+          part={this.getBasePartMap()} 
+          aria-label={this.ariaLabel}
+          role="group">
           <slot />
         </div>
       </Host>

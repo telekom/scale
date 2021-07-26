@@ -59,6 +59,8 @@ export class ToggleButton {
   @Prop() ariaLabel: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) position within group */
+  @Prop() position?: number;
   /** Emitted when button is clicked */
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
@@ -124,6 +126,7 @@ export class ToggleButton {
           aria-label={this.ariaLabel}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
+          aria-description={`button number ${this.position} ${this.selected ? 'is selected' : 'is deselected'}` }
         >
           <slot />
         </button>
