@@ -45,7 +45,8 @@ describe('TextField', () => {
                  input-id ="input-text-field1"
                  transparent ="true"
                  styles ="styles"
-               </scale-text-field>`,
+                 list='[{"value": "android", "displayValue": "Android"}, {"value": "ios", "displayValue": "IOS"}, {"value": "other", "displayValue": "Other"}]'
+              ></scale-text-field>`,
     });
 
     expect(specPage.rootInstance.type).toBe('email');
@@ -197,5 +198,18 @@ describe('TextField', () => {
     await page.waitForChanges();
     expect(inputSpy).toHaveBeenCalled();
     expect(emitSpy).toHaveBeenCalled();
+  });
+
+  it('should handle error', () => {
+    const textField = new TextField();
+    expect(textField.readData('no data')).toEqual([]);
+  });
+
+  it('should handle JSON error', () => {
+    const textField = new TextField();
+    expect(textField.readData(['arraydata', 'arraydata'])).toEqual([
+      'arraydata',
+      'arraydata',
+    ]);
   });
 });
