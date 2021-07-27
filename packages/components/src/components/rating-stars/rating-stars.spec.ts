@@ -104,7 +104,7 @@ describe('RatingStars', () => {
       );
       await page.waitForChanges();
       expect(page.rootInstance.value).toBe(2);
-    }); 
+    });
 */
   });
 });
