@@ -17,9 +17,6 @@ import ScaleToggleButton from './ScaleToggleButton.vue';
 	  colorScheme: {
       control: { type: 'select', options: ['light', 'dark'] },
     },
-    ariaDescriptionTranslation: {
-      control: { type: "text", },
-    },
     ariaLangDeselected: {
       control: { type: "text", },
     },
@@ -46,7 +43,6 @@ export const Template = (args, { argTypes }) => ({
     :icon-only="iconOnly"
     :radius="radius"
     :aria-label="ariaLabel"
-    :aria-description-translation="ariaDescriptionTranslation"
     :aria-lang-selected="ariaLangSelected"
     :aria-lang-deselected="ariaLangDeselected"
     :styles="styles"

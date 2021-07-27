@@ -11,8 +11,11 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
     },
-	boxType: {
+	  boxType: {
       control: { type: 'select', options: ['inline', 'block'] },
+    },
+    ariaLabelTranslation: {
+      control: { type: "text", },
     },
   }}
 />
@@ -28,11 +31,11 @@ export const Template = (args, { argTypes }) => ({
   <scale-toggle-group
     :size="size"
     :variant="variant"
-	:box-type="boxType"
+	  :box-type="boxType"
     :disabled="disabled"
     :border="border"
     :multi="multi"
-    :aria-label="ariaLabel"
+    :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
   >
     <scale-toggle-button>Label</scale-toggle-button>
@@ -266,5 +269,40 @@ export const Template = (args, { argTypes }) => ({
 	<scale-toggle-button>Label</scale-toggle-button>
     <scale-toggle-button>Label</scale-toggle-button>
     <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Accessibility, German
+
+<Canvas withSource="none">
+  <Story
+    name="Accessibility, German"
+    args={{
+      ariaLabelTranslation: "wechsel schalter gruppe mit $slottedButtons schaltern"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern">
+  <scale-toggle-button 
+    aria-label="Drück mich"
+    aria-lang-selected="selektiert"
+    aria-lang-deselected="deselektiert">Label
+  </scale-toggle-button>
+  <scale-toggle-button 
+    aria-label="Drück mich"
+    aria-lang-selected="selektiert"
+    aria-lang-deselected="deselektiert">Label
+  </scale-toggle-button>
+  <scale-toggle-button 
+    aria-label="Drück mich"
+    aria-lang-selected="selektiert"
+    aria-lang-deselected="deselektiert"
+    selected
+    >Label
+  </scale-toggle-button>
 </scale-toggle-group>
 ```
