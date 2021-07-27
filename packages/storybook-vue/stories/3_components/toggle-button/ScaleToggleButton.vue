@@ -8,7 +8,6 @@
     :icon-only="iconOnly"
     :radius="radius"
     :aria-label="ariaLabel"
-    :aria-description-translation="ariaDescriptionTranslation"
     :aria-lang-selected="ariaLangSelected"
     :aria-lang-deselected="ariaLangDeselected"
     :styles="styles"

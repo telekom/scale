@@ -2,11 +2,11 @@
   <scale-toggle-group
     :size="size"
     :variant="variant"
-	:box-type="boxType"
+	  :box-type="boxType"
     :disabled="disabled"
     :border="border"
     :multi="multi"
-    :aria-label="ariaLabel"
+    :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
   >
     <slot></slot>
@@ -23,6 +23,7 @@ export default {
     border: { type: Boolean, default: false },
     multi: { type: Boolean, default: true },
     ariaLabel: { type: String },
+    ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
     styles: { type: String },
   },
 };
