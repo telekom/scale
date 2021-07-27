@@ -22,7 +22,7 @@ export default {
   props: {
     size: { type: String, default: 'large' },
     variant: { type: String, default: 'primary' },
-    colorScheme: { type: String, default: 'magenta' },
+    colorScheme: { type: String, default: 'light' },
     disabled: { type: Boolean, default: false },
     selected: { type: Boolean, default: false },
     iconOnly: { type: Boolean, default: false },
