@@ -61,9 +61,13 @@ export class ToggleButton {
   @Prop() styles?: string;
   /** (optional) position within group */
   @Prop() position?: number;
+  /** (optional) translation of 'selected */
+  @Prop() ariaLangSelected? = 'selected';
+  /** (optional) translation of 'deselected */
+  @Prop() ariaLangDeselected? = 'deselected';
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
   @Prop() ariaDescriptionTranslation =
-    'button at position $position; selected: $selected';
+    'button at position $position; $selected';
   /** Emitted when button is clicked */
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
@@ -88,7 +92,7 @@ export class ToggleButton {
   getAriaDescriptionTranslation() {
     const filledText = this.ariaDescriptionTranslation
       .replace(/\$position/g, `${this.position}`)
-      .replace(/\$selected/g, `${this.selected}`);
+      .replace(/\$selected/g, `${this.selected ? this.ariaLangSelected : this.ariaLangDeselected}`);
     return filledText;
   }
 
