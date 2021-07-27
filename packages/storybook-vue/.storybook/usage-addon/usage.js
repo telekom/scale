@@ -25,6 +25,8 @@ import card_en from 'raw-loader!../../stories/3_components/card/card.md';
 import card_de from 'raw-loader!../../stories/3_components/card/card_de.md';
 import checkbox_en from 'raw-loader!../../stories/3_components/checkbox/checkbox.md';
 import checkbox_de from 'raw-loader!../../stories/3_components/checkbox/checkbox_de.md';
+import checkboxGroup_en from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group.md';
+import checkboxGroup_de from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group_de.md';
 import datagrid_en from 'raw-loader!../../stories/3_components/data-grid/data-grid.md';
 import datagrid_de from 'raw-loader!../../stories/3_components/data-grid/data-grid_de.md';
 import date_picker_en from 'raw-loader!../../stories/3_components/date-picker/date-picker.md';
@@ -109,6 +111,8 @@ const Usage = (props) => {
     card_de,
     checkbox_en,
     checkbox_de,
+    'checkbox-group_en': checkboxGroup_en,
+    'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
     badge_en,

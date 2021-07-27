@@ -7,17 +7,18 @@
 
 ## Properties
 
-| Property     | Attribute     | Description                    | Type               | Default     |
-| ------------ | ------------- | ------------------------------ | ------------------ | ----------- |
-| `checked`    | `checked`     | (optional) Active switch       | `boolean`          | `false`     |
-| `disabled`   | `disabled`    | (optional) Input disabled      | `boolean`          | `undefined` |
-| `helperText` | `helper-text` | (optional) Input helper text   | `string`           | `''`        |
-| `inputId`    | `input-id`    | (optional) Input checkbox id   | `string`           | `undefined` |
-| `label`      | `label`       | (optional) Input label         | `string`           | `''`        |
-| `name`       | `name`        | (optional) Input name          | `string`           | `''`        |
-| `status`     | `status`      | (optional) Input status        | `string`           | `''`        |
-| `styles`     | `styles`      | (optional) Injected CSS styles | `string`           | `undefined` |
-| `value`      | `value`       | (optional) Input value         | `number \| string` | `''`        |
+| Property        | Attribute       | Description                    | Type               | Default     |
+| --------------- | --------------- | ------------------------------ | ------------------ | ----------- |
+| `checked`       | `checked`       | (optional) Active switch       | `boolean`          | `false`     |
+| `disabled`      | `disabled`      | (optional) Input disabled      | `boolean`          | `undefined` |
+| `helperText`    | `helper-text`   | (optional) Input helper text   | `string`           | `''`        |
+| `indeterminate` | `indeterminate` | (optional) indeterminate       | `boolean`          | `false`     |
+| `inputId`       | `input-id`      | (optional) Input checkbox id   | `string`           | `undefined` |
+| `label`         | `label`         | (optional) Input label         | `string`           | `''`        |
+| `name`          | `name`          | (optional) Input name          | `string`           | `''`        |
+| `status`        | `status`        | (optional) Input status        | `string`           | `''`        |
+| `styles`        | `styles`        | (optional) Injected CSS styles | `string`           | `undefined` |
+| `value`         | `value`         | (optional) Input value         | `number \| string` | `''`        |
 
 
 ## Events
