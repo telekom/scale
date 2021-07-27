@@ -14,8 +14,17 @@ import ScaleToggleButton from './ScaleToggleButton.vue';
     radius: {
       control: { type: 'select', options: ['left', 'right', 'both'] },
     },
-	colorScheme: {
+	  colorScheme: {
       control: { type: 'select', options: ['light', 'dark'] },
+    },
+    ariaDescriptionTranslation: {
+      control: { type: "text", },
+    },
+    ariaLangDeselected: {
+      control: { type: "text", },
+    },
+    ariaLangSelected: {
+      control: { type: "text", },
     },
   }}
 />
@@ -37,6 +46,9 @@ export const Template = (args, { argTypes }) => ({
     :icon-only="iconOnly"
     :radius="radius"
     :aria-label="ariaLabel"
+    :aria-description-translation="ariaDescriptionTranslation"
+    :aria-lang-selected="ariaLangSelected"
+    :aria-lang-deselected="ariaLangDeselected"
     :styles="styles"
   >
     <scale-icon-action-search v-if="icon === 'before'" />
@@ -51,11 +63,13 @@ export const Template = (args, { argTypes }) => ({
   style={{
     display: 'inline-flex',
     alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     width: '100%',
   }}
 >
   <h1>Toggle Button</h1>
+  <h2>A Toggle Button is meant to be used inside a Toggle Group</h2>
 </div>
 
 ## Standard
@@ -199,7 +213,7 @@ export const Template = (args, { argTypes }) => ({
     name="Color Scheme Dark"
     args={{
       label: 'Label',
-	  colorScheme: 'dark'
+	    colorScheme: 'dark'
     }}
   >
     {Template.bind({})}
@@ -259,7 +273,7 @@ export const Template = (args, { argTypes }) => ({
     name="XS"
     args={{
       label: 'Label',
-	  size: 'xs'
+	    size: 'xs'
     }}
   >
     {Template.bind({})}
@@ -277,7 +291,7 @@ export const Template = (args, { argTypes }) => ({
     name="Radius Left"
     args={{
       label: 'Label',
-	  radius: 'left'
+	    radius: 'left'
     }}
   >
     {Template.bind({})}
@@ -295,7 +309,7 @@ export const Template = (args, { argTypes }) => ({
     name="Radius Both"
     args={{
       label: 'Label',
-	  radius: 'both'
+	    radius: 'both'
     }}
   >
     {Template.bind({})}
@@ -304,4 +318,30 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-button radius="both">Label</scale-toggle-button>
+```
+
+## Accessibility, German
+
+<Canvas withSource="none">
+  <Story
+    name="Accessibility"
+    args={{
+      label: 'Label',
+      ariaLabel: 'Drück mich',
+      ariaDescriptionTranslation: 'Bedienfläche $selected',
+      ariaLangSelected: 'selektiert',
+      ariaLangDeselected: 'deselektiert',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-button 
+  aria-label="Drück mich"
+  aria-description-translation="Bedienfläche $selected"
+  aria-lang-selected="selektiert"
+  aria-lang-deselected="deselektiert">Label
+</scale-toggle-button>
 ```

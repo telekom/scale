@@ -1253,7 +1253,13 @@ no switching has been done:*/
     <h3>Toggle Button</h3>
 
     <h4>Toggle Button Default</h4>
-    <scale-toggle-button>Click Me!</scale-toggle-button>
+    <scale-toggle-button 
+      aria-label="Drück mich"
+      aria-description-translation="Bedienfläche $selected"
+      aria-lang-selected="selektiert"
+      aria-lang-deselected="deselektiert">Click Me!
+    </scale-toggle-button>
+    
     <scale-toggle-button variant="secondary">Click Me!</scale-toggle-button>
 
     <h4>Icon Before</h4>
@@ -1286,6 +1292,14 @@ no switching has been done:*/
     </scale-toggle-button>
     <scale-toggle-button variant="secondary" size="xs" disabled>
       Label <scale-icon-action-search></scale-icon-action-search>
+    </scale-toggle-button>
+
+    <h4>Accessibility, German</h4>
+    <scale-toggle-button 
+      aria-label="Drück mich"
+      aria-description-translation="Bedienfläche $selected"
+      aria-lang-selected="selektiert"
+      aria-lang-deselected="deselektiert">Label
     </scale-toggle-button>
 
     <h3>Toggle Group</h3>
