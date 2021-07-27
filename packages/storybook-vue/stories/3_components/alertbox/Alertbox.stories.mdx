@@ -12,27 +12,14 @@ import ScaleAlertbox from './ScaleAlertbox.vue';
   title="Beta Components/Alertbox"
   component={ScaleAlertbox}
   argTypes={{
-    color: {
-      defaultValue: 'white',
-      options: ['white', 'black', 'error'],
-      control: {
-        type: 'select',
-      },
-    },
     variant: {
-      options: ['outline', 'floating'],
+      defaultValue: 'informational',
+      options: ['error', 'warning', 'success', 'informational'],
       control: {
         type: 'select',
       },
     },
-    icon: {
-      defaultValue: false,
-      options: [true, false],
-      control: {
-        type: 'select',
-      },
-    },
-    hasclose: {
+    hasClose: {
       defaultValue: false,
       options: [true, false],
       control: {
@@ -62,17 +49,15 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-alertbox   
-    :color="color"
     :variant="variant"
-    :icon="icon"
-    :hasclose="hasclose"
+    :hasClose="hasClose"
     :timeout="timeout"
-    opened
+    :opened="opened"
     >
-      <p slot="header">Hey</p>
-      <p slot="text">Here I am</p>
+    <p slot="header">sdfsdf</p>
+    <p slot="text">sdfsd</p>
     </scale-alertbox>
-  `,
+  `
 });
 
 ## Standard
@@ -80,7 +65,9 @@ export const Template = (args, { argTypes }) => ({
 ### All default values
 
 <Canvas withSource="none">
-  <Story name="Standard" args={{}}>
+  <Story name="Standard" args={{
+    opened: true,
+  }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -88,7 +75,88 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-alertbox hasclose icon color="white" variant="outline" opened>
+<scale-alertbox variant="informational" opened>
   <p slot="header">Message with title only</p>
+</scale-alertbox>
+```
+
+
+## Scoped CSS variables
+
+```css
+:host {
+}
+```
+
+## Variants
+<Canvas withSource="none">
+  <Story name="Variants" args={{
+    opened: true,
+    variant: "warning"
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-alertbox variant="warning" opened>
+  <p slot="header">Message with title only</p>
+</scale-alertbox>
+```
+
+
+## Close Button
+<Canvas withSource="none">
+  <Story name="Close Button" args={{
+    opened: true,
+    variant: "error",
+    hasClose: true
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-alertbox variant="error" has-close opened>
+  <p slot="header">Message with title only</p>
+</scale-alertbox>
+```
+
+
+## Timeout
+<Canvas withSource="none">
+  <Story name="Timeout" args={{
+    opened: true,
+    variant: "success",
+    hasClose: true,
+    timeout: true
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-alertbox variant="success" timeout has-close opened>
+  <p slot="header">Message with title only</p>
+</scale-alertbox>
+```
+
+
+## Titel & Message
+<Canvas withSource="none">
+  <Story name="Titel-Message" args={{
+    opened: true,
+    variant: "warning",
+    hasClose: true,
+    timeout: true
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-alertbox variant="warning" timeout has-close opened>
+  <p slot="header">This is my title</p>
+  <p slot="header">This is my message to you.</p>
 </scale-alertbox>
 ```

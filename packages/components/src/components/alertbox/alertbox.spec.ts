@@ -18,14 +18,8 @@ describe('Alertbox', () => {
   });
 
   it('should handle css classes', () => {
-    element.color = 'magenta';
-    expect(element.getCssClassMap()).toContain('color-magenta');
-
-    element.variant = 'variant';
-    expect(element.getCssClassMap()).toContain('variant-variant');
-
-    element.icon = true;
-    expect(element.getCssClassMap()).toContain('icon');
+    element.variant = 'magenta';
+    expect(element.getCssClassMap()).toContain('variant-magenta');
   });
 
   it('should test the close() fucntion', () => {
@@ -34,25 +28,21 @@ describe('Alertbox', () => {
     expect(element.opened).toBe(false);
   });
 
-  it('handle color prop', async () => {
+  it('handle variant prop', async () => {
     let page = await newSpecPage({
       components: [Alertbox],
-      html: `<scale-alertbox opened="true" icon="true">Label</scale-alertbox>`,
+      html: `<scale-alertbox opened="true">Label</scale-alertbox>`,
     });
-    page.root.color = 'black';
+    page.root.variant = 'error';
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
-    page.root.color = 'blue';
-    await page.waitForChanges();
-
-    expect(page.root).toMatchSnapshot();
-    page.root.color = 'error';
+    page.root.variant = 'warning';
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
-    page.root.color = 'yellow';
+    page.root.variant = 'informational';
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
-    page.root.color = 'green';
+    page.root.variant = 'success';
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
   });
@@ -61,17 +51,13 @@ describe('Alertbox', () => {
     const page = await newSpecPage({
       components: [Alertbox],
       html: `<scale-alertbox
-                color ="black"
-                variant ="outline"
-                icon ="true"
+                variant ="black"
                 has-close ="true"
                 content ="false">
               </scale-alertbox>`,
     });
 
-    expect(page.rootInstance.color).toBe('black');
-    expect(page.rootInstance.variant).toBe('outline');
-    expect(page.rootInstance.icon).toBe(true);
+    expect(page.rootInstance.variant).toBe('black');
     expect(page.rootInstance.hasClose).toBe(true);
     expect(page.rootInstance.content).toBe(false);
   });

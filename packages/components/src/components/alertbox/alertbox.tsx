@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, State } from '@stencil/core';
+import { Component, h, Host, Prop, Element, State, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -8,16 +8,15 @@ import statusNote from '../../utils/status-note';
   shadow: true,
 })
 export class Alertbox {
-  @Prop() color?: 'white' | 'black' | 'error' = 'white';
-  @Prop() variant?: 'floating' | 'outline';
-  @Prop() icon: boolean = false;
+  // Color to variant rename
+  @Prop() variant?: 'informational'| 'success' | 'warning' | 'error' = 'informational';
   @Prop({ reflect: true }) hasClose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
 
-  defaultTimeout = 2000;
+  defaultTimeout = 1;
 
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
@@ -26,25 +25,32 @@ export class Alertbox {
   connectedCallback() {
     statusNote({ source: this.hostElement, type: 'warn' });
   }
-
+  
+  /** Alert method: open() */
+  @Method()
+  async open() {
+    this.opened = true;
+  }
+  
   handleIcons() {
-    if (this.icon) {
-      switch (this.color) {
-        case 'white':
+    if (this.variant) {
+      switch (this.variant) {
+        case 'success':
           return (
             <scale-icon-action-success
               class="alertbox__icon-success"
               accessibility-title="success"
             />
           );
-        case 'black':
+        case 'informational':
           return (
-            <scale-icon-action-success
-              class="alertbox__icon-success"
-              accessibility-title="success"
+            <scale-icon-alert-information
+              class="alertbox__icon-information"
+              accessibility-title="information"
             />
           );
         case 'error':
+        case 'warning':
           return (
             <scale-icon-alert-error
               class="alertbox__icon-error"
@@ -55,7 +61,7 @@ export class Alertbox {
     }
     return;
   }
-
+  
   close() {
     this.opened = false;
   }
@@ -66,6 +72,7 @@ export class Alertbox {
         setTimeout(this.close, this.timeout);
       } else {
         setTimeout(this.close, this.defaultTimeout);
+        
       }
     } else {
       return null;
@@ -85,9 +92,10 @@ export class Alertbox {
           <div part="container" class="alertbox__container">
             {this.handleIcons()}
             <header part="header" class="alertbox__container-header">
-              <slot name="header">
-                <p>Missing Title</p>
-              </slot>
+              <p>
+              <slot name="header">Missing Title</slot>
+              </p>
+              
               {this.hasClose && (
                 <scale-icon-action-circle-close
                   class="alertbox__icon-close"
@@ -123,9 +131,7 @@ export class Alertbox {
 
     return classNames(
       name,
-      this.color && `${prefix}color-${this.color}`,
       this.variant && `${prefix}variant-${this.variant}`,
-      this.icon && `${prefix}icon`
     );
   }
 }

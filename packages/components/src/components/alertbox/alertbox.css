@@ -1,7 +1,12 @@
 :host {
   --corner-radius: 8px;
   --box-height-missing-content: 32px;
-  --font-family: TeleNeo;
+
+  /* Token not available, up for discussion*/
+  --variant-error: hsla(353.79999999999995, 100%, 88.6%, .35);
+  --variant-warning: hsla(33.5, 100%, 75.1%, .3);
+  --variant-informational: hsla(190.20000000000005, 100%, 92%, .75);
+  --variant-success: hsl(98.80000000000001, 49.7%, 61%, .2);
 }
 
 .alertbox {
@@ -13,117 +18,113 @@
 }
 
 /*Alertbox Color*/
-.alertbox--color-error {
-  background-color: var(--scl-color-text-error);
-  color: var(--scl-color-white);
-}
-
-.alertbox.alertbox--color-black {
-  background-color: var(--scl-color-black);
-  color: var(--scl-color-white);
-}
-
-.alertbox.alertbox--color-white {
-  background-color: var(--scl-color-white);
+.alertbox--variant-error {
+  background: var(--variant-error);
   color: var(--scl-color-black);
 }
-.alertbox.alertbox--color-yellow {
-  background-color: yellow;
+.alertbox.alertbox--variant-warning {
+  background-color: var(--variant-warning);
   color: var(--scl-color-black);
 }
-.alertbox.alertbox--color-blue {
-  background-color: blue;
-  color: var(--scl-color-white);
+.alertbox.alertbox--variant-informational {
+  background-color: var(--variant-informational);
+  color: var(--scl-color-black);
 }
-.alertbox.alertbox--color-green {
-  background-color: green;
-  color: var(--scl-color-white);
+.alertbox.alertbox--variant-success {
+  background-color: var(--variant-success);
+  color: var(--scl-color-black);
 }
 
 /*variants*/
-.alertbox.alertbox--variant-outline.alertbox--color-white {
+.alertbox.alertbox--variant-outline.alertbox--variant-white {
   border-radius: var(--corner-radius);
   border: solid 1px #979797;
 }
 
-.alertbox.alertbox--variant-outline.alertbox--color-black {
+.alertbox.alertbox--variant-outline.alertbox--variant-black {
   border: solid 1px #979797;
   border-radius: var(--corner-radius);
 }
-
-.alertbox.alertbox--variant-floating.alertbox--color-error {
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
-}
-
-.alertbox.alertbox--variant-floating.alertbox--color-white {
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
-}
-
-.alertbox.alertbox--variant-floating.alertbox--color-black {
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 48px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 #f4f4f4;
-}
-
 
 /*content*/
 .alertbox .alertbox__content {
   margin-top: 8px;
-  margin-left: 40px;
+  margin-left: 48px;
   margin-right: 48px;
   margin-bottom: 15px;
-  font-family: var(--font-family);
+  font-family: var(--scl-font-weight-regular);
   font-size: 16px;
 }
 
 /*header*/
 .alertbox .alertbox__container-header {
   font-weight: bold;
-  margin-left: 40px;
+  margin-left: 48px;
   margin-right: 48px;
-  margin-top: 15px;
-  font-family: var(--font-family);
+  margin-top: 14px;
+  margin-bottom: 14px;
+  font-family: var(--scl-fonts-family-sans);
   font-size: 16px;
+  line-height: 1.25;
+  
+
 }
 
 
 /* Close Icon/Button */
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
-  height: 15px;
-  width: 15px;
-  top: 13px;
-  right: 16px;
+  height: 20px;
+  width: 20px;
+  top: 15.5px;
+  bottom: 14.5px;
+  right: 17px;
+  color: black;
+ 
 }
 .alertbox .alertbox__container-header .alertbox__icon-close :hover {
-  background-color: #4CAF50; 
+  background-color: white; 
+  color: var(--scl-color-primary-active);
 }
 .alertbox .alertbox__container-header .alertbox__icon-close :focus {
-  background-color: #4CAF50; 
+  box-shadow: greenyellow;
 }
 .alertbox .alertbox__container-header .alertbox__icon-close :active {
-  background-color: #4CAF50; 
+  background-color: white; 
+  color: var(--scl-color-primary-active);
+ 
+  
 }
 
 /* Success Icon */
+/* The only Icon without a circle around it. */
 .alertbox .alertbox__icon-success {
   position: absolute;
-  top: 13px;
+  top: 15px;
+  bottom: 15px;
+  right: 18px;
   left: 17px;
-  height: 10px;
-  width: 14px;
+  height: 20px;
+  width: 20px;
+  color: var(--scl-color-background-success);
 }
 /* Error Icon */
 .alertbox .alertbox__icon-error {
   position: absolute;
-  top: 13px;
+  top: 15px;
+  bottom: 15px;
+  right: 18px;
   left: 17px;
-  height: 10px;
-  width: 14px;
+  height: 20px;
+  width: 20px;
+  color: var(--scl-color-background-error);
 }
 /* Info Icon */
-.alertbox .alertbox__icon-warning {
+.alertbox .alertbox__icon-information {
   position: absolute;
   top: 13px;
   left: 17px;
-  height: 10px;
-  width: 14px;
+  height: 20px;
+  width: 20px;
+  color: var(--scl-color-text-info);
 }
