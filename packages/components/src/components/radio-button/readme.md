@@ -9,7 +9,7 @@
 
 | Property     | Attribute     | Description                    | Type               | Default     |
 | ------------ | ------------- | ------------------------------ | ------------------ | ----------- |
-| `checked`    | `checked`     | (optional) Active switch       | `boolean`          | `false`     |
+| `checked`    | `checked`     | (optional) Input checked       | `boolean`          | `false`     |
 | `disabled`   | `disabled`    | (optional) Input disabled      | `boolean`          | `undefined` |
 | `helperText` | `helper-text` | (optional) Input helper text   | `string`           | `''`        |
 | `inputId`    | `input-id`    | (optional) Input checkbox id   | `string`           | `undefined` |
@@ -22,9 +22,9 @@
 
 ## Events
 
-| Event         | Description                         | Type                                  |
-| ------------- | ----------------------------------- | ------------------------------------- |
-| `scaleChange` | Emitted when the value has changed. | `CustomEvent<InputChangeEventDetail>` |
+| Event         | Description | Type                                  |
+| ------------- | ----------- | ------------------------------------- |
+| `scaleChange` |             | `CustomEvent<InputChangeEventDetail>` |
 
 
 ----------------------------------------------

@@ -228,7 +228,7 @@ export class Dropdown {
               name={this.name}
               size={this.visibleSize}
               {...ariaInvalidAttr}
-              {...ariaDescribedByAttr}
+              {...(this.helperText ? ariaDescribedByAttr : {})}
             >
               <slot />
             </select>
@@ -248,9 +248,7 @@ export class Dropdown {
               aria-live="polite"
               aria-relevant="additions removals"
             >
-              {!!this.helperText && (
-                <div class="input__helper-text">{this.helperText}</div>
-              )}
+              <div class="input__helper-text">{this.helperText}</div>
             </div>
           )}
         </div>

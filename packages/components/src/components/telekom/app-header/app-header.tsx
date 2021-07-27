@@ -95,13 +95,11 @@ export class Header {
   }
 
   componentWillLoad() {
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
+    this.hasSlotMenuMain =
+      !!this.hostElement.querySelector('[slot="menu-main"]');
 
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
+    this.hasSlotMenuIcon =
+      !!this.hostElement.querySelector('[slot="menu-icon"]');
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
@@ -115,13 +113,11 @@ export class Header {
   }
 
   componentDidUpdate() {
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
+    this.hasSlotMenuMain =
+      !!this.hostElement.querySelector('[slot="menu-main"]');
 
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
+    this.hasSlotMenuIcon =
+      !!this.hostElement.querySelector('[slot="menu-icon"]');
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
@@ -182,6 +178,7 @@ export class Header {
         ) : (
           readData(this.mainNavigation).map((item) => (
             <scale-nav-main
+              href={item.href}
               isActive={isActive(item)}
               isMegaMenuVisible={this.visibleMegaMenu === item.id}
               onMouseEnter={() => {
@@ -198,7 +195,7 @@ export class Header {
                 if (typeof item.onClick === 'function') {
                   item.onClick(event);
                 }
-                this.visibleMegaMenu = item.children ? item.name : null;
+                this.visibleMegaMenu = item.children ? item.id : null;
               }}
               name={item.name}
             >
@@ -313,75 +310,77 @@ export class Header {
   render() {
     return (
       <Host>
-        <header class={this.getCssClassMap()}>
-          <div class="header__brand">
-            <span class="header__brand-before"></span>
-            <span class="header__brand-after"></span>
-            <div class="header__brand-content">
-              <div class="header__brand-branding">
-                {this.hasSlotLogo ? (
-                  <slot name="logo"></slot>
-                ) : (
+        <header class="header__container">
+          <div class={this.getCssClassMap()}>
+            <div class="header__brand">
+              <span class="header__brand-before"></span>
+              <span class="header__brand-after"></span>
+              <div class="header__brand-content">
+                <div class="header__brand-branding">
+                  {this.hasSlotLogo ? (
+                    <slot name="logo"></slot>
+                  ) : (
+                    <app-logo
+                      claim
+                      claimLang={this.claimLang}
+                      href={this.logoHref}
+                      logoTitle={this.logoTitle}
+                      onClick={this.logoClick}
+                    ></app-logo>
+                  )}
+                </div>
+                <div class="header__brand-sector">{this.menuSector()}</div>
+                <div class="header__brand-meta">{this.menuAddon()}</div>
+              </div>
+            </div>
+            <nav class="header__nav" aria-label="top">
+              <span class="header__nav-before"></span>
+              <span class="header__nav-after"></span>
+              <div class="header__nav-content">
+                <div class="header__nav-logo">
                   <app-logo
-                    claim
-                    claimLang={this.claimLang}
+                    color="#e20074"
                     href={this.logoHref}
                     logoTitle={this.logoTitle}
                     onClick={this.logoClick}
                   ></app-logo>
-                )}
+                </div>
+                <div class="header__nav-menu-wrapper">
+                  <div class="header__nav-menu-main">{this.menuMain()}</div>
+                  <div class="header__nav-menu-icon">{this.menuIcon()}</div>
+                </div>
               </div>
-              <div class="header__brand-sector">{this.menuSector()}</div>
-              <div class="header__brand-meta">{this.menuAddon()}</div>
-            </div>
+            </nav>
+            <nav
+              class={`header__nav__mobile-menu${
+                this.mobileMenu ? ' header__nav__mobile-menu--opened' : ''
+              }`}
+              aria-label="main"
+            >
+              {this.hasSlotMenuMobile ? (
+                <slot name="menu-mobile"></slot>
+              ) : (
+                <div>
+                  <app-navigation-sector-mobile
+                    navigation={readData(this.sectorNavigation)}
+                    activeSectorId={this.activeSectorId}
+                    hide={() => {
+                      this.handleMobileMenu();
+                      this.mobileMenuToggle.focus();
+                    }}
+                  ></app-navigation-sector-mobile>
+                  <app-navigation-main-mobile
+                    navigation={readData(this.mainNavigation)}
+                    activeRouteId={this.activeRouteId}
+                    hide={() => {
+                      this.handleMobileMenu();
+                      this.mobileMenuToggle.focus();
+                    }}
+                  ></app-navigation-main-mobile>
+                </div>
+              )}
+            </nav>
           </div>
-          <nav class="header__nav" aria-label="top">
-            <span class="header__nav-before"></span>
-            <span class="header__nav-after"></span>
-            <div class="header__nav-content">
-              <div class="header__nav-logo">
-                <app-logo
-                  color="#e20074"
-                  href={this.logoHref}
-                  logoTitle={this.logoTitle}
-                  onClick={this.logoClick}
-                ></app-logo>
-              </div>
-              <div class="header__nav-menu-wrapper">
-                <div class="header__nav-menu-main">{this.menuMain()}</div>
-                <div class="header__nav-menu-icon">{this.menuIcon()}</div>
-              </div>
-            </div>
-          </nav>
-          <nav
-            class={`header__nav__mobile-menu${
-              this.mobileMenu ? ' header__nav__mobile-menu--opened' : ''
-            }`}
-            aria-label="main"
-          >
-            {this.hasSlotMenuMobile ? (
-              <slot name="menu-mobile"></slot>
-            ) : (
-              <div>
-                <app-navigation-sector-mobile
-                  navigation={readData(this.sectorNavigation)}
-                  activeSectorId={this.activeSectorId}
-                  hide={() => {
-                    this.handleMobileMenu();
-                    this.mobileMenuToggle.focus();
-                  }}
-                ></app-navigation-sector-mobile>
-                <app-navigation-main-mobile
-                  navigation={readData(this.mainNavigation)}
-                  activeRouteId={this.activeRouteId}
-                  hide={() => {
-                    this.handleMobileMenu();
-                    this.mobileMenuToggle.focus();
-                  }}
-                ></app-navigation-main-mobile>
-              </div>
-            )}
-          </nav>
         </header>
       </Host>
     );

@@ -121,7 +121,7 @@ export const Template = (args, { argTypes }) => ({
 export const RangeTemplate = (args, { argTypes }) => ({
   components: { ScaleDatePicker },
   template: `
-    <div style="height: 380px; display: inline-flex;">
+    <div style="height: 380px;">
         <scale-date-picker
             ref="start"
             identifier="start"
@@ -290,7 +290,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
 <scale-date-picker label="Localization" identifier="picker"></scale-date-picker>
 
 <script>
-  const picker = document.getElementById("picker")
+  const picker = document.getElementById("picker");
   picker.localization = {
       buttonLabel: "Datum wählen",
       placeholder: "TT.MM.JJJJ",
@@ -341,9 +341,9 @@ export const RangeTemplate = (args, { argTypes }) => ({
           "Dez"
       ],
       locale: "de-DE"
-    }
+    };
 
-    const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/
+    const DATE_FORMAT = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
     picker.dateAdapter = {
       parse(value = "", createDate) {
           const matches = value.match(DATE_FORMAT)
@@ -354,7 +354,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
       format(date) {
           return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
       },
-    }
+    };
 </script>
 ```
 
@@ -422,24 +422,24 @@ const RangeTemplate = (args, { argTypes }) => ({
 <scale-date-picker label="End" identifier="endDate"></scale-date-picker>
 
 <script>
-  const startPicker = document.getElementById("startDate")
-  const endPicker = document.getElementById("startDate")
-  let startDate, endDate
+  const startPicker = document.getElementById("startDate");
+  const endPicker = document.getElementById("startDate");
+  let startDate, endDate;
 
   // When the start date picker is changed, set end date's min to equal date
   startPicker.addEventListener("duetChange", function(e) {
-    startDate = e.detail.valueAsDate
-    endPicker.min = e.detail.value
+    startDate = e.detail.valueAsDate;
+    endPicker.min = e.detail.value;
 
     if (!endDate) {
-      endPicker.show()
+      endPicker.show();
     }
-  })
+  });
 
   // When the end date picker is changed, set start date's max to equal date
   endPicker.addEventListener("duetChange", function(e) {
-    endDate = e.detail.valueAsDate
-    startPicker.max = e.detail.value
-  })
+    endDate = e.detail.valueAsDate;
+    startPicker.max = e.detail.value;
+  });
 </script>
 ```

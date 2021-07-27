@@ -3,6 +3,7 @@
     :title="title"
     :disabled="disabled"
     :href="href"
+    :download="download"
     :target="target"
     :size="size"
     :type="type"
@@ -27,6 +28,7 @@ export default {
     title: String,
     disabled: Boolean,
     href: String,
+    download: Boolean,
     type: String,
     target: String,
     variant: String,

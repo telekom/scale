@@ -32,6 +32,8 @@ export class Switch {
   @Prop() inputId?: string;
   /** (optional) switch label */
   @Prop() label?: string;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   /** Emitted when the switch was clicked */
   @Event() scaleChange!: EventEmitter;
@@ -45,13 +47,13 @@ export class Switch {
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           <label id={`${this.inputId}-label`}>
             <input
               type="checkbox"
               checked={this.checked}
               disabled={this.disabled}
-              aria-pressed={this.checked}
               aria-labelledby={`${this.inputId}-label`}
               id={this.inputId}
               onChange={(e: any) => {

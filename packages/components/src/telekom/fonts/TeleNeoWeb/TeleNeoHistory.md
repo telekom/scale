@@ -26,11 +26,16 @@ Display problem with one Cyrillic character solved.
 - Optimization vertical alignment of web fonts for cross-browser compatibility.
 - Updated only: TeleNeoWeb and TeleNeoVariableWeb 
 
+##V1.31 – 04.03.2021
+- Optimization TeleNeo Office Kerning
+- Optimization TeleNeo Office Installation - problems with installation on MacOS solved
 
-#Overview of version numbers:
-TeleNeoDesktop_OTF - V1.3
-TeleNeoOffice_TTF - V1.3
-TeleNeoVariableDesktop_TTF V1.4
-TeleNeoVariableWeb - V1.31
-TeleNeoWeb - V1.31
+##V1.31 – 03.05.2021
+- Correction of vertical alignment in TeleNeoVariableWeb. The vertical alignment of the variable font is now 100% identical with the TeleNeoWeb fonts.
+
+##V1.6 – 01.06.2021
+- Addition of Greek character for all fonts including variable fonts
+- Synchronisation of version numbers. All fonts now with the same version number (1.6)
+- First release of TeleNeo Marker along with version V1.6 - separate download
+
 

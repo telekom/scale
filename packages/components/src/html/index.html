@@ -24,7 +24,7 @@
       }
 
       .custom-styles {
-        --rating-spacing: 1rem;
+        --scl-stars-spacing: 1rem;
       }
 
       hr {
@@ -35,6 +35,7 @@
 
   <body>
     <h1>Components</h1>
+
 
     <scale-radio-button-group
       label="Group Label"
@@ -56,32 +57,65 @@
       ></scale-radio-button>
     </scale-radio-button-group>
 
+    <scale-logo
+      language="de"
+      accessibility-title="Telekom Logo – Erleben, was verbindet – Zur Startseite"
+      href="https://www.telekom.de/start"
+    ></scale-logo>
+
+
     <h3>Alert</h3>
     <scale-alert headline="Alert Headline">Some alert content</scale-alert>
 
     <h3>Rating Stars</h3>
-    <h4>rating = 1</h4>
-    <scale-rating-stars rating="1" label="Rating Label"></scale-rating-stars>
+
+    <h4><code>value=3.5</code></h4>
+    <scale-rating-stars rating="3.5" label="Rating Label"> </scale-rating-stars>
+
+    <h4><code>minRating=1</code></h4>
+    <scale-rating-stars min-rating="1" label="Rating Label">
+    </scale-rating-stars>
+
     <h4>disabled</h4>
     <scale-rating-stars
       rating="2"
       disabled
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>spacing by custom styles</h4>
     <scale-rating-stars
       class="custom-styles"
       rating="3"
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>small</h4>
     <scale-rating-stars
       rating="4"
-      small
+      star-size="small"
       label="Rating Label"
     ></scale-rating-stars>
+
     <h4>No Label</h4>
-    <scale-rating-stars rating="5"></scale-rating-stars>
+    <scale-rating-stars value="5"></scale-rating-stars>
+
+    <h4>Aria Translation</h4>
+    <scale-rating-stars
+      rating="1"
+      label="Rating Label"
+      aria-label-translation="${value} out of ${max} stars"
+    >
+    </scale-rating-stars>
+
+    <h4>min rating</h4>
+    <scale-rating-stars
+      rating="4"
+      label="Rating Label"
+      max-rating="10"
+      min-rating="0"
+    >
+    </scale-rating-stars>
 
     <h3>Checkbox Group Error</h3>
     <scale-radio-button-group
@@ -679,32 +713,38 @@
     <scale-button>Hello</scale-button>
 
     <h3>Button variants</h3>
-    <scale-button
-      variant="primary"
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-      >Hello</scale-button
-    >
-    <scale-button
-      variant="secondary"
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-      >Hello</scale-button
-    >
+    <scale-button variant="primary">Hello</scale-button>
+    <scale-button variant="secondary">Hello</scale-button>
 
     <h3>Button icon Before</h3>
-    <scale-button
-      icon-before="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    >
-      Hello
+    <scale-button>
+      <scale-icon-action-search></scale-icon-action-search> Label
+    </scale-button>
+
+    <h3>Button icon After</h3>
+    <scale-button icon-position="after">
+      Label <scale-icon-navigation-right></scale-icon-navigation-right>
     </scale-button>
 
     <h3>Button icon only</h3>
-    <scale-button
-      icon="M10 2a8 8 0 016.472 12.703l4.912 4.913.06.065a1.25 1.25 0 01-1.726 1.794l-.102-.091-4.913-4.912A8 8 0 1110 2zm0 1.5A6.508 6.508 0 003.5 10c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"
-    ></scale-button>
+    <scale-button icon-only="true">
+      <scale-icon-navigation-external-link
+        accessibility-title="External link, opens in new tab"
+      ></scale-icon-navigation-external-link>
+    </scale-button>
 
     <h3>Button Link</h3>
     <scale-button href="http://google.com" target="_blank">
       Hello
+    </scale-button>
+
+    <h3>Button Download Link</h3>
+    <scale-button
+      href="/assets/scale-banner-ascii-light.png"
+      target="_blank"
+      download
+    >
+      Download
     </scale-button>
 
     <h3>Text</h3>
@@ -911,6 +951,49 @@
 
       document.getElementById('cancel-btn').addEventListener('click', () => {
         modalWithHeaderAndButtons.removeAttribute('opened');
+      });
+    </script>
+
+    <h3>Modal with scaleBeforeClose</h3>
+    <scale-button id="show-modal-clickoutside"> show modal </scale-button>
+    <scale-modal
+      id="modal-clickoutside"
+      opened="false"
+      close-click-outside="false"
+    >
+      <span slot="header">Header content</span> Click close to close Modal
+    </scale-modal>
+
+    <script>
+      const showModalclickoutside = document.querySelector(
+        '#show-modal-clickoutside'
+      );
+      const Modalclickoutside = document.getElementById('modal-clickoutside');
+      showModalclickoutside.addEventListener('click', () => {
+        Modalclickoutside.setAttribute('opened', 'true');
+      });
+
+      Modalclickoutside.addEventListener('scaleClose', () => {
+        Modalclickoutside.removeAttribute('opened');
+      });
+
+      Modalclickoutside.addEventListener('scaleBeforeClose', (event) => {
+        console.log(event);
+        if (event.detail.trigger === 'BACKDROP') {
+          event.preventDefault();
+          alert('Close by Backdrop prevented');
+        }
+        if (event.detail.trigger === 'ESCAPE_KEY') {
+          event.preventDefault();
+          alert('Close by Escape button prevented');
+        }
+        if (event.detail.trigger === 'CLOSE_BUTTON') {
+          alert('Close by buttonClose detected but not prevented');
+        }
+      });
+
+      document.getElementById('cancel-btn').addEventListener('click', () => {
+        Modalclickoutside.removeAttribute('opened');
       });
     </script>
 

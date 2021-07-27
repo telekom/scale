@@ -720,7 +720,7 @@ export class DataGrid {
     return (
       <scale-menu-flyout class={`${name}__settings-menu`}>
         <scale-button slot="trigger" variant="secondary" icon-only>
-          <scale-icon-service-settings></scale-icon-service-settings>
+          <scale-icon-service-settings accessibilityTitle="Table options"></scale-icon-service-settings>
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
@@ -809,8 +809,8 @@ export class DataGrid {
           {this.selectable && (
             <scale-menu-flyout-item
               onClick={() => {
-                this.elToggleSelectAll.checked = !this.elToggleSelectAll
-                  .checked;
+                this.elToggleSelectAll.checked =
+                  !this.elToggleSelectAll.checked;
                 this.toggleSelectAll();
               }}
             >
@@ -956,7 +956,7 @@ export class DataGrid {
                   textAlign,
                 },
                 role: 'columnheader',
-                'aria-columnindex': columnIndex,
+                'aria-colindex': columnIndex + 1,
                 'data-type': type,
               };
               if (sortable) {
@@ -973,6 +973,7 @@ export class DataGrid {
                   </div>
                   {sortable && (
                     <button
+                      aria-label="Activate to sort column"
                       class={`thead__sort-prompt`}
                       onClick={() =>
                         this.toggleTableSorting(
@@ -1036,7 +1037,7 @@ export class DataGrid {
 
   renderTableBody() {
     return (
-      <tbody class={`tbody`} role="rowgroup">
+      <tbody class={`tbody`} role="rowgroup" tabindex="0">
         {(() => {
           const rows = [];
           // Pagination functionality
@@ -1180,7 +1181,7 @@ export class DataGrid {
         }`}
         style={{ width: `calc(${width}px + ${stretchWidth}px)` }}
         role="cell"
-        aria-columnindex={columnIndex}
+        aria-colindex={columnIndex + 1}
       >
         <div class={`tbody__mobile-label`}>{label}</div>
         {cell.render({

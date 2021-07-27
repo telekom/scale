@@ -20,6 +20,8 @@ const {
   SharedStyle,
   SymbolMaster,
   SymbolInstance,
+  Color,
+  Fill,
 } = require('sketch-constructor');
 const fs = require('fs');
 const path = require('path');
@@ -32,6 +34,7 @@ const sqlite = require('sqlite');
 const rssBuilder = require('./rss-builder');
 const config = require('./config');
 const colorConvert = require('color');
+const { node } = require('webpack');
 
 const documentName = process.argv[2] || 'default';
 
@@ -40,6 +43,35 @@ const serverPath = config.libraryServerPath;
 const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
 (async function () {
+  function makeStyleKey(style) {
+    const borders = (style.borders || [])
+      .filter((b) => b.color.alpha > 0)
+      .map((border) => {
+        return [
+          Math.round(border.color.red * 255),
+          Math.round(border.color.green * 255),
+          Math.round(border.color.blue * 255),
+          Math.round(border.color.alpha * 255),
+          border.fillType,
+          border.position,
+          Math.floor(border.thickness * 100),
+        ].join(',');
+      });
+    const fills = (style.fills || [])
+      .filter((b) => b.color && b.color.alpha > 0)
+      .map((fill) => {
+        return [
+          Math.round(fill.color.red * 255),
+          Math.round(fill.color.green * 255),
+          Math.round(fill.color.blue * 255),
+          Math.round(fill.color.alpha * 255),
+        ].join(',');
+      });
+    return `borders:${borders.sort().join('|')};fills:${fills
+      .sort()
+      .join('|')}`;
+  }
+
   function parseCSSColorToRGBA01(cssColorString) {
     const { r, g, b, alpha } = new colorConvert(cssColorString).unitObject();
     return {
@@ -193,428 +225,125 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     }
   }
 
+  function hex(num) {
+    const s = num.toString(16);
+    return (s.length < 2 ? `0${s}` : s).toLocaleUpperCase();
+  }
+
   function colorString(fillOrBorder) {
     if (!fillOrBorder.color) {
       if (fillOrBorder.image) return 'image';
       return 'default';
     }
     const { red, green, blue, alpha } = fillOrBorder.color;
-    return `rgba(${Math.floor(red * 255.999)}, ${Math.floor(
-      green * 255.999
-    )}, ${Math.floor(blue * 255.999)}, ${Math.floor(alpha * 1000) / 1000})`;
+    return `#${hex(Math.floor(red * 255.999))}${hex(
+      Math.floor(green * 255.999)
+    )}${hex(Math.floor(blue * 255.999))}${
+      alpha < 1 ? ' opacity ' + Math.floor(alpha * 1000) / 1000 : ''
+    }`;
   }
 
-  const svgMap = new Map();
-  function collapseIcons(symbol) {
-    return symbol;
-    const svg = symbol.layers[0].find((l) => l._class === 'svg');
-    if (svg) {
-      if (svgMap.has(svg.rawSVGString)) {
-        console.log('Found SVG!');
-      } else {
-        console.log('New SVG, adding');
-        svgMap.set(svg.rawSVGString, symbol);
-      }
-    } else {
-      console.log('No SVG in Icon');
+  function makeStyleName(override) {
+    var styleName = '';
+    if (override.borders)
+      override.borders = override.borders.filter((b) => b.color.alpha > 0);
+    if (override.fills)
+      override.fills = override.fills.filter((b) => b.color.alpha > 0);
+    if (override.fills && override.fills.length > 0) {
+      styleName +=
+        'Fill ' + override.fills.map((b) => `${colorString(b)}`).join(', ');
     }
+    if (override.borders && override.borders.length > 0) {
+      if (override.fills) {
+        styleName += ' / ';
+      }
+      styleName +=
+        'Border ' +
+        override.borders
+          .map(
+            (b) =>
+              `${Math.floor(100 * b.thickness) / 100}px ${positionString(
+                b.position
+              )} ${colorString(b)}`
+          )
+          .join(', ');
+    } else if (override.fills && override.fills.length > 0) {
+    }
+    return styleName || 'Transparent';
   }
 
   const styleMap = new Map();
-  function createSymbolOverrides(symbol, symbolVariantName) {
-    const keys = Object.keys(symbol);
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const symbolValue = symbol[key];
-      if (key === 'do_objectID') {
-        objectID = symbolValue;
-      }
-      if (Array.isArray(symbolValue)) {
-        symbolValue.forEach((nestedJson, i) =>
-          createSymbolOverrides(nestedJson, symbolVariantName)
-        );
-      } else if (!excludeKeys.has(key) && typeof symbolValue === 'string') {
-        // console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
-        // const overrideValue = {
-        //   "_class": "overrideValue",
-        //   "overrideName": `${objectID}_${key}Value`,
-        //   "value": jsonValue
-        // };
-        // instance.overrideValues.push(overrideValue);
-      } else if (typeof symbolValue === 'object') {
-        // If we're in style, do fill, borders and textStyle comparisons
-        // If they differ, create a new SharedStyle and assign it to the symbol instance.
-        if (key === 'style') {
-          let differs = false;
-          let textDiffers = false;
-          const override = {};
-          const textOverride = {};
-          if (symbolValue.borders && symbolValue.borders.length > 0) {
-            differs = true;
-            override.borders = symbolValue.borders;
-          }
-          if (symbolValue.fills && symbolValue.fills.length > 0) {
-            differs = true;
-            override.fills = symbolValue.fills;
-          }
-          if (symbolValue.textStyle) {
-            textDiffers = true;
-            textOverride.textStyle = symbolValue.textStyle;
-          }
-          if (differs) {
-            // console.log('style override', JSON.stringify(override, null, 4));
-            if (
-              !symbol.sharedStyleID &&
-              symbol.name !== 'Background' &&
-              !/^border/.test(symbol.name)
-            ) {
-              var styleKey = JSON.stringify(override);
-              if (/^(shapePath|hydrated|icon)$/.test(symbol.name)) {
-                symbol.name = 'Icon Color';
-              }
-              if (styleMap.has(styleKey)) {
-                symbol.sharedStyleID = styleMap.get(styleKey);
-              } else {
-                var styleName = '';
-                if (override.fills) {
-                  styleName +=
-                    'Fill ' +
-                    override.fills.map((b) => `${colorString(b)}`).join(', ');
-                }
-                if (override.borders) {
-                  if (override.fills) styleName += ' / ';
-                  styleName +=
-                    '02 Border ' +
-                    override.borders
-                      .map(
-                        (b) =>
-                          `${
-                            Math.floor(100 * b.thickness) / 100
-                          }px ${positionString(b.position)} ${colorString(b)}`
-                      )
-                      .join(', ');
-                } else if (override.fills) {
-                  styleName += ' / 01 No Border';
-                }
-                // Make a shared style for the SymbolMaster
-                const sharedStyle = new SharedStyle(null, {
-                  name: styleName,
-                  do_objectID: uuid(),
-                  _class: 'sharedStyle',
-                  value: symbolValue,
-                });
-                sketch.addLayerStyle(sharedStyle);
-                symbol.sharedStyleID = sharedStyle.do_objectID;
-                styleMap.set(styleKey, symbol.sharedStyleID);
-              }
-            }
-          }
-          if (textDiffers) {
-            // Uncomment below to enable text style overrides
-            // console.log('textStyle override', JSON.stringify(textOverride, null, 4));
-            // if (!symbol.sharedStyleID) {
-            //   // Make a shared style for the SymbolMaster
-            //   const sharedStyle = new SharedStyle(null, {
-            //     name: symbolVariantName,
-            //     do_objectID: uuid(),
-            //     _class: 'sharedStyle',
-            //     value: symbolValue
-            //   });
-            //   sketch.addTextStyle(sharedStyle);
-            //   symbol.sharedStyleID = sharedStyle.do_objectID;
-            //   // console.log(symbolVariantName, variantName);
-            // }
-          }
-        }
-        createSymbolOverrides(symbolValue, symbolVariantName);
-      }
-    }
-  }
-
-  function isSymbolInstanceOf(
-    instance,
-    symbol,
-    json,
-    objectID = '',
-    symbolName,
-    parentFrames
+  const styleObjects = new Map();
+  function createSymbolOverrides(
+    node,
+    symbolMaster = node,
+    iconInstance = node
   ) {
-    if (!symbol || !json) {
-      console.log(symbolName, objectID, 'instance match fail - missing match');
-      throw new Error(`Not an instance of ${symbolName}`);
+    if (node.name === 'Icon') {
+      iconInstance = node;
+      symbolMaster.overrideProperties.push({
+        _class: 'MSImmutableOverrideProperty',
+        canOverride: false,
+        overrideName: `${iconInstance.do_objectID}_fillColor`,
+      });
     }
-    const keys = Object.keys(json);
-    newParentFrames =
-      json.frame && json.frame.x !== 0 && json.frame.y !== 0
-        ? [json.frame, symbol.frame]
-        : parentFrames;
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const symbolValue = symbol[key];
-      const jsonValue = json[key];
-      if (key === 'do_objectID') {
-        objectID = symbolValue;
+    node.layers?.forEach((nestedJson) =>
+      createSymbolOverrides(nestedJson, symbolMaster, iconInstance)
+    );
+  }
+
+  function findFillColor(node) {
+    if (node instanceof Array) {
+      for (var i = 0; i < node.length; i++) {
+        var c = findFillColor(node[i]);
+        if (c) return c;
       }
-      if (key === 'frame') {
-        if (
-          symbol['_class'] !== 'symbolInstance' &&
-          symbol['_class'] !== 'text'
-        ) {
-          if (
-            parentFrames &&
-            (jsonValue.x !== symbolValue.x ||
-              jsonValue.y !== symbolValue.y ||
-              jsonValue.width !== symbolValue.width ||
-              jsonValue.height !== symbolValue.height)
-          ) {
-            console.log(
-              symbolName,
-              key,
-              objectID,
-              'instance match fail - frame'
-            );
-            throw new Error(`Not an instance of ${symbolName}`);
-          }
-        }
-      }
-      if (Array.isArray(jsonValue)) {
-        if (symbolValue) {
-          if (jsonValue.length !== symbolValue.length) {
-            console.log(
-              symbolName,
-              key,
-              objectID,
-              'instance match fail - array length'
-            );
-            throw new Error(`Not an instance of ${symbolName}`);
-          }
-          jsonValue.forEach((nestedJson, i) =>
-            isSymbolInstanceOf(
-              instance,
-              symbolValue[i],
-              nestedJson,
-              objectID,
-              symbolName,
-              newParentFrames
-            )
-          );
-        }
-      } else if (
-        !excludeKeys.has(key) &&
-        typeof symbolValue === 'string' &&
-        symbolValue !== jsonValue
-      ) {
-      } else if (typeof symbolValue === 'object') {
-        // If we're in style, do fill, borders and textStyle comparisons
-        if (key === 'style') {
-          let differs = false;
-          let textDiffers = false;
-          const override = {};
-          const textOverride = {};
-          if (
-            JSON.stringify(symbolValue.borders) !==
-            JSON.stringify(jsonValue.borders)
-          ) {
-            differs = true;
-            override.borders = jsonValue.borders;
-          }
-          if (
-            JSON.stringify(symbolValue.fills) !==
-            JSON.stringify(jsonValue.fills)
-          ) {
-            differs = true;
-            override.fills = jsonValue.fills;
-          }
-          if (
-            JSON.stringify(symbolValue.textStyle) !==
-            JSON.stringify(jsonValue.textStyle)
-          ) {
-            textDiffers = true;
-            textOverride.textStyle = jsonValue.textStyle;
-          }
-          if (differs || textDiffers) {
-            continue;
-          }
-        }
-        isSymbolInstanceOf(
-          instance,
-          symbolValue,
-          jsonValue,
-          objectID,
-          symbolName,
-          newParentFrames
-        );
+    } else if (typeof node === 'object') {
+      if (node.fills && node.fills[0] && node.fills[0].color)
+        return node.fills[0].color;
+      for (var k in node) {
+        var c = findFillColor(node[k]);
+        if (c) return c;
       }
     }
   }
 
-  const excludeKeys = new Set([
-    '_class',
-    'frame',
-    'contextSettings',
-    'attributedString',
-    'style',
-    'do_objectID',
-    'name',
-    'text',
-  ]);
+  function extractIconFillOverrides(node, overrides = []) {
+    if (node instanceof Array) {
+      for (var i = 0; i < node.length; i++) {
+        extractIconFillOverrides(node[i], overrides);
+      }
+    } else if (typeof node === 'object') {
+      if (node.overrideValues && node.name.startsWith('Icon')) {
+        overrides.push(...node.overrideValues);
+        node.overrideValues = [];
+      }
+      for (var k in node) {
+        extractIconFillOverrides(node[k], overrides);
+      }
+    }
+    return overrides;
+  }
+
   // Set instance frame size and overrides
   function fillInstance(
     instance,
-    symbol,
-    json,
+    masterNode,
+    instanceNode,
+    overrideValues,
     objectID = '',
-    symbolName,
-    symbolVariantName,
-    variantName
+    symbolMaster = masterNode,
+    iconInstance = null
   ) {
-    const keys = Object.keys(json);
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const symbolValue = symbol[key];
-      const jsonValue = json[key];
-      if (key === 'do_objectID') {
-        objectID = symbolValue;
-      }
-      if (Array.isArray(jsonValue)) {
-        if (symbolValue) {
-          jsonValue.forEach((nestedJson, i) =>
-            fillInstance(
-              instance,
-              symbolValue[i],
-              nestedJson,
-              objectID,
-              symbolName,
-              symbolVariantName,
-              variantName
-            )
-          );
-        }
-      } else if (
-        !excludeKeys.has(key) &&
-        typeof symbolValue === 'string' &&
-        symbolValue !== jsonValue
-      ) {
-        // console.log(instance.name, instance.do_objectID, '-- override', key, ':',  symbolValue, '=>', jsonValue);
-        const overrideValue = {
-          _class: 'overrideValue',
-          overrideName: `${objectID}_${key}Value`,
-          value: jsonValue,
-        };
-        instance.overrideValues.push(overrideValue);
-      } else if (typeof symbolValue === 'object') {
-        // If we're in style, do fill, borders and textStyle comparisons
-        // If they differ, create a new SharedStyle and assign it to the symbol instance.
-        if (key === 'style') {
-          let differs = false;
-          let textDiffers = false;
-          const override = {};
-          const textOverride = {};
-          if (
-            JSON.stringify(symbolValue.borders) !==
-            JSON.stringify(jsonValue.borders)
-          ) {
-            differs = true;
-            override.borders = jsonValue.borders;
-          }
-          if (
-            JSON.stringify(symbolValue.fills) !==
-            JSON.stringify(jsonValue.fills)
-          ) {
-            differs = true;
-            override.fills = jsonValue.fills;
-          }
-          if (
-            JSON.stringify(symbolValue.textStyle) !==
-            JSON.stringify(jsonValue.textStyle)
-          ) {
-            textDiffers = true;
-            textOverride.textStyle = jsonValue.textStyle;
-          }
-          if (differs) {
-            // console.log('style override', JSON.stringify(override, null, 4));
-            if (!symbol.sharedStyleID) {
-              // Make a shared style for the SymbolMaster
-              const sharedStyle = new SharedStyle(null, {
-                name: symbolVariantName,
-                do_objectID: uuid(),
-                _class: 'sharedStyle',
-                value: symbolValue,
-              });
-              sketch.addLayerStyle(sharedStyle);
-              symbol.sharedStyleID = sharedStyle.do_objectID;
-            }
-            let sharedStyle = sketch
-              .getLayerStyles()
-              .find((s) => s.name === variantName);
-            if (!sharedStyle) {
-              sharedStyle = new SharedStyle(null, {
-                name: `${variantName}`,
-                do_objectID: uuid(),
-                _class: 'sharedStyle',
-                value: jsonValue,
-              });
-              sketch.addLayerStyle(sharedStyle);
-            }
-            const overrideValue = {
-              _class: 'overrideValue',
-              overrideName: `${objectID}_layerStyle`,
-              value: sharedStyle.do_objectID,
-            };
-            instance.overrideValues.push(overrideValue);
-          }
-          if (textDiffers) {
-            // console.log('textStyle override', JSON.stringify(textOverride, null, 4));
-            if (!symbol.sharedStyleID) {
-              // Make a shared style for the SymbolMaster
-              const sharedStyle = new SharedStyle(null, {
-                name: symbolVariantName,
-                do_objectID: uuid(),
-                _class: 'sharedStyle',
-                value: symbolValue,
-              });
-              sketch.addTextStyle(sharedStyle);
-              symbol.sharedStyleID = sharedStyle.do_objectID;
-              console.log(
-                'symbol.sharedStyleID',
-                symbolVariantName,
-                variantName
-              );
-            }
-            let sharedStyle = sketch
-              .getTextStyles()
-              .find((s) => s.name === variantName);
-            if (!sharedStyle) {
-              sharedStyle = new SharedStyle(null, {
-                name: `${variantName}`,
-                do_objectID: uuid(),
-                _class: 'sharedStyle',
-                value: jsonValue,
-              });
-              sketch.addTextStyle(sharedStyle);
-            }
-            const overrideValue = {
-              _class: 'overrideValue',
-              overrideName: `${objectID}_textStyle`,
-              value: sharedStyle.do_objectID,
-            };
-            instance.overrideValues.push(overrideValue);
-          }
-          if (differs || textDiffers) {
-            // console.log('symbol uses diff style', symbolVariantName, variantName);
-            continue;
-          }
-        }
-        fillInstance(
-          instance,
-          symbolValue,
-          jsonValue,
-          objectID,
-          symbolName,
-          symbolVariantName,
-          variantName
-        );
-      }
+    if (symbolMaster.name.startsWith('Icon')) {
+      const overrideValue = {
+        _class: 'overrideValue',
+        overrideName: `${instance.do_objectID}_fillColor`,
+        value: findFillColor(instanceNode),
+      };
+      overrideValues.push(overrideValue);
+      instance.style = new Style({ fills: [new Fill({ color: new Color() })] });
+      instance.style.fills[0].color = overrideValue.value;
     }
   }
 
@@ -636,8 +365,10 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   }
 
   const symbols = new Map();
+  const iconMap = new Map();
 
-  function enhanceJson(json) {
+  function enhanceJson(json, overrideValues = { v: [] }) {
+    //if (json.name?.match(/Dropdown.*Disabled/)) debugger;
     let enhanced = {};
     const keys = Object.keys(json);
     for (let i = 0; i < keys.length; i++) {
@@ -672,33 +403,36 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       // Try to create a symbol instance.
       // If the symbol is too different, we create a master symbol instead below.
       let instance;
-      const isIcon =
-        false && enhanced.name.startsWith('Unnamed Components / icon');
-      let symbol =
-        isIcon &&
-        symbolArray.find((master) => {
-          if (master.variant !== enhanced.variant) return false;
-          instance = master.createInstance({ name: enhanced.name });
-          instance.frame = new Rect(enhanced.frame);
-          instance.style = new Style(enhanced.style);
-          instance.rotation = enhanced.rotation;
-          try {
-            isSymbolInstanceOf(instance, master, enhanced, '', master.name);
-            fillInstance(
-              instance,
-              master,
-              enhanced,
-              '',
-              master.name,
-              master.variantName,
-              uuid()
-            );
-            return true;
-          } catch (err) {
-            return false;
-          }
-        });
-      if (isIcon) symbol = collapseIcons(symbol);
+      const isIcon = enhanced.name.startsWith('X / icon-');
+      let iconName = enhanced.name;
+      if (isIcon) {
+        // Turn 'X / icon-navigation-collapse-down' into 'Icon / Navigation / Collapse Down / 01 Standard'
+        iconName = enhanced.name.replace(
+          /^X \/ icon-([^-]+)-(([^-]+-?)+)$/,
+          (_, category, name) =>
+            `Icon / ${category
+              .replace(/-|_/g, ' ')
+              .replace(/\b./g, (m) => m.toLocaleUpperCase())} / ${name
+              .replace(/-/g, ' ')
+              .replace(/\b./g, (m) => m.toLocaleUpperCase())} / ${
+              /\/ selected:(true| \/|$)/.test(enhanced.variant)
+                ? '02 Selected'
+                : '01 Standard'
+            }`
+        );
+      }
+      let symbol = false;
+      if (isIcon && iconMap.has(iconName)) {
+        symbol = true;
+        const master = iconMap.get(iconName);
+        instance = master.createInstance({ name: 'Icon' });
+        instance.frame = new Rect(enhanced.frame);
+        instance.style = new Style(enhanced.style);
+        instance.rotation = enhanced.rotation;
+        // isSymbolInstanceOf(instance, master, enhanced, '', master.name);
+        instance.overrideValues = [];
+        fillInstance(instance, master, enhanced, instance.overrideValues);
+      }
 
       // Couldn't create a symbol instance, let's create a new master instead.
       if (!symbol) {
@@ -706,6 +440,8 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           ...enhanced,
           name: getSymbolName(enhanced.name),
         });
+        if (enhanced.name.startsWith('Icon /'))
+          iconMap.set(symbol.name, symbol);
         symbol.stableSymbolName = enhanced.stableSymbolName || symbol.name;
         symbol.variant = enhanced.variant;
         symbol.variantName = uuid();
@@ -726,7 +462,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
           symbolArray[0].name += ' / ' + symbolArray[0].variant;
         if (symbolArray.length > 0) symbol.name += ' / ' + symbol.variant;
         symbol.resizesContent = true;
-        createSymbolOverrides(symbol, symbol.name);
+        createSymbolOverrides(symbol);
         const symbolShouldHaveOverrides = !/(Sidebar.*Example)/.test(
           symbol.name
         );
@@ -736,20 +472,12 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         instance.rotation = enhanced.rotation;
-        fillInstance(
-          instance,
-          symbol,
-          enhanced,
-          '',
-          symbol.name,
-          symbol.variantName,
-          enhanced.name.split('/')[0].trim() +
-            ' / ' +
-            (enhanced.variant || uuid())
-        );
-        if (/^((Unnamed Components \/ icon))/.test(symbol.name)) {
-          instance.name = 'Icon';
-        }
+        instance.overrideValues = [];
+        fillInstance(instance, symbol, enhanced, instance.overrideValues);
+        instance.overrideValues.push(...extractIconFillOverrides(enhanced));
+      }
+      if (/^((X \/ icon))/.test(symbol.name)) {
+        instance.name = 'Icon';
       }
       return instance;
     }
@@ -832,13 +560,99 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
 
   sketch.addPage(symbolsPage);
 
+  const symbolGutter = 32;
+  let currentSymbolYCoordinate = 0;
+
+  const sketchColors = [];
+
+  function replaceValue(obj, oldValue, newValue) {
+    if (typeof obj === 'object') {
+      for (var i in obj) {
+        if (typeof obj[i] === 'object' || obj[i] instanceof Array) {
+          replaceValue(obj[i], oldValue, newValue);
+        } else if (obj[i] === oldValue) {
+          obj[i] = newValue;
+        }
+      }
+    } else if (obj[i] instanceof Array) {
+      obj[i].forEach((v) => replaceValue(v, oldValue, newValue));
+    }
+  }
+
+  var includes = fs
+    .readdirSync(`./includes`)
+    .filter((fn) => fn.startsWith(documentName + '.'));
+  for (const includeFile of includes) {
+    if (/\.sketch$/i.test(includeFile)) {
+      var doc = await Sketch.fromFile(`./includes/${includeFile}`);
+      // Copy foreign references over
+      sketch.document.foreignLayerStyles =
+        sketch.document.foreignLayerStyles.concat(
+          doc.document.foreignLayerStyles
+        );
+      sketch.document.foreignSwatches = (
+        sketch.document.foreignSwatches || []
+      ).concat(doc.document.foreignSwatches);
+      sketch.document.foreignSymbols = (
+        sketch.document.foreignSymbols || []
+      ).concat(doc.document.foreignSymbols);
+      sketch.document.foreignTextStyles = (
+        sketch.document.foreignTextStyles || []
+      ).concat(doc.document.foreignTextStyles);
+      sketch.document.layerStyles.objects =
+        sketch.document.layerStyles.objects.concat(
+          doc.document.layerStyles.objects
+        );
+      sketch.document.layerTextStyles.objects =
+        sketch.document.layerTextStyles.objects.concat(
+          doc.document.layerTextStyles.objects
+        );
+      sketch.document.layerStyles.objects.forEach((style) => {
+        const styleKey = makeStyleKey(style.value);
+        replaceValue(doc, style.do_objectID, styleKey);
+        styleMap.set(styleKey, style.do_objectID);
+        styleObjects.set(styleKey, style.value);
+      });
+      // Copy pages over
+      doc.pages.forEach((page) => {
+        if (page.name === 'Symbols') {
+          for (const symbol of page.layers) {
+            symbol.frame.x = 0;
+            symbol.frame.y = currentSymbolYCoordinate;
+            currentSymbolYCoordinate += symbolGutter + symbol.frame.height;
+            symbolsPage.addLayer(symbol);
+          }
+        } else {
+          sketch.addPage(page);
+        }
+      });
+    }
+  }
+
+  const designTokens = await import(
+    '@telekom/scale-design-tokens/dist/design-tokens-telekom.js'
+  );
+  parseColors(sketchColors, [], designTokens.color);
+
+  // Add color swatches
+  sketch.document.sharedSwatches = {
+    _class: 'swatchContainer',
+    do_objectID: 'C33E0022-6453-41F9-B5AF-F0B0F144B939',
+    objects: sketchColors,
+  };
+  sketch.document.documentState = { _class: 'documentState' };
+  sketch.document.layerSymbols.do_objectID = uuid();
+
   const jsons = fs
     .readdirSync(path.resolve(__dirname, '../sketch-json'))
     .filter((fn) => fn.endsWith('.json'));
-  jsons.sort();
-  jsons.forEach((jsonFn) => {
-    const json = require(`../sketch-json/${jsonFn}`);
-
+  const pageObjs = jsons.map((jsonFn) => require(`../sketch-json/${jsonFn}`));
+  pageObjs.sort((a, b) => {
+    if (a.name === 'Icons') return -1;
+    if (b.name === 'Icons') return 1;
+    return a.name.localeCompare(b.name);
+  });
+  pageObjs.forEach((json) => {
     const componentsPage = new Page({
       name: json.name,
     });
@@ -867,73 +681,14 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     sketch.addPage(componentsPage);
   });
 
-  const gutter = 32;
-  let y = 0;
   for (const symbolArray of symbols.values()) {
     symbolArray.forEach((symbol) => {
       symbol.frame.x = 0;
-      symbol.frame.y = y;
-      y += gutter + symbol.frame.height;
+      symbol.frame.y = currentSymbolYCoordinate;
+      currentSymbolYCoordinate += symbolGutter + symbol.frame.height;
       symbolsPage.addLayer(symbol);
     });
   }
-
-  const sketchColors = [];
-
-  var includes = fs
-    .readdirSync(`./includes`)
-    .filter((fn) => fn.startsWith(documentName + '.'));
-  for (const includeFile of includes) {
-    if (/\.sketch$/i.test(includeFile)) {
-      var doc = await Sketch.fromFile(`./includes/${includeFile}`);
-      // Copy foreign references over
-      sketch.document.foreignLayerStyles = sketch.document.foreignLayerStyles.concat(
-        doc.document.foreignLayerStyles
-      );
-      sketch.document.foreignSwatches = (
-        sketch.document.foreignSwatches || []
-      ).concat(doc.document.foreignSwatches);
-      sketch.document.foreignSymbols = (
-        sketch.document.foreignSymbols || []
-      ).concat(doc.document.foreignSymbols);
-      sketch.document.foreignTextStyles = (
-        sketch.document.foreignTextStyles || []
-      ).concat(doc.document.foreignTextStyles);
-      sketch.document.layerStyles.objects = sketch.document.layerStyles.objects.concat(
-        doc.document.layerStyles.objects
-      );
-      sketch.document.layerTextStyles.objects = sketch.document.layerTextStyles.objects.concat(
-        doc.document.layerTextStyles.objects
-      );
-      // Copy pages over
-      doc.pages.forEach((page) => {
-        if (page.name === 'Symbols') {
-          for (const symbol of page.layers) {
-            symbol.frame.x = 0;
-            symbol.frame.y = y;
-            y += gutter + symbol.frame.height;
-            symbolsPage.addLayer(symbol);
-          }
-        } else {
-          sketch.addPage(page);
-        }
-      });
-    }
-  }
-
-  const designTokens = await import(
-    '@telekom/scale-design-tokens/dist/design-tokens-telekom.js'
-  );
-  parseColors(sketchColors, [], designTokens.color);
-
-  // Add color swatches
-  sketch.document.sharedSwatches = {
-    _class: 'swatchContainer',
-    do_objectID: 'C33E0022-6453-41F9-B5AF-F0B0F144B939',
-    objects: sketchColors,
-  };
-  sketch.document.documentState = { _class: 'documentState' };
-  sketch.document.layerSymbols.do_objectID = uuid();
 
   // Sort pages by name, Symbols on top.
   const sortedPages = Object.entries(sketch.meta.pagesAndArtboards).sort(
@@ -998,7 +753,9 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     name: 'Z Build Version',
   });
   versionSymbol.frame.x = 0;
-  versionSymbol.frame.y = y;
+  versionSymbol.frame.y = currentSymbolYCoordinate;
+  versionSymbol.frame.width = 300;
+  versionSymbol.frame.height = 40;
   versionSymbol.addLayer(
     new Text({
       string: `${documentName} - version ${version}, built on ${new Date().toLocaleString()}`,

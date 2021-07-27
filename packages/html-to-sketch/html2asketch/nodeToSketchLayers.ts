@@ -716,16 +716,18 @@ export default function nodeToSketchLayers(
       element.appendChild(document.createTextNode('Dropdown Value'));
       applyStyle(element, getComputedStyle(node));
       element.style.background = 'none';
-      element.style.left =
-        parseInt(element.style.borderLeftWidth) -
-        parseInt(element.style.marginLeft) +
-        'px';
+      element.style.left = '0';
       element.style.top =
-        parseInt(element.style.borderTopWidth) -
-        parseInt(element.style.marginTop) +
-        4 +
+        // parseInt(element.style.borderTopWidth) -
+        // parseInt(element.style.marginTop) +
+        '0';
+      element.style.lineHeight =
+        parseInt(element.style.height) -
+        (parseInt(element.style.borderTopWidth) +
+          parseInt(element.style.borderBottomWidth) +
+          parseInt(element.style.paddingTop)) +
         'px';
-      element.style.border = '0px';
+      // element.style.border = '1px solid transparent';
       element.style.outline = '0px';
       element.style.textShadow = 'none';
       element.style.boxShadow = 'none';
@@ -1012,7 +1014,7 @@ export default function nodeToSketchLayers(
         lineCapStyle: 0,
         lineJoinStyle: 0,
       };
-      const ctm = ((node as unknown) as SVGPathElement).getCTM();
+      const ctm = (node as unknown as SVGPathElement).getCTM();
       // Do we need to deal with X-Y scales separately?
       // Sketch doesn't support transform matrices, so can't do full SVG transform stack.
       // Well, you could SVD the matrix into a rotate-scale-rotate sequence if really needed.
