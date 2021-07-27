@@ -258,6 +258,7 @@ const rows = [
 
 ## Field Cell Types
 
+ - `actions`
  - `checkbox`
  - `date`
  - `graph`
@@ -286,6 +287,63 @@ const rows = [
 - `width?: number`
 
 ## Cell Type Options
+
+## Actions Cell
+
+Expected format: an array of objects, e.g. `[{ label: 'Edit', onClick: () => { /* ... */ }]`
+
+##### Unique options, and their defaults
+- `label: string = '' | object = { __html: '' }`
+- any `scale-button` attributes
+
+<Canvas withSource="close">
+    <Story name="Actions Cell">
+{`<content>
+    <scale-data-grid id="actions-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#actions-example');
+        dataGrid.fields = [
+            {
+                type: 'actions',
+                label: 'Actions (secondary)',
+            },
+            {
+                type: 'actions',
+                label: 'Actions (icon-only)',
+            }
+        ];
+        dataGrid.rows = [
+            [
+                [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
+                [
+                    {
+                        label: { __html: '<scale-icon-action-more accessibility-label="More"></scale-icon-action-more>' },
+                        variant: 'ghost'
+                    },
+                    {
+                        label: { __html: '<scale-icon-action-remove accessibility-label="Delete"></scale-icon-action-remove>' }, variant: 'ghost' 
+                    }
+                ]
+            ],
+            [
+                [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
+                [
+                    {
+                        label: { __html: '<scale-icon-action-more accessibility-label="More"></scale-icon-action-more>' },
+                        variant: 'ghost'
+                    },
+                    {
+                        label: { __html: '<scale-icon-action-remove accessibility-label="Delete"></scale-icon-action-remove>' }, variant: 'ghost' 
+                    }
+                ]
+            ]
+        ];
+    }
+    </script>
+</content>`}
+    </Story>
+</Canvas>
 
 ## Checkbox Cell
 
