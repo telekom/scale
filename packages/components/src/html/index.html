@@ -1253,13 +1253,8 @@ no switching has been done:*/
     <h3>Toggle Button</h3>
 
     <h4>Toggle Button Default</h4>
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-description-translation="Bedienfläche $selected"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert">Click Me!
-    </scale-toggle-button>
-    
+    <scale-toggle-button>Label</scale-toggle-button>
+
     <scale-toggle-button variant="secondary">Click Me!</scale-toggle-button>
 
     <h4>Icon Before</h4>
@@ -1297,7 +1292,6 @@ no switching has been done:*/
     <h4>Accessibility, German</h4>
     <scale-toggle-button 
       aria-label="Drück mich"
-      aria-description-translation="Bedienfläche $selected"
       aria-lang-selected="selektiert"
       aria-lang-deselected="deselektiert">Label
     </scale-toggle-button>
@@ -1348,6 +1342,27 @@ no switching has been done:*/
       <scale-toggle-button>Click Me!</scale-toggle-button>
       <scale-toggle-button>Click Me!</scale-toggle-button>
       <scale-toggle-button selected>Click Me!</scale-toggle-button>
+    </scale-toggle-group>
+
+    <h4>Accessibility, German</h4>
+    <scale-toggle-group>
+      <scale-toggle-button 
+      aria-label="Drück mich"
+      aria-lang-selected="selektiert"
+      aria-lang-deselected="deselektiert">Label
+      </scale-toggle-button>
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert">Label
+      </scale-toggle-button>
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert"
+        selected
+        >Label
+    </scale-toggle-button>
     </scale-toggle-group>
   </body>
 </html>
