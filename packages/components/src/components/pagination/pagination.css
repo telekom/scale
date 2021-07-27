@@ -34,6 +34,7 @@
   flex-shrink: 0;
   border-left: 0;
   border-right: 0;
+  white-space: nowrap;
 }
 .pagination__info span {
   font-weight: bold;
@@ -68,9 +69,6 @@ button svg {
 }
 button:not(:disabled) {
   cursor: pointer;
-}
-button:not(:disabled) svg {
-  stroke: var(--stroke-svg);
 }
 button:not(:disabled):hover {
   border-color: var(--color-hover);
