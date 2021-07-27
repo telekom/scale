@@ -320,15 +320,34 @@ export const Template = (args, { argTypes }) => ({
 <scale-toggle-button radius="both">Label</scale-toggle-button>
 ```
 
-## Accessibility, German
+
+## Accessibility
 
 <Canvas withSource="none">
   <Story
     name="Accessibility"
     args={{
       label: 'Label',
+      ariaLabel: 'Click me',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-button aria-label="Click me">Label</scale-toggle-button>
+```
+
+
+## Accessibility, German
+
+<Canvas withSource="none">
+  <Story
+    name="Accessibility German"
+    args={{
+      label: 'Label',
       ariaLabel: 'Drück mich',
-      ariaDescriptionTranslation: 'Bedienfläche $selected',
       ariaLangSelected: 'selektiert',
       ariaLangDeselected: 'deselektiert',
     }}
@@ -340,7 +359,6 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-toggle-button 
   aria-label="Drück mich"
-  aria-description-translation="Bedienfläche $selected"
   aria-lang-selected="selektiert"
   aria-lang-deselected="deselektiert">Label
 </scale-toggle-button>
