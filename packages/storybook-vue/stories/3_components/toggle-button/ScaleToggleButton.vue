@@ -8,6 +8,9 @@
     :icon-only="iconOnly"
     :radius="radius"
     :aria-label="ariaLabel"
+    :aria-description-translation="ariaDescriptionTranslation"
+    :aria-lang-selected="ariaLangSelected"
+    :aria-lang-deselected="ariaLangDeselected"
     :styles="styles"
   >
     <slot></slot>
@@ -25,6 +28,8 @@ export default {
     iconOnly: { type: Boolean, default: false },
     radius: { type: String },
     ariaLabel: { type: String },
+    ariaLangSelected: { type: String, default: 'selected' },
+    ariaLangDeselected: { type: String, default: 'deselected' },
     styles: { type: String },
   },
 };
