@@ -25,7 +25,7 @@ export const AccessTemplate = () => ({
     ...ScaleLoadingSpinner.props,
   },
   template: `
-    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
+    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' ">
         <scale-loading-spinner
             :variant='variant'
             :alignment='alignment'
@@ -44,7 +44,7 @@ export const Template = () => ({
     ...ScaleLoadingSpinnerTemplate.props,
   },
   template: `
-    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
+    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' ">
         <scale-loading-spinner
             :variant='variant'
             :alignment='alignment'
