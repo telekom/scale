@@ -176,7 +176,15 @@
   }
 }
 
-@media screen and (-ms-high-contrast: active) {
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .spinner .spinner__container .spinner__circle-background .path {
+    stroke: none;
+  }
+
+  .spinner .spinner__container .spinner__circle .path {
+    stroke: white;
+  }
+
   .spinner.spinner--variant-white
     .spinner__container
     .spinner__circle-background
@@ -184,7 +192,7 @@
     stroke: none;
   }
 
-  .spinner.spinner--variant-white .spinner__container .spinner__circel .path {
-    stroke: yellow;
+  .spinner.spinner--variant-white .spinner__container .spinner__circle .path {
+    stroke: white;
   }
 }
