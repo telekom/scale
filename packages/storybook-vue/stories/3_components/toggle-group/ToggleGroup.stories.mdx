@@ -45,6 +45,45 @@ export const Template = (args, { argTypes }) => ({
     `,
 });
 
+export const TemplateAriaTranslation = (args, { argTypes }) => ({
+  components: { ScaleToggleGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleToggleGroup.props,
+  },
+  template: `
+  <scale-toggle-group
+    :size="size"
+    :variant="variant"
+	  :box-type="boxType"
+    :disabled="disabled"
+    :border="border"
+    :multi="multi"
+    :aria-label-translation="ariaLabelTranslation"
+    :styles="styles"
+  >
+    <scale-toggle-button 
+      aria-label="Drück mich"
+      aria-lang-selected="selektiert"
+      aria-lang-deselected="deselektiert">Label
+    </scale-toggle-button>
+    <scale-toggle-button 
+      aria-label="Drück mich"
+      aria-lang-selected="selektiert"
+      aria-lang-deselected="deselektiert">Label
+    </scale-toggle-button>
+    <scale-toggle-button 
+      aria-label="Drück mich"
+      aria-lang-selected="selektiert"
+      aria-lang-deselected="deselektiert"
+      selected
+      >Label
+    </scale-toggle-button>
+  </scale-toggle-group>
+    `,
+});
+
 <div
   style={{
     display: 'inline-flex',
@@ -281,7 +320,7 @@ export const Template = (args, { argTypes }) => ({
       ariaLabelTranslation: "wechsel schalter gruppe mit $slottedButtons schaltern"
     }}
   >
-    {Template.bind({})}
+    {TemplateAriaTranslation.bind({})}
   </Story>
 </Canvas>
 
