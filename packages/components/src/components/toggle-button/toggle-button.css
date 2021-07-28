@@ -55,6 +55,9 @@
   --background-selected-dark: var(--scl-color-grey-90);
   --background-selected-hover-dark: var(--scl-color-grey-70);
   --background-selected-active-dark: var(--scl-color-black);
+
+  /* high contrast */
+  --color-high-contrast: var(--scl-color-white);
 }
 
 .toggle-button {
@@ -186,4 +189,10 @@
 
 .toggle-button--both {
   border-radius: var(--radius-primary);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .toggle-button {
+    color: var( --color-high-contrast);
+  }
 }
