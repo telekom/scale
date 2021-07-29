@@ -75,7 +75,7 @@ export class RadioButton {
     });
   }
 
-  getSiblingRadios(): HTMLScaleRadioButtonElement[] {
+  getSiblingRadios(): HTMLElement[] {
     return Array.from(
       document.querySelectorAll(`scale-radio-button[name="${this.name}"]`)
     ).filter(
