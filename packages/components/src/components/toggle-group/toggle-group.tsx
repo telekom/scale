@@ -99,7 +99,10 @@ export class ToggleGroup {
       toggleButton.setAttribute('variant', this.variant);
       toggleButton.setAttribute('disabled', this.disabled && 'disabled');
       toggleButton.setAttribute('position', this.position.toString());
-      toggleButton.setAttribute('aria-description-translation', '$position $selected');
+      toggleButton.setAttribute(
+        'aria-description-translation',
+        '$position $selected'
+      );
     });
     this.position = 0;
     this.status = tempState;

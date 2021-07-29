@@ -193,6 +193,6 @@
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .toggle-button {
-    color: var( --color-high-contrast);
+    color: var(--color-high-contrast);
   }
 }

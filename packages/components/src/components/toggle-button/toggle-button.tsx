@@ -89,7 +89,9 @@ export class ToggleButton {
   }
 
   getAriaDescriptionTranslation() {
-    const replaceSelected = this.selected ? this.ariaLangSelected : this.ariaLangDeselected;
+    const replaceSelected = this.selected
+      ? this.ariaLangSelected
+      : this.ariaLangDeselected;
     const filledText = this.ariaDescriptionTranslation
       .replace(/\$position/g, `${this.position}`)
       .replace(/\$selected/g, `${replaceSelected}`);

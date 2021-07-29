@@ -7,13 +7,13 @@ exports[`Toggle Group snapshots default props 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="false" position="1" radius="left" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="1" radius="left" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" position="2" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="2" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" position="3" radius="right" selected="" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="3" radius="right" selected="" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -26,13 +26,13 @@ exports[`Toggle Group snapshots disabled 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="disabled" position="1" radius="left" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="disabled" position="1" radius="left" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="disabled" position="2" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="disabled" position="2" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="disabled" position="3" radius="right" selected="" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="disabled" position="3" radius="right" selected="" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -45,13 +45,13 @@ exports[`Toggle Group snapshots size small, multi false 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="false" position="1" radius="left" size="small" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="1" radius="left" size="small" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" position="2" size="small" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="2" size="small" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" position="3" radius="right" selected="" size="small" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="3" radius="right" selected="" size="small" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -67,13 +67,13 @@ exports[`Toggle Group snapshots styles 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button disabled="false" position="1" radius="left" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="1" radius="left" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" position="2" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="2" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button disabled="false" position="3" radius="right" selected="" size="large" variant="primary">
+  <scale-toggle-button aria-description-translation="$position $selected" disabled="false" position="3" radius="right" selected="" size="large" variant="primary">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
