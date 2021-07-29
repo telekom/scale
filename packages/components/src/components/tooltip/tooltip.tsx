@@ -8,6 +8,7 @@ import {
   Prop,
   Watch,
   h,
+  State,
 } from '@stencil/core';
 import Popover from './utilities/popover';
 
@@ -26,7 +27,7 @@ export class Tooltip {
   target: HTMLElement;
   tooltip: any;
 
-  @Element() host: HTMLScaleTooltipElement;
+  @Element() host: HTMLElement;
   /** (optional) The content of the Tooltip supporting Text only */
   @Prop() content = '';
   /** (optional) Position of the Tooltip on the Object */
@@ -46,7 +47,7 @@ export class Tooltip {
   /** (optional) Disable Tooltip */
   @Prop() disabled = false;
   /** (optional) Distance of the Tooltip from the Target Object (related to the `placement`) */
-  @Prop() distance = 5;
+  @Prop() distance = 2;
   /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
   /** (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either on an x-axis (at `placement` top/down)
@@ -58,6 +59,8 @@ export class Tooltip {
   @Prop() flip: boolean = true;
   /** (optional) Switching the preventOverflow option of the tooltip on and off*/
   @Prop() preventOverflow: boolean = false;
+
+  @State() mouseOverTooltip: boolean = false;
 
   @Watch('open')
   handleOpenChange() {
@@ -175,9 +178,15 @@ export class Tooltip {
     }
   }
 
+  handleTooltipMouseOver() {
+    this.mouseOverTooltip = true;
+  }
+
   handleMouseOut() {
-    if (this.hasTrigger('hover')) {
-      this.hideTooltip();
+    if (!this.mouseOverTooltip) {
+      if (this.hasTrigger('hover')) {
+        this.hideTooltip();
+      }
     }
   }
 
@@ -226,19 +235,23 @@ export class Tooltip {
           <div
             class="tooltip-positioner"
             ref={(el) => (this.tooltipPositioner = el)}
+            onMouseOver={this.handleTooltipMouseOver}
           >
             <div
               class={{
                 tooltip: true,
                 'tooltip--open': this.open,
               }}
+              onMouseOver={this.handleTooltipMouseOver}
               part="base"
               ref={(el) => (this.tooltip = el)}
               id={this.componentId}
               role="tooltip"
               aria-hidden={this.open ? 'false' : 'true'}
             >
-              <slot name="content">{this.content}</slot>
+              <div class="content-wrapper" tabindex={0}>
+                <slot name="content">{this.content}</slot>
+              </div>
             </div>
           </div>
         )}

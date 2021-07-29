@@ -30,8 +30,6 @@ host*,
 
 .tooltip-positioner {
   position: absolute;
-  z-index: var(--scale-tooltip-z-index);
-  pointer-events: none;
 }
 
 #slot-container {
