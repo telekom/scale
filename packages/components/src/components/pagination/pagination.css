@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
+ :host {
   --color: var(--scl-color-black);
   --font-size: var(--scl-font-size-16);
   --border: 1px solid var(--scl-color-grey-10);
@@ -20,20 +20,23 @@
   --radius-first-prompt: 12px 0 0 12px;
   --radius-last-prompt: 0 12px 12px 0;
   --stroke-svg: var(--scl-color-black);
+  --stroke-svg-high-contrast: var(--scl-color-white);
 }
 .pagination {
-  display: inline-flex;
+  display: flex;
+  overflow: auto;
 }
 .pagination__info {
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
   line-height: 52px;
-  padding: 0 15px;
+  padding: 0 var(--scl-spacing-8);
   border: var(--border);
   flex-shrink: 0;
   border-left: 0;
   border-right: 0;
+  white-space: nowrap;
 }
 .pagination__info span {
   font-weight: bold;
@@ -95,4 +98,10 @@ button:not(:disabled):hover svg {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
   border-width: 1px !important;
   border-color: var(--color-hover) !important;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  button:not(:disabled) svg {
+    stroke: var( --stroke-svg-high-contrast);
+  }
 }
