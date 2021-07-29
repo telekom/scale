@@ -106,11 +106,11 @@ export class TabNav {
     });
   }
 
-  getAllTabs(): Array<HTMLScaleTabHeaderElement> {
+  getAllTabs(): HTMLScaleTabHeaderElement[] {
     return Array.from(this.el.querySelectorAll('scale-tab-header'));
   }
 
-  getAllEnabledTabs(): Array<HTMLScaleTabHeaderElement> {
+  getAllEnabledTabs(): HTMLScaleTabHeaderElement[] {
     return Array.from(
       this.el.querySelectorAll('scale-tab-header:not([disabled])')
     );
