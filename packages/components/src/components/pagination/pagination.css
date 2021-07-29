@@ -23,7 +23,8 @@
   --stroke-svg-high-contrast: var(--scl-color-white);
 }
 .pagination {
-  display: inline-flex;
+  display: flex;
+  overflow: auto;
 }
 .pagination__info {
   color: var(--color);

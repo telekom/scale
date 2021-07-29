@@ -107,7 +107,7 @@ export const Template = (args, {}) => ({
 
 <Canvas withSource="close">
     <Story name="Embedded Hidden Borders">
-{`<div style="border: 1px solid #000; text-align: center;">
+{`<div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
     <scale-pagination
     page-size="10"
     total-elements="100"
