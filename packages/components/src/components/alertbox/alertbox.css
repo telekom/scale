@@ -1,7 +1,5 @@
 :host {
   --corner-radius: 8px;
-  --box-height-missing-content: 32px;
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   /* Token not available, up for discussion*/
   --variant-error: hsla(353.79999999999995, 100%, 88.6%, .35);
   --variant-warning: hsla(33.5, 100%, 75.1%, .3);
@@ -35,17 +33,6 @@
   color: var(--scl-color-black);
 }
 
-/*variants*/
-.alertbox.alertbox--variant-outline.alertbox--variant-white {
-  border-radius: var(--corner-radius);
-  border: solid 1px #979797;
-}
-
-.alertbox.alertbox--variant-outline.alertbox--variant-black {
-  border: solid 1px #979797;
-  border-radius: var(--corner-radius);
-}
-
 /*content*/
 .alertbox .alertbox__content {
   margin-top: 8px;
@@ -66,16 +53,12 @@
   font-family: var(--scl-fonts-family-sans);
   font-size: 16px;
   line-height: 1.25;
-  
-
 }
-
 
 /* Close Icon/Button */
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
   top: 13px;
-  bottom: 14.5px;
   right: 17px;
   color: black;
 }
@@ -91,18 +74,8 @@
   background-color: white;
   color: var(--scl-color-primary-active);
 }
-.alertbox .alertbox__container-header .alertbox__icon-close:focus {
-  box-shadow: var(--box-shadow-focus)
-}
-.alertbox .alertbox__container-header .alertbox__icon-close:active {
-  background-color: white; 
-  color: var(--scl-color-primary-active);
- 
-  
-}
 
 /* Success Icon */
-/* The only Icon without a circle around it. */
 .alertbox .alertbox__icon-success {
   position: absolute;
   top: 15px;
@@ -113,6 +86,7 @@
   width: 20px;
   color: var(--scl-color-background-success);
 }
+
 /* Error Icon */
 .alertbox .alertbox__icon-error {
   position: absolute;
@@ -124,6 +98,7 @@
   width: 20px;
   color: var(--scl-color-background-error);
 }
+
 /* Info Icon */
 .alertbox .alertbox__icon-information {
   position: absolute;

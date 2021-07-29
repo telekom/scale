@@ -97,7 +97,7 @@ export class Alertbox {
               
               {this.hasClose && (
                 <scale-icon-action-circle-close
-                  class="alertbox__icon-close"
+                  tabindex="0" class="alertbox__icon-close"
                   onClick={() => {
                     this.close();
                   }}
