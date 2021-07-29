@@ -16,7 +16,7 @@ export class Alertbox {
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
 
-  defaultTimeout = 1;
+  defaultTimeout = 3000;
 
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
@@ -62,17 +62,16 @@ export class Alertbox {
     return;
   }
   
-  close() {
+  close = () => {
     this.opened = false;
   }
 
   onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
-      if (typeof this.timeout === 'number') {
+      if (typeof this.timeout === 'string' && !isNaN(this.timeout)) {
         setTimeout(this.close, this.timeout);
       } else {
         setTimeout(this.close, this.defaultTimeout);
-        
       }
     } else {
       return null;

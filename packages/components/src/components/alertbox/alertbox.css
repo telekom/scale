@@ -74,23 +74,27 @@
 /* Close Icon/Button */
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
-  height: 19px;
-  width: 19px;
   top: 13px;
   bottom: 14.5px;
   right: 17px;
   color: black;
- 
 }
+
+.alertbox .alertbox__container-header .alertbox__icon-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 3px;
+  border-radius: 30%;
+}
+
 .alertbox .alertbox__container-header .alertbox__icon-close :hover {
-  background-color: greenyellow;
-  padding: 4px;
+  background-color: white;
   color: var(--scl-color-primary-active);
 }
-.alertbox .alertbox__container-header .alertbox__icon-close :focus {
+.alertbox .alertbox__container-header .alertbox__icon-close:focus {
   box-shadow: var(--box-shadow-focus)
 }
-.alertbox .alertbox__container-header .alertbox__icon-close :active {
+.alertbox .alertbox__container-header .alertbox__icon-close:active {
   background-color: white; 
   color: var(--scl-color-primary-active);
  
