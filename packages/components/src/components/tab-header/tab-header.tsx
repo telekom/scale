@@ -25,6 +25,8 @@ export class TabHeader {
 
   @Element() el: HTMLElement;
 
+  /** True for a disabled Tabnavigation */
+  @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
   @Prop() small: boolean = false;
   /** (optional) Injected CSS styles */
@@ -35,12 +37,14 @@ export class TabHeader {
 
   @Watch('selected')
   selectedChanged(newValue: boolean) {
-    if (newValue === true) {
-      // Having focus on the host element, and not on inner elements,
-      // is required because screen readers.
-      this.el.focus();
+    if (!this.disabled) {
+      if (newValue === true) {
+        // Having focus on the host element, and not on inner elements,
+        // is required because screen readers.
+        this.el.focus();
+      }
+      this.updateSlottedIcon();
     }
-    this.updateSlottedIcon();
   }
 
   /**
@@ -65,9 +69,9 @@ export class TabHeader {
     return (
       <Host
         id={`scale-tab-header-${this.generatedId}`}
-        role="tab"
+        role={this.disabled ? false : 'tab'}
         aria-selected={String(this.selected)}
-        tabindex={this.selected ? '0' : '-1'}
+        tabindex={this.disabled ? false : this.selected ? '0' : '-1'}
         onFocus={() => (this.hasFocus = true)}
         onBlur={() => (this.hasFocus = false)}
       >
@@ -100,7 +104,8 @@ export class TabHeader {
       component,
       this.selected && `${prefix}selected`,
       this.small && `${prefix}small`,
-      this.hasFocus && `${prefix}has-focus`
+      this.hasFocus && `${prefix}has-focus`,
+      this.disabled && `${prefix}disabled`
     );
   }
 }
