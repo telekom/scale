@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButtonGroup should match error snapshot 1`] = `
+<scale-radio-button-group helper-text="Error message" label="Radio Button Label">
+  <mock:shadow-root>
+    <div class="radio-button-group">
+      <div class="radio-button-group__label">
+        <h1 class="radio-button-group__title">
+          Radio Button Label
+        </h1>
+        <div class="radio-button-group__helper-text">
+          Error message
+        </div>
+      </div>
+      <div class="radio-button-group__container">
+        <slot name="radio-button-list"></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <div slot="radio-button-list">
+    <scale-radio-button input-id="choiceOne" label="Radio Button" name="radioError" status="error" transparent="true" value="1"></scale-radio-button>
+    <div style="margin-top: 0.5rem;"></div>
+    <scale-radio-button input-id="choiceTwo" label="Radio Button" name="radioError" status="error" value="2"></scale-radio-button>
+    <div style="margin-top: 0.5rem;"></div>
+    <scale-radio-button input-id="choiceThree" label="Radio Button" name="radioError" status="error" value="3"></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+`;
+
+exports[`RadioButtonGroup should match selected snapshot 1`] = `
+<scale-radio-button-group label="Radio Button Label">
+  <mock:shadow-root>
+    <div class="radio-button-group">
+      <div class="radio-button-group__label">
+        <h1 class="radio-button-group__title">
+          Radio Button Label
+        </h1>
+      </div>
+      <div class="radio-button-group__container">
+        <slot name="radio-button-list"></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <div slot="radio-button-list">
+    <scale-radio-button checked="" input-id="choiceOne" label="Radio Button" name="radioSelectedOne" transparent="true" value="1"></scale-radio-button>
+    <div style="margin-top: 0.5rem;"></div>
+    <scale-radio-button input-id="choiceTwo" label="Radio Button" name="radioSelectedTwo" value="2"></scale-radio-button>
+    <div style="margin-top: 0.5rem;"></div>
+    <scale-radio-button input-id="choiceThree" label="Radio Button" name="radioSelectedThree" value="3"></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+`;
+
+exports[`RadioButtonGroup should match standard snapshot 1`] = `
+<scale-radio-button-group label="Radio Button Label">
+  <mock:shadow-root>
+    <div class="radio-button-group">
+      <div class="radio-button-group__label">
+        <h1 class="radio-button-group__title">
+          Radio Button Label
+        </h1>
+      </div>
+      <div class="radio-button-group__container">
+        <slot name="radio-button-list"></slot>
+      </div>
+    </div>
+  </mock:shadow-root>
+  <div slot="radio-button-list">
+    <scale-radio-button input-id="choiceOne" label="Radio Button" name="radioSelect" transparent="true" value="1"></scale-radio-button>
+    <div style="margin-top: 0.5rem;"></div>
+    <scale-radio-button input-id="choiceTwo" label="Radio Button" name="radioSelect" value="2"></scale-radio-button>
+    <div style="margin-top: 0.5rem;"></div>
+    <scale-radio-button input-id="choiceThree" label="Radio Button" name="radioSelect" value="3"></scale-radio-button>
+  </div>
+</scale-radio-button-group>
+`;

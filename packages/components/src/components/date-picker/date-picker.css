@@ -56,6 +56,12 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   color: var(--scl-color-primary-active);
 }
 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  duet-date-picker .duet-date__toggle scale-icon-content-calendar {
+    color: var(--scl-color-white);
+  }
+}
+
 .scale-date-picker {
   position: relative;
 }
@@ -191,6 +197,10 @@ duet-date-picker .duet-date__input:focus::placeholder {
   color: var(--scl-color-grey-20);
 }
 
+.scale-date-picker__popup-heading {
+  text-align: center;
+  padding-bottom: var(--scl-spacing-16);
+}
 /* Popover layout */
 
 duet-date-picker .duet-date__dialog-content {
@@ -302,4 +312,10 @@ duet-date-picker .duet-date__day:hover::before {
   opacity: 1;
   background: transparent;
   color: var(--scl-color-white);
+}
+
+@media (max-width: 35.9375em) and (orientation: landscape) {
+  duet-date-picker .duet-date__dialog-content {
+    zoom: 70%;
+  }
 }

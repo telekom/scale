@@ -1014,7 +1014,7 @@ export default function nodeToSketchLayers(
         lineCapStyle: 0,
         lineJoinStyle: 0,
       };
-      const ctm = ((node as unknown) as SVGPathElement).getCTM();
+      const ctm = (node as unknown as SVGPathElement).getCTM();
       // Do we need to deal with X-Y scales separately?
       // Sketch doesn't support transform matrices, so can't do full SVG transform stack.
       // Well, you could SVD the matrix into a rotate-scale-rotate sequence if really needed.
