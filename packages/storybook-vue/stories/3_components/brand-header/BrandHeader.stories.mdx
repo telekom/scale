@@ -838,69 +838,6 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 </script>
 ```
 
-
-## Language switch
-
-<Canvas withSource="close">
-<Story name="Language switch" inline={false} height={500}>
-{() => ({
-    data() {
-        return {
-            portalName: '',
-            claimLang: 'en',
-            mainNavigation: JSON.stringify(mainNavigation),
-            addonNavigation: JSON.stringify(addonNavigation),
-            sectorNavigation: JSON.stringify(sectorNavigation),
-            activeRouteId: 'Third Level 24',
-            activeSectorId: 'Personal38',
-        };
-    },
-    template: `
-        <div class="brand-header-spacing">
-          <scale-app-shell>
-            <scale-app-header
-                ref="header"
-                slot="header"
-                id="header"
-                :main-navigation="mainNavigation"
-                :sector-navigation="sectorNavigation"
-                :addon-navigation="addonNavigation"
-                :icon-navigation="iconNavigation"
-                :active-route-id="activeRouteId"
-                :active-sector-id="activeSectorId"
-                    >
-                        <div slot="menu-addon" style="margin-right: 20px">
-                              <scale-nav-segment is-active="true" href="#custom-addon-1">
-                                Custom Addon #1
-                              </scale-nav-segment>
-                              <scale-nav-segment href="#custom-addon-2">
-                                Custom Addon #2
-                              </scale-nav-segment>
-                            <scale-menu-flyout @scaleClose="$refs.userIcon.isActive=false" >
-                                <div slot="trigger">
-                                 <scale-nav-segment style="--border-bottom: none" ref="userIcon" @click="$refs.userIcon.isActive=true">
-                                   DE
-                                   <scale-icon-navigation-collapse-down style="display: inline-flex; height: 16px; width: 16px; position: absolute; top: 14px; right: 0;"></scale-icon-navigation-collapse-down>
-                                 </scale-nav-segment>
-                                </div>
-                                <scale-menu-flyout-list>
-                                    <scale-menu-flyout-item>English</scale-menu-flyout-item>
-                                    <scale-menu-flyout-item active>Deutsch</scale-menu-flyout-item>
-                                    <scale-menu-flyout-item>Français</scale-menu-flyout-item>
-                                    <scale-menu-flyout-item>Italiano</scale-menu-flyout-item>
-                                </scale-menu-flyout-list>
-                            </scale-menu-flyout>
-                        </div>
-                    </scale-app-header>
-                    <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
-                    <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
-                  </scale-app-shell>
-                </div>
-      `,
-    })}
-  </Story>
-</Canvas>
-
 ## Standalone Header
 
 <Canvas withSource="none">
