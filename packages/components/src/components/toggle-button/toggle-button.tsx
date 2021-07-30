@@ -99,9 +99,12 @@ export class ToggleButton {
   }
 
   handleIconSize() {
-    const icon = this.hostElement.children[0] && this.hostElement.children[0];
-    if (icon) {
-      icon.setAttribute('size', iconSizes[this.size]);
+    const children = Array.from(this.hostElement.children);
+    const scaleIcons = children.filter(child => {
+      return child.tagName.substr(0,10) === 'SCALE-ICON';
+    })
+    if (scaleIcons.length > 0) {
+      scaleIcons[0].setAttribute('size', iconSizes[this.size]);
     }
   }
 
@@ -112,8 +115,8 @@ export class ToggleButton {
   };
 
   /**
-   * Detect whether the last node is an element (not text).
-   * If so, it's probably an icon, so we set `iconPosition` to `after`.
+   * Detect whether a child node is a scale icon and contains text.
+   * If so, we set `iconPosition` to `after`, if the icon comes after the text.
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
@@ -123,11 +126,28 @@ export class ToggleButton {
     if (nodes.length < 2) {
       return;
     }
-    const lastNode = nodes[nodes.length - 1];
-    if (lastNode != null && lastNode.nodeType === 1) {
+    const isIconLastNode = this.checkIconPosition(nodes);
+    if (isIconLastNode) {
       this.iconPosition = 'after';
     }
   }
+
+  checkIconPosition(nodes: ChildNode[]) {
+    let firstTextPosition = nodes.length;
+    let firstIconPosition = nodes.length;
+    for (let i = 0; i < nodes.length; i++) {
+      if(nodes[i].nodeType === 3) {
+        if (i < firstTextPosition) {
+          firstTextPosition = i;
+        }
+    } else if (nodes[i].nodeType === 1 && nodes[i].nodeName.substr(0,10) === 'SCALE-ICON') {
+      if (i < firstIconPosition) {
+        firstIconPosition = i;
+      }
+    }
+  }
+  return firstIconPosition > firstTextPosition;
+}
 
   render() {
     return (
