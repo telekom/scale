@@ -9,7 +9,6 @@ import { action } from "@storybook/addon-actions";
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleCheckbox },
   props: {
     label: String,
     ...ScaleCheckbox.props
@@ -19,19 +18,18 @@ export const Template = (args, { argTypes }) => ({
       :name="name"
       :label="label"
       :helper-text="helperText"
+      :status="status"
       :disabled="disabled"
       :checked="checked"
+      :indeterminate="indeterminate"
       :value="value"
-      :status="status"
       :input-id="inputId"
-      @scaleChange="scaleChange"
+      @scaleChange="action('scaleChange')($event)"
     ></scale-checkbox>
   `,
   methods: {
-    scaleChange: function() {
-      action('scaleChange')();
-    },
-  },
+    action
+  }
 })
 
 <div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
@@ -158,6 +156,24 @@ scale-checkbox {
 <scale-checkbox checked disabled label="Selected Disabled"></scale-checkbox>
 ```
 
+## Indeterminate
+
+<Canvas withSource="none">
+  <Story
+    name="Indeterminate"
+    args={{
+      label: "Indeterminate",
+      indeterminate: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox indeterminate label="Indeterminate"></scale-checkbox>
+```
+
 ## Helper Text
 
 <Canvas withSource="none">
@@ -175,7 +191,6 @@ scale-checkbox {
 ```html
 <scale-checkbox label="Helper Text" helper-text="Make sure to check this"></scale-checkbox>
 ```
-
 
 ## Error
 
@@ -205,16 +220,21 @@ scale-checkbox {
     args={{}}
   >
     {() => ({
-        components: { ScaleCheckbox },
-        props: {
-            label: String,
-            ...ScaleCheckbox.props
-        },
-        template: `<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>`,
+      template: `
+        <scale-checkbox>
+          <span style="display: flex; align-items: center">
+            Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy>
+          </span>
+        </scale-checkbox>
+      `,
     })}
   </Story>
 </Canvas>
 
 ```html
-<scale-checkbox><span style="cursor: pointer; display: flex; align-items: center;">Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy></span></scale-checkbox>
+<scale-checkbox>
+  <span style="display: flex; align-items: center">
+    Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy>
+  </span>
+</scale-checkbox>
 ```
