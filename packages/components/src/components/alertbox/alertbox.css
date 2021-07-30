@@ -1,10 +1,10 @@
 :host {
   --corner-radius: 8px;
   /* Token not available, up for discussion*/
-  --variant-error: hsla(353.79999999999995, 100%, 88.6%, .35);
-  --variant-warning: hsla(33.5, 100%, 75.1%, .3);
-  --variant-informational: hsla(190.20000000000005, 100%, 92%, .75);
-  --variant-success: hsl(98.80000000000001, 49.7%, 61%, .2);
+  --variant-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
+  --variant-warning: hsla(33.5, 100%, 75.1%, 0.3);
+  --variant-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
+  --variant-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
 }
 
 .alertbox {

@@ -29,7 +29,7 @@ describe('Alertbox', () => {
   });
 
   it('handle variant prop', async () => {
-    let page = await newSpecPage({
+    const page = await newSpecPage({
       components: [Alertbox],
       html: `<scale-alertbox opened="true">Label</scale-alertbox>`,
     });
@@ -63,7 +63,7 @@ describe('Alertbox', () => {
   });
 
   it('should emit onClick and set opened to false', async () => {
-    let page = await newSpecPage({
+    const page = await newSpecPage({
       components: [Alertbox],
       html: `<scale-alertbox opened="true" has-close="true">Label</scale-alertbox>`,
     });
@@ -75,7 +75,7 @@ describe('Alertbox', () => {
   });
 
   it('should set timeout of the FIRST argument on function onCloseAlertWithTimeout()', async () => {
-    let page = await newSpecPage({
+    const page = await newSpecPage({
       components: [Alertbox],
       html: `<scale-alertbox opened="true" >Label</scale-alertbox>`,
     });
@@ -113,5 +113,4 @@ describe('Alertbox', () => {
   //     expect(page.rootInstance.opened).toBe(false);
   //   }, 200);
   // });
-
 });

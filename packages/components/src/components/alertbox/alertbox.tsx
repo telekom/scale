@@ -1,4 +1,12 @@
-import { Component, h, Host, Prop, Element, State, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  State,
+  Method,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -9,7 +17,8 @@ import statusNote from '../../utils/status-note';
 })
 export class Alertbox {
   // Color to variant rename
-  @Prop() variant?: 'informational'| 'success' | 'warning' | 'error' = 'informational';
+  @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
+    'informational';
   @Prop({ reflect: true }) hasClose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
@@ -25,13 +34,13 @@ export class Alertbox {
   connectedCallback() {
     statusNote({ source: this.hostElement, type: 'warn' });
   }
-  
+
   /** Alert method: open() */
   @Method()
   async open() {
     this.opened = true;
   }
-  
+
   handleIcons() {
     if (this.variant) {
       switch (this.variant) {
@@ -61,10 +70,10 @@ export class Alertbox {
     }
     return;
   }
-  
+
   close = () => {
     this.opened = false;
-  }
+  };
 
   onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
@@ -92,12 +101,13 @@ export class Alertbox {
             {this.handleIcons()}
             <header part="header" class="alertbox__container-header">
               <p>
-              <slot name="header">Missing Title</slot>
+                <slot name="header">Missing Title</slot>
               </p>
-              
+
               {this.hasClose && (
                 <scale-icon-action-circle-close
-                  tabindex="0" class="alertbox__icon-close"
+                  tabindex="0"
+                  class="alertbox__icon-close"
                   onClick={() => {
                     this.close();
                   }}
@@ -128,9 +138,6 @@ export class Alertbox {
     const name = 'alertbox';
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
-    return classNames(
-      name,
-      this.variant && `${prefix}variant-${this.variant}`,
-    );
+    return classNames(name, this.variant && `${prefix}variant-${this.variant}`);
   }
 }
