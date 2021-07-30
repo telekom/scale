@@ -100,9 +100,9 @@ export class ToggleButton {
 
   handleIconSize() {
     const children = Array.from(this.hostElement.children);
-    const scaleIcons = children.filter(child => {
-      return child.tagName.substr(0,10) === 'SCALE-ICON';
-    })
+    const scaleIcons = children.filter((child) => {
+      return child.tagName.substr(0, 10) === 'SCALE-ICON';
+    });
     if (scaleIcons.length > 0) {
       scaleIcons[0].setAttribute('size', iconSizes[this.size]);
     }
@@ -135,19 +135,19 @@ export class ToggleButton {
   checkIconPosition(nodes: ChildNode[]) {
     let firstTextPosition = nodes.length;
     let firstIconPosition = nodes.length;
-    for (let i = 0; i < nodes.length; i++) {
-      if(nodes[i].nodeType === 3) {
-        if (i < firstTextPosition) {
-          firstTextPosition = i;
+    for (let n = 0; n < nodes.length; n++) {
+      if (nodes[n].nodeType === 3) {
+        if (n < firstTextPosition) {
+          firstTextPosition = n;
         }
-    } else if (nodes[i].nodeType === 1) {
-      if (i < firstIconPosition) {
-        firstIconPosition = i;
+      } else if (nodes[n].nodeType === 1) {
+        if (n < firstIconPosition) {
+          firstIconPosition = n;
+        }
       }
     }
+    return firstIconPosition > firstTextPosition;
   }
-  return firstIconPosition > firstTextPosition;
-}
 
   render() {
     return (
