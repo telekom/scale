@@ -14,7 +14,7 @@ export const ICON =
   component={ScaleTable}
   argTypes={{
     size: {
-      control: { type: 'select', options: ['default', 'small'] },
+      control: { type: 'select', options: ['default', 'small']},
     },
   }}
 />
@@ -29,6 +29,7 @@ export const Template = (args, { argTypes }) => ({
     <scale-table
       :show-sort="showSort"
       :size="size"
+      :striped="striped ? true : false"
     >
       <table id="sortable-table">
         <caption class="sr-only">All sortable columns are focusable</caption>
@@ -247,6 +248,7 @@ scale-table {
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2) var(
       --scl-color-focus
     );
+  --background-secondary-tbody-td: var(--scl-color-grey-0);
 }
 ```
 
@@ -380,3 +382,77 @@ Please switch to the Canvas view for a working example
   }
 </script>
 ```
+
+## With striped rows
+
+<Canvas withSource="none">
+  <Story
+    name="With striped rows"
+    args={{
+      striped: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-table striped>
+  <table>
+    <caption>
+      Table title
+    </caption>
+    <thead>
+      <tr>
+        <!-- aria-sort can be descending or ascending -->
+        <th
+          tabindex="0"
+          aria-sort="descending"
+          onkeyup="handleKeyUp(event, 'title')"
+          onclick="sortTable('title')"
+          id="title"
+        >
+          Title
+        </th>
+        <!-- aria-disabled="true" disables sorting -->
+        <th aria-disabled="true">Tags</th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'stats')"
+          onclick="sortTable('stats')"
+          id="stats"
+        >
+          Stats
+        </th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'time')"
+          onclick="sortTable('time')"
+          id="time"
+        >
+          Time
+        </th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'euros')"
+          onclick="sortTable('euros')"
+          id="euros"
+        >
+          Euros
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      ...
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td>00:00:20</td>
+        <td>100.245,10</td>
+      </tr>
+    </tfoot>
+  </table>
+</scale-table>
