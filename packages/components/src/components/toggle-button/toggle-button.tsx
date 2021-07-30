@@ -140,7 +140,7 @@ export class ToggleButton {
         if (i < firstTextPosition) {
           firstTextPosition = i;
         }
-    } else if (nodes[i].nodeType === 1 && nodes[i].nodeName.substr(0,10) === 'SCALE-ICON') {
+    } else if (nodes[i].nodeType === 1) {
       if (i < firstIconPosition) {
         firstIconPosition = i;
       }
