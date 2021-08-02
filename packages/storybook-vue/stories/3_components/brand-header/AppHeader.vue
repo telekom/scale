@@ -1,5 +1,5 @@
 <template>
-  <scale-app-shell
+  <scale-app-header
     :logo-click="logoClick"
     :logo-title="logoTitle"
     :logo-href="logoHref"
@@ -12,10 +12,12 @@
     :active-route-id="activeRouteId"
     :active-sector-id="activeRouteId"
   >
-    <slot></slot>
-    <slot name="header"></slot>
-    <slot name="footer"></slot>
-  </scale-app-shell>
+    <slot name="logo"></slot>
+    <slot name="menu-main"></slot>
+    <slot name="menu-icon"></slot>
+    <slot name="menu-sector"></slot>
+    <slot name="menu-mobile"></slot>
+  </scale-app-header>
 </template>
 
 <script>
