@@ -1,4 +1,3 @@
-
 import {
   Meta,
   Story,
@@ -49,25 +48,46 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-alertbox   
-    :variant="variant"
-    :hasClose="hasClose"
-    :timeout="timeout"
-    :opened="opened"
+     :variant="variant"
+     :hasClose="hasClose"
+     :timeout="timeout"
+     :opened="opened"
     >
-    <p slot="header">testing</p>
-    <p slot="text">testing</p>
     </scale-alertbox>
-  `
+  `,
+});
+
+export const TemplateSlot = (args, { argTypes }) => ({
+  components: { ScaleAlertbox },
+  props: {
+    ...ScaleAlertbox.props,
+  },
+  template: `
+    <scale-alertbox   
+     :variant="variant"
+     :hasClose="hasClose"
+     :timeout="timeout"
+     :opened="opened"
+    >
+    <template v-slot:header>
+     <p slot="header">This is my title</p>
+    </template>
+    <template v-slot:text>
+     <p slot="text">This is my message to you</p>
+    </template>
+  `,
 });
 
 ## Standard
-
 ### All default values
 
 <Canvas withSource="none">
-  <Story name="Standard" args={{
-    opened: true,
-  }}>
+  <Story
+    name="Standard"
+    args={{
+      opened: true,
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -75,84 +95,102 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-alertbox variant="informational" opened>
-</scale-alertbox>
+<scale-alertbox variant="informational" opened> </scale-alertbox>
 ```
-
 
 ## Scoped CSS variables
 
 ```css
 :host {
-  --corner-radius: 8px;
-  --variant-error: hsla(353.79999999999995, 100%, 88.6%, .35);
-  --variant-warning: hsla(33.5, 100%, 75.1%, .3);
-  --variant-informational: hsla(190.20000000000005, 100%, 92%, .75);
-  --variant-success: hsl(98.80000000000001, 49.7%, 61%, .2);
+  /* Alertbox styling */
+  --alertbox-border-radius: 8px;
+  --alertbox-border: 1px solid var(--scl-color-white);
+  --alertbox-width: 100%;
+  --alertbox-font-header: var(--scl-fonts-family-sans);
+  --alertbox-font-size-header: 16px;
+  --alertbox-font-text: var(--scl-font-weight-regular);
+  --alertbox-font-size-text: 16px;
+  --variant-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
+  --variant-warning: hsla(33.5, 100%, 75.1%, 0.3);
+  --variant-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
+  --variant-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
 }
 ```
 
 ## Variants
+
 ### Variants available :: error, warning, success, informational
+
 <Canvas withSource="none">
-  <Story name="Variants" args={{
-    opened: true,
-    variant: "warning"
-  }}>
+  <Story
+    name="Variants"
+    args={{
+      opened: true,
+      variant: 'warning',
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-alertbox variant="warning" opened>
-</scale-alertbox>
+<scale-alertbox variant="warning" opened> </scale-alertbox>
 ```
-
 
 ## Close Button
+
 <Canvas withSource="none">
-  <Story name="Close Button" args={{
-    opened: true,
-    variant: "error",
-    hasClose: true
-  }}>
+  <Story
+    name="Close Button"
+    args={{
+      opened: true,
+      variant: 'error',
+      hasClose: true,
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-alertbox variant="error" has-close opened>
-</scale-alertbox>
+<scale-alertbox variant="error" has-close opened> </scale-alertbox>
 ```
-
 
 ## Timeout
+
 ### Set to close in 10 seconds. Default - when true: is 3 seconds
+
 <Canvas withSource="none">
-  <Story name="Timeout" args={{
-    opened: true,
-    variant: "success",
-    hasClose: true,
-    timeout: 10000
-  }}>
+  <Story
+    name="Timeout"
+    args={{
+      opened: true,
+      variant: 'success',
+      hasClose: true,
+      timeout: 10000,
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-alertbox variant="success" timeout=10000 has-close opened>
+<scale-alertbox variant="success" timeout="10000" has-close opened>
 </scale-alertbox>
 ```
 
-
 ## Titel & Message
+
 <Canvas withSource="none">
-  <Story name="Titel-Message" args={{
-    opened: true,
-    variant: "warning",
-    hasClose: true,
-  }}>
-    {Template.bind({})}
+  <Story
+    name="Titel-Message"
+    args={{
+      opened: true,
+      variant: 'warning',
+      hasClose: true,
+    }}
+  >
+    {TemplateSlot.bind({})}
   </Story>
 </Canvas>
 

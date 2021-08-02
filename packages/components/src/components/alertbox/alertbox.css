@@ -1,17 +1,24 @@
 :host {
-  --corner-radius: 8px;
-  /* Token not available, up for discussion*/
+  /* Token not available, up for discussion - Alerbox Variants/Colors*/
   --variant-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
   --variant-warning: hsla(33.5, 100%, 75.1%, 0.3);
   --variant-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
   --variant-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
+
+  /* Alertbox styling */
+  --alertbox-border-radius: 8px;
+  --alertbox-border: 1px solid var(--scl-color-white);
+  --alertbox-width: 100%;
+  --alertbox-font-header: var(--scl-fonts-family-sans);
+  --alertbox-font-size-header: 16px;
+  --alertbox-font-text: var(--scl-font-weight-regular);
+  --alertbox-font-size-text: 16px;
 }
 
 .alertbox {
-  border: 1px solid var(--scl-color-white);
-  border-radius: var(--corner-radius);
-  width: 100%;
-  font-size: var(--scl-font-size-12);
+  border: var(--alertbox-border);
+  border-radius: var(--alertbox-border-radius);
+  width: var(--alertbox-width);
   position: relative;
 }
 
@@ -33,16 +40,6 @@
   color: var(--scl-color-black);
 }
 
-/*content*/
-.alertbox .alertbox__content {
-  margin-top: 8px;
-  margin-left: 48px;
-  margin-right: 48px;
-  margin-bottom: 15px;
-  font-family: var(--scl-font-weight-regular);
-  font-size: 16px;
-}
-
 /*header*/
 .alertbox .alertbox__container-header {
   font-weight: bold;
@@ -50,9 +47,19 @@
   margin-right: 48px;
   margin-top: 14px;
   margin-bottom: 14px;
-  font-family: var(--scl-fonts-family-sans);
-  font-size: 16px;
+  font-family: var(--alertbox-font-header);
+  font-size: var(--alertbox-font-size-header);
   line-height: 1.25;
+}
+
+/* Text/Content */
+.alertbox .alertbox__content {
+  margin-top: 8px;
+  margin-left: 48px;
+  margin-right: 48px;
+  margin-bottom: 15px;
+  font-family: var(--alertbox-font-text);
+  font-size: var(--alertbox-font-size-text);
 }
 
 /* Close Icon/Button */
