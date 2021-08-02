@@ -156,3 +156,9 @@ host*,
   top: auto;
   bottom: var(--scale-tooltip-arrow-start-end-offset);
 }
+
+@media screen and (-ms-high-contrast: active) {
+  .tooltip {
+    border: 1px solid yellow;
+  }
+}
