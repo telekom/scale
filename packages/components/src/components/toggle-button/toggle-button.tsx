@@ -126,27 +126,9 @@ export class ToggleButton {
     if (nodes.length < 2) {
       return;
     }
-    const isIconLastNode = this.checkIconPosition(nodes);
-    if (isIconLastNode) {
+    if (nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON') {
       this.iconPosition = 'after';
     }
-  }
-
-  checkIconPosition(nodes: ChildNode[]) {
-    let firstTextPosition = nodes.length;
-    let firstIconPosition = nodes.length;
-    for (let n = 0; n < nodes.length; n++) {
-      if (nodes[n].nodeType === 3) {
-        if (n < firstTextPosition) {
-          firstTextPosition = n;
-        }
-      } else if (nodes[n].nodeType === 1) {
-        if (n < firstIconPosition) {
-          firstIconPosition = n;
-        }
-      }
-    }
-    return firstIconPosition > firstTextPosition;
   }
 
   render() {
