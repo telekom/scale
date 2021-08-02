@@ -27,6 +27,12 @@ import { animateTo, KEYFRAMES } from '../../utils/animate';
 
 const supportsResizeObserver = 'ResizeObserver' in window;
 
+type CloseEventTrigger = 'CLOSE_BUTTON' | 'ESCAPE_KEY' | 'BACKDROP';
+
+export interface BeforeCloseEventDetail {
+  trigger: CloseEventTrigger;
+}
+
 /*
   TODO
   ====
@@ -67,8 +73,12 @@ export class Modal {
   /** Useful for toggling scroll-specific styles */
   @State() hasScroll: boolean = false;
 
-  @Event() scaleOpen?: EventEmitter;
-  @Event() scaleClose?: EventEmitter;
+  /** Fires when the modal has been opened */
+  @Event() scaleOpen: EventEmitter<void>;
+  /** Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing */
+  @Event() scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
+  /** Fires when the modal has been closed */
+  @Event() scaleClose: EventEmitter<void>;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;
@@ -84,7 +94,7 @@ export class Modal {
       return;
     }
     if (event.key === 'Escape') {
-      this.opened = false;
+      this.emitBeforeClose('ESCAPE_KEY');
     }
   }
 
@@ -106,6 +116,12 @@ export class Modal {
     this.hasActionsSlot = actionSlots.length > 0;
     if (bodySlot != null) {
       this.hasBody = bodySlot.assignedElements().length > 0;
+    }
+  }
+
+  emitBeforeClose(trigger: CloseEventTrigger) {
+    if (!this.scaleBeforeClose.emit({ trigger }).defaultPrevented) {
+      this.opened = false;
     }
   }
 
@@ -204,7 +220,6 @@ export class Modal {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-
         <div
           ref={(el) => (this.modalContainer = el)}
           class={this.getCssClassMap()}
@@ -213,7 +228,7 @@ export class Modal {
           <div
             class="modal__backdrop"
             part="backdrop"
-            onClick={() => (this.opened = false)}
+            onClick={() => this.emitBeforeClose('BACKDROP')}
           ></div>
           <div
             data-focus-trap-edge
@@ -226,6 +241,8 @@ export class Modal {
             ref={(el) => (this.modalWindow = el)}
             role="dialog"
             aria-modal="true"
+            aria-label={this.heading}
+            title={this.heading}
           >
             <div
               class="modal__header"
@@ -238,7 +255,7 @@ export class Modal {
                 ref={(el) => (this.closeButton = el)}
                 class="modal__close-button"
                 part="close-button"
-                onClick={() => (this.opened = false)}
+                onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
                 aria-label={this.closeButtonLabel}
               >
                 <slot name="close-icon">

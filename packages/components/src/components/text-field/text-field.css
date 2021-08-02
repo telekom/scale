@@ -23,6 +23,8 @@ scale-text-field {
   --spacing-x: var(--scl-spacing-12);
   --color-disabled: var(--scl-color-background-disabled);
   --background-disabled: var(--scl-color-white);
+  --border-color-readonly: var(--scl-color-grey-0);
+  --background-readonly: var(--scl-color-grey-0);
 
   /*meta*/
   --font-weight-meta: var(--scl-font-weight-bold);
@@ -57,6 +59,7 @@ scale-text-field {
 
   /*label*/
   --color-label: var(--scl-color-grey-60);
+  --color-label-readonly: var(--scl-color-text-standard);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--scl-font-size-16);
@@ -113,11 +116,13 @@ scale-text-field {
   color: var(--color-meta);
 }
 
-.text-field:not(.text-field--disabled) .text-field__control:hover {
+.text-field:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:hover {
   border-color: var(--border-color-hover);
 }
 
-.text-field:not(.text-field--disabled) .text-field__control:focus {
+.text-field:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:focus {
   border-color: var(--border-color-focus);
   box-shadow: var(--box-shadow-focus);
 }
@@ -148,8 +153,9 @@ scale-text-field {
   );
   font-weight: var(--font-weight-label);
 }
-.text-field--has-focus .text-field__label,
+.text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
+  line-height: var(--scl-font-variant-label-size);
   transform: translate(var(--spacing-x), var(--scl-spacing-8));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
@@ -174,13 +180,25 @@ scale-text-field {
   );
   font-weight: var(--font-weight-label-small);
 }
-.text-field--size-small.text-field--has-focus .text-field__label,
+.text-field--size-small.text-field--has-focus:not(.text-field--readonly)
+  .text-field__label,
 .text-field--size-small.animated .text-field__label {
+  line-height: var(--scl-font-variant-label-size);
   transform: translate(var(--spacing-x), var(--scl-spacing-4));
   font-size: var(--font-size-label-focus);
 }
 .text-field--transparent .text-field__control {
   background-color: transparent;
+}
+.text-field--readonly input,
+.text-field--readonly .text-field__control {
+  color: var(--color-label-readonly);
+  border-color: var(--border-color-readonly);
+  background: var(--background-readonly);
+}
+
+.text-field--readonly .text-field__control:focus {
+  box-shadow: var(--box-shadow-focus);
 }
 
 .text-field--disabled label,

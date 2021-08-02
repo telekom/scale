@@ -22,6 +22,26 @@ Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons
 - Nutzer\*innen mehr als eine Option auswählen sollen (nutze hierfür Checkboxen) oder
 - eine Aktion ausführen müssen (nutze hierfür einen Button).
 
+## Elemente
+
+![Image Name](assets/3_components/radio-button/radio-button-elements.png)
+
+### Radio-Button ausgeschaltet (1)
+
+Wenn der Kreis leer ist, gilt eine Option als abgewählt.
+
+### Radio-Button eingeschaltet (2)
+
+Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
+
+### Information (3) (optional)
+
+Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
+
+### Fehlermeldung (4)
+
+Bei widersprüchlicher oder nichtzutreffender Auswahl erscheint eine Fehlermeldung.
+
 ## Label
 
 Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.

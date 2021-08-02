@@ -18,9 +18,9 @@ import classNames from 'classnames';
 })
 export class Tag {
   /** (optional) Tag size */
-  @Prop() size?: string = '';
+  @Prop() size?: 'small';
   /** (optional) Tag variant */
-  @Prop() variant?: string = '';
+  @Prop() variant?: 'secondary';
   /** (optional) Tag href */
   @Prop() href?: string = '';
   /** (optional) Tag target */

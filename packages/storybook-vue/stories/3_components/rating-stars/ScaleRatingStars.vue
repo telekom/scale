@@ -1,10 +1,10 @@
 <template>
   <scale-rating-stars
-    :num-of-stars="numOfStars"
-    :rating="rating"
+    :max="max"
+    :value="value"
     :small="small"
     :disabled="disabled"
-    :aria-translation="ariaTranslation"
+    :aria-label-translation="ariaLabelTranslation"
     :label="label"
   >
   </scale-rating-stars>
@@ -13,11 +13,11 @@
 <script>
 export default {
   props: {
-    numOfStars: { type: Number, default: 5 },
-    rating: { type: Number, default: 3 },
+    max: { type: Number, default: 5 },
+    value: { type: Number, default: 3 },
     small: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
-    ariaTranslation: { type: String },
+    ariaLabelTranslation: { type: String },
     label: { type: String },
   },
 };

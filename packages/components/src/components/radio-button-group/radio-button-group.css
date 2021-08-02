@@ -1,0 +1,66 @@
+:host {
+  /*label*/
+  --font-weight-label: var(--scl-font-weight-medium);
+  --font-size-label: var(--scl-font-size-16);
+
+  /*helper-text*/
+  --font-size-helper-text: var(--scl-font-size-12);
+  --color-helper-text: var(--scl-color-blue-70);
+  --padding-bottom-helper-text: var(--scl-spacing-8);
+  --margin-top-helper-text: var(--scl-spacing-4);
+  --font-weight-helper-text: var(--scl-font-weight-medium);
+
+  /*helper-text--status-error*/
+  --font-size-error-helper-text: var(--scl-font-size-12);
+  --color-error-helper-text: var(--scl-color-red-60);
+  --padding-bottom-error-helper-text: var(--scl-spacing-8);
+  --margin-top-error-helper-text: var(--scl-spacing-4);
+  --font-weight-error-helper-text: var(--scl-font-weight-medium);
+
+  /*title*/
+  --font-size-title: var(--font-size-label);
+  --font-weight-title: var(--scl-font-weight-medium);
+  --padding-bottom-title: var(--scl-spacing-4);
+  --margin-left-title: var(--scl-spacing-2);
+
+  /*slotted items*/
+  --margin-top-slotted-item: var(--scl-spacing-4);
+}
+
+.radio-button-group {
+  display: inline-flex;
+  flex-direction: column;
+  border: 0;
+}
+
+.radio-button-group__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-button-group__helper-text {
+  color: var(--color-helper-text);
+  font-size: var(--font-size-helper-text);
+  margin-top: calc(var(--margin-top-helper-text) * -1);
+  padding-bottom: calc(var(--padding-bottom-helper-text) * -1);
+  font-weight: var(--font-weight-helper-text);
+}
+
+.radio-button-group__helper-text--status-error {
+  color: var(--color-error-helper-text);
+  font-size: var(--font-size-error-helper-text);
+  margin-top: calc(var(--margin-top-error-helper-text) * -1);
+  padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
+  font-weight: var(--font-weight-error-helper-text);
+}
+
+.radio-button-group__title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-title);
+  padding-bottom: var(--padding-bottom-title);
+  margin-left: calc(var(--margin-left-title) * -1.5);
+}
+
+::slotted(*) {
+  margin-top: var(--margin-top-slotted-item);
+}

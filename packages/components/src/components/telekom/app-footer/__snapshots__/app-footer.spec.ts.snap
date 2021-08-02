@@ -5,13 +5,13 @@ exports[`AppFooter should match snapshot 1`] = `
   <mock:shadow-root>
     <div class="footer--variant-standard footer-container">
       <div class="footer-mask"></div>
-      <footer class="footer"><template></template>
+      <footer class="footer">
         <div class="footer-content">
           <div class="footer-branding">
             <app-logo claim=""></app-logo>
           </div>
           <div class="footer-copyright">
-            © Deutsche Telekom GmbH
+            © Deutsche Telekom AG
           </div>
           <nav aria-label="bottom" class="footer-navigation">
             <ul></ul>

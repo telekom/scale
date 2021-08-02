@@ -23,6 +23,13 @@
 | `styles`           | `styles`            | (optional) Injected CSS styles | `string` | `undefined` |
 
 
+## Shadow Parts
+
+| Part     | Description |
+| -------- | ----------- |
+| `"base"` |             |
+
+
 ## Dependencies
 
 ### Depends on

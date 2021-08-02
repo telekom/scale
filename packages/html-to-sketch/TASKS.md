@@ -113,6 +113,7 @@ Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
     - [x] Table disable resize
 
     - [ ] Disappears because: inlining style into slotted element doesn't include the :after pseudo-element, because of course it doesn't. Try materializing the pseudo-element as a real element (use pseudo-element detection & style extraction code from nodeToSketchLayers)
+    - [ ] If you have several slotted elements, only the first instances of each survive the Shadow DOM expansion in nodeToSketchGroup. Might be because the slotted content replacement code only matches the first instance?
 
 # Style overrides
     - [x] Color styles to change icon colors
@@ -425,4 +426,9 @@ Tracking https://gard.telekom.de/gardwiki/display/DTDS/2021+Sketch+File+Progress
 - [ ] Button symbols have 1px outline, messing up the size
 - [ ] Icons not linked (still two groups of icons)
 - [ ] Icons don't take color of buttons if I switch them
+
+Commitments
+===
+- End of this week, we'd have all the easy-to-make-work stuff working
+- There's ~4 components that are broken, fix each in a day and test the rest for issues
 

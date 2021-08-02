@@ -15,14 +15,14 @@ import { RatingStars } from './rating-stars';
 async function simulateMouseEvent(
   page: SpecPage,
   strEvent: string,
-  elementId: string
+  selector: string
 ) {
   const event = new MouseEvent(strEvent, {
     view: window,
     bubbles: true,
     cancelable: true,
   });
-  const element = page.root.shadowRoot.getElementById(elementId);
+  const element = page.root.shadowRoot.querySelector(selector);
   const cancelled = !element.dispatchEvent(event);
 
   let value = 0;
@@ -36,7 +36,7 @@ async function simulateMouseEvent(
 async function simulateKeyboardEvent(
   page: SpecPage,
   strEvent: string,
-  elementId: string,
+  selector: string,
   key: string
 ) {
   const event = new KeyboardEvent(strEvent, {
@@ -45,7 +45,7 @@ async function simulateKeyboardEvent(
     cancelable: true,
     key,
   });
-  const element = page.root.shadowRoot.getElementById(elementId);
+  const element = page.root.shadowRoot.querySelector(selector);
   const cancelled = !element.dispatchEvent(event);
 
   let value = 0;
@@ -62,6 +62,7 @@ describe('RatingStars', () => {
   it('builds', () => {
     expect(new RatingStars()).toBeTruthy();
   });
+
   describe('props', () => {
     beforeEach(async () => {
       page = await newSpecPage({
@@ -71,38 +72,38 @@ describe('RatingStars', () => {
     });
 
     it('has all props', async () => {
-      page.root.numOfStars = 7;
-      page.root.rating = 3;
+      page.root.max = 7;
+      page.root.value = 3;
       page.root.small = true;
       page.root.color = '#00ff00';
-      page.root.ariaTranslation = '3 out of 7 stars';
+      page.root.ariaLabelTranslation = '3 out of 7 stars';
       page.root.precision = 1;
       await page.waitForChanges();
-      expect(page.rootInstance.numOfStars).toBe(7);
-      expect(page.rootInstance.rating).toBe(3);
+      expect(page.rootInstance.max).toBe(7);
+      expect(page.rootInstance.value).toBe(3);
       expect(page.rootInstance.small).toBe(true);
-      expect(page.rootInstance.ariaTranslation).toBe('3 out of 7 stars');
+      expect(page.rootInstance.ariaLabelTranslation).toBe('3 out of 7 stars');
       expect(page.rootInstance.precision).toBe(1);
     });
 
     it('isHovering is set to false on Mouseleave', async () => {
-      simulateMouseEvent(page, 'mouseleave', 'rating');
+      simulateMouseEvent(page, 'mouseleave', '.rating');
       expect(page.rootInstance.isHovering).toBe(false);
     });
 
     it('isHovering is set to true on Mouseenter', async () => {
-      simulateMouseEvent(page, 'mouseenter', 'rating');
+      simulateMouseEvent(page, 'mouseenter', '.rating');
       expect(page.rootInstance.isHovering).toBe(true);
     });
 
     it('change rating on keydown (ArrowLeft/ArrowRight) ', async () => {
       const precision: number = page.rootInstance.precision;
-      expect(await page.rootInstance.rating).toBe(0);
-      simulateKeyboardEvent(page, 'keydown', 'rating', 'ArrowRight');
-      simulateKeyboardEvent(page, 'keydown', 'rating', 'ArrowRight');
-      simulateKeyboardEvent(page, 'keydown', 'rating', 'ArrowLeft');
+      expect(await page.rootInstance.value).toBe(0);
+      simulateKeyboardEvent(page, 'keydown', '.rating', 'ArrowRight');
+      simulateKeyboardEvent(page, 'keydown', '.rating', 'ArrowRight');
+      simulateKeyboardEvent(page, 'keydown', '.rating', 'ArrowLeft');
       const result = 0 + precision + precision - precision;
-      expect(await page.rootInstance.rating).toBe(result);
+      expect(await page.rootInstance.value).toBe(result);
     });
   });
 
@@ -128,7 +129,7 @@ describe('RatingStars', () => {
     it('rating 0 should match snapshot', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars rating="0"></scale-rating-stars>`,
+        html: `<scale-rating-stars value="0"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
@@ -136,7 +137,7 @@ describe('RatingStars', () => {
     it('rating 3 should match snapshot', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars rating="3"></scale-rating-stars>`,
+        html: `<scale-rating-stars value="3"></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
@@ -144,7 +145,7 @@ describe('RatingStars', () => {
     it('rating 2 and disabled should match snapshot', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars rating="2" disabled></scale-rating-stars>`,
+        html: `<scale-rating-stars value="2" disabled></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
@@ -152,7 +153,7 @@ describe('RatingStars', () => {
     it('rating 4 and small should match snapshot', async () => {
       page = await newSpecPage({
         components: [RatingStars],
-        html: `<scale-rating-stars rating="4" small></scale-rating-stars>`,
+        html: `<scale-rating-stars value="4" small></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
     });
@@ -186,7 +187,7 @@ describe('RatingStars', () => {
 
     it('should set isHovering to false onClick', async () => {
       page.rootInstance.isHovering = true;
-      const ratingStars = page.root.shadowRoot.querySelector('#rating');
+      const ratingStars = page.root.shadowRoot.querySelector('.rating');
       await page.waitForChanges();
       ratingStars.dispatchEvent(new Event('click'));
       await page.waitForChanges();
@@ -194,8 +195,8 @@ describe('RatingStars', () => {
     });
 
     it('should change rating onKeyDown', async () => {
-      page.rootInstance.rating = 1;
-      const ratingStars = page.root.shadowRoot.querySelector('#rating');
+      page.rootInstance.value = 1;
+      const ratingStars = page.root.shadowRoot.querySelector('.rating');
       await page.waitForChanges();
       ratingStars.dispatchEvent(
         new KeyboardEvent('keydown', {
@@ -206,7 +207,7 @@ describe('RatingStars', () => {
         })
       );
       await page.waitForChanges();
-      expect(page.rootInstance.rating).toBe(2);
+      expect(page.rootInstance.value).toBe(2);
     });
   });
 });

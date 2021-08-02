@@ -86,6 +86,8 @@ describe('Slider', () => {
       expect(page.rootInstance.min).toBe(0);
       expect(page.rootInstance.max).toBe(100);
       expect(page.rootInstance.step).toBe(1);
+      expect(page.rootInstance.unit).toBe('%');
+      expect(page.rootInstance.decimals).toBe(0);
       expect(page.rootInstance.showValue).toBe(true);
       expect(page.rootInstance.customColor).toBe('');
       expect(page.rootInstance.disabled).toBe(false);
@@ -102,8 +104,10 @@ describe('Slider', () => {
       page.root.min = 10;
       page.root.max = 90;
       page.root.step = 2;
+      page.root.unit = '';
+      page.root.decimals = 2;
       page.root.label = 'slider label';
-      page.root.showValue = 'false';
+      page.root.showValue = false;
       page.root.customColor = 'magenta';
       page.root.disabled = 'true';
       page.root.trackSmall = 'true';
@@ -115,6 +119,8 @@ describe('Slider', () => {
       expect(page.rootInstance.min).toBe(10);
       expect(page.rootInstance.max).toBe(90);
       expect(page.rootInstance.step).toBe(2);
+      expect(page.rootInstance.unit).toBe('');
+      expect(page.rootInstance.decimals).toBe(2);
       expect(page.rootInstance.label).toBe('slider label');
       expect(page.rootInstance.showValue).toBe(false);
       expect(page.rootInstance.customColor).toBe('magenta');
@@ -123,41 +129,6 @@ describe('Slider', () => {
       expect(page.rootInstance.thumbLarge).toBe(true);
       expect(page.rootInstance.sliderId).toBe('sliderID');
       expect(page.rootInstance.styles).toBe('background : red');
-    });
-  });
-
-  describe('functions', () => {
-    it('setPosition(-20) returns 0', () => {
-      const element = new Slider();
-      element.setPosition(-20);
-      expect(element.value).toBe(0);
-    });
-
-    it('setPosition(120) returns 100', () => {
-      const element = new Slider();
-      element.setPosition(120);
-      expect(element.value).toBe(100);
-    });
-
-    it('setPosition(50) returns 50', () => {
-      const element = new Slider();
-      element.setPosition(50);
-      expect(element.value).toBe(50);
-    });
-
-    it('currentPosition()', () => {
-      const element = new Slider();
-      element.value = 22;
-      element.max = 90;
-      element.min = 10;
-      expect(element.currentPosition()).toBe('15%');
-    });
-
-    it('onDragEnd()', () => {
-      const element = new Slider();
-      element.dragging = true;
-      element.onDragEnd();
-      expect(element.dragging).toBe(false);
     });
   });
 

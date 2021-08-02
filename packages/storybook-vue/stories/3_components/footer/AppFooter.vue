@@ -3,7 +3,11 @@
     :claim-lang="claimLang"
     :footer-navigation="footerNavigation"
     :variant="variant"
-  ></scale-app-footer>
+    :copyright="copyright"
+  >
+    <slot name="logo"></slot>
+    <slot name="navigation"></slot>
+  </scale-app-footer>
 </template>
 
 <script>
@@ -11,7 +15,8 @@ export default {
   props: {
     claimLang: String,
     footerNavigation: String,
-    variant: String
-  }
+    variant: String,
+    copyright: String,
+  },
 };
 </script>

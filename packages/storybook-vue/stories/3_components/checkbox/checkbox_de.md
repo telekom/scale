@@ -7,7 +7,7 @@ Mit Checkboxen aktivieren Nutzer\*innen Optionen. So können sie einfache Ja-Nei
 
 ## Allgemein
 
-Eine Checkbox ist ein Steuerelement mit dem Nutzer\*innen zwischen zwei Optionen wählen können. Die Checkbox besteht aus einem Kontrollkästchen und einem entsprechenden Label. Das Aktivieren einer Checkbox hat keine Auswirkung auf andere Auswahlmöglichkeiten. Eine Option gilt als ausgewählt, wenn die Checkbox mit einem Häkchen versehen ist. Im Initialzustand kann eine Checkbox ein- oder ausgeschaltet sein.
+Eine Checkbox ist ein Steuerelement, mit dem Nutzer\*innen zwischen zwei Optionen wählen können. Die Checkbox besteht aus einem Kontrollkästchen und einem entsprechenden Label. Das Aktivieren einer Checkbox hat keine Auswirkung auf andere Auswahlmöglichkeiten. Eine Option gilt als ausgewählt, wenn die Checkbox mit einem Häkchen versehen ist. Im Initialzustand kann eine Checkbox ein- oder ausgeschaltet sein.
 
 ![Image Name](assets/3_components/checkbox/checkbox.png)
 
@@ -22,6 +22,26 @@ Eine Checkbox ist ein Steuerelement mit dem Nutzer\*innen zwischen zwei Optionen
 ### Verwende besser keine Checkboxen, wenn
 
 - zwei Optionen sich gegenseitig ausschließen. Nutze dafür einen Radio-Button.
+
+## Elemente
+
+![Image Name](assets/3_components/checkbox/checkbox-elements.png)
+
+### Checkbox ausgeschaltet (1)
+
+Wenn kein Häkchen vorhanden ist, gilt eine Option als abgewählt.
+
+### Checkbox eingeschaltet (2)
+
+Ist eine Checkbox mit einem Häkchen versehen, so gilt die Option als ausgewählt.
+
+### Information (3) (optional)
+
+Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
+
+### Fehlermeldung (4)
+
+Bei einer nicht eingeschalteten, aber verpflichtenden Auswahl einer Option, die z.B. notwendig ist, um die nächsten Schritte im Prozess ausführen zu können, erscheint eine Fehlermeldung.
 
 ## Label der Checkbox
 
@@ -48,7 +68,7 @@ Wenn Checkboxen zu einer übergeordneten Auswahloption gehören, dann kannst du 
 
 ## Verpflichtende Eingaben
 
-Verwende ein Sternchen (\*) hinter dem Text, wenn eine Checkbox angekreuzt werden muss.
+Verwende ein Sternchen (\*) hinter dem Text, wenn eine Checkbox ausgewählt werden muss.
 
 ![Image Name](assets/3_components/checkbox/checkbox_required_input.png)
 

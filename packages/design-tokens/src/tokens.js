@@ -9,6 +9,30 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/**
+ * The tokens are organized in categories, and each category has sections,
+ * which include the actual key/value pairs.
+ *
+ * CATEGORY-SECTION-KEY: VALUE
+ *
+ * The name of the token is determined by this structure. For example,
+ * if we look at the family section within the font category, we'll find
+ * at least the sans and mono values, so the tokens —in the CSS output—
+ * look like this:
+ *
+ * ```css
+ *   :root {
+ *     --{namespace}-{category}-{section}-{key}: {value};
+ *     --scl-font-family-sans: TeleNeoWeb, sans-serif;
+ *     --scl-font-family-mono: monospace;
+ *   }
+ * ```
+ *
+ * Sometimes you don't need a section, for this there's the special
+ * keyword DEFAULT we can use to omit the section name in the
+ * resulting token name.
+ */
+
 import { Color, Shadow } from './factories.js';
 
 export const NAMESPACE_PREFIX = 'scl';
@@ -45,7 +69,7 @@ tokens[SPACING] = {
 
 /* TYPOGRAPHY */
 const family = {
-  sans: process.env.WHITELABEL ? 'sans-serif' : 'TeleNeoWeb, sans-serif',
+  sans: 'sans-serif',
   mono: 'monospace',
 };
 
@@ -129,7 +153,7 @@ tokens[TYPE_VARIANT] = {
   heading_5: {
     ...defaultVariant,
     size: size['20'],
-    lineHeight: lineHeight['125'],
+    lineHeight: lineHeight['120'],
     weight: weight.extrabold,
   },
   heading_4: {
@@ -324,7 +348,12 @@ tokens[COLOR] = {
     overlay: Color('rgba(108, 108, 108, 0.7)'),
     disabled: palette.grey20,
     success: palette.green100,
-    error: palette.red60,
+    error: palette.red70,
+  },
+  functional: {
+    red: palette.red70,
+    green: palette.green100,
+    blue: palette.blue70,
   },
 };
 
@@ -407,28 +436,7 @@ tokens[Z_INDEX] = {
   },
 };
 
-export default function ({ isWhitelabel }) {
+export default function () {
   // a copy to avoid any outputs accidentally mutating it
-  return isWhitelabel
-    ? { ...tokens }
-    : {
-        ...tokens,
-        [COLOR]: {
-          ...tokens[COLOR],
-          DEFAULT: {
-            ...palette,
-            primary: Color('#E20074'),
-            primaryHover: Color('#F90984'),
-            primaryActive: Color('#CB0068'),
-            focus: palette.blue50,
-          },
-        },
-        [TYPOGRAPHY]: {
-          ...tokens[TYPOGRAPHY],
-          family: {
-            sans: 'TeleNeoWeb, sans-serif',
-            mono: 'monospace',
-          },
-        },
-      };
+  return { ...tokens };
 }

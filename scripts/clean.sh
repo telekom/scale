@@ -9,5 +9,6 @@ rimraf ./packages/*/build;
 rimraf ./packages/*/dist;
 rimraf ./packages/docs/stencil;
 rimraf ./packages/*/tsconfig.tsbuildinfo;
-rimraf ./yarn.lock;
+# we want to keep yarn.lock to avoid mysterious compile errors with Angular deps
+# rimraf ./yarn.lock;
 rimraf ./node_modules;

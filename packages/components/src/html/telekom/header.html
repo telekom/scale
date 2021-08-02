@@ -38,50 +38,8 @@ width: 100%; */
         <button id="change-button" style="margin: 1em">change sector</button>
       </div>
       <div class="block">Two</div>
-      <scale-app-header slot="header" id="header">
-        <div slot="logo">
-          <app-logo claim href="#custom" logo-title="Custom"></app-logo>
-        </div>
-        <div slot="menu-main">
-          <scale-nav-main is-active name="Menu item #1"></scale-nav-main>
-          <scale-nav-main name="Menu item #2" id="nav-main-with-mega-menu">
-            <app-mega-menu>
-              <div slot="custom-body"><h1>hello</h1></div>
-            </app-mega-menu></scale-nav-main
-          >
-          <scale-nav-main name="Menu item #3"></scale-nav-main>
-          <scale-nav-main name="Menu item #4"></scale-nav-main>
-        </div>
-        <div slot="menu-icon">
-          <scale-nav-icon icon="action-mute"> Mute </scale-nav-icon>
-          <scale-nav-icon icon="action-play"> Play </scale-nav-icon>
-          <scale-nav-icon icon="action-pause"> Pause </scale-nav-icon>
-          <scale-nav-icon icon="action-fast-forward"> Forward </scale-nav-icon>
-          <scale-nav-icon icon="action-favorite"> Favorite </scale-nav-icon>
-        </div>
-        <div slot="menu-sector">
-          <scale-nav-segment is-active="true" href="/private">
-            Private
-          </scale-nav-segment>
-          <scale-nav-segment href="/business"> Business </scale-nav-segment>
-        </div>
-        <div slot="menu-addon">
-          <scale-nav-segment href="/shop"> Shop </scale-nav-segment>
-          <scale-nav-segment is-active="true" href="/contact">
-            Contact
-          </scale-nav-segment>
-        </div>
-        <div slot="menu-mobile" id="menu-mobile">
-          <ul>
-            <li>Custom item #1</li>
-            <li>Custom item #2</li>
-            <li>Custom item #3</li>
-            <li>Custom item #4</li>
-          </ul>
-        </div>
-      </scale-app-header>
     </scale-app-shell>
-    <scale-app-footer id="footer"></scale-app-footer>
+    <scale-app-footer id="footer" variant="angular"></scale-app-footer>
 
     <script>
       const changeButton = document.getElementById('change-button');
@@ -92,16 +50,17 @@ width: 100%; */
             : 'Privatkunden';
       });
       const app = document.getElementById('app');
-      const header = document.getElementById('header');
       const footer = document.getElementById('footer');
-      const mobileMenu = document.getElementById('menu-mobile');
-      const navMainWithMegaMenu = document.getElementById(
-        'nav-main-with-mega-menu'
-      );
       app.claimLang = 'de';
       app.activeRouteId = 'Smartphone-Tarife';
       app.activeSectorId = 'Privatkunden';
-      header.mainNavigation = [
+      app.logoHref = '/hello';
+      app.logoTitle = 'Logo';
+      app.logoClick = (e) => {
+        e.preventDefault();
+        console.log('hello');
+      };
+      app.mainNavigation = [
         {
           name: 'Mobilfunk Menu',
           id: 'Mobilfunk Menu',
@@ -420,7 +379,7 @@ width: 100%; */
           },
         },
       ];
-      header.iconNavigation = [
+      app.iconNavigation = [
         {
           name: 'Suche',
           id: 'Suche',
@@ -454,12 +413,6 @@ width: 100%; */
           openedName: 'Schließen',
         },
       ];
-      header.logoHref = '/hello';
-      header.logoTitle = 'Logo';
-      header.logoClick = (e) => {
-        e.preventDefault();
-        console.log('hello');
-      };
       app.sectorNavigation = [
         {
           name: 'Privatkunden',
@@ -504,9 +457,10 @@ width: 100%; */
           href: '#terms-and-conditions',
         },
         {
-          name: 'Imprint',
-          id: 'Imprint',
-          href: '#imprint',
+          name: 'Legal notice',
+          id: 'Legal notice',
+          href: '#legal-notice',
+          icon: 'action-add',
         },
         {
           name: 'Data privacy',
@@ -516,20 +470,6 @@ width: 100%; */
         },
       ];
       footer.claimLang = 'de';
-      navMainWithMegaMenu.addEventListener('mouseenter', function () {
-        navMainWithMegaMenu.isMegaMenuVisible = true;
-        header.isMegaMenuVisible = true;
-      });
-      navMainWithMegaMenu.addEventListener('mouseleave', function () {
-        navMainWithMegaMenu.isMegaMenuVisible = false;
-        header.isMegaMenuVisible = false;
-      });
-      document.body.addEventListener('keydown', function (event) {
-        if (['Escape', 'Esc'].includes(event.key)) {
-          event.preventDefault();
-          header.dispatchEvent(new Event('closeMenu'));
-        }
-      });
     </script>
   </body>
 </html>

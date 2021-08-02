@@ -102,6 +102,8 @@ scale-text-field {
   --spacing-x: var(--scl-spacing-12);
   --color-disabled: var(--scl-color-background-disabled);
   --background-disabled: var(--scl-color-white);
+  --border-color-readonly: var(--scl-color-grey-0);
+  --background-readonly: var(--scl-color-grey-0);
 
   /*meta*/
   --font-weight-meta: var(--scl-font-weight-bold);
@@ -136,6 +138,7 @@ scale-text-field {
 
   /*label*/
   --color-label: var(--scl-color-grey-60);
+  --color-label-readonly: var(--scl-color-text-standard);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--scl-font-size-16);
@@ -161,7 +164,15 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field @scaleChange="handleChange" @scaleBlur="handleBlur" @scaleFocus="handleFocus" @scaleKeyDown="handleKeyDown"></scale-text-field>
+<scale-text-field id="text-field" label="Text With Events"></scale-text-field>
+
+<script>
+  const textField = document.getElementById('text-field');
+  textField.addEventListener('scaleChange', () => { /* ... */ });
+  textField.addEventListener('scaleBlur', () => { /* ... */ });
+  textField.addEventListener('scaleFocus', () => { /* ... */ });
+  textField.addEventListener('scaleKeyDown', () => { /* ... */ });
+</script>
 ```
 
 
@@ -199,7 +210,7 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field label="Helper Text" helperText="Make sure to fill this"></scale-text-field>
+<scale-text-field label="Helper Text" helper-text="Make sure to fill this"></scale-text-field>
 ```
 
 
@@ -261,14 +272,13 @@ scale-text-field {
 ```
 
 
-<!--
-## Readonly 
+## Readonly
 
 <Canvas withSource="none">
   <Story
-    name="Readonly"
+    name="Read Only"
     args={{
-      label: "Readonly",
+      label: "Read only",
       readonly: true,
       value: "This cannot be changed"
     }}
@@ -278,9 +288,8 @@ scale-text-field {
 </Canvas>
 
 ```html
-<scale-text-field label="Readonly" value="This cannot be changed" readonly></scale-text-field>
+<scale-text-field label="Read only" value="This cannot be changed" readonly></scale-text-field>
 ```
--->
 
 
 ## Max Length With Counter

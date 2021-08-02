@@ -49,6 +49,9 @@ export const config: Config = {
       ],
     },
     {
+      type: 'dist-custom-elements-bundle',
+    },
+    {
       type: 'www',
       serviceWorker: null, // disable service workers
       copy: [
@@ -59,6 +62,9 @@ export const config: Config = {
         },
         { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
         { src: './html/*', dest: './', warn: true },
+        ...(!process.env.WHITELABEL
+          ? [{ src: './html/telekom/*', dest: './', warn: true }]
+          : []),
       ],
     },
     {
