@@ -15,7 +15,7 @@ Nutzer\*innen die Möglichkeit haben sollen, einen längeren Text einzugeben (z.
 
 ### Verwende besser keine Text-Areas, wenn
 
-Nutzer\*innen nur sehr kurze Texte eingeben müssen (hier eigenen sich Text-Fields).
+Nutzer\*innen nur sehr kurze Texte eingeben müssen (hier eignen sich Text-Fields).
 
 ## Elemente
 
@@ -31,7 +31,7 @@ Per Klick/Tap auf die Text-Area erscheint ein Platzhaltertext mit einer kurzen E
 
 ### Informationstext (3) (optional)
 
-Wenn nötig, kannst du auch noch eine zusätzliche Information angeben (z. B. „Diese Angaben bleiben anonym“).
+Wenn nötig, kannst du auch noch eine zusätzliche Information angeben (z. B. „Diese Angaben bleiben anonym.“).
 
 ### Zeichenanzahl (4) (optional)
 
@@ -39,7 +39,7 @@ Wenn die Anzahl der Zeichen begrenzt ist, zeige die maximale und die aktuell ver
 
 ### Fehlermeldung (5)
 
-Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldung (z. B. „Bitte füllen Sie dieses Feld aus"). Wenn die Text-Area einen Informationstext besitzt, erscheint der Fehlertext vorübergehend an dessen Stelle.
+Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldung (z. B. „Bitte füllen Sie dieses Feld aus."). Wenn die Text-Area einen Informationstext besitzt, erscheint der Fehlertext vorübergehend an dessen Stelle.
 
 ### Variable Größe (6) (optional)
 
@@ -56,6 +56,12 @@ Ist der Text länger als der sichtbare Bereich, kannst du ihn scrollbar machen. 
 Ist die Text-Area deaktiviert, können Nutzer\*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
 
 ![Image Name](assets/3_components/text-area/text_area_disabled.png)
+
+## Read-Only
+
+Read-Only-Text-Areas zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer\*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
+
+![Image Name](assets/3_components/text-area/text-area-read-only.png)
 
 ## Verwandte Komponenten
 

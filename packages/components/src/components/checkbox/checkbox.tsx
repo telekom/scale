@@ -41,6 +41,8 @@ export class Checkbox {
   @Prop() disabled?: boolean;
   /** (optional) Active switch */
   @Prop({ reflect: true }) checked?: boolean = false;
+  /** (optional) indeterminate */
+  @Prop({ reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string | number | null = '';
   /** (optional) Input checkbox id */
@@ -66,28 +68,17 @@ export class Checkbox {
       <Host checked={this.checked}>
         <div class={this.getCssClassMap()}>
           <label class="checkbox__label-wrapper" htmlFor={this.inputId}>
-            <input
-              type="checkbox"
-              name={this.name}
-              id={this.inputId}
-              onChange={(e: any) => {
-                this.checked = e.target.checked;
-                // bubble event through the shadow dom
-                this.scaleChange.emit({ value: this.checked });
-              }}
-              value={this.value}
-              checked={this.checked}
-              disabled={this.disabled}
-              {...ariaInvalidAttr}
-              {...ariaDescribedByAttr}
-            />
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>
               {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {this.checked && (
+              {this.checked && !this.indeterminate && (
                 <scale-icon-action-success
+                  class="checkbox__icon"
                   decorative
                 ></scale-icon-action-success>
+              )}
+              {this.indeterminate && (
+                <scale-icon-action-indeterminate class="checkbox__icon"></scale-icon-action-indeterminate>
               )}
             </div>
             <span class="checkbox__label">
@@ -104,6 +95,24 @@ export class Checkbox {
               </div>
             )}
           </label>
+          <input
+            type="checkbox"
+            name={this.name}
+            id={this.inputId}
+            onChange={(e: any) => {
+              if (this.indeterminate) {
+                this.indeterminate = false;
+              }
+              this.checked = e.target.checked;
+              // bubble event through the shadow dom
+              this.scaleChange.emit({ value: this.checked });
+            }}
+            value={this.value}
+            checked={this.checked}
+            disabled={this.disabled}
+            {...ariaInvalidAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
+          />
         </div>
       </Host>
     );
@@ -112,8 +121,9 @@ export class Checkbox {
   getCssClassMap() {
     return classNames(
       'checkbox',
-      this.checked && `checkbox--checked`,
-      this.disabled && `checkbox--disabled`,
+      this.checked ? `checkbox--checked` : `checkbox--not-checked`,
+      this.indeterminate && `checkbox--indeterminate`,
+      this.disabled ? `checkbox--disabled` : `checkbox--enabled`,
       this.status && `checkbox--status-${this.status}`
     );
   }

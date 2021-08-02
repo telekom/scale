@@ -384,6 +384,9 @@
 .tbody__cell scale-progress-bar {
   flex-grow: 1;
 }
+.tbody__actions scale-button {
+  margin-right: var(--scl-spacing-8);
+}
 
 /* Info block */
 .info {

@@ -9,9 +9,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { renderIcon } from '../../../utils/render-icon';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 const readData = (data) => {
   let parsedData;
@@ -29,37 +30,20 @@ const readData = (data) => {
   shadow: true,
 })
 export class AppFooter {
+  @Element() hostElement: HTMLStencilElement;
   @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
   @Prop() copyright?: string = '© Deutsche Telekom AG';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  hasSlotLogo: boolean;
+  hasSlotNavigation: boolean;
 
-  footerMenu() {
-    return (
-      <ul>
-        {readData(this.footerNavigation).map((item) => (
-          <li class="footer-navigation__item">
-            <a
-              class="footer-navigation__item-link"
-              href={item.href || 'javascript:void(0);'}
-              onClick={(event) => {
-                if (typeof item.onClick === 'function') {
-                  item.onClick(event);
-                }
-              }}
-            >
-              {item.icon &&
-                renderIcon({
-                  tag: `scale-icon-${item.icon}`,
-                  attributes: { class: 'footer-navigation__item-link' },
-                })}
-              <span>{item.name}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+  componentWillLoad() {
+    this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+    this.hasSlotNavigation = !!this.hostElement.querySelector(
+      '[slot="navigation"]'
     );
   }
 
@@ -73,11 +57,42 @@ export class AppFooter {
           <footer class="footer">
             <div class="footer-content">
               <div class="footer-branding">
-                <app-logo claim claimLang={this.claimLang}></app-logo>
+                {this.hasSlotLogo ? (
+                  <slot name="logo"></slot>
+                ) : (
+                  <app-logo claim claimLang={this.claimLang}></app-logo>
+                )}
               </div>
               <div class="footer-copyright">{this.copyright}</div>
               <nav aria-label="bottom" class="footer-navigation">
-                {this.footerMenu()}
+                {this.hasSlotNavigation ? (
+                  <slot name="navigation"></slot>
+                ) : (
+                  <ul>
+                    {readData(this.footerNavigation).map((item) => (
+                      <li class="footer-navigation__item">
+                        <a
+                          class="footer-navigation__item-link"
+                          href={item.href || 'javascript:void(0);'}
+                          onClick={(event) => {
+                            if (typeof item.onClick === 'function') {
+                              item.onClick(event);
+                            }
+                          }}
+                        >
+                          {item.icon &&
+                            renderIcon({
+                              tag: `scale-icon-${item.icon}`,
+                              attributes: {
+                                class: 'footer-navigation__item-link',
+                              },
+                            })}
+                          <span>{item.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </nav>
             </div>
           </footer>

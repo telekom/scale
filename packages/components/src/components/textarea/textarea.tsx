@@ -164,7 +164,7 @@ export class Textarea {
             {...(!!this.rows ? { rows: this.rows } : {})}
             {...(!!this.cols ? { cols: this.cols } : {})}
             {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           />
 
           {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
@@ -200,6 +200,7 @@ export class Textarea {
       this.disabled && `textarea--disabled`,
       this.transparent && 'textarea--transparent',
       this.status && `textarea--status-${this.status}`,
+      this.readonly && `textarea--readonly`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

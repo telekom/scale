@@ -155,6 +155,7 @@ scale-text-field {
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
+  line-height: var(--scl-font-variant-label-size);
   transform: translate(var(--spacing-x), var(--scl-spacing-8));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
@@ -182,6 +183,7 @@ scale-text-field {
 .text-field--size-small.text-field--has-focus:not(.text-field--readonly)
   .text-field__label,
 .text-field--size-small.animated .text-field__label {
+  line-height: var(--scl-font-variant-label-size);
   transform: translate(var(--spacing-x), var(--scl-spacing-4));
   font-size: var(--font-size-label-focus);
 }

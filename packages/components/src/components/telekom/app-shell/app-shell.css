@@ -12,48 +12,30 @@
 :host {
   --background: var(--scl-color-background-standard, #fff);
   --spacing-x: var(--scl-spacing-24);
-  --radius: var(--scl-radius-8);
-
-  --header-nav-height: 56px;
-  --header-brand-height: 72px;
-  --header-border-radius: var(--radius);
-  --header-transition-speed: 0.3s;
-  --header-brand-collapsed-height: 4px;
-  --header-max-width: inherit;
+  --min-height: 100vh;
 }
+
 .sr-only {
   position: absolute;
   left: -10000px;
   overflow: hidden;
 }
 
-.content {
+.shell {
+  display: flex;
+  min-height: var(--min-height);
+  flex-direction: column;
+}
+
+.shell .content {
   background: var(--background);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
+  flex: 1;
 }
 
-@media (max-width: 1023px) {
-  .shell .content {
-    padding-top: calc(
-      var(--header-brand-collapsed-height) + var(--header-nav-height)
-    );
-  }
-}
-@media (min-width: 1024px) {
-  .shell.shell--sticky .content {
-    padding-top: calc(
-      var(--header-brand-collapsed-height) + var(--header-nav-height)
-    );
-  }
-  .content {
-    transition: padding-top var(--header-transition-speed) ease-in-out;
-    padding-top: calc(var(--header-brand-height) + var(--header-nav-height));
-  }
-}
 @media (min-width: 1552px) {
   .shell .content {
-    margin: 0 auto;
     max-width: var(--header-max-width);
   }
 }
