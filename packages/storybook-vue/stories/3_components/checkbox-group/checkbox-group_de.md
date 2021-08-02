@@ -3,11 +3,11 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Diese Komponente enthält die Telekom Checkbox-Group. Diese dient dazu, die Telekom Checkboxen in einer Liste darzustellen.
+Diese Komponente enthält die Scale Checkbox-Group. Diese dient dazu, die Scale Checkboxen in einer Liste darzustellen.
 
-Die oberste Checkbox richtet sich nach den darunter liegenden Checkboxes und kann drei verschiedene Zustände haben (leer, markiert und unbestimmt).
+Die oberste Checkbox richtet sich nach den darunter liegenden Checkboxen und kann drei verschiedene Zustände haben (leer, markiert und unbestimmt).
 
-Mit der obersten Checkbox können alle darunter liegenden Checkboxen auf empty oder checked gesetzt werden. Deaktivierte Checkboxes sind hiervon nicht betroffen
+Mit der obersten Checkbox können alle darunter liegenden Checkboxen auf empty oder checked gesetzt werden. Deaktivierte Checkboxen sind hiervon nicht betroffen.
 
 ## Beta-Komponente
 
