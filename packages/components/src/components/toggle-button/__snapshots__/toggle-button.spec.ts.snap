@@ -61,9 +61,9 @@ exports[`Toggle Button snapshots iconBefore 1`] = `
 `;
 
 exports[`Toggle Button snapshots iconOnly 1`] = `
-<scale-toggle-button icon-position="before" radius="both" selected="" toggle-button-id="toggle-button-5">
+<scale-toggle-button icon-position="after" radius="both" selected="" toggle-button-id="toggle-button-5">
   <mock:shadow-root>
-    <button aria-description="selected" aria-pressed="" class="toggle-button toggle-button--both toggle-button--icon-before toggle-button--large toggle-button--light toggle-button--primary toggle-button--selected" id="toggle-button-5" part="toggle-button large primary toggle-button--icon-before selected both light" type="button">
+    <button aria-description="selected" aria-pressed="" class="toggle-button toggle-button--both toggle-button--icon-after toggle-button--large toggle-button--light toggle-button--primary toggle-button--selected" id="toggle-button-5" part="toggle-button large primary toggle-button--icon-after selected both light" type="button">
       <slot></slot>
     </button>
   </mock:shadow-root>
