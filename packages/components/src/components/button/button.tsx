@@ -86,7 +86,7 @@ export class Button {
    * Detect whether the last node is an element (not text).
    * If so, it's probably an icon, so we set `iconPosition` to `after`.
    */
-   setIconPositionProp() {
+  setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
