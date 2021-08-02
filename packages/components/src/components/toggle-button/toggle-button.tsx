@@ -99,13 +99,11 @@ export class ToggleButton {
   }
 
   handleIconSize() {
-    const children = Array.from(this.hostElement.children);
-    const scaleIcons = children.filter((child) => {
-      return child.tagName.substr(0, 10) === 'SCALE-ICON';
+    Array.from(this.hostElement.children).forEach((child) => {
+      if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
+        child.setAttribute('size', iconSizes[this.size]);
+      }
     });
-    if (scaleIcons.length > 0) {
-      scaleIcons[0].setAttribute('size', iconSizes[this.size]);
-    }
   }
 
   handleClick = (event: MouseEvent) => {
@@ -123,10 +121,10 @@ export class ToggleButton {
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
     });
-    if (nodes.length < 2) {
-      return;
-    }
-    if (nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON') {
+    if (
+      !this.iconOnly &&
+      nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON'
+    ) {
       this.iconPosition = 'after';
     }
   }
