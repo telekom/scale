@@ -1,57 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alertbox handle color prop 1`] = `
-<scale-alertbox icon="true" opened="">
+exports[`Alertbox handle variant prop 1`] = `
+<scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--color-black alertbox--icon" part="alertbox color-black icon">
-      <div class="alertbox__container" part="container">
-        <scale-icon-action-success accessibility-title="success" class="alertbox__icon-success"></scale-icon-action-success>
-        <header class="alertbox__container-header" part="header">
-          <slot name="header">
-            <p>
-              Missing Title
-            </p>
-          </slot>
-        </header>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Label
-</scale-alertbox>
-`;
-
-exports[`Alertbox handle color prop 2`] = `
-<scale-alertbox icon="true" opened="">
-  <mock:shadow-root>
-    <div class="alertbox alertbox--color-blue alertbox--icon" part="alertbox color-blue icon">
-      <div class="alertbox__container" part="container">
-        <scale-icon-action-informational accessibility-title="info" class="alertbox__icon-info"></scale-icon-action-informational>
-        <header class="alertbox__container-header" part="header">
-          <slot name="header">
-            <p>
-              Missing Title
-            </p>
-          </slot>
-        </header>
-      </div>
-    </div>
-  </mock:shadow-root>
-  Label
-</scale-alertbox>
-`;
-
-exports[`Alertbox handle color prop 3`] = `
-<scale-alertbox icon="true" opened="">
-  <mock:shadow-root>
-    <div class="alertbox alertbox--color-error alertbox--icon" part="alertbox color-error icon">
+    <div class="alertbox alertbox--variant-error" part="alertbox variant-error">
       <div class="alertbox__container" part="container">
         <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
         <header class="alertbox__container-header" part="header">
-          <slot name="header">
-            <p>
+          <p>
+            <slot name="header">
               Missing Title
-            </p>
-          </slot>
+            </slot>
+          </p>
         </header>
       </div>
     </div>
@@ -60,18 +20,18 @@ exports[`Alertbox handle color prop 3`] = `
 </scale-alertbox>
 `;
 
-exports[`Alertbox handle color prop 4`] = `
-<scale-alertbox icon="true" opened="">
+exports[`Alertbox handle variant prop 2`] = `
+<scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--color-yellow alertbox--icon" part="alertbox color-yellow icon">
+    <div class="alertbox alertbox--variant-warning" part="alertbox variant-warning">
       <div class="alertbox__container" part="container">
-        <scale-icon-action-warning accessibility-title="warning" class="alertbox__icon-warning"></scale-icon-action-warning>
+        <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
         <header class="alertbox__container-header" part="header">
-          <slot name="header">
-            <p>
+          <p>
+            <slot name="header">
               Missing Title
-            </p>
-          </slot>
+            </slot>
+          </p>
         </header>
       </div>
     </div>
@@ -80,18 +40,38 @@ exports[`Alertbox handle color prop 4`] = `
 </scale-alertbox>
 `;
 
-exports[`Alertbox handle color prop 5`] = `
-<scale-alertbox icon="true" opened="">
+exports[`Alertbox handle variant prop 3`] = `
+<scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--color-green alertbox--icon" part="alertbox color-green icon">
+    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational">
       <div class="alertbox__container" part="container">
-        <scale-icon-action-success accessibility-title="warsuccessning" class="alertbox__icon-success"></scale-icon-action-success>
+        <scale-icon-alert-information accessibility-title="information" class="alertbox__icon-information"></scale-icon-alert-information>
         <header class="alertbox__container-header" part="header">
-          <slot name="header">
-            <p>
+          <p>
+            <slot name="header">
               Missing Title
-            </p>
-          </slot>
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-alertbox>
+`;
+
+exports[`Alertbox handle variant prop 4`] = `
+<scale-alertbox opened="">
+  <mock:shadow-root>
+    <div class="alertbox alertbox--variant-success" part="alertbox variant-success">
+      <div class="alertbox__container" part="container">
+        <scale-icon-action-success accessibility-title="success" class="alertbox__icon-success"></scale-icon-action-success>
+        <header class="alertbox__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
         </header>
       </div>
     </div>
@@ -103,14 +83,15 @@ exports[`Alertbox handle color prop 5`] = `
 exports[`Alertbox should match snapshot 1`] = `
 <scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--color-white" part="alertbox color-white">
+    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational">
       <div class="alertbox__container" part="container">
+        <scale-icon-alert-information accessibility-title="information" class="alertbox__icon-information"></scale-icon-alert-information>
         <header class="alertbox__container-header" part="header">
-          <slot name="header">
-            <p>
+          <p>
+            <slot name="header">
               Missing Title
-            </p>
-          </slot>
+            </slot>
+          </p>
         </header>
       </div>
     </div>

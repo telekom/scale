@@ -18,8 +18,8 @@ describe('Alertbox', () => {
   });
 
   it('should handle css classes', () => {
-    element.variant = 'magenta';
-    expect(element.getCssClassMap()).toContain('variant-magenta');
+    element.variant = 'warning';
+    expect(element.getCssClassMap()).toContain('variant-warning');
   });
 
   it('should test the close() fucntion', () => {
@@ -51,13 +51,13 @@ describe('Alertbox', () => {
     const page = await newSpecPage({
       components: [Alertbox],
       html: `<scale-alertbox
-                variant ="black"
+                variant ="warning"
                 has-close ="true"
                 content ="false">
               </scale-alertbox>`,
     });
 
-    expect(page.rootInstance.variant).toBe('black');
+    expect(page.rootInstance.variant).toBe('warning');
     expect(page.rootInstance.hasClose).toBe(true);
     expect(page.rootInstance.content).toBe(false);
   });
@@ -87,30 +87,4 @@ describe('Alertbox', () => {
       expect(page.root.opened).toEqual(false);
     }, 1);
   });
-
-  // it('should set timeout of the SECOND argument on function onCloseAlertWithTimeout()', async () => {
-  //   let page = await newSpecPage({
-  //     components: [Alertbox],
-  //     html: `<scale-alertbox timeout="200" opened="true" >Label</scale-alertbox>`,
-  //   });
-  //   await page.waitForChanges();
-  //   expect(page.root.timeout).toBe("200");
-  //   setTimeout(() => {
-  //     expect(page.root.opened).toBe(false);
-  //   }, page.root.timeout);
-  // });
-
-  // it('should set timeout of the SECOND argument on function onCloseAlertWithTimeout()', async () => {
-  //   let page = await newSpecPage({
-  //     components: [Alertbox],
-  //     html: `<scale-alertbox>Label</scale-alertbox>`,
-  //   });
-  //   page.rootInstance.timeout = 200;
-  //   page.rootInstance.opened = true;
-  //   await page.waitForChanges();
-  //   expect(page.rootInstance.timeout).toBe(200);
-  //   setTimeout(() => {
-  //     expect(page.rootInstance.opened).toBe(false);
-  //   }, 200);
-  // });
 });
