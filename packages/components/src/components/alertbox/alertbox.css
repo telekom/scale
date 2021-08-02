@@ -43,10 +43,7 @@
 /*header*/
 .alertbox .alertbox__container-header {
   font-weight: bold;
-  margin-left: 48px;
-  margin-right: 48px;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin: 14px 48px 14px 48px;
   font-family: var(--alertbox-font-header);
   font-size: var(--alertbox-font-size-header);
   line-height: 1.25;
@@ -54,10 +51,7 @@
 
 /* Text/Content */
 .alertbox .alertbox__content {
-  margin-top: 8px;
-  margin-left: 48px;
-  margin-right: 48px;
-  margin-bottom: 15px;
+  margin: 8px 48px 15px 48px;
   font-family: var(--alertbox-font-text);
   font-size: var(--alertbox-font-size-text);
 }
@@ -85,11 +79,7 @@
 /* Success Icon */
 .alertbox .alertbox__icon-success {
   position: absolute;
-  top: 15px;
-  bottom: 15px;
-  right: 18px;
-  left: 17px;
-  height: 20px;
+  margin: 15px 18px 15px 17px;
   width: 20px;
   color: var(--scl-color-background-success);
 }
@@ -97,10 +87,7 @@
 /* Error Icon */
 .alertbox .alertbox__icon-error {
   position: absolute;
-  top: 15px;
-  bottom: 15px;
-  right: 18px;
-  left: 17px;
+  margin: 15px 18px 15px 17px;
   height: 20px;
   width: 20px;
   color: var(--scl-color-background-error);
