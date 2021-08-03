@@ -11,11 +11,11 @@ import {
   addonNavigation,
   sectorNavigation,
 } from './fixtures';
-import AppHeader from './AppHeader.vue';
+import AppShell from './AppShell.vue';
 
 <Meta
   title="Components/Brand Header & Navigation"
-  component={AppHeader}
+  component={AppShell}
   argTypes={{
     activeRouteId: {
       control: {
@@ -116,11 +116,11 @@ import AppHeader from './AppHeader.vue';
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       template: `
         <div class="brand-header-spacing">
-          <scale-app-header
+          <scale-app-shell
             :logo-title="logoTitle"
             :logo-href="logoHref"
             :logo-click="logoClick"
@@ -133,7 +133,9 @@ import AppHeader from './AppHeader.vue';
             :active-route-id="activeRouteId"
             :active-sector-id="activeSectorId"
           >
-          </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
     })}
@@ -143,12 +145,18 @@ import AppHeader from './AppHeader.vue';
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-header
+<scale-app-shell
   claim-lang="en"
   logo-title="App Name"
   logo-href="/"
 >
-</scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
 ```
 
 ## Using scale-app-shell over scale-header
@@ -177,8 +185,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       methods: {
         handleOpen: function () {
           this.$refs.header.isMegaMenuVisible = true;
@@ -191,6 +199,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       },
       template: `
         <div class="brand-header-spacing">
+          <scale-app-shell>
             <scale-app-header
                 ref="header"
                 slot="header"
@@ -213,6 +222,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                   <scale-nav-main name="Custom Item #4"></scale-nav-main>
                 </div>
             </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
     })}
@@ -221,6 +233,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 
 ```html
 <body>
+  <scale-app-shell>
     <scale-app-header slot="header" id="header">
       <div slot="menu-main">
         <scale-nav-main name="Custom Item #1"></scale-nav-main>
@@ -233,6 +246,13 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         <scale-nav-main name="Custom Item #4"></scale-nav-main>
       </div>
     </scale-app-header>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll to test header behavior
+    </div>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll more to test header behavior
+    </div>
+  </scale-app-shell>
   <script>
     const header = document.getElementById('header');
     header.mainNavigation = [/* ... */];
@@ -285,10 +305,11 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       template: `
         <div class="brand-header-spacing">
+          <scale-app-shell>
             <scale-app-header
                 slot="header"
                 id="header"
@@ -317,6 +338,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                   </scale-nav-icon>
                 </div>
             </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
     })}
@@ -324,7 +348,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 </Canvas>
 
 ```html
-<scale-app-header>
+<scale-app-shell>
+  <scale-app-header slot="header" id="header">
     <div slot="menu-icon">
       <scale-nav-icon icon="action-mute"> Mute </scale-nav-icon>
       <scale-nav-icon icon="action-play"> Play </scale-nav-icon>
@@ -332,7 +357,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       <scale-nav-icon icon="action-fast-forward"> Forward </scale-nav-icon>
       <scale-nav-icon icon="action-favorite"> Favorite </scale-nav-icon>
     </div>
-</scale-app-header>
+  </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
 ```
 
 ## Custom Sector Navigation
@@ -354,10 +386,11 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       template: `
         <div class="brand-header-spacing">
+          <scale-app-shell>
             <scale-app-header
                 slot="header"
                 id="header"
@@ -376,6 +409,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                   </scale-nav-segment>
                 </div>
             </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
     })}
@@ -383,6 +419,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 </Canvas>
 
 ```html
+<scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="menu-sector">
       <scale-nav-segment
@@ -400,6 +437,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       </scale-nav-segment>
     </div>
   </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
 <script>
   function handleClick() {
     /* ... */
@@ -426,10 +471,11 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       template: `
         <div class="brand-header-spacing">
+          <scale-app-shell>
             <scale-app-header
                 slot="header"
                 id="header"
@@ -448,6 +494,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                   </scale-nav-segment>
                 </div>
             </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
     })}
@@ -455,6 +504,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 </Canvas>
 
 ```html
+<scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="menu-addon">
       <scale-nav-segment
@@ -472,6 +522,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       </scale-nav-segment>
     </div>
   </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
 <script>
   function handleClick() {
     /* ... */
@@ -498,10 +556,11 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       template: `
         <div class="brand-header-spacing">
+          <scale-app-shell>
             <scale-app-header
                 slot="header"
                 id="header"
@@ -519,6 +578,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                   ></app-logo>
                 </div>
             </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
     })}
@@ -526,6 +588,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 </Canvas>
 
 ```html
+<scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="logo">
       <app-logo
@@ -536,6 +599,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       ></app-logo>
     </div>
   </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
 <script>
   function handleClick() {
     /* ... */
@@ -562,10 +633,11 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppHeader },
-      props: AppHeader.props,
+      components: { AppShell },
+      props: AppShell.props,
       template: `
         <div class="brand-header-spacing">
+          <scale-app-shell>
             <scale-app-header
                 slot="header"
                 id="header"
@@ -578,6 +650,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
             >
               <div slot="menu-mobile"><pre>menu-mobile</pre></div>
             </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
         </div>
       `,
       mounted() {
@@ -595,18 +670,26 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 
 ```html
 <body>
+  <scale-app-shell>
     <scale-app-header slot="header" id="header">
       <div slot="menu-mobile"><pre>menu-mobile</pre></div>
     </scale-app-header>
-    <script>
-        const header = document.getElementById('header');
-        document.body.addEventListener('keydown', function (event) {
-          if (['Escape', 'Esc'].includes(event.key)) {
-            event.preventDefault();
-            header.dispatchEvent(new Event('closeMenu'));
-          }
-        });
-    </script>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll to test header behavior
+    </div>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll more to test header behavior
+    </div>
+  </scale-app-shell>
+  <script>
+    const header = document.getElementById('header');
+    document.body.addEventListener('keydown', function (event) {
+      if (['Escape', 'Esc'].includes(event.key)) {
+        event.preventDefault();
+        header.dispatchEvent(new Event('closeMenu'));
+      }
+    });
+  </script>
 </body>
 ```
 
