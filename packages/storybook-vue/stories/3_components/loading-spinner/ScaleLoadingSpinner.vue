@@ -1,11 +1,11 @@
 <template>
   <scale-loading-spinner
+    id="loader"
     :variant="variant"
     :alignment="alignment"
     :text="text"
     :size="size"
-  >
-  </scale-loading-spinner>
+  ></scale-loading-spinner>
 </template>
 
 <script>

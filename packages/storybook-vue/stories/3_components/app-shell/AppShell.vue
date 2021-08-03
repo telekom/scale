@@ -30,6 +30,7 @@ export default {
     iconNavigation: String,
     sectorNavigation: String,
     addonNavigation: String,
+    footerNavigation: String,
     activeRouteId: String,
     activeSectorId: String
   }
