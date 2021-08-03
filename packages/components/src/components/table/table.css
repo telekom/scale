@@ -30,6 +30,7 @@ scale-table {
   --background-th-sortable-active: #dcdcdc;
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2)
     var(--scl-color-focus);
+  --background-tr-striped: var(--scl-color-grey-0);
 }
 .table {
   display: block;
@@ -213,4 +214,7 @@ scale-table {
 }
 .table--sortable th:hover .scale-sort-indicator {
   display: inline-block;
+}
+.table--striped table tr:nth-child(even) {
+  background: var(--background-tr-striped);
 }
