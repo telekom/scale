@@ -22,8 +22,10 @@ export class Alertbox {
   @Prop({ reflect: true }) hasClose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
-  /** (optional) aria-label attribute needed for icon-only buttons */
+  /** (optional) aria-label attribute */
   @Prop() ariaLabel: string;
+  /** (optional) aria-description attribute */
+  @Prop() ariaDescription: string;
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
 
@@ -31,6 +33,24 @@ export class Alertbox {
 
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
+    this.handleSlotAccessibility();
+  }
+
+  handleSlotAccessibility() {
+    const mainText =
+      this.content &&
+      this.hostElement.querySelector("p[slot='text']").innerHTML;
+    this.hostElement.shadowRoot
+      .querySelector('.alertbox__content')
+      .setAttribute('aria-description', mainText);
+
+    const headerText = this.hostElement.querySelector("p[slot='header']")
+      .innerHTML;
+      if(headerText) {
+        this.hostElement.shadowRoot
+        .querySelector('.alertbox__container-header')
+        .setAttribute('aria-label', headerText);
+      }
   }
 
   connectedCallback() {
@@ -98,10 +118,12 @@ export class Alertbox {
 
     return (
       <Host>
-        <div 
-        part={this.getBasePartMap()} 
-        class={this.getCssClassMap()}
-        aria-label={this.ariaLabel}>
+        <div
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          aria-label={this.ariaLabel}
+          tabindex="0"
+        >
           <div part="container" class="alertbox__container">
             {this.handleIcons()}
             <header part="header" class="alertbox__container-header">
