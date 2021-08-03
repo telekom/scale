@@ -12,11 +12,10 @@ import {
   sectorNavigation,
 } from './fixtures';
 import AppHeader from './AppHeader.vue';
-import AppShell from './AppShell.vue';
 
 <Meta
   title="Components/Brand Header & Navigation"
-  component={AppShell}
+  component={AppHeader}
   argTypes={{
     activeRouteId: {
       control: {
@@ -117,8 +116,8 @@ import AppShell from './AppShell.vue';
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell
@@ -186,8 +185,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       methods: {
         handleOpen: function () {
           this.$refs.header.isMegaMenuVisible = true;
@@ -306,8 +305,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -387,8 +386,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -472,8 +471,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -557,8 +556,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -634,8 +633,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -715,8 +714,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         }}
     >
         {() => ({
-            components: { AppShell },
-            props: AppShell.props,
+            components: { AppHeader },
+            props: AppHeader.props,
             template: `
         <div class="brand-header-spacing">
           <scale-app-shell
@@ -776,8 +775,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         }}
     >
         {() => ({
-            components: { AppShell },
-            props: AppShell.props,
+            components: { AppHeader },
+            props: AppHeader.props,
             template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
