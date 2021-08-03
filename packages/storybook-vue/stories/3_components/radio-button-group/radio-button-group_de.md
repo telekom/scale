@@ -1,13 +1,11 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Checkbox-Group</h1>
+    <h1>Radio Button Group</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Diese Komponente enthält die Scale Checkbox-Group. Diese dient dazu, die Scale Checkboxen in einer Liste darzustellen.
+Diese Komponente enthält die Scale Radio Button Group. Diese dient dazu, die Scale Radio Buttons in einer Liste mit passender Überschrift darzustellen.
 
-Die oberste Checkbox richtet sich nach den darunter liegenden Checkboxen und kann drei verschiedene Zustände haben (leer, markiert und unbestimmt).
-
-Mit der obersten Checkbox können alle darunter liegenden Checkboxen auf empty oder checked gesetzt werden. Deaktivierte Checkboxen sind hiervon nicht betroffen.
+Die Überschrift kann durch einen Helpertext ergänzt werden. Sollte der Status der Radio Button Group auf error gesetzt werden, dann verfärbt sich sowohl Helpertext, als auch die Kreise der sich in der Liste befindenden Radio Buttons.
 
 ## Beta-Komponente
 
