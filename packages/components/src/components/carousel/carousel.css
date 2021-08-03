@@ -11,10 +11,14 @@
 :host {
   --color-indicator-hover: var(--scl-color-primary-hover);
   --color-indicator-active: var(--scl-color-primary-active);
-  --background-arrow: var(--scl-color-white);
+  --background-arrow-light: var(--scl-color-white);
+  --background-arrow-dark: var(--scl-color-grey-90);
   --background-arrow-hover: var(--scl-color-primary-hover);
   --background-arrow-active: var(--scl-color-primary-active);
-  --color-arrow-hover: var(--scl-color-white);
+  --color-arrow-light: var(--scl-color-white);
+  --color-arrow-dark: var(--scl-color-black);
+  --color-arrow-hover-light: var(--scl-color-white);
+  --color-arrow-hover-dark: var(--scl-color-white);
   --color-arrow-active: var(--scl-color-white);
   --border-radius-arrow: var(--scl-radius-8);
   --arrow-height: var(--scl-spacing-32);
@@ -69,10 +73,31 @@
   z-index: 99;
   position: absolute;
   transform: translateY(-50%);
-  background: var(--background-arrow);
   align-items: center;
   border-radius: var(--border-radius-arrow);
   justify-content: center;
+}
+
+.carousel__arrow:focus:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: var(--border-radius-arrow);
+  border: 2px solid var(--scl-color-focus);
+}
+
+.carousel__arrow--light {
+  background: var(--background-arrow-light);
+  color: var(--color-arrow-dark);
+}
+
+.carousel__arrow--dark {
+  background: var(--background-arrow-dark);
+  color: var(--color-arrow-light);
 }
 
 .carousel__arrow--left {
@@ -97,7 +122,7 @@
   border: none;
   border-radius: 50%;
   height: var(--indicator-height);
-  width: var( --indicator-width);
+  width: var(--indicator-width);
   cursor: pointer;
   margin: 0 var(--scl-spacing-8);
   transition: 0.3s;
@@ -131,7 +156,7 @@
 }
 
 .carousel__arrow:hover .carousel__arrow-icon {
-  color: var(--color-arrow-hover);
+  color: var(--color-arrow-hover-light);
 }
 
 /* active states */

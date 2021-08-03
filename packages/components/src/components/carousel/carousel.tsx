@@ -29,6 +29,10 @@ export class Carousel {
   @Prop() vertical?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+   /** (optional) color scheme arrow buttons */
+  @Prop() arrowColorScheme?: 'light' | 'dark' = 'light';
+  /** (optional) If `true`, the carousel is disabled */
+  @Prop() disabled?: boolean = true;
 
   @State() slidesArray = [];
   @State() value = 0;
@@ -124,7 +128,7 @@ export class Carousel {
             <li>
               <button 
                 type="button" 
-                class="carousel__arrow carousel__arrow--right"  
+                class={`carousel__arrow carousel__arrow--${this.arrowColorScheme} carousel__arrow--right`} 
                 onClick={() => {
                     this.handleSlideChange('next');
                   }}>
@@ -159,6 +163,9 @@ export class Carousel {
   }
 
   getCssClassMap() {
-    return classNames('carousel', this.vertical && `carousel--vertical`);
+    return classNames(
+      'carousel', 
+      this.disabled && `carousel--disabled`,
+      );
   }
 }
