@@ -91,11 +91,10 @@ export class Button {
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
     });
-    if (nodes.length < 2) {
-      return;
-    }
-    const lastNode = nodes[nodes.length - 1];
-    if (lastNode != null && lastNode.nodeType === 1) {
+    if (
+      !this.iconOnly &&
+      nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON'
+    ) {
       this.iconPosition = 'after';
     }
   }

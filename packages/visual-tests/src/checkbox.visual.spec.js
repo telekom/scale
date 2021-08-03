@@ -6,7 +6,7 @@ describe('Checkbox', () => {
     ['selected-disabled'],
     ['helper-text'],
     ['error'],
-    ['custom-label-slot'],
+    ['custom-label'],
   ])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-checkbox--${variant}&viewMode=story`
