@@ -79,15 +79,19 @@
 /* Success Icon */
 .alertbox .alertbox__icon-success {
   position: absolute;
-  margin: 15px 18px 15px 17px;
+  top: 13px;
+  left: 17px;
+  height: 20px;
   width: 20px;
+
   color: var(--scl-color-background-success);
 }
 
 /* Error Icon */
 .alertbox .alertbox__icon-error {
   position: absolute;
-  margin: 15px 18px 15px 17px;
+  top: 13px;
+  left: 17px;
   height: 20px;
   width: 20px;
   color: var(--scl-color-background-error);
