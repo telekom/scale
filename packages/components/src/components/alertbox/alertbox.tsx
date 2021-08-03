@@ -22,6 +22,8 @@ export class Alertbox {
   @Prop({ reflect: true }) hasClose?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
+  /** (optional) aria-label attribute needed for icon-only buttons */
+  @Prop() ariaLabel: string;
   @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
 
@@ -96,7 +98,10 @@ export class Alertbox {
 
     return (
       <Host>
-        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
+        <div 
+        part={this.getBasePartMap()} 
+        class={this.getCssClassMap()}
+        aria-label={this.ariaLabel}>
           <div part="container" class="alertbox__container">
             {this.handleIcons()}
             <header part="header" class="alertbox__container-header">

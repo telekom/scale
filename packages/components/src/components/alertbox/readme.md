@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                                                   | Default           |
-| ---------- | ----------- | ----------- | ------------------------------------------------------ | ----------------- |
-| `hasClose` | `has-close` |             | `boolean`                                              | `false`           |
-| `opened`   | `opened`    |             | `boolean`                                              | `undefined`       |
-| `timeout`  | `timeout`   |             | `boolean \| number`                                    | `false`           |
-| `variant`  | `variant`   |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property    | Attribute    | Description                                                  | Type                                                   | Default           |
+| ----------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------ | ----------------- |
+| `ariaLabel` | `aria-label` | (optional) aria-label attribute needed for icon-only buttons | `string`                                               | `undefined`       |
+| `hasClose`  | `has-close`  |                                                              | `boolean`                                              | `false`           |
+| `opened`    | `opened`     |                                                              | `boolean`                                              | `undefined`       |
+| `timeout`   | `timeout`    |                                                              | `boolean \| number`                                    | `false`           |
+| `variant`   | `variant`    |                                                              | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Methods

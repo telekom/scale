@@ -106,3 +106,9 @@
   width: 20px;
   color: var(--scl-color-text-info);
 }
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .alertbox__icon-close {
+    color: white;
+  }
+}
