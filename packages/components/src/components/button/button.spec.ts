@@ -43,8 +43,7 @@ describe('Button', () => {
       components: [Button],
       html: `    
       <scale-button size="small">
-        <scale-icon-action-search size="16" /> 
-        Label
+      <scale-icon-action-search></scale-icon-action-search>Label
       </scale-button>
       `,
     });
@@ -57,8 +56,7 @@ describe('Button', () => {
       components: [Button],
       html: `    
       <scale-button size="small">
-        Label 
-        <scale-icon-action-search size="16" />
+        Label<scale-icon-action-search></scale-icon-action-search>
       </scale-button>
       `,
     });
