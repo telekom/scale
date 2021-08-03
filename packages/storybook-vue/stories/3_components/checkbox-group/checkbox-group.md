@@ -3,11 +3,11 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-This component contains the Telekom Checkbox-Group. This is used to display the Telekom Checkboxes in a list.
+This component contains the Scale checkbox-group. This is used to display the Scale checkboxes in a list.
 
 The topmost checkbox is based on the following checkboxes and can have three different states (empty, checked and indeterminate).
 
-The top checkbox can be used to set all the checkboxes below it to empty or checked. Disabled checkboxes are not affected by this
+The top checkbox can be used to set all the checkboxes below it to empty or checked. Disabled checkboxes are not affected by this.
 
 ## Beta components
 
