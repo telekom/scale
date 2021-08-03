@@ -151,6 +151,9 @@ import AppHeader from './AppHeader.vue';
 </scale-app-header>
 ```
 
+## Using scale-app-shell over scale-header
+Using scale-app-shell provides the page with the common region `content`, which helps you fulfill accessibility requirements. The scale-app-shell component includes both the Header and optionally the <a href="?path=/docs/components-footer--standard">Footer</a> component. However, there is a story <a href="?path=/docs/components-brand-header-navigation--standalone-header">demonstrating the standalone mode of the Header</a> for special cases.
+
 ## Dropdown Navigation Beta
 
 You can find code examples where the Flyout Menu Beta component is implemented in the <a href="?path=/story/beta-components-flyout-menu--brand-header-primary-navigation">Primary navigation</a> and the <a href="?path=/story/beta-components-flyout-menu--brand-header-user-menu">User menu</a>.
@@ -605,4 +608,60 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         });
     </script>
 </body>
+```
+
+## Standalone Header
+
+<Canvas withSource="none">
+    <Story
+        name="Standalone Header"
+        inline={false}
+        height={500}
+        args={{
+            portalName: '',
+            claimLang: 'en',
+            mainNavigation: JSON.stringify(mainNavigation),
+            iconNavigation: JSON.stringify(iconNavigation),
+            addonNavigation: JSON.stringify(addonNavigation),
+            sectorNavigation: JSON.stringify(sectorNavigation),
+            activeRouteId: 'Third Level 24',
+            activeSectorId: 'Personal38',
+            logoTitle: 'Custom Logo Title',
+            logoHref: '#custom-href',
+        }}
+    >
+        {() => ({
+            components: { AppHeader },
+            props: AppHeader.props,
+            template: `
+        <div class="brand-header-spacing">
+          <scale-app-header
+            :logo-title="logoTitle"
+            :logo-href="logoHref"
+            :logo-click="logoClick"
+            :portal-name="portalName"
+            :claim-lang="claimLang"
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+            :active-sector-id="activeSectorId"
+          >
+          </scale-app-header>
+        </div>
+      `,
+        })}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-app-header
+    claim-lang="en"
+    logo-title="App Name"
+    logo-href="/"
+>
+</scale-app-header>
 ```
