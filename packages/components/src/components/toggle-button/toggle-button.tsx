@@ -39,7 +39,7 @@ export class ToggleButton {
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button variant */
-  @Prop() variant?: 'primary' | 'secondary' = 'primary';
+  @Prop() variant?: 'grey-background' | 'white-background' = 'grey-background';
   /** (optional) background color scheme of a selected button */
   @Prop() colorScheme?: 'light' | 'dark' = 'light';
   /** (optional) If `true`, the button is disabled */
@@ -164,7 +164,7 @@ export class ToggleButton {
     return classNames(
       'toggle-button',
       this.size && `${prefix}${this.size}`,
-      this.variant && `${prefix}${this.variant}`,
+      this.variant && `${prefix}${this.variant === 'grey-background' ? 'primary' : 'secondary'}`,
       !this.iconOnly &&
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,

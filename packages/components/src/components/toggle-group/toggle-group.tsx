@@ -44,7 +44,7 @@ export class ToggleGroup {
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button Group variant */
-  @Prop() variant?: 'primary' | 'secondary' = 'primary';
+  @Prop() variant?: 'grey-background' | 'white-background' = 'grey-background';
   /** (optional) inline or block element */
   @Prop() boxType?: 'inline' | 'block' = 'inline';
   /** (optional) If `true`, the button is disabled */
