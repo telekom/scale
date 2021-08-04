@@ -11,11 +11,11 @@ import {
   addonNavigation,
   sectorNavigation,
 } from './fixtures';
-import AppShell from './AppShell.vue';
+import AppHeader from './AppHeader.vue';
 
 <Meta
   title="Components/Brand Header & Navigation"
-  component={AppShell}
+  component={AppHeader}
   argTypes={{
     activeRouteId: {
       control: {
@@ -116,8 +116,8 @@ import AppShell from './AppShell.vue';
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell
@@ -185,8 +185,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       methods: {
         handleOpen: function () {
           this.$refs.header.isMegaMenuVisible = true;
@@ -305,8 +305,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -386,8 +386,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -471,8 +471,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -556,8 +556,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -633,8 +633,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     }}
   >
     {() => ({
-      components: { AppShell },
-      props: AppShell.props,
+      components: { AppHeader },
+      props: AppHeader.props,
       template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
@@ -693,6 +693,150 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 </body>
 ```
 
+## Portal name
+
+<Canvas withSource="none">
+    <Story
+        name="Portal name"
+        inline={false}
+        height={500}
+        args={{
+            portalName: 'Portal or Product name',
+            claimLang: 'en',
+            mainNavigation: JSON.stringify(mainNavigation),
+            iconNavigation: JSON.stringify(iconNavigation),
+            addonNavigation: JSON.stringify(addonNavigation),
+            sectorNavigation: JSON.stringify(sectorNavigation),
+            activeRouteId: 'Third Level 24',
+            activeSectorId: 'Personal38',
+            logoTitle: 'Custom Logo Title',
+            logoHref: '#custom-href',
+        }}
+    >
+        {() => ({
+            components: { AppHeader },
+            props: AppHeader.props,
+            template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell
+            :logo-title="logoTitle"
+            :logo-href="logoHref"
+            :logo-click="logoClick"
+            :portal-name="portalName"
+            :claim-lang="claimLang"
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+            :active-sector-id="activeSectorId"
+          >
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+        })}
+    </Story>
+</Canvas>
+
+```html
+<scale-app-shell
+    logo-title="App Name"
+    logo-href="/"
+    portal-name="Portal or Product name"
+>
+    <div style="height: 800px; padding: 48px 0;">
+        Scroll to test header behavior
+    </div>
+    <div style="height: 800px; padding: 48px 0;">
+        Scroll more to test header behavior
+    </div>
+</scale-app-shell>
+```
+
+
+## Sub Brand
+
+<Canvas withSource="none">
+    <Story
+        name="Sub Brand"
+        inline={false}
+        height={500}
+        args={{
+            portalName: '',
+            claimLang: 'en',
+            mainNavigation: JSON.stringify(mainNavigation),
+            iconNavigation: JSON.stringify(iconNavigation),
+            addonNavigation: JSON.stringify(addonNavigation),
+            sectorNavigation: JSON.stringify(sectorNavigation),
+            activeRouteId: 'Third Level 24',
+            activeSectorId: 'Personal38',
+        }}
+    >
+        {() => ({
+            components: { AppHeader },
+            props: AppHeader.props,
+            template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="logo">
+                  <app-logo
+                    claim
+                    claim-lang="mute"
+                    href="#custom"
+                    logo-title="Custom"
+                  ></app-logo>
+                  <a style="text-decoration: none;" href="#custom"><h1 style="font-weight:600; font-size:1.25rem; color:white !important; margin-left:-200px;">Sub-Brand (Legal unit)</h1></a>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+        })}
+    </Story>
+</Canvas>
+
+```html
+<scale-app-shell>
+    <scale-app-header slot="header" id="header">
+        <div slot="logo">
+            <app-logo
+                claim
+                claim-lang="mute"
+                href="#custom"
+                logo-title="Custom"
+                onclick="handleClick()"
+            ></app-logo>
+            <h1 onclick="handleClick()" style="font-weight:600; font-size:1.25rem; color:white !important; margin-left:-216px;">Sub-Brand (Legal unit)</h1>
+        </div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 0;">
+        Scroll to test header behavior
+    </div>
+    <div style="height: 800px; padding: 48px 0;">
+        Scroll more to test header behavior
+    </div>
+</scale-app-shell>
+
+<script>
+    function handleClick() {
+    /* ... */
+}
+</script>
+```
+
 ## Standalone Header
 
 <Canvas withSource="none">
@@ -737,8 +881,6 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         })}
     </Story>
 </Canvas>
-
-<ArgsTable story="Standard" />
 
 ```html
 <scale-app-header

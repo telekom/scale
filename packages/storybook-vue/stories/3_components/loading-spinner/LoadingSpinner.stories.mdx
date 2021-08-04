@@ -1,5 +1,6 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
-import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
+import ScaleLoadingSpinnerTemplate from './ScaleLoadingSpinner.vue';
+import ScaleLoadingSpinner from './ScaleLoadingSpinnerAccess.vue';
 
 <Meta
   title="Beta Components/Loading-Spinner"
@@ -9,7 +10,7 @@ import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
       control: { type: 'select', options: ['primary', 'white'] },
     },
     size: {
-      control: { type: 'select', options: ['small', 'large', 'button'] },
+      control: { type: 'select', options: ['small', 'large'] },
     },
     alignment: {
       control: { type: 'select', options: ['vertical', 'horizontal'] },
@@ -17,14 +18,33 @@ import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
   }}
 />
 
-export const Template = () => ({
+export const AccessTemplate = () => ({
   components: { ScaleLoadingSpinner },
   props: {
     label: String,
     ...ScaleLoadingSpinner.props,
   },
   template: `
-    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
+    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' ">
+        <scale-loading-spinner
+            :variant='variant'
+            :alignment='alignment'
+            :text='text'
+            :size='size'
+        >
+        </scale-loading-spinner>
+    </div>
+    `,
+});
+
+export const Template = () => ({
+  components: { ScaleLoadingSpinnerTemplate },
+  props: {
+    label: String,
+    ...ScaleLoadingSpinnerTemplate.props,
+  },
+  template: `
+    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' ">
         <scale-loading-spinner
             :variant='variant'
             :alignment='alignment'
@@ -257,4 +277,42 @@ export const Template = () => ({
   alignment="vertical"
   text="Loading..."
 ></scale-loading-spinner>
+```
+
+## Accessibility
+
+<Canvas withSource="none">
+  <Story
+    name="Accessibility"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+    }}
+  >
+    {AccessTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner id="loader"></scale-loading-spinner>
+<div id="loaded-example-page" role="alert" style="display: none" aria-label="">
+  <div>Loaded Page</div>
+</div>
+
+<script>
+  var myVar;
+
+  function myFunction() {
+    myVar = setTimeout(showPage, 6000);
+    console.log('timeout works');
+  }
+
+  function showPage() {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('loaded-example-page').style.display = 'block';
+    document
+      .getElementById('loaded-example-page')
+      .setAttribute('aria-label', 'Loading completed for ');
+  }
+</script>
 ```

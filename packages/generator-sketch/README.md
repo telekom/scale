@@ -84,9 +84,9 @@ Then open `sketch/document-name.sketch`.
 ```sh
 (cd ../html-to-sketch && yarn build) &&
 yarn build  &&
-node src/inject.js --debug http://localhost:5005/accordion &&
-node src/index.js accordion &&
-open sketch/accordion.sketch
+node src/inject.js --debug http://localhost:5005/rating &&
+node src/index.js rating &&
+open sketch/rating.sketch
 ```
 
 ## Design decisions
