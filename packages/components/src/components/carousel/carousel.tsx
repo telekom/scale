@@ -33,6 +33,8 @@ export class Carousel {
   @Prop() arrowColorScheme?: 'light' | 'dark' = 'light';
   /** (optional) If `true`, the carousel is disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) arrows visible, hidden, or visible when hovering over the slider */
+  @Prop() arrowAppearance?: 'permanent' | 'hidden' | 'hover' = 'hover';
 
   @State() slidesArray = [];
   @State() value = 0;
@@ -109,7 +111,7 @@ export class Carousel {
               </li>
             ))}
           </ul>
-          <ul class="carousel__arrows">
+          <ul class={`carousel__arrows carousel__arrows--${this.arrowAppearance}`}>
             <li>
               <button 
                 type="button" 

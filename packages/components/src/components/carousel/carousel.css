@@ -64,6 +64,19 @@
   margin: 0;
   position: absolute;
   top: 50%;
+  visibility: hidden;
+}
+
+.carousel__arrows--hidden {
+  visibility: hidden;
+}
+
+.carousel__arrows--permanent {
+  visibility: visible;
+}
+
+.carousel:hover .carousel__arrows--hover {
+  visibility: visible;
 }
 
 .carousel__arrow {
@@ -173,7 +186,7 @@
   background: var(--color-indicator-active);
 }
 
- .carousel__arrow:active {
+.carousel:not(.carousel--disabled) .carousel__arrow:active {
   background: var(--background-arrow-active);
 }
 
