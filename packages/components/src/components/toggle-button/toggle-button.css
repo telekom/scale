@@ -18,7 +18,7 @@
   --height-small: var(--scl-spacing-32);
   --height-regular: var(--scl-spacing-40);
   --height-large: var(--scl-spacing-48);
-  --radius: var(--scl-radius-8);
+  --radius: var(--scl-radius-4);
   --transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
   --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
@@ -37,7 +37,7 @@
 
   /* variant: primary */
   --radius-primary: var(--radius);
-  --background-primary: var(--scl-color-grey-20);
+  --background-primary: var(--scl-color-grey-10);
   --background-primary-disabled: var(--scl-color-grey-0);
   --color-primary: var(--scl-color-grey-90);
   --color-primary-hover: var(--scl-color-primary-hover);
