@@ -26,6 +26,9 @@
   --indicator-height: var(--scl-spacing-16);
   --indicator-width: var(--scl-spacing-16);
   --indicator-background: var(--scl-color-grey-100);
+
+  --background-disabled: var(--scl-color-background-disabled);
+  --color-disabled: var(--scl-color-text-disabled);
 }
 
 .carousel {
@@ -78,7 +81,7 @@
   justify-content: center;
 }
 
-.carousel__arrow:focus:after {
+.carousel:not(.carousel--disabled) .carousel__arrow:focus:after {
   content: '';
   display: block;
   position: absolute;
@@ -146,16 +149,16 @@
 
 /* hover states */
 
-.carousel__indicator:hover {
+.carousel:not(.carousel--disabled) .carousel__indicator:hover {
   opacity: 1;
   background: var(--color-indicator-hover);
 }
 
-.carousel__arrow:hover {
+.carousel:not(.carousel--disabled) .carousel__arrow:hover {
   background: var(--background-arrow-hover);
 }
 
-.carousel__arrow:hover .carousel__arrow-icon {
+.carousel:not(.carousel--disabled) .carousel__arrow:hover .carousel__arrow-icon {
   color: var(--color-arrow-hover-light);
 }
 
@@ -170,10 +173,22 @@
   background: var(--color-indicator-active);
 }
 
-.carousel__arrow:active {
+ .carousel__arrow:active {
   background: var(--background-arrow-active);
 }
 
-.carousel__arrow:active .carousel__arrow-icon {
+.carousel:not(.carousel--disabled) .carousel__arrow:active .carousel__arrow-icon {
   color: var(--color-arrow-active);
+}
+
+.carousel--disabled .carousel__arrow {
+    background: var(--background-disabled);
+    color: var(--color-disabled);
+    cursor: auto;
+}
+
+.carousel--disabled .carousel__indicator {
+  background: var(--background-disabled);
+  color: var(--background-disabled);
+  cursor: auto;
 }

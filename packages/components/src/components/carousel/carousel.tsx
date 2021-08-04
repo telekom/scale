@@ -32,7 +32,7 @@ export class Carousel {
    /** (optional) color scheme arrow buttons */
   @Prop() arrowColorScheme?: 'light' | 'dark' = 'light';
   /** (optional) If `true`, the carousel is disabled */
-  @Prop() disabled?: boolean = true;
+  @Prop() disabled?: boolean = false;
 
   @State() slidesArray = [];
   @State() value = 0;
@@ -113,7 +113,8 @@ export class Carousel {
             <li>
               <button 
                 type="button" 
-                class="carousel__arrow carousel__arrow--left"
+                disabled={this.disabled}
+                class={`carousel__arrow carousel__arrow--${this.arrowColorScheme} carousel__arrow--left`}
                 onClick={() => {
                   this.handleSlideChange('prev');
                 }}
@@ -128,6 +129,7 @@ export class Carousel {
             <li>
               <button 
                 type="button" 
+                disabled={this.disabled}
                 class={`carousel__arrow carousel__arrow--${this.arrowColorScheme} carousel__arrow--right`} 
                 onClick={() => {
                     this.handleSlideChange('next');
@@ -144,6 +146,7 @@ export class Carousel {
             {Array.from(Array(this.slidesArray.length).keys()).map((index) => (
               <li key={index}>
                 <button 
+                  disabled={this.disabled}
                   class={`carousel__indicator ${this.setActiveCssClass(index)}`}
                   onClick={() => this.setActiveSlide(index)}>
                     <span class="carousel__indicator-span--hidden">News</span>
