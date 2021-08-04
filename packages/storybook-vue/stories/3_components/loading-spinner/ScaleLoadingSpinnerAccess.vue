@@ -9,14 +9,22 @@
       style="padding-left: 25px"
     ></scale-loading-spinner>
     <div id="loaded-example-page" role="alert" style="display: none">
-      <scale-button
-        v-on:click="back()"
-        style="width: 170px"
+      <button
         aria-hidden="true"
-        disabled
+        style="
+          width: 145px;
+          height: 53px;
+          padding-top: 8px;
+          background-color: Transparent;
+          background-repeat: no-repeat;
+          border: none;
+
+          overflow: hidden;
+          outline: none;
+        "
       >
         &nbsp;&nbsp;Loaded Page &nbsp;&nbsp;
-      </scale-button>
+      </button>
     </div>
     <div style="padding: 10px"></div>
     <scale-button
