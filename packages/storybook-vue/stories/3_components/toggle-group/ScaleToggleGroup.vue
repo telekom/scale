@@ -5,7 +5,7 @@
 	  :box-type="boxType"
     :disabled="disabled"
     :border="border"
-    :multi="multi"
+    :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
   >
@@ -21,7 +21,7 @@ export default {
     boxType: { type: String, default: 'inline' },
     disabled: { type: Boolean, default: false },
     border: { type: Boolean, default: false },
-    multi: { type: Boolean, default: true },
+    singleSelect: { type: Boolean, default: false },
     ariaLabel: { type: String },
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
     styles: { type: String },
