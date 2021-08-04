@@ -34,7 +34,7 @@ export const Template = (args, { argTypes }) => ({
 	  :box-type="boxType"
     :disabled="disabled"
     :border="border"
-    :multi="multi"
+    :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
   >
@@ -59,7 +59,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
 	  :box-type="boxType"
     :disabled="disabled"
     :border="border"
-    :multi="multi"
+    :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
   >
@@ -122,7 +122,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Secondary"
     args={{
-		variant: 'secondary'
+		  variant: 'secondary'
 	}}
   >
     {Template.bind({})}
@@ -143,7 +143,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
-		disabled: true
+		  disabled: true
 	}}
   >
     {Template.bind({})}
@@ -164,8 +164,8 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Disabled Secondary"
     args={{
-		disabled: true,
-		variant: 'secondary'
+		  disabled: true,
+		  variant: 'secondary'
 	}}
   >
     {Template.bind({})}
@@ -186,7 +186,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Regular Size"
     args={{
-		size: 'regular'
+		  size: 'regular'
 	}}
   >
     {Template.bind({})}
@@ -207,8 +207,8 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Small Size Block"
     args={{
-		size: 'small',
-		boxType: 'block'
+		  size: 'small',
+		  boxType: 'block'
 	}}
   >
     {Template.bind({})}
@@ -229,8 +229,8 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="XS Size Block"
     args={{
-		size: 'xs',
-		boxType: 'block'
+		  size: 'xs',
+		  boxType: 'block'
 	}}
   >
     {Template.bind({})}
@@ -251,7 +251,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Border"
     args={{
-		border: true
+		  border: true
 	}}
   >
     {Template.bind({})}
@@ -272,10 +272,10 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Border, Disabled, Secondary, Regular"
     args={{
-		border: true,
-		disabled: true,
-		variant: 'secondary',
-		size: 'regular'
+		  border: true,
+		  disabled: true,
+		  variant: 'secondary',
+		  size: 'regular'
 	}}
   >
     {Template.bind({})}
@@ -290,13 +290,13 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## non-Multi
+## Single Select
 
 <Canvas withSource="none">
   <Story
-    name="non-Multi"
+    name="Single Select"
     args={{
-		multi: false
+		  singleSelect: true
 	}}
   >
     {Template.bind({})}
@@ -304,7 +304,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group multi="false">
+<scale-toggle-group single-select>
 	<scale-toggle-button>Label</scale-toggle-button>
     <scale-toggle-button>Label</scale-toggle-button>
     <scale-toggle-button selected>Label</scale-toggle-button>

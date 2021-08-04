@@ -52,7 +52,7 @@ export class ToggleGroup {
   /** (optional) If `true`, the group has a border */
   @Prop() border?: boolean = false;
   /** (optional) more than one button selected possible */
-  @Prop() multi: boolean = true;
+  @Prop() singleSelect: boolean = false;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
@@ -64,11 +64,8 @@ export class ToggleGroup {
   @Listen('scaleClick')
   scaleClickHandler(ev) {
     let tempState: ButtonStatus[];
-    if (this.multi) {
-      tempState = this.status.map((obj) =>
-        ev.detail.id === obj.id ? ev.detail : { ...obj }
-      );
-    } else {
+    if (this.singleSelect) {
+      console.log('singleSelect');
       if (!ev.detail.selected) {
         tempState = this.status.map((obj) =>
           ev.detail.id === obj.id ? ev.detail : { ...obj }
@@ -79,6 +76,11 @@ export class ToggleGroup {
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
+    } else { 
+      console.log('non singleSelect');
+      tempState = this.status.map((obj) =>
+        ev.detail.id === obj.id ? ev.detail : { ...obj }
+      );
     }
     this.setNewState(tempState);
   }
