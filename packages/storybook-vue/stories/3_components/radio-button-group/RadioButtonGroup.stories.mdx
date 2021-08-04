@@ -34,13 +34,13 @@ export const StandardTemplate = (args, { argTypes }) => ({
         label="Radio Button"
         name="radioStandard"
         transparent="true"
-        input-id="choiceOne"
+        input-id="choiceStandardOne"
       ></scale-radio-button>
       <scale-radio-button
         value="2"
         label="Radio Button"
         name="radioStandard"
-        input-id="choiceTwo"
+        input-id="choiceStandardTwo"
       ></scale-radio-button>
     </scale-radio-button-group>
     </div>
@@ -67,13 +67,13 @@ export const HelperTextTemplate = (args, { argTypes }) => ({
         label="Radio Button"
         name="RadioButtonHelperText"
         transparent="true"
-        input-id="choiceOne"
+        input-id="choiceHelperTextOne"
       ></scale-radio-button>
       <scale-radio-button
         value="2"
         label="Radio Button"
         name="RadioButtonHelperText"
-        input-id="choiceTwo"
+        input-id="choiceHelperTextTwo"
       ></scale-radio-button>
     </scale-radio-button-group>
     </div>
@@ -101,14 +101,14 @@ export const ErrorTemplate = (args, { argTypes }) => ({
         label="Radio Button"
         name="radioButtonError"
         transparent="true"
-        input-id="choiceOne"
+        input-id="choiceErrorOne"
       ></scale-radio-button>
       <scale-radio-button
         status="error"
         value="2"
         label="Radio Button"
         name="radioButtonError"
-        input-id="choiceTwo"
+        input-id="choiceErrorTwo"
       ></scale-radio-button>
     </scale-radio-button-group>
     </div>
@@ -131,7 +131,21 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-
+<scale-radio-button-group label="Group Label">
+  <scale-radio-button
+    value="1"
+    label="Radio Button"
+    name="radioStandard"
+    transparent="true"
+    input-id="choiceStandardOne"
+  ></scale-radio-button>
+  <scale-radio-button
+    value="2"
+    label="Radio Button"
+    name="radioStandard"
+    input-id="choiceStandardTwo"
+  ></scale-radio-button>
+</scale-radio-button-group>
 ```
 
 ## Helper Text
@@ -149,7 +163,21 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-
+<scale-radio-button-group label="Group Label" helper-text="Helper message">
+  <scale-radio-button
+    value="1"
+    label="Radio Button"
+    name="RadioButtonHelperText"
+    transparent="true"
+    input-id="choiceHelperTextOne"
+  ></scale-radio-button>
+  <scale-radio-button
+    value="2"
+    label="Radio Button"
+    name="RadioButtonHelperText"
+    input-id="choiceHelperTextTwo"
+  ></scale-radio-button>
+</scale-radio-button-group>
 ```
 
 ## Error
@@ -168,5 +196,25 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-
+<scale-radio-button-group
+  label="RadioButton Group"
+  status="error"
+  helper-text="Error message"
+>
+  <scale-radio-button
+    status="error"
+    value="1"
+    label="Radio Button"
+    name="radioButtonError"
+    transparent="true"
+    input-id="choiceErrorOne"
+  ></scale-radio-button>
+  <scale-radio-button
+    status="error"
+    value="2"
+    label="Radio Button"
+    name="radioButtonError"
+    input-id="choiceErrorTwo"
+  ></scale-radio-button>
+</scale-radio-button-group>
 ```
