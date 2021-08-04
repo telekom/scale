@@ -62,6 +62,10 @@ scale-checkbox {
   cursor: pointer;
 }
 
+.checkbox--enabled:hover .checkbox__label {
+  color: var(--color-primary-hover);
+}
+
 .checkbox .checkbox__control-wrapper {
   width: var(--width-control);
   height: var(--height-control);
@@ -268,6 +272,11 @@ scale-checkbox {
   border: var(--border-width-control) solid var(--color-text);
   background: var(--color-standard);
 }
+
+.checkbox--enabled:hover .checkbox__control-wrapper .checkbox__control {
+  border: var(--border-width-control) solid var(--color-primary-hover);
+}
+
 .checkbox .checkbox__control-wrapper .checkbox__icon {
   top: var(--top-icon);
   left: var(--left-icon);
