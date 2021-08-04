@@ -84,6 +84,37 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
     `,
 });
 
+export const TemplateIcons = (args, { argTypes }) => ({
+  components: { ScaleToggleGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleToggleGroup.props,
+  },
+  template: `
+  <scale-toggle-group
+    :size="size"
+    :variant="variant"
+	  :box-type="boxType"
+    :disabled="disabled"
+    :border="border"
+    :single-select="singleSelect"
+    :aria-label-translation="ariaLabelTranslation"
+    :styles="styles"
+  >
+    <scale-toggle-button>
+      <scale-icon-action-search />Label
+    </scale-toggle-button>
+    <scale-toggle-button>
+      Label<scale-icon-action-search />
+    </scale-toggle-button>
+    <scale-toggle-button selected icon-only="true" v-if="icon-only === 'true'">
+      <scale-icon-action-search />
+    </scale-toggle-button>
+  </scale-toggle-group>
+    `,
+});
+
 <div
   style={{
     display: 'inline-flex',
@@ -345,3 +376,27 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   </scale-toggle-button>
 </scale-toggle-group>
 ```
+
+## Icons (before, after, icon only)
+
+<Canvas withSource="none">
+  <Story
+    name="Icons"
+    args={{}}
+  >
+    {TemplateIcons.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group>
+	<scale-toggle-button>
+    <scale-icon-action-search></scale-icon-action-search> Label
+  </scale-toggle-button>
+  <scale-toggle-button>
+    Label <scale-icon-action-search></scale-icon-action-search>
+  </scale-toggle-button>
+  <scale-toggle-button icon-only selected>
+    <scale-icon-action-search></scale-icon-action-search> Label
+  </scale-toggle-button>
+</scale-toggle-group>
