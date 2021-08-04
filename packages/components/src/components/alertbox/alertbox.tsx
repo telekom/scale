@@ -46,11 +46,11 @@ export class Alertbox {
 
     const headerText = this.hostElement.querySelector("p[slot='header']")
       .innerHTML;
-      if(headerText) {
-        this.hostElement.shadowRoot
+    if (headerText) {
+      this.hostElement.shadowRoot
         .querySelector('.alertbox__container-header')
         .setAttribute('aria-label', headerText);
-      }
+    }
   }
 
   connectedCallback() {

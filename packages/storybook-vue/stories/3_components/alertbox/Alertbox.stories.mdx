@@ -144,7 +144,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     name="Close Button"
     args={{
       opened: true,
-      variant: 'error',
+      variant: 'informational',
       hasClose: true,
     }}
   >
@@ -153,12 +153,12 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="error" has-close opened> </scale-alertbox>
+<scale-alertbox variant="informational" has-close opened> </scale-alertbox>
 ```
 
 ## Timeout
 
-### Set to close in 10 seconds. Default - when true: is 3 seconds
+### Set to close in 10 seconds. Default - when true: 3 seconds
 
 <Canvas withSource="none">
   <Story
@@ -186,7 +186,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     name="Titel-Message"
     args={{
       opened: true,
-      variant: 'warning',
+      variant: 'informational',
       hasClose: true,
     }}
   >
@@ -195,7 +195,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="warning" timeout has-close opened>
+<scale-alertbox variant="informational" timeout has-close opened>
   <p slot="header">This is my title</p>
   <p slot="header">This is my message to you.</p>
 </scale-alertbox>
