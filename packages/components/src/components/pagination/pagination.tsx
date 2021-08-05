@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
+ import {
   Component,
   Prop,
   h,
@@ -87,7 +87,7 @@ export class Pagination {
   @Watch('totalElements')
   calculateWidth() {
     // calculate max possible width
-    this.maxWidth = (this.totalElements.toString().length * 3 + 3) * 9;
+    this.maxWidth = (this.totalElements.toString().length * 3.5 + 3) * 9;
   }
 
   /* 8. Public Methods */

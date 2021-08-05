@@ -71,7 +71,6 @@ export class ToggleButton {
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
   hasScaleIcon = false;
-
   connectedCallback() {
     this.setIconPositionProp();
   }

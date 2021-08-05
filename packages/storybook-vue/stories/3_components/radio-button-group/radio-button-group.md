@@ -1,13 +1,11 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Checkbox-Group</h1>
+    <h1>Radio Button Group</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-This component contains the Scale checkbox-group. This is used to display the Scale checkboxes in a list.
+This component contains the Scale radio button group. This is used to display the scale radio buttons in a list with a suitable heading.
 
-The topmost checkbox is based on the following checkboxes and can have three different states (empty, checked and indeterminate).
-
-The top checkbox can be used to set all the checkboxes below it to empty or checked. Disabled checkboxes are not affected by this.
+The heading can be extended with a helper text. If the status of the radio button group is set to error, both the help text and the circles of the radio buttons in the list change colour.
 
 ## Beta components
 

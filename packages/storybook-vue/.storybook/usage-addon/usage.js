@@ -13,6 +13,8 @@ import React from 'react';
 import { DocsWrapper, DocsContent } from '@storybook/components';
 import { Description } from '@storybook/addon-docs/blocks';
 import { useStorybookState, useGlobals } from '@storybook/api';
+import appshell_en from 'raw-loader!../../stories/3_components/app-shell/app-shell.md';
+import appshell_de from 'raw-loader!../../stories/3_components/app-shell/app-shell_de.md';
 import accordion_en from 'raw-loader!../../stories/3_components/accordion/accordion.md';
 import accordion_de from 'raw-loader!../../stories/3_components/accordion/accordion_de.md';
 import brandHeader_en from 'raw-loader!../../stories/3_components/brand-header/brand-header.md';
@@ -55,6 +57,8 @@ import radioButton_en from 'raw-loader!../../stories/3_components/radio-button/r
 import radioButton_de from 'raw-loader!../../stories/3_components/radio-button/radio-button_de.md';
 import ratingStars_en from 'raw-loader!../../stories/3_components/rating-stars/rating-stars.md';
 import ratingStars_de from 'raw-loader!../../stories/3_components/rating-stars/rating-stars_de.md';
+import radioButtonGroup_de from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group_de.md';
+import radioButtonGroup_en from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group.md';
 import dropdown_en from 'raw-loader!../../stories/3_components/dropdown/dropdown.md';
 import dropdown_de from 'raw-loader!../../stories/3_components/dropdown/dropdown_de.md';
 import sidebarNav_en from 'raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav.md';
@@ -99,6 +103,8 @@ const Usage = (props) => {
   // or:
   // ?path=/story/components-brandheader--standard > brandheader_de
   const componentMap = {
+    'app-shell_en': appshell_en,
+    'app-shell_de': appshell_de,
     accordion_en,
     accordion_de,
     'brand-header-navigation_en': brandHeader_en,
@@ -143,6 +149,8 @@ const Usage = (props) => {
     'progress-bar_de': progressBar_de,
     'radio-button_en': radioButton_en,
     'radio-button_de': radioButton_de,
+    'radio-button-group_en': radioButtonGroup_en,
+    'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,
     'rating-stars_de': ratingStars_de,
     dropdown_en,
