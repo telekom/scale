@@ -16,7 +16,7 @@
 | `singleSelect`         | `single-select`          | (optional) more than one button selected possible            | `boolean`                                 | `false`                                              |
 | `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "regular" \| "small" \| "xs"` | `'large'`                                            |
 | `styles`               | `styles`                 | (optional) Injected CSS styles                               | `string`                                  | `undefined`                                          |
-| `variant`              | `variant`                | (optional) Button Group variant                              | `"primary" \| "secondary"`                | `'primary'`                                          |
+| `variant`              | `variant`                | (optional) Button Group variant                              | `"grey-background" \| "white-background"` | `'grey-background'`                                  |
 
 
 ## Events

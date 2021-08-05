@@ -65,7 +65,6 @@ export class ToggleGroup {
   scaleClickHandler(ev) {
     let tempState: ButtonStatus[];
     if (this.singleSelect) {
-      console.log('singleSelect');
       if (!ev.detail.selected) {
         tempState = this.status.map((obj) =>
           ev.detail.id === obj.id ? ev.detail : { ...obj }
@@ -76,8 +75,7 @@ export class ToggleGroup {
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
-    } else { 
-      console.log('non singleSelect');
+    } else {
       tempState = this.status.map((obj) =>
         ev.detail.id === obj.id ? ev.detail : { ...obj }
       );
