@@ -20,7 +20,7 @@
 export default {
   props: {
     size: { type: String, default: 'large' },
-    variant: { type: String, default: 'primary' },
+    variant: { type: String, default: 'grey-background' },
     colorScheme: { type: String, default: 'light' },
     disabled: { type: Boolean, default: false },
     selected: { type: Boolean, default: false },

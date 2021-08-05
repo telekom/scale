@@ -6,7 +6,7 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
   component={ScaleToggleGroup}
   argTypes={{
     variant: {
-      control: { type: 'select', options: ['primary', 'secondary'] },
+      control: { type: 'select', options: ['grey-background', 'white-background'] },
     },
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
@@ -108,7 +108,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
     <scale-toggle-button>
       Label<scale-icon-action-search />
     </scale-toggle-button>
-    <scale-toggle-button selected icon-only="true" v-if="icon-only === 'true'">
+    <scale-toggle-button selected icon-only="true">
       <scale-icon-action-search />
     </scale-toggle-button>
   </scale-toggle-group>
