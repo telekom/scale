@@ -70,6 +70,8 @@ export class ToggleButton {
   /** Emitted when button is clicked */
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
+  hasScaleIcon = false;
+
   connectedCallback() {
     this.setIconPositionProp();
   }
@@ -109,6 +111,17 @@ export class ToggleButton {
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
     this.selected = !this.selected;
+    if (this.hasScaleIcon) {
+      Array.from(this.hostElement.children).forEach((node) => {
+        if(node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+          if(this.selected) {
+            node.setAttribute('selected', 'true');
+          } else {
+            node.removeAttribute('selected');
+          }
+        }
+      });
+    }
     this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
   };
 
@@ -118,6 +131,9 @@ export class ToggleButton {
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
+      if(node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+        this.hasScaleIcon = true;
+      }
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
     });
