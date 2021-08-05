@@ -113,8 +113,8 @@ export class ToggleButton {
     this.selected = !this.selected;
     if (this.hasScaleIcon) {
       Array.from(this.hostElement.children).forEach((node) => {
-        if(node.nodeName.substr(0, 10) === 'SCALE-ICON') {
-          if(this.selected) {
+        if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+          if (this.selected) {
             node.setAttribute('selected', 'true');
           } else {
             node.removeAttribute('selected');
@@ -131,7 +131,7 @@ export class ToggleButton {
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
-      if(node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+      if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
         this.hasScaleIcon = true;
       }
       // ignore empty text nodes, which are probably due to formatting
@@ -180,7 +180,10 @@ export class ToggleButton {
     return classNames(
       'toggle-button',
       this.size && `${prefix}${this.size}`,
-      this.variant && `${prefix}${this.variant === 'grey-background' ? 'primary' : 'secondary'}`,
+      this.variant &&
+        `${prefix}${
+          this.variant === 'grey-background' ? 'primary' : 'secondary'
+        }`,
       !this.iconOnly &&
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,
