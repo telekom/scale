@@ -39,7 +39,7 @@ export class ToggleButton {
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button variant */
-  @Prop() variant?: 'primary' | 'secondary' = 'primary';
+  @Prop() variant?: 'grey-background' | 'white-background' = 'grey-background';
   /** (optional) background color scheme of a selected button */
   @Prop() colorScheme?: 'light' | 'dark' = 'light';
   /** (optional) If `true`, the button is disabled */
@@ -70,6 +70,7 @@ export class ToggleButton {
   /** Emitted when button is clicked */
   @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
 
+  hasScaleIcon = false;
   connectedCallback() {
     this.setIconPositionProp();
   }
@@ -109,6 +110,17 @@ export class ToggleButton {
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
     this.selected = !this.selected;
+    if (this.hasScaleIcon) {
+      Array.from(this.hostElement.children).forEach((node) => {
+        if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+          if (this.selected) {
+            node.setAttribute('selected', 'true');
+          } else {
+            node.removeAttribute('selected');
+          }
+        }
+      });
+    }
     this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
   };
 
@@ -118,6 +130,9 @@ export class ToggleButton {
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
+      if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+        this.hasScaleIcon = true;
+      }
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
     });
@@ -164,7 +179,10 @@ export class ToggleButton {
     return classNames(
       'toggle-button',
       this.size && `${prefix}${this.size}`,
-      this.variant && `${prefix}${this.variant}`,
+      this.variant &&
+        `${prefix}${
+          this.variant === 'grey-background' ? 'primary' : 'secondary'
+        }`,
       !this.iconOnly &&
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,
