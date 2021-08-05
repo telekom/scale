@@ -35,6 +35,8 @@ export class Carousel {
   @Prop() disabled?: boolean = false;
   /** (optional) arrows visible, hidden, or visible when hovering over the slider */
   @Prop() arrowAppearance?: 'permanent' | 'hidden' | 'hover' = 'hover';
+  /** (optional) If `true`, a slide has a card frame */
+  @Prop() cardFrame?: boolean = false;
 
   @State() slidesArray = [];
   @State() value = 0;
@@ -50,14 +52,8 @@ export class Carousel {
       for (let childIndex = 0; childIndex < children.length; childIndex++) {
         if (children[childIndex].slot === '') {
           // tslint:disable-next-line: prefer-for-of
-          for (
-            let slideIndex = 0;
-            slideIndex < children[childIndex].children.length;
-            slideIndex++
-          ) {
-            const element = children[childIndex].children[slideIndex];
+            const element = children[childIndex];
             this.slidesArray.push(element);
-          }
         }
       }
     }
@@ -104,10 +100,13 @@ export class Carousel {
           <ul class="carousel__slides">
             {this.slidesArray.map((element) => (
               <li
-                class="carousel__slide"
+                class="carousel__slide--wrapper"
                 style={{ transform: this.setTransformValue() }}
               >
-                <div innerHTML={element.outerHTML}></div>
+                <div 
+                  class={`carousel__slide carousel__slide--${this.cardFrame}`} 
+                  innerHTML={element.outerHTML}>
+                </div>
               </li>
             ))}
           </ul>

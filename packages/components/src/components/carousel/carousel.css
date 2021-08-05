@@ -48,7 +48,7 @@
   list-style: none;
 }
 
-.carousel__slide {
+.carousel__slide--wrapper {
   height: 100%;
   width: 100%;
   position: relative;
