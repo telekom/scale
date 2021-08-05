@@ -128,7 +128,7 @@ export class ToggleButton {
         }
       });
     }
-  }
+  };
 
   /**
    * Detect whether a child node is a scale icon and contains text.
