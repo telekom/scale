@@ -17,7 +17,7 @@
 export default {
   props: {
     size: { type: String, default: 'large' },
-    variant: { type: String, default: 'primary' },
+    variant: { type: String, default: 'grey-background' },
     boxType: { type: String, default: 'inline' },
     disabled: { type: Boolean, default: false },
     border: { type: Boolean, default: false },

@@ -73,6 +73,7 @@ export class ToggleButton {
   hasScaleIcon = false;
   connectedCallback() {
     this.setIconPositionProp();
+    this.handleIconShape();
   }
 
   componentDidLoad() {
@@ -110,6 +111,11 @@ export class ToggleButton {
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
     this.selected = !this.selected;
+    this.handleIconShape();
+    this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
+  };
+
+  handleIconShape = () => {
     if (this.hasScaleIcon) {
       Array.from(this.hostElement.children).forEach((node) => {
         if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
@@ -121,7 +127,6 @@ export class ToggleButton {
         }
       });
     }
-    this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
   };
 
   /**
