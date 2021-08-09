@@ -135,7 +135,7 @@ button:not(:disabled):hover svg {
   .pagination__info {
     order: -1;
     width: calc(
-      var(--button-width-stack) * 4 - (2 * var(--info-padding) + 4px)
+      var(--button-width-stack) * 4 - (2 * var(--info-padding) + 5px)
     ) !important;
     overflow: auto;
     border-left: var(--border);
@@ -151,5 +151,8 @@ button:not(:disabled):hover svg {
   }
   .pagination__last-prompt {
     border-radius: var(--radius-last-prompt-stack);
+  }
+  .pagination__next-prompt {
+    margin-left: -1px;
   }
 }
