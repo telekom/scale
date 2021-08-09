@@ -57,6 +57,8 @@ export class Pagination {
   @Prop() totalElements?: number = 1;
   /** (optional) Injected styles */
   @Prop() styles?: string;
+  /** (optional) small  */
+  @Prop() small = true;
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
@@ -245,6 +247,10 @@ export class Pagination {
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
-    return classNames(name, this.hideBorders && `${prefix}hide-borders`);
+    return classNames(
+      name, 
+      this.hideBorders && `${prefix}hide-borders`,
+      this.small && `${prefix}small`
+      )
   }
 }

@@ -26,6 +26,10 @@
   --button-width: 42px;
   --button-width-stack: 48px;
   --info-padding: var(--scl-spacing-8);
+  --button-height: 54px;
+  --button-height-small: 48px;
+  --info-line-height: calc(var(--button-height) - 2px);
+  --info-line-height-small: calc(var(--button-height-small) - 2px);
 }
 .pagination {
   display: flex;
@@ -48,18 +52,21 @@
 .pagination__info span {
   font-weight: bold;
 }
-button {
+.pagination button {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0;
-  height: 54px;
+  height: var(--button-height);
   width: var(--button-width);
   color: var(--color-button);
   background: none;
   border: var(--border-button);
+}
+.pagination--small button {
+  height: var(--button-height-small);
 }
 button:focus {
   outline: none;
