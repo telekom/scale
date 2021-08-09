@@ -36,11 +36,11 @@
   overflow: auto;
   flex-wrap: wrap;
 }
-.pagination__info {
+.pagination .pagination__info {
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
-  line-height: 52px;
+  line-height:  var(--info-line-height);
   padding: 0 var(--info-padding);
   border: var(--border);
   flex-shrink: 0;
@@ -48,6 +48,9 @@
   border-right: 0;
   white-space: nowrap;
   order: 1;
+}
+.pagination--small .pagination__info {
+  line-height:  var(--info-line-height-small);
 }
 .pagination__info span {
   font-weight: bold;
