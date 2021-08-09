@@ -36,7 +36,7 @@
   overflow: auto;
   flex-wrap: wrap;
 }
-.pagination .pagination__info {
+.pagination__info {
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
@@ -55,7 +55,7 @@
 .pagination__info span {
   font-weight: bold;
 }
-.pagination button {
+button {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
