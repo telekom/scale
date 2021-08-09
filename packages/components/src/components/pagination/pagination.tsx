@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- import {
+import {
   Component,
   Prop,
   h,
@@ -134,6 +134,17 @@ export class Pagination {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
+          <div
+            part="info"
+            class={`${name}__info`}
+            style={{ width: `${this.maxWidth}px` }}
+          >
+            <span>
+              {start}-{end}
+            </span>{' '}
+            / {total}
+          </div>
+          <div class={`${name}__linebreak`}></div>
           <button
             class={`${name}__first-prompt`}
             part="first-prompt"
@@ -176,16 +187,6 @@ export class Pagination {
               />
             </svg>
           </button>
-          <div
-            part="info"
-            class={`${name}__info`}
-            style={{ width: `${this.maxWidth}px` }}
-          >
-            <span>
-              {start}-{end}
-            </span>{' '}
-            / {total}
-          </div>
           <button
             class={`${name}__next-prompt`}
             part="next-prompt"

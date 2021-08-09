@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- :host {
+:host {
   --color: var(--scl-color-black);
   --font-size: var(--scl-font-size-16);
   --border: 1px solid var(--scl-color-grey-10);
@@ -19,24 +19,31 @@
   --box-shadow-focus: 0px 0px 0px 2px var(--scl-color-focus);
   --radius-first-prompt: 12px 0 0 12px;
   --radius-last-prompt: 0 12px 12px 0;
+  --radius-first-prompt-stack: 0 0 0 12px;
+  --radius-last-prompt-stack: 0 0 12px 0;
   --stroke-svg: var(--scl-color-black);
   --stroke-svg-high-contrast: var(--scl-color-white);
+  --button-width: 42px;
+  --button-width-stack: 48px;
+  --info-padding: var(--scl-spacing-8);
 }
 .pagination {
   display: flex;
   overflow: auto;
+  flex-wrap: wrap;
 }
 .pagination__info {
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
   line-height: 52px;
-  padding: 0 var(--scl-spacing-8);
+  padding: 0 var(--info-padding);
   border: var(--border);
   flex-shrink: 0;
   border-left: 0;
   border-right: 0;
   white-space: nowrap;
+  order: 1;
 }
 .pagination__info span {
   font-weight: bold;
@@ -49,7 +56,7 @@ button {
   padding: 0;
   margin: 0;
   height: 54px;
-  width: 42px;
+  width: var(--button-width);
   color: var(--color-button);
   background: none;
   border: var(--border-button);
@@ -65,6 +72,10 @@ button:focus {
 .pagination__last-prompt {
   border-radius: var(--radius-last-prompt);
   margin-left: -1px;
+  order: 2;
+}
+.pagination__next-prompt {
+  order: 2;
 }
 button svg {
   display: block;
@@ -102,6 +113,33 @@ button:not(:disabled):hover svg {
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   button:not(:disabled) svg {
-    stroke: var( --stroke-svg-high-contrast);
+    stroke: var(--stroke-svg-high-contrast);
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .pagination__linebreak {
+    flex-basis: 100%;
+    height: 0;
+  }
+  .pagination__info {
+    order: -1;
+    width: calc(
+      var(--button-width-stack) * 4 - (2 * var(--info-padding) + 4px)
+    ) !important;
+    overflow: auto;
+    border-left: var(--border);
+    border-right: var(--border);
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
+  }
+  button {
+    width: var(--button-width-stack);
+  }
+  .pagination__first-prompt {
+    border-radius: var(--radius-first-prompt-stack);
+  }
+  .pagination__last-prompt {
+    border-radius: var(--radius-last-prompt-stack);
   }
 }
