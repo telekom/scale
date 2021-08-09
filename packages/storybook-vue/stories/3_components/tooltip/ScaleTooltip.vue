@@ -1,7 +1,6 @@
 <template>
-  <div style="height: 80px; position: relative">
-    <div style="position: absolute; bottom: 20px; left: 200px">
-    <scale-tooltip 
+  <div style="padding: 30px 30px 30px 70px">
+    <scale-tooltip
       :content="content"
       :placement="placement"
       :disabled="disabled"
@@ -10,31 +9,26 @@
       :skidding="skidding"
       :trigger="trigger"
       :flip="flip"
-      :preventOverflow="preventOverflow"
+      :prevent-overflow="preventOverflow"
     >
-      <scale-tooltip slot="content">
-        <slot></slot>
-      </scale-tooltip>
-      <scale-button>
-        Hover for Tooltip
-      </scale-button>
-    </scale-tooltip>  
-    </div>
+      <slot name="content"></slot>
+      <scale-button>Hover for Tooltip</scale-button>
+    </scale-tooltip>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    content: String,
-    placement: String,
-    disabled: Boolean,
-    distance: Number,
-    open: Boolean,
-    skidding: Boolean,
-    trigger: String,
-    flip: Boolean,
-    preventOverflow: Boolean
+    content: { type: String },
+    placement: { type: String },
+    disabled: { type: Boolean },
+    distance: { type: Number },
+    open: { type: Boolean },
+    skidding: { type: Boolean },
+    trigger: { type: String },
+    flip: { type: Boolean },
+    preventOverflow: { type: Boolean },
   },
-}
+};
 </script>

@@ -1,53 +1,74 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
 import ScaleTooltip from './ScaleTooltip.vue';
 
 <Meta
-    title='Beta Components/Tooltip'
-    component={ScaleTooltip}
-    argTypes={{
-      content: {
-        control: {type: 'text'}
+  title="Beta Components/Tooltip"
+  component={ScaleTooltip}
+  argTypes={{
+    content: {
+      control: { type: 'text' },
+    },
+    placement: {
+      control: {
+        type: 'select',
+        options: [
+          'top',
+          'top-start',
+          'top-end',
+          'right',
+          'right-start',
+          'right-end',
+          'bottom',
+          'bottom-start',
+          'bottom-end',
+          'left',
+          'left-start',
+          'left-end',
+        ],
       },
-      placement: {
-        control: {type: 'select', options: ['top', 'top-start', 'top-end', 'right', 'right-start', 'right-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end']}
-      },
-      disabled: {
+    },
+    disabled: {
       defaultValue: false,
-        control: { type: 'boolean' }
-      },
-      distance: {
-        defaultValue: 5,
-        control: { type: 'text' }
-      },
-      open: {
+      control: { type: 'boolean' },
+    },
+    distance: {
+      defaultValue: 5,
+      control: { type: 'text' },
+    },
+    open: {
       defaultValue: false,
-        control: { type: 'boolean' }
-      },
-      skidding: {
+      control: { type: 'boolean' },
+    },
+    skidding: {
       defaultValue: false,
-        control: { type: 'boolean' }
-      },
-      trigger: {
-        control: {type: 'text'}
-      },
-      flip: {
-        defaultValue: false,
-        control: { type: 'boolean' }
-      },
-      preventOverflow: {
-        defaultValue: false,
-        control: { type: 'boolean' }
-      }
-    }}
+      control: { type: 'boolean' },
+    },
+    trigger: {
+      control: { type: 'text' },
+    },
+    flip: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    preventOverflow: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
-    components: { ScaleTooltip },
-    props: {
-      slot: String,
-      ...ScaleTooltip.props
-    },
-    template: `
+  components: { ScaleTooltip },
+  props: {
+    ...ScaleTooltip.props,
+  },
+  template: `
     <scale-tooltip
       :content="content"
       :placement="placement"
@@ -59,68 +80,68 @@ export const Template = (args, { argTypes }) => ({
       :flip="flip"
       :preventOverflow="preventOverflow"
     >
-        {{ slot }}
+    <scale-button>Hallo</scale-button>
     </scale-tooltip>
-  `
-})
+  `,
+});
+
+export const SlotTemplate = (args, { argTypes }) => ({
+  components: { ScaleTooltip },
+  props: {
+    ...ScaleTooltip.props,
+  },
+  template: `
+    <scale-tooltip
+      :content="content"
+      :placement="placement"
+      :disabled="disabled"
+      :distance="distance"
+      :open="open"
+      :skidding="skidding"
+      :trigger="trigger"
+      :flip="flip"
+      :preventOverflow="preventOverflow"
+    >
+    <template v-slot:content>
+        <a slot="content" href="https://github.com/telekom/scale" style="color: white;background-color: transparent;">Go to Scale</a>
+    </template>
+    <scale-button>Hallo</scale-button>
+    </scale-tooltip>
+  `,
+});
 
 ## Standard
 
 <Canvas withSource="none">
   <Story
-    name='Standard'
+    name="Standard"
     args={{
-      slot: 'Tooltip'
+      content: 'Tooltip',
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
+<ArgsTable story="Standard" />
 
 ```html
-<scale-tooltip content="Tooltip" placement="top">
-  <scale-tooltip slot="content">Tooltip</scale-tooltip>
+<scale-tooltip content="Tooltip">
   <scale-button>Hover to show Tooltip</scale-button>
 </scale-tooltip>
 ```
 
-### Scoped CSS variables
-
-```css
-/* scale-tooltip */
-:host {
-  --scale-tooltip-border-radius: var(--scl-radius-4);
-  --scale-tooltip-background-color: var(--scl-color-grey-60);
-  --scale-tooltip-color: var(--scl-color-white);
-  --scale-tooltip-font-weight: var(--scl-font-weight-regular);
-  --scale-tooltip-font-size: var(--scl-font-size-16);
-  --scale-tooltip-line-height: 1.4;
-  --scale-tooltip-padding: var(--scl-spacing-2) var(--scl-spacing-8);
-  --scale-tooltip-arrow-size: 5px;
-  --scale-tooltip-arrow-start-end-offset: var(--scl-spacing-8);
-
-  --scale-tooltip-max-width: 20rem;
-  --scale-tooltip-hide-delay: 0s;
-  --scale-tooltip-hide-duration: 0.125s;
-  --scale-tooltip-hide-timing-function: ease;
-  --scale-tooltip-show-duration: 0.125s;
-  --scale-tooltip-show-timing-function: ease;
-  --scale-tooltip-z-index: var(--scl-z-index-70);
-}
-```
-
-## Open by default
+## Slot
 
 <Canvas withSource="none">
-  <Story
-    name="opendefault"
-    args={{
-      open: true,
-      slot: "Tooltip"
-    }}
-  >
-    {Template.bind({})}
+  <Story name="Slot" args={{}}>
+    {SlotTemplate.bind({})}
   </Story>
 </Canvas>
+
+```html
+<scale-tooltip content="Tooltip">
+  <a slot="content" href="https://github.com/telekom/scale">Go to Scale</a>
+  <scale-button>Hover to show Tooltip</scale-button>
+</scale-tooltip>
+```
