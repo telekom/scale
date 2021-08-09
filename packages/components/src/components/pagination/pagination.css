@@ -16,7 +16,7 @@
   --color-hover: var(--scl-color-primary-hover);
   --color-button: var(--scl-color-grey-10);
   --border-button: var(--border);
-  --box-shadow-focus: 0px 0px 0px 2px var(--scl-color-focus);
+  --box-shadow-focus: inset 0 0 0 2px var(--scl-color-focus);
   --radius-first-prompt: 12px 0 0 12px;
   --radius-last-prompt: 0 12px 12px 0;
   --radius-first-prompt-stack: 0 0 0 12px;
