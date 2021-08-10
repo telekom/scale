@@ -112,6 +112,43 @@ export const SlotTemplate = (args, { argTypes }) => ({
   `,
 });
 
+export const Slot2Template = (args, { argTypes }) => ({
+  components: { ScaleTooltip },
+  props: {
+    ...ScaleTooltip.props,
+  },
+  template: `
+    <scale-tooltip
+      :content="content"
+      :placement="placement"
+      :disabled="disabled"
+      :distance="distance"
+      :open="open"
+      :skidding="skidding"
+      :trigger="trigger"
+      :flip="flip"
+      :preventOverflow="preventOverflow"
+    >
+    <template v-slot:content>
+      <scale-rating-stars slot="content" rating="1"></scale-rating-stars>
+    </template>
+    <scale-button></scale-button>
+    </scale-tooltip>
+  `,
+});
+
+export const FocusTemplate = (args, { argTypes }) => ({
+  components: {},
+  props: {},
+  template: `
+    <div style="padding: 30px 30px 30px 70px">
+    <scale-tooltip trigger="focus" content="Tooltip">
+    <scale-button>Focus me</scale-button>
+    </scale-tooltip>
+    </div>
+  `,
+});
+
 ## Standard
 
 <Canvas withSource="none">
@@ -129,7 +166,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip">
-  <scale-button>Hover me to show Tooltip</scale-button>
+  <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
 
@@ -151,7 +188,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" placement="left">
-  <scale-button>Hover me to show Tooltip</scale-button>
+  <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
 
@@ -171,7 +208,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" placement="left-start">
-  <scale-button>Hover me to show Tooltip</scale-button>
+  <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
 
@@ -191,7 +228,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" placement="left-end">
-  <scale-button>Hover me to show Tooltip</scale-button>
+  <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
 
@@ -211,11 +248,33 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" disabled="true">
-  <scale-button>Hover me to show Tooltip</scale-button>
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```
+
+## Trigger
+
+<Canvas withSource="none">
+  <Story
+    name="Trigger"
+    args={{
+      content: 'Tooltip',
+      trigger: 'focus',
+    }}
+  >
+    {FocusTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip" trigger="focus">
+  <scale-button>Focus me</scale-button>
 </scale-tooltip>
 ```
 
 ## Slot
+
+### Link Example
 
 <Canvas withSource="none">
   <Story name="Slot" args={{}}>
@@ -228,6 +287,21 @@ export const SlotTemplate = (args, { argTypes }) => ({
   <a slot="content" href="https://github.com/telekom/scale"
     >I'm a HTML-tooltip with a link</a
   >
-  <scale-button>Hover me to show Tooltip</scale-button>
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```
+
+### Component Example
+
+<Canvas withSource="none">
+  <Story name="Slot2" args={{}}>
+    {Slot2Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip">
+  <scale-rating-stars slot="content" rating="1"></scale-rating-stars>
+  <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
