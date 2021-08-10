@@ -70,7 +70,7 @@ export class TabHeader {
       <Host
         id={`scale-tab-header-${this.generatedId}`}
         role={this.disabled ? false : 'tab'}
-        aria-selected={String(this.selected)}
+        aria-selected={this.selected ? 'true' : 'false'}
         tabindex={this.disabled ? false : this.selected ? '0' : '-1'}
         onFocus={() => (this.hasFocus = true)}
         onBlur={() => (this.hasFocus = false)}
