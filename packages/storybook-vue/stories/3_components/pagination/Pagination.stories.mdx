@@ -2,117 +2,180 @@ import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScalePagination from './ScalePagination.vue';
 
 <Meta
-    title="Beta Components/Pagination"
-    component={ScalePagination}
-    argTypes={{
-        hideBorders: {
-            table: {
-              type: { summary: 'Boolean' },
-              defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to hide top and bottom borders`,
-            control: { type: null }
-        },
-        pageSize: {
-            table: {
-              type: { summary: 'number' },
-              defaultValue: { summary: 10 },
-            },
-            description: `(optional) Set number of rows/elements to show per page`,
-            control: { type: null }
-        },
-        startElement: {
-            table: {
-              type: { summary: 'number' },
-              defaultValue: { summary: 0 },
-            },
-            description: `(optional) Index of first element to display`,
-            control: { type: null }
-        },
-        totalElements: {
-            table: {
-              type: { summary: 'number' },
-              defaultValue: { summary: 1 },
-            },
-            description: `(optional) Total number of rows/elements used to calculate page displays`,
-            control: { type: null }
-        },
-        styles: {
-            table: {
-              type: { summary: 'string' },
-            },
-            description: `(optional) Injected styles`,
-            control: { type: null }
-        },
-    }}
+  title="Beta Components/Pagination"
+  component={ScalePagination}
+  argTypes={{
+    hideBorders: {
+      table: {
+        type: { summary: 'Boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to hide top and bottom borders`,
+      control: { type: null },
+    },
+    pageSize: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 10 },
+      },
+      description: `(optional) Set number of rows/elements to show per page`,
+      control: { type: null },
+    },
+    startElement: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 0 },
+      },
+      description: `(optional) Index of first element to display`,
+      control: { type: null },
+    },
+    totalElements: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 1 },
+      },
+      description: `(optional) Total number of rows/elements used to calculate page displays`,
+      control: { type: null },
+    },
+    styles: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Injected styles`,
+      control: { type: null },
+    },
+  }}
 />
 
-export const Template = (args, {}) => ({
-    components: {ScalePagination},
-    props: {
-        // Ignored, but can't be empty ¯\_(ツ)_/¯
-        unused: {},
-    },
-    template: ''
-})
+export const Template = (args, { argTypes }) => ({
+  components: { ScalePagination },
+  props: {
+    ...ScalePagination.props,
+  },
+  template: `
+    <scale-pagination
+        :hide-borders="hideBorders"
+        :page-size="pageSize"
+        :small="small"
+        :start-element="startElement"
+        :total-elements="totalElements"
+        :styles="styles"
+    >
+    </scale-pagination>
+        `,
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Pagination</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+export const TemplateEmbedded = (args, { argTypes }) => ({
+  components: { ScalePagination },
+  props: {
+    ...ScalePagination.props,
+  },
+  template: `
+  <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
+    <scale-pagination
+        :hide-borders="hideBorders"
+        :page-size="pageSize"
+        :small="small"
+        :start-element="startElement"
+        :total-elements="totalElements"
+        :styles="styles"
+    >
+    </scale-pagination>
+  </div>`,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Pagination</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ### Properties
 
-<ArgsTable story="Standard" />
-
 ## Standard
 
-<Canvas withSource="close">
-    <Story name="Standard" >
-{`<scale-pagination
-    page-size="5"
-    total-elements="23"
-    start-element="0"
-></scale-pagination>`}
-    </Story>
+<Canvas withSource="none">
+  <Story 
+    name="Standard"
+    args={{
+        pageSize: 10,
+        startElement: 100,
+        totalElements: 200
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-## Auto-Sizing Label
+<ArgsTable story="Standard" />
 
-<Canvas withSource="close">
-    <Story name="Auto-Sizing Label">
-{`<scale-pagination
-    page-size="140"
-    total-elements="4032"
-    start-element="3640"
-></scale-pagination>`}
-    </Story>
+```html
+<scale-pagination page-size="10" start-element="100" total-elements="200"></scale-pagination>
+```
+
+## Small
+
+<Canvas withSource="none">
+  <Story 
+    name="Small"
+    args={{
+        small: true,
+        pageSize: 5,
+        startElement: 100,
+        totalElements: 200
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
-    
+
+```html
+<scale-pagination page-size="5" start-element="100" total-elements="200" small></scale-pagination>
+```
 
 ## Hidden Borders
 
-<Canvas withSource="close">
-    <Story name="Hidden Borders">
-{`<scale-pagination
-    page-size="10"
-    total-elements="100"
-    hide-borders
-></scale-pagination>`}
-    </Story>
+<Canvas withSource="none">
+  <Story 
+    name="Hidden Borders"
+    args={{
+        pageSize: 5,
+        startElement: 100,
+        totalElements: 200,
+        hideBorders: true
+    }}>
+    {Template.bind({})}
+  </Story>
 </Canvas>
-    
+
+```html
+<scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+```
+
+
 
 ## Embedded Hidden Borders
 
-<Canvas withSource="close">
-    <Story name="Embedded Hidden Borders">
-{`<div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
-    <scale-pagination
-    page-size="10"
-    total-elements="100"
-    hide-borders
-    ></scale-pagination>
-</div>`}
-    </Story>
+<Canvas withSource="none">
+  <Story 
+    name=" Embedded Hidden Borders"
+    args={{
+        pageSize: 5,
+        startElement: 100,
+        totalElements: 200,
+        hideBorders: true
+    }}>
+    
+        {TemplateEmbedded.bind({})}
+  </Story>
 </Canvas>
+
+```html
+<div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
+ <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+</div>
+```

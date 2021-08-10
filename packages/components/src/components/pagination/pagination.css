@@ -14,6 +14,7 @@
   --font-size: var(--scl-font-size-12);
   --border: 1px solid var(--scl-color-grey-10);
   --color-hover: var(--scl-color-primary-hover);
+  --color-active: var(--scl-color-primary-active);
   --color-button: var(--scl-color-grey-10);
   --border-button: var(--border);
   --box-shadow-focus: inset 0 0 0 2px var(--scl-color-focus);
@@ -107,6 +108,13 @@ button:not(:disabled):hover {
 }
 button:not(:disabled):hover svg {
   stroke: var(--color-hover);
+}
+button:not(:disabled):active {
+  border-color: var(--color-active);
+  z-index: 1;
+}
+button:not(:disabled):active svg {
+  stroke: var(--color-active);
 }
 
 /* Hide Borders option */

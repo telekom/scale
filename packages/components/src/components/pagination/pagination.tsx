@@ -58,7 +58,7 @@ export class Pagination {
   /** (optional) Injected styles */
   @Prop() styles?: string;
   /** (optional) small  */
-  @Prop() small = true;
+  @Prop() small = false;
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
