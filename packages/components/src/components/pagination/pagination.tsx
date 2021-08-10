@@ -137,100 +137,110 @@ export class Pagination {
         {this.styles && <style>{this.styles}</style>}
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div
-            part="info"
-            class={`${name}__info`}
-            style={{ width: `${this.maxWidth}px` }}
+            part="info-responsive"
+            class={`${name}__info-responsive`}
           >
             <span>
               {start}-{end}
             </span>{' '}
             / {total}
           </div>
-          <div class={`${name}__linebreak`}></div>
-          <button
-            class={`${name}__first-prompt`}
-            part="first-prompt"
-            disabled={isAtStart}
-            onClick={() => this.goFirstPage()}
-            aria-label="Go to first page"
-          >
-            <svg
-              height="17"
-              viewBox="0 0 48 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+          <div class={`${name}__button-wrapper`}>
+            <div
+              part="info"
+              class={`${name}__info`}
+              style={{ width: `${this.maxWidth}px` }}
             >
-              <path
-                d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5"
-                stroke-width="6"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <button
-            class={`${name}__prev-prompt`}
-            part="prev-prompt"
-            disabled={isAtStart}
-            onClick={() => this.goPreviousPage()}
-            aria-label="Go to previous page"
-          >
-            <svg
-              height="17"
-              viewBox="0 0 37 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              <span>
+                {start}-{end}
+              </span>{' '}
+              / {total}
+            </div>
+            <button
+              class={`${name}__first-prompt`}
+              part="first-prompt"
+              disabled={isAtStart}
+              onClick={() => this.goFirstPage()}
+              aria-label="Go to first page"
             >
-              <path
-                d="M33 48L6 26L33 4"
-                stroke-width="7"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <button
-            class={`${name}__next-prompt`}
-            part="next-prompt"
-            disabled={isAtEnd}
-            onClick={() => this.goNextPage()}
-            aria-label="Go to next page"
-          >
-            <svg
-              height="17"
-              viewBox="0 0 37 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              <svg
+                height="17"
+                viewBox="0 0 48 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class={`${name}__prev-prompt`}
+              part="prev-prompt"
+              disabled={isAtStart}
+              onClick={() => this.goPreviousPage()}
+              aria-label="Go to previous page"
             >
-              <path
-                d="M4 4L31 26L4 48"
-                stroke-width="7"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <button
-            class={`${name}__last-prompt`}
-            part="last-prompt"
-            disabled={isAtEnd}
-            onClick={() => this.goLastPage()}
-            aria-label="Go to last page"
-          >
-            <svg
-              height="17"
-              viewBox="0 0 48 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              <svg
+                height="17"
+                viewBox="0 0 37 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M33 48L6 26L33 4"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class={`${name}__next-prompt`}
+              part="next-prompt"
+              disabled={isAtEnd}
+              onClick={() => this.goNextPage()}
+              aria-label="Go to next page"
             >
-              <path
-                d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5"
-                stroke-width="6"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
+              <svg
+                height="17"
+                viewBox="0 0 37 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M4 4L31 26L4 48"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class={`${name}__last-prompt`}
+              part="last-prompt"
+              disabled={isAtEnd}
+              onClick={() => this.goLastPage()}
+              aria-label="Go to last page"
+            >
+              <svg
+                height="17"
+                viewBox="0 0 48 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </Host>
     );
@@ -248,9 +258,9 @@ export class Pagination {
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
     return classNames(
-      name, 
+      name,
       this.hideBorders && `${prefix}hide-borders`,
       this.small && `${prefix}small`
-      )
+    );
   }
 }

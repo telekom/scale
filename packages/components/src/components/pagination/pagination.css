@@ -36,11 +36,12 @@
   overflow: auto;
   flex-wrap: wrap;
 }
-.pagination__info {
+.pagination__info,
+.pagination__info-responsive {
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
-  line-height:  var(--info-line-height);
+  line-height: var(--info-line-height);
   padding: 0 var(--info-padding);
   border: var(--border);
   flex-shrink: 0;
@@ -49,8 +50,11 @@
   white-space: nowrap;
   order: 1;
 }
+.pagination__info-responsive {
+  display: none;
+}
 .pagination--small .pagination__info {
-  line-height:  var(--info-line-height-small);
+  line-height: var(--info-line-height-small);
 }
 .pagination__info span {
   font-weight: bold;
@@ -105,7 +109,8 @@ button:not(:disabled):hover svg {
 }
 
 /* Hide Borders option */
-.pagination--hide-borders .pagination__info {
+.pagination--hide-borders .pagination__info, 
+.pagination--hide-borders .pagination__info-responsive {
   border: 0;
 }
 
@@ -121,6 +126,10 @@ button:not(:disabled):hover svg {
   border-color: var(--color-hover) !important;
 }
 
+.pagination__button-wrapper {
+  display: flex;
+}
+
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   button:not(:disabled) svg {
     stroke: var(--stroke-svg-high-contrast);
@@ -128,23 +137,33 @@ button:not(:disabled):hover svg {
 }
 
 @media screen and (max-width: 639px) {
+  .pagination {
+    flex-direction: column;
+  }
   .pagination__linebreak {
     flex-basis: 100%;
     height: 0;
   }
   .pagination__info {
     order: -1;
-    width: calc(
-      var(--button-width-stack) * 4 - (2 * var(--info-padding) + 5px)
-    ) !important;
+    width: 100% !important;
     overflow: auto;
     border-left: var(--border);
     border-right: var(--border);
     border-bottom: 0;
     border-radius: 12px 12px 0 0;
   }
-  button {
-    width: var(--button-width-stack);
+  .pagination__info-responsive {
+    display: initial;
+    order: 0;
+    overflow: auto;
+    border-left: var(--border);
+    border-right: var(--border);
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
+  }
+  .pagination__info {
+    display: none;
   }
   .pagination__first-prompt {
     border-radius: var(--radius-first-prompt-stack);
@@ -154,5 +173,8 @@ button:not(:disabled):hover svg {
   }
   .pagination__next-prompt {
     margin-left: -1px;
+  }
+  button {
+    flex: 1;
   }
 }
