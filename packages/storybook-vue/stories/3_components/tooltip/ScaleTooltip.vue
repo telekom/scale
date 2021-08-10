@@ -12,7 +12,7 @@
       :prevent-overflow="preventOverflow"
     >
       <slot name="content"></slot>
-      <scale-button>Hover for Tooltip</scale-button>
+      <scale-button>Hover me</scale-button>
     </scale-tooltip>
   </div>
 </template>

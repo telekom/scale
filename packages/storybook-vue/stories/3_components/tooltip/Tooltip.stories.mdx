@@ -16,6 +16,7 @@ import ScaleTooltip from './ScaleTooltip.vue';
     },
     placement: {
       control: {
+        defaultValue: 'top',
         type: 'select',
         options: [
           'top',
@@ -50,10 +51,11 @@ import ScaleTooltip from './ScaleTooltip.vue';
       control: { type: 'boolean' },
     },
     trigger: {
+      defaultValue: 'hover focus',
       control: { type: 'text' },
     },
     flip: {
-      defaultValue: false,
+      defaultValue: true,
       control: { type: 'boolean' },
     },
     preventOverflow: {
@@ -80,7 +82,7 @@ export const Template = (args, { argTypes }) => ({
       :flip="flip"
       :preventOverflow="preventOverflow"
     >
-    <scale-button>Hallo</scale-button>
+    <scale-button></scale-button>
     </scale-tooltip>
   `,
 });
@@ -103,9 +105,9 @@ export const SlotTemplate = (args, { argTypes }) => ({
       :preventOverflow="preventOverflow"
     >
     <template v-slot:content>
-        <a slot="content" href="https://github.com/telekom/scale" style="color: white;background-color: transparent;">Go to Scale</a>
+        <a slot="content" href="https://github.com/telekom/scale" style="color: white;background-color: transparent;">I'm a HTML-tooltip with a link</a>
     </template>
-    <scale-button>Hallo</scale-button>
+    <scale-button></scale-button>
     </scale-tooltip>
   `,
 });
@@ -127,7 +129,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip">
-  <scale-button>Hover to show Tooltip</scale-button>
+  <scale-button>Hover me to show Tooltip</scale-button>
 </scale-tooltip>
 ```
 
@@ -149,7 +151,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" placement="left">
-  <scale-button>Hover to show Tooltip</scale-button>
+  <scale-button>Hover me to show Tooltip</scale-button>
 </scale-tooltip>
 ```
 
@@ -169,7 +171,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" placement="left-start">
-  <scale-button>Hover to show Tooltip</scale-button>
+  <scale-button>Hover me to show Tooltip</scale-button>
 </scale-tooltip>
 ```
 
@@ -189,7 +191,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" placement="left-end">
-  <scale-button>Hover to show Tooltip</scale-button>
+  <scale-button>Hover me to show Tooltip</scale-button>
 </scale-tooltip>
 ```
 
@@ -209,7 +211,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip" disabled="true">
-  <scale-button>Hover to show Tooltip</scale-button>
+  <scale-button>Hover me to show Tooltip</scale-button>
 </scale-tooltip>
 ```
 
@@ -223,7 +225,9 @@ export const SlotTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip content="Tooltip">
-  <a slot="content" href="https://github.com/telekom/scale">Go to Scale</a>
-  <scale-button>Hover to show Tooltip</scale-button>
+  <a slot="content" href="https://github.com/telekom/scale"
+    >I'm a HTML-tooltip with a link</a
+  >
+  <scale-button>Hover me to show Tooltip</scale-button>
 </scale-tooltip>
 ```
