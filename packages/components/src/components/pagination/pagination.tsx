@@ -136,10 +136,7 @@ export class Pagination {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <div
-            part="info-responsive"
-            class={`${name}__info-responsive`}
-          >
+          <div part="info-responsive" class={`${name}__info-responsive`}>
             <span>
               {start}-{end}
             </span>{' '}

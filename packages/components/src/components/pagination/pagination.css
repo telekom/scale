@@ -118,7 +118,7 @@ button:not(:disabled):active svg {
 }
 
 /* Hide Borders option */
-.pagination--hide-borders .pagination__info, 
+.pagination--hide-borders .pagination__info,
 .pagination--hide-borders .pagination__info-responsive {
   border: 0;
 }
