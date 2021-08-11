@@ -53,6 +53,9 @@
 }
 .pagination__info-responsive {
   display: none;
+}
+.pagination--small .pagination__info,
+.pagination--small .pagination__info-responsive {
   line-height: var(--info-line-height-small);
 }
 .pagination--small .pagination__info {
