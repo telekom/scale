@@ -54,14 +54,18 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-pagination
-        :hide-borders="hideBorders"
-        :page-size="pageSize"
-        :small="small"
-        :start-element="startElement"
-        :total-elements="totalElements"
-        :styles="styles"
-    >
-    </scale-pagination>
+    :hide-borders="hideBorders"
+    :page-size="pageSize"
+    :small="small"
+    :start-element="startElement"
+    :total-elements="totalElements"
+    :lang-go-first="langGoFirst"
+    :lang-go-last="langGoLast"
+    :lang-go-previous="langGoPrevious"
+    :lang-go-next="langGoNext"
+    :styles="styles"
+  >
+  </scale-pagination>
         `,
 });
 
@@ -178,4 +182,36 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
  <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
 </div>
+```
+
+## Translation German
+
+<Canvas withSource="none">
+  <Story 
+    name="Translation German"
+    args={{
+        pageSize: 10,
+        startElement: 100,
+        totalElements: 200,
+        langGoFirst: 'Zur ersten Seite',
+        langGoLast: 'Zur letzten Seite',
+        langGoPrevious: 'Zur vorigen Seite',
+        langGoNext: 'Zur nächsten Seite',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-pagination 
+    page-size="10" 
+    start-element="100" 
+    total-elements="200"
+    lang-go-first="Zur ersten Seite"
+    lang-go-next="Zur nächsten Seite"
+    lang-go-previous="Zur vorigen Seite"
+    lang-go-last="Zur letzten Seite"
+    ></scale-pagination>
 ```

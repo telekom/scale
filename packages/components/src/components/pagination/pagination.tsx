@@ -48,7 +48,7 @@ export class Pagination {
 
   /* 3. Public Properties (alphabetical) */
   /** (optional) Set to true to hide top and bottom borders */
-  @Prop() hideBorders?: boolean = true;
+  @Prop() hideBorders?: boolean = false;
   /** (optional) Set number of rows/elements to show per page */
   @Prop() pageSize?: number = 10;
   /** (optional) Index of first element to display */
@@ -58,7 +58,15 @@ export class Pagination {
   /** (optional) Injected styles */
   @Prop() styles?: string;
   /** (optional) small  */
-  @Prop() small = false;
+  @Prop() small = true;
+  /** (optional) translation to 'Go to first page'  */
+  @Prop() langGoFirst = 'Go to first page';
+  /** (optional) translation to 'Go to next page'  */
+  @Prop() langGoNextt = 'Go to next page';
+  /** (optional) translation to 'Go to previous page'  */
+  @Prop() langGoPrevious = 'Go to previous page';
+  /** (optional) translation to 'Go to last page'  */
+  @Prop() langGoLast = 'Go to last page';
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
@@ -158,7 +166,7 @@ export class Pagination {
               part="first-prompt"
               disabled={isAtStart}
               onClick={() => this.goFirstPage()}
-              aria-label="Go to first page"
+              aria-label={this.goFirstPage}
             >
               <svg
                 height="16"
@@ -179,7 +187,7 @@ export class Pagination {
               part="prev-prompt"
               disabled={isAtStart}
               onClick={() => this.goPreviousPage()}
-              aria-label="Go to previous page"
+              aria-label={this.goPreviousPage}
             >
               <svg
                 height="16"
@@ -200,7 +208,7 @@ export class Pagination {
               part="next-prompt"
               disabled={isAtEnd}
               onClick={() => this.goNextPage()}
-              aria-label="Go to next page"
+              aria-label={this.goNextPage}
             >
               <svg
                 height="16"
@@ -221,7 +229,7 @@ export class Pagination {
               part="last-prompt"
               disabled={isAtEnd}
               onClick={() => this.goLastPage()}
-              aria-label="Go to last page"
+              aria-label={this.goLastPage}
             >
               <svg
                 height="16"
