@@ -15,7 +15,7 @@
 | `langGoNextt`    | `lang-go-nextt`    | (optional) translation to 'Go to next page'                              | `string`  | `'Go to next page'`     |
 | `langGoPrevious` | `lang-go-previous` | (optional) translation to 'Go to previous page'                          | `string`  | `'Go to previous page'` |
 | `pageSize`       | `page-size`        | (optional) Set number of rows/elements to show per page                  | `number`  | `10`                    |
-| `small`          | `small`            | (optional) small                                                         | `boolean` | `true`                  |
+| `small`          | `small`            | (optional) small                                                         | `boolean` | `false`                 |
 | `startElement`   | `start-element`    | (optional) Index of first element to display                             | `number`  | `0`                     |
 | `styles`         | `styles`           | (optional) Injected styles                                               | `string`  | `undefined`             |
 | `totalElements`  | `total-elements`   | (optional) Total number of rows/elements used to calculate page displays | `number`  | `1`                     |

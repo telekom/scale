@@ -58,7 +58,7 @@ export class Pagination {
   /** (optional) Injected styles */
   @Prop() styles?: string;
   /** (optional) small  */
-  @Prop() small = true;
+  @Prop() small = false;
   /** (optional) translation to 'Go to first page'  */
   @Prop() langGoFirst = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */

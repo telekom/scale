@@ -3,7 +3,7 @@
 exports[`pagination should match snapshot 1`] = `
 <scale-pagination>
   <mock:shadow-root>
-    <div class="pagination pagination--hide-borders" part="pagination hide-borders">
+    <div class="pagination" part="pagination">
       <div class="pagination__info-responsive" part="info-responsive">
         <span>
           1-1
