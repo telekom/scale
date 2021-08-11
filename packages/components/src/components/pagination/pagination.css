@@ -53,6 +53,7 @@
 }
 .pagination__info-responsive {
   display: none;
+  line-height: var(--info-line-height-small);
 }
 .pagination--small .pagination__info {
   line-height: var(--info-line-height-small);
