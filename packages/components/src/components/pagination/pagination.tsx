@@ -48,7 +48,7 @@ export class Pagination {
 
   /* 3. Public Properties (alphabetical) */
   /** (optional) Set to true to hide top and bottom borders */
-  @Prop() hideBorders?: boolean = false;
+  @Prop() hideBorders?: boolean = true;
   /** (optional) Set number of rows/elements to show per page */
   @Prop() pageSize?: number = 10;
   /** (optional) Index of first element to display */
@@ -161,7 +161,7 @@ export class Pagination {
               aria-label="Go to first page"
             >
               <svg
-                height="17"
+                height="16"
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +182,7 @@ export class Pagination {
               aria-label="Go to previous page"
             >
               <svg
-                height="17"
+                height="16"
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +203,7 @@ export class Pagination {
               aria-label="Go to next page"
             >
               <svg
-                height="17"
+                height="16"
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +224,7 @@ export class Pagination {
               aria-label="Go to last page"
             >
               <svg
-                height="17"
+                height="16"
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

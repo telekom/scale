@@ -27,8 +27,8 @@
   --button-width: 42px;
   --button-width-stack: 48px;
   --info-padding: var(--scl-spacing-8);
-  --button-height: 54px;
-  --button-height-small: 48px;
+  --button-height: 56px;
+  --button-height-small: 40px;
   --info-line-height: calc(var(--button-height) - 2px);
   --info-line-height-small: calc(var(--button-height-small) - 2px);
 }
@@ -122,6 +122,9 @@ button:not(:disabled):active svg {
 .pagination--hide-borders .pagination__info-responsive {
   border: 0;
 }
+.pagination--hide-borders .pagination__info-responsive {
+  border-bottom: var(--border);
+}
 
 .pagination--hide-borders button {
   border-radius: 0;
@@ -175,5 +178,11 @@ button:not(:disabled):active svg {
   }
   button {
     flex: 1;
+  }
+  .pagination--hide-borders .pagination__first-prompt {
+    border-left: 0;
+  }
+  .pagination--hide-borders .pagination__last-prompt {
+    border-right: 0;
   }
 }
