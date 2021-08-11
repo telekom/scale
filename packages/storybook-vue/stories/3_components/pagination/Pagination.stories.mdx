@@ -59,10 +59,10 @@ export const Template = (args, { argTypes }) => ({
     :small="small"
     :start-element="startElement"
     :total-elements="totalElements"
-    :lang-go-first="langGoFirst"
-    :lang-go-last="langGoLast"
-    :lang-go-previous="langGoPrevious"
-    :lang-go-next="langGoNext"
+    :aria-label-first-page="ariaLabelFirstPage"
+    :aria-label-last-page="ariaLabelLastPage"
+    :aria-label-previous-page="ariaLabelPreviousPage"
+    :aria-label-next-page="ariaLabelNextPage"
     :styles="styles"
   >
   </scale-pagination>
@@ -184,19 +184,19 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 </div>
 ```
 
-## Translation German
+## Translated Aria Labels
 
 <Canvas withSource="none">
   <Story 
-    name="Translation German"
+    name="Translated Aria Labels"
     args={{
         pageSize: 10,
         startElement: 100,
         totalElements: 200,
-        langGoFirst: 'Zur ersten Seite',
-        langGoLast: 'Zur letzten Seite',
-        langGoPrevious: 'Zur vorigen Seite',
-        langGoNext: 'Zur nächsten Seite',
+        ariaLabelFirstPage: 'Zur ersten Seite',
+        ariaLabelLastPage: 'Zur letzten Seite',
+        ariaLabelPreviousPage: 'Zur vorigen Seite',
+        ariaLabelNextPage: 'Zur nächsten Seite',
     }}>
     {Template.bind({})}
   </Story>
@@ -209,9 +209,9 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
     page-size="10" 
     start-element="100" 
     total-elements="200"
-    lang-go-first="Zur ersten Seite"
-    lang-go-next="Zur nächsten Seite"
-    lang-go-previous="Zur vorigen Seite"
-    lang-go-last="Zur letzten Seite"
+    aria-label-first-page="Zur ersten Seite"
+    aria-label-last-page="Zur nächsten Seite"
+    aria-label-previous-page="Zur vorigen Seite"
+    aria-label-next-page="Zur letzten Seite"
     ></scale-pagination>
 ```

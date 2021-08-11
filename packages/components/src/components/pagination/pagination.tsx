@@ -60,13 +60,13 @@ export class Pagination {
   /** (optional) small  */
   @Prop() small = false;
   /** (optional) translation to 'Go to first page'  */
-  @Prop() langGoFirst = 'Go to first page';
+  @Prop() ariaLabelFirstPage = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */
-  @Prop() langGoNextt = 'Go to next page';
+  @Prop() ariaLabelNextPage = 'Go to next page';
   /** (optional) translation to 'Go to previous page'  */
-  @Prop() langGoPrevious = 'Go to previous page';
+  @Prop() ariaLabelPreviousPage = 'Go to previous page';
   /** (optional) translation to 'Go to last page'  */
-  @Prop() langGoLast = 'Go to last page';
+  @Prop() ariaLabelLastPage = 'Go to last page';
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
@@ -166,7 +166,7 @@ export class Pagination {
               part="first-prompt"
               disabled={isAtStart}
               onClick={() => this.goFirstPage()}
-              aria-label={this.goFirstPage}
+              aria-label={this.ariaLabelFirstPage}
             >
               <svg
                 height="16"
@@ -187,7 +187,7 @@ export class Pagination {
               part="prev-prompt"
               disabled={isAtStart}
               onClick={() => this.goPreviousPage()}
-              aria-label={this.goPreviousPage}
+              aria-label={this.ariaLabelPreviousPage}
             >
               <svg
                 height="16"
@@ -208,7 +208,7 @@ export class Pagination {
               part="next-prompt"
               disabled={isAtEnd}
               onClick={() => this.goNextPage()}
-              aria-label={this.goNextPage}
+              aria-label={this.ariaLabelNextPage}
             >
               <svg
                 height="16"
@@ -229,7 +229,7 @@ export class Pagination {
               part="last-prompt"
               disabled={isAtEnd}
               onClick={() => this.goLastPage()}
-              aria-label={this.goLastPage}
+              aria-label={this.ariaLabelLastPage}
             >
               <svg
                 height="16"

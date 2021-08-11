@@ -5,10 +5,10 @@
     :small="small"
     :start-element="startElement"
     :total-elements="totalElements"
-    :lang-go-first="langGoFirst"
-    :lang-go-last="langGoLast"
-    :lang-go-previous="langGoPrevious"
-    :lang-go-next="langGoNext"
+    :aria-label-first-page="ariaLabelFirstPage"
+    :aria-label-last-page="ariaLabelLastPage"
+    :aria-label-previous-page="ariaLabelPreviousPage"
+    :aria-label-next-page="ariaLabelNextPage"
     :styles="styles"
   >
   </scale-pagination>
@@ -23,10 +23,10 @@ export default {
     totalElements: { type: Number, default: 1 },
     styles: { type: String },
     small: { type: Boolean, default: false },
-    langGoFirst: { type: String, default: 'Go to first page'},
-    langGoLast: { type: String, default: 'Go to last page'},
-    langGoPrevious: { type: String, default: 'Go to previous page'},
-    langGoNext: { type: String, default: 'Go to next page'},
+    ariaLabelFirstPage: { type: String, default: 'Go to first page'},
+    ariaLabelLastPage: { type: String, default: 'Go to last page'},
+    ariaLabelPreviousPage: { type: String, default: 'Go to previous page'},
+    ariaLabelNextPage: { type: String, default: 'Go to next page'},
   },
 };
 </script>
