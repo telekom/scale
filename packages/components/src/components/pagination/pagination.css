@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- :host {
+:host {
   --color: var(--scl-color-black);
   --radius: var(--scl-radius-8);
   --font-size: var(--scl-font-size-12);
@@ -109,7 +109,6 @@ button:not(:disabled) svg {
 button:not(:disabled):hover {
   border-color: var(--color-hover);
   z-index: 1;
-
 }
 button:not(:disabled):hover svg {
   stroke: var(--color-hover);
