@@ -28,21 +28,21 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleToggleGroup.props,
   },
   template: `
-  <scale-toggle-group
-    :size="size"
-    :variant="variant"
-	  :box-type="boxType"
-    :disabled="disabled"
-    :border="border"
-    :single-select="singleSelect"
-    :aria-label-translation="ariaLabelTranslation"
-    :styles="styles"
-  >
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
-  </scale-toggle-group>
-    `,
+    <scale-toggle-group
+      :size="size"
+      :variant="variant"
+      :box-type="boxType"
+      :disabled="disabled"
+      :border="border"
+      :single-select="singleSelect"
+      :aria-label-translation="ariaLabelTranslation"
+      :styles="styles"
+    >
+      <scale-toggle-button>Label</scale-toggle-button>
+      <scale-toggle-button>Label</scale-toggle-button>
+      <scale-toggle-button selected>Label</scale-toggle-button>
+    </scale-toggle-group>
+  `,
 });
 
 export const TemplateAriaTranslation = (args, { argTypes }) => ({
@@ -53,35 +53,35 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
     ...ScaleToggleGroup.props,
   },
   template: `
-  <scale-toggle-group
-    :size="size"
-    :variant="variant"
-	  :box-type="boxType"
-    :disabled="disabled"
-    :border="border"
-    :single-select="singleSelect"
-    :aria-label-translation="ariaLabelTranslation"
-    :styles="styles"
-  >
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert">Label
-    </scale-toggle-button>
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert">Label
-    </scale-toggle-button>
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert"
-      selected
-      >Label
-    </scale-toggle-button>
-  </scale-toggle-group>
-    `,
+    <scale-toggle-group
+      :size="size"
+      :variant="variant"
+      :box-type="boxType"
+      :disabled="disabled"
+      :border="border"
+      :single-select="singleSelect"
+      :aria-label-translation="ariaLabelTranslation"
+      :styles="styles"
+    >
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert">Label
+      </scale-toggle-button>
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert">Label
+      </scale-toggle-button>
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert"
+        selected
+        >Label
+      </scale-toggle-button>
+    </scale-toggle-group>
+  `,
 });
 
 export const TemplateIcons = (args, { argTypes }) => ({
@@ -92,38 +92,32 @@ export const TemplateIcons = (args, { argTypes }) => ({
     ...ScaleToggleGroup.props,
   },
   template: `
-  <scale-toggle-group
-    :size="size"
-    :variant="variant"
-	  :box-type="boxType"
-    :disabled="disabled"
-    :border="border"
-    :single-select="singleSelect"
-    :aria-label-translation="ariaLabelTranslation"
-    :styles="styles"
-  >
-    <scale-toggle-button>
-      <scale-icon-action-search />Label
-    </scale-toggle-button>
-    <scale-toggle-button>
-      Label<scale-icon-action-search />
-    </scale-toggle-button>
-    <scale-toggle-button selected icon-only="true">
-      <scale-icon-action-search />
-    </scale-toggle-button>
-  </scale-toggle-group>
-    `,
+    <scale-toggle-group
+      :size="size"
+      :variant="variant"
+      :box-type="boxType"
+      :disabled="disabled"
+      :border="border"
+      :single-select="singleSelect"
+      :aria-label-translation="ariaLabelTranslation"
+      :styles="styles"
+    >
+      <scale-toggle-button>
+        <scale-icon-action-search />Label
+      </scale-toggle-button>
+      <scale-toggle-button>
+        Label<scale-icon-action-search />
+      </scale-toggle-button>
+      <scale-toggle-button selected icon-only="true">
+        <scale-icon-action-search />
+      </scale-toggle-button>
+    </scale-toggle-group>
+  `,
 });
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Toggle Group</h1>
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Toggle Group</h1>
+    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ## Standard
@@ -141,9 +135,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -162,9 +156,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group variant='secondary'>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -183,9 +177,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group disabled>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -205,9 +199,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group variant='secondary' disabled>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -226,9 +220,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group size="regular">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -248,9 +242,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group size="small" box-type="block">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -270,9 +264,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group size="xs" box-type="block">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -291,9 +285,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group border>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -315,9 +309,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group border disabled variant="secondary" size="regular">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -336,9 +330,9 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group single-select>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -400,3 +394,4 @@ export const TemplateIcons = (args, { argTypes }) => ({
     <scale-icon-action-search></scale-icon-action-search> Label
   </scale-toggle-button>
 </scale-toggle-group>
+```
