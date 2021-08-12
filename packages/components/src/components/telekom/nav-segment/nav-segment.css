@@ -42,4 +42,5 @@ scale-nav-segment {
 .segment-navigation__item-link.active {
   border-bottom: var(--border-bottom);
   transition: var(--transition);
+  color: var(--color);
 }
