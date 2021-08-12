@@ -846,13 +846,8 @@ export class DataGrid {
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
       >
-        <table
-          class={`${name}__table`}
-          role="table"
-          aria-rowcount={this.rows.length}
-          aria-colcount={this.fields.length}
-        >
-          {!this.hideHeader && this.renderTableHead()}
+        <table class={`${name}__table`} role="table">
+          {this.renderTableHead()}
           {this.renderTableBody()}
         </table>
       </div>
@@ -921,7 +916,7 @@ export class DataGrid {
     return (
       <thead
         ref={(el) => (this.elTableHead = el)}
-        class={`thead`}
+        class={`thead ${this.hideHeader ? 'sr-only' : ''}`}
         role="rowgroup"
       >
         <tr class={`thead__row`} role="row">
@@ -971,7 +966,32 @@ export class DataGrid {
                 props['aria-sort'] = sortDirection;
               }
               return (
-                <th {...props}>
+                <th
+                  {...props}
+                  {...(sortable
+                    ? {
+                        'aria-label': 'Activate to sort column',
+                        onKeyDown: (event: KeyboardEvent) => {
+                          if (['Enter', ' '].includes(event.key)) {
+                            this.toggleTableSorting(
+                              sortDirection,
+                              columnIndex,
+                              type
+                            );
+                          }
+                        },
+                        onClick: () => {
+                          this.toggleTableSorting(
+                            sortDirection,
+                            columnIndex,
+                            type
+                          );
+                        },
+                        tabindex: 0,
+                        class: `${props.class} thead-sortable`,
+                      }
+                    : {})}
+                >
                   <div class={`thead__title`}>
                     <span class={`thead__text`}>
                       {sortable && <span class={`thead__arrow-top`}></span>}
@@ -979,19 +999,6 @@ export class DataGrid {
                       {label}
                     </span>
                   </div>
-                  {sortable && (
-                    <button
-                      aria-label="Activate to sort column"
-                      class={`thead__sort-prompt`}
-                      onClick={() =>
-                        this.toggleTableSorting(
-                          sortDirection,
-                          columnIndex,
-                          type
-                        )
-                      }
-                    ></button>
-                  )}
                   {resizable && (
                     <div
                       class={`thead__divider`}
@@ -1038,6 +1045,7 @@ export class DataGrid {
         <scale-checkbox
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
+          aria-label="Toggle select all"
           hideLabel={true}
         ></scale-checkbox>
       </th>
@@ -1046,7 +1054,7 @@ export class DataGrid {
 
   renderTableBody() {
     return (
-      <tbody class={`tbody`} role="rowgroup" tabindex="0">
+      <tbody class={`tbody`} role="rowgroup">
         {(() => {
           const rows = [];
           // Pagination functionality
@@ -1150,7 +1158,7 @@ export class DataGrid {
         class={`tbody__cell tbody__cell--numbered`}
         style={{ width: this.numberColumnWidth + 'px' }}
       >
-        <p class={`scl-body`}>{rowIndex + 1}</p>
+        <p class="scl-body">{rowIndex + 1}</p>
       </td>
     );
   }
