@@ -393,6 +393,8 @@
   height: 54px;
   position: relative;
   border-top: 1px solid var(--scl-color-grey-20);
+  display: flex;
+  justify-content: center;
 }
 
 .info__selection {
@@ -400,18 +402,6 @@
   bottom: 0;
   line-height: 54px;
   left: var(--scl-spacing-24);
-}
-
-.data-grid:not(.data-grid--mobile) .info__pagination {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  border-bottom-right-radius: 7px;
-}
-
-.data-grid:not(.data-grid--mobile) .info__pagination::part(last-prompt) {
-  border-right-color: transparent;
-  border-bottom-right-radius: 7px;
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
