@@ -79,6 +79,8 @@ import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
 import badge_de from 'raw-loader!../../stories/3_components/badge/badge_de.md';
 import badge_en from 'raw-loader!../../stories/3_components/badge/badge.md';
+import alertbox_de from 'raw-loader!../../stories/3_components/alertbox/alertbox_de.md';
+import alertbox_en from 'raw-loader!../../stories/3_components/alertbox/alertbox.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -103,6 +105,8 @@ const Usage = (props) => {
   const componentMap = {
     accordion_en,
     accordion_de,
+    alertbox_de,
+    alertbox_en,
     'brand-header-navigation_en': brandHeader_en,
     'brand-header-navigation_de': brandHeader_de,
     breadcrumb_en,
