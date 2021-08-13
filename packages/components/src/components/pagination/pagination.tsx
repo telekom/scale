@@ -169,7 +169,7 @@ export class Pagination {
               aria-label={this.ariaLabelFirstPage}
             >
               <svg
-                height="16"
+                height="12"
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +190,7 @@ export class Pagination {
               aria-label={this.ariaLabelPreviousPage}
             >
               <svg
-                height="16"
+                height="12"
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -202,6 +202,9 @@ export class Pagination {
                   stroke-linecap="round"
                 />
               </svg>
+              {/* scale-icon behaves differently from inlined svg in HCM,
+                  and we want all four icons to be the same, so leaving that for now */}
+              {/*<scale-icon-navigation-left size={16} />*/}
             </button>
             <button
               class={`${name}__next-prompt`}
@@ -211,7 +214,7 @@ export class Pagination {
               aria-label={this.ariaLabelNextPage}
             >
               <svg
-                height="16"
+                height="12"
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +235,7 @@ export class Pagination {
               aria-label={this.ariaLabelLastPage}
             >
               <svg
-                height="16"
+                height="12"
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
