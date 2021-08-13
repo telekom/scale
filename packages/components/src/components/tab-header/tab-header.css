@@ -22,6 +22,7 @@
   --color-active: var(--scl-color-primary-active);
   --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --spacing-right-slotted: var(--scl-spacing-8);
+  --color-disabled: var(--scl-color-background-disabled);
 }
 
 .tab-header {
@@ -43,6 +44,23 @@
 
 .tab-header--small {
   --tab-height: var(--height-small);
+}
+
+.tab-header--disabled {
+  cursor: auto;
+  color: var(--color-disabled);
+}
+
+.tab-header--disabled:active {
+  color: var(--color-disabled);
+}
+
+.tab-header--disabled:hover {
+  color: var(--color-disabled) !important;
+}
+
+.tab-header--disabled:hover:after {
+  background-color: var(--color-disabled) !important;
 }
 
 .tab-header:after {
