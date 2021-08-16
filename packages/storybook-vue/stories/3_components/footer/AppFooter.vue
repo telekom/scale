@@ -4,7 +4,10 @@
     :footer-navigation="footerNavigation"
     :variant="variant"
     :copyright="copyright"
-  ></scale-app-footer>
+  >
+    <slot name="logo"></slot>
+    <slot name="navigation"></slot>
+  </scale-app-footer>
 </template>
 
 <script>
@@ -14,6 +17,6 @@ export default {
     footerNavigation: String,
     variant: String,
     copyright: String,
-  }
+  },
 };
 </script>
