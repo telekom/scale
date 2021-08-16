@@ -1,0 +1,34 @@
+<form [formGroup]="testingForm" (ngSubmit)="onSubmit()">
+  <p>
+    <scale-text-field label="Username" formControlName="username"></scale-text-field>
+  </p>
+  <p>
+    <scale-textarea label="Message" formControlName="message"></scale-textarea>
+  </p>
+  <p>
+    <scale-checkbox label="I agree with the privacy policy" formControlName="consent"></scale-checkbox>
+  </p>
+  <p>
+    <scale-switch label="Superpowers" formControlName="superpowers"></scale-switch>
+  </p>
+  <p>
+    <scale-text-field label="Points" type="number" formControlName="points"></scale-text-field>
+  </p>
+  <p>
+    <scale-slider label="Power" formControlName="power" sclNumberControl unit=""></scale-slider>
+  </p>
+  <p>
+    <scale-dropdown label="Size" formControlName="size" helper-text="Regular sizing">
+      <option></option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </scale-dropdown>
+  </p>
+  <scale-button type="submit">console.log</scale-button>
+  <scale-button type="reset" variant="secondary">Reset</scale-button>
+</form>
+
+<scale-card>
+  <pre>{{ testingForm.value | json }}</pre>
+</scale-card>

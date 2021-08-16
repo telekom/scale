@@ -1,0 +1,13 @@
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+div {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+}
