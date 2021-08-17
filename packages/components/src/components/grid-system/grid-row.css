@@ -1,0 +1,6 @@
+.grid-row {
+	display: flex;
+	min-height: 100px;
+	background: rgb(208, 247, 164);
+	border: 1px solid black;
+}

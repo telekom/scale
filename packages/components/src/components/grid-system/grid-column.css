@@ -1,0 +1,8 @@
+:host {
+	flex: 1;
+}
+.grid-column {
+	min-height: 100px;
+	background: #ccc;
+	flex-wrap: wrap;
+}
