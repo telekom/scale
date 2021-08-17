@@ -1,8 +1,11 @@
 :host {
-	flex: 1;
+  flex: 0 0 auto;
+  min-height: 100px;
+  background: #ccc;
+  width: 100%;
 }
 .grid-column {
-	min-height: 100px;
-	background: #ccc;
-	flex-wrap: wrap;
+}
+:host([width='6']) {
+  width: 50%;
 }
