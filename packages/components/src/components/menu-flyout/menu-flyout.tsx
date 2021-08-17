@@ -440,20 +440,20 @@ export class MenuFlyout {
     event.stopPropagation();
   }
 
-  handleKeyDown(e: KeyboardEvent) {
-    const { key } = e;
-    // console.log(key);
-
-    // When up/down is pressed, we make the assumption that the user is familiar with the menu and plans to make a
-    // selection. Rather than toggle the panel, we focus on the menu (if one exists) and activate the first item for
-    // faster navigation.
-    if (['ArrowDown', 'ArrowUp'].includes(key)) {
-      e.preventDefault();
-
-      // Show the menu if it's not already open
-      if (!this.open) {
-        this.toggleOpenState();
-      }
+  handleKeyDown(event) {
+    if (
+      event.key === 'Enter' &&
+      !this.open &&
+      event.target.tagName === 'SCALE-MENU-FLYOUT-ITEM'
+    ) {
+      this.toggleOpenState();
+    }
+    if (
+      event.key === 'Escape' &&
+      this.open &&
+      event.target.tagName === 'SCALE-MENU-FLYOUT-ITEM'
+    ) {
+      this.toggleOpenState();
     }
   }
 
