@@ -1,4 +1,6 @@
 .grid {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	min-height: 400px;
+	height: auto;
+	background-color: antiquewhite;
 }
