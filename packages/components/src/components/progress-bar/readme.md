@@ -15,6 +15,7 @@
 | `hasError`          | `has-error`          | (optional) Progress bar error                   | `boolean` | `undefined` |
 | `icon`              | `icon`               | (optional) Progress bar icon indicator          | `string`  | `undefined` |
 | `label`             | `label`              | (optional) Progress bar label                   | `string`  | `undefined` |
+| `mute`              | `mute`               | (optional) disables aria-live                   | `boolean` | `undefined` |
 | `percentage`        | `percentage`         | (required) Progress bar percentage              | `number`  | `0`         |
 | `progressBarId`     | `progress-bar-id`    | (optional) Progress bar id                      | `string`  | `undefined` |
 | `showStatus`        | `show-status`        | (optional) Progress bar percentage text         | `boolean` | `undefined` |

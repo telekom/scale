@@ -72,6 +72,8 @@ export class TextField {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) the step attribute specifies the interval between legal numbers in an <input type="number"> element. */
+  @Prop() step?: string = '1';
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -170,6 +172,7 @@ export class TextField {
             readonly={this.readonly}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
+            {...(this.type === 'number' ? { step: this.step } : {})}
           />
 
           {(!!this.helperText || !!this.counter) && (
