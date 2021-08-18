@@ -1,0 +1,198 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: auto;
+  --spacing-x: var(--scl-spacing-24);
+  --spacing-x-icon-only: var(--scl-spacing-8);
+  --min-height: var(--scl-spacing-24);
+  --height-xs: var(--scl-spacing-24);
+  --height-small: var(--scl-spacing-32);
+  --height-regular: var(--scl-spacing-40);
+  --height-large: var(--scl-spacing-48);
+  --radius: var(--scl-radius-8);
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --font-weight: var(--scl-font-weight-bold);
+  --font-size-large: var(--scl-font-size-16);
+  --font-size-small: var(--scl-font-size-14);
+  --font-size-xs: var(--scl-font-size-12);
+  --line-height: var(--scl-font-line-height-150);
+  --spacing-icon-x: var(--scl-spacing-8);
+  --vertical-align: middle;
+
+  /* size: small */
+  --font-size-small: var(--scl-font-size-12);
+  --line-height-small: var(--scl-font-line-height-133);
+  --min-height-small: var(--scl-spacing-32);
+
+  /* variant: primary */
+  --radius-primary: var(--radius);
+  --background-primary: var(--scl-color-grey-20);
+  --background-primary-disabled: var(--scl-color-grey-0);
+  --color-primary: var(--scl-color-grey-90);
+  --color-primary-hover: var(--scl-color-primary-hover);
+  --color-primary-active: var(--scl-color-primary-active);
+  --color-primary-disabled: var(--scl-color-grey-20);
+
+  /* variant: secondary different from primary*/
+  --background-secondary: var(--scl-color-white);
+
+  /* selected */
+  --color-selected: var(--scl-color-white);
+  --background-selected-light: var(--scl-color-primary);
+  --background-selected-hover-light: var(--color-primary-hover);
+  --background-selected-active-light: var(--scl-color-primary-active);
+  --background-selected-dark: var(--scl-color-grey-90);
+  --background-selected-hover-dark: var(--scl-color-grey-70);
+  --background-selected-active-dark: var(--scl-color-black);
+
+  /* high contrast */
+  --color-high-contrast: var(--scl-color-white);
+}
+
+.toggle-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  min-height: var(--min-height);
+  width: var(--width);
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+  vertical-align: var(--vertical-align);
+  transition: var(--transition);
+  margin: 0;
+}
+
+.toggle-button--primary {
+  background: var(--background-primary);
+}
+
+.toggle-button--secondary {
+  background: var(--background-secondary);
+}
+
+.toggle-button--icon-before ::slotted(*) {
+  margin-right: var(--spacing-icon-x);
+  pointer-events: none;
+}
+
+.toggle-button--icon-after ::slotted(*) {
+  margin-left: var(--spacing-icon-x);
+  pointer-events: none;
+}
+
+.toggle-button--icon-only ::slotted(*) {
+  pointer-events: none;
+}
+
+.toggle-button--xs {
+  height: var(--height-xs);
+  font-size: var(--font-size-xs);
+}
+
+.toggle-button--small {
+  height: var(--height-small);
+  font-size: var(--font-size-small);
+}
+
+.toggle-button--regular {
+  height: var(--height-regular);
+  font-size: var(--font-size-large);
+}
+
+.toggle-button--large {
+  height: var(--height-large);
+  font-size: var(--font-size-large);
+}
+
+.toggle-button:not(.button--disabled):focus {
+  box-shadow: var(--box-shadow-focus);
+}
+
+.toggle-button:not(.button--disabled):hover {
+  color: var(--color-primary-hover);
+}
+
+.toggle-button:not(.button--disabled):active {
+  color: var(--scl-color-primary-active);
+}
+
+.toggle-button:disabled {
+  color: var(--color-primary-disabled);
+  pointer-events: none;
+}
+
+.toggle-button:disabled.toggle-button--primary {
+  background: var(--background-primary-disabled);
+}
+
+.toggle-button--selected.toggle-button--light {
+  color: var(--color-selected);
+  background: var(--background-selected-light);
+}
+
+.toggle-button--selected:not(.button--disabled).toggle-button--light:hover {
+  color: var(--color-selected);
+  background: var(--background-selected-hover-light);
+}
+
+.toggle-button--selected:not(.button--disabled).toggle-button--light:active {
+  color: var(--color-selected);
+  background: var(--background-selected-active-light);
+}
+
+.toggle-button--selected.toggle-button--dark {
+  color: var(--color-selected);
+  background: var(--background-selected-dark);
+}
+
+.toggle-button--selected:not(.button--disabled).toggle-button--dark:hover {
+  color: var(--color-selected);
+  background: var(--background-selected-hover-dark);
+}
+
+.toggle-button--selected:not(.button--disabled).toggle-button--dark:active {
+  color: var(--color-selected);
+  background: var(--background-selected-active-dark);
+}
+
+.toggle-button--left {
+  border-radius: var(--radius-primary) 0 0 var(--radius-primary);
+}
+
+.toggle-button--right {
+  border-radius: 0 var(--radius-primary) var(--radius-primary) 0;
+}
+
+.toggle-button--both {
+  border-radius: var(--radius-primary);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .toggle-button {
+    color: var(--color-high-contrast);
+  }
+}

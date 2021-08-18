@@ -1,0 +1,14 @@
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.hello {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+}

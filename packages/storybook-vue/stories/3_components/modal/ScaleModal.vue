@@ -9,7 +9,9 @@
     :close-button-label="closeButtonLabel"
     :align-actions="alignActions"
     :styles="styles"
-    @scaleClose="handler"
+    @scaleClose="scaleClose"
+    @scaleOpen="scaleOpen"
+    @scaleBeforeClose="scaleBeforeClose"
   >
     <slot name="close"></slot>
     <slot></slot>
@@ -35,10 +37,18 @@ export default {
     styles: { type: String },
   },
   methods: {
-    handler($event) {
-      scaleCloseAction($event);
-      this.$emit('close')
-    }
+    scaleOpen($event) {
+      action("scaleOpen");
+      this.$emit("scaleOpen", $event);
+    },
+    scaleBeforeClose($event) {
+      action("scaleBeforeClose");
+      this.$emit("scaleBeforeClose", $event);
+    },
+    scaleClose($event) {
+      action("scaleClose");
+      this.$emit("scaleClose", $event);
+    },
   }
 };
 </script>

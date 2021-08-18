@@ -1,0 +1,19 @@
+input[type="text"],
+input[type="password"] {
+  display: block;
+}
+
+button + button {
+  margin-inline-start: 0.5rem;
+}
+
+fieldset {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+scale-card {
+  display: block;
+  margin-top: 2rem;
+  color: var(--color-json);
+}

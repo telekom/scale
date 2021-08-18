@@ -1,7 +1,0 @@
-node_modules
-*.log
-.DS_Store
-
-# poi dist
-dist
-yarn.lock

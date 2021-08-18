@@ -116,6 +116,7 @@ module.exports = {
             } else {
               label.frame.width = 62;
             }
+            label.textBehaviour = 0;
             label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
             setResizingConstraints(symbol, 'Icon', TOP_LEFT_FIXED_SIZE);
           }
