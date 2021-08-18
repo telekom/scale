@@ -1,4 +1,4 @@
-import { ComponentInterface } from '@stencil/core'
+import { ComponentInterface } from '@stencil/core';
 
 /**
  * @license
@@ -56,10 +56,14 @@ export const isPseudoClassSupported = (pseudoClass) => {
  * @param eventKey {string} - The event property, e.g. `scaleChange`
  * @param detail {any} - The custom event `detail`
  */
-export function emitEvent(instance: ComponentInterface, eventKey: string, detail: any) {
-  const legacyKey = eventKey + 'Legacy' 
+export function emitEvent(
+  instance: ComponentInterface,
+  eventKey: string,
+  detail: any
+) {
+  const legacyKey = eventKey + 'Legacy';
   if (typeof instance[legacyKey] !== 'undefined') {
-    instance[legacyKey].emit(detail)
+    instance[legacyKey].emit(detail);
   }
-  instance[eventKey].emit(detail)
+  instance[eventKey].emit(detail);
 }
