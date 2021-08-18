@@ -75,7 +75,7 @@
   color: var(--scl-color-black);
 }
 
-input {
+.data-grid input {
   letter-spacing: inherit;
   font-weight: inherit;
   font-family: inherit;
