@@ -11,6 +11,7 @@
 
 :host {
   display: block;
+  margin: 0 var(--scl-spacing-2);
 }
 * {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -34,6 +35,12 @@
   min-width: -moz-fit-content;
 }
 
+.menu-item:focus:hover {
+  box-shadow: none;
+}
+.menu-item:focus {
+  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
 .menu-item--focused:not(.menu-item--disabled),
 .menu-item--active:not(.menu-item--disabled) {
   outline: none;

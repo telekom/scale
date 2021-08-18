@@ -83,6 +83,11 @@ export class MenuFlyoutList {
     if (!this.menu) {
       return;
     }
+    this.hostElement
+      .querySelector('scale-menu-flyout-item')
+      .shadowRoot.querySelector('div')
+      .focus();
+
     this.padForNonOverlayScrollbars();
     this.updateScrollIndicators();
   }
@@ -154,7 +159,6 @@ export class MenuFlyoutList {
           ref={(el) => (this.menu = el)}
           part="base"
           role="menu"
-          tabindex="0"
           onScroll={this.onMenuScroll}
           onWheel={this.onMenuWheel}
         >
