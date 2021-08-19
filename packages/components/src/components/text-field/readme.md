@@ -26,7 +26,7 @@
 | `transparent` | `transparent` | (optional) input background transparent | `boolean`                                                                             | `undefined` |
 | `type`        | `type`        | (optional) Input type                   | `"date" \| "email" \| "hidden" \| "number" \| "password" \| "tel" \| "text" \| "url"` | `'text'`    |
 | `value`       | `value`       | (optional) Input value                  | `number \| string`                                                                    | `''`        |
-| `list`        | `list`        | (optional) Data list value              | `Record<"value" \| "displayValue", string>[] \| string`                               | `undefined` |
+| `list`        | `list`        | (optional) Data list value              | `string`                                                                              | `undefined` |
 
 ## Events
 
