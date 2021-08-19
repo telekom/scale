@@ -25,6 +25,8 @@ import card_en from 'raw-loader!../../stories/3_components/card/card.md';
 import card_de from 'raw-loader!../../stories/3_components/card/card_de.md';
 import checkbox_en from 'raw-loader!../../stories/3_components/checkbox/checkbox.md';
 import checkbox_de from 'raw-loader!../../stories/3_components/checkbox/checkbox_de.md';
+import checkboxGroup_en from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group.md';
+import checkboxGroup_de from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group_de.md';
 import datagrid_en from 'raw-loader!../../stories/3_components/data-grid/data-grid.md';
 import datagrid_de from 'raw-loader!../../stories/3_components/data-grid/data-grid_de.md';
 import date_picker_en from 'raw-loader!../../stories/3_components/date-picker/date-picker.md';
@@ -53,6 +55,8 @@ import radioButton_en from 'raw-loader!../../stories/3_components/radio-button/r
 import radioButton_de from 'raw-loader!../../stories/3_components/radio-button/radio-button_de.md';
 import ratingStars_en from 'raw-loader!../../stories/3_components/rating-stars/rating-stars.md';
 import ratingStars_de from 'raw-loader!../../stories/3_components/rating-stars/rating-stars_de.md';
+import radioButtonGroup_de from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group_de.md';
+import radioButtonGroup_en from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group.md';
 import dropdown_en from 'raw-loader!../../stories/3_components/dropdown/dropdown.md';
 import dropdown_de from 'raw-loader!../../stories/3_components/dropdown/dropdown_de.md';
 import sidebarNav_en from 'raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav.md';
@@ -109,6 +113,8 @@ const Usage = (props) => {
     card_de,
     checkbox_en,
     checkbox_de,
+    'checkbox-group_en': checkboxGroup_en,
+    'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
     badge_en,
@@ -139,6 +145,8 @@ const Usage = (props) => {
     'progress-bar_de': progressBar_de,
     'radio-button_en': radioButton_en,
     'radio-button_de': radioButton_de,
+    'radio-button-group_en': radioButtonGroup_en,
+    'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,
     'rating-stars_de': ratingStars_de,
     dropdown_en,
