@@ -73,7 +73,7 @@ export class TextField {
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
   /** (optional) input list */
-  @Prop() list?: string | Array<Record<'value' | 'displayValue', string>>;
+  @Prop() list?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -152,7 +152,7 @@ export class TextField {
       this.status === 'error' ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-    const datalist = { 'list': 'data-list' };
+    const list = this.list ? { 'list': this.list } : null;
 
     return (
       <Host>
@@ -171,7 +171,6 @@ export class TextField {
             minLength={this.minLength}
             maxLength={this.maxLength}
             id={this.inputId}
-            {...(this.list ? datalist : {})}
             onInput={this.handleInput}
             onChange={this.handleChange}
             onFocus={this.handleFocus}
@@ -182,15 +181,8 @@ export class TextField {
             readonly={this.readonly}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
+            {...list}
           />
-
-          { this.list && (<datalist id="data-list">
-            {
-              this.readData(this.list).map(item => (
-                <option value={item.value}>{item.displayValue}</option>
-              ))
-            }
-          </datalist>)}
           
           {(!!this.helperText || !!this.counter) && (
             <div
