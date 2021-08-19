@@ -1,0 +1,31 @@
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex-basis: 15rem;
+  flex-grow: 1;
+}
+
+.not-sidebar {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem);
+}
+
+main {
+  padding-left: var(--scl-spacing-16);
+  padding-right: var(--scl-spacing-16);
+}
+
+@media screen and (min-width: 30em) {
+  main {
+    padding-left: var(--scl-spacing-32);
+  }
+
+  header,
+  main {
+    margin-top: var(--scl-spacing-32);
+  }
+}

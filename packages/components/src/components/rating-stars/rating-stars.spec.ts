@@ -62,6 +62,7 @@ describe('RatingStars', () => {
   it('builds', () => {
     expect(new RatingStars()).toBeTruthy();
   });
+
   describe('props', () => {
     beforeEach(async () => {
       page = await newSpecPage({
