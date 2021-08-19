@@ -102,13 +102,6 @@ export class TextField {
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
-  readData = (data) => {
-    try {
-      return Array.isArray(JSON.parse(data)) ? JSON.parse(data) : [];
-    } catch (error) {
-      return Array.isArray(data) ? data : [];
-    }
-  };
 
   emitChange() {
     this.scaleChange.emit({
@@ -152,7 +145,6 @@ export class TextField {
       this.status === 'error' ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-    const list = this.list ? { 'list': this.list } : null;
 
     return (
       <Host>
@@ -171,7 +163,7 @@ export class TextField {
             minLength={this.minLength}
             maxLength={this.maxLength}
             id={this.inputId}
-            {...list}
+            list={this.list}
             onInput={this.handleInput}
             onChange={this.handleChange}
             onFocus={this.handleFocus}

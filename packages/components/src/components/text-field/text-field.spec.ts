@@ -200,17 +200,4 @@ describe('TextField', () => {
     expect(inputSpy).toHaveBeenCalled();
     expect(emitSpy).toHaveBeenCalled();
   });
-
-  it('should handle error', () => {
-    const textField = new TextField();
-    expect(textField.readData('no data')).toEqual([]);
-  });
-
-  it('should handle JSON error', () => {
-    const textField = new TextField();
-    expect(textField.readData(['arraydata', 'arraydata'])).toEqual([
-      'arraydata',
-      'arraydata',
-    ]);
-  });
 });
