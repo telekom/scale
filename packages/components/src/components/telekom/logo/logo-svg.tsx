@@ -56,7 +56,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 289.56 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -77,7 +76,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 335.4 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -98,7 +96,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 313.61 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -119,7 +116,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 257.77 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -140,7 +136,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 239.39 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -161,7 +156,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 288.6 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -182,7 +176,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 274.11 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -204,7 +197,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 283 36"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -223,7 +215,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 86.5 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -243,7 +234,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 314.73 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (
@@ -264,7 +254,6 @@ export class LogoSvg {
             height={this.size + 'px'}
             viewBox="0 0 262.23 42.52"
             fill={this.getColor()}
-            tabindex={0}
             role={this.role}
           >
             {this.accessibilityTitle ? (

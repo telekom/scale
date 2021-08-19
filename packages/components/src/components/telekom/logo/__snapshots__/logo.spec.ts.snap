@@ -5,12 +5,12 @@ exports[`component prop snapshots all props are not set 1`] = `
   <mock:shadow-root>
     <style>
       :host {
-      --logo-size: 36px;
-    }
+        --logo-size: 36px;
+      }
     </style>
-    <a aria-label="Telekom Logo" class="logo logo--variant-magenta" role="link" tabindex="0">
-      <scale-logo-svg accessibilitytitle="Telekom Logo" color="magenta" language="en" size="36"></scale-logo-svg>
-    </a>
+    <div class="logo logo--variant-magenta">
+      <scale-logo-svg color="magenta" language="en" role="img" size="36"></scale-logo-svg>
+    </div>
   </mock:shadow-root>
 </scale-logo>
 `;
@@ -20,11 +20,11 @@ exports[`component prop snapshots all props are set 1`] = `
   <mock:shadow-root>
     <style>
       :host {
-      --logo-size: 100px;
-    }
+        --logo-size: 100px;
+      }
     </style>
-    <a aria-label="Telekom Logo" class="logo logo--transparent logo--variant-white" href="https://www.telekom.de/start" role="link" tabindex="0">
-      <scale-logo-svg accessibilitytitle="Telekom Logo" color="white" language="hr" size="100"></scale-logo-svg>
+    <a class="logo logo--transparent logo--variant-white" href="https://www.telekom.de/start" tabindex="0">
+      <scale-logo-svg color="white" language="hr" role="link" size="100"></scale-logo-svg>
     </a>
   </mock:shadow-root>
 </scale-logo>
@@ -35,11 +35,11 @@ exports[`component prop snapshots all props should handle no link 1`] = `
   <mock:shadow-root>
     <style>
       :host {
-      --logo-size: 36px;
-    }
+        --logo-size: 36px;
+      }
     </style>
-    <div aria-label="Telekom Logo" class="logo logo--variant-magenta" role="img" tabindex="0">
-      <scale-logo-svg accessibilitytitle="Telekom Logo" color="magenta" language="en" size="36"></scale-logo-svg>
+    <div class="logo logo--variant-magenta">
+      <scale-logo-svg color="magenta" language="en" role="img" size="36"></scale-logo-svg>
     </div>
   </mock:shadow-root>
 </scale-logo>

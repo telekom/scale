@@ -52,8 +52,8 @@ export class Logo {
 
   styles() {
     return `:host {
-       --logo-size: ${this.size}px;
-     }`;
+        --logo-size: ${this.size}px;
+      }`;
   }
 
   getLogoSvg(role: 'link' | 'img') {
@@ -64,6 +64,7 @@ export class Logo {
           color={this.variant}
           size={this.size}
           accessibilityTitle={this.accessibilityTitle}
+          aria-label={this.accessibilityTitle}
           role={role}
         ></scale-logo-svg>
       );
@@ -92,6 +93,7 @@ export class Logo {
             href={this.href}
             class={this.getCssClassMap()}
             onClick={this.clickHandler}
+            tabIndex={0}
           >
             {this.getLogoSvg('link')}
           </a>
