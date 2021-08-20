@@ -175,7 +175,7 @@ export class TextField {
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
-          
+
           {(!!this.helperText || !!this.counter) && (
             <div
               class="text-field__meta"
