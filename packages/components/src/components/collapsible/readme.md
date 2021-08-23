@@ -16,9 +16,10 @@
 
 ## Events
 
-| Event         | Description                                        | Type                                  |
-| ------------- | -------------------------------------------------- | ------------------------------------- |
-| `scaleExpand` | Emitted so parent <scale-accordion> knows about it | `CustomEvent<CollapsibleEventDetail>` |
+| Event          | Description                                                                                        | Type                                  |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-expand` | Emitted so parent <scale-accordion> knows about it                                                 | `CustomEvent<CollapsibleEventDetail>` |
+| `scaleExpand`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<CollapsibleEventDetail>` |
 
 
 ## Shadow Parts
