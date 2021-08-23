@@ -26,6 +26,10 @@ export class Carousel {
   @Element() hostElement: HTMLElement;
 
   /** (optional) carousel display direction */
+  /** ToDo 
+   * rename vertical=“false” to  alignment=“vertical”
+   * 
+  */
   @Prop() vertical?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
