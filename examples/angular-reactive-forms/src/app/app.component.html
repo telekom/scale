@@ -1,0 +1,22 @@
+<div class="with-sidebar">
+  <header class="sidebar">
+    <scale-sidebar-nav collapsible-label="Examples" style="--max-width: 100%">
+      <scale-sidebar-nav-item [active]="isActive('/')">
+        <a routerLink="/">Reactive Form</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item [active]="isActive('/vanilla-example')">
+        <a routerLink="/vanilla-example">Vanilla Example</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item [active]="isActive('/simple-binding')">
+        <a routerLink="/simple-binding">Simple Binding</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item [active]="isActive('/testing')">
+        <a routerLink="/testing">Testing</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav>
+  </header>
+
+  <main class="not-sidebar">
+    <router-outlet></router-outlet>
+  </main>
+</div>

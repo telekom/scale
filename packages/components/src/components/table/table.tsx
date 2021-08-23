@@ -23,6 +23,8 @@ export class Table {
   @Prop() showSort?: boolean = false;
   /** (optional) Visual size */
   @Prop() size?: 'default' | 'small' | string = 'default';
+  /** (optional) Striped Table */
+  @Prop() striped?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** object of the slots in use */
@@ -56,7 +58,8 @@ export class Table {
     return classNames(
       'table',
       this.size && `table--size-${this.size}`,
-      this.showSort && 'table--sortable'
+      this.showSort && 'table--sortable',
+      this.striped && 'table--striped'
     );
   }
 }

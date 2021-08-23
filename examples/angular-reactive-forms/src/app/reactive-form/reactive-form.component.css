@@ -1,0 +1,9 @@
+scale-button + scale-button {
+  margin-inline-start: 0.5rem;
+}
+
+scale-card {
+  display: block;
+  margin-top: 2rem;
+  color: var(--color-json);
+}
