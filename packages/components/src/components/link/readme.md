@@ -55,14 +55,15 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                    | Type      | Default     |
-| ---------- | ---------- | ------------------------------ | --------- | ----------- |
-| `block`    | `block`    | (optional) Block link          | `boolean` | `false`     |
-| `disabled` | `disabled` | (optional) Disabled link       | `boolean` | `false`     |
-| `href`     | `href`     | (optional) Link href           | `string`  | `undefined` |
-| `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
-| `target`   | `target`   | (optional) Link open a new tag | `string`  | `'_self'`   |
-| `variant`  | `variant`  | (optional) Link variant        | `string`  | `''`        |
+| Property    | Attribute   | Description                    | Type      | Default     |
+| ----------- | ----------- | ------------------------------ | --------- | ----------- |
+| `block`     | `block`     | (optional) Block link          | `boolean` | `false`     |
+| `disabled`  | `disabled`  | (optional) Disabled link       | `boolean` | `false`     |
+| `href`      | `href`      | (optional) Link href           | `string`  | `undefined` |
+| `styles`    | `styles`    | (optional) Injected CSS styles | `string`  | `undefined` |
+| `target`    | `target`    | (optional) Link open a new tag | `string`  | `'_self'`   |
+| `underline` | `underline` | (optional) Link underline      | `boolean` | `true`      |
+| `variant`   | `variant`   | (optional) Link variant        | `string`  | `''`        |
 
 
 ## Shadow Parts

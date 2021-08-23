@@ -28,7 +28,15 @@
   text-decoration: none;
   font-weight: var(--font-weight);
   color: var(--color);
+  margin-top: 100px;
+}
+.link--underline {
   border-bottom: var(--border);
+  
+}
+
+.link--noUnderline {
+  border-bottom: transparent;
 }
 
 /* order is important */
