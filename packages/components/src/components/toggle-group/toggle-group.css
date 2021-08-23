@@ -1,12 +1,18 @@
 :host {
   --border-color: var(--scl-color-grey-90);
+  --border-color-disabled: var(--scl-color-background-disabled);
   --border: var(--scl-spacing-1) solid var(--border-color);
+  --border-disabled: var(--scl-spacing-1) solid var(--border-color-disabled);
   --radius: var(--scl-radius-4);
 }
 
 .toggle-group--border {
   border: var(--border);
   border-radius: var(--radius);
+}
+
+.toggle-group--disabled {
+  border: var(--border-disabled);
 }
 
 .toggle-group--inline {

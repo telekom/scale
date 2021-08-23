@@ -50,7 +50,7 @@ export class ToggleGroup {
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the group has a border */
-  @Prop() border?: boolean = false;
+  @Prop() hideBorder?: boolean = false;
   /** (optional) more than one button selected possible */
   @Prop() singleSelect: boolean = false;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -183,7 +183,8 @@ export class ToggleGroup {
     return classNames(
       'toggle-group',
       this.boxType && `${prefix}${this.boxType}`,
-      this.border && `${prefix}border`
+      !this.hideBorder && `${prefix}border`,
+      this.disabled && `${prefix}disabled`,
     );
   }
 }

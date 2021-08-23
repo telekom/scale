@@ -4,7 +4,7 @@
     :variant="variant"
 	  :box-type="boxType"
     :disabled="disabled"
-    :border="border"
+    :hide-border="hideBorder"
     :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
@@ -20,7 +20,7 @@ export default {
     variant: { type: String, default: 'grey-background' },
     boxType: { type: String, default: 'inline' },
     disabled: { type: Boolean, default: false },
-    border: { type: Boolean, default: false },
+    hideBorder: { type: Boolean, default: false },
     singleSelect: { type: Boolean, default: false },
     ariaLabel: { type: String },
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
