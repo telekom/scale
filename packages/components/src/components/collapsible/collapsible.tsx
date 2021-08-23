@@ -47,9 +47,11 @@ export class Collapsible {
   @Prop() styles?: string;
 
   /** Emitted so parent <scale-accordion> knows about it */
-  @Event({ eventName: 'scale-expand' }) scaleExpand: EventEmitter<CollapsibleEventDetail>;
+  @Event({ eventName: 'scale-expand' })
+  scaleExpand: EventEmitter<CollapsibleEventDetail>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleExpand' }) scaleExpandLegacy: EventEmitter<CollapsibleEventDetail>;
+  @Event({ eventName: 'scaleExpand' })
+  scaleExpandLegacy: EventEmitter<CollapsibleEventDetail>;
 
   componentWillLoad() {
     const j = i++;
