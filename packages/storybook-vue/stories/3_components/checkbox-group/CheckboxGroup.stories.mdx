@@ -132,6 +132,58 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
 
 ```html
 <scale-checkbox-group>
+  <scale-checkbox  label="Group Label" name="group" value="" helper-text="Some info regarding the group"></scale-checkbox>
+  <scale-checkbox slot="group-item" label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
+  <scale-checkbox slot="group-item" label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
+  <scale-checkbox slot="group-item" label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
+</scale-checkbox-group>
+```
+
+## Checkbox Error 
+
+<Canvas withSource="none">
+  <Story name="Checkbox Error" args={{}}>
+    {() => ({
+      template: `
+        <scale-checkbox-group>
+          <scale-checkbox label="Group Label" name="group" value="" helper-text="Some info regarding the group"></scale-checkbox>
+          <scale-checkbox slot="group-item" status="error" label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
+          <scale-checkbox slot="group-item" label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
+          <scale-checkbox slot="group-item" status="error" checked label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
+        </scale-checkbox-group>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox-group>
+  <scale-checkbox label="Group Label" name="group" value="" helper-text="Some info regarding the group"></scale-checkbox>
+  <scale-checkbox slot="group-item" status="error" label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
+  <scale-checkbox slot="group-item" label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
+  <scale-checkbox slot="group-item" status="error" checked label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
+</scale-checkbox-group>
+```
+
+## Group Error 
+
+<Canvas withSource="none">
+  <Story name="Group Error" args={{}}>
+    {() => ({
+      template: `
+        <scale-checkbox-group>
+          <scale-checkbox status="error" label="Group Label" name="group" value="" helper-text="Some error info regarding the group"></scale-checkbox>
+          <scale-checkbox slot="group-item" label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
+          <scale-checkbox slot="group-item" label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
+          <scale-checkbox slot="group-item" label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
+        </scale-checkbox-group>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox-group>
   <scale-checkbox label="Group Label" name="group" value="" helper-text="Some info regarding the group"></scale-checkbox>
   <scale-checkbox slot="group-item" label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
   <scale-checkbox slot="group-item" label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
