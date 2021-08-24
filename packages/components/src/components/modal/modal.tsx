@@ -24,6 +24,7 @@ import {
 import classNames from 'classnames';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
 import { animateTo, KEYFRAMES } from '../../utils/animate';
+import { emitEvent } from '../../utils/utils';
 
 const supportsResizeObserver = 'ResizeObserver' in window;
 
@@ -74,11 +75,19 @@ export class Modal {
   @State() hasScroll: boolean = false;
 
   /** Fires when the modal has been opened */
-  @Event() scaleOpen: EventEmitter<void>;
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<void>;
   /** Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing */
-  @Event() scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
+  @Event({ eventName: 'scale-before-close' })
+  scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleBeforeClose' })
+  scaleBeforeCloseLegacy: EventEmitter<BeforeCloseEventDetail>;
   /** Fires when the modal has been closed */
-  @Event() scaleClose: EventEmitter<void>;
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<void>;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;
@@ -194,10 +203,12 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
-        this.scaleOpen.emit();
+        // this.scaleOpen.emit();
+        emitEvent(this, 'scaleOpen');
       });
     } catch (err) {
-      this.scaleOpen.emit();
+      // this.scaleOpen.emit();
+      emitEvent(this, 'scaleOpen');
     }
   }
 
@@ -208,11 +219,13 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.isOpen = false;
-        this.scaleClose.emit();
+        // this.scaleClose.emit();
+        emitEvent(this, 'scaleClose');
       });
     } catch (err) {
       this.isOpen = false;
-      this.scaleClose.emit();
+      // this.scaleClose.emit();
+      emitEvent(this, 'scaleClose');
     }
   }
 
