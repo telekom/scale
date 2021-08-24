@@ -11,7 +11,7 @@
 
 :host {
   --font-weight: var(--scl-font-weight-medium);
-  --color: #BCD3FF;
+  --color: hsl(219, 100%, 87%);
   --color-visited: var(--scl-color-text-link-visited);
   --color-hover: var(--scl-color-text-link-hover);
   --color-active: var(--scl-color-text-link-active);
@@ -25,20 +25,18 @@
 .link {
   cursor: pointer;
   outline: none;
-  text-decoration: none;
   font-weight: var(--font-weight);
   color: var(--color);
   position:relative;
 }
 
-.link--underline::after {
-  top: -1px;
-  left: 0;
-  width: 100%;
-  border-bottom: var(--border);
-  height: 100%;
-  content: '';
-  position: absolute;
+.link--underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color);
+}
+
+.link--underline:hover {
+  text-decoration-color: var(--color-hover);
 }
 
 /* order is important */
