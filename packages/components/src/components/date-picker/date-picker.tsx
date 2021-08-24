@@ -231,12 +231,27 @@ export class DatePicker {
       input.setAttribute('aria-invalid', 'true');
     }
 
-    const dialog = this.hostElement.querySelector('.duet-date__dialog-content');
+    // Remove existing <h2> with `{Month} {Year}` text
+    const dialog = this.hostElement.querySelector('.duet-date__dialog');
+    let duetHeadingId: string = '';
     if (dialog) {
+      duetHeadingId = dialog.getAttribute('aria-labelledby')
+      if (duetHeadingId) {
+        const duetHeading = this.hostElement.querySelector(`#${duetHeadingId}`);
+        if (duetHeading) {
+          duetHeading.parentElement.removeChild(duetHeading);
+        }
+      }
+    }
+
+    // Add custom <h2> heading
+    const dialogContent = this.hostElement.querySelector('.duet-date__dialog-content');
+    if (dialogContent) {
       const heading = document.createElement('h2');
+      heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
       heading.className = 'scale-date-picker__popup-heading';
       heading.innerHTML = this.popupTitle;
-      dialog.insertBefore(heading, dialog.firstChild);
+      dialogContent.insertBefore(heading, dialogContent.firstChild);
     }
 
     const today = this.hostElement.querySelector(
