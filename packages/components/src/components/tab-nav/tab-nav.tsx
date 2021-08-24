@@ -106,8 +106,14 @@ export class TabNav {
     });
   }
 
-  getAllTabs() {
+  getAllTabs(): HTMLScaleTabHeaderElement[] {
     return Array.from(this.el.querySelectorAll('scale-tab-header'));
+  }
+
+  getAllEnabledTabs(): HTMLScaleTabHeaderElement[] {
+    return Array.from(
+      this.el.querySelectorAll('scale-tab-header:not([disabled])')
+    );
   }
 
   getAllPanels() {
@@ -115,29 +121,29 @@ export class TabNav {
   }
 
   getPreviousTab() {
-    const tabs = this.getAllTabs();
+    const tabs = this.getAllEnabledTabs();
     const index = tabs.findIndex((tab) => tab.selected) - 1;
     return tabs[(index + tabs.length) % tabs.length];
   }
 
   getNextTab() {
-    const tabs = this.getAllTabs();
+    const tabs = this.getAllEnabledTabs();
     const index = tabs.findIndex((tab) => tab.selected) + 1;
     return tabs[index % tabs.length];
   }
 
   getFirstTab() {
-    const tabs = this.getAllTabs();
+    const tabs = this.getAllEnabledTabs();
     return tabs[0];
   }
 
   getLastTab() {
-    const tabs = this.getAllTabs();
+    const tabs = this.getAllEnabledTabs();
     return tabs[tabs.length - 1];
   }
 
   linkPanels() {
-    const tabs = this.getAllTabs();
+    const tabs = this.getAllEnabledTabs();
     const selectedTab = tabs.find((x) => x.selected) || tabs[0];
 
     tabs.forEach((tab) => {
@@ -149,7 +155,7 @@ export class TabNav {
   }
 
   reset() {
-    const tabs = this.getAllTabs();
+    const tabs = this.getAllEnabledTabs();
     const panels = this.getAllPanels();
 
     tabs.forEach((tab) => (tab.selected = false));

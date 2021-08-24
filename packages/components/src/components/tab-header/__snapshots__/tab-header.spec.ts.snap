@@ -9,7 +9,7 @@ exports[`TabHeader should handle selected 1`] = `
 `;
 
 exports[`TabHeader should match snapshot 1`] = `
-<scale-tab-header aria-selected="undefined" id="scale-tab-header-0" role="tab" tabindex="-1">
+<scale-tab-header aria-selected="false" id="scale-tab-header-0" role="tab" tabindex="-1">
   <mock:shadow-root>
     <span class="tab-header" part="tab-header">
       <slot></slot>

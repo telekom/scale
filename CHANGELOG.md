@@ -3,6 +3,130 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.17](https://github.com/telekom/scale/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2021-08-23)
+
+
+### Bug Fixes
+
+* **tag:** keyboard support for dismiss button ([#533](https://github.com/telekom/scale/issues/533)) ([952218d](https://github.com/telekom/scale/commit/952218d6fc2b3347f99f9f7d10373d804e74b8a1))
+* adapt storybook ([1a5933e](https://github.com/telekom/scale/commit/1a5933e4332c32259e96a78931fb4daeca3a7240))
+* add snapshots ([8f2704f](https://github.com/telekom/scale/commit/8f2704f9b3a1212170f0018e85504285ac029380))
+* also allow customized icons ([ef9c5c9](https://github.com/telekom/scale/commit/ef9c5c9d96e66a56a0f308208a3000b48179b47d))
+* broken release pipeline (hopefully) with ([#468](https://github.com/telekom/scale/issues/468)) ([b753316](https://github.com/telekom/scale/commit/b753316fa26b74547199f2f5c0fc4d9fa4b35900))
+* colorScheme default value ([b75b6d4](https://github.com/telekom/scale/commit/b75b6d4101fa8ccab546302af8bec660dc29acbf))
+* css background ([f4c90ac](https://github.com/telekom/scale/commit/f4c90ac6b8e33c1d79e40cc515d3661f5b4cf1c6))
+* disabled handling ([e676d7c](https://github.com/telekom/scale/commit/e676d7c265699516e26805a9fc51fdf338380e28))
+* disabled indeterminate state master handling ([c496b86](https://github.com/telekom/scale/commit/c496b866461d9d1ec3d26e19cbf1047ec3b861a4))
+* make handleClick an arrow function (to bind .this) ([328edd1](https://github.com/telekom/scale/commit/328edd1a9b8ad9c9965bd836884b7fad319208fe))
+* spacing bug with helper text in checkbox ([7c7c02e](https://github.com/telekom/scale/commit/7c7c02e2cd16f28382da7e10af548636a88b6588))
+* **checkbox:** testing snapshots ([cba0783](https://github.com/telekom/scale/commit/cba078304781edbdc377541795613d5297465524))
+* multiple times used id ([0d1eab1](https://github.com/telekom/scale/commit/0d1eab175465f2b068fc155a13d24288918b2308))
+
+
+### Features
+
+* accessibility story toggle group ([cda7855](https://github.com/telekom/scale/commit/cda7855382615fe63d02f50f63444b82b10203e0))
+* adapt css to new classes ([dcea072](https://github.com/telekom/scale/commit/dcea0721a71fc70e78ec013a25d8ead9ce62ac5e))
+* adapt css to state indeterminate ([d7c95cc](https://github.com/telekom/scale/commit/d7c95cc35ebce85964bfcb0c65e6ccd9a13a5837))
+* add _list_ attribute to text-field ([#532](https://github.com/telekom/scale/issues/532)) ([4f50b6a](https://github.com/telekom/scale/commit/4f50b6aa47c8674dea702ce0d041b19a9f281406))
+* add accessibility features ([82a25aa](https://github.com/telekom/scale/commit/82a25aac0dcd01e5af8653f87a49fd3740414fa7))
+* add accessibility story to toggle-button ([aaeabc6](https://github.com/telekom/scale/commit/aaeabc67065987af761aa57b2d361277ae36dbf3))
+* add aria-pressed ([fb587d5](https://github.com/telekom/scale/commit/fb587d5ce5ff757d7b249530389aeab4da5973c4))
+* add black color for selected toggle button ([408d5be](https://github.com/telekom/scale/commit/408d5be920b3b320feecd74fe5f0c2ff6473f04a))
+* add EventEmitter ([994083d](https://github.com/telekom/scale/commit/994083d9d0c8a9303ed785ebf24ab5583aae9c0b))
+* add media query for high contrast ([87d12bc](https://github.com/telekom/scale/commit/87d12bc7544b17a497c52169ff333e97642bf242))
+* add state to checkbox group ([997baae](https://github.com/telekom/scale/commit/997baae8a5bed1edead0bef437e1fcafd4602147))
+* add tests to toggle-group ([d452bc6](https://github.com/telekom/scale/commit/d452bc6774223ac65eed4af9603ad939fb499fde))
+* add toggle button to storybook-vue ([35b5f6c](https://github.com/telekom/scale/commit/35b5f6c499c25fc1ca7a397aa9567216046df903))
+* add toggle group stories ([1ce3f62](https://github.com/telekom/scale/commit/1ce3f6237940a547d2a5d2d10de595257005552e))
+* adding error status hbt ([b6e2804](https://github.com/telekom/scale/commit/b6e2804dfcb23c6a10eba2b062e1205165d66e7e))
+* adding error storie ([751130e](https://github.com/telekom/scale/commit/751130ea2e0b9597ffcf2deb290dc86f6ec53663))
+* adding handle bar template ([fcd8ef5](https://github.com/telekom/scale/commit/fcd8ef56875a578e448be2bff10f0f38b9cfea51))
+* adding missing test cases ([cfcabb4](https://github.com/telekom/scale/commit/cfcabb428487230868e7bab1404b385ab627d660))
+* adding padding to the slots ([1669d4a](https://github.com/telekom/scale/commit/1669d4ab747f9d009369fa3bea6f359080cbc170))
+* adding stories ([c017122](https://github.com/telekom/scale/commit/c0171228e0dde726dbb6e96835be3ac58825ddc4))
+* adding testing ([b4ecaf9](https://github.com/telekom/scale/commit/b4ecaf9f418f4b97a879e5cc2804d183df336489))
+* adding the usage beta files ([f21c0af](https://github.com/telekom/scale/commit/f21c0af9180bde6d0fc016c3c0384e84829d02b2))
+* aria translation ([a41d150](https://github.com/telekom/scale/commit/a41d1508a06dd7401970c4ab2849f6cc8fd2be4a))
+* block or inline; adapt border-radius of slotted elements ([3fa556e](https://github.com/telekom/scale/commit/3fa556edb4d431a7eaaaada484b9f24c6c0005d1))
+* change translation features ([a7092bb](https://github.com/telekom/scale/commit/a7092bbf7c77d87c4e9c896d4e858fcbd17b3458))
+* changing cursor to pointer ([0ee4d43](https://github.com/telekom/scale/commit/0ee4d43fc89d9ddb5243244c3ca9517fc147d2d7))
+* clean up adaptNewState function and console.logs ([2b3fb0d](https://github.com/telekom/scale/commit/2b3fb0d84ee9f299c6dc7c5db9d7c8938296abc2))
+* code clean up ([567908f](https://github.com/telekom/scale/commit/567908f66860ba7aaf3e6985a1138c614eb8d65e))
+* component renders according to state; Eventemitter ([68a206b](https://github.com/telekom/scale/commit/68a206b8976afa457005e6a3464f5d9bae740559))
+* disable property logic ([08d11da](https://github.com/telekom/scale/commit/08d11da6f49f46d02e51341f27470dca4e64acae))
+* disabled and checked recognition ([418b5dd](https://github.com/telekom/scale/commit/418b5dd0543babc51674968fd76412b52b10fa2f))
+* disabled tab-header ([#484](https://github.com/telekom/scale/issues/484)) ([ed12fd1](https://github.com/telekom/scale/commit/ed12fd1e51b59e3967a8e74595630311a0a4b095))
+* distinguish between master and normal checkbox ([dca9eab](https://github.com/telekom/scale/commit/dca9eab14c7b35ac6cf1d4d7326a6fd3a11dd153))
+* enable border-radius ([c4c9ada](https://github.com/telekom/scale/commit/c4c9adabab942b33b74ea30787a809d40b483b05))
+* enable translation for aria texts ([7550b77](https://github.com/telekom/scale/commit/7550b77ebbb5b5a8afd222a8ed8bddaec5337753))
+* final radio button group ([6e978c4](https://github.com/telekom/scale/commit/6e978c42305a0716fa36f0a0e1bfc445a525135f))
+* first commit ([1f3aae2](https://github.com/telekom/scale/commit/1f3aae2d349031bdfde13f3ff0077b82b98ece9a))
+* first draft checkbox-group ([0d77ccc](https://github.com/telekom/scale/commit/0d77ccc2edaa762d8302ed2fc2d70dccb4010084))
+* format & lint ([98b4759](https://github.com/telekom/scale/commit/98b47592e4d9edbf1d4fbe734a97442e11191b46))
+* format and lint ([90f97c7](https://github.com/telekom/scale/commit/90f97c70eb7f70381e7cd7df4b6214e11bb3d4da))
+* handle icon size ([c751a62](https://github.com/telekom/scale/commit/c751a6286e535665d6e9394095ba1262d96fb8ca))
+* handling of disabled master ([78bbe0f](https://github.com/telekom/scale/commit/78bbe0f54733baeaa924f57b43ddfa9b87255f66))
+* hover, focus, active, disabled ([c194375](https://github.com/telekom/scale/commit/c194375ce5f3f3d378f60731f5a6e127a6cec3ae))
+* init checkbox handle bar template ([5c2cd24](https://github.com/telekom/scale/commit/5c2cd24b272011a0213a9435a837358be93932e8))
+* init files ([0073e69](https://github.com/telekom/scale/commit/0073e6986e3fd48141115d1e30b55029b7246400))
+* init storybook ([1bd42a6](https://github.com/telekom/scale/commit/1bd42a6b8dcef09215d78a2ebb087b37ade2416d))
+* initialize css and tsx ([4161e8b](https://github.com/telekom/scale/commit/4161e8bdeebccdcdf3badd3b46c9bcb5ac839ab7))
+* logic multi vs single ([6c9f8bb](https://github.com/telekom/scale/commit/6c9f8bbeea8134aa7f7adde3850c674450581002))
+* new stories ([698fd81](https://github.com/telekom/scale/commit/698fd81deebc6e04bdddde674f939535cc3b75d3))
+* refactor clickHandler; add tests; ([08a2940](https://github.com/telekom/scale/commit/08a29407ac6fca41e5d0fde38fba83564d9bf12b))
+* selected state - first draft ([a5c4b8a](https://github.com/telekom/scale/commit/a5c4b8a354ced471854de84c31cd4e776650b150))
+* set initial state; set tempState on button click ([1f12e3d](https://github.com/telekom/scale/commit/1f12e3d0bb82dbd13631d80bbb5bc2b2316bb363))
+* sizes ([4bd83f7](https://github.com/telekom/scale/commit/4bd83f7b4aa52fcf1619ebd0db6767f0efd2beee))
+* storybook aria-translation ([467cbcf](https://github.com/telekom/scale/commit/467cbcf105b89534f74140170240d2f849c73a6a))
+* storybook stories ([20739c6](https://github.com/telekom/scale/commit/20739c68b64ac68dba165ac766e3cc4a719e9464))
+* striped tables ([#489](https://github.com/telekom/scale/issues/489)) ([9fb0999](https://github.com/telekom/scale/commit/9fb099903b84e001518844426b6f9c894f30dfae))
+* variants, icon handling ([8c65730](https://github.com/telekom/scale/commit/8c657303bd627e911586005fa6c5e84eda36bffd))
+* **checkbox:** add indeterminate state ([0a895c4](https://github.com/telekom/scale/commit/0a895c4cbd668ff49cd35550091549cb830672a1))
+* **date-picker:** accessibility enhancements ([#462](https://github.com/telekom/scale/issues/462)) ([117c4d7](https://github.com/telekom/scale/commit/117c4d7c4fe145bc5239bc2bce26ae0e90627ff8))
+* **storybook:** add CSS scoped variables to checkbox group ([3aea0bc](https://github.com/telekom/scale/commit/3aea0bc8eeda71e97577b1cee95298a0c890b715))
+* handle bar template without error ([3f288c3](https://github.com/telekom/scale/commit/3f288c3b3e8b27f9f39b3ef651e8d586b8a5cf10))
+* initial state handles all variants of disabled ([dc72a2e](https://github.com/telekom/scale/commit/dc72a2ecbbf2ca44ce740203727c01b0c5f0edc6))
+* initiallise group ([3f4264b](https://github.com/telekom/scale/commit/3f4264b8db53ea41782b5d2bccdbfcdde92ade4b))
+* logic between label checkbox and functional checkboxes ([f6669b9](https://github.com/telekom/scale/commit/f6669b9b613fe1cdbf301fd70ba450d34c709e79))
+* make checkboxes slots ([dbacb8a](https://github.com/telekom/scale/commit/dbacb8a1631598532772bd749a63d4816678ac8e))
+* make slots customasible ([f0b7ba2](https://github.com/telekom/scale/commit/f0b7ba2d610dd96f1248522983ab455ccd6a0bf4))
+* master checkbox state disabled ([5bba2e9](https://github.com/telekom/scale/commit/5bba2e930b379531b1c0a9e7b610ca6161b9c9ab))
+* prepare disabled ([4adbc00](https://github.com/telekom/scale/commit/4adbc0072f77a19a27da7ecb54a518538da8ca21))
+* refactor checkForSubCheckboxChange() ([9fec351](https://github.com/telekom/scale/commit/9fec351486b4336e462227b4f6148e4fb730f85a))
+* refactor state management ([457baa8](https://github.com/telekom/scale/commit/457baa87a1d20b2adaf34ce7b6c361d6f3e1ebc3))
+* updating status immediately ([ed1ce75](https://github.com/telekom/scale/commit/ed1ce755f87ef55ca3ac30150f336f8c1181b4f0))
+* **footer:** enable custom slots ([56d798c](https://github.com/telekom/scale/commit/56d798cb98dcb33b4cff2508d83274c2d6685139))
+
+
+### Reverts
+
+* Revert "docs(storybook): separate header from shell" (#493) ([ed9abf8](https://github.com/telekom/scale/commit/ed9abf8a0b3c42a581315355f5655d66e2d529bd)), closes [#493](https://github.com/telekom/scale/issues/493)
+
+
+
+
+
+# [3.0.0-beta.16](https://github.com/telekom/scale/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2021-07-20)
+
+
+### Bug Fixes
+
+* datepicker not updating on outside value change ([#441](https://github.com/telekom/scale/issues/441)) ([cb5773c](https://github.com/telekom/scale/commit/cb5773ce7ab9ca097a667c8c6ab849f19954dc37))
+* events and `checked` prop in Radio ([#426](https://github.com/telekom/scale/issues/426)) ([c9e780c](https://github.com/telekom/scale/commit/c9e780c1841590320d1bfd8d5ea618a406eef9d5))
+* format ([#453](https://github.com/telekom/scale/issues/453)) ([de170f7](https://github.com/telekom/scale/commit/de170f7e159e7bc05a804b0e391dc7d3b7af6c3f))
+
+
+### Features
+
+* add documentation for new Actions data-grid cell type ([#464](https://github.com/telekom/scale/issues/464)) ([5f9f6ef](https://github.com/telekom/scale/commit/5f9f6ef04c20a8892b55850017e65bfeea6937ef))
+* badge ([#394](https://github.com/telekom/scale/issues/394)) ([686ac2d](https://github.com/telekom/scale/commit/686ac2d6f366e2676ad0d96abce2714a02c334e1))
+* implement scaleBeforeClose event in Modal ([#430](https://github.com/telekom/scale/issues/430)) ([bdc6786](https://github.com/telekom/scale/commit/bdc678655e4d3921ab546448cca70f38ae4057ee))
+
+
+
+
+
 # [3.0.0-beta.15](https://github.com/telekom/scale/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2021-06-21)
 
 

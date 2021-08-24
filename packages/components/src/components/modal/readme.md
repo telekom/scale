@@ -21,10 +21,11 @@
 
 ## Events
 
-| Event        | Description | Type               |
-| ------------ | ----------- | ------------------ |
-| `scaleClose` |             | `CustomEvent<any>` |
-| `scaleOpen`  |             | `CustomEvent<any>` |
+| Event              | Description                                                                                        | Type                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scaleBeforeClose` | Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing | `CustomEvent<BeforeCloseEventDetail>` |
+| `scaleClose`       | Fires when the modal has been closed                                                               | `CustomEvent<void>`                   |
+| `scaleOpen`        | Fires when the modal has been opened                                                               | `CustomEvent<void>`                   |
 
 
 ## Shadow Parts

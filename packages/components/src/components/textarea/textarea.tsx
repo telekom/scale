@@ -200,6 +200,7 @@ export class Textarea {
       this.disabled && `textarea--disabled`,
       this.transparent && 'textarea--transparent',
       this.status && `textarea--status-${this.status}`,
+      this.readonly && `textarea--readonly`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

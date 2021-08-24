@@ -72,6 +72,8 @@ export class TextField {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) input list */
+  @Prop() list?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -100,6 +102,7 @@ export class TextField {
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
+
   emitChange() {
     this.scaleChange.emit({
       value: this.value == null ? this.value : this.value.toString(),
@@ -160,6 +163,7 @@ export class TextField {
             minLength={this.minLength}
             maxLength={this.maxLength}
             id={this.inputId}
+            list={this.list}
             onInput={this.handleInput}
             onChange={this.handleChange}
             onFocus={this.handleFocus}

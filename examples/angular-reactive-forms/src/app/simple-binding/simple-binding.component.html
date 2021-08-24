@@ -1,0 +1,6 @@
+<p>
+  <scale-slider label="Slider" [value]="val" (scaleInput)="setValue($event)" unit=""></scale-slider>
+</p>
+<p>
+  <input type="number" min="0" max="100" [(ngModel)]="val">
+</p>

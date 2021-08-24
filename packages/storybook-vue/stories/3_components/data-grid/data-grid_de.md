@@ -70,7 +70,7 @@ Mit Hilfe der Pagination bewegen sich Nutzer\*innen gezielt durch den gesamten D
 
 Folgende Inhaltskomponenten kannst du in Data Grids einsetzen:
 
-![Image Name](assets/3_components/data-grid/Data_components_en.png)
+![Image Name](assets/3_components/data-grid/Data_components_de.png)
 
 ## Mobiles Verhalten
 

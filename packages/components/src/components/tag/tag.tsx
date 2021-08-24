@@ -18,9 +18,9 @@ import classNames from 'classnames';
 })
 export class Tag {
   /** (optional) Tag size */
-  @Prop() size?: string = '';
+  @Prop() size?: 'small';
   /** (optional) Tag variant */
-  @Prop() variant?: string = '';
+  @Prop() variant?: 'secondary';
   /** (optional) Tag href */
   @Prop() href?: string = '';
   /** (optional) Tag target */
@@ -40,11 +40,14 @@ export class Tag {
   componentWillUpdate() {}
   disconnectedCallback() {}
 
-  handleClose(event) {
+  handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
+    if (this.disabled) {
+      return;
+    }
     this.scaleClose.emit(event);
-  }
+  };
 
   render() {
     const Element = !!this.href && !this.disabled ? 'a' : 'span';
@@ -52,11 +55,6 @@ export class Tag {
       ? {
           href: this.href,
           target: this.target,
-        }
-      : {};
-    const iconProps = !this.disabled
-      ? {
-          onClick: (event) => this.handleClose(event),
         }
       : {};
 
@@ -76,11 +74,11 @@ export class Tag {
               part="button-dismissable"
               disabled={this.disabled}
               aria-label={this.dismissText}
+              onClick={this.handleClose}
             >
               <scale-icon-action-close
                 part="icon-dismissable"
                 size={this.size === 'small' ? 20 : 24}
-                {...iconProps}
               />
             </button>
           )}

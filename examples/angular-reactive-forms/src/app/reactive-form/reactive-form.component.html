@@ -1,0 +1,17 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <p>
+    <scale-text-field label="Username" formControlName="username"></scale-text-field>
+  </p>
+  <p>
+    <scale-text-field label="Password" formControlName="password" type="password"></scale-text-field>
+  </p>
+  <p>
+    <scale-checkbox label="I agree with the privacy policy" formControlName="consent"></scale-checkbox>
+  </p>
+  <scale-button type="submit">console.log</scale-button>
+  <scale-button type="reset" variant="secondary">Reset</scale-button>
+</form>
+
+<scale-card>
+  <pre>{{ signupForm.value | json }}</pre>
+</scale-card>
