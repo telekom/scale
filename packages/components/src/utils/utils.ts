@@ -59,7 +59,7 @@ export const isPseudoClassSupported = (pseudoClass) => {
 export function emitEvent(
   instance: ComponentInterface,
   eventKey: string,
-  detail: any
+  detail?: any
 ) {
   const legacyKey = eventKey + 'Legacy';
   if (typeof instance[legacyKey] !== 'undefined') {

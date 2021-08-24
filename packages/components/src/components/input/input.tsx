@@ -285,13 +285,13 @@ export class Input {
 
   handleFocus = () => {
     // this.scaleFocus.emit();
-    emitEvent(this, 'scaleFocus', null);
+    emitEvent(this, 'scaleFocus');
     this.hasFocus = true;
   };
 
   handleBlur = () => {
     // this.scaleBlur.emit();
-    emitEvent(this, 'scaleBlur', null);
+    emitEvent(this, 'scaleBlur');
     this.hasFocus = false;
   };
 
