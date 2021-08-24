@@ -269,7 +269,7 @@ export class DatePicker {
       }`;
     }
 
-    this.fixJAWS();
+    this.adjustButtonsLabelsForA11y();
   }
 
   /**
@@ -277,7 +277,7 @@ export class DatePicker {
    * It'd probably make sense to open a PR in duetds/date-picker
    * https://github.com/duetds/date-picker/blob/master/src/components/duet-date-picker/date-picker-day.tsx#L61
    */
-  fixJAWS = () => {
+  adjustButtonsLabelsForA11y = () => {
     const table = this.hostElement.querySelector('.duet-date__table');
     const options = { subtree: true, childList: true, attributes: true };
     const callback = () => {
