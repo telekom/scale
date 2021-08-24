@@ -237,7 +237,7 @@ export class DatePicker {
     const dialog = this.hostElement.querySelector('.duet-date__dialog');
     let duetHeadingId: string = '';
     if (dialog) {
-      duetHeadingId = dialog.getAttribute('aria-labelledby')
+      duetHeadingId = dialog.getAttribute('aria-labelledby');
       if (duetHeadingId) {
         const duetHeading = this.hostElement.querySelector(`#${duetHeadingId}`);
         if (duetHeading) {
@@ -247,7 +247,9 @@ export class DatePicker {
     }
 
     // Add custom <h2> heading
-    const dialogContent = this.hostElement.querySelector('.duet-date__dialog-content');
+    const dialogContent = this.hostElement.querySelector(
+      '.duet-date__dialog-content'
+    );
     if (dialogContent) {
       const heading = document.createElement('h2');
       heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
@@ -261,7 +263,9 @@ export class DatePicker {
     );
 
     if (today) {
-      today.innerHTML = `${today.innerHTML}, ${this.localization?.today || 'today'}`;
+      today.innerHTML = `${today.innerHTML}, ${
+        this.localization?.today || 'today'
+      }`;
     }
   }
 
