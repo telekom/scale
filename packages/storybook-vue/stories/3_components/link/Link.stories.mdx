@@ -28,6 +28,7 @@ export const Template = (args, {argTypes}) => ({
         :target="target"
         :variant="variant"
         :styles="styles"
+        :underline="underline"
     >
         {{ label }}
         <scale-icon-navigation-external-link
@@ -123,3 +124,25 @@ For Shadow Parts, please inspect the element's #shadow.
     ></scale-icon-navigation-external-link>
 </scale-link>
 ```
+
+## No underline
+
+<Canvas withSource="none">
+    <Story
+        name="No underline"
+        args={{
+            label: 'A link, with an icon',
+            underline: false,
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-link underline="false">
+    A link, without underline
+</scale-link>
+```
+
+
+
