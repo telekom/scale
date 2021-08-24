@@ -58,7 +58,6 @@ export class Link {
       'link',
       this.disabled && 'link--disabled',
       this.block && 'link--block',
-      !this.underline && 'link--noUnderline',
       this.underline && 'link--underline'
     );
   }
