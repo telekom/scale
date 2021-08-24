@@ -167,6 +167,8 @@ export class DatePicker {
 
   private helperTextId = `helper-message-${i}`;
 
+  private mo: MutationObserver;
+
   /**
    * Public methods API
    */
@@ -261,13 +263,39 @@ export class DatePicker {
     const today = this.hostElement.querySelector(
       '.duet-date__day.is-today span.duet-date__vhidden'
     );
-
     if (today) {
       today.innerHTML = `${today.innerHTML}, ${
         this.localization?.today || 'today'
       }`;
     }
+
+    this.fixJAWS();
   }
+
+  /**
+   * Fix JAWS reading the day twice, e.g. "19 19. August"
+   * It'd probably make sense to open a PR in duetds/date-picker
+   * https://github.com/duetds/date-picker/blob/master/src/components/duet-date-picker/date-picker-day.tsx#L61
+   */
+  fixJAWS = () => {
+    const table = this.hostElement.querySelector('.duet-date__table');
+    const options = { subtree: true, childList: true, attributes: true };
+    const callback = () => {
+      this.mo.disconnect(); // avoid a feedback loop
+      const buttons = Array.from(
+        this.hostElement.querySelectorAll('.duet-date__day')
+      );
+      buttons.forEach((button) => {
+        const span = button.querySelector('.duet-date__vhidden');
+        const text = span.textContent;
+        button.setAttribute('aria-label', text);
+        span.setAttribute('hidden', 'hidden');
+      });
+      this.mo.observe(table, options);
+    };
+    this.mo = new MutationObserver(callback);
+    callback();
+  };
 
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });
@@ -280,6 +308,10 @@ export class DatePicker {
 
     if (input) {
       input.removeEventListener('keyup', this.handleKeyPress);
+    }
+
+    if (this.mo) {
+      this.mo.disconnect();
     }
   }
 
