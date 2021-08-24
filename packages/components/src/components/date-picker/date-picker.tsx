@@ -116,7 +116,9 @@ export class DatePicker {
    * Button labels, day names, month names, etc, used for localization.
    * Default is English.
    */
-  @Prop() localization?: DuetLocalizedText;
+  @Prop() localization?: DuetLocalizedText & {
+    today: string;
+  };
 
   /**
    * Date adapter, for custom parsing/formatting.
@@ -259,7 +261,7 @@ export class DatePicker {
     );
 
     if (today) {
-      today.innerHTML = `${today.innerHTML}, today`;
+      today.innerHTML = `${today.innerHTML}, ${this.localization?.today || 'today'}`;
     }
   }
 
