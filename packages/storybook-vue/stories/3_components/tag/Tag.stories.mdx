@@ -6,6 +6,7 @@ import {
   Description,
 } from "@storybook/addon-docs/blocks";
 import ScaleTag from "./ScaleTag.vue";
+import { action } from "@storybook/addon-actions";
 
 <Meta
   title="Components/Tag"
@@ -27,34 +28,35 @@ import ScaleTag from "./ScaleTag.vue";
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleTag },
   props: {
     label: String,
     ...ScaleTag.props,
   },
   template: `
     <scale-tag
-    :disabled="disabled"
-    :dismissable="dismissable"
-    :href="href"
-    :size="size"
-    :target="target"
-    :variant="variant"
+      :disabled="disabled"
+      :dismissable="dismissable"
+      :href="href"
+      :size="size"
+      :target="target"
+      :variant="variant"
+      @scaleClose="action('scaleClose')($event)"
     >
     {{ label }}
     </scale-tag>
   `,
+  methods: {
+    action
+  }
 });
 
 export const TemplateInteractive = (args, { argTypes }) => ({
-  components: { ScaleTag },
   template: `
       <ul aria-label="fruits" style="display: flex; list-style: none; padding: 0;">
           <li v-for="fruit in fruits" :key="fruit" style="margin-right: 4px;">
             <scale-tag
                 dismissable="true"
                 v-bind:dismiss-text="'Remove ' + fruit + ' from the list'"
-                @click="removeFruit(fruit)"
                 @scaleClose="removeFruit(fruit)"
             >
                 {{fruit}}
@@ -63,7 +65,9 @@ export const TemplateInteractive = (args, { argTypes }) => ({
       </ul>
   `,
   methods: {
+    action: action('scaleClose'),
     removeFruit(fruit) {
+      this.action();
       this.fruits = this.fruits.filter((x) => x !== fruit);
       setTimeout(() => {
         this.$el.querySelector("#root > ul > li > scale-tag") &&
