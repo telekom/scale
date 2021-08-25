@@ -52,7 +52,7 @@ export class Tag {
     }
     // this.scaleClose.emit(event);
     emitEvent(this, 'scaleClose', event);
-  }
+  };
 
   render() {
     const Element = !!this.href && !this.disabled ? 'a' : 'span';
