@@ -56,6 +56,7 @@
 | Part                   | Description |
 | ---------------------- | ----------- |
 | `"button-dismissable"` |             |
+| `"icon-dismissable"`   |             |
 
 
 ## Dependencies

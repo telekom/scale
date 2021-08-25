@@ -14,6 +14,7 @@
 | `helperText`  | `helper-text` | (optional) Input helper text            | `string`                                                                              | `''`        |
 | `inputId`     | `input-id`    | (optional) Input checkbox id            | `string`                                                                              | `undefined` |
 | `label`       | `label`       | (optional) Input label                  | `string`                                                                              | `''`        |
+| `list`        | `list`        | (optional) input list                   | `string`                                                                              | `undefined` |
 | `maxLength`   | `max-length`  | (optional) Input max length             | `number`                                                                              | `undefined` |
 | `minLength`   | `min-length`  | (optional) Input min length             | `number`                                                                              | `undefined` |
 | `name`        | `name`        | (optional) Input name                   | `string`                                                                              | `''`        |
