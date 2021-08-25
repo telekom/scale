@@ -22,6 +22,7 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 let i = 0;
 
@@ -65,8 +66,13 @@ export class Slider {
   // The actual position in % of the slider thumb
   @State() position: number;
 
-  @Event() scaleChange: EventEmitter<number>;
-  @Event() scaleInput: EventEmitter<number>;
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<number>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter<number>;
+
+  @Event({ eventName: 'scale-input' }) scaleInput: EventEmitter<number>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
   private dragging: boolean;
   private offsetLeft: number;
@@ -127,7 +133,8 @@ export class Slider {
 
   onDragEnd = () => {
     this.dragging = false;
-    this.scaleChange.emit(this.value);
+    // this.scaleChange.emit(this.value);
+    emitEvent(this, 'scaleChange', this.value);
     this.removeGlobalListeners();
   };
 
@@ -137,7 +144,8 @@ export class Slider {
 
   setValue = (nextValue: number) => {
     this.value = this.clamp(nextValue);
-    this.scaleInput.emit(this.value);
+    // this.scaleInput.emit(this.value);
+    emitEvent(this, 'scaleInput', this.value);
   };
 
   @Watch('value')

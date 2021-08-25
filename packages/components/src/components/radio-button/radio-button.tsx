@@ -44,9 +44,11 @@ export class RadioButton {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange!: EventEmitter<InputChangeEventDetail>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -66,7 +68,6 @@ export class RadioButton {
     emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });
-
   };
 
   // Prevent click event being fired twice when the target is the label.
