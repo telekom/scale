@@ -429,7 +429,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
         instance.frame = new Rect(enhanced.frame);
         instance.style = new Style(enhanced.style);
         instance.rotation = enhanced.rotation;
-        //isSymbolInstanceOf(instance, master, enhanced, '', master.name);
+        // isSymbolInstanceOf(instance, master, enhanced, '', master.name);
         instance.overrideValues = [];
         fillInstance(instance, master, enhanced, instance.overrideValues);
       }

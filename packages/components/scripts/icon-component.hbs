@@ -18,13 +18,13 @@ export class {{className}} {
   @Element() hostElement: HTMLElement;
 
   /** (optional) The width and height in pixels */
-  @Prop() size?: number = 24;
+  @Prop({ reflect: true }) size?: number = 24;
   /** (optional) Sets the icon color via the `fill` attribute */
-  @Prop() fill?: string = 'currentColor'; 
+  @Prop() fill?: string = 'currentColor';
   /** (optional) Alias for `fill` */
   @Prop() color?: string = 'currentColor';
   /** (optional) If `true`, the icon changes visually */
-  @Prop() selected?: boolean = false;
+  @Prop({ reflect: true }) selected?: boolean = false;
   /** (optional) If `true` the SVG element will get `aria-hidden="true"` */
   @Prop() decorative?: boolean = false;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
