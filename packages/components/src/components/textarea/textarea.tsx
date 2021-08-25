@@ -19,6 +19,7 @@ import {
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -70,15 +71,30 @@ export class Textarea {
   @Prop() styles?: string;
 
   /** Emitted when a keyboard input occurred. */
-  @Event() scaleInput!: EventEmitter<KeyboardEvent>;
+  @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleInput' })
+  scaleInputLegacy!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange!: EventEmitter<InputChangeEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
   /** Emitted when the input has focus. */
-  @Event() scaleFocus!: EventEmitter<void>;
+  @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
-  @Event() scaleBlur!: EventEmitter<void>;
+  @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
-  @Event() scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  @Event({ eventName: 'scale-keydown' })
+  scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleKeyDown' })
+  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
@@ -94,7 +110,10 @@ export class Textarea {
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
   emitChange() {
-    this.scaleChange.emit({
+    /* this.scaleChange.emit({
+      value: this.value == null ? this.value : this.value.toString(),
+    }); */
+    emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });
   }
@@ -105,7 +124,8 @@ export class Textarea {
       this.value = target.value || '';
       this.emitChange();
     }
-    this.scaleInput.emit(event as KeyboardEvent);
+    // this.scaleInput.emit(event as KeyboardEvent);
+    emitEvent(this, 'scaleInput', event as KeyboardEvent);
   };
 
   handleChange = (event: Event) => {
@@ -117,17 +137,20 @@ export class Textarea {
   };
 
   handleFocus = () => {
-    this.scaleFocus.emit();
+    // this.scaleFocus.emit();
+    emitEvent(this, 'scaleFocus');
     this.hasFocus = true;
   };
 
   handleBlur = () => {
-    this.scaleBlur.emit();
+    // this.scaleBlur.emit();
+    emitEvent(this, 'scaleBlur');
     this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    this.scaleKeyDown.emit(event);
+    // this.scaleKeyDown.emit(event);
+    emitEvent(this, 'scaleKeyDown', event);
   };
 
   render() {
