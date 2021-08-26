@@ -58,6 +58,20 @@ export class Checkbox {
     }
   }
 
+  getAriaChecked(){
+    if(this.checked){
+      return "true"
+    }
+    else if(this.indeterminate){
+      return "mixed"
+    }
+    else{
+      return "false"
+    }
+      
+    
+  }
+
   render() {
     const ariaInvalidAttr =
       this.status === 'error' ? { 'aria-invalid': true } : {};
@@ -97,6 +111,7 @@ export class Checkbox {
           </label>
           <input
             type="checkbox"
+            aria-checked={this.getAriaChecked()}
             name={this.name}
             id={this.inputId}
             onChange={(e: any) => {
@@ -110,6 +125,7 @@ export class Checkbox {
             value={this.value}
             checked={this.checked}
             disabled={this.disabled}
+            aria-label="Heyhey"
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
