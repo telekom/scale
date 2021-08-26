@@ -58,18 +58,14 @@ export class Checkbox {
     }
   }
 
-  getAriaCheckedState(){
-    if(this.checked){
-      return "true"
+  getAriaCheckedState() {
+    if (this.checked) {
+      return 'true';
+    } else if (this.indeterminate) {
+      return 'mixed';
+    } else {
+      return 'false';
     }
-    else if(this.indeterminate){
-      return "mixed"
-    }
-    else{
-      return "false"
-    }
-      
-    
   }
 
   render() {
@@ -125,7 +121,6 @@ export class Checkbox {
             value={this.value}
             checked={this.checked}
             disabled={this.disabled}
-            aria-label="Heyhey"
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
           />
