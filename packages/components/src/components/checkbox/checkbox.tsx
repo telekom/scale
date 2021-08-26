@@ -58,7 +58,7 @@ export class Checkbox {
     }
   }
 
-  getAriaChecked(){
+  getAriaCheckedState(){
     if(this.checked){
       return "true"
     }
@@ -111,7 +111,7 @@ export class Checkbox {
           </label>
           <input
             type="checkbox"
-            aria-checked={this.getAriaChecked()}
+            aria-checked={this.getAriaCheckedState()}
             name={this.name}
             id={this.inputId}
             onChange={(e: any) => {
