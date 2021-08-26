@@ -39,7 +39,7 @@ export class Checkbox {
   /** (optional) Input status */
   @Prop() status?: string = '';
   /** (optional) Input disabled */
-  @Prop() disabled?: boolean;
+  @Prop() disabled?: boolean = false;
   /** (optional) Active switch */
   @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) indeterminate */
