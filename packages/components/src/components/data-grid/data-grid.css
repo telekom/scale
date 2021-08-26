@@ -417,12 +417,12 @@
   position: absolute;
   right: 0px;
   bottom: 0px;
-  border-bottom-right-radius: 7px;
+  border-bottom-right-radius: var(--scl-radius-8);
 }
 
 .data-grid:not(.data-grid--mobile) .info__pagination::part(last-prompt) {
   border-right-color: transparent;
-  border-bottom-right-radius: 7px;
+  border-bottom-right-radius: var(--scl-radius-8);
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {

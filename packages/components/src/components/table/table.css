@@ -10,7 +10,7 @@
  */
 
 scale-table {
-  --radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
+  --radius: var(--scl-radius-8) var(--scl-radius-8) 0 0;
   --background: var(--scl-color-background-light);
   --color: var(--scl-color-text-standard);
   --color-hover: var(--scl-color-primary-hover);
