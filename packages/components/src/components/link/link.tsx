@@ -25,7 +25,7 @@ export class Link {
   /** (optional) Block link */
   @Prop() block?: boolean = false;
   /** (optional) Link underline */
-  @Prop() underline?: boolean = true;
+  @Prop() omitUnderline?: boolean = false;
   /** (optional) Link open a new tag */
   @Prop() target?: string = '_self';
   /** (optional) Link variant */
@@ -58,7 +58,7 @@ export class Link {
       'link',
       this.disabled && 'link--disabled',
       this.block && 'link--block',
-      this.underline && 'link--underline'
+      !this.omitUnderline && 'link--underline'
     );
   }
 }

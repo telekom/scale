@@ -6,7 +6,7 @@
     :target="target"
     :variant="variant"
     :styles="styles"
-    :underline="underline"
+    :omit-underline="omitUnderline"
   >
     <slot></slot>
     <scale-icon-navigation-external-link
@@ -27,7 +27,7 @@ export default {
     target: { type: String, default: "_self" },
     variant: String,
     styles: String,
-    underline: { type: Boolean, default: true },
+    omitUnderline: { type: Boolean, default: false },
   },
 };
 </script>
