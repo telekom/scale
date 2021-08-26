@@ -112,7 +112,8 @@ scale-radio-button {
     name="Standard Disabled"
     args={{
       label: "Standard Disabled",
-      disabled: true
+      disabled: true,
+      name: "standard_radio_button"
     }}
   >
     {Template.bind({})}
@@ -131,7 +132,8 @@ scale-radio-button {
     name="Selected"
     args={{
       label: "Selected",
-      checked: true
+      checked: true,
+      name: "selected_radio_button"
     }}
   >
     {Template.bind({})}
@@ -151,7 +153,8 @@ scale-radio-button {
     args={{
       label: "Selected Disabled",
       checked: true,
-      disabled: true
+      disabled: true,
+      name: "disabled_radio_button"
     }}
   >
     {Template.bind({})}
@@ -169,7 +172,8 @@ scale-radio-button {
         name="Helper Text"
         args={{
             label: "Helper Text",
-            helperText: "Make sure to select this"
+            helperText: "Make sure to select this",
+            name: "helper_radio_button"
         }}
     >
         {Template.bind({})}
@@ -188,7 +192,8 @@ scale-radio-button {
     args={{
       label: "Standard with error",
       status: "error",
-      helperText: "This is the error message"
+      helperText: "This is the error message",
+      name: "error_radio_button"
     }}
   >
     {Template.bind({})}
