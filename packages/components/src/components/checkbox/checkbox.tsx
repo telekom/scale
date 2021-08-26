@@ -71,6 +71,24 @@ export class Checkbox {
     return (
       <Host checked={this.checked}>
         <div class={this.getCssClassMap()}>
+          <input
+            type="checkbox"
+            name={this.name}
+            id={this.inputId}
+            onChange={(e: any) => {
+              if (this.indeterminate) {
+                this.indeterminate = false;
+              }
+              this.checked = e.target.checked;
+              // bubble event through the shadow dom
+              this.scaleChange.emit({ value: this.checked });
+            }}
+            value={this.value}
+            checked={this.checked}
+            disabled={this.disabled}
+            {...ariaInvalidAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
+          />
           <label class="checkbox__label-wrapper" htmlFor={this.inputId}>
             <div class="checkbox__control-wrapper">
               <span class="checkbox__control"></span>
@@ -99,23 +117,6 @@ export class Checkbox {
               </div>
             )}
           </label>
-          <input
-            type="checkbox"
-            name={this.name}
-            id={this.inputId}
-            onChange={(e: any) => {
-              if (this.indeterminate) {
-                this.indeterminate = false;
-              }
-              this.checked = e.target.checked;
-              emitEvent(this, 'scaleChange', { value: this.checked });
-            }}
-            value={this.value}
-            checked={this.checked}
-            disabled={this.disabled}
-            {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
-          />
         </div>
       </Host>
     );
