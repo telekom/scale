@@ -121,11 +121,6 @@ scale-checkbox {
   border-width: 0;
 }
 
-/* same as .checkbox--disabled .checkbox__label, (see rule further downwards)
-  .checkbox input:disabled ~ .checkbox__label {
-  color: var(--color-disabled);
-} */
-
 .checkbox--disabled.checkbox--checked .checkbox__label {
   color: var(--color-disabled);
 }
@@ -147,11 +142,7 @@ scale-checkbox {
 .checkbox--enabled.checkbox--checked
   input:hover
   ~ .checkbox__control-wrapper
-  .checkbox__control/* ,
-.checkbox
-  input:checked:not([disabled])
-  ~ .checkbox__control-wrapper:hover
-  .checkbox__control  */ {
+  .checkbox__control {
   box-shadow: none;
   border-color: var(--color-primary-hover);
   background: var(--color-primary-hover);
@@ -167,33 +158,21 @@ scale-checkbox {
 .checkbox--checked.checkbox--eanabled
   input:active
   ~ .checkbox__control-wrapper
-  .checkbox__control/* ,
-.checkbox
-  input:checked:not([disabled])
-  ~ .checkbox__control-wrapper:active
-  .checkbox__control  */ {
+  .checkbox__control {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
 .checkbox--indeterminate.checkbox--eanabled
   input:active
   ~ .checkbox__control-wrapper
-  .checkbox__control/* ,
-.checkbox
-  input:checked:not([disabled])
-  ~ .checkbox__control-wrapper:active
-  .checkbox__control  */ {
+  .checkbox__control {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
 .checkbox--enabled.checkbox--checked
   input:active
   ~ .checkbox__control-wrapper
-  .checkbox__icon/* ,
-.checkbox
-  input:checked:not([disabled])
-  ~ .checkbox__control-wrapper:active
-  .checkbox__icon */ {
+  .checkbox__icon {
   color: var(--color-icon-checked-active);
 }
 
@@ -212,55 +191,22 @@ scale-checkbox {
 .checkbox.checkbox--disabled .checkbox__control-wrapper .checkbox__control {
   border-color: var(--color-disabled);
 }
-.checkbox input:focus ~ .checkbox__control-wrapper .checkbox__control {
+.checkbox input:focus ~ .checkbox__label-wrapper .checkbox__control {
   box-shadow: 0 0 0 var(--scl-spacing-2) var(--color-focus);
 }
-.checkbox--enabled
-  input:hover
-  ~ .checkbox__control-wrapper
-  .checkbox__control/* ,
-.checkbox
-  input:not([disabled])
-  ~ .checkbox__control-wrapper:hover
-  .checkbox__control */ {
-  box-shadow: none;
-  border-color: var(--color-primary-hover);
-}
-.checkbox--enabled
-  input:hover
-  ~ .checkbox__control-wrapper
-  ~ .checkbox__label/* ,
-.checkbox
-  input:not([disabled])
-  ~ .checkbox__control-wrapper:hover
-  ~ .checkbox__label  */ {
-  color: var(--color-primary-hover);
-}
+
 .checkbox.checkbox--enabled
   input:active
-  ~ .checkbox__control-wrapper
-  .checkbox__control/* ,
-.checkbox
-  input:not([disabled])
-  ~ .checkbox__control-wrapper:active
-  .checkbox__control  */ {
+  ~ .checkbox__label-wrapper
+  .checkbox__control {
   border-color: var(--color-primary-active);
   background: var(--color-primary-active);
 }
 
-/* .checkbox input:not([disabled]):active ~ .checkbox__control-wrapper .checkbox__icon,
-.checkbox input:not([disabled]) ~ .checkbox__control-wrapper:active .checkbox__icon {
-  color: var(--color-primary-active);
-} */
-
 .checkbox.checkbox--enabled
   input:active
-  ~ .checkbox__control-wrapper
-  ~ .checkbox__label/* ,
-.checkbox
-  input:not([disabled])
-  ~ .checkbox__control-wrapper:active
-  ~ .checkbox__label */ {
+  ~ .checkbox__label-wrapper
+  ~ .checkbox__label {
   color: var(--color-primary-active);
 }
 .checkbox .checkbox__control-wrapper .checkbox__control {
