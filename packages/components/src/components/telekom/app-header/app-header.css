@@ -12,7 +12,7 @@
 scale-app-header {
   --header-nav-height: 56px;
   --header-brand-height: 72px;
-  --header-border-radius: var(--scl-radius-8);
+  --header-border-radius: var(--scl-radius-12);
   --header-transition-speed: 0.3s;
   --header-brand-collapsed-height: 4px;
   --header-max-width: inherit;

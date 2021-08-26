@@ -27,7 +27,7 @@
   --spacing-minimal: var(--scl-spacing-24);
 
   --background-mask: var(--scl-color-background-standard, #fff);
-  --radius-mask: 0 0 var(--scl-radius-8) var(--scl-radius-8);
+  --radius-mask: 0 0 var(--scl-radius-12) var(--scl-radius-12);
 
   --height-logo: var(--scl-spacing-24);
   --font-size-copyright: var(--scl-font-size-14);

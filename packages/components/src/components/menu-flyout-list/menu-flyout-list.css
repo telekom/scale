@@ -12,7 +12,7 @@
 :host {
   display: inline-flex;
   background: var(--scl-color-white);
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--scl-radius-12);
   box-shadow: var(--scl-shadow-level-4);
   overflow-y: hidden;
 }
