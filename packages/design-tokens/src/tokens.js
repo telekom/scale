@@ -396,6 +396,7 @@ tokens[RADIUS] = {
     2: 2,
     4: 4,
     8: 8,
+    12: 12,
   },
 };
 
@@ -436,7 +437,7 @@ tokens[Z_INDEX] = {
   },
 };
 
-export default function() {
+export default function () {
   // a copy to avoid any outputs accidentally mutating it
   return { ...tokens };
 }
