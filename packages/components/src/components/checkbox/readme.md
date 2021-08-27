@@ -10,7 +10,7 @@
 | Property        | Attribute       | Description                    | Type               | Default     |
 | --------------- | --------------- | ------------------------------ | ------------------ | ----------- |
 | `checked`       | `checked`       | (optional) Active switch       | `boolean`          | `false`     |
-| `disabled`      | `disabled`      | (optional) Input disabled      | `boolean`          | `undefined` |
+| `disabled`      | `disabled`      | (optional) Input disabled      | `boolean`          | `false`     |
 | `helperText`    | `helper-text`   | (optional) Input helper text   | `string`           | `''`        |
 | `indeterminate` | `indeterminate` | (optional) indeterminate       | `boolean`          | `false`     |
 | `inputId`       | `input-id`      | (optional) Input checkbox id   | `string`           | `undefined` |
@@ -28,6 +28,18 @@
 | `scaleChange` | Emitted when the value has changed. | `CustomEvent<any>` |
 
 
+## Shadow Parts
+
+| Part            | Description |
+| --------------- | ----------- |
+| `"checkbox"`    |             |
+| `"container"`   |             |
+| `"helper-text"` |             |
+| `"icon"`        |             |
+| `"input"`       |             |
+| `"label"`       |             |
+
+
 ## Dependencies
 
 ### Used by
@@ -36,14 +48,14 @@
 
 ### Depends on
 
-- [scale-icon-action-success](../icons/action-success)
 - [scale-icon-action-indeterminate](../icons/action-indeterminate)
+- [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-checkbox --> scale-icon-action-success
   scale-checkbox --> scale-icon-action-indeterminate
+  scale-checkbox --> scale-icon-action-success
   scale-data-grid --> scale-checkbox
   style scale-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```

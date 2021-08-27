@@ -18,17 +18,15 @@ import {
   Host,
   Prop,
 } from '@stencil/core';
-import classNames from 'classnames';
 
 let i = 0;
-
 @Component({
   tag: 'scale-checkbox',
   styleUrl: './checkbox.css',
   shadow: false,
 })
 export class Checkbox {
-  @Element() el: HTMLElement;
+  @Element() host: HTMLElement;
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
@@ -38,13 +36,13 @@ export class Checkbox {
   /** (optional) Input status */
   @Prop() status?: string = '';
   /** (optional) Input disabled */
-  @Prop() disabled?: boolean = false;
+  @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
   @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) indeterminate */
   @Prop({ reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
-  @Prop({ mutable: true }) value?: string | number | null = '';
+  @Prop() value?: string | number | null = '';
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
   /** (optional) Injected CSS styles */
@@ -52,89 +50,96 @@ export class Checkbox {
   /** Emitted when the value has changed. */
   @Event() scaleChange!: EventEmitter;
 
-  componentWillLoad() {
-    if (this.inputId == null) {
-      this.inputId = 'input-checkbox-' + i++;
-    }
-  }
+  private id = i++;
 
   getAriaCheckedState() {
-    if (this.checked) {
-      return 'true';
-    } else if (this.indeterminate) {
+    if (this.indeterminate) {
       return 'mixed';
+    }
+
+    return this.checked;
+  }
+
+  handleChange = (ev) => {
+    if (this.indeterminate) {
+      this.indeterminate = false;
+      this.checked = true;
+      ev.target.checked = true;
     } else {
-      return 'false';
+      this.checked = ev.target.checked;
+    }
+
+    const { checked, indeterminate, value } = this;
+
+    this.scaleChange.emit({ checked, indeterminate, value });
+  };
+
+  connectedCallback() {
+    if (!this.inputId) {
+      this.inputId = 'input-checkbox-' + this.id;
     }
   }
-  render() {
-    const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
-    return (
-      <Host checked={this.checked}>
-        <div class={this.getCssClassMap()}>
-          <input
-            type="checkbox"
-            aria-checked={this.getAriaCheckedState()}
-            name={this.name}
-            id={this.inputId}
-            onChange={(e: any) => {
-              if (this.indeterminate) {
-                this.indeterminate = false;
-              }
-              this.checked = e.target.checked;
-              // bubble event through the shadow dom
-              this.scaleChange.emit({ value: this.checked });
-            }}
-            value={this.value}
-            checked={this.checked}
-            disabled={this.disabled}
-            {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
-          />
-          <label class="checkbox__label-wrapper" htmlFor={this.inputId}>
-            <div class="checkbox__control-wrapper">
-              <span class="checkbox__control"></span>
-              {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {this.checked && !this.indeterminate && (
-                <scale-icon-action-success
-                  class="checkbox__icon"
-                  decorative
-                ></scale-icon-action-success>
-              )}
-              {this.indeterminate && (
-                <scale-icon-action-indeterminate class="checkbox__icon"></scale-icon-action-indeterminate>
-              )}
-            </div>
-            <span class="checkbox__label">
-              {this.label ? this.label : <slot></slot>}
-            </span>
-            {!!this.helperText && (
-              <div
-                class="checkbox__meta"
-                id={helperTextId}
-                aria-live="polite"
-                aria-relevant="additions removals"
-              >
-                <div class="checkbox__helper-text">{this.helperText}</div>
-              </div>
-            )}
-          </label>
-        </div>
-      </Host>
-    );
+  /* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */
+  renderIcon() {
+    if (this.indeterminate) {
+      return (
+        <scale-icon-action-indeterminate
+          part="icon"
+          decorative
+        ></scale-icon-action-indeterminate>
+      );
+    }
+
+    if (this.checked) {
+      return (
+        <scale-icon-action-success
+          part="icon"
+          decorative
+        ></scale-icon-action-success>
+      );
+    }
   }
 
-  getCssClassMap() {
-    return classNames(
-      'checkbox',
-      this.checked ? `checkbox--checked` : `checkbox--not-checked`,
-      this.indeterminate && `checkbox--indeterminate`,
-      this.disabled ? `checkbox--disabled` : `checkbox--enabled`,
-      this.status && `checkbox--status-${this.status}`
+  render() {
+    const helperText = {
+      id: `helper-text-${this.id}`,
+      content: this.helperText,
+    };
+
+    return (
+      <Host
+        class={{
+          error: this.status === 'error',
+        }}
+      >
+        <input
+          type="checkbox"
+          part="input"
+          name={this.name}
+          id={this.inputId}
+          value={this.value}
+          checked={this.checked}
+          indeterminate={this.indeterminate}
+          aria-checked={this.getAriaCheckedState()}
+          aria-invalid={this.status === 'error'}
+          aria-describedBy={helperText.id}
+          disabled={this.disabled}
+          onChange={this.handleChange}
+        />
+        <label part="container" htmlFor={this.inputId}>
+          <div part="checkbox">{this.renderIcon()}</div>
+          <div part="label">{this.label || <slot></slot>}</div>
+        </label>
+        <div
+          part="helper-text"
+          id={helperText.id}
+          aria-live="polite"
+          aria-relevant="additions removals"
+        >
+          {helperText.content}
+        </div>
+      </Host>
     );
   }
 }
