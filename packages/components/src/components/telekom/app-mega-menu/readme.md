@@ -9,6 +9,7 @@
 
 | Property        | Attribute         | Description | Type         | Default     |
 | --------------- | ----------------- | ----------- | ------------ | ----------- |
+| `active`        | `active`          |             | `boolean`    | `undefined` |
 | `activeRouteId` | `active-route-id` |             | `string`     | `undefined` |
 | `hide`          | --                |             | `() => void` | `undefined` |
 | `isActive`      | `is-active`       |             | `boolean`    | `undefined` |

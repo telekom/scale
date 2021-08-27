@@ -41,7 +41,11 @@ describe('NavMain', () => {
     element.isMegaMenuVisible = true;
     expect(element.getCssClassMap()).toContain('mega-menu--visible');
 
+    // DEPRECATED - active should replace isActive
     element.isActive = true;
+    expect(element.getCssClassMap()).toContain('selected');
+
+    element.active = true;
     expect(element.getCssClassMap()).toContain('selected');
   });
 });
