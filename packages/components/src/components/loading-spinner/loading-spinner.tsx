@@ -17,7 +17,7 @@ export class LoadingSpinner {
       <Host>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div part="container" class="spinner__container">
-            <svg class="spinner__circle" viewBox="0 0 50 50">
+            <svg class="spinner__circle" viewBox="0 0 50 50" title={this.text || 'Loading'}>
               <circle
                 class="path"
                 cx="25"
