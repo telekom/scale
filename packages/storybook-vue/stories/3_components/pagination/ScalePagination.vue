@@ -1,4 +1,32 @@
+<template>
+  <scale-pagination
+    :hide-borders="hideBorders"
+    :page-size="pageSize"
+    :small="small"
+    :start-element="startElement"
+    :total-elements="totalElements"
+    :aria-label-first-page="ariaLabelFirstPage"
+    :aria-label-last-page="ariaLabelLastPage"
+    :aria-label-previous-page="ariaLabelPreviousPage"
+    :aria-label-next-page="ariaLabelNextPage"
+    :styles="styles"
+  >
+  </scale-pagination>
+</template>
+
 <script>
-  // Unused, but needs to exist ¯\_(ツ)_/¯
-  export default {};
+export default {
+  props: {
+    hideBorders: { type: Boolean, default: false },
+    pageSize: { type: Number, default: 10 },
+    startElement: { type: Number, default: 0 },
+    totalElements: { type: Number, default: 1 },
+    styles: { type: String },
+    small: { type: Boolean, default: false },
+    ariaLabelFirstPage: { type: String, default: 'Go to first page'},
+    ariaLabelLastPage: { type: String, default: 'Go to last page'},
+    ariaLabelPreviousPage: { type: String, default: 'Go to previous page'},
+    ariaLabelNextPage: { type: String, default: 'Go to next page'},
+  },
+};
 </script>
