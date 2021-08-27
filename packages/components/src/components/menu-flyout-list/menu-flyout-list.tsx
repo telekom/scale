@@ -29,7 +29,6 @@ import classNames from 'classnames';
  * Because scaleChange does not work with Vue 3;
  *
  * import { emitEvent } from '../../utils/utils';
- *
  */
 
 const name = 'menu-list';
