@@ -1,0 +1,27 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username" />
+  </p>
+  <p>
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+  </p>
+  <p>
+    <input id="consent" type="checkbox" formControlName="consent" />
+    <label for="consent">I agree with the privacy policy</label>
+  </p>
+  <fieldset>
+    <legend>Send me spam:</legend>
+    <input type="radio" name="spam" formControlName="spam" id="spam-yep" value="yep"> 
+    <label for="spam-yep">Yep</label> 
+    <input type="radio" name="spam" formControlName="spam" id="spam-nope" value="nope"> 
+    <label for="spam-nope">Nope</label>
+  </fieldset>
+  <button type="submit">console.log</button>
+  <button type="reset">Reset</button>
+</form>
+
+<scale-card>
+  <pre>{{ signupForm.value | json }}</pre>
+</scale-card>
