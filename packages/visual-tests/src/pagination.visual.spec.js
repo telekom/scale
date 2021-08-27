@@ -1,7 +1,7 @@
 describe('Pagination', () => {
   test.each([
     ['standard'],
-    ['auto-sizing-label'],
+    ['small'],
     ['hidden-borders'],
     ['embedded-hidden-borders'],
   ])('%p', async (variant) => {

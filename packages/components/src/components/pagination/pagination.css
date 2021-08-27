@@ -11,31 +11,55 @@
 
 :host {
   --color: var(--scl-color-black);
-  --font-size: var(--scl-font-size-16);
+  --radius: var(--scl-radius-8);
+  --font-size: var(--scl-font-size-12);
   --border: 1px solid var(--scl-color-grey-10);
   --color-hover: var(--scl-color-primary-hover);
+  --color-active: var(--scl-color-primary-active);
   --color-button: var(--scl-color-grey-10);
   --border-button: var(--border);
-  --box-shadow-focus: 0px 0px 0px 2px var(--scl-color-focus);
-  --radius-first-prompt: 12px 0 0 12px;
-  --radius-last-prompt: 0 12px 12px 0;
+  --box-shadow-focus: inset 0 0 0 2px var(--scl-color-focus);
+  --radius-first-prompt: var(--radius) 0 0 var(--radius);
+  --radius-last-prompt: 0 var(--radius) var(--radius) 0;
+  --radius-first-prompt-stack: 0 0 0 var(--radius);
+  --radius-last-prompt-stack: 0 0 var(--radius) 0;
   --stroke-svg: var(--scl-color-black);
+  --stroke-svg-high-contrast: var(--scl-color-white);
+  --width-button: 42px;
+  --padding-info: var(--scl-spacing-8);
+  --height-button: 56px;
+  --height-button-small: 40px;
+  --line-height-info: calc(var(--height-button) - 2px);
+  --line-height-info-small: calc(var(--height-button-small) - 2px);
 }
 .pagination {
-  display: inline-flex;
+  display: flex;
+  overflow: auto;
+  flex-wrap: wrap;
 }
-.pagination__info {
+.pagination__info,
+.pagination__info-responsive {
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
-  line-height: 52px;
-  padding: 0 15px;
+  line-height: var(--line-height-info);
+  padding: 0 var(--padding-info);
   border: var(--border);
   flex-shrink: 0;
   border-left: 0;
   border-right: 0;
+  white-space: nowrap;
+  order: 1;
 }
-.pagination__info span {
+.pagination__info-responsive {
+  display: none;
+}
+.pagination--small .pagination__info,
+.pagination--small .pagination__info-responsive {
+  line-height: var(--line-height-info-small);
+}
+.pagination__info span,
+.pagination__info-responsive span {
   font-weight: bold;
 }
 button {
@@ -45,11 +69,14 @@ button {
   align-items: center;
   padding: 0;
   margin: 0;
-  height: 54px;
-  width: 42px;
+  height: var(--height-button);
+  width: var(--width-button);
   color: var(--color-button);
   background: none;
   border: var(--border-button);
+}
+.pagination--small button {
+  height: var(--height-button-small);
 }
 button:focus {
   outline: none;
@@ -62,6 +89,10 @@ button:focus {
 .pagination__last-prompt {
   border-radius: var(--radius-last-prompt);
   margin-left: -1px;
+  order: 2;
+}
+.pagination__next-prompt {
+  order: 2;
 }
 button svg {
   display: block;
@@ -79,10 +110,21 @@ button:not(:disabled):hover {
 button:not(:disabled):hover svg {
   stroke: var(--color-hover);
 }
+button:not(:disabled):active {
+  border-color: var(--color-active);
+  z-index: 1;
+}
+button:not(:disabled):active svg {
+  stroke: var(--color-active);
+}
 
 /* Hide Borders option */
-.pagination--hide-borders .pagination__info {
+.pagination--hide-borders .pagination__info,
+.pagination--hide-borders .pagination__info-responsive {
   border: 0;
+}
+.pagination--hide-borders .pagination__info-responsive {
+  border-bottom: var(--border);
 }
 
 .pagination--hide-borders button {
@@ -93,6 +135,58 @@ button:not(:disabled):hover svg {
 
 .pagination--hide-borders button:not(:disabled):hover {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
-  border-width: 1px !important;
-  border-color: var(--color-hover) !important;
+  border-width: 1px;
+  border-color: var(--color-hover);
+}
+
+.pagination__button-wrapper {
+  display: flex;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  button:not(:disabled) svg {
+    stroke: var(--stroke-svg-high-contrast);
+  }
+}
+
+@media screen and (max-width: 639px) {
+  :host {
+    width: 100%;
+  }
+  .pagination {
+    flex-direction: column;
+  }
+  .pagination__info-responsive {
+    display: initial;
+    order: 0;
+    overflow: auto;
+    border-left: var(--border);
+    border-right: var(--border);
+    border-bottom: 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+    line-height: var(--line-height-info-small);
+  }
+  .pagination__info {
+    display: none;
+    line-height: var(--line-height-info-small);
+  }
+  .pagination__first-prompt {
+    border-radius: var(--radius-first-prompt-stack);
+  }
+  .pagination__last-prompt {
+    border-radius: var(--radius-last-prompt-stack);
+  }
+  .pagination__next-prompt {
+    margin-left: -1px;
+  }
+  button {
+    flex: 1;
+    height: var(--height-button-small);
+  }
+  .pagination--hide-borders .pagination__first-prompt {
+    border-left-width: 0;
+  }
+  .pagination--hide-borders .pagination__last-prompt {
+    border-right-width: 0;
+  }
 }
