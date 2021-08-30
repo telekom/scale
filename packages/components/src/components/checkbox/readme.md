@@ -7,18 +7,19 @@
 
 ## Properties
 
-| Property        | Attribute       | Description                    | Type               | Default     |
-| --------------- | --------------- | ------------------------------ | ------------------ | ----------- |
-| `checked`       | `checked`       | (optional) Active switch       | `boolean`          | `false`     |
-| `disabled`      | `disabled`      | (optional) Input disabled      | `boolean`          | `false`     |
-| `helperText`    | `helper-text`   | (optional) Input helper text   | `string`           | `''`        |
-| `indeterminate` | `indeterminate` | (optional) indeterminate       | `boolean`          | `false`     |
-| `inputId`       | `input-id`      | (optional) Input checkbox id   | `string`           | `undefined` |
-| `label`         | `label`         | (optional) Input label         | `string`           | `''`        |
-| `name`          | `name`          | (optional) Input name          | `string`           | `''`        |
-| `status`        | `status`        | (optional) Input status        | `string`           | `''`        |
-| `styles`        | `styles`        | (optional) Injected CSS styles | `string`           | `undefined` |
-| `value`         | `value`         | (optional) Input value         | `number \| string` | `''`        |
+| Property        | Attribute       | Description                                   | Type      | Default     |
+| --------------- | --------------- | --------------------------------------------- | --------- | ----------- |
+| `checked`       | `checked`       | (optional) Active switch                      | `boolean` | `false`     |
+| `disabled`      | `disabled`      | (optional) Input disabled                     | `boolean` | `false`     |
+| `helperText`    | `helper-text`   | (optional) Input helper text                  | `string`  | `undefined` |
+| `hideLabel`     | `hide-label`    | (optional) Hides the specified label visually | `boolean` | `false`     |
+| `indeterminate` | `indeterminate` | (optional) indeterminate                      | `boolean` | `false`     |
+| `inputId`       | `input-id`      | (optional) Input checkbox id                  | `string`  | `undefined` |
+| `label`         | `label`         | (optional) Input label                        | `string`  | `''`        |
+| `name`          | `name`          | (optional) Input name                         | `string`  | `undefined` |
+| `status`        | `status`        | (optional) Input status                       | `string`  | `''`        |
+| `styles`        | `styles`        | (optional) Injected CSS styles                | `string`  | `undefined` |
+| `value`         | `value`         | (optional) Input value                        | `string`  | `''`        |
 
 
 ## Events

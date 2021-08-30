@@ -9,8 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Listen, Element, State } from '@stencil/core';
-import { CheckboxState, objDiffer } from './utils/utils';
+import { Component, h, Host, Listen, Element } from '@stencil/core';
+import { CheckboxInterface } from '../checkbox/checkbox';
 
 @Component({
   tag: 'scale-checkbox-group',
@@ -18,156 +18,65 @@ import { CheckboxState, objDiffer } from './utils/utils';
   shadow: true,
 })
 export class CheckboxGroup {
-  initialLoad: boolean = true;
+  @Element() host: HTMLElement;
 
-  @Element() hostElement: HTMLElement;
+  @Listen('scaleChange')
+  handleCheckboxChange(ev) {
+    const { slot, tagName, checked, disabled } = ev.composedPath()[0];
 
-  @State() groupStatus: CheckboxState[] = [];
-
-  @Listen('scale-change')
-  scaleChangeHandler() {
-    this.createNewState();
-  }
-
-  componentDidLoad() {
-    this.createNewState();
-  }
-
-  createNewState() {
-    const checkboxes = Array.from(this.getCheckboxes());
-    const newState: CheckboxState[] = [];
-    for (let i = 0; i < checkboxes.length; i++) {
-      newState[i] = {
-        id: checkboxes[i].inputId,
-        checked: checkboxes[i].checked,
-        disabled: checkboxes[i].disabled ? checkboxes[i].disabled : false,
-        indeterminate: checkboxes[i].indeterminate,
-      };
-    }
-    this.distributeNewState(newState);
-  }
-
-  distributeNewState(newState: CheckboxState[]) {
-    if (!newState[0].disabled) {
-      // initial Loading
-      if (this.initialLoad) {
-        this.setMasterCheckBoxState(newState);
-        this.initialLoad = false;
-      }
-      // not initial Loading
-      else {
-        // sub has been changed
-        if (this.checkForSubCheckboxChange(newState)) {
-          this.setMasterCheckBoxState(newState);
-        }
-        // master has been changed
-        else {
-          this.checkForMasterCheckboxChange(newState);
-        }
-      }
-    } else {
-      this.setMasterCheckBoxState(newState);
-      this.handleMasterDisableProp();
-    }
-  }
-
-  handleMasterDisableProp() {
-    const checkboxes = this.getCheckboxes();
-    // set all subs to disabled
-    for (let i = 1; i < checkboxes.length; i++) {
-      checkboxes[i].setAttribute('disabled', 'true');
-    }
-    this.setGroupStatusState();
-  }
-
-  checkForMasterCheckboxChange(newState: CheckboxState[]) {
-    const checkboxes = this.getCheckboxes();
-    // set master and subs to checked
-    if (this.groupStatus[0].indeterminate || !this.groupStatus[0].checked) {
-      for (let i = 1; i < checkboxes.length; i++) {
-        if (!newState[i].disabled) {
-          checkboxes[i].setAttribute('checked', 'true');
-          checkboxes[i].removeAttribute('indeterminate');
-        }
-      }
-      this.setGroupStatusState();
-    }
-    // set master and subs to empty if checked master has been clicked
-    else {
-      for (let i = 1; i < checkboxes.length; i++) {
-        if (!newState[i].disabled) {
-          checkboxes[i].removeAttribute('checked');
-          checkboxes[i].removeAttribute('indeterminate');
-        }
-      }
-      this.setGroupStatusState();
-    }
-  }
-
-  checkForSubCheckboxChange(newState: CheckboxState[]) {
-    // check, if old and new subs are equal
-    const [, ...subOld] = this.groupStatus;
-    const [, ...subNew] = newState;
-
-    if (objDiffer(subOld, subNew)) {
-      return true;
-    }
-  }
-
-  setMasterCheckBoxState(newState: CheckboxState[]) {
-    let checkedCounter = 0;
-    let disabledCounter = 0;
-    // check subs
-    for (let i = 1; i < newState.length; i++) {
-      if (!newState[i].disabled) {
-        if (newState[i].checked) {
-          checkedCounter += 1;
-        }
+    if (tagName.toLowerCase() === 'scale-checkbox') {
+      if (slot === 'group-item') {
+        this.updateParentCheckboxState();
       } else {
-        disabledCounter += 1;
+        this.updateChildrenCheckboxStates(checked, disabled);
       }
     }
-    const checkboxes = this.getCheckboxes();
-
-    // set master to checked
-    if (checkedCounter + disabledCounter === newState.length - 1) {
-      checkboxes[0].setAttribute('checked', 'true');
-      checkboxes[0].removeAttribute('indeterminate');
-      this.setGroupStatusState();
-    }
-    // set master to indeterminate
-    else if (
-      checkedCounter + disabledCounter < newState.length &&
-      checkedCounter !== 0
-    ) {
-      checkboxes[0].setAttribute('indeterminate', 'true');
-      checkboxes[0].removeAttribute('checked');
-      this.setGroupStatusState();
-    }
-    // set master to empty when no sub is checked
-    else {
-      checkboxes[0].removeAttribute('indeterminate');
-      checkboxes[0].removeAttribute('checked');
-      this.setGroupStatusState();
-    }
   }
 
-  setGroupStatusState() {
-    const checkboxes = Array.from(this.getCheckboxes());
-    const changedState: CheckboxState[] = [];
-    for (let i = 0; i < checkboxes.length; i++) {
-      changedState[i] = {
-        id: checkboxes[i].inputId,
-        checked: checkboxes[i].checked,
-        disabled: checkboxes[i].disabled ? checkboxes[i].disabled : false,
-        indeterminate: checkboxes[i].indeterminate,
-      };
-    }
-    this.groupStatus = changedState;
+  getParentNode() {
+    return this.host.querySelector(
+      'scale-checkbox:not([slot])'
+    ) as CheckboxInterface;
   }
 
-  getCheckboxes() {
-    return this.hostElement.querySelectorAll('scale-checkbox');
+  getChildNodes() {
+    return Array.from(
+      this.host.querySelectorAll('scale-checkbox[slot="group-item"]')
+    ) as CheckboxInterface[];
+  }
+
+  updateChildrenCheckboxStates(checked = undefined, disabled) {
+    const childNodes = this.getChildNodes();
+
+    childNodes.forEach((node) => {
+      node.disabled = disabled;
+
+      if (checked !== undefined) {
+        node.checked = checked;
+        node.indeterminate = false;
+      }
+    });
+  }
+
+  updateParentCheckboxState() {
+    const node = this.getParentNode();
+    const childNodes = this.getChildNodes();
+
+    const checked = childNodes?.map((node) => node.checked);
+    const indeterminate = childNodes?.map((node) => node.indeterminate);
+
+    const allChecked = checked.every(Boolean);
+    const someChecked = checked.some(Boolean);
+
+    const someIndeterminate = indeterminate.some(Boolean);
+
+    node.checked = allChecked || someChecked;
+    node.indeterminate = someIndeterminate || (someChecked && !allChecked);
+  }
+
+  connectedCallback() {
+    this.updateParentCheckboxState();
+    this.updateChildrenCheckboxStates(undefined, this.getParentNode().disabled);
   }
 
   render() {
