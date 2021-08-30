@@ -13,7 +13,7 @@ echo "--------"
 echo "${GREEN}Building Vue package...${NC}"
 yarn workspace @telekom/scale-components-vue build;
 echo "--------"
-echo "${GREEN}Processign Angular proxies...${NC}"
+echo "${GREEN}Processing Angular proxies...${NC}"
 yarn workspace @telekom/scale-components process-angular-proxies;
 echo "--------"
 echo "${GREEN}Building Angular package...${NC}"
