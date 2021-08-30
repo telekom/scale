@@ -28,11 +28,11 @@ let i = 0;
 export class Checkbox {
   @Element() host: HTMLElement;
   /** (optional) Input name */
-  @Prop() name?: string = '';
+  @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input helper text */
-  @Prop() helperText?: string = '';
+  @Prop() helperText?: string;
   /** (optional) Input status */
   @Prop() status?: string = '';
   /** (optional) Input disabled */
@@ -42,7 +42,7 @@ export class Checkbox {
   /** (optional) indeterminate */
   @Prop({ mutable: true, reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
-  @Prop() value?: string | number | null = '';
+  @Prop() value?: string = '';
   /** (optional) Input checkbox id */
   @Prop() inputId?: string;
   /** (optional) Injected CSS styles */
@@ -73,9 +73,8 @@ export class Checkbox {
     }
 
     const { checked, indeterminate, value } = this;
-    setTimeout(() => {
-      this.scaleChange.emit({ checked, indeterminate, value });
-    }, 1500);
+
+    this.scaleChange.emit({ checked, indeterminate, value });
   };
 
   connectedCallback() {
@@ -105,9 +104,24 @@ export class Checkbox {
     }
   }
 
+  renderHelperText(text) {
+    if (this.helperText && this.helperText !== '') {
+      return (
+        <div
+          part="helper-text"
+          id={text.id}
+          aria-live="polite"
+          aria-relevant="additions removals"
+        >
+          {text.content}
+        </div>
+      );
+    }
+  }
+
   render() {
     const helperText = {
-      id: `helper-text-${this.id}`,
+      id: this.helperText ? `helper-text-${this.id}` : null,
       content: this.helperText,
     };
 
@@ -120,7 +134,7 @@ export class Checkbox {
         <input
           type="checkbox"
           part="input"
-          name={this.name}
+          name={this.name || null}
           id={this.inputId}
           value={this.value}
           checked={this.checked}
@@ -135,14 +149,7 @@ export class Checkbox {
           <div part="checkbox">{this.renderIcon()}</div>
           <div part="label">{this.label || <slot></slot>}</div>
         </label>
-        <div
-          part="helper-text"
-          id={helperText.id}
-          aria-live="polite"
-          aria-relevant="additions removals"
-        >
-          {helperText.content}
-        </div>
+        {this.renderHelperText(helperText)}
       </Host>
     );
   }
