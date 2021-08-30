@@ -133,7 +133,6 @@ export class Slider {
 
   onDragEnd = () => {
     this.dragging = false;
-    // this.scaleChange.emit(this.value);
     emitEvent(this, 'scaleChange', this.value);
     this.removeGlobalListeners();
   };
@@ -144,7 +143,6 @@ export class Slider {
 
   setValue = (nextValue: number) => {
     this.value = this.clamp(nextValue);
-    // this.scaleInput.emit(this.value);
     emitEvent(this, 'scaleInput', this.value);
   };
 

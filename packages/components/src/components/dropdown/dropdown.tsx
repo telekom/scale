@@ -163,9 +163,6 @@ export class Dropdown {
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
   emitChange() {
-    /* this.scaleChange.emit({
-      value: this.value == null ? this.value : this.value.toString(),
-    }); */
     emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });
@@ -179,7 +176,6 @@ export class Dropdown {
     const target = event.target as HTMLInputElement | null;
 
     if (this.controlled) {
-      // this.scaleChange.emit({ value: target.value });
       emitEvent(this, 'scaleChange', { value: target.value });
       this.selectElement.value = String(this.value);
       this.forceUpdate = String(Date.now());
@@ -195,7 +191,6 @@ export class Dropdown {
       this.value = target.value || '';
       this.emitChange();
     }
-    // this.scaleInput.emit(event as KeyboardEvent);
     emitEvent(this, 'scaleInput', event as KeyboardEvent);
   };
 
@@ -208,17 +203,14 @@ export class Dropdown {
   };
 
   handleFocus = () => {
-    // this.scaleFocus.emit();
     emitEvent(this, 'scaleFocus');
   };
 
   handleBlur = () => {
-    // this.scaleBlur.emit();
     emitEvent(this, 'scaleBlur');
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    // this.scaleKeyDown.emit(event);
     emitEvent(this, 'scaleKeyDown', event);
   };
 

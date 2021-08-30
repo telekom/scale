@@ -203,11 +203,9 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
-        // this.scaleOpen.emit();
         emitEvent(this, 'scaleOpen');
       });
     } catch (err) {
-      // this.scaleOpen.emit();
       emitEvent(this, 'scaleOpen');
     }
   }
@@ -219,12 +217,10 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.isOpen = false;
-        // this.scaleClose.emit();
         emitEvent(this, 'scaleClose');
       });
     } catch (err) {
       this.isOpen = false;
-      // this.scaleClose.emit();
       emitEvent(this, 'scaleClose');
     }
   }

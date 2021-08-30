@@ -50,7 +50,6 @@ export class Tag {
     if (this.disabled) {
       return;
     }
-    // this.scaleClose.emit(event);
     emitEvent(this, 'scaleClose', event);
   };
 

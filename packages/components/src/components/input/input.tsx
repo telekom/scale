@@ -221,9 +221,6 @@ export class Input {
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
   emitChange() {
-    /* this.scaleChange.emit({
-      value: this.value == null ? this.value : this.value.toString(),
-    }); */
     emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });
@@ -231,7 +228,6 @@ export class Input {
 
   @Watch('checked')
   checkedChanged() {
-    // this.scaleChange.emit({ value: this.checked });
     emitEvent(this, 'scaleChange', { value: this.checked });
   }
 
@@ -255,7 +251,6 @@ export class Input {
     const target = event.target as HTMLInputElement | null;
 
     if (this.controlled) {
-      // this.scaleChange.emit({ value: target.value });
       emitEvent(this, 'scaleChange', { value: target.value });
       this.selectElement.value = String(this.value);
       this.forceUpdate = String(Date.now());
@@ -271,7 +266,6 @@ export class Input {
       this.value = target.value || '';
       this.emitChange();
     }
-    // this.scaleInput.emit(event as KeyboardEvent);
     emitEvent(this, 'scaleInput', event as KeyboardEvent);
   };
 
@@ -284,19 +278,16 @@ export class Input {
   };
 
   handleFocus = () => {
-    // this.scaleFocus.emit();
     emitEvent(this, 'scaleFocus');
     this.hasFocus = true;
   };
 
   handleBlur = () => {
-    // this.scaleBlur.emit();
     emitEvent(this, 'scaleBlur');
     this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    // this.scaleKeyDown.emit(event);
     emitEvent(this, 'scaleKeyDown', event);
   };
 

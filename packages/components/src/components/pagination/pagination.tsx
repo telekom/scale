@@ -135,7 +135,6 @@ export class Pagination {
     const data = {
       startElement: this.startElement,
     };
-    // this.scalePagination.emit(data);
     emitEvent(this, 'scalePagination', data);
   }
 

@@ -62,7 +62,6 @@ export class Switch {
               onChange={(e: any) => {
                 this.checked = e.target.checked;
                 // bubble event through the shadow dom
-                // this.scaleChange.emit({ value: this.checked });
                 emitEvent(this, 'scaleChange', { value: this.checked });
               }}
             />

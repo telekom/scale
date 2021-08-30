@@ -699,7 +699,6 @@ export class DataGrid {
       sortDirection,
       columnIndex,
     } as DataGridSortedEventDetail;
-    // this.scaleSort.emit(data);
     emitEvent(this, 'scaleSort', data);
   }
 
@@ -710,7 +709,6 @@ export class DataGrid {
       columnIndex,
       value,
     } as DataGridEditEventDetail;
-    // this.scaleEdit.emit(data);
     emitEvent(this, 'scaleEdit', data);
 
     // Force render for checkboxes

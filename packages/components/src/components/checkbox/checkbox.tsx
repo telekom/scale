@@ -108,7 +108,6 @@ export class Checkbox {
                 this.indeterminate = false;
               }
               this.checked = e.target.checked;
-              // this.scaleChange.emit({ value: this.checked });
               emitEvent(this, 'scaleChange', { value: this.checked });
             }}
             value={this.value}

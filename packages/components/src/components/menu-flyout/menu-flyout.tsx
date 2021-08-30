@@ -412,10 +412,8 @@ export class MenuFlyout {
   emitOpenState() {
     const { id, cascadeLevel } = this;
     if (this.open) {
-      // this.scaleOpen.emit({ id, cascadeLevel });
       emitEvent(this, 'scaleOpen', { id, cascadeLevel });
     } else {
-      // this.scaleClose.emit({ id, cascadeLevel });
       emitEvent(this, 'scaleClose', { id, cascadeLevel });
     }
   }
@@ -448,7 +446,6 @@ export class MenuFlyout {
     // Make sure isn't disabled or a cascading menu
     if (item && !item.disabled && !item.cascade) {
       // Send event in case developer listening on the menu and not items individually
-      // this.scaleSelect.emit({ item });
       emitEvent(this, 'scaleSelect', { item });
       if (this.closeOnSelect) {
         this.toggleOpenState();

@@ -65,7 +65,6 @@ export class Collapsible {
 
   handleClick = () => {
     this.expanded = !this.expanded;
-    // this.scaleExpand.emit({ expanded: this.expanded });
     emitEvent(this, 'scaleExpand', { expanded: this.expanded });
   };
 

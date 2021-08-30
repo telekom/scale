@@ -62,9 +62,6 @@ export class RadioButton {
     if (this.checked) {
       this.uncheckSiblings();
     }
-    /* this.scaleChange.emit({
-      value: this.value == null ? this.value : this.value.toString(),
-    }); */
     emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });

@@ -88,7 +88,6 @@ export class RatingStars {
 
     this.rating = Number(input.value);
 
-    // this.scaleChange.emit({ value: this.rating });
     emitEvent(this, 'scaleChange', { value: this.rating });
   };
 
@@ -105,7 +104,6 @@ export class RatingStars {
     } else {
       this.rating = starValue;
     }
-    // this.scaleChange.emit({ value: this.rating });
     emitEvent(this, 'scaleChange', { value: this.rating });
   };
 
