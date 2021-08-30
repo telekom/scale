@@ -31,6 +31,8 @@ export class Checkbox {
   @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
+  /** (optional) Hides the specified label visually */
+  @Prop() hideLabel?: boolean = false;
   /** (optional) Input helper text */
   @Prop() helperText?: string;
   /** (optional) Input status */
@@ -129,6 +131,7 @@ export class Checkbox {
       <Host
         class={{
           error: this.status === 'error',
+          hideLabel: this.hideLabel,
         }}
       >
         <input
@@ -147,6 +150,7 @@ export class Checkbox {
         />
         <label part="container" htmlFor={this.inputId}>
           <div part="checkbox">{this.renderIcon()}</div>
+          // TODO: discuss deprecation of the slot (move closer so W3C spec)
           <div part="label">{this.label || <slot></slot>}</div>
         </label>
         {this.renderHelperText(helperText)}

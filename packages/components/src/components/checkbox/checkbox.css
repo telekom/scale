@@ -67,7 +67,9 @@ scale-checkbox [part='helper-text'] {
   transition: var(--transition);
 }
 
-scale-checkbox [part='input'] {
+scale-checkbox [part='input'],
+:host(.hideLabel) [part='label'],
+scale-checkbox.hideLabel [part='label'] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -81,15 +83,18 @@ scale-checkbox [part='input'] {
 
 scale-checkbox [part='checkbox'] {
   display: flex;
+  flex: 0 0 auto;
   justify-content: center;
   align-items: center;
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
   border: var(--border-width-control) solid currentColor;
-  margin-right: var(--spacing-x);
 }
 
+scale-checkbox [part='label'] {
+  margin-right: var(--spacing-x);
+}
 scale-checkbox [part='icon'] {
   width: var(--width-icon);
   height: var(--height-icon);
