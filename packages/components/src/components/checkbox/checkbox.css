@@ -93,7 +93,7 @@ scale-checkbox [part='checkbox'] {
 }
 
 scale-checkbox [part='label'] {
-  margin-right: var(--spacing-x);
+  margin-left: var(--spacing-x);
 }
 scale-checkbox [part='icon'] {
   width: var(--width-icon);

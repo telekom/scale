@@ -17,7 +17,16 @@ import {
   h,
   Host,
   Prop,
+  Watch,
 } from '@stencil/core';
+
+export interface CheckboxInterface extends HTMLElement {
+  checked: boolean;
+  indeterminate: boolean;
+  disabled: boolean;
+  value: string;
+  label: string;
+}
 
 let i = 0;
 @Component({
@@ -62,6 +71,12 @@ export class Checkbox {
     return this.checked;
   }
 
+  @Watch('disabled')
+  handleDisabledChange() {
+    const { checked, indeterminate, value, disabled } = this;
+    this.scaleChange.emit({ checked, indeterminate, value, disabled });
+  }
+
   handleChange = (ev) => {
     if (this.indeterminate) {
       this.indeterminate = false;
@@ -71,9 +86,9 @@ export class Checkbox {
       this.checked = ev.target.checked;
     }
 
-    const { checked, indeterminate, value } = this;
+    const { checked, indeterminate, value, disabled } = this;
 
-    this.scaleChange.emit({ checked, indeterminate, value });
+    this.scaleChange.emit({ checked, indeterminate, value, disabled });
   };
 
   connectedCallback() {
@@ -147,7 +162,7 @@ export class Checkbox {
         />
         <label part="container" htmlFor={this.inputId}>
           <div part="checkbox">{this.renderIcon()}</div>
-          // TODO: discuss deprecation of the slot (move closer so W3C spec)
+          {/* TODO: discuss deprecation of the slot (move closer so W3C spec) */}
           <div part="label">{this.label || <slot></slot>}</div>
         </label>
         {this.renderHelperText(helperText)}
