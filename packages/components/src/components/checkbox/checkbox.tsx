@@ -38,9 +38,9 @@ export class Checkbox {
   /** (optional) Input disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
-  @Prop({ reflect: true }) checked?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /** (optional) indeterminate */
-  @Prop({ reflect: true }) indeterminate?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
   @Prop() value?: string | number | null = '';
   /** (optional) Input checkbox id */
@@ -73,8 +73,9 @@ export class Checkbox {
     }
 
     const { checked, indeterminate, value } = this;
-
-    this.scaleChange.emit({ checked, indeterminate, value });
+    setTimeout(() => {
+      this.scaleChange.emit({ checked, indeterminate, value });
+    }, 1500);
   };
 
   connectedCallback() {
