@@ -14,10 +14,17 @@ export class RadioButtonGroup {
   @Prop() status?: string = '';
 
   render() {
+    let ariaLabel: String;
+    ariaLabel = this.label + ' ' + this.helperText;
+
     return (
       <form>
         <fieldset class="radio-button-group">
-          <div class="radio-button-group__label">
+          <div
+            class="radio-button-group__label"
+            aria-label={this.helperText ? ariaLabel : this.label}
+            tabindex="0"
+          >
             <legend class="radio-button-group__title">{this.label}</legend>
             {this.helperText ? (
               <div class={this.getCssClassMap()}>{this.helperText}</div>
