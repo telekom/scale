@@ -1,268 +1,180 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RatingStars snapshots rating 0 should match snapshot 1`] = `
-<scale-rating-stars value="0">
+exports[`RatingStars snapshots rating 2 1`] = `
+<scale-rating-stars max-rating="5" min-rating="0" rating="2" star-size="large">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating" role="figure" tabindex="0">
-      <label aria-hidden="true" class="rating__label"></label>
-      <span hidden="" id="rating__description">
-        0 out of 5 stars
-      </span>
-      <span aria-hidden="true" class="rating__symbols">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-1" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-2" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-3" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-4" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-5" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
-      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 300% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 400% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 500% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
+    <div part="container">
+      <div aria-labeledby="scale-rating-star-1-label" aria-orientation="horizontal" aria-valuetext="2 out of 5 stars" part="wrapper" role="figure" tabindex="-1">
+        <input aria-orientation="horizontal" aria-valuemax="5" aria-valuemin="0" aria-valuenow="2" aria-valuetext="2 out of 5 stars" id="scale-rating-star-1" max="6" min="0" part="range-slider" step="1" type="range" value="2">
+        <div data-selected data-value="1" part="star" style="z-index: 5;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-selected data-value="2" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="3" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="4" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="5" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+      </div>
     </div>
   </mock:shadow-root>
 </scale-rating-stars>
 `;
 
-exports[`RatingStars snapshots rating 2 and disabled should match snapshot 1`] = `
-<scale-rating-stars disabled="" value="2">
+exports[`RatingStars snapshots rating 2, maxRating 7 1`] = `
+<scale-rating-stars max-rating="7" min-rating="0" rating="2" star-size="large">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating rating--disabled" role="figure" tabindex="-1">
-      <label aria-hidden="true" class="rating__label"></label>
-      <span hidden="" id="rating__description">
-        2 out of 5 stars
-      </span>
-      <span aria-hidden="true" class="rating__symbols">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-2" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-3" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-4" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-5" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
-      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 0% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 300% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
+    <div part="container">
+      <div aria-labeledby="scale-rating-star-3-label" aria-orientation="horizontal" aria-valuetext="2 out of 7 stars" part="wrapper" role="figure" tabindex="-1">
+        <input aria-orientation="horizontal" aria-valuemax="7" aria-valuemin="0" aria-valuenow="2" aria-valuetext="2 out of 7 stars" id="scale-rating-star-3" max="8" min="0" part="range-slider" step="1" type="range" value="2">
+        <div data-selected data-value="1" part="star" style="z-index: 5;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-selected data-value="2" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="3" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="4" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="5" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="6" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="7" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+      </div>
     </div>
   </mock:shadow-root>
 </scale-rating-stars>
 `;
 
-exports[`RatingStars snapshots rating 3 should match snapshot 1`] = `
-<scale-rating-stars value="3">
+exports[`RatingStars snapshots rating 3, disabled 1`] = `
+<scale-rating-stars disabled="" max-rating="5" min-rating="0" rating="0" star-size="large">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating" role="figure" tabindex="0">
-      <label aria-hidden="true" class="rating__label"></label>
-      <span hidden="" id="rating__description">
-        3 out of 5 stars
-      </span>
-      <span aria-hidden="true" class="rating__symbols">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 300% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-2" role="presentation" style="clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-3" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-4" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-5" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
-      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 0% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="24px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
+    <div part="container">
+      <div aria-labeledby="scale-rating-star-4-label" aria-orientation="horizontal" aria-valuetext="0 out of 5 stars" part="wrapper" role="figure" tabindex="-1">
+        <input aria-orientation="horizontal" aria-valuemax="5" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0 out of 5 stars" disabled="" id="scale-rating-star-4" max="6" min="0" part="range-slider" step="1" type="range" value="0">
+        <div data-value="1" part="star" style="z-index: 5;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="2" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="3" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="4" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="5" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+      </div>
     </div>
   </mock:shadow-root>
 </scale-rating-stars>
 `;
 
-exports[`RatingStars snapshots rating 4 and small should match snapshot 1`] = `
-<scale-rating-stars small="" value="4">
+exports[`RatingStars snapshots rating 3, minRating 1 1`] = `
+<scale-rating-stars max-rating="5" min-rating="1" rating="3" star-size="large">
   <mock:shadow-root>
-    <div aria-describedby="rating__description" class="rating rating--small" role="figure" tabindex="0">
-      <label aria-hidden="true" class="rating__label"></label>
-      <span hidden="" id="rating__description">
-        4 out of 5 stars
-      </span>
-      <span aria-hidden="true" class="rating__symbols">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-1" role="presentation" style="clip-path: inset(0 400% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-2" role="presentation" style="clip-path: inset(0 300% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-3" role="presentation" style="clip-path: inset(0 200% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-4" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" id="star-5" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-grey-50)" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
-      <span aria-hidden="true" class="rating__symbols rating__symbols--indicator">
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 0% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-        <span class="rating__symbol-wrapper">
-          <span class="rating__symbol" role="presentation" style="clip-path: inset(0 100% 0 0);">
-            <scale-icon-action-favorite color="var(--scl-color-primary)" selected="" size="16px"></scale-icon-action-favorite>
-          </span>
-        </span>
-      </span>
+    <div part="container">
+      <div aria-labeledby="scale-rating-star-2-label" aria-orientation="horizontal" aria-valuetext="3 out of 5 stars" part="wrapper" role="figure" tabindex="-1">
+        <input aria-orientation="horizontal" aria-valuemax="5" aria-valuemin="1" aria-valuenow="3" aria-valuetext="3 out of 5 stars" id="scale-rating-star-2" max="6" min="0" part="range-slider" step="1" type="range" value="3">
+        <div data-selected data-value="1" part="star" style="z-index: 5;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-selected data-value="2" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-selected data-value="3" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="4" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+        <div data-value="5" part="star" style="z-index: auto;">
+          <scale-icon-action-favorite part="placeholder-star" size="24"></scale-icon-action-favorite>
+          <div class="icon-clip">
+            <scale-icon-action-favorite part="selected-star" selected="" size="24"></scale-icon-action-favorite>
+          </div>
+        </div>
+      </div>
     </div>
   </mock:shadow-root>
 </scale-rating-stars>

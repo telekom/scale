@@ -22,7 +22,9 @@ export class MegaMenu {
   @Prop() navigation?: MenuItem[] = [];
   @Prop() hide: () => void;
   @Prop() activeRouteId: string;
+  // DEPRECATED - active should replace isActive
   @Prop() isActive: boolean;
+  @Prop() active: boolean;
   hasCustomBody: boolean;
 
   componentWillLoad() {
@@ -57,7 +59,7 @@ export class MegaMenu {
                                 : 'false'
                             }
                             href={menuItem.href || 'javascript:void(0);'}
-                            tabIndex={this.isActive ? 0 : -1}
+                            tabIndex={this.active || this.isActive ? 0 : -1}
                             onClick={(event) => {
                               this.hide();
                               if (typeof menuItem.onClick === 'function') {
