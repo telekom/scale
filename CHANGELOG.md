@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
+
+
+### Bug Fixes
+
+* **modal:** init internal opened state with the Prop value ([#550](https://github.com/telekom/scale/issues/550)) ([3dd6cee](https://github.com/telekom/scale/commit/3dd6cee259a147d1efa839b67dde6bbd3ff6c771))
+
+
+
+
+
 # [3.0.0-beta.17](https://github.com/telekom/scale/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2021-08-23)
 
 
