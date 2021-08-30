@@ -106,6 +106,7 @@ scale-checkbox [part='icon'] svg path {
 }
 
 scale-checkbox [part='container'] {
+  align-items: center;
   display: flex;
 }
 
