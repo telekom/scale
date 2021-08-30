@@ -30,14 +30,14 @@ export const CheckboxCell: Cell = {
     const { style = 'checkbox', editable = false, label } = field;
 
     const props = {
-      checked: content,
+      checked: content !== null,
       disabled: !editable,
       label,
     } as any;
 
     if (editable) {
-      props.onScaleChange = ({ detail }) => {
-        const { value } = detail;
+      props.onScaleChange = (ev) => {
+        const { value } = ev.detail;
         // Update rows data
         component.rows[rowIndex][columnIndex] = value;
         // Trigger event
