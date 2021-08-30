@@ -24,7 +24,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
   props: ScaleTabNav.props,
   template: `
-    <scale-tab-nav :disabled="disabled ? true : false"  :small="small" :with-icon="withIcon"></scale-tab-nav>
+    <scale-tab-nav :disabled="disabled ? true : false"  :small="small" :size="size" :with-icon="withIcon"></scale-tab-nav>
   `,
 });
 
@@ -48,7 +48,17 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<ArgsTable story="Text & Icon" />
+<div style={{
+    background: "red",
+    fontWeight: "bold",
+    textAlign: "center",
+    lineHeight: "40px",
+    color: "white"
+  }}>
+  Deprication Note: Prop 'small' is depricated and will be replaced by Prop 'size'
+</div>
+  <ArgsTable story="Text & Icon" />
+
 
 ```html
 <scale-tab-nav>
@@ -118,13 +128,14 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Text & Icon, Small
 
 <Canvas withSource="none">
-  <Story name="Text & Icon, Small" args={{ small: true }}>
+  <Story name="Text & Icon, Small" args={{ size: 'small', small: true }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-tab-nav small>
+<scale-tab-nav size="small">
+<!-- Deprecated: <scale-tab-nav small> -->
   <scale-tab-header slot="tab">
     <scale-icon-home-home size="16"></scale-icon-home-home> General
   </scale-tab-header>
@@ -184,13 +195,14 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Text Only, Small
 
 <Canvas withSource="none">
-  <Story name="Text Only, Small" args={{ small: true, withIcon: false }}>
+  <Story name="Text Only, Small" args={{ size: 'small', small: true, withIcon: false }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-tab-nav small>
+<scale-tab-nav size="small">
+<!-- Deprecated: <scale-tab-nav small> -->
   <scale-tab-header slot="tab">General</scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…

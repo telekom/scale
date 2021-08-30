@@ -38,7 +38,9 @@ export class TabNav {
   @Element() el: HTMLElement;
 
   /** True for smaller height and font size in tab headers. */
+  /** @deprecated - size should replace small */
   @Prop() small: boolean = false;
+  @Prop() size: 'small' | 'large' = 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -179,7 +181,8 @@ export class TabNav {
    * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
    */
   propagateSizeToTabs() {
-    const action = this.small ? 'setAttribute' : 'removeAttribute';
+    const action =
+      this.size === 'small' || this.small ? 'setAttribute' : 'removeAttribute';
     const tabs = this.getAllTabs();
     const panels = this.getAllPanels();
     [...tabs, ...panels].forEach((child) => child[action]('small', ''));
@@ -210,6 +213,9 @@ export class TabNav {
     const component = 'tab-nav';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
 
-    return classNames(component, this.small && `${prefix}small`);
+    return classNames(
+      component,
+      (this.size === 'small' || this.small) && `${prefix}small`
+    );
   }
 }
