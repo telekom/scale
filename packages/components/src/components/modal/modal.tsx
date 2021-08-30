@@ -65,7 +65,7 @@ export class Modal {
   @Prop() styles?: string;
 
   /** What actually triggers opening/closing the modal */
-  @State() isOpen: boolean = false;
+  @State() isOpen: boolean = this.opened || false;
   /** Check wheter there are actions slots, style accordingly */
   @State() hasActionsSlot: boolean = false;
   /** Check wheter there's content in the body, style accordingly */
