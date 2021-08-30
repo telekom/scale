@@ -26,7 +26,7 @@ const isFocusVisibleSupported = isPseudoClassSupported(':focus-visible');
 })
 export class Switch {
   /** (optional) Active switch */
-  @Prop({ reflect: true }) checked?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /** (optional) Disabled switch */
   @Prop() disabled?: boolean = false;
   /** (optional) Input id */
