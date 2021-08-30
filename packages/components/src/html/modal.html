@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Modal with header</h3>
+    <scale-button id="show-modal"> show modal </scale-button>
+    <scale-modal id="modal-default" opened="true">
+      <p>Hello. Welcome. What a pleasure it is to have you.</p>
+      <scale-button slot="action"> Primary Action </scale-button>
+    </scale-modal>
+
+    <script>
+      const showModal = document.querySelector('#show-modal');
+      const modal = document.getElementById('modal-default');
+      showModal.addEventListener('click', () => {
+        modal.setAttribute('opened', 'true');
+      });
+
+      modal.addEventListener('scaleClose', () => {
+        modal.removeAttribute('opened');
+      });
+    </script>
+  </body>
+</html>
