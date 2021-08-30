@@ -14,8 +14,7 @@ export class RadioButtonGroup {
   @Prop() status?: string = '';
 
   render() {
-    let ariaLabel: String;
-    ariaLabel = this.label + ' ' + this.helperText;
+    const ariaLabel = this.label + ' ' + this.helperText;
 
     return (
       <form>
