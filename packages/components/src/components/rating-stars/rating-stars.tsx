@@ -42,20 +42,24 @@ export class RatingStars {
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
-  /** The lower limit of the rating. In cases where  */
+  /** Deprecated; size should be used instead of starSize */
   @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
-  /** The lower limit of the rating. In cases where  */
+  /** size of the stars  */
+  @Prop({ reflect: true,  mutable: true }) size: 'small' | 'large' = 'large';
+  /** Deprecated; The lower limit of the rating */
   @Prop({ reflect: true }) minRating = 0;
-  /** The upper limit of the rating */
+  /** Deprecated; max should be used instead of maxRating */
   @Prop({ reflect: true }) maxRating = 5;
+  /** The upper limit of the rating */
+  @Prop({ reflect: true,  mutable: true }) max = 5;
   /** Represents the current value of the rating */
   @Prop({ mutable: true, reflect: true }) rating = 0;
   /** makes the rating non-interactive (but still accessible)  */
   @Prop({ reflect: true }) readonly = false;
   /** disables input  */
   @Prop({ reflect: true }) disabled = false;
-  /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaLabelTranslation = '$rating out of $maxRating stars';
+  /** a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties.  */
+  @Prop() ariaLabelTranslation = '$rating out of $max stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label?: string;
 
@@ -64,11 +68,22 @@ export class RatingStars {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
+  connectedCallback() {
+    // make sure the deprecated props overwrite the actual ones if used
+    if(this.host.hasAttribute('max-rating')) {
+      this.max = this.maxRating;
+    }
+    if(this.host.hasAttribute('star-size')) {
+      this.size = this.starSize;
+    }
+  }
+
   // constructs the aria message for the current rating
   getRatingText() {
     const filledText = this.ariaLabelTranslation
       .replace(/\$rating/g, `${this.rating}`)
-      .replace(/\$maxRating/g, `${this.maxRating}`);
+      .replace(/\$maxRating/g, `${this.maxRating}`)
+      .replace(/\$max/g, `${this.max}`);
     return filledText;
   }
 
@@ -81,8 +96,8 @@ export class RatingStars {
         input.value = this.minRating.toString();
         break;
 
-      case value > this.maxRating:
-        input.value = this.maxRating.toString();
+      case value > this.max:
+        input.value = this.max.toString();
         break;
     }
 
@@ -108,7 +123,7 @@ export class RatingStars {
   };
 
   renderStar(index: number, selected = false, rating: number) {
-    const size = sizes[this.starSize];
+    const size = sizes[this.size];
     const isWholeNumber = rating % 1 === 0;
     const isLastNumber = Math.ceil(rating) === index;
 
@@ -137,7 +152,7 @@ export class RatingStars {
   renderRating() {
     const stars = [];
     const roundedRating = Math.ceil(this.rating);
-    const max = this.maxRating;
+    const max = this.max;
 
     for (let index = 1; index <= max; index++) {
       const isSelected = roundedRating >= index;
@@ -175,12 +190,12 @@ export class RatingStars {
               type="range"
               id={this.ratingStarId}
               min={0}
-              max={this.maxRating + 1}
+              max={this.max + 1}
               value={this.rating}
               step="1"
               aria-orientation="horizontal"
               aria-valuemin={this.minRating}
-              aria-valuemax={this.maxRating}
+              aria-valuemax={this.max}
               aria-valuenow={this.rating}
               aria-valuetext={this.getRatingText()}
               onInput={!this.readonly && this.handleInput}
