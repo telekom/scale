@@ -23,6 +23,14 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 
+/*
+ * Instead of scaleChange.emit() use emitEvent(this, 'scale-change', { whatever payload });
+ * This is to transition from scaleChange (camel) to scale-change (kebab).
+ * Because scaleChange does not work with Vue 3;
+ *
+ * import { emitEvent } from '../../utils/utils';
+ */
+
 const name = 'menu-list';
 @Component({
   tag: 'scale-menu-flyout-list',
@@ -43,7 +51,11 @@ export class MenuFlyoutList {
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
-  @Event() scaleSelect: EventEmitter<{
+  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
+    item: HTMLElement;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
     item: HTMLElement;
   }>;
 

@@ -24,9 +24,10 @@
 
 ## Events
 
-| Event             | Description                                                                | Type                                                            |
-| ----------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| `scalePagination` | Event triggered every time the data is edited, changing original rows data | `CustomEvent<{ startElement?: number; currentPage?: number; }>` |
+| Event              | Description                                                                                        | Type                                                            |
+| ------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `scale-pagination` | Event triggered every time the data is edited, changing original rows data                         | `CustomEvent<{ startElement?: number; currentPage?: number; }>` |
+| `scalePagination`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ startElement?: number; currentPage?: number; }>` |
 
 
 ## Shadow Parts

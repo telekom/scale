@@ -24,7 +24,7 @@ export class CheckboxGroup {
 
   @State() groupStatus: CheckboxState[] = [];
 
-  @Listen('scaleChange')
+  @Listen('scale-change')
   scaleChangeHandler() {
     this.createNewState();
   }

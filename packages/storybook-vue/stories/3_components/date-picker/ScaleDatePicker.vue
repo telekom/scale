@@ -52,13 +52,25 @@ export default {
       action("scaleChange");
       this.$emit("scaleChange", $event);
     },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
     scaleFocus($event) {
       action("scaleFocus");
       this.$emit("scaleFocus", $event);
     },
+    'scale-focus'($event) {
+      action("scale-focus");
+      this.$emit("scale-focus", $event);
+    },
     scaleBlur($event) {
       action("scaleBlur");
       this.$emit("scaleBlur", $event);
+    },
+    'scale-blur'($event) {
+      action("scale-blur");
+      this.$emit("scale-blur", $event);
     }
   }
 };

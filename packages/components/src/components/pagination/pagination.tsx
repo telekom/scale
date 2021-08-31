@@ -21,6 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 /*
   TODO
@@ -72,11 +73,15 @@ export class Pagination {
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
-  @Event() scalePagination: EventEmitter<{
+  @Event({ eventName: 'scale-pagination' }) scalePagination: EventEmitter<{
     startElement?: number;
     currentPage?: number;
   }>;
-
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scalePagination' }) scalePaginationLegacy: EventEmitter<{
+    startElement?: number;
+    currentPage?: number;
+  }>;
   /* 5. Private Properties (alphabetical) */
   /** Calculated width of largest text so buttons don't move while changing pages */
   maxWidth: number = 100;
@@ -132,7 +137,7 @@ export class Pagination {
     const data = {
       startElement: this.startElement,
     };
-    this.scalePagination.emit(data);
+    emitEvent(this, 'scalePagination', data);
   }
 
   /* 10. Render */
