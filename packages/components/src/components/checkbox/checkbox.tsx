@@ -55,7 +55,7 @@ export class Checkbox {
   /** (optional) Input value */
   @Prop() value?: string = '';
   /** (optional) Input checkbox id */
-  @Prop() inputId?: string;
+  @Prop({ mutable: true }) inputId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 

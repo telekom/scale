@@ -30,7 +30,7 @@ export class Switch {
   /** (optional) Disabled switch */
   @Prop() disabled?: boolean = false;
   /** (optional) Input id */
-  @Prop() inputId?: string;
+  @Prop({mutable: true}) inputId?: string;
   /** (optional) switch label */
   @Prop() label?: string;
   /** (optional) Injected CSS styles */
