@@ -10,6 +10,7 @@
     :aria-label-previous-page="ariaLabelPreviousPage"
     :aria-label-next-page="ariaLabelNextPage"
     :styles="styles"
+    @scalePagination="scalePagination"
   >
   </scale-pagination>
 </template>
@@ -23,10 +24,20 @@ export default {
     totalElements: { type: Number, default: 1 },
     styles: { type: String },
     small: { type: Boolean, default: false },
-    ariaLabelFirstPage: { type: String, default: 'Go to first page'},
-    ariaLabelLastPage: { type: String, default: 'Go to last page'},
-    ariaLabelPreviousPage: { type: String, default: 'Go to previous page'},
-    ariaLabelNextPage: { type: String, default: 'Go to next page'},
+    ariaLabelFirstPage: { type: String, default: 'Go to first page' },
+    ariaLabelLastPage: { type: String, default: 'Go to last page' },
+    ariaLabelPreviousPage: { type: String, default: 'Go to previous page' },
+    ariaLabelNextPage: { type: String, default: 'Go to next page' },
+  },
+  methods: {
+    scalePagination($event) {
+      action('scalePagination');
+      this.$emit('scalePagination', $event);
+    },
+    'scale-pagination'($event) {
+      action('scale-pagination');
+      this.$emit('scale-pagination', $event);
+    },
   },
 };
 </script>

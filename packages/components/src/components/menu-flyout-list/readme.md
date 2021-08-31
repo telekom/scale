@@ -14,9 +14,10 @@
 
 ## Events
 
-| Event         | Description                                                                | Type                                  |
-| ------------- | -------------------------------------------------------------------------- | ------------------------------------- |
-| `scaleSelect` | Event triggered every time the data is edited, changing original rows data | `CustomEvent<{ item: HTMLElement; }>` |
+| Event          | Description                                                                                        | Type                                  |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-select` | Event triggered every time the data is edited, changing original rows data                         | `CustomEvent<{ item: HTMLElement; }>` |
+| `scaleSelect`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ item: HTMLElement; }>` |
 
 
 ## Methods

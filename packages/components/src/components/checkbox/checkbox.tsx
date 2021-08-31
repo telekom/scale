@@ -19,6 +19,7 @@ import {
   Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 let i = 0;
 
@@ -49,8 +50,11 @@ export class Checkbox {
   @Prop() inputId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
   /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter;
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -104,8 +108,7 @@ export class Checkbox {
                 this.indeterminate = false;
               }
               this.checked = e.target.checked;
-              // bubble event through the shadow dom
-              this.scaleChange.emit({ value: this.checked });
+              emitEvent(this, 'scaleChange', { value: this.checked });
             }}
             value={this.value}
             checked={this.checked}

@@ -21,9 +21,10 @@
 
 ## Events
 
-| Event         | Description                         | Type               |
-| ------------- | ----------------------------------- | ------------------ |
-| `scaleChange` | Emitted when the rating has changed | `CustomEvent<any>` |
+| Event          | Description                                                                                        | Type               |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
+| `scale-change` | Emitted when the rating has changed                                                                | `CustomEvent<any>` |
+| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<any>` |
 
 
 ## Shadow Parts

@@ -247,38 +247,47 @@ describe('Input', () => {
 
     it('onFocus type="select"', async () => {
       const mock = jest.fn();
+      const mockLegacy = jest.fn();
       page.root.type = 'select';
-      page.root.addEventListener('scaleFocus', mock);
+      page.root.addEventListener('scale-focus', mock);
+      page.root.addEventListener('scaleFocus', mockLegacy);
       await page.waitForChanges();
       const select = page.root.querySelector('.input__select');
       await page.waitForChanges();
       select.dispatchEvent(new Event('focus'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
+      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onBlur type="select"', async () => {
       const mock = jest.fn();
+      const mockLegacy = jest.fn();
       page.root.type = 'select';
-      page.root.addEventListener('scaleBlur', mock);
+      page.root.addEventListener('scale-blur', mock);
+      page.root.addEventListener('scaleBlur', mockLegacy);
       await page.waitForChanges();
       const select = page.root.querySelector('.input__select');
       await page.waitForChanges();
       select.dispatchEvent(new Event('blur'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
+      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onKeyDown type="select"', async () => {
       const mock = jest.fn();
+      const mockLegacy = jest.fn();
       page.root.type = 'select';
-      page.root.addEventListener('scaleKeyDown', mock);
+      page.root.addEventListener('scale-keydown', mock);
+      page.root.addEventListener('scaleKeyDown', mockLegacy);
       await page.waitForChanges();
       const select = page.root.querySelector('.input__select');
       await page.waitForChanges();
       select.dispatchEvent(new Event('keydown'));
       await page.waitForChanges();
       expect(mock).toHaveBeenCalled();
+      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onChange type="checkbox"', async () => {
@@ -297,26 +306,32 @@ describe('Input', () => {
       page.root.type = 'textarea';
       page.root.value = 'value';
       const mock = jest.fn();
-      page.root.addEventListener('scaleChange', mock);
+      const mockLegacy = jest.fn();
+      page.root.addEventListener('scale-change', mock);
+      page.root.addEventListener('scaleChange', mockLegacy);
       await page.waitForChanges();
       const select = await page.root.querySelector('textarea.input__textarea');
       await select.dispatchEvent(new Event('input'));
       await page.waitForChanges();
       expect(page.rootInstance.value).toBe('');
       expect(mock).toHaveBeenCalled();
+      expect(mockLegacy).toHaveBeenCalled();
     });
 
     it('onChange type="textarea"', async () => {
       page.root.type = 'textarea';
       page.root.value = 'value';
       const mock = jest.fn();
-      page.root.addEventListener('scaleChange', mock);
+      const mockLegacy = jest.fn();
+      page.root.addEventListener('scale-change', mock);
+      page.root.addEventListener('scaleChange', mockLegacy);
       await page.waitForChanges();
       const select = await page.root.querySelector('textarea.input__textarea');
       await select.dispatchEvent(new Event('change'));
       await page.waitForChanges();
       expect(page.rootInstance.value).toBe('');
       expect(mock).toHaveBeenCalled();
+      expect(mockLegacy).toHaveBeenCalled();
     });
   });
 });
