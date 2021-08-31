@@ -10,5 +10,15 @@ export default {
     variant: String,
     styles: String,
   },
+  methods: {
+    scaleClose($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
+    },
+    'scale-close'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
+  }
 };
 </script>

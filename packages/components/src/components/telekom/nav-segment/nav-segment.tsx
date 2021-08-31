@@ -18,7 +18,9 @@ import classNames from 'classnames';
 })
 export class NavSegment {
   /** (optional) if this item is active */
-  @Prop() isActive?: boolean = false;
+  // DEPRECATED - active should replace isActive
+  @Prop() isActive: boolean;
+  @Prop() active: boolean;
   /** (optional) href value */
   @Prop() href?: string = 'javascript:void(0);';
 
@@ -28,16 +30,18 @@ export class NavSegment {
         <a
           class={classNames(
             'segment-navigation__item-link',
-            this.isActive && 'active'
+            (this.active || this.isActive) && 'active'
           )}
           href={this.href}
           onFocus={() => {
             window.scrollTo({ top: 0 });
           }}
-          aria-current={this.isActive ? 'true' : 'false'}
+          aria-current={this.active || this.isActive ? 'true' : 'false'}
         >
           <slot></slot>
-          {this.isActive && <span class="sr-only">active</span>}
+          {(this.active || this.isActive) && (
+            <span class="sr-only">active</span>
+          )}
         </a>
       </li>
     );

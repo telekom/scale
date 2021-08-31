@@ -2,7 +2,7 @@
 
 exports[`component prop snapshots all props are not set 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 289.56 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 289.56 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       Telekom Logo - Life is for sharing
     </title>
@@ -16,7 +16,7 @@ exports[`component prop snapshots all props are not set 1`] = `
 
 exports[`component prop snapshots all props are set 1`] = `
 <scale-logo-svg>
-  <svg height="100px" role="img" viewBox="0 0 257.77 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg height="100px" role="img" tabindex="0" viewBox="0 0 257.77 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       title
     </title>
@@ -30,7 +30,7 @@ exports[`component prop snapshots all props are set 1`] = `
 
 exports[`testing all languages  1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 86.5 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 86.5 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -43,7 +43,7 @@ exports[`testing all languages  1`] = `
 
 exports[`testing all languages cz 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 313.61 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 313.61 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -57,7 +57,7 @@ exports[`testing all languages cz 1`] = `
 
 exports[`testing all languages de 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 335.4 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 335.4 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -71,7 +71,7 @@ exports[`testing all languages de 1`] = `
 
 exports[`testing all languages en 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 289.56 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 289.56 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -85,7 +85,7 @@ exports[`testing all languages en 1`] = `
 
 exports[`testing all languages hr 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 257.77 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 257.77 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -99,7 +99,7 @@ exports[`testing all languages hr 1`] = `
 
 exports[`testing all languages hu 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 239.39 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 239.39 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -113,7 +113,7 @@ exports[`testing all languages hu 1`] = `
 
 exports[`testing all languages me 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 288.6 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 288.6 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -127,7 +127,7 @@ exports[`testing all languages me 1`] = `
 
 exports[`testing all languages mk_kyr 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 283 36" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 283 36" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -139,7 +139,7 @@ exports[`testing all languages mk_kyr 1`] = `
 
 exports[`testing all languages mk_lat 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 274.11 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 274.11 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -154,7 +154,7 @@ exports[`testing all languages mk_lat 1`] = `
 
 exports[`testing all languages ro 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 314.73 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 314.73 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>
@@ -168,7 +168,7 @@ exports[`testing all languages ro 1`] = `
 
 exports[`testing all languages sk 1`] = `
 <scale-logo-svg>
-  <svg fill="#e20074" height="36px" role="img" viewBox="0 0 262.23 42.52" xmlns="http://www.w3.org/2000/svg">
+  <svg fill="#e20074" height="36px" role="img" tabindex="0" viewBox="0 0 262.23 42.52" xmlns="http://www.w3.org/2000/svg">
     <title>
       logo
     </title>

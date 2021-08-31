@@ -142,6 +142,22 @@ describe('Slider', () => {
     expect(await page.rootInstance.value).toBe(51);
   });
 
+  it('input events', async () => {
+    const page = await newSpecPage({
+      components: [Slider],
+      html: `<scale-slider></scale-slider>`,
+    });
+    const inputSpy = jest.fn();
+    const inputSpyLegacy = jest.fn();
+    page.doc.addEventListener('scale-input', inputSpy);
+    page.doc.addEventListener('scaleInput', inputSpyLegacy);
+    const element = page.root.shadowRoot.querySelector('.slider__thumb');
+    element.dispatchEvent(new Event('keydown'));
+    await page.waitForChanges();
+    expect(inputSpy).toHaveBeenCalled();
+    expect(inputSpyLegacy).toHaveBeenCalled();
+  });
+
   it('keydown .slider__thumb with ArrowUp', async () => {
     const page = await newSpecPage({
       components: [Slider],
