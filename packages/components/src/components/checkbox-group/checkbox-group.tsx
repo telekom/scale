@@ -45,7 +45,7 @@ export class CheckboxGroup {
     ) as CheckboxInterface[];
   }
 
-  updateChildrenCheckboxStates(checked = undefined, disabled) {
+  updateChildrenCheckboxStates(checked, disabled) {
     const childNodes = this.getChildNodes();
 
     childNodes.forEach((node) => {
@@ -62,8 +62,10 @@ export class CheckboxGroup {
     const node = this.getParentNode();
     const childNodes = this.getChildNodes();
 
-    const checked = childNodes?.map((node) => node.checked);
-    const indeterminate = childNodes?.map((node) => node.indeterminate);
+    const checked = childNodes?.map((childNode) => childNode.checked);
+    const indeterminate = childNodes?.map(
+      (childNode) => childNode.indeterminate
+    );
 
     const allChecked = checked.every(Boolean);
     const someChecked = checked.some(Boolean);
