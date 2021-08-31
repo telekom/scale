@@ -19,6 +19,7 @@ import {
   Prop,
   Watch,
 } from '@stencil/core';
+import { emitEvent } from '../../utils/utils';
 
 export interface CheckboxInterface extends HTMLElement {
   checked: boolean;
@@ -77,7 +78,8 @@ export class Checkbox {
   @Watch('disabled')
   handleDisabledChange() {
     const { checked, indeterminate, value, disabled } = this;
-    this.scaleChange.emit({ checked, indeterminate, value, disabled });
+
+    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
   }
 
   handleChange = (ev) => {
@@ -91,7 +93,7 @@ export class Checkbox {
 
     const { checked, indeterminate, value, disabled } = this;
 
-    this.scaleChange.emit({ checked, indeterminate, value, disabled });
+    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
   };
 
   connectedCallback() {
