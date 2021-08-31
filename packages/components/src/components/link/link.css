@@ -11,7 +11,8 @@
 
 :host {
   --font-weight: var(--scl-font-weight-medium);
-  --color: hsl(219, 100%, 87%);
+  --color-underline: hsl(219, 100%, 87%);
+  --color: var(--scl-color-blue-60);
   --color-visited: var(--scl-color-text-link-visited);
   --color-hover: var(--scl-color-text-link-hover);
   --color-active: var(--scl-color-text-link-active);
@@ -32,11 +33,20 @@
 
 .link--underline {
   text-decoration: underline;
-  text-decoration-color: var(--color);
+  text-decoration-color: var(--color-underline);
+}
+
+.link--disabled.link--underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-disabled);
 }
 
 .link--underline:hover {
   text-decoration-color: var(--color-hover);
+}
+
+.link--disabled.link--underline:hover {
+  text-decoration-color: var(--color-disabled);
 }
 
 /* order is important */
