@@ -19,6 +19,8 @@ import {
   Prop,
   Watch,
 } from '@stencil/core';
+import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 export interface CheckboxInterface extends HTMLElement {
   checked: boolean;
@@ -58,8 +60,11 @@ export class Checkbox {
   @Prop({ mutable: true }) inputId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
   /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter;
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   private id = i++;
 
@@ -88,7 +93,7 @@ export class Checkbox {
 
     const { checked, indeterminate, value, disabled } = this;
 
-    this.scaleChange.emit({ checked, indeterminate, value, disabled });
+    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled } );
   };
 
   connectedCallback() {

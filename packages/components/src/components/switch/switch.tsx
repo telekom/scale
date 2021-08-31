@@ -12,6 +12,7 @@
 import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 import { isPseudoClassSupported } from '../../utils/utils';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 let i = 0;
 
@@ -36,7 +37,9 @@ export class Switch {
   @Prop() styles?: string;
 
   /** Emitted when the switch was clicked */
-  @Event() scaleChange!: EventEmitter;
+  @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy!: EventEmitter;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -59,7 +62,7 @@ export class Switch {
               onChange={(e: any) => {
                 this.checked = e.target.checked;
                 // bubble event through the shadow dom
-                this.scaleChange.emit({ value: this.checked });
+                emitEvent(this, 'scaleChange', { value: this.checked });
               }}
             />
             <div class="switch__wrapper">

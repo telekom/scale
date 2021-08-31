@@ -20,7 +20,7 @@ import { CheckboxInterface } from '../checkbox/checkbox';
 export class CheckboxGroup {
   @Element() host: HTMLElement;
 
-  @Listen('scaleChange')
+  @Listen('scale-change')
   handleCheckboxChange(ev) {
     const { slot, tagName, checked, disabled } = ev.composedPath()[0];
 

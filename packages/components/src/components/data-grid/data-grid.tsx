@@ -27,6 +27,7 @@ import {
 } from './data-grid-cells';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 // [ ] add options to show nested content without the html column
 // [ ] add options to pre-expand all html content
@@ -110,10 +111,17 @@ export class DataGrid {
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the editable cells are changed, updating the original rows data */
-  @Event() scaleEdit: EventEmitter<DataGridEditEventDetail>;
+  @Event({ eventName: 'scale-edit' })
+  scaleEdit: EventEmitter<DataGridEditEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleEdit' })
+  scaleEditLegacy: EventEmitter<DataGridEditEventDetail>;
   /** Event triggered every time the data is sorted, changing original rows data */
-  @Event() scaleSort: EventEmitter<DataGridSortedEventDetail>;
-
+  @Event({ eventName: 'scale-sort' })
+  scaleSort: EventEmitter<DataGridSortedEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSort' })
+  scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
   private activeDivider: any;
@@ -691,7 +699,7 @@ export class DataGrid {
       sortDirection,
       columnIndex,
     } as DataGridSortedEventDetail;
-    this.scaleSort.emit(data);
+    emitEvent(this, 'scaleSort', data);
   }
 
   triggerEditEvent(value, rowIndex, columnIndex) {
@@ -701,7 +709,7 @@ export class DataGrid {
       columnIndex,
       value,
     } as DataGridEditEventDetail;
-    this.scaleEdit.emit(data);
+    emitEvent(this, 'scaleEdit', data);
 
     // Force render for checkboxes
     this.forceRender++;

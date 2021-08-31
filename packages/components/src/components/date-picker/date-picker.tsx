@@ -31,6 +31,7 @@ import {
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 let i = 0;
 
@@ -151,17 +152,32 @@ export class DatePicker {
   /**
    * Event emitted when a date is selected.
    */
-  @Event() scaleChange: EventEmitter<DuetDatePickerChangeEvent>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange: EventEmitter<DuetDatePickerChangeEvent>;
+
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy: EventEmitter<DuetDatePickerChangeEvent>;
 
   /**
    * Event emitted the date picker input is blurred.
    */
-  @Event() scaleBlur: EventEmitter<DuetDatePickerFocusEvent>;
+  @Event({ eventName: 'scale-blur' })
+  scaleBlur: EventEmitter<DuetDatePickerFocusEvent>;
+
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleBlur' })
+  scaleBlurLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
   /**
    * Event emitted the date picker input is focused.
    */
-  @Event() scaleFocus: EventEmitter<DuetDatePickerFocusEvent>;
+  @Event({ eventName: 'scale-focus' })
+  scaleFocus: EventEmitter<DuetDatePickerFocusEvent>;
+
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleFocus' })
+  scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
   private helperTextId = `helper-message-${i}`;
 
@@ -283,15 +299,15 @@ export class DatePicker {
         </label>
         <duet-date-picker
           onDuetChange={(e) => {
-            this.scaleChange.emit(e.detail);
+            emitEvent(this, 'scaleChange', e.detail);
             this.handleKeyPress(e);
           }}
           onDuetFocus={(e) => {
-            this.scaleFocus.emit(e.detail);
+            emitEvent(this, 'scaleFocus', e.detail);
             this.hasFocus = true;
           }}
           onDuetBlur={(e) => {
-            this.scaleBlur.emit(e.detail);
+            emitEvent(this, 'scaleBlur', e.detail);
             this.hasFocus = false;
           }}
           name={this.name}

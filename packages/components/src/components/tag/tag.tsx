@@ -11,6 +11,7 @@
 
 import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 @Component({
   tag: 'scale-tag',
   styleUrl: './tag.css',
@@ -35,7 +36,10 @@ export class Tag {
   @Prop() styles?: string;
 
   /** (optional) Close icon click event */
-  @Event() scaleClose: EventEmitter<MouseEvent>;
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClose' })
+  scaleCloseLegacy: EventEmitter<MouseEvent>;
 
   componentWillUpdate() {}
   disconnectedCallback() {}
@@ -46,7 +50,7 @@ export class Tag {
     if (this.disabled) {
       return;
     }
-    this.scaleClose.emit(event);
+    emitEvent(this, 'scaleClose', event);
   };
 
   render() {

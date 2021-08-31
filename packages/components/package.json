@@ -33,14 +33,15 @@
     "format": "prettier --write \"*.ts\" \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "generate": "node ./scripts/generate-icons.js"
+    "generate": "node ./scripts/generate-icons.js",
+    "process-angular-proxies": "node ./scripts/process-angular-proxies.js"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
     "@babel/plugin-syntax-jsx": "7.10.1",
     "@babel/plugin-transform-react-jsx": "7.10.1",
     "@nowseemee/vue-output-target": "0.0.4",
-    "@stencil/angular-output-target": "^0.0.5",
+    "@stencil/angular-output-target": "^0.0.7",
     "@stencil/postcss": "^2.0.0",
     "@stencil/react-output-target": "^0.0.9",
     "@types/classnames": "2.2.8",
