@@ -10,8 +10,11 @@
     :align-actions="alignActions"
     :styles="styles"
     @scaleClose="scaleClose"
+    @scale-close="scale-close"
     @scaleOpen="scaleOpen"
+    @scale-open="scale-open"
     @scaleBeforeClose="scaleBeforeClose"
+    @scale-before-close="scale-before-close"
   >
     <slot name="close"></slot>
     <slot></slot>
@@ -41,13 +44,25 @@ export default {
       action("scaleOpen");
       this.$emit("scaleOpen", $event);
     },
+    'scale-open'($event) {
+      action("scale-open");
+      this.$emit("scale-open", $event);
+    },
     scaleBeforeClose($event) {
       action("scaleBeforeClose");
       this.$emit("scaleBeforeClose", $event);
     },
+    'scale-before-close'($event) {
+      action("scale-before-close");
+      this.$emit("scale-before-close", $event);
+    },
     scaleClose($event) {
       action("scaleClose");
       this.$emit("scaleClose", $event);
+    },
+    'scale-close'($event) {
+      action("scale-close");
+      this.$emit("scale-close", $event);
     },
   }
 };
