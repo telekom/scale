@@ -30,7 +30,7 @@ export const CheckboxCell: Cell = {
     const { style = 'checkbox', editable = false, label } = field;
 
     const props = {
-      checked: content !== null,
+      checked: content,
       disabled: !editable,
       label,
     } as any;

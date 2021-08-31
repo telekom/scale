@@ -86,6 +86,7 @@ scale-checkbox [part='checkbox'] {
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
+  margin: var(--scl-spacing-2) 0;
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
@@ -93,6 +94,7 @@ scale-checkbox [part='checkbox'] {
 }
 
 scale-checkbox [part='label'] {
+  font-weight: var(--font-weight-label);
   margin-left: var(--spacing-x);
 }
 scale-checkbox [part='icon'] {
@@ -176,6 +178,13 @@ scale-checkbox[indeterminate] [part='container']:active [part='checkbox'] {
 :host(.error) [part='helper-text'],
 scale-checkbox.error [part='helper-text'] {
   color: var(--color-error);
+}
+
+:host(.error) [part='checkbox'],
+scale-checkbox.error [part='checkbox'] {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 var(--scl-spacing-1) var(--color-error);
+
 }
 
 /* disabled states */
