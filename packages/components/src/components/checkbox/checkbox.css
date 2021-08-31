@@ -161,7 +161,7 @@ scale-checkbox[indeterminate] [part='container']:hover [part='checkbox'] {
 
 scale-checkbox [part='input']:active ~ [part='container'],
 scale-checkbox [part='container']:active {
-  color: var(--color-primary-active) !important;
+  color: var(--color-primary-active);
 }
 
 scale-checkbox [part='input']:active ~ [part='container'] [part='checkbox'],
@@ -190,7 +190,8 @@ scale-checkbox.error [part='checkbox'] {
 
 :host([disabled]),
 scale-checkbox[disabled] {
-  pointer-events: none;
+  cursor: not-allowed;
+
 }
 
 :host([disabled]) [part='container'],
@@ -198,6 +199,7 @@ scale-checkbox[disabled] [part='container'],
 :host([disabled]) [part='helper-text'],
 scale-checkbox[disabled] [part='helper-text'] {
   color: var(--color-disabled);
+    pointer-events: none;
 }
 
 :host([checked][disabled]) [part='checkbox'],
