@@ -184,7 +184,6 @@ scale-checkbox.error [part='helper-text'] {
 scale-checkbox.error [part='checkbox'] {
   border-color: var(--color-error);
   box-shadow: 0 0 0 var(--scl-spacing-1) var(--color-error);
-
 }
 
 /* disabled states */

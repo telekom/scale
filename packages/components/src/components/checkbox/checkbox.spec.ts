@@ -80,6 +80,6 @@ describe('Checkbox', () => {
          >
         </scale-checkbox>`,
     });
-    expect(page.rootInstance.inputId).toContain("input-checkbox");
+    expect(page.rootInstance.inputId).toContain('input-checkbox');
   });
 });
