@@ -22,13 +22,14 @@ export class CheckboxGroup {
 
   @Listen('scaleChange')
   handleCheckboxChange(ev) {
-    const { slot, tagName, checked, disabled } = ev.composedPath()[0];
+    const { slot, tagName, checked } = ev.composedPath()[0];
 
     if (tagName.toLowerCase() === 'scale-checkbox') {
       if (slot === 'group-item') {
         this.updateParentCheckboxState();
       } else {
-        this.updateChildrenCheckboxStates(checked, disabled);
+        this.updateChildrenCheckboxStates(checked);
+        this.updateParentCheckboxState();
       }
     }
   }
@@ -45,11 +46,12 @@ export class CheckboxGroup {
     ) as CheckboxInterface[];
   }
 
-  updateChildrenCheckboxStates(checked, disabled) {
-    const childNodes = this.getChildNodes();
+  updateChildrenCheckboxStates(checked) {
+    const childNodes = this.getChildNodes().filter((node) => !node.disabled);
 
     childNodes.forEach((node) => {
-      node.disabled = disabled;
+      // TODO: discuss the logic for setting disabled
+      // node.disabled = disabled;
 
       if (checked !== undefined) {
         node.checked = checked;
@@ -78,7 +80,7 @@ export class CheckboxGroup {
 
   connectedCallback() {
     this.updateParentCheckboxState();
-    this.updateChildrenCheckboxStates(undefined, this.getParentNode().disabled);
+    // this.updateChildrenCheckboxStates(undefined, this.getParentNode().disabled);
   }
 
   render() {

@@ -61,6 +61,22 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
 </scale-checkbox-group>
 ```
 
+## Checkbox Disabled
+
+<Canvas withSource="none">
+  <Story name="Checkbox Disabled" args={{}}>
+    {() => ({
+      template: `
+        <scale-checkbox-group>
+          <scale-checkbox label="Group Label" name="group" value=""></scale-checkbox>
+          <scale-checkbox slot="group-item" label="Checkbox Item 1" name="example" value="1" checked></scale-checkbox>
+          <scale-checkbox slot="group-item" label="Checkbox Item 2" name="example" value="2" checked disabled></scale-checkbox>
+        </scale-checkbox-group>
+      `,
+    })}
+  </Story>
+</Canvas>
+
 ```html
 <scale-checkbox-group>
   <scale-checkbox-group>
