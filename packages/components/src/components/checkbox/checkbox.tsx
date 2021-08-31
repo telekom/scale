@@ -93,7 +93,7 @@ export class Checkbox {
 
     const { checked, indeterminate, value, disabled } = this;
 
-    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled } );
+    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
   };
 
   connectedCallback() {
