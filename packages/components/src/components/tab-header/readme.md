@@ -11,7 +11,7 @@
 | ---------- | ---------- | ------------------------------------- | -------------------- | ----------- |
 | `disabled` | `disabled` | True for a disabled Tabnavigation     | `boolean`            | `false`     |
 | `selected` | `selected` |                                       | `boolean`            | `undefined` |
-| `size`     | `size`     |                                       | `"large" \| "small"` | `'large'`   |
+| `size`     | `size`     | (optional) size                       | `"large" \| "small"` | `'large'`   |
 | `small`    | `small`    | True for smaller height and font size | `boolean`            | `false`     |
 | `styles`   | `styles`   | (optional) Injected CSS styles        | `string`             | `undefined` |
 

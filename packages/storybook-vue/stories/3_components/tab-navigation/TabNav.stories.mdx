@@ -12,10 +12,25 @@ import ScaleTabNav from "./ScaleTabNav.vue";
   component={ScaleTabNav}
   argTypes={{
     styles: {
-      control: { disable: true },
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Injected styles`,
+      control: { type: null },
     },
-    withIcon: {
-      table: { disable: true },
+     size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) size`,
+      control: { type: null },
+    },
+    small: {
+      table: {
+        type: { summary: 'Boolean' },
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
     },
   }}
 />
@@ -48,15 +63,6 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
-<div style={{
-    background: "red",
-    fontWeight: "bold",
-    textAlign: "center",
-    lineHeight: "40px",
-    color: "white"
-  }}>
-  Deprication Note: Prop 'small' is depricated and will be replaced by Prop 'size'
-</div>
   <ArgsTable story="Text & Icon" />
 
 
