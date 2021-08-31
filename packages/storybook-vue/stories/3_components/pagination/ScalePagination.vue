@@ -3,6 +3,7 @@
     :hide-borders="hideBorders"
     :page-size="pageSize"
     :small="small"
+    :size="size"
     :start-element="startElement"
     :total-elements="totalElements"
     :aria-label-first-page="ariaLabelFirstPage"
@@ -23,6 +24,7 @@ export default {
     totalElements: { type: Number, default: 1 },
     styles: { type: String },
     small: { type: Boolean, default: false },
+    size: { type: String, default: 'large'},
     ariaLabelFirstPage: { type: String, default: 'Go to first page'},
     ariaLabelLastPage: { type: String, default: 'Go to last page'},
     ariaLabelPreviousPage: { type: String, default: 'Go to previous page'},
