@@ -12,13 +12,9 @@
     :visible-size="visibleSize"
     :controlled="controlled"
     @scaleChange="scaleChange"
-    @scale-change="scale-change"
     @scaleFocus="scaleFocus"
-    @scale-focus="scale-focus"
     @scaleBlur="scaleBlur"
-    @scale-blur="scale-blur"
     @scaleKeyDown="scaleKeyDown"
-    @scale-keydown="scale-keydown"
   >
     <slot></slot>
   </scale-dropdown>

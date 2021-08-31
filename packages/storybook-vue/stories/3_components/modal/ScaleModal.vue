@@ -10,11 +10,8 @@
     :align-actions="alignActions"
     :styles="styles"
     @scaleClose="scaleClose"
-    @scale-close="scale-close"
     @scaleOpen="scaleOpen"
-    @scale-open="scale-open"
     @scaleBeforeClose="scaleBeforeClose"
-    @scale-before-close="scale-before-close"
   >
     <slot name="close"></slot>
     <slot></slot>
