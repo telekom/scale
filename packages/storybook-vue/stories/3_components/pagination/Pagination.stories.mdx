@@ -10,8 +10,16 @@ import ScalePagination from './ScalePagination.vue';
         type: { summary: 'Boolean' },
         defaultValue: { summary: false },
       },
+      description: `(optional) Deprecated; hideBorder should replace hideBorders`,
+      control: { type: 'boolean' },
+    },
+    hideBorder: {
+      table: {
+        type: { summary: 'Boolean' },
+        defaultValue: { summary: false },
+      },
       description: `(optional) Set to true to hide top and bottom borders`,
-      control: { type: null },
+      control: { type: 'boolean' },
     },
     pageSize: {
       table: {
@@ -55,6 +63,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-pagination
     :hide-borders="hideBorders"
+    :hide-border="hideBorder"
     :page-size="pageSize"
     :small="small"
     :start-element="startElement"
@@ -78,6 +87,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
   <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
     <scale-pagination
         :hide-borders="hideBorders"
+        :hide-border="hideBorder"
         :page-size="pageSize"
         :small="small"
         :start-element="startElement"
@@ -150,14 +160,18 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         pageSize: 5,
         startElement: 100,
         totalElements: 200,
-        hideBorders: true
+        hideBorder: true
     }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+<!--
+  Deprecated:
+   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+-->
+<scale-pagination page-size="5" start-element="100" total-elements="200" hide-border></scale-pagination>
 ```
 
 
@@ -171,7 +185,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         pageSize: 5,
         startElement: 100,
         totalElements: 200,
-        hideBorders: true
+        hideBorder: true
     }}>
     
         {TemplateEmbedded.bind({})}
@@ -179,8 +193,12 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
+<!--
+  Deprecated:
+   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+-->
 <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
- <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+ <scale-pagination page-size="5" start-element="100" total-elements="200" hide-border></scale-pagination>
 </div>
 ```
 

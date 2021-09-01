@@ -48,8 +48,10 @@ export class Pagination {
   /* 2. State Variables (alphabetical) */
 
   /* 3. Public Properties (alphabetical) */
-  /** (optional) Set to true to hide top and bottom borders */
+  /** (optional) Deprecated; hideBorder should replace hideBorders */
   @Prop() hideBorders?: boolean = false;
+  /** (optional) Set to true to hide top and bottom borders */
+  @Prop() hideBorder?: boolean = false;
   /** (optional) Set number of rows/elements to show per page */
   @Prop() pageSize?: number = 10;
   /** (optional) Index of first element to display */
@@ -272,7 +274,7 @@ export class Pagination {
 
     return classNames(
       name,
-      this.hideBorders && `${prefix}hide-borders`,
+      (this.hideBorder || this.hideBorders) && `${prefix}hide-borders`,
       this.small && `${prefix}small`
     );
   }
