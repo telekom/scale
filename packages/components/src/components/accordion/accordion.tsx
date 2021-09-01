@@ -37,7 +37,7 @@ export class Accordion {
   /**
    * Handle `dependent`
    */
-  @Listen('scaleExpand')
+  @Listen('scale-expand')
   collapsibleHandler(event: CustomEvent) {
     event.stopPropagation();
     const { expanded } = event.detail;

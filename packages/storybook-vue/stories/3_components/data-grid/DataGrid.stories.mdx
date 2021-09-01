@@ -122,7 +122,7 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
             description: `Read-only selection array - populated with raw data from selected rows. Note needs selectable set to true`,
             control: { type: null },
         },
-        eventScaleEdit: {
+        eventScaleEditLegacy: {
             name: '[event] scaleEdit',
             table: {
                 type: { summary: 'event' },
@@ -130,8 +130,24 @@ import ScaleDataGrid from './ScaleDataGrid.vue';
             description: `Event triggered every time the editable cells are changed, updating the original rows data`,
             control: { type: null }
         },
-        eventScaleSort: {
+        eventScaleEdit: {
+            name: '[event] scale-edit',
+            table: {
+                type: { summary: 'event' },
+            },
+            description: `Deprecated!: Event triggered every time the editable cells are changed, updating the original rows data`,
+            control: { type: null }
+        },
+        eventScaleSortLegacy: {
             name: '[event] scaleSort',
+            table: {
+                type: { summary: 'event' },
+            },
+            description: `Deprecated!: Event triggered every time the data is sorted, changing original rows data`,
+            control: { type: null }
+        },
+        eventScaleSort: {
+            name: '[event] scale-sort',
             table: {
                 type: { summary: 'event' },
             },

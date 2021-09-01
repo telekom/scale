@@ -30,11 +30,14 @@
 
 ## Events
 
-| Event         | Description                                     | Type                                                                                |
-| ------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `scaleBlur`   | Event emitted the date picker input is blurred. | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
-| `scaleChange` | Event emitted when a date is selected.          | `CustomEvent<{ component: "duet-date-picker"; valueAsDate: Date; value: string; }>` |
-| `scaleFocus`  | Event emitted the date picker input is focused. | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
+| Event          | Description                                                                                        | Type                                                                                |
+| -------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `scale-blur`   | Event emitted the date picker input is blurred.                                                    | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
+| `scale-change` | Event emitted when a date is selected.                                                             | `CustomEvent<{ component: "duet-date-picker"; valueAsDate: Date; value: string; }>` |
+| `scale-focus`  | Event emitted the date picker input is focused.                                                    | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
+| `scaleBlur`    | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
+| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ component: "duet-date-picker"; valueAsDate: Date; value: string; }>` |
+| `scaleFocus`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ component: "duet-date-picker"; }>`                                   |
 
 
 ## Methods
