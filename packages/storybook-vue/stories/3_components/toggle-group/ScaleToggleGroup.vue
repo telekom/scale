@@ -2,7 +2,7 @@
   <scale-toggle-group
     :size="size"
     :variant="variant"
-	  :box-type="boxType"
+	  :full-width="fullWidth"
     :disabled="disabled"
     :hide-border="hideBorder"
     :single-select="singleSelect"
@@ -19,7 +19,7 @@ export default {
   props: {
     size: { type: String, default: 'large' },
     variant: { type: String, default: 'grey-background' },
-    boxType: { type: String, default: 'inline' },
+    fullWidth: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     hideBorder: { type: Boolean, default: false },
     singleSelect: { type: Boolean, default: false },

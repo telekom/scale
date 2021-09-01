@@ -69,9 +69,15 @@ export class ToggleButton {
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
   @Prop() ariaDescriptionTranslation = '$selected';
   /** Emitted when button is clicked */
-  @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
+  @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
+    id: string;
+    selected: boolean;
+  }>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{ id: string; selected: boolean }>;
+  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
+    id: string;
+    selected: boolean;
+  }>;
 
   hasScaleIcon = false;
 
@@ -117,7 +123,10 @@ export class ToggleButton {
     this.selected = !this.selected;
     this.handleIconShape();
     this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
-    emitEvent(this, 'scaleClick', { id: this.toggleButtonId, selected: this.selected });
+    emitEvent(this, 'scaleClick', {
+      id: this.toggleButtonId,
+      selected: this.selected,
+    });
   };
 
   handleIconShape = () => {

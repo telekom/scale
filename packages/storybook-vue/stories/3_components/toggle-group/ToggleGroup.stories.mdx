@@ -11,8 +11,8 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
     },
-	  boxType: {
-      control: { type: 'select', options: ['inline', 'block'] },
+	  fullWidth: {
+      control: { type: 'boolean'},
     },
     ariaLabelTranslation: {
       control: { type: "text", },
@@ -31,12 +31,13 @@ export const Template = (args, { argTypes }) => ({
     <scale-toggle-group
       :size="size"
       :variant="variant"
-      :box-type="boxType"
+      :full-width="fullWidth"
       :disabled="disabled"
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
       :styles="styles"
+      @scaleChange="scaleChange"
     >
       <scale-toggle-button>Label</scale-toggle-button>
       <scale-toggle-button>Label</scale-toggle-button>
@@ -56,12 +57,13 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
     <scale-toggle-group
       :size="size"
       :variant="variant"
-      :box-type="boxType"
+      :full-width="fullWidth"
       :disabled="disabled"
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
       :styles="styles"
+      @scaleChange="scaleChange"
     >
       <scale-toggle-button 
         aria-label="Drück mich"
@@ -95,12 +97,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
     <scale-toggle-group
       :size="size"
       :variant="variant"
-      :box-type="boxType"
+      :full-width="fullWidth"
       :disabled="disabled"
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
       :styles="styles"
+      @scaleChange="scaleChange"
     >
       <scale-toggle-button>
         <scale-icon-action-search />Label
@@ -233,7 +236,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
     name="Small Size Block"
     args={{
 		  size: 'small',
-		  boxType: 'block'
+		  fullWidth: true,
 	}}
   >
     {Template.bind({})}
@@ -241,7 +244,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group size="small" box-type="block">
+<scale-toggle-group size="small" full-width>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
@@ -255,7 +258,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
     name="XS Size Block"
     args={{
 		  size: 'xs',
-		  boxType: 'block'
+		  fullWidth: true,
 	}}
   >
     {Template.bind({})}
@@ -263,7 +266,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group size="xs" box-type="block">
+<scale-toggle-group size="xs" full-width>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>

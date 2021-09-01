@@ -46,8 +46,8 @@ export class ToggleGroup {
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button Group variant */
   @Prop() variant?: 'grey-background' | 'white-background' = 'grey-background';
-  /** (optional) inline or block element */
-  @Prop() boxType?: 'inline' | 'block' = 'inline';
+  /** (optional) 100% width */
+  @Prop() fullWidth? = false;
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the group has a border */
@@ -120,7 +120,7 @@ export class ToggleGroup {
   }
 
   componentDidRender() {
-    if (this.boxType === 'block') {
+    if (this.fullWidth) {
       this.setButtonWidth();
     }
     this.setChildrenCorners();
@@ -185,9 +185,10 @@ export class ToggleGroup {
 
     return classNames(
       'toggle-group',
-      this.boxType && `${prefix}${this.boxType}`,
+      this.fullWidth && `${prefix}block`,
+      !this.fullWidth && `${prefix}inline`,
       !this.hideBorder && `${prefix}border`,
-      this.disabled && `${prefix}disabled`,
+      this.disabled && `${prefix}disabled`
     );
   }
 }
