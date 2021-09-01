@@ -158,7 +158,7 @@ export class DataGrid {
   /** Auto-calculated number column width */
   private numberColumnWidth: number = 0;
   /** Selection column width */
-  private selectionColumnWidth: number = 20;
+  private selectionColumnWidth: number = 22;
 
   /* 6. Lifecycle Events (call order) */
   constructor() {
@@ -1038,6 +1038,7 @@ export class DataGrid {
         <scale-checkbox
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
+          hideLabel={true}
         ></scale-checkbox>
       </th>
     );
@@ -1167,6 +1168,7 @@ export class DataGrid {
         <scale-checkbox
           checked={this.rows[rowIndex].selected}
           onScaleChange={(e) => this.toggleRowSelect(e, rowIndex)}
+          hideLabel={true}
         ></scale-checkbox>
       </td>
     );
