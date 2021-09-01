@@ -55,6 +55,7 @@ jobs:
 
       - name: Build Angular Proxy
         run: |
+          yarn workspace @telekom/scale-components process-angular-proxies
           yarn workspace @telekom/scale-components-angular build
 
       - name: Build React Proxy
@@ -123,6 +124,7 @@ jobs:
 
       - name: Build Angular Proxy
         run: |
+          yarn workspace @telekom/scale-components process-angular-proxies
           yarn workspace @telekom/scale-components-angular-neutral build
 
       - name: Build React Proxy
