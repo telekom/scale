@@ -45,13 +45,13 @@ export class RatingStars {
   /** Deprecated; size should be used instead of starSize */
   @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
   /** size of the stars  */
-  @Prop({ reflect: true,  mutable: true }) size: 'small' | 'large' = 'large';
+  @Prop({ reflect: true, mutable: true }) size: 'small' | 'large' = 'large';
   /** Deprecated; The lower limit of the rating */
   @Prop({ reflect: true }) minRating = 0;
   /** Deprecated; max should be used instead of maxRating */
   @Prop({ reflect: true }) maxRating = 5;
   /** The upper limit of the rating */
-  @Prop({ reflect: true,  mutable: true }) max = 5;
+  @Prop({ reflect: true, mutable: true }) max = 5;
   /** Represents the current value of the rating */
   @Prop({ mutable: true, reflect: true }) rating = 0;
   /** makes the rating non-interactive (but still accessible)  */
@@ -70,10 +70,10 @@ export class RatingStars {
 
   connectedCallback() {
     // make sure the deprecated props overwrite the actual ones if used
-    if(this.host.hasAttribute('max-rating')) {
+    if (this.host.hasAttribute('max-rating')) {
       this.max = this.maxRating;
     }
-    if(this.host.hasAttribute('star-size')) {
+    if (this.host.hasAttribute('star-size')) {
       this.size = this.starSize;
     }
   }
