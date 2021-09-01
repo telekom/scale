@@ -1,6 +1,8 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 
+let i = 0;
+
 @Component({
   tag: 'scale-loading-spinner',
   styleUrl: './loading-spinner.css',
@@ -12,12 +14,16 @@ export class LoadingSpinner {
   @Prop() text: string;
   @Prop() size: 'small' | 'large' = 'small';
 
+  componentWillLoad() {
+    i++;
+  }
+
   render() {
     return (
       <Host>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           <div part="container" class="spinner__container">
-            <svg class="spinner__circle" viewBox="0 0 50 50">
+            <svg class="spinner__circle" viewBox="0 0 50 50" aria-labelledby={`spinner-label-${i}`}>
               <circle
                 class="path"
                 cx="25"
@@ -38,7 +44,7 @@ export class LoadingSpinner {
               ></circle>
             </svg>
           </div>
-          <div class="sr-only" aria-live="polite">
+          <div class="sr-only" aria-live="polite" id={`spinner-label-${i}`}>
             {this.text || 'Loading'}
           </div>
           <div part="text" class="spinner__text" aria-hidden="true">
