@@ -24,8 +24,15 @@ import {
 import classNames from 'classnames';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
 import { animateTo, KEYFRAMES } from '../../utils/animate';
+import { emitEvent } from '../../utils/utils';
 
 const supportsResizeObserver = 'ResizeObserver' in window;
+
+type CloseEventTrigger = 'CLOSE_BUTTON' | 'ESCAPE_KEY' | 'BACKDROP';
+
+export interface BeforeCloseEventDetail {
+  trigger: CloseEventTrigger;
+}
 
 /*
   TODO
@@ -59,7 +66,7 @@ export class Modal {
   @Prop() styles?: string;
 
   /** What actually triggers opening/closing the modal */
-  @State() isOpen: boolean = false;
+  @State() isOpen: boolean = this.opened || false;
   /** Check wheter there are actions slots, style accordingly */
   @State() hasActionsSlot: boolean = false;
   /** Check wheter there's content in the body, style accordingly */
@@ -67,8 +74,20 @@ export class Modal {
   /** Useful for toggling scroll-specific styles */
   @State() hasScroll: boolean = false;
 
-  @Event() scaleOpen?: EventEmitter;
-  @Event() scaleClose?: EventEmitter;
+  /** Fires when the modal has been opened */
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<void>;
+  /** Fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing */
+  @Event({ eventName: 'scale-before-close' })
+  scaleBeforeClose: EventEmitter<BeforeCloseEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleBeforeClose' })
+  scaleBeforeCloseLegacy: EventEmitter<BeforeCloseEventDetail>;
+  /** Fires when the modal has been closed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<void>;
 
   private closeButton: HTMLButtonElement | HTMLScaleButtonElement;
   private modalContainer: HTMLElement;
@@ -84,7 +103,7 @@ export class Modal {
       return;
     }
     if (event.key === 'Escape') {
-      this.opened = false;
+      this.emitBeforeClose('ESCAPE_KEY');
     }
   }
 
@@ -106,6 +125,12 @@ export class Modal {
     this.hasActionsSlot = actionSlots.length > 0;
     if (bodySlot != null) {
       this.hasBody = bodySlot.assignedElements().length > 0;
+    }
+  }
+
+  emitBeforeClose(trigger: CloseEventTrigger) {
+    if (!this.scaleBeforeClose.emit({ trigger }).defaultPrevented) {
+      this.opened = false;
     }
   }
 
@@ -178,10 +203,10 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.attemptFocus(this.getFirstFocusableElement());
-        this.scaleOpen.emit();
+        emitEvent(this, 'scaleOpen');
       });
     } catch (err) {
-      this.scaleOpen.emit();
+      emitEvent(this, 'scaleOpen');
     }
   }
 
@@ -192,11 +217,11 @@ export class Modal {
       });
       anim.addEventListener('finish', () => {
         this.isOpen = false;
-        this.scaleClose.emit();
+        emitEvent(this, 'scaleClose');
       });
     } catch (err) {
       this.isOpen = false;
-      this.scaleClose.emit();
+      emitEvent(this, 'scaleClose');
     }
   }
 
@@ -204,7 +229,6 @@ export class Modal {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-
         <div
           ref={(el) => (this.modalContainer = el)}
           class={this.getCssClassMap()}
@@ -213,7 +237,7 @@ export class Modal {
           <div
             class="modal__backdrop"
             part="backdrop"
-            onClick={() => (this.opened = false)}
+            onClick={() => this.emitBeforeClose('BACKDROP')}
           ></div>
           <div
             data-focus-trap-edge
@@ -226,6 +250,8 @@ export class Modal {
             ref={(el) => (this.modalWindow = el)}
             role="dialog"
             aria-modal="true"
+            aria-label={this.heading}
+            title={this.heading}
           >
             <div
               class="modal__header"
@@ -238,7 +264,7 @@ export class Modal {
                 ref={(el) => (this.closeButton = el)}
                 class="modal__close-button"
                 part="close-button"
-                onClick={() => (this.opened = false)}
+                onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
                 aria-label={this.closeButtonLabel}
               >
                 <slot name="close-icon">

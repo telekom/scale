@@ -23,6 +23,10 @@ export class Table {
   @Prop() showSort?: boolean = false;
   /** (optional) Visual size */
   @Prop() size?: 'default' | 'small' | string = 'default';
+  /** (optional) Striped Table */
+  @Prop() striped?: boolean = false;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
   /** object of the slots in use */
   slots: { header?: Element; table?: Element } = {};
 
@@ -31,7 +35,7 @@ export class Table {
       th.insertAdjacentHTML(
         'afterbegin',
         `
-          <span class="scale-sort-indicator" aria-hidden>
+          <span class="scale-sort-indicator" aria-hidden="true">
             <svg viewBox="0 0 16 16">
              <polygon transform="translate(8.242641, 10.242641) rotate(45.000000) translate(-8.242641, -10.242641) " points="5.24264069 7.24264069 11.2426407 7.24264069 5.24264069 13.2426407"/></polygon>
              <polygon transform="translate(8.242641, 6.242641) scale(1, -1) rotate(45.000000) translate(-8.242641, -6.242641) " points="5.24264069 3.24264069 11.2426407 3.24264069 5.24264069 9.24264069"/>
@@ -44,6 +48,7 @@ export class Table {
   render() {
     return (
       <Host class={this.getCssClassMap()}>
+        {this.styles && <style>{this.styles}</style>}
         <slot />
       </Host>
     );
@@ -53,7 +58,8 @@ export class Table {
     return classNames(
       'table',
       this.size && `table--size-${this.size}`,
-      this.showSort && 'table--sortable'
+      this.showSort && 'table--sortable',
+      this.striped && 'table--striped'
     );
   }
 }

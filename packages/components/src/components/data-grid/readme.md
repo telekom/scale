@@ -29,10 +29,12 @@
 
 ## Events
 
-| Event       | Description                                                                                | Type                                     |
-| ----------- | ------------------------------------------------------------------------------------------ | ---------------------------------------- |
-| `scaleEdit` | Event triggered every time the editable cells are changed, updating the original rows data | `CustomEvent<DataGridEditEventDetail>`   |
-| `scaleSort` | Event triggered every time the data is sorted, changing original rows data                 | `CustomEvent<DataGridSortedEventDetail>` |
+| Event        | Description                                                                                        | Type                                     |
+| ------------ | -------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `scale-edit` | Event triggered every time the editable cells are changed, updating the original rows data         | `CustomEvent<DataGridEditEventDetail>`   |
+| `scale-sort` | Event triggered every time the data is sorted, changing original rows data                         | `CustomEvent<DataGridSortedEventDetail>` |
+| `scaleEdit`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<DataGridEditEventDetail>`   |
+| `scaleSort`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<DataGridSortedEventDetail>` |
 
 
 ## Dependencies
@@ -82,6 +84,7 @@ graph TD;
   scale-menu-flyout-item --> scale-icon-action-success
   scale-menu-flyout-item --> scale-icon-navigation-right
   scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-action-indeterminate
   scale-dropdown --> scale-icon-navigation-collapse-down
   scale-tag --> scale-icon-action-close
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px

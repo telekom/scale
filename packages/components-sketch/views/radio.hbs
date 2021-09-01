@@ -304,15 +304,6 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 <script src="/symbol_names.js"></script>
 <script>
   Array.from(document.querySelectorAll('scale-radio-button')).forEach((btn) => {
-    function evalNaming(btn) {
-      if (
-        btn.getAttribute('helper-text') &&
-        btn.getAttribute('status') !== 'error'
-      )
-        return 'Info';
-      if (btn.getAttribute('status') === 'error') return 'Error';
-      return 'Standard';
-    }
     btn.dataset.sketchSymbol = `Radio Button / ${order(
       1,
       btn.hasAttribute('checked') ? 'Selected' : 'Standard'

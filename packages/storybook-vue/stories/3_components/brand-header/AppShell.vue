@@ -14,6 +14,7 @@
   >
     <slot></slot>
     <slot name="header"></slot>
+    <slot name="footer"></slot>
   </scale-app-shell>
 </template>
 

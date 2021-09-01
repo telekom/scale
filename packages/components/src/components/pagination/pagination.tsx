@@ -21,6 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 /*
   TODO
@@ -57,14 +58,28 @@ export class Pagination {
   @Prop() totalElements?: number = 1;
   /** (optional) Injected styles */
   @Prop() styles?: string;
+  /** (optional) small  */
+  @Prop() small = false;
+  /** (optional) translation to 'Go to first page'  */
+  @Prop() ariaLabelFirstPage = 'Go to first page';
+  /** (optional) translation to 'Go to next page'  */
+  @Prop() ariaLabelNextPage = 'Go to next page';
+  /** (optional) translation to 'Go to previous page'  */
+  @Prop() ariaLabelPreviousPage = 'Go to previous page';
+  /** (optional) translation to 'Go to last page'  */
+  @Prop() ariaLabelLastPage = 'Go to last page';
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
-  @Event() scalePagination: EventEmitter<{
+  @Event({ eventName: 'scale-pagination' }) scalePagination: EventEmitter<{
     startElement?: number;
     currentPage?: number;
   }>;
-
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scalePagination' }) scalePaginationLegacy: EventEmitter<{
+    startElement?: number;
+    currentPage?: number;
+  }>;
   /* 5. Private Properties (alphabetical) */
   /** Calculated width of largest text so buttons don't move while changing pages */
   maxWidth: number = 100;
@@ -120,7 +135,7 @@ export class Pagination {
     const data = {
       startElement: this.startElement,
     };
-    this.scalePagination.emit(data);
+    emitEvent(this, 'scalePagination', data);
   }
 
   /* 10. Render */
@@ -134,96 +149,111 @@ export class Pagination {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <button
-            class={`${name}__first-prompt`}
-            part="first-prompt"
-            disabled={isAtStart}
-            onClick={() => this.goFirstPage()}
-          >
-            <svg
-              height="17"
-              viewBox="0 0 48 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
-            >
-              <path
-                d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5"
-                stroke-width="6"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <button
-            class={`${name}__prev-prompt`}
-            part="prev-prompt"
-            disabled={isAtStart}
-            onClick={() => this.goPreviousPage()}
-          >
-            <svg
-              height="17"
-              viewBox="0 0 37 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
-            >
-              <path
-                d="M33 48L6 26L33 4"
-                stroke-width="7"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <div
-            part="info"
-            class={`${name}__info`}
-            style={{ width: `${this.maxWidth}px` }}
-          >
+          <div part="info-responsive" class={`${name}__info-responsive`}>
             <span>
               {start}-{end}
             </span>{' '}
             / {total}
           </div>
-          <button
-            class={`${name}__next-prompt`}
-            part="next-prompt"
-            disabled={isAtEnd}
-            onClick={() => this.goNextPage()}
-          >
-            <svg
-              height="17"
-              viewBox="0 0 37 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+          <div class={`${name}__button-wrapper`}>
+            <div
+              part="info"
+              class={`${name}__info`}
+              style={{ width: `${this.maxWidth}px` }}
             >
-              <path
-                d="M4 4L31 26L4 48"
-                stroke-width="7"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-          <button
-            class={`${name}__last-prompt`}
-            part="last-prompt"
-            disabled={isAtEnd}
-            onClick={() => this.goLastPage()}
-          >
-            <svg
-              height="17"
-              viewBox="0 0 48 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              stroke="#cacaca"
+              <span>
+                {start}-{end}
+              </span>{' '}
+              / {total}
+            </div>
+            <button
+              class={`${name}__first-prompt`}
+              part="first-prompt"
+              disabled={isAtStart}
+              onClick={() => this.goFirstPage()}
+              aria-label={this.ariaLabelFirstPage}
             >
-              <path
-                d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5"
-                stroke-width="6"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
+              <svg
+                height="12"
+                viewBox="0 0 48 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M44.5 48.5L21.5 26L44.5 3.5M27.5 48.5L4.5 26L27.5 3.5"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class={`${name}__prev-prompt`}
+              part="prev-prompt"
+              disabled={isAtStart}
+              onClick={() => this.goPreviousPage()}
+              aria-label={this.ariaLabelPreviousPage}
+            >
+              <svg
+                height="12"
+                viewBox="0 0 37 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M33 48L6 26L33 4"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+              </svg>
+              {/* scale-icon behaves differently from inlined svg in HCM,
+                  and we want all four icons to be the same, so leaving that for now */}
+              {/*<scale-icon-navigation-left size={16} />*/}
+            </button>
+            <button
+              class={`${name}__next-prompt`}
+              part="next-prompt"
+              disabled={isAtEnd}
+              onClick={() => this.goNextPage()}
+              aria-label={this.ariaLabelNextPage}
+            >
+              <svg
+                height="12"
+                viewBox="0 0 37 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M4 4L31 26L4 48"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <button
+              class={`${name}__last-prompt`}
+              part="last-prompt"
+              disabled={isAtEnd}
+              onClick={() => this.goLastPage()}
+              aria-label={this.ariaLabelLastPage}
+            >
+              <svg
+                height="12"
+                viewBox="0 0 48 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#cacaca"
+              >
+                <path
+                  d="M3.5 3.5L26.5 26L3.5 48.5M20.5 3.5L43.5 26L20.5 48.5"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </Host>
     );
@@ -240,6 +270,10 @@ export class Pagination {
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
-    return classNames(name, this.hideBorders && `${prefix}hide-borders`);
+    return classNames(
+      name,
+      this.hideBorders && `${prefix}hide-borders`,
+      this.small && `${prefix}small`
+    );
   }
 }

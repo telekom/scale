@@ -27,11 +27,12 @@ export const CheckboxCell: Cell = {
     return rows[0][columnIndex];
   },
   render: ({ field, content, component, rowIndex, columnIndex }) => {
-    const { style = 'checkbox', editable = false } = field;
+    const { style = 'checkbox', editable = false, label } = field;
 
     const props = {
       checked: content,
       disabled: !editable,
+      label,
     } as any;
 
     if (editable) {

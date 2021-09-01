@@ -41,6 +41,8 @@ export class Button {
   @Prop() target?: string = '_self';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) If `true`, a download is triggrered */
+  @Prop() download?: boolean = false;
 
   /**
    * Prevent clicks from being emitted from the host
@@ -85,12 +87,14 @@ export class Button {
    * If so, it's probably an icon, so we set `iconPosition` to `after`.
    */
   setIconPositionProp() {
-    const nodes = Array.from(this.hostElement.childNodes);
-    if (nodes.length < 2) {
-      return;
-    }
-    const lastNode = nodes[nodes.length - 1];
-    if (lastNode != null && lastNode.nodeType === 1) {
+    const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
+      // ignore empty text nodes, which are probably due to formatting
+      return !(node.nodeType === 3 && node.nodeValue.trim() === '');
+    });
+    if (
+      !this.iconOnly &&
+      nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON'
+    ) {
       this.iconPosition = 'after';
     }
   }
@@ -112,6 +116,7 @@ export class Button {
           <a
             class={this.getCssClassMap()}
             href={this.href}
+            download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             aria-label={this.ariaLabel}

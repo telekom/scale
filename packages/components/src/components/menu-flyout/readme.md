@@ -17,11 +17,14 @@
 
 ## Events
 
-| Event         | Description                                    | Type                                                 |
-| ------------- | ---------------------------------------------- | ---------------------------------------------------- |
-| `scaleClose`  | Event triggered when menu list closed          | `CustomEvent<{ id: number; cascadeLevel: number; }>` |
-| `scaleOpen`   | Event triggered when menu list opened          | `CustomEvent<{ id: number; cascadeLevel: number; }>` |
-| `scaleSelect` | Event triggered when nested menu item selected | `CustomEvent<{ item: HTMLElement; }>`                |
+| Event          | Description                                                                                        | Type                                                 |
+| -------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `scale-close`  | Event triggered when menu list closed                                                              | `CustomEvent<{ id: number; cascadeLevel: number; }>` |
+| `scale-open`   | Event triggered when menu list opened                                                              | `CustomEvent<{ id: number; cascadeLevel: number; }>` |
+| `scale-select` | Event triggered when nested menu item selected                                                     | `CustomEvent<{ item: HTMLElement; }>`                |
+| `scaleClose`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ id: number; cascadeLevel: number; }>` |
+| `scaleOpen`    | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ id: number; cascadeLevel: number; }>` |
+| `scaleSelect`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ item: HTMLElement; }>`                |
 
 
 ## Dependencies

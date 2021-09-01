@@ -11,6 +11,7 @@
 
 import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 @Component({
   tag: 'scale-tag',
   styleUrl: './tag.css',
@@ -18,9 +19,9 @@ import classNames from 'classnames';
 })
 export class Tag {
   /** (optional) Tag size */
-  @Prop() size?: string = '';
+  @Prop() size?: 'small';
   /** (optional) Tag variant */
-  @Prop() variant?: string = '';
+  @Prop() variant?: 'secondary';
   /** (optional) Tag href */
   @Prop() href?: string = '';
   /** (optional) Tag target */
@@ -35,16 +36,22 @@ export class Tag {
   @Prop() styles?: string;
 
   /** (optional) Close icon click event */
-  @Event() scaleClose: EventEmitter<MouseEvent>;
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClose' })
+  scaleCloseLegacy: EventEmitter<MouseEvent>;
 
   componentWillUpdate() {}
   disconnectedCallback() {}
 
-  handleClose(event) {
+  handleClose = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
-    this.scaleClose.emit(event);
-  }
+    if (this.disabled) {
+      return;
+    }
+    emitEvent(this, 'scaleClose', event);
+  };
 
   render() {
     const Element = !!this.href && !this.disabled ? 'a' : 'span';
@@ -52,11 +59,6 @@ export class Tag {
       ? {
           href: this.href,
           target: this.target,
-        }
-      : {};
-    const iconProps = !this.disabled
-      ? {
-          onClick: (event) => this.handleClose(event),
         }
       : {};
 
@@ -76,11 +78,11 @@ export class Tag {
               part="button-dismissable"
               disabled={this.disabled}
               aria-label={this.dismissText}
+              onClick={this.handleClose}
             >
               <scale-icon-action-close
                 part="icon-dismissable"
                 size={this.size === 'small' ? 20 : 24}
-                {...iconProps}
               />
             </button>
           )}

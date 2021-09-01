@@ -16,6 +16,7 @@
     :helper-text="helperText"
     :status="status"
     :size="size"
+    :popup-title="popupTitle"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -44,19 +45,32 @@ export default {
     status: { type: String },
     disabled: { type: Boolean },
     size: { type: String },
+    popupTitle: { type: String },
   },
   methods: {
     scaleChange($event) {
       action("scaleChange");
       this.$emit("scaleChange", $event);
     },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
     scaleFocus($event) {
       action("scaleFocus");
       this.$emit("scaleFocus", $event);
     },
+    'scale-focus'($event) {
+      action("scale-focus");
+      this.$emit("scale-focus", $event);
+    },
     scaleBlur($event) {
       action("scaleBlur");
       this.$emit("scaleBlur", $event);
+    },
+    'scale-blur'($event) {
+      action("scale-blur");
+      this.$emit("scale-blur", $event);
     }
   }
 };

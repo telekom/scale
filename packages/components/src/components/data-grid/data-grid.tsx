@@ -27,6 +27,7 @@ import {
 } from './data-grid-cells';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 // [ ] add options to show nested content without the html column
 // [ ] add options to pre-expand all html content
@@ -110,10 +111,17 @@ export class DataGrid {
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the editable cells are changed, updating the original rows data */
-  @Event() scaleEdit: EventEmitter<DataGridEditEventDetail>;
+  @Event({ eventName: 'scale-edit' })
+  scaleEdit: EventEmitter<DataGridEditEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleEdit' })
+  scaleEditLegacy: EventEmitter<DataGridEditEventDetail>;
   /** Event triggered every time the data is sorted, changing original rows data */
-  @Event() scaleSort: EventEmitter<DataGridSortedEventDetail>;
-
+  @Event({ eventName: 'scale-sort' })
+  scaleSort: EventEmitter<DataGridSortedEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSort' })
+  scaleSortLegacy: EventEmitter<DataGridSortedEventDetail>;
   /* 5. Private Properties (alphabetical) */
   /** Used to update column divider during interaction */
   private activeDivider: any;
@@ -691,7 +699,7 @@ export class DataGrid {
       sortDirection,
       columnIndex,
     } as DataGridSortedEventDetail;
-    this.scaleSort.emit(data);
+    emitEvent(this, 'scaleSort', data);
   }
 
   triggerEditEvent(value, rowIndex, columnIndex) {
@@ -701,7 +709,7 @@ export class DataGrid {
       columnIndex,
       value,
     } as DataGridEditEventDetail;
-    this.scaleEdit.emit(data);
+    emitEvent(this, 'scaleEdit', data);
 
     // Force render for checkboxes
     this.forceRender++;
@@ -720,7 +728,7 @@ export class DataGrid {
     return (
       <scale-menu-flyout class={`${name}__settings-menu`}>
         <scale-button slot="trigger" variant="secondary" icon-only>
-          <scale-icon-service-settings></scale-icon-service-settings>
+          <scale-icon-service-settings accessibilityTitle="Table options"></scale-icon-service-settings>
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
@@ -956,7 +964,7 @@ export class DataGrid {
                   textAlign,
                 },
                 role: 'columnheader',
-                'aria-columnindex': columnIndex,
+                'aria-colindex': columnIndex + 1,
                 'data-type': type,
               };
               if (sortable) {
@@ -973,6 +981,7 @@ export class DataGrid {
                   </div>
                   {sortable && (
                     <button
+                      aria-label="Activate to sort column"
                       class={`thead__sort-prompt`}
                       onClick={() =>
                         this.toggleTableSorting(
@@ -1036,7 +1045,7 @@ export class DataGrid {
 
   renderTableBody() {
     return (
-      <tbody class={`tbody`} role="rowgroup">
+      <tbody class={`tbody`} role="rowgroup" tabindex="0">
         {(() => {
           const rows = [];
           // Pagination functionality
@@ -1180,7 +1189,7 @@ export class DataGrid {
         }`}
         style={{ width: `calc(${width}px + ${stretchWidth}px)` }}
         role="cell"
-        aria-columnindex={columnIndex}
+        aria-colindex={columnIndex + 1}
       >
         <div class={`tbody__mobile-label`}>{label}</div>
         {cell.render({

@@ -3,6 +3,103 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.17](https://github.com/telekom/scale/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2021-08-23)
+
+
+### Bug Fixes
+
+* **tag:** keyboard support for dismiss button ([#533](https://github.com/telekom/scale/issues/533)) ([952218d](https://github.com/telekom/scale/commit/952218d6fc2b3347f99f9f7d10373d804e74b8a1))
+* adapt storybook ([1a5933e](https://github.com/telekom/scale/commit/1a5933e4332c32259e96a78931fb4daeca3a7240))
+* colorScheme default value ([b75b6d4](https://github.com/telekom/scale/commit/b75b6d4101fa8ccab546302af8bec660dc29acbf))
+* multiple times used id ([0d1eab1](https://github.com/telekom/scale/commit/0d1eab175465f2b068fc155a13d24288918b2308))
+
+
+### Features
+
+* accessibility story toggle group ([cda7855](https://github.com/telekom/scale/commit/cda7855382615fe63d02f50f63444b82b10203e0))
+* add accessibility story to toggle-button ([aaeabc6](https://github.com/telekom/scale/commit/aaeabc67065987af761aa57b2d361277ae36dbf3))
+* add toggle button to storybook-vue ([35b5f6c](https://github.com/telekom/scale/commit/35b5f6c499c25fc1ca7a397aa9567216046df903))
+* add toggle group stories ([1ce3f62](https://github.com/telekom/scale/commit/1ce3f6237940a547d2a5d2d10de595257005552e))
+* adding error storie ([751130e](https://github.com/telekom/scale/commit/751130ea2e0b9597ffcf2deb290dc86f6ec53663))
+* adding stories ([c017122](https://github.com/telekom/scale/commit/c0171228e0dde726dbb6e96835be3ac58825ddc4))
+* adding the usage beta files ([f21c0af](https://github.com/telekom/scale/commit/f21c0af9180bde6d0fc016c3c0384e84829d02b2))
+* change translation features ([a7092bb](https://github.com/telekom/scale/commit/a7092bbf7c77d87c4e9c896d4e858fcbd17b3458))
+* disabled tab-header ([#484](https://github.com/telekom/scale/issues/484)) ([ed12fd1](https://github.com/telekom/scale/commit/ed12fd1e51b59e3967a8e74595630311a0a4b095))
+* init storybook ([1bd42a6](https://github.com/telekom/scale/commit/1bd42a6b8dcef09215d78a2ebb087b37ade2416d))
+* new stories ([698fd81](https://github.com/telekom/scale/commit/698fd81deebc6e04bdddde674f939535cc3b75d3))
+* refactor clickHandler; add tests; ([08a2940](https://github.com/telekom/scale/commit/08a29407ac6fca41e5d0fde38fba83564d9bf12b))
+* storybook aria-translation ([467cbcf](https://github.com/telekom/scale/commit/467cbcf105b89534f74140170240d2f849c73a6a))
+* storybook stories ([20739c6](https://github.com/telekom/scale/commit/20739c68b64ac68dba165ac766e3cc4a719e9464))
+* striped tables ([#489](https://github.com/telekom/scale/issues/489)) ([9fb0999](https://github.com/telekom/scale/commit/9fb099903b84e001518844426b6f9c894f30dfae))
+* **date-picker:** accessibility enhancements ([#462](https://github.com/telekom/scale/issues/462)) ([117c4d7](https://github.com/telekom/scale/commit/117c4d7c4fe145bc5239bc2bce26ae0e90627ff8))
+* **footer:** enable custom slots ([56d798c](https://github.com/telekom/scale/commit/56d798cb98dcb33b4cff2508d83274c2d6685139))
+* **storybook:** add CSS scoped variables to checkbox group ([3aea0bc](https://github.com/telekom/scale/commit/3aea0bc8eeda71e97577b1cee95298a0c890b715))
+
+
+### Reverts
+
+* Revert "docs(storybook): separate header from shell" (#493) ([ed9abf8](https://github.com/telekom/scale/commit/ed9abf8a0b3c42a581315355f5655d66e2d529bd)), closes [#493](https://github.com/telekom/scale/issues/493)
+
+
+
+
+
+# [3.0.0-beta.16](https://github.com/telekom/scale/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2021-07-20)
+
+
+### Features
+
+* add documentation for new Actions data-grid cell type ([#464](https://github.com/telekom/scale/issues/464)) ([5f9f6ef](https://github.com/telekom/scale/commit/5f9f6ef04c20a8892b55850017e65bfeea6937ef))
+* badge ([#394](https://github.com/telekom/scale/issues/394)) ([686ac2d](https://github.com/telekom/scale/commit/686ac2d6f366e2676ad0d96abce2714a02c334e1))
+* implement scaleBeforeClose event in Modal ([#430](https://github.com/telekom/scale/issues/430)) ([bdc6786](https://github.com/telekom/scale/commit/bdc678655e4d3921ab546448cca70f38ae4057ee))
+
+
+
+
+
+# [3.0.0-beta.15](https://github.com/telekom/scale/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2021-06-21)
+
+
+### Bug Fixes
+
+* **a11y:** axe audit ([#421](https://github.com/telekom/scale/issues/421)) ([39a0021](https://github.com/telekom/scale/commit/39a002141aa909eb1100bc5a8f727e0a1ba462a0))
+
+
+### Features
+
+* add fill prop to icon with higher priority than color ([#412](https://github.com/telekom/scale/issues/412)) ([4f4bac4](https://github.com/telekom/scale/commit/4f4bac41915b0c64d6f43ca91eef6254c08bb29f))
+
+
+
+
+
+# [3.0.0-beta.14](https://github.com/telekom/scale/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2021-06-15)
+
+
+### Features
+
+* **button:** add download attribute ([#380](https://github.com/telekom/scale/issues/380)) ([49b14c0](https://github.com/telekom/scale/commit/49b14c0e1c211f7fa882943d2c82ab93699cc7f0))
+
+
+
+
+
+# [3.0.0-beta.13](https://github.com/telekom/scale/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2021-06-07)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue

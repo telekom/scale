@@ -9,16 +9,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  Event,
-  EventEmitter,
-  h,
-  Host,
-  Prop,
-  Watch,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -42,7 +35,7 @@ export class RadioButton {
   @Prop() status?: string = '';
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
-  /** (optional) Active switch */
+  /** (optional) Input checked */
   @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) Input value */
   @Prop({ mutable: true }) value?: string | number | null = '';
@@ -51,8 +44,11 @@ export class RadioButton {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange!: EventEmitter<InputChangeEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -60,25 +56,37 @@ export class RadioButton {
     }
   }
 
-  // We're not watching `value` like we used to
-  // because we get unwanted `scaleChange` events
-  // because how we keep this.value up-to-date for type="select"
-  // `this.value = selectedValue`
-  emitChange() {
-    this.scaleChange.emit({
+  handleCheckedChange = (event: any) => {
+    this.checked = event.target.checked;
+    // I don't think this is ever going to be `false` but well...
+    if (this.checked) {
+      this.uncheckSiblings();
+    }
+    emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
+    });
+  };
+
+  // Prevent click event being fired twice when the target is the label.
+  handleLabelClick = (event: any) => {
+    event.stopPropagation();
+  };
+
+  // We manually set `checked` to false on sibling <scale-radio-button> elements,
+  // otherwise they stayed `checked` after being clicked once, forever.
+  uncheckSiblings() {
+    this.getSiblingRadios().forEach((radio: HTMLScaleRadioButtonElement) => {
+      radio.checked = false;
     });
   }
 
-  @Watch('checked')
-  checkedChanged() {
-    this.scaleChange.emit({ value: this.checked });
+  getSiblingRadios(): HTMLElement[] {
+    return Array.from(
+      document.querySelectorAll(`scale-radio-button[name="${this.name}"]`)
+    ).filter(
+      (radio: HTMLScaleRadioButtonElement) => radio.inputId !== this.inputId
+    ) as HTMLScaleRadioButtonElement[];
   }
-
-  // Handle checkbox/radio change (click on label)
-  handleCheckChange = (event) => {
-    this.checked = event.target.checked;
-  };
 
   render() {
     const ariaInvalidAttr =
@@ -93,14 +101,16 @@ export class RadioButton {
             type="radio"
             name={this.name}
             id={this.inputId}
-            onChange={this.handleCheckChange}
+            onChange={this.handleCheckedChange}
             value={this.value}
             checked={this.checked}
             disabled={this.disabled}
             {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           />
-          <label htmlFor={this.inputId}>{this.label}</label>
+          <label htmlFor={this.inputId} onClick={this.handleLabelClick}>
+            {this.label}
+          </label>
           {!!this.helperText && (
             <div
               class="radio-button__meta"

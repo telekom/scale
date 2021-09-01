@@ -1,11 +1,14 @@
 <template>
   <scale-rating-stars
-    :num-of-stars="numOfStars"
+    :max-rating="maxRating"
+    :min-rating="minRating"
     :rating="rating"
-    :small="small"
+    :star-size="starSize"
     :disabled="disabled"
-    :aria-translation="ariaTranslation"
+    :aria-label-translation="ariaLabelTranslation"
     :label="label"
+    :readonly="readonly"
+    @scaleChange="scaleChange"
   >
   </scale-rating-stars>
 </template>
@@ -13,12 +16,24 @@
 <script>
 export default {
   props: {
-    numOfStars: { type: Number, default: 5 },
+    maxRating: { type: Number, default: 5 },
+    minRating: { type: Number, default: 0 },
     rating: { type: Number, default: 3 },
-    small: { type: Boolean, default: false },
+    starSize: { type: String, default: 'large' },
     disabled: { type: Boolean, default: false },
-    ariaTranslation: { type: String },
+    ariaLabelTranslation: { type: String },
     label: { type: String },
+    readonly: { type: Boolean, default: false },
   },
+  methods: {
+    scaleChange($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
+    },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
+  }
 };
 </script>

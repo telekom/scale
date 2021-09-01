@@ -19,6 +19,7 @@ import {
   State,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -72,20 +73,37 @@ export class TextField {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) input list */
+  @Prop() list?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
   /** Emitted when a keyboard input occurred. */
-  @Event() scaleInput!: EventEmitter<KeyboardEvent>;
+  @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleInput' })
+  scaleInputLegacy!: EventEmitter<KeyboardEvent>;
   /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange!: EventEmitter<InputChangeEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
   /** Emitted when the input has focus. */
-  @Event() scaleFocus!: EventEmitter<void>;
+  @Event({ eventName: 'scale-focus' }) scaleFocus!: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleFocus' }) scaleFocusLegacy!: EventEmitter<void>;
   /** Emitted when the input loses focus. */
-  @Event() scaleBlur!: EventEmitter<void>;
+  @Event({ eventName: 'scale-blur' }) scaleBlur!: EventEmitter<void>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleBlur' }) scaleBlurLegacy!: EventEmitter<void>;
   /** Emitted on keydown. */
-  @Event() scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  @Event({ eventName: 'scale-keydown' })
+  scaleKeyDown!: EventEmitter<KeyboardEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleKeydown' })
+  scaleKeyDownLegacy!: EventEmitter<KeyboardEvent>;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
@@ -100,8 +118,9 @@ export class TextField {
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
   // `this.value = selectedValue`
+
   emitChange() {
-    this.scaleChange.emit({
+    emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });
   }
@@ -112,7 +131,7 @@ export class TextField {
       this.value = target.value || '';
       this.emitChange();
     }
-    this.scaleInput.emit(event as KeyboardEvent);
+    emitEvent(this, 'scaleInput', event as KeyboardEvent);
   };
 
   handleChange = (event: Event) => {
@@ -124,17 +143,17 @@ export class TextField {
   };
 
   handleFocus = () => {
-    this.scaleFocus.emit();
+    emitEvent(this, 'scaleFocus');
     this.hasFocus = true;
   };
 
   handleBlur = () => {
-    this.scaleBlur.emit();
+    emitEvent(this, 'scaleBlur');
     this.hasFocus = false;
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    this.scaleKeyDown.emit(event);
+    emitEvent(this, 'scaleKeyDown', event);
   };
 
   render() {
@@ -160,6 +179,7 @@ export class TextField {
             minLength={this.minLength}
             maxLength={this.maxLength}
             id={this.inputId}
+            list={this.list}
             onInput={this.handleInput}
             onChange={this.handleChange}
             onFocus={this.handleFocus}
@@ -169,7 +189,7 @@ export class TextField {
             disabled={this.disabled}
             readonly={this.readonly}
             {...ariaInvalidAttr}
-            {...ariaDescribedByAttr}
+            {...(this.helperText ? ariaDescribedByAttr : {})}
           />
 
           {(!!this.helperText || !!this.counter) && (

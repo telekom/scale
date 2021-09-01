@@ -3,7 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-With Checkboxes, users toggle options on or off. They can answer simple yes-no questions in this way. Furthermore, users can select one or more options from a number of choices.
+With checkboxes, users toggle options on or off. They can answer simple yes-no questions in this way. Furthermore, users can select one or more options from a number of choices.
 
 ## General
 
@@ -21,6 +21,26 @@ There are two main use cases for checkboxes:
 ### When not to use
 
 - When states are mutually exclusive, use radio buttons instead.
+
+## Elements
+
+![Image Name](assets/3_components/checkbox/checkbox-elements.png)
+
+### Checkbox deselected (1)
+
+If there is no checkmark, a checkbox is considered to be deselected.
+
+### Checkbox selected (2)
+
+If a checkbox has a check mark, it is considered to be selected.
+
+### Information (3) (Optional)
+
+If necessary, you can also provide additional information.
+
+### Error (4)
+
+An error message appears if an option is mandatory but not selected, e.g., when it’s required to execute the next steps in the process.
 
 ## Checkbox label
 

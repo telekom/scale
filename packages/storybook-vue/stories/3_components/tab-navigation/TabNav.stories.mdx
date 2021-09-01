@@ -24,7 +24,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
   props: ScaleTabNav.props,
   template: `
-    <scale-tab-nav :small="small" :with-icon="withIcon"></scale-tab-nav>
+    <scale-tab-nav :disabled="disabled ? true : false"  :small="small" :with-icon="withIcon"></scale-tab-nav>
   `,
 });
 
@@ -48,28 +48,30 @@ export const Template = (args, { argTypes }) => ({
   </Story>
 </Canvas>
 
+<ArgsTable story="Text & Icon" />
+
 ```html
 <scale-tab-nav>
   <scale-tab-header slot="tab">
-    <scale-icon-home-home size="16" /> General
+    <scale-icon-home-home size="16"></scale-icon-home-home> General
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
   </scale-tab-panel>
   <scale-tab-header slot="tab">
-    <scale-icon-user-file-analytics size="16" /> Usage
+    <scale-icon-user-file-analytics size="16"></scale-icon-user-file-analytics> Usage
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Bespoke austin pork belly yuccie pop-up. Before they sold out…
   </scale-tab-panel>
   <scale-tab-header slot="tab">
-    <scale-icon-content-heart size="16" /> Style
+    <scale-icon-content-heart size="16"></scale-icon-content-heart> Style
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Biodiesel chia af hoodie tumeric bespoke letterpress…
   </scale-tab-panel>
   <scale-tab-header slot="tab">
-    <scale-icon-action-random size="16" /> Code
+    <scale-icon-action-random size="16"></scale-icon-action-random> Code
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Asymmetrical tattooed chia, banh mi blog microdosing…
@@ -101,6 +103,7 @@ export const Template = (args, { argTypes }) => ({
   --color-active: var(--scl-color-primary-active);
   --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --spacing-right-slotted: var(--scl-spacing-8);
+  --color-disabled: var(--scl-color-background-disabled);
 }
 
 /* tab-panel */
@@ -111,8 +114,6 @@ export const Template = (args, { argTypes }) => ({
 ```
 
 For Shadow Parts, please inspect the element's #shadow.
-
-<ArgsTable story="Text & Icon" />
 
 ## Text & Icon, Small
 
@@ -125,25 +126,25 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-tab-nav small>
   <scale-tab-header slot="tab">
-    <scale-icon-home-home size="16" /> General
+    <scale-icon-home-home size="16"></scale-icon-home-home> General
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
   </scale-tab-panel>
   <scale-tab-header slot="tab">
-    <scale-icon-user-file-analytics size="16" /> Usage
+    <scale-icon-user-file-analytics size="16"></scale-icon-user-file-analytics> Usage
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Bespoke austin pork belly yuccie pop-up. Before they sold out…
   </scale-tab-panel>
   <scale-tab-header slot="tab">
-    <scale-icon-content-heart size="16" /> Style
+    <scale-icon-content-heart size="16"></scale-icon-content-heart> Style
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Biodiesel chia af hoodie tumeric bespoke letterpress…
   </scale-tab-panel>
   <scale-tab-header slot="tab">
-    <scale-icon-action-random size="16" /> Code
+    <scale-icon-action-random size="16"></scale-icon-action-random> Code
   </scale-tab-header>
   <scale-tab-panel slot="panel">
     Asymmetrical tattooed chia, banh mi blog microdosing…
@@ -191,6 +192,35 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-tab-nav small>
   <scale-tab-header slot="tab">General</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Usage</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Style</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Code</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```
+
+## Disabled Tabs
+
+<Canvas withSource="none">
+  <Story name="Disabled Tabs" args={{ disabled: true, withIcon: false }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header disabled slot="tab">General</scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
   </scale-tab-panel>

@@ -16,13 +16,13 @@ We provide a comprehensive Sketch library for designers building Telekom softwar
 
 # Customizing Scale for open source software
 
-Although the code for Scale is free and available under the MPL 2.0 license, Deutsche Telekom fully reserves all rights to the Telekom brand. To prevent users from getting confused about the source of a digital product or experience, there are strict restrictions on using the Telekom brand and design, even when built into code that we provide. For any customization other than explicitly for the Telekom, you must replace the Deutsche Telekom default theme.
+Although the code for Scale is free and available under the MPL 2.0 License, Deutsche Telekom fully reserves all rights to the Telekom brand. To prevent users from getting confused about the source of a digital product or experience, there are strict restrictions on using the Telekom brand and design, even when built into code that we provide. For any customization other than explicitly for the Telekom, you must replace the Deutsche Telekom default theme.
 
 To use Scale as open source software and customize it with a neutral theme, please follow the instructions for our [open source version](#open-source-version).
 
 ## Open source version
 
-By following the instructions for the Open Source Version you obtain source code/packages that use a neutral theme and are fully covered by the MPL-2.0 License.
+By following the instructions for the open source version, you obtain source code/packages that use a neutral theme and are fully covered by the MPL-2.0 License.
 
 ### Setup with NPM
 
@@ -59,19 +59,21 @@ applyPolyfills().then(() => {
 });
 ```
 
-### NPM Packages
+### NPM packages
 
-| Package Name                              | Description                   |
-| ----------------------------------------- | ----------------------------- |
-| @telekom/scale-components-neutral         | Stencil components            |
-| @telekom/scale-components-react-neutral   | Component proxies for React   |
-| @telekom/scale-components-vue-neutral     | Component proxies for Vue     |
-| @telekom/scale-components-angular-neutral | Component proxies for Angular |
-| @telekom/scale-design-tokens-neutral      | Design tokens                 |
+| Package name                               | Description                   |
+| ------------------------------------------ | ----------------------------- |
+| @telekom/scale-components-neutral          | Stencil components            |
+| @telekom/scale-components-react-neutral    | Component proxies for React   |
+| @telekom/scale-components-vue-neutral*     | Component proxies for Vue     |
+| @telekom/scale-components-angular-neutral* | Component proxies for Angular |
+| @telekom/scale-design-tokens-neutral       | Design tokens                 |
+
+> *deprecated since `v3.0.0-beta.x`
 
 ### Using the source code directly
 
-If you want to use the source code, remove the following folders. These folders contain all the protected brand and design assets of Telekom and are not available under the MPL-2.0 License:
+If you want to use the source code, remove the following folders. These folders contain all the protected brand and design assets of the Telekom and are not available under the MPL-2.0 License:
 
 | Folder                                     | Content                    |
 | ------------------------------------------ | -------------------------- |
@@ -84,9 +86,9 @@ If you want to use the source code, remove the following folders. These folders 
 | packages/visual-tests/                     | Visual tests               |
 | storybook-vue                              | Telekom branded storybook  |
 
-## Telekom Version
+## Telekom version
 
-Please note that the use of the Telekom brand and design assets – including but not limited to the logos, the color Magenta, the typeface and icons, as well as the footer and header components – are not available for free use and require Deutsche Telekom's express permission for use in commerce.
+Please note that the use of the Telekom brand and design assets – including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components – are not available for free use and require Deutsche Telekom's express permission for use in commerce.
 
 ### Setup with NPM
 
@@ -120,23 +122,25 @@ applyPolyfills().then(() => {
 });
 ```
 
-### NPM Packages
+### NPM packages
 
-| Package Name                      | Description                   |
-| --------------------------------- | ----------------------------- |
-| @telekom/scale-components         | Stencil components            |
-| @telekom/scale-components-react   | Component proxies for React   |
-| @telekom/scale-components-vue     | Component proxies for Vue     |
-| @telekom/scale-components-angular | Component proxies for Angular |
-| @telekom/scale-design-tokens      | Telekom design tokens         |
+| Package name                       | Description                   |
+| ---------------------------------- | ----------------------------- |
+| @telekom/scale-components          | Stencil components            |
+| @telekom/scale-components-react    | Component proxies for React   |
+| @telekom/scale-components-vue*     | Component proxies for Vue     |
+| @telekom/scale-components-angular* | Component proxies for Angular |
+| @telekom/scale-design-tokens       | Telekom design tokens         |
+
+> *deprecated since `v3.0.0-beta.x` — please check out the info relative to frameworks in [the documentation](https://www.brand-design.telekom.com/scale/)
 
 ### Using the source code directly
 
-Simply clone/download this repository and use the source code as-is.
+Simply clone/download this repository and use the source code as is.
 
-## Monorepo Packages Overview
+## Monorepo packages overview
 
-| Package Name       | Description                                                |
+| Package name       | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
 | components         | Stencil components                                         |
 | components-angular | Component proxies for Angular (auto-generated)             |
@@ -151,17 +155,17 @@ Simply clone/download this repository and use the source code as-is.
 
 # Contributing
 
-## Code of Conduct
+## Code of conduct
 
 This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) in version 2.0 as our code of conduct. Please see the details in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). All contributors must abide by the code of conduct.
 
-## How to Contribute
+## How to contribute
 
-Contribution and feedback is encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](./CONTRIBUTING.md). By participating in this project, you agree to abide by its [Code of Conduct](./CODE_OF_CONDUCT.md) at all times.
+We always welcome and encourage contributions and feedback. For more information on how to contribute, the project structure, as well as additional information, see our [Contribution Guidelines](./CONTRIBUTING.md). By participating in this project, you agree to abide by its [Code of Conduct](./CODE_OF_CONDUCT.md) at all times.
 
 ## Contributors
 
-Our commitment to open source means that we are enabling -in fact encouraging- all interested parties to contribute and become part of its developer community.
+Our commitment to open source means that we are enabling - even encouraging - all interested parties to contribute and become part of its developer community.
 
 # Licensing
 

@@ -19,7 +19,9 @@ import { renderIcon } from '../../../utils/render-icon';
 })
 export class NavIcon {
   /** (optional) if this item is active */
-  @Prop() isActive?: boolean = false;
+  // DEPRECATED - active should replace isActive
+  @Prop() isActive: boolean;
+  @Prop() active: boolean;
   /** (optional) href value */
   @Prop() href?: string = 'javascript:void(0);';
   @Prop() clickLink: any;
@@ -60,8 +62,9 @@ export class NavIcon {
   getCssClassMap() {
     return classNames(
       'meta-navigation__item',
-      !!this.refMobileMenuToggle && 'mobile-menu',
-      this.isMobileMenuOpen && 'open'
+      (this.active || this.isActive || this.isMobileMenuOpen) &&
+        'meta-navigation__item--selected',
+      !!this.refMobileMenuToggle && 'mobile-menu'
     );
   }
 }

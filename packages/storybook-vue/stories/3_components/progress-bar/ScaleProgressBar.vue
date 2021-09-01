@@ -27,7 +27,7 @@ export default {
     hasError: Boolean,
     statusDescription: String,
     styles: String,
-    showStatus: { type: Boolean, default: true },
+    showStatus: Boolean,
     strokeWidth: Number,
     percentage: Number,
     message: String,

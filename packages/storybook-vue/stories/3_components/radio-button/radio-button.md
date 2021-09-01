@@ -7,7 +7,7 @@ Radio buttons allow a user to only select one option from a collection of choice
 
 ## General
 
-A radio button is a selection control that consists of a circular button and a label. It is considered on with a filled circle and off with an empty circle.
+A radio button is a selection control that consists of a circular button and a label. It is considered to be on with a filled circle and off with an empty circle.
 
 Radio buttons only appear in groups. Activating a radio button automatically deselects the previously selected option.
 
@@ -21,6 +21,26 @@ Use radio buttons to provide the user with a collection of related but mutually 
 
 If the user needs to choose one or more options, use checkboxes.
 To initiate an action, use a button.
+
+## Elements
+
+![Image Name](assets/3_components/radio-button/radio-button-elements.png)
+
+### Radio button deselected (1)
+
+An empty circle is considered to be deselected.
+
+### Radio button selected (2)
+
+If the circle is filled, the option is considered to be selected.
+
+### Information (3) (Optional)
+
+When necessary, you can also provide additional information to help users.
+
+### Error (4)
+
+If the selection is contradictory or not applicable, an error message appears.
 
 ## Label
 

@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.12",
+  "version": "3.0.0-beta.18",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
@@ -11,14 +11,11 @@
     "access": "public"
   },
   "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
-  "es2015": "dist/esm/index.js",
-  "es2017": "dist/esm/index.js",
-  "jsnext:main": "dist/esm/index.js",
+  "module": "dist/custom-elements/index.js",
+  "unpkg": "dist/scale-components/scale-components.esm.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/scale-components/scale-components.esm.js",
   "files": [
     "assets/",
     "dist/",
@@ -29,28 +26,29 @@
     "build": "stencil build --docs-readme",
     "build:whitelabel": "WHITELABEL=1 stencil build --docs-readme",
     "build:watch": "stencil build --watch",
+    "build:staging": "stencil build --config stencil-staging.config.ts",
     "start": "stencil build --dev --watch --serve --config stencil-dev.config.ts",
     "dev": "yarn start",
     "test": "stencil test --max-workers=2",
     "format": "prettier --write \"*.ts\" \"src/**/*.{html,tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
     "lint:fix": "yarn lint:style --fix",
     "lint": "tslint -c tslint.json -p . \"src/**/*.{tsx,ts,css,json}\" \"!src/**/*.d.ts\"",
-    "generate": "node ./scripts/generate-icons.js"
+    "generate": "node ./scripts/generate-icons.js",
+    "process-angular-proxies": "node ./scripts/process-angular-proxies.js"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
     "@babel/plugin-syntax-jsx": "7.10.1",
     "@babel/plugin-transform-react-jsx": "7.10.1",
     "@nowseemee/vue-output-target": "0.0.4",
-    "@stencil/angular-output-target": "^0.0.5",
-    "@stencil/core": "~2.3.0",
+    "@stencil/angular-output-target": "^0.0.7",
     "@stencil/postcss": "^2.0.0",
     "@stencil/react-output-target": "^0.0.9",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
     "@types/lodash": "4.14.149",
     "@types/puppeteer": "1.20.3",
-    "@types/resize-observer-browser": "^0.1.4",
+    "@types/resize-observer-browser": "^0.1.6",
     "babel-loader": "^8.1.0",
     "date-fns": "^2.6.0",
     "express": "^4.17.1",
@@ -72,7 +70,8 @@
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
     "@proyecto26/animatable-component": "^1.1.8",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.12",
+    "@stencil/core": "^2.7.1",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.18",
     "classnames": "^2.2.6",
     "stencil-inline-svg": "^1.0.1",
     "web-animations-js": "^2.3.2"

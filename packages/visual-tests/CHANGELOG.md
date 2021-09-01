@@ -3,6 +3,67 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.17](https://github.com/telekom/scale/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2021-08-23)
+
+
+### Features
+
+* disabled tab-header ([#484](https://github.com/telekom/scale/issues/484)) ([ed12fd1](https://github.com/telekom/scale/commit/ed12fd1e51b59e3967a8e74595630311a0a4b095))
+* striped tables ([#489](https://github.com/telekom/scale/issues/489)) ([9fb0999](https://github.com/telekom/scale/commit/9fb099903b84e001518844426b6f9c894f30dfae))
+* **date-picker:** accessibility enhancements ([#462](https://github.com/telekom/scale/issues/462)) ([117c4d7](https://github.com/telekom/scale/commit/117c4d7c4fe145bc5239bc2bce26ae0e90627ff8))
+
+
+### Reverts
+
+* Revert "docs(storybook): separate header from shell" (#493) ([ed9abf8](https://github.com/telekom/scale/commit/ed9abf8a0b3c42a581315355f5655d66e2d529bd)), closes [#493](https://github.com/telekom/scale/issues/493)
+
+
+
+
+
+# [3.0.0-beta.16](https://github.com/telekom/scale/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2021-07-20)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.15](https://github.com/telekom/scale/compare/v3.0.0-beta.14...v3.0.0-beta.15) (2021-06-21)
+
+
+### Bug Fixes
+
+* **a11y:** axe audit ([#421](https://github.com/telekom/scale/issues/421)) ([39a0021](https://github.com/telekom/scale/commit/39a002141aa909eb1100bc5a8f727e0a1ba462a0))
+
+
+
+
+
+# [3.0.0-beta.14](https://github.com/telekom/scale/compare/v3.0.0-beta.13...v3.0.0-beta.14) (2021-06-15)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.13](https://github.com/telekom/scale/compare/v3.0.0-beta.12...v3.0.0-beta.13) (2021-06-07)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
 # [3.0.0-beta.12](https://github.com/telekom/scale/compare/v3.0.0-beta.11...v3.0.0-beta.12) (2021-05-27)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

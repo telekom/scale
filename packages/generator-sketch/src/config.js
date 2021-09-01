@@ -116,6 +116,7 @@ module.exports = {
             } else {
               label.frame.width = 62;
             }
+            label.textBehaviour = 0;
             label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
             setResizingConstraints(symbol, 'Icon', TOP_LEFT_FIXED_SIZE);
           }
@@ -393,6 +394,41 @@ module.exports = {
           findLayer(symbol, (s) => s.name === 'button') ||
           findLayer(symbol, (s) => s.name === 'Icon');
         if (icon) icon.resizingConstraint = RIGHT_FIXED_SIZE;
+      }
+      if (/^Rating Stars/.test(symbol.name)) {
+        var icon = findLayer(symbol, (s) => s.name === 'Icon');
+        findLayers(symbol, /Icon?/, (l) => {
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+
+          const overrideObject = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_symbolID`,
+          };
+
+          symbol.overrideProperties.push(overrideObject);
+        });
+        findLayers(
+          symbol,
+          /div/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+
+        findLayers(
+          symbol,
+          /div.icon-clip?/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayers(
+          symbol,
+          /svg?/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayer(
+          symbol,
+          /Rating Label/,
+          (s) => (s.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT)
+        );
       }
       if (/^(Text Area)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
