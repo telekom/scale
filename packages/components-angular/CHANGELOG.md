@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.17](https://github.com/telekom/scale/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2021-08-23)
+
+
+### Bug Fixes
+
+* broken release pipeline (hopefully) with ([#468](https://github.com/telekom/scale/issues/468)) ([b753316](https://github.com/telekom/scale/commit/b753316fa26b74547199f2f5c0fc4d9fa4b35900))
+
+
+
+
+
 # [3.0.0-beta.16](https://github.com/telekom/scale/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2021-07-20)
 
 **Note:** Version bump only for package @telekom/scale-components-angular

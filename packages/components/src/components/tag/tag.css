@@ -29,9 +29,9 @@
 
   --border-button-dismissable-focus: 1px solid
     var(--scl-color-background-standard);
-  --background-button-dismissable-focus: var(--scl-color-black);
+  --background-button-dismissable-focus: ;
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  --background-button-dismissable-hover: var(--scl-color-black);
+  --background-button-dismissable-hover: ;
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--scl-spacing-8);
@@ -86,9 +86,6 @@
   border-radius: var(--radius);
 }
 
-.tag--dismissable scale-icon-action-close svg {
-  outline: none;
-}
 .tag--dismissable button:focus {
   border: var(--border-button-dismissable-focus);
   background: var(--background-button-dismissable-focus);

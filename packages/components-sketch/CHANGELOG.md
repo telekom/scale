@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
+
+**Note:** Version bump only for package @telekom/scale-components-sketch-telekom
+
+
+
+
+
+# [3.0.0-beta.17](https://github.com/telekom/scale/compare/v3.0.0-beta.16...v3.0.0-beta.17) (2021-08-23)
+
+
+### Bug Fixes
+
+* disabled indeterminate state master handling ([c496b86](https://github.com/telekom/scale/commit/c496b866461d9d1ec3d26e19cbf1047ec3b861a4))
+
+
+### Features
+
+* adding error status hbt ([b6e2804](https://github.com/telekom/scale/commit/b6e2804dfcb23c6a10eba2b062e1205165d66e7e))
+* adding handle bar template ([fcd8ef5](https://github.com/telekom/scale/commit/fcd8ef56875a578e448be2bff10f0f38b9cfea51))
+* handle bar template without error ([3f288c3](https://github.com/telekom/scale/commit/3f288c3b3e8b27f9f39b3ef651e8d586b8a5cf10))
+* init checkbox handle bar template ([5c2cd24](https://github.com/telekom/scale/commit/5c2cd24b272011a0213a9435a837358be93932e8))
+* striped tables ([#489](https://github.com/telekom/scale/issues/489)) ([9fb0999](https://github.com/telekom/scale/commit/9fb099903b84e001518844426b6f9c894f30dfae))
+
+
+
+
+
 # [3.0.0-beta.16](https://github.com/telekom/scale/compare/v3.0.0-beta.15...v3.0.0-beta.16) (2021-07-20)
 
 
