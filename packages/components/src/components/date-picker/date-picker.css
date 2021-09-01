@@ -57,7 +57,9 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
-  duet-date-picker .duet-date__toggle scale-icon-content-calendar {
+  duet-date-picker .duet-date__toggle scale-icon-content-calendar,
+  duet-date-picker .duet-date__header .duet-date__select-label,
+  duet-date-picker .duet-date__header .duet-date__nav svg {
     color: var(--scl-color-white);
   }
 }
