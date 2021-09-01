@@ -8,6 +8,7 @@
     :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
     :styles="styles"
+    @scaleChange="scaleChange"
   >
     <slot></slot>
   </scale-toggle-group>
@@ -26,5 +27,15 @@ export default {
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
     styles: { type: String },
   },
+  methods: {
+    scaleChange($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
+    },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
+  }
 };
 </script>

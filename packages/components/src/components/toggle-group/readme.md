@@ -21,9 +21,10 @@
 
 ## Events
 
-| Event             | Description                    | Type               |
-| ----------------- | ------------------------------ | ------------------ |
-| `scaleClickGroup` | Emitted when button is clicked | `CustomEvent<any>` |
+| Event          | Description                                                                                        | Type               |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
+| `scale-change` | Emitted when button is clicked                                                                     | `CustomEvent<any>` |
+| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<any>` |
 
 
 ----------------------------------------------

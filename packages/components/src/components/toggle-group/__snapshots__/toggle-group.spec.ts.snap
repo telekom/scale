@@ -3,7 +3,7 @@
 exports[`Toggle Group snapshots default props 1`] = `
 <scale-toggle-group>
   <mock:shadow-root>
-    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--border toggle-group--inline" part="toggle-group inline border" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
@@ -22,7 +22,7 @@ exports[`Toggle Group snapshots default props 1`] = `
 exports[`Toggle Group snapshots disabled 1`] = `
 <scale-toggle-group aria-label="Aria Label" disabled="">
   <mock:shadow-root>
-    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--border toggle-group--disabled toggle-group--inline" part="toggle-group inline border disabled" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
@@ -41,7 +41,7 @@ exports[`Toggle Group snapshots disabled 1`] = `
 exports[`Toggle Group snapshots size small, multi false 1`] = `
 <scale-toggle-group multi="false" size="small">
   <mock:shadow-root>
-    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--border toggle-group--inline" part="toggle-group inline border" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
@@ -63,7 +63,7 @@ exports[`Toggle Group snapshots styles 1`] = `
     <style>
       color:red
     </style>
-    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--inline" part="toggle-group inline" role="group">
+    <div aria-label="toggle button group with 3 buttons" class="toggle-group toggle-group--border toggle-group--inline" part="toggle-group inline border" role="group">
       <slot></slot>
     </div>
   </mock:shadow-root>
