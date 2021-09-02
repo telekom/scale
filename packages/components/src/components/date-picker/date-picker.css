@@ -103,7 +103,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 }
 
 duet-date-picker .duet-date__input::placeholder {
-  color: transparent;
+  visibility: hidden;
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
 }
@@ -120,6 +120,7 @@ duet-date-picker .duet-date__input::placeholder {
 
 .scale-date-picker.animated .duet-date__input::placeholder,
 duet-date-picker .duet-date__input:focus::placeholder {
+  visibility: initial;
   color: var(--scl-color-grey-60);
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
