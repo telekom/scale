@@ -147,6 +147,9 @@ export class Checkbox {
     return (
       <Host
         class={{
+          checked: this.checked,
+          indeterminate: this.indeterminate,
+          disabled: this.disabled,
           error: this.status === 'error',
           hideLabel: this.hideLabel,
         }}
