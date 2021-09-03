@@ -38,6 +38,7 @@ export class Link {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <a
+          tabindex={0}
           class={this.getCssClassMap()}
           part={classNames('base', this.disabled && 'disabled')}
           href={this.disabled ? 'javascript:void(0)' : this.href}

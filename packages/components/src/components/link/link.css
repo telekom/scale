@@ -16,8 +16,6 @@
   --color-visited: var(--scl-color-text-link-visited);
   --color-hover: var(--scl-color-text-link-hover);
   --color-active: var(--scl-color-text-link-active);
-  --border: var(--scl-spacing-1) solid currentColor;
-  --border-focus: var(--scl-spacing-2) solid currentColor;
   --color-disabled: var(--scl-color-grey-50);
 
   --spacing-x-icon: var(--scl-spacing-4);
@@ -32,21 +30,21 @@
 }
 
 .link--underline {
-  text-decoration: underline;
   text-decoration-color: var(--color-underline);
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1px;
 }
 
 .link--disabled.link--underline {
-  text-decoration: underline;
   text-decoration-color: var(--color-disabled);
-}
-
-.link--underline:hover {
-  text-decoration-color: var(--color-hover);
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1px;
 }
 
 .link--disabled.link--underline:hover {
   text-decoration-color: var(--color-disabled);
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1px;
 }
 
 /* order is important */
@@ -54,13 +52,17 @@
   color: var(--color-visited);
 }
 .link:hover {
+  text-decoration-color: var(--color-hover);
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1px;
   color: var(--color-hover);
 }
 .link:active {
   color: var(--color-active);
 }
 .link:focus:not(.link--disabled) {
-  border-bottom: var(--border-focus);
+  color: var(--color-hover);
+  text-decoration-color: var(--color-hover);
 }
 
 .link__wrapper {
