@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RatingStars snapshots deprecated overwrite actual props 1`] = `
-<scale-rating-stars max="12" max-rating="12" min-rating="0" rating="0" size="small" star-size="small">
+<scale-rating-stars max="12" max-rating="12" rating="0" size="small" star-size="small">
   <mock:shadow-root>
     <div part="container">
       <div aria-labeledby="scale-rating-star-5-label" aria-orientation="horizontal" aria-valuetext="0 out of 12 stars" part="wrapper" role="figure" tabindex="-1">
@@ -85,7 +85,7 @@ exports[`RatingStars snapshots deprecated overwrite actual props 1`] = `
 `;
 
 exports[`RatingStars snapshots rating 2 1`] = `
-<scale-rating-stars max="5" max-rating="5" min-rating="0" rating="2" size="large" star-size="large">
+<scale-rating-stars max="5" rating="2" size="large">
   <mock:shadow-root>
     <div part="container">
       <div aria-labeledby="scale-rating-star-1-label" aria-orientation="horizontal" aria-valuetext="2 out of 5 stars" part="wrapper" role="figure" tabindex="-1">
@@ -127,7 +127,7 @@ exports[`RatingStars snapshots rating 2 1`] = `
 `;
 
 exports[`RatingStars snapshots rating 2, maxRating 7 1`] = `
-<scale-rating-stars max="7" max-rating="7" min-rating="0" rating="2" size="large" star-size="large">
+<scale-rating-stars max="7" max-rating="7" rating="2" size="large">
   <mock:shadow-root>
     <div part="container">
       <div aria-labeledby="scale-rating-star-3-label" aria-orientation="horizontal" aria-valuetext="2 out of 7 stars" part="wrapper" role="figure" tabindex="-1">
@@ -181,7 +181,7 @@ exports[`RatingStars snapshots rating 2, maxRating 7 1`] = `
 `;
 
 exports[`RatingStars snapshots rating 3, disabled 1`] = `
-<scale-rating-stars disabled="" max="5" max-rating="5" min-rating="0" rating="0" size="large" star-size="large">
+<scale-rating-stars disabled="" max="5" rating="0" size="large">
   <mock:shadow-root>
     <div part="container">
       <div aria-labeledby="scale-rating-star-4-label" aria-orientation="horizontal" aria-valuetext="0 out of 5 stars" part="wrapper" role="figure" tabindex="-1">
@@ -223,7 +223,7 @@ exports[`RatingStars snapshots rating 3, disabled 1`] = `
 `;
 
 exports[`RatingStars snapshots rating 3, minRating 1 1`] = `
-<scale-rating-stars max="5" max-rating="5" min-rating="1" rating="3" size="large" star-size="large">
+<scale-rating-stars max="5" min-rating="1" rating="3" size="large">
   <mock:shadow-root>
     <div part="container">
       <div aria-labeledby="scale-rating-star-2-label" aria-orientation="horizontal" aria-valuetext="3 out of 5 stars" part="wrapper" role="figure" tabindex="-1">
