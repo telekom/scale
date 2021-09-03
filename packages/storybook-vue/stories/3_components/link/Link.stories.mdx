@@ -2,25 +2,25 @@ import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleLink from './ScaleLink.vue';
 
 <Meta
-    title="Components/Link"
-    component={ScaleLink}
-    argTypes={{
-        label: {
-            control: {type: 'text'}
-        },
-        styles: {
-            control: {disable: true}
-        }
-    }}
+  title="Components/Link"
+  component={ScaleLink}
+  argTypes={{
+    label: {
+      control: { type: 'text' },
+    },
+    styles: {
+      control: { disable: true },
+    },
+  }}
 />
 
-export const Template = (args, {argTypes}) => ({
-    components: {ScaleLink},
-    props: {
-        label: String,
-        ...ScaleLink.props,
-    },
-    template: `
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleLink },
+  props: {
+    label: String,
+    ...ScaleLink.props,
+  },
+  template: `
         <scale-link
         :block="block"
         :disabled="disabled"
@@ -38,28 +38,36 @@ export const Template = (args, {argTypes}) => ({
             slot="icon"
         ></scale-icon-navigation-external-link>
     </scale-link>
-    `
-})
+    `,
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Link</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Link</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-    <Story
-        name="Standard"
-        args={{
-            label: 'A link',
-            href: '#top'
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Standard"
+    args={{
+      label: 'A link',
+      href: '#top',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-<ArgsTable story="Standard"/>
+<ArgsTable story="Standard" />
 
 ### Scoped CSS variables
 
@@ -83,66 +91,62 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Disabled
 
 <Canvas withSource="none">
-    <Story
-        name="Disabled"
-        args={{
-            label: 'A link, disabled',
-            disabled: true,
-            href: '#top'
-        }}
-    >
+  <Story
+    name="Disabled"
+    args={{
+      label: 'A link, disabled',
+      disabled: true,
+      href: '#top',
+    }}
+  >
     {Template.bind({})}
-    </Story>
+  </Story>
 </Canvas>
 
 ```html
 <scale-link disabled href="#top">A link, disabled</scale-link>
 ```
 
-
 ## With Icon
 
 <Canvas withSource="none">
-    <Story
-        name="With Icon"
-        args={{
-            label: 'A link, with an icon',
-            href: '#top',
-            target: '_blank'
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="With Icon"
+    args={{
+      label: 'A link, with an icon',
+      href: '#top',
+      target: '_blank',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html
 <scale-link target="_blank" href="#top">
-    A link, with an icon
-    <scale-icon-navigation-external-link
-        size="16"
-        accessibility-title="open link in new tab"
-        slot="icon"
-    ></scale-icon-navigation-external-link>
+  A link, with an icon
+  <scale-icon-navigation-external-link
+    size="16"
+    accessibility-title="open link in new tab"
+    slot="icon"
+  ></scale-icon-navigation-external-link>
 </scale-link>
 ```
 
 ## No underline
 
 <Canvas withSource="none">
-    <Story
-        name="No underline"
-        args={{
-            label: 'A link, with an icon',
-            omitUnderline: true,
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="No underline"
+    args={{
+      label: 'A link, without an underline',
+      omitUnderline: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html
-<scale-link omit-underline>
-    A link, without underline
-</scale-link>
+<scale-link omit-underline> A link, without underline </scale-link>
 ```
-
-
-
