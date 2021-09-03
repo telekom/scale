@@ -245,7 +245,7 @@ export class Header {
               </scale-nav-icon>
             ))
         )}
-        {((!this.hasSlotMenuMain && readData(this.mainNavigation).length > 0) ||
+        {(readData(this.mainNavigation).length > 0 ||
           this.hasSlotMenuMobile) && (
           <scale-nav-icon
             isMobileMenuOpen={this.mobileMenu}
@@ -393,7 +393,7 @@ export class Header {
   getCssClassMap() {
     return classNames(
       'header',
-      this.scrolled && 'sticky',
+      this.scrolled && 'header--sticky',
       (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );
   }
