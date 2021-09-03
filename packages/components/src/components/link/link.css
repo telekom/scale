@@ -31,19 +31,19 @@
 
 .link--underline {
   text-decoration-color: var(--color-underline);
-  text-decoration-thickness: 0.125em;
+  text-decoration-thickness: 0.0625em;
   text-underline-offset: 1px;
 }
 
 .link--disabled.link--underline {
   text-decoration-color: var(--color-disabled);
-  text-decoration-thickness: 0.125em;
+  text-decoration-thickness: 0.0625em;
   text-underline-offset: 1px;
 }
 
 .link--disabled.link--underline:hover {
   text-decoration-color: var(--color-disabled);
-  text-decoration-thickness: 0.125em;
+  text-decoration-thickness: 0.0625em;
   text-underline-offset: 1px;
 }
 
@@ -54,7 +54,7 @@
 .link:hover {
   text-decoration: underline;
   text-decoration-color: var(--color-hover);
-  text-decoration-thickness: 0.125em;
+  text-decoration-thickness: 0.0625em;
   text-underline-offset: 1px;
   color: var(--color-hover);
 }
