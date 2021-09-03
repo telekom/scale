@@ -52,6 +52,7 @@
   color: var(--color-visited);
 }
 .link:hover {
+  text-decoration: underline;
   text-decoration-color: var(--color-hover);
   text-decoration-thickness: 0.125em;
   text-underline-offset: 1px;
@@ -63,13 +64,6 @@
 .link:focus:not(.link--disabled) {
   color: var(--color-hover);
   text-decoration-color: var(--color-hover);
-}
-
-.link--no-underline:hover {
-  text-decoration-color: var(--color-hover);
-  text-decoration: initial;
-  text-decoration-thickness: 0.125em;
-  text-underline-offset: 1px;
 }
 
 .link__wrapper {
