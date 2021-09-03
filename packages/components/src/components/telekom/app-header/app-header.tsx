@@ -393,7 +393,7 @@ export class Header {
   getCssClassMap() {
     return classNames(
       'header',
-      this.scrolled && 'sticky',
+      this.scrolled && 'header--sticky',
       (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );
   }
