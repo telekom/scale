@@ -65,6 +65,13 @@
   text-decoration-color: var(--color-hover);
 }
 
+.link--no-underline:hover {
+  text-decoration-color: var(--color-hover);
+  text-decoration: initial;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1px;
+}
+
 .link__wrapper {
   display: inline-flex;
   align-items: center;

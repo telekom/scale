@@ -59,7 +59,8 @@ export class Link {
       'link',
       this.disabled && 'link--disabled',
       this.block && 'link--block',
-      !this.omitUnderline && 'link--underline'
+      !this.omitUnderline && 'link--underline',
+      this.omitUnderline && 'link--no-underline'
     );
   }
 }
