@@ -74,7 +74,7 @@ scale-app-header {
   border-bottom: 1px solid transparent;
 }
 .header.menu--open .header__nav,
-.header.sticky .header__nav {
+.header.header--sticky .header__nav {
   border-bottom: var(--border);
 }
 .header .header__nav-content {
@@ -88,8 +88,8 @@ scale-app-header {
   align-items: center;
   justify-content: space-between;
 }
-.header.sticky .header__nav-before,
-.header.sticky .header__nav-after,
+.header.header--sticky .header__nav-before,
+.header.header--sticky .header__nav-after,
 .header.menu--open .header__nav-before,
 .header.menu--open .header__nav-after {
   width: var(--header-border-radius);
@@ -101,14 +101,14 @@ scale-app-header {
   background-color: transparent;
 }
 .header.menu--open .header__nav-before,
-.header.sticky .header__nav-before {
+.header.header--sticky .header__nav-before {
   left: -1px;
   z-index: 97;
   border-left: var(--border);
   border-top-left-radius: var(--header-border-radius);
 }
 .header.menu--open .header__nav-after,
-.header.sticky .header__nav-after {
+.header.header--sticky .header__nav-after {
   right: -1px;
   z-index: 98;
   border-right: var(--border);
@@ -126,8 +126,8 @@ scale-app-header {
     height: var(--header-nav-height);
   }
   .header.menu--open .header__nav-before,
-  .header.sticky .header__nav-before,
-  .header.sticky .header__nav-after,
+  .header.header--sticky .header__nav-before,
+  .header.header--sticky .header__nav-after,
   .header.menu--open .header__nav-after {
     top: 51px;
   }
@@ -246,7 +246,7 @@ scale-app-header {
     margin-right: var(--scl-spacing-16);
     pointer-events: none;
   }
-  .header.sticky .header__nav-logo {
+  .header.header--sticky .header__nav-logo {
     pointer-events: all;
     margin-right: var(--scl-spacing-32);
   }
@@ -283,21 +283,21 @@ scale-app-header {
     margin: 0 0 0 14px;
   }
 
-  .header.sticky {
+  .header.header--sticky {
     --header-brand-height: 4px;
   }
-  .header.sticky .header__nav-logo {
+  .header.header--sticky .header__nav-logo {
     opacity: 1;
     transition: opacity var(--header-transition-speed) ease-in-out;
   }
-  .header.sticky .header__brand-content {
+  .header.header--sticky .header__brand-content {
     top: 56px;
     opacity: 0;
     transition: opacity var(--header-transition-speed) ease-in-out,
       top var(--header-transition-speed) ease-in-out;
   }
   .header *[slot='menu-main'],
-  .header.sticky .main-navigation {
+  .header.header--sticky .main-navigation {
     transition: margin-left var(--header-transition-speed) ease-in-out;
     margin-left: 0;
   }
