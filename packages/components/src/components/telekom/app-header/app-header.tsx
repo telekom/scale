@@ -245,7 +245,7 @@ export class Header {
               </scale-nav-icon>
             ))
         )}
-        {((!this.hasSlotMenuMain && readData(this.mainNavigation).length > 0) ||
+        {(readData(this.mainNavigation).length > 0 ||
           this.hasSlotMenuMobile) && (
           <scale-nav-icon
             isMobileMenuOpen={this.mobileMenu}
