@@ -19,6 +19,7 @@ import {
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 /**
  * @see https://github.com/GoogleChromeLabs/howto-components/blob/master/elements/howto-tabs/howto-tabs.js
@@ -107,6 +108,16 @@ export class TabNav {
       this.linkPanels();
       this.propagateSizeToTabs();
     });
+
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.el,
+      });
+    }
   }
 
   getAllTabs(): HTMLScaleTabHeaderElement[] {

@@ -95,7 +95,17 @@ export class Pagination {
     this.calculateWidth();
   }
   componentWillUpdate() {}
-  componentDidRender() {}
+  componentDidRender() {
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
   componentDidLoad() {}
   componentDidUpdate() {}
   disconnectedCallback() {}
