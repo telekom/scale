@@ -77,8 +77,8 @@
 .footer-mask {
   position: relative;
   z-index: 1;
-  height: var(--scl-spacing-8);
-  top: var(--scl-spacing-8);
+  height: var(--scl-radius-12);
+  top: var(--scl-radius-12);
   background: var(--background-mask);
   border-radius: var(--radius-mask);
 }
