@@ -19,6 +19,7 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 export interface StarInterface extends HTMLDivElement {
   dataset: {
@@ -68,13 +69,28 @@ export class RatingStars {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
-  connectedCallback() {
+  componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
-    if (this.host.hasAttribute('max-rating')) {
+    // and show status note deprecated
+    if (this.maxRating !== 5) {
       this.max = this.maxRating;
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "maxRating" is deprecated. Please use the "max" property!',
+        type: 'warn',
+        source: this.host,
+      });
     }
-    if (this.host.hasAttribute('star-size')) {
+    if (this.starSize !== 'large') {
       this.size = this.starSize;
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "starSize" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.host,
+      });
     }
   }
 
@@ -82,7 +98,8 @@ export class RatingStars {
   getRatingText() {
     const filledText = this.ariaLabelTranslation
       .replace(/\$rating/g, `${this.rating}`)
-      .replace(/\$maxRating/g, `${this.maxRating}`)
+      // TODO: remove when `maxRating` is also being removed
+      .replace(/\$maxRating/g, `${this.max}`)
       .replace(/\$max/g, `${this.max}`);
     return filledText;
   }
