@@ -11,14 +11,26 @@
 
 :host {
   --font-weight: var(--scl-font-weight-medium);
-  --color-underline: hsl(219, 100%, 87%);
-  --color: var(--scl-color-blue-60);
-  --color-visited: var(--scl-color-text-link-visited);
-  --color-hover: var(--scl-color-text-link-hover);
-  --color-active: var(--scl-color-text-link-active);
-  --color-disabled: var(--scl-color-grey-50);
-
   --spacing-x-icon: var(--scl-spacing-4);
+
+  /* standard */
+  --color: var(--scl-color-blue-60);
+  --color-underline: hsl(219, 100%, 87%);
+  /* visited */
+  --color-visited: var(--scl-color-text-link-visited);
+  --color-underline-visited: var(--scl-color-text-link-visited);
+  /* hover */
+  --color-hover: var(--scl-color-blue-70);
+  --color-underline-hover: var(--scl-color-blue-70);
+  /* focus */
+  --color-focus: var(--scl-color-blue-70);
+  --color-underline-focus: var(--scl-color-blue-70);
+  /* active */
+  --color-active: var(--scl-color-blue-60);
+  --color-underline-active: var(--scl-color-blue-60);
+  /* disabled */
+  --color-disabled: var(--scl-color-grey-50);
+  --color-underline-disabled: var(--scl-color-grey-50);
 }
 
 .link {
@@ -42,22 +54,24 @@
 
 .link:hover {
   color: var(--color-hover);
-  text-decoration-color: var(--color-hover);
+  text-decoration-color: var(--color-underline-hover);
 }
 
 .link:active {
   color: var(--color-active);
+  text-decoration-color: var(--color-underline-active);
 }
 
 .link:focus:not(.link--disabled) {
-  color: var(--color-hover);
-  text-decoration-color: var(--color-hover);
+  color: var(--color-focus);
+  text-decoration-color: var(--color-underline-focus);
+  text-decoration-thickness: 2px;
 }
 
 /* disabled */
 
 .link--disabled.link--underline {
-  text-decoration-color: var(--color-disabled);
+  text-decoration-color: var(--color-underline-disabled);
   text-decoration-thickness: 0.0625em;
   text-underline-offset: 3px;
 }
@@ -94,4 +108,9 @@
 
 .link--block {
   display: block;
+}
+
+/* slot */
+.link__wrapper > slot[name='icon']::slotted(*) {
+  margin-inline-start: var(--spacing-x-icon);
 }
