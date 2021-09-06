@@ -16,7 +16,7 @@
   --padding-bottom-error-helper-text: var(--scl-spacing-8);
   --margin-top-error-helper-text: var(--scl-spacing-4);
   --font-weight-error-helper-text: var(--scl-font-weight-medium);
-  --color-error-helper-text-hcm: var(--scl-color-white)
+  --color-error-helper-text-hcm: var(--scl-color-white);
 
   /*title*/
   --font-size-title: var(--font-size-label);
