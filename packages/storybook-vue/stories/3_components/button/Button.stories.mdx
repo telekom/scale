@@ -32,7 +32,6 @@ export const Template = (args, { argTypes }) => ({
         ...ScaleButton.props
     },
     template: `
-    <!--  <div class="test" style="display:flex; justify-content:center;align-items:center;height:50px;width:100%"> -->
     <scale-button
       :title="title"
       :disabled="disabled"
@@ -54,7 +53,6 @@ export const Template = (args, { argTypes }) => ({
       <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
-    <!-- <div> -->
   `
 })
 
