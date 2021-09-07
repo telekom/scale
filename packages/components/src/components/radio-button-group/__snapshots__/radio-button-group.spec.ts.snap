@@ -5,14 +5,14 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
-        <div aria-label="Radio Button Label Error message" class="radio-button-group__label" tabindex="0">
-          <legend class="radio-button-group__title">
+        <legend class="radio-button-group__title">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
             Radio Button Label
-          </legend>
-          <div class="radio-button-group__helper-text">
+          </label>
+          <div aria-label="Error message" class="radio-button-group__helper-text" role="text" tabindex="0">
             Error message
           </div>
-        </div>
+        </legend>
         <div class="radio-button-group__container">
           <slot></slot>
         </div>
@@ -34,11 +34,11 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
-        <div aria-label="Radio Button Label" class="radio-button-group__label" tabindex="0">
-          <legend class="radio-button-group__title">
+        <legend class="radio-button-group__title">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
             Radio Button Label
-          </legend>
-        </div>
+          </label>
+        </legend>
         <div class="radio-button-group__container">
           <slot></slot>
         </div>
@@ -60,11 +60,11 @@ exports[`RadioButtonGroup should match standard snapshot 1`] = `
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
-        <div aria-label="Radio Button Label" class="radio-button-group__label" tabindex="0">
-          <legend class="radio-button-group__title">
+        <legend class="radio-button-group__title">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
             Radio Button Label
-          </legend>
-        </div>
+          </label>
+        </legend>
         <div class="radio-button-group__container">
           <slot></slot>
         </div>
