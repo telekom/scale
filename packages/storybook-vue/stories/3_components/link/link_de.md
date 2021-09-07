@@ -33,6 +33,10 @@ Ein Icon kennzeichnet, ob ein Link zu einer externen Webseite, einem Dokument od
 
 ![Image Name](assets/3_components/link/link_icon.png)
 
+### Link ohne Unterstreichung
+
+Wirken die Unterstreichungen im Layout störend, setze den Link ohne Unterstreichung ein. Dies kann zum Beispiel innerhalb von Formularen der Fall sein.
+
 ## Best Practices
 
 - Jeder Text-Link muss einzigartig sein, um Probleme mit Screen Readern zu vermeiden.
