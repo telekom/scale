@@ -62,6 +62,9 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   duet-date-picker .duet-date__header .duet-date__nav svg {
     color: var(--scl-color-white);
   }
+  duet-date-picker .duet-date__day[aria-pressed=true] {
+    border: 1px solid transparent;
+  }
 }
 
 .scale-date-picker {
