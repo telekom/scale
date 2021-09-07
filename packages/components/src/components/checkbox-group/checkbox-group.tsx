@@ -173,14 +173,16 @@ export class CheckboxGroup {
   render() {
     return (
       <Host>
-        <div class="checkbox-group">
-          <div class="checkbox-group__label">
-            <slot />
+        <fieldset class="fieldset-wrapper">
+          <div class="checkbox-group">
+            <legend class="checkbox-group__label">
+              <slot />
+            </legend>
+            <div class="checkbox-group__container">
+              <slot name="group-item" />
+            </div>
           </div>
-          <div class="checkbox-group__container">
-            <slot name="group-item" />
-          </div>
-        </div>
+        </fieldset>
       </Host>
     );
   }
