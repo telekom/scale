@@ -95,7 +95,18 @@ export class Pagination {
     this.calculateWidth();
   }
   componentWillUpdate() {}
-  componentDidRender() {}
+  componentDidRender() {
+    if (this.hideBorders !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "hideBorders" is deprecated. Please use the "hideBorder" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
+
   componentDidLoad() {}
   componentDidUpdate() {}
   disconnectedCallback() {}
