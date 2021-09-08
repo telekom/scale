@@ -11,6 +11,7 @@
 | ---------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------------- |
 | `ariaLabelTranslation` | `aria-label-translation` | a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties. | `string`             | `'$rating out of $maxRating stars'` |
 | `disabled`             | `disabled`               | disables input                                                                                                                                    | `boolean`            | `false`                             |
+| `infoText`             | `info-text`              | (optional) info text                                                                                                                              | `string`             | `undefined`                         |
 | `label`                | `label`                  | (optional) rating label                                                                                                                           | `string`             | `undefined`                         |
 | `maxRating`            | `max-rating`             | The upper limit of the rating                                                                                                                     | `number`             | `5`                                 |
 | `minRating`            | `min-rating`             | The lower limit of the rating. In cases where                                                                                                     | `number`             | `0`                                 |
@@ -32,6 +33,8 @@
 | Part                 | Description |
 | -------------------- | ----------- |
 | `"container"`        |             |
+| `"content"`          |             |
+| `"infotext"`         |             |
 | `"label"`            |             |
 | `"placeholder-star"` |             |
 | `"range-slider"`     |             |

@@ -8,6 +8,7 @@
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
     :readonly="readonly"
+    :info-text="infoText"
     @scaleChange="scaleChange"
   >
   </scale-rating-stars>
@@ -23,6 +24,7 @@ export default {
     disabled: { type: Boolean, default: false },
     ariaLabelTranslation: { type: String },
     label: { type: String },
+    infoText: { type: String },
     readonly: { type: Boolean, default: false },
   },
   methods: {

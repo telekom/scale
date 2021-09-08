@@ -58,6 +58,8 @@ export class RatingStars {
   @Prop() ariaLabelTranslation = '$rating out of $maxRating stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label?: string;
+  /** (optional) info text */
+  @Prop() infoText?: string;
 
   /** Emitted when the rating has changed */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
@@ -155,37 +157,40 @@ export class RatingStars {
               id={`${this.ratingStarId}-label`}
               part="label"
               htmlFor={this.ratingStarId}
+              style={{ fontSize: '16px' }}
             >
               {this.label}
             </label>
           )}
-
-          <div
-            part="wrapper"
-            tabIndex={this.readonly ? 0 : -1}
-            role="figure"
-            aria-labeledby={`${this.ratingStarId}-label`}
-            aria-valuetext={this.getRatingText()}
-            aria-orientation="horizontal"
-          >
-            <input
-              disabled={this.disabled}
-              readonly={this.readonly}
-              part="range-slider"
-              type="range"
-              id={this.ratingStarId}
-              min={0}
-              max={this.maxRating + 1}
-              value={this.rating}
-              step="1"
-              aria-orientation="horizontal"
-              aria-valuemin={this.minRating}
-              aria-valuemax={this.maxRating}
-              aria-valuenow={this.rating}
+            <div part="content">
+            <div
+              part="wrapper"
+              tabIndex={this.readonly ? 0 : -1}
+              role="figure"
+              aria-labeledby={`${this.ratingStarId}-label`}
               aria-valuetext={this.getRatingText()}
-              onInput={!this.readonly && this.handleInput}
-            />
-            {this.renderRating()}
+              aria-orientation="horizontal"
+            >
+              <input
+                disabled={this.disabled}
+                readonly={this.readonly}
+                part="range-slider"
+                type="range"
+                id={this.ratingStarId}
+                min={0}
+                max={this.maxRating + 1}
+                value={this.rating}
+                step="1"
+                aria-orientation="horizontal"
+                aria-valuemin={this.minRating}
+                aria-valuemax={this.maxRating}
+                aria-valuenow={this.rating}
+                aria-valuetext={this.getRatingText()}
+                onInput={!this.readonly && this.handleInput}
+              />
+              {this.renderRating()}
+            </div>
+            {this.infoText && <div part="infotext">{this.infoText}</div>}
           </div>
         </div>
       </Host>
