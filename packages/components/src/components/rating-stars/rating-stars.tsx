@@ -18,6 +18,7 @@ import {
   Event,
   EventEmitter,
 } from '@stencil/core';
+import { emitEvent } from '../../utils/utils';
 
 export interface StarInterface extends HTMLDivElement {
   dataset: {
@@ -59,7 +60,9 @@ export class RatingStars {
   @Prop({ reflect: true }) label?: string;
 
   /** Emitted when the rating has changed */
-  @Event() scaleChange: EventEmitter;
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   // constructs the aria message for the current rating
   getRatingText() {
@@ -85,7 +88,7 @@ export class RatingStars {
 
     this.rating = Number(input.value);
 
-    this.scaleChange.emit({ value: this.rating });
+    emitEvent(this, 'scaleChange', { value: this.rating });
   };
 
   handleStarClick = (ev: MouseEvent) => {
@@ -101,7 +104,7 @@ export class RatingStars {
     } else {
       this.rating = starValue;
     }
-    this.scaleChange.emit({ value: this.rating });
+    emitEvent(this, 'scaleChange', { value: this.rating });
   };
 
   renderStar(index: number, selected = false, rating: number) {

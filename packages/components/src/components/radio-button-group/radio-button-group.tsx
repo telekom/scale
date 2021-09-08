@@ -14,6 +14,8 @@ export class RadioButtonGroup {
   @Prop() status?: string = '';
 
   render() {
+    const ariaLabel = this.label + ' ' + this.helperText;
+
     return (
       <form>
         <fieldset class="radio-button-group">

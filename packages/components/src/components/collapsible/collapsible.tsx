@@ -19,6 +19,7 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 export interface CollapsibleEventDetail {
   expanded: boolean;
@@ -46,7 +47,11 @@ export class Collapsible {
   @Prop() styles?: string;
 
   /** Emitted so parent <scale-accordion> knows about it */
-  @Event() scaleExpand: EventEmitter<CollapsibleEventDetail>;
+  @Event({ eventName: 'scale-expand' })
+  scaleExpand: EventEmitter<CollapsibleEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleExpand' })
+  scaleExpandLegacy: EventEmitter<CollapsibleEventDetail>;
 
   componentWillLoad() {
     const j = i++;
@@ -60,7 +65,7 @@ export class Collapsible {
 
   handleClick = () => {
     this.expanded = !this.expanded;
-    this.scaleExpand.emit({ expanded: this.expanded });
+    emitEvent(this, 'scaleExpand', { expanded: this.expanded });
   };
 
   /**
@@ -68,9 +73,8 @@ export class Collapsible {
    * @see https://github.com/telekom/scale/pull/319
    */
   setHeadingFromLightDOM() {
-    const lightHeading: HTMLElement = this.hostElement.querySelector(
-      ':first-child'
-    );
+    const lightHeading: HTMLElement =
+      this.hostElement.querySelector(':first-child');
     if (lightHeading == null) {
       return;
     }

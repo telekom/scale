@@ -33,7 +33,7 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
 <scale-radio-button-group label="Radio Button Label">
   <mock:shadow-root>
     <form>
-      <fieldset class="radio-button-group">
+      <fieldset class="radio-button-group"
         <legend class="radio-button-group__title">
           <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
             Radio Button Label

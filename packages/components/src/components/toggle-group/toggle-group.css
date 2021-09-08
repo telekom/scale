@@ -1,7 +1,7 @@
 :host {
   --border-color: var(--scl-color-grey-90);
   --border: var(--scl-spacing-1) solid var(--border-color);
-  --radius: var(--scl-radius-8);
+  --radius: var(--scl-radius-4);
 }
 
 .toggle-group--border {

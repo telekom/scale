@@ -3909,20 +3909,20 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stencil/angular-output-target@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@stencil/angular-output-target/-/angular-output-target-0.0.5.tgz"
-  integrity sha512-00iVf0pMH5NrVc/dUDy6AOEYEwTZ816bXggzNf4gxbhLpX1RAsC+MjC0gs/sJS2gal4gpE4cTVlPCGNy+mtFXg==
+"@stencil/angular-output-target@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@stencil/angular-output-target/-/angular-output-target-0.0.7.tgz#48a115cc5e0764a8481d9feb6e3e73f0e2ee77ff"
+  integrity sha512-GM+Sx0KL1cuQ4ysf20iojKBw/Yvuyx3mFWBaqSb3lDxfg4Kg5OHADoaN6L4rMZu3P3G3e2HT5Ut35BuFKIyT+Q==
 
 "@stencil/core@^2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.3.0.tgz"
   integrity sha512-VZ/Ox0E1kngcmHbJhHUufuLELi+xG3of3LuRI3X2AMWyE82JUVYlOEsQci/YBZWpfc9BS9I36R88prBew22oew==
 
-"@stencil/core@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.6.0.tgz#29da96d8b6fc83e689b9f297ef3e8b59b90a676a"
-  integrity sha512-QsxWayZyusnqSZrlCl81R71rA3KqFjVVQSH4E0rGN15F1GdQaFonKlHLyCOLKLig1zzC+DQkLLiUuocexuvdeQ==
+"@stencil/core@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.7.1.tgz#1bffff72dbe762d27b477da4ea06c647e84472fa"
+  integrity sha512-kpeqCyfoWyqyiqn32xQGx5bpVwH1UtcZEpYPx42MpoxHZNlpmjV+852/PGFFWsMTqrLiP8Z1NU5rT7yXUCsG6Q==
 
 "@stencil/postcss@^2.0.0":
   version "2.0.0"

@@ -23,6 +23,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 // [ ] Add keyboard controls
 // [ ] Hover to open ?
@@ -66,17 +67,31 @@ export class MenuFlyout {
 
   /* 4. Events (alphabetical) */
   /** Event triggered when menu list opened */
-  @Event() scaleOpen: EventEmitter<{
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
+    id: number;
+    cascadeLevel: number;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{
     id: number;
     cascadeLevel: number;
   }>;
   /** Event triggered when menu list closed */
-  @Event() scaleClose: EventEmitter<{
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{
+    id: number;
+    cascadeLevel: number;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{
     id: number;
     cascadeLevel: number;
   }>;
   /** Event triggered when nested menu item selected */
-  @Event() scaleSelect: EventEmitter<{
+  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
+    item: HTMLElement;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
     item: HTMLElement;
   }>;
 
@@ -197,7 +212,7 @@ export class MenuFlyout {
   }
 
   // Listen for cascaded menu closes to also close
-  @Listen('scaleClose')
+  @Listen('scale-close')
   childClosedHandler({ detail }) {
     // Ignore events from self
     if (detail.id === this.id) {
@@ -208,7 +223,7 @@ export class MenuFlyout {
   }
 
   // Listen for cascaded menu closes to also close
-  @Listen('scaleOpen', { target: 'body' })
+  @Listen('scale-open', { target: 'body' })
   relativeOpenHandler({ detail }) {
     // Ignore events from self
     if (detail.id === this.id) {
@@ -397,9 +412,9 @@ export class MenuFlyout {
   emitOpenState() {
     const { id, cascadeLevel } = this;
     if (this.open) {
-      this.scaleOpen.emit({ id, cascadeLevel });
+      emitEvent(this, 'scaleOpen', { id, cascadeLevel });
     } else {
-      this.scaleClose.emit({ id, cascadeLevel });
+      emitEvent(this, 'scaleClose', { id, cascadeLevel });
     }
   }
 
@@ -431,7 +446,7 @@ export class MenuFlyout {
     // Make sure isn't disabled or a cascading menu
     if (item && !item.disabled && !item.cascade) {
       // Send event in case developer listening on the menu and not items individually
-      this.scaleSelect.emit({ item });
+      emitEvent(this, 'scaleSelect', { item });
       if (this.closeOnSelect) {
         this.toggleOpenState();
       }
@@ -440,20 +455,20 @@ export class MenuFlyout {
     event.stopPropagation();
   }
 
-  handleKeyDown(e: KeyboardEvent) {
-    const { key } = e;
-    // console.log(key);
-
-    // When up/down is pressed, we make the assumption that the user is familiar with the menu and plans to make a
-    // selection. Rather than toggle the panel, we focus on the menu (if one exists) and activate the first item for
-    // faster navigation.
-    if (['ArrowDown', 'ArrowUp'].includes(key)) {
-      e.preventDefault();
-
-      // Show the menu if it's not already open
-      if (!this.open) {
-        this.toggleOpenState();
-      }
+  handleKeyDown(event) {
+    if (
+      event.key === 'Enter' &&
+      !this.open &&
+      event.target.tagName === 'SCALE-MENU-FLYOUT-ITEM'
+    ) {
+      this.toggleOpenState();
+    }
+    if (
+      event.key === 'Escape' &&
+      this.open &&
+      event.target.tagName === 'SCALE-MENU-FLYOUT-ITEM'
+    ) {
+      this.toggleOpenState();
     }
   }
 

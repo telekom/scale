@@ -21,12 +21,14 @@ export const HTMLCell: Cell = {
     return rows[0][columnIndex];
   },
   render: ({ content, component }) => {
-    /* TODO: use scale button */
     return (
       <scale-button
         variant="secondary"
         size="small"
         icon-only
+        aria-label={`Activate to ${
+          content.isExpanded ? 'collapse' : 'expand'
+        } content`}
         onClick={() => {
           content.isExpanded = !content.isExpanded;
           component.forceRender++;

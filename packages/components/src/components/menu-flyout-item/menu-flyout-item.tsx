@@ -97,8 +97,9 @@ export class MenuFlyoutItem {
           class={this.getCssClassMap()}
           ref={(el) => (this.menuItem = el)}
           part="base"
-          role="menuitem"
-          tabindex="-1"
+          role={this.cascade ? 'button' : 'menuitem'}
+          aria-haspopup={this.cascade ? 'true' : 'false'}
+          tabindex={this.disabled ? '-1' : '0'}
           aria-disabled={this.disabled ? 'true' : 'false'}
           onFocus={() => (this.hasFocus = true)}
           onBlur={() => (this.hasFocus = false)}

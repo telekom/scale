@@ -44,7 +44,7 @@ export class ToggleGroup {
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
   /** (optional) Button Group variant */
-  @Prop() variant?: 'primary' | 'secondary' = 'primary';
+  @Prop() variant?: 'grey-background' | 'white-background' = 'grey-background';
   /** (optional) inline or block element */
   @Prop() boxType?: 'inline' | 'block' = 'inline';
   /** (optional) If `true`, the button is disabled */
@@ -52,7 +52,7 @@ export class ToggleGroup {
   /** (optional) If `true`, the group has a border */
   @Prop() border?: boolean = false;
   /** (optional) more than one button selected possible */
-  @Prop() multi: boolean = true;
+  @Prop() singleSelect: boolean = false;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
@@ -64,11 +64,7 @@ export class ToggleGroup {
   @Listen('scaleClick')
   scaleClickHandler(ev) {
     let tempState: ButtonStatus[];
-    if (this.multi) {
-      tempState = this.status.map((obj) =>
-        ev.detail.id === obj.id ? ev.detail : { ...obj }
-      );
-    } else {
+    if (this.singleSelect) {
       if (!ev.detail.selected) {
         tempState = this.status.map((obj) =>
           ev.detail.id === obj.id ? ev.detail : { ...obj }
@@ -79,6 +75,10 @@ export class ToggleGroup {
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
+    } else {
+      tempState = this.status.map((obj) =>
+        ev.detail.id === obj.id ? ev.detail : { ...obj }
+      );
     }
     this.setNewState(tempState);
   }

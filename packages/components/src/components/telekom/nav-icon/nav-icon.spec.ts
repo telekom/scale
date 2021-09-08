@@ -27,6 +27,7 @@ describe('nav-icon', () => {
       components: [NavIcon],
       html: `<scale-nav-icon
                 is-active="true"
+                active="true"
                 href="href"
                 click-link="true"
                 icon="icon"
@@ -34,7 +35,9 @@ describe('nav-icon', () => {
                 ref-mobile-menu-toggle="">
               </scale-nav-icon>`,
     });
+    // DEPRECATED - active should replace isActive
     expect(specPage.rootInstance.isActive).toBe(true);
+    expect(specPage.rootInstance.active).toBe(true);
     expect(specPage.rootInstance.href).toBe('href');
     expect(specPage.rootInstance.clickLink).toBe('true');
     expect(specPage.rootInstance.icon).toBe('icon');

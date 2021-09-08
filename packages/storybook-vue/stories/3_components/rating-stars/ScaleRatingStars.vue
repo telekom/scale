@@ -8,6 +8,7 @@
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
     :readonly="readonly"
+    @scaleChange="scaleChange"
   >
   </scale-rating-stars>
 </template>
@@ -24,5 +25,15 @@ export default {
     label: { type: String },
     readonly: { type: Boolean, default: false },
   },
+  methods: {
+    scaleChange($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
+    },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
+  }
 };
 </script>

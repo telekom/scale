@@ -67,7 +67,7 @@ exports[`Toggle Button snapshots iconOnly 1`] = `
       <slot></slot>
     </button>
   </mock:shadow-root>
-  <scale-icon-action-search size="24"></scale-icon-action-search>
+  <scale-icon-action-search selected="true" size="24"></scale-icon-action-search>
 </scale-toggle-button>
 `;
 
