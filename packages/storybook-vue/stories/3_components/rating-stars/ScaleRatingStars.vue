@@ -11,6 +11,7 @@
     :label="label"
     :readonly="readonly"
     :info-text="infoText"
+    :hide-label="hideLabel"
     @scaleChange="scaleChange"
   >
   </scale-rating-stars>
@@ -27,8 +28,9 @@ export default {
     size: { type: String, default: 'large' },
     disabled: { type: Boolean, default: false },
     ariaLabelTranslation: { type: String },
-    label: { type: String },
+    label: { type: String, default: 'Rating' },
     infoText: { type: String },
+    hideLabel: { type: Boolean, default: false },
     readonly: { type: Boolean, default: false },
   },
   methods: {

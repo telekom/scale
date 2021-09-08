@@ -62,7 +62,9 @@ export class RatingStars {
   /** a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties.  */
   @Prop() ariaLabelTranslation = '$rating out of $max stars';
   /** (optional) rating label */
-  @Prop({ reflect: true }) label?: string;
+  @Prop({ reflect: true }) label = 'Rating';
+  /** (optional) info text */
+  @Prop() hideLabel = false;
   /** (optional) info text */
   @Prop() infoText?: string;
 
@@ -184,7 +186,16 @@ export class RatingStars {
     return (
       <Host>
         <div part="container">
-          {this.label && (
+          {this.hideLabel ? (
+            <label
+              id={`${this.ratingStarId}-label`}
+              part="label"
+              htmlFor={this.ratingStarId}
+              style={{ fontSize: '16px', visibility: 'hidden', height: '0' }}
+            >
+              {this.label}
+            </label>
+          ) : (
             <label
               id={`${this.ratingStarId}-label`}
               part="label"
@@ -194,12 +205,13 @@ export class RatingStars {
               {this.label}
             </label>
           )}
-            <div part="content">
+          <div part="content">
             <div
               part="wrapper"
               tabIndex={this.readonly ? 0 : -1}
               role="figure"
               aria-labeledby={`${this.ratingStarId}-label`}
+              aria-describedby={`${this.ratingStarId}-infotext`}
               aria-valuetext={this.getRatingText()}
               aria-orientation="horizontal"
             >
@@ -222,7 +234,11 @@ export class RatingStars {
               />
               {this.renderRating()}
             </div>
-            {this.infoText && <div part="infotext">{this.infoText}</div>}
+            {this.infoText && (
+              <div part="infotext" id={`${this.ratingStarId}-infotext`}>
+                {this.infoText}
+              </div>
+            )}
           </div>
         </div>
       </Host>
