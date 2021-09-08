@@ -41,7 +41,6 @@
   margin: 0;
   left: calc(-1 * var(--stars-size));
   bottom: 0;
-  transform: ;
   z-index: 2;
   width: calc(100% + var(--stars-size) * 2);
   opacity: 0;
@@ -213,4 +212,19 @@ input[type='range']::-webkit-slider-thumb {
   --stars-placeholder-color: var(--stars-disabled-color);
 
   pointer-events: none;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='star'] [part='placeholder-star'] {
+    color: var(--scl-color-white);
+  }
+  [part='star'][data-selected] [part='placeholder-star'] {
+    color: var(--stars-inactive-color);
+  }
+  [part='star']:hover ~ [part='star'] [part='placeholder-star'] {
+    color: var(--scl-color-white);
+  }
+  [part='wrapper']:hover [part='placeholder-star'] {
+    color: var(--stars-inactive-color);
+  }
 }
