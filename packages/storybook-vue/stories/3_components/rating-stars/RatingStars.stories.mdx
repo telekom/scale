@@ -106,9 +106,6 @@ import ScaleRatingStars from "./ScaleRatingStars.vue";
     infoText: {
       table: {
         type: { summary: 'string' },
-        defaultValue: {
-          summary: 'this is an info text',
-        },
       },
       description: `(optional) info text`,
       control: { type: 'text' },
@@ -151,7 +148,7 @@ export const Template = (args, { argTypes }) => ({
     name="Info Text and custom Label"
     args={{
       rating: 3,
-      infoText: "this is a info text",
+      infoText: "Info Text",
       label: "Custom Rating Label",
     }}
   >
