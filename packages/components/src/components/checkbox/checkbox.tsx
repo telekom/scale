@@ -34,7 +34,7 @@ export class Checkbox {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input ariaLabel */
-  @Prop() voiceLabel: string = '';
+  @Prop() labeloutput: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** (optional) Input status */
@@ -95,7 +95,9 @@ export class Checkbox {
             </div>
             <span
               class="checkbox__label"
-              aria-label={this.voiceLabel ? this.voiceLabel : this.voiceLabel}
+              aria-label={
+                this.labeloutput ? this.labeloutput : this.labeloutput
+              }
             >
               {this.label ? this.label : <slot></slot>}
             </span>

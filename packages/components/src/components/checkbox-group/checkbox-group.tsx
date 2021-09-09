@@ -29,8 +29,8 @@ export class CheckboxGroup {
   initialLoad: boolean = true;
 
   @Element() hostElement: HTMLElement;
-  @Prop() unselectMessage: String = '';
-  @Prop() selectMessage: String = '';
+  @Prop() unselect: String = 'unselect all';
+  @Prop() select: String = 'select all';
 
   @State() groupStatus: CheckboxState[] = [];
   @State() groupLabel: String = '';
@@ -168,9 +168,9 @@ export class CheckboxGroup {
     const label = this.groupLabel;
 
     if (checkboxes[0].checked) {
-      checkboxes[0].setAttribute('voice', label + ' ' + this.unselectMessage);
+      checkboxes[0].setAttribute('labeloutput', label + ' ' + this.unselect);
     } else if (!checkboxes[0].checked) {
-      checkboxes[0].setAttribute('voice', label + ' ' + this.selectMessage);
+      checkboxes[0].setAttribute('labeloutput', label + ' ' + this.select);
     }
   }
 
@@ -186,9 +186,7 @@ export class CheckboxGroup {
       };
     }
     this.groupStatus = changedState;
-    if (this.selectMessage !== '' && this.unselectMessage !== '') {
-      this.setGroupAriaLabel();
-    }
+    this.setGroupAriaLabel();
   }
 
   getCheckboxes() {

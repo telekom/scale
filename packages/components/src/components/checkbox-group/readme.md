@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property          | Attribute | Description | Type     | Default          |
-| ----------------- | --------- | ----------- | -------- | ---------------- |
-| `selectMessage`   | --        |             | `String` | `'select all'`   |
-| `unselectMessage` | --        |             | `String` | `'unselect all'` |
+| Property   | Attribute | Description | Type     | Default          |
+| ---------- | --------- | ----------- | -------- | ---------------- |
+| `select`   | --        |             | `String` | `'select all'`   |
+| `unselect` | --        |             | `String` | `'unselect all'` |
 
 
 ----------------------------------------------
