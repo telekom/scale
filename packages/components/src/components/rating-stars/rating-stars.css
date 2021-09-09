@@ -22,6 +22,7 @@
   --stars-size: 24px;
   --font-weight-medium: var(--scl-font-weight-medium);
   --font-size-small: var(--scl-font-size-12);
+  --infotext-color: var(--scl-color-text-additional);
 }
 
 :host([star-size='small']) {
@@ -100,6 +101,7 @@ input[type='range']::-webkit-slider-thumb {
   display: flex;
   align-items: center;
   font-weight: var(--font-weight-medium);
+  color: var(--infotext-color);
 }
 
 [part='star'] {

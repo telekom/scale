@@ -96,6 +96,8 @@ export class RatingStars {
         source: this.host,
       });
     }
+    // deactivate showing half stars while keeping the code
+    this.rating = Math.round(this.rating);
   }
 
   // constructs the aria message for the current rating

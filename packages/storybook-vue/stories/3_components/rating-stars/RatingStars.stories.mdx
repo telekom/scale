@@ -142,33 +142,6 @@ export const Template = (args, { argTypes }) => ({
     `,
 });
 
-export const TemplateSpacing = (args, { argTypes }) => ({
-  components: { ScaleRatingStars },
-  props: {
-    label: String,
-    ...ScaleRatingStars.props,
-  },
-  template: `
-  <scale-rating-stars
-    :max-rating="maxRating"
-    :max="max"
-    :min-rating="minRating"
-    :rating="rating"
-    :star-size="starSize"
-    :size="size"
-    :disabled="disabled"
-    :aria-label-translation="ariaLabelTranslation"
-    :label="label"
-    :readonly="readonly"
-    :info-text="infoText"
-    :hide-label="hideLabel"
-    style="--stars-spacing: 1rem"
-    custom-styles
-  >
-  </scale-rating-stars>
-    `,
-});
-
 # Rating Stars
 
 ## Standard
@@ -227,33 +200,11 @@ export const TemplateSpacing = (args, { argTypes }) => ({
 <scale-rating-stars rating="2" disabled></scale-rating-stars>
 ```
 
-## Small
+## Small With Info Text
 
 <Canvas withSource="none">
   <Story
-    name="Small"
-    args={{
-      rating: 4,
-      starSize: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<!-- 
-  deprecated:
-  <scale-rating-stars rating="4" star-size="small"></scale-rating-stars>
--->
-<scale-rating-stars rating="4" size="small"></scale-rating-stars>
-```
-
-## Info Text Small
-
-<Canvas withSource="none">
-  <Story
-    name="Info Text Small"
+    name="Small With Info Text"
     args={{
       rating: 4,
       starSize: 'small',
@@ -270,46 +221,6 @@ export const TemplateSpacing = (args, { argTypes }) => ({
   <scale-rating-stars rating="4" star-size="small" info-text="Info Text"></scale-rating-stars>
 -->
 <scale-rating-stars rating="4" size="small" info-text="Info Text"></scale-rating-stars>
-```
-
-## Number of Stars
-
-<Canvas withSource="none">
-  <Story
-    name="Number of Stars"
-    args={{
-      rating: 6,
-      maxRating: 10,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<!-- 
-  deprecated:
-  <scale-rating-stars rating="6" max-rating="10"></scale-rating-stars>
--->
-<scale-rating-stars rating="6" max="10"></scale-rating-stars>
-```
-
-## Spacing
-
-<Canvas withSource="none">
-  <Story
-    name="Spacing"
-    args={{
-      rating: 1,
-      style: "--stars-spacing: 1rem",
-    }}
-  >
-    {TemplateSpacing.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-rating-stars rating="1" style="--stars-spacing: 1rem" ></scale-rating-stars>
 ```
 
 ## Aria Label Translation
