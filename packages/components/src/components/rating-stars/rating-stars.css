@@ -102,6 +102,7 @@ input[type='range']::-webkit-slider-thumb {
   align-items: center;
   font-weight: var(--font-weight-medium);
   color: var(--infotext-color);
+  white-space: nowrap;
 }
 
 [part='star'] {
