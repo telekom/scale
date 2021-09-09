@@ -9,17 +9,6 @@
   --spacing-top-slotted-item: var(--scl-spacing-4);
 }
 
-.fieldset-wrapper {
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block-start: 0;
-  padding-block-end: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  border: none;
-  min-inline-size: min-content;
-}
-
 .checkbox-group {
   display: inline-flex;
   flex-direction: column;
