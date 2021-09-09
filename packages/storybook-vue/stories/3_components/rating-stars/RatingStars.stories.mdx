@@ -144,42 +144,25 @@ export const Template = (args, { argTypes }) => ({
 
 # Rating Stars
 
-## Standard
+## Standard with Info Text and custom Label
 
 <Canvas withSource="none">
   <Story
-    name="Standard"
+    name="Info Text and custom Label"
     args={{
+      rating: 3,
+      infoText: "this is a info text",
       label: "Custom Rating Label",
-      rating: 3,
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Standard" />
+<ArgsTable story="Info Text and custom Label" />
 
 ```html
-<scale-rating-stars rating="3" label="Custom Rating Label"></scale-rating-stars>
-```
-
-## Info Text
-
-<Canvas withSource="none">
-  <Story
-    name="Info Text"
-    args={{
-      rating: 3,
-      infoText: "Info Text"
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-rating-stars rating="3" info-text="Info Text"></scale-rating-stars>
+<scale-rating-stars rating="3" info-text="Info Text" label="Custom Rating Label"></scale-rating-stars>
 ```
 
 ## Disabled
