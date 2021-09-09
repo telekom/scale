@@ -29,8 +29,8 @@ export class CheckboxGroup {
   initialLoad: boolean = true;
 
   @Element() hostElement: HTMLElement;
-  @Prop() unselect: String = 'unselect all';
-  @Prop() select: String = 'select all';
+  @Prop() unselect: string = '';
+  @Prop() select: string = '';
 
   @State() groupStatus: CheckboxState[] = [];
   @State() groupLabel: String = '';
