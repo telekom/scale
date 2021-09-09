@@ -33,6 +33,8 @@ export class Checkbox {
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
+  /** (optional) Input ariaLabel */
+  @Prop() voiceLabel: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** (optional) Input status */
@@ -91,7 +93,10 @@ export class Checkbox {
                 <scale-icon-action-indeterminate class="checkbox__icon"></scale-icon-action-indeterminate>
               )}
             </div>
-            <span class="checkbox__label">
+            <span
+              class="checkbox__label"
+              aria-label={this.voiceLabel ? this.voiceLabel : this.voiceLabel}
+            >
               {this.label ? this.label : <slot></slot>}
             </span>
             {!!this.helperText && (

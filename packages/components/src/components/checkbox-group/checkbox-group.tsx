@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Listen, Element, State } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Listen,
+  Element,
+  State,
+  Prop,
+} from '@stencil/core';
 import { CheckboxState, objDiffer } from './utils/utils';
 
 @Component({
@@ -21,8 +29,11 @@ export class CheckboxGroup {
   initialLoad: boolean = true;
 
   @Element() hostElement: HTMLElement;
+  @Prop() unselectMessage: String = '';
+  @Prop() selectMessage: String = '';
 
   @State() groupStatus: CheckboxState[] = [];
+  @State() groupLabel: String = '';
 
   @Listen('scaleChange')
   scaleChangeHandler() {
@@ -44,6 +55,7 @@ export class CheckboxGroup {
         indeterminate: checkboxes[i].indeterminate,
       };
     }
+    this.groupLabel = checkboxes[0].label;
     this.distributeNewState(newState);
   }
 
@@ -128,7 +140,6 @@ export class CheckboxGroup {
       }
     }
     const checkboxes = this.getCheckboxes();
-
     // set master to checked
     if (checkedCounter + disabledCounter === newState.length - 1) {
       checkboxes[0].setAttribute('checked', 'true');
@@ -152,6 +163,17 @@ export class CheckboxGroup {
     }
   }
 
+  setGroupAriaLabel() {
+    const checkboxes = this.getCheckboxes();
+    const label = this.groupLabel;
+
+    if (checkboxes[0].checked) {
+      checkboxes[0].setAttribute('voice', label + ' ' + this.unselectMessage);
+    } else if (!checkboxes[0].checked) {
+      checkboxes[0].setAttribute('voice', label + ' ' + this.selectMessage);
+    }
+  }
+
   setGroupStatusState() {
     const checkboxes = Array.from(this.getCheckboxes());
     const changedState: CheckboxState[] = [];
@@ -164,6 +186,9 @@ export class CheckboxGroup {
       };
     }
     this.groupStatus = changedState;
+    if (this.selectMessage !== '' && this.unselectMessage !== '') {
+      this.setGroupAriaLabel();
+    }
   }
 
   getCheckboxes() {
