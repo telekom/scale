@@ -86,6 +86,15 @@ export class RatingStars {
         source: this.host,
       });
     }
+    if (this.minRating !== 0) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "minRating" is deprecated and will be deleted upon the next release',
+        type: 'warn',
+        source: this.host,
+      });
+    }
     if (this.starSize !== 'large') {
       this.size = this.starSize;
       statusNote({
@@ -224,12 +233,12 @@ export class RatingStars {
                 type="range"
                 id={this.ratingStarId}
                 min={0}
-                max={this.maxRating + 1}
+                max={this.max + 1}
                 value={this.rating}
                 step="1"
                 aria-orientation="horizontal"
                 aria-valuemin={this.minRating}
-                aria-valuemax={this.maxRating}
+                aria-valuemax={this.max}
                 aria-valuenow={this.rating}
                 aria-valuetext={this.getRatingText()}
                 onInput={!this.readonly && this.handleInput}
