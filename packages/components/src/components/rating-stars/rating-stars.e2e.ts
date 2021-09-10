@@ -18,7 +18,7 @@ describe('rating-stars', () => {
   beforeEach(async () => {
     page = await newE2EPage();
     await page.setContent(
-      `<scale-rating-stars precision="1"></scale-rating-stars>`
+      `<scale-rating-stars rating="3"></scale-rating-stars>`
     );
     component = await page.find('scale-rating-stars');
   });
@@ -28,99 +28,49 @@ describe('rating-stars', () => {
   });
 
   test('find div with class rating, which is not null', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
+    const container = await page.find(
+      'scale-rating-stars >>> [part="wrapper"]'
+    );
     expect(container).not.toBeNull();
   });
 
-  test('click star 3 will return a rating of 3', async () => {
-    const star = await page.find('scale-rating-stars >>> #star-3');
-    expect(await component.getProperty('value')).toEqual(0);
+  test('click star 3 will return a rating of 5', async () => {
+    const star = await page.find('scale-rating-stars >>> [data-value="5"]');
+    expect(await component.getProperty('rating')).toEqual(3);
     await star.click();
-    expect(await component.getProperty('value')).toEqual(3);
+    expect(await component.getProperty('rating')).toEqual(5);
   });
 
-  test('click star 3 will return a rating of 2.5 (precision="0.5")', async () => {
-    page = await newE2EPage();
-    await page.setContent(
-      `<scale-rating-stars precision="0.5"></scale-rating-stars>`
+  test('gets rating of 5 when navigating two to the right with ArrowRight', async () => {
+    const container = await page.find(
+      'scale-rating-stars >>> [part="range-slider"]'
     );
-    component = await page.find('scale-rating-stars');
+    await container.press('Tab');
+    expect(await component.getProperty('rating')).toEqual(3);
+    await container.press('ArrowRight');
+    expect(await component.getProperty('rating')).toEqual(4);
+    await container.press('ArrowRight');
+    expect(await component.getProperty('rating')).toEqual(5);
+  });
 
-    const star = await page.find('scale-rating-stars >>> #star-3');
-    expect(await component.getProperty('value')).toEqual(0);
+  test('clearing stars with two clicks', async () => {
+    const star = await page.find('scale-rating-stars >>> [data-value="1"]');
+    expect(await component.getProperty('rating')).toEqual(3);
     await star.click();
-    expect(await component.getProperty('value')).toEqual(2.5);
-  });
-
-  test('has no class rating-focus initially', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
-    expect(container).not.toHaveClass('rating-focus');
-  });
-
-  test('gets class rating-focus on press Tab and loses it on click', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
-    await container.press('Tab');
-    expect(container).toHaveClass('rating-focus');
-    await container.click();
-    expect(container).not.toHaveClass('rating-focus');
-  });
-
-  test('gets class rating-focus on press Tab and keeps it on press Tab', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
-    await container.press('Tab');
-    expect(container).toHaveClass('rating-focus');
-    await container.press('Tab');
-    expect(container).toHaveClass('rating-focus');
-  });
-
-  test('gets rating of 2 when navigating two to the right with ArrowRight', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
-    await container.press('Tab');
-    expect(container).toHaveClass('rating-focus');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    expect(await component.getProperty('value')).toEqual(2);
-  });
-
-  test('gets rating of 2 when navigating two to the right with ArrowRight (precision="0.5")', async () => {
-    page = await newE2EPage();
-    await page.setContent(
-      `<scale-rating-stars precision="0.5"></scale-rating-stars>`
-    );
-    component = await page.find('scale-rating-stars');
-    const container = await page.find('scale-rating-stars >>> .rating');
-    await container.press('Tab');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    expect(await component.getProperty('value')).toEqual(2);
-  });
-
-  test('gets rating of 4 when navigating to star-4 with ArrowRight and leaving with Tab', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
-    await container.press('Tab');
-    expect(container).toHaveClass('rating-focus');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    await container.press('ArrowRight');
-    await container.press('Tab');
-    expect(await component.getProperty('value')).toEqual(4);
+    expect(await component.getProperty('rating')).toEqual(1);
+    await star.click();
+    expect(await component.getProperty('rating')).toEqual(0);
   });
 
   test('gets rating of max when pressing End', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
+    const container = await page.find(
+      'scale-rating-stars >>> [part="range-slider"]'
+    );
+    expect(await component.getProperty('rating')).toEqual(3);
     await container.press('Tab');
     await container.press('End');
-    expect(await component.getProperty('value')).toEqual(5);
-  });
-
-  test('gets rating of 0 when pressing Home', async () => {
-    const container = await page.find('scale-rating-stars >>> .rating');
-    await container.press('Tab');
-    await container.press('End');
+    expect(await component.getProperty('rating')).toEqual(5);
     await container.press('Home');
-    expect(await component.getProperty('value')).toEqual(0);
+    expect(await component.getProperty('rating')).toEqual(0);
   });
 });

@@ -42,7 +42,7 @@ export class Checkbox {
   @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
-  /** (optional) Input label */
+  /** (optional) Input label output */
   @Prop() labeloutput: string = '';
   /** (optional) Hides the specified label visually */
   @Prop() hideLabel?: boolean = false;

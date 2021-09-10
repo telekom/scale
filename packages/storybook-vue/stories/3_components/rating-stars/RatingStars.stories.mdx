@@ -4,7 +4,106 @@ import ScaleRatingStars from "./ScaleRatingStars.vue";
 <Meta
   title="Beta Components/Rating Stars"
   component={ScaleRatingStars}
-  argTypes={{}}
+  argTypes={{
+    starSize: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'large' },
+      },
+      description: `(optional) Deprecated; size should be used instead of starSize`,
+      control: { type: 'select', options: ['large', 'small'] }
+    },
+    size: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: 'large',
+        },
+      },
+      description: `(optional) size of the stars. Overwritten by deprecated starSize`,
+      control: { type: 'select', options: ['large', 'small'] }
+    },
+    minRating: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 0,
+        },
+      },
+      description: `(optional) Deprecated; minimum rating value. Will be dropped on next release`,
+      control: { type: 'number' },
+    },
+    maxRating: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 5,
+        },
+      },
+      description: `(optional) Deprecated; max should be used instead of maxRating`,
+      control: { type: 'number' },
+    },
+    max: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 5,
+        },
+      },
+      description: `(optional) The upper limit of the rating. Overwritten by deprecated maxRating`,
+      control: { type: 'number' },
+    },
+    rating: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 0,
+        },
+      },
+      description: `(optional) Represents the current value of the rating`,
+      control: { type: 'number' },
+    },
+    readonly: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: {
+          summary: false,
+        },
+      },
+      description: `(optional) makes the rating non-interactive (but still accessible)`,
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: {
+          summary: false,
+        },
+      },
+      description: `(optional) disables input`,
+      control: { type: 'boolean' },
+    },
+    ariaLabelTranslation: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: '$rating out of $max stars',
+        },
+      },
+      description: `(optional) a11y text for getting meaningful value.`,
+      control: { type: 'text' },
+    },
+    label: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: 'rating label',
+        },
+      },
+      description: `(optional) rating label`,
+      control: { type: 'text' },
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -15,12 +114,42 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
   <scale-rating-stars
+    :max-rating="maxRating"
     :max="max"
-    :value="value"
-    :small="small"
+    :min-rating="minRating"
+    :rating="rating"
+    :star-size="starSize"
+    :size="size"
     :disabled="disabled"
     :aria-label-translation="ariaLabelTranslation"
     :label="label"
+    :readonly="readonly"
+    custom-styles
+  >
+  </scale-rating-stars>
+    `,
+});
+
+export const TemplateSpacing = (args, { argTypes }) => ({
+  components: { ScaleRatingStars },
+  props: {
+    label: String,
+    ...ScaleRatingStars.props,
+  },
+  template: `
+  <scale-rating-stars
+    :max-rating="maxRating"
+    :max="max"
+    :min-rating="minRating"
+    :rating="rating"
+    :star-size="starSize"
+    :size="size"
+    :disabled="disabled"
+    :aria-label-translation="ariaLabelTranslation"
+    :label="label"
+    :readonly="readonly"
+    custom-styles
+    style="--scl-stars-spacing: 1rem"
   >
   </scale-rating-stars>
     `,
@@ -35,7 +164,7 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: "Rating Label",
-      value: 3,
+      rating: 3,
     }}
   >
     {Template.bind({})}
@@ -45,7 +174,7 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-rating-stars value="3"></scale-rating-stars>
+<scale-rating-stars rating="3"></scale-rating-stars>
 ```
 
 ## Disabled
@@ -56,7 +185,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: "Rating Label",
       disabled: true,
-      value: 2,
+      rating: 2,
     }}
   >
     {Template.bind({})}
@@ -64,7 +193,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="2" disabled></scale-rating-stars>
+<scale-rating-stars rating="2" disabled></scale-rating-stars>
 ```
 
 ## Small
@@ -74,8 +203,8 @@ export const Template = (args, { argTypes }) => ({
     name="Small"
     args={{
       label: "Rating Label",
-      value: 4,
-      small: true,
+      rating: 4,
+      starSize: 'small',
     }}
   >
     {Template.bind({})}
@@ -83,7 +212,11 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="4" small></scale-rating-stars>
+<!-- 
+  deprecated:
+  <scale-rating-stars rating="4" star-size="small"></scale-rating-stars>
+-->
+<scale-rating-stars rating="4" size="small"></scale-rating-stars>
 ```
 
 ## Number of Stars
@@ -93,8 +226,8 @@ export const Template = (args, { argTypes }) => ({
     name="Number of Stars"
     args={{
       label: "Rating Label",
-      value: 6,
-      max: 10,
+      rating: 6,
+      maxRating: 10,
     }}
   >
     {Template.bind({})}
@@ -102,7 +235,11 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="6" max="10"></scale-rating-stars>
+<!-- 
+  deprecated:
+  <scale-rating-stars rating="6" max-rating="10"></scale-rating-stars>
+-->
+<scale-rating-stars rating="6" max="10"></scale-rating-stars>
 ```
 
 ## Spacing
@@ -112,18 +249,18 @@ export const Template = (args, { argTypes }) => ({
     name="Spacing"
     args={{
       label: "Rating Label",
-      value: 1,
-      style: "--rating-spacing: 1rem",
+      rating: 1,
+      style: "--scl-stars-spacing: 1rem",
     }}
   >
-    {Template.bind({})}
+    {TemplateSpacing.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-rating-stars
-  value="1"
-  style="--rating-spacing: 1rem"
+  rating="1"
+  style="--scl-stars-spacing: 1rem"
 ></scale-rating-stars>
 ```
 
@@ -134,8 +271,8 @@ export const Template = (args, { argTypes }) => ({
     name="Aria Label Translation"
     args={{
       label: "Rating Label",
-      value: 1,
-      ariaLabelTranslation: "${x} out of ${y} stars",
+      rating: 1,
+      ariaLabelTranslation: "${rating} out of ${maxRating} stars",
     }}
   >
     {Template.bind({})}
@@ -144,8 +281,8 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-rating-stars
-  value="1"
-  aria-label-translation="${value} out of ${max} stars"
+  rating="1"
+  aria-label-translation="${rating} out of ${maxRating} stars"
 ></scale-rating-stars>
 ```
 
@@ -155,7 +292,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="No Label"
     args={{
-      value: 4,
+      rating: 4,
     }}
   >
     {Template.bind({})}
@@ -163,5 +300,24 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-rating-stars value="4"></scale-rating-stars>
+<scale-rating-stars rating="4"></scale-rating-stars>
+```
+
+## Readonly
+
+<Canvas withSource="none">
+  <Story
+    name="Readonly"
+    args={{
+      label: "Rating Label",
+      rating: 3,
+      readonly: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="3" readonly></scale-rating-stars>
 ```

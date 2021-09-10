@@ -16,7 +16,6 @@ import {
   Listen,
   Element,
   Prop,
-  State,
 } from '@stencil/core';
 import { CheckboxInterface } from '../checkbox/checkbox';
 
