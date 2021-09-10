@@ -39,6 +39,8 @@ Add an icon to label certain categories, e.g., links to external sites, document
 
 If the underlining looks distracting within the layout, use the link without it. This may be the case in forms, for example.
 
+![Image Name](assets/3_components/link/link_no_underline.png)
+
 ## Link text
 
 - Each link text should be unique to avoid problems with screen readers.
