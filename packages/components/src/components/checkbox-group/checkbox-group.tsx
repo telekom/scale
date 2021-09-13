@@ -38,7 +38,7 @@ export class CheckboxGroup {
   }
 
   componentDidLoad() {
-    this.updateParentCheckboxState;
+    this.updateParentCheckboxState();
   }
 
   getParentNode() {

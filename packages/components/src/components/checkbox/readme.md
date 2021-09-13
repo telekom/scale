@@ -16,6 +16,7 @@
 | `indeterminate` | `indeterminate` | (optional) indeterminate                      | `boolean` | `false`     |
 | `inputId`       | `input-id`      | (optional) Input checkbox id                  | `string`  | `undefined` |
 | `label`         | `label`         | (optional) Input label                        | `string`  | `''`        |
+| `labeloutput`   | `labeloutput`   | (optional) Input label output                 | `string`  | `''`        |
 | `name`          | `name`          | (optional) Input name                         | `string`  | `undefined` |
 | `status`        | `status`        | (optional) Input status                       | `string`  | `''`        |
 | `styles`        | `styles`        | (optional) Injected CSS styles                | `string`  | `undefined` |
