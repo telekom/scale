@@ -3,7 +3,7 @@
 exports[`Checkbox should match snapshot 1`] = `
 <scale-checkbox>
   <!---->
-  <input id="input-checkbox-0" part="input" type="checkbox" value="">
+  <input aria-label="" id="input-checkbox-0" part="input" type="checkbox" value="">
   <label htmlfor="input-checkbox-0" part="container">
     <div part="checkbox"></div>
     <div part="label"></div>
@@ -14,7 +14,7 @@ exports[`Checkbox should match snapshot 1`] = `
 exports[`Checkbox should match snapshot 2`] = `
 <scale-checkbox helper-text="helpertext">
   <!---->
-  <input aria-describedby="helper-text-2" id="input-checkbox-2" part="input" type="checkbox" value="">
+  <input aria-describedby="helper-text-2" aria-label="" id="input-checkbox-2" part="input" type="checkbox" value="">
   <label htmlfor="input-checkbox-2" part="container">
     <div part="checkbox"></div>
     <div part="label"></div>
