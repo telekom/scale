@@ -19,6 +19,7 @@ import {
   EventEmitter,
   State,
   Watch,
+  Host,
 } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
 
@@ -138,6 +139,9 @@ export class DatePicker {
 
   /** (optional) Size */
   @Prop() size?: string = '';
+
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
@@ -284,58 +288,61 @@ export class DatePicker {
 
   render() {
     return (
-      <div
-        class={classNames(
-          'scale-date-picker',
-          this.status && `scale-date-picker--status-${this.status}`,
-          this.hasFocus && 'scale-date-picker--focus',
-          this.disabled && 'scale-date-picker--disabled',
-          this.size && `scale-date-picker--size-${this.size}`,
-          this.hasValue && 'animated'
-        )}
-      >
-        <label class="date-picker__label" htmlFor={this.identifier}>
-          {this.label}
-        </label>
-        <duet-date-picker
-          onDuetChange={(e) => {
-            emitEvent(this, 'scaleChange', e.detail);
-            this.handleKeyPress(e);
-          }}
-          onDuetFocus={(e) => {
-            emitEvent(this, 'scaleFocus', e.detail);
-            this.hasFocus = true;
-          }}
-          onDuetBlur={(e) => {
-            emitEvent(this, 'scaleBlur', e.detail);
-            this.hasFocus = false;
-          }}
-          name={this.name}
-          identifier={this.identifier}
-          role={this.role}
-          direction={this.direction}
-          required={this.required}
-          min={this.min}
-          max={this.max}
-          firstDayOfWeek={this.firstDayOfWeek}
-          localization={this.localization}
-          dateAdapter={this.dateAdapter}
-          disabled={this.disabled}
-          value={this.value}
-          // @ts-ignore
-          ref={(element) => (this.duetInput = element)}
-        ></duet-date-picker>
-        {!!this.helperText && (
-          <div
-            class="date-picker__meta"
-            id={this.helperTextId}
-            aria-live="polite"
-            aria-relevant="additions removals"
-          >
-            <div class="date-picker__helper-text">{this.helperText}</div>
-          </div>
-        )}
-      </div>
+      <Host>
+        {this.styles && <style>{this.styles}</style>}
+        <div
+          class={classNames(
+            'scale-date-picker',
+            this.status && `scale-date-picker--status-${this.status}`,
+            this.hasFocus && 'scale-date-picker--focus',
+            this.disabled && 'scale-date-picker--disabled',
+            this.size && `scale-date-picker--size-${this.size}`,
+            this.hasValue && 'animated'
+          )}
+        >
+          <label class="date-picker__label" htmlFor={this.identifier}>
+            {this.label}
+          </label>
+          <duet-date-picker
+            onDuetChange={(e) => {
+              emitEvent(this, 'scaleChange', e.detail);
+              this.handleKeyPress(e);
+            }}
+            onDuetFocus={(e) => {
+              emitEvent(this, 'scaleFocus', e.detail);
+              this.hasFocus = true;
+            }}
+            onDuetBlur={(e) => {
+              emitEvent(this, 'scaleBlur', e.detail);
+              this.hasFocus = false;
+            }}
+            name={this.name}
+            identifier={this.identifier}
+            role={this.role}
+            direction={this.direction}
+            required={this.required}
+            min={this.min}
+            max={this.max}
+            firstDayOfWeek={this.firstDayOfWeek}
+            localization={this.localization}
+            dateAdapter={this.dateAdapter}
+            disabled={this.disabled}
+            value={this.value}
+            // @ts-ignore
+            ref={(element) => (this.duetInput = element)}
+          ></duet-date-picker>
+          {!!this.helperText && (
+            <div
+              class="date-picker__meta"
+              id={this.helperTextId}
+              aria-live="polite"
+              aria-relevant="additions removals"
+            >
+              <div class="date-picker__helper-text">{this.helperText}</div>
+            </div>
+          )}
+        </div>
+      </Host>
     );
   }
 }

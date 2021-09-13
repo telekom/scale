@@ -36,8 +36,8 @@ export const CheckboxCell: Cell = {
     } as any;
 
     if (editable) {
-      props.onScaleChange = ({ detail }) => {
-        const { value } = detail;
+      props.onScaleChange = (ev) => {
+        const { value } = ev.detail;
         // Update rows data
         component.rows[rowIndex][columnIndex] = value;
         // Trigger event

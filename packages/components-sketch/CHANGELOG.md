@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.20](https://github.com/telekom/scale/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2021-09-03)
+
+**Note:** Version bump only for package @telekom/scale-components-sketch-telekom
+
+
+
+
+
+# [3.0.0-beta.19](https://github.com/telekom/scale/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2021-09-01)
+
+**Note:** Version bump only for package @telekom/scale-components-sketch-telekom
+
+
+
+
+
 # [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
 
 **Note:** Version bump only for package @telekom/scale-components-sketch-telekom
