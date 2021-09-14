@@ -13,7 +13,8 @@
 | `ariaLabelLastPage`     | `aria-label-last-page`     | (optional) translation to 'Go to last page'                              | `string`             | `'Go to last page'`     |
 | `ariaLabelNextPage`     | `aria-label-next-page`     | (optional) translation to 'Go to next page'                              | `string`             | `'Go to next page'`     |
 | `ariaLabelPreviousPage` | `aria-label-previous-page` | (optional) translation to 'Go to previous page'                          | `string`             | `'Go to previous page'` |
-| `hideBorders`           | `hide-borders`             | (optional) Set to true to hide top and bottom borders                    | `boolean`            | `false`                 |
+| `hideBorder`            | `hide-border`              | (optional) Set to true to hide top and bottom borders                    | `boolean`            | `false`                 |
+| `hideBorders`           | `hide-borders`             | (optional) Deprecated; hideBorder should replace hideBorders             | `boolean`            | `false`                 |
 | `pageSize`              | `page-size`                | (optional) Set number of rows/elements to show per page                  | `number`             | `10`                    |
 | `size`                  | `size`                     | (optional) size                                                          | `"large" \| "small"` | `'large'`               |
 | `small`                 | `small`                    | DEPRECATED - size should replace small                                   | `boolean`            | `false`                 |

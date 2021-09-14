@@ -1,6 +1,7 @@
 <template>
   <scale-pagination
     :hide-borders="hideBorders"
+    :hide-border="hideBorder"
     :page-size="pageSize"
     :small="small"
     :size="size"
@@ -20,6 +21,7 @@
 export default {
   props: {
     hideBorders: { type: Boolean, default: false },
+    hideBorder: { type: Boolean, default: false },
     pageSize: { type: Number, default: 10 },
     startElement: { type: Number, default: 0 },
     totalElements: { type: Number, default: 1 },
