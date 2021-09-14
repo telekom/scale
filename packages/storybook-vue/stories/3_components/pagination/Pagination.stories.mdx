@@ -52,6 +52,48 @@ import ScalePagination from './ScalePagination.vue';
       description: `(optional) Injected styles`,
       control: { type: null },
     },
+     size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) size`,
+      control: { type: null },
+    },
+    small: {
+      table: {
+        type: { summary: 'Boolean' },
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
+    },
+    ariaLabelFirstPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to first page'`,
+      control: { type: null },
+    },
+    ariaLabelNextPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to next page'`,
+      control: { type: null },
+    },
+    ariaLabelPreviousPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to previous page'`,
+      control: { type: null },
+    },
+    ariaLabelLastPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to last page'`,
+      control: { type: null },
+    },
   }}
 />
 
@@ -66,6 +108,7 @@ export const Template = (args, { argTypes }) => ({
     :hide-border="hideBorder"
     :page-size="pageSize"
     :small="small"
+    :size="size"
     :start-element="startElement"
     :total-elements="totalElements"
     :aria-label-first-page="ariaLabelFirstPage"
@@ -90,6 +133,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         :hide-border="hideBorder"
         :page-size="pageSize"
         :small="small"
+        :size="size"
         :start-element="startElement"
         :total-elements="totalElements"
         :styles="styles"
@@ -120,7 +164,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
     args={{
         pageSize: 10,
         startElement: 100,
-        totalElements: 200
+        totalElements: 200,
     }}>
     {Template.bind({})}
   </Story>
@@ -138,7 +182,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
   <Story 
     name="Small"
     args={{
-        small: true,
+        size: 'small',
         pageSize: 5,
         startElement: 100,
         totalElements: 200
@@ -148,7 +192,10 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
+<!-- Deprecated:
 <scale-pagination page-size="5" start-element="100" total-elements="200" small></scale-pagination>
+-->
+<scale-pagination page-size="5" start-element="100" total-elements="200" size="small"></scale-pagination>
 ```
 
 ## Hidden Borders
