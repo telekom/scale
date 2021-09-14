@@ -58,8 +58,10 @@ export class Pagination {
   @Prop() totalElements?: number = 1;
   /** (optional) Injected styles */
   @Prop() styles?: string;
-  /** (optional) small  */
-  @Prop() small = false;
+  /** DEPRECATED - size should replace small */
+  @Prop() small: boolean = false;
+  /** (optional) size  */
+  @Prop() size: 'small' | 'large' = 'large';
   /** (optional) translation to 'Go to first page'  */
   @Prop() ariaLabelFirstPage = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */
@@ -93,7 +95,17 @@ export class Pagination {
     this.calculateWidth();
   }
   componentWillUpdate() {}
-  componentDidRender() {}
+  componentDidRender() {
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
   componentDidLoad() {}
   componentDidUpdate() {}
   disconnectedCallback() {}
@@ -273,7 +285,7 @@ export class Pagination {
     return classNames(
       name,
       this.hideBorders && `${prefix}hide-borders`,
-      this.small && `${prefix}small`
+      (this.size === 'small' || this.small) && `${prefix}small`
     );
   }
 }
