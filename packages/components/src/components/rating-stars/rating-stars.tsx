@@ -219,7 +219,6 @@ export class RatingStars {
           <div part="content">
             <div
               part="wrapper"
-              tabIndex={this.readonly ? 0 : -1}
               role="figure"
               aria-labeledby={`${this.ratingStarId}-label`}
               aria-describedby={`${this.ratingStarId}-infotext`}
@@ -236,6 +235,7 @@ export class RatingStars {
                 max={this.max + 1}
                 value={this.rating}
                 step="1"
+                aria-readonly="true"
                 aria-orientation="horizontal"
                 aria-valuemin={this.minRating}
                 aria-valuemax={this.max}
