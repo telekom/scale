@@ -17,7 +17,9 @@ describe('rating-stars', () => {
 
   beforeEach(async () => {
     page = await newE2EPage();
-    await page.setContent(`<scale-rating-stars></scale-rating-stars>`);
+    await page.setContent(
+      `<scale-rating-stars rating="3"></scale-rating-stars>`
+    );
     component = await page.find('scale-rating-stars');
   });
 

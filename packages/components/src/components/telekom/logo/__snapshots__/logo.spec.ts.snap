@@ -23,7 +23,7 @@ exports[`component prop snapshots all props are set 1`] = `
         --logo-size: 100px;
       }
     </style>
-    <a class="logo logo--transparent logo--variant-white" href="https://www.telekom.de/start" tabindex="0">
+    <a class="logo logo--transparent logo--variant-white" href="https://www.telekom.de/start">
       <scale-logo-svg color="white" language="hr" role="link" size="100"></scale-logo-svg>
     </a>
   </mock:shadow-root>

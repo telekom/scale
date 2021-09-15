@@ -12,6 +12,7 @@
 import { Component, Prop, h, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-nav-main',
@@ -20,7 +21,9 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 export class NavMain {
   @Element() hostElement: HTMLStencilElement;
   /** (optional) if this item is active */
-  @Prop() isActive?: boolean = false;
+  // DEPRECATED - active should replace isActive
+  @Prop() isActive: boolean;
+  @Prop() active: boolean;
   /** (optional) if this mega-menu is visible */
   @Prop() isMegaMenuVisible?: boolean = false;
   /** (optional) href value */
@@ -34,6 +37,19 @@ export class NavMain {
   componentWillLoad() {
     this.hasSlotMegaMenu = !!this.hostElement.querySelector('app-mega-menu');
   }
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.isActive !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isActive" is deprecated. Please use the "active" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
   render() {
     return (
       <Host>
@@ -41,13 +57,15 @@ export class NavMain {
           <a
             class="main-navigation__item-link"
             href={this.href}
-            aria-current={this.isActive ? 'true' : 'false'}
+            aria-current={this.active || this.isActive ? 'true' : 'false'}
             aria-haspopup={this.hasSlotMegaMenu ? 'true' : 'false'}
             tabIndex={0}
             onClick={this.clickLink}
           >
             <span class="main-navigation__item-link-text">{this.name}</span>
-            {this.isActive && <span class="sr-only">active</span>}
+            {(this.active || this.isActive) && (
+              <span class="sr-only">active</span>
+            )}
           </a>
           <slot></slot>
         </li>
@@ -59,7 +77,7 @@ export class NavMain {
     return classNames(
       'main-navigation__item',
       this.isMegaMenuVisible && 'mega-menu--visible',
-      this.isActive && 'selected'
+      (this.active || this.isActive) && 'selected'
     );
   }
 }

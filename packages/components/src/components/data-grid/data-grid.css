@@ -179,9 +179,13 @@
 }
 
 .thead__cell--selection {
+  justify-content: center;
   text-align: center;
 }
 
+.thead__cell--selection xds-checkbox::part(container) {
+  justify-content: center;
+}
 .thead__title {
 }
 
@@ -299,8 +303,15 @@
   text-align: right;
 }
 .tbody__cell--selection {
+  justify-content: center;
   text-align: center;
 }
+
+.tbody__cell--selection scale-checkbox::part(container),
+.tbody__cell--selection scale-checkbox [part='container'] {
+  justify-content: center;
+}
+
 .tbody__nested {
   white-space: nowrap;
   padding: 0px;

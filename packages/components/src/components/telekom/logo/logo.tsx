@@ -93,7 +93,6 @@ export class Logo {
             href={this.href}
             class={this.getCssClassMap()}
             onClick={this.clickHandler}
-            tabIndex={0}
           >
             {this.getLogoSvg('link')}
           </a>

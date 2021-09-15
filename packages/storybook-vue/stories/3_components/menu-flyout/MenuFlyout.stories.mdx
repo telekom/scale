@@ -39,27 +39,51 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
       control: { type: null },
     },
     eventScaleOpen: {
-      name: '[event] scaleOpen',
+      name: '[event] scale-open',
       table: {
         type: { summary: 'event' },
       },
       description: `Event triggered when menu list opened`,
       control: { type: null },
     },
+    eventScaleOpenLegacy: {
+      name: '[event] scaleOpen',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered when menu list opened`,
+      control: { type: null },
+    },
     eventScaleClose: {
-      name: '[event] scaleClose',
+      name: '[event] scale-close',
       table: {
         type: { summary: 'event' },
       },
       description: `Event triggered when menu list closed`,
       control: { type: null },
     },
+    eventScaleCloseLegacy: {
+      name: '[event] scaleClose',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered when menu list closed`,
+      control: { type: null },
+    },
     eventScaleSelect: {
-      name: '[event] scaleSelect',
+      name: '[event] scale-select',
       table: {
         type: { summary: 'event' },
       },
       description: `Event triggered when nested menu item selected`,
+      control: { type: null },
+    },
+    eventScaleSelectLegacy: {
+      name: '[event] scaleSelect',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered when nested menu item selected`,
       control: { type: null },
     },
     slotTrigger: {

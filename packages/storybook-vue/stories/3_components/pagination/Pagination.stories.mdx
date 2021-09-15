@@ -10,8 +10,16 @@ import ScalePagination from './ScalePagination.vue';
         type: { summary: 'Boolean' },
         defaultValue: { summary: false },
       },
+      description: `(optional) Deprecated; hideBorder should replace hideBorders`,
+      control: { type: 'boolean' },
+    },
+    hideBorder: {
+      table: {
+        type: { summary: 'Boolean' },
+        defaultValue: { summary: false },
+      },
       description: `(optional) Set to true to hide top and bottom borders`,
-      control: { type: null },
+      control: { type: 'boolean' },
     },
     pageSize: {
       table: {
@@ -44,6 +52,48 @@ import ScalePagination from './ScalePagination.vue';
       description: `(optional) Injected styles`,
       control: { type: null },
     },
+     size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) size`,
+      control: { type: null },
+    },
+    small: {
+      table: {
+        type: { summary: 'Boolean' },
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
+    },
+    ariaLabelFirstPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to first page'`,
+      control: { type: null },
+    },
+    ariaLabelNextPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to next page'`,
+      control: { type: null },
+    },
+    ariaLabelPreviousPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to previous page'`,
+      control: { type: null },
+    },
+    ariaLabelLastPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to last page'`,
+      control: { type: null },
+    },
   }}
 />
 
@@ -55,8 +105,10 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-pagination
     :hide-borders="hideBorders"
+    :hide-border="hideBorder"
     :page-size="pageSize"
     :small="small"
+    :size="size"
     :start-element="startElement"
     :total-elements="totalElements"
     :aria-label-first-page="ariaLabelFirstPage"
@@ -78,8 +130,10 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
   <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
     <scale-pagination
         :hide-borders="hideBorders"
+        :hide-border="hideBorder"
         :page-size="pageSize"
         :small="small"
+        :size="size"
         :start-element="startElement"
         :total-elements="totalElements"
         :styles="styles"
@@ -110,7 +164,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
     args={{
         pageSize: 10,
         startElement: 100,
-        totalElements: 200
+        totalElements: 200,
     }}>
     {Template.bind({})}
   </Story>
@@ -128,7 +182,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
   <Story 
     name="Small"
     args={{
-        small: true,
+        size: 'small',
         pageSize: 5,
         startElement: 100,
         totalElements: 200
@@ -138,7 +192,10 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
+<!-- Deprecated:
 <scale-pagination page-size="5" start-element="100" total-elements="200" small></scale-pagination>
+-->
+<scale-pagination page-size="5" start-element="100" total-elements="200" size="small"></scale-pagination>
 ```
 
 ## Hidden Borders
@@ -150,14 +207,18 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         pageSize: 5,
         startElement: 100,
         totalElements: 200,
-        hideBorders: true
+        hideBorder: true
     }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+<!--
+  Deprecated:
+   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+-->
+<scale-pagination page-size="5" start-element="100" total-elements="200" hide-border></scale-pagination>
 ```
 
 
@@ -171,7 +232,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         pageSize: 5,
         startElement: 100,
         totalElements: 200,
-        hideBorders: true
+        hideBorder: true
     }}>
     
         {TemplateEmbedded.bind({})}
@@ -179,8 +240,12 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
+<!--
+  Deprecated:
+   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+-->
 <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
- <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+ <scale-pagination page-size="5" start-element="100" total-elements="200" hide-border></scale-pagination>
 </div>
 ```
 

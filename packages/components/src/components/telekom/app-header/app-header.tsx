@@ -179,7 +179,7 @@ export class Header {
           readData(this.mainNavigation).map((item) => (
             <scale-nav-main
               href={item.href}
-              isActive={isActive(item)}
+              active={isActive(item)}
               isMegaMenuVisible={this.visibleMegaMenu === item.id}
               onMouseEnter={() => {
                 this.visibleMegaMenu = item.children ? item.id : null;
@@ -206,7 +206,7 @@ export class Header {
                     this.visibleMegaMenu = '';
                   }}
                   activeRouteId={this.activeRouteId}
-                  isActive={this.visibleMegaMenu === item.id}
+                  active={this.visibleMegaMenu === item.id}
                 ></app-mega-menu>
               )}
             </scale-nav-main>
@@ -241,7 +241,7 @@ export class Header {
               </scale-nav-icon>
             ))
         )}
-        {((!this.hasSlotMenuMain && readData(this.mainNavigation).length > 0) ||
+        {(readData(this.mainNavigation).length > 0 ||
           this.hasSlotMenuMobile) && (
           <scale-nav-icon
             isMobileMenuOpen={this.mobileMenu}
@@ -266,7 +266,7 @@ export class Header {
         ) : (
           readData(this.sectorNavigation).map((item) => (
             <scale-nav-segment
-              isActive={this.activeSegment.id === item.id}
+              active={this.activeSegment.id === item.id}
               href={item.href}
               onClick={(event) => this.handleSelectedSegment(event, item)}
               onFocus={() => {
@@ -389,7 +389,7 @@ export class Header {
   getCssClassMap() {
     return classNames(
       'header',
-      this.scrolled && 'sticky',
+      this.scrolled && 'header--sticky',
       (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );
   }
