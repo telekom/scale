@@ -3,8 +3,37 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-This component contains the Telekom logo in several variants: Different colors, without Claim and with a claim in several languages.
+In addition to color and typography, our logo is one of the three central Telekom design elements. It's integrated into the brand header and footer on websites and lets users recognize our brand at a glance.
+
+## General
+
+We use our logo in combination with our claim to convey our central brand promise.
+Only use the logo for the brand header and footer.
+
+## Variants
+
+The Telekom logo with claim is available in 9 country-specific variants (International, German, Hungarian, Czech, Croatian, Montenegrin, Macedonian, Romanian, Slovak).
+
+
+![Image Name](assets/3_components/logo/Logo-Claim-Varianten-EN.png)
+
+## Elements
+
+![Image Name](assets/3_components/logo/Logo-Claim.png)
+
+#### Logo (1)
+
+#### Claim (2)
+
+## Colors
+
+![Image Name](assets/3_components/logo/Farben-EN.png)
 
 ## Beta components
 
 This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
+
+## Related components
+
+<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header, </a>
+<a href="?path=/usage/components-footer--standard">Footer</a>
