@@ -14,7 +14,7 @@ import statusNote from '../../utils/status-note';
 
 /*
   TODO
-  - [ ] Esc or Tab should close all open menus
+  - [ ] Esc or Tab, or outside click, should close all open menus
 */
 
 @Component({

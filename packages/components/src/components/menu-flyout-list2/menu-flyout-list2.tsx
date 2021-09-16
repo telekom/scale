@@ -15,11 +15,14 @@ import {
   h,
   Host,
   Element,
+  Event,
+  EventEmitter,
   Listen,
   State,
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 const PAD = 10;
 
@@ -51,6 +54,15 @@ export class MenuFlyoutList2 {
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
+  /** Event triggered when nested menu item selected */
+  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
+    item: HTMLElement;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
+    item: HTMLElement;
+  }>;
+
   /** Keep track of menu element */
   private base: HTMLElement;
   /** Flags to know if content scrollable */
@@ -67,6 +79,9 @@ export class MenuFlyoutList2 {
   /** Track window width to see if menus are off screen */
   private windowWidth: number;
 
+  private items: Element[];
+  private focusedItemIndex: number;
+
   get triggerRect() {
     return this.trigger().getBoundingClientRect();
   }
@@ -79,6 +94,7 @@ export class MenuFlyoutList2 {
     if (this.opened && this.needsCheckPlacement) {
       this.setSize();
       this.checkPlacement();
+      this.setItemsFocus();
     }
   }
 
@@ -91,7 +107,29 @@ export class MenuFlyoutList2 {
 
   @Listen('keydown')
   handleKeydown(event) {
-    console.log('keydown', event.key);
+    if ('ArrowDown' === event.key) {
+      this.shiftItemsFocus();
+      return;
+    }
+    if ('ArrowUp' === event.key) {
+      this.shiftItemsFocus(-1);
+      return;
+    }
+    if ('ArrowLeft' === event.key) {
+      this.opened = false;
+      return;
+    }
+    if ('Enter' === event.key || ' ' === event.key) {
+      this.selectItem(this.items[this.focusedItemIndex]);
+    }
+  }
+
+  @Listen('click')
+  handleClick(event) {
+    const item = event.target.closest('[role="menuitem"]');
+    if (item != null) {
+      this.selectItem(item);
+    }
   }
 
   @Watch('opened')
@@ -122,6 +160,40 @@ export class MenuFlyoutList2 {
   handleWheel = (event: WheelEvent) => {
     this.stopWheelPropagation(event);
   };
+
+  selectItem(element: Element) {
+    const index = this.items.findIndex((x) => x === element);
+    if (index != null) {
+      this.focusedItemIndex = index;
+      this.focusItem();
+    }
+    emitEvent(this, 'scaleSelect', { item: element });
+  }
+
+  setItemsFocus() {
+    this.items = this.getListItems();
+    this.focusedItemIndex = -1;
+    if (this.items.length > 0) {
+      this.shiftItemsFocus();
+    }
+  }
+
+  shiftItemsFocus(direction: -1 | 1 = 1) {
+    let nextIndex = this.focusedItemIndex + direction;
+    if (nextIndex === this.items.length) {
+      nextIndex = 0;
+    } else if (nextIndex < 0) {
+      nextIndex = this.items.length - 1;
+    }
+    this.focusedItemIndex = nextIndex;
+    this.focusItem();
+  }
+
+  focusItem() {
+    setTimeout(() => {
+      (this.items[this.focusedItemIndex] as HTMLElement).focus();
+    });
+  }
 
   setWindowSize() {
     this.windowWidth = window.innerWidth;
@@ -192,7 +264,7 @@ export class MenuFlyoutList2 {
 
     // TODO: add more functionality for order of priority of which edge to snap to
     // Shift to be snapped to a padded edge
-    // Note can't use transform as it creates 
+    // Note can't use transform as it creates
     // a relative parent for nested position fixed elements
     let left = 0;
     let top = 0;
@@ -220,9 +292,9 @@ export class MenuFlyoutList2 {
   }
 
   /**
-   * Add scrollbar width to menu, to avoid horizontal scrollbars 
+   * Add scrollbar width to menu, to avoid horizontal scrollbars
    * or scrollbar forcing text-overflow.
-   * (This affects Firefox and Safari, where non-overlay scrollbars 
+   * (This affects Firefox and Safari, where non-overlay scrollbars
    * eat into content width rather than add)
    */
   padForNonOverlayScrollbars() {
@@ -267,6 +339,12 @@ export class MenuFlyoutList2 {
     if (event.deltaY < 0 && !this.canScrollUp) {
       event.preventDefault();
     }
+  }
+
+  getListItems() {
+    return Array.from(this.hostElement.children).filter(
+      (node) => node.getAttribute('role') === 'menuitem'
+    );
   }
 
   getCssClassMap() {

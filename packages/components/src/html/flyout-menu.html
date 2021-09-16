@@ -71,12 +71,27 @@
 
     <scale-divider></scale-divider>
 
-    <scale-menu-flyout2>
+    <scale-menu-flyout2 id="m2">
       <scale-button slot="trigger">App Menu</scale-button>
       <scale-menu-flyout-list2>
-        <scale-menu-flyout-item>Item one</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Second item here</scale-menu-flyout-item>
+        <scale-menu-flyout-item2>Item one</scale-menu-flyout-item2>
+        <scale-menu-flyout-item2>Second item here</scale-menu-flyout-item2>
+        <scale-menu-flyout-item2>
+          Something else
+          <span slot="suffix">⌘+F</span>
+        </scale-menu-flyout-item2>
+        <scale-menu-flyout-item2
+          >Something else entirely</scale-menu-flyout-item2
+        >
+        <scale-menu-flyout-item2>Last one maybe</scale-menu-flyout-item2>
       </scale-menu-flyout-list2>
     </scale-menu-flyout2>
+
+    <script>
+      let el = document.getElementById('m2');
+      el.addEventListener('scale-select', (event) => {
+        console.log('SELECT!', event.detail);
+      });
+    </script>
   </body>
 </html>
