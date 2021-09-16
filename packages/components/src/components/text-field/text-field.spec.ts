@@ -45,7 +45,6 @@ describe('TextField', () => {
                  input-id ="input-text-field1"
                  transparent ="true"
                  styles ="styles"
-                 list="datalist"
               ></scale-text-field>`,
     });
 
@@ -65,7 +64,6 @@ describe('TextField', () => {
     expect(specPage.rootInstance.styles).toBe('styles');
     expect(specPage.rootInstance.inputId).toBe('input-text-field1');
     expect(specPage.rootInstance.hasFocus).toBe(false);
-    expect(specPage.rootInstance.list).toBe('datalist');
   });
 
   it('should handle focus with right hasFocus state', async () => {
