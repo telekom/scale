@@ -9,13 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  Prop,
-  h,
-  Host,
-  Element
-} from '@stencil/core';
+import { Component, Prop, h, Host, Element } from '@stencil/core';
 import statusNote from '../../utils/status-note';
 
 /*
@@ -38,15 +32,17 @@ export class MenuFlyout2 {
   }
 
   toggleOpen = (event: Event) => {
-    const list = this.getListElement() as HTMLScaleMenuFlyoutList2Element
-    const trigger = event.target as HTMLElement
-    list.trigger = () => trigger
-    list.opened = !list.opened
-  }
+    const list = this.getListElement() as HTMLScaleMenuFlyoutList2Element;
+    const trigger = event.target as HTMLElement;
+    list.trigger = () => trigger;
+    list.opened = !list.opened;
+  };
 
   getListElement = () => {
-    return Array.from(this.hostElement.children).find(node => node.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT'))
-  }
+    return Array.from(this.hostElement.children).find((node) =>
+      node.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
+    );
+  };
 
   render() {
     return (

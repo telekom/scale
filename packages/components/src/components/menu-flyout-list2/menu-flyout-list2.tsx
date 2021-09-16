@@ -17,11 +17,11 @@ import {
   Element,
   Listen,
   State,
-  Watch
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 
-const PAD = 10
+const PAD = 10;
 
 @Component({
   tag: 'scale-menu-flyout-list2',
@@ -68,7 +68,7 @@ export class MenuFlyoutList2 {
   private windowWidth: number;
 
   get triggerRect() {
-    return this.trigger().getBoundingClientRect()
+    return this.trigger().getBoundingClientRect();
   }
 
   connectedCallback() {
@@ -77,8 +77,8 @@ export class MenuFlyoutList2 {
 
   componentDidRender() {
     if (this.opened && this.needsCheckPlacement) {
-      this.setSize()
-      this.checkPlacement()
+      this.setSize();
+      this.checkPlacement();
     }
   }
 
@@ -91,7 +91,7 @@ export class MenuFlyoutList2 {
 
   @Listen('keydown')
   handleKeydown(event) {
-    console.log('keydown', event.key)
+    console.log('keydown', event.key);
   }
 
   @Watch('opened')
@@ -117,11 +117,11 @@ export class MenuFlyoutList2 {
 
   handleScroll = () => {
     this.updateScrollIndicators();
-  }
+  };
 
   handleWheel = (event: WheelEvent) => {
     this.stopWheelPropagation(event);
-  }
+  };
 
   setWindowSize() {
     this.windowWidth = window.innerWidth;
@@ -129,13 +129,13 @@ export class MenuFlyoutList2 {
   }
 
   setPosition() {
-    const { top, left } = this.triggerRect
+    const { top, left } = this.triggerRect;
     this.hostElement.style.top = `${top}px`;
     this.hostElement.style.left = `${left}px`;
   }
 
   setSize() {
-    const { width, height } = this.triggerRect
+    const { width, height } = this.triggerRect;
     this.hostElement.style.height = `${height}px`;
     this.hostElement.style.width = `${width}px`;
   }
@@ -185,16 +185,15 @@ export class MenuFlyoutList2 {
   furtherAdjustPlacement() {
     // Apply flip class changes immediately to avoid frame flash
     this.base.className = this.getCssClassMap();
-
     // Force layout and style recalculation
     window.getComputedStyle(this.base);
 
-    // Update rect for further tests
     const rect = this.base.getBoundingClientRect();
 
     // TODO: add more functionality for order of priority of which edge to snap to
     // Shift to be snapped to a padded edge
-    // Note can't use transform as it creates a relative parent for nested position fixed elements
+    // Note can't use transform as it creates 
+    // a relative parent for nested position fixed elements
     let left = 0;
     let top = 0;
     if (rect.left < PAD) {
@@ -217,12 +216,14 @@ export class MenuFlyoutList2 {
     this.hostElement.style.marginBottom = `${-top}px`;
 
     // Re-render visibly next frame with correct placement to update vdom
-    setTimeout(() => this.forceRender++, 0);
+    setTimeout(() => this.forceRender++);
   }
 
   /**
-   * Add scrollbar width to menu, to avoid horizontal scrollbars or scrollbar forcing text-overflow.
-   * (This affects Firefox and Safari, where non-overlay scrollbars eat into content width rather than add)
+   * Add scrollbar width to menu, to avoid horizontal scrollbars 
+   * or scrollbar forcing text-overflow.
+   * (This affects Firefox and Safari, where non-overlay scrollbars 
+   * eat into content width rather than add)
    */
   padForNonOverlayScrollbars() {
     this.base.style.paddingRight = `0px`;
@@ -293,8 +294,14 @@ export class MenuFlyoutList2 {
           onWheel={this.handleWheel}
         >
           <slot />
-          <div aria-hidden="true" class="menu-flyout-list__scroll-up-indicator"></div>
-          <div aria-hidden="true" class="menu-flyout-list__scroll-down-indicator"></div>
+          <div
+            aria-hidden="true"
+            class="menu-flyout-list__scroll-up-indicator"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="menu-flyout-list__scroll-down-indicator"
+          ></div>
         </div>
       </Host>
     );
