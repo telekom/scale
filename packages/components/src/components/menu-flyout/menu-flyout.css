@@ -14,6 +14,7 @@
 
 .menu {
   display: inline-block;
+  border: 2px solid black;
 }
 
 .menu--cascaded {
@@ -31,6 +32,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  border: 1px solid red;
+  background: rgba(100, 0, 0, 0.5);
 }
 
 .menu--open .menu__click-catcher {
@@ -49,6 +52,7 @@
   position: fixed;
   pointer-events: none;
   z-index: var(--scl-z-index-20);
+  border: 1px dotted lime;
 }
 
 .menu__list {
@@ -56,6 +60,7 @@
   position: absolute;
   pointer-events: initial;
   z-index: var(--scl-z-index-20);
+  border: 1px solid gold;
 }
 
 .menu--open .menu__list {
