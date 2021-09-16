@@ -189,6 +189,10 @@ input[type='range']::-webkit-slider-thumb {
 
 /* disabled states */
 
+:host([disabled]) [part='label'] {
+  color: var(--stars-disabled-color);
+}
+
 :host([disabled]) [part='wrapper'] {
   --stars-color: var(--stars-disabled-color);
   --stars-placeholder-color: var(--stars-disabled-color);

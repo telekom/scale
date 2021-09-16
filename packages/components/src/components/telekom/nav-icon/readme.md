@@ -9,10 +9,11 @@
 
 | Property              | Attribute                | Description                       | Type      | Default                 |
 | --------------------- | ------------------------ | --------------------------------- | --------- | ----------------------- |
+| `active`              | `active`                 |                                   | `boolean` | `undefined`             |
 | `clickLink`           | `click-link`             |                                   | `any`     | `undefined`             |
 | `href`                | `href`                   | (optional) href value             | `string`  | `'javascript:void(0);'` |
 | `icon`                | `icon`                   |                                   | `string`  | `undefined`             |
-| `isActive`            | `is-active`              | (optional) if this item is active | `boolean` | `false`                 |
+| `isActive`            | `is-active`              | (optional) if this item is active | `boolean` | `undefined`             |
 | `isMobileMenuOpen`    | `is-mobile-menu-open`    |                                   | `boolean` | `false`                 |
 | `refMobileMenuToggle` | `ref-mobile-menu-toggle` |                                   | `any`     | `undefined`             |
 

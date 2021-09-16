@@ -21,6 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 /*
   TODO
@@ -47,8 +48,10 @@ export class Pagination {
   /* 2. State Variables (alphabetical) */
 
   /* 3. Public Properties (alphabetical) */
-  /** (optional) Set to true to hide top and bottom borders */
+  /** (optional) Deprecated; hideBorder should replace hideBorders */
   @Prop() hideBorders?: boolean = false;
+  /** (optional) Set to true to hide top and bottom borders */
+  @Prop() hideBorder?: boolean = false;
   /** (optional) Set number of rows/elements to show per page */
   @Prop() pageSize?: number = 10;
   /** (optional) Index of first element to display */
@@ -57,8 +60,10 @@ export class Pagination {
   @Prop() totalElements?: number = 1;
   /** (optional) Injected styles */
   @Prop() styles?: string;
-  /** (optional) small  */
-  @Prop() small = false;
+  /** DEPRECATED - size should replace small */
+  @Prop() small: boolean = false;
+  /** (optional) size  */
+  @Prop() size: 'small' | 'large' = 'large';
   /** (optional) translation to 'Go to first page'  */
   @Prop() ariaLabelFirstPage = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */
@@ -70,11 +75,15 @@ export class Pagination {
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
-  @Event() scalePagination: EventEmitter<{
+  @Event({ eventName: 'scale-pagination' }) scalePagination: EventEmitter<{
     startElement?: number;
     currentPage?: number;
   }>;
-
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scalePagination' }) scalePaginationLegacy: EventEmitter<{
+    startElement?: number;
+    currentPage?: number;
+  }>;
   /* 5. Private Properties (alphabetical) */
   /** Calculated width of largest text so buttons don't move while changing pages */
   maxWidth: number = 100;
@@ -88,7 +97,26 @@ export class Pagination {
     this.calculateWidth();
   }
   componentWillUpdate() {}
-  componentDidRender() {}
+  componentDidRender() {
+    if (this.hideBorders !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "hideBorders" is deprecated. Please use the "hideBorder" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
   componentDidLoad() {}
   componentDidUpdate() {}
   disconnectedCallback() {}
@@ -130,7 +158,7 @@ export class Pagination {
     const data = {
       startElement: this.startElement,
     };
-    this.scalePagination.emit(data);
+    emitEvent(this, 'scalePagination', data);
   }
 
   /* 10. Render */
@@ -267,8 +295,8 @@ export class Pagination {
 
     return classNames(
       name,
-      this.hideBorders && `${prefix}hide-borders`,
-      this.small && `${prefix}small`
+      (this.hideBorder || this.hideBorders) && `${prefix}hide-borders`,
+      (this.size === 'small' || this.small) && `${prefix}small`
     );
   }
 }

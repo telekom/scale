@@ -397,17 +397,16 @@ module.exports = {
       }
       if (/^Rating Stars/.test(symbol.name)) {
         var icon = findLayer(symbol, (s) => s.name === 'Icon');
-
         findLayers(symbol, /Icon?/, (l) => {
           l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
 
           const overrideObject = {
             _class: 'MSImmutableOverrideProperty',
             canOverride: false,
-            overrideName: `${l.do_objectID}_symbol`,
+            overrideName: `${l.do_objectID}_symbolID`,
           };
 
-          // symbol.overrideProperties.push(overrideObject);
+          symbol.overrideProperties.push(overrideObject);
         });
         findLayers(
           symbol,

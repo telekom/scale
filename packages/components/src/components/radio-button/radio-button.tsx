@@ -11,6 +11,7 @@
 
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -43,7 +44,11 @@ export class RadioButton {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Event() scaleChange!: EventEmitter<InputChangeEventDetail>;
+  @Event({ eventName: 'scale-change' })
+  scaleChange!: EventEmitter<InputChangeEventDetail>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -57,7 +62,7 @@ export class RadioButton {
     if (this.checked) {
       this.uncheckSiblings();
     }
-    this.scaleChange.emit({
+    emitEvent(this, 'scaleChange', {
       value: this.value == null ? this.value : this.value.toString(),
     });
   };

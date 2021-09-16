@@ -12,6 +12,7 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'app-mega-menu',
@@ -22,13 +23,29 @@ export class MegaMenu {
   @Prop() navigation?: MenuItem[] = [];
   @Prop() hide: () => void;
   @Prop() activeRouteId: string;
+  // DEPRECATED - active should replace isActive
   @Prop() isActive: boolean;
+  @Prop() active: boolean;
   hasCustomBody: boolean;
 
   componentWillLoad() {
     this.hasCustomBody = !!this.hostElement.querySelector(
       '[slot="custom-body"]'
     );
+  }
+
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.isActive !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isActive" is deprecated. Please use the "active" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   render() {
@@ -57,7 +74,7 @@ export class MegaMenu {
                                 : 'false'
                             }
                             href={menuItem.href || 'javascript:void(0);'}
-                            tabIndex={this.isActive ? 0 : -1}
+                            tabIndex={this.active || this.isActive ? 0 : -1}
                             onClick={(event) => {
                               this.hide();
                               if (typeof menuItem.onClick === 'function') {

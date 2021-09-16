@@ -25,6 +25,7 @@ export const Template = (args, { argTypes }) => ({
       :value="value"
       :input-id="inputId"
       @scaleChange="action('scaleChange')($event)"
+      @scale-change="action('scale-change')($event)"
     ></scale-checkbox>
   `,
   methods: {

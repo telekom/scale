@@ -25,6 +25,10 @@ export default {
       action("scaleChange");
       this.$emit("scaleChange", $event);
     },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
   },
 };
 </script>
