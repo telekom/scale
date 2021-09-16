@@ -87,7 +87,6 @@ export class Logo {
         {this.href === '' ? (
           <div
             class={this.getCssClassMap()}
-            tabindex="1"
             onClick={this.clickHandler}
           >
             {this.getLogoSvg('img')}
