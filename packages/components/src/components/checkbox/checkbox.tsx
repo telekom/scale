@@ -27,7 +27,7 @@ export interface CheckboxInterface extends HTMLElement {
   disabled: boolean;
   value: string;
   label: string;
-  labeloutput: string;
+  ariaLabel: string;
 }
 
 let i = 0;
@@ -43,7 +43,7 @@ export class Checkbox {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input label output */
-  @Prop() labeloutput: string = '';
+  @Prop() ariaLabel?: string;
   /** (optional) Hides the specified label visually */
   @Prop() hideLabel?: boolean = false;
   /** (optional) Input helper text */
@@ -165,7 +165,7 @@ export class Checkbox {
           value={this.value}
           checked={this.checked}
           indeterminate={this.indeterminate}
-          aria-label={this.labeloutput ? this.labeloutput : this.label}
+          aria-label={this.ariaLabel}
           aria-checked={this.getAriaCheckedState()}
           aria-invalid={this.status === 'error'}
           aria-describedBy={helperText.id}

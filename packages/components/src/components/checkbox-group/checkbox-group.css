@@ -1,4 +1,5 @@
-:host {
+:host,
+.checkbox-group {
   /* checkbox-group container */
   --spacing-left-container: var(--scl-spacing-24);
 
@@ -9,32 +10,31 @@
   --spacing-top-slotted-item: var(--scl-spacing-4);
 }
 
-.fieldset-wrapper {
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block-start: 0;
-  padding-block-end: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  border: none;
-  min-inline-size: min-content;
-}
-
 .checkbox-group {
   display: inline-flex;
   flex-direction: column;
 }
-
-.checkbox-group__container {
+.checkbox-group [part='fieldset'] {
   display: flex;
   flex-direction: column;
+  border: 0;
+  padding: 0;
+  margin: 0;
   margin-left: var(--spacing-left-container);
 }
 
-.checkbox-group__checkbox {
-  margin-top: var(--spacing-left-checkbox);
+.checkbox-group legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-::slotted(*) {
+.checkbox-group ::slotted(*) {
   padding-top: var(--spacing-top-slotted-item);
 }
