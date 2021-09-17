@@ -66,11 +66,21 @@
   margin-top: var(--margin-top-slotted-item);
 }
 
-@media screen and (-ms-high-contrast: active) {
+scale-icon-alert-information {
+  visibility: hidden;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .radio-button-group__helper-text--status-error {
     color: var(--color-error-helper-text-hcm);
   }
+  scale-icon-alert-information {
+    visibility: initial;
+    margin-left: var(--scl-spacing-4);
+  }
   .radio-button-group__helper-text {
     color: var(--color-error-helper-text-hcm);
+    display: flex;
+    align-items: center;
   }
 }

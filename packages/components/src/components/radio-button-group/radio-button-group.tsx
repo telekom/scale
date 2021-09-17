@@ -14,7 +14,7 @@ export class RadioButtonGroup {
   @Prop() status?: string = '';
 
   render() {
-    const ariaLabel = this.label + ' ' + this.helperText;
+    // const ariaLabel = this.label + ' ' + this.helperText;
 
     return (
       <form>
@@ -24,7 +24,6 @@ export class RadioButtonGroup {
               role="text"
               class="radio-button-group__title-label"
               aria-label={this.label}
-              tabindex="0"
             >
               {this.label}
             </label>
@@ -33,9 +32,9 @@ export class RadioButtonGroup {
                 role="text"
                 class={this.getCssClassMap()}
                 aria-label={this.helperText}
-                tabindex="0"
               >
                 {this.helperText}
+                <scale-icon-alert-information size={16} aria-hiden="true" />
               </div>
             ) : null}
           </legend>

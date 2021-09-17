@@ -6,11 +6,12 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
     <form>
       <fieldset class="radio-button-group">
         <legend class="radio-button-group__title">
-          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
           </label>
-          <div aria-label="Error message" class="radio-button-group__helper-text" role="text" tabindex="0">
+          <div aria-label="Error message" class="radio-button-group__helper-text" role="text">
             Error message
+            <scale-icon-alert-information aria-hiden="true" size="16"></scale-icon-alert-information>
           </div>
         </legend>
         <div class="radio-button-group__container">
@@ -33,9 +34,9 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
 <scale-radio-button-group label="Radio Button Label">
   <mock:shadow-root>
     <form>
-      <fieldset class="radio-button-group"
+      <fieldset class="radio-button-group">
         <legend class="radio-button-group__title">
-          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
           </label>
         </legend>
@@ -61,7 +62,7 @@ exports[`RadioButtonGroup should match standard snapshot 1`] = `
     <form>
       <fieldset class="radio-button-group">
         <legend class="radio-button-group__title">
-          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text" tabindex="0">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
           </label>
         </legend>
