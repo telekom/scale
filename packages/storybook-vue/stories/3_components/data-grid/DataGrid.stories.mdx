@@ -1118,6 +1118,7 @@ Expected format: unformatted `string`, eg `'this is a string'`
 <Canvas withSource="close">
   <Story name="Menu Slot">
     {`<content>
+    <div aria-live="polite" id="aria-live" style="margin-top:8px; text-align:center;"></div>
     <scale-data-grid
         id="menu-slot-example"
         heading="Menu Slot"
@@ -1127,7 +1128,7 @@ Expected format: unformatted `string`, eg `'this is a string'`
     >
         <scale-menu-flyout-item
            slot="menu"
-            onclick="alert(document.querySelector('#menu-slot-example').selection.length + ' rows selected')"
+            id="export-btn"
         >
             <scale-icon-navigation-external-link slot="prefix"></scale-icon-navigation-external-link>
             Slotted Export Selection
@@ -1209,6 +1210,9 @@ Expected format: unformatted `string`, eg `'this is a string'`
             ['Merritt Hardin', true],
             ['Randall Copeland', false],
         ];
+            document.getElementById("export-btn").addEventListener('click', () => {
+            document.querySelector('#aria-live').innerText=document.querySelector('#menu-slot-example').selection.length + ' rows selected for export'
+        });
     }
     </script>
 </content>`}
