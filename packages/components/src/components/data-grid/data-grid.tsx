@@ -1045,7 +1045,7 @@ export class DataGrid {
         <scale-checkbox
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
-          aria-label="Toggle select all"
+          label="Toggle select all"
           hideLabel={true}
         ></scale-checkbox>
       </th>
