@@ -194,7 +194,7 @@ const Usage = (props) => {
             className="sbdocs sbdocs-content"
             style={{ maxWidth: '1066px' }}
           >
-            <Description markdown={markdown} />
+            <Description markdown={markdown.replace(/\.\/img\//g, `assets/components/${componentName}/img/`)} />
           </DocsContent>
         </DocsWrapper>
       </div>
