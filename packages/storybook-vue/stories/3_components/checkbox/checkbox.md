@@ -9,7 +9,7 @@ With checkboxes, users toggle options on or off. They can answer simple yes-no q
 
 A checkbox is a selection control that allows users to choose between two states. It consists of a control box and a corresponding label. Activating a checkbox does not affect other selections. It is considered to be selected when the control box has a checkmark. In the initial state, a checkbox can switch on or off.
 
-![Image Name](assets/3_components/checkbox/checkbox.png)
+![Image Name](./img/checkbox.png)
 
 ### When to use
 
@@ -24,7 +24,7 @@ There are two main use cases for checkboxes:
 
 ## Elements
 
-![Image Name](assets/3_components/checkbox/checkbox-elements.png)
+![Image Name](./img/checkbox-elements.png)
 
 ### Checkbox deselected (1)
 
@@ -46,7 +46,7 @@ An error message appears if an option is mandatory but not selected, e.g., when 
 
 The label explicitly describes what happens when users select or deselect a checkbox. It should convey two opposite states. Always formulate the label positively to avoid double negatives.
 
-![Image Name](assets/3_components/checkbox/checkbox_label.png)
+![Image Name](./img/checkbox_label.png)
 
 ## Disabled state
 
@@ -55,7 +55,7 @@ Disable the checkbox if:
 - another action has to take place before the checkbox is usable or
 - the option needs to be listed but is currently unavailable.
 
-![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
+![Image Name](./img/checkbox_disabled.png)
 
 ## Nested groups of checkboxes
 
@@ -63,13 +63,13 @@ Disable the checkbox if:
 
 When checkboxes are related to a parent checkbox, you can nest them. Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
 
-![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
+![Image Name](./img/checkbox_nesting.png)
 
 ## Required input
 
 When checking a box is required, use an asterisk (\*) in the text label.
 
-![Image Name](assets/3_components/checkbox/checkbox_required_input.png)
+![Image Name](./img/checkbox_required_input.png)
 
 ## Related components
 

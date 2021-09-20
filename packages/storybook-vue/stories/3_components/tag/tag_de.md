@@ -26,17 +26,17 @@ Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statisch
 
 Ein statischer Tag hat keine interaktive Funktion. Er zeigt lediglich eine Information an, bspw. eine Kategorie innerhalb einer Tabelle.
 
-![Image Name](assets/3_components/chip/Tag-static.png)
+![Image Name](./img/Tag-static.png)
 
 ### Interaktiver Tag
 
 Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon zu schließen. Eine typische Anwendung ist bspw. das Deaktivieren von gesetzten Filtern.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Image Name](./img/Tag-Interactive.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/chip/Tag-Elements.png)
+![Image Name](./img/Tag-Elements.png)
 
 ### Container (1)
 
@@ -54,11 +54,11 @@ Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
 
 Die Standardfarbe für Tags ist Dunkelgrau. So garantierst du maximalen Kontrast und beste Lesbarkeit.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Image Name](./img/Tag-Interactive.png)
 
 Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst du eine eigene Farbe wählen. Wichtig ist, dass das Farbschema verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
-![Image Name](assets/3_components/chip/Tag-color_de.png)
+![Image Name](./img/Tag-color_de.png)
 
 ## Größen
 
@@ -68,13 +68,13 @@ Du kannst Tags in zwei Größen verwenden. Achte darauf, die beiden Größen nic
 
 Verwende große Tags als Standard.
 
-![Image Name](assets/3_components/chip/Tag-size-default.png)
+![Image Name](./img/Tag-size-default.png)
 
 ### Small
 
 Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße hast.
 
-![Image Name](assets/3_components/chip/Tag-size-small.png)
+![Image Name](./img/Tag-size-small.png)
 
 ### Best Practices
 

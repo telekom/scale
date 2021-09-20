@@ -27,7 +27,7 @@ Don't use a text field when users need to:
 
 ## Elements
 
-![Image Name](assets/3_components/text-input/input-field-elements.png)
+![Image Name](./img/input-field-elements.png)
 
 ### Label (1)
 
@@ -53,13 +53,13 @@ If an error occurs, a corresponding text indicates what a user still needs to do
 
 If the text field is disabled, the user can't enter or change text. Use this state if a particular interaction is unavailable due to permissions or dependencies.
 
-![Image Name](assets/3_components/text-input/input_disabled.png)
+![Image Name](./img/input_disabled.png)
 
 ## Read only
 
 Read-only text fields show prefilled text that users cannot edit or change. However, the content is accessible for screen readers. Use this state when you want users to read, but not edit, a particular piece of content.
 
-![Image Name](assets/3_components/text-input/text-field-read-only.png)
+![Image Name](./img/text-field-read-only.png)
 
 ## Sizes
 
@@ -69,13 +69,13 @@ Scale provides two sizes of text fields. Only use one size within a group.
 
 Use the large size in all standard cases.
 
-![Image Name](assets/3_components/text-input/input-field-large.png)
+![Image Name](./img/input-field-large.png)
 
 ### Small
 
 When space is limited, the small size may work better.
 
-![Image Name](assets/3_components/text-input/input-field-small.png)
+![Image Name](./img/input-field-small.png)
 
 Important: Use either only small or only large elements within groups.
 

@@ -9,7 +9,7 @@ Mit Checkboxen aktivieren Nutzer\*innen Optionen. So können sie einfache Ja-Nei
 
 Eine Checkbox ist ein Steuerelement, mit dem Nutzer\*innen zwischen zwei Optionen wählen können. Die Checkbox besteht aus einem Kontrollkästchen und einem entsprechenden Label. Das Aktivieren einer Checkbox hat keine Auswirkung auf andere Auswahlmöglichkeiten. Eine Option gilt als ausgewählt, wenn die Checkbox mit einem Häkchen versehen ist. Im Initialzustand kann eine Checkbox ein- oder ausgeschaltet sein.
 
-![Image Name](assets/3_components/checkbox/checkbox.png)
+![Image Name](./img/checkbox.png)
 
 ### Verwende eine Checkbox, wenn
 
@@ -25,7 +25,7 @@ Eine Checkbox ist ein Steuerelement, mit dem Nutzer\*innen zwischen zwei Optione
 
 ## Elemente
 
-![Image Name](assets/3_components/checkbox/checkbox-elements.png)
+![Image Name](./img/checkbox-elements.png)
 
 ### Checkbox ausgeschaltet (1)
 
@@ -47,7 +47,7 @@ Bei einer nicht eingeschalteten, aber verpflichtenden Auswahl einer Option, die 
 
 Das Label beschreibt klar, was geschieht, wenn die Checkbox ein- oder ausgeschaltet ist. Es vermittelt somit zwei gegensätzliche Zustände. Das Label ist immer positiv formuliert, um eine doppelte Verneinung zu vermeiden.
 
-![Image Name](assets/3_components/checkbox/checkbox_label.png)
+![Image Name](./img/checkbox_label.png)
 
 ## Deaktivierter Zustand
 
@@ -56,7 +56,7 @@ Deaktiviere die Checkbox, wenn
 - eine andere Aktion erfolgen muss, bevor die Checkbox nutzbar ist oder
 - die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
 
-![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
+![Image Name](./img/checkbox_disabled.png)
 
 ## Verschachtelte Checkboxen
 
@@ -64,13 +64,13 @@ Deaktiviere die Checkbox, wenn
 
 Wenn Checkboxen zu einer übergeordneten Auswahloption gehören, dann kannst du diese verschachtelt darstellen. Durch Aktivieren der übergeordneten Checkbox werden alle anderen dieser Gruppe automatisch ausgewählt und umgekehrt. Wählen Nutzer\*innen nur eine der untergeordneten Checkboxen, ist der Status des übergeordneten Kontrollkästchens unbestimmt.
 
-![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
+![Image Name](./img/checkbox_nesting.png)
 
 ## Verpflichtende Eingaben
 
 Verwende ein Sternchen (\*) hinter dem Text, wenn eine Checkbox ausgewählt werden muss.
 
-![Image Name](assets/3_components/checkbox/checkbox_required_input.png)
+![Image Name](./img/checkbox_required_input.png)
 
 ## Verwandte Komponenten
 

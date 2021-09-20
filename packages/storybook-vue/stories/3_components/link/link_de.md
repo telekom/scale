@@ -25,13 +25,13 @@ Der Text-Link bietet eine zusätzliche Möglichkeit zur Navigation. Er kann als 
 
 Ein reiner Text-Link kann allein, innerhalb eines Satzes oder Textabschnitts sowie im Anschluss eines Texts erscheinen.
 
-![Image Name](assets/3_components/link/text_only.png)
+![Image Name](./img/text_only.png)
 
 ### Link mit Text und Icon
 
 Ein Icon kennzeichnet, ob ein Link zu einer externen Webseite, einem Dokument oder Download führt. Wichtig ist, dass du die Icons immer einheitlich verwendest.
 
-![Image Name](assets/3_components/link/link_icon.png)
+![Image Name](./img/link_icon.png)
 
 ## Best Practices
 
@@ -47,13 +47,13 @@ Wähle die Schriftgröße auf Basis der verwendeten Schrift im Fließtext.
 
 20px
 
-![Image Name](assets/3_components/link/link_large.png)
+![Image Name](./img/link_large.png)
 
 ### Small
 
 16px
 
-![Image Name](assets/3_components/link/link_small.png)-->
+![Image Name](./img/link_small.png)-->
 
 ## Verwandte Komponenten
 

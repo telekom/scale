@@ -30,17 +30,17 @@ In general, be careful using tags. Don't use them when:
 
 A static tag has no interactive function. It only conveys information, for instance a category within a table.
 
-![Image Name](assets/3_components/chip/Tag-static.png)
+![Image Name](./img/Tag-static.png)
 
 ### Interactive tag
 
 An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use is, for example, the deactivation of selected filters.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Image Name](./img/Tag-Interactive.png)
 
 ## Elements
 
-![Image Name](assets/3_components/chip/Tag-Elements.png)
+![Image Name](./img/Tag-Elements.png)
 
 ### Container (1)
 
@@ -58,11 +58,11 @@ By clicking/tapping on the icon, users remove the tag.
 
 The default color for tags is dark gray. This way, the maximum contrast guarantees the best legibility.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Image Name](./img/Tag-Interactive.png)
 
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 
-![Image Name](assets/3_components/chip/Tag-color.png)
+![Image Name](./img/Tag-color.png)
 
 ## Sizes
 
@@ -72,13 +72,13 @@ Scale offers two sizes for tags. Be careful not to combine the two sizes.
 
 Use large tags as default.
 
-![Image Name](assets/3_components/chip/Tag-size-default.png)
+![Image Name](./img/Tag-size-default.png)
 
 ### Small
 
 Only use small tags if you don't have enough space for the standard size.
 
-![Image Name](assets/3_components/chip/Tag-size-small.png)
+![Image Name](./img/Tag-size-small.png)
 
 ### Best practices
 

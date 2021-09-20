@@ -9,7 +9,7 @@ Cards zeigen kurze Zusammenfassungen von Inhalten und Informationen. Dadurch ist
 
 Mit der Card-Komponente kannst du jede Art von Inhalt darstellen. Eine Card kommuniziert jeweils eine Kernaussage und ist unabhängig von anderen Inhalten.
 
-![Image Name](assets/3_components/card/cards_allgemein.png)
+![Image Name](./img/cards_allgemein.png)
 
 ### Verwende eine Card, um
 
@@ -27,7 +27,7 @@ Mit der Card-Komponente kannst du jede Art von Inhalt darstellen. Eine Card komm
 
 Eine Card mit interaktivem Container dient als Vorschau und Einstiegspunkt zu ausführlicheren Informationen. Die gesamte Card ist klickbar.
 
-![Image Name](assets/3_components/card/card-interactive.png)
+![Image Name](./img/card-interactive.png)
 
 ### Cards mit statischem Container
 
@@ -37,13 +37,13 @@ Beispiel 1)
 
 Auch wenn der Card-Container selbst nicht interaktiv ist, kann die Card interaktive Elemente wie Funktionen oder Text-Links zu verwandten Informationen enthalten.
 
-![Image Name](assets/3_components/card/cards-static-bsp1.png)
+![Image Name](./img/cards-static-bsp1.png)
 
 Beispiel 2)
 
 Dient die Card als Vorschau und Einstiegspunkt zu ausführlicheren Informationen, dann gelangen die Nutzer\*innen über die Headline dorthin.
 
-![Image Name](assets/3_components/card/cards-static-bsp2.png)
+![Image Name](./img/cards-static-bsp2.png)
 
 ## Layout
 
@@ -51,7 +51,7 @@ Dient die Card als Vorschau und Einstiegspunkt zu ausführlicheren Informationen
 
 Standardmäßig hat eine Card ein Padding, an dem du die Typografie und visuellen Elemente ausrichten kannst. Bilder darfst du im Anschnitt platzieren.
 
-![Image Name](assets/3_components/card/cards-padding.png)
+![Image Name](./img/cards-padding.png)
 
 ## Barrierefreiheit
 

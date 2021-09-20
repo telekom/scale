@@ -27,7 +27,7 @@ Don't use a modal for:
 
 ## Elements
 
-![Image Name](assets/3_components/modal/Modal_Basic.png)
+![Image Name](./img/Modal_Basic.png)
 
 ### Title (1)
 
@@ -50,7 +50,7 @@ The close icon is mandatory.
 If the content exceeds the space provided by the modal, the content becomes scrollable.
 To frame the scrollable area, an overlay highlights the action bar. A divider appears below the header.
 
-![Image Name](assets/3_components/modal/Modal_Scrolling.png)
+![Image Name](./img/Modal_Scrolling.png)
 
 ## Sizes
 
@@ -58,15 +58,15 @@ To frame the scrollable area, an overlay highlights the action bar. A divider ap
 
 For desktops, modals come in sizes S, L, or XL and span 6, 8, or 12 columns, respectively. Select the modal size that best fits the amount of content for your use case.
 
-![Image Name](assets/3_components/modal/desktop_12columns.png)
-![Image Name](assets/3_components/modal/desktop_8columns.png)
-![Image Name](assets/3_components/modal/desktop_6columns.png)
+![Image Name](./img/desktop_12columns.png)
+![Image Name](./img/desktop_8columns.png)
+![Image Name](./img/desktop_6columns.png)
 
 ### Mobile
 
 On mobile, all modals have the same size: full width (4 columns).
 
-![Image Name](assets/3_components/modal/mobile_4columns.png)
+![Image Name](./img/mobile_4columns.png)
 
 ## Best practices
 

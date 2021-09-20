@@ -19,4 +19,4 @@ Divider sind subtil: Sie sind gut erkennbar, aber nie dominant.
 
 ## Varianten
 
-![Image Name](assets/3_components/divider/divider_de.png)
+![Image Name](./img/divider_de.png)

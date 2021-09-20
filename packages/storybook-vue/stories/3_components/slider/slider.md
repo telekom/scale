@@ -30,17 +30,17 @@ Don't use a slider when:
 
 Each slider needs a label which describes the value that is changing. Always display the current value by default.
 
-![Image Name](assets/3_components/slider/slider_types.png)
+![Image Name](./img/slider_types.png)
 
 ## Colors
 
 Telekom sliders use Magenta as an accent color. If you need to apply a color code, you can either use colors from the Telekom color palette or create a custom one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
-![Image Name](assets/3_components/slider/slider_color.png)
+![Image Name](./img/slider_color.png)
 
 ## Sizes
 
-![Image Name](assets/3_components/slider/slider_sizes.png)
+![Image Name](./img/slider_sizes.png)
 
 ## Inactive slider
 
@@ -49,7 +49,7 @@ Disable the slider if:
 - another action has to take place before the slider is usable or
 - users cannot change the value at the moment.
 
-![Image Name](assets/3_components/slider/slider_disabled.png)
+![Image Name](./img/slider_disabled.png)
 
 ## Related components
 

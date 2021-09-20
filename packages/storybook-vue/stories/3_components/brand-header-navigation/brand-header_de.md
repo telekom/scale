@@ -13,7 +13,7 @@ Der Brand-Header setzt sich aus der Brand-Bar und der Navigation-Bar zusammen. E
 
 Neben Logo und Claim enthält die Brand-Bar weitere Telekom Links und Funktionen. Beim Scrollen der Seite auf Desktop-Geräten verkleinert sich die Brand-Bar und gibt Raum für Navigation und Inhalt. Das Logo wechselt die Position und erscheint dann in der Navigation-Bar. Der gesamte Header bleibt am oberen Bildschirmrand fixiert. Scrollen die Nutzer\*innen zurück, wird der Ausgangszustand wieder hergestellt. Die Minimierung der Brand-Bar ist ein typisches Kennzeichen für den Brand-Header und funktioniert auf allen Geräten gleich.
 
-![Image Name](assets/3_components/brand-header/EN_brandheader_brandbar.png)
+![Image Name](./img/EN_brandheader_brandbar.png)
 
 #### Telekom Logo und Claim (1)
 
@@ -39,13 +39,13 @@ Mit dem Sprachenwechsel-Element wählen Nutzer\*innen die gewünschte Sprache f�
 
 Wenn nur wenige Sprachen angeboten werden und ausreichend Platz vorhanden ist, kannst du den Wechsel von Sprachen in Form von einfachen Text-Links darstellen. Die aktuell ausgewählte Sprache ist immer ausgeblendet.
 
-![Image Name](assets/3_components/brand-header/EN-brandheader_language01.png)
+![Image Name](./img/EN-brandheader_language01.png)
 
 ### Dropdown-Navigation
 
 Setze eine Dropdown-Navigation mit Länderkürzeln ein, wenn mehr als vier Sprachversionen wählbar sind oder der Platz nicht ausreicht.
 
-![Image Name](assets/3_components/brand-header/EN-brandheader_language02.png)
+![Image Name](./img/EN-brandheader_language02.png)
 
 ### Name des Portals
 
@@ -53,13 +53,13 @@ Setze eine Dropdown-Navigation mit Länderkürzeln ein, wenn mehr als vier Sprac
 
 Benötigst du keinen Wechsel zwischen den Bereichen von Privat- und Geschäftskund\*innen, dann kannst du an dieser Stelle den Portalnamen ausweisen. Das gibt den Nutzer\*innen eine zusätzliche Hilfe zur Orientierung.
 
-![Image Name](assets/3_components/brand-header/EN_brandheader_portalname.png)
+![Image Name](./img/EN_brandheader_portalname.png)
 
 ## Navigation-Bar
 
 Die Navigation-Bar ist das zentrale Steuerungs- und Orientierungselement unserer Webseiten. Sie enthält, der Leserichtung folgend, die wichtigsten Navigationspunkte auf der linken Seite. Produktspezifische Kernfunktionen werden auf der rechten Seite plaziert. Jedes Element der Navigation-Bar ist entweder ein direkter Link zu einer neuen Seite oder öffnet ein Dropdown.
 
-![Image Name](assets/3_components/brand-header/EN_brandheader_navbar.png)
+![Image Name](./img/EN_brandheader_navbar.png)
 
 #### Hauptnavigation (1)
 
@@ -77,13 +77,13 @@ Entscheide dich für eine Navigation, die zur Komplexität der Informationsarchi
 
 Die Navigationspunkte dienen der Gliederung und fungieren als Sprungmarken.
 
-![Image Name](assets/3_components/brand-header/EN-brandheader_nav1_onepage.png)
+![Image Name](./img/EN-brandheader_nav1_onepage.png)
 
 ### Webseiten ohne Untermenü
 
 Bei Webseiten mit nur einer Hierarchieebene gelangen die Nutzer\*innen per Klick/Tap auf einen Menüpunkt direkt zum Inhalt.
 
-![Image Name](assets/3_components/brand-header/EN-brandheader_nav2_nosubmenu.png)
+![Image Name](./img/EN-brandheader_nav2_nosubmenu.png)
 
 ### Dropdown-Navigation
 
@@ -91,19 +91,19 @@ Bei Webseiten mit nur einer Hierarchieebene gelangen die Nutzer\*innen per Klick
 
 Die Dropdown-Navigation eignet sich für Webseiten mit umfangreicher Seitenarchitektur. Sie kann mehrere Hierarchieebenen innerhalb des Navigationsbaums darstellen. Generell gilt: je weniger Ebenen, desto besser.
 
-![Image Name](assets/3_components/brand-header/EN_brandheader_navi3_dropdown.png)
+![Image Name](./img/EN_brandheader_navi3_dropdown.png)
 
 ### Mega-Menü
 
 Das Mega-Menü nutzt du am besten für eine flache Informationsarchitektur. Es bietet eine gute Übersicht innerhalb einer Kategorie. Die Ebenentiefe ist allerdings auf drei Ebenen begrenzt.
 
-![Image Name](assets/3_components/brand-header/EN_brandheader_nav4_megamenu.png)
+![Image Name](./img/EN_brandheader_nav4_megamenu.png)
 
 ## Mobile Navigation
 
 Bei dieser Variante wird die Navigation automatisch nach dem Seitenaufruf minimiert, um dem Inhalt mehr Raum zu geben.
 
-![Image Name](assets/3_components/brand-header/EN_brandheader_nav_mobile.png)
+![Image Name](./img/EN_brandheader_nav_mobile.png)
 
 #### Ausgangszustand (1)
 

@@ -27,13 +27,13 @@ Use a button when you want users to perform a specific action.
 
 A text-only link can appear alone, within a sentence or body of text, or directly following content.
 
-![Image Name](assets/3_components/link/text_only.png)
+![Image Name](./img/text_only.png)
 
 ### Text and icon
 
 Add an icon to label certain categories, e.g., links to external sites, documents, downloads, etc. Make sure to use icons consistently within your product or service.
 
-![Image Name](assets/3_components/link/link_icon.png)
+![Image Name](./img/link_icon.png)
 
 ## Link text
 
@@ -49,13 +49,13 @@ Choose the size based on the body text you are using.
 
 20px
 
-![Image Name](assets/3_components/link/link_large.png)
+![Image Name](./img/link_large.png)
 
 ### Small
 
 16px
 
-![Image Name](assets/3_components/link/link_small.png)-->
+![Image Name](./img/link_small.png)-->
 
 ## Related components
 

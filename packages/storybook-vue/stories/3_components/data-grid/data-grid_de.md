@@ -23,13 +23,13 @@ Data Grids sind ein erweiterter Tabellentyp. Zusätzlich zu den Standardfunktion
 
 Um die Lesbarkeit der Inhalte zu erhöhen, kannst du alternierende Hintergründe einsetzen.
 
-![Image Name](assets/3_components/data-grid/Backgrounds_de.png)
+![Image Name](./img/Backgrounds_de.png)
 
 ## Elemente
 
 Innerhalb des Data Grid Frameworks kannst du eine Auswahl bestehender Komponenten frei kombinieren, um eine eine breite Palette von Anwendungsfällen zu berücksichtigen.
 
-![Image Name](assets/3_components/data-grid/elements.png)
+![Image Name](./img/elements.png)
 
 #### Titel (1)
 
@@ -70,13 +70,13 @@ Mit Hilfe der Pagination bewegen sich Nutzer\*innen gezielt durch den gesamten D
 
 Folgende Inhaltskomponenten kannst du in Data Grids einsetzen:
 
-![Image Name](assets/3_components/data-grid/Data_components_de.png)
+![Image Name](./img/Data_components_de.png)
 
 ## Mobiles Verhalten
 
 Auf mobilen Bildschrimen bricht die Datenzeile um und wird als separates Item angezeigt.
 
-![Image Name](assets/3_components/data-grid/Mobile.png)
+![Image Name](./img/Mobile.png)
 
 ## Beta-Komponente
 

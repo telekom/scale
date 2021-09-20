@@ -9,7 +9,7 @@ Mit Hilfe eines Switch können Nutzer\*innen eine Option direkt ein- oder aussch
 
 Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/aus oder ja/nein). Er hat immer einen Default-Wert. Der magentafarbene, flächige Switch zeigt an, dass er eingeschaltet ist, während ein Outline-Switch anzeigt, dass er ausgeschaltet ist.
 
-![Image Name](assets/3_components/switch/switch.png)
+![Image Name](./img/switch.png)
 
 ### Verwende einen Switch, wenn
 
@@ -24,7 +24,7 @@ Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/a
 
 Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eignet sich ein einzelnes Substantiv am besten.
 
-![Image Name](assets/3_components/switch/switch_label.png)
+![Image Name](./img/switch_label.png)
 
 ## Verwandte Komponenten
 

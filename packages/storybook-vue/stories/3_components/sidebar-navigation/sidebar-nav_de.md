@@ -20,7 +20,7 @@ Der Einsatz der Sidebar-Navigation ist optional. Sie bietet die Möglichkeit, ei
 
 ## Elemente
 
-![Image Name](assets/3_components/sidebar-navigation/sidebar-navigation-elements.png)
+![Image Name](./img/sidebar-navigation-elements.png)
 
 Beispiel einer Sidebar-Navigation für Desktop-Anwendungen
 
@@ -54,7 +54,7 @@ Bei kleinen Geräten befindet sich die Sidebar-Navigation nicht links, sondern o
 Je nach Anzahl der Ebenen können sich die Nutzer*innen durch weitere Listen bis zum gewünschten Inhalt navigieren.
 Da es auf mobilen Geräten kein Mouseover gibt, bleibt der Pfeil eines Submenüs immer sichtbar.
 
-![Image Name](assets/3_components/sidebar-navigation/Sidebar-navigation-mobile.png)
+![Image Name](./img/Sidebar-navigation-mobile.png)
 
 ## Verwandte Komponenten
 

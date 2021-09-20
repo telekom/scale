@@ -23,13 +23,13 @@ Data grids are an extended type of table. In addition to the standard functions 
 
 You can use alternating backgrounds to make the content more readable.
 
-![Image Name](assets/3_components/data-grid/Backgrounds_en.png)
+![Image Name](./img/Backgrounds_en.png)
 
 ## Elements
 
 With the data grid framework, you can freely combine a selection of existing components to account for a wide range of use cases.
 
-![Image Name](assets/3_components/data-grid/elements.png)
+![Image Name](./img/elements.png)
 
 #### Data grid heading (1)
 
@@ -70,13 +70,13 @@ With the help of pagination, users can move through the entire data set in a del
 
 You can use the following content components in the data grid:
 
-![Image Name](assets/3_components/data-grid/Data_components_en.png)
+![Image Name](./img/Data_components_en.png)
 
 ## Mobile behavior
 
 A row of data breaks on mobile screens and is displayed as a separate item.
 
-![Image Name](assets/3_components/data-grid/Mobile.png)
+![Image Name](./img/Mobile.png)
 
 ## Beta components
 

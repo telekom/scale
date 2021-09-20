@@ -14,11 +14,11 @@ Verwende das Logo ausschließlich für den Brand-Header und Footer.
 
 Das Telekom Logo mit Claim liegt in 9 länderspezifischen Varianten vor (für Deutschland, Ungarn, Tschechien, Kroatien, Montenegro, Mazedonien, Rumänien und Slovakei sowie als internationale Variante).
 
-![Image Name](assets/3_components/logo/Logo-Claim-Varianten-DE.png)
+![Image Name](./img/Logo-Claim-Varianten-DE.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/logo/Logo-Claim.png)
+![Image Name](./img/Logo-Claim.png)
 
 #### Logo (1)
 
@@ -26,7 +26,7 @@ Das Telekom Logo mit Claim liegt in 9 länderspezifischen Varianten vor (für De
 
 ## Farben
 
-![Image Name](assets/3_components/logo/Farben-DE.png)
+![Image Name](./img/Farben-DE.png)
 
 ## Beta-Komponente
 

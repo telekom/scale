@@ -28,17 +28,17 @@ Die Auswahlliste des Dropdowns wird temporär angezeigt. Das macht ein Dropdown 
 
 Das Standard-Dropdown listet alle verfügbaren Optionen auf.
 
-![Image Name](assets/3_components/select-box/Dropdown.png)
+![Image Name](./img/Dropdown.png)
 
 ### Optionsgruppe
 
 Wenn du viele kategorisierbare Optionen anbietest, kannst du Optionsgruppen erstellen.
 
-![Image Name](assets/3_components/select-box/Dropdown-optionsgruppe.png)
+![Image Name](./img/Dropdown-optionsgruppe.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/select-box/Elemente.png)
+![Image Name](./img/Elemente.png)
 
 ### Label (1)
 
@@ -72,13 +72,13 @@ Bei einem Dropdown kannst du zwischen zwei Größen wählen – Large und Small.
 
 Verwende das große Dropdown als Standard.
 
-![Image Name](assets/3_components/select-box/dropdown-gross.png)
+![Image Name](./img/dropdown-gross.png)
 
 ### Small
 
 Wenn nur wenig Platz zur Verfügung steht, setze das kleine Dropdown ein.
 
-![Image Name](assets/3_components/select-box/dropdown-klein.png)
+![Image Name](./img/dropdown-klein.png)
 
 ## Bekannte Einschränkungen
 

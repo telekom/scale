@@ -20,7 +20,7 @@ Eine Tabelle organisiert Daten in Zeilen und Spalten. Zusätzliche Funktionen wi
 
 ## Elemente
 
-![Image Name](assets/3_components/data-table/data-table-elements.png)
+![Image Name](./img/data-table-elements.png)
 
 ### Spalten-Header (1)
 
@@ -44,7 +44,7 @@ Eine Trennlinie trennt die Tabellenzeilen voneinander.
 
 Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darstellung auf Desktop-Geräten. Um die gesamte Tabelle zu sehen, können Nutzer\*innen horizontal swipen.
 
-![Image Name](assets/3_components/data-table/data-table-mobile.png)
+![Image Name](./img/data-table-mobile.png)
 
 ## Best Practices
 

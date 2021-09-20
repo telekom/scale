@@ -6,7 +6,7 @@ Telekom Icons fügen sich harmonisch in das Design unserer Webseiten und Apps ei
 
 Die Deutsche Telekom hat einen eigenen Icon-Stil, um die Werte der Marke auf eine subtile, aber doch wesentliche Weise zu vermitteln.
 
-![Image Name](assets/3_components/icon/icons_general.png)
+![Image Name](./img/icons_general.png)
 
 ### Verwende ein Icon, um
 
@@ -21,30 +21,30 @@ Die Deutsche Telekom hat einen eigenen Icon-Stil, um die Werte der Marke auf ein
 
 Verwende standardmäßig Outline-Icons für User Interfaces. Sie sind für helle und dunkle Hintergründe optimiert. Flächige Icons heben einen ausgewählten Status hervor.
 
-![Image Name](assets/3_components/icon/icons_variants_de.png)
+![Image Name](./img/icons_variants_de.png)
 
 ## Statische und interaktive Icons
 
 Interaktive Icons haben, im Gegensatz zu statischen, eine Funktionalität. Per Klick/Tap lösen Nutzer\*innen eine Aktion aus. Ist ein Icon interaktiv, zeigt die flächige Version den aktiven Zustand an.
 
-![Image Name](assets/3_components/icon/icon_interactive.png)
+![Image Name](./img/icon_interactive.png)
 
 ## Icons und Labels
 
 Um die beste User Experience zu gewährleisten, versehe die Icons immer mit einem erklärenden Label. Verwende für die Standardfunktionen die fest definierten Icons und Begriffe.
 Weitere Informationen zur Rechtschreibung und Terminologie von Telekom Produkten findest du im Glossar unter <a href="https://www.brand-design.telekom.com/en/downloads/glossary/" target="_blank">Glossary</a>.
 
-![Image Name](assets/3_components/icon/icon_label.png)
+![Image Name](./img/icon_label.png)
 
 ## Größen
 
 Die Standard-Icons gibt es in den Größen L (48 px), M (24 px) und S (16 px).
 
-![Image Name](assets/3_components/icon/icon_sizes_static.png)
+![Image Name](./img/icon_sizes_static.png)
 
 Statische Icons
 
-![Image Name](assets/3_components/icon/icon_sizes_interactive.png)
+![Image Name](./img/icon_sizes_interactive.png)
 
 Interaktive Icons
 

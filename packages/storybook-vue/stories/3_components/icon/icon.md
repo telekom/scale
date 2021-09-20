@@ -6,7 +6,7 @@ Telekom icons seamlessly blend into the design of our websites and apps. They he
 
 Deutsche Telekom has its own icon style to convey the brand’s values in a subtle yet essential way.
 
-![Image Name](assets/3_components/icon/icons_general.png)
+![Image Name](./img/icons_general.png)
 
 ### When to use
 
@@ -23,30 +23,30 @@ Don't use icons for solely aesthetic reasons. Users must immediately recognize t
 
 By default, we use outline icons for our user interfaces. They are optimized for light and dark backgrounds. Solid icons emphasize an selected status.
 
-![Image Name](assets/3_components/icon/icons_variants.png)
+![Image Name](./img/icons_variants.png)
 
 ## Static and interactive icons
 
 A static icon has no interactive functionality. An interactive icon can have an assigned function. If an icon is interactive, use the solid version of the icon for the active state.
 
-![Image Name](assets/3_components/icon/icon_interactive.png)
+![Image Name](./img/icon_interactive.png)
 
 ## Icons and text label
 
 To ensure the best user experience, always provide icons with a text label. We maintain clearly defined icons and terms for our standard functions.
 To learn more about spelling and terminology for Telekom products, see our <a href="https://www.brand-design.telekom.com/en/downloads/glossary/" target="_blank">Glossary</a>.
 
-![Image Name](assets/3_components/icon/icon_label.png)
+![Image Name](./img/icon_label.png)
 
 ## Icon sizes
 
 Our standard icons sizes are large (48 px), medium (24 px), and small (16 px).
 
-![Image Name](assets/3_components/icon/icon_sizes_static.png)
+![Image Name](./img/icon_sizes_static.png)
 
 Static icon
 
-![Image Name](assets/3_components/icon/icon_sizes_interactive.png)
+![Image Name](./img/icon_sizes_interactive.png)
 
 Interactive icon
 

@@ -22,11 +22,11 @@ A calendar view shows current, past, and future times.
 
 ## Variants
 
-![Image Name](assets/3_components/date-picker/Types_en.png)
+![Image Name](./img/Types_en.png)
 
 ## Elements
 
-![Image Name](assets/3_components/date-picker/Elements.png)
+![Image Name](./img/Elements.png)
 
 #### Date input (1)
 

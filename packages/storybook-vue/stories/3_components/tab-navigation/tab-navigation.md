@@ -34,26 +34,26 @@ Don't use tabs if:
 
 For most use cases, tabs with text provide the best orientation.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_textonly.png)
+![Image Name](./img/tab_navigation_textonly.png)
 
 ### Text and icon
 
 Add icons if they help users understand which content a certain tab represents. Do not use the same icon more than once within a set of tabs.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_icon-text.png)
+![Image Name](./img/tab_navigation_icon-text.png)
 
 ## Sizes
 
 We provide the tab navigation in two sizes: large and small. You can choose one of the two options for purely visual reasons or based on how relevant the content is. For mobile applications, we recommend using the small size.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_sizes.png)
+![Image Name](./img/tab_navigation_sizes.png)
 
 ## Disabled tab
 
 If the content in one tab is temporarily unavailable, you can disable the tab.
 A user needs to understand why they can't access a tab, or this will lead to a less-than-ideal experience. Therefore, see if you can maintain the functionality of each tab and explain in the content area when a tab is temporarily unavailable.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_disabled.png)
+![Image Name](./img/tab_navigation_disabled.png)
 
 ## Label
 

@@ -27,7 +27,7 @@ Bear in mind that accordions require a great deal of interaction. Don't use an a
 
 ## Elements
 
-![Image Name](assets/3_components/accordion/accordion.png)
+![Image Name](./img/accordion.png)
 
 #### Icon (1)
 

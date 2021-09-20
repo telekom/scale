@@ -9,7 +9,7 @@ A card shows a brief summary of a topic. This makes it easier for users to find 
 
 Cards can hold any kind of content in a flexibly sized container. One card communicates one message. A card is an independent piece of content that requires no additional context.
 
-![Image Name](assets/3_components/card/cards_general.png)
+![Image Name](./img/cards_general.png)
 
 ### When to use
 
@@ -31,7 +31,7 @@ Don't use cards:
 
 A card acts as a preview and point of entry for more detailed information. The entire card is clickable.
 
-![Image Name](assets/3_components/card/card-interactive.png)
+![Image Name](./img/card-interactive.png)
 
 ### Card with a static container
 
@@ -41,13 +41,13 @@ Example 1.
 
 Even if the card container itself is not interactive, the card can contain interactive elements such as functions or text links to related information.
 
-![Image Name](assets/3_components/card/cards-static-bsp1.png)
+![Image Name](./img/cards-static-bsp1.png)
 
 Example 2.
 
 The headline should be clickable if the card serves as a preview and point of entry for more detailed information.
 
-![Image Name](assets/3_components/card/cards-static-bsp2.png)
+![Image Name](./img/cards-static-bsp2.png)
 
 ## Layout
 
@@ -55,7 +55,7 @@ The headline should be clickable if the card serves as a preview and point of en
 
 By default, a card has padding to align the typography and visual elements. If you want, you can place images in the bleed.
 
-![Image Name](assets/3_components/card/cards-padding.png)
+![Image Name](./img/cards-padding.png)
 
 ## Accessibility
 

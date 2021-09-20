@@ -22,11 +22,11 @@ Eine Kalenderansicht zeigt vergangene, aktuelle und zukünftige Zeiten an.
 
 ## Varianten
 
-![Image Name](assets/3_components/date-picker/Types_de.png)
+![Image Name](./img/Types_de.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/date-picker/Elements.png)
+![Image Name](./img/Elements.png)
 
 #### Input-Feld (1)
 

@@ -24,7 +24,7 @@ Don't use a table when:
 
 ## Elements
 
-![Image Name](assets/3_components/data-table/data-table-elements.png)
+![Image Name](./img/data-table-elements.png)
 
 ### Column header (1)
 
@@ -47,7 +47,7 @@ The dividing line separates the table rows from one another.
 
 The table structure and display are the same for both mobile and desktops. To see the entire table, the user can swipe horizontally.
 
-![Image Name](assets/3_components/data-table/data-table-mobile.png)
+![Image Name](./img/data-table-mobile.png)
 
 ## Best practices
 

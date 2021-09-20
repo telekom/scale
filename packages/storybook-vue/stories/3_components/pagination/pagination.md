@@ -23,11 +23,11 @@ The default number displayed will vary depending on the context.
 
 ## Variants
 
-![Image Name](assets/3_components/pagination/Basic-types-en.png)
+![Image Name](./img/Basic-types-en.png)
 
 ## Elements
 
-![Image Name](assets/3_components/pagination/Elements.png)
+![Image Name](./img/Elements.png)
 
 #### Back to the beginning (1)
 

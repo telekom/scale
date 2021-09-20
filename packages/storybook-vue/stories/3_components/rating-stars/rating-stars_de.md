@@ -9,7 +9,7 @@ Mit Rating-Stars können Nutzer\*innen ihre Meinung zu einem Produkt, Service od
 
 Rating-Stars sind ein kundenorientiertes, sehr visuelles Bewertungssystem, mit dem Nutzer\*innen sehr ähnliche Produkte oder Services vergleichen können. Je mehr Bewertungen ein Inhalt hat, desto stärker können sich andere Nutzer\*innen auf die Bewertung verlassen.
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Allgemein.png)
+![Image Name](./img/RatingStars-Allgemein.png)
 
 ### Verwende Rating-Stars, wenn
 
@@ -34,7 +34,7 @@ Statische Rating-Stars haben keine interaktive Funktion, sondern vermitteln ledi
 
 ## Elemente
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Elemente.png)
+![Image Name](./img/RatingStars-Elemente.png)
 
 #### Label (1)
 
@@ -53,14 +53,14 @@ Der Wert kommuniziert eine Zusatzinformation, wie bspw. die Anzahl der bisherige
 
 Scale beinhaltet die Rating-Stars in zwei Größen. Die Größe „Large“ ist der Standard. Wenn du wenig Raum zur Verfügung hast, setze die Größe „Small“ ein. Vermeide die Kombination beider Größen innerhalb eines Produkts oder Services.
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Groessen.png)
+![Image Name](./img/RatingStars-Groessen.png)
 
 ## Best Practices
 
 Möchtest du lediglich die Anzahl der Sternebewertungen ausgeben, setze die Komponente wie oben gezeigt ein. Achte immer darauf, dass die Positionierung klar erkennen lässt, zu welchem Inhalt die Rating-Stars gehören.
 In einigen Fällen kann es Sinn machen, die Bewertungen aufzuschlüsseln:
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Best-Practices.png)
+![Image Name](./img/RatingStars-Best-Practices.png)
 
 ## Beta-Komponente
 

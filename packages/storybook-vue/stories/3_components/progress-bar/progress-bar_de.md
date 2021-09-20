@@ -15,7 +15,7 @@ Eine Progress-Bar ist ein nicht interaktiver, visueller Indikator. Je nachdem, o
 
 Bei einem Prozess, bei dem du die Dauer genau kennst, solltest du immer die bestimmte Progress-Bar verwenden. Die Nutzer\*innen sehen so, wie viel des Prozesses bereits abgeschlossen ist. Diese Variante ist besonders geeignet für Prozesse, die mehr als 10 Sekunden dauern.
 
-![Image Name](assets/3_components/progress-bar/pb_determinate_procent-done.png)
+![Image Name](./img/pb_determinate_procent-done.png)
 
 ### Unbestimmte Progress-Bar
 
@@ -23,11 +23,11 @@ Bei einem Prozess, bei dem du die Dauer genau kennst, solltest du immer die best
 
 Wenn du die Dauer eines Prozesses nicht genau abschätzen kannst, dann verwende die unbestimmte Progress-Bar. Sie zeigt zwar an, dass ein Prozess ausgeführt wird, aber nicht, wie lange es dauert. Wenn möglich, vermeide die Verwendung der unbestimmten Progress-Bar.
 
-![Image Name](assets/3_components/progress-bar/pb-indeterminate.png)
+![Image Name](./img/pb-indeterminate.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/progress-bar/pb_elements.png)
+![Image Name](./img/pb_elements.png)
 
 ### Track (1)
 
@@ -45,8 +45,8 @@ Gib, wenn möglich, immer eine Beschreibung an, die den Nutzer\*innen weitere In
 
 Nutze bei Telekom Progress-Bars Magenta als Akzentfarbe. Wenn du aus einem bestimmten Grund eine andere Farbe verwenden möchtest, kannst du entweder die Farben aus der Telekom Farbpalette nutzen oder eine eigene Farbe auswählen. Bitte achte in diesem Fall darauf, dass das Farbschema für die Nutzer\*innen verständlich ist und alle Anforderungen der Barrierefreiheit erfüllt.
 
-![Image Name](assets/3_components/progress-bar/pb-in-custom-color_de.png)
+![Image Name](./img/pb-in-custom-color_de.png)
 
 ### Fortschritt-Status
 
-![Image Name](assets/3_components/progress-bar/pb_states.png)
+![Image Name](./img/pb_states.png)

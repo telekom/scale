@@ -9,7 +9,7 @@ The flyout menu lets users view and perform a range of functionality that they c
 
 A button calls up the flyout menu in the interface. The flyout menu can contain different elements.
 
-![Image Name](assets/3_components/menu/General_en.png)
+![Image Name](./img/General_en.png)
 
 ## Beta components
 

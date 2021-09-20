@@ -9,7 +9,7 @@ Mit der Flyout-Menü-Komponente können sich Nutzer\*innen eine Reihe von Funkti
 
 Das Flyout-Menü ist über einen Button im Interface aufrufbar. Es kann unterschiedliche Elemente enthalten.
 
-![Image Name](assets/3_components/menu/General_de.png)
+![Image Name](./img/General_de.png)
 
 ## Beta-Komponente
 

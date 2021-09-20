@@ -9,7 +9,7 @@ Switches allow users to quickly turn an item on or off. Like a physical light sw
 
 A switch offers two mutually exclusive states (on/off, yes/no). It always has a default value. A solid Magenta color shows it is on, while a dark outline shows it is off.
 
-![Image Name](assets/3_components/switch/switch.png)
+![Image Name](./img/switch.png)
 
 ### When to use
 
@@ -26,7 +26,7 @@ Use radio buttons or a single checkbox if
 
 Clearly label the switch and keep it short. For some use cases, a single noun provides the best guidance.
 
-![Image Name](assets/3_components/switch/switch_label.png)
+![Image Name](./img/switch_label.png)
 
 ## Related components
 

@@ -32,17 +32,17 @@ Don’t use dropdowns, when users:
 
 The standard dropdown from Scale lists all available options.
 
-![Image Name](assets/3_components/select-box/Dropdown.png)
+![Image Name](./img/Dropdown.png)
 
 ### Option groups
 
 If you have a lot of options to categorize, you can create groups of options.
 
-![Image Name](assets/3_components/select-box/Dropdown-optionsgruppe.png)
+![Image Name](./img/Dropdown-optionsgruppe.png)
 
 ## Elements
 
-![Image Name](assets/3_components/select-box/Elemente.png)
+![Image Name](./img/Elemente.png)
 
 ### Label (1)
 
@@ -76,13 +76,13 @@ Scale offers the dropdown in two sizes. Be careful not to combine the two sizes.
 
 Use large dropdowns as the default option.
 
-![Image Name](assets/3_components/select-box/dropdown-gross.png)
+![Image Name](./img/dropdown-gross.png)
 
 ### Small
 
 When space is limited, use the small dropdown consistently.
 
-![Image Name](assets/3_components/select-box/dropdown-klein.png)
+![Image Name](./img/dropdown-klein.png)
 
 ## Known issues
 

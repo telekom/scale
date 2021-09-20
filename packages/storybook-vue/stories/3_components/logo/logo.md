@@ -14,11 +14,11 @@ Only use the logo for the brand header and footer.
 
 The Telekom logo with claim is available in 9 country-specific variants (International, German, Hungarian, Czech, Croatian, Montenegrin, Macedonian, Romanian, Slovak).
 
-![Image Name](assets/3_components/logo/Logo-Claim-Varianten-EN.png)
+![Image Name](./img/Logo-Claim-Varianten-EN.png)
 
 ## Elements
 
-![Image Name](assets/3_components/logo/Logo-Claim.png)
+![Image Name](./img/Logo-Claim.png)
 
 #### Logo (1)
 
@@ -26,7 +26,7 @@ The Telekom logo with claim is available in 9 country-specific variants (Interna
 
 ## Colors
 
-![Image Name](assets/3_components/logo/Farben-EN.png)
+![Image Name](./img/Farben-EN.png)
 
 ## Beta components
 

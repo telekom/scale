@@ -17,13 +17,13 @@ Entscheide dich je nach Umfang und Ausrichtung deines Produkts für eine Variant
 
 Das Seitenende wird in dieser Variante durch die dunkle Hintergrundfarbe deutlich markiert. Der Standard-Footer enthält Logo und Claim. Bei Seiten mit geringer Komplexität oder wenig Relevanz für Suchmaschinen-Optimierung kannst du diese Variante des Footers einsetzen.
 
-![Image Name](assets/3_components/footer/Footer-standard.png)
+![Image Name](./img/Footer-standard.png)
 
 ### Minimal
 
 Der Minimal-Footer ist in seiner Darstellung sehr reduziert. Er eignet sich ebenso wie die Standard-Variante für Seiten mit geringer Komplexität oder wenig Relevanz für Suchmaschinen-Optimierung.
 
-![Image Name](assets/3_components/footer/Footer-minimal.png)
+![Image Name](./img/Footer-minimal.png)
 
 ### Erweitert
 
@@ -31,11 +31,11 @@ Der Minimal-Footer ist in seiner Darstellung sehr reduziert. Er eignet sich eben
 
 Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sich neben den rechtsverbindlichen Links auch ein Einstieg in das gesamte Angebot des jeweiligen Portals abbilden lässt.
 
-![Image Name](assets/3_components/footer/footer-erweitert.png)
+![Image Name](./img/footer-erweitert.png)
 
 ## Elemente
 
-![Image Name](assets/3_components/footer/footer-elemente.png)
+![Image Name](./img/footer-elemente.png)
 
 ### Sitemap (1) (optional)
 
@@ -49,4 +49,4 @@ Der erweiterte Footer eignet sich für Portale mit umfangreichem Angebot, da sic
 
 Kleine Geräte stellen die Seitennavigation als Accordion dar. Alle anderen Elemente sind ebenfalls vertikal angeordnet.
 
-![Image Name](assets/3_components/footer/Footer-navigation-mobile_de.png)
+![Image Name](./img/Footer-navigation-mobile_de.png)

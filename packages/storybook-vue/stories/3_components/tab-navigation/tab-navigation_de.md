@@ -32,25 +32,25 @@ Achte beim Erstellen von Tabs darauf, dass die Inhalte der verschiedenen Bereich
 
 In den meisten Fällen bieten Tabs mit Text die beste Orientierung.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_textonly.png)
+![Image Name](./img/tab_navigation_textonly.png)
 
 ### Tabs mit Text und Icon
 
 Füge ein Icon hinzu, wenn die Nutzer\*innen dadurch leichter verstehen können, welche Inhalte ein Tab enthält. Bitte achte darauf, dass du ein Icon jeweils nur einmal innerhalb einer Tab-Navigation verwendest.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_icon-text.png)
+![Image Name](./img/tab_navigation_icon-text.png)
 
 ## Größen
 
 Du kannst zwischen zwei Größen wählen – Large und Small. Entscheide nach visuellen Aspekten oder aufgrund der Relevanz des Inhalts. Verwende für mobile Anwendungen die kleine Größe.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_sizes.png)
+![Image Name](./img/tab_navigation_sizes.png)
 
 ## Deaktivierter Zustand
 
 Du kannst einen Tab deaktivieren, wenn sein Inhalt vorübergehend nicht verfügbar ist. Für eine gute User Experience müssen Nutzer\*innen verstehen, warum sie auf einen Tab nicht zugreifen können. Versuche daher die Funktionalität der Tabs zu erhalten und im Inhaltsbereich zu erklären, warum der Inhalt des Tabs verübergehend nicht sichtbar ist.
 
-![Image Name](assets/3_components/tab-navigation/tab_navigation_disabled.png)
+![Image Name](./img/tab_navigation_disabled.png)
 
 ## Label
 
