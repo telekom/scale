@@ -16,6 +16,7 @@
   --padding-bottom-error-helper-text: var(--scl-spacing-8);
   --margin-top-error-helper-text: var(--scl-spacing-4);
   --font-weight-error-helper-text: var(--scl-font-weight-medium);
+  --color-error-helper-text-hcm: var(--scl-color-white);
 
   /*title*/
   --font-size-title: var(--font-size-label);
@@ -41,7 +42,7 @@
 .radio-button-group__helper-text {
   color: var(--color-helper-text);
   font-size: var(--font-size-helper-text);
-  margin-top: calc(var(--margin-top-helper-text) * -1);
+  margin-top: calc(var(--margin-top-helper-text) * +1);
   padding-bottom: calc(var(--padding-bottom-helper-text) * -1);
   font-weight: var(--font-weight-helper-text);
 }
@@ -49,12 +50,12 @@
 .radio-button-group__helper-text--status-error {
   color: var(--color-error-helper-text);
   font-size: var(--font-size-error-helper-text);
-  margin-top: calc(var(--margin-top-error-helper-text) * -1);
+  margin-top: calc(var(--margin-top-error-helper-text) * +1);
   padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
   font-weight: var(--font-weight-error-helper-text);
 }
 
-.radio-button-group__title {
+.radio-button-group__title-label {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-title);
   padding-bottom: var(--padding-bottom-title);
@@ -63,4 +64,10 @@
 
 ::slotted(*) {
   margin-top: var(--margin-top-slotted-item);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .radio-button-group__helper-text--status-error {
+    color: var(--color-error-helper-text-hcm);
+  }
 }
