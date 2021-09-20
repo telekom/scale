@@ -125,6 +125,7 @@ export class CheckboxGroup {
           checked={this.checked}
           indeterminate={this.indeterminate}
           disabled={this.disabled}
+          part="parent-checkbox"
         />
         <fieldset part="fieldset">
           <legend>{this.ariaLabel || this.label}</legend>
