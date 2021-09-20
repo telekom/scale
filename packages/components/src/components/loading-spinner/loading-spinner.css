@@ -29,10 +29,10 @@
 
 .spinner {
   display: inline-flex;
+  align-items: center;
 }
 
 .spinner.spinner--alignment-vertical {
-  align-items: center;
   flex-direction: column;
 }
 
