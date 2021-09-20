@@ -227,6 +227,7 @@ export class RatingStars {
             >
               <input
                 disabled={this.disabled}
+                readonly={this.readonly}
                 part="range-slider"
                 type="range"
                 id={this.ratingStarId}
@@ -234,6 +235,7 @@ export class RatingStars {
                 max={this.max + 1}
                 value={this.rating}
                 step="1"
+                aria-readonly={this.readonly}
                 aria-orientation="horizontal"
                 aria-valuemin={this.minRating}
                 aria-valuemax={this.max}
