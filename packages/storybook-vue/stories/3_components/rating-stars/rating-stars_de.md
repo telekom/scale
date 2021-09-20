@@ -3,24 +3,24 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Mit Rating-Stars können Nutzer\*innen ihre Meinung zu einem Produkt, Service oder Inhalt teilen. So helfen sie anderen Nutzer*innen, eine fundierte Entscheidung zu treffen und sich bspw. bei einem Kauf sicherer zu fühlen.
+Mit Rating-Stars können Nutzer\*innen ihre Meinung zu einem Produkt, Service oder Inhalt teilen. So helfen sie anderen Nutzer\*innen, eine fundierte Entscheidung zu treffen und sich bspw. bei einem Kauf sicherer zu fühlen.
 
 ## Allgemein
 
-Rating-Stars sind ein kundenorientiertes, sehr visuelles Bewertungssystem, mit dem Nutzer\*innen sehr ähnliche Produkte oder Services vergleichen können. Je mehr Bewertungen ein Inhalt hat, desto stärker können sich andere Nutzer*innen auf die Bewertung verlassen.
+Rating-Stars sind ein kundenorientiertes, sehr visuelles Bewertungssystem, mit dem Nutzer\*innen sehr ähnliche Produkte oder Services vergleichen können. Je mehr Bewertungen ein Inhalt hat, desto stärker können sich andere Nutzer\*innen auf die Bewertung verlassen.
 
 ![Image Name](assets/3_components/rating-stars/RatingStars-Allgemein.png)
 
 ### Verwende Rating-Stars, wenn
 
 - du eine große Auswahl an Produkten, Services oder Inhalten anbietest,
-- du Nutzer*innen die Entscheidung erleichtern möchtest und
-- du genügend Nutzer*innen hast, um eine aussagekräftige Bewertung zu erreichen.
+- du Nutzer\*innen die Entscheidung erleichtern möchtest und
+- du genügend Nutzer\*innen hast, um eine aussagekräftige Bewertung zu erreichen.
 
 ### Verwende keine Rating-Stars, wenn
 
 - die Menge der Produkte/Inhalte eher gering ist und
-- du nicht ausreichend viele Nutzer*innen hast.
+- du nicht ausreichend viele Nutzer\*innen hast.
 
 ## Typen
 
@@ -38,7 +38,7 @@ Statische Rating-Stars haben keine interaktive Funktion, sondern vermitteln ledi
 
 #### Label (1)
 
-Das Label ist standardmäßig ausgeblendet. Vergebe dennoch einen passenden Titel, der blinden Nutzer*innen mit dem Screen Reader ausgegeben werden kann, bspw. „Kundenbewertung des Produkts XY“.
+Das Label ist standardmäßig ausgeblendet. Vergebe dennoch einen passenden Titel, der blinden Nutzer\*innen mit dem Screen Reader ausgegeben werden kann, bspw. „Kundenbewertung des Produkts XY“.
 In einigen Fällen kann es Sinn machen, das Label einzublenden (siehe Best Practices).
 
 #### Aktiver Stern (2)

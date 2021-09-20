@@ -3,11 +3,11 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Ein Loading-Spinner signalisiert, dass das System einen Prozess ausführt. Er gibt Nutzer*innen die Sicherheit, dass das System ihre Anfrage verstanden hat und verarbeitet.
+Ein Loading-Spinner signalisiert, dass das System einen Prozess ausführt. Er gibt Nutzer\*innen die Sicherheit, dass das System ihre Anfrage verstanden hat und verarbeitet.
 
 ## Allgemein
 
-Ein Loading-Spinner ist ein kreisförmiges Symbol, das sich in Dauerschleife dreht. Es liefert Nutzer*innen keinen Hinweis über die voraussichtliche Wartezeit.
+Ein Loading-Spinner ist ein kreisförmiges Symbol, das sich in Dauerschleife dreht. Es liefert Nutzer\*innen keinen Hinweis über die voraussichtliche Wartezeit.
 
 ### Verwende einen Loading-Spinner, wenn
 
@@ -16,11 +16,11 @@ Ein Loading-Spinner ist ein kreisförmiges Symbol, das sich in Dauerschleife dre
 ### Verwende Loading-Spinner besser nicht, wenn
 
 - die Wartezeit kürzer als 2 Sekunden ist und wenn
-- die Wartezeit länger als 10 Sekunden ist. In diesem Fall sollten Nutzer*innen eine Information erhalten, wie lange die Wartezeit voraussichtlich sein wird (siehe " Progress-Bar").
+- die Wartezeit länger als 10 Sekunden ist. In diesem Fall sollten Nutzer\*innen eine Information erhalten, wie lange die Wartezeit voraussichtlich sein wird (siehe " Progress-Bar").
 
 ## Varianten
 
-Scale enthält einen horizontal und einen vertikal ausgerichteten Spinner. 
+Scale enthält einen horizontal und einen vertikal ausgerichteten Spinner.
 
 ![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Varianten-DE.png)
 
@@ -34,7 +34,7 @@ Das Symbol ist animiert.
 
 #### Beschreibung (2)
 
-Die Beschreibung gibt Nutzer*innen ein kurzes Feedback über den Hintergrundprozess.
+Die Beschreibung gibt Nutzer\*innen ein kurzes Feedback über den Hintergrundprozess.
 
 ## Farben
 
@@ -52,6 +52,6 @@ Bei wenig Raum, bspw. wenn du den Spinner innerhalb einer Komponente einsetzt, w
 
 Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
-## Verwandte Komponenten 
+## Verwandte Komponenten
 
 <a href="?path=/usage/components-progress-bar--determinate">Progress-Bar</a>

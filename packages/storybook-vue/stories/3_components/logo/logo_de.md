@@ -3,12 +3,12 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Neben Farbe und Typografie ist das Logo eines der drei zentralen Telekom Gestaltungselemente. Auf Websites ist es in den Brand-Header sowie den Footer integriert und zeigt Nutzer*innen auf einen Blick, wer der Absender ist.
+Neben Farbe und Typografie ist das Logo eines der drei zentralen Telekom Gestaltungselemente. Auf Websites ist es in den Brand-Header sowie den Footer integriert und zeigt Nutzer\*innen auf einen Blick, wer der Absender ist.
 
 ## Allgemein
 
-Wir setzen das Logo in Kombination mit dem Claim ein, um unser zentrales Markenversprechen zu vermitteln. 
-Verwende das Logo ausschließlich für den Brand-Header und Footer. 
+Wir setzen das Logo in Kombination mit dem Claim ein, um unser zentrales Markenversprechen zu vermitteln.
+Verwende das Logo ausschließlich für den Brand-Header und Footer.
 
 ## Varianten
 
@@ -32,7 +32,7 @@ Das Telekom Logo mit Claim liegt in 9 länderspezifischen Varianten vor (für De
 
 Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
-## Verwandte Komponenten 
+## Verwandte Komponenten
 
 <a href="?path=/usage/components-brand-header-navigation--standard">Brand-Header, </a>
 <a href="?path=/usage/components-footer--standard">Footer</a>
