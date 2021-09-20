@@ -23,9 +23,10 @@
 
 ## Shadow Parts
 
-| Part         | Description |
-| ------------ | ----------- |
-| `"fieldset"` |             |
+| Part                | Description |
+| ------------------- | ----------- |
+| `"fieldset"`        |             |
+| `"parent-checkbox"` |             |
 
 
 ## Dependencies
