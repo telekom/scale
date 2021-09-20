@@ -31,15 +31,6 @@ export class RadioButtonGroup {
                 class={this.getCssClassMap()}
                 aria-label={this.helperText}
               >
-                {this.status === 'error' ? (
-                  <scale-icon-alert-warning
-                    accessibility-title="warning"
-                    size={16}
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <scale-icon-alert-information size={16} aria-hidden="true" />
-                )}
                 {this.helperText}
               </div>
             ) : null}
