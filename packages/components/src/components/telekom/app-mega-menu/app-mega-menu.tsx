@@ -12,6 +12,7 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 import { MenuItem } from '../app-interfaces';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'app-mega-menu',
@@ -31,6 +32,20 @@ export class MegaMenu {
     this.hasCustomBody = !!this.hostElement.querySelector(
       '[slot="custom-body"]'
     );
+  }
+
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.isActive !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isActive" is deprecated. Please use the "active" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   render() {
