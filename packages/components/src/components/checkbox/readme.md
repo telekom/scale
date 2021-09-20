@@ -50,13 +50,11 @@
 
 ### Depends on
 
-- [scale-icon-action-indeterminate](../icons/action-indeterminate)
 - [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
   scale-data-grid --> scale-checkbox
   style scale-checkbox fill:#f9f,stroke:#333,stroke-width:4px
