@@ -66,8 +66,15 @@
   margin-top: var(--margin-top-slotted-item);
 }
 
-scale-icon-alert-information {
-  visibility: hidden;
+.radio-button-group__helper-text {
+  display: flex;
+  align-items: center;
+  margin-left: -2px;
+}
+
+scale-icon-alert-information,
+scale-icon-alert-warning {
+  margin-right: 4px;
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
@@ -80,7 +87,8 @@ scale-icon-alert-information {
   }
   .radio-button-group__helper-text {
     color: var(--color-error-helper-text-hcm);
-    display: flex;
-    align-items: center;
+  }
+  scale-icon-alert-information {
+    margin-left: 0;
   }
 }

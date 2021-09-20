@@ -14,8 +14,6 @@ export class RadioButtonGroup {
   @Prop() status?: string = '';
 
   render() {
-    // const ariaLabel = this.label + ' ' + this.helperText;
-
     return (
       <form>
         <fieldset class="radio-button-group">
@@ -33,8 +31,16 @@ export class RadioButtonGroup {
                 class={this.getCssClassMap()}
                 aria-label={this.helperText}
               >
+                {this.status === 'error' ? (
+                  <scale-icon-alert-warning
+                    accessibility-title="warning"
+                    size={16}
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <scale-icon-alert-information size={16} aria-hidden="true" />
+                )}
                 {this.helperText}
-                <scale-icon-alert-information size={16} aria-hiden="true" />
               </div>
             ) : null}
           </legend>
