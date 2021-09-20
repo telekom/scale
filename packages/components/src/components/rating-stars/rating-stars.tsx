@@ -64,7 +64,7 @@ export class RatingStars {
   /** (optional) rating label */
   @Prop({ reflect: true }) label = 'Rating';
   /** (optional) info text */
-  @Prop() hideLabel = false;
+  @Prop({ reflect: true }) hideLabel = false;
   /** (optional) info text */
   @Prop() infoText?: string;
 
@@ -195,27 +195,21 @@ export class RatingStars {
 
   render() {
     return (
-      <Host>
+      <Host
+        class={{
+          hideLabel: this.hideLabel,
+          disabled: this.disabled,
+          readonly: this.readonly,
+        }}
+      >
         <div part="container">
-          {this.hideLabel ? (
-            <label
-              id={`${this.ratingStarId}-label`}
-              part="label"
-              htmlFor={this.ratingStarId}
-              style={{ fontSize: '16px', visibility: 'hidden', height: '0' }}
-            >
-              {this.label}
-            </label>
-          ) : (
-            <label
-              id={`${this.ratingStarId}-label`}
-              part="label"
-              htmlFor={this.ratingStarId}
-              style={{ fontSize: '16px' }}
-            >
-              {this.label}
-            </label>
-          )}
+          <label
+            id={`${this.ratingStarId}-label`}
+            part="label"
+            htmlFor={this.ratingStarId}
+          >
+            {this.label}
+          </label>
           <div part="content">
             <div
               part="wrapper"
@@ -229,7 +223,7 @@ export class RatingStars {
                 disabled={this.disabled}
                 readonly={this.readonly}
                 part="range-slider"
-                type="range"
+                type={this.readonly ? 'number' : 'range'}
                 id={this.ratingStarId}
                 min={0}
                 max={this.max + 1}
