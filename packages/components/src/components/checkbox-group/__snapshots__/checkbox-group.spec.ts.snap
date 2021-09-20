@@ -1,23 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CheckboxGroup should match standard snapshot 1`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <fieldset class="fieldset-wrapper">
-      <div class="checkbox-group">
-        <legend class="checkbox-group__label">
-          <slot></slot>
-        </legend>
-        <div class="checkbox-group__container">
-          <slot name="group-item"></slot>
-        </div>
-      </div>
-    </fieldset>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
       <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
@@ -30,27 +19,20 @@ exports[`CheckboxGroup should match standard snapshot 1`] = `
       <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
 
 exports[`CheckboxGroup should match standard snapshot 2`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <fieldset class="fieldset-wrapper">
-      <div class="checkbox-group">
-        <legend class="checkbox-group__label">
-          <slot></slot>
-        </legend>
-        <div class="checkbox-group__container">
-          <slot name="group-item"></slot>
-        </div>
-      </div>
-    </fieldset>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
       <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
@@ -63,27 +45,20 @@ exports[`CheckboxGroup should match standard snapshot 2`] = `
       <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
 
 exports[`CheckboxGroup should select all on master click 1`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <fieldset class="fieldset-wrapper">
-      <div class="checkbox-group">
-        <legend class="checkbox-group__label">
-          <slot></slot>
-        </legend>
-        <div class="checkbox-group__container">
-          <slot name="group-item"></slot>
-        </div>
-      </div>
-    </fieldset>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
       <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
@@ -99,27 +74,20 @@ exports[`CheckboxGroup should select all on master click 1`] = `
       <scale-checkbox label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
 
 exports[`CheckboxGroup should select all on master click 2`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <fieldset class="fieldset-wrapper">
-      <div class="checkbox-group">
-        <legend class="checkbox-group__label">
-          <slot></slot>
-        </legend>
-        <div class="checkbox-group__container">
-          <slot name="group-item"></slot>
-        </div>
-      </div>
-    </fieldset>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
       <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
@@ -135,5 +103,9 @@ exports[`CheckboxGroup should select all on master click 2`] = `
       <scale-checkbox label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
