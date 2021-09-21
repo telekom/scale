@@ -213,7 +213,6 @@ export class RatingStars {
           <div part="content">
             <div
               part="wrapper"
-              role="figure"
               aria-labeledby={`${this.ratingStarId}-label`}
               aria-describedby={`${this.ratingStarId}-infotext`}
               aria-valuetext={this.getRatingText()}
