@@ -9,12 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
 import statusNote from '../../utils/status-note';
 
 /*
   TODO
-  - [ ] Esc or Tab, or outside click, should close all open menus
+  - [ ] close all open menus
+    - [ ] on Esc or Tab (focus back to trigger?)
+    - [ ] on outside click
+    - [ ] on "select" event based on `closeOnSelect` setting
+  - [ ] handle trigger attributes (aria-haspopup, aria-expanded)
 */
 
 @Component({
@@ -26,6 +30,14 @@ export class MenuFlyout2 {
   @Element() hostElement: HTMLElement;
 
   @Prop() styles?: string;
+
+  // TODO track active open list
+  // private activeOpenList: HTMLElement;
+
+  @Listen('scale-open')
+  handleScaleOpen() {
+    // const { item }
+  }
 
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });

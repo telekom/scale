@@ -15,14 +15,11 @@ import {
   h,
   Host,
   Element,
-  Event,
-  EventEmitter,
   Listen,
   State,
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
 
 const PAD = 10;
 
@@ -53,15 +50,6 @@ export class MenuFlyoutList2 {
     | 'left' = 'bottom-right';
   /** (optional) Injected styles */
   @Prop() styles?: string;
-
-  /** Event triggered when nested menu item selected */
-  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
-    item: HTMLElement;
-  }>;
-  /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
-    item: HTMLElement;
-  }>;
 
   /** Keep track of menu element */
   private base: HTMLElement;
@@ -94,7 +82,7 @@ export class MenuFlyoutList2 {
     if (this.opened && this.needsCheckPlacement) {
       this.setSize();
       this.checkPlacement();
-      this.setItemsFocus();
+      this.setInitialItemsFocus();
     }
   }
 
@@ -119,16 +107,31 @@ export class MenuFlyoutList2 {
       this.opened = false;
       return;
     }
-    if ('Enter' === event.key || ' ' === event.key) {
-      this.selectItem(this.items[this.focusedItemIndex]);
+    if ('Enter' === event.key || ' ' === event.key  || 'ArrowRight' === event.key) {
+      const item = this.items[this.focusedItemIndex] as HTMLScaleMenuFlyoutItem2Element;
+      if (item != null) {
+        item.triggerEvent(event.type, event.key)
+      }
     }
   }
 
   @Listen('click')
   handleClick(event) {
-    const item = event.target.closest('[role="menuitem"]');
+    const item = event.target.closest('[role="menuitem"]') as HTMLScaleMenuFlyoutItem2Element;
     if (item != null) {
-      this.selectItem(item);
+      item.triggerEvent(event.type)
+    }
+  }
+
+  @Listen('scale-select')
+  handleScaleSelect({ detail }) {
+    if (this.opened) {
+      // Focus newly selected item
+      const index = this.items.findIndex((x) => x === detail.item);
+      if (index != null) {
+        this.focusedItemIndex = index;
+        this.focusItem();
+      }
     }
   }
 
@@ -161,16 +164,7 @@ export class MenuFlyoutList2 {
     this.stopWheelPropagation(event);
   };
 
-  selectItem(element: Element) {
-    const index = this.items.findIndex((x) => x === element);
-    if (index != null) {
-      this.focusedItemIndex = index;
-      this.focusItem();
-    }
-    emitEvent(this, 'scaleSelect', { item: element });
-  }
-
-  setItemsFocus() {
+  setInitialItemsFocus() {
     this.items = this.getListItems();
     this.focusedItemIndex = -1;
     if (this.items.length > 0) {

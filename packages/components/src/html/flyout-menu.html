@@ -77,6 +77,13 @@
         <scale-menu-flyout-item2>Item one</scale-menu-flyout-item2>
         <scale-menu-flyout-item2>Second item here</scale-menu-flyout-item2>
         <scale-menu-flyout-item2>
+          Hey ho
+          <scale-menu-flyout-list2 slot="sublist">
+            <scale-menu-flyout-item2>SUB Item one</scale-menu-flyout-item2>
+            <scale-menu-flyout-item2>SUB Second item here</scale-menu-flyout-item2>
+          </scale-menu-flyout-list2>
+        </scale-menu-flyout-item2>
+        <scale-menu-flyout-item2>
           Something else
           <span slot="suffix">⌘+F</span>
         </scale-menu-flyout-item2>
@@ -90,7 +97,7 @@
     <script>
       let el = document.getElementById('m2');
       el.addEventListener('scale-select', (event) => {
-        console.log('SELECT!', event.detail);
+        console.log('SELECT!', event.detail.item);
       });
     </script>
   </body>

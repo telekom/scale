@@ -9,8 +9,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Host, Method, Event, EventEmitter, Element } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-menu-flyout-item2',
@@ -18,10 +19,8 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class MenuFlyoutItem2 {
-  /* 1. Host HTML Element */
   @Element() hostElement: HTMLElement;
 
-  /* 3. Public Properties (alphabetical) */
   /** (optional) Used by cascading menus to set when open */
   @Prop() active? = false;
   /** (optional) Set to true to display arrow icon suffix */
@@ -35,6 +34,43 @@ export class MenuFlyoutItem2 {
   /** (optional) value */
   @Prop() value?: string;
 
+  private hasSlotSublist: boolean = false;
+
+  /** Event triggered when menu item selected */
+  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
+    item: HTMLElement;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
+    item: HTMLElement;
+  }>;
+
+  @Method()
+  async triggerEvent(eventType: 'keydown' | 'click', key?: 'Enter' | ' ' | 'ArrowRight') {
+    // TODO refactor!! click if sublist should toggle
+    if (eventType === 'keydown' && key === 'ArrowRight') {
+      this.toggleSublistOpen()
+      return;
+    }
+    if (!this.disabled) {
+      emitEvent(this, 'scaleSelect', { item: this.hostElement })
+    }
+  }
+
+  connectedCallback() {
+    this.hasSlotSublist = this.hostElement.querySelector('[slot="sublist"]') != null;
+  }
+
+  toggleSublistOpen() {
+    if (!this.hasSlotSublist) {
+      return;
+    }
+    const sublist = this.hostElement.querySelector('[slot="sublist"]') as HTMLScaleMenuFlyoutList2Element
+    sublist.trigger = () => this.hostElement
+    sublist.direction = 'right'
+    sublist.opened = true
+  }
+
   getCssClassMap() {
     return classNames(
       'menu-flyout-item',
@@ -43,7 +79,6 @@ export class MenuFlyoutItem2 {
     );
   }
 
-  /* 10. Render */
   render() {
     return (
       <Host role="menuitem" tabindex="-1">
@@ -81,6 +116,7 @@ export class MenuFlyoutItem2 {
             )}
           </span>
         </div>
+        <slot name="sublist"></slot>
       </Host>
     );
   }

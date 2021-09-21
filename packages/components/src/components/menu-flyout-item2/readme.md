@@ -17,21 +17,19 @@
 | `value`    | `value`    | (optional) value                                                              | `string`  | `undefined` |
 
 
+## Events
+
+| Event          | Description                                                                                        | Type                                  |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-select` | Event triggered when menu item selected                                                            | `CustomEvent<{ item: HTMLElement; }>` |
+| `scaleSelect`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ item: HTMLElement; }>` |
+
+
 ## Methods
 
-### `removeFocus() => Promise<void>`
-
-Removes the focus from the item
-
-#### Returns
-
-Type: `Promise<void>`
+### `triggerEvent(eventType: 'keydown' | 'click', key?: 'Enter' | ' ' | 'ArrowRight') => Promise<void>`
 
 
-
-### `setFocus() => Promise<void>`
-
-Sets the focus on the item
 
 #### Returns
 
@@ -52,10 +50,6 @@ Type: `Promise<void>`
 
 ## Dependencies
 
-### Used by
-
- - [scale-data-grid](../data-grid)
-
 ### Depends on
 
 - [scale-icon-action-success](../icons/action-success)
@@ -64,10 +58,9 @@ Type: `Promise<void>`
 ### Graph
 ```mermaid
 graph TD;
-  scale-menu-flyout-item --> scale-icon-action-success
-  scale-menu-flyout-item --> scale-icon-navigation-right
-  scale-data-grid --> scale-menu-flyout-item
-  style scale-menu-flyout-item fill:#f9f,stroke:#333,stroke-width:4px
+  scale-menu-flyout-item2 --> scale-icon-action-success
+  scale-menu-flyout-item2 --> scale-icon-navigation-right
+  style scale-menu-flyout-item2 fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
