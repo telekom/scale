@@ -13,7 +13,8 @@
 | `clickLink`         | `click-link`           |                                         | `any`     | `undefined`             |
 | `href`              | `href`                 | (optional) href value                   | `string`  | `'javascript:void(0);'` |
 | `isActive`          | `is-active`            | (optional) if this item is active       | `boolean` | `undefined`             |
-| `isMegaMenuVisible` | `is-mega-menu-visible` | (optional) if this mega-menu is visible | `boolean` | `false`                 |
+| `isMegaMenuVisible` | `is-mega-menu-visible` |                                         | `boolean` | `false`                 |
+| `megaMenuVisible`   | `mega-menu-visible`    | (optional) if this mega-menu is visible | `boolean` | `false`                 |
 | `name`              | `name`                 | (optional) name value                   | `string`  | `undefined`             |
 
 

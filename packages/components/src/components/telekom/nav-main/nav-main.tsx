@@ -24,8 +24,10 @@ export class NavMain {
   // DEPRECATED - active should replace isActive
   @Prop() isActive: boolean;
   @Prop() active: boolean;
-  /** (optional) if this mega-menu is visible */
+  // DEPRECATED - active should replace isActive
   @Prop() isMegaMenuVisible?: boolean = false;
+  /** (optional) if this mega-menu is visible */
+  @Prop() megaMenuVisible?: boolean = false;
   /** (optional) href value */
   @Prop() href?: string = 'javascript:void(0);';
   /** (optional) name value */
@@ -40,6 +42,15 @@ export class NavMain {
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
     // and show status note deprecated
+    if (this.isMegaMenuVisible !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isMegaMenuVisible" is deprecated. Please use the "megaMenuVisible" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
     if (this.isActive !== undefined) {
       statusNote({
         tag: 'deprecated',
@@ -76,7 +87,7 @@ export class NavMain {
   getCssClassMap() {
     return classNames(
       'main-navigation__item',
-      this.isMegaMenuVisible && 'mega-menu--visible',
+      (this.megaMenuVisible || this.isMegaMenuVisible) && 'mega-menu--visible',
       (this.active || this.isActive) && 'selected'
     );
   }
