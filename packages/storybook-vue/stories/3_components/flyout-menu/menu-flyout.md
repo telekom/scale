@@ -1,21 +1,54 @@
-<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Flyout Menu</h1>
-    <img src="assets/tag-beta.svg" alt="Beta Component" />
-</div>
+# Flyout Menu
 
-The flyout menu lets users view and perform a range of functionality that they can access through a single component in the user interface.
+Flyout menus can appear temporarily. This gives users access to a range of functions.
 
 ## General
 
-A button calls up the flyout menu in the interface. The flyout menu can contain different elements.
+Clicking/tapping a button opens the flyout menu. It can contain different elements.
 
-![Image Name](./img/General_en.png)
+![Flyout Menu](./img/Flyout_Menu.png)
 
-## Beta components
+### When to use
 
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
+Use a flyout menu to:
+
+- navigate between pages within the product or
+- temporarily display secondary or contextual actions.
+
+### When not to use
+
+Don't use a flyout menu for:
+
+- the mobile version of a website (a modal dialog works better here).
+
+## Elements
+
+![Elements of Flyout Menu](./img/Flyout_Menu_Elements.png)
+
+### Trigger (1)
+
+The trigger is the button that displays the flyout.
+
+### Text only (2)
+
+Simple interactive text.
+
+### Icon right (3)
+
+Interactive text with an icon on the right.
+
+### Cascade (4)
+
+Text with an arrow on the right that shows another flyout when hovering.
+
+### Icon left (5)
+
+Interactive text with an icon on the left.
+
+### Icon left and right (5)
+
+Interactive text with one icon on the left and one on the right.
 
 ## Related components
 
-<a href="?path=/usage/components-table--standard">Table, </a>
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>
+[Brand Header & Navigation](?path=/story/components-brand-header-navigatio), [Data- Grid](?path=/story/beta-components-data-grid)

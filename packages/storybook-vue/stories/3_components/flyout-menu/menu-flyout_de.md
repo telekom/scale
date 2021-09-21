@@ -1,21 +1,50 @@
-<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Flyout Menü</h1>
-    <img src="assets/tag-beta.svg" alt="Beta Component" />
-</div>
+# Flyout Menu
 
-Mit der Flyout-Menü-Komponente können sich Nutzer\*innen eine Reihe von Funktionen anzeigen lassen und diese ausführen.
+Flyout-Menüs lassen sich temporär einblenden. Nutzer*innen können so auf eine Reihe von Funktionen zugreifen.
 
 ## Allgemein
 
-Das Flyout-Menü ist über einen Button im Interface aufrufbar. Es kann unterschiedliche Elemente enthalten.
+Das Flyout-Menü öffnet sich per Klick/Tap auf einen Button. Es kann unterschiedliche Elemente enthalten.
 
-![Image Name](./img/General_de.png)
+![Flyout Menu](./img/Flyout_Menu.png)
 
-## Beta-Komponente
+### Nutze das Flyout-Menü, um
 
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
+- zwischen produktinternen Seiten zu navigieren oder
+- sekundäre oder kontextuelle Aktionen temporär anzuzeigen.
+
+### Nutze besser kein Flyout-Menü
+
+- in der mobilen Version deiner Webseite. Hier eignet sich ein modaler Dialog besser.
+
+## Elemente
+
+![Elements des Flyout Menüs](./img/Flyout_Menu_Elements.png)
+
+### Trigger (1)
+
+Der Trigger ist der Button, über den Nutzer*innen das Flyout-Menü einblenden können.
+
+### Text only (2)
+
+Einfacher interaktiver Text.
+
+### Icon rechts (3)
+
+Interaktiver Text mit einem rechts angeordneten Icon.
+
+### Cascade (4)
+
+Text mit rechts angeordnetem Pfeil, der bei Hover ein nachgelagertes Flyout-Menü einblendet.
+
+### Icon links (5)
+
+Interaktiver Text mit einem links angeordneten Icon.
+
+### Icon links und rechts (5)
+
+Interaktiver Text mit jeweils einem Icon links und rechts.
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-table--standard">Tabelle, </a>
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>
+[Brand Header & Navigation](?path=/story/components-brand-header-navigatio), [Data- Grid](?path=/story/beta-components-data-grid)
