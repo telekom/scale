@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Slider</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 A slider lets users control a value or a range of values.

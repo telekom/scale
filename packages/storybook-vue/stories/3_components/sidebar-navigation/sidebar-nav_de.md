@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Sidebar-Navigation</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Die Sidebar-Navigation ergänzt die Hauptnavigation bei umfangreichen Informationsarchitekturen. Sie hilft Nutzer\*innen, Inhalte innerhalb eines Bereichs der Webseite schnell zu finden.

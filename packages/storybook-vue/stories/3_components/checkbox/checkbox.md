@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Checkbox</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 With checkboxes, users toggle options on or off. They can answer simple yes-no questions in this way. Furthermore, users can select one or more options from a number of choices.

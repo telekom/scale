@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Switch</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Mit Hilfe eines Switch können Nutzer\*innen eine Option direkt ein- oder ausschalten. Wie ein physischer Lichtschalter liefert der Switch ein sofortiges Ergebnis.

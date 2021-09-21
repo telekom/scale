@@ -151,7 +151,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
   }}
 >
   <h1>Pagination</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
+  <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 ### Properties
@@ -159,7 +159,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story 
+  <Story
     name="Standard"
     args={{
         pageSize: 10,
@@ -179,7 +179,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 ## Small
 
 <Canvas withSource="none">
-  <Story 
+  <Story
     name="Small"
     args={{
         size: 'small',
@@ -201,7 +201,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 ## Hidden Borders
 
 <Canvas withSource="none">
-  <Story 
+  <Story
     name="Hidden Borders"
     args={{
         pageSize: 5,
@@ -226,7 +226,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 ## Embedded Hidden Borders
 
 <Canvas withSource="none">
-  <Story 
+  <Story
     name=" Embedded Hidden Borders"
     args={{
         pageSize: 5,
@@ -234,7 +234,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         totalElements: 200,
         hideBorder: true
     }}>
-    
+
         {TemplateEmbedded.bind({})}
   </Story>
 </Canvas>
@@ -252,7 +252,7 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 ## Translated Aria Labels
 
 <Canvas withSource="none">
-  <Story 
+  <Story
     name="Translated Aria Labels"
     args={{
         pageSize: 10,
@@ -270,9 +270,9 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-pagination 
-    page-size="10" 
-    start-element="100" 
+<scale-pagination
+    page-size="10"
+    start-element="100"
     total-elements="200"
     aria-label-first-page="Zur ersten Seite"
     aria-label-last-page="Zur nächsten Seite"

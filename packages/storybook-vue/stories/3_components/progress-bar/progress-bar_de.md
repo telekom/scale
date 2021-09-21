@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Progress Bar</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Eine Progress-Bar signalisiert, dass das System einen Prozess ausführt. Sie gibt Nutzer\*innen das Gefühl, die Kontrolle zu haben und kann helfen abzuschätzen, wie lange es dauert, eine Aufgabe zu erledigen.

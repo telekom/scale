@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Logo</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 Neben Farbe und Typografie ist das Logo eines der drei zentralen Telekom Gestaltungselemente. Auf Websites ist es in den Brand-Header sowie den Footer integriert und zeigt Nutzer\*innen auf einen Blick, wer der Absender ist.

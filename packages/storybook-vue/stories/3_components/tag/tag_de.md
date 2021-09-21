@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Tag</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer\*innen auf markierte und kategorisierte Inhalte.

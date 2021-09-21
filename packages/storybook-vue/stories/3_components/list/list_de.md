@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Text-List</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Eine Liste gliedert zusammengehörige Inhalte in einer vertikalen Struktur. Sie macht es Nutzer\*innen einfacher, die für sie relevanten Informationen zu finden.

@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Checkbox-Group</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 Diese Komponente enthält die Telekom Checkbox-Group. Diese dient dazu, die Telekom Checkboxen in einer Liste darzustellen.

@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Modal</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Modale Dialoge erfordern sofortige Aufmerksamkeit und unterbrechen die Nutzer\*innen in ihrem Workflow. Sie erscheinen immer dann, wenn Nutzer\*innen für die Erledigung einer Aufgabe eine Information benötigen oder sie eine Entscheidung treffen müssen.

@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Accordion</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Accordions helfen, größere Inhaltsmengen zu strukturieren und platzsparend darzustellen. Nutzer\*innen bekommen schnell einen Überblick und können gezielt relevante Inhalte lesen.

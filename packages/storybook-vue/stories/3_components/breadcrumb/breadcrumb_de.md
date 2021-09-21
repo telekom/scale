@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Breadcrumb</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Die Breadcrumb ist ein sekundäres Navigationselement, das zusätzliche Orientierung bietet. Sie zeigt Nutzer\*innen jederzeit an, wo sie sich in der Informationsarchitektur befinden und ermöglicht es ihnen, leicht zurück zu navigieren.

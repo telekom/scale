@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Card</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+    <img src="assets/tag-aa.svg" alt="Accessible AA" />
 </div>
 
 Cards zeigen kurze Zusammenfassungen von Inhalten und Informationen. Dadurch ist es für Nutzer\*innen einfacher, relevante Informationen zu finden und schnell zu erfassen.
