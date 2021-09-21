@@ -1,4 +1,7 @@
-# Checkbox Group
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Checkbox Group</h1>
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
+</div>
 
 A checkbox group combines checkboxes with related selection options to form a group.
 
@@ -64,12 +67,7 @@ The deactivated state of the entire group occurs automatically when all individu
 
 ![A deactivated checkbox group](./img/Checkbox_Group_Disabled_State_EN.png)
 
-A deactivated checkbox group
-
-
 ![A deactivated checkbox](./img/Checkbox_Group_single_Disabled_State_EN.png)
-
-A deactivated checkbox
 
 ## Related components
 

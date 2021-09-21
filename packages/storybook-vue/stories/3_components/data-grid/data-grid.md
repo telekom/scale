@@ -47,13 +47,13 @@ The menu includes functions such as sorting, selecting or deselecting all, showi
 
 If you activate numbering, all lines are automatically numbered starting from 1.
 
-### Column headers (4)
-
-The title in the column headers describes the content of the respective column.
-
-### Checkbox (5)
+### Checkbox (4)
 
 If you activate the checkbox, users can select some or all of the table data records for batch processing (e.g., archive, delete, mark as done).
+
+### Column headers (5)
+
+The title in the column headers describes the content of the respective column.
 
 ### Table row (6)
 

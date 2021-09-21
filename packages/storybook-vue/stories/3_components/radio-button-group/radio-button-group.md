@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Radio Button Group</h1>
-    <img src="assets/tag-aa.svg" alt="Accessible AA" />
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 Radio buttons allow users to choose an option from a number of
