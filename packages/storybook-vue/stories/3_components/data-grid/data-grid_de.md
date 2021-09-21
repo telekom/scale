@@ -43,13 +43,13 @@ Das Menü umfasst Funktionen, wie zum Beispiel Sortieren, Alles aus- oder abwäh
 
 Wenn du die Nummerierung aktivierst, werden alle Zeilen automatisch durchnummeriert, beginnend bei 1.
 
-### Spalten-Titel (4)
-
-Der Spalten-Titel beschreibt den Inhalt der jeweiligen Spalte.
-
-### Checkbox (5)
+### Checkbox (4)
 
 Aktivierst du die Checkbox, dann können Nutzer\*innen einige oder alle Tabellensätze für die Stapelverarbeitung auswählen, bspw. um etwas zu archivieren, zu löschen oder als erledigtzu markieren.
+
+### Spalten-Titel (5)
+
+Der Spalten-Titel beschreibt den Inhalt der jeweiligen Spalte.
 
 ### Tabellenzeile (6)
 

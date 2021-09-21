@@ -1,4 +1,7 @@
-# Flyout Menu
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Flyout Menu</h1>
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
+</div>
 
 Flyout menus can appear temporarily. This gives users access to a range of functions.
 
