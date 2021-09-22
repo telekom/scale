@@ -62,6 +62,9 @@ export class MenuFlyoutItem2 {
     if (this.disabled) {
       return;
     }
+    if (key === 'ArrowRight' && !this.hasSlotSublist) {
+      return;
+    }
     if (this.hasSlotSublist) {
       this.openSublist();
       return;
