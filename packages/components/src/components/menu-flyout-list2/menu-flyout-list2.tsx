@@ -56,13 +56,21 @@ export class MenuFlyoutList2 {
   @Prop() styles?: string;
 
   /** Event triggered when menu list opened */
-  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
+    list: HTMLScaleMenuFlyoutList2Element;
+  }>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
+  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{
+    list: HTMLScaleMenuFlyoutList2Element;
+  }>;
   /** Event triggered when menu list closed */
-  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{
+    list: HTMLScaleMenuFlyoutList2Element;
+  }>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
+  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{
+    list: HTMLScaleMenuFlyoutList2Element;
+  }>;
 
   /** Keep track of menu element */
   private base: HTMLElement;
@@ -403,7 +411,8 @@ export class MenuFlyoutList2 {
 
   getListItems() {
     return Array.from(this.hostElement.children).filter(
-      (node) => node.getAttribute('role') === 'menuitem'
+      (node: HTMLScaleMenuFlyoutItem2Element) =>
+        node.getAttribute('role') === 'menuitem' && node.disabled !== true
     );
   }
 

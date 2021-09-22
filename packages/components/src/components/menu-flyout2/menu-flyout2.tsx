@@ -34,7 +34,7 @@ export class MenuFlyout2 {
     if (this.closeOnSelect) {
       window.requestAnimationFrame(() => {
         this.closeAll();
-      })
+      });
     }
   }
 
@@ -54,7 +54,7 @@ export class MenuFlyout2 {
 
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
-    let target = event.target as Node
+    let target = event.target as Node;
     do {
       if (target === this.hostElement) {
         return;
@@ -105,7 +105,7 @@ export class MenuFlyout2 {
     return Array.from(this.hostElement.children).find((node) =>
       node.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
     ) as HTMLScaleMenuFlyoutList2Element;
-  };
+  }
 
   render() {
     return (
