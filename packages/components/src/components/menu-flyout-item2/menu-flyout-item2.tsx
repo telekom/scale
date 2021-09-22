@@ -35,7 +35,7 @@ export class MenuFlyoutItem2 {
   /** */
   @Prop() checkable?: 'checkbox' | 'radio' | null;
   /** (optional) Set to true to display check prefix, false to display empty prefix */
-  @Prop({ reflect: true }) checked?: boolean = false;
+  @Prop({ reflect: true, mutable: true }) checked?: boolean = false;
   /** (optional) Disabled */
   @Prop({ reflect: true }) disabled? = false;
   /** (optional) value */

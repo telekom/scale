@@ -83,6 +83,7 @@ export class MenuFlyout2 {
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
     this.setTriggerAttributes();
+    this.adjustTopSpacing();
   }
 
   setTriggerAttributes() {
@@ -96,6 +97,13 @@ export class MenuFlyout2 {
       el.setAttribute('aria-haspopup', 'true');
       el.setAttribute('aria-expanded', 'false');
     });
+  }
+
+  adjustTopSpacing() {
+    const list = this.getListElement();
+    if (list.style.getPropertyValue('--spacing-top') === '') {
+      list.style.setProperty('--spacing-top', 'var(--scl-spacing-16, 1rem)');
+    }
   }
 
   closeAll() {
