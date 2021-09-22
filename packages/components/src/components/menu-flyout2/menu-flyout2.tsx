@@ -27,6 +27,7 @@ export class MenuFlyout2 {
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
+  private trigger: HTMLElement;
   private lists: Set<HTMLScaleMenuFlyoutList2Element>;
 
   @Listen('scale-select')
@@ -77,9 +78,22 @@ export class MenuFlyout2 {
   }
 
   componentDidLoad() {
+    this.trigger = this.hostElement.querySelector('[slot="trigger"]');
     this.lists = new Set(
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
+    this.setTriggerAttributes()
+  }
+
+  setTriggerAttributes() {
+    const triggers = Array.from(this.hostElement.querySelectorAll('[role="menuitem"]'))
+      .filter((el) => el.querySelector('[slot="sublist"]') != null)
+      .concat([this.trigger])
+      .filter(x => x != null)
+    triggers.forEach(el => {
+      el.setAttribute('aria-haspopup', 'true')
+      el.setAttribute('aria-expanded', 'false')
+    })
   }
 
   closeAll() {
@@ -89,21 +103,20 @@ export class MenuFlyout2 {
     });
   }
 
-  toggle = (event: Event) => {
+  toggle = () => {
     const list = this.getListElement();
     if (list.opened) {
       this.closeAll();
       return;
     }
-    const trigger = event.target as HTMLElement;
-    list.trigger = () => trigger;
+    list.trigger = () => this.trigger;
     list.open();
   };
 
   getListElement(): HTMLScaleMenuFlyoutList2Element {
     // TODO use [role="menu"]?
-    return Array.from(this.hostElement.children).find((node) =>
-      node.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
+    return Array.from(this.hostElement.children).find((el) =>
+      el.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
     ) as HTMLScaleMenuFlyoutList2Element;
   }
 

@@ -15,9 +15,12 @@
 */
 
 :host {
+  --spacing-top: 0;
+
   box-sizing: content-box;
   position: fixed;
   pointer-events: none;
+  margin-top: var(--spacing-top);
 }
 
 .menu-flyout-list {

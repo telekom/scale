@@ -228,6 +228,8 @@ export class MenuFlyoutList2 {
       this.padForNonOverlayScrollbars();
       this.updateScrollIndicators();
     }
+
+    this.updateTriggerAttributes()
   }
 
   handleScroll = () => {
@@ -261,6 +263,11 @@ export class MenuFlyoutList2 {
     window.requestAnimationFrame(() => {
       (this.items[this.focusedItemIndex] as HTMLElement).focus();
     });
+  }
+
+  updateTriggerAttributes() {
+    const trigger = this.trigger()
+    trigger.setAttribute('aria-expanded', String(this.opened))
   }
 
   setWindowSize() {
