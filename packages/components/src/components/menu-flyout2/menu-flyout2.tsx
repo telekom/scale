@@ -18,6 +18,7 @@ import statusNote from '../../utils/status-note';
     - [ ] on Esc or Tab (focus back to trigger?)
     - [ ] on outside click
     - [ ] on "select" event based on `closeOnSelect` setting
+    - [ ] on scroll and wheel
   - [ ] handle trigger attributes (aria-haspopup, aria-expanded)
 */
 
@@ -31,19 +32,31 @@ export class MenuFlyout2 {
 
   @Prop() styles?: string;
 
-  // TODO track active open list
-  // private activeOpenList: HTMLElement;
+  private lists: Set<HTMLElement>;
 
   @Listen('scale-open')
   handleScaleOpen() {
     // const { item }
   }
 
+  @Listen('keydown')
+  handleKeydown(event: KeyboardEvent) {
+    if ('Tab' === event.key || 'Escape' === event.key) {
+      this.closeAll();
+      return;
+    }
+  }
+
   connectedCallback() {
+    this.lists = new Set(Array.from(this.hostElement.querySelectorAll('[role="menu"]')));
     statusNote({ source: this.hostElement, tag: 'beta' });
   }
 
-  toggleOpen = (event: Event) => {
+  closeAll() {
+    //
+  }
+
+  openList = (event: Event) => {
     const list = this.getListElement() as HTMLScaleMenuFlyoutList2Element;
     const trigger = event.target as HTMLElement;
     list.trigger = () => trigger;
@@ -52,6 +65,7 @@ export class MenuFlyout2 {
 
   getListElement = () => {
     return Array.from(this.hostElement.children).find((node) =>
+      // TODO use [role="menu"]?
       node.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
     );
   };
@@ -60,7 +74,7 @@ export class MenuFlyout2 {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div part="trigger" onClick={this.toggleOpen}>
+        <div part="trigger" onClick={this.openList}>
           <slot name="trigger" />
         </div>
         <slot />

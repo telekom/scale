@@ -26,7 +26,7 @@
   <body>
     <h1>Flyout Menu a11y</h1>
 
-    <scale-menu-flyout close-on-select="false">
+    <scale-menu-flyout id="original" close-on-select="false">
       <scale-button slot="trigger">Menu</scale-button>
       <scale-menu-flyout-list>
         <scale-menu-flyout-item>File</scale-menu-flyout-item>
@@ -98,6 +98,14 @@
       let el = document.getElementById('m2');
       el.addEventListener('scale-select', (event) => {
         console.log('SELECT!', event.detail.item);
+      });
+
+      let el2 = document.getElementById('original');
+      el2.addEventListener('scaleOpen', (event) => {
+        console.log('scaleOpen', event.detail);
+      });
+      el2.addEventListener('scaleClose', (event) => {
+        console.log('scaleClose', event.detail);
       });
     </script>
   </body>

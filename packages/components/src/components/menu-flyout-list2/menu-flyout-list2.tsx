@@ -94,7 +94,7 @@ export class MenuFlyoutList2 {
   }
 
   @Listen('keydown')
-  handleKeydown(event) {
+  handleKeydown(event: KeyboardEvent) {
     if ('ArrowDown' === event.key) {
       this.shiftItemsFocus();
       return;
@@ -110,16 +110,16 @@ export class MenuFlyoutList2 {
     if ('Enter' === event.key || ' ' === event.key  || 'ArrowRight' === event.key) {
       const item = this.items[this.focusedItemIndex] as HTMLScaleMenuFlyoutItem2Element;
       if (item != null) {
-        item.triggerEvent(event.type, event.key)
+        item.triggerEvent('keydown', event.key)
       }
     }
   }
 
   @Listen('click')
-  handleClick(event) {
-    const item = event.target.closest('[role="menuitem"]') as HTMLScaleMenuFlyoutItem2Element;
+  handleClick(event: MouseEvent) {
+    const item = (event.target as Element).closest('[role="menuitem"]') as HTMLScaleMenuFlyoutItem2Element;
     if (item != null) {
-      item.triggerEvent(event.type)
+      item.triggerEvent('click')
     }
   }
 
