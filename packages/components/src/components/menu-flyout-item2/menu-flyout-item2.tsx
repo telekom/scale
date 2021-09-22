@@ -9,7 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Method, Event, EventEmitter, Element } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Method,
+  Event,
+  EventEmitter,
+  Element,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
@@ -46,29 +55,39 @@ export class MenuFlyoutItem2 {
   }>;
 
   @Method()
-  async triggerEvent(eventType: 'keydown' | 'click', key?: 'Enter' | ' ' | 'ArrowRight') {
-    // TODO refactor!! click if sublist should toggle
-    if (eventType === 'keydown' && key === 'ArrowRight') {
-      this.toggleSublistOpen()
+  async triggerEvent(
+    eventType: 'keydown' | 'click',
+    key?: 'Enter' | ' ' | 'ArrowRight'
+  ) {
+    if (this.disabled) {
       return;
     }
-    if (!this.disabled) {
-      emitEvent(this, 'scaleSelect', { item: this.hostElement })
+    if (this.hasSlotSublist) {
+      this.openSublist();
+      return;
     }
+    const detail = { eventType, key, item: this.hostElement };
+    emitEvent(this, 'scaleSelect', detail);
   }
 
   connectedCallback() {
-    this.hasSlotSublist = this.hostElement.querySelector('[slot="sublist"]') != null;
+    this.hasSlotSublist =
+      this.hostElement.querySelector('[slot="sublist"]') != null;
+    if (this.hasSlotSublist) {
+      this.cascade = true;
+    }
   }
 
-  toggleSublistOpen() {
+  openSublist() {
     if (!this.hasSlotSublist) {
       return;
     }
-    const sublist = this.hostElement.querySelector('[slot="sublist"]') as HTMLScaleMenuFlyoutList2Element
-    sublist.trigger = () => this.hostElement
-    sublist.direction = 'right'
-    sublist.opened = true
+    const sublist = this.hostElement.querySelector(
+      '[slot="sublist"]'
+    ) as HTMLScaleMenuFlyoutList2Element;
+    sublist.trigger = () => this.hostElement;
+    sublist.direction = 'right';
+    sublist.open();
   }
 
   getCssClassMap() {

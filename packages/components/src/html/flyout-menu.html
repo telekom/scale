@@ -80,7 +80,17 @@
           Hey ho
           <scale-menu-flyout-list2 slot="sublist">
             <scale-menu-flyout-item2>SUB Item one</scale-menu-flyout-item2>
-            <scale-menu-flyout-item2>SUB Second item here</scale-menu-flyout-item2>
+            <scale-menu-flyout-item2
+              >SUB Second item here</scale-menu-flyout-item2
+            >
+            <scale-menu-flyout-item2 cascade>
+              OK, this is nested-nested
+              <scale-menu-flyout-list2 slot="sublist">
+                <scale-menu-flyout-item2>WOW</scale-menu-flyout-item2>
+                <scale-menu-flyout-item2>YES, PLEASE</scale-menu-flyout-item2>
+                <scale-menu-flyout-item2>DOES IT WORK?</scale-menu-flyout-item2>
+              </scale-menu-flyout-list2>
+            </scale-menu-flyout-item2>
           </scale-menu-flyout-list2>
         </scale-menu-flyout-item2>
         <scale-menu-flyout-item2>
@@ -98,6 +108,12 @@
       let el = document.getElementById('m2');
       el.addEventListener('scale-select', (event) => {
         console.log('SELECT!', event.detail.item);
+      });
+      el.addEventListener('scale-open', (event) => {
+        console.log('NEW scale-open', event.detail.list);
+      });
+      el.addEventListener('scale-close', (event) => {
+        console.log('NEW scale-close', event.detail);
       });
 
       let el2 = document.getElementById('original');

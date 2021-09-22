@@ -12,11 +12,11 @@
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
 import statusNote from '../../utils/status-note';
 
+const MENU_SELECTOR = '[role="menu"]';
+
 /*
   TODO
   - [ ] close all open menus
-    - [ ] on Esc or Tab (focus back to trigger?)
-    - [ ] on outside click
     - [ ] on "select" event based on `closeOnSelect` setting
     - [ ] on scroll and wheel
   - [ ] handle trigger attributes (aria-haspopup, aria-expanded)
@@ -32,11 +32,31 @@ export class MenuFlyout2 {
 
   @Prop() styles?: string;
 
-  private lists: Set<HTMLElement>;
+  private lists: Set<HTMLScaleMenuFlyoutList2Element>;
 
-  @Listen('scale-open')
-  handleScaleOpen() {
-    // const { item }
+  @Listen('scale-close')
+  handleScaleClose({ detail }) {
+    const parent =
+      detail.list != null
+        ? detail.list.parentNode.closest(MENU_SELECTOR)
+        : null;
+    if (parent) {
+      window.requestAnimationFrame(() => {
+        parent.active = true;
+      });
+    }
+  }
+
+  @Listen('click', { target: 'document' })
+  handleOutsideClick(event: MouseEvent) {
+    let target = event.target as Node
+    do {
+      if (target === this.hostElement) {
+        return;
+      }
+      target = target.parentNode;
+    } while (target);
+    this.closeAll();
   }
 
   @Listen('keydown')
@@ -48,19 +68,32 @@ export class MenuFlyout2 {
   }
 
   connectedCallback() {
-    this.lists = new Set(Array.from(this.hostElement.querySelectorAll('[role="menu"]')));
     statusNote({ source: this.hostElement, tag: 'beta' });
   }
 
-  closeAll() {
-    //
+  componentDidLoad() {
+    this.lists = new Set(
+      Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
+    );
   }
 
-  openList = (event: Event) => {
+  closeAll() {
+    this.lists.forEach((list) => {
+      list.close();
+      // Make sure focus control is right while reopening
+      list.active = false;
+    });
+  }
+
+  toggle = (event: Event) => {
     const list = this.getListElement() as HTMLScaleMenuFlyoutList2Element;
+    if (list.opened) {
+      this.closeAll();
+      return;
+    }
     const trigger = event.target as HTMLElement;
     list.trigger = () => trigger;
-    list.opened = !list.opened;
+    list.open();
   };
 
   getListElement = () => {
@@ -74,7 +107,7 @@ export class MenuFlyout2 {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div part="trigger" onClick={this.openList}>
+        <div part="trigger" onClick={this.toggle}>
           <slot name="trigger" />
         </div>
         <slot />

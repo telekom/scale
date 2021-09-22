@@ -14,12 +14,16 @@ import {
   Prop,
   h,
   Host,
+  Method,
   Element,
+  Event,
+  EventEmitter,
   Listen,
   State,
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 const PAD = 10;
 
@@ -49,7 +53,29 @@ export class MenuFlyoutList2 {
     | 'right'
     | 'left' = 'bottom-right';
   /** (optional) Injected styles */
+  @Prop({ reflect: true, mutable: true }) active: boolean = false;
   @Prop() styles?: string;
+
+  /** Event triggered when menu list opened */
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
+    id: number;
+    cascadeLevel: number;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{
+    id: number;
+    cascadeLevel: number;
+  }>;
+  /** Event triggered when menu list closed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{
+    id: number;
+    cascadeLevel: number;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{
+    id: number;
+    cascadeLevel: number;
+  }>;
 
   /** Keep track of menu element */
   private base: HTMLElement;
@@ -82,8 +108,21 @@ export class MenuFlyoutList2 {
     if (this.opened && this.needsCheckPlacement) {
       this.setSize();
       this.checkPlacement();
-      this.setInitialItemsFocus();
     }
+  }
+
+  @Method()
+  async open() {
+    this.opened = true;
+    emitEvent(this, 'scaleOpen', { list: this.hostElement });
+  }
+
+  @Method()
+  async close() {
+    if (this.active) {
+      emitEvent(this, 'scaleClose', { list: this.hostElement });
+    }
+    this.opened = false;
   }
 
   @Listen('resize', { target: 'window' })
@@ -95,6 +134,9 @@ export class MenuFlyoutList2 {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
+    if (!this.active) {
+      return;
+    }
     if ('ArrowDown' === event.key) {
       this.shiftItemsFocus();
       return;
@@ -104,29 +146,43 @@ export class MenuFlyoutList2 {
       return;
     }
     if ('ArrowLeft' === event.key) {
-      this.opened = false;
+      this.close();
       return;
     }
-    if ('Enter' === event.key || ' ' === event.key  || 'ArrowRight' === event.key) {
-      const item = this.items[this.focusedItemIndex] as HTMLScaleMenuFlyoutItem2Element;
+    if (
+      ' ' === event.key ||
+      'Enter' === event.key ||
+      'ArrowRight' === event.key
+    ) {
+      const item = this.items[
+        this.focusedItemIndex
+      ] as HTMLScaleMenuFlyoutItem2Element;
       if (item != null) {
-        item.triggerEvent('keydown', event.key)
+        item.triggerEvent('keydown', event.key);
       }
     }
   }
 
+  /**
+   * We handle item clicks here, to avoid setting up
+   * listeners on every item
+   */
   @Listen('click')
   handleClick(event: MouseEvent) {
-    const item = (event.target as Element).closest('[role="menuitem"]') as HTMLScaleMenuFlyoutItem2Element;
+    const item = (event.target as Element).closest(
+      '[role="menuitem"]'
+    ) as HTMLScaleMenuFlyoutItem2Element;
     if (item != null) {
-      item.triggerEvent('click')
+      item.triggerEvent('click');
     }
   }
 
+  /**
+   * Focus newly selected item
+   */
   @Listen('scale-select')
   handleScaleSelect({ detail }) {
-    if (this.opened) {
-      // Focus newly selected item
+    if (this.active && this.opened) {
       const index = this.items.findIndex((x) => x === detail.item);
       if (index != null) {
         this.focusedItemIndex = index;
@@ -135,9 +191,35 @@ export class MenuFlyoutList2 {
     }
   }
 
+  /**
+   * Set `active` to false when a descendant opens
+   */
+  @Listen('scale-open')
+  handleScaleOpen({ detail }) {
+    if (detail.list !== this.hostElement) {
+      this.active = false;
+    }
+  }
+
+  /**
+   * Set focus when active
+   */
+  @Watch('active')
+  activeChanged(newValue: boolean) {
+    if (newValue === true) {
+      if (this.focusedItemIndex != null) {
+        this.focusItem();
+      } else {
+        this.setInitialItemsFocus();
+      }
+    }
+  }
+
   @Watch('opened')
   openedChanged() {
     if (!this.opened) {
+      this.active = false;
+      this.focusedItemIndex = null;
       // Reset checks for boundary-aware placement
       this.needsCheckPlacement = true;
       this.flipHorizontal = false;
@@ -149,6 +231,7 @@ export class MenuFlyoutList2 {
     }
 
     if (this.opened) {
+      this.active = true;
       this.setWindowSize();
       this.setPosition();
       this.padForNonOverlayScrollbars();
@@ -184,7 +267,7 @@ export class MenuFlyoutList2 {
   }
 
   focusItem() {
-    setTimeout(() => {
+    window.requestAnimationFrame(() => {
       (this.items[this.focusedItemIndex] as HTMLElement).focus();
     });
   }
