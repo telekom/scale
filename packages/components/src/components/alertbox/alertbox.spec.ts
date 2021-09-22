@@ -52,20 +52,19 @@ describe('Alertbox', () => {
       components: [Alertbox],
       html: `<scale-alertbox
                 variant ="warning"
-                has-close ="true"
-                content ="false">
+                dismissable ="true">
               </scale-alertbox>`,
     });
 
     expect(page.rootInstance.variant).toBe('warning');
-    expect(page.rootInstance.hasClose).toBe(true);
+    expect(page.rootInstance.dismissable).toBe(true);
     expect(page.rootInstance.content).toBe(false);
   });
 
   it('should emit onClick and set opened to false', async () => {
     const page = await newSpecPage({
       components: [Alertbox],
-      html: `<scale-alertbox opened="true" has-close="true">Label</scale-alertbox>`,
+      html: `<scale-alertbox opened="true" dismissable="true">Label</scale-alertbox>`,
     });
     const icon = page.root.shadowRoot.querySelector('.alertbox__icon-close');
     await page.waitForChanges();

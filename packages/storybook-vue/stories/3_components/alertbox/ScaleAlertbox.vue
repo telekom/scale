@@ -1,7 +1,7 @@
 <template>
   <scale-alertbox
     :variant="variant"
-    :has-close="hasClose"
+    :dismissable="dismissable"
     :timeout="timeout"
     :opened="opened"
   >
@@ -13,7 +13,7 @@
 export default {
   props: {
     variant: { type: 'error' | 'warning'| 'success'| 'informational', default: 'informational' },
-    hasClose: { type: Boolean, default: false },
+    dismissable: { type: Boolean, default: false },
     opened: { type: Boolean },
     timeout: { type: Boolean | Number, default: false },
   },

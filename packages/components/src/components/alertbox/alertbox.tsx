@@ -19,7 +19,7 @@ export class Alertbox {
   // Color to variant rename
   @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
     'informational';
-  @Prop({ reflect: true }) hasClose?: boolean = false;
+  @Prop({ reflect: true }) dismissable?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
   /** (optional) aria-label attribute */
@@ -27,12 +27,14 @@ export class Alertbox {
   /** (optional) aria-description attribute */
   @Prop() ariaDescription: string;
   @State() content: boolean = true;
+  @State() header: boolean = true;
   @Element() hostElement: HTMLElement;
 
   defaultTimeout = 3000;
 
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
+    this.header = !!this.hostElement.querySelector("p[slot='header']");
     this.handleSlotAccessibility();
   }
 
@@ -40,13 +42,18 @@ export class Alertbox {
     const mainText =
       this.content &&
       this.hostElement.querySelector("p[slot='text']").innerHTML;
-    this.hostElement.shadowRoot
-      .querySelector('.alertbox__content')
-      .setAttribute('aria-description', mainText);
 
-    const headerText = this.hostElement.querySelector("p[slot='header']")
-      .innerHTML;
-    if (headerText) {
+    if (this.content) {
+      this.hostElement.shadowRoot
+        .querySelector('.alertbox__content')
+        .setAttribute('aria-description', mainText);
+    }
+
+    const headerText =
+      this.header &&
+      this.hostElement.querySelector("p[slot='header']").innerHTML;
+
+    if (this.header) {
       this.hostElement.shadowRoot
         .querySelector('.alertbox__container-header')
         .setAttribute('aria-label', headerText);
@@ -137,7 +144,7 @@ export class Alertbox {
                 <slot name="header">Missing Title</slot>
               </p>
 
-              {this.hasClose && (
+              {this.dismissable && (
                 <scale-icon-action-circle-close
                   tabindex="0"
                   class="alertbox__icon-close"

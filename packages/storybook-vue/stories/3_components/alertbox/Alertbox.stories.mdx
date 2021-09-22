@@ -18,7 +18,7 @@ import ScaleAlertbox from './ScaleAlertbox.vue';
         type: 'select',
       },
     },
-    hasClose: {
+    dismissable: {
       defaultValue: false,
       options: [true, false],
       control: {
@@ -49,7 +49,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-alertbox   
      :variant="variant"
-     :hasClose="hasClose"
+     :dismissable="dismissable"
      :timeout="timeout"
      :opened="opened"
     >
@@ -65,7 +65,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
   template: `
     <scale-alertbox   
      :variant="variant"
-     :hasClose="hasClose"
+     :dismissable="dismissable"
      :timeout="timeout"
      :opened="opened"
     >
@@ -87,7 +87,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'informational',
-      hasClose: true,
+      dismissable: true,
     }}
   >
     {TemplateSlot.bind({})}
@@ -97,7 +97,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-alertbox variant="informational" opened has-close>
+<scale-alertbox variant="informational" opened dismissable>
   <p slot="header">This is my title</p>
   <p slot="text">This is my message to you.</p>
 </scale-alertbox>
@@ -205,7 +205,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'warning',
-      hasClose: true,
+      dismissable: true,
     }}
   >
     {Template.bind({})}
@@ -213,7 +213,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="warning" has-close opened> </scale-alertbox>
+<scale-alertbox variant="warning" dismissable opened> </scale-alertbox>
 ```
 
 ## Timeout
@@ -226,7 +226,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'success',
-      hasClose: true,
+      dismissable: true,
       timeout: 10000,
     }}
   >
@@ -235,7 +235,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="success" timeout="10000" has-close opened>
+<scale-alertbox variant="success" timeout="10000" dismissable opened>
 </scale-alertbox>
 ```
 
@@ -247,7 +247,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'informational',
-      hasClose: true,
+      dismissable: true,
     }}
   >
     {TemplateSlot.bind({})}
@@ -255,7 +255,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="informational" has-close opened>
+<scale-alertbox variant="informational" dismissable opened>
   <p slot="header">This is my title</p>
   <p slot="text">This is my message to you.</p>
 </scale-alertbox>

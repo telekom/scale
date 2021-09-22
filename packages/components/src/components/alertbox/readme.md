@@ -11,7 +11,7 @@
 | ----------------- | ------------------ | ------------------------------------- | ------------------------------------------------------ | ----------------- |
 | `ariaDescription` | `aria-description` | (optional) aria-description attribute | `string`                                               | `undefined`       |
 | `ariaLabel`       | `aria-label`       | (optional) aria-label attribute       | `string`                                               | `undefined`       |
-| `hasClose`        | `has-close`        |                                       | `boolean`                                              | `false`           |
+| `dismissable`     | `dismissable`      |                                       | `boolean`                                              | `false`           |
 | `opened`          | `opened`           |                                       | `boolean`                                              | `undefined`       |
 | `timeout`         | `timeout`          |                                       | `boolean \| number`                                    | `false`           |
 | `variant`         | `variant`          |                                       | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
