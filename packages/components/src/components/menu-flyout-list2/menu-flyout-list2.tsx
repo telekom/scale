@@ -112,6 +112,15 @@ export class MenuFlyoutList2 {
     this.opened = false;
   }
 
+  @Method()
+  async setFocus() {
+    if (this.focusedItemIndex != null) {
+      this.focusItem();
+    } else {
+      this.setInitialItemsFocus();
+    }
+  }
+
   @Listen('resize', { target: 'window' })
   resizeHandler() {
     // Get actual height for mobile
@@ -188,20 +197,6 @@ export class MenuFlyoutList2 {
     }
   }
 
-  /**
-   * Set focus when active
-   */
-  @Watch('active')
-  activeChanged(newValue: boolean) {
-    if (newValue === true) {
-      if (this.focusedItemIndex != null) {
-        this.focusItem();
-      } else {
-        this.setInitialItemsFocus();
-      }
-    }
-  }
-
   @Watch('opened')
   openedChanged() {
     if (!this.opened) {
@@ -219,6 +214,7 @@ export class MenuFlyoutList2 {
 
     if (this.opened) {
       this.active = true;
+      this.setFocus();
       this.setWindowSize();
       this.setPosition();
       this.padForNonOverlayScrollbars();

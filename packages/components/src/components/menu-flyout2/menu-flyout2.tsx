@@ -47,6 +47,7 @@ export class MenuFlyout2 {
     if (parent) {
       window.requestAnimationFrame(() => {
         parent.active = true;
+        parent.setFocus();
       });
     }
   }
@@ -82,15 +83,14 @@ export class MenuFlyout2 {
   }
 
   closeAll() {
-    this.lists.forEach((list) => {
-      list.close();
-      // Make sure focus control is right while reopening
-      list.active = false;
+    this.lists.forEach(async (list) => {
+      await list.close(); // Wait for `scale-close` event to fire
+      list.active = false; // Make sure focus control is right while reopening
     });
   }
 
   toggle = (event: Event) => {
-    const list = this.getListElement() as HTMLScaleMenuFlyoutList2Element;
+    const list = this.getListElement();
     if (list.opened) {
       this.closeAll();
       return;
@@ -100,11 +100,11 @@ export class MenuFlyout2 {
     list.open();
   };
 
-  getListElement = () => {
+  getListElement(): HTMLScaleMenuFlyoutList2Element {
+    // TODO use [role="menu"]?
     return Array.from(this.hostElement.children).find((node) =>
-      // TODO use [role="menu"]?
       node.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
-    );
+    ) as HTMLScaleMenuFlyoutList2Element;
   };
 
   render() {

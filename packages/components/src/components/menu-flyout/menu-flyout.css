@@ -14,7 +14,6 @@
 
 .menu {
   display: inline-block;
-  border: 2px solid black;
 }
 
 .menu--cascaded {
