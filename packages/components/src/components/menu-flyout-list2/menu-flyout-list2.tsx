@@ -42,8 +42,6 @@ export class MenuFlyoutList2 {
   @Prop({ mutable: true, reflect: true }) opened = false;
   /** */
   @Prop() trigger: () => HTMLElement;
-  /** (optional) Determines whether the dropdown should close when a menu item is selected */
-  @Prop() closeOnSelect = true;
   /** (optional) Set preference for where the menu appears, space permitting */
   @Prop({ mutable: true }) direction:
     | 'bottom-right'
@@ -52,30 +50,19 @@ export class MenuFlyoutList2 {
     | 'top-left'
     | 'right'
     | 'left' = 'bottom-right';
-  /** (optional) Injected styles */
+  /** */
   @Prop({ reflect: true, mutable: true }) active: boolean = false;
+  /** (optional) Injected styles */
   @Prop() styles?: string;
 
   /** Event triggered when menu list opened */
-  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
-    id: number;
-    cascadeLevel: number;
-  }>;
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{
-    id: number;
-    cascadeLevel: number;
-  }>;
+  @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
   /** Event triggered when menu list closed */
-  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{
-    id: number;
-    cascadeLevel: number;
-  }>;
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
   /** @deprecated in v3 in favor of kebab-case event names */
-  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{
-    id: number;
-    cascadeLevel: number;
-  }>;
+  @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{ list: HTMLScaleMenuFlyoutList2Element }>;
 
   /** Keep track of menu element */
   private base: HTMLElement;

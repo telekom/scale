@@ -71,7 +71,7 @@
 
     <scale-divider></scale-divider>
 
-    <scale-menu-flyout2 id="m2">
+    <scale-menu-flyout2 id="new" close-on-select="false">
       <scale-button slot="trigger">App Menu</scale-button>
       <scale-menu-flyout-list2>
         <scale-menu-flyout-item2>Item one</scale-menu-flyout-item2>
@@ -105,9 +105,9 @@
     </scale-menu-flyout2>
 
     <script>
-      let el = document.getElementById('m2');
+      let el = document.getElementById('new');
       el.addEventListener('scale-select', (event) => {
-        console.log('SELECT!', event.detail.item);
+        console.log('NEW select', event.detail.item);
       });
       el.addEventListener('scale-open', (event) => {
         console.log('NEW scale-open', event.detail.list);

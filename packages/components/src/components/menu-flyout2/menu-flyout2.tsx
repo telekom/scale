@@ -14,14 +14,6 @@ import statusNote from '../../utils/status-note';
 
 const MENU_SELECTOR = '[role="menu"]';
 
-/*
-  TODO
-  - [ ] close all open menus
-    - [ ] on "select" event based on `closeOnSelect` setting
-    - [ ] on scroll and wheel
-  - [ ] handle trigger attributes (aria-haspopup, aria-expanded)
-*/
-
 @Component({
   tag: 'scale-menu-flyout2',
   styleUrl: 'menu-flyout2.css',
@@ -30,9 +22,21 @@ const MENU_SELECTOR = '[role="menu"]';
 export class MenuFlyout2 {
   @Element() hostElement: HTMLElement;
 
+  /** (optional) Determines whether the dropdown should close when a menu item is selected */
+  @Prop() closeOnSelect = true;
+  /** (optional) Injected styles */
   @Prop() styles?: string;
 
   private lists: Set<HTMLScaleMenuFlyoutList2Element>;
+
+  @Listen('scale-select')
+  handleScaleSelect() {
+    if (this.closeOnSelect) {
+      window.requestAnimationFrame(() => {
+        this.closeAll();
+      })
+    }
+  }
 
   @Listen('scale-close')
   handleScaleClose({ detail }) {
