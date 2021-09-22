@@ -82,18 +82,20 @@ export class MenuFlyout2 {
     this.lists = new Set(
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
-    this.setTriggerAttributes()
+    this.setTriggerAttributes();
   }
 
   setTriggerAttributes() {
-    const triggers = Array.from(this.hostElement.querySelectorAll('[role="menuitem"]'))
+    const triggers = Array.from(
+      this.hostElement.querySelectorAll('[role="menuitem"]')
+    )
       .filter((el) => el.querySelector('[slot="sublist"]') != null)
       .concat([this.trigger])
-      .filter(x => x != null)
-    triggers.forEach(el => {
-      el.setAttribute('aria-haspopup', 'true')
-      el.setAttribute('aria-expanded', 'false')
-    })
+      .filter((x) => x != null);
+    triggers.forEach((el) => {
+      el.setAttribute('aria-haspopup', 'true');
+      el.setAttribute('aria-expanded', 'false');
+    });
   }
 
   closeAll() {

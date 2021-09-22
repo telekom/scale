@@ -30,18 +30,18 @@ import { emitEvent } from '../../utils/utils';
 export class MenuFlyoutItem2 {
   @Element() hostElement: HTMLElement;
 
-  /** (optional) Used by cascading menus to set when open */
-  @Prop() active? = false;
   /** (optional) Set to true to display arrow icon suffix */
-  @Prop() cascade? = false;
+  @Prop() cascade? = false; // TODO rename to `hasMenu`
+  /** */
+  @Prop() checkable?: 'checkbox' | 'radio' | null;
   /** (optional) Set to true to display check prefix, false to display empty prefix */
-  @Prop() checked?: any;
+  @Prop({ reflect: true }) checked?: boolean = false;
   /** (optional) Disabled */
-  @Prop() disabled? = false;
+  @Prop({ reflect: true }) disabled? = false;
+  /** (optional) value */
+  @Prop({ reflect: true }) value?: string;
   /** (optional) Injected styles */
   @Prop() styles?: string;
-  /** (optional) value */
-  @Prop() value?: string;
 
   private hasSlotSublist: boolean = false;
 
@@ -68,6 +68,9 @@ export class MenuFlyoutItem2 {
     if (this.hasSlotSublist) {
       this.openSublist();
       return;
+    }
+    if (this.checkable != null) {
+      this.checked = !this.checked;
     }
     const detail = { eventType, key, item: this.hostElement };
     emitEvent(this, 'scaleSelect', detail);
@@ -97,13 +100,19 @@ export class MenuFlyoutItem2 {
     return classNames(
       'menu-flyout-item',
       this.disabled && 'menu-flyout-item--disabled',
-      this.active && 'menu-flyout-item--active'
+      this.checkable != null && 'menu-flyout-item--checkable'
     );
   }
 
   render() {
+    const checked = this.checked ? 'true' : 'false';
+
     return (
-      <Host role="menuitem" tabindex="-1">
+      <Host
+        role={this.checkable ? `menuitem${this.checkable}` : 'menuitem'}
+        aria-checked={this.checkable == null ? false : checked}
+        tabindex="-1"
+      >
         {this.styles && <style>{this.styles}</style>}
         <div
           class={this.getCssClassMap()}
@@ -111,15 +120,11 @@ export class MenuFlyoutItem2 {
           aria-disabled={this.disabled ? 'true' : 'false'}
         >
           <span part="prefix" class="menu-flyout-item__prefix">
-            {this.checked === undefined ? (
+            {this.checkable == null ? (
               <slot name="prefix" />
             ) : (
               <scale-icon-action-success
                 class="menu-flyout-item__check"
-                style={{
-                  opacity:
-                    !this.checked || this.checked === 'false' ? '0' : '1',
-                }}
                 size={16}
               ></scale-icon-action-success>
             )}

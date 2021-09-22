@@ -46,6 +46,10 @@
   color: var(--scl-color-primary-hover);
 }
 
+:host([aria-expanded='true']) .menu-flyout-item {
+  color: var(--scl-color-primary-hover);
+}
+
 .menu-flyout-item--disabled {
   outline: none;
   color: #ccc;
@@ -67,6 +71,14 @@
 .menu-flyout-item__check,
 slot[name='prefix']::slotted(:last-of-type) {
   margin-right: var(--scl-spacing-8);
+}
+
+.menu-flyout-item__check {
+  visibility: hidden;
+}
+
+:host([aria-checked='true']) .menu-flyout-item__check {
+  visibility: visible;
 }
 
 .menu-flyout-item__suffix {

@@ -26,6 +26,7 @@ import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 
 const PAD = 10;
+const ITEM_ROLES = ['menuitem', 'menuitemcheckbox', 'menuitemradio'];
 
 @Component({
   tag: 'scale-menu-flyout-list2',
@@ -173,8 +174,9 @@ export class MenuFlyoutList2 {
    */
   @Listen('click')
   handleClick(event: MouseEvent) {
+    const roleSelector = ITEM_ROLES.map((role) => `[role="${role}"]`).join(',');
     const item = (event.target as Element).closest(
-      '[role="menuitem"]'
+      roleSelector
     ) as HTMLScaleMenuFlyoutItem2Element;
     if (item != null) {
       item.triggerEvent('click');
@@ -229,7 +231,7 @@ export class MenuFlyoutList2 {
       this.updateScrollIndicators();
     }
 
-    this.updateTriggerAttributes()
+    this.updateTriggerAttributes();
   }
 
   handleScroll = () => {
@@ -266,8 +268,8 @@ export class MenuFlyoutList2 {
   }
 
   updateTriggerAttributes() {
-    const trigger = this.trigger()
-    trigger.setAttribute('aria-expanded', String(this.opened))
+    const trigger = this.trigger();
+    trigger.setAttribute('aria-expanded', String(this.opened));
   }
 
   setWindowSize() {
@@ -418,8 +420,8 @@ export class MenuFlyoutList2 {
 
   getListItems() {
     return Array.from(this.hostElement.children).filter(
-      (node: HTMLScaleMenuFlyoutItem2Element) =>
-        node.getAttribute('role') === 'menuitem' && node.disabled !== true
+      (el: HTMLScaleMenuFlyoutItem2Element) =>
+        ITEM_ROLES.includes(el.getAttribute('role')) && el.disabled !== true
     );
   }
 
