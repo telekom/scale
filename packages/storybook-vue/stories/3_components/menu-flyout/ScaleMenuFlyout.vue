@@ -1,4 +1,16 @@
+<template>
+  <div>
+    <slot name="trigger" />
+    <slot />
+  </div>
+</template>
+
 <script>
-  // Unused, but needs to exist ¯\_(ツ)_/¯
-  export default {};
+  export default {
+    props: {
+      closeOnSelect: { type: Boolean, default: true },
+      direction: { type: String, default: 'bottom-right' },
+      styles: { type: String },
+    },
+  };
 </script>
