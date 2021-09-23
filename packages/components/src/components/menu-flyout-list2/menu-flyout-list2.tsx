@@ -73,8 +73,10 @@ export class MenuFlyoutList2 {
     list: HTMLScaleMenuFlyoutList2Element;
   }>;
 
-  /** Keep track of menu element */
+  /** Keep track of base element */
   private base: HTMLElement;
+  /** Keep track of list element */
+  private list: HTMLElement;
   /** Flags to know if content scrollable */
   private canScrollUp = false;
   private canScrollDown = false;
@@ -97,7 +99,7 @@ export class MenuFlyoutList2 {
   }
 
   connectedCallback() {
-    this.resizeHandler();
+    // this.resizeHandler();
   }
 
   componentDidRender() {
@@ -132,9 +134,7 @@ export class MenuFlyoutList2 {
 
   @Listen('resize', { target: 'window' })
   resizeHandler() {
-    // Get actual height for mobile
-    // where vh doesn't reflect whether URL bar showing or not
-    this.hostElement.style.maxHeight = `calc(${window.innerHeight}px - 20px)`;
+    this.close();
   }
 
   @Listen('keydown')
@@ -142,6 +142,7 @@ export class MenuFlyoutList2 {
     if (!this.active) {
       return;
     }
+    event.preventDefault();
     if ('ArrowDown' === event.key) {
       this.shiftItemsFocus();
       return;
@@ -239,6 +240,7 @@ export class MenuFlyoutList2 {
   };
 
   handleWheel = (event: WheelEvent) => {
+    // TODO not sure this is doing anything atm
     this.stopWheelPropagation(event);
   };
 
@@ -384,13 +386,13 @@ export class MenuFlyoutList2 {
     // Reset
     this.canScrollDown = false;
     this.canScrollUp = false;
-    const diff = this.base.scrollHeight - this.base.clientHeight;
+    const diff = this.list.scrollHeight - this.list.clientHeight;
     // Not scrollable
     if (diff) {
-      if (this.base.scrollTop > 0) {
+      if (this.list.scrollTop > 0) {
         this.canScrollUp = true;
       }
-      if (this.base.scrollTop < diff) {
+      if (this.list.scrollTop < diff) {
         this.canScrollDown = true;
       }
     }
@@ -432,7 +434,6 @@ export class MenuFlyoutList2 {
       this.opened && 'menu-flyout-list--opened',
       this.canScrollUp && 'menu-flyout-list--can-scroll-up',
       this.canScrollDown && 'menu-flyout-list--can-scroll-down',
-      // this.isCascaded && `menu-flyout-list--cascaded`,
       this.flipHorizontal && `menu-flyout-list--flip-horizontal`,
       this.flipVertical && `menu-flyout-list--flip-vertical`
     );
@@ -446,10 +447,16 @@ export class MenuFlyoutList2 {
           class={this.getCssClassMap()}
           ref={(el) => (this.base = el)}
           part="base"
-          onScroll={this.handleScroll}
-          onWheel={this.handleWheel}
+          style={{ maxHeight: `calc(${this.windowHeight}px - 20px)` }}
+          onWheelCapture={this.handleWheel}
         >
-          <slot />
+          <div
+            class="menu-flyout-list__list"
+            ref={(el) => (this.list = el)}
+            onScroll={this.handleScroll}
+          >
+            <slot />
+          </div>
           <div
             aria-hidden="true"
             class="menu-flyout-list__scroll-up-indicator"

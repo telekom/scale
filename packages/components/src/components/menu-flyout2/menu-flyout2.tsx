@@ -53,6 +53,11 @@ export class MenuFlyout2 {
     }
   }
 
+  @Listen('scroll', { target: 'window' })
+  handleWindowScroll() {
+    this.closeAll();
+  }
+
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
     let target = event.target as Node;
