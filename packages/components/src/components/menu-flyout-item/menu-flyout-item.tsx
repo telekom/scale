@@ -31,8 +31,10 @@ export class MenuFlyoutItem {
   @Element() hostElement: HTMLElement;
 
   /** (optional) Set to true to display arrow icon suffix */
-  @Prop() cascade? = false; // TODO rename to `hasMenu`
-  /** */
+  @Prop() cascade? = false; // TODO rename to `hasMenu`?
+  /** (optional) Mark as active */
+  @Prop({ reflect: true }) active? = false;
+  /** (optional) Whether the item should behave as a checkbox */
   @Prop() checkable?: 'checkbox' | 'radio' | null;
   /** (optional) Set to true to display check prefix, false to display empty prefix */
   @Prop({ reflect: true, mutable: true }) checked?: boolean = false;
@@ -54,6 +56,7 @@ export class MenuFlyoutItem {
 
   private hasSlotSublist: boolean = false;
 
+  // TODO there is lot of room for improving this, aka edge-cases
   @Method()
   async triggerEvent(
     eventType: 'keydown' | 'click',
@@ -85,12 +88,12 @@ export class MenuFlyoutItem {
   }
 
   openSublist() {
-    if (!this.hasSlotSublist) {
-      return;
-    }
     const sublist = this.hostElement.querySelector(
       '[slot="sublist"]'
     ) as HTMLScaleMenuFlyoutListElement;
+    if (sublist == null) {
+      return;
+    }
     sublist.trigger = () => this.hostElement;
     sublist.direction = 'right';
     sublist.open();
@@ -100,7 +103,8 @@ export class MenuFlyoutItem {
     return classNames(
       'menu-flyout-item',
       this.disabled && 'menu-flyout-item--disabled',
-      this.checkable != null && 'menu-flyout-item--checkable'
+      this.checkable != null && 'menu-flyout-item--checkable',
+      this.active && 'menu-flyout-item--active'
     );
   }
 

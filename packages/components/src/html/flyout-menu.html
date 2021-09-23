@@ -43,7 +43,13 @@
       <scale-button slot="trigger">Menu (accessible)</scale-button>
       <scale-menu-flyout-list>
         <scale-menu-flyout-item>Item one</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Second item here</scale-menu-flyout-item>
+        <scale-menu-flyout-item active>Second item here</scale-menu-flyout-item>
+        <!-- this is a problem, keyboard control won't target the link -->
+        <scale-menu-flyout-item
+          ><scale-link href="https://google.com"
+            >Second item here</scale-link
+          ></scale-menu-flyout-item
+        >
         <scale-menu-flyout-item>
           Hey ho
           <scale-menu-flyout-list slot="sublist">

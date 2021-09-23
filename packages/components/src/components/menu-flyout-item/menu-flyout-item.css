@@ -10,13 +10,22 @@
  */
 
 :host {
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
   display: block;
+  position: relative;
+  outline-color: transparent;
+  /* So box-shadow is visible on the sides */
+  padding-left: var(--scl-spacing-2);
+  padding-right: var(--scl-spacing-2);
 }
 
 * {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
+
 .menu-flyout-item {
+  position: relative;
   display: flex;
   align-items: stretch;
   text-align: left;
@@ -33,10 +42,8 @@
   overflow: hidden;
   min-width: fit-content;
   min-width: -moz-fit-content;
-  outline-color: transparent;
 }
 
-.menu-flyout-item--active:not(.menu-flyout-item--disabled),
 .menu-flyout-item:focus:not(.menu-flyout-item--disabled),
 .menu-flyout-item:hover:not(.menu-flyout-item--disabled) {
   color: var(--scl-color-primary-hover);
@@ -44,16 +51,40 @@
 
 :host(:focus) .menu-flyout-item:not(.menu-flyout-item--disabled) {
   color: var(--scl-color-primary-hover);
+  box-shadow: var(--box-shadow-focus);
+}
+
+:host(:active) .menu-flyout-item:not(.menu-flyout-item--disabled) {
+  color: var(--scl-color-primary-active);
 }
 
 :host([aria-expanded='true']) .menu-flyout-item {
-  color: var(--scl-color-primary-hover);
+  color: var(--scl-color-primary-active);
 }
 
 .menu-flyout-item--disabled {
   outline: none;
   color: #ccc;
   cursor: not-allowed;
+}
+
+:host([active])::before,
+.menu-flyout-item--active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--scl-spacing-2);
+  background-color: var(--scl-color-primary-active);
+}
+.menu-flyout-item--active {
+  color: var(--scl-color-primary-active);
+}
+.menu-flyout-item--active::before {
+  /* a11y: HCM */
+  background: transparent;
 }
 
 .menu-flyout-item__label {
