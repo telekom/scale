@@ -43,8 +43,6 @@ export class MenuFlyoutItem {
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
-  private hasSlotSublist: boolean = false;
-
   /** Event triggered when menu item selected */
   @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
     item: HTMLElement;
@@ -53,6 +51,8 @@ export class MenuFlyoutItem {
   @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
     item: HTMLElement;
   }>;
+
+  private hasSlotSublist: boolean = false;
 
   @Method()
   async triggerEvent(
