@@ -9,8 +9,9 @@
 
 | Property    | Attribute   | Description                                                                   | Type                    | Default     |
 | ----------- | ----------- | ----------------------------------------------------------------------------- | ----------------------- | ----------- |
+| `active`    | `active`    | (optional) Mark as active                                                     | `boolean`               | `false`     |
 | `cascade`   | `cascade`   | (optional) Set to true to display arrow icon suffix                           | `boolean`               | `false`     |
-| `checkable` | `checkable` |                                                                               | `"checkbox" \| "radio"` | `undefined` |
+| `checkable` | `checkable` | (optional) Whether the item should behave as a checkbox                       | `"checkbox" \| "radio"` | `undefined` |
 | `checked`   | `checked`   | (optional) Set to true to display check prefix, false to display empty prefix | `boolean`               | `false`     |
 | `disabled`  | `disabled`  | (optional) Disabled                                                           | `boolean`               | `false`     |
 | `styles`    | `styles`    | (optional) Injected styles                                                    | `string`                | `undefined` |
