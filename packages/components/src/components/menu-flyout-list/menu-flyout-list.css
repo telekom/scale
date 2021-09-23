@@ -15,10 +15,9 @@
 */
 
 :host {
-  --spacing-top: 0;
-
   box-sizing: content-box;
   position: fixed;
+  z-index: var(--scl-z-index-20);
   pointer-events: none;
 }
 
@@ -31,7 +30,10 @@
   border-radius: var(--scl-radius-8);
   box-shadow: var(--scl-shadow-level-4);
   overflow-y: hidden;
-  margin-top: var(--spacing-top);
+  margin-top: var(--spacing-y-list, 0);
+  margin-bottom: var(--spacing-y-list, 0);
+  margin-left: var(--spacing-x-list, 0);
+  margin-right: var(--spacing-x-list, 0);
 }
 
 .menu-flyout-list--opened {

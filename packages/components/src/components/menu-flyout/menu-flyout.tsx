@@ -24,6 +24,14 @@ export class MenuFlyout {
 
   /** (optional) Determines whether the dropdown should close when a menu item is selected */
   @Prop() closeOnSelect = true;
+  /** (optional) Set preference for where the menu appears, space permitting */
+  @Prop() direction:
+    | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left'
+    | 'right'
+    | 'left' = 'bottom-right';
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -88,7 +96,7 @@ export class MenuFlyout {
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
     this.setTriggerAttributes();
-    this.adjustTopSpacing();
+    this.adjustYSpacing();
   }
 
   setTriggerAttributes() {
@@ -104,10 +112,10 @@ export class MenuFlyout {
     });
   }
 
-  adjustTopSpacing() {
+  adjustYSpacing() {
     const list = this.getListElement();
-    if (list.style.getPropertyValue('--spacing-top') === '') {
-      list.style.setProperty('--spacing-top', 'var(--scl-spacing-16, 1rem)');
+    if (list.style.getPropertyValue('--spacing-y-list') === '') {
+      list.style.setProperty('--spacing-y-list', 'var(--scl-spacing-16, 1rem)');
     }
   }
 
@@ -123,6 +131,10 @@ export class MenuFlyout {
     if (list.opened) {
       this.closeAll();
       return;
+    }
+    if (this.direction != null) {
+      // Overwrite `direction` in list
+      list.direction = this.direction;
     }
     list.trigger = () => this.trigger;
     list.open();
