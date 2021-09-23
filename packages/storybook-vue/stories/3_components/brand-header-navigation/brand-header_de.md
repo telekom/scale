@@ -3,6 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
+
 Der Brand-Header vermittelt Absender und Angebot einer Webseite auf einen Blick. Er macht Telekom Webseiten für Nutzer\*innen wiedererkennbar und bietet ein einheitliches Erlebnis für alle unsere Produkte und Services.
 
 ## Allgemein

@@ -11,6 +11,14 @@
 
 import { Component, h, Prop, Host } from '@stencil/core';
 
+export interface AnchorAttributesInterface {
+  hreflang?: string;
+  ping?: string;
+  referrerpolicy?: ReferrerPolicy;
+  rel?: string;
+  target?: '_self' | '_blank' | '_parent' | '_top';
+  type?: string;
+}
 @Component({
   tag: 'scale-link',
   styleUrl: './link.css',
@@ -23,21 +31,25 @@ export class Link {
   @Prop() disabled?: boolean = false;
   /** (optional) Download declaration */
   @Prop() download?: boolean = false;
-  /** (optional) Block link */
-  @Prop() block?: boolean = false;
-  /** (optional) Link open a new tag */
-  @Prop() target?: string;
-  /** (optional) Remove the `text-decoration` from the text (can also be achieved via `--text-decoration: none`)  */
+  /** (optional) Remove the initial line from the text (can also be achieved via `--line-thickness-initial: 0`)
+   * Remove the line for every state with `--line-thickness: 0`
+   */
   @Prop() omitUnderline?: boolean = false;
   /** (optional) Chnage icon/content slot order */
-  @Prop() iconPosition: 'before' | 'after' = 'after';
+  @Prop() iconPosition?: 'before' | 'after' = 'after';
   /** (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `type`) */
-  @Prop() anchorAttributes;
+  @Prop() anchorAttributes?: AnchorAttributesInterface;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
   renderSlots() {
-    const slots = [<slot />, <slot name="icon" />];
+    const slots = [
+      <div part="content">
+        <slot />
+        <div part="line"></div>
+      </div>,
+      <slot name="icon" />,
+    ];
 
     // if (this.iconPosition === 'before') slots.reverse();
 
@@ -48,7 +60,6 @@ export class Link {
     const props = {
       download: this.download || null,
       tabIndex: this.disabled ? -1 : null,
-      target: this.target || null,
       href: this.href || null,
       'aria-disabled': this.disabled,
     };
@@ -60,21 +71,19 @@ export class Link {
       <Host
         class={{
           disabled: this.disabled,
-          block: this.block,
-          // underlined: !this.omitUnderline,
           reverse: this.iconPosition === 'before',
         }}
       >
         {this.omitUnderline && (
           <style>{`
             :host{
-              --text-decoration: none;
+              --line-thickness-initial: 0;
             }
         `}</style>
         )}
         {this.styles && <style>{this.styles}</style>}
         <a part="anchor" {...this.getAnchorProps()}>
-          <span part="wrapper">{this.renderSlots()}</span>
+          {this.renderSlots()}
         </a>
       </Host>
     );

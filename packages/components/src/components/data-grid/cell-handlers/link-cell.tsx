@@ -22,7 +22,7 @@ export const LinkCell: Cell = {
     // Remove protocol (http/https)
     const urlNoProtocol = content.replace(/^https?\:\/\//i, '');
     return (
-      <scale-link href={content} target="_blank">
+      <scale-link href={content} anchor-attributes={{ target: '__blank' }}>
         {urlNoProtocol}
       </scale-link>
     );

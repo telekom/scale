@@ -8,6 +8,25 @@ import ScaleLink from './ScaleLink.vue';
     label: {
       control: { type: 'text' },
     },
+    download: {
+      type: 'boolean'
+    },
+    omitUnderline: {
+      type: 'boolean'
+    },
+    withIcon: {
+      control: { type: 'boolean' },
+    },
+    iconPosition: {
+      options: ['after', 'before'],
+      control: { type: 'radio' }
+    },
+    anchorAttributes: {
+      type: 'object'
+    },
+    href: {
+       control: { type: 'text' },
+    },
     styles: {
       control: { disable: true },
     },
@@ -18,21 +37,21 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleLink },
   props: {
     label: String,
+    withIcon: { type: Boolean, default: false},
     ...ScaleLink.props,
   },
   template: `
         <scale-link
-        :block="block"
-        :disabled="disabled"
         :href="href"
-        :target="target"
-        :variant="variant"
+        :disabled="disabled"
         :styles="styles"
         :omit-underline="omitUnderline"
+        :download="download"
+        :icon-position="iconPosition"
+        :anchor-attributes="anchorAttributes"
     >
         {{ label }}
         <scale-icon-navigation-external-link
-            v-if="target === '_blank'"
             size="16"
             accessibility-title="open link in new tab"
             slot="icon"
@@ -61,6 +80,12 @@ export const Template = (args, { argTypes }) => ({
     args={{
       label: 'A link',
       href: '#top',
+      disabled: false,
+      omitUnderline: false,
+      download: false,
+      withIcon: true,
+      iconPosition: "after",
+      anchorAttributes: {},
     }}
   >
     {Template.bind({})}
@@ -88,6 +113,7 @@ export const Template = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
+
 ## Disabled
 
 <Canvas withSource="none">
@@ -96,7 +122,6 @@ For Shadow Parts, please inspect the element's #shadow.
     args={{
       label: 'A link, disabled',
       disabled: true,
-      href: '#top',
     }}
   >
     {Template.bind({})}
@@ -115,7 +140,7 @@ For Shadow Parts, please inspect the element's #shadow.
     args={{
       label: 'A link, with an icon',
       href: '#top',
-      target: '_blank',
+      withIcon: true,
     }}
   >
     {Template.bind({})}

@@ -55,22 +55,23 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                    | Type      | Default     |
-| --------------- | ---------------- | ------------------------------ | --------- | ----------- |
-| `block`         | `block`          | (optional) Block link          | `boolean` | `false`     |
-| `disabled`      | `disabled`       | (optional) Disabled link       | `boolean` | `false`     |
-| `href`          | `href`           | (optional) Link href           | `string`  | `undefined` |
-| `omitUnderline` | `omit-underline` | (optional) Link underline      | `boolean` | `false`     |
-| `styles`        | `styles`         | (optional) Injected CSS styles | `string`  | `undefined` |
-| `target`        | `target`         | (optional) Link open a new tag | `string`  | `'_self'`   |
-| `variant`       | `variant`        | (optional) Link variant        | `string`  | `''`        |
+| Property           | Attribute        | Description                                                                                                                                                          | Type                        | Default     |
+| ------------------ | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----------- |
+| `anchorAttributes` | --               | (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `type`)                                                            | `AnchorAttributesInterface` | `undefined` |
+| `disabled`         | `disabled`       | (optional) Disabled link                                                                                                                                             | `boolean`                   | `false`     |
+| `download`         | `download`       | (optional) Download declaration                                                                                                                                      | `boolean`                   | `false`     |
+| `href`             | `href`           | (optional) Link href                                                                                                                                                 | `string`                    | `undefined` |
+| `iconPosition`     | `icon-position`  | (optional) Chnage icon/content slot order                                                                                                                            | `"after" \| "before"`       | `'after'`   |
+| `omitUnderline`    | `omit-underline` | (optional) Remove the initial line from the text (can also be achieved via `--line-thickness-initial: 0`) Remove the line for every state with `--line-thickness: 0` | `boolean`                   | `false`     |
+| `styles`           | `styles`         | (optional) Injected CSS styles                                                                                                                                       | `string`                    | `undefined` |
 
 
 ## Shadow Parts
 
 | Part        | Description |
 | ----------- | ----------- |
-| `"wrapper"` |             |
+| `"content"` |             |
+| `"line"`    |             |
 
 
 ## Dependencies
