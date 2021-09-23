@@ -72,9 +72,6 @@ export class MenuFlyoutItem {
       this.openSublist();
       return;
     }
-    if (this.checkable != null) {
-      this.checked = !this.checked;
-    }
     const detail = { eventType, key, item: this.hostElement };
     emitEvent(this, 'scaleSelect', detail);
   }
