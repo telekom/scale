@@ -27,14 +27,9 @@ export class MenuFlyoutDivider {
 
   render() {
     return (
-      <Host>
+      <Host role="separator">
         {this.styles && <style>{this.styles}</style>}
-        <div
-          class={this.getCssClassMap()}
-          part="base"
-          role="separator"
-          aria-hidden="true"
-        ></div>
+        <div class={this.getCssClassMap()} part="base" aria-hidden="true"></div>
       </Host>
     );
   }

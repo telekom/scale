@@ -26,36 +26,6 @@
   <body>
     <h1>Flyout Menu a11y</h1>
 
-    <scale-menu-flyout id="original" close-on-select="false">
-      <scale-button slot="trigger">Menu (original)</scale-button>
-      <scale-menu-flyout-list>
-        <scale-menu-flyout-item>File</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Edit</scale-menu-flyout-item>
-        <scale-menu-flyout-item>Format</scale-menu-flyout-item>
-        <scale-menu-flyout aria-hidden="true">
-          <scale-menu-flyout-item slot="trigger" cascade
-            >View</scale-menu-flyout-item
-          >
-          <scale-menu-flyout-list>
-            <scale-menu-flyout-item>View option 1</scale-menu-flyout-item>
-            <scale-menu-flyout-item>View option 2</scale-menu-flyout-item>
-            <scale-menu-flyout-divider></scale-menu-flyout-divider>
-            <scale-menu-flyout>
-              <scale-menu-flyout-item slot="trigger" cascade
-                >Block</scale-menu-flyout-item
-              >
-              <scale-menu-flyout-list>
-                <scale-menu-flyout-item>Block option 1</scale-menu-flyout-item>
-                <scale-menu-flyout-item>Block option 2</scale-menu-flyout-item>
-              </scale-menu-flyout-list>
-            </scale-menu-flyout>
-          </scale-menu-flyout-list>
-        </scale-menu-flyout>
-        <!-- <scale-menu-flyout-divider></scale-menu-flyout-divider> -->
-        <scale-menu-flyout-item>Help</scale-menu-flyout-item>
-      </scale-menu-flyout-list>
-    </scale-menu-flyout>
-
     <!-- <scale-menu-flyout-list>
       <scale-menu-flyout-item>Item Title</scale-menu-flyout-item>
       <scale-menu-flyout-item>Really Quite Long</scale-menu-flyout-item>
@@ -69,50 +39,46 @@
       <scale-menu-flyout-item><scale-icon-action-logout slot="prefix"></scale-icon-action-logout>Prefix And Suffix<span slot="suffix">⌘F</span></scale-menu-flyout-item>
     </scale-menu-flyout-list> -->
 
-    <scale-divider></scale-divider>
-
-    <scale-menu-flyout2 id="new" close-on-select="false">
+    <scale-menu-flyout id="new" close-on-select="false">
       <scale-button slot="trigger">Menu (accessible)</scale-button>
-      <scale-menu-flyout-list2>
-        <scale-menu-flyout-item2>Item one</scale-menu-flyout-item2>
-        <scale-menu-flyout-item2>Second item here</scale-menu-flyout-item2>
-        <scale-menu-flyout-item2>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item one</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Second item here</scale-menu-flyout-item>
+        <scale-menu-flyout-item>
           Hey ho
-          <scale-menu-flyout-list2 slot="sublist">
-            <scale-menu-flyout-item2>SUB Item one</scale-menu-flyout-item2>
-            <scale-menu-flyout-item2
-              >SUB Second item here</scale-menu-flyout-item2
+          <scale-menu-flyout-list slot="sublist">
+            <scale-menu-flyout-item>SUB Item one</scale-menu-flyout-item>
+            <scale-menu-flyout-item
+              >SUB Second item here</scale-menu-flyout-item
             >
-            <scale-menu-flyout-item2 cascade>
+            <scale-menu-flyout-item cascade>
               OK, this is nested-nested
-              <scale-menu-flyout-list2 slot="sublist">
-                <scale-menu-flyout-item2>WOW</scale-menu-flyout-item2>
-                <scale-menu-flyout-item2>YES, PLEASE</scale-menu-flyout-item2>
-                <scale-menu-flyout-item2>DOES IT WORK?</scale-menu-flyout-item2>
-              </scale-menu-flyout-list2>
-            </scale-menu-flyout-item2>
-          </scale-menu-flyout-list2>
-        </scale-menu-flyout-item2>
-        <scale-menu-flyout-item2>
+              <scale-menu-flyout-list slot="sublist">
+                <scale-menu-flyout-item>WOW</scale-menu-flyout-item>
+                <scale-menu-flyout-item>YES, PLEASE</scale-menu-flyout-item>
+                <scale-menu-flyout-item>DOES IT WORK?</scale-menu-flyout-item>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item>
           Something else
           <span slot="suffix">⌘+F</span>
-        </scale-menu-flyout-item2>
-        <scale-menu-flyout-item2 disabled>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item disabled>
           Something different
-          <span slot="suffix">⌘+123</span>
-        </scale-menu-flyout-item2>
-        <scale-menu-flyout-item2
-          >Something else entirely</scale-menu-flyout-item2
-        >
+          <span slot="suffix">⌘+13</span>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item>Something else entirely</scale-menu-flyout-item>
         <scale-menu-flyout-divider></scale-menu-flyout-divider>
-        <scale-menu-flyout-item2 checkable="checkbox"
-          >Last one maybe</scale-menu-flyout-item2
+        <scale-menu-flyout-item checkable="checkbox"
+          >Last one maybe</scale-menu-flyout-item
         >
-        <scale-menu-flyout-item2 checkable="checkbox"
-          >Nope, last one for real</scale-menu-flyout-item2
+        <scale-menu-flyout-item checkable="checkbox"
+          >Nope, last one for real</scale-menu-flyout-item
         >
-      </scale-menu-flyout-list2>
-    </scale-menu-flyout2>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
 
     <div style="margin-top: 2rem; height: 5000px"></div>
 
@@ -128,13 +94,13 @@
         console.log('EVENT scale-close', event.detail);
       });
 
-      let el2 = document.getElementById('original');
-      el2.addEventListener('scaleOpen', (event) => {
-        console.log('scaleOpen', event.detail);
-      });
-      el2.addEventListener('scaleClose', (event) => {
-        console.log('scaleClose', event.detail);
-      });
+      // let el2 = document.getElementById('original');
+      // el2.addEventListener('scaleOpen', (event) => {
+      //   console.log('scaleOpen', event.detail);
+      // });
+      // el2.addEventListener('scaleClose', (event) => {
+      //   console.log('scaleClose', event.detail);
+      // });
     </script>
   </body>
 </html>
