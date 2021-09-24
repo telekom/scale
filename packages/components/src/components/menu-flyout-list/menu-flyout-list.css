@@ -38,7 +38,7 @@
 
 /* a11y: HCM */
 .menu-flyout-list::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: calc(100% - 2px);

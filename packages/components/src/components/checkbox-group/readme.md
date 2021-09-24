@@ -39,7 +39,6 @@
 ```mermaid
 graph TD;
   scale-checkbox-group --> scale-checkbox
-  scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
   style scale-checkbox-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
