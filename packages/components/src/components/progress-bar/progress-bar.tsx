@@ -42,6 +42,8 @@ export class ProgressBar {
   @Prop() progressBarId?: string;
   /** (optional) Progress bar label */
   @Prop() label?: string;
+  /** (optional) disables aria-live */
+  @Prop() mute?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -142,13 +144,13 @@ export class ProgressBar {
             {this.statusDescription}
           </div>
         )}
-        {
+        {!this.mute && (
           <span aria-live="polite" class="progress-bar__aria-live">
             {this.percentage !== Math.round(this.percentage / 10) * 10
               ? `${Math.round(this.percentage / 10) * 10}%`
               : null}
           </span>
-        }
+        )}
       </Host>
     );
   }
