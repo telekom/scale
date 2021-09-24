@@ -272,7 +272,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
                   </div>
                   <scale-menu-flyout-list>
                     <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
-                    <scale-menu-flyout-item active aria-current="page">Item 2</scale-menu-flyout-item>
+                    <scale-menu-flyout-item active aria-current="true">Item 2 <span class="sr-only">active</span></scale-menu-flyout-item>
                     <scale-menu-flyout-item>
                       More Options
                       <scale-menu-flyout-list slot="sublist">
@@ -399,7 +399,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
             >
               <div slot="menu-icon">
                 <scale-menu-flyout @scaleClose="$refs.userIcon.isActive = false" >
-                  <div slot="trigger" >
+                  <div slot="trigger">
                     <scale-nav-icon icon="user-file-user" ref="userIcon" @click="$refs.userIcon.isActive = true">
                       Alexander
                     </scale-nav-icon>
