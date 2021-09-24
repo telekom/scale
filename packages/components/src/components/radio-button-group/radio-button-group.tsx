@@ -17,12 +17,24 @@ export class RadioButtonGroup {
     return (
       <form>
         <fieldset class="radio-button-group">
-          <div class="radio-button-group__label">
-            <legend class="radio-button-group__title">{this.label}</legend>
+          <legend class="radio-button-group__title">
+            <label
+              role="text"
+              class="radio-button-group__title-label"
+              aria-label={this.label}
+            >
+              {this.label}
+            </label>
             {this.helperText ? (
-              <div class={this.getCssClassMap()}>{this.helperText}</div>
+              <div
+                role="text"
+                class={this.getCssClassMap()}
+                aria-label={this.helperText}
+              >
+                {this.helperText}
+              </div>
             ) : null}
-          </div>
+          </legend>
           <div class="radio-button-group__container">
             <slot />
           </div>
