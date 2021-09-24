@@ -31,7 +31,6 @@ import {
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import statusNote from '../../utils/status-note';
 import { emitEvent } from '../../utils/utils';
 
 let i = 0;
@@ -316,10 +315,6 @@ export class DatePicker {
     this.mo = new MutationObserver(callback);
     callback();
   };
-
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
 
   disconnectedCallback() {
     const input = this.duetInput

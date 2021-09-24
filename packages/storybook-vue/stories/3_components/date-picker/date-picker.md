@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Date Picker</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 A date picker allows users to easily select a date or a period of time.
