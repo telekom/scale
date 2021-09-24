@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { action } from "@storybook/addon-actions";
 export default {
   props: {
     hideBorders: { type: Boolean, default: false },
