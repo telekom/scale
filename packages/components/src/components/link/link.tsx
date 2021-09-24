@@ -76,7 +76,7 @@ export class Link {
       >
         {this.omitUnderline && (
           <style>{`
-            :host{
+            [part="line"] {
               --line-thickness-initial: 0;
             }
         `}</style>

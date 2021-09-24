@@ -6,19 +6,20 @@
     :omit-underline="omitUnderline"
     :download="download"
     :icon-position="iconPosition"
-    :anchor-attributes="anchorAttributes"
+    :anchor-attributes.prop="anchorAttributes"
   >
     <slot></slot>
-    <scale-icon-navigation-external-link
-      size="16"
-      accessibility-title="open link in new tab"
-      slot="icon"
-    ></scale-icon-navigation-external-link>
+    <slot name="icon"></slot>
   </scale-link>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      withIcon: false,
+    };
+  },
   props: {
     href: String,
     styles: String,

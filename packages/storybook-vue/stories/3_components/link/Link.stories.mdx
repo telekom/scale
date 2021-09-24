@@ -51,11 +51,14 @@ export const Template = (args, { argTypes }) => ({
         :anchor-attributes="anchorAttributes"
     >
         {{ label }}
-        <scale-icon-navigation-external-link
+        <template v-slot:icon v-if="withIcon">
+            <scale-icon-navigation-external-link
+            v-if="withIcon"
             size="16"
-            accessibility-title="open link in new tab"
             slot="icon"
+            accessibility-title="open link in new tab"
         ></scale-icon-navigation-external-link>
+        </template>
     </scale-link>
     `,
 });
@@ -83,7 +86,7 @@ export const Template = (args, { argTypes }) => ({
       disabled: false,
       omitUnderline: false,
       download: false,
-      withIcon: true,
+      withIcon: false,
       iconPosition: "after",
       anchorAttributes: {},
     }}
