@@ -45,6 +45,8 @@
   overflow-y: auto;
   overflow-y: overlay;
   overscroll-behavior: contain;
+  /* a11y: HCM */
+  box-shadow: 0 0 0 var(--scl-spacing-1) transparent;
 }
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-bottom-left,
