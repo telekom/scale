@@ -80,7 +80,7 @@ export class MenuFlyout {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
-    if ('Tab' === event.key || 'Escape' === event.key) {
+    if ('Tab' === event.key) {
       this.closeAll();
       return;
     }

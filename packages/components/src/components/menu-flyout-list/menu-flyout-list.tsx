@@ -151,7 +151,7 @@ export class MenuFlyoutList {
       this.shiftItemsFocus(-1);
       return;
     }
-    if ('ArrowLeft' === event.key) {
+    if ('ArrowLeft' === event.key || 'Escape' === event.key) {
       this.close();
       return;
     }
