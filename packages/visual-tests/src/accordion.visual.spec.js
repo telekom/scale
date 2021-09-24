@@ -11,6 +11,8 @@ describe('Accordion', () => {
     );
     await firstButton.click();
 
+    await page.waitFor(1000);
+
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
