@@ -11,7 +11,6 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
           </label>
           <div aria-label="Error message" class="radio-button-group__helper-text" role="text">
             Error message
-            <scale-icon-alert-information aria-hiden="true" size="16"></scale-icon-alert-information>
           </div>
         </legend>
         <div class="radio-button-group__container">
