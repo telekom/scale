@@ -1,20 +1,20 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Flyout Menu</h1>
-    <img src="assets/tag-beta.svg" alt="Beta Component" />
+    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Flyout-Menüs lassen sich temporär einblenden. Nutzer*innen können so auf eine Reihe von Funktionen zugreifen.
+Flyout-Menüs lassen sich temporär einblenden. Nutzer\*innen können so auf eine Reihe von Funktionen zugreifen.
 
 ## Allgemein
 
 Das Flyout-Menü öffnet sich per Klick/Tap auf einen Button. Es kann unterschiedliche Elemente enthalten.
 
-![Flyout Menu](./img/Flyout_Menu.png)
+![Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu.png)
 
 ### Nutze das Flyout-Menü, um
 
 - zwischen produktinternen Seiten zu navigieren oder
-- sekundäre oder kontextuelle Aktionen temporär anzuzeigen.
+- sekundäre oder kontextuelle Aktionen temporär anzuzeigen.
 
 ### Nutze besser kein Flyout-Menü
 
@@ -22,11 +22,11 @@ Das Flyout-Menü öffnet sich per Klick/Tap auf einen Button. Es kann unterschie
 
 ## Elemente
 
-![Elements des Flyout Menüs](./img/Flyout_Menu_Elements.png)
+![Elements des Flyout Menüs](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
 
 ### Trigger (1)
 
-Der Trigger ist der Button, über den Nutzer*innen das Flyout-Menü einblenden können.
+Der Trigger ist der Button, über den Nutzer\*innen das Flyout-Menü einblenden können.
 
 ### Text only (2)
 
@@ -34,7 +34,7 @@ Einfacher interaktiver Text.
 
 ### Icon rechts (3)
 
-Interaktiver Text mit einem rechts angeordneten Icon.
+Interaktiver Text mit einem rechts angeordneten Icon.
 
 ### Cascade (4)
 
