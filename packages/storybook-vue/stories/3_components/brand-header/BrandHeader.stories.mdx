@@ -218,7 +218,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                     <app-mega-menu>
                       <div slot="custom-body"><pre>custom-body</pre></div>
                     </app-mega-menu></scale-nav-main>
-                  <scale-nav-main is-active name="Custom Item #3"></scale-nav-main>
+                  <scale-nav-main active name="Custom Item #3"></scale-nav-main>
                   <scale-nav-main name="Custom Item #4"></scale-nav-main>
                 </div>
             </scale-app-header>
@@ -242,7 +242,11 @@ You can find code examples where the Flyout Menu Beta component is implemented i
             <div slot="custom-body"><pre>custom-body</pre></div>
           </app-mega-menu>
         </scale-nav-main>
-        <scale-nav-main is-active name="Custom Item #3"></scale-nav-main>
+        <!--
+          Deprecated:
+          <scale-nav-main is-active name="Custom Item #3"></scale-nav-main>
+        -->
+        <scale-nav-main active name="Custom Item #3"></scale-nav-main>
         <scale-nav-main name="Custom Item #4"></scale-nav-main>
       </div>
     </scale-app-header>
@@ -401,7 +405,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :active-sector-id="activeSectorId"
             >
                 <div slot="menu-sector">
-                  <scale-nav-segment is-active="true" href="#custom-sector-1">
+                  <scale-nav-segment active="true" href="#custom-sector-1">
                     Custom Sector #1
                   </scale-nav-segment>
                   <scale-nav-segment href="#custom-sector-2">
@@ -422,8 +426,15 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 <scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="menu-sector">
-      <scale-nav-segment
+      <!--
+        Deprecated: 
+        <scale-nav-segment
         is-active="true"
+        ...
+      >
+      -->
+      <scale-nav-segment
+        active="true"
         href="#custom-sector-1"
         onclick="handleClick()"
       >
@@ -486,7 +497,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :active-sector-id="activeSectorId"
             >
                 <div slot="menu-addon">
-                  <scale-nav-segment is-active="true" href="#custom-addon-1">
+                  <scale-nav-segment active="true" href="#custom-addon-1">
                     Custom Addon #1
                   </scale-nav-segment>
                   <scale-nav-segment href="#custom-addon-2">
@@ -507,8 +518,15 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 <scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="menu-addon">
-      <scale-nav-segment
+      <!--
+        Deprecated:
+        <scale-nav-segment
         is-active="true"
+        ...
+      >
+      -->
+      <scale-nav-segment
+        active="true"
         href="#custom-addon-1"
         onclick="handleClick()"
       >
