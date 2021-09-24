@@ -5,14 +5,15 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
-        <div class="radio-button-group__label">
-          <legend class="radio-button-group__title">
+        <legend class="radio-button-group__title">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
-          </legend>
-          <div class="radio-button-group__helper-text">
+          </label>
+          <div aria-label="Error message" class="radio-button-group__helper-text" role="text">
             Error message
+            <scale-icon-alert-information aria-hiden="true" size="16"></scale-icon-alert-information>
           </div>
-        </div>
+        </legend>
         <div class="radio-button-group__container">
           <slot></slot>
         </div>
@@ -34,11 +35,11 @@ exports[`RadioButtonGroup should match selected snapshot 1`] = `
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
-        <div class="radio-button-group__label">
-          <legend class="radio-button-group__title">
+        <legend class="radio-button-group__title">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
-          </legend>
-        </div>
+          </label>
+        </legend>
         <div class="radio-button-group__container">
           <slot></slot>
         </div>
@@ -60,11 +61,11 @@ exports[`RadioButtonGroup should match standard snapshot 1`] = `
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
-        <div class="radio-button-group__label">
-          <legend class="radio-button-group__title">
+        <legend class="radio-button-group__title">
+          <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
-          </legend>
-        </div>
+          </label>
+        </legend>
         <div class="radio-button-group__container">
           <slot></slot>
         </div>
