@@ -52,11 +52,16 @@ export const NumberCell: Cell = {
       );
     }
 
+    const step = `0.${(String(content).split('.')[1] || '')
+      .split('')
+      .map(() => '0')}`.replace(/,/g, '');
+
     if (editable) {
       const props = {
         type: 'number',
         size: 'small',
-        value: content,
+        step: step.slice(0, step.length - 1) + '1',
+        value: String(content),
         styles: /* css */ `.text-field__control {
           text-align: right !important;
         }`,
