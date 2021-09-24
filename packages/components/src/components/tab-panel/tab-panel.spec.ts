@@ -34,5 +34,7 @@ describe('TabPanel', () => {
     expect(tabPanel.getCssClassMap()).toBe('tab-panel tab-panel--small');
     tabPanel.small = false;
     expect(tabPanel.getCssClassMap()).toBe('tab-panel');
+    tabPanel.size = 'small';
+    expect(tabPanel.getCssClassMap()).toBe('tab-panel tab-panel--small');
   });
 });

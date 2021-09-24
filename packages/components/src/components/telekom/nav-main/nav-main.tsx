@@ -12,6 +12,7 @@
 import { Component, Prop, h, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-nav-main',
@@ -35,6 +36,19 @@ export class NavMain {
 
   componentWillLoad() {
     this.hasSlotMegaMenu = !!this.hostElement.querySelector('app-mega-menu');
+  }
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.isActive !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isActive" is deprecated. Please use the "active" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
   render() {
     return (

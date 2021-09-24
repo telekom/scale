@@ -20,3 +20,11 @@ scale-icon {
 scale-icon path {
   transition: var(--transition);
 }
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  scale-icon svg,
+  .scale-icon {
+    color: white;
+    stroke: white;
+  }
+}

@@ -3,10 +3,70 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-This component contains the Scale radio button group. This is used to display the scale radio buttons in a list with a suitable heading.
+Radio buttons allow users to choose an option from a number of
+alternatives. The radio button group also contains a group label.
 
-The heading can be extended with a helper text. If the status of the radio button group is set to error, both the help text and the circles of the radio buttons in the list change colour.
+## General
 
-## Beta components
+Radio buttons only work as a group. Activating a radio button
+automatically deselects the previously selected option. With a group
+label, users can grasp contextual context more quickly. Interfaces with
+many options appear smoother and tidier overall.
 
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
+![Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group.png)
+
+### When to use
+
+#### Use a radio button group to:
+
+- offer users a range of related but mutually exclusive choices and
+- to ensure clarity in the case of several groups of radio buttons.
+
+#### When not to use
+
+### Don\'t use a radio button group when:
+
+- users should select more than one option (use checkboxes instead) or
+- users have to perform an action (use a button instead).
+
+## Elements
+
+![Elements of Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Elements.png)
+
+### Group label (1)
+
+Choose a short and meaningful title for the entire group.
+
+### Deselected radio button (2)
+
+If the circle is empty, an option is deselected.
+
+### Label (3)
+
+Use the label to clearly describe the effect of the respective selection. A label usually contains max three words.
+
+### Selected radio button
+
+If the circle is filled in, an option is selected.
+
+### Information (5) (optional)
+
+If necessary, you can also provide additional information.
+
+### Error message (6)
+
+Place error messages below the group label.
+
+### Deactivated state
+
+Deactivate a radio button when:
+
+- users have to complete another action before selecting the radio
+  button or
+- the option must be listed but users can\'t currently select it.
+
+![Disabled Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Disabled.png)
+
+## Related components
+
+[Radio Button](?path=/usage/components-radio-button), [Checkbox](?path=/usage/components-checkbox), [Checkbox Group](?path=/usage/components-checkbox-group)
