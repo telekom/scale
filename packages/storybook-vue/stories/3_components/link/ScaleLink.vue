@@ -4,9 +4,13 @@
     :styles="styles"
     :disabled="disabled"
     :omit-underline="omitUnderline"
-    :download="download"
     :icon-position="iconPosition"
-    :anchor-attributes.prop="anchorAttributes"
+    :download="download"
+    :hreflang="hreflang"
+    :referrerpolicy="referrerpolicy"
+    :rel="rel"
+    :target="target"
+    :type="type"
   >
     <slot></slot>
     <slot name="icon"></slot>
@@ -27,12 +31,12 @@ export default {
     omitUnderline: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     download: { type: Boolean, default: false },
-    anchorAttributes: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
+    hreflang: { type: String, default: null },
+    ping: { type: String, default: null },
+    referrerpolicy: { type: String, default: null },
+    rel: { type: String, default: null },
+    target: { type: String, default: null },
+    type: { type: String, default: null },
   },
 };
 </script>

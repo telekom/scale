@@ -11,20 +11,10 @@
 
 import { Component, h, Prop, Host } from '@stencil/core';
 
-export interface AnchorAttributesInterface {
-  hreflang?: string;
-  ping?: string;
-  referrerpolicy?: ReferrerPolicy;
-  rel?: string;
-  target?: '_self' | '_blank' | '_parent' | '_top';
-  type?: string;
-}
-
 /**
  * This is a superset of the default anchor `<a>` element.
  * @part anchor - the native achor element wrapping all contents
- * @part content - a wrapper around the default slot and the line
- * @part line - represents the element used for the line appearance
+ * @part content - a wrapper around the default slot with the underline
  *
  * @slot default - here goes the actual text of the
  * @slot icon - a slot that will not be underlined and which position can be changed
@@ -35,45 +25,47 @@ export interface AnchorAttributesInterface {
   shadow: true,
 })
 export class Link {
-  /** (optional) Link href */
-  @Prop() href: string;
   /** (optional) Disabled link */
   @Prop() disabled?: boolean = false;
-  /** (optional) Download declaration */
-  @Prop() download?: boolean = false;
   /** (optional) Remove the initial line from the text (can also be achieved via `--line-thickness-initial: 0`)
    * Remove the line for every state with `--line-thickness: 0`
    */
   @Prop() omitUnderline?: boolean = false;
+  /** (optional) Link href */
+  @Prop() href: string;
+  /** (optional) Download declaration */
+  @Prop() download?: boolean = false;
   /** (optional) Chnage icon/content slot order */
   @Prop() iconPosition?: 'before' | 'after' = 'after';
-  /** (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `target`, `type`) */
-  @Prop() anchorAttributes?: AnchorAttributesInterface;
+  /** (optional) */
+  @Prop() hreflang?: string;
+  /** (optional) */
+  @Prop() ping?: string;
+  /** (optional) */
+  @Prop() referrerpolicy?: ReferrerPolicy;
+  /** (optional) */
+  @Prop() rel?: string;
+  /** (optional) */
+  @Prop() target?: '_self' | '_blank' | '_parent' | '_top';
+  /** (optional) */
+  @Prop() type?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  renderSlots() {
-    const slots = [
-      <div part="content">
-        <slot />
-        <div part="line"></div>
-      </div>,
-      <slot name="icon" />,
-    ];
-
-    // if (this.iconPosition === 'before') slots.reverse();
-
-    return slots;
-  }
-
   getAnchorProps() {
     const props = {
-      download: this.download || null,
-      tabIndex: this.disabled ? -1 : null,
       href: this.href || null,
+      tabIndex: this.disabled ? -1 : null,
       'aria-disabled': this.disabled,
+      download: this.download || null,
+      hreflang: this.hreflang || null,
+      ping: this.ping || null,
+      referrerpolicy: this.referrerpolicy || null,
+      rel: this.rel || null,
+      target: this.target || null,
+      type: this.type || null,
     };
-    return { ...props, ...this.anchorAttributes };
+    return { ...props };
   }
 
   render() {
@@ -82,18 +74,15 @@ export class Link {
         class={{
           disabled: this.disabled,
           reverse: this.iconPosition === 'before',
+          "no-underline": this.omitUnderline
         }}
       >
-        {this.omitUnderline && (
-          <style>{`
-            [part="line"] {
-              --line-thickness-initial: 0;
-            }
-        `}</style>
-        )}
         {this.styles && <style>{this.styles}</style>}
         <a part="anchor" {...this.getAnchorProps()}>
-          {this.renderSlots()}
+          <div part="content">
+            <slot />
+          </div>
+          <slot name="icon" />
         </a>
       </Host>
     );

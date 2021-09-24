@@ -8,9 +8,6 @@ import ScaleLink from './ScaleLink.vue';
     label: {
       control: { type: 'text' },
     },
-    download: {
-      type: 'boolean'
-    },
     omitUnderline: {
       type: 'boolean'
     },
@@ -21,11 +18,29 @@ import ScaleLink from './ScaleLink.vue';
       options: ['after', 'before'],
       control: { type: 'radio' }
     },
-    anchorAttributes: {
-      type: 'object'
+    download: {
+      type: 'boolean'
     },
     href: {
        control: { type: 'text' },
+    },
+    hreflang: {
+      type: 'string'
+    },
+    ping: {
+      type: 'string'
+    },
+    referrerpolicy: {
+      type: 'string'
+    },
+    rel: {
+      type: 'string'
+    },
+    target: {
+      type: 'string'
+    },
+    type: {
+      type: 'string'
     },
     styles: {
       control: { disable: true },
@@ -46,9 +61,13 @@ export const Template = (args, { argTypes }) => ({
         :disabled="disabled"
         :styles="styles"
         :omit-underline="omitUnderline"
-        :download="download"
         :icon-position="iconPosition"
-        :anchor-attributes="anchorAttributes"
+        :download="download"
+        :hreflang="hreflang"
+        :referrerpolicy="referrerpolicy"
+        :rel="rel"
+        :target="target"
+        :type="type"
     >
         {{ label }}
         <template v-slot:icon v-if="withIcon">
@@ -85,10 +104,15 @@ export const Template = (args, { argTypes }) => ({
       href: '#top',
       disabled: false,
       omitUnderline: false,
-      download: false,
       withIcon: false,
       iconPosition: "after",
-      anchorAttributes: {},
+      download: false,
+      hreflang: null,
+      ping: null,
+      referrerpolicy: null,
+      rel: null,
+      target: null,
+      type: null,
     }}
   >
     {Template.bind({})}
@@ -144,6 +168,7 @@ For Shadow Parts, please inspect the element's #shadow.
       label: 'A link, with an icon',
       href: '#top',
       withIcon: true,
+      target: "_blank"
     }}
   >
     {Template.bind({})}
