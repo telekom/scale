@@ -87,6 +87,15 @@
   background: transparent;
 }
 
+/* a11y: HCM */
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .menu-flyout-item--disabled:not(.menu-flyout-item--disabled),
+  .menu-flyout-item--active:not(.menu-flyout-item--disabled) {
+    color: white;
+    stroke: white;
+  }
+}
+
 .menu-flyout-item__label {
   flex: 1 1 0;
   overflow: hidden;
