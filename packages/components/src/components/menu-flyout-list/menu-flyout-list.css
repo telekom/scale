@@ -36,6 +36,18 @@
   margin-right: var(--spacing-x-list, 0);
 }
 
+/* a11y: HCM */
+.menu-flyout-list::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  inset: 0;
+  border-radius: var(--scl-radius-8);
+  border: 1px solid transparent;
+}
+
 .menu-flyout-list--opened {
   display: flex;
 }
@@ -45,8 +57,6 @@
   overflow-y: auto;
   overflow-y: overlay;
   overscroll-behavior: contain;
-  /* a11y: HCM */
-  box-shadow: 0 0 0 var(--scl-spacing-1) transparent;
 }
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-bottom-left,

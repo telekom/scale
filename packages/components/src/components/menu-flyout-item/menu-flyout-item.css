@@ -68,23 +68,21 @@
   cursor: not-allowed;
 }
 
-:host([active])::before,
-.menu-flyout-item--active::before {
+:host([active])::before {
   content: '';
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: var(--scl-spacing-2);
+  width: 0;
   background-color: var(--scl-color-primary-active);
+  /* a11y: HCM */
+  border-left: var(--scl-spacing-2) solid transparent;
 }
+
 .menu-flyout-item--active {
   color: var(--scl-color-primary-active);
-}
-.menu-flyout-item--active::before {
-  /* a11y: HCM */
-  background: transparent;
 }
 
 /* a11y: HCM */
