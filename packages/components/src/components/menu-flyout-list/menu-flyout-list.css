@@ -46,6 +46,7 @@
   inset: 0;
   border-radius: var(--scl-radius-8);
   border: 1px solid transparent;
+  pointer-events: none;
 }
 
 .menu-flyout-list--opened {
