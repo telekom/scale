@@ -76,7 +76,7 @@ You can use the following content components in the data grid:
 
 A row of data breaks on mobile screens and is displayed as a separate item.
 
-![Image Name](assets/3_components/data-grid/Mobile.png)
+![Image Name](assets/3_components/data-grid/Mobile-en.png)
 
 ## Beta components
 

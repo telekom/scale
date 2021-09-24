@@ -7,7 +7,7 @@ Die Pagination zeigt an, dass ein Inhalt auf mehrere Seiten aufgeteilt ist und w
 
 ## Allgemein
 
-Die Paginierung ist ein interaktives Element, mit dem Nutzer*innen durch mehrere Seiten eines zusammenhängenden Inhalts navigieren können. Handelt es sich um viele Seiten, hilft eine Nummerierung, um den Überblick zu behalten. Pfeile unterstützen zusätzlich ein schnelles Navigieren.
+Die Paginierung ist ein interaktives Element, mit dem Nutzer\*innen durch mehrere Seiten eines zusammenhängenden Inhalts navigieren können. Handelt es sich um viele Seiten, hilft eine Nummerierung, um den Überblick zu behalten. Pfeile unterstützen zusätzlich ein schnelles Navigieren.
 
 ### Verwende eine Pagination, wenn
 

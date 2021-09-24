@@ -12,6 +12,7 @@ Rating stars are a customer-focused, highly visual rating system. They can great
 ![Image Name](assets/3_components/rating-stars/RatingStars-Allgemein.png)
 
 ### When to use
+
 Use rating stars if:
 
 - you offer a wide range of products, services, or content,
@@ -19,6 +20,7 @@ Use rating stars if:
 - you have enough users to achieve a meaningful rating.
 
 ### When not to use
+
 Don't use rating stars if:
 
 - the amount of products/content is quite small and
