@@ -103,6 +103,7 @@ export const Template = (args, { argTypes }) => ({
                   "Nov",
                   "Dez"
               ],
+              today: "heute",
               locale: "de-DE"
           }
       }
@@ -146,15 +147,18 @@ export const RangeTemplate = (args, { argTypes }) => ({
   `,
   methods: {
     scaleChangeStart: function(e) {
+        /* some custom functionality e.g.
         this.$data.start = e.detail.value;
         setTimeout(() => {
             if(!this.$data.end) {
                 this.$refs.end.$el.show()
             }
-        }, 1000)
+        }, 1000) */
     },
     scaleChangeEnd: function(e) {
+        /* some custom functionality e.g.
         this.$data.end = e.detail.value;
+        */
     },
   },
   data() {
@@ -343,6 +347,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
           "Nov",
           "Dez"
       ],
+      today: "heute",
       locale: "de-DE"
     };
 
@@ -397,25 +402,26 @@ const RangeTemplate = (args, { argTypes }) => ({
         ></scale-date-picker>
     </div>
   `,
-  methods: {
-    scaleChangeStart: function(e) {
-        this.$data.start = e.detail.value;
-        setTimeout(() => {
-            if(!this.$data.end) {
-                this.$refs.end.$el.show()
-            }
-        }, 1000)
-    },
-    scaleChangeEnd: function(e) {
-        this.$data.end = e.detail.value;
-    },
-  },
-  data() {
-    return {
-        start: '',
-        end: ''
-    }
-  },
+//  optional: open enddate picker automatically after a custom timeout
+//     methods: {
+//     scaleChangeStart: function(e) {
+//         this.$data.start = e.detail.value;
+//         setTimeout(() => {
+//             if(!this.$data.end) {
+//                 this.$refs.end.$el.show()
+//             }
+//         }, 1000)
+//     },
+//     scaleChangeEnd: function(e) {
+//         this.$data.end = e.detail.value;
+//     },
+//   },
+//   data() {
+//     return {
+//         start: '',
+//         end: ''
+//     }
+//   }, 
 })
 ```
 
