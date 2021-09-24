@@ -57,7 +57,7 @@
 
 | Property           | Attribute        | Description                                                                                                                                                          | Type                        | Default     |
 | ------------------ | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----------- |
-| `anchorAttributes` | --               | (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `type`)                                                            | `AnchorAttributesInterface` | `undefined` |
+| `anchorAttributes` | --               | (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `target`, `type`)                                                  | `AnchorAttributesInterface` | `undefined` |
 | `disabled`         | `disabled`       | (optional) Disabled link                                                                                                                                             | `boolean`                   | `false`     |
 | `download`         | `download`       | (optional) Download declaration                                                                                                                                      | `boolean`                   | `false`     |
 | `href`             | `href`           | (optional) Link href                                                                                                                                                 | `string`                    | `undefined` |
@@ -66,12 +66,21 @@
 | `styles`           | `styles`         | (optional) Injected CSS styles                                                                                                                                       | `string`                    | `undefined` |
 
 
+## Slots
+
+| Slot        | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| `"default"` | here goes the actual text of the                                     |
+| `"icon"`    | a slot that will not be underlined and which position can be changed |
+
+
 ## Shadow Parts
 
-| Part        | Description |
-| ----------- | ----------- |
-| `"content"` |             |
-| `"line"`    |             |
+| Part        | Description                                         |
+| ----------- | --------------------------------------------------- |
+| `"anchor"`  | the native achor element wrapping all contents      |
+| `"content"` | a wrapper around the default slot and the line      |
+| `"line"`    | represents the element used for the line appearance |
 
 
 ## Dependencies

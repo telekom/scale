@@ -43,7 +43,7 @@
 
 :host {
   display: contents;
-  margin-bottom: calc(var(--line-offset) + var(--line-thickness))
+  margin-bottom: calc(var(--line-offset) + var(--line-thickness));
 }
 
 [part='anchor'] {

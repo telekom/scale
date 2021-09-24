@@ -19,6 +19,16 @@ export interface AnchorAttributesInterface {
   target?: '_self' | '_blank' | '_parent' | '_top';
   type?: string;
 }
+
+/**
+ * This is a superset of the default anchor `<a>` element.
+ * @part anchor - the native achor element wrapping all contents
+ * @part content - a wrapper around the default slot and the line
+ * @part line - represents the element used for the line appearance
+ *
+ * @slot default - here goes the actual text of the
+ * @slot icon - a slot that will not be underlined and which position can be changed
+ */
 @Component({
   tag: 'scale-link',
   styleUrl: './link.css',
@@ -37,7 +47,7 @@ export class Link {
   @Prop() omitUnderline?: boolean = false;
   /** (optional) Chnage icon/content slot order */
   @Prop() iconPosition?: 'before' | 'after' = 'after';
-  /** (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `type`) */
+  /** (optional) attatch additional anchor tag attributes (`hreflang`, `ping`, `referrerpolicy`, `rel`, `target`, `type`) */
   @Prop() anchorAttributes?: AnchorAttributesInterface;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
