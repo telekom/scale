@@ -73,7 +73,7 @@ Folgende Inhaltskomponenten kannst du in Data Grids einsetzen:
 
 Auf mobilen Bildschrimen bricht die Datenzeile um und wird als separates Item angezeigt.
 
-![Image Name](assets/3_components/data-grid/Mobile.png)
+![Image Name](assets/3_components/data-grid/Mobile-de.png)
 
 ## Beta-Komponente
 
