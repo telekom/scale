@@ -727,7 +727,12 @@ export class DataGrid {
   renderSettingsMenu() {
     return (
       <scale-menu-flyout class={`${name}__settings-menu`}>
-        <scale-button slot="trigger" variant="secondary" icon-only data-sortable={this.isSortable}>
+        <scale-button
+          slot="trigger"
+          variant="secondary"
+          icon-only
+          data-sortable={this.isSortable}
+        >
           <scale-icon-service-settings accessibilityTitle="Table options"></scale-icon-service-settings>
         </scale-button>
         <scale-menu-flyout-list>

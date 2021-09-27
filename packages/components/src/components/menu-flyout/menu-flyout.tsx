@@ -42,7 +42,7 @@ export class MenuFlyout {
   handleScaleSelect({ detail }) {
     if (detail.closeOnSelect === false) {
       return;
-    } 
+    }
     if (this.closeOnSelect) {
       window.requestAnimationFrame(() => {
         this.closeAll();
@@ -72,15 +72,15 @@ export class MenuFlyout {
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
     let target = event.target as Node;
-    const hasShadow = (target as HTMLElement).shadowRoot != null
-    const composedPath = hasShadow ? event.composedPath() : []
+    const hasShadow = (target as HTMLElement).shadowRoot != null;
+    const composedPath = hasShadow ? event.composedPath() : [];
     do {
       if (target === this.hostElement) {
         return;
       }
       if (hasShadow) {
         // @ts-ignore
-        target = composedPath.shift()
+        target = composedPath.shift();
       } else {
         target = target.parentNode;
       }
