@@ -10,16 +10,14 @@ Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons
 
 ![Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group.png)
 
-### Verwendung
-
-Verwende eine Radio Button Group, um
+### Verwende eine Radio Button Group, um
 
 - Nutzer\*innen eine Reihe von verwandten, aber sich gegenseitig ausschließenden Auswahlmöglichkeiten anzubieten und um
 - bei mehreren Gruppen von Radiobuttons die Übersichtlichkeit zu gewährleisten.
 
 Verwende Radio-Buttons grundsätzlich nicht, wenn
 
-### Don\'t use a radio button group when:
+### Verwende Radio-Buttons grundsätzlich nicht, wenn
 
 - Nutzer\*innen mehr als eine Option auswählen sollen (nutze hierfür Checkboxen) oder
 - Nutzer\*innen eine Aktion ausführen müssen (nutze hierfür einen Button).
