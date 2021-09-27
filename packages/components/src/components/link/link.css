@@ -45,7 +45,7 @@
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
   --anchor-color: var(--color);
   --line-color: var(--color-line-initial);
-  --line-thickess: var(--line-thickess-initial);
+  --line-thickess: var(--line-thickness-initial);
 }
 
 [part='anchor'] {
@@ -57,7 +57,8 @@
   display: inline-flex;
   text-decoration: underline;
   text-underline-offset: 0.1875em;
-  text-decoration-thickness: var(--line-thickness);
+  text-underline-position: from-font;
+  text-decoration-thickness: var(--line-thickness, var(--line-thickness-initial));
   text-decoration-color: var(--line-color);
   transition: text-decoration var(--scl-motion-duration-fast);
 }
@@ -65,23 +66,15 @@
 [part='anchor'] {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-x-icon);
 }
 
 [part='content'] {
   position: relative;
 }
 
-[part='line'] {
-  color: var(--line-color);
-  display: block;
-  position: absolute;
-  top: calc(100% + var(--line-offset));
-  left: 0;
-  width: 100%;
-  height: var(--line-thickness-initial);
-  background: currentColor;
-  transition: all var(--scl-motion-duration-fast);
+slot[name='icon']::slotted(*) {
+  position: relative;
+  margin-left: var(--spacing-x-icon);
 }
 
 /* states */
@@ -89,6 +82,12 @@
 :host(.reverse) [part='anchor'] {
   flex-direction: row-reverse;
 }
+
+:host(.reverse) slot[name='icon']::slotted(*) {
+  margin-left: auto;
+  margin-right: var(--spacing-x-icon);
+}
+
 :host(.no-underline) {
   --color-line-initial: transparent;
   --color-line-visited: transparent;
