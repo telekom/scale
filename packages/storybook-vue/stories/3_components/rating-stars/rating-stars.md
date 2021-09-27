@@ -65,7 +65,3 @@ If you only want to show the number of star ratings, insert the component as sho
 In some cases, it may make sense to break down the reviews:
 
 ![Image Name](assets/3_components/rating-stars/RatingStars-Best-Practices-EN.png)
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.

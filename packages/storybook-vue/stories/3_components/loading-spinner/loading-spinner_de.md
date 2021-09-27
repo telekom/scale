@@ -26,7 +26,7 @@ Scale enthält einen horizontal und einen vertikal ausgerichteten Spinner.
 
 ## Elemente
 
-![Image Name](assets/3_components/loading-spinner/Loading-Spinner-elemente.png)
+![Image Name](assets/3_components/loading-spinner/Loading-spinner-elemente.png)
 
 #### Loading-Symbol (1)
 
@@ -47,10 +47,6 @@ Auf dunklen Hintergründen setze den weißen Spinner ein.
 Bei wenig Raum, bspw. wenn du den Spinner innerhalb einer Komponente einsetzt, wähle die kleine Größe.
 
 ![Image Name](assets/3_components/loading-spinner/Loading-Spinner-Groeßen-DE.png)
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
 ## Verwandte Komponenten
 
