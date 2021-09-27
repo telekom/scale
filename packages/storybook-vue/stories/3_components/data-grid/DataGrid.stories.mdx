@@ -1065,7 +1065,7 @@ Expected format: unformatted `string`, eg `'this is a string'`
         page-size="5"
     >
         <scale-button id="export-btn">
-            Export Selection
+            Export Selection!
         </scale-button>
     </scale-data-grid>
     <script type="application/javascript">
@@ -1113,9 +1113,10 @@ Expected format: unformatted `string`, eg `'this is a string'`
   </Story>
 </Canvas>
 
-## Menu Slot
+<!-- This is not accessible yet! -->
+<!-- ## Menu Slot -->
 
-<Canvas withSource="close">
+<!--<Canvas withSource="close">
   <Story name="Menu Slot">
     {`<content>
     <div aria-live="polite" id="aria-live" style="margin-top:8px; text-align:center;"></div>
@@ -1126,53 +1127,19 @@ Expected format: unformatted `string`, eg `'this is a string'`
         selectable
         page-size="5"
     >
-        <scale-menu-flyout-item
-           slot="menu"
-            id="export-btn"
-        >
+        <scale-menu-flyout-item slot="menu" id="export-btn">
             <scale-icon-navigation-external-link slot="prefix"></scale-icon-navigation-external-link>
             Slotted Export Selection
         </scale-menu-flyout-item>
-        <scale-menu-flyout slot="menu">
-            <scale-menu-flyout-item slot="trigger" cascade>Slotted Menu</scale-menu-flyout-item>
-            <scale-menu-flyout-list>
-                <scale-menu-flyout-item>Item 1 </scale-menu-flyout-item>
-                <scale-menu-flyout>
-                    <scale-menu-flyout-item slot="trigger" cascade>More Options</scale-menu-flyout-item>
-                    <scale-menu-flyout-list>
-                        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
-                        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
-                        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
-                        <scale-menu-flyout>
-                            <scale-menu-flyout-item slot="trigger" cascade>Even More</scale-menu-flyout-item>
-                            <scale-menu-flyout-list>
-                                <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
-                                <scale-menu-flyout>
-                                    <scale-menu-flyout-item slot="trigger" cascade>Very Specific Options</scale-menu-flyout-item>
-                                    <scale-menu-flyout-list>
-                                        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
-                                        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
-                                        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
-                                    </scale-menu-flyout-list>
-                                </scale-menu-flyout>
-                                <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
-                            </scale-menu-flyout-list>
-                        </scale-menu-flyout>
-                    </scale-menu-flyout-list>
-                </scale-menu-flyout>
-                <scale-menu-flyout  close-on-select="false">
-                    <scale-menu-flyout-item slot="trigger" cascade>Toggle Visibility</scale-menu-flyout-item>
-                    <scale-menu-flyout-list>
-                        <scale-menu-flyout-item checked="true">Column 1</scale-menu-flyout-item>
-                        <scale-menu-flyout-item checked="true">Column 2</scale-menu-flyout-item>
-                        <scale-menu-flyout-item checked="true">Column 3</scale-menu-flyout-item>
-                        <scale-menu-flyout-item checked="true">Column 4</scale-menu-flyout-item>
-                        <scale-menu-flyout-item checked="true">Column 5</scale-menu-flyout-item>
-                    </scale-menu-flyout-list>
-                </scale-menu-flyout>
-                <scale-menu-flyout-item disabled>Item 5<span slot="suffix">⌘Space</span></scale-menu-flyout-item>
+        <scale-menu-flyout-item slot="menu">
+            Slotted Menu
+            <scale-menu-flyout-list slot="sublist">
+                <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Option 4</scale-menu-flyout-item>
             </scale-menu-flyout-list>
-        </scale-menu-flyout>
+        </scale-menu-flyout-item>
     </scale-data-grid>
     <script type="application/javascript">
     {
@@ -1217,7 +1184,7 @@ Expected format: unformatted `string`, eg `'this is a string'`
     </script>
 </content>`}
   </Story>
-</Canvas>
+</Canvas>-->
 
 ## Column Stretch
 
