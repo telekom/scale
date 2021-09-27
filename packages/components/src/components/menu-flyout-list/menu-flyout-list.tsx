@@ -178,6 +178,7 @@ export class MenuFlyoutList {
       roleSelector
     ) as HTMLScaleMenuFlyoutItemElement;
     if (item != null) {
+      event.stopImmediatePropagation();
       item.triggerEvent('click', null, this.closeOnSelect);
     }
   }
