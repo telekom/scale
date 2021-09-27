@@ -17,14 +17,14 @@ many options appear smoother and tidier overall.
 
 ### When to use
 
-#### Use a radio button group to:
+Use a radio button group to:
 
 - offer users a range of related but mutually exclusive choices and
 - to ensure clarity in the case of several groups of radio buttons.
 
 #### When not to use
 
-### Don\'t use a radio button group when:
+Don't use a radio button group when:
 
 - users should select more than one option (use checkboxes instead) or
 - users have to perform an action (use a button instead).
@@ -57,7 +57,7 @@ If necessary, you can also provide additional information.
 
 Place error messages below the group label.
 
-### Deactivated state
+## Deactivated state
 
 Deactivate a radio button when:
 
