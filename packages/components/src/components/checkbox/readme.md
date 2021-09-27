@@ -9,6 +9,7 @@
 
 | Property        | Attribute       | Description                                   | Type      | Default     |
 | --------------- | --------------- | --------------------------------------------- | --------- | ----------- |
+| `ariaLabel`     | `aria-label`    | (optional) Input label output                 | `string`  | `undefined` |
 | `checked`       | `checked`       | (optional) Active switch                      | `boolean` | `false`     |
 | `disabled`      | `disabled`      | (optional) Input disabled                     | `boolean` | `false`     |
 | `helperText`    | `helper-text`   | (optional) Input helper text                  | `string`  | `undefined` |
@@ -46,6 +47,7 @@
 
 ### Used by
 
+ - [scale-checkbox-group](../checkbox-group)
  - [scale-data-grid](../data-grid)
 
 ### Depends on
@@ -58,6 +60,7 @@
 graph TD;
   scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
+  scale-checkbox-group --> scale-checkbox
   scale-data-grid --> scale-checkbox
   style scale-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
