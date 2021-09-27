@@ -22,7 +22,7 @@ const MENU_SELECTOR = '[role="menu"]';
 export class MenuFlyout {
   @Element() hostElement: HTMLElement;
 
-  /** (optional) Determines whether the dropdown should close when a menu item is selected */
+  /** (optional) Determines whether the flyout should close when a menu item is selected */
   @Prop() closeOnSelect = true;
   /** (optional) Set preference for where the menu appears, space permitting */
   @Prop() direction:
@@ -39,7 +39,10 @@ export class MenuFlyout {
   private lists: Set<HTMLScaleMenuFlyoutListElement>;
 
   @Listen('scale-select')
-  handleScaleSelect() {
+  handleScaleSelect({ detail }) {
+    if (detail.closeOnSelect === false) {
+      return;
+    } 
     if (this.closeOnSelect) {
       window.requestAnimationFrame(() => {
         this.closeAll();
@@ -69,11 +72,18 @@ export class MenuFlyout {
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
     let target = event.target as Node;
+    const hasShadow = (target as HTMLElement).shadowRoot != null
+    const composedPath = hasShadow ? event.composedPath() : []
     do {
       if (target === this.hostElement) {
         return;
       }
-      target = target.parentNode;
+      if (hasShadow) {
+        // @ts-ignore
+        target = composedPath.shift()
+      } else {
+        target = target.parentNode;
+      }
     } while (target);
     this.closeAll();
   }

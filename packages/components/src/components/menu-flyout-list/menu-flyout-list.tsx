@@ -51,8 +51,10 @@ export class MenuFlyoutList {
     | 'top-left'
     | 'right'
     | 'left' = 'bottom-right';
-  /** */
+  /**  */
   @Prop({ reflect: true, mutable: true }) active: boolean = false;
+  /** (optional) Determines whether the flyout should close when a menu item is selected */
+  @Prop() closeOnSelect = true;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
@@ -98,10 +100,6 @@ export class MenuFlyoutList {
     return this.trigger().getBoundingClientRect();
   }
 
-  connectedCallback() {
-    // this.resizeHandler();
-  }
-
   componentDidRender() {
     if (this.opened && this.needsCheckPlacement) {
       this.setSize();
@@ -133,7 +131,7 @@ export class MenuFlyoutList {
   }
 
   @Listen('resize', { target: 'window' })
-  resizeHandler() {
+  handleResize() {
     this.close();
   }
 
@@ -164,7 +162,7 @@ export class MenuFlyoutList {
         this.focusedItemIndex
       ] as HTMLScaleMenuFlyoutItemElement;
       if (item != null) {
-        item.triggerEvent('keydown', event.key);
+        item.triggerEvent('keydown', event.key, this.closeOnSelect);
       }
     }
   }
@@ -180,7 +178,7 @@ export class MenuFlyoutList {
       roleSelector
     ) as HTMLScaleMenuFlyoutItemElement;
     if (item != null) {
-      item.triggerEvent('click');
+      item.triggerEvent('click', null, this.closeOnSelect);
     }
   }
 
@@ -265,7 +263,9 @@ export class MenuFlyoutList {
 
   focusItem() {
     window.requestAnimationFrame(() => {
-      (this.items[this.focusedItemIndex] as HTMLElement).focus();
+      try {
+        (this.items[this.focusedItemIndex] as HTMLElement).focus();
+      } catch (err) {}
     });
   }
 

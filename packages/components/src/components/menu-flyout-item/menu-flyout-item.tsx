@@ -60,7 +60,8 @@ export class MenuFlyoutItem {
   @Method()
   async triggerEvent(
     eventType: 'keydown' | 'click',
-    key?: 'Enter' | ' ' | 'ArrowRight'
+    key?: 'Enter' | ' ' | 'ArrowRight' | null,
+    closeOnSelect: boolean = true
   ) {
     if (this.disabled) {
       return;
@@ -72,7 +73,7 @@ export class MenuFlyoutItem {
       this.openSublist();
       return;
     }
-    const detail = { eventType, key, item: this.hostElement };
+    const detail = { eventType, key, item: this.hostElement, closeOnSelect };
     emitEvent(this, 'scaleSelect', detail);
   }
 
