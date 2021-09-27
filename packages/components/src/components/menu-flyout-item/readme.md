@@ -28,7 +28,7 @@
 
 ## Methods
 
-### `triggerEvent(eventType: 'keydown' | 'click', key?: 'Enter' | ' ' | 'ArrowRight') => Promise<void>`
+### `triggerEvent(eventType: 'keydown' | 'click', key?: 'Enter' | ' ' | 'ArrowRight' | null, closeOnSelect?: boolean) => Promise<void>`
 
 
 
