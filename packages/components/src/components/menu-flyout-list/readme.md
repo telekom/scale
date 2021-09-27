@@ -29,7 +29,7 @@
 
 ## Methods
 
-### `close() => Promise<void>`
+### `close(silent?: boolean) => Promise<void>`
 
 
 

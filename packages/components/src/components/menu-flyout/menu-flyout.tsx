@@ -11,6 +11,7 @@
 
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
 import statusNote from '../../utils/status-note';
+import { isClickOutside } from '../../utils/utils';
 
 const MENU_SELECTOR = '[role="menu"]';
 
@@ -71,21 +72,9 @@ export class MenuFlyout {
 
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
-    let target = event.target as Node;
-    const hasShadow = (target as HTMLElement).shadowRoot != null;
-    const composedPath = hasShadow ? event.composedPath() : [];
-    do {
-      if (target === this.hostElement) {
-        return;
-      }
-      if (hasShadow) {
-        // @ts-ignore
-        target = composedPath.shift();
-      } else {
-        target = target.parentNode;
-      }
-    } while (target);
-    this.closeAll();
+    if (isClickOutside(event, this.hostElement)) {
+      this.closeAll();
+    }
   }
 
   @Listen('keydown')
