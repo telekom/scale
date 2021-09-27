@@ -38,7 +38,7 @@ Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
 ### Untergeordnete Checkbox (4)
 
-Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
+Die untergeordneten Checkboxen lassen sich einzeln aktivieren oder deaktivieren.
 
 ### Label (5)
 
@@ -65,6 +65,6 @@ Dabei ergibt sich der deaktivierte Zustand der gesamten Gruppe automatisch, wenn
 
 ![Eine deaktivierte Checkbox](assets/3_components/checkbox-group/Checkbox_Group_single_Disabled_State_DE.png)
 
-## Related components
+## Verwandte Komponenten
 
 [Checkbox](?path=/usage/components-checkbox), [Radio Button](?path=/usage/components-radio-button), [Radio Button Group](?path=/usage/components-radio-button-group)
