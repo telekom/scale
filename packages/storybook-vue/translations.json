@@ -45,6 +45,11 @@
     "de": "Farben"
   },
   {
+    "elementSelector": "#scale-for-designers-design-updates--page",
+    "en": "Design Updates",
+    "de": "Design Updates"
+  },
+  {
     "elementSelector": "#scale-for-developers",
     "en": "Scale for Developers",
     "de": "Entwicklung mit Scale"
