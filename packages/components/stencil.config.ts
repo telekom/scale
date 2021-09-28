@@ -4,6 +4,9 @@ import { frameworkTargets } from './framework-targets';
 import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
+  devServer: {
+    startupTimeout: 100000,
+  },
   tsconfig: process.env.WHITELABEL
     ? 'tsconfig.whitelabel.json'
     : 'tsconfig.json',
