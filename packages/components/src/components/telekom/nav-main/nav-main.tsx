@@ -36,7 +36,8 @@ export class NavMain {
   hasPopup: boolean;
 
   componentWillLoad() {
-    this.hasPopup = this.popup || !!this.hostElement.querySelector('app-mega-menu');
+    this.hasPopup =
+      this.popup || !!this.hostElement.querySelector('app-mega-menu');
   }
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
