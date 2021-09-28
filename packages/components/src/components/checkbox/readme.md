@@ -52,11 +52,13 @@
 
 ### Depends on
 
+- [scale-icon-action-indeterminate](../icons/action-indeterminate)
 - [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
   scale-checkbox-group --> scale-checkbox
   scale-data-grid --> scale-checkbox

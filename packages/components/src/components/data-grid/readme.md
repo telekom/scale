@@ -83,6 +83,7 @@ graph TD;
   scale-data-grid --> scale-tag
   scale-menu-flyout-item --> scale-icon-action-success
   scale-menu-flyout-item --> scale-icon-navigation-right
+  scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
   scale-dropdown --> scale-icon-navigation-collapse-down
   scale-tag --> scale-icon-action-close
