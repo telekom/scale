@@ -28,7 +28,7 @@ Scale contains a spinner with a horizontal alignment and a vertical alignment.
 
 ## Elements
 
-![Image Name](./img/Loading-Spinner-elemente.png)
+![Image Name](assets/3_components/loading-spinner/Loading-spinner-elemente.png)
 
 #### Loading symbol (1)
 
@@ -49,10 +49,6 @@ Use the white spinner on dark backgrounds.
 If there isn't much space (e.g., if you use the spinner within a component), choose the small size.
 
 ![Image Name](./img/Loading-Spinner-Groeßen-EN.png)
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
 
 ## Related components
 

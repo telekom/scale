@@ -201,8 +201,10 @@ module.exports = {
       }
       if (/^Link/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        var cursor = findLayer(symbol, (s) => s.name === 'svg');
         var underline = findLayer(symbol, (s) => s.name === 'border-bottom');
         if (underline) underline.resizingConstraint = LEFT_RIGHT;
+        if (cursor) cursor.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
       }
       if (/^Modal/.test(symbol.name)) {
         symbol.layers[0].layers[1].resizingConstraint = FIXED_SIZE;

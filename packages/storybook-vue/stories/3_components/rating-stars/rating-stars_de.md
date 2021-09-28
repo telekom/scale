@@ -1,36 +1,36 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Rating-Stars</h1>
-    <img src="assets/tag-beta.svg" alt="Beta Component" />
+    <h1>Rating Stars</h1>
+    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Mit Rating-Stars können Nutzer\*innen ihre Meinung zu einem Produkt, Service oder Inhalt teilen. So helfen sie anderen Nutzer\*innen, eine fundierte Entscheidung zu treffen und sich bspw. bei einem Kauf sicherer zu fühlen.
+Mit Rating Stars können Nutzer\*innen ihre Meinung zu einem Produkt, Service oder Inhalt teilen. So helfen sie anderen Nutzer\*innen, eine fundierte Entscheidung zu treffen und sich bspw. bei einem Kauf sicherer zu fühlen.
 
 ## Allgemein
 
-Rating-Stars sind ein kundenorientiertes, sehr visuelles Bewertungssystem, mit dem Nutzer\*innen sehr ähnliche Produkte oder Services vergleichen können. Je mehr Bewertungen ein Inhalt hat, desto stärker können sich andere Nutzer\*innen auf die Bewertung verlassen.
+Rating Stars sind ein kundenorientiertes, sehr visuelles Bewertungssystem, mit dem Nutzer\*innen sehr ähnliche Produkte oder Services vergleichen können. Je mehr Bewertungen ein Inhalt hat, desto stärker können sich andere Nutzer\*innen auf die Bewertung verlassen.
 
 ![Image Name](./img/RatingStars-Allgemein.png)
 
-### Verwende Rating-Stars, wenn
+### Verwende Rating Stars, wenn
 
 - du eine große Auswahl an Produkten, Services oder Inhalten anbietest,
 - du Nutzer\*innen die Entscheidung erleichtern möchtest und
 - du genügend Nutzer\*innen hast, um eine aussagekräftige Bewertung zu erreichen.
 
-### Verwende keine Rating-Stars, wenn
+### Verwende keine Rating Stars, wenn
 
 - die Menge der Produkte/Inhalte eher gering ist und
 - du nicht ausreichend viele Nutzer\*innen hast.
 
 ## Typen
 
-Rating-Stars können interaktiv oder statisch sein. Setze nur einen der beiden Typen innerhalb eines Produkts oder Services ein.
+Rating Stars können interaktiv oder statisch sein. Setze nur einen der beiden Typen innerhalb eines Produkts oder Services ein.
 
 **Interaktiv**<br/>
-Interaktive Rating-Stars bieten die Möglichkeit, die gewünschte Anzahl der Sterne durch Klicken/Tippen oder über die Tastatur-Navigation auszuwählen.
+Interaktive Rating Stars bieten die Möglichkeit, die gewünschte Anzahl der Sterne durch Klicken/Tippen oder über die Tastatur-Navigation auszuwählen.
 
 **Statisch**<br/>
-Statische Rating-Stars haben keine interaktive Funktion, sondern vermitteln lediglich eine Information.
+Statische Rating Stars haben keine interaktive Funktion, sondern vermitteln lediglich eine Information.
 
 ## Elemente
 
@@ -51,17 +51,13 @@ Der Wert kommuniziert eine Zusatzinformation, wie bspw. die Anzahl der bisherige
 
 ## Größen
 
-Scale beinhaltet die Rating-Stars in zwei Größen. Die Größe „Large“ ist der Standard. Wenn du wenig Raum zur Verfügung hast, setze die Größe „Small“ ein. Vermeide die Kombination beider Größen innerhalb eines Produkts oder Services.
+Scale beinhaltet die Rating Stars in zwei Größen. Die Größe „Large“ ist der Standard. Wenn du wenig Raum zur Verfügung hast, setze die Größe „Small“ ein. Vermeide die Kombination beider Größen innerhalb eines Produkts oder Services.
 
 ![Image Name](./img/RatingStars-Groessen.png)
 
 ## Best Practices
 
-Möchtest du lediglich die Anzahl der Sternebewertungen ausgeben, setze die Komponente wie oben gezeigt ein. Achte immer darauf, dass die Positionierung klar erkennen lässt, zu welchem Inhalt die Rating-Stars gehören.
+Möchtest du lediglich die Anzahl der Sternebewertungen ausgeben, setze die Komponente wie oben gezeigt ein. Achte immer darauf, dass die Positionierung klar erkennen lässt, zu welchem Inhalt die Rating Stars gehören.
 In einigen Fällen kann es Sinn machen, die Bewertungen aufzuschlüsseln:
 
 ![Image Name](./img/RatingStars-Best-Practices.png)
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.

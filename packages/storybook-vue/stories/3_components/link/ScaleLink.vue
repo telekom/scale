@@ -1,31 +1,42 @@
 <template>
   <scale-link
-    :block="block"
-    :disabled="JSON.stringify(disabled)"
     :href="href"
-    :target="target"
-    :variant="variant"
     :styles="styles"
+    :disabled="disabled"
+    :omit-underline="omitUnderline"
+    :icon-position="iconPosition"
+    :download="download"
+    :hreflang="hreflang"
+    :referrerpolicy="referrerpolicy"
+    :rel="rel"
+    :target="target"
+    :type="type"
   >
     <slot></slot>
-    <scale-icon-navigation-external-link
-        size="16"
-        accessibility-title="open link in new tab"
-        slot="icon"
-        v-if="target === '_blank'"
-    ></scale-icon-navigation-external-link>
+    <slot name="icon"></slot>
   </scale-link>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      withIcon: false,
+    };
+  },
   props: {
-    block: { type: Boolean, default: false },
-    disabled: { type: Boolean, default: false },
     href: String,
-    target: { type: String, default: "_self" },
-    variant: String,
     styles: String,
+    iconPosition: { type: String, default: 'after' },
+    omitUnderline: { type: Boolean, default: false },
+    disabled: { type: Boolean, default: false },
+    download: { type: Boolean, default: false },
+    hreflang: { type: String, default: null },
+    ping: { type: String, default: null },
+    referrerpolicy: { type: String, default: null },
+    rel: { type: String, default: null },
+    target: { type: String, default: null },
+    type: { type: String, default: null },
   },
 };
 </script>

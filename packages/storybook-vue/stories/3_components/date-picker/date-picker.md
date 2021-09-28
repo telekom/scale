@@ -40,10 +40,6 @@ Users can select the month and year using the dropdowns at the top of the flyout
 
 The monthly calendar displays the days of the month which are available for selection.
 
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
-
 ## Related components
 
 <a href="?path=/usage/components-text-field--standard">Input, </a>

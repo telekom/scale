@@ -13,25 +13,25 @@ automatically deselects the previously selected option. With a group
 label, users can grasp contextual context more quickly. Interfaces with
 many options appear smoother and tidier overall.
 
-![Radio Button Group](./img/Radio_Button_Group.png)
+![Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group.png)
 
 ### When to use
 
-#### Use a radio button group to:
+Use a radio button group to:
 
 - offer users a range of related but mutually exclusive choices and
 - to ensure clarity in the case of several groups of radio buttons.
 
 #### When not to use
 
-### Don\'t use a radio button group when:
+Don't use a radio button group when:
 
 - users should select more than one option (use checkboxes instead) or
 - users have to perform an action (use a button instead).
 
 ## Elements
 
-![Elements of Radio Button Group](./img/Radio_Button_Group_Elements.png)
+![Elements of Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Elements.png)
 
 ### Group label (1)
 
@@ -49,7 +49,7 @@ Use the label to clearly describe the effect of the respective selection. A labe
 
 If the circle is filled in, an option is selected.
 
-### Information (5) (optional)
+### Information (5) (optional)
 
 If necessary, you can also provide additional information.
 
@@ -57,15 +57,15 @@ If necessary, you can also provide additional information.
 
 Place error messages below the group label.
 
-### Deactivated state
+## Deactivated state
 
 Deactivate a radio button when:
 
 - users have to complete another action before selecting the radio
-    button or
+  button or
 - the option must be listed but users can\'t currently select it.
 
-![Disabled Radio Button Group](./img/Radio_Button_Group_Disabled.png)
+![Disabled Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Disabled.png)
 
 ## Related components
 

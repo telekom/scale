@@ -28,11 +28,7 @@ Das Telekom Logo mit Claim liegt in 9 länderspezifischen Varianten vor (für De
 
 ![Image Name](./img/Farben-DE.png)
 
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
-
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand-Header, </a>
+<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
 <a href="?path=/usage/components-footer--standard">Footer</a>

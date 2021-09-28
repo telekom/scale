@@ -28,11 +28,7 @@ The Telekom logo with claim is available in 9 country-specific variants (Interna
 
 ![Image Name](./img/Farben-EN.png)
 
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
-
 ## Related components
 
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header, </a>
+<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
 <a href="?path=/usage/components-footer--standard">Footer</a>

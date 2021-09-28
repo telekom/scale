@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Checkbox Group</h1>
-    <img src="assets/tag-beta.svg" alt="Beta Component" />
+    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 A checkbox group combines checkboxes with related selection options to form a group.
@@ -9,7 +9,7 @@ A checkbox group combines checkboxes with related selection options to form a gr
 
 Clicking on the parent checkbox activates or deactivates a checkbox group. By grouping the content of checkboxes and describing the group, you can present contextual relationships to users more quickly. Interfaces with many options appear smoother and tidier overall.
 
-![Checkbox Group](./img/Checkbox_Group.png)
+![Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group.png)
 
 ### When to use
 
@@ -26,7 +26,7 @@ Don't use a checkbox group when:
 
 ## Elements
 
-![Elements of Checkbox Group](./img/Checkbox_Group_Elements.png)
+![Elements of Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group_Elements.png)
 
 ### Parent checkbox (indeterminate state) (1)
 
@@ -36,7 +36,7 @@ Clicking/tapping on the parent checkbox activates or deactivates the whole group
 
 Choose a short and meaningful title for the entire group.
 
-### Information (3) (optional)
+### Information (3) (optional)
 
 If necessary, you can also provide additional information.
 
@@ -65,9 +65,9 @@ A checkbox group or an individual checkbox is deactivated if:
 
 The deactivated state of the entire group occurs automatically when all individual checkboxes are deactivated.
 
-![A deactivated checkbox group](./img/Checkbox_Group_Disabled_State_EN.png)
+![A deactivated checkbox group](assets/3_components/checkbox-group/Checkbox_Group_Disabled_State_EN.png)
 
-![A deactivated checkbox](./img/Checkbox_Group_single_Disabled_State_EN.png)
+![A deactivated checkbox](assets/3_components/checkbox-group/Checkbox_Group_single_Disabled_State_EN.png)
 
 ## Related components
 

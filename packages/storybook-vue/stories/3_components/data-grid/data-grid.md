@@ -80,7 +80,7 @@ You can use the following content components in the data grid:
 
 A row of data breaks to the next line on mobile screens and shows up as a separate item.
 
-![Image Name](./img/Mobile.png)
+![Image Name](assets/3_components/data-grid/Mobile-en.png)
 
 ## Beta components
 

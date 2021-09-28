@@ -19,6 +19,7 @@ describe('DataGrid', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
+    await page.waitFor(1000);
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
