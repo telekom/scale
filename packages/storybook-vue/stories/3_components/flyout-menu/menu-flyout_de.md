@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Flyout Menu</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 Flyout Menus lassen sich temporär einblenden. Nutzer\*innen können so auf eine Reihe von Funktionen zugreifen.
@@ -9,7 +9,7 @@ Flyout Menus lassen sich temporär einblenden. Nutzer\*innen können so auf eine
 
 Das Flyout Menu öffnet sich per Klick/Tap auf einen Button. Es kann unterschiedliche Elemente enthalten.
 
-![Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu.png)
+![Flyout Menu](./img/Flyout_Menu.png)
 
 ### Nutze das Flyout Menu, um
 
@@ -22,7 +22,7 @@ Das Flyout Menu öffnet sich per Klick/Tap auf einen Button. Es kann unterschied
 
 ## Elemente
 
-![Elements des Flyout Menus](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
+![Elements des Flyout Menus](./img/Flyout_Menu_Elements.png)
 
 ### Trigger (1)
 

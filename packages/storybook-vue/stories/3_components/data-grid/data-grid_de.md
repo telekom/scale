@@ -11,8 +11,8 @@ Data Grids sind ein erweiterter Tabellentyp. Zusätzlich zu den Standardfunktion
 
 ### Verwende ein Data Grid, um
 
-- Daten so zu organisieren, dass Nutzer*innen sie leicht verstehen, analysieren und vergleichen können und
-- zusätzliche Funktionen bereitzustellen, mit denen Nutzer*innen mit den Daten interagieren können.
+- Daten so zu organisieren, dass Nutzer\*innen sie leicht verstehen, analysieren und vergleichen können und
+- zusätzliche Funktionen bereitzustellen, mit denen Nutzer\*innen mit den Daten interagieren können.
 
 ### Verwende Data Grids besser nicht, wenn
 
@@ -61,7 +61,7 @@ Füllst du den HTML-Slot in einer Tabellenzeile aus, wird am Ende der Zeile ein 
 
 ### Pagination (8)
 
-Mithilfe der Pagination bewegen sich Nutzer*innen gezielt durch den gesamten Datensatz.
+Mithilfe der Pagination bewegen sich Nutzer\*innen gezielt durch den gesamten Datensatz.
 
 ## Datenkomponenten
 
@@ -73,7 +73,7 @@ Folgende Inhaltskomponenten kannst du in Data Grids einsetzen:
 
 Auf mobilen Bildschirmen bricht die Datenzeile um und wird als separates Item angezeigt.
 
-![Image Name](assets/3_components/data-grid/Mobile-de.png)
+![Image Name](./img/Mobile-de.png)
 
 ## Beta-Komponente
 

@@ -28,7 +28,7 @@ Scale contains a spinner with a horizontal alignment and a vertical alignment.
 
 ## Elements
 
-![Image Name](assets/3_components/loading-spinner/Loading-spinner-elemente.png)
+![Image Name](./img/Loading-spinner-elemente.png)
 
 #### Loading symbol (1)
 

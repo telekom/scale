@@ -26,7 +26,7 @@ Scale enthält einen horizontal und einen vertikal ausgerichteten Spinner.
 
 ## Elemente
 
-![Image Name](assets/3_components/loading-spinner/Loading-spinner-elemente.png)
+![Image Name](./img/Loading-spinner-elemente.png)
 
 #### Loading-Symbol (1)
 

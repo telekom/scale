@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Flyout Menu</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 Flyout menus can appear temporarily. This gives users access to a range of functions.
@@ -9,7 +9,7 @@ Flyout menus can appear temporarily. This gives users access to a range of funct
 
 Clicking/tapping a button opens the flyout menu. It can contain different elements.
 
-![Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu.png)
+![Flyout Menu](./img/Flyout_Menu.png)
 
 ### When to use
 
@@ -26,7 +26,7 @@ Don't use a flyout menu for:
 
 ## Elements
 
-![Elements of Flyout Menu](assets/3_components/flyout-menu/Flyout_Menu_Elements.png)
+![Elements of Flyout Menu](./img/Flyout_Menu_Elements.png)
 
 ### Trigger (1)
 

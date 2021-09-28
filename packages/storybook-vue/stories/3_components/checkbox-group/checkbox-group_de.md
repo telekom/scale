@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Checkbox Group</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/tag-beta.svg" alt="Beta Component" />
 </div>
 
 Eine Checkbox Group fasst Checkboxen mit verwandten Auswahloptionen zu einer Gruppe zusammen.
@@ -9,7 +9,7 @@ Eine Checkbox Group fasst Checkboxen mit verwandten Auswahloptionen zu einer Gru
 
 Checkbox-Gruppen lassen sich mit einem Klick auf die übergeordnete Checkbox aktivieren oder deaktivieren. Durch die inhaltliche Gruppierung von Checkboxen und die Beschreibung der Gruppe erfassen Nutzer\*innen inhaltliche Zusammenhänge schneller. Interfaces mit vielen Auswahloptionen wirken insgesamt ruhiger und aufgeräumter.
 
-![Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group.png)
+![Checkbox Group](./img/Checkbox_Group.png)
 
 ### Verwende eine Checkbox Group, wenn
 
@@ -22,7 +22,7 @@ Checkbox-Gruppen lassen sich mit einem Klick auf die übergeordnete Checkbox akt
 
 ## Elemente
 
-![Elements of Checkbox Group](assets/3_components/checkbox-group/Checkbox_Group_Elements.png)
+![Elements of Checkbox Group](./img/Checkbox_Group_Elements.png)
 
 ### Übergeordnete Checkbox (unbestimmter Zustand) (1)
 
@@ -61,9 +61,9 @@ Eine Checkbox-Gruppe oder eine einzelne Checkbox ist deaktiviert, wenn
 
 Dabei ergibt sich der deaktivierte Zustand der gesamten Gruppe automatisch, wenn alle einzelnen Checkboxen deaktiviert sind.
 
-![Eine deaktivierte Checkbox-Gruppe](assets/3_components/checkbox-group/Checkbox_Group_Disabled_State_DE.png)
+![Eine deaktivierte Checkbox-Gruppe](./img/Checkbox_Group_Disabled_State_DE.png)
 
-![Eine deaktivierte Checkbox](assets/3_components/checkbox-group/Checkbox_Group_single_Disabled_State_DE.png)
+![Eine deaktivierte Checkbox](./img/Checkbox_Group_single_Disabled_State_DE.png)
 
 ## Verwandte Komponenten
 
