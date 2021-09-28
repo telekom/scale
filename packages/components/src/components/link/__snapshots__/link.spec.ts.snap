@@ -6,7 +6,6 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
     <a href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
-        <div part="line"></div>
       </div>
       <slot name="icon"></slot>
     </a>
@@ -21,7 +20,6 @@ exports[`Link should handle disabled link 1`] = `
     <a aria-disabled="" href="http://example.com" part="anchor" tabindex="-1">
       <div part="content">
         <slot></slot>
-        <div part="line"></div>
       </div>
       <slot name="icon"></slot>
     </a>
@@ -39,7 +37,6 @@ exports[`Link should handle setted styles 1`] = `
     <a href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
-        <div part="line"></div>
       </div>
       <slot name="icon"></slot>
     </a>
@@ -54,7 +51,6 @@ exports[`Link should have link href value when href value is set 1`] = `
     <a href="http://example.com" part="anchor">
       <div part="content">
         <slot></slot>
-        <div part="line"></div>
       </div>
       <slot name="icon"></slot>
     </a>
@@ -69,7 +65,6 @@ exports[`Link should match snapshot 1`] = `
     <a part="anchor">
       <div part="content">
         <slot></slot>
-        <div part="line"></div>
       </div>
       <slot name="icon"></slot>
     </a>
