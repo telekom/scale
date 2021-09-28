@@ -30,6 +30,36 @@ exports[`MenuFlyout‚ on slot change test should handle slot change 1`] = `
 </scale-menu-flyout>
 `;
 
+exports[`MenuFlyout‚ slot change should handle slot change 1`] = `
+<scale-menu-flyout>
+  <mock:shadow-root>
+    <div class="menu menu--direction-undefined">
+      <div class="menu__click-catcher"></div>
+      <div class="menu__list-wrapper">
+        <div class="menu__list">
+          <slot></slot>
+        </div>
+      </div>
+      <span class="menu__trigger">
+        <slot name="trigger"></slot>
+      </span>
+    </div>
+  </mock:shadow-root>
+  <div slot="trigger" style="padding: 20px; cursor: pointer; background: var(--scl-color-blue-40);"></div>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>
+      Item 1
+    </scale-menu-flyout-item>
+    <scale-menu-flyout-item>
+      Item 2
+    </scale-menu-flyout-item>
+    <scale-menu-flyout-item>
+      Item 3
+    </scale-menu-flyout-item>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+`;
+
 exports[`MenuFlyout‚ snapshot tests should handle menu flyout items 1`] = `
 <scale-menu-flyout>
   <mock:shadow-root>
