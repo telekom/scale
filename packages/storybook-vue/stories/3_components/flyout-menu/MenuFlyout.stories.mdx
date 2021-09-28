@@ -5,6 +5,7 @@ import {
   addonNavigation,
   sectorNavigation,
   mainNavigation,
+  mainNavigationFlyout
 } from '../brand-header-navigation/fixtures';
 
 import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
@@ -242,6 +243,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
           iconNavigation: JSON.stringify(iconNavigation),
           sectorNavigation: JSON.stringify(sectorNavigation),
           addonNavigation: JSON.stringify(addonNavigation),
+          mainNavigationFlyout: JSON.stringify(mainNavigationFlyout),
         };
       },
       methods: {
@@ -264,11 +266,12 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
               :icon-navigation="iconNavigation"
               :sector-navigation="sectorNavigation"
               :addon-navigation="addonNavigation"
+              :main-navigation="mainNavigationFlyout"
             >
               <div slot="menu-main">
                 <scale-menu-flyout @scale-close="$refs.first.isActive = false">
                   <div slot="trigger" style="height: 56px;">
-                    <scale-nav-main slot="trigger" ref="first" @click="$refs.first.isActive = true" name="Cascading Menu Item"></scale-nav-main>
+                    <scale-nav-main popup="true" slot="trigger" ref="first" @click="$refs.first.isActive = true" name="Cascading Menu Item"></scale-nav-main>
                   </div>
                   <scale-menu-flyout-list>
                     <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>

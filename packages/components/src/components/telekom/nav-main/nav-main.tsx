@@ -24,6 +24,7 @@ export class NavMain {
   // DEPRECATED - active should replace isActive
   @Prop() isActive: boolean;
   @Prop() active: boolean;
+  @Prop() popup: boolean;
   /** (optional) if this mega-menu is visible */
   @Prop() isMegaMenuVisible?: boolean = false;
   /** (optional) href value */
@@ -32,10 +33,10 @@ export class NavMain {
   @Prop() name: string;
 
   @Prop() clickLink: any;
-  hasSlotMegaMenu: boolean;
+  hasPopup: boolean;
 
   componentWillLoad() {
-    this.hasSlotMegaMenu = !!this.hostElement.querySelector('app-mega-menu');
+    this.hasPopup = this.popup || !!this.hostElement.querySelector('app-mega-menu');
   }
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
@@ -58,8 +59,7 @@ export class NavMain {
             class="main-navigation__item-link"
             href={this.href}
             aria-current={this.active || this.isActive ? 'true' : 'false'}
-            aria-haspopup={this.hasSlotMegaMenu ? 'true' : 'false'}
-            tabIndex={0}
+            aria-haspopup={this.hasPopup ? 'true' : 'false'}
             onClick={this.clickLink}
           >
             <span class="main-navigation__item-link-text">{this.name}</span>

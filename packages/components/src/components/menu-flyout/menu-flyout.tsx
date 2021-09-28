@@ -99,11 +99,12 @@ export class MenuFlyout {
   }
 
   setTriggerAttributes() {
+    console.log(this.trigger.tagName)
     const triggers = Array.from(
       this.hostElement.querySelectorAll('[role="menuitem"]')
     )
       .filter((el) => el.querySelector('[slot="sublist"]') != null)
-      .concat([this.trigger])
+      .concat(this.trigger && this.trigger.tagName.toLocaleLowerCase() !== 'div' ? [this.trigger] : [])
       .filter((x) => x != null);
     triggers.forEach((el) => {
       el.setAttribute('aria-haspopup', 'true');
