@@ -74,7 +74,7 @@ export class Link {
         class={{
           disabled: this.disabled,
           reverse: this.iconPosition === 'before',
-          "no-underline": this.omitUnderline
+          'no-underline': this.omitUnderline,
         }}
       >
         {this.styles && <style>{this.styles}</style>}

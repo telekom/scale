@@ -58,7 +58,10 @@
   text-decoration: underline;
   text-underline-offset: 0.1875em;
   text-underline-position: from-font;
-  text-decoration-thickness: var(--line-thickness, var(--line-thickness-initial));
+  text-decoration-thickness: var(
+    --line-thickness,
+    var(--line-thickness-initial)
+  );
   text-decoration-color: var(--line-color);
   transition: text-decoration var(--scl-motion-duration-fast);
 }
