@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alertbox handle variant prop 1`] = `
+<scale-alertbox opened="">
+  <mock:shadow-root>
+    <div class="alertbox alertbox--variant-error" part="alertbox variant-error">
+      <div class="alertbox__container" part="container">
+        <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
+        <header class="alertbox__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-alertbox>
+`;
+
+exports[`Alertbox handle variant prop 2`] = `
+<scale-alertbox opened="">
+  <mock:shadow-root>
+    <div class="alertbox alertbox--variant-warning" part="alertbox variant-warning">
+      <div class="alertbox__container" part="container">
+        <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
+        <header class="alertbox__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-alertbox>
+`;
+
+exports[`Alertbox handle variant prop 3`] = `
+<scale-alertbox opened="">
+  <mock:shadow-root>
+    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational">
+      <div class="alertbox__container" part="container">
+        <scale-icon-alert-information accessibility-title="information" class="alertbox__icon-information"></scale-icon-alert-information>
+        <header class="alertbox__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-alertbox>
+`;
+
+exports[`Alertbox handle variant prop 4`] = `
+<scale-alertbox opened="">
+  <mock:shadow-root>
+    <div class="alertbox alertbox--variant-success" part="alertbox variant-success">
+      <div class="alertbox__container" part="container">
+        <scale-icon-action-success accessibility-title="success" class="alertbox__icon-success"></scale-icon-action-success>
+        <header class="alertbox__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-alertbox>
+`;
+
+exports[`Alertbox should match snapshot 1`] = `
+<scale-alertbox opened="">
+  <mock:shadow-root>
+    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational">
+      <div class="alertbox__container" part="container">
+        <scale-icon-alert-information accessibility-title="information" class="alertbox__icon-information"></scale-icon-alert-information>
+        <header class="alertbox__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-alertbox>
+`;
