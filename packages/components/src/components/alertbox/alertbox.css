@@ -59,16 +59,16 @@
 /* Close Icon/Button */
 .alertbox .alertbox__container-header .alertbox__icon-close {
   position: absolute;
-  top: 13px;
-  right: 17px;
+  top: 9.5px;
+  right: 13.5px;
   color: black;
 }
 
 .alertbox .alertbox__container-header .alertbox__icon-close svg {
   height: 19px;
   width: 19px;
-  padding: 3px;
-  border-radius: 30%;
+  padding: 6.5px;
+  border-radius: 20%;
 }
 
 .alertbox .alertbox__container-header .alertbox__icon-close :hover {
