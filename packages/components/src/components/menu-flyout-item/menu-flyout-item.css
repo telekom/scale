@@ -40,6 +40,14 @@
   color: var(--scl-color-primary-hover);
 }
 
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .menu-item--focused:not(.menu-item--disabled),
+  .menu-item--active:not(.menu-item--disabled) {
+    color: white;
+    stroke: white;
+  }
+}
+
 .menu-item--disabled {
   outline: none;
   color: #ccc;
