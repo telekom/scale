@@ -123,6 +123,9 @@ export class ToggleButton {
     });
     if (
       !this.iconOnly &&
+      nodes &&
+      nodes.length &&
+      nodes[nodes.length - 1] &&
       nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON'
     ) {
       this.iconPosition = 'after';
