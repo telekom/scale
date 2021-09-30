@@ -29,7 +29,7 @@ Um die Lesbarkeit der Inhalte zu erhöhen, kannst du alternierende Hintergründe
 
 Innerhalb des Data Grid Frameworks kannst du eine Auswahl bestehender Komponenten frei kombinieren, um eine eine breite Palette von Anwendungsfällen zu berücksichtigen.
 
-![Image Name](assets/3_components/data-grid/elements.png)
+![Image Name](assets/3_components/data-grid/elements-de.png)
 
 #### Heading (1)
 

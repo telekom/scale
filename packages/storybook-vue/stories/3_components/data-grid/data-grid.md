@@ -7,7 +7,7 @@ Data grids help users collect and manage complex data.
 
 ## General
 
-Data grids are an extended type of table. In addition to the standard functions of filtering and sorting, a data grid can include many other functions, such as sorting, selecting or deselecting all, showing and hiding, and exporting.
+Data grids are an extended type of table. In addition to the standard functions of filtering and sorting, a data grid can include many other functions, such as selecting or deselecting all, showing and hiding, and exporting.
 
 ### When to use
 
@@ -33,7 +33,7 @@ You can use alternating backgrounds to make the content more readable.
 
 With the data grid framework, you can freely combine a selection of existing components to account for a wide range of use cases.
 
-![Image Name](assets/3_components/data-grid/elements.png)
+![Image Name](assets/3_components/data-grid/elements-en.png)
 
 ### Data grid heading (1)
 

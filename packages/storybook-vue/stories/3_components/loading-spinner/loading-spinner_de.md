@@ -50,4 +50,4 @@ Bei wenig Raum, bspw. wenn du den Spinner innerhalb einer Komponente einsetzt, w
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-progress-bar--determinate">Progress-Bar</a>
+<a href="?path=/usage/components-progress-bar--determinate">Progress Bar</a>
