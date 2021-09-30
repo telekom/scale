@@ -412,6 +412,11 @@ module.exports = {
         });
         findLayers(
           symbol,
+          /Info message/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayers(
+          symbol,
           /div/,
           (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
