@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Rating Stars</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Rating stars let users share their opinion on a product, service, or piece of content. This way, they help other users make an informed decision and feel more secure when making a purchase.
