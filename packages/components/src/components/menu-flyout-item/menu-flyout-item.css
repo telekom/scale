@@ -51,6 +51,8 @@
 
 :host(:focus) .menu-flyout-item:not(.menu-flyout-item--disabled) {
   color: var(--scl-color-primary-hover);
+}
+:host(:focus) .menu-flyout-item {
   box-shadow: var(--box-shadow-focus);
 }
 
