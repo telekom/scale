@@ -73,7 +73,7 @@
 
 .alertbox .alertbox__container-header .alertbox__icon-close :hover {
   background-color: white;
-  color: var(--scl-color-primary-active);
+  color: var(--scl-color-primary-hover);
 }
 
 /* Success Icon */

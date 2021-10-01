@@ -97,6 +97,10 @@ export class Alertbox {
     this.opened = false;
   };
 
+  handleKeyDown = (event) => {
+    if (event.keyCode === 13 || 23) this.opened = false;
+  };
+
   onCloseAlertWithTimeout = () => {
     if (this.timeout !== false) {
       if (typeof this.timeout === 'string' && !isNaN(this.timeout)) {
@@ -136,6 +140,9 @@ export class Alertbox {
                   class="alertbox__icon-close"
                   onClick={() => {
                     this.close();
+                  }}
+                  onKeyDown={(e) => {
+                    this.handleKeyDown(e);
                   }}
                   accessibility-title="close"
                 />
