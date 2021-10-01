@@ -150,6 +150,31 @@ module.exports = {
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
       }
+      if (/^(Checkbox Group)/.test(symbol.name)) {
+        symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        findLayers(symbol, /Icon?/, (l) => {
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+
+          const overrideIcon = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_symbolID`,
+          };
+          const overrideColor = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_fillColor`,
+          };
+
+          symbol.overrideProperties.push(overrideIcon);
+          symbol.overrideProperties.push(overrideColor);
+        });
+        findLayer(
+          symbol,
+          /fieldset/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+      }
       if (/^Divider \/ \d+ Standard/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = FIXED_HEIGHT;
       }
