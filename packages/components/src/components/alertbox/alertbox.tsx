@@ -98,7 +98,9 @@ export class Alertbox {
   };
 
   handleKeyDown = (event) => {
-    if (event.keyCode === 13 || 23) this.opened = false;
+    if (event.keyCode === 13 || 23) {
+      this.opened = false;
+    }
   };
 
   onCloseAlertWithTimeout = () => {
@@ -117,7 +119,9 @@ export class Alertbox {
     const title = 'Missing Title';
     this.onCloseAlertWithTimeout();
 
-    if (!this.opened) return null;
+    if (!this.opened) {
+      return null;
+    }
 
     return (
       <Host>
