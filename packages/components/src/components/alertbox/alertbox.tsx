@@ -68,7 +68,7 @@ export class Alertbox {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-icon-action-success
+            <scale-alertbox-svg
               class="alertbox__icon-success"
               accessibility-title="success"
             />
@@ -95,12 +95,6 @@ export class Alertbox {
 
   close = () => {
     this.opened = false;
-  };
-
-  handleKeyDown = (event) => {
-    if (event.keyCode === 13 || 23) {
-      this.opened = false;
-    }
   };
 
   onCloseAlertWithTimeout = () => {
@@ -146,7 +140,9 @@ export class Alertbox {
                     this.close();
                   }}
                   onKeyDown={(e) => {
-                    this.handleKeyDown(e);
+                    if (e.key === 'Enter') {
+                      this.close();
+                    }
                   }}
                   accessibility-title="close"
                 />

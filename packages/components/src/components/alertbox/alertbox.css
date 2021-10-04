@@ -79,11 +79,10 @@
 /* Success Icon */
 .alertbox .alertbox__icon-success {
   position: absolute;
-  top: 13px;
+  top: 15px;
   left: 17px;
   height: 20px;
   width: 20px;
-
   color: var(--scl-color-background-success);
 }
 

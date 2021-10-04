@@ -7,55 +7,25 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                           | Type                                                   | Default           |
-| ----------------- | ------------------ | ------------------------------------- | ------------------------------------------------------ | ----------------- |
-| `ariaDescription` | `aria-description` | (optional) aria-description attribute | `string`                                               | `undefined`       |
-| `ariaLabel`       | `aria-label`       | (optional) aria-label attribute       | `string`                                               | `undefined`       |
-| `hasClose`        | `has-close`        |                                       | `boolean`                                              | `false`           |
-| `opened`          | `opened`           |                                       | `boolean`                                              | `undefined`       |
-| `timeout`         | `timeout`          |                                       | `boolean \| number`                                    | `false`           |
-| `variant`         | `variant`          |                                       | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
-
-
-## Methods
-
-### `open() => Promise<void>`
-
-Alert method: open()
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-
-## Shadow Parts
-
-| Part          | Description |
-| ------------- | ----------- |
-| `"container"` |             |
-| `"content"`   |             |
-| `"header"`    |             |
+| Property             | Attribute             | Description                                                                     | Type              | Default     |
+| -------------------- | --------------------- | ------------------------------------------------------------------------------- | ----------------- | ----------- |
+| `accessibilityTitle` | `accessibility-title` | (optional) When using the icon standalone, make it meaningful for accessibility | `string`          | `undefined` |
+| `color`              | `color`               | (optional) Sets the icon color via the `fill` attribute                         | `string`          | `'magenta'` |
+| `role`               | `role`                |                                                                                 | `"img" \| "link"` | `'img'`     |
+| `size`               | `size`                | (optional) The height in pixels                                                 | `number`          | `36`        |
 
 
 ## Dependencies
 
-### Depends on
+### Used by
 
-- [scale-icon-action-success](../icons/action-success)
-- [scale-icon-alert-information](../icons/alert-information)
-- [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-action-circle-close](../icons/action-circle-close)
+ - [scale-alertbox](.)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-alertbox --> scale-icon-action-success
-  scale-alertbox --> scale-icon-alert-information
-  scale-alertbox --> scale-icon-alert-error
-  scale-alertbox --> scale-icon-action-circle-close
-  style scale-alertbox fill:#f9f,stroke:#333,stroke-width:4px
+  scale-alertbox --> scale-alertbox-svg
+  style scale-alertbox-svg fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
