@@ -459,7 +459,7 @@ module.exports = {
         findLayer(
           symbol,
           /Rating Label/,
-          (s) => (s.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT)
+          (s) => (s.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
       }
       if (/^(Text Area)/.test(symbol.name)) {
