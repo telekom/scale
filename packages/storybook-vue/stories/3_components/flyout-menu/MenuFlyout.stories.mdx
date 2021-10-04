@@ -272,7 +272,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
               <div slot="menu-main">
                 <scale-menu-flyout @scale-close="$refs.first.isActive = false">
                   <div slot="trigger" style="height: 56px;">
-                    <scale-nav-main popup="true" slot="trigger" ref="first" @click="$refs.first.isActive = true" name="Cascading Menu Item"></scale-nav-main>
+                    <scale-nav-main popup="true" ref="first" @click="$refs.first.isActive = true" name="Cascading Menu Item"></scale-nav-main>
                   </div>
                   <scale-menu-flyout-list>
                     <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
