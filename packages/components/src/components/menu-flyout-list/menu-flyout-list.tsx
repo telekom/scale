@@ -278,8 +278,13 @@ export class MenuFlyoutList {
   }
 
   updateTriggerAttributes() {
-    const trigger = this.trigger();
-    trigger.setAttribute('aria-expanded', String(this.opened));
+    let trigger = this.trigger();
+    if (trigger.getAttribute('aria-haspopup') !== 'true') {
+      trigger = trigger.querySelector('[aria-haspopup="true"]')
+    }
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', String(this.opened));
+    }
   }
 
   setWindowSize() {
