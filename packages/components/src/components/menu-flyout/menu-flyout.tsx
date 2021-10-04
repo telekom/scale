@@ -93,12 +93,12 @@ export class MenuFlyout {
     const triggerSlot = this.hostElement.querySelector('[slot="trigger"]');
     if (triggerSlot) {
       if (triggerSlot.tagName.toUpperCase() === 'BUTTON') {
-        this.trigger = triggerSlot as HTMLElement
+        this.trigger = triggerSlot as HTMLElement;
       } else if (triggerSlot.shadowRoot) {
-        this.trigger = triggerSlot.shadowRoot.querySelector('button')
+        this.trigger = triggerSlot.shadowRoot.querySelector('button');
       }
     } else {
-      throw new Error('No element with slot="trigger" could be found')
+      throw new Error('No element with slot="trigger" could be found');
     }
     this.lists = new Set(
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
