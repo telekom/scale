@@ -90,12 +90,20 @@ export class MenuFlyout {
   }
 
   componentDidLoad() {
-    this.trigger = this.hostElement.querySelector('[slot="trigger"]');
+    const triggerSlot = this.hostElement.querySelector('[slot="trigger"]');
+    if (triggerSlot) {
+      if (triggerSlot.tagName.toUpperCase() === 'BUTTON') {
+        this.trigger = triggerSlot as HTMLElement
+      } else if (triggerSlot.shadowRoot) {
+        this.trigger = triggerSlot.shadowRoot.querySelector('button')
+      }
+    } else {
+      throw new Error('No element with slot="trigger" could be found')
+    }
     this.lists = new Set(
       Array.from(this.hostElement.querySelectorAll(MENU_SELECTOR))
     );
     this.setTriggerAttributes();
-    this.adjustYSpacing();
   }
 
   setTriggerAttributes() {
@@ -103,23 +111,12 @@ export class MenuFlyout {
       this.hostElement.querySelectorAll('[role="menuitem"]')
     )
       .filter((el) => el.querySelector('[slot="sublist"]') != null)
-      .concat(
-        this.trigger && this.trigger.tagName.toLocaleLowerCase() !== 'div'
-          ? [this.trigger]
-          : []
-      )
+      .concat([this.trigger])
       .filter((x) => x != null);
     triggers.forEach((el) => {
       el.setAttribute('aria-haspopup', 'true');
       el.setAttribute('aria-expanded', 'false');
     });
-  }
-
-  adjustYSpacing() {
-    const list = this.getListElement();
-    if (list.style.getPropertyValue('--spacing-y-list') === '') {
-      list.style.setProperty('--spacing-y-list', 'var(--scl-spacing-16, 1rem)');
-    }
   }
 
   closeAll() {
