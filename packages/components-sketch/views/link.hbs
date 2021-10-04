@@ -13,7 +13,15 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 0-3-1.35-3-3v-15zm10.05-1.65-1.65 7.9-2.6-2.6-7.55
 7.55c-.15.15-.35.2-.55.2s-.4-.05-.55-.2c-.3-.3-.3-.75 0-1.05l7.55-7.55-2.6-2.6
 7.95-1.65z{{/inline}}
+<style>
+  .artboard {
+    width: 1536px;
+  }
 
+  .agent-states--grid {
+    grid-template-columns: repeat(6, 1fr)
+  }
+</style>
 <div data-sketch-artboard="Link" class="artboard">
   <h1 class="title--artboard">Link</h1>
 
@@ -34,6 +42,10 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
     <div class="agent-states--item">
       <p class="agent-states--label">:pressed</p>
       <scale-link data-sketch-key="link-3" href="#" data-sketch-state="active">Link Text</scale-link>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:visited</p>
+      <scale-link data-sketch-key="link-visited" href="#" data-sketch-state="visited">Link Text</scale-link>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
@@ -58,6 +70,11 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
     <div class="agent-states--item">
       <p class="agent-states--label">:pressed</p>
       <scale-link data-sketch-key="link-8" href="/link" data-sketch-state="active">Link Text</scale-link>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:visited</p>
+      <scale-link data-sketch-key="link-visited-no-underline" omit-underline href="#" data-sketch-state="visited">Link Text
+      </scale-link>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
@@ -91,6 +108,14 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
     <div class="agent-states--item">
       <p class="agent-states--label">:pressed</p>
       <scale-link data-sketch-key="link-13" data-has-icon="true" href="#" data-sketch-state="active">Link Text
+        <scale-icon-navigation-external-link size="16" accessibility-title="open link in new tab" slot="icon">
+        </scale-icon-navigation-external-link>
+      </scale-link>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:visited</p>
+      <scale-link data-sketch-key="link-visited-icon" data-has-icon="true" href="#" data-sketch-state="visited">
+        Link Text
         <scale-icon-navigation-external-link size="16" accessibility-title="open link in new tab" slot="icon">
         </scale-icon-navigation-external-link>
       </scale-link>
@@ -138,6 +163,15 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
       </scale-link>
     </div>
     <div class="agent-states--item">
+      <p class="agent-states--label">:visited</p>
+      <scale-link data-sketch-key="link-visited-icon-no-underline" omit-underline data-has-icon="true" href="#"
+        data-sketch-state="visited">
+        Link Text
+        <scale-icon-navigation-external-link size="16" accessibility-title="open link in new tab" slot="icon">
+        </scale-icon-navigation-external-link>
+      </scale-link>
+    </div>
+    <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
       <scale-link data-sketch-key="link-19" data-has-icon="true" href="/link" disabled>Link Text
         <scale-icon-navigation-external-link size="16" accessibility-title="open link in new tab" slot="icon">
@@ -153,7 +187,7 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   const allLinks = Array.from(document.querySelectorAll('scale-link'));
   function fakeUnderline() {
     const allLinksWithUnderline = Array.from(document.querySelectorAll('scale-link')).filter(link => !link.hasAttribute("omit-underline"));
-
+console.log(allLinksWithUnderline);
     allLinksWithUnderline.forEach(link => {
       const anchor = link.shadowRoot.querySelector('a')
       const content = link.shadowRoot.querySelector('[part="content"]')
@@ -192,18 +226,18 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
-      // onBeforePage2Layers()
+      onBeforePage2Layers()
     }, 1000)
   });
 
 
-  allLinks.forEach((btn, i) => {
-    btn.dataset.sketchSymbol = `Link / ${order(
+  allLinks.forEach((link, i) => {
+    link.dataset.sketchSymbol = `Link / ${order(
       1,
-      getCategoryName(btn)
+      getCategoryName(link)
     )} / ${order(
       2,
-      btn.dataset.hasIcon ? 'With Icon' : 'Without Icon'
-    )} / ${order(4, getStateName(btn))}`;
+      link.dataset.hasIcon ? 'With Icon' : 'Without Icon'
+    )} / ${order(4, getStateName(link))}`;
   });
 </script>
