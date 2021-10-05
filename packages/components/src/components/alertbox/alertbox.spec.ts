@@ -12,7 +12,7 @@ describe('Alertbox', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Alertbox],
-      html: `<scale-alertbox opened="true">Label</scale-alertbox>`,
+      html: `<scale-alertbox opened="true"></scale-alertbox>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -45,21 +45,6 @@ describe('Alertbox', () => {
     page.root.variant = 'success';
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
-  });
-
-  it('should reflect attributes/props', async () => {
-    const page = await newSpecPage({
-      components: [Alertbox],
-      html: `<scale-alertbox
-                variant ="warning"
-                has-close ="true"
-                content ="false">
-              </scale-alertbox>`,
-    });
-
-    expect(page.rootInstance.variant).toBe('warning');
-    expect(page.rootInstance.hasClose).toBe(true);
-    expect(page.rootInstance.content).toBe(false);
   });
 
   it('should emit onClick and set opened to false', async () => {

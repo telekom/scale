@@ -30,6 +30,7 @@ export class Alertbox {
   @Element() hostElement: HTMLElement;
 
   defaultTimeout = 3000;
+  title = 'Missing Title';
 
   componentDidLoad() {
     this.content = !!this.hostElement.querySelector("p[slot='text']");
@@ -37,19 +38,30 @@ export class Alertbox {
   }
 
   handleSlotAccessibility() {
-    const mainText =
-      this.content &&
-      this.hostElement.querySelector("p[slot='text']").innerHTML;
-    this.hostElement.shadowRoot
-      .querySelector('.alertbox__content')
-      .setAttribute('aria-description', mainText);
+    let headerText = '';
+    let mainText = '';
 
-    const headerText = this.hostElement.querySelector("p[slot='header']")
-      .innerHTML;
-    if (headerText) {
+    try {
+      headerText = this.hostElement.querySelector("p[slot='header']").innerHTML;
+    } catch (err) {}
+    try {
+      mainText = this.hostElement.querySelector("p[slot='text']").innerHTML;
+    } catch (err) {}
+
+    if (headerText !== '') {
       this.hostElement.shadowRoot
         .querySelector('.alertbox__container-header')
         .setAttribute('aria-label', headerText);
+    } else {
+      this.hostElement.shadowRoot
+        .querySelector('.alertbox__container-header')
+        .setAttribute('aria-label', this.title);
+    }
+
+    if (mainText !== '') {
+      this.hostElement.shadowRoot
+        .querySelector('.alertbox__content')
+        .setAttribute('aria-description', mainText);
     }
   }
 
@@ -110,7 +122,6 @@ export class Alertbox {
   };
 
   render() {
-    const title = 'Missing Title';
     this.onCloseAlertWithTimeout();
 
     if (!this.opened) {
@@ -129,7 +140,7 @@ export class Alertbox {
             {this.handleIcons()}
             <header part="header" class="alertbox__container-header">
               <p>
-                <slot name="header">{title}</slot>
+                <slot name="header">{this.title}</slot>
               </p>
 
               {this.hasClose && (

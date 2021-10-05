@@ -3,10 +3,10 @@
 exports[`Alertbox handle variant prop 1`] = `
 <scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--variant-error" part="alertbox variant-error">
+    <div class="alertbox alertbox--variant-error" part="alertbox variant-error" tabindex="0">
       <div class="alertbox__container" part="container">
         <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
-        <header class="alertbox__container-header" part="header">
+        <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
               Missing Title
@@ -23,10 +23,10 @@ exports[`Alertbox handle variant prop 1`] = `
 exports[`Alertbox handle variant prop 2`] = `
 <scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--variant-warning" part="alertbox variant-warning">
+    <div class="alertbox alertbox--variant-warning" part="alertbox variant-warning" tabindex="0">
       <div class="alertbox__container" part="container">
         <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
-        <header class="alertbox__container-header" part="header">
+        <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
               Missing Title
@@ -43,10 +43,10 @@ exports[`Alertbox handle variant prop 2`] = `
 exports[`Alertbox handle variant prop 3`] = `
 <scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational">
+    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational" tabindex="0">
       <div class="alertbox__container" part="container">
         <scale-icon-alert-information accessibility-title="information" class="alertbox__icon-information"></scale-icon-alert-information>
-        <header class="alertbox__container-header" part="header">
+        <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
               Missing Title
@@ -63,10 +63,10 @@ exports[`Alertbox handle variant prop 3`] = `
 exports[`Alertbox handle variant prop 4`] = `
 <scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--variant-success" part="alertbox variant-success">
+    <div class="alertbox alertbox--variant-success" part="alertbox variant-success" tabindex="0">
       <div class="alertbox__container" part="container">
-        <scale-icon-action-success accessibility-title="success" class="alertbox__icon-success"></scale-icon-action-success>
-        <header class="alertbox__container-header" part="header">
+        <scale-alertbox-svg accessibility-title="success" class="alertbox__icon-success"></scale-alertbox-svg>
+        <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
               Missing Title
@@ -83,10 +83,10 @@ exports[`Alertbox handle variant prop 4`] = `
 exports[`Alertbox should match snapshot 1`] = `
 <scale-alertbox opened="">
   <mock:shadow-root>
-    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational">
+    <div class="alertbox alertbox--variant-informational" part="alertbox variant-informational" tabindex="0">
       <div class="alertbox__container" part="container">
         <scale-icon-alert-information accessibility-title="information" class="alertbox__icon-information"></scale-icon-alert-information>
-        <header class="alertbox__container-header" part="header">
+        <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
               Missing Title
@@ -96,6 +96,5 @@ exports[`Alertbox should match snapshot 1`] = `
       </div>
     </div>
   </mock:shadow-root>
-  Label
 </scale-alertbox>
 `;
