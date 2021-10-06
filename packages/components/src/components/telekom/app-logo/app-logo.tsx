@@ -21,11 +21,12 @@ export class Logo {
   @Prop() color: string = '#fff';
   @Prop() claim: boolean = false;
   @Prop() claimLang: string;
+  @Prop() focusable: boolean = true;
 
   render() {
     if (!this.claim) {
       return (
-        <a href={this.href} title={this.logoTitle}>
+        <a href={this.href} title={this.logoTitle} tabindex={this.focusable === false ? -1 : undefined}>
           <svg
             width="51"
             height="24"
