@@ -95,7 +95,7 @@ export class Alertbox {
         case 'error':
         case 'warning':
           return (
-            <scale-icon-alert-error
+            <scale-icon-alert-warning
               class="alertbox__icon-error"
               accessibility-title="error"
             />
