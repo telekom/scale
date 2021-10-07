@@ -1,5 +1,5 @@
 describe('ProgressBar', () => {
-  test.each([['progress-with-description'], ['complete-error']])(
+  test.each([['determinate'], ['progress-with-description'], ['complete-error']])(
     '%p',
     async (variant) => {
       await global.page.goto(
