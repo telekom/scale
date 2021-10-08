@@ -113,14 +113,11 @@ export class MenuFlyoutItem {
       <Host
         role={this.checkable ? `menuitem${this.checkable}` : 'menuitem'}
         aria-checked={this.checkable == null ? false : checked}
+        aria-disabled={this.disabled ? 'true' : undefined}
         tabindex="-1"
       >
         {this.styles && <style>{this.styles}</style>}
-        <div
-          class={this.getCssClassMap()}
-          part="base"
-          aria-disabled={this.disabled ? 'true' : 'false'}
-        >
+        <div class={this.getCssClassMap()} part="base">
           <span part="prefix" class="menu-flyout-item__prefix">
             {this.checkable == null ? (
               <slot name="prefix" />
