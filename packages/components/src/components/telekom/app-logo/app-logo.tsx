@@ -26,7 +26,11 @@ export class Logo {
   render() {
     if (!this.claim) {
       return (
-        <a href={this.href} title={this.logoTitle} tabindex={this.focusable === false ? -1 : undefined}>
+        <a
+          href={this.href}
+          title={this.logoTitle}
+          tabindex={this.focusable === false ? -1 : undefined}
+        >
           <svg
             width="51"
             height="24"
