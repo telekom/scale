@@ -351,8 +351,8 @@ export class DataGrid {
     this.forceRender++;
   }
 
-  toggleRowSelect(event, rowIndex) {
-    this.rows[rowIndex].selected = !this.rows[rowIndex].selected;
+  toggleRowSelect({ target }, rowIndex) {
+    this.rows[rowIndex].selected = target.checked;
     this.updateReadableSelection();
     this.forceRender++;
   }
@@ -1042,7 +1042,7 @@ export class DataGrid {
       <th
         class={`thead__cell thead__cell--selection`}
         style={style}
-        title="Select all rows"
+        title="Select"
       >
         <scale-checkbox
           ref={(el) => (this.elToggleSelectAll = el)}
@@ -1173,15 +1173,12 @@ export class DataGrid {
       style.paddingLeft = '0px';
     }
     return (
-      <td class={`tbody__cell tbody__cell--selection`} style={style}>
-        <button
-          class="sr-only"
-          onClick={(e) => this.toggleRowSelect(e, rowIndex)}
-        >
-          Select this row
-        </button>
+      <td
+        title={this.rows[rowIndex][0]}
+        class={`tbody__cell tbody__cell--selection`}
+        style={style}
+      >
         <scale-checkbox
-          aria-hidden="true"
           checked={this.rows[rowIndex].selected}
           onScaleChange={(e) => this.toggleRowSelect(e, rowIndex)}
           hideLabel={true}
