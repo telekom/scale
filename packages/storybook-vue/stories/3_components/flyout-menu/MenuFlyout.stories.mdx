@@ -101,6 +101,83 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
 }
 ```
 
+## Breaking Changes from `3.0.0-beta.22`
+
+### Cascading has changed
+
+Before (you'd nest an entire `scale-menu-flyout` in place of an item):
+
+```html
+<scale-menu-flyout>
+  <scale-button slot="trigger" variant="secondary">
+    Menu
+  </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+    <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+    <scale-menu-flyout>
+      <scale-menu-flyout-item slot="trigger" cascade>More Options</scale-menu-flyout-item>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+```
+
+After (you place a `scale-menu-flyout-list` with `slot="sublist"` inside of a `scale-menu-flyout-item`):
+
+```html
+<scale-menu-flyout>
+  <scale-button slot="trigger" variant="secondary">
+      Menu
+  </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+    <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+    <scale-menu-flyout-item>More Options
+      <scale-menu-flyout-list slot="sublist">
+        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout-item>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+```
+
+### Checked toogles require a new `checkable` attribute
+
+With a value of either `checkbox` or `radio`. And then use `checked` has a truly boolean attribute to mark these items has checked.
+
+Before:
+
+```html
+<scale-menu-flyout-list>
+  <scale-menu-flyout-item checked="false">Toggle option 1</scale-menu-flyout-item>
+  <scale-menu-flyout-item checked="true">Toggle option 2</scale-menu-flyout-item>
+  <scale-menu-flyout-item checked="false">Toggle option 3</scale-menu-flyout-item>
+  <scale-menu-flyout-item checked="false">Toggle option 4</scale-menu-flyout-item>
+</scale-menu-flyout-list>
+```
+
+After:
+
+```html
+<scale-menu-flyout-list>
+  <scale-menu-flyout-item checkable="checkbox">Toggle option 1</scale-menu-flyout-item>
+  <scale-menu-flyout-item checkable="checkbox" checked>Toggle option 2</scale-menu-flyout-item>
+  <scale-menu-flyout-item checkable="checkbox">Toggle option 3</scale-menu-flyout-item>
+  <scale-menu-flyout-item checkable="checkbox">Toggle option 4</scale-menu-flyout-item>
+</scale-menu-flyout-list>
+```
+
+### Avoid listening for `click` events in items
+
+Use `scale-select` which will be triggered by both mouse and keyboard input.
+
 ## Cascading Menu
 
 <Canvas withSource="none">
