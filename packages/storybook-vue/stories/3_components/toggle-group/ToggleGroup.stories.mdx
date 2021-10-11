@@ -114,19 +114,19 @@ export const TemplateIcons = (args, { argTypes }) => ({
       <scale-toggle-button v-if="iconBefore">
         <scale-icon-action-search /> Label
       </scale-toggle-button>
-      <scale-toggle-button icon-only="true" v-if="!iconBefore">
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
         <scale-icon-action-search />
       </scale-toggle-button>
       <scale-toggle-button v-if="iconBefore">
         <scale-icon-action-search /> Label
       </scale-toggle-button>
-      <scale-toggle-button icon-only="true" v-if="!iconBefore">
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
         <scale-icon-action-search />
       </scale-toggle-button>
-      <scale-toggle-button selected v-if="iconBefore">
+      <scale-toggle-button v-if="iconBefore">
         <scale-icon-action-search /> Label
       </scale-toggle-button>
-      <scale-toggle-button icon-only="true" selected  v-if="!iconBefore">
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
         <scale-icon-action-search />
       </scale-toggle-button>
     </scale-toggle-group>
@@ -396,11 +396,11 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Accessibility, German
+## Accessibility German
 
 <Canvas withSource="none">
   <Story
-    name="Accessibility, German"
+    name="Accessibility German"
     args={{
       ariaLabelTranslation: "wechsel schalter gruppe mit $slottedButtons schaltern"
     }}
@@ -473,13 +473,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button icon-only>
+	<scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only>
+  <scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only selected>
+  <scale-toggle-button icon-only aria-label="search" selected>
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
 </scale-toggle-group>
@@ -529,13 +529,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group size="regular">
-	<scale-toggle-button icon-only>
+	<scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only>
+  <scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only selected>
+  <scale-toggle-button icon-only aria-label="search" selected>
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
 </scale-toggle-group>
@@ -587,13 +587,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group size="small" variant="white-background">
-	<scale-toggle-button icon-only>
+	<scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only>
+  <scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only selected>
+  <scale-toggle-button icon-only aria-label="search" selected>
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
 </scale-toggle-group>
