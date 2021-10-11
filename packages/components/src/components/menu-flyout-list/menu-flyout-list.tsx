@@ -278,7 +278,7 @@ export class MenuFlyoutList {
   }
 
   updateTriggerAttributes() {
-    let trigger = this.trigger();
+    const trigger = this.trigger();
     if (trigger && trigger.getAttribute('aria-haspopup') === 'true') {
       trigger.setAttribute('aria-expanded', String(this.opened));
     }

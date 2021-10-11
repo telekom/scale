@@ -11,7 +11,7 @@ import {
 import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
 
 <Meta
-  title="Beta Components/Flyout Menu"
+  title="Components/Flyout Menu"
   component={ScaleMenuFlyout}
   argTypes={{
     direction: {
@@ -39,7 +39,7 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
   }}
 >
   <h1>Flyout Menu</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
@@ -180,6 +180,10 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
   </scale-menu-flyout-list>
 </scale-menu-flyout>
 ```
+
+### Accessibility Notice
+
+There are two known issues with the JAWS2019 screen reader and Google Chrome, that may represent slight limitations. When nested submenus are present, (1) the focus will be placed on the second item of the menu, and (2) in submenus with submenus, the first item in the menu won't be read the first time it receives focus.
 
 ## Checked Toggle
 
