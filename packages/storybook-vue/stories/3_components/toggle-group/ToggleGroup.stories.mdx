@@ -17,6 +17,9 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
     ariaLabelTranslation: {
       control: { type: "text", },
     },
+    colorScheme: {
+      control: { type: 'select', options: ['light', 'dark'] },
+    },
   }}
 />
 
@@ -36,6 +39,7 @@ export const Template = (args, { argTypes }) => ({
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
+      :color-scheme="colorScheme"
       :styles="styles"
       @scaleChange="scaleChange"
     >
@@ -62,6 +66,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
+      :color-scheme="colorScheme"
       :styles="styles"
       @scaleChange="scaleChange"
     >
@@ -102,6 +107,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
+      :color-scheme="colorScheme"
       :styles="styles"
       @scaleChange="scaleChange"
     >
@@ -189,6 +195,49 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group single-select>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Dark Color Scheme
+
+<Canvas withSource="none">
+  <Story
+    name="Dark Color Scheme"
+    args={{
+      colorScheme: 'dark'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group color-scheme="dark">
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Dark Color Scheme White Background
+
+<Canvas withSource="none">
+  <Story
+    name="Dark Color Scheme White Background"
+    args={{
+      colorScheme: 'dark',
+      variant: 'white-background'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group color-scheme="dark" variant="white-background">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>

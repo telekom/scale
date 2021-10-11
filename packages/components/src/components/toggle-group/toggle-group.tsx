@@ -57,6 +57,8 @@ export class ToggleGroup {
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
+  /** (optional) background color scheme of a selected button */
+  @Prop() colorScheme?: 'light' | 'dark' = 'light';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
@@ -106,6 +108,7 @@ export class ToggleGroup {
         'aria-description-translation',
         '$position $selected'
       );
+      toggleButton.setAttribute('color-scheme', this.colorScheme);
     });
     this.position = 0;
     this.status = tempState;
