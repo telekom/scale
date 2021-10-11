@@ -727,17 +727,20 @@ export class DataGrid {
   renderSettingsMenu() {
     return (
       <scale-menu-flyout class={`${name}__settings-menu`}>
-        <scale-button slot="trigger" variant="secondary" icon-only>
+        <scale-button
+          slot="trigger"
+          variant="secondary"
+          icon-only
+          data-sortable={this.isSortable}
+        >
           <scale-icon-service-settings accessibilityTitle="Table options"></scale-icon-service-settings>
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
-            <scale-menu-flyout>
-              <scale-menu-flyout-item slot="trigger" cascade>
-                <scale-icon-action-sort slot="prefix"></scale-icon-action-sort>
-                Sort By
-              </scale-menu-flyout-item>
-              <scale-menu-flyout-list>
+            <scale-menu-flyout-item>
+              <scale-icon-action-sort slot="prefix"></scale-icon-action-sort>
+              Sort By
+              <scale-menu-flyout-list slot="sublist">
                 {this.fields.map(
                   (
                     { label, type, sortable, sortDirection = 'none' },
@@ -748,7 +751,7 @@ export class DataGrid {
                     }
                     return (
                       <scale-menu-flyout-item
-                        onClick={() =>
+                        onScale-select={() =>
                           this.toggleTableSorting(
                             sortDirection,
                             columnIndex,
@@ -781,14 +784,12 @@ export class DataGrid {
                   }
                 )}
               </scale-menu-flyout-list>
-            </scale-menu-flyout>
-          )}
-          <scale-menu-flyout close-on-select="false">
-            <scale-menu-flyout-item slot="trigger" cascade>
-              <scale-icon-action-hide-password slot="prefix"></scale-icon-action-hide-password>
-              Toggle Visibility
             </scale-menu-flyout-item>
-            <scale-menu-flyout-list>
+          )}
+          <scale-menu-flyout-item>
+            <scale-icon-action-hide-password slot="prefix"></scale-icon-action-hide-password>
+            Toggle Visibility
+            <scale-menu-flyout-list slot="sublist" close-on-select="false">
               {this.fields.map(
                 (
                   {
@@ -802,8 +803,9 @@ export class DataGrid {
                 ) => {
                   return (
                     <scale-menu-flyout-item
+                      checkable="checkbox"
                       checked={!!visible}
-                      onClick={() =>
+                      onScale-select={() =>
                         this.toggleColumnVisibility(!visible, columnIndex)
                       }
                     >
@@ -813,10 +815,10 @@ export class DataGrid {
                 }
               )}
             </scale-menu-flyout-list>
-          </scale-menu-flyout>
+          </scale-menu-flyout-item>
           {this.selectable && (
             <scale-menu-flyout-item
-              onClick={() => {
+              onScale-select={() => {
                 this.elToggleSelectAll.checked = !this.elToggleSelectAll
                   .checked;
                 this.toggleSelectAll();

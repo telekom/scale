@@ -222,6 +222,89 @@ export const mainNavigation = [
     href: "#topic-five"
   }
 ];
+export const mainNavigationFlyout = [
+  {
+    name: "Cascading Menu Item",
+    id: "Cascading Menu Item",
+    children: [
+      {
+        name: "Item One",
+        id: "Item One"
+      },
+      {
+        name: "Item Two",
+        id: "Item Two"
+      },
+      {
+        name: "More Options",
+        id: "More Options 5",
+        children: [
+          {
+            name: "Option 1",
+            id: "Option 1 18",
+            href: "#third-level"
+          },
+          {
+            name: "Option 2",
+            id: "Option 2 19",
+            href: "#third-level"
+          },
+          {
+            name: "Option 3",
+            id: "Option 3 20",
+            href: "#third-level"
+          },
+          {
+            name: "Even more",
+            id: "Even more 20",
+            children: [
+              {
+                name: "Option 1",
+                id: "Option 1 21",
+                href: "#fourth-level"
+              },
+              {
+                name: "Option 2",
+                id: "Option 2 22",
+                href: "#fourth-level"
+              },
+              {
+                name: "Very Specific Options",
+                id: "Very Specific Option 1 23",
+                children: [
+                  {
+                    name: "Option 1",
+                    id: "Option 1 23",
+                    href: "#fifth-level"
+                  },
+                  {
+                    name: "Option 2",
+                    id: "Option 2 23",
+                    href: "#fifth-level"
+                  },
+                  {
+                    name: "Option 3",
+                    id: "Option 3 23",
+                    href: "#fifth-level"
+                  },
+                ]
+              },
+            ]
+          },
+
+        ]
+      },
+    ]
+  },
+  {
+    name: "Custom Item #1",
+    id: "Custom Item #1",
+  },
+  {
+    name: "Custom Item #2",
+    id: "Custom Item #2",
+  },
+];
 export const iconNavigation = [
   { name: "Search", id: "Search35", href: "#search", icon: "action-search" },
   { name: "Cart", id: "Cart36", href: "#cart", icon: "action-shopping-cart" },
