@@ -29,6 +29,8 @@
   --line-height: var(--scl-font-line-height-150);
   --spacing-icon-x: var(--scl-spacing-8);
   --vertical-align: middle;
+  --border-color: var(--scl-color-grey-90);
+  --border-color-disabled: var(--scl-color-background-disabled);
 
   /* size: small */
   --font-size-small: var(--scl-font-size-12);
@@ -143,6 +145,7 @@
 .toggle-button:disabled {
   color: var(--color-primary-disabled);
   pointer-events: none;
+  border: 1px solid var(--border-color-disabled);
 }
 
 .toggle-button:disabled.toggle-button--primary {
@@ -179,16 +182,32 @@
   background: var(--background-selected-active-dark);
 }
 
-.toggle-button--left {
+.toggle-button--border {
+  border: 1px solid var(--border-color);
+}
+
+.toggle-button--left,
+.toggle-button--left:disabled {
+  border-right: 0;
   border-radius: var(--radius-primary) 0 0 var(--radius-primary);
 }
 
-.toggle-button--right {
+.toggle-button--right,
+.toggle-button--right:disabled {
+  border-left: 0;
   border-radius: 0 var(--radius-primary) var(--radius-primary) 0;
 }
 
-.toggle-button--both {
+.toggle-button--both,
+.toggle-button--both:disabled {
   border-radius: var(--radius-primary);
+}
+
+.toggle-button--neither,
+.toggle-button--neither:disabled {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {

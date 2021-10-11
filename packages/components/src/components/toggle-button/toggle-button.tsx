@@ -53,7 +53,9 @@ export class ToggleButton {
   @Prop({ reflect: true, mutable: true }) iconPosition: 'before' | 'after' =
     'before';
   /** (optional) set the border-radius left, right or both */
-  @Prop() radius: 'left' | 'right' | 'both' | null = null;
+  @Prop() hideBorder: false;
+  /** (optional) set the border-radius left, right or both */
+  @Prop() radius: 'left' | 'right' | 'both' | 'neither' | null = null;
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -208,7 +210,8 @@ export class ToggleButton {
       this.iconOnly && `${prefix}icon-only`,
       !this.disabled && this.selected && `${prefix}selected`,
       this.radius && `${prefix}${this.radius}`,
-      this.colorScheme && `${prefix}${this.colorScheme}`
+      this.colorScheme && `${prefix}${this.colorScheme}`,
+      !this.hideBorder && `${prefix}border`
     );
   }
 }

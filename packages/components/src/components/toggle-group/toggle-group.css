@@ -6,15 +6,6 @@
   --radius: var(--scl-radius-4);
 }
 
-.toggle-group--border {
-  border: var(--border);
-  border-radius: var(--radius);
-}
-
-.toggle-group--disabled {
-  border: var(--border-disabled);
-}
-
 .toggle-group--inline {
   display: inline-flex;
 }

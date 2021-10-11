@@ -109,6 +109,10 @@ export class ToggleGroup {
         '$position $selected'
       );
       toggleButton.setAttribute('color-scheme', this.colorScheme);
+      toggleButton.setAttribute(
+        'hide-border',
+        this.hideBorder ? 'true' : 'false'
+      );
     });
     this.position = 0;
     this.status = tempState;
@@ -153,6 +157,9 @@ export class ToggleGroup {
       if (i === 0) {
         children[i].setAttribute('radius', 'left');
       }
+      if (i > 0 && i < children.length - 1) {
+        children[i].setAttribute('radius', 'neither');
+      }
       if (i === children.length - 1) {
         children[i].setAttribute('radius', 'right');
       }
@@ -190,7 +197,6 @@ export class ToggleGroup {
       'toggle-group',
       this.fullWidth && `${prefix}block`,
       !this.fullWidth && `${prefix}inline`,
-      !this.hideBorder && `${prefix}border`,
       this.disabled && `${prefix}disabled`
     );
   }
