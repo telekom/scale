@@ -144,13 +144,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Secondary
+## White Background
 
 <Canvas withSource="none">
   <Story
-    name="Secondary"
+    name="White Background"
     args={{
-		  variant: 'secondary'
+		  variant: 'whiteBackground'
 	}}
   >
     {Template.bind({})}
@@ -158,7 +158,28 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group variant='secondary'>
+<scale-toggle-group variant='white-background'>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Single Select
+
+<Canvas withSource="none">
+  <Story
+    name="Single Select"
+    args={{
+		  singleSelect: true
+	}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group single-select>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -186,14 +207,14 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Disabled Secondary
+## Disabled White Background
 
 <Canvas withSource="none">
   <Story
-    name="Disabled Secondary"
+    name="Disabled White Background"
     args={{
 		  disabled: true,
-		  variant: 'secondary'
+		  variant: 'whiteBackground'
 	}}
   >
     {Template.bind({})}
@@ -201,7 +222,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group variant='secondary' disabled>
+<scale-toggle-group variant='white-background' disabled>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
@@ -294,14 +315,14 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Disabled, Secondary, Regular
+## Disabled, White Background, Regular
 
 <Canvas withSource="none">
   <Story
-    name="Disabled, Secondary, Regular"
+    name="Disabled, White Background, Regular"
     args={{
 		  disabled: true,
-		  variant: 'secondary',
+		  variant: 'whiteBackground',
 		  size: 'regular'
 	}}
   >
@@ -310,28 +331,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group disabled variant="secondary" size="regular">
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Single Select
-
-<Canvas withSource="none">
-  <Story
-    name="Single Select"
-    args={{
-		  singleSelect: true
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group single-select>
+<scale-toggle-group disabled variant="white-background" size="regular">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
