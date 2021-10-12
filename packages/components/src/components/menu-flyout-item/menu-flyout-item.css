@@ -10,12 +10,22 @@
  */
 
 :host {
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+
   display: block;
+  position: relative;
+  outline-color: transparent;
+  /* So box-shadow is visible on the sides */
+  padding-left: var(--scl-spacing-2);
+  padding-right: var(--scl-spacing-2);
 }
+
 * {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-.menu-item {
+
+.menu-flyout-item {
+  position: relative;
   display: flex;
   align-items: stretch;
   text-align: left;
@@ -34,50 +44,90 @@
   min-width: -moz-fit-content;
 }
 
-.menu-item--focused:not(.menu-item--disabled),
-.menu-item--active:not(.menu-item--disabled) {
-  outline: none;
+.menu-flyout-item:focus:not(.menu-flyout-item--disabled),
+.menu-flyout-item:hover:not(.menu-flyout-item--disabled) {
   color: var(--scl-color-primary-hover);
 }
 
-@media screen and (forced-colors: active), (-ms-high-contrast: active) {
-  .menu-item--focused:not(.menu-item--disabled),
-  .menu-item--active:not(.menu-item--disabled) {
-    color: white;
-    stroke: white;
-  }
+:host(:focus) .menu-flyout-item:not(.menu-flyout-item--disabled) {
+  color: var(--scl-color-primary-hover);
+}
+:host(:focus) .menu-flyout-item {
+  box-shadow: var(--box-shadow-focus);
 }
 
-.menu-item--disabled {
+:host(:active) .menu-flyout-item:not(.menu-flyout-item--disabled) {
+  color: var(--scl-color-primary-active);
+}
+
+:host([aria-expanded='true']) .menu-flyout-item {
+  color: var(--scl-color-primary-active);
+}
+
+.menu-flyout-item--disabled {
   outline: none;
   color: #ccc;
   cursor: not-allowed;
 }
 
-.menu-item__label {
+:host([active])::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--scl-color-primary-active);
+  /* a11y: HCM */
+  border-left: var(--scl-spacing-2) solid transparent;
+}
+
+.menu-flyout-item--active {
+  color: var(--scl-color-primary-active);
+}
+
+/* a11y: HCM */
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .menu-flyout-item--disabled:not(.menu-flyout-item--disabled),
+  .menu-flyout-item--active:not(.menu-flyout-item--disabled) {
+    color: white;
+    stroke: white;
+  }
+}
+
+.menu-flyout-item__label {
   flex: 1 1 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.menu-item__prefix {
+.menu-flyout-item__prefix {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
 }
 
-.menu-item__check,
+.menu-flyout-item__check,
 slot[name='prefix']::slotted(:last-of-type) {
   margin-right: var(--scl-spacing-8);
 }
 
-.menu-item__suffix {
+.menu-flyout-item__check {
+  visibility: hidden;
+}
+
+:host([aria-checked='true']) .menu-flyout-item__check {
+  visibility: visible;
+}
+
+.menu-flyout-item__suffix {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
 }
 
-.menu-item__cascade,
+.menu-flyout-item__cascade,
 slot[name='suffix']::slotted(:first-of-type) {
   margin-left: var(--scl-spacing-16);
 }

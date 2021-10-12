@@ -14,129 +14,135 @@ import {
   Prop,
   h,
   Host,
-  Element,
   Method,
-  State,
+  Event,
+  EventEmitter,
+  Element,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
-const name = 'menu-item';
 @Component({
   tag: 'scale-menu-flyout-item',
   styleUrl: 'menu-flyout-item.css',
   shadow: true,
 })
 export class MenuFlyoutItem {
-  /* 1. Host HTML Element */
   @Element() hostElement: HTMLElement;
 
-  /* 2. State Variables (alphabetical) */
-  @State() hasFocus = false;
-
-  /* 3. Public Properties (alphabetical) */
-  /** (optional) Used by cascading menus to set when open */
-  @Prop() active? = false;
   /** (optional) Set to true to display arrow icon suffix */
-  @Prop() cascade? = false;
+  @Prop() cascade? = false; // TODO rename to `hasMenu`?
+  /** (optional) Mark as active */
+  @Prop({ reflect: true }) active? = false;
+  /** (optional) Whether the item should behave as a checkbox */
+  @Prop() checkable?: 'checkbox' | 'radio' | null;
   /** (optional) Set to true to display check prefix, false to display empty prefix */
-  @Prop() checked?: any;
+  @Prop({ reflect: true, mutable: true }) checked?: boolean = false;
   /** (optional) Disabled */
-  @Prop() disabled? = false;
+  @Prop({ reflect: true }) disabled? = false;
+  /** (optional) value */
+  @Prop({ reflect: true }) value?: string;
   /** (optional) Injected styles */
   @Prop() styles?: string;
-  /** (optional) value */
-  @Prop() value?: string;
 
-  /* 4. Events (alphabetical) */
+  /** Event triggered when menu item selected */
+  @Event({ eventName: 'scale-select' }) scaleSelect: EventEmitter<{
+    item: HTMLElement;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleSelect' }) scaleSelectLegacy: EventEmitter<{
+    item: HTMLElement;
+  }>;
 
-  /* 5. Private Properties (alphabetical) */
-  /** Keep track of menu item element */
-  menuItem: HTMLElement;
+  private hasSlotSublist: boolean = false;
 
-  /* 6. Lifecycle Events (call order) */
-  constructor() {}
-  connectedCallback() {}
-  componentWillLoad() {}
-  componentWillUpdate() {}
-  componentDidRender() {}
-  componentDidLoad() {}
-  componentDidUpdate() {}
-  disconnectedCallback() {}
-
-  /* 7. Listeners */
-
-  /* 8. Public Methods */
-  /** Sets the focus on the item */
+  // TODO there is lot of room for improving this, aka edge-cases
   @Method()
-  async setFocus() {
-    this.menuItem.focus();
+  async triggerEvent(
+    eventType: 'keydown' | 'click',
+    key?: 'Enter' | ' ' | 'ArrowRight' | null,
+    closeOnSelect: boolean = true
+  ) {
+    if (this.disabled) {
+      return;
+    }
+    if (key === 'ArrowRight' && !this.hasSlotSublist) {
+      return;
+    }
+    if (this.hasSlotSublist) {
+      this.openSublist();
+      return;
+    }
+    const detail = { eventType, key, item: this.hostElement, closeOnSelect };
+    emitEvent(this, 'scaleSelect', detail);
   }
 
-  /** Removes the focus from the item */
-  @Method()
-  async removeFocus() {
-    this.menuItem.blur();
+  connectedCallback() {
+    this.hasSlotSublist =
+      this.hostElement.querySelector('[slot="sublist"]') != null;
+    if (this.hasSlotSublist) {
+      this.cascade = true;
+    }
   }
 
-  /* 9. Local Methods */
+  openSublist() {
+    const sublist = this.hostElement.querySelector(
+      '[slot="sublist"]'
+    ) as HTMLScaleMenuFlyoutListElement;
+    if (sublist == null) {
+      return;
+    }
+    sublist.trigger = () => this.hostElement;
+    sublist.direction = 'right';
+    sublist.open();
+  }
+
   getCssClassMap() {
     return classNames(
-      name,
-      this.disabled && `${name}--disabled`,
-      this.hasFocus && `${name}--focused`,
-      this.active && `${name}--active`
+      'menu-flyout-item',
+      this.disabled && 'menu-flyout-item--disabled',
+      this.checkable != null && 'menu-flyout-item--checkable',
+      this.active && 'menu-flyout-item--active'
     );
   }
 
-  /* 10. Render */
   render() {
+    const checked = this.checked ? 'true' : 'false';
+
     return (
-      <Host>
+      <Host
+        role={this.checkable ? `menuitem${this.checkable}` : 'menuitem'}
+        aria-checked={this.checkable == null ? false : checked}
+        aria-disabled={this.disabled ? 'true' : undefined}
+        tabindex="-1"
+      >
         {this.styles && <style>{this.styles}</style>}
-        <div
-          class={this.getCssClassMap()}
-          ref={(el) => (this.menuItem = el)}
-          part="base"
-          role="menuitem"
-          tabindex="-1"
-          aria-disabled={this.disabled ? 'true' : 'false'}
-          onFocus={() => (this.hasFocus = true)}
-          onBlur={() => (this.hasFocus = false)}
-          onMouseEnter={() => this.setFocus()}
-          onMouseLeave={() => this.removeFocus()}
-          onTouchStart={() => this.setFocus()}
-          onTouchEnd={() => this.removeFocus()}
-        >
-          <span part="prefix" class={`${name}__prefix`}>
-            {this.checked === undefined ? (
+        <div class={this.getCssClassMap()} part="base">
+          <span part="prefix" class="menu-flyout-item__prefix">
+            {this.checkable == null ? (
               <slot name="prefix" />
             ) : (
               <scale-icon-action-success
-                class={`${name}__check`}
-                style={{
-                  opacity:
-                    !this.checked || this.checked === 'false' ? '0' : '1',
-                }}
+                class="menu-flyout-item__check"
                 size={16}
               ></scale-icon-action-success>
             )}
           </span>
-          <span part="label" class={`${name}__label`}>
+          <span part="label" class="menu-flyout-item__label">
             <slot />
           </span>
-
-          <span part="suffix" class={`${name}__suffix`}>
+          <span part="suffix" class="menu-flyout-item__suffix">
             {this.cascade ? (
               <scale-icon-navigation-right
-                class={`${name}__cascade`}
+                class="menu-flyout-item__cascade"
                 size={16}
-                slot="suffix"
               ></scale-icon-navigation-right>
             ) : (
               <slot name="suffix" />
             )}
           </span>
         </div>
+        <slot name="sublist"></slot>
       </Host>
     );
   }
