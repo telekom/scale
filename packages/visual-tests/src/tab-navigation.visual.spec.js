@@ -26,19 +26,6 @@ describe('TabNavigation', () => {
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
 
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
-    });
-
     const tabHeader = await page.evaluateHandle(
       'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'
     );

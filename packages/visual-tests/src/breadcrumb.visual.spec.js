@@ -4,19 +4,7 @@ describe('Breadcrumb', () => {
       `http://host.docker.internal:3123/iframe.html?id=components-breadcrumb--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
-
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
-    });
+    
     const previewHtml = await page.$('body');
     const firstLink = await page.evaluateHandle(
       `document.querySelector("#root > scale-breadcrumb").shadowRoot.querySelector("nav > ol > li:nth-child(1) > a")`

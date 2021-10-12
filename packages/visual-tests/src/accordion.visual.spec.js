@@ -5,18 +5,6 @@ describe('Accordion', () => {
     );
     await page.waitForSelector('html.hydrated');
 
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-    
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
-    }); 
     const previewHtml = await page.$('body');
     const firstButton = await page.evaluateHandle(
       `document.querySelector("#root > scale-accordion > scale-collapsible:nth-child(1)").shadowRoot.querySelector("div > h2 > button")`
