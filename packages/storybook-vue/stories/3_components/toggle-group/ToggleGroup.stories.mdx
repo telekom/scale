@@ -41,7 +41,6 @@ export const Template = (args, { argTypes }) => ({
       :aria-label-translation="ariaLabelTranslation"
       :color-scheme="colorScheme"
       :styles="styles"
-      @scaleChange="scaleChange"
     >
       <scale-toggle-button>Label</scale-toggle-button>
       <scale-toggle-button>Label</scale-toggle-button>
@@ -68,7 +67,6 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
       :aria-label-translation="ariaLabelTranslation"
       :color-scheme="colorScheme"
       :styles="styles"
-      @scaleChange="scaleChange"
     >
       <scale-toggle-button 
         aria-label="Drück mich"
@@ -109,7 +107,6 @@ export const TemplateIcons = (args, { argTypes }) => ({
       :aria-label-translation="ariaLabelTranslation"
       :color-scheme="colorScheme"
       :styles="styles"
-      @scaleChange="scaleChange"
     >
       <scale-toggle-button v-if="iconBefore">
         <scale-icon-action-search /> Label
