@@ -12,9 +12,9 @@
 import { Component, h, Host, Prop, Element } from '@stencil/core';
 
 @Component({
-  tag: 'scale-alertbox-svg',
+  tag: 'scale-notification-message-svg',
 })
-export class AlertboxSvg {
+export class NotificationMessageSvg {
   @Element() hostElement: HTMLElement;
   /** (optional) The width and height in pixels */
   @Prop({ reflect: true }) size?: number = 24;

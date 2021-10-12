@@ -1,9 +1,9 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Alertbox</h1>
+    <h1>Notification Message</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Static Rating Stars can display a rating while interactive Rating Stars enable the user to easily input their own.
+The standard Notification Message component can be used to output a notification message. In addition, a short explanatory text can be added to it.
 
 ## Beta components
 

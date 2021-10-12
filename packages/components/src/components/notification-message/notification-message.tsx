@@ -11,11 +11,11 @@ import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
 @Component({
-  tag: 'scale-alertbox',
-  styleUrl: 'alertbox.css',
+  tag: 'scale-notification-message',
+  styleUrl: 'notification-message.css',
   shadow: true,
 })
-export class Alertbox {
+export class NotificationMessage {
   // Color to variant rename
   @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
     'informational';
@@ -50,17 +50,17 @@ export class Alertbox {
 
     if (headerText !== '') {
       this.hostElement.shadowRoot
-        .querySelector('.alertbox__container-header')
+        .querySelector('.notification-message__container-header')
         .setAttribute('aria-label', headerText);
     } else {
       this.hostElement.shadowRoot
-        .querySelector('.alertbox__container-header')
+        .querySelector('.notification-message__container-header')
         .setAttribute('aria-label', this.title);
     }
 
     if (mainText !== '') {
       this.hostElement.shadowRoot
-        .querySelector('.alertbox__content')
+        .querySelector('.notification-message__content')
         .setAttribute('aria-description', mainText);
     }
   }
@@ -80,15 +80,15 @@ export class Alertbox {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-alertbox-svg
-              class="alertbox__icon-success"
+            <scale-notification-message-svg
+              class="notification-message__icon-success"
               accessibility-title="success"
             />
           );
         case 'informational':
           return (
             <scale-icon-alert-information
-              class="alertbox__icon-information"
+              class="notification-message__icon-information"
               accessibility-title="information"
             />
           );
@@ -96,7 +96,7 @@ export class Alertbox {
         case 'warning':
           return (
             <scale-icon-alert-warning
-              class="alertbox__icon-error"
+              class="notification-message__icon-error"
               accessibility-title="error"
             />
           );
@@ -136,9 +136,12 @@ export class Alertbox {
           aria-label={this.ariaLabel}
           tabindex="0"
         >
-          <div part="container" class="alertbox__container">
+          <div part="container" class="notification-message__container">
             {this.handleIcons()}
-            <header part="header" class="alertbox__container-header">
+            <header
+              part="header"
+              class="notification-message__container-header"
+            >
               <p>
                 <slot name="header">{this.title}</slot>
               </p>
@@ -146,7 +149,7 @@ export class Alertbox {
               {this.hasClose && (
                 <scale-icon-action-circle-close
                   tabindex="0"
-                  class="alertbox__icon-close"
+                  class="notification-message__icon-close"
                   onClick={() => {
                     this.close();
                   }}
@@ -161,7 +164,7 @@ export class Alertbox {
             </header>
           </div>
           {this.content && (
-            <p part="content" class="alertbox__content">
+            <p part="content" class="notification-message__content">
               <slot name="text" />
             </p>
           )}
@@ -179,7 +182,7 @@ export class Alertbox {
   }
 
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const name = 'alertbox';
+    const name = 'notification-message';
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
     return classNames(name, this.variant && `${prefix}variant-${this.variant}`);

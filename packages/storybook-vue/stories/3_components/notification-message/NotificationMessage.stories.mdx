@@ -5,11 +5,11 @@ import {
   Canvas,
   Description,
 } from '@storybook/addon-docs/blocks';
-import ScaleAlertbox from './ScaleAlertbox.vue';
+import ScaleNotificationMessage from './ScaleNotificationMessage.vue';
 
 <Meta
-  title="Beta Components/Alertbox"
-  component={ScaleAlertbox}
+  title="Beta Components/Notification Message"
+  component={ScaleNotificationMessage}
   argTypes={{
     variant: {
       defaultValue: 'informational',
@@ -42,28 +42,28 @@ import ScaleAlertbox from './ScaleAlertbox.vue';
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleAlertbox },
+  components: { ScaleNotificationMessage },
   props: {
-    ...ScaleAlertbox.props,
+    ...ScaleNotificationMessage.props,
   },
   template: `
-    <scale-alertbox   
+    <scale-notification-message   
      :variant="variant"
      :hasClose="hasClose"
      :timeout="timeout"
      :opened="opened"
     >
-    </scale-alertbox>
+    </scale-notification-message>
   `,
 });
 
 export const TemplateSlot = (args, { argTypes }) => ({
-  components: { ScaleAlertbox },
+  components: { ScaleNotificationMessage },
   props: {
-    ...ScaleAlertbox.props,
+    ...ScaleNotificationMessage.props,
   },
   template: `
-    <scale-alertbox   
+    <scale-notification-message   
      :variant="variant"
      :hasClose="hasClose"
      :timeout="timeout"
@@ -96,21 +96,21 @@ export const TemplateSlot = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-alertbox opened> </scale-alertbox>
+<scale-notification-message opened> </scale-notification-message>
 ```
 
 ## Scoped CSS variables
 
 ```css
 :host {
-  /* Alertbox styling */
-  --alertbox-border-radius: 8px;
-  --alertbox-border: 1px solid var(--scl-color-white);
-  --alertbox-width: 100%;
-  --alertbox-font-header: var(--scl-fonts-family-sans);
-  --alertbox-font-size-header: 16px;
-  --alertbox-font-text: var(--scl-font-weight-regular);
-  --alertbox-font-size-text: 16px;
+  /* NotificationMessage styling */
+  --notification-message-border-radius: 8px;
+  --notification-message-border: 1px solid var(--scl-color-white);
+  --notification-message-width: 100%;
+  --notification-message-font-header: var(--scl-fonts-family-sans);
+  --notification-message-font-size-header: 16px;
+  --notification-message-font-text: var(--scl-font-weight-regular);
+  --notification-message-font-size-text: 16px;
   --variant-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
   --variant-warning: hsla(33.5, 100%, 75.1%, 0.3);
   --variant-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
@@ -135,7 +135,8 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="warning" opened> </scale-alertbox>
+<scale-notification-message variant="warning" opened>
+</scale-notification-message>
 ```
 
 ### Error
@@ -153,7 +154,8 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="error" opened> </scale-alertbox>
+<scale-notification-message variant="error" opened>
+</scale-notification-message>
 ```
 
 ### Success
@@ -171,7 +173,8 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="success" opened> </scale-alertbox>
+<scale-notification-message variant="success" opened>
+</scale-notification-message>
 ```
 
 ### Informational
@@ -189,7 +192,8 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox variant="informational" opened> </scale-alertbox>
+<scale-notification-message variant="informational" opened>
+</scale-notification-message>
 ```
 
 ## Close Button
@@ -207,7 +211,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox has-close opened> </scale-alertbox>
+<scale-notification-message has-close opened> </scale-notification-message>
 ```
 
 ## Timeout
@@ -227,7 +231,8 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox timeout="10000" opened> </scale-alertbox>
+<scale-notification-message timeout="10000" opened>
+</scale-notification-message>
 ```
 
 ## Titel & Message
@@ -245,8 +250,8 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-alertbox opened>
+<scale-notification-message opened>
   <p slot="header">This is my title</p>
   <p slot="text">This is my message to you.</p>
-</scale-alertbox>
+</scale-notification-message>
 ```

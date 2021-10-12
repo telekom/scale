@@ -19,13 +19,13 @@
 
 ### Used by
 
- - [scale-alertbox](.)
+ - [scale-notification-message](.)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-alertbox --> scale-alertbox-svg
-  style scale-alertbox-svg fill:#f9f,stroke:#333,stroke-width:4px
+  scale-notification-message --> scale-notification-message-svg
+  style scale-notification-message-svg fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

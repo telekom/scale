@@ -1,8 +1,8 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Alertbox</h1>
+    <h1>Notification Message</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
-Statische Rating Stars können eine Bewertung abbilden. Interaktive Rating Stars ermöglichen es Nutzer\innen, eine eigene Bewertung abzugeben.
+Die standardmäßige Notification Message Komponente kann zum ausgeben von einer Mitteilung/ Meldung genutzt werden. Ergänzend kann dieser auch ein kurzer erklärender Text hinzugefügt werden.
 
 ## Beta-Komponente
 

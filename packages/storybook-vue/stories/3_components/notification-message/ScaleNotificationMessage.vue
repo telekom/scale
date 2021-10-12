@@ -1,5 +1,5 @@
 <template>
-  <scale-alertbox
+  <scale-notification-message
     :variant="variant"
     :has-close="hasClose"
     :timeout="timeout"
@@ -7,12 +7,15 @@
   >
     <slot name="header"></slot>
     <slot name="text"></slot>
-  </scale-alertbox>
+  </scale-notification-message>
 </template>
 <script>
 export default {
   props: {
-    variant: { type: 'error' | 'warning'| 'success'| 'informational', default: 'informational' },
+    variant: {
+      type: 'error' | 'warning' | 'success' | 'informational',
+      default: 'informational',
+    },
     hasClose: { type: Boolean, default: false },
     opened: { type: Boolean },
     timeout: { type: Boolean | Number, default: false },
