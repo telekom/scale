@@ -5,7 +5,7 @@ exports[`Alertbox handle variant prop 1`] = `
   <mock:shadow-root>
     <div class="alertbox alertbox--variant-error" part="alertbox variant-error" tabindex="0">
       <div class="alertbox__container" part="container">
-        <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
+        <scale-icon-alert-warning accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-warning>
         <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
@@ -25,7 +25,7 @@ exports[`Alertbox handle variant prop 2`] = `
   <mock:shadow-root>
     <div class="alertbox alertbox--variant-warning" part="alertbox variant-warning" tabindex="0">
       <div class="alertbox__container" part="container">
-        <scale-icon-alert-error accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-error>
+        <scale-icon-alert-warning accessibility-title="error" class="alertbox__icon-error"></scale-icon-alert-warning>
         <header aria-label="Missing Title" class="alertbox__container-header" part="header">
           <p>
             <slot name="header">
