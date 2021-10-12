@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationMessage handle variant prop 1`] = `
+<scale-notification-message opened="">
+  <mock:shadow-root>
+    <div class="notification-message notification-message--variant-error" part="notification-message variant-error" tabindex="0">
+      <div class="notification-message__container" part="container">
+        <scale-icon-alert-warning accessibility-title="error" class="notification-message__icon-error"></scale-icon-alert-warning>
+        <header aria-label="Missing Title" class="notification-message__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-message>
+`;
+
+exports[`NotificationMessage handle variant prop 2`] = `
+<scale-notification-message opened="">
+  <mock:shadow-root>
+    <div class="notification-message notification-message--variant-warning" part="notification-message variant-warning" tabindex="0">
+      <div class="notification-message__container" part="container">
+        <scale-icon-alert-warning accessibility-title="error" class="notification-message__icon-error"></scale-icon-alert-warning>
+        <header aria-label="Missing Title" class="notification-message__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-message>
+`;
+
+exports[`NotificationMessage handle variant prop 3`] = `
+<scale-notification-message opened="">
+  <mock:shadow-root>
+    <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" tabindex="0">
+      <div class="notification-message__container" part="container">
+        <scale-icon-alert-information accessibility-title="information" class="notification-message__icon-information"></scale-icon-alert-information>
+        <header aria-label="Missing Title" class="notification-message__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-message>
+`;
+
+exports[`NotificationMessage handle variant prop 4`] = `
+<scale-notification-message opened="">
+  <mock:shadow-root>
+    <div class="notification-message notification-message--variant-success" part="notification-message variant-success" tabindex="0">
+      <div class="notification-message__container" part="container">
+        <scale-notification-message-svg accessibility-title="success" class="notification-message__icon-success"></scale-notification-message-svg>
+        <header aria-label="Missing Title" class="notification-message__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-message>
+`;
+
+exports[`NotificationMessage should match snapshot 1`] = `
+<scale-notification-message opened="">
+  <mock:shadow-root>
+    <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" tabindex="0">
+      <div class="notification-message__container" part="container">
+        <scale-icon-alert-information accessibility-title="information" class="notification-message__icon-information"></scale-icon-alert-information>
+        <header aria-label="Missing Title" class="notification-message__container-header" part="header">
+          <p>
+            <slot name="header">
+              Missing Title
+            </slot>
+          </p>
+        </header>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification-message>
+`;
