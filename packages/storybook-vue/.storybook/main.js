@@ -7,6 +7,7 @@ module.exports = {
     "./usage-addon/register.js",
     "./language-addon/register.js",
     "./sidebar-links-addon/register.js",
+    "@storybook/addon-a11y",
   ],
   stories: ["../stories/**/**/*.stories.mdx"]
 };
