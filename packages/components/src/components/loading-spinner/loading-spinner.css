@@ -125,7 +125,7 @@
   display: block;
   position: absolute;
   border-radius: 50%;
-  animation: rotation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: none;
 }
 
 .spinner--size-small .spinner__circle > div {

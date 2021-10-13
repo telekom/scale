@@ -6,6 +6,9 @@ describe('Loading-Spinner', () => {
         `http://host.docker.internal:3123/iframe.html?id=beta-components-loading-spinner--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
+      await page.evaluate(() => {
+          document.body.style.setProperty('animation', 'rotation 0s');
+      });
       const previewHtml = await page.$('body');
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     }
