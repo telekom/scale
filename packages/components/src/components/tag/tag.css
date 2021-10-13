@@ -92,7 +92,7 @@
   box-shadow: var(--box-shadow-button-dismissable-focus);
 }
 .tag--dismissable button:hover {
-  background: var(--background-button-dismissable-hover);
+  background: var(--scl-color-white);
 }
 .tag--dismissable button:focus scale-icon-action-close {
   top: -1px;
