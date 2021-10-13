@@ -190,14 +190,14 @@ export const FocusTemplate = (args, { argTypes }) => ({
 </scale-tooltip>
 ```
 
-### Left-Start
+### Right
 
 <Canvas withSource="none">
   <Story
-    name="Placement-Left-Start"
+    name="Placement-Right"
     args={{
       content: 'Tooltip',
-      placement: 'left-start',
+      placement: 'right',
     }}
   >
     {Template.bind({})}
@@ -205,19 +205,19 @@ export const FocusTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-tooltip content="Tooltip" placement="left-start">
+<scale-tooltip content="Tooltip" placement="right">
   <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
 
-### Left-End
+### Below
 
 <Canvas withSource="none">
   <Story
-    name="Placement-Left-End"
+    name="Placement-Below"
     args={{
       content: 'Tooltip',
-      placement: 'left-end',
+      placement: 'bottom',
     }}
   >
     {Template.bind({})}
@@ -225,27 +225,7 @@ export const FocusTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-tooltip content="Tooltip" placement="left-end">
-  <scale-button>Hover me</scale-button>
-</scale-tooltip>
-```
-
-## Disabled
-
-<Canvas withSource="none">
-  <Story
-    name="Disabled"
-    args={{
-      content: 'Tooltip',
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tooltip content="Tooltip" disabled="true">
+<scale-tooltip content="Tooltip" placement="bottom">
   <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
@@ -282,24 +262,30 @@ export const FocusTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip>
-  <a slot="content" href="https://github.com/telekom/scale"
-    >I'm a HTML-tooltip with a link</a
-  >
+  <p>
+    I'm a HTML-tooltip
+    <a slot="content" href="https://github.com/telekom/scale"> with a link</a>
+  </p>
   <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
 
-### Component Example
+## Disabled
 
 <Canvas withSource="none">
-  <Story name="Slot2" args={{}}>
-    {Slot2Template.bind({})}
+  <Story
+    name="Disabled"
+    args={{
+      content: 'Tooltip',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-tooltip>
-  <scale-rating-stars slot="content" rating="1"></scale-rating-stars>
+<scale-tooltip content="Tooltip" disabled="true">
   <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
