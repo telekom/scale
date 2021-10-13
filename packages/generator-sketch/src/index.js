@@ -579,9 +579,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     }
   }
 
-  var includes = fs
-    .readdirSync(`./includes`)
-    .filter((fn) => fn.startsWith(documentName + '.'));
+  var includes = fs.readdirSync(`./includes`);
   for (const includeFile of includes) {
     if (/\.sketch$/i.test(includeFile)) {
       var doc = await Sketch.fromFile(`./includes/${includeFile}`);
