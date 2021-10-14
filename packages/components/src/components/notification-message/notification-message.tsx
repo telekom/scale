@@ -93,11 +93,19 @@ export class NotificationMessage {
             />
           );
         case 'error':
-        case 'warning':
           return (
             <scale-icon-alert-warning
               class="notification-message__icon-error"
               accessibility-title="error"
+            />
+          );
+        case 'warning':
+          return (
+            <scale-icon-alert-information
+              class="notification-message__icon-information"
+              selected
+              color="#AE461C"
+              accessibility-title="information"
             />
           );
       }
