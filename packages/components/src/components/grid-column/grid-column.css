@@ -1,0 +1,341 @@
+.col--size-1 {
+  grid-column:  span 1 / span 1;
+}
+.col--size-2 {
+  grid-column: span 2 / span 2;
+}
+.col--size-3 {
+  grid-column: span 3 / span 3;
+}
+.col--size-4 {
+  grid-column: span 4 / span 4;
+}
+.col--size-5 {
+  grid-column: span 5 / span 5;
+}
+.col--size-6 {
+  grid-column: span 6 / span 6;
+}
+.col--size-7 {
+  grid-column: span 7 / span 7;
+}
+.col--size-8 {
+  grid-column: span 8 / span 8;
+}
+.col--size-9 {
+  grid-column: span 9 / span 9;
+}
+.col--size-10 {
+  grid-column: span 10 / span 10;
+}
+.col--size-11 {
+  grid-column: span 11 / span 11;
+}
+.col--size-12 {
+  grid-column: span 12 / span 12;
+}
+.col--size-13 {
+  grid-column: span 13 / span 13;
+}
+.col--size-14 {
+  grid-column: span 14 / span 14;
+}
+.col--size-15 {
+  grid-column: span 15 / span 15;
+}
+.col--size-16 {
+  grid-column: span 16 /span 16;
+}
+
+.col--horizontal-offset-1 {
+  grid-column-start: 1;
+}
+.col--horizontal-offset-2 {
+  grid-column-start: 2;
+}
+.col--horizontal-offset-3 {
+  grid-column-start: 3;
+}
+.col--horizontal-offset-4 {
+  grid-column-start: 4;
+}
+.col--horizontal-offset-5 {
+  grid-column-start: 5;
+}
+.col--horizontal-offset-6 {
+  grid-column-start: 6;
+}
+.col--horizontal-offset-7 {
+  grid-column-start: 7;
+}
+.col--horizontal-offset-8 {
+  grid-column-start: 8;
+}
+.col--horizontal-offset-9 {
+  grid-column-start: 9;
+}
+.col--horizontal-offset-10 {
+  grid-column-start: 10;
+}
+.col--horizontal-offset-11 {
+  grid-column-start: 11;
+}
+.col--horizontal-offset-12 {
+  grid-column-start: 12;
+}
+.col--horizontal-offset-13 {
+  grid-column-start: 13;
+}
+.col--horizontal-offset-14 {
+  grid-column-start: 14;
+}
+.col--horizontal-offset-15 {
+  grid-column-start: 15;
+}
+.col--horizontal-offset-16 {
+  grid-column-start: 16;
+}
+
+.col--vertical-offset-1 {
+  grid-row-start: 1;
+}
+.col--vertical-offset-2 {
+  grid-row-start: 2;
+}
+.col--vertical-offset-3 {
+  grid-row-start: 3;
+}
+.col--vertical-offset-4 {
+  grid-row-start: 4;
+}
+.col--vertical-offset-5 {
+  grid-row-start: 5;
+}
+.col--vertical-offset-6 {
+  grid-row-start: 6;
+}
+.col--vertical-offset-7 {
+  grid-row-start: 7;
+}
+.col--vertical-offset-8 {
+  grid-row-start: 8;
+}
+.col--vertical-offset-9 {
+  grid-row-start: 9;
+}
+.col--vertical-offset-10 {
+  grid-row-start: 10;
+}
+.col--vertical-offset-11 {
+  grid-row-start: 11;
+}
+.col--vertical-offset-12 {
+  grid-row-start: 12;
+}
+.col--vertical-offset-13 {
+  grid-row-start: 13;
+}
+.col--vertical-offset-14 {
+  grid-row-start: 14;
+}
+.col--vertical-offset-15 {
+  grid-row-start: 15;
+}
+.col--vertical-offset-16 {
+  grid-row-start: 16;
+}
+
+@media screen and (min-width:320px) and (max-width:639px) {
+  .sm\:size-1 {
+    grid-column: span 1 / span 1;
+  }
+	.sm\:size-2 {
+    grid-column: span 2 / span 2;
+  }
+	.sm\:size-3 {
+    grid-column: span 3 / span 3;
+  }
+	.sm\:size-4 {
+    grid-column: span 4 / span 4;
+  }
+}
+
+@media screen and (min-width:640px) and (max-width:1039px) {
+  .md\:size-1 {
+    grid-column: span 1 / span 1;
+  }
+	.md\:size-2 {
+    grid-column: span 2 / span 2;
+  }
+	.md\:size-3 {
+    grid-column: span 3 / span 3;
+  }
+	.md\:size-4 {
+    grid-column: span 4 / span 4;
+  }
+	.md\:size-5 {
+    grid-column: span 5 / span 5;
+  }
+	.md\:size-6 {
+    grid-column: span 6 / span 6;
+  }
+	.md\:size-7 {
+    grid-column: span 7 / span 7;
+  }
+	.md\:size-8 {
+    grid-column: span 8 / span 8;
+  }
+}
+
+@media screen and (min-width:1040px) and (max-width:1295px) {
+  .lg\:size-1 {
+    grid-column: span 1 / span 1;
+  }
+	.lg\:size-2 {
+    grid-column: span 2 / span 2;
+  }
+	.lg\:size-3 {
+    grid-column: span 3 / span 3;
+  }
+	.lg\:size-4 {
+    grid-column: span 4 / span 4;
+  }
+	.lg\:size-5 {
+    grid-column: span 5 / span 5;
+  }
+	.lg\:size-6 {
+    grid-column: span 6 / span 6;
+  }
+	.lg\:size-7 {
+    grid-column: span 7 / span 7;
+  }
+	.lg\:size-8 {
+    grid-column: span 8 / span 8;
+  }
+	.lg\:size-9 {
+    grid-column: span 9 / span 9;
+  }
+	.lg\:size-10 {
+    grid-column: span 10 / span 10;
+  }
+	.lg\:size-11 {
+    grid-column: span 11 / span 11;
+  }
+	.lg\:size-12 {
+    grid-column: span 12 / span 12;
+  }
+	.lg\:size-13 {
+    grid-column: span 13 / span 13;
+  }
+	.lg\:size-14 {
+    grid-column: span 14 / span 14;
+  }
+	.lg\:size-15 {
+    grid-column: span 15 / span 15;
+  }
+	.lg\:size-16 {
+    grid-column: span 16 / span 16;
+  }
+}
+
+@media screen and (min-width:1296px) and (max-width:1551px) {
+  .xl\:size-1 {
+    grid-column: span 1 / span 1;
+  }
+	.xl\:size-2 {
+    grid-column: span 2 / span 2;
+  }
+	.xl\:size-3 {
+    grid-column: span 3 / span 3;
+  }
+	.xl\:size-4 {
+    grid-column: span 4 / span 4;
+  }
+	.xl\:size-5 {
+    grid-column: span 5 / span 5;
+  }
+	.xl\:size-6 {
+    grid-column: span 6 / span 6;
+  }
+	.xl\:size-7 {
+    grid-column: span 7 / span 7;
+  }
+	.xl\:size-8 {
+    grid-column: span 8 / span 8;
+  }
+	.xl\:size-9 {
+    grid-column: span 9 / span 9;
+  }
+	.xl\:size-10 {
+    grid-column: span 10 / span 10;
+  }
+	.xl\:size-11 {
+    grid-column: span 11 / span 11;
+  }
+	.xl\:size-12 {
+    grid-column: span 12 / span 12;
+  }
+	.xl\:size-13 {
+    grid-column: span 13 / span 13;
+  }
+	.xl\:size-14 {
+    grid-column: span 14 / span 14;
+  }
+	.xl\:size-15 {
+    grid-column: span 15 / span 15;
+  }
+	.xl\:size-16 {
+    grid-column: span 16 / span 16;
+  }
+}
+
+@media screen and (min-width:1552px) {
+  .xxl\:size-1 {
+    grid-column: span 1 / span 1;
+  }
+	.xxl\:size-2 {
+    grid-column: span 2 / span 2;
+  }
+	.xxl\:size-3 {
+    grid-column: span 3 / span 3;
+  }
+	.xxl\:size-4 {
+    grid-column: span 4 / span 4;
+  }
+	.xxl\:size-5 {
+    grid-column: span 5 / span 5;
+  }
+	.xxl\:size-6 {
+    grid-column: span 6 / span 6;
+  }
+	.xxl\:size-7 {
+    grid-column: span 7 / span 7;
+  }
+	.xxl\:size-8 {
+    grid-column: span 8 / span 8;
+  }
+	.xxl\:size-9 {
+    grid-column: span 9 / span 9;
+  }
+	.xxl\:size-10 {
+    grid-column: span 10 / span 10;
+  }
+	.xxl\:size-11 {
+    grid-column: span 11 / span 11;
+  }
+	.xxl\:size-12 {
+    grid-column: span 12 / span 12;
+  }
+	.xxl\:size-13 {
+    grid-column: span 13 / span 13;
+  }
+	.xxl\:size-14 {
+    grid-column: span 14 / span 14;
+  }
+	.xxl\:size-15 {
+    grid-column: span 15 / span 15;
+  }
+	.xxl\:size-16 {
+    grid-column: span 16 / span 16;
+  }
+}
