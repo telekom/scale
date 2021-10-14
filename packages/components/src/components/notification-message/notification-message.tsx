@@ -103,7 +103,6 @@ export class NotificationMessage {
           return (
             <scale-icon-alert-information
               class="notification-message__icon-information"
-              selected
               color="#AE461C"
               accessibility-title="information"
             />
