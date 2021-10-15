@@ -15,6 +15,7 @@
 | `isActive`          | `is-active`            | (optional) if this item is active       | `boolean` | `undefined`             |
 | `isMegaMenuVisible` | `is-mega-menu-visible` | (optional) if this mega-menu is visible | `boolean` | `false`                 |
 | `name`              | `name`                 | (optional) name value                   | `string`  | `undefined`             |
+| `popup`             | `popup`                |                                         | `boolean` | `undefined`             |
 
 
 ## Dependencies
