@@ -26,7 +26,6 @@ import {
   CELL_DEFAULTS,
 } from './data-grid-cells';
 import classNames from 'classnames';
-import statusNote from '../../utils/status-note';
 import { emitEvent } from '../../utils/utils';
 
 // [ ] add options to show nested content without the html column
@@ -167,9 +166,6 @@ export class DataGrid {
     this.onDividerUp = this.onDividerUp.bind(this);
     this.applyResponsiveClasses = this.applyResponsiveClasses.bind(this);
     this.updateColumnStretching = this.updateColumnStretching.bind(this);
-  }
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
   }
   componentWillLoad() {
     this.fieldsHandler();
