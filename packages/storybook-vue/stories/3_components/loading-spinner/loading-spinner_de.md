@@ -3,17 +3,17 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Ein Loading-Spinner signalisiert, dass das System einen Prozess ausführt. Er gibt Nutzer\*innen die Sicherheit, dass das System ihre Anfrage verstanden hat und verarbeitet.
+Ein Loading Spinner signalisiert, dass das System einen Prozess ausführt. Er gibt Nutzer\*innen die Sicherheit, dass das System ihre Anfrage verstanden hat und verarbeitet.
 
 ## Allgemein
 
-Ein Loading-Spinner ist ein kreisförmiges Symbol, das sich in Dauerschleife dreht. Es liefert Nutzer\*innen keinen Hinweis über die voraussichtliche Wartezeit.
+Ein Loading Spinner ist ein kreisförmiges Symbol, das sich in Dauerschleife dreht. Es liefert Nutzer\*innen keinen Hinweis über die voraussichtliche Wartezeit.
 
-### Verwende einen Loading-Spinner, wenn
+### Verwende einen Loading Spinner, wenn
 
 - eine Wartezeit entsteht, die voraussichtlich 2 bis 10 Sekunden beträgt.
 
-### Verwende Loading-Spinner besser nicht, wenn
+### Verwende Loading Spinner besser nicht, wenn
 
 - die Wartezeit kürzer als 2 Sekunden ist und wenn
 - die Wartezeit länger als 10 Sekunden ist. In diesem Fall sollten Nutzer\*innen eine Information erhalten, wie lange die Wartezeit voraussichtlich sein wird (siehe " Progress-Bar").
