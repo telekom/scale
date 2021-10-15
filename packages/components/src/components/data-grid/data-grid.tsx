@@ -848,7 +848,7 @@ export class DataGrid {
         style={{ height: this.height || 'auto' }}
         onScroll={() => this.onTableScroll()}
       >
-        <table class={`${name}__table`} role="table">
+        <table class={`${name}__table`}>
           {this.renderTableHead()}
           {this.renderTableBody()}
         </table>
@@ -897,7 +897,6 @@ export class DataGrid {
               <td
                 class={`tbody__cell`}
                 style={{ width: 'auto' }}
-                role="cell"
                 data-columnindex={columnIndex}
               >
                 {cell.render({
@@ -919,9 +918,8 @@ export class DataGrid {
       <thead
         ref={(el) => (this.elTableHead = el)}
         class={`thead ${this.hideHeader ? 'sr-only' : ''}`}
-        role="rowgroup"
       >
-        <tr class={`thead__row`} role="row">
+        <tr class={`thead__row`}>
           {this.numbered && this.renderTableHeadNumberedCell()}
           {this.selectable && this.renderTableHeadSelectableCell()}
           {this.fields.map(
@@ -960,8 +958,6 @@ export class DataGrid {
                   width: `calc(${width}px + ${stretchWidth}px)`,
                   textAlign,
                 },
-                role: 'columnheader',
-                'aria-colindex': columnIndex + 1,
                 'data-type': type,
               };
               if (sortable) {
@@ -969,10 +965,10 @@ export class DataGrid {
               }
               return (
                 <th
+                  title="Activate to sort column"
                   {...props}
                   {...(sortable
                     ? {
-                        'aria-label': 'Activate to sort column',
                         onKeyDown: (event: KeyboardEvent) => {
                           if (['Enter', ' '].includes(event.key)) {
                             this.toggleTableSorting(
@@ -1001,6 +997,7 @@ export class DataGrid {
                       {label}
                     </span>
                   </div>
+
                   {resizable && (
                     <div
                       class={`thead__divider`}
@@ -1010,6 +1007,7 @@ export class DataGrid {
                       data-max={maxWidth}
                       onMouseDown={(e) => this.onDividerDown(e)}
                       onTouchStart={(e) => this.onDividerDown(e)}
+                      aria-hidden="true"
                     >
                       <div class={`thead__divider-line`}></div>
                     </div>
@@ -1029,7 +1027,7 @@ export class DataGrid {
         class={`thead__cell  thead__cell--numbered`}
         style={{ width: this.numberColumnWidth + 'px' }}
       >
-        <p class="scl-body">#</p>
+        <span class="scl-body">#</span>
       </th>
     );
   }
@@ -1043,12 +1041,16 @@ export class DataGrid {
       style.paddingLeft = '0px';
     }
     return (
-      <th class={`thead__cell thead__cell--selection`} style={style}>
+      <th
+        class={`thead__cell thead__cell--selection`}
+        style={style}
+        title="Select"
+      >
         <scale-checkbox
           ref={(el) => (this.elToggleSelectAll = el)}
           onScaleChange={() => this.toggleSelectAll()}
-          label="Toggle select all"
           hideLabel={true}
+          aria-label="Select"
         ></scale-checkbox>
       </th>
     );
@@ -1056,7 +1058,7 @@ export class DataGrid {
 
   renderTableBody() {
     return (
-      <tbody class={`tbody`} role="rowgroup">
+      <tbody class={`tbody`}>
         {(() => {
           const rows = [];
           // Pagination functionality
@@ -1068,7 +1070,7 @@ export class DataGrid {
             const rowNestedContent = [];
             let isNestedExpanded = false;
             rows.push(
-              <tr class={`tbody__row`} role="row" aria-rowindex={rowIndex + 1}>
+              <tr class={`tbody__row`}>
                 {this.renderMobileTitle(rowData)}
                 {this.numbered && this.renderTableBodyNumberedCell(rowIndex)}
                 {this.selectable &&
@@ -1174,7 +1176,11 @@ export class DataGrid {
       style.paddingLeft = '0px';
     }
     return (
-      <td class={`tbody__cell tbody__cell--selection`} style={style}>
+      <td
+        title={this.rows[rowIndex][0]}
+        class={`tbody__cell tbody__cell--selection`}
+        style={style}
+      >
         <scale-checkbox
           checked={this.rows[rowIndex].selected}
           onScaleChange={(e) => this.toggleRowSelect(e, rowIndex)}
@@ -1200,8 +1206,6 @@ export class DataGrid {
           mobileTitle ? ` tbody__cell--used-as-mobile-title` : ``
         }`}
         style={{ width: `calc(${width}px + ${stretchWidth}px)` }}
-        role="cell"
-        aria-colindex={columnIndex + 1}
       >
         <div class={`tbody__mobile-label`}>{label}</div>
         {cell.render({
