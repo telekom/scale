@@ -17,76 +17,37 @@ import ScaleNotificationMessage from './ScaleNotificationMessage.vue';
       control: {
         type: 'select',
       },
-    },
-    hasClose: {
-      defaultValue: false,
-      options: [true, false],
-      control: {
-        type: 'select',
-      },
-    },
-    opened: {
-      options: [true, false],
-      control: {
-        type: 'select',
-      },
-    },
-    timout: {
-      defaultValue: false,
-      options: [false, true, Number],
-      control: {
-        type: 'select',
-      },
-    },
+    }
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleNotificationMessage },
   props: {
     ...ScaleNotificationMessage.props,
+    heading: String,
+    text: String
   },
   template: `
     <scale-notification-message   
-     :variant="variant"
-     :hasClose="hasClose"
-     :timeout="timeout"
-     :opened="opened"
+      :variant="variant"
+      :dismissible="dismissible"
+      :timeout="timeout"
+      :opened="opened"
     >
+      {{ heading }} 
+      <p v-if="text">{{ text }}</p>
     </scale-notification-message>
   `,
 });
 
-export const TemplateSlot = (args, { argTypes }) => ({
-  components: { ScaleNotificationMessage },
-  props: {
-    ...ScaleNotificationMessage.props,
-  },
-  template: `
-    <scale-notification-message   
-     :variant="variant"
-     :hasClose="hasClose"
-     :timeout="timeout"
-     :opened="opened"
-    >
-    <template v-slot:header>
-     <p slot="header">This is my title</p>
-    </template>
-    <template v-slot:text>
-     <p slot="text">This is my message to you</p>
-    </template>
-  `,
-});
-
 ## Standard
-
-### All default values
 
 <Canvas withSource="none">
   <Story
     name="Standard"
     args={{
       opened: true,
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -96,25 +57,21 @@ export const TemplateSlot = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-notification-message opened> </scale-notification-message>
+<scale-notification-message opened>Notification text goes here</scale-notification-message>
 ```
 
 ## Scoped CSS variables
 
 ```css
 :host {
-  /* NotificationMessage styling */
-  --notification-message-border-radius: 8px;
-  --notification-message-border: 1px solid var(--scl-color-white);
-  --notification-message-width: 100%;
-  --notification-message-font-header: var(--scl-fonts-family-sans);
-  --notification-message-font-size-header: 16px;
-  --notification-message-font-text: var(--scl-font-weight-regular);
-  --notification-message-font-size-text: 16px;
-  --variant-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
-  --variant-warning: hsla(33.5, 100%, 75.1%, 0.3);
-  --variant-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
-  --variant-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
+  --width: 100%;
+  --radius: var(--scl-radius-8);
+  --border: 1px solid var(--scl-color-white);
+
+  --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
+  --background-warning: hsla(33.5, 100%, 75.1%, 0.3);
+  --background-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
+  --background-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
 }
 ```
 
@@ -128,6 +85,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'warning',
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -136,6 +94,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-message variant="warning" opened>
+  Notification text goes here
 </scale-notification-message>
 ```
 
@@ -147,6 +106,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'error',
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -155,6 +115,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-message variant="error" opened>
+  Notification text goes here
 </scale-notification-message>
 ```
 
@@ -166,6 +127,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'success',
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -174,6 +136,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-message variant="success" opened>
+  Notification text goes here
 </scale-notification-message>
 ```
 
@@ -185,6 +148,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'informational',
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -193,17 +157,19 @@ export const TemplateSlot = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-message variant="informational" opened>
+  Notification text goes here
 </scale-notification-message>
 ```
 
-## Close Button
+## Dismissible
 
 <Canvas withSource="none">
   <Story
-    name="Close Button"
+    name="Dismissible"
     args={{
       opened: true,
-      hasClose: true,
+      dismissible: true,
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -211,12 +177,12 @@ export const TemplateSlot = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-message has-close opened> </scale-notification-message>
+<scale-notification-message dismissible opened>
+  Notification text goes here
+</scale-notification-message>
 ```
 
 ## Timeout
-
-### Set to close in 10 seconds. Default - when true: 3 seconds
 
 <Canvas withSource="none">
   <Story
@@ -224,6 +190,7 @@ export const TemplateSlot = (args, { argTypes }) => ({
     args={{
       opened: true,
       timeout: 10000,
+      heading: 'Notification text goes here'
     }}
   >
     {Template.bind({})}
@@ -232,26 +199,28 @@ export const TemplateSlot = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-message timeout="10000" opened>
+  Notification text goes here
 </scale-notification-message>
 ```
 
-## Titel & Message
+## With Text
 
 <Canvas withSource="none">
   <Story
-    name="Titel-Message"
+    name="With Text"
     args={{
       opened: true,
-      hasClose: true,
+      heading: 'Notification text goes here',
+      text: 'Here you can add some more text'
     }}
   >
-    {TemplateSlot.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-notification-message opened>
-  <p slot="header">This is my title</p>
-  <p slot="text">This is my message to you.</p>
+  Notification text goes here.
+  <p slot="text">Here you can add some more text.</p>
 </scale-notification-message>
 ```

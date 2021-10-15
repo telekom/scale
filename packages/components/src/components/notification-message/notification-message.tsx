@@ -4,11 +4,12 @@ import {
   Host,
   Prop,
   Element,
-  State,
   Method,
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+
+const TIMEOUT = 3000
 
 @Component({
   tag: 'scale-notification-message',
@@ -16,52 +17,24 @@ import statusNote from '../../utils/status-note';
   shadow: true,
 })
 export class NotificationMessage {
-  // Color to variant rename
-  @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
-    'informational';
-  @Prop({ reflect: true }) hasClose?: boolean = false;
-  @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = false;
-  /** (optional) aria-label attribute */
-  @Prop() ariaLabel: string;
-  /** (optional) aria-description attribute */
-  @Prop() ariaDescription: string;
-  @State() content: boolean = true;
   @Element() hostElement: HTMLElement;
 
-  defaultTimeout = 3000;
-  title = 'Missing Title';
+  @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
+    'informational';
+  @Prop() dismissible?: boolean = false;
+  @Prop({ reflect: true }) opened: boolean;
+  @Prop() timeout?: boolean | number = false;
+
+  hasSlotText: boolean;
 
   componentDidLoad() {
-    this.content = !!this.hostElement.querySelector("p[slot='text']");
-    this.handleSlotAccessibility();
+    this.hasSlotText = !!this.hostElement.querySelector("p[slot='text']");
   }
 
-  handleSlotAccessibility() {
-    let headerText = '';
-    let mainText = '';
-
-    try {
-      headerText = this.hostElement.querySelector("p[slot='header']").innerHTML;
-    } catch (err) {}
-    try {
-      mainText = this.hostElement.querySelector("p[slot='text']").innerHTML;
-    } catch (err) {}
-
-    if (headerText !== '') {
-      this.hostElement.shadowRoot
-        .querySelector('.notification-message__container-header')
-        .setAttribute('aria-label', headerText);
-    } else {
-      this.hostElement.shadowRoot
-        .querySelector('.notification-message__container-header')
-        .setAttribute('aria-label', this.title);
-    }
-
-    if (mainText !== '') {
-      this.hostElement.shadowRoot
-        .querySelector('.notification-message__content')
-        .setAttribute('aria-description', mainText);
+  componentDidRender() {
+    if (this.timeout) {
+      const timeout = this.timeout === true ? TIMEOUT : this.timeout; 
+      setTimeout(this.close, timeout);
     }
   }
 
@@ -69,7 +42,6 @@ export class NotificationMessage {
     statusNote({ source: this.hostElement, type: 'warn' });
   }
 
-  /** Alert method: open() */
   @Method()
   async open() {
     this.opened = true;
@@ -116,21 +88,7 @@ export class NotificationMessage {
     this.opened = false;
   };
 
-  onCloseAlertWithTimeout = () => {
-    if (this.timeout !== false) {
-      if (typeof this.timeout === 'string' && !isNaN(this.timeout)) {
-        setTimeout(this.close, this.timeout);
-      } else {
-        setTimeout(this.close, this.defaultTimeout);
-      }
-    } else {
-      return null;
-    }
-  };
-
   render() {
-    this.onCloseAlertWithTimeout();
-
     if (!this.opened) {
       return null;
     }
@@ -140,20 +98,17 @@ export class NotificationMessage {
         <div
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
-          aria-label={this.ariaLabel}
           tabindex="0"
         >
           <div part="container" class="notification-message__container">
             {this.handleIcons()}
-            <header
-              part="header"
-              class="notification-message__container-header"
+            <div
+              part="heading"
+              class="notification-message__heading"
             >
-              <p>
-                <slot name="header">{this.title}</slot>
-              </p>
+              <slot>&emsp;</slot>
 
-              {this.hasClose && (
+              {this.dismissible && (
                 <scale-icon-action-circle-close
                   tabindex="0"
                   class="notification-message__icon-close"
@@ -168,13 +123,13 @@ export class NotificationMessage {
                   accessibility-title="close"
                 />
               )}
-            </header>
+            </div>
+            {this.hasSlotText && (
+              <div part="text" class="notification-message__text">
+                <slot name="text" />
+              </div>
+            )}
           </div>
-          {this.content && (
-            <p part="content" class="notification-message__content">
-              <slot name="text" />
-            </p>
-          )}
         </div>
       </Host>
     );

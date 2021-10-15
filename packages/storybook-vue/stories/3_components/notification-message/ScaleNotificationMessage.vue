@@ -1,14 +1,9 @@
 <template>
-  <scale-notification-message
-    :variant="variant"
-    :has-close="hasClose"
-    :timeout="timeout"
-    :opened="opened"
-  >
-    <slot name="header"></slot>
-    <slot name="text"></slot>
-  </scale-notification-message>
+  <div>
+    <slot name="text" />
+  </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -16,7 +11,7 @@ export default {
       type: 'error' | 'warning' | 'success' | 'informational',
       default: 'informational',
     },
-    hasClose: { type: Boolean, default: false },
+    dismissible: { type: Boolean, default: false },
     opened: { type: Boolean },
     timeout: { type: Boolean | Number, default: false },
   },
