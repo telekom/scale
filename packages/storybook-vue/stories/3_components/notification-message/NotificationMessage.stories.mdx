@@ -40,6 +40,18 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Notification Message</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
 ## Standard
 
 <Canvas withSource="none">
@@ -189,7 +201,7 @@ export const Template = (args, { argTypes }) => ({
     name="Timeout"
     args={{
       opened: true,
-      timeout: 10000,
+      timeout: 4000,
       heading: 'Notification text goes here'
     }}
   >
@@ -198,7 +210,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-message timeout="10000" opened>
+<scale-notification-message timeout="4000" opened>
   Notification text goes here
 </scale-notification-message>
 ```
