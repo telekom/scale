@@ -60,19 +60,19 @@ export class MenuFlyoutList {
 
   /** Event triggered when menu list opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<{
-    list: HTMLScaleMenuFlyoutListElement;
+    list: HTMLElement;
   }>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleOpen' }) scaleOpenLegacy: EventEmitter<{
-    list: HTMLScaleMenuFlyoutListElement;
+    list: HTMLElement;
   }>;
   /** Event triggered when menu list closed */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<{
-    list: HTMLScaleMenuFlyoutListElement;
+    list: HTMLElement;
   }>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClose' }) scaleCloseLegacy: EventEmitter<{
-    list: HTMLScaleMenuFlyoutListElement;
+    list: HTMLElement;
   }>;
 
   /** Keep track of base element */
