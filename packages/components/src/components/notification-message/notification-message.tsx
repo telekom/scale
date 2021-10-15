@@ -1,15 +1,8 @@
-import {
-  Component,
-  h,
-  Host,
-  Prop,
-  Element,
-  Method,
-} from '@stencil/core';
+import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
-const TIMEOUT = 3000
+const TIMEOUT = 3000;
 
 @Component({
   tag: 'scale-notification-message',
@@ -33,7 +26,7 @@ export class NotificationMessage {
 
   componentDidRender() {
     if (this.timeout) {
-      const timeout = this.timeout === true ? TIMEOUT : this.timeout; 
+      const timeout = this.timeout === true ? TIMEOUT : this.timeout;
       setTimeout(this.close, timeout);
     }
   }
@@ -102,10 +95,7 @@ export class NotificationMessage {
         >
           <div part="container" class="notification-message__container">
             {this.handleIcons()}
-            <div
-              part="heading"
-              class="notification-message__heading"
-            >
+            <div part="heading" class="notification-message__heading">
               <slot>&emsp;</slot>
 
               {this.dismissible && (
