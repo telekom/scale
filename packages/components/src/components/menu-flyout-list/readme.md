@@ -19,12 +19,12 @@
 
 ## Events
 
-| Event         | Description                                                                                        | Type                                                     |
-| ------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `scale-close` | Event triggered when menu list closed                                                              | `CustomEvent<{ list: HTMLScaleMenuFlyoutListElement; }>` |
-| `scale-open`  | Event triggered when menu list opened                                                              | `CustomEvent<{ list: HTMLScaleMenuFlyoutListElement; }>` |
-| `scaleClose`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLScaleMenuFlyoutListElement; }>` |
-| `scaleOpen`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLScaleMenuFlyoutListElement; }>` |
+| Event         | Description                                                                                        | Type                                  |
+| ------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-close` | Event triggered when menu list closed                                                              | `CustomEvent<{ list: HTMLElement; }>` |
+| `scale-open`  | Event triggered when menu list opened                                                              | `CustomEvent<{ list: HTMLElement; }>` |
+| `scaleClose`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLElement; }>` |
+| `scaleOpen`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLElement; }>` |
 
 
 ## Methods
