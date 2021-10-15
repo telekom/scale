@@ -50,7 +50,7 @@ describe('NotificationMessage', () => {
   it('should emit onClick and set opened to false', async () => {
     const page = await newSpecPage({
       components: [NotificationMessage],
-      html: `<scale-notification-message opened="true" has-close="true">Label</scale-notification-message>`,
+      html: `<scale-notification-message opened="true" dismissible="true">Label</scale-notification-message>`,
     });
     const icon = page.root.shadowRoot.querySelector(
       '.notification-message__icon-close'
@@ -59,19 +59,5 @@ describe('NotificationMessage', () => {
     icon.dispatchEvent(new Event('click'));
     await page.waitForChanges();
     expect(page.rootInstance.opened).toBe(false);
-  });
-
-  it('should set timeout of the FIRST argument on function onCloseAlertWithTimeout()', async () => {
-    const page = await newSpecPage({
-      components: [NotificationMessage],
-      html: `<scale-notification-message opened="true" >Label</scale-notification-message>`,
-    });
-    page.rootInstance.defaultTimeout = 1;
-    page.rootInstance.timeout = true;
-    await page.waitForChanges();
-    expect(page.rootInstance.defaultTimeout).toBe(1);
-    setTimeout(() => {
-      expect(page.root.opened).toEqual(false);
-    }, 1);
   });
 });
