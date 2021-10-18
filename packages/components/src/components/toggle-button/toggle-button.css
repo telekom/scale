@@ -152,32 +152,32 @@
   background: var(--background-primary-disabled);
 }
 
-.toggle-button--selected.toggle-button--light {
+.toggle-button--selected.toggle-button--color {
   color: var(--color-selected);
   background: var(--background-selected-light);
 }
 
-.toggle-button--selected:not(.button--disabled).toggle-button--light:hover {
+.toggle-button--selected:not(.button--disabled).toggle-button--color:hover {
   color: var(--color-selected);
   background: var(--background-selected-hover-light);
 }
 
-.toggle-button--selected:not(.button--disabled).toggle-button--light:active {
+.toggle-button--selected:not(.button--disabled).toggle-button--color:active {
   color: var(--color-selected);
   background: var(--background-selected-active-light);
 }
 
-.toggle-button--selected.toggle-button--dark {
+.toggle-button--selected.toggle-button--monochrome {
   color: var(--color-selected);
   background: var(--background-selected-dark);
 }
 
-.toggle-button--selected:not(.button--disabled).toggle-button--dark:hover {
+.toggle-button--selected:not(.button--disabled).toggle-button--monochrome:hover {
   color: var(--color-selected);
   background: var(--background-selected-hover-dark);
 }
 
-.toggle-button--selected:not(.button--disabled).toggle-button--dark:active {
+.toggle-button--selected:not(.button--disabled).toggle-button--monochrome:active {
   color: var(--color-selected);
   background: var(--background-selected-active-dark);
 }

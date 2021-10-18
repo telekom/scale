@@ -11,7 +11,7 @@
 | ---------------------- | ------------------------ | ------------------------------------------------------------ | ----------------------------------------- | ---------------------------------------------------- |
 | `ariaLabelTranslation` | `aria-label-translation` | (optional) aria-label attribute needed for icon-only buttons | `string`                                  | ``toggle button group with $slottedButtons buttons`` |
 | `background`           | `background`             | (optional) Button Group background                           | `"grey" \| "white"`                       | `'white'`                                            |
-| `colorScheme`          | `color-scheme`           | (optional) background color scheme of a selected button      | `"dark" \| "light"`                       | `'light'`                                            |
+| `colorScheme`          | `color-scheme`           | (optional) background color scheme of a selected button      | `"color" \| "monochrome"`                 | `'color'`                                            |
 | `disabled`             | `disabled`               | (optional) If `true`, the button is disabled                 | `boolean`                                 | `false`                                              |
 | `fullWidth`            | `full-width`             | (optional) 100% width                                        | `boolean`                                 | `false`                                              |
 | `hideBorder`           | `hide-border`            | (optional) If `true`, the group has a border                 | `boolean`                                 | `false`                                              |

@@ -42,7 +42,7 @@ export class ToggleButton {
   /** (optional) Button background */
   @Prop() background?: 'grey' | 'white' = 'white';
   /** (optional) background color scheme of a selected button */
-  @Prop() colorScheme?: 'light' | 'dark' = 'light';
+  @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */

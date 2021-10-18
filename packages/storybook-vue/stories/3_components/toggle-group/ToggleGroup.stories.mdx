@@ -18,7 +18,7 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
       control: { type: "text", },
     },
     colorScheme: {
-      control: { type: 'select', options: ['light', 'dark'] },
+      control: { type: 'select', options: ['color', 'monochrome'] },
     },
   }}
 />
@@ -198,13 +198,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Dark Color Scheme
+## Monochrome Color Scheme
 
 <Canvas withSource="none">
   <Story
-    name="Dark Color Scheme"
+    name="Monochrome Color Scheme"
     args={{
-      colorScheme: 'dark'
+      colorScheme: 'monochrome'
     }}
   >
     {Template.bind({})}
@@ -212,20 +212,20 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group color-scheme="dark">
+<scale-toggle-group color-scheme="monochrome">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
-## Dark Color Scheme Grey Background
+## Monochrome Color Scheme Grey Background
 
 <Canvas withSource="none">
   <Story
-    name="Dark Color Scheme Grey Background"
+    name="Monochrome Color Scheme Grey Background"
     args={{
-      colorScheme: 'dark',
+      colorScheme: 'monochrome',
       background: 'grey'
     }}
   >
@@ -234,7 +234,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group color-scheme="dark" background="grey">
+<scale-toggle-group color-scheme="monochrome" background="grey">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>

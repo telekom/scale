@@ -29,7 +29,7 @@ describe('Toggle Group', () => {
     it('size small, multi false', async () => {
       page = await newSpecPage({
         components: [ToggleGroup],
-        html: `<scale-toggle-group size="small" multi="false">
+        html: `<scale-toggle-group size="small" single-select="true">
 		   <scale-toggle-button>Click Me!</scale-toggle-button>
 		   <scale-toggle-button>Click Me!</scale-toggle-button>
 		   <scale-toggle-button selected>Click Me!</scale-toggle-button>
@@ -74,7 +74,7 @@ describe('Toggle Group', () => {
     it('state changes with event listened to (multi)', async () => {
       page = await newSpecPage({
         components: [ToggleGroup],
-        html: `<scale-toggle-group multi>
+        html: `<scale-toggle-group single-select="false">
           <scale-toggle-button toggle-button-id="toggle-button-1">Click Me!</scale-toggle-button>
           <scale-toggle-button toggle-button-id="toggle-button-2">Click Me!</scale-toggle-button>
           <scale-toggle-button toggle-button-id="toggle-button-3" selected>Click Me!</scale-toggle-button>
@@ -104,7 +104,7 @@ describe('Toggle Group', () => {
         { id: 'toggle-button-3', selected: true },
       ]);
     });
-    it('state changes with event listened to (non-multi)', async () => {
+    it('state changes with event listened to (single-select)', async () => {
       page = await newSpecPage({
         components: [ToggleGroup],
         html: `<scale-toggle-group single-select="true">

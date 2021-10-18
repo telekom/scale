@@ -58,7 +58,7 @@ export class ToggleGroup {
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
   /** (optional) background color scheme of a selected button */
-  @Prop() colorScheme?: 'light' | 'dark' = 'light';
+  @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */

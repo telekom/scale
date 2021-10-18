@@ -28,7 +28,7 @@ export default {
     singleSelect: { type: Boolean, default: false },
     ariaLabel: { type: String },
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
-    colorScheme: { type: String, default: 'light' },
+    colorScheme: { type: String, default: 'color' },
     styles: { type: String },
   },
   methods: {
