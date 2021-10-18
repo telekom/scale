@@ -5,8 +5,8 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
   title="Beta Components/Toggle Group"
   component={ScaleToggleGroup}
   argTypes={{
-    variant: {
-      control: { type: 'select', options: ['grey-background', 'white-background'] },
+    background: {
+      control: { type: 'select', options: ['white', 'grey'] },
     },
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
@@ -33,7 +33,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-toggle-group
       :size="size"
-      :variant="variant"
+      :background="background"
       :full-width="fullWidth"
       :disabled="disabled"
       :hide-border="hideBorder"
@@ -59,7 +59,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   template: `
     <scale-toggle-group
       :size="size"
-      :variant="variant"
+      :background="background"
       :full-width="fullWidth"
       :disabled="disabled"
       :hide-border="hideBorder"
@@ -99,7 +99,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   template: `
     <scale-toggle-group
       :size="size"
-      :variant="variant"
+      :background="background"
       :full-width="fullWidth"
       :disabled="disabled"
       :hide-border="hideBorder"
@@ -156,13 +156,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## White Background
+## Grey Background
 
 <Canvas withSource="none">
   <Story
-    name="White Background"
+    name="Grey Background"
     args={{
-		  variant: 'whiteBackground'
+		  background: 'grey'
 	}}
   >
     {Template.bind({})}
@@ -170,7 +170,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group variant='white-background'>
+<scale-toggle-group background='grey'>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -219,14 +219,14 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Dark Color Scheme White Background
+## Dark Color Scheme Grey Background
 
 <Canvas withSource="none">
   <Story
-    name="Dark Color Scheme White Background"
+    name="Dark Color Scheme Grey Background"
     args={{
       colorScheme: 'dark',
-      variant: 'white-background'
+      background: 'grey'
     }}
   >
     {Template.bind({})}
@@ -234,7 +234,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group color-scheme="dark" variant="white-background">
+<scale-toggle-group color-scheme="dark" background="grey">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -262,14 +262,14 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Disabled White Background
+## Disabled Grey Background
 
 <Canvas withSource="none">
   <Story
-    name="Disabled White Background"
+    name="Disabled Grey Background"
     args={{
 		  disabled: true,
-		  variant: 'whiteBackground'
+		  background: 'grey'
 	}}
   >
     {Template.bind({})}
@@ -277,7 +277,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group variant='white-background' disabled>
+<scale-toggle-group background='grey' disabled>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -364,29 +364,6 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group hide-border>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Disabled, White Background, Regular
-
-<Canvas withSource="none">
-  <Story
-    name="Disabled, White Background, Regular"
-    args={{
-		  disabled: true,
-		  variant: 'whiteBackground',
-		  size: 'regular'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group disabled variant="white-background" size="regular">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -538,15 +515,14 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Icon Before Small White-Background
+## Icon Before Small
 
 <Canvas withSource="none">
   <Story
-    name="Icon Before Small White-Background"
+    name="Icon Before Small"
     args={{
       iconBefore: true,
       size: 'small',
-      variant: 'whiteBackground',
     }}
   >
     {TemplateIcons.bind({})}
@@ -554,7 +530,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group size="small" variant="white-background">
+<scale-toggle-group size="small">
 	<scale-toggle-button>
     Label <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
@@ -567,15 +543,14 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Icon Only Small White-Background
+## Icon Only Small
 
 <Canvas withSource="none">
   <Story
-    name="Icon Only Small White-Background"
+    name="Icon Only Small"
     args={{
       iconBefore: false,
       size: 'small',
-      variant: 'whiteBackground',
     }}
   >
     {TemplateIcons.bind({})}
@@ -583,7 +558,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group size="small" variant="white-background">
+<scale-toggle-group size="small">
 	<scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>

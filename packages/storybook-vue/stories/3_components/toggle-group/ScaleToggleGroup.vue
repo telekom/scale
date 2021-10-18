@@ -1,7 +1,7 @@
 <template>
   <scale-toggle-group
     :size="size"
-    :variant="variant"
+    :background="background"
 	  :full-width="fullWidth"
     :disabled="disabled"
     :hide-border="hideBorder"
@@ -21,7 +21,7 @@ import { action } from "@storybook/addon-actions";
 export default {
   props: {
     size: { type: String, default: 'large' },
-    variant: { type: String, default: 'grey-background' },
+    background: { type: String, default: 'white' },
     fullWidth: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     hideBorder: { type: Boolean, default: false },

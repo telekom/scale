@@ -44,8 +44,8 @@ export class ToggleGroup {
   @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
-  /** (optional) Button Group variant */
-  @Prop() variant?: 'grey-background' | 'white-background' = 'grey-background';
+  /** (optional) Button Group background */
+  @Prop() background?: 'grey' | 'white' = 'white';
   /** (optional) 100% width */
   @Prop() fullWidth? = false;
   /** (optional) If `true`, the button is disabled */
@@ -101,7 +101,7 @@ export class ToggleGroup {
         selected: toggleButton.hasAttribute('selected'),
       });
       toggleButton.setAttribute('size', this.size);
-      toggleButton.setAttribute('variant', this.variant);
+      toggleButton.setAttribute('background', this.background);
       toggleButton.setAttribute('disabled', this.disabled && 'disabled');
       toggleButton.setAttribute('position', this.position.toString());
       toggleButton.setAttribute(

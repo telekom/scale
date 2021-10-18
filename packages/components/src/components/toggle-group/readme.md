@@ -10,6 +10,7 @@
 | Property               | Attribute                | Description                                                  | Type                                      | Default                                              |
 | ---------------------- | ------------------------ | ------------------------------------------------------------ | ----------------------------------------- | ---------------------------------------------------- |
 | `ariaLabelTranslation` | `aria-label-translation` | (optional) aria-label attribute needed for icon-only buttons | `string`                                  | ``toggle button group with $slottedButtons buttons`` |
+| `background`           | `background`             | (optional) Button Group background                           | `"grey" \| "white"`                       | `'white'`                                            |
 | `colorScheme`          | `color-scheme`           | (optional) background color scheme of a selected button      | `"dark" \| "light"`                       | `'light'`                                            |
 | `disabled`             | `disabled`               | (optional) If `true`, the button is disabled                 | `boolean`                                 | `false`                                              |
 | `fullWidth`            | `full-width`             | (optional) 100% width                                        | `boolean`                                 | `false`                                              |
@@ -17,7 +18,6 @@
 | `singleSelect`         | `single-select`          | (optional) more than one button selected possible            | `boolean`                                 | `false`                                              |
 | `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "regular" \| "small" \| "xs"` | `'large'`                                            |
 | `styles`               | `styles`                 | (optional) Injected CSS styles                               | `string`                                  | `undefined`                                          |
-| `variant`              | `variant`                | (optional) Button Group variant                              | `"grey-background" \| "white-background"` | `'grey-background'`                                  |
 
 
 ## Events

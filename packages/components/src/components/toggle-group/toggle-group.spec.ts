@@ -65,14 +65,9 @@ describe('Toggle Group', () => {
       const element = new ToggleGroup();
       expect(element.getCssClassMap()).toContain('toggle-group');
       expect(element.getCssClassMap()).toContain('toggle-group--inline');
-      expect(element.getCssClassMap()).toContain('toggle-group--border');
 
       expect(element.getBasePartMap()).toContain('toggle-group');
       expect(element.getBasePartMap()).toContain('inline');
-      expect(element.getBasePartMap()).toContain('border');
-      element.hideBorder = false;
-      expect(element.getCssClassMap()).toContain('toggle-group--border');
-      expect(element.getBasePartMap()).toContain('border');
     });
   });
   describe('emitter', () => {
