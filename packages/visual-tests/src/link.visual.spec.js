@@ -20,7 +20,7 @@ describe('Link', () => {
     const previewHtml = await page.$('body');
 
     const link = await page.evaluateHandle(
-      `document.querySelector("#root > scale-link").shadowRoot.querySelector(".link")`
+      `document.querySelector("#root > scale-link").shadowRoot.querySelector("a")`
     );
     link.hover();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
