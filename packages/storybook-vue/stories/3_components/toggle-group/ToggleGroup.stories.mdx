@@ -156,6 +156,27 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
+## Monochrome Color Scheme
+
+<Canvas withSource="none">
+  <Story
+    name="Monochrome Color Scheme"
+    args={{
+      colorScheme: 'monochrome'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group color-scheme="monochrome">
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
 ## Grey Background
 
 <Canvas withSource="none">
@@ -171,6 +192,69 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group background='grey'>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## No Border
+
+<Canvas withSource="none">
+  <Story
+    name="No Border"
+    args={{
+		  hideBorder: true
+	}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group hide-border>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Small Size
+
+<Canvas withSource="none">
+  <Story
+    name="Small Size"
+    args={{
+      size: "small"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group size="small">
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Full Width
+
+<Canvas withSource="none">
+  <Story
+    name="Full Width"
+    args={{
+		  fullWidth: true,
+	}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group full-width>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -198,49 +282,6 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Monochrome Color Scheme
-
-<Canvas withSource="none">
-  <Story
-    name="Monochrome Color Scheme"
-    args={{
-      colorScheme: 'monochrome'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group color-scheme="monochrome">
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Monochrome Color Scheme Grey Background
-
-<Canvas withSource="none">
-  <Story
-    name="Monochrome Color Scheme Grey Background"
-    args={{
-      colorScheme: 'monochrome',
-      background: 'grey'
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group color-scheme="monochrome" background="grey">
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
 ## Disabled
 
 <Canvas withSource="none">
@@ -256,114 +297,6 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group disabled>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Disabled Grey Background
-
-<Canvas withSource="none">
-  <Story
-    name="Disabled Grey Background"
-    args={{
-		  disabled: true,
-		  background: 'grey'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group background='grey' disabled>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Regular Size
-
-<Canvas withSource="none">
-  <Story
-    name="Regular Size"
-    args={{
-		  size: 'regular'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="regular">
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Small Size Block
-
-<Canvas withSource="none">
-  <Story
-    name="Small Size Block"
-    args={{
-		  size: 'small',
-		  fullWidth: true,
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="small" full-width>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## XS Size Block
-
-<Canvas withSource="none">
-  <Story
-    name="XS Size Block"
-    args={{
-		  size: 'xs',
-		  fullWidth: true,
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="xs" full-width>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button>Label</scale-toggle-button>
-  <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## No Border
-
-<Canvas withSource="none">
-  <Story
-    name="No Border"
-    args={{
-		  hideBorder: true
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group hide-border>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -405,11 +338,11 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Icon Before Large
+## Icon Before
 
 <Canvas withSource="none">
   <Story
-    name="Icon Before Large"
+    name="Icon Before"
     args={{
       iconBefore: true
     }}
@@ -432,11 +365,11 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Icon Only Large
+## Icon Only
 
 <Canvas withSource="none">
   <Story
-    name="Icon Only Large"
+    name="Icon Only"
     args={{
       iconBefore: false
     }}
@@ -447,118 +380,6 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button icon-only aria-label="search">
-    <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button icon-only aria-label="search">
-    <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button icon-only aria-label="search" selected>
-    <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Icon Before Regular
-
-<Canvas withSource="none">
-  <Story
-    name="Icon Before Regular"
-    args={{
-      iconBefore: true,
-      size: 'regular'
-    }}
-  >
-    {TemplateIcons.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="regular">
-	<scale-toggle-button>
-    Label <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button>
-    Label <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button selected>
-    Label <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Icon Only Regular
-
-<Canvas withSource="none">
-  <Story
-    name="Icon Only Regular"
-    args={{
-      iconBefore: false,
-      size: 'regular'
-    }}
-  >
-    {TemplateIcons.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="regular">
-	<scale-toggle-button icon-only aria-label="search">
-    <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button icon-only aria-label="search">
-    <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button icon-only aria-label="search" selected>
-    <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Icon Before Small
-
-<Canvas withSource="none">
-  <Story
-    name="Icon Before Small"
-    args={{
-      iconBefore: true,
-      size: 'small',
-    }}
-  >
-    {TemplateIcons.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="small">
-	<scale-toggle-button>
-    Label <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button>
-    Label <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-  <scale-toggle-button selected>
-    Label <scale-icon-action-search></scale-icon-action-search>
-  </scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Icon Only Small
-
-<Canvas withSource="none">
-  <Story
-    name="Icon Only Small"
-    args={{
-      iconBefore: false,
-      size: 'small',
-    }}
-  >
-    {TemplateIcons.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="small">
 	<scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
