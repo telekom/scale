@@ -461,6 +461,11 @@ module.exports = {
           /Rating Label/,
           (s) => (s.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
+        findLayer(
+          symbol,
+          /Background/,
+          (s) => (s.style.fills[0].isEnabled = false)
+        );
       }
       if (/^(Text Area)/.test(symbol.name)) {
         symbol.groupLayout = undefined;
