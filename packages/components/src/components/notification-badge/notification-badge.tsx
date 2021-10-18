@@ -1,4 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
+import classNames from 'classnames';
 
 @Component({
   tag: 'scale-notification-badge',
@@ -8,15 +9,23 @@ import { Component, h, Host, Prop } from '@stencil/core';
 export class Tooltip {
   /** (optional) Text that is displayed in the badge*/
   @Prop() label: string;
+  @Prop() type: 'icon' | 'text' = 'icon';
 
   render() {
     return (
       <Host>
-        <a class="slot-wrapper">
+        <a class={this.getCssClassMap()}>
           <slot />
-          <span class="slot-wrapper__badge">{this.label}</span>
+          <span class="notification-badge__circle">{this.label}</span>
         </a>
       </Host>
+    );
+  }
+  getCssClassMap() {
+    return classNames(
+      `notification-badge`,
+      this.label && `notification-badge--label`,
+      this.type && `notification-badge--${this.type}`
     );
   }
 }

@@ -1,25 +1,69 @@
-.slot-wrapper {
+:host {
+  --notification-badge-size: 8px;
+  --notification-badge-background: #e20074;
+  --notification-badge-color: #ffffff;
+  /*text*/
+  --notification-badge-text-top: -3px;
+  --notification-badge-text-right: -11px;
+  /*icon*/
+  --notification-badge-icon-top: -3px;
+  --notification-badge-icon-right: -4px;
+
+  /*label*/
+  --notification-badge-label-size: 12px;
+  --notification-badge-label-font-size: 6px;
+  /*label & text*/
+  --notification-badge-label-text-top: -6px;
+  --notification-badge-label-text-right: -14px;
+  /*label & icon*/
+  --notification-badge-label-icon-top: -3px;
+  --notification-badge-label-icon-right: -8px;
+}
+.notification-badge {
   position: relative;
   display: inline-block;
   align-items: center;
   justify-content: center;
-  color: #333333;
-  background: #dddddd;
   border: none;
   outline: none;
 }
 
-.slot-wrapper__badge {
+.notification-badge .notification-badge__circle {
   position: absolute;
-  font-size: xx-small;
-  top: -10px;
-  right: -10px;
-  width: 25px;
-  height: 25px;
-  background: red;
-  color: #ffffff;
+  width: var(--notification-badge-size);
+  height: var(--notification-badge-size);
+  background: var(--notification-badge-background);
+  color: var(--notification-badge-color);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+.notification-badge.notification-badge--text .notification-badge__circle {
+  top: var(--notification-badge-text-top);
+  right: var(--notification-badge-text-right);
+}
+
+.notification-badge.notification-badge--icon .notification-badge__circle {
+  top: var(--notification-badge-icon-top);
+  right: var(--notification-badge-icon-right);
+}
+
+.notification-badge.notification-badge--label .notification-badge__circle {
+  font-size: var(--notification-badge-label-font-size);
+  width: var(--notification-badge-label-size);
+  height: var(--notification-badge-label-size);
+}
+
+.notification-badge.notification-badge--label.notification-badge--text
+  .notification-badge__circle {
+  top: var(--notification-badge-label-text-top);
+  right: var(--notification-badge-label-text-right);
+}
+
+.notification-badge.notification-badge--label.notification-badge--icon
+  .notification-badge__circle {
+  top: var(--notification-badge-label-icon-top);
+  right: var(--notification-badge-label-icon-right);
 }
