@@ -57,7 +57,7 @@ export class Switch {
           <label id={`${this.inputId}-label`}>
             <input
               type="checkbox"
-              name={this.name || null}
+              name={this.name}
               checked={this.checked}
               disabled={this.disabled}
               aria-labelledby={`${this.inputId}-label`}
