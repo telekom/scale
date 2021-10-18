@@ -79,6 +79,8 @@ import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
 import badge_de from 'raw-loader!../../stories/3_components/badge/badge_de.md';
 import badge_en from 'raw-loader!../../stories/3_components/badge/badge.md';
+import toggleGroup_de from 'raw-loader!../../stories/3_components/toggle-group/toggle-group_de.md';
+import toggleGroup_en from 'raw-loader!../../stories/3_components/toggle-group/toggle-group.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -169,6 +171,8 @@ const Usage = (props) => {
     'text-field_de': textField_de,
     footer_en,
     footer_de,
+    'toggle-group_en': toggleGroup_en,
+    'toggle-group_de': toggleGroup_de,
   };
 
   // Select the most appropriate markdown text based on if this is a component story and
