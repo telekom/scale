@@ -19,7 +19,6 @@
 
 | Part          | Description |
 | ------------- | ----------- |
-| `"circle"`    |             |
 | `"container"` |             |
 | `"text"`      |             |
 

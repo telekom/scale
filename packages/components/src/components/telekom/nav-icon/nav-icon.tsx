@@ -9,15 +9,17 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, Element, h } from '@stencil/core';
 import classNames from 'classnames';
 import { renderIcon } from '../../../utils/render-icon';
+import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-nav-icon',
   styleUrl: './nav-icon.css',
 })
 export class NavIcon {
+  @Element() host: HTMLElement;
   /** (optional) if this item is active */
   // DEPRECATED - active should replace isActive
   @Prop() isActive: boolean;
@@ -28,6 +30,20 @@ export class NavIcon {
   @Prop() icon: string;
   @Prop() isMobileMenuOpen?: boolean = false;
   @Prop() refMobileMenuToggle?: any;
+
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.isActive !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isActive" is deprecated. Please use the "active" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
+  }
 
   render() {
     return (

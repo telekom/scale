@@ -21,6 +21,7 @@ app.engine(
   handlebars({
     defaultLayout: 'main',
     extname: '.hbs',
+    helpers: require('./config/handlebars-helpers')
   })
 );
 

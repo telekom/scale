@@ -61,6 +61,11 @@ scale-table {
 .table tbody td {
   border-bottom: var(--border-bottom-tbody-td);
 }
+.table thead tr th:last-of-type,
+.table tbody tr td:last-of-type,
+.table tfoot tr td:last-of-type {
+  padding-right: 12px;
+}
 
 .table tfoot {
   background: var(--background-tfoot);

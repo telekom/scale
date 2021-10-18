@@ -20,10 +20,14 @@
   --stars-spacing: var(--scl-spacing-2);
   --stars-transition: color 0.1s;
   --stars-size: 24px;
+  --font-weight-medium: var(--scl-font-weight-medium);
+  --font-size-small: var(--scl-font-size-12);
+  --infotext-color: var(--scl-color-text-additional);
 }
 
 :host([star-size='small']) {
   --stars-size: 16px;
+  font-size: var(--font-size-small);
 }
 
 [part='container'] {
@@ -38,7 +42,6 @@
   margin: 0;
   left: calc(-1 * var(--stars-size));
   bottom: 0;
-  transform: ;
   z-index: 2;
   width: calc(100% + var(--stars-size) * 2);
   opacity: 0;
@@ -69,6 +72,10 @@ input[type='range']::-webkit-slider-thumb {
   margin-top: 0;
 }
 
+[part='content'] {
+  display: flex;
+}
+
 [part='wrapper'] {
   display: inline-flex;
   border-radius: var(--scl-spacing-4);
@@ -86,6 +93,15 @@ input[type='range']::-webkit-slider-thumb {
 
 [part='label'] {
   margin-bottom: var(--scl-spacing-8);
+  white-space: nowrap;
+}
+
+[part='infotext'] {
+  margin-left: var(--scl-spacing-8);
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-medium);
+  color: var(--infotext-color);
   white-space: nowrap;
 }
 
@@ -181,7 +197,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /* readonly states */
 
-:host([readonly]) [part='wrapper'] {
+:host(.readonly) [part='wrapper'] {
   --stars-placeholder-color: var(--stars-disabled-color);
 
   pointer-events: none;
@@ -189,13 +205,37 @@ input[type='range']::-webkit-slider-thumb {
 
 /* disabled states */
 
-:host([disabled]) [part='label'] {
+:host(.disabled) [part='label'],
+:host(.disabled) [part='infotext'] {
   color: var(--stars-disabled-color);
 }
 
-:host([disabled]) [part='wrapper'] {
+:host(.disabled) [part='wrapper'] {
   --stars-color: var(--stars-disabled-color);
   --stars-placeholder-color: var(--stars-disabled-color);
 
   pointer-events: none;
+}
+
+/* hidden label */
+
+:host(.hideLabel) [part='label'] {
+  visibility: hidden;
+  height: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='star'] [part='placeholder-star'] {
+    color: var(--scl-color-white);
+  }
+  [part='star'][data-selected] [part='placeholder-star'] {
+    color: var(--stars-inactive-color);
+  }
+  [part='star']:hover ~ [part='star'] [part='placeholder-star'] {
+    color: var(--scl-color-white);
+  }
+  [part='wrapper']:hover [part='placeholder-star'] {
+    color: var(--stars-inactive-color);
+  }
 }

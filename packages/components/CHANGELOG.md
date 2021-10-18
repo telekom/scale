@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.22](https://github.com/telekom/scale/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2021-10-15)
+
+
+### Bug Fixes
+
+* index file ([b43df9a](https://github.com/telekom/scale/commit/b43df9adb7ec6684095a821b63ac6ba6a5061ec5))
+
+
+
+
+
+# [3.0.0-beta.21](https://github.com/telekom/scale/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2021-09-30)
+
+
+### Bug Fixes
+
+* **button:** add more defense to setIconPositionProps against type errors ([#602](https://github.com/telekom/scale/issues/602)) ([5263ccd](https://github.com/telekom/scale/commit/5263ccdfe0442fcb7d457c179ff0baa803a247d1))
+
+
+### Features
+
+* **rating-stars:** improve prop naming ([#558](https://github.com/telekom/scale/issues/558)) ([3ceb6c1](https://github.com/telekom/scale/commit/3ceb6c12473c0feaadf97593154ea4288668fb2e))
+
+
+
+
+
+# [3.0.0-beta.20](https://github.com/telekom/scale/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2021-09-03)
+
+
+### Bug Fixes
+
+* **app-header:** change sticky class to follow BEM ([#565](https://github.com/telekom/scale/issues/565)) ([f400908](https://github.com/telekom/scale/commit/f400908c3fbd4d48111f33ff3b72df479fced3a3))
+* **checkbox:** use other selector strategy for styling ([#567](https://github.com/telekom/scale/issues/567)) ([92e435b](https://github.com/telekom/scale/commit/92e435b14bde56c601465fd9b6aa18e3d623638f))
+
+
+### Features
+
+* **app-header:** let mobile menu render w/ config object when menu-main is on ([#566](https://github.com/telekom/scale/issues/566)) ([c5d0166](https://github.com/telekom/scale/commit/c5d0166a79bd8138d5e027edc8e3d883029af250))
+
+
+
+
+
 # [3.0.0-beta.19](https://github.com/telekom/scale/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2021-09-01)
 
 

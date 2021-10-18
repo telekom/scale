@@ -11,6 +11,7 @@
 
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 let i = 0;
 
@@ -28,7 +29,10 @@ export class TabHeader {
   /** True for a disabled Tabnavigation */
   @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
+  // DEPRECATED - size should replace small
   @Prop() small: boolean = false;
+  /** (optional) size  */
+  @Prop() size: 'small' | 'large' = 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -44,6 +48,18 @@ export class TabHeader {
         this.el.focus();
       }
       this.updateSlottedIcon();
+    }
+  }
+
+  componentDidRender() {
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.el,
+      });
     }
   }
 
@@ -103,7 +119,7 @@ export class TabHeader {
     return classNames(
       component,
       this.selected && `${prefix}selected`,
-      this.small && `${prefix}small`,
+      (this.size === 'small' || this.small) && `${prefix}small`,
       this.hasFocus && `${prefix}has-focus`,
       this.disabled && `${prefix}disabled`
     );

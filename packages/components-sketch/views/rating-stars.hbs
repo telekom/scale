@@ -12,8 +12,13 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   [data-fake-state$='hover'] {
     --stars-color: var(--scl-color-primary-hover);
   }
+
   [data-fake-state$='active'] {
     --stars-color: var(--scl-color-primary-active);
+  }
+
+  scale-rating-stars::part(content) {
+    background: white;
   }
 </style>
 
@@ -24,13 +29,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-0-readonly-initial"
-        label="Rating Label"
-        rating="0"
-        star-size="large"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-0-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="0" size="large" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -38,13 +38,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-1-readonly-initial"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-1-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="1" size="large" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -52,13 +47,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-2-readonly-initial"
-        label="Rating Label"
-        rating="2"
-        star-size="large"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-2-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="2" size="large" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -66,13 +56,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-3-readonly-initial"
-        label="Rating Label"
-        rating="3"
-        star-size="large"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-3-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="3" size="large" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -80,13 +65,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-4-readonly-initial"
-        label="Rating Label"
-        rating="4"
-        star-size="large"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-4-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="4" size="large" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -94,13 +74,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid" data-category="Labelled">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-5-readonly-initial"
-        label="Rating Label"
-        rating="5"
-        star-size="large"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-5-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="5" size="large" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -108,54 +83,30 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-0-interactive-initial"
-        label="Rating Label"
-        rating="0"
-        star-size="large"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-0-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="0" size="large"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-0-interactive-hover"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        data-fake-state="hover"
-        data-fake-rating="0"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-0-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="1" size="large" data-fake-state="hover" data-fake-label="Rating Label" rating="0">
+      </scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-0-interactive-focus"
-        label="Rating Label"
-        rating="0"
-        star-size="large"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-0-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="0" size="large" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-0-interactive-active"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        data-fake-state="active"
-        data-fake-rating="0"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-0-interactive-active" info-text="Info message"
+        label="Rating Label" rating="1" size="large" data-fake-state="active" data-fake-label="Rating Label" rating="0">
+      </scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-0-interactive-disabled"
-        label="Rating Label"
-        rating="0"
-        star-size="large"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-0-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="0" size="large" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -163,52 +114,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-1-interactive-initial"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-1-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="1" size="large"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-1-interactive-hover"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-1-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="1" size="large" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-1-interactive-focus"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-1-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="1" size="large" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-1-interactive-active"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-1-interactive-active" info-text="Info message"
+        label="Rating Label" rating="1" size="large" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-1-interactive-disabled"
-        label="Rating Label"
-        rating="1"
-        star-size="large"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-1-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="1" size="large" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -216,52 +143,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-2-interactive-initial"
-        label="Rating Label"
-        rating="2"
-        star-size="large"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-2-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="2" size="large"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-2-interactive-hover"
-        label="Rating Label"
-        rating="2"
-        star-size="large"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-2-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="2" size="large" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-2-interactive-focus"
-        label="Rating Label"
-        rating="2"
-        star-size="large"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-2-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="2" size="large" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-2-interactive-active"
-        label="Rating Label"
-        rating="2"
-        star-size="large"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-2-interactive-active" info-text="Info message"
+        label="Rating Label" rating="2" size="large" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-2-interactive-disabled"
-        label="Rating Label"
-        rating="2"
-        star-size="large"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-2-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="2" size="large" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -269,52 +172,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-3-interactive-initial"
-        label="Rating Label"
-        rating="3"
-        star-size="large"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-3-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="3" size="large"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-3-interactive-hover"
-        label="Rating Label"
-        rating="3"
-        star-size="large"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-3-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="3" size="large" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-3-interactive-focus"
-        label="Rating Label"
-        rating="3"
-        star-size="large"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-3-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="3" size="large" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-3-interactive-active"
-        label="Rating Label"
-        rating="3"
-        star-size="large"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-3-interactive-active" info-text="Info message"
+        label="Rating Label" rating="3" size="large" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-3-interactive-disabled"
-        label="Rating Label"
-        rating="3"
-        star-size="large"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-3-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="3" size="large" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -322,52 +201,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-4-interactive-initial"
-        label="Rating Label"
-        rating="4"
-        star-size="large"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-4-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="4" size="large"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-4-interactive-hover"
-        label="Rating Label"
-        rating="4"
-        star-size="large"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-4-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="4" size="large" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-4-interactive-focus"
-        label="Rating Label"
-        rating="4"
-        star-size="large"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-4-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="4" size="large" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-4-interactive-active"
-        label="Rating Label"
-        rating="4"
-        star-size="large"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-4-interactive-active" info-text="Info message"
+        label="Rating Label" rating="4" size="large" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-4-interactive-disabled"
-        label="Rating Label"
-        rating="4"
-        star-size="large"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-4-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="4" size="large" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -375,54 +230,31 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-5-interactive-initial"
-        label="Rating Label"
-        rating="5"
-        star-size="large"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-5-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="5" size="large"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-5-interactive-hover"
-        label="Rating Label"
-        rating="5"
-        star-size="large"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-5-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="5" size="large" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-5-interactive-focus"
-        label="Rating Label"
-        rating="5"
-        star-size="large"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-5-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="5" size="large" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-5-interactive-active"
-        label="Rating Label"
-        rating="5"
-        star-size="large"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-5-interactive-active" info-text="Info message"
+        label="Rating Label" rating="5" size="large" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-large-5-interactive-disabled"
-        label="Rating Label"
-        rating="5"
-        star-size="large"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-large-5-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="5" size="large" disabled></scale-rating-stars>
     </div>
   </div>
+
 </div>
 
 <div data-sketch-artboard="Rating Stars Small" class="artboard">
@@ -432,13 +264,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-0-readonly-initial"
-        label="Rating Label"
-        rating="0"
-        star-size="small"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-0-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="0" size="small" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -446,13 +273,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-1-readonly-initial"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-1-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="1" size="small" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -460,13 +282,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-2-readonly-initial"
-        label="Rating Label"
-        rating="2"
-        star-size="small"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-2-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="2" size="small" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -474,13 +291,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-3-readonly-initial"
-        label="Rating Label"
-        rating="3"
-        star-size="small"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-3-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="3" size="small" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -488,13 +300,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-4-readonly-initial"
-        label="Rating Label"
-        rating="4"
-        star-size="small"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-4-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="4" size="small" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -502,13 +309,8 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid" data-category="Labelled">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-5-readonly-initial"
-        label="Rating Label"
-        rating="5"
-        star-size="small"
-        readonly
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-5-readonly-initial" info-text="Info message"
+        label="Rating Label" rating="5" size="small" readonly></scale-rating-stars>
     </div>
   </div>
 
@@ -516,54 +318,30 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-0-interactive-initial"
-        label="Rating Label"
-        rating="0"
-        star-size="small"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-0-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="0" size="small"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-0-interactive-hover"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        data-fake-state="hover"
-        data-fake-rating="0"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-0-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="1" size="small" data-fake-state="hover" data-fake-label="Rating Label" rating="0">
+      </scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-0-interactive-focus"
-        label="Rating Label"
-        rating="0"
-        star-size="small"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-0-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="0" size="small" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-0-interactive-active"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        data-fake-state="active"
-        data-fake-rating="0"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-0-interactive-active" info-text="Info message"
+        label="Rating Label" rating="1" size="small" data-fake-state="active" data-fake-label="Rating Label" rating="0">
+      </scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-0-interactive-disabled"
-        label="Rating Label"
-        rating="0"
-        star-size="small"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-0-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="0" size="small" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -571,52 +349,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-1-interactive-initial"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-1-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="1" size="small"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-1-interactive-hover"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-1-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="1" size="small" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-1-interactive-focus"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-1-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="1" size="small" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-1-interactive-active"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-1-interactive-active" info-text="Info message"
+        label="Rating Label" rating="1" size="small" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-1-interactive-disabled"
-        label="Rating Label"
-        rating="1"
-        star-size="small"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-1-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="1" size="small" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -624,52 +378,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-2-interactive-initial"
-        label="Rating Label"
-        rating="2"
-        star-size="small"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-2-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="2" size="small"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-2-interactive-hover"
-        label="Rating Label"
-        rating="2"
-        star-size="small"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-2-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="2" size="small" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-2-interactive-focus"
-        label="Rating Label"
-        rating="2"
-        star-size="small"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-2-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="2" size="small" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-2-interactive-active"
-        label="Rating Label"
-        rating="2"
-        star-size="small"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-2-interactive-active" info-text="Info message"
+        label="Rating Label" rating="2" size="small" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-2-interactive-disabled"
-        label="Rating Label"
-        rating="2"
-        star-size="small"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-2-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="2" size="small" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -677,52 +407,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-3-interactive-initial"
-        label="Rating Label"
-        rating="3"
-        star-size="small"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-3-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="3" size="small"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-3-interactive-hover"
-        label="Rating Label"
-        rating="3"
-        star-size="small"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-3-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="3" size="small" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-3-interactive-focus"
-        label="Rating Label"
-        rating="3"
-        star-size="small"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-3-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="3" size="small" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-3-interactive-active"
-        label="Rating Label"
-        rating="3"
-        star-size="small"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-3-interactive-active" info-text="Info message"
+        label="Rating Label" rating="3" size="small" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-3-interactive-disabled"
-        label="Rating Label"
-        rating="3"
-        star-size="small"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-3-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="3" size="small" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -730,52 +436,28 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-4-interactive-initial"
-        label="Rating Label"
-        rating="4"
-        star-size="small"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-4-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="4" size="small"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-4-interactive-hover"
-        label="Rating Label"
-        rating="4"
-        star-size="small"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-4-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="4" size="small" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-4-interactive-focus"
-        label="Rating Label"
-        rating="4"
-        star-size="small"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-4-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="4" size="small" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-4-interactive-active"
-        label="Rating Label"
-        rating="4"
-        star-size="small"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-4-interactive-active" info-text="Info message"
+        label="Rating Label" rating="4" size="small" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-4-interactive-disabled"
-        label="Rating Label"
-        rating="4"
-        star-size="small"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-4-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="4" size="small" disabled></scale-rating-stars>
     </div>
   </div>
 
@@ -783,52 +465,532 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
   <div class="agent-states--grid">
     <div class="agent-states--item">
       <p class="agent-states--label">:available</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-5-interactive-initial"
-        label="Rating Label"
-        rating="5"
-        star-size="small"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-5-interactive-initial" info-text="Info message"
+        label="Rating Label" rating="5" size="small"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:hover</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-5-interactive-hover"
-        label="Rating Label"
-        rating="5"
-        star-size="small"
-        data-fake-state="hover"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-5-interactive-hover" info-text="Info message"
+        label="Rating Label" rating="5" size="small" data-fake-state="hover"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:focus</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-5-interactive-focus"
-        label="Rating Label"
-        rating="5"
-        star-size="small"
-        data-sketch-state="focus"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-5-interactive-focus" info-text="Info message"
+        label="Rating Label" rating="5" size="small" data-sketch-state="focus"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:active/pressed</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-5-interactive-active"
-        label="Rating Label"
-        rating="5"
-        star-size="small"
-        data-fake-state="active"
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-5-interactive-active" info-text="Info message"
+        label="Rating Label" rating="5" size="small" data-fake-state="active"></scale-rating-stars>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">:disabled</p>
-      <scale-rating-stars
-        data-sketch-key="rating-stars-small-5-interactive-disabled"
-        label="Rating Label"
-        rating="5"
-        star-size="small"
-        disabled
-      ></scale-rating-stars>
+      <scale-rating-stars data-sketch-key="rating-stars-small-5-interactive-disabled" info-text="Info message"
+        label="Rating Label" rating="5" size="small" disabled></scale-rating-stars>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+<div data-sketch-artboard="Rating Stars Large - Hidden Label" class="artboard">
+  <h1 class="title--artboard">Rating Stars Large - Hidden Label</h1>
+
+  <h2 class="title--artboard-section">0 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-0-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="large" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">1 Star Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-1-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">2 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-2-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="large" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">3 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-3-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="large" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">4 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-4-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="large" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">5 Stars Static</h2>
+  <div class="agent-states--grid" data-category="Labelled">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-5-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="large" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">0 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-0-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="large"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-0-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" data-fake-state="hover"
+        data-fake-label="Rating Label" info-text="Info message" rating="0"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-0-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="large" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-0-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" data-fake-state="active"
+        data-fake-label="Rating Label" info-text="Info message" rating="0"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-0-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="large" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">1 Star Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-1-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-1-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-1-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-1-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-1-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="large" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">2 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-2-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="large"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-2-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="large" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-2-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="large" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-2-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="large" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-2-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="large" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">3 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-3-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="large"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-3-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="large" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-3-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="large" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-3-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="large" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-3-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="large" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">4 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-4-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="large"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-4-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="large" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-4-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="large" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-4-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="large" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-4-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="large" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">5 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-5-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="large"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-5-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="large" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-5-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="large" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-5-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="large" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-large-5-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="large" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+</div>
+
+<div data-sketch-artboard="Rating Stars Small - Hidden Label" class="artboard">
+  <h1 class="title--artboard">Rating Stars Small - Hidden Label</h1>
+
+  <h2 class="title--artboard-section">0 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-0-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="small" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">1 Star Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-1-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">2 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-2-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="small" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">3 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-3-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="small" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">4 Stars Static</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-4-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="small" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">5 Stars Static</h2>
+  <div class="agent-states--grid" data-category="Labelled">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-5-readonly-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="small" readonly></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">0 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-0-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="small"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-0-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" data-fake-state="hover"
+        data-fake-label="Rating Label" info-text="Info message" rating="0"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-0-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="small" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-0-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" data-fake-state="active"
+        data-fake-label="Rating Label" info-text="Info message" rating="0"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-0-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="0" size="small" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">1 Star Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-1-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-1-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-1-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-1-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-1-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="1" size="small" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">2 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-2-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="small"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-2-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="small" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-2-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="small" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-2-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="small" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-2-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="2" size="small" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">3 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-3-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="small"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-3-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="small" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-3-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="small" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-3-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="small" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-3-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="3" size="small" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">4 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-4-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="small"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-4-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="small" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-4-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="small" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-4-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="small" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-4-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="4" size="small" disabled></scale-rating-stars hide-label>
+    </div>
+  </div>
+
+  <h2 class="title--artboard-section">5 Stars Interactive</h2>
+  <div class="agent-states--grid">
+    <div class="agent-states--item">
+      <p class="agent-states--label">:available</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-5-interactive-initial-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="small"></scale-rating-stars hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:hover</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-5-interactive-hover-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="small" data-fake-state="hover"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:focus</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-5-interactive-focus-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="small" data-sketch-state="focus"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:active/pressed</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-5-interactive-active-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="small" data-fake-state="active"></scale-rating-stars
+        hide-label>
+    </div>
+    <div class="agent-states--item">
+      <p class="agent-states--label">:disabled</p>
+      <scale-rating-stars hide-label data-sketch-key="rating-stars-small-5-interactive-disabled-hidden-label"
+        label="Rating Label" label="Rating Label" info-text="Info message" rating="5" size="small" disabled></scale-rating-stars hide-label>
     </div>
   </div>
 </div>
@@ -872,16 +1034,23 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
       function isReadonly() {
         return component.hasAttribute('readonly');
       }
+      function isLabelHidden() {
+        return component.hasAttribute('hide-label');
+      }
 
       function getSize() {
         return order(
-          2,
-          component.getAttribute('star-size') === 'large' ? 'Large' : 'Small'
+          3,
+          component.getAttribute('size') === 'large' ? 'Large' : 'Small'
         );
       }
 
       function getType() {
-        return order(1, isReadonly() ? 'Static' : 'Interactive');
+        return order(2, isReadonly() ? 'Static' : 'Interactive');
+      }
+
+      function getHidden() {
+        return order(1, isLabelHidden() ? 'Hidden Label' : 'Standard');
       }
 
       function getRating() {
@@ -893,10 +1062,10 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
           : `${value} Stars`;
       }
 
-      const nameChain = ['Rating Stars Beta', getType(), getSize(), getRating()];
+      const nameChain = ['Rating Stars', getHidden(), getType(), getSize(), getRating()];
 
       if (!isReadonly()) {
-        nameChain.push(order(3, getStateName(component)));
+        nameChain.push(order(4, getStateName(component)));
       }
 
       component.dataset.sketchSymbol = nameChain.join(' / ');

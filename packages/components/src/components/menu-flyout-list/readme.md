@@ -7,24 +7,51 @@
 
 ## Properties
 
-| Property | Attribute | Description                | Type     | Default     |
-| -------- | --------- | -------------------------- | -------- | ----------- |
-| `styles` | `styles`  | (optional) Injected styles | `string` | `undefined` |
+| Property        | Attribute         | Description                                                                        | Type                                                                                | Default          |
+| --------------- | ----------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------- |
+| `active`        | `active`          |                                                                                    | `boolean`                                                                           | `false`          |
+| `closeOnSelect` | `close-on-select` | (optional) Determines whether the flyout should close when a menu item is selected | `boolean`                                                                           | `true`           |
+| `direction`     | `direction`       | (optional) Set preference for where the menu appears, space permitting             | `"bottom-left" \| "bottom-right" \| "left" \| "right" \| "top-left" \| "top-right"` | `'bottom-right'` |
+| `opened`        | `opened`          |                                                                                    | `boolean`                                                                           | `false`          |
+| `styles`        | `styles`          | (optional) Injected styles                                                         | `string`                                                                            | `undefined`      |
+| `trigger`       | --                |                                                                                    | `() => HTMLElement`                                                                 | `undefined`      |
 
 
 ## Events
 
-| Event          | Description                                                                                        | Type                                  |
-| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `scale-select` | Event triggered every time the data is edited, changing original rows data                         | `CustomEvent<{ item: HTMLElement; }>` |
-| `scaleSelect`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ item: HTMLElement; }>` |
+| Event         | Description                                                                                        | Type                                  |
+| ------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-close` | Event triggered when menu list closed                                                              | `CustomEvent<{ list: HTMLElement; }>` |
+| `scale-open`  | Event triggered when menu list opened                                                              | `CustomEvent<{ list: HTMLElement; }>` |
+| `scaleClose`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLElement; }>` |
+| `scaleOpen`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ list: HTMLElement; }>` |
 
 
 ## Methods
 
-### `opened() => Promise<void>`
+### `close(silent?: boolean) => Promise<void>`
 
-Menu calls this once opened and rendered
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `open() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `setFocus() => Promise<void>`
+
+
 
 #### Returns
 
