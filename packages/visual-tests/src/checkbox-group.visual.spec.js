@@ -6,7 +6,7 @@ describe('CheckboxGroup', () => {
     ['helper-text'],
   ])('%p', async (variant) => {
     await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=beta-components-checkbox-group--${variant}&viewMode=story`
+      `http://host.docker.internal:3123/iframe.html?id=components-checkbox-group--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
@@ -16,7 +16,7 @@ describe('CheckboxGroup', () => {
     ['standard'],
   ])('%p', async (variant) => {
     await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=beta-components-checkbox-group--${variant}&viewMode=story`
+      `http://host.docker.internal:3123/iframe.html?id=components-checkbox-group--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');

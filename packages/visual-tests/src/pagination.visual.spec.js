@@ -14,7 +14,7 @@ describe('Pagination', () => {
   });
   test('buttons disabled', async () => {
     await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=beta-components-pagination--standard&viewMode=story`
+      `http://host.docker.internal:3123/iframe.html?id=components-pagination--standard&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
@@ -33,7 +33,7 @@ describe('Pagination', () => {
     '%p',
     async (variant) => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=beta-components-pagination--${variant}&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');
