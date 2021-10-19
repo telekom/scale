@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Logo</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 In addition to color and typography, our logo is one of the three central Telekom design elements. It's integrated into the brand header and footer on websites and lets users recognize our brand at a glance.
@@ -28,11 +28,7 @@ The Telekom logo with claim is available in 9 country-specific variants (Interna
 
 ![Image Name](assets/3_components/logo/Farben-EN.png)
 
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
-
 ## Related components
 
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header, </a>
+<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
 <a href="?path=/usage/components-footer--standard">Footer</a>

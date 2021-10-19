@@ -16,6 +16,7 @@
 | `isMegaMenuVisible` | `is-mega-menu-visible` |                                         | `boolean` | `false`                 |
 | `megaMenuVisible`   | `mega-menu-visible`    | (optional) if this mega-menu is visible | `boolean` | `false`                 |
 | `name`              | `name`                 | (optional) name value                   | `string`  | `undefined`             |
+| `popup`             | `popup`                |                                         | `boolean` | `undefined`             |
 
 
 ## Dependencies

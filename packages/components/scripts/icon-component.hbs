@@ -12,7 +12,8 @@
 import { Component, Prop, Host, Element, h } from '@stencil/core';
 
 @Component({
-  tag: '{{tagName}}'
+  tag: '{{tagName}}',
+  styleUrl: '../../icon/icon.css'
 })
 export class {{className}} {
   @Element() hostElement: HTMLElement;
@@ -41,7 +42,7 @@ export class {{className}} {
 
     return (
       <Host>
-        <svg xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="{{viewBox}}" {...ariaHidden}>
+        <svg class="scale-icon" xmlns="http://www.w3.org/2000/svg" width={this.size} height={this.size} viewBox="{{viewBox}}" {...ariaHidden}>
           {this.accessibilityTitle && <title>{this.accessibilityTitle}</title>}
           <g fill={((this.fill === 'currentColor') ? this.color : this.fill)}>
             {this.selected ? (<g>{{{markup.selected}}}</g>) : (<g>{{{markup.default}}}</g>)}

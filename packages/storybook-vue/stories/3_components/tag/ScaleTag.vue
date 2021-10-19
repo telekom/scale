@@ -1,4 +1,5 @@
 <script>
+import { action } from "@storybook/addon-actions";
 export default {
   props: {
     disabled: { type: Boolean, default: false },

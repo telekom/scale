@@ -20,11 +20,12 @@ import statusNote from '../../../utils/status-note';
 })
 export class NavMain {
   @Element() hostElement: HTMLStencilElement;
-  /** (optional) if this item is active */
-  // DEPRECATED - active should replace isActive
+  // DEPRECATED - megaMenuVisible should replace isActive
   @Prop() isActive: boolean;
+  /** (optional) if this item is active */
   @Prop() active: boolean;
-  // DEPRECATED - active should replace isActive
+  @Prop() popup: boolean;
+  // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
   /** (optional) if this mega-menu is visible */
   @Prop() megaMenuVisible?: boolean = false;
@@ -34,10 +35,11 @@ export class NavMain {
   @Prop() name: string;
 
   @Prop() clickLink: any;
-  hasSlotMegaMenu: boolean;
+  hasPopup: boolean;
 
   componentWillLoad() {
-    this.hasSlotMegaMenu = !!this.hostElement.querySelector('app-mega-menu');
+    this.hasPopup =
+      this.popup || !!this.hostElement.querySelector('app-mega-menu');
   }
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
@@ -69,8 +71,7 @@ export class NavMain {
             class="main-navigation__item-link"
             href={this.href}
             aria-current={this.active || this.isActive ? 'true' : 'false'}
-            aria-haspopup={this.hasSlotMegaMenu ? 'true' : 'false'}
-            tabIndex={0}
+            aria-haspopup={this.hasPopup ? 'true' : 'false'}
             onClick={this.clickLink}
           >
             <span class="main-navigation__item-link-text">{this.name}</span>

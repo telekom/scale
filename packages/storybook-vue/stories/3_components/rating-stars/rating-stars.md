@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Rating Stars</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Rating stars let users share their opinion on a product, service, or piece of content. This way, they help other users make an informed decision and feel more secure when making a purchase.
@@ -38,7 +38,7 @@ Static rating stars don't have an interactive function, but merely convey inform
 
 ## Elements
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Elemente.png)
+![Image Name](assets/3_components/rating-stars/RatingStars-Elemente-en.png)
 
 #### Label (1)
 
@@ -49,15 +49,15 @@ In some cases, it can make sense to show the label (see Best practices).
 
 #### Inactive star (3)
 
-#### Rating (4)
+#### Info message (4)
 
-The rating provides additional information such as the number of previous reviews.
+The info message provides additional information such as the number of previous reviews.
 
 ## Sizes
 
 Scale contains rating stars in two sizes. The large size is standard. If there isn't much space available, use the small size. Don't combine both sizes within one product or service.
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Groessen.png)
+![Image Name](assets/3_components/rating-stars/RatingStars-Groessen-en.png)
 
 ## Best Practices
 
@@ -65,7 +65,3 @@ If you only want to show the number of star ratings, insert the component as sho
 In some cases, it may make sense to break down the reviews:
 
 ![Image Name](assets/3_components/rating-stars/RatingStars-Best-Practices-EN.png)
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.

@@ -90,9 +90,7 @@ export class Pagination {
 
   /* 6. Lifecycle Events (call order) */
   constructor() {}
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
+
   componentWillLoad() {
     this.calculateWidth();
   }

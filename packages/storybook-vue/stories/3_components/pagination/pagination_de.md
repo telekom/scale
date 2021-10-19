@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Pagination</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Die Pagination zeigt an, dass ein Inhalt auf mehrere Seiten aufgeteilt ist und wo man sich aktuell befindet. Außerdem ermöglicht die Paginierung das Vor- und Zurückspringen zwischen diesen Seiten.

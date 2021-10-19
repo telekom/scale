@@ -9,10 +9,13 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/* TODO use tokens */
+
 :host {
   display: block;
 }
-.menu-divider {
+
+.menu-flyout-divider {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   margin: 6px 0;
 }

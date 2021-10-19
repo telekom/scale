@@ -31,7 +31,6 @@ import {
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import statusNote from '../../utils/status-note';
 import { emitEvent } from '../../utils/utils';
 
 let i = 0;
@@ -118,7 +117,9 @@ export class DatePicker {
    * Button labels, day names, month names, etc, used for localization.
    * Default is English.
    */
-  @Prop() localization?: DuetLocalizedText;
+  @Prop() localization?: DuetLocalizedText & {
+    today: string;
+  };
 
   /**
    * Date adapter, for custom parsing/formatting.
@@ -184,6 +185,8 @@ export class DatePicker {
   scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
   private helperTextId = `helper-message-${i}`;
+
+  private mo: MutationObserver;
 
   /**
    * Public methods API
@@ -251,26 +254,67 @@ export class DatePicker {
       input.setAttribute('aria-invalid', 'true');
     }
 
-    const dialog = this.hostElement.querySelector('.duet-date__dialog-content');
+    // Remove existing <h2> with `{Month} {Year}` text
+    const dialog = this.hostElement.querySelector('.duet-date__dialog');
+    let duetHeadingId: string = '';
     if (dialog) {
+      duetHeadingId = dialog.getAttribute('aria-labelledby');
+      if (duetHeadingId) {
+        const duetHeading = this.hostElement.querySelector(`#${duetHeadingId}`);
+        if (duetHeading) {
+          duetHeading.parentElement.removeChild(duetHeading);
+        }
+      }
+    }
+
+    // Add custom <h2> heading
+    const dialogContent = this.hostElement.querySelector(
+      '.duet-date__dialog-content'
+    );
+    if (dialogContent) {
       const heading = document.createElement('h2');
+      heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
       heading.className = 'scale-date-picker__popup-heading';
       heading.innerHTML = this.popupTitle;
-      dialog.insertBefore(heading, dialog.firstChild);
+      dialogContent.insertBefore(heading, dialogContent.firstChild);
     }
 
     const today = this.hostElement.querySelector(
       '.duet-date__day.is-today span.duet-date__vhidden'
     );
-
     if (today) {
-      today.innerHTML = `${today.innerHTML}, today`;
+      today.innerHTML = `${today.innerHTML}, ${
+        this.localization?.today || 'today'
+      }`;
     }
+
+    this.adjustButtonsLabelsForA11y();
   }
 
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
+  /**
+   * Fix JAWS reading the day twice, e.g. "19 19. August"
+   * It'd probably make sense to open a PR in duetds/date-picker
+   * https://github.com/duetds/date-picker/blob/master/src/components/duet-date-picker/date-picker-day.tsx#L61
+   */
+  adjustButtonsLabelsForA11y = () => {
+    const table = this.hostElement.querySelector('.duet-date__table');
+    const options = { subtree: true, childList: true, attributes: true };
+    const callback = () => {
+      this.mo.disconnect(); // avoid a feedback loop
+      const buttons = Array.from(
+        this.hostElement.querySelectorAll('.duet-date__day')
+      );
+      buttons.forEach((button) => {
+        const span = button.querySelector('.duet-date__vhidden');
+        const text = span.textContent;
+        button.setAttribute('aria-label', text);
+        span.setAttribute('hidden', 'hidden');
+      });
+      this.mo.observe(table, options);
+    };
+    this.mo = new MutationObserver(callback);
+    callback();
+  };
 
   disconnectedCallback() {
     const input = this.duetInput
@@ -279,6 +323,10 @@ export class DatePicker {
 
     if (input) {
       input.removeEventListener('keyup', this.handleKeyPress);
+    }
+
+    if (this.mo) {
+      this.mo.disconnect();
     }
   }
 
