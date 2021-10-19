@@ -6,7 +6,7 @@ import classNames from 'classnames';
   styleUrl: './notification-badge.css',
   shadow: true,
 })
-export class Tooltip {
+export class NotificationBadge {
   /** (optional) Text that is displayed in the badge*/
   @Prop() label: string;
   @Prop() type: 'icon' | 'text' = 'icon';
