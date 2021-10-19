@@ -14,7 +14,7 @@ import { action } from '@storybook/addon-actions';
   argTypes={{}}
 />
 
-export const Template = (args, { argTypes }) => ({
+export const IconTemplate = (args, { argTypes }) => ({
   props: {
     label: String,
     ...ScaleNotificationBadge.props,
@@ -23,7 +23,23 @@ export const Template = (args, { argTypes }) => ({
     <scale-notification-badge
       :type="type"
       :label="label"
-    ><scale-icon-user-file-user></scale-icon-user-file-user</scale-notification-badge>
+    ><scale-icon-user-file-user></scale-icon-user-file-user></scale-notification-badge>
+  `,
+  methods: {
+    action,
+  },
+});
+
+export const TextTemplate = (args, { argTypes }) => ({
+  props: {
+    label: String,
+    ...ScaleNotificationBadge.props,
+  },
+  template: `
+    <scale-notification-badge
+      :type="type"
+      :label="label"
+    >Service</scale-notification-badge>
   `,
   methods: {
     action,
@@ -34,8 +50,94 @@ export const Template = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story name="Standard" args={{}}>
-    {Template.bind({})}
+    {IconTemplate.bind({})}
   </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
+
+```html
+<scale-notification-badge>
+  <scale-icon-user-file-user> </scale-icon-user-file-user>
+</scale-notification-badge>
+```
+
+## Badge without Label
+
+### Icon
+
+<Canvas withSource="none">
+  <Story
+    name="Icon"
+    args={{
+      type: 'icon',
+    }}
+  >
+    {IconTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-badge type="icon">
+  <scale-icon-user-file-user></scale-icon-user-file-user>
+</scale-notification-badge>
+```
+
+### Text
+
+<Canvas withSource="none">
+  <Story
+    name="Text"
+    args={{
+      type: 'text',
+    }}
+  >
+    {TextTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-badge type="text"> Service </scale-notification-badge>
+```
+
+## Badge with Label
+
+### Icon
+
+<Canvas withSource="none">
+  <Story
+    name="Label_Icon"
+    args={{
+      type: 'icon',
+      label: '999+',
+    }}
+  >
+    {IconTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-badge label="999+" type="icon">
+  <scale-icon-user-file-user></scale-icon-user-file-user>
+</scale-notification-badge>
+```
+
+### Text
+
+<Canvas withSource="none">
+  <Story
+    name="Label_Text"
+    args={{
+      type: 'text',
+      label: '999+',
+    }}
+  >
+    {TextTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-badge label="999+" type="text"
+  >Service</scale-notification-badge
+>
+```

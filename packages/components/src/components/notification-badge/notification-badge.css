@@ -11,7 +11,7 @@
 
   /*label*/
   --notification-badge-label-size: 12px;
-  --notification-badge-label-font-size: 6px;
+  --notification-badge-label-font-size: 5px;
   /*label & text*/
   --notification-badge-label-text-top: -6px;
   --notification-badge-label-text-right: -14px;
