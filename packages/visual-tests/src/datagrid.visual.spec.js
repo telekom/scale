@@ -1,9 +1,7 @@
 describe('DataGrid', () => {
   test.each([
-    ['checkbox-cell'],
     ['date-cell'],
     ['html-cell'],
-    ['link-cell'],
     ['number-cell'],
     ['select-cell'],
     ['text-cell'],
