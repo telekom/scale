@@ -1,0 +1,41 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleNotificationBadge from './ScaleNotificationBadge.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Components/NotificationBadge"
+  component={ScaleNotificationBadge}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: {
+    label: String,
+    ...ScaleNotificationBadge.props,
+  },
+  template: `
+    <scale-notification-badge
+      :type="type"
+      :label="label"
+    ><scale-icon-user-file-user></scale-icon-user-file-user</scale-notification-badge>
+  `,
+  methods: {
+    action,
+  },
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
