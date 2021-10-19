@@ -43,7 +43,7 @@ export class ToggleGroup {
   /** state */
   @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
-  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
+  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'regular';
   /** (optional) Button Group background */
   @Prop() background?: 'grey' | 'white' = 'white';
   /** (optional) 100% width */

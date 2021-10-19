@@ -16,7 +16,7 @@
 | `fullWidth`            | `full-width`             | (optional) 100% width                                        | `boolean`                                 | `false`                                              |
 | `hideBorder`           | `hide-border`            | (optional) If `true`, the group has a border                 | `boolean`                                 | `false`                                              |
 | `singleSelect`         | `single-select`          | (optional) more than one button selected possible            | `boolean`                                 | `false`                                              |
-| `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "regular" \| "small" \| "xs"` | `'large'`                                            |
+| `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "regular" \| "small" \| "xs"` | `'regular'`                                          |
 | `styles`               | `styles`                 | (optional) Injected CSS styles                               | `string`                                  | `undefined`                                          |
 
 

@@ -20,7 +20,7 @@ import { action } from "@storybook/addon-actions";
 
 export default {
   props: {
-    size: { type: String, default: 'large' },
+    size: { type: String, default: 'regular' },
     background: { type: String, default: 'white' },
     fullWidth: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },

@@ -38,7 +38,7 @@ let i = 0;
 export class ToggleButton {
   @Element() hostElement: HTMLElement;
   /** (optional) The size of the button */
-  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
+  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'regular';
   /** (optional) Button background */
   @Prop() background?: 'grey' | 'white' = 'white';
   /** (optional) background color scheme of a selected button */
@@ -201,9 +201,7 @@ export class ToggleButton {
       'toggle-button',
       this.size && `${prefix}${this.size}`,
       this.background &&
-        `${prefix}${
-          this.background === 'grey' ? 'primary' : 'secondary'
-        }`,
+        `${prefix}${this.background === 'grey' ? 'primary' : 'secondary'}`,
       !this.iconOnly &&
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,
