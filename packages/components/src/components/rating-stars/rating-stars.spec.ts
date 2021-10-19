@@ -25,20 +25,24 @@ describe('RatingStars', () => {
 
     it('check non default props', async () => {
       page.root.maxRating = 7;
-      page.root.minRating = 1;
+      page.root.max = 7;
+      page.root.minRating = 0;
       page.root.rating = 4;
       page.root.starSize = 'small';
+      page.root.size = 'small';
       page.root.disabled = true;
-      page.root.ariaLabelTranslation = '$value aus $maxValue Sternen';
+      page.root.ariaLabelTranslation = '$value aus $max Sternen';
       page.root.label = 'Rating Label';
       await page.waitForChanges();
       expect(page.rootInstance.maxRating).toBe(7);
-      expect(page.rootInstance.minRating).toBe(1);
+      expect(page.rootInstance.max).toBe(7);
+      expect(page.rootInstance.minRating).toBe(0);
       expect(page.rootInstance.rating).toBe(4);
       expect(page.rootInstance.starSize).toBe('small');
+      expect(page.rootInstance.size).toBe('small');
       expect(page.rootInstance.disabled).toBe(true);
       expect(page.rootInstance.ariaLabelTranslation).toBe(
-        '$value aus $maxValue Sternen'
+        '$value aus $max Sternen'
       );
       expect(page.rootInstance.label).toBe('Rating Label');
     });
@@ -75,6 +79,15 @@ describe('RatingStars', () => {
         html: `<scale-rating-stars disabled></scale-rating-stars>`,
       });
       expect(page.root).toMatchSnapshot();
+    });
+    it('deprecated overwrite actual props', async () => {
+      page = await newSpecPage({
+        components: [RatingStars],
+        html: `<scale-rating-stars max-rating="12" star-size="small"></scale-rating-stars>`,
+      });
+      expect(page.root).toMatchSnapshot();
+      expect(page.rootInstance.max).toBe(12);
+      expect(page.rootInstance.size).toBe('small');
     });
   });
 

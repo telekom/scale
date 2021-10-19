@@ -4,9 +4,9 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from "@storybook/addon-docs/blocks";
-import { action } from "@storybook/addon-actions";
-import ScaleSwitch from "./ScaleSwitch.vue";
+} from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import ScaleSwitch from './ScaleSwitch.vue';
 
 <Meta title="Components/Switch" component={ScaleSwitch} />
 
@@ -19,21 +19,22 @@ export const Template = (args, { argTypes }) => ({
       :input-id="inputId"
       :checked="checked"
       :label="label"
+      :name="name"
       @scaleChange="scaleChange"
     >
     </scale-switch>
   `,
   methods: {
-    scaleChange: action("scaleChange"),
+    scaleChange: action('scaleChange'),
   },
 });
 
 <div
   style={{
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
   }}
 >
   <h1>Switch</h1>
@@ -46,7 +47,7 @@ export const Template = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: "Standard",
+      label: 'Standard',
     }}
   >
     {Template.bind({})}
@@ -62,7 +63,7 @@ export const Template = (args, { argTypes }) => ({
     name="Standard disabled"
     args={{
       disabled: true,
-      label: "Standard disabled",
+      label: 'Standard disabled',
     }}
   >
     {Template.bind({})}
@@ -80,7 +81,7 @@ export const Template = (args, { argTypes }) => ({
     name="Selected"
     args={{
       checked: true,
-      label: "Selected",
+      label: 'Selected',
     }}
   >
     {Template.bind({})}
@@ -99,7 +100,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       disabled: true,
       checked: true,
-      label: "Selected disabled",
+      label: 'Selected disabled',
     }}
   >
     {Template.bind({})}

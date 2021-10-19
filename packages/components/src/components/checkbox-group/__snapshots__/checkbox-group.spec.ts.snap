@@ -1,85 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CheckboxGroup function chain 1`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <div class="checkbox-group">
-      <div class="checkbox-group__label">
-        <slot></slot>
-      </div>
-      <div class="checkbox-group__container">
-        <slot name="group-item"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
-    <scale-checkbox class="testing" disabled="true" helper-text="helperText" indeterminate="true" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" disabled="true" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" disabled="true" name="nameOfCheckbox" value="3">
-        Checkbox Slot
-      </scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" disabled="true" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
-    </div>
-  </div>
-</scale-checkbox-group>
-`;
-
-exports[`CheckboxGroup function checkForMasterCheckboxChange 1`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <div class="checkbox-group">
-      <div class="checkbox-group__label">
-        <slot></slot>
-      </div>
-      <div class="checkbox-group__container">
-        <slot name="group-item"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
-    <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
-  </div>
-  <div slot="checkbox-list">
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox name="nameOfCheckbox" value="3">
-        Checkbox Slot
-      </scale-checkbox>
-    </div>
-    <div style="margin-top: 0.5rem;">
-      <scale-checkbox disabled="true" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
-    </div>
-  </div>
-</scale-checkbox-group>
-`;
-
 exports[`CheckboxGroup should match standard snapshot 1`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <div class="checkbox-group">
-      <div class="checkbox-group__label">
-        <slot></slot>
-      </div>
-      <div class="checkbox-group__container">
-        <slot name="group-item"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
+      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
       <scale-checkbox checked="" name="nameOfCheckbox" value="3">
@@ -90,27 +19,22 @@ exports[`CheckboxGroup should match standard snapshot 1`] = `
       <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
 
 exports[`CheckboxGroup should match standard snapshot 2`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <div class="checkbox-group">
-      <div class="checkbox-group__label">
-        <slot></slot>
-      </div>
-      <div class="checkbox-group__container">
-        <slot name="group-item"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
+      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
       <scale-checkbox checked="" name="nameOfCheckbox" value="3">
@@ -121,73 +45,67 @@ exports[`CheckboxGroup should match standard snapshot 2`] = `
       <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
 
 exports[`CheckboxGroup should select all on master click 1`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <div class="checkbox-group">
-      <div class="checkbox-group__label">
-        <slot></slot>
-      </div>
-      <div class="checkbox-group__container">
-        <slot name="group-item"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
     <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
+      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" name="nameOfCheckbox" value="3">
+      <scale-checkbox checked="" name="nameOfCheckbox" value="3">
         Checkbox Slot
       </scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox disabled="true" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
+      <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
       <scale-checkbox label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;
 
 exports[`CheckboxGroup should select all on master click 2`] = `
-<scale-checkbox-group>
-  <mock:shadow-root>
-    <div class="checkbox-group">
-      <div class="checkbox-group__label">
-        <slot></slot>
-      </div>
-      <div class="checkbox-group__container">
-        <slot name="group-item"></slot>
-      </div>
-    </div>
-  </mock:shadow-root>
-  <div slot="checkbox-header">
-    <scale-checkbox checked="true" class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
+<scale-checkbox-group class="checkbox-group">
+  <!---->
+  <div hidden="" slot="checkbox-header">
+    <scale-checkbox class="testing" helper-text="helperText" input-id="header-checkbox" label="checkbox" name="nameOfCheckbox" value="1"></scale-checkbox>
   </div>
-  <div slot="checkbox-list">
+  <div hidden="" slot="checkbox-list">
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
+      <scale-checkbox checked="" label="checkbox" name="nameOfCheckbox" value="2"></scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox checked="true" name="nameOfCheckbox" value="3">
+      <scale-checkbox checked="" name="nameOfCheckbox" value="3">
         Checkbox Slot
       </scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
-      <scale-checkbox disabled="true" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
+      <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="4"></scale-checkbox>
     </div>
     <div style="margin-top: 0.5rem;">
       <scale-checkbox label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
     </div>
   </div>
+  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <fieldset part="fieldset">
+    <legend></legend>
+  </fieldset>
 </scale-checkbox-group>
 `;

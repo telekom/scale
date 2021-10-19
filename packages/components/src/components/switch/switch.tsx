@@ -26,11 +26,13 @@ const isFocusVisibleSupported = isPseudoClassSupported(':focus-visible');
 })
 export class Switch {
   /** (optional) Active switch */
-  @Prop({ reflect: true }) checked?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /** (optional) Disabled switch */
   @Prop() disabled?: boolean = false;
+  /** (optional) Input name */
+  @Prop() name?: string;
   /** (optional) Input id */
-  @Prop() inputId?: string;
+  @Prop({ mutable: true }) inputId?: string;
   /** (optional) switch label */
   @Prop() label?: string;
   /** (optional) Injected CSS styles */
@@ -55,6 +57,7 @@ export class Switch {
           <label id={`${this.inputId}-label`}>
             <input
               type="checkbox"
+              name={this.name}
               checked={this.checked}
               disabled={this.disabled}
               aria-labelledby={`${this.inputId}-label`}

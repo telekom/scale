@@ -27,17 +27,21 @@ describe('pagination', () => {
       components: [Pagination],
       html: `<scale-pagination
                 hide-borders="true"
+                hide-border="true"
                 page-size="11"
                 start-element="2"
                 total-elements="33"
-                styles="style">
+                styles="style"
+                size="small">
               </scale-pagination>`,
     });
     expect(specPage.rootInstance.hideBorders).toBe(true);
+    expect(specPage.rootInstance.hideBorder).toBe(true);
     expect(specPage.rootInstance.pageSize).toBe(11);
     expect(specPage.rootInstance.startElement).toBe(2);
     expect(specPage.rootInstance.totalElements).toBe(33);
     expect(specPage.rootInstance.styles).toBe('style');
+    expect(specPage.rootInstance.size).toBe('small');
   });
   it('should emit when clicked goFirstPage()', async () => {
     const clickSpy = jest.fn();
