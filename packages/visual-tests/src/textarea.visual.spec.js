@@ -47,6 +47,7 @@ describe('Textarea', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await page.mouse.move(60, 40);
     await page.mouse.down();
+    await page.waitFor(100);
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });

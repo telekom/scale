@@ -26,10 +26,6 @@ describe('Brand Header', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await firstLink.focus();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await page.evaluate(() => {
-      window.scrollBy(0, window.innerHeight);
-    });
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 
   it('custom mega menu states', async () => {

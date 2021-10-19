@@ -62,8 +62,5 @@ describe('DatePicker', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     datePicker.focus();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await page.mouse.move(20, 60);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });

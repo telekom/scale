@@ -1,8 +1,8 @@
 describe('Menu', () => {
   test.each([
-    ['standard'], 
-    ['cascading-menu'], 
-    ['checked-toggle'], 
+    ['standard'],
+    ['cascading-menu'],
+    ['checked-toggle'],
     ['brand-header-primary-navigation'],
     ['brand-header-user-menu'],
   ])('%p', async (variant) => {
@@ -13,30 +13,29 @@ describe('Menu', () => {
     const previewHtml = await page.$('body');
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-});
-// open menu on click
-test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
-  await global.page.goto(
-    `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
-  );
-  await page.waitForSelector('html.hydrated');
-  const previewHtml = await page.$('body');
+  // open menu on click
+  test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
+    await global.page.goto(
+      `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
+    );
+    await page.waitForSelector('html.hydrated');
+    const previewHtml = await page.$('body');
 
     const button = await page.evaluateHandle(
       `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
     );
-    button.click();
+    await button.click();
     await page.waitFor(500);
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-});
-// open 2nd and 3rd level of cascading menu on click
-// hover, active, focus
-test.each([['cascading-menu']])('%p', async (variant) => {
-  await global.page.goto(
-    `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
-  );
-  await page.waitForSelector('html.hydrated');
-  const previewHtml = await page.$('body');
+  });
+  // open 2nd and 3rd level of cascading menu on click
+  // hover, active, focus
+  test.each([['cascading-menu']])('%p', async (variant) => {
+    await global.page.goto(
+      `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
+    );
+    await page.waitForSelector('html.hydrated');
+    const previewHtml = await page.$('body');
 
     const button = await page.evaluateHandle(
       `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
@@ -72,4 +71,5 @@ test.each([['cascading-menu']])('%p', async (variant) => {
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await flyoutItemTwo.click();
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  });
 });
