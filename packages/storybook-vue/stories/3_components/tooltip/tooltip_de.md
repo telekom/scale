@@ -2,40 +2,46 @@
     <h1>Tooltip</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
-Ein Tooltip kann dafür genutzt werden Nutzer*innen genauere Infos über ein beliebiges Objekt anzuzeigen. Diese sollten die Funktion des Elements genauer beschreiben.
+Ein Tooltip zeigt Nutzer*innen zusätzliche Informationen zu einem Objekt an
 
-## Allgemein
+## Allgemeines
 
-Tooltips können an allen vier Kanten eines zubeschreibenden Objektes angefügt werden. Wenn Nutzer\*innen die Maus über das Objekt bewegt wird der Tooltip angezeigt.
+Tooltips lassen sich an allen vier Kanten eines zu beschreibenden Objektes anfügen und
+werden angezeigt, wenn die Maus über das Objekt bewegt wird.
 ![Tooltip all](assets/3_components/tooltip/Tooltip_all.jpeg)
-Es sollte sichergestellt werden, dass Tooltips auf eine konsistente Art und Weise verwendet werden.
+Achte bei der Implementierung unbedingt auf Konsistenz.
 
-### Verwende einen Tooltip, wenn
+### Verwende ein Tooltip, wenn
 
-- Nutzer\*innen genauere Informationen über das beschriebene Element erhalten sollen.
-- Auf Besonderheiten einer Interaktion hingewiesen werden soll (zum Beispiel "Hier klicken, um in die Zwischenablage zukopieren").
-
-Im besonderen bietet sich so die Nutzung in Verbindung mit Buttons, welche nur ein Icon enthalten, an.
-Jedoch sollte hier dringend auf Barrierefreiheit geachtet werden.
+- Nutzer\*innen zusätzliche Informationen zu einem Element erhalten sollen (z. B. zur
+  Funktion).
+- auf Besonderheiten einer Interaktion hingewiesen werden soll (z. B. „Hier klicken, um
+  in die Zwischenablage zu kopieren“).
 
 ### Verwende Tooltips besser nicht, wenn
 
-- Sich dadurch Informationen doppeln würden.
-- Nutzer\*innen ohne diesen Tooltip ihre Aufgabe auf der Oberfläche nicht verstehen würden. Tooltips sollten nur verwendet werden, um weitere Informationen über ein spezifisches Element zu bieten.
+- es lediglich Informationen enthält, die im UI bereits zu finden sind.
+- es essenzielle Informationen enthält, ohne die der*die Nutzer*in nicht weiß, was zu
+  tun ist. Diese Informationen gehören in das UI.
 
 ## Best Practice
 
-### Nutze Tooltips für nicht gelabelte Icons und Buttons.
+### Nutze Tooltips für Icons und Buttons ohne Label.
 
-Ungelabelte Icons welche eine Funktion haben oder Buttons welche keine ausreichende (oder, nur aus einem Icon bestehende) Beschreibung besitzen, können durch Tooltips mehr Informationen bekommen.
+Ungelabelte Icons und Buttons profitieren von der zusätzlichen Information im Tooltip. Zum
+Beispiel wenn das Icon eine Funktion hat oder auf dem Button – bspw. aus Platzgründen –
+nur ein Icon angezeigt werden kann. Berücksichtige einem solchen Fall immer auch die
+Barrierfreiheit.
 
-### Stelle sicher, dass Tooltips einen ausreichenden Kontrast zum Hintergund haben.
+### Stelle einen ausreichenden Kontrast zum Hintergrund sicher.
 
-Ein Tooltip sollte sich vom Hintergrund absetzen, um die Aufmerksamkeit des Users zu erhalten. Ein beispielsweise schwarz auf grauem Kontrast würde dies nicht erreichen.
+Ein Tooltip muss sich deutlich vom Hintergrund absetzen, um die Aufmerksamkeit des*der
+Nutzer*in auf sich zu ziehen. Schwarz auf grau reicht nicht aus.
 
-### Stelle sicher, dass Tooltips keine Inhalte verdecken, welche sie beschreiben.
+### Stelle sicher, dass das Tooltip keine Inhalte verdeckt, die es beschreibt.
 
-Ein Tooltip in einem Formular sollte zum Beispiel nicht das beschreibende Formularfeld verdecken und auch nicht weitere Textelemente welche sich auf das Formularfeld beziehen.
+Ein Tooltip zu einem Formular bspw. darf weder das Formularfeld selbst noch Textelemente,
+die sich darauf beziehen, verdecken.
 
 ## Beta-Komponente
 
