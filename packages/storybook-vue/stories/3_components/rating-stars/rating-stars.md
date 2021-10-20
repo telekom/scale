@@ -38,7 +38,7 @@ Static rating stars don't have an interactive function, but merely convey inform
 
 ## Elements
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Elemente.png)
+![Image Name](assets/3_components/rating-stars/RatingStars-Elemente-en.png)
 
 #### Label (1)
 
@@ -49,15 +49,15 @@ In some cases, it can make sense to show the label (see Best practices).
 
 #### Inactive star (3)
 
-#### Rating (4)
+#### Info message (4)
 
-The rating provides additional information such as the number of previous reviews.
+The info message provides additional information such as the number of previous reviews.
 
 ## Sizes
 
 Scale contains rating stars in two sizes. The large size is standard. If there isn't much space available, use the small size. Don't combine both sizes within one product or service.
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Groessen.png)
+![Image Name](assets/3_components/rating-stars/RatingStars-Groessen-en.png)
 
 ## Best Practices
 
