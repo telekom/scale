@@ -11,7 +11,7 @@
 
   /*label*/
   --notification-badge-label-size: 12px;
-  --notification-badge-label-font-size: 5px;
+  --notification-badge-label-font-size: 6px;
   /*label & text*/
   --notification-badge-label-text-top: -6px;
   --notification-badge-label-text-right: -14px;
@@ -30,14 +30,14 @@
 
 .notification-badge .notification-badge__circle {
   position: absolute;
-  width: var(--notification-badge-size);
+  min-width: var(--notification-badge-size);
   height: var(--notification-badge-size);
   background: var(--notification-badge-background);
   color: var(--notification-badge-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 6px;
 }
 
 .notification-badge.notification-badge--text .notification-badge__circle {
@@ -52,8 +52,9 @@
 
 .notification-badge.notification-badge--label .notification-badge__circle {
   font-size: var(--notification-badge-label-font-size);
-  width: var(--notification-badge-label-size);
+  min-width: 10px;
   height: var(--notification-badge-label-size);
+  padding: 0 1px;
 }
 
 .notification-badge.notification-badge--label.notification-badge--text
