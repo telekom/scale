@@ -40,6 +40,7 @@ describe('Dropdown', () => {
     const dropdown = await page.evaluateHandle(
       `document.querySelector("#root > scale-dropdown .input__dropdown")`
     );
+    await page.waitFor(300);
     await dropdown.hover();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await dropdown.focus();

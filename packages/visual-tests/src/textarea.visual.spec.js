@@ -50,6 +50,5 @@ describe('Textarea', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await textarea.focus();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    
   });
 });
