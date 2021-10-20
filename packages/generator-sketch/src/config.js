@@ -456,6 +456,11 @@ module.exports = {
           /svg?/,
           (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
+        findLayers(
+          symbol,
+          /Icon?/,
+          (l) => (l.height = 16)
+        );
         findLayer(
           symbol,
           /Rating Label/,
