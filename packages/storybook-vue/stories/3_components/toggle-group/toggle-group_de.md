@@ -3,7 +3,7 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-Eine Toggle-Group ist eine Ansammlung von Toggle-Buttons. 
+Eine Toggle-Group ist eine Ansammlung von Toggle-Buttons.
 Je nach Einstellung kann nur ein Toggle-Button (Prinzip einer Radio-Gruppe) oder mehrere (Prinzip einer Checkbox-Gruppe) aktiv (selektiert) sein.
 
 ## Beta-Komponente
