@@ -31,12 +31,12 @@ Achte bei der Implementierung unbedingt auf Konsistenz.
 Ungelabelte Icons und Buttons profitieren von der zusätzlichen Information im Tooltip. Zum
 Beispiel wenn das Icon eine Funktion hat oder auf dem Button – bspw. aus Platzgründen –
 nur ein Icon angezeigt werden kann. Berücksichtige einem solchen Fall immer auch die
-Barrierfreiheit.
+Barrierefreiheit.
 
 ### Stelle einen ausreichenden Kontrast zum Hintergrund sicher.
 
 Ein Tooltip muss sich deutlich vom Hintergrund absetzen, um die Aufmerksamkeit des*der
-Nutzer*in auf sich zu ziehen. Schwarz auf grau reicht nicht aus.
+Nutzer*in auf sich zu ziehen. Schwarz auf Grau reicht nicht aus.
 
 ### Stelle sicher, dass das Tooltip keine Inhalte verdeckt, die es beschreibt.
 

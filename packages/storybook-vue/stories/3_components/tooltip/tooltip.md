@@ -10,7 +10,7 @@ A tooltip offers users additional information about an object.
 Tooltips can be added to all four edges of an element and are displayed upon hovering the
 mouse over the element.
 ![Tooltip all](assets/3_components/tooltip/Tooltip_all.jpeg)
-Always implement tooltips in a consistent manner.
+Always implement tooltips consistently.
 
 ### When to use
 
@@ -29,8 +29,7 @@ Always implement tooltips in a consistent manner.
 
 ### Use tooltips for non-labelled icons and icon-only buttons.
 
-Non-labeled icons and icon-only buttons benefit from the additional information provided via
-the tooltip, e.g. when an icon has a function. Always make sure that these elements are
+Non-labelled icons and icon-only buttons benefit from the additional information provided via the tooltip, e.g. when an icon has a function. Always make sure that these elements are
 accessible.
 
 ### Ensure a proper contrast between tooltip and background.
@@ -40,7 +39,7 @@ Black on grey is not enough.
 
 ### Make sure that tooltips do not cover content they are describing.
 
-A tooltip to a form field should for example neither cover the form field itself nor other text elements relating to it
+A tooltip to a form field should for example neither cover the form field itself nor other text elements relating to it.
 
 ## Beta components
 
