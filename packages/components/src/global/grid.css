@@ -1,0 +1,102 @@
+/*
+  TODO
+  - [ ] confirm having responsive variables (--foo-md) is not a bad idea
+  - [ ] confirm we don't want fallbacks between breakpoints (the way tachyons works)
+  - [ ] confirm we don't need sm breakpoint
+  - [ ] use em in @media
+  - [ ] decide whether max-width should be responsive
+  - [ ] decide whether max-width should be calculated instead of hard-coded
+*/
+
+/*
+  columns / spacing / gutter
+  --------------------------
+  - sm  ->  4 / 16 / 32 (default)
+  - md  ->  8 / 16 / 32
+  - lg  -> 16 / 24 / 32
+  - xl  -> 16 / 24 / 32
+  - xxl -> 16 / 24 / 32
+
+  --columns
+  --gutter
+  --gutter-x - between rows 
+  --spacing - padding
+  --max-width (not responsive)
+*/
+scale-grid, .scl-grid {
+  display: grid;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(var(--columns, 4), 1fr);
+  padding-left: var(--spacing, var(--scl-spacing-16, 1rem));
+  padding-right: var(--spacing, var(--scl-spacing-16, 1rem));
+  column-gap: var(--gutter, var(--spacing-32, 2rem));
+  row-gap: var(--gutter-x, 0);
+  /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
+  max-width: var(--max-width, 1552px);
+}
+
+/*
+  --offset
+  --size
+*/
+scale-grid-col, .scl-grid-col {
+  grid-column: var(--offset, auto) / span var(--size, 4);
+}
+
+/* md */
+@media screen and (min-width: 640px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-md, 8), 1fr);
+    padding-left: var(--spacing-md, var(--scl-spacing-16, 1rem));
+    padding-right: var(--spacing-md, var(--scl-spacing-16, 1rem));
+    column-gap: var(--gutter-md, var(--spacing-32, 2rem));
+    row-gap: var(--gutter-x-md, 0);
+  }
+  scale-grid-col, .scl-grid-col {
+    grid-column: var(--offset-md, auto) / span var(--size-md, 4);
+  }
+}
+
+/* lg */
+@media screen and (min-width: 1040px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-lg, 16), 1fr);
+    padding-left: var(--spacing-lg, var(--scl-spacing-24, 1.5rem));
+    padding-right: var(--spacing-lg, var(--scl-spacing-24, 1.5rem));
+    column-gap: var(--gutter-lg, var(--spacing-32, 2rem));
+    row-gap: var(--gutter-x-lg, 0);
+  }
+  scale-grid-col, .scl-grid-col {
+    grid-column: var(--offset-lg, auto) / span var(--size-lg, 4);
+  }
+}
+
+/* xl */
+@media screen and (min-width: 1296px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-xl, 16), 1fr);
+    padding-left: var(--spacing-xl, var(--scl-spacing-24, 1.5rem));
+    padding-right: var(--spacing-xl, var(--scl-spacing-24, 1.5rem));
+    column-gap: var(--gutter-xl, var(--spacing-32, 2rem));
+    row-gap: var(--gutter-x-xl, 0);
+  }
+  scale-grid-col, .scl-grid-col {
+    grid-column: var(--offset-xl, auto) / span var(--size-xl, 4);
+  }
+}
+
+/* xxl */
+@media screen and (min-width: 1552px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-xxl, 16), 1fr);
+    padding-left: var(--spacing-xxl, var(--scl-spacing-24, 1.5rem));
+    padding-right: var(--spacing-xxl, var(--scl-spacing-24, 1.5rem));
+    column-gap: var(--gutter-xxl, var(--spacing-32, 2rem));
+    row-gap: var(--gutter-x-xxl, 0);
+  }
+  scale-grid-col, .scl-grid-col {
+    grid-column: var(--offset-xxl, auto) / span var(--size-xxl, 4);
+  }
+}
