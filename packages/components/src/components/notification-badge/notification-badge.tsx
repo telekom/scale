@@ -16,10 +16,14 @@ export class NotificationBadge {
   getLabel() {
     if (this.label) {
       if (!isNaN(this.label)) {
-        let labelNumber = String(this.label);
+        let labelNumber = '' + this.label;
         if (labelNumber.length > this.maxCharacters) {
-          labelNumber = labelNumber.substring(0, this.maxCharacters);
-          labelNumber += '+';
+          const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E'];
+          const tier = Math.floor(Math.log10(Number(this.label)) / 3) || 0;
+          if (tier > 0) {
+            const scaled = Number(this.label) / Math.pow(10, tier * 3);
+            labelNumber = scaled.toFixed(1).replace('.0', '') + SI_SYMBOL[tier];
+          }
         }
         return labelNumber;
       } else {
