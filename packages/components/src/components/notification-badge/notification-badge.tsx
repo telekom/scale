@@ -40,10 +40,12 @@ export class NotificationBadge {
   render() {
     return (
       <Host>
-        <a class={this.getCssClassMap()}>
-          <slot />
-          <span class="notification-badge__circle">{this.getLabel()}</span>
-        </a>
+        <div class={this.getCssBorderClassMap()} tabIndex={0}>
+          <a class={this.getCssClassMap()}>
+            <slot />
+            <span class="notification-badge__circle">{this.getLabel()}</span>
+          </a>
+        </div>
       </Host>
     );
   }
@@ -52,6 +54,14 @@ export class NotificationBadge {
       `notification-badge`,
       this.label && `notification-badge--label`,
       this.type && `notification-badge--${this.type}`
+    );
+  }
+
+  getCssBorderClassMap() {
+    return classNames(
+      `notification-badge_border`,
+      this.label && `notification-badge_border--label`,
+      this.type && `notification-badge_border--${this.type}`
     );
   }
 }
