@@ -1,4 +1,12 @@
 :host {
+  /*
+  border
+  */
+  --notification-badge_border-border: #009de0 1.5px solid;
+  --notification-badge_border-radius: 5px;
+  /*
+  badge
+  */
   --notification-badge-size: 8px;
   --notification-badge-background: #e20074;
   --notification-badge-color: #ffffff;
@@ -41,11 +49,11 @@
   background: chartreuse;
 }
 
-.notification-badge_border:focus.notification-badge_border {
+.notification-badge_border:focus.notification-badge_border::after {
   content: '';
   position: absolute;
-  border: #009de0 1.5px solid;
-  border-radius: 5px;
+  border: var(--notification-badge_border-border);
+  border-radius: var(--notification-badge_border-radius);
 }
 
 .notification-badge_border:focus.notification-badge_border.notification-badge_border--text::after {

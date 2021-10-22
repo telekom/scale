@@ -23,7 +23,7 @@ export const IconTemplate = (args, { argTypes }) => ({
     <scale-notification-badge
       :type="type"
       :label="label"
-    ><scale-icon-user-file-user></scale-icon-user-file-user></scale-notification-badge>
+    ><scale-icon-user-file-user slot="before-badge"></scale-icon-user-file-user></scale-notification-badge>
   `,
   methods: {
     action,
@@ -39,7 +39,7 @@ export const TextTemplate = (args, { argTypes }) => ({
     <scale-notification-badge
       :type="type"
       :label="label"
-    >Service</scale-notification-badge>
+    ><b slot="before-badge">Service</b></scale-notification-badge>
   `,
   methods: {
     action,
@@ -58,7 +58,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge>
-  <scale-icon-user-file-user> </scale-icon-user-file-user>
+  <scale-icon-user-file-user slot="before-badge"> </scale-icon-user-file-user>
 </scale-notification-badge>
 ```
 
@@ -79,7 +79,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge type="icon">
-  <scale-icon-user-file-user></scale-icon-user-file-user>
+  <scale-icon-user-file-user slot="before-badge"></scale-icon-user-file-user>
 </scale-notification-badge>
 ```
 
@@ -97,7 +97,9 @@ export const TextTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-badge type="text"> Service </scale-notification-badge>
+<scale-notification-badge type="text">
+  <b slot="before-badge">Service</b>
+</scale-notification-badge>
 ```
 
 ## Badge with Label
@@ -109,7 +111,7 @@ export const TextTemplate = (args, { argTypes }) => ({
     name="Label_Icon"
     args={{
       type: 'icon',
-      label: '999+',
+      label: '1000000',
     }}
   >
     {IconTemplate.bind({})}
@@ -117,8 +119,8 @@ export const TextTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-badge label="999+" type="icon">
-  <scale-icon-user-file-user></scale-icon-user-file-user>
+<scale-notification-badge label="1000000" type="icon">
+  <scale-icon-user-file-user slot="before-badge"></scale-icon-user-file-user>
 </scale-notification-badge>
 ```
 
@@ -129,7 +131,7 @@ export const TextTemplate = (args, { argTypes }) => ({
     name="Label_Text"
     args={{
       type: 'text',
-      label: '999+',
+      label: '1000',
     }}
   >
     {TextTemplate.bind({})}
@@ -137,7 +139,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-badge label="999+" type="text"
-  >Service</scale-notification-badge
+<scale-notification-badge label="10000" type="text"
+  ><b slot="before-badge">Service</b></scale-notification-badge
 >
 ```
