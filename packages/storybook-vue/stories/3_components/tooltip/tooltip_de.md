@@ -2,14 +2,11 @@
     <h1>Tooltip</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
-Ein Tooltip zeigt Nutzer*innen zusätzliche Informationen zu einem Objekt an
+Ein Tooltip vermittelt eine zusätzliche Information oder Definition zu einem Element und dient Nutzer*innen als Hilfestellung.
 
 ## Allgemeines
 
-Tooltips lassen sich an allen vier Kanten eines zu beschreibenden Objektes anfügen und
-werden angezeigt, wenn die Maus über das Objekt bewegt wird.
-![Tooltip all](assets/3_components/tooltip/Tooltip_all.jpeg)
-Achte bei der Implementierung unbedingt auf Konsistenz.
+Tooltips können an jedem aktiven Element bspw. an einem Icon, Textlink oder Button verwendet werden und erscheinen beim Hovern. Sie sind nicht fokussierbar und enthalten keinen fokussierbaren Inhalt.
 
 ### Verwende ein Tooltip, wenn
 
@@ -17,14 +14,23 @@ Achte bei der Implementierung unbedingt auf Konsistenz.
   Funktion).
 - auf Besonderheiten einer Interaktion hingewiesen werden soll (z. B. „Hier klicken, um
   in die Zwischenablage zu kopieren“).
+- mit kontextuelle und spezifische Informationen Nutzer\*innen eine Hilfesstellung gegeben werden soll.
 
-### Verwende Tooltips besser nicht, wenn
+### Verwende Tooltips besser nicht, um
 
-- es lediglich Informationen enthält, die im UI bereits zu finden sind.
-- es essenzielle Informationen enthält, ohne die der*die Nutzer*in nicht weiß, was zu
-  tun ist. Diese Informationen gehören in das UI.
+- redundante oder offensichtliche Informationen zu vermitteln.
+- essenzielle Informationen zu vermitteln (die Bedienung des User Interfaces muss auch ohne Tooltip funktionieren).
 
 ## Best Practice
+
+Setze Tooltips grundsätzlich sehr restriktiv ein und versuche immer, dein Interface so selbsterklärend wie möglich zu gestalten.
+
+### Positioniere Tooltips passend.
+
+Tooltips lassen sich an allen vier Kanten eines zu beschreibenden Objektes anfügen und
+werden angezeigt, wenn die Maus über das Objekt bewegt wird.
+![Tooltip all](assets/3_components/tooltip/Tooltip_all.jpeg)
+Achte bei der Implementierung unbedingt auf Konsistenz, sodass nicht zu viele verschiedene Positionierungen und Inhaltsarten verwendet werden.
 
 ### Nutze Tooltips für Icons und Buttons ohne Label.
 
