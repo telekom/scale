@@ -3,14 +3,11 @@
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
-A tooltip offers users additional information about an object.
+A tooltip conveys additional information or definition about an element and provides assistance to users.
 
 ## General Info
 
-Tooltips can be added to all four edges of an element and are displayed upon hovering the
-mouse over the element.
-![Tooltip all](assets/3_components/tooltip/Tooltip_all.jpeg)
-Always implement tooltips consistently.
+Tooltips can be used on any active element, e.g. an icon, text link or button, and appear when hovering. They are not focusable and do not contain focusable content.
 
 ### When to use
 
@@ -19,13 +16,19 @@ Always implement tooltips consistently.
 - Whenever users should be given more information about an interaction (e.g. “Click
   here to copy to clipboard”).
 
-### When not to use
+### When not to use, whenever it convey
 
-- Whenever it would repeat information that is already shown in the UI.
-- Whenever it would contain essential information, without which users would not
-  know how to proceed. Such information belongs in the UI.
+- edundant or obvious information.
+- information (the user interface must work without a tooltip).
 
 ## Best practice
+
+### Position tooltips appropriately
+
+Tooltips can be added to all four edges of an element and are displayed upon hovering the
+mouse over the element.
+![Tooltip all](assets/3_components/tooltip/Tooltip_all.jpeg)
+Be sure to keep consistency in your implementation so that you don't use too many different positioning and content types.
 
 ### Use tooltips for non-labelled icons and icon-only buttons.
 
