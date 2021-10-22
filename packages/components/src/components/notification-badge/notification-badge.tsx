@@ -42,9 +42,10 @@ export class NotificationBadge {
       <Host>
         <div class={this.getCssBorderClassMap()} tabIndex={0}>
           <a class={this.getCssClassMap()}>
-            <slot />
+            <slot name="before-badge" />
             <span class="notification-badge__circle">{this.getLabel()}</span>
           </a>
+          <slot name="after-badge" />
         </div>
       </Host>
     );
