@@ -28,7 +28,9 @@ export class NavIcon {
   @Prop() href?: string = 'javascript:void(0);';
   @Prop() clickLink: any;
   @Prop() icon: string;
+  // DEPRECATED - mobileMenuOpen should replace isMobileMenuOpen
   @Prop() isMobileMenuOpen?: boolean = false;
+  @Prop() mobileMenuOpen?: boolean = false;
   @Prop() refMobileMenuToggle?: any;
 
   componentWillRender() {
@@ -39,6 +41,15 @@ export class NavIcon {
         tag: 'deprecated',
         message:
           'Property "isActive" is deprecated. Please use the "active" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
+    if (this.isMobileMenuOpen !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isMobileMenuOpen" is deprecated. Please use the "mobileMenuOpen" property!',
         type: 'warn',
         source: this.host,
       });
@@ -78,7 +89,10 @@ export class NavIcon {
   getCssClassMap() {
     return classNames(
       'meta-navigation__item',
-      (this.active || this.isActive || this.isMobileMenuOpen) &&
+      (this.active ||
+        this.isActive ||
+        this.mobileMenuOpen ||
+        this.isMobileMenuOpen) &&
         'meta-navigation__item--selected',
       !!this.refMobileMenuToggle && 'mobile-menu'
     );

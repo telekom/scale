@@ -4323,6 +4323,13 @@
   dependencies:
     core-js "^3.8.2"
 
+"@storybook/core-events@^6.3.12":
+  version "6.3.12"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.3.12.tgz#73f6271d485ef2576234e578bb07705b92805290"
+  integrity sha512-SXfD7xUUMazaeFkB92qOTUV8Y/RghE4SkEYe5slAdjeocSaH7Nz2WV0rqNEgChg0AQc+JUI66no8L9g0+lw4Gw==
+  dependencies:
+    core-js "^3.8.2"
+
 "@storybook/core-server@6.2.7":
   version "6.2.7"
   resolved "https://registry.yarnpkg.com/@storybook/core-server/-/core-server-6.2.7.tgz"

@@ -29,6 +29,8 @@ export class Switch {
   @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /** (optional) Disabled switch */
   @Prop() disabled?: boolean = false;
+  /** (optional) Input name */
+  @Prop() name?: string;
   /** (optional) Input id */
   @Prop({ mutable: true }) inputId?: string;
   /** (optional) switch label */
@@ -55,6 +57,7 @@ export class Switch {
           <label id={`${this.inputId}-label`}>
             <input
               type="checkbox"
+              name={this.name}
               checked={this.checked}
               disabled={this.disabled}
               aria-labelledby={`${this.inputId}-label`}

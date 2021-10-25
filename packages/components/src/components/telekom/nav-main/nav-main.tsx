@@ -20,13 +20,15 @@ import statusNote from '../../../utils/status-note';
 })
 export class NavMain {
   @Element() hostElement: HTMLStencilElement;
-  /** (optional) if this item is active */
-  // DEPRECATED - active should replace isActive
+  // DEPRECATED - megaMenuVisible should replace isActive
   @Prop() isActive: boolean;
+  /** (optional) if this item is active */
   @Prop() active: boolean;
   @Prop() popup: boolean;
-  /** (optional) if this mega-menu is visible */
+  // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
+  /** (optional) if this mega-menu is visible */
+  @Prop() megaMenuVisible?: boolean = false;
   /** (optional) href value */
   @Prop() href?: string = 'javascript:void(0);';
   /** (optional) name value */
@@ -42,6 +44,15 @@ export class NavMain {
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
     // and show status note deprecated
+    if (this.isMegaMenuVisible !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isMegaMenuVisible" is deprecated. Please use the "megaMenuVisible" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
     if (this.isActive !== undefined) {
       statusNote({
         tag: 'deprecated',
@@ -77,7 +88,7 @@ export class NavMain {
   getCssClassMap() {
     return classNames(
       'main-navigation__item',
-      this.isMegaMenuVisible && 'mega-menu--visible',
+      (this.megaMenuVisible || this.isMegaMenuVisible) && 'mega-menu--visible',
       (this.active || this.isActive) && 'selected'
     );
   }

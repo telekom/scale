@@ -456,10 +456,16 @@ module.exports = {
           /svg?/,
           (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
+        findLayers(symbol, /Icon?/, (l) => (l.height = 16));
         findLayer(
           symbol,
           /Rating Label/,
           (s) => (s.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayer(
+          symbol,
+          /Background/,
+          (s) => (s.style.fills[0].isEnabled = false)
         );
       }
       if (/^(Text Area)/.test(symbol.name)) {
