@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# Harmonisation of Props - Overview
+
+| Component                 | Prop Before                           | Prop After                          |
+| --------------------      | --------------------------------------|--------------------------------------
+| **app-header**              |||
+|     ([#590](https://github.com/telekom/scale/issues/590))                      | isMegaMenuVisible                     |  megaMenuVisible                    |
+|     ([#590](https://github.com/telekom/scale/issues/590))                      | isMobileMenuVisible                   |  mobileMenuVisible                  |
+| **nav-icon**                  |||
+|     ([#590](https://github.com/telekom/scale/issues/590))                      | isMobileMenuOpen                      |  mobileMenuOpen                     |
+|     ([#576](https://github.com/telekom/scale/issues/576))                      | isActive                              |  active                             |
+| **nav-main**                  |||
+|     ([#590](https://github.com/telekom/scale/issues/590))                      | isMegaMenuVisible                     |  megaMenuVisible                    |
+|     ([#576](https://github.com/telekom/scale/issues/576))                      | isActive                              |  active                             |
+| **nav-segment**               |||
+|     ([#576](https://github.com/telekom/scale/issues/576))                      | isActive                              |  active                             |
+| **pagination**                |||
+|     ([#571](https://github.com/telekom/scale/issues/571))                      | hideBorders                           |  hideBorder                         |
+|     ([#557](https://github.com/telekom/scale/issues/557))                      | small (Bool)                          |  size (String)                      |
+| **tab-header**                |||
+|     ([#557](https://github.com/telekom/scale/issues/557))                      | small (Bool)                          |  size (String)                      |
+| **tab-nav**                   |||
+|     ([#557](https://github.com/telekom/scale/issues/557))                      | small (Bool)                          |  size (String)                      |
+| **tab-panel**                 |||
+|     ([#557](https://github.com/telekom/scale/issues/557))                      | small (Bool)                          |  size (String)                      |
+| **rating-stars**              |||
+|     ([#558](https://github.com/telekom/scale/issues/558))                      | starSize                              |  size                               |
+|     ([#558](https://github.com/telekom/scale/issues/558))                      | maxRating                             |  max                                |
+|     ([#558](https://github.com/telekom/scale/issues/558))                      | minRating                             |  -                                  |
+
 # [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
 
 
