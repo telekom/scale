@@ -27,6 +27,26 @@
   --notification-badge-label-icon-top: -3px;
   --notification-badge-label-icon-right: -8px;
 }
+
+.notification-badge_wrapper {
+  display: flex;
+}
+
+::slotted([slot='before-badge']) {
+  display: inline-block;
+}
+
+.notification-badge_border--icon ::slotted([slot='after-badge']) {
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 6.5px;
+}
+
+.notification-badge_border--text ::slotted([slot='after-badge']) {
+  padding-left: 17px;
+  padding-top: 0;
+}
+
 .notification-badge {
   position: relative;
   display: inline-block;
@@ -43,12 +63,6 @@
   outline: none;
   text-align: center;
 }
-
-/*TODO*/
-::slotted([slot='slot2']) {
-  background: chartreuse;
-}
-
 .notification-badge_border:focus.notification-badge_border::after {
   content: '';
   position: absolute;
