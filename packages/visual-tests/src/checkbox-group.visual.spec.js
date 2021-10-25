@@ -2,7 +2,7 @@ describe('CheckboxGroup', () => {
   test.each([
     ['standard'],
     ['checkbox-disabled'],
-    ['group-disabled'],
+    ['group-error'],
     ['helper-text'],
   ])('%p', async (variant) => {
     await global.page.goto(
@@ -10,6 +10,7 @@ describe('CheckboxGroup', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
+    await page.waitFor(500);
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   test.each([
