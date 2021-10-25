@@ -13,8 +13,6 @@ describe('SidebarNavigation', () => {
 
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-});
-describe('SidebarNavigation', () => {
   test.each([['standard']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
@@ -85,4 +83,4 @@ describe('SidebarNavCollapsible', () => {
     await page.mouse.down();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-});
+})
