@@ -13,9 +13,7 @@ describe('CheckboxGroup', () => {
     await page.waitFor(500);
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-  test.each([
-    ['standard'],
-  ])('%p', async (variant) => {
+  test.each([['standard']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-checkbox-group--${variant}&viewMode=story`
     );
@@ -37,13 +35,13 @@ describe('CheckboxGroup', () => {
 
     const firstCheckbox = await page.evaluateHandle(
       `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
-    ); 
+    );
     const secondCheckbox = await page.evaluateHandle(
       `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(2) > input[type=checkbox]")`
-    ); 
+    );
     const label = await page.evaluateHandle(
       `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > label")`
-    ); 
+    );
 
     await label.hover();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();

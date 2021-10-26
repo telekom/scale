@@ -44,4 +44,3 @@ describe('Link', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
-

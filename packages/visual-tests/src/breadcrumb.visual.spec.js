@@ -4,7 +4,7 @@ describe('Breadcrumb', () => {
       `http://host.docker.internal:3123/iframe.html?id=components-breadcrumb--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
-    
+
     const previewHtml = await page.$('body');
     const firstLink = await page.evaluateHandle(
       `document.querySelector("#root > scale-breadcrumb").shadowRoot.querySelector("nav > ol > li:nth-child(1) > a")`

@@ -78,9 +78,9 @@ describe('SidebarNavCollapsible', () => {
 
     await sidebarNavCollapsible.hover();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    
+
     await page.mouse.move(20, 100);
     await page.mouse.down();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-})
+});

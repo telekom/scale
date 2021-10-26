@@ -15,10 +15,7 @@ describe('Switch', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // hover, active
-  test.each([
-    ['standard'],
-    ['selected'],
-  ])('%p', async (variant) => {
+  test.each([['standard'], ['selected']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
     );
@@ -48,10 +45,7 @@ describe('Switch', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // focus
-  test.each([
-    ['standard'],
-    ['selected'],
-  ])('%p', async (variant) => {
+  test.each([['standard'], ['selected']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
     );
@@ -61,10 +55,7 @@ describe('Switch', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // click
-  test.each([
-    ['standard'],
-    ['selected'],
-  ])('%p', async (variant) => {
+  test.each([['standard'], ['selected']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
     );

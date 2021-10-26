@@ -16,10 +16,7 @@ describe('TabNavigation', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // hover, focus, active
-  test.each([
-    ['text-icon'],
-    ['text-only'],
-  ])('%p', async (variant) => {
+  test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
     );

@@ -1,20 +1,17 @@
 describe('RadioButtonGroup', () => {
-  test.each([
-    ['standard'],
-    ['error'],
-    ['helper-text'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-radio-button-group--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
+  test.each([['standard'], ['error'], ['helper-text']])(
+    '%p',
+    async (variant) => {
+      await global.page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-radio-button-group--${variant}&viewMode=story`
+      );
+      await page.waitForSelector('html.hydrated');
+      const previewHtml = await page.$('body');
+      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    }
+  );
   // focus, hover, active, click
- test.each([
-    ['standard'],
-  ])('%p', async (variant) => {
+  test.each([['standard']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-radio-button-group--${variant}&viewMode=story`
     );
@@ -36,13 +33,11 @@ describe('RadioButtonGroup', () => {
 
     const firstRadioButton = await page.evaluateHandle(
       `document.querySelector("#root > div > scale-radio-button-group > scale-radio-button:nth-child(1) input[type=radio]")`
-    ); 
+    );
     const label = await page.evaluateHandle(
       `document.querySelector("#root scale-radio-button-group > scale-radio-button:nth-child(1) > div > label")`
-    ); 
-    const base = await page.evaluateHandle(
-      `document.querySelector("#root")`
-    ); 
+    );
+    const base = await page.evaluateHandle(`document.querySelector("#root")`);
 
     await firstRadioButton.focus();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
@@ -56,4 +51,4 @@ describe('RadioButtonGroup', () => {
     await firstRadioButton.click();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-}); 
+});

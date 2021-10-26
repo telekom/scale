@@ -1,9 +1,9 @@
 describe('RatingStars', () => {
   test.each([
-    ['info-text-and-custom-label'], 
-    ['disabled'], 
-    ['small-with-info-text'],  
-    ['hidden-label'], 
+    ['info-text-and-custom-label'],
+    ['disabled'],
+    ['small-with-info-text'],
+    ['hidden-label'],
     ['readonly'],
   ])('%p', async (variant) => {
     await global.page.goto(
@@ -14,9 +14,7 @@ describe('RatingStars', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // focus, active
- test.each([
-    ['info-text-and-custom-label'],
-  ])('%p', async (variant) => {
+  test.each([['info-text-and-custom-label']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--${variant}&viewMode=story`
     );
@@ -44,5 +42,4 @@ describe('RatingStars', () => {
     await page.mouse.down();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
-}); 
-
+});

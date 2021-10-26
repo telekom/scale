@@ -16,9 +16,7 @@ describe('Textarea', () => {
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // hover, focus, active
-  test.each([
-    ['standard'],
-  ])('%p', async (variant) => {
+  test.each([['standard']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-text-area--${variant}&viewMode=story`
     );
