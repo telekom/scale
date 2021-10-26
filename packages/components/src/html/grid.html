@@ -20,12 +20,13 @@
     </style>
   </head> 
   <body>
-    <h1>Grid</h1>
-  
     <scale-grid style="
       --gutter-x: 0.5rem;
       --gutter-x-md: 0.5rem
     ">
+      <scale-grid-col style="--size-md: 8; --size-lg: 16; --size-xl: 16; --size-xxl: 16;">
+        <h1>Grid</h1>
+      </scale-grid-col>
       <scale-grid-col style="--size-xxl: 1">
         <z-block>1</z-block>
       </scale-grid-col>
@@ -37,6 +38,19 @@
       </scale-grid-col>
       <scale-grid-col style="">
         <z-block>4</z-block>
+      </scale-grid-col>
+    </scale-grid>
+
+    <scale-grid style="
+      --gutter-x: 0.5rem;
+      --gutter-x-md: 0.5rem;
+      margin-top: var(--scl-spacing-32);
+    ">
+      <scale-grid-col style="--size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <h1 class="scl-heading-2">Here's a heading</h1>
+      </scale-grid-col>
+      <scale-grid-col style="--size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <scale-card>Even a card right here.</scale-card>
       </scale-grid-col>
     </scale-grid>
   </body>

@@ -3,6 +3,9 @@
   - [ ] confirm having responsive variables (--foo-md) is not a bad idea
   - [ ] confirm we don't want fallbacks between breakpoints (the way tachyons works)
   - [ ] confirm we don't need sm breakpoint
+  - [ ] evaluate the possibility to not have to specify size in column number
+        which is annoying (you won't remember the number of columns per breakpoint),
+        and instead use something more generic (like half, third, 1/4, etc.)
   - [ ] use em in @media
   - [ ] decide whether max-width should be responsive
   - [ ] decide whether max-width should be calculated instead of hard-coded
