@@ -12,6 +12,7 @@ export class NotificationBadge {
   @Prop() label: string | number;
   @Prop() maxCharacters: number = 3;
   @Prop() type: 'icon' | 'text' = 'icon';
+  @Prop() clickNotification: any;
 
   getLabel() {
     if (this.label) {
@@ -40,7 +41,11 @@ export class NotificationBadge {
   render() {
     return (
       <Host>
-        <div class={this.getCssBorderClassMap()} tabIndex={0}>
+        <div
+          class={this.getCssBorderClassMap()}
+          tabIndex={0}
+          onClick={this.clickNotification}
+        >
           <div class="notification-badge_wrapper">
             <a class={this.getCssClassMap()}>
               <slot name="before-badge" />
@@ -59,7 +64,6 @@ export class NotificationBadge {
       this.type && `notification-badge--${this.type}`
     );
   }
-
   getCssBorderClassMap() {
     return classNames(
       `notification-badge_border`,
