@@ -119,7 +119,7 @@ export class Button {
           <a
             class={this.getCssClassMap()}
             href={this.href}
-            {...(this.download ? { download: true } : {})}
+            download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             aria-label={this.ariaLabel}
