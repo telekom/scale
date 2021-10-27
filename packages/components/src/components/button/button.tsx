@@ -41,8 +41,8 @@ export class Button {
   @Prop() target?: string = '_self';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  /** (optional) If `true`, a download is triggrered */
-  @Prop() download?: boolean = false;
+  /** (optional) name of a file to be downloaded */
+  @Prop() download?: string;
 
   /**
    * Prevent clicks from being emitted from the host
@@ -119,7 +119,7 @@ export class Button {
           <a
             class={this.getCssClassMap()}
             href={this.href}
-            {...(this.download ? { download: true } : {})}
+            download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             aria-label={this.ariaLabel}

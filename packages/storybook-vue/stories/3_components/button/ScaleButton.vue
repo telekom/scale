@@ -28,7 +28,7 @@ export default {
     title: String,
     disabled: Boolean,
     href: String,
-    download: Boolean,
+    download: String,
     type: String,
     target: String,
     variant: String,
