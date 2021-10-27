@@ -28,9 +28,9 @@ export class NavIcon {
   @Prop() href?: string = 'javascript:void(0);';
   @Prop() clickLink: any;
   @Prop() icon: string;
-  // DEPRECATED - mobileMenuOpen should replace isMobileMenuOpen
+  @Prop() badge: boolean = false;
+  @Prop() badgeLabel: number;
   @Prop() isMobileMenuOpen?: boolean = false;
-  @Prop() mobileMenuOpen?: boolean = false;
   @Prop() refMobileMenuToggle?: any;
 
   componentWillRender() {
@@ -45,14 +45,20 @@ export class NavIcon {
         source: this.host,
       });
     }
-    if (this.isMobileMenuOpen !== false) {
-      statusNote({
-        tag: 'deprecated',
-        message:
-          'Property "isMobileMenuOpen" is deprecated. Please use the "mobileMenuOpen" property!',
-        type: 'warn',
-        source: this.host,
-      });
+  }
+
+  getLabel() {
+    if (this.badgeLabel) {
+      let labelNumber = '' + this.badgeLabel;
+      if (labelNumber.length > 3) {
+        const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E'];
+        const tier = Math.floor(Math.log10(Number(this.badgeLabel)) / 3) || 0;
+        if (tier > 0) {
+          const scaled = Number(this.badgeLabel) / Math.pow(10, tier * 3);
+          labelNumber = scaled.toFixed(1).replace('.0', '') + SI_SYMBOL[tier];
+        }
+      }
+      return labelNumber;
     }
   }
 
@@ -63,21 +69,24 @@ export class NavIcon {
           class="meta-navigation__item-link"
           ref={this.refMobileMenuToggle}
           href={this.href}
-          onClick={this.clickLink}
+          onClick={() => console.log('!')}
           onKeyDown={(event) => {
             if (!this.refMobileMenuToggle) {
               return;
             }
             if (['Enter', ' ', 'Escape', 'Esc'].includes(event.key)) {
               event.preventDefault();
-              this.clickLink(event);
+              console.log('?');
             }
           }}
         >
-          {renderIcon({
-            tag: `scale-icon-${this.icon}`,
-            attributes: { class: 'meta-navigation__item-link-icon' },
-          })}
+          <a class="notification">
+            {renderIcon({
+              tag: `scale-icon-${this.icon}`,
+              attributes: { class: 'meta-navigation__item-link-icon' },
+            })}
+            <span class={this.getCssBadgeClassMap()}>{this.getLabel()}</span>
+          </a>
           <span class="meta-navigation__item-label">
             <slot></slot>
           </span>
@@ -89,12 +98,16 @@ export class NavIcon {
   getCssClassMap() {
     return classNames(
       'meta-navigation__item',
-      (this.active ||
-        this.isActive ||
-        this.mobileMenuOpen ||
-        this.isMobileMenuOpen) &&
+      (this.active || this.isActive || this.isMobileMenuOpen) &&
         'meta-navigation__item--selected',
       !!this.refMobileMenuToggle && 'mobile-menu'
+    );
+  }
+
+  getCssBadgeClassMap() {
+    return classNames(
+      `notification-badge`,
+      this.badgeLabel && `notification-badge--label`
     );
   }
 }
