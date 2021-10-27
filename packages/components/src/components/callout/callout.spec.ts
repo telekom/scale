@@ -1,14 +1,14 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Badge } from './badge';
+import { Callout } from './callout';
 
 it('should reflect attributes/props', async () => {
   const page = await newSpecPage({
-    components: [Badge],
-    html: `<scale-badge
+    components: [Callout],
+    html: `<scale-callout
                 size ="large"
                 color ="primary"
                 rotation ="15">
-              </scale-badge>`,
+              </scale-callout>`,
   });
 
   expect(page.rootInstance.size).toBe('large');
@@ -18,12 +18,12 @@ it('should reflect attributes/props', async () => {
 
 it('checks another color, other than prop', async () => {
   const page = await newSpecPage({
-    components: [Badge],
-    html: `<scale-badge
+    components: [Callout],
+    html: `<scale-callout
                 size ="large"
                 color ="red"
                 rotation ="15">
-              </scale-badge>`,
+              </scale-callout>`,
   });
 
   expect(page.rootInstance.size).toBe('large');

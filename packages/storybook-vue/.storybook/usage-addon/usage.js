@@ -79,8 +79,8 @@ import textField_en from 'raw-loader!../../stories/3_components/text-field/text-
 import textField_de from 'raw-loader!../../stories/3_components/text-field/text-field_de.md';
 import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
-import badge_de from 'raw-loader!../../stories/3_components/badge/badge_de.md';
-import badge_en from 'raw-loader!../../stories/3_components/badge/badge.md';
+import callout from 'raw-loader!../../stories/3_components/callout/callout.md';
+import callout from 'raw-loader!../../stories/3_components/callout/callout.md';
 import toggleGroup_de from 'raw-loader!../../stories/3_components/toggle-group/toggle-group_de.md';
 import toggleGroup_en from 'raw-loader!../../stories/3_components/toggle-group/toggle-group.md';
 
@@ -121,8 +121,8 @@ const Usage = (props) => {
     'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
-    badge_en,
-    badge_de,
+    callout,
+    callout,
     'data-grid_en': datagrid_en,
     'data-grid_de': datagrid_de,
     'date-picker_en': date_picker_en,

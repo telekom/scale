@@ -1,11 +1,11 @@
 <template>
-  <scale-badge
+  <scale-callout
     :size="size"
     :color="color"
     :rotation="rotation"
   >
     <slot></slot>
-  </scale-badge>
+  </scale-callout>
 </template>
 
 <script>

@@ -5,11 +5,11 @@ import {
   Canvas,
   Description,
 } from '@storybook/addon-docs/blocks';
-import ScaleBadge from './ScaleBadge.vue';
+import ScaleCallout from './ScaleCallout.vue';
 
 <Meta
-  title="Beta Components/Badge"
-  component={ScaleBadge}
+  title="Beta Components/Callout"
+  component={ScaleCallout}
   argTypes={{
     color: {
       defaultValue: 'primary',
@@ -29,10 +29,10 @@ import ScaleBadge from './ScaleBadge.vue';
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleBadge },
-  props: ScaleBadge.props,
+  components: { ScaleCallout },
+  props: ScaleCallout.props,
   template: `
-      <scale-badge :size="size" :color="color" :rotation="rotation">
+      <scale-callout :size="size" :color="color" :rotation="rotation">
       <div>
         <div style="text-align:center; font-size:20px; color:white; font-weight:400;">
           Für nur 
@@ -43,15 +43,15 @@ export const Template = (args, { argTypes }) => ({
           </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
   `,
 });
 
 export const Template2 = (args, { argTypes }) => ({
-  components: { ScaleBadge },
-  props: ScaleBadge.props,
+  components: { ScaleCallout },
+  props: ScaleCallout.props,
   template: `
-      <scale-badge :size="size" :color="color" :rotation="rotation">
+      <scale-callout :size="size" :color="color" :rotation="rotation">
       <div>
         <div style="text-align: center; font-size: 15px; color: white; font-weight: 400; margin-bottom: 10px;">
           Für nur
@@ -62,15 +62,15 @@ export const Template2 = (args, { argTypes }) => ({
           </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
   `,
 });
 
 export const Template3 = (args, { argTypes }) => ({
-  components: { ScaleBadge },
-  props: ScaleBadge.props,
+  components: { ScaleCallout },
+  props: ScaleCallout.props,
   template: `
-      <scale-badge :size="size" :color="color" :rotation="rotation">
+      <scale-callout :size="size" :color="color" :rotation="rotation">
       <div>
         <div style="text-align: center; font-size: 25px; color: white; font-weight: 400; margin-bottom: 10px;">
           ab
@@ -82,7 +82,7 @@ export const Template3 = (args, { argTypes }) => ({
           <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
   `,
 });
 
@@ -101,7 +101,7 @@ export const Template3 = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-badge>
+<scale-callout>
   <div>
     <div
       style="text-align:center; font-size:20px; color:white; font-weight:400;"
@@ -114,13 +114,13 @@ export const Template3 = (args, { argTypes }) => ({
       <span> 15 € </span>
     </div>
   </div>
-</scale-badge>
+</scale-callout>
 ```
 
 ### Scoped CSS variables
 ```css
  :host {
-  --color-badge: var(--scl-color-primary);
+  --color-callout: var(--scl-color-primary);
   --inner-width-small: var(--scl-spacing-80);
   --inner-height-small: var(--scl-spacing-80);
   --inner-width-large: 126.5px;
@@ -129,16 +129,16 @@ export const Template3 = (args, { argTypes }) => ({
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
-  --blue-badge: var(--scl-color-blue-60);
-  --white-badge: var(--scl-color-white);
-  --black-badge: var(--scl-color-black);
-  --primary-badge: var(--scl-color-primary);
+  --blue-callout: var(--scl-color-blue-60);
+  --white-callout: var(--scl-color-white);
+  --black-callout: var(--scl-color-black);
+  --primary-callout: var(--scl-color-primary);
 }
 }
 ```
 ## Size
 There are two sizes: 
-Large / small. Large has the size 160x160 and small 120x120. In the example below, the badge is small
+Large / small. Large has the size 160x160 and small 120x120. In the example below, the callout is small
 
 <Canvas withSource="none">
   <Story
@@ -153,7 +153,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 </Canvas>
 
 ```html
-<scale-badge color="blue" size="small" >
+<scale-callout color="blue" size="small" >
   <div>
     <div
       style="text-align:center; font-size:20px; color:blwhiteack; font-weight:400;"
@@ -166,7 +166,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
       <span> 15 € </span>
     </div>
   </div>
-</scale-badge>
+</scale-callout>
 ```
 
 ## Rotation
@@ -184,7 +184,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 </Canvas>
 
 ```html
-<scale-badge color="blue" size="small" rotation="33" >
+<scale-callout color="blue" size="small" rotation="33" >
   <div>
     <div
       style="text-align:center; font-size:20px; color:blue; font-weight:400;"
@@ -197,7 +197,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
       <span> 15 € </span>
     </div>
   </div>
-</scale-badge>
+</scale-callout>
 ```
 
 ## Color Choosing
@@ -215,7 +215,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-badge size="lare"  rotation="0">
+<scale-callout size="lare"  rotation="0">
       <div>
         <div style="text-align:center; font-size:20px; color:white; font-weight:400;">
           Für nur
@@ -226,7 +226,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
           </span>
         </div>
       </div>
-</scale-badge>
+</scale-callout>
 ```
 
 ## Asterisk
@@ -242,7 +242,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-badge size="large" color="primary" rotation="0">
+<scale-callout size="large" color="primary" rotation="0">
       <div>
         <div style="text-align: center; font-size: 25px; TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
           ab
@@ -254,5 +254,5 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
           <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
         </div>
       </div>
-</scale-badge>
+</scale-callout>
 ```
