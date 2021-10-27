@@ -148,7 +148,7 @@ module.exports = {
         });
       }
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
-        symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        setResizingConstraints(symbol, /.?/, FIXED_SIZE);
       }
       if (/^(Checkbox Group)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
