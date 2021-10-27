@@ -3,6 +3,59 @@ export const addonNavigation = [
   { name: "Contact", id: "Contact", href: "#contact" }
 ];
 
+export const userNavigation = [
+  {
+    type: 'userInfo',
+    shortName: 'Alexander',
+    name: 'Alexander Dreyer',
+    email: 'alexander.dreyer@t-online.de',
+  },
+  {
+    type: 'divider',
+  },
+  {
+    type: 'item',
+    name: 'Customer Care',
+    id: 'customer-care',
+    href: 'https://www.telekom.de/kundencenter/startseite',
+    onClick: () => {},
+    icon: 't-product-measure-internet-speed',
+    iconPosition: 'prefix'
+  },
+  {
+    type: 'item',
+    name: 'Login Settings',
+    id: 'login-settings',
+    href: 'https://account.idm.telekom.com/account-manager/index.xhtml',
+    onClick: () => {},
+    icon: 'service-settings',
+    iconPosition: 'prefix'
+  },
+  {
+    type: 'divider',
+  },
+  {
+    type: 'item',
+    name: 'Optional Link',
+    id: 'optional-link',
+    href: '#optional-link',
+    onClick: () => {},
+  },
+  {
+    type: 'divider',
+  },
+  {
+    type: 'button',
+    name: 'Logout',
+    id: 'logout',
+    onClick: () => {
+      console.log('button click');
+    },
+    href: 'https://accounts.login.idm.telekom.com/sessionmessage/logout',
+    variant: 'secondary',
+  },
+]
+
 export const mainNavigation = [
   {
     name: "Topic One",
@@ -308,7 +361,6 @@ export const mainNavigationFlyout = [
 export const iconNavigation = [
   { name: "Search", id: "Search35", href: "#search", icon: "action-search" },
   { name: "Cart", id: "Cart36", href: "#cart", icon: "action-shopping-cart" },
-  { name: "Login", id: "Login37", href: "#login", icon: "user-file-user" },
   { id: "menu", defaultName: "Menu", openedName: "Close" }
 ];
 

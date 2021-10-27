@@ -10,7 +10,6 @@
  */
 
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
-import statusNote from '../../utils/status-note';
 import { isClickOutside } from '../../utils/utils';
 
 const MENU_SELECTOR = '[role="menu"]';
@@ -93,10 +92,6 @@ export class MenuFlyout {
       this.closeAll();
       return;
     }
-  }
-
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
   }
 
   componentDidLoad() {
