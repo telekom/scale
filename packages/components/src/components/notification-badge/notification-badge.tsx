@@ -44,7 +44,7 @@ export class NotificationBadge {
         <div
           class={this.getCssBorderClassMap()}
           tabIndex={0}
-          onClick={this.clickNotification}
+          onClick={() => console.log('?')}
         >
           <div class="notification-badge_wrapper">
             <a class={this.getCssClassMap()}>

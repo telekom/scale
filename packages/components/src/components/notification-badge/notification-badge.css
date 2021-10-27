@@ -28,25 +28,6 @@
   --notification-badge-label-icon-right: -8px;
 }
 
-.notification-badge_wrapper {
-  display: flex;
-}
-
-::slotted([slot='before-badge']) {
-  display: inline-block;
-}
-
-.notification-badge_border--icon ::slotted([slot='after-badge']) {
-  display: inline-block;
-  padding-left: 10px;
-  padding-top: 6.5px;
-}
-
-.notification-badge_border--text ::slotted([slot='after-badge']) {
-  padding-left: 17px;
-  padding-top: 0;
-}
-
 .notification-badge {
   position: relative;
   display: inline-block;
@@ -62,6 +43,7 @@
   justify-content: center;
   outline: none;
   text-align: center;
+  cursor: pointer;
 }
 .notification-badge_border:focus.notification-badge_border::after {
   content: '';
@@ -123,4 +105,22 @@
   .notification-badge__circle {
   top: var(--notification-badge-label-icon-top);
   right: var(--notification-badge-label-icon-right);
+}
+
+@media (max-width: 1023px) {
+}
+@media (min-width: 1024px) {
+  .notification-badge_wrapper {
+    display: flex;
+  }
+
+  .notification-badge_border--icon ::slotted([slot='after-badge']) {
+    padding-left: 10px;
+    padding-top: 6.5px;
+  }
+
+  .notification-badge_border--text ::slotted([slot='after-badge']) {
+    padding-left: 17px;
+    padding-top: 0;
+  }
 }

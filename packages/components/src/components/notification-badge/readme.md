@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                                    | Type               | Default     |
-| --------------- | ---------------- | ---------------------------------------------- | ------------------ | ----------- |
-| `label`         | `label`          | (optional) Text that is displayed in the badge | `number \| string` | `undefined` |
-| `maxCharacters` | `max-characters` |                                                | `number`           | `3`         |
-| `type`          | `type`           |                                                | `"icon" \| "text"` | `'icon'`    |
+| Property            | Attribute            | Description                                    | Type               | Default     |
+| ------------------- | -------------------- | ---------------------------------------------- | ------------------ | ----------- |
+| `clickNotification` | `click-notification` |                                                | `any`              | `undefined` |
+| `label`             | `label`              | (optional) Text that is displayed in the badge | `number \| string` | `undefined` |
+| `maxCharacters`     | `max-characters`     |                                                | `number`           | `3`         |
+| `type`              | `type`               |                                                | `"icon" \| "text"` | `'icon'`    |
 
 
 ----------------------------------------------
