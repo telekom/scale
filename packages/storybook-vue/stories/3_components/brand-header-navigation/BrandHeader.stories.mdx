@@ -189,12 +189,20 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       props: AppShell.props,
       methods: {
         handleOpen: function () {
+          // Deprecated
           this.$refs.header.isMegaMenuVisible = true;
+          // Deprecated
           this.$refs.navMainWithMegaMenu.isMegaMenuVisible = true;
+          this.$refs.header.megaMenuVisible = true;
+          this.$refs.navMainWithMegaMenu.megaMenuVisible = true;
         },
         handleClose: function () {
+          // Deprecated
           this.$refs.header.isMegaMenuVisible = false;
+          // Deprecated
           this.$refs.navMainWithMegaMenu.isMegaMenuVisible = false;
+          this.$refs.header.megaMenuVisible = false;
+          this.$refs.navMainWithMegaMenu.megaMenuVisible = false;
         },
       },
       template: `
@@ -268,22 +276,38 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     );
     header.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
+        // Deprecated
         navMainWithMegaMenu.isMegaMenuVisible = false;
+        // Deprecated
         header.isMegaMenuVisible = false;
+        navMainWithMegaMenu.megaMenuVisible = false;
+        header.megaMenuVisible = false;
       }
     });
     navMainWithMegaMenu.addEventListener('mouseenter', function () {
+      // Deprecated
       navMainWithMegaMenu.isMegaMenuVisible = true;
+      // Deprecated
       header.isMegaMenuVisible = true;
+      navMainWithMegaMenu.megaMenuVisible = true;
+      header.megaMenuVisible = true;
     });
     navMainWithMegaMenu.addEventListener('mouseleave', function () {
+      // Deprecated
       navMainWithMegaMenu.isMegaMenuVisible = false;
+      // Deprecated
       header.isMegaMenuVisible = false;
+      navMainWithMegaMenu.megaMenuVisible = false;
+      header.megaMenuVisible = false;
     });
     navMainWithMegaMenu.addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
+        // Deprecated
         navMainWithMegaMenu.isMegaMenuVisible = true;
+        // Deprecated
         header.isMegaMenuVisible = true;
+        navMainWithMegaMenu.megaMenuVisible = true;
+        header.megaMenuVisible = true;
       }
     });
   </script>
