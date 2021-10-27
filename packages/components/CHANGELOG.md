@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.24](https://github.com/telekom/scale/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2021-10-27)
+
+
+### Bug Fixes
+
+* **button:** download despite download prop set to 'false' ([#648](https://github.com/telekom/scale/issues/648)) ([6a7c368](https://github.com/telekom/scale/commit/6a7c3682feae0922cccc0e6807cc7a71bf025060))
+
+
+
+
+
 # [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
 
 

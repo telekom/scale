@@ -19,7 +19,7 @@ import ScaleButton from "./ScaleButton.vue";
             control: { type: 'boolean' }
         },
         download: {
-            control: { type: 'boolean' }
+            control: { type: 'text' }
         }
     }}
 />
@@ -264,7 +264,7 @@ For Shadow Parts, please inspect the element's #shadow.
         name='Link Download'
         args={{
             href: 'assets/welcome.png',
-            download: true,
+            download: 'welcome.png',
             label: 'Download'
         }}
     >
@@ -273,7 +273,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-button href="assets/welcome.png" download>Download</scale-button>
+<scale-button href="assets/welcome.png" download="welcome.png">Download</scale-button>
 ```
 
 ## External Link
@@ -466,7 +466,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
         args={{
             size: 'small',
             href: 'assets/welcome.png',
-            download: true,
+            download: "welcome.png",
             label: 'Download'
         }}
     >
@@ -475,5 +475,5 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 </Canvas>
 
 ```html
-<scale-button size="small" href="assets/welcome.png" download>Download</scale-button>
+<scale-button size="small" href="assets/welcome.png" download="welcome.png">Download</scale-button>
 ```
