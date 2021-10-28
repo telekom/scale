@@ -32,7 +32,7 @@ export class NavIcon {
   @Prop() isMobileMenuOpen?: boolean = false;
   @Prop() mobileMenuOpen?: boolean = false;
   @Prop() refMobileMenuToggle?: any;
-  //Badge
+  // Badge
   @Prop() badge: boolean = false;
   @Prop() badgeLabel: number;
 
