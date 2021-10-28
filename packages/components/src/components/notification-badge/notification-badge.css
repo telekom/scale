@@ -32,13 +32,9 @@
   display: flex;
 }
 
-::slotted([slot='before-badge']) {
-  display: inline-block;
-}
-
 .notification-badge_border--icon ::slotted([slot='after-badge']) {
   display: inline-block;
-  padding-left: 10px;
+  padding-left: 4px;
   padding-top: 6.5px;
 }
 
@@ -96,16 +92,6 @@
   border-radius: 6px;
 }
 
-.notification-badge.notification-badge--text .notification-badge__circle {
-  top: var(--notification-badge-text-top);
-  right: var(--notification-badge-text-right);
-}
-
-.notification-badge.notification-badge--icon .notification-badge__circle {
-  top: var(--notification-badge-icon-top);
-  right: var(--notification-badge-icon-right);
-}
-
 .notification-badge.notification-badge--label .notification-badge__circle {
   font-size: var(--notification-badge-label-font-size);
   min-width: 10px;
@@ -113,14 +99,39 @@
   padding: 0 1px;
 }
 
-.notification-badge.notification-badge--label.notification-badge--text
-  .notification-badge__circle {
-  top: var(--notification-badge-label-text-top);
-  right: var(--notification-badge-label-text-right);
+@media (max-width: 1023px) {
+  .notification-badge.notification-badge.notification-badge--label.notification-badge--icon
+    .notification-badge__circle {
+    top: -3px;
+    right: -5px;
+    font-size: 6px;
+    height: 12px;
+    min-width: 10px;
+  }
+  .notification-badge.notification-badge.notification-badge--icon
+    .notification-badge__circle {
+    top: 1px;
+    right: -2px;
+    height: 6px;
+    min-width: 6px;
+  }
 }
 
-.notification-badge.notification-badge--label.notification-badge--icon
-  .notification-badge__circle {
-  top: var(--notification-badge-label-icon-top);
-  right: var(--notification-badge-label-icon-right);
+@media (min-width: 1024px) {
+  .notification-badge.notification-badge.notification-badge--label.notification-badge--icon
+    .notification-badge__circle {
+    top: -6px;
+    right: -1.5px;
+    font-size: 7px;
+    height: 14px;
+    min-width: 12px;
+    border-radius: 7px;
+  }
+  .notification-badge.notification-badge.notification-badge--icon
+    .notification-badge__circle {
+    top: -4.5px;
+    right: 4px;
+    height: 8px;
+    min-width: 8px;
+  }
 }

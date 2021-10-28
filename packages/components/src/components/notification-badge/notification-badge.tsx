@@ -48,7 +48,7 @@ export class NotificationBadge {
         >
           <div class="notification-badge_wrapper">
             <a class={this.getCssClassMap()}>
-              <slot name="before-badge" />
+              <slot />
               <span class="notification-badge__circle">{this.getLabel()}</span>
             </a>
             <slot name="after-badge"></slot>
