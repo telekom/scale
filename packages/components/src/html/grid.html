@@ -9,49 +9,53 @@
     <link rel="stylesheet" href="/build/scale-components.css" />
     <style>
       body {
-        margin: 0;
+        margin: 2rem 0; 
       }
 
       z-block {
         display: block;
-        background: goldenrod;
-        min-height: 100px;
+        border: 2px solid var(--border-color, var(--scl-color-green-60));
+        border-radius: var(--scl-radius-8);
+        min-height: 200px;
+        padding: var(--scl-spacing-16);
       }
     </style>
   </head> 
   <body>
-    <scale-grid style="
-      --gutter-x: 0.5rem;
-      --gutter-x-md: 0.5rem
-    ">
-      <scale-grid-col style="--size-md: 8; --size-lg: 16; --size-xl: 16; --size-xxl: 16;">
-        <h1>Grid</h1>
-      </scale-grid-col>
-      <scale-grid-col style="--size-xxl: 1">
-        <z-block>1</z-block>
-      </scale-grid-col>
-      <scale-grid-col style="--offset-xxl: 5">
-        <z-block>2</z-block>
-      </scale-grid-col>
-      <scale-grid-col style="">
-        <z-block>3</z-block>
-      </scale-grid-col>
-      <scale-grid-col style="">
-        <z-block>4</z-block>
-      </scale-grid-col>
+    <scale-grid>
+      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <h1>Scale Grid (2nd iteration) demo</h1>
+      </scale-grid-item>
     </scale-grid>
 
-    <scale-grid style="
-      --gutter-x: 0.5rem;
-      --gutter-x-md: 0.5rem;
-      margin-top: var(--scl-spacing-32);
-    ">
-      <scale-grid-col style="--size-lg: 8; --size-xl: 8; --size-xxl: 8">
-        <h1 class="scl-heading-2">Here's a heading</h1>
-      </scale-grid-col>
-      <scale-grid-col style="--size-lg: 8; --size-xl: 8; --size-xxl: 8">
-        <scale-card>Even a card right here.</scale-card>
-      </scale-grid-col>
+    <scale-grid>
+      <scale-grid-item>
+        <z-block>4 cols (default)</z-block>
+      </scale-grid-item>
+      <scale-grid-item>
+        <z-block>4 cols (default)</z-block>
+      </scale-grid-item>
+      <scale-grid-item>
+        <z-block>4 cols (default)</z-block>
+      </scale-grid-item>
+      <scale-grid-item>
+        <z-block>4 cols (default)</z-block>
+      </scale-grid-item>
+    </scale-grid>
+
+    <scale-grid style="margin-top: var(--scl-spacing-48); --border-color: var(--scl-color-lilac-60)">
+      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
+      </scale-grid-item>
+      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
+      </scale-grid-item>
+      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
+      </scale-grid-item>
+      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
+      </scale-grid-item>
     </scale-grid>
   </body>
 </html>

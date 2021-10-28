@@ -1,0 +1,100 @@
+/*
+  MORE THAN 1 FALLBACK IN THE VARIABLES DOES NOT WORK BUT IT SHOULD?
+*/
+
+/*
+  columns / spacing / gutter
+  --------------------------
+  - sm  ->  4 / 16 / 32 (default)
+  - md  ->  8 / 16 / 32
+  - lg  -> 16 / 24 / 32
+  - xl  -> 16 / 24 / 32
+  - xxl -> 16 / 24 / 32
+
+  --columns
+  --gutter-y - between columns
+  --gutter-x - between rows 
+  --spacing - padding
+  --max-width (not responsive)
+*/
+scale-grid, .scl-grid {
+  display: grid;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(var(--columns-sm, 4), 1fr);
+  padding-left: var(--spacing-sm, var(--scl-spacing-16, 1rem));
+  padding-right: var(--spacing-sm, var(--scl-spacing-16, 1rem));
+  column-gap: var(--gutter-y-sm, var(--scl-spacing-32, 2rem));
+  row-gap: var(--gutter-x-sm, var(--scl-spacing-32, 2rem));
+  /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
+  max-width: var(--max-width, 1552px);
+}
+
+/*
+  --offset
+  --size
+*/
+scale-grid-item, .scl-grid-item {
+  grid-column: var(--offset-sm, auto) / span var(--size-sm, 4);
+}
+
+/* md */
+@media screen and (min-width: 640px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-md, var(--columns-sm), 8), 1fr);
+    padding-left: var(--spacing-md, var(--spacing-md, var(--scl-spacing-16), 1rem));
+    padding-right: var(--spacing-md, var(--spacing-md, var(--scl-spacing-16), 1rem));
+    column-gap: var(--gutter-y-md, var(--gutter-y-sm), var(--scl-spacing-32, 2rem));
+    row-gap: var(--gutter-x-md, var(--gutter-x-sm), var(--scl-spacing-32, 2rem));
+  }
+
+  scale-grid-item, .scl-grid-item {
+    grid-column: var(--offset-md, var(--offset-sm), auto) / span var(--size-md, var(--size-sm), 4);
+  }
+}
+
+/* lg */
+/* @media screen and (min-width: 1040px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-lg, var(--columns-md), var(--columns-sm), 16), 1fr);
+    padding-left: var(--spacing-lg, var(--spacing-md), var(--spacing-sm), var(--scl-spacing-24, 1.5rem));
+    padding-right: var(--spacing-lg, var(--spacing-md), var(--spacing-sm), var(--scl-spacing-24, 1.5rem));
+    column-gap: var(--gutter-y-lg, var(--gutter-y-md), var(--gutter-y-sm), var(--scl-spacing-32, 2rem));
+    row-gap: var(--gutter-x-lg, var(--gutter-x-md), var(--gutter-x-sm), var(--scl-spacing-32, 2rem));
+  }
+
+  scale-grid-item, .scl-grid-item {
+    grid-column: var(--offset-lg, var(--offset-md), var(--offset-sm), auto) / span var(--size-lg, var(--size-md), var(--size-sm), 4);
+  }
+} */
+
+/* xl */
+/* @media screen and (min-width: 1296px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-xl, var(--columns-lg), var(--columns-md), var(--columns-sm), 16), 1fr);
+    padding-left: var(--spacing-xl, var(--spacing-lg), var(--spacing-md), var(--spacing-sm), var(--scl-spacing-24, 1.5rem));
+    padding-right: var(--spacing-xl, var(--spacing-lg), var(--spacing-md), var(--spacing-sm), var(--scl-spacing-24, 1.5rem));
+    column-gap: var(--gutter-y-xl, var(--gutter-y-lg), var(--gutter-y-md), var(--gutter-y-sm), var(--scl-spacing-32, 2rem));
+    row-gap: var(--gutter-x-xl, var(--gutter-y-lg), var(--gutter-x-md), var(--gutter-x-sm), var(--scl-spacing-32, 2rem));
+  }
+
+  scale-grid-item, .scl-grid-item {
+    grid-column: var(--offset-xl, var(--offset-lg), var(--offset-md), var(--offset-sm), auto) / span var(--size-xl, var(--size-lg), var(--size-md), var(--size-sm), 4);
+  }
+} */
+
+/* xxl */
+/* @media screen and (min-width: 1552px) {
+  scale-grid, .scl-grid {
+    grid-template-columns: repeat(var(--columns-xxl, var(--columns-xl), var(--columns-lg), var(--columns-md), var(--columns-sm), 16), 1fr);
+    padding-left: var(--spacing-xxl, var(--spacing-xl), var(--spacing-lg), var(--spacing-md), var(--spacing-sm), var(--scl-spacing-24, 1.5rem));
+    padding-right: var(--spacing-xxl, var(--spacing-xl), var(--spacing-lg), var(--spacing-md), var(--spacing-sm), var(--scl-spacing-24, 1.5rem));
+    column-gap: var(--gutter-y-xxl, var(--gutter-y-xl), var(--gutter-y-lg), var(--gutter-y-md), var(--gutter-y-sm), var(--scl-spacing-32, 2rem));
+    row-gap: var(--gutter-x-xxl, var(--gutter-y-xl), var(--gutter-y-lg), var(--gutter-x-md), var(--gutter-x-sm), var(--scl-spacing-32, 2rem));
+  }
+
+  scale-grid-item, .scl-grid-item {
+    grid-column: var(--offset-xxl, var(--offset-xl), var(--offset-lg), var(--offset-md), var(--offset-sm), auto) /  span var(--size-xxl, var(--size-xl), var(--size-lg), var(--size-md), var(--size-sm), 4);
+  }
+} */
