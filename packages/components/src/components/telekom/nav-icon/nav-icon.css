@@ -24,36 +24,6 @@ scale-nav-icon {
   --color-active: var(--scl-color-primary-active);
 }
 
-.notification {
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  border-radius: 2px;
-}
-
-.notification .notification-badge {
-  position: absolute;
-  top: -5px;
-  right: 4px;
-  min-width: 6px;
-  height: 8px;
-  padding: 0 1px;
-  border-radius: 6px;
-  background: #e20074;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.notification .notification-badge.notification-badge--label {
-  top: -6px;
-  right: 2px;
-  font-size: 10px;
-  min-width: 10px;
-  height: 12px;
-}
-
 .meta-navigation__item-link {
   color: var(--scl-color-text-standard);
   display: flex;
@@ -99,19 +69,6 @@ scale-nav-icon {
     width: 18px;
     height: 18px;
     margin-bottom: 4px;
-  }
-
-  .notification .notification-badge {
-    top: -0px;
-    right: -2px;
-    min-width: 4px;
-    height: 6px;
-  }
-
-  .notification .notification-badge.notification-badge--label {
-    top: -2px;
-    right: -5px;
-    font-size: 6px;
   }
 }
 

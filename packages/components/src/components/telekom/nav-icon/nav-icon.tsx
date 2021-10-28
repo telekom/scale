@@ -59,21 +59,6 @@ export class NavIcon {
     }
   }
 
-  getLabel() {
-    if (this.badgeLabel) {
-      let labelNumber = '' + this.badgeLabel;
-      if (labelNumber.length > 3) {
-        const SI_SYMBOL = ['', 'k', 'M', 'G', 'T', 'P', 'E'];
-        const tier = Math.floor(Math.log10(Number(this.badgeLabel)) / 3) || 0;
-        if (tier > 0) {
-          const scaled = Number(this.badgeLabel) / Math.pow(10, tier * 3);
-          labelNumber = scaled.toFixed(1).replace('.0', '') + SI_SYMBOL[tier];
-        }
-      }
-      return labelNumber;
-    }
-  }
-
   render() {
     return (
       <li class={this.getCssClassMap()}>
@@ -92,17 +77,19 @@ export class NavIcon {
             }
           }}
         >
-          <a class="notification">
-            {renderIcon({
+          {this.badge || (this.badgeLabel && this.badge) || this.badgeLabel ? (
+            <scale-notification-badge label={this.badgeLabel} type="icon">
+              {renderIcon({
+                tag: `scale-icon-${this.icon}`,
+                attributes: { class: 'meta-navigation__item-link-icon' },
+              })}
+            </scale-notification-badge>
+          ) : (
+            renderIcon({
               tag: `scale-icon-${this.icon}`,
               attributes: { class: 'meta-navigation__item-link-icon' },
-            })}
-            {this.badge ||
-            (this.badgeLabel && this.badge) ||
-            this.badgeLabel ? (
-              <span class={this.getCssBadgeClassMap()}>{this.getLabel()}</span>
-            ) : null}
-          </a>
+            })
+          )}
           <span class="meta-navigation__item-label">
             <slot></slot>
           </span>
@@ -120,13 +107,6 @@ export class NavIcon {
         this.isMobileMenuOpen) &&
         'meta-navigation__item--selected',
       !!this.refMobileMenuToggle && 'mobile-menu'
-    );
-  }
-
-  getCssBadgeClassMap() {
-    return classNames(
-      `notification-badge`,
-      this.badgeLabel && `notification-badge--label`
     );
   }
 }
