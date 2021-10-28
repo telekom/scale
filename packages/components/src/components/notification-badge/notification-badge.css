@@ -1,0 +1,126 @@
+:host {
+  /*
+  border
+  */
+  --notification-badge_border-border: #009de0 1.5px solid;
+  --notification-badge_border-radius: 5px;
+  /*
+  badge
+  */
+  --notification-badge-size: 8px;
+  --notification-badge-background: #e20074;
+  --notification-badge-color: #ffffff;
+  /*text*/
+  --notification-badge-text-top: -3px;
+  --notification-badge-text-right: -11px;
+  /*icon*/
+  --notification-badge-icon-top: -3px;
+  --notification-badge-icon-right: -4px;
+
+  /*label*/
+  --notification-badge-label-size: 12px;
+  --notification-badge-label-font-size: 6px;
+  /*label & text*/
+  --notification-badge-label-text-top: -6px;
+  --notification-badge-label-text-right: -14px;
+  /*label & icon*/
+  --notification-badge-label-icon-top: -3px;
+  --notification-badge-label-icon-right: -8px;
+}
+
+.notification-badge_wrapper {
+  display: flex;
+}
+
+::slotted([slot='before-badge']) {
+  display: inline-block;
+}
+
+.notification-badge_border--icon ::slotted([slot='after-badge']) {
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 6.5px;
+}
+
+.notification-badge_border--text ::slotted([slot='after-badge']) {
+  padding-left: 17px;
+  padding-top: 0;
+}
+
+.notification-badge {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.notification-badge_border {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  text-align: center;
+}
+.notification-badge_border:focus.notification-badge_border::after {
+  content: '';
+  position: absolute;
+  border: var(--notification-badge_border-border);
+  border-radius: var(--notification-badge_border-radius);
+}
+
+.notification-badge_border:focus.notification-badge_border.notification-badge_border--text::after {
+  top: -10px;
+  left: -15px;
+  right: -20px;
+  bottom: -10px;
+}
+
+.notification-badge_border:focus.notification-badge_border.notification-badge_border--icon::after {
+  top: -10px;
+  left: -10px;
+  right: -15px;
+  bottom: -5px;
+}
+
+.notification-badge .notification-badge__circle {
+  position: absolute;
+  min-width: var(--notification-badge-size);
+  height: var(--notification-badge-size);
+  background: var(--notification-badge-background);
+  color: var(--notification-badge-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.notification-badge.notification-badge--text .notification-badge__circle {
+  top: var(--notification-badge-text-top);
+  right: var(--notification-badge-text-right);
+}
+
+.notification-badge.notification-badge--icon .notification-badge__circle {
+  top: var(--notification-badge-icon-top);
+  right: var(--notification-badge-icon-right);
+}
+
+.notification-badge.notification-badge--label .notification-badge__circle {
+  font-size: var(--notification-badge-label-font-size);
+  min-width: 10px;
+  height: var(--notification-badge-label-size);
+  padding: 0 1px;
+}
+
+.notification-badge.notification-badge--label.notification-badge--text
+  .notification-badge__circle {
+  top: var(--notification-badge-label-text-top);
+  right: var(--notification-badge-label-text-right);
+}
+
+.notification-badge.notification-badge--label.notification-badge--icon
+  .notification-badge__circle {
+  top: var(--notification-badge-label-icon-top);
+  right: var(--notification-badge-label-icon-right);
+}
