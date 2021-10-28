@@ -56,22 +56,24 @@ import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
         handleSelect: action('scale-select'),
       },
       template: `
-        <scale-menu-flyout
-          :direction="direction"
-          :close-on-select="String(closeOnSelect)"
-          @scale-open="handleOpen"
-          @scale-close="handleClose"
-          @scale-select="handleSelect"
-        >
-          <scale-button slot="trigger" variant="secondary" icon-only>
-            <scale-icon-service-settings accessibility-title="Open menu"></scale-icon-service-settings>
-          </scale-button>
-          <scale-menu-flyout-list>
-            <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
-            <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
-            <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
-          </scale-menu-flyout-list>
-        </scale-menu-flyout>
+        <div style="display:flex; height:200px;">
+          <scale-menu-flyout
+            :direction="direction"
+            :close-on-select="String(closeOnSelect)"
+            @scale-open="handleOpen"
+            @scale-close="handleClose"
+            @scale-select="handleSelect"
+          >
+            <scale-button slot="trigger" variant="secondary" icon-only>
+              <scale-icon-service-settings accessibility-title="Open menu"></scale-icon-service-settings>
+            </scale-button>
+            <scale-menu-flyout-list>
+              <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+            </scale-menu-flyout-list>
+          </scale-menu-flyout>
+        </div>
       `
     }}
   </Story>
@@ -189,6 +191,7 @@ Use `scale-select` which will be triggered by both mouse and keyboard input.
         handleSelect: action('scale-select'),
       },
       template: `
+      <div style="display:flex; height:400px;">
         <scale-menu-flyout @scale-open="handleOpen" @scale-close="handleClose" @scale-select="handleSelect">
           <scale-button slot="trigger" variant="secondary" icon-only>
             <scale-icon-action-filter accessibility-title="Open menu"></scale-icon-action-filter>
@@ -218,6 +221,7 @@ Use `scale-select` which will be triggered by both mouse and keyboard input.
             </scale-menu-flyout-item>
           </scale-menu-flyout-list>
         </scale-menu-flyout>
+      </div>  
       `
     }}
   </Story>
