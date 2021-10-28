@@ -20,7 +20,7 @@
   --height-large: var(--scl-spacing-48);
   --radius: var(--scl-radius-4);
   --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+    var(--scl-motion-easing-standard), border-radius 0ms;
   --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
   --font-weight: var(--scl-font-weight-bold);
   --font-size-large: var(--scl-font-size-16);
