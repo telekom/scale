@@ -10,6 +10,8 @@
 | Property              | Attribute                | Description                       | Type      | Default                 |
 | --------------------- | ------------------------ | --------------------------------- | --------- | ----------------------- |
 | `active`              | `active`                 |                                   | `boolean` | `undefined`             |
+| `badge`               | `badge`                  |                                   | `boolean` | `false`                 |
+| `badgeLabel`          | `badge-label`            |                                   | `number`  | `undefined`             |
 | `clickLink`           | `click-link`             |                                   | `any`     | `undefined`             |
 | `href`                | `href`                   | (optional) href value             | `string`  | `'javascript:void(0);'` |
 | `icon`                | `icon`                   |                                   | `string`  | `undefined`             |
