@@ -6,7 +6,7 @@ exports[`Slider should match snapshot 1`] = `
     <div class="slider" part="slider">
       <div class="slider__track-wrapper" part="track-wrapper">
         <div class="slider__track" part="track">
-          <div class="slider__bar" part="bar" style="width: 0%;"></div>
+          <div class="slider__bar" part="bar" style="width: 0%; background-color: var(--background-bar);"></div>
           <div class="slider__thumb-wrapper" part="thumb-wrapper" style="left: 0%;">
             <div aria-labelledby="slider-0-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuetext="undefined" class="slider__thumb" id="slider-0" part="thumb" role="slider" tabindex="0"></div>
           </div>
@@ -25,7 +25,7 @@ exports[`Slider should match snapshot 2`] = `
     <div class="slider" part="slider">
       <div class="slider__track-wrapper" part="track-wrapper">
         <div class="slider__track" part="track">
-          <div class="slider__bar" part="bar" style="width: 10%;"></div>
+          <div class="slider__bar" part="bar" style="width: 10%; background-color: var(--background-bar);"></div>
           <div class="slider__thumb-wrapper" part="thumb-wrapper" style="left: 10%;">
             <div aria-labelledby="slider-1-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" aria-valuetext="10" class="slider__thumb" id="slider-1" part="thumb" role="slider" tabindex="0"></div>
           </div>

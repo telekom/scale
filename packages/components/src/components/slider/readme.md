@@ -9,7 +9,7 @@
 
 | Property      | Attribute      | Description                                                           | Type          | Default     |
 | ------------- | -------------- | --------------------------------------------------------------------- | ------------- | ----------- |
-| `customColor` | `custom-color` | (optional) slider custom color                                        | `string`      | `''`        |
+| `customColor` | `custom-color` | DEPRECATED - optional) slider custom color                            | `string`      | `undefined` |
 | `decimals`    | `decimals`     | (optional) number of decimal places                                   | `0 \| 1 \| 2` | `0`         |
 | `disabled`    | `disabled`     | (optional) disabled                                                   | `boolean`     | `false`     |
 | `label`       | `label`        | (optional) slider label                                               | `string`      | `undefined` |
