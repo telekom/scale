@@ -97,7 +97,11 @@ export class NavIcon {
               tag: `scale-icon-${this.icon}`,
               attributes: { class: 'meta-navigation__item-link-icon' },
             })}
-            <span class={this.getCssBadgeClassMap()}>{this.getLabel()}</span>
+            {this.badge ||
+            (this.badgeLabel && this.badge) ||
+            this.badgeLabel ? (
+              <span class={this.getCssBadgeClassMap()}>{this.getLabel()}</span>
+            ) : null}
           </a>
           <span class="meta-navigation__item-label">
             <slot></slot>
