@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Listen, Element } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Listen,
+  Element,
+  Method,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { hasShadowDom } from '../../utils/utils';
 
@@ -44,6 +52,8 @@ export class Button {
   /** (optional) name of a file to be downloaded */
   @Prop() download?: string;
 
+  private focusableElement: HTMLElement;
+
   /**
    * Prevent clicks from being emitted from the host
    * when the component is `disabled`.
@@ -53,6 +63,11 @@ export class Button {
     if (this.disabled === true) {
       event.stopImmediatePropagation();
     }
+  }
+
+  @Method()
+  async setFocus() {
+    this.focusableElement.focus();
   }
 
   /**
@@ -117,6 +132,7 @@ export class Button {
 
         {this.href ? (
           <a
+            ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
             href={this.href}
             download={this.download}
@@ -129,6 +145,7 @@ export class Button {
           </a>
         ) : (
           <button
+            ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
             onClick={this.handleClick}
             disabled={this.disabled}
