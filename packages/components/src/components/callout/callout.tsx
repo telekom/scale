@@ -11,8 +11,8 @@ export class Callout {
   @Element() hostElement: HTMLElement;
   /** (optional) Variant size of the callout itself */
   @Prop({ mutable: true }) size: 'large' | 'small' = 'large';
-  /** (optional) Variant color/filling of the callout */
-  @Prop({ mutable: true }) color: 'primary' | 'white' | 'black' | 'blue';
+  /** (optional) Variant filling of the callout */
+  @Prop({ mutable: true }) variant: 'primary' | 'white' | 'black' | 'blue';
   /** (optional) Variant rotation of the callout/circle */
   @Prop({ mutable: true }) rotation: number = 0;
 
@@ -53,7 +53,7 @@ export class Callout {
 
     return classNames(
       name,
-      this.color && `${prefix}color-${this.color}`,
+      this.variant && `${prefix}color-${this.variant}`,
       this.size && `${prefix}size-${this.size}`
     );
   }

@@ -11,7 +11,7 @@ import ScaleCallout from './ScaleCallout.vue';
   title="Beta Components/Callout"
   component={ScaleCallout}
   argTypes={{
-    color: {
+    variant: {
       defaultValue: 'primary',
       options: ['primary', 'white', 'black', 'blue'],
       control: {
@@ -32,7 +32,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleCallout },
   props: ScaleCallout.props,
   template: `
-      <scale-callout :size="size" :color="color" :rotation="rotation">
+      <scale-callout :size="size" :variant="variant" :rotation="rotation">
       <div>
         <div style="text-align:center; font-size:20px; color:white; font-weight:400;">
           Für nur 
@@ -51,7 +51,7 @@ export const Template2 = (args, { argTypes }) => ({
   components: { ScaleCallout },
   props: ScaleCallout.props,
   template: `
-      <scale-callout :size="size" :color="color" :rotation="rotation">
+      <scale-callout :size="size" :variant="variant" :rotation="rotation">
       <div>
         <div style="text-align: center; font-size: 15px; color: white; font-weight: 400; margin-bottom: 10px;">
           Für nur
@@ -70,7 +70,7 @@ export const Template3 = (args, { argTypes }) => ({
   components: { ScaleCallout },
   props: ScaleCallout.props,
   template: `
-      <scale-callout :size="size" :color="color" :rotation="rotation">
+      <scale-callout :size="size" :variant="variant" :rotation="rotation">
       <div>
         <div style="text-align: center; font-size: 25px; color: white; font-weight: 400; margin-bottom: 10px;">
           ab
@@ -145,7 +145,6 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
     name="Sizes"
     args={{
       size: "small",
-      color: "blue",
     }}
   >
     {Template2.bind({})}
@@ -153,10 +152,10 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 </Canvas>
 
 ```html
-<scale-callout color="blue" size="small" >
+<scale-callout size="small" >
   <div>
     <div
-      style="text-align:center; font-size:20px; color:blwhiteack; font-weight:400;"
+      style="text-align:center; font-size:20px; color:white; font-weight:400;"
     >
       Für nur
     </div>
@@ -175,7 +174,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
     name="Rotation"
     args={{
       size: "small",
-      color: "blue",
+      variant: "blue",
       rotation: 33,
     }}
   >
@@ -184,10 +183,10 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 </Canvas>
 
 ```html
-<scale-callout color="blue" size="small" rotation="33" >
+<scale-callout variant="blue" size="small" rotation="33" >
   <div>
     <div
-      style="text-align:center; font-size:20px; color:blue; font-weight:400;"
+      style="text-align:center; font-size:20px; color:white; font-weight:400;"
     >
       Für nur
     </div>
@@ -200,14 +199,15 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 </scale-callout>
 ```
 
-## Color Choosing
+## Variants
 There are 4 standard colors (Primary - default, black, white, blue). The user also has the possibilty to determine another color by accessing the specific css class. 
 
 <Canvas withSource="none">
   <Story
-    name="Color Choosing"
+    name="Variants"
     args={{
       size: "small",
+      variant: "black"
     }}
   >
     {Template2.bind({})}
@@ -215,7 +215,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-callout size="lare"  rotation="0">
+<scale-callout size="small" variant="black">
       <div>
         <div style="text-align:center; font-size:20px; color:white; font-weight:400;">
           Für nur
@@ -234,7 +234,6 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
   <Story
     name="Asterisk"
     args={{
-      size: "large",
     }}
   >
     {Template3.bind({})}
@@ -242,7 +241,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 </Canvas>
 
 ```html
-<scale-callout size="large" color="primary" rotation="0">
+<scale-callout>
       <div>
         <div style="text-align: center; font-size: 25px; TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
           ab
