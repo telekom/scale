@@ -5,17 +5,20 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
   title="Beta Components/Toggle Group"
   component={ScaleToggleGroup}
   argTypes={{
-    variant: {
-      control: { type: 'select', options: ['primary', 'secondary'] },
+    background: {
+      control: { type: 'select', options: ['white', 'grey'] },
     },
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
     },
-	  boxType: {
-      control: { type: 'select', options: ['inline', 'block'] },
+	  fullWidth: {
+      control: { type: 'boolean'},
     },
     ariaLabelTranslation: {
       control: { type: "text", },
+    },
+    colorScheme: {
+      control: { type: 'select', options: ['color', 'monochrome'] },
     },
   }}
 />
@@ -28,21 +31,22 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleToggleGroup.props,
   },
   template: `
-  <scale-toggle-group
-    :size="size"
-    :variant="variant"
-	  :box-type="boxType"
-    :disabled="disabled"
-    :border="border"
-    :multi="multi"
-    :aria-label-translation="ariaLabelTranslation"
-    :styles="styles"
-  >
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
-  </scale-toggle-group>
-    `,
+    <scale-toggle-group
+      :size="size"
+      :background="background"
+      :full-width="fullWidth"
+      :disabled="disabled"
+      :hide-border="hideBorder"
+      :single-select="singleSelect"
+      :aria-label-translation="ariaLabelTranslation"
+      :color-scheme="colorScheme"
+      :styles="styles"
+    >
+      <scale-toggle-button>Label</scale-toggle-button>
+      <scale-toggle-button>Label</scale-toggle-button>
+      <scale-toggle-button selected>Label</scale-toggle-button>
+    </scale-toggle-group>
+  `,
 });
 
 export const TemplateAriaTranslation = (args, { argTypes }) => ({
@@ -53,46 +57,82 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
     ...ScaleToggleGroup.props,
   },
   template: `
-  <scale-toggle-group
-    :size="size"
-    :variant="variant"
-	  :box-type="boxType"
-    :disabled="disabled"
-    :border="border"
-    :multi="multi"
-    :aria-label-translation="ariaLabelTranslation"
-    :styles="styles"
-  >
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert">Label
-    </scale-toggle-button>
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert">Label
-    </scale-toggle-button>
-    <scale-toggle-button 
-      aria-label="Drück mich"
-      aria-lang-selected="selektiert"
-      aria-lang-deselected="deselektiert"
-      selected
-      >Label
-    </scale-toggle-button>
-  </scale-toggle-group>
-    `,
+    <scale-toggle-group
+      :size="size"
+      :background="background"
+      :full-width="fullWidth"
+      :disabled="disabled"
+      :hide-border="hideBorder"
+      :single-select="singleSelect"
+      :aria-label-translation="ariaLabelTranslation"
+      :color-scheme="colorScheme"
+      :styles="styles"
+    >
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert">Label
+      </scale-toggle-button>
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert">Label
+      </scale-toggle-button>
+      <scale-toggle-button 
+        aria-label="Drück mich"
+        aria-lang-selected="selektiert"
+        aria-lang-deselected="deselektiert"
+        selected
+        >Label
+      </scale-toggle-button>
+    </scale-toggle-group>
+  `,
 });
 
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: '100%',
-  }}
->
-  <h1>Toggle Group</h1>
+export const TemplateIcons = (args, { argTypes }) => ({
+  components: { ScaleToggleGroup },
+  props: {
+    label: String,
+    iconBefore: Boolean,
+    ...ScaleToggleGroup.props,
+  },
+  template: `
+    <scale-toggle-group
+      :size="size"
+      :background="background"
+      :full-width="fullWidth"
+      :disabled="disabled"
+      :hide-border="hideBorder"
+      :single-select="singleSelect"
+      :aria-label-translation="ariaLabelTranslation"
+      :color-scheme="colorScheme"
+      :styles="styles"
+    >
+      <scale-toggle-button v-if="iconBefore">
+        <scale-icon-action-search /> Label
+      </scale-toggle-button>
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
+        <scale-icon-action-search />
+      </scale-toggle-button>
+      <scale-toggle-button v-if="iconBefore">
+        <scale-icon-action-search /> Label
+      </scale-toggle-button>
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
+        <scale-icon-action-search />
+      </scale-toggle-button>
+      <scale-toggle-button v-if="iconBefore">
+        <scale-icon-action-search /> Label
+      </scale-toggle-button>
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
+        <scale-icon-action-search />
+      </scale-toggle-button>
+    </scale-toggle-group>
+  `,
+});
+
+<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+    <h1>Toggle Group</h1>
+    <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ## Standard
@@ -110,19 +150,40 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
-## Secondary
+## Monochrome Color Scheme
 
 <Canvas withSource="none">
   <Story
-    name="Secondary"
+    name="Monochrome Color Scheme"
     args={{
-		variant: 'secondary'
+      colorScheme: 'monochrome'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group color-scheme="monochrome">
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Grey Background
+
+<Canvas withSource="none">
+  <Story
+    name="Grey Background"
+    args={{
+		  background: 'grey'
 	}}
   >
     {Template.bind({})}
@@ -130,10 +191,94 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group variant='secondary'>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
+<scale-toggle-group background='grey'>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## No Border
+
+<Canvas withSource="none">
+  <Story
+    name="No Border"
+    args={{
+		  hideBorder: true
+	}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group hide-border>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Small Size
+
+<Canvas withSource="none">
+  <Story
+    name="Small Size"
+    args={{
+      size: "small"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group size="small">
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Full Width
+
+<Canvas withSource="none">
+  <Story
+    name="Full Width"
+    args={{
+		  fullWidth: true,
+	}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group full-width>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Single Select
+
+<Canvas withSource="none">
+  <Story
+    name="Single Select"
+    args={{
+		  singleSelect: true
+	}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group single-select>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
@@ -143,7 +288,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
-		disabled: true
+		  disabled: true
 	}}
   >
     {Template.bind({})}
@@ -152,170 +297,17 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group disabled>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button>Label</scale-toggle-button>
+  <scale-toggle-button selected>Label</scale-toggle-button>
 </scale-toggle-group>
 ```
 
-## Disabled Secondary
+## Accessibility German
 
 <Canvas withSource="none">
   <Story
-    name="Disabled Secondary"
-    args={{
-		disabled: true,
-		variant: 'secondary'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group variant='secondary' disabled>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Regular Size
-
-<Canvas withSource="none">
-  <Story
-    name="Regular Size"
-    args={{
-		size: 'regular'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="regular">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Small Size Block
-
-<Canvas withSource="none">
-  <Story
-    name="Small Size Block"
-    args={{
-		size: 'small',
-		boxType: 'block'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="small" box-type="block">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## XS Size Block
-
-<Canvas withSource="none">
-  <Story
-    name="XS Size Block"
-    args={{
-		size: 'xs',
-		boxType: 'block'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group size="xs" box-type="block">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Border
-
-<Canvas withSource="none">
-  <Story
-    name="Border"
-    args={{
-		border: true
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group border>
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Border, Disabled, Secondary, Regular
-
-<Canvas withSource="none">
-  <Story
-    name="Border, Disabled, Secondary, Regular"
-    args={{
-		border: true,
-		disabled: true,
-		variant: 'secondary',
-		size: 'regular'
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group border disabled variant="secondary" size="regular">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## non-Multi
-
-<Canvas withSource="none">
-  <Story
-    name="non-Multi"
-    args={{
-		multi: false
-	}}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-toggle-group multi="false">
-	<scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button>Label</scale-toggle-button>
-    <scale-toggle-button selected>Label</scale-toggle-button>
-</scale-toggle-group>
-```
-
-## Accessibility, German
-
-<Canvas withSource="none">
-  <Story
-    name="Accessibility, German"
+    name="Accessibility German"
     args={{
       ariaLabelTranslation: "wechsel schalter gruppe mit $slottedButtons schaltern"
     }}
@@ -342,6 +334,60 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
     aria-lang-deselected="deselektiert"
     selected
     >Label
+  </scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Icon Before
+
+<Canvas withSource="none">
+  <Story
+    name="Icon Before"
+    args={{
+      iconBefore: true
+    }}
+  >
+    {TemplateIcons.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group>
+	<scale-toggle-button>
+    Label <scale-icon-action-search></scale-icon-action-search>
+  </scale-toggle-button>
+  <scale-toggle-button>
+    Label <scale-icon-action-search></scale-icon-action-search>
+  </scale-toggle-button>
+  <scale-toggle-button selected>
+    Label <scale-icon-action-search></scale-icon-action-search>
+  </scale-toggle-button>
+</scale-toggle-group>
+```
+
+## Icon Only
+
+<Canvas withSource="none">
+  <Story
+    name="Icon Only"
+    args={{
+      iconBefore: false
+    }}
+  >
+    {TemplateIcons.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-toggle-group>
+	<scale-toggle-button icon-only aria-label="search">
+    <scale-icon-action-search></scale-icon-action-search>
+  </scale-toggle-button>
+  <scale-toggle-button icon-only aria-label="search">
+    <scale-icon-action-search></scale-icon-action-search>
+  </scale-toggle-button>
+  <scale-toggle-button icon-only aria-label="search" selected>
+    <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
 </scale-toggle-group>
 ```

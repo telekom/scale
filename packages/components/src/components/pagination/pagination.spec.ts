@@ -27,56 +27,72 @@ describe('pagination', () => {
       components: [Pagination],
       html: `<scale-pagination
                 hide-borders="true"
+                hide-border="true"
                 page-size="11"
                 start-element="2"
                 total-elements="33"
-                styles="style">
+                styles="style"
+                size="small">
               </scale-pagination>`,
     });
     expect(specPage.rootInstance.hideBorders).toBe(true);
+    expect(specPage.rootInstance.hideBorder).toBe(true);
     expect(specPage.rootInstance.pageSize).toBe(11);
     expect(specPage.rootInstance.startElement).toBe(2);
     expect(specPage.rootInstance.totalElements).toBe(33);
     expect(specPage.rootInstance.styles).toBe('style');
+    expect(specPage.rootInstance.size).toBe('small');
   });
   it('should emit when clicked goFirstPage()', async () => {
     const clickSpy = jest.fn();
-    page.doc.addEventListener('scalePagination', clickSpy);
+    const clickSpyLegacy = jest.fn();
+    page.doc.addEventListener('scale-pagination', clickSpy);
+    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__first-prompt'
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
     expect(clickSpy).toHaveBeenCalled();
+    expect(clickSpyLegacy).toHaveBeenCalled();
   });
   it('should emit when clicked goPreviousPage()', async () => {
     const clickSpy = jest.fn();
-    page.doc.addEventListener('scalePagination', clickSpy);
+    const clickSpyLegacy = jest.fn();
+    page.doc.addEventListener('scale-pagination', clickSpy);
+    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__prev-prompt'
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
     expect(clickSpy).toHaveBeenCalled();
+    expect(clickSpyLegacy).toHaveBeenCalled();
   });
   it('should emit when clicked goNextPage()', async () => {
     const clickSpy = jest.fn();
-    page.doc.addEventListener('scalePagination', clickSpy);
+    const clickSpyLegacy = jest.fn();
+    page.doc.addEventListener('scale-pagination', clickSpy);
+    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__next-prompt'
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
     expect(clickSpy).toHaveBeenCalled();
+    expect(clickSpyLegacy).toHaveBeenCalled();
   });
   it('should emit when clicked golastPage()', async () => {
     const clickSpy = jest.fn();
-    page.doc.addEventListener('scalePagination', clickSpy);
+    const clickSpyLegacy = jest.fn();
+    page.doc.addEventListener('scale-pagination', clickSpy);
+    page.doc.addEventListener('scalePagination', clickSpyLegacy);
     const buttonElement = page.root.shadowRoot.querySelector(
       '.pagination__last-prompt'
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
     expect(clickSpy).toHaveBeenCalled();
+    expect(clickSpyLegacy).toHaveBeenCalled();
   });
 });

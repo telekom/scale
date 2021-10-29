@@ -1,3 +1,5 @@
+import { ComponentInterface } from '@stencil/core';
+
 /**
  * @license
  * Scale https://github.com/telekom/scale
@@ -43,3 +45,43 @@ export const isPseudoClassSupported = (pseudoClass) => {
   // Run the test
   return testPseudo();
 };
+
+/**
+ * Call `emit` on component events twice.
+ * One for the legacy camel-cased event, one for the new kebab-cased.
+ * e.g. for the event `scaleChange` it will do `instance.scaleChange.emit()` and `instance.scaleChangeLegacy.emit()`.
+ * It expects both `scaleChange` and `scaleChangeLegacy` event-decorated properties to exist on the component.
+ *
+ * @param instance {ComponentInterface} - The component instance, aka `this`
+ * @param eventKey {string} - The event property, e.g. `scaleChange`
+ * @param detail {any} - The custom event `detail`
+ */
+export function emitEvent(
+  instance: ComponentInterface,
+  eventKey: string,
+  detail?: any
+) {
+  const legacyKey = eventKey + 'Legacy';
+  if (typeof instance[legacyKey] !== 'undefined') {
+    instance[legacyKey].emit(detail);
+  }
+  instance[eventKey].emit(detail);
+}
+
+export function isClickOutside(event: MouseEvent, host: HTMLElement) {
+  let target = event.target as Node;
+  const hasShadow = (target as HTMLElement).shadowRoot != null;
+  const composedPath = hasShadow ? event.composedPath() : [];
+  do {
+    if (target === host) {
+      return false;
+    }
+    if (hasShadow) {
+      // @ts-ignore
+      target = composedPath.shift();
+    } else {
+      target = target.parentNode;
+    }
+  } while (target);
+  return true;
+}

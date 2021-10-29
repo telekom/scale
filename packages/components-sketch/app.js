@@ -11,6 +11,7 @@
 
 const express = require('express');
 const handlebars = require('express-handlebars');
+const sanitize = require("sanitize-filename");
 
 const PORT = 5005;
 const app = express();
@@ -20,6 +21,7 @@ app.engine(
   handlebars({
     defaultLayout: 'main',
     extname: '.hbs',
+    helpers: require('./config/handlebars-helpers')
   })
 );
 
@@ -32,8 +34,10 @@ app.get('/', (req, res) => {
 
 app.get('/:component', (req, res) => {
   try {
-    res.render(req.params.component, {
-      title: req.params.component.replace(/^./, c => c.toUpperCase()),
+    res.render(sanitize(req.params.component), {
+      title: sanitize(req.params.component)
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, (c) => c.toUpperCase()),
     });
   } catch (error) {
     res.render('error', { error: error.message });

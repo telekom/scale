@@ -148,7 +148,32 @@ module.exports = {
         });
       }
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
+        setResizingConstraints(symbol, /.?/, FIXED_SIZE);
+      }
+      if (/^(Checkbox Group)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        findLayers(symbol, /Icon?/, (l) => {
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+
+          const overrideIcon = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_symbolID`,
+          };
+          const overrideColor = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_fillColor`,
+          };
+
+          symbol.overrideProperties.push(overrideIcon);
+          symbol.overrideProperties.push(overrideColor);
+        });
+        findLayer(
+          symbol,
+          /fieldset/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
       }
       if (/^Divider \/ \d+ Standard/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = FIXED_HEIGHT;
@@ -201,8 +226,10 @@ module.exports = {
       }
       if (/^Link/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        var cursor = findLayer(symbol, (s) => s.name === 'svg');
         var underline = findLayer(symbol, (s) => s.name === 'border-bottom');
         if (underline) underline.resizingConstraint = LEFT_RIGHT;
+        if (cursor) cursor.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
       }
       if (/^Modal/.test(symbol.name)) {
         symbol.layers[0].layers[1].resizingConstraint = FIXED_SIZE;
@@ -394,6 +421,52 @@ module.exports = {
           findLayer(symbol, (s) => s.name === 'button') ||
           findLayer(symbol, (s) => s.name === 'Icon');
         if (icon) icon.resizingConstraint = RIGHT_FIXED_SIZE;
+      }
+      if (/^Rating Stars/.test(symbol.name)) {
+        var icon = findLayer(symbol, (s) => s.name === 'Icon');
+        findLayers(symbol, /Icon?/, (l) => {
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+
+          const overrideObject = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_symbolID`,
+          };
+
+          symbol.overrideProperties.push(overrideObject);
+        });
+        findLayers(
+          symbol,
+          /Info message/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayers(
+          symbol,
+          /div/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+
+        findLayers(
+          symbol,
+          /div.icon-clip?/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayers(
+          symbol,
+          /svg?/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayers(symbol, /Icon?/, (l) => (l.height = 16));
+        findLayer(
+          symbol,
+          /Rating Label/,
+          (s) => (s.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayer(
+          symbol,
+          /Background/,
+          (s) => (s.style.fills[0].isEnabled = false)
+        );
       }
       if (/^(Text Area)/.test(symbol.name)) {
         symbol.groupLayout = undefined;

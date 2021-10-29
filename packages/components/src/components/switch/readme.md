@@ -13,14 +13,16 @@
 | `disabled` | `disabled` | (optional) Disabled switch     | `boolean` | `false`     |
 | `inputId`  | `input-id` | (optional) Input id            | `string`  | `undefined` |
 | `label`    | `label`    | (optional) switch label        | `string`  | `undefined` |
+| `name`     | `name`     | (optional) Input name          | `string`  | `undefined` |
 | `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
 
 
 ## Events
 
-| Event         | Description                         | Type               |
-| ------------- | ----------------------------------- | ------------------ |
-| `scaleChange` | Emitted when the switch was clicked | `CustomEvent<any>` |
+| Event          | Description                                                                                        | Type               |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------ |
+| `scale-change` | Emitted when the switch was clicked                                                                | `CustomEvent<any>` |
+| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<any>` |
 
 
 ## Dependencies

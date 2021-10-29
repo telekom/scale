@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Data Grid</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Data Grids helfen Nutzer\*innen, komplexe Daten zu erfassen und zu verwalten.
@@ -14,7 +14,7 @@ Data Grids sind ein erweiterter Tabellentyp. Zusätzlich zu den Standardfunktion
 - Daten so zu organisieren, dass Nutzer\*innen sie leicht verstehen, analysieren und vergleichen können und
 - zusätzliche Funktionen bereitzustellen, mit denen Nutzer\*innen mit den Daten interagieren können.
 
-### Verwende ein Data Grid besser nicht, wenn
+### Verwende Data Grids besser nicht, wenn
 
 - die Komplexität der einzelnen Daten und Funktionen mit einer Tabelle nicht abbildbar ist oder
 - du die zusätzlichen Funktionen nicht benötigst.
@@ -29,38 +29,35 @@ Um die Lesbarkeit der Inhalte zu erhöhen, kannst du alternierende Hintergründe
 
 Innerhalb des Data Grid Frameworks kannst du eine Auswahl bestehender Komponenten frei kombinieren, um eine eine breite Palette von Anwendungsfällen zu berücksichtigen.
 
-![Image Name](assets/3_components/data-grid/elements.png)
+![Image Name](assets/3_components/data-grid/elements-de.png)
 
-#### Titel (1)
+#### Heading (1)
 
 Der kurze Titel beschreibt den Inhalt in klaren und einfachen Worten.
 
 #### Menü (2)
 
-Das Menü umfasst Funktionen wie bspw. Sortieren, alles Aus- oder Abwählen, Ein- und Ausblenden und Exportieren.
+Das Menü umfasst Funktionen, wie zum Beispiel Sortieren, Alles aus- oder abwählen, Ein- und Ausblenden und Exportieren.
 
-#### Spalten-Header (3)
-
-Der Spalten-Header beschreibt den Inhalt der jeweiligen Spalte.
-
-#### Nummerierung (4)
+#### Nummerierung (3)
 
 Wenn du die Nummerierung aktivierst, werden alle Zeilen automatisch durchnummeriert, beginnend bei 1.
 
-#### Checkbox (5)
+#### Checkbox (4)
 
-Aktivierst du die Checkbox, dann können Nutzer\*innen einige oder alle Tabellensätze für die Stapelverarbeitung auswählen, bspw. um etwas zu archivieren, zu löschen oder als erledigtzu markieren.
+Aktivierst du die Checkbox, dann können Nutzer\*innen einige oder alle Tabellensätze für die Stapelverarbeitung auswählen, zum Beispiel um etwas zu archivieren, zu löschen oder als erledigt zu markieren.
+
+#### Spalten-Titel (5)
+
+Der Spalten-Header beschreibt den Inhalt der jeweiligen Spalte.
 
 #### Tabellenzeile (6)
 
-Der Inhalt einer Zeile bildet eine Dateneinheit und unterscheidet sich sowohl inhaltlich als auch visuell von den anderen Zeilen.
-Der Zeilentitel enthält eine aussagekräftige Beschreibung des Datensatzes.
-Die anderen Zellen können die unterschiedlichsten Arten von Inhalten enthalten.
-Für eine bessere Lesbarkeit kannst du die Zeilen bei Mouseover hervorheben.
+Der Inhalt einer Zeile bildet eine Dateneinheit und unterscheidet sich sowohl inhaltlich als auch visuell von den anderen Zeilen. Der Zeilentitel enthält eine aussagekräftige Beschreibung des Datensatzes. Die anderen Zellen können die unterschiedlichsten Arten von Inhalten enthalten. Für eine bessere Lesbarkeit kannst du die Zeilen beim Mouseover hervorheben.
 
 #### HTML-Slot (7)
 
-Füllst dz den HTML-Slot in einer Tabellenzeile aus, wird am Ende der Zeile ein Expand-Icon hinzugefügt. Klicken/tippen Nutzer\*innen auf das Expand-Icon, blendet sich der HTML-Inhalt dieses Slots ein.
+Füllst du den HTML-Slot in einer Tabellenzeile aus, wird am Ende der Zeile ein Expand-Icon hinzugefügt. Klicken/tippen Nutzer\*innen auf das Expand-Icon, blendet sich der HTML-Inhalt dieses Slots ein.
 
 #### Pagination (8)
 
@@ -76,7 +73,7 @@ Folgende Inhaltskomponenten kannst du in Data Grids einsetzen:
 
 Auf mobilen Bildschrimen bricht die Datenzeile um und wird als separates Item angezeigt.
 
-![Image Name](assets/3_components/data-grid/Mobile.png)
+![Image Name](assets/3_components/data-grid/Mobile-de.png)
 
 ## Beta-Komponente
 

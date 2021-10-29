@@ -22,6 +22,7 @@ import {
 import { HTMLStencilElement } from '@stencil/core/internal';
 import classNames from 'classnames';
 import { findRootNode } from '../../../utils/menu-utils';
+import statusNote from '../../../utils/status-note';
 
 const readData = (data) => {
   let parsedData;
@@ -53,8 +54,12 @@ export class Header {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
+  // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
+  @Prop() megaMenuVisible?: boolean = false;
+  // DEPRECATED - mobileMenuVisible should replace isMobileMenuVisible
   @Prop() isMobileMenuVisible?: boolean = false;
+  @Prop() mobileMenuVisible?: boolean = false;
   @State() activeSegment: any =
     readData(this.sectorNavigation).find(
       ({ id }) => id === this.activeSectorId
@@ -70,8 +75,13 @@ export class Header {
   hasSlotMenuMobile: boolean;
   hasSlotLogo: boolean;
 
-  @Watch('isMegaMenuVisible')
+  @Watch('megaMenuVisible')
   megaMenuVisibleChange(isVisible) {
+    this.visibleMegaMenu = isVisible;
+  }
+  // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
+  @Watch('isMegaMenuVisible')
+  isMegaMenuVisibleChange(isVisible) {
     this.visibleMegaMenu = isVisible;
   }
 
@@ -133,6 +143,30 @@ export class Header {
     );
     this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
   }
+
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.isMegaMenuVisible !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isMegaMenuVisible" is deprecated. Please use the "megaMenuVisible" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.isMobileMenuVisible !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "isMobileMenuVisible" is deprecated. Please use the "mobileMenuVisible" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
+
   handleMobileMenu(event?: KeyboardEvent | MouseEvent) {
     if (event) {
       event.preventDefault();
@@ -183,8 +217,8 @@ export class Header {
           readData(this.mainNavigation).map((item) => (
             <scale-nav-main
               href={item.href}
-              isActive={isActive(item)}
-              isMegaMenuVisible={this.visibleMegaMenu === item.id}
+              active={isActive(item)}
+              megaMenuVisible={this.visibleMegaMenu === item.id}
               onMouseEnter={() => {
                 this.visibleMegaMenu = item.children ? item.id : null;
               }}
@@ -210,7 +244,7 @@ export class Header {
                     this.visibleMegaMenu = '';
                   }}
                   activeRouteId={this.activeRouteId}
-                  isActive={this.visibleMegaMenu === item.id}
+                  active={this.visibleMegaMenu === item.id}
                 ></app-mega-menu>
               )}
             </scale-nav-main>
@@ -245,10 +279,10 @@ export class Header {
               </scale-nav-icon>
             ))
         )}
-        {((!this.hasSlotMenuMain && readData(this.mainNavigation).length > 0) ||
+        {(readData(this.mainNavigation).length > 0 ||
           this.hasSlotMenuMobile) && (
           <scale-nav-icon
-            isMobileMenuOpen={this.mobileMenu}
+            mobileMenuOpen={this.mobileMenu}
             icon={this.mobileMenu ? 'action-circle-close' : 'action-menu'}
             clickLink={(event) => this.handleMobileMenu(event)}
             refMobileMenuToggle={(el) => (this.mobileMenuToggle = el)}
@@ -270,7 +304,7 @@ export class Header {
         ) : (
           readData(this.sectorNavigation).map((item) => (
             <scale-nav-segment
-              isActive={this.activeSegment.id === item.id}
+              active={this.activeSegment.id === item.id}
               href={item.href}
               onClick={(event) => this.handleSelectedSegment(event, item)}
               onFocus={() => {
@@ -347,6 +381,7 @@ export class Header {
                     href={this.logoHref}
                     logoTitle={this.logoTitle}
                     onClick={this.logoClick}
+                    focusable={this.scrolled}
                   ></app-logo>
                 </div>
                 <div class="header__nav-menu-wrapper">
@@ -393,7 +428,7 @@ export class Header {
   getCssClassMap() {
     return classNames(
       'header',
-      this.scrolled && 'sticky',
+      this.scrolled && 'header--sticky',
       (this.visibleMegaMenu || this.mobileMenu) && 'menu--open'
     );
   }

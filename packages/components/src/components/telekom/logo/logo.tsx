@@ -11,7 +11,6 @@
 
 import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
-import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-logo',
@@ -40,31 +39,40 @@ export class Logo {
   /** (optional) The height in pixels */
   @Prop() size: number = 36;
   /** (optional) Set a link */
-  @Prop() href: string;
+  @Prop() href: string = '';
   /** (optional) Possibility for adding a onClick Event */
   @Prop() clickHandler: any;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
-  @Prop() accessibilityTitle: string = 'Telekom Logo';
-
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
+  @Prop() accessibilityTitle?: string;
 
   styles() {
     return `:host {
-      --logo-size: ${this.size}px;
-    }`;
+        --logo-size: ${this.size}px;
+      }`;
   }
 
-  getLogoSvg() {
-    return (
-      <scale-logo-svg
-        language={this.language}
-        color={this.variant}
-        size={this.size}
-        accessibilityTitle={this.accessibilityTitle}
-      ></scale-logo-svg>
-    );
+  getLogoSvg(role: 'link' | 'img') {
+    if (this.accessibilityTitle) {
+      return (
+        <scale-logo-svg
+          language={this.language}
+          color={this.variant}
+          size={this.size}
+          accessibilityTitle={this.accessibilityTitle}
+          aria-label={this.accessibilityTitle}
+          role={role}
+        ></scale-logo-svg>
+      );
+    } else {
+      return (
+        <scale-logo-svg
+          language={this.language}
+          color={this.variant}
+          size={this.size}
+          role={role}
+        ></scale-logo-svg>
+      );
+    }
   }
 
   render() {
@@ -72,25 +80,16 @@ export class Logo {
       <Host>
         <style>{this.styles()}</style>
         {this.href === '' ? (
-          <div
-            role="img"
-            aria-label="Telekom Logo"
-            class={this.getCssClassMap()}
-            onClick={this.clickHandler}
-            tabIndex={0}
-          >
-            {this.getLogoSvg()}
+          <div class={this.getCssClassMap()} onClick={this.clickHandler}>
+            {this.getLogoSvg('img')}
           </div>
         ) : (
           <a
-            role="link"
-            aria-label="Telekom Logo"
             href={this.href}
             class={this.getCssClassMap()}
             onClick={this.clickHandler}
-            tabIndex={0}
           >
-            {this.getLogoSvg()}
+            {this.getLogoSvg('link')}
           </a>
         )}
       </Host>

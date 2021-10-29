@@ -60,11 +60,13 @@ describe('Link', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  it('should handle css classes', () => {
-    element.block = true;
-    expect(element.getCssClassMap()).toContain('link--block');
+  it('should handle css classes', async () => {
+    const page = await newSpecPage({
+      components: [Link],
+      html: `<scale-link href="http://example.com" disabled icon-position="before">Label</scale-link>`,
+    });
 
-    element.disabled = true;
-    expect(element.getCssClassMap()).toContain('link--disabled');
+    expect(page.root.classList.contains('disabled')).toBe(true);
+    expect(page.root.classList.contains('reverse')).toBe(true);
   });
 });

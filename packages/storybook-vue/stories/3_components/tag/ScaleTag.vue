@@ -1,4 +1,5 @@
 <script>
+import { action } from "@storybook/addon-actions";
 export default {
   props: {
     disabled: { type: Boolean, default: false },
@@ -10,5 +11,15 @@ export default {
     variant: String,
     styles: String,
   },
+  methods: {
+    scaleClose($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
+    },
+    'scale-close'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
+  }
 };
 </script>

@@ -17,114 +17,168 @@ import {
   h,
   Host,
   Prop,
+  Watch,
 } from '@stencil/core';
-import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
+
+export interface CheckboxInterface extends HTMLElement {
+  checked: boolean;
+  indeterminate: boolean;
+  disabled: boolean;
+  value: string;
+  label: string;
+  ariaLabel: string;
+}
 
 let i = 0;
-
 @Component({
   tag: 'scale-checkbox',
   styleUrl: './checkbox.css',
   shadow: false,
 })
 export class Checkbox {
-  @Element() el: HTMLElement;
+  @Element() host: HTMLElement;
   /** (optional) Input name */
-  @Prop() name?: string = '';
+  @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
+  /** (optional) Input label output */
+  @Prop() ariaLabel?: string;
+  /** (optional) Hides the specified label visually */
+  @Prop() hideLabel?: boolean = false;
   /** (optional) Input helper text */
-  @Prop() helperText?: string = '';
+  @Prop() helperText?: string;
   /** (optional) Input status */
   @Prop() status?: string = '';
   /** (optional) Input disabled */
-  @Prop() disabled?: boolean;
+  @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
-  @Prop({ reflect: true }) checked?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /** (optional) indeterminate */
-  @Prop({ reflect: true }) indeterminate?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) indeterminate?: boolean = false;
   /** (optional) Input value */
-  @Prop({ mutable: true }) value?: string | number | null = '';
+  @Prop() value?: string = '';
   /** (optional) Input checkbox id */
-  @Prop() inputId?: string;
+  @Prop({ mutable: true }) inputId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  /** Emitted when the value has changed. */
-  @Event() scaleChange!: EventEmitter;
 
-  componentWillLoad() {
-    if (this.inputId == null) {
-      this.inputId = 'input-checkbox-' + i++;
+  /** Emitted when the value has changed. */
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
+
+  private id = i++;
+
+  getAriaCheckedState() {
+    if (this.indeterminate) {
+      return 'mixed';
+    }
+
+    return this.checked;
+  }
+
+  @Watch('disabled')
+  handleDisabledChange() {
+    const { checked, indeterminate, value, disabled } = this;
+
+    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
+  }
+
+  handleChange = (ev) => {
+    if (this.indeterminate) {
+      this.indeterminate = false;
+      this.checked = true;
+      ev.target.checked = true;
+    } else {
+      this.checked = ev.target.checked;
+    }
+
+    const { checked, indeterminate, value, disabled } = this;
+
+    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
+  };
+
+  connectedCallback() {
+    if (!this.inputId) {
+      this.inputId = 'input-checkbox-' + this.id;
+    }
+  }
+
+  /* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */
+  renderIcon() {
+    if (this.indeterminate) {
+      return (
+        <scale-icon-action-indeterminate
+          part="icon"
+          decorative
+        ></scale-icon-action-indeterminate>
+      );
+    }
+
+    if (this.checked) {
+      return (
+        <scale-icon-action-success
+          part="icon"
+          decorative
+        ></scale-icon-action-success>
+      );
+    }
+  }
+
+  renderHelperText(text) {
+    if (this.helperText && this.helperText !== '') {
+      return (
+        <div
+          part="helper-text"
+          id={text.id}
+          aria-live="polite"
+          aria-relevant="additions removals"
+        >
+          {text.content}
+        </div>
+      );
     }
   }
 
   render() {
-    const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
-    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const helperText = {
+      id: this.helperText ? `helper-text-${this.id}` : null,
+      content: this.helperText,
+    };
 
     return (
-      <Host checked={this.checked}>
-        <div class={this.getCssClassMap()}>
-          <label class="checkbox__label-wrapper" htmlFor={this.inputId}>
-            <div class="checkbox__control-wrapper">
-              <span class="checkbox__control"></span>
-              {/* Accessibility: rendering the icon *only* when checked, otherwise is always visible in HCM */}
-              {this.checked && !this.indeterminate && (
-                <scale-icon-action-success
-                  class="checkbox__icon"
-                  decorative
-                ></scale-icon-action-success>
-              )}
-              {this.indeterminate && (
-                <scale-icon-action-indeterminate class="checkbox__icon"></scale-icon-action-indeterminate>
-              )}
-            </div>
-            <span class="checkbox__label">
-              {this.label ? this.label : <slot></slot>}
-            </span>
-            {!!this.helperText && (
-              <div
-                class="checkbox__meta"
-                id={helperTextId}
-                aria-live="polite"
-                aria-relevant="additions removals"
-              >
-                <div class="checkbox__helper-text">{this.helperText}</div>
-              </div>
-            )}
-          </label>
-          <input
-            type="checkbox"
-            name={this.name}
-            id={this.inputId}
-            onChange={(e: any) => {
-              if (this.indeterminate) {
-                this.indeterminate = false;
-              }
-              this.checked = e.target.checked;
-              // bubble event through the shadow dom
-              this.scaleChange.emit({ value: this.checked });
-            }}
-            value={this.value}
-            checked={this.checked}
-            disabled={this.disabled}
-            {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
-          />
-        </div>
+      <Host
+        class={{
+          checked: this.checked,
+          indeterminate: this.indeterminate,
+          disabled: this.disabled,
+          error: this.status === 'error',
+          hideLabel: this.hideLabel,
+        }}
+      >
+        <input
+          type="checkbox"
+          part="input"
+          name={this.name || null}
+          id={this.inputId}
+          value={this.value}
+          checked={this.checked}
+          indeterminate={this.indeterminate}
+          aria-label={this.ariaLabel}
+          aria-checked={this.getAriaCheckedState()}
+          aria-invalid={this.status === 'error'}
+          aria-describedBy={helperText.id}
+          disabled={this.disabled}
+          onChange={this.handleChange}
+        />
+        <label part="container" htmlFor={this.inputId}>
+          <div part="checkbox">{this.renderIcon()}</div>
+          {/* TODO: discuss deprecation of the slot (move closer so W3C spec) */}
+          <div part="label">{this.label || <slot></slot>}</div>
+        </label>
+        {this.renderHelperText(helperText)}
       </Host>
-    );
-  }
-
-  getCssClassMap() {
-    return classNames(
-      'checkbox',
-      this.checked ? `checkbox--checked` : `checkbox--not-checked`,
-      this.indeterminate && `checkbox--indeterminate`,
-      this.disabled ? `checkbox--disabled` : `checkbox--enabled`,
-      this.status && `checkbox--status-${this.status}`
     );
   }
 }
