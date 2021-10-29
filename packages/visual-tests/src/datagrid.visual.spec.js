@@ -1,9 +1,7 @@
 describe('DataGrid', () => {
   test.each([
-    ['checkbox-cell'],
     ['date-cell'],
     ['html-cell'],
-    ['link-cell'],
     ['number-cell'],
     ['select-cell'],
     ['text-cell'],
@@ -19,7 +17,18 @@ describe('DataGrid', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
-    await page.waitFor(1000);
+    await page.evaluate(() => {
+      const transitions = [
+        '--scl-motion-duration-immediate',
+        '--scl-motion-duration-fast',
+        '--scl-motion-duration-slower',
+        '--scl-motion-duration-deliberate',
+      ];
+
+      transitions.forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
