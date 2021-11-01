@@ -13,12 +13,13 @@
 | `disabled`    | `disabled`     | (optional) Input disabled                                                | `boolean`          | `undefined` |
 | `helperText`  | `helper-text`  | (optional) Input helper text                                             | `string`           | `''`        |
 | `inputId`     | `input-id`     | (optional) Input checkbox id                                             | `string`           | `undefined` |
+| `invalid`     | `invalid`      | (optional) Input status                                                  | `boolean`          | `false`     |
 | `label`       | `label`        | (optional) Input label                                                   | `string`           | `''`        |
 | `multiple`    | `multiple`     | (optional) select multiple options                                       | `boolean`          | `undefined` |
 | `name`        | `name`         | (optional) Input name                                                    | `string`           | `''`        |
 | `required`    | `required`     | (optional) Input required                                                | `boolean`          | `undefined` |
 | `size`        | `size`         | (optional) Input size                                                    | `string`           | `''`        |
-| `status`      | `status`       | (optional) Input status                                                  | `string`           | `''`        |
+| `status`      | `status`       | DEPRECATED - invalid should replace status                               | `string`           | `''`        |
 | `styles`      | `styles`       | (optional) Injected CSS styles                                           | `string`           | `undefined` |
 | `transparent` | `transparent`  | (optional) input background transparent                                  | `boolean`          | `undefined` |
 | `value`       | `value`        | (optional) Input value                                                   | `number \| string` | `''`        |

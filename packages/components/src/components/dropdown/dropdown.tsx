@@ -22,6 +22,7 @@ import {
 import classNames from 'classnames';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -47,8 +48,10 @@ export class Dropdown {
   @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** DEPRECATED - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input required */
@@ -150,6 +153,16 @@ export class Dropdown {
     if (this.controlled && this.selectElement.value.toString() !== value) {
       this.selectElement.value = value;
     }
+
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   disconnectedCallback() {
@@ -216,7 +229,7 @@ export class Dropdown {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -278,6 +291,7 @@ export class Dropdown {
       this.disabled && `dropdown--disabled`,
       this.transparent && 'dropdown--transparent',
       this.status && `dropdown--status-${this.status}`,
+      this.invalid && `dropdown--status-error`,
       this.size && `dropdown--size-${this.size}`,
       this.value != null && this.value !== '' && 'animated'
     );
