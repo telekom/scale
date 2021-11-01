@@ -9,9 +9,18 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -25,14 +34,17 @@ let i = 0;
   shadow: false,
 })
 export class RadioButton {
+  @Element() hostElement: HTMLElement;
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** DEPRECATED - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input checked */
@@ -53,6 +65,18 @@ export class RadioButton {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-' + i++;
+    }
+  }
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
     }
   }
 
@@ -90,7 +114,7 @@ export class RadioButton {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -131,7 +155,8 @@ export class RadioButton {
       'radio-button',
       this.checked && `radio-button--checked`,
       this.disabled && `radio-button--disabled`,
-      this.status && `radio-button--status-${this.status}`
+      this.status && `radio-button--status-${this.status}`,
+      this.invalid && `radio-button--status-error`
     );
   }
 }
