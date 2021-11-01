@@ -25,7 +25,7 @@ describe('Textarea', () => {
       components: [Textarea],
       html: `
         <scale-textarea
-          status="error"
+          invalid="true"
           helper-text="helpertext"
           >
         </scale-textarea>`,
@@ -61,7 +61,7 @@ describe('Textarea', () => {
       element.transparent = true;
       expect(element.getCssClassMap()).toContain('textarea--transparent');
 
-      element.status = 'error';
+      element.invalid = true;
       expect(element.getCssClassMap()).toContain('textarea--status-error');
 
       element.value = 'value';
@@ -77,7 +77,7 @@ describe('Textarea', () => {
       expect(page.rootInstance.name).toBe('');
       expect(page.rootInstance.label).toBe('');
       expect(page.rootInstance.helperText).toBe('');
-      expect(page.rootInstance.status).toBe('');
+      expect(page.rootInstance.invalid).toBe(false);
       expect(page.rootInstance.placeholder).toBe('');
       expect(page.rootInstance.value).toBe('');
     });
