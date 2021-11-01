@@ -30,7 +30,7 @@
   /*label & icon*/
   --notification-badge-max-1023-label-icon-top: -3px;
   --notification-badge-max-1023-label-icon-right: -5px;
-  --notification-badge-max-1023-label-icon-font-size: 6px;
+  --notification-badge-max-1023-label-icon-font-size: 10px;
   --notification-badge-max-1023-label-icon-height: 12px;
   --notification-badge-max-1023-label-icon-min-width: 10px;
 
@@ -102,8 +102,7 @@
 
 .notification-badge .notification-badge__circle {
   position: absolute;
-  min-width: var(--notification-badge-size);
-  height: var(--notification-badge-size);
+
   background: var(--notification-badge-background);
   color: var(--notification-badge-color);
   display: flex;
@@ -116,7 +115,8 @@
   font-size: var(--notification-badge-label-font-size);
   min-width: 10px;
   height: var(--notification-badge-label-size);
-  padding: 0 1px;
+  padding-right: 1px;
+  padding-left: 1px;
 }
 
 @media (max-width: 1023px) {
@@ -127,12 +127,14 @@
     font-size: var(--notification-badge-max-1023-label-icon-font-size);
     height: var(--notification-badge-max-1023-label-icon-height);
     min-width: var(--notification-badge-max-1023-label-icon-min-width);
+    border-radius: 20px;
   }
   .notification-badge.notification-badge--icon .notification-badge__circle {
     top: var(--notification-badge-max-1023-icon-top);
     right: var(--notification-badge-max-1023-icon-right);
     height: var(--notification-badge-max-1023-icon-height);
     min-width: var(--notification-badge-max-1023-icon-min-width);
+    border-radius: 50%;
   }
 }
 
@@ -144,12 +146,13 @@
     font-size: var(--notification-badge-min-1024-label-icon-font-size);
     height: var(--notification-badge-min-1024-label-icon-height);
     min-width: var(--notification-badge-min-1024-label-icon-min-width);
-    border-radius: 7px;
+    border-radius: 20px;
   }
   .notification-badge.notification-badge--icon .notification-badge__circle {
     top: var(--notification-badge-min-1024-icon-top);
     right: var(--notification-badge-min-1024-icon-right);
     height: var(--notification-badge-min-1024-icon-height);
     min-width: var(--notification-badge-min-1024-icon-min-width);
+    border-radius: 50%;
   }
 }
