@@ -12,6 +12,7 @@
 import {
   Component,
   Prop,
+  Element,
   Event,
   h,
   EventEmitter,
@@ -20,6 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -33,6 +35,7 @@ let i = 0;
   shadow: false,
 })
 export class TextField {
+  @Element() hostElement: HTMLElement;
   /** (optional) Input type */
   @Prop() type?:
     | 'email'
@@ -51,8 +54,10 @@ export class TextField {
   @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** DEPRECATED - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input max length */
   @Prop() maxLength?: number;
   /** (optional) Input min length */
@@ -116,6 +121,18 @@ export class TextField {
     }
   }
 
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
+
   // We're not watching `value` like we used to
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
@@ -160,7 +177,7 @@ export class TextField {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -230,6 +247,7 @@ export class TextField {
       this.disabled && `text-field--disabled`,
       this.transparent && 'text-field--transparent',
       this.status && `text-field--status-${this.status}`,
+      this.invalid && `text-field--status-error`,
       this.size && `text-field--size-${this.size}`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'
