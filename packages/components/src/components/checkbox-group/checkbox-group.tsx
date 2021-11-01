@@ -19,6 +19,7 @@ import {
   State,
 } from '@stencil/core';
 import { CheckboxInterface } from '../checkbox/checkbox';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-checkbox-group',
@@ -36,8 +37,10 @@ export class CheckboxGroup {
   @Prop() ariaLabel?: string;
   /** (optional) Input helper text */
   @Prop() helperText?: string;
-  /** (optional) Input status */
+  /** DEPRECATED - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input value */
   @Prop() value?: string = '';
   /** (optional) Input checkbox id */
@@ -68,6 +71,18 @@ export class CheckboxGroup {
         this.updateChildrenCheckboxStates(checked);
         this.updateParentCheckboxState();
       }
+    }
+  }
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.host,
+      });
     }
   }
 
@@ -120,6 +135,7 @@ export class CheckboxGroup {
           ariaLabel={`${this.ariaLabel || this.label} - ${this.actionText}`}
           helperText={this.helperText}
           status={this.status}
+          invalid={this.invalid}
           value={this.value}
           inputId={this.inputId}
           checked={this.checked}

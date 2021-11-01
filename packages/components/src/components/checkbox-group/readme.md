@@ -7,18 +7,19 @@
 
 ## Properties
 
-| Property       | Attribute       | Description                    | Type     | Default          |
-| -------------- | --------------- | ------------------------------ | -------- | ---------------- |
-| `ariaLabel`    | `aria-label`    | (optional) Input label output  | `string` | `undefined`      |
-| `helperText`   | `helper-text`   | (optional) Input helper text   | `string` | `undefined`      |
-| `inputId`      | `input-id`      | (optional) Input checkbox id   | `string` | `undefined`      |
-| `label`        | `label`         | (optional) Input label         | `string` | `''`             |
-| `name`         | `name`          | (optional) Input name          | `string` | `undefined`      |
-| `selectText`   | `select-text`   |                                | `string` | `'Select all'`   |
-| `status`       | `status`        | (optional) Input status        | `string` | `''`             |
-| `styles`       | `styles`        | (optional) Injected CSS styles | `string` | `undefined`      |
-| `unselectText` | `unselect-text` |                                | `string` | `'Unselect all'` |
-| `value`        | `value`         | (optional) Input value         | `string` | `''`             |
+| Property       | Attribute       | Description                                | Type      | Default          |
+| -------------- | --------------- | ------------------------------------------ | --------- | ---------------- |
+| `ariaLabel`    | `aria-label`    | (optional) Input label output              | `string`  | `undefined`      |
+| `helperText`   | `helper-text`   | (optional) Input helper text               | `string`  | `undefined`      |
+| `inputId`      | `input-id`      | (optional) Input checkbox id               | `string`  | `undefined`      |
+| `invalid`      | `invalid`       | (optional) Input status                    | `boolean` | `false`          |
+| `label`        | `label`         | (optional) Input label                     | `string`  | `''`             |
+| `name`         | `name`          | (optional) Input name                      | `string`  | `undefined`      |
+| `selectText`   | `select-text`   |                                            | `string`  | `'Select all'`   |
+| `status`       | `status`        | DEPRECATED - invalid should replace status | `string`  | `''`             |
+| `styles`       | `styles`        | (optional) Injected CSS styles             | `string`  | `undefined`      |
+| `unselectText` | `unselect-text` |                                            | `string`  | `'Unselect all'` |
+| `value`        | `value`         | (optional) Input value                     | `string`  | `''`             |
 
 
 ## Shadow Parts
