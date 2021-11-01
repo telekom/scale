@@ -22,6 +22,7 @@ import {
   Host,
 } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
+import statusNote from '../../utils/status-note';
 
 import {
   DuetDatePickerChangeEvent,
@@ -132,8 +133,11 @@ export class DatePicker {
   /** (optional) Helper text */
   @Prop() helperText?: string = '';
 
-  /** (optional) Status */
+  /** DEPRECATED - invalid should replace status */
   @Prop() status?: string = '';
+
+  /** (optional) invalid status */
+  @Prop() invalid?: boolean;
 
   /** (optional) Label */
   @Prop() label: string = '';
@@ -250,7 +254,7 @@ export class DatePicker {
       input.setAttribute('aria-describedby', this.helperTextId);
     }
 
-    if (input && this.status === 'error') {
+    if (input && (this.status === 'error' || this.invalid)) {
       input.setAttribute('aria-invalid', 'true');
     }
 
@@ -289,6 +293,18 @@ export class DatePicker {
     }
 
     this.adjustButtonsLabelsForA11y();
+  }
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   /**
@@ -342,6 +358,7 @@ export class DatePicker {
           class={classNames(
             'scale-date-picker',
             this.status && `scale-date-picker--status-${this.status}`,
+            this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
             this.size && `scale-date-picker--size-${this.size}`,
