@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioButtonGroup should match error snapshot 1`] = `
-<scale-radio-button-group helper-text="Error message" label="Radio Button Label">
+<scale-radio-button-group helper-text="Error message" invalid="true" label="Radio Button Label">
   <mock:shadow-root>
     <form>
       <fieldset class="radio-button-group">
@@ -9,7 +9,7 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
           <label aria-label="Radio Button Label" class="radio-button-group__title-label" role="text">
             Radio Button Label
           </label>
-          <div aria-label="Error message" class="radio-button-group__helper-text" role="text">
+          <div aria-label="Error message" class="radio-button-group__helper-text radio-button-group__helper-text--status-error" role="text">
             Error message
           </div>
         </legend>
@@ -20,11 +20,11 @@ exports[`RadioButtonGroup should match error snapshot 1`] = `
     </form>
   </mock:shadow-root>
   <div slot="radio-button-list">
-    <scale-radio-button input-id="choiceOne" label="Radio Button" name="radioError" status="error" transparent="true" value="1"></scale-radio-button>
+    <scale-radio-button input-id="choiceOne" invalid="true" label="Radio Button" name="radioError" transparent="true" value="1"></scale-radio-button>
     <div style="margin-top: 0.5rem;"></div>
-    <scale-radio-button input-id="choiceTwo" label="Radio Button" name="radioError" status="error" value="2"></scale-radio-button>
+    <scale-radio-button input-id="choiceTwo" invalid="true" label="Radio Button" name="radioError" value="2"></scale-radio-button>
     <div style="margin-top: 0.5rem;"></div>
-    <scale-radio-button input-id="choiceThree" label="Radio Button" name="radioError" status="error" value="3"></scale-radio-button>
+    <scale-radio-button input-id="choiceThree" invalid="true" label="Radio Button" name="radioError" value="3"></scale-radio-button>
   </div>
 </scale-radio-button-group>
 `;
