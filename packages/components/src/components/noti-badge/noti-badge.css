@@ -20,7 +20,7 @@
 }
 
 .notification-badge.notification-badge--label .notfication-badge__circle {
-  padding: 0 1px;
+  padding: 0 2px;
 }
 
 @media (min-width: 1024px) {
@@ -36,7 +36,7 @@
     top: -8px;
     right: -5px;
     height: 14px;
-    min-width: 12px;
+    min-width: 10px;
   }
   /*nav-icon*/
   .notification-badge.notification-badge--nav-icon .notfication-badge__circle {
@@ -50,7 +50,7 @@
     top: -8px;
     right: 1px;
     height: 14px;
-    min-width: 12px;
+    min-width: 10px;
   }
 }
 
@@ -67,7 +67,7 @@
     top: -6px;
     right: -4px;
     height: 14px;
-    min-width: 12px;
+    min-width: 10px;
   }
   /*nav-icon*/
   .notification-badge.notification-badge--nav-icon .notfication-badge__circle {
@@ -81,6 +81,6 @@
     top: -3px;
     right: -4.5px;
     height: 12px;
-    min-width: 10px;
+    min-width: 8px;
   }
 }
