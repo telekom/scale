@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.26](https://github.com/telekom/scale/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2021-10-28)
+
+
+### Bug Fixes
+
+* checkbox resizing issue on sketch lib ([#653](https://github.com/telekom/scale/issues/653)) ([b7768c4](https://github.com/telekom/scale/commit/b7768c43ae11f6612f65e7f702af9e04b1bf1b30))
+
+
+
+
+
 # [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
 
 **Note:** Version bump only for package @telekom/scale-generator-sketch
