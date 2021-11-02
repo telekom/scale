@@ -39,10 +39,13 @@ export class NotificationBadge {
   render() {
     return (
       <Host>
-        <a class={this.getCssClassMap()}>
-          <slot />
-          <span class="notfication-badge__circle">{this.getLabel()}</span>
-        </a>
+        <div class="wrapper">
+          <a class={this.getCssClassMap()}>
+            <slot />
+            <span class="notfication-badge__circle">{this.getLabel()}</span>
+          </a>
+          <slot name="after-badge"></slot>
+        </div>
       </Host>
     );
   }

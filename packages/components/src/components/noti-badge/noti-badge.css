@@ -1,9 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .notification-badge {
   color: black;
   text-decoration: none;
   position: relative;
   display: inline-block;
-
   justify-content: center;
 }
 
@@ -21,6 +25,10 @@
 
 .notification-badge.notification-badge--label .notfication-badge__circle {
   padding: 0 2px;
+}
+
+::slotted([slot='after-badge']) {
+  padding-left: 7px;
 }
 
 @media (min-width: 1024px) {
