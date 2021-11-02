@@ -53,7 +53,7 @@ export class Slider {
   @Prop() unit?: string = '%';
   /** (optional) number of decimal places */
   @Prop() decimals?: 0 | 1 | 2 = 0;
-  /** DEPRECATED - optional) slider custom color */
+  /** @deprecated - optional) slider custom color */
   @Prop() customColor?: string;
   /** (optional) disabled  */
   @Prop() disabled?: boolean = false;
