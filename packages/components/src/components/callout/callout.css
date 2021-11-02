@@ -1,0 +1,63 @@
+:host {
+  --color-callout: var(--scl-color-primary);
+  --inner-width-small: var(--scl-spacing-80);
+  --inner-height-small: var(--scl-spacing-80);
+  --inner-width-large: 126.5px;
+  --inner-height-large: 96px;
+  --width-small: 120px;
+  --height-small: 120px;
+  --height-large: 160px;
+  --width-large: 160px;
+  --blue-callout: var(--scl-color-blue-60);
+  --white-callout: var(--scl-color-white);
+  --black-callout: var(--scl-color-black);
+  --primary-callout: var(--scl-color-primary);
+  --font-content: var(--scl-font-family-sans);
+}
+
+.callout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: var(--color-callout);
+  font-family: var(--font-content);
+}
+
+.callout.callout--color-primary {
+  background: var(--primary-callout);
+}
+.callout.callout--color-white {
+  background: var(--white-callout);
+}
+.callout.callout--color-blue {
+  background: var(--blue-callout);
+}
+.callout.callout--color-black {
+  background: var(--black-callout);
+}
+
+.callout.callout--size-large {
+  width: var(--width-large);
+  height: var(--height-large);
+}
+
+.callout.callout--size-small {
+  width: var(--width-small);
+  height: var(--height-small);
+}
+
+.callout.callout--size-large .callout--inner {
+  width: var(--inner-width-large);
+  height: var(--inner-height-large);
+}
+
+.callout.callout--size-small .callout--inner {
+  width: var(--inner-width-small);
+  height: var(--inner-height-small);
+}
+
+.callout--inner {
+  transform: rotateZ(var(--callout-rotation));
+  overflow: hidden;
+}
