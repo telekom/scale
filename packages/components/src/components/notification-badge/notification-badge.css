@@ -1,5 +1,23 @@
+:host {
+  /*after-badge-slot*/
+  --padding-type-text-after-badge-slot: 0 0 0 12px;
+  --padding-type-icon-after-badge-slot: 0 0 0 7px;
+
+  /*notfication-badge circle*/
+  --background-color-notfication-badge-circle: #e20074;
+  --color-notfication-badge-circle: white;
+  --font-size-notfication-badge-circle: 12px;
+  --font-weight-notfication-badge-circle: bold;
+  --border-radius-notfication-badge-circle: 20px;
+}
+
 .notification-badge-border {
   display: inline-block;
+}
+
+.notification-badge-border:hover {
+  color: #f90984;
+  cursor: pointer;
 }
 
 .notification-badge {
@@ -17,11 +35,11 @@
 .notfication-badge__circle {
   display: flex;
   position: absolute;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 20px;
-  background-color: #e20074;
-  color: white;
+  font-size: var(--font-size-notfication-badge-circle);
+  font-weight: var(--font-weight-notfication-badge-circle);
+  border-radius: var(--border-radius-notfication-badge-circle);
+  background-color: var(--background-color-notfication-badge-circle);
+  color: var(--color-notfication-badge-circle);
   align-items: center;
   justify-content: center;
 }
@@ -31,11 +49,11 @@
 }
 
 ::slotted([slot='after-badge']) {
-  padding-left: 7px;
+  padding: var(--padding-type-icon-after-badge-slot);
 }
 
 .notification-badge.notification-badge--text ::slotted([slot='after-badge']) {
-  padding-left: 12px;
+  padding: var(--padding-type-text-after-badge-slot);
 }
 
 @media (min-width: 1024px) {

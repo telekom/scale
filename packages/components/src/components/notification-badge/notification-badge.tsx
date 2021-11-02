@@ -2,8 +2,8 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
-  tag: 'scale-noti-badge',
-  styleUrl: './noti-badge.css',
+  tag: 'scale-notification-badge',
+  styleUrl: './notification-badge.css',
   shadow: true,
 })
 export class NotificationBadge {
@@ -52,7 +52,7 @@ export class NotificationBadge {
     return (
       <Host>
         {this.type !== 'nav-icon' ? (
-          <div class="notfication-badge-border" tabIndex={0}>
+          <div class="notification-badge-border" tabIndex={0}>
             {this.getRender()}
           </div>
         ) : (
