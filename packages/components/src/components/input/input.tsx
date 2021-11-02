@@ -70,7 +70,7 @@ export class Input {
   @Prop() cols?: number;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** DEPRECATED - invalid should replace status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;

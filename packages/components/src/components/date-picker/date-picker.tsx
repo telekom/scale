@@ -33,7 +33,6 @@ import {
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 import { emitEvent } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
 
 let i = 0;
 
@@ -132,7 +131,7 @@ export class DatePicker {
   /** (optional) Helper text */
   @Prop() helperText?: string = '';
 
-  /** DEPRECATED - invalid should replace status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
 
   /** (optional) invalid status */
