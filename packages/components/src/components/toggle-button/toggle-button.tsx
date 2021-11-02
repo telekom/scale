@@ -41,7 +41,7 @@ export class ToggleButton {
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'regular';
   /** (optional) Button background */
   @Prop() background?: 'grey' | 'white' = 'white';
-  /** DEPRECATED  - variant should replace colorScheme */
+  /** @deprecated - variant should replace colorScheme */
   @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
   /** (optional) background variant of a selected toggle-button */
   @Prop() variant?: 'monochrome' | 'color' = 'color';

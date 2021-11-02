@@ -58,7 +58,7 @@ export class ToggleGroup {
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
-  /** DEPRECATED  - variant should replace colorScheme */
+  /** @deprecated - variant should replace colorScheme */
   @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
   /** (optional) background variant of a selected toggle-button */
   @Prop() variant?: 'monochrome' | 'color' = 'color';
