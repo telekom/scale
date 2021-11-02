@@ -38,8 +38,8 @@ export class NotificationBadge {
 
   getRender() {
     return (
-      <div class="notfication-badge-wrapper">
-        <a class={this.getCssClassMap()}>
+      <div class={this.getCssClassMap()}>
+        <a class="notfication-badge__wrapper">
           <slot />
           <span class="notfication-badge__circle">{this.getBadgeLabel()}</span>
         </a>

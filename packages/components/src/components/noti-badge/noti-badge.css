@@ -1,13 +1,13 @@
-.notfication-badge-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.notfication-badge-border {
+.notification-badge-border {
   display: inline-block;
 }
 
 .notification-badge {
+  display: flex;
+  align-items: center;
+}
+
+.notfication-badge__wrapper {
   text-decoration: none;
   position: relative;
   display: inline-block;
@@ -32,6 +32,10 @@
 
 ::slotted([slot='after-badge']) {
   padding-left: 7px;
+}
+
+.notification-badge.notification-badge--text ::slotted([slot='after-badge']) {
+  padding-left: 12px;
 }
 
 @media (min-width: 1024px) {
