@@ -1,10 +1,13 @@
-.wrapper {
+.notfication-badge-wrapper {
   display: flex;
   align-items: center;
 }
 
+.notfication-badge-border {
+  display: inline-block;
+}
+
 .notification-badge {
-  color: black;
   text-decoration: none;
   position: relative;
   display: inline-block;
@@ -60,6 +63,20 @@
     height: 14px;
     min-width: 10px;
   }
+  /*text*/
+  .notification-badge.notification-badge--text .notfication-badge__circle {
+    top: -5px;
+    right: -10px;
+    height: 8px;
+    min-width: 8px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--text
+    .notfication-badge__circle {
+    top: -10px;
+    right: -15px;
+    height: 14px;
+    min-width: 10px;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -90,5 +107,19 @@
     right: -4.5px;
     height: 12px;
     min-width: 8px;
+  }
+  /*text*/
+  .notification-badge.notification-badge--text .notfication-badge__circle {
+    top: -4px;
+    right: -10px;
+    height: 6px;
+    min-width: 6px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--text
+    .notfication-badge__circle {
+    top: -6px;
+    right: -15px;
+    height: 14px;
+    min-width: 10px;
   }
 }

@@ -12,7 +12,7 @@ export class NotificationBadge {
   @Prop() maxCharacters: number = 3;
   @Prop() type: 'icon' | 'text' | 'nav-icon' = 'icon';
 
-  getLabel() {
+  getBadgeLabel() {
     if (this.label) {
       if (!isNaN(this.label)) {
         let labelNumber = '' + this.label;
@@ -36,16 +36,28 @@ export class NotificationBadge {
     }
   }
 
+  getRender() {
+    return (
+      <div class="notfication-badge-wrapper">
+        <a class={this.getCssClassMap()}>
+          <slot />
+          <span class="notfication-badge__circle">{this.getBadgeLabel()}</span>
+        </a>
+        <slot name="after-badge"></slot>
+      </div>
+    );
+  }
+
   render() {
     return (
       <Host>
-        <div class="wrapper">
-          <a class={this.getCssClassMap()}>
-            <slot />
-            <span class="notfication-badge__circle">{this.getLabel()}</span>
-          </a>
-          <slot name="after-badge"></slot>
-        </div>
+        {this.type !== 'nav-icon' ? (
+          <div class="notfication-badge-border" tabIndex={0}>
+            {this.getRender()}
+          </div>
+        ) : (
+          this.getRender()
+        )}
       </Host>
     );
   }
