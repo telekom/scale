@@ -22,6 +22,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface ButtonStatus {
   id: string;
@@ -57,8 +58,10 @@ export class ToggleGroup {
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
-  /** (optional) background color scheme of a selected button */
+  /** @deprecated - variant should replace colorScheme */
   @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
+  /** (optional) background variant of a selected toggle-button */
+  @Prop() variant?: 'monochrome' | 'color' = 'color';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
@@ -108,7 +111,17 @@ export class ToggleGroup {
         'aria-description-translation',
         '$position $selected'
       );
-      toggleButton.setAttribute('color-scheme', this.colorScheme);
+      /** DEPRECATED */
+      // if attribute variant is set it overrides color-scheme
+      toggleButton.setAttribute(
+        'color-scheme',
+        this.variant !== 'color' ? this.variant : this.colorScheme
+      );
+      // if attribute color-scheme is set it overrides variant
+      toggleButton.setAttribute(
+        'variant',
+        this.colorScheme !== 'color' ? this.colorScheme : this.variant
+      );
       toggleButton.setAttribute(
         'hide-border',
         this.hideBorder ? 'true' : 'false'
@@ -131,6 +144,16 @@ export class ToggleGroup {
       this.setButtonWidth();
     }
     this.setChildrenCorners();
+
+    if (this.colorScheme !== 'color') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "colorScheme" is deprecated. Please use the "variant" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   setNewState(tempState: ButtonStatus[]) {
