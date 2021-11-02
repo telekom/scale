@@ -1,12 +1,12 @@
 
-<div data-sketch-artboard="Badge" class="artboard">
+<div data-sketch-artboard="Callout" class="artboard">
   <h1 class="title--artboard">Overview</h1>
 
-  <h2 class="title--artboard-section">Badge Eyecatcher</h2>
+  <h2 class="title--artboard-section">Callout Eyecatcher</h2>
   <div class="agent-states--grid" data-category="Text only">
     <div class="agent-states--item">
       <p class="agent-states--label">Primary - Large</p>
-      <scale-badge size="large" color="primary" rotation="0">
+      <scale-callout size="large" color="primary" rotation="0">
       <div>
         <div
           style="
@@ -29,11 +29,11 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">White - Large</p>
-      <scale-badge size="large" color="white" rotation="0">
+      <scale-callout size="large" color="white" rotation="0">
       <div>
         <div
           style="
@@ -56,11 +56,11 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">Black - Large</p>
-      <scale-badge size="large" color="black" rotation="0">
+      <scale-callout size="large" color="black" rotation="0">
       <div>
         <div
           style="
@@ -83,11 +83,11 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">Colored - Large</p>
-      <scale-badge size="large" color="blue" rotation="0">
+      <scale-callout size="large" color="blue" rotation="0">
       <div>
         <div
           style="
@@ -110,7 +110,7 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
   </div>
 
@@ -118,7 +118,7 @@
   <div class="agent-states--grid" data-category="Text only">
     <div class="agent-states--item">
       <p class="agent-states--label">Primary - Small</p>
-      <scale-badge size="small" color="primary" rotation="0">
+      <scale-callout size="small" color="primary" rotation="0">
       <div>
         <div
           style="
@@ -141,11 +141,11 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">White - small</p>
-      <scale-badge size="small" color="white" rotation="0">
+      <scale-callout size="small" color="white" rotation="0">
       <div>
         <div
           style="
@@ -168,11 +168,11 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">Black - Small</p>
-      <scale-badge size="small" color="black" rotation="0">
+      <scale-callout size="small" color="black" rotation="0">
       <div>
         <div
           style="
@@ -195,11 +195,11 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">Colored - small</p>
-      <scale-badge size="small" color="blue" rotation="0">
+      <scale-callout size="small" color="blue" rotation="0">
       <div>
         <div
           style="
@@ -222,7 +222,7 @@
           <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
   </div>
 
@@ -230,7 +230,7 @@
   <div class="agent-states--grid" data-category="Text only">
     <div class="agent-states--item">
       <p class="agent-states--label">Rotation 0˚ Default</p>
-      <scale-badge size="large" color="primary" rotation="0">
+      <scale-callout size="large" color="primary" rotation="0">
       <div>
         <div
           style="
@@ -251,11 +251,11 @@
         > <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">Rotation 30˚ </p>
-      <scale-badge size="large" color="blue" rotation="30">
+      <scale-callout size="large" color="blue" rotation="30">
       <div>
         <div
           style="
@@ -276,11 +276,11 @@
         > <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
     <div class="agent-states--item">
       <p class="agent-states--label">Rotation 90˚ </p>
-      <scale-badge size="large" color="black" rotation="90">
+      <scale-callout size="large" color="black" rotation="90">
       <div>
         <div
           style="
@@ -302,7 +302,7 @@
         <span> 15 € </span>
         </div>
       </div>
-    </scale-badge>
+    </scale-callout>
     </div>
   </div>
   </div>
@@ -310,8 +310,8 @@
 
 <script src="/symbol_names.js"></script>
 <script>
-  Array.from(document.querySelectorAll('scale-badge')).forEach((btn, i) => {
-    btn.dataset.sketchSymbol = `Badge / ${order(
+  Array.from(document.querySelectorAll('scale-callout')).forEach((btn, i) => {
+    btn.dataset.sketchSymbol = `Callout / ${order(
       1,
       getCategoryName(btn)
     )} / ${order(
