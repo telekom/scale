@@ -147,7 +147,7 @@ describe('Input', () => {
       page.root.label = 'label';
       page.root.size = 'small';
       page.root.helperText = 'helper text';
-      page.root.status = 'error';
+      page.root.invalid = true;
       page.root.disabled = false;
       page.root.required = true;
       page.root.checked = true;
@@ -163,7 +163,7 @@ describe('Input', () => {
       expect(page.rootInstance.label).toBe('label');
       expect(page.rootInstance.size).toBe('small');
       expect(page.rootInstance.helperText).toBe('helper text');
-      expect(page.rootInstance.status).toBe('error');
+      expect(page.rootInstance.invalid).toBe(true);
       expect(page.rootInstance.disabled).toBe(false);
       expect(page.rootInstance.required).toBe(true);
       expect(page.rootInstance.checked).toBe(true);
@@ -184,7 +184,7 @@ describe('Input', () => {
       element.checked = true;
       element.disabled = true;
       element.transparent = true;
-      element.status = 'error';
+      element.invalid = true;
       element.size = 'small';
       element.variant = 'static';
       element.value = 'animated';

@@ -43,13 +43,13 @@ export class RatingStars {
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
-  /** Deprecated; size should be used instead of starSize */
+  /** @deprecated; size should be used instead of starSize */
   @Prop() starSize: 'small' | 'large' = 'large';
   /** size of the stars  */
   @Prop({ reflect: true, mutable: true }) size: 'small' | 'large' = 'large';
-  /** Deprecated; The lower limit of the rating */
+  /** @deprecated; The lower limit of the rating */
   @Prop() minRating = 0;
-  /** Deprecated; max should be used instead of maxRating */
+  /** @deprecated; max should be used instead of maxRating */
   @Prop() maxRating = 5;
   /** The upper limit of the rating */
   @Prop({ reflect: true, mutable: true }) max = 5;

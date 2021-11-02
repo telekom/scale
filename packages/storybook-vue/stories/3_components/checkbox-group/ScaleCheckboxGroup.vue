@@ -12,7 +12,7 @@ export default {
     label: { type: String, default: '' },
     helperText: { type: String },
     ariaLabel: { type: String },
-    status: { type: String, default: '' },
+    invalid: { type: Boolean },
     selectText: { type: String, default: 'Select all' },
     unselectText: { type: String, default: 'Unselect all' },
     value: { type: String, default: '' },

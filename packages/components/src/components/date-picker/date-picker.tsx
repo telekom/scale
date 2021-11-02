@@ -22,6 +22,7 @@ import {
   Host,
 } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
+import statusNote from '../../utils/status-note';
 
 import {
   DuetDatePickerChangeEvent,
@@ -32,7 +33,6 @@ import {
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
 import { emitEvent } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
 
 let i = 0;
 
@@ -131,8 +131,11 @@ export class DatePicker {
   /** (optional) Helper text */
   @Prop() helperText?: string = '';
 
-  /** (optional) Status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+
+  /** (optional) invalid status */
+  @Prop() invalid?: boolean;
 
   /** (optional) Label */
   @Prop() label: string = '';
@@ -289,7 +292,7 @@ export class DatePicker {
       input.setAttribute('aria-describedby', this.helperTextId);
     }
 
-    if (input && this.status === 'error') {
+    if (input && (this.status === 'error' || this.invalid)) {
       input.setAttribute('aria-invalid', 'true');
     }
 
@@ -342,6 +345,18 @@ export class DatePicker {
     this.adjustButtonsLabelsForA11y();
   }
 
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
+
   /**
    * Fix JAWS reading the day twice, e.g. "19 19. August"
    * It'd probably make sense to open a PR in duetds/date-picker
@@ -392,6 +407,7 @@ export class DatePicker {
           class={classNames(
             'scale-date-picker',
             this.status && `scale-date-picker--status-${this.status}`,
+            this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
             this.size && `scale-date-picker--size-${this.size}`,

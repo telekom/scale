@@ -29,7 +29,7 @@ export const Template = (args, { argTypes }) => ({
             :disabled="disabled"
             :label="label"
             :helper-text="helperText"
-            :status="status"
+            :invalid="invalid"
             :size="size"
             @scaleChange="scaleChange"
             @scale-change="scale-change"
@@ -273,7 +273,7 @@ duet-date-picker {
         name="With Error"
         args={{
             label: "With Error",
-            status: "error",
+            invalid: true,
             helperText: "something is wrong",
         }}
     >
@@ -283,7 +283,7 @@ duet-date-picker {
 
 
 ```html
-<scale-date-picker label="With Error" helper-text="something is wrong" status="error" value="2020-12-31"></scale-date-picker>
+<scale-date-picker label="With Error" helper-text="something is wrong" invalid value="2020-12-31"></scale-date-picker>
 ```
 
 ## Disabled
