@@ -78,7 +78,7 @@ export class NavIcon {
           }}
         >
           {this.badge || (this.badgeLabel && this.badge) || this.badgeLabel ? (
-            <scale-notification-badge label={this.badgeLabel} type="icon">
+            <scale-notification-badge label={this.badgeLabel} type="nav-icon">
               {renderIcon({
                 tag: `scale-icon-${this.icon}`,
                 attributes: { class: 'meta-navigation__item-link-icon' },
