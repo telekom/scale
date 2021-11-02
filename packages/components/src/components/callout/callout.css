@@ -22,6 +22,8 @@
   border-radius: 100%;
   background: var(--color-callout);
   font-family: var(--font-content);
+  color: var(--white-callout);
+  text-align: center;
 }
 
 .callout.callout--color-primary {
@@ -29,6 +31,7 @@
 }
 .callout.callout--color-white {
   background: var(--white-callout);
+  color: var(--black-callout);
 }
 .callout.callout--color-blue {
   background: var(--blue-callout);
@@ -47,17 +50,58 @@
   height: var(--height-small);
 }
 
-.callout.callout--size-large .callout--inner {
+.callout.callout--size-large .callout__inner {
   width: var(--inner-width-large);
   height: var(--inner-height-large);
 }
 
-.callout.callout--size-small .callout--inner {
+.callout.callout--size-small .callout__inner {
   width: var(--inner-width-small);
   height: var(--inner-height-small);
 }
 
-.callout--inner {
+.callout__inner {
   transform: rotateZ(var(--callout-rotation));
   overflow: hidden;
+}
+
+.callout__prefix {
+  font-weight: 400;
+}
+
+.callout__text {
+  font-weight: 700;
+}
+
+.callout__sup {
+  font-size: 30px;
+  cursor: help;
+}
+
+.callout.callout--size-large .callout__prefix {
+  font-size: 20px;
+}
+.callout.callout--size-large .callout__text {
+  font-size: 60px;
+}
+.callout.callout--size-large.callout--asterisk .callout__prefix {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.callout.callout--size-large.callout--asterisk .callout__text {
+  font-size: 35px;
+}
+.callout.callout--size-small .callout__prefix {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.callout.callout--size-small .callout__text {
+  font-size: 40px;
+}
+.callout.callout--size-small.callout--asterisk .callout__prefix {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.callout.callout--size-small.callout--asterisk .callout__text {
+  font-size: 35px;
 }

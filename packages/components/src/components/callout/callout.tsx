@@ -15,6 +15,8 @@ export class Callout {
   @Prop({ mutable: true }) variant: 'primary' | 'white' | 'black' | 'blue';
   /** (optional) Variant rotation of the callout/circle */
   @Prop({ mutable: true }) rotation: number = 0;
+  /** (optional) text when hovering with asterisk */
+  @Prop({ mutable: true }) asterisk: string;
 
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });
@@ -31,8 +33,20 @@ export class Callout {
       <Host>
         <style>{this.displayStyle()}</style>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <div part="inner" class="callout--inner">
-            <slot></slot>
+          <div part="inner" class="callout__inner">
+            <div class="callout__prefix">
+              <slot name="prefix" />
+            </div>
+            <div class="callout__text">
+              <span>
+                <slot name="text" />
+              </span>
+              {this.asterisk && (
+                <sup title={this.asterisk} class="callout__sup">
+                  *
+                </sup>
+              )}
+            </div>
           </div>
         </div>
       </Host>
@@ -54,7 +68,8 @@ export class Callout {
     return classNames(
       name,
       this.variant && `${prefix}color-${this.variant}`,
-      this.size && `${prefix}size-${this.size}`
+      this.size && `${prefix}size-${this.size}`,
+      this.asterisk && `${prefix}asterisk`
     );
   }
 }
