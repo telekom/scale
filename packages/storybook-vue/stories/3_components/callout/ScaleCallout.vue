@@ -6,7 +6,7 @@
     :asterisk="asterisk"
   >
     <slot name="prefix" />
-    <slot name="text" />
+    <slot></slot>
   </scale-callout>
 </template>
 

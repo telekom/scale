@@ -52,7 +52,7 @@ export const Template = (args, { argTypes }) => ({
       :asterisk="asterisk"
       >
       <div slot="prefix"> {{ prefix }} </div>
-      <span slot="text">{{ text }}</span>
+      15 €
     </scale-callout>
   `,
 });
@@ -60,7 +60,6 @@ export const Template = (args, { argTypes }) => ({
 export const TemplateSmall = (args, { argTypes }) => ({
   props: { ...ScaleCallout.props,
     prefix: String,
-    text: String,
     },
   template: `
     <scale-callout 
@@ -71,7 +70,7 @@ export const TemplateSmall = (args, { argTypes }) => ({
       style="--prefix-fontsize: 15px; --text-fontsize: 40px"
       >
       <div slot="prefix"> {{ prefix }} </div>
-      <span slot="text">{{ text }}</span>
+      15 €
     </scale-callout>
   `,
 });
@@ -79,7 +78,6 @@ export const TemplateSmall = (args, { argTypes }) => ({
 export const TemplateAsterisk = (args, { argTypes }) => ({
   props: { ...ScaleCallout.props,
     prefix: String,
-    text: String,
     },
   template: `
     <scale-callout 
@@ -90,7 +88,7 @@ export const TemplateAsterisk = (args, { argTypes }) => ({
       style="--prefix-fontsize: 25px; --text-fontsize: 35px"
       >
       <div slot="prefix"> {{ prefix }} </div>
-      <span slot="text">{{ text }}</span>
+      15 €
     </scale-callout>
   `,
 });
@@ -102,7 +100,6 @@ export const TemplateAsterisk = (args, { argTypes }) => ({
     name="Standard"
     args={{
       prefix: "Für nur",
-      text: "15 €",
     }}
   >
     {Template.bind({})}
@@ -114,7 +111,7 @@ export const TemplateAsterisk = (args, { argTypes }) => ({
 ```html
 <scale-callout>
   <div slot="prefix">Für nur</div>
-  <span slot="text">15 €</span>
+  15 €
 </scale-callout>
 ```
 
@@ -147,7 +144,6 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
     name="Size"
     args={{
       prefix: "Für nur",
-      text: "15 €",
       size: "small"
     }}
   >
@@ -161,7 +157,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
   style="--prefix-fontsize: 15px; --text-fontsize: 40px"
 >
   <div slot="prefix">Für nur</div>
-  <span slot="text">15 €</span>
+  15 €
 </scale-callout>
 ```
 
@@ -171,7 +167,6 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
     name="Rotation"
     args={{
       prefix: "Für nur",
-      text: "15 €",
       rotation: 33
     }}
   >
@@ -182,7 +177,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 ```html
 <scale-callout rotation="33">
   <div slot="prefix">Für nur</div>
-  <span slot="text">15 €</span>
+  15 €
 </scale-callout>
 ```
 
@@ -194,7 +189,6 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
     name="Variants"
     args={{
       prefix: "Für nur",
-      text: "15 €",
       variant: "blue"
     }}
   >
@@ -205,7 +199,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 ```html
 <scale-callout variant="blue">
   <div slot="prefix">Für nur</div>
-  <span slot="text">15,99 €</span>
+  15 €
 </scale-callout>
 ```
 
@@ -215,7 +209,6 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
     name="Asterisk"
     args={{
       prefix: "Für nur",
-      text: "15 €",
       asterisk: "Infotext when hovering astrisk"
     }}
   >
@@ -230,6 +223,6 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
   asterisk="Infotext when hovering astrisk"
 >
   <div slot="prefix">Für nur</div>
-  <span slot="text">15 €</span>
+  15 €
 </scale-callout>
 ```

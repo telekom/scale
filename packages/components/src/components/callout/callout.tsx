@@ -39,7 +39,7 @@ export class Callout {
             </div>
             <div class="callout__text">
               <span>
-                <slot name="text" />
+                <slot></slot>
               </span>
               {this.asterisk && (
                 <sup title={this.asterisk} class="callout__sup">
