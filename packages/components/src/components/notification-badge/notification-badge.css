@@ -4,29 +4,37 @@
   --padding-type-icon-after-badge-slot: 0 0 0 7px;
 
   /*notfication-badge circle*/
-  --background-color-notfication-badge-circle: #e20074;
-  --color-notfication-badge-circle: white;
+  --background-color-notfication-badge-circle: var(--scl-color-primary);
+  --color-notfication-badge-circle: var(--scl-color-white);
   --font-size-notfication-badge-circle: 12px;
   --font-weight-notfication-badge-circle: bold;
   --border-radius-notfication-badge-circle: 20px;
+
+  /*border*/
+  --color-notification-badge-border-focus: #009de0;
+  --color-notification-badge-border-hover: var(--scl-color-primary-hover);
+  --line-width-notification-badge-border-focus: 2px;
+  --padding-notification-badge-border: 8px 5px 0 5px;
+  --margin-notification-badge-border: -8px -5px 0 -5px;
 }
 
 .notification-badge-border {
   display: inline-block;
-  border: 2px solid transparent;
-  padding: 8px 5px 0 5px;
-  margin: -8px -5px 0 -5px;
+  border: var(--line-width-notification-badge-border-focus) solid transparent;
+  padding: var(--padding-notification-badge-border);
+  margin: var(--margin-notification-badge-border);
 }
 
 .notification-badge-border:hover {
-  color: #f90984;
+  color: var(--color-notification-badge-border-hover);
   cursor: pointer;
 }
 
 .notification-badge-border:focus {
-  border: solid #009de0 2px;
+  border: var(--line-width-notification-badge-border-focus) solid
+    var(--color-notification-badge-border-focus);
   outline: none;
-  padding: 8px 5px 0 5px;
+  padding: var(--padding-notification-badge-border);
   border-radius: 3px;
 }
 
