@@ -13,6 +13,8 @@
   --black-callout: var(--scl-color-black);
   --primary-callout: var(--scl-color-primary);
   --font-content: var(--scl-font-family-sans);
+  --fontsize-prefix: var(--scl-font-size-20);
+  --fontsize-text: calc(var(--scl-font-size-20) * 3);
 }
 
 .callout {
@@ -66,10 +68,12 @@
 }
 
 .callout__prefix {
+  font-size: var(--fontsize-prefix);
   font-weight: 400;
 }
 
 .callout__text {
+  font-size: var(--fontsize-text);
   font-weight: 700;
 }
 
@@ -78,30 +82,10 @@
   cursor: help;
 }
 
-.callout.callout--size-large .callout__prefix {
-  font-size: 20px;
-}
-.callout.callout--size-large .callout__text {
-  font-size: 60px;
-}
 .callout.callout--size-large.callout--asterisk .callout__prefix {
-  font-size: 25px;
   margin-bottom: 10px;
 }
-.callout.callout--size-large.callout--asterisk .callout__text {
-  font-size: 35px;
-}
+
 .callout.callout--size-small .callout__prefix {
-  font-size: 15px;
   margin-bottom: 10px;
-}
-.callout.callout--size-small .callout__text {
-  font-size: 40px;
-}
-.callout.callout--size-small.callout--asterisk .callout__prefix {
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-.callout.callout--size-small.callout--asterisk .callout__text {
-  font-size: 35px;
 }

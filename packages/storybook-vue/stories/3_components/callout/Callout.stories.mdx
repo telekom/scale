@@ -42,11 +42,54 @@ import ScaleCallout from './ScaleCallout.vue';
 export const Template = (args, { argTypes }) => ({
   props: { ...ScaleCallout.props,
     prefix: String,
-    text: String
+    text: String,
     },
   template: `
-    <scale-callout :size="size" :variant="variant" :rotation="rotation" :asterisk="asterisk">
-      <div slot="prefix">{{ prefix }}</div>
+    <scale-callout 
+      :size="size" 
+      :variant="variant" 
+      :rotation="rotation" 
+      :asterisk="asterisk"
+      >
+      <div slot="prefix"> {{ prefix }} </div>
+      <span slot="text">{{ text }}</span>
+    </scale-callout>
+  `,
+});
+
+export const TemplateSmall = (args, { argTypes }) => ({
+  props: { ...ScaleCallout.props,
+    prefix: String,
+    text: String,
+    },
+  template: `
+    <scale-callout 
+      :size="size" 
+      :variant="variant" 
+      :rotation="rotation" 
+      :asterisk="asterisk"
+      style="--fontsize-prefix: 15px; --fontsize-text: 40px"
+      >
+      <div slot="prefix"> {{ prefix }} </div>
+      <span slot="text">{{ text }}</span>
+    </scale-callout>
+  `,
+});
+
+export const TemplateAsterisk = (args, { argTypes }) => ({
+  props: { ...ScaleCallout.props,
+    prefix: String,
+    text: String,
+    },
+  template: `
+    <scale-callout 
+      :size="size" 
+      :variant="variant" 
+      :rotation="rotation" 
+      :asterisk="asterisk"
+      style="--fontsize-prefix: 25px; --fontsize-text: 35px"
+      >
+      <div slot="prefix"> {{ prefix }} </div>
       <span slot="text">{{ text }}</span>
     </scale-callout>
   `,
@@ -59,7 +102,7 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       prefix: "Für nur",
-      text: "15 €"
+      text: "15 €",
     }}
   >
     {Template.bind({})}
@@ -71,7 +114,7 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-callout>
   <div slot="prefix">Für nur</div>
-  <span slot="text">15,99 €</span>
+  <span slot="text">15 €</span>
 </scale-callout>
 ```
 
@@ -108,14 +151,17 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
       size: "small"
     }}
   >
-    {Template.bind({})}
+    {TemplateSmall.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout size="small">
+<scale-callout
+  size="small"
+  style="--fontsize-prefix: 15px; --fontsize-text: 40px"
+>
   <div slot="prefix">Für nur</div>
-  <span slot="text">15,99 €</span>
+  <span slot="text">15 €</span>
 </scale-callout>
 ```
 
@@ -136,7 +182,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 ```html
 <scale-callout rotation="33">
   <div slot="prefix">Für nur</div>
-  <span slot="text">15,99 €</span>
+  <span slot="text">15 €</span>
 </scale-callout>
 ```
 
@@ -173,13 +219,17 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
       asterisk: "Infotext when hovering astrisk"
     }}
   >
-    {Template.bind({})}
+    {TemplateAsterisk.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout asterisk="Infotext when hovering astrisk">
+<scale-callout
+  size="small"
+  style="--fontsize-prefix: 25px; --fontsize-text: 35px"
+  asterisk="Infotext when hovering astrisk"
+>
   <div slot="prefix">Für nur</div>
-  <span slot="text">15,99 €</span>
+  <span slot="text">15 €</span>
 </scale-callout>
 ```
