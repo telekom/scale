@@ -24,7 +24,7 @@ export class Callout {
 
   displayStyle() {
     return `:host {
-      --callout-rotation: ${this.rotation}deg;
+      --rotation: ${this.rotation}deg;
     }`;
   }
 

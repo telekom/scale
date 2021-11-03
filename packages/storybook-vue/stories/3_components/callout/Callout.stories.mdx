@@ -67,7 +67,7 @@ export const TemplateSmall = (args, { argTypes }) => ({
       :variant="variant" 
       :rotation="rotation" 
       :asterisk="asterisk"
-      style="--prefix-fontsize: 15px; --text-fontsize: 40px"
+      style="--font-size-prefix: 15px; --font-size: 40px"
       >
       <div slot="prefix"> {{ prefix }} </div>
       15 €
@@ -85,10 +85,10 @@ export const TemplateAsterisk = (args, { argTypes }) => ({
       :variant="variant" 
       :rotation="rotation" 
       :asterisk="asterisk"
-      style="--prefix-fontsize: 25px; --text-fontsize: 35px"
+      style="--font-size-prefix: 25px; --font-size: 35px"
       >
       <div slot="prefix"> {{ prefix }} </div>
-      15 €
+      <span>15 €</span>
     </scale-callout>
   `,
 });
@@ -154,7 +154,7 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
 ```html
 <scale-callout
   size="small"
-  style="--prefix-fontsize: 15px; --text-fontsize: 40px"
+  style="--font-size-prefix: 15px; --font-size: 40px"
 >
   <div slot="prefix">Für nur</div>
   15 €
@@ -219,7 +219,7 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
 ```html
 <scale-callout
   size="small"
-  style="--prefix-fontsize: 25px; --text-fontsize: 35px"
+  style="--font-size-prefix: 25px; --font-size: 35px"
   asterisk="Infotext when hovering astrisk"
 >
   <div slot="prefix">Für nur</div>

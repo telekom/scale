@@ -1,5 +1,4 @@
 :host {
-  --callout-color: var(--scl-color-primary);
   --inner-width-small: var(--scl-spacing-80);
   --inner-height-small: var(--scl-spacing-80);
   --inner-width-large: 126.5px;
@@ -8,13 +7,13 @@
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
-  --callout-blue: var(--scl-color-blue-60);
-  --callout-white: var(--scl-color-white);
-  --callout-black: var(--scl-color-black);
-  --callout-primary: var(--scl-color-primary);
-  --content-font: var(--scl-font-family-sans);
-  --prefix-fontsize: var(--scl-font-size-20);
-  --text-fontsize: calc(var(--scl-font-size-20) * 3);
+  --color-blue: var(--scl-color-blue-60);
+  --color-white: var(--scl-color-white);
+  --color-black: var(--scl-color-black);
+  --color-primary: var(--scl-color-primary);
+  --font-family: var(--scl-font-family-sans);
+  --font-size: calc(var(--scl-font-size-20) * 3);
+  --font-size-prefix: var(--scl-font-size-20);
 }
 
 .callout {
@@ -22,24 +21,24 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  background: var(--callout-color);
-  font-family: var(--content-font);
-  color: var(--callout-white);
+  background: var(--color-primary);
+  font-family: var(--font-family);
+  color: var(--color-white);
   text-align: center;
 }
 
 .callout.callout--color-primary {
-  background: var(--callout-primary);
+  background: var(--color-primary);
 }
 .callout.callout--color-white {
-  background: var(--callout-white);
-  color: var(--callout-black);
+  background: var(--color-white);
+  color: var(--color-black);
 }
 .callout.callout--color-blue {
-  background: var(--callout-blue);
+  background: var(--color-blue);
 }
 .callout.callout--color-black {
-  background: var(--callout-black);
+  background: var(--color-black);
 }
 
 .callout.callout--size-large {
@@ -63,17 +62,17 @@
 }
 
 .callout__inner {
-  transform: rotateZ(var(--callout-rotation));
+  transform: rotateZ(var(--rotation));
   overflow: hidden;
 }
 
 .callout__prefix {
-  font-size: var(--prefix-fontsize);
+  font-size: var(--font-size-prefix);
   font-weight: 400;
 }
 
 .callout__text {
-  font-size: var(--text-fontsize);
+  font-size: var(--font-size);
   font-weight: 700;
 }
 
