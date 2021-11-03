@@ -1,5 +1,4 @@
 :host {
-  --color-callout: var(--scl-color-primary);
   --inner-width-small: var(--scl-spacing-80);
   --inner-height-small: var(--scl-spacing-80);
   --inner-width-large: 126.5px;
@@ -8,11 +7,13 @@
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
-  --blue-callout: var(--scl-color-blue-60);
-  --white-callout: var(--scl-color-white);
-  --black-callout: var(--scl-color-black);
-  --primary-callout: var(--scl-color-primary);
-  --font-content: var(--scl-font-family-sans);
+  --color-blue: var(--scl-color-blue-60);
+  --color-white: var(--scl-color-white);
+  --color-black: var(--scl-color-black);
+  --color-primary: var(--scl-color-primary);
+  --font-family: var(--scl-font-family-sans);
+  --font-size: calc(var(--scl-font-size-20) * 3);
+  --font-size-prefix: var(--scl-font-size-20);
 }
 
 .callout {
@@ -20,21 +21,24 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  background: var(--color-callout);
-  font-family: var(--font-content);
+  background: var(--color-primary);
+  font-family: var(--font-family);
+  color: var(--color-white);
+  text-align: center;
 }
 
 .callout.callout--color-primary {
-  background: var(--primary-callout);
+  background: var(--color-primary);
 }
 .callout.callout--color-white {
-  background: var(--white-callout);
+  background: var(--color-white);
+  color: var(--color-black);
 }
 .callout.callout--color-blue {
-  background: var(--blue-callout);
+  background: var(--color-blue);
 }
 .callout.callout--color-black {
-  background: var(--black-callout);
+  background: var(--color-black);
 }
 
 .callout.callout--size-large {
@@ -47,17 +51,40 @@
   height: var(--height-small);
 }
 
-.callout.callout--size-large .callout--inner {
+.callout.callout--size-large .callout__inner {
   width: var(--inner-width-large);
   height: var(--inner-height-large);
 }
 
-.callout.callout--size-small .callout--inner {
+.callout.callout--size-small .callout__inner {
   width: var(--inner-width-small);
   height: var(--inner-height-small);
 }
 
-.callout--inner {
-  transform: rotateZ(var(--callout-rotation));
+.callout__inner {
+  transform: rotateZ(var(--rotation));
   overflow: hidden;
+}
+
+.callout__prefix {
+  font-size: var(--font-size-prefix);
+  font-weight: 400;
+}
+
+.callout__text {
+  font-size: var(--font-size);
+  font-weight: 700;
+}
+
+.callout__sup {
+  font-size: 30px;
+  cursor: help;
+}
+
+.callout.callout--size-large.callout--asterisk .callout__prefix {
+  margin-bottom: 10px;
+}
+
+.callout.callout--size-small .callout__prefix {
+  margin-bottom: 10px;
 }

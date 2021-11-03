@@ -25,63 +25,70 @@ import ScaleCallout from './ScaleCallout.vue';
         type: 'select',
       },
     },
+    rotation: {
+      defaultValue: 0,
+      control: {
+        type: 'text',
+      },
+    },
+    asterisk: {
+      control: {
+        type: 'text',
+      },
+    },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleCallout },
-  props: ScaleCallout.props,
+  props: { ...ScaleCallout.props,
+    prefix: String,
+    text: String,
+    },
   template: `
-      <scale-callout :size="size" :variant="variant" :rotation="rotation">
-      <div>
-        <div style="text-align:center; font-size:20px; color:white; font-weight:400;">
-          Für nur 
-        </div>
-        <div style="text-align:center; font-size: 60px; color: white; font-weight: 700;">
-          <span>
-            15 €
-          </span>
-        </div>
-      </div>
+    <scale-callout 
+      :size="size" 
+      :variant="variant" 
+      :rotation="rotation" 
+      :asterisk="asterisk"
+      >
+      <div slot="prefix"> {{ prefix }} </div>
+      15 €
     </scale-callout>
   `,
 });
 
-export const Template2 = (args, { argTypes }) => ({
-  components: { ScaleCallout },
-  props: ScaleCallout.props,
+export const TemplateSmall = (args, { argTypes }) => ({
+  props: { ...ScaleCallout.props,
+    prefix: String,
+    },
   template: `
-      <scale-callout :size="size" :variant="variant" :rotation="rotation">
-      <div>
-        <div style="text-align: center; font-size: 15px; color: white; font-weight: 400; margin-bottom: 10px;">
-          Für nur
-        </div>
-        <div style="text-align: center; font-size: 40px; color: white; font-weight: 700;">
-          <span>
-            15 €
-          </span>
-        </div>
-      </div>
+    <scale-callout 
+      :size="size" 
+      :variant="variant" 
+      :rotation="rotation" 
+      :asterisk="asterisk"
+      style="--font-size-prefix: 15px; --font-size: 40px"
+      >
+      <div slot="prefix"> {{ prefix }} </div>
+      15 €
     </scale-callout>
   `,
 });
 
-export const Template3 = (args, { argTypes }) => ({
-  components: { ScaleCallout },
-  props: ScaleCallout.props,
+export const TemplateAsterisk = (args, { argTypes }) => ({
+  props: { ...ScaleCallout.props,
+    prefix: String,
+    },
   template: `
-      <scale-callout :size="size" :variant="variant" :rotation="rotation">
-      <div>
-        <div style="text-align: center; font-size: 25px; color: white; font-weight: 400; margin-bottom: 10px;">
-          ab
-        </div>
-        <div style="text-align: center; font-size: 35px; color: white; font-weight: 700;">
-          <span>
-            19,95 €
-          </span>
-          <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
-        </div>
-      </div>
+    <scale-callout 
+      :size="size" 
+      :variant="variant" 
+      :rotation="rotation" 
+      :asterisk="asterisk"
+      style="--font-size-prefix: 25px; --font-size: 35px"
+      >
+      <div slot="prefix"> {{ prefix }} </div>
+      <span>15 €</span>
     </scale-callout>
   `,
 });
@@ -92,6 +99,7 @@ export const Template3 = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
+      prefix: "Für nur",
     }}
   >
     {Template.bind({})}
@@ -102,18 +110,8 @@ export const Template3 = (args, { argTypes }) => ({
 
 ```html
 <scale-callout>
-  <div>
-    <div
-      style="text-align:center; font-size:20px; color:white; font-weight:400;"
-    >
-      Für nur
-    </div>
-    <div
-      style="text-align:center; font-size: 60px; color: white; font-weight: 700;"
-    >
-      <span> 15 € </span>
-    </div>
-  </div>
+  <div slot="prefix">Für nur</div>
+  15 €
 </scale-callout>
 ```
 
@@ -136,35 +134,30 @@ export const Template3 = (args, { argTypes }) => ({
 }
 }
 ```
+
 ## Size
 There are two sizes: 
 Large / small. Large has the size 160x160 and small 120x120. In the example below, the callout is small
 
 <Canvas withSource="none">
   <Story
-    name="Sizes"
+    name="Size"
     args={{
-      size: "small",
+      prefix: "Für nur",
+      size: "small"
     }}
   >
-    {Template2.bind({})}
+    {TemplateSmall.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout size="small" >
-  <div>
-    <div
-      style="text-align:center; font-size:20px; color:white; font-weight:400;"
-    >
-      Für nur
-    </div>
-    <div
-      style="text-align:center; font-size: 60px; color: white; font-weight: 700;"
-    >
-      <span> 15 € </span>
-    </div>
-  </div>
+<scale-callout
+  size="small"
+  style="--font-size-prefix: 15px; --font-size: 40px"
+>
+  <div slot="prefix">Für nur</div>
+  15 €
 </scale-callout>
 ```
 
@@ -173,29 +166,18 @@ Large / small. Large has the size 160x160 and small 120x120. In the example belo
   <Story
     name="Rotation"
     args={{
-      size: "small",
-      variant: "blue",
-      rotation: 33,
+      prefix: "Für nur",
+      rotation: 33
     }}
   >
-    {Template2.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout variant="blue" size="small" rotation="33" >
-  <div>
-    <div
-      style="text-align:center; font-size:20px; color:white; font-weight:400;"
-    >
-      Für nur
-    </div>
-    <div
-      style="text-align:center; font-size: 60px; color: white; font-weight: 700;"
-    >
-      <span> 15 € </span>
-    </div>
-  </div>
+<scale-callout rotation="33">
+  <div slot="prefix">Für nur</div>
+  15 €
 </scale-callout>
 ```
 
@@ -206,26 +188,18 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
   <Story
     name="Variants"
     args={{
-      size: "small",
-      variant: "black"
+      prefix: "Für nur",
+      variant: "blue"
     }}
   >
-    {Template2.bind({})}
+    {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout size="small" variant="black">
-      <div>
-        <div style="text-align:center; font-size:20px; color:white; font-weight:400;">
-          Für nur
-        </div>
-        <div style="text-align:center; font-size: 60px; color: white; font-weight: 700;">
-          <span>
-            15 €
-          </span>
-        </div>
-      </div>
+<scale-callout variant="blue">
+  <div slot="prefix">Für nur</div>
+  15 €
 </scale-callout>
 ```
 
@@ -234,24 +208,21 @@ There are 4 standard colors (Primary - default, black, white, blue). The user al
   <Story
     name="Asterisk"
     args={{
+      prefix: "Für nur",
+      asterisk: "Infotext when hovering astrisk"
     }}
   >
-    {Template3.bind({})}
+    {TemplateAsterisk.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout>
-      <div>
-        <div style="text-align: center; font-size: 25px; TeleNeo; color: white; font-weight: 400; margin-bottom: 10px;">
-          ab
-        </div>
-        <div style="text-align: center; font-size: 35px; TeleNeo; color: white; font-weight: 700;">
-          <span>
-            19,95 €
-          </span>
-          <sup title="This offer is only valid for a limited time. Free shipping on all orders." style="font-size: 30px; color: white; cursor: help;">*</sup>
-        </div>
-      </div>
+<scale-callout
+  size="small"
+  style="--font-size-prefix: 25px; --font-size: 35px"
+  asterisk="Infotext when hovering astrisk"
+>
+  <div slot="prefix">Für nur</div>
+  15 €
 </scale-callout>
 ```
