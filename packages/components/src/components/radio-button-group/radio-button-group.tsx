@@ -36,7 +36,6 @@ export class RadioButtonGroup {
         <fieldset class="radio-button-group">
           <legend class="radio-button-group__title">
             <label
-              role="text"
               class="radio-button-group__title-label"
               aria-label={this.label}
             >
