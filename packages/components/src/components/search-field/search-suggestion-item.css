@@ -1,0 +1,15 @@
+.element {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  list-style: none;
+  padding-left: 44px;
+  padding-top: 16px;
+}
+
+.element:hover {
+  color: #F90984;
+  background-color: #EDEDED;
+  cursor: pointer;
+}
