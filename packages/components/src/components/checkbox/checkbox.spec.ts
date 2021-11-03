@@ -43,7 +43,7 @@ describe('Checkbox', () => {
           label="testlabel"
           checked
           disabled
-          status="error"
+          invalid="true"
           value="testvalue">
         </scale-checkbox>`,
     });
@@ -52,14 +52,8 @@ describe('Checkbox', () => {
     expect(page.rootInstance.label).toBe('testlabel');
     expect(page.rootInstance.disabled).toBe(true);
     expect(page.rootInstance.checked).toBe(true);
-    expect(page.rootInstance.status).toBe('error');
+    expect(page.rootInstance.invalid).toBe(true);
     expect(page.rootInstance.value).toBe('testvalue');
-  });
-
-  it('should handle css classes', () => {
-    const element = new Checkbox();
-    element.status = 'error';
-    // expect(element.classList).toContain('checkbox--status-error');
   });
 
   it('should emit on change', async () => {

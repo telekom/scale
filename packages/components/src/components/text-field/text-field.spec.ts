@@ -36,7 +36,7 @@ describe('TextField', () => {
                  max-length="2"
                  min-length="1"
                  size ="size"
-                 status ="status"
+                 invalid="true"
                  placeholder ="placeholder"
                  disabled ="true"
                  required ="true"
@@ -55,7 +55,7 @@ describe('TextField', () => {
     expect(specPage.rootInstance.size).toBe('size');
     expect(specPage.rootInstance.maxLength).toBe(2);
     expect(specPage.rootInstance.minLength).toBe(1);
-    expect(specPage.rootInstance.status).toBe('status');
+    expect(specPage.rootInstance.invalid).toBe(true);
     expect(specPage.rootInstance.placeholder).toBe('placeholder');
     expect(specPage.rootInstance.disabled).toBe(true);
     expect(specPage.rootInstance.required).toBe(true);
@@ -188,8 +188,8 @@ describe('TextField', () => {
     element.transparent = true;
     expect(element.getCssClassMap()).toContain('text-field--transparent');
 
-    element.status = 'status';
-    expect(element.getCssClassMap()).toContain('text-field--status-status');
+    element.invalid = true;
+    expect(element.getCssClassMap()).toContain('text-field--status-error');
 
     element.size = 'small';
     expect(element.getCssClassMap()).toContain('text-field--size-small');

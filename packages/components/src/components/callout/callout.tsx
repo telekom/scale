@@ -3,17 +3,17 @@ import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
 @Component({
-  tag: 'scale-badge',
-  styleUrl: 'badge.css',
+  tag: 'scale-callout',
+  styleUrl: 'callout.css',
   shadow: true,
 })
-export class Badge {
+export class Callout {
   @Element() hostElement: HTMLElement;
-  /** (optional) Variant size of the badge itself */
+  /** (optional) Variant size of the callout itself */
   @Prop({ mutable: true }) size: 'large' | 'small' = 'large';
-  /** (optional) Variant color/filling of the badge */
-  @Prop({ mutable: true }) color: 'primary' | 'white' | 'black' | 'blue';
-  /** (optional) Variant rotation of the badge/circle */
+  /** (optional) Variant filling of the callout */
+  @Prop({ mutable: true }) variant: 'primary' | 'white' | 'black' | 'blue';
+  /** (optional) Variant rotation of the callout/circle */
   @Prop({ mutable: true }) rotation: number = 0;
 
   connectedCallback() {
@@ -22,7 +22,7 @@ export class Badge {
 
   displayStyle() {
     return `:host {
-      --badge-rotation: ${this.rotation}deg;
+      --callout-rotation: ${this.rotation}deg;
     }`;
   }
 
@@ -31,7 +31,7 @@ export class Badge {
       <Host>
         <style>{this.displayStyle()}</style>
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <div part="inner" class="badge--inner">
+          <div part="inner" class="callout--inner">
             <slot></slot>
           </div>
         </div>
@@ -48,12 +48,12 @@ export class Badge {
   }
 
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const name = 'badge';
+    const name = 'callout';
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
     return classNames(
       name,
-      this.color && `${prefix}color-${this.color}`,
+      this.variant && `${prefix}color-${this.variant}`,
       this.size && `${prefix}size-${this.size}`
     );
   }

@@ -1,18 +1,18 @@
 <template>
-  <scale-badge
+  <scale-callout
     :size="size"
-    :color="color"
+    :variant="variant"
     :rotation="rotation"
   >
     <slot></slot>
-  </scale-badge>
+  </scale-callout>
 </template>
 
 <script>
 export default {
   props: {
     size: { type: String, default: "large" },
-    color: {type: String, default: "primary"},
+    variant: {type: String, default: "primary"},
     rotation:{type: Number, default: 0},
   },
 };
