@@ -25,13 +25,6 @@ export class NotificationBadge {
           }
         }
         return labelNumber;
-      } else {
-        let labelString = String(this.label);
-        if (labelString.length > this.maxCharacters) {
-          labelString = labelString.substring(0, this.maxCharacters);
-          labelString += '...';
-        }
-        return labelString;
       }
     }
   }
