@@ -9,8 +9,12 @@ import classNames from 'classnames';
 export class NotificationBadge {
   /** (optional) Text that is displayed in the badge*/
   @Prop() label: number;
+  /** (optional) Maximal number of characters displayed in the badge*/
   @Prop() maxCharacters: number = 3;
+  /** (optional) Setting/Slotcontent in which the badge is used*/
   @Prop() type: 'icon' | 'text' | 'nav-icon' = 'icon';
+  /** (optional) Handle click on the badge and surroundet slot elements*/
+  @Prop() clickHandler: any;
 
   getBadgeLabel() {
     if (this.label) {
@@ -26,6 +30,7 @@ export class NotificationBadge {
         }
         return labelNumber;
       }
+      return this.label;
     }
   }
 
@@ -45,7 +50,11 @@ export class NotificationBadge {
     return (
       <Host>
         {this.type !== 'nav-icon' ? (
-          <div class="notification-badge-border" tabIndex={0}>
+          <div
+            class="notification-badge-border"
+            tabIndex={0}
+            onClick={this.clickHandler}
+          >
             {this.getRender()}
           </div>
         ) : (
