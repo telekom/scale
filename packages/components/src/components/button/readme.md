@@ -22,6 +22,19 @@
 | `variant`      | `variant`       | (optional) Button variant                                      | `string`                          | `'primary'` |
 
 
+## Methods
+
+### `setFocus() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Used by
