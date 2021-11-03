@@ -13,11 +13,21 @@
 
 .notification-badge-border {
   display: inline-block;
+  border: 2px solid transparent;
+  padding: 8px 5px 0 5px;
+  margin: -8px -5px 0 -5px;
 }
 
 .notification-badge-border:hover {
   color: #f90984;
   cursor: pointer;
+}
+
+.notification-badge-border:focus {
+  border: solid #009de0 2px;
+  outline: none;
+  padding: 8px 5px 0 5px;
+  border-radius: 3px;
 }
 
 .notification-badge {
