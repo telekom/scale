@@ -85,14 +85,6 @@ export class Checkbox {
     }
   }
 
-  getAriaCheckedState() {
-    if (this.indeterminate) {
-      return 'mixed';
-    }
-
-    return this.checked;
-  }
-
   @Watch('disabled')
   handleDisabledChange() {
     const { checked, indeterminate, value, disabled } = this;
@@ -181,7 +173,7 @@ export class Checkbox {
           checked={this.checked}
           indeterminate={this.indeterminate}
           aria-label={this.ariaLabel}
-          aria-checked={this.getAriaCheckedState()}
+          aria-checked={this.indeterminate ? 'mixed' : false}
           aria-invalid={this.status === 'error' || this.invalid}
           aria-describedBy={helperText.id}
           disabled={this.disabled}

@@ -41,8 +41,6 @@ export class Button {
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
   @Prop({ reflect: true }) iconPosition: 'before' | 'after' = 'before';
-  /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabel: string;
   /** (optional) When present, an <a> tag will be used */
   @Prop() href?: string;
   /** (optional) The target attribute for the <a> tag */
@@ -138,7 +136,6 @@ export class Button {
             download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
-            aria-label={this.ariaLabel}
             part={basePart}
           >
             <slot />
@@ -150,7 +147,6 @@ export class Button {
             onClick={this.handleClick}
             disabled={this.disabled}
             type={this.type}
-            aria-label={this.ariaLabel}
             part={basePart}
           >
             <slot />

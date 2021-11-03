@@ -9,7 +9,6 @@
 
 | Property       | Attribute       | Description                                                    | Type                              | Default     |
 | -------------- | --------------- | -------------------------------------------------------------- | --------------------------------- | ----------- |
-| `ariaLabel`    | `aria-label`    | (optional) aria-label attribute needed for icon-only buttons   | `string`                          | `undefined` |
 | `disabled`     | `disabled`      | (optional) If `true`, the button is disabled                   | `boolean`                         | `false`     |
 | `download`     | `download`      | (optional) name of a file to be downloaded                     | `string`                          | `undefined` |
 | `href`         | `href`          | (optional) When present, an <a> tag will be used               | `string`                          | `undefined` |

@@ -63,7 +63,7 @@ export class Link {
     const props = {
       href: this.href || null,
       tabIndex: this.disabled ? -1 : null,
-      'aria-disabled': this.disabled,
+      'aria-disabled': this.disabled ? 'true' : false,
       download: this.download || null,
       hreflang: this.hreflang || null,
       ping: this.ping || null,
