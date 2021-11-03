@@ -139,7 +139,9 @@ export class Tooltip {
   }
 
   getTarget() {
-    const target = this.host.shadowRoot.getElementById('slot-container');
+    const target = this.host.shadowRoot.querySelector(
+      '.slot-container'
+    ) as HTMLElement;
 
     if (!target) {
       throw new Error('Invalid tooltip target: no child element was found.');
@@ -228,7 +230,7 @@ export class Tooltip {
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
       >
-        <div id="slot-container">
+        <div class="slot-container">
           <slot onSlotchange={this.handleSlotChange}></slot>
         </div>
         {!this.disabled && (

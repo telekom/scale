@@ -32,7 +32,7 @@ host*,
   position: absolute;
 }
 
-#slot-container {
+.slot-container {
   width: max-content;
   height: max-content;
 }
