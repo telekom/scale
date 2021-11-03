@@ -1,7 +1,7 @@
 describe('Callout', () => {
   test.each([
     ['standard'],
-    ['sizes'],
+    ['size'],
     ['rotation'],
     ['variants'],
     ['asterisk'],
