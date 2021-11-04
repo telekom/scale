@@ -17,7 +17,8 @@
   --spacing - padding
   --max-width (not responsive)
 */
-scale-grid, .scl-grid {
+scale-grid,
+.scl-grid {
   display: grid;
   box-sizing: border-box;
   margin-left: auto;
@@ -35,22 +36,40 @@ scale-grid, .scl-grid {
   --offset
   --size
 */
-scale-grid-item, .scl-grid-item {
+scale-grid-item,
+.scl-grid-item {
   grid-column: var(--offset-sm, auto) / span var(--size-sm, 4);
 }
 
 /* md */
 @media screen and (min-width: 640px) {
-  scale-grid, .scl-grid {
+  scale-grid,
+  .scl-grid {
     grid-template-columns: repeat(var(--columns-md, var(--columns-sm), 8), 1fr);
-    padding-left: var(--spacing-md, var(--spacing-md, var(--scl-spacing-16), 1rem));
-    padding-right: var(--spacing-md, var(--spacing-md, var(--scl-spacing-16), 1rem));
-    column-gap: var(--gutter-y-md, var(--gutter-y-sm), var(--scl-spacing-32, 2rem));
-    row-gap: var(--gutter-x-md, var(--gutter-x-sm), var(--scl-spacing-32, 2rem));
+    padding-left: var(
+      --spacing-md,
+      var(--spacing-md, var(--scl-spacing-16), 1rem)
+    );
+    padding-right: var(
+      --spacing-md,
+      var(--spacing-md, var(--scl-spacing-16), 1rem)
+    );
+    column-gap: var(
+      --gutter-y-md,
+      var(--gutter-y-sm),
+      var(--scl-spacing-32, 2rem)
+    );
+    row-gap: var(
+      --gutter-x-md,
+      var(--gutter-x-sm),
+      var(--scl-spacing-32, 2rem)
+    );
   }
 
-  scale-grid-item, .scl-grid-item {
-    grid-column: var(--offset-md, var(--offset-sm), auto) / span var(--size-md, var(--size-sm), 4);
+  scale-grid-item,
+  .scl-grid-item {
+    grid-column: var(--offset-md, var(--offset-sm), auto) / span
+      var(--size-md, var(--size-sm), 4);
   }
 }
 

@@ -26,7 +26,8 @@
   --spacing - padding
   --max-width (not responsive)
 */
-scale-grid, .scl-grid {
+scale-grid,
+.scl-grid {
   display: grid;
   box-sizing: border-box;
   margin-left: auto;
@@ -44,13 +45,15 @@ scale-grid, .scl-grid {
   --offset
   --size
 */
-scale-grid-item, .scl-grid-item {
+scale-grid-item,
+.scl-grid-item {
   grid-column: var(--offset-sm, auto) / span var(--size-sm, 4);
 }
 
 /* md */
 @media screen and (min-width: 640px) {
-  scale-grid, .scl-grid {
+  scale-grid,
+  .scl-grid {
     grid-template-columns: repeat(8, 1fr);
     padding-left: var(--spacing-md, var(--scl-spacing-16, 1rem));
     padding-right: var(--spacing-md, var(--scl-spacing-16, 1rem));
@@ -58,14 +61,16 @@ scale-grid-item, .scl-grid-item {
     row-gap: var(--gutter-x-md, var(--scl-spacing-32, 2rem));
   }
 
-  scale-grid-item, .scl-grid-item {
+  scale-grid-item,
+  .scl-grid-item {
     grid-column: var(--offset-md, auto) / span var(--size-md, 4);
   }
 }
 
 /* lg */
 @media screen and (min-width: 1040px) {
-  scale-grid, .scl-grid {
+  scale-grid,
+  .scl-grid {
     grid-template-columns: repeat(16, 1fr);
     padding-left: var(--spacing-lg, var(--scl-spacing-24, 1.5rem));
     padding-right: var(--spacing-lg, var(--scl-spacing-24, 1.5rem));
@@ -73,35 +78,40 @@ scale-grid-item, .scl-grid-item {
     row-gap: var(--gutter-x-lg, var(--scl-spacing-32, 2rem));
   }
 
-  scale-grid-item, .scl-grid-item {
+  scale-grid-item,
+  .scl-grid-item {
     grid-column: var(--offset-lg, auto) / span var(--size-lg, 4);
   }
 }
 
 /* xl */
 @media screen and (min-width: 1296px) {
-  scale-grid, .scl-grid {
+  scale-grid,
+  .scl-grid {
     padding-left: var(--spacing-xl, var(--scl-spacing-24, 1.5rem));
     padding-right: var(--spacing-xl, var(--scl-spacing-24, 1.5rem));
     column-gap: var(--gutter-y-xl, var(--scl-spacing-32, 2rem));
     row-gap: var(--gutter-x-xl, var(--scl-spacing-32, 2rem));
   }
 
-  scale-grid-item, .scl-grid-item {
+  scale-grid-item,
+  .scl-grid-item {
     grid-column: var(--offset-xl, auto) / span var(--size-xl, 4);
   }
 }
 
 /* xxl */
 @media screen and (min-width: 1552px) {
-  scale-grid, .scl-grid {
+  scale-grid,
+  .scl-grid {
     padding-left: var(--spacing-xxl, var(--scl-spacing-24, 1.5rem));
     padding-right: var(--spacing-xxl, var(--scl-spacing-24, 1.5rem));
     column-gap: var(--gutter-y-xxl, var(--scl-spacing-32, 2rem));
     row-gap: var(--gutter-x-xxl, var(--scl-spacing-32, 2rem));
   }
 
-  scale-grid-item, .scl-grid-item {
+  scale-grid-item,
+  .scl-grid-item {
     grid-column: var(--offset-xxl, auto) / span var(--size-xxl, 4);
   }
 }
