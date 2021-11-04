@@ -3,7 +3,7 @@
     :name="name"
     :label="label"
     :helper-text="helperText"
-    :status="status"
+    :invalid="invalid"
     :disabled="disabled"
     :required="required"
     :size="size"
@@ -28,7 +28,7 @@ export default {
     name: { type: String },
     label: { type: String },
     helperText: { type: String },
-    status: { type: String },
+    invalid: { type: Boolean },
     disabled: { type: Boolean },
     required: { type: Boolean },
     size: { type: String },

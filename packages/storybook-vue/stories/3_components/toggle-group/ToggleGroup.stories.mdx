@@ -18,6 +18,9 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
       control: { type: "text", },
     },
     colorScheme: {
+      description: `Deprecated; variant should replace colorScheme`,
+    },
+    variant: {
       control: { type: 'select', options: ['color', 'monochrome'] },
     },
   }}
@@ -39,7 +42,7 @@ export const Template = (args, { argTypes }) => ({
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
-      :color-scheme="colorScheme"
+      :variant="variant"
       :styles="styles"
     >
       <scale-toggle-button>Label</scale-toggle-button>
@@ -65,7 +68,7 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
-      :color-scheme="colorScheme"
+      :variant="variant"
       :styles="styles"
     >
       <scale-toggle-button 
@@ -105,7 +108,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
       :hide-border="hideBorder"
       :single-select="singleSelect"
       :aria-label-translation="ariaLabelTranslation"
-      :color-scheme="colorScheme"
+      :variant="variant"
       :styles="styles"
     >
       <scale-toggle-button v-if="iconBefore">
@@ -156,13 +159,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
-## Monochrome Color Scheme
+## Monochrome Variant
 
 <Canvas withSource="none">
   <Story
-    name="Monochrome Color Scheme"
+    name="Monochrome Variant"
     args={{
-      colorScheme: 'monochrome'
+      variant: 'monochrome'
     }}
   >
     {Template.bind({})}
@@ -170,7 +173,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group color-scheme="monochrome">
+<!-- Deprecated: <scale-toggle-group color-scheme="monochrome"> -->
+<scale-toggle-group variant="monochrome">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>

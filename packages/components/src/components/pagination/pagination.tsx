@@ -60,7 +60,7 @@ export class Pagination {
   @Prop() totalElements?: number = 1;
   /** (optional) Injected styles */
   @Prop() styles?: string;
-  /** DEPRECATED - size should replace small */
+  /** @deprecated - size should replace small */
   @Prop() small: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'large';

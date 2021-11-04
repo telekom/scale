@@ -1,17 +1,34 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
+
 @Component({
   tag: 'scale-radio-button-group',
   styleUrl: './radio-button-group.css',
   shadow: true,
 })
 export class RadioButtonGroup {
+  @Element() hostElement: HTMLElement;
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
 
   render() {
     return (
@@ -19,7 +36,6 @@ export class RadioButtonGroup {
         <fieldset class="radio-button-group">
           <legend class="radio-button-group__title">
             <label
-              role="text"
               class="radio-button-group__title-label"
               aria-label={this.label}
             >
@@ -46,7 +62,8 @@ export class RadioButtonGroup {
   getCssClassMap() {
     return classNames(
       'radio-button-group__helper-text',
-      this.status === 'error' && `radio-button-group__helper-text--status-error`
+      (this.status === 'error' || this.invalid) &&
+        `radio-button-group__helper-text--status-error`
     );
   }
 }
