@@ -41,8 +41,10 @@ export class ToggleButton {
   @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'regular';
   /** (optional) Button background */
   @Prop() background?: 'grey' | 'white' = 'white';
-  /** (optional) background color scheme of a selected button */
+  /** @deprecated - variant should replace colorScheme */
   @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
+  /** (optional) background variant of a selected toggle-button */
+  @Prop() variant?: 'monochrome' | 'color' = 'color';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */
@@ -212,6 +214,7 @@ export class ToggleButton {
       !this.disabled && this.selected && `${prefix}selected`,
       this.radius && `${prefix}${this.radius}`,
       this.colorScheme && `${prefix}${this.colorScheme}`,
+      this.variant && `${prefix}${this.variant}`,
       !this.hideBorder && `${prefix}border`
     );
   }

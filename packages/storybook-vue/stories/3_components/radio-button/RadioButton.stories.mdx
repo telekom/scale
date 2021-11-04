@@ -17,7 +17,7 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-radio-button
-      :status="status"
+      :invalid="invalid"
       :name="name"
       :label="label"
       :helper-text="helperText"
@@ -187,7 +187,7 @@ scale-radio-button {
     name="Error"
     args={{
       label: "Standard with error",
-      status: "error",
+      invalid: true,
       helperText: "This is the error message"
     }}
   >
@@ -196,5 +196,5 @@ scale-radio-button {
 </Canvas>
 
 ```html
-<scale-radio-button status="error" helper-text="This is the error message"></scale-radio-button>
+<scale-radio-button invalid helper-text="This is the error message"></scale-radio-button>
 ```

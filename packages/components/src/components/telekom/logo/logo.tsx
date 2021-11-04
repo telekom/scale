@@ -59,7 +59,6 @@ export class Logo {
           color={this.variant}
           size={this.size}
           accessibilityTitle={this.accessibilityTitle}
-          aria-label={this.accessibilityTitle}
           role={role}
         ></scale-logo-svg>
       );

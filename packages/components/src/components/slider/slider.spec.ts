@@ -89,7 +89,7 @@ describe('Slider', () => {
       expect(page.rootInstance.unit).toBe('%');
       expect(page.rootInstance.decimals).toBe(0);
       expect(page.rootInstance.showValue).toBe(true);
-      expect(page.rootInstance.customColor).toBe('');
+      expect(page.rootInstance.customColor).toBe(undefined);
       expect(page.rootInstance.disabled).toBe(false);
       expect(page.rootInstance.trackSmall).toBe(false);
       expect(page.rootInstance.thumbLarge).toBe(false);

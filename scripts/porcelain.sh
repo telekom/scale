@@ -1,6 +1,6 @@
 echo "--------"
 echo "Checking for uncommitted build outputs..."
-if [ -z $(git status --porcelain) ];
+if [ -z "$(git status --porcelain)" ];
 then
     echo "Working copy is clean"
 else

@@ -7,13 +7,13 @@ exports[`Toggle Group snapshots default props 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="2" radius="neither" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="2" radius="neither" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="3" radius="right" selected="" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="3" radius="right" selected="" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -26,13 +26,13 @@ exports[`Toggle Group snapshots disabled 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="1" radius="left" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="1" radius="left" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="2" radius="neither" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="2" radius="neither" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="3" radius="right" selected="" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="disabled" hide-border="false" position="3" radius="right" selected="" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -45,13 +45,13 @@ exports[`Toggle Group snapshots size small, multi false 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="small">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="small" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="2" radius="neither" size="small">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="2" radius="neither" size="small" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="3" radius="right" selected="" size="small">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="3" radius="right" selected="" size="small" variant="color">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>
@@ -67,13 +67,13 @@ exports[`Toggle Group snapshots styles 1`] = `
       <slot></slot>
     </div>
   </mock:shadow-root>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="1" radius="left" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="2" radius="neither" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="2" radius="neither" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
-  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="3" radius="right" selected="" size="regular">
+  <scale-toggle-button aria-description-translation="$position $selected" background="white" color-scheme="color" disabled="false" hide-border="false" position="3" radius="right" selected="" size="regular" variant="color">
     Click Me!
   </scale-toggle-button>
 </scale-toggle-group>

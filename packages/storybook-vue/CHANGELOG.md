@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
+
+
+### Bug Fixes
+
+* **date-picker:** input value handling, calendarHeading + styles ([#660](https://github.com/telekom/scale/issues/660)) ([3311bf2](https://github.com/telekom/scale/commit/3311bf2ec3aa72c095cbe18bad50452fa63c57ac))
+
+
+
+
+
+# [3.0.0-beta.26](https://github.com/telekom/scale/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2021-10-28)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.24](https://github.com/telekom/scale/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
 
 
