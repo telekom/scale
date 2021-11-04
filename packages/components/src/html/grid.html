@@ -14,10 +14,9 @@
 
       z-block {
         display: block;
-        border: 2px solid var(--border-color, var(--scl-color-green-60));
-        border-radius: var(--scl-radius-8);
         min-height: 200px;
         padding: var(--scl-spacing-16);
+        background-color: var(--scl-color-orange-10)
       }
     </style>
   </head> 
@@ -30,32 +29,55 @@
 
     <scale-grid>
       <scale-grid-item>
-        <z-block>4 cols (default)</z-block>
+        <z-block>A</z-block>
       </scale-grid-item>
       <scale-grid-item>
-        <z-block>4 cols (default)</z-block>
+        <z-block>B</z-block>
       </scale-grid-item>
       <scale-grid-item>
-        <z-block>4 cols (default)</z-block>
+        <z-block>C</z-block>
       </scale-grid-item>
       <scale-grid-item>
-        <z-block>4 cols (default)</z-block>
+        <z-block>D</z-block>
+      </scale-grid-item>
+
+      <!-- +++ -->
+
+      <scale-grid-item style="">
+        <z-block>A</z-block>
+      </scale-grid-item>
+      <scale-grid-item style="--size-lg: 12; --size-xl: 12; --size-xxl: 12">
+        <z-block>B</z-block>
+      </scale-grid-item>
+
+      <scale-grid-item style="--size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <z-block>C</z-block>
+      </scale-grid-item>
+      <scale-grid-item style="--size-lg: 8; --size-xl: 8; --size-xxl: 8">
+        <z-block>D</z-block>
+      </scale-grid-item>
+
+      <scale-grid-item style="--size-lg: 12; --size-xl: 12; --size-xxl: 12">
+        <z-block>E</z-block>
+      </scale-grid-item>
+      <scale-grid-item style="">
+        <z-block>F</z-block>
       </scale-grid-item>
     </scale-grid>
 
-    <scale-grid style="margin-top: var(--scl-spacing-48); --border-color: var(--scl-color-lilac-60)">
-      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
-        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
-      </scale-grid-item>
-      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
-        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
-      </scale-grid-item>
-      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
-        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
-      </scale-grid-item>
-      <scale-grid-item style="--size-md: 8; --size-lg: 8; --size-xl: 8; --size-xxl: 8">
-        <z-block>sm 4 cols - md/lg/xl/xxl 8 cols</z-block>
-      </scale-grid-item>
-    </scale-grid>
+    <div class="scl-grid" style="margin-top: 4rem">
+      <div class="scl-grid-item">
+        <z-block>E</z-block>
+      </div>
+      <div class="scl-grid-item">
+        <z-block>F</z-block>
+      </div>
+      <div class="scl-grid-item">
+        <z-block>G</z-block>
+      </div>
+      <div class="scl-grid-item">
+        <z-block>H</z-block>
+      </div>
+    </div>
   </body>
 </html>
