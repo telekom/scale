@@ -71,19 +71,6 @@
 | `type`           | `type`           | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
 
 
-## Methods
-
-### `setFocus() => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-
 ## Slots
 
 | Slot        | Description                                                          |

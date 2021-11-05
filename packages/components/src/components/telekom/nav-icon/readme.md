@@ -15,7 +15,6 @@
 | `icon`                | `icon`                   |                                   | `string`  | `undefined`             |
 | `isActive`            | `is-active`              | (optional) if this item is active | `boolean` | `undefined`             |
 | `isMobileMenuOpen`    | `is-mobile-menu-open`    |                                   | `boolean` | `false`                 |
-| `mobileMenuOpen`      | `mobile-menu-open`       |                                   | `boolean` | `false`                 |
 | `refMobileMenuToggle` | `ref-mobile-menu-toggle` |                                   | `any`     | `undefined`             |
 
 
