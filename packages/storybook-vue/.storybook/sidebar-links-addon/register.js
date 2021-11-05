@@ -10,6 +10,7 @@
  */
 
 import React from "react";
+import Events from "@storybook/core-events";
 import { addons, types } from "@storybook/addons";
 import { useGlobals } from "@storybook/api";
 import sidebarLinks from "../../sidebar-links.json";
@@ -37,7 +38,17 @@ const createTrackingPixel = () => {
 
 let sidebarLinksContainer;
 
-addons.register("@telekom/scale-sidebar-links-addon", () => {
+addons.register("@telekom/scale-sidebar-links-addon", (api) => {
+  api.on(Events.STORY_CHANGED, (title) => {
+    const content = document.getElementsByTagName('iframe') && document.getElementsByTagName('iframe')[0];
+    _paq.push(['setDocumentTitle', title]);
+    _paq.push(['trackPageView']);
+    _paq.push(['MediaAnalytics::scanForMedia', content]);
+    _paq.push(['FormAnalytics::scanForForms', content]);
+    _paq.push(['trackContentImpressionsWithinNode', content]);
+    _paq.push(['enableLinkTracking']);
+  });
+
   addons.add(`@telekom/scale-sidebar-links-addon`, {
     type: types.TAB,
     route: () => {

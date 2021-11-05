@@ -9,8 +9,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host } from '@stencil/core';
+import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
+
 let i = 0;
 @Component({
   tag: 'scale-progress-bar',
@@ -18,11 +20,13 @@ let i = 0;
   shadow: true,
 })
 export class ProgressBar {
+  /* Host HTML Element */
+  @Element() hostElement: HTMLElement;
   /** (optional) Progress bar busy switch */
   @Prop() busy?: boolean = false;
   /** (required) Progress bar percentage */
   @Prop() percentage: number = 0;
-  /** (optional) Progress bar customColor */
+  /** @deprecated - (optional) Progress bar customColor */
   @Prop() customColor?: string;
   /** (optional) Progress bar stroke width */
   @Prop() strokeWidth?: number = 6;
@@ -54,6 +58,18 @@ export class ProgressBar {
   }
   componentWillUpdate() {}
   disconnectedCallback() {}
+  componentDidRender() {
+    if (this.customColor !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message: `Property "customColor" is deprecated. 
+          Please use css variable "--background" to set the progress bar background color;
+          e.g. <scale-progress-bar percentage="20" style="--background: green"></scale-progress-bar>`,
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
 
   transitions = (width: number) => `
     @keyframes showProgress {
@@ -70,7 +86,7 @@ export class ProgressBar {
     return {
       width: `${this.percentage}%`,
       border: '1px solid transparent',
-      background: this.customColor,
+      background: this.customColor ? this.customColor : `var(--background)`,
       animation: 'showProgress 3s ease-in-out',
     };
   };

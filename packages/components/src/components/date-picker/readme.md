@@ -15,16 +15,17 @@
 | `firstDayOfWeek` | `first-day-of-week` | Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc. Default is Monday.                                                                                                                                                | `any`                                    | `undefined`     |
 | `helperText`     | `helper-text`       | (optional) Helper text                                                                                                                                                                                                                                | `string`                                 | `''`            |
 | `identifier`     | `identifier`        | Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.                                                                                                                                                          | `string`                                 | `undefined`     |
+| `invalid`        | `invalid`           | (optional) invalid status                                                                                                                                                                                                                             | `boolean`                                | `undefined`     |
 | `label`          | `label`             | (optional) Label                                                                                                                                                                                                                                      | `string`                                 | `''`            |
 | `localization`   | --                  | Button labels, day names, month names, etc, used for localization. Default is English.                                                                                                                                                                | `DuetLocalizedText & { today: string; }` | `undefined`     |
 | `max`            | `max`               | Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the min property.                                                                                                          | `string`                                 | `''`            |
 | `min`            | `min`               | Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD. This setting can be used alone or together with the max property.                                                                                                          | `string`                                 | `''`            |
 | `name`           | `name`              | Name of the date picker input.                                                                                                                                                                                                                        | `string`                                 | `'date'`        |
-| `popupTitle`     | `popup-title`       | Name of the date picker input.                                                                                                                                                                                                                        | `string`                                 | `'Pick a date'` |
+| `popupTitle`     | `popup-title`       | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of localization.calendarHeading<br/><br/>                                                                                                                                              | `string`                                 | `'Pick a date'` |
 | `required`       | `required`          | Should the input be marked as required?                                                                                                                                                                                                               | `boolean`                                | `false`         |
 | `role`           | `role`              | Defines a specific role attribute for the date picker input.                                                                                                                                                                                          | `string`                                 | `undefined`     |
 | `size`           | `size`              | (optional) Size                                                                                                                                                                                                                                       | `string`                                 | `''`            |
-| `status`         | `status`            | (optional) Status                                                                                                                                                                                                                                     | `string`                                 | `''`            |
+| `status`         | `status`            | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/>                                                                                                                                                             | `string`                                 | `''`            |
 | `styles`         | `styles`            | (optional) Injected CSS styles                                                                                                                                                                                                                        | `string`                                 | `undefined`     |
 | `value`          | `value`             | Date value. Must be in IS0-8601 format: YYYY-MM-DD.                                                                                                                                                                                                   | `string`                                 | `''`            |
 
@@ -80,12 +81,18 @@ Type: `Promise<void>`
 ### Depends on
 
 - [scale-icon-content-calendar](../icons/content-calendar)
+- [scale-icon-navigation-left](../icons/navigation-left)
+- [scale-icon-navigation-right](../icons/navigation-right)
+- [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
 - duet-date-picker
 
 ### Graph
 ```mermaid
 graph TD;
   scale-date-picker --> scale-icon-content-calendar
+  scale-date-picker --> scale-icon-navigation-left
+  scale-date-picker --> scale-icon-navigation-right
+  scale-date-picker --> scale-icon-navigation-collapse-down
   scale-date-picker --> duet-date-picker
   style scale-date-picker fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -16,7 +16,7 @@ export const Template = (args, { argTypes }) => ({
       :name="name"
       :label="label"
       :helper-text="helperText"
-      :status="status"
+      :invalid="invalid"
       :disabled="disabled"
       :required="required"
       :size="size"
@@ -134,7 +134,7 @@ The display error is on the browser side.
     name='Error'
     args={{
       label: 'Error',
-      status: 'error',
+      invalid: true,
       helperText: 'Something went wrong...',
     }}
   >
@@ -144,7 +144,7 @@ The display error is on the browser side.
 
 
 ```html
-<scale-dropdown label="Error" status="error" helper-text="Something went wrong...">
+<scale-dropdown label="Error" invalid helper-text="Something went wrong...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>

@@ -1,5 +1,6 @@
 <template>
   <scale-switch
+    :name="name"
     :label="label"
     :disabled="disabled"
     :input-id="inputId"
@@ -11,7 +12,7 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
 export default {
   props: {
@@ -19,15 +20,16 @@ export default {
     inputId: { type: String },
     checked: { type: Boolean, default: false },
     label: String,
+    name: String,
   },
   methods: {
     scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
+      action('scaleChange');
+      this.$emit('scaleChange', $event);
     },
     'scale-change'($event) {
-      action("scale-change");
-      this.$emit("scale-change", $event);
+      action('scale-change');
+      this.$emit('scale-change', $event);
     },
   },
 };

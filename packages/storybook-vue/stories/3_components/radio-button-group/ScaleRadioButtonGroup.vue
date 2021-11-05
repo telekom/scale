@@ -11,7 +11,7 @@ export default {
   props: {
     helperText: { type: String },
     label: { type: String },
-    status: { type: String },
+    invalid: { type: Boolean },
   },
   methods: {},
 };

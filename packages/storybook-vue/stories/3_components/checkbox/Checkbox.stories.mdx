@@ -18,7 +18,7 @@ export const Template = (args, { argTypes }) => ({
       :name="name"
       :label="label"
       :helper-text="helperText"
-      :status="status"
+      :invalid="invalid"
       :disabled="disabled"
       :checked="checked"
       :indeterminate="indeterminate"
@@ -200,7 +200,7 @@ scale-checkbox {
     name="Error"
     args={{
       label: "Standard with error",
-      status: "error",
+      invalid: true,
       helperText: "This is the error message"
     }}
   >
@@ -209,7 +209,7 @@ scale-checkbox {
 </Canvas>
 
 ```html
-<scale-checkbox status="error" label="Standard with error"></scale-checkbox>
+<scale-checkbox label="Standard with error" helper-text="This is the error message" invalid></scale-checkbox>
 ```
 
 ## Custom Label

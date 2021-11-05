@@ -9,6 +9,12 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/* notes for the `:visited` state
+*
+* Due to privacy restrictions this state is not styled differently than the initial state
+* https://developer.mozilla.org/en-US/docs/Web/CSS/:visited#privacy_restrictions
+*/
+
 :host {
   --font-weight: var(--scl-font-weight-medium);
   --spacing-x-icon: var(--scl-spacing-4);
@@ -41,7 +47,7 @@
 }
 
 :host {
-  display: contents;
+  display: inline;
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
   --anchor-color: var(--color);
   --line-color: var(--color-line-initial);

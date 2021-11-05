@@ -4,7 +4,7 @@ export default {
     name: { type: String },
     label: { type: String },
     helperText: { type: String },
-    status: { type: String },
+    invalid: { type: Boolean },
     disabled: { type: Boolean },
     checked: { type: Boolean },
     indeterminate: { type: Boolean },

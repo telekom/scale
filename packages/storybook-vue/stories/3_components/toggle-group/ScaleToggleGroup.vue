@@ -1,30 +1,45 @@
 <template>
   <scale-toggle-group
     :size="size"
-    :variant="variant"
-	  :box-type="boxType"
+    :background="background"
+	  :full-width="fullWidth"
     :disabled="disabled"
-    :border="border"
-    :multi="multi"
+    :hide-border="hideBorder"
+    :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
+    :variant="variant"
     :styles="styles"
+    @scaleChange="scaleChange"
   >
     <slot></slot>
   </scale-toggle-group>
 </template>
 
 <script>
+import { action } from "@storybook/addon-actions";
+
 export default {
   props: {
-    size: { type: String, default: 'large' },
-    variant: { type: String, default: 'primary' },
-    boxType: { type: String, default: 'inline' },
+    size: { type: String, default: 'regular' },
+    background: { type: String, default: 'white' },
+    fullWidth: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
-    border: { type: Boolean, default: false },
-    multi: { type: Boolean, default: true },
+    hideBorder: { type: Boolean, default: false },
+    singleSelect: { type: Boolean, default: false },
     ariaLabel: { type: String },
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
+    variant: { type: String, default: 'color' },
     styles: { type: String },
   },
+  methods: {
+    scaleChange($event) {
+      action("scaleChange");
+      this.$emit("scaleChange", $event);
+    },
+    'scale-change'($event) {
+      action("scale-change");
+      this.$emit("scale-change", $event);
+    },
+  }
 };
 </script>

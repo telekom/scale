@@ -195,8 +195,8 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
   <Story name="Checkbox Error" args={{}}>
     {() => ({
       template: `
-        <scale-checkbox-group label="Group Label" name="group" value="" status="error" helper-text="Some of the options have errors!">
-          <scale-checkbox status="error" label="Checkbox Item 1" helper-text="This is an error!" name="example" value="1"></scale-checkbox>
+        <scale-checkbox-group label="Group Label" name="group" value="" invalid helper-text="Some of the options have errors!">
+          <scale-checkbox invalid label="Checkbox Item 1" helper-text="This is an error!" name="example" value="1"></scale-checkbox>
           <scale-checkbox label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
           <scale-checkbox checked label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
         </scale-checkbox-group>
@@ -213,7 +213,7 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
   helper-text="Some info regarding the group"
 >
   <scale-checkbox
-    status="error"
+    invalid
     label="Checkbox Item 1"
     name="example"
     value="1"
@@ -224,7 +224,7 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
     value="2"
   ></scale-checkbox>
   <scale-checkbox
-    status="error"
+    invalid
     checked
     label="Checkbox Item 3"
     name="example"
@@ -239,7 +239,7 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
   <Story name="Group Error" args={{}}>
     {() => ({
       template: `
-        <scale-checkbox-group status="error" label="Group Label" name="group" value="" helper-text="Some error info regarding the group">
+        <scale-checkbox-group invalid label="Group Label" name="group" value="" helper-text="Some error info regarding the group">
           <scale-checkbox label="Checkbox Item 1" name="example" value="1"></scale-checkbox>
           <scale-checkbox label="Checkbox Item 2" name="example" value="2"></scale-checkbox>
           <scale-checkbox label="Checkbox Item 3" name="example" value="3"></scale-checkbox>
@@ -255,6 +255,7 @@ import ScaleCheckboxGroup from './ScaleCheckboxGroup.vue';
   name="group"
   value=""
   helper-text="Some info regarding the group"
+  invalid
 >
   <scale-checkbox
     label="Checkbox Item 1"
