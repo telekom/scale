@@ -57,7 +57,7 @@ export class Link {
   getAnchorProps() {
     const props = {
       href: this.href || null,
-      tabIndex: this.disabled ? -1 : null,
+      tabIndex: this.disabled ? -1 : this.innerTabindex,
       'aria-disabled': this.disabled,
       download: this.download || null,
       hreflang: this.hreflang || null,
@@ -80,7 +80,7 @@ export class Link {
         }}
       >
         {this.styles && <style>{this.styles}</style>}
-        <a part="anchor" {...this.getAnchorProps()} tabIndex={this.innerTabindex}>
+        <a part="anchor" {...this.getAnchorProps()}>
           <div part="content">
             <slot />
           </div>
