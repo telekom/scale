@@ -49,6 +49,8 @@ export class Link {
   @Prop() target?: '_self' | '_blank' | '_parent' | '_top';
   /** (optional) */
   @Prop() type?: string;
+  /** (optioanl) */
+  @Prop() innerTabindex?: number;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -78,7 +80,7 @@ export class Link {
         }}
       >
         {this.styles && <style>{this.styles}</style>}
-        <a part="anchor" {...this.getAnchorProps()}>
+        <a part="anchor" {...this.getAnchorProps()} tabIndex={this.innerTabindex}>
           <div part="content">
             <slot />
           </div>

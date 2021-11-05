@@ -43,6 +43,8 @@ export class Button {
   @Prop() styles?: string;
   /** (optional) If `true`, a download is triggrered */
   @Prop() download?: boolean = false;
+  /** (optioanl) */
+  @Prop() innerTabindex?: number;
 
   /**
    * Prevent clicks from being emitted from the host
@@ -124,6 +126,7 @@ export class Button {
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             aria-label={this.ariaLabel}
             part={basePart}
+            tabIndex={this.innerTabindex}
           >
             <slot />
           </a>
@@ -135,6 +138,7 @@ export class Button {
             type={this.type}
             aria-label={this.ariaLabel}
             part={basePart}
+            tabIndex={this.innerTabindex}
           >
             <slot />
           </button>
