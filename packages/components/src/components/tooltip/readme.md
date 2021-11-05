@@ -22,12 +22,12 @@
 
 ## Events
 
-| Event              | Description | Type               |
-| ------------------ | ----------- | ------------------ |
-| `scale-after-hide` |             | `CustomEvent<any>` |
-| `scale-aftershow`  |             | `CustomEvent<any>` |
-| `scale-hide`       |             | `CustomEvent<any>` |
-| `scale-show`       |             | `CustomEvent<any>` |
+| Event               | Description | Type               |
+| ------------------- | ----------- | ------------------ |
+| `scale-before-hide` |             | `CustomEvent<any>` |
+| `scale-before-show` |             | `CustomEvent<any>` |
+| `scale-hide`        |             | `CustomEvent<any>` |
+| `scale-show`        |             | `CustomEvent<any>` |
 
 
 ## Methods

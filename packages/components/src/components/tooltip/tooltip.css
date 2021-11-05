@@ -6,16 +6,16 @@ host*,
 
 :host {
   /*tooltip*/
-  --border-radius: var(--scl-radius-4);
-  --background-color: var(--scl-color-grey-60);
+  --radius: var(--scl-radius-4);
+  --background: var(--scl-color-grey-60);
   --color: var(--scl-color-white);
   --font-weight: var(--scl-font-weight-regular);
   --font-size: var(--scl-font-size-16);
   --line-height: 1.4;
-  --padding: var(--scl-spacing-2) var(--scl-spacing-8);
+  --spacing: var(--scl-spacing-2) var(--scl-spacing-8);
   /*arrow*/
   --arrow-size: 5px;
-  --arrow-start-end-offset: var(--scl-spacing-8);
+  --arrow-offset: var(--scl-spacing-8);
   /*tooltip hide*/
   --max-width: 20rem;
   --transition-delay-hide: 0s;
@@ -42,14 +42,14 @@ host*,
 
 .tooltip {
   max-width: var(--max-width);
-  border-radius: var(--border-radius);
-  background-color: var(--background-color);
+  border-radius: var(--radius);
+  background-color: var(--background);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   color: var(--color);
   opacity: 0;
-  padding: var(--padding);
+  padding: var(--spacing);
   transform: scale(0.8);
   transform-origin: bottom;
   transition-property: opacity, transform;
@@ -91,69 +91,69 @@ host*,
 .tooltip-positioner[data-popper-placement^='bottom'] .tooltip::after {
   bottom: 100%;
   left: calc(50% - var(--arrow-size));
-  border-bottom: var(--arrow-size) solid var(--background-color);
+  border-bottom: var(--arrow-size) solid var(--background);
   border-left: var(--arrow-size) solid transparent;
   border-right: var(--arrow-size) solid transparent;
 }
 
 .tooltip-positioner[data-popper-placement='bottom-start'] .tooltip::after {
-  left: var(--arrow-start-end-offset);
+  left: var(--arrow-offset);
 }
 
 .tooltip-positioner[data-popper-placement='bottom-end'] .tooltip::after {
-  right: var(--arrow-start-end-offset);
+  right: var(--arrow-offset);
   left: auto;
 }
 
 .tooltip-positioner[data-popper-placement^='top'] .tooltip::after {
   top: 100%;
   left: calc(50% - var(--arrow-size));
-  border-top: var(--arrow-size) solid var(--background-color);
+  border-top: var(--arrow-size) solid var(--background);
   border-left: var(--arrow-size) solid transparent;
   border-right: var(--arrow-size) solid transparent;
 }
 
 .tooltip-positioner[data-popper-placement='top-start'] .tooltip::after {
-  left: var(--arrow-start-end-offset);
+  left: var(--arrow-offset);
 }
 
 .tooltip-positioner[data-popper-placement='top-end'] .tooltip::after {
-  right: var(--arrow-start-end-offset);
+  right: var(--arrow-offset);
   left: auto;
 }
 
 .tooltip-positioner[data-popper-placement^='left'] .tooltip::after {
   top: calc(50% - var(--arrow-size));
   left: 100%;
-  border-left: var(--arrow-size) solid var(--background-color);
+  border-left: var(--arrow-size) solid var(--background);
   border-top: var(--arrow-size) solid transparent;
   border-bottom: var(--arrow-size) solid transparent;
 }
 
 .tooltip-positioner[data-popper-placement='left-start'] .tooltip::after {
-  top: var(--arrow-start-end-offset);
+  top: var(--arrow-offset);
 }
 
 .tooltip-positioner[data-popper-placement='left-end'] .tooltip::after {
   top: auto;
-  bottom: var(--arrow-start-end-offset);
+  bottom: var(--arrow-offset);
 }
 
 .tooltip-positioner[data-popper-placement^='right'] .tooltip::after {
   top: calc(50% - var(--arrow-size));
   right: 100%;
-  border-right: var(--arrow-size) solid var(--background-color);
+  border-right: var(--arrow-size) solid var(--background);
   border-top: var(--arrow-size) solid transparent;
   border-bottom: var(--arrow-size) solid transparent;
 }
 
 .tooltip-positioner[data-popper-placement='right-start'] .tooltip::after {
-  top: var(--arrow-start-end-offset);
+  top: var(--arrow-offset);
 }
 
 .tooltip-positioner[data-popper-placement='right-end'] .tooltip::after {
   top: auto;
-  bottom: var(--arrow-start-end-offset);
+  bottom: var(--arrow-offset);
 }
 
 @media screen and (-ms-high-contrast: active) {

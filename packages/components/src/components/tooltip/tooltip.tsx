@@ -67,10 +67,10 @@ export class Tooltip {
     this.open ? this.showTooltip() : this.hideTooltip();
   }
 
+  @Event({ eventName: 'scale-before-show' }) tooltipBeforeShow: EventEmitter;
   @Event({ eventName: 'scale-show' }) tooltipShow: EventEmitter;
-  @Event({ eventName: 'scale-aftershow' }) tooltipAfterShow: EventEmitter;
+  @Event({ eventName: 'scale-before-hide' }) tooltipBeforeHide: EventEmitter;
   @Event({ eventName: 'scale-hide' }) tooltipHide: EventEmitter;
-  @Event({ eventName: 'scale-after-hide' }) tooltipAfterHide: EventEmitter;
 
   connectedCallback() {
     this.handleBlur = this.handleBlur.bind(this);
@@ -113,7 +113,7 @@ export class Tooltip {
     if (this.isVisible) {
       return;
     }
-    const scaleShow = this.tooltipShow.emit();
+    const scaleShow = this.tooltipBeforeShow.emit();
     if (scaleShow.defaultPrevented) {
       this.open = false;
       return;
@@ -128,8 +128,8 @@ export class Tooltip {
     if (!this.isVisible) {
       return;
     }
-    const tooltipHide = this.tooltipHide.emit();
-    if (tooltipHide.defaultPrevented) {
+    const tooltipBeforeHide = this.tooltipBeforeHide.emit();
+    if (tooltipBeforeHide.defaultPrevented) {
       this.open = true;
       return;
     }
@@ -215,8 +215,8 @@ export class Tooltip {
       distance: this.distance,
       skidding: this.skidding,
       transitionElement: this.tooltip,
-      onAfterHide: () => this.tooltipAfterHide.emit(),
-      onAfterShow: () => this.tooltipAfterShow.emit(),
+      onAfterHide: () => this.tooltipHide.emit(),
+      onAfterShow: () => this.tooltipShow.emit(),
     });
     this.popover.setPreventOverflow(this.preventOverflow);
     this.popover.setFlip(this.flip);
