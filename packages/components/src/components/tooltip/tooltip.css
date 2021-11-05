@@ -1,9 +1,3 @@
-host*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 :host {
   /*tooltip*/
   --radius: var(--scl-radius-4);
