@@ -68,8 +68,6 @@ export default class Popover {
   show() {
     this.isVisible = true;
     this.popover.hidden = false;
-    // tslint:disable-next-line
-    this.popover.clientWidth; // force reflow
     requestAnimationFrame(() =>
       this.popover.classList.add(this.options.visibleClass)
     );

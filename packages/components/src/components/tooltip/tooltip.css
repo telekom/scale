@@ -13,10 +13,10 @@
   /*tooltip hide*/
   --max-width: 20rem;
   --transition-delay-hide: 0s;
-  --transition-duration-hide: 0.125s;
+  --transition-duration-hide: var(--scl-motion-duration-immediate);
   --transition-timing-function-hide: ease;
   /*tooltip show*/
-  --transition-duration-show: 0.125s;
+  --transition-duration-show: var(--scl-motion-duration-immediate);
   --transition-timing-function-show: ease;
   --z-index: var(--scl-z-index-70);
 
