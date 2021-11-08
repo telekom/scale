@@ -7,7 +7,7 @@
     :hide-border="hideBorder"
     :single-select="singleSelect"
     :aria-label-translation="ariaLabelTranslation"
-    :color-scheme="colorScheme"
+    :variant="variant"
     :styles="styles"
     @scaleChange="scaleChange"
   >
@@ -28,7 +28,7 @@ export default {
     singleSelect: { type: Boolean, default: false },
     ariaLabel: { type: String },
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
-    colorScheme: { type: String, default: 'color' },
+    variant: { type: String, default: 'color' },
     styles: { type: String },
   },
   methods: {

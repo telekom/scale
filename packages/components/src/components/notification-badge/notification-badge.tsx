@@ -1,6 +1,17 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
 import { Component, Element, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
-import statusNote from "../../utils/status-note";
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-notification-badge',
@@ -9,13 +20,13 @@ import statusNote from "../../utils/status-note";
 })
 export class NotificationBadge {
   @Element() hostElement: HTMLElement;
-  /** (optional) Text that is displayed in the badge*/
+  /** (optional) Text that is displayed in the badge */
   @Prop() label: number;
-  /** (optional) Maximal number of characters displayed in the badge*/
+  /** (optional) Maximal number of characters displayed in the badge */
   @Prop() maxCharacters: number = 3;
-  /** (optional) Setting/Slotcontent in which the badge is used*/
+  /** (optional) Setting/Slotcontent in which the badge is used */
   @Prop() type: 'icon' | 'text' | 'nav-icon' = 'icon';
-  /** (optional) Handle click on the badge and surroundet slot elements*/
+  /** (optional) Handle click on the badge and surroundet slot elements */
   @Prop() clickHandler: any;
 
   connectedCallback() {

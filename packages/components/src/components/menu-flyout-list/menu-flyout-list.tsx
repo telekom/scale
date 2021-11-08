@@ -23,7 +23,7 @@ import {
   Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent, isClickOutside } from '../../utils/utils';
+import { emitEvent } from '../../utils/utils';
 
 const PAD = 10;
 const ITEM_ROLES = ['menuitem', 'menuitemcheckbox', 'menuitemradio'];
@@ -180,13 +180,6 @@ export class MenuFlyoutList {
     if (item != null) {
       event.stopImmediatePropagation();
       item.triggerEvent('click', null, this.closeOnSelect);
-    }
-  }
-
-  @Listen('click', { target: 'document', capture: true })
-  handleDocumentClick(event: MouseEvent) {
-    if (isClickOutside(event, this.hostElement) && this.opened) {
-      this.close(true);
     }
   }
 

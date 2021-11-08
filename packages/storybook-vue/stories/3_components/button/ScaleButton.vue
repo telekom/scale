@@ -1,6 +1,5 @@
 <template>
   <scale-button
-    :title="title"
     :disabled="disabled"
     :href="href"
     :download="download"
@@ -9,7 +8,6 @@
     :type="type"
     :variant="variant"
     :icon-only="iconOnly"
-    :aria-label="ariaLabel"
     :styles="styles"
     @click="handler"
   >
@@ -24,8 +22,6 @@ const handler = action("click");
 
 export default {
   props: {
-    // TODO `title` is not an actual prop in the component, how should we handle this?
-    title: String,
     disabled: Boolean,
     href: String,
     download: String,
@@ -34,7 +30,6 @@ export default {
     variant: String,
     size: String,
     iconOnly: Boolean,
-    ariaLabel: String,
     styles: String,
   },
   methods: {

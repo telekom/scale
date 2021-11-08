@@ -32,7 +32,8 @@ export class NavIcon {
   @Prop() isMobileMenuOpen?: boolean = false;
   @Prop() mobileMenuOpen?: boolean = false;
   @Prop() refMobileMenuToggle?: any;
-  // Badge
+  @Prop() refMobileUserMenuToggle?: any;
+  @Prop() refUserMenuToggle?: any;
   @Prop() badge: boolean = false;
   @Prop() badgeLabel: number;
 
@@ -64,7 +65,11 @@ export class NavIcon {
       <li class={this.getCssClassMap()}>
         <a
           class="meta-navigation__item-link"
-          ref={this.refMobileMenuToggle}
+          ref={
+            this.refMobileMenuToggle ||
+            this.refMobileUserMenuToggle ||
+            this.refUserMenuToggle
+          }
           href={this.href}
           onClick={this.clickLink}
           onKeyDown={(event) => {
@@ -81,13 +86,19 @@ export class NavIcon {
             <scale-notification-badge label={this.badgeLabel} type="nav-icon">
               {renderIcon({
                 tag: `scale-icon-${this.icon}`,
-                attributes: { class: 'meta-navigation__item-link-icon' },
+                attributes: {
+                  class: 'meta-navigation__item-link-icon',
+                  selected: this.active || this.isActive,
+                },
               })}
             </scale-notification-badge>
           ) : (
             renderIcon({
               tag: `scale-icon-${this.icon}`,
-              attributes: { class: 'meta-navigation__item-link-icon' },
+              attributes: {
+                class: 'meta-navigation__item-link-icon',
+                selected: this.active || this.isActive,
+              },
             })
           )}
           <span class="meta-navigation__item-label">

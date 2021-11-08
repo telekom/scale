@@ -29,7 +29,7 @@ export const Template = (args, { argTypes }) => ({
             :disabled="disabled"
             :label="label"
             :helper-text="helperText"
-            :status="status"
+            :invalid="invalid"
             :size="size"
             @scaleChange="scaleChange"
             @scale-change="scale-change"
@@ -196,6 +196,33 @@ export const RangeTemplate = (args, { argTypes }) => ({
 <scale-date-picker label="Standard" value="2020-12-31" @scaleChange="handleChange" @scaleFocus="handleFocus" @scaleBlur="handleBlur"></scale-date-picker>
 ```
 
+### Scoped CSS variables
+
+```css
+duet-date-picker {
+  --duet-color-primary: var(--scl-color-primary, #e20074);
+  --duet-color-text: var(--scl-color-text-standard, #1a1a1a);
+  --duet-color-overlay: var(--scl-color-background-standard, #ffffff);
+  --duet-color-border: #333;
+  --duet-font: var(--scl-font-family-sans);
+  --duet-font-normal: var(--scl-font-weight-regular);
+  --duet-font-bold: var(--scl-font-weight-medium);
+  --duet-color-placeholder: var(--scl-color-grey-60);
+  --duet-radius: var(--scl-radius-4);
+  --duet-color-text-active: var(--scl-color-white, #ffffff);
+  --duet-color-button: var(--scl-color-background-standard, #ffffff);
+  --duet-color-surface: var(--scl-color-background-standard, #ffffff);
+  --duet-z-index: 600;
+
+  --spacing-heading: 0 0 var(--scl-spacing-16) 0;
+  --font-size-heading: var(--scl-font-size-20);
+  --font-size-select-label: var(--scl-font-size-16);
+  --radius-day: var(--scl-radius-8);
+  --font-size-day: var(--scl-font-size-16);
+  --font-size-table-header: var(--font-size-day);
+  --font-weight-table-header: var(--scl-font-weight-extrabold);
+}
+```
 
 ## Helper Text
 
@@ -246,7 +273,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
         name="With Error"
         args={{
             label: "With Error",
-            status: "error",
+            invalid: true,
             helperText: "something is wrong",
         }}
     >
@@ -256,7 +283,7 @@ export const RangeTemplate = (args, { argTypes }) => ({
 
 
 ```html
-<scale-date-picker label="With Error" helper-text="something is wrong" status="error" value="2020-12-31"></scale-date-picker>
+<scale-date-picker label="With Error" helper-text="something is wrong" invalid value="2020-12-31"></scale-date-picker>
 ```
 
 ## Disabled
