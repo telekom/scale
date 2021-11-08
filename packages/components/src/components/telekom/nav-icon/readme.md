@@ -29,11 +29,13 @@
 
 ### Depends on
 
+- [scale-notification-badge](../../notification-badge)
 - [scale-icon](../../icon)
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-nav-icon --> scale-notification-badge
   scale-nav-icon --> scale-icon
   scale-app-header --> scale-nav-icon
   style scale-nav-icon fill:#f9f,stroke:#333,stroke-width:4px

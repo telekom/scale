@@ -269,6 +269,8 @@ export class Header {
               <scale-nav-icon
                 icon={item.icon}
                 href={item.href}
+                badge={item.badge}
+                badgeLabel={item.badgeLabel}
                 clickLink={(event) => {
                   if (typeof item.onClick === 'function') {
                     item.onClick(event);

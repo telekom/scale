@@ -1,5 +1,6 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, Element, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from "../../utils/status-note";
 
 @Component({
   tag: 'scale-notification-badge',
@@ -7,6 +8,7 @@ import classNames from 'classnames';
   shadow: true,
 })
 export class NotificationBadge {
+  @Element() hostElement: HTMLElement;
   /** (optional) Text that is displayed in the badge*/
   @Prop() label: number;
   /** (optional) Maximal number of characters displayed in the badge*/
@@ -15,6 +17,10 @@ export class NotificationBadge {
   @Prop() type: 'icon' | 'text' | 'nav-icon' = 'icon';
   /** (optional) Handle click on the badge and surroundet slot elements*/
   @Prop() clickHandler: any;
+
+  connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
+  }
 
   getBadgeLabel() {
     if (this.label) {
@@ -37,9 +43,9 @@ export class NotificationBadge {
   getRender() {
     return (
       <div class={this.getCssClassMap()}>
-        <a class="notfication-badge__wrapper">
+        <a class="notification-badge__wrapper">
           <slot />
-          <span class="notfication-badge__circle">{this.getBadgeLabel()}</span>
+          <span class="notification-badge__circle">{this.getBadgeLabel()}</span>
         </a>
         <slot name="after-badge"></slot>
       </div>

@@ -3,12 +3,12 @@
   --padding-type-text-after-badge-slot: 0 0 0 12px;
   --padding-type-icon-after-badge-slot: 0 0 0 7px;
 
-  /*notfication-badge circle*/
-  --background-color-notfication-badge-circle: var(--scl-color-primary);
-  --color-notfication-badge-circle: var(--scl-color-white);
-  --font-size-notfication-badge-circle: 12px;
-  --font-weight-notfication-badge-circle: bold;
-  --border-radius-notfication-badge-circle: 20px;
+  /*notification-badge circle*/
+  --background-color-circle: var(--scl-color-primary);
+  --color-circle: var(--scl-color-white);
+  --font-size-circle: 12px;
+  --font-weight-circle: bold;
+  --border-radius-circle: 20px;
 
   /*border*/
   --color-notification-badge-border-focus: #009de0;
@@ -43,26 +43,30 @@
   align-items: center;
 }
 
-.notfication-badge__wrapper {
+.notification-badge__wrapper {
   text-decoration: none;
   position: relative;
   display: inline-block;
   justify-content: center;
 }
 
-.notfication-badge__circle {
+.notification-badge--nav-icon .notification-badge__wrapper {
+  margin-bottom: -5px;
+}
+
+.notification-badge__circle {
   display: flex;
   position: absolute;
-  font-size: var(--font-size-notfication-badge-circle);
-  font-weight: var(--font-weight-notfication-badge-circle);
-  border-radius: var(--border-radius-notfication-badge-circle);
-  background-color: var(--background-color-notfication-badge-circle);
-  color: var(--color-notfication-badge-circle);
+  font-size: var(--font-size-circle);
+  font-weight: var(--font-weight-circle);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--background-color-circle);
+  color: var(--color-circle);
   align-items: center;
   justify-content: center;
 }
 
-.notification-badge.notification-badge--label .notfication-badge__circle {
+.notification-badge.notification-badge--label .notification-badge__circle {
   padding: 0 2px;
 }
 
@@ -76,42 +80,42 @@
 
 @media (min-width: 1024px) {
   /*icon*/
-  .notification-badge.notification-badge--icon .notfication-badge__circle {
+  .notification-badge.notification-badge--icon .notification-badge__circle {
     top: -4px;
     right: -2px;
     height: 8px;
     min-width: 8px;
   }
   .notification-badge.notification-badge--label.notification-badge--icon
-    .notfication-badge__circle {
+    .notification-badge__circle {
     top: -8px;
     right: -5px;
     height: 14px;
     min-width: 10px;
   }
   /*nav-icon*/
-  .notification-badge.notification-badge--nav-icon .notfication-badge__circle {
+  .notification-badge.notification-badge--nav-icon .notification-badge__circle {
     top: -5px;
     right: 4px;
     height: 8px;
     min-width: 8px;
   }
   .notification-badge.notification-badge--label.notification-badge--nav-icon
-    .notfication-badge__circle {
+    .notification-badge__circle {
     top: -8px;
     right: 1px;
     height: 14px;
     min-width: 10px;
   }
   /*text*/
-  .notification-badge.notification-badge--text .notfication-badge__circle {
+  .notification-badge.notification-badge--text .notification-badge__circle {
     top: -5px;
     right: -10px;
     height: 8px;
     min-width: 8px;
   }
   .notification-badge.notification-badge--label.notification-badge--text
-    .notfication-badge__circle {
+    .notification-badge__circle {
     top: -10px;
     right: -15px;
     height: 14px;
@@ -121,42 +125,42 @@
 
 @media (max-width: 1023px) {
   /*icon*/
-  .notification-badge.notification-badge--icon .notfication-badge__circle {
+  .notification-badge.notification-badge--icon .notification-badge__circle {
     top: -4px;
     right: -1px;
     height: 8px;
     min-width: 8px;
   }
   .notification-badge.notification-badge--label.notification-badge--icon
-    .notfication-badge__circle {
+    .notification-badge__circle {
     top: -6px;
     right: -4px;
     height: 14px;
     min-width: 10px;
   }
   /*nav-icon*/
-  .notification-badge.notification-badge--nav-icon .notfication-badge__circle {
+  .notification-badge.notification-badge--nav-icon .notification-badge__circle {
     top: 0px;
     right: -1px;
     height: 6px;
     min-width: 6px;
   }
   .notification-badge.notification-badge--label.notification-badge--nav-icon
-    .notfication-badge__circle {
+    .notification-badge__circle {
     top: -3px;
     right: -4.5px;
     height: 12px;
     min-width: 8px;
   }
   /*text*/
-  .notification-badge.notification-badge--text .notfication-badge__circle {
+  .notification-badge.notification-badge--text .notification-badge__circle {
     top: -4px;
     right: -10px;
     height: 6px;
     min-width: 6px;
   }
   .notification-badge.notification-badge--label.notification-badge--text
-    .notfication-badge__circle {
+    .notification-badge__circle {
     top: -6px;
     right: -15px;
     height: 14px;
