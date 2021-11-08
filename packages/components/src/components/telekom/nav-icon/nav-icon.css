@@ -31,6 +31,7 @@ scale-nav-icon {
   align-items: center;
   font-weight: var(--font-weight-mobile);
   text-decoration: none;
+  height: var(--header-nav-height);
 }
 
 .meta-navigation__item--selected .meta-navigation__item-link {
@@ -53,6 +54,7 @@ scale-nav-icon {
 @media (max-width: 1023px) {
   .meta-navigation__item-link {
     min-width: 24px;
+    height: auto;
   }
   .meta-navigation__item-link {
     margin: var(--spacing-mobile);

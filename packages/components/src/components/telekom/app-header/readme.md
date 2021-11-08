@@ -24,6 +24,7 @@
 | `mobileMenuVisible`   | `mobile-menu-visible`    |             | `boolean` | `false`     |
 | `portalName`          | `portal-name`            |             | `string`  | `''`        |
 | `sectorNavigation`    | `sector-navigation`      |             | `any`     | `[]`        |
+| `userNavigation`      | `user-navigation`        |             | `any`     | `[]`        |
 
 
 ## Dependencies
@@ -37,6 +38,9 @@
 - [scale-nav-main](../nav-main)
 - [app-mega-menu](../app-mega-menu)
 - [scale-nav-icon](../nav-icon)
+- [scale-menu-flyout](../../menu-flyout)
+- [scale-menu-flyout-list](../../menu-flyout-list)
+- [app-navigation-user-menu](../app-navigation-user-menu)
 - [scale-nav-segment](../nav-segment)
 - [app-logo](../app-logo)
 - [app-navigation-sector-mobile](../app-navigation-sector-mobile)
@@ -48,11 +52,17 @@ graph TD;
   scale-app-header --> scale-nav-main
   scale-app-header --> app-mega-menu
   scale-app-header --> scale-nav-icon
+  scale-app-header --> scale-menu-flyout
+  scale-app-header --> scale-menu-flyout-list
+  scale-app-header --> app-navigation-user-menu
   scale-app-header --> scale-nav-segment
   scale-app-header --> app-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
+  scale-nav-icon --> scale-notification-badge
   scale-nav-icon --> scale-icon
+  app-navigation-user-menu --> scale-button
+  app-navigation-user-menu --> scale-icon
   app-navigation-main-mobile --> scale-icon-navigation-left
   app-navigation-main-mobile --> scale-icon-navigation-right
   scale-app-shell --> scale-app-header

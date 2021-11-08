@@ -1,9 +1,9 @@
-describe('Badge', () => {
-  test.each([['standard'], ['sizes'], ['rotation'], ['color-choosing'], ['asterisk']])(
+describe('Callout', () => {
+  test.each([['standard'], ['size'], ['rotation'], ['variants'], ['asterisk']])(
     '%p',
     async (variant) => {
       await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=beta-components-badge--${variant}&viewMode=story`
+        `http://host.docker.internal:3123/iframe.html?id=beta-components-callout--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');

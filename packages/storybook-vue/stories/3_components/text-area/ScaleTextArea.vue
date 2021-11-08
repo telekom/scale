@@ -5,7 +5,7 @@
     :rows="rows"
     :cols="cols"
     :helper-text="helperText"
-    :status="status"
+    :invalid="invalid"
     :max-length="maxLength"
     :min-length="minLength"
     :placeholder="placeholder"
@@ -36,7 +36,7 @@ export default {
     rows: { type: Number },
     cols: { type: Number },
     helperText: { type: String },
-    status: { type: String },
+    invalid: { type: Boolean },
     maxLength: { type: Number },
     minLength: { type: Number },
     placeholder: { type: String },

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
+
+
+### Bug Fixes
+
+* minor visual regressions ([#680](https://github.com/telekom/scale/issues/680)) ([dffb03f](https://github.com/telekom/scale/commit/dffb03f21dac8c2d0cb1efccb39955b62a1067bd))
+
+
+### Features
+
+* **callout:** add as beta component ([e30f32f](https://github.com/telekom/scale/commit/e30f32f682e2ad0a72778a65c1065c565542d7bc))
+* **header:** user menu ([#654](https://github.com/telekom/scale/issues/654)) ([9c7e9ad](https://github.com/telekom/scale/commit/9c7e9ada1328d4233948d67ff57adb88d5354ed5))
+* **notification-badge:** add first beta ([#655](https://github.com/telekom/scale/issues/655)) ([5991853](https://github.com/telekom/scale/commit/599185342fe05a2c4f87a4f0febce3c5a39bd90d))
+* **tooltip:** add beta component ([#607](https://github.com/telekom/scale/issues/607)) ([a6441fc](https://github.com/telekom/scale/commit/a6441fc976637a6ccc79e5248735bfa7dd9c8671)), closes [#415](https://github.com/telekom/scale/issues/415) [#465](https://github.com/telekom/scale/issues/465)
+
+
+
+
+
 # [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
 
 

@@ -20,9 +20,11 @@ import {
   Event,
   Watch,
   EventEmitter,
+  Element,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 let i = 0;
 
@@ -33,7 +35,8 @@ let i = 0;
 })
 export class Slider {
   sliderTrack?: HTMLDivElement;
-
+  /* Host HTML Element */
+  @Element() hostElement: HTMLElement;
   /** (optional) the display value of the slider */
   @Prop() value?: number;
   /** t(optional) he minimal value of the slider */
@@ -50,8 +53,8 @@ export class Slider {
   @Prop() unit?: string = '%';
   /** (optional) number of decimal places */
   @Prop() decimals?: 0 | 1 | 2 = 0;
-  /** (optional) slider custom color */
-  @Prop() customColor?: string = '';
+  /** @deprecated - optional) slider custom color */
+  @Prop() customColor?: string;
   /** (optional) disabled  */
   @Prop() disabled?: boolean = false;
   /** (optional) smaller track */
@@ -91,6 +94,19 @@ export class Slider {
 
   disconnectedCallback() {
     this.removeGlobalListeners();
+  }
+
+  componentDidLoad() {
+    if (this.customColor !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message: `Property "customColor" is deprecated. 
+          Please use css variable "--background-bar" to set the slider-bar color;
+          e.g. <scale-slider value="20" style="--background-bar: green"></scale-slider>`,
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   onButtonDown = () => {
@@ -202,7 +218,11 @@ export class Slider {
                 class="slider__bar"
                 style={{
                   width: `${this.position}%`,
-                  backgroundColor: this.customColor,
+                  backgroundColor: this.customColor
+                    ? this.customColor
+                    : this.disabled
+                    ? `var(--background-bar-disabled)`
+                    : `var(--background-bar)`,
                 }}
               ></div>
               <div

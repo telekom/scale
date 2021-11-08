@@ -22,7 +22,7 @@ exports[`ProgressBar check props 1`] = `
       </label>
       <div class="progress-bar-wrapper" part="wrapper">
         <div aria-label="testLabel" aria-valuemax="100" aria-valuemin="0" aria-valuenow="18" aria-valuetext="18%" class="progress-bar__outer" id="progress-bar-1" part="outer" role="progressbar" style="height: 24px;">
-          <div class="progress-bar__inner" part="inner" style="width: 18%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;">
+          <div class="progress-bar__inner" part="inner" style="width: 18%; border: 1px solid transparent; background: var(--background); animation: showProgress 3s ease-in-out;">
             <div aria-hidden="true" class="progress-bar__inner-status" part="inner-status">
               18%
             </div>
@@ -61,7 +61,7 @@ exports[`ProgressBar should match snapshot 1`] = `
     <div class="progress-bar" part="progress-bar">
       <div class="progress-bar-wrapper" part="wrapper">
         <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0%" class="progress-bar__outer" id="progress-bar-0" part="outer" role="progressbar" style="height: 6px;">
-          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; animation: showProgress 3s ease-in-out;"></div>
+          <div class="progress-bar__inner" part="inner" style="width: 0%; border: 1px solid transparent; background: var(--background); animation: showProgress 3s ease-in-out;"></div>
         </div>
         <slot name="icon"></slot>
       </div>

@@ -9,7 +9,6 @@
 
 | Property       | Attribute       | Description                                                    | Type                              | Default     |
 | -------------- | --------------- | -------------------------------------------------------------- | --------------------------------- | ----------- |
-| `ariaLabel`    | `aria-label`    | (optional) aria-label attribute needed for icon-only buttons   | `string`                          | `undefined` |
 | `disabled`     | `disabled`      | (optional) If `true`, the button is disabled                   | `boolean`                         | `false`     |
 | `download`     | `download`      | (optional) name of a file to be downloaded                     | `string`                          | `undefined` |
 | `href`         | `href`          | (optional) When present, an <a> tag will be used               | `string`                          | `undefined` |
@@ -22,15 +21,30 @@
 | `variant`      | `variant`       | (optional) Button variant                                      | `string`                          | `'primary'` |
 
 
+## Methods
+
+### `setFocus() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Used by
 
+ - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-data-grid](../data-grid)
 
 ### Graph
 ```mermaid
 graph TD;
+  app-navigation-user-menu --> scale-button
   scale-data-grid --> scale-button
   style scale-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

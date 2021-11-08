@@ -26,6 +26,7 @@ export class Shell {
   @Prop() logoClick?: any;
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
+  @Prop() userNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId?: string = '';
@@ -55,6 +56,7 @@ export class Shell {
               portalName={this.portalName}
               mainNavigation={this.mainNavigation}
               iconNavigation={this.iconNavigation}
+              userNavigation={this.userNavigation}
               sectorNavigation={this.sectorNavigation}
               addonNavigation={this.addonNavigation}
               activeRouteId={this.activeRouteId}

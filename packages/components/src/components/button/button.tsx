@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Listen, Element } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Listen,
+  Element,
+  Method,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { hasShadowDom } from '../../utils/utils';
 
@@ -33,8 +41,6 @@ export class Button {
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
   @Prop({ reflect: true }) iconPosition: 'before' | 'after' = 'before';
-  /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabel: string;
   /** (optional) When present, an <a> tag will be used */
   @Prop() href?: string;
   /** (optional) The target attribute for the <a> tag */
@@ -43,6 +49,8 @@ export class Button {
   @Prop() styles?: string;
   /** (optional) name of a file to be downloaded */
   @Prop() download?: string;
+
+  private focusableElement: HTMLElement;
 
   /**
    * Prevent clicks from being emitted from the host
@@ -53,6 +61,11 @@ export class Button {
     if (this.disabled === true) {
       event.stopImmediatePropagation();
     }
+  }
+
+  @Method()
+  async setFocus() {
+    this.focusableElement.focus();
   }
 
   /**
@@ -117,23 +130,23 @@ export class Button {
 
         {this.href ? (
           <a
+            ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
             href={this.href}
             download={this.download}
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
-            aria-label={this.ariaLabel}
             part={basePart}
           >
             <slot />
           </a>
         ) : (
           <button
+            ref={(el) => (this.focusableElement = el)}
             class={this.getCssClassMap()}
             onClick={this.handleClick}
             disabled={this.disabled}
             type={this.type}
-            aria-label={this.ariaLabel}
             part={basePart}
           >
             <slot />

@@ -14,7 +14,7 @@
     :disabled="disabled"
     :label="label"
     :helper-text="helperText"
-    :status="status"
+    :invalid="invalid"
     :size="size"
     :popup-title="popupTitle"
     @scaleChange="scaleChange"
@@ -42,7 +42,7 @@ export default {
     value: { type: String },
     label: { type: String },
     helperText: { type: String },
-    status: { type: String },
+    invalid: { type: Boolean },
     disabled: { type: Boolean },
     size: { type: String },
     popupTitle: { type: String },
