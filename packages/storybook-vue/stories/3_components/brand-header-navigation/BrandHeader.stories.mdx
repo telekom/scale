@@ -10,6 +10,7 @@ import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
+  userNavigation
 } from './fixtures';
 import AppShell from './AppShell.vue';
 
@@ -67,6 +68,12 @@ import AppShell from './AppShell.vue';
       },
       description: 'each item takes an optional onClick handler',
     },
+    userNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item and button takes an optional onClick handler',
+    },
     portalName: {
       control: {
         type: 'text',
@@ -109,6 +116,7 @@ import AppShell from './AppShell.vue';
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
+      userNavigation: JSON.stringify(userNavigation),
       activeRouteId: 'Third Level 24',
       activeSectorId: 'Personal38',
       logoTitle: 'Custom Logo Title',
@@ -129,6 +137,7 @@ import AppShell from './AppShell.vue';
             :main-navigation="mainNavigation"
             :icon-navigation="iconNavigation"
             :sector-navigation="sectorNavigation"
+            :user-navigation="userNavigation"
             :addon-navigation="addonNavigation"
             :active-route-id="activeRouteId"
             :active-sector-id="activeSectorId"
@@ -451,7 +460,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
   <scale-app-header slot="header" id="header">
     <div slot="menu-sector">
       <!--
-        Deprecated: 
+        Deprecated:
         <scale-nav-segment
         is-active="true"
         ...

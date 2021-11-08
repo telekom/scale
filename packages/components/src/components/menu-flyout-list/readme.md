@@ -71,11 +71,13 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [scale-app-header](../telekom/app-header)
  - [scale-data-grid](../data-grid)
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-app-header --> scale-menu-flyout-list
   scale-data-grid --> scale-menu-flyout-list
   style scale-menu-flyout-list fill:#f9f,stroke:#333,stroke-width:4px
 ```

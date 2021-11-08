@@ -23,6 +23,7 @@
 
 ### Used by
 
+ - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-app-footer](../telekom/app-footer)
  - [scale-data-grid](../data-grid)
  - [scale-input](../input)
@@ -31,6 +32,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  app-navigation-user-menu --> scale-icon
   scale-app-footer --> scale-icon
   scale-data-grid --> scale-icon
   scale-input --> scale-icon
