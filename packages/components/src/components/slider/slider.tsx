@@ -220,6 +220,8 @@ export class Slider {
                   width: `${this.position}%`,
                   backgroundColor: this.customColor
                     ? this.customColor
+                    : this.disabled
+                    ? `var(--background-bar-disabled)`
                     : `var(--background-bar)`,
                 }}
               ></div>
