@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Date Picker</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 A date picker allows users to easily select a date or a period of time.
@@ -39,10 +39,6 @@ Users can select the month and year using the dropdowns at the top of the flyout
 #### Monthly calendar (3)
 
 The monthly calendar displays the days of the month which are available for selection.
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
 
 ## Related components
 

@@ -3,6 +3,119 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
+
+
+### Bug Fixes
+
+* **date-picker:** input value handling, calendarHeading + styles ([#660](https://github.com/telekom/scale/issues/660)) ([3311bf2](https://github.com/telekom/scale/commit/3311bf2ec3aa72c095cbe18bad50452fa63c57ac))
+
+
+
+
+
+# [3.0.0-beta.26](https://github.com/telekom/scale/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2021-10-28)
+
+
+### Bug Fixes
+
+* **date-picker:** firefox placeholder, small icon styles ([#657](https://github.com/telekom/scale/issues/657)) ([a95fdd9](https://github.com/telekom/scale/commit/a95fdd9b4210ccc8caf39daf7f6e5dc25877accb))
+
+
+
+
+
+# [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.24](https://github.com/telekom/scale/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2021-10-27)
+
+
+### Bug Fixes
+
+* **button:** download despite download prop set to 'false' ([#648](https://github.com/telekom/scale/issues/648)) ([6a7c368](https://github.com/telekom/scale/commit/6a7c3682feae0922cccc0e6807cc7a71bf025060))
+
+
+
+
+
+# [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
+
+
+### Features
+
+* **switch:** add name prop ([#629](https://github.com/telekom/scale/issues/629)) ([83cd99a](https://github.com/telekom/scale/commit/83cd99ac7aaf26e7b7681d1881ab0b4f1efcde17))
+
+
+
+
+
+# [3.0.0-beta.22](https://github.com/telekom/scale/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2021-10-15)
+
+
+### Bug Fixes
+
+* index file ([b43df9a](https://github.com/telekom/scale/commit/b43df9adb7ec6684095a821b63ac6ba6a5061ec5))
+
+
+
+
+
+# [3.0.0-beta.21](https://github.com/telekom/scale/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2021-09-30)
+
+
+### Bug Fixes
+
+* **button:** add more defense to setIconPositionProps against type errors ([#602](https://github.com/telekom/scale/issues/602)) ([5263ccd](https://github.com/telekom/scale/commit/5263ccdfe0442fcb7d457c179ff0baa803a247d1))
+
+
+### Features
+
+* **rating-stars:** improve prop naming ([#558](https://github.com/telekom/scale/issues/558)) ([3ceb6c1](https://github.com/telekom/scale/commit/3ceb6c12473c0feaadf97593154ea4288668fb2e))
+
+
+
+
+
+# [3.0.0-beta.20](https://github.com/telekom/scale/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2021-09-03)
+
+
+### Bug Fixes
+
+* **app-header:** change sticky class to follow BEM ([#565](https://github.com/telekom/scale/issues/565)) ([f400908](https://github.com/telekom/scale/commit/f400908c3fbd4d48111f33ff3b72df479fced3a3))
+* **checkbox:** use other selector strategy for styling ([#567](https://github.com/telekom/scale/issues/567)) ([92e435b](https://github.com/telekom/scale/commit/92e435b14bde56c601465fd9b6aa18e3d623638f))
+
+
+### Features
+
+* **app-header:** let mobile menu render w/ config object when menu-main is on ([#566](https://github.com/telekom/scale/issues/566)) ([c5d0166](https://github.com/telekom/scale/commit/c5d0166a79bd8138d5e027edc8e3d883029af250))
+
+
+
+
+
+# [3.0.0-beta.19](https://github.com/telekom/scale/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2021-09-01)
+
+
+### Bug Fixes
+
+* **checkbox:** agent states ([#543](https://github.com/telekom/scale/issues/543)) ([c489496](https://github.com/telekom/scale/commit/c48949684a49c9644493c0889773b9f362e2d303))
+
+
+### Features
+
+* **date-picker:** add styles prop ([#554](https://github.com/telekom/scale/issues/554)) ([13b922e](https://github.com/telekom/scale/commit/13b922ee435f622e815b2a106405ef5282f34594))
+* introduce kebab-cased events ([#526](https://github.com/telekom/scale/issues/526)) ([600e2f4](https://github.com/telekom/scale/commit/600e2f45618f75f8f6ffa7b845ebd7ae579d9524))
+
+
+
+
+
 # [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
 
 

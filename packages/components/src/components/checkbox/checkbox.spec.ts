@@ -38,12 +38,12 @@ describe('Checkbox', () => {
     page = await newSpecPage({
       components: [Checkbox],
       html: `
-        <scale-checkbox 
+        <scale-checkbox
           name="testname"
           label="testlabel"
           checked
           disabled
-          status="error"
+          invalid="true"
           value="testvalue">
         </scale-checkbox>`,
     });
@@ -52,41 +52,31 @@ describe('Checkbox', () => {
     expect(page.rootInstance.label).toBe('testlabel');
     expect(page.rootInstance.disabled).toBe(true);
     expect(page.rootInstance.checked).toBe(true);
-    expect(page.rootInstance.status).toBe('error');
+    expect(page.rootInstance.invalid).toBe(true);
     expect(page.rootInstance.value).toBe('testvalue');
-  });
-
-  it('should handle css classes', () => {
-    const element = new Checkbox();
-    element.checked = true;
-    expect(element.getCssClassMap()).toContain('checkbox--checked');
-    element.disabled = true;
-    expect(element.getCssClassMap()).toContain('checkbox--disabled');
-    element.status = 'error';
-    expect(element.getCssClassMap()).toContain('checkbox--status-error');
   });
 
   it('should emit on change', async () => {
     const changeSpy = jest.fn();
     const changeSpyLegacy = jest.fn();
+    const element = page.root.querySelector('input');
     page.doc.addEventListener('scale-change', changeSpy);
     page.doc.addEventListener('scaleChange', changeSpyLegacy);
-    const element = page.root.querySelector('input');
     element.dispatchEvent(new Event('change'));
     await page.waitForChanges();
     expect(changeSpy).toHaveBeenCalled();
     expect(changeSpyLegacy).toHaveBeenCalled();
   });
 
-  it('should handle inputId with value null', async () => {
+  it('should handle inputId with undefined value', async () => {
     page = await newSpecPage({
       components: [Checkbox],
       html: `
-        <scale-checkbox 
+        <scale-checkbox
          input-id
          >
         </scale-checkbox>`,
     });
-    expect(page.rootInstance.inputId).toBe('');
+    expect(page.rootInstance.inputId).toContain('input-checkbox');
   });
 });

@@ -12,6 +12,7 @@
 import {
   Component,
   Prop,
+  Element,
   Event,
   h,
   EventEmitter,
@@ -20,6 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -33,6 +35,7 @@ let i = 0;
   shadow: false,
 })
 export class Textarea {
+  @Element() hostElement: HTMLElement;
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** (optional) Input label */
@@ -43,8 +46,10 @@ export class Textarea {
   @Prop() cols?: number;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input max length */
   @Prop() maxLength?: number;
   /** (optional) Input min length */
@@ -105,6 +110,18 @@ export class Textarea {
     }
   }
 
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
+
   // We're not watching `value` like we used to
   // because we get unwanted `scaleChange` events
   // because how we keep this.value up-to-date for type="select"
@@ -148,7 +165,7 @@ export class Textarea {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
@@ -216,6 +233,7 @@ export class Textarea {
       this.disabled && `textarea--disabled`,
       this.transparent && 'textarea--transparent',
       this.status && `textarea--status-${this.status}`,
+      this.invalid && `textarea--status-error`,
       this.readonly && `textarea--readonly`,
       this.value != null && this.value !== '' && 'animated'
     );

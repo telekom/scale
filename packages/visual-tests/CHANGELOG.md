@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
+
+
+### Bug Fixes
+
+* **date-picker:** input value handling, calendarHeading + styles ([#660](https://github.com/telekom/scale/issues/660)) ([3311bf2](https://github.com/telekom/scale/commit/3311bf2ec3aa72c095cbe18bad50452fa63c57ac))
+
+
+
+
+
+# [3.0.0-beta.26](https://github.com/telekom/scale/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2021-10-28)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.24](https://github.com/telekom/scale/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.22](https://github.com/telekom/scale/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2021-10-15)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.21](https://github.com/telekom/scale/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2021-09-30)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.20](https://github.com/telekom/scale/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2021-09-03)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.19](https://github.com/telekom/scale/compare/v3.0.0-beta.18...v3.0.0-beta.19) (2021-09-01)
+
+
+### Bug Fixes
+
+* **checkbox:** agent states ([#543](https://github.com/telekom/scale/issues/543)) ([c489496](https://github.com/telekom/scale/commit/c48949684a49c9644493c0889773b9f362e2d303))
+
+
+### Features
+
+* introduce kebab-cased events ([#526](https://github.com/telekom/scale/issues/526)) ([600e2f4](https://github.com/telekom/scale/commit/600e2f45618f75f8f6ffa7b845ebd7ae579d9524))
+
+
+
+
+
 # [3.0.0-beta.18](https://github.com/telekom/scale/compare/v3.0.0-beta.17...v3.0.0-beta.18) (2021-08-30)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

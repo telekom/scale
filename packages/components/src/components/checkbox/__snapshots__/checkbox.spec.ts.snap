@@ -3,34 +3,24 @@
 exports[`Checkbox should match snapshot 1`] = `
 <scale-checkbox>
   <!---->
-  <div class="checkbox checkbox--enabled checkbox--not-checked">
-    <label class="checkbox__label-wrapper" htmlfor="input-checkbox-0">
-      <div class="checkbox__control-wrapper">
-        <span class="checkbox__control"></span>
-      </div>
-      <span class="checkbox__label"></span>
-    </label>
-    <input id="input-checkbox-0" type="checkbox" value="">
-  </div>
+  <input id="input-checkbox-0" part="input" type="checkbox" value="">
+  <label htmlfor="input-checkbox-0" part="container">
+    <div part="checkbox"></div>
+    <div part="label"></div>
+  </label>
 </scale-checkbox>
 `;
 
 exports[`Checkbox should match snapshot 2`] = `
 <scale-checkbox helper-text="helpertext">
   <!---->
-  <div class="checkbox checkbox--enabled checkbox--not-checked">
-    <label class="checkbox__label-wrapper" htmlfor="input-checkbox-2">
-      <div class="checkbox__control-wrapper">
-        <span class="checkbox__control"></span>
-      </div>
-      <span class="checkbox__label"></span>
-      <div aria-live="polite" aria-relevant="additions removals" class="checkbox__meta" id="helper-message-3">
-        <div class="checkbox__helper-text">
-          helpertext
-        </div>
-      </div>
-    </label>
-    <input aria-describedby="helper-message-3" id="input-checkbox-2" type="checkbox" value="">
+  <input aria-describedby="helper-text-2" id="input-checkbox-2" part="input" type="checkbox" value="">
+  <label htmlfor="input-checkbox-2" part="container">
+    <div part="checkbox"></div>
+    <div part="label"></div>
+  </label>
+  <div aria-live="polite" aria-relevant="additions removals" id="helper-text-2" part="helper-text">
+    helpertext
   </div>
 </scale-checkbox>
 `;

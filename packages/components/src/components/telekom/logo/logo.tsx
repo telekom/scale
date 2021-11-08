@@ -11,7 +11,6 @@
 
 import { Component, h, Prop, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
-import statusNote from '../../../utils/status-note';
 
 @Component({
   tag: 'scale-logo',
@@ -46,14 +45,10 @@ export class Logo {
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
 
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
-
   styles() {
     return `:host {
-       --logo-size: ${this.size}px;
-     }`;
+        --logo-size: ${this.size}px;
+      }`;
   }
 
   getLogoSvg(role: 'link' | 'img') {

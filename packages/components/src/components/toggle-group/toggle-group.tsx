@@ -21,6 +21,8 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface ButtonStatus {
   id: string;
@@ -42,33 +44,35 @@ export class ToggleGroup {
   /** state */
   @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
-  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
-  /** (optional) Button Group variant */
-  @Prop() variant?: 'primary' | 'secondary' = 'primary';
-  /** (optional) inline or block element */
-  @Prop() boxType?: 'inline' | 'block' = 'inline';
+  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'regular';
+  /** (optional) Button Group background */
+  @Prop() background?: 'grey' | 'white' = 'white';
+  /** (optional) 100% width */
+  @Prop() fullWidth? = false;
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the group has a border */
-  @Prop() border?: boolean = false;
+  @Prop() hideBorder?: boolean = false;
   /** (optional) more than one button selected possible */
-  @Prop() multi: boolean = true;
+  @Prop() singleSelect: boolean = false;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
+  /** @deprecated - variant should replace colorScheme */
+  @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
+  /** (optional) background variant of a selected toggle-button */
+  @Prop() variant?: 'monochrome' | 'color' = 'color';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** Emitted when button is clicked */
-  @Event() scaleClickGroup!: EventEmitter;
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   @Listen('scaleClick')
-  scaleClickHandler(ev) {
+  scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: ButtonStatus[];
-    if (this.multi) {
-      tempState = this.status.map((obj) =>
-        ev.detail.id === obj.id ? ev.detail : { ...obj }
-      );
-    } else {
+    if (this.singleSelect) {
       if (!ev.detail.selected) {
         tempState = this.status.map((obj) =>
           ev.detail.id === obj.id ? ev.detail : { ...obj }
@@ -79,6 +83,10 @@ export class ToggleGroup {
           ev.detail.id === obj.id ? ev.detail : { ...obj, selected: false }
         );
       }
+    } else {
+      tempState = this.status.map((obj) =>
+        ev.detail.id === obj.id ? ev.detail : { ...obj }
+      );
     }
     this.setNewState(tempState);
   }
@@ -96,12 +104,27 @@ export class ToggleGroup {
         selected: toggleButton.hasAttribute('selected'),
       });
       toggleButton.setAttribute('size', this.size);
-      toggleButton.setAttribute('variant', this.variant);
+      toggleButton.setAttribute('background', this.background);
       toggleButton.setAttribute('disabled', this.disabled && 'disabled');
       toggleButton.setAttribute('position', this.position.toString());
       toggleButton.setAttribute(
         'aria-description-translation',
         '$position $selected'
+      );
+      /** DEPRECATED */
+      // if attribute variant is set it overrides color-scheme
+      toggleButton.setAttribute(
+        'color-scheme',
+        this.variant !== 'color' ? this.variant : this.colorScheme
+      );
+      // if attribute color-scheme is set it overrides variant
+      toggleButton.setAttribute(
+        'variant',
+        this.colorScheme !== 'color' ? this.colorScheme : this.variant
+      );
+      toggleButton.setAttribute(
+        'hide-border',
+        this.hideBorder ? 'true' : 'false'
       );
     });
     this.position = 0;
@@ -117,10 +140,20 @@ export class ToggleGroup {
   }
 
   componentDidRender() {
-    if (this.boxType === 'block') {
+    if (this.fullWidth) {
       this.setButtonWidth();
     }
     this.setChildrenCorners();
+
+    if (this.colorScheme !== 'color') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "colorScheme" is deprecated. Please use the "variant" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   setNewState(tempState: ButtonStatus[]) {
@@ -131,7 +164,7 @@ export class ToggleGroup {
       button.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
     });
     this.status = tempState;
-    this.scaleClickGroup.emit(this.status);
+    emitEvent(this, 'scaleChange', this.status);
   }
 
   setButtonWidth() {
@@ -146,6 +179,9 @@ export class ToggleGroup {
     for (let i = 0; i < children.length; i++) {
       if (i === 0) {
         children[i].setAttribute('radius', 'left');
+      }
+      if (i > 0 && i < children.length - 1) {
+        children[i].setAttribute('radius', 'neither');
       }
       if (i === children.length - 1) {
         children[i].setAttribute('radius', 'right');
@@ -182,8 +218,9 @@ export class ToggleGroup {
 
     return classNames(
       'toggle-group',
-      this.boxType && `${prefix}${this.boxType}`,
-      this.border && `${prefix}border`
+      this.fullWidth && `${prefix}block`,
+      !this.fullWidth && `${prefix}inline`,
+      this.disabled && `${prefix}disabled`
     );
   }
 }

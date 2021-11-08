@@ -7,31 +7,30 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                   | Type      | Default     |
-| ---------- | ---------- | ----------------------------------------------------------------------------- | --------- | ----------- |
-| `active`   | `active`   | (optional) Used by cascading menus to set when open                           | `boolean` | `false`     |
-| `cascade`  | `cascade`  | (optional) Set to true to display arrow icon suffix                           | `boolean` | `false`     |
-| `checked`  | `checked`  | (optional) Set to true to display check prefix, false to display empty prefix | `any`     | `undefined` |
-| `disabled` | `disabled` | (optional) Disabled                                                           | `boolean` | `false`     |
-| `styles`   | `styles`   | (optional) Injected styles                                                    | `string`  | `undefined` |
-| `value`    | `value`    | (optional) value                                                              | `string`  | `undefined` |
+| Property    | Attribute   | Description                                                                   | Type                    | Default     |
+| ----------- | ----------- | ----------------------------------------------------------------------------- | ----------------------- | ----------- |
+| `active`    | `active`    | (optional) Mark as active                                                     | `boolean`               | `false`     |
+| `cascade`   | `cascade`   | (optional) Set to true to display arrow icon suffix                           | `boolean`               | `false`     |
+| `checkable` | `checkable` | (optional) Whether the item should behave as a checkbox                       | `"checkbox" \| "radio"` | `undefined` |
+| `checked`   | `checked`   | (optional) Set to true to display check prefix, false to display empty prefix | `boolean`               | `false`     |
+| `disabled`  | `disabled`  | (optional) Disabled                                                           | `boolean`               | `false`     |
+| `styles`    | `styles`    | (optional) Injected styles                                                    | `string`                | `undefined` |
+| `value`     | `value`     | (optional) value                                                              | `string`                | `undefined` |
+
+
+## Events
+
+| Event          | Description                                                                                        | Type                                  |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `scale-select` | Event triggered when menu item selected                                                            | `CustomEvent<{ item: HTMLElement; }>` |
+| `scaleSelect`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ item: HTMLElement; }>` |
 
 
 ## Methods
 
-### `removeFocus() => Promise<void>`
-
-Removes the focus from the item
-
-#### Returns
-
-Type: `Promise<void>`
+### `triggerEvent(eventType: 'keydown' | 'click', key?: 'Enter' | ' ' | 'ArrowRight' | null, closeOnSelect?: boolean) => Promise<void>`
 
 
-
-### `setFocus() => Promise<void>`
-
-Sets the focus on the item
 
 #### Returns
 

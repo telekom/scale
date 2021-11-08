@@ -55,21 +55,49 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                    | Type      | Default     |
-| ---------- | ---------- | ------------------------------ | --------- | ----------- |
-| `block`    | `block`    | (optional) Block link          | `boolean` | `false`     |
-| `disabled` | `disabled` | (optional) Disabled link       | `boolean` | `false`     |
-| `href`     | `href`     | (optional) Link href           | `string`  | `undefined` |
-| `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
-| `target`   | `target`   | (optional) Link open a new tag | `string`  | `'_self'`   |
-| `variant`  | `variant`  | (optional) Link variant        | `string`  | `''`        |
+| Property         | Attribute        | Description                                                                                                                                                          | Type                                                                                                                                                                                     | Default     |
+| ---------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `disabled`       | `disabled`       | (optional) Disabled link                                                                                                                                             | `boolean`                                                                                                                                                                                | `false`     |
+| `download`       | `download`       | (optional) Download declaration                                                                                                                                      | `boolean`                                                                                                                                                                                | `false`     |
+| `href`           | `href`           | (optional) Link href                                                                                                                                                 | `string`                                                                                                                                                                                 | `undefined` |
+| `hreflang`       | `hreflang`       | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
+| `iconPosition`   | `icon-position`  | (optional) Chnage icon/content slot order                                                                                                                            | `"after" \| "before"`                                                                                                                                                                    | `'after'`   |
+| `omitUnderline`  | `omit-underline` | (optional) Remove the initial line from the text (can also be achieved via `--line-thickness-initial: 0`) Remove the line for every state with `--line-thickness: 0` | `boolean`                                                                                                                                                                                | `false`     |
+| `ping`           | `ping`           | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
+| `referrerpolicy` | `referrerpolicy` | (optional)                                                                                                                                                           | `"" \| "no-referrer" \| "no-referrer-when-downgrade" \| "origin" \| "origin-when-cross-origin" \| "same-origin" \| "strict-origin" \| "strict-origin-when-cross-origin" \| "unsafe-url"` | `undefined` |
+| `rel`            | `rel`            | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
+| `styles`         | `styles`         | (optional) Injected CSS styles                                                                                                                                       | `string`                                                                                                                                                                                 | `undefined` |
+| `target`         | `target`         | (optional)                                                                                                                                                           | `"_blank" \| "_parent" \| "_self" \| "_top"`                                                                                                                                             | `undefined` |
+| `type`           | `type`           | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
+
+
+## Methods
+
+### `setFocus() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
+## Slots
+
+| Slot        | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| `"default"` | here goes the actual text of the                                     |
+| `"icon"`    | a slot that will not be underlined and which position can be changed |
 
 
 ## Shadow Parts
 
-| Part        | Description |
-| ----------- | ----------- |
-| `"wrapper"` |             |
+| Part        | Description                                          |
+| ----------- | ---------------------------------------------------- |
+| `"anchor"`  | the native achor element wrapping all contents       |
+| `"content"` | a wrapper around the default slot with the underline |
 
 
 ## Dependencies

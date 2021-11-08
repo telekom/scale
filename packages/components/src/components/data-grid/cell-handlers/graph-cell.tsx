@@ -34,8 +34,10 @@ export const GraphCell: Cell = {
         return (
           <div class={`tbody__bar-cell`}>
             <scale-progress-bar
+              aria-hidden="true"
               percentage={progress}
               // showStatus={true}
+              mute={true}
               style={{ maxWidth: '200px' }}
               styles={
                 /* css */ `.progress-bar__outer {
@@ -57,6 +59,7 @@ export const GraphCell: Cell = {
           <scale-progress-bar
             percentage={progress}
             showStatus={true}
+            mute={true}
             styles={
               /* css */ `.progress-bar__outer {
               min-width: 50px;

@@ -19,6 +19,7 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 export interface StarInterface extends HTMLDivElement {
   dataset: {
@@ -42,33 +43,79 @@ export class RatingStars {
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
-  /** The lower limit of the rating. In cases where  */
-  @Prop({ reflect: true }) starSize: 'small' | 'large' = 'large';
-  /** The lower limit of the rating. In cases where  */
-  @Prop({ reflect: true }) minRating = 0;
+  /** @deprecated; size should be used instead of starSize */
+  @Prop() starSize: 'small' | 'large' = 'large';
+  /** size of the stars  */
+  @Prop({ reflect: true, mutable: true }) size: 'small' | 'large' = 'large';
+  /** @deprecated; The lower limit of the rating */
+  @Prop() minRating = 0;
+  /** @deprecated; max should be used instead of maxRating */
+  @Prop() maxRating = 5;
   /** The upper limit of the rating */
-  @Prop({ reflect: true }) maxRating = 5;
+  @Prop({ reflect: true, mutable: true }) max = 5;
   /** Represents the current value of the rating */
   @Prop({ mutable: true, reflect: true }) rating = 0;
   /** makes the rating non-interactive (but still accessible)  */
   @Prop({ reflect: true }) readonly = false;
   /** disables input  */
   @Prop({ reflect: true }) disabled = false;
-  /** a11y text for getting meaningful value. `$rating` and `$maxRating` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaLabelTranslation = '$rating out of $maxRating stars';
+  /** a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties.  */
+  @Prop() ariaLabelTranslation = '$rating out of $max stars';
   /** (optional) rating label */
-  @Prop({ reflect: true }) label?: string;
+  @Prop({ reflect: true }) label = 'Rating';
+  /** (optional) info text */
+  @Prop({ reflect: true }) hideLabel = false;
+  /** (optional) info text */
+  @Prop() infoText?: string;
 
   /** Emitted when the rating has changed */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
+  componentWillRender() {
+    // make sure the deprecated props overwrite the actual ones if used
+    // and show status note deprecated
+    if (this.maxRating !== 5) {
+      this.max = this.maxRating;
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "maxRating" is deprecated. Please use the "max" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
+    if (this.minRating !== 0) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "minRating" is deprecated and will be deleted upon the next release',
+        type: 'warn',
+        source: this.host,
+      });
+    }
+    if (this.starSize !== 'large') {
+      this.size = this.starSize;
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "starSize" is deprecated. Please use the "size" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
+    // deactivate showing half stars while keeping the code
+    this.rating = Math.round(this.rating);
+  }
+
   // constructs the aria message for the current rating
   getRatingText() {
     const filledText = this.ariaLabelTranslation
       .replace(/\$rating/g, `${this.rating}`)
-      .replace(/\$maxRating/g, `${this.maxRating}`);
+      // TODO: remove when `maxRating` is also being removed
+      .replace(/\$maxRating/g, `${this.max}`)
+      .replace(/\$max/g, `${this.max}`);
     return filledText;
   }
 
@@ -81,8 +128,8 @@ export class RatingStars {
         input.value = this.minRating.toString();
         break;
 
-      case value > this.maxRating:
-        input.value = this.maxRating.toString();
+      case value > this.max:
+        input.value = this.max.toString();
         break;
     }
 
@@ -108,7 +155,7 @@ export class RatingStars {
   };
 
   renderStar(index: number, selected = false, rating: number) {
-    const size = sizes[this.starSize];
+    const size = sizes[this.size];
     const isWholeNumber = rating % 1 === 0;
     const isLastNumber = Math.ceil(rating) === index;
 
@@ -137,7 +184,7 @@ export class RatingStars {
   renderRating() {
     const stars = [];
     const roundedRating = Math.ceil(this.rating);
-    const max = this.maxRating;
+    const max = this.max;
 
     for (let index = 1; index <= max; index++) {
       const isSelected = roundedRating >= index;
@@ -148,44 +195,55 @@ export class RatingStars {
 
   render() {
     return (
-      <Host>
+      <Host
+        class={{
+          hideLabel: this.hideLabel,
+          disabled: this.disabled,
+          readonly: this.readonly,
+        }}
+      >
         <div part="container">
-          {this.label && (
-            <label
-              id={`${this.ratingStarId}-label`}
-              part="label"
-              htmlFor={this.ratingStarId}
-            >
-              {this.label}
-            </label>
-          )}
-
-          <div
-            part="wrapper"
-            tabIndex={this.readonly ? 0 : -1}
-            role="figure"
-            aria-labeledby={`${this.ratingStarId}-label`}
-            aria-valuetext={this.getRatingText()}
-            aria-orientation="horizontal"
+          <label
+            id={`${this.ratingStarId}-label`}
+            part="label"
+            htmlFor={this.ratingStarId}
           >
-            <input
-              disabled={this.disabled}
-              readonly={this.readonly}
-              part="range-slider"
-              type="range"
-              id={this.ratingStarId}
-              min={0}
-              max={this.maxRating + 1}
-              value={this.rating}
-              step="1"
-              aria-orientation="horizontal"
-              aria-valuemin={this.minRating}
-              aria-valuemax={this.maxRating}
-              aria-valuenow={this.rating}
+            {this.label}
+          </label>
+          <div part="content">
+            <div
+              part="wrapper"
               aria-valuetext={this.getRatingText()}
-              onInput={!this.readonly && this.handleInput}
-            />
-            {this.renderRating()}
+              aria-orientation="horizontal"
+              aria-describedby={
+                this.infoText ? `${this.ratingStarId}-infotext` : false
+              }
+            >
+              <input
+                disabled={this.disabled}
+                readonly={this.readonly}
+                part="range-slider"
+                type={this.readonly ? 'number' : 'range'}
+                id={this.ratingStarId}
+                min={0}
+                max={this.max + 1}
+                value={this.rating}
+                step="1"
+                aria-labelledby={`${this.ratingStarId}-label`}
+                aria-readonly={this.readonly ? 'true' : false}
+                aria-valuemin={this.minRating}
+                aria-valuemax={this.max}
+                aria-valuenow={this.rating}
+                aria-valuetext={this.getRatingText()}
+                onInput={!this.readonly && this.handleInput}
+              />
+              {this.renderRating()}
+            </div>
+            {this.infoText && (
+              <div part="infotext" id={`${this.ratingStarId}-infotext`}>
+                {this.infoText}
+              </div>
+            )}
           </div>
         </div>
       </Host>

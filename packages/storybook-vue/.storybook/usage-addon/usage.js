@@ -15,8 +15,8 @@ import { Description } from '@storybook/addon-docs/blocks';
 import { useStorybookState, useGlobals } from '@storybook/api';
 import accordion_en from 'raw-loader!../../stories/3_components/accordion/accordion.md';
 import accordion_de from 'raw-loader!../../stories/3_components/accordion/accordion_de.md';
-import brandHeader_en from 'raw-loader!../../stories/3_components/brand-header/brand-header.md';
-import brandHeader_de from 'raw-loader!../../stories/3_components/brand-header/brand-header_de.md';
+import brandHeader_en from 'raw-loader!../../stories/3_components/brand-header-navigation/brand-header.md';
+import brandHeader_de from 'raw-loader!../../stories/3_components/brand-header-navigation/brand-header_de.md';
 import breadcrumb_en from 'raw-loader!../../stories/3_components/breadcrumb/breadcrumb.md';
 import breadcrumb_de from 'raw-loader!../../stories/3_components/breadcrumb/breadcrumb_de.md';
 import button_en from 'raw-loader!../../stories/3_components/button/button.md';
@@ -43,10 +43,12 @@ import loadingSpinner_en from 'raw-loader!../../stories/3_components/loading-spi
 import loadingSpinner_de from 'raw-loader!../../stories/3_components/loading-spinner/loading-spinner_de.md';
 import list_en from 'raw-loader!../../stories/3_components/list/list.md';
 import list_de from 'raw-loader!../../stories/3_components/list/list_de.md';
-import menuFlyout_en from 'raw-loader!../../stories/3_components/menu-flyout/menu-flyout.md';
-import menuFlyout_de from 'raw-loader!../../stories/3_components/menu-flyout/menu-flyout_de.md';
+import menuFlyout_en from 'raw-loader!../../stories/3_components/flyout-menu/menu-flyout.md';
+import menuFlyout_de from 'raw-loader!../../stories/3_components/flyout-menu/menu-flyout_de.md';
 import modal_en from 'raw-loader!../../stories/3_components/modal/modal.md';
 import modal_de from 'raw-loader!../../stories/3_components/modal/modal_de.md';
+import notificationMessage_de from 'raw-loader!../../stories/3_components/notification-message/notification-message_de.md';
+import notificationMessage_en from 'raw-loader!../../stories/3_components/notification-message/notification-message.md';
 import pagination_en from 'raw-loader!../../stories/3_components/pagination/pagination.md';
 import pagination_de from 'raw-loader!../../stories/3_components/pagination/pagination_de.md';
 import progressBar_en from 'raw-loader!../../stories/3_components/progress-bar/progress-bar.md';
@@ -59,8 +61,8 @@ import radioButtonGroup_de from 'raw-loader!../../stories/3_components/radio-but
 import radioButtonGroup_en from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group.md';
 import dropdown_en from 'raw-loader!../../stories/3_components/dropdown/dropdown.md';
 import dropdown_de from 'raw-loader!../../stories/3_components/dropdown/dropdown_de.md';
-import sidebarNav_en from 'raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav.md';
-import sidebarNav_de from 'raw-loader!../../stories/3_components/sidebar-nav/sidebar-nav_de.md';
+import sidebarNav_en from 'raw-loader!../../stories/3_components/sidebar-navigation/sidebar-nav.md';
+import sidebarNav_de from 'raw-loader!../../stories/3_components/sidebar-navigation/sidebar-nav_de.md';
 import slider_en from 'raw-loader!../../stories/3_components/slider/slider.md';
 import slider_de from 'raw-loader!../../stories/3_components/slider/slider_de.md';
 import switchMarkdown_en from 'raw-loader!../../stories/3_components/switch/switch.md';
@@ -77,10 +79,12 @@ import textField_en from 'raw-loader!../../stories/3_components/text-field/text-
 import textField_de from 'raw-loader!../../stories/3_components/text-field/text-field_de.md';
 import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
+import callout_en from 'raw-loader!../../stories/3_components/callout/callout.md';
+import callout_de from 'raw-loader!../../stories/3_components/callout/callout_de.md';
+import toggleGroup_de from 'raw-loader!../../stories/3_components/toggle-group/toggle-group_de.md';
+import toggleGroup_en from 'raw-loader!../../stories/3_components/toggle-group/toggle-group.md';
 import tooltip_en from 'raw-loader!../../stories/3_components/tooltip/tooltip.md';
 import tooltip_de from 'raw-loader!../../stories/3_components/tooltip/tooltip_de.md';
-import badge_de from 'raw-loader!../../stories/3_components/badge/badge_de.md';
-import badge_en from 'raw-loader!../../stories/3_components/badge/badge.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -119,8 +123,8 @@ const Usage = (props) => {
     'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
-    badge_en,
-    badge_de,
+    callout_en,
+    callout_de,
     'data-grid_en': datagrid_en,
     'data-grid_de': datagrid_de,
     'date-picker_en': date_picker_en,
@@ -141,6 +145,8 @@ const Usage = (props) => {
     'flyout-menu_de': menuFlyout_de,
     modal_en,
     modal_de,
+    'notification-message_en': notificationMessage_en,
+    'notification-message_de': notificationMessage_de,
     pagination_en,
     pagination_de,
     'progress-bar_en': progressBar_en,
@@ -171,8 +177,10 @@ const Usage = (props) => {
     'text-field_de': textField_de,
     footer_en,
     footer_de,
+    'toggle-group_en': toggleGroup_en,
+    'toggle-group_de': toggleGroup_de,
     tooltip_en,
-    tooltip_de
+    tooltip_de,
   };
 
   // Select the most appropriate markdown text based on if this is a component story and

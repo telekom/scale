@@ -9,7 +9,7 @@ import ScaleRadioButtonGroup from './ScaleRadioButtonGroup.vue';
 import { action } from '@storybook/addon-actions';
 
 <Meta
-  title="Beta Components/Radio Button Group"
+  title="Components/Radio Button Group"
   component={ScaleRadioButtonGroup}
   argTypes={{}}
 />
@@ -28,7 +28,7 @@ export const StandardTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-radio-button-group :label="label" :status="status" :helper-text="helperText">
+    <scale-radio-button-group :label="label" :invalid="invalid" :helper-text="helperText">
       <scale-radio-button
         value="1"
         label="Radio Button"
@@ -61,7 +61,7 @@ export const HelperTextTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-radio-button-group :label="label" :status="status" :helper-text="helperText">
+    <scale-radio-button-group :label="label" :invalid="invalid" :helper-text="helperText">
       <scale-radio-button
         value="1"
         label="Radio Button"
@@ -94,9 +94,9 @@ export const ErrorTemplate = (args, { argTypes }) => ({
   },
   template: `
     <div :style="wrapperStyles">
-    <scale-radio-button-group :label="label" :status="status" :helper-text="helperText">
+    <scale-radio-button-group :label="label" :invalid="invalid" :helper-text="helperText">
       <scale-radio-button
-        status="error"
+        invalid="true"
         value="1"
         label="Radio Button"
         name="radioButtonError"
@@ -104,7 +104,7 @@ export const ErrorTemplate = (args, { argTypes }) => ({
         input-id="choiceErrorOne"
       ></scale-radio-button>
       <scale-radio-button
-        status="error"
+        invalid="true"
         value="2"
         label="Radio Button"
         name="radioButtonError"
@@ -187,7 +187,7 @@ export const ErrorTemplate = (args, { argTypes }) => ({
     name="Error"
     args={{
       label: 'RadioButton Group',
-      status: 'error',
+      invalid: true,
       helperText: 'Error message',
     }}
   >
@@ -198,11 +198,11 @@ export const ErrorTemplate = (args, { argTypes }) => ({
 ```html
 <scale-radio-button-group
   label="RadioButton Group"
-  status="error"
+  invalid="true"
   helper-text="Error message"
 >
   <scale-radio-button
-    status="error"
+    invalid="true"
     value="1"
     label="Radio Button"
     name="radioButtonError"
@@ -210,7 +210,7 @@ export const ErrorTemplate = (args, { argTypes }) => ({
     input-id="choiceErrorOne"
   ></scale-radio-button>
   <scale-radio-button
-    status="error"
+    invalid="true"
     value="2"
     label="Radio Button"
     name="radioButtonError"
