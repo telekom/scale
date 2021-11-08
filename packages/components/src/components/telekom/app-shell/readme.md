@@ -51,6 +51,7 @@ graph TD;
   scale-app-header --> app-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
+  scale-nav-icon --> scale-notification-badge
   scale-nav-icon --> scale-icon
   app-navigation-user-menu --> scale-button
   app-navigation-user-menu --> scale-icon
