@@ -110,6 +110,11 @@
     "de": "Migration Guide v2"
   },
   {
+    "elementSelector": "#scale-for-developers-deprecation-notices--page",
+    "en": "Deprecation Notices",
+    "de": "Hinweise zu Auslaufendem"
+  },
+  {
     "elementSelector": "#components",
     "en": "Components",
     "de": "Komponenten"
