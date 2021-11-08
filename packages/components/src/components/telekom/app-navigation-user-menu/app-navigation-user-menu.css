@@ -1,0 +1,104 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --border-width-divider: var(--scl-spacing-1);
+  --color-divider: var(--scl-color-grey-20);
+  --color-menu-item-hover: var(--scl-color-primary-hover);
+  --color-menu-item-active: var(--scl-color-primary-active);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+}
+
+.app-navigation-user-menu {
+  width: 100%;
+  position: relative;
+  min-width: 260px;
+}
+
+.app-navigation-user-menu__divider {
+  margin: var(--scl-spacing-16) 0;
+  border: 0;
+  border-top: var(--border-width-divider) solid var(--color-divider);
+}
+
+@media (min-width: 1024px) {
+  .app-navigation-user-menu__user-info {
+    margin: var(--scl-spacing-12) var(--scl-spacing-24) 0 var(--scl-spacing-24);
+  }
+}
+
+@media (max-width: 1023px) {
+  .app-navigation-user-menu__user-info {
+    margin: var(--scl-spacing-24) var(--scl-spacing-16) 0 var(--scl-spacing-16);
+  }
+}
+
+.app-navigation-user-menu__user-info--name {
+  font-size: var(--scl-font-variant-heading-5-size);
+  line-height: var(--scl-font-variant-heading-5-line-height);
+  font-weight: var(--scl-font-variant-heading-5-weight);
+  margin-bottom: var(--scl-spacing-4);
+}
+.app-navigation-user-menu__user-info--email {
+  color: var(--scl-color-text-additional);
+}
+
+.app-navigation-user-menu__item {
+  display: flex;
+  font-size: var(--scl-font-variant-heading-6-size);
+  line-height: var(--scl-font-variant-heading-6-line-height);
+  font-weight: var(--scl-font-variant-heading-6-weight);
+  padding: var(--scl-spacing-8) var(--scl-spacing-16);
+  border-radius: var(--scl-spacing-2);
+  color: var(--scl-color-text-standard);
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .app-navigation-user-menu__item {
+    padding: var(--scl-spacing-8) var(--scl-spacing-24);
+  }
+}
+
+.app-navigation-user-menu__item:hover {
+  color: var(--color-menu-item-hover);
+}
+
+.app-navigation-user-menu__item:active {
+  color: var(--color-menu-item-active);
+}
+
+.app-navigation-user-menu__item:focus {
+  outline: none;
+  box-shadow: var(--box-shadow-focus);
+}
+
+.app-navigation-user-menu__item--icon-prefix {
+  margin-right: var(--scl-spacing-8);
+}
+.app-navigation-user-menu__item--icon-suffix {
+  margin-left: var(--scl-spacing-8);
+}
+
+.app-navigation-user-menu__button {
+  padding: var(--scl-spacing-8) var(--scl-spacing-16);
+}
+
+@media (min-width: 1024px) {
+  .app-navigation-user-menu__button {
+    padding: var(--scl-spacing-8) var(--scl-spacing-24);
+  }
+}
+@media (min-width: 1024px) {
+  .app-navigation-user-menu {
+    padding-bottom: var(--scl-spacing-4);
+  }
+}
