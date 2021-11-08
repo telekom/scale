@@ -275,9 +275,9 @@ export class Header {
     const { defaultName, openedName } = readData(this.iconNavigation).find(
       ({ id }) => id === 'menu'
     ) || { defaultName: 'Menu', openedName: 'Close' };
-    const { shortName = 'Login' } = readData(this.userNavigation).find(
-      ({ type }) => type === 'userInfo'
-    ) || {
+    const { shortName = 'Login', badge, badgeLabel } = readData(
+      this.userNavigation
+    ).find(({ type }) => type === 'userInfo') || {
       shortName: 'Login',
     };
 
@@ -292,6 +292,8 @@ export class Header {
               <scale-nav-icon
                 icon={item.icon}
                 href={item.href}
+                badge={item.badge}
+                badgeLabel={item.badgeLabel}
                 clickLink={(event) => {
                   if (typeof item.onClick === 'function') {
                     item.onClick(event);
@@ -312,6 +314,8 @@ export class Header {
                   active={this.userMenu}
                   icon={'user-file-user'}
                   refUserMenuToggle={(el) => (this.userMenuToggle = el)}
+                  badge={badge}
+                  badgeLabel={badgeLabel}
                 >
                   {shortName}
                 </scale-nav-icon>
@@ -338,6 +342,8 @@ export class Header {
                   this.mobileMenu = false;
                   this.userMenuMobile = !this.userMenuMobile;
                 }}
+                badge={badge}
+                badgeLabel={badgeLabel}
               >
                 {shortName}
               </scale-nav-icon>
