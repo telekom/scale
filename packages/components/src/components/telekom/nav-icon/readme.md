@@ -7,16 +7,18 @@
 
 ## Properties
 
-| Property              | Attribute                | Description                       | Type      | Default                 |
-| --------------------- | ------------------------ | --------------------------------- | --------- | ----------------------- |
-| `active`              | `active`                 |                                   | `boolean` | `undefined`             |
-| `clickLink`           | `click-link`             |                                   | `any`     | `undefined`             |
-| `href`                | `href`                   | (optional) href value             | `string`  | `'javascript:void(0);'` |
-| `icon`                | `icon`                   |                                   | `string`  | `undefined`             |
-| `isActive`            | `is-active`              | (optional) if this item is active | `boolean` | `undefined`             |
-| `isMobileMenuOpen`    | `is-mobile-menu-open`    |                                   | `boolean` | `false`                 |
-| `mobileMenuOpen`      | `mobile-menu-open`       |                                   | `boolean` | `false`                 |
-| `refMobileMenuToggle` | `ref-mobile-menu-toggle` |                                   | `any`     | `undefined`             |
+| Property                  | Attribute                     | Description                       | Type      | Default                 |
+| ------------------------- | ----------------------------- | --------------------------------- | --------- | ----------------------- |
+| `active`                  | `active`                      |                                   | `boolean` | `undefined`             |
+| `clickLink`               | `click-link`                  |                                   | `any`     | `undefined`             |
+| `href`                    | `href`                        | (optional) href value             | `string`  | `'javascript:void(0);'` |
+| `icon`                    | `icon`                        |                                   | `string`  | `undefined`             |
+| `isActive`                | `is-active`                   | (optional) if this item is active | `boolean` | `undefined`             |
+| `isMobileMenuOpen`        | `is-mobile-menu-open`         |                                   | `boolean` | `false`                 |
+| `mobileMenuOpen`          | `mobile-menu-open`            |                                   | `boolean` | `false`                 |
+| `refMobileMenuToggle`     | `ref-mobile-menu-toggle`      |                                   | `any`     | `undefined`             |
+| `refMobileUserMenuToggle` | `ref-mobile-user-menu-toggle` |                                   | `any`     | `undefined`             |
+| `refUserMenuToggle`       | `ref-user-menu-toggle`        |                                   | `any`     | `undefined`             |
 
 
 ## Dependencies

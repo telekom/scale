@@ -38,11 +38,13 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-data-grid](../data-grid)
 
 ### Graph
 ```mermaid
 graph TD;
+  app-navigation-user-menu --> scale-button
   scale-data-grid --> scale-button
   style scale-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

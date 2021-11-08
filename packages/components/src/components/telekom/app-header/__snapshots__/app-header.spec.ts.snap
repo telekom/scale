@@ -51,6 +51,9 @@ exports[`app-Header snapshots hasSlots 1`] = `
       <nav aria-label="main" class="header__nav__mobile-menu">
         <div slot="menu-mobile"></div>
       </nav>
+      <nav aria-label="main" class="header__nav__mobile-menu">
+        <div></div>
+      </nav>
     </div>
   </header>
 </scale-app-header>
@@ -98,6 +101,9 @@ exports[`app-Header snapshots smoke test 1`] = `
           <app-navigation-sector-mobile></app-navigation-sector-mobile>
           <app-navigation-main-mobile></app-navigation-main-mobile>
         </div>
+      </nav>
+      <nav aria-label="main" class="header__nav__mobile-menu">
+        <div></div>
       </nav>
     </div>
   </header>

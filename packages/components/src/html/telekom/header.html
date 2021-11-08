@@ -399,18 +399,63 @@ width: 100%; */
           icon: 'action-shopping-cart',
         },
         {
-          name: 'Login',
-          id: 'Login',
-          href: '#login',
-          onClick: () => {
-            app.activeRouteId = 'Login';
-          },
-          icon: 'user-file-user',
-        },
-        {
           id: 'menu',
           defaultName: 'Menü',
           openedName: 'Schließen',
+        },
+      ];
+      app.userNavigation = [
+        {
+          type: 'userInfo',
+          shortName: 'Alexander',
+          name: 'Alexander Dreyer',
+          email: 'alexander.dreyer@t-online.de',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          type: 'item',
+          name: 'Customer Care',
+          id: 'customer-care',
+          href: '#customer-care',
+          onClick: () => {},
+          icon: 'action-shopping-cart',
+        },
+        {
+          type: 'item',
+          name: 'Login Settings',
+          id: 'login-settings',
+          href: '#login-settings',
+          onClick: () => {},
+          icon: 'action-shopping-cart',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          type: 'item',
+          name: 'Optional Link',
+          id: 'optional-link',
+          href: '#optional-link',
+          onClick: () => {},
+          icon: 'action-shopping-cart',
+          iconPosition: 'suffix',
+        },
+        {
+          type: 'divider',
+        },
+        {
+          type: 'button',
+          name: 'Logout',
+          id: 'logout',
+          href: '#logout',
+          onClick: () => {
+            console.log('button click');
+          },
+          icon: 'action-shopping-cart',
+          iconPosition: 'suffix',
+          variant: 'primary',
         },
       ];
       app.sectorNavigation = [
