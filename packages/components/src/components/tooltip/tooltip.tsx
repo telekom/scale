@@ -50,27 +50,27 @@ export class Tooltip {
   @Prop() distance = 5;
   /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
-  /** (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either on an x-axis (at `placement` top/down)
-  or on a y-axis (for output `placement` left/right) */
+  /** (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either
+   * on an x-axis (at `placement` top/down) or on a y-axis (for output `placement` left/right)
+   */
   @Prop() skidding = 0;
   /** (optional) Set custom trigger Event selection */
   @Prop() trigger: string = 'hover focus';
-  /** (optional) Switching the flip option of the tooltip on and off*/
+  /** (optional) Switching the flip option of the tooltip on and off */
   @Prop() flip: boolean = true;
-  /** (optional) Switching the preventOverflow option of the tooltip on and off*/
+  /** (optional) Switching the preventOverflow option of the tooltip on and off */
   @Prop() preventOverflow: boolean = false;
-
   @State() mouseOverTooltip: boolean = false;
-
-  @Watch('open')
-  handleOpenChange() {
-    this.open ? this.showTooltip() : this.hideTooltip();
-  }
 
   @Event({ eventName: 'scale-before-show' }) tooltipBeforeShow: EventEmitter;
   @Event({ eventName: 'scale-show' }) tooltipShow: EventEmitter;
   @Event({ eventName: 'scale-before-hide' }) tooltipBeforeHide: EventEmitter;
   @Event({ eventName: 'scale-hide' }) tooltipHide: EventEmitter;
+
+  @Watch('open')
+  handleOpenChange() {
+    this.open ? this.showTooltip() : this.hideTooltip();
+  }
 
   connectedCallback() {
     this.handleBlur = this.handleBlur.bind(this);
