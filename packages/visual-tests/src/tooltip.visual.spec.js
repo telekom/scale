@@ -22,7 +22,6 @@ describe.only('Tooltip', () => {
       'document.querySelector("#root > div > scale-tooltip > scale-button")'
     );
     await button.hover();
-    await page.waitFor(2000);
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
