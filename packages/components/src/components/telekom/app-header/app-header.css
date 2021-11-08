@@ -19,7 +19,7 @@ scale-app-header {
 
   --background: var(--scl-color-primary);
   --font-weight: var(--scl-font-weight-regular);
-  --border: 1px solid #dfdfdf;
+  --border: 1px solid var(--scl-color-grey-10);
 
   --color-brand: var(--scl-color-white);
   --background-brand: var(--scl-color-primary);
