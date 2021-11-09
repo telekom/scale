@@ -13,7 +13,7 @@
 
 :host {
   display: block;
-  --color: var(--scl-color-grey-20);
+  --color: var(--scl-color-grey-10);
 }
 
 .menu-flyout-divider {

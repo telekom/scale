@@ -26,7 +26,7 @@ import { renderIcon } from '../../../utils/render-icon';
   styleUrl: 'app-navigation-user-menu.css',
   shadow: true,
 })
-export class MainNavigationMobile {
+export class AppNavigationUserMenu {
   @Element() hostElement: HTMLElement;
   @Prop() hide: () => void;
   @Prop() navigation: any;
