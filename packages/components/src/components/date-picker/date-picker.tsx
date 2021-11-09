@@ -22,6 +22,7 @@ import {
   Host,
 } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
+import statusNote from '../../utils/status-note';
 
 import {
   DuetDatePickerChangeEvent,
@@ -31,7 +32,6 @@ import {
 } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
 import classNames from 'classnames';
 import { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
-import statusNote from '../../utils/status-note';
 import { emitEvent } from '../../utils/utils';
 
 let i = 0;
@@ -50,7 +50,7 @@ if (
   styleUrl: 'date-picker.css',
 })
 export class DatePicker {
-  duetInput: DuetDatePicker;
+  duetInput: DuetDatePicker & HTMLElement;
 
   @Element() hostElement: HTMLElement;
   /**
@@ -58,15 +58,13 @@ export class DatePicker {
    */
   @Prop() name: string = 'date';
 
-  /**
-   * Name of the date picker input.
-   */
+  /** @deprecated in v3 in favor of localization.calendarHeading */
   @Prop() popupTitle: string = 'Pick a date';
 
   /**
    * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
    */
-  @Prop() identifier: string;
+  @Prop({ mutable: true }) identifier: string;
 
   /**
    * Makes the date picker input component disabled. This prevents users from being able to
@@ -94,7 +92,7 @@ export class DatePicker {
   /**
    * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
    */
-  @Prop({ reflect: true }) value: string = '';
+  @Prop({ reflect: true, mutable: true }) value: string = '';
 
   /**
    * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.
@@ -118,7 +116,9 @@ export class DatePicker {
    * Button labels, day names, month names, etc, used for localization.
    * Default is English.
    */
-  @Prop() localization?: DuetLocalizedText;
+  @Prop() localization?: DuetLocalizedText & {
+    today: string;
+  };
 
   /**
    * Date adapter, for custom parsing/formatting.
@@ -131,8 +131,11 @@ export class DatePicker {
   /** (optional) Helper text */
   @Prop() helperText?: string = '';
 
-  /** (optional) Status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+
+  /** (optional) invalid status */
+  @Prop() invalid?: boolean;
 
   /** (optional) Label */
   @Prop() label: string = '';
@@ -185,6 +188,8 @@ export class DatePicker {
 
   private helperTextId = `helper-message-${i}`;
 
+  private mo: MutationObserver;
+
   /**
    * Public methods API
    */
@@ -217,9 +222,21 @@ export class DatePicker {
   @Watch('value')
   onValueChange() {
     this.hasValue = this.value != null && this.value !== '';
+    // @ts-ignore
+    this.duetInput.querySelector('.duet-date__input').value = this.value;
   }
 
   componentWillLoad() {
+    if (this.popupTitle !== 'Pick a date') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "popupTitle" is deprecate in favor of localization.calendarHeading.',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+
     this.handleKeyPress = this.handleKeyPress.bind(this);
     if (this.identifier == null) {
       this.identifier = 'scale-date-picker-' + i++;
@@ -227,17 +244,45 @@ export class DatePicker {
   }
 
   componentDidLoad() {
-    const icon = this.duetInput
-      // @ts-ignore
-      .querySelector('.duet-date__toggle-icon');
+    const calendarIcon = this.duetInput.querySelector(
+      '.duet-date__toggle-icon'
+    );
 
-    if (icon) {
-      icon.replaceWith(document.createElement('scale-icon-content-calendar'));
+    if (calendarIcon) {
+      calendarIcon.replaceWith(
+        document.createElement('scale-icon-content-calendar')
+      );
     }
 
-    const input = this.duetInput
-      // @ts-ignore
-      .querySelector('.duet-date__input');
+    const navLeftIcon = this.duetInput.querySelector('.duet-date__prev svg');
+
+    if (navLeftIcon) {
+      navLeftIcon.replaceWith(
+        document.createElement('scale-icon-navigation-left')
+      );
+    }
+
+    const navRightIcon = this.duetInput.querySelector('.duet-date__next svg');
+
+    if (navRightIcon) {
+      navRightIcon.replaceWith(
+        document.createElement('scale-icon-navigation-right')
+      );
+    }
+
+    const selectIcon = this.duetInput.querySelectorAll(
+      '.duet-date__select-label svg'
+    );
+
+    if (selectIcon) {
+      Array.from(selectIcon).forEach((icon: SVGElement) =>
+        icon.replaceWith(
+          document.createElement('scale-icon-navigation-collapse-down')
+        )
+      );
+    }
+
+    const input = this.duetInput.querySelector('.duet-date__input');
 
     if (input) {
       input.addEventListener('keyup', this.handleKeyPress);
@@ -247,43 +292,111 @@ export class DatePicker {
       input.setAttribute('aria-describedby', this.helperTextId);
     }
 
-    if (input && this.status === 'error') {
+    if (input && (this.status === 'error' || this.invalid)) {
       input.setAttribute('aria-invalid', 'true');
     }
 
-    const dialog = this.hostElement.querySelector('.duet-date__dialog-content');
+    // Remove existing <h2> with `{Month} {Year}` text
+    const dialog = this.hostElement.querySelector('.duet-date__dialog');
+    let duetHeadingId: string = '';
     if (dialog) {
+      duetHeadingId = dialog.getAttribute('aria-labelledby');
+      if (duetHeadingId) {
+        const duetHeading = this.hostElement.querySelector(`#${duetHeadingId}`);
+        if (duetHeading) {
+          duetHeading.parentElement.removeChild(duetHeading);
+        }
+      }
+    }
+
+    // Add custom <h2> heading
+    const dialogContent = this.hostElement.querySelector(
+      '.duet-date__dialog-content'
+    );
+    if (dialogContent) {
+      const calendarHeading =
+        this.localization?.calendarHeading || this.popupTitle || 'Pick a date';
       const heading = document.createElement('h2');
+      heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
       heading.className = 'scale-date-picker__popup-heading';
-      heading.innerHTML = this.popupTitle;
-      dialog.insertBefore(heading, dialog.firstChild);
+      heading.innerHTML = calendarHeading;
+      dialogContent.insertBefore(heading, dialogContent.firstChild);
+    }
+
+    // truncate table headings to a single character
+    const tableHeadings = this.hostElement.querySelectorAll(
+      '.duet-date__table-header span[aria-hidden="true"]'
+    );
+    if (tableHeadings) {
+      Array.from(tableHeadings).forEach(
+        (item) => (item.innerHTML = item.innerHTML[0])
+      );
     }
 
     const today = this.hostElement.querySelector(
       '.duet-date__day.is-today span.duet-date__vhidden'
     );
-
     if (today) {
-      today.innerHTML = `${today.innerHTML}, today`;
+      today.innerHTML = `${today.innerHTML}, ${
+        this.localization?.today || 'today'
+      }`;
+    }
+
+    this.adjustButtonsLabelsForA11y();
+  }
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
     }
   }
 
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
-  }
+  /**
+   * Fix JAWS reading the day twice, e.g. "19 19. August"
+   * It'd probably make sense to open a PR in duetds/date-picker
+   * https://github.com/duetds/date-picker/blob/master/src/components/duet-date-picker/date-picker-day.tsx#L61
+   */
+  adjustButtonsLabelsForA11y = () => {
+    const table = this.hostElement.querySelector('.duet-date__table');
+    const options = { subtree: true, childList: true, attributes: true };
+    const callback = () => {
+      this.mo.disconnect(); // avoid a feedback loop
+      const buttons = Array.from(
+        this.hostElement.querySelectorAll('.duet-date__day')
+      );
+      buttons.forEach((button) => {
+        const span = button.querySelector('.duet-date__vhidden');
+        const text = span.textContent;
+        button.setAttribute('aria-label', text);
+        span.setAttribute('hidden', 'hidden');
+      });
+      this.mo.observe(table, options);
+    };
+    this.mo = new MutationObserver(callback);
+    callback();
+  };
 
   disconnectedCallback() {
-    const input = this.duetInput
-      // @ts-ignore
-      .querySelector('.duet-date__input');
+    const input = this.duetInput.querySelector('.duet-date__input');
 
     if (input) {
       input.removeEventListener('keyup', this.handleKeyPress);
+    }
+
+    if (this.mo) {
+      this.mo.disconnect();
     }
   }
 
   handleKeyPress(e) {
     this.hasValue = e.target.value != null && e.target.value !== '';
+    this.value = e.target.value;
   }
 
   render() {
@@ -294,6 +407,7 @@ export class DatePicker {
           class={classNames(
             'scale-date-picker',
             this.status && `scale-date-picker--status-${this.status}`,
+            this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
             this.size && `scale-date-picker--size-${this.size}`,
@@ -328,8 +442,9 @@ export class DatePicker {
             dateAdapter={this.dateAdapter}
             disabled={this.disabled}
             value={this.value}
-            // @ts-ignore
-            ref={(element) => (this.duetInput = element)}
+            ref={(element: HTMLElement & DuetDatePicker) =>
+              (this.duetInput = element)
+            }
           ></duet-date-picker>
           {!!this.helperText && (
             <div

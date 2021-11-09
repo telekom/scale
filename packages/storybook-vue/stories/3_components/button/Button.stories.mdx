@@ -19,7 +19,7 @@ import ScaleButton from "./ScaleButton.vue";
             control: { type: 'boolean' }
         },
         download: {
-            control: { type: 'boolean' }
+            control: { type: 'text' }
         }
     }}
 />
@@ -33,7 +33,6 @@ export const Template = (args, { argTypes }) => ({
     },
     template: `
     <scale-button
-      :title="title"
       :disabled="disabled"
       :size="size"
       :href="href"
@@ -43,14 +42,14 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant"
       :icon-position="icon === 'after' ? 'after' : 'before'"
       :icon-only="iconOnly"
-      :aria-label="ariaLabel"
+      :inner-tabindex="innerTabindex"
       :styles="styles"
       @click="action('clicked')"
     >
       <scale-icon-action-search v-if="icon === 'before'" :size="size == 'small' ? 16 : 24" />
       {{ iconOnly !== true ? label : null }}
-      <scale-icon-action-add v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
-      <scale-icon-navigation-right v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-action-add accessibility-title="Add" v-if="iconOnly" :size="size == 'small' ? 16 : 24" />
+      <scale-icon-navigation-right accessibility-title="Next" v-if="icon === 'after'" :size="size == 'small' ? 16 : 24" />
       <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" :size="size == 'small' ? 16 : 24" />
     </scale-button>
   `
@@ -223,9 +222,7 @@ For Shadow Parts, please inspect the element's #shadow.
     <Story
         name='Icon Only'
         args={{
-            iconOnly: true,
-            title: 'Search',
-            ariaLabel: 'Search'
+            iconOnly: true
         }}
     >
         {Template.bind({})}
@@ -264,7 +261,7 @@ For Shadow Parts, please inspect the element's #shadow.
         name='Link Download'
         args={{
             href: 'assets/welcome.png',
-            download: true,
+            download: 'welcome.png',
             label: 'Download'
         }}
     >
@@ -273,7 +270,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-button href="assets/welcome.png" download>Download</scale-button>
+<scale-button href="assets/welcome.png" download="welcome.png">Download</scale-button>
 ```
 
 ## External Link
@@ -297,9 +294,9 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 </Canvas>
 
 ```html
-<scale-button href="https://example.com" target="_blank" title="External link, opens in new tab">
+<scale-button href="https://example.com" target="_blank">
   External link, opens in new tab
-  <scale-icon-navigation-external-link size="24"></scale-icon-navigation-external-link>
+  <scale-icon-navigation-external-link accesibility-title="External link, opens in new tab" size="24"></scale-icon-navigation-external-link>
 </scale-button>
 ```
 
@@ -424,9 +421,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
         name='Small Icon Only'
         args={{
             size: 'small',
-            iconOnly: true,
-            title: 'Search',
-            ariaLabel: 'Search'
+            iconOnly: true
         }}
     >
         {Template.bind({})}
@@ -466,7 +461,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
         args={{
             size: 'small',
             href: 'assets/welcome.png',
-            download: true,
+            download: "welcome.png",
             label: 'Download'
         }}
     >
@@ -475,5 +470,5 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 </Canvas>
 
 ```html
-<scale-button size="small" href="assets/welcome.png" download>Download</scale-button>
+<scale-button size="small" href="assets/welcome.png" download="welcome.png">Download</scale-button>
 ```

@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Date Picker</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Der Date Picker ermöglicht die einfache Auswahl eines Datums oder einer Zeitspanne.
@@ -30,19 +30,15 @@ Eine Kalenderansicht zeigt vergangene, aktuelle und zukünftige Zeiten an.
 
 #### Input-Feld (1)
 
-Das Input-Feld ist das wesentliche Element des Date Pickers. Per Klick/Tap oder Fokus öffnet sich das Fly-Out.
+Das Input-Feld ist das wesentliche Element des Date Pickers. Per Klick/Tap oder Fokus öffnet sich das Flyout.
 
 #### Monats-/Jahres-Dropdowns (2)
 
-Die Nutzer\*innen können über die Dropdowns am oberen Rand des Fly-Outs den gewünschten Monat und das Jahr auswählen.
+Die Nutzer\*innen können über die Dropdowns am oberen Rand des Flyouts den gewünschten Monat und das Jahr auswählen.
 
 #### Monatskalender (3)
 
 In Monatskalender stehen die Tage des angezeigten Monats zur Auswahl.
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
 ## Verwandte Komponenten
 

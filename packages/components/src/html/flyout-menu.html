@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Flyout Menu a11y</h1>
+
+    <!-- <scale-menu-flyout-list>
+      <scale-menu-flyout-item>Item Title</scale-menu-flyout-item>
+      <scale-menu-flyout-item>Really Quite Long</scale-menu-flyout-item>
+      <scale-menu-flyout-item>Item With Suffix<span slot="suffix">⌘F</span></scale-menu-flyout-item>
+      <scale-menu-flyout-item ccascade>Item With Cascade </scale-menu-flyout-item>
+      <scale-menu-flyout-item><scale-icon-action-edit slot="prefix"></scale-icon-action-edit>Customprefix</scale-menu-flyout-item>
+      <scale-menu-flyout-divider></scale-menu-flyout-divider>
+      <scale-menu-flyout-item checked="true">Checked True</scale-menu-flyout-item>
+      <scale-menu-flyout-item checked="false">Checked False</scale-menu-flyout-item>
+      <scale-menu-flyout-item disabled>Disabled Large Suffix<span slot="suffix">⌘Space</span></scale-menu-flyout-item>
+      <scale-menu-flyout-item><scale-icon-action-logout slot="prefix"></scale-icon-action-logout>Prefix And Suffix<span slot="suffix">⌘F</span></scale-menu-flyout-item>
+    </scale-menu-flyout-list> -->
+
+    <scale-menu-flyout id="new" close-on-select="false">
+      <scale-button slot="trigger">Menu (accessible)</scale-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Item one</scale-menu-flyout-item>
+        <scale-menu-flyout-item active>Second item here</scale-menu-flyout-item>
+        <!-- this is a problem, keyboard control won't target the link -->
+        <scale-menu-flyout-item
+          ><scale-link href="https://google.com"
+            >Second item here</scale-link
+          ></scale-menu-flyout-item
+        >
+        <scale-menu-flyout-item>
+          Hey ho
+          <scale-menu-flyout-list slot="sublist">
+            <scale-menu-flyout-item>SUB Item one</scale-menu-flyout-item>
+            <scale-menu-flyout-item
+              >SUB Second item here</scale-menu-flyout-item
+            >
+            <scale-menu-flyout-item cascade>
+              OK, this is nested-nested
+              <scale-menu-flyout-list slot="sublist">
+                <scale-menu-flyout-item>WOW</scale-menu-flyout-item>
+                <scale-menu-flyout-item>YES, PLEASE</scale-menu-flyout-item>
+                <scale-menu-flyout-item>DOES IT WORK?</scale-menu-flyout-item>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item>
+          Something else
+          <span slot="suffix">⌘+F</span>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item disabled>
+          Something different
+          <span slot="suffix">⌘+13</span>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item>Something else entirely</scale-menu-flyout-item>
+        <scale-menu-flyout-divider></scale-menu-flyout-divider>
+        <scale-menu-flyout-item checkable="checkbox"
+          >Last one maybe</scale-menu-flyout-item
+        >
+        <scale-menu-flyout-item checkable="checkbox"
+          >Nope, last one for real</scale-menu-flyout-item
+        >
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+
+    <div style="margin-top: 2rem; height: 5000px"></div>
+
+    <script>
+      let el = document.getElementById('new');
+      el.addEventListener('scale-select', (event) => {
+        console.log('EVENT scale-select', event.detail.item);
+      });
+      el.addEventListener('scale-open', (event) => {
+        console.log('EVENT scale-open', event.detail.list);
+      });
+      el.addEventListener('scale-close', (event) => {
+        console.log('EVENT scale-close', event.detail);
+      });
+
+      // let el2 = document.getElementById('original');
+      // el2.addEventListener('scaleOpen', (event) => {
+      //   console.log('scaleOpen', event.detail);
+      // });
+      // el2.addEventListener('scaleClose', (event) => {
+      //   console.log('scaleClose', event.detail);
+      // });
+    </script>
+  </body>
+</html>

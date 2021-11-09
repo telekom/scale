@@ -3,6 +3,106 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
+
+
+### Bug Fixes
+
+* minor visual regressions ([#680](https://github.com/telekom/scale/issues/680)) ([dffb03f](https://github.com/telekom/scale/commit/dffb03f21dac8c2d0cb1efccb39955b62a1067bd))
+* **a11y:** address AXE violations ([#672](https://github.com/telekom/scale/issues/672)) ([0eeafea](https://github.com/telekom/scale/commit/0eeafea793d26ba8f5bea6319fca2389992b6fe5))
+
+
+### Features
+
+* **callout:** add as beta component ([e30f32f](https://github.com/telekom/scale/commit/e30f32f682e2ad0a72778a65c1065c565542d7bc))
+* **header:** user menu ([#654](https://github.com/telekom/scale/issues/654)) ([9c7e9ad](https://github.com/telekom/scale/commit/9c7e9ada1328d4233948d67ff57adb88d5354ed5))
+* **notification-badge:** add first beta ([#655](https://github.com/telekom/scale/issues/655)) ([5991853](https://github.com/telekom/scale/commit/599185342fe05a2c4f87a4f0febce3c5a39bd90d))
+* **tooltip:** add beta component ([#607](https://github.com/telekom/scale/issues/607)) ([a6441fc](https://github.com/telekom/scale/commit/a6441fc976637a6ccc79e5248735bfa7dd9c8671)), closes [#415](https://github.com/telekom/scale/issues/415) [#465](https://github.com/telekom/scale/issues/465)
+* add setFocus method to button and link ([#661](https://github.com/telekom/scale/issues/661)) ([94eb907](https://github.com/telekom/scale/commit/94eb9072b6be44e93377c673bf40d889d975cfa7))
+
+
+
+
+
+# [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
+
+
+### Bug Fixes
+
+* **date-picker:** input value handling, calendarHeading + styles ([#660](https://github.com/telekom/scale/issues/660)) ([3311bf2](https://github.com/telekom/scale/commit/3311bf2ec3aa72c095cbe18bad50452fa63c57ac))
+
+
+
+
+
+# [3.0.0-beta.26](https://github.com/telekom/scale/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2021-10-28)
+
+
+### Bug Fixes
+
+* **date-picker:** firefox placeholder, small icon styles ([#657](https://github.com/telekom/scale/issues/657)) ([a95fdd9](https://github.com/telekom/scale/commit/a95fdd9b4210ccc8caf39daf7f6e5dc25877accb))
+
+
+
+
+
+# [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.24](https://github.com/telekom/scale/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2021-10-27)
+
+
+### Bug Fixes
+
+* **button:** download despite download prop set to 'false' ([#648](https://github.com/telekom/scale/issues/648)) ([6a7c368](https://github.com/telekom/scale/commit/6a7c3682feae0922cccc0e6807cc7a71bf025060))
+
+
+
+
+
+# [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
+
+
+### Features
+
+* **switch:** add name prop ([#629](https://github.com/telekom/scale/issues/629)) ([83cd99a](https://github.com/telekom/scale/commit/83cd99ac7aaf26e7b7681d1881ab0b4f1efcde17))
+
+
+
+
+
+# [3.0.0-beta.22](https://github.com/telekom/scale/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2021-10-15)
+
+
+### Bug Fixes
+
+* index file ([b43df9a](https://github.com/telekom/scale/commit/b43df9adb7ec6684095a821b63ac6ba6a5061ec5))
+
+
+
+
+
+# [3.0.0-beta.21](https://github.com/telekom/scale/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2021-09-30)
+
+
+### Bug Fixes
+
+* **button:** add more defense to setIconPositionProps against type errors ([#602](https://github.com/telekom/scale/issues/602)) ([5263ccd](https://github.com/telekom/scale/commit/5263ccdfe0442fcb7d457c179ff0baa803a247d1))
+
+
+### Features
+
+* **rating-stars:** improve prop naming ([#558](https://github.com/telekom/scale/issues/558)) ([3ceb6c1](https://github.com/telekom/scale/commit/3ceb6c12473c0feaadf97593154ea4288668fb2e))
+
+
+
+
+
 # [3.0.0-beta.20](https://github.com/telekom/scale/compare/v3.0.0-beta.19...v3.0.0-beta.20) (2021-09-03)
 
 

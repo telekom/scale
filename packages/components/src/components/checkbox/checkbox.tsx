@@ -20,6 +20,7 @@ import {
   Watch,
 } from '@stencil/core';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 export interface CheckboxInterface extends HTMLElement {
   checked: boolean;
@@ -27,6 +28,7 @@ export interface CheckboxInterface extends HTMLElement {
   disabled: boolean;
   value: string;
   label: string;
+  ariaLabel: string;
 }
 
 let i = 0;
@@ -41,12 +43,16 @@ export class Checkbox {
   @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
+  /** (optional) Input label output */
+  @Prop() ariaLabel?: string;
   /** (optional) Hides the specified label visually */
   @Prop() hideLabel?: boolean = false;
   /** (optional) Input helper text */
   @Prop() helperText?: string;
-  /** (optional) Input status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
@@ -67,12 +73,16 @@ export class Checkbox {
 
   private id = i++;
 
-  getAriaCheckedState() {
-    if (this.indeterminate) {
-      return 'mixed';
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.host,
+      });
     }
-
-    return this.checked;
   }
 
   @Watch('disabled')
@@ -150,7 +160,7 @@ export class Checkbox {
           checked: this.checked,
           indeterminate: this.indeterminate,
           disabled: this.disabled,
-          error: this.status === 'error',
+          error: this.status === 'error' || this.invalid,
           hideLabel: this.hideLabel,
         }}
       >
@@ -162,8 +172,9 @@ export class Checkbox {
           value={this.value}
           checked={this.checked}
           indeterminate={this.indeterminate}
-          aria-checked={this.getAriaCheckedState()}
-          aria-invalid={this.status === 'error'}
+          aria-label={this.ariaLabel}
+          aria-checked={this.indeterminate ? 'mixed' : false}
+          aria-invalid={this.status === 'error' || this.invalid}
           aria-describedBy={helperText.id}
           disabled={this.disabled}
           onChange={this.handleChange}

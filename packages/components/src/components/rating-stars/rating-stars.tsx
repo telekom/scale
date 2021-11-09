@@ -43,13 +43,13 @@ export class RatingStars {
 
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
-  /** Deprecated; size should be used instead of starSize */
+  /** @deprecated; size should be used instead of starSize */
   @Prop() starSize: 'small' | 'large' = 'large';
   /** size of the stars  */
   @Prop({ reflect: true, mutable: true }) size: 'small' | 'large' = 'large';
-  /** Deprecated; The lower limit of the rating */
+  /** @deprecated; The lower limit of the rating */
   @Prop() minRating = 0;
-  /** Deprecated; max should be used instead of maxRating */
+  /** @deprecated; max should be used instead of maxRating */
   @Prop() maxRating = 5;
   /** The upper limit of the rating */
   @Prop({ reflect: true, mutable: true }) max = 5;
@@ -62,7 +62,11 @@ export class RatingStars {
   /** a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties.  */
   @Prop() ariaLabelTranslation = '$rating out of $max stars';
   /** (optional) rating label */
-  @Prop({ reflect: true }) label?: string;
+  @Prop({ reflect: true }) label = 'Rating';
+  /** (optional) info text */
+  @Prop({ reflect: true }) hideLabel = false;
+  /** (optional) info text */
+  @Prop() infoText?: string;
 
   /** Emitted when the rating has changed */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
@@ -82,6 +86,15 @@ export class RatingStars {
         source: this.host,
       });
     }
+    if (this.minRating !== 0) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "minRating" is deprecated and will be deleted upon the next release',
+        type: 'warn',
+        source: this.host,
+      });
+    }
     if (this.starSize !== 'large') {
       this.size = this.starSize;
       statusNote({
@@ -92,6 +105,8 @@ export class RatingStars {
         source: this.host,
       });
     }
+    // deactivate showing half stars while keeping the code
+    this.rating = Math.round(this.rating);
   }
 
   // constructs the aria message for the current rating
@@ -180,44 +195,55 @@ export class RatingStars {
 
   render() {
     return (
-      <Host>
+      <Host
+        class={{
+          hideLabel: this.hideLabel,
+          disabled: this.disabled,
+          readonly: this.readonly,
+        }}
+      >
         <div part="container">
-          {this.label && (
-            <label
-              id={`${this.ratingStarId}-label`}
-              part="label"
-              htmlFor={this.ratingStarId}
-            >
-              {this.label}
-            </label>
-          )}
-
-          <div
-            part="wrapper"
-            tabIndex={this.readonly ? 0 : -1}
-            role="figure"
-            aria-labeledby={`${this.ratingStarId}-label`}
-            aria-valuetext={this.getRatingText()}
-            aria-orientation="horizontal"
+          <label
+            id={`${this.ratingStarId}-label`}
+            part="label"
+            htmlFor={this.ratingStarId}
           >
-            <input
-              disabled={this.disabled}
-              readonly={this.readonly}
-              part="range-slider"
-              type="range"
-              id={this.ratingStarId}
-              min={0}
-              max={this.max + 1}
-              value={this.rating}
-              step="1"
-              aria-orientation="horizontal"
-              aria-valuemin={this.minRating}
-              aria-valuemax={this.max}
-              aria-valuenow={this.rating}
+            {this.label}
+          </label>
+          <div part="content">
+            <div
+              part="wrapper"
               aria-valuetext={this.getRatingText()}
-              onInput={!this.readonly && this.handleInput}
-            />
-            {this.renderRating()}
+              aria-orientation="horizontal"
+              aria-describedby={
+                this.infoText ? `${this.ratingStarId}-infotext` : false
+              }
+            >
+              <input
+                disabled={this.disabled}
+                readonly={this.readonly}
+                part="range-slider"
+                type={this.readonly ? 'number' : 'range'}
+                id={this.ratingStarId}
+                min={0}
+                max={this.max + 1}
+                value={this.rating}
+                step="1"
+                aria-labelledby={`${this.ratingStarId}-label`}
+                aria-readonly={this.readonly ? 'true' : false}
+                aria-valuemin={this.minRating}
+                aria-valuemax={this.max}
+                aria-valuenow={this.rating}
+                aria-valuetext={this.getRatingText()}
+                onInput={!this.readonly && this.handleInput}
+              />
+              {this.renderRating()}
+            </div>
+            {this.infoText && (
+              <div part="infotext" id={`${this.ratingStarId}-infotext`}>
+                {this.infoText}
+              </div>
+            )}
           </div>
         </div>
       </Host>

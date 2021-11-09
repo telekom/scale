@@ -1,28 +1,56 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
+
 @Component({
   tag: 'scale-radio-button-group',
   styleUrl: './radio-button-group.css',
   shadow: true,
 })
 export class RadioButtonGroup {
+  @Element() hostElement: HTMLElement;
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
 
   render() {
     return (
       <form>
         <fieldset class="radio-button-group">
-          <div class="radio-button-group__label">
-            <legend class="radio-button-group__title">{this.label}</legend>
+          <legend class="radio-button-group__title">
+            <label
+              class="radio-button-group__title-label"
+              aria-label={this.label}
+            >
+              {this.label}
+            </label>
             {this.helperText ? (
-              <div class={this.getCssClassMap()}>{this.helperText}</div>
+              <div
+                role="text"
+                class={this.getCssClassMap()}
+                aria-label={this.helperText}
+              >
+                {this.helperText}
+              </div>
             ) : null}
-          </div>
+          </legend>
           <div class="radio-button-group__container">
             <slot />
           </div>
@@ -34,7 +62,8 @@ export class RadioButtonGroup {
   getCssClassMap() {
     return classNames(
       'radio-button-group__helper-text',
-      this.status === 'error' && `radio-button-group__helper-text--status-error`
+      (this.status === 'error' || this.invalid) &&
+        `radio-button-group__helper-text--status-error`
     );
   }
 }

@@ -25,9 +25,9 @@ export const Template = (args, { argTypes }) => ({
       :rows="rows"
       :cols="cols"
       :helper-text="helperText"
-      :status="status"
-      :max-length="maxLength"
+      :invalid="invalid"
       :min-length="minLength"
+      :max-length="maxLength"
       :placeholder="placeholder"
       :disabled="disabled"
       :readonly="readonly"
@@ -178,7 +178,7 @@ scale-textarea {
     name="With Error"
     args={{
       label: "With Error",
-      status: "error",
+      invalid: true,
       helperText: "something is wrong"
     }}
   >
@@ -187,7 +187,7 @@ scale-textarea {
 </Canvas>
 
 ```html
-<scale-textarea label="With Error" helper-text="something is wrong" status="error"></scale-textarea>
+<scale-textarea label="With Error" helper-text="something is wrong" invalid="true"></scale-textarea>
 ```
 
 

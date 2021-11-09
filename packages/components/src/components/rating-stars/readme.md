@@ -11,14 +11,16 @@
 | ---------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------------- |
 | `ariaLabelTranslation` | `aria-label-translation` | a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties. | `string`             | `'$rating out of $max stars'` |
 | `disabled`             | `disabled`               | disables input                                                                                                                                                        | `boolean`            | `false`                       |
-| `label`                | `label`                  | (optional) rating label                                                                                                                                               | `string`             | `undefined`                   |
+| `hideLabel`            | `hide-label`             | (optional) info text                                                                                                                                                  | `boolean`            | `false`                       |
+| `infoText`             | `info-text`              | (optional) info text                                                                                                                                                  | `string`             | `undefined`                   |
+| `label`                | `label`                  | (optional) rating label                                                                                                                                               | `string`             | `'Rating'`                    |
 | `max`                  | `max`                    | The upper limit of the rating                                                                                                                                         | `number`             | `5`                           |
-| `maxRating`            | `max-rating`             | Deprecated; max should be used instead of maxRating                                                                                                                   | `number`             | `5`                           |
-| `minRating`            | `min-rating`             | Deprecated; The lower limit of the rating                                                                                                                             | `number`             | `0`                           |
+| `maxRating`            | `max-rating`             | <span style="color:red">**[DEPRECATED]**</span> ; max should be used instead of maxRating<br/><br/>                                                                   | `number`             | `5`                           |
+| `minRating`            | `min-rating`             | <span style="color:red">**[DEPRECATED]**</span> ; The lower limit of the rating<br/><br/>                                                                             | `number`             | `0`                           |
 | `rating`               | `rating`                 | Represents the current value of the rating                                                                                                                            | `number`             | `0`                           |
 | `readonly`             | `readonly`               | makes the rating non-interactive (but still accessible)                                                                                                               | `boolean`            | `false`                       |
 | `size`                 | `size`                   | size of the stars                                                                                                                                                     | `"large" \| "small"` | `'large'`                     |
-| `starSize`             | `star-size`              | Deprecated; size should be used instead of starSize                                                                                                                   | `"large" \| "small"` | `'large'`                     |
+| `starSize`             | `star-size`              | <span style="color:red">**[DEPRECATED]**</span> ; size should be used instead of starSize<br/><br/>                                                                   | `"large" \| "small"` | `'large'`                     |
 
 
 ## Events
@@ -34,6 +36,8 @@
 | Part                 | Description |
 | -------------------- | ----------- |
 | `"container"`        |             |
+| `"content"`          |             |
+| `"infotext"`         |             |
 | `"label"`            |             |
 | `"placeholder-star"` |             |
 | `"range-slider"`     |             |

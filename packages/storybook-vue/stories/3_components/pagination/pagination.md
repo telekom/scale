@@ -1,6 +1,6 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Pagination</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Pagination divides content across multiple pages. Users can also navigate through the content using pagination.
@@ -52,10 +52,6 @@ This button always takes users one page forward.
 #### Last page (6)
 
 This button always takes users to the last page.
-
-## Beta components
-
-This component is still in the beta phase. When testing it, keep in mind that it may not have gone through all quality control measures, and it may not yet have WCAG accessibility certification. There may be changes to this component in the future.
 
 ## Related components
 

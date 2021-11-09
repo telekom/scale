@@ -12,6 +12,7 @@
 import {
   Component,
   Prop,
+  Element,
   Event,
   h,
   EventEmitter,
@@ -20,6 +21,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
   value: string | number | boolean | undefined | null;
@@ -33,6 +35,7 @@ let i = 0;
   shadow: false,
 })
 export class TextField {
+  @Element() hostElement: HTMLElement;
   /** (optional) Input type */
   @Prop() type?:
     | 'email'
@@ -51,8 +54,10 @@ export class TextField {
   @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input max length */
   @Prop() maxLength?: number;
   /** (optional) Input min length */
@@ -73,6 +78,8 @@ export class TextField {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) the step attribute specifies the interval between legal numbers in an <input type="number"> element. */
+  @Prop() step?: string = '1';
   /** (optional) input list */
   @Prop() list?: string;
 
@@ -111,6 +118,18 @@ export class TextField {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-text-field' + i++;
+    }
+  }
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
     }
   }
 
@@ -158,7 +177,7 @@ export class TextField {
 
   render() {
     const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -190,6 +209,7 @@ export class TextField {
             readonly={this.readonly}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
+            {...(this.type === 'number' ? { step: this.step } : {})}
           />
 
           {(!!this.helperText || !!this.counter) && (
@@ -227,6 +247,7 @@ export class TextField {
       this.disabled && `text-field--disabled`,
       this.transparent && 'text-field--transparent',
       this.status && `text-field--status-${this.status}`,
+      this.invalid && `text-field--status-error`,
       this.size && `text-field--size-${this.size}`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'

@@ -148,7 +148,32 @@ module.exports = {
         });
       }
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
+        setResizingConstraints(symbol, /.?/, FIXED_SIZE);
+      }
+      if (/^(Checkbox Group)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        findLayers(symbol, /Icon?/, (l) => {
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+
+          const overrideIcon = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_symbolID`,
+          };
+          const overrideColor = {
+            _class: 'MSImmutableOverrideProperty',
+            canOverride: false,
+            overrideName: `${l.do_objectID}_fillColor`,
+          };
+
+          symbol.overrideProperties.push(overrideIcon);
+          symbol.overrideProperties.push(overrideColor);
+        });
+        findLayer(
+          symbol,
+          /fieldset/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
       }
       if (/^Divider \/ \d+ Standard/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = FIXED_HEIGHT;
@@ -201,8 +226,10 @@ module.exports = {
       }
       if (/^Link/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        var cursor = findLayer(symbol, (s) => s.name === 'svg');
         var underline = findLayer(symbol, (s) => s.name === 'border-bottom');
         if (underline) underline.resizingConstraint = LEFT_RIGHT;
+        if (cursor) cursor.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
       }
       if (/^Modal/.test(symbol.name)) {
         symbol.layers[0].layers[1].resizingConstraint = FIXED_SIZE;
@@ -339,54 +366,24 @@ module.exports = {
       }
       if (/^Table/.test(symbol.name)) {
         symbol.groupLayout = undefined;
-        symbol.layers.forEach(
-          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
-        );
-      }
-      if (/^(Tab Nav)/.test(symbol.name)) {
-        var tabHead = findLayer(symbol, (s) => s.name === 'span.tab-header');
-        if (tabHead) tabHead.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
-        if (!/Example/.test(symbol.name)) {
-          var spans = findLayers(tabHead, 'span', (span) =>
-            findLayers(
-              span,
-              (l) => (l.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT)
-            )
-          );
-          var bar = spans.shift();
-          spans.forEach((span) =>
-            tabHead.layers.splice(tabHead.layers.indexOf(span), 1)
-          );
-          if (bar) {
-            bar.layers[0].resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
-            tabHead.layers.unshift(bar.layers[0]);
-            bar.layers[0].frame.y += bar.frame.y;
-            bar.layers[0].frame.x += bar.frame.x;
-            tabHead.layers.splice(tabHead.layers.indexOf(bar), 1);
-          }
-          findLayer(tabHead, 'slot', (s) => {
-            tabHead.layers.splice(tabHead.layers.indexOf(s), 1);
-            s.layers.forEach((l) => {
-              l.frame.x += s.frame.x;
-              l.frame.y += s.frame.y;
+        symbol.layers.forEach((l) => {
+          if ('layers' in l) {
+            l.layers.forEach((l) => {
+              if ('layers' in l) {
+                l.layers.forEach((l) => {
+                  if ('layers' in l) {
+                    l.layers.forEach((l) => {
+                      if (l.name === 'svg') {
+                        l.rotation = -45;
+                      }
+                    });
+                  }
+                });
+              }
             });
-            tabHead.layers.push(...s.layers);
-          });
-        } else {
-          symbol.groupLayout = undefined;
-        }
-        findLayers(
-          symbol,
-          (s) => s.name === 'Icon',
-          (icon) => (icon.resizingConstraint = TOP_LEFT_FIXED_SIZE)
-        );
-        findLayers(
-          symbol,
-          (s) => s.name.includes('Header'),
-          (label) => {
-            label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
           }
-        );
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        });
       }
       if (/^Tag/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
@@ -410,6 +407,11 @@ module.exports = {
         });
         findLayers(
           symbol,
+          /Info message/,
+          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayers(
+          symbol,
           /div/,
           (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
@@ -424,10 +426,16 @@ module.exports = {
           /svg?/,
           (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
         );
+        findLayers(symbol, /Icon?/, (l) => (l.height = 16));
         findLayer(
           symbol,
           /Rating Label/,
-          (s) => (s.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT)
+          (s) => (s.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+        );
+        findLayer(
+          symbol,
+          /Background/,
+          (s) => (s.style.fills[0].isEnabled = false)
         );
       }
       if (/^(Text Area)/.test(symbol.name)) {

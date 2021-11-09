@@ -9,23 +9,63 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Listen, Element } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Listen,
+  Element,
+  Prop,
+  State,
+} from '@stencil/core';
 import { CheckboxInterface } from '../checkbox/checkbox';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-checkbox-group',
   styleUrl: './checkbox-group.css',
-  shadow: true,
+  shadow: false,
 })
 export class CheckboxGroup {
   @Element() host: HTMLElement;
 
+  /** (optional) Input name */
+  @Prop() name?: string;
+  /** (optional) Input label */
+  @Prop() label: string = '';
+  /** (optional) Input label output */
+  @Prop() ariaLabel?: string;
+  /** (optional) Input helper text */
+  @Prop() helperText?: string;
+  /** @deprecated - invalid should replace status */
+  @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
+  /** (optional) Input value */
+  @Prop() value?: string = '';
+  /** (optional) Input checkbox id */
+  @Prop({ mutable: true }) inputId?: string;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
+
+  @Prop() selectText?: string = 'Select all';
+  @Prop() unselectText?: string = 'Unselect all';
+
+  @State() checked;
+  @State() indeterminate;
+  @State() disabled;
+
+  private groupNode;
+  private actionText: string;
+
   @Listen('scaleChange')
   handleCheckboxChange(ev) {
-    const { slot, tagName, checked } = ev.composedPath()[0];
+    const el = ev.composedPath()[0];
+    const { tagName, checked } = el;
 
+    // make sure the event belongs to a scale checkbox
     if (tagName.toLowerCase() === 'scale-checkbox') {
-      if (slot === 'group-item') {
+      if (el !== this.groupNode) {
         this.updateParentCheckboxState();
       } else {
         this.updateChildrenCheckboxStates(checked);
@@ -34,15 +74,21 @@ export class CheckboxGroup {
     }
   }
 
-  getParentNode() {
-    return this.host.querySelector(
-      'scale-checkbox:not([slot])'
-    ) as CheckboxInterface;
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
   }
 
   getChildNodes() {
     return Array.from(
-      this.host.querySelectorAll('scale-checkbox[slot="group-item"]')
+      this.host.querySelector('fieldset').querySelectorAll('scale-checkbox')
     ) as CheckboxInterface[];
   }
 
@@ -50,9 +96,6 @@ export class CheckboxGroup {
     const childNodes = this.getChildNodes().filter((node) => !node.disabled);
 
     childNodes.forEach((node) => {
-      // TODO: discuss the logic for setting disabled
-      // node.disabled = disabled;
-
       if (checked !== undefined) {
         node.checked = checked;
         node.indeterminate = false;
@@ -61,40 +104,54 @@ export class CheckboxGroup {
   }
 
   updateParentCheckboxState() {
-    const node = this.getParentNode();
     const childNodes = this.getChildNodes();
 
     const checked = childNodes?.map((childNode) => childNode.checked);
     const indeterminate = childNodes?.map(
       (childNode) => childNode.indeterminate
     );
+    const disabled = childNodes?.map((childNode) => childNode.disabled);
 
     const allChecked = checked.every(Boolean);
     const someChecked = checked.some(Boolean);
 
     const someIndeterminate = indeterminate.some(Boolean);
 
-    node.checked = allChecked || someChecked;
-    node.indeterminate = someIndeterminate || (someChecked && !allChecked);
-  }
+    const allDisabled = disabled.every(Boolean);
 
-  connectedCallback() {
-    this.updateParentCheckboxState();
-    // this.updateChildrenCheckboxStates(undefined, this.getParentNode().disabled);
+    this.checked = allChecked || someChecked;
+    this.indeterminate = someIndeterminate || (someChecked && !allChecked);
+    this.disabled = allDisabled;
+    this.actionText = allChecked ? this.unselectText : this.selectText;
   }
 
   render() {
     return (
-      <Host>
-        <div class="checkbox-group">
-          <div class="checkbox-group__label">
-            <slot />
-          </div>
-          <div class="checkbox-group__container">
-            <slot name="group-item" />
-          </div>
-        </div>
+      <Host class="checkbox-group">
+        <scale-checkbox
+          ref={(el) => (this.groupNode = el)}
+          name={this.name}
+          label={this.label}
+          ariaLabel={`${this.ariaLabel || this.label} - ${this.actionText}`}
+          helperText={this.helperText}
+          status={this.status}
+          invalid={this.invalid}
+          value={this.value}
+          inputId={this.inputId}
+          checked={this.checked}
+          indeterminate={this.indeterminate}
+          disabled={this.disabled}
+          part="parent-checkbox"
+        />
+        <fieldset part="fieldset">
+          <legend>{this.ariaLabel || this.label}</legend>
+          <slot />
+        </fieldset>
       </Host>
     );
+  }
+
+  componentDidLoad() {
+    this.updateParentCheckboxState();
   }
 }

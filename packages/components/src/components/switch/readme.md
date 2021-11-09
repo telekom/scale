@@ -13,6 +13,7 @@
 | `disabled` | `disabled` | (optional) Disabled switch     | `boolean` | `false`     |
 | `inputId`  | `input-id` | (optional) Input id            | `string`  | `undefined` |
 | `label`    | `label`    | (optional) switch label        | `string`  | `undefined` |
+| `name`     | `name`     | (optional) Input name          | `string`  | `undefined` |
 | `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
 
 

@@ -60,8 +60,8 @@ describe('app-Header', () => {
          portal-name="portalName",
          active-route-id="activeRouteId"
          active-sector-id="activeSectorId"
-         is-mega-menu-visible="true"
-         is-mobile-menu-visible="true"
+         mega-menu-visible="true"
+         mobile-menu-visible="true"
        ></scale-app-header>`,
     });
     expect(page.rootInstance.logoHref).toBe('logoHref');
@@ -70,8 +70,8 @@ describe('app-Header', () => {
     expect(page.rootInstance.portalName).toBe('portalName');
     expect(page.rootInstance.activeRouteId).toBe('activeRouteId');
     expect(page.rootInstance.activeSectorId).toBe('activeSectorId');
-    expect(page.rootInstance.isMegaMenuVisible).toBe(true);
-    expect(page.rootInstance.isMobileMenuVisible).toBe(true);
+    expect(page.rootInstance.megaMenuVisible).toBe(true);
+    expect(page.rootInstance.mobileMenuVisible).toBe(true);
   });
 
   describe('functions', () => {

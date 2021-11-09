@@ -1,13 +1,13 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
     <h1>Pagination</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+    <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 Die Pagination zeigt an, dass ein Inhalt auf mehrere Seiten aufgeteilt ist und wo man sich aktuell befindet. Außerdem ermöglicht die Paginierung das Vor- und Zurückspringen zwischen diesen Seiten.
 
 ## Allgemein
 
-Eine Datentabelle ist ein erweiterter Tabellentyp. Die Daten sind dabei in Zeilen und Spalten organisiert. Neben der Standardfunktion Filtern können Nutzer\*innen die Pagination als interaktives Element nutzen, um durch mehrere Seiten eines zusammenhängenden Inhalts zu navigieren. Bei vielen Seiten hilft eine Nummerierung, um den Überblick zu behalten. Pfeile unterstützen zusätzlich ein schnelles Navigieren.
+Die Paginierung ist ein interaktives Element, mit dem Nutzer\*innen durch mehrere Seiten eines zusammenhängenden Inhalts navigieren können. Handelt es sich um viele Seiten, hilft eine Nummerierung, um den Überblick zu behalten. Pfeile unterstützen zusätzlich ein schnelles Navigieren.
 
 ### Verwende eine Pagination, wenn
 
@@ -50,10 +50,6 @@ Dieser Button führt eine Seite weiter.
 #### Letzte Seite (6)
 
 Dieser Button führt immer auf die letzte Seite.
-
-## Beta-Komponente
-
-Diese Komponente befindet sich noch im Beta-Stadium. Wenn du sie testest, bedenke, dass sie möglicherweise noch nicht alle Qualitätskontrollmaßnahmen durchlaufen hat und noch keine WCAG-Zertifizierung zur Barrierefreiheit vorliegt. In Zukunft kann es zu Änderungen an dieser Komponente kommen.
 
 ## Verwandte Komponenten
 

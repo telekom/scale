@@ -15,4 +15,23 @@ describe('TabNavigation', () => {
 
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
+  // hover, focus, active
+  test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
+    await global.page.goto(
+      `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
+    );
+    await page.waitForSelector('html.hydrated');
+    const previewHtml = await page.$('body');
+
+    const tabHeader = await page.evaluateHandle(
+      'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'
+    );
+    await tabHeader.hover();
+    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    await tabHeader.click();
+    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    await page.mouse.move(20, 40);
+    await page.mouse.down();
+    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  });
 });
