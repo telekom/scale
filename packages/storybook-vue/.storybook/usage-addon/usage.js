@@ -85,6 +85,8 @@ import callout_en from 'raw-loader!../../stories/3_components/callout/callout.md
 import callout_de from 'raw-loader!../../stories/3_components/callout/callout_de.md';
 import toggleGroup_de from 'raw-loader!../../stories/3_components/toggle-group/toggle-group_de.md';
 import toggleGroup_en from 'raw-loader!../../stories/3_components/toggle-group/toggle-group.md';
+import tooltip_en from 'raw-loader!../../stories/3_components/tooltip/tooltip.md';
+import tooltip_de from 'raw-loader!../../stories/3_components/tooltip/tooltip_de.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -181,6 +183,8 @@ const Usage = (props) => {
     footer_de,
     'toggle-group_en': toggleGroup_en,
     'toggle-group_de': toggleGroup_de,
+    tooltip_en,
+    tooltip_de,
   };
 
   // Select the most appropriate markdown text based on if this is a component story and

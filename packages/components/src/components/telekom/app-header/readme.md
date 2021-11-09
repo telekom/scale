@@ -20,8 +20,6 @@
 | `logoHref`            | `logo-href`              |             | `string`  | `undefined` |
 | `logoTitle`           | `logo-title`             |             | `string`  | `undefined` |
 | `mainNavigation`      | `main-navigation`        |             | `any`     | `[]`        |
-| `megaMenuVisible`     | `mega-menu-visible`      |             | `boolean` | `false`     |
-| `mobileMenuVisible`   | `mobile-menu-visible`    |             | `boolean` | `false`     |
 | `portalName`          | `portal-name`            |             | `string`  | `''`        |
 | `sectorNavigation`    | `sector-navigation`      |             | `any`     | `[]`        |
 | `userNavigation`      | `user-navigation`        |             | `any`     | `[]`        |

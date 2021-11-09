@@ -17,7 +17,7 @@ exports[`Link should contain target="_blank" when openNewTab is set true 1`] = `
 exports[`Link should handle disabled link 1`] = `
 <scale-link class="disabled" disabled="true" href="http://example.com">
   <mock:shadow-root>
-    <a aria-disabled="true" href="http://example.com" part="anchor" tabindex="-1">
+    <a aria-disabled="" href="http://example.com" part="anchor" tabindex="-1">
       <div part="content">
         <slot></slot>
       </div>

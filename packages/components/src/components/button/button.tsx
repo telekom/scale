@@ -49,6 +49,8 @@ export class Button {
   @Prop() styles?: string;
   /** (optional) name of a file to be downloaded */
   @Prop() download?: string;
+  /** (optioanl) */
+  @Prop() innerTabindex?: number;
 
   private focusableElement: HTMLElement;
 
@@ -137,6 +139,7 @@ export class Button {
             target={this.target}
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             part={basePart}
+            tabIndex={this.innerTabindex}
           >
             <slot />
           </a>
@@ -148,6 +151,7 @@ export class Button {
             disabled={this.disabled}
             type={this.type}
             part={basePart}
+            tabIndex={this.innerTabindex}
           >
             <slot />
           </button>

@@ -49,6 +49,8 @@ export class Link {
   @Prop() target?: '_self' | '_blank' | '_parent' | '_top';
   /** (optional) */
   @Prop() type?: string;
+  /** (optioanl) */
+  @Prop() innerTabindex?: number;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -62,8 +64,8 @@ export class Link {
   getAnchorProps() {
     const props = {
       href: this.href || null,
-      tabIndex: this.disabled ? -1 : null,
-      'aria-disabled': this.disabled ? 'true' : false,
+      tabIndex: this.disabled ? -1 : this.innerTabindex,
+      'aria-disabled': this.disabled,
       download: this.download || null,
       hreflang: this.hreflang || null,
       ping: this.ping || null,
