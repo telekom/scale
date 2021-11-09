@@ -56,7 +56,7 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleLink.props,
   },
   template: `
-        <scale-link
+    <scale-link
         :href="href"
         :disabled="disabled"
         :styles="styles"
@@ -68,6 +68,7 @@ export const Template = (args, { argTypes }) => ({
         :rel="rel"
         :target="target"
         :type="type"
+        :inner-tabindex="innerTabindex"
     >
         {{ label }}
         <template v-slot:icon v-if="withIcon">

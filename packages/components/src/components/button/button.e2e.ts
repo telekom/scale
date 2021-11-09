@@ -18,4 +18,13 @@ describe('scale-button', () => {
     const element = await page.find('scale-button');
     expect(element).toHaveClass('hydrated');
   });
+
+  it('should set tabindex on its inner element', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<scale-button inner-tabindex="5">Click me!</scale-button>'
+    );
+    const element = await page.find('scale-button >>> button');
+    expect(element.getAttribute('tabindex')).toBe('5');
+  });
 });
