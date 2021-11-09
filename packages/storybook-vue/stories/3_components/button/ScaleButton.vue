@@ -8,6 +8,7 @@
     :type="type"
     :variant="variant"
     :icon-only="iconOnly"
+    :inner-tabindex="innerTabindex"
     :styles="styles"
     @click="handler"
   >
@@ -30,6 +31,7 @@ export default {
     variant: String,
     size: String,
     iconOnly: Boolean,
+    innerTabindex: Number,
     styles: String,
   },
   methods: {

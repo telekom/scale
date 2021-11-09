@@ -42,6 +42,7 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant"
       :icon-position="icon === 'after' ? 'after' : 'before'"
       :icon-only="iconOnly"
+      :inner-tabindex="innerTabindex"
       :styles="styles"
       @click="action('clicked')"
     >
