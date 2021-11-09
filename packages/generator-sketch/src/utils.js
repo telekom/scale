@@ -102,32 +102,43 @@ function setResizingConstraints(symbol, ...predicateActionPairs) {
   }
 }
 
-const searchObject = function (object, matchCallback, currentPath, result, searched) {
+const searchObject = function (
+  object,
+  matchCallback,
+  currentPath,
+  result,
+  searched
+) {
   currentPath = currentPath || '';
   result = result || [];
   searched = searched || [];
   if (searched.indexOf(object) !== -1 && object === Object(object)) {
-      return;
+    return;
   }
   searched.push(object);
   if (matchCallback(object)) {
-      result.push({path: currentPath, value: object});
+    result.push({ path: currentPath, value: object });
   }
   try {
-      if (object === Object(object)) {
-          for (var property in object) {
-              if (property.indexOf('$') !== 0) {
-                searchObject(object[property], matchCallback, currentPath + '.' + property, result, searched);
-              }
-          }
+    if (object === Object(object)) {
+      for (var property in object) {
+        if (property.indexOf('$') !== 0) {
+          searchObject(
+            object[property],
+            matchCallback,
+            currentPath + '.' + property,
+            result,
+            searched
+          );
+        }
       }
-  }
-  catch (e) {
-      console.log(object);
-      throw e;
+    }
+  } catch (e) {
+    console.log(object);
+    throw e;
   }
   return result;
-}
+};
 
 module.exports = {
   findLayer,

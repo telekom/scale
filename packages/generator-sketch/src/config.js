@@ -366,26 +366,24 @@ module.exports = {
       }
       if (/^Table/.test(symbol.name)) {
         symbol.groupLayout = undefined;
-        symbol.layers.forEach(
-          (l) => {
-            if('layers' in l) {
-              l.layers.forEach((l) => {
-                if('layers' in l ) {
-                  l.layers.forEach((l) => {
-                    if ('layers' in l ) {
-                      l.layers.forEach((l) => {
-                        if (l.name === 'svg') {
-                          l.rotation = -45;
-                        }
-                      })
-                    }
-                  })
-                }
-              })
-            }
-            l.resizingConstraint = TOP_LEFT_FIXED_SIZE
+        symbol.layers.forEach((l) => {
+          if ('layers' in l) {
+            l.layers.forEach((l) => {
+              if ('layers' in l) {
+                l.layers.forEach((l) => {
+                  if ('layers' in l) {
+                    l.layers.forEach((l) => {
+                      if (l.name === 'svg') {
+                        l.rotation = -45;
+                      }
+                    });
+                  }
+                });
+              }
+            });
           }
-        );
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        });
       }
       if (/^Tag/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
