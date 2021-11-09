@@ -369,16 +369,13 @@ module.exports = {
         symbol.layers.forEach(
           (l) => {
             if('layers' in l) {
-              // layers.0
-              l.layers.forEach((ll) => {
-                // layers.0.layers.0
-                if('layers' in ll ) {
-                  ll.layers.forEach((lll) => {
-                    // layers.0.layers.0.layers.1
-                    if ('layers' in lll ) {
-                      lll.layers.forEach((llll) => {
-                        if (llll.name === 'svg') {
-                          llll.rotation = -45;
+              l.layers.forEach((l) => {
+                if('layers' in l ) {
+                  l.layers.forEach((l) => {
+                    if ('layers' in l ) {
+                      l.layers.forEach((l) => {
+                        if (l.name === 'svg') {
+                          l.rotation = -45;
                         }
                       })
                     }

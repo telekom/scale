@@ -116,8 +116,8 @@ const searchObject = function (object, matchCallback, currentPath, result, searc
   try {
       if (object === Object(object)) {
           for (var property in object) {
-              if (property.indexOf("$") !== 0) {
-                searchObject(object[property], matchCallback, currentPath + "." + property, result, searched);
+              if (property.indexOf('$') !== 0) {
+                searchObject(object[property], matchCallback, currentPath + '.' + property, result, searched);
               }
           }
       }
