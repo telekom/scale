@@ -41,6 +41,10 @@
       modal.addEventListener('scaleClose', () => {
         modal.removeAttribute('opened');
       });
+
+      modal.addEventListener('scaleBeforeClose', (event) => {
+        // event.preventDefault()
+      });
     </script>
   </body>
 </html>
