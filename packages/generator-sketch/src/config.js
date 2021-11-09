@@ -367,7 +367,27 @@ module.exports = {
       if (/^Table/.test(symbol.name)) {
         symbol.groupLayout = undefined;
         symbol.layers.forEach(
-          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
+          (l) => {
+            if('layers' in l) {
+              // layers.0
+              l.layers.forEach((ll) => {
+                // layers.0.layers.0
+                if('layers' in ll ) {
+                  ll.layers.forEach((lll) => {
+                    // layers.0.layers.0.layers.1
+                    if ('layers' in lll ) {
+                      lll.layers.forEach((llll) => {
+                        if (llll.name === 'svg') {
+                          llll.rotation = -45;
+                        }
+                      })
+                    }
+                  })
+                }
+              })
+            }
+            l.resizingConstraint = TOP_LEFT_FIXED_SIZE
+          }
         );
       }
       if (/^Tag/.test(symbol.name)) {
