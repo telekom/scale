@@ -47,6 +47,10 @@ import menuFlyout_en from 'raw-loader!../../stories/3_components/flyout-menu/men
 import menuFlyout_de from 'raw-loader!../../stories/3_components/flyout-menu/menu-flyout_de.md';
 import modal_en from 'raw-loader!../../stories/3_components/modal/modal.md';
 import modal_de from 'raw-loader!../../stories/3_components/modal/modal_de.md';
+import notificationBadge_de from 'raw-loader!../../stories/3_components/notification-badge/notification-badge_de.md';
+import notificationBadge_en from 'raw-loader!../../stories/3_components/notification-badge/notification-badge.md';
+import notificationMessage_de from 'raw-loader!../../stories/3_components/notification-message/notification-message_de.md';
+import notificationMessage_en from 'raw-loader!../../stories/3_components/notification-message/notification-message.md';
 import pagination_en from 'raw-loader!../../stories/3_components/pagination/pagination.md';
 import pagination_de from 'raw-loader!../../stories/3_components/pagination/pagination_de.md';
 import progressBar_en from 'raw-loader!../../stories/3_components/progress-bar/progress-bar.md';
@@ -77,8 +81,12 @@ import textField_en from 'raw-loader!../../stories/3_components/text-field/text-
 import textField_de from 'raw-loader!../../stories/3_components/text-field/text-field_de.md';
 import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
-import badge_de from 'raw-loader!../../stories/3_components/badge/badge_de.md';
-import badge_en from 'raw-loader!../../stories/3_components/badge/badge.md';
+import callout_en from 'raw-loader!../../stories/3_components/callout/callout.md';
+import callout_de from 'raw-loader!../../stories/3_components/callout/callout_de.md';
+import toggleGroup_de from 'raw-loader!../../stories/3_components/toggle-group/toggle-group_de.md';
+import toggleGroup_en from 'raw-loader!../../stories/3_components/toggle-group/toggle-group.md';
+import tooltip_en from 'raw-loader!../../stories/3_components/tooltip/tooltip.md';
+import tooltip_de from 'raw-loader!../../stories/3_components/tooltip/tooltip_de.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -117,8 +125,8 @@ const Usage = (props) => {
     'checkbox-group_de': checkboxGroup_de,
     divider_en,
     divider_de,
-    badge_en,
-    badge_de,
+    callout_en,
+    callout_de,
     'data-grid_en': datagrid_en,
     'data-grid_de': datagrid_de,
     'date-picker_en': date_picker_en,
@@ -139,6 +147,10 @@ const Usage = (props) => {
     'flyout-menu_de': menuFlyout_de,
     modal_en,
     modal_de,
+    'notification-badge_en': notificationBadge_en,
+    'notification-badge_de': notificationBadge_de,
+    'notification-message_en': notificationMessage_en,
+    'notification-message_de': notificationMessage_de,
     pagination_en,
     pagination_de,
     'progress-bar_en': progressBar_en,
@@ -169,6 +181,10 @@ const Usage = (props) => {
     'text-field_de': textField_de,
     footer_en,
     footer_de,
+    'toggle-group_en': toggleGroup_en,
+    'toggle-group_de': toggleGroup_de,
+    tooltip_en,
+    tooltip_de,
   };
 
   // Select the most appropriate markdown text based on if this is a component story and

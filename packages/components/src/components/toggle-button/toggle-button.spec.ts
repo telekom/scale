@@ -82,14 +82,14 @@ describe('Toggle Button', () => {
     it('should handle getCssClassMap() and getBasePartMap()', () => {
       const element = new ToggleButton();
       expect(element.getCssClassMap()).toContain('toggle-button');
-      expect(element.getCssClassMap()).toContain('toggle-button--primary');
+      expect(element.getCssClassMap()).toContain('toggle-button--secondary');
       expect(element.getCssClassMap()).toContain('toggle-button--icon-before');
-      expect(element.getCssClassMap()).toContain('toggle-button--light');
+      expect(element.getCssClassMap()).toContain('toggle-button--color');
 
       expect(element.getBasePartMap()).toContain('toggle-button');
-      expect(element.getBasePartMap()).toContain('primary');
+      expect(element.getBasePartMap()).toContain('secondary');
       expect(element.getBasePartMap()).toContain('icon-before');
-      expect(element.getBasePartMap()).toContain('light');
+      expect(element.getBasePartMap()).toContain('color');
       element.iconOnly = true;
       expect(element.getCssClassMap()).toContain('toggle-button--icon-only');
       expect(element.getBasePartMap()).toContain('icon-only');

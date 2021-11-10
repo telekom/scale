@@ -9,6 +9,7 @@
     :icon-navigation="iconNavigation"
     :sector-navigation="sectorNavigation"
     :addon-navigation="addonNavigation"
+    :user-navigation="userNavigation"
     :active-route-id="activeRouteId"
     :active-sector-id="activeRouteId"
   >
@@ -29,6 +30,7 @@ export default {
     mainNavigation: String,
     iconNavigation: String,
     sectorNavigation: String,
+    userNavigation: String,
     addonNavigation: String,
     activeRouteId: String,
     activeSectorId: String

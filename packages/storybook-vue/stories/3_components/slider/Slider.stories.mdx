@@ -48,6 +48,42 @@ export const Template = (args, {argTypes}) => ({
     }
 })
 
+export const TemplateCustomColor = (args, {argTypes}) => ({
+    components:{ScaleSlider},
+    props: {
+        ...ScaleSlider.props
+    },
+    template: `
+    <scale-slider style="--background-bar: green"
+        :custom-color="customColor"
+        :disabled="disabled"
+        :label="label"
+        :max="max"
+        :min="min"
+        :show-value="showValue"
+        :track-small="trackSmall"
+        :thumb-large="thumbLarge"
+        :step="step"
+        :value="value"
+        @scaleButtonDown="scaleButtonDown"
+        @scaleDragStart="scaleDragStart"
+        @scaleDragging="scaleDragging"
+        @scaleDragEnd="scaleDragEnd"
+        @scaleSetPosition="scaleSetPosition"
+        @scaleCurrentPosition="scaleCurrentPosition"
+        >
+    </scale-slider>
+    `,
+    methods: {
+        scaleButtonDown: action('scaleButtonDown'),
+        scaleDragStart: action('scaleDragStart'),
+        scaleDragging: action('scaleDragging'),
+        scaleDragEnd: action('scaleDragEnd'),
+        scaleSetPosition: action('scaleSetPosition'),
+        scaleCurrentPosition: action('scaleCurrentPosition')
+    }
+})
+
 <div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
     <h1>Slider</h1>
     <img src="assets/aa.png" alt="Accessible AA" />
@@ -60,7 +96,7 @@ export const Template = (args, {argTypes}) => ({
         name="Standard"
         args={{
             label: 'Standard',
-            value: 20
+            value: 20,
         }}
         >
         {Template.bind({})}
@@ -135,15 +171,14 @@ For Shadow Parts, please inspect the element's #shadow.
         args={{
             label: 'Slider with custom color',
             value: 20,
-            customColor: "#009DE0"
         }}
         >
-        {Template.bind({})}
+        {TemplateCustomColor.bind({})}
     </Story>
 </Canvas>
 
 ```html
-<scale-slider label="Slider with custom color" value="20" custom-color="#009DE0"></scale-slider>
+<scale-slider label="Slider with custom color" value="20" style="--background-bar: green"></scale-slider>
 ```
 
 ## Disabled slider

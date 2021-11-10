@@ -4,7 +4,7 @@
     :type="type"
     :label="label"
     :helper-text="helperText"
-    :status="status"
+    :invalid="invalid"
     :max-length="maxLength"
     :min-length="minLength"
     :placeholder="placeholder"
@@ -33,7 +33,7 @@ export default {
     type: { type: String },
     label: { type: String },
     helperText: { type: String },
-    status: { type: String },
+    invalid: { type: Boolean },
     maxLength: { type: Number },
     minLength: { type: Number },
     placeholder: { type: String },

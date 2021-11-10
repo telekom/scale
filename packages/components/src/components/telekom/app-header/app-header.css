@@ -19,7 +19,7 @@ scale-app-header {
 
   --background: var(--scl-color-primary);
   --font-weight: var(--scl-font-weight-regular);
-  --border: 1px solid #dfdfdf;
+  --border: 1px solid var(--scl-color-grey-10);
 
   --color-brand: var(--scl-color-white);
   --background-brand: var(--scl-color-primary);
@@ -42,10 +42,25 @@ scale-app-header {
   height: 128px;
 }
 
+.header__user-menu--desktop {
+  display: block;
+}
+
+.header__user-menu--mobile {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .header__container {
     width: 100%;
     height: 66px;
+  }
+  .header__user-menu--desktop {
+    display: none;
+  }
+
+  .header__user-menu--mobile {
+    display: block;
   }
 }
 
@@ -120,6 +135,8 @@ scale-app-header {
   padding: 0;
   list-style: none;
   align-items: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 @media (max-width: 1023px) {
   .header {

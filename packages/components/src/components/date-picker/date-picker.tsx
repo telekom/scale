@@ -22,6 +22,7 @@ import {
   Host,
 } from '@stencil/core';
 import { DuetDatePicker as DuetDatePickerCustomElement } from '@duetds/date-picker/custom-element';
+import statusNote from '../../utils/status-note';
 
 import {
   DuetDatePickerChangeEvent,
@@ -49,7 +50,7 @@ if (
   styleUrl: 'date-picker.css',
 })
 export class DatePicker {
-  duetInput: DuetDatePicker;
+  duetInput: DuetDatePicker & HTMLElement;
 
   @Element() hostElement: HTMLElement;
   /**
@@ -57,15 +58,13 @@ export class DatePicker {
    */
   @Prop() name: string = 'date';
 
-  /**
-   * Name of the date picker input.
-   */
+  /** @deprecated in v3 in favor of localization.calendarHeading */
   @Prop() popupTitle: string = 'Pick a date';
 
   /**
    * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
    */
-  @Prop() identifier: string;
+  @Prop({ mutable: true }) identifier: string;
 
   /**
    * Makes the date picker input component disabled. This prevents users from being able to
@@ -93,7 +92,7 @@ export class DatePicker {
   /**
    * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
    */
-  @Prop({ reflect: true }) value: string = '';
+  @Prop({ reflect: true, mutable: true }) value: string = '';
 
   /**
    * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.
@@ -132,8 +131,11 @@ export class DatePicker {
   /** (optional) Helper text */
   @Prop() helperText?: string = '';
 
-  /** (optional) Status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+
+  /** (optional) invalid status */
+  @Prop() invalid?: boolean;
 
   /** (optional) Label */
   @Prop() label: string = '';
@@ -220,9 +222,21 @@ export class DatePicker {
   @Watch('value')
   onValueChange() {
     this.hasValue = this.value != null && this.value !== '';
+    // @ts-ignore
+    this.duetInput.querySelector('.duet-date__input').value = this.value;
   }
 
   componentWillLoad() {
+    if (this.popupTitle !== 'Pick a date') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "popupTitle" is deprecate in favor of localization.calendarHeading.',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+
     this.handleKeyPress = this.handleKeyPress.bind(this);
     if (this.identifier == null) {
       this.identifier = 'scale-date-picker-' + i++;
@@ -230,17 +244,45 @@ export class DatePicker {
   }
 
   componentDidLoad() {
-    const icon = this.duetInput
-      // @ts-ignore
-      .querySelector('.duet-date__toggle-icon');
+    const calendarIcon = this.duetInput.querySelector(
+      '.duet-date__toggle-icon'
+    );
 
-    if (icon) {
-      icon.replaceWith(document.createElement('scale-icon-content-calendar'));
+    if (calendarIcon) {
+      calendarIcon.replaceWith(
+        document.createElement('scale-icon-content-calendar')
+      );
     }
 
-    const input = this.duetInput
-      // @ts-ignore
-      .querySelector('.duet-date__input');
+    const navLeftIcon = this.duetInput.querySelector('.duet-date__prev svg');
+
+    if (navLeftIcon) {
+      navLeftIcon.replaceWith(
+        document.createElement('scale-icon-navigation-left')
+      );
+    }
+
+    const navRightIcon = this.duetInput.querySelector('.duet-date__next svg');
+
+    if (navRightIcon) {
+      navRightIcon.replaceWith(
+        document.createElement('scale-icon-navigation-right')
+      );
+    }
+
+    const selectIcon = this.duetInput.querySelectorAll(
+      '.duet-date__select-label svg'
+    );
+
+    if (selectIcon) {
+      Array.from(selectIcon).forEach((icon: SVGElement) =>
+        icon.replaceWith(
+          document.createElement('scale-icon-navigation-collapse-down')
+        )
+      );
+    }
+
+    const input = this.duetInput.querySelector('.duet-date__input');
 
     if (input) {
       input.addEventListener('keyup', this.handleKeyPress);
@@ -250,7 +292,7 @@ export class DatePicker {
       input.setAttribute('aria-describedby', this.helperTextId);
     }
 
-    if (input && this.status === 'error') {
+    if (input && (this.status === 'error' || this.invalid)) {
       input.setAttribute('aria-invalid', 'true');
     }
 
@@ -272,11 +314,23 @@ export class DatePicker {
       '.duet-date__dialog-content'
     );
     if (dialogContent) {
+      const calendarHeading =
+        this.localization?.calendarHeading || this.popupTitle || 'Pick a date';
       const heading = document.createElement('h2');
       heading.id = duetHeadingId; // link to .duet-date__dialog[aria-labelledby]
       heading.className = 'scale-date-picker__popup-heading';
-      heading.innerHTML = this.popupTitle;
+      heading.innerHTML = calendarHeading;
       dialogContent.insertBefore(heading, dialogContent.firstChild);
+    }
+
+    // truncate table headings to a single character
+    const tableHeadings = this.hostElement.querySelectorAll(
+      '.duet-date__table-header span[aria-hidden="true"]'
+    );
+    if (tableHeadings) {
+      Array.from(tableHeadings).forEach(
+        (item) => (item.innerHTML = item.innerHTML[0])
+      );
     }
 
     const today = this.hostElement.querySelector(
@@ -289,6 +343,18 @@ export class DatePicker {
     }
 
     this.adjustButtonsLabelsForA11y();
+  }
+
+  componentDidRender() {
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   /**
@@ -317,9 +383,7 @@ export class DatePicker {
   };
 
   disconnectedCallback() {
-    const input = this.duetInput
-      // @ts-ignore
-      .querySelector('.duet-date__input');
+    const input = this.duetInput.querySelector('.duet-date__input');
 
     if (input) {
       input.removeEventListener('keyup', this.handleKeyPress);
@@ -332,6 +396,7 @@ export class DatePicker {
 
   handleKeyPress(e) {
     this.hasValue = e.target.value != null && e.target.value !== '';
+    this.value = e.target.value;
   }
 
   render() {
@@ -342,6 +407,7 @@ export class DatePicker {
           class={classNames(
             'scale-date-picker',
             this.status && `scale-date-picker--status-${this.status}`,
+            this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
             this.size && `scale-date-picker--size-${this.size}`,
@@ -376,8 +442,9 @@ export class DatePicker {
             dateAdapter={this.dateAdapter}
             disabled={this.disabled}
             value={this.value}
-            // @ts-ignore
-            ref={(element) => (this.duetInput = element)}
+            ref={(element: HTMLElement & DuetDatePicker) =>
+              (this.duetInput = element)
+            }
           ></duet-date-picker>
           {!!this.helperText && (
             <div

@@ -75,11 +75,12 @@ describe('RadioButtonGroup', () => {
       <scale-radio-button-group
         label="Radio Button Label"
         helper-text="Error message"
+        invalid="true"
         >
         <div slot="radio-button-list">
         <scale-radio-button
           value="1"
-          status="error"
+          invalid="true"
           label="Radio Button"
           name="radioError"
           transparent="true"
@@ -88,7 +89,7 @@ describe('RadioButtonGroup', () => {
         <div style="margin-top: 0.5rem"></div>
         <scale-radio-button
           value="2"
-          status="error"
+          invalid="true"
           label="Radio Button"
           name="radioError"
           input-id="choiceTwo"
@@ -96,7 +97,7 @@ describe('RadioButtonGroup', () => {
         <div style="margin-top: 0.5rem"></div>
         <scale-radio-button
           value="3"
-          status="error"
+          invalid="true"
           label="Radio Button"
           name="radioError"
           input-id="choiceThree"

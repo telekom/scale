@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Method } from '@stencil/core';
 
 /**
  * This is a superset of the default anchor `<a>` element.
@@ -49,14 +49,23 @@ export class Link {
   @Prop() target?: '_self' | '_blank' | '_parent' | '_top';
   /** (optional) */
   @Prop() type?: string;
+  /** (optional) Set `tabindex` in the inner button or link element */
+  @Prop() innerTabindex?: number;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
+  private focusableElement: HTMLElement;
+
+  @Method()
+  async setFocus() {
+    this.focusableElement.focus();
+  }
 
   getAnchorProps() {
     const props = {
       href: this.href || null,
-      tabIndex: this.disabled ? -1 : null,
-      'aria-disabled': this.disabled,
+      tabIndex: this.disabled ? -1 : this.innerTabindex,
+      'aria-disabled': this.disabled ? 'true' : false,
       download: this.download || null,
       hreflang: this.hreflang || null,
       ping: this.ping || null,
@@ -78,7 +87,11 @@ export class Link {
         }}
       >
         {this.styles && <style>{this.styles}</style>}
-        <a part="anchor" {...this.getAnchorProps()}>
+        <a
+          part="anchor"
+          ref={(el) => (this.focusableElement = el)}
+          {...this.getAnchorProps()}
+        >
           <div part="content">
             <slot />
           </div>

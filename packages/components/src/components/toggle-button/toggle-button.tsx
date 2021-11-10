@@ -19,6 +19,7 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import classNames from 'classnames';
+import { emitEvent } from '../../utils/utils';
 
 enum iconSizes {
   xs = '12',
@@ -37,11 +38,13 @@ let i = 0;
 export class ToggleButton {
   @Element() hostElement: HTMLElement;
   /** (optional) The size of the button */
-  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'large';
-  /** (optional) Button variant */
-  @Prop() variant?: 'primary' | 'secondary' = 'primary';
-  /** (optional) background color scheme of a selected button */
-  @Prop() colorScheme?: 'light' | 'dark' = 'light';
+  @Prop() size?: 'large' | 'regular' | 'small' | 'xs' = 'regular';
+  /** (optional) Button background */
+  @Prop() background?: 'grey' | 'white' = 'white';
+  /** @deprecated - variant should replace colorScheme */
+  @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
+  /** (optional) background variant of a selected toggle-button */
+  @Prop() variant?: 'monochrome' | 'color' = 'color';
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, the button is selected */
@@ -52,7 +55,9 @@ export class ToggleButton {
   @Prop({ reflect: true, mutable: true }) iconPosition: 'before' | 'after' =
     'before';
   /** (optional) set the border-radius left, right or both */
-  @Prop() radius: 'left' | 'right' | 'both' | null = null;
+  @Prop() hideBorder: false;
+  /** (optional) set the border-radius left, right or both */
+  @Prop() radius: 'left' | 'right' | 'both' | 'neither' | null = null;
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -68,10 +73,21 @@ export class ToggleButton {
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
   @Prop() ariaDescriptionTranslation = '$selected';
   /** Emitted when button is clicked */
-  @Event() scaleClick!: EventEmitter<{ id: string; selected: boolean }>;
+  @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
+    id: string;
+    selected: boolean;
+  }>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleClick' }) scaleClickLegacy!: EventEmitter<{
+    id: string;
+    selected: boolean;
+  }>;
+
+  hasScaleIcon = false;
 
   connectedCallback() {
     this.setIconPositionProp();
+    this.handleIconShape();
   }
 
   componentDidLoad() {
@@ -109,7 +125,26 @@ export class ToggleButton {
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
     this.selected = !this.selected;
+    this.handleIconShape();
     this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
+    emitEvent(this, 'scaleClick', {
+      id: this.toggleButtonId,
+      selected: this.selected,
+    });
+  };
+
+  handleIconShape = () => {
+    if (this.hasScaleIcon) {
+      Array.from(this.hostElement.children).forEach((node) => {
+        if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+          if (this.selected) {
+            node.setAttribute('selected', 'true');
+          } else {
+            node.removeAttribute('selected');
+          }
+        }
+      });
+    }
   };
 
   /**
@@ -118,6 +153,9 @@ export class ToggleButton {
    */
   setIconPositionProp() {
     const nodes = Array.from(this.hostElement.childNodes).filter((node) => {
+      if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
+        this.hasScaleIcon = true;
+      }
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
     });
@@ -167,14 +205,17 @@ export class ToggleButton {
     return classNames(
       'toggle-button',
       this.size && `${prefix}${this.size}`,
-      this.variant && `${prefix}${this.variant}`,
+      this.background &&
+        `${prefix}${this.background === 'grey' ? 'primary' : 'secondary'}`,
       !this.iconOnly &&
         this.iconPosition &&
         `toggle-button--icon-${this.iconPosition}`,
       this.iconOnly && `${prefix}icon-only`,
       !this.disabled && this.selected && `${prefix}selected`,
       this.radius && `${prefix}${this.radius}`,
-      this.colorScheme && `${prefix}${this.colorScheme}`
+      this.colorScheme && `${prefix}${this.colorScheme}`,
+      this.variant && `${prefix}${this.variant}`,
+      !this.hideBorder && `${prefix}border`
     );
   }
 }

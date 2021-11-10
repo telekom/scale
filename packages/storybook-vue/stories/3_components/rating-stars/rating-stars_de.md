@@ -34,7 +34,7 @@ Statische Rating Stars haben keine interaktive Funktion, sondern vermitteln ledi
 
 ## Elemente
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Elemente.png)
+![Image Name](assets/3_components/rating-stars/RatingStars-Elemente-de.png)
 
 #### Label (1)
 
@@ -45,7 +45,7 @@ In einigen Fällen kann es Sinn machen, das Label einzublenden (siehe Best Pract
 
 #### Inaktiver Stern (3)
 
-#### Wert (4)
+#### Information (4)
 
 Der Wert kommuniziert eine Zusatzinformation, wie bspw. die Anzahl der bisherigen Bewertungen.
 
@@ -53,7 +53,7 @@ Der Wert kommuniziert eine Zusatzinformation, wie bspw. die Anzahl der bisherige
 
 Scale beinhaltet die Rating Stars in zwei Größen. Die Größe „Large“ ist der Standard. Wenn du wenig Raum zur Verfügung hast, setze die Größe „Small“ ein. Vermeide die Kombination beider Größen innerhalb eines Produkts oder Services.
 
-![Image Name](assets/3_components/rating-stars/RatingStars-Groessen.png)
+![Image Name](assets/3_components/rating-stars/RatingStars-Groessen-de.png)
 
 ## Best Practices
 
