@@ -31,7 +31,7 @@
     var(--scl-color-background-standard);
   --background-button-dismissable-focus: ;
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  --background-button-dismissable-hover: ;
+  --background-button-dismissable-hover: var(--scl-color-white);
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--scl-spacing-8);
@@ -92,7 +92,7 @@
   box-shadow: var(--box-shadow-button-dismissable-focus);
 }
 .tag--dismissable button:hover {
-  background: var(--scl-color-white);
+  background: var(--background-button-dismissable-hover);
 }
 .tag--dismissable button:focus scale-icon-action-close {
   top: -1px;
