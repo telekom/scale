@@ -41,13 +41,12 @@ Berücksichtige einem solchen Fall immer auch die Barrierefreiheit.
 
 ### Stelle einen ausreichenden Kontrast zum Hintergrund sicher.
 
-Ein Tooltip muss sich deutlich vom Hintergrund absetzen, um die Aufmerksamkeit des*der
-Nutzer*in auf sich zu ziehen. Schwarz auf Grau reicht nicht aus.
+Um allen Anforderungen der Barrierefreiheit gerecht zu werden, achte
+immer auf einen ausreichenden Kontrast zum Hintergrund.
 
 ### Stelle sicher, dass das Tooltip keine Inhalte verdeckt, die es beschreibt.
 
-Ein Tooltip zu einem Formular bspw. darf weder das Formularfeld selbst noch Textelemente,
-die sich darauf beziehen, verdecken.
+Teste immer, ob ein Tooltip relevante Inhalte verdeckt.
 
 ## Beta-Komponente
 
