@@ -49,6 +49,8 @@ export class Link {
   @Prop() target?: '_self' | '_blank' | '_parent' | '_top';
   /** (optional) */
   @Prop() type?: string;
+  /** (optional) Set `tabindex` in the inner button or link element */
+  @Prop() innerTabindex?: number;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -62,7 +64,7 @@ export class Link {
   getAnchorProps() {
     const props = {
       href: this.href || null,
-      tabIndex: this.disabled ? -1 : null,
+      tabIndex: this.disabled ? -1 : this.innerTabindex,
       'aria-disabled': this.disabled ? 'true' : false,
       download: this.download || null,
       hreflang: this.hreflang || null,

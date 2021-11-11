@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
+
+
+### Features
+
+* add innerTabindex prop to link and button (685) ([#686](https://github.com/telekom/scale/issues/686)) ([15288ee](https://github.com/telekom/scale/commit/15288ee73ff259a7379d1c0e8f3a48f13617c4eb))
+
+
+
+
+
 # [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
 
 
