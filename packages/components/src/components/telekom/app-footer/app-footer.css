@@ -16,7 +16,7 @@
   --spacing-bottom: var(--scl-spacing-24);
   --spacing-x: var(--scl-spacing-24);
   --background-container: var(--scl-color-background-standard, #fff);
-  --radius: var(--scl-radius-4);
+  --radius: var(--scl-radius-12);
   --max-width: inherit;
 
   --border-top-minimal: var(--scl-spacing-1) solid var(--scl-color-grey-20);

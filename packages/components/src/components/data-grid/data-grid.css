@@ -87,7 +87,7 @@
   position: relative;
   display: block;
   background: var(--scl-color-white);
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--scl-radius-12);
   border: 1px solid var(--scl-color-grey-10);
   overflow: hidden;
 }
@@ -451,7 +451,7 @@
   white-space: initial;
   margin: 0 0 var(--scl-spacing-8);
   padding: var(--scl-spacing-24);
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--scl-radius-12);
   background: var(--scl-color-white);
   border: 1px solid var(--scl-color-grey-10);
 }
