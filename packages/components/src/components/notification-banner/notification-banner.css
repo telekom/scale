@@ -46,8 +46,23 @@
   line-height: 48px;
 }
 
-.notification-banner__text {
-  margin: 8px 48px 8px 48px;
+.notification-banner__text ::slotted(*) {
+  margin: -25px 0px -25px 0px;
+  padding: 0;
+}
+
+.notification-banner--has-text.notification-banner {
+  margin-top: -25px;
+}
+
+.notification-banner--has-no-text .notification-banner__link ::slotted(*) {
+  margin: 0;
+  padding: 0px 0px 0px 16px;
+}
+
+.notification-banner--has-text .notification-banner__link ::slotted(*) {
+  margin: 0;
+  padding: 0;
 }
 
 ::slotted(*) {

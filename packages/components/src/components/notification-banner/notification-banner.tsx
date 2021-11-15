@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  State,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -28,19 +36,25 @@ export class NotificationMessage {
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() timeout?: boolean | number = false;
+  @Prop() href: string;
 
-  hasSlotText: boolean;
-
-  componentDidLoad() {
-    this.hasSlotText = !!this.hostElement.querySelector("p[slot='text']");
-  }
+  @State() hasText?: boolean;
+  @State() hasLink?: boolean;
 
   componentDidRender() {
     if (this.timeout) {
       const timeout = this.timeout === true ? TIMEOUT : this.timeout;
       setTimeout(this.close, timeout);
     }
+    if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
+      this.hasText = true;
+    }
+    if (this.hostElement.querySelectorAll('[slot=link]').length !== 0) {
+      this.hasLink = true;
+    }
   }
+
+  componentDidLoad() {}
 
   connectedCallback() {
     statusNote({ source: this.hostElement, type: 'warn' });
@@ -124,12 +138,17 @@ export class NotificationMessage {
                   accessibility-title="close"
                 />
               )}
+              {this.hasText ? (
+                <div part="text" class="notification-banner__text">
+                  <slot name="text" />
+                </div>
+              ) : null}
+              {this.hasLink ? (
+                <scale-link href={this.href} class="notification-banner__link">
+                  <slot name="link" />
+                </scale-link>
+              ) : null}
             </div>
-            {this.hasSlotText && (
-              <div part="text" class="notification-banner__text">
-                <slot name="text" />
-              </div>
-            )}
           </div>
         </div>
       </Host>
@@ -148,6 +167,11 @@ export class NotificationMessage {
     const name = 'notification-banner';
     const prefix = mode === 'basePart' ? '' : `${name}--`;
 
-    return classNames(name, this.variant && `${prefix}variant-${this.variant}`);
+    return classNames(
+      name,
+      this.variant && `${prefix}variant-${this.variant}`,
+      this.hasText && `${prefix}has-text`,
+      !this.hasText && `${prefix}has-no-text`
+    );
   }
 }
