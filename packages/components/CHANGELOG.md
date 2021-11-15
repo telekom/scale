@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
+
+
+### Bug Fixes
+
+* **date-picker:** stop updating local value on key press ([#695](https://github.com/telekom/scale/issues/695)) ([ee619d0](https://github.com/telekom/scale/commit/ee619d0afed1bacd121c0cbeee29813d671ddf19))
+
+
+
+
+
+# [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
+
+
+### Bug Fixes
+
+* **modal:** closing is prevented with legacy event ([#687](https://github.com/telekom/scale/issues/687)) ([e712c3a](https://github.com/telekom/scale/commit/e712c3af4fd49124e37afdba0c2e45ccfb2ec76c))
+* **user-menu:** provide unique name ([1ad00ca](https://github.com/telekom/scale/commit/1ad00cafe6bac58621c05dc232c35babe86fcf4c))
+
+
+### Features
+
+* add innerTabindex prop to link and button (685) ([#686](https://github.com/telekom/scale/issues/686)) ([15288ee](https://github.com/telekom/scale/commit/15288ee73ff259a7379d1c0e8f3a48f13617c4eb))
+
+
+
+
+
 # [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
 
 
