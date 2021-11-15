@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
+
+
+### Features
+
+* rounding radius refactor ([#691](https://github.com/telekom/scale/issues/691)) ([f03a762](https://github.com/telekom/scale/commit/f03a762e6c3c5b4ac38ce70a347eedbf8c9f4dda))
+
+
+
+
+
 # [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
 
 **Note:** Version bump only for package @telekom/scale-generator-sketch
