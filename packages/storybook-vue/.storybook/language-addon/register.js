@@ -16,7 +16,7 @@ import useLocalStorage from "../use-localstorage";
 import translationMap from "../../translations.json";
 
 const activeBtnClassName = "css-mszgbt";
-const inactiveBtnClassName = "css-1nin9qf";
+const inactiveBtnClassName = "css-am1h1h";
 
 // utility to create new links
 const createLink = label => {
