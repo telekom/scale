@@ -110,7 +110,7 @@ export const IconTemplate = (args, { argTypes }) => ({
     <scale-notification-badge
       :type="type"
       :label="label"
-    ><scale-icon-user-file-user slot="before-badge"></scale-icon-user-file-user></scale-notification-badge>
+    ><scale-icon-user-file-user></scale-icon-user-file-user></scale-notification-badge>
   `,
   methods: {
     action,
@@ -126,7 +126,7 @@ export const TextTemplate = (args, { argTypes }) => ({
     <scale-notification-badge
       :type="type"
       :label="label"
-    ><b slot="before-badge">Service</b></scale-notification-badge>
+    ><b>Service</b></scale-notification-badge>
   `,
   methods: {
     action,
@@ -145,7 +145,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge>
-  <scale-icon-user-file-user slot="before-badge"> </scale-icon-user-file-user>
+  <scale-icon-user-file-user> </scale-icon-user-file-user>
 </scale-notification-badge>
 ```
 
@@ -166,7 +166,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge type="icon">
-  <scale-icon-user-file-user slot="before-badge"></scale-icon-user-file-user>
+  <scale-icon-user-file-user></scale-icon-user-file-user>
 </scale-notification-badge>
 ```
 
@@ -185,7 +185,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge type="text">
-  <b slot="before-badge">Service</b>
+  <b>Service</b>
 </scale-notification-badge>
 ```
 
@@ -207,7 +207,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge label="1000000" type="icon">
-  <scale-icon-user-file-user slot="before-badge"></scale-icon-user-file-user>
+  <scale-icon-user-file-user></scale-icon-user-file-user>
 </scale-notification-badge>
 ```
 
@@ -227,7 +227,7 @@ export const TextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-badge label="10000" type="text"
-  ><b slot="before-badge">Service</b></scale-notification-badge
+  ><b>Service</b></scale-notification-badge
 >
 ```
 
