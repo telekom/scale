@@ -1,0 +1,93 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: 367px;
+  --radius: var(--scl-radius-4);
+  --background: var(--scl-color-background-standard);
+  --box-shadow: var(--scl-shadow-level-0);
+  --spacing: var(--scl-spacing-16);
+  /*header*/
+  --border-header: 1px solid var(--scl-color-grey-20);
+  --font-size-header: var(--scl-font-variant-heading-4-size);
+  --font-size-header-small: var(--scl-font-variant-smaller-size);
+  /*progress*/
+  --height-progress: var(--scl-spacing-2);
+}
+.notification-toast {
+  width: var(--width);
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notification-toast__text-container {
+  width: 271px;
+  min-height: 48px;
+  padding-left: 48px;
+  float: left;
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+::slotted([slot='header']) {
+  margin: 0;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+::slotted([slot='body']) {
+  padding-left: 10px;
+  margin: 0;
+}
+::slotted([slot='link']) {
+  padding-top: 10px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.notification-message__icon-close {
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 8px;
+}
+
+.notification-toast__header small {
+  margin-top: 5px;
+  margin-left: 120px;
+  font-size: var(--font-size-header-small);
+}
+
+.notification-toast__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+}
+
+.notification-toast__icon-container {
+  background: green;
+  height: 100%;
+  width: 48px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  float: left;
+  border-radius: 10px 0 0 10px;
+}
