@@ -15,12 +15,6 @@
   --background: var(--scl-color-background-standard);
   --box-shadow: var(--scl-shadow-level-0);
   --spacing: var(--scl-spacing-16);
-  /*header*/
-  --border-header: 1px solid var(--scl-color-grey-20);
-  --font-size-header: var(--scl-font-variant-heading-4-size);
-  --font-size-header-small: var(--scl-font-variant-smaller-size);
-  /*progress*/
-  --height-progress: var(--scl-spacing-2);
 }
 .notification-toast {
   width: var(--width);
@@ -35,44 +29,25 @@
   justify-content: space-between;
 }
 
-.notification-toast__text-container {
-  width: 271px;
-  min-height: 48px;
-  padding-left: 48px;
-  float: left;
-  position: relative;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.notification-toast.notification-toast--variant-success {
+  background: #f2f7ef;
 }
 
-::slotted([slot='header']) {
-  margin: 0;
-  padding-left: 10px;
-  font-weight: bold;
-  font-size: 16px;
-}
-::slotted([slot='body']) {
-  padding-left: 10px;
-  margin: 0;
-}
-::slotted([slot='link']) {
-  padding-top: 10px;
-  padding-left: 10px;
-  margin: 0;
+.notification-toast.notification-toast--variant-warning {
+  background: #fbf4eb;
 }
 
-.notification-message__icon-close {
-  cursor: pointer;
-  position: absolute;
-  top: 14px;
-  right: 8px;
+.notification-toast.notification-toast--variant-warning {
+  background: #fbf3f4;
 }
 
-.notification-toast__header small {
-  margin-top: 5px;
-  margin-left: 120px;
-  font-size: var(--font-size-header-small);
+.notification-toast.notification-toast--variant-informational {
+  background: #eff9fb;
 }
+
+/*
+  variant icon part
+*/
 
 .notification-toast__icon {
   position: absolute;
@@ -82,7 +57,6 @@
 }
 
 .notification-toast__icon-container {
-  background: green;
   height: 100%;
   width: 48px;
   position: absolute;
@@ -90,4 +64,63 @@
   top: 0;
   float: left;
   border-radius: 10px 0 0 10px;
+}
+
+.notification-toast.notification-toast--variant-success
+  .notification-toast__icon-container {
+  background: #187431;
+}
+
+.notification-toast.notification-toast--variant-warning
+  .notification-toast__icon-container {
+  background: #df6d3f;
+}
+
+.notification-toast.notification-toast--variant-warning
+  .notification-toast__icon-container {
+  background: #d82a48;
+}
+
+.notification-toast.notification-toast--variant-informational
+  .notification-toast__icon-container {
+  background: #216bff;
+}
+
+/*
+  text part
+*/
+
+::slotted([slot='header']) {
+  margin: 0;
+  padding: 0 0 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+::slotted([slot='body']) {
+  padding: 3px 0 0 10px;
+  margin: 0;
+}
+::slotted([slot='link']) {
+  padding: 10px 0 15px 10px;
+  margin: 0;
+}
+
+.notification-toast__text-container {
+  width: 271px;
+  min-height: 33px;
+  float: left;
+  position: relative;
+  margin: 0 0 0 48px;
+  padding: 15px 0 0 0;
+}
+
+/*
+  close icon part
+*/
+
+.notification-message__icon-close {
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }

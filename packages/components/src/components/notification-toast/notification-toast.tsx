@@ -19,7 +19,6 @@ import {
   Host,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { formatDistance, subSeconds } from 'date-fns';
 import statusNote from '../../utils/status-note';
 
 @Component({
@@ -31,15 +30,12 @@ export class NotificationToast {
   /** (optional) Toast size */
   @Prop() size?: string = '';
   /** (optional) Toast variant */
-  @Prop() variant?: string = '';
+  @Prop() variant?: 'error' | 'warning' | 'success' | 'informational' =
+    'informational';
   /** (optional) Toast opened */
   @Prop({ reflect: true }) opened?: boolean;
-  /** (optional) Toast autohide time */
-  @Prop() autoHide?: boolean | number = false;
   /** (optional) Animated toast */
   @Prop() animated?: boolean = true;
-  /** (optional) Toast time */
-  @Prop() time?: number;
   /** (optional) Toast position at the top */
   @Prop() positionTop?: number = 12;
   /** (optional) Toast position right */
@@ -48,65 +44,71 @@ export class NotificationToast {
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
   @Prop({ reflect: true }) styles?: string;
-
-  /** (optional) Toast state progress */
-  @State() progress: number = 0;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
 
   @Element() element: HTMLElement;
 
-  @State() hasText: boolean;
-
   hideToast: boolean = false;
-  timerId = null;
 
   connectedCallback() {
     statusNote({ source: this.element, type: 'warn' });
   }
 
-  componentDidRender() {
-    if (this.element.querySelectorAll('[slot=text]').length !== 0) {
-      this.hasText = true;
-    }
-  }
-
-  disconnectedCallback() {
-    if (this.timerId) {
-      clearTimeout(this.timerId);
-      this.timerId = null;
-      this.opened = false;
-      this.progress = 0;
-    }
-  }
-
   close = () => {
-    clearInterval(this.timerId);
     this.hideToast = true;
     setTimeout(() => {
-      this.timerId = null;
       this.opened = false;
-      this.progress = 0;
     }, this.fadeDuration);
   };
 
-  getTime = () => {
-    const formattedTime =
-      this.time &&
-      formatDistance(subSeconds(this.time, 3), new Date(), { addSuffix: true });
-    return formattedTime;
-  };
-
-  setToastTimeout = () => {
-    if (this.opened && this.autoHide !== false && !this.timerId) {
-      this.timerId = setInterval(() => {
-        this.progress += 1 / (this.getAutoHide() / 1000);
-        if (this.progress >= 100) {
-          this.close();
-        }
-      }, 10);
+  handleIcons() {
+    if (this.variant) {
+      switch (this.variant) {
+        case 'success':
+          return (
+            <scale-notification-message-svg
+              class="notification-toast__icon"
+              size={20}
+              selected
+              color="#ffffff"
+              accessibility-title="success"
+            />
+          );
+        case 'informational':
+          return (
+            <scale-icon-alert-information
+              class="notification-toast__icon"
+              size={20}
+              selected
+              color="#ffffff"
+              accessibility-title="information"
+            />
+          );
+        case 'error':
+          return (
+            <scale-icon-alert-warning
+              class="notification-toast__icon"
+              size={20}
+              selected
+              color="#ffffff"
+              accessibility-title="error"
+            />
+          );
+        case 'warning':
+          return (
+            <scale-icon-alert-information
+              class="notification-toast__icon"
+              color="#AE461C"
+              size={20}
+              selected
+              accessibility-title="information"
+            />
+          );
+      }
     }
-  };
+    return;
+  }
 
   /** Toast method: open() */
   @Method()
@@ -116,7 +118,6 @@ export class NotificationToast {
   }
 
   render() {
-    this.setToastTimeout();
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -125,11 +126,7 @@ export class NotificationToast {
 
         <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
           <div class="notification-toast__icon-container">
-            <scale-icon-action-circle-close
-              tabindex="0"
-              class="notification-toast__icon"
-              size={20}
-            />
+            {this.handleIcons()}
           </div>
           <div class="notification-toast__text-container">
             <slot name="header" />
@@ -139,7 +136,6 @@ export class NotificationToast {
             </scale-link>
           </div>
 
-          <small>{this.getTime()}</small>
           <scale-icon-action-circle-close
             tabindex="0"
             class="notification-message__icon-close"
@@ -204,17 +200,6 @@ export class NotificationToast {
     const toastHeight = this.element.shadowRoot.querySelector('.toast')
       .scrollHeight;
     this.toastHeightWithOffset = toastHeight + this.positionTop;
-  }
-
-  getAutoHide() {
-    if (
-      typeof this.autoHide === 'number' ||
-      typeof this.autoHide === 'string'
-    ) {
-      return Number(this.autoHide);
-    } else {
-      return 0;
-    }
   }
 
   getBasePartMap() {
