@@ -44,6 +44,8 @@ export class NotificationToast {
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
   @Prop({ reflect: true }) styles?: string;
+  /** (do not use) it is a helper prop for storybook*/
+  @Prop() story?: boolean;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
 
@@ -70,8 +72,8 @@ export class NotificationToast {
             <scale-notification-message-svg
               class="notification-toast__icon"
               size={20}
-              selected
               color="#ffffff"
+              selected
               accessibility-title="success"
             />
           );
@@ -87,7 +89,7 @@ export class NotificationToast {
           );
         case 'error':
           return (
-            <scale-icon-alert-warning
+            <scale-icon-alert-error
               class="notification-toast__icon"
               size={20}
               selected
@@ -97,9 +99,9 @@ export class NotificationToast {
           );
         case 'warning':
           return (
-            <scale-icon-alert-information
+            <scale-icon-alert-error
               class="notification-toast__icon"
-              color="#AE461C"
+              color="#ffff"
               size={20}
               selected
               accessibility-title="information"
@@ -220,7 +222,8 @@ export class NotificationToast {
       this.variant && `${prefix}--variant-${this.variant}`,
       !!this.opened && `${prefix}--opened`,
       !!!this.hideToast && `${prefix}--show`,
-      !!this.hideToast && `${prefix}--hide`
+      !!this.hideToast && `${prefix}--hide`,
+      this.story && `${prefix}--story`
     );
   }
 }
