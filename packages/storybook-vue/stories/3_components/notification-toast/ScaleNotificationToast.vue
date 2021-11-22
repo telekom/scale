@@ -14,7 +14,7 @@ export default {
       type: 'error' | 'warning' | 'success' | 'informational',
       default: 'informational',
     },
-    opened: { type: Boolean, default: true },
+    opened: { type: Boolean, default: false },
     animated: { type: Boolean, default: false },
     positionTop: { type: Number, default: 12 },
     positionRight: { type: Number, default: 12 },

@@ -48,6 +48,20 @@ export const TemplateText = (args, { argTypes }) => ({
   `,
 });
 
+export const TemplateLink = (args, { argTypes }) => ({
+  props: {
+    ...ScaleNotificationToast.props,
+  },
+  template: `<div style="height: 100px">
+    <scale-notification-toast :story="story" :variant="variant"
+      :opened="opened"
+      ><p slot="header">Informational toast headline</p>
+      <p slot="link">Link Text</p>
+    </scale-notification-toast>
+    </div>
+  `,
+});
+
 <div
   style={{
     display: 'inline-flex',
@@ -77,7 +91,9 @@ export const TemplateText = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-
+<scale-notification-toast opened>
+  <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
 ```
 
 ## Warning
@@ -96,7 +112,9 @@ export const TemplateText = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-
+<scale-notification-toast variant="warning" opened>
+  <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
 ```
 
 ## Error
@@ -115,7 +133,9 @@ export const TemplateText = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-
+<scale-notification-toast variant="error" opened>
+  <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
 ```
 
 ## Success
@@ -134,7 +154,9 @@ export const TemplateText = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-
+<scale-notification-toast variant="success" opened>
+  <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
 ```
 
 ## With Text
@@ -152,5 +174,29 @@ export const TemplateText = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
+<scale-notification-toast>
+  <p slot="header">Informational toast headline</p>
+  <p slot="body">Subheadline goes here.</p>
+</scale-notification-toast>
+```
 
+## With Link
+
+<Canvas withSource="none">
+  <Story
+    name="With Link"
+    args={{
+      opened: true,
+      story: true,
+    }}
+  >
+    {TemplateLink.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-toast variant="success" story>
+  <p slot="header">Informational toast headline</p>
+  <p slot="link">Link Text</p>
+</scale-notification-toast>
 ```
