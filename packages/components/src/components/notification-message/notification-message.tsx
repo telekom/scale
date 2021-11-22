@@ -58,6 +58,7 @@ export class NotificationMessage {
           return (
             <scale-notification-message-svg
               class="notification-message__icon-success"
+              color="#187431"
               accessibility-title="success"
             />
           );
