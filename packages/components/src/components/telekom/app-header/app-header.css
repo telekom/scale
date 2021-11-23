@@ -258,7 +258,7 @@ scale-app-header {
   .header .header__nav-logo {
     width: 50px;
     opacity: 0;
-    transition: opacity var(--header-transition-speed) ease-in-out;
+    transition: none;
     font-weight: var(--scl-font-weight-bold);
     margin-right: var(--scl-spacing-16);
     pointer-events: none;
