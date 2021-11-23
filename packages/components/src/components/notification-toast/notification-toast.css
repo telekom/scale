@@ -101,7 +101,7 @@
 
 ::slotted([slot='header']) {
   margin: 0;
-  padding: 0 0 0 10px;
+  padding: 3px 0 0 10px;
   font-weight: bold;
   font-size: 16px;
 }
@@ -130,6 +130,6 @@
 .notification-message__icon-close {
   cursor: pointer;
   position: absolute;
-  top: 14px;
+  top: 17px;
   right: 14px;
 }

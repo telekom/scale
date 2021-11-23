@@ -7,17 +7,17 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                                    | Type                                                   | Default           |
-| --------------- | ---------------- | ---------------------------------------------- | ------------------------------------------------------ | ----------------- |
-| `animated`      | `animated`       | (optional) Animated toast                      | `boolean`                                              | `true`            |
-| `fadeDuration`  | `fade-duration`  | (optional) Toast fade duration                 | `number`                                               | `500`             |
-| `opened`        | `opened`         | (optional) Toast opened                        | `boolean`                                              | `undefined`       |
-| `positionRight` | `position-right` | (optional) Toast position right                | `number`                                               | `12`              |
-| `positionTop`   | `position-top`   | (optional) Toast position at the top           | `number`                                               | `12`              |
-| `size`          | `size`           | (optional) Toast size                          | `string`                                               | `''`              |
-| `story`         | `story`          | (do not use) it is a helper prop for storybook | `boolean`                                              | `undefined`       |
-| `styles`        | `styles`         | (optional) Injected CSS styles                 | `string`                                               | `undefined`       |
-| `variant`       | `variant`        | (optional) Toast variant                       | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property             | Attribute             | Description                                    | Type                                                   | Default           |
+| -------------------- | --------------------- | ---------------------------------------------- | ------------------------------------------------------ | ----------------- |
+| `alignment`          | `alignment`           | (optional) Alignment choose for top and bottom | `"bottom" \| "top"`                                    | `'top'`           |
+| `animated`           | `animated`            | (optional) Animated toast                      | `boolean`                                              | `true`            |
+| `fadeDuration`       | `fade-duration`       | (optional) Toast fade duration                 | `number`                                               | `500`             |
+| `opened`             | `opened`              | (optional) Toast opened                        | `boolean`                                              | `undefined`       |
+| `positionHorizontal` | `position-horizontal` | (optional) Toast position right                | `number`                                               | `12`              |
+| `positionVertical`   | `position-vertical`   | (optional) Toast position at the top           | `number`                                               | `12`              |
+| `story`              | `story`               | (do not use) it is a helper prop for storybook | `boolean`                                              | `undefined`       |
+| `styles`             | `styles`              | (optional) Injected CSS styles                 | `string`                                               | `undefined`       |
+| `variant`            | `variant`             | (optional) Toast variant                       | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Methods

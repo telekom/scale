@@ -9,15 +9,18 @@
 <script>
 export default {
   props: {
-    size: { type: String },
     variant: {
       type: 'error' | 'warning' | 'success' | 'informational',
       default: 'informational',
     },
+    alignment: {
+      type: 'top' | 'bottom',
+      default: 'top',
+    },
     opened: { type: Boolean, default: false },
-    animated: { type: Boolean, default: false },
-    positionTop: { type: Number, default: 12 },
-    positionRight: { type: Number, default: 12 },
+    animated: { type: Boolean, default: true },
+    positionVertical: { type: Number, default: 12 },
+    positionHorizontal: { type: Number, default: 12 },
     fadeDuration: { type: Number, default: 500 },
     styles: { type: String },
     story: { type: Boolean, default: false },

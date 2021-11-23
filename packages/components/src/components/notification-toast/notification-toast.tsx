@@ -27,8 +27,6 @@ import statusNote from '../../utils/status-note';
   shadow: true,
 })
 export class NotificationToast {
-  /** (optional) Toast size */
-  @Prop() size?: string = '';
   /** (optional) Toast variant */
   @Prop() variant?: 'error' | 'warning' | 'success' | 'informational' =
     'informational';
@@ -36,10 +34,12 @@ export class NotificationToast {
   @Prop({ reflect: true }) opened?: boolean;
   /** (optional) Animated toast */
   @Prop() animated?: boolean = true;
+  /** (optional) Alignment choose for top and bottom*/
+  @Prop() alignment?: 'bottom' | 'top' = 'top';
   /** (optional) Toast position at the top */
-  @Prop() positionTop?: number = 12;
+  @Prop() positionVertical?: number = 12;
   /** (optional) Toast position right */
-  @Prop() positionRight?: number = 12;
+  @Prop() positionHorizontal?: number = 12;
   /** (optional) Toast fade duration */
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
@@ -120,88 +120,104 @@ export class NotificationToast {
   }
 
   render() {
-    return (
-      <Host>
-        {this.styles && <style>{this.styles}</style>}
-        <style>{this.transitions(this.toastHeightWithOffset)}</style>
-        <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
+    if (this.opened) {
+      return (
+        <Host>
+          {this.styles && <style>{this.styles}</style>}
+          <style>{this.transitions(this.toastHeightWithOffset)}</style>
+          <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
 
-        <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
-          <div class="notification-toast__icon-container">
-            {this.handleIcons()}
-          </div>
-          <div class="notification-toast__text-container">
-            <slot name="header" />
-            <slot name="body" />
-            <scale-link>
-              <slot name="link" />
-            </scale-link>
-          </div>
+          <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
+            <div class="notification-toast__icon-container">
+              {this.handleIcons()}
+            </div>
+            <div class="notification-toast__text-container">
+              <slot name="header" />
+              <slot name="body" />
+              <scale-link>
+                <slot name="link" />
+              </scale-link>
+            </div>
 
-          <scale-icon-action-circle-close
-            tabindex="0"
-            class="notification-message__icon-close"
-            size={20}
-            onClick={() => {
-              this.close();
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
+            <scale-icon-action-circle-close
+              tabindex="0"
+              class="notification-message__icon-close"
+              size={20}
+              onClick={() => {
                 this.close();
-              }
-            }}
-            accessibility-title="close"
-          />
-        </div>
-      </Host>
-    );
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  this.close();
+                }
+              }}
+              accessibility-title="close"
+            />
+          </div>
+        </Host>
+      );
+    }
   }
 
   transitions = (offset) => `
       @keyframes fadeIn {
         from {
           opacity: 0;
-          top: -${offset}px;
+          ${this.alignment}: -${offset}px;
         }
         to {
           opacity: 1;
-          top: ${this.positionTop}px;
+          ${this.alignment}: ${this.positionVertical}px;
         }
       }
   
       @keyframes fadeOut {
         from {
           opacity: 1;
-          top: ${this.positionTop}px;
+          ${this.alignment}: ${this.positionVertical}px;
         }
         to {
           opacity: 0;
-          top: -${offset}px;
+          ${this.alignment}: -${offset}px;
         }
       }
     `;
 
   animationStyle = (offset) => {
-    return `
+    if (this.animated) {
+      return `
         .notification-toast--show {
-          right: ${this.positionRight}px;
+          right: ${this.positionHorizontal}px;
           animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
-          top: ${this.positionTop}px;
+          ${this.alignment}: ${this.positionVertical}px;
           opacity: 1;
         },
         .notification-toast--show {
-          right: ${this.positionRight}px;
+          right: ${this.positionHorizontal}px;
           animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
-          top: -${offset}px;
+          ${this.alignment}: -${offset}px;
           opacity: 0;
         }
       `;
+    }
+    return `
+    .notification-toast--show {
+      right: ${this.positionHorizontal}px;
+      ${this.alignment}: ${this.positionVertical}px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: ${this.positionHorizontal}px;
+      ${this.alignment}: -${offset}px;
+      opacity: 0;
+    }
+  `;
   };
 
   getToastHeightWithOffset() {
     const toastHeight = this.element.shadowRoot.querySelector('.toast')
       .scrollHeight;
-    this.toastHeightWithOffset = toastHeight + this.positionTop;
+    this.toastHeightWithOffset = toastHeight + this.positionVertical;
   }
 
   getBasePartMap() {
@@ -218,7 +234,6 @@ export class NotificationToast {
 
     return classNames(
       mode === 'basePart' ? 'base' : component,
-      this.size && `${prefix}--size-${this.size}`,
       this.variant && `${prefix}--variant-${this.variant}`,
       !!this.opened && `${prefix}--opened`,
       !!!this.hideToast && `${prefix}--show`,

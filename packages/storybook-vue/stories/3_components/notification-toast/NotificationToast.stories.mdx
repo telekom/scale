@@ -18,6 +18,13 @@ import ScaleNotificationToast from './ScaleNotificationToast.vue';
         type: 'select',
       },
     },
+    alignment: {
+      defaultValue: 'top',
+      options: ['top', 'bottom'],
+      control: {
+        type: 'select',
+      },
+    },
   }}
 />
 
@@ -26,7 +33,11 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleNotificationToast.props,
   },
   template: `<div style="height: 100px">
-    <scale-notification-toast :story="story" :variant="variant"
+    <scale-notification-toast 
+      :story="story" 
+      :positionVertical="position-vertical"
+      :variant="variant" 
+      :alignment="alignment"
       :opened="opened"
       ><p slot="header">Informational toast headline</p>
     </scale-notification-toast>
@@ -92,6 +103,27 @@ export const TemplateLink = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-toast opened>
+  <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
+```
+
+### Alignment Bottom
+
+<Canvas withSource="none">
+  <Story
+    name="Bottom Alignment"
+    args={{
+      opened: true,
+      story: true,
+      alignment: 'bottom',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-toast opened alignment="bottom">
   <p slot="header">Informational toast headline</p>
 </scale-notification-toast>
 ```
