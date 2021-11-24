@@ -4,6 +4,7 @@ import {
   defineCustomElements,
   applyPolyfills,
 } from '@telekom/scale-components/loader';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 Vue.config.productionTip = false;
 Vue.config.ignoredElements = [/scale-\w*/];
@@ -30,5 +31,8 @@ export const parameters = {
         },
       ],
     },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
   },
 };

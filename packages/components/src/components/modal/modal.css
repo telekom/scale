@@ -17,7 +17,7 @@
   );
 
   --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
-  --radius-window: var(--scl-radius-8);
+  --radius-window: var(--scl-radius-12);
   --box-shadow-window: var(--scl-shadow-level-5);
 
   /*

@@ -27,7 +27,7 @@
   pointer-events: initial;
   z-index: var(--scl-z-index-20);
   background: var(--scl-color-white);
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--scl-radius-12);
   box-shadow: var(--scl-shadow-level-4);
   overflow-y: hidden;
   margin-top: var(--spacing-y-list, 0);

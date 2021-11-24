@@ -17,7 +17,7 @@
   /*notification-badge circle*/
   --background-color-circle: var(--scl-color-primary);
   --color-circle: var(--scl-color-white);
-  --font-size-circle: 12px;
+  --font-size-circle: 11px;
   --font-weight-circle: bold;
   --border-radius-circle: 20px;
 
