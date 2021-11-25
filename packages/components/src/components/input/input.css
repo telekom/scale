@@ -30,7 +30,7 @@
     var(--scl-motion-easing-standard);
   font-family: inherit;
   font-size: var(--scl-font-size-16);
-  border-radius: var(--scl-radius-4);
+  border-radius: var(--scl-radius-8);
   border: var(--scl-spacing-1) solid var(--scl-color-black);
 }
 .input .input__textarea {
@@ -46,7 +46,7 @@
     var(--scl-motion-easing-standard);
   font-family: inherit;
   font-size: var(--scl-font-size-16);
-  border-radius: var(--scl-radius-4);
+  border-radius: var(--scl-radius-8);
   border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
 }
 .input .input__select {
@@ -376,7 +376,7 @@
   box-sizing: border-box;
   transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
-  border-radius: var(--scl-radius-4);
+  border-radius: var(--scl-radius-8);
   border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   background: var(--scl-color-background-standard);
 }
@@ -475,7 +475,7 @@
   right: var(--scl-spacing-2);
   position: absolute;
   pointer-events: none;
-  border-radius: var(--scl-radius-4);
+  border-radius: var(--scl-radius-8);
   height: var(--scl-spacing-24);
   background-color: var(--scl-color-background-standard, #ffffff);
 }

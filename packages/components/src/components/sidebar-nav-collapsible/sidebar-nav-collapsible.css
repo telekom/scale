@@ -53,7 +53,7 @@
   justify-content: space-between;
   text-decoration: none;
   font-family: inherit;
-  border-radius: 2px;
+  border-radius: var(--scl-radius-2);
 }
 
 .sidebar-nav-collapsible__button:hover {

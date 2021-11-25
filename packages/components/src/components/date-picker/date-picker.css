@@ -17,7 +17,7 @@ duet-date-picker {
   --duet-font-normal: var(--scl-font-weight-regular);
   --duet-font-bold: var(--scl-font-weight-medium);
   --duet-color-placeholder: var(--scl-color-grey-60);
-  --duet-radius: var(--scl-radius-4);
+  --duet-radius: var(--scl-radius-8);
 
   --duet-color-text-active: var(--scl-color-white, #ffffff);
   --duet-color-button: var(--scl-color-background-standard, #ffffff);
@@ -27,7 +27,7 @@ duet-date-picker {
   --spacing-heading: 0 0 var(--scl-spacing-16) 0;
   --font-size-heading: var(--scl-font-size-20);
   --font-size-select-label: var(--scl-font-size-16);
-  --radius-day: var(--scl-radius-8);
+  --radius-day: var(--scl-radius-12);
   --font-size-day: var(--scl-font-size-16);
   --font-size-table-header: var(--font-size-day);
   --font-weight-table-header: var(--scl-font-weight-extrabold);
@@ -323,9 +323,7 @@ duet-date-picker .duet-date__day.is-today::before {
   display: inline-block;
   width: var(--scl-spacing-4);
   height: var(--scl-spacing-4);
-  -moz-border-radius: 7.5px;
-  -webkit-border-radius: 7.5px;
-  border-radius: 7.5px;
+  border-radius: var(--scl-radius-8);
   background-color: var(--scl-color-primary);
   opacity: 1;
   left: var(--scl-spacing-16);

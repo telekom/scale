@@ -396,7 +396,6 @@ export class DatePicker {
 
   handleKeyPress(e) {
     this.hasValue = e.target.value != null && e.target.value !== '';
-    this.value = e.target.value;
   }
 
   render() {

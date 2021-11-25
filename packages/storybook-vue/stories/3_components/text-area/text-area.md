@@ -19,7 +19,7 @@ If users don't need to enter multiple lines of text, use text fields instead.
 
 ## Elements
 
-![Image Name](assets/3_components/text-area/text_area_elements_poked.png)
+![Image Name](assets/3_components/text-area/text_area_elements.png)
 
 ### Label (1)
 
@@ -61,7 +61,7 @@ If the text area is disabled, users can't enter or change text. Use this state i
 
 Read-only text areas show prefilled text that users cannot edit or change. However, the content is accessible for screen readers. Use this state when you want users to read, but not edit, a specific piece of content.
 
-![Image Name](assets/3_components/text-area/text-area-read-only.png)
+![Image Name](assets/3_components/text-area/text_area_disabled_readonly.png)
 
 ## Related components
 
