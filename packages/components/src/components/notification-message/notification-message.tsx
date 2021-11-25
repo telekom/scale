@@ -13,8 +13,6 @@ import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
-const TIMEOUT = 3000;
-
 @Component({
   tag: 'scale-notification-message',
   styleUrl: 'notification-message.css',
@@ -27,7 +25,8 @@ export class NotificationMessage {
     'informational';
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = false;
+  @Prop() autoHide?: boolean = false;
+  @Prop() autoHideDuration?: number = 3000;
 
   hasSlotText: boolean;
 
@@ -36,9 +35,8 @@ export class NotificationMessage {
   }
 
   componentDidRender() {
-    if (this.timeout) {
-      const timeout = this.timeout === true ? TIMEOUT : this.timeout;
-      setTimeout(this.close, timeout);
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
     }
   }
 
