@@ -21,30 +21,28 @@ import {
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
-const TIMEOUT = 3000;
-
 @Component({
   tag: 'scale-notification-banner',
   styleUrl: 'notification-banner.css',
   shadow: true,
 })
-export class NotificationMessage {
+export class NotificationBanner {
   @Element() hostElement: HTMLElement;
 
   @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
     'informational';
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = false;
+  @Prop() autoHide?: boolean = false;
+  @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
 
   @State() hasText?: boolean;
   @State() hasLink?: boolean;
 
   componentDidRender() {
-    if (this.timeout) {
-      const timeout = this.timeout === true ? TIMEOUT : this.timeout;
-      setTimeout(this.close, timeout);
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
     }
     if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
       this.hasText = true;
