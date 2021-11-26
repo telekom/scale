@@ -14,8 +14,8 @@ export default {
       default: 'informational',
     },
     alignment: {
-      type: 'top' | 'bottom',
-      default: 'top',
+      type: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left',
+      default: 'top-right',
     },
     opened: { type: Boolean, default: false },
     animated: { type: Boolean, default: true },
