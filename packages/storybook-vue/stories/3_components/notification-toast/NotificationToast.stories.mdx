@@ -34,7 +34,7 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `<div style="height: 100px">
     <scale-notification-toast 
-      :story="story" 
+      story
       :positionVertical="position-vertical"
       :variant="variant" 
       :alignment="alignment"
@@ -50,7 +50,9 @@ export const TemplateText = (args, { argTypes }) => ({
     ...ScaleNotificationToast.props,
   },
   template: `<div style="height: 100px">
-    <scale-notification-toast :story="story" :variant="variant"
+    <scale-notification-toast 
+      story
+      :variant="variant"
       :opened="opened"
       ><p slot="header">Informational toast headline</p>
       <p slot="body">Subheadline goes here.</p>
@@ -64,7 +66,9 @@ export const TemplateLink = (args, { argTypes }) => ({
     ...ScaleNotificationToast.props,
   },
   template: `<div style="height: 100px">
-    <scale-notification-toast :story="story" :variant="variant"
+    <scale-notification-toast 
+      story 
+      :variant="variant"
       :opened="opened"
       ><p slot="header">Informational toast headline</p>
       <p slot="link">Link Text</p>
@@ -187,6 +191,27 @@ export const TemplateLink = (args, { argTypes }) => ({
 
 ```html
 <scale-notification-toast variant="success" opened>
+  <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
+```
+
+## Informational
+
+<Canvas withSource="none">
+  <Story
+    name="Informational"
+    args={{
+      opened: true,
+      story: true,
+      variant: 'informational',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-toast variant="informational" opened>
   <p slot="header">Informational toast headline</p>
 </scale-notification-toast>
 ```

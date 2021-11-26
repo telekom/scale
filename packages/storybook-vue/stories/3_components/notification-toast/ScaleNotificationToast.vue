@@ -23,7 +23,6 @@ export default {
     positionHorizontal: { type: Number, default: 12 },
     fadeDuration: { type: Number, default: 500 },
     styles: { type: String },
-    story: { type: Boolean, default: false },
   },
 };
 </script>
