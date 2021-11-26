@@ -35,7 +35,11 @@ export class NotificationToast {
   /** (optional) Animated toast */
   @Prop() animated?: boolean = true;
   /** (optional) Alignment choose for top and bottom*/
-  @Prop() alignment?: 'bottom' | 'top' = 'top';
+  @Prop() alignment?:
+    | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left' = 'top-right';
   /** (optional) Toast position at the top */
   @Prop() positionVertical?: number = 12;
   /** (optional) Toast position right */
@@ -52,9 +56,17 @@ export class NotificationToast {
   @Element() element: HTMLElement;
 
   hideToast: boolean = false;
+  alignmentVertical: string;
+  alignmentHorizontal: string;
 
   connectedCallback() {
     statusNote({ source: this.element, type: 'warn' });
+  }
+
+  componentWillLoad() {
+    const alignmentParts = this.alignment.split('-');
+    this.alignmentVertical = alignmentParts[0];
+    this.alignmentHorizontal = alignmentParts[1];
   }
 
   close = () => {
@@ -163,22 +175,22 @@ export class NotificationToast {
       @keyframes fadeIn {
         from {
           opacity: 0;
-          ${this.alignment}: -${offset}px;
+          ${this.alignmentVertical}: -${offset}px;
         }
         to {
           opacity: 1;
-          ${this.alignment}: ${this.positionVertical}px;
+          ${this.alignmentVertical}: ${this.positionVertical}px;
         }
       }
   
       @keyframes fadeOut {
         from {
           opacity: 1;
-          ${this.alignment}: ${this.positionVertical}px;
+          ${this.alignmentVertical}: ${this.positionVertical}px;
         }
         to {
           opacity: 0;
-          ${this.alignment}: -${offset}px;
+          ${this.alignmentVertical}: -${offset}px;
         }
       }
     `;
@@ -187,28 +199,28 @@ export class NotificationToast {
     if (this.animated) {
       return `
         .notification-toast--show {
-          right: ${this.positionHorizontal}px;
+          ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
           animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
-          ${this.alignment}: ${this.positionVertical}px;
+          ${this.alignmentVertical}: ${this.positionVertical}px;
           opacity: 1;
         },
         .notification-toast--show {
-          right: ${this.positionHorizontal}px;
+          ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
           animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
-          ${this.alignment}: -${offset}px;
+          ${this.alignmentVertical}: -${offset}px;
           opacity: 0;
         }
       `;
     }
     return `
     .notification-toast--show {
-      right: ${this.positionHorizontal}px;
-      ${this.alignment}: ${this.positionVertical}px;
+      ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
       opacity: 1;
     },
     .notification-toast--show {
-      right: ${this.positionHorizontal}px;
-      ${this.alignment}: -${offset}px;
+      ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+      ${this.alignmentVertical}: -${offset}px;
       opacity: 0;
     }
   `;
