@@ -1,7 +1,7 @@
 {
   "name": "@telekom/scale-storybook-vue",
   "private": true,
-  "version": "3.0.0-beta.31",
+  "version": "3.0.0-beta.32",
   "main": "index.js",
   "license": "MPL-2.0",
   "devDependencies": {
@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "@storybook/addon-viewport": "^6.3.12",
-    "@telekom/scale-components": "^3.0.0-beta.31",
-    "@telekom/scale-components-vue": "^3.0.0-beta.31"
+    "@telekom/scale-components": "^3.0.0-beta.32",
+    "@telekom/scale-components-vue": "^3.0.0-beta.32"
   },
   "scripts": {
     "prestart": "rm -rf node_modules/.cache/ && yes | cp -a ../components/dist/scale-components/fonts/* public/fonts/ && yes | cp -a ../components/dist/scale-components/scale-components.css public/",
