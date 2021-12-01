@@ -68,14 +68,14 @@ export class NotificationMessage {
           );
         case 'error':
           return (
-            <scale-icon-alert-warning
+            <scale-icon-alert-error
               class="notification-message__icon-error"
               accessibility-title="error"
             />
           );
         case 'warning':
           return (
-            <scale-icon-alert-information
+            <scale-icon-alert-error
               class="notification-message__icon-information"
               color="#AE461C"
               accessibility-title="information"
