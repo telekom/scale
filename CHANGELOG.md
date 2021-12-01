@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Bug Fixes
+
+* **header:** improve mobile logo transition ([495a8f7](https://github.com/telekom/scale/commit/495a8f77bd7d0eed4c1be75dd13dca08208cc64f))
+* **notification-badge:** vertical center alignment ([#692](https://github.com/telekom/scale/issues/692)) ([242254d](https://github.com/telekom/scale/commit/242254d32112ec422f8ed2d14b79ac5e3a8b8ccc))
+* **shell-content:** center box when max-width is set ([#709](https://github.com/telekom/scale/issues/709)) ([8312623](https://github.com/telekom/scale/commit/83126238d84599bdea3cc5b50352fbba7c3d0e81))
+
+
+### Features
+
+* new sketch lib release ([#699](https://github.com/telekom/scale/issues/699)) ([b9127b1](https://github.com/telekom/scale/commit/b9127b1e699ab20df30fd04ba5ab33af3fe538a1))
+
+
+
+
+
 # [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
 
 
