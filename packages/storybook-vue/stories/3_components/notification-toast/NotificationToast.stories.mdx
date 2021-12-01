@@ -96,7 +96,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="Standard"
     args={{
       opened: true,
-      story: true,
     }}
   >
     {Template.bind({})}
@@ -118,8 +117,7 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="Bottom Alignment"
     args={{
       opened: true,
-      story: true,
-      alignment: 'bottom-right',
+      alignment: 'bottom-left',
     }}
   >
     {Template.bind({})}
@@ -127,7 +125,7 @@ export const TemplateLink = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-toast opened alignment="bottom-right">
+<scale-notification-toast opened alignment="bottom-left">
   <p slot="header">Informational toast headline</p>
 </scale-notification-toast>
 ```
@@ -139,7 +137,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="Warning"
     args={{
       opened: true,
-      story: true,
       variant: 'warning',
     }}
   >
@@ -160,7 +157,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="Error"
     args={{
       opened: true,
-      story: true,
       variant: 'error',
     }}
   >
@@ -181,7 +177,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="Success"
     args={{
       opened: true,
-      story: true,
       variant: 'success',
     }}
   >
@@ -202,7 +197,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="Informational"
     args={{
       opened: true,
-      story: true,
       variant: 'informational',
     }}
   >
@@ -223,7 +217,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="With Text"
     args={{
       opened: true,
-      story: true,
     }}
   >
     {TemplateText.bind({})}
@@ -244,7 +237,6 @@ export const TemplateLink = (args, { argTypes }) => ({
     name="With Link"
     args={{
       opened: true,
-      story: true,
     }}
   >
     {TemplateLink.bind({})}
