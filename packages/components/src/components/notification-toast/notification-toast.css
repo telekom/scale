@@ -77,22 +77,22 @@
 
 .notification-toast.notification-toast--variant-success
   .notification-toast__icon-container {
-  background: #187431;
+  background: var(--scl-color-text-success);
 }
 
 .notification-toast.notification-toast--variant-warning
   .notification-toast__icon-container {
-  background: #df6d3f;
+  background: var(--scl-color-orange-70);
 }
 
 .notification-toast.notification-toast--variant-error
   .notification-toast__icon-container {
-  background: #d82a48;
+  background: var(--scl-color-red-70);
 }
 
 .notification-toast.notification-toast--variant-informational
   .notification-toast__icon-container {
-  background: #216bff;
+  background: var(--scl-color-blue-60);
 }
 
 /*
