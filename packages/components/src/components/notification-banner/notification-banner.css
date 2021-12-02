@@ -71,21 +71,26 @@
   font-weight: var(--scl-font-weight-regular);
 }
 
-.notification-banner__icon-close {
+.notification-banner__button-close {
   position: absolute;
   top: 8px;
   right: 13.5px;
-  color: black;
+  color: #191919;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-.notification-banner__icon-close svg {
+.notification-banner__button-close svg {
   height: 19px;
   width: 19px;
   padding: 6.5px;
   border-radius: 20%;
 }
 
-.notification-banner__icon-close:hover svg {
+.notification-banner__button-close:hover svg {
   background-color: white;
   color: var(--scl-color-primary-hover);
 }

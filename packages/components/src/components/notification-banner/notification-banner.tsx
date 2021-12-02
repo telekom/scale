@@ -120,27 +120,27 @@ export class NotificationBanner {
             {this.handleIcons()}
             <div part="heading" class="notification-banner__heading">
               <slot>&emsp;</slot>
-
               {this.dismissible && (
-                <scale-icon-action-circle-close
-                  tabindex="0"
-                  class="notification-banner__icon-close"
-                  onClick={() => {
-                    this.close();
-                  }}
+                <button
+                  part="button-dismissable"
+                  accessibility-title="close"
+                  class="notification-banner__button-close"
+                  onClick={() => this.close()}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       this.close();
                     }
                   }}
-                  accessibility-title="close"
-                />
+                >
+                  <scale-icon-action-circle-close />
+                </button>
               )}
               {this.hasText ? (
                 <div part="text" class="notification-banner__text">
                   <slot name="text" />
                 </div>
               ) : null}
+
               {this.hasLink ? (
                 <scale-link href={this.href} class="notification-banner__link">
                   <slot name="link" />
