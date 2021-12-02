@@ -57,6 +57,7 @@ export class Header {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
+  @Prop() alwaysScrolled?: boolean = false;
   // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
   @Prop() megaMenuVisible?: boolean = false;
@@ -519,7 +520,7 @@ export class Header {
   getCssClassMap() {
     return classNames(
       'header',
-      this.scrolled && 'header--sticky',
+      (this.scrolled || this.alwaysScrolled) && 'header--sticky',
       (this.visibleMegaMenu || this.mobileMenu || this.userMenuMobile) &&
         'menu--open'
     );
