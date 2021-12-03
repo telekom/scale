@@ -59,7 +59,7 @@
   position: absolute;
   top: 8px;
   right: 13.5px;
-  color: black;
+  color: hsl(0, 0%, 10%);
 }
 
 .notification-message__icon-close svg {
@@ -70,7 +70,7 @@
 }
 
 .notification-message__icon-close:hover svg {
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   color: var(--scl-color-primary-hover);
 }
 
@@ -103,6 +103,6 @@
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .notification-message__icon-close {
-    color: white;
+    color: hsl(0, 0%, 100%);
   }
 }
