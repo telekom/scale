@@ -1,7 +1,6 @@
 describe('NotificationToast', () => {
   test.each([
     ['standard'],
-    ['alignment'],
     ['warning'],
     ['error'],
     ['success'],
@@ -13,6 +12,7 @@ describe('NotificationToast', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
+    await page.waitFor(3000);
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
