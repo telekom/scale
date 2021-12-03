@@ -2,7 +2,7 @@
     <h1>Notification Banner</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
-Die standardmäßige Notification Banner Komponente kann zum ausgeben von einer Mitteilung/ Meldung/ Information genutzt werden. Ergänzend kann dieser auch ein kurzer erklärender Text hinzugefügt werden.
+Die standardmäßige Notification Banner Komponente kann zum Ausgeben von einer Mitteilung/ Meldung/ Information genutzt werden, welche die Seite oder das System betrifft. Ergänzend kann dieser auch ein kurzer erklärender Text hinzugefügt werden.
 
 ## Beta-Komponente
 
