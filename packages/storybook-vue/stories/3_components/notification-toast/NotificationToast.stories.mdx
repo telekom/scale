@@ -35,7 +35,8 @@ export const Template = (args, { argTypes }) => ({
   template: `<div style="height: 100px">
     <scale-notification-toast 
       story
-      :positionVertical="position-vertical"
+      :position-vertical="positionVertical"
+      :position-horizontal="positionHorizontal"
       :variant="variant" 
       :alignment="alignment"
       :opened="opened"
