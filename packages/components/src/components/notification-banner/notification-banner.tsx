@@ -68,7 +68,7 @@ export class NotificationBanner {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-notification-banner-svg
+            <scale-notification-message-svg
               class="notification-banner__icon-success"
               accessibility-title="success"
             />
