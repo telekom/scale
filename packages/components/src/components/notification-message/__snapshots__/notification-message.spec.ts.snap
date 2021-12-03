@@ -5,7 +5,7 @@ exports[`NotificationMessage handle variant prop 1`] = `
   <mock:shadow-root>
     <div class="notification-message notification-message--variant-error" part="notification-message variant-error" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-warning accessibility-title="error" class="notification-message__icon-error"></scale-icon-alert-warning>
+        <scale-icon-alert-error accessibility-title="error" class="notification-message__icon-error"></scale-icon-alert-error>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>
@@ -21,7 +21,7 @@ exports[`NotificationMessage handle variant prop 2`] = `
   <mock:shadow-root>
     <div class="notification-message notification-message--variant-warning" part="notification-message variant-warning" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-information accessibility-title="information" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-information>
+        <scale-icon-alert-error accessibility-title="information" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-error>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>
