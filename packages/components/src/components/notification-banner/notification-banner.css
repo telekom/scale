@@ -25,6 +25,7 @@
   width: var(--width);
   position: relative;
   box-shadow: var(--scl-shadow-level-1);
+  min-height: 48px;
 }
 
 .notification-banner--variant-error {

@@ -119,7 +119,7 @@ export class NotificationBanner {
           <div part="container" class="notification-banner__container">
             {this.handleIcons()}
             <div part="heading" class="notification-banner__heading">
-              <slot>&emsp;</slot>
+              <slot></slot>
               {this.dismissible && (
                 <button
                   part="button-dismissable"
