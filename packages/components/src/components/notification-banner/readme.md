@@ -7,25 +7,58 @@
 
 ## Properties
 
-| Property             | Attribute             | Description                                                                     | Type      | Default     |
-| -------------------- | --------------------- | ------------------------------------------------------------------------------- | --------- | ----------- |
-| `accessibilityTitle` | `accessibility-title` | (optional) When using the icon standalone, make it meaningful for accessibility | `string`  | `undefined` |
-| `decorative`         | `decorative`          | (optional) If `true` the SVG element will get `aria-hidden="true"`              | `boolean` | `false`     |
-| `selected`           | `selected`            | (optional) If `true`, the icon changes visually                                 | `boolean` | `false`     |
-| `size`               | `size`                | (optional) The width and height in pixels                                       | `number`  | `24`        |
+| Property           | Attribute            | Description | Type                                                   | Default           |
+| ------------------ | -------------------- | ----------- | ------------------------------------------------------ | ----------------- |
+| `autoHide`         | `auto-hide`          |             | `boolean`                                              | `false`           |
+| `autoHideDuration` | `auto-hide-duration` |             | `number`                                               | `3000`            |
+| `dismissible`      | `dismissible`        |             | `boolean`                                              | `false`           |
+| `href`             | `href`               |             | `string`                                               | `undefined`       |
+| `opened`           | `opened`             |             | `boolean`                                              | `undefined`       |
+| `variant`          | `variant`            |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+
+
+## Methods
+
+### `open() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
+| `"container"`          |             |
+| `"heading"`            |             |
+| `"text"`               |             |
 
 
 ## Dependencies
 
-### Used by
+### Depends on
 
- - [scale-notification-banner](.)
+- [scale-notification-message-svg](../notification-message)
+- [scale-icon-alert-information](../icons/alert-information)
+- [scale-icon-alert-error](../icons/alert-error)
+- [scale-icon-action-circle-close](../icons/action-circle-close)
+- [scale-link](../link)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification-banner --> scale-notification-banner-svg
-  style scale-notification-banner-svg fill:#f9f,stroke:#333,stroke-width:4px
+  scale-notification-banner --> scale-notification-message-svg
+  scale-notification-banner --> scale-icon-alert-information
+  scale-notification-banner --> scale-icon-alert-error
+  scale-notification-banner --> scale-icon-action-circle-close
+  scale-notification-banner --> scale-link
+  style scale-notification-banner fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
