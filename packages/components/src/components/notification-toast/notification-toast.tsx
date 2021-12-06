@@ -34,7 +34,7 @@ export class NotificationToast {
   @Prop({ reflect: true }) opened?: boolean;
   /** (optional) Animated toast */
   @Prop() animated?: boolean = true;
-  /** (optional) Alignment choose for top and bottom*/
+  /** (optional) Alignment choose for top and bottom */
   @Prop() alignment?:
     | 'bottom-right'
     | 'bottom-left'
@@ -48,7 +48,7 @@ export class NotificationToast {
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
   @Prop({ reflect: true }) styles?: string;
-  /** (do not use) it is a helper prop for storybook*/
+  /** (do not use) it is a helper prop for storybook */
   @Prop() story?: boolean;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
