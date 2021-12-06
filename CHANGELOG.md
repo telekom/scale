@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+
+### Features
+
+* **header:** add prop sticky to header ([#716](https://github.com/telekom/scale/issues/716)) ([1982411](https://github.com/telekom/scale/commit/1982411be9d742eb4e4dd8f8d858e2d4a3b95fce))
+
+
+
+
+
 # [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
 
 
