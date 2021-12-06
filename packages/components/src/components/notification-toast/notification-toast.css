@@ -10,11 +10,26 @@
  */
 
 :host {
+  /* toast */
+
   --width: 367px;
-  --radius: var(--scl-radius-4);
+  --radius: var(--scl-radius-8);
   --background: var(--scl-color-background-standard);
   --box-shadow: var(--scl-shadow-level-0);
-  --spacing: var(--scl-spacing-16);
+
+  /* icon container colors */
+
+  --background-success-icon-container: var(--scl-color-text-success);
+  --background-warning-icon-container: var(--scl-color-orange-70);
+  --background-error-icon-container: var(--scl-color-red-70);
+  --background-informational-icon-container: var(--scl-color-blue-60);
+
+  /* icon container colors */
+
+  --background-success-text-container: #f2f7ef;
+  --background-warning-text-container: #fbf4eb;
+  --background-error-text-container: #fbf3f4;
+  --background-informational-text-container: #eff9fb;
 }
 .notification-toast {
   width: var(--width);
@@ -24,7 +39,7 @@
   background: var(--background);
   box-shadow: var(--box-shadow);
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: var(--radius);
   flex-direction: column;
   justify-content: space-between;
 }
@@ -39,19 +54,19 @@
 }
 
 .notification-toast.notification-toast--variant-success {
-  background: #f2f7ef;
+  background: var(--background-success-text-container);
 }
 
 .notification-toast.notification-toast--variant-warning {
-  background: #fbf4eb;
+  background: var(--background-warning-text-container);
 }
 
 .notification-toast.notification-toast--variant-error {
-  background: #fbf3f4;
+  background: var(--background-error-text-container);
 }
 
 .notification-toast.notification-toast--variant-informational {
-  background: #eff9fb;
+  background: var(--background-informational-text-container);
 }
 
 /*
@@ -77,22 +92,22 @@
 
 .notification-toast.notification-toast--variant-success
   .notification-toast__icon-container {
-  background: var(--scl-color-text-success);
+  background: var(--background-success-icon-container);
 }
 
 .notification-toast.notification-toast--variant-warning
   .notification-toast__icon-container {
-  background: var(--scl-color-orange-70);
+  background: var(--background-warning-icon-container);
 }
 
 .notification-toast.notification-toast--variant-error
   .notification-toast__icon-container {
-  background: var(--scl-color-red-70);
+  background: var(--background-error-icon-container);
 }
 
 .notification-toast.notification-toast--variant-informational
   .notification-toast__icon-container {
-  background: var(--scl-color-blue-60);
+  background: var(--background-informational-icon-container);
 }
 
 /*
@@ -115,7 +130,7 @@
 }
 
 .notification-toast__text-container {
-  width: 271px;
+  width: var(--width);
   min-height: 33px;
   float: left;
   position: relative;
