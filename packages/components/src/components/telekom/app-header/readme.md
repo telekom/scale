@@ -24,6 +24,7 @@
 | `mobileMenuVisible`   | `mobile-menu-visible`    |             | `boolean` | `false`     |
 | `portalName`          | `portal-name`            |             | `string`  | `''`        |
 | `sectorNavigation`    | `sector-navigation`      |             | `any`     | `[]`        |
+| `sticky`              | `sticky`                 |             | `boolean` | `false`     |
 | `userNavigation`      | `user-navigation`        |             | `any`     | `[]`        |
 
 
