@@ -70,8 +70,10 @@ export class Input {
   @Prop() cols?: number;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
-  /** (optional) Input status */
+  /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** (optional) Input status */
+  @Prop() invalid?: boolean = false;
   /** (optional) Input max length */
   @Prop() maxLength?: number;
   /** (optional) Input min length */
@@ -208,6 +210,16 @@ export class Input {
     ) {
       this.selectElement.value = value;
     }
+
+    if (this.status !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.el,
+      });
+    }
   }
 
   disconnectedCallback() {
@@ -295,7 +307,7 @@ export class Input {
     const Tag = this.type === 'textarea' ? 'textarea' : 'input';
 
     const ariaInvalidAttr =
-      this.status === 'error' ? { 'aria-invalid': true } : {};
+      this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
@@ -471,6 +483,7 @@ export class Input {
       this.disabled && `input--disabled`,
       this.transparent && 'input--transparent',
       this.status && `input--status-${this.status}`,
+      this.invalid && `input--status-error`,
       this.size && `input--size-${this.size}`,
       this.value != null && this.value !== '' && 'animated'
     );

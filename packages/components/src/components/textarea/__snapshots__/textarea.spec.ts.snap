@@ -15,7 +15,7 @@ exports[`Textarea should match snapshot -> counter 1`] = `
 `;
 
 exports[`Textarea should match snapshot -> helpertext 1`] = `
-<scale-textarea helper-text="helpertext" status="error">
+<scale-textarea helper-text="helpertext" invalid="true">
   <div class="textarea textarea--status-error">
     <label class="textarea__label" htmlfor="input-textarea1"></label><textarea aria-describedby="helper-message-2" aria-invalid="" class="textarea__control" id="input-textarea1" value=""></textarea>
     <span aria-hidden="true" class="textarea__label-safety-background"></span>

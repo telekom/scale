@@ -3,6 +3,161 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+
+### Features
+
+* **header:** add prop sticky to header ([#716](https://github.com/telekom/scale/issues/716)) ([1982411](https://github.com/telekom/scale/commit/1982411be9d742eb4e4dd8f8d858e2d4a3b95fce))
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Bug Fixes
+
+* **header:** improve mobile logo transition ([495a8f7](https://github.com/telekom/scale/commit/495a8f77bd7d0eed4c1be75dd13dca08208cc64f))
+* **notification-badge:** vertical center alignment ([#692](https://github.com/telekom/scale/issues/692)) ([242254d](https://github.com/telekom/scale/commit/242254d32112ec422f8ed2d14b79ac5e3a8b8ccc))
+* **shell-content:** center box when max-width is set ([#709](https://github.com/telekom/scale/issues/709)) ([8312623](https://github.com/telekom/scale/commit/83126238d84599bdea3cc5b50352fbba7c3d0e81))
+
+
+### Features
+
+* new sketch lib release ([#699](https://github.com/telekom/scale/issues/699)) ([b9127b1](https://github.com/telekom/scale/commit/b9127b1e699ab20df30fd04ba5ab33af3fe538a1))
+
+
+
+
+
+# [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
+
+
+### Features
+
+* rounding radius refactor ([#691](https://github.com/telekom/scale/issues/691)) ([f03a762](https://github.com/telekom/scale/commit/f03a762e6c3c5b4ac38ce70a347eedbf8c9f4dda))
+* **storybook:** better tracking, new version, viewport plugin ([#696](https://github.com/telekom/scale/issues/696)) ([6c5eb34](https://github.com/telekom/scale/commit/6c5eb34bfe7e42fd8bdbc4b4cdf1c407c3d5650e))
+
+
+
+
+
+# [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
+
+
+### Bug Fixes
+
+* **date-picker:** stop updating local value on key press ([#695](https://github.com/telekom/scale/issues/695)) ([ee619d0](https://github.com/telekom/scale/commit/ee619d0afed1bacd121c0cbeee29813d671ddf19))
+
+
+
+
+
+# [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
+
+
+### Bug Fixes
+
+* rotation of order icon on title table head ([#689](https://github.com/telekom/scale/issues/689)) ([4351d9e](https://github.com/telekom/scale/commit/4351d9ee0dac15a658c81a4a09b775bf4eaf7f55))
+* **modal:** closing is prevented with legacy event ([#687](https://github.com/telekom/scale/issues/687)) ([e712c3a](https://github.com/telekom/scale/commit/e712c3af4fd49124e37afdba0c2e45ccfb2ec76c))
+* **user-menu:** provide unique name ([1ad00ca](https://github.com/telekom/scale/commit/1ad00cafe6bac58621c05dc232c35babe86fcf4c))
+
+
+### Features
+
+* add innerTabindex prop to link and button (685) ([#686](https://github.com/telekom/scale/issues/686)) ([15288ee](https://github.com/telekom/scale/commit/15288ee73ff259a7379d1c0e8f3a48f13617c4eb))
+
+
+
+
+
+# [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
+
+
+### Bug Fixes
+
+* minor visual regressions ([#680](https://github.com/telekom/scale/issues/680)) ([dffb03f](https://github.com/telekom/scale/commit/dffb03f21dac8c2d0cb1efccb39955b62a1067bd))
+* **a11y:** address AXE violations ([#672](https://github.com/telekom/scale/issues/672)) ([0eeafea](https://github.com/telekom/scale/commit/0eeafea793d26ba8f5bea6319fca2389992b6fe5))
+
+
+### Features
+
+* **callout:** add as beta component ([e30f32f](https://github.com/telekom/scale/commit/e30f32f682e2ad0a72778a65c1065c565542d7bc))
+* **header:** user menu ([#654](https://github.com/telekom/scale/issues/654)) ([9c7e9ad](https://github.com/telekom/scale/commit/9c7e9ada1328d4233948d67ff57adb88d5354ed5))
+* **notification-badge:** add first beta ([#655](https://github.com/telekom/scale/issues/655)) ([5991853](https://github.com/telekom/scale/commit/599185342fe05a2c4f87a4f0febce3c5a39bd90d))
+* **tooltip:** add beta component ([#607](https://github.com/telekom/scale/issues/607)) ([a6441fc](https://github.com/telekom/scale/commit/a6441fc976637a6ccc79e5248735bfa7dd9c8671)), closes [#415](https://github.com/telekom/scale/issues/415) [#465](https://github.com/telekom/scale/issues/465)
+* add setFocus method to button and link ([#661](https://github.com/telekom/scale/issues/661)) ([94eb907](https://github.com/telekom/scale/commit/94eb9072b6be44e93377c673bf40d889d975cfa7))
+
+
+
+
+
+# [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
+
+
+### Bug Fixes
+
+* **date-picker:** input value handling, calendarHeading + styles ([#660](https://github.com/telekom/scale/issues/660)) ([3311bf2](https://github.com/telekom/scale/commit/3311bf2ec3aa72c095cbe18bad50452fa63c57ac))
+
+
+
+
+
+# [3.0.0-beta.26](https://github.com/telekom/scale/compare/v3.0.0-beta.25...v3.0.0-beta.26) (2021-10-28)
+
+
+### Bug Fixes
+
+* **date-picker:** firefox placeholder, small icon styles ([#657](https://github.com/telekom/scale/issues/657)) ([a95fdd9](https://github.com/telekom/scale/commit/a95fdd9b4210ccc8caf39daf7f6e5dc25877accb))
+* checkbox resizing issue on sketch lib ([#653](https://github.com/telekom/scale/issues/653)) ([b7768c4](https://github.com/telekom/scale/commit/b7768c43ae11f6612f65e7f702af9e04b1bf1b30))
+
+
+
+
+
+# [3.0.0-beta.25](https://github.com/telekom/scale/compare/v3.0.0-beta.24...v3.0.0-beta.25) (2021-10-27)
+
+**Note:** Version bump only for package telekom
+
+
+
+
+
+# [3.0.0-beta.24](https://github.com/telekom/scale/compare/v3.0.0-beta.23...v3.0.0-beta.24) (2021-10-27)
+
+
+### Bug Fixes
+
+* **button:** download despite download prop set to 'false' ([#648](https://github.com/telekom/scale/issues/648)) ([6a7c368](https://github.com/telekom/scale/commit/6a7c3682feae0922cccc0e6807cc7a71bf025060))
+
+
+
+
+
+# [3.0.0-beta.23](https://github.com/telekom/scale/compare/v3.0.0-beta.22...v3.0.0-beta.23) (2021-10-18)
+
+
+### Features
+
+* **switch:** add name prop ([#629](https://github.com/telekom/scale/issues/629)) ([83cd99a](https://github.com/telekom/scale/commit/83cd99ac7aaf26e7b7681d1881ab0b4f1efcde17))
+
+
+
+
+
+# [3.0.0-beta.22](https://github.com/telekom/scale/compare/v3.0.0-beta.21...v3.0.0-beta.22) (2021-10-15)
+
+
+### Bug Fixes
+
+* index file ([b43df9a](https://github.com/telekom/scale/commit/b43df9adb7ec6684095a821b63ac6ba6a5061ec5))
+
+
+
+
+
 # [3.0.0-beta.21](https://github.com/telekom/scale/compare/v3.0.0-beta.20...v3.0.0-beta.21) (2021-09-30)
 
 

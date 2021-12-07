@@ -26,10 +26,12 @@ export class Shell {
   @Prop() logoClick?: any;
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
+  @Prop() userNavigation?: any = [];
   @Prop() sectorNavigation?: any = [];
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
+  @Prop() sticky?: boolean = false;
   @State() scrolled: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -55,11 +57,13 @@ export class Shell {
               portalName={this.portalName}
               mainNavigation={this.mainNavigation}
               iconNavigation={this.iconNavigation}
+              userNavigation={this.userNavigation}
               sectorNavigation={this.sectorNavigation}
               addonNavigation={this.addonNavigation}
               activeRouteId={this.activeRouteId}
               activeSectorId={this.activeSectorId}
               claimLang={this.claimLang}
+              sticky={this.sticky}
             ></scale-app-header>
           )}
           <main class="content">

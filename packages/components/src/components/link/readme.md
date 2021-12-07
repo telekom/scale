@@ -62,6 +62,7 @@
 | `href`           | `href`           | (optional) Link href                                                                                                                                                 | `string`                                                                                                                                                                                 | `undefined` |
 | `hreflang`       | `hreflang`       | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
 | `iconPosition`   | `icon-position`  | (optional) Chnage icon/content slot order                                                                                                                            | `"after" \| "before"`                                                                                                                                                                    | `'after'`   |
+| `innerTabindex`  | `inner-tabindex` | (optional) Set `tabindex` in the inner button or link element                                                                                                        | `number`                                                                                                                                                                                 | `undefined` |
 | `omitUnderline`  | `omit-underline` | (optional) Remove the initial line from the text (can also be achieved via `--line-thickness-initial: 0`) Remove the line for every state with `--line-thickness: 0` | `boolean`                                                                                                                                                                                | `false`     |
 | `ping`           | `ping`           | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
 | `referrerpolicy` | `referrerpolicy` | (optional)                                                                                                                                                           | `"" \| "no-referrer" \| "no-referrer-when-downgrade" \| "origin" \| "origin-when-cross-origin" \| "same-origin" \| "strict-origin" \| "strict-origin-when-cross-origin" \| "unsafe-url"` | `undefined` |
@@ -69,6 +70,19 @@
 | `styles`         | `styles`         | (optional) Injected CSS styles                                                                                                                                       | `string`                                                                                                                                                                                 | `undefined` |
 | `target`         | `target`         | (optional)                                                                                                                                                           | `"_blank" \| "_parent" \| "_self" \| "_top"`                                                                                                                                             | `undefined` |
 | `type`           | `type`           | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
+
+
+## Methods
+
+### `setFocus() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ## Slots

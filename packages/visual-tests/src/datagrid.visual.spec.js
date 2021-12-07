@@ -1,9 +1,7 @@
 describe('DataGrid', () => {
   test.each([
-    ['checkbox-cell'],
     ['date-cell'],
     ['html-cell'],
-    ['link-cell'],
     ['number-cell'],
     ['select-cell'],
     ['text-cell'],
@@ -15,11 +13,22 @@ describe('DataGrid', () => {
     ['selection-export'],
   ])('%p', async (variant) => {
     await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=beta-components-data-grid--${variant}&viewMode=story`
+      `http://host.docker.internal:3123/iframe.html?id=components-data-grid--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
-    await page.waitFor(1000);
+    await page.evaluate(() => {
+      const transitions = [
+        '--scl-motion-duration-immediate',
+        '--scl-motion-duration-fast',
+        '--scl-motion-duration-slower',
+        '--scl-motion-duration-deliberate',
+      ];
+
+      transitions.forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });

@@ -18,4 +18,13 @@ describe('scale-link', () => {
     const element = await page.find('scale-link');
     expect(element).toHaveClass('hydrated');
   });
+
+  it('should set tabindex on its inner element', async () => {
+    const page = await newE2EPage();
+    await page.setContent(
+      '<scale-link inner-tabindex="5">default</scale-link>'
+    );
+    const element = await page.find('scale-link >>> a');
+    expect(element.getAttribute('tabindex')).toBe('5');
+  });
 });

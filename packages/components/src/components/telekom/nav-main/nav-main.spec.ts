@@ -28,8 +28,8 @@ describe('NavMain', () => {
       components: [NavMain],
       html: `
       <scale-nav-main
-        is-active=true
-        is-mega-menu-visible=true
+        active=true
+        mega-menu-visible=true
         name='nameDummy'
       ></scale-nav-main>`,
     });
@@ -37,6 +37,10 @@ describe('NavMain', () => {
   });
   it('should handle css classes', () => {
     const element = new NavMain();
+
+    // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
+    element.megaMenuVisible = true;
+    expect(element.getCssClassMap()).toContain('mega-menu--visible');
 
     element.isMegaMenuVisible = true;
     expect(element.getCssClassMap()).toContain('mega-menu--visible');

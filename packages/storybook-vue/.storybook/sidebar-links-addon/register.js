@@ -10,6 +10,7 @@
  */
 
 import React from "react";
+import Events from "@storybook/core-events";
 import { addons, types } from "@storybook/addons";
 import { useGlobals } from "@storybook/api";
 import sidebarLinks from "../../sidebar-links.json";
@@ -27,17 +28,19 @@ const createLink = ({ title, href }) => {
   return link;
 };
 
-const createTrackingPixel = () => {
-  const noscript = document.createElement("noscript");
-  const img = document.createElement("img");
-  img.src = '//www.brand-design.telekom.com/piwik-bd/piwik.php?idsite=3&rec=1';
-  img.style = 'border:0;';
-  return noscript.appendChild(img);
-};
-
 let sidebarLinksContainer;
 
-addons.register("@telekom/scale-sidebar-links-addon", () => {
+addons.register("@telekom/scale-sidebar-links-addon", (api) => {
+  api.on(Events.STORY_CHANGED, (title) => {
+    const content = document.getElementsByTagName('iframe') && document.getElementsByTagName('iframe')[0];
+    _paq.push(['setDocumentTitle', title]);
+    _paq.push(['trackPageView']);
+    _paq.push(['MediaAnalytics::scanForMedia', content]);
+    _paq.push(['FormAnalytics::scanForForms', content]);
+    _paq.push(['trackContentImpressionsWithinNode', content]);
+    _paq.push(['enableLinkTracking']);
+  });
+
   addons.add(`@telekom/scale-sidebar-links-addon`, {
     type: types.TAB,
     route: () => {
@@ -58,7 +61,6 @@ addons.register("@telekom/scale-sidebar-links-addon", () => {
         sidebarLinksContainer.setAttribute("style", "margin-top: 48px;");
         sidebarLinksContainer.id = "sidebar-links";
         sidebarContainer.appendChild(sidebarLinksContainer);
-        sidebarContainer.appendChild(createTrackingPixel());
 
         sidebarLinks[locale].forEach((link) => {
           sidebarLinksContainer.appendChild(createLink(link));

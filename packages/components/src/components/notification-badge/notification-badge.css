@@ -1,0 +1,180 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  /*after-badge-slot*/
+  --padding-type-text-after-badge-slot: 0 0 0 12px;
+  --padding-type-icon-after-badge-slot: 0 0 0 7px;
+
+  /*notification-badge circle*/
+  --background-color-circle: var(--scl-color-primary);
+  --color-circle: var(--scl-color-white);
+  --font-size-circle: 11px;
+  --font-weight-circle: bold;
+  --border-radius-circle: 20px;
+
+  /*border*/
+  --color-notification-badge-border-focus: #009de0;
+  --color-notification-badge-border-hover: var(--scl-color-primary-hover);
+  --line-width-notification-badge-border-focus: 2px;
+  --padding-notification-badge-border: 8px 5px 0 5px;
+  --margin-notification-badge-border: -8px -5px 0 -5px;
+}
+
+.notification-badge-border {
+  display: inline-block;
+  border: var(--line-width-notification-badge-border-focus) solid transparent;
+  padding: var(--padding-notification-badge-border);
+  margin: var(--margin-notification-badge-border);
+}
+
+.notification-badge-border:hover {
+  color: var(--color-notification-badge-border-hover);
+  cursor: pointer;
+}
+
+.notification-badge-border:focus {
+  border: var(--line-width-notification-badge-border-focus) solid
+    var(--color-notification-badge-border-focus);
+  outline: none;
+  padding: var(--padding-notification-badge-border);
+  border-radius: 3px;
+}
+
+.notification-badge {
+  display: flex;
+  align-items: center;
+}
+
+.notification-badge__wrapper {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+}
+
+.notification-badge--nav-icon .notification-badge__wrapper {
+  margin-bottom: -5px;
+}
+
+.notification-badge__circle {
+  display: flex;
+  position: absolute;
+  font-size: var(--font-size-circle);
+  font-weight: var(--font-weight-circle);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--background-color-circle);
+  color: var(--color-circle);
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-badge.notification-badge--label .notification-badge__circle {
+  padding: 0 2px;
+}
+
+::slotted([slot='after-badge']) {
+  padding: var(--padding-type-icon-after-badge-slot);
+}
+
+.notification-badge.notification-badge--text ::slotted([slot='after-badge']) {
+  padding: var(--padding-type-text-after-badge-slot);
+}
+
+@media (min-width: 1024px) {
+  /*icon*/
+  .notification-badge.notification-badge--icon .notification-badge__circle {
+    top: -4px;
+    right: -2px;
+    height: 8px;
+    min-width: 8px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--icon
+    .notification-badge__circle {
+    top: -8px;
+    right: -5px;
+    height: 14px;
+    min-width: 10px;
+  }
+  /*nav-icon*/
+  .notification-badge.notification-badge--nav-icon .notification-badge__circle {
+    top: -5px;
+    right: 4px;
+    height: 8px;
+    min-width: 8px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--nav-icon
+    .notification-badge__circle {
+    top: -8px;
+    right: 1px;
+    height: 14px;
+    min-width: 10px;
+  }
+  /*text*/
+  .notification-badge.notification-badge--text .notification-badge__circle {
+    top: -5px;
+    right: -10px;
+    height: 8px;
+    min-width: 8px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--text
+    .notification-badge__circle {
+    top: -10px;
+    right: -15px;
+    height: 14px;
+    min-width: 10px;
+  }
+}
+
+@media (max-width: 1023px) {
+  /*icon*/
+  .notification-badge.notification-badge--icon .notification-badge__circle {
+    top: -4px;
+    right: -1px;
+    height: 8px;
+    min-width: 8px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--icon
+    .notification-badge__circle {
+    top: -6px;
+    right: -4px;
+    height: 14px;
+    min-width: 10px;
+  }
+  /*nav-icon*/
+  .notification-badge.notification-badge--nav-icon .notification-badge__circle {
+    top: 0px;
+    right: -1px;
+    height: 6px;
+    min-width: 6px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--nav-icon
+    .notification-badge__circle {
+    top: -3px;
+    right: -4.5px;
+    height: 12px;
+    min-width: 8px;
+  }
+  /*text*/
+  .notification-badge.notification-badge--text .notification-badge__circle {
+    top: -4px;
+    right: -10px;
+    height: 6px;
+    min-width: 6px;
+  }
+  .notification-badge.notification-badge--label.notification-badge--text
+    .notification-badge__circle {
+    top: -6px;
+    right: -15px;
+    height: 14px;
+    min-width: 10px;
+  }
+}

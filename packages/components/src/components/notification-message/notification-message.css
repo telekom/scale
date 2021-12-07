@@ -1,0 +1,108 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: 100%;
+  --radius: var(--scl-radius-8);
+  --border: 1px solid var(--scl-color-white);
+
+  /* Token not available, up for discussion */
+  --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
+  --background-warning: hsla(33.5, 100%, 75.1%, 0.3);
+  --background-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
+  --background-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
+}
+
+.notification-message {
+  border: var(--border);
+  border-radius: var(--radius);
+  width: var(--width);
+  position: relative;
+}
+
+.notification-message--variant-error {
+  background: var(--background-error);
+}
+.notification-message--variant-warning {
+  background-color: var(--background-warning);
+}
+.notification-message--variant-informational {
+  background-color: var(--background-informational);
+}
+.notification-message--variant-success {
+  background-color: var(--background-success);
+}
+
+.notification-message__heading {
+  margin: 14px 48px 14px 48px;
+  font-weight: var(--scl-font-weight-bold);
+  line-height: var(--scl-font-line-height-125);
+}
+
+.notification-message__text {
+  margin: 8px 48px 15px 48px;
+}
+
+::slotted(*) {
+  font-weight: var(--scl-font-weight-regular);
+}
+
+.notification-message__icon-close {
+  position: absolute;
+  top: 8px;
+  right: 13.5px;
+  color: black;
+}
+
+.notification-message__icon-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 6.5px;
+  border-radius: 20%;
+}
+
+.notification-message__icon-close:hover svg {
+  background-color: white;
+  color: var(--scl-color-primary-hover);
+}
+
+.notification-message__icon-success {
+  position: absolute;
+  top: 13.5px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  color: var(--scl-color-background-success);
+}
+
+.notification-message__icon-error {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  color: var(--scl-color-background-error);
+}
+
+.notification-message__icon-information {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  color: var(--scl-color-text-info);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .notification-message__icon-close {
+    color: white;
+  }
+}

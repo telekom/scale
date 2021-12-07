@@ -10,6 +10,7 @@ import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
+  userNavigation
 } from './fixtures';
 import AppShell from './AppShell.vue';
 
@@ -67,6 +68,12 @@ import AppShell from './AppShell.vue';
       },
       description: 'each item takes an optional onClick handler',
     },
+    userNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item and button takes an optional onClick handler',
+    },
     portalName: {
       control: {
         type: 'text',
@@ -109,6 +116,7 @@ import AppShell from './AppShell.vue';
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
       sectorNavigation: JSON.stringify(sectorNavigation),
+      userNavigation: JSON.stringify(userNavigation),
       activeRouteId: 'Third Level 24',
       activeSectorId: 'Personal38',
       logoTitle: 'Custom Logo Title',
@@ -129,6 +137,7 @@ import AppShell from './AppShell.vue';
             :main-navigation="mainNavigation"
             :icon-navigation="iconNavigation"
             :sector-navigation="sectorNavigation"
+            :user-navigation="userNavigation"
             :addon-navigation="addonNavigation"
             :active-route-id="activeRouteId"
             :active-sector-id="activeSectorId"
@@ -189,12 +198,20 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       props: AppShell.props,
       methods: {
         handleOpen: function () {
+          // Deprecated
           this.$refs.header.isMegaMenuVisible = true;
+          // Deprecated
           this.$refs.navMainWithMegaMenu.isMegaMenuVisible = true;
+          this.$refs.header.megaMenuVisible = true;
+          this.$refs.navMainWithMegaMenu.megaMenuVisible = true;
         },
         handleClose: function () {
+          // Deprecated
           this.$refs.header.isMegaMenuVisible = false;
+          // Deprecated
           this.$refs.navMainWithMegaMenu.isMegaMenuVisible = false;
+          this.$refs.header.megaMenuVisible = false;
+          this.$refs.navMainWithMegaMenu.megaMenuVisible = false;
         },
       },
       template: `
@@ -268,22 +285,38 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     );
     header.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
+        // Deprecated
         navMainWithMegaMenu.isMegaMenuVisible = false;
+        // Deprecated
         header.isMegaMenuVisible = false;
+        navMainWithMegaMenu.megaMenuVisible = false;
+        header.megaMenuVisible = false;
       }
     });
     navMainWithMegaMenu.addEventListener('mouseenter', function () {
+      // Deprecated
       navMainWithMegaMenu.isMegaMenuVisible = true;
+      // Deprecated
       header.isMegaMenuVisible = true;
+      navMainWithMegaMenu.megaMenuVisible = true;
+      header.megaMenuVisible = true;
     });
     navMainWithMegaMenu.addEventListener('mouseleave', function () {
+      // Deprecated
       navMainWithMegaMenu.isMegaMenuVisible = false;
+      // Deprecated
       header.isMegaMenuVisible = false;
+      navMainWithMegaMenu.megaMenuVisible = false;
+      header.megaMenuVisible = false;
     });
     navMainWithMegaMenu.addEventListener('keydown', function (event) {
       if (event.key === 'Enter') {
+        // Deprecated
         navMainWithMegaMenu.isMegaMenuVisible = true;
+        // Deprecated
         header.isMegaMenuVisible = true;
+        navMainWithMegaMenu.megaMenuVisible = true;
+        header.megaMenuVisible = true;
       }
     });
   </script>
@@ -427,7 +460,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
   <scale-app-header slot="header" id="header">
     <div slot="menu-sector">
       <!--
-        Deprecated: 
+        Deprecated:
         <scale-nav-segment
         is-active="true"
         ...
@@ -732,8 +765,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         }}
     >
         {() => ({
-            components: { AppHeader },
-            props: AppHeader.props,
+            components: { AppShell },
+            props: AppShell.props,
             template: `
         <div class="brand-header-spacing">
           <scale-app-header
