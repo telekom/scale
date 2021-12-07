@@ -26,72 +26,48 @@ export class SearchField {
   /** (optiomal) Disable search-field */
   @Prop() disabled?: boolean;
 
-  /** (optional) Array of data, where will be search in */
-  @Prop() dictionary?: Array<string>;
+  /** (optional) Placeholder text */
+  @Prop() placeholder?: string;
 
-  /** (optional) Callback function to get array of found matches in dictionary */
-  @Prop() foundMatches?: Function;
+  /** (optional) Enable frameless mode */
+  @Prop() frameless?: boolean;
 
   /** (optional) Input value */
   @State() value?: string;
 
-  /** (optional) Array of search results */
-  @State() listMatches?: Array<string>;
-
-  searchHandler = () => {
-    this.listMatches = this.value
-      ? this.dictionary.filter((element) => element.includes(this.value))
-      : [];
-    this.foundMatches(this.listMatches);
-  };
-
   handleClear = () => {
     this.value = '';
-    this.listMatches = null;
   };
 
   handleChange = (event: Event) => {
     event.preventDefault();
     const target = event.target as HTMLInputElement | null;
     this.value = target.value;
-    this.searchHandler();
   };
 
-  testHandle = (event: Event) => {
-    const target = event.target as HTMLLIElement | null;
-    this.value = target.textContent;
-  }
-
   render() {
-    /** Showcase  */
-    this.dictionary = ['cool', 'test', 'angular', 'react', 'web-components', 'network']; 
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div class={this.getCssClassMap()}>
+        <div class={this.getCssClassMap()} part="base">
+          <scale-icon-action-search class="search-icon" part="lookup icon" />
           <input
             type="text"
             value={this.value}
             onInput={this.handleChange}
-            placeholder="Type anything..."
+            placeholder={this.placeholder}
             id="search"
             disabled={this.disabled}
+            part="inner input"
           />
-          {this.listMatches && this.listMatches.length > 0 && (
-            <div class="search-suggestions">
-              {' '}
-              {this.listMatches.map((word) => (
-                <scale-search-suggestion-item onClick={this.testHandle}>
-                  {word}
-                </scale-search-suggestion-item>
-              ))}
-            </div>
-          )}
-          <scale-icon-action-search class="search-icon" />
-          <scale-icon-action-close
-            onClick={this.handleClear}
+          <button
+            disabled={!Boolean(this.value)}
             class="search-cancel-button"
-          />
+            onClick={this.handleClear}
+            part="clear button"
+          >
+            <scale-icon-action-close part="clear icon" />
+          </button>
           <slot />
         </div>
       </Host>
@@ -99,6 +75,10 @@ export class SearchField {
   }
 
   getCssClassMap() {
-    return classNames('search', this.disabled && 'search--disabled');
+    return classNames(
+      'search',
+      this.disabled && 'search--disabled',
+      this.frameless && 'search--frameless'
+    );
   }
 }
