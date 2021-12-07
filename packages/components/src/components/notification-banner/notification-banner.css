@@ -53,10 +53,6 @@
   padding-bottom: 15px;
 }
 
-.notification-banner--has-text.notification-banner {
-  margin-top: -25px;
-}
-
 .notification-banner--has-no-text .notification-banner__link ::slotted(*) {
   margin: 0;
   padding: 0px 0px 0px 16px;
