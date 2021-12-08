@@ -54,9 +54,10 @@ export class NotificationMessage {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-notification-message-svg
+            <scale-icon-alert-success
               class="notification-message__icon-success"
               accessibility-title="success"
+              color="#187431"
             />
           );
         case 'informational':
