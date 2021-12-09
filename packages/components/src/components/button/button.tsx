@@ -33,7 +33,9 @@ const buttonIconSizeMap = {
 };
 
 const isScaleIcon = (el: Node) => {
-  if (el == null) return false;
+  if (el == null) {
+    return false;
+  }
   return el.nodeName.toUpperCase().substr(0, 10) === 'SCALE-ICON';
 };
 
