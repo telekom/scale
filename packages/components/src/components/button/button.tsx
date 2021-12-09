@@ -21,6 +21,22 @@ import {
 import classNames from 'classnames';
 import { hasShadowDom } from '../../utils/utils';
 
+interface ScaleIcon extends Element {
+  size?: number;
+}
+
+const DEFAULT_ICON_SIZE = 24;
+
+const buttonIconSizeMap = {
+  small: 16,
+  // large: 24,
+};
+
+const isScaleIcon = (el: Node) => {
+  if (el == null) return false;
+  return el.nodeName.toUpperCase().substr(0, 10) === 'SCALE-ICON';
+};
+
 @Component({
   tag: 'scale-button',
   styleUrl: 'button.css',
@@ -97,6 +113,10 @@ export class Button {
     this.setIconPositionProp();
   }
 
+  componentDidLoad() {
+    this.setIconSize();
+  }
+
   /**
    * Detect whether the last node is an element (not text).
    * If so, it's probably an icon, so we set `iconPosition` to `after`.
@@ -106,14 +126,25 @@ export class Button {
       // ignore empty text nodes, which are probably due to formatting
       return !(node.nodeType === 3 && node.nodeValue.trim() === '');
     });
-    if (
-      !this.iconOnly &&
-      nodes &&
-      nodes.length &&
-      nodes[nodes.length - 1] &&
-      nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON'
-    ) {
+    const lastNode = nodes.length > 1 ? nodes[nodes.length - 1] : null;
+    if (!this.iconOnly && lastNode && isScaleIcon(lastNode)) {
       this.iconPosition = 'after';
+    }
+  }
+
+  /**
+   * Set any children icon's size according the button size.
+   */
+  setIconSize() {
+    if (this.size != null && buttonIconSizeMap[this.size] != null) {
+      const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+        isScaleIcon
+      );
+      icons.forEach((icon) => {
+        if (icon.size === DEFAULT_ICON_SIZE) {
+          icon.size = buttonIconSizeMap[this.size];
+        }
+      });
     }
   }
 
