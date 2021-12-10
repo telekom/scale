@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+
+### Bug Fixes
+
+* add selected state for device/device-tv and content/media-folder icons ([#728](https://github.com/telekom/scale/issues/728)). Fixes [#726](https://github.com/telekom/scale/issues/726) ([acc63d8](https://github.com/telekom/scale/commit/acc63d89d065b94851202efa13bc44ea19f289a0))
+
+
+### Features
+
+* **input:** enable autofocus attribute ([#729](https://github.com/telekom/scale/issues/729)) ([519db5d](https://github.com/telekom/scale/commit/519db5dbe378beee8b7b4455ca9ef2b197803862))
+
+
+
+
+
 # [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
 
 
