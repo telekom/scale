@@ -70,6 +70,11 @@ jobs:
         run: |
           yarn publish-telekom
 
+      - name: Deprecate packages
+        run: |
+          npm deprecate @telekom/scale-components-angular@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
+          npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+
   publish-neutral:
     runs-on: ubuntu-latest
     environment: RELEASE
@@ -138,3 +143,8 @@ jobs:
       - name: Publish to NPM
         run: |
           yarn publish-neutral
+
+      - name: Deprecate packages
+        run: |
+          npm deprecate @telekom/scale-components-angular-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
+          npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
