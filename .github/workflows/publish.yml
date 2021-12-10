@@ -72,6 +72,7 @@ jobs:
 
       - name: Deprecate packages
         run: |
+          npm config set registry https://registry.npmjs.org/
           npm deprecate @telekom/scale-components-angular@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
           npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
 
@@ -146,5 +147,6 @@ jobs:
 
       - name: Deprecate packages
         run: |
+          npm config set registry https://registry.npmjs.org/
           npm deprecate @telekom/scale-components-angular-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
           npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
