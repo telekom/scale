@@ -19,24 +19,13 @@ import {
   Method,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { hasShadowDom } from '../../utils/utils';
-
-interface ScaleIcon extends Element {
-  size?: number;
-}
+import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
 
 const DEFAULT_ICON_SIZE = 24;
 
 const buttonIconSizeMap = {
   small: 16,
   // large: 24,
-};
-
-const isScaleIcon = (el: Node) => {
-  if (el == null) {
-    return false;
-  }
-  return el.nodeName.toUpperCase().substr(0, 10) === 'SCALE-ICON';
 };
 
 @Component({
@@ -116,7 +105,7 @@ export class Button {
   }
 
   componentDidLoad() {
-    this.setIconSize();
+    this.setChildrenIconSize();
   }
 
   /**
@@ -137,7 +126,7 @@ export class Button {
   /**
    * Set any children icon's size according the button size.
    */
-  setIconSize() {
+  setChildrenIconSize() {
     if (this.size != null && buttonIconSizeMap[this.size] != null) {
       const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
         isScaleIcon
