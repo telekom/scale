@@ -72,6 +72,8 @@ export class Textarea {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) the input should automatically get focus when the page loads. */
+  @Prop() inputAutofocus?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -182,6 +184,7 @@ export class Textarea {
             style={!!this.resize && { resize: this.resize }}
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
+            {...(!!this.inputAutofocus ? { autofocus: 'true' } : {})}
             required={this.required}
             minLength={this.minLength}
             maxLength={this.maxLength}

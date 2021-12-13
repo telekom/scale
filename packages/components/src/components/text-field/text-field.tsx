@@ -82,6 +82,8 @@ export class TextField {
   @Prop() step?: string = '1';
   /** (optional) input list */
   @Prop() list?: string;
+  /** (optional) the input should automatically get focus when the page loads. */
+  @Prop() inputAutofocus?: boolean;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -194,6 +196,7 @@ export class TextField {
             class="text-field__control"
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
+            {...(!!this.inputAutofocus ? { autofocus: 'true' } : {})}
             required={this.required}
             minLength={this.minLength}
             maxLength={this.maxLength}
