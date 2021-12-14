@@ -80,7 +80,7 @@ app-navigation-main-mobile {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--scl-color-white);
+  background: var(--scl-color-background-standard);
   width: 100%;
   min-height: var(--min-height);
 }
