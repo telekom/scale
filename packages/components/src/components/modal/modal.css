@@ -185,6 +185,7 @@
   appearance: none;
   cursor: pointer;
   user-select: none;
+  color: var(--scl-color-text-standard);
 }
 
 .modal__close-button:focus {
