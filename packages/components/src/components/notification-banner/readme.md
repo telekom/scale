@@ -1,4 +1,4 @@
-# scale-notification-banner-svg
+# scale-notification-banner
 
 
 
