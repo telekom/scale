@@ -1,4 +1,6 @@
-# scale-notification-message
+# scale-notification-banner
+
+
 
 <!-- Auto Generated Below -->
 
@@ -10,6 +12,7 @@
 | `autoHide`         | `auto-hide`          |             | `boolean`                                              | `false`           |
 | `autoHideDuration` | `auto-hide-duration` |             | `number`                                               | `3000`            |
 | `dismissible`      | `dismissible`        |             | `boolean`                                              | `false`           |
+| `href`             | `href`               |             | `string`                                               | `undefined`       |
 | `opened`           | `opened`             |             | `boolean`                                              | `undefined`       |
 | `variant`          | `variant`            |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
@@ -29,30 +32,33 @@ Type: `Promise<void>`
 
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"container"` |             |
-| `"heading"`   |             |
-| `"text"`      |             |
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
+| `"container"`          |             |
+| `"heading"`            |             |
+| `"text"`               |             |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [scale-icon-alert-success](../icons/alert-success)
+- [scale-notification-message-svg](../notification-message/svg)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
 - [scale-icon-action-circle-close](../icons/action-circle-close)
+- [scale-link](../link)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification-message --> scale-icon-alert-success
-  scale-notification-message --> scale-icon-alert-information
-  scale-notification-message --> scale-icon-alert-error
-  scale-notification-message --> scale-icon-action-circle-close
-  style scale-notification-message fill:#f9f,stroke:#333,stroke-width:4px
+  scale-notification-banner --> scale-notification-message-svg
+  scale-notification-banner --> scale-icon-alert-information
+  scale-notification-banner --> scale-icon-alert-error
+  scale-notification-banner --> scale-icon-action-circle-close
+  scale-notification-banner --> scale-link
+  style scale-notification-banner fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

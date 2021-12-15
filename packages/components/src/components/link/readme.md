@@ -106,11 +106,13 @@ Type: `Promise<void>`
 ### Used by
 
  - [scale-data-grid](../data-grid)
+ - [scale-notification-banner](../notification-banner)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-data-grid --> scale-link
+  scale-notification-banner --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
