@@ -40,10 +40,7 @@ export class NotificationBanner {
   @State() hasText?: boolean;
   @State() hasLink?: boolean;
 
-  componentDidRender() {
-    if (this.autoHide === true) {
-      setTimeout(this.close, this.autoHideDuration);
-    }
+  componentWillLoad() {
     if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
       this.hasText = true;
     }
@@ -52,10 +49,11 @@ export class NotificationBanner {
     }
   }
 
-  componentDidLoad() {}
-
   connectedCallback() {
     statusNote({ source: this.hostElement, type: 'warn' });
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
+    }
   }
 
   @Method()
@@ -123,7 +121,6 @@ export class NotificationBanner {
               {this.dismissible && (
                 <button
                   part="button-dismissable"
-                  accessibility-title="close"
                   class="notification-banner__button-close"
                   onClick={() => this.close()}
                   onKeyDown={(e) => {
@@ -132,7 +129,7 @@ export class NotificationBanner {
                     }
                   }}
                 >
-                  <scale-icon-action-circle-close />
+                  <scale-icon-action-circle-close accessibility-title="close" />
                 </button>
               )}
               {this.hasText ? (
