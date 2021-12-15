@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Bug Fixes
+
+* **notification-badge:** vertical center alignment ([#692](https://github.com/telekom/scale/issues/692)) ([242254d](https://github.com/telekom/scale/commit/242254d32112ec422f8ed2d14b79ac5e3a8b8ccc))
+
+
+
+
+
 # [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
 
 

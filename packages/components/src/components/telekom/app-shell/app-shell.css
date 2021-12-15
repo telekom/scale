@@ -28,10 +28,12 @@
 }
 
 .shell .content {
+  box-sizing: border-box;
+  align-self: center;
+  width: 100%;
   background: var(--background);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
-  flex: 1;
 }
 
 @media (min-width: 1552px) {

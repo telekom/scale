@@ -17,6 +17,7 @@ import translationMap from "../../translations.json";
 
 const activeBtnClassName = "css-mszgbt";
 const inactiveBtnClassName = "css-am1h1h";
+const separatorClassName = "css-14kbt3m";
 
 // utility to create new links
 const createLink = label => {
@@ -32,6 +33,13 @@ const createLink = label => {
 
   return link;
 };
+
+const createSeparator = () => {
+  const separator = document.createElement('span');
+  separator.style = "margin-left: 15px;";
+  separator.setAttribute("class", separatorClassName);
+  return separator
+}
 
 // global variables so there can only be one for each;
 let languageToolbar;
@@ -109,6 +117,7 @@ addons.register("@telekom/scale-language-addon", () => {
         if (rightSection) {
           if (!document.getElementById("language-toolbar")) {
             toolbar.insertBefore(languageToolbar, rightSection);
+            toolbar.insertBefore(createSeparator(), languageToolbar);
           }
         }
       }, 100);

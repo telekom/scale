@@ -31,7 +31,8 @@ export const Template = (args, { argTypes }) => ({
     <scale-notification-message   
       :variant="variant"
       :dismissible="dismissible"
-      :timeout="timeout"
+      :auto-hide-duration="autoHideDuration"
+      :auto-hide="autoHide"
       :opened="opened"
     >
       {{ heading }} 
@@ -203,7 +204,12 @@ export const Template = (args, { argTypes }) => ({
     name="Timeout"
     args={{
       opened: true,
+<<<<<<< HEAD
       timeout: 4000,
+=======
+      autoHideDuration: 4000,
+      autoHide: true,
+>>>>>>> d373bf92fd37e913a3415fb9edd9a1b824dd6265
       heading: 'Notification text goes here',
     }}
   >
@@ -212,7 +218,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-message timeout="4000" opened>
+<scale-notification-message auto-hide-duration="4000" auto-hide opened>
   Notification text goes here
 </scale-notification-message>
 ```
