@@ -1,0 +1,16 @@
+{
+  "name": "TODO",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx servor --reload --browse"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "devDependencies": {
+    "servor": "^4.0.2"
+  }
+}

@@ -69,7 +69,7 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-angular-neutral* | Component proxies for Angular |
 | @telekom/scale-design-tokens-neutral       | Design tokens                 |
 
-> *deprecated since `v3.0.0-beta.x`
+> *deprecated since `v3.0.0-beta.x` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
 
 ### Using the source code directly
 
@@ -132,7 +132,7 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-angular* | Component proxies for Angular |
 | @telekom/scale-design-tokens       | Telekom design tokens         |
 
-> *deprecated since `v3.0.0-beta.x` — please check out the info relative to frameworks in [the documentation](https://www.brand-design.telekom.com/scale/)
+> *deprecated since `v3.0.0-beta.x` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://www.brand-design.telekom.com/scale/).
 
 ### Using the source code directly
 

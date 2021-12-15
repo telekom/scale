@@ -17,6 +17,7 @@
     :value="value"
     :input-id="inputId"
     :transparent="transparent"
+    :input-autofocus="inputAutofocus"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -48,6 +49,7 @@ export default {
     value: { type: String },
     inputId: { type: String },
     transparent: { type: Boolean },
+    inputAutofocus: { type: Boolean },
     styles: { type: String }
   },
   methods: {
