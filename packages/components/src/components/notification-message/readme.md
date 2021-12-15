@@ -1,4 +1,4 @@
-# scale-alertbox
+# scale-notification-message
 
 
 
@@ -7,27 +7,53 @@
 
 ## Properties
 
-| Property             | Attribute             | Description                                                                     | Type      | Default     |
-| -------------------- | --------------------- | ------------------------------------------------------------------------------- | --------- | ----------- |
-| `accessibilityTitle` | `accessibility-title` | (optional) When using the icon standalone, make it meaningful for accessibility | `string`  | `undefined` |
-| `decorative`         | `decorative`          | (optional) If `true` the SVG element will get `aria-hidden="true"`              | `boolean` | `false`     |
-| `selected`           | `selected`            | (optional) If `true`, the icon changes visually                                 | `boolean` | `false`     |
-| `size`               | `size`                | (optional) The width and height in pixels                                       | `number`  | `24`        |
+| Property      | Attribute     | Description | Type                                                   | Default           |
+| ------------- | ------------- | ----------- | ------------------------------------------------------ | ----------------- |
+| `dismissible` | `dismissible` |             | `boolean`                                              | `false`           |
+| `opened`      | `opened`      |             | `boolean`                                              | `undefined`       |
+| `timeout`     | `timeout`     |             | `boolean \| number`                                    | `false`           |
+| `variant`     | `variant`     |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+
+
+## Methods
+
+### `open() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
+## Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"container"` |             |
+| `"heading"`   |             |
+| `"text"`      |             |
 
 
 ## Dependencies
 
-### Used by
+### Depends on
 
- - [scale-notification-banner](../notification-banner)
- - [scale-notification-message](.)
+- [scale-notification-message-svg](svg)
+- [scale-icon-alert-information](../icons/alert-information)
+- [scale-icon-alert-warning](../icons/alert-warning)
+- [scale-icon-action-circle-close](../icons/action-circle-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification-banner --> scale-notification-message-svg
   scale-notification-message --> scale-notification-message-svg
-  style scale-notification-message-svg fill:#f9f,stroke:#333,stroke-width:4px
+  scale-notification-message --> scale-icon-alert-information
+  scale-notification-message --> scale-icon-alert-warning
+  scale-notification-message --> scale-icon-action-circle-close
+  style scale-notification-message fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

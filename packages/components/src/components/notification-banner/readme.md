@@ -44,7 +44,7 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [scale-notification-message-svg](../notification-message)
+- [scale-notification-message-svg](../notification-message/svg)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
 - [scale-icon-action-circle-close](../icons/action-circle-close)
