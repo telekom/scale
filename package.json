@@ -11,7 +11,6 @@
     "build:storybook:staging": "./scripts/build-storybook.sh",
     "build:components": "yarn workspace @telekom/scale-components build",
     "build:sketch": "./scripts/build-sketch.sh",
-    "serve:storybook:staging": "http-server ./packages/storybook-vue/storybook-static/ --port ${PORT:-8080} --username ${HTTP_USERNAME:-admin} --password ${HTTP_PASSWORD:-admin} --silent",
     "bootstrap": "lerna bootstrap",
     "postbootstrap": "lerna run generate",
     "new-version": "lerna version --conventional-commits --no-push",
