@@ -69,7 +69,7 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
-    "@popperjs/core": "^2.6.0",
+    "@popperjs/core": "2.6.0",
     "@proyecto26/animatable-component": "^1.1.8",
     "@stencil/core": "^2.7.1",
     "@telekom/scale-design-tokens": "^3.0.0-beta.36",
