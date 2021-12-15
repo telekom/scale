@@ -7,12 +7,14 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                                                   | Default           |
-| ------------- | ------------- | ----------- | ------------------------------------------------------ | ----------------- |
-| `dismissible` | `dismissible` |             | `boolean`                                              | `false`           |
-| `opened`      | `opened`      |             | `boolean`                                              | `undefined`       |
-| `timeout`     | `timeout`     |             | `boolean \| number`                                    | `false`           |
-| `variant`     | `variant`     |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property           | Attribute            | Description | Type                                                   | Default           |
+| ------------------ | -------------------- | ----------- | ------------------------------------------------------ | ----------------- |
+| `autoHide`         | `auto-hide`          |             | `boolean`                                              | `false`           |
+| `autoHideDuration` | `auto-hide-duration` |             | `number`                                               | `3000`            |
+| `dismissible`      | `dismissible`        |             | `boolean`                                              | `false`           |
+| `opened`           | `opened`             |             | `boolean`                                              | `undefined`       |
+| `variant`          | `variant`            |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+
 
 
 ## Methods
@@ -41,17 +43,17 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [scale-notification-message-svg](svg)
+- [scale-icon-alert-success](../icons/alert-success)
 - [scale-icon-alert-information](../icons/alert-information)
-- [scale-icon-alert-warning](../icons/alert-warning)
+- [scale-icon-alert-error](../icons/alert-error)
 - [scale-icon-action-circle-close](../icons/action-circle-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification-message --> scale-notification-message-svg
+  scale-notification-message --> scale-icon-alert-success
   scale-notification-message --> scale-icon-alert-information
-  scale-notification-message --> scale-icon-alert-warning
+  scale-notification-message --> scale-icon-alert-error
   scale-notification-message --> scale-icon-action-circle-close
   style scale-notification-message fill:#f9f,stroke:#333,stroke-width:4px
 ```

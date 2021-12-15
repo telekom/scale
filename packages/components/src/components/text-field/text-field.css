@@ -12,7 +12,7 @@
 scale-text-field {
   --transition: all var(--scl-motion-duration-fast)
     var(--scl-motion-easing-standard);
-  --radius: var(--scl-radius-4);
+  --radius: var(--scl-radius-8);
   --border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
   --border-error: var(--scl-spacing-2) solid var(--scl-color-background-error);
   --border-color-hover: var(--scl-color-primary-hover, #f90984);

@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package telekom
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+
+### Bug Fixes
+
+* add selected state for device/device-tv and content/media-folder icons ([#728](https://github.com/telekom/scale/issues/728)). Fixes [#726](https://github.com/telekom/scale/issues/726) ([acc63d8](https://github.com/telekom/scale/commit/acc63d89d065b94851202efa13bc44ea19f289a0))
+
+
+### Features
+
+* **input:** enable autofocus attribute ([#729](https://github.com/telekom/scale/issues/729)) ([519db5d](https://github.com/telekom/scale/commit/519db5dbe378beee8b7b4455ca9ef2b197803862))
+
+
+
+
+
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+
+### Features
+
+* **header:** add prop sticky to header ([#716](https://github.com/telekom/scale/issues/716)) ([1982411](https://github.com/telekom/scale/commit/1982411be9d742eb4e4dd8f8d858e2d4a3b95fce))
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Bug Fixes
+
+* **header:** improve mobile logo transition ([495a8f7](https://github.com/telekom/scale/commit/495a8f77bd7d0eed4c1be75dd13dca08208cc64f))
+* **notification-badge:** vertical center alignment ([#692](https://github.com/telekom/scale/issues/692)) ([242254d](https://github.com/telekom/scale/commit/242254d32112ec422f8ed2d14b79ac5e3a8b8ccc))
+* **shell-content:** center box when max-width is set ([#709](https://github.com/telekom/scale/issues/709)) ([8312623](https://github.com/telekom/scale/commit/83126238d84599bdea3cc5b50352fbba7c3d0e81))
+
+
+### Features
+
+* new sketch lib release ([#699](https://github.com/telekom/scale/issues/699)) ([b9127b1](https://github.com/telekom/scale/commit/b9127b1e699ab20df30fd04ba5ab33af3fe538a1))
+
+
+
+
+
+# [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
+
+
+### Features
+
+* rounding radius refactor ([#691](https://github.com/telekom/scale/issues/691)) ([f03a762](https://github.com/telekom/scale/commit/f03a762e6c3c5b4ac38ce70a347eedbf8c9f4dda))
+* **storybook:** better tracking, new version, viewport plugin ([#696](https://github.com/telekom/scale/issues/696)) ([6c5eb34](https://github.com/telekom/scale/commit/6c5eb34bfe7e42fd8bdbc4b4cdf1c407c3d5650e))
+
+
+
+
+
+# [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
+
+
+### Bug Fixes
+
+* **date-picker:** stop updating local value on key press ([#695](https://github.com/telekom/scale/issues/695)) ([ee619d0](https://github.com/telekom/scale/commit/ee619d0afed1bacd121c0cbeee29813d671ddf19))
+
+
+
+
+
+# [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
+
+
+### Bug Fixes
+
+* rotation of order icon on title table head ([#689](https://github.com/telekom/scale/issues/689)) ([4351d9e](https://github.com/telekom/scale/commit/4351d9ee0dac15a658c81a4a09b775bf4eaf7f55))
+* **modal:** closing is prevented with legacy event ([#687](https://github.com/telekom/scale/issues/687)) ([e712c3a](https://github.com/telekom/scale/commit/e712c3af4fd49124e37afdba0c2e45ccfb2ec76c))
+* **user-menu:** provide unique name ([1ad00ca](https://github.com/telekom/scale/commit/1ad00cafe6bac58621c05dc232c35babe86fcf4c))
+
+
+### Features
+
+* add innerTabindex prop to link and button (685) ([#686](https://github.com/telekom/scale/issues/686)) ([15288ee](https://github.com/telekom/scale/commit/15288ee73ff259a7379d1c0e8f3a48f13617c4eb))
+
+
+
+
+
 # [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
 
 

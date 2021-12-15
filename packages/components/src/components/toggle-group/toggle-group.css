@@ -3,7 +3,7 @@
   --border-color-disabled: var(--scl-color-background-disabled);
   --border: var(--scl-spacing-1) solid var(--border-color);
   --border-disabled: var(--scl-spacing-1) solid var(--border-color-disabled);
-  --radius: var(--scl-radius-4);
+  --radius: var(--scl-radius-8);
 }
 
 .toggle-group--inline {
