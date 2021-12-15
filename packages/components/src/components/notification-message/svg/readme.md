@@ -1,7 +1,5 @@
 # scale-notification-message-svg
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -20,13 +18,11 @@
 ### Used by
 
  - [scale-notification-banner](../../notification-banner)
- - [scale-notification-message](..)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-notification-banner --> scale-notification-message-svg
-  scale-notification-message --> scale-notification-message-svg
   style scale-notification-message-svg fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,7 +1,5 @@
 # scale-notification-message
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -14,7 +12,6 @@
 | `dismissible`      | `dismissible`        |             | `boolean`                                              | `false`           |
 | `opened`           | `opened`             |             | `boolean`                                              | `undefined`       |
 | `variant`          | `variant`            |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
-
 
 
 ## Methods
