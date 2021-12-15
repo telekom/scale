@@ -7,27 +7,28 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                                                                               | Type                                              | Default     |
-| ------------- | ------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------- |
-| `cols`        | `cols`        | (optional) textarea column                                                                | `number`                                          | `undefined` |
-| `counter`     | `counter`     | (optional) Input counter                                                                  | `boolean`                                         | `undefined` |
-| `disabled`    | `disabled`    | (optional) Input disabled                                                                 | `boolean`                                         | `undefined` |
-| `helperText`  | `helper-text` | (optional) Input helper text                                                              | `string`                                          | `''`        |
-| `inputId`     | `input-id`    | (optional) Input checkbox id                                                              | `string`                                          | `undefined` |
-| `invalid`     | `invalid`     | (optional) Input status                                                                   | `boolean`                                         | `false`     |
-| `label`       | `label`       | (optional) Input label                                                                    | `string`                                          | `''`        |
-| `maxLength`   | `max-length`  | (optional) Input max length                                                               | `number`                                          | `undefined` |
-| `minLength`   | `min-length`  | (optional) Input min length                                                               | `number`                                          | `undefined` |
-| `name`        | `name`        | (optional) Input name                                                                     | `string`                                          | `''`        |
-| `placeholder` | `placeholder` | (optional) Input placeHolder                                                              | `string`                                          | `''`        |
-| `readonly`    | `readonly`    | (optional) Input readonly                                                                 | `boolean`                                         | `undefined` |
-| `required`    | `required`    | (optional) Input required                                                                 | `boolean`                                         | `undefined` |
-| `resize`      | `resize`      | (optional) textarea resize                                                                | `"horizontal" \| "none" \| "unset" \| "vertical"` | `undefined` |
-| `rows`        | `rows`        | (optional) textarea row                                                                   | `number`                                          | `undefined` |
-| `status`      | `status`      | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`                                          | `''`        |
-| `styles`      | `styles`      | (optional) Injected CSS styles                                                            | `string`                                          | `undefined` |
-| `transparent` | `transparent` | (optional) input background transparent                                                   | `boolean`                                         | `undefined` |
-| `value`       | `value`       | (optional) Input value                                                                    | `number \| string`                                | `''`        |
+| Property         | Attribute         | Description                                                                               | Type                                              | Default     |
+| ---------------- | ----------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------- |
+| `cols`           | `cols`            | (optional) textarea column                                                                | `number`                                          | `undefined` |
+| `counter`        | `counter`         | (optional) Input counter                                                                  | `boolean`                                         | `undefined` |
+| `disabled`       | `disabled`        | (optional) Input disabled                                                                 | `boolean`                                         | `undefined` |
+| `helperText`     | `helper-text`     | (optional) Input helper text                                                              | `string`                                          | `''`        |
+| `inputAutofocus` | `input-autofocus` | (optional) the input should automatically get focus when the page loads.                  | `boolean`                                         | `undefined` |
+| `inputId`        | `input-id`        | (optional) Input checkbox id                                                              | `string`                                          | `undefined` |
+| `invalid`        | `invalid`         | (optional) Input status                                                                   | `boolean`                                         | `false`     |
+| `label`          | `label`           | (optional) Input label                                                                    | `string`                                          | `''`        |
+| `maxLength`      | `max-length`      | (optional) Input max length                                                               | `number`                                          | `undefined` |
+| `minLength`      | `min-length`      | (optional) Input min length                                                               | `number`                                          | `undefined` |
+| `name`           | `name`            | (optional) Input name                                                                     | `string`                                          | `''`        |
+| `placeholder`    | `placeholder`     | (optional) Input placeHolder                                                              | `string`                                          | `''`        |
+| `readonly`       | `readonly`        | (optional) Input readonly                                                                 | `boolean`                                         | `undefined` |
+| `required`       | `required`        | (optional) Input required                                                                 | `boolean`                                         | `undefined` |
+| `resize`         | `resize`          | (optional) textarea resize                                                                | `"horizontal" \| "none" \| "unset" \| "vertical"` | `undefined` |
+| `rows`           | `rows`            | (optional) textarea row                                                                   | `number`                                          | `undefined` |
+| `status`         | `status`          | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`                                          | `''`        |
+| `styles`         | `styles`          | (optional) Injected CSS styles                                                            | `string`                                          | `undefined` |
+| `transparent`    | `transparent`     | (optional) input background transparent                                                   | `boolean`                                         | `undefined` |
+| `value`          | `value`           | (optional) Input value                                                                    | `number \| string`                                | `''`        |
 
 
 ## Events
