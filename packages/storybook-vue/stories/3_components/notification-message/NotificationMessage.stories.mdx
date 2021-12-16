@@ -17,7 +17,7 @@ import ScaleNotificationMessage from './ScaleNotificationMessage.vue';
       control: {
         type: 'select',
       },
-    }
+    },
   }}
 />
 
@@ -25,13 +25,14 @@ export const Template = (args, { argTypes }) => ({
   props: {
     ...ScaleNotificationMessage.props,
     heading: String,
-    text: String
+    text: String,
   },
   template: `
     <scale-notification-message   
       :variant="variant"
       :dismissible="dismissible"
-      :timeout="timeout"
+      :auto-hide-duration="autoHideDuration"
+      :auto-hide="autoHide"
       :opened="opened"
     >
       {{ heading }} 
@@ -59,7 +60,7 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       opened: true,
-      heading: 'Notification text goes here'
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -69,7 +70,9 @@ export const Template = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-notification-message opened>Notification text goes here</scale-notification-message>
+<scale-notification-message opened
+  >Notification text goes here</scale-notification-message
+>
 ```
 
 ## Scoped CSS variables
@@ -97,7 +100,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'warning',
-      heading: 'Notification text goes here'
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -118,7 +121,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'error',
-      heading: 'Notification text goes here'
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -139,7 +142,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'success',
-      heading: 'Notification text goes here'
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -160,7 +163,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: true,
       variant: 'informational',
-      heading: 'Notification text goes here'
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -181,7 +184,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: true,
       dismissible: true,
-      heading: 'Notification text goes here'
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -201,8 +204,9 @@ export const Template = (args, { argTypes }) => ({
     name="Timeout"
     args={{
       opened: true,
-      timeout: 4000,
-      heading: 'Notification text goes here'
+      autoHideDuration: 4000,
+      autoHide: true,
+      heading: 'Notification text goes here',
     }}
   >
     {Template.bind({})}
@@ -210,7 +214,7 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-message timeout="4000" opened>
+<scale-notification-message auto-hide-duration="4000" auto-hide opened>
   Notification text goes here
 </scale-notification-message>
 ```
@@ -223,7 +227,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       opened: true,
       heading: 'Notification text goes here',
-      text: 'Here you can add some more text'
+      text: 'Here you can add some more text',
     }}
   >
     {Template.bind({})}

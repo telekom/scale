@@ -1,7 +1,7 @@
 <template>
   <scale-tab-nav :small="small" :size="size">
     <scale-tab-header :disabled="disabled ? true : false" slot="tab">
-      <scale-icon-home-home v-if="withIcon" size="16" /> General
+      <scale-icon-home-home v-if="withIcon" /> General
     </scale-tab-header>
     <scale-tab-panel slot="panel">
       <p class="scl-font-variant-body">
@@ -14,7 +14,7 @@
       </p>
     </scale-tab-panel>
     <scale-tab-header slot="tab">
-      <scale-icon-user-file-analytics v-if="withIcon" size="16" /> Usage
+      <scale-icon-user-file-analytics v-if="withIcon" /> Usage
     </scale-tab-header>
     <scale-tab-panel slot="panel">
       <p class="scl-font-variant-body">
@@ -25,7 +25,7 @@
       </p>
     </scale-tab-panel>
     <scale-tab-header slot="tab">
-      <scale-icon-content-heart v-if="withIcon" size="16" /> Style
+      <scale-icon-content-heart v-if="withIcon" /> Style
     </scale-tab-header>
     <scale-tab-panel slot="panel">
       <p class="scl-font-variant-body">
@@ -37,7 +37,7 @@
       </p>
     </scale-tab-panel>
     <scale-tab-header slot="tab">
-      <scale-icon-action-random v-if="withIcon" size="16" /> Code
+      <scale-icon-action-random v-if="withIcon" /> Code
     </scale-tab-header>
     <scale-tab-panel slot="panel">
       <p class="scl-font-variant-body">

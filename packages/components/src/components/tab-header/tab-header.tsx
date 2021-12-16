@@ -11,7 +11,11 @@
 
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import classNames from 'classnames';
+import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+
+const DEFAULT_ICON_SIZE = 24;
+const PER_SPEC_ICON_SIZE = 16;
 
 let i = 0;
 
@@ -24,7 +28,7 @@ export class TabHeader {
   generatedId: number = i++;
   container: HTMLElement;
 
-  @Element() el: HTMLElement;
+  @Element() hostElement: HTMLElement;
 
   /** True for a disabled Tabnavigation */
   @Prop() disabled?: boolean = false;
@@ -45,10 +49,14 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        this.el.focus();
+        this.hostElement.focus();
       }
       this.updateSlottedIcon();
     }
+  }
+
+  componentDidLoad() {
+    this.setChildrenIconSize();
   }
 
   componentDidRender() {
@@ -58,7 +66,7 @@ export class TabHeader {
         message:
           'Property "small" is deprecated. Please use the "size" property!',
         type: 'warn',
-        source: this.el,
+        source: this.hostElement,
       });
     }
   }
@@ -79,6 +87,21 @@ export class TabHeader {
     }
     const action = this.selected ? 'setAttribute' : 'removeAttribute';
     children.forEach((child) => child[action]('selected', ''));
+  }
+
+  /**
+   * Set any children icon's size according the button size.
+   */
+  setChildrenIconSize() {
+    const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+      isScaleIcon
+    );
+    icons.forEach((icon) => {
+      // This is meh people might actually want 24
+      if (icon.size === DEFAULT_ICON_SIZE) {
+        icon.size = PER_SPEC_ICON_SIZE;
+      }
+    });
   }
 
   render() {
