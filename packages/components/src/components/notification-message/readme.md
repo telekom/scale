@@ -40,7 +40,6 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [scale-icon-alert-success](../icons/alert-success)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
 - [scale-icon-action-circle-close](../icons/action-circle-close)
@@ -48,7 +47,6 @@ Type: `Promise<void>`
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification-message --> scale-icon-alert-success
   scale-notification-message --> scale-icon-alert-information
   scale-notification-message --> scale-icon-alert-error
   scale-notification-message --> scale-icon-action-circle-close
