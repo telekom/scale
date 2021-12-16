@@ -3,6 +3,83 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+
+### Bug Fixes
+
+* **date-picker:** fix layout glitch when zoomed out ([#747](https://github.com/telekom/scale/issues/747)) ([b895d34](https://github.com/telekom/scale/commit/b895d34d0cc315afe9f4775dd1de7a39f1dc44bf))
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+* adapt icon size automatically based on context ([#725](https://github.com/telekom/scale/issues/725)). Fixes [#702](https://github.com/telekom/scale/issues/702) ([e0ca5d7](https://github.com/telekom/scale/commit/e0ca5d7df479700903cd92c5ff6c3e172ecef536))
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+* adapt icon size automatically based on context ([#725](https://github.com/telekom/scale/issues/725)). Fixes [#702](https://github.com/telekom/scale/issues/702) ([e0ca5d7](https://github.com/telekom/scale/commit/e0ca5d7df479700903cd92c5ff6c3e172ecef536))
+
+
+
+
+
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+
+### Bug Fixes
+
+* add selected state for device/device-tv and content/media-folder icons ([#728](https://github.com/telekom/scale/issues/728)). Fixes [#726](https://github.com/telekom/scale/issues/726) ([acc63d8](https://github.com/telekom/scale/commit/acc63d89d065b94851202efa13bc44ea19f289a0))
+
+
+### Features
+
+* **input:** enable autofocus attribute ([#729](https://github.com/telekom/scale/issues/729)) ([519db5d](https://github.com/telekom/scale/commit/519db5dbe378beee8b7b4455ca9ef2b197803862))
+
+
+
+
+
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+
+### Features
+
+* **header:** add prop sticky to header ([#716](https://github.com/telekom/scale/issues/716)) ([1982411](https://github.com/telekom/scale/commit/1982411be9d742eb4e4dd8f8d858e2d4a3b95fce))
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Bug Fixes
+
+* **header:** improve mobile logo transition ([495a8f7](https://github.com/telekom/scale/commit/495a8f77bd7d0eed4c1be75dd13dca08208cc64f))
+* **notification-badge:** vertical center alignment ([#692](https://github.com/telekom/scale/issues/692)) ([242254d](https://github.com/telekom/scale/commit/242254d32112ec422f8ed2d14b79ac5e3a8b8ccc))
+* **shell-content:** center box when max-width is set ([#709](https://github.com/telekom/scale/issues/709)) ([8312623](https://github.com/telekom/scale/commit/83126238d84599bdea3cc5b50352fbba7c3d0e81))
+
+
+
+
+
 # [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
 
 

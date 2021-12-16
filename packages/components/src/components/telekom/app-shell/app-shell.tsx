@@ -31,6 +31,7 @@ export class Shell {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
+  @Prop() sticky?: boolean = false;
   @State() scrolled: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -62,6 +63,7 @@ export class Shell {
               activeRouteId={this.activeRouteId}
               activeSectorId={this.activeSectorId}
               claimLang={this.claimLang}
+              sticky={this.sticky}
             ></scale-app-header>
           )}
           <main class="content">

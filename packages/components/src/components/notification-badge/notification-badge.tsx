@@ -54,10 +54,10 @@ export class NotificationBadge {
   getRender() {
     return (
       <div class={this.getCssClassMap()}>
-        <a class="notification-badge__wrapper">
+        <span class="notification-badge__wrapper">
           <slot />
           <span class="notification-badge__circle">{this.getBadgeLabel()}</span>
-        </a>
+        </span>
         <slot name="after-badge"></slot>
       </div>
     );
