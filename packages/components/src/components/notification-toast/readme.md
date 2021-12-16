@@ -37,7 +37,7 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [scale-notification-message-svg](../notification-message/svg)
+- [scale-icon-alert-success](../icons/alert-success)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
 - [scale-link](../link)
@@ -46,7 +46,7 @@ Type: `Promise<void>`
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification-toast --> scale-notification-message-svg
+  scale-notification-toast --> scale-icon-alert-success
   scale-notification-toast --> scale-icon-alert-information
   scale-notification-toast --> scale-icon-alert-error
   scale-notification-toast --> scale-link
