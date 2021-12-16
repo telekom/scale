@@ -112,7 +112,8 @@ scale-app-header {
   height: calc(2 * var(--header-border-radius));
   position: absolute;
   border-top: var(--border);
-  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0 var(--scl-color-background-standard);
+  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
+    var(--scl-color-background-standard);
   background-color: transparent;
 }
 .header.menu--open .header__nav-before,
