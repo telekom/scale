@@ -49,6 +49,8 @@ import modal_en from 'raw-loader!../../stories/3_components/modal/modal.md';
 import modal_de from 'raw-loader!../../stories/3_components/modal/modal_de.md';
 import notificationBadge_de from 'raw-loader!../../stories/3_components/notification-badge/notification-badge_de.md';
 import notificationBadge_en from 'raw-loader!../../stories/3_components/notification-badge/notification-badge.md';
+import notificationBanner_de from 'raw-loader!../../stories/3_components/notification-banner/notification-banner_de.md';
+import notificationBanner_en from 'raw-loader!../../stories/3_components/notification-banner/notification-banner.md';
 import notificationMessage_de from 'raw-loader!../../stories/3_components/notification-message/notification-message_de.md';
 import notificationMessage_en from 'raw-loader!../../stories/3_components/notification-message/notification-message.md';
 import notificationToast_de from 'raw-loader!../../stories/3_components/notification-toast/notification-toast_de.md';
@@ -151,6 +153,8 @@ const Usage = (props) => {
     modal_de,
     'notification-badge_en': notificationBadge_en,
     'notification-badge_de': notificationBadge_de,
+    'notification-banner_en': notificationBanner_en,
+    'notification-banner_de': notificationBanner_de,
     'notification-message_en': notificationMessage_en,
     'notification-message_de': notificationMessage_de,
     'notification-toast_en': notificationToast_en,

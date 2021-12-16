@@ -107,12 +107,14 @@ Type: `Promise<void>`
 
  - [scale-data-grid](../data-grid)
  - [scale-notification-toast](../notification-toast)
+ - [scale-notification-banner](../notification-banner)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-data-grid --> scale-link
   scale-notification-toast --> scale-link
+  scale-notification-banner --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
