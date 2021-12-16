@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+* adapt icon size automatically based on context ([#725](https://github.com/telekom/scale/issues/725)). Fixes [#702](https://github.com/telekom/scale/issues/702) ([e0ca5d7](https://github.com/telekom/scale/commit/e0ca5d7df479700903cd92c5ff6c3e172ecef536))
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+* adapt icon size automatically based on context ([#725](https://github.com/telekom/scale/issues/725)). Fixes [#702](https://github.com/telekom/scale/issues/702) ([e0ca5d7](https://github.com/telekom/scale/commit/e0ca5d7df479700903cd92c5ff6c3e172ecef536))
+
+
+
+
+
 # [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue

@@ -320,10 +320,10 @@ duet-date-picker {
 </Canvas>
 
 ```html
-<scale-date-picker label="Localization" identifier="picker"></scale-date-picker>
+<scale-date-picker label="Localization"></scale-date-picker>
 
 <script>
-  const picker = document.getElementById("picker");
+  const picker = document.querySelector("scale-date-picker");
   picker.localization = {
       buttonLabel: "Datum wählen",
       placeholder: "TT.MM.JJJJ",

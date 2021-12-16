@@ -50,6 +50,7 @@ duet-date-picker .duet-date__input:focus {
 
 duet-date-picker .duet-date__toggle {
   border-radius: 0 var(--duet-radius) var(--duet-radius) 0;
+  background: transparent;
 }
 
 duet-date-picker .duet-date__toggle:focus {
