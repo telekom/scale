@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
+
+
+### Bug Fixes
+
+* enable `extras.cloneNodeFix` config for Stencil ([#748](https://github.com/telekom/scale/issues/748)) ([1d10fac](https://github.com/telekom/scale/commit/1d10fac6c632f37bd1577440094880c56b514e93))
+
+
+
+
+
 # [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
 
 
