@@ -21,4 +21,14 @@ customConfig.connect.defaultViewport = {
 
 customConfig.chromiumFlags = ['–ignore-certificate-errors'];
 
+// https://github.com/puppeteer/puppeteer/issues/1947
+if (process.env.DOCKER_DEFAULT_PLATFORM === 'linux/amd64') {
+  // customConfig.chromiumFlags.push([
+  //   // '--no-sandbox',
+  //   // '--disable-setuid-sandbox',
+  //   // '--disable-dev-shm-usage',
+  //   // '--single-process'
+  // ]);
+}
+
 module.exports = customConfig;
