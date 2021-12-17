@@ -14,7 +14,7 @@ app-mega-menu {
   --spacing-y: 34px;
   --spacing-right: var(--scl-spacing-16);
   --spacing-left: var(--scl-spacing-24);
-  --background: var(--scl-color-white);
+  --background: var(--scl-color-background-standard);
   --color-active: var(--scl-color-primary);
 
   --font-size-row-title: var(--scl-font-size-16);
