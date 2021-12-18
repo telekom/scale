@@ -11,3 +11,4 @@
 
 @import './fonts.css';
 @import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';
+@import './grid.css';

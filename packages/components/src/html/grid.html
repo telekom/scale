@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style>
+      
+      body {
+        margin: 2rem 0;
+      }
+
+      z-block {
+        display: block;
+        min-height: 200px;
+        padding: var(--scl-spacing-16);
+        background-color: var(--scl-color-orange-10);
+      }
+    </style>
+  </head> 
+  <body>
+    <h1>Grid</h1>
+    <scale-grid style="--columns-sm:2; --columns-md:6; --columns-lg:5; --columns-xl:8; --columns-xxl:16">
+        <scale-grid-item style="--size-md:4; --size-sm:1; --size-lg:2; --size-xl:6; --size-xxl: 10" >
+          <z-block>A</z-block>
+        </sacle-grid-item>
+      </scale-grid >
+    <script>
+   
+    </script>
+  </body>
+</html>
