@@ -19,6 +19,7 @@ import {
   Listen,
   Event,
   EventEmitter,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -91,11 +92,18 @@ export class ToggleGroup {
     this.setNewState(tempState);
   }
 
+  @Watch('background')
+  @Watch('disabled')
+  @Watch('hideBorder')
+  @Watch('size')
+  @Watch('variant')
+  handlePropsChange() {
+    this.propagatePropsToChildren();
+  }
+
   componentDidLoad() {
     const tempState: ButtonStatus[] = [];
-    const toggleButtons = Array.from(
-      this.hostElement.querySelectorAll('scale-toggle-button')
-    );
+    const toggleButtons = this.getAllToggleButtons();
     this.slottedButtons = toggleButtons.length;
     toggleButtons.forEach((toggleButton) => {
       this.position++;
@@ -103,32 +111,42 @@ export class ToggleGroup {
         id: toggleButton.getAttribute('toggle-button-id'),
         selected: toggleButton.hasAttribute('selected'),
       });
-      toggleButton.setAttribute('size', this.size);
-      toggleButton.setAttribute('background', this.background);
-      toggleButton.setAttribute('disabled', this.disabled && 'disabled');
       toggleButton.setAttribute('position', this.position.toString());
       toggleButton.setAttribute(
         'aria-description-translation',
         '$position $selected'
       );
+    });
+    this.propagatePropsToChildren();
+    this.position = 0;
+    this.status = tempState;
+  }
+
+  getAllToggleButtons() {
+    return Array.from(this.hostElement.querySelectorAll('scale-toggle-button'));
+  }
+
+  /**
+   * Keep props, needed in children buttons, in sync
+   */
+  propagatePropsToChildren() {
+    this.getAllToggleButtons().forEach((el) => {
+      el.setAttribute('size', this.size);
+      el.setAttribute('background', this.background);
+      el.setAttribute('disabled', this.disabled && 'disabled');
       /** DEPRECATED */
       // if attribute variant is set it overrides color-scheme
-      toggleButton.setAttribute(
+      el.setAttribute(
         'color-scheme',
         this.variant !== 'color' ? this.variant : this.colorScheme
       );
       // if attribute color-scheme is set it overrides variant
-      toggleButton.setAttribute(
+      el.setAttribute(
         'variant',
         this.colorScheme !== 'color' ? this.colorScheme : this.variant
       );
-      toggleButton.setAttribute(
-        'hide-border',
-        this.hideBorder ? 'true' : 'false'
-      );
+      el.setAttribute('hide-border', this.hideBorder ? 'true' : 'false');
     });
-    this.position = 0;
-    this.status = tempState;
   }
 
   getAriaLabelTranslation() {
