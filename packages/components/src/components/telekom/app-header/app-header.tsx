@@ -325,6 +325,7 @@ export class Header {
                     hide={() => {
                       this.userMenu = false;
                       this.userMenuToggle.focus();
+                      window.document.dispatchEvent(new Event('click'));
                     }}
                     navigation={readData(this.userNavigation)}
                   ></app-navigation-user-menu>
