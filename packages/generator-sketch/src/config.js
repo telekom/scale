@@ -148,7 +148,7 @@ module.exports = {
         });
       }
       if (/^(Checkbox|Radio)/.test(symbol.name)) {
-        setResizingConstraints(symbol, /.?/, FIXED_SIZE);
+        setResizingConstraints(symbol, /.?/, TOP_LEFT_FIXED_SIZE);
       }
       if (/^(Checkbox Group)/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;
@@ -366,54 +366,24 @@ module.exports = {
       }
       if (/^Table/.test(symbol.name)) {
         symbol.groupLayout = undefined;
-        symbol.layers.forEach(
-          (l) => (l.resizingConstraint = TOP_LEFT_FIXED_SIZE)
-        );
-      }
-      if (/^(Tab Nav)/.test(symbol.name)) {
-        var tabHead = findLayer(symbol, (s) => s.name === 'span.tab-header');
-        if (tabHead) tabHead.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
-        if (!/Example/.test(symbol.name)) {
-          var spans = findLayers(tabHead, 'span', (span) =>
-            findLayers(
-              span,
-              (l) => (l.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT)
-            )
-          );
-          var bar = spans.shift();
-          spans.forEach((span) =>
-            tabHead.layers.splice(tabHead.layers.indexOf(span), 1)
-          );
-          if (bar) {
-            bar.layers[0].resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
-            tabHead.layers.unshift(bar.layers[0]);
-            bar.layers[0].frame.y += bar.frame.y;
-            bar.layers[0].frame.x += bar.frame.x;
-            tabHead.layers.splice(tabHead.layers.indexOf(bar), 1);
-          }
-          findLayer(tabHead, 'slot', (s) => {
-            tabHead.layers.splice(tabHead.layers.indexOf(s), 1);
-            s.layers.forEach((l) => {
-              l.frame.x += s.frame.x;
-              l.frame.y += s.frame.y;
+        symbol.layers.forEach((l) => {
+          if ('layers' in l) {
+            l.layers.forEach((l) => {
+              if ('layers' in l) {
+                l.layers.forEach((l) => {
+                  if ('layers' in l) {
+                    l.layers.forEach((l) => {
+                      if (l.name === 'svg') {
+                        l.rotation = -45;
+                      }
+                    });
+                  }
+                });
+              }
             });
-            tabHead.layers.push(...s.layers);
-          });
-        } else {
-          symbol.groupLayout = undefined;
-        }
-        findLayers(
-          symbol,
-          (s) => s.name === 'Icon',
-          (icon) => (icon.resizingConstraint = TOP_LEFT_FIXED_SIZE)
-        );
-        findLayers(
-          symbol,
-          (s) => s.name.includes('Header'),
-          (label) => {
-            label.resizingConstraint = TOP_LEFT_RIGHT_FIXED_HEIGHT;
           }
-        );
+          l.resizingConstraint = TOP_LEFT_FIXED_SIZE;
+        });
       }
       if (/^Tag/.test(symbol.name)) {
         symbol.layers[0].resizingConstraint = TOP_LEFT_FIXED_SIZE;

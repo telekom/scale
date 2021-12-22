@@ -32,6 +32,10 @@ export class NavIcon {
   @Prop() isMobileMenuOpen?: boolean = false;
   @Prop() mobileMenuOpen?: boolean = false;
   @Prop() refMobileMenuToggle?: any;
+  @Prop() refMobileUserMenuToggle?: any;
+  @Prop() refUserMenuToggle?: any;
+  @Prop() badge: boolean = false;
+  @Prop() badgeLabel: number;
 
   componentWillRender() {
     // make sure the deprecated props overwrite the actual ones if used
@@ -61,7 +65,11 @@ export class NavIcon {
       <li class={this.getCssClassMap()}>
         <a
           class="meta-navigation__item-link"
-          ref={this.refMobileMenuToggle}
+          ref={
+            this.refMobileMenuToggle ||
+            this.refMobileUserMenuToggle ||
+            this.refUserMenuToggle
+          }
           href={this.href}
           onClick={this.clickLink}
           onKeyDown={(event) => {
@@ -74,10 +82,25 @@ export class NavIcon {
             }
           }}
         >
-          {renderIcon({
-            tag: `scale-icon-${this.icon}`,
-            attributes: { class: 'meta-navigation__item-link-icon' },
-          })}
+          {this.badge || (this.badgeLabel && this.badge) || this.badgeLabel ? (
+            <scale-notification-badge label={this.badgeLabel} type="nav-icon">
+              {renderIcon({
+                tag: `scale-icon-${this.icon}`,
+                attributes: {
+                  class: 'meta-navigation__item-link-icon',
+                  selected: this.active || this.isActive,
+                },
+              })}
+            </scale-notification-badge>
+          ) : (
+            renderIcon({
+              tag: `scale-icon-${this.icon}`,
+              attributes: {
+                class: 'meta-navigation__item-link-icon',
+                selected: this.active || this.isActive,
+              },
+            })
+          )}
           <span class="meta-navigation__item-label">
             <slot></slot>
           </span>

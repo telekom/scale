@@ -40,6 +40,8 @@ Der Slider hat einen Magenta Balken. Möchtest du mit Farbkodierungen arbeiten, 
 
 ## Deaktivierter Zustand
 
+Deaktiviere den Slider, wenn
+
 - eine andere Aktion erfolgen muss, bevor der Slider nutzbar ist oder
 - die Nutzer\*innen den Wert/Wertebereich aktuell nicht ändern können.
 

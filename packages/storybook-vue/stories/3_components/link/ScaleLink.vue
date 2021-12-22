@@ -11,6 +11,7 @@
     :rel="rel"
     :target="target"
     :type="type"
+    :inner-tabindex="innerTabindex"
   >
     <slot></slot>
     <slot name="icon"></slot>
@@ -37,6 +38,7 @@ export default {
     rel: { type: String, default: null },
     target: { type: String, default: null },
     type: { type: String, default: null },
+    innerTabindex: Number,
   },
 };
 </script>

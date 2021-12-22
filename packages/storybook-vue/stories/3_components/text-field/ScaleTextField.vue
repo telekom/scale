@@ -15,6 +15,7 @@
     :size="size"
     :value="value"
     :input-id="inputId"
+    :input-autofocus="inputAutofocus"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -44,6 +45,7 @@ export default {
     size: { type: String },
     value: { type: String },
     inputId: { type: String },
+    inputAutofocus: { type: Boolean },
     styles: { type: String }
   },
   methods: {

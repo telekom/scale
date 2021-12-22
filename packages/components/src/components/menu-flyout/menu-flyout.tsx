@@ -10,7 +10,6 @@
  */
 
 import { Component, Prop, h, Host, Element, Listen } from '@stencil/core';
-import statusNote from '../../utils/status-note';
 import { isClickOutside } from '../../utils/utils';
 
 const MENU_SELECTOR = '[role="menu"]';
@@ -89,14 +88,13 @@ export class MenuFlyout {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
-    if ('Tab' === event.key) {
+    if (
+      'Tab' === event.key &&
+      !this.hostElement.querySelector('app-navigation-user-menu')
+    ) {
       this.closeAll();
       return;
     }
-  }
-
-  connectedCallback() {
-    statusNote({ source: this.hostElement, tag: 'beta' });
   }
 
   componentDidLoad() {

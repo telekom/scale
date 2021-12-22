@@ -9,7 +9,7 @@ Cards zeigen kurze Zusammenfassungen von Inhalten und Informationen. Dadurch ist
 
 Mit der Card-Komponente kannst du jede Art von Inhalt darstellen. Eine Card kommuniziert jeweils eine Kernaussage und ist unabhängig von anderen Inhalten.
 
-![Image Name](assets/3_components/card/cards_allgemein.png)
+![Image Name](assets/3_components/card/cards_general.png)
 
 ### Verwende eine Card, um
 

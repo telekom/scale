@@ -17,7 +17,7 @@
   );
 
   --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
-  --radius-window: var(--scl-radius-8);
+  --radius-window: var(--scl-radius-12);
   --box-shadow-window: var(--scl-shadow-level-5);
 
   /*
@@ -100,7 +100,7 @@
   position: relative;
   overflow-y: auto;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--scl-color-background-standard);
   max-height: var(--max-height-window);
   border-radius: var(--radius-window);
   box-shadow: var(--box-shadow-window);
@@ -185,6 +185,7 @@
   appearance: none;
   cursor: pointer;
   user-select: none;
+  color: var(--scl-color-text-standard);
 }
 
 .modal__close-button:focus {

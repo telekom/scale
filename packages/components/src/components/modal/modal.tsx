@@ -55,7 +55,7 @@ export class Modal {
   /** (optional) Modal size */
   @Prop() size?: string = 'default';
   /** (optional) If `true`, the Modal is open. */
-  @Prop({ reflect: true }) opened?: boolean = false;
+  @Prop({ reflect: true, mutable: true }) opened?: boolean = false;
   /** (optional) Transition duration */
   @Prop() duration?: number = 200;
   /** (optional) Label for close button */
@@ -129,7 +129,9 @@ export class Modal {
   }
 
   emitBeforeClose(trigger: CloseEventTrigger) {
-    if (!this.scaleBeforeClose.emit({ trigger }).defaultPrevented) {
+    const emittedEvents = emitEvent(this, 'scaleBeforeClose', { trigger });
+    const prevented = emittedEvents.some((event) => event.defaultPrevented);
+    if (!prevented) {
       this.opened = false;
     }
   }

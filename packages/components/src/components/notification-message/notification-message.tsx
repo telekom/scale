@@ -1,8 +1,17 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
 import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-
-const TIMEOUT = 3000;
 
 @Component({
   tag: 'scale-notification-message',
@@ -16,7 +25,8 @@ export class NotificationMessage {
     'informational';
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = false;
+  @Prop() autoHide?: boolean = false;
+  @Prop() autoHideDuration?: number = 3000;
 
   hasSlotText: boolean;
 
@@ -25,9 +35,8 @@ export class NotificationMessage {
   }
 
   componentDidRender() {
-    if (this.timeout) {
-      const timeout = this.timeout === true ? TIMEOUT : this.timeout;
-      setTimeout(this.close, timeout);
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
     }
   }
 
@@ -45,9 +54,10 @@ export class NotificationMessage {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-notification-message-svg
+            <scale-icon-alert-success
               class="notification-message__icon-success"
               accessibility-title="success"
+              color="#187431"
             />
           );
         case 'informational':
@@ -59,14 +69,14 @@ export class NotificationMessage {
           );
         case 'error':
           return (
-            <scale-icon-alert-warning
+            <scale-icon-alert-error
               class="notification-message__icon-error"
               accessibility-title="error"
             />
           );
         case 'warning':
           return (
-            <scale-icon-alert-information
+            <scale-icon-alert-error
               class="notification-message__icon-information"
               color="#AE461C"
               accessibility-title="information"

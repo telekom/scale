@@ -3,6 +3,128 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
+
+
+### Bug Fixes
+
+* **user-menu:** improve accessibility ([#756](https://github.com/telekom/scale/issues/756)) ([1460b97](https://github.com/telekom/scale/commit/1460b97c27fd85f19e9f1bbc2fe93d710d72ab54))
+
+
+
+
+
+# [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+
+
+
+
+
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Bug Fixes
+
+* **notification-badge:** vertical center alignment ([#692](https://github.com/telekom/scale/issues/692)) ([242254d](https://github.com/telekom/scale/commit/242254d32112ec422f8ed2d14b79ac5e3a8b8ccc))
+
+
+
+
+
+# [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
+
+
+### Features
+
+* rounding radius refactor ([#691](https://github.com/telekom/scale/issues/691)) ([f03a762](https://github.com/telekom/scale/commit/f03a762e6c3c5b4ac38ce70a347eedbf8c9f4dda))
+
+
+
+
+
+# [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
+
+
+### Bug Fixes
+
+* minor visual regressions ([#680](https://github.com/telekom/scale/issues/680)) ([dffb03f](https://github.com/telekom/scale/commit/dffb03f21dac8c2d0cb1efccb39955b62a1067bd))
+
+
+### Features
+
+* **callout:** add as beta component ([e30f32f](https://github.com/telekom/scale/commit/e30f32f682e2ad0a72778a65c1065c565542d7bc))
+* **header:** user menu ([#654](https://github.com/telekom/scale/issues/654)) ([9c7e9ad](https://github.com/telekom/scale/commit/9c7e9ada1328d4233948d67ff57adb88d5354ed5))
+* **notification-badge:** add first beta ([#655](https://github.com/telekom/scale/issues/655)) ([5991853](https://github.com/telekom/scale/commit/599185342fe05a2c4f87a4f0febce3c5a39bd90d))
+* **tooltip:** add beta component ([#607](https://github.com/telekom/scale/issues/607)) ([a6441fc](https://github.com/telekom/scale/commit/a6441fc976637a6ccc79e5248735bfa7dd9c8671)), closes [#415](https://github.com/telekom/scale/issues/415) [#465](https://github.com/telekom/scale/issues/465)
+
+
+
+
+
 # [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
 
 

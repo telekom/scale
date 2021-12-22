@@ -62,6 +62,7 @@
 | `href`           | `href`           | (optional) Link href                                                                                                                                                 | `string`                                                                                                                                                                                 | `undefined` |
 | `hreflang`       | `hreflang`       | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
 | `iconPosition`   | `icon-position`  | (optional) Chnage icon/content slot order                                                                                                                            | `"after" \| "before"`                                                                                                                                                                    | `'after'`   |
+| `innerTabindex`  | `inner-tabindex` | (optional) Set `tabindex` in the inner button or link element                                                                                                        | `number`                                                                                                                                                                                 | `undefined` |
 | `omitUnderline`  | `omit-underline` | (optional) Remove the initial line from the text (can also be achieved via `--line-thickness-initial: 0`) Remove the line for every state with `--line-thickness: 0` | `boolean`                                                                                                                                                                                | `false`     |
 | `ping`           | `ping`           | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
 | `referrerpolicy` | `referrerpolicy` | (optional)                                                                                                                                                           | `"" \| "no-referrer" \| "no-referrer-when-downgrade" \| "origin" \| "origin-when-cross-origin" \| "same-origin" \| "strict-origin" \| "strict-origin-when-cross-origin" \| "unsafe-url"` | `undefined` |
@@ -105,11 +106,13 @@ Type: `Promise<void>`
 ### Used by
 
  - [scale-data-grid](../data-grid)
+ - [scale-notification-banner](../notification-banner)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-data-grid --> scale-link
+  scale-notification-banner --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -11,7 +11,7 @@
 
 :host {
   --color: var(--scl-color-black);
-  --radius: var(--scl-radius-8);
+  --radius: var(--scl-radius-12);
   --font-size: var(--scl-font-size-12);
   --border: 1px solid var(--scl-color-grey-10);
   --color-hover: var(--scl-color-primary-hover);

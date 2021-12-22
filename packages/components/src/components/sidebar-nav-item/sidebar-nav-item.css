@@ -63,7 +63,7 @@
   padding-right: 1rem;
   padding-bottom: 1rem;
   padding-left: var(--spacing-indent);
-  border-radius: 2px;
+  border-radius: var(--scl-radius-2);
   text-decoration: none;
   outline: none;
 }

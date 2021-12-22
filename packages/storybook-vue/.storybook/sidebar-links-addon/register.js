@@ -28,14 +28,6 @@ const createLink = ({ title, href }) => {
   return link;
 };
 
-const createTrackingPixel = () => {
-  const noscript = document.createElement("noscript");
-  const img = document.createElement("img");
-  img.src = '//www.brand-design.telekom.com/piwik-bd/piwik.php?idsite=3&rec=1';
-  img.style = 'border:0;';
-  return noscript.appendChild(img);
-};
-
 let sidebarLinksContainer;
 
 addons.register("@telekom/scale-sidebar-links-addon", (api) => {
@@ -69,7 +61,6 @@ addons.register("@telekom/scale-sidebar-links-addon", (api) => {
         sidebarLinksContainer.setAttribute("style", "margin-top: 48px;");
         sidebarLinksContainer.id = "sidebar-links";
         sidebarContainer.appendChild(sidebarLinksContainer);
-        sidebarContainer.appendChild(createTrackingPixel());
 
         sidebarLinks[locale].forEach((link) => {
           sidebarLinksContainer.appendChild(createLink(link));

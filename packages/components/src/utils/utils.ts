@@ -55,17 +55,23 @@ export const isPseudoClassSupported = (pseudoClass) => {
  * @param instance {ComponentInterface} - The component instance, aka `this`
  * @param eventKey {string} - The event property, e.g. `scaleChange`
  * @param detail {any} - The custom event `detail`
+ * @returns {CustomEvent[]} - The events emitted
  */
 export function emitEvent(
   instance: ComponentInterface,
   eventKey: string,
   detail?: any
-) {
+): CustomEvent[] {
   const legacyKey = eventKey + 'Legacy';
+  const emitted = [];
   if (typeof instance[legacyKey] !== 'undefined') {
-    instance[legacyKey].emit(detail);
+    // Emit legacy camel case event, e.g. `scaleClose`
+    emitted.push(instance[legacyKey].emit(detail));
   }
-  instance[eventKey].emit(detail);
+  // Emit now-standard kebab-case event, e.g. `scale-close`
+  emitted.push(instance[eventKey].emit(detail));
+  // Return both
+  return emitted;
 }
 
 export function isClickOutside(event: MouseEvent, host: HTMLElement) {
@@ -85,3 +91,14 @@ export function isClickOutside(event: MouseEvent, host: HTMLElement) {
   } while (target);
   return true;
 }
+
+export interface ScaleIcon extends Element {
+  size?: number;
+}
+
+export const isScaleIcon = (el: Node) => {
+  if (el == null) {
+    return false;
+  }
+  return el.nodeName.toUpperCase().substring(0, 10) === 'SCALE-ICON';
+};

@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+
+### Features
+
+* new sketch lib release ([#699](https://github.com/telekom/scale/issues/699)) ([b9127b1](https://github.com/telekom/scale/commit/b9127b1e699ab20df30fd04ba5ab33af3fe538a1))
+
+
+
+
+
+# [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
+
+
+### Features
+
+* rounding radius refactor ([#691](https://github.com/telekom/scale/issues/691)) ([f03a762](https://github.com/telekom/scale/commit/f03a762e6c3c5b4ac38ce70a347eedbf8c9f4dda))
+
+
+
+
+
+# [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
+# [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
+
+
+### Bug Fixes
+
+* rotation of order icon on title table head ([#689](https://github.com/telekom/scale/issues/689)) ([4351d9e](https://github.com/telekom/scale/commit/4351d9ee0dac15a658c81a4a09b775bf4eaf7f55))
+
+
+
+
+
+# [3.0.0-beta.28](https://github.com/telekom/scale/compare/v3.0.0-beta.27...v3.0.0-beta.28) (2021-11-08)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
 # [3.0.0-beta.27](https://github.com/telekom/scale/compare/v3.0.0-beta.26...v3.0.0-beta.27) (2021-11-01)
 
 **Note:** Version bump only for package @telekom/scale-generator-sketch
