@@ -11,3 +11,5 @@
 
 @import './fonts.css';
 @import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';
+/* Temporarily loading from local file, this is a POC */
+@import './telekom-design-tokens.all.css';

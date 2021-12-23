@@ -1,0 +1,334 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 23 Dec 2021 08:46:24 GMT
+ */
+
+:root, [data-mode="light"] {
+  --telekom-color-text-and-icon-standard: #141414; /* Default text color with highest contrast. */
+  --telekom-color-text-and-icon-additional: #716e71; /* Use in combination with standard text for additional text elements. */
+  --telekom-color-text-and-icon-disabled: #b5b3b7; /* Only use for disabled text. */
+  --telekom-color-text-and-icon-link-standard: #1154d9;
+  --telekom-color-text-and-icon-link-hovered: #1045ae;
+  --telekom-color-text-and-icon-link-visited: #5f5a9b;
+  --telekom-color-text-and-icon-link-active: #0b255b;
+  --telekom-color-text-and-icon-primary-standard: #e20074;
+  --telekom-color-text-and-icon-primary-hovered: #c00063;
+  --telekom-color-text-and-icon-primary-pressed: #9e0051;
+  --telekom-color-text-and-icon-inverted-standard: #fcfcfc; /* Standard text color inverted to be used on high contrast colors like UI/Extra Strong */
+  --telekom-color-text-and-icon-inverted-additional: #9f9ca0; /* Additional text color inverted to be used on high contrast colors like UI/Extra Strong */
+  --telekom-color-text-and-icon-functional-informational: #1045ae;
+  --telekom-color-text-and-icon-functional-success: #23925a;
+  --telekom-color-text-and-icon-functional-danger: #c02f4c;
+  --telekom-color-text-and-icon-functional-warning: #ff7f00;
+  --telekom-color-text-and-icon-functional-white: #ffffff; /* This text color is white in all modes (light & dark) */
+  --telekom-color-text-and-icon-functional-black: #000000; /* This text color is black in all modes (light & dark) */
+  --telekom-color-background-canvas: #ffffff; /* Used as the background for your product (app, website, etc.) */
+  --telekom-color-background-canvas-subtle: #f0f0f1; /* Used as the background for your product (app, website, etc.) */
+  --telekom-color-background-backdrop: rgba(0, 0, 0, 0.5); /* Use to overlay content below dialogs to separate dialog from content below */
+  --telekom-color-background-surface: #ffffff; /* Use as the background of elements like cards, headers, bottom bars, etc. */
+  --telekom-color-background-surface-subtle: #fcfcfc; /* Use as the background of elements like cards, headers, bottom bars, etc. */
+  --telekom-color-background-surface-highlight: #141414; /* Use as the background of elements that should stand out highlighted sections, footer, etc. */
+  --telekom-color-primary-standard: #e20074;
+  --telekom-color-primary-hovered: #c00063;
+  --telekom-color-primary-pressed: #9e0051;
+  --telekom-color-primary-subtle: #fef2f8;
+  --telekom-color-ui-subtle: #e3e3e5;
+  --telekom-color-ui-light: #b5b3b7;
+  --telekom-color-ui-normal: #888588;
+  --telekom-color-ui-strong: #5a5759;
+  --telekom-color-ui-extra-strong: #141414;
+  --telekom-color-ui-disabled: #e3e3e5; /* Use for disabled interactive elements in combination with the disabled text color */
+  --telekom-color-functional-focus: #1154d9;
+  --telekom-color-functional-success-standard: #3cb176;
+  --telekom-color-functional-success-hovered: #23925a;
+  --telekom-color-functional-success-pressed: #177345;
+  --telekom-color-functional-success-subtle: #f5fffa;
+  --telekom-color-functional-interaction-standard: #1154d9;
+  --telekom-color-functional-interaction-hovered: #1045ae;
+  --telekom-color-functional-interaction-pressed: #0e3584;
+  --telekom-color-functional-interaction-subtle: #f4f8ff;
+  --telekom-color-functional-informational-standard: #1154d9;
+  --telekom-color-functional-informational-hovered: #1045ae;
+  --telekom-color-functional-informational-pressed: #0e3584;
+  --telekom-color-functional-informational-subtle: #f4f8ff;
+  --telekom-color-functional-warning-standard: #ff9124;
+  --telekom-color-functional-warning-hovered: #ff7f00;
+  --telekom-color-functional-warning-pressed: #dc6d00;
+  --telekom-color-functional-warning-subtle: #fff9f2;
+  --telekom-color-functional-danger-standard: #d64562;
+  --telekom-color-functional-danger-hovered: #c02f4c;
+  --telekom-color-functional-danger-pressed: #9a2a3f;
+  --telekom-color-functional-danger-subtle: #fef6f8;
+  --telekom-color-additional-clay-0: #f2e4df;
+  --telekom-color-additional-clay-10: #edd8ce;
+  --telekom-color-additional-clay-20: #e9cdbe;
+  --telekom-color-additional-clay-30: #e3c2af;
+  --telekom-color-additional-clay-40: #deb7a0;
+  --telekom-color-additional-clay-50: #d9ad92;
+  --telekom-color-additional-clay-60: #d2a483;
+  --telekom-color-additional-clay-70: #bb8c6f;
+  --telekom-color-additional-clay-80: #a3765d;
+  --telekom-color-additional-clay-90: #87604e;
+  --telekom-color-additional-clay-100: #6a4d40;
+  --telekom-color-additional-rose-0: #f6e5eb;
+  --telekom-color-additional-rose-10: #eed1da;
+  --telekom-color-additional-rose-20: #e6bcc9;
+  --telekom-color-additional-rose-30: #dda8b8;
+  --telekom-color-additional-rose-40: #d495a6;
+  --telekom-color-additional-rose-50: #cb8293;
+  --telekom-color-additional-rose-60: #c16f81;
+  --telekom-color-additional-rose-70: #a5566a;
+  --telekom-color-additional-rose-80: #864054;
+  --telekom-color-additional-rose-90: #652b3e;
+  --telekom-color-additional-rose-100: #511f31;
+  --telekom-color-additional-lilac-0: #f7eff6;
+  --telekom-color-additional-lilac-10: #efe3ed;
+  --telekom-color-additional-lilac-20: #ead9e7;
+  --telekom-color-additional-lilac-30: #e4cce0;
+  --telekom-color-additional-lilac-40: #d5b4d5;
+  --telekom-color-additional-lilac-50: #c59bca;
+  --telekom-color-additional-lilac-60: #b682bd;
+  --telekom-color-additional-lilac-70: #9e6ba5;
+  --telekom-color-additional-lilac-80: #84558a;
+  --telekom-color-additional-lilac-90: #6a3e71;
+  --telekom-color-additional-lilac-100: #502857;
+  --telekom-color-additional-pigeon-0: #e9ecf6;
+  --telekom-color-additional-pigeon-10: #d7dcef;
+  --telekom-color-additional-pigeon-20: #c5cce7;
+  --telekom-color-additional-pigeon-30: #b4bcde;
+  --telekom-color-additional-pigeon-40: #a3abd6;
+  --telekom-color-additional-pigeon-50: #929bcd;
+  --telekom-color-additional-pigeon-60: #828ac4;
+  --telekom-color-additional-pigeon-70: #6d6eb0;
+  --telekom-color-additional-pigeon-80: #5f5a9b;
+  --telekom-color-additional-pigeon-90: #534785;
+  --telekom-color-additional-pigeon-100: #46366d;
+  --telekom-color-additional-neptune-0: #deedec;
+  --telekom-color-additional-neptune-10: #cde5e5;
+  --telekom-color-additional-neptune-20: #bbdedd;
+  --telekom-color-additional-neptune-30: #a9d5d5;
+  --telekom-color-additional-neptune-40: #98cbcd;
+  --telekom-color-additional-neptune-50: #88c0c4;
+  --telekom-color-additional-neptune-60: #77b6bb;
+  --telekom-color-additional-neptune-70: #66a5a8;
+  --telekom-color-additional-neptune-80: #579292;
+  --telekom-color-additional-neptune-90: #4a7b7a;
+  --telekom-color-additional-neptune-100: #3f6160;
+  --telekom-color-additional-olive-0: #ecf3e7;
+  --telekom-color-additional-olive-10: #dce8d4;
+  --telekom-color-additional-olive-20: #ccdec2;
+  --telekom-color-additional-olive-30: #bbd3af;
+  --telekom-color-additional-olive-40: #aac89d;
+  --telekom-color-additional-olive-50: #99bd8b;
+  --telekom-color-additional-olive-60: #88b179;
+  --telekom-color-additional-olive-70: #709660;
+  --telekom-color-additional-olive-80: #597949;
+  --telekom-color-additional-olive-90: #425b33;
+  --telekom-color-additional-olive-100: #314724;
+  --telekom-color-additional-teal-0: #d7f6f4;
+  --telekom-color-additional-teal-10: #d7f6f4;
+  --telekom-color-additional-teal-20: #98e4e4;
+  --telekom-color-additional-teal-30: #79d9db;
+  --telekom-color-additional-teal-40: #5cccd0;
+  --telekom-color-additional-teal-50: #3ebdc5;
+  --telekom-color-additional-teal-60: #22adb9;
+  --telekom-color-additional-teal-70: #129ca3;
+  --telekom-color-additional-teal-80: #068788;
+  --telekom-color-additional-teal-90: #006967;
+  --telekom-color-additional-teal-100: #005651;
+  --telekom-color-additional-orange-0: #fffcdf;
+  --telekom-color-additional-orange-10: #fff4c6;
+  --telekom-color-additional-orange-20: #ffe9ae;
+  --telekom-color-additional-orange-30: #ffda97;
+  --telekom-color-additional-orange-40: #ffc780;
+  --telekom-color-additional-orange-50: #ffb26a;
+  --telekom-color-additional-orange-60: #fc9a55;
+  --telekom-color-additional-orange-70: #df6d3f;
+  --telekom-color-additional-orange-80: #ae461c;
+  --telekom-color-additional-orange-90: #973209;
+  --telekom-color-additional-orange-100: #7d1f09;
+  --telekom-color-additional-red-0: #ffc5cb;
+  --telekom-color-additional-red-10: #ffaab6;
+  --telekom-color-additional-red-20: #fe94a5;
+  --telekom-color-additional-red-30: #f98093;
+  --telekom-color-additional-red-40: #f36a80;
+  --telekom-color-additional-red-50: #ef556e;
+  --telekom-color-additional-red-60: #ed425b;
+  --telekom-color-additional-red-70: #d82a48;
+  --telekom-color-additional-red-80: #c31c3b;
+  --telekom-color-additional-red-90: #ad0f31;
+  --telekom-color-additional-red-100: #990024;
+  --telekom-color-additional-blue-0: #d6f8ff;
+  --telekom-color-additional-blue-10: #b5ebff;
+  --telekom-color-additional-blue-20: #95daff;
+  --telekom-color-additional-blue-30: #77c4ff;
+  --telekom-color-additional-blue-40: #59aaff;
+  --telekom-color-additional-blue-50: #3d8cff;
+  --telekom-color-additional-blue-60: #216bff;
+  --telekom-color-additional-blue-70: #0d39df;
+  --telekom-color-additional-blue-80: #000bbf;
+  --telekom-color-additional-blue-90: #03009f;
+  --telekom-color-additional-blue-100: #140080;
+  --telekom-color-additional-green-0: #f0f7e0;
+  --telekom-color-additional-green-10: #e0efc7;
+  --telekom-color-additional-green-20: #cfe8af;
+  --telekom-color-additional-green-30: #bbdf98;
+  --telekom-color-additional-green-40: #a4d681;
+  --telekom-color-additional-green-50: #8dcd6a;
+  --telekom-color-additional-green-60: #73c354;
+  --telekom-color-additional-green-70: #52b342;
+  --telekom-color-additional-green-80: #32a032;
+  --telekom-color-additional-green-90: #248b31;
+  --telekom-color-additional-green-100: #187431;
+  --telekom-color-additional-pine-0: #f5fffa;
+  --telekom-color-additional-pine-10: #daf7e8;
+  --telekom-color-additional-pine-20: #c0efd8;
+  --telekom-color-additional-pine-30: #92e0b9;
+  --telekom-color-additional-pine-40: #6cd09e;
+  --telekom-color-additional-pine-50: #50c188;
+  --telekom-color-additional-pine-60: #3cb176;
+  --telekom-color-additional-pine-70: #2da267;
+  --telekom-color-additional-pine-80: #23925a;
+  --telekom-color-additional-pine-90: #1c824f;
+  --telekom-color-additional-pine-100: #177345;
+  --telekom-elevation-flat-standard: 0px 0px 0px 0px #00000000; /* Exclusivly for flat design elements */
+  --telekom-elevation-flat-hover: 0px 2px 8px 0px #0000001a, 0px 1px 2px 0px #0000001a; /* Exclusivly for flat design elements */
+  --telekom-elevation-flat-pressed: 0px 0px 0px 0px #00000000; /* Exclusivly for flat design elements */
+  --telekom-elevation-resting-standard: 0px 2px 8px 0px #0000001a, 0px 1px 2px 0px #0000001a; /* Default for interactable elements like buttons, etc. */
+  --telekom-elevation-resting-hover: 0px 6px 24px 0px #0000001a, 0px 3px 6px 0px #0000001a; /* Default for interactable elements like buttons, etc. */
+  --telekom-elevation-resting-pressed: 0px 0px 0px 0px #00000000; /* Default for interactable elements like buttons, etc. */
+  --telekom-elevation-raised-standard: 0px 8px 32px 0px #0000001a, 0px 4px 8px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
+  --telekom-elevation-raised-hover: 0px 16px 64px 0px #0000001a, 0px 8px 16px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
+  --telekom-elevation-raised-pressed: 0px 4px 16px 0px #0000001a, 0px 2px 4px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
+  --telekom-elevation-floating-standard: 0px 12px 48px 0px #0000001a, 0px 6px 12px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
+  --telekom-elevation-floating-hover: 0px 24px 96px 0px #0000001a, 0px 12px 24px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
+  --telekom-elevation-floating-pressed: 0px 8px 32px 0px #0000001a, 0px 4px 8px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
+  --telekom-elevation-overlay: 0px 16px 64px 0px #0000001a, 0px 8px 16px 0px #0000001a; /* For fixed elements that overlay the content e.g. sidebars or bottom sheets */
+  --telekom-elevation-top: 0px 24px 96px 0px #0000001a, 0px 12px 24px 0px #0000001a; /* Highest level e.g. for dialogs or modals */
+  --telekom-elevation-app-bar-top-flat: 0px 1px 0px 0px #0000001a; /* Use for headers, app bar & menus on the top */
+  --telekom-elevation-app-bar-top-raised: 0px 1px 0px 0px #0000001a; /* Use for headers, app bar & menus on the top */
+  --telekom-elevation-app-bar-bottom-flat: 0px -1px 0px 0px #0000001a; /* Use for app navigation and app bars on the bottom */
+  --telekom-elevation-app-bar-bottom-raised: 0px -1px 0px 0px #0000001a; /* Use for app navigation and app bars on the bottom */
+  --telekom-line-weight-standard: 0.0625rem; /* Used for ui elements like inputs, dividers, etc. */
+  --telekom-line-weight-highlight: 0.125rem; /* E.g. use for active menu items. */
+  --telekom-line-weight-bold: 0.25rem;
+  --telekom-motion-duration-instant: 0ms;
+  --telekom-motion-duration-immediate: 100ms;
+  --telekom-motion-duration-transition: 200ms;
+  --telekom-motion-duration-animation: 600ms;
+  --telekom-motion-duration-animation-deliberate: 800ms;
+  --telekom-motion-easing-standard: 0.4,0,0.6,1;
+  --telekom-motion-easing-enter: 0.4,0.6,0.6,1;
+  --telekom-motion-easing-leave: 0.4,0,1,1;
+  --telekom-opacity-invisible: 0;
+  --telekom-opacity-transparent: 0.35;
+  --telekom-opacity-semi-transparent: 0.5;
+  --telekom-opacity-translucent: 0.75;
+  --telekom-opacity-semi-translucent: 0.85;
+  --telekom-opacity-solid: 1;
+  --telekom-radius-small: 0.25rem; /* Used for small elements like checkboxes, etc. */
+  --telekom-radius-standard: 0.5rem; /* Used for our main ui elements like buttons, etc. */
+  --telekom-radius-large: 0.75rem; /* Used mainly for containers like cards or dialogs */
+  --telekom-radius-pill: 62.4375rem; /* Used for pill-shaped ui elements */
+  --telekom-radius-circle: 50%; /* Used for ui elements like radio buttons or things like avatars */
+  --telekom-spacing-none: 0rem;
+  --telekom-spacing-inner-xs: 0.0625rem;
+  --telekom-spacing-inner-sm: 0.125rem;
+  --telekom-spacing-inner-md: 0.25rem;
+  --telekom-spacing-inner-lg: 0.5rem;
+  --telekom-spacing-grouped-sm: 0.75rem;
+  --telekom-spacing-grouped-md: 1rem;
+  --telekom-spacing-grouped-lg: 1.5rem;
+  --telekom-spacing-related-sm: 2rem;
+  --telekom-spacing-related-md: 2.5rem;
+  --telekom-spacing-related-lg: 3rem;
+  --telekom-spacing-unrelated-sm: 4rem;
+  --telekom-spacing-unrelated-md: 4.5rem;
+  --telekom-spacing-unrelated-lg: 5rem;
+  --telekom-typography-font-size-footnote: 0.625rem;
+  --telekom-typography-font-size-small: 0.75rem;
+  --telekom-typography-font-size-caption: 0.875rem;
+  --telekom-typography-font-size-body: 1rem;
+  --telekom-typography-font-size-callout: 1.25rem;
+  --telekom-typography-font-size-headline-3: 1.5rem;
+  --telekom-typography-font-size-headline-2: 2rem;
+  --telekom-typography-font-size-headline-1: 2.625rem;
+  --telekom-typography-font-size-title-3: 3.375rem;
+  --telekom-typography-font-size-title-2: 4.25rem;
+  --telekom-typography-font-size-title-1: 4.75rem;
+  --telekom-typography-font-family-sans: TeleNeoWeb, sans-serif;
+  --telekom-typography-font-family-mono: monospace;
+  --telekom-typography-font-weight-thin: 200;
+  --telekom-typography-font-weight-regular: 400;
+  --telekom-typography-font-weight-medium: 500;
+  --telekom-typography-font-weight-bold: 700;
+  --telekom-typography-font-weight-extra-bold: 800;
+  --telekom-typography-line-spacing-extra-tight: 1.15; /* Use for large titles like H1 or H2 */
+  --telekom-typography-line-spacing-tight: 1.25; /* Use for large headlines like H3, etc. */
+  --telekom-typography-line-spacing-standard: 1.35; /* Use for most text elements like normal copy, etc. */
+  --telekom-typography-line-spacing-loose: 1.5; /* Use for multi line text passages with long lines. */
+  --telekom-typography-letter-spacing-standard: 0;
+}
+
+/**
+ * Do not edit directly
+ * Generated on Thu, 23 Dec 2021 08:46:24 GMT
+ */
+
+[data-mode="dark"] {
+  --telekom-color-text-and-icon-standard: #fcfcfc; /* Default text color with highest contrast. */
+  --telekom-color-text-and-icon-additional: #9f9ca0; /* Use in combination with standard text for additional text elements. */
+  --telekom-color-text-and-icon-disabled: #5a5759; /* Only use for disabled text. */
+  --telekom-color-text-and-icon-link-standard: #256bf1;
+  --telekom-color-text-and-icon-link-hovered: #4d87f6;
+  --telekom-color-text-and-icon-link-visited: #828ac4;
+  --telekom-color-text-and-icon-link-active: #75a3fa;
+  --telekom-color-text-and-icon-primary-standard: #e20074;
+  --telekom-color-text-and-icon-primary-hovered: #c00063;
+  --telekom-color-text-and-icon-primary-pressed: #9e0051;
+  --telekom-color-text-and-icon-inverted-standard: #141414; /* Standard text color inverted to be used on high contrast colors like UI/Extra Strong */
+  --telekom-color-text-and-icon-inverted-additional: #716e71; /* Additional text color inverted to be used on high contrast colors like UI/Extra Strong */
+  --telekom-color-text-and-icon-functional-informational: #256bf1;
+  --telekom-color-text-and-icon-functional-success: #3cb176;
+  --telekom-color-text-and-icon-functional-danger: #d64562;
+  --telekom-color-text-and-icon-functional-warning: #ff9124;
+  --telekom-color-text-and-icon-functional-white: #ffffff; /* This text color is white in all modes (light & dark) */
+  --telekom-color-text-and-icon-functional-black: #000000; /* This text color is black in all modes (light & dark) */
+  --telekom-color-background-canvas: #141414; /* Used as the background for your product (app, website, etc.) */
+  --telekom-color-background-canvas-subtle: #201f20; /* Used as the background for your product (app, website, etc.) */
+  --telekom-color-background-backdrop: rgba(0, 0, 0, 0.7); /* Use to overlay content below dialogs to separate dialog from content below */
+  --telekom-color-background-surface: #2c2a2b; /* Use as the background of elements like cards, headers, bottom bars, etc. */
+  --telekom-color-background-surface-subtle: #373636; /* Use as the background of elements like cards, headers, bottom bars, etc. */
+  --telekom-color-background-surface-highlight: #434142; /* Use as the background of elements that should stand out highlighted sections, footer, etc. */
+  --telekom-color-primary-standard: #e20074;
+  --telekom-color-primary-hovered: #c00063;
+  --telekom-color-primary-pressed: #9e0051;
+  --telekom-color-primary-subtle: #2d0017;
+  --telekom-color-ui-subtle: #2c2a2b;
+  --telekom-color-ui-light: #373636;
+  --telekom-color-ui-normal: #434142;
+  --telekom-color-ui-strong: #5a5759;
+  --telekom-color-ui-extra-strong: #fcfcfc;
+  --telekom-color-ui-disabled: #2c2a2b; /* Use for disabled interactive elements in combination with the disabled text color */
+  --telekom-color-functional-focus: #256bf1;
+  --telekom-color-functional-success-standard: #177345;
+  --telekom-color-functional-success-hovered: #23925a;
+  --telekom-color-functional-success-pressed: #3cb176;
+  --telekom-color-functional-success-subtle: #002613;
+  --telekom-color-functional-interaction-standard: #256bf1;
+  --telekom-color-functional-interaction-hovered: #4d87f6;
+  --telekom-color-functional-interaction-pressed: #75a3fa;
+  --telekom-color-functional-interaction-subtle: #071533;
+  --telekom-color-functional-informational-standard: #256bf1;
+  --telekom-color-functional-informational-hovered: #4d87f6;
+  --telekom-color-functional-informational-pressed: #75a3fa;
+  --telekom-color-functional-informational-subtle: #071533;
+  --telekom-color-functional-warning-standard: #ff7f00;
+  --telekom-color-functional-warning-hovered: #ff9124;
+  --telekom-color-functional-warning-pressed: #ffa348;
+  --telekom-color-functional-warning-subtle: #4d2600;
+  --telekom-color-functional-danger-standard: #c02f4c;
+  --telekom-color-functional-danger-hovered: #d64562;
+  --telekom-color-functional-danger-pressed: #e16580;
+  --telekom-color-functional-danger-subtle: #301116;
+}
