@@ -30,13 +30,16 @@
     -spacing-56 !== --telekom-spacing-unrelated-sm
   */
   --size-window-small: calc(
-    (6 * var(--telekom-spacing-unrelated-sm, 3.5rem)) + (5 * var(--telekom-spacing-related-sm))
+    (6 * var(--telekom-spacing-unrelated-sm, 3.5rem)) +
+      (5 * var(--telekom-spacing-related-sm))
   );
   --size-window-default: calc(
-    (8 * var(--telekom-spacing-unrelated-sm, 3.5rem)) + (7 * var(--telekom-spacing-related-sm))
+    (8 * var(--telekom-spacing-unrelated-sm, 3.5rem)) +
+      (7 * var(--telekom-spacing-related-sm))
   );
   --size-window-large: calc(
-    (12 * var(--telekom-spacing-unrelated-sm, 3.5rem)) + (11 * var(--telekom-spacing-related-sm))
+    (12 * var(--telekom-spacing-unrelated-sm, 3.5rem)) +
+      (11 * var(--telekom-spacing-related-sm))
   );
 
   --spacing-x-header: var(--telekom-spacing-grouped-lg);
@@ -65,7 +68,9 @@
   --spacing-actions: var(--telekom-spacing-related-sm);
 
   --spacing-x-actions-slotted: var(--telekom-spacing-inner-lg);
-  --background-actions-has-scroll: var(--telekom-color-background-surface-subtle);
+  --background-actions-has-scroll: var(
+    --telekom-color-background-surface-subtle
+  );
 }
 
 .modal {

@@ -38,22 +38,22 @@
     </scale-modal>
 
     <script type="module">
-      const body = document.body
-      const trigger = document.getElementById('trigger')
-      const modal = document.querySelector('scale-modal')
+      const body = document.body;
+      const trigger = document.getElementById('trigger');
+      const modal = document.querySelector('scale-modal');
 
       const switchMode = (nextMode) => {
-        document.body.dataset.mode = nextMode
-        modal.heading = `You just switched to ${nextMode.toUpperCase()} mode`
-        modal.opened = true
-      }
+        document.body.dataset.mode = nextMode;
+        modal.heading = `You just switched to ${nextMode.toUpperCase()} mode`;
+        modal.opened = true;
+      };
 
       trigger.addEventListener('scale-change', (event) => {
-        switchMode(event.detail.checked ? 'dark' : 'light')
-      })
+        switchMode(event.detail.checked ? 'dark' : 'light');
+      });
       modal.addEventListener('scale-close', () => {
-        trigger.querySelector('input').focus()
-      })
+        trigger.querySelector('input').focus();
+      });
     </script>
   </body>
 </html>

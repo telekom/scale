@@ -3,7 +3,8 @@
  * Generated on Thu, 23 Dec 2021 08:46:24 GMT
  */
 
-:root, [data-mode="light"] {
+:root,
+[data-mode='light'] {
   --telekom-color-text-and-icon-standard: #141414; /* Default text color with highest contrast. */
   --telekom-color-text-and-icon-additional: #716e71; /* Use in combination with standard text for additional text elements. */
   --telekom-color-text-and-icon-disabled: #b5b3b7; /* Only use for disabled text. */
@@ -24,7 +25,12 @@
   --telekom-color-text-and-icon-functional-black: #000000; /* This text color is black in all modes (light & dark) */
   --telekom-color-background-canvas: #ffffff; /* Used as the background for your product (app, website, etc.) */
   --telekom-color-background-canvas-subtle: #f0f0f1; /* Used as the background for your product (app, website, etc.) */
-  --telekom-color-background-backdrop: rgba(0, 0, 0, 0.5); /* Use to overlay content below dialogs to separate dialog from content below */
+  --telekom-color-background-backdrop: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Use to overlay content below dialogs to separate dialog from content below */
   --telekom-color-background-surface: #ffffff; /* Use as the background of elements like cards, headers, bottom bars, etc. */
   --telekom-color-background-surface-subtle: #fcfcfc; /* Use as the background of elements like cards, headers, bottom bars, etc. */
   --telekom-color-background-surface-highlight: #141414; /* Use as the background of elements that should stand out highlighted sections, footer, etc. */
@@ -192,19 +198,30 @@
   --telekom-color-additional-pine-90: #1c824f;
   --telekom-color-additional-pine-100: #177345;
   --telekom-elevation-flat-standard: 0px 0px 0px 0px #00000000; /* Exclusivly for flat design elements */
-  --telekom-elevation-flat-hover: 0px 2px 8px 0px #0000001a, 0px 1px 2px 0px #0000001a; /* Exclusivly for flat design elements */
+  --telekom-elevation-flat-hover: 0px 2px 8px 0px #0000001a,
+    0px 1px 2px 0px #0000001a; /* Exclusivly for flat design elements */
   --telekom-elevation-flat-pressed: 0px 0px 0px 0px #00000000; /* Exclusivly for flat design elements */
-  --telekom-elevation-resting-standard: 0px 2px 8px 0px #0000001a, 0px 1px 2px 0px #0000001a; /* Default for interactable elements like buttons, etc. */
-  --telekom-elevation-resting-hover: 0px 6px 24px 0px #0000001a, 0px 3px 6px 0px #0000001a; /* Default for interactable elements like buttons, etc. */
+  --telekom-elevation-resting-standard: 0px 2px 8px 0px #0000001a,
+    0px 1px 2px 0px #0000001a; /* Default for interactable elements like buttons, etc. */
+  --telekom-elevation-resting-hover: 0px 6px 24px 0px #0000001a,
+    0px 3px 6px 0px #0000001a; /* Default for interactable elements like buttons, etc. */
   --telekom-elevation-resting-pressed: 0px 0px 0px 0px #00000000; /* Default for interactable elements like buttons, etc. */
-  --telekom-elevation-raised-standard: 0px 8px 32px 0px #0000001a, 0px 4px 8px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
-  --telekom-elevation-raised-hover: 0px 16px 64px 0px #0000001a, 0px 8px 16px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
-  --telekom-elevation-raised-pressed: 0px 4px 16px 0px #0000001a, 0px 2px 4px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
-  --telekom-elevation-floating-standard: 0px 12px 48px 0px #0000001a, 0px 6px 12px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
-  --telekom-elevation-floating-hover: 0px 24px 96px 0px #0000001a, 0px 12px 24px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
-  --telekom-elevation-floating-pressed: 0px 8px 32px 0px #0000001a, 0px 4px 8px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
-  --telekom-elevation-overlay: 0px 16px 64px 0px #0000001a, 0px 8px 16px 0px #0000001a; /* For fixed elements that overlay the content e.g. sidebars or bottom sheets */
-  --telekom-elevation-top: 0px 24px 96px 0px #0000001a, 0px 12px 24px 0px #0000001a; /* Highest level e.g. for dialogs or modals */
+  --telekom-elevation-raised-standard: 0px 8px 32px 0px #0000001a,
+    0px 4px 8px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
+  --telekom-elevation-raised-hover: 0px 16px 64px 0px #0000001a,
+    0px 8px 16px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
+  --telekom-elevation-raised-pressed: 0px 4px 16px 0px #0000001a,
+    0px 2px 4px 0px #0000001a; /* For bigger interactable elements like cards, etc. */
+  --telekom-elevation-floating-standard: 0px 12px 48px 0px #0000001a,
+    0px 6px 12px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
+  --telekom-elevation-floating-hover: 0px 24px 96px 0px #0000001a,
+    0px 12px 24px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
+  --telekom-elevation-floating-pressed: 0px 8px 32px 0px #0000001a,
+    0px 4px 8px 0px #0000001a; /* For floating elements that mostly stay in a fixed position like a FAB. */
+  --telekom-elevation-overlay: 0px 16px 64px 0px #0000001a,
+    0px 8px 16px 0px #0000001a; /* For fixed elements that overlay the content e.g. sidebars or bottom sheets */
+  --telekom-elevation-top: 0px 24px 96px 0px #0000001a,
+    0px 12px 24px 0px #0000001a; /* Highest level e.g. for dialogs or modals */
   --telekom-elevation-app-bar-top-flat: 0px 1px 0px 0px #0000001a; /* Use for headers, app bar & menus on the top */
   --telekom-elevation-app-bar-top-raised: 0px 1px 0px 0px #0000001a; /* Use for headers, app bar & menus on the top */
   --telekom-elevation-app-bar-bottom-flat: 0px -1px 0px 0px #0000001a; /* Use for app navigation and app bars on the bottom */
@@ -217,9 +234,9 @@
   --telekom-motion-duration-transition: 200ms;
   --telekom-motion-duration-animation: 600ms;
   --telekom-motion-duration-animation-deliberate: 800ms;
-  --telekom-motion-easing-standard: 0.4,0,0.6,1;
-  --telekom-motion-easing-enter: 0.4,0.6,0.6,1;
-  --telekom-motion-easing-leave: 0.4,0,1,1;
+  --telekom-motion-easing-standard: 0.4, 0, 0.6, 1;
+  --telekom-motion-easing-enter: 0.4, 0.6, 0.6, 1;
+  --telekom-motion-easing-leave: 0.4, 0, 1, 1;
   --telekom-opacity-invisible: 0;
   --telekom-opacity-transparent: 0.35;
   --telekom-opacity-semi-transparent: 0.5;
@@ -275,7 +292,7 @@
  * Generated on Thu, 23 Dec 2021 08:46:24 GMT
  */
 
-[data-mode="dark"] {
+[data-mode='dark'] {
   --telekom-color-text-and-icon-standard: #fcfcfc; /* Default text color with highest contrast. */
   --telekom-color-text-and-icon-additional: #9f9ca0; /* Use in combination with standard text for additional text elements. */
   --telekom-color-text-and-icon-disabled: #5a5759; /* Only use for disabled text. */
@@ -296,7 +313,12 @@
   --telekom-color-text-and-icon-functional-black: #000000; /* This text color is black in all modes (light & dark) */
   --telekom-color-background-canvas: #141414; /* Used as the background for your product (app, website, etc.) */
   --telekom-color-background-canvas-subtle: #201f20; /* Used as the background for your product (app, website, etc.) */
-  --telekom-color-background-backdrop: rgba(0, 0, 0, 0.7); /* Use to overlay content below dialogs to separate dialog from content below */
+  --telekom-color-background-backdrop: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Use to overlay content below dialogs to separate dialog from content below */
   --telekom-color-background-surface: #2c2a2b; /* Use as the background of elements like cards, headers, bottom bars, etc. */
   --telekom-color-background-surface-subtle: #373636; /* Use as the background of elements like cards, headers, bottom bars, etc. */
   --telekom-color-background-surface-highlight: #434142; /* Use as the background of elements that should stand out highlighted sections, footer, etc. */
