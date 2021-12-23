@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
+
+
+### Bug Fixes
+
+* **user-menu:** improve accessibility ([#756](https://github.com/telekom/scale/issues/756)) ([1460b97](https://github.com/telekom/scale/commit/1460b97c27fd85f19e9f1bbc2fe93d710d72ab54))
+
+
+
+
+
+# [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+
+
+
+
+
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
 # [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests

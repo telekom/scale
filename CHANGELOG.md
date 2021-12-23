@@ -3,6 +3,85 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
+
+
+### Bug Fixes
+
+* **toggle-group:** unreactive props ([#753](https://github.com/telekom/scale/issues/753)) ([f700a94](https://github.com/telekom/scale/commit/f700a947fb2817f95dfa25e000071cfedbad4d6f))
+* **user-menu:** improve accessibility ([#756](https://github.com/telekom/scale/issues/756)) ([1460b97](https://github.com/telekom/scale/commit/1460b97c27fd85f19e9f1bbc2fe93d710d72ab54))
+* use _semantic_ CSS variables for consistency ([#742](https://github.com/telekom/scale/issues/742)) ([15af88b](https://github.com/telekom/scale/commit/15af88b6c48c0418912074968611734b2e48c265))
+
+
+
+
+
+# [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
+
+
+### Bug Fixes
+
+* enable `extras.cloneNodeFix` config for Stencil ([#748](https://github.com/telekom/scale/issues/748)) ([1d10fac](https://github.com/telekom/scale/commit/1d10fac6c632f37bd1577440094880c56b514e93))
+
+
+
+
+
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+
+### Bug Fixes
+
+* **date-picker:** fix layout glitch when zoomed out ([#747](https://github.com/telekom/scale/issues/747)) ([b895d34](https://github.com/telekom/scale/commit/b895d34d0cc315afe9f4775dd1de7a39f1dc44bf))
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+* adapt icon size automatically based on context ([#725](https://github.com/telekom/scale/issues/725)). Fixes [#702](https://github.com/telekom/scale/issues/702) ([e0ca5d7](https://github.com/telekom/scale/commit/e0ca5d7df479700903cd92c5ff6c3e172ecef536))
+* **examples:** add vanilla ([#733](https://github.com/telekom/scale/issues/733)) ([91259f8](https://github.com/telekom/scale/commit/91259f8a6f1f87f64afe784a6fcc768b307d70dc))
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+
+### Features
+
+* **notification-banner:** release first beta ([#704](https://github.com/telekom/scale/issues/704)) ([8e607cf](https://github.com/telekom/scale/commit/8e607cfda72abb9cb7b0eb4b66f334e0450d115e))
+* adapt icon size automatically based on context ([#725](https://github.com/telekom/scale/issues/725)). Fixes [#702](https://github.com/telekom/scale/issues/702) ([e0ca5d7](https://github.com/telekom/scale/commit/e0ca5d7df479700903cd92c5ff6c3e172ecef536))
+* **examples:** add vanilla ([#733](https://github.com/telekom/scale/issues/733)) ([91259f8](https://github.com/telekom/scale/commit/91259f8a6f1f87f64afe784a6fcc768b307d70dc))
+
+
+
+
+
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package telekom
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+
+### Bug Fixes
+
+* add selected state for device/device-tv and content/media-folder icons ([#728](https://github.com/telekom/scale/issues/728)). Fixes [#726](https://github.com/telekom/scale/issues/726) ([acc63d8](https://github.com/telekom/scale/commit/acc63d89d065b94851202efa13bc44ea19f289a0))
+
+
+### Features
+
+* **input:** enable autofocus attribute ([#729](https://github.com/telekom/scale/issues/729)) ([519db5d](https://github.com/telekom/scale/commit/519db5dbe378beee8b7b4455ca9ef2b197803862))
+
+
+
+
+
 # [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
 
 

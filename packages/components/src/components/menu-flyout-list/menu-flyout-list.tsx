@@ -140,7 +140,11 @@ export class MenuFlyoutList {
     if (!this.active) {
       return;
     }
-    event.preventDefault();
+
+    if (!this.hostElement.querySelector('app-navigation-user-menu')) {
+      event.preventDefault();
+    }
+
     if ('ArrowDown' === event.key) {
       this.shiftItemsFocus();
       return;

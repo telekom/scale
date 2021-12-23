@@ -13,7 +13,8 @@ export default {
     },
     dismissible: { type: Boolean, default: false },
     opened: { type: Boolean },
-    timeout: { type: Boolean | Number, default: false },
+    autoHideDuration: { type: Number, default: 3000 },
+    autoHide: { type: Boolean, default: false },
   },
 };
 </script>
