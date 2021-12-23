@@ -25,7 +25,7 @@ scale-app-header {
   --background-brand: var(--scl-color-primary);
 
   --color-nav: var(--scl-color-text-standard);
-  --background-nav: var(--scl-color-white);
+  --background-nav: var(--scl-color-background-standard);
   --spacing-nav: 0 var(--scl-spacing-16);
 }
 @keyframes keyframes-slideUp {
@@ -112,7 +112,8 @@ scale-app-header {
   height: calc(2 * var(--header-border-radius));
   position: absolute;
   border-top: var(--border);
-  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0 #fff;
+  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
+    var(--scl-color-background-standard);
   background-color: transparent;
 }
 .header.menu--open .header__nav-before,

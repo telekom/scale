@@ -36,7 +36,7 @@
   white-space: nowrap;
   border-radius: 0;
   cursor: pointer;
-  color: var(--scl-color-black);
+  color: var(--scl-color-text-standard);
   /* 10px relates to the PAD value in Menu component */
   max-width: calc(100vw - 2 * var(--scl-spacing-24) - 2 * 10px);
   overflow: hidden;
