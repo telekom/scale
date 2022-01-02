@@ -24,7 +24,7 @@ describe('Menu', () => {
       `document.querySelector("#root scale-menu-flyout > scale-button").shadowRoot.querySelector("button")`
     );
     await button.click();
-    await page.waitFor(500);
+    await page.waitForTimeout(500);
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // open 2nd and 3rd level of cascading menu on click
@@ -47,24 +47,26 @@ describe('Menu', () => {
     );
     const base = await page.evaluateHandle(`document.querySelector("#root")`);
     await button.click();
+    await page.waitForTimeout(300);
     await flyoutItemOne.hover();
+    await page.waitForTimeout(300);
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await base.click();
     await button.click();
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await page.keyboard.press('ArrowDown');
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await page.keyboard.press('ArrowDown');
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await page.keyboard.press('ArrowDown');
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await page.keyboard.press('ArrowDown');
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await page.keyboard.press('ArrowDown');
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await flyoutItemOne.click();
-    await page.waitFor(200);
+    await page.waitForTimeout(300);
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     await flyoutItemTwo.focus();
     await expect(await previewHtml.screenshot()).toMatchImageSnapshot();

@@ -8,7 +8,7 @@ describe('ProgressBar', () => {
       `http://host.docker.internal:3123/iframe.html?id=components-progress-bar--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
-    await page.waitFor(3000);
+    await page.waitForTimeout(3000);
     const previewHtml = await page.$('body');
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
