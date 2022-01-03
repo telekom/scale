@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
+
+
+### Bug Fixes
+
+* **user-menu:** improve accessibility ([#756](https://github.com/telekom/scale/issues/756)) ([1460b97](https://github.com/telekom/scale/commit/1460b97c27fd85f19e9f1bbc2fe93d710d72ab54))
+
+
+
+
+
 # [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
