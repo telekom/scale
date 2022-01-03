@@ -56,8 +56,8 @@ export class NotificationMessage {
           return (
             <scale-icon-alert-success
               class="notification-message__icon-success"
-              accessibility-title="success"
               color="#187431"
+              accessibility-title="success"
             />
           );
         case 'informational':
