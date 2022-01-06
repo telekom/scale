@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.40](https://github.com/telekom/scale/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2022-01-06)
+
+
+### Bug Fixes
+
+* **colors:** use correct gray ([#769](https://github.com/telekom/scale/issues/769)) ([71ab821](https://github.com/telekom/scale/commit/71ab82139d68435e6f3c68fe829350bca77adb65))
+* **radio-button:** hover area problems because of flex ([#768](https://github.com/telekom/scale/issues/768)) ([b20d1f4](https://github.com/telekom/scale/commit/b20d1f42eadf2b1c2814f832ba0c4aad59463ac5))
+
+
+### Features
+
+* **notification-toast:** add new beta component ([#714](https://github.com/telekom/scale/issues/714)) ([1a9abb5](https://github.com/telekom/scale/commit/1a9abb51ce5dc393019260d4b2a65b877bf52873))
+
+
+
+
+
 # [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
 
 
