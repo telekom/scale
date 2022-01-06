@@ -57,6 +57,7 @@ scale-checkbox {
 scale-checkbox {
   display: flex;
   flex-direction: column;
+  color: var(--color-text);
 }
 
 scale-checkbox [part='icon'],
@@ -89,7 +90,7 @@ scale-checkbox [part='checkbox'] {
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
-  border: var(--border-width-control) solid currentColor;
+  border: var(--border-width-control) solid var(--color-text);
 }
 
 scale-checkbox [part='label'] {

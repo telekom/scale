@@ -10,7 +10,7 @@
  */
 
 :host {
-  --background: var(--scl-color-black);
+  --background: var(--scl-color-grey-90);
   --color: var(--scl-color-white);
   --spacing-top: var(--scl-spacing-32);
   --spacing-bottom: var(--scl-spacing-24);
