@@ -12,7 +12,7 @@ describe('DatePicker', () => {
     await openButton.click();
 
     const previewHtml = await page.$('body');
-    await page.waitFor(3000);
+    await page.waitForTimeout(3000);
 
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });

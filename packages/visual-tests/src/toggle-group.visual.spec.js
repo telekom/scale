@@ -17,7 +17,7 @@ describe('ToggleGroup', () => {
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
 
-    await page.waitFor(500);
+    await page.waitForTimeout(500);
 
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });

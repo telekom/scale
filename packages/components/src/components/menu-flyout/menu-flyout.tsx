@@ -88,7 +88,10 @@ export class MenuFlyout {
 
   @Listen('keydown')
   handleKeydown(event: KeyboardEvent) {
-    if ('Tab' === event.key) {
+    if (
+      'Tab' === event.key &&
+      !this.hostElement.querySelector('app-navigation-user-menu')
+    ) {
       this.closeAll();
       return;
     }

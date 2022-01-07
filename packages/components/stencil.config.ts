@@ -83,4 +83,7 @@ export const config: Config = {
     },
     { type: 'dist-hydrate-script' },
   ],
+  extras: {
+    cloneNodeFix: true,
+  },
 };
