@@ -30,5 +30,23 @@ export default {
     flip: { type: Boolean },
     preventOverflow: { type: Boolean },
   },
+  methods: {
+    'scale-show'($event) {
+      action('scale-show');
+      this.$emit('scale-show', $event);
+    },
+    'scale-before-show'($event) {
+      action('scale-before-show');
+      this.$emit('scale-before-show', $event);
+    },
+    'scale-before-hide'($event) {
+      action('scale-before-hide');
+      this.$emit('scale-before-hide', $event);
+    },
+    'scale-hide'($event) {
+      action('scale-hide');
+      this.$emit('scale-hide', $event);
+    },
+  },
 };
 </script>
