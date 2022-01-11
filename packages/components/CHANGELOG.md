@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.41](https://github.com/telekom/scale/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2022-01-11)
+
+
+### Bug Fixes
+
+* **footer:** add flex value to main content ([#772](https://github.com/telekom/scale/issues/772)) ([7216fa8](https://github.com/telekom/scale/commit/7216fa84531dcaac6b375c1642be95847625a6d0))
+
+
+
+
+
 # [3.0.0-beta.40](https://github.com/telekom/scale/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2022-01-06)
 
 
