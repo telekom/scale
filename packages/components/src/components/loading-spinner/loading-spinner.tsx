@@ -51,9 +51,13 @@ export class LoadingSpinner {
           <div class="sr-only" aria-live="polite" id={`spinner-label-${i}`}>
             {this.text || 'Loading'}
           </div>
-          <div part="text" class="spinner__text" aria-hidden="true">
-            {this.text}
-          </div>
+          {this.text ? (
+            <div part="text" class="spinner__text" aria-hidden="true">
+              {this.text}
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </Host>
     );
