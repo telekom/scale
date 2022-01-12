@@ -40,7 +40,7 @@ export class Tooltip {
 
   @Element() host: HTMLElement;
   /** (optional) The content of the Tooltip supporting Text only */
-  @Prop() content = '';
+  @Prop() content?: string = '';
   /** (optional) Position of the Tooltip on the Object */
   @Prop() placement:
     | 'top'
@@ -56,9 +56,9 @@ export class Tooltip {
     | 'left-start'
     | 'left-end' = 'top';
   /** (optional) Disable Tooltip */
-  @Prop() disabled = false;
+  @Prop() disabled?:boolean = false;
   /** (optional) Distance of the Tooltip from the Target Object (related to the `placement`) */
-  @Prop() distance = 5;
+  @Prop() distance?:number = 5;
   /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
   /** (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either
