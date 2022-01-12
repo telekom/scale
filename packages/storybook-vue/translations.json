@@ -150,6 +150,11 @@
     "de": "Kontakt"
   },
   {
+    "elementSelector": "#legal",
+    "en": "Legal",
+    "de": "Legal"
+  },
+  {
     "elementSelector": "#contact-contributing-to-scale--page",
     "en": "Contributing to Scale",
     "de": "An Scale mitwirken"
@@ -158,5 +163,20 @@
     "elementSelector": "#contact-your-feedback--page",
     "en": "Your Feedback",
     "de": "Feedback"
+  },
+  {
+    "elementSelector": "#legal-terms-of-use--page",
+    "en": "Terms of Use",
+    "de": "Nutzungsbedingungen"
+  },
+  {
+    "elementSelector": "#legal-legal-notice--page",
+    "en": "Legal Notice",
+    "de": "Impressum"
+  },
+  {
+    "elementSelector": "#legal-privacy--page",
+    "en": "Privacy",
+    "de": "Datenschutz"
   }
 ]
