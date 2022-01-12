@@ -25,7 +25,7 @@ export class NotificationBadge {
   /** (optional) Maximal number of characters displayed in the badge */
   @Prop() maxCharacters?: number = 3;
   /** (optional) Setting/Slotcontent in which the badge is used */
-  @Prop() type: 'icon' | 'text' | 'nav-icon' = 'icon';
+  @Prop() type?: 'icon' | 'text' | 'nav-icon' = 'icon';
   /** (optional) Handle click on the badge and surroundet slot elements */
   @Prop() clickHandler: any;
 
