@@ -34,7 +34,7 @@ export class NavIcon {
   @Prop() refMobileMenuToggle?: any;
   @Prop() refMobileUserMenuToggle?: any;
   @Prop() refUserMenuToggle?: any;
-  @Prop() badge: boolean = false;
+  @Prop() badge?: boolean = false;
   @Prop() badgeLabel: number;
 
   componentWillRender() {
