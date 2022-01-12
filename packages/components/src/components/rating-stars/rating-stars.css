@@ -14,8 +14,8 @@
   --stars-hover-color: var(--scl-color-primary-hover);
   --stars-active-color: var(--scl-color-primary-active);
   --stars-inactive-color: transparent;
-  --stars-placeholder-color: var(--scl-color-black);
-  --stars-placeholder-revert-color: var(--scl-color-black);
+  --stars-placeholder-color: var(--scl-color-grey-90);
+  --stars-placeholder-revert-color: var(--scl-color-grey-90);
   --stars-disabled-color: var(--scl-color-grey-50);
   --stars-spacing: var(--scl-spacing-2);
   --stars-transition: color 0.1s;

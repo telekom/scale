@@ -9,7 +9,7 @@
   --width-large: 160px;
   --color-blue: var(--scl-color-blue-60);
   --color-white: var(--scl-color-white);
-  --color-black: var(--scl-color-black);
+  --color-black: var(--scl-color-grey-90);
   --color-primary: var(--scl-color-primary);
   --font-family: var(--scl-font-family-sans);
   --font-size: calc(var(--scl-font-size-20) * 3);
