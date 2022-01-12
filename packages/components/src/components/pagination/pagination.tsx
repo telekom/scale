@@ -65,13 +65,13 @@ export class Pagination {
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'large';
   /** (optional) translation to 'Go to first page'  */
-  @Prop() ariaLabelFirstPage = 'Go to first page';
+  @Prop() ariaLabelFirstPage?: string = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */
-  @Prop() ariaLabelNextPage = 'Go to next page';
+  @Prop() ariaLabelNextPage?: string = 'Go to next page';
   /** (optional) translation to 'Go to previous page'  */
-  @Prop() ariaLabelPreviousPage = 'Go to previous page';
+  @Prop() ariaLabelPreviousPage?: string = 'Go to previous page';
   /** (optional) translation to 'Go to last page'  */
-  @Prop() ariaLabelLastPage = 'Go to last page';
+  @Prop() ariaLabelLastPage?: string = 'Go to last page';
 
   /* 4. Events (alphabetical) */
   /** Event triggered every time the data is edited, changing original rows data */
