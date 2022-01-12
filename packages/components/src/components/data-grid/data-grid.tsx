@@ -100,7 +100,7 @@ export class DataGrid {
   /** (optional) Set to true to add selection column */
   @Prop() selectable?: boolean = false;
   /** Read-only selection array - populated with raw data from selected rows */
-  @Prop() selection: string[] = [];
+  @Prop() selection?: string[] = [];
   /** (optional) Shade every second row darker */
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
