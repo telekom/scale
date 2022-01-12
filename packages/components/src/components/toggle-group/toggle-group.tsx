@@ -55,7 +55,7 @@ export class ToggleGroup {
   /** (optional) If `true`, the group has a border */
   @Prop() hideBorder?: boolean = false;
   /** (optional) more than one button selected possible */
-  @Prop() singleSelect: boolean = false;
+  @Prop() singleSelect?: boolean = false;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
