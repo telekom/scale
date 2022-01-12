@@ -57,7 +57,7 @@ export class ToggleButton {
   /** (optional) set the border-radius left, right or both */
   @Prop() hideBorder: false;
   /** (optional) set the border-radius left, right or both */
-  @Prop() radius: 'left' | 'right' | 'both' | 'neither' | null = null;
+  @Prop() radius?: 'left' | 'right' | 'both' | 'neither' | null = null;
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
