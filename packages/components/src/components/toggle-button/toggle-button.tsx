@@ -71,7 +71,7 @@ export class ToggleButton {
   /** (optional) translation of 'deselected */
   @Prop() ariaLangDeselected? = 'deselected';
   /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaDescriptionTranslation = '$selected';
+  @Prop() ariaDescriptionTranslation?: string = '$selected';
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
