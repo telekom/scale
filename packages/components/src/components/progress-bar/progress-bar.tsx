@@ -25,7 +25,7 @@ export class ProgressBar {
   /** (optional) Progress bar busy switch */
   @Prop() busy?: boolean = false;
   /** (required) Progress bar percentage */
-  @Prop() percentage: number = 0;
+  @Prop() percentage?: number = 0;
   /** @deprecated - (optional) Progress bar customColor */
   @Prop() customColor?: string;
   /** (optional) Progress bar stroke width */
