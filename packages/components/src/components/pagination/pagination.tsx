@@ -61,7 +61,7 @@ export class Pagination {
   /** (optional) Injected styles */
   @Prop() styles?: string;
   /** @deprecated - size should replace small */
-  @Prop() small: boolean = false;
+  @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'large';
   /** (optional) translation to 'Go to first page'  */
