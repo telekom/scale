@@ -20,9 +20,9 @@ import classNames from 'classnames';
 export class Logo {
   @Element() hostElement: HTMLElement;
   /** (optional) Variant/color of the logo text and logo */
-  @Prop() variant: 'magenta' | 'white' = 'magenta';
+  @Prop() variant?: 'magenta' | 'white' = 'magenta';
   /** (optional) Set transparent background */
-  @Prop() transparent: boolean = false;
+  @Prop() transparent?: boolean = false;
   /** (optional) Language of the logo text/ claimOff showes just the T Logo */
   @Prop() language:
     | 'de'
@@ -37,9 +37,9 @@ export class Logo {
     | 'sk'
     | '' = 'en';
   /** (optional) The height in pixels */
-  @Prop() size: number = 36;
+  @Prop() size?: number = 36;
   /** (optional) Set a link */
-  @Prop() href: string = '';
+  @Prop() href?: string = '';
   /** (optional) Possibility for adding a onClick Event */
   @Prop() clickHandler: any;
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
