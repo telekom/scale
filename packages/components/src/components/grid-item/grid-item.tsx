@@ -10,88 +10,37 @@
  */
 
 import { Component, Prop, h, Host, Element } from '@stencil/core';
-import { columnSizes, Sizes } from './grid-item.interfaces';
+import { SizedProp } from '../grid/grid.interfaces';
+import { createSizedProp, createCssString } from '../grid/sizesTransformation';
 
 @Component({
   tag: 'scale-grid-item',
   shadow: false,
 })
-export class Col {
+export class GridItem {
   @Element() hostElement: HTMLElement;
 
-  /** (optional)  */
-  @Prop() sizes?: string;
+  /** (optional) Set size of column */
+  @Prop() size?: string;
 
-  @Prop() sm?: columnSizes;
+  /** (optional) Set starting column */
+  @Prop() offset?: string;
 
-  @Prop() md?: columnSizes;
-
-  @Prop() lg?: columnSizes;
-
-  @Prop() xl?: columnSizes;
-
-  @Prop() xxl?: columnSizes;
-
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
-
+  componentWillLoad() {
+    const sizedProps: SizedProp[] = [
+      createSizedProp('size', this.size),
+      createSizedProp('offset', this.offset),
+    ].filter((sizeProp) => sizeProp);
+    const cssStrings: string[] = sizedProps.map((sizedProp: SizedProp) =>
+      createCssString(sizedProp)
+    );
+    this.hostElement.setAttribute('style', cssStrings.join(''));
+  }
   render() {
-    const sizesProps = (this.sizes
-      ? this.sizes.split(',')
-      : [this.sm, this.md, this.lg, this.xl, this.xxl]) as Array<columnSizes>;
-
-    const sizes = propsToSizesArray(sizesProps);
-
-    if (!isSizesEmpty(sizes)) {
-      const filledArray = fillEmptySizes(sizes);
-      const sizesObj = transformSizesData(filledArray);
-      const stringSizesArray = Object.entries(sizesObj).map(
-        ([key, value]) => `--size-${key}:${value}`
-      );
-      this.hostElement.setAttribute('style', stringSizesArray.join(';'));
-    }
     return (
       <Host>
         <slot />
       </Host>
     );
   }
-}
-function transformSizesData(sizes: Array<Sizes>) {
-  return sizes.reduce(
-    (a, v) => ({
-      ...a,
-      ...{ [v.name]: v.size },
-    }),
-    {}
-  );
-}
-
-function fillEmptySizes(sizes: Array<Sizes>) {
-  const filledArray = [...sizes];
-  for (let i = 1; i < filledArray.length; i++) {
-    if (!filledArray[i].size) filledArray[i].size = filledArray[i - 1].size;
-  }
-  return filledArray;
-}
-
-function isSizesEmpty(sizes: Array<Sizes>) {
-  let isEmpty = true;
-  for (let size of sizes) {
-    if (size.size) {
-      isEmpty = false;
-      break;
-    }
-  }
-  return isEmpty;
-}
-
-function propsToSizesArray(sizes: Array<columnSizes>) {
-  return [
-    { name: 'sm', size: sizes[0] },
-    { name: 'md', size: sizes[1] },
-    { name: 'lg', size: sizes[2] },
-    { name: 'xl', size: sizes[3] },
-    { name: 'xxl', size: sizes[4] },
-  ] as Array<Sizes>;
 }
