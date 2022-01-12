@@ -106,6 +106,7 @@ Type: `Promise<void>`
 ### Used by
 
  - [scale-data-grid](../data-grid)
+ - [scale-notification](../notification)
  - [scale-notification-banner](../notification-banner)
  - [scale-notification-toast](../notification-toast)
 
@@ -113,6 +114,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   scale-data-grid --> scale-link
+  scale-notification --> scale-link
   scale-notification-banner --> scale-link
   scale-notification-toast --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
