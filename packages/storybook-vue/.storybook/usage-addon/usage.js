@@ -53,6 +53,8 @@ import notificationBanner_de from 'raw-loader!../../stories/3_components/notific
 import notificationBanner_en from 'raw-loader!../../stories/3_components/notification-banner/notification-banner.md';
 import notificationMessage_de from 'raw-loader!../../stories/3_components/notification-message/notification-message_de.md';
 import notificationMessage_en from 'raw-loader!../../stories/3_components/notification-message/notification-message.md';
+import notificationToast_de from 'raw-loader!../../stories/3_components/notification-toast/notification-toast_de.md';
+import notificationToast_en from 'raw-loader!../../stories/3_components/notification-toast/notification-toast.md';
 import pagination_en from 'raw-loader!../../stories/3_components/pagination/pagination.md';
 import pagination_de from 'raw-loader!../../stories/3_components/pagination/pagination_de.md';
 import progressBar_en from 'raw-loader!../../stories/3_components/progress-bar/progress-bar.md';
@@ -155,6 +157,8 @@ const Usage = (props) => {
     'notification-banner_de': notificationBanner_de,
     'notification-message_en': notificationMessage_en,
     'notification-message_de': notificationMessage_de,
+    'notification-toast_en': notificationToast_en,
+    'notification-toast_de': notificationToast_de,
     pagination_en,
     pagination_de,
     'progress-bar_en': progressBar_en,

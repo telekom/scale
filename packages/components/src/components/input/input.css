@@ -31,7 +31,7 @@
   font-family: inherit;
   font-size: var(--scl-font-size-16);
   border-radius: var(--scl-radius-8);
-  border: var(--scl-spacing-1) solid var(--scl-color-black);
+  border: var(--scl-spacing-1) solid var(--scl-color-grey-90);
 }
 .input .input__textarea {
   width: 100%;

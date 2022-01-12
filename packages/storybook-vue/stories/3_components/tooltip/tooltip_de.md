@@ -11,15 +11,15 @@ fokussierbar und enthalten keinen fokussierbaren Inhalt.
 
 ![Tooltip elements](assets/3_components/tooltip/tooltip-variants.png)
 
-### Verwende einen Tooltip, um
+### Verwende ein Tooltip, um
 
 - eine Funktion zu erklären (bspw. bei Icons ohne Label) oder um
 - ein Element oder einen Begriff zu definieren (bspw. das Label eines Buttons, ein Textlink oder ein Begriff im Fließtext).
 
-### Verwende Tooltips besser nicht, um
+### Verwende Tooltips besser nicht für
 
-- redundanten und offensichtlichen Informationen sowie
-- essenziellen Angaben (die Bedienung des User Interfaces muss auch ohne Tooltip funktionieren).
+- redundante und offensichtliche Informationen sowie
+- essenzielle Angaben (die Bedienung des User Interfaces muss auch ohne Tooltip funktionieren).
 
 Setze Tooltips grundsätzlich sehr restriktiv ein und versuche immer, dein Interface so selbsterklärend wie möglich zu gestalten.
 
