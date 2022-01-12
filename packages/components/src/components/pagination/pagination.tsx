@@ -63,7 +63,7 @@ export class Pagination {
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
+  @Prop() size?: 'small' | 'large' = 'large';
   /** (optional) translation to 'Go to first page'  */
   @Prop() ariaLabelFirstPage?: string = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */
