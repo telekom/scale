@@ -28,11 +28,11 @@ export class Accordion {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** If `true`, only one scale-collapsible within the accordion can be open at a time */
-  @Prop() dependent: boolean = false;
+  @Prop() dependent?: boolean = false;
   /** If `true`, scale-collapsibles within the accordion will all be open initially, unless this is dependant */
-  @Prop() expanded: boolean = false;
+  @Prop() expanded?: boolean = false;
   /** Heading level for scale-collapsible descendants */
-  @Prop() headingLevel: number | null = null;
+  @Prop() headingLevel?: number | null = null;
 
   /**
    * Handle `dependent`
