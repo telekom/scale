@@ -66,11 +66,11 @@ export class Tooltip {
    */
   @Prop() skidding = 0;
   /** (optional) Set custom trigger Event selection */
-  @Prop() trigger: string = 'hover focus';
+  @Prop() trigger?: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
-  @Prop() flip: boolean = true;
+  @Prop() flip?: boolean = true;
   /** (optional) Switching the preventOverflow option of the tooltip on and off */
-  @Prop() preventOverflow: boolean = false;
+  @Prop() preventOverflow?: boolean = false;
   @State() mouseOverTooltip: boolean = false;
 
   @Event({ eventName: 'scale-before-show' }) tooltipBeforeShow: EventEmitter;
