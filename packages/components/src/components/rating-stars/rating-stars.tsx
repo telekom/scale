@@ -44,7 +44,7 @@ export class RatingStars {
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
   /** @deprecated; size should be used instead of starSize */
-  @Prop() starSize: 'small' | 'large' = 'large';
+  @Prop() starSize?: 'small' | 'large' = 'large';
   /** size of the stars  */
   @Prop({ reflect: true, mutable: true }) size: 'small' | 'large' = 'large';
   /** @deprecated; The lower limit of the rating */
