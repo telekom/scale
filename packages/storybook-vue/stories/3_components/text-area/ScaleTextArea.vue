@@ -18,6 +18,7 @@
     :input-id="inputId"
     :transparent="transparent"
     :input-autofocus="inputAutofocus"
+    @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -28,7 +29,7 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
 export default {
   props: {
@@ -50,41 +51,49 @@ export default {
     inputId: { type: String },
     transparent: { type: Boolean },
     inputAutofocus: { type: Boolean },
-    styles: { type: String }
+    styles: { type: String },
   },
   methods: {
+    scaleInput($event) {
+      action('scaleInput');
+      this.$emit('scaleInput', $event);
+    },
+    'scale-input'($event) {
+      action('scale-input');
+      this.$emit('scale-input', $event);
+    },
     scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
+      action('scaleChange');
+      this.$emit('scaleChange', $event);
     },
     'scale-change'($event) {
-      action("scale-change");
-      this.$emit("scale-change", $event);
+      action('scale-change');
+      this.$emit('scale-change', $event);
     },
     scaleFocus($event) {
-      action("scaleFocus");
-      this.$emit("scaleFocus", $event);
+      action('scaleFocus');
+      this.$emit('scaleFocus', $event);
     },
     'scale-focus'($event) {
-      action("scale-focus");
-      this.$emit("scale-focus", $event);
+      action('scale-focus');
+      this.$emit('scale-focus', $event);
     },
     scaleBlur($event) {
-      action("scaleBlur");
-      this.$emit("scaleBlur", $event);
+      action('scaleBlur');
+      this.$emit('scaleBlur', $event);
     },
     'scale-blur'($event) {
-      action("scale-blur");
-      this.$emit("scale-blur", $event);
+      action('scale-blur');
+      this.$emit('scale-blur', $event);
     },
     scaleKeyDown($event) {
-      action("scaleKeyDown");
-      this.$emit("scaleKeyDown", $event);
+      action('scaleKeyDown');
+      this.$emit('scaleKeyDown', $event);
     },
     'scale-keydown'($event) {
-      action("scale-keydown");
-      this.$emit("scale-keydown", $event);
+      action('scale-keydown');
+      this.$emit('scale-keydown', $event);
     },
-  }
+  },
 };
 </script>
