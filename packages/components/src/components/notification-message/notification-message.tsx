@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  State,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -28,10 +36,12 @@ export class NotificationMessage {
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
 
-  hasSlotText: boolean;
+  @State() hasText: boolean = true;
 
-  componentDidLoad() {
-    this.hasSlotText = !!this.hostElement.querySelector("p[slot='text']");
+  componentWillLoad() {
+    if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
+      this.hasText = true;
+    }
   }
 
   componentDidRender() {
@@ -124,7 +134,7 @@ export class NotificationMessage {
                 />
               )}
             </div>
-            {this.hasSlotText && (
+            {this.hasText && (
               <div part="text" class="notification-message__text">
                 <slot name="text" />
               </div>
