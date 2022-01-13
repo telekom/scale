@@ -204,6 +204,10 @@
   border-radius: var(--radius-primary);
 }
 
+.toggle-button--all,
+.toggle-button--all:disabled {
+  border-radius: var(--radius-primary);
+}
 .toggle-button--neither,
 .toggle-button--neither:disabled {
   border-right: 0;
