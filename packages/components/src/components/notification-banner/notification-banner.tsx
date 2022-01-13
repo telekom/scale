@@ -9,15 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  h,
-  Host,
-  Prop,
-  Element,
-  Method,
-  State,
-} from '@stencil/core';
+import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -37,15 +29,15 @@ export class NotificationBanner {
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
 
-  @State() hasSlotText?: boolean;
-  @State() hasSlotLink?: boolean;
+  hasSlotText?: boolean;
+  hasSlotLink?: boolean;
 
   componentWillLoad() {
     this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
     this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
     this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
   }
