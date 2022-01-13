@@ -36,18 +36,20 @@ export class NotificationMessage {
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
 
-  @State() hasText: boolean = true;
+  @State() hasSlotText: boolean;
 
   componentWillLoad() {
-    if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
-      this.hasText = true;
-    }
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
   }
 
   componentDidRender() {
     if (this.autoHide === true) {
       setTimeout(this.close, this.autoHideDuration);
     }
+  }
+
+  componentWillUpdate() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
   }
 
   connectedCallback() {
@@ -134,7 +136,7 @@ export class NotificationMessage {
                 />
               )}
             </div>
-            {this.hasText && (
+            {this.hasSlotText && (
               <div part="text" class="notification-message__text">
                 <slot name="text" />
               </div>
