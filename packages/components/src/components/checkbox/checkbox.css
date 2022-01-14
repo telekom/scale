@@ -56,6 +56,8 @@ scale-checkbox {
 :host,
 scale-checkbox {
   display: flex;
+  width: fit-content;
+  padding: 0 2px 0 2px;
   flex-direction: column;
   color: var(--color-text);
 }
