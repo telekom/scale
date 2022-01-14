@@ -9,15 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  h,
-  Host,
-  Prop,
-  Element,
-  Method,
-  State,
-} from '@stencil/core';
+import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -37,16 +29,17 @@ export class NotificationBanner {
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
 
-  @State() hasText?: boolean;
-  @State() hasLink?: boolean;
+  hasSlotText?: boolean;
+  hasSlotLink?: boolean;
 
   componentWillLoad() {
-    if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
-      this.hasText = true;
-    }
-    if (this.hostElement.querySelectorAll('[slot=link]').length !== 0) {
-      this.hasLink = true;
-    }
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
+    this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
+  }
+
+  componentDidUpdate() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
+    this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
   }
 
   connectedCallback() {
@@ -133,17 +126,17 @@ export class NotificationBanner {
                   <scale-icon-action-circle-close accessibility-title="close" />
                 </button>
               )}
-              {this.hasText ? (
+              {this.hasSlotText && (
                 <div part="text" class="notification-banner__text">
                   <slot name="text" />
                 </div>
-              ) : null}
+              )}
 
-              {this.hasLink ? (
+              {this.hasSlotLink && (
                 <scale-link href={this.href} class="notification-banner__link">
                   <slot name="link" />
                 </scale-link>
-              ) : null}
+              )}
             </div>
           </div>
         </div>
@@ -166,8 +159,8 @@ export class NotificationBanner {
     return classNames(
       name,
       this.variant && `${prefix}variant-${this.variant}`,
-      this.hasText && `${prefix}has-text`,
-      !this.hasText && `${prefix}has-no-text`
+      this.hasSlotText && `${prefix}has-text`,
+      !this.hasSlotText && `${prefix}has-no-text`
     );
   }
 }
