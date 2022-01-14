@@ -9,15 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Component,
-  h,
-  Host,
-  Prop,
-  Element,
-  Method,
-  State,
-} from '@stencil/core';
+import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -39,17 +31,17 @@ export class Notification {
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
 
-  @State() hasText?: boolean;
-  @State() hasLink?: boolean;
+  hasSlotText: boolean;
+  hasSlotLink: boolean;
 
   componentWillLoad() {
-    console.log('yes');
-    if (this.hostElement.querySelectorAll('[slot=text]').length !== 0) {
-      this.hasText = true;
-    }
-    if (this.hostElement.querySelectorAll('[slot=link]').length !== 0) {
-      this.hasLink = true;
-    }
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
+    this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
+  }
+
+  componentDidUpdate() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
+    this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
   }
 
   connectedCallback() {
@@ -119,84 +111,58 @@ export class Notification {
 
     return (
       <Host>
-        {this.type === 'banner' || 'inline' ? (
+        <div
+          part={this.getBasePartMap()}
+          class={this.getCssClassMap()}
+          tabindex="0"
+        >
           <div
-            part={this.getBasePartMap()}
-            class={this.getCssClassMap()}
-            tabindex="0"
+            part="container"
+            class={`notification-${this.type.toString()}__container`}
           >
-            {this.type === 'banner' ? (
-              <div part="container" class="notification-banner__container">
-                {this.handleIcons()}
-                <div part="heading" class="notification-banner__heading">
-                  <slot></slot>
-                  {this.dismissible && (
-                    <button
-                      part="button-dismissable"
-                      class="notification-banner__button-close"
-                      onClick={() => this.close()}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          this.close();
-                        }
-                      }}
-                    >
-                      <scale-icon-action-circle-close accessibility-title="close" />
-                    </button>
-                  )}
-                  {this.hasText ? (
-                    <div part="text" class="notification-banner__text">
-                      <slot name="text" />
-                    </div>
-                  ) : null}
-
-                  {this.hasLink ? (
-                    <scale-link
-                      href={this.href}
-                      class="notification-banner__link"
-                    >
-                      <slot name="link" />
-                    </scale-link>
-                  ) : null}
+            {this.handleIcons()}
+            <div
+              part="heading"
+              class={`notification-${this.type.toString()}__heading`}
+            >
+              <slot></slot>
+              {this.dismissible && (
+                <button
+                  part="button-dismissable"
+                  class={`notification-${this.type.toString()}__button-close`}
+                  onClick={() => this.close()}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      this.close();
+                    }
+                  }}
+                >
+                  <scale-icon-action-circle-close accessibility-title="close" />
+                </button>
+              )}
+              {this.hasSlotText ? (
+                <div
+                  part="text"
+                  class={`notification-${this.type.toString()}__text`}
+                >
+                  <slot name="text" />
                 </div>
-              </div>
-            ) : (
-              <div part="container" class="notification-inline__container">
-                {this.handleIcons()}
-                <div part="heading" class="notification-inline__heading">
-                  <slot>&emsp;</slot>
+              ) : null}
 
-                  {this.dismissible && (
-                    <scale-icon-action-circle-close
-                      tabindex="0"
-                      class="notification-inline__icon-close"
-                      onClick={() => {
-                        this.close();
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          this.close();
-                        }
-                      }}
-                      accessibility-title="close"
-                    />
-                  )}
-                </div>
-                {this.hasText && (
-                  <div part="text" class="notification-inline__text">
-                    <slot name="text" />
-                  </div>
-                )}
-              </div>
-            )}
+              {this.hasSlotLink && this.type === 'banner' && (
+                <scale-link
+                  href={this.href}
+                  class={`notification-${this.type.toString()}__link`}
+                >
+                  <slot name="link" />
+                </scale-link>
+              )}
+            </div>
           </div>
-        ) : (
-          'hello'
-        )}
+        </div>
       </Host>
     );
   }
-
   getBasePartMap() {
     return this.getCssOrBasePartMap('basePart');
   }
@@ -212,8 +178,8 @@ export class Notification {
     return classNames(
       name,
       this.variant && `${prefix}variant-${this.variant}`,
-      this.hasText && `${prefix}has-text`,
-      !this.hasText && `${prefix}has-no-text`
+      this.hasSlotText && `${prefix}has-text`,
+      !this.hasSlotText && `${prefix}has-no-text`
     );
   }
 }
