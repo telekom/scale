@@ -30,14 +30,18 @@ export class NotificationMessage {
 
   hasSlotText: boolean;
 
-  componentDidLoad() {
-    this.hasSlotText = !!this.hostElement.querySelector("p[slot='text']");
+  componentWillLoad() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
   }
 
   componentDidRender() {
     if (this.autoHide === true) {
       setTimeout(this.close, this.autoHideDuration);
     }
+  }
+
+  componentDidUpdate() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
   }
 
   connectedCallback() {
