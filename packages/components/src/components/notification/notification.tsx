@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  State,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -22,21 +30,49 @@ export class Notification {
   @Element() hostElement: HTMLElement;
 
   @Prop() type?: 'inline' | 'toast' | 'banner' = 'inline';
-
   @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
     'informational';
+  /** (optional) Animated toast */
+  @Prop() animated?: boolean = true;
+  @Prop() alignment?:
+    | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left' = 'top-right';
+  /** (optional) Toast position at the top */
+  @Prop() positionVertical?: number = 12;
+  /** (optional) Toast position right */
+  @Prop() positionHorizontal?: number = 12;
+  /** (optional) Toast fade duration */
+  @Prop() fadeDuration?: number = 500;
+  /** (optional) Injected CSS styles */
+  @Prop({ reflect: true }) styles?: string;
+  /** (do not use) it is a helper prop for storybook */
+  @Prop() story?: boolean;
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
 
+  /** (optional) Toast state height with offset */
+  @State() toastHeightWithOffset: number = 0;
+
   hasSlotText: boolean;
   hasSlotLink: boolean;
+
+  hideToast: boolean = false;
+  alignmentVertical: string;
+  alignmentHorizontal: string;
 
   componentWillLoad() {
     this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
     this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
+
+    /* toast */
+    const alignmentParts = this.alignment.split('-');
+    this.alignmentVertical = alignmentParts[0];
+    this.alignmentHorizontal = alignmentParts[1];
   }
 
   componentDidUpdate() {
@@ -54,11 +90,14 @@ export class Notification {
   @Method()
   async open() {
     this.opened = true;
+    if (this.type === 'toast') {
+      this.hideToast = false;
+    }
   }
 
-  getIconClass(variant: string) {
-    const className = `notification-${this.type.toString()}__icon-${variant}`;
-    console.log(className);
+  getIconClass() {
+    //.notification-banner__icon-success
+    const className = `notification-${this.type.toString()}__icon`;
     return className;
   }
 
@@ -68,31 +107,33 @@ export class Notification {
         case 'success':
           return (
             <scale-icon-alert-success
-              class={this.getIconClass('success')}
-              color="#187431"
+              class={this.getIconClass()}
               accessibility-title="success"
+              selected={this.type == 'toast'}
             />
           );
         case 'informational':
           return (
             <scale-icon-alert-information
-              class={this.getIconClass('information')}
-              accessibility-title="information"
+              class={this.getIconClass()}
+              accessibility-title="informational"
+              selected={this.type == 'toast'}
             />
           );
         case 'error':
           return (
             <scale-icon-alert-error
-              class={this.getIconClass('error')}
+              class={this.getIconClass()}
               accessibility-title="error"
+              selected={this.type == 'toast'}
             />
           );
         case 'warning':
           return (
             <scale-icon-alert-error
-              class={this.getIconClass('information')}
-              color="#AE461C"
+              class={this.getIconClass()}
               accessibility-title="information"
+              selected={this.type == 'toast'}
             />
           );
       }
@@ -102,6 +143,12 @@ export class Notification {
 
   close = () => {
     this.opened = false;
+    if (this.type === 'toast') {
+      this.hideToast = true;
+      setTimeout(() => {
+        this.opened = false;
+      }, this.fadeDuration);
+    }
   };
 
   render() {
@@ -109,7 +156,17 @@ export class Notification {
       return null;
     }
 
-    return (
+    if (this.type == 'toast') {
+      console.log('Häää' + this.type);
+    }
+    if (this.type == 'banner') {
+      console.log('Häää' + this.type);
+    }
+    if (this.type == 'inline') {
+      console.log('Häää' + this.type);
+    }
+
+    return this.type == 'banner' || this.type == 'inline' ? (
       <Host>
         <div
           part={this.getBasePartMap()}
@@ -161,8 +218,103 @@ export class Notification {
           </div>
         </div>
       </Host>
+    ) : (
+      <Host>
+        {this.styles && <style>{this.styles}</style>}
+        <style>{this.transitions(this.toastHeightWithOffset)}</style>
+        <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
+        <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
+          <div class="notification-toast__icon-container">
+            {this.handleIcons()}
+          </div>
+          <div class="notification-toast__text-container">
+            <slot name="header" />
+            <slot name="body" />
+            <scale-link>
+              <slot name="link" />
+            </scale-link>
+          </div>
+
+          <scale-icon-action-circle-close
+            tabindex="0"
+            class="notification-message__icon-close"
+            size={20}
+            onClick={() => {
+              this.close();
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                this.close();
+              }
+            }}
+            accessibility-title="close"
+          />
+        </div>
+      </Host>
     );
   }
+
+  transitions = (offset) => `
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      ${this.alignmentVertical}: -${offset}px;
+    }
+    to {
+      opacity: 1;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
+    }
+    to {
+      opacity: 0;
+      ${this.alignmentVertical}: -${offset}px;
+    }
+  }
+`;
+
+  animationStyle = (offset) => {
+    if (this.animated) {
+      return `
+    .notification-toast--show {
+      ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+      animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+      animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
+      ${this.alignmentVertical}: -${offset}px;
+      opacity: 0;
+    }
+  `;
+    }
+    return `
+.notification-toast--show {
+  ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+  ${this.alignmentVertical}: ${this.positionVertical}px;
+  opacity: 1;
+},
+.notification-toast--show {
+  ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+  ${this.alignmentVertical}: -${offset}px;
+  opacity: 0;
+}
+`;
+  };
+
+  getToastHeightWithOffset() {
+    const toastHeight = this.hostElement.shadowRoot.querySelector('.toast')
+      .scrollHeight;
+    this.toastHeightWithOffset = toastHeight + this.positionVertical;
+  }
+
   getBasePartMap() {
     return this.getCssOrBasePartMap('basePart');
   }
@@ -179,7 +331,14 @@ export class Notification {
       name,
       this.variant && `${prefix}variant-${this.variant}`,
       this.hasSlotText && `${prefix}has-text`,
-      !this.hasSlotText && `${prefix}has-no-text`
+      !this.hasSlotText && `${prefix}has-no-text`,
+      this.hasSlotLink && `${prefix}has-link`,
+      !this.hasSlotLink && `${prefix}has-no-link`,
+      this.variant && `${prefix}variant-${this.variant}`,
+      !!this.opened && `${prefix}opened`,
+      !!!this.hideToast && `${prefix}show`,
+      !!this.hideToast && `${prefix}hide`,
+      this.story && `${prefix}story`
     );
   }
 }
