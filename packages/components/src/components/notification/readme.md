@@ -17,8 +17,8 @@
 | `opened`             | `opened`              |                                                | `boolean`                                                      | `undefined`       |
 | `positionHorizontal` | `position-horizontal` | (optional) Toast position right                | `number`                                                       | `12`              |
 | `positionVertical`   | `position-vertical`   | (optional) Toast position at the top           | `number`                                                       | `12`              |
-| `story`              | `story`               | (do not use) it is a helper prop for storybook | `boolean`                                                      | `undefined`       |
 | `styles`             | `styles`              | (optional) Injected CSS styles                 | `string`                                                       | `undefined`       |
+| `toastStory`         | `toast-story`         | (do not use) it is a helper prop for storybook | `boolean`                                                      | `undefined`       |
 | `type`               | `type`                |                                                | `"banner" \| "inline" \| "toast"`                              | `'inline'`        |
 | `variant`            | `variant`             |                                                | `"error" \| "informational" \| "success" \| "warning"`         | `'informational'` |
 

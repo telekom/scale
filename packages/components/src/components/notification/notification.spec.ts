@@ -1,0 +1,196 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+import { newSpecPage } from '@stencil/core/testing';
+// import { remove } from 'lodash';
+import { Notification } from './notification';
+
+describe('Notification', () => {
+  let element;
+
+  beforeEach(async () => {
+    element = new Notification();
+  });
+
+  it('should match snapshot', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="inline"></scale-notification>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should match snapshot', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="banner"></scale-notification>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should match snapshot', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="toast"></scale-notification>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should handle css classes', () => {
+    element.variant = 'warning';
+    expect(element.getCssClassMap()).toContain('variant-warning');
+  });
+
+  it('should test the close() function ', () => {
+    expect(element.opened).toBe(undefined);
+    element.close();
+    expect(element.opened).toBe(false);
+  });
+});
+
+describe('Notification Inline', () => {
+  let element;
+
+  beforeEach(async () => {
+    element = new Notification();
+  });
+
+  it('should match snapshot', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="inline"></scale-notification>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it('handle variant prop', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="inline"></scale-notification>`,
+    });
+    page.root.variant = 'error';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'warning';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'informational';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'success';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should emit onClick and set opened to false', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="inline" dismissible="true"></scale-notification>`,
+    });
+    const closeButton = page.root.shadowRoot.querySelector(
+      '.notification-inline__button-close'
+    );
+    await page.waitForChanges();
+    closeButton.dispatchEvent(new Event('click'));
+    await page.waitForChanges();
+    expect(page.rootInstance.opened).toBe(false);
+  });
+});
+
+describe('Notification Toast', () => {
+  let element;
+
+  beforeEach(async () => {
+    element = new Notification();
+  });
+
+  it('should match snapshot', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="toast"></scale-notification>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it('handle variant prop', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="toast"></scale-notification>`,
+    });
+    page.root.variant = 'error';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'warning';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'informational';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'success';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should emit onClick and set opened to false', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="toast" dismissible="true"></scale-notification>`,
+    });
+    const closeButton = page.root.shadowRoot.querySelector(
+      '.notification-toast__button-close'
+    );
+    await page.waitForChanges();
+    closeButton.dispatchEvent(new Event('click'));
+    await page.waitForChanges();
+    expect(page.rootInstance.opened).toBe(false);
+  });
+});
+
+describe('Notification Banner', () => {
+  let element;
+
+  beforeEach(async () => {
+    element = new Notification();
+  });
+
+  it('should match snapshot', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="banner"></scale-notification>`,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it('handle variant prop', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="banner"></scale-notification>`,
+    });
+    page.root.variant = 'error';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'warning';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'informational';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+    page.root.variant = 'success';
+    await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
+  });
+  it('should emit onClick and set opened to false', async () => {
+    const page = await newSpecPage({
+      components: [Notification],
+      html: `<scale-notification opened="true" type="banner" dismissible="true"></scale-notification>`,
+    });
+    const closeButton = page.root.shadowRoot.querySelector(
+      '.notification-banner__button-close'
+    );
+    await page.waitForChanges();
+    closeButton.dispatchEvent(new Event('click'));
+    await page.waitForChanges();
+    expect(page.rootInstance.opened).toBe(false);
+  });
+});
