@@ -1,0 +1,511 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notification Banner handle variant prop 1`] = `
+<scale-notification opened="" type="banner">
+  <mock:shadow-root>
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--opened notification-banner--show notification-banner--variant-error" part="notification-banner variant-error has-no-text has-no-link variant-error opened show" tabindex="0">
+      <div class="notification-banner__container" part="container">
+        <scale-icon-alert-error accessibility-title="error" class="notification-banner__icon"></scale-icon-alert-error>
+        <div class="notification-banner__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Banner handle variant prop 2`] = `
+<scale-notification opened="" type="banner">
+  <mock:shadow-root>
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--opened notification-banner--show notification-banner--variant-warning" part="notification-banner variant-warning has-no-text has-no-link variant-warning opened show" tabindex="0">
+      <div class="notification-banner__container" part="container">
+        <scale-icon-alert-error accessibility-title="information" class="notification-banner__icon"></scale-icon-alert-error>
+        <div class="notification-banner__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Banner handle variant prop 3`] = `
+<scale-notification opened="" type="banner">
+  <mock:shadow-root>
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--opened notification-banner--show notification-banner--variant-informational" part="notification-banner variant-informational has-no-text has-no-link variant-informational opened show" tabindex="0">
+      <div class="notification-banner__container" part="container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-banner__icon"></scale-icon-alert-information>
+        <div class="notification-banner__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Banner handle variant prop 4`] = `
+<scale-notification opened="" type="banner">
+  <mock:shadow-root>
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--opened notification-banner--show notification-banner--variant-success" part="notification-banner variant-success has-no-text has-no-link variant-success opened show" tabindex="0">
+      <div class="notification-banner__container" part="container">
+        <scale-icon-alert-success accessibility-title="success" class="notification-banner__icon"></scale-icon-alert-success>
+        <div class="notification-banner__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Banner should match snapshot 1`] = `
+<scale-notification opened="" type="banner">
+  <mock:shadow-root>
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--opened notification-banner--show notification-banner--variant-informational" part="notification-banner variant-informational has-no-text has-no-link variant-informational opened show" tabindex="0">
+      <div class="notification-banner__container" part="container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-banner__icon"></scale-icon-alert-information>
+        <div class="notification-banner__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Inline handle variant prop 1`] = `
+<scale-notification opened="" type="inline">
+  <mock:shadow-root>
+    <div class="notification-inline notification-inline--has-no-link notification-inline--has-no-text notification-inline--opened notification-inline--show notification-inline--variant-error" part="notification-inline variant-error has-no-text has-no-link variant-error opened show" tabindex="0">
+      <div class="notification-inline__container" part="container">
+        <scale-icon-alert-error accessibility-title="error" class="notification-inline__icon"></scale-icon-alert-error>
+        <div class="notification-inline__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Inline handle variant prop 2`] = `
+<scale-notification opened="" type="inline">
+  <mock:shadow-root>
+    <div class="notification-inline notification-inline--has-no-link notification-inline--has-no-text notification-inline--opened notification-inline--show notification-inline--variant-warning" part="notification-inline variant-warning has-no-text has-no-link variant-warning opened show" tabindex="0">
+      <div class="notification-inline__container" part="container">
+        <scale-icon-alert-error accessibility-title="information" class="notification-inline__icon"></scale-icon-alert-error>
+        <div class="notification-inline__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Inline handle variant prop 3`] = `
+<scale-notification opened="" type="inline">
+  <mock:shadow-root>
+    <div class="notification-inline notification-inline--has-no-link notification-inline--has-no-text notification-inline--opened notification-inline--show notification-inline--variant-informational" part="notification-inline variant-informational has-no-text has-no-link variant-informational opened show" tabindex="0">
+      <div class="notification-inline__container" part="container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-inline__icon"></scale-icon-alert-information>
+        <div class="notification-inline__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Inline handle variant prop 4`] = `
+<scale-notification opened="" type="inline">
+  <mock:shadow-root>
+    <div class="notification-inline notification-inline--has-no-link notification-inline--has-no-text notification-inline--opened notification-inline--show notification-inline--variant-success" part="notification-inline variant-success has-no-text has-no-link variant-success opened show" tabindex="0">
+      <div class="notification-inline__container" part="container">
+        <scale-icon-alert-success accessibility-title="success" class="notification-inline__icon"></scale-icon-alert-success>
+        <div class="notification-inline__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Inline should match snapshot 1`] = `
+<scale-notification opened="" type="inline">
+  <mock:shadow-root>
+    <div class="notification-inline notification-inline--has-no-link notification-inline--has-no-text notification-inline--opened notification-inline--show notification-inline--variant-informational" part="notification-inline variant-informational has-no-text has-no-link variant-informational opened show" tabindex="0">
+      <div class="notification-inline__container" part="container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-inline__icon"></scale-icon-alert-information>
+        <div class="notification-inline__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Toast handle variant prop 1`] = `
+<scale-notification opened="" type="toast">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+    from {
+      opacity: 0;
+      top: -0px;
+    }
+    to {
+      opacity: 1;
+      top: 12px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      top: 12px;
+    }
+    to {
+      opacity: 0;
+      top: -0px;
+    }
+  }
+    </style>
+    <style>
+      .notification-toast--show {
+      right: 12px;
+      animation: fadeIn 0.5s ease-in-out;
+      top: 12px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: 12px;
+      animation: fadeOut 0.5s ease-in-out;
+      top: -0px;
+      opacity: 0;
+    }
+    </style>
+    <div class="notification-toast notification-toast--has-no-link notification-toast--has-no-text notification-toast--opened notification-toast--show notification-toast--variant-error" part="notification-toast variant-error has-no-text has-no-link variant-error opened show">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-error accessibility-title="error" class="notification-toast__icon" selected=""></scale-icon-alert-error>
+      </div>
+      <div class="notification-toast__text-container">
+        <div class="notification-toast__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+      <scale-icon-action-circle-close accessibility-title="close" class="notification-toast__button-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Toast handle variant prop 2`] = `
+<scale-notification opened="" type="toast">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+    from {
+      opacity: 0;
+      top: -0px;
+    }
+    to {
+      opacity: 1;
+      top: 12px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      top: 12px;
+    }
+    to {
+      opacity: 0;
+      top: -0px;
+    }
+  }
+    </style>
+    <style>
+      .notification-toast--show {
+      right: 12px;
+      animation: fadeIn 0.5s ease-in-out;
+      top: 12px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: 12px;
+      animation: fadeOut 0.5s ease-in-out;
+      top: -0px;
+      opacity: 0;
+    }
+    </style>
+    <div class="notification-toast notification-toast--has-no-link notification-toast--has-no-text notification-toast--opened notification-toast--show notification-toast--variant-warning" part="notification-toast variant-warning has-no-text has-no-link variant-warning opened show">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-error accessibility-title="information" class="notification-toast__icon" selected=""></scale-icon-alert-error>
+      </div>
+      <div class="notification-toast__text-container">
+        <div class="notification-toast__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+      <scale-icon-action-circle-close accessibility-title="close" class="notification-toast__button-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Toast handle variant prop 3`] = `
+<scale-notification opened="" type="toast">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+    from {
+      opacity: 0;
+      top: -0px;
+    }
+    to {
+      opacity: 1;
+      top: 12px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      top: 12px;
+    }
+    to {
+      opacity: 0;
+      top: -0px;
+    }
+  }
+    </style>
+    <style>
+      .notification-toast--show {
+      right: 12px;
+      animation: fadeIn 0.5s ease-in-out;
+      top: 12px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: 12px;
+      animation: fadeOut 0.5s ease-in-out;
+      top: -0px;
+      opacity: 0;
+    }
+    </style>
+    <div class="notification-toast notification-toast--has-no-link notification-toast--has-no-text notification-toast--opened notification-toast--show notification-toast--variant-informational" part="notification-toast variant-informational has-no-text has-no-link variant-informational opened show">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-toast__icon" selected=""></scale-icon-alert-information>
+      </div>
+      <div class="notification-toast__text-container">
+        <div class="notification-toast__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+      <scale-icon-action-circle-close accessibility-title="close" class="notification-toast__button-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Toast handle variant prop 4`] = `
+<scale-notification opened="" type="toast">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+    from {
+      opacity: 0;
+      top: -0px;
+    }
+    to {
+      opacity: 1;
+      top: 12px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      top: 12px;
+    }
+    to {
+      opacity: 0;
+      top: -0px;
+    }
+  }
+    </style>
+    <style>
+      .notification-toast--show {
+      right: 12px;
+      animation: fadeIn 0.5s ease-in-out;
+      top: 12px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: 12px;
+      animation: fadeOut 0.5s ease-in-out;
+      top: -0px;
+      opacity: 0;
+    }
+    </style>
+    <div class="notification-toast notification-toast--has-no-link notification-toast--has-no-text notification-toast--opened notification-toast--show notification-toast--variant-success" part="notification-toast variant-success has-no-text has-no-link variant-success opened show">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-success accessibility-title="success" class="notification-toast__icon" selected=""></scale-icon-alert-success>
+      </div>
+      <div class="notification-toast__text-container">
+        <div class="notification-toast__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+      <scale-icon-action-circle-close accessibility-title="close" class="notification-toast__button-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification Toast should match snapshot 1`] = `
+<scale-notification opened="" type="toast">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+    from {
+      opacity: 0;
+      top: -0px;
+    }
+    to {
+      opacity: 1;
+      top: 12px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      top: 12px;
+    }
+    to {
+      opacity: 0;
+      top: -0px;
+    }
+  }
+    </style>
+    <style>
+      .notification-toast--show {
+      right: 12px;
+      animation: fadeIn 0.5s ease-in-out;
+      top: 12px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: 12px;
+      animation: fadeOut 0.5s ease-in-out;
+      top: -0px;
+      opacity: 0;
+    }
+    </style>
+    <div class="notification-toast notification-toast--has-no-link notification-toast--has-no-text notification-toast--opened notification-toast--show notification-toast--variant-informational" part="notification-toast variant-informational has-no-text has-no-link variant-informational opened show">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-toast__icon" selected=""></scale-icon-alert-information>
+      </div>
+      <div class="notification-toast__text-container">
+        <div class="notification-toast__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+      <scale-icon-action-circle-close accessibility-title="close" class="notification-toast__button-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification should match snapshot 1`] = `
+<scale-notification opened="" type="inline">
+  <mock:shadow-root>
+    <div class="notification-inline notification-inline--has-no-link notification-inline--has-no-text notification-inline--opened notification-inline--show notification-inline--variant-informational" part="notification-inline variant-informational has-no-text has-no-link variant-informational opened show" tabindex="0">
+      <div class="notification-inline__container" part="container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-inline__icon"></scale-icon-alert-information>
+        <div class="notification-inline__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification should match snapshot 2`] = `
+<scale-notification opened="" type="banner">
+  <mock:shadow-root>
+    <div class="notification-banner notification-banner--has-no-link notification-banner--has-no-text notification-banner--opened notification-banner--show notification-banner--variant-informational" part="notification-banner variant-informational has-no-text has-no-link variant-informational opened show" tabindex="0">
+      <div class="notification-banner__container" part="container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-banner__icon"></scale-icon-alert-information>
+        <div class="notification-banner__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
+
+exports[`Notification should match snapshot 3`] = `
+<scale-notification opened="" type="toast">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+    from {
+      opacity: 0;
+      top: -0px;
+    }
+    to {
+      opacity: 1;
+      top: 12px;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      top: 12px;
+    }
+    to {
+      opacity: 0;
+      top: -0px;
+    }
+  }
+    </style>
+    <style>
+      .notification-toast--show {
+      right: 12px;
+      animation: fadeIn 0.5s ease-in-out;
+      top: 12px;
+      opacity: 1;
+    },
+    .notification-toast--show {
+      right: 12px;
+      animation: fadeOut 0.5s ease-in-out;
+      top: -0px;
+      opacity: 0;
+    }
+    </style>
+    <div class="notification-toast notification-toast--has-no-link notification-toast--has-no-text notification-toast--opened notification-toast--show notification-toast--variant-informational" part="notification-toast variant-informational has-no-text has-no-link variant-informational opened show">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-information accessibility-title="informational" class="notification-toast__icon" selected=""></scale-icon-alert-information>
+      </div>
+      <div class="notification-toast__text-container">
+        <div class="notification-toast__heading" part="heading">
+          <slot></slot>
+        </div>
+      </div>
+      <scale-icon-action-circle-close accessibility-title="close" class="notification-toast__button-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+    </div>
+  </mock:shadow-root>
+</scale-notification>
+`;
