@@ -720,6 +720,20 @@ export class DataGrid {
     this.elTableHead.style.transform = `translateY(${scrollY}px)`;
   }
 
+  handleMenuListClick = (event) => {
+    const menuItems = ['sortBy', 'toggleVisibility'];
+    const currentMenuItemsIndex = menuItems.indexOf(event.target.id);
+    if (currentMenuItemsIndex > -1) {
+      // check if there is already opened flyout menu list with different id, if opened, close it
+      const inactiveMenuItem = this.hostElement.shadowRoot.querySelector(
+        `#${menuItems[1 - currentMenuItemsIndex]}List`
+      ) as HTMLUListElement;
+      if (inactiveMenuItem) {
+        inactiveMenuItem.setAttribute('opened', 'false');
+      }
+    }
+  };
+
   renderSettingsMenu() {
     return (
       <scale-menu-flyout class={`${name}__settings-menu`}>
@@ -733,10 +747,13 @@ export class DataGrid {
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
-            <scale-menu-flyout-item>
+            <scale-menu-flyout-item
+              id="sortBy"
+              onClick={this.handleMenuListClick}
+            >
               <scale-icon-action-sort slot="prefix"></scale-icon-action-sort>
               Sort By
-              <scale-menu-flyout-list slot="sublist">
+              <scale-menu-flyout-list slot="sublist" id="sortByList">
                 {this.fields.map(
                   (
                     { label, type, sortable, sortDirection = 'none' },
@@ -782,10 +799,17 @@ export class DataGrid {
               </scale-menu-flyout-list>
             </scale-menu-flyout-item>
           )}
-          <scale-menu-flyout-item>
+          <scale-menu-flyout-item
+            id="toggleVisibility"
+            onClick={this.handleMenuListClick}
+          >
             <scale-icon-action-hide-password slot="prefix"></scale-icon-action-hide-password>
             Toggle Visibility
-            <scale-menu-flyout-list slot="sublist" close-on-select="false">
+            <scale-menu-flyout-list
+              slot="sublist"
+              close-on-select="false"
+              id="toggleVisibilityList"
+            >
               {this.fields.map(
                 (
                   {
