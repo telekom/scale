@@ -47,14 +47,15 @@ export class Notification {
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
   @Prop({ reflect: true }) styles?: string;
-  /** (do not use) it is a helper prop for storybook */
-  @Prop() story?: boolean;
+
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
 
+  /** (do not use) it is a helper prop for storybook */
+  @Prop() toastStory?: boolean;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
 
@@ -156,16 +157,6 @@ export class Notification {
       return null;
     }
 
-    if (this.type == 'toast') {
-      console.log('Häää' + this.type);
-    }
-    if (this.type == 'banner') {
-      console.log('Häää' + this.type);
-    }
-    if (this.type == 'inline') {
-      console.log('Häää' + this.type);
-    }
-
     return this.type == 'banner' || this.type == 'inline' ? (
       <Host>
         <div
@@ -197,14 +188,14 @@ export class Notification {
                   <scale-icon-action-circle-close accessibility-title="close" />
                 </button>
               )}
-              {this.hasSlotText ? (
+              {this.hasSlotText && (
                 <div
                   part="text"
                   class={`notification-${this.type.toString()}__text`}
                 >
                   <slot name="text" />
                 </div>
-              ) : null}
+              )}
 
               {this.hasSlotLink && this.type === 'banner' && (
                 <scale-link
@@ -228,16 +219,34 @@ export class Notification {
             {this.handleIcons()}
           </div>
           <div class="notification-toast__text-container">
-            <slot name="header" />
-            <slot name="body" />
-            <scale-link>
-              <slot name="link" />
-            </scale-link>
+            <div
+              part="heading"
+              class={`notification-${this.type.toString()}__heading`}
+            >
+              <slot></slot>
+            </div>
+            {this.hasSlotText && (
+              <div
+                part="text"
+                class={`notification-${this.type.toString()}__text`}
+              >
+                <slot name="text" />
+              </div>
+            )}
+            {this.hasSlotLink && (
+              <scale-link
+                href={this.href}
+                part="text"
+                class={`notification-${this.type.toString()}__link`}
+              >
+                <slot name="link" />
+              </scale-link>
+            )}
           </div>
 
           <scale-icon-action-circle-close
             tabindex="0"
-            class="notification-message__icon-close"
+            class="notification-toast__button-close"
             size={20}
             onClick={() => {
               this.close();
@@ -338,7 +347,7 @@ export class Notification {
       !!this.opened && `${prefix}opened`,
       !!!this.hideToast && `${prefix}show`,
       !!this.hideToast && `${prefix}hide`,
-      this.story && `${prefix}story`
+      this.toastStory && `${prefix}story`
     );
   }
 }

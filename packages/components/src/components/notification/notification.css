@@ -123,39 +123,28 @@ notification banner
   color: var(--scl-color-primary-hover);
 }
 
-.notification-banner--variant-success .notification-banner__icon {
+.notification-banner__icon {
   position: absolute;
-  top: 12.5px;
+  top: 12px;
   left: 17px;
   height: 20px;
   width: 20px;
+}
+
+.notification-banner--variant-success .notification-banner__icon {
+  top: 12.5px;
   color: #187431;
 }
 
 .notification-banner--variant-error .notification-banner__icon {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
   color: var(--scl-color-background-error);
 }
 
 .notification-banner--variant-warning .notification-banner__icon {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
   color: #ae461c;
 }
 
 .notification-banner--variant-informational .notification-banner__icon {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
   color: var(--scl-color-text-info);
 }
 
@@ -235,30 +224,24 @@ notification inline
   color: var(--scl-color-primary-hover);
 }
 
-.notification-inline--variant-success .notification-inline__icon {
+.notification-inline__icon {
   position: absolute;
-  top: 12.5px;
+  top: 12px;
   left: 17px;
   height: 20px;
   width: 20px;
+}
+
+.notification-inline--variant-success .notification-inline__icon {
+  top: 12.5px;
   color: #187431;
 }
 
 .notification-inline--variant-error .notification-inline__icon {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
   color: var(--scl-color-background-error);
 }
 
 .notification-inline--variant-warning .notification-inline__icon {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
   color: #ae461c;
 }
 
@@ -365,17 +348,17 @@ notification toast
   text part
 */
 
-.notification-toast ::slotted([slot='header']) {
+.notification-toast .notification-toast__heading ::slotted(*) {
   margin: 0;
   padding: 3px 0 0 10px;
   font-weight: bold;
   font-size: 16px;
 }
-.notification-toast ::slotted([slot='body']) {
+.notification-toast .notification-toast__text ::slotted(*) {
   padding: 3px 0 0 10px;
   margin: 0;
 }
-.notification-toast ::slotted([slot='link']) {
+.notification-toast .notification-toast__link ::slotted(*) {
   padding: 10px 0 15px 10px;
   margin: 0;
 }
@@ -393,7 +376,7 @@ notification toast
   close icon part
 */
 
-.notification-toast .notification-message__icon-close {
+.notification-toast .notification-toast__button-close {
   cursor: pointer;
   position: absolute;
   top: 14px;
