@@ -105,7 +105,7 @@ export class DataGrid {
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
   @Prop() styles: any;
-  /** (optional) Set to falseto hide table, used for nested tables to re-render upon toggle */
+  /** (optional) Set to false to hide table, used for nested tables to re-render upon toggle */
   @Prop() visible?: boolean = true;
 
   /* 4. Events (alphabetical) */
