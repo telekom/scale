@@ -1,0 +1,257 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+ scale-text-field-v2 {
+  --transition: all var(--scl-motion-duration-fast)
+    var(--scl-motion-easing-standard);
+  --radius: var(--scl-radius-8);
+  --border: var(--scl-spacing-1) solid var(--scl-color-text-standard);
+  --border-error: var(--scl-spacing-2) solid var(--scl-color-background-error);
+  --border-color-hover: var(--scl-color-primary-hover, #f90984);
+  --border-color-focus: var(--scl-color-primary-hover, #f90984);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --height: var(--scl-spacing-48);
+  --height-small: var(--scl-spacing-40);
+  --spacing-x: var(--scl-spacing-12);
+  --color-disabled: var(--scl-color-background-disabled);
+  --background-disabled: var(--scl-color-white);
+  --border-color-readonly: var(--scl-color-grey-0);
+  --background-readonly: var(--scl-color-grey-0);
+
+  /*meta*/
+  --font-weight-meta: var(--scl-font-weight-bold);
+  --font-size-meta: var(--scl-font-size-12);
+  --line-height-meta: var(--scl-font-line-height-133);
+  --spacing-y-meta: var(--scl-spacing-4);
+  --color-meta: var(--scl-color-text-standard);
+  --color-meta-error: var(--scl-color-text-error);
+
+  /*control*/
+  --spacing-control: var(--scl-spacing-12) var(--spacing-x) 0
+    calc(var(--spacing-x) - 1px);
+  --transition-control: var(--transition);
+  --font-size-control: var(--scl-font-size-16);
+
+  /*counter*/
+  --transition-counter: var(--transition);
+  --font-size-counter: var(--font-size-meta);
+  --line-height-counter: var(--line-height-meta);
+  --color-counter-error: var(--color-meta-error);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--font-size-meta);
+  --line-height-helper-text: var(--line-height-meta);
+  --color-helper-text: var(--scl-color-blue-70);
+  --color-helper-text-error: var(--color-meta-error);
+
+  /*placeholder*/
+  --transition-placeholder: var(--transition);
+  --color-placeholder: var(--scl-color-grey-60);
+
+  /*label*/
+  --color-label: var(--scl-color-grey-60);
+  --color-label-readonly: var(--scl-color-text-standard);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--scl-font-size-16);
+  --font-weight-label: var(--scl-font-weight-medium);
+  --font-size-label-small: var(--scl-font-size-16);
+  --font-weight-label-small: var(--scl-font-weight-medium);
+  --font-size-label-focus: var(--scl-font-size-10);
+  --font-weight-label-focus: var(--scl-font-weight-bold);
+}
+
+.text-field-v2 {
+  position: relative;
+}
+.text-field-v2 .text-field-v2__helper-text,
+.text-field-v2 .text-field-v2__counter {
+  font-weight: var(--font-weight-meta);
+}
+.text-field-v2 .text-field-v2__control {
+  width: 100%;
+  height: var(--height);
+  margin: 0;
+  display: flex;
+  outline: none;
+  padding: var(--spacing-control);
+  z-index: 1;
+  box-sizing: border-box;
+  transition: var(--transition-control);
+  font-family: inherit;
+  font-size: var(--font-size-control);
+  border-radius: var(--radius);
+  border: var(--border);
+}
+
+.text-field-v2.text-field-v2--has-prefix .text-field-v2__control {
+  padding-left: calc(var(--spacing-x) + var(--prefix-length))
+}
+
+.text-field-v2 .text-field-v2__counter {
+  display: flex;
+  transition: var(--transition-counter);
+  margin-left: auto;
+  padding-right: var(--spacing-x);
+  justify-content: flex-end;
+  font-size: var(--font-size-counter);
+  line-height: var(--line-height-counter);
+  color: inherit;
+}
+.text-field-v2 .text-field-v2__helper-text {
+  transition: var(--transition-helper-text);
+  padding-left: var(--spacing-x);
+  font-size: var(--font-size-helper-text);
+  line-height: var(--line-height-helper-text);
+  color: var(--color-helper-text);
+}
+.text-field-v2 .text-field-v2__meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-y-meta);
+  color: var(--color-meta);
+}
+
+.text-field-v2:not(.text-field-v2--disabled):not(.text-field-v2--readonly)
+  .text-field-v2__control:hover {
+  border-color: var(--border-color-hover);
+}
+
+.text-field-v2:not(.text-field-v2--disabled):not(.text-field-v2--readonly)
+  .text-field-v2__control:focus {
+  border-color: var(--border-color-focus);
+  box-shadow: var(--box-shadow-focus);
+}
+
+.text-field-v2:not(.text-field-v2--disabled) .text-field-v2__control:focus::placeholder {
+  color: var(--color-placeholder);
+}
+
+.text-field-v2 .text-field-v2__control::placeholder,
+.text-field-v2 ::placeholder {
+  color: transparent;
+  transition: var(--transition-placeholder);
+}
+
+.text-field-v2__label {
+  top: 0;
+  left: 0;
+  color: var(--color-label);
+  display: flex;
+  z-index: var(--z-index-label);
+  position: absolute;
+  transition: var(--transition-label);
+  pointer-events: none;
+  font-size: var(--font-size-label);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--height) - var(--font-size-label)) / 2)
+  );
+  font-weight: var(--font-weight-label);
+}
+
+.text-field-v2__prefix {
+  top: var(--spacing-y-meta);
+  left: 0;
+  color: var(--color-label);
+  display: flex;
+  z-index: var(--z-index-label);
+  position: absolute;
+  transition: var(--transition-label);
+  pointer-events: none;
+  font-size: var(--font-size-label);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--height) - var(--font-size-label)) / 2)
+  );
+  font-weight: var(--font-weight-label);
+}
+
+.text-field-v2--has-focus:not(.text-field-v2--readonly) .text-field-v2__label,
+.animated .text-field-v2__label {
+  line-height: var(--scl-font-variant-label-size);
+  transform: translate(var(--spacing-x), var(--scl-spacing-8));
+  font-size: var(--font-size-label-focus);
+  font-weight: var(--font-weight-label-focus);
+}
+.text-field-v2--status-error .text-field-v2__control {
+  border: var(--border-error);
+}
+.text-field-v2--status-error .text-field-v2__helper-text {
+  color: var(--color-helper-text-error);
+}
+.text-field-v2--status-error .text-field-v2__counter {
+  color: var(--color-counter-error);
+}
+.text-field-v2--size-small .text-field-v2__control {
+  height: var(--height-small);
+}
+.text-field-v2--size-small .text-field-v2__label {
+  font-size: var(--font-size-label-small);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--height-small) - var(--font-size-label-small)) / 2)
+  );
+  font-weight: var(--font-weight-label-small);
+}
+.text-field-v2--size-small.text-field-v2--has-focus:not(.text-field-v2--readonly)
+  .text-field-v2__label,
+.text-field-v2--size-small.animated .text-field-v2__label,
+.text-field-v2.text-field-v2--has-prefix .text-field-v2__label
+{
+  line-height: var(--scl-font-variant-label-size);
+  transform: translate(var(--spacing-x), var(--scl-spacing-4));
+  font-size: var(--font-size-label-focus);
+}
+.text-field-v2--transparent .text-field-v2__control {
+  background-color: transparent;
+}
+
+.text-field-v2--readonly input,
+.text-field-v2--readonly .text-field-v2__control {
+  color: var(--color-label-readonly);
+  border-color: var(--border-color-readonly);
+  background: var(--background-readonly);
+}
+
+.text-field-v2--readonly .text-field-v2__control:focus {
+  box-shadow: var(--box-shadow-focus);
+}
+
+.text-field-v2--disabled label,
+.text-field-v2--disabled .text-field-v2__label,
+.text-field-v2--disabled input,
+.text-field-v2--disabled .text-field-v2__control,
+.text-field-v2--disabled .text-field-v2__meta,
+.text-field-v2--disabled .text-field-v2__counter,
+.text-field-v2--disabled .text-field-v2__helper-text {
+  cursor: not-allowed;
+  border-color: var(--color-disabled);
+  color: var(--color-disabled);
+  background: var(--scl-color-white);
+}
+.text-field-v2--disabled.animated label.text-field-v2__label {
+  color: var(--color-disabled);
+}
+
+/*Hide Arrows From Input Number*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
