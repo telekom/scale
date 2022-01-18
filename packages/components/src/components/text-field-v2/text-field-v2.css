@@ -97,6 +97,11 @@
   padding-left: calc(var(--spacing-x) + var(--prefix-length))
 }
 
+.text-field-v2.text-field-v2--has-suffix .text-field-v2__control {
+  padding-right: calc(var(--spacing-x) - 1px + var(--suffix-length) + var(--spacing-x))
+}
+
+
 .text-field-v2 .text-field-v2__counter {
   display: flex;
   transition: var(--transition-counter);
@@ -162,6 +167,24 @@
 .text-field-v2__prefix {
   top: var(--spacing-y-meta);
   left: 0;
+  color: var(--color-label);
+  display: flex;
+  z-index: var(--z-index-label);
+  position: absolute;
+  transition: var(--transition-label);
+  pointer-events: none;
+  font-size: var(--font-size-label);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--height) - var(--font-size-label)) / 2)
+  );
+  font-weight: var(--font-weight-label);
+}
+
+.text-field-v2__suffix {
+  top: var(--spacing-y-meta);
+  right: var(--suffix-length);
+  /* right: 0; */
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);

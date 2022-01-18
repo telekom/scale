@@ -86,6 +86,8 @@ export class TextFieldV2 {
   @Prop() inputAutofocus?: boolean;
   /** (optional) input prefix */
   @Prop() inputprefix?: string;
+  /** (optional) input prefix */
+  @Prop() inputsuffix?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -137,8 +139,12 @@ export class TextFieldV2 {
     }
     if (this.inputprefix) {
       const width = this.hostElement.querySelector('.text-field-v2__prefix').getBoundingClientRect().width
-      this.hostElement.setAttribute('style', `--prefix-length: ${width}px`)
+      this.hostElement.style.setProperty('--prefix-length',`${width}px`)
     }
+    if (this.inputsuffix) {
+      const width = this.hostElement.querySelector('.text-field-v2__suffix').getBoundingClientRect().width
+      this.hostElement.style.setProperty('--suffix-length',`${width}px`)
+    }    
   }
 
   // We're not watching `value` like we used to
@@ -242,6 +248,7 @@ export class TextFieldV2 {
               )}
             </div>
           )}
+          {this.inputsuffix && <div class="text-field-v2__suffix"> {this.inputsuffix} </div>}
         </div>
       </Host>
     );
@@ -262,7 +269,8 @@ export class TextFieldV2 {
       this.invalid && `text-field-v2--status-error`,
       this.size && `text-field-v2--size-${this.size}`,
       this.readonly && `text-field-v2--readonly`,
-      this.inputprefix !== '' && `text-field-v2--has-prefix`,
+      this.inputprefix && `text-field-v2--has-prefix`,
+      this.inputsuffix && `text-field-v2--has-suffix`,
       animated && 'animated'
     );
   }
