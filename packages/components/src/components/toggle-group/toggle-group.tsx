@@ -194,15 +194,21 @@ export class ToggleGroup {
 
   setChildrenCorners() {
     const children = Array.from(this.hostElement.children);
-    for (let i = 0; i < children.length; i++) {
-      if (i === 0) {
-        children[i].setAttribute('radius', 'left');
-      }
-      if (i > 0 && i < children.length - 1) {
-        children[i].setAttribute('radius', 'neither');
-      }
-      if (i === children.length - 1) {
-        children[i].setAttribute('radius', 'right');
+
+    if (children.length === 1) {
+      // set four border radius when there is only one child
+      children[0].setAttribute('radius', 'all');
+    } else {
+      for (let i = 0; i < children.length; i++) {
+        if (i === 0) {
+          children[i].setAttribute('radius', 'left');
+        }
+        if (i > 0 && i < children.length - 1) {
+          children[i].setAttribute('radius', 'neither');
+        }
+        if (i === children.length - 1) {
+          children[i].setAttribute('radius', 'right');
+        }
       }
     }
   }

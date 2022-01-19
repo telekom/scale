@@ -56,12 +56,14 @@ scale-radio-button {
     var(--scl-color-background-error);
   --box-shadow-control-focus: 0 0 0 var(--scl-spacing-2) var(--color-focus);
 }
+
 .radio-button {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   cursor: pointer;
+  width: fit-content;
 }
 
 .radio-button .radio-button__meta {

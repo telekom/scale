@@ -1,4 +1,22 @@
+<template>
+  <scale-checkbox
+    :name="name"
+    :label="label"
+    :helper-text="helperText"
+    :invalid="invalid"
+    :disabled="disabled"
+    :checked="checked"
+    :indeterminate="indeterminate"
+    :value="value"
+    :input-id="inputId"
+    @scaleChange="scaleChange"
+  >
+  </scale-checkbox>
+</template>
+
 <script>
+import { action } from '@storybook/addon-actions';
+
 export default {
   props: {
     name: { type: String },
@@ -9,7 +27,17 @@ export default {
     checked: { type: Boolean },
     indeterminate: { type: Boolean },
     value: { type: String },
-    inputId: { type: String }
-  }
+    inputId: { type: String },
+  },
+  methods: {
+    scaleChange($event) {
+      action('scaleChange');
+      this.$emit('scaleChange', $event);
+    },
+    'scale-change'($event) {
+      action('scale-change');
+      this.$emit('scale-change', $event);
+    },
+  },
 };
 </script>

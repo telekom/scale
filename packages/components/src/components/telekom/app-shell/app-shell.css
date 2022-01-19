@@ -34,6 +34,7 @@
   background: var(--background);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
+  flex: 1;
 }
 
 @media (min-width: 1552px) {

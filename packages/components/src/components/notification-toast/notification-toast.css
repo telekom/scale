@@ -1,0 +1,150 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  /* toast */
+
+  --width: 367px;
+  --radius: var(--scl-radius-8);
+  --background: var(--scl-color-background-standard);
+  --box-shadow: var(--scl-shadow-level-0);
+
+  /* icon container colors */
+
+  --background-success-icon-container: var(--scl-color-text-success);
+  --background-warning-icon-container: var(--scl-color-orange-70);
+  --background-error-icon-container: var(--scl-color-red-70);
+  --background-informational-icon-container: var(--scl-color-blue-60);
+
+  /* icon container colors */
+
+  --background-success-text-container: #f2f7ef;
+  --background-warning-text-container: #fbf4eb;
+  --background-error-text-container: #fbf3f4;
+  --background-informational-text-container: #eff9fb;
+}
+.notification-toast {
+  width: var(--width);
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  border-radius: var(--radius);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notification-toast.notification-toast--story {
+  opacity: 1;
+  position: absolute;
+}
+
+.notification-toast.notification-toast--story.notification-toast--hide {
+  opacity: 0;
+}
+
+.notification-toast.notification-toast--variant-success {
+  background: var(--background-success-text-container);
+}
+
+.notification-toast.notification-toast--variant-warning {
+  background: var(--background-warning-text-container);
+}
+
+.notification-toast.notification-toast--variant-error {
+  background: var(--background-error-text-container);
+}
+
+.notification-toast.notification-toast--variant-informational {
+  background: var(--background-informational-text-container);
+}
+
+/*
+  variant icon part
+*/
+
+.notification-toast__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+}
+
+.notification-toast__icon-container {
+  height: 100%;
+  width: 48px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  float: left;
+  border-radius: 10px 0 0 10px;
+}
+
+.notification-toast.notification-toast--variant-success
+  .notification-toast__icon-container {
+  background: var(--background-success-icon-container);
+}
+
+.notification-toast.notification-toast--variant-warning
+  .notification-toast__icon-container {
+  background: var(--background-warning-icon-container);
+}
+
+.notification-toast.notification-toast--variant-error
+  .notification-toast__icon-container {
+  background: var(--background-error-icon-container);
+}
+
+.notification-toast.notification-toast--variant-informational
+  .notification-toast__icon-container {
+  background: var(--background-informational-icon-container);
+}
+
+/*
+  text part
+*/
+
+::slotted([slot='header']) {
+  margin: 0;
+  padding: 3px 0 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+::slotted([slot='body']) {
+  padding: 3px 0 0 10px;
+  margin: 0;
+}
+::slotted([slot='link']) {
+  padding: 10px 0 15px 10px;
+  margin: 0;
+}
+
+.notification-toast__text-container {
+  width: var(--width);
+  min-height: 33px;
+  float: left;
+  position: relative;
+  margin: 0 0 0 48px;
+  padding: 15px 0 0 0;
+}
+
+/*
+  close icon part
+*/
+
+.notification-message__icon-close {
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
