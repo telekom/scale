@@ -348,7 +348,7 @@ notification toast
   text part
 */
 
-.notification-toast .notification-toast__heading ::slotted(*) {
+.notification-toast .notification-toast__heading {
   margin: 0;
   padding: 3px 0 0 10px;
   font-weight: bold;

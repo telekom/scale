@@ -250,21 +250,22 @@ export class Notification {
               </scale-link>
             )}
           </div>
-
-          <scale-icon-action-circle-close
-            tabindex="0"
-            class={`notification-${this.type.toString()}__button-close`}
-            size={20}
-            onClick={() => {
-              this.close();
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
+          {this.dismissible && (
+            <scale-icon-action-circle-close
+              tabindex="0"
+              class={`notification-${this.type.toString()}__button-close`}
+              size={20}
+              onClick={() => {
                 this.close();
-              }
-            }}
-            accessibility-title="close"
-          />
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  this.close();
+                }
+              }}
+              accessibility-title="close"
+            />
+          )}
         </div>
       </Host>
     );
