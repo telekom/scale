@@ -29,31 +29,36 @@ import statusNote from '../../utils/status-note';
 export class Notification {
   @Element() hostElement: HTMLElement;
 
+  /* 
+  inline, toast, banner
+  */
   @Prop() type?: 'inline' | 'toast' | 'banner' = 'inline';
   @Prop() variant?: 'informational' | 'success' | 'warning' | 'error' =
     'informational';
-  /** (optional) Animated toast */
-  @Prop() animated?: boolean = true;
-  @Prop() alignment?:
-    | 'bottom-right'
-    | 'bottom-left'
-    | 'top-right'
-    | 'top-left' = 'top-right';
-  /** (optional) Toast position at the top */
-  @Prop() positionVertical?: number = 12;
-  /** (optional) Toast position right */
-  @Prop() positionHorizontal?: number = 12;
-  /** (optional) Toast fade duration */
-  @Prop() fadeDuration?: number = 500;
-  /** (optional) Injected CSS styles */
-  @Prop({ reflect: true }) styles?: string;
-
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
-
+  /** (optional) Injected CSS styles */
+  @Prop({ reflect: true }) styles?: string;
+  /*
+  toast
+  */
+  /** (optional) Animated toast */
+  @Prop() toastAnimated?: boolean = true;
+  /** (optional) Alignment of toast */
+  @Prop() toastAlignment?:
+    | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left' = 'top-right';
+  /** (optional) Toast position at the top */
+  @Prop() toastPositionVertical?: number = 12;
+  /** (optional) Toast position right */
+  @Prop() toastPositionHorizontal?: number = 12;
+  /** (optional) Toast fade duration */
+  @Prop() toastFadeDuration?: number = 500;
   /** (do not use) it is a helper prop for storybook */
   @Prop() toastStory?: boolean;
   /** (optional) Toast state height with offset */
@@ -71,7 +76,7 @@ export class Notification {
     this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
 
     /* toast */
-    const alignmentParts = this.alignment.split('-');
+    const alignmentParts = this.toastAlignment.split('-');
     this.alignmentVertical = alignmentParts[0];
     this.alignmentHorizontal = alignmentParts[1];
   }
@@ -148,7 +153,7 @@ export class Notification {
       this.hideToast = true;
       setTimeout(() => {
         this.opened = false;
-      }, this.fadeDuration);
+      }, this.toastFadeDuration);
     }
   };
 
@@ -159,6 +164,7 @@ export class Notification {
 
     return this.type == 'banner' || this.type == 'inline' ? (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
         <div
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
@@ -199,6 +205,7 @@ export class Notification {
 
               {this.hasSlotLink && this.type === 'banner' && (
                 <scale-link
+                  part="link"
                   href={this.href}
                   class={`notification-${this.type.toString()}__link`}
                 >
@@ -215,10 +222,10 @@ export class Notification {
         <style>{this.transitions(this.toastHeightWithOffset)}</style>
         <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
         <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
-          <div class="notification-toast__icon-container">
+          <div class={`notification-${this.type.toString()}__icon-container`}>
             {this.handleIcons()}
           </div>
-          <div class="notification-toast__text-container">
+          <div class={`notification-${this.type.toString()}__text-container`}>
             <div
               part="heading"
               class={`notification-${this.type.toString()}__heading`}
@@ -235,8 +242,8 @@ export class Notification {
             )}
             {this.hasSlotLink && (
               <scale-link
+                part="link"
                 href={this.href}
-                part="text"
                 class={`notification-${this.type.toString()}__link`}
               >
                 <slot name="link" />
@@ -246,7 +253,7 @@ export class Notification {
 
           <scale-icon-action-circle-close
             tabindex="0"
-            class="notification-toast__button-close"
+            class={`notification-${this.type.toString()}__button-close`}
             size={20}
             onClick={() => {
               this.close();
@@ -271,14 +278,14 @@ export class Notification {
     }
     to {
       opacity: 1;
-      ${this.alignmentVertical}: ${this.positionVertical}px;
+      ${this.alignmentVertical}: ${this.toastPositionVertical}px;
     }
   }
 
   @keyframes fadeOut {
     from {
       opacity: 1;
-      ${this.alignmentVertical}: ${this.positionVertical}px;
+      ${this.alignmentVertical}: ${this.toastPositionVertical}px;
     }
     to {
       opacity: 0;
@@ -288,17 +295,17 @@ export class Notification {
 `;
 
   animationStyle = (offset) => {
-    if (this.animated) {
+    if (this.toastAnimated) {
       return `
     .notification-toast--show {
-      ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
-      animation: fadeIn ${this.fadeDuration / 1000}s ease-in-out;
-      ${this.alignmentVertical}: ${this.positionVertical}px;
+      ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
+      animation: fadeIn ${this.toastFadeDuration / 1000}s ease-in-out;
+      ${this.alignmentVertical}: ${this.toastPositionVertical}px;
       opacity: 1;
     },
     .notification-toast--show {
-      ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
-      animation: fadeOut ${this.fadeDuration / 1000}s ease-in-out;
+      ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
+      animation: fadeOut ${this.toastFadeDuration / 1000}s ease-in-out;
       ${this.alignmentVertical}: -${offset}px;
       opacity: 0;
     }
@@ -306,12 +313,12 @@ export class Notification {
     }
     return `
 .notification-toast--show {
-  ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
-  ${this.alignmentVertical}: ${this.positionVertical}px;
+  ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
+  ${this.alignmentVertical}: ${this.toastPositionVertical}px;
   opacity: 1;
 },
 .notification-toast--show {
-  ${this.alignmentHorizontal}: ${this.positionHorizontal}px;
+  ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
   ${this.alignmentVertical}: -${offset}px;
   opacity: 0;
 }
@@ -321,7 +328,7 @@ export class Notification {
   getToastHeightWithOffset() {
     const toastHeight = this.hostElement.shadowRoot.querySelector('.toast')
       .scrollHeight;
-    this.toastHeightWithOffset = toastHeight + this.positionVertical;
+    this.toastHeightWithOffset = toastHeight + this.toastPositionVertical;
   }
 
   getBasePartMap() {

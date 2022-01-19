@@ -5,22 +5,22 @@
 
 ## Properties
 
-| Property             | Attribute             | Description                                    | Type                                                           | Default           |
-| -------------------- | --------------------- | ---------------------------------------------- | -------------------------------------------------------------- | ----------------- |
-| `alignment`          | `alignment`           |                                                | `"bottom-left" \| "bottom-right" \| "top-left" \| "top-right"` | `'top-right'`     |
-| `animated`           | `animated`            | (optional) Animated toast                      | `boolean`                                                      | `true`            |
-| `autoHide`           | `auto-hide`           |                                                | `boolean`                                                      | `false`           |
-| `autoHideDuration`   | `auto-hide-duration`  |                                                | `number`                                                       | `3000`            |
-| `dismissible`        | `dismissible`         |                                                | `boolean`                                                      | `false`           |
-| `fadeDuration`       | `fade-duration`       | (optional) Toast fade duration                 | `number`                                                       | `500`             |
-| `href`               | `href`                |                                                | `string`                                                       | `undefined`       |
-| `opened`             | `opened`              |                                                | `boolean`                                                      | `undefined`       |
-| `positionHorizontal` | `position-horizontal` | (optional) Toast position right                | `number`                                                       | `12`              |
-| `positionVertical`   | `position-vertical`   | (optional) Toast position at the top           | `number`                                                       | `12`              |
-| `styles`             | `styles`              | (optional) Injected CSS styles                 | `string`                                                       | `undefined`       |
-| `toastStory`         | `toast-story`         | (do not use) it is a helper prop for storybook | `boolean`                                                      | `undefined`       |
-| `type`               | `type`                |                                                | `"banner" \| "inline" \| "toast"`                              | `'inline'`        |
-| `variant`            | `variant`             |                                                | `"error" \| "informational" \| "success" \| "warning"`         | `'informational'` |
+| Property                  | Attribute                   | Description                                    | Type                                                           | Default           |
+| ------------------------- | --------------------------- | ---------------------------------------------- | -------------------------------------------------------------- | ----------------- |
+| `autoHide`                | `auto-hide`                 |                                                | `boolean`                                                      | `false`           |
+| `autoHideDuration`        | `auto-hide-duration`        |                                                | `number`                                                       | `3000`            |
+| `dismissible`             | `dismissible`               |                                                | `boolean`                                                      | `false`           |
+| `href`                    | `href`                      |                                                | `string`                                                       | `undefined`       |
+| `opened`                  | `opened`                    |                                                | `boolean`                                                      | `undefined`       |
+| `styles`                  | `styles`                    | (optional) Injected CSS styles                 | `string`                                                       | `undefined`       |
+| `toastAlignment`          | `toast-alignment`           | (optional) Alignment of toast                  | `"bottom-left" \| "bottom-right" \| "top-left" \| "top-right"` | `'top-right'`     |
+| `toastAnimated`           | `toast-animated`            | (optional) Animated toast                      | `boolean`                                                      | `true`            |
+| `toastFadeDuration`       | `toast-fade-duration`       | (optional) Toast fade duration                 | `number`                                                       | `500`             |
+| `toastPositionHorizontal` | `toast-position-horizontal` | (optional) Toast position right                | `number`                                                       | `12`              |
+| `toastPositionVertical`   | `toast-position-vertical`   | (optional) Toast position at the top           | `number`                                                       | `12`              |
+| `toastStory`              | `toast-story`               | (do not use) it is a helper prop for storybook | `boolean`                                                      | `undefined`       |
+| `type`                    | `type`                      |                                                | `"banner" \| "inline" \| "toast"`                              | `'inline'`        |
+| `variant`                 | `variant`                   |                                                | `"error" \| "informational" \| "success" \| "warning"`         | `'informational'` |
 
 
 ## Methods
@@ -43,6 +43,7 @@ Type: `Promise<void>`
 | `"button-dismissable"` |             |
 | `"container"`          |             |
 | `"heading"`            |             |
+| `"link"`               |             |
 | `"text"`               |             |
 
 
