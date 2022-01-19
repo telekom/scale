@@ -10,8 +10,11 @@
  */
 
 import { Component, Prop, h, Host, Element } from '@stencil/core';
-import { SizedProp } from '../grid/grid.interfaces';
-import { createSizedProp, createCssString } from '../grid/sizesTransformation';
+import { SetProp } from '../grid/grid.interfaces';
+import {
+  createBtValuedProp,
+  createCssString,
+} from '../grid/valuesTransformation';
 
 @Component({
   tag: 'scale-grid-item',
@@ -27,12 +30,12 @@ export class GridItem {
   @Prop() offset?: string;
 
   componentWillLoad() {
-    const sizedProps: SizedProp[] = [
-      createSizedProp('size', this.size),
-      createSizedProp('offset', this.offset),
-    ].filter((sizeProp) => sizeProp);
-    const cssStrings: string[] = sizedProps.map((sizedProp: SizedProp) =>
-      createCssString(sizedProp)
+    const setProps: SetProp[] = [
+      createBtValuedProp('size', this.size),
+      createBtValuedProp('offset', this.offset),
+    ].filter((setProp) => setProp);
+    const cssStrings: string[] = setProps.map((setProp: SetProp) =>
+      createCssString(setProp)
     );
     this.hostElement.setAttribute('style', cssStrings.join(''));
   }

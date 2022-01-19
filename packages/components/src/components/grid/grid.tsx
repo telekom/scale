@@ -10,8 +10,8 @@
  */
 
 import { Component, h, Host, Element, Prop } from '@stencil/core';
-import { SizedProp } from './grid.interfaces';
-import { createCssString, createSizedProp } from './sizesTransformation';
+import { SetProp } from './grid.interfaces';
+import { createCssString, createBtValuedProp } from './valuesTransformation';
 
 @Component({
   tag: 'scale-grid',
@@ -36,14 +36,14 @@ export class Grid {
   @Prop() maxWidth?: string;
 
   componentWillLoad() {
-    const sizedProps: SizedProp[] = [
-      createSizedProp('columns', this.columns),
-      createSizedProp('gutter-y', this.gutterY),
-      createSizedProp('gutter-x', this.gutterX),
-      createSizedProp('spacing', this.spacing),
+    const sizedProps: SetProp[] = [
+      createBtValuedProp('columns', this.columns),
+      createBtValuedProp('gutter-y', this.gutterY),
+      createBtValuedProp('gutter-x', this.gutterX),
+      createBtValuedProp('spacing', this.spacing),
     ].filter((sizeProp) => sizeProp);
-    const sizableCssStrings: string[] = sizedProps.map(
-      (sizedProp: SizedProp) => createCssString(sizedProp)
+    const sizableCssStrings: string[] = sizedProps.map((sizedProp: SetProp) =>
+      createCssString(sizedProp)
     );
     const maxWidthCssStirng = this.maxWidth
       ? `--max-width:${this.maxWidth};`

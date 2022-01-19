@@ -1,28 +1,10 @@
-export type columnNames = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type breakpointNames = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
-export type columnSizes =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | 10
-  | 11
-  | 12
-  | 13
-  | 14
-  | 15
-  | 16;
-
-export interface Sizes {
-  columnName: columnNames;
-  size: string;
+export interface BreakpointValue {
+  breakpointName: breakpointNames;
+  value: string;
 }
-export type sizableProps =
+export type settableProps =
   | 'columns'
   | 'spacing'
   | 'gutter-x'
@@ -30,7 +12,7 @@ export type sizableProps =
   | 'size'
   | 'offset';
 
-export interface SizedProp {
-  propName: sizableProps;
-  sizes: Sizes[];
+export interface SetProp {
+  propName: settableProps;
+  breakpointValues: BreakpointValue[];
 }
