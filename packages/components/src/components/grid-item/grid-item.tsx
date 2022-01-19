@@ -12,7 +12,7 @@
 import { Component, Prop, h, Host, Element } from '@stencil/core';
 import { SetProp } from '../grid/grid.interfaces';
 import {
-  createBtValuedProp,
+  createBreakpointValuedProp,
   createCssString,
 } from '../grid/valuesTransformation';
 
@@ -31,8 +31,8 @@ export class GridItem {
 
   componentWillLoad() {
     const setProps: SetProp[] = [
-      createBtValuedProp('size', this.size),
-      createBtValuedProp('offset', this.offset),
+      createBreakpointValuedProp('size', this.size),
+      createBreakpointValuedProp('offset', this.offset),
     ].filter((setProp) => setProp);
     const cssStrings: string[] = setProps.map((setProp: SetProp) =>
       createCssString(setProp)

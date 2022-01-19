@@ -2,9 +2,9 @@ import { settableProps, SetProp, BreakpointValue } from './grid.interfaces';
 
 export function createCssString(setProp: SetProp): string {
   const values = setProp.breakpointValues;
-  if (!isBtValuesEmpty(values)) {
-    const filledArray = fillEmptyBtValues(values);
-    const valuesObj = transformBtValuesData(filledArray);
+  if (!isBreakpointValuesEmpty(values)) {
+    const filledArray = fillEmptyBreakpointValues(values);
+    const valuesObj = transformBreakpointValuesData(filledArray);
     const stringSizesArray = Object.entries(valuesObj).map(
       ([key, value]) => `--${setProp.propName}-${key}:${value}`
     );
@@ -12,7 +12,7 @@ export function createCssString(setProp: SetProp): string {
   }
 }
 
-export function isBtValuesEmpty(values: BreakpointValue[]): boolean {
+export function isBreakpointValuesEmpty(values: BreakpointValue[]): boolean {
   let isEmpty = true;
   for (const value of values) {
     if (value.value) {
@@ -23,7 +23,7 @@ export function isBtValuesEmpty(values: BreakpointValue[]): boolean {
   return isEmpty;
 }
 
-export function fillEmptyBtValues(
+export function fillEmptyBreakpointValues(
   values: BreakpointValue[]
 ): BreakpointValue[] {
   const filledArray = [...values];
@@ -36,7 +36,7 @@ export function fillEmptyBtValues(
   return filledArray;
 }
 
-export function transformBtValuesData(values: BreakpointValue[]) {
+export function transformBreakpointValuesData(values: BreakpointValue[]) {
   return values.reduce(
     (a, v) => ({
       ...a,
@@ -46,7 +46,9 @@ export function transformBtValuesData(values: BreakpointValue[]) {
   );
 }
 
-export function propsToBtValuesArray(values: string[]): BreakpointValue[] {
+export function propsToBreakpointValuesArray(
+  values: string[]
+): BreakpointValue[] {
   return [
     { breakpointName: 'sm', value: values[0] },
     { breakpointName: 'md', value: values[1] },
@@ -56,7 +58,7 @@ export function propsToBtValuesArray(values: string[]): BreakpointValue[] {
   ];
 }
 
-export function createBtValuedProp(
+export function createBreakpointValuedProp(
   propName: settableProps,
   values: string
 ): SetProp {
@@ -66,6 +68,6 @@ export function createBtValuedProp(
 
   return {
     propName,
-    breakpointValues: propsToBtValuesArray(values.split(',')),
+    breakpointValues: propsToBreakpointValuesArray(values.split(',')),
   };
 }

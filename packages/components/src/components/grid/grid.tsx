@@ -11,7 +11,10 @@
 
 import { Component, h, Host, Element, Prop } from '@stencil/core';
 import { SetProp } from './grid.interfaces';
-import { createCssString, createBtValuedProp } from './valuesTransformation';
+import {
+  createCssString,
+  createBreakpointValuedProp,
+} from './valuesTransformation';
 
 @Component({
   tag: 'scale-grid',
@@ -37,10 +40,10 @@ export class Grid {
 
   componentWillLoad() {
     const sizedProps: SetProp[] = [
-      createBtValuedProp('columns', this.columns),
-      createBtValuedProp('gutter-y', this.gutterY),
-      createBtValuedProp('gutter-x', this.gutterX),
-      createBtValuedProp('spacing', this.spacing),
+      createBreakpointValuedProp('columns', this.columns),
+      createBreakpointValuedProp('gutter-y', this.gutterY),
+      createBreakpointValuedProp('gutter-x', this.gutterX),
+      createBreakpointValuedProp('spacing', this.spacing),
     ].filter((sizeProp) => sizeProp);
     const sizableCssStrings: string[] = sizedProps.map((sizedProp: SetProp) =>
       createCssString(sizedProp)
