@@ -85,6 +85,7 @@ scale-dropdown {
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
+  background-color: var(--scl-color-background-standard);
 }
 
 @-moz-document url-prefix() {
