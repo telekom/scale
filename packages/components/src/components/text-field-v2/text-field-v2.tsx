@@ -86,7 +86,7 @@ export class TextFieldV2 {
   @Prop() inputAutofocus?: boolean;
   /** (optional) input prefix */
   @Prop() inputprefix?: string;
-  /** (optional) input prefix */
+  /** (optional) input suffix */
   @Prop() inputsuffix?: string;
 
   /** (optional) Injected CSS styles */
@@ -194,9 +194,6 @@ export class TextFieldV2 {
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-    console.log('prefix', this.inputprefix)
-    console.log('styles', this.styles)
-
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}

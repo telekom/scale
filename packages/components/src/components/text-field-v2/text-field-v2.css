@@ -98,7 +98,7 @@
 }
 
 .text-field-v2.text-field-v2--has-suffix .text-field-v2__control {
-  padding-right: calc(var(--spacing-x) - 1px + var(--suffix-length) + var(--spacing-x))
+  padding-right: calc(var(--spacing-x) - 1px + var(--suffix-length))
 }
 
 
@@ -183,8 +183,7 @@
 
 .text-field-v2__suffix {
   top: var(--spacing-y-meta);
-  right: var(--suffix-length);
-  /* right: 0; */
+  right: var(--scl-spacing-16);
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
