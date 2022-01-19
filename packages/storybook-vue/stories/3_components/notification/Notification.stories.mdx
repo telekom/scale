@@ -101,6 +101,35 @@ export const Template = (args, { argTypes }) => ({
     link: String,
   },
   template: `
+    <scale-notification  
+      :type="type" 
+      :variant="variant"
+      :dismissible="dismissible"
+      :auto-hide-duration="autoHideDuration"
+      :auto-hide="autoHide"
+      :opened="opened"
+      :href="href"
+      :styles="styles"
+      :toast-animated="toastAnimated"
+      :toast-alignment="toastAlignment"
+      :toast-position-vertical="toastPositionHorizontal"
+      :toast-position-horizontal="toastPositionVertical"
+      :toast-fade-duration="toastFadeDuration"
+      :toast-story="toastStory"
+    >
+      {{ heading }} 
+    </scale-notification>
+  `,
+});
+
+export const CompleteTemplate = (args, { argTypes }) => ({
+  props: {
+    ...ScaleNotification.props,
+    heading: String,
+    text: String,
+    link: String,
+  },
+  template: `
   <div style="height: 100px">
     <scale-notification  
       :type="type" 
@@ -119,38 +148,130 @@ export const Template = (args, { argTypes }) => ({
       :toast-story="toastStory"
     >
       {{ heading }} 
-      <p v-if="text">{{ text }}</p>
-      <p v-if="link">{{ link }}</p>
+      <p slot="text">{{ text }}</p>
+      <p slot="link">{{ link }}</p>
     </scale-notification>
     </div>
   `,
 });
 
-export const ToastTemplate = (args, { argTypes }) => ({
+export const VariantTemplate = (args, { argTypes }) => ({
   props: {
     ...ScaleNotification.props,
+    heading: String,
+    text: String,
+    link: String,
   },
   template: `
-  <div style="height: 100px">
-    <scale-notification
+  <div style="height: 250px">
+    <scale-notification  
       :type="type" 
-      :variant="variant"
-      :dismissible="dismissible"
-      :auto-hide-duration="autoHideDuration"
-      :auto-hide="autoHide"
+      :variant="informational"
       :opened="opened"
-      :href="href"
-      :styles="styles"
-      :toast-animated="toastAnimated"
-      :toast-alignment="toastAlignment"
-      :toast-position-vertical="toastPositionHorizontal"
-      :toast-position-horizontal="toastPositionVertical"
-      :toast-fade-duration="toastFadeDuration"
       :toast-story="toastStory"
-      >
-       <p>Hello World</p>
+    >
+      {{ heading }} 
     </scale-notification>
-    </div>`,
+    <scale-notification  
+      :type="type" 
+      variant="warning"
+      :opened="opened"
+      :toast-story="toastStory"
+    >
+      {{ heading }} 
+    </scale-notification>
+    <scale-notification  
+      :type="type" 
+      variant="error"
+      :opened="opened"
+      :toast-story="toastStory"
+    >
+      {{ heading }} 
+    </scale-notification>
+    <scale-notification  
+      :type="type" 
+      variant="success"
+      :opened="opened"
+      :toast-story="toastStory"
+    >
+      {{ heading }} 
+    </scale-notification>
+    </div>
+  `,
+});
+
+export const AlignmentTemplate = (args, { argTypes }) => ({
+  props: {
+    ...ScaleNotification.props,
+    heading: String,
+    heading2: String,
+    heading3: String,
+    heading4: String,
+  },
+  template: `
+  <div style="height: 250px">
+    <scale-notification  
+      type="toast"
+      :opened="opened"
+      :toast-story="toastStory"
+      toast-alignment="top-right"
+    >
+      {{ heading }} 
+    </scale-notification>
+    <scale-notification  
+      type="toast"
+      :opened="opened"
+      :toast-story="toastStory"
+      toast-alignment="top-left"
+    >
+      {{ heading2 }} 
+    </scale-notification>
+    <scale-notification
+      type="toast"  
+      :opened="opened"
+      :toast-story="toastStory"
+      toast-alignment="bottom-right"
+    >
+      {{ heading3 }} 
+    </scale-notification>
+    <scale-notification  
+      type="toast"
+      :opened="opened"
+      :toast-story="toastStory"
+      toast-alignment="bottom-left"
+    >
+      {{ heading4 }} 
+    </scale-notification>
+    </div>
+  `,
+});
+
+export const PositionTemplate = (args, { argTypes }) => ({
+  props: {
+    ...ScaleNotification.props,
+    heading: String,
+    heading2: String,
+  },
+  template: `
+  <div style="height: 150px">
+    <scale-notification  
+      type="toast"
+      :opened="opened"
+      :toast-story="toastStory"
+      toast-position-vertical=100
+    >
+      {{ heading }} 
+    </scale-notification>
+    <scale-notification  
+      type="toast"
+      :opened="opened"
+      :toast-story="toastStory"
+      toast-position-horizontal=100
+    >
+      {{ heading2 }} 
+    </scale-notification>
+    </div>
+  `,
 });
 
 <div
@@ -173,7 +294,7 @@ export const ToastTemplate = (args, { argTypes }) => ({
     name="Standard"
     args={{
       opened: true,
-      heading: 'Notification text goes here',
+      heading: 'Hello World',
     }}
   >
     {Template.bind({})}
@@ -182,22 +303,388 @@ export const ToastTemplate = (args, { argTypes }) => ({
 
 <ArgsTable story="Standard" />
 
-## Toast
+## Inline
+
+### Variant
 
 <Canvas withSource="none">
   <Story
     components={ScaleNotification}
-    name="Toast"
+    name="Inline-Variant"
     args={{
       opened: true,
-      type: 'toast',
-      toastStory: true,
+      type: 'inline',
+      heading: 'Hello World',
     }}
   >
-    {ToastTemplate.bind({})}
+    {VariantTemplate.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-notification opened>Notification text goes here</scale-notification>
+<scale-notification type="inline" variant="informational" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="inline" variant="warning" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="inline" variant="error" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="inline" variant="error" opened>
+  Notification text goes here
+</scale-notification>
+```
+
+### Dismissible
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Inline-Dismissible"
+    args={{
+      opened: true,
+      type: 'inline',
+      heading: 'Hello World',
+      dismissible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="inline" variant="informational" dismissible opened>
+  Notification text goes here
+</scale-notification>
+```
+
+### With Text
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="With Text-Inline"
+    args={{
+      opened: true,
+      type: 'inline',
+      heading: 'Hello World',
+      text: 'Hello World',
+    }}
+  >
+    {CompleteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="inline" variant="informational" dismissible opened>
+  Notification text goes here
+</scale-notification>
+```
+
+## Banner
+
+### Variant
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Banner-Variant"
+    args={{
+      opened: true,
+      type: 'banner',
+      heading: 'Hello World',
+    }}
+  >
+    {VariantTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="banner" variant="informational" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="banner" variant="warning" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="banner" variant="error" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="banner" variant="error" opened>
+  Notification text goes here
+</scale-notification>
+```
+
+### Dismissible
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Banner-Dismissible"
+    args={{
+      opened: true,
+      type: 'banner',
+      heading: 'Hello World',
+      dismissible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="banner" variant="informational" dismissible opened>
+  Notification text goes here
+</scale-notification>
+```
+
+### With Text
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Banner-With Text"
+    args={{
+      opened: true,
+      type: 'banner',
+      heading: 'Hello World',
+      text: 'Hello World',
+    }}
+  >
+    {CompleteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="banner" variant="informational" dismissible opened>
+  Notification text goes here
+  <p slot="text">Hallo Welt</p>
+</scale-notification>
+```
+
+### With Text and Link
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Banner-With Text and Link"
+    args={{
+      opened: true,
+      type: 'banner',
+      heading: 'Hello World',
+      text: 'Hello World',
+      link: 'Hello World',
+    }}
+  >
+    {CompleteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="banner" variant="informational" dismissible opened>
+  Notification text goes here
+  <p slot="text">Hallo Welt</p>
+  <p slot="link">Hallo Welt</p>
+</scale-notification>
+```
+
+## Toast
+
+### Variant
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Toast-Variant"
+    args={{
+      opened: true,
+      type: 'toast',
+      toastStory: true,
+      heading: 'Hello World',
+    }}
+  >
+    {VariantTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="toast" variant="informational" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="toast" variant="warning" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="toast" variant="error" opened>
+  Notification text goes here
+</scale-notification>
+<scale-notification type="toast" variant="error" opened>
+  Notification text goes here
+</scale-notification>
+```
+
+### Dismissible
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Toast-Dismissible"
+    args={{
+      opened: true,
+      type: 'toast',
+      toastStory: true,
+      heading: 'Hello World',
+      dismissible: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="toast" variant="informational" dismissible opened>
+  Notification text goes here
+</scale-notification>
+```
+
+### With Text
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Toast-With Text"
+    args={{
+      opened: true,
+      type: 'toast',
+      heading: 'Hello World',
+      text: 'Hello World',
+    }}
+  >
+    {CompleteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="toast" variant="informational" dismissible opened>
+  Notification text goes here
+  <p slot="text">Hallo Welt</p>
+</scale-notification>
+```
+
+### With Text and Link
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Toast-With Text and Link"
+    args={{
+      opened: true,
+      type: 'toast',
+      heading: 'Hello World',
+      text: 'Hello World',
+      link: 'Hello World',
+    }}
+  >
+    {CompleteTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification type="toast" variant="informational" dismissible opened>
+  Notification text goes here
+  <p slot="text">Hallo Welt</p>
+  <p slot="link">Hallo Welt</p>
+</scale-notification>
+```
+
+### Alignment
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Toast-Alignment"
+    args={{
+      opened: true,
+      type: 'toast',
+      heading: 'top-right',
+      heading2: 'top-left',
+      heading3: 'bottom-right',
+      heading4: 'bottom-left',
+      toastAlignment: 'bottom-left',
+    }}
+  >
+    {AlignmentTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  type="toast"
+  variant="informational"
+  toast-alignment="top-right"
+  opened
+>
+  top-right
+</scale-notification>
+<scale-notification
+  type="toast"
+  variant="informational"
+  toast-alignment="top-left"
+  opened
+>
+  top-left
+</scale-notification>
+<scale-notification
+  type="toast"
+  variant="informational"
+  toast-alignment="bottom-right"
+  opened
+>
+  bottom-right
+</scale-notification>
+<scale-notification
+  type="toast"
+  variant="informational"
+  toast-alignment="bottom-left"
+  opened
+>
+  bottom-left
+</scale-notification>
+```
+
+### Position
+
+<Canvas withSource="none">
+  <Story
+    components={ScaleNotification}
+    name="Toast-Position"
+    args={{
+      opened: true,
+      type: 'toast',
+      heading: 'position-vertical=100',
+      heading2: 'position-horizontal=100',
+    }}
+  >
+    {PositionTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification
+  type="toast"
+  variant="informational"
+  toast-alignment="top-right"
+  toast-position-vertical="100"
+  opened
+>
+  position-vertical=100
+</scale-notification>
+<scale-notification
+  type="toast"
+  variant="informational"
+  toast-alignment="top-right"
+  toast-position-horizontal="100"
+  opened
+>
+  position-horizontal=100
+</scale-notification>
 ```

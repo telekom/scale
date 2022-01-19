@@ -1,7 +1,6 @@
 <template>
   <div>
     <slot name="text" />
-    <slot name="link" />
   </div>
 </template>
 
