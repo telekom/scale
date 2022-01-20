@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
+
+
+### Bug Fixes
+
+* **flyout:** close inactive menu ([#798](https://github.com/telekom/scale/issues/798)) ([762f892](https://github.com/telekom/scale/commit/762f89248ebc17c15c8f3bfde80ee7f435bb4b08))
+
+
+
+
+
 # [3.0.0-beta.42](https://github.com/telekom/scale/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2022-01-14)
 
 
