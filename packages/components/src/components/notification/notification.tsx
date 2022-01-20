@@ -61,6 +61,7 @@ export class Notification {
   @Prop() toastFadeDuration?: number = 500;
   /** (do not use) it is a helper prop for storybook */
   @Prop() toastStory?: boolean;
+  @Prop() toastNumber?: number;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
 
@@ -71,6 +72,8 @@ export class Notification {
   alignmentVertical: string;
   alignmentHorizontal: string;
 
+  positionVertical: number;
+
   componentWillLoad() {
     this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
     this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
@@ -79,6 +82,9 @@ export class Notification {
     const alignmentParts = this.toastAlignment.split('-');
     this.alignmentVertical = alignmentParts[0];
     this.alignmentHorizontal = alignmentParts[1];
+
+    this.positionVertical =
+      this.toastPositionVertical + this.getToastPositionVertical();
   }
 
   componentDidUpdate() {
@@ -105,6 +111,28 @@ export class Notification {
     //.notification-banner__icon-success
     const className = `notification-${this.type.toString()}__icon`;
     return className;
+  }
+
+  getToastPositionVertical() {
+    var matchingElements = [];
+    var allElements = document.getElementsByTagName('scale-notification');
+    for (var i = 0, j = allElements.length; i < j; i++) {
+      if (allElements[i].getAttribute('type') === 'toast') {
+        // elements with matching attribute. Add to array.
+        matchingElements.push(allElements[i]);
+      }
+    }
+    let toastHeightTotal = 0;
+    //calculate the height of all matching elements
+    //for (var i = 0, j = matchingElements.length; i < j; i++) {
+    for (var i = 0, j = this.toastNumber; i < j; i++) {
+      let toastShadowRoot = matchingElements[i].shadowRoot;
+      let toastHeight = toastShadowRoot.querySelector('.notification-toast')
+        .clientHeight;
+      const padding = 5;
+      toastHeightTotal = toastHeightTotal + toastHeight + padding;
+    }
+    return toastHeightTotal;
   }
 
   handleIcons() {
@@ -279,14 +307,14 @@ export class Notification {
     }
     to {
       opacity: 1;
-      ${this.alignmentVertical}: ${this.toastPositionVertical}px;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
     }
   }
 
   @keyframes fadeOut {
     from {
       opacity: 1;
-      ${this.alignmentVertical}: ${this.toastPositionVertical}px;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
     }
     to {
       opacity: 0;
@@ -301,7 +329,7 @@ export class Notification {
     .notification-toast--show {
       ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
       animation: fadeIn ${this.toastFadeDuration / 1000}s ease-in-out;
-      ${this.alignmentVertical}: ${this.toastPositionVertical}px;
+      ${this.alignmentVertical}: ${this.positionVertical}px;
       opacity: 1;
     },
     .notification-toast--show {
@@ -315,7 +343,7 @@ export class Notification {
     return `
 .notification-toast--show {
   ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
-  ${this.alignmentVertical}: ${this.toastPositionVertical}px;
+  ${this.alignmentVertical}: ${this.positionVertical}px;
   opacity: 1;
 },
 .notification-toast--show {
@@ -329,7 +357,7 @@ export class Notification {
   getToastHeightWithOffset() {
     const toastHeight = this.hostElement.shadowRoot.querySelector('.toast')
       .scrollHeight;
-    this.toastHeightWithOffset = toastHeight + this.toastPositionVertical;
+    this.toastHeightWithOffset = toastHeight + this.positionVertical;
   }
 
   getBasePartMap() {
