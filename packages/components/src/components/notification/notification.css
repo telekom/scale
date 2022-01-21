@@ -308,9 +308,8 @@ notification toast
 
 .notification-toast .notification-toast__icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -10px 0 0 -10px;
+  top: 12px;
+  left: 12px;
   color: #ffffff;
 }
 
@@ -350,16 +349,16 @@ notification toast
 
 .notification-toast .notification-toast__heading {
   margin: 0;
-  padding: 3px 0 0 10px;
+  padding: 0 0 0 10px;
   font-weight: bold;
   font-size: 16px;
 }
 .notification-toast .notification-toast__text ::slotted(*) {
-  padding: 3px 0 0 10px;
+  padding: 3px 0 15px 10px;
   margin: 0;
 }
 .notification-toast .notification-toast__link ::slotted(*) {
-  padding: 10px 0 15px 10px;
+  padding: 0 0 15px 10px;
   margin: 0;
 }
 

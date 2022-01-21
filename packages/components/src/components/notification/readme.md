@@ -16,6 +16,7 @@
 | `toastAlignment`          | `toast-alignment`           | (optional) Alignment of toast                  | `"bottom-left" \| "bottom-right" \| "top-left" \| "top-right"` | `'top-right'`     |
 | `toastAnimated`           | `toast-animated`            | (optional) Animated toast                      | `boolean`                                                      | `true`            |
 | `toastFadeDuration`       | `toast-fade-duration`       | (optional) Toast fade duration                 | `number`                                                       | `500`             |
+| `toastNumber`             | `toast-number`              | Number of toast                                | `number`                                                       | `undefined`       |
 | `toastPositionHorizontal` | `toast-position-horizontal` | (optional) Toast position right                | `number`                                                       | `12`              |
 | `toastPositionVertical`   | `toast-position-vertical`   | (optional) Toast position at the top           | `number`                                                       | `12`              |
 | `toastStory`              | `toast-story`               | (do not use) it is a helper prop for storybook | `boolean`                                                      | `undefined`       |
