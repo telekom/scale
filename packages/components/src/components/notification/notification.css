@@ -13,11 +13,28 @@
   --width: 100%;
   --radius: var(--scl-radius-8);
   --border: 1px solid var(--scl-color-white);
+  --min-height: 48px;
+  --font-weight: var(--scl-font-weight-regular);
 
-  /* toast */
-  --width-toast: 367px;
-  --background: var(--scl-color-background-standard);
-  --box-shadow: var(--scl-shadow-level-0);
+  /* banner/ inline */
+  --line-height-heading: 48px;
+  --line-height-text: 16px;
+  --line-height-link: 20px;
+  --top-button-close: 8px;
+  --right-button-close: 13.5px;
+  --color-button-close: #191919;
+  --height-button-close-svg: 19px;
+  --width-button-close-svg: 19px;
+  --border-radius-button-close-svg: 20%;
+  --color-button-close-hover: white;
+  --top-icon: 12px;
+  --left-icon: 17px;
+  --height-icon: 20px;
+  --width-icon: 20px;
+  --color-success-icon: #187431;
+  --color-error-icon: var(--scl-color-background-error);
+  --color-warning-icon: #ae461c;
+  --color-informational-icon: var(--scl-color-text-info);
 
   /* Token not available, up for discussion */
   --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
@@ -25,19 +42,30 @@
   --background-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
   --background-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
 
+  /* toast */
+  --min-height-toast-link: 100px;
+  --width-toast: 367px;
+  --background-toast: var(--scl-color-background-standard);
+  --box-shadow-toast: var(--scl-shadow-level-0);
+  --color-toast-icon: #ffffff;
+  --width-toast-icon-container: 48px;
+  --font-size-toast-heading: 16px;
+  --top-toast-button-close: 14px;
+  --right-toast-button-close: 14px;
+
   /* icon container colors toast */
 
-  --background-success-icon-container: var(--scl-color-text-success);
-  --background-warning-icon-container: var(--scl-color-orange-70);
-  --background-error-icon-container: var(--scl-color-red-70);
-  --background-informational-icon-container: var(--scl-color-blue-60);
+  --background-toast-success-text-container: #f2f7ef;
+  --background-toast-warning-text-container: #fbf4eb;
+  --background-toast-error-text-container: #fbf3f4;
+  --background-toast-informational-text-container: #eff9fb;
 
   /* icon container colors toast */
 
-  --background-success-text-container: #f2f7ef;
-  --background-warning-text-container: #fbf4eb;
-  --background-error-text-container: #fbf3f4;
-  --background-informational-text-container: #eff9fb;
+  --background-toast-success-icon-container: var(--scl-color-text-success);
+  --background-toast-warning-icon-container: var(--scl-color-orange-70);
+  --background-toast-error-icon-container: var(--scl-color-red-70);
+  --background-toast-informational-icon-container: var(--scl-color-blue-60);
 }
 
 /*
@@ -49,7 +77,7 @@ notification banner
   border-radius: var(--radius);
   width: var(--width);
   position: relative;
-  min-height: 48px;
+  min-height: var(--min-height);
 }
 
 .notification-banner--variant-error {
@@ -68,12 +96,12 @@ notification banner
 .notification-banner__heading {
   margin: 0px 48px 0px 48px;
   font-weight: var(--scl-font-weight-bold);
-  line-height: 48px;
+  line-height: var(--line-height-heading);
 }
 
 .notification-banner__text ::slotted(*) {
   margin: -10px 0px 0px 0px;
-  line-height: 16px;
+  line-height: var(--line-height-text);
   padding-bottom: 15px;
 }
 
@@ -81,7 +109,7 @@ notification banner
   .notification-banner__text
   ::slotted(*) {
   margin: -10px 0px -20px 0px;
-  line-height: 16px;
+  line-height: var(--line-height-text);
 }
 
 .notification-banner--has-no-text .notification-banner__link ::slotted(*) {
@@ -92,18 +120,18 @@ notification banner
 .notification-banner--has-text .notification-banner__link ::slotted(*) {
   margin: 10px 0 0 0;
   padding-bottom: 15px;
-  line-height: 20px;
+  line-height: var(--line-height-link);
 }
 
 ::slotted(*) {
-  font-weight: var(--scl-font-weight-regular);
+  font-weight: var(--font-weight);
 }
 
 .notification-banner__button-close {
   position: absolute;
-  top: 8px;
-  right: 13.5px;
-  color: #191919;
+  top: var(--top-button-close);
+  right: var(--right-button-close);
+  color: var(--color-button-close);
   border: none;
   cursor: pointer;
   margin: 0;
@@ -112,40 +140,40 @@ notification banner
 }
 
 .notification-banner__button-close svg {
-  height: 19px;
-  width: 19px;
+  height: var(--height-button-close-svg);
+  width: var(--width-button-close-svg);
   padding: 6.5px;
-  border-radius: 20%;
+  border-radius: var(--border-radius-button-close-svg);
 }
 
 .notification-banner__button-close:hover svg {
-  background-color: white;
+  background-color: var(--color-button-close-hover);
   color: var(--scl-color-primary-hover);
 }
 
 .notification-banner__icon {
   position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
+  top: var(--top-icon);
+  left: var(--left-icon);
+  height: var(--height-icon);
+  width: var(--height-icon);
 }
 
 .notification-banner--variant-success .notification-banner__icon {
   top: 12.5px;
-  color: #187431;
+  color: var(--color-success-icon);
 }
 
 .notification-banner--variant-error .notification-banner__icon {
-  color: var(--scl-color-background-error);
+  color: var(--color-error-icon);
 }
 
 .notification-banner--variant-warning .notification-banner__icon {
-  color: #ae461c;
+  color: var(--color-warning-icon);
 }
 
 .notification-banner--variant-informational .notification-banner__icon {
-  color: var(--scl-color-text-info);
+  color: var(--color-informational-icon);
 }
 
 /*
@@ -157,7 +185,7 @@ notification inline
   width: var(--width);
   position: relative;
   box-shadow: var(--scl-shadow-level-1);
-  min-height: 48px;
+  min-height: var(--min-height);
 }
 
 .notification-inline--variant-error {
@@ -176,12 +204,12 @@ notification inline
 .notification-inline__heading {
   margin: 14px 48px 14px 48px;
   font-weight: var(--scl-font-weight-bold);
-  line-height: 48px;
+  line-height: var(--line-height-heading);
 }
 
 .notification-inline__text ::slotted(*) {
   margin: -10px 0px -25px 0px;
-  line-height: 16px;
+  line-height: var(--line-height-text);
   padding-bottom: 15px;
 }
 
@@ -193,18 +221,18 @@ notification inline
 .notification-inline--has-text .notification-inline__link ::slotted(*) {
   margin: 10px 0 0 0;
   padding-bottom: 15px;
-  line-height: 20px;
+  line-height: var(--line-height-link);
 }
 
 ::slotted(*) {
-  font-weight: var(--scl-font-weight-regular);
+  font-weight: var(--font-weight);
 }
 
 .notification-inline__button-close {
   position: absolute;
-  top: 8px;
-  right: 13.5px;
-  color: #191919;
+  top: var(--top-button-close);
+  right: var(--right-button-close);
+  color: var(--color-button-close);
   border: none;
   cursor: pointer;
   margin: 0;
@@ -213,10 +241,10 @@ notification inline
 }
 
 .notification-inline__button-close svg {
-  height: 19px;
-  width: 19px;
+  height: var(--height-button-close-svg);
+  width: var(--width-button-close-svg);
   padding: 6.5px;
-  border-radius: 20%;
+  border-radius: var(--border-radius-button-close-svg);
 }
 
 .notification-inline__button-close:hover svg {
@@ -226,32 +254,27 @@ notification inline
 
 .notification-inline__icon {
   position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
+  top: var(--top-icon);
+  left: var(--left-icon);
+  height: var(--height-icon);
+  width: var(--width-icon);
 }
 
 .notification-inline--variant-success .notification-inline__icon {
   top: 12.5px;
-  color: #187431;
+  color: var(--color-success-icon);
 }
 
 .notification-inline--variant-error .notification-inline__icon {
-  color: var(--scl-color-background-error);
+  color: var(--color-error-icon);
 }
 
 .notification-inline--variant-warning .notification-inline__icon {
-  color: #ae461c;
+  color: var(--color-warning-icon);
 }
 
 .notification-inline--variant-informational .notification-inline__icon {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
-  color: var(--scl-color-text-info);
+  color: var(--color-informational-icon);
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
@@ -269,12 +292,17 @@ notification toast
   opacity: 0;
   z-index: 1;
   position: fixed;
-  background: var(--background);
-  box-shadow: var(--box-shadow);
+  background: var(--background-toast);
+  box-shadow: var(--box-shadow-toast);
   box-sizing: border-box;
   border-radius: var(--radius);
   flex-direction: column;
   justify-content: space-between;
+  min-height: var(--min-height);
+}
+
+.notification-toast.notification-toast--has-link {
+  min-height: var(--min-height-toast-link);
 }
 
 .notification-toast.notification-toast--story {
@@ -287,19 +315,19 @@ notification toast
 }
 
 .notification-toast.notification-toast--variant-success {
-  background: var(--background-success-text-container);
+  background: var(--background-toast-success-text-container);
 }
 
 .notification-toast.notification-toast--variant-warning {
-  background: var(--background-warning-text-container);
+  background: var(--background-toast-warning-text-container);
 }
 
 .notification-toast.notification-toast--variant-error {
-  background: var(--background-error-text-container);
+  background: var(--background-toast-error-text-container);
 }
 
 .notification-toast.notification-toast--variant-informational {
-  background: var(--background-informational-text-container);
+  background: var(--background-toast-informational-text-container);
 }
 
 /*
@@ -308,14 +336,18 @@ notification toast
 
 .notification-toast .notification-toast__icon {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  color: #ffffff;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-toast-icon);
 }
 
 .notification-toast .notification-toast__icon-container {
   height: 100%;
-  width: 48px;
+  width: var(--width-toast-icon-container);
   position: absolute;
   left: 0;
   top: 0;
@@ -325,22 +357,22 @@ notification toast
 
 .notification-toast.notification-toast--variant-success
   .notification-toast__icon-container {
-  background: var(--background-success-icon-container);
+  background: var(--background-toast-success-icon-container);
 }
 
 .notification-toast.notification-toast--variant-warning
   .notification-toast__icon-container {
-  background: var(--background-warning-icon-container);
+  background: var(--background-toast-warning-icon-container);
 }
 
 .notification-toast.notification-toast--variant-error
   .notification-toast__icon-container {
-  background: var(--background-error-icon-container);
+  background: var(--background-toast-error-icon-container);
 }
 
 .notification-toast.notification-toast--variant-informational
   .notification-toast__icon-container {
-  background: var(--background-informational-icon-container);
+  background: var(--background-toast-informational-icon-container);
 }
 
 /*
@@ -351,10 +383,10 @@ notification toast
   margin: 0;
   padding: 0 0 0 10px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: var(--font-size-toast-heading);
 }
 .notification-toast .notification-toast__text ::slotted(*) {
-  padding: 3px 0 15px 10px;
+  padding: 3px 0 10px 10px;
   margin: 0;
 }
 .notification-toast .notification-toast__link ::slotted(*) {
@@ -378,6 +410,6 @@ notification toast
 .notification-toast .notification-toast__button-close {
   cursor: pointer;
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: var(--top-toast-button-close);
+  right: var(--right-toast-button-close);
 }

@@ -120,10 +120,6 @@ export class Notification {
     let padding = 5;
     var matchingElements = [];
     var allElements = document.getElementsByTagName('scale-notification');
-    console.log('1');
-    console.log(
-      this.hostElement.shadowRoot.querySelector('.notification-toast')
-    );
 
     for (var i = 0, j = allElements.length; i < j; i++) {
       if (allElements[i].getAttribute('type') === 'toast') {
@@ -136,14 +132,10 @@ export class Notification {
     //calculate the height of all toast elements
     for (var i = 0, j = this.toastNumber; i < j; i++) {
       let toastShadowRoot = matchingElements[i].shadowRoot;
-      //TODO: after reload wrong height of link toast
-      console.log('2');
-      console.log(toastShadowRoot);
       let toastHeight = toastShadowRoot.querySelector('.notification-toast')
         .offsetHeight;
       toastHeightTotal = toastHeightTotal + toastHeight + padding;
     }
-    console.log(toastHeightTotal);
     return toastHeightTotal;
   }
 
@@ -352,18 +344,6 @@ export class Notification {
     }
   `;
     }
-    return `
-.notification-toast--show {
-  ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
-  ${this.alignmentVertical}: ${this.positionVertical}px;
-  opacity: 1;
-},
-.notification-toast--show {
-  ${this.alignmentHorizontal}: ${this.toastPositionHorizontal}px;
-  ${this.alignmentVertical}: -${offset}px;
-  opacity: 0;
-}
-`;
   };
 
   getBasePartMap() {
