@@ -122,7 +122,7 @@ export const Template = (args, { argTypes }) => ({
   `,
 });
 
-export const CompleteTemplate = (args, { argTypes }) => ({
+export const LinkTemplate = (args, { argTypes }) => ({
   props: {
     ...ScaleNotification.props,
     heading: String,
@@ -150,6 +150,38 @@ export const CompleteTemplate = (args, { argTypes }) => ({
       {{ heading }} 
       <p slot="text">{{ text }}</p>
       <p slot="link">{{ link }}</p>
+    </scale-notification>
+    </div>
+  `,
+});
+
+export const TextTemplate = (args, { argTypes }) => ({
+  props: {
+    ...ScaleNotification.props,
+    heading: String,
+    text: String,
+    link: String,
+  },
+  template: `
+  <div style="height: 100px">
+    <scale-notification  
+      :type="type" 
+      :variant="variant"
+      :dismissible="dismissible"
+      :auto-hide-duration="autoHideDuration"
+      :auto-hide="autoHide"
+      :opened="opened"
+      :href="href"
+      :styles="styles"
+      :toast-animated="toastAnimated"
+      :toast-alignment="toastAlignment"
+      :toast-position-vertical="toastPositionHorizontal"
+      :toast-position-horizontal="toastPositionVertical"
+      :toast-fade-duration="toastFadeDuration"
+      :toast-story="toastStory"
+    >
+      {{ heading }} 
+      <p slot="text">{{ text }}</p>
     </scale-notification>
     </div>
   `,
@@ -372,7 +404,7 @@ export const PositionTemplate = (args, { argTypes }) => ({
       text: 'Hello World',
     }}
   >
-    {CompleteTemplate.bind({})}
+    {LinkTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -451,7 +483,7 @@ export const PositionTemplate = (args, { argTypes }) => ({
       text: 'Hello World',
     }}
   >
-    {CompleteTemplate.bind({})}
+    {LinkTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -476,7 +508,7 @@ export const PositionTemplate = (args, { argTypes }) => ({
       link: 'Hello World',
     }}
   >
-    {CompleteTemplate.bind({})}
+    {LinkTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -559,7 +591,7 @@ export const PositionTemplate = (args, { argTypes }) => ({
       text: 'Hello World',
     }}
   >
-    {CompleteTemplate.bind({})}
+    {TextTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -584,7 +616,7 @@ export const PositionTemplate = (args, { argTypes }) => ({
       link: 'Hello World',
     }}
   >
-    {CompleteTemplate.bind({})}
+    {LinkTemplate.bind({})}
   </Story>
 </Canvas>
 
