@@ -59,10 +59,9 @@ export class Notification {
   @Prop() toastPositionHorizontal?: number = 12;
   /** (optional) Toast fade duration */
   @Prop() toastFadeDuration?: number = 500;
-  /** Number of toast */
-  @Prop() toastNumber?: number;
   /** (do not use) it is a helper prop for storybook */
   @Prop() toastStory?: boolean;
+  @Prop() someChange?: boolean = false;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
 
@@ -90,9 +89,17 @@ export class Notification {
     }
   }
 
+  componentWillUpdate() {
+    if (this.type === 'toast') {
+      this.positionVertical =
+        this.toastPositionVertical + this.getToastPositionVertical();
+    }
+  }
+
   componentDidUpdate() {
     this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
     this.hasSlotLink = !!this.hostElement.querySelector('[slot=link]');
+    this.someChange = false;
   }
 
   connectedCallback() {
@@ -130,11 +137,13 @@ export class Notification {
 
     let toastHeightTotal = 0;
     //calculate the height of all toast elements
-    for (var i = 0, j = this.toastNumber; i < j; i++) {
+    for (var i = 0, j = matchingElements.length; i < j; i++) {
       let toastShadowRoot = matchingElements[i].shadowRoot;
-      let toastHeight = toastShadowRoot.querySelector('.notification-toast')
-        .offsetHeight;
-      toastHeightTotal = toastHeightTotal + toastHeight + padding;
+      if (toastShadowRoot.querySelector('.notification-toast') != null) {
+        let toastHeight = toastShadowRoot.querySelector('.notification-toast')
+          .clientHeight;
+        toastHeightTotal = toastHeightTotal + toastHeight + padding;
+      }
     }
     return toastHeightTotal;
   }
@@ -180,6 +189,13 @@ export class Notification {
   }
 
   close = () => {
+    let allNotifications = document.querySelectorAll('scale-notification');
+    for (var i = 0, j = allNotifications.length; i < j; i++) {
+      if (allNotifications[i].type === 'toast') {
+        allNotifications[i].someChange = true;
+      }
+    }
+
     this.opened = false;
     if (this.type === 'toast') {
       this.hideToast = true;
