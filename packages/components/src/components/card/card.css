@@ -16,10 +16,10 @@
   --radius: var(--telekom-radius-large);
   --box-shadow: var(--scl-shadow-level-1);
   --box-shadow-hover: var(--scl-shadow-level-1-hover);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
   --box-shadow-active: var(--scl-shadow-level-1-active);
 
-  --spacing-body: var(--scl-spacing-24);
+  --spacing-body: var(--telekom-spacing-unit-x-6);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;

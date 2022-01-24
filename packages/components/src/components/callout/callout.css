@@ -1,6 +1,6 @@
 :host {
-  --inner-width-small: var(--scl-spacing-80);
-  --inner-height-small: var(--scl-spacing-80);
+  --inner-width-small: var(--telekom-spacing-unit-x-20);
+  --inner-height-small: var(--telekom-spacing-unit-x-20);
   --inner-width-large: 126.5px;
   --inner-height-large: 96px;
   --width-small: 120px;

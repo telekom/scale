@@ -10,20 +10,20 @@
  */
 
 :host {
-  --spacing-left: calc(-1 * var(--scl-spacing-8));
+  --spacing-left: calc(-1 * var(--telekom-spacing-unit-x-2));
 
   --font-size-list-item: var(--telekom-typography-font-size-caption);
 
   --color-separator: var(--telekom-color-ui-normal);
 
-  --spacing-y-item: var(--scl-spacing-4);
-  --spacing-x-item: var(--scl-spacing-8);
+  --spacing-y-item: var(--telekom-spacing-unit-x-1);
+  --spacing-x-item: var(--telekom-spacing-unit-x-2);
 
   --color-link: var(--telekom-color-ui-normal);
   --radius-link: var(--telekom-radius-standard);
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --box-shadow-link-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --box-shadow-link-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
 
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
