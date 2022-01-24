@@ -10,13 +10,13 @@
  */
 
 :host {
-  --background: var(--scl-color-background-standard);
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --radius: var(--scl-radius-12);
+  --background: var(--telekom-color-background-canvas);
+  --transition: all var(--telekom-motion-duration-transition)
+    cubic-bezier(var(--telekom-motion-easing-standard));
+  --radius: var(--telekom-radius-large);
   --box-shadow: var(--scl-shadow-level-1);
   --box-shadow-hover: var(--scl-shadow-level-1-hover);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--telekom-color-functional-focus);
   --box-shadow-active: var(--scl-shadow-level-1-active);
 
   --spacing-body: var(--scl-spacing-24);

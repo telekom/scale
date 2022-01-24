@@ -7,13 +7,13 @@
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
-  --color-blue: var(--scl-color-blue-60);
-  --color-white: var(--scl-color-white);
-  --color-black: var(--scl-color-grey-90);
-  --color-primary: var(--scl-color-primary);
-  --font-family: var(--scl-font-family-sans);
-  --font-size: calc(var(--scl-font-size-20) * 3);
-  --font-size-prefix: var(--scl-font-size-20);
+  --color-blue: var( --telekom-color-additional-blue-60);
+  --color-white: var(--telekom-color-background-surface);
+  --color-black: var( --telekom-color-text-and-icon-functional-black);
+  --color-primary: var(--telekom-color-primary-standard);
+  --font-family: var(--telekom-typography-font-family-sans);
+  --font-size: calc(var(--telekom-typography-font-size-callout) * 3);
+  --font-size-prefix: var(--telekom-typography-font-size-callout);
 }
 
 .callout {

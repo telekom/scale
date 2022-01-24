@@ -10,16 +10,16 @@
  */
 
 :host {
-  --scl-chart-stack-card-color: var(--scl-color-blue-60);
+  --scl-chart-stack-card-color: var(--telekom-color-additional-blue-60);
 }
 .chart-stack-card {
   color: var(--color-text);
-  --scl-chart-stack-card-color: var(--scl-color-blue-60);
+  --scl-chart-stack-card-color: var(--telekom-color-additional-blue-60);
 }
 .chart-stack-card .header {
   height: var(--scl-spacing-24);
-  font-size: var(--scl-font-size-24);
-  font-weight: var(--scl-font-weight-extrabold);
+  font-size: var(--telekom-typography-font-size-headline-3);
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
   line-height: var(--scl-font-line-height-114);
   margin-bottom: var(--scl-spacing-24);
 }
@@ -37,13 +37,13 @@
 }
 
 .chart-stack-card .bar__item:first-of-type {
-  border-top-left-radius: var(--scl-radius-4);
-  border-bottom-left-radius: var(--scl-radius-4);
+  border-top-left-radius: var(--telekom-radius-small);
+  border-bottom-left-radius: var(--telekom-radius-small);
 }
 
 .chart-stack-card .bar__item:last-of-type {
-  border-top-right-radius: var(--scl-radius-4);
-  border-bottom-right-radius: var(--scl-radius-4);
+  border-top-right-radius: var(--telekom-radius-small);
+  border-bottom-right-radius: var(--telekom-radius-small);
 }
 
 .chart-stack-card .legend {
