@@ -1,0 +1,141 @@
+/*
+  THINK
+  - [ ] decide whether max-width should be calculated instead of hard-coded
+*/
+
+/*
+  columns / spacing / gutter
+  --------------------------
+  - sm  ->  4 / 16 / 32 (default)
+  - md  ->  8 / 16 / 32
+  - lg  -> 16 / 24 / 32
+  - xl  -> 16 / 24 / 32
+  - xxl -> 16 / 24 / 32
+
+  --columns - number of columns
+  --gutter-y - between columns
+  --gutter-x - between rows 
+  --spacing - padding
+  --max-width (not responsive)
+*/
+scale-grid,
+.scl-grid {
+  --spacing-md: var(--spacing-sm);
+  --spacing-lg: var(--spacing-md);
+  --spacing-xl: var(--spacing-lg);
+  --spacing-xxl: var(--spacing-xl);
+
+  --gutter-y-md: var(--gutter-y-sm);
+  --gutter-y-lg: var(--gutter-y-md);
+  --gutter-y-xl: var(--gutter-y-lg);
+  --gutter-y-xxl: var(--gutter-y-xl);
+
+  --gutter-x-md: var(--gutter-x-sm);
+  --gutter-x-lg: var(--gutter-x-md);
+  --gutter-x-xl: var(--gutter-x-lg);
+  --gutter-x-xxl: var(--gutter-x-xl);
+
+  --columns-md: var(--columns-sm);
+  --columns-lg: var(--columns-md);
+  --columns-xl: var(--columns-lg);
+  --columns-xxl: var(--columns-xl);
+
+  display: grid;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(var(--columns-sm, 4), minmax(0, 1fr));
+  padding-left: var(--spacing-sm, var(--scl-spacing-16, 1em));
+  padding-right: var(--spacing-sm, var(--scl-spacing-16, 1em));
+  column-gap: var(--gutter-y-sm, var(--scl-spacing-32, 2em));
+  row-gap: var(--gutter-x-sm, var(--scl-spacing-32, 2em));
+  /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
+  max-width: var(--max-width, 1552px);
+}
+
+/*
+  --offset
+  --size
+*/
+scale-grid-item,
+.scl-grid-item {
+  --size-md: var(--size-sm);
+  --size-lg: var(--size-md);
+  --size-xl: var(--size-lg);
+  --size-xxl: var(--size-xl);
+
+  --offset-md: var(--offset-sm);
+  --offset-lg: var(--offset-md);
+  --offset-xl: var(--offset-lg);
+  --offset-xxl: var(--offset-xl);
+
+  grid-column: var(--offset-sm, auto) / span var(--size-sm, 4);
+}
+
+/* md */
+@media screen and (min-width: 40em) {
+  scale-grid,
+  .scl-grid {
+    grid-template-columns: repeat(var(--columns-md, 8), minmax(0, 1fr));
+    padding-left: var(--spacing-md, var(--scl-spacing-16, 1em));
+    padding-right: var(--spacing-md, var(--scl-spacing-16, 1em));
+    column-gap: var(--gutter-y-md, var(--scl-spacing-32, 2em));
+    row-gap: var(--gutter-x-md, var(--scl-spacing-32, 2em));
+  }
+
+  scale-grid-item,
+  .scl-grid-item {
+    grid-column: var(--offset-md, auto) / span var(--size-md, 4);
+  }
+}
+
+/* lg */
+@media screen and (min-width: 65em) {
+  scale-grid,
+  .scl-grid {
+    grid-template-columns: repeat(var(--columns-lg, 16), minmax(0, 1fr));
+    padding-left: var(--spacing-lg, var(--scl-spacing-24, 1.5em));
+    padding-right: var(--spacing-lg, var(--scl-spacing-24, 1.5em));
+    column-gap: var(--gutter-y-lg, var(--scl-spacing-32, 2em));
+    row-gap: var(--gutter-x-lg, var(--scl-spacing-32, 2em));
+  }
+
+  scale-grid-item,
+  .scl-grid-item {
+    grid-column: var(--offset-lg, auto) / span var(--size-lg, 4);
+  }
+}
+
+/* xl */
+@media screen and (min-width: 81em) {
+  scale-grid,
+  .scl-grid {
+    grid-template-columns: repeat(var(--columns-xl, 16), minmax(0, 1fr));
+    padding-left: var(--spacing-xl, var(--scl-spacing-24, 1.5em));
+    padding-right: var(--spacing-xl, var(--scl-spacing-24, 1.5em));
+    column-gap: var(--gutter-y-xl, var(--scl-spacing-32, 2em));
+    row-gap: var(--gutter-x-xl, var(--scl-spacing-32, 2em));
+  }
+
+  scale-grid-item,
+  .scl-grid-item {
+    grid-column: var(--offset-xl, auto) / span var(--size-xl, 4);
+  }
+}
+
+/* xxl */
+@media screen and (min-width: 97em) {
+  scale-grid,
+  .scl-grid {
+    grid-template-columns: repeat(var(--columns-xxl, 16), minmax(0, 1fr));
+    padding-left: var(--spacing-xxl, var(--scl-spacing-24, 1.5em));
+    padding-right: var(--spacing-xxl, var(--scl-spacing-24, 1.5em));
+    column-gap: var(--gutter-y-xxl, var(--scl-spacing-32, 2em));
+    row-gap: var(--gutter-x-xxl, var(--scl-spacing-32, 2em));
+  }
+
+  scale-grid-item,
+  .scl-grid-item {
+    grid-column: var(--offset-xxl, auto) / span var(--size-xxl, 4);
+  }
+}

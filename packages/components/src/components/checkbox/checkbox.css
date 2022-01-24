@@ -88,7 +88,7 @@ scale-checkbox [part='checkbox'] {
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
-  margin: var(--scl-spacing-2) 0;
+  margin: var(--spacing-control) 0;
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
