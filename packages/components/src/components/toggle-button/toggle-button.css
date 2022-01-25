@@ -49,7 +49,7 @@
   --color-primary-disabled: var(--telekom-color-ui-disabled);
 
   /* variant: secondary different from primary*/
-  --background-secondary: var(--telekom-color-text-and-icon-functional-white);
+  --background-secondary: var(--telekom-color-background-canvas);
 
   /* selected */
   --color-selected: var(--telekom-color-text-and-icon-functional-white);
@@ -90,6 +90,7 @@
   vertical-align: var(--vertical-align);
   transition: var(--transition);
   margin: 0;
+  color: var(--color-primary);
 }
 
 .toggle-button--primary {
