@@ -165,9 +165,9 @@
     "de": "Feedback"
   },
   {
-    "elementSelector": "#legal-terms-of-use--page",
-    "en": "Terms of Use",
-    "de": "Nutzungsbedingungen"
+    "elementSelector": "#legal-disclaimer--page",
+    "en": "Disclaimer",
+    "de": "Haftungsausschluss"
   },
   {
     "elementSelector": "#legal-legal-notice--page",
