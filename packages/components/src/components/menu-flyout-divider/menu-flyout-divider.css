@@ -13,7 +13,7 @@
 
 :host {
   display: block;
-  --color: var(--scl-color-grey-10);
+  --color: var(--telekom-color-ui-light);
 }
 
 .menu-flyout-divider {

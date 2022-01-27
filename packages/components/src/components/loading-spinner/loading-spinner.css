@@ -8,14 +8,16 @@
   --line-height-size-small: 24px;
   --line-height-size-large: 48px;
 
-  --font-weight: var(--scl-font-weight-bold);
-  --font-size: var(--scl-font-size-16);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size: var(--telekom-typography-font-size-body);
 
-  --color-circle-primary: var(--scl-color-primary);
-  --color-circle-primary-inner: var(--scl-color-grey-20);
-  --color-text-primary: var(--scl-color-grey-60);
+  --color-circle-primary: var(--telekom-color-primary-standard);
+  --color-circle-primary-inner: var(--telekom-color-ui-light);
+  --color-text-primary: var(--telekom-color-ui-normal);
+  /* todo: this should be the new variable --telekom-color-ui-base */
   --color-circle-white: var(--scl-color-white);
-  --color-circle-white-inner: var(--scl-color-grey-60);
+  --color-circle-white-inner: var(--telekom-color-ui-normal);
+  /* todo: this should be complementary to the new variable --telekom-color-ui-base */
   --color-text-white: var(--scl-color-white);
 }
 

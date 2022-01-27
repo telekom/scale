@@ -10,10 +10,10 @@
  */
 
 :host {
-  --tab-height: var(--scl-spacing-40);
-  --tab-spacing: var(--scl-spacing-24);
-  --tab-radius: var(--scl-radius-4);
-  --tab-border-size: var(--scl-spacing-2);
-  --tab-border-size-selected: var(--scl-spacing-4);
-  --tab-border-color: var(--scl-color-grey-20);
+  --tab-height: var(--telekom-spacing-unit-x-10);
+  --tab-spacing: var(--telekom-spacing-unit-x-6);
+  --tab-radius: var(--telekom-radius-small);
+  --tab-border-size: var(--telekom-spacing-unit-x-05);
+  --tab-border-size-selected: var(--telekom-spacing-unit-x-1);
+  --tab-border-color: var(--telekom-color-ui-light);
 }

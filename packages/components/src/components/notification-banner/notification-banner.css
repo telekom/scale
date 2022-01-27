@@ -11,7 +11,7 @@
 
 :host {
   --width: 100%;
-  --radius: var(--scl-radius-8);
+  --radius: var(--telekom-radius-standard);
 
   /* Token not available, up for discussion */
   --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
@@ -24,7 +24,7 @@
   border-radius: var(--radius);
   width: var(--width);
   position: relative;
-  box-shadow: var(--scl-shadow-level-1);
+  box-shadow: var(--telekom-elevation-overlay);
   min-height: 48px;
 }
 
@@ -43,7 +43,7 @@
 
 .notification-banner__heading {
   margin: 14px 48px 14px 48px;
-  font-weight: var(--scl-font-weight-bold);
+  font-weight: var(--telekom-typography-font-weight-bold);
   line-height: 48px;
 }
 
@@ -65,7 +65,7 @@
 }
 
 ::slotted(*) {
-  font-weight: var(--scl-font-weight-regular);
+  font-weight: var(--telekom-typography-font-weight-regular);
 }
 
 .notification-banner__button-close {
@@ -89,7 +89,7 @@
 
 .notification-banner__button-close:hover svg {
   background-color: white;
-  color: var(--scl-color-primary-hover);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 .notification-banner__icon-success {
@@ -98,7 +98,7 @@
   left: 17px;
   height: 20px;
   width: 20px;
-  color: var(--scl-color-background-success);
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 
 .notification-banner__icon-error {
@@ -107,7 +107,7 @@
   left: 17px;
   height: 20px;
   width: 20px;
-  color: var(--scl-color-background-error);
+  color: var(--telekom-color-text-and-icon-functional-danger);
 }
 
 .notification-banner__icon-information {
@@ -116,7 +116,7 @@
   left: 17px;
   height: 20px;
   width: 20px;
-  color: var(--scl-color-text-info);
+  color: var(--telekom-color-text-and-icon-functional-informational);
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {

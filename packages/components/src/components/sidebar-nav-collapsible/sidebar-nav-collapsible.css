@@ -12,11 +12,11 @@
 :host {
   --border-bottom-color: var(--scl-color-grey-10);
   --border-left-color-third-nesting: var(--scl-color-grey-70);
-  --color-active: var(--scl-color-primary-active);
-  --color-primary: var(--scl-color-primary);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
-  --font-weight-bold: var(--scl-font-weight-bold);
-  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --font-weight-bold: var(--telekom-typography-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
 }
 .sidebar-nav-collapsible {
   margin: 0;
@@ -53,7 +53,7 @@
   justify-content: space-between;
   text-decoration: none;
   font-family: inherit;
-  border-radius: var(--scl-radius-2);
+  border-radius: var(--telekom-radius-small);
 }
 
 .sidebar-nav-collapsible__button:hover {
