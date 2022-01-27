@@ -1,0 +1,40 @@
+[
+  {
+    "primaryColors": [
+      {
+        "colors": "#e20074",
+        "token": "Magenta",
+        "use": "Telekom Brand",
+        "contrast": { "first": "#fff", "second": "#000" },
+        "hex": "#e20074",
+        "colorsHeight": "80"
+      },
+      {
+        "colors": "#ffffff",
+        "token": "White",
+        "use": "Background",
+        "contrast": { "first": "#000" },
+        "hex": "#ffffff",
+        "colorsHeight": "80"
+      }
+    ],
+    "textColors": [
+      {
+        "colors": "#191919",
+        "token": "Grey90",
+        "use": "Standard text",
+        "contrast": { "first": "#fff" },
+        "hex": "#191919",
+        "colorsHeight": "80"
+      },
+      {
+        "colors": "#666666",
+        "token": "Grey60",
+        "use": "Additional text",
+        "contrast": { "second": "#fff" },
+        "hex": "#666666",
+        "colorsHeight": "80"
+      }
+    ]
+  }
+]
