@@ -20,12 +20,13 @@
   position: relative;
 }
 
+/* FIXME:TOKEN white background value */
 .logo--variant-magenta {
-  background-color: var(--scl-color-white);
+  background-color: var(--telekom-color-text-and-icon-functional-white);
 }
 
 .logo--variant-white {
-  background-color: var(--scl-color-primary);
+  background-color: var(--telekom-color-primary-standard);
 }
 
 .logo--transparent {
