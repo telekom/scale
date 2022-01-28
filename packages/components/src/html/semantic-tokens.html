@@ -30,20 +30,26 @@
     <p>Hello.</p>
 
     <script type="module">
-      const body = document.body
-      body.dataset.mode = 'light'
+      const body = document.body;
+      body.dataset.mode = 'light';
       setTimeout(() => {
-        console.log('To enable dark mode press Ctrl+Shift+M while having focus on the canvas')
-      }, 1000)
+        console.log(
+          'To enable dark mode press Ctrl+Shift+M while having focus on the canvas'
+        );
+      }, 1000);
       function switchMode(bool) {
-        body.dataset.mode = bool ? 'dark' : 'light'
-        console.log(`${body.dataset.mode.toUpperCase()} mode enabled`)
+        body.dataset.mode = bool ? 'dark' : 'light';
+        console.log(`${body.dataset.mode.toUpperCase()} mode enabled`);
       }
       document.addEventListener('keydown', (event) => {
-        if (event.key.toUpperCase() === 'M' && event.ctrlKey && event.shiftKey) {
-          switchMode(body.dataset.mode === 'light')
+        if (
+          event.key.toUpperCase() === 'M' &&
+          event.ctrlKey &&
+          event.shiftKey
+        ) {
+          switchMode(body.dataset.mode === 'light');
         }
-      })
+      });
     </script>
   </body>
 </html>
