@@ -10,7 +10,8 @@
  */
 
 :host {
-  --color: var(--telekom-color-ui-extra-strong);
+  /* FIXME:TOKEN previously scl-color-grey-90 */
+  --color: var(--telekom-color-text-and-icon-additional);
   --radius: var(--telekom-radius-large);
   --font-size: var(--telekom-typography-font-size-small);
   --border: 1px solid var(--telekom-color-ui-subtle);
@@ -23,7 +24,9 @@
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
   --radius-last-prompt-stack: 0 0 var(--radius) 0;
+  /* FIXME:TOKEN previously scl-color-grey-90 */
   --stroke-svg: var(--telekom-color-ui-extra-strong);
+  /* FIXME:TOKEN high-contrast variable */
   --stroke-svg-high-contrast: var(--scl-color-white);
   --width-button: 42px;
   --padding-info: var(--telekom-spacing-unit-x-2);

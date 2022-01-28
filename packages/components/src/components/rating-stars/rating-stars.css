@@ -14,6 +14,7 @@
   --stars-hover-color: var(--telekom-color-text-and-icon-primary-hovered);
   --stars-active-color: var(--telekom-color-text-and-icon-primary-pressed);
   --stars-inactive-color: transparent;
+  /* FIXME:TOKEN placeholder color */
   --stars-placeholder-color: var(--scl-color-grey-90);
   --stars-placeholder-revert-color: var(--scl-color-grey-90);
   --stars-disabled-color: var(--scl-color-grey-50);
@@ -22,6 +23,7 @@
   --stars-size: 24px;
   --font-weight-medium: var(--telekom-typography-font-weight-medium);
   --font-size-small: var(--telekom-typography-font-size-small);
+  /* FIXME:TOKEN infotext not using blue but gray*/
   --infotext-color: var(--telekom-color-text-and-icon-additional);
 }
 

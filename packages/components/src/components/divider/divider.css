@@ -13,7 +13,8 @@
   --width: 100%;
   --height: 100%;
   --spacing: var(--telekom-spacing-unit-x-3);
-  --color: var(--scl-color-grey-20);
+  /* FIXME:TOKEN this used to be scl-color-grey-20 */
+  --color: var(--telekom-color-ui-subtle);
   --border-width: var(--telekom-spacing-unit-x-025);
   --min-height-vertical: var(--telekom-spacing-unit-x-6);
 

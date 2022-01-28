@@ -17,6 +17,7 @@
 :host {
   box-sizing: content-box;
   position: fixed;
+  /* FIXME:TOKEN missing z-index */
   z-index: var(--scl-z-index-20);
   pointer-events: none;
 }
@@ -25,6 +26,7 @@
   display: none;
   position: absolute;
   pointer-events: initial;
+  /* FIXME:TOKEN missing z-index */
   z-index: var(--scl-z-index-20);
   background: var(--telekom-color-background-surface);
   border-radius: var(--telekom-radius-large);
@@ -127,11 +129,13 @@
 }
 .menu-flyout-list__scroll-up-indicator {
   top: var(--telekom-spacing-unit-x-2);
+  /* FIXME:TOKEN previously --scl-color-grey-40 */
   border-bottom: 5px solid var(--telekom-color-ui-light);
   border-top: 0;
 }
 .menu-flyout-list__scroll-down-indicator {
   bottom: var(--telekom-spacing-unit-x-2);
+  /* FIXME:TOKEN previously --scl-color-grey-40 */
   border-top: 5px solid var(--telekom-color-ui-light);
   border-bottom: 0;
 }

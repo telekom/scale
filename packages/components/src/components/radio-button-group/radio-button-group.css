@@ -16,6 +16,7 @@
   --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x-2);
   --margin-top-error-helper-text: var(--telekom-spacing-unit-x-1);
   --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
+  /* FIXME:TOKEN high contrast variable */
   --color-error-helper-text-hcm: var(--scl-color-white);
 
   /*title*/

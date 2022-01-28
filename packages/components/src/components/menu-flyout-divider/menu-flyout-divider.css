@@ -13,7 +13,8 @@
 
 :host {
   display: block;
-  --color: var(--telekom-color-ui-light);
+  /* FIXME:TOKEN previously scl-color-grey-10 */
+  --color: var(--telekom-color-ui-subtle);
 }
 
 .menu-flyout-divider {

@@ -27,11 +27,13 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   font-family: inherit;
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x-025) solid var(--scl-color-grey-90);
+  /* FIXME:TOKEN this used to be --scl-color-grey-90 */
+  border: var(--telekom-spacing-unit-x-025) solid var(--telekom-color-ui-extra-strong);
 }
 .input .input__textarea {
   width: 100%;
@@ -43,6 +45,7 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   font-family: inherit;
   font-size: var(--telekom-typography-font-size-body);
@@ -59,6 +62,7 @@
 .input .input__counter {
   display: flex;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   margin-left: auto;
   padding-right: var(--telekom-spacing-unit-x-3);
@@ -69,11 +73,12 @@
 }
 .input .input__helper-text {
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   padding-left: var(--telekom-spacing-unit-x-3);
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
-  color: var(--telekom-color-additional-blue-700);
+  color: var(--telekom-color-text-and-icon-functional-informational);
 }
 .input .input__meta {
   display: flex;
@@ -92,7 +97,7 @@
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
-  border-color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
+  border-color: var(--telekom-color-primary-hovered, #f90984);
 }
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
@@ -102,8 +107,10 @@
 .input:not(.input--disabled) .input__input:focus::placeholder,
 .input:not(.input--disabled) .input__select:focus::placeholder,
 .input:not(.input--disabled) .input__textarea:focus::placeholder {
+  /* FIXME:TOKEN what color to use for placeholder, --telekom-color-text-and-icon-additional ?*/
   color: var(--scl-color-grey-60);
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
 }
 .input .input__select-wrapper scale-icon {
@@ -119,9 +126,11 @@
 .input ::placeholder {
   color: transparent;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
 }
 .input--variant-static .input__label {
+  /* FIXME:TOKEN what color to use for placeholder, --telekom-color-text-and-icon-additional ?*/
   color: var(--scl-color-grey-60);
   display: flex;
   font-weight: var(--telekom-typography-font-weight-medium);
@@ -137,11 +146,14 @@
 .input--variant-animated .input__label {
   top: 0;
   left: 0;
+  /* FIXME:TOKEN what color to use for placeholder, --telekom-color-text-and-icon-additional ?*/
   color: var(--scl-color-grey-60);
   display: flex;
+  /* FIXME:TOKEN missing z-index vars */
   z-index: var(--scl-z-index-10);
   position: absolute;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   pointer-events: none;
   font-size: var(--telekom-typography-font-size-body);
@@ -157,6 +169,7 @@
   color: var(--scl-color-grey-60);
   transform: translate(var(--telekom-spacing-unit-x-3), var(--telekom-spacing-unit-x-2));
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-bold);
@@ -186,6 +199,7 @@
   z-index: var(--scl-z-index-10);
   position: absolute;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   pointer-events: none;
   font-size: var(--telekom-typography-font-size-body);
@@ -201,9 +215,11 @@
 }
 .input--size-small.input--has-focus .input__label,
 .input--size-small.animated .input__label {
+  /* FIXME:TOKEN what color to use for label, --telekom-color-text-and-icon-additional ?*/
   color: var(--scl-color-grey-60);
   transform: translate(var(--telekom-spacing-unit-x-3), var(--telekom-spacing-unit-x-1));
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-medium);
@@ -261,7 +277,7 @@
   input:checked:disabled
   ~ .input__checkbox-container
   scale-icon {
-  --icon-color: var(--scl-color-grey-30);
+  --icon-color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--type-checkbox
   input:checked:not([disabled]):hover
@@ -272,8 +288,8 @@
   ~ .input__checkbox-container:hover
   .input__checkbox-placeholder {
   box-shadow: none;
-  border-color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
-  background: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
+  border-color: var(--telekom-color-primary-hovered, #f90984);
+  background: var(--telekom-color-primary-hovered, #f90984);
 }
 .input--type-checkbox
   input:checked:not([disabled]):active
@@ -283,8 +299,8 @@
   input:checked:not([disabled])
   ~ .input__checkbox-container:active
   .input__checkbox-placeholder {
-  border-color: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
-  background: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
+  border-color: var(--telekom-color-primary-pressed, #cb0068);
+  background: var(--telekom-color-primary-pressed, #cb0068);
 }
 /* TODO this could removed once scale-icon is removed */
 .input--type-checkbox
@@ -325,7 +341,7 @@
   ~ .input__checkbox-container:hover
   .input__checkbox-placeholder {
   box-shadow: none;
-  border-color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
+  border-color: var(--telekom-color-primary-hovered, #f90984);
 }
 .input--type-checkbox
   input:not([disabled]):hover
@@ -345,8 +361,8 @@
   input:not([disabled])
   ~ .input__checkbox-container:active
   .input__checkbox-placeholder {
-  border-color: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
-  background: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
+  border-color: var(--telekom-color-primary-pressed, #cb0068);
+  background: var(--telekom-color-primary-pressed, #cb0068);
 }
 /* TODO this could removed once scale-icon is removed */
 .input--type-checkbox
@@ -375,6 +391,7 @@
   margin: 0;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-spacing-unit-x-025) solid var(--telekom-color-text-and-icon-standard);
@@ -388,16 +405,17 @@
   position: absolute;
   user-select: none;
   /* TODO this could removed once scale-icon is removed */
-  --icon-color: var(--telekom-color-background-surface);
+  --icon-color: var(--telekom-color-text-and-icon-inverted-standard);
 }
 .input--type-checkbox .input__checkbox-container ~ label {
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
 }
 .input--type-checkbox.input--status-error
   .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x-05) solid var(--scl-color-background-error);
+  border: var(--telekom-spacing-unit-x-05) solid var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio {
   display: flex;
@@ -414,6 +432,7 @@
 .input--type-radio label {
   color: var(--telekom-color-text-and-icon-standard);
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
   font-weight: var(--telekom-typography-font-weight-medium);
 }
@@ -421,15 +440,19 @@
   width: var(--telekom-spacing-unit-x-4);
   height: var(--telekom-spacing-unit-x-4);
   transition: all var(--telekom-motion-duration-transition)
+  /* FIXME:TOKEN update this */
   cubic-bezier(var(--telekom-motion-easing-standard));
+  /* FIXME:TOKEN hardcoded values  */
   border-radius: 50%;
   -webkit-appearance: none;
   background-color: #fff;
-  border: var(--telekom-spacing-unit-x-025) solid var(--telekom-color-text-and-icon-standard);
+  /* FIXME:TOKEN needs some sort of black  */
+  border: var(--telekom-spacing-unit-x-025) solid var(--scl-color-text-standard);
   margin: 0 var(--telekom-spacing-unit-x-2) 0 0;
 }
 .input--type-radio input:focus {
   outline: none;
+  /* FIXME:TOKEN should this be defined here? */
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
 }
 .input--type-radio:hover input:not(:checked):not([disabled]) {
@@ -440,7 +463,7 @@
   color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
 }
 .input--type-radio input:active {
-  border: var(--telekom-spacing-unit-x-2) solid var(--telekom-color-text-and-icon-primary-pressed);
+  border: var(--telekom-spacing-unit-x-2) solid var(--telekom-color-primary-pressed);
 }
 .input--type-radio input:not(:checked):not([disabled]):active ~ label {
   color: var(--telekom-color-text-and-icon-primary-pressed);
@@ -452,14 +475,14 @@
   color: var(--scl-color-grey-30);
 }
 .input--type-radio.input--status-error input {
-  border: var(--telekom-spacing-unit-x-05) solid var(--scl-color-background-error);
+  border: var(--telekom-spacing-unit-x-05) solid var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio input:checked {
   border: calc(0.5 * var(--telekom-spacing-unit-x-3)) solid var(--telekom-color-primary-standard);
 }
 .input--type-radio input:checked:active {
   border: calc(0.5 * var(--telekom-spacing-unit-x-3)) solid
-    var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
+    var(--telekom-color-primary-pressed, #cb0068);
 }
 .input--type-radio input:checked:disabled {
   background: var(--scl-color-grey-30);
@@ -492,14 +515,15 @@
 .input--disabled .input__textarea,
 .input--disabled .input__helper-text {
   cursor: not-allowed;
+/* FIXME:TOKEN what font color to use here, background and border have the same color */
   border-color: var(--telekom-color-ui-disabled);
-  color: var(--telekom-color-ui-disabled);
-  background: var(--telekom-color-background-surface);
+  color: var(--telekom-color-text-and-icon-disabled);
+  background: var(--telekom-color-ui-disabled);
 }
 /* TODO this could removed once scale-icon is removed */
 .input--disabled .input__select-wrapper {
-  --icon-color: var(--telekom-color-ui-disabled);
+  --icon-color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--disabled.animated label.input__label {
-  color: var(--telekom-color-ui-disabled);
+  color: var(--telekom-color-text-and-icon-disabled);
 }

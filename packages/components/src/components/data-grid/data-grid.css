@@ -24,6 +24,7 @@
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 
+/* FIXME:TOKEN diffrent heading sizes that are not available in design tokens */
 .scl-h1 {
   margin: 0;
   font-size: var(--scl-font-variant-heading-1-size);
@@ -71,7 +72,7 @@
   font-size: var(--telekom-typography-font-size-body);
   font-weight: var(--telekom-typography-font-weight-regular);
   line-height: var(--telekom-typography-line-spacing-standard);
-
+  /* FIXME:TOKEN this used to be --scl-color-grey-90 */
   color: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -88,7 +89,7 @@
   display: block;
   background: var(--telekom-color-background-surface);
   border-radius: var(--telekom-radius-large);
-  border: 1px solid var(--scl-color-grey-10);
+  border: 1px solid var(--telekom-color-ui-subtle);
   overflow: hidden;
 }
 
@@ -150,7 +151,7 @@
 .thead {
   display: block;
   white-space: nowrap;
-  border-bottom: 1px solid var(--scl-color-grey-10);
+  border-bottom: 1px solid var(--telekom-color-ui-subtle);
   position: relative;
   background: var(--telekom-color-background-surface);
   z-index: 1;
@@ -243,7 +244,7 @@
   pointer-events: none;
   height: 100%;
   width: 1px;
-  background: var(--scl-color-grey-10);
+  background: var(--telekom-color-ui-subtle);
 }
 
 .thead__cell:first-child {
@@ -401,7 +402,8 @@
 .info {
   height: 54px;
   position: relative;
-  border-top: 1px solid var(--scl-color-grey-20);
+/* FIXME:TOKEN border-top different than border-bottom, used to be scl-color-grey-20 and scl-color-grey-10 respectively, now both --telekom-color-ui-subtle  */
+  border-top: 1px solid var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;
 }
@@ -414,8 +416,8 @@
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
-  border-bottom: 1px solid var(--scl-color-grey-10);
-  border-right: 1px solid var(--scl-color-grey-10);
+  border-bottom: 1px solid var(--telekom-color-ui-subtle);
+  border-right: 1px solid var(--telekom-color-ui-subtle);
 }
 
 /* Mobile */
@@ -454,7 +456,7 @@
   padding: var(--telekom-spacing-unit-x-6);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
-  border: 1px solid var(--scl-color-grey-10);
+  border: 1px solid var(--telekom-color-ui-subtle);
 }
 .data-grid--mobile .tbody__row:hover {
   background: var(--telekom-color-background-surface);
@@ -485,6 +487,7 @@
   display: block;
   width: 100px;
   flex-shrink: 0;
+  /* FIXME:TOKEN this variable is not defined anywhere */
   color: var(--scl-color-grey);
   font-size: var(--telekom-typography-font-size-small);
   font-weight: var(--telekom-typography-font-weight-medium);

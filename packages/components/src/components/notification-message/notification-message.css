@@ -12,9 +12,11 @@
 :host {
   --width: 100%;
   --radius: var(--telekom-radius-standard);
+  /* FIXME:TOKEN use ui-base here */
   --border: 1px solid var(--scl-color-white);
 
   /* Token not available, up for discussion */
+  /* FIXME:TOKEN hardcoded values */
   --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
   --background-warning: hsla(33.5, 100%, 75.1%, 0.3);
   --background-informational: hsla(190.20000000000005, 100%, 92%, 0.75);

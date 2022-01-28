@@ -15,6 +15,7 @@
   --width: 367px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
+  /* FIXME:TOKEN not sure what elevation to use here */
   --box-shadow: var(--scl-shadow-level-0);
   
   /* icon container colors */
@@ -25,7 +26,7 @@
   --background-informational-icon-container: var(--telekom-color-functional-informational-standard);
 
   /* icon container colors */
-
+  /* FIXME:TOKEN hardcoded values */
   --background-success-text-container: #f2f7ef;
   --background-warning-text-container: #fbf4eb;
   --background-error-text-container: #fbf3f4;

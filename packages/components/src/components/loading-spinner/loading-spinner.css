@@ -12,12 +12,14 @@
   --font-size: var(--telekom-typography-font-size-body);
 
   --color-circle-primary: var(--telekom-color-primary-standard);
+  /* FIXME:TOKEN this was --scl-color-grey-20  */
   --color-circle-primary-inner: var(--telekom-color-ui-light);
-  --color-text-primary: var(--telekom-color-ui-normal);
-  /* todo: this should be the new variable --telekom-color-ui-base */
+  /* FIXME:TOKEN this was --scl-color-grey-60  */
+  --color-text-primary: var(--telekom-color-text-and-icon-additional);
+  /* FIXME:TOKEN this should be the new variable --telekom-color-ui-base ?*/
   --color-circle-white: var(--scl-color-white);
   --color-circle-white-inner: var(--telekom-color-ui-normal);
-  /* todo: this should be complementary to the new variable --telekom-color-ui-base */
+  /* FIXME:TOKEN this should be complementary to the new variable --telekom-color-ui-base */
   --color-text-white: var(--scl-color-white);
 }
 

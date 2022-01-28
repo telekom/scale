@@ -10,27 +10,32 @@
  */
 
 scale-table {
-  --radius: var(--scl-radius-8) var(--scl-radius-8) 0 0;
-  --background: var(--scl-color-background-light);
-  --color: var(--scl-color-text-standard);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-active);
-  --font-size: var(--scl-font-size-12);
+  --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
+  /* FIXME:TOKEN previously --scl-color-background-light */
+  --background: var(--telekom-color-ui-subtle);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-hovered);
+  --color-active: var(--telekom-color-text-and-icon-pressed);
+  --font-size: var(--telekom-typography-font-size-small);
 
   --spacing-tbody-td: 16px 8px;
-  --border-bottom-tbody-td: 1px solid var(--scl-color-grey-20);
-  --background-tbody: var(--scl-color-background-standard);
+  /* FIXME:TOKEN previously --scl-color-grey-20 */
+  --border-bottom-tbody-td: 1px solid var(--telekom-color-ui-subtle);
+  --background-tbody: var(--telekom-color-background-surface);
+  /* FIXME:TOKEN hardcoded values */
   --background-tbody-tr-hover: #ededed;
 
-  --background-tfoot: var(--scl-color-background-standard);
-  --border-bottom-tfoot-td: 1px solid var(--scl-color-text-standard);
+  --background-tfoot: var(--telekom-color-background-surface);
+  --border-bottom-tfoot-td: 1px solid var(--telekom-color-text-and-icon-standard);
 
   --spacing-th-sortable: 0 8px 0 0;
+  /* FIXME:TOKEN hardcoded values */
   --background-th-sortable-hover: #ededed;
   --background-th-sortable-active: #dcdcdc;
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2)
-    var(--scl-color-focus);
-  --background-tr-striped: var(--scl-color-grey-0);
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-inner-sm)
+    var(--telekom-color-functional-focus);
+    /* FIXME:TOKEN  previously --scl-color-grey-0 */
+  --background-tr-striped: var(--telekom-color-ui-subtle);
 }
 .table {
   display: block;

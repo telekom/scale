@@ -15,5 +15,6 @@
   --tab-radius: var(--telekom-radius-small);
   --tab-border-size: var(--telekom-spacing-unit-x-05);
   --tab-border-size-selected: var(--telekom-spacing-unit-x-1);
+  /* FIXME:TOKEN previously scl-color-grey-20 */
   --tab-border-color: var(--telekom-color-ui-light);
 }

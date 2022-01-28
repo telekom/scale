@@ -10,9 +10,12 @@
  */
 
 :host {
-  --border-bottom-color: var(--scl-color-grey-10);
-  --border-left-color-third-nesting: var(--scl-color-grey-70);
+  /* FIXME:TOKEN previously --scl-color-grey-10 */
+  --border-bottom-color: var(--telekom-color-ui-subtle);
+  /* FIXME:TOKEN previously --scl-color-grey-70 */
+  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  /* FIXME:TOKEN this variable is used sometimes for background soetimes for font */
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
@@ -53,6 +56,7 @@
   justify-content: space-between;
   text-decoration: none;
   font-family: inherit;
+  /* FIXME:TOKEN previously --scl-radius-2 no equivalent */
   border-radius: var(--telekom-radius-small);
 }
 

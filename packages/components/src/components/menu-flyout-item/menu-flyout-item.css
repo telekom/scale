@@ -21,6 +21,7 @@
 }
 
 * {
+  /* FIXME:TOKEN hardcoded value */
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
@@ -66,7 +67,8 @@
 
 .menu-flyout-item--disabled {
   outline: none;
-  color: #ccc;
+  /* FIXME:TOKEN previously hard coded color: #ccc; */
+  color: var(--telekom-color-text-and-icon-disabled)
   cursor: not-allowed;
 }
 

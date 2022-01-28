@@ -17,8 +17,8 @@
   --font-size-inner-status: var(--telekom-typography-font-size-small);
   --font-size-status: var(--telekom-typography-font-size-small);
   --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
-  --color-status: var(--telekom-color-ui-normal);
-  --color-status-description: var(--telekom-color-ui-normal);
+  --color-status: var(--telekom-color-text-and-icon-additional);
+  --color-status-description: var(--telekom-color-text-and-icon-additional);
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
   --spacing-label: var(--telekom-spacing-unit-x-2) 0;
