@@ -19,11 +19,11 @@ scale-table {
   --font-size: var(--telekom-typography-font-size-small);
   --font-weight: var(--telekom-typography-font-weight-bold);
 
-  --spacing-tbody-td: var(--telekom-spacing-unit-x-4)
-    var(--telekom-spacing-unit-x-2);
+  --spacing-tbody-td: var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x2);
   /*FIXME:TOKEN border color should be different from background color running out of choice? */
   /* FIXME:TOKEN previously --scl-color-grey-20 */
-  --border-bottom-tbody-td: var(--telekom-spacing-unit-x-025) solid
+  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
     var(--scl-color-grey-20);
   /*FIXME:TOKEN background color white? */
   --background-tbody: var(--scl-color-background-standard);
@@ -31,18 +31,18 @@ scale-table {
   --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
   /*FIXME:TOKEN background color white? */
   --background-tfoot: var(--scl-color-background-standard);
-  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x-025) solid
+  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-text-and-icon-standard);
 
-  --spacing-th-sortable: 0 var(--telekom-spacing-unit-x-2) 0 0;
+  --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
   /* FIXME:TOKEN hardcoded values #ededed */
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-light);
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x-05)
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   /*FIXME:TOKEN --scl-color-grey-0? */
   --background-tr-striped: var(--scl-color-grey-0);
-  --padding: var(--telekom-spacing-unit-x-0) var(--telekom-spacing-unit-x-2);
+  --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 .table {
   display: block;
