@@ -3,19 +3,28 @@
 <style>
   body {
     font-family: "TeleNeoWeb", "TeleNeo", sans-serif;
+
+    /* needed for dark mode */
+    color: var(--telekom-color-text-and-icon-standard);
+    background: var(--telekom-color-background-canvas);
+    transition: background;
+    transition-duration: var(--telekom-motion-duration-animation);
+    transition-timing-function: var(--telekom-motion-easing-standard);
   }
+
   .sbdocs.sbdocs-content {
     max-width: 1066px !important;
   }
+
   .sr-only {
     position: absolute;
     left: -10000px;
     overflow: hidden;
   }
+
   .brand-header-spacing {
     margin: -1rem;
   }
-
 
   scale-sb-spacing {
     display: block;
