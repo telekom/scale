@@ -46,7 +46,7 @@ scale-radio-button {
   --height-control: var(--telekom-spacing-unit-x4);
   --transition-control: var(--transition);
   --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
-  --background-color-control: var(--scl-color-white);
+  --background-color-control: var(--telekom-color-background-surface);
   --border-control: var(--telekom-spacing-unit-x025) solid var(--color-text);
   --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
     var(--color-primary);
@@ -158,5 +158,5 @@ scale-radio-button {
   cursor: not-allowed;
   border-color: var(--color-disabled);
   color: var(--color-disabled);
-  background: var(--scl-color-white);
+  background: var(--telekom-color-background-surface);
 }
