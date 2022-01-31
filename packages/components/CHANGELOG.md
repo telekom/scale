@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+
+### Bug Fixes
+
+* **checkbox:** apply scoped css variable spacing control ([#807](https://github.com/telekom/scale/issues/807)) ([8545c21](https://github.com/telekom/scale/commit/8545c211438ee21d89191181ab8314bec7eeaf8f))
+
+
+
+
+
 # [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
 
 
