@@ -107,7 +107,7 @@
   align-items: center;
   justify-content: space-between;
   padding-right: 62px;
-  padding-left: var(--telekom-spacing-unit-x-6);
+  padding-left: var(--telekom-spacing-unit-x6);
 }
 
 .data-grid__heading {
@@ -115,8 +115,8 @@
 
 .data-grid__settings-menu {
   position: absolute;
-  top: var(--telekom-spacing-unit-x-4);
-  right: var(--telekom-spacing-unit-x-4);
+  top: var(--telekom-spacing-unit-x4);
+  right: var(--telekom-spacing-unit-x4);
 }
 
 .data-grid__scroll-container {
@@ -144,7 +144,7 @@
   min-height: 72px;
 }
 .data-grid--hide-menu .data-grid__title-block {
-  padding-right: var(--telekom-spacing-unit-x-4);
+  padding-right: var(--telekom-spacing-unit-x4);
 }
 
 /* Head block */
@@ -160,17 +160,17 @@
   cursor: pointer;
 }
 .thead-sortable:focus {
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-);
 }
 
 .thead__cell {
   display: inline-flex;
   align-items: center;
-  height: var(--telekom-spacing-unit-x-8);
+  height: var(--telekom-spacing-unit-x8);
   text-align: left;
   user-select: none;
   position: relative;
-  padding: 0 var(--telekom-spacing-unit-x-4);
+  padding: 0 var(--telekom-spacing-unit-x4);
   color: var(--telekom-color-text-and-icon-additional);
 }
 
@@ -231,10 +231,10 @@
 
 .thead__divider {
   position: absolute;
-  right: calc(-1 * var(--telekom-spacing-unit-x-2));
+  right: calc(-1 * var(--telekom-spacing-unit-x2));
   bottom: 0px;
   height: 100%;
-  padding: 19px var(--telekom-spacing-unit-x-2) 0px;
+  padding: 19px var(--telekom-spacing-unit-x2) 0px;
   box-sizing: border-box;
   cursor: col-resize;
   z-index: 1;
@@ -248,7 +248,7 @@
 }
 
 .thead__cell:first-child {
-  padding-left: var(--telekom-spacing-unit-x-6);
+  padding-left: var(--telekom-spacing-unit-x6);
 }
 
 .thead__cell:focus {
@@ -321,13 +321,13 @@
 }
 .tbody__nested-cell {
   display: block;
-  padding: var(--telekom-spacing-unit-x-4);
+  padding: var(--telekom-spacing-unit-x4);
   margin: 0px;
 }
 
 .tbody__cell:first-of-type {
-  margin-left: var(--telekom-spacing-unit-x-4);
-  /* padding-left: var(--telekom-spacing-unit-x-6); */
+  margin-left: var(--telekom-spacing-unit-x4);
+  /* padding-left: var(--telekom-spacing-unit-x6); */
 }
 
 .tbody__nested-cell:first-child {
@@ -395,7 +395,7 @@
   flex-grow: 1;
 }
 .tbody__actions scale-button {
-  margin-right: var(--telekom-spacing-unit-x-2);
+  margin-right: var(--telekom-spacing-unit-x2);
 }
 
 /* Info block */
@@ -412,7 +412,7 @@
   position: absolute;
   bottom: 0;
   line-height: 54px;
-  left: var(--telekom-spacing-unit-x-6);
+  left: var(--telekom-spacing-unit-x6);
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
@@ -452,8 +452,8 @@
   display: block;
   position: relative;
   white-space: initial;
-  margin: 0 0 var(--telekom-spacing-unit-x-2);
-  padding: var(--telekom-spacing-unit-x-6);
+  margin: 0 0 var(--telekom-spacing-unit-x2);
+  padding: var(--telekom-spacing-unit-x6);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
   border: 1px solid var(--telekom-color-ui-subtle);
@@ -463,7 +463,7 @@
 }
 .data-grid--mobile .tbody__mobile-title {
   display: block;
-  margin-bottom: var(--telekom-spacing-unit-x-2);
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 .data-grid--mobile .tbody__mobile-label {
   display: block;
@@ -475,8 +475,8 @@
   padding: 5px 0;
   margin: 0;
   /* 24 to match text component, otherwise will not be centered */
-  min-height: var(--telekom-spacing-unit-x-6);
-  line-height: var(--telekom-spacing-unit-x-6);
+  min-height: var(--telekom-spacing-unit-x6);
+  line-height: var(--telekom-spacing-unit-x6);
   overflow: auto;
   overflow-x: hidden;
 }
@@ -514,7 +514,7 @@
 }
 .data-grid--mobile .tbody__nested-cell {
   padding: 0;
-  margin-bottom: var(--telekom-spacing-unit-x-2);
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 .data-grid--mobile.data-grid--shade-alternate .tbody__row:nth-of-type(even) {
   background: none;

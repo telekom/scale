@@ -11,15 +11,15 @@
 
 :host {
   --max-width: 15rem;
-  --spacing-indent: var(--telekom-spacing-unit-x-6);
-  --spacing-collapsible: var(--telekom-spacing-unit-x-4);
+  --spacing-indent: var(--telekom-spacing-unit-x6);
+  --spacing-collapsible: var(--telekom-spacing-unit-x4);
   --opacity-chevron: 0;
   --left-current-border: 0;
 
   --color: var(--telekom-color-text-and-icon-primary-standard);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   /* FIXME:TOKEN should this be defined hereß */
-  --box-shadow-focus: inset 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
   --color-toggle-button: var(--telekom-color-ui-normal);
   --border-y-toggle-button: 1px solid var(--telekom-color-ui-subtle);
   /* FIXME:TOKEN used to be --scl-radius-2 doesn't have an equivalent */

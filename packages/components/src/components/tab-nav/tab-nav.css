@@ -11,8 +11,8 @@
 
 :host {
   /*FIXME:TOKEN use space value for border size??? */
-  --tab-height: var(--telekom-spacing-unit-x-10);
-  --tab-spacing: var(--telekom-spacing-unit-x-6);
+  --tab-height: var(--telekom-spacing-unit-x10);
+  --tab-spacing: var(--telekom-spacing-unit-x6);
   --tab-radius: var(--telekom-radius-small);
   /*FIXME:TOKEN use space value for border size??? */
   --tab-border-size: var(--telekom-spacing-unit-x-05);

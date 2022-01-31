@@ -28,8 +28,8 @@ scale-radio-button {
   --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
   --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
   --color-helper-text: var(--telekom-color-text-and-icon-functional-informational);
-  --spacing-left-helper-text: var(--telekom-spacing-unit-x-6);
-  --spacing-top-helper-text: var(--telekom-spacing-unit-x-1);
+  --spacing-left-helper-text: var(--telekom-spacing-unit-x6);
+  --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
 
   /*label*/
   --transition-label: var(--transition);
@@ -37,25 +37,25 @@ scale-radio-button {
   --color-label: var(--color-text);
 
   /*control*/
-  --width-control: var(--telekom-spacing-unit-x-4);
-  --height-control: var(--telekom-spacing-unit-x-4);
+  --width-control: var(--telekom-spacing-unit-x4);
+  --height-control: var(--telekom-spacing-unit-x4);
   --transition-control: var(--transition);
-  --spacing-control: 0 var(--telekom-spacing-unit-x-2) 0 0;
+  --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
   --background-color-control: var(--scl-color-white);
-  --border-control: var(--telekom-spacing-unit-x-025) solid var(--color-text);
-  --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x-3)) solid
+  --border-control: var(--telekom-spacing-unit-x025) solid var(--color-text);
+  --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
     var(--color-primary);
-  --border-control-checked-active: calc(0.5 * var(--telekom-spacing-unit-x-3)) solid
+  --border-control-checked-active: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
     var(--color-primary-active, #cb0068);
-  --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x-3)) solid
+  --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
     var(--color-disabled);
   --background-control-checked-disabled: var(--scl-color-grey-30);
-  --border-control-active: var(--telekom-spacing-unit-x-2) solid
+  --border-control-active: var(--telekom-spacing-unit-x2) solid
     var(--color-primary-active);
-  --border-control-disabled: var(--telekom-spacing-unit-x-025) solid var(--color-disabled);
-  --border-control-error: var(--telekom-spacing-unit-x-05) solid
+  --border-control-disabled: var(--telekom-spacing-unit-x025) solid var(--color-disabled);
+  --border-control-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--color-focus);
+  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--color-focus);
 }
 
 .radio-button {
