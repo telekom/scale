@@ -22,7 +22,7 @@
 
 /* FIXME:TOKEN white background value */
 .logo--variant-magenta {
-  background-color: var(--telekom-color-text-and-icon-functional-white);
+  background-color: var(--telekom-color-background-surface);
 }
 
 .logo--variant-white {
