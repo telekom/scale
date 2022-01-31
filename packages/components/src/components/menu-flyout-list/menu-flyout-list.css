@@ -66,7 +66,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-right,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-left,
 .menu-flyout-list--direction-bottom-right {
-  top: calc(100% + var(--telekom-spacing-unit-x-1));
+  top: calc(100% + var(--telekom-spacing-unit-x1));
   left: 0;
   right: auto;
   bottom: auto;
@@ -76,7 +76,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-left,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-right,
 .menu-flyout-list--direction-bottom-left {
-  top: calc(100% + var(--telekom-spacing-unit-x-1));
+  top: calc(100% + var(--telekom-spacing-unit-x1));
   right: 0;
   left: auto;
   bottom: auto;
@@ -86,7 +86,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-right,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-left,
 .menu-flyout-list--direction-top-right {
-  bottom: calc(100% + var(--telekom-spacing-unit-x-1));
+  bottom: calc(100% + var(--telekom-spacing-unit-x1));
   left: 0;
   right: auto;
   top: auto;
@@ -96,7 +96,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-left,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-right,
 .menu-flyout-list--direction-top-left {
-  bottom: calc(100% + var(--telekom-spacing-unit-x-1));
+  bottom: calc(100% + var(--telekom-spacing-unit-x1));
   right: 0;
   left: auto;
   top: auto;
@@ -104,7 +104,7 @@
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-left,
 .menu-flyout-list--direction-right {
-  left: calc(100% - var(--telekom-spacing-unit-x-1));
+  left: calc(100% - var(--telekom-spacing-unit-x1));
   top: -20px;
   right: auto;
   bottom: auto;
@@ -112,7 +112,7 @@
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-right,
 .menu-flyout-list--direction-left {
-  right: calc(100% - var(--telekom-spacing-unit-x-1));
+  right: calc(100% - var(--telekom-spacing-unit-x1));
   top: -20px;
   left: auto;
   bottom: auto;
@@ -128,13 +128,13 @@
   left: 50%;
 }
 .menu-flyout-list__scroll-up-indicator {
-  top: var(--telekom-spacing-unit-x-2);
+  top: var(--telekom-spacing-unit-x2);
   /* FIXME:TOKEN previously --scl-color-grey-40 */
   border-bottom: 5px solid var(--telekom-color-ui-light);
   border-top: 0;
 }
 .menu-flyout-list__scroll-down-indicator {
-  bottom: var(--telekom-spacing-unit-x-2);
+  bottom: var(--telekom-spacing-unit-x2);
   /* FIXME:TOKEN previously --scl-color-grey-40 */
   border-top: 5px solid var(--telekom-color-ui-light);
   border-bottom: 0;

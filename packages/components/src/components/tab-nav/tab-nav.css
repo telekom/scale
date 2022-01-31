@@ -10,11 +10,11 @@
  */
 
 :host {
-  --tab-height: var(--telekom-spacing-unit-x-10);
-  --tab-spacing: var(--telekom-spacing-unit-x-6);
+  --tab-height: var(--telekom-spacing-unit-x10);
+  --tab-spacing: var(--telekom-spacing-unit-x6);
   --tab-radius: var(--telekom-radius-small);
-  --tab-border-size: var(--telekom-spacing-unit-x-05);
-  --tab-border-size-selected: var(--telekom-spacing-unit-x-1);
+  --tab-border-size: var(--telekom-spacing-unit-x05);
+  --tab-border-size-selected: var(--telekom-spacing-unit-x1);
   /* FIXME:TOKEN previously scl-color-grey-20 */
   --tab-border-color: var(--telekom-color-ui-light);
 }

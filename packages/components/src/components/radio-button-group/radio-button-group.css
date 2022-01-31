@@ -6,15 +6,15 @@
   /*helper-text*/
   --font-size-helper-text: var(--telekom-typography-font-size-small);
   --color-helper-text: var(--telekom-color-text-and-icon-functional-informational);
-  --padding-bottom-helper-text: var(--telekom-spacing-unit-x-2);
-  --margin-top-helper-text: var(--telekom-spacing-unit-x-1);
+  --padding-bottom-helper-text: var(--telekom-spacing-unit-x2);
+  --margin-top-helper-text: var(--telekom-spacing-unit-x1);
   --font-weight-helper-text: var(--telekom-typography-font-weight-medium);
 
   /*helper-text--status-error*/
   --font-size-error-helper-text: var(--telekom-typography-font-size-small);
   --color-error-helper-text: var(--telekom-color-text-and-icon-functional-danger);
-  --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x-2);
-  --margin-top-error-helper-text: var(--telekom-spacing-unit-x-1);
+  --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x2);
+  --margin-top-error-helper-text: var(--telekom-spacing-unit-x1);
   --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
   /* FIXME:TOKEN high contrast variable */
   --color-error-helper-text-hcm: var(--scl-color-white);
@@ -22,11 +22,11 @@
   /*title*/
   --font-size-title: var(--font-size-label);
   --font-weight-title: var(--telekom-typography-font-weight-medium);
-  --padding-bottom-title: var(--telekom-spacing-unit-x-1);
-  --margin-left-title: var(--telekom-spacing-unit-x-05);
+  --padding-bottom-title: var(--telekom-spacing-unit-x1);
+  --margin-left-title: var(--telekom-spacing-unit-x05);
 
   /*slotted items*/
-  --margin-top-slotted-item: var(--telekom-spacing-unit-x-1);
+  --margin-top-slotted-item: var(--telekom-spacing-unit-x1);
 }
 
 .radio-button-group {
