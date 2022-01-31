@@ -11,7 +11,7 @@
 
 :host {
   --background: var(--telekom-color-background-canvas, #fff);
-  --spacing-x: var(--telekom-spacing-unit-x-6);
+  --spacing-x: var(--telekom-spacing-unit-x6);
   --min-height: 100vh;
 }
 
