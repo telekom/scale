@@ -1252,7 +1252,7 @@ export class DataGrid {
         {this.isPagination && (
           <scale-pagination
             class={`info__pagination`}
-            hideBorders={!this.isMobile}
+            hideBorder={!this.isMobile}
             startElement={this.paginationStart}
             totalElements={this.rows.length}
             pageSize={this.pageSize}
