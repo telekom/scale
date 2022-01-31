@@ -21,7 +21,7 @@
   --color-status-description: var(--telekom-color-text-and-icon-additional);
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
-  --spacing-label: var(--telekom-spacing-unit-x-2) 0;
+  --spacing-label: var(--telekom-spacing-unit-x2) 0;
   --border: 1px solid var(--telekom-color-ui-normal);
 }
 
@@ -61,8 +61,8 @@
 
 .progress-bar__outer {
   width: 100%;
-  height: var(--telekom-spacing-unit-x-2);
-  margin: var(--telekom-spacing-unit-x-2);
+  height: var(--telekom-spacing-unit-x2);
+  margin: var(--telekom-spacing-unit-x2);
   margin-left: 0;
   overflow: hidden;
   position: relative;

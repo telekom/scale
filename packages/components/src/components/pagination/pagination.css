@@ -29,7 +29,7 @@
   /* FIXME:TOKEN high-contrast variable */
   --stroke-svg-high-contrast: var(--scl-color-white);
   --width-button: 42px;
-  --padding-info: var(--telekom-spacing-unit-x-2);
+  --padding-info: var(--telekom-spacing-unit-x2);
   --height-button: 56px;
   --height-button-small: 40px;
   --line-height-info: calc(var(--height-button) - 2px);

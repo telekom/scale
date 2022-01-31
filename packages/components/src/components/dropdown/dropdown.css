@@ -11,22 +11,22 @@
 
 scale-dropdown {
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: var(--telekom-spacing-unit-x-12);
-  --height-small: var(--telekom-spacing-unit-x-10);
-  --spacing-x: var(--telekom-spacing-unit-x-3);
-  --spacing-dropdown: var(--telekom-spacing-unit-x-3) var(--telekom-spacing-unit-x-10) 0
+  --height: var(--telekom-spacing-unit-x12);
+  --height-small: var(--telekom-spacing-unit-x10);
+  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-dropdown: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x10) 0
     calc(var(--spacing-x) - 1px);
     /* FIXME:TOKEN update this */
   --transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x-025) solid var(--telekom-color-text-and-icon-standard);
-  --border-error: var(--telekom-spacing-unit-x-05) solid var(--telekom-color-functional-danger-standard);
+  --border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-text-and-icon-standard);
+  --border-error: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-danger-standard);
 /* FIXME:TOKEN border-hover and border-focus both using primary hover */
   --border-color-hover: var(--scl-color-primary-hover, #f90984);
   --border-color-focus: var(--scl-color-primary-hover, #f90984);
   /* FIXME:TOKEN should this be defined here? */
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-disabled);
 
@@ -42,11 +42,11 @@ scale-dropdown {
   --color-helper-text-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /*meta*/
-  --spacing-y-meta: var(--telekom-spacing-unit-x-1);
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
   --color-meta: var(--telekom-color-text-and-icon-standard);
 
   /*icon*/
-  --height-icon: var(--telekom-spacing-unit-x-6);
+  --height-icon: var(--telekom-spacing-unit-x6);
   --color-icon: var(--telekom-color-text-and-icon-standard);
   --color-icon-hover: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
   --color-icon-active: var(--telekom-color-text-and-icon-primary-pressed, #cb0068);
@@ -157,13 +157,13 @@ scale-dropdown {
   font-size: var(--font-size-label);
   transform: translate(
     var(--spacing-x),
-    calc((var(--telekom-spacing-unit-x-12) - var(--font-size-label)) / 2)
+    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
   );
   font-weight: var(--font-weight-label);
 }
 
 .animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x-2));
+  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
   line-height: var(--telekom-typography-font-size-small);
@@ -188,7 +188,7 @@ scale-dropdown {
 }
 
 .dropdown--size-small.animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x-1));
+  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
   line-height: var(--telekom-typography-font-size-small);
