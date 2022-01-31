@@ -13,7 +13,7 @@
 
 :host,
 scale-checkbox {
-  --spacing-x: var(--telekom-spacing-unit-x-2);
+  --spacing-x: var(--telekom-spacing-unit-x2);
   --transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   --color-text: var(--telekom-color-text-and-icon-standard);
@@ -27,13 +27,13 @@ scale-checkbox {
   --color-primary-active: var(--telekom-color-primary-pressed, #cb0068);
 
   /*control*/
-  --width-control: var(--telekom-spacing-unit-x-4);
-  --height-control: var(--telekom-spacing-unit-x-4);
+  --width-control: var(--telekom-spacing-unit-x4);
+  --height-control: var(--telekom-spacing-unit-x4);
   --transition-control: var(--transition);
-  --spacing-control: var(--telekom-spacing-unit-x-05);
-  --spacing-left-control: var(--telekom-spacing-unit-x-1);
+  --spacing-control: var(--telekom-spacing-unit-x05);
+  --spacing-left-control: var(--telekom-spacing-unit-x1);
   --radius-control: var(--telekom-radius-small);
-  --border-width-control: var(--telekom-spacing-unit-x-025);
+  --border-width-control: var(--telekom-spacing-unit-x025);
 
   /*helper-text*/
   --transition-helper-text: var(--transition);
@@ -49,8 +49,8 @@ scale-checkbox {
   /*icon*/
   --color-icon-checked-disabled: var(--telekom-color-text-and-icon-disabled);
   --color-icon-checked-active: var(--telekom-color-text-and-icon-inverted-standard);
-  --width-icon: var(--telekom-spacing-unit-x-3);
-  --height-icon: var(--telekom-spacing-unit-x-3);
+  --width-icon: var(--telekom-spacing-unit-x3);
+  --height-icon: var(--telekom-spacing-unit-x3);
 }
 
 :host,
@@ -141,7 +141,7 @@ scale-checkbox.indeterminate [part='checkbox'] {
 /* focus states */
 
 scale-checkbox [part='input']:focus ~ [part='container'] [part='checkbox'] {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x-05) var(--color-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--color-focus);
 }
 
 /* hover states */
@@ -185,7 +185,7 @@ scale-checkbox.error [part='helper-text'] {
 /* :host(.error) [part='checkbox'], */
 scale-checkbox.error [part='checkbox'] {
   border-color: var(--color-error);
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x-025) var(--color-error);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x025) var(--color-error);
 }
 
 /* disabled states */

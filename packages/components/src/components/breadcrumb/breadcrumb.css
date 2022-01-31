@@ -10,14 +10,14 @@
  */
 
 :host {
-  --spacing-left: calc(-1 * var(--telekom-spacing-unit-x-2));
+  --spacing-left: calc(-1 * var(--telekom-spacing-unit-x2));
 
   --font-size-list-item: var(--telekom-typography-font-size-caption);
 
   --color-separator: var(--telekom-color-ui-normal);
 
-  --spacing-y-item: var(--telekom-spacing-unit-x-1);
-  --spacing-x-item: var(--telekom-spacing-unit-x-2);
+  --spacing-y-item: var(--telekom-spacing-unit-x1);
+  --spacing-x-item: var(--telekom-spacing-unit-x2);
 
   /* FIXME:TOKEN --color-link uses ui-normal value as it is the only one that matches the bradcrumb desired color */
   --color-link: var(--telekom-color-ui-normal);
@@ -25,7 +25,7 @@
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
   /* FIXME:TOKEN hardcoded shadow value*/
-  --box-shadow-link-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
+  --box-shadow-link-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
 
   --color-current: var(--telekom-color-text-and-icon-standard);
 }

@@ -17,7 +17,7 @@
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --radius: var(--telekom-radius-small);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
   --icon-color-hover: var(--telekom-color-text-and-icon-primary-pressed);
@@ -26,7 +26,7 @@
   --background-disabled: var(--scl-color-background-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-left-dismissable: var(--telekom-spacing-unit-x-05);
+  --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
 
   --border-button-dismissable-focus: 1px solid
     /* FIXME:TOKEN needs some white value, previously --scl-color-background-standard */
@@ -38,7 +38,7 @@
   
   --height-button-dismissable-small: 20px;
 
-  --spacing-small: 0 var(--telekom-spacing-unit-x-2);
+  --spacing-small: 0 var(--telekom-spacing-unit-x2);
   --font-size-small: var(--telekom-typography-font-size-small);
   /* FIXME:TOKEN previously --scl-font-line-height-160 */
   --line-height-small: var(--telekom-typography-line-spacing-loose);
