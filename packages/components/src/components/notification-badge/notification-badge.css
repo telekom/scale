@@ -25,8 +25,12 @@
 
   /*border*/
   /* FIXME:TOKEN  --color-notification-badge-border-focus used for border, --color-notification-badge-border-hover used for font */
-  --color-notification-badge-border-focus: var(--telekom-color-functional-focus);
-  --color-notification-badge-border-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-notification-badge-border-focus: var(
+    --telekom-color-functional-focus
+  );
+  --color-notification-badge-border-hover: var(
+    --telekom-color-text-and-icon-primary-hovered
+  );
   --line-width-notification-badge-border-focus: 2px;
   --padding-notification-badge-border: 8px 5px 0 5px;
   --margin-notification-badge-border: -8px -5px 0 -5px;

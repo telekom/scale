@@ -17,13 +17,21 @@
   --background: var(--telekom-color-background-surface);
   /* FIXME:TOKEN not sure what elevation to use here */
   --box-shadow: var(--scl-shadow-level-0);
-  
+
   /* icon container colors */
 
-  --background-success-icon-container: var(--telekom-color-functional-success-standard);
-  --background-warning-icon-container: var(--telekom-color-functional-warning-standard);
-  --background-error-icon-container: var(--telekom-color-functional-danger-standard);
-  --background-informational-icon-container: var(--telekom-color-functional-informational-standard);
+  --background-success-icon-container: var(
+    --telekom-color-functional-success-standard
+  );
+  --background-warning-icon-container: var(
+    --telekom-color-functional-warning-standard
+  );
+  --background-error-icon-container: var(
+    --telekom-color-functional-danger-standard
+  );
+  --background-informational-icon-container: var(
+    --telekom-color-functional-informational-standard
+  );
 
   /* icon container colors */
   /* FIXME:TOKEN hardcoded values */
