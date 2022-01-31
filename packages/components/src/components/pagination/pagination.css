@@ -10,23 +10,26 @@
  */
 
 :host {
-  --color: var(--scl-color-grey-90);
-  --radius: var(--scl-radius-12);
-  --font-size: var(--scl-font-size-12);
-  --border: 1px solid var(--scl-color-grey-10);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-active);
-  --color-button: var(--scl-color-grey-10);
+  /* FIXME:TOKEN previously scl-color-grey-90 */
+  --color: var(--telekom-color-text-and-icon-additional);
+  --radius: var(--telekom-radius-large);
+  --font-size: var(--telekom-typography-font-size-small);
+  --border: 1px solid var(--telekom-color-ui-subtle);
+  --color-hover: var(--telekom-color-primary-hovered);
+  --color-active: var(--telekom-color-primary-pressed);
+  --color-button: var(--telekom-color-ui-subtle);
   --border-button: var(--border);
-  --box-shadow-focus: inset 0 0 0 2px var(--scl-color-focus);
+  --box-shadow-focus: inset 0 0 0 2px var(--telekom-color-functional-focus);
   --radius-first-prompt: var(--radius) 0 0 var(--radius);
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
   --radius-last-prompt-stack: 0 0 var(--radius) 0;
-  --stroke-svg: var(--scl-color-grey-90);
+  /* FIXME:TOKEN previously scl-color-grey-90 */
+  --stroke-svg: var(--telekom-color-ui-extra-strong);
+  /* FIXME:TOKEN high-contrast variable */
   --stroke-svg-high-contrast: var(--scl-color-white);
   --width-button: 42px;
-  --padding-info: var(--scl-spacing-8);
+  --padding-info: var(--telekom-spacing-unit-x-2);
   --height-button: 56px;
   --height-button-small: 40px;
   --line-height-info: calc(var(--height-button) - 2px);

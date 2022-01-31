@@ -13,6 +13,7 @@
   /* TODO these variables placed in here are no use, they should be placed inside scale-switch */
   --size: 20px;
   --offset: 2px;
+  /* FIXME:TOKEN not sure as ultimately this value gets used as background, read TODO */
   --color-off: var(--scl-color-text-standard);
   --color-on: var(--scl-color-primary);
   --color-active: var(--scl-color-primary-active);
