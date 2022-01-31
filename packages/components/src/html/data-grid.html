@@ -123,9 +123,12 @@
           </scale-menu-flyout-item>
         </scale-menu-flyout-list>
       </scale-menu-flyout>
+      <!-- <scale-button
+        onClick="console.log(document.querySelector('#table1').selection)"
+      >
+        Export Selection
+      </scale-button> -->
     </scale-data-grid>
-
-    <scale-button id="btnxxx"> Export Selection </scale-button>
 
     <script>
       const fields = [
@@ -799,15 +802,6 @@
 
       // Pass in data
       const table = document.querySelector('#table1');
-
-      document.querySelector('#btnxxx').addEventListener('click', function () {
-        table.rows = table.rows.slice(0, 0).concat(table.rows.slice(0 + 1));
-
-        if (table.rows.length === 0) {
-          table.rows = rows;
-          console.log(table.rows)
-        }
-      });
 
       table.fields = fields;
       table.rows = rows;
