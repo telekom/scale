@@ -1,19 +1,169 @@
-import { Meta, Description, DocsContainer } from "@storybook/addon-docs/blocks";
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs/blocks';
+import index from '../color_table.json';
 
-import text_en from "./5.Colors_en.md";
-import text_de from "./5.Colors_de.md";
+import text_en from './5.Colors_en.md';
+import text_de from './5.Colors_de.md';
 
-<Meta title="Scale for Designers/Colors"
+<Meta
+  title="Scale for Designers/Colors"
   parameters={{
-      docs: {
-          container: ({ context }) => {
-              const locale = context && context.globals && context.globals.locale
-              return (
-                  <DocsContainer context={context}>
-                      {locale && <Description markdown={locale ==='en' ? text_en : text_de}/>}
-                  </DocsContainer>
-              )
-          }
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        let newSection = false;
+        let i = 0;
+        return (
+          <DocsContainer context={context}>
+            <table>
+              {index.map((item, i) => {
+                i = i;
+                if (i !== 0) {
+                  if (index[i - 1].section !== index[i].section)
+                    newSection = true;
+                  else {
+                    newSection = false;
+                  }
+                } else {
+                  newSection = true;
+                }
+                return (
+                  <div>
+                    {newSection ? (
+                      <thead>
+                        <h3>{index[i].section}</h3>
+                        <tr>
+                          <th
+                            style={{
+                              textAlign: 'left',
+                              color: '#6A6A6A',
+                              fontSize: '13px',
+                            }}
+                          >
+                            Value
+                          </th>
+                          <th
+                            style={{
+                              textAlign: 'left',
+                              color: '#6A6A6A',
+                              fontSize: '13px',
+                            }}
+                          >
+                            Comment
+                          </th>
+                          <th
+                            style={{
+                              textAlign: 'left',
+                              color: '#6A6A6A',
+                              fontSize: '13px',
+                            }}
+                          >
+                            Token
+                          </th>
+                        </tr>
+                      </thead>
+                    ) : null}
+                    <tbody>
+                      <td>
+                        <tr style={{ height: '150px' }}>
+                          <div
+                            style={{
+                              width: '400px',
+                              marginTop: '7px',
+                              marginBottom: '7px',
+                            }}
+                          >
+                            <div
+                              style={{
+                                height: '100px',
+                                width: '350px',
+                                borderRadius: '2px',
+                                backgroundColor: `${item.value}`,
+                                marginBottom: '10px',
+                                fontSize: '8px',
+                              }}
+                            ></div>
+                            <span
+                              style={{
+                                fontSize: '14px',
+                              }}
+                            >
+                              {item.value}
+                            </span>
+                          </div>
+                        </tr>
+                      </td>
+                      <td>
+                        <tr style={{ height: '150px' }}>
+                          <div
+                            style={{
+                              marginRight: '100px',
+                              marginTop: '7px',
+                              marginBottom: '7px',
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: '200px',
+                              }}
+                            >
+                              <span style={{ fontWeight: 'bold' }}>
+                                {item.name}
+                              </span>
+                            </div>
+                            <div>
+                              <span>{item.comment}</span>
+                            </div>
+                          </div>
+                        </tr>
+                      </td>
+                      <td>
+                        <tr style={{ height: '150px' }}>
+                          <div
+                            style={{
+                              marginLeft: '100px',
+                              marginRight: '100px',
+                              marginTop: '7px',
+                              marginBottom: '7px',
+                              width: '200px',
+                              backgroundColor: '#D9DBDE',
+                            }}
+                          >
+                            <div
+                              style={{
+                                padding: '10px',
+                              }}
+                            >
+                              <span
+                                style={{
+                                  padding: '10px',
+                                }}
+                              >
+                                {item.javascriptVariableName}
+                              </span>
+                              <button
+                                style={{
+                                  padding: '10px',
+                                }}
+                                onClick={() => {
+                                  navigator.clipboard.writeText(
+                                    item.javascriptVariableName
+                                  );
+                                }}
+                              >
+                                Copy
+                              </button>
+                            </div>
+                          </div>
+                        </tr>
+                      </td>
+                    </tbody>
+                  </div>
+                );
+              })}
+            </table>
+          </DocsContainer>
+        );
       },
+    },
   }}
 />

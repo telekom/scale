@@ -12,12 +12,12 @@
     "section": "Text & Icon",
     "cssVariableName": "--telekom-color-text…",
     "javascriptVariableName": "color.foo.bar",
-    "value": "#FF0000",
+    "value": "#000000",
     "comment": "..."
   },
   {
     "name": "Link / Hovered",
-    "section": "Text Icon",
+    "section": "Text & Icon",
     "cssVariableName": "--telekom-color-text…",
     "javascriptVariableName": "color.foo.bar",
     "value": "#000000",
