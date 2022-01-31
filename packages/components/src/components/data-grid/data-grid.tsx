@@ -236,7 +236,7 @@ export class DataGrid {
       row.selected = false;
     });
     // Determine if pagination will be required
-    this.isPagination = this.pageSize < this.rows.length;
+    this.isPagination = this.pageSize <= this.rows.length - 1;
   }
 
   checkHasData() {
