@@ -208,6 +208,16 @@ export class DataGrid {
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
     this.needsColumnResize = true;
+
+    if (
+      // when we run out of items on the current page
+      this.rows.length <= this.paginationStart &&
+      // and we are NOT on the first page
+      this.paginationStart - this.pageSize > -1
+    ) {
+      // step back one page
+      this.paginationStart = this.paginationStart - this.pageSize;
+    }
   }
 
   /* 8. Public Methods */
