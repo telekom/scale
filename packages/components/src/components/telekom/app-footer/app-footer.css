@@ -24,7 +24,7 @@
 
   --border-top-minimal: var(--telekom-spacing-unit-x-025) solid
     var(--telekom-color-ui-subtle);
-  --color-minimal: var(--telekom-color-ui-normal);
+  --color-minimal: var(--telekom-color-ui-regular);
   --background-minimal: var(--telekom-color-background-surface-highlight);
   /* FIXME:TOKEN angular vs minimal same value here*/
   --spacing-angular: var(--telekom-spacing-unit-x-6);
@@ -36,7 +36,7 @@
   --height-logo: var(--telekom-spacing-unit-x-6);
   --font-size-copyright: var(--telekom-typography-font-size-caption);
   --color-link-standard: var(--telekom-color-text-and-icon-inverted-standard);
-  --color-link-minimal: var(--telekom-color-ui-normal);
+  --color-link-minimal: var(--telekom-color-ui-regular);
 
   --font-size-navigation-standard: var(--telekom-typography-font-size-caption);
   --font-family-navigation-standard: var(--telekom-typography-font-family-sans);

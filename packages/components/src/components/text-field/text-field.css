@@ -60,10 +60,10 @@ scale-text-field {
 
   /*placeholder*/
   --transition-placeholder: var(--transition);
-  --color-placeholder: var(--telekom-color-ui-normal);
+  --color-placeholder: var(--telekom-color-ui-regular);
 
   /*label*/
-  --color-label: var(--telekom-color-ui-normal);
+  --color-label: var(--telekom-color-ui-regular);
   --color-label-readonly: var(--telekom-color-text-and-icon-standard);
   /* FIXME:TOKEN z-index token is needed */
   --z-index-label: var(--scl-z-index-10);
