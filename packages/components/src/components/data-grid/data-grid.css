@@ -160,7 +160,8 @@
   cursor: pointer;
 }
 .thead-sortable:focus {
-  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-);
 }
 
 .thead__cell {
@@ -188,7 +189,7 @@
   justify-content: center;
 }
 .thead__title {
-  color: var(--telekom-color-text-and-icon-standard );
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .thead__text {
@@ -402,7 +403,7 @@
 .info {
   height: 54px;
   position: relative;
-/* FIXME:TOKEN border-top different than border-bottom, used to be scl-color-grey-20 and scl-color-grey-10 respectively, now both --telekom-color-ui-subtle  */
+  /* FIXME:TOKEN border-top different than border-bottom, used to be scl-color-grey-20 and scl-color-grey-10 respectively, now both --telekom-color-ui-subtle  */
   border-top: 1px solid var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;

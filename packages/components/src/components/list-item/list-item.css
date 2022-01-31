@@ -18,7 +18,9 @@
   --font-size-marker-ordered: var(--telekom-typography-font-size-body);
   --font-weight-marker-ordered: var(--telekom-typography-font-weight-bold);
   --font-size-marker-ordered-nested: var(--telekom-typography-font-size-small);
-  --line-height-marker-ordered-nested: var(--telekom-typography-line-spacing-standard);
+  --line-height-marker-ordered-nested: var(
+    --telekom-typography-line-spacing-standard
+  );
   --spacing-top-marker-ordered-nested: calc(
     var(--telekom-spacing-unit-x4) - var(--telekom-spacing-unit-x3)
   );

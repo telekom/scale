@@ -14,28 +14,35 @@ scale-table {
   /* FIXME:TOKEN previously --scl-color-background-light */
   --background: var(--telekom-color-ui-subtle);
   --color: var(--telekom-color-text-and-icon-standard);
-  --color-hover: var(--telekom-color-text-and-icon-hovered);
-  --color-active: var(--telekom-color-text-and-icon-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --font-size: var(--telekom-typography-font-size-small);
+  --font-weight: var(--telekom-typography-font-weight-bold);
 
-  --spacing-tbody-td: 16px 8px;
+  --spacing-tbody-td: var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x2);
+  /*FIXME:TOKEN border color should be different from background color running out of choice? */
   /* FIXME:TOKEN previously --scl-color-grey-20 */
-  --border-bottom-tbody-td: 1px solid var(--telekom-color-ui-subtle);
-  --background-tbody: var(--telekom-color-background-surface);
-  /* FIXME:TOKEN hardcoded values */
-  --background-tbody-tr-hover: #ededed;
+  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
+    var(--scl-color-grey-20);
+  /*FIXME:TOKEN background color white? */
+  --background-tbody: var(--scl-color-background-standard);
+  /* FIXME:TOKEN hardcoded values #ededed */
+  --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
+  /*FIXME:TOKEN background color white? */
+  --background-tfoot: var(--scl-color-background-standard);
+  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-text-and-icon-standard);
 
-  --background-tfoot: var(--telekom-color-background-surface);
-  --border-bottom-tfoot-td: 1px solid var(--telekom-color-text-and-icon-standard);
-
-  --spacing-th-sortable: 0 8px 0 0;
-  /* FIXME:TOKEN hardcoded values */
-  --background-th-sortable-hover: #ededed;
-  --background-th-sortable-active: #dcdcdc;
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-inner-sm)
+  --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
+  /* FIXME:TOKEN hardcoded values #ededed */
+  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
+  --background-th-sortable-active: var(--telekom-color-ui-light);
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-    /* FIXME:TOKEN  previously --scl-color-grey-0 */
-  --background-tr-striped: var(--telekom-color-ui-subtle);
+  /*FIXME:TOKEN --scl-color-grey-0? */
+  --background-tr-striped: var(--scl-color-grey-0);
+  --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 .table {
   display: block;
@@ -51,14 +58,14 @@ scale-table {
   border-collapse: collapse;
 }
 .table th {
-  padding: 0 8px;
+  padding: var(--padding);
   text-align: left;
   line-height: 32px; /*  TODO: revise, this is weird */
   color: var(--color);
   font-size: var(--font-size);
 }
 .table td {
-  padding: 0 8px;
+  padding: var(--padding);
 }
 .table tbody tr td {
   padding: 8px;
@@ -80,7 +87,7 @@ scale-table {
 }
 .table tfoot tr td {
   padding: 8px;
-  font-weight: 600;
+  font-weight: var(--font-weight);
   border-bottom: var(--border-bottom-tfoot-td);
 }
 .table .scale-sort-indicator svg {
@@ -118,14 +125,14 @@ scale-table {
   display: block;
 }
 .table--sortable th[aria-disabled] {
-  padding: 0 8px;
+  padding: var(--padding);
   pointer-events: none;
 }
 .table--sortable th:not([aria-sort]) {
-  padding: 0 8px;
+  padding: var(--padding);
 }
 .table--sortable th[aria-sort='none'] {
-  padding: 0 8px;
+  padding: var(--padding);
 }
 .table--sortable
   th[aria-sort='ascending']

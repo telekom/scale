@@ -5,14 +5,18 @@
 
   /*helper-text*/
   --font-size-helper-text: var(--telekom-typography-font-size-small);
-  --color-helper-text: var(--telekom-color-text-and-icon-functional-informational);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
   --padding-bottom-helper-text: var(--telekom-spacing-unit-x2);
   --margin-top-helper-text: var(--telekom-spacing-unit-x1);
   --font-weight-helper-text: var(--telekom-typography-font-weight-medium);
 
   /*helper-text--status-error*/
   --font-size-error-helper-text: var(--telekom-typography-font-size-small);
-  --color-error-helper-text: var(--telekom-color-text-and-icon-functional-danger);
+  --color-error-helper-text: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
   --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x2);
   --margin-top-error-helper-text: var(--telekom-spacing-unit-x1);
   --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
