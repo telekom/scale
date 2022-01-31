@@ -13,16 +13,16 @@ scale-textarea {
   --transition: all var(--telekom-motion-duration-transition)
     var(---telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
-  --border: var(--telekom-spacing-unit-x-025) solid
+  --border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-extra-strong);
-  --border-error: var(--telekom-spacing-unit-x-05) solid
+  --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   /* FIXME:TOKEN do we still need this fallback color? */
   --border-color-hover: var(--telekom-color-primary-hovered, #f90984);
   --border-color-focus: var(--telekom-color-primary-pressed, #f90984);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x-05)
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-  --spacing-x: var(--telekom-spacing-unit-x-3);
+  --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-ui-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-subtle);
@@ -32,13 +32,13 @@ scale-textarea {
   --font-weight-meta: var(--telekom-typography-font-weight-bold);
   --font-size-meta: var(--telekom-typography-font-size-small);
   --line-height-meta: var(--telekom-typography-line-spacing-standard);
-  --spacing-y-meta: var(--telekom-spacing-unit-x-1);
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
   --color-meta: var(--telekom-color-text-and-icon-standard);
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /*control*/
-  --spacing-control: var(--telekom-spacing-unit-x-6) var(--spacing-x)
-    var(--telekom-spacing-unit-x-3) calc(var(--spacing-x) - 1px);
+  --spacing-control: var(--telekom-spacing-unit-x6) var(--spacing-x)
+    var(--telekom-spacing-unit-x3) calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
 
@@ -57,10 +57,10 @@ scale-textarea {
 
   /*placeholder*/
   --transition-placeholder: var(--transition);
-  --color-placeholder: var(--telekom-color-ui-normal);
+  --color-placeholder: var(--telekom-color-ui-regular);
 
   /*label*/
-  --color-label: var(--telekom-color-ui-normal);
+  --color-label: var(--telekom-color-ui-regular);
   --color-label-readonly: var(--telekom-color-text-and-icon-standard);
   /* FIXME:TOKEN z-index token is needed */
   --z-index-label: var(--scl-z-index-10);
@@ -100,7 +100,7 @@ scale-textarea {
   display: flex;
   transition: var(--transition-counter);
   margin-left: auto;
-  padding-right: var(--telekom-spacing-unit-x-3);
+  padding-right: var(--telekom-spacing-unit-x3);
   justify-content: flex-end;
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
@@ -154,12 +154,12 @@ scale-textarea {
   font-weight: var(--font-weight-label);
   transform: translate(
     var(--spacing-x),
-    calc((var(--telekom-spacing-unit-x-12) - var(--font-size-label)) / 2)
+    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
   );
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x-2));
+  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
 }
@@ -176,13 +176,13 @@ scale-textarea {
   background-color: transparent;
 }
 .textarea__label-safety-background {
-  top: var(--telekom-spacing-unit-x-05);
-  left: var(--telekom-spacing-unit-x-05);
-  right: var(--telekom-spacing-unit-x-05);
+  top: var(--telekom-spacing-unit-x05);
+  left: var(--telekom-spacing-unit-x05);
+  right: var(--telekom-spacing-unit-x05);
   position: absolute;
   pointer-events: none;
   border-radius: var(--telekom-radius-standard);
-  height: var(--telekom-spacing-unit-x-6);
+  height: var(--telekom-spacing-unit-x6);
   background-color: var(--telekom-color-background-surface, #ffffff);
 }
 .textarea--transparent .textarea__label-safety-background,
