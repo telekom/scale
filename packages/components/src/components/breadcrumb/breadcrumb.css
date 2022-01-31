@@ -25,7 +25,8 @@
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
   /* FIXME:TOKEN hardcoded shadow value*/
-  --box-shadow-link-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  --box-shadow-link-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
