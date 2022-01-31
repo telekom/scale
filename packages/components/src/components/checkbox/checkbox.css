@@ -13,44 +13,44 @@
 
 :host,
 scale-checkbox {
-  --spacing-x: var(--scl-spacing-8);
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --color-text: var(--scl-color-text-standard);
-  --color-error: var(--scl-color-text-error);
-  --color-disabled: var(--scl-color-background-disabled);
-  --color-standard: var(--scl-color-background-standard);
-  --background-disabled: var(--scl-color-white);
-  --color-primary: var(--scl-color-primary, #e20074);
-  --color-focus: var(--scl-color-focus);
-  --color-primary-hover: var(--scl-color-primary-hover, #f90984);
-  --color-primary-active: var(--scl-color-primary-active, #cb0068);
+  --spacing-x: var(--telekom-spacing-unit-x-2);
+  --transition: all var(--telekom-motion-duration-transition)
+    cubic-bezier(var(--telekom-motion-easing-standard));
+  --color-text: var(--telekom-color-text-and-icon-standard);
+  --color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --color-disabled: var(--telekom-color-ui-disabled);
+  --color-standard: var(--telekom-color-background-surface);
+  --background-disabled: var(--telekom-color-ui-disabled);
+  --color-primary: var(--telekom-color-primary-standard, #e20074);
+  --color-focus: var(--telekom-color-functional-focus);
+  --color-primary-hover: var(--telekom-color-primary-hovered, #f90984);
+  --color-primary-active: var(--telekom-color-primary-pressed, #cb0068);
 
   /*control*/
-  --width-control: var(--scl-spacing-16);
-  --height-control: var(--scl-spacing-16);
+  --width-control: var(--telekom-spacing-unit-x-4);
+  --height-control: var(--telekom-spacing-unit-x-4);
   --transition-control: var(--transition);
-  --spacing-control: var(--scl-spacing-2);
-  --spacing-left-control: var(--scl-spacing-4);
-  --radius-control: var(--scl-radius-4);
-  --border-width-control: var(--scl-spacing-1);
+  --spacing-control: var(--telekom-spacing-unit-x-05);
+  --spacing-left-control: var(--telekom-spacing-unit-x-1);
+  --radius-control: var(--telekom-radius-small);
+  --border-width-control: var(--telekom-spacing-unit-x-025);
 
   /*helper-text*/
   --transition-helper-text: var(--transition);
   --spacing-left-helper-text: calc(var(--width-control) + var(--spacing-x));
-  --font-size-helper-text: var(--scl-font-size-12);
-  --font-weight-helper-text: var(--scl-font-weight-bold);
-  --line-height-helper-text: var(--scl-font-line-height-133);
-  --color-helper-text: var(--scl-color-blue-70);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --color-helper-text: var(--telekom-color-additional-blue-70);
   /*label*/
-  --font-weight-label: var(--scl-font-weight-medium);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
   --transition-label: var(--transition);
 
   /*icon*/
-  --color-icon-checked-disabled: var(--scl-color-grey-30);
-  --color-icon-checked-active: var(--scl-color-white);
-  --width-icon: var(--scl-spacing-12);
-  --height-icon: var(--scl-spacing-12);
+  --color-icon-checked-disabled: var(--telekom-color-text-and-icon-disabled);
+  --color-icon-checked-active: var(--telekom-color-text-and-icon-inverted-standard);
+  --width-icon: var(--telekom-spacing-unit-x-3);
+  --height-icon: var(--telekom-spacing-unit-x-3);
 }
 
 :host,
@@ -141,7 +141,7 @@ scale-checkbox.indeterminate [part='checkbox'] {
 /* focus states */
 
 scale-checkbox [part='input']:focus ~ [part='container'] [part='checkbox'] {
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--color-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x-05) var(--color-focus);
 }
 
 /* hover states */
@@ -185,7 +185,7 @@ scale-checkbox.error [part='helper-text'] {
 /* :host(.error) [part='checkbox'], */
 scale-checkbox.error [part='checkbox'] {
   border-color: var(--color-error);
-  box-shadow: 0 0 0 var(--scl-spacing-1) var(--color-error);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x-025) var(--color-error);
 }
 
 /* disabled states */

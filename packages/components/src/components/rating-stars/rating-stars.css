@@ -10,19 +10,21 @@
  */
 
 :host {
-  --stars-color: var(--scl-color-primary);
-  --stars-hover-color: var(--scl-color-primary-hover);
-  --stars-active-color: var(--scl-color-primary-active);
+  --stars-color: var(--telekom-color-text-and-icon-primary-standard);
+  --stars-hover-color: var(--telekom-color-text-and-icon-primary-hovered);
+  --stars-active-color: var(--telekom-color-text-and-icon-primary-pressed);
   --stars-inactive-color: transparent;
+  /* FIXME:TOKEN placeholder color */
   --stars-placeholder-color: var(--scl-color-grey-90);
   --stars-placeholder-revert-color: var(--scl-color-grey-90);
   --stars-disabled-color: var(--scl-color-grey-50);
-  --stars-spacing: var(--scl-spacing-2);
+  --stars-spacing: var(--telekom-spacing-unit-x-05);
   --stars-transition: color 0.1s;
   --stars-size: 24px;
-  --font-weight-medium: var(--scl-font-weight-medium);
-  --font-size-small: var(--scl-font-size-12);
-  --infotext-color: var(--scl-color-text-additional);
+  --font-weight-medium: var(--telekom-typography-font-weight-medium);
+  --font-size-small: var(--telekom-typography-font-size-small);
+  /* FIXME:TOKEN infotext not using blue but gray*/
+  --infotext-color: var(--telekom-color-text-and-icon-additional);
 }
 
 :host([star-size='small']) {
@@ -78,7 +80,7 @@ input[type='range']::-webkit-slider-thumb {
 
 [part='wrapper'] {
   display: inline-flex;
-  border-radius: var(--scl-spacing-4);
+  border-radius: var(--telekom-spacing-unit-x-1);
   margin-left: calc(-1 * var(--stars-spacing));
 }
 
@@ -92,12 +94,12 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 [part='label'] {
-  margin-bottom: var(--scl-spacing-8);
+  margin-bottom: var(--telekom-spacing-unit-x-2);
   white-space: nowrap;
 }
 
 [part='infotext'] {
-  margin-left: var(--scl-spacing-8);
+  margin-left: var(--telekom-spacing-unit-x-2);
   display: flex;
   align-items: center;
   font-weight: var(--font-weight-medium);
@@ -191,7 +193,7 @@ input[type='range']::-webkit-slider-thumb {
 
 :host(:focus-within) [part='wrapper'],
 [part='wrapper']:focus {
-  box-shadow: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x-05) var(--scl-color-focus);
   outline: none;
 }
 
@@ -227,13 +229,13 @@ input[type='range']::-webkit-slider-thumb {
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   [part='star'] [part='placeholder-star'] {
-    color: var(--scl-color-white);
+    color: var(--telekom-color-text-and-icon-inverted-standard);
   }
   [part='star'][data-selected] [part='placeholder-star'] {
     color: var(--stars-inactive-color);
   }
   [part='star']:hover ~ [part='star'] [part='placeholder-star'] {
-    color: var(--scl-color-white);
+    color: var(--telekom-color-text-and-icon-inverted-standard);
   }
   [part='wrapper']:hover [part='placeholder-star'] {
     color: var(--stars-inactive-color);

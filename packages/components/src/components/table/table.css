@@ -11,6 +11,7 @@
 
 scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
+  /* FIXME:TOKEN previously --scl-color-background-light */
   --background: var(--telekom-color-ui-subtle);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
@@ -21,10 +22,12 @@ scale-table {
   --spacing-tbody-td: var(--telekom-spacing-unit-x-4)
     var(--telekom-spacing-unit-x-2);
   /*FIXME:TOKEN border color should be different from background color running out of choice? */
+  /* FIXME:TOKEN previously --scl-color-grey-20 */
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x-025) solid
     var(--scl-color-grey-20);
   /*FIXME:TOKEN background color white? */
   --background-tbody: var(--scl-color-background-standard);
+  /* FIXME:TOKEN hardcoded values #ededed */
   --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
   /*FIXME:TOKEN background color white? */
   --background-tfoot: var(--scl-color-background-standard);
@@ -32,6 +35,7 @@ scale-table {
     var(--telekom-color-text-and-icon-standard);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x-2) 0 0;
+  /* FIXME:TOKEN hardcoded values #ededed */
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-light);
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x-05)

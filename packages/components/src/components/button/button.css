@@ -11,50 +11,54 @@
 
 :host {
   --width: auto;
-  --spacing-x: var(--scl-spacing-24);
-  --spacing-x-icon-only: var(--scl-spacing-8);
-  --min-height: var(--scl-spacing-40);
-  --radius: var(--scl-radius-8);
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --font-weight: var(--scl-font-weight-bold);
-  --font-size: var(--scl-font-size-16);
-  --line-height: var(--scl-font-line-height-150);
-  --spacing-icon-x: var(--scl-spacing-8);
+  --spacing-x: var(--telekom-spacing-unit-x-6);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x-2);
+  --min-height: var(--telekom-spacing-unit-x-10);
+  --radius: var(--telekom-radius-standard);
+  --transition: all var(--telekom-motion-duration-transition)
+    cubic-bezier(var(--telekom-motion-easing-standard));
+  /* FIXME:TOKEN hardcoded shadow value*/
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x-05) var(--telekom-color-functional-focus);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --spacing-icon-x: var(--telekom-spacing-unit-x-2);
   --vertical-align: middle;
 
   /* size: small */
-  --font-size-small: var(--scl-font-size-12);
-  --line-height-small: var(--scl-font-line-height-133);
-  --min-height-small: var(--scl-spacing-32);
+  /* FIXME:TOKEN correct lineheight?*/
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --min-height-small: var(--telekom-spacing-unit-x-8);
 
   /* variant: primary */
   --radius-primary: var(--radius);
-  --background-primary: var(--scl-color-primary);
-  --background-primary-hover: var(--scl-color-primary-hover);
-  --background-primary-active: var(--scl-color-primary-active);
-  --background-primary-disabled: var(--scl-color-background-disabled);
-  --color-primary: var(--scl-color-white);
-  --color-primary-disabled: var(--scl-color-grey-40);
+  --background-primary: var(--telekom-color-primary-standard);
+  --background-primary-hover: var(--telekom-color-primary-hovered);
+  --background-primary-active: var(--telekom-color-primary-pressed);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
+  --color-primary: var(--telekom-color-text-and-icon-inverted-standard);
+  /* FIXME:TOKEN this used to be scl-color-grey-40*/
+  --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* variant: secondary */
   --radius-secondary: var(--radius);
-  --border-width-secondary: var(--scl-spacing-1);
+  --border-width-secondary: var(--telekom-spacing-unit-x-025);
   --background-secondary: transparent;
-  --color-secondary: var(--scl-color-text-standard);
-  --color-secondary-hover: var(--scl-color-primary-hover);
-  --color-secondary-active: var(--scl-color-primary-active);
-  --color-secondary-disabled: var(--scl-color-background-disabled);
+  --color-secondary: var(--telekom-color-text-and-icon-standard);
+  --color-secondary-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-secondary-active: var(--telekom-color-text-and-icon-primary-pressed);
+  /* FIXME:TOKEN this used to be --scl-color-background-disabled  */
+  --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* variant: ghost */
   --radius-ghost: var(--radius);
-  --border-width-ghost: var(--scl-spacing-1);
-  --spacing-x-ghost: var(--scl-spacing-8);
-  --color-ghost: var(--scl-color-primary);
-  --color-ghost-hover: var(--scl-color-primary-hover);
-  --color-ghost-active: var(--scl-color-primary-active);
-  --color-ghost-disabled: var(--scl-color-text-disabled);
+  --border-width-ghost: var(--telekom-spacing-unit-x-025);
+  --spacing-x-ghost: var(--telekom-spacing-unit-x-2);
+  --color-ghost: var(--telekom-color-text-and-icon-primary-standard);
+  --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
 }
 
 .button {
@@ -98,7 +102,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  border: var(--scl-spacing-1) solid transparent;
+  border: var(--telekom-spacing-unit-x-025) solid transparent;
   height: 100%;
   content: '';
   display: block;

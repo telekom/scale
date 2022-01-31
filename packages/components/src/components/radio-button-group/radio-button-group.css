@@ -1,31 +1,32 @@
 :host {
   /*label*/
-  --font-weight-label: var(--scl-font-weight-medium);
-  --font-size-label: var(--scl-font-size-16);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label: var(--telekom-typography-font-size-body);
 
   /*helper-text*/
-  --font-size-helper-text: var(--scl-font-size-12);
-  --color-helper-text: var(--scl-color-blue-70);
-  --padding-bottom-helper-text: var(--scl-spacing-8);
-  --margin-top-helper-text: var(--scl-spacing-4);
-  --font-weight-helper-text: var(--scl-font-weight-medium);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --color-helper-text: var(--telekom-color-text-and-icon-functional-informational);
+  --padding-bottom-helper-text: var(--telekom-spacing-unit-x-2);
+  --margin-top-helper-text: var(--telekom-spacing-unit-x-1);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-medium);
 
   /*helper-text--status-error*/
-  --font-size-error-helper-text: var(--scl-font-size-12);
-  --color-error-helper-text: var(--scl-color-red-60);
-  --padding-bottom-error-helper-text: var(--scl-spacing-8);
-  --margin-top-error-helper-text: var(--scl-spacing-4);
-  --font-weight-error-helper-text: var(--scl-font-weight-medium);
+  --font-size-error-helper-text: var(--telekom-typography-font-size-small);
+  --color-error-helper-text: var(--telekom-color-text-and-icon-functional-danger);
+  --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x-2);
+  --margin-top-error-helper-text: var(--telekom-spacing-unit-x-1);
+  --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
+  /* FIXME:TOKEN high contrast variable */
   --color-error-helper-text-hcm: var(--scl-color-white);
 
   /*title*/
   --font-size-title: var(--font-size-label);
-  --font-weight-title: var(--scl-font-weight-medium);
-  --padding-bottom-title: var(--scl-spacing-4);
-  --margin-left-title: var(--scl-spacing-2);
+  --font-weight-title: var(--telekom-typography-font-weight-medium);
+  --padding-bottom-title: var(--telekom-spacing-unit-x-1);
+  --margin-left-title: var(--telekom-spacing-unit-x-05);
 
   /*slotted items*/
-  --margin-top-slotted-item: var(--scl-spacing-4);
+  --margin-top-slotted-item: var(--telekom-spacing-unit-x-1);
 }
 
 .radio-button-group {

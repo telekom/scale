@@ -16,33 +16,39 @@
 */
 
 :host {
-  --font-weight: var(--scl-font-weight-medium);
-  --spacing-x-icon: var(--scl-spacing-4);
+  --font-weight: var(--telekom-typography-font-weight-medium);
+  --spacing-x-icon: var(--telekom-spacing-unit-x-1);
   --line-offset: 0.0625em;
 
   /* initial */
-  --color: var(--scl-color-blue-60);
+  --color: var(--telekom-color-text-and-icon-link-standard);
+  /* FIXME:TOKEN hardcoded values */
   --color-line-initial: hsl(219, 100%, 87%);
   --line-thickness-initial: 0.0625em;
   /* visited */
-  --color-visited: var(--scl-color-text-link-visited);
-  --color-line-visited: var(--scl-color-text-link-visited);
+  --color-visited: var(--telekom-color-text-and-icon-link-visited);
+  /* FIXME:TOKEN no -functional-link-visited */
+  --color-line-visited: var(---scl-color-text-link-visited);
   --line-thickness-visited: var(--line-thickness-initial);
   /* hover */
-  --color-hover: var(--scl-color-blue-70);
+  --color-hover: var(--telekom-color-text-and-icon-link-hovered);
+  /* FIXME:TOKEN no -functional-link-hovered */
   --color-line-hover: var(--scl-color-blue-70);
   --line-thickness-hover: var(--line-thickness-initial);
   /* focus */
-  --color-focus: var(--scl-color-blue-70);
+  /* FIXME:TOKEN no -functional-link-active, before this was also scl-color-blue-70 */
+  --color-focus: var(--telekom-color-text-and-icon-link-active);
   --color-line-focus: var(--scl-color-blue-70);
   --line-thickness-focus: calc(var(--line-thickness-initial) * 2);
   /* active */
-  --color-active: var(--scl-color-blue-60);
+  /* FIXME:TOKEN no -functional-link-active, before this was also scl-color-blue-70 */
+  --color-active: var(--telekom-color-text-and-icon-link-active);
   --color-line-active: var(--scl-color-blue-60);
   --line-thickness-active: var(--line-thickness-initial);
   /* disabled */
-  --color-disabled: var(--scl-color-grey-50);
-  --color-line-disabled: var(--scl-color-grey-50);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  /* FIXME:TOKEN is this correct for underline */
+  --color-line-disabled: var(--telekom-color-ui-disabled);
   --line-thickness-disabled: var(--line-thickness-initial);
 }
 
@@ -69,7 +75,7 @@
     var(--line-thickness-initial)
   );
   text-decoration-color: var(--line-color);
-  transition: text-decoration var(--scl-motion-duration-fast);
+  transition: text-decoration var(--telekom-motion-duration-transition);
 }
 
 [part='anchor'] {
@@ -105,7 +111,7 @@ slot[name='icon']::slotted(*) {
 [part='anchor']:hover,
 [part='anchor']:focus,
 [part='anchor']:active {
-  transition: text-decoration var(--scl-motion-duration-fast);
+  transition: text-decoration var(--telekom-motion-duration-transition);
 }
 
 [part='anchor']:visited {

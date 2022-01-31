@@ -13,19 +13,20 @@
   /* toast */
 
   --width: 367px;
-  --radius: var(--scl-radius-8);
-  --background: var(--scl-color-background-standard);
+  --radius: var(--telekom-radius-standard);
+  --background: var(--telekom-color-background-surface);
+  /* FIXME:TOKEN not sure what elevation to use here */
   --box-shadow: var(--scl-shadow-level-0);
-
+  
   /* icon container colors */
 
-  --background-success-icon-container: var(--scl-color-text-success);
-  --background-warning-icon-container: var(--scl-color-orange-70);
-  --background-error-icon-container: var(--scl-color-red-70);
-  --background-informational-icon-container: var(--scl-color-blue-60);
+  --background-success-icon-container: var(--telekom-color-functional-success-standard);
+  --background-warning-icon-container: var(--telekom-color-functional-warning-standard);
+  --background-error-icon-container: var(--telekom-color-functional-danger-standard);
+  --background-informational-icon-container: var(--telekom-color-functional-informational-standard);
 
   /* icon container colors */
-
+  /* FIXME:TOKEN hardcoded values */
   --background-success-text-container: #f2f7ef;
   --background-warning-text-container: #fbf4eb;
   --background-error-text-container: #fbf3f4;
