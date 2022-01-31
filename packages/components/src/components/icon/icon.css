@@ -12,8 +12,8 @@
 scale-icon {
   --display: inline-flex;
   --transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
 
   display: var(--display);
 }
