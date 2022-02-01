@@ -27,13 +27,14 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   font-family: inherit;
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
   /* FIXME:TOKEN this used to be --scl-color-grey-90 */
-  border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-ui-extra-strong);
+  border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-extra-strong);
 }
 .input .input__textarea {
   width: 100%;
@@ -45,12 +46,13 @@
   z-index: 1;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   font-family: inherit;
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-text-and-icon-standard);
+  border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-text-and-icon-standard);
 }
 .input .input__select {
   appearance: none;
@@ -62,8 +64,8 @@
 .input .input__counter {
   display: flex;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   margin-left: auto;
   padding-right: var(--telekom-spacing-unit-x3);
   justify-content: flex-end;
@@ -73,8 +75,8 @@
 }
 .input .input__helper-text {
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   padding-left: var(--telekom-spacing-unit-x3);
   font-size: var(--telekom-typography-font-size-small);
   line-height: var(--telekom-typography-line-spacing-standard);
@@ -102,7 +104,8 @@
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 .input:not(.input--disabled) .input__input:focus::placeholder,
 .input:not(.input--disabled) .input__select:focus::placeholder,
@@ -110,8 +113,8 @@
   /* FIXME:TOKEN what color to use for placeholder, --telekom-color-text-and-icon-additional ?*/
   color: var(--scl-color-grey-60);
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
 }
 .input .input__select-wrapper scale-icon {
   top: 50%;
@@ -126,8 +129,8 @@
 .input ::placeholder {
   color: transparent;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
 }
 .input--variant-static .input__label {
   /* FIXME:TOKEN what color to use for placeholder, --telekom-color-text-and-icon-additional ?*/
@@ -153,31 +156,40 @@
   z-index: var(--scl-z-index-10);
   position: absolute;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   pointer-events: none;
   font-size: var(--telekom-typography-font-size-body);
   /* previously: transform: translate(13px, calc((48px - 1rem) / 2)); */
   transform: translate(
     var(--telekom-spacing-unit-x3),
-    calc((var(--telekom-spacing-unit-x12) - var(--telekom-typography-font-size-body)) / 2)
+    calc(
+      (
+          var(--telekom-spacing-unit-x12) -
+            var(--telekom-typography-font-size-body)
+        ) / 2
+    )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .input--variant-animated.input--has-focus .input__label,
 .input--variant-animated.animated .input__label {
   color: var(--scl-color-grey-60);
-  transform: translate(var(--telekom-spacing-unit-x3), var(--telekom-spacing-unit-x2));
+  transform: translate(
+    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-unit-x2)
+  );
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-bold);
 }
 .input--status-error .input__input,
 .input--status-error .input__textarea,
 .input--status-error .input__select {
-  border: var(--telekom-spacing-unit-x05) solid var(--scl-color-background-error);
+  border: var(--telekom-spacing-unit-x05) solid
+    var(--scl-color-background-error);
 }
 .input--status-error .input__helper-text {
   color: var(--telekom-color-text-and-icon-functional-danger);
@@ -199,8 +211,8 @@
   z-index: var(--scl-z-index-10);
   position: absolute;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   pointer-events: none;
   font-size: var(--telekom-typography-font-size-body);
   /* previously: transform: translate(
@@ -209,7 +221,12 @@
   ); */
   transform: translate(
     var(--telekom-spacing-unit-x3),
-    calc((var(--telekom-spacing-unit-x10) - var(--telekom-typography-font-size-body)) / 2)
+    calc(
+      (
+          var(--telekom-spacing-unit-x10) -
+            var(--telekom-typography-font-size-body)
+        ) / 2
+    )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
 }
@@ -217,10 +234,13 @@
 .input--size-small.animated .input__label {
   /* FIXME:TOKEN what color to use for label, --telekom-color-text-and-icon-additional ?*/
   color: var(--scl-color-grey-60);
-  transform: translate(var(--telekom-spacing-unit-x3), var(--telekom-spacing-unit-x1));
+  transform: translate(
+    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-unit-x1)
+  );
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-medium);
 }
@@ -317,7 +337,8 @@
   input:checked:not([disabled])
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-primary-standard, #e20074);
+  border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-primary-standard, #e20074);
   background: var(--telekom-color-primary-standard, #e20074);
 }
 .input--type-checkbox
@@ -330,7 +351,8 @@
   input:focus
   ~ .input__checkbox-container
   .input__checkbox-placeholder {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 .input--type-checkbox
   input:not([disabled]):hover
@@ -391,10 +413,11 @@
   margin: 0;
   box-sizing: border-box;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   border-radius: var(--telekom-radius-standard);
-  border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-text-and-icon-standard);
+  border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-text-and-icon-standard);
   background: var(--telekom-color-background-surface);
 }
 .input--type-checkbox .input__checkbox-container scale-icon {
@@ -409,13 +432,14 @@
 }
 .input--type-checkbox .input__checkbox-container ~ label {
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
 }
 .input--type-checkbox.input--status-error
   .input__checkbox-container
   .input__checkbox-placeholder {
-  border: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-danger-standard);
+  border: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio {
   display: flex;
@@ -432,16 +456,16 @@
 .input--type-radio label {
   color: var(--telekom-color-text-and-icon-standard);
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .input--type-radio input {
   width: var(--telekom-spacing-unit-x4);
   height: var(--telekom-spacing-unit-x4);
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
-  cubic-bezier(var(--telekom-motion-easing-standard));
+    /* FIXME:TOKEN update this */
+    cubic-bezier(var(--telekom-motion-easing-standard));
   /* FIXME:TOKEN hardcoded values  */
   border-radius: 50%;
   -webkit-appearance: none;
@@ -453,7 +477,8 @@
 .input--type-radio input:focus {
   outline: none;
   /* FIXME:TOKEN should this be defined here? */
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 .input--type-radio:hover input:not(:checked):not([disabled]) {
   box-shadow: none;
@@ -463,22 +488,26 @@
   color: var(--telekom-color-text-and-icon-primary-hovered, #f90984);
 }
 .input--type-radio input:active {
-  border: var(--telekom-spacing-unit-x2) solid var(--telekom-color-primary-pressed);
+  border: var(--telekom-spacing-unit-x2) solid
+    var(--telekom-color-primary-pressed);
 }
 .input--type-radio input:not(:checked):not([disabled]):active ~ label {
   color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 .input--type-radio input:disabled {
-  border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-ui-disabled);
+  border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-disabled);
 }
 .input--type-radio input:disabled ~ label {
   color: var(--scl-color-grey-30);
 }
 .input--type-radio.input--status-error input {
-  border: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-danger-standard);
+  border: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-standard);
 }
 .input--type-radio input:checked {
-  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid var(--telekom-color-primary-standard);
+  border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+    var(--telekom-color-primary-standard);
 }
 .input--type-radio input:checked:active {
   border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
@@ -515,7 +544,7 @@
 .input--disabled .input__textarea,
 .input--disabled .input__helper-text {
   cursor: not-allowed;
-/* FIXME:TOKEN what font color to use here, background and border have the same color */
+  /* FIXME:TOKEN what font color to use here, background and border have the same color */
   border-color: var(--telekom-color-ui-disabled);
   color: var(--telekom-color-text-and-icon-disabled);
   background: var(--telekom-color-ui-disabled);

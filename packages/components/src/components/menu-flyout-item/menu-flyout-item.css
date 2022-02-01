@@ -10,7 +10,8 @@
  */
 
 :host {
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 
   display: block;
   position: relative;
@@ -68,7 +69,7 @@
 .menu-flyout-item--disabled {
   outline: none;
   /* FIXME:TOKEN previously hard coded color: #ccc; */
-  color: var(--telekom-color-text-and-icon-disabled)
+  color: var(--telekom-color-text-and-icon-disabled);
   cursor: not-allowed;
 }
 

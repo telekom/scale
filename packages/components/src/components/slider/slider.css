@@ -10,15 +10,15 @@
  */
 
 :host {
-  --border: 1px solid var(--telekom-color-ui-normal);
+  --border: 1px solid var(--telekom-color-ui-regular);
   --background-bar: var(--telekom-color-primary-standard);
-  --border-color-thumb: var(--telekom-color-ui-normal);
-  --box-shadow-thumb: var(--telekom-elevation-resting-standard);
+  --border-color-thumb: var(--telekom-color-ui-regular);
+  --box-shadow-thumb: var(--telekom-shadow-resting-standard);
   --border-color-thumb-hover: var(--telekom-color-primary-hovered);
   --border-color-thumb-active: var(--telekom-color-primary-pressed);
   /* FIXME:TOKEN should this be defined here? */
   --box-shadow-thumb-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
-  --color-display-value: var(--telekom-color-ui-normal);
+  --color-display-value: var(--telekom-color-ui-regular);
   --font-weight-display-value: var(--telekom-typography-font-weight-bold);
   --font-size-display-value: var(--telekom-typography-font-size-small);
   --background-track: var(--telekom-color-ui-light);
@@ -79,7 +79,7 @@
   border-color: var(--border-color-thumb);
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: var(--telekom-elevation-resting-standard);
+  box-shadow: var(--telekom-shadow-resting-standard);
 }
 
 .slider .slider__display-value {

@@ -14,10 +14,10 @@
   --transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   --radius: var(--telekom-radius-large);
-  --box-shadow: var(--telekom-elevation-raised-standard);
-  --box-shadow-hover: var(--telekom-elevation-raised-hover);
+  --box-shadow: var(--telekom-shadow-raised-standard);
+  --box-shadow-hover: var(--telekom-shadow-raised-hover);
   --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
-  --box-shadow-active: var(--telekom-elevation-raised-pressed);
+  --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
   --spacing-body: var(--telekom-spacing-unit-x6);
 
@@ -60,7 +60,7 @@
 }
 
 .card--interactive:focus {
-  box-shadow: var(--telekom-elevation-raised-hover), var(--box-shadow-focus);
+  box-shadow: var(--telekom-shadow-raised-hover), var(--box-shadow-focus);
 }
 
 .card--interactive:active {

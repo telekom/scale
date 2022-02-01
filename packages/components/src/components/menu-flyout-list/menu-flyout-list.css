@@ -30,7 +30,7 @@
   z-index: var(--scl-z-index-20);
   background: var(--telekom-color-background-surface);
   border-radius: var(--telekom-radius-large);
-  box-shadow: var(--telekom-elevation-overlay);
+  box-shadow: var(--telekom-shadow-overlay);
   overflow-y: hidden;
   margin-top: var(--spacing-y-list, 0);
   margin-bottom: var(--spacing-y-list, 0);

@@ -41,14 +41,16 @@ scale-checkbox {
   --font-size-helper-text: var(--telekom-typography-font-size-small);
   --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
   --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
-  --color-helper-text: var(--telekom-color-additional-blue-70);
+  --color-helper-text: var(--telekom-color-text-and-icon-functional-informational);
   /*label*/
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --transition-label: var(--transition);
 
   /*icon*/
   --color-icon-checked-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-icon-checked-active: var(--telekom-color-text-and-icon-inverted-standard);
+  --color-icon-checked-active: var(
+    --telekom-color-text-and-icon-inverted-standard
+  );
   --width-icon: var(--telekom-spacing-unit-x3);
   --height-icon: var(--telekom-spacing-unit-x3);
 }

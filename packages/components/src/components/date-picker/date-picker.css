@@ -11,16 +11,22 @@
 
 duet-date-picker {
   /* FIXME:TOKEN are these variable used anywhere? seems only duet-radius is used */
-  --duet-color-primary: var(--telekom-color-text-and-icon-primary-standard, #e20074);
+  --duet-color-primary: var(
+    --telekom-color-text-and-icon-primary-standard,
+    #e20074
+  );
   --duet-color-text: var(--telekom-color-text-and-icon-standard, #1a1a1a);
   --duet-color-overlay: var(--telekom-color-background-surface, #ffffff);
   --duet-font: var(--telekom-typography-font-family-sans);
   --duet-font-normal: var(--telekom-typography-font-weight-regular);
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
-  --duet-color-placeholder: var(--telekom-color-ui-normal);
+  --duet-color-placeholder: var(--telekom-color-ui-regular);
   --duet-radius: var(--telekom-radius-standard);
 
-  --duet-color-text-active: var(--telekom-color-text-and-icon-inverted-standard, #ffffff);
+  --duet-color-text-active: var(
+    --telekom-color-text-and-icon-inverted-standard,
+    #ffffff
+  );
   --duet-color-button: var(--telekom-color-background-surface, #ffffff);
   --duet-color-surface: var(--telekom-color-background-surface, #ffffff);
   --duet-z-index: 600;
@@ -38,16 +44,19 @@ duet-date-picker {
 duet-date-picker .duet-date__input {
   /* FIXME:TOKEN border color is using standard text black, but there is no --telekom-ui- or functional equivalent */
   border: var(--telekom-spacing-unit-x025) solid var(--scl-color-text-standard);
-  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0 var(--telekom-spacing-unit-x3);
+  padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0
+    var(--telekom-spacing-unit-x3);
   height: var(--telekom-spacing-unit-x12);
 }
 
 duet-date-picker .duet-date__input:hover {
-  border: var(--telekom-spacing-unit-x025) solid var(--telekom-color-primary-hovered);
+  border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-primary-hovered);
 }
 
 duet-date-picker .duet-date__input:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
   /* FIXME:TOKEN border color is using standard text black, but there is no --telekom-ui- or functional equivalent */
   border: var(--telekom-spacing-unit-x025) solid var(--scl-color-text-standard);
 }
@@ -59,7 +68,8 @@ duet-date-picker .duet-date__toggle {
 
 duet-date-picker .duet-date__toggle:focus {
   /* FIXME:TOKEN hardcoded shadow value*/
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 
 duet-date-picker .duet-date__toggle:hover scale-icon-content-calendar {
@@ -109,7 +119,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   top: 0;
   left: 0;
   /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -119,7 +129,12 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   font-size: var(--telekom-spacing-unit-x4);
   transform: translate(
     var(--telekom-spacing-unit-x3),
-    calc((var(--telekom-spacing-unit-x12) - var(--telekom-typography-font-size-body)) / 2)
+    calc(
+      (
+          var(--telekom-spacing-unit-x12) -
+            var(--telekom-typography-font-size-body)
+        ) / 2
+    )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
 }
@@ -134,9 +149,11 @@ duet-date-picker .duet-date__input::placeholder {
 
 .scale-date-picker.scale-date-picker--focus .date-picker__label,
 .scale-date-picker.animated .date-picker__label {
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
-  transform: translate(var(--telekom-spacing-unit-x3), var(--telekom-spacing-unit-x2));
+  color: var(--telekom-color-text-and-icon-standard);
+  transform: translate(
+    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-unit-x2)
+  );
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   /* FIXME:TOKEN should this be called differently?  */
@@ -147,8 +164,7 @@ duet-date-picker .duet-date__input::placeholder {
 .scale-date-picker.animated .duet-date__input::placeholder,
 duet-date-picker .duet-date__input:focus::placeholder {
   visibility: initial;
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
 }
@@ -156,13 +172,16 @@ duet-date-picker .duet-date__input:focus::placeholder {
 /* Error state */
 
 .scale-date-picker--status-error duet-date-picker .duet-date__input {
-  border: var(--telekom-spacing-unit-x05) solid var(--telekom-color-text-and-icon-functional-danger);
+  border: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-text-and-icon-functional-danger);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:hover {
-  border: var(--telekom-spacing-unit-x05) solid var(--telekom-color-text-and-icon-primary-hovered);
+  border: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-text-and-icon-primary-hovered);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
-  border: var(--telekom-spacing-unit-x05) solid var(--telekom-color-text-and-icon-primary-hovered);
+  border: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-text-and-icon-primary-hovered);
 }
 .scale-date-picker--status-error .date-picker__helper-text {
   color: var(--telekom-color-text-and-icon-functional-danger);
@@ -183,29 +202,35 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker--size-small .date-picker__label {
   top: 0;
   left: 0;
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   display: flex;
   z-index: 10;
   position: absolute;
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
+    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
   pointer-events: none;
   font-size: var(--telekom-typography-font-size-body);
   transform: translate(
     var(--telekom-spacing-unit-x3),
-    calc((var(--telekom-spacing-unit-x10) - var(--telekom-typography-font-size-body)) / 2)
+    calc(
+      (
+          var(--telekom-spacing-unit-x10) -
+            var(--telekom-typography-font-size-body)
+        ) / 2
+    )
   );
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 .scale-date-picker--size-small.scale-date-picker--focus .date-picker__label,
 .scale-date-picker--size-small.animated .date-picker__label {
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
-  transform: translate(var(--telekom-spacing-unit-x3), var(--telekom-spacing-unit-x1));
+  color: var(--telekom-color-text-and-icon-standard);
+  transform: translate(
+    var(--telekom-spacing-unit-x3),
+    var(--telekom-spacing-unit-x1)
+  );
   transition: all var(--telekom-motion-duration-transition)
-  /* FIXME:TOKEN update this */
+    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-medium);
@@ -270,7 +295,8 @@ duet-date-picker .duet-date__select-label svg {
 }
 
 duet-date-picker .duet-date__select select:focus + .duet-date__select-label {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 
 duet-date-picker .duet-date__select select:hover + .duet-date__select-label {
@@ -305,7 +331,8 @@ duet-date-picker .duet-date__next:active {
 }
 duet-date-picker .duet-date__prev:focus,
 duet-date-picker .duet-date__next:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 
 duet-date-picker .duet-date__close {
@@ -313,7 +340,8 @@ duet-date-picker .duet-date__close {
 }
 
 duet-date-picker .duet-date__close:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 
 duet-date-picker .duet-date__table-header {
@@ -358,7 +386,8 @@ duet-date-picker .duet-date__day.is-today.is-disabled::before {
 }
 
 duet-date-picker .duet-date__day:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
   background: var(--telekom-color-background-surface);
   color: var(--telekom-color-text-and-icon-primary-standard);
 }
