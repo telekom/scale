@@ -88,6 +88,8 @@ export class TextFieldV2 {
   @Prop() inputprefix?: string;
   /** (optional) input suffix */
   @Prop() inputsuffix?: string;
+  /** (optional) input suffix */
+  @Prop() prefixiconname?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -144,7 +146,11 @@ export class TextFieldV2 {
     if (this.inputsuffix) {
       const width = this.hostElement.querySelector('.text-field-v2__suffix').getBoundingClientRect().width
       this.hostElement.style.setProperty('--suffix-length',`${width}px`)
-    }    
+    } 
+    if (this.prefixiconname) {
+      const width = this.hostElement.querySelector('.text-field-v2__prefix-icon').getBoundingClientRect().width
+      this.hostElement.style.setProperty('--prefix-icon-length',`${width}px`)
+    }        
   }
 
   // We're not watching `value` like we used to
@@ -194,10 +200,16 @@ export class TextFieldV2 {
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+
+    console.log('there should be a prefix icon --->', this.prefixiconname )
+
+    const PrefixIcon = `scale-icon-${this.prefixiconname}`;
+    console.log('TAG is', PrefixIcon)
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
+          <PrefixIcon class="text-field-v2__prefix-icon"></PrefixIcon>
           {/* Accessibility: label should be always *before* the actual input */}
           <label class="text-field-v2__label" htmlFor={this.inputId}>
             {this.label}
@@ -268,6 +280,7 @@ export class TextFieldV2 {
       this.readonly && `text-field-v2--readonly`,
       this.inputprefix && `text-field-v2--has-prefix`,
       this.inputsuffix && `text-field-v2--has-suffix`,
+      this.prefixiconname && `text-field-v2--has-prefix-icon`,
       animated && 'animated'
     );
   }

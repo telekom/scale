@@ -97,6 +97,14 @@
   padding-left: calc(var(--spacing-x) + var(--prefix-length))
 }
 
+.text-field-v2.text-field-v2--has-prefix-icon .text-field-v2__control {
+  padding-left: calc(var(--spacing-x) + var(--prefix-icon-length))
+}
+
+.text-field-v2.text-field-v2--has-prefix .text-field-v2.text-field-v2--has-prefix-icon .text-field-v2__control {
+  padding-left: calc(var(--spacing-x) + var(--prefix-icon-length) + var(--prefix-length))
+}
+
 .text-field-v2.text-field-v2--has-suffix .text-field-v2__control {
   padding-right: calc(var(--spacing-x) - 1px + var(--suffix-length))
 }
@@ -163,6 +171,28 @@
   );
   font-weight: var(--font-weight-label);
 }
+
+.text-field-v2__prefix-icon {
+  top: var(--spacing-y-meta);
+  left: 0;
+  color: var(--color-label);
+  display: flex;
+  z-index: var(--z-index-label);
+  position: absolute;
+  transition: var(--transition-label);
+  pointer-events: none;
+  font-size: var(--font-size-label);
+  transform: translate(
+    var(--spacing-x),
+    calc((var(--height) - var(--font-size-label)) / 2)
+  );
+  font-weight: var(--font-weight-label);
+}
+
+.text-field-v2.text-field-v2--has-prefix .text-field-v2__prefix-icon {
+  left: var(--prefix-length);
+}
+
 
 .text-field-v2__prefix {
   top: var(--spacing-y-meta);
