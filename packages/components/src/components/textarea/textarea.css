@@ -41,7 +41,7 @@ scale-textarea {
     var(--telekom-spacing-unit-x3) calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
-
+  --background-control: var(--telekom-color-ui-base);
   /*counter*/
   --transition-counter: var(--transition);
   --font-size-counter: var(--font-size-meta);
@@ -89,7 +89,7 @@ scale-textarea {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
-  background-color: var(--telekom-color-ui-base)
+  background-color: var(--background-control)
 }
 
 .textarea .textarea__helper-text,
