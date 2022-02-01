@@ -20,7 +20,7 @@
   --color-circle-white: var(--telekom-color-ui-base);
   --color-circle-white-inner: var(--telekom-color-ui-regular);
   /* FIXME:TOKEN this should be complementary to the new variable --telekom-color-ui-base */
-  --color-text-white: var(--scl-color-white);
+  --color-text-white: var(--telekom-color-text-and-icon-inverted-standard);
 }
 
 .sr-only {

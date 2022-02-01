@@ -42,6 +42,7 @@ scale-text-field {
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
+  --background-control: var(--telekom-color-ui-base);
 
   /*counter*/
   --transition-counter: var(--transition);
@@ -97,6 +98,7 @@ scale-text-field {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
+  background-color: var(--background-control)
 }
 .text-field .text-field__counter {
   display: flex;
