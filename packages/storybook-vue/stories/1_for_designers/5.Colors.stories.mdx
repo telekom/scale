@@ -12,25 +12,52 @@ import text_de from './5.Colors_de.md';
         const locale = context && context.globals && context.globals.locale;
         let newSection = false;
         let i = 0;
+        let j = 0;
+        let word;
+        let words;
+        let first;
+        let output;
         return (
           <DocsContainer context={context}>
             <table>
               {index.map((item, i) => {
                 i = i;
                 if (i !== 0) {
-                  if (index[i - 1].section !== index[i].section)
+                  if (index[i - 1].section !== index[i].section) {
                     newSection = true;
-                  else {
+                    j = i;
+                  } else {
                     newSection = false;
                   }
                 } else {
                   newSection = true;
+                  j = i;
                 }
                 return (
                   <div>
                     {newSection ? (
                       <thead>
-                        <h3>{index[i].section}</h3>
+                        <h3 style={{ paddingTop: '200px' }}>
+                          {index[i].section}
+                        </h3>
+                        {index.map((item) => {
+                          word = item.name;
+                          words = word.split('/');
+                          if (first !== words[1]) {
+                            first = words[1];
+                            output = true;
+                          } else {
+                            output = false;
+                          }
+                          return index[i].section == item.section ? (
+                            <div style={{ backgroundColor: '#f0f1f1' }}>
+                              {output ? <div> {first} </div> : null}
+                              <div style={{ color: `${item.value}` }}>
+                                {item.value}
+                              </div>
+                            </div>
+                          ) : null;
+                        })}
                         <tr>
                           <th
                             style={{
@@ -57,7 +84,7 @@ import text_de from './5.Colors_de.md';
                               fontSize: '13px',
                             }}
                           >
-                            Token
+                            CSS-Variable Name
                           </th>
                         </tr>
                       </thead>
@@ -120,39 +147,41 @@ import text_de from './5.Colors_de.md';
                         <tr style={{ height: '150px' }}>
                           <div
                             style={{
-                              marginLeft: '100px',
+                              marginLeft: '20px',
                               marginRight: '100px',
-                              marginTop: '7px',
-                              marginBottom: '7px',
-                              width: '200px',
+                              marginTop: '30px',
+                              marginBottom: '30px',
+                              width: '450px',
+                              height: '50px',
                               backgroundColor: '#D9DBDE',
+                              textAlign: 'start',
+                              position: 'relative',
                             }}
                           >
-                            <div
+                            <span
                               style={{
-                                padding: '10px',
+                                fontSize: '12px',
+                                lineHeight: '50px',
+                                padding: '30px',
                               }}
                             >
-                              <span
-                                style={{
-                                  padding: '10px',
-                                }}
-                              >
-                                {item.javascriptVariableName}
-                              </span>
-                              <button
-                                style={{
-                                  padding: '10px',
-                                }}
-                                onClick={() => {
-                                  navigator.clipboard.writeText(
-                                    item.javascriptVariableName
-                                  );
-                                }}
-                              >
-                                Copy
-                              </button>
-                            </div>
+                              {item.cssVariableName}
+                            </span>
+                            <button
+                              style={{
+                                padding: '10px',
+                                position: 'absolute',
+                                top: '5px',
+                                right: '5px',
+                              }}
+                              onClick={() => {
+                                navigator.clipboard.writeText(
+                                  item.cssVariableName
+                                );
+                              }}
+                            >
+                              Copy
+                            </button>
                           </div>
                         </tr>
                       </td>
