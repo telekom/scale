@@ -25,12 +25,10 @@ scale-table {
   /* FIXME:TOKEN previously --scl-color-grey-20 */
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
     var(--scl-color-grey-20);
-  /*FIXME:TOKEN background color white? */
-  --background-tbody: var(--scl-color-background-standard);
+  --background-tbody: var(--telekom-color-background-surface);
   /* FIXME:TOKEN hardcoded values #ededed */
   --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
-  /*FIXME:TOKEN background color white? */
-  --background-tfoot: var(--scl-color-background-standard);
+  --background-tfoot: var(--telekom-color-background-surface);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-text-and-icon-standard);
 

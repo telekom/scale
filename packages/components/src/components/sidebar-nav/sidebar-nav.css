@@ -21,7 +21,7 @@
   /* FIXME:TOKEN should this be defined hereß */
   --box-shadow-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-  --color-toggle-button: var(--telekom-color-ui-normal);
+  --color-toggle-button: var(--telekom-color-ui-regular);
   --border-y-toggle-button: 1px solid var(--telekom-color-ui-subtle);
   /* FIXME:TOKEN used to be --scl-radius-2 doesn't have an equivalent */
   --radius-toggle-button: var(--telekom-radius-small);

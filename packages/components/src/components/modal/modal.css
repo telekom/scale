@@ -18,7 +18,7 @@
 
   --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unrelated-lg)));
   --radius-window: var(--telekom-radius-large);
-  --box-shadow-window: var(--telekom-elevation-top);
+  --box-shadow-window: var(--telekom-shadow-top);
   --background-window: var(--telekom-color-background-surface);
   --color-window: var(--telekom-color-text-and-icon-standard);
 

@@ -20,7 +20,7 @@ duet-date-picker {
   --duet-font: var(--telekom-typography-font-family-sans);
   --duet-font-normal: var(--telekom-typography-font-weight-regular);
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
-  --duet-color-placeholder: var(--telekom-color-ui-normal);
+  --duet-color-placeholder: var(--telekom-color-ui-regular);
   --duet-radius: var(--telekom-radius-standard);
 
   --duet-color-text-active: var(
@@ -119,7 +119,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   top: 0;
   left: 0;
   /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -149,8 +149,7 @@ duet-date-picker .duet-date__input::placeholder {
 
 .scale-date-picker.scale-date-picker--focus .date-picker__label,
 .scale-date-picker.animated .date-picker__label {
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   transform: translate(
     var(--telekom-spacing-unit-x3),
     var(--telekom-spacing-unit-x2)
@@ -165,8 +164,7 @@ duet-date-picker .duet-date__input::placeholder {
 .scale-date-picker.animated .duet-date__input::placeholder,
 duet-date-picker .duet-date__input:focus::placeholder {
   visibility: initial;
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
 }
@@ -204,8 +202,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker--size-small .date-picker__label {
   top: 0;
   left: 0;
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -227,8 +224,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 }
 .scale-date-picker--size-small.scale-date-picker--focus .date-picker__label,
 .scale-date-picker--size-small.animated .date-picker__label {
-  /* FIXME:TOKEN replace */
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-standard);
   transform: translate(
     var(--telekom-spacing-unit-x3),
     var(--telekom-spacing-unit-x1)

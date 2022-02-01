@@ -26,7 +26,7 @@
   width: var(--width);
   position: relative;
   /* FIXME:TOKEN not sure what elevation to use here */
-  box-shadow: var(--telekom-elevation-overlay);
+  box-shadow: var(--telekom-shadow-overlay);
   min-height: 48px;
 }
 
