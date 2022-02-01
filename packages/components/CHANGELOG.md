@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+
+### Bug Fixes
+
+* **checkbox:** do not emit change from watching _disabled_ ([#836](https://github.com/telekom/scale/issues/836)) ([a7d50e2](https://github.com/telekom/scale/commit/a7d50e21b400d432d2ca882c0e8d762e310bad9e))
+
+
+
+
+
 # [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
 
 
