@@ -24,13 +24,14 @@ scale-table {
   /*FIXME:TOKEN border color should be different from background color running out of choice? */
   /* FIXME:TOKEN previously --scl-color-grey-20 */
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
-    var(--scl-color-grey-20);
-  --background-tbody: var(--telekom-color-background-surface);
+    var(--telekom-color-ui-subtle);
+  --background-tbody: var(--telekom-color-ui-base);
+
   /* FIXME:TOKEN hardcoded values #ededed */
   --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
-  --background-tfoot: var(--telekom-color-background-surface);
+  --background-tfoot: var(--telekom-color-ui-base);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-text-and-icon-standard);
+    var(--telekom-color-ui-subtle);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
   /* FIXME:TOKEN hardcoded values #ededed */
