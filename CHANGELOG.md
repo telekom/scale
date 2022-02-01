@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+
+### Bug Fixes
+
+* **checkbox:** apply scoped css variable spacing control ([#807](https://github.com/telekom/scale/issues/807)) ([8545c21](https://github.com/telekom/scale/commit/8545c211438ee21d89191181ab8314bec7eeaf8f))
+
+
+
+
+
+# [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
+
+
+### Bug Fixes
+
+* **flyout:** close inactive menu ([#798](https://github.com/telekom/scale/issues/798)) ([762f892](https://github.com/telekom/scale/commit/762f89248ebc17c15c8f3bfde80ee7f435bb4b08))
+
+
+
+
+
+# [3.0.0-beta.42](https://github.com/telekom/scale/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2022-01-14)
+
+
+### Bug Fixes
+
+* **checkbox:** spacing problem ([#783](https://github.com/telekom/scale/issues/783)) ([3507aa2](https://github.com/telekom/scale/commit/3507aa24d37bcdf6c2ea5781e5669c517e358072))
+* **dropdown:** set default background color ([#787](https://github.com/telekom/scale/issues/787)) ([b381940](https://github.com/telekom/scale/commit/b381940f135619e1945db00876b8de30973c7d3f))
+* **notification-message:** add lifecycle method for slots ([#793](https://github.com/telekom/scale/issues/793)) ([026fbd3](https://github.com/telekom/scale/commit/026fbd355fd891944583079373c417e2e37203ee))
+* **spinner:** centering problems ([#791](https://github.com/telekom/scale/issues/791)) ([8f84642](https://github.com/telekom/scale/commit/8f84642c1f3cb0991ca4e3c9b713973b7d32599e))
+* **toggle-button:** left side border is missing when there is only one button in the group ([#782](https://github.com/telekom/scale/issues/782)) ([71469b1](https://github.com/telekom/scale/commit/71469b19f6a02651b690f22dcff78b1826dabc34))
+
+
+
+
+
 # [3.0.0-beta.41](https://github.com/telekom/scale/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2022-01-11)
 
 

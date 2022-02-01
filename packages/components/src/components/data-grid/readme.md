@@ -1,7 +1,5 @@
 # scale-data-grid
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -24,7 +22,7 @@
 | `selection`      | --                | Read-only selection array - populated with raw data from selected rows                       | `string[]` | `[]`        |
 | `shadeAlternate` | `shade-alternate` | (optional) Shade every second row darker                                                     | `boolean`  | `true`      |
 | `styles`         | `styles`          | (optional) Injected css styles                                                               | `any`      | `undefined` |
-| `visible`        | `visible`         | (optional) Set to falseto hide table, used for nested tables to re-render upon toggle        | `boolean`  | `true`      |
+| `visible`        | `visible`         | (optional) Set to false to hide table, used for nested tables to re-render upon toggle       | `boolean`  | `true`      |
 
 
 ## Events
