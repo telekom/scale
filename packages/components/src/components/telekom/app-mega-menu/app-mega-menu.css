@@ -14,8 +14,8 @@ app-mega-menu {
   --box-shadow: var(--scl-shadow-level-4);
   /*FIXME:TOKEN spacing token needed here?*/
   --spacing-y: 2.125rem;
-  --spacing-right: var(--telekom-spacing-unit-x-4);
-  --spacing-left: var(--telekom-spacing-unit-x-6);
+  --spacing-right: var(--telekom-spacing-unit-x4);
+  --spacing-left: var(--telekom-spacing-unit-x6);
   --background: var(--telekom-color-background-surface);
   --color-active: var(--telekom-color-text-and-icon-primary-standard);
 
@@ -28,7 +28,7 @@ app-mega-menu {
   --line-height-row-item: var(--telekom-typography-line-spacing-loose);
   --font-weight-row-item: var(--telekom-typography-font-weight-medium);
   --color-row-item: var(--telekom-color-text-and-icon-standard);
-  --spacing-bottom-row-item: var(--telekom-spacing-unit-x-2);
+  --spacing-bottom-row-item: var(--telekom-spacing-unit-x2);
 }
 .mega-menu {
   width: 100%;
@@ -56,7 +56,7 @@ app-mega-menu {
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
   list-style: none;
-  padding-left: var(--telekom-spacing-unit-x-8);
+  padding-left: var(--telekom-spacing-unit-x8);
 }
 
 .mega-menu__row-title {

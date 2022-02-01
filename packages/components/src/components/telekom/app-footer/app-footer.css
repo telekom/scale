@@ -12,9 +12,9 @@
 :host {
   --background: var(--telekom-color-background-surface-highlight);
   --color: var(--telekom-color-text-and-icon-inverted-standard: );
-  --spacing-top: var(--telekom-spacing-unit-x-8);
-  --spacing-bottom: var(--telekom-spacing-unit-x-6);
-  --spacing-x: var(--telekom-spacing-unit-x-6);
+  --spacing-top: var(--telekom-spacing-unit-x8);
+  --spacing-bottom: var(--telekom-spacing-unit-x6);
+  --spacing-x: var(--telekom-spacing-unit-x6);
   --background-container: var(
     --telekom-color-background-surface-highlight,
     #fff
@@ -22,21 +22,21 @@
   --radius: var(--telekom-radius-large);
   --max-width: inherit;
 
-  --border-top-minimal: var(--telekom-spacing-unit-x-025) solid
+  --border-top-minimal: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-subtle);
-  --color-minimal: var(--telekom-color-ui-normal);
+  --color-minimal: var(--telekom-color-ui-regular);
   --background-minimal: var(--telekom-color-background-surface-highlight);
   /* FIXME:TOKEN angular vs minimal same value here*/
-  --spacing-angular: var(--telekom-spacing-unit-x-6);
-  --spacing-minimal: var(--telekom-spacing-unit-x-6);
+  --spacing-angular: var(--telekom-spacing-unit-x6);
+  --spacing-minimal: var(--telekom-spacing-unit-x6);
 
   --background-mask: var(--telekom-color-background-surface-highlight, #fff);
   --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);
 
-  --height-logo: var(--telekom-spacing-unit-x-6);
+  --height-logo: var(--telekom-spacing-unit-x6);
   --font-size-copyright: var(--telekom-typography-font-size-caption);
   --color-link-standard: var(--telekom-color-text-and-icon-inverted-standard);
-  --color-link-minimal: var(--telekom-color-ui-normal);
+  --color-link-minimal: var(--telekom-color-ui-regular);
 
   --font-size-navigation-standard: var(--telekom-typography-font-size-caption);
   --font-family-navigation-standard: var(--telekom-typography-font-family-sans);
@@ -47,7 +47,7 @@
     --telekom-typography-font-weight-medium
   );
 
-  --spacing-navigation-standard: var(--telekom-spacing-unit-x-2);
+  --spacing-navigation-standard: var(--telekom-spacing-unit-x2);
   --color-navigation-standard-hover: var(
     --telekom-color-text-and-icon-inverted-standard
   );
@@ -57,9 +57,8 @@
   --color-navigation-active-focus: var(
     --telekom-color-text-and-icon-primary-pressed
   );
-  --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x-05)
+  --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-primary-standard);
-  /* FIXME:TOKEN border has white color */
   --border-color-standard-hover: var(
     --telekom-color-text-and-icon-inverted-standard
   );
@@ -141,7 +140,7 @@
   margin: calc(-1 * var(--spacing-navigation-standard)) 0;
 }
 .footer-navigation li span {
-  padding: var(--telekom-spacing-unit-x-1) 0;
+  padding: var(--telekom-spacing-unit-x1) 0;
 }
 
 .footer-navigation li a:hover {
@@ -191,7 +190,7 @@
 
 .footer-navigation svg {
   width: auto;
-  height: var(--telekom-spacing-unit-x-4);
+  height: var(--telekom-spacing-unit-x4);
   margin-right: var(--spacing-navigation-standard);
 }
 
@@ -212,15 +211,15 @@
     margin-bottom: var(--spacing-angular);
   }
   .footer-copyright {
-    margin-bottom: var(--telekom-spacing-unit-x-4);
+    margin-bottom: var(--telekom-spacing-unit-x4);
   }
   .footer-navigation ul {
-    line-height: var(--telekom-spacing-unit-x-8);
+    line-height: var(--telekom-spacing-unit-x8);
   }
   .footer-navigation li a {
-    padding: var(--telekom-spacing-unit-x-1);
+    padding: var(--telekom-spacing-unit-x1);
     margin: calc(-1 * var(--spacing-navigation-standard))
-      calc(-1 * var(--telekom-spacing-unit-x-1));
+      calc(-1 * var(--telekom-spacing-unit-x1));
   }
 }
 

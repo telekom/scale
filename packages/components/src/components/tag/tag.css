@@ -33,8 +33,7 @@
     var(--telekom-color-ui-extra-strong);
   --background-button-dismissable-focus: ;
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  /* FIXME:TOKEN background color white color-ui-white?? */
-  --background-button-dismissable-hover: var(--scl-color-white);
+  --background-button-dismissable-hover: var(--telekom-color-ui-base);
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);

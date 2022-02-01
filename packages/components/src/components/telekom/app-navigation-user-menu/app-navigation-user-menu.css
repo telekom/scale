@@ -10,11 +10,11 @@
  */
 
 :host {
-  --border-width-divider: var(--telekom-spacing-unit-x-025);
+  --border-width-divider: var(--telekom-spacing-unit-x025);
   --color-divider: var(--telekom-color-ui-subtle);
   --color-menu-item-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-menu-item-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x-05)
+  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
 }
 
@@ -25,22 +25,22 @@
 }
 
 .app-navigation-user-menu__divider {
-  margin: var(--telekom-spacing-unit-x-4) 0;
+  margin: var(--telekom-spacing-unit-x4) 0;
   border: 0;
   border-top: var(--border-width-divider) solid var(--color-divider);
 }
 
 @media (min-width: 1024px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-unit-x-3) var(--telekom-spacing-unit-x-6) 0
-      var(--telekom-spacing-unit-x-6);
+    margin: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x6) 0
+      var(--telekom-spacing-unit-x6);
   }
 }
 
 @media (max-width: 1023px) {
   .app-navigation-user-menu__user-info {
-    margin: var(--telekom-spacing-unit-x-6) var(--telekom-spacing-unit-x-4) 0
-      var(--telekom-spacing-unit-x-4);
+    margin: var(--telekom-spacing-unit-x6) var(--telekom-spacing-unit-x4) 0
+      var(--telekom-spacing-unit-x4);
   }
 }
 
@@ -49,7 +49,7 @@
   font-size: var(--scl-font-variant-heading-5-size);
   line-height: var(--scl-font-variant-heading-5-line-height);
   font-weight: var(--scl-font-variant-heading-5-weight);
-  margin-bottom: var(--telekom-spacing-unit-x-1);
+  margin-bottom: var(--telekom-spacing-unit-x1);
 }
 .app-navigation-user-menu__user-info--email {
   color: var(--telekom-color-text-and-icon-additional);
@@ -61,16 +61,16 @@
   font-size: var(--scl-font-variant-heading-6-size);
   line-height: var(--scl-font-variant-heading-6-line-height);
   font-weight: var(--scl-font-variant-heading-6-weight);
-  padding: var(--telekom-spacing-unit-x-2) var(--telekom-spacing-unit-x-4);
+  padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
   /* FIXME:TOKEN should it be radius token 0.125rem */
-  border-radius: var(--telekom-spacing-unit-x-05);
+  border-radius: var(--telekom-spacing-unit-x05);
   color: var(--telekom-color-text-and-icon-standard);
   text-decoration: none;
 }
 
 @media (min-width: 1024px) {
   .app-navigation-user-menu__item {
-    padding: var(--telekom-spacing-unit-x-2) var(--telekom-spacing-unit-x-6);
+    padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x6);
   }
 }
 
@@ -88,23 +88,23 @@
 }
 
 .app-navigation-user-menu__item--icon-prefix {
-  margin-right: var(--telekom-spacing-unit-x-2);
+  margin-right: var(--telekom-spacing-unit-x2);
 }
 .app-navigation-user-menu__item--icon-suffix {
-  margin-left: var(--telekom-spacing-unit-x-2);
+  margin-left: var(--telekom-spacing-unit-x2);
 }
 
 .app-navigation-user-menu__button {
-  padding: var(--telekom-spacing-unit-x-2) var(--telekom-spacing-unit-x-4);
+  padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
 }
 
 @media (min-width: 1024px) {
   .app-navigation-user-menu__button {
-    padding: var(--telekom-spacing-unit-x-2) var(--telekom-spacing-unit-x-6);
+    padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x6);
   }
 }
 @media (min-width: 1024px) {
   .app-navigation-user-menu {
-    padding-bottom: var(--telekom-spacing-unit-x-1);
+    padding-bottom: var(--telekom-spacing-unit-x1);
   }
 }
