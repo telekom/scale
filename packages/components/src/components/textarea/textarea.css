@@ -89,6 +89,7 @@ scale-textarea {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
+  background-color: var(--telekom-color-ui-base)
 }
 
 .textarea .textarea__helper-text,
@@ -183,7 +184,7 @@ scale-textarea {
   pointer-events: none;
   border-radius: var(--telekom-radius-standard);
   height: var(--telekom-spacing-unit-x6);
-  background-color: var(--telekom-color-background-surface, #ffffff);
+  background-color: var(--telekom-color-ui-base, #ffffff);
 }
 .textarea--transparent .textarea__label-safety-background,
 .textarea--readonly .textarea__label-safety-background,
