@@ -97,6 +97,7 @@ scale-text-field {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
+  background-color: var(--telekom-color-ui-base)
 }
 .text-field .text-field__counter {
   display: flex;
