@@ -38,6 +38,7 @@
 
 .tooltip-positioner {
   position: absolute;
+  z-index: var(--z-index);
 }
 
 .slot-container {
