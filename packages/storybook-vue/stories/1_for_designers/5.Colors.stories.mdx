@@ -11,27 +11,22 @@ import text_de from './5.Colors_de.md';
       container: ({ context }) => {
         const locale = context && context.globals && context.globals.locale;
         let newSection = false;
-        let i = 0;
-        let j = 0;
-        let word;
-        let words;
+        let colorName;
+        let colorPath;
         let first;
-        let output;
+        let pathHeaderOutput = false;
         return (
           <DocsContainer context={context}>
             <table>
               {index.map((item, i) => {
-                i = i;
                 if (i !== 0) {
                   if (index[i - 1].section !== index[i].section) {
                     newSection = true;
-                    j = i;
                   } else {
                     newSection = false;
                   }
                 } else {
                   newSection = true;
-                  j = i;
                 }
                 return (
                   <div>
@@ -41,20 +36,27 @@ import text_de from './5.Colors_de.md';
                           {index[i].section}
                         </h3>
                         {index.map((item) => {
-                          word = item.name;
-                          words = word.split('/');
-                          if (first !== words[1]) {
-                            first = words[1];
-                            output = true;
+                          colorName = item.name;
+                          colorPath = colorName.split('/');
+                          if (first !== colorPath[1]) {
+                            first = colorPath[1];
+                            pathHeaderOutput = true;
                           } else {
-                            output = false;
+                            pathHeaderOutput = false;
                           }
                           return index[i].section == item.section ? (
                             <div style={{ backgroundColor: '#f0f1f1' }}>
-                              {output ? <div> {first} </div> : null}
+                              {pathHeaderOutput ? <div> {first} </div> : null}
                               <a href={`#${item.cssVariableName}`}>
-                                <div style={{ color: `${item.value}` }}>
-                                  {item.value}{' '}
+                                <div
+                                  style={{
+                                    color: `${item.value}`,
+                                    fontWeight: 'bold',
+                                  }}
+                                >
+                                  {colorPath[2]
+                                    ? colorPath[1] + colorPath[2]
+                                    : colorPath[1]}
                                 </div>
                               </a>
                             </div>
