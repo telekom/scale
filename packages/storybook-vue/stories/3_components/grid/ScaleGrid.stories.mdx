@@ -1,0 +1,110 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleGrid from './ScaleGrid.vue';
+
+<Meta
+  title="Beta Components/Grid"
+  component={ScaleGrid}
+  argTypes={{
+    columns: {
+      defaultValue: '4,8,16,16,16',
+      control: { type: 'text' },
+    },
+    gutterY: {
+      defaultValue: '12px,12px,12px,12px,12px',
+      control: { type: 'text' },
+    },
+    gutterX: {
+      defaultValue: '12px',
+      control: { type: 'text' },
+    },
+    spacing: {
+      defaultValue: '24px',
+      control: { type: 'text' },
+    },
+    maxWidth: {
+      defaultValue: '1552px',
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: {
+    columns: String,
+    ...ScaleGrid.props,
+  },
+  template: `
+    <scale-grid 
+    :columns="columns"
+    :gutter-x="gutterX"
+    :gutter-y="gutterY"
+    :spacing="spacing"
+    :max-width="maxWidth"
+    >
+    <scale-grid-item>A</scale-grid-item>
+    </scale-grid>
+  `,
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      columns: '4,8,16,16,16',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-grid> </scale-grid>
+```
+
+### Scoped CSS variables
+
+```css
+scale-grid,
+.scl-grid {
+  --spacing-md: var(--spacing-sm);
+  --spacing-lg: var(--spacing-md);
+  --spacing-xl: var(--spacing-lg);
+  --spacing-xxl: var(--spacing-xl);
+
+  --gutter-y-md: var(--gutter-y-sm);
+  --gutter-y-lg: var(--gutter-y-md);
+  --gutter-y-xl: var(--gutter-y-lg);
+  --gutter-y-xxl: var(--gutter-y-xl);
+
+  --gutter-x-md: var(--gutter-x-sm);
+  --gutter-x-lg: var(--gutter-x-md);
+  --gutter-x-xl: var(--gutter-x-lg);
+  --gutter-x-xxl: var(--gutter-x-xl);
+
+  --columns-md: var(--columns-sm);
+  --columns-lg: var(--columns-md);
+  --columns-xl: var(--columns-lg);
+  --columns-xxl: var(--columns-xl);
+
+  display: grid;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(var(--columns-sm, 4), minmax(0, 1fr));
+  padding-left: var(--spacing-sm, var(--scl-spacing-16, 1em));
+  padding-right: var(--spacing-sm, var(--scl-spacing-16, 1em));
+  column-gap: var(--gutter-y-sm, var(--scl-spacing-32, 2em));
+  row-gap: var(--gutter-x-sm, var(--scl-spacing-32, 2em));
+  max-width: var(--max-width, 1552px);
+}
+```

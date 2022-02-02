@@ -1,0 +1,72 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
+import ScaleGridItem from './ScaleGridItem.vue';
+
+<Meta
+  title="Beta Components/Grid item"
+  component={ScaleGridItem}
+  argTypes={{
+    size: {
+      defaultValue: '4,8,16,16,16',
+      control: { type: 'text' },
+    },
+    offset: {
+      defaultValue: '',
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: {
+    columns: String,
+    ...ScaleGridItem.props,
+  },
+  template: `
+    <scale-grid-item
+      :size="size"
+      :offset="offset"
+    >
+    </scale-grid-item>
+  `,
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-grid-item> </scale-grid-item>
+```
+
+### Scoped CSS variables
+
+```css
+scale-grid-item,
+.scl-grid-item {
+  --size-md: var(--size-sm);
+  --size-lg: var(--size-md);
+  --size-xl: var(--size-lg);
+  --size-xxl: var(--size-xl);
+
+  --offset-md: var(--offset-sm);
+  --offset-lg: var(--offset-md);
+  --offset-xl: var(--offset-lg);
+  --offset-xxl: var(--offset-xl);
+
+  grid-column: var(--offset-sm, auto) / span var(--size-sm, 4);
+}
+```
