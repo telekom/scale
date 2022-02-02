@@ -52,9 +52,11 @@ import text_de from './5.Colors_de.md';
                           return index[i].section == item.section ? (
                             <div style={{ backgroundColor: '#f0f1f1' }}>
                               {output ? <div> {first} </div> : null}
-                              <div style={{ color: `${item.value}` }}>
-                                {item.value}
-                              </div>
+                              <a href={`#${item.cssVariableName}`}>
+                                <div style={{ color: `${item.value}` }}>
+                                  {item.value}{' '}
+                                </div>
+                              </a>
                             </div>
                           ) : null;
                         })}
@@ -164,13 +166,14 @@ import text_de from './5.Colors_de.md';
                                 lineHeight: '50px',
                                 padding: '30px',
                               }}
+                              id={item.cssVariableName}
                             >
                               {item.cssVariableName}
                             </span>
                             <button
                               style={{
-                                padding: '10px',
                                 position: 'absolute',
+                                padding: '4px',
                                 top: '5px',
                                 right: '5px',
                               }}
@@ -180,7 +183,7 @@ import text_de from './5.Colors_de.md';
                                 );
                               }}
                             >
-                              Copy
+                              <scale-icon-action-copy-paste accessibility-title="copy-paste" />
                             </button>
                           </div>
                         </tr>
