@@ -88,8 +88,10 @@ export class TextFieldV2 {
   @Prop() inputprefix?: string;
   /** (optional) input suffix */
   @Prop() inputsuffix?: string;
-  /** (optional) input suffix */
+  /** (optional) input icon */
   @Prop() prefixiconname?: string;
+  /** (optional) show reveal password button */
+  @Prop() revealpassword?: boolean;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -150,7 +152,11 @@ export class TextFieldV2 {
     if (this.prefixiconname) {
       const width = this.hostElement.querySelector('.text-field-v2__prefix-icon').getBoundingClientRect().width
       this.hostElement.style.setProperty('--prefix-icon-length',`${width}px`)
-    }        
+    }
+    if (this.revealpassword) {
+      const width = this.hostElement.querySelector('.text-field-v2__reveal-password').getBoundingClientRect().width
+      this.hostElement.style.setProperty('--reveal-password-length',`${width}px`)
+    }    
   }
 
   // We're not watching `value` like we used to
@@ -195,16 +201,18 @@ export class TextFieldV2 {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
+  revealPassword = () => {
+    this.type === "password" ? this.type = "text" : this.type = "password"
+  }
+
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
-    console.log('there should be a prefix icon --->', this.prefixiconname )
-
     const PrefixIcon = `scale-icon-${this.prefixiconname}`;
-    console.log('TAG is', PrefixIcon)
+
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -258,6 +266,7 @@ export class TextFieldV2 {
             </div>
           )}
           {this.inputsuffix && <div class="text-field-v2__suffix"> {this.inputsuffix} </div>}
+          {this.revealpassword && <scale-icon-action-hide-password class="text-field-v2__reveal-password"onClick={this.revealPassword}></scale-icon-action-hide-password>}
         </div>
       </Host>
     );
@@ -281,6 +290,7 @@ export class TextFieldV2 {
       this.inputprefix && `text-field-v2--has-prefix`,
       this.inputsuffix && `text-field-v2--has-suffix`,
       this.prefixiconname && `text-field-v2--has-prefix-icon`,
+      this.revealpassword && `text-field-v2--has-reveal-password`,
       animated && 'animated'
     );
   }
