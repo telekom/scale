@@ -11,10 +11,12 @@ import text_de from './5.Colors_de.md';
       container: ({ context }) => {
         const locale = context && context.globals && context.globals.locale;
         let newSection = false;
+        let newSubSection = false;
         let colorName;
         let colorPath;
+        let lastPath;
         let first;
-        let pathHeaderOutput = false;
+        let output = true;
         return (
           <DocsContainer context={context}>
             <table>
@@ -31,37 +33,106 @@ import text_de from './5.Colors_de.md';
                 return (
                   <div>
                     {newSection ? (
+                      <table>
+                        <thead>
+                          <tr>
+                            <th
+                              style={{
+                                textAlign: 'left',
+                                color: '#6A6A6A',
+                                fontSize: '13px',
+                              }}
+                            >
+                              Example
+                            </th>
+                            <th
+                              style={{
+                                textAlign: 'left',
+                                color: '#6A6A6A',
+                                fontSize: '13px',
+                              }}
+                            >
+                              Color
+                            </th>
+                            <th
+                              style={{
+                                textAlign: 'left',
+                                color: '#6A6A6A',
+                                fontSize: '13px',
+                              }}
+                            >
+                              Description
+                            </th>
+                            <th
+                              style={{
+                                textAlign: 'left',
+                                color: '#6A6A6A',
+                                fontSize: '13px',
+                              }}
+                            >
+                              Token
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style={{ height: '150px' }}>TODO</td>
+                            <td style={{ height: '150px' }}>
+                              {index.map((item, j) => {
+                                colorPath = item.path;
+                                if (j !== 0) {
+                                  if (
+                                    index[j - 1].path[2] !== index[j].path[2]
+                                  ) {
+                                    newSubSection = true;
+                                  } else {
+                                    newSubSection = false;
+                                  }
+                                } else {
+                                  newSubSection = true;
+                                }
+                                return index[i].section == item.section &&
+                                  newSubSection ? (
+                                  <tr>
+                                    <div>
+                                      {index.map((item) => {
+                                        return item.path[2] == colorPath[2] ? (
+                                          <a href={`#${item.cssVariableName}`}>
+                                            <div
+                                              style={{
+                                                color: `${item.value}`,
+                                                fontWeight: 'bold',
+                                              }}
+                                            >
+                                              {item.path[3]
+                                                ? item.path[2] +
+                                                  ' ' +
+                                                  item.path[3]
+                                                : item.path[2]}
+                                            </div>
+                                          </a>
+                                        ) : null;
+                                      })}
+                                    </div>
+                                  </tr>
+                                ) : null;
+                              })}
+                            </td>
+                            <td style={{ height: '150px' }}>
+                              First row of Inner Table
+                            </td>
+                            <td style={{ height: '150px' }}>
+                              First row of Inner Table
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    ) : null}
+                    {newSection ? (
                       <thead>
                         <h3 style={{ paddingTop: '200px' }}>
                           {index[i].section}
                         </h3>
-                        {index.map((item) => {
-                          colorName = item.name;
-                          colorPath = colorName.split('/');
-                          if (first !== colorPath[1]) {
-                            first = colorPath[1];
-                            pathHeaderOutput = true;
-                          } else {
-                            pathHeaderOutput = false;
-                          }
-                          return index[i].section == item.section ? (
-                            <div style={{ backgroundColor: '#f0f1f1' }}>
-                              {pathHeaderOutput ? <div> {first} </div> : null}
-                              <a href={`#${item.cssVariableName}`}>
-                                <div
-                                  style={{
-                                    color: `${item.value}`,
-                                    fontWeight: 'bold',
-                                  }}
-                                >
-                                  {colorPath[2]
-                                    ? colorPath[1] + colorPath[2]
-                                    : colorPath[1]}
-                                </div>
-                              </a>
-                            </div>
-                          ) : null;
-                        })}
                         <tr>
                           <th
                             style={{
