@@ -127,7 +127,7 @@ export class TextFieldV2 {
 
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-text-field' + i++;
+      this.inputId = 'input-text-field-v2' + i++;
     }
   }
 
@@ -218,11 +218,11 @@ export class TextFieldV2 {
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
           <PrefixIcon class="text-field-v2__prefix-icon"></PrefixIcon>
+          {this.inputprefix !== '' ? <div class="text-field-v2__prefix"> {this.inputprefix} </div> : {}}
           {/* Accessibility: label should be always *before* the actual input */}
           <label class="text-field-v2__label" htmlFor={this.inputId}>
             {this.label}
           </label>
-          {this.inputprefix !== '' ? <div class="text-field-v2__prefix"> {this.inputprefix} </div> : {}}          
           <input
             type={this.type}
             class="text-field-v2__control"
