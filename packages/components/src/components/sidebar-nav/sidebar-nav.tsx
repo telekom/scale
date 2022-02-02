@@ -87,6 +87,7 @@ export class SidebarNav {
       // Recent versions of Safari throw with `addEventListener`
       // https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
       this.mq.addListener(this.handleMediaQueryChange);
+      this.collapsible = this.mq.matches;
     }
   }
 
