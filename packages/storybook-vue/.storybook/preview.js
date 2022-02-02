@@ -35,4 +35,5 @@ export const parameters = {
   viewport: {
     viewports: INITIAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
   },
+  viewMode: 'docs',
 };
