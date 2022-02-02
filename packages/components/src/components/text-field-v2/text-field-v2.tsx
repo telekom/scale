@@ -92,6 +92,8 @@ export class TextFieldV2 {
   @Prop() prefixiconname?: string;
   /** (optional) show reveal password button */
   @Prop() revealpassword?: boolean;
+  /** (optional) show reset button */
+  @Prop() reset?: boolean;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -157,6 +159,10 @@ export class TextFieldV2 {
       const width = this.hostElement.querySelector('.text-field-v2__reveal-password').getBoundingClientRect().width
       this.hostElement.style.setProperty('--reveal-password-length',`${width}px`)
     }    
+    if (this.reset) {
+      const width = this.hostElement.querySelector('.text-field-v2__reset').getBoundingClientRect().width
+      this.hostElement.style.setProperty('--reset-length',`${width}px`)      
+    }
   }
 
   // We're not watching `value` like we used to
@@ -203,6 +209,14 @@ export class TextFieldV2 {
 
   revealPassword = () => {
     this.type === "password" ? this.type = "text" : this.type = "password"
+  }
+
+  resetInput = () => {
+    this.value = ''
+  }
+
+  renderRevealPasswordButton = () => {
+    return this.type === "password" ? <scale-icon-action-show-password class="text-field-v2__reveal-password"onClick={this.revealPassword}></scale-icon-action-show-password> : <scale-icon-action-hide-password class="text-field-v2__reveal-password"onClick={this.revealPassword}></scale-icon-action-hide-password>
   }
 
   render() {
@@ -266,7 +280,8 @@ export class TextFieldV2 {
             </div>
           )}
           {this.inputsuffix && <div class="text-field-v2__suffix"> {this.inputsuffix} </div>}
-          {this.revealpassword && <scale-icon-action-hide-password class="text-field-v2__reveal-password"onClick={this.revealPassword}></scale-icon-action-hide-password>}
+          {this.revealpassword && this.renderRevealPasswordButton()}
+          {this.reset && <scale-icon-action-circle-close class="text-field-v2__reset" onClick={this.resetInput}></scale-icon-action-circle-close>}
         </div>
       </Host>
     );
@@ -291,6 +306,7 @@ export class TextFieldV2 {
       this.inputsuffix && `text-field-v2--has-suffix`,
       this.prefixiconname && `text-field-v2--has-prefix-icon`,
       this.revealpassword && `text-field-v2--has-reveal-password`,
+      this.reset && `text-field-v2--has-reset`,
       animated && 'animated'
     );
   }

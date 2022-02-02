@@ -216,7 +216,7 @@
 }
 
 .text-field-v2__suffix {
-  top: var(--spacing-y-meta);
+  top: calc(var(--spacing-y-meta) + 1px);
   right: calc( var(--suffix-length));
   color: var(--color-label);
   display: flex;
@@ -236,7 +236,29 @@
   right: calc( var(--suffix-length) + var(--reveal-password-length));
 }
 
+.text-field-v2--has-reveal-password.text-field-v2--has-reset .text-field-v2__suffix {
+  right: calc( var(--suffix-length) + var(--reveal-password-length) + var(--reset-length));
+}
+
 .text-field-v2__reveal-password {
+  top: 0;
+  right: calc(var(--spacing-x));
+  color: var(--color-label);
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  transition: var(--transition-label);
+  font-size: var(--font-size-label);
+  transform: translateY(50%);
+  font-weight: var(--font-weight-label); 
+  padding-right: var(--spacing-x); 
+}
+
+.text-field-v2--has-reset .text-field-v2__reveal-password {
+  right: calc(var(--spacing-x) + var(--reset-length));
+}
+
+.text-field-v2__reset {
   top: 0;
   right: calc(var(--spacing-x));
   color: var(--color-label);
