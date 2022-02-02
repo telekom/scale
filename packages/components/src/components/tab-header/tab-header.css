@@ -23,7 +23,6 @@
   --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
-  /* FIXME:TOKEN used for both font and background color */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
 }

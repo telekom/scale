@@ -31,7 +31,7 @@ scale-table {
   --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
   --background-tfoot: var(--telekom-color-ui-base);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-subtle);
+    var(--telekom-color-ui-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
   /* FIXME:TOKEN hardcoded values #ededed */

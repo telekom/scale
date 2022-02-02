@@ -98,7 +98,7 @@ scale-text-field {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
-  background-color: var(--background-control)
+  background-color: var(--background-control);
 }
 .text-field .text-field__counter {
   display: flex;
@@ -163,8 +163,7 @@ scale-text-field {
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
-  /* FIXME:TOKEN line height value original? */
-  line-height: var(--scl-font-variant-label-size);
+  line-height: var(--telekom-typography-font-size-small);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
@@ -192,8 +191,7 @@ scale-text-field {
 .text-field--size-small.text-field--has-focus:not(.text-field--readonly)
   .text-field__label,
 .text-field--size-small.animated .text-field__label {
-  /* FIXME:TOKEN line height value original? */
-  line-height: var(--scl-font-variant-label-size);
+  line-height: var(--telekom-typography-font-size-small);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
   font-size: var(--font-size-label-focus);
 }
