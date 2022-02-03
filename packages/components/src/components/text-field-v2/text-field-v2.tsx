@@ -216,7 +216,7 @@ export class TextFieldV2 {
   }
 
   renderRevealPasswordButton = () => {
-    return this.type === "password" ? <scale-icon-action-show-password class="text-field-v2__reveal-password"onClick={this.revealPassword}></scale-icon-action-show-password> : <scale-icon-action-hide-password class="text-field-v2__reveal-password"onClick={this.revealPassword}></scale-icon-action-hide-password>
+    return this.type === "password" ? <scale-icon-action-show-password class="text-field-v2__reveal-password" size={this.size === "small" ? 20 : 24} onClick={this.revealPassword}></scale-icon-action-show-password> : <scale-icon-action-hide-password class="text-field-v2__reveal-password" size={this.size === "small" ? 20 : 24} onClick={this.revealPassword}></scale-icon-action-hide-password>
   }
 
   render() {
@@ -231,7 +231,7 @@ export class TextFieldV2 {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          <PrefixIcon class="text-field-v2__prefix-icon"></PrefixIcon>
+          <PrefixIcon class="text-field-v2__prefix-icon" size={this.size === "small" ? "20" : "24"}></PrefixIcon>
           {this.inputprefix !== '' ? <div class="text-field-v2__prefix"> {this.inputprefix} </div> : {}}
           {/* Accessibility: label should be always *before* the actual input */}
           <label class="text-field-v2__label" htmlFor={this.inputId}>
@@ -281,7 +281,7 @@ export class TextFieldV2 {
           )}
           {this.inputsuffix && <div class="text-field-v2__suffix"> {this.inputsuffix} </div>}
           {this.revealpassword && this.renderRevealPasswordButton()}
-          {this.reset && <scale-icon-action-circle-close class="text-field-v2__reset" onClick={this.resetInput}></scale-icon-action-circle-close>}
+          {this.reset && <scale-icon-action-circle-close class="text-field-v2__reset" size={this.size === "small" ? 20 : 24} onClick={this.resetInput}></scale-icon-action-circle-close>}
         </div>
       </Host>
     );

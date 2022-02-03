@@ -109,8 +109,12 @@
   padding-right: calc(var(--spacing-x) - 1px + var(--suffix-length))
 }
 
-.text-field-v2.text-field-v2--has-suffix.text-field-v2.text-field-v2--has-reveal-password .text-field-v2__control {
+.text-field-v2.text-field-v2--has-suffix.text-field-v2--has-reveal-password .text-field-v2__control {
   padding-right: calc(calc(var(--spacing-x) * 2) - 1px + var(--suffix-length) + var(--reveal-password-length))
+}
+
+.text-field-v2.text-field-v2--has-suffix.text-field-v2--has-reveal-password.text-field-v2--has-reset .text-field-v2__control {
+  padding-right: calc(calc(var(--spacing-x) * 2) - 1px + var(--suffix-length) + var(--reveal-password-length) + var(--reset-length))
 }
 
 .text-field-v2 .text-field-v2__counter {
@@ -210,6 +214,10 @@
   font-weight: var(--font-weight-label);
 }
 
+.text-field-v2--size-small .text-field-v2__prefix {
+  top: 0
+}
+
 .text-field-v2--has-prefix-icon .text-field-v2__prefix {
   left: calc(var(--prefix-icon-length));
   padding-left: var(--spacing-x)
@@ -230,6 +238,10 @@
     calc((var(--height) - var(--font-size-label)) / 2)
   );
   font-weight: var(--font-weight-label);
+}
+
+.text-field-v2--size-small .text-field-v2__suffix {
+  top: 0
 }
 
 .text-field-v2--has-reveal-password .text-field-v2__suffix {

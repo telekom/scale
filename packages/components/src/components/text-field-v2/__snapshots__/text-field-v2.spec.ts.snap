@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextFieldV2 should match snapshot 1`] = `
+<scale-text-field-v2>
+  <div class="text-field-v2 text-field-v2--type-text">
+    <scale-icon-undefined class="text-field-v2__prefix-icon"></scale-icon-undefined>
+    <div class="text-field-v2__prefix"></div>
+    <label class="text-field-v2__label" htmlfor="input-text-field-v20"></label>
+    <input class="text-field-v2__control" id="input-text-field-v20" type="text" value="">
+  </div>
+</scale-text-field-v2>
+`;
