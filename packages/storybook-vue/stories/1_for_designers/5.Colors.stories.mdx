@@ -11,13 +11,24 @@ import text_de from './5.Colors_de.md';
       container: ({ context }) => {
         const locale = context && context.globals && context.globals.locale;
         let newSection = false;
-        let newSubSection = false;
-        let newSectionDescription = true;
-        let colorName;
-        let colorPath;
-        let lastPath;
-        let first;
-        let output = true;
+        let pathStringItem;
+        function getItemPathByPath(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index[i].pathString === path) {
+              if (index[i].path[3]) {
+                return index[i].path[2] + ' / ' + index[i].path[3];
+              }
+              return index[i].path[2];
+            }
+          }
+        }
+        function getItemColorByPath(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index[i].pathString === path) {
+              return index[i].value;
+            }
+          }
+        }
         return (
           <DocsContainer context={context}>
             <table>
@@ -34,9 +45,6 @@ import text_de from './5.Colors_de.md';
                 return (
                   <div>
                     {newSection ? (
-                      <h2 style={{ marginTop: '200px' }}>{index[i].section}</h2>
-                    ) : null}
-                    {newSection ? (
                       <table>
                         <thead>
                           <tr>
@@ -45,7 +53,6 @@ import text_de from './5.Colors_de.md';
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
-                                width: '200px',
                               }}
                             >
                               Example
@@ -55,7 +62,6 @@ import text_de from './5.Colors_de.md';
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
-                                width: '200px',
                               }}
                             >
                               Color
@@ -65,7 +71,6 @@ import text_de from './5.Colors_de.md';
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
-                                width: '300px',
                               }}
                             >
                               Description
@@ -75,7 +80,6 @@ import text_de from './5.Colors_de.md';
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
-                                width: '300px',
                               }}
                             >
                               Token
@@ -83,250 +87,189 @@ import text_de from './5.Colors_de.md';
                           </tr>
                         </thead>
                         <tbody>
-                          <td
-                            style={{
-                              verticalAlign: 'baseline',
-                            }}
-                          >
-                            {index.map((item, j) => {
-                              if (j !== 0) {
-                                if (index[j - 1].path[2] !== index[j].path[2]) {
-                                  newSectionDescription = true;
-                                } else {
-                                  newSectionDescription = false;
-                                }
-                              } else {
-                                newSectionDescription = true;
-                              }
-                              return newSectionDescription &&
-                                index[i].path[1] == item.path[1] ? (
-                                <tr
-                                  style={{
-                                    height: '170px',
-                                    backgroundColor: 'transparent',
-                                  }}
-                                >
-                                  <div
-                                    style={{
-                                      width: '250px',
-                                      marginTop: '7px',
-                                      marginBottom: '7px',
-                                      padding: '5px',
-                                      fontWeight: 'bold',
-                                      textTransform: 'capitalize',
-                                    }}
-                                  >
-                                    TODO
-                                  </div>
-                                </tr>
-                              ) : null;
-                            })}
+                          <td>
+                            {index
+                              .filter((item) => item.contrastChecks)
+                              .map((item, i) => {
+                                pathStringItem = item.contrastChecks;
+                                return (
+                                  <tr style={{ height: '300px' }}>
+                                    <div
+                                      style={{
+                                        width: '400px',
+                                        marginTop: '7px',
+                                        marginBottom: '7px',
+                                      }}
+                                    >
+                                      <div
+                                        style={{
+                                          height: '100px',
+                                          width: '350px',
+                                          borderRadius: '2px',
+                                          backgroundColor: `${item.value}`,
+                                          marginBottom: '10px',
+                                          fontSize: '8px',
+                                        }}
+                                      ></div>
+                                      <span
+                                        style={{
+                                          fontSize: '14px',
+                                        }}
+                                      >
+                                        {item.value}
+                                      </span>
+                                    </div>
+                                  </tr>
+                                );
+                              })}
                           </td>
-                          <td
-                            style={{
-                              verticalAlign: 'baseline',
-                            }}
-                          >
-                            {index.map((item, j) => {
-                              colorPath = item.path;
-                              if (j !== 0) {
-                                if (index[j - 1].path[2] !== index[j].path[2]) {
-                                  newSubSection = true;
-                                } else {
-                                  newSubSection = false;
-                                }
-                              } else {
-                                newSubSection = true;
-                              }
-                              return index[i].path[1] == item.path[1] &&
-                                newSubSection ? (
-                                <tr
-                                  style={{
-                                    height: '170px',
-                                    backgroundColor: 'transparent',
-                                  }}
-                                >
-                                  <div
-                                    style={{
-                                      width: '300px',
-                                      marginTop: '7px',
-                                      marginBottom: '7px',
-                                      padding: '5px',
-                                      fontWeight: 'bold',
-                                      textTransform: 'capitalize',
-                                    }}
-                                  >
-                                    {index.map((item) => {
-                                      return item.path[2] == colorPath[2] &&
-                                        index[i].path[1] == item.path[1] ? (
-                                        <a href={`#${item.cssVariableName}`}>
+                          <td>
+                            {index
+                              .filter((item) => item.contrastChecks)
+                              .map((item, i) => {
+                                pathStringItem = item.contrastChecks;
+                                return (
+                                  <tr style={{ height: '300px' }}>
+                                    <div>
+                                      {pathStringItem.map((path) => {
+                                        return (
                                           <div
                                             style={{
-                                              color: `${item.value}`,
+                                              backgroundColor: `${item.value}`,
                                             }}
                                           >
-                                            {item.path[3]
-                                              ? item.path[2] +
-                                                ' / ' +
-                                                item.path[3]
-                                              : item.path[2]}
+                                            <a href={`#${path}`}>
+                                              <div
+                                                style={{
+                                                  textTransform: 'capitalize',
+                                                  color: `${getItemColorByPath(
+                                                    path
+                                                  )}`,
+                                                }}
+                                              >
+                                                {getItemPathByPath(path)}
+                                              </div>
+                                            </a>
                                           </div>
-                                        </a>
-                                      ) : null;
-                                    })}
-                                  </div>
-                                </tr>
-                              ) : null;
-                            })}
+                                        );
+                                      })}
+                                    </div>
+                                  </tr>
+                                );
+                              })}
                           </td>
-                          <td
-                            style={{
-                              verticalAlign: 'baseline',
-                            }}
-                          >
-                            {index.map((item, j) => {
-                              if (j !== 0) {
-                                if (index[j - 1].path[2] !== index[j].path[2]) {
-                                  newSectionDescription = true;
-                                } else {
-                                  newSectionDescription = false;
-                                }
-                              } else {
-                                newSectionDescription = true;
-                              }
-                              return newSectionDescription &&
-                                index[i].path[1] == item.path[1] ? (
-                                <tr
-                                  style={{
-                                    height: '170px',
-                                    backgroundColor: 'transparent',
-                                  }}
-                                >
-                                  <div
-                                    style={{
-                                      marginTop: '7px',
-                                      marginBottom: '7px',
-                                      padding: '5px',
-                                      fontWeight: 'bold',
-                                    }}
-                                  >
-                                    <div
-                                      style={{
-                                        textTransform: 'capitalize',
-                                        fontSize: '19px',
-                                      }}
-                                    >
-                                      {index[j].path[1] +
-                                        ' / ' +
-                                        index[j].path[2]}{' '}
-                                    </div>
-                                    <div
-                                      style={{
-                                        fontWeight: '400',
-                                        marginTop: '10px',
-                                      }}
-                                    >
-                                      Lorem ipsum dolor sit amet, consetetur
-                                      sadipscing elitr, sed diam nonumy eirmod
-                                      tempor invidunt ut labore et dolore magna
-                                      (TODO)
-                                    </div>
-                                  </div>
-                                </tr>
-                              ) : null;
-                            })}
+                          <td>
+                            <tr style={{ height: '300px' }}>
+                              {index
+                                .filter((item) => item.contrastChecks)
+                                .map((item, i) => {
+                                  pathStringItem = item.contrastChecks;
+                                  return (
+                                    <tr style={{ height: '300px' }}>
+                                      <div
+                                        style={{
+                                          width: '350px',
+                                        }}
+                                      >
+                                        <div
+                                          style={{
+                                            fontWeight: 'bold',
+                                            fontSize: '20px',
+                                            textTransform: 'capitalize',
+                                          }}
+                                        >
+                                          {item.name}
+                                        </div>
+                                        <div
+                                          style={{
+                                            textTransform: 'capitalize',
+                                          }}
+                                        >
+                                          {item.comment}
+                                        </div>
+                                      </div>
+                                    </tr>
+                                  );
+                                })}
+                            </tr>
                           </td>
-                          <td
-                            style={{
-                              verticalAlign: 'baseline',
-                            }}
-                          >
-                            {index.map((item, j) => {
-                              colorPath = item.path;
-                              if (j !== 0) {
-                                if (index[j - 1].path[2] !== index[j].path[2]) {
-                                  newSubSection = true;
-                                } else {
-                                  newSubSection = false;
-                                }
-                              } else {
-                                newSubSection = true;
-                              }
-                              return index[i].section == item.section &&
-                                newSubSection ? (
-                                <tr
-                                  style={{
-                                    height: '170px',
-                                    overflow: 'hidden',
-                                    backgroundColor: 'transparent',
-                                  }}
-                                >
-                                  <div
-                                    style={{
-                                      width: '250px',
-                                      marginTop: '7px',
-                                      marginBottom: '7px',
-                                      marginLeft: '60px',
-                                      backgroundColor: '#e7e8e9',
-                                      padding: '5px',
-                                      borderRadius: '4px',
-                                    }}
-                                  >
+                          <td>
+                            {index
+                              .filter((item) => item.contrastChecks)
+                              .map((item, i) => {
+                                pathStringItem = item.contrastChecks;
+                                return (
+                                  <tr style={{ height: '300px' }}>
                                     <div
                                       style={{
-                                        fontSize: '14px',
-                                        color: 'hsla(0, 0%, 0%, 0.65)',
+                                        width: '350px',
                                       }}
                                     >
-                                      //css
+                                      <div
+                                        style={{
+                                          fontWeight: 'bold',
+                                          fontSize: '20px',
+                                          marginTop: '20px',
+                                        }}
+                                      >
+                                        //js
+                                      </div>
+                                      <div
+                                        style={{
+                                          backgroundColor: '#D9DBDE',
+                                          marginTop: '5px',
+                                          lineHeight: '50px',
+                                          borderRadius: '8px',
+                                        }}
+                                      >
+                                        <div
+                                          style={{
+                                            marginLeft: '5px',
+                                          }}
+                                        >
+                                          {item.jsPathName}
+                                        </div>
+                                      </div>
+                                      <div
+                                        style={{
+                                          fontWeight: 'bold',
+                                          fontSize: '20px',
+                                          marginTop: '50px',
+                                        }}
+                                      >
+                                        //css
+                                      </div>
+                                      <div
+                                        style={{
+                                          backgroundColor: '#D9DBDE',
+                                          position: 'relative',
+                                          lineHeight: '50px',
+                                          borderRadius: '8px',
+                                        }}
+                                      >
+                                        <div style={{ marginLeft: '5px' }}>
+                                          {item.cssVariableName}
+                                        </div>
+                                        <button
+                                          style={{
+                                            position: 'absolute',
+                                            padding: '4px',
+                                            top: '5px',
+                                            right: '5px',
+                                          }}
+                                          onClick={() => {
+                                            navigator.clipboard.writeText(
+                                              item.cssVariableName
+                                            );
+                                          }}
+                                        >
+                                          <scale-icon-action-copy-paste accessibility-title="copy-paste" />
+                                        </button>
+                                      </div>
                                     </div>
-                                    <div
-                                      style={{
-                                        fontWeight: 'bold',
-                                        fontSize: '11px',
-                                        color: 'hsla(0, 0%, 0%, 0.65)',
-                                      }}
-                                    >
-                                      --telekom-color-text-and-icon-standard
-                                    </div>
-                                    <div
-                                      style={{
-                                        fontSize: '14px',
-                                        color: 'hsla(0, 0%, 0%, 0.65)',
-                                      }}
-                                    >
-                                      //js
-                                    </div>
-                                    <div
-                                      style={{
-                                        fontWeight: 'bold',
-                                        fontSize: '11px',
-                                        color: 'hsla(0, 0%, 0%, 0.65)',
-                                      }}
-                                    >
-                                      color.textIcon.standard
-                                    </div>
-                                    <div
-                                      style={{
-                                        fontSize: '14px',
-                                        color: 'hsla(0, 0%, 0%, 0.65)',
-                                      }}
-                                    >
-                                      //hex
-                                    </div>
-                                    <div
-                                      style={{
-                                        fontWeight: 'bold',
-                                        fontSize: '11px',
-                                        color: 'hsla(0, 0%, 0%, 0.65)',
-                                      }}
-                                    >
-                                      #000000
-                                    </div>
-                                  </div>
-                                </tr>
-                              ) : null;
-                            })}
+                                  </tr>
+                                );
+                              })}
                           </td>
                         </tbody>
                       </table>
@@ -439,7 +382,7 @@ import text_de from './5.Colors_de.md';
                                 lineHeight: '50px',
                                 padding: '30px',
                               }}
-                              id={item.cssVariableName}
+                              id={item.pathString}
                             >
                               {item.cssVariableName}
                             </span>
