@@ -17,14 +17,16 @@ scale-text-field {
     var(--telekom-color-ui-extra-strong);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
+  /*FIXME: replace with ui border hover*/
   --border-color-hover: var(--telekom-color-primary-hovered, #f90984);
   --border-color-focus: var(--telekom-color-primary-pressed, #f90984);
+  --border-color-disabled: var(--telekom-color-ui-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   --height: var(--telekom-spacing-unit-x12);
   --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);
-  --color-disabled: var(--telekom-color-ui-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-subtle);
   --background-readonly: var(--telekom-color-ui-subtle);
@@ -61,11 +63,11 @@ scale-text-field {
 
   /*placeholder*/
   --transition-placeholder: var(--transition);
-  --color-placeholder: var(--telekom-color-ui-regular);
+  --color-placeholder: var(--telekom-color-text-and-icon-additional);
 
   /*label*/
-  --color-label: var(--telekom-color-ui-regular);
-  --color-label-readonly: var(--telekom-color-text-and-icon-standard);
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --color-label-readonly: var(--telekom-color-text-and-icon-additional);
   /* FIXME:TOKEN z-index token is needed */
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
@@ -98,7 +100,8 @@ scale-text-field {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
-  background-color: var(--background-control)
+  background-color: var(--background-control);
+  color: var(--color-meta);
 }
 .text-field .text-field__counter {
   display: flex;
@@ -163,8 +166,7 @@ scale-text-field {
 }
 .text-field--has-focus:not(.text-field--readonly) .text-field__label,
 .animated .text-field__label {
-  /* FIXME:TOKEN line height value original? */
-  line-height: var(--scl-font-variant-label-size);
+  line-height: var(--telekom-typography-font-size-small);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
@@ -192,8 +194,7 @@ scale-text-field {
 .text-field--size-small.text-field--has-focus:not(.text-field--readonly)
   .text-field__label,
 .text-field--size-small.animated .text-field__label {
-  /* FIXME:TOKEN line height value original? */
-  line-height: var(--scl-font-variant-label-size);
+  line-height: var(--telekom-typography-font-size-small);
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
   font-size: var(--font-size-label-focus);
 }
@@ -219,7 +220,7 @@ scale-text-field {
 .text-field--disabled .text-field__counter,
 .text-field--disabled .text-field__helper-text {
   cursor: not-allowed;
-  border-color: var(--color-disabled);
+  border-color: var(--border-color-disabled);
   color: var(--color-disabled);
   background: transparent;
 }

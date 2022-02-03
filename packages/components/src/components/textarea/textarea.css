@@ -11,19 +11,20 @@
 
 scale-textarea {
   --transition: all var(--telekom-motion-duration-transition)
-    var(---telekom-motion-easing-standard);
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-extra-strong);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  /* FIXME:TOKEN do we still need this fallback color? */
+  /* FIXME:TOKEN replace with ui border hover */
   --border-color-hover: var(--telekom-color-primary-hovered, #f90984);
   --border-color-focus: var(--telekom-color-primary-pressed, #f90984);
+  --border-color-disabled: var(--telekom-color-ui-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   --spacing-x: var(--telekom-spacing-unit-x3);
-  --color-disabled: var(--telekom-color-ui-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-subtle);
   --background-readonly: var(--telekom-color-ui-subtle);
@@ -57,11 +58,11 @@ scale-textarea {
 
   /*placeholder*/
   --transition-placeholder: var(--transition);
-  --color-placeholder: var(--telekom-color-ui-regular);
+  --color-placeholder: var(--telekom-color-text-and-icon-additional);
 
   /*label*/
-  --color-label: var(--telekom-color-ui-regular);
-  --color-label-readonly: var(--telekom-color-text-and-icon-standard);
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --color-label-readonly: var(--telekom-color-text-and-icon-additional);
   /* FIXME:TOKEN z-index token is needed */
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
@@ -89,7 +90,8 @@ scale-textarea {
   font-size: var(--font-size-control);
   border-radius: var(--radius);
   border: var(--border);
-  background-color: var(--background-control)
+  background-color: var(--background-control);
+  color: var(--color-meta);
 }
 
 .textarea .textarea__helper-text,
@@ -210,7 +212,7 @@ scale-textarea {
 .textarea--disabled .textarea__meta,
 .textarea--disabled .textarea__helper-text {
   cursor: not-allowed;
-  border-color: var(--color-disabled);
+  border-color: var(--border-color-disabled);
   color: var(--color-disabled);
   background: transparent;
 }

@@ -19,7 +19,7 @@ scale-nav-icon {
   --font-size-desktop: var(--telekom-typography-font-size-small);
   --line-height-desktop: var(--telekom-typography-line-spacing-standard);
 
-  --color: var(--telekom-color-text-and-icon-primary-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
 }

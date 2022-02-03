@@ -26,7 +26,7 @@ scale-app-header {
   --color-brand: var(--telekom-color-text-and-icon-inverted-standard);
   --background-brand: var(--telekom-color-primary-standard);
 
-  --color-nav: var(--telekom-color-text-and-icon-standard: );
+  --color-nav: var(--telekom-color-text-and-icon-standard);
   --background-nav: var(--telekom-color-background-surface);
   --spacing-nav: 0 var(--telekom-spacing-unit-x4);
 }

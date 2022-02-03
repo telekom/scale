@@ -11,31 +11,28 @@
 
 :host {
   --background: var(--telekom-color-background-surface-highlight);
-  --color: var(--telekom-color-text-and-icon-inverted-standard: );
+  --color: var(--telekom-color-text-and-icon-functional-white);
   --spacing-top: var(--telekom-spacing-unit-x8);
   --spacing-bottom: var(--telekom-spacing-unit-x6);
   --spacing-x: var(--telekom-spacing-unit-x6);
-  --background-container: var(
-    --telekom-color-background-surface-highlight,
-    #fff
-  );
+  --background-container: var(--telekom-color-background-surface, #fff);
   --radius: var(--telekom-radius-large);
   --max-width: inherit;
 
   --border-top-minimal: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-subtle);
   --color-minimal: var(--telekom-color-ui-regular);
-  --background-minimal: var(--telekom-color-background-surface-highlight);
+  --background-minimal: var(--telekom-color-background-surface);
   /* FIXME:TOKEN angular vs minimal same value here*/
   --spacing-angular: var(--telekom-spacing-unit-x6);
   --spacing-minimal: var(--telekom-spacing-unit-x6);
 
-  --background-mask: var(--telekom-color-background-surface-highlight, #fff);
+  --background-mask: var(--telekom-color-background-surface, #fff);
   --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);
 
   --height-logo: var(--telekom-spacing-unit-x6);
   --font-size-copyright: var(--telekom-typography-font-size-caption);
-  --color-link-standard: var(--telekom-color-text-and-icon-inverted-standard);
+  --color-link-standard: var(--telekom-color-text-and-icon-functional-white);
   --color-link-minimal: var(--telekom-color-ui-regular);
 
   --font-size-navigation-standard: var(--telekom-typography-font-size-caption);
@@ -49,7 +46,7 @@
 
   --spacing-navigation-standard: var(--telekom-spacing-unit-x2);
   --color-navigation-standard-hover: var(
-    --telekom-color-text-and-icon-inverted-standard
+    --telekom-color-text-and-icon-functional-white
   );
   --color-navigation-minimal-hover: var(
     --telekom-color-text-and-icon-primary-hovered
@@ -60,7 +57,7 @@
   --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-primary-standard);
   --border-color-standard-hover: var(
-    --telekom-color-text-and-icon-inverted-standard
+    --telekom-color-text-and-icon-functional-white
   );
 }
 .footer {
@@ -148,7 +145,7 @@
 }
 
 .footer--variant-minimal .footer-navigation li a:hover {
-  color: var(--color-navigation-minimal-hove);
+  color: var(--color-navigation-minimal-hover);
 }
 
 .footer--variant-minimal .footer-navigation li a:hover span {
