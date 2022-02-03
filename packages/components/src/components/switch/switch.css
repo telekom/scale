@@ -9,8 +9,13 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/*
+  TODO
+  - [ ] move all variables scale-switch, now they're no use!
+  - [ ] make tokens more granular (text, toggle, etc.) e.g. --color-disabled is not nice
+*/
+
 .switch {
-  /* TODO all these variables placed in here are no use, they should be placed in scale-switch */
   --size: 20px;
   --offset: 2px;
 
@@ -18,7 +23,6 @@
   --color-on: var(--telekom-color-primary-standard);
   --color-active: var(--telekom-color-primary-pressed);
   --color-hover: var(--telekom-color-primary-hovered);
-  /* FIXME:TOKEN this same color is used for both text and ui element, we would need to separate variables! */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --color-state-contrast: var(--telekom-color-ui-base);
 
@@ -27,8 +31,10 @@
   --color-toggle: var(--color-state);
   --color-text: var(--color-state);
 
-  --transition-duration: var(--scl-motion-duration-fast);
-  --transition-timing-function: var(--scl-motion-easing-standard);
+  --transition-duration: var(--telekom-motion-duration-transition);
+  --transition-timing-function: cubic-bezier(
+    var(--telekom-motion-easing-standard)
+  );
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --spacing-left: var(--telekom-spacing-unit-x2);
@@ -176,4 +182,12 @@
   --color-state: var(--color-disabled);
   --color-toggle: var(--color-state-contrast);
   --color-text: var(--color-state-contrast);
+}
+
+/* This selector makes me :( — why are we using BEM? */
+.switch.switch--disabled
+  input:not(:checked)
+  ~ .switch__wrapper
+  > .switch__text:before {
+  color: transparent;
 }
