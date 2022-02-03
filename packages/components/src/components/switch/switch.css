@@ -10,15 +10,16 @@
  */
 
 .switch {
-  /* TODO these variables placed in here are no use, they should be placed inside scale-switch */
+  /* TODO all these variables placed in here are no use, they should be placed in scale-switch */
   --size: 20px;
   --offset: 2px;
-  /* FIXME:TOKEN not sure as ultimately this value gets used as background, read TODO */
+
   --color-off: var(--telekom-color-text-and-icon-standard);
   --color-on: var(--telekom-color-primary-standard);
   --color-active: var(--telekom-color-primary-pressed);
   --color-hover: var(--telekom-color-primary-hovered);
-  --color-disabled: var(--telekom-color-ui-disabled);
+  /* FIXME:TOKEN this same color is used for both text and ui element, we would need to separate variables! */
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --color-state-contrast: var(--telekom-color-ui-base);
 
   --color-state: var(--color-off);
