@@ -28,7 +28,7 @@
   /* visited */
   --color-visited: var(--telekom-color-text-and-icon-link-visited);
   /* FIXME:TOKEN no -functional-link-visited */
-  --color-line-visited: var(---scl-color-text-link-visited);
+  --color-line-visited: var(--scl-color-text-link-visited);
   --line-thickness-visited: var(--line-thickness-initial);
   /* hover */
   --color-hover: var(--telekom-color-text-and-icon-link-hovered);
