@@ -11,13 +11,12 @@
 
 scale-nav-segment {
   --transition: all 0.2s ease-in-out;
-  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --color: var(--telekom-color-text-and-icon-functional-white);
   --spacing-y: var(--telekom-spacing-unit-x1);
   --font-size: var(--telekom-typography-font-size-caption);
   --font-weight: var(--telekom-typography-font-weight-extra-bold);
   --line-height: var(--telekom-typography-line-spacing-extra-tight);
-  --border-bottom: 1px solid
-    var(--telekom-color-text-and-icon-inverted-standard);
+  --border-bottom: 1px solid var(--telekom-color-text-and-icon-functional-white);
 }
 .sr-only {
   position: absolute;
