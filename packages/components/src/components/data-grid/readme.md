@@ -52,8 +52,8 @@
 - [scale-checkbox](../checkbox)
 - [scale-pagination](../pagination)
 - [scale-switch](../switch)
-- [scale-progress-bar](../progress-bar)
 - [scale-link](../link)
+- [scale-progress-bar](../progress-bar)
 - [scale-text-field](../text-field)
 - [scale-dropdown](../dropdown)
 - [scale-tag](../tag)
@@ -74,8 +74,8 @@ graph TD;
   scale-data-grid --> scale-checkbox
   scale-data-grid --> scale-pagination
   scale-data-grid --> scale-switch
-  scale-data-grid --> scale-progress-bar
   scale-data-grid --> scale-link
+  scale-data-grid --> scale-progress-bar
   scale-data-grid --> scale-text-field
   scale-data-grid --> scale-dropdown
   scale-data-grid --> scale-tag

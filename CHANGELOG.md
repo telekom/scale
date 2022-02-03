@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
+
+
+### Bug Fixes
+
+* **sidebar-nav:** set initial collapsible state ([#839](https://github.com/telekom/scale/issues/839)) ([fad731e](https://github.com/telekom/scale/commit/fad731ee42eed94c4234a1ecaa9c5e1bc794d87f))
+* **sidebar-nav-collapsible:** proper opacity for chevron ([#840](https://github.com/telekom/scale/issues/840)) ([363cbcc](https://github.com/telekom/scale/commit/363cbcc25400a0bdcda74bd9c6333c12b83fbed8))
+* **tooltip:** add z-index ([#821](https://github.com/telekom/scale/issues/821)) ([b3773b0](https://github.com/telekom/scale/commit/b3773b032389ee75d3992b8ac03a4729d0890c60))
+
+
+
+
+
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+
+### Bug Fixes
+
+* **checkbox:** do not emit change from watching _disabled_ ([#836](https://github.com/telekom/scale/issues/836)) ([a7d50e2](https://github.com/telekom/scale/commit/a7d50e21b400d432d2ca882c0e8d762e310bad9e))
+
+
+
+
+
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+
+### Bug Fixes
+
+* **checkbox:** apply scoped css variable spacing control ([#807](https://github.com/telekom/scale/issues/807)) ([8545c21](https://github.com/telekom/scale/commit/8545c211438ee21d89191181ab8314bec7eeaf8f))
+
+
+
+
+
 # [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
 
 

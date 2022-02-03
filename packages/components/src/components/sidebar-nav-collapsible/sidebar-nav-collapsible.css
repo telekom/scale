@@ -10,6 +10,7 @@
  */
 
 :host {
+  --opacity-chevron: 1;
   /* FIXME:TOKEN previously --scl-color-grey-10 */
   --border-bottom-color: var(--telekom-color-ui-subtle);
   /* FIXME:TOKEN previously --scl-color-grey-70 */

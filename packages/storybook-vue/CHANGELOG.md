@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
+
+
+### Bug Fixes
+
+* **sidebar-nav-collapsible:** proper opacity for chevron ([#840](https://github.com/telekom/scale/issues/840)) ([363cbcc](https://github.com/telekom/scale/commit/363cbcc25400a0bdcda74bd9c6333c12b83fbed8))
+
+
+
+
+
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue

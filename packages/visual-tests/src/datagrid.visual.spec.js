@@ -1,5 +1,6 @@
 describe('DataGrid', () => {
   test.each([
+    ['email-cell'],
     ['date-cell'],
     ['html-cell'],
     ['number-cell'],
@@ -10,6 +11,7 @@ describe('DataGrid', () => {
     ['pagination'],
     ['column-stretch'],
     ['tags-cell'],
+    ['telephone-cell'],
     ['selection-export'],
   ])('%p', async (variant) => {
     await global.page.goto(
