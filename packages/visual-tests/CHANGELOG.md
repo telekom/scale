@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
+
+
+### Features
+
+* **data-table:** add email and phone cells ([#808](https://github.com/telekom/scale/issues/808)) ([9327af2](https://github.com/telekom/scale/commit/9327af2b0dd4b06362af97380303c8fa1cb4dbdd))
+
+
+
+
+
 # [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests
