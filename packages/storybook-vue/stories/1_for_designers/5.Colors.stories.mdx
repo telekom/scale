@@ -12,6 +12,7 @@ import text_de from './5.Colors_de.md';
         const locale = context && context.globals && context.globals.locale;
         let newSection = false;
         let pathStringItem;
+        let currentSection;
         function getItemPathByPath(path) {
           for (let i = 0; i < 100; i++) {
             if (index.tokens[i].pathString === path) {
@@ -38,11 +39,13 @@ import text_de from './5.Colors_de.md';
                 if (i !== 0) {
                   if (index.tokens[i - 1].section !== index.tokens[i].section) {
                     newSection = true;
+                    currentSection = index.tokens[i].section;
                   } else {
                     newSection = false;
                   }
                 } else {
                   newSection = true;
+                  currentSection = index.tokens[i].section;
                 }
                 return (
                   <div>
@@ -94,7 +97,7 @@ import text_de from './5.Colors_de.md';
                               .filter((item) => item.contrastChecks)
                               .map((item, i) => {
                                 pathStringItem = item.contrastChecks;
-                                return (
+                                return currentSection == item.section ? (
                                   <tr style={{ height: '300px' }}>
                                     <div
                                       style={{
@@ -122,7 +125,7 @@ import text_de from './5.Colors_de.md';
                                       </span>
                                     </div>
                                   </tr>
-                                );
+                                ) : null;
                               })}
                           </td>
                           <td>
@@ -130,7 +133,7 @@ import text_de from './5.Colors_de.md';
                               .filter((item) => item.contrastChecks)
                               .map((item, i) => {
                                 pathStringItem = item.contrastChecks;
-                                return (
+                                return currentSection == item.section ? (
                                   <tr style={{ height: '300px' }}>
                                     <div>
                                       {pathStringItem.map((path) => {
@@ -157,7 +160,7 @@ import text_de from './5.Colors_de.md';
                                       })}
                                     </div>
                                   </tr>
-                                );
+                                ) : null;
                               })}
                           </td>
                           <td>
@@ -166,32 +169,26 @@ import text_de from './5.Colors_de.md';
                                 .filter((item) => item.contrastChecks)
                                 .map((item, i) => {
                                   pathStringItem = item.contrastChecks;
-                                  return (
+                                  return currentSection == item.section ? (
                                     <tr style={{ height: '300px' }}>
                                       <div
                                         style={{
-                                          width: '350px',
+                                          fontWeight: 'bold',
+                                          fontSize: '20px',
+                                          textTransform: 'capitalize',
                                         }}
                                       >
-                                        <div
-                                          style={{
-                                            fontWeight: 'bold',
-                                            fontSize: '20px',
-                                            textTransform: 'capitalize',
-                                          }}
-                                        >
-                                          {item.name}
-                                        </div>
-                                        <div
-                                          style={{
-                                            textTransform: 'capitalize',
-                                          }}
-                                        >
-                                          {item.comment}
-                                        </div>
+                                        {item.name}
+                                      </div>
+                                      <div
+                                        style={{
+                                          textTransform: 'capitalize',
+                                        }}
+                                      >
+                                        {item.comment}
                                       </div>
                                     </tr>
-                                  );
+                                  ) : null;
                                 })}
                             </tr>
                           </td>
@@ -200,7 +197,7 @@ import text_de from './5.Colors_de.md';
                               .filter((item) => item.contrastChecks)
                               .map((item, i) => {
                                 pathStringItem = item.contrastChecks;
-                                return (
+                                return currentSection == item.section ? (
                                   <tr style={{ height: '300px' }}>
                                     <div
                                       style={{
@@ -270,7 +267,7 @@ import text_de from './5.Colors_de.md';
                                       </div>
                                     </div>
                                   </tr>
-                                );
+                                ) : null;
                               })}
                           </td>
                         </tbody>
