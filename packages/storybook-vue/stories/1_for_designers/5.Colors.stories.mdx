@@ -14,27 +14,29 @@ import text_de from './5.Colors_de.md';
         let pathStringItem;
         function getItemPathByPath(path) {
           for (let i = 0; i < 100; i++) {
-            if (index[i].pathString === path) {
-              if (index[i].path[3]) {
-                return index[i].path[2] + ' / ' + index[i].path[3];
+            if (index.tokens[i].pathString === path) {
+              if (index.tokens[i].path[3]) {
+                return (
+                  index.tokens[i].path[2] + ' / ' + index.tokens[i].path[3]
+                );
               }
-              return index[i].path[2];
+              return index.tokens[i].path[2];
             }
           }
         }
         function getItemColorByPath(path) {
           for (let i = 0; i < 100; i++) {
-            if (index[i].pathString === path) {
-              return index[i].value;
+            if (index.tokens[i].pathString === path) {
+              return index.tokens[i].value;
             }
           }
         }
         return (
           <DocsContainer context={context}>
             <table>
-              {index.map((item, i) => {
+              {index.tokens.map((item, i) => {
                 if (i !== 0) {
-                  if (index[i - 1].section !== index[i].section) {
+                  if (index.tokens[i - 1].section !== index.tokens[i].section) {
                     newSection = true;
                   } else {
                     newSection = false;
@@ -88,7 +90,7 @@ import text_de from './5.Colors_de.md';
                         </thead>
                         <tbody>
                           <td>
-                            {index
+                            {index.tokens
                               .filter((item) => item.contrastChecks)
                               .map((item, i) => {
                                 pathStringItem = item.contrastChecks;
@@ -124,7 +126,7 @@ import text_de from './5.Colors_de.md';
                               })}
                           </td>
                           <td>
-                            {index
+                            {index.tokens
                               .filter((item) => item.contrastChecks)
                               .map((item, i) => {
                                 pathStringItem = item.contrastChecks;
@@ -160,7 +162,7 @@ import text_de from './5.Colors_de.md';
                           </td>
                           <td>
                             <tr style={{ height: '300px' }}>
-                              {index
+                              {index.tokens
                                 .filter((item) => item.contrastChecks)
                                 .map((item, i) => {
                                   pathStringItem = item.contrastChecks;
@@ -194,7 +196,7 @@ import text_de from './5.Colors_de.md';
                             </tr>
                           </td>
                           <td>
-                            {index
+                            {index.tokens
                               .filter((item) => item.contrastChecks)
                               .map((item, i) => {
                                 pathStringItem = item.contrastChecks;
