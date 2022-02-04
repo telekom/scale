@@ -9,14 +9,14 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
-  --spacing-x: var(--telekom-spacing-grouped-md);
+ :host {
+  --spacing-x: var(--telekom-spacing-unit-x4);
   --background-overlay: var(
     --telekom-color-background-backdrop,
     rgba(108, 108, 108, 0.7)
   );
 
-  --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unrelated-lg)));
+  --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unit-x20)));
   --radius-window: var(--telekom-radius-large);
   --box-shadow-window: var(--telekom-shadow-top);
   --background-window: var(--telekom-color-background-surface);
@@ -30,29 +30,30 @@
     -spacing-56 !== --telekom-spacing-unrelated-sm
   */
   --size-window-small: calc(
-    (6 * var(--telekom-spacing-unrelated-sm, 3.5rem)) +
-      (5 * var(--telekom-spacing-related-sm))
+    (6 * var(---telekom-spacing-unit-x14, 3.5rem)) +
+      (5 * var(--telekom-spacing-unit-x8))
   );
   --size-window-default: calc(
-    (8 * var(--telekom-spacing-unrelated-sm, 3.5rem)) +
-      (7 * var(--telekom-spacing-related-sm))
+    (8 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (7 * var(--telekom-spacing-unit-x8))
   );
   --size-window-large: calc(
-    (12 * var(--telekom-spacing-unrelated-sm, 3.5rem)) +
-      (11 * var(--telekom-spacing-related-sm))
+    (12 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (11 * var(--telekom-spacing-unit-x8))
   );
 
-  --spacing-x-header: var(--telekom-spacing-grouped-lg);
-  --spacing-y-header: var(--telekom-spacing-grouped-lg);
+  --spacing-x-header: var(--telekom-spacing-unit-x6);
+  --spacing-y-header: var(--telekom-spacing-unit-x6);
 
+  /* FIXME:TOKEN --telekom-color-ui-border-standard is too dark */
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-light); /* could also be --telekom-color-ui-subtle ? */
+    var(--telekom-color-ui-general-subtle, var(--telekom-color-ui-subtle));
 
   --font-family-heading: var(--telekom-typography-font-family-sans);
   --font-size-heading: var(--telekom-typography-font-size-callout);
   --font-weight-heading: var(--telekom-typography-font-weight-extra-bold);
 
-  --spacing-close-button: var(--telekom-spacing-inner-lg);
+  --spacing-close-button: var(--telekom-spacing-unit-x2);
   --radius-close-button: var(--telekom-radius-standard);
   --transition-close-button: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -62,12 +63,12 @@
   --color-close-button-hover: var(--telekom-color-primary-hovered);
   --color-close-button-active: var(--telekom-color-primary-pressed);
 
-  --spacing-x-body-wrapper: var(--telekom-spacing-related-sm);
-  --spacing-y-body: var(--telekom-spacing-related-sm);
+  --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
+  --spacing-y-body: var(--telekom-spacing-unit-x6);
 
-  --spacing-actions: var(--telekom-spacing-related-sm);
+  --spacing-actions: var(--telekom-spacing-unit-x6);
 
-  --spacing-x-actions-slotted: var(--telekom-spacing-inner-lg);
+  --spacing-x-actions-slotted: var(--telekom-spacing-unit-x2);
   --background-actions-has-scroll: var(
     --telekom-color-background-surface-subtle
   );
@@ -136,7 +137,7 @@
 
 @media (max-height: 30em) {
   .modal__window {
-    max-height: calc(100vh - var(--telekom-spacing-related-sm));
+    max-height: calc(100vh - var(--telekom-spacing-unit-x6));
   }
 }
 
@@ -197,7 +198,6 @@
   appearance: none;
   cursor: pointer;
   user-select: none;
-  color: var(--scl-color-text-standard);
 }
 
 .modal__close-button:focus {
