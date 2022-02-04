@@ -11,36 +11,29 @@
 
 scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
-  /* FIXME:TOKEN previously --scl-color-background-light */
-  --background: var(--telekom-color-ui-subtle);
+  --background: transparent;
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --font-size: var(--telekom-typography-font-size-small);
   --font-weight: var(--telekom-typography-font-weight-bold);
+  --background-thead: var(--telekom-color-ui-subtle);
 
   --spacing-tbody-td: var(--telekom-spacing-unit-x4)
     var(--telekom-spacing-unit-x2);
-  /*FIXME:TOKEN border color should be different from background color running out of choice? */
-  /* FIXME:TOKEN previously --scl-color-grey-20 */
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-subtle);
-  --background-tbody: var(--telekom-color-ui-base);
+    var(--telekom-color-ui-standard);
 
-  /* FIXME:TOKEN hardcoded values #ededed */
-  --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
-  --background-tfoot: var(--telekom-color-ui-base);
+  --background-tbody-tr-hover: var(--telekom-color-ui-hovered);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
-  /* FIXME:TOKEN hardcoded values #ededed */
-  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
+  --background-th-sortable-hover: var(--telekom-color-ui-hovered);
   --background-th-sortable-active: var(--telekom-color-ui-light);
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-  /*FIXME:TOKEN --scl-color-grey-0? */
-  --background-tr-striped: var(--scl-color-grey-0);
+  --background-tr-striped: var(--telekom-color-ui-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 .table {
@@ -55,6 +48,10 @@ scale-table {
   white-space: nowrap;
   border-spacing: 0;
   border-collapse: collapse;
+}
+
+.table thead {
+  background: var(--background-thead);
 }
 .table th {
   padding: var(--padding);
@@ -78,12 +75,6 @@ scale-table {
   padding-right: 12px;
 }
 
-.table tfoot {
-  background: var(--background-tfoot);
-}
-.table tbody {
-  background: var(--background-tbody);
-}
 .table tfoot tr td {
   padding: 8px;
   font-weight: var(--font-weight);

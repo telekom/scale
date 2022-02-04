@@ -14,12 +14,11 @@ scale-text-field {
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-extra-strong);
+    var(--telekom-color-ui-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  /*FIXME: replace with ui border hover*/
-  --border-color-hover: var(--telekom-color-primary-hovered, #f90984);
-  --border-color-focus: var(--telekom-color-primary-pressed, #f90984);
+  --border-color-hover: var(--telekom-color-ui-hovered);
+  --border-color-focus: var(--telekom-color-ui-pressed);
   --border-color-disabled: var(--telekom-color-ui-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
@@ -44,7 +43,7 @@ scale-text-field {
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
-  --background-control: var(--telekom-color-ui-base);
+  --background-control: transparent;
 
   /*counter*/
   --transition-counter: var(--transition);
