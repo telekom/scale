@@ -1,1591 +1,2818 @@
-[
-  {
-    "path": ["color", "text-&-icon", "standard"],
-    "value": "#000000",
-    "comment": "Default text color with highest contrast.",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Standard",
-    "cssVariableName": "--telekom-color-text-and-icon-standard",
-    "jsPathName": "color.textIcon.standard"
-  },
-  {
-    "path": ["color", "text-&-icon", "additional"],
-    "value": "hsla(0, 0%, 0%, 0.65)",
-    "comment": "Use in combination with standard text for additional text elements.",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Additional",
-    "cssVariableName": "--telekom-color-text-and-icon-additional",
-    "jsPathName": "color.textIcon.additional"
-  },
-  {
-    "path": ["color", "text-&-icon", "disabled"],
-    "value": "hsla(0, 0%, 0%, 0.4)",
-    "comment": "Only use for disabled text.",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Disabled",
-    "cssVariableName": "--telekom-color-text-and-icon-disabled",
-    "jsPathName": "color.textIcon.disabled"
-  },
-  {
-    "path": ["color", "text-&-icon", "link", "standard"],
-    "value": "#005ac4",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Link / Standard",
-    "cssVariableName": "--telekom-color-text-and-icon-link-standard",
-    "jsPathName": "color.textIcon.link.standard"
-  },
-  {
-    "path": ["color", "text-&-icon", "link", "hovered"],
-    "value": "#00489d",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Link / Hovered",
-    "cssVariableName": "--telekom-color-text-and-icon-link-hovered",
-    "jsPathName": "color.textIcon.link.hovered"
-  },
-  {
-    "path": ["color", "text-&-icon", "link", "visited"],
-    "value": "#51417f",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Link / Visited",
-    "cssVariableName": "--telekom-color-text-and-icon-link-visited",
-    "jsPathName": "color.textIcon.link.visited"
-  },
-  {
-    "path": ["color", "text-&-icon", "link", "active"],
-    "value": "#003778",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Link / Active",
-    "cssVariableName": "--telekom-color-text-and-icon-link-active",
-    "jsPathName": "color.textIcon.link.active"
-  },
-  {
-    "path": ["color", "text-&-icon", "primary", "standard"],
-    "value": "#e20074",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Primary / Standard",
-    "cssVariableName": "--telekom-color-text-and-icon-primary-standard",
-    "jsPathName": "color.textIcon.primary.standard"
-  },
-  {
-    "path": ["color", "text-&-icon", "primary", "hovered"],
-    "value": "#c00063",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Primary / Hovered",
-    "cssVariableName": "--telekom-color-text-and-icon-primary-hovered",
-    "jsPathName": "color.textIcon.primary.hovered"
-  },
-  {
-    "path": ["color", "text-&-icon", "primary", "pressed"],
-    "value": "#9e0051",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Primary / Pressed",
-    "cssVariableName": "--telekom-color-text-and-icon-primary-pressed",
-    "jsPathName": "color.textIcon.primary.pressed"
-  },
-  {
-    "path": ["color", "text-&-icon", "inverted", "standard"],
-    "value": "#ffffff",
-    "comment": "Standard text color inverted to be used on high contrast colors like ui/extra strong",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Inverted / Standard",
-    "cssVariableName": "--telekom-color-text-and-icon-inverted-standard",
-    "jsPathName": "color.textIcon.inverted.standard"
-  },
-  {
-    "path": ["color", "text-&-icon", "inverted", "additional"],
-    "value": "hsla(0, 0%, 100%, 0.65)",
-    "comment": "Additional text color inverted to be used on high contrast colors like ui/extra strong",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Inverted / Additional",
-    "cssVariableName": "--telekom-color-text-and-icon-inverted-additional",
-    "jsPathName": "color.textIcon.inverted.additional"
-  },
-  {
-    "path": ["color", "text-&-icon", "functional", "informational"],
-    "value": "#005ac4",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Functional / Informational",
-    "cssVariableName": "--telekom-color-text-and-icon-functional-informational",
-    "jsPathName": "color.textIcon.functional.informational"
-  },
-  {
-    "path": ["color", "text-&-icon", "functional", "success"],
-    "value": "#09572f",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Functional / Success",
-    "cssVariableName": "--telekom-color-text-and-icon-functional-success",
-    "jsPathName": "color.textIcon.functional.success"
-  },
-  {
-    "path": ["color", "text-&-icon", "functional", "danger"],
-    "value": "#e60021",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Functional / Danger",
-    "cssVariableName": "--telekom-color-text-and-icon-functional-danger",
-    "jsPathName": "color.textIcon.functional.danger"
-  },
-  {
-    "path": ["color", "text-&-icon", "functional", "warning"],
-    "value": "#bb5313",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Functional / Warning",
-    "cssVariableName": "--telekom-color-text-and-icon-functional-warning",
-    "jsPathName": "color.textIcon.functional.warning"
-  },
-  {
-    "path": ["color", "text-&-icon", "functional", "white"],
-    "value": "#ffffff",
-    "comment": "This text color is white in all modes (light & dark)",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Functional / White",
-    "cssVariableName": "--telekom-color-text-and-icon-functional-white",
-    "jsPathName": "color.textIcon.functional.white"
-  },
-  {
-    "path": ["color", "text-&-icon", "functional", "black"],
-    "value": "#000000",
-    "comment": "This text color is black in all modes (light & dark)",
-    "category": "Color",
-    "section": "Text & Icon",
-    "name": "Text & Icon / Functional / Black",
-    "cssVariableName": "--telekom-color-text-and-icon-functional-black",
-    "jsPathName": "color.textIcon.functional.black"
-  },
-  {
-    "path": ["color", "background", "canvas"],
-    "value": "#ffffff",
-    "comment": "Use as the background for your product (app, website, etc.)",
-    "category": "Color",
-    "section": "Background",
-    "name": "Background / Canvas",
-    "cssVariableName": "--telekom-color-background-canvas",
-    "jsPathName": "color.background.canvas"
-  },
-  {
-    "path": ["color", "background", "canvas-subtle"],
-    "value": "#e7e8e9",
-    "comment": "Use as the background for your product (app, website, etc.)",
-    "category": "Color",
-    "section": "Background",
-    "name": "Background / Canvas Subtle",
-    "cssVariableName": "--telekom-color-background-canvas-subtle",
-    "jsPathName": "color.background.canvasSubtle"
-  },
-  {
-    "path": ["color", "background", "backdrop"],
-    "value": "hsla(0, 0%, 0%, 0.5)",
-    "comment": "Use to overlay content below dialogs to separate dialog from content below",
-    "category": "Color",
-    "section": "Background",
-    "name": "Background / Backdrop",
-    "cssVariableName": "--telekom-color-background-backdrop",
-    "jsPathName": "color.background.backdrop"
-  },
-  {
-    "path": ["color", "background", "surface"],
-    "value": "#ffffff",
-    "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
-    "category": "Color",
-    "section": "Background",
-    "name": "Background / Surface",
-    "cssVariableName": "--telekom-color-background-surface",
-    "jsPathName": "color.background.surface"
-  },
-  {
-    "path": ["color", "background", "surface-subtle"],
-    "value": "#f0f1f1",
-    "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
-    "category": "Color",
-    "section": "Background",
-    "name": "Background / Surface Subtle",
-    "cssVariableName": "--telekom-color-background-surface-subtle",
-    "jsPathName": "color.background.surfaceSubtle"
-  },
-  {
-    "path": ["color", "background", "surface-highlight"],
-    "value": "#050505",
-    "comment": "Use as the background of elements that should stand out highlighted sections, footer, etc.",
-    "category": "Color",
-    "section": "Background",
-    "name": "Background / Surface Highlight",
-    "cssVariableName": "--telekom-color-background-surface-highlight",
-    "jsPathName": "color.background.surfaceHighlight"
-  },
-  {
-    "path": ["color", "primary", "standard"],
-    "value": "#e20074",
-    "category": "Color",
-    "section": "Primary",
-    "name": "Primary / Standard",
-    "cssVariableName": "--telekom-color-primary-standard",
-    "jsPathName": "color.primary.standard"
-  },
-  {
-    "path": ["color", "primary", "hovered"],
-    "value": "#c00063",
-    "category": "Color",
-    "section": "Primary",
-    "name": "Primary / Hovered",
-    "cssVariableName": "--telekom-color-primary-hovered",
-    "jsPathName": "color.primary.hovered"
-  },
-  {
-    "path": ["color", "primary", "pressed"],
-    "value": "#9e0051",
-    "category": "Color",
-    "section": "Primary",
-    "name": "Primary / Pressed",
-    "cssVariableName": "--telekom-color-primary-pressed",
-    "jsPathName": "color.primary.pressed"
-  },
-  {
-    "path": ["color", "ui", "base"],
-    "value": "#ffffff",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Base",
-    "cssVariableName": "--telekom-color-ui-base",
-    "jsPathName": "color.ui.base"
-  },
-  {
-    "path": ["color", "ui", "subtle"],
-    "value": "#d3d5d6",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Subtle",
-    "cssVariableName": "--telekom-color-ui-subtle",
-    "jsPathName": "color.ui.subtle"
-  },
-  {
-    "path": ["color", "ui", "light"],
-    "value": "#babcbf",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Light",
-    "cssVariableName": "--telekom-color-ui-light",
-    "jsPathName": "color.ui.light"
-  },
-  {
-    "path": ["color", "ui", "regular"],
-    "value": "#898b8f",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Regular",
-    "cssVariableName": "--telekom-color-ui-regular",
-    "jsPathName": "color.ui.regular"
-  },
-  {
-    "path": ["color", "ui", "strong"],
-    "value": "#4a4b4d",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Strong",
-    "cssVariableName": "--telekom-color-ui-strong",
-    "jsPathName": "color.ui.strong"
-  },
-  {
-    "path": ["color", "ui", "extra-strong"],
-    "value": "#050505",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Extra Strong",
-    "cssVariableName": "--telekom-color-ui-extra-strong",
-    "jsPathName": "color.ui.extraStrong"
-  },
-  {
-    "path": ["color", "ui", "disabled"],
-    "value": "#d3d5d6",
-    "comment": "Use for disabled interactive elements in combination with the disabled text color",
-    "category": "Color",
-    "section": "UI",
-    "name": "UI / Disabled",
-    "cssVariableName": "--telekom-color-ui-disabled",
-    "jsPathName": "color.ui.disabled"
-  },
-  {
-    "path": ["color", "functional", "focus"],
-    "value": "#006cec",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Focus",
-    "cssVariableName": "--telekom-color-functional-focus",
-    "jsPathName": "color.functional.focus"
-  },
-  {
-    "path": ["color", "functional", "success", "standard"],
-    "value": "#0d8347",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Success / Standard",
-    "cssVariableName": "--telekom-color-functional-success-standard",
-    "jsPathName": "color.functional.success.standard"
-  },
-  {
-    "path": ["color", "functional", "success", "hovered"],
-    "value": "#0b6d3b",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Success / Hovered",
-    "cssVariableName": "--telekom-color-functional-success-hovered",
-    "jsPathName": "color.functional.success.hovered"
-  },
-  {
-    "path": ["color", "functional", "success", "pressed"],
-    "value": "#09572f",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Success / Pressed",
-    "cssVariableName": "--telekom-color-functional-success-pressed",
-    "jsPathName": "color.functional.success.pressed"
-  },
-  {
-    "path": ["color", "functional", "success", "subtle"],
-    "value": "#f0fff7",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Success / Subtle",
-    "cssVariableName": "--telekom-color-functional-success-subtle",
-    "jsPathName": "color.functional.success.subtle"
-  },
-  {
-    "path": ["color", "functional", "interaction", "standard"],
-    "value": "#006cec",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Interaction / Standard",
-    "cssVariableName": "--telekom-color-functional-interaction-standard",
-    "jsPathName": "color.functional.interaction.standard"
-  },
-  {
-    "path": ["color", "functional", "interaction", "hovered"],
-    "value": "#005ac4",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Interaction / Hovered",
-    "cssVariableName": "--telekom-color-functional-interaction-hovered",
-    "jsPathName": "color.functional.interaction.hovered"
-  },
-  {
-    "path": ["color", "functional", "interaction", "pressed"],
-    "value": "#00489d",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Interaction / Pressed",
-    "cssVariableName": "--telekom-color-functional-interaction-pressed",
-    "jsPathName": "color.functional.interaction.pressed"
-  },
-  {
-    "path": ["color", "functional", "interaction", "subtle"],
-    "value": "#f0f7ff",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Interaction / Subtle",
-    "cssVariableName": "--telekom-color-functional-interaction-subtle",
-    "jsPathName": "color.functional.interaction.subtle"
-  },
-  {
-    "path": ["color", "functional", "informational", "standard"],
-    "value": "#006cec",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Informational / Standard",
-    "cssVariableName": "--telekom-color-functional-informational-standard",
-    "jsPathName": "color.functional.informational.standard"
-  },
-  {
-    "path": ["color", "functional", "informational", "hovered"],
-    "value": "#005ac4",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Informational / Hovered",
-    "cssVariableName": "--telekom-color-functional-informational-hovered",
-    "jsPathName": "color.functional.informational.hovered"
-  },
-  {
-    "path": ["color", "functional", "informational", "pressed"],
-    "value": "#00489d",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Informational / Pressed",
-    "cssVariableName": "--telekom-color-functional-informational-pressed",
-    "jsPathName": "color.functional.informational.pressed"
-  },
-  {
-    "path": ["color", "functional", "informational", "subtle"],
-    "value": "#f0f7ff",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Informational / Subtle",
-    "cssVariableName": "--telekom-color-functional-informational-subtle",
-    "jsPathName": "color.functional.informational.subtle"
-  },
-  {
-    "path": ["color", "functional", "warning", "standard"],
-    "value": "#bb5313",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Warning / Standard",
-    "cssVariableName": "--telekom-color-functional-warning-standard",
-    "jsPathName": "color.functional.warning.standard"
-  },
-  {
-    "path": ["color", "functional", "warning", "hovered"],
-    "value": "#9c4410",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Warning / Hovered",
-    "cssVariableName": "--telekom-color-functional-warning-hovered",
-    "jsPathName": "color.functional.warning.hovered"
-  },
-  {
-    "path": ["color", "functional", "warning", "pressed"],
-    "value": "#7e360c",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Warning / Pressed",
-    "cssVariableName": "--telekom-color-functional-warning-pressed",
-    "jsPathName": "color.functional.warning.pressed"
-  },
-  {
-    "path": ["color", "functional", "warning", "subtle"],
-    "value": "#fff6f0",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Warning / Subtle",
-    "cssVariableName": "--telekom-color-functional-warning-subtle",
-    "jsPathName": "color.functional.warning.subtle"
-  },
-  {
-    "path": ["color", "functional", "danger", "standard"],
-    "value": "#e60021",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Danger / Standard",
-    "cssVariableName": "--telekom-color-functional-danger-standard",
-    "jsPathName": "color.functional.danger.standard"
-  },
-  {
-    "path": ["color", "functional", "danger", "hovered"],
-    "value": "#c1001c",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Danger / Hovered",
-    "cssVariableName": "--telekom-color-functional-danger-hovered",
-    "jsPathName": "color.functional.danger.hovered"
-  },
-  {
-    "path": ["color", "functional", "danger", "pressed"],
-    "value": "#9c0018",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Danger / Pressed",
-    "cssVariableName": "--telekom-color-functional-danger-pressed",
-    "jsPathName": "color.functional.danger.pressed"
-  },
-  {
-    "path": ["color", "functional", "danger", "subtle"],
-    "value": "#fff0f2",
-    "category": "Color",
-    "section": "Functional",
-    "name": "Functional / Danger / Subtle",
-    "cssVariableName": "--telekom-color-functional-danger-subtle",
-    "jsPathName": "color.functional.danger.subtle"
-  },
-  {
-    "path": ["color", "additional", "brown", "0"],
-    "value": "#f7efea",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 0",
-    "cssVariableName": "--telekom-color-additional-brown-0",
-    "jsPathName": "color.additional.brown.0"
-  },
-  {
-    "path": ["color", "additional", "brown", "100"],
-    "value": "#f3e6dd",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 100",
-    "cssVariableName": "--telekom-color-additional-brown-100",
-    "jsPathName": "color.additional.brown.100"
-  },
-  {
-    "path": ["color", "additional", "brown", "200"],
-    "value": "#e8d0bf",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 200",
-    "cssVariableName": "--telekom-color-additional-brown-200",
-    "jsPathName": "color.additional.brown.200"
-  },
-  {
-    "path": ["color", "additional", "brown", "300"],
-    "value": "#dab499",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 300",
-    "cssVariableName": "--telekom-color-additional-brown-300",
-    "jsPathName": "color.additional.brown.300"
-  },
-  {
-    "path": ["color", "additional", "brown", "400"],
-    "value": "#c99d7d",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 400",
-    "cssVariableName": "--telekom-color-additional-brown-400",
-    "jsPathName": "color.additional.brown.400"
-  },
-  {
-    "path": ["color", "additional", "brown", "500"],
-    "value": "#a88369",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 500",
-    "cssVariableName": "--telekom-color-additional-brown-500",
-    "jsPathName": "color.additional.brown.500"
-  },
-  {
-    "path": ["color", "additional", "brown", "600"],
-    "value": "#8a6c56",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 600",
-    "cssVariableName": "--telekom-color-additional-brown-600",
-    "jsPathName": "color.additional.brown.600"
-  },
-  {
-    "path": ["color", "additional", "brown", "700"],
-    "value": "#725947",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 700",
-    "cssVariableName": "--telekom-color-additional-brown-700",
-    "jsPathName": "color.additional.brown.700"
-  },
-  {
-    "path": ["color", "additional", "brown", "800"],
-    "value": "#5b4739",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 800",
-    "cssVariableName": "--telekom-color-additional-brown-800",
-    "jsPathName": "color.additional.brown.800"
-  },
-  {
-    "path": ["color", "additional", "brown", "900"],
-    "value": "#45362b",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / 900",
-    "cssVariableName": "--telekom-color-additional-brown-900",
-    "jsPathName": "color.additional.brown.900"
-  },
-  {
-    "path": ["color", "additional", "brown", "tint"],
-    "value": "#fff6f0",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / Tint",
-    "cssVariableName": "--telekom-color-additional-brown-tint",
-    "jsPathName": "color.additional.brown.tint"
-  },
-  {
-    "path": ["color", "additional", "brown", "shade"],
-    "value": "#331500",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Brown / Shade",
-    "cssVariableName": "--telekom-color-additional-brown-shade",
-    "jsPathName": "color.additional.brown.shade"
-  },
-  {
-    "path": ["color", "additional", "pink", "0"],
-    "value": "#f6e3ec",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 0",
-    "cssVariableName": "--telekom-color-additional-pink-0",
-    "jsPathName": "color.additional.pink.0"
-  },
-  {
-    "path": ["color", "additional", "pink", "100"],
-    "value": "#f6e3ec",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 100",
-    "cssVariableName": "--telekom-color-additional-pink-100",
-    "jsPathName": "color.additional.pink.100"
-  },
-  {
-    "path": ["color", "additional", "pink", "200"],
-    "value": "#efcbdb",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 200",
-    "cssVariableName": "--telekom-color-additional-pink-200",
-    "jsPathName": "color.additional.pink.200"
-  },
-  {
-    "path": ["color", "additional", "pink", "300"],
-    "value": "#e5abc5",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 300",
-    "cssVariableName": "--telekom-color-additional-pink-300",
-    "jsPathName": "color.additional.pink.300"
-  },
-  {
-    "path": ["color", "additional", "pink", "400"],
-    "value": "#dc8fb2",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 400",
-    "cssVariableName": "--telekom-color-additional-pink-400",
-    "jsPathName": "color.additional.pink.400"
-  },
-  {
-    "path": ["color", "additional", "pink", "500"],
-    "value": "#d06998",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 500",
-    "cssVariableName": "--telekom-color-additional-pink-500",
-    "jsPathName": "color.additional.pink.500"
-  },
-  {
-    "path": ["color", "additional", "pink", "600"],
-    "value": "#c2417c",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 600",
-    "cssVariableName": "--telekom-color-additional-pink-600",
-    "jsPathName": "color.additional.pink.600"
-  },
-  {
-    "path": ["color", "additional", "pink", "700"],
-    "value": "#a13667",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 700",
-    "cssVariableName": "--telekom-color-additional-pink-700",
-    "jsPathName": "color.additional.pink.700"
-  },
-  {
-    "path": ["color", "additional", "pink", "800"],
-    "value": "#812c53",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 800",
-    "cssVariableName": "--telekom-color-additional-pink-800",
-    "jsPathName": "color.additional.pink.800"
-  },
-  {
-    "path": ["color", "additional", "pink", "900"],
-    "value": "#63213f",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / 900",
-    "cssVariableName": "--telekom-color-additional-pink-900",
-    "jsPathName": "color.additional.pink.900"
-  },
-  {
-    "path": ["color", "additional", "pink", "tint"],
-    "value": "#fff0f7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / Tint",
-    "cssVariableName": "--telekom-color-additional-pink-tint",
-    "jsPathName": "color.additional.pink.tint"
-  },
-  {
-    "path": ["color", "additional", "pink", "shade"],
-    "value": "#330017",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Pink / Shade",
-    "cssVariableName": "--telekom-color-additional-pink-shade",
-    "jsPathName": "color.additional.pink.shade"
-  },
-  {
-    "path": ["color", "additional", "purple", "0"],
-    "value": "#f6eef7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 0",
-    "cssVariableName": "--telekom-color-additional-purple-0",
-    "jsPathName": "color.additional.purple.0"
-  },
-  {
-    "path": ["color", "additional", "purple", "100"],
-    "value": "#f0e4f2",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 100",
-    "cssVariableName": "--telekom-color-additional-purple-100",
-    "jsPathName": "color.additional.purple.100"
-  },
-  {
-    "path": ["color", "additional", "purple", "200"],
-    "value": "#e5cde7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 200",
-    "cssVariableName": "--telekom-color-additional-purple-200",
-    "jsPathName": "color.additional.purple.200"
-  },
-  {
-    "path": ["color", "additional", "purple", "300"],
-    "value": "#d6afd8",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 300",
-    "cssVariableName": "--telekom-color-additional-purple-300",
-    "jsPathName": "color.additional.purple.300"
-  },
-  {
-    "path": ["color", "additional", "purple", "400"],
-    "value": "#ca94c9",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 400",
-    "cssVariableName": "--telekom-color-additional-purple-400",
-    "jsPathName": "color.additional.purple.400"
-  },
-  {
-    "path": ["color", "additional", "purple", "500"],
-    "value": "#bb71b7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 500",
-    "cssVariableName": "--telekom-color-additional-purple-500",
-    "jsPathName": "color.additional.purple.500"
-  },
-  {
-    "path": ["color", "additional", "purple", "600"],
-    "value": "#ad4da4",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 600",
-    "cssVariableName": "--telekom-color-additional-purple-600",
-    "jsPathName": "color.additional.purple.600"
-  },
-  {
-    "path": ["color", "additional", "purple", "700"],
-    "value": "#9c318f",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 700",
-    "cssVariableName": "--telekom-color-additional-purple-700",
-    "jsPathName": "color.additional.purple.700"
-  },
-  {
-    "path": ["color", "additional", "purple", "800"],
-    "value": "#7f2671",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 800",
-    "cssVariableName": "--telekom-color-additional-purple-800",
-    "jsPathName": "color.additional.purple.800"
-  },
-  {
-    "path": ["color", "additional", "purple", "900"],
-    "value": "#621d54",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / 900",
-    "cssVariableName": "--telekom-color-additional-purple-900",
-    "jsPathName": "color.additional.purple.900"
-  },
-  {
-    "path": ["color", "additional", "purple", "tint"],
-    "value": "#fff0fd",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / Tint",
-    "cssVariableName": "--telekom-color-additional-purple-tint",
-    "jsPathName": "color.additional.purple.tint"
-  },
-  {
-    "path": ["color", "additional", "purple", "shade"],
-    "value": "#33002e",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Purple / Shade",
-    "cssVariableName": "--telekom-color-additional-purple-shade",
-    "jsPathName": "color.additional.purple.shade"
-  },
-  {
-    "path": ["color", "additional", "violet", "0"],
-    "value": "#f2f0f7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 0",
-    "cssVariableName": "--telekom-color-additional-violet-0",
-    "jsPathName": "color.additional.violet.0"
-  },
-  {
-    "path": ["color", "additional", "violet", "100"],
-    "value": "#eae6f2",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 100",
-    "cssVariableName": "--telekom-color-additional-violet-100",
-    "jsPathName": "color.additional.violet.100"
-  },
-  {
-    "path": ["color", "additional", "violet", "200"],
-    "value": "#d7d1e7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 200",
-    "cssVariableName": "--telekom-color-additional-violet-200",
-    "jsPathName": "color.additional.violet.200"
-  },
-  {
-    "path": ["color", "additional", "violet", "300"],
-    "value": "#c0b7da",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 300",
-    "cssVariableName": "--telekom-color-additional-violet-300",
-    "jsPathName": "color.additional.violet.300"
-  },
-  {
-    "path": ["color", "additional", "violet", "400"],
-    "value": "#ab9fce",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 400",
-    "cssVariableName": "--telekom-color-additional-violet-400",
-    "jsPathName": "color.additional.violet.400"
-  },
-  {
-    "path": ["color", "additional", "violet", "500"],
-    "value": "#9182bf",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 500",
-    "cssVariableName": "--telekom-color-additional-violet-500",
-    "jsPathName": "color.additional.violet.500"
-  },
-  {
-    "path": ["color", "additional", "violet", "600"],
-    "value": "#7966b0",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 600",
-    "cssVariableName": "--telekom-color-additional-violet-600",
-    "jsPathName": "color.additional.violet.600"
-  },
-  {
-    "path": ["color", "additional", "violet", "700"],
-    "value": "#65519f",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 700",
-    "cssVariableName": "--telekom-color-additional-violet-700",
-    "jsPathName": "color.additional.violet.700"
-  },
-  {
-    "path": ["color", "additional", "violet", "800"],
-    "value": "#51417f",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 800",
-    "cssVariableName": "--telekom-color-additional-violet-800",
-    "jsPathName": "color.additional.violet.800"
-  },
-  {
-    "path": ["color", "additional", "violet", "900"],
-    "value": "#3e3161",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / 900",
-    "cssVariableName": "--telekom-color-additional-violet-900",
-    "jsPathName": "color.additional.violet.900"
-  },
-  {
-    "path": ["color", "additional", "violet", "tint"],
-    "value": "#f4f0ff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / Tint",
-    "cssVariableName": "--telekom-color-additional-violet-tint",
-    "jsPathName": "color.additional.violet.tint"
-  },
-  {
-    "path": ["color", "additional", "violet", "shade"],
-    "value": "#0d0033",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Violet / Shade",
-    "cssVariableName": "--telekom-color-additional-violet-shade",
-    "jsPathName": "color.additional.violet.shade"
-  },
-  {
-    "path": ["color", "additional", "teal", "0"],
-    "value": "#e2f4f6",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 0",
-    "cssVariableName": "--telekom-color-additional-teal-0",
-    "jsPathName": "color.additional.teal.0"
-  },
-  {
-    "path": ["color", "additional", "teal", "100"],
-    "value": "#d0eef1",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 100",
-    "cssVariableName": "--telekom-color-additional-teal-100",
-    "jsPathName": "color.additional.teal.100"
-  },
-  {
-    "path": ["color", "additional", "teal", "200"],
-    "value": "#a6dee4",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 200",
-    "cssVariableName": "--telekom-color-additional-teal-200",
-    "jsPathName": "color.additional.teal.200"
-  },
-  {
-    "path": ["color", "additional", "teal", "300"],
-    "value": "#6dc9d3",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 300",
-    "cssVariableName": "--telekom-color-additional-teal-300",
-    "jsPathName": "color.additional.teal.300"
-  },
-  {
-    "path": ["color", "additional", "teal", "400"],
-    "value": "#37b6c2",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 400",
-    "cssVariableName": "--telekom-color-additional-teal-400",
-    "jsPathName": "color.additional.teal.400"
-  },
-  {
-    "path": ["color", "additional", "teal", "500"],
-    "value": "#1c99a5",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 500",
-    "cssVariableName": "--telekom-color-additional-teal-500",
-    "jsPathName": "color.additional.teal.500"
-  },
-  {
-    "path": ["color", "additional", "teal", "600"],
-    "value": "#177e88",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 600",
-    "cssVariableName": "--telekom-color-additional-teal-600",
-    "jsPathName": "color.additional.teal.600"
-  },
-  {
-    "path": ["color", "additional", "teal", "700"],
-    "value": "#136871",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 700",
-    "cssVariableName": "--telekom-color-additional-teal-700",
-    "jsPathName": "color.additional.teal.700"
-  },
-  {
-    "path": ["color", "additional", "teal", "800"],
-    "value": "#0f535a",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 800",
-    "cssVariableName": "--telekom-color-additional-teal-800",
-    "jsPathName": "color.additional.teal.800"
-  },
-  {
-    "path": ["color", "additional", "teal", "900"],
-    "value": "#0c3f45",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / 900",
-    "cssVariableName": "--telekom-color-additional-teal-900",
-    "jsPathName": "color.additional.teal.900"
-  },
-  {
-    "path": ["color", "additional", "teal", "tint"],
-    "value": "#f0feff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / Tint",
-    "cssVariableName": "--telekom-color-additional-teal-tint",
-    "jsPathName": "color.additional.teal.tint"
-  },
-  {
-    "path": ["color", "additional", "teal", "shade"],
-    "value": "#002f33",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Teal / Shade",
-    "cssVariableName": "--telekom-color-additional-teal-shade",
-    "jsPathName": "color.additional.teal.shade"
-  },
-  {
-    "path": ["color", "additional", "olive", "0"],
-    "value": "#ecf3e9",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 0",
-    "cssVariableName": "--telekom-color-additional-olive-0",
-    "jsPathName": "color.additional.olive.0"
-  },
-  {
-    "path": ["color", "additional", "olive", "100"],
-    "value": "#e0ecdc",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 100",
-    "cssVariableName": "--telekom-color-additional-olive-100",
-    "jsPathName": "color.additional.olive.100"
-  },
-  {
-    "path": ["color", "additional", "olive", "200"],
-    "value": "#c5dbbd",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 200",
-    "cssVariableName": "--telekom-color-additional-olive-200",
-    "jsPathName": "color.additional.olive.200"
-  },
-  {
-    "path": ["color", "additional", "olive", "300"],
-    "value": "#a3c596",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 300",
-    "cssVariableName": "--telekom-color-additional-olive-300",
-    "jsPathName": "color.additional.olive.300"
-  },
-  {
-    "path": ["color", "additional", "olive", "400"],
-    "value": "#84b274",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 400",
-    "cssVariableName": "--telekom-color-additional-olive-400",
-    "jsPathName": "color.additional.olive.400"
-  },
-  {
-    "path": ["color", "additional", "olive", "500"],
-    "value": "#6a965b",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 500",
-    "cssVariableName": "--telekom-color-additional-olive-500",
-    "jsPathName": "color.additional.olive.500"
-  },
-  {
-    "path": ["color", "additional", "olive", "600"],
-    "value": "#577b4a",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 600",
-    "cssVariableName": "--telekom-color-additional-olive-600",
-    "jsPathName": "color.additional.olive.600"
-  },
-  {
-    "path": ["color", "additional", "olive", "700"],
-    "value": "#48663d",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 700",
-    "cssVariableName": "--telekom-color-additional-olive-700",
-    "jsPathName": "color.additional.olive.700"
-  },
-  {
-    "path": ["color", "additional", "olive", "800"],
-    "value": "#3a5231",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 800",
-    "cssVariableName": "--telekom-color-additional-olive-800",
-    "jsPathName": "color.additional.olive.800"
-  },
-  {
-    "path": ["color", "additional", "olive", "900"],
-    "value": "#2c3e25",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / 900",
-    "cssVariableName": "--telekom-color-additional-olive-900",
-    "jsPathName": "color.additional.olive.900"
-  },
-  {
-    "path": ["color", "additional", "olive", "tint"],
-    "value": "#f4fff0",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / Tint",
-    "cssVariableName": "--telekom-color-additional-olive-tint",
-    "jsPathName": "color.additional.olive.tint"
-  },
-  {
-    "path": ["color", "additional", "olive", "shade"],
-    "value": "#0e3300",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Olive / Shade",
-    "cssVariableName": "--telekom-color-additional-olive-shade",
-    "jsPathName": "color.additional.olive.shade"
-  },
-  {
-    "path": ["color", "additional", "orange", "0"],
-    "value": "#ffeedd",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 0",
-    "cssVariableName": "--telekom-color-additional-orange-0",
-    "jsPathName": "color.additional.orange.0"
-  },
-  {
-    "path": ["color", "additional", "orange", "100"],
-    "value": "#ffe3c9",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 100",
-    "cssVariableName": "--telekom-color-additional-orange-100",
-    "jsPathName": "color.additional.orange.100"
-  },
-  {
-    "path": ["color", "additional", "orange", "200"],
-    "value": "#ffc998",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 200",
-    "cssVariableName": "--telekom-color-additional-orange-200",
-    "jsPathName": "color.additional.orange.200"
-  },
-  {
-    "path": ["color", "additional", "orange", "300"],
-    "value": "#ffa556",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 300",
-    "cssVariableName": "--telekom-color-additional-orange-300",
-    "jsPathName": "color.additional.orange.300"
-  },
-  {
-    "path": ["color", "additional", "orange", "400"],
-    "value": "#ff7f1f",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 400",
-    "cssVariableName": "--telekom-color-additional-orange-400",
-    "jsPathName": "color.additional.orange.400"
-  },
-  {
-    "path": ["color", "additional", "orange", "500"],
-    "value": "#e26617",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 500",
-    "cssVariableName": "--telekom-color-additional-orange-500",
-    "jsPathName": "color.additional.orange.500"
-  },
-  {
-    "path": ["color", "additional", "orange", "600"],
-    "value": "#bb5313",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 600",
-    "cssVariableName": "--telekom-color-additional-orange-600",
-    "jsPathName": "color.additional.orange.600"
-  },
-  {
-    "path": ["color", "additional", "orange", "700"],
-    "value": "#9c4410",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 700",
-    "cssVariableName": "--telekom-color-additional-orange-700",
-    "jsPathName": "color.additional.orange.700"
-  },
-  {
-    "path": ["color", "additional", "orange", "800"],
-    "value": "#7e360c",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 800",
-    "cssVariableName": "--telekom-color-additional-orange-800",
-    "jsPathName": "color.additional.orange.800"
-  },
-  {
-    "path": ["color", "additional", "orange", "900"],
-    "value": "#60290a",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / 900",
-    "cssVariableName": "--telekom-color-additional-orange-900",
-    "jsPathName": "color.additional.orange.900"
-  },
-  {
-    "path": ["color", "additional", "orange", "tint"],
-    "value": "#fff6f0",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / Tint",
-    "cssVariableName": "--telekom-color-additional-orange-tint",
-    "jsPathName": "color.additional.orange.tint"
-  },
-  {
-    "path": ["color", "additional", "orange", "shade"],
-    "value": "#331600",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Orange / Shade",
-    "cssVariableName": "--telekom-color-additional-orange-shade",
-    "jsPathName": "color.additional.orange.shade"
-  },
-  {
-    "path": ["color", "additional", "red", "0"],
-    "value": "#feedeb",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 0",
-    "cssVariableName": "--telekom-color-additional-red-0",
-    "jsPathName": "color.additional.red.0"
-  },
-  {
-    "path": ["color", "additional", "red", "100"],
-    "value": "#fee2df",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 100",
-    "cssVariableName": "--telekom-color-additional-red-100",
-    "jsPathName": "color.additional.red.100"
-  },
-  {
-    "path": ["color", "additional", "red", "200"],
-    "value": "#fec8c2",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 200",
-    "cssVariableName": "--telekom-color-additional-red-200",
-    "jsPathName": "color.additional.red.200"
-  },
-  {
-    "path": ["color", "additional", "red", "300"],
-    "value": "#fda49d",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 300",
-    "cssVariableName": "--telekom-color-additional-red-300",
-    "jsPathName": "color.additional.red.300"
-  },
-  {
-    "path": ["color", "additional", "red", "400"],
-    "value": "#fd817a",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 400",
-    "cssVariableName": "--telekom-color-additional-red-400",
-    "jsPathName": "color.additional.red.400"
-  },
-  {
-    "path": ["color", "additional", "red", "500"],
-    "value": "#fe4543",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 500",
-    "cssVariableName": "--telekom-color-additional-red-500",
-    "jsPathName": "color.additional.red.500"
-  },
-  {
-    "path": ["color", "additional", "red", "600"],
-    "value": "#e60021",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 600",
-    "cssVariableName": "--telekom-color-additional-red-600",
-    "jsPathName": "color.additional.red.600"
-  },
-  {
-    "path": ["color", "additional", "red", "700"],
-    "value": "#c1001c",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 700",
-    "cssVariableName": "--telekom-color-additional-red-700",
-    "jsPathName": "color.additional.red.700"
-  },
-  {
-    "path": ["color", "additional", "red", "800"],
-    "value": "#9c0018",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 800",
-    "cssVariableName": "--telekom-color-additional-red-800",
-    "jsPathName": "color.additional.red.800"
-  },
-  {
-    "path": ["color", "additional", "red", "900"],
-    "value": "#780214",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / 900",
-    "cssVariableName": "--telekom-color-additional-red-900",
-    "jsPathName": "color.additional.red.900"
-  },
-  {
-    "path": ["color", "additional", "red", "tint"],
-    "value": "#fff0f2",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / Tint",
-    "cssVariableName": "--telekom-color-additional-red-tint",
-    "jsPathName": "color.additional.red.tint"
-  },
-  {
-    "path": ["color", "additional", "red", "shade"],
-    "value": "#330008",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Red / Shade",
-    "cssVariableName": "--telekom-color-additional-red-shade",
-    "jsPathName": "color.additional.red.shade"
-  },
-  {
-    "path": ["color", "additional", "blue", "0"],
-    "value": "#e7f2ff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 0",
-    "cssVariableName": "--telekom-color-additional-blue-0",
-    "jsPathName": "color.additional.blue.0"
-  },
-  {
-    "path": ["color", "additional", "blue", "100"],
-    "value": "#d8eaff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 100",
-    "cssVariableName": "--telekom-color-additional-blue-100",
-    "jsPathName": "color.additional.blue.100"
-  },
-  {
-    "path": ["color", "additional", "blue", "200"],
-    "value": "#b6d7ff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 200",
-    "cssVariableName": "--telekom-color-additional-blue-200",
-    "jsPathName": "color.additional.blue.200"
-  },
-  {
-    "path": ["color", "additional", "blue", "300"],
-    "value": "#89bfff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 300",
-    "cssVariableName": "--telekom-color-additional-blue-300",
-    "jsPathName": "color.additional.blue.300"
-  },
-  {
-    "path": ["color", "additional", "blue", "400"],
-    "value": "#60a9ff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 400",
-    "cssVariableName": "--telekom-color-additional-blue-400",
-    "jsPathName": "color.additional.blue.400"
-  },
-  {
-    "path": ["color", "additional", "blue", "500"],
-    "value": "#268aff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 500",
-    "cssVariableName": "--telekom-color-additional-blue-500",
-    "jsPathName": "color.additional.blue.500"
-  },
-  {
-    "path": ["color", "additional", "blue", "600"],
-    "value": "#006cec",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 600",
-    "cssVariableName": "--telekom-color-additional-blue-600",
-    "jsPathName": "color.additional.blue.600"
-  },
-  {
-    "path": ["color", "additional", "blue", "700"],
-    "value": "#005ac4",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 700",
-    "cssVariableName": "--telekom-color-additional-blue-700",
-    "jsPathName": "color.additional.blue.700"
-  },
-  {
-    "path": ["color", "additional", "blue", "800"],
-    "value": "#00489d",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 800",
-    "cssVariableName": "--telekom-color-additional-blue-800",
-    "jsPathName": "color.additional.blue.800"
-  },
-  {
-    "path": ["color", "additional", "blue", "900"],
-    "value": "#003778",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / 900",
-    "cssVariableName": "--telekom-color-additional-blue-900",
-    "jsPathName": "color.additional.blue.900"
-  },
-  {
-    "path": ["color", "additional", "blue", "tint"],
-    "value": "#f0f7ff",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / Tint",
-    "cssVariableName": "--telekom-color-additional-blue-tint",
-    "jsPathName": "color.additional.blue.tint"
-  },
-  {
-    "path": ["color", "additional", "blue", "shade"],
-    "value": "#001733",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Blue / Shade",
-    "cssVariableName": "--telekom-color-additional-blue-shade",
-    "jsPathName": "color.additional.blue.shade"
-  },
-  {
-    "path": ["color", "additional", "green", "0"],
-    "value": "#daf8e8",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 0",
-    "cssVariableName": "--telekom-color-additional-green-0",
-    "jsPathName": "color.additional.green.0"
-  },
-  {
-    "path": ["color", "additional", "green", "100"],
-    "value": "#c2f3da",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 100",
-    "cssVariableName": "--telekom-color-additional-green-100",
-    "jsPathName": "color.additional.green.100"
-  },
-  {
-    "path": ["color", "additional", "green", "200"],
-    "value": "#87e7b7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 200",
-    "cssVariableName": "--telekom-color-additional-green-200",
-    "jsPathName": "color.additional.green.200"
-  },
-  {
-    "path": ["color", "additional", "green", "300"],
-    "value": "#2cd580",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 300",
-    "cssVariableName": "--telekom-color-additional-green-300",
-    "jsPathName": "color.additional.green.300"
-  },
-  {
-    "path": ["color", "additional", "green", "400"],
-    "value": "#13be68",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 400",
-    "cssVariableName": "--telekom-color-additional-green-400",
-    "jsPathName": "color.additional.green.400"
-  },
-  {
-    "path": ["color", "additional", "green", "500"],
-    "value": "#109f57",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 500",
-    "cssVariableName": "--telekom-color-additional-green-500",
-    "jsPathName": "color.additional.green.500"
-  },
-  {
-    "path": ["color", "additional", "green", "600"],
-    "value": "#0d8347",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 600",
-    "cssVariableName": "--telekom-color-additional-green-600",
-    "jsPathName": "color.additional.green.600"
-  },
-  {
-    "path": ["color", "additional", "green", "700"],
-    "value": "#0b6d3b",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 700",
-    "cssVariableName": "--telekom-color-additional-green-700",
-    "jsPathName": "color.additional.green.700"
-  },
-  {
-    "path": ["color", "additional", "green", "800"],
-    "value": "#09572f",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 800",
-    "cssVariableName": "--telekom-color-additional-green-800",
-    "jsPathName": "color.additional.green.800"
-  },
-  {
-    "path": ["color", "additional", "green", "900"],
-    "value": "#074224",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / 900",
-    "cssVariableName": "--telekom-color-additional-green-900",
-    "jsPathName": "color.additional.green.900"
-  },
-  {
-    "path": ["color", "additional", "green", "tint"],
-    "value": "#f0fff7",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / Tint",
-    "cssVariableName": "--telekom-color-additional-green-tint",
-    "jsPathName": "color.additional.green.tint"
-  },
-  {
-    "path": ["color", "additional", "green", "shade"],
-    "value": "#003319",
-    "category": "Color",
-    "section": "Additional",
-    "name": "Additional / Green / Shade",
-    "cssVariableName": "--telekom-color-additional-green-shade",
-    "jsPathName": "color.additional.green.shade"
-  }
-]
+{
+  "tokens": [
+    {
+      "pathString": "color.text-&-icon.standard",
+      "path": ["color", "text-&-icon", "standard"],
+      "value": "#000000",
+      "comment": "Default text color with highest contrast.",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-standard",
+      "jsPathName": "color.textIcon.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.additional",
+      "path": ["color", "text-&-icon", "additional"],
+      "value": "hsla(0, 0%, 0%, 0.65)",
+      "comment": "Use in combination with standard text for additional text elements.",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Additional",
+      "cssVariableName": "--telekom-color-text-and-icon-additional",
+      "jsPathName": "color.textIcon.additional"
+    },
+    {
+      "pathString": "color.text-&-icon.disabled",
+      "path": ["color", "text-&-icon", "disabled"],
+      "value": "hsla(0, 0%, 0%, 0.4)",
+      "comment": "Only use for disabled text.",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Disabled",
+      "cssVariableName": "--telekom-color-text-and-icon-disabled",
+      "jsPathName": "color.textIcon.disabled"
+    },
+    {
+      "pathString": "color.text-&-icon.link.standard",
+      "path": ["color", "text-&-icon", "link", "standard"],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-link-standard",
+      "jsPathName": "color.textIcon.link.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.link.hovered",
+      "path": ["color", "text-&-icon", "link", "hovered"],
+      "value": "#00489d",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Hovered",
+      "cssVariableName": "--telekom-color-text-and-icon-link-hovered",
+      "jsPathName": "color.textIcon.link.hovered"
+    },
+    {
+      "pathString": "color.text-&-icon.link.visited",
+      "path": ["color", "text-&-icon", "link", "visited"],
+      "value": "#51417f",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Visited",
+      "cssVariableName": "--telekom-color-text-and-icon-link-visited",
+      "jsPathName": "color.textIcon.link.visited"
+    },
+    {
+      "pathString": "color.text-&-icon.link.active",
+      "path": ["color", "text-&-icon", "link", "active"],
+      "value": "#003778",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Active",
+      "cssVariableName": "--telekom-color-text-and-icon-link-active",
+      "jsPathName": "color.textIcon.link.active"
+    },
+    {
+      "pathString": "color.text-&-icon.primary.standard",
+      "path": ["color", "text-&-icon", "primary", "standard"],
+      "value": "#e20074",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Primary / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-primary-standard",
+      "jsPathName": "color.textIcon.primary.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.primary.hovered",
+      "path": ["color", "text-&-icon", "primary", "hovered"],
+      "value": "#c00063",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Primary / Hovered",
+      "cssVariableName": "--telekom-color-text-and-icon-primary-hovered",
+      "jsPathName": "color.textIcon.primary.hovered"
+    },
+    {
+      "pathString": "color.text-&-icon.primary.pressed",
+      "path": ["color", "text-&-icon", "primary", "pressed"],
+      "value": "#9e0051",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Primary / Pressed",
+      "cssVariableName": "--telekom-color-text-and-icon-primary-pressed",
+      "jsPathName": "color.textIcon.primary.pressed"
+    },
+    {
+      "pathString": "color.text-&-icon.inverted.standard",
+      "path": ["color", "text-&-icon", "inverted", "standard"],
+      "value": "#ffffff",
+      "comment": "Standard text color inverted to be used on high contrast colors like ui/extra strong",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Inverted / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-inverted-standard",
+      "jsPathName": "color.textIcon.inverted.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.inverted.additional",
+      "path": ["color", "text-&-icon", "inverted", "additional"],
+      "value": "hsla(0, 0%, 100%, 0.65)",
+      "comment": "Additional text color inverted to be used on high contrast colors like ui/extra strong",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Inverted / Additional",
+      "cssVariableName": "--telekom-color-text-and-icon-inverted-additional",
+      "jsPathName": "color.textIcon.inverted.additional"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.informational",
+      "path": ["color", "text-&-icon", "functional", "informational"],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Informational",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-informational",
+      "jsPathName": "color.textIcon.functional.informational"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.success",
+      "path": ["color", "text-&-icon", "functional", "success"],
+      "value": "#09572f",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Success",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-success",
+      "jsPathName": "color.textIcon.functional.success"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.danger",
+      "path": ["color", "text-&-icon", "functional", "danger"],
+      "value": "#e60021",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Danger",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-danger",
+      "jsPathName": "color.textIcon.functional.danger"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.warning",
+      "path": ["color", "text-&-icon", "functional", "warning"],
+      "value": "#bb5313",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Warning",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-warning",
+      "jsPathName": "color.textIcon.functional.warning"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.white",
+      "path": ["color", "text-&-icon", "functional", "white"],
+      "value": "#ffffff",
+      "comment": "This text color is white in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / White",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-white",
+      "jsPathName": "color.textIcon.functional.white"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.black",
+      "path": ["color", "text-&-icon", "functional", "black"],
+      "value": "#000000",
+      "comment": "This text color is black in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Black",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-black",
+      "jsPathName": "color.textIcon.functional.black"
+    },
+    {
+      "pathString": "color.background.canvas",
+      "path": ["color", "background", "canvas"],
+      "value": "#ffffff",
+      "comment": "Use as the background for your product (app, website, etc.)",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Canvas",
+      "cssVariableName": "--telekom-color-background-canvas",
+      "jsPathName": "color.background.canvas",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active",
+        "color.text-&-icon.primary.standard",
+        "color.text-&-icon.primary.hovered",
+        "color.text-&-icon.primary.pressed"
+      ]
+    },
+    {
+      "pathString": "color.background.canvas-subtle",
+      "path": ["color", "background", "canvas-subtle"],
+      "value": "#e7e8e9",
+      "comment": "Use as the background for your product (app, website, etc.)",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Canvas Subtle",
+      "cssVariableName": "--telekom-color-background-canvas-subtle",
+      "jsPathName": "color.background.canvasSubtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active"
+      ]
+    },
+    {
+      "pathString": "color.background.backdrop",
+      "path": ["color", "background", "backdrop"],
+      "value": "hsla(0, 0%, 0%, 0.5)",
+      "comment": "Use to overlay content below dialogs to separate dialog from content below",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Backdrop",
+      "cssVariableName": "--telekom-color-background-backdrop",
+      "jsPathName": "color.background.backdrop"
+    },
+    {
+      "pathString": "color.background.surface",
+      "path": ["color", "background", "surface"],
+      "value": "#ffffff",
+      "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Surface",
+      "cssVariableName": "--telekom-color-background-surface",
+      "jsPathName": "color.background.surface",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active",
+        "color.text-&-icon.primary.standard",
+        "color.text-&-icon.primary.hovered",
+        "color.text-&-icon.primary.pressed"
+      ]
+    },
+    {
+      "pathString": "color.background.surface-subtle",
+      "path": ["color", "background", "surface-subtle"],
+      "value": "#f0f1f1",
+      "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Surface Subtle",
+      "cssVariableName": "--telekom-color-background-surface-subtle",
+      "jsPathName": "color.background.surfaceSubtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active"
+      ]
+    },
+    {
+      "pathString": "color.background.surface-highlight",
+      "path": ["color", "background", "surface-highlight"],
+      "value": "#050505",
+      "comment": "Use as the background of elements that should stand out highlighted sections, footer, etc.",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Surface Highlight",
+      "cssVariableName": "--telekom-color-background-surface-highlight",
+      "jsPathName": "color.background.surfaceHighlight",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.primary.standard",
+      "path": ["color", "primary", "standard"],
+      "value": "#e20074",
+      "category": "Color",
+      "section": "Primary",
+      "name": "Primary / Standard",
+      "cssVariableName": "--telekom-color-primary-standard",
+      "jsPathName": "color.primary.standard",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.primary.hovered",
+      "path": ["color", "primary", "hovered"],
+      "value": "#c00063",
+      "category": "Color",
+      "section": "Primary",
+      "name": "Primary / Hovered",
+      "cssVariableName": "--telekom-color-primary-hovered",
+      "jsPathName": "color.primary.hovered",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.primary.pressed",
+      "path": ["color", "primary", "pressed"],
+      "value": "#9e0051",
+      "category": "Color",
+      "section": "Primary",
+      "name": "Primary / Pressed",
+      "cssVariableName": "--telekom-color-primary-pressed",
+      "jsPathName": "color.primary.pressed",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.ui.border.standard",
+      "path": ["color", "ui", "border", "standard"],
+      "value": "hsla(0, 0%, 0%, 0.44)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Standard",
+      "cssVariableName": "--telekom-color-ui-border-standard",
+      "jsPathName": "color.ui.border.standard"
+    },
+    {
+      "pathString": "color.ui.border.hovered",
+      "path": ["color", "ui", "border", "hovered"],
+      "value": "hsla(0, 0%, 0%, 0.71)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Hovered",
+      "cssVariableName": "--telekom-color-ui-border-hovered",
+      "jsPathName": "color.ui.border.hovered"
+    },
+    {
+      "pathString": "color.ui.border.pressed",
+      "path": ["color", "ui", "border", "pressed"],
+      "value": "hsla(0, 0%, 0%, 0.71)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Pressed",
+      "cssVariableName": "--telekom-color-ui-border-pressed",
+      "jsPathName": "color.ui.border.pressed"
+    },
+    {
+      "pathString": "color.ui.border.active",
+      "path": ["color", "ui", "border", "active"],
+      "value": "hsla(0, 0%, 0%, 0.71)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Active",
+      "cssVariableName": "--telekom-color-ui-border-active",
+      "jsPathName": "color.ui.border.active"
+    },
+    {
+      "pathString": "color.ui.border.disabled",
+      "path": ["color", "ui", "border", "disabled"],
+      "value": "hsla(0, 0%, 0%, 0.07)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Disabled",
+      "cssVariableName": "--telekom-color-ui-border-disabled",
+      "jsPathName": "color.ui.border.disabled"
+    },
+    {
+      "pathString": "color.ui.plate.hovered",
+      "path": ["color", "ui", "plate", "hovered"],
+      "value": "hsla(0, 0%, 0%, 0.07)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Plate / Hovered",
+      "cssVariableName": "--telekom-color-ui-plate-hovered",
+      "jsPathName": "color.ui.plate.hovered"
+    },
+    {
+      "pathString": "color.ui.plate.pressed",
+      "path": ["color", "ui", "plate", "pressed"],
+      "value": "hsla(0, 0%, 0%, 0.21)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Plate / Pressed",
+      "cssVariableName": "--telekom-color-ui-plate-pressed",
+      "jsPathName": "color.ui.plate.pressed"
+    },
+    {
+      "pathString": "color.ui.general.base",
+      "path": ["color", "ui", "general", "base"],
+      "value": "#ffffff",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Base",
+      "cssVariableName": "--telekom-color-ui-general-base",
+      "jsPathName": "color.ui.general.base",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.subtle",
+      "path": ["color", "ui", "general", "subtle"],
+      "value": "#e7e8e9",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Subtle",
+      "cssVariableName": "--telekom-color-ui-general-subtle",
+      "jsPathName": "color.ui.general.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.light",
+      "path": ["color", "ui", "general", "light"],
+      "value": "#babcbf",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Light",
+      "cssVariableName": "--telekom-color-ui-general-light",
+      "jsPathName": "color.ui.general.light",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.regular",
+      "path": ["color", "ui", "general", "regular"],
+      "value": "#898b8f",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Regular",
+      "cssVariableName": "--telekom-color-ui-general-regular",
+      "jsPathName": "color.ui.general.regular",
+      "contrastChecks": ["color.text-&-icon.standard"]
+    },
+    {
+      "pathString": "color.ui.general.strong",
+      "path": ["color", "ui", "general", "strong"],
+      "value": "#4a4b4d",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Strong",
+      "cssVariableName": "--telekom-color-ui-general-strong",
+      "jsPathName": "color.ui.general.strong",
+      "contrastChecks": [
+        "color.text-&-icon.inverted.standard",
+        "color.text-&-icon.inverted.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.extra-strong",
+      "path": ["color", "ui", "general", "extra-strong"],
+      "value": "#050505",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Extra Strong",
+      "cssVariableName": "--telekom-color-ui-general-extra-strong",
+      "jsPathName": "color.ui.general.extraStrong",
+      "contrastChecks": [
+        "color.text-&-icon.inverted.standard",
+        "color.text-&-icon.inverted.additional"
+      ]
+    },
+    {
+      "pathString": "color.functional.focus",
+      "path": ["color", "functional", "focus"],
+      "value": "#006cec",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Focus",
+      "cssVariableName": "--telekom-color-functional-focus",
+      "jsPathName": "color.functional.focus"
+    },
+    {
+      "pathString": "color.functional.success.standard",
+      "path": ["color", "functional", "success", "standard"],
+      "value": "#0d8347",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Standard",
+      "cssVariableName": "--telekom-color-functional-success-standard",
+      "jsPathName": "color.functional.success.standard",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.success.hovered",
+      "path": ["color", "functional", "success", "hovered"],
+      "value": "#0b6d3b",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Hovered",
+      "cssVariableName": "--telekom-color-functional-success-hovered",
+      "jsPathName": "color.functional.success.hovered",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.success.pressed",
+      "path": ["color", "functional", "success", "pressed"],
+      "value": "#09572f",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Pressed",
+      "cssVariableName": "--telekom-color-functional-success-pressed",
+      "jsPathName": "color.functional.success.pressed",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.success.subtle",
+      "path": ["color", "functional", "success", "subtle"],
+      "value": "#f0fff7",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Subtle",
+      "cssVariableName": "--telekom-color-functional-success-subtle",
+      "jsPathName": "color.functional.success.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.success"
+      ]
+    },
+    {
+      "pathString": "color.functional.interaction.standard",
+      "path": ["color", "functional", "interaction", "standard"],
+      "value": "#006cec",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Standard",
+      "cssVariableName": "--telekom-color-functional-interaction-standard",
+      "jsPathName": "color.functional.interaction.standard"
+    },
+    {
+      "pathString": "color.functional.interaction.hovered",
+      "path": ["color", "functional", "interaction", "hovered"],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Hovered",
+      "cssVariableName": "--telekom-color-functional-interaction-hovered",
+      "jsPathName": "color.functional.interaction.hovered"
+    },
+    {
+      "pathString": "color.functional.interaction.pressed",
+      "path": ["color", "functional", "interaction", "pressed"],
+      "value": "#00489d",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Pressed",
+      "cssVariableName": "--telekom-color-functional-interaction-pressed",
+      "jsPathName": "color.functional.interaction.pressed"
+    },
+    {
+      "pathString": "color.functional.interaction.subtle",
+      "path": ["color", "functional", "interaction", "subtle"],
+      "value": "#f0f7ff",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Subtle",
+      "cssVariableName": "--telekom-color-functional-interaction-subtle",
+      "jsPathName": "color.functional.interaction.subtle"
+    },
+    {
+      "pathString": "color.functional.informational.standard",
+      "path": ["color", "functional", "informational", "standard"],
+      "value": "#006cec",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Standard",
+      "cssVariableName": "--telekom-color-functional-informational-standard",
+      "jsPathName": "color.functional.informational.standard",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.informational.hovered",
+      "path": ["color", "functional", "informational", "hovered"],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Hovered",
+      "cssVariableName": "--telekom-color-functional-informational-hovered",
+      "jsPathName": "color.functional.informational.hovered",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.informational.pressed",
+      "path": ["color", "functional", "informational", "pressed"],
+      "value": "#00489d",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Pressed",
+      "cssVariableName": "--telekom-color-functional-informational-pressed",
+      "jsPathName": "color.functional.informational.pressed",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.informational.subtle",
+      "path": ["color", "functional", "informational", "subtle"],
+      "value": "#f0f7ff",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Subtle",
+      "cssVariableName": "--telekom-color-functional-informational-subtle",
+      "jsPathName": "color.functional.informational.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.informational"
+      ]
+    },
+    {
+      "pathString": "color.functional.warning.standard",
+      "path": ["color", "functional", "warning", "standard"],
+      "value": "#ff7f1f",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Standard",
+      "cssVariableName": "--telekom-color-functional-warning-standard",
+      "jsPathName": "color.functional.warning.standard",
+      "contrastChecks": ["color.text-&-icon.functional.black"]
+    },
+    {
+      "pathString": "color.functional.warning.hovered",
+      "path": ["color", "functional", "warning", "hovered"],
+      "value": "#e26617",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Hovered",
+      "cssVariableName": "--telekom-color-functional-warning-hovered",
+      "jsPathName": "color.functional.warning.hovered",
+      "contrastChecks": ["color.text-&-icon.functional.black"]
+    },
+    {
+      "pathString": "color.functional.warning.pressed",
+      "path": ["color", "functional", "warning", "pressed"],
+      "value": "#bb5313",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Pressed",
+      "cssVariableName": "--telekom-color-functional-warning-pressed",
+      "jsPathName": "color.functional.warning.pressed",
+      "contrastChecks": ["color.text-&-icon.functional.black"]
+    },
+    {
+      "pathString": "color.functional.warning.subtle",
+      "path": ["color", "functional", "warning", "subtle"],
+      "value": "#fff6f0",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Subtle",
+      "cssVariableName": "--telekom-color-functional-warning-subtle",
+      "jsPathName": "color.functional.warning.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.warning"
+      ]
+    },
+    {
+      "pathString": "color.functional.danger.standard",
+      "path": ["color", "functional", "danger", "standard"],
+      "value": "#e60021",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Standard",
+      "cssVariableName": "--telekom-color-functional-danger-standard",
+      "jsPathName": "color.functional.danger.standard",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.danger.hovered",
+      "path": ["color", "functional", "danger", "hovered"],
+      "value": "#c1001c",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Hovered",
+      "cssVariableName": "--telekom-color-functional-danger-hovered",
+      "jsPathName": "color.functional.danger.hovered",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.danger.pressed",
+      "path": ["color", "functional", "danger", "pressed"],
+      "value": "#9c0018",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Pressed",
+      "cssVariableName": "--telekom-color-functional-danger-pressed",
+      "jsPathName": "color.functional.danger.pressed",
+      "contrastChecks": ["color.text-&-icon.functional.white"]
+    },
+    {
+      "pathString": "color.functional.danger.subtle",
+      "path": ["color", "functional", "danger", "subtle"],
+      "value": "#fff0f2",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Subtle",
+      "cssVariableName": "--telekom-color-functional-danger-subtle",
+      "jsPathName": "color.functional.danger.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.danger"
+      ]
+    },
+    {
+      "pathString": "color.additional.brown.0",
+      "path": ["color", "additional", "brown", "0"],
+      "value": "#f7efea",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 0",
+      "cssVariableName": "--telekom-color-additional-brown-0",
+      "jsPathName": "color.additional.brown.0"
+    },
+    {
+      "pathString": "color.additional.brown.100",
+      "path": ["color", "additional", "brown", "100"],
+      "value": "#f3e6dd",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 100",
+      "cssVariableName": "--telekom-color-additional-brown-100",
+      "jsPathName": "color.additional.brown.100"
+    },
+    {
+      "pathString": "color.additional.brown.200",
+      "path": ["color", "additional", "brown", "200"],
+      "value": "#e8d0bf",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 200",
+      "cssVariableName": "--telekom-color-additional-brown-200",
+      "jsPathName": "color.additional.brown.200"
+    },
+    {
+      "pathString": "color.additional.brown.300",
+      "path": ["color", "additional", "brown", "300"],
+      "value": "#dab499",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 300",
+      "cssVariableName": "--telekom-color-additional-brown-300",
+      "jsPathName": "color.additional.brown.300"
+    },
+    {
+      "pathString": "color.additional.brown.400",
+      "path": ["color", "additional", "brown", "400"],
+      "value": "#c99d7d",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 400",
+      "cssVariableName": "--telekom-color-additional-brown-400",
+      "jsPathName": "color.additional.brown.400"
+    },
+    {
+      "pathString": "color.additional.brown.500",
+      "path": ["color", "additional", "brown", "500"],
+      "value": "#a88369",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 500",
+      "cssVariableName": "--telekom-color-additional-brown-500",
+      "jsPathName": "color.additional.brown.500"
+    },
+    {
+      "pathString": "color.additional.brown.600",
+      "path": ["color", "additional", "brown", "600"],
+      "value": "#8a6c56",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 600",
+      "cssVariableName": "--telekom-color-additional-brown-600",
+      "jsPathName": "color.additional.brown.600"
+    },
+    {
+      "pathString": "color.additional.brown.700",
+      "path": ["color", "additional", "brown", "700"],
+      "value": "#725947",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 700",
+      "cssVariableName": "--telekom-color-additional-brown-700",
+      "jsPathName": "color.additional.brown.700"
+    },
+    {
+      "pathString": "color.additional.brown.800",
+      "path": ["color", "additional", "brown", "800"],
+      "value": "#5b4739",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 800",
+      "cssVariableName": "--telekom-color-additional-brown-800",
+      "jsPathName": "color.additional.brown.800"
+    },
+    {
+      "pathString": "color.additional.brown.900",
+      "path": ["color", "additional", "brown", "900"],
+      "value": "#45362b",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / 900",
+      "cssVariableName": "--telekom-color-additional-brown-900",
+      "jsPathName": "color.additional.brown.900"
+    },
+    {
+      "pathString": "color.additional.brown.tint",
+      "path": ["color", "additional", "brown", "tint"],
+      "value": "#fff6f0",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / Tint",
+      "cssVariableName": "--telekom-color-additional-brown-tint",
+      "jsPathName": "color.additional.brown.tint"
+    },
+    {
+      "pathString": "color.additional.brown.shade",
+      "path": ["color", "additional", "brown", "shade"],
+      "value": "#331500",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Brown / Shade",
+      "cssVariableName": "--telekom-color-additional-brown-shade",
+      "jsPathName": "color.additional.brown.shade"
+    },
+    {
+      "pathString": "color.additional.pink.0",
+      "path": ["color", "additional", "pink", "0"],
+      "value": "#f6e3ec",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 0",
+      "cssVariableName": "--telekom-color-additional-pink-0",
+      "jsPathName": "color.additional.pink.0"
+    },
+    {
+      "pathString": "color.additional.pink.100",
+      "path": ["color", "additional", "pink", "100"],
+      "value": "#f6e3ec",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 100",
+      "cssVariableName": "--telekom-color-additional-pink-100",
+      "jsPathName": "color.additional.pink.100"
+    },
+    {
+      "pathString": "color.additional.pink.200",
+      "path": ["color", "additional", "pink", "200"],
+      "value": "#efcbdb",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 200",
+      "cssVariableName": "--telekom-color-additional-pink-200",
+      "jsPathName": "color.additional.pink.200"
+    },
+    {
+      "pathString": "color.additional.pink.300",
+      "path": ["color", "additional", "pink", "300"],
+      "value": "#e5abc5",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 300",
+      "cssVariableName": "--telekom-color-additional-pink-300",
+      "jsPathName": "color.additional.pink.300"
+    },
+    {
+      "pathString": "color.additional.pink.400",
+      "path": ["color", "additional", "pink", "400"],
+      "value": "#dc8fb2",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 400",
+      "cssVariableName": "--telekom-color-additional-pink-400",
+      "jsPathName": "color.additional.pink.400"
+    },
+    {
+      "pathString": "color.additional.pink.500",
+      "path": ["color", "additional", "pink", "500"],
+      "value": "#d06998",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 500",
+      "cssVariableName": "--telekom-color-additional-pink-500",
+      "jsPathName": "color.additional.pink.500"
+    },
+    {
+      "pathString": "color.additional.pink.600",
+      "path": ["color", "additional", "pink", "600"],
+      "value": "#c2417c",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 600",
+      "cssVariableName": "--telekom-color-additional-pink-600",
+      "jsPathName": "color.additional.pink.600"
+    },
+    {
+      "pathString": "color.additional.pink.700",
+      "path": ["color", "additional", "pink", "700"],
+      "value": "#a13667",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 700",
+      "cssVariableName": "--telekom-color-additional-pink-700",
+      "jsPathName": "color.additional.pink.700"
+    },
+    {
+      "pathString": "color.additional.pink.800",
+      "path": ["color", "additional", "pink", "800"],
+      "value": "#812c53",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 800",
+      "cssVariableName": "--telekom-color-additional-pink-800",
+      "jsPathName": "color.additional.pink.800"
+    },
+    {
+      "pathString": "color.additional.pink.900",
+      "path": ["color", "additional", "pink", "900"],
+      "value": "#63213f",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / 900",
+      "cssVariableName": "--telekom-color-additional-pink-900",
+      "jsPathName": "color.additional.pink.900"
+    },
+    {
+      "pathString": "color.additional.pink.tint",
+      "path": ["color", "additional", "pink", "tint"],
+      "value": "#fff0f7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / Tint",
+      "cssVariableName": "--telekom-color-additional-pink-tint",
+      "jsPathName": "color.additional.pink.tint"
+    },
+    {
+      "pathString": "color.additional.pink.shade",
+      "path": ["color", "additional", "pink", "shade"],
+      "value": "#330017",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Pink / Shade",
+      "cssVariableName": "--telekom-color-additional-pink-shade",
+      "jsPathName": "color.additional.pink.shade"
+    },
+    {
+      "pathString": "color.additional.purple.0",
+      "path": ["color", "additional", "purple", "0"],
+      "value": "#f6eef7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 0",
+      "cssVariableName": "--telekom-color-additional-purple-0",
+      "jsPathName": "color.additional.purple.0"
+    },
+    {
+      "pathString": "color.additional.purple.100",
+      "path": ["color", "additional", "purple", "100"],
+      "value": "#f0e4f2",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 100",
+      "cssVariableName": "--telekom-color-additional-purple-100",
+      "jsPathName": "color.additional.purple.100"
+    },
+    {
+      "pathString": "color.additional.purple.200",
+      "path": ["color", "additional", "purple", "200"],
+      "value": "#e5cde7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 200",
+      "cssVariableName": "--telekom-color-additional-purple-200",
+      "jsPathName": "color.additional.purple.200"
+    },
+    {
+      "pathString": "color.additional.purple.300",
+      "path": ["color", "additional", "purple", "300"],
+      "value": "#d6afd8",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 300",
+      "cssVariableName": "--telekom-color-additional-purple-300",
+      "jsPathName": "color.additional.purple.300"
+    },
+    {
+      "pathString": "color.additional.purple.400",
+      "path": ["color", "additional", "purple", "400"],
+      "value": "#ca94c9",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 400",
+      "cssVariableName": "--telekom-color-additional-purple-400",
+      "jsPathName": "color.additional.purple.400"
+    },
+    {
+      "pathString": "color.additional.purple.500",
+      "path": ["color", "additional", "purple", "500"],
+      "value": "#bb71b7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 500",
+      "cssVariableName": "--telekom-color-additional-purple-500",
+      "jsPathName": "color.additional.purple.500"
+    },
+    {
+      "pathString": "color.additional.purple.600",
+      "path": ["color", "additional", "purple", "600"],
+      "value": "#ad4da4",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 600",
+      "cssVariableName": "--telekom-color-additional-purple-600",
+      "jsPathName": "color.additional.purple.600"
+    },
+    {
+      "pathString": "color.additional.purple.700",
+      "path": ["color", "additional", "purple", "700"],
+      "value": "#9c318f",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 700",
+      "cssVariableName": "--telekom-color-additional-purple-700",
+      "jsPathName": "color.additional.purple.700"
+    },
+    {
+      "pathString": "color.additional.purple.800",
+      "path": ["color", "additional", "purple", "800"],
+      "value": "#7f2671",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 800",
+      "cssVariableName": "--telekom-color-additional-purple-800",
+      "jsPathName": "color.additional.purple.800"
+    },
+    {
+      "pathString": "color.additional.purple.900",
+      "path": ["color", "additional", "purple", "900"],
+      "value": "#621d54",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / 900",
+      "cssVariableName": "--telekom-color-additional-purple-900",
+      "jsPathName": "color.additional.purple.900"
+    },
+    {
+      "pathString": "color.additional.purple.tint",
+      "path": ["color", "additional", "purple", "tint"],
+      "value": "#fff0fd",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / Tint",
+      "cssVariableName": "--telekom-color-additional-purple-tint",
+      "jsPathName": "color.additional.purple.tint"
+    },
+    {
+      "pathString": "color.additional.purple.shade",
+      "path": ["color", "additional", "purple", "shade"],
+      "value": "#33002e",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Purple / Shade",
+      "cssVariableName": "--telekom-color-additional-purple-shade",
+      "jsPathName": "color.additional.purple.shade"
+    },
+    {
+      "pathString": "color.additional.violet.0",
+      "path": ["color", "additional", "violet", "0"],
+      "value": "#f2f0f7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 0",
+      "cssVariableName": "--telekom-color-additional-violet-0",
+      "jsPathName": "color.additional.violet.0"
+    },
+    {
+      "pathString": "color.additional.violet.100",
+      "path": ["color", "additional", "violet", "100"],
+      "value": "#eae6f2",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 100",
+      "cssVariableName": "--telekom-color-additional-violet-100",
+      "jsPathName": "color.additional.violet.100"
+    },
+    {
+      "pathString": "color.additional.violet.200",
+      "path": ["color", "additional", "violet", "200"],
+      "value": "#d7d1e7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 200",
+      "cssVariableName": "--telekom-color-additional-violet-200",
+      "jsPathName": "color.additional.violet.200"
+    },
+    {
+      "pathString": "color.additional.violet.300",
+      "path": ["color", "additional", "violet", "300"],
+      "value": "#c0b7da",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 300",
+      "cssVariableName": "--telekom-color-additional-violet-300",
+      "jsPathName": "color.additional.violet.300"
+    },
+    {
+      "pathString": "color.additional.violet.400",
+      "path": ["color", "additional", "violet", "400"],
+      "value": "#ab9fce",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 400",
+      "cssVariableName": "--telekom-color-additional-violet-400",
+      "jsPathName": "color.additional.violet.400"
+    },
+    {
+      "pathString": "color.additional.violet.500",
+      "path": ["color", "additional", "violet", "500"],
+      "value": "#9182bf",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 500",
+      "cssVariableName": "--telekom-color-additional-violet-500",
+      "jsPathName": "color.additional.violet.500"
+    },
+    {
+      "pathString": "color.additional.violet.600",
+      "path": ["color", "additional", "violet", "600"],
+      "value": "#7966b0",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 600",
+      "cssVariableName": "--telekom-color-additional-violet-600",
+      "jsPathName": "color.additional.violet.600"
+    },
+    {
+      "pathString": "color.additional.violet.700",
+      "path": ["color", "additional", "violet", "700"],
+      "value": "#65519f",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 700",
+      "cssVariableName": "--telekom-color-additional-violet-700",
+      "jsPathName": "color.additional.violet.700"
+    },
+    {
+      "pathString": "color.additional.violet.800",
+      "path": ["color", "additional", "violet", "800"],
+      "value": "#51417f",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 800",
+      "cssVariableName": "--telekom-color-additional-violet-800",
+      "jsPathName": "color.additional.violet.800"
+    },
+    {
+      "pathString": "color.additional.violet.900",
+      "path": ["color", "additional", "violet", "900"],
+      "value": "#3e3161",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / 900",
+      "cssVariableName": "--telekom-color-additional-violet-900",
+      "jsPathName": "color.additional.violet.900"
+    },
+    {
+      "pathString": "color.additional.violet.tint",
+      "path": ["color", "additional", "violet", "tint"],
+      "value": "#f4f0ff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / Tint",
+      "cssVariableName": "--telekom-color-additional-violet-tint",
+      "jsPathName": "color.additional.violet.tint"
+    },
+    {
+      "pathString": "color.additional.violet.shade",
+      "path": ["color", "additional", "violet", "shade"],
+      "value": "#0d0033",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Violet / Shade",
+      "cssVariableName": "--telekom-color-additional-violet-shade",
+      "jsPathName": "color.additional.violet.shade"
+    },
+    {
+      "pathString": "color.additional.teal.0",
+      "path": ["color", "additional", "teal", "0"],
+      "value": "#e2f4f6",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 0",
+      "cssVariableName": "--telekom-color-additional-teal-0",
+      "jsPathName": "color.additional.teal.0"
+    },
+    {
+      "pathString": "color.additional.teal.100",
+      "path": ["color", "additional", "teal", "100"],
+      "value": "#d0eef1",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 100",
+      "cssVariableName": "--telekom-color-additional-teal-100",
+      "jsPathName": "color.additional.teal.100"
+    },
+    {
+      "pathString": "color.additional.teal.200",
+      "path": ["color", "additional", "teal", "200"],
+      "value": "#a6dee4",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 200",
+      "cssVariableName": "--telekom-color-additional-teal-200",
+      "jsPathName": "color.additional.teal.200"
+    },
+    {
+      "pathString": "color.additional.teal.300",
+      "path": ["color", "additional", "teal", "300"],
+      "value": "#6dc9d3",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 300",
+      "cssVariableName": "--telekom-color-additional-teal-300",
+      "jsPathName": "color.additional.teal.300"
+    },
+    {
+      "pathString": "color.additional.teal.400",
+      "path": ["color", "additional", "teal", "400"],
+      "value": "#37b6c2",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 400",
+      "cssVariableName": "--telekom-color-additional-teal-400",
+      "jsPathName": "color.additional.teal.400"
+    },
+    {
+      "pathString": "color.additional.teal.500",
+      "path": ["color", "additional", "teal", "500"],
+      "value": "#1c99a5",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 500",
+      "cssVariableName": "--telekom-color-additional-teal-500",
+      "jsPathName": "color.additional.teal.500"
+    },
+    {
+      "pathString": "color.additional.teal.600",
+      "path": ["color", "additional", "teal", "600"],
+      "value": "#177e88",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 600",
+      "cssVariableName": "--telekom-color-additional-teal-600",
+      "jsPathName": "color.additional.teal.600"
+    },
+    {
+      "pathString": "color.additional.teal.700",
+      "path": ["color", "additional", "teal", "700"],
+      "value": "#136871",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 700",
+      "cssVariableName": "--telekom-color-additional-teal-700",
+      "jsPathName": "color.additional.teal.700"
+    },
+    {
+      "pathString": "color.additional.teal.800",
+      "path": ["color", "additional", "teal", "800"],
+      "value": "#0f535a",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 800",
+      "cssVariableName": "--telekom-color-additional-teal-800",
+      "jsPathName": "color.additional.teal.800"
+    },
+    {
+      "pathString": "color.additional.teal.900",
+      "path": ["color", "additional", "teal", "900"],
+      "value": "#0c3f45",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / 900",
+      "cssVariableName": "--telekom-color-additional-teal-900",
+      "jsPathName": "color.additional.teal.900"
+    },
+    {
+      "pathString": "color.additional.teal.tint",
+      "path": ["color", "additional", "teal", "tint"],
+      "value": "#f0feff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / Tint",
+      "cssVariableName": "--telekom-color-additional-teal-tint",
+      "jsPathName": "color.additional.teal.tint"
+    },
+    {
+      "pathString": "color.additional.teal.shade",
+      "path": ["color", "additional", "teal", "shade"],
+      "value": "#002f33",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Teal / Shade",
+      "cssVariableName": "--telekom-color-additional-teal-shade",
+      "jsPathName": "color.additional.teal.shade"
+    },
+    {
+      "pathString": "color.additional.olive.0",
+      "path": ["color", "additional", "olive", "0"],
+      "value": "#ecf3e9",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 0",
+      "cssVariableName": "--telekom-color-additional-olive-0",
+      "jsPathName": "color.additional.olive.0"
+    },
+    {
+      "pathString": "color.additional.olive.100",
+      "path": ["color", "additional", "olive", "100"],
+      "value": "#e0ecdc",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 100",
+      "cssVariableName": "--telekom-color-additional-olive-100",
+      "jsPathName": "color.additional.olive.100"
+    },
+    {
+      "pathString": "color.additional.olive.200",
+      "path": ["color", "additional", "olive", "200"],
+      "value": "#c5dbbd",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 200",
+      "cssVariableName": "--telekom-color-additional-olive-200",
+      "jsPathName": "color.additional.olive.200"
+    },
+    {
+      "pathString": "color.additional.olive.300",
+      "path": ["color", "additional", "olive", "300"],
+      "value": "#a3c596",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 300",
+      "cssVariableName": "--telekom-color-additional-olive-300",
+      "jsPathName": "color.additional.olive.300"
+    },
+    {
+      "pathString": "color.additional.olive.400",
+      "path": ["color", "additional", "olive", "400"],
+      "value": "#84b274",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 400",
+      "cssVariableName": "--telekom-color-additional-olive-400",
+      "jsPathName": "color.additional.olive.400"
+    },
+    {
+      "pathString": "color.additional.olive.500",
+      "path": ["color", "additional", "olive", "500"],
+      "value": "#6a965b",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 500",
+      "cssVariableName": "--telekom-color-additional-olive-500",
+      "jsPathName": "color.additional.olive.500"
+    },
+    {
+      "pathString": "color.additional.olive.600",
+      "path": ["color", "additional", "olive", "600"],
+      "value": "#577b4a",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 600",
+      "cssVariableName": "--telekom-color-additional-olive-600",
+      "jsPathName": "color.additional.olive.600"
+    },
+    {
+      "pathString": "color.additional.olive.700",
+      "path": ["color", "additional", "olive", "700"],
+      "value": "#48663d",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 700",
+      "cssVariableName": "--telekom-color-additional-olive-700",
+      "jsPathName": "color.additional.olive.700"
+    },
+    {
+      "pathString": "color.additional.olive.800",
+      "path": ["color", "additional", "olive", "800"],
+      "value": "#3a5231",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 800",
+      "cssVariableName": "--telekom-color-additional-olive-800",
+      "jsPathName": "color.additional.olive.800"
+    },
+    {
+      "pathString": "color.additional.olive.900",
+      "path": ["color", "additional", "olive", "900"],
+      "value": "#2c3e25",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / 900",
+      "cssVariableName": "--telekom-color-additional-olive-900",
+      "jsPathName": "color.additional.olive.900"
+    },
+    {
+      "pathString": "color.additional.olive.tint",
+      "path": ["color", "additional", "olive", "tint"],
+      "value": "#f4fff0",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / Tint",
+      "cssVariableName": "--telekom-color-additional-olive-tint",
+      "jsPathName": "color.additional.olive.tint"
+    },
+    {
+      "pathString": "color.additional.olive.shade",
+      "path": ["color", "additional", "olive", "shade"],
+      "value": "#0e3300",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Olive / Shade",
+      "cssVariableName": "--telekom-color-additional-olive-shade",
+      "jsPathName": "color.additional.olive.shade"
+    },
+    {
+      "pathString": "color.additional.orange.0",
+      "path": ["color", "additional", "orange", "0"],
+      "value": "#ffeedd",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 0",
+      "cssVariableName": "--telekom-color-additional-orange-0",
+      "jsPathName": "color.additional.orange.0"
+    },
+    {
+      "pathString": "color.additional.orange.100",
+      "path": ["color", "additional", "orange", "100"],
+      "value": "#ffe3c9",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 100",
+      "cssVariableName": "--telekom-color-additional-orange-100",
+      "jsPathName": "color.additional.orange.100"
+    },
+    {
+      "pathString": "color.additional.orange.200",
+      "path": ["color", "additional", "orange", "200"],
+      "value": "#ffc998",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 200",
+      "cssVariableName": "--telekom-color-additional-orange-200",
+      "jsPathName": "color.additional.orange.200"
+    },
+    {
+      "pathString": "color.additional.orange.300",
+      "path": ["color", "additional", "orange", "300"],
+      "value": "#ffa556",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 300",
+      "cssVariableName": "--telekom-color-additional-orange-300",
+      "jsPathName": "color.additional.orange.300"
+    },
+    {
+      "pathString": "color.additional.orange.400",
+      "path": ["color", "additional", "orange", "400"],
+      "value": "#ff7f1f",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 400",
+      "cssVariableName": "--telekom-color-additional-orange-400",
+      "jsPathName": "color.additional.orange.400"
+    },
+    {
+      "pathString": "color.additional.orange.500",
+      "path": ["color", "additional", "orange", "500"],
+      "value": "#e26617",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 500",
+      "cssVariableName": "--telekom-color-additional-orange-500",
+      "jsPathName": "color.additional.orange.500"
+    },
+    {
+      "pathString": "color.additional.orange.600",
+      "path": ["color", "additional", "orange", "600"],
+      "value": "#bb5313",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 600",
+      "cssVariableName": "--telekom-color-additional-orange-600",
+      "jsPathName": "color.additional.orange.600"
+    },
+    {
+      "pathString": "color.additional.orange.700",
+      "path": ["color", "additional", "orange", "700"],
+      "value": "#9c4410",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 700",
+      "cssVariableName": "--telekom-color-additional-orange-700",
+      "jsPathName": "color.additional.orange.700"
+    },
+    {
+      "pathString": "color.additional.orange.800",
+      "path": ["color", "additional", "orange", "800"],
+      "value": "#7e360c",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 800",
+      "cssVariableName": "--telekom-color-additional-orange-800",
+      "jsPathName": "color.additional.orange.800"
+    },
+    {
+      "pathString": "color.additional.orange.900",
+      "path": ["color", "additional", "orange", "900"],
+      "value": "#60290a",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / 900",
+      "cssVariableName": "--telekom-color-additional-orange-900",
+      "jsPathName": "color.additional.orange.900"
+    },
+    {
+      "pathString": "color.additional.orange.tint",
+      "path": ["color", "additional", "orange", "tint"],
+      "value": "#fff6f0",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / Tint",
+      "cssVariableName": "--telekom-color-additional-orange-tint",
+      "jsPathName": "color.additional.orange.tint"
+    },
+    {
+      "pathString": "color.additional.orange.shade",
+      "path": ["color", "additional", "orange", "shade"],
+      "value": "#331600",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Orange / Shade",
+      "cssVariableName": "--telekom-color-additional-orange-shade",
+      "jsPathName": "color.additional.orange.shade"
+    },
+    {
+      "pathString": "color.additional.red.0",
+      "path": ["color", "additional", "red", "0"],
+      "value": "#feedeb",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 0",
+      "cssVariableName": "--telekom-color-additional-red-0",
+      "jsPathName": "color.additional.red.0"
+    },
+    {
+      "pathString": "color.additional.red.100",
+      "path": ["color", "additional", "red", "100"],
+      "value": "#fee2df",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 100",
+      "cssVariableName": "--telekom-color-additional-red-100",
+      "jsPathName": "color.additional.red.100"
+    },
+    {
+      "pathString": "color.additional.red.200",
+      "path": ["color", "additional", "red", "200"],
+      "value": "#fec8c2",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 200",
+      "cssVariableName": "--telekom-color-additional-red-200",
+      "jsPathName": "color.additional.red.200"
+    },
+    {
+      "pathString": "color.additional.red.300",
+      "path": ["color", "additional", "red", "300"],
+      "value": "#fda49d",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 300",
+      "cssVariableName": "--telekom-color-additional-red-300",
+      "jsPathName": "color.additional.red.300"
+    },
+    {
+      "pathString": "color.additional.red.400",
+      "path": ["color", "additional", "red", "400"],
+      "value": "#fd817a",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 400",
+      "cssVariableName": "--telekom-color-additional-red-400",
+      "jsPathName": "color.additional.red.400"
+    },
+    {
+      "pathString": "color.additional.red.500",
+      "path": ["color", "additional", "red", "500"],
+      "value": "#fe4543",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 500",
+      "cssVariableName": "--telekom-color-additional-red-500",
+      "jsPathName": "color.additional.red.500"
+    },
+    {
+      "pathString": "color.additional.red.600",
+      "path": ["color", "additional", "red", "600"],
+      "value": "#e60021",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 600",
+      "cssVariableName": "--telekom-color-additional-red-600",
+      "jsPathName": "color.additional.red.600"
+    },
+    {
+      "pathString": "color.additional.red.700",
+      "path": ["color", "additional", "red", "700"],
+      "value": "#c1001c",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 700",
+      "cssVariableName": "--telekom-color-additional-red-700",
+      "jsPathName": "color.additional.red.700"
+    },
+    {
+      "pathString": "color.additional.red.800",
+      "path": ["color", "additional", "red", "800"],
+      "value": "#9c0018",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 800",
+      "cssVariableName": "--telekom-color-additional-red-800",
+      "jsPathName": "color.additional.red.800"
+    },
+    {
+      "pathString": "color.additional.red.900",
+      "path": ["color", "additional", "red", "900"],
+      "value": "#780214",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / 900",
+      "cssVariableName": "--telekom-color-additional-red-900",
+      "jsPathName": "color.additional.red.900"
+    },
+    {
+      "pathString": "color.additional.red.tint",
+      "path": ["color", "additional", "red", "tint"],
+      "value": "#fff0f2",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / Tint",
+      "cssVariableName": "--telekom-color-additional-red-tint",
+      "jsPathName": "color.additional.red.tint"
+    },
+    {
+      "pathString": "color.additional.red.shade",
+      "path": ["color", "additional", "red", "shade"],
+      "value": "#330008",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Red / Shade",
+      "cssVariableName": "--telekom-color-additional-red-shade",
+      "jsPathName": "color.additional.red.shade"
+    },
+    {
+      "pathString": "color.additional.blue.0",
+      "path": ["color", "additional", "blue", "0"],
+      "value": "#e7f2ff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 0",
+      "cssVariableName": "--telekom-color-additional-blue-0",
+      "jsPathName": "color.additional.blue.0"
+    },
+    {
+      "pathString": "color.additional.blue.100",
+      "path": ["color", "additional", "blue", "100"],
+      "value": "#d8eaff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 100",
+      "cssVariableName": "--telekom-color-additional-blue-100",
+      "jsPathName": "color.additional.blue.100"
+    },
+    {
+      "pathString": "color.additional.blue.200",
+      "path": ["color", "additional", "blue", "200"],
+      "value": "#b6d7ff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 200",
+      "cssVariableName": "--telekom-color-additional-blue-200",
+      "jsPathName": "color.additional.blue.200"
+    },
+    {
+      "pathString": "color.additional.blue.300",
+      "path": ["color", "additional", "blue", "300"],
+      "value": "#89bfff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 300",
+      "cssVariableName": "--telekom-color-additional-blue-300",
+      "jsPathName": "color.additional.blue.300"
+    },
+    {
+      "pathString": "color.additional.blue.400",
+      "path": ["color", "additional", "blue", "400"],
+      "value": "#60a9ff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 400",
+      "cssVariableName": "--telekom-color-additional-blue-400",
+      "jsPathName": "color.additional.blue.400"
+    },
+    {
+      "pathString": "color.additional.blue.500",
+      "path": ["color", "additional", "blue", "500"],
+      "value": "#268aff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 500",
+      "cssVariableName": "--telekom-color-additional-blue-500",
+      "jsPathName": "color.additional.blue.500"
+    },
+    {
+      "pathString": "color.additional.blue.600",
+      "path": ["color", "additional", "blue", "600"],
+      "value": "#006cec",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 600",
+      "cssVariableName": "--telekom-color-additional-blue-600",
+      "jsPathName": "color.additional.blue.600"
+    },
+    {
+      "pathString": "color.additional.blue.700",
+      "path": ["color", "additional", "blue", "700"],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 700",
+      "cssVariableName": "--telekom-color-additional-blue-700",
+      "jsPathName": "color.additional.blue.700"
+    },
+    {
+      "pathString": "color.additional.blue.800",
+      "path": ["color", "additional", "blue", "800"],
+      "value": "#00489d",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 800",
+      "cssVariableName": "--telekom-color-additional-blue-800",
+      "jsPathName": "color.additional.blue.800"
+    },
+    {
+      "pathString": "color.additional.blue.900",
+      "path": ["color", "additional", "blue", "900"],
+      "value": "#003778",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / 900",
+      "cssVariableName": "--telekom-color-additional-blue-900",
+      "jsPathName": "color.additional.blue.900"
+    },
+    {
+      "pathString": "color.additional.blue.tint",
+      "path": ["color", "additional", "blue", "tint"],
+      "value": "#f0f7ff",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / Tint",
+      "cssVariableName": "--telekom-color-additional-blue-tint",
+      "jsPathName": "color.additional.blue.tint"
+    },
+    {
+      "pathString": "color.additional.blue.shade",
+      "path": ["color", "additional", "blue", "shade"],
+      "value": "#001733",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Blue / Shade",
+      "cssVariableName": "--telekom-color-additional-blue-shade",
+      "jsPathName": "color.additional.blue.shade"
+    },
+    {
+      "pathString": "color.additional.green.0",
+      "path": ["color", "additional", "green", "0"],
+      "value": "#daf8e8",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 0",
+      "cssVariableName": "--telekom-color-additional-green-0",
+      "jsPathName": "color.additional.green.0"
+    },
+    {
+      "pathString": "color.additional.green.100",
+      "path": ["color", "additional", "green", "100"],
+      "value": "#c2f3da",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 100",
+      "cssVariableName": "--telekom-color-additional-green-100",
+      "jsPathName": "color.additional.green.100"
+    },
+    {
+      "pathString": "color.additional.green.200",
+      "path": ["color", "additional", "green", "200"],
+      "value": "#87e7b7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 200",
+      "cssVariableName": "--telekom-color-additional-green-200",
+      "jsPathName": "color.additional.green.200"
+    },
+    {
+      "pathString": "color.additional.green.300",
+      "path": ["color", "additional", "green", "300"],
+      "value": "#2cd580",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 300",
+      "cssVariableName": "--telekom-color-additional-green-300",
+      "jsPathName": "color.additional.green.300"
+    },
+    {
+      "pathString": "color.additional.green.400",
+      "path": ["color", "additional", "green", "400"],
+      "value": "#13be68",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 400",
+      "cssVariableName": "--telekom-color-additional-green-400",
+      "jsPathName": "color.additional.green.400"
+    },
+    {
+      "pathString": "color.additional.green.500",
+      "path": ["color", "additional", "green", "500"],
+      "value": "#109f57",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 500",
+      "cssVariableName": "--telekom-color-additional-green-500",
+      "jsPathName": "color.additional.green.500"
+    },
+    {
+      "pathString": "color.additional.green.600",
+      "path": ["color", "additional", "green", "600"],
+      "value": "#0d8347",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 600",
+      "cssVariableName": "--telekom-color-additional-green-600",
+      "jsPathName": "color.additional.green.600"
+    },
+    {
+      "pathString": "color.additional.green.700",
+      "path": ["color", "additional", "green", "700"],
+      "value": "#0b6d3b",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 700",
+      "cssVariableName": "--telekom-color-additional-green-700",
+      "jsPathName": "color.additional.green.700"
+    },
+    {
+      "pathString": "color.additional.green.800",
+      "path": ["color", "additional", "green", "800"],
+      "value": "#09572f",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 800",
+      "cssVariableName": "--telekom-color-additional-green-800",
+      "jsPathName": "color.additional.green.800"
+    },
+    {
+      "pathString": "color.additional.green.900",
+      "path": ["color", "additional", "green", "900"],
+      "value": "#074224",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / 900",
+      "cssVariableName": "--telekom-color-additional-green-900",
+      "jsPathName": "color.additional.green.900"
+    },
+    {
+      "pathString": "color.additional.green.tint",
+      "path": ["color", "additional", "green", "tint"],
+      "value": "#f0fff7",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / Tint",
+      "cssVariableName": "--telekom-color-additional-green-tint",
+      "jsPathName": "color.additional.green.tint"
+    },
+    {
+      "pathString": "color.additional.green.shade",
+      "path": ["color", "additional", "green", "shade"],
+      "value": "#003319",
+      "category": "Color",
+      "section": "Additional",
+      "name": "Additional / Green / Shade",
+      "cssVariableName": "--telekom-color-additional-green-shade",
+      "jsPathName": "color.additional.green.shade"
+    },
+    {
+      "pathString": "line-weight.standard",
+      "path": ["line-weight", "standard"],
+      "value": "0.0625rem",
+      "comment": "Used for ui elements like inputs, dividers, etc.",
+      "category": "Line Weight",
+      "section": "Standard",
+      "name": "Standard",
+      "cssVariableName": "--telekom-line-weight-standard",
+      "jsPathName": "lineWeight.standard"
+    },
+    {
+      "pathString": "line-weight.highlight",
+      "path": ["line-weight", "highlight"],
+      "value": "0.125rem",
+      "comment": "E.g. use for active menu items.",
+      "category": "Line Weight",
+      "section": "Highlight",
+      "name": "Highlight",
+      "cssVariableName": "--telekom-line-weight-highlight",
+      "jsPathName": "lineWeight.highlight"
+    },
+    {
+      "pathString": "line-weight.bold",
+      "path": ["line-weight", "bold"],
+      "value": "0.25rem",
+      "category": "Line Weight",
+      "section": "Bold",
+      "name": "Bold",
+      "cssVariableName": "--telekom-line-weight-bold",
+      "jsPathName": "lineWeight.bold"
+    },
+    {
+      "pathString": "motion.duration.instant",
+      "path": ["motion", "duration", "instant"],
+      "value": "0ms",
+      "category": "Motion",
+      "section": "Duration",
+      "name": "Duration / Instant",
+      "cssVariableName": "--telekom-motion-duration-instant",
+      "jsPathName": "motion.duration.instant"
+    },
+    {
+      "pathString": "motion.duration.immediate",
+      "path": ["motion", "duration", "immediate"],
+      "value": "100ms",
+      "category": "Motion",
+      "section": "Duration",
+      "name": "Duration / Immediate",
+      "cssVariableName": "--telekom-motion-duration-immediate",
+      "jsPathName": "motion.duration.immediate"
+    },
+    {
+      "pathString": "motion.duration.transition",
+      "path": ["motion", "duration", "transition"],
+      "value": "200ms",
+      "category": "Motion",
+      "section": "Duration",
+      "name": "Duration / Transition",
+      "cssVariableName": "--telekom-motion-duration-transition",
+      "jsPathName": "motion.duration.transition"
+    },
+    {
+      "pathString": "motion.duration.animation",
+      "path": ["motion", "duration", "animation"],
+      "value": "600ms",
+      "category": "Motion",
+      "section": "Duration",
+      "name": "Duration / Animation",
+      "cssVariableName": "--telekom-motion-duration-animation",
+      "jsPathName": "motion.duration.animation"
+    },
+    {
+      "pathString": "motion.duration.animation-deliberate",
+      "path": ["motion", "duration", "animation-deliberate"],
+      "value": "800ms",
+      "category": "Motion",
+      "section": "Duration",
+      "name": "Duration / Animation Deliberate",
+      "cssVariableName": "--telekom-motion-duration-animation-deliberate",
+      "jsPathName": "motion.duration.animationDeliberate"
+    },
+    {
+      "pathString": "motion.easing.standard",
+      "path": ["motion", "easing", "standard"],
+      "value": [0.4, 0, 0.6, 1],
+      "category": "Motion",
+      "section": "Easing",
+      "name": "Easing / Standard",
+      "cssVariableName": "--telekom-motion-easing-standard",
+      "jsPathName": "motion.easing.standard"
+    },
+    {
+      "pathString": "motion.easing.enter",
+      "path": ["motion", "easing", "enter"],
+      "value": [0.4, 0.6, 0.6, 1],
+      "category": "Motion",
+      "section": "Easing",
+      "name": "Easing / Enter",
+      "cssVariableName": "--telekom-motion-easing-enter",
+      "jsPathName": "motion.easing.enter"
+    },
+    {
+      "pathString": "motion.easing.leave",
+      "path": ["motion", "easing", "leave"],
+      "value": [0.4, 0, 1, 1],
+      "category": "Motion",
+      "section": "Easing",
+      "name": "Easing / Leave",
+      "cssVariableName": "--telekom-motion-easing-leave",
+      "jsPathName": "motion.easing.leave"
+    },
+    {
+      "pathString": "opacity.invisible",
+      "path": ["opacity", "invisible"],
+      "value": 0,
+      "category": "Opacity",
+      "section": "Invisible",
+      "name": "Invisible",
+      "cssVariableName": "--telekom-opacity-invisible",
+      "jsPathName": "opacity.invisible"
+    },
+    {
+      "pathString": "opacity.transparent",
+      "path": ["opacity", "transparent"],
+      "value": 0.35,
+      "category": "Opacity",
+      "section": "Transparent",
+      "name": "Transparent",
+      "cssVariableName": "--telekom-opacity-transparent",
+      "jsPathName": "opacity.transparent"
+    },
+    {
+      "pathString": "opacity.semi-transparent",
+      "path": ["opacity", "semi-transparent"],
+      "value": 0.5,
+      "category": "Opacity",
+      "section": "Semi Transparent",
+      "name": "Semi Transparent",
+      "cssVariableName": "--telekom-opacity-semi-transparent",
+      "jsPathName": "opacity.semiTransparent"
+    },
+    {
+      "pathString": "opacity.translucent",
+      "path": ["opacity", "translucent"],
+      "value": 0.75,
+      "category": "Opacity",
+      "section": "Translucent",
+      "name": "Translucent",
+      "cssVariableName": "--telekom-opacity-translucent",
+      "jsPathName": "opacity.translucent"
+    },
+    {
+      "pathString": "opacity.semi-translucent",
+      "path": ["opacity", "semi-translucent"],
+      "value": 0.85,
+      "category": "Opacity",
+      "section": "Semi Translucent",
+      "name": "Semi Translucent",
+      "cssVariableName": "--telekom-opacity-semi-translucent",
+      "jsPathName": "opacity.semiTranslucent"
+    },
+    {
+      "pathString": "opacity.solid",
+      "path": ["opacity", "solid"],
+      "value": 1,
+      "category": "Opacity",
+      "section": "Solid",
+      "name": "Solid",
+      "cssVariableName": "--telekom-opacity-solid",
+      "jsPathName": "opacity.solid"
+    },
+    {
+      "pathString": "radius.small",
+      "path": ["radius", "small"],
+      "value": "0.25rem",
+      "comment": "Used for small elements like checkboxes, etc.",
+      "category": "Radius",
+      "section": "Small",
+      "name": "Small",
+      "cssVariableName": "--telekom-radius-small",
+      "jsPathName": "radius.small"
+    },
+    {
+      "pathString": "radius.standard",
+      "path": ["radius", "standard"],
+      "value": "0.5rem",
+      "comment": "Used for our main ui elements like buttons, etc.",
+      "category": "Radius",
+      "section": "Standard",
+      "name": "Standard",
+      "cssVariableName": "--telekom-radius-standard",
+      "jsPathName": "radius.standard"
+    },
+    {
+      "pathString": "radius.large",
+      "path": ["radius", "large"],
+      "value": "0.75rem",
+      "comment": "Used mainly for containers like cards or dialogs",
+      "category": "Radius",
+      "section": "Large",
+      "name": "Large",
+      "cssVariableName": "--telekom-radius-large",
+      "jsPathName": "radius.large"
+    },
+    {
+      "pathString": "radius.pill",
+      "path": ["radius", "pill"],
+      "value": "62.4375rem",
+      "comment": "Used for pill-shaped ui elements",
+      "category": "Radius",
+      "section": "Pill",
+      "name": "Pill",
+      "cssVariableName": "--telekom-radius-pill",
+      "jsPathName": "radius.pill"
+    },
+    {
+      "pathString": "radius.circle",
+      "path": ["radius", "circle"],
+      "value": "50%",
+      "comment": "Used for ui elements like radio buttons or things like avatars",
+      "category": "Radius",
+      "section": "Circle",
+      "name": "Circle",
+      "cssVariableName": "--telekom-radius-circle",
+      "jsPathName": "radius.circle"
+    },
+    {
+      "pathString": "shadow.flat.standard",
+      "path": ["shadow", "flat", "standard"],
+      "value": "0px 0px 0px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Exclusivly for flat design elements",
+      "category": "Shadow",
+      "section": "Flat",
+      "name": "Flat / Standard",
+      "cssVariableName": "--telekom-shadow-flat-standard",
+      "jsPathName": "shadow.flat.standard"
+    },
+    {
+      "pathString": "shadow.flat.hover",
+      "path": ["shadow", "flat", "hover"],
+      "value": "0px 2px 8px 0px hsla(0, 0%, 0%, 0.1), 0px 1px 2px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Exclusivly for flat design elements",
+      "category": "Shadow",
+      "section": "Flat",
+      "name": "Flat / Hover",
+      "cssVariableName": "--telekom-shadow-flat-hover",
+      "jsPathName": "shadow.flat.hover"
+    },
+    {
+      "pathString": "shadow.flat.pressed",
+      "path": ["shadow", "flat", "pressed"],
+      "value": "0px 0px 0px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Exclusivly for flat design elements",
+      "category": "Shadow",
+      "section": "Flat",
+      "name": "Flat / Pressed",
+      "cssVariableName": "--telekom-shadow-flat-pressed",
+      "jsPathName": "shadow.flat.pressed"
+    },
+    {
+      "pathString": "shadow.resting.standard",
+      "path": ["shadow", "resting", "standard"],
+      "value": "0px 2px 8px 0px hsla(0, 0%, 0%, 0.1), 0px 1px 2px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Default for interactable elements like buttons, etc.",
+      "category": "Shadow",
+      "section": "Resting",
+      "name": "Resting / Standard",
+      "cssVariableName": "--telekom-shadow-resting-standard",
+      "jsPathName": "shadow.resting.standard"
+    },
+    {
+      "pathString": "shadow.resting.hover",
+      "path": ["shadow", "resting", "hover"],
+      "value": "0px 6px 24px 0px hsla(0, 0%, 0%, 0.1), 0px 3px 6px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Default for interactable elements like buttons, etc.",
+      "category": "Shadow",
+      "section": "Resting",
+      "name": "Resting / Hover",
+      "cssVariableName": "--telekom-shadow-resting-hover",
+      "jsPathName": "shadow.resting.hover"
+    },
+    {
+      "pathString": "shadow.resting.pressed",
+      "path": ["shadow", "resting", "pressed"],
+      "value": "0px 0px 0px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Default for interactable elements like buttons, etc.",
+      "category": "Shadow",
+      "section": "Resting",
+      "name": "Resting / Pressed",
+      "cssVariableName": "--telekom-shadow-resting-pressed",
+      "jsPathName": "shadow.resting.pressed"
+    },
+    {
+      "pathString": "shadow.raised.standard",
+      "path": ["shadow", "raised", "standard"],
+      "value": "0px 8px 32px 0px hsla(0, 0%, 0%, 0.1), 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For bigger interactable elements like cards, etc.",
+      "category": "Shadow",
+      "section": "Raised",
+      "name": "Raised / Standard",
+      "cssVariableName": "--telekom-shadow-raised-standard",
+      "jsPathName": "shadow.raised.standard"
+    },
+    {
+      "pathString": "shadow.raised.hover",
+      "path": ["shadow", "raised", "hover"],
+      "value": "0px 16px 64px 0px hsla(0, 0%, 0%, 0.1), 0px 8px 16px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For bigger interactable elements like cards, etc.",
+      "category": "Shadow",
+      "section": "Raised",
+      "name": "Raised / Hover",
+      "cssVariableName": "--telekom-shadow-raised-hover",
+      "jsPathName": "shadow.raised.hover"
+    },
+    {
+      "pathString": "shadow.raised.pressed",
+      "path": ["shadow", "raised", "pressed"],
+      "value": "0px 4px 16px 0px hsla(0, 0%, 0%, 0.1), 0px 2px 4px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For bigger interactable elements like cards, etc.",
+      "category": "Shadow",
+      "section": "Raised",
+      "name": "Raised / Pressed",
+      "cssVariableName": "--telekom-shadow-raised-pressed",
+      "jsPathName": "shadow.raised.pressed"
+    },
+    {
+      "pathString": "shadow.floating.standard",
+      "path": ["shadow", "floating", "standard"],
+      "value": "0px 12px 48px 0px hsla(0, 0%, 0%, 0.1), 0px 6px 12px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For floating elements that mostly stay in a fixed position like a FAB.",
+      "category": "Shadow",
+      "section": "Floating",
+      "name": "Floating / Standard",
+      "cssVariableName": "--telekom-shadow-floating-standard",
+      "jsPathName": "shadow.floating.standard"
+    },
+    {
+      "pathString": "shadow.floating.hover",
+      "path": ["shadow", "floating", "hover"],
+      "value": "0px 24px 96px 0px hsla(0, 0%, 0%, 0.1), 0px 12px 24px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For floating elements that mostly stay in a fixed position like a FAB.",
+      "category": "Shadow",
+      "section": "Floating",
+      "name": "Floating / Hover",
+      "cssVariableName": "--telekom-shadow-floating-hover",
+      "jsPathName": "shadow.floating.hover"
+    },
+    {
+      "pathString": "shadow.floating.pressed",
+      "path": ["shadow", "floating", "pressed"],
+      "value": "0px 8px 32px 0px hsla(0, 0%, 0%, 0.1), 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For floating elements that mostly stay in a fixed position like a FAB.",
+      "category": "Shadow",
+      "section": "Floating",
+      "name": "Floating / Pressed",
+      "cssVariableName": "--telekom-shadow-floating-pressed",
+      "jsPathName": "shadow.floating.pressed"
+    },
+    {
+      "pathString": "shadow.top",
+      "path": ["shadow", "top"],
+      "value": "0px 16px 64px 0px hsla(0, 0%, 0%, 0.1), 0px 8px 16px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "For fixed elements that overlay the content e.g. sidebars or bottom sheets",
+      "category": "Shadow",
+      "section": "Top",
+      "name": "Top",
+      "cssVariableName": "--telekom-shadow-top",
+      "jsPathName": "shadow.top"
+    },
+    {
+      "pathString": "shadow.overlay",
+      "path": ["shadow", "overlay"],
+      "value": "0px 24px 96px 0px hsla(0, 0%, 0%, 0.1), 0px 12px 24px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Highest level e.g. for dialogs or modals",
+      "category": "Shadow",
+      "section": "Overlay",
+      "name": "Overlay",
+      "cssVariableName": "--telekom-shadow-overlay",
+      "jsPathName": "shadow.overlay"
+    },
+    {
+      "pathString": "shadow.app-bar.top.raised",
+      "path": ["shadow", "app-bar", "top", "raised"],
+      "value": "0px 1px 0px 0px hsla(0, 0%, 0%, 0.05), 0px 2px 8px 0px hsla(0, 0%, 0%, 0.05)",
+      "comment": "Use for headers, app bar & menus on the top",
+      "category": "Shadow",
+      "section": "App Bar",
+      "name": "App Bar / Top / Raised",
+      "cssVariableName": "--telekom-shadow-app-bar-top-raised",
+      "jsPathName": "shadow.appBar.top.raised"
+    },
+    {
+      "pathString": "shadow.app-bar.top.flat",
+      "path": ["shadow", "app-bar", "top", "flat"],
+      "value": "0px 1px 0px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Use for headers, app bar & menus on the top",
+      "category": "Shadow",
+      "section": "App Bar",
+      "name": "App Bar / Top / Flat",
+      "cssVariableName": "--telekom-shadow-app-bar-top-flat",
+      "jsPathName": "shadow.appBar.top.flat"
+    },
+    {
+      "pathString": "shadow.app-bar.bottom.flat",
+      "path": ["shadow", "app-bar", "bottom", "flat"],
+      "value": "0px -1px 0px 0px hsla(0, 0%, 0%, 0.1)",
+      "comment": "Use for app navigation and app bars on the bottom",
+      "category": "Shadow",
+      "section": "App Bar",
+      "name": "App Bar / Bottom / Flat",
+      "cssVariableName": "--telekom-shadow-app-bar-bottom-flat",
+      "jsPathName": "shadow.appBar.bottom.flat"
+    },
+    {
+      "pathString": "spacing.unit.x0",
+      "path": ["spacing", "unit", "x0"],
+      "value": "0rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x0",
+      "cssVariableName": "--telekom-spacing-unit-x0",
+      "jsPathName": "spacing.unit.x0"
+    },
+    {
+      "pathString": "spacing.unit.x025",
+      "path": ["spacing", "unit", "x025"],
+      "value": "0.0625rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x025",
+      "cssVariableName": "--telekom-spacing-unit-x025",
+      "jsPathName": "spacing.unit.x025"
+    },
+    {
+      "pathString": "spacing.unit.x05",
+      "path": ["spacing", "unit", "x05"],
+      "value": "0.125rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x05",
+      "cssVariableName": "--telekom-spacing-unit-x05",
+      "jsPathName": "spacing.unit.x05"
+    },
+    {
+      "pathString": "spacing.unit.x1",
+      "path": ["spacing", "unit", "x1"],
+      "value": "0.25rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x1",
+      "cssVariableName": "--telekom-spacing-unit-x1",
+      "jsPathName": "spacing.unit.x1"
+    },
+    {
+      "pathString": "spacing.unit.x2",
+      "path": ["spacing", "unit", "x2"],
+      "value": "0.5rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x2",
+      "cssVariableName": "--telekom-spacing-unit-x2",
+      "jsPathName": "spacing.unit.x2"
+    },
+    {
+      "pathString": "spacing.unit.x3",
+      "path": ["spacing", "unit", "x3"],
+      "value": "0.75rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x3",
+      "cssVariableName": "--telekom-spacing-unit-x3",
+      "jsPathName": "spacing.unit.x3"
+    },
+    {
+      "pathString": "spacing.unit.x4",
+      "path": ["spacing", "unit", "x4"],
+      "value": "1rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x4",
+      "cssVariableName": "--telekom-spacing-unit-x4",
+      "jsPathName": "spacing.unit.x4"
+    },
+    {
+      "pathString": "spacing.unit.x5",
+      "path": ["spacing", "unit", "x5"],
+      "value": "1.25rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x5",
+      "cssVariableName": "--telekom-spacing-unit-x5",
+      "jsPathName": "spacing.unit.x5"
+    },
+    {
+      "pathString": "spacing.unit.x6",
+      "path": ["spacing", "unit", "x6"],
+      "value": "1.5rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x6",
+      "cssVariableName": "--telekom-spacing-unit-x6",
+      "jsPathName": "spacing.unit.x6"
+    },
+    {
+      "pathString": "spacing.unit.x7",
+      "path": ["spacing", "unit", "x7"],
+      "value": "1.75rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x7",
+      "cssVariableName": "--telekom-spacing-unit-x7",
+      "jsPathName": "spacing.unit.x7"
+    },
+    {
+      "pathString": "spacing.unit.x8",
+      "path": ["spacing", "unit", "x8"],
+      "value": "2rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x8",
+      "cssVariableName": "--telekom-spacing-unit-x8",
+      "jsPathName": "spacing.unit.x8"
+    },
+    {
+      "pathString": "spacing.unit.x9",
+      "path": ["spacing", "unit", "x9"],
+      "value": "2.25rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x9",
+      "cssVariableName": "--telekom-spacing-unit-x9",
+      "jsPathName": "spacing.unit.x9"
+    },
+    {
+      "pathString": "spacing.unit.x10",
+      "path": ["spacing", "unit", "x10"],
+      "value": "2.5rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x10",
+      "cssVariableName": "--telekom-spacing-unit-x10",
+      "jsPathName": "spacing.unit.x10"
+    },
+    {
+      "pathString": "spacing.unit.x11",
+      "path": ["spacing", "unit", "x11"],
+      "value": "2.75rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x11",
+      "cssVariableName": "--telekom-spacing-unit-x11",
+      "jsPathName": "spacing.unit.x11"
+    },
+    {
+      "pathString": "spacing.unit.x12",
+      "path": ["spacing", "unit", "x12"],
+      "value": "3rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x12",
+      "cssVariableName": "--telekom-spacing-unit-x12",
+      "jsPathName": "spacing.unit.x12"
+    },
+    {
+      "pathString": "spacing.unit.x13",
+      "path": ["spacing", "unit", "x13"],
+      "value": "3.25rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x13",
+      "cssVariableName": "--telekom-spacing-unit-x13",
+      "jsPathName": "spacing.unit.x13"
+    },
+    {
+      "pathString": "spacing.unit.x14",
+      "path": ["spacing", "unit", "x14"],
+      "value": "3.5rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x14",
+      "cssVariableName": "--telekom-spacing-unit-x14",
+      "jsPathName": "spacing.unit.x14"
+    },
+    {
+      "pathString": "spacing.unit.x15",
+      "path": ["spacing", "unit", "x15"],
+      "value": "3.75rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x15",
+      "cssVariableName": "--telekom-spacing-unit-x15",
+      "jsPathName": "spacing.unit.x15"
+    },
+    {
+      "pathString": "spacing.unit.x16",
+      "path": ["spacing", "unit", "x16"],
+      "value": "4rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x16",
+      "cssVariableName": "--telekom-spacing-unit-x16",
+      "jsPathName": "spacing.unit.x16"
+    },
+    {
+      "pathString": "spacing.unit.x17",
+      "path": ["spacing", "unit", "x17"],
+      "value": "4.25rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x17",
+      "cssVariableName": "--telekom-spacing-unit-x17",
+      "jsPathName": "spacing.unit.x17"
+    },
+    {
+      "pathString": "spacing.unit.x18",
+      "path": ["spacing", "unit", "x18"],
+      "value": "4.5rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x18",
+      "cssVariableName": "--telekom-spacing-unit-x18",
+      "jsPathName": "spacing.unit.x18"
+    },
+    {
+      "pathString": "spacing.unit.x19",
+      "path": ["spacing", "unit", "x19"],
+      "value": "4.75rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x19",
+      "cssVariableName": "--telekom-spacing-unit-x19",
+      "jsPathName": "spacing.unit.x19"
+    },
+    {
+      "pathString": "spacing.unit.x20",
+      "path": ["spacing", "unit", "x20"],
+      "value": "5rem",
+      "category": "Spacing",
+      "section": "Unit",
+      "name": "Unit / x20",
+      "cssVariableName": "--telekom-spacing-unit-x20",
+      "jsPathName": "spacing.unit.x20"
+    },
+    {
+      "pathString": "typography.font-size.footnote",
+      "path": ["typography", "font-size", "footnote"],
+      "value": "0.625rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Footnote",
+      "cssVariableName": "--telekom-typography-font-size-footnote",
+      "jsPathName": "typography.fontSize.footnote"
+    },
+    {
+      "pathString": "typography.font-size.small",
+      "path": ["typography", "font-size", "small"],
+      "value": "0.75rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Small",
+      "cssVariableName": "--telekom-typography-font-size-small",
+      "jsPathName": "typography.fontSize.small"
+    },
+    {
+      "pathString": "typography.font-size.caption",
+      "path": ["typography", "font-size", "caption"],
+      "value": "0.875rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Caption",
+      "cssVariableName": "--telekom-typography-font-size-caption",
+      "jsPathName": "typography.fontSize.caption"
+    },
+    {
+      "pathString": "typography.font-size.body",
+      "path": ["typography", "font-size", "body"],
+      "value": "1rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Body",
+      "cssVariableName": "--telekom-typography-font-size-body",
+      "jsPathName": "typography.fontSize.body"
+    },
+    {
+      "pathString": "typography.font-size.callout",
+      "path": ["typography", "font-size", "callout"],
+      "value": "1.25rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Callout",
+      "cssVariableName": "--telekom-typography-font-size-callout",
+      "jsPathName": "typography.fontSize.callout"
+    },
+    {
+      "pathString": "typography.font-size.headline-3",
+      "path": ["typography", "font-size", "headline-3"],
+      "value": "1.5rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Headline 3",
+      "cssVariableName": "--telekom-typography-font-size-headline-3",
+      "jsPathName": "typography.fontSize.headline3"
+    },
+    {
+      "pathString": "typography.font-size.headline-2",
+      "path": ["typography", "font-size", "headline-2"],
+      "value": "2rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Headline 2",
+      "cssVariableName": "--telekom-typography-font-size-headline-2",
+      "jsPathName": "typography.fontSize.headline2"
+    },
+    {
+      "pathString": "typography.font-size.headline-1",
+      "path": ["typography", "font-size", "headline-1"],
+      "value": "2.625rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Headline 1",
+      "cssVariableName": "--telekom-typography-font-size-headline-1",
+      "jsPathName": "typography.fontSize.headline1"
+    },
+    {
+      "pathString": "typography.font-size.title-3",
+      "path": ["typography", "font-size", "title-3"],
+      "value": "3.375rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Title 3",
+      "cssVariableName": "--telekom-typography-font-size-title-3",
+      "jsPathName": "typography.fontSize.title3"
+    },
+    {
+      "pathString": "typography.font-size.title-2",
+      "path": ["typography", "font-size", "title-2"],
+      "value": "4.25rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Title 2",
+      "cssVariableName": "--telekom-typography-font-size-title-2",
+      "jsPathName": "typography.fontSize.title2"
+    },
+    {
+      "pathString": "typography.font-size.title-1",
+      "path": ["typography", "font-size", "title-1"],
+      "value": "4.75rem",
+      "category": "Typography",
+      "section": "Font Size",
+      "name": "Font Size / Title 1",
+      "cssVariableName": "--telekom-typography-font-size-title-1",
+      "jsPathName": "typography.fontSize.title1"
+    },
+    {
+      "pathString": "typography.font-family.sans",
+      "path": ["typography", "font-family", "sans"],
+      "value": "TeleNeoWeb, sans-serif",
+      "category": "Typography",
+      "section": "Font Family",
+      "name": "Font Family / Sans",
+      "cssVariableName": "--telekom-typography-font-family-sans",
+      "jsPathName": "typography.fontFamily.sans"
+    },
+    {
+      "pathString": "typography.font-family.mono",
+      "path": ["typography", "font-family", "mono"],
+      "value": "monospace",
+      "category": "Typography",
+      "section": "Font Family",
+      "name": "Font Family / Mono",
+      "cssVariableName": "--telekom-typography-font-family-mono",
+      "jsPathName": "typography.fontFamily.mono"
+    },
+    {
+      "pathString": "typography.font-weight.thin",
+      "path": ["typography", "font-weight", "thin"],
+      "value": 200,
+      "category": "Typography",
+      "section": "Font Weight",
+      "name": "Font Weight / Thin",
+      "cssVariableName": "--telekom-typography-font-weight-thin",
+      "jsPathName": "typography.fontWeight.thin"
+    },
+    {
+      "pathString": "typography.font-weight.regular",
+      "path": ["typography", "font-weight", "regular"],
+      "value": 400,
+      "category": "Typography",
+      "section": "Font Weight",
+      "name": "Font Weight / Regular",
+      "cssVariableName": "--telekom-typography-font-weight-regular",
+      "jsPathName": "typography.fontWeight.regular"
+    },
+    {
+      "pathString": "typography.font-weight.medium",
+      "path": ["typography", "font-weight", "medium"],
+      "value": 500,
+      "category": "Typography",
+      "section": "Font Weight",
+      "name": "Font Weight / Medium",
+      "cssVariableName": "--telekom-typography-font-weight-medium",
+      "jsPathName": "typography.fontWeight.medium"
+    },
+    {
+      "pathString": "typography.font-weight.bold",
+      "path": ["typography", "font-weight", "bold"],
+      "value": 700,
+      "category": "Typography",
+      "section": "Font Weight",
+      "name": "Font Weight / Bold",
+      "cssVariableName": "--telekom-typography-font-weight-bold",
+      "jsPathName": "typography.fontWeight.bold"
+    },
+    {
+      "pathString": "typography.font-weight.extra-bold",
+      "path": ["typography", "font-weight", "extra-bold"],
+      "value": 800,
+      "category": "Typography",
+      "section": "Font Weight",
+      "name": "Font Weight / Extra Bold",
+      "cssVariableName": "--telekom-typography-font-weight-extra-bold",
+      "jsPathName": "typography.fontWeight.extraBold"
+    },
+    {
+      "pathString": "typography.line-spacing.none",
+      "path": ["typography", "line-spacing", "none"],
+      "value": 1,
+      "comment": "Use for single line in ui elements",
+      "category": "Typography",
+      "section": "Line Spacing",
+      "name": "Line Spacing / None",
+      "cssVariableName": "--telekom-typography-line-spacing-none",
+      "jsPathName": "typography.lineSpacing.none"
+    },
+    {
+      "pathString": "typography.line-spacing.extra-tight",
+      "path": ["typography", "line-spacing", "extra-tight"],
+      "value": 1.15,
+      "comment": "Use for large titles like H1 or H2",
+      "category": "Typography",
+      "section": "Line Spacing",
+      "name": "Line Spacing / Extra Tight",
+      "cssVariableName": "--telekom-typography-line-spacing-extra-tight",
+      "jsPathName": "typography.lineSpacing.extraTight"
+    },
+    {
+      "pathString": "typography.line-spacing.tight",
+      "path": ["typography", "line-spacing", "tight"],
+      "value": 1.25,
+      "comment": "Use for large headlines like H3, etc.",
+      "category": "Typography",
+      "section": "Line Spacing",
+      "name": "Line Spacing / Tight",
+      "cssVariableName": "--telekom-typography-line-spacing-tight",
+      "jsPathName": "typography.lineSpacing.tight"
+    },
+    {
+      "pathString": "typography.line-spacing.standard",
+      "path": ["typography", "line-spacing", "standard"],
+      "value": 1.35,
+      "comment": "Use for most text elements like normal copy, etc.",
+      "category": "Typography",
+      "section": "Line Spacing",
+      "name": "Line Spacing / Standard",
+      "cssVariableName": "--telekom-typography-line-spacing-standard",
+      "jsPathName": "typography.lineSpacing.standard"
+    },
+    {
+      "pathString": "typography.line-spacing.loose",
+      "path": ["typography", "line-spacing", "loose"],
+      "value": 1.5,
+      "comment": "Use for multi line text passages with long lines.",
+      "category": "Typography",
+      "section": "Line Spacing",
+      "name": "Line Spacing / Loose",
+      "cssVariableName": "--telekom-typography-line-spacing-loose",
+      "jsPathName": "typography.lineSpacing.loose"
+    },
+    {
+      "pathString": "typography.letter-spacing.standard",
+      "path": ["typography", "letter-spacing", "standard"],
+      "value": 0,
+      "category": "Typography",
+      "section": "Letter Spacing",
+      "name": "Letter Spacing / Standard",
+      "cssVariableName": "--telekom-typography-letter-spacing-standard",
+      "jsPathName": "typography.letterSpacing.standard"
+    }
+  ]
+}
