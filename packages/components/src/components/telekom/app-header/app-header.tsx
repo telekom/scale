@@ -106,7 +106,9 @@ export class Header {
 
   @Listen('scale-close')
   handleCloseUserMenu() {
-    this.userMenuToggle.focus();
+    if (this.userMenuToggle) {
+      this.userMenuToggle.focus();
+    }
     this.userMenu = false;
   }
 
