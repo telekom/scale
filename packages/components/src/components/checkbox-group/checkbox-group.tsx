@@ -132,9 +132,9 @@ export class CheckboxGroup {
           ref={(el) => (this.groupNode = el)}
           name={this.name}
           label={this.label}
-          ariaLabelCheckbox={`${
-            this.ariaLabelCheckboxGroup || this.label
-          } - ${this.actionText}`}
+          ariaLabelCheckbox={`${this.ariaLabelCheckboxGroup || this.label} - ${
+            this.actionText
+          }`}
           helperText={this.helperText}
           status={this.status}
           invalid={this.invalid}
