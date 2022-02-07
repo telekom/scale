@@ -185,7 +185,8 @@ scale-textarea {
   pointer-events: none;
   border-radius: var(--telekom-radius-standard);
   height: var(--telekom-spacing-unit-x6);
-  background-color: transparent;
+  /*FIXME: we can not set this background color to transparent,need to keep it as it was */
+  background-color: var(--telekom-color-ui-base, #ffffff);
 }
 .textarea--transparent .textarea__label-safety-background,
 .textarea--readonly .textarea__label-safety-background,
