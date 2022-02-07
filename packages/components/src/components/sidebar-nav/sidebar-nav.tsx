@@ -100,7 +100,9 @@ export class SidebarNav {
   };
 
   render() {
-    const label = this.ariaLabelSidebarNav ? { 'aria-label': this.ariaLabelSidebarNav } : {};
+    const label = this.ariaLabelSidebarNav
+      ? { 'aria-label': this.ariaLabelSidebarNav }
+      : {};
     const hidden = this.collapsible ? { hidden: this.collapsed } : {};
 
     return (
