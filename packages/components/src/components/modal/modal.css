@@ -30,7 +30,7 @@
     -spacing-56 !== --telekom-spacing-unrelated-sm
   */
   --size-window-small: calc(
-    (6 * var(---telekom-spacing-unit-x14, 3.5rem)) +
+    (6 * var(--telekom-spacing-unit-x14, 3.5rem)) +
       (5 * var(--telekom-spacing-unit-x8))
   );
   --size-window-default: calc(
