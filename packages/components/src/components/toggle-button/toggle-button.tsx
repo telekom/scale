@@ -61,7 +61,7 @@ export class ToggleButton {
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabel: string;
+  @Prop() ariaLabelToggleButton: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) position within group */
@@ -180,7 +180,7 @@ export class ToggleButton {
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
-          aria-label={this.ariaLabel}
+          aria-label={this.ariaLabelToggleButton}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}

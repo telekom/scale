@@ -34,7 +34,7 @@ export class CheckboxGroup {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input label output */
-  @Prop() ariaLabel?: string;
+  @Prop() ariaLabelCheckboxGroupLabel?: string;
   /** (optional) Input helper text */
   @Prop() helperText?: string;
   /** @deprecated - invalid should replace status */
@@ -132,7 +132,7 @@ export class CheckboxGroup {
           ref={(el) => (this.groupNode = el)}
           name={this.name}
           label={this.label}
-          ariaLabel={`${this.ariaLabel || this.label} - ${this.actionText}`}
+          ariaLabelCheckbox={`${this.ariaLabelCheckboxGroupLabel || this.label} - ${this.actionText}`}
           helperText={this.helperText}
           status={this.status}
           invalid={this.invalid}
@@ -144,7 +144,7 @@ export class CheckboxGroup {
           part="parent-checkbox"
         />
         <fieldset part="fieldset">
-          <legend>{this.ariaLabel || this.label}</legend>
+          <legend>{this.ariaLabelCheckboxGroupLabel || this.label}</legend>
           <slot />
         </fieldset>
       </Host>

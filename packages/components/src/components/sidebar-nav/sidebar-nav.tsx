@@ -27,7 +27,7 @@ export class SidebarNav {
    * omitting the term "navigation", as the screen reader will read
    * both the role and the contents of the label.
    */
-  @Prop() ariaLabel?: string;
+  @Prop() ariaLabelSidebarNav?: string;
   /** Set to `true` to make the sidebar toggleable (useful for small screens) */
   @Prop({ mutable: true, reflect: true }) collapsible?: boolean = false;
   /** Automatically set `collapsible` based on this media query */
@@ -100,7 +100,7 @@ export class SidebarNav {
   };
 
   render() {
-    const label = this.ariaLabel ? { 'aria-label': this.ariaLabel } : {};
+    const label = this.ariaLabelSidebarNav ? { 'aria-label': this.ariaLabelSidebarNav } : {};
     const hidden = this.collapsible ? { hidden: this.collapsed } : {};
 
     return (
