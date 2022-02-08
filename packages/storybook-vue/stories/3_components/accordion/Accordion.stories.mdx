@@ -207,3 +207,55 @@ Adding `aria-level=""` to the heading slot on each item is not needed, but resul
   </scale-collapsible>
 </scale-accordion>
 ```
+
+## Icon Location
+<Canvas withSource="none">
+  <Story
+    name="Icon Location"
+    args={{
+      iconLocation: 'right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+```html
+<scale-accordion icon-location="right">
+  <scale-collapsible >
+    <span slot="heading">Leo integer malesuada nunc vel risus</span>
+    <p>
+      Freegan kinfolk
+      <scale-link href="/">farm-to-table humblebrag cred</scale-link>,
+      hammock bespoke small batch pabst. 90's tumblr whatever direct trade,
+      organic master cleanse copper mug schlitz palo santo bushwick ethical
+      pop-up chambray portland. Sartorial austin iceland street art, pug
+      asymmetrical marfa mustache mumblecore. Shoreditch raclette
+      knausgaard, swag enamel pin food truck everyday carry 3 wolf moon.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading">Dolor purus non enim</span>
+    <p>
+      Bespoke austin pork belly yuccie pop-up.
+      <scale-link href="/">Before they sold out</scale-link> YOLO
+      kickstarter scenester meggings echo park aesthetic. Thundercats
+      post-ironic wayfarers microdosing etsy hashtag seitan photo booth
+      bitters.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading"
+      >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+      diam</span
+    >
+    <p>
+      Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion
+      axe helvetica brunch godard cray viral prism. Street art tattooed
+      bitters, ugh four loko selfies you probably haven't heard of them
+      locavore bushwick. Tattooed 90's kinfolk, banh mi umami banjo palo
+      santo cliche. Cray wolf godard skateboard celiac taxidermy tacos
+      offal.
+    </p>
+  </scale-collapsible>
+</scale-accordion>
+```
