@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
 
 

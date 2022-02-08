@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+
+### Bug Fixes
+
+* **modal:** remove title attribute from modal window ([#852](https://github.com/telekom/scale/issues/852)) ([3e4213b](https://github.com/telekom/scale/commit/3e4213b23b2aebd6ac44797b0a86832e1de7763f))
+
+
+
+
+
 # [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
 
 
