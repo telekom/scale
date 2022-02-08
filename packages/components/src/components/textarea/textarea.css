@@ -42,7 +42,7 @@ scale-textarea {
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-base);
-  --margin-control: var(--spacing-x);
+  --margin-control: var(--telekom-spacing-unit-x3);
   /*counter*/
   --transition-counter: var(--transition);
   --font-size-counter: var(--font-size-meta);
