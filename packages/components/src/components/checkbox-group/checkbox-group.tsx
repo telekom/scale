@@ -34,7 +34,7 @@ export class CheckboxGroup {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** @deprecated - ariaLabelCheckboxGroup should replace ariaLabel */
-  @Prop() ariaLabel?: string = '';  
+  @Prop() ariaLabel?: string = '';
   /** (optional) Input label output */
   @Prop() ariaLabelCheckboxGroup?: string;
   /** (optional) Input helper text */
@@ -94,8 +94,7 @@ export class CheckboxGroup {
         type: 'warn',
         source: this.host,
       });
-    }    
-    
+    }
   }
 
   getChildNodes() {

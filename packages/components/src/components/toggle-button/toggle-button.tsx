@@ -62,7 +62,7 @@ export class ToggleButton {
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
   /** @deprecated - ariaLabel should replace ariaLabelToggleButton */
-  @Prop() ariaLabel?: string;  
+  @Prop() ariaLabel?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabelToggleButton: string;
   /** (optional) Injected CSS styles */
@@ -107,8 +107,7 @@ export class ToggleButton {
         type: 'warn',
         source: this.hostElement,
       });
-    }  
-
+    }
   }
 
   componentWillLoad() {

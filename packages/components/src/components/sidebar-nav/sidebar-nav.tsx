@@ -24,7 +24,7 @@ export class SidebarNav {
   @Element() el: HTMLElement;
 
   /** @deprecated - ariaLabelSidebarNav should replace ariaLabel */
-  @Prop() ariaLabel?: string;  
+  @Prop() ariaLabel?: string;
   /**
    * From mdn: A brief description of the purpose of the navigation,
    * omitting the term "navigation", as the screen reader will read
@@ -56,7 +56,7 @@ export class SidebarNav {
         type: 'warn',
         source: this.el,
       });
-    }    
+    }
   }
 
   disconnectedCallback() {
