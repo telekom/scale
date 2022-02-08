@@ -45,6 +45,7 @@
   --spacing-x-header: var(--telekom-spacing-unit-x6);
   --spacing-y-header: var(--telekom-spacing-unit-x6);
 
+  /* FIXME:TOKEN --telekom-color-ui-border-standard is too dark */
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-general-subtle, var(--telekom-color-ui-subtle));
 
