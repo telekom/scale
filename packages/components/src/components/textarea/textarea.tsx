@@ -175,7 +175,13 @@ export class Textarea {
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-          <div class="textarea-mask">
+          <div
+            class="textarea-mask"
+            style={
+              !!this.resize &&
+              this.resize === 'horizontal' && { width: 'max-content' }
+            }
+          >
             {/* Accessibility: label should be always *before* the actual input */}
             <label class="textarea__label" htmlFor={this.inputId}>
               {this.label}

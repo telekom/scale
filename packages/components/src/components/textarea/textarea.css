@@ -76,19 +76,17 @@ scale-textarea {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 .textarea-mask {
   display: flex;
   flex-direction: column;
-  width: max-content;
-  height: max-content;
   border-radius: var(--radius);
   border: var(--border);
 }
 
 .textarea-mask .textarea__control {
   margin: 0;
+  width: 100%;
   resize: vertical;
   display: flex;
   outline: none;
