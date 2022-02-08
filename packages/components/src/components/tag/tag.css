@@ -10,15 +10,13 @@
  */
 
 :host {
-  /* FIXME:TOKEN previously --scl-color-text-standard */
   --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --radius: var(--telekom-radius-small);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
   --icon-color-hover: var(--telekom-color-text-and-icon-primary-hovered);
@@ -38,7 +36,7 @@
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
   --font-size-small: var(--telekom-typography-font-size-small);
-  /* FIXME:TOKEN previously --scl-font-line-height-160 */
+  /* FIXME previously --scl-font-line-height-160 */
   --line-height-small: var(--telekom-typography-line-spacing-loose);
 }
 

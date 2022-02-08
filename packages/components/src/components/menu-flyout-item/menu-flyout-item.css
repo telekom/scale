@@ -10,8 +10,7 @@
  */
 
 :host {
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
 
   display: block;
   position: relative;
@@ -22,7 +21,6 @@
 }
 
 * {
-  /* FIXME:TOKEN hardcoded value */
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
@@ -68,7 +66,6 @@
 
 .menu-flyout-item--disabled {
   outline: none;
-  /* FIXME:TOKEN previously hard coded color: #ccc; */
   color: var(--telekom-color-text-and-icon-disabled);
   cursor: not-allowed;
 }

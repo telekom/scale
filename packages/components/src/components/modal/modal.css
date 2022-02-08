@@ -45,7 +45,6 @@
   --spacing-x-header: var(--telekom-spacing-unit-x6);
   --spacing-y-header: var(--telekom-spacing-unit-x6);
 
-  /* FIXME:TOKEN --telekom-color-ui-border-standard is too dark */
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-general-subtle, var(--telekom-color-ui-subtle));
 
@@ -57,8 +56,7 @@
   --radius-close-button: var(--telekom-radius-standard);
   --transition-close-button: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
-  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
   --color-close-button: var(--telekom-color-text-and-icon-standard);
   --color-close-button-hover: var(--telekom-color-primary-hovered);
   --color-close-button-active: var(--telekom-color-primary-pressed);

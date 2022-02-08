@@ -67,9 +67,7 @@ duet-date-picker .duet-date__toggle {
 }
 
 duet-date-picker .duet-date__toggle:focus {
-  /* FIXME:TOKEN hardcoded shadow value*/
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
 }
 
 duet-date-picker .duet-date__toggle:hover scale-icon-content-calendar {

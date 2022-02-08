@@ -18,11 +18,10 @@ scale-textarea {
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   /* FIXME:TOKEN replace with ui border hover */
-  --border-color-hover: var(--telekom-color-primary-hovered, #f90984);
-  --border-color-focus: var(--telekom-color-primary-pressed, #f90984);
+  --border-color-hover: var(--telekom-color-primary-hovered);
+  --border-color-focus: var(--telekom-color-primary-hovered);
   --border-color-disabled: var(--telekom-color-ui-disabled);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
@@ -63,7 +62,6 @@ scale-textarea {
   /*label*/
   --color-label: var(--telekom-color-text-and-icon-additional);
   --color-label-readonly: var(--telekom-color-text-and-icon-additional);
-  /* FIXME:TOKEN z-index token is needed */
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);

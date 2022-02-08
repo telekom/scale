@@ -20,8 +20,7 @@
   --background-underline-hover: var(--telekom-color-primary-hovered);
   --background-underline-active: var(--telekom-color-primary-pressed);
   --color-active: var(--telekom-color-text-and-icon-primary-standard);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);

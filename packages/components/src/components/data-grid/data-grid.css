@@ -24,7 +24,7 @@
   font-weight: var(--telekom-typography-font-weight-medium);
 }
 
-/* FIXME:TOKEN diffrent heading sizes that are not available in design tokens */
+/* FIXME use --telekom tokens */
 .scl-h1 {
   margin: 0;
   font-size: var(--scl-font-variant-heading-1-size);
@@ -72,7 +72,6 @@
   font-size: var(--telekom-typography-font-size-body);
   font-weight: var(--telekom-typography-font-weight-regular);
   line-height: var(--telekom-typography-line-spacing-standard);
-  /* FIXME:TOKEN this used to be --scl-color-grey-90 */
   color: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -403,8 +402,7 @@
 .info {
   height: 54px;
   position: relative;
-  /* FIXME:TOKEN border-top different than border-bottom, used to be scl-color-grey-20 and scl-color-grey-10 respectively, now both --telekom-color-ui-subtle  */
-  border-top: 1px solid var(--telekom-color-ui-subtle);
+  border-top: var(--telekom-line-weight-standard) solid var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;
 }
@@ -488,8 +486,7 @@
   display: block;
   width: 100px;
   flex-shrink: 0;
-  /* FIXME:TOKEN this variable is not defined anywhere */
-  color: var(--scl-color-grey);
+  color: var(--telekom-color-text-and-icon-additional);
   font-size: var(--telekom-typography-font-size-small);
   font-weight: var(--telekom-typography-font-weight-medium);
 }

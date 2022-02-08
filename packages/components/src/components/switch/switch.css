@@ -35,8 +35,7 @@
   --transition-timing-function: cubic-bezier(
     var(--telekom-motion-easing-standard)
   );
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
   --spacing-left: var(--telekom-spacing-unit-x2);
   --font-weight: var(--telekom-typography-font-weight-medium);
 

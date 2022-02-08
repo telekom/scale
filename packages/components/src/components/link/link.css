@@ -22,32 +22,28 @@
 
   /* initial */
   --color: var(--telekom-color-text-and-icon-link-standard);
-  /* FIXME:TOKEN hardcoded values */
+  /* FIXME:TOKEN hardcoded value */
   --color-line-initial: hsl(219, 100%, 87%);
-  --line-thickness-initial: 0.0625em;
+  --color-line-initial: var(--telekom-color-additional-blue-200);
+  --line-thickness-initial: var(--telekom-line-weight-standard);
   /* visited */
   --color-visited: var(--telekom-color-text-and-icon-link-visited);
-  /* FIXME:TOKEN no -functional-link-visited */
-  --color-line-visited: var(--scl-color-text-link-visited);
+  --color-line-visited: currentColor;
   --line-thickness-visited: var(--line-thickness-initial);
   /* hover */
   --color-hover: var(--telekom-color-text-and-icon-link-hovered);
-  /* FIXME:TOKEN no -functional-link-hovered */
-  --color-line-hover: var(--scl-color-blue-70);
+  --color-line-hover: currentColor;
   --line-thickness-hover: var(--line-thickness-initial);
   /* focus */
-  /* FIXME:TOKEN no -functional-link-active, before this was also scl-color-blue-70 */
   --color-focus: var(--telekom-color-text-and-icon-link-active);
-  --color-line-focus: var(--scl-color-blue-70);
-  --line-thickness-focus: calc(var(--line-thickness-initial) * 2);
+  --color-line-focus: var(--telekom-color-functional-focus);
+  --line-thickness-focus: var(--telekom-line-weight-highlight);
   /* active */
-  /* FIXME:TOKEN no -functional-link-active, before this was also scl-color-blue-70 */
   --color-active: var(--telekom-color-text-and-icon-link-active);
-  --color-line-active: var(--scl-color-blue-60);
+  --color-line-active: currentColor;
   --line-thickness-active: var(--line-thickness-initial);
   /* disabled */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  /* FIXME:TOKEN is this correct for underline */
   --color-line-disabled: var(--telekom-color-ui-disabled);
   --line-thickness-disabled: var(--line-thickness-initial);
 }

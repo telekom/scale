@@ -11,16 +11,14 @@
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);
 
+  /* FIXME remove primary and white from variable names */
   --color-circle-primary: var(--telekom-color-primary-standard);
-  /* FIXME:TOKEN this was --scl-color-grey-20  */
-  --color-circle-primary-inner: var(--telekom-color-ui-light);
-  /* FIXME:TOKEN this was --scl-color-grey-60  */
+  --color-circle-primary-inner: var(--telekom-color-ui-subtle);
   --color-text-primary: var(--telekom-color-text-and-icon-additional);
-  /* FIXME:TOKEN this should be the new variable --telekom-color-ui-base ?*/
+  /* FIXME:TOKEN what about these 2 circle-? ?*/
   --color-circle-white: var(--telekom-color-ui-base);
   --color-circle-white-inner: var(--telekom-color-ui-regular);
-  /* FIXME:TOKEN this should be complementary to the new variable --telekom-color-ui-base */
-  --color-text-white: var(--telekom-color-text-and-icon-inverted-standard);
+  --color-text-white: var(--telekom-color-text-and-icon-functional-white);
 }
 
 .sr-only {
@@ -45,7 +43,7 @@
 }
 
 .spinner.spinner--variant-white .spinner__text {
-  color: var(--color-circle-white);
+  color: var(--color-text-white);
 }
 
 .spinner.spinner--alignment-horizontal .spinner__text {

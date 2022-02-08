@@ -20,8 +20,8 @@
   --padding-bottom-error-helper-text: var(--telekom-spacing-unit-x2);
   --margin-top-error-helper-text: var(--telekom-spacing-unit-x1);
   --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
-  /* FIXME:TOKEN high contrast variable */
-  --color-error-helper-text-hcm: var(--scl-color-white);
+  /* FIXME is this needed? */
+  --color-error-helper-text-hcm: var(--telekom-color-text-and-icon-functional-white);
 
   /*title*/
   --font-size-title: var(--font-size-label);

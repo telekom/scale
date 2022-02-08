@@ -11,17 +11,14 @@
 
 :host {
   --opacity-chevron: 1;
-  /* FIXME:TOKEN previously --scl-color-grey-10 */
   --border-bottom-color: var(--telekom-color-ui-subtle);
-  /* FIXME:TOKEN previously --scl-color-grey-70 */
   --border-left-color-third-nesting: var(--telekom-color-ui-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
-  /* FIXME:TOKEN this variable is used sometimes for background soetimes for font */
+  /* FIXME this variable is used sometimes for background sometimes for text */
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
-  --box-shadow-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
 }
 .sidebar-nav-collapsible {
   margin: 0;

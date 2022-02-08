@@ -10,8 +10,7 @@
  */
 
 :host {
-  /* FIXME:TOKEN previously scl-color-grey-90 */
-  --color: var(--telekom-color-text-and-icon-additional);
+  --color: var(--telekom-color-text-and-icon-standard);
   --radius: var(--telekom-radius-large);
   --font-size: var(--telekom-typography-font-size-small);
   --border: 1px solid var(--telekom-color-ui-subtle);
@@ -19,15 +18,14 @@
   --color-active: var(--telekom-color-primary-pressed);
   --color-button: var(--telekom-color-ui-subtle);
   --border-button: var(--border);
-  --box-shadow-focus: inset 0 0 0 2px var(--telekom-color-functional-focus);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
   --radius-first-prompt: var(--radius) 0 0 var(--radius);
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
   --radius-last-prompt-stack: 0 0 var(--radius) 0;
-  /* FIXME:TOKEN previously scl-color-grey-90 */
   --stroke-svg: var(--telekom-color-ui-extra-strong);
-  /* FIXME:TOKEN high-contrast variable */
-  --stroke-svg-high-contrast: var(--scl-color-white);
+  /* FIXME is this needed? */
+  --stroke-svg-high-contrast: #fff;
   --width-button: 42px;
   --padding-info: var(--telekom-spacing-unit-x2);
   --height-button: 56px;

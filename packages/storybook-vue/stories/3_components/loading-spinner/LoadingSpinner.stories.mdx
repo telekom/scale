@@ -24,7 +24,7 @@ export const Template = () => ({
     ...ScaleLoadingSpinner.props,
   },
   template: `
-    <div :style="variant==='primary' ? 'background: white;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
+    <div :style="variant==='primary' ? 'background: transparent;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
         <scale-loading-spinner
             :variant='variant'
             :alignment='alignment'

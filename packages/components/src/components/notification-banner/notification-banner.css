@@ -13,12 +13,10 @@
   --width: 100%;
   --radius: var(--telekom-radius-standard);
 
-  /* Token not available, up for discussion */
-  /* FIXME:TOKEN hardcoded values */
-  --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
-  --background-warning: hsla(33.5, 100%, 75.1%, 0.3);
-  --background-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
-  --background-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
+  --background-error: var(--telekom-color-functional-danger-subtle);
+  --background-warning: var(--telekom-color-functional-warning-subtle);
+  --background-informational: var(--telekom-color-functional-informational-subtle);
+  --background-success: var(--telekom-color-functional-success-subtle);
 }
 
 .notification-banner {

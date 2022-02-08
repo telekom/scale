@@ -11,15 +11,13 @@
 
 :host {
   /* toast */
-
   --width: 367px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
   /* FIXME:TOKEN not sure what elevation to use here */
-  --box-shadow: var(--scl-shadow-level-0);
+  --box-shadow: var(--telekom-shadow-raised-standard);
 
   /* icon container colors */
-
   --background-success-icon-container: var(
     --telekom-color-functional-success-standard
   );
@@ -34,11 +32,10 @@
   );
 
   /* icon container colors */
-  /* FIXME:TOKEN hardcoded values */
-  --background-success-text-container: #f2f7ef;
-  --background-warning-text-container: #fbf4eb;
-  --background-error-text-container: #fbf3f4;
-  --background-informational-text-container: #eff9fb;
+  --background-success-text-container: var(--telekom-color-functional-success-subtle);
+  --background-warning-text-container: var(--telekom-color-functional-warning-subtle);
+  --background-error-text-container: var(--telekom-color-functional-danger-subtle);
+  --background-informational-text-container: var(--telekom-color-functional-informational-subtle);
 }
 .notification-toast {
   width: var(--width);

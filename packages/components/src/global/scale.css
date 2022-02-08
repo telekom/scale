@@ -13,3 +13,14 @@
 @import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';
 @import '~@telekom/design-tokens/dist/telekom/css/telekom-design-tokens.all.css';
 @import './grid.css';
+
+:root {
+  /* This should be temporary */
+  --scl-z-index-10: 10;
+  --scl-z-index-20: 20;
+  --scl-z-index-30: 30;
+  --scl-z-index-40: 40;
+  --scl-z-index-50: 50;
+  --scl-z-index-60: 60;
+  --scl-z-index-70: 70
+}

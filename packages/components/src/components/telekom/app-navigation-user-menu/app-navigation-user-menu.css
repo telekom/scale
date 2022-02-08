@@ -14,8 +14,7 @@
   --color-divider: var(--telekom-color-ui-subtle);
   --color-menu-item-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-menu-item-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
 }
 
 .app-navigation-user-menu {
@@ -57,13 +56,12 @@
 
 .app-navigation-user-menu__item {
   display: flex;
-  /* FIXME:TOKEN original value?  */
   font-size: var(--scl-font-variant-heading-6-size);
   line-height: var(--scl-font-variant-heading-6-line-height);
   font-weight: var(--scl-font-variant-heading-6-weight);
   padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
-  /* FIXME:TOKEN should it be radius token 0.125rem */
-  border-radius: var(--telekom-spacing-unit-x05);
+  /* FIXME */
+  border-radius: 0.125rem;
   color: var(--telekom-color-text-and-icon-standard);
   text-decoration: none;
 }
