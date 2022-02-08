@@ -45,9 +45,9 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant"
       :styles="styles"
     >
-      <scale-toggle-button>Label</scale-toggle-button>
-      <scale-toggle-button>Label</scale-toggle-button>
-      <scale-toggle-button selected>Label</scale-toggle-button>
+      <scale-toggle-button aria-label-toggle-button="Label">Label</scale-toggle-button>
+      <scale-toggle-button aria-label-toggle-button="Label">Label</scale-toggle-button>
+      <scale-toggle-button aria-label-toggle-button="Label" selected>Label</scale-toggle-button>
     </scale-toggle-group>
   `,
 });
@@ -72,17 +72,17 @@ export const TemplateAriaTranslation = (args, { argTypes }) => ({
       :styles="styles"
     >
       <scale-toggle-button 
-        aria-label="Drück mich"
+        aria-label-toggle-button="Drück mich"
         aria-lang-selected="selektiert"
         aria-lang-deselected="deselektiert">Label
       </scale-toggle-button>
       <scale-toggle-button 
-        aria-label="Drück mich"
+        aria-label-toggle-button="Drück mich"
         aria-lang-selected="selektiert"
         aria-lang-deselected="deselektiert">Label
       </scale-toggle-button>
       <scale-toggle-button 
-        aria-label="Drück mich"
+        aria-label-toggle-button="Drück mich"
         aria-lang-selected="selektiert"
         aria-lang-deselected="deselektiert"
         selected
@@ -111,22 +111,22 @@ export const TemplateIcons = (args, { argTypes }) => ({
       :variant="variant"
       :styles="styles"
     >
-      <scale-toggle-button v-if="iconBefore">
+      <scale-toggle-button v-if="iconBefore" aria-label-toggle-button="Label">
         <scale-icon-action-search /> Label
       </scale-toggle-button>
-      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label-toggle-button="search">
         <scale-icon-action-search />
       </scale-toggle-button>
       <scale-toggle-button v-if="iconBefore">
         <scale-icon-action-search /> Label
       </scale-toggle-button>
-      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label-toggle-button="search">
         <scale-icon-action-search />
       </scale-toggle-button>
       <scale-toggle-button v-if="iconBefore">
         <scale-icon-action-search /> Label
       </scale-toggle-button>
-      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label="search">
+      <scale-toggle-button v-if="!iconBefore" icon-only="true" aria-label-toggle-button="search">
         <scale-icon-action-search />
       </scale-toggle-button>
     </scale-toggle-group>
@@ -323,17 +323,17 @@ export const TemplateIcons = (args, { argTypes }) => ({
 ```html
 <scale-toggle-group aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern">
   <scale-toggle-button 
-    aria-label="Drück mich"
+    aria-label-toggle-button="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert">Label
   </scale-toggle-button>
   <scale-toggle-button 
-    aria-label="Drück mich"
+    aria-label-toggle-button="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert">Label
   </scale-toggle-button>
   <scale-toggle-button 
-    aria-label="Drück mich"
+    aria-label-toggle-button="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert"
     selected
@@ -384,13 +384,13 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button icon-only aria-label="search">
+	<scale-toggle-button icon-only aria-label-toggle-button="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only aria-label="search">
+  <scale-toggle-button icon-only aria-label-toggle-button="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
-  <scale-toggle-button icon-only aria-label="search" selected>
+  <scale-toggle-button icon-only aria-label-toggle-button="search" selected>
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
 </scale-toggle-group>

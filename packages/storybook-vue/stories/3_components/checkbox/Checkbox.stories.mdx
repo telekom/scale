@@ -24,6 +24,7 @@ export const Template = (args, { argTypes }) => ({
       :indeterminate="indeterminate"
       :value="value"
       :input-id="inputId"
+      :aria-label-checkbox="ariaLabelCheckbox"
       @scaleChange="action('scaleChange')($event)"
       @scale-change="action('scale-change')($event)"
     ></scale-checkbox>
