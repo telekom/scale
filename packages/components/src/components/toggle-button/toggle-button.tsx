@@ -20,6 +20,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 enum iconSizes {
   xs = '12',
@@ -60,6 +61,8 @@ export class ToggleButton {
   @Prop() radius: 'left' | 'right' | 'both' | 'neither' | null = null;
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
+  /** @deprecated - ariaLabel should replace ariaLabelToggleButton */
+  @Prop() ariaLabel?: string;  
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabelToggleButton: string;
   /** (optional) Injected CSS styles */
@@ -96,6 +99,16 @@ export class ToggleButton {
 
   componentDidRender() {
     this.handleIconSize();
+    if (this.ariaLabel !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelToggleButton" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }  
+
   }
 
   componentWillLoad() {

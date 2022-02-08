@@ -42,6 +42,8 @@ export class Checkbox {
   @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
+  /** @deprecated - ariaLabelCheckbox should replace ariaLabel */
+  @Prop() ariaLabel?: string;
   /** (optional) Input label output */
   @Prop() ariaLabelCheckbox?: string;
   /** (optional) Hides the specified label visually */
@@ -82,6 +84,15 @@ export class Checkbox {
         source: this.host,
       });
     }
+    if (this.ariaLabel !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelCheckbox" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }    
   }
 
   handleChange = (ev) => {

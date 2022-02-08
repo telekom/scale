@@ -11,6 +11,7 @@
 
 import { Component, h, Prop, Host, Element, State } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-sidebar-nav',
@@ -22,6 +23,8 @@ export class SidebarNav {
 
   @Element() el: HTMLElement;
 
+  /** @deprecated - ariaLabelSidebarNav should replace ariaLabel */
+  @Prop() ariaLabel?: string;  
   /**
    * From mdn: A brief description of the purpose of the navigation,
    * omitting the term "navigation", as the screen reader will read
@@ -42,6 +45,18 @@ export class SidebarNav {
   componentDidLoad() {
     this.setNestingLevelOnChildren();
     this.setMatchMedia();
+  }
+
+  componentDidRender() {
+    if (this.ariaLabel !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelSidebarNav" property!',
+        type: 'warn',
+        source: this.el,
+      });
+    }    
   }
 
   disconnectedCallback() {
