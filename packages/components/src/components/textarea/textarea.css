@@ -23,7 +23,9 @@ scale-textarea {
   --border-color-disabled: var(--telekom-color-ui-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-x-control: var(--telekom-spacing-unit-x3);
+  --spacing-bottom-control: var(--telekom-spacing-unit-x3);
+  --spacing-top-control: var(--telekom-spacing-unit-x6);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-subtle);
@@ -38,11 +40,10 @@ scale-textarea {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /*control*/
-  --spacing-control: 0 var(--spacing-x) var(--spacing-x);
+  --spacing-control: 0 var(--spacing-x-control) var(--spacing-top-control);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-base);
-  --margin-control: var(--telekom-spacing-unit-x3);
   /*counter*/
   --transition-counter: var(--transition);
   --font-size-counter: var(--font-size-meta);
@@ -77,14 +78,14 @@ scale-textarea {
   display: flex;
   flex-direction: column;
 }
-.textarea-mask {
+.textarea__wrapper {
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
   border: var(--border);
 }
 
-.textarea-mask .textarea__control {
+.textarea__wrapper .textarea__control {
   margin: 0;
   width: 100%;
   resize: vertical;
@@ -99,7 +100,7 @@ scale-textarea {
   border: none;
   background-color: transparent;
   color: var(--color-meta);
-  margin-top: var(--margin-control);
+  margin-top: var(--spacing-top-control);
 }
 
 .textarea .textarea__helper-text,
@@ -132,12 +133,12 @@ scale-textarea {
 }
 
 .textarea:not(.textarea--disabled):not(.textarea--readonly)
-  .textarea-mask:hover {
+  .textarea__wrapper:hover {
   border-color: var(--border-color-hover);
 }
 
 .textarea:not(.textarea--disabled):not(.textarea--readonly).textarea--has-focus
-  .textarea-mask {
+  .textarea__wrapper {
   border-color: var(--border-color-focus);
   box-shadow: var(--box-shadow-focus);
 }
@@ -153,29 +154,31 @@ scale-textarea {
 }
 
 .textarea__label {
-  position: relative;
+  top: 0;
+  left: 0;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
+  position: absolute;
   transition: var(--transition-label);
   pointer-events: none;
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
   transform: translate(
-    var(--spacing-x),
+    var(--spacing-x-control),
     calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
   );
-  /*set label height value in order to avoid textarea height change and jumpy when text area is focused*/
-  height: var(--telekom-spacing-unit-x4);
-  align-items: center;
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
-  transform: translate(var(--spacing-x), calc((var(--margin-control)) / 2));
+  transform: translate(
+    var(--spacing-x-control),
+    var(--telekom-spacing-unit-x2)
+  );
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
 }
-.textarea--status-error .textarea-mask {
+.textarea--status-error .textarea__wrapper {
   border: var(--border-error);
 }
 .textarea--status-error .textarea__helper-text {
@@ -189,24 +192,24 @@ scale-textarea {
   background-color: transparent;
 }
 
-.textarea--readonly .textarea-mask {
+.textarea--readonly .textarea__wrapper {
   border-color: var(--border-color-readonly);
   background: var(--background-readonly);
 }
 
-.textarea--readonly.textarea--has-focus .textarea-mask {
+.textarea--readonly.textarea--has-focus .textarea__wrapper {
   box-shadow: var(--box-shadow-focus);
 }
 
 .textarea--readonly textarea,
-.textarea--readonly .textarea-mask .textarea__control {
+.textarea--readonly .textarea__wrapper .textarea__control {
   color: var(--color-label-readonly);
 }
 
 .textarea--disabled label,
 .textarea--disabled .textarea__label,
 .textarea--disabled textarea,
-.textarea--disabled .textarea-mask,
+.textarea--disabled .textarea__wrapper,
 .textarea--disabled .textarea__control,
 .textarea--disabled .textarea__meta,
 .textarea--disabled .textarea__helper-text {
@@ -214,6 +217,6 @@ scale-textarea {
   color: var(--color-disabled);
 }
 
-.textarea--disabled .textarea-mask {
+.textarea--disabled .textarea__wrapper {
   border-color: var(--border-color-disabled);
 }

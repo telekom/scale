@@ -106,6 +106,8 @@ export class Textarea {
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
 
+  private focusableElement: HTMLElement;
+
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-textarea' + i++;
@@ -176,7 +178,8 @@ export class Textarea {
       <Host>
         <div class={this.getCssClassMap()}>
           <div
-            class="textarea-mask"
+            class="textarea__wrapper"
+            onClick={() => this.focusableElement.focus()}
             style={
               !!this.resize &&
               this.resize === 'horizontal' && { width: 'max-content' }
@@ -208,6 +211,7 @@ export class Textarea {
               {...(!!this.cols ? { cols: this.cols } : {})}
               {...ariaInvalidAttr}
               {...(this.helperText ? ariaDescribedByAttr : {})}
+              ref={(el) => (this.focusableElement = el)}
             />
           </div>
           {(!!this.helperText || !!this.counter) && (
