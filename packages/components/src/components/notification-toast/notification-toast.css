@@ -32,10 +32,18 @@
   );
 
   /* icon container colors */
-  --background-success-text-container: var(--telekom-color-functional-success-subtle);
-  --background-warning-text-container: var(--telekom-color-functional-warning-subtle);
-  --background-error-text-container: var(--telekom-color-functional-danger-subtle);
-  --background-informational-text-container: var(--telekom-color-functional-informational-subtle);
+  --background-success-text-container: var(
+    --telekom-color-functional-success-subtle
+  );
+  --background-warning-text-container: var(
+    --telekom-color-functional-warning-subtle
+  );
+  --background-error-text-container: var(
+    --telekom-color-functional-danger-subtle
+  );
+  --background-informational-text-container: var(
+    --telekom-color-functional-informational-subtle
+  );
 }
 .notification-toast {
   width: var(--width);

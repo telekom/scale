@@ -21,7 +21,8 @@ scale-text-field {
   --border-color-hover: var(--telekom-color-primary-hovered);
   --border-color-focus: var(--telekom-color-primary-hovered);
   --border-color-disabled: var(--telekom-color-ui-disabled);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
   --height: var(--telekom-spacing-unit-x12);
   --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);

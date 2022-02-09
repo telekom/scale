@@ -26,7 +26,8 @@ scale-dropdown {
   /* FIXME:TOKEN use ui border… */
   --border-color-hover: var(--telekom-color-primary-hovered);
   --border-color-focus: var(--telekom-color-primary-hovered);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-disabled);
 

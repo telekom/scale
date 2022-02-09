@@ -16,7 +16,8 @@
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --radius: var(--telekom-radius-small);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
   --icon-color-hover: var(--telekom-color-text-and-icon-primary-hovered);

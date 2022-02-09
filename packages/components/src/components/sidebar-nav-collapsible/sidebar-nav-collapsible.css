@@ -18,7 +18,8 @@
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
-  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
 }
 .sidebar-nav-collapsible {
   margin: 0;

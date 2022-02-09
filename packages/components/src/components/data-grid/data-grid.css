@@ -402,7 +402,8 @@
 .info {
   height: 54px;
   position: relative;
-  border-top: var(--telekom-line-weight-standard) solid var(--telekom-color-ui-subtle);
+  border-top: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;
 }

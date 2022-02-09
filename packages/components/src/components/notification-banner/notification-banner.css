@@ -15,7 +15,9 @@
 
   --background-error: var(--telekom-color-functional-danger-subtle);
   --background-warning: var(--telekom-color-functional-warning-subtle);
-  --background-informational: var(--telekom-color-functional-informational-subtle);
+  --background-informational: var(
+    --telekom-color-functional-informational-subtle
+  );
   --background-success: var(--telekom-color-functional-success-subtle);
 }
 

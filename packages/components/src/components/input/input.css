@@ -450,12 +450,14 @@
   -webkit-appearance: none;
   background-color: #fff;
   /* FIXME:TOKEN needs some sort of black */
-  border: var(--telekom-line-weight-standard) solid var(--scl-color-text-standard);
+  border: var(--telekom-line-weight-standard) solid
+    var(--scl-color-text-standard);
   margin: 0 var(--telekom-spacing-unit-x2) 0 0;
 }
 .input--type-radio input:focus {
   outline: none;
-  box-shadow: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
 }
 .input--type-radio:hover input:not(:checked):not([disabled]) {
   box-shadow: none;

@@ -21,7 +21,8 @@ scale-table {
 
   --spacing-tbody-td: var(--telekom-spacing-unit-x4)
     var(--telekom-spacing-unit-x2);
-  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid var(--telekom-color-ui-subtle);
+  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-subtle);
   --background-tbody: var(--telekom-color-ui-base);
 
   /* FIXME:TOKEN */
