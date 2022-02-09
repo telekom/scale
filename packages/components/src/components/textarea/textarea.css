@@ -18,11 +18,14 @@ scale-textarea {
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   /* FIXME:TOKEN replace with ui border hover */
-  --border-color-hover: var(--telekom-color-primary-hovered);
-  --border-color-focus: var(--telekom-color-primary-hovered);
+  --border-color-hover: var(--telekom-color-primary-hovered, #f90984);
+  --border-color-focus: var(--telekom-color-primary-pressed, #f90984);
   --border-color-disabled: var(--telekom-color-ui-disabled);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(--telekom-color-functional-focus);
-  --spacing-x: var(--telekom-spacing-unit-x3);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --spacing-x-control: var(--telekom-spacing-unit-x3);
+  --spacing-bottom-control: var(--telekom-spacing-unit-x3);
+  --spacing-top-control: var(--telekom-spacing-unit-x6);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-subtle);
@@ -37,8 +40,7 @@ scale-textarea {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /*control*/
-  --spacing-control: var(--telekom-spacing-unit-x6) var(--spacing-x)
-    var(--telekom-spacing-unit-x3) calc(var(--spacing-x) - 1px);
+  --spacing-control: 0 var(--spacing-x-control) var(--spacing-top-control);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-base);
@@ -62,6 +64,7 @@ scale-textarea {
   /*label*/
   --color-label: var(--telekom-color-text-and-icon-additional);
   --color-label-readonly: var(--telekom-color-text-and-icon-additional);
+  /* FIXME:TOKEN z-index token is needed */
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
@@ -72,11 +75,19 @@ scale-textarea {
 
 .textarea {
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.textarea__wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  border: var(--border);
 }
 
-.textarea .textarea__control {
-  width: 100%;
+.textarea__wrapper .textarea__control {
   margin: 0;
+  width: 100%;
   resize: vertical;
   display: flex;
   outline: none;
@@ -86,10 +97,10 @@ scale-textarea {
   transition: var(--transition-control);
   font-family: inherit;
   font-size: var(--font-size-control);
-  border-radius: var(--radius);
-  border: var(--border);
-  background-color: var(--background-control);
+  border: none;
+  background-color: transparent;
   color: var(--color-meta);
+  margin-top: var(--spacing-top-control);
 }
 
 .textarea .textarea__helper-text,
@@ -122,12 +133,12 @@ scale-textarea {
 }
 
 .textarea:not(.textarea--disabled):not(.textarea--readonly)
-  .textarea__control:hover {
+  .textarea__wrapper:hover {
   border-color: var(--border-color-hover);
 }
 
-.textarea:not(.textarea--disabled):not(.textarea--readonly)
-  .textarea__control:focus {
+.textarea:not(.textarea--disabled):not(.textarea--readonly).textarea--has-focus
+  .textarea__wrapper {
   border-color: var(--border-color-focus);
   box-shadow: var(--box-shadow-focus);
 }
@@ -154,17 +165,20 @@ scale-textarea {
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-label);
   transform: translate(
-    var(--spacing-x),
+    var(--spacing-x-control),
     calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
   );
 }
 .textarea--has-focus .textarea__label,
 .animated .textarea__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));
+  transform: translate(
+    var(--spacing-x-control),
+    var(--telekom-spacing-unit-x2)
+  );
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
 }
-.textarea--status-error .textarea__control {
+.textarea--status-error .textarea__wrapper {
   border: var(--border-error);
 }
 .textarea--status-error .textarea__helper-text {
@@ -173,44 +187,36 @@ scale-textarea {
 .textarea--status-error .textarea__counter {
   color: var(--color-counter-error);
 }
+
 .textarea--transparent .textarea__control {
   background-color: transparent;
 }
-.textarea__label-safety-background {
-  top: var(--telekom-spacing-unit-x05);
-  left: var(--telekom-spacing-unit-x05);
-  right: var(--telekom-spacing-unit-x05);
-  position: absolute;
-  pointer-events: none;
-  border-radius: var(--telekom-radius-standard);
-  height: var(--telekom-spacing-unit-x6);
-  background-color: var(--telekom-color-ui-base, #ffffff);
-}
-.textarea--transparent .textarea__label-safety-background,
-.textarea--readonly .textarea__label-safety-background,
-.textarea--disabled .textarea__label-safety-background {
-  background-color: transparent;
-}
 
-.textarea--readonly textarea,
-.textarea--readonly .textarea__control {
-  color: var(--color-label-readonly);
+.textarea--readonly .textarea__wrapper {
   border-color: var(--border-color-readonly);
   background: var(--background-readonly);
 }
 
-.textarea--readonly .textarea__control:focus {
+.textarea--readonly.textarea--has-focus .textarea__wrapper {
   box-shadow: var(--box-shadow-focus);
+}
+
+.textarea--readonly textarea,
+.textarea--readonly .textarea__wrapper .textarea__control {
+  color: var(--color-label-readonly);
 }
 
 .textarea--disabled label,
 .textarea--disabled .textarea__label,
 .textarea--disabled textarea,
+.textarea--disabled .textarea__wrapper,
 .textarea--disabled .textarea__control,
 .textarea--disabled .textarea__meta,
 .textarea--disabled .textarea__helper-text {
   cursor: not-allowed;
-  border-color: var(--border-color-disabled);
   color: var(--color-disabled);
-  background: transparent;
+}
+
+.textarea--disabled .textarea__wrapper {
+  border-color: var(--border-color-disabled);
 }
