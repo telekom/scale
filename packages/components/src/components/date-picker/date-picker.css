@@ -235,21 +235,26 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 /* Disabled */
 
-.scale-date-picker.scale-date-picker--disabled,
+.scale-date-picker.scale-date-picker--disabled {
+  cursor: not-allowed;
+}
 .scale-date-picker.scale-date-picker--disabled input,
-.scale-date-picker.scale-date-picker--disabled input:hover,
+.scale-date-picker.scale-date-picker--disabled input:hover {
+  color: var(--telekom-color-text-and-icon-disabled);
+  /* FIXME */
+  border-color: var(--telekom-color-ui-disabled);
+  background: transparent;
+}
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle,
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle:hover,
 .scale-date-picker.scale-date-picker--disabled
   .duet-date__toggle:hover
-  scale-icon-content-calendar,
-.scale-date-picker.scale-date-picker--disabled .date-picker__helper-text {
-  cursor: not-allowed;
-  border-color: var(--scl-color-grey-20);
+  scale-icon-content-calendar {
   color: var(--telekom-color-text-and-icon-disabled);
-  background: var(--telekom-color-background-surface);
 }
-
+.scale-date-picker.scale-date-picker--disabled .date-picker__helper-text {
+  color: var(--telekom-color-text-and-icon-disabled);
+}
 .scale-date-picker.scale-date-picker--disabled .date-picker__label {
   color: var(--telekom-color-text-and-icon-disabled);
 }
@@ -260,6 +265,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
   text-align: center;
   padding: var(--spacing-heading);
   font-size: var(--font-size-heading);
+  /* FIXME remove !important (fix Storybook?) */
+  color: var(--telekom-color-text-and-icon-standard) !important;
 }
 
 duet-date-picker .duet-date__dialog-content {
