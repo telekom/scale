@@ -151,7 +151,7 @@ export class Tooltip {
 
   getTarget() {
     const target = this.host.shadowRoot.querySelector(
-      '.slot-container'
+      '.tooltip__slot-container'
     ) as HTMLElement;
 
     if (!target) {
@@ -241,12 +241,13 @@ export class Tooltip {
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
       >
-        <div class="slot-container">
+        <div class="tooltip__slot-container" part="slot-container">
           <slot onSlotchange={this.handleSlotChange}></slot>
         </div>
         {!this.disabled && (
           <div
-            class="tooltip-positioner"
+            class="tooltip__positioner"
+            part="tooltip-positioner"
             ref={(el) => (this.tooltipPositioner = el)}
             onMouseOver={this.handleTooltipMouseOver}
           >
@@ -256,13 +257,13 @@ export class Tooltip {
                 'tooltip--open': this.open,
               }}
               onMouseOver={this.handleTooltipMouseOver}
-              part="base"
               ref={(el) => (this.tooltip = el)}
               id={this.componentId}
               role="tooltip"
               aria-hidden={this.open ? 'false' : 'true'}
+              part="base"
             >
-              <div class="content-wrapper" tabindex={0}>
+              <div class="tooltip__content-wrapper" part="content-wrapper" tabindex={0}>
                 <slot name="content">{this.content}</slot>
               </div>
             </div>
