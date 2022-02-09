@@ -11,8 +11,11 @@ import text_de from './5.Colors_de.md';
       container: ({ context }) => {
         const tinycolor = require('tinycolor2');
         const locale = context && context.globals && context.globals.locale;
+        {
+          /**/
+        }
         let newSection = false;
-        let newSubsection = false;
+        let newContrastChecksSection = false;
         let pathStringItem;
         let currentpathSection;
         let currentSection;
@@ -51,12 +54,12 @@ import text_de from './5.Colors_de.md';
             currentSection = index.tokens[jsonPosition].section;
           }
         }
-        function hasNewSubsection(item) {
-          if (item == currentpathSection) {
-            newSubsection = false;
+        function isNewContrastChecksSection(jsonItemSection) {
+          if (jsonItemSection == currentpathSection) {
+            newContrastChecksSection = false;
           } else {
-            currentpathSection = item;
-            newSubsection = true;
+            currentpathSection = jsonItemSection;
+            newContrastChecksSection = true;
           }
         }
         function isReadable(firstColor, secondColor) {
@@ -93,12 +96,12 @@ import text_de from './5.Colors_de.md';
                       {index.tokens
                         .filter((item) => item.contrastChecks)
                         .map((item, i) => {
-                          hasNewSubsection(item.section);
+                          isNewContrastChecksSection(item.section);
                           pathStringItem = item.contrastChecks;
                           return currentSection == item.section &&
                             newSection ? (
                             <table style={{}}>
-                              {newSubsection ? (
+                              {newContrastChecksSection ? (
                                 <thead>
                                   <tr>
                                     <th
@@ -117,7 +120,7 @@ import text_de from './5.Colors_de.md';
                                         fontSize: '13px',
                                       }}
                                     >
-                                      Color
+                                      Available color combinations
                                     </th>
                                     <th
                                       style={{
@@ -142,19 +145,20 @@ import text_de from './5.Colors_de.md';
                               ) : null}
                               <tbody>
                                 <tr style={{ height: '1px' }}>
+                                  {/* Example Column */}
                                   <td
                                     style={{
                                       width: '200px',
-                                      border: 'none',
                                       height: 'inherit',
+                                      border: 'none',
                                     }}
                                   >
                                     <div
                                       style={{
-                                        height: '95%',
-                                        marginTop: '10px',
                                         display: 'flex',
                                         width: '200px',
+                                        height: '95%',
+                                        marginTop: '10px',
                                         borderRadius: '2px',
                                         backgroundColor: `${item.value}`,
                                         fontSize: '8px',
@@ -163,12 +167,13 @@ import text_de from './5.Colors_de.md';
                                       }}
                                     ></div>
                                   </td>
+                                  {/* Available-Color-Combinations Column */}
                                   <td
                                     style={{
-                                      width: '300px',
-                                      border: 'none',
-                                      height: 'inherit',
                                       verticalAlign: 'top',
+                                      width: '300px',
+                                      height: 'inherit',
+                                      border: 'none',
                                     }}
                                   >
                                     <div
@@ -184,8 +189,8 @@ import text_de from './5.Colors_de.md';
                                         return (
                                           <div
                                             style={{
-                                              backgroundColor: `${item.value}`,
                                               width: '200px',
+                                              backgroundColor: `${item.value}`,
                                             }}
                                           >
                                             <a href={`#${path}`}>
@@ -212,19 +217,20 @@ import text_de from './5.Colors_de.md';
                                       })}
                                     </div>
                                   </td>
+                                  {/* Description Column */}
                                   <td
                                     style={{
+                                      verticalAlign: 'top',
                                       width: '450px',
                                       border: 'none',
-                                      verticalAlign: 'top',
                                     }}
                                   >
                                     <div
                                       style={{
+                                        padding: '15px 15px 5px 15px',
+                                        textTransform: 'capitalize',
                                         fontWeight: 'bolder',
                                         fontSize: '20px',
-                                        textTransform: 'capitalize',
-                                        padding: '15px 15px 5px 15px',
                                       }}
                                     >
                                       {item.name}
@@ -237,6 +243,7 @@ import text_de from './5.Colors_de.md';
                                       {item.comment}
                                     </div>
                                   </td>
+                                  {/* Token Column */}
                                   <td
                                     style={{
                                       border: 'none',
@@ -259,22 +266,24 @@ import text_de from './5.Colors_de.md';
                                       </div>
                                       <div
                                         style={{
+                                          marginTop: '10px',
+                                          textAlign: 'start',
+                                          position: 'relative',
+                                          width: '400px',
+                                          height: '50px',
                                           backgroundColor: '#D9DBDE',
-                                          marginTop: '5px',
-                                          lineHeight: '50px',
-                                          borderRadius: '4px',
                                         }}
                                       >
-                                        <div
+                                        <span
                                           style={{
-                                            marginLeft: '20px',
                                             fontSize: '12px',
-                                            fontWeight: 'bold',
-                                            color: 'hsla(0, 0%, 0%, 0.65)',
+                                            lineHeight: '50px',
+                                            padding: '30px',
                                           }}
+                                          id={item.pathString}
                                         >
                                           {item.jsPathName}
-                                        </div>
+                                        </span>
                                       </div>
                                       <div
                                         style={{
@@ -287,41 +296,50 @@ import text_de from './5.Colors_de.md';
                                       </div>
                                       <div
                                         style={{
-                                          backgroundColor: '#D9DBDE',
+                                          marginTop: '10px',
+                                          textAlign: 'start',
                                           position: 'relative',
-                                          lineHeight: '50px',
-                                          borderRadius: '4px',
-                                          fontSize: '12px',
+                                          width: '400px',
+                                          height: '50px',
+                                          backgroundColor: '#D9DBDE',
                                         }}
                                       >
-                                        <div
+                                        <span
                                           style={{
-                                            marginLeft: '20px',
                                             fontSize: '12px',
-                                            fontWeight: 'bold',
-                                            color: 'hsla(0, 0%, 0%, 0.65)',
+                                            lineHeight: '50px',
+                                            padding: '30px',
                                           }}
+                                          id={item.pathString}
                                         >
                                           {item.cssVariableName}
-                                        </div>
-                                        <button
+                                        </span>
+                                        <div
                                           style={{
+                                            margin: '0',
                                             position: 'absolute',
-                                            padding: '4px',
-                                            top: '8px',
-                                            right: '8px',
-                                          }}
-                                          onClick={() => {
-                                            navigator.clipboard.writeText(
-                                              item.cssVariableName
-                                            );
+                                            top: '50%',
+                                            right: '10px',
+                                            msTransform: 'translateY(-50%)',
+                                            transform: 'translateY(-50%)',
                                           }}
                                         >
-                                          <scale-icon-action-copy-paste
-                                            accessibility-title="copy-paste"
-                                            size="20"
-                                          />
-                                        </button>
+                                          <button
+                                            style={{
+                                              border:
+                                                '1px solid hsla(0, 0%, 0%, 0.5)',
+                                              borderRadius: '4px',
+                                              padding: '1px 1px 1px 1px',
+                                            }}
+                                            onClick={() => {
+                                              navigator.clipboard.writeText(
+                                                item.cssVariableName
+                                              );
+                                            }}
+                                          >
+                                            <scale-icon-action-copy-paste accessibility-title="copy-paste" />
+                                          </button>
+                                        </div>
                                       </div>
                                     </div>
                                   </td>
@@ -364,22 +382,28 @@ import text_de from './5.Colors_de.md';
                         </thead>
                       ) : null}
                       <tbody>
-                        <td>
-                          <tr style={{ height: '150px' }}>
+                        <tr>
+                          {/* Value Column */}
+                          <td
+                            style={{
+                              border: 'none',
+                              verticalAlign: 'top',
+                            }}
+                          >
                             <div
                               style={{
-                                width: '400px',
                                 marginTop: '7px',
                                 marginBottom: '7px',
+                                width: '400px',
                               }}
                             >
                               <div
                                 style={{
+                                  marginBottom: '10px',
                                   height: '100px',
                                   width: '350px',
                                   backgroundColor: `${item.value}`,
                                   border: '1px solid #f0f1f1',
-                                  marginBottom: '10px',
                                   fontSize: '8px',
                                   borderRadius: '4px',
                                 }}
@@ -392,10 +416,14 @@ import text_de from './5.Colors_de.md';
                                 {item.value}
                               </span>
                             </div>
-                          </tr>
-                        </td>
-                        <td>
-                          <tr style={{ height: '150px' }}>
+                          </td>
+                          {/* Comment Column */}
+                          <td
+                            style={{
+                              border: 'none',
+                              verticalAlign: 'top',
+                            }}
+                          >
                             <div
                               style={{
                                 marginRight: '100px',
@@ -408,7 +436,12 @@ import text_de from './5.Colors_de.md';
                                   width: '400px',
                                 }}
                               >
-                                <span style={{ fontWeight: 'bold' }}>
+                                <span
+                                  style={{
+                                    fontWeight: 'bolder',
+                                    fontSize: '20px',
+                                  }}
+                                >
                                   {item.name}
                                 </span>
                               </div>
@@ -416,18 +449,22 @@ import text_de from './5.Colors_de.md';
                                 <span>{item.comment}</span>
                               </div>
                             </div>
-                          </tr>
-                        </td>
-                        <td style={{ width: '600px' }}>
-                          <tr style={{ height: '150px' }}>
+                          </td>
+                          {/* CSS-Variable Name Column */}
+                          <td
+                            style={{
+                              verticalAlign: 'top',
+                              border: 'none',
+                            }}
+                          >
                             <div
                               style={{
+                                textAlign: 'start',
+                                position: 'relative',
                                 marginTop: '10px',
                                 width: '450px',
                                 height: '50px',
                                 backgroundColor: '#D9DBDE',
-                                textAlign: 'start',
-                                position: 'relative',
                               }}
                             >
                               <span
@@ -440,24 +477,34 @@ import text_de from './5.Colors_de.md';
                               >
                                 {item.cssVariableName}
                               </span>
-                              <button
+                              <div
                                 style={{
+                                  margin: '0',
                                   position: 'absolute',
-                                  padding: '4px',
-                                  top: '5px',
-                                  right: '5px',
-                                }}
-                                onClick={() => {
-                                  navigator.clipboard.writeText(
-                                    item.cssVariableName
-                                  );
+                                  top: '50%',
+                                  right: '10px',
+                                  msTransform: 'translateY(-50%)',
+                                  transform: 'translateY(-50%)',
                                 }}
                               >
-                                <scale-icon-action-copy-paste accessibility-title="copy-paste" />
-                              </button>
+                                <button
+                                  style={{
+                                    border: '1px solid hsla(0, 0%, 0%, 0.5)',
+                                    borderRadius: '4px',
+                                    padding: '1px 1px 1px 1px',
+                                  }}
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(
+                                      item.cssVariableName
+                                    );
+                                  }}
+                                >
+                                  <scale-icon-action-copy-paste accessibility-title="copy-paste" />
+                                </button>
+                              </div>
                             </div>
-                          </tr>
-                        </td>
+                          </td>
+                        </tr>
                       </tbody>
                     </div>
                   );
