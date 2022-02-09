@@ -1,5 +1,5 @@
 describe('Accordion', () => {
-  test.each([['standard'], ['dependent'], ['expanded'], ['heading-level']])(
+  test.each([['standard'], ['dependent'], ['expanded'], ['heading-level'], ['icon-location']])(
     '%p',
     async (variant) => {
       await global.page.goto(
