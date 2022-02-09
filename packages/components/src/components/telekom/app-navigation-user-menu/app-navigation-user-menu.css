@@ -44,7 +44,6 @@
 }
 
 .app-navigation-user-menu__user-info--name {
-  /* FIXME:TOKEN original value?  */
   font-size: var(--scl-font-variant-heading-5-size);
   line-height: var(--scl-font-variant-heading-5-line-height);
   font-weight: var(--scl-font-variant-heading-5-weight);
