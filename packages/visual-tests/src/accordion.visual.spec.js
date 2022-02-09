@@ -1,15 +1,18 @@
 describe('Accordion', () => {
-  test.each([['standard'], ['dependent'], ['expanded'], ['heading-level'], ['icon-location']])(
-    '%p',
-    async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--${variant}&viewMode=story`
-      );
-      await page.waitForSelector('html.hydrated');
-      const previewHtml = await page.$('body');
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    }
-  );
+  test.each([
+    ['standard'],
+    ['dependent'],
+    ['expanded'],
+    ['heading-level'],
+    ['icon-location'],
+  ])('%p', async (variant) => {
+    await global.page.goto(
+      `http://host.docker.internal:3123/iframe.html?id=components-accordion--${variant}&viewMode=story`
+    );
+    await page.waitForSelector('html.hydrated');
+    const previewHtml = await page.$('body');
+    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  });
   test.each([['standard'], ['dependent']])('%p', async (variant) => {
     await global.page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-accordion--${variant}&viewMode=story`

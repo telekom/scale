@@ -58,8 +58,8 @@ export class Accordion {
   }
 
   @Watch('iconLocation')
-  iconLocationChanged(newValue: "left"| "right"){
-    this.propagatePropsToChildren(this.headingLevel, newValue)
+  iconLocationChanged(newValue: 'left' | 'right') {
+    this.propagatePropsToChildren(this.headingLevel, newValue);
   }
 
   connectedCallback() {
@@ -83,10 +83,13 @@ export class Accordion {
     return Array.from(this.el.querySelectorAll('scale-collapsible'));
   }
 
-  propagatePropsToChildren(headingLevel: number, iconLocation: "left" | "right") {
+  propagatePropsToChildren(
+    headingLevel: number,
+    iconLocation: 'left' | 'right'
+  ) {
     this.getCollapsibleChildren().forEach((item) => {
       item.headingLevel = headingLevel;
-      item.iconLocation = iconLocation
+      item.iconLocation = iconLocation;
     });
   }
 
