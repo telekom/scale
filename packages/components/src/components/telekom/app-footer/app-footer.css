@@ -23,7 +23,6 @@
     var(--telekom-color-ui-subtle);
   --color-minimal: var(--telekom-color-ui-regular);
   --background-minimal: var(--telekom-color-background-surface);
-  /* FIXME:TOKEN angular vs minimal same value here*/
   --spacing-angular: var(--telekom-spacing-unit-x6);
   --spacing-minimal: var(--telekom-spacing-unit-x6);
 

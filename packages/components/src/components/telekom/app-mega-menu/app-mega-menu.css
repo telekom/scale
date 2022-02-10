@@ -10,9 +10,7 @@
  */
 
 app-mega-menu {
-  /*FIXME:TOKEN box shadow value */
-  --box-shadow: var(--scl-shadow-level-4);
-  /*FIXME:TOKEN spacing token needed here?*/
+  --box-shadow: var(--telekom-shadow-top);
   --spacing-y: 2.125rem;
   --spacing-right: var(--telekom-spacing-unit-x4);
   --spacing-left: var(--telekom-spacing-unit-x6);
@@ -20,7 +18,6 @@ app-mega-menu {
   --color-active: var(--telekom-color-text-and-icon-primary-standard);
 
   --font-size-row-title: var(--telekom-typography-font-size-body);
-  /*FIXME:TOKEN spacing token needed here?*/
   --spacing-bottom-row-title: 1.125rem;
   --font-weight-row-title: var(--telekom-typography-font-weight-extra-bold);
   --color-row-title: var(--telekom-color-text-and-icon-standard);

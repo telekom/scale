@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- :host {
+:host {
   --spacing-x: var(--telekom-spacing-unit-x4);
   --background-overlay: var(
     --telekom-color-background-backdrop,

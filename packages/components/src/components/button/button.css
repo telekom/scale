@@ -17,8 +17,7 @@
   --radius: var(--telekom-radius-standard);
   --transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
-  /* FIXME:TOKEN hardcoded shadow value*/
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);
@@ -27,7 +26,6 @@
   --vertical-align: middle;
 
   /* size: small */
-  /* FIXME:TOKEN correct lineheight?*/
   --font-size-small: var(--telekom-typography-font-size-small);
   --line-height-small: var(--telekom-typography-line-spacing-standard);
   --min-height-small: var(--telekom-spacing-unit-x8);
@@ -39,7 +37,6 @@
   --background-primary-active: var(--telekom-color-primary-pressed);
   --background-primary-disabled: var(--telekom-color-ui-disabled);
   --color-primary: var(--telekom-color-text-and-icon-inverted-standard);
-  /* FIXME:TOKEN this used to be scl-color-grey-40*/
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* variant: secondary */
@@ -49,7 +46,6 @@
   --color-secondary: var(--telekom-color-text-and-icon-standard);
   --color-secondary-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-secondary-active: var(--telekom-color-text-and-icon-primary-pressed);
-  /* FIXME:TOKEN this used to be --scl-color-background-disabled  */
   --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* variant: ghost */

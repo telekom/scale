@@ -10,13 +10,11 @@
  */
 
 scale-app-header {
-  /*FIXME:TOKEN spacing token needed here?*/
-  --header-nav-height: 3.5rem;
-  --header-brand-height: 4.5rem;
+  --header-nav-height: var(--telekom-spacing-unit-x14);
+  --header-brand-height: var(--telekom-spacing-unit-x18);
   --header-border-radius: var(--telekom-radius-large);
   --header-transition-speed: var(--telekom-motion-duration-transition);
-  /*FIXME:TOKEN spacing token needed here?*/
-  --header-brand-collapsed-height: 0.25rem;
+  --header-brand-collapsed-height: var(--telekom-spacing-unit-x1);
   --header-max-width: inherit;
 
   --background: var(--telekom-color-primary-standard);
@@ -323,7 +321,6 @@ scale-app-header {
   }
   .header .sector-navigation .sector-navigation__portal-name {
     font-weight: var(--telekom-typography-font-weight-extra-bold);
-    /* FIXME:TOKEN original size? */
     font-size: var(--scl-font-variant-body-large-size);
     list-style-type: none;
   }

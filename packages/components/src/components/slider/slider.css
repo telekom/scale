@@ -16,8 +16,7 @@
   --box-shadow-thumb: var(--telekom-shadow-resting-standard);
   --border-color-thumb-hover: var(--telekom-color-primary-hovered);
   --border-color-thumb-active: var(--telekom-color-primary-pressed);
-  /* FIXME:TOKEN should this be defined here? */
-  --box-shadow-thumb-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+  --box-shadow-thumb-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-display-value: var(--telekom-color-ui-regular);
   --font-weight-display-value: var(--telekom-typography-font-weight-bold);

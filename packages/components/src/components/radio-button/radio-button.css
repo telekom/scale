@@ -14,13 +14,9 @@ scale-radio-button {
   --background-disabled: var(--telekom-color-ui-disabled);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --transition: all var(--telekom-motion-duration-transition)
-    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
-  --color-primary: var(--telekom-color-text-and-icon-primary-standard, #e20074);
-  --color-primary-hover: var(
-    --telekom-color-text-and-icon-primary-hovered,
-    #f90984
-  );
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
+  --color-primary-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-primary-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-focus: var(--telekom-color-functional-focus);
   --color-text: var(--telekom-color-text-and-icon-standard);

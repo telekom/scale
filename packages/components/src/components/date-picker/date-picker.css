@@ -10,29 +10,26 @@
  */
 
 duet-date-picker {
-  /* FIXME:TOKEN are these variable used anywhere? seems only duet-radius is used */
-  --duet-color-primary: var(
-    --telekom-color-text-and-icon-primary-standard,
-    #e20074
-  );
-  --duet-color-text: var(--telekom-color-text-and-icon-standard, #1a1a1a);
-  --duet-color-overlay: var(--telekom-color-background-surface, #ffffff);
+  --duet-color-primary: var(--telekom-color-primary-standard);
+  --duet-color-text: var(--telekom-color-text-and-icon-standard);
+  --duet-color-overlay: var(--telekom-color-background-surface);
   --duet-font: var(--telekom-typography-font-family-sans);
   --duet-font-normal: var(--telekom-typography-font-weight-regular);
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
   --duet-color-placeholder: var(--telekom-color-ui-regular);
   --duet-radius: var(--telekom-radius-standard);
 
+  /* FIXME */
   --duet-color-text-active: var(
     --telekom-color-text-and-icon-inverted-standard,
     #ffffff
   );
+  /* FIXME */
   --duet-color-button: var(--telekom-color-background-surface, #ffffff);
   --duet-color-surface: var(--telekom-color-background-surface, #ffffff);
   --duet-z-index: 600;
 
   --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
-  /* FIXME:TOKEN should this be called differently?  */
   --font-size-heading: var(--telekom-typography-font-size-callout);
   --font-size-select-label: var(--telekom-typography-font-size-body);
   --radius-day: var(--telekom-radius-large);
@@ -42,8 +39,9 @@ duet-date-picker {
 }
 
 duet-date-picker .duet-date__input {
-  /* FIXME:TOKEN border color is using standard text black, but there is no --telekom-ui- or functional equivalent */
-  border: var(--telekom-spacing-unit-x025) solid var(--scl-color-text-standard);
+  /* FIXME:TOKEN use ui/border */
+  border: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-text-and-icon-standard);
   padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0
     var(--telekom-spacing-unit-x3);
   height: var(--telekom-spacing-unit-x12);
@@ -55,20 +53,21 @@ duet-date-picker .duet-date__input:hover {
 }
 
 duet-date-picker .duet-date__input:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
-  /* FIXME:TOKEN border color is using standard text black, but there is no --telekom-ui- or functional equivalent */
-  border: var(--telekom-spacing-unit-x025) solid var(--scl-color-text-standard);
+  /* FIXME:TOKEN use ui/border (there's no "ui/border/focus" anyway) */
+  border: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-primary-hovered);
 }
 
 duet-date-picker .duet-date__toggle {
   border-radius: 0 var(--duet-radius) var(--duet-radius) 0;
   background: transparent;
+  box-shadow: inset 1px 0 0 var(--telekom-color-ui-light);
 }
 
 duet-date-picker .duet-date__toggle:focus {
-  /* FIXME:TOKEN hardcoded shadow value*/
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+  box-shadow: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
 }
 
@@ -101,7 +100,6 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 .scale-date-picker .date-picker__helper-text {
   font-weight: var(--telekom-typography-font-weight-bold);
   transition: all var(--telekom-motion-duration-transition)
-    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
   padding-left: var(--telekom-spacing-unit-x3);
   font-size: var(--telekom-typography-font-size-small);
@@ -118,8 +116,7 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 .scale-date-picker .date-picker__label {
   top: 0;
   left: 0;
-  /* FIXME:TOKEN replace */
-  color: var(--telekom-color-text-and-icon-standard);
+  color: var(--telekom-color-text-and-icon-additional);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -143,20 +140,18 @@ duet-date-picker .duet-date__input::placeholder {
   visibility: hidden;
   color: transparent;
   transition: all var(--telekom-motion-duration-transition)
-    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
 }
 
 .scale-date-picker.scale-date-picker--focus .date-picker__label,
 .scale-date-picker.animated .date-picker__label {
-  color: var(--telekom-color-text-and-icon-standard);
+  color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
     var(--telekom-spacing-unit-x3),
     var(--telekom-spacing-unit-x2)
   );
   transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
-  /* FIXME:TOKEN should this be called differently?  */
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-bold);
 }
@@ -207,7 +202,6 @@ duet-date-picker .duet-date__input:focus::placeholder {
   z-index: 10;
   position: absolute;
   transition: all var(--telekom-motion-duration-transition)
-    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
   pointer-events: none;
   font-size: var(--telekom-typography-font-size-body);
@@ -230,7 +224,6 @@ duet-date-picker .duet-date__input:focus::placeholder {
     var(--telekom-spacing-unit-x1)
   );
   transition: all var(--telekom-motion-duration-transition)
-    /* FIXME:TOKEN update this */
     cubic-bezier(var(--telekom-motion-easing-standard));
   font-size: var(--telekom-typography-font-size-footnote);
   font-weight: var(--telekom-typography-font-weight-medium);
@@ -243,25 +236,31 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 /* Disabled */
 
-.scale-date-picker.scale-date-picker--disabled,
+.scale-date-picker.scale-date-picker--disabled {
+  cursor: not-allowed;
+}
 .scale-date-picker.scale-date-picker--disabled input,
-.scale-date-picker.scale-date-picker--disabled input:hover,
-.scale-date-picker.scale-date-picker--disabled .duet-date__toggle,
+.scale-date-picker.scale-date-picker--disabled input:hover {
+  color: var(--telekom-color-text-and-icon-disabled);
+  /* FIXME */
+  border-color: var(--telekom-color-ui-disabled);
+  background: transparent;
+}
+.scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
+  color: var(--telekom-color-text-and-icon-disabled);
+  box-shadow: inset 1px 0 0 var(--telekom-color-ui-disabled);
+}
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle:hover,
 .scale-date-picker.scale-date-picker--disabled
   .duet-date__toggle:hover
-  scale-icon-content-calendar,
-.scale-date-picker.scale-date-picker--disabled .date-picker__helper-text {
-  cursor: not-allowed;
-  border-color: var(--scl-color-grey-20);
-  /* FIXME:TOKEN --scl-color-grey-20 used for text, is it fine? */
-  color: var(--scl-color-grey-20);
-  background: var(--telekom-color-background-surface);
+  scale-icon-content-calendar {
+  color: var(--telekom-color-text-and-icon-disabled);
 }
-
+.scale-date-picker.scale-date-picker--disabled .date-picker__helper-text {
+  color: var(--telekom-color-text-and-icon-disabled);
+}
 .scale-date-picker.scale-date-picker--disabled .date-picker__label {
-  /* FIXME:TOKEN --scl-color-grey-20 used for text, is it fine? */
-  color: var(--scl-color-grey-20);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 
 /* Popover layout */
@@ -270,6 +269,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
   text-align: center;
   padding: var(--spacing-heading);
   font-size: var(--font-size-heading);
+  /* FIXME remove !important (fix Storybook?) */
+  color: var(--telekom-color-text-and-icon-standard) !important;
 }
 
 duet-date-picker .duet-date__dialog-content {

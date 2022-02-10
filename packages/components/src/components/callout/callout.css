@@ -7,14 +7,14 @@
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
-  /* FIXME:TOKEN variable names containing color */
+  /* FIXME variables shouldn't have color names */
   --color-blue: var(--telekom-color-additional-blue-600);
-  /* FIXME:TOKEN variables are used sometimes as background and sometimes as font color */
+  /* FIXME variables are used sometimes as background and sometimes as font color */
   --color-white: var(--telekom-color-background-surface);
   --color-black: var(--telekom-color-text-and-icon-functional-black);
   --color-primary: var(--telekom-color-primary-standard);
   --font-family: var(--telekom-typography-font-family-sans);
-  /* FIXME:TOKEN is this calc necessary? */
+  /* FIXME is this calc necessary? */
   --font-size: calc(var(--telekom-typography-font-size-callout) * 3);
   --font-size-prefix: var(--telekom-typography-font-size-callout);
 }

@@ -16,7 +16,6 @@ scale-dropdown {
   --spacing-x: var(--telekom-spacing-unit-x3);
   --spacing-dropdown: var(--telekom-spacing-unit-x3)
     var(--telekom-spacing-unit-x10) 0 calc(var(--spacing-x) - 1px);
-  /* FIXME:TOKEN update this */
   --transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   --radius: var(--telekom-radius-standard);
@@ -24,11 +23,10 @@ scale-dropdown {
     var(--telekom-color-text-and-icon-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  /* FIXME:TOKEN border-hover and border-focus both using primary hover */
-  --border-color-hover: var(--scl-color-primary-hover, #f90984);
-  --border-color-focus: var(--scl-color-primary-hover, #f90984);
-  /* FIXME:TOKEN should this be defined here? */
-  --box-shadow-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+  /* FIXME:TOKEN use ui border… */
+  --border-color-hover: var(--telekom-color-primary-hovered);
+  --border-color-focus: var(--telekom-color-primary-hovered);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-disabled);
