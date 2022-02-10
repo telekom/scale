@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+
+### Bug Fixes
+
+* **modal:** remove title attribute from modal window ([#852](https://github.com/telekom/scale/issues/852)) ([3e4213b](https://github.com/telekom/scale/commit/3e4213b23b2aebd6ac44797b0a86832e1de7763f))
+
+
+
+
+
+# [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
+
+
+### Bug Fixes
+
+* **app-header:** check for userMenuToggle presence before trying to focus ([#847](https://github.com/telekom/scale/issues/847)) ([186576c](https://github.com/telekom/scale/commit/186576ce1175ae730c8c8b9f8f83c4e4187b0d11))
+
+
+### Features
+
+* **data-table:** add email and phone cells ([#808](https://github.com/telekom/scale/issues/808)) ([9327af2](https://github.com/telekom/scale/commit/9327af2b0dd4b06362af97380303c8fa1cb4dbdd))
+
+
+
+
+
 # [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
 
 
