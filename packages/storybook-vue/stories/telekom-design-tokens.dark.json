@@ -1,0 +1,1055 @@
+{
+  "tokens": [
+    {
+      "pathString": "color.text-&-icon.standard",
+      "path": [
+        "color",
+        "text-&-icon",
+        "standard"
+      ],
+      "value": "#ffffff",
+      "comment": "Default text color with highest contrast.",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-standard",
+      "jsPathName": "color.textIcon.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.additional",
+      "path": [
+        "color",
+        "text-&-icon",
+        "additional"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.65)",
+      "comment": "Use in combination with standard text for additional text elements.",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Additional",
+      "cssVariableName": "--telekom-color-text-and-icon-additional",
+      "jsPathName": "color.textIcon.additional"
+    },
+    {
+      "pathString": "color.text-&-icon.disabled",
+      "path": [
+        "color",
+        "text-&-icon",
+        "disabled"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.3)",
+      "comment": "Only use for disabled text.",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Disabled",
+      "cssVariableName": "--telekom-color-text-and-icon-disabled",
+      "jsPathName": "color.textIcon.disabled"
+    },
+    {
+      "pathString": "color.text-&-icon.link.standard",
+      "path": [
+        "color",
+        "text-&-icon",
+        "link",
+        "standard"
+      ],
+      "value": "#60a9ff",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-link-standard",
+      "jsPathName": "color.textIcon.link.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.link.hovered",
+      "path": [
+        "color",
+        "text-&-icon",
+        "link",
+        "hovered"
+      ],
+      "value": "#89bfff",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Hovered",
+      "cssVariableName": "--telekom-color-text-and-icon-link-hovered",
+      "jsPathName": "color.textIcon.link.hovered"
+    },
+    {
+      "pathString": "color.text-&-icon.link.visited",
+      "path": [
+        "color",
+        "text-&-icon",
+        "link",
+        "visited"
+      ],
+      "value": "#ab9fce",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Visited",
+      "cssVariableName": "--telekom-color-text-and-icon-link-visited",
+      "jsPathName": "color.textIcon.link.visited"
+    },
+    {
+      "pathString": "color.text-&-icon.link.active",
+      "path": [
+        "color",
+        "text-&-icon",
+        "link",
+        "active"
+      ],
+      "value": "#b6d7ff",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Link / Active",
+      "cssVariableName": "--telekom-color-text-and-icon-link-active",
+      "jsPathName": "color.textIcon.link.active"
+    },
+    {
+      "pathString": "color.text-&-icon.primary.standard",
+      "path": [
+        "color",
+        "text-&-icon",
+        "primary",
+        "standard"
+      ],
+      "value": "#e20074",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Primary / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-primary-standard",
+      "jsPathName": "color.textIcon.primary.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.primary.hovered",
+      "path": [
+        "color",
+        "text-&-icon",
+        "primary",
+        "hovered"
+      ],
+      "value": "#ec59a5",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Primary / Hovered",
+      "cssVariableName": "--telekom-color-text-and-icon-primary-hovered",
+      "jsPathName": "color.textIcon.primary.hovered"
+    },
+    {
+      "pathString": "color.text-&-icon.primary.pressed",
+      "path": [
+        "color",
+        "text-&-icon",
+        "primary",
+        "pressed"
+      ],
+      "value": "#f080ba",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Primary / Pressed",
+      "cssVariableName": "--telekom-color-text-and-icon-primary-pressed",
+      "jsPathName": "color.textIcon.primary.pressed"
+    },
+    {
+      "pathString": "color.text-&-icon.inverted.standard",
+      "path": [
+        "color",
+        "text-&-icon",
+        "inverted",
+        "standard"
+      ],
+      "value": "#000000",
+      "comment": "Standard text color inverted to be used on high contrast colors like ui/extra strong",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Inverted / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-inverted-standard",
+      "jsPathName": "color.textIcon.inverted.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.inverted.additional",
+      "path": [
+        "color",
+        "text-&-icon",
+        "inverted",
+        "additional"
+      ],
+      "value": "hsla(0, 0%, 0%, 0.65)",
+      "comment": "Additional text color inverted to be used on high contrast colors like ui/extra strong",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Inverted / Additional",
+      "cssVariableName": "--telekom-color-text-and-icon-inverted-additional",
+      "jsPathName": "color.textIcon.inverted.additional"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.informational",
+      "path": [
+        "color",
+        "text-&-icon",
+        "functional",
+        "informational"
+      ],
+      "value": "#268aff",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Informational",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-informational",
+      "jsPathName": "color.textIcon.functional.informational"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.success",
+      "path": [
+        "color",
+        "text-&-icon",
+        "functional",
+        "success"
+      ],
+      "value": "#13be68",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Success",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-success",
+      "jsPathName": "color.textIcon.functional.success"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.danger",
+      "path": [
+        "color",
+        "text-&-icon",
+        "functional",
+        "danger"
+      ],
+      "value": "#fe4543",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Danger",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-danger",
+      "jsPathName": "color.textIcon.functional.danger"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.warning",
+      "path": [
+        "color",
+        "text-&-icon",
+        "functional",
+        "warning"
+      ],
+      "value": "#e26617",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Warning",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-warning",
+      "jsPathName": "color.textIcon.functional.warning"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.white",
+      "path": [
+        "color",
+        "text-&-icon",
+        "functional",
+        "white"
+      ],
+      "value": "#ffffff",
+      "comment": "This text color is white in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / White",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-white",
+      "jsPathName": "color.textIcon.functional.white"
+    },
+    {
+      "pathString": "color.text-&-icon.functional.black",
+      "path": [
+        "color",
+        "text-&-icon",
+        "functional",
+        "black"
+      ],
+      "value": "#000000",
+      "comment": "This text color is black in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Functional / Black",
+      "cssVariableName": "--telekom-color-text-and-icon-functional-black",
+      "jsPathName": "color.textIcon.functional.black"
+    },
+    {
+      "pathString": "color.background.canvas",
+      "path": [
+        "color",
+        "background",
+        "canvas"
+      ],
+      "value": "#050505",
+      "comment": "Use as the background for your product (app, website, etc.)",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Canvas",
+      "cssVariableName": "--telekom-color-background-canvas",
+      "jsPathName": "color.background.canvas",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active",
+        "color.text-&-icon.primary.standard",
+        "color.text-&-icon.primary.hovered",
+        "color.text-&-icon.primary.pressed"
+      ]
+    },
+    {
+      "pathString": "color.background.canvas-subtle",
+      "path": [
+        "color",
+        "background",
+        "canvas-subtle"
+      ],
+      "value": "#161617",
+      "comment": "Use as the background for your product (app, website, etc.)",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Canvas Subtle",
+      "cssVariableName": "--telekom-color-background-canvas-subtle",
+      "jsPathName": "color.background.canvasSubtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active"
+      ]
+    },
+    {
+      "pathString": "color.background.backdrop",
+      "path": [
+        "color",
+        "background",
+        "backdrop"
+      ],
+      "value": "hsla(0, 0%, 0%, 0.65)",
+      "comment": "Use to overlay content below dialogs to separate dialog from content below",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Backdrop",
+      "cssVariableName": "--telekom-color-background-backdrop",
+      "jsPathName": "color.background.backdrop"
+    },
+    {
+      "pathString": "color.background.surface",
+      "path": [
+        "color",
+        "background",
+        "surface"
+      ],
+      "value": "#272729",
+      "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Surface",
+      "cssVariableName": "--telekom-color-background-surface",
+      "jsPathName": "color.background.surface",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active",
+        "color.text-&-icon.primary.standard",
+        "color.text-&-icon.primary.hovered",
+        "color.text-&-icon.primary.pressed"
+      ]
+    },
+    {
+      "pathString": "color.background.surface-subtle",
+      "path": [
+        "color",
+        "background",
+        "surface-subtle"
+      ],
+      "value": "#38393b",
+      "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Surface Subtle",
+      "cssVariableName": "--telekom-color-background-surface-subtle",
+      "jsPathName": "color.background.surfaceSubtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional",
+        "color.text-&-icon.disabled",
+        "color.text-&-icon.link.standard",
+        "color.text-&-icon.link.hovered",
+        "color.text-&-icon.link.visited",
+        "color.text-&-icon.link.active"
+      ]
+    },
+    {
+      "pathString": "color.background.surface-highlight",
+      "path": [
+        "color",
+        "background",
+        "surface-highlight"
+      ],
+      "value": "#4a4b4d",
+      "comment": "Use as the background of elements that should stand out highlighted sections, footer, etc.",
+      "category": "Color",
+      "section": "Background",
+      "name": "Background / Surface Highlight",
+      "cssVariableName": "--telekom-color-background-surface-highlight",
+      "jsPathName": "color.background.surfaceHighlight",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.primary.standard",
+      "path": [
+        "color",
+        "primary",
+        "standard"
+      ],
+      "value": "#e20074",
+      "category": "Color",
+      "section": "Primary",
+      "name": "Primary / Standard",
+      "cssVariableName": "--telekom-color-primary-standard",
+      "jsPathName": "color.primary.standard",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.primary.hovered",
+      "path": [
+        "color",
+        "primary",
+        "hovered"
+      ],
+      "value": "#c00063",
+      "category": "Color",
+      "section": "Primary",
+      "name": "Primary / Hovered",
+      "cssVariableName": "--telekom-color-primary-hovered",
+      "jsPathName": "color.primary.hovered",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.primary.pressed",
+      "path": [
+        "color",
+        "primary",
+        "pressed"
+      ],
+      "value": "#9e0051",
+      "category": "Color",
+      "section": "Primary",
+      "name": "Primary / Pressed",
+      "cssVariableName": "--telekom-color-primary-pressed",
+      "jsPathName": "color.primary.pressed",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.ui.border.standard",
+      "path": [
+        "color",
+        "ui",
+        "border",
+        "standard"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.36)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Standard",
+      "cssVariableName": "--telekom-color-ui-border-standard",
+      "jsPathName": "color.ui.border.standard"
+    },
+    {
+      "pathString": "color.ui.border.hovered",
+      "path": [
+        "color",
+        "ui",
+        "border",
+        "hovered"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.54)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Hovered",
+      "cssVariableName": "--telekom-color-ui-border-hovered",
+      "jsPathName": "color.ui.border.hovered"
+    },
+    {
+      "pathString": "color.ui.border.pressed",
+      "path": [
+        "color",
+        "ui",
+        "border",
+        "pressed"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.94)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Pressed",
+      "cssVariableName": "--telekom-color-ui-border-pressed",
+      "jsPathName": "color.ui.border.pressed"
+    },
+    {
+      "pathString": "color.ui.border.active",
+      "path": [
+        "color",
+        "ui",
+        "border",
+        "active"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.94)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Active",
+      "cssVariableName": "--telekom-color-ui-border-active",
+      "jsPathName": "color.ui.border.active"
+    },
+    {
+      "pathString": "color.ui.border.disabled",
+      "path": [
+        "color",
+        "ui",
+        "border",
+        "disabled"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.21)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Border / Disabled",
+      "cssVariableName": "--telekom-color-ui-border-disabled",
+      "jsPathName": "color.ui.border.disabled"
+    },
+    {
+      "pathString": "color.ui.plate.hovered",
+      "path": [
+        "color",
+        "ui",
+        "plate",
+        "hovered"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.14)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Plate / Hovered",
+      "cssVariableName": "--telekom-color-ui-plate-hovered",
+      "jsPathName": "color.ui.plate.hovered"
+    },
+    {
+      "pathString": "color.ui.plate.pressed",
+      "path": [
+        "color",
+        "ui",
+        "plate",
+        "pressed"
+      ],
+      "value": "hsla(0, 0%, 100%, 0.21)",
+      "comment": "Use for disabled interactive elements in combination with the disabled text color",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Plate / Pressed",
+      "cssVariableName": "--telekom-color-ui-plate-pressed",
+      "jsPathName": "color.ui.plate.pressed"
+    },
+    {
+      "pathString": "color.ui.general.base",
+      "path": [
+        "color",
+        "ui",
+        "general",
+        "base"
+      ],
+      "value": "#38393b",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Base",
+      "cssVariableName": "--telekom-color-ui-general-base",
+      "jsPathName": "color.ui.general.base",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.subtle",
+      "path": [
+        "color",
+        "ui",
+        "general",
+        "subtle"
+      ],
+      "value": "#272729",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Subtle",
+      "cssVariableName": "--telekom-color-ui-general-subtle",
+      "jsPathName": "color.ui.general.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.light",
+      "path": [
+        "color",
+        "ui",
+        "general",
+        "light"
+      ],
+      "value": "#38393b",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Light",
+      "cssVariableName": "--telekom-color-ui-general-light",
+      "jsPathName": "color.ui.general.light",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.regular",
+      "path": [
+        "color",
+        "ui",
+        "general",
+        "regular"
+      ],
+      "value": "#5d5f61",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Regular",
+      "cssVariableName": "--telekom-color-ui-general-regular",
+      "jsPathName": "color.ui.general.regular",
+      "contrastChecks": [
+        "color.text-&-icon.standard"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.strong",
+      "path": [
+        "color",
+        "ui",
+        "general",
+        "strong"
+      ],
+      "value": "#898b8f",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Strong",
+      "cssVariableName": "--telekom-color-ui-general-strong",
+      "jsPathName": "color.ui.general.strong",
+      "contrastChecks": [
+        "color.text-&-icon.inverted.standard",
+        "color.text-&-icon.inverted.additional"
+      ]
+    },
+    {
+      "pathString": "color.ui.general.extra-strong",
+      "path": [
+        "color",
+        "ui",
+        "general",
+        "extra-strong"
+      ],
+      "value": "#f0f1f1",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / General / Extra Strong",
+      "cssVariableName": "--telekom-color-ui-general-extra-strong",
+      "jsPathName": "color.ui.general.extraStrong",
+      "contrastChecks": [
+        "color.text-&-icon.inverted.standard",
+        "color.text-&-icon.inverted.additional"
+      ]
+    },
+    {
+      "pathString": "color.functional.focus",
+      "path": [
+        "color",
+        "functional",
+        "focus"
+      ],
+      "value": "#268aff",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Focus",
+      "cssVariableName": "--telekom-color-functional-focus",
+      "jsPathName": "color.functional.focus"
+    },
+    {
+      "pathString": "color.functional.success.standard",
+      "path": [
+        "color",
+        "functional",
+        "success",
+        "standard"
+      ],
+      "value": "#09572f",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Standard",
+      "cssVariableName": "--telekom-color-functional-success-standard",
+      "jsPathName": "color.functional.success.standard",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.success.hovered",
+      "path": [
+        "color",
+        "functional",
+        "success",
+        "hovered"
+      ],
+      "value": "#0b6d3b",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Hovered",
+      "cssVariableName": "--telekom-color-functional-success-hovered",
+      "jsPathName": "color.functional.success.hovered",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.success.pressed",
+      "path": [
+        "color",
+        "functional",
+        "success",
+        "pressed"
+      ],
+      "value": "#0d8347",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Pressed",
+      "cssVariableName": "--telekom-color-functional-success-pressed",
+      "jsPathName": "color.functional.success.pressed",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.success.subtle",
+      "path": [
+        "color",
+        "functional",
+        "success",
+        "subtle"
+      ],
+      "value": "#003319",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Success / Subtle",
+      "cssVariableName": "--telekom-color-functional-success-subtle",
+      "jsPathName": "color.functional.success.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.success"
+      ]
+    },
+    {
+      "pathString": "color.functional.interaction.standard",
+      "path": [
+        "color",
+        "functional",
+        "interaction",
+        "standard"
+      ],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Standard",
+      "cssVariableName": "--telekom-color-functional-interaction-standard",
+      "jsPathName": "color.functional.interaction.standard"
+    },
+    {
+      "pathString": "color.functional.interaction.hovered",
+      "path": [
+        "color",
+        "functional",
+        "interaction",
+        "hovered"
+      ],
+      "value": "#006cec",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Hovered",
+      "cssVariableName": "--telekom-color-functional-interaction-hovered",
+      "jsPathName": "color.functional.interaction.hovered"
+    },
+    {
+      "pathString": "color.functional.interaction.pressed",
+      "path": [
+        "color",
+        "functional",
+        "interaction",
+        "pressed"
+      ],
+      "value": "#268aff",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Pressed",
+      "cssVariableName": "--telekom-color-functional-interaction-pressed",
+      "jsPathName": "color.functional.interaction.pressed"
+    },
+    {
+      "pathString": "color.functional.interaction.subtle",
+      "path": [
+        "color",
+        "functional",
+        "interaction",
+        "subtle"
+      ],
+      "value": "#001733",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Interaction / Subtle",
+      "cssVariableName": "--telekom-color-functional-interaction-subtle",
+      "jsPathName": "color.functional.interaction.subtle"
+    },
+    {
+      "pathString": "color.functional.informational.standard",
+      "path": [
+        "color",
+        "functional",
+        "informational",
+        "standard"
+      ],
+      "value": "#005ac4",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Standard",
+      "cssVariableName": "--telekom-color-functional-informational-standard",
+      "jsPathName": "color.functional.informational.standard",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.informational.hovered",
+      "path": [
+        "color",
+        "functional",
+        "informational",
+        "hovered"
+      ],
+      "value": "#006cec",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Hovered",
+      "cssVariableName": "--telekom-color-functional-informational-hovered",
+      "jsPathName": "color.functional.informational.hovered",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.informational.pressed",
+      "path": [
+        "color",
+        "functional",
+        "informational",
+        "pressed"
+      ],
+      "value": "#268aff",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Pressed",
+      "cssVariableName": "--telekom-color-functional-informational-pressed",
+      "jsPathName": "color.functional.informational.pressed",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.informational.subtle",
+      "path": [
+        "color",
+        "functional",
+        "informational",
+        "subtle"
+      ],
+      "value": "#001733",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Informational / Subtle",
+      "cssVariableName": "--telekom-color-functional-informational-subtle",
+      "jsPathName": "color.functional.informational.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.informational"
+      ]
+    },
+    {
+      "pathString": "color.functional.warning.standard",
+      "path": [
+        "color",
+        "functional",
+        "warning",
+        "standard"
+      ],
+      "value": "#e26617",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Standard",
+      "cssVariableName": "--telekom-color-functional-warning-standard",
+      "jsPathName": "color.functional.warning.standard",
+      "contrastChecks": [
+        "color.text-&-icon.functional.black"
+      ]
+    },
+    {
+      "pathString": "color.functional.warning.hovered",
+      "path": [
+        "color",
+        "functional",
+        "warning",
+        "hovered"
+      ],
+      "value": "#ff7f1f",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Hovered",
+      "cssVariableName": "--telekom-color-functional-warning-hovered",
+      "jsPathName": "color.functional.warning.hovered",
+      "contrastChecks": [
+        "color.text-&-icon.functional.black"
+      ]
+    },
+    {
+      "pathString": "color.functional.warning.pressed",
+      "path": [
+        "color",
+        "functional",
+        "warning",
+        "pressed"
+      ],
+      "value": "#ffa556",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Pressed",
+      "cssVariableName": "--telekom-color-functional-warning-pressed",
+      "jsPathName": "color.functional.warning.pressed",
+      "contrastChecks": [
+        "color.text-&-icon.functional.black"
+      ]
+    },
+    {
+      "pathString": "color.functional.warning.subtle",
+      "path": [
+        "color",
+        "functional",
+        "warning",
+        "subtle"
+      ],
+      "value": "#331600",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Warning / Subtle",
+      "cssVariableName": "--telekom-color-functional-warning-subtle",
+      "jsPathName": "color.functional.warning.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.warning"
+      ]
+    },
+    {
+      "pathString": "color.functional.danger.standard",
+      "path": [
+        "color",
+        "functional",
+        "danger",
+        "standard"
+      ],
+      "value": "#9c0018",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Standard",
+      "cssVariableName": "--telekom-color-functional-danger-standard",
+      "jsPathName": "color.functional.danger.standard",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.danger.hovered",
+      "path": [
+        "color",
+        "functional",
+        "danger",
+        "hovered"
+      ],
+      "value": "#c1001c",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Hovered",
+      "cssVariableName": "--telekom-color-functional-danger-hovered",
+      "jsPathName": "color.functional.danger.hovered",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.danger.pressed",
+      "path": [
+        "color",
+        "functional",
+        "danger",
+        "pressed"
+      ],
+      "value": "#e60021",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Pressed",
+      "cssVariableName": "--telekom-color-functional-danger-pressed",
+      "jsPathName": "color.functional.danger.pressed",
+      "contrastChecks": [
+        "color.text-&-icon.functional.white"
+      ]
+    },
+    {
+      "pathString": "color.functional.danger.subtle",
+      "path": [
+        "color",
+        "functional",
+        "danger",
+        "subtle"
+      ],
+      "value": "#330008",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Subtle",
+      "cssVariableName": "--telekom-color-functional-danger-subtle",
+      "jsPathName": "color.functional.danger.subtle",
+      "contrastChecks": [
+        "color.text-&-icon.standard",
+        "color.text-&-icon.functional.danger"
+      ]
+    }
+  ]
+}
