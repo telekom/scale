@@ -193,11 +193,15 @@ import text_de from './5.Colors_de.md';
                               </td>
                               {getAllSections(pathStringItem)}
                               {contrastSections
-                                ? contrastSections.map((item) => {
+                                ? contrastSections.map((item, i) => {
                                     return (
                                       <td style={{ border: 'none' }}>
                                         {pathStringItem
-                                          .filter((path) => path.includes(item))
+                                          .filter((path) =>
+                                            getItemPathByPath(path).includes(
+                                              `${contrastSections[i]}`
+                                            )
+                                          )
                                           .map((path) => {
                                             return (
                                               <div
