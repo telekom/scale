@@ -83,6 +83,18 @@ import text_de from './5.Colors_de.md';
             currentSection = index.tokens[jsonPosition].section;
           }
         }
+        function hasContrastWithoutSlash(items) {
+          let itemPaths = [];
+          items.map((item) => {
+            itemPaths.push(getItemPathByPath(item));
+          });
+          for (let i = 0; i < itemPaths.length; i++) {
+            if (!itemPaths[i].includes('/')) {
+              return true;
+            }
+          }
+        }
+        function hasContrastColor(item) {}
         function isReadable(firstColor, secondColor) {
           if (
             tinycolor.isReadable(firstColor, secondColor, {
@@ -159,101 +171,147 @@ import text_de from './5.Colors_de.md';
                             style={{
                               border: 'none',
                               verticalAlign: 'top',
-                              width: '300px',
+                              width: '200px',
                             }}
                           >
-                            <div
-                              style={{
-                                backgroundColor: `${item.value}`,
-                                padding: '20px',
-                                marginTop: '10px',
-                                border: '1px solid #f0f1f1',
-                                borderRadius: '4px',
-                                width: '450px',
-                                minHeight: '120px',
-                              }}
-                            >
-                              <td style={{ border: 'none' }}>
-                                {pathStringItem
-                                  .filter(
-                                    (path) =>
-                                      !getItemPathByPath(path).includes('/')
-                                  )
-                                  .map((path) => {
-                                    return (
-                                      <div
-                                        style={{
-                                          color: `${getItemColorByPath(path)}`,
-                                        }}
-                                      >
-                                        {getItemPathByPath(path)}
-                                      </div>
-                                    );
-                                  })}
-                              </td>
-                              {getAllSections(pathStringItem)}
-                              {contrastSections
-                                ? contrastSections.map((item, i) => {
-                                    return (
-                                      <td style={{ border: 'none' }}>
-                                        {pathStringItem
-                                          .filter((path) =>
-                                            getItemPathByPath(path).includes(
-                                              `${contrastSections[i]}`
+                            {item.contrastChecks ? (
+                              <div
+                                style={{
+                                  backgroundColor: `${item.value}`,
+                                  padding: '20px',
+                                  marginTop: '10px',
+                                  border: '1px solid #f0f1f1',
+                                  borderRadius: '4px',
+                                  minWidth: '350px',
+                                  minHeight: '120px',
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    color: `${getItemColorByPath(
+                                      pathStringItem[0]
+                                    )}`,
+                                    fontSize: '12px',
+                                    padding: '0px 0px 10px 0px',
+                                  }}
+                                >
+                                  Recommended colors for text & icons
+                                </div>
+                                {hasContrastWithoutSlash(pathStringItem) ? (
+                                  <td
+                                    style={{
+                                      padding: '0px 18px 0px 0px',
+                                      border: 'none',
+                                    }}
+                                  >
+                                    {pathStringItem
+                                      .filter(
+                                        (path) =>
+                                          !getItemPathByPath(path).includes('/')
+                                      )
+                                      .map((path) => {
+                                        return (
+                                          <a href={`#${path}`}>
+                                            <div
+                                              style={{
+                                                color: `${getItemColorByPath(
+                                                  path
+                                                )}`,
+                                                fontSize: '14px',
+                                              }}
+                                            >
+                                              {getItemPathByPath(path)}
+                                            </div>
+                                          </a>
+                                        );
+                                      })}
+                                  </td>
+                                ) : null}
+                                {getAllSections(pathStringItem)}
+                                {contrastSections
+                                  ? contrastSections.map((item, i) => {
+                                      return (
+                                        <td
+                                          style={{
+                                            border: 'none',
+                                            padding: '0px 18px 0px 0px',
+                                          }}
+                                        >
+                                          {pathStringItem
+                                            .filter((path) =>
+                                              getItemPathByPath(path).includes(
+                                                `${contrastSections[i]}`
+                                              )
                                             )
-                                          )
-                                          .map((path) => {
-                                            return (
-                                              <div
-                                                style={{
-                                                  color: `${getItemColorByPath(
-                                                    path
-                                                  )}`,
-                                                }}
-                                              >
-                                                {getItemPathByPath(path)}
-                                              </div>
-                                            );
-                                          })}
-                                      </td>
-                                    );
-                                  })
-                                : null}
-                            </div>
-                            <div>{item.value}</div>
+                                            .map((path) => {
+                                              return (
+                                                <a href={`#${path}`}>
+                                                  <div
+                                                    style={{
+                                                      color: `${getItemColorByPath(
+                                                        path
+                                                      )}`,
+                                                      fontSize: '14px',
+                                                    }}
+                                                  >
+                                                    {getItemPathByPath(path)}
+                                                  </div>
+                                                </a>
+                                              );
+                                            })}
+                                        </td>
+                                      );
+                                    })
+                                  : null}
+                              </div>
+                            ) : (
+                              <div
+                                style={{
+                                  backgroundColor: `${item.value}`,
+                                  padding: '20px',
+                                  marginTop: '10px',
+                                  border: '1px solid #f0f1f1',
+                                  borderRadius: '4px',
+                                  width: '350px',
+                                  minHeight: '120px',
+                                }}
+                              ></div>
+                            )}
                           </td>
                           {/* Comment Column */}
                           <td
                             style={{
                               verticalAlign: 'top',
-                              width: '300px',
+                              width: '00px',
                               height: 'inherit',
                               border: 'none',
                             }}
                           >
                             <div
                               style={{
-                                marginRight: '100px',
                                 marginTop: '7px',
                                 marginBottom: '7px',
+                                width: '400px',
                               }}
                             >
-                              <div
-                                style={{
-                                  width: '400px',
-                                }}
-                              >
+                              <div>
                                 <span
                                   style={{
                                     fontWeight: 'bolder',
-                                    fontSize: '20px',
+                                    fontSize: '18px',
                                   }}
                                 >
                                   {item.name}
                                 </span>
                               </div>
                               <div>
-                                <span>{item.comment}</span>
+                                <span
+                                  style={{
+                                    fontSize: '14px',
+                                  }}
+                                >
+                                  {item.comment}
+                                </span>
                               </div>
                             </div>
                           </td>
@@ -264,22 +322,25 @@ import text_de from './5.Colors_de.md';
                               border: 'none',
                             }}
                           >
-                            <h4>css</h4>
+                            <div
+                              style={{ fontWeight: '500', fontSize: '13px' }}
+                            >
+                              css
+                            </div>
                             <div
                               style={{
                                 textAlign: 'start',
                                 position: 'relative',
-                                marginTop: '10px',
-                                width: '450px',
-                                height: '50px',
-                                backgroundColor: '#D9DBDE',
+                                width: '350px',
+                                height: '30px',
+                                backgroundColor: '#f0f1f1',
                               }}
                             >
                               <span
                                 style={{
-                                  fontSize: '12px',
-                                  lineHeight: '50px',
-                                  padding: '30px',
+                                  fontSize: '11px',
+                                  lineHeight: '30px',
+                                  padding: '20px',
                                 }}
                                 id={item.pathString}
                               >
@@ -290,16 +351,16 @@ import text_de from './5.Colors_de.md';
                                   margin: '0',
                                   position: 'absolute',
                                   top: '50%',
-                                  right: '10px',
+                                  right: '5px',
                                   msTransform: 'translateY(-50%)',
                                   transform: 'translateY(-50%)',
                                 }}
                               >
                                 <button
                                   style={{
-                                    border: '1px solid hsla(0, 0%, 0%, 0.5)',
+                                    border: '1px solid #f0f1f1',
                                     borderRadius: '4px',
-                                    padding: '1px 1px 1px 1px',
+                                    padding: '1px 3px 1px 3px',
                                   }}
                                   onClick={() => {
                                     navigator.clipboard.writeText(
@@ -307,30 +368,69 @@ import text_de from './5.Colors_de.md';
                                     );
                                   }}
                                 >
-                                  <scale-icon-action-copy-paste accessibility-title="copy-paste" />
+                                  <scale-icon-action-copy-paste
+                                    size={15}
+                                    accessibility-title="copy-paste"
+                                  />
                                 </button>
                               </div>
                             </div>
-                            <h4>js</h4>
+                            <div
+                              style={{
+                                padding: '10px 0 0 0',
+                                fontWeight: '500',
+                                fontSize: '13px',
+                              }}
+                            >
+                              js
+                            </div>
                             <div
                               style={{
                                 textAlign: 'start',
                                 position: 'relative',
-                                marginTop: '10px',
-                                width: '450px',
-                                height: '50px',
-                                backgroundColor: '#D9DBDE',
+                                width: '350px',
+                                height: '30px',
+                                backgroundColor: '#f0f1f1',
                               }}
                             >
                               <span
                                 style={{
-                                  fontSize: '12px',
-                                  lineHeight: '50px',
-                                  padding: '30px',
+                                  fontSize: '11px',
+                                  lineHeight: '30px',
+                                  padding: '20px',
                                 }}
                                 id={item.pathString}
                               >
                                 {item.jsPathName}
+                              </span>
+                            </div>
+                            <div
+                              style={{
+                                padding: '10px 0 0 0',
+                                fontWeight: '500',
+                                fontSize: '13px',
+                              }}
+                            >
+                              hex
+                            </div>
+                            <div
+                              style={{
+                                textAlign: 'start',
+                                position: 'relative',
+                                width: '350px',
+                                height: '30px',
+                                backgroundColor: '#f0f1f1',
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontSize: '11px',
+                                  lineHeight: '30px',
+                                  padding: '20px',
+                                }}
+                                id={item.pathString}
+                              >
+                                {item.value}
                               </span>
                             </div>
                           </td>
