@@ -16,7 +16,7 @@ duet-date-picker {
   --duet-font: var(--telekom-typography-font-family-sans);
   --duet-font-normal: var(--telekom-typography-font-weight-regular);
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
-  --duet-color-placeholder: var(--telekom-color-ui-regular);
+  --duet-color-placeholder: var(--telekom-color-ui-additional-regular);
   --duet-radius: var(--telekom-radius-standard);
 
   /* FIXME */
@@ -63,7 +63,7 @@ duet-date-picker .duet-date__input:focus {
 duet-date-picker .duet-date__toggle {
   border-radius: 0 var(--duet-radius) var(--duet-radius) 0;
   background: transparent;
-  box-shadow: inset 1px 0 0 var(--telekom-color-ui-light);
+  box-shadow: inset 1px 0 0 var(--telekom-color-ui-additional-light);
 }
 
 duet-date-picker .duet-date__toggle:focus {

@@ -13,10 +13,10 @@
   --color: var(--telekom-color-text-and-icon-standard);
   --radius: var(--telekom-radius-large);
   --font-size: var(--telekom-typography-font-size-small);
-  --border: 1px solid var(--telekom-color-ui-subtle);
+  --border: 1px solid var(--telekom-color-ui-additional-subtle);
   --color-hover: var(--telekom-color-primary-hovered);
   --color-active: var(--telekom-color-primary-pressed);
-  --color-button: var(--telekom-color-ui-subtle);
+  --color-button: var(--telekom-color-ui-additional-subtle);
   --border-button: var(--border);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
@@ -24,7 +24,7 @@
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
   --radius-last-prompt-stack: 0 0 var(--radius) 0;
-  --stroke-svg: var(--telekom-color-ui-extra-strong);
+  --stroke-svg: var(--telekom-color-ui-additional-extra-strong);
   /* FIXME is this needed? */
   --stroke-svg-high-contrast: #fff;
   --width-button: 42px;

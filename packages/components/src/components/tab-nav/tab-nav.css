@@ -15,5 +15,5 @@
   --tab-radius: var(--telekom-radius-small);
   --tab-border-size: var(--telekom-line-weight-highlight);
   --tab-border-size-selected: var(--telekom-line-weight-bold);
-  --tab-border-color: var(--telekom-color-ui-subtle);
+  --tab-border-color: var(--telekom-color-ui-additional-subtle);
 }

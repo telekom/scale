@@ -14,8 +14,8 @@
   --stars-hover-color: var(--telekom-color-text-and-icon-primary-hovered);
   --stars-active-color: var(--telekom-color-text-and-icon-primary-pressed);
   --stars-inactive-color: transparent;
-  --stars-placeholder-color: var(--telekom-color-ui-regular);
-  --stars-placeholder-revert-color: var(--telekom-color-ui-regular);
+  --stars-placeholder-color: var(--telekom-color-ui-additional-regular);
+  --stars-placeholder-revert-color: var(--telekom-color-ui-additional-regular);
   --stars-disabled-color: var(--telekom-color-ui-disabled);
   --stars-spacing: var(--telekom-spacing-unit-x05);
   --stars-transition: color 0.1s;

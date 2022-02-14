@@ -47,7 +47,7 @@
 
   /* FIXME:TOKEN --telekom-color-ui-border-standard is too dark */
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-general-subtle, var(--telekom-color-ui-subtle));
+    var(--telekom-color-ui-general-subtle, var(--telekom-color-ui-additional-subtle));
 
   --font-family-heading: var(--telekom-typography-font-family-sans);
   --font-size-heading: var(--telekom-typography-font-size-callout);

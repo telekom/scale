@@ -28,8 +28,8 @@ scale-text-field {
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
-  --border-color-readonly: var(--telekom-color-ui-subtle);
-  --background-readonly: var(--telekom-color-ui-subtle);
+  --border-color-readonly: var(--telekom-color-ui-additional-subtle);
+  --background-readonly: var(--telekom-color-ui-additional-subtle);
 
   /* meta */
   --font-weight-meta: var(--telekom-line-weight-bold);

@@ -12,7 +12,7 @@
 scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
   /* FIXME (used for head background) */
-  --background: var(--telekom-color-ui-subtle);
+  --background: var(--telekom-color-ui-additional-subtle);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -22,23 +22,23 @@ scale-table {
   --spacing-tbody-td: var(--telekom-spacing-unit-x4)
     var(--telekom-spacing-unit-x2);
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-subtle);
+    var(--telekom-color-ui-additional-subtle);
   --background-tbody: var(--telekom-color-ui-base);
 
   /* FIXME:TOKEN */
-  --background-tbody-tr-hover: var(--telekom-color-ui-subtle);
+  --background-tbody-tr-hover: var(--telekom-color-ui-additional-subtle);
   --background-tfoot: var(--telekom-color-ui-base);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-extra-strong);
+    var(--telekom-color-ui-additional-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
   /* FIXME:TOKEN */
-  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
-  --background-th-sortable-active: var(--telekom-color-ui-light);
+  --background-th-sortable-hover: var(--telekom-color-ui-additional-subtle);
+  --background-th-sortable-active: var(--telekom-color-ui-additional-light);
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   /* FIXME:TOKEN */
-  --background-tr-striped: var(--telekom-color-ui-subtle);
+  --background-tr-striped: var(--telekom-color-ui-additional-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 .table {

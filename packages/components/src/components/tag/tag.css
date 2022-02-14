@@ -10,7 +10,7 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-extra-strong);
+  --background: var(--telekom-color-ui-additional-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
@@ -29,7 +29,7 @@
   --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
 
   --border-button-dismissable-focus: 1px solid
-    var(--telekom-color-ui-extra-strong);
+    var(--telekom-color-ui-additional-extra-strong);
   --background-button-dismissable-focus: ;
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
   --background-button-dismissable-hover: var(--telekom-color-ui-base);

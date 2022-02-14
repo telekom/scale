@@ -1,5 +1,5 @@
 :host {
-  --border-color: var(--telekom-color-ui-extra-strong);
+  --border-color: var(--telekom-color-ui-additional-extra-strong);
   --border-color-disabled: var(--telekom-color-ui-disabled);
   --border: var(--telekom-spacing-unit-x025) solid var(--border-color);
   --border-disabled: var(--telekom-spacing-unit-x025) solid

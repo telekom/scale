@@ -10,8 +10,8 @@
  */
 
 :host {
-  --border-bottom-color: var(--telekom-color-ui-subtle);
-  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
+  --border-bottom-color: var(--telekom-color-ui-additional-subtle);
+  --border-left-color-third-nesting: var(--telekom-color-ui-additional-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   /* FIXME this variable is used sometimes for background sometimes for text */
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
