@@ -14,13 +14,13 @@ scale-text-field {
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-extra-strong);
+    var(--telekom-color-ui-outlined-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   /* FIXME:TOKEN replace with ui border hover */
-  --border-color-hover: var(--telekom-color-primary-hovered);
-  --border-color-focus: var(--telekom-color-primary-hovered);
-  --border-color-disabled: var(--telekom-color-ui-disabled);
+  --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-outlined-border-pressed);
+  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --height: var(--telekom-spacing-unit-x12);

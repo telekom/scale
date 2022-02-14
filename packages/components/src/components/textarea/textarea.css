@@ -15,12 +15,12 @@ scale-textarea {
   --radius: var(--telekom-radius-standard);
   /* FIXME:TOKEN replace colors with ui border */
   --border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-extra-strong);
+    var(--telekom-color-ui-outlined-border-standard);
   --border-error: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-danger-standard);
-  --border-color-hover: var(--telekom-color-primary-hovered);
-  --border-color-focus: var(--telekom-color-primary-hovered);
-  --border-color-disabled: var(--telekom-color-ui-disabled);
+  --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-outlined-border-pressed);
+  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --spacing-x-control: var(--telekom-spacing-unit-x3);

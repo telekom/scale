@@ -14,12 +14,12 @@
 
   --font-size-list-item: var(--telekom-typography-font-size-caption);
 
-  --color-separator: var(--telekom-color-ui-regular);
+  --color-separator: var(--telekom-color-ui-general-regular);
 
   --spacing-y-item: var(--telekom-spacing-unit-x1);
   --spacing-x-item: var(--telekom-spacing-unit-x2);
 
-  --color-link: var(--telekom-color-ui-regular);
+  --color-link: var(--telekom-color-text-and-icon-standard);
   --radius-link: var(--telekom-radius-standard);
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
