@@ -22,12 +22,12 @@ scale-table {
   --spacing-tbody-td: var(--telekom-spacing-unit-x4)
     var(--telekom-spacing-unit-x2);
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-additional-subtle);
-  --background-tbody: var(--telekom-color-ui-base);
+    var(--telekom-color-ui-additional-light);
+  --background-tbody: var(--telekom-color-ui-additional-base);
 
   /* FIXME:TOKEN */
   --background-tbody-tr-hover: var(--telekom-color-ui-additional-subtle);
-  --background-tfoot: var(--telekom-color-ui-base);
+  --background-tfoot: var(--telekom-color-ui-additional-base);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-additional-extra-strong);
 

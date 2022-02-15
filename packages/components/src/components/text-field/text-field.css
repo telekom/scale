@@ -44,7 +44,7 @@ scale-text-field {
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
-  --background-control: var(--telekom-color-ui-base);
+  --background-control: var(--telekom-color-ui-additional-base);
 
   /* counter */
   --transition-counter: var(--transition);

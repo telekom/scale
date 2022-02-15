@@ -32,7 +32,7 @@
     var(--telekom-color-ui-additional-extra-strong);
   --background-button-dismissable-focus: ;
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  --background-button-dismissable-hover: var(--telekom-color-ui-base);
+  --background-button-dismissable-hover: var(--telekom-color-ui-additional-base);
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
