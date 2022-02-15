@@ -19,17 +19,18 @@
   --size: 20px;
   --offset: 2px;
 
-  --color-off: var(--telekom-color-text-and-icon-standard);
+  --color-off: var(--telekom-color-ui-solid-standard);
   --color-on: var(--telekom-color-primary-standard);
   --color-active: var(--telekom-color-primary-pressed);
-  --color-hover: var(--telekom-color-primary-hovered);
-  --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-state-contrast: var(--telekom-color-ui-base);
+  --color-hover-on: var(--telekom-color-primary-hovered);
+  --color-hover-off: var(  --telekom-color-ui-solid-hovered);
+  --color-disabled: var(--telekom-color-ui-solid-disabled);
+  --color-state-contrast: var(--telekom-color-ui-additional-base);
 
   --color-state: var(--color-off);
   --color-background: var(--color-state-contrast);
   --color-toggle: var(--color-state);
-  --color-text: var(--color-state);
+  --color-text: var(--telekom-color-text-and-icon-standard);
 
   --transition-duration: var(--telekom-motion-duration-transition);
   --transition-timing-function: cubic-bezier(
@@ -142,9 +143,15 @@
 }
 
 /* Needs to placed after :checked but before :active */
-.switch:hover,
-.switch:hover input ~ .switch__wrapper {
-  --color-state: var(--color-hover);
+/* .switch:hover, */
+.switch:hover input:checked ~ .switch__wrapper {
+  --color-state: var(--color-hover-on);
+}
+
+.switch:hover input:not(:checked) ~ .switch__wrapper {
+  --color-state: var(--color-hover-off);
+  --color-toggle: var(--color-hover-off);
+  --color-background: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
 .switch input:not(:disabled):active ~ .switch__wrapper {
