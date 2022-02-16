@@ -18,13 +18,17 @@ scale-checkbox {
     cubic-bezier(var(--telekom-motion-easing-standard));
   --color-text: var(--telekom-color-text-and-icon-standard);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
-  --color-disabled: var(--telekom-color-ui-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --color-standard: var(--telekom-color-background-surface);
-  --background-disabled: var(--telekom-color-ui-disabled);
+  --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
   --color-primary: var(--telekom-color-primary-standard, #e20074);
   --color-focus: var(--telekom-color-functional-focus);
-  --color-primary-hover: var(--telekom-color-primary-hovered, #f90984);
-  --color-primary-active: var(--telekom-color-primary-pressed, #cb0068);
+  /* FIXME:TOKEN-alpha8 not sure if I just remove these css rules
+    instead of using the same font color for all states. Removing the css rules would probably break
+    some user defined css
+  */
+  --color-primary-hover: var(--telekom-color-text-and-icon-standard, #f90984);
+  --color-primary-active: var(--telekom-color-text-and-icon-standard, #cb0068);
 
   /*control*/
   --width-control: var(--telekom-spacing-unit-x4);
@@ -134,11 +138,45 @@ scale-checkbox [part='helper-text'] {
 }
 
 /* :host([checked]) [part='checkbox'], */
-scale-checkbox.checked [part='checkbox'],
 /* :host([indeterminate]) [part='checkbox'], */
 scale-checkbox.indeterminate [part='checkbox'] {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--telekom-color-ui-outlined-fill-standard);
+  border-color: var(--telekom-color-ui-outlined-border-standard);
+  color: var(--color-icon-checked-active);
+}
+
+/* :host([checked]) [part='checkbox'], */
+scale-checkbox.checked [part='checkbox']
+/* :host([indeterminate]) [part='checkbox'], */ {
+  background: var(--telekom-color-primary-standard);
+  border-color: var(--telekom-color-ui-outlined-border-standard);
+  color: var(--color-icon-checked-active);
+}
+
+/* :host([checked]) [part='checkbox'], */
+scale-checkbox [part='container']:hover
+/* :host([indeterminate]) [part='checkbox'], */
+[part='checkbox'] {
+  background: var(--telekom-color-ui-outlined-fill-hovered);
+  border-color: var(--telekom-color-ui-outlined-border-hovered);
+  color: var(--color-icon-checked-active);
+}
+
+/* :host([checked]) [part='checkbox'], */
+scale-checkbox.checked [part='container']:hover
+/* :host([indeterminate]) [part='checkbox'], */
+[part='checkbox'] {
+  background: var(--telekom-color-primary-hovered);
+  border-color: var(--telekom-color-ui-outlined-border-hovered);
+  color: var(--color-icon-checked-active);
+}
+
+/* :host([checked]) [part='checkbox'], */
+scale-checkbox [part='container']:active
+/* :host([indeterminate]) [part='checkbox'], */
+[part='checkbox'] {
+  background: var(--telekom-color-ui-outlined-fill-pressed);
+  border-color: var(--telekom-color-ui-outlined-border-pressed);
   color: var(--color-icon-checked-active);
 }
 
@@ -159,7 +197,7 @@ scale-checkbox [part='container']:hover {
 scale-checkbox.checked [part='container']:hover [part='checkbox'],
 /* :host([indeterminate]) [part='container']:hover [part='checkbox'], */
 scale-checkbox.indeterminate [part='container']:hover [part='checkbox'] {
-  background: var(--color-primary-hover);
+  background: var(--telekom-color-primary-hovered);
   border-color: var(--color-primary-hover);
 }
 
@@ -175,7 +213,7 @@ scale-checkbox [part='input']:active ~ [part='container'] [part='checkbox'],
 scale-checkbox.checked [part='container']:active [part='checkbox'],
 /* :host([indeterminate]) [part='container']:active [part='checkbox'], */
 scale-checkbox.indeterminate [part='container']:active [part='checkbox'] {
-  background: var(--color-primary-active);
+  background: var(--telekom-color-primary-pressed);
   border-color: var(--color-primary-active);
 }
 
@@ -208,9 +246,9 @@ scale-checkbox.disabled [part='helper-text'] {
 }
 
 /* :host([checked][disabled]) [part='checkbox'], */
-scale-checkbox.checked.disabled [part='checkbox'] {
-  background: var(--color-disabled);
-  border-color: var(--color-disabled);
+scale-checkbox.disabled [part='checkbox'] {
+  background: var(--telekom-color-ui-outlined-fill-disabled);
+  border-color: var(--telekom-color-ui-outlined-border-disabled);
 }
 
 /* :host([checked][disabled]) [part='icon'], */

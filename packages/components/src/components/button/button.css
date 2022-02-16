@@ -35,8 +35,7 @@
   --background-primary: var(--telekom-color-primary-standard);
   --background-primary-hover: var(--telekom-color-primary-hovered);
   --background-primary-active: var(--telekom-color-primary-pressed);
-  /* FIXME:TOKEN-alpha8 not sure if this is appropriate here, couldn't find a color to match the sketch file*/ 
-  --background-primary-disabled: var(--telekom-color-ui-additional-subtle);
+  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
   --color-primary: var(--telekom-color-text-and-icon-inverted-standard);
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
