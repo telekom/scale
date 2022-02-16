@@ -116,6 +116,7 @@ import text_de from './5.Colors_de.md';
         }
         return (
           <DocsContainer context={context}>
+            {locale === 'en' ? <div>Englisch</div> : <div>Deutsch</div>}
             <table>
               {index.tokens
                 .filter((item) => item.category == 'Color')
@@ -139,34 +140,40 @@ import text_de from './5.Colors_de.md';
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
+                                borderColor: '#fff',
+                                borderBottom: '#000',
                               }}
                             >
-                              Value
+                              Example
                             </th>
                             <th
                               style={{
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
+                                borderColor: '#fff',
+                                borderBottom: '#000',
                               }}
                             >
-                              Comment
+                              Description
                             </th>
                             <th
                               style={{
                                 textAlign: 'left',
                                 color: '#6A6A6A',
                                 fontSize: '13px',
+                                borderColor: '#fff',
+                                borderBottom: '#000',
                               }}
                             >
-                              CSS-Variable Name
+                              Token Name
                             </th>
                           </tr>
                         </thead>
                       ) : null}
                       <tbody>
                         <tr>
-                          {/* Value Column */}
+                          {/* Example Column */}
                           <td
                             style={{
                               border: 'none',
@@ -278,7 +285,7 @@ import text_de from './5.Colors_de.md';
                               ></div>
                             )}
                           </td>
-                          {/* Comment Column */}
+                          {/* Description Column */}
                           <td
                             style={{
                               verticalAlign: 'top',
@@ -315,7 +322,7 @@ import text_de from './5.Colors_de.md';
                               </div>
                             </div>
                           </td>
-                          {/* CSS-Variable Name Column */}
+                          {/* Token Name Column */}
                           <td
                             style={{
                               verticalAlign: 'top',
@@ -361,6 +368,7 @@ import text_de from './5.Colors_de.md';
                                     border: '1px solid #f0f1f1',
                                     borderRadius: '4px',
                                     padding: '1px 3px 1px 3px',
+                                    cursor: 'pointer',
                                   }}
                                   onClick={() => {
                                     navigator.clipboard.writeText(
@@ -371,6 +379,7 @@ import text_de from './5.Colors_de.md';
                                   <scale-icon-action-copy-paste
                                     size={15}
                                     accessibility-title="copy-paste"
+                                    color="hsla(0, 0%, 0%, 0.65)"
                                   />
                                 </button>
                               </div>
@@ -403,6 +412,36 @@ import text_de from './5.Colors_de.md';
                               >
                                 {item.jsPathName}
                               </span>
+                              <div
+                                style={{
+                                  margin: '0',
+                                  position: 'absolute',
+                                  top: '50%',
+                                  right: '5px',
+                                  msTransform: 'translateY(-50%)',
+                                  transform: 'translateY(-50%)',
+                                }}
+                              >
+                                <button
+                                  style={{
+                                    border: '1px solid #f0f1f1',
+                                    borderRadius: '4px',
+                                    padding: '1px 3px 1px 3px',
+                                    cursor: 'pointer',
+                                  }}
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(
+                                      item.jsPathName
+                                    );
+                                  }}
+                                >
+                                  <scale-icon-action-copy-paste
+                                    size={15}
+                                    accessibility-title="copy-paste"
+                                    color="hsla(0, 0%, 0%, 0.65)"
+                                  />
+                                </button>
+                              </div>
                             </div>
                             <div
                               style={{

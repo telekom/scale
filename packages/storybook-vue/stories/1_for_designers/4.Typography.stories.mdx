@@ -206,7 +206,7 @@ import text_second_en from './4.Typography_secondPart_en.md';
                                   }}
                                   onClick={() => {
                                     navigator.clipboard.writeText(
-                                      pathString.cssVariableName
+                                      getCssVariableNameByPathString(pathString)
                                     );
                                   }}
                                 >
@@ -266,7 +266,7 @@ import text_second_en from './4.Typography_secondPart_en.md';
                                   }}
                                   onClick={() => {
                                     navigator.clipboard.writeText(
-                                      pathString.jsPathName
+                                      getJsPathNameByPathString(pathString)
                                     );
                                   }}
                                 >
