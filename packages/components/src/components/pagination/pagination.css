@@ -14,8 +14,8 @@
   --radius: var(--telekom-radius-large);
   --font-size: var(--telekom-typography-font-size-small);
   --border: 1px solid var(--telekom-color-ui-additional-subtle);
-  --color-hover: var(--telekom-color-primary-hovered);
-  --color-active: var(--telekom-color-primary-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-button: var(--telekom-color-ui-additional-subtle);
   --border-button: var(--border);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
@@ -106,7 +106,7 @@ button:not(:disabled) svg {
   stroke: var(--stroke-svg);
 }
 button:not(:disabled):hover {
-  border-color: var(--color-hover);
+  border-color: var(--telekom-color-primary-hovered);
   z-index: 1;
 }
 button:not(:disabled):hover svg {
@@ -138,7 +138,7 @@ button:not(:disabled):active svg {
 .pagination--hide-borders button:not(:disabled):hover {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
   border-width: 1px;
-  border-color: var(--color-hover);
+  border-color: var(--telekom-color-primary-hovered);
 }
 
 .pagination__button-wrapper {
