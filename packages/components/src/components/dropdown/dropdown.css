@@ -101,7 +101,8 @@ scale-dropdown {
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-background-surface);
+  background-color: var(--telekom-color-ui-outlined-fill-standard);
+  color: var(--telekom-color-text-and-icon-standard)
 }
 
 @-moz-document url-prefix() {
@@ -137,13 +138,20 @@ scale-dropdown {
 .dropdown:not(.dropdown--disabled):active .input__dropdown-icon {
   color: var(--color-icon-active);
 }
-.dropdown:not(.dropdown--disabled) .input__dropdown:hover {
+.dropdown:not(.dropdown--disabled):not(.dropdown--status-error) .input__dropdown:hover {
   border-color: var(--border-color-hover);
   background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
+.dropdown:not(.dropdown--disabled).dropdown--status-error .input__dropdown:hover {
+  border-color: red;
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+}
 
-.dropdown:not(.dropdown--disabled) .input__dropdown:focus {
+.dropdown:not(.dropdown--disabled):not(.dropdown--status-error) .input__dropdown:focus {
   border-color: var(--border-color-focus);
+}
+.dropdown:not(.dropdown--disabled).dropdown--status-error .input__dropdown:focus {
+  border-color: red;
 }
 .dropdown:not(.dropdown--disabled) .input__dropdown:focus {
   box-shadow: var(--box-shadow-focus);
@@ -175,6 +183,7 @@ scale-dropdown {
   );
   font-weight: var(--font-weight-label);
 }
+
 
 .animated .input__label {
   transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x2));

@@ -55,7 +55,7 @@ scale-checkbox {
   /*icon*/
   --color-icon-checked-disabled: var(--telekom-color-text-and-icon-disabled);
   --color-icon-checked-active: var(
-    --telekom-color-text-and-icon-inverted-standard
+    --telekom-color-text-and-icon-white-standard
   );
   --width-icon: var(--telekom-spacing-unit-x3);
   --height-icon: var(--telekom-spacing-unit-x3);
@@ -100,7 +100,7 @@ scale-checkbox [part='checkbox'] {
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
-  border: var(--border-width-control) solid var(--color-text);
+  border: var(--border-width-control) solid var(--telekom-color-ui-outlined-border-standard);
 }
 
 scale-checkbox [part='label'] {
