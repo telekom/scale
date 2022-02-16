@@ -1,5 +1,6 @@
 import { Meta, Description, DocsContainer } from '@storybook/addon-docs/blocks';
-import index from '../telekom-design-tokens.light.json';
+import lightTokens from '../telekom-design-tokens.light.json';
+import darkTokens from '../telekom-design-tokens.dark.json';
 
 import text_en from './5.Colors_en.md';
 import text_de from './5.Colors_de.md';
@@ -11,26 +12,31 @@ import text_de from './5.Colors_de.md';
       container: ({ context }) => {
         const tinycolor = require('tinycolor2');
         const locale = context && context.globals && context.globals.locale;
+        const colorMode =
+          context && context.globals && context.globals.colorMode;
+        const allTokens = colorMode === 'light' ? lightTokens : darkTokens;
         let newSection = false;
         let pathStringItem = [];
         let currentSection;
         let contrastSections;
         function getItemPathByPath(path) {
           for (let i = 0; i < 100; i++) {
-            if (index.tokens[i].pathString === path) {
-              if (index.tokens[i].path[3]) {
+            if (allTokens.tokens[i].pathString === path) {
+              if (allTokens.tokens[i].path[3]) {
                 return (
-                  index.tokens[i].path[2] + ' / ' + index.tokens[i].path[3]
+                  allTokens.tokens[i].path[2] +
+                  ' / ' +
+                  allTokens.tokens[i].path[3]
                 );
               }
-              return index.tokens[i].path[2];
+              return allTokens.tokens[i].path[2];
             }
           }
         }
         function getItemColorByPath(path) {
           for (let i = 0; i < 100; i++) {
-            if (index.tokens[i].pathString === path) {
-              return index.tokens[i].value;
+            if (allTokens.tokens[i].pathString === path) {
+              return allTokens.tokens[i].value;
             }
           }
         }
@@ -70,17 +76,17 @@ import text_de from './5.Colors_de.md';
         function isNewSection(jsonPosition) {
           if (jsonPosition !== 0) {
             if (
-              index.tokens[jsonPosition - 1].section !==
-              index.tokens[jsonPosition].section
+              allTokens.tokens[jsonPosition - 1].section !==
+              allTokens.tokens[jsonPosition].section
             ) {
               newSection = true;
-              currentSection = index.tokens[jsonPosition].section;
+              currentSection = allTokens.tokens[jsonPosition].section;
             } else {
               newSection = false;
             }
           } else {
             newSection = true;
-            currentSection = index.tokens[jsonPosition].section;
+            currentSection = allTokens.tokens[jsonPosition].section;
           }
         }
         function hasContrastWithoutSlash(items) {
@@ -118,7 +124,7 @@ import text_de from './5.Colors_de.md';
           <DocsContainer context={context}>
             {locale === 'en' ? <div>Englisch</div> : <div>Deutsch</div>}
             <table>
-              {index.tokens
+              {allTokens.tokens
                 .filter((item) => item.category == 'Color')
                 .map((item, i) => {
                   isNewSection(i);
