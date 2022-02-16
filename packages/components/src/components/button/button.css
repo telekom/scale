@@ -35,7 +35,8 @@
   --background-primary: var(--telekom-color-primary-standard);
   --background-primary-hover: var(--telekom-color-primary-hovered);
   --background-primary-active: var(--telekom-color-primary-pressed);
-  --background-primary-disabled: var(--telekom-color-ui-disabled);
+  /* FIXME:TOKEN-alpha8 not sure if this is appropriate here, couldn't find a color to match the sketch file*/ 
+  --background-primary-disabled: var(--telekom-color-ui-additional-subtle);
   --color-primary: var(--telekom-color-text-and-icon-inverted-standard);
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
@@ -44,8 +45,8 @@
   --border-width-secondary: var(--telekom-spacing-unit-x025);
   --background-secondary: transparent;
   --color-secondary: var(--telekom-color-text-and-icon-standard);
-  --color-secondary-hover: var(--telekom-color-text-and-icon-primary-hovered);
-  --color-secondary-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
+  --color-secondary-active: var(--telekom-color-text-and-icon-standard);
   --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-secondary: var(--telekom-color-ui-outlined-fill-standard);
   --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
