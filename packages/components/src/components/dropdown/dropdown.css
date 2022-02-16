@@ -30,7 +30,7 @@ scale-dropdown {
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-disabled: var(--telekom-color-ui-disabled);
+  --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
 
   /*input*/
   --transition-input: var(--transition);
@@ -54,12 +54,13 @@ scale-dropdown {
   /*icon*/
   --height-icon: var(--telekom-spacing-unit-x6);
   --color-icon: var(--telekom-color-text-and-icon-standard);
+  /* FIXME:TOKEN-alpha8 this could be removed */
   --color-icon-hover: var(
-    --telekom-color-text-and-icon-primary-hovered,
+    --telekom-color-text-and-icon-standard,
     #f90984
   );
   --color-icon-active: var(
-    --telekom-color-text-and-icon-primary-pressed,
+    --telekom-color-text-and-icon-standard,
     #cb0068
   );
   --transition-icon: var(--transition);
@@ -138,6 +139,7 @@ scale-dropdown {
 }
 .dropdown:not(.dropdown--disabled) .input__dropdown:hover {
   border-color: var(--border-color-hover);
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
 .dropdown:not(.dropdown--disabled) .input__dropdown:focus {

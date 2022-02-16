@@ -37,7 +37,7 @@
   /* focus */
   --color-focus: var(--telekom-color-text-and-icon-link-active);
   --color-line-focus: var(--telekom-color-functional-focus);
-  --line-thickness-focus: var(--telekom-line-weight-highlight);
+  --line-thickness-focus: var(--telekom-line-weight-bold);
   /* active */
   --color-active: var(--telekom-color-text-and-icon-link-active);
   --color-line-active: currentColor;
@@ -63,7 +63,7 @@
   color: var(--anchor-color);
   position: relative;
   display: inline-flex;
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 0.1875em;
   text-underline-position: from-font;
   text-decoration-thickness: var(
@@ -108,6 +108,7 @@ slot[name='icon']::slotted(*) {
 [part='anchor']:focus,
 [part='anchor']:active {
   transition: text-decoration var(--telekom-motion-duration-transition);
+  text-decoration: underline;
 }
 
 [part='anchor']:visited {
