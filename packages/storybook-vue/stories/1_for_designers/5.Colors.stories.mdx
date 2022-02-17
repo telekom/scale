@@ -17,10 +17,11 @@ import text_de from './5.Colors_de.md';
         const allTokens = colorMode === 'light' ? lightTokens : darkTokens;
         let newSection = false;
         let pathStringItem = [];
+        let levelStringItem = [];
         let currentSection;
         let contrastSections;
         function getItemPathByPath(path) {
-          for (let i = 0; i < 100; i++) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
             if (allTokens.tokens[i].pathString === path) {
               if (allTokens.tokens[i].path[3]) {
                 return (
@@ -34,9 +35,18 @@ import text_de from './5.Colors_de.md';
           }
         }
         function getItemColorByPath(path) {
-          for (let i = 0; i < 100; i++) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
             if (allTokens.tokens[i].pathString === path) {
               return allTokens.tokens[i].value;
+            }
+          }
+        }
+        function getLevelByPath(path) {
+          for (let i = 0; i < levelStringItem.length; i++) {
+            let currentItem = levelStringItem[i];
+            let splittedItem = currentItem.split('/');
+            if (splittedItem[0] === path) {
+              return splittedItem[1];
             }
           }
         }
@@ -100,26 +110,7 @@ import text_de from './5.Colors_de.md';
             }
           }
         }
-        function hasContrastColor(item) {}
-        function isReadable(firstColor, secondColor) {
-          if (
-            tinycolor.isReadable(firstColor, secondColor, {
-              level: 'AAA',
-              size: 'small',
-            })
-          ) {
-            return ' (AAA)';
-          }
-          if (
-            tinycolor.isReadable(firstColor, secondColor, {
-              level: 'AA',
-              size: 'small',
-            })
-          ) {
-            return ' (AA)';
-          }
-          return '';
-        }
+        function createContrastObjectArray() {}
         return (
           <DocsContainer context={context}>
             {locale === 'en' ? <div>Englisch</div> : <div>Deutsch</div>}
@@ -130,7 +121,24 @@ import text_de from './5.Colors_de.md';
                   isNewSection(i);
                   {
                     item.contrastChecks
-                      ? (pathStringItem = item.contrastChecks)
+                      ? (pathStringItem = item.contrastChecks.map(
+                          (contrastCkeckItem) => {
+                            return contrastCkeckItem.path;
+                          }
+                        ))
+                      : null;
+                  }
+                  {
+                    item.contrastChecks
+                      ? (levelStringItem = item.contrastChecks.map(
+                          (contrastCkeckItem) => {
+                            return (
+                              contrastCkeckItem.path +
+                              '/' +
+                              contrastCkeckItem.level
+                            );
+                          }
+                        ))
                       : null;
                   }
                   return (
@@ -195,7 +203,7 @@ import text_de from './5.Colors_de.md';
                                   marginTop: '10px',
                                   border: '1px solid #f0f1f1',
                                   borderRadius: '4px',
-                                  minWidth: '350px',
+                                  minWidth: '380px',
                                   minHeight: '120px',
                                 }}
                               >
@@ -204,7 +212,7 @@ import text_de from './5.Colors_de.md';
                                     color: `${getItemColorByPath(
                                       pathStringItem[0]
                                     )}`,
-                                    fontSize: '10px',
+                                    fontSize: '9px',
                                     padding: '0px 0px 5px 0px',
                                   }}
                                 >
@@ -230,10 +238,15 @@ import text_de from './5.Colors_de.md';
                                                 color: `${getItemColorByPath(
                                                   path
                                                 )}`,
-                                                fontSize: '14px',
+                                                fontSize: '11px',
                                               }}
                                             >
                                               {getItemPathByPath(path)}
+                                              {' (' +
+                                                getLevelByPath(
+                                                  path
+                                                ).toUpperCase() +
+                                                ')'}
                                             </div>
                                           </a>
                                         );
@@ -264,10 +277,15 @@ import text_de from './5.Colors_de.md';
                                                       color: `${getItemColorByPath(
                                                         path
                                                       )}`,
-                                                      fontSize: '14px',
+                                                      fontSize: '11px',
                                                     }}
                                                   >
                                                     {getItemPathByPath(path)}
+                                                    {'(' +
+                                                      getLevelByPath(
+                                                        path
+                                                      ).toUpperCase() +
+                                                      ')'}
                                                   </div>
                                                 </a>
                                               );
@@ -285,7 +303,7 @@ import text_de from './5.Colors_de.md';
                                   marginTop: '10px',
                                   border: '1px solid #f0f1f1',
                                   borderRadius: '4px',
-                                  width: '350px',
+                                  width: '380px',
                                   minHeight: '120px',
                                 }}
                               ></div>

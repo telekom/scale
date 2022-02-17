@@ -2,11 +2,7 @@
   "tokens": [
     {
       "pathString": "color.text-&-icon.standard",
-      "path": [
-        "color",
-        "text-&-icon",
-        "standard"
-      ],
+      "path": ["color", "text-&-icon", "standard"],
       "value": "#ffffff",
       "comment": "Default text color with highest contrast.",
       "category": "Color",
@@ -17,11 +13,7 @@
     },
     {
       "pathString": "color.text-&-icon.additional",
-      "path": [
-        "color",
-        "text-&-icon",
-        "additional"
-      ],
+      "path": ["color", "text-&-icon", "additional"],
       "value": "hsla(0, 0%, 100%, 0.65)",
       "comment": "Use in combination with standard text for additional text elements.",
       "category": "Color",
@@ -32,11 +24,7 @@
     },
     {
       "pathString": "color.text-&-icon.disabled",
-      "path": [
-        "color",
-        "text-&-icon",
-        "disabled"
-      ],
+      "path": ["color", "text-&-icon", "disabled"],
       "value": "hsla(0, 0%, 100%, 0.3)",
       "comment": "Only use for disabled text.",
       "category": "Color",
@@ -47,12 +35,7 @@
     },
     {
       "pathString": "color.text-&-icon.link.standard",
-      "path": [
-        "color",
-        "text-&-icon",
-        "link",
-        "standard"
-      ],
+      "path": ["color", "text-&-icon", "link", "standard"],
       "value": "#60a9ff",
       "category": "Color",
       "section": "Text & Icon",
@@ -62,12 +45,7 @@
     },
     {
       "pathString": "color.text-&-icon.link.hovered",
-      "path": [
-        "color",
-        "text-&-icon",
-        "link",
-        "hovered"
-      ],
+      "path": ["color", "text-&-icon", "link", "hovered"],
       "value": "#89bfff",
       "category": "Color",
       "section": "Text & Icon",
@@ -77,12 +55,7 @@
     },
     {
       "pathString": "color.text-&-icon.link.visited",
-      "path": [
-        "color",
-        "text-&-icon",
-        "link",
-        "visited"
-      ],
+      "path": ["color", "text-&-icon", "link", "visited"],
       "value": "#ab9fce",
       "category": "Color",
       "section": "Text & Icon",
@@ -92,12 +65,7 @@
     },
     {
       "pathString": "color.text-&-icon.link.active",
-      "path": [
-        "color",
-        "text-&-icon",
-        "link",
-        "active"
-      ],
+      "path": ["color", "text-&-icon", "link", "active"],
       "value": "#b6d7ff",
       "category": "Color",
       "section": "Text & Icon",
@@ -107,12 +75,7 @@
     },
     {
       "pathString": "color.text-&-icon.primary.standard",
-      "path": [
-        "color",
-        "text-&-icon",
-        "primary",
-        "standard"
-      ],
+      "path": ["color", "text-&-icon", "primary", "standard"],
       "value": "#e20074",
       "category": "Color",
       "section": "Text & Icon",
@@ -122,12 +85,7 @@
     },
     {
       "pathString": "color.text-&-icon.primary.hovered",
-      "path": [
-        "color",
-        "text-&-icon",
-        "primary",
-        "hovered"
-      ],
+      "path": ["color", "text-&-icon", "primary", "hovered"],
       "value": "#ec59a5",
       "category": "Color",
       "section": "Text & Icon",
@@ -137,12 +95,7 @@
     },
     {
       "pathString": "color.text-&-icon.primary.pressed",
-      "path": [
-        "color",
-        "text-&-icon",
-        "primary",
-        "pressed"
-      ],
+      "path": ["color", "text-&-icon", "primary", "pressed"],
       "value": "#f080ba",
       "category": "Color",
       "section": "Text & Icon",
@@ -152,12 +105,7 @@
     },
     {
       "pathString": "color.text-&-icon.inverted.standard",
-      "path": [
-        "color",
-        "text-&-icon",
-        "inverted",
-        "standard"
-      ],
+      "path": ["color", "text-&-icon", "inverted", "standard"],
       "value": "#000000",
       "comment": "Standard text color inverted to be used on high contrast colors like ui/extra strong",
       "category": "Color",
@@ -168,12 +116,7 @@
     },
     {
       "pathString": "color.text-&-icon.inverted.additional",
-      "path": [
-        "color",
-        "text-&-icon",
-        "inverted",
-        "additional"
-      ],
+      "path": ["color", "text-&-icon", "inverted", "additional"],
       "value": "hsla(0, 0%, 0%, 0.65)",
       "comment": "Additional text color inverted to be used on high contrast colors like ui/extra strong",
       "category": "Color",
@@ -183,13 +126,52 @@
       "jsPathName": "color.textIcon.inverted.additional"
     },
     {
+      "pathString": "color.text-&-icon.white.standard",
+      "path": ["color", "text-&-icon", "white", "standard"],
+      "value": "#ffffff",
+      "comment": "Light text to be used on backgrounds that are dark in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / White / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-white-standard",
+      "jsPathName": "color.textIcon.white.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.white.additional",
+      "path": ["color", "text-&-icon", "white", "additional"],
+      "value": "hsla(0, 0%, 100%, 0.65)",
+      "comment": "Semi-Light text to be used on backgrounds that are dark in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / White / Additional",
+      "cssVariableName": "--telekom-color-text-and-icon-white-additional",
+      "jsPathName": "color.textIcon.white.additional"
+    },
+    {
+      "pathString": "color.text-&-icon.black.standard",
+      "path": ["color", "text-&-icon", "black", "standard"],
+      "value": "#000000",
+      "comment": "This text color is dark in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Black / Standard",
+      "cssVariableName": "--telekom-color-text-and-icon-black-standard",
+      "jsPathName": "color.textIcon.black.standard"
+    },
+    {
+      "pathString": "color.text-&-icon.black.additional",
+      "path": ["color", "text-&-icon", "black", "additional"],
+      "value": "hsla(0, 0%, 0%, 0.65)",
+      "comment": "This text color is dark in all modes (light & dark)",
+      "category": "Color",
+      "section": "Text & Icon",
+      "name": "Text & Icon / Black / Additional",
+      "cssVariableName": "--telekom-color-text-and-icon-black-additional",
+      "jsPathName": "color.textIcon.black.additional"
+    },
+    {
       "pathString": "color.text-&-icon.functional.informational",
-      "path": [
-        "color",
-        "text-&-icon",
-        "functional",
-        "informational"
-      ],
+      "path": ["color", "text-&-icon", "functional", "informational"],
       "value": "#268aff",
       "category": "Color",
       "section": "Text & Icon",
@@ -199,12 +181,7 @@
     },
     {
       "pathString": "color.text-&-icon.functional.success",
-      "path": [
-        "color",
-        "text-&-icon",
-        "functional",
-        "success"
-      ],
+      "path": ["color", "text-&-icon", "functional", "success"],
       "value": "#13be68",
       "category": "Color",
       "section": "Text & Icon",
@@ -214,12 +191,7 @@
     },
     {
       "pathString": "color.text-&-icon.functional.danger",
-      "path": [
-        "color",
-        "text-&-icon",
-        "functional",
-        "danger"
-      ],
+      "path": ["color", "text-&-icon", "functional", "danger"],
       "value": "#fe4543",
       "category": "Color",
       "section": "Text & Icon",
@@ -229,12 +201,7 @@
     },
     {
       "pathString": "color.text-&-icon.functional.warning",
-      "path": [
-        "color",
-        "text-&-icon",
-        "functional",
-        "warning"
-      ],
+      "path": ["color", "text-&-icon", "functional", "warning"],
       "value": "#e26617",
       "category": "Color",
       "section": "Text & Icon",
@@ -243,44 +210,8 @@
       "jsPathName": "color.textIcon.functional.warning"
     },
     {
-      "pathString": "color.text-&-icon.functional.white",
-      "path": [
-        "color",
-        "text-&-icon",
-        "functional",
-        "white"
-      ],
-      "value": "#ffffff",
-      "comment": "This text color is white in all modes (light & dark)",
-      "category": "Color",
-      "section": "Text & Icon",
-      "name": "Text & Icon / Functional / White",
-      "cssVariableName": "--telekom-color-text-and-icon-functional-white",
-      "jsPathName": "color.textIcon.functional.white"
-    },
-    {
-      "pathString": "color.text-&-icon.functional.black",
-      "path": [
-        "color",
-        "text-&-icon",
-        "functional",
-        "black"
-      ],
-      "value": "#000000",
-      "comment": "This text color is black in all modes (light & dark)",
-      "category": "Color",
-      "section": "Text & Icon",
-      "name": "Text & Icon / Functional / Black",
-      "cssVariableName": "--telekom-color-text-and-icon-functional-black",
-      "jsPathName": "color.textIcon.functional.black"
-    },
-    {
       "pathString": "color.background.canvas",
-      "path": [
-        "color",
-        "background",
-        "canvas"
-      ],
+      "path": ["color", "background", "canvas"],
       "value": "#050505",
       "comment": "Use as the background for your product (app, website, etc.)",
       "category": "Color",
@@ -289,25 +220,71 @@
       "cssVariableName": "--telekom-color-background-canvas",
       "jsPathName": "color.background.canvas",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional",
-        "color.text-&-icon.disabled",
-        "color.text-&-icon.link.standard",
-        "color.text-&-icon.link.hovered",
-        "color.text-&-icon.link.visited",
-        "color.text-&-icon.link.active",
-        "color.text-&-icon.primary.standard",
-        "color.text-&-icon.primary.hovered",
-        "color.text-&-icon.primary.pressed"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 20.381370411830552,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 20.381370411830552,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.disabled",
+          "name": "Text & Icon / Disabled",
+          "ratio": 20.381370411830552,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.standard",
+          "name": "Text & Icon / Link / Standard",
+          "ratio": 8.36271512984456,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.hovered",
+          "name": "Text & Icon / Link / Hovered",
+          "ratio": 10.637128163284434,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.visited",
+          "name": "Text & Icon / Link / Visited",
+          "ratio": 8.329270639990677,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.active",
+          "name": "Text & Icon / Link / Active",
+          "ratio": 13.736259641284406,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.primary.standard",
+          "name": "Text & Icon / Primary / Standard",
+          "ratio": 4.3537917180403385,
+          "level": "aa-large"
+        },
+        {
+          "path": "color.text-&-icon.primary.hovered",
+          "name": "Text & Icon / Primary / Hovered",
+          "ratio": 6.3462223399885165,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.primary.pressed",
+          "name": "Text & Icon / Primary / Pressed",
+          "ratio": 8.251306281060002,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.background.canvas-subtle",
-      "path": [
-        "color",
-        "background",
-        "canvas-subtle"
-      ],
+      "path": ["color", "background", "canvas-subtle"],
       "value": "#161617",
       "comment": "Use as the background for your product (app, website, etc.)",
       "category": "Color",
@@ -316,22 +293,53 @@
       "cssVariableName": "--telekom-color-background-canvas-subtle",
       "jsPathName": "color.background.canvasSubtle",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional",
-        "color.text-&-icon.disabled",
-        "color.text-&-icon.link.standard",
-        "color.text-&-icon.link.hovered",
-        "color.text-&-icon.link.visited",
-        "color.text-&-icon.link.active"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 18.083949686928708,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 18.083949686928708,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.disabled",
+          "name": "Text & Icon / Disabled",
+          "ratio": 18.083949686928708,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.standard",
+          "name": "Text & Icon / Link / Standard",
+          "ratio": 7.42005648287728,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.hovered",
+          "name": "Text & Icon / Link / Hovered",
+          "ratio": 9.438094035452602,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.visited",
+          "name": "Text & Icon / Link / Visited",
+          "ratio": 7.390381909499647,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.active",
+          "name": "Text & Icon / Link / Active",
+          "ratio": 12.187886448272739,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.background.backdrop",
-      "path": [
-        "color",
-        "background",
-        "backdrop"
-      ],
+      "path": ["color", "background", "backdrop"],
       "value": "hsla(0, 0%, 0%, 0.65)",
       "comment": "Use to overlay content below dialogs to separate dialog from content below",
       "category": "Color",
@@ -342,11 +350,7 @@
     },
     {
       "pathString": "color.background.surface",
-      "path": [
-        "color",
-        "background",
-        "surface"
-      ],
+      "path": ["color", "background", "surface"],
       "value": "#272729",
       "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
       "category": "Color",
@@ -355,25 +359,71 @@
       "cssVariableName": "--telekom-color-background-surface",
       "jsPathName": "color.background.surface",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional",
-        "color.text-&-icon.disabled",
-        "color.text-&-icon.link.standard",
-        "color.text-&-icon.link.hovered",
-        "color.text-&-icon.link.visited",
-        "color.text-&-icon.link.active",
-        "color.text-&-icon.primary.standard",
-        "color.text-&-icon.primary.hovered",
-        "color.text-&-icon.primary.pressed"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 14.909545219184075,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 14.909545219184075,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.disabled",
+          "name": "Text & Icon / Disabled",
+          "ratio": 14.909545219184075,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.standard",
+          "name": "Text & Icon / Link / Standard",
+          "ratio": 6.117561128823709,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.link.hovered",
+          "name": "Text & Icon / Link / Hovered",
+          "ratio": 7.781358178971515,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.visited",
+          "name": "Text & Icon / Link / Visited",
+          "ratio": 6.093095544629255,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.link.active",
+          "name": "Text & Icon / Link / Active",
+          "ratio": 10.048459947781737,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.primary.standard",
+          "name": "Text & Icon / Primary / Standard",
+          "ratio": 3.1849209932101608,
+          "level": "aa-large"
+        },
+        {
+          "path": "color.text-&-icon.primary.hovered",
+          "name": "Text & Icon / Primary / Hovered",
+          "ratio": 4.642439985003772,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.primary.pressed",
+          "name": "Text & Icon / Primary / Pressed",
+          "ratio": 6.036062425095405,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.background.surface-subtle",
-      "path": [
-        "color",
-        "background",
-        "surface-subtle"
-      ],
+      "path": ["color", "background", "surface-subtle"],
       "value": "#38393b",
       "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
       "category": "Color",
@@ -382,22 +432,53 @@
       "cssVariableName": "--telekom-color-background-surface-subtle",
       "jsPathName": "color.background.surfaceSubtle",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional",
-        "color.text-&-icon.disabled",
-        "color.text-&-icon.link.standard",
-        "color.text-&-icon.link.hovered",
-        "color.text-&-icon.link.visited",
-        "color.text-&-icon.link.active"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.disabled",
+          "name": "Text & Icon / Disabled",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.link.standard",
+          "name": "Text & Icon / Link / Standard",
+          "ratio": 4.743344589669335,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.link.hovered",
+          "name": "Text & Icon / Link / Hovered",
+          "ratio": 6.033395080369354,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.link.visited",
+          "name": "Text & Icon / Link / Visited",
+          "ratio": 4.724374824761702,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.link.active",
+          "name": "Text & Icon / Link / Active",
+          "ratio": 7.791227112263323,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.background.surface-highlight",
-      "path": [
-        "color",
-        "background",
-        "surface-highlight"
-      ],
+      "path": ["color", "background", "surface-highlight"],
       "value": "#4a4b4d",
       "comment": "Use as the background of elements that should stand out highlighted sections, footer, etc.",
       "category": "Color",
@@ -406,16 +487,17 @@
       "cssVariableName": "--telekom-color-background-surface-highlight",
       "jsPathName": "color.background.surfaceHighlight",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 8.732664279593937,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.primary.standard",
-      "path": [
-        "color",
-        "primary",
-        "standard"
-      ],
+      "path": ["color", "primary", "standard"],
       "value": "#e20074",
       "category": "Color",
       "section": "Primary",
@@ -423,16 +505,17 @@
       "cssVariableName": "--telekom-color-primary-standard",
       "jsPathName": "color.primary.standard",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 4.681292016652625,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.primary.hovered",
-      "path": [
-        "color",
-        "primary",
-        "hovered"
-      ],
+      "path": ["color", "primary", "hovered"],
       "value": "#c00063",
       "category": "Color",
       "section": "Primary",
@@ -440,16 +523,17 @@
       "cssVariableName": "--telekom-color-primary-hovered",
       "jsPathName": "color.primary.hovered",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 6.137723466627249,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.primary.pressed",
-      "path": [
-        "color",
-        "primary",
-        "pressed"
-      ],
+      "path": ["color", "primary", "pressed"],
       "value": "#9e0051",
       "category": "Color",
       "section": "Primary",
@@ -457,241 +541,345 @@
       "cssVariableName": "--telekom-color-primary-pressed",
       "jsPathName": "color.primary.pressed",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 8.16283260838444,
+          "level": "aaa"
+        }
       ]
     },
     {
-      "pathString": "color.ui.border.standard",
-      "path": [
-        "color",
-        "ui",
-        "border",
-        "standard"
-      ],
+      "pathString": "color.ui.outlined.border.standard",
+      "path": ["color", "ui", "outlined", "border", "standard"],
       "value": "hsla(0, 0%, 100%, 0.36)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Border / Standard",
-      "cssVariableName": "--telekom-color-ui-border-standard",
-      "jsPathName": "color.ui.border.standard"
+      "name": "UI / Outlined / Border / Standard",
+      "cssVariableName": "--telekom-color-ui-outlined-border-standard",
+      "jsPathName": "color.ui.outlined.border.standard"
     },
     {
-      "pathString": "color.ui.border.hovered",
-      "path": [
-        "color",
-        "ui",
-        "border",
-        "hovered"
-      ],
+      "pathString": "color.ui.outlined.border.hovered",
+      "path": ["color", "ui", "outlined", "border", "hovered"],
       "value": "hsla(0, 0%, 100%, 0.54)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Border / Hovered",
-      "cssVariableName": "--telekom-color-ui-border-hovered",
-      "jsPathName": "color.ui.border.hovered"
+      "name": "UI / Outlined / Border / Hovered",
+      "cssVariableName": "--telekom-color-ui-outlined-border-hovered",
+      "jsPathName": "color.ui.outlined.border.hovered"
     },
     {
-      "pathString": "color.ui.border.pressed",
-      "path": [
-        "color",
-        "ui",
-        "border",
-        "pressed"
-      ],
+      "pathString": "color.ui.outlined.border.pressed",
+      "path": ["color", "ui", "outlined", "border", "pressed"],
       "value": "hsla(0, 0%, 100%, 0.94)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Border / Pressed",
-      "cssVariableName": "--telekom-color-ui-border-pressed",
-      "jsPathName": "color.ui.border.pressed"
+      "name": "UI / Outlined / Border / Pressed",
+      "cssVariableName": "--telekom-color-ui-outlined-border-pressed",
+      "jsPathName": "color.ui.outlined.border.pressed"
     },
     {
-      "pathString": "color.ui.border.active",
-      "path": [
-        "color",
-        "ui",
-        "border",
-        "active"
-      ],
+      "pathString": "color.ui.outlined.border.active",
+      "path": ["color", "ui", "outlined", "border", "active"],
       "value": "hsla(0, 0%, 100%, 0.94)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Border / Active",
-      "cssVariableName": "--telekom-color-ui-border-active",
-      "jsPathName": "color.ui.border.active"
+      "name": "UI / Outlined / Border / Active",
+      "cssVariableName": "--telekom-color-ui-outlined-border-active",
+      "jsPathName": "color.ui.outlined.border.active"
     },
     {
-      "pathString": "color.ui.border.disabled",
-      "path": [
-        "color",
-        "ui",
-        "border",
-        "disabled"
-      ],
+      "pathString": "color.ui.outlined.border.disabled",
+      "path": ["color", "ui", "outlined", "border", "disabled"],
       "value": "hsla(0, 0%, 100%, 0.21)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Border / Disabled",
-      "cssVariableName": "--telekom-color-ui-border-disabled",
-      "jsPathName": "color.ui.border.disabled"
+      "name": "UI / Outlined / Border / Disabled",
+      "cssVariableName": "--telekom-color-ui-outlined-border-disabled",
+      "jsPathName": "color.ui.outlined.border.disabled"
     },
     {
-      "pathString": "color.ui.plate.hovered",
-      "path": [
-        "color",
-        "ui",
-        "plate",
-        "hovered"
-      ],
+      "pathString": "color.ui.outlined.fill.standard",
+      "path": ["color", "ui", "outlined", "fill", "standard"],
+      "value": "hsla(0, 0%, 100%, 0)",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Outlined / Fill / Standard",
+      "cssVariableName": "--telekom-color-ui-outlined-fill-standard",
+      "jsPathName": "color.ui.outlined.fill.standard"
+    },
+    {
+      "pathString": "color.ui.outlined.fill.hovered",
+      "path": ["color", "ui", "outlined", "fill", "hovered"],
       "value": "hsla(0, 0%, 100%, 0.14)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Plate / Hovered",
-      "cssVariableName": "--telekom-color-ui-plate-hovered",
-      "jsPathName": "color.ui.plate.hovered"
+      "name": "UI / Outlined / Fill / Hovered",
+      "cssVariableName": "--telekom-color-ui-outlined-fill-hovered",
+      "jsPathName": "color.ui.outlined.fill.hovered"
     },
     {
-      "pathString": "color.ui.plate.pressed",
-      "path": [
-        "color",
-        "ui",
-        "plate",
-        "pressed"
-      ],
+      "pathString": "color.ui.outlined.fill.pressed",
+      "path": ["color", "ui", "outlined", "fill", "pressed"],
       "value": "hsla(0, 0%, 100%, 0.21)",
-      "comment": "Use for disabled interactive elements in combination with the disabled text color",
       "category": "Color",
       "section": "UI",
-      "name": "UI / Plate / Pressed",
-      "cssVariableName": "--telekom-color-ui-plate-pressed",
-      "jsPathName": "color.ui.plate.pressed"
+      "name": "UI / Outlined / Fill / Pressed",
+      "cssVariableName": "--telekom-color-ui-outlined-fill-pressed",
+      "jsPathName": "color.ui.outlined.fill.pressed"
     },
     {
-      "pathString": "color.ui.general.base",
-      "path": [
-        "color",
-        "ui",
-        "general",
-        "base"
-      ],
-      "value": "#38393b",
+      "pathString": "color.ui.outlined.fill.active",
+      "path": ["color", "ui", "outlined", "fill", "active"],
+      "value": "hsla(0, 0%, 100%, 0.21)",
       "category": "Color",
       "section": "UI",
-      "name": "UI / General / Base",
-      "cssVariableName": "--telekom-color-ui-general-base",
-      "jsPathName": "color.ui.general.base",
-      "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional"
-      ]
+      "name": "UI / Outlined / Fill / Active",
+      "cssVariableName": "--telekom-color-ui-outlined-fill-active",
+      "jsPathName": "color.ui.outlined.fill.active"
     },
     {
-      "pathString": "color.ui.general.subtle",
-      "path": [
-        "color",
-        "ui",
-        "general",
-        "subtle"
-      ],
-      "value": "#272729",
+      "pathString": "color.ui.outlined.fill.disabled",
+      "path": ["color", "ui", "outlined", "fill", "disabled"],
+      "value": "hsla(0, 0%, 100%, 0)",
       "category": "Color",
       "section": "UI",
-      "name": "UI / General / Subtle",
-      "cssVariableName": "--telekom-color-ui-general-subtle",
-      "jsPathName": "color.ui.general.subtle",
-      "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional"
-      ]
+      "name": "UI / Outlined / Fill / Disabled",
+      "cssVariableName": "--telekom-color-ui-outlined-fill-disabled",
+      "jsPathName": "color.ui.outlined.fill.disabled"
     },
     {
-      "pathString": "color.ui.general.light",
-      "path": [
-        "color",
-        "ui",
-        "general",
-        "light"
-      ],
-      "value": "#38393b",
+      "pathString": "color.ui.ghost.hovered",
+      "path": ["color", "ui", "ghost", "hovered"],
+      "value": "hsla(0, 0%, 100%, 0.14)",
       "category": "Color",
       "section": "UI",
-      "name": "UI / General / Light",
-      "cssVariableName": "--telekom-color-ui-general-light",
-      "jsPathName": "color.ui.general.light",
-      "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.additional"
-      ]
+      "name": "UI / Ghost / Hovered",
+      "cssVariableName": "--telekom-color-ui-ghost-hovered",
+      "jsPathName": "color.ui.ghost.hovered"
     },
     {
-      "pathString": "color.ui.general.regular",
-      "path": [
-        "color",
-        "ui",
-        "general",
-        "regular"
-      ],
-      "value": "#5d5f61",
+      "pathString": "color.ui.ghost.hovered-inverted",
+      "path": ["color", "ui", "ghost", "hovered-inverted"],
+      "value": "hsla(0, 0%, 0%, 0.07)",
       "category": "Color",
       "section": "UI",
-      "name": "UI / General / Regular",
-      "cssVariableName": "--telekom-color-ui-general-regular",
-      "jsPathName": "color.ui.general.regular",
-      "contrastChecks": [
-        "color.text-&-icon.standard"
-      ]
+      "name": "UI / Ghost / Hovered Inverted",
+      "cssVariableName": "--telekom-color-ui-ghost-hovered-inverted",
+      "jsPathName": "color.ui.ghost.hoveredInverted"
     },
     {
-      "pathString": "color.ui.general.strong",
-      "path": [
-        "color",
-        "ui",
-        "general",
-        "strong"
-      ],
+      "pathString": "color.ui.ghost.pressed",
+      "path": ["color", "ui", "ghost", "pressed"],
+      "value": "hsla(0, 0%, 100%, 0.27)",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Ghost / Pressed",
+      "cssVariableName": "--telekom-color-ui-ghost-pressed",
+      "jsPathName": "color.ui.ghost.pressed"
+    },
+    {
+      "pathString": "color.ui.ghost.pressed-inverted",
+      "path": ["color", "ui", "ghost", "pressed-inverted"],
+      "value": "hsla(0, 0%, 0%, 0.21)",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Ghost / Pressed Inverted",
+      "cssVariableName": "--telekom-color-ui-ghost-pressed-inverted",
+      "jsPathName": "color.ui.ghost.pressedInverted"
+    },
+    {
+      "pathString": "color.ui.ghost.active",
+      "path": ["color", "ui", "ghost", "active"],
+      "value": "hsla(0, 0%, 100%, 0.27)",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Ghost / Active",
+      "cssVariableName": "--telekom-color-ui-ghost-active",
+      "jsPathName": "color.ui.ghost.active"
+    },
+    {
+      "pathString": "color.ui.solid.standard",
+      "path": ["color", "ui", "solid", "standard"],
       "value": "#898b8f",
       "category": "Color",
       "section": "UI",
-      "name": "UI / General / Strong",
-      "cssVariableName": "--telekom-color-ui-general-strong",
-      "jsPathName": "color.ui.general.strong",
+      "name": "UI / Solid / Standard",
+      "cssVariableName": "--telekom-color-ui-solid-standard",
+      "jsPathName": "color.ui.solid.standard"
+    },
+    {
+      "pathString": "color.ui.solid.hovered",
+      "path": ["color", "ui", "solid", "hovered"],
+      "value": "#4a4b4d",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Solid / Hovered",
+      "cssVariableName": "--telekom-color-ui-solid-hovered",
+      "jsPathName": "color.ui.solid.hovered"
+    },
+    {
+      "pathString": "color.ui.solid.pressed",
+      "path": ["color", "ui", "solid", "pressed"],
+      "value": "#050505",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Solid / Pressed",
+      "cssVariableName": "--telekom-color-ui-solid-pressed",
+      "jsPathName": "color.ui.solid.pressed"
+    },
+    {
+      "pathString": "color.ui.solid.disabled",
+      "path": ["color", "ui", "solid", "disabled"],
+      "value": "#e7e8e9",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Solid / Disabled",
+      "cssVariableName": "--telekom-color-ui-solid-disabled",
+      "jsPathName": "color.ui.solid.disabled"
+    },
+    {
+      "pathString": "color.ui.additional.base",
+      "path": ["color", "ui", "additional", "base"],
+      "value": "#38393b",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Additional / Base",
+      "cssVariableName": "--telekom-color-ui-additional-base",
+      "jsPathName": "color.ui.additional.base",
       "contrastChecks": [
-        "color.text-&-icon.inverted.standard",
-        "color.text-&-icon.inverted.additional"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        }
       ]
     },
     {
-      "pathString": "color.ui.general.extra-strong",
-      "path": [
-        "color",
-        "ui",
-        "general",
-        "extra-strong"
-      ],
+      "pathString": "color.ui.additional.subtle",
+      "path": ["color", "ui", "additional", "subtle"],
+      "value": "#272729",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Additional / Subtle",
+      "cssVariableName": "--telekom-color-ui-additional-subtle",
+      "jsPathName": "color.ui.additional.subtle",
+      "contrastChecks": [
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 14.909545219184075,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 14.909545219184075,
+          "level": "aaa"
+        }
+      ]
+    },
+    {
+      "pathString": "color.ui.additional.light",
+      "path": ["color", "ui", "additional", "light"],
+      "value": "#38393b",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Additional / Light",
+      "cssVariableName": "--telekom-color-ui-additional-light",
+      "jsPathName": "color.ui.additional.light",
+      "contrastChecks": [
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.additional",
+          "name": "Text & Icon / Additional",
+          "ratio": 11.560343928013255,
+          "level": "aaa"
+        }
+      ]
+    },
+    {
+      "pathString": "color.ui.additional.regular",
+      "path": ["color", "ui", "additional", "regular"],
+      "value": "#5d5f61",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Additional / Regular",
+      "cssVariableName": "--telekom-color-ui-additional-regular",
+      "jsPathName": "color.ui.additional.regular",
+      "contrastChecks": [
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 6.412354182829931,
+          "level": "aa"
+        }
+      ]
+    },
+    {
+      "pathString": "color.ui.additional.strong",
+      "path": ["color", "ui", "additional", "strong"],
+      "value": "#898b8f",
+      "category": "Color",
+      "section": "UI",
+      "name": "UI / Additional / Strong",
+      "cssVariableName": "--telekom-color-ui-additional-strong",
+      "jsPathName": "color.ui.additional.strong",
+      "contrastChecks": [
+        {
+          "path": "color.text-&-icon.inverted.standard",
+          "name": "Text & Icon / Inverted / Standard",
+          "ratio": 6.153354593477463,
+          "level": "aa"
+        },
+        {
+          "path": "color.text-&-icon.inverted.additional",
+          "name": "Text & Icon / Inverted / Additional",
+          "ratio": 6.153354593477463,
+          "level": "aa"
+        }
+      ]
+    },
+    {
+      "pathString": "color.ui.additional.extra-strong",
+      "path": ["color", "ui", "additional", "extra-strong"],
       "value": "#f0f1f1",
       "category": "Color",
       "section": "UI",
-      "name": "UI / General / Extra Strong",
-      "cssVariableName": "--telekom-color-ui-general-extra-strong",
-      "jsPathName": "color.ui.general.extraStrong",
+      "name": "UI / Additional / Extra Strong",
+      "cssVariableName": "--telekom-color-ui-additional-extra-strong",
+      "jsPathName": "color.ui.additional.extraStrong",
       "contrastChecks": [
-        "color.text-&-icon.inverted.standard",
-        "color.text-&-icon.inverted.additional"
+        {
+          "path": "color.text-&-icon.inverted.standard",
+          "name": "Text & Icon / Inverted / Standard",
+          "ratio": 18.55734649702286,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.inverted.additional",
+          "name": "Text & Icon / Inverted / Additional",
+          "ratio": 18.55734649702286,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.functional.focus",
-      "path": [
-        "color",
-        "functional",
-        "focus"
-      ],
+      "path": ["color", "functional", "focus"],
       "value": "#268aff",
       "category": "Color",
       "section": "Functional",
@@ -701,12 +889,7 @@
     },
     {
       "pathString": "color.functional.success.standard",
-      "path": [
-        "color",
-        "functional",
-        "success",
-        "standard"
-      ],
+      "path": ["color", "functional", "success", "standard"],
       "value": "#09572f",
       "category": "Color",
       "section": "Functional",
@@ -714,17 +897,17 @@
       "cssVariableName": "--telekom-color-functional-success-standard",
       "jsPathName": "color.functional.success.standard",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 8.69226678132826,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.functional.success.hovered",
-      "path": [
-        "color",
-        "functional",
-        "success",
-        "hovered"
-      ],
+      "path": ["color", "functional", "success", "hovered"],
       "value": "#0b6d3b",
       "category": "Color",
       "section": "Functional",
@@ -732,17 +915,17 @@
       "cssVariableName": "--telekom-color-functional-success-hovered",
       "jsPathName": "color.functional.success.hovered",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 6.432171087183627,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.success.pressed",
-      "path": [
-        "color",
-        "functional",
-        "success",
-        "pressed"
-      ],
+      "path": ["color", "functional", "success", "pressed"],
       "value": "#0d8347",
       "category": "Color",
       "section": "Functional",
@@ -750,17 +933,17 @@
       "cssVariableName": "--telekom-color-functional-success-pressed",
       "jsPathName": "color.functional.success.pressed",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 4.822465062801243,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.success.subtle",
-      "path": [
-        "color",
-        "functional",
-        "success",
-        "subtle"
-      ],
+      "path": ["color", "functional", "success", "subtle"],
       "value": "#003319",
       "category": "Color",
       "section": "Functional",
@@ -768,18 +951,23 @@
       "cssVariableName": "--telekom-color-functional-success-subtle",
       "jsPathName": "color.functional.success.subtle",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.functional.success"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 14.117001531379112,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.functional.success",
+          "name": "Text & Icon / Functional / Success",
+          "ratio": 5.776520359990932,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.interaction.standard",
-      "path": [
-        "color",
-        "functional",
-        "interaction",
-        "standard"
-      ],
+      "path": ["color", "functional", "interaction", "standard"],
       "value": "#005ac4",
       "category": "Color",
       "section": "Functional",
@@ -789,12 +977,7 @@
     },
     {
       "pathString": "color.functional.interaction.hovered",
-      "path": [
-        "color",
-        "functional",
-        "interaction",
-        "hovered"
-      ],
+      "path": ["color", "functional", "interaction", "hovered"],
       "value": "#006cec",
       "category": "Color",
       "section": "Functional",
@@ -804,12 +987,7 @@
     },
     {
       "pathString": "color.functional.interaction.pressed",
-      "path": [
-        "color",
-        "functional",
-        "interaction",
-        "pressed"
-      ],
+      "path": ["color", "functional", "interaction", "pressed"],
       "value": "#268aff",
       "category": "Color",
       "section": "Functional",
@@ -819,12 +997,7 @@
     },
     {
       "pathString": "color.functional.interaction.subtle",
-      "path": [
-        "color",
-        "functional",
-        "interaction",
-        "subtle"
-      ],
+      "path": ["color", "functional", "interaction", "subtle"],
       "value": "#001733",
       "category": "Color",
       "section": "Functional",
@@ -834,12 +1007,7 @@
     },
     {
       "pathString": "color.functional.informational.standard",
-      "path": [
-        "color",
-        "functional",
-        "informational",
-        "standard"
-      ],
+      "path": ["color", "functional", "informational", "standard"],
       "value": "#005ac4",
       "category": "Color",
       "section": "Functional",
@@ -847,17 +1015,17 @@
       "cssVariableName": "--telekom-color-functional-informational-standard",
       "jsPathName": "color.functional.informational.standard",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 6.442567155205301,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.informational.hovered",
-      "path": [
-        "color",
-        "functional",
-        "informational",
-        "hovered"
-      ],
+      "path": ["color", "functional", "informational", "hovered"],
       "value": "#006cec",
       "category": "Color",
       "section": "Functional",
@@ -865,17 +1033,17 @@
       "cssVariableName": "--telekom-color-functional-informational-hovered",
       "jsPathName": "color.functional.informational.hovered",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 4.820659300253694,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.informational.pressed",
-      "path": [
-        "color",
-        "functional",
-        "informational",
-        "pressed"
-      ],
+      "path": ["color", "functional", "informational", "pressed"],
       "value": "#268aff",
       "category": "Color",
       "section": "Functional",
@@ -883,17 +1051,17 @@
       "cssVariableName": "--telekom-color-functional-informational-pressed",
       "jsPathName": "color.functional.informational.pressed",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 3.4080920747067642,
+          "level": "aa-large"
+        }
       ]
     },
     {
       "pathString": "color.functional.informational.subtle",
-      "path": [
-        "color",
-        "functional",
-        "informational",
-        "subtle"
-      ],
+      "path": ["color", "functional", "informational", "subtle"],
       "value": "#001733",
       "category": "Color",
       "section": "Functional",
@@ -901,18 +1069,23 @@
       "cssVariableName": "--telekom-color-functional-informational-subtle",
       "jsPathName": "color.functional.informational.subtle",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.functional.informational"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 17.94317010809227,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.functional.informational",
+          "name": "Text & Icon / Functional / Informational",
+          "ratio": 5.264872460828724,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.warning.standard",
-      "path": [
-        "color",
-        "functional",
-        "warning",
-        "standard"
-      ],
+      "path": ["color", "functional", "warning", "standard"],
       "value": "#e26617",
       "category": "Color",
       "section": "Functional",
@@ -920,17 +1093,17 @@
       "cssVariableName": "--telekom-color-functional-warning-standard",
       "jsPathName": "color.functional.warning.standard",
       "contrastChecks": [
-        "color.text-&-icon.functional.black"
+        {
+          "path": "color.text-&-icon.black.standard",
+          "name": "Text & Icon / Black / Standard",
+          "ratio": 6.146671038777646,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.warning.hovered",
-      "path": [
-        "color",
-        "functional",
-        "warning",
-        "hovered"
-      ],
+      "path": ["color", "functional", "warning", "hovered"],
       "value": "#ff7f1f",
       "category": "Color",
       "section": "Functional",
@@ -938,17 +1111,17 @@
       "cssVariableName": "--telekom-color-functional-warning-hovered",
       "jsPathName": "color.functional.warning.hovered",
       "contrastChecks": [
-        "color.text-&-icon.functional.black"
+        {
+          "path": "color.text-&-icon.black.standard",
+          "name": "Text & Icon / Black / Standard",
+          "ratio": 8.30753456197093,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.functional.warning.pressed",
-      "path": [
-        "color",
-        "functional",
-        "warning",
-        "pressed"
-      ],
+      "path": ["color", "functional", "warning", "pressed"],
       "value": "#ffa556",
       "category": "Color",
       "section": "Functional",
@@ -956,17 +1129,17 @@
       "cssVariableName": "--telekom-color-functional-warning-pressed",
       "jsPathName": "color.functional.warning.pressed",
       "contrastChecks": [
-        "color.text-&-icon.functional.black"
+        {
+          "path": "color.text-&-icon.black.standard",
+          "name": "Text & Icon / Black / Standard",
+          "ratio": 10.76843054961254,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.functional.warning.subtle",
-      "path": [
-        "color",
-        "functional",
-        "warning",
-        "subtle"
-      ],
+      "path": ["color", "functional", "warning", "subtle"],
       "value": "#331600",
       "category": "Color",
       "section": "Functional",
@@ -974,18 +1147,23 @@
       "cssVariableName": "--telekom-color-functional-warning-subtle",
       "jsPathName": "color.functional.warning.subtle",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.functional.warning"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 16.726067837409733,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.functional.warning",
+          "name": "Text & Icon / Functional / Warning",
+          "ratio": 4.8956969889922215,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.danger.standard",
-      "path": [
-        "color",
-        "functional",
-        "danger",
-        "standard"
-      ],
+      "path": ["color", "functional", "danger", "standard"],
       "value": "#9c0018",
       "category": "Color",
       "section": "Functional",
@@ -993,17 +1171,17 @@
       "cssVariableName": "--telekom-color-functional-danger-standard",
       "jsPathName": "color.functional.danger.standard",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 8.653465139957525,
+          "level": "aaa"
+        }
       ]
     },
     {
       "pathString": "color.functional.danger.hovered",
-      "path": [
-        "color",
-        "functional",
-        "danger",
-        "hovered"
-      ],
+      "path": ["color", "functional", "danger", "hovered"],
       "value": "#c1001c",
       "category": "Color",
       "section": "Functional",
@@ -1011,17 +1189,17 @@
       "cssVariableName": "--telekom-color-functional-danger-hovered",
       "jsPathName": "color.functional.danger.hovered",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 6.394135709136642,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.danger.pressed",
-      "path": [
-        "color",
-        "functional",
-        "danger",
-        "pressed"
-      ],
+      "path": ["color", "functional", "danger", "pressed"],
       "value": "#e60021",
       "category": "Color",
       "section": "Functional",
@@ -1029,17 +1207,17 @@
       "cssVariableName": "--telekom-color-functional-danger-pressed",
       "jsPathName": "color.functional.danger.pressed",
       "contrastChecks": [
-        "color.text-&-icon.functional.white"
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 4.787350520914719,
+          "level": "aa"
+        }
       ]
     },
     {
       "pathString": "color.functional.danger.subtle",
-      "path": [
-        "color",
-        "functional",
-        "danger",
-        "subtle"
-      ],
+      "path": ["color", "functional", "danger", "subtle"],
       "value": "#330008",
       "category": "Color",
       "section": "Functional",
@@ -1047,8 +1225,18 @@
       "cssVariableName": "--telekom-color-functional-danger-subtle",
       "jsPathName": "color.functional.danger.subtle",
       "contrastChecks": [
-        "color.text-&-icon.standard",
-        "color.text-&-icon.functional.danger"
+        {
+          "path": "color.text-&-icon.standard",
+          "name": "Text & Icon / Standard",
+          "ratio": 18.352347059790226,
+          "level": "aaa"
+        },
+        {
+          "path": "color.text-&-icon.functional.danger",
+          "name": "Text & Icon / Functional / Danger",
+          "ratio": 5.3715260948747465,
+          "level": "aa"
+        }
       ]
     }
   ]
