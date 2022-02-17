@@ -86,9 +86,9 @@
 .data-grid {
   position: relative;
   display: block;
-  background: var(--telekom-color-background-surface);
+  background: var(--telekom-color-ui-outlined-fill-standard);
   border-radius: var(--telekom-radius-large);
-  border: 1px solid var(--telekom-color-ui-additional-subtle);
+  border: 1px solid var(--telekom-color-ui-additional-light);
   overflow: hidden;
 }
 
@@ -150,9 +150,9 @@
 .thead {
   display: block;
   white-space: nowrap;
-  border-bottom: 1px solid var(--telekom-color-ui-additional-subtle);
+  border-bottom: 1px solid var(--telekom-color-ui-additional-light);
   position: relative;
-  background: var(--telekom-color-background-surface);
+  background: var(--telekom-color-ui-outlined-fill-standard);
   z-index: 1;
 }
 .thead-sortable {
@@ -160,7 +160,7 @@
 }
 .thead-sortable:focus {
   box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-);
+    var(--telekom-color-functional-focus);
 }
 
 .thead__cell {
@@ -244,7 +244,7 @@
   pointer-events: none;
   height: 100%;
   width: 1px;
-  background: var(--telekom-color-ui-additional-subtle);
+  background: var(--telekom-color-ui-additional-light);
 }
 
 .thead__cell:first-child {

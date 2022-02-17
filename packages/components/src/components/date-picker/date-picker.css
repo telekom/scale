@@ -21,7 +21,7 @@ duet-date-picker {
 
   /* FIXME */
   --duet-color-text-active: var(
-    --telekom-color-text-and-icon-inverted-standard,
+    --telekom-color-text-and-icon-white-standard,
     #ffffff
   );
   /* FIXME */
@@ -39,9 +39,9 @@ duet-date-picker {
 }
 
 duet-date-picker .duet-date__input {
-  /* FIXME:TOKEN use ui/border */
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-outlined-border-standard);
+  background-color: var(--telekom-color-ui-outlined-fill-standard);
   padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0
     var(--telekom-spacing-unit-x3);
   height: var(--telekom-spacing-unit-x12);
@@ -50,6 +50,7 @@ duet-date-picker .duet-date__input {
 duet-date-picker .duet-date__input:hover {
   border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-outlined-border-hovered);
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
 duet-date-picker .duet-date__input:focus {
@@ -71,11 +72,15 @@ duet-date-picker .duet-date__toggle:focus {
     var(--telekom-color-functional-focus);
 }
 
-.scale-date-picker:not(.scale-date-picker--disabled) duet-date-picker .duet-date__toggle:hover {
+.scale-date-picker:not(.scale-date-picker--disabled)
+  duet-date-picker
+  .duet-date__toggle:hover {
   background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
-.scale-date-picker:not(.scale-date-picker--disabled) duet-date-picker .duet-date__toggle:active {
+.scale-date-picker:not(.scale-date-picker--disabled)
+  duet-date-picker
+  .duet-date__toggle:active {
   background-color: var(--telekom-color-ui-outlined-fill-pressed);
 }
 /* FIXME:TOKEN-alpha8 this could just be removed */
@@ -180,11 +185,13 @@ duet-date-picker .duet-date__input:focus::placeholder {
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:hover {
   border: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-text-and-icon-primary-hovered);
+    var(--telekom-color-functional-danger-hovered);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
   border: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-text-and-icon-primary-hovered);
+    var(--telekom-color-functional-danger-pressed);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 .scale-date-picker--status-error .date-picker__helper-text {
   color: var(--telekom-color-text-and-icon-functional-danger);
@@ -244,7 +251,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 /* Disabled */
 
-.scale-date-picker.scale-date-picker--disabled {
+.scale-date-picker.scale-date-picker--disabled input,
+.scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
   cursor: not-allowed;
 }
 .scale-date-picker.scale-date-picker--disabled input,
@@ -252,7 +260,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
   color: var(--telekom-color-text-and-icon-disabled);
   /* FIXME */
   border-color: var(--telekom-color-ui-outlined-border-disabled);
-  background: transparent;
+  background: var(--telekom-color-ui-outlined-fill-disabled);
 }
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
   color: var(--telekom-color-text-and-icon-disabled);
@@ -310,13 +318,13 @@ duet-date-picker .duet-date__select select:focus + .duet-date__select-label {
 }
 
 duet-date-picker .duet-date__select select:hover + .duet-date__select-label {
-  background: var(--telekom-color-text-and-icon-primary-hovered);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-primary-hovered);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 duet-date-picker .duet-date__select select:active + .duet-date__select-label {
   box-shadow: none;
-  background: var(--telekom-color-text-and-icon-primary-pressed);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-primary-pressed);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 
 duet-date-picker .duet-date__prev,
@@ -331,13 +339,13 @@ duet-date-picker .duet-date__next svg {
 }
 duet-date-picker .duet-date__prev:hover,
 duet-date-picker .duet-date__next:hover {
-  background: var(--telekom-color-text-and-icon-primary-hovered);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-primary-hovered);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 duet-date-picker .duet-date__prev:active,
 duet-date-picker .duet-date__next:active {
-  background: var(--telekom-color-text-and-icon-primary-pressed);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-primary-pressed);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 duet-date-picker .duet-date__prev:focus,
 duet-date-picker .duet-date__next:focus {
@@ -363,6 +371,7 @@ duet-date-picker .duet-date__day {
   padding: 0;
   border-radius: var(--radius-day);
   font-size: var(--font-size-day);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 duet-date-picker .duet-date__day.is-today {
@@ -370,7 +379,7 @@ duet-date-picker .duet-date__day.is-today {
 }
 duet-date-picker .duet-date__day.is-disabled {
   opacity: 1;
-  color: var(--scl-color-grey-20);
+  color: var(--telekom-color-text-and-icon-disabled);
   pointer-events: none;
 }
 
@@ -380,7 +389,7 @@ duet-date-picker .duet-date__day.is-today::before {
   width: var(--telekom-spacing-unit-x1);
   height: var(--telekom-spacing-unit-x1);
   border-radius: var(--telekom-radius-standard);
-  background-color: var(--telekom-color-text-and-icon-primary-standard);
+  background-color: var(--telekom-color-primary-standard);
   opacity: 1;
   left: var(--telekom-spacing-unit-x4);
   top: 27px;
@@ -388,10 +397,12 @@ duet-date-picker .duet-date__day.is-today::before {
 
 duet-date-picker [aria-selected='true'] .duet-date__day.is-today::before,
 duet-date-picker .duet-date__day.is-today:hover::before {
+  /* FIXME:TOKEN-alpha9 not sure what to use here */
   background-color: var(--telekom-color-background-surface);
 }
 
 duet-date-picker .duet-date__day.is-today.is-disabled::before {
+  /* FIXME ?? */
   background-color: var(--telekom-radius-standard);
 }
 
@@ -399,25 +410,25 @@ duet-date-picker .duet-date__day:focus {
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   background: var(--telekom-color-background-surface);
-  color: var(--telekom-color-text-and-icon-primary-standard);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 
 duet-date-picker .duet-date__day:hover {
-  background: var(--telekom-color-text-and-icon-primary-hovered);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-primary-hovered);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 
 duet-date-picker .duet-date__day:active {
   box-shadow: none;
-  background: var(--telekom-color-text-and-icon-primary-pressed);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-primary-pressed);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 
 duet-date-picker .duet-date__day:hover::before {
   border-radius: var(--duet-radius);
   opacity: 1;
   background: transparent;
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 
 @media (max-width: 35.9375em) and (orientation: landscape) {
