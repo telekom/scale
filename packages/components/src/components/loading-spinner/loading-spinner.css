@@ -18,7 +18,7 @@
   /* FIXME:TOKEN what about these 2 circle-? ?*/
   --color-circle-white: var(--telekom-color-ui-additional-base);
   --color-circle-white-inner: var(--telekom-color-ui-additional-regular);
-  --color-text-white: var(--telekom-color-text-and-icon-functional-white);
+  --color-text-white: var(--telekom-color-text-and-icon-white-standard);
 }
 
 .sr-only {
