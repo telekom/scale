@@ -19,6 +19,7 @@ scale-checkbox {
   --color-text: var(--telekom-color-text-and-icon-standard);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  /* FIXME:token-alpha9 unused */
   --color-standard: var(--telekom-color-background-surface);
   --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
   --color-primary: var(--telekom-color-primary-standard, #e20074);

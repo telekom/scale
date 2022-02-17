@@ -28,8 +28,8 @@ scale-text-field {
   --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-disabled: transparent;
-  --border-color-readonly: var(--telekom-color-ui-additional-subtle);
+  --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
+  --border-color-readonly: var(--telekom-color-ui-outlined-border-disabled);
   --background-readonly: var(--telekom-color-ui-solid-disabled);
 
   /* meta */
@@ -45,7 +45,7 @@ scale-text-field {
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
-  --background-control: var(--telekom-color-ui-additional-base);
+  --background-control: var(--telekom-color-ui-outlined-fill-standard);
 
   /* counter */
   --transition-counter: var(--transition);
