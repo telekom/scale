@@ -23,7 +23,7 @@
   --color-on: var(--telekom-color-primary-standard);
   --color-active: var(--telekom-color-primary-pressed);
   --color-hover-on: var(--telekom-color-primary-hovered);
-  --color-hover-off: var(  --telekom-color-ui-solid-hovered);
+  --color-hover-off: var(--telekom-color-ui-solid-hovered);
   --color-disabled: var(--telekom-color-ui-solid-disabled);
   --color-state-contrast: var(--telekom-color-ui-additional-base);
 
@@ -174,11 +174,13 @@
 
 /* disabled states */
 
-.switch.switch--disabled {
+.switch.switch--disabled,
+.switch.switch--disabled:hover input:not(:checked) ~ .switch__wrapper {
   --color-state: var(--color-disabled);
   --color-hover: var(--color-disabled);
   --color-toggle: var(--color-disabled);
   --color-text: var(--color-disabled);
+  --color-background: var(--color-background);
 }
 
 .switch.switch--disabled label {

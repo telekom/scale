@@ -22,7 +22,7 @@
   --font-weight-error-helper-text: var(--telekom-typography-font-weight-medium);
   /* FIXME is this needed? */
   --color-error-helper-text-hcm: var(
-    --telekom-color-text-and-icon-functional-white
+    --telekom-color-text-and-icon-white-standard
   );
 
   /*title*/
