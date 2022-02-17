@@ -75,7 +75,7 @@
   width: 100%;
   color: var(--color-text);
   justify-content: space-evenly;
-  font-size: var(--scl-font-size-12);
+  font-size: var(--telekom-typography-font-size-small);
   line-height: calc(var(--size) - var(--offset));
   transition-property: color;
   transition-duration: var(--transition-duration);

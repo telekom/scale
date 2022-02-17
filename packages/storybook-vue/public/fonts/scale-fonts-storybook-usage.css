@@ -6,8 +6,8 @@
 .addon-usage h5,
 .addon-usage h6,
 .addon-usage li {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  /* color: var(--scl-color-text-standard) !important; */
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  /* color: var(--telekom-color-text-and-icon-standard) !important; */
   color: var(--telekom-color-text-and-icon-standard) !important;
 }
 
@@ -47,9 +47,9 @@
 }
 
 .addon-usage a {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
   text-decoration: none !important;
-  /* color: var(--scl-color-text-link) !important; */
+  /* color: var(---telekom-color-text-and-icon-link-standard) !important; */
   color: var(--telekom-color-text-and-icon-link-standard) !important;
 }
 
