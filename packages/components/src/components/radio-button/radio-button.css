@@ -44,14 +44,17 @@ scale-radio-button {
   --transition-control: var(--transition);
   --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
   --background-color-control: var(--telekom-color-ui-additional-base);
-  --border-control: var(--telekom-spacing-unit-x025) solid var(--telekom-color-ui-outlined-border-standard);
+  --border-control: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-outlined-border-standard);
   --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
     var(--telekom-color-primary-standard);
   --border-control-checked-active: calc(0.5 * var(--telekom-spacing-unit-x3))
     solid var(--telekom-color-primary-pressed, #cb0068);
   --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
     solid var(--telekom-color-ui-outlined-border-disabled);
-  --background-control-checked-disabled: var(--telekom-color-ui-outlined-fill-disabled);
+  --background-control-checked-disabled: var(
+    --telekom-color-ui-outlined-fill-disabled
+  );
   --border-control-active: var(--telekom-spacing-unit-x2) solid
     var(--telekom-color-primary-pressed);
   --border-control-disabled: var(--telekom-spacing-unit-x025) solid
@@ -123,7 +126,6 @@ scale-radio-button {
 .radio-button:active input:not(:checked):not([disabled]) {
   border-color: var(--telekom-color-ui-outlined-border-pressed);
   background-color: var(--telekom-color-ui-outlined-fill-pressed);
-
 }
 .radio-button input:not(:checked):not([disabled]):active ~ label {
   color: var(--color-primary-active);

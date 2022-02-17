@@ -21,7 +21,7 @@ scale-textarea {
   --border-color-focus: var(--telekom-color-ui-outlined-border-pressed);
   --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
   --background-color-hover: var(--telekom-color-ui-outlined-fill-hovered);
-  --background-color-disabled: var(--telekom-color-ui-outlined-fill-disabled);  
+  --background-color-disabled: var(--telekom-color-ui-outlined-fill-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --spacing-x-control: var(--telekom-spacing-unit-x3);

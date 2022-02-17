@@ -72,11 +72,15 @@ duet-date-picker .duet-date__toggle:focus {
     var(--telekom-color-functional-focus);
 }
 
-.scale-date-picker:not(.scale-date-picker--disabled) duet-date-picker .duet-date__toggle:hover {
+.scale-date-picker:not(.scale-date-picker--disabled)
+  duet-date-picker
+  .duet-date__toggle:hover {
   background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
-.scale-date-picker:not(.scale-date-picker--disabled) duet-date-picker .duet-date__toggle:active {
+.scale-date-picker:not(.scale-date-picker--disabled)
+  duet-date-picker
+  .duet-date__toggle:active {
   background-color: var(--telekom-color-ui-outlined-fill-pressed);
 }
 /* FIXME:TOKEN-alpha8 this could just be removed */
@@ -247,7 +251,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 /* Disabled */
 
-.scale-date-picker.scale-date-picker--disabled input, 
+.scale-date-picker.scale-date-picker--disabled input,
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
   cursor: not-allowed;
 }

@@ -101,7 +101,8 @@ scale-checkbox [part='checkbox'] {
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
-  border: var(--border-width-control) solid var(--telekom-color-ui-outlined-border-standard);
+  border: var(--border-width-control) solid
+    var(--telekom-color-ui-outlined-border-standard);
 }
 
 scale-checkbox [part='label'] {

@@ -37,8 +37,12 @@
   /* FIXME:TOKEN-alpha8 couldn't find colors to match the sketch file 
     (hover vs active should be slightly different,
     but pressed should be different than bg) */
-  --background-button-dismissable-hover: var(--telekom-color-ui-additional-strong);
-  --background-button-dismissable-active: var(--telekom-color-ui-additional-extra-strong);
+  --background-button-dismissable-hover: var(
+    --telekom-color-ui-additional-strong
+  );
+  --background-button-dismissable-active: var(
+    --telekom-color-ui-additional-extra-strong
+  );
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
