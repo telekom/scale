@@ -16,10 +16,13 @@ import text_de from './5.Colors_de.md';
           context && context.globals && context.globals.colorMode;
         const allTokens = colorMode === 'light' ? lightTokens : darkTokens;
         let newSection = false;
+        let newSubSection = false;
         let pathStringItem = [];
         let levelStringItem = [];
         let currentSection;
+        let tempCurrentSubSection;
         let contrastSections;
+        let sectionsWithSubtitle = ['UI'];
         function getItemPathByPath(path) {
           for (let i = 0; i < allTokens.tokens.length; i++) {
             if (allTokens.tokens[i].pathString === path) {
@@ -99,6 +102,36 @@ import text_de from './5.Colors_de.md';
             currentSection = allTokens.tokens[jsonPosition].section;
           }
         }
+        function isNewSubSection(jsonPosition) {
+          if (jsonPosition !== 0) {
+            let lastSubsection = allTokens.tokens[jsonPosition - 1].name.split(
+              ' / '
+            )[1];
+            let currentSubsection = allTokens.tokens[jsonPosition].name.split(
+              ' / '
+            )[1];
+            if (lastSubsection !== currentSubsection) {
+              newSubSection = true;
+              tempCurrentSubSection = allTokens.tokens[jsonPosition].name.split(
+                ' / '
+              )[1];
+            } else {
+              newSubSection = false;
+            }
+          } else {
+            newSubSection = true;
+            tempCurrentSubSection = allTokens.tokens[jsonPosition].name.split(
+              ' / '
+            )[1];
+          }
+        }
+        function checkForWantedSubTitles() {
+          for (let i = 0; i < sectionsWithSubtitle.length; i++) {
+            if (currentSection === sectionsWithSubtitle[i]) {
+              return true;
+            }
+          }
+        }
         function hasContrastWithoutSlash(items) {
           let itemPaths = [];
           items.map((item) => {
@@ -113,12 +146,13 @@ import text_de from './5.Colors_de.md';
         function createContrastObjectArray() {}
         return (
           <DocsContainer context={context}>
-            {locale === 'en' ? <div>Englisch</div> : <div>Deutsch</div>}
+            <Description markdown={locale === 'en' ? text_en : text_de} />
             <table>
               {allTokens.tokens
                 .filter((item) => item.category == 'Color')
                 .map((item, i) => {
                   isNewSection(i);
+                  isNewSubSection(i);
                   {
                     item.contrastChecks
                       ? (pathStringItem = item.contrastChecks.map(
@@ -155,7 +189,7 @@ import text_de from './5.Colors_de.md';
                                 color: '#6A6A6A',
                                 fontSize: '13px',
                                 borderColor: '#fff',
-                                borderBottom: '#000',
+                                borderBottom: '1px solid #E7E8E9',
                               }}
                             >
                               Example
@@ -166,7 +200,7 @@ import text_de from './5.Colors_de.md';
                                 color: '#6A6A6A',
                                 fontSize: '13px',
                                 borderColor: '#fff',
-                                borderBottom: '#000',
+                                borderBottom: '1px solid #E7E8E9',
                               }}
                             >
                               Description
@@ -177,7 +211,7 @@ import text_de from './5.Colors_de.md';
                                 color: '#6A6A6A',
                                 fontSize: '13px',
                                 borderColor: '#fff',
-                                borderBottom: '#000',
+                                borderBottom: '1px solid #E7E8E9',
                               }}
                             >
                               Token Name
@@ -186,6 +220,11 @@ import text_de from './5.Colors_de.md';
                         </thead>
                       ) : null}
                       <tbody>
+                        {newSubSection && checkForWantedSubTitles() ? (
+                          <h5 style={{ marginTop: '50px' }}>
+                            {tempCurrentSubSection}
+                          </h5>
+                        ) : null}
                         <tr>
                           {/* Example Column */}
                           <td
