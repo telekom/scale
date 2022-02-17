@@ -20,6 +20,8 @@ scale-text-field {
   --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
   --border-color-focus: var(--telekom-color-ui-outlined-border-pressed);
   --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --background-color-hover: var(--telekom-color-ui-outlined-fill-hovered);
+  --background-color-disabled: var(--telekom-color-ui-outlined-fill-disabled);  
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --height: var(--telekom-spacing-unit-x12);
@@ -28,7 +30,7 @@ scale-text-field {
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-additional-subtle);
-  --background-readonly: var(--telekom-color-ui-additional-subtle);
+  --background-readonly: var(--telekom-color-ui-solid-disabled);
 
   /* meta */
   --font-weight-meta: var(--telekom-line-weight-bold);
@@ -66,7 +68,7 @@ scale-text-field {
 
   /* label */
   --color-label: var(--telekom-color-text-and-icon-additional);
-  --color-label-readonly: var(--telekom-color-text-and-icon-additional);
+  --color-label-readonly: var(--telekom-color-text-and-icon-standard);
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
@@ -128,6 +130,7 @@ scale-text-field {
 .text-field:not(.text-field--disabled):not(.text-field--readonly)
   .text-field__control:hover {
   border-color: var(--border-color-hover);
+  background-color: var(--background-color-hover);
 }
 
 .text-field:not(.text-field--disabled):not(.text-field--readonly)
@@ -219,6 +222,7 @@ scale-text-field {
 .text-field--disabled .text-field__helper-text {
   cursor: not-allowed;
   border-color: var(--border-color-disabled);
+  background-color: var(--background-color-disabled);
   color: var(--color-disabled);
   background: transparent;
 }

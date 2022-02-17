@@ -39,9 +39,9 @@ duet-date-picker {
 }
 
 duet-date-picker .duet-date__input {
-  /* FIXME:TOKEN use ui/border */
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-outlined-border-standard);
+  background-color: var(--telekom-color-ui-outlined-fill-standard);
   padding: var(--telekom-spacing-unit-x3) var(--telekom-spacing-unit-x3) 0
     var(--telekom-spacing-unit-x3);
   height: var(--telekom-spacing-unit-x12);
@@ -50,6 +50,7 @@ duet-date-picker .duet-date__input {
 duet-date-picker .duet-date__input:hover {
   border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-outlined-border-hovered);
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
 duet-date-picker .duet-date__input:focus {
@@ -244,7 +245,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 /* Disabled */
 
-.scale-date-picker.scale-date-picker--disabled {
+.scale-date-picker.scale-date-picker--disabled input, 
+.scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
   cursor: not-allowed;
 }
 .scale-date-picker.scale-date-picker--disabled input,
