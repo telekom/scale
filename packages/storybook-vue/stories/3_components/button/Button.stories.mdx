@@ -472,3 +472,23 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 ```html
 <scale-button size="small" href="assets/welcome.png" download="welcome.png">Download</scale-button>
 ```
+
+## Interactive icon
+
+<Canvas withSource="none">
+    <Story
+        name='Interactive icon'
+        args={{
+            variant: 'ghost',
+            iconOnly: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+```html
+<scale-button variant="ghost">
+    <scale-icon-action-add accessibility-title="Add"></scale-icon-action-add>
+</scale-button>
+```
