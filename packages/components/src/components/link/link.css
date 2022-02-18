@@ -22,8 +22,6 @@
 
   /* initial */
   --color: var(--telekom-color-text-and-icon-link-standard);
-  /* FIXME:TOKEN hardcoded value */
-  --color-line-initial: hsl(219, 100%, 87%);
   --color-line-initial: var(--telekom-color-functional-interaction-subtle);
   --line-thickness-initial: var(--telekom-line-weight-standard);
   /* visited */

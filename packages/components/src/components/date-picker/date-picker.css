@@ -18,15 +18,12 @@ duet-date-picker {
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
   --duet-color-placeholder: var(--telekom-color-ui-additional-regular);
   --duet-radius: var(--telekom-radius-standard);
-
-  /* FIXME */
   --duet-color-text-active: var(
     --telekom-color-text-and-icon-white-standard,
     #ffffff
   );
-  /* FIXME */
-  --duet-color-button: var(--telekom-color-background-surface, #ffffff);
-  --duet-color-surface: var(--telekom-color-background-surface, #ffffff);
+  --duet-color-button: var(--telekom-color-background-surface);
+  --duet-color-surface: var(--telekom-color-background-surface);
   --duet-z-index: 600;
 
   --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
@@ -56,7 +53,6 @@ duet-date-picker .duet-date__input:hover {
 duet-date-picker .duet-date__input:focus {
   box-shadow: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
-  /* FIXME:TOKEN use ui/border (there's no "ui/border/focus" anyway) */
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-outlined-border-active);
 }
@@ -83,11 +79,11 @@ duet-date-picker .duet-date__toggle:focus {
   .duet-date__toggle:active {
   background-color: var(--telekom-color-ui-outlined-fill-pressed);
 }
-/* FIXME:TOKEN-alpha8 this could just be removed */
+
 duet-date-picker .duet-date__toggle:hover scale-icon-content-calendar {
   color: var(--telekom-color-text-and-icon-standard);
 }
-/* FIXME:TOKEN-alpha8 this could just be removed */
+
 duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
   color: var(--telekom-color-text-and-icon-standard);
 }
@@ -258,7 +254,6 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker.scale-date-picker--disabled input,
 .scale-date-picker.scale-date-picker--disabled input:hover {
   color: var(--telekom-color-text-and-icon-disabled);
-  /* FIXME */
   border-color: var(--telekom-color-ui-outlined-border-disabled);
   background: var(--telekom-color-ui-outlined-fill-disabled);
 }
@@ -397,7 +392,7 @@ duet-date-picker .duet-date__day.is-today::before {
 
 duet-date-picker [aria-selected='true'] .duet-date__day.is-today::before,
 duet-date-picker .duet-date__day.is-today:hover::before {
-  /* FIXME:TOKEN-alpha9 not sure what to use here */
+  /* FIXME  */
   background-color: var(--telekom-color-background-surface);
 }
 

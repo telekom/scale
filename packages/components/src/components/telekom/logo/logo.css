@@ -21,12 +21,10 @@
 }
 
 .logo--variant-magenta {
-  /* FIXME:TOKEN */
   background-color: var(--telekom-color-background-surface);
 }
 
 .logo--variant-white {
-  /* FIXME:TOKEN */
   background-color: var(--telekom-color-primary-standard);
 }
 

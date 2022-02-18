@@ -14,7 +14,6 @@
   --border-bottom-color: var(--telekom-color-ui-additional-subtle);
   --border-left-color-third-nesting: var(--telekom-color-ui-additional-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
-  /* FIXME this variable is used sometimes for background sometimes for text */
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
@@ -56,7 +55,6 @@
   justify-content: space-between;
   text-decoration: none;
   font-family: inherit;
-  /* FIXME:TOKEN previously --scl-radius-2 no equivalent */
   border-radius: var(--telekom-radius-small);
 }
 

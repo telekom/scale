@@ -264,7 +264,6 @@
   margin-right: var(--telekom-spacing-unit-x2);
 }
 .input--type-checkbox input:disabled ~ label {
-  /* FIXME make sure color is right */
   color: var(--telekom-color-ui-disabled);
 }
 .input--type-checkbox input:checked:disabled ~ label {
@@ -449,9 +448,8 @@
   border-radius: var(--telekom-radius-circle);
   -webkit-appearance: none;
   background-color: #fff;
-  /* FIXME:TOKEN needs some sort of black */
   border: var(--telekom-line-weight-standard) solid
-    var(--scl-color-text-standard);
+    var(--telekom-color-ui-outlined-border-standard);
   margin: 0 var(--telekom-spacing-unit-x2) 0 0;
 }
 .input--type-radio input:focus {
@@ -523,7 +521,6 @@
 .input--disabled .input__textarea,
 .input--disabled .input__helper-text {
   cursor: not-allowed;
-  /* FIXME:TOKEN what font color to use here, background and border have the same color */
   border-color: var(--telekom-color-ui-disabled);
   color: var(--telekom-color-text-and-icon-disabled);
   background: var(--telekom-color-ui-disabled);

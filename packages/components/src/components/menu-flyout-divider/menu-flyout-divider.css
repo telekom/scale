@@ -13,7 +13,7 @@
 
 :host {
   display: block;
-  /* FIXME renamae to --border-color */
+  /* FIXME rename to --border-color */
   --color: var(--telekom-color-ui-additional-light);
 }
 

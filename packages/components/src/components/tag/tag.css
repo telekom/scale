@@ -20,11 +20,10 @@
     var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
-  /* FIXME:TOKEN-alpha8 there is no difference between standard and hover style */
   --icon-color-hover: var(--color);
   --background-secondary: var(--telekom-color-additional-teal-600);
-  --background-secondary-hover: var(--telekom-color-additional-teal-700);
-  --background-secondary-active: var(--telekom-color-additional-teal-900);
+  --background-secondary-hover: var(--telekom-color-ui-ghost-hovered);
+  --background-secondary-active: var(--telekom-color-ui-ghost-pressed);
 
   --background-disabled: var(--telekom-color-ui-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -34,20 +33,16 @@
   --border-button-dismissable-focus: 1px solid
     var(--telekom-color-ui-outlined-border-standard);
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  /* FIXME:TOKEN-alpha8 couldn't find colors to match the sketch file 
-    (hover vs active should be slightly different,
-    but pressed should be different than bg) */
   --background-button-dismissable-hover: var(
-    --telekom-color-ui-additional-strong
+    --telekom-color-ui-ghost-hovered-inverted
   );
   --background-button-dismissable-active: var(
-    --telekom-color-ui-additional-extra-strong
+    --telekom-color-ui-ghost-pressed-inverted
   );
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
   --font-size-small: var(--telekom-typography-font-size-small);
-  /* FIXME previously --scl-font-line-height-160 */
   --line-height-small: var(--telekom-typography-line-spacing-loose);
 }
 

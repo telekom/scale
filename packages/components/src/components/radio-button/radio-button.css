@@ -16,7 +16,6 @@ scale-radio-button {
   --transition: all var(--telekom-motion-duration-transition)
     cubic-bezier(var(--telekom-motion-easing-standard));
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
-  /* FIXME:TOKEN-alpha8 these could be removed */
   --color-primary-hover: var(--telekom-color-text-and-icon-standard);
   --color-primary-active: var(--telekom-color-text-and-icon-standard);
   --color-focus: var(--telekom-color-functional-focus);

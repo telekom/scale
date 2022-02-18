@@ -60,8 +60,7 @@
   line-height: var(--scl-font-variant-heading-6-line-height);
   font-weight: var(--scl-font-variant-heading-6-weight);
   padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
-  /* FIXME */
-  border-radius: 0.125rem;
+  border-radius: calc(var(--telekom-radius-small) / 2);
   color: var(--telekom-color-text-and-icon-standard);
   text-decoration: none;
 }

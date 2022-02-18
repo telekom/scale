@@ -23,7 +23,6 @@ scale-dropdown {
     var(--telekom-color-ui-outlined-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  /* FIXME:TOKEN use ui border… */
   --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
   --border-color-focus: var(--telekom-color-ui-outlined-border-pressed);
   --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
@@ -54,9 +53,8 @@ scale-dropdown {
   /*icon*/
   --height-icon: var(--telekom-spacing-unit-x6);
   --color-icon: var(--telekom-color-text-and-icon-standard);
-  /* FIXME:TOKEN-alpha8 this could be removed */
-  --color-icon-hover: var(--telekom-color-text-and-icon-standard, #f90984);
-  --color-icon-active: var(--telekom-color-text-and-icon-standard, #cb0068);
+  --color-icon-hover: var(--telekom-color-text-and-icon-standard);
+  --color-icon-active: var(--telekom-color-text-and-icon-standard);
   --transition-icon: var(--transition);
 
   /*label*/
