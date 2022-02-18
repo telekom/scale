@@ -3,22 +3,6 @@
 <style>
   body {
     font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif;
-
-    /* needed for dark mode */
-    color: var(--telekom-color-text-and-icon-standard);
-    background: var(--telekom-color-background-canvas);
-    transition: background;
-    transition-duration: var(--telekom-motion-duration-animation);
-    transition-timing-function: var(--telekom-motion-easing-standard);
-  }
-
-  .sbdocs.sbdocs-preview {
-    /* needed for dark mode */
-    color: var(--telekom-color-text-and-icon-standard);
-    background: var(--telekom-color-background-canvas);
-    transition: background;
-    transition-duration: var(--telekom-motion-duration-animation);
-    transition-timing-function: var(--telekom-motion-easing-standard);
   }
   .sbdocs.sbdocs-content {
     max-width: 1066px !important;
@@ -32,6 +16,13 @@
     margin: -1rem;
   }
 
+  .color_token_copy-paste-button scale-icon-action-copy-paste {
+    color: var(--scl-color-text-additional);
+  }
+  .color_token_copy-paste-button:hover scale-icon-action-copy-paste {
+    color: var(--scl-color-text-standard);
+    border: 0;
+  }
 
   scale-sb-spacing {
     display: block;
