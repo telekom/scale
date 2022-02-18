@@ -11,7 +11,7 @@
 
 :host {
   --background: var(--telekom-color-background-surface-highlight);
-  --color: var(--telekom-color-text-and-icon-functional-white);
+  --color: var(--telekom-color-text-and-icon-white-standard);
   --spacing-top: var(--telekom-spacing-unit-x8);
   --spacing-bottom: var(--telekom-spacing-unit-x6);
   --spacing-x: var(--telekom-spacing-unit-x6);
@@ -20,8 +20,8 @@
   --max-width: inherit;
 
   --border-top-minimal: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-subtle);
-  --color-minimal: var(--telekom-color-ui-regular);
+    var(--telekom-color-ui-additional-subtle);
+  --color-minimal: var(--telekom-color-ui-additional-regular);
   --background-minimal: var(--telekom-color-background-surface);
   --spacing-angular: var(--telekom-spacing-unit-x6);
   --spacing-minimal: var(--telekom-spacing-unit-x6);
@@ -31,8 +31,8 @@
 
   --height-logo: var(--telekom-spacing-unit-x6);
   --font-size-copyright: var(--telekom-typography-font-size-caption);
-  --color-link-standard: var(--telekom-color-text-and-icon-functional-white);
-  --color-link-minimal: var(--telekom-color-ui-regular);
+  --color-link-standard: var(--telekom-color-text-and-icon-white-standard);
+  --color-link-minimal: var(--telekom-color-ui-additional-regular);
 
   --font-size-navigation-standard: var(--telekom-typography-font-size-caption);
   --font-family-navigation-standard: var(--telekom-typography-font-family-sans);
@@ -45,7 +45,7 @@
 
   --spacing-navigation-standard: var(--telekom-spacing-unit-x2);
   --color-navigation-standard-hover: var(
-    --telekom-color-text-and-icon-functional-white
+    --telekom-color-text-and-icon-white-standard
   );
   --color-navigation-minimal-hover: var(
     --telekom-color-text-and-icon-primary-hovered
@@ -56,7 +56,7 @@
   --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-primary-standard);
   --border-color-standard-hover: var(
-    --telekom-color-text-and-icon-functional-white
+    --telekom-color-text-and-icon-white-standard
   );
 }
 .footer {

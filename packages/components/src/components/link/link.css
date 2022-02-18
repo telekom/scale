@@ -24,7 +24,7 @@
   --color: var(--telekom-color-text-and-icon-link-standard);
   /* FIXME:TOKEN hardcoded value */
   --color-line-initial: hsl(219, 100%, 87%);
-  --color-line-initial: var(--telekom-color-additional-blue-200);
+  --color-line-initial: var(--telekom-color-functional-interaction-subtle);
   --line-thickness-initial: var(--telekom-line-weight-standard);
   /* visited */
   --color-visited: var(--telekom-color-text-and-icon-link-visited);
@@ -32,19 +32,19 @@
   --line-thickness-visited: var(--line-thickness-initial);
   /* hover */
   --color-hover: var(--telekom-color-text-and-icon-link-hovered);
-  --color-line-hover: currentColor;
+  --color-line-hover: var(--telekom-color-functional-interaction-hovered);
   --line-thickness-hover: var(--line-thickness-initial);
   /* focus */
-  --color-focus: var(--telekom-color-text-and-icon-link-active);
-  --color-line-focus: var(--telekom-color-functional-focus);
-  --line-thickness-focus: var(--telekom-line-weight-highlight);
+  --color-focus: var(--telekom-color-text-and-icon-link-standard);
+  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
+  --line-thickness-focus: var(--telekom-line-weight-bold);
   /* active */
   --color-active: var(--telekom-color-text-and-icon-link-active);
-  --color-line-active: currentColor;
+  --color-line-active: var(--telekom-color-functional-interaction-pressed);
   --line-thickness-active: var(--line-thickness-initial);
   /* disabled */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-line-disabled: var(--telekom-color-ui-disabled);
+  --color-line-disabled: var(--telekom-color-ui-outlined-border-disabled);
   --line-thickness-disabled: var(--line-thickness-initial);
 }
 
@@ -52,8 +52,8 @@
   display: inline;
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
   --anchor-color: var(--color);
-  --line-color: var(--color-line-initial);
-  --line-thickess: var(--line-thickness-initial);
+  --line-color: var(--telekom-color-functional-interaction-subtle);
+  --line-thickness: var(--line-thickness-initial);
 }
 
 [part='anchor'] {
@@ -108,6 +108,7 @@ slot[name='icon']::slotted(*) {
 [part='anchor']:focus,
 [part='anchor']:active {
   transition: text-decoration var(--telekom-motion-duration-transition);
+  text-decoration: underline;
 }
 
 [part='anchor']:visited {

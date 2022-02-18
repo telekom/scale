@@ -20,16 +20,17 @@ scale-dropdown {
     cubic-bezier(var(--telekom-motion-easing-standard));
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-text-and-icon-standard);
+    var(--telekom-color-ui-outlined-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   /* FIXME:TOKEN use ui border… */
-  --border-color-hover: var(--telekom-color-primary-hovered);
-  --border-color-focus: var(--telekom-color-primary-hovered);
+  --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-outlined-border-pressed);
+  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-disabled: var(--telekom-color-ui-disabled);
+  --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
 
   /*input*/
   --transition-input: var(--transition);
@@ -53,14 +54,9 @@ scale-dropdown {
   /*icon*/
   --height-icon: var(--telekom-spacing-unit-x6);
   --color-icon: var(--telekom-color-text-and-icon-standard);
-  --color-icon-hover: var(
-    --telekom-color-text-and-icon-primary-hovered,
-    #f90984
-  );
-  --color-icon-active: var(
-    --telekom-color-text-and-icon-primary-pressed,
-    #cb0068
-  );
+  /* FIXME:TOKEN-alpha8 this could be removed */
+  --color-icon-hover: var(--telekom-color-text-and-icon-standard, #f90984);
+  --color-icon-active: var(--telekom-color-text-and-icon-standard, #cb0068);
   --transition-icon: var(--transition);
 
   /*label*/
@@ -99,7 +95,8 @@ scale-dropdown {
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-background-surface);
+  background-color: var(--telekom-color-ui-outlined-fill-standard);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 @-moz-document url-prefix() {
@@ -135,12 +132,24 @@ scale-dropdown {
 .dropdown:not(.dropdown--disabled):active .input__dropdown-icon {
   color: var(--color-icon-active);
 }
-.dropdown:not(.dropdown--disabled) .input__dropdown:hover {
+.dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
+  .input__dropdown:hover {
   border-color: var(--border-color-hover);
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+}
+.dropdown:not(.dropdown--disabled).dropdown--status-error
+  .input__dropdown:hover {
+  border-color: red;
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 
-.dropdown:not(.dropdown--disabled) .input__dropdown:focus {
+.dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
+  .input__dropdown:focus {
   border-color: var(--border-color-focus);
+}
+.dropdown:not(.dropdown--disabled).dropdown--status-error
+  .input__dropdown:focus {
+  border-color: red;
 }
 .dropdown:not(.dropdown--disabled) .input__dropdown:focus {
   box-shadow: var(--box-shadow-focus);
@@ -215,7 +224,7 @@ scale-dropdown {
 .dropdown--disabled .input__dropdown,
 .dropdown--disabled .input__helper-text {
   cursor: not-allowed;
-  border-color: var(--color-disabled);
+  border-color: var(--border-color-disabled);
   color: var(--color-disabled);
   background: var(--background-disabled);
 }

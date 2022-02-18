@@ -10,7 +10,7 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-extra-strong);
+  --background: var(--telekom-color-ui-additional-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
@@ -20,8 +20,11 @@
     var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
-  --icon-color-hover: var(--telekom-color-text-and-icon-primary-hovered);
-  --background-secondary: var(--telekom-color-additional-teal-800);
+  /* FIXME:TOKEN-alpha8 there is no difference between standard and hover style */
+  --icon-color-hover: var(--color);
+  --background-secondary: var(--telekom-color-additional-teal-600);
+  --background-secondary-hover: var(--telekom-color-additional-teal-700);
+  --background-secondary-active: var(--telekom-color-additional-teal-900);
 
   --background-disabled: var(--telekom-color-ui-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -29,10 +32,17 @@
   --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
 
   --border-button-dismissable-focus: 1px solid
-    var(--telekom-color-ui-extra-strong);
-  --background-button-dismissable-focus: ;
+    var(--telekom-color-ui-outlined-border-standard);
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  --background-button-dismissable-hover: var(--telekom-color-ui-base);
+  /* FIXME:TOKEN-alpha8 couldn't find colors to match the sketch file 
+    (hover vs active should be slightly different,
+    but pressed should be different than bg) */
+  --background-button-dismissable-hover: var(
+    --telekom-color-ui-additional-strong
+  );
+  --background-button-dismissable-active: var(
+    --telekom-color-ui-additional-extra-strong
+  );
   --height-button-dismissable-small: 20px;
 
   --spacing-small: 0 var(--telekom-spacing-unit-x2);
@@ -96,6 +106,9 @@
 .tag--dismissable button:hover {
   background: var(--background-button-dismissable-hover);
 }
+.tag--dismissable button:active {
+  background: var(--background-button-dismissable-active);
+}
 .tag--dismissable button:focus scale-icon-action-close {
   top: -1px;
   position: relative;
@@ -131,6 +144,13 @@
 }
 .tag--link.tag--variant-secondary:hover {
   background: var(--background-secondary);
+}
+
+.tag--variant-secondary.tag--dismissable button:hover {
+  background: var(--background-secondary-hover);
+}
+.tag--variant-secondary.tag--dismissable button:active {
+  background: var(--background-secondary-hover);
 }
 .tag--link.tag--variant-secondary:focus {
   border: 1px solid white;

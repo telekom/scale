@@ -127,12 +127,12 @@
 }
 .menu-flyout-list__scroll-up-indicator {
   top: var(--telekom-spacing-unit-x2);
-  border-bottom: 5px solid var(--telekom-color-ui-light);
+  border-bottom: 5px solid var(--telekom-color-ui-additional-light);
   border-top: 0;
 }
 .menu-flyout-list__scroll-down-indicator {
   bottom: var(--telekom-spacing-unit-x2);
-  border-top: 5px solid var(--telekom-color-ui-light);
+  border-top: 5px solid var(--telekom-color-ui-additional-light);
   border-bottom: 0;
 }
 

@@ -105,7 +105,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
       :preventOverflow="preventOverflow"
     >
     <template v-slot:content>
-        <a slot="content" href="https://github.com/telekom/scale" style="color: white;background-color: transparent;">I'm a HTML-tooltip with a link</a>
+      <scale-link slot="content" href="https://github.com/telekom/scale">I'm a HTML-tooltip with a link</scale-link>
     </template>
     <scale-button></scale-button>
     </scale-tooltip>
@@ -264,7 +264,9 @@ export const FocusTemplate = (args, { argTypes }) => ({
 <scale-tooltip>
   <p>
     I'm a HTML-tooltip
-    <a slot="content" href="https://github.com/telekom/scale"> with a link</a>
+    <scale-link slot="content" href="https://github.com/telekom/scale"
+      >with a link</scale-link
+    >
   </p>
   <scale-button>Hover me</scale-button>
 </scale-tooltip>

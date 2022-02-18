@@ -22,7 +22,8 @@
   --spacing-left-button-text: var(--telekom-spacing-unit-x2);
   --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --background-button-hover: var(--telekom-color-background-canvas-subtle);
+  /* FIXME:TOKEN-alpha8 is this correct? no other available color matches sketch  */
+  --background-button-hover: var(--telekom-color-ui-additional-subtle);
   --border-color-button-focus: var(--telekom-color-functional-focus);
 
   /* icon */
@@ -94,6 +95,7 @@
 
 .collapsible__button:active {
   color: var(--color-button-active);
+  background-color: transparent;
 }
 
 .collapsible__button:focus {
