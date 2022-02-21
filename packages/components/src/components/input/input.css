@@ -49,7 +49,7 @@
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-text-and-icon-standard);
+    var(--telekom-color-ui-outlined-border-standard);
 }
 .input .input__select {
   appearance: none;
@@ -94,7 +94,7 @@
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
-  border-color: var(--telekom-color-primary-hovered, #f90984);
+  border-color: var(--telekom-color-ui-outlined-border-hovered);
 }
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
@@ -162,7 +162,7 @@
 }
 .input--variant-animated.input--has-focus .input__label,
 .input--variant-animated.animated .input__label {
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
     var(--telekom-spacing-unit-x3),
     var(--telekom-spacing-unit-x2)
@@ -176,7 +176,7 @@
 .input--status-error .input__textarea,
 .input--status-error .input__select {
   border: var(--telekom-spacing-unit-x05) solid
-    var(--scl-color-background-error);
+    var(--telekom-color-functional-danger-standard);
 }
 .input--status-error .input__helper-text {
   color: var(--telekom-color-text-and-icon-functional-danger);
