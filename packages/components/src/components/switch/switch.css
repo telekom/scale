@@ -23,9 +23,13 @@
   --color-on: var(--telekom-color-primary-standard);
   --color-active: var(--telekom-color-primary-pressed);
   --color-hover-on: var(--telekom-color-primary-hovered);
+  --border-standard: var(--telekom-color-ui-outlined-border-standard);
+  --border-hover-off: var(--telekom-color-ui-outlined-border-hovered);
+  --border-active-on: var(--telekom-color-ui-outlined-border-pressed);
+
   --color-hover-off: var(--telekom-color-ui-solid-hovered);
   --color-disabled: var(--telekom-color-ui-solid-disabled);
-  --color-state-contrast: var(--telekom-color-ui-additional-base);
+  --color-state-contrast: var(--telekom-color-ui-outlined-fill-standard);
 
   --color-state: var(--color-off);
   --color-background: var(--color-state-contrast);
@@ -65,6 +69,7 @@
   display: inline-flex;
   justify-content: space-between;
   background: var(--color-background);
+  border-color: var(--border-standard);
   transition-property: background;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
@@ -83,6 +88,7 @@
 }
 
 .switch .switch__text:before {
+  color: var(--telekom-color-text-and-icon-white-standard);
   content: 'I';
 }
 
@@ -131,15 +137,23 @@
   box-shadow: var(--box-shadow-focus);
 }
 
-.switch--focus-visible-supported input:focus-visible ~ .switch__wrapper {
+.switch--focus-visible-supported input:focus-visible:not(:checked) ~ .switch__wrapper {
+  box-shadow: var(--box-shadow-focus);
+  border-color: var(--telekom-color-ui-outlined-border-hovered)
+}
+
+.switch--focus-visible-supported input:focus-visible:checked ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
 }
+
+
 
 .switch input:checked ~ .switch__wrapper {
   --color-state: var(--color-on);
   --color-background: var(--color-state);
-  --color-toggle: var(--color-state-contrast);
+  --color-toggle: var(--telekom-color-ui-additional-base);
   --color-text: var(--color-state-contrast);
+  border-color: transparent
 }
 
 /* Needs to placed after :checked but before :active */
@@ -152,14 +166,18 @@
   --color-state: var(--color-hover-off);
   --color-toggle: var(--color-hover-off);
   --color-background: var(--telekom-color-ui-outlined-fill-hovered);
+  border-color: var(--border-hover-off)
 }
 
 .switch input:not(:disabled):active ~ .switch__wrapper {
   --color-state: var(--color-active);
   --color-background: var(--color-state);
-  --color-toggle: var(--color-state-contrast);
+  --color-toggle: var(--telekom-color-ui-additional-base);
   --color-text: var(--color-state-contrast);
+  border-color: var(--border-active-off);
 }
+
+
 
 .switch input:checked:not(:disabled):active ~ .switch__wrapper {
   --color-state: var(--color-active);
@@ -189,7 +207,7 @@
 
 .switch.switch--disabled input:checked ~ .switch__wrapper {
   --color-state: var(--color-disabled);
-  --color-toggle: var(--color-state-contrast);
+  --color-toggle: var(--telekom-color-ui-additional-base);
   --color-text: var(--color-state-contrast);
 }
 
@@ -198,5 +216,5 @@
   input:not(:checked)
   ~ .switch__wrapper
   > .switch__text:before {
-  color: transparent;
+  color: var(--telekom-color-text-and-icon-standard);
 }
