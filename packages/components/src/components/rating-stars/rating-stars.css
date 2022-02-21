@@ -177,7 +177,8 @@ input[type='range']::-webkit-slider-thumb {
   }
 
   [part='star']:hover ~ [part='star'] [part='placeholder-star'] {
-    --stars-placeholder-color: var(--stars-placeholder-revert-color);
+    /* --stars-placeholder-color: var(--stars-placeholder-revert-color); */
+    --stars-placeholder-color: var(--telekom-color-text-and-icon-standard);
   }
 }
 

@@ -62,7 +62,7 @@
   width: 32px;
   height: 32px;
   display: flex;
-  z-index: 1;
+  z-index: var(--scl-z-index-20);
   position: absolute;
   text-align: center;
   align-items: center;
