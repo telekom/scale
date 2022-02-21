@@ -21,6 +21,7 @@
 
   --icon-color: var(--color);
   --icon-color-hover: var(--color);
+  --color-secondary: var(--telekom-color-text-and-icon-white-standard);
   --background-secondary: var(--telekom-color-additional-teal-600);
   --background-secondary-hover: var(--telekom-color-ui-ghost-hovered);
   --background-secondary-active: var(--telekom-color-ui-ghost-pressed);
@@ -68,6 +69,7 @@
 
 .tag--variant-secondary {
   background: var(--background-secondary);
+  color: var(--color-secondary);
 }
 
 .tag scale-icon-action-close {
@@ -78,6 +80,11 @@
 .tag:not(.tag--disabled) scale-icon-action-close:hover {
   color: var(--icon-color-hover);
 }
+.tag--variant-secondary scale-icon-action-close,
+.tag--variant-secondary:not(.tag--disabled) scale-icon-action-close:hover {
+  color: var(--color-secondary);
+}
+
 .tag--dismissable {
   padding-right: 0;
 }
@@ -122,6 +129,7 @@
 
 .tag--variant-secondary.tag--dismissable {
   background: var(--background-secondary);
+  color: var(--color-secondary);
 }
 
 .tag--variant-secondary.tag--disabled {

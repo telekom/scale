@@ -177,15 +177,15 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 .scale-date-picker--status-error duet-date-picker .duet-date__input {
   border: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-text-and-icon-functional-danger);
+    var(--telekom-color-functional-danger-standard);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:hover {
   border: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-danger-hovered);
+    var(--telekom-color-functional-danger-standard);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
   border: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-danger-pressed);
+    var(--telekom-color-functional-danger-standard);
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
 }
@@ -208,7 +208,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker--size-small .date-picker__label {
   top: 0;
   left: 0;
-  color: var(--telekom-color-text-and-icon-standard);
+  color: var(--telekom-color-text-and-icon-additional);
   display: flex;
   z-index: 10;
   position: absolute;
@@ -229,7 +229,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 }
 .scale-date-picker--size-small.scale-date-picker--focus .date-picker__label,
 .scale-date-picker--size-small.animated .date-picker__label {
-  color: var(--telekom-color-text-and-icon-standard);
+  color: var(--telekom-color-text-and-icon-additional);
   transform: translate(
     var(--telekom-spacing-unit-x3),
     var(--telekom-spacing-unit-x1)
