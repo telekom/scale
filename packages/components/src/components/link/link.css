@@ -50,7 +50,7 @@
   display: inline;
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
   --anchor-color: var(--color);
-  --line-color: var(--telekom-color-functional-interaction-subtle);
+  --line-color: var(--color);
   --line-thickness: var(--line-thickness-initial);
 }
 
@@ -68,6 +68,7 @@
     --line-thickness,
     var(--line-thickness-initial)
   );
+  /*FIXME:TOKEN color decoration should have 0.75 opacity*/
   text-decoration-color: var(--line-color);
   transition: text-decoration var(--telekom-motion-duration-transition);
 }
