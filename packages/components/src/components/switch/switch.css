@@ -93,6 +93,7 @@
 }
 
 .switch .switch__text:after {
+  color: var(--telekom-color-text-and-icon-additional);
   content: '0';
   position: relative;
   right: -1px;
@@ -109,6 +110,7 @@
   transition-property: transform, background;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
+  z-index: 20;
 }
 
 .switch input:checked:disabled + .switch__wrapper .switch__toggle,
@@ -169,6 +171,15 @@
   border-color: var(--border-hover-off)
 }
 
+.switch:active input:not(:checked) ~ .switch__wrapper {
+  border-color: var(--border-active-on);
+  background-color: var(--telekom-color-ui-outlined-fill-pressed);
+}
+
+.switch:focus input:not(:checked) ~ .switch__wrapper {
+  border-color: var(--border-hover-off);
+}
+
 .switch input:not(:disabled):active ~ .switch__wrapper {
   --color-state: var(--color-active);
   --color-background: var(--color-state);
@@ -209,12 +220,11 @@
   --color-state: var(--color-disabled);
   --color-toggle: var(--telekom-color-ui-additional-base);
   --color-text: var(--color-state-contrast);
+  background-color: var(--telekom-color-ui-outlined-fill-disabled);
+  border-color: var(--telekom-color-ui-outlined-border-disabled);
 }
 
-/* This selector makes me :( — why are we using BEM? */
-.switch.switch--disabled
-  input:not(:checked)
-  ~ .switch__wrapper
-  > .switch__text:before {
-  color: var(--telekom-color-text-and-icon-standard);
+.switch.switch--disabled .switch__text:before,
+.switch.switch--disabled .switch__text:after {
+  color: var(--telekom-color-text-and-icon-disabled)
 }

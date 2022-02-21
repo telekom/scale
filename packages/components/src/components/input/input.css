@@ -33,6 +33,7 @@
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-outlined-border-standard);
+    background-color: var(--telekom-color-ui-outlined-fill-standard);    
 }
 .input .input__textarea {
   width: 100%;
@@ -94,8 +95,17 @@
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
-  border-color: var(--telekom-color-primary-hovered, #f90984);
+  border-color: var(--telekom-color-ui-outlined-border-hovered);
+  background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
+
+.input:not(.input--disabled) .input__input:active,
+.input:not(.input--disabled) .input__select:active,
+.input:not(.input--disabled) .input__textarea:active {
+  border-color: var(--telekom-color-ui-outlined-border-pressed);
+  background-color: var(--telekom-color-ui-outlined-fill-pressed);
+}
+
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:focus {
@@ -267,7 +277,7 @@
   color: var(--telekom-color-ui-disabled);
 }
 .input--type-checkbox input:checked:disabled ~ label {
-  color: var(--telekom-color-ui-disabled);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--type-checkbox
   input:checked:disabled
@@ -521,9 +531,9 @@
 .input--disabled .input__textarea,
 .input--disabled .input__helper-text {
   cursor: not-allowed;
-  border-color: var(--telekom-color-ui-disabled);
+  border-color: var(--telekom-color-ui-outlined-border-disabled);
   color: var(--telekom-color-text-and-icon-disabled);
-  background: var(--telekom-color-ui-disabled);
+  background: var(--telekom-color-ui-outlined-fill-disabled);
 }
 /* TODO this could removed once scale-icon is removed */
 .input--disabled .input__select-wrapper {
