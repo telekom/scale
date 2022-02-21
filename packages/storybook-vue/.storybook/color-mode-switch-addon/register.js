@@ -20,9 +20,14 @@ const inactiveBtnClassName = 'css-am1h1h';
 const separatorClassName = 'css-14kbt3m';
 
 function switchMode(mode) {
-  document.querySelector(
-    '#storybook-preview-iframe'
-  ).contentWindow.document.body.dataset.mode = mode;
+  try {
+    const previewIframe = document.querySelector('#storybook-preview-iframe');
+    previewIframe.contentWindow.document.body.dataset.mode = mode;
+
+    Array.from(
+      previewIframe.contentWindow.document.querySelectorAll('iframe')
+    ).forEach((x) => (x.contentWindow.document.body.dataset.mode = mode));
+  } catch (e) {}
 }
 
 // utility to create new links

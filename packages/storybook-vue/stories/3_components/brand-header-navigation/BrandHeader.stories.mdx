@@ -10,9 +10,16 @@ import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
-  userNavigation
+  userNavigation,
 } from './fixtures';
 import AppShell from './AppShell.vue';
+const setColorMode = () => {
+  try {
+    document.body.dataset.mode = JSON.parse(
+      window.localStorage.getItem('persistedColorMode')
+    );
+  } catch (e) {}
+};
 
 <Meta
   title="Components/Brand Header & Navigation"
@@ -123,10 +130,12 @@ import AppShell from './AppShell.vue';
       logoHref: '#custom-href',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell
             :logo-title="logoTitle"
@@ -147,18 +156,15 @@ import AppShell from './AppShell.vue';
           </scale-app-shell>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-shell
-  claim-lang="en"
-  logo-title="App Name"
-  logo-href="/"
->
+<scale-app-shell claim-lang="en" logo-title="App Name" logo-href="/">
   <div style="height: 800px; padding: 48px 0;">
     Scroll to test header behavior
   </div>
@@ -169,6 +175,7 @@ import AppShell from './AppShell.vue';
 ```
 
 ## Using scale-app-shell over scale-header
+
 Using scale-app-shell provides the page with the common region `content`, which helps you fulfill accessibility requirements. The scale-app-shell component includes both the Header and optionally the <a href="?path=/docs/components-footer--standard">Footer</a> component. However, there is a story <a href="?path=/docs/components-brand-header-navigation--standalone-header">demonstrating the standalone mode of the Header</a> for special cases.
 
 ## Dropdown Navigation Beta
@@ -193,28 +200,30 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       activeSectorId: 'Personal38',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      methods: {
-        handleOpen: function () {
-          // Deprecated
-          this.$refs.header.isMegaMenuVisible = true;
-          // Deprecated
-          this.$refs.navMainWithMegaMenu.isMegaMenuVisible = true;
-          this.$refs.header.megaMenuVisible = true;
-          this.$refs.navMainWithMegaMenu.megaMenuVisible = true;
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        methods: {
+          handleOpen: function () {
+            // Deprecated
+            this.$refs.header.isMegaMenuVisible = true;
+            // Deprecated
+            this.$refs.navMainWithMegaMenu.isMegaMenuVisible = true;
+            this.$refs.header.megaMenuVisible = true;
+            this.$refs.navMainWithMegaMenu.megaMenuVisible = true;
+          },
+          handleClose: function () {
+            // Deprecated
+            this.$refs.header.isMegaMenuVisible = false;
+            // Deprecated
+            this.$refs.navMainWithMegaMenu.isMegaMenuVisible = false;
+            this.$refs.header.megaMenuVisible = false;
+            this.$refs.navMainWithMegaMenu.megaMenuVisible = false;
+          },
         },
-        handleClose: function () {
-          // Deprecated
-          this.$refs.header.isMegaMenuVisible = false;
-          // Deprecated
-          this.$refs.navMainWithMegaMenu.isMegaMenuVisible = false;
-          this.$refs.header.megaMenuVisible = false;
-          this.$refs.navMainWithMegaMenu.megaMenuVisible = false;
-        },
-      },
-      template: `
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
@@ -244,7 +253,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-shell>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
@@ -276,10 +286,18 @@ You can find code examples where the Flyout Menu Beta component is implemented i
   </scale-app-shell>
   <script>
     const header = document.getElementById('header');
-    header.mainNavigation = [/* ... */];
-    header.iconNavigation = [/* ... */];
-    header.addonNavigation = [/* ... */];
-    header.sectionNavigation = [/* ... */];
+    header.mainNavigation = [
+      /* ... */
+    ];
+    header.iconNavigation = [
+      /* ... */
+    ];
+    header.addonNavigation = [
+      /* ... */
+    ];
+    header.sectionNavigation = [
+      /* ... */
+    ];
     const navMainWithMegaMenu = document.getElementById(
       'nav-main-with-mega-menu'
     );
@@ -341,10 +359,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       activeSectorId: 'Personal38',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
@@ -380,7 +400,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-shell>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
@@ -422,10 +443,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       activeSectorId: 'Personal38',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
@@ -451,7 +474,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-shell>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
@@ -473,10 +497,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       >
         Custom Sector #1
       </scale-nav-segment>
-      <scale-nav-segment
-        href="#custom-sector-2"
-        onclick="handleClick()"
-      >
+      <scale-nav-segment href="#custom-sector-2" onclick="handleClick()">
         Custom Sector #2
       </scale-nav-segment>
     </div>
@@ -514,10 +535,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       activeSectorId: 'Personal38',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
@@ -543,7 +566,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-shell>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
@@ -565,10 +589,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       >
         Custom Addon #1
       </scale-nav-segment>
-      <scale-nav-segment
-        href="#custom-addon-2"
-        onclick="handleClick()"
-      >
+      <scale-nav-segment href="#custom-addon-2" onclick="handleClick()">
         Custom Addon #2
       </scale-nav-segment>
     </div>
@@ -606,10 +627,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       activeSectorId: 'Personal38',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
@@ -634,7 +657,8 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-shell>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
@@ -683,10 +707,12 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       activeSectorId: 'Personal38',
     }}
   >
-    {() => ({
-      components: { AppShell },
-      props: AppShell.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-shell>
             <scale-app-header
@@ -706,16 +732,17 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-shell>
         </div>
       `,
-      mounted() {
-        document.body.addEventListener('keydown', (event) => {
-          if (['Escape', 'Esc'].includes(event.key)) {
-            event.preventDefault();
-            this.$refs.header &&
-              this.$refs.header.dispatchEvent(new Event('closeMenu'));
-          }
-        });
-      },
-    })}
+        mounted() {
+          document.body.addEventListener('keydown', (event) => {
+            if (['Escape', 'Esc'].includes(event.key)) {
+              event.preventDefault();
+              this.$refs.header &&
+                this.$refs.header.dispatchEvent(new Event('closeMenu'));
+            }
+          });
+        },
+      }
+    )}
   </Story>
 </Canvas>
 
@@ -747,27 +774,29 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 ## Standalone Header
 
 <Canvas withSource="none">
-    <Story
-        name="Standalone Header"
-        inline={false}
-        height={500}
-        args={{
-            portalName: '',
-            claimLang: 'en',
-            mainNavigation: JSON.stringify(mainNavigation),
-            iconNavigation: JSON.stringify(iconNavigation),
-            addonNavigation: JSON.stringify(addonNavigation),
-            sectorNavigation: JSON.stringify(sectorNavigation),
-            activeRouteId: 'Third Level 24',
-            activeSectorId: 'Personal38',
-            logoTitle: 'Custom Logo Title',
-            logoHref: '#custom-href',
-        }}
-    >
-        {() => ({
-            components: { AppShell },
-            props: AppShell.props,
-            template: `
+  <Story
+    name="Standalone Header"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+      logoTitle: 'Custom Logo Title',
+      logoHref: '#custom-href',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
         <div class="brand-header-spacing">
           <scale-app-header
             :logo-title="logoTitle"
@@ -785,17 +814,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-header>
         </div>
       `,
-        })}
-    </Story>
+      }
+    )}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-header
-    claim-lang="en"
-    logo-title="App Name"
-    logo-href="/"
->
+<scale-app-header claim-lang="en" logo-title="App Name" logo-href="/">
 </scale-app-header>
 ```
