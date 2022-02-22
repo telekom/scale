@@ -7,7 +7,7 @@ h5,
 h6,
 li {
   font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
-  color: var(--telekom-color-text-and-icon-standard) !important;
+  color: black;
 }
 
 .sbdocs-h1,
@@ -47,7 +47,7 @@ li {
 
 .sbdocs-a {
   font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
-  color: var(--telekom-color-text-and-icon-link-standard) !important;
+  color: #005ac4 !important;
 }
 
 .sbdocs-p,

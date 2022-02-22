@@ -1,6 +1,13 @@
 import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import { footerNavigation } from '../brand-header-navigation/fixtures';
 import AppFooter from './AppFooter.vue';
+const setColorMode = () => {
+  try {
+    document.body.dataset.mode = JSON.parse(
+      window.localStorage.getItem('persistedColorMode')
+    );
+  } catch (e) {}
+};
 
 <Meta
   title="Components/Footer"
@@ -64,7 +71,10 @@ export const Template = (args, { argTypes }) => ({
       footerNavigation: JSON.stringify(footerNavigation),
     }}
   >
-    {Template.bind({})}
+    {(() => {
+      setColorMode();
+      return Template.bind({});
+    })()}
   </Story>
 </Canvas>
 
@@ -134,7 +144,10 @@ For Shadow Parts, please inspect the element's #shadow.
       variant: 'minimal',
     }}
   >
-    {Template.bind({})}
+    {(() => {
+      setColorMode();
+      return Template.bind({});
+    })()}
   </Story>
 </Canvas>
 
@@ -173,10 +186,12 @@ For Shadow Parts, please inspect the element's #shadow.
       claimLang: 'en',
     }}
   >
-    {() => ({
-      components: { AppFooter },
-      props: AppFooter.props,
-      template: `
+    {() => (
+      setColorMode(),
+      {
+        components: { AppFooter },
+        props: AppFooter.props,
+        template: `
         <div style="margin: -1rem;">
           <scale-app-footer
             :claim-lang="claimLang"
@@ -192,7 +207,8 @@ For Shadow Parts, please inspect the element's #shadow.
           </scale-app-footer>
         </div>
       `,
-    })}
+      }
+    )}
   </Story>
 </Canvas>
 
