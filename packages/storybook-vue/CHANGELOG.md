@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+
+### Features
+
+* **tooltip:** add styles prop ([#895](https://github.com/telekom/scale/issues/895)) ([4bae4a9](https://github.com/telekom/scale/commit/4bae4a91fb04ff884bc9b6882730ebade97b70a6))
+
+
+
+
+
 # [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue
