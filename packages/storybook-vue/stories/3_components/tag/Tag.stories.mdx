@@ -114,32 +114,41 @@ export const TemplateInteractive = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --background: var(--scl-color-text-standard);
-  --color: var(--scl-color-white);
-  --font-size: var(--scl-font-variant-body-size);
-  --line-height: var(--scl-font-variant-body-line-height);
-  --font-weight: var(--scl-font-weight-bold);
-  --radius: var(--scl-radius-4);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --background: var(--telekom-color-ui-additional-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --radius: var(--telekom-radius-small);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
-  --icon-color-hover: var(--scl-color-primary-active);
-  --background-secondary: var(--scl-color-teal-80);
+  --icon-color-hover: var(--color);
+  --color-secondary: var(--telekom-color-text-and-icon-white-standard);
+  --background-secondary: var(--telekom-color-additional-teal-600);
+  --background-secondary-hover: var(--telekom-color-ui-ghost-hovered);
+  --background-secondary-active: var(--telekom-color-ui-ghost-pressed);
 
-  --background-disabled: var(--scl-color-background-disabled);
-  --color-disabled: var(--scl-color-grey-60);
+  --background-disabled: var(--telekom-color-ui-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-left-dismissable: var(--scl-spacing-2);
+  --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
 
-  --border-button-dismissable-focus: 1px solid var(--scl-color-background-standard);
-  --background-button-dismissable-focus: var(--scl-color-black);
+  --border-button-dismissable-focus: 1px solid
+    var(--telekom-color-ui-outlined-border-standard);
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  --background-button-dismissable-hover: var(--scl-color-black);
+  --background-button-dismissable-hover: var(
+    --telekom-color-ui-ghost-hovered-inverted
+  );
+  --background-button-dismissable-active: var(
+    --telekom-color-ui-ghost-pressed-inverted
+  );
   --height-button-dismissable-small: 20px;
 
-  --spacing-small: 0 var(--scl-spacing-8);
-  --font-size-small: var(--scl-font-size-12);
-  --line-height-small: var(--scl-font-line-height-160);
+  --spacing-small: 0 var(--telekom-spacing-unit-x2);
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-loose);
 }
 ```
 
