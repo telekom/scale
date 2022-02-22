@@ -139,23 +139,25 @@
   box-shadow: var(--box-shadow-focus);
 }
 
-.switch--focus-visible-supported input:focus-visible:not(:checked) ~ .switch__wrapper {
+.switch--focus-visible-supported
+  input:focus-visible:not(:checked)
+  ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
-  border-color: var(--telekom-color-ui-outlined-border-hovered)
+  border-color: var(--telekom-color-ui-outlined-border-hovered);
 }
 
-.switch--focus-visible-supported input:focus-visible:checked ~ .switch__wrapper {
+.switch--focus-visible-supported
+  input:focus-visible:checked
+  ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
 }
-
-
 
 .switch input:checked ~ .switch__wrapper {
   --color-state: var(--color-on);
   --color-background: var(--color-state);
   --color-toggle: var(--telekom-color-ui-additional-base);
   --color-text: var(--color-state-contrast);
-  border-color: transparent
+  border-color: transparent;
 }
 
 /* Needs to placed after :checked but before :active */
@@ -184,7 +186,6 @@
 .switch:active input:not(:checked) ~ .switch__wrapper .switch__toggle {
   background-color: var(--telekom-color-ui-solid-pressed);
 }
-
 
 .switch:active input:checked ~ .switch__wrapper {
   border-color: transparent;
@@ -232,5 +233,5 @@
 
 .switch.switch--disabled .switch__text:before,
 .switch.switch--disabled .switch__text:after {
-  color: var(--telekom-color-text-and-icon-disabled)
+  color: var(--telekom-color-text-and-icon-disabled);
 }
