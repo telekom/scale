@@ -39,7 +39,7 @@ scale-app-header {
 
 .header__container {
   width: 100%;
-  height: 128px;
+  height: auto;
 }
 
 .header__user-menu--desktop {
