@@ -26,7 +26,7 @@
   --background-secondary-hover: var(--telekom-color-ui-ghost-hovered);
   --background-secondary-active: var(--telekom-color-ui-ghost-pressed);
 
-  --background-disabled: var(--telekom-color-ui-disabled);
+  --background-disabled: var(--telekom-color-ui-solid-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --spacing-left-dismissable: var(--telekom-spacing-unit-x05);

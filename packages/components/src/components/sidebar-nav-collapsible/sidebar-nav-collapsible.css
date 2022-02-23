@@ -14,7 +14,8 @@
   --border-bottom-color: var(--telekom-color-ui-additional-subtle);
   --border-left-color-third-nesting: var(--telekom-color-ui-additional-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-primary: var(--telekom-color-text-and-icon-primary-hovered);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
@@ -59,7 +60,7 @@
 }
 
 .sidebar-nav-collapsible__button:hover {
-  color: var(--color-primary);
+  color: var(--color-hover);
 }
 
 .sidebar-nav-collapsible__button:active {

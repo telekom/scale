@@ -13,6 +13,7 @@
   --border-bottom-color: var(--telekom-color-ui-additional-subtle);
   --border-left-color-third-nesting: var(--telekom-color-ui-additional-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --background-color-before-active: var(--color-primary);
   --font-weight-bold: var(--telekom-typography-font-weight-bold);
@@ -74,7 +75,7 @@
 }
 
 ::slotted(a:hover) {
-  color: var(--color-primary);
+  color: var(--color-hover);
 }
 
 ::slotted(a:focus) {
