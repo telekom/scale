@@ -87,6 +87,7 @@
   width: 19px;
   padding: 6.5px;
   border-radius: 20%;
+  color: var(--telekom-color-text-and-icon-standard)
 }
 
 .notification-banner__button-close:hover svg {
