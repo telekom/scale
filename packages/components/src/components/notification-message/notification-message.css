@@ -12,8 +12,7 @@
 :host {
   --width: 100%;
   --radius: var(--telekom-radius-standard);
-  /* FIXME:TOKEN what is this really for? */
-  --border: var(--telekom-line-weight-standard) solid var(--scl-color-white);
+  --border: var(--telekom-line-weight-standard) solid transparent;
 
   --background-error: var(--telekom-color-functional-danger-subtle);
   --background-warning: var(--telekom-color-functional-warning-subtle);
@@ -61,7 +60,7 @@
   position: absolute;
   top: 8px;
   right: 13.5px;
-  color: hsl(0, 0%, 10%);
+  color: var(--telekom-color-text-and-icon-standard)
 }
 
 .notification-message__icon-close svg {
