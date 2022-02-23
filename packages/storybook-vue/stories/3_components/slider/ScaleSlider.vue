@@ -2,6 +2,7 @@
   <scale-slider
     :custom-color="customColor"
     :disabled="disabled"
+    :name="name"
     :label="label"
     :max="max"
     :min="min"
@@ -23,6 +24,7 @@ export default {
     customColor: String,
     disabled: { type: Boolean, default: false },
     label: String,
+    name: String,
     max: { type: Number, default: 100 },
     min: { type: Number, default: 0 },
     showValue: { type: Boolean, default: true },
