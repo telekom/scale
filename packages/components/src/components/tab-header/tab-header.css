@@ -11,21 +11,24 @@
 
 :host {
   outline: none;
-
-  --font-family: var(--scl-font-family-sans, TeleNeoWeb);
-  --font-weight: var(--scl-font-weight-bold);
+  --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
+  --font-weight: var(--telekom-typography-font-weight-bold);
   --height-small: 2rem;
-  --color-hover: var(--scl-color-primary-hover);
-  --color-selected: var(--scl-color-primary);
-  --background-underline-hover: var(--scl-color-primary-hover);
-  --background-underline-active: var(--scl-color-primary-active);
-  --color-active: var(--scl-color-primary-active);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --spacing-right-slotted: var(--scl-spacing-8);
-  --color-disabled: var(--scl-color-background-disabled);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+  --background-underline-hover: var(--telekom-color-primary-hovered);
+  --background-underline-active: var(--telekom-color-primary-pressed);
+  --color-active: var(--telekom-color-text-and-icon-primary-standard);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --spacing-right-slotted: var(--telekom-spacing-unit-x2);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --radius: var(--telekom-radius-standard);
 }
 
 .tab-header {
+  color: var(--color);
   cursor: pointer;
   display: inline-flex;
   outline: none;
@@ -38,7 +41,7 @@
   padding-right: var(--tab-spacing);
   font-family: var(--font-family);
   font-size: calc(var(--tab-height) / 2);
-  font-weight: var(--scl-font-weight-bold);
+  font-weight: var(--font-weight);
   border-radius: var(--tab-radius);
 }
 
@@ -108,8 +111,8 @@
   color: var(--color-selected);
 }
 .tab-header--selected:after {
-  border-top-left-radius: var(--scl-radius-8);
-  border-top-right-radius: var(--scl-radius-8);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
   height: var(--tab-border-size-selected);
   background-color: var(--color-selected);
 }

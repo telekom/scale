@@ -10,33 +10,41 @@
  */
 
 :host {
-  --background: var(--scl-color-text-standard);
-  --color: var(--scl-color-white);
-  --font-size: var(--scl-font-variant-body-size);
-  --line-height: var(--scl-font-variant-body-line-height);
-  --font-weight: var(--scl-font-weight-bold);
-  --radius: var(--scl-radius-4);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --background: var(--telekom-color-ui-additional-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --radius: var(--telekom-radius-small);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
-  --icon-color-hover: var(--scl-color-primary-active);
-  --background-secondary: var(--scl-color-teal-80);
+  --icon-color-hover: var(--color);
+  --color-secondary: var(--telekom-color-text-and-icon-white-standard);
+  --background-secondary: var(--telekom-color-additional-teal-600);
+  --background-secondary-hover: var(--telekom-color-ui-ghost-hovered);
+  --background-secondary-active: var(--telekom-color-ui-ghost-pressed);
 
-  --background-disabled: var(--scl-color-background-disabled);
-  --color-disabled: var(--scl-color-grey-60);
+  --background-disabled: var(--telekom-color-ui-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --spacing-left-dismissable: var(--scl-spacing-2);
+  --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
 
   --border-button-dismissable-focus: 1px solid
-    var(--scl-color-background-standard);
-  --background-button-dismissable-focus: ;
+    var(--telekom-color-ui-outlined-border-standard);
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
-  --background-button-dismissable-hover: var(--scl-color-white);
+  --background-button-dismissable-hover: var(
+    --telekom-color-ui-ghost-hovered-inverted
+  );
+  --background-button-dismissable-active: var(
+    --telekom-color-ui-ghost-pressed-inverted
+  );
   --height-button-dismissable-small: 20px;
 
-  --spacing-small: 0 var(--scl-spacing-8);
-  --font-size-small: var(--scl-font-size-12);
-  --line-height-small: var(--scl-font-line-height-160);
+  --spacing-small: 0 var(--telekom-spacing-unit-x2);
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-loose);
 }
 
 .tag {
@@ -48,7 +56,7 @@
   transition: all 0.15s ease-in-out;
   align-items: center;
   white-space: nowrap;
-  border-radius: var(--scl-radius-4);
+  border-radius: var(--telekom-radius-small);
   vertical-align: baseline;
   justify-content: center;
   font-size: var(--font-size);
@@ -61,6 +69,7 @@
 
 .tag--variant-secondary {
   background: var(--background-secondary);
+  color: var(--color-secondary);
 }
 
 .tag scale-icon-action-close {
@@ -71,6 +80,11 @@
 .tag:not(.tag--disabled) scale-icon-action-close:hover {
   color: var(--icon-color-hover);
 }
+.tag--variant-secondary scale-icon-action-close,
+.tag--variant-secondary:not(.tag--disabled) scale-icon-action-close:hover {
+  color: var(--color-secondary);
+}
+
 .tag--dismissable {
   padding-right: 0;
 }
@@ -94,6 +108,9 @@
 .tag--dismissable button:hover {
   background: var(--background-button-dismissable-hover);
 }
+.tag--dismissable button:active {
+  background: var(--background-button-dismissable-active);
+}
 .tag--dismissable button:focus scale-icon-action-close {
   top: -1px;
   position: relative;
@@ -112,6 +129,7 @@
 
 .tag--variant-secondary.tag--dismissable {
   background: var(--background-secondary);
+  color: var(--color-secondary);
 }
 
 .tag--variant-secondary.tag--disabled {
@@ -129,6 +147,13 @@
 }
 .tag--link.tag--variant-secondary:hover {
   background: var(--background-secondary);
+}
+
+.tag--variant-secondary.tag--dismissable button:hover {
+  background: var(--background-secondary-hover);
+}
+.tag--variant-secondary.tag--dismissable button:active {
+  background: var(--background-secondary-hover);
 }
 .tag--link.tag--variant-secondary:focus {
   border: 1px solid white;

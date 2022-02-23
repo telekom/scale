@@ -1,19 +1,22 @@
 :host {
-  --inner-width-small: var(--scl-spacing-80);
-  --inner-height-small: var(--scl-spacing-80);
+  --inner-width-small: var(--telekom-spacing-unit-x20);
+  --inner-height-small: var(--telekom-spacing-unit-x20);
   --inner-width-large: 126.5px;
   --inner-height-large: 96px;
   --width-small: 120px;
   --height-small: 120px;
   --height-large: 160px;
   --width-large: 160px;
-  --color-blue: var(--scl-color-blue-60);
-  --color-white: var(--scl-color-white);
-  --color-black: var(--scl-color-grey-90);
-  --color-primary: var(--scl-color-primary);
-  --font-family: var(--scl-font-family-sans);
-  --font-size: calc(var(--scl-font-size-20) * 3);
-  --font-size-prefix: var(--scl-font-size-20);
+  /* FIXME variables shouldn't have color names */
+  --color-blue: var(--telekom-color-additional-blue-600);
+  /* FIXME variables are used sometimes as background and sometimes as font color */
+  --color-white: var(--telekom-color-background-surface);
+  --color-black: var(--telekom-color-text-and-icon-functional-black);
+  --color-primary: var(--telekom-color-primary-standard);
+  --font-family: var(--telekom-typography-font-family-sans);
+  /* FIXME is this calc necessary? */
+  --font-size: calc(var(--telekom-typography-font-size-callout) * 3);
+  --font-size-prefix: var(--telekom-typography-font-size-callout);
 }
 
 .callout {

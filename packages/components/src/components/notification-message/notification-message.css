@@ -11,14 +11,16 @@
 
 :host {
   --width: 100%;
-  --radius: var(--scl-radius-8);
-  --border: 1px solid var(--scl-color-white);
+  --radius: var(--telekom-radius-standard);
+  /* FIXME:TOKEN what is this really for? */
+  --border: var(--telekom-line-weight-standard) solid var(--scl-color-white);
 
-  /* Token not available, up for discussion */
-  --background-error: hsla(353.79999999999995, 100%, 88.6%, 0.35);
-  --background-warning: hsla(33.5, 100%, 75.1%, 0.3);
-  --background-informational: hsla(190.20000000000005, 100%, 92%, 0.75);
-  --background-success: hsl(98.80000000000001, 49.7%, 61%, 0.2);
+  --background-error: var(--telekom-color-functional-danger-subtle);
+  --background-warning: var(--telekom-color-functional-warning-subtle);
+  --background-informational: var(
+    --telekom-color-functional-informational-subtle
+  );
+  --background-success: var(--telekom-color-functional-success-subtle);
 }
 
 .notification-message {
@@ -43,8 +45,8 @@
 
 .notification-message__heading {
   margin: 14px 48px 14px 48px;
-  font-weight: var(--scl-font-weight-bold);
-  line-height: var(--scl-font-line-height-125);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  line-height: var(--telekom-typography-line-spacing-standard);
 }
 
 .notification-message__text {
@@ -52,7 +54,7 @@
 }
 
 ::slotted(*) {
-  font-weight: var(--scl-font-weight-regular);
+  font-weight: var(--telekom-typography-font-weight-regular);
 }
 
 .notification-message__icon-close {
@@ -71,7 +73,7 @@
 
 .notification-message__icon-close:hover svg {
   background-color: hsl(0, 0%, 100%);
-  color: var(--scl-color-primary-hover);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 .notification-message__icon-success {
@@ -80,7 +82,7 @@
   left: 17px;
   height: 20px;
   width: 20px;
-  color: var(--scl-color-background-success);
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 
 .notification-message__icon-error {
@@ -89,7 +91,7 @@
   left: 17px;
   height: 20px;
   width: 20px;
-  color: var(--scl-color-background-error);
+  color: var(--telekom-color-text-and-icon-functional-danger);
 }
 
 .notification-message__icon-information {
@@ -98,7 +100,7 @@
   left: 17px;
   height: 20px;
   width: 20px;
-  color: var(--scl-color-text-info);
+  color: var(--telekom-color-text-and-icon-functional-informational);
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {

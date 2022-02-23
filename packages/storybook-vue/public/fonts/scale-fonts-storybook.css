@@ -6,8 +6,7 @@ h4,
 h5,
 h6,
 li {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  color: var(--scl-color-text-standard) !important;
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
 }
 
 .sbdocs-h1,
@@ -46,11 +45,13 @@ li {
 }
 
 .sbdocs-a {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  color: var(--scl-color-text-link) !important;
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: #005ac4 !important;
 }
 
-.sbdocs-p, .sbdocs-ul, .sbdocs-li {
+.sbdocs-p,
+.sbdocs-ul,
+.sbdocs-li {
   font-size: 16px !important;
   line-height: 24px !important;
 }

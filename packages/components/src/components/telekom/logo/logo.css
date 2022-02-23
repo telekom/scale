@@ -21,11 +21,11 @@
 }
 
 .logo--variant-magenta {
-  background-color: var(--scl-color-white);
+  background-color: var(--telekom-color-background-canvas);
 }
 
 .logo--variant-white {
-  background-color: var(--scl-color-primary);
+  background-color: var(--telekom-color-primary-standard);
 }
 
 .logo--transparent {

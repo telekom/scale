@@ -1,41 +1,47 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
 import ScaleModal from './ScaleModal.vue';
 
 <Meta
-  title='Components/Modal'
+  title="Components/Modal"
   component={ScaleModal}
   argTypes={{
     size: {
       control: {
-        type: "select",
-        options: ["small", "default", "large"]
+        type: 'select',
+        options: ['small', 'default', 'large'],
       },
     },
     alignActions: {
       control: {
-        type: "select",
-        options: ["right", "left"]
+        type: 'select',
+        options: ['right', 'left'],
       },
     },
     opened: {
       control: {
-        disable: true
+        disable: true,
       },
     },
     showActions: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     shortBody: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
     longBody: {
       table: {
-        disable: true
-      }
+        disable: true,
+      },
     },
   }}
 />
@@ -46,17 +52,17 @@ export const Template = (args, context) => ({
     showActions: Boolean,
     shortBody: Boolean,
     longBody: Boolean,
-    ...ScaleModal.props
+    ...ScaleModal.props,
   },
   data() {
     return {
-      isOpen: args.opened
-    }
+      isOpen: args.opened,
+    };
   },
   methods: {
     scaleClose() {
-      this.isOpen = false
-    }
+      this.isOpen = false;
+    },
   },
   template: `
     <div>
@@ -77,7 +83,7 @@ export const Template = (args, context) => ({
         </template>
         <template v-if="longBody">
           <p>Hello. Welcome. What a pleasure it is to have you.</p>
-          <scale-input label="Please enter your favorite color" helper-text="Any valid CSS value"></scale-input>
+          <scale-text-field id="text-field" label="Please enter your favorite color" helper-text="Any valid CSS value"></scale-text-field>
           <p>It is not a disaster. It's not a disaster, alright? She's not going to the cops, she's not telling a living soul. You wanna know why? One word: blowback. If she blabs, it'll be a disaster - for her. That DEA brother-in-law? Screwed! You were right under his nose. He'll be lucky if they let him bust glue sniffers at the hobby shop. The kids? Paging Dr. Phil! 'My daddy's a drug dealer and my mommy turned him in!' And the house? Gone! The feds will come in and RICO her and the kids out on the street. Good luck arguing with them on that, noooo. It's not gonna happen. She's bluffing. And she knows it.</p>
           <p>Today's your lucky day. Look around, kiddo - it's all yours. You are now the owner of this fine establishment. Free? Oh ladies, cover your ears. No... not free. Look, hey... this is a squeaky clean, highly profitable (at least potentially), local institution. Look the bottom with favor by the chamber of commerce, better business bureau at three-hundred and twelve thousand dollars, it's a steal.</p>
           <p>Don't you get it? On the outside it's a nail salon right, on the inside it's the best money laundering a growing boy could ask for. Wait, wait! Come back here. Sit. Come on, come on... humor me here for a second. You know you need to launder your money, right? Do you understand the basics of it - placement, layering, integration. Well, you wanna stay out of jail don't ya? You wanna keep your money and your freedom. Cause I got three little letters for ya, I - R - S. If they can get Capone, they can get you.</p>
@@ -98,30 +104,37 @@ export const Template = (args, context) => ({
         Open Modal
       </scale-button>
     </div>
-  `
-})
+  `,
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Modal</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Modal</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
   <Story
-    name='Standard'
+    name="Standard"
     args={{
       opened: false,
       showActions: true,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
+<ArgsTable story="Standard" />
 
 ```html
 <scale-modal heading="Today is your lucky day" id="modal">
@@ -129,9 +142,7 @@ export const Template = (args, context) => ({
   <scale-button variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button>
-    Primary Action
-  </scale-button>
+  <scale-button> Primary Action </scale-button>
 </scale-modal>
 
 <script>
@@ -149,52 +160,70 @@ export const Template = (args, context) => ({
 
 ```css
 :host {
-  --spacing-x: var(--scl-spacing-16);
+  --spacing-x: var(--telekom-spacing-unit-x4);
   --background-overlay: var(
-    --scl-color-background-overlay,
+    --telekom-color-background-backdrop,
     rgba(108, 108, 108, 0.7)
   );
 
-  --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
-  --radius-window: var(--scl-radius-8);
-  --box-shadow-window: var(--scl-shadow-level-5);
+  --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unit-x20)));
+  --radius-window: var(--telekom-radius-large);
+  --box-shadow-window: var(--telekom-shadow-top);
+  --background-window: var(--telekom-color-background-surface);
+  --color-window: var(--telekom-color-text-and-icon-standard);
 
+  /*
+    we're rudimentarily creating a grid here
+    in the following modal--size-*,
+    with 6, 8 and 12 columns
+
+    -spacing-56 !== --telekom-spacing-unrelated-sm
+  */
   --size-window-small: calc(
-    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
+    (6 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (5 * var(--telekom-spacing-unit-x8))
   );
   --size-window-default: calc(
-    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
+    (8 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (7 * var(--telekom-spacing-unit-x8))
   );
   --size-window-large: calc(
-    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
+    (12 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (11 * var(--telekom-spacing-unit-x8))
   );
 
-  --spacing-x-header: var(--scl-spacing-24);
-  --spacing-y-header: var(--scl-spacing-24);
+  --spacing-x-header: var(--telekom-spacing-unit-x6);
+  --spacing-y-header: var(--telekom-spacing-unit-x6);
 
-  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid
-    var(--scl-color-grey-20);
+  --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
+    var(
+      --telekom-color-ui-general-subtle,
+      var(--telekom-color-ui-additional-subtle)
+    );
 
-  --font-family-heading: var(--scl-font-family-sans);
-  --font-size-heading: var(--scl-font-size-20);
-  --font-weight-heading: var(--scl-font-weight-extrabold);
+  --font-family-heading: var(--telekom-typography-font-family-sans);
+  --font-size-heading: var(--telekom-typography-font-size-callout);
+  --font-weight-heading: var(--telekom-typography-font-weight-extra-bold);
 
-  --spacing-close-button: var(--scl-spacing-8);
-  --radius-close-button: var(--scl-radius-8);
-  --transition-close-button: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2)
-    var(--scl-color-focus);
-  --color-close-button-hover: var(--scl-color-primary-hover);
-  --color-close-button-active: var(--scl-color-primary-active);
+  --spacing-close-button: var(--telekom-spacing-unit-x2);
+  --radius-close-button: var(--telekom-radius-standard);
+  --transition-close-button: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-close-button: var(--telekom-color-text-and-icon-standard);
+  --color-close-button-hover: var(--telekom-color-primary-hovered);
+  --color-close-button-active: var(--telekom-color-primary-pressed);
 
-  --spacing-x-body-wrapper: var(--scl-spacing-24);
-  --spacing-y-body: var(--scl-spacing-24);
+  --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
+  --spacing-y-body: var(--telekom-spacing-unit-x6);
 
-  --spacing-actions: var(--scl-spacing-24);
+  --spacing-actions: var(--telekom-spacing-unit-x6);
 
-  --spacing-x-actions-slotted: var(--scl-spacing-8);
-  --background-actions-has-scroll: var(--scl-color-background-light);
+  --spacing-x-actions-slotted: var(--telekom-spacing-unit-x2);
+  --background-actions-has-scroll: var(
+    --telekom-color-background-surface-subtle
+  );
 }
 ```
 
@@ -204,12 +233,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='Standard Small'
+    name="Standard Small"
     args={{
       opened: false,
       size: 'small',
       showActions: true,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
@@ -222,9 +251,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <scale-button variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button>
-    Primary Action
-  </scale-button>
+  <scale-button> Primary Action </scale-button>
 </scale-modal>
 
 <script>
@@ -242,12 +269,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='Standard Large'
+    name="Standard Large"
     args={{
       opened: false,
       size: 'large',
       showActions: true,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
@@ -260,9 +287,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button slot="action">
-    Primary Action
-  </scale-button>
+  <scale-button slot="action"> Primary Action </scale-button>
 </scale-modal>
 
 <script>
@@ -280,12 +305,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='No Actions'
+    name="No Actions"
     args={{
       opened: false,
       size: 'small',
       showActions: false,
-      shortBody: true
+      shortBody: true,
     }}
   >
     {Template.bind({})}
@@ -312,12 +337,12 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='With No Body'
+    name="With No Body"
     args={{
       opened: false,
       size: 'small',
       showActions: true,
-      shortBody: false
+      shortBody: false,
     }}
   >
     {Template.bind({})}
@@ -329,9 +354,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button slot="action">
-    Primary Action
-  </scale-button>
+  <scale-button slot="action"> Primary Action </scale-button>
 </scale-modal>
 
 <script>
@@ -349,7 +372,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 <Canvas withSource="none">
   <Story
-    name='Scrolling With Actions'
+    name="Scrolling With Actions"
     args={{
       opened: false,
       showActions: true,
@@ -370,9 +393,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button slot="action">
-    Primary Action
-  </scale-button>
+  <scale-button slot="action"> Primary Action </scale-button>
 </scale-modal>
 
 <script>

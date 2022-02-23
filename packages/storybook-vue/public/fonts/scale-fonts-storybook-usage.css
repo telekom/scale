@@ -6,8 +6,8 @@
 .addon-usage h5,
 .addon-usage h6,
 .addon-usage li {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  color: var(--scl-color-text-standard) !important;
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: black !important;
 }
 
 .addon-usage h1,
@@ -46,9 +46,9 @@
 }
 
 .addon-usage a {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
   text-decoration: none !important;
-  color: var(--scl-color-text-link) !important;
+  color: #005ac4 !important;
 }
 
 .addon-usage p,
