@@ -20,7 +20,8 @@ import text_de from './5.Colors_de.md';
         let levelStringItem = [];
         let currentSection;
         let cleared = false;
-        let item = getItemByPathString('color.text-&-icon.functional.warning');
+        let item;
+        let borderItem;
         let contrastSections;
         function getItemPathByPath(path) {
           for (let i = 0; i < allTokens.tokens.length; i++) {
@@ -119,10 +120,10 @@ import text_de from './5.Colors_de.md';
           levelStringItem.length = 0;
           cleared = true;
         }
-        function generateColorRow(itemPathString) {
+        function generateTableColorRow(itemPathString) {
           item = getItemByPathString(itemPathString);
           return (
-            <tr>
+            <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
               {/* Example Column */}
               <td
                 style={{
@@ -442,6 +443,299 @@ import text_de from './5.Colors_de.md';
             </tr>
           );
         }
+        function generateUIOutlinedTableColorRow(
+          itemPathString,
+          borderItemPathString
+        ) {
+          item = getItemByPathString(itemPathString);
+          borderItem = getItemByPathString(borderItemPathString);
+          return (
+            <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
+              {/* Example Column */}
+              <td
+                style={{
+                  border: 'none',
+                  verticalAlign: 'top',
+                  width: '200px',
+                  padding: '5px 5px 5px 0',
+                }}
+              >
+                {clearContrastStates()}
+                {cleared ? setContrastStates() : null}
+                <div
+                  style={{
+                    backgroundColor: `${borderItem.value}`,
+                    padding: '20px 0 0 0',
+                    marginTop: '10px',
+                    border: `${
+                      darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                    }`,
+                    borderRadius: '4px',
+                    minWidth: '380px',
+                    minHeight: '80px',
+                  }}
+                >
+                  <span
+                    style={{
+                      padding: '20px',
+                      color: '#fff',
+                    }}
+                  >
+                    Border color
+                  </span>
+                </div>
+                {item.contrastChecks ? (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: '20px',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '4px',
+                      minWidth: '380px',
+                      minHeight: '120px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        color: `${getItemColorByPath(pathStringItem[0])}`,
+                        fontSize: '9px',
+                        padding: '0px 0px 5px 0px',
+                      }}
+                    >
+                      <span>
+                        Fill color <br />
+                      </span>
+                      Recommended colors for text & icons
+                    </div>
+                    {hasContrastWithoutSlash(pathStringItem) ? (
+                      <td
+                        style={{
+                          padding: '0px 18px 0px 0px',
+                          border: 'none',
+                        }}
+                      >
+                        {pathStringItem
+                          .filter(
+                            (path) => !getItemPathByPath(path).includes('/')
+                          )
+                          .map((path) => {
+                            return (
+                              <a href={`#${path}`}>
+                                <div
+                                  style={{
+                                    color: `${getItemColorByPath(path)}`,
+                                    fontSize: '11px',
+                                  }}
+                                >
+                                  {getItemPathByPath(path)}
+                                  {' (' + getLevelByPath(path) + ')'}
+                                </div>
+                              </a>
+                            );
+                          })}
+                      </td>
+                    ) : null}
+                    {getAllSections(pathStringItem)}
+                    {contrastSections
+                      ? contrastSections.map((item, i) => {
+                          return (
+                            <td
+                              style={{
+                                border: 'none',
+                                padding: '0px 18px 0px 0px',
+                              }}
+                            >
+                              {pathStringItem
+                                .filter((path) =>
+                                  getItemPathByPath(path).includes(
+                                    `${contrastSections[i]}`
+                                  )
+                                )
+                                .map((path) => {
+                                  return (
+                                    <a href={`#${path}`}>
+                                      <div
+                                        style={{
+                                          color: `${getItemColorByPath(path)}`,
+                                          fontSize: '11px',
+                                        }}
+                                      >
+                                        {getItemPathByPath(path)}
+                                        {'(' + getLevelByPath(path) + ')'}
+                                      </div>
+                                    </a>
+                                  );
+                                })}
+                            </td>
+                          );
+                        })
+                      : null}
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: '20px',
+                      marginTop: '10px',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '4px',
+                      width: '380px',
+                      minHeight: '120px',
+                    }}
+                  >
+                    <span>Fill color</span>
+                  </div>
+                )}
+              </td>
+              {/* Description Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  width: '00px',
+                  height: 'inherit',
+                  border: 'none',
+                }}
+              >
+                <div
+                  style={{
+                    marginTop: '7px',
+                    marginBottom: '7px',
+                    width: '400px',
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        fontWeight: 'bolder',
+                        fontSize: '18px',
+                        color: `${darkMode ? '#fff' : '#000'}`,
+                      }}
+                    >
+                      {borderItem.name}
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        color: `${darkMode ? '#fff' : '#000'}`,
+                      }}
+                    >
+                      {borderItem.comment}
+                    </span>
+                  </div>
+                </div>
+              </td>
+              {/* Token Name Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  border: 'none',
+                  padding: '10px 0 10px 0',
+                }}
+              >
+                <div
+                  style={{
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: `${darkMode ? '#fff' : '#000'}`,
+                  }}
+                >
+                  css
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '350px',
+                    height: '60px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      padding: '5px 0 0 20px',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    border: {borderItem.cssVariableName} <br />
+                    fill: {item.cssVariableName}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    padding: '10px 0 0 0',
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: `${darkMode ? '#fff' : '#000'}`,
+                  }}
+                >
+                  js
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    width: '350px',
+                    height: '60px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      padding: '5px 0 0 20px',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    border: {borderItem.jsPathName} <br />
+                    fill: {item.jsPathName}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    padding: '10px 0 0 0',
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: `${darkMode ? '#fff' : '#000'}`,
+                  }}
+                >
+                  hex
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '350px',
+                    height: '60px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      padding: '5px 0 0 20px',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    border: {borderItem.value} <br />
+                    fill: {item.value}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          );
+        }
         function generateTableHead() {
           return (
             <thead>
@@ -485,27 +779,153 @@ import text_de from './5.Colors_de.md';
             </thead>
           );
         }
+        function generateSectionTitle(sectionTitle) {
+          return (
+            <div
+              style={{
+                marginTop: '100px',
+                marginBottom: '50px',
+                fontWeight: 'bold',
+                fontSize: '30px',
+                color: `${darkMode ? '#fff' : '#000'}`,
+              }}
+            >
+              {sectionTitle}
+            </div>
+          );
+        }
+        function generateSectionSubTitle(sectionTitle) {
+          return (
+            <div
+              style={{
+                marginTop: '25px',
+                marginBottom: '25px',
+                fontWeight: 'bold',
+                fontSize: '15px',
+                color: `${darkMode ? '#fff' : '#000'}`,
+              }}
+            >
+              {sectionTitle}
+            </div>
+          );
+        }
         return (
           <DocsContainer context={context}>
             <Description markdown={locale === 'en' ? text_en : text_de} />
             <table style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
               <div>
-                <div
-                  style={{
-                    marginTop: '100px',
-                    marginBottom: '50px',
-                    fontWeight: 'bold',
-                    fontSize: '30px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
-                  }}
-                >
-                  Primary Colors
-                </div>
+                {generateSectionTitle('Primary Colors')}
                 {generateTableHead()}
                 <tbody>
-                  {generateColorRow('color.primary.standard')}
-                  {generateColorRow('color.background.surface')}
-                  {generateColorRow('color.text-&-icon.additional')}
+                  {generateTableColorRow('color.primary.standard')}
+                  {generateTableColorRow('color.background.surface')}
+                  {generateTableColorRow('color.text-&-icon.additional')}
+                </tbody>
+                {generateSectionTitle('Textcolor Standard')}
+                <tbody>
+                  {generateTableColorRow('color.text-&-icon.standard')}
+                  {generateTableColorRow('color.text-&-icon.additional')}
+                  {generateTableColorRow('color.text-&-icon.disabled')}
+                  {generateTableColorRow('color.text-&-icon.inverted.standard')}
+                  {generateTableColorRow(
+                    'color.text-&-icon.inverted.additional'
+                  )}
+                </tbody>
+                {generateSectionTitle('Textcolor Function')}
+                <tbody>
+                  {generateTableColorRow('color.text-&-icon.link.standard')}
+                  {generateTableColorRow(
+                    'color.text-&-icon.functional.success'
+                  )}
+                  {generateTableColorRow('color.text-&-icon.functional.danger')}
+                  {generateTableColorRow(
+                    'color.text-&-icon.functional.warning'
+                  )}
+                </tbody>
+                {generateSectionTitle('Background Standard')}
+                <tbody>
+                  {generateTableColorRow('color.background.canvas')}
+                  {generateTableColorRow('color.background.canvas-subtle')}
+                  {generateTableColorRow('color.background.surface')}
+                  {generateTableColorRow('color.background.surface-subtle')}
+                  {generateTableColorRow('color.background.backdrop')}
+                  {generateTableColorRow('color.background.surface-highlight')}
+                </tbody>
+                {generateSectionTitle('Background function')}
+                <tbody>
+                  {generateTableColorRow('color.functional.success.standard')}
+                  {generateTableColorRow('color.functional.success.subtle')}
+                  {generateTableColorRow(
+                    'color.functional.informational.standard'
+                  )}
+                  {generateTableColorRow(
+                    'color.functional.informational.subtle'
+                  )}
+                  {generateTableColorRow('color.functional.warning.standard')}
+                  {generateTableColorRow('color.functional.warning.subtle')}
+                  {generateTableColorRow('color.functional.danger.standard')}
+                  {generateTableColorRow('color.functional.danger.subtle')}
+                </tbody>
+                {generateSectionTitle('UI')}
+                <tbody>
+                  {generateTableColorRow('color.ui.outlined.border.standard')}
+                  {generateTableColorRow('color.ui.solid.standard')}
+                </tbody>
+                {generateSectionSubTitle('UI Additional')}
+                <tbody>
+                  {generateTableColorRow('color.ui.additional.base')}
+                  {generateTableColorRow('color.ui.additional.subtle')}
+                  {generateTableColorRow('color.ui.additional.light')}
+                  {generateTableColorRow('color.ui.additional.regular')}
+                  {generateTableColorRow('color.ui.additional.strong')}
+                  {generateTableColorRow('color.ui.additional.extra-strong')}
+                </tbody>
+                {generateSectionTitle('Agent States')}
+                <tbody>
+                  {generateTableColorRow('color.text-&-icon.primary.standard')}
+                  {generateTableColorRow('color.text-&-icon.primary.hovered')}
+                  {generateTableColorRow('color.text-&-icon.primary.pressed')}
+                </tbody>
+                {generateSectionSubTitle('Text Link')}
+                <tbody>
+                  {generateTableColorRow('color.text-&-icon.link.standard')}
+                  {generateTableColorRow('color.text-&-icon.link.hovered')}
+                  {generateTableColorRow('color.text-&-icon.link.visited')}
+                  {generateTableColorRow('color.text-&-icon.link.active')}
+                </tbody>
+                {generateSectionSubTitle('Functional Elements')}
+                <tbody>
+                  {generateTableColorRow('color.functional.success.standard')}
+                  {generateTableColorRow('color.functional.success.hovered')}
+                  {generateTableColorRow('color.functional.success.pressed')}
+                </tbody>
+                {generateSectionSubTitle('Border Focus State')}
+                <tbody>{generateTableColorRow('color.functional.focus')}</tbody>
+                {generateSectionSubTitle('UI Outlined Elements')}
+                <tbody>
+                  {generateUIOutlinedTableColorRow(
+                    'color.ui.additional.base',
+                    'color.ui.outlined.border.standard'
+                  )}
+                  {generateUIOutlinedTableColorRow(
+                    'color.ui.additional.base',
+                    'color.ui.outlined.border.hovered'
+                  )}
+                  {generateUIOutlinedTableColorRow(
+                    'color.ui.additional.base',
+                    'color.ui.outlined.border.pressed'
+                  )}
+                  {generateUIOutlinedTableColorRow(
+                    'color.ui.additional.base',
+                    'color.ui.outlined.border.disabled'
+                  )}
+                </tbody>
+                {generateSectionSubTitle('UI Solid Elements')}
+                <tbody>
+                  {generateTableColorRow('color.ui.solid.standard')}
+                  {generateTableColorRow('color.ui.solid.hovered')}
+                  {generateTableColorRow('color.ui.solid.pressed')}
+                  {generateTableColorRow('color.ui.solid.disabled')}
                 </tbody>
               </div>
             </table>
