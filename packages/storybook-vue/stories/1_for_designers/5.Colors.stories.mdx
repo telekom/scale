@@ -815,6 +815,9 @@ import text_de from './5.Colors_de.md';
             <table style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
               <div>
                 {generateSectionTitle('Primary Colors')}
+                {generateSectionSubTitle(
+                  'Our brand colors Magenta, White and Dark-Gray'
+                )}
                 {generateTableHead()}
                 <tbody>
                   {generateTableColorRow('color.primary.standard')}
@@ -843,6 +846,7 @@ import text_de from './5.Colors_de.md';
                   )}
                 </tbody>
                 {generateSectionTitle('Background Standard')}
+                {generateTableHead()}
                 <tbody>
                   {generateTableColorRow('color.background.canvas')}
                   {generateTableColorRow('color.background.canvas-subtle')}
@@ -881,6 +885,7 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.ui.additional.extra-strong')}
                 </tbody>
                 {generateSectionTitle('Agent States')}
+                {generateSectionSubTitle('e.g. Primary Button')}
                 <tbody>
                   {generateTableColorRow('color.text-&-icon.primary.standard')}
                   {generateTableColorRow('color.text-&-icon.primary.hovered')}
