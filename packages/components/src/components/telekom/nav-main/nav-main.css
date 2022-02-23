@@ -53,7 +53,8 @@ scale-nav-main {
   color: var(--color-hover);
 }
 .main-navigation__item:hover .main-navigation__item-link-text {
-  border-bottom: 2px solid var(--color-hover);
+  border-bottom: 2px solid var(--color-selected);
+  color: var(--color-hover);
   margin-bottom: -2px;
   height: calc(100% - 4px);
   display: flex;
