@@ -126,16 +126,39 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --font-weight: var(--scl-font-weight-medium);
-  --color: var(--scl-color-text-link);
-  --color-visited: var(--scl-color-text-link-visited);
-  --color-hover: var(--scl-color-text-link-hover);
-  --color-active: var(--scl-color-text-link-active);
-  --border: var(--scl-spacing-1) solid currentColor;
-  --border-focus: var(--scl-spacing-2) solid currentColor;
-  --color-disabled: var(--scl-color-grey-50);
+  --font-weight: var(--telekom-typography-font-weight-medium);
+  --spacing-x-icon: var(--telekom-spacing-unit-x1);
+  --line-offset: 0.0625em;
 
-  --spacing-x-icon: var(--scl-spacing-4);
+  /* initial */
+  --color: var(--telekom-color-text-and-icon-link-standard);
+  --color-line-initial: var(--telekom-color-functional-interaction-subtle);
+  --line-thickness-initial: var(--telekom-line-weight-standard);
+  
+  /* visited */
+  --color-visited: var(--telekom-color-text-and-icon-link-visited);
+  --color-line-visited: currentColor;
+  --line-thickness-visited: var(--line-thickness-initial);
+  
+  /* hover */
+  --color-hover: var(--telekom-color-text-and-icon-link-hovered);
+  --color-line-hover: var(--telekom-color-functional-interaction-hovered);
+  --line-thickness-hover: var(--line-thickness-initial);
+  
+  /* focus */
+  --color-focus: var(--telekom-color-text-and-icon-link-standard);
+  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
+  --line-thickness-focus: var(--telekom-line-weight-bold);
+  
+  /* active */
+  --color-active: var(--telekom-color-text-and-icon-link-active);
+  --color-line-active: var(--telekom-color-functional-interaction-pressed);
+  --line-thickness-active: var(--line-thickness-initial);
+  
+  /* disabled */
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --color-line-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --line-thickness-disabled: var(--line-thickness-initial);
 }
 ```
 
