@@ -122,7 +122,7 @@ import text_de from './5.Colors_de.md';
         }
         function generateTableColorRow(itemPathString) {
           item = getItemByPathString(itemPathString);
-          return (
+          return item ? (
             <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
               {/* Example Column */}
               <td
@@ -141,6 +141,7 @@ import text_de from './5.Colors_de.md';
                       backgroundColor: `${item.value}`,
                       padding: '20px',
                       marginTop: '10px',
+                      marginLeft: '10px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
@@ -228,6 +229,7 @@ import text_de from './5.Colors_de.md';
                       backgroundColor: `${item.value}`,
                       padding: '20px',
                       marginTop: '10px',
+                      marginLeft: '10px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
@@ -290,6 +292,7 @@ import text_de from './5.Colors_de.md';
                     fontWeight: '500',
                     fontSize: '13px',
                     color: `${darkMode ? '#fff' : '#000'}`,
+                    width: '350px',
                   }}
                 >
                   css
@@ -298,7 +301,7 @@ import text_de from './5.Colors_de.md';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '350px',
+                    width: '342px',
                     height: '30px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                   }}
@@ -360,7 +363,7 @@ import text_de from './5.Colors_de.md';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '350px',
+                    width: '342px',
                     height: '30px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                   }}
@@ -422,7 +425,7 @@ import text_de from './5.Colors_de.md';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '350px',
+                    width: '342px',
                     height: '30px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                   }}
@@ -441,7 +444,7 @@ import text_de from './5.Colors_de.md';
                 </div>
               </td>
             </tr>
-          );
+          ) : null;
         }
         function generateUIOutlinedTableColorRow(
           itemPathString,
@@ -449,7 +452,7 @@ import text_de from './5.Colors_de.md';
         ) {
           item = getItemByPathString(itemPathString);
           borderItem = getItemByPathString(borderItemPathString);
-          return (
+          return item && borderItem ? (
             <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
               {/* Example Column */}
               <td
@@ -467,10 +470,11 @@ import text_de from './5.Colors_de.md';
                     backgroundColor: `${borderItem.value}`,
                     padding: '20px 0 0 0',
                     marginTop: '10px',
+                    marginLeft: '10px',
                     border: `${
                       darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                     }`,
-                    borderRadius: '4px',
+                    borderRadius: '4px 4px 0px 0px',
                     minWidth: '380px',
                     minHeight: '80px',
                   }}
@@ -489,10 +493,11 @@ import text_de from './5.Colors_de.md';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
+                      marginLeft: '10px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
-                      borderRadius: '4px',
+                      borderRadius: '0px 0px 4px 4px',
                       minWidth: '380px',
                       minHeight: '120px',
                     }}
@@ -578,13 +583,14 @@ import text_de from './5.Colors_de.md';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
-                      marginTop: '10px',
+                      marginLeft: '10px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
-                      borderRadius: '4px',
+                      borderRadius: '0px 0px 4px 4px',
                       width: '380px',
                       minHeight: '120px',
+                      color: `${darkMode ? '#fff' : '#000'}`,
                     }}
                   >
                     <span>Fill color</span>
@@ -651,7 +657,7 @@ import text_de from './5.Colors_de.md';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '350px',
+                    width: '342px',
                     height: '60px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                   }}
@@ -682,7 +688,7 @@ import text_de from './5.Colors_de.md';
                 <div
                   style={{
                     textAlign: 'start',
-                    width: '350px',
+                    width: '342px',
                     height: '60px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                   }}
@@ -714,7 +720,7 @@ import text_de from './5.Colors_de.md';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '350px',
+                    width: '342px',
                     height: '60px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                   }}
@@ -734,7 +740,7 @@ import text_de from './5.Colors_de.md';
                 </div>
               </td>
             </tr>
-          );
+          ) : null;
         }
         function generateTableHead() {
           return (
@@ -745,9 +751,14 @@ import text_de from './5.Colors_de.md';
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     fontSize: '13px',
-                    borderColor: '#fff',
-                    borderBottom: '1px solid #E7E8E9',
-                    padding: '0',
+                    borderColor: `${darkMode ? '#000' : '#fff'}`,
+                    borderBottom: `${
+                      darkMode ? '1px solid #FFFFFF' : '1px solid #E7E8E9'
+                    }`,
+                    borderRight: `${
+                      darkMode ? '1px solid #FFFFFF' : '1px solid #E7E8E9'
+                    }`,
+                    padding: '5px',
                   }}
                 >
                   Example
@@ -757,8 +768,13 @@ import text_de from './5.Colors_de.md';
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     fontSize: '13px',
-                    borderColor: '#fff',
-                    borderBottom: '1px solid #E7E8E9',
+                    borderColor: `${darkMode ? '#000' : '#fff'}`,
+                    borderBottom: `${
+                      darkMode ? '1px solid #FFFFFF' : '1px solid #E7E8E9'
+                    }`,
+                    borderRight: `${
+                      darkMode ? '1px solid #FFFFFF' : '1px solid #E7E8E9'
+                    }`,
                   }}
                 >
                   Description
@@ -768,9 +784,12 @@ import text_de from './5.Colors_de.md';
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     fontSize: '13px',
-                    borderColor: '#fff',
-                    borderBottom: '1px solid #E7E8E9',
-                    padding: '0',
+                    borderColor: `${darkMode ? '#000' : '#fff'}`,
+                    borderBottom: `${
+                      darkMode ? '1px solid #FFFFFF' : '1px solid #E7E8E9'
+                    }`,
+                    padding: '5px',
+                    width: '342px',
                   }}
                 >
                   Token Name
@@ -779,8 +798,8 @@ import text_de from './5.Colors_de.md';
             </thead>
           );
         }
-        function generateSectionTitle(sectionTitle) {
-          return (
+        function generateSectionTitle(sectionTitle, deactivateForDarkMode) {
+          return deactivateForDarkMode && darkMode ? null : (
             <div
               style={{
                 marginTop: '100px',
@@ -788,14 +807,15 @@ import text_de from './5.Colors_de.md';
                 fontWeight: 'bold',
                 fontSize: '30px',
                 color: `${darkMode ? '#fff' : '#000'}`,
+                paddingLeft: '8px',
               }}
             >
               {sectionTitle}
             </div>
           );
         }
-        function generateSectionSubTitle(sectionTitle) {
-          return (
+        function generateSectionSubTitle(sectionTitle, deactivateForDarkMode) {
+          return deactivateForDarkMode && darkMode ? null : (
             <div
               style={{
                 marginTop: '25px',
@@ -803,6 +823,7 @@ import text_de from './5.Colors_de.md';
                 fontWeight: 'bold',
                 fontSize: '15px',
                 color: `${darkMode ? '#fff' : '#000'}`,
+                paddingLeft: '8px',
               }}
             >
               {sectionTitle}
@@ -812,7 +833,11 @@ import text_de from './5.Colors_de.md';
         return (
           <DocsContainer context={context}>
             <Description markdown={locale === 'en' ? text_en : text_de} />
-            <table style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
+            <table
+              style={{
+                backgroundColor: `${darkMode ? '#000' : '#fff'}`,
+              }}
+            >
               <div>
                 {generateSectionTitle('Primary Colors')}
                 {generateSectionSubTitle(
@@ -821,8 +846,8 @@ import text_de from './5.Colors_de.md';
                 {generateTableHead()}
                 <tbody>
                   {generateTableColorRow('color.primary.standard')}
-                  {generateTableColorRow('color.background.surface')}
-                  {generateTableColorRow('color.text-&-icon.additional')}
+                  {generateTableColorRow('color.background.canvas')}
+                  {generateTableColorRow('color.background.surface-highlight')}
                 </tbody>
                 {generateSectionTitle('Textcolor Standard')}
                 <tbody>
@@ -833,6 +858,10 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow(
                     'color.text-&-icon.inverted.additional'
                   )}
+                  {generateTableColorRow('color.text-&-icon.white.standard')}
+                  {generateTableColorRow('color.text-&-icon.white.additional')}
+                  {generateTableColorRow('color.text-&-icon.black.standard')}
+                  {generateTableColorRow('color.text-&-icon.black.additional')}
                 </tbody>
                 {generateSectionTitle('Textcolor Function')}
                 <tbody>
@@ -843,6 +872,9 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.text-&-icon.functional.danger')}
                   {generateTableColorRow(
                     'color.text-&-icon.functional.warning'
+                  )}
+                  {generateTableColorRow(
+                    'color.text-&-icon.functional.informational'
                   )}
                 </tbody>
                 {generateSectionTitle('Background Standard')}
@@ -909,19 +941,19 @@ import text_de from './5.Colors_de.md';
                 {generateSectionSubTitle('UI Outlined Elements')}
                 <tbody>
                   {generateUIOutlinedTableColorRow(
-                    'color.ui.additional.base',
+                    'color.ui.outlined.fill.standard',
                     'color.ui.outlined.border.standard'
                   )}
                   {generateUIOutlinedTableColorRow(
-                    'color.ui.additional.light',
+                    'color.ui.outlined.fill.hovered',
                     'color.ui.outlined.border.hovered'
                   )}
                   {generateUIOutlinedTableColorRow(
-                    'color.ui.additional.regular',
+                    'color.ui.outlined.fill.pressed',
                     'color.ui.outlined.border.pressed'
                   )}
                   {generateUIOutlinedTableColorRow(
-                    'color.ui.additional.base',
+                    'color.ui.outlined.fill.disabled',
                     'color.ui.outlined.border.disabled'
                   )}
                 </tbody>
@@ -931,6 +963,137 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.ui.solid.hovered')}
                   {generateTableColorRow('color.ui.solid.pressed')}
                   {generateTableColorRow('color.ui.solid.disabled')}
+                </tbody>
+                {generateSectionTitle('Additional', true)}
+                {generateSectionSubTitle('Brown', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.brown.0')}
+                  {generateTableColorRow('color.additional.brown.100')}
+                  {generateTableColorRow('color.additional.brown.200')}
+                  {generateTableColorRow('color.additional.brown.300')}
+                  {generateTableColorRow('color.additional.brown.400')}
+                  {generateTableColorRow('color.additional.brown.500')}
+                  {generateTableColorRow('color.additional.brown.600')}
+                  {generateTableColorRow('color.additional.brown.700')}
+                  {generateTableColorRow('color.additional.brown.800')}
+                  {generateTableColorRow('color.additional.brown.900')}
+                </tbody>
+                {generateSectionSubTitle('Pink', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.pink.0')}
+                  {generateTableColorRow('color.additional.pink.100')}
+                  {generateTableColorRow('color.additional.pink.200')}
+                  {generateTableColorRow('color.additional.pink.300')}
+                  {generateTableColorRow('color.additional.pink.400')}
+                  {generateTableColorRow('color.additional.pink.500')}
+                  {generateTableColorRow('color.additional.pink.600')}
+                  {generateTableColorRow('color.additional.pink.700')}
+                  {generateTableColorRow('color.additional.pink.800')}
+                  {generateTableColorRow('color.additional.pink.900')}
+                </tbody>
+                {generateSectionSubTitle('Purple', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.purple.0')}
+                  {generateTableColorRow('color.additional.purple.100')}
+                  {generateTableColorRow('color.additional.purple.200')}
+                  {generateTableColorRow('color.additional.purple.300')}
+                  {generateTableColorRow('color.additional.purple.400')}
+                  {generateTableColorRow('color.additional.purple.500')}
+                  {generateTableColorRow('color.additional.purple.600')}
+                  {generateTableColorRow('color.additional.purple.700')}
+                  {generateTableColorRow('color.additional.purple.800')}
+                  {generateTableColorRow('color.additional.purple.900')}
+                </tbody>
+                {generateSectionSubTitle('Violet', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.violet.0')}
+                  {generateTableColorRow('color.additional.violet.100')}
+                  {generateTableColorRow('color.additional.violet.200')}
+                  {generateTableColorRow('color.additional.violet.300')}
+                  {generateTableColorRow('color.additional.violet.400')}
+                  {generateTableColorRow('color.additional.violet.500')}
+                  {generateTableColorRow('color.additional.violet.600')}
+                  {generateTableColorRow('color.additional.violet.700')}
+                  {generateTableColorRow('color.additional.violet.800')}
+                  {generateTableColorRow('color.additional.violet.900')}
+                </tbody>
+                {generateSectionSubTitle('Teal', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.teal.0')}
+                  {generateTableColorRow('color.additional.teal.100')}
+                  {generateTableColorRow('color.additional.teal.200')}
+                  {generateTableColorRow('color.additional.teal.300')}
+                  {generateTableColorRow('color.additional.teal.400')}
+                  {generateTableColorRow('color.additional.teal.500')}
+                  {generateTableColorRow('color.additional.teal.600')}
+                  {generateTableColorRow('color.additional.teal.700')}
+                  {generateTableColorRow('color.additional.teal.800')}
+                  {generateTableColorRow('color.additional.teal.900')}
+                </tbody>
+                {generateSectionSubTitle('Olive', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.olive.0')}
+                  {generateTableColorRow('color.additional.olive.100')}
+                  {generateTableColorRow('color.additional.olive.200')}
+                  {generateTableColorRow('color.additional.olive.300')}
+                  {generateTableColorRow('color.additional.olive.400')}
+                  {generateTableColorRow('color.additional.olive.500')}
+                  {generateTableColorRow('color.additional.olive.600')}
+                  {generateTableColorRow('color.additional.olive.700')}
+                  {generateTableColorRow('color.additional.olive.800')}
+                  {generateTableColorRow('color.additional.olive.900')}
+                </tbody>
+                {generateSectionSubTitle('Orange', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.orange.0')}
+                  {generateTableColorRow('color.additional.orange.100')}
+                  {generateTableColorRow('color.additional.orange.200')}
+                  {generateTableColorRow('color.additional.orange.300')}
+                  {generateTableColorRow('color.additional.orange.400')}
+                  {generateTableColorRow('color.additional.orange.500')}
+                  {generateTableColorRow('color.additional.orange.600')}
+                  {generateTableColorRow('color.additional.orange.700')}
+                  {generateTableColorRow('color.additional.orange.800')}
+                  {generateTableColorRow('color.additional.orange.900')}
+                </tbody>
+                {generateSectionSubTitle('Red', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.red.0')}
+                  {generateTableColorRow('color.additional.red.100')}
+                  {generateTableColorRow('color.additional.red.200')}
+                  {generateTableColorRow('color.additional.red.300')}
+                  {generateTableColorRow('color.additional.red.400')}
+                  {generateTableColorRow('color.additional.red.500')}
+                  {generateTableColorRow('color.additional.red.600')}
+                  {generateTableColorRow('color.additional.red.700')}
+                  {generateTableColorRow('color.additional.red.800')}
+                  {generateTableColorRow('color.additional.red.900')}
+                </tbody>
+                {generateSectionSubTitle('Blue', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.blue.0')}
+                  {generateTableColorRow('color.additional.blue.100')}
+                  {generateTableColorRow('color.additional.blue.200')}
+                  {generateTableColorRow('color.additional.blue.300')}
+                  {generateTableColorRow('color.additional.blue.400')}
+                  {generateTableColorRow('color.additional.blue.500')}
+                  {generateTableColorRow('color.additional.blue.600')}
+                  {generateTableColorRow('color.additional.blue.700')}
+                  {generateTableColorRow('color.additional.blue.800')}
+                  {generateTableColorRow('color.additional.blue.900')}
+                </tbody>
+                {generateSectionSubTitle('Green', true)}
+                <tbody>
+                  {generateTableColorRow('color.additional.green.0')}
+                  {generateTableColorRow('color.additional.green.100')}
+                  {generateTableColorRow('color.additional.green.200')}
+                  {generateTableColorRow('color.additional.green.300')}
+                  {generateTableColorRow('color.additional.green.400')}
+                  {generateTableColorRow('color.additional.green.500')}
+                  {generateTableColorRow('color.additional.green.600')}
+                  {generateTableColorRow('color.additional.green.700')}
+                  {generateTableColorRow('color.additional.green.800')}
+                  {generateTableColorRow('color.additional.green.900')}
                 </tbody>
               </div>
             </table>
