@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
+
+
+### Features
+
+* **slider:** add name prop ([#894](https://github.com/telekom/scale/issues/894)) ([b1ad291](https://github.com/telekom/scale/commit/b1ad29168bee6e0eeb95563f9c4877134f11f4ae))
+
+
+
+
+
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+
+### Bug Fixes
+
+* **checkbox:** show icon in neutral mode ([#896](https://github.com/telekom/scale/issues/896)) ([839c3de](https://github.com/telekom/scale/commit/839c3debfe951dc80e3d4c57ff588658f73b9463))
+
+
+### Features
+
+* **tooltip:** add styles prop ([#895](https://github.com/telekom/scale/issues/895)) ([4bae4a9](https://github.com/telekom/scale/commit/4bae4a91fb04ff884bc9b6882730ebade97b70a6))
+
+
+
+
+
 # [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
 
 

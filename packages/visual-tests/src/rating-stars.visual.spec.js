@@ -11,6 +11,16 @@ describe('RatingStars', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // focus, active
@@ -20,16 +30,13 @@ describe('RatingStars', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
-
     await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
         document.body.style.setProperty(transitionSpeed, '0s');
       });
     });

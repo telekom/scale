@@ -56,6 +56,7 @@ scale-checkbox {
   );
   --width-icon: var(--telekom-spacing-unit-x3);
   --height-icon: var(--telekom-spacing-unit-x3);
+  --stroke-width: var(--stroke-width-checkbox, 0.5px);
 }
 
 :host,
@@ -118,7 +119,7 @@ scale-checkbox [part='icon'] svg {
 scale-checkbox [part='icon'] svg rect,
 scale-checkbox [part='icon'] svg path {
   stroke: currentColor;
-  stroke-width: 0.5px;
+  stroke-width: var(--stroke-width);
 }
 
 scale-checkbox [part='container'] {

@@ -81,6 +81,7 @@ export const Template = (args, { argTypes }) => ({
       :trigger="trigger"
       :flip="flip"
       :preventOverflow="preventOverflow"
+      :styles="styles"
     >
     <scale-button></scale-button>
     </scale-tooltip>
@@ -103,6 +104,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
       :trigger="trigger"
       :flip="flip"
       :preventOverflow="preventOverflow"
+      :styles="styles"
     >
     <template v-slot:content>
       <scale-link slot="content" href="https://github.com/telekom/scale">I'm a HTML-tooltip with a link</scale-link>
@@ -128,6 +130,7 @@ export const Slot2Template = (args, { argTypes }) => ({
       :trigger="trigger"
       :flip="flip"
       :preventOverflow="preventOverflow"
+      :styles="styles"
     >
     <template v-slot:content>
       <scale-rating-stars slot="content" rating="1"></scale-rating-stars>

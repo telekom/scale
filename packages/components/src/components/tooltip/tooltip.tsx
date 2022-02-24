@@ -71,6 +71,8 @@ export class Tooltip {
   @Prop() flip: boolean = true;
   /** (optional) Switching the preventOverflow option of the tooltip on and off */
   @Prop() preventOverflow: boolean = false;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
   @State() mouseOverTooltip: boolean = false;
 
   @Event({ eventName: 'scale-before-show' }) tooltipBeforeShow: EventEmitter;
@@ -241,6 +243,7 @@ export class Tooltip {
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
       >
+        {this.styles && <style>{this.styles}</style>}
         <div class="slot-container">
           <slot onSlotchange={this.handleSlotChange}></slot>
         </div>

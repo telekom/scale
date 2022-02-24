@@ -1,26 +1,33 @@
-import { Meta, Story, ArgsTable, Canvas, Description } from '@storybook/addon-docs/blocks';
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs/blocks';
 import ScaleSlider from './ScaleSlider.vue';
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
 <Meta
-    title="Components/Slider"
-    component={ScaleSlider}
-    argTypes={{
-        styles: {
-            control: {disable: true}
-        }
-    }}
+  title="Components/Slider"
+  component={ScaleSlider}
+  argTypes={{
+    styles: {
+      control: { disable: true },
+    },
+  }}
 />
 
-export const Template = (args, {argTypes}) => ({
-    components:{ScaleSlider},
-    props: {
-        ...ScaleSlider.props
-    },
-    template: `
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSlider },
+  props: {
+    ...ScaleSlider.props,
+  },
+  template: `
     <scale-slider
         :custom-color="customColor"
         :disabled="disabled"
+        :name="name"
         :label="label"
         :max="max"
         :min="min"
@@ -38,25 +45,26 @@ export const Template = (args, {argTypes}) => ({
         >
     </scale-slider>
     `,
-    methods: {
-        scaleButtonDown: action('scaleButtonDown'),
-        scaleDragStart: action('scaleDragStart'),
-        scaleDragging: action('scaleDragging'),
-        scaleDragEnd: action('scaleDragEnd'),
-        scaleSetPosition: action('scaleSetPosition'),
-        scaleCurrentPosition: action('scaleCurrentPosition')
-    }
-})
+  methods: {
+    scaleButtonDown: action('scaleButtonDown'),
+    scaleDragStart: action('scaleDragStart'),
+    scaleDragging: action('scaleDragging'),
+    scaleDragEnd: action('scaleDragEnd'),
+    scaleSetPosition: action('scaleSetPosition'),
+    scaleCurrentPosition: action('scaleCurrentPosition'),
+  },
+});
 
-export const TemplateCustomColor = (args, {argTypes}) => ({
-    components:{ScaleSlider},
-    props: {
-        ...ScaleSlider.props
-    },
-    template: `
+export const TemplateCustomColor = (args, { argTypes }) => ({
+  components: { ScaleSlider },
+  props: {
+    ...ScaleSlider.props,
+  },
+  template: `
     <scale-slider style="--background-bar: green"
         :custom-color="customColor"
         :disabled="disabled"
+        :name="name"
         :label="label"
         :max="max"
         :min="min"
@@ -74,54 +82,62 @@ export const TemplateCustomColor = (args, {argTypes}) => ({
         >
     </scale-slider>
     `,
-    methods: {
-        scaleButtonDown: action('scaleButtonDown'),
-        scaleDragStart: action('scaleDragStart'),
-        scaleDragging: action('scaleDragging'),
-        scaleDragEnd: action('scaleDragEnd'),
-        scaleSetPosition: action('scaleSetPosition'),
-        scaleCurrentPosition: action('scaleCurrentPosition')
-    }
-})
+  methods: {
+    scaleButtonDown: action('scaleButtonDown'),
+    scaleDragStart: action('scaleDragStart'),
+    scaleDragging: action('scaleDragging'),
+    scaleDragEnd: action('scaleDragEnd'),
+    scaleSetPosition: action('scaleSetPosition'),
+    scaleCurrentPosition: action('scaleCurrentPosition'),
+  },
+});
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Slider</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Slider</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-    <Story
-        name="Standard"
-        args={{
-            label: 'Standard',
-            value: 20,
-        }}
-        >
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Standard"
+    args={{
+      label: 'Standard',
+      value: 20,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
-<ArgsTable story='Standard' />
+<ArgsTable story="Standard" />
 
 ### Scoped CSS variables
 
 ```css
 :host {
-  --border: 1px solid var(--scl-color-grey-60);
-  --background-bar: var(--scl-color-primary);
-  --border-color-thumb: var(--scl-color-grey-60);
-  --box-shadow-thumb: var(--scl-shadow-level-0);
-  --border-color-thumb-hover: var(--scl-color-primary-hover);
-  --border-color-thumb-active: var(--scl-color-primary-active);
-  --box-shadow-thumb-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --color-display-value: var(--scl-color-grey-60);
-  --font-weight-display-value: var(--scl-font-weight-bold);
-  --font-size-display-value: var(--scl-font-size-12);
-  --background-track: var(--scl-color-grey-50);
-  --background-bar-disabled: var(--scl-color-grey-50);
-  --color-label-disabled: var(--scl-color-grey-50);
+  --border: 1px solid var(--telekom-color-ui-outlined-border-standard);
+  --background-bar: var(--telekom-color-primary-standard);
+  --border-color-thumb: var(--telekom-color-ui-outlined-border-standard);
+  --box-shadow-thumb: var(--telekom-shadow-resting-standard);
+  --border-color-thumb-hover: var(--telekom-color-ui-outlined-border-hovered);
+  --border-color-thumb-active: var(--telekom-color-ui-outlined-border-pressed);
+  --box-shadow-thumb-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-display-value: var(--telekom-color-text-and-icon-additional);
+  --font-weight-display-value: var(--telekom-typography-font-weight-bold);
+  --font-size-display-value: var(--telekom-typography-font-size-small);
+  --background-track: var(--telekom-color-ui-additional-light);
+  --background-bar-disabled: var(--telekom-color-ui-solid-disabled);
+  --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
 }
 ```
 
@@ -130,15 +146,16 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Slider track small
 
 <Canvas withSource="none">
-    <Story
-        name="Slider track small"
-        args={{
-            label: 'Slider track small',
-            value: 20,
-            trackSmall: true,
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Slider track small"
+    args={{
+      label: 'Slider track small',
+      value: 20,
+      trackSmall: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html
@@ -148,15 +165,16 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Slider thumb large
 
 <Canvas withSource="none">
-    <Story
-        name="Slider thumb large"
-        args={{
-            label: 'Slider thumb large',
-            value: 20,
-            thumbLarge: true,
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Slider thumb large"
+    args={{
+      label: 'Slider thumb large',
+      value: 20,
+      thumbLarge: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html
@@ -166,33 +184,38 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Slider with custom color
 
 <Canvas withSource="none">
-    <Story
-        name="Slider with custom color"
-        args={{
-            label: 'Slider with custom color',
-            value: 20,
-        }}
-        >
-        {TemplateCustomColor.bind({})}
-    </Story>
+  <Story
+    name="Slider with custom color"
+    args={{
+      label: 'Slider with custom color',
+      value: 20,
+    }}
+  >
+    {TemplateCustomColor.bind({})}
+  </Story>
 </Canvas>
 
 ```html
-<scale-slider label="Slider with custom color" value="20" style="--background-bar: green"></scale-slider>
+<scale-slider
+  label="Slider with custom color"
+  value="20"
+  style="--background-bar: green"
+></scale-slider>
 ```
 
 ## Disabled slider
 
 <Canvas withSource="none">
-    <Story
-        name="Disabled Slider"
-        args={{
-            label: 'Disabled Slider',
-            value: 40,
-            disabled: true
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Disabled Slider"
+    args={{
+      label: 'Disabled Slider',
+      value: 40,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>
 
 ```html
