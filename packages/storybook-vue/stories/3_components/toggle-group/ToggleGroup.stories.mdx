@@ -11,11 +11,11 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
     },
-	  fullWidth: {
-      control: { type: 'boolean'},
+    fullWidth: {
+      control: { type: 'boolean' },
     },
     ariaLabelTranslation: {
-      control: { type: "text", },
+      control: { type: 'text' },
     },
     colorScheme: {
       description: `Deprecated; variant should replace colorScheme`,
@@ -133,18 +133,22 @@ export const TemplateIcons = (args, { argTypes }) => ({
   `,
 });
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Toggle Group</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Toggle Group</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name="Standard"
-    args={{}}
-  >
+  <Story name="Standard" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -159,13 +163,83 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </scale-toggle-group>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --width: auto;
+  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x2);
+  --min-height: var(--telekom-spacing-unit-x6);
+  --height-xs: var(--telekom-spacing-unit-x6);
+  --height-small: var(--telekom-spacing-unit-x8);
+  --height-regular: var(--telekom-spacing-unit-x10);
+  --height-large: var(--telekom-spacing-unit-x12);
+  --radius: var(--telekom-radius-small);
+  --transition: all var(--telekom-motion-duration-transition) var(
+        --telekom-motion-easing-standard
+      ), border-radius var(--telekom-motion-duration-instant);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size-large: var(--telekom-typography-font-size-body);
+  --font-size-small: var(--telekom-typography-font-size-caption);
+  --font-size-xs: var(--telekom-typography-font-size-small);
+  --line-height: var(--telekom-spacing-unit-x2);
+  --spacing-icon-x: var(--telekom-spacing-unit-x2);
+  --vertical-align: middle;
+  --border-color: var(--telekom-color-ui-outlined-border-standard);
+  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+
+  /* size: small */
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --min-height-small: var(--telekom-spacing-unit-x8);
+
+  /* variant: primary */
+  --radius-primary: var(--radius);
+  --background-primary: var(--telekom-color-ui-additional-subtle);
+  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
+  --color-primary: var(--telekom-color-ui-additional-extra-strong);
+  --color-primary-hover: var(--telekom-color-primary-hovered);
+  --color-primary-active: var(--telekom-color-primary-pressed);
+
+  /* variant: secondary */
+  --background-secondary: transparent;
+  --color-secondary: var(--telekom-color-text-and-icon-standard);
+  --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
+  --background-secondary-disabled: var(
+    --telekom-color-ui-outlined-fill-disabled
+  );
+  --border-secondary: var(--telekom-color-ui-outlined-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-outlined-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-outlined-border-pressed);
+  --border-secondary-focus: var(--telekom-color-functional-focus);
+
+  /* selected */
+  --color-selected: var(--telekom-color-text-and-icon-white-standard);
+  --background-selected-light: var(--telekom-color-primary-standard);
+  --background-selected-hover-light: var(--telekom-color-primary-hovered);
+  --background-selected-active-light: var(--telekom-color-primary-pressed);
+  --background-selected-dark: var(--telekom-color-ui-additional-extra-strong);
+  --background-selected-hover-dark: var(--telekom-color-ui-additional-strong);
+  --background-selected-active-dark: var(--telekom-color-ui-additional-strong);
+
+  /* high contrast */
+  --color-high-contrast: var(--telekom-color-text-and-icon-white-standard);
+}
+```
+
 ## Monochrome Variant
 
 <Canvas withSource="none">
   <Story
     name="Monochrome Variant"
     args={{
-      variant: 'monochrome'
+      variant: 'monochrome',
     }}
   >
     {Template.bind({})}
@@ -187,15 +261,15 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Grey Background"
     args={{
-		  background: 'grey'
-	}}
+      background: 'grey',
+    }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-toggle-group background='grey'>
+<scale-toggle-group background="grey">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -208,8 +282,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="No Border"
     args={{
-		  hideBorder: true
-	}}
+      hideBorder: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -229,7 +303,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Small Size"
     args={{
-      size: "small"
+      size: 'small',
     }}
   >
     {Template.bind({})}
@@ -250,8 +324,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Full Width"
     args={{
-		  fullWidth: true,
-	}}
+      fullWidth: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -271,8 +345,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Single Select"
     args={{
-		  singleSelect: true
-	}}
+      singleSelect: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -292,8 +366,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
-		  disabled: true
-	}}
+      disabled: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -313,7 +387,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Accessibility German"
     args={{
-      ariaLabelTranslation: "wechsel schalter gruppe mit $slottedButtons schaltern"
+      ariaLabelTranslation:
+        'wechsel schalter gruppe mit $slottedButtons schaltern',
     }}
   >
     {TemplateAriaTranslation.bind({})}
@@ -321,18 +396,22 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern">
-  <scale-toggle-button 
+<scale-toggle-group
+  aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern"
+>
+  <scale-toggle-button
     aria-label="Drück mich"
     aria-lang-selected="selektiert"
-    aria-lang-deselected="deselektiert">Label
+    aria-lang-deselected="deselektiert"
+    >Label
   </scale-toggle-button>
-  <scale-toggle-button 
+  <scale-toggle-button
     aria-label="Drück mich"
     aria-lang-selected="selektiert"
-    aria-lang-deselected="deselektiert">Label
+    aria-lang-deselected="deselektiert"
+    >Label
   </scale-toggle-button>
-  <scale-toggle-button 
+  <scale-toggle-button
     aria-label="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert"
@@ -348,7 +427,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Icon Before"
     args={{
-      iconBefore: true
+      iconBefore: true,
     }}
   >
     {TemplateIcons.bind({})}
@@ -357,7 +436,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button>
+  <scale-toggle-button>
     Label <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
   <scale-toggle-button>
@@ -375,7 +454,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Icon Only"
     args={{
-      iconBefore: false
+      iconBefore: false,
     }}
   >
     {TemplateIcons.bind({})}
@@ -384,7 +463,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button icon-only aria-label="search">
+  <scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
   <scale-toggle-button icon-only aria-label="search">
