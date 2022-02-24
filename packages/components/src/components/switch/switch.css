@@ -12,7 +12,6 @@
 /*
   TODO
   - [ ] move all variables scale-switch, now they're no use!
-  - [ ] make tokens more granular (text, toggle, etc.) e.g. --color-disabled is not nice
 */
 
 .switch {
@@ -221,6 +220,10 @@
 
 .switch.switch--disabled label {
   cursor: not-allowed;
+}
+
+.switch.switch--disabled .switch__label {
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 
 .switch.switch--disabled input:checked ~ .switch__wrapper {

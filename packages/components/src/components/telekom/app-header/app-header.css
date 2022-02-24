@@ -25,7 +25,8 @@ scale-app-header {
   --background-brand: var(--telekom-color-primary-standard);
 
   --color-nav: var(--telekom-color-text-and-icon-standard);
-  --background-nav: var(--telekom-color-background-surface);
+  --background-nav: var(--telekom-color-background-canvas);
+
   --spacing-nav: 0 var(--telekom-spacing-unit-x4);
 }
 @keyframes keyframes-slideUp {
@@ -113,7 +114,7 @@ scale-app-header {
   position: absolute;
   border-top: var(--border);
   box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
-    var(--telekom-color-background-surface);
+    var(--telekom-color-background-canvas);
   background-color: transparent;
 }
 .header.menu--open .header__nav-before,

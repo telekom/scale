@@ -15,7 +15,7 @@ app-mega-menu {
   --spacing-right: var(--telekom-spacing-unit-x4);
   --spacing-left: var(--telekom-spacing-unit-x6);
   --background: var(--telekom-color-background-surface);
-  --color-active: var(--telekom-color-text-and-icon-primary-standard);
+  --color-active: var(--telekom-color-text-and-icon-primary-hovered);
 
   --font-size-row-title: var(--telekom-typography-font-size-body);
   --spacing-bottom-row-title: 1.125rem;
