@@ -60,7 +60,7 @@
   position: absolute;
   top: 8px;
   right: 13.5px;
-  color: var(--telekom-color-text-and-icon-standard)
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-message__icon-close svg {

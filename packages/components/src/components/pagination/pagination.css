@@ -100,7 +100,6 @@ button svg {
   display: block;
 }
 
-
 button:not(:disabled) {
   cursor: pointer;
 }

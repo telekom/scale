@@ -218,7 +218,6 @@ scale-checkbox.indeterminate [part='container']:active [part='checkbox'] {
 scale-checkbox:not(.checked) [part='container']:active [part='checkbox'] {
   background: var(--telekom-color-ui-outlined-fill-pressed);
   border-color: var(--telekom-color-ui-outlined-border-pressed);
-
 }
 
 /* error states */
@@ -233,11 +232,13 @@ scale-checkbox.error [part='checkbox'] {
   border: 2px solid var(--color-error);
 }
 
-scale-checkbox.error [part='input']:focus ~ [part='container'] [part='checkbox'] {
+scale-checkbox.error
+  [part='input']:focus
+  ~ [part='container']
+  [part='checkbox'] {
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--color-focus);
   border: 2px solid var(--telekom-color-functional-danger-hovered);
 }
-
 
 scale-checkbox.error:hover [part='checkbox'] {
   background-color: var(--telekom-color-ui-outlined-fill-hovered);
