@@ -123,10 +123,11 @@ import text_de from './5.Colors_de.md';
         function generateTableColorRow(itemPathString) {
           item = getItemByPathString(itemPathString);
           return (
-            <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
+            <tr>
               {/* Example Column */}
               <td
                 style={{
+                  backgroundColor: `${darkMode ? '#000' : '#fff'}`,
                   border: 'none',
                   verticalAlign: 'top',
                   width: '200px',
@@ -245,6 +246,7 @@ import text_de from './5.Colors_de.md';
                   width: '00px',
                   height: 'inherit',
                   border: 'none',
+                  backgroundColor: '#fff',
                 }}
               >
                 <div
@@ -259,7 +261,6 @@ import text_de from './5.Colors_de.md';
                       style={{
                         fontWeight: 'bolder',
                         fontSize: '18px',
-                        color: `${darkMode ? '#fff' : '#000'}`,
                       }}
                     >
                       {item.name}
@@ -269,7 +270,6 @@ import text_de from './5.Colors_de.md';
                     <span
                       style={{
                         fontSize: '14px',
-                        color: `${darkMode ? '#fff' : '#000'}`,
                       }}
                     >
                       {item.comment}
@@ -283,13 +283,13 @@ import text_de from './5.Colors_de.md';
                   verticalAlign: 'top',
                   border: 'none',
                   padding: '10px 0 10px 0',
+                  backgroundColor: '#fff',
                 }}
               >
                 <div
                   style={{
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
                   }}
                 >
                   css
@@ -300,7 +300,7 @@ import text_de from './5.Colors_de.md';
                     position: 'relative',
                     width: '350px',
                     height: '30px',
-                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    backgroundColor: '#f0f1f1',
                   }}
                 >
                   <span
@@ -308,7 +308,7 @@ import text_de from './5.Colors_de.md';
                       fontSize: '11px',
                       lineHeight: '30px',
                       padding: '20px',
-                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                      color: '#6A6A6A',
                     }}
                     id={item.pathString}
                   >
@@ -327,13 +327,11 @@ import text_de from './5.Colors_de.md';
                     <button
                       class="color_token_copy-paste-button"
                       style={{
-                        border: `${
-                          darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
-                        }`,
+                        border: '1px solid #f0f1f1',
                         borderRadius: '4px',
                         padding: '1px 3px 1px 3px',
                         cursor: 'pointer',
-                        backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                        backgroundColor: '#f0f1f1',
                       }}
                       onClick={() => {
                         navigator.clipboard.writeText(item.cssVariableName);
@@ -351,7 +349,7 @@ import text_de from './5.Colors_de.md';
                     padding: '10px 0 0 0',
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: '#000',
                   }}
                 >
                   js
@@ -362,7 +360,7 @@ import text_de from './5.Colors_de.md';
                     position: 'relative',
                     width: '350px',
                     height: '30px',
-                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    backgroundColor: '#f0f1f1',
                   }}
                 >
                   <span
@@ -370,7 +368,7 @@ import text_de from './5.Colors_de.md';
                       fontSize: '11px',
                       lineHeight: '30px',
                       padding: '20px',
-                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                      color: '#6A6A6A',
                     }}
                     id={item.pathString}
                   >
@@ -389,13 +387,11 @@ import text_de from './5.Colors_de.md';
                     <button
                       class="color_token_copy-paste-button"
                       style={{
-                        border: `${
-                          darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
-                        }`,
+                        border: '1px solid #f0f1f1',
                         borderRadius: '4px',
                         padding: '1px 3px 1px 3px',
                         cursor: 'pointer',
-                        backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                        backgroundColor: '#f0f1f1',
                       }}
                       onClick={() => {
                         navigator.clipboard.writeText(item.jsPathName);
@@ -413,7 +409,7 @@ import text_de from './5.Colors_de.md';
                     padding: '10px 0 0 0',
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: '#000',
                   }}
                 >
                   hex
@@ -424,7 +420,7 @@ import text_de from './5.Colors_de.md';
                     position: 'relative',
                     width: '350px',
                     height: '30px',
-                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    backgroundColor: '#f0f1f1',
                   }}
                 >
                   <span
@@ -432,7 +428,7 @@ import text_de from './5.Colors_de.md';
                       fontSize: '11px',
                       lineHeight: '30px',
                       padding: '20px',
-                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                      color: '#6A6A6A',
                     }}
                     id={item.pathString}
                   >
@@ -450,7 +446,7 @@ import text_de from './5.Colors_de.md';
           item = getItemByPathString(itemPathString);
           borderItem = getItemByPathString(borderItemPathString);
           return (
-            <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
+            <tr style={{ backgroundColor: '#fff' }}>
               {/* Example Column */}
               <td
                 style={{
@@ -458,6 +454,7 @@ import text_de from './5.Colors_de.md';
                   verticalAlign: 'top',
                   width: '200px',
                   padding: '5px 5px 5px 0',
+                  backgroundColor: `${darkMode ? '#000' : '#fff'}`,
                 }}
               >
                 {clearContrastStates()}
@@ -467,9 +464,7 @@ import text_de from './5.Colors_de.md';
                     backgroundColor: `${borderItem.value}`,
                     padding: '20px 0 0 0',
                     marginTop: '10px',
-                    border: `${
-                      darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
-                    }`,
+                    border: '1px solid #f0f1f1',
                     borderRadius: '4px',
                     minWidth: '380px',
                     minHeight: '80px',
@@ -489,9 +484,7 @@ import text_de from './5.Colors_de.md';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
-                      border: `${
-                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
-                      }`,
+                      border: '1px solid #f0f1f1',
                       borderRadius: '4px',
                       minWidth: '380px',
                       minHeight: '120px',
@@ -579,9 +572,7 @@ import text_de from './5.Colors_de.md';
                       backgroundColor: `${item.value}`,
                       padding: '20px',
                       marginTop: '10px',
-                      border: `${
-                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
-                      }`,
+                      border: '1px solid #f0f1f1',
                       borderRadius: '4px',
                       width: '380px',
                       minHeight: '120px',
@@ -612,7 +603,7 @@ import text_de from './5.Colors_de.md';
                       style={{
                         fontWeight: 'bolder',
                         fontSize: '18px',
-                        color: `${darkMode ? '#fff' : '#000'}`,
+                        color: '#000',
                       }}
                     >
                       {borderItem.name}
@@ -622,7 +613,7 @@ import text_de from './5.Colors_de.md';
                     <span
                       style={{
                         fontSize: '14px',
-                        color: `${darkMode ? '#fff' : '#000'}`,
+                        color: '#000',
                       }}
                     >
                       {borderItem.comment}
@@ -642,7 +633,7 @@ import text_de from './5.Colors_de.md';
                   style={{
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: '#000',
                   }}
                 >
                   css
@@ -653,7 +644,7 @@ import text_de from './5.Colors_de.md';
                     position: 'relative',
                     width: '350px',
                     height: '60px',
-                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    backgroundColor: '#f0f1f1',
                   }}
                 >
                   <span
@@ -661,7 +652,7 @@ import text_de from './5.Colors_de.md';
                       display: 'inline-block',
                       fontSize: '11px',
                       padding: '5px 0 0 20px',
-                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                      color: '#6A6A6A',
                     }}
                     id={item.pathString}
                   >
@@ -674,7 +665,7 @@ import text_de from './5.Colors_de.md';
                     padding: '10px 0 0 0',
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: '#000',
                   }}
                 >
                   js
@@ -684,7 +675,7 @@ import text_de from './5.Colors_de.md';
                     textAlign: 'start',
                     width: '350px',
                     height: '60px',
-                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    backgroundColor: '#f0f1f1',
                   }}
                 >
                   <span
@@ -692,7 +683,7 @@ import text_de from './5.Colors_de.md';
                       display: 'inline-block',
                       fontSize: '11px',
                       padding: '5px 0 0 20px',
-                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                      color: '#6A6A6A',
                     }}
                     id={item.pathString}
                   >
@@ -705,7 +696,7 @@ import text_de from './5.Colors_de.md';
                     padding: '10px 0 0 0',
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: '#000',
                   }}
                 >
                   hex
@@ -716,7 +707,7 @@ import text_de from './5.Colors_de.md';
                     position: 'relative',
                     width: '350px',
                     height: '60px',
-                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    backgroundColor: '#f0f1f1',
                   }}
                 >
                   <span
@@ -724,7 +715,7 @@ import text_de from './5.Colors_de.md';
                       display: 'inline-block',
                       fontSize: '11px',
                       padding: '5px 0 0 20px',
-                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                      color: '#6A6A6A',
                     }}
                     id={item.pathString}
                   >
@@ -743,7 +734,7 @@ import text_de from './5.Colors_de.md';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    color: '#6A6A6A',
                     fontSize: '13px',
                     borderColor: '#fff',
                     borderBottom: '1px solid #E7E8E9',
@@ -755,7 +746,7 @@ import text_de from './5.Colors_de.md';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    color: '#6A6A6A',
                     fontSize: '13px',
                     borderColor: '#fff',
                     borderBottom: '1px solid #E7E8E9',
@@ -766,7 +757,7 @@ import text_de from './5.Colors_de.md';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    color: '#6A6A6A',
                     fontSize: '13px',
                     borderColor: '#fff',
                     borderBottom: '1px solid #E7E8E9',
@@ -787,7 +778,7 @@ import text_de from './5.Colors_de.md';
                 marginBottom: '50px',
                 fontWeight: 'bold',
                 fontSize: '30px',
-                color: `${darkMode ? '#fff' : '#000'}`,
+                color: '#000',
               }}
             >
               {sectionTitle}
@@ -802,7 +793,6 @@ import text_de from './5.Colors_de.md';
                 marginBottom: '25px',
                 fontWeight: 'bold',
                 fontSize: '15px',
-                color: `${darkMode ? '#fff' : '#000'}`,
               }}
             >
               {sectionTitle}
@@ -812,7 +802,7 @@ import text_de from './5.Colors_de.md';
         return (
           <DocsContainer context={context}>
             <Description markdown={locale === 'en' ? text_en : text_de} />
-            <table style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
+            <table style={{ backgroundColor: '#fff' }}>
               <div>
                 {generateSectionTitle('Primary Colors')}
                 {generateSectionSubTitle(
