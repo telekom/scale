@@ -11,11 +11,11 @@ import ScaleToggleGroup from './ScaleToggleGroup.vue';
     size: {
       control: { type: 'select', options: ['xs', 'small', 'regular', 'large'] },
     },
-	  fullWidth: {
-      control: { type: 'boolean'},
+    fullWidth: {
+      control: { type: 'boolean' },
     },
     ariaLabelTranslation: {
-      control: { type: "text", },
+      control: { type: 'text' },
     },
     colorScheme: {
       description: `Deprecated; variant should replace colorScheme`,
@@ -133,18 +133,22 @@ export const TemplateIcons = (args, { argTypes }) => ({
   `,
 });
 
-<div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
-    <h1>Toggle Group</h1>
-    <img src="assets/beta.png" alt="Beta Component" />
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Toggle Group</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
 </div>
 
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name="Standard"
-    args={{}}
-  >
+  <Story name="Standard" args={{}}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -165,7 +169,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Monochrome Variant"
     args={{
-      variant: 'monochrome'
+      variant: 'monochrome',
     }}
   >
     {Template.bind({})}
@@ -187,15 +191,15 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Grey Background"
     args={{
-		  background: 'grey'
-	}}
+      background: 'grey',
+    }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-toggle-group background='grey'>
+<scale-toggle-group background="grey">
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button>Label</scale-toggle-button>
   <scale-toggle-button selected>Label</scale-toggle-button>
@@ -208,8 +212,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="No Border"
     args={{
-		  hideBorder: true
-	}}
+      hideBorder: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -229,7 +233,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Small Size"
     args={{
-      size: "small"
+      size: 'small',
     }}
   >
     {Template.bind({})}
@@ -250,8 +254,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Full Width"
     args={{
-		  fullWidth: true,
-	}}
+      fullWidth: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -271,8 +275,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Single Select"
     args={{
-		  singleSelect: true
-	}}
+      singleSelect: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -292,8 +296,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Disabled"
     args={{
-		  disabled: true
-	}}
+      disabled: true,
+    }}
   >
     {Template.bind({})}
   </Story>
@@ -313,7 +317,8 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Accessibility German"
     args={{
-      ariaLabelTranslation: "wechsel schalter gruppe mit $slottedButtons schaltern"
+      ariaLabelTranslation:
+        'wechsel schalter gruppe mit $slottedButtons schaltern',
     }}
   >
     {TemplateAriaTranslation.bind({})}
@@ -321,18 +326,22 @@ export const TemplateIcons = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-toggle-group aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern">
-  <scale-toggle-button 
+<scale-toggle-group
+  aria-label-translation="wechsel schalter gruppe mit $slottedButtons schaltern"
+>
+  <scale-toggle-button
     aria-label="Drück mich"
     aria-lang-selected="selektiert"
-    aria-lang-deselected="deselektiert">Label
+    aria-lang-deselected="deselektiert"
+    >Label
   </scale-toggle-button>
-  <scale-toggle-button 
+  <scale-toggle-button
     aria-label="Drück mich"
     aria-lang-selected="selektiert"
-    aria-lang-deselected="deselektiert">Label
+    aria-lang-deselected="deselektiert"
+    >Label
   </scale-toggle-button>
-  <scale-toggle-button 
+  <scale-toggle-button
     aria-label="Drück mich"
     aria-lang-selected="selektiert"
     aria-lang-deselected="deselektiert"
@@ -348,7 +357,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Icon Before"
     args={{
-      iconBefore: true
+      iconBefore: true,
     }}
   >
     {TemplateIcons.bind({})}
@@ -357,7 +366,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button>
+  <scale-toggle-button>
     Label <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
   <scale-toggle-button>
@@ -375,7 +384,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
   <Story
     name="Icon Only"
     args={{
-      iconBefore: false
+      iconBefore: false,
     }}
   >
     {TemplateIcons.bind({})}
@@ -384,7 +393,7 @@ export const TemplateIcons = (args, { argTypes }) => ({
 
 ```html
 <scale-toggle-group>
-	<scale-toggle-button icon-only aria-label="search">
+  <scale-toggle-button icon-only aria-label="search">
     <scale-icon-action-search></scale-icon-action-search>
   </scale-toggle-button>
   <scale-toggle-button icon-only aria-label="search">
