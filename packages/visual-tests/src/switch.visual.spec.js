@@ -11,7 +11,16 @@ describe('Switch', () => {
     await page.waitForSelector('html.hydrated');
 
     const previewHtml = await page.$('body');
-
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   // hover, active
@@ -21,20 +30,16 @@ describe('Switch', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
-
     await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
         document.body.style.setProperty(transitionSpeed, '0s');
       });
     });
-
     const firstButton = await page.evaluateHandle(
       'document.querySelector("#root > scale-switch > div")'
     );
@@ -51,6 +56,16 @@ describe('Switch', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     await page.keyboard.press('Tab');
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
@@ -61,20 +76,16 @@ describe('Switch', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
-
     await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
         document.body.style.setProperty(transitionSpeed, '0s');
       });
     });
-
     const firstButton = await page.evaluateHandle(
       'document.querySelector("#root > scale-switch > div .switch__wrapper")'
     );

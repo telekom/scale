@@ -10,7 +10,16 @@ describe('SidebarNavigation', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
-
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
   test.each([['standard']])('%p', async (variant) => {
@@ -18,6 +27,17 @@ describe('SidebarNavigation', () => {
       `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
     );
     await page.waitForSelector('html.hydrated');
+    const previewHtml = await page.$('body');
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
 
     const collabsibleButton = await page.evaluateHandle(
       `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2) > scale-sidebar-nav-collapsible:nth-child(1)").shadowRoot.querySelector("li > div > a")`
@@ -25,7 +45,6 @@ describe('SidebarNavigation', () => {
     const secondItem = await page.evaluateHandle(
       `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
     );
-    const previewHtml = await page.$('body');
 
     await collabsibleButton.click();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();

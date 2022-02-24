@@ -5,6 +5,16 @@ describe('Footer', () => {
     );
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });

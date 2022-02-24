@@ -5,20 +5,17 @@ describe('Brand Header', () => {
     );
     await page.waitForSelector('html.hydrated');
 
+    const previewHtml = await page.$('body');
     await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
         document.body.style.setProperty(transitionSpeed, '0s');
       });
     });
-
-    const previewHtml = await page.$('body');
     const firstLink = await page.evaluateHandle(
       `document.querySelector("#root > div > scale-app-shell").shadowRoot.querySelector("scale-app-header nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a")`
     );
@@ -35,6 +32,16 @@ describe('Brand Header', () => {
     await page.waitForSelector('html.hydrated');
 
     const previewHtml = await page.$('body');
+    await page.evaluate(() => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
+        document.body.style.setProperty(transitionSpeed, '0s');
+      });
+    });
     const firstLink = await page.evaluateHandle(
       `document.querySelector("#nav-main-with-mega-menu > li > a")`
     );
@@ -57,20 +64,17 @@ describe('Brand Header', () => {
     );
     await page.waitForSelector('html.hydrated');
 
+    const previewHtml = await page.$('body');
     await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
+      [
+        '--telekom-motion-duration-immediate',
+        '--telekom-motion-duration-transition',
+        '--telekom-motion-duration-animation',
+        '--telekom-motion-duration-animation-deliberate',
+      ].forEach((transitionSpeed) => {
         document.body.style.setProperty(transitionSpeed, '0s');
       });
     });
-
-    const previewHtml = await page.$('body');
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });
