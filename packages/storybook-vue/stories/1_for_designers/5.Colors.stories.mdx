@@ -139,8 +139,9 @@ import text_de from './5.Colors_de.md';
                   <div
                     style={{
                       backgroundColor: `${item.value}`,
-                      padding: '20px',
+                      padding: '20px 20px 20px 20px',
                       marginTop: '10px',
+                      marginBottom: '10px',
                       marginLeft: '10px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
@@ -164,6 +165,7 @@ import text_de from './5.Colors_de.md';
                         style={{
                           padding: '0px 18px 0px 0px',
                           border: 'none',
+                          width: '140px',
                         }}
                       >
                         {pathStringItem
@@ -176,7 +178,7 @@ import text_de from './5.Colors_de.md';
                                 <div
                                   style={{
                                     color: `${getItemColorByPath(path)}`,
-                                    fontSize: '11px',
+                                    fontSize: '12px',
                                   }}
                                 >
                                   {getItemPathByPath(path)}
@@ -195,6 +197,7 @@ import text_de from './5.Colors_de.md';
                               style={{
                                 border: 'none',
                                 padding: '0px 18px 0px 0px',
+                                width: '200px',
                               }}
                             >
                               {pathStringItem
@@ -209,11 +212,11 @@ import text_de from './5.Colors_de.md';
                                       <div
                                         style={{
                                           color: `${getItemColorByPath(path)}`,
-                                          fontSize: '11px',
+                                          fontSize: '12px',
                                         }}
                                       >
                                         {getItemPathByPath(path)}
-                                        {'(' + getLevelByPath(path) + ')'}
+                                        {' (' + getLevelByPath(path) + ')'}
                                       </div>
                                     </a>
                                   );
@@ -448,7 +451,11 @@ import text_de from './5.Colors_de.md';
         }
         function generateUIOutlinedTableColorRow(
           itemPathString,
-          borderItemPathString
+          borderItemPathString,
+          itemTextColorLight,
+          borderItemColorLight,
+          itemTextColorDark,
+          borderItemColorDark
         ) {
           item = getItemByPathString(itemPathString);
           borderItem = getItemByPathString(borderItemPathString);
@@ -482,7 +489,9 @@ import text_de from './5.Colors_de.md';
                   <span
                     style={{
                       padding: '20px',
-                      color: '#fff',
+                      color: `${
+                        darkMode ? borderItemColorDark : borderItemColorLight
+                      }`,
                     }}
                   >
                     Border color
@@ -507,6 +516,7 @@ import text_de from './5.Colors_de.md';
                         color: `${getItemColorByPath(pathStringItem[0])}`,
                         fontSize: '9px',
                         padding: '0px 0px 5px 0px',
+                        color: `${darkMode ? itemColorDark : itemColorLight}`,
                       }}
                     >
                       <span>
@@ -942,19 +952,35 @@ import text_de from './5.Colors_de.md';
                 <tbody>
                   {generateUIOutlinedTableColorRow(
                     'color.ui.outlined.fill.standard',
-                    'color.ui.outlined.border.standard'
+                    'color.ui.outlined.border.standard',
+                    '#fff',
+                    '#fff',
+                    '#000',
+                    '#fff'
                   )}
                   {generateUIOutlinedTableColorRow(
                     'color.ui.outlined.fill.hovered',
-                    'color.ui.outlined.border.hovered'
+                    'color.ui.outlined.border.hovered',
+                    '#000',
+                    '#fff',
+                    '#fff',
+                    '#fff'
                   )}
                   {generateUIOutlinedTableColorRow(
                     'color.ui.outlined.fill.pressed',
-                    'color.ui.outlined.border.pressed'
+                    'color.ui.outlined.border.pressed',
+                    '#000',
+                    '#fff',
+                    '#fff',
+                    '#000'
                   )}
                   {generateUIOutlinedTableColorRow(
                     'color.ui.outlined.fill.disabled',
-                    'color.ui.outlined.border.disabled'
+                    'color.ui.outlined.border.disabled',
+                    '#000',
+                    '#000',
+                    '#fff',
+                    '#fff'
                   )}
                 </tbody>
                 {generateSectionSubTitle('UI Solid Elements')}
