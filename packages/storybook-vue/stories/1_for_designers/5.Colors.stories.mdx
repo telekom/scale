@@ -10,11 +10,10 @@ import text_de from './5.Colors_de.md';
   parameters={{
     docs: {
       container: ({ context }) => {
-        const tinycolor = require('tinycolor2');
         const locale = context && context.globals && context.globals.locale;
         const colorMode =
           context && context.globals && context.globals.colorMode;
-        const allTokens = colorMode === 'light' ? lightTokens : darkTokens;
+        let allTokens = colorMode === 'light' ? lightTokens : darkTokens;
         const darkMode = colorMode === 'light' ? false : true;
         let pathStringItem = [];
         let levelStringItem = [];
@@ -105,6 +104,14 @@ import text_de from './5.Colors_de.md';
             }
           }
         }
+        function setAdditionalColorSettings() {
+          allTokens = lightTokens;
+          return;
+        }
+        function resetAdditionalColorSettings() {
+          allTokens = colorMode === 'light' ? lightTokens : darkTokens;
+          return;
+        }
         function setContrastStates() {
           item.contrastChecks
             ? item.contrastChecks.map((contrastCkeckItem) => {
@@ -120,7 +127,16 @@ import text_de from './5.Colors_de.md';
           levelStringItem.length = 0;
           cleared = true;
         }
-        function generateTableColorRow(itemPathString) {
+        function generateTableColorRow(itemPathString, additionalColor) {
+          {
+            /*
+              Additional query, because the additional colors are only available in the light json, 
+              but are also needed in the darkmode 
+            */
+          }
+          additionalColor
+            ? setAdditionalColorSettings()
+            : resetAdditionalColorSettings();
           item = getItemByPathString(itemPathString);
           return item ? (
             <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
@@ -808,8 +824,8 @@ import text_de from './5.Colors_de.md';
             </thead>
           );
         }
-        function generateSectionTitle(sectionTitle, deactivateForDarkMode) {
-          return deactivateForDarkMode && darkMode ? null : (
+        function generateSectionTitle(sectionTitle) {
+          return (
             <div
               style={{
                 marginTop: '100px',
@@ -990,136 +1006,136 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.ui.solid.pressed')}
                   {generateTableColorRow('color.ui.solid.disabled')}
                 </tbody>
-                {generateSectionTitle('Additional', true)}
-                {generateSectionSubTitle('Brown', true)}
+                {generateSectionTitle('Additional')}
+                {generateSectionSubTitle('Brown')}
                 <tbody>
-                  {generateTableColorRow('color.additional.brown.0')}
-                  {generateTableColorRow('color.additional.brown.100')}
-                  {generateTableColorRow('color.additional.brown.200')}
-                  {generateTableColorRow('color.additional.brown.300')}
-                  {generateTableColorRow('color.additional.brown.400')}
-                  {generateTableColorRow('color.additional.brown.500')}
-                  {generateTableColorRow('color.additional.brown.600')}
-                  {generateTableColorRow('color.additional.brown.700')}
-                  {generateTableColorRow('color.additional.brown.800')}
-                  {generateTableColorRow('color.additional.brown.900')}
+                  {generateTableColorRow('color.additional.brown.0', true)}
+                  {generateTableColorRow('color.additional.brown.100', true)}
+                  {generateTableColorRow('color.additional.brown.200', true)}
+                  {generateTableColorRow('color.additional.brown.300', true)}
+                  {generateTableColorRow('color.additional.brown.400', true)}
+                  {generateTableColorRow('color.additional.brown.500', true)}
+                  {generateTableColorRow('color.additional.brown.600', true)}
+                  {generateTableColorRow('color.additional.brown.700', true)}
+                  {generateTableColorRow('color.additional.brown.800', true)}
+                  {generateTableColorRow('color.additional.brown.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Pink', true)}
+                {generateSectionSubTitle('Pink')}
                 <tbody>
-                  {generateTableColorRow('color.additional.pink.0')}
-                  {generateTableColorRow('color.additional.pink.100')}
-                  {generateTableColorRow('color.additional.pink.200')}
-                  {generateTableColorRow('color.additional.pink.300')}
-                  {generateTableColorRow('color.additional.pink.400')}
-                  {generateTableColorRow('color.additional.pink.500')}
-                  {generateTableColorRow('color.additional.pink.600')}
-                  {generateTableColorRow('color.additional.pink.700')}
-                  {generateTableColorRow('color.additional.pink.800')}
-                  {generateTableColorRow('color.additional.pink.900')}
+                  {generateTableColorRow('color.additional.pink.0', true)}
+                  {generateTableColorRow('color.additional.pink.100', true)}
+                  {generateTableColorRow('color.additional.pink.200', true)}
+                  {generateTableColorRow('color.additional.pink.300', true)}
+                  {generateTableColorRow('color.additional.pink.400', true)}
+                  {generateTableColorRow('color.additional.pink.500', true)}
+                  {generateTableColorRow('color.additional.pink.600', true)}
+                  {generateTableColorRow('color.additional.pink.700', true)}
+                  {generateTableColorRow('color.additional.pink.800', true)}
+                  {generateTableColorRow('color.additional.pink.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Purple', true)}
+                {generateSectionSubTitle('Purple')}
                 <tbody>
-                  {generateTableColorRow('color.additional.purple.0')}
-                  {generateTableColorRow('color.additional.purple.100')}
-                  {generateTableColorRow('color.additional.purple.200')}
-                  {generateTableColorRow('color.additional.purple.300')}
-                  {generateTableColorRow('color.additional.purple.400')}
-                  {generateTableColorRow('color.additional.purple.500')}
-                  {generateTableColorRow('color.additional.purple.600')}
-                  {generateTableColorRow('color.additional.purple.700')}
-                  {generateTableColorRow('color.additional.purple.800')}
-                  {generateTableColorRow('color.additional.purple.900')}
+                  {generateTableColorRow('color.additional.purple.0', true)}
+                  {generateTableColorRow('color.additional.purple.100', true)}
+                  {generateTableColorRow('color.additional.purple.200', true)}
+                  {generateTableColorRow('color.additional.purple.300', true)}
+                  {generateTableColorRow('color.additional.purple.400', true)}
+                  {generateTableColorRow('color.additional.purple.500', true)}
+                  {generateTableColorRow('color.additional.purple.600', true)}
+                  {generateTableColorRow('color.additional.purple.700', true)}
+                  {generateTableColorRow('color.additional.purple.800', true)}
+                  {generateTableColorRow('color.additional.purple.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Violet', true)}
+                {generateSectionSubTitle('Violet')}
                 <tbody>
-                  {generateTableColorRow('color.additional.violet.0')}
-                  {generateTableColorRow('color.additional.violet.100')}
-                  {generateTableColorRow('color.additional.violet.200')}
-                  {generateTableColorRow('color.additional.violet.300')}
-                  {generateTableColorRow('color.additional.violet.400')}
-                  {generateTableColorRow('color.additional.violet.500')}
-                  {generateTableColorRow('color.additional.violet.600')}
-                  {generateTableColorRow('color.additional.violet.700')}
-                  {generateTableColorRow('color.additional.violet.800')}
-                  {generateTableColorRow('color.additional.violet.900')}
+                  {generateTableColorRow('color.additional.violet.0', true)}
+                  {generateTableColorRow('color.additional.violet.100', true)}
+                  {generateTableColorRow('color.additional.violet.200', true)}
+                  {generateTableColorRow('color.additional.violet.300', true)}
+                  {generateTableColorRow('color.additional.violet.400', true)}
+                  {generateTableColorRow('color.additional.violet.500', true)}
+                  {generateTableColorRow('color.additional.violet.600', true)}
+                  {generateTableColorRow('color.additional.violet.700', true)}
+                  {generateTableColorRow('color.additional.violet.800', true)}
+                  {generateTableColorRow('color.additional.violet.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Teal', true)}
+                {generateSectionSubTitle('Teal')}
                 <tbody>
-                  {generateTableColorRow('color.additional.teal.0')}
-                  {generateTableColorRow('color.additional.teal.100')}
-                  {generateTableColorRow('color.additional.teal.200')}
-                  {generateTableColorRow('color.additional.teal.300')}
-                  {generateTableColorRow('color.additional.teal.400')}
-                  {generateTableColorRow('color.additional.teal.500')}
-                  {generateTableColorRow('color.additional.teal.600')}
-                  {generateTableColorRow('color.additional.teal.700')}
-                  {generateTableColorRow('color.additional.teal.800')}
-                  {generateTableColorRow('color.additional.teal.900')}
+                  {generateTableColorRow('color.additional.teal.0', true)}
+                  {generateTableColorRow('color.additional.teal.100', true)}
+                  {generateTableColorRow('color.additional.teal.200', true)}
+                  {generateTableColorRow('color.additional.teal.300', true)}
+                  {generateTableColorRow('color.additional.teal.400', true)}
+                  {generateTableColorRow('color.additional.teal.500', true)}
+                  {generateTableColorRow('color.additional.teal.600', true)}
+                  {generateTableColorRow('color.additional.teal.700', true)}
+                  {generateTableColorRow('color.additional.teal.800', true)}
+                  {generateTableColorRow('color.additional.teal.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Olive', true)}
+                {generateSectionSubTitle('Olive')}
                 <tbody>
-                  {generateTableColorRow('color.additional.olive.0')}
-                  {generateTableColorRow('color.additional.olive.100')}
-                  {generateTableColorRow('color.additional.olive.200')}
-                  {generateTableColorRow('color.additional.olive.300')}
-                  {generateTableColorRow('color.additional.olive.400')}
-                  {generateTableColorRow('color.additional.olive.500')}
-                  {generateTableColorRow('color.additional.olive.600')}
-                  {generateTableColorRow('color.additional.olive.700')}
-                  {generateTableColorRow('color.additional.olive.800')}
-                  {generateTableColorRow('color.additional.olive.900')}
+                  {generateTableColorRow('color.additional.olive.0', true)}
+                  {generateTableColorRow('color.additional.olive.100', true)}
+                  {generateTableColorRow('color.additional.olive.200', true)}
+                  {generateTableColorRow('color.additional.olive.300', true)}
+                  {generateTableColorRow('color.additional.olive.400', true)}
+                  {generateTableColorRow('color.additional.olive.500', true)}
+                  {generateTableColorRow('color.additional.olive.600', true)}
+                  {generateTableColorRow('color.additional.olive.700', true)}
+                  {generateTableColorRow('color.additional.olive.800', true)}
+                  {generateTableColorRow('color.additional.olive.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Orange', true)}
+                {generateSectionSubTitle('Orange')}
                 <tbody>
-                  {generateTableColorRow('color.additional.orange.0')}
-                  {generateTableColorRow('color.additional.orange.100')}
-                  {generateTableColorRow('color.additional.orange.200')}
-                  {generateTableColorRow('color.additional.orange.300')}
-                  {generateTableColorRow('color.additional.orange.400')}
-                  {generateTableColorRow('color.additional.orange.500')}
-                  {generateTableColorRow('color.additional.orange.600')}
-                  {generateTableColorRow('color.additional.orange.700')}
-                  {generateTableColorRow('color.additional.orange.800')}
-                  {generateTableColorRow('color.additional.orange.900')}
+                  {generateTableColorRow('color.additional.orange.0', true)}
+                  {generateTableColorRow('color.additional.orange.100', true)}
+                  {generateTableColorRow('color.additional.orange.200', true)}
+                  {generateTableColorRow('color.additional.orange.300', true)}
+                  {generateTableColorRow('color.additional.orange.400', true)}
+                  {generateTableColorRow('color.additional.orange.500', true)}
+                  {generateTableColorRow('color.additional.orange.600', true)}
+                  {generateTableColorRow('color.additional.orange.700', true)}
+                  {generateTableColorRow('color.additional.orange.800', true)}
+                  {generateTableColorRow('color.additional.orange.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Red', true)}
+                {generateSectionSubTitle('Red')}
                 <tbody>
-                  {generateTableColorRow('color.additional.red.0')}
-                  {generateTableColorRow('color.additional.red.100')}
-                  {generateTableColorRow('color.additional.red.200')}
-                  {generateTableColorRow('color.additional.red.300')}
-                  {generateTableColorRow('color.additional.red.400')}
-                  {generateTableColorRow('color.additional.red.500')}
-                  {generateTableColorRow('color.additional.red.600')}
-                  {generateTableColorRow('color.additional.red.700')}
-                  {generateTableColorRow('color.additional.red.800')}
-                  {generateTableColorRow('color.additional.red.900')}
+                  {generateTableColorRow('color.additional.red.0', true)}
+                  {generateTableColorRow('color.additional.red.100', true)}
+                  {generateTableColorRow('color.additional.red.200', true)}
+                  {generateTableColorRow('color.additional.red.300', true)}
+                  {generateTableColorRow('color.additional.red.400', true)}
+                  {generateTableColorRow('color.additional.red.500', true)}
+                  {generateTableColorRow('color.additional.red.600', true)}
+                  {generateTableColorRow('color.additional.red.700', true)}
+                  {generateTableColorRow('color.additional.red.800', true)}
+                  {generateTableColorRow('color.additional.red.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Blue', true)}
+                {generateSectionSubTitle('Blue')}
                 <tbody>
-                  {generateTableColorRow('color.additional.blue.0')}
-                  {generateTableColorRow('color.additional.blue.100')}
-                  {generateTableColorRow('color.additional.blue.200')}
-                  {generateTableColorRow('color.additional.blue.300')}
-                  {generateTableColorRow('color.additional.blue.400')}
-                  {generateTableColorRow('color.additional.blue.500')}
-                  {generateTableColorRow('color.additional.blue.600')}
-                  {generateTableColorRow('color.additional.blue.700')}
-                  {generateTableColorRow('color.additional.blue.800')}
-                  {generateTableColorRow('color.additional.blue.900')}
+                  {generateTableColorRow('color.additional.blue.0', true)}
+                  {generateTableColorRow('color.additional.blue.100', true)}
+                  {generateTableColorRow('color.additional.blue.200', true)}
+                  {generateTableColorRow('color.additional.blue.300', true)}
+                  {generateTableColorRow('color.additional.blue.400', true)}
+                  {generateTableColorRow('color.additional.blue.500', true)}
+                  {generateTableColorRow('color.additional.blue.600', true)}
+                  {generateTableColorRow('color.additional.blue.700', true)}
+                  {generateTableColorRow('color.additional.blue.800', true)}
+                  {generateTableColorRow('color.additional.blue.900', true)}
                 </tbody>
-                {generateSectionSubTitle('Green', true)}
+                {generateSectionSubTitle('Green')}
                 <tbody>
-                  {generateTableColorRow('color.additional.green.0')}
-                  {generateTableColorRow('color.additional.green.100')}
-                  {generateTableColorRow('color.additional.green.200')}
-                  {generateTableColorRow('color.additional.green.300')}
-                  {generateTableColorRow('color.additional.green.400')}
-                  {generateTableColorRow('color.additional.green.500')}
-                  {generateTableColorRow('color.additional.green.600')}
-                  {generateTableColorRow('color.additional.green.700')}
-                  {generateTableColorRow('color.additional.green.800')}
-                  {generateTableColorRow('color.additional.green.900')}
+                  {generateTableColorRow('color.additional.green.0', true)}
+                  {generateTableColorRow('color.additional.green.100', true)}
+                  {generateTableColorRow('color.additional.green.200', true)}
+                  {generateTableColorRow('color.additional.green.300', true)}
+                  {generateTableColorRow('color.additional.green.400', true)}
+                  {generateTableColorRow('color.additional.green.500', true)}
+                  {generateTableColorRow('color.additional.green.600', true)}
+                  {generateTableColorRow('color.additional.green.700', true)}
+                  {generateTableColorRow('color.additional.green.800', true)}
+                  {generateTableColorRow('color.additional.green.900', true)}
                 </tbody>
               </div>
             </table>
