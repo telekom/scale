@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 
 let i = 0;
 
@@ -34,14 +34,13 @@ export class LogoSvg {
     | 'mk_kyr'
     | 'ro'
     | 'sk'
-    | '' = 'en';
+    | string = 'en';
   /** (optional) Sets the icon color via the `fill` attribute */
   @Prop() color?: string = 'magenta';
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
-  /** (optional) The height in pixels */
-  @Prop() size?: number = 36;
   @Prop() role?: 'link' | 'img' = 'img';
+  @Prop() focusable: boolean = true;
 
   componentWillLoad() {
     i++;
@@ -59,7 +58,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 33 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -79,7 +77,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 153 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -102,7 +99,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 142 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -125,7 +121,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 107 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -148,7 +143,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 103 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -171,7 +165,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 114 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -194,7 +187,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 126 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -225,7 +217,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 144 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -248,8 +239,7 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
-            viewBox="0 0 153 38"
+            viewBox="0 0 33 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -270,7 +260,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 142 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -293,7 +282,6 @@ export class LogoSvg {
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            height={this.size + 'px'}
             viewBox="0 0 109 38"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
@@ -316,8 +304,6 @@ export class LogoSvg {
   }
 
   render() {
-    {
-      return this.renderPaths();
-    }
+    return <Host>{this.renderPaths()}</Host>;
   }
 }

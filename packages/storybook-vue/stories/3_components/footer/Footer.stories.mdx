@@ -12,12 +12,6 @@ import AppFooter from './AppFooter.vue';
       },
       description: 'each item takes an optional onClick handler',
     },
-    claimLang: {
-      control: {
-        type: 'select',
-        options: ['en', 'de'],
-      },
-    },
     variant: {
       control: { type: 'select', options: ['angular', 'standard', 'minimal'] },
     },
@@ -30,7 +24,6 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div style="margin: -1rem;">
       <scale-app-footer
-        :claim-lang="claimLang"
         :footer-navigation="footerNavigation"
         :variant="variant"
         :copyright="copyright"
@@ -60,7 +53,6 @@ export const Template = (args, { argTypes }) => ({
     inline={false}
     height={500}
     args={{
-      claimLang: 'en',
       footerNavigation: JSON.stringify(footerNavigation),
     }}
   >
@@ -97,7 +89,6 @@ export const Template = (args, { argTypes }) => ({
   --background-mask: var(--scl-color-background-standard, #fff);
   --radius-mask: 0 0 var(--scl-radius-8) var(--scl-radius-8);
 
-  --height-logo: var(--scl-spacing-24);
   --font-size-copyright: var(--scl-font-size-14);
   --color-link-standard: var(--scl-color-white);
   --color-link-minimal: var(--scl-color-grey-60);
@@ -129,7 +120,6 @@ For Shadow Parts, please inspect the element's #shadow.
     inline={false}
     height={500}
     args={{
-      claimLang: 'en',
       footerNavigation: JSON.stringify(footerNavigation),
       variant: 'minimal',
     }}
@@ -165,21 +155,14 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Custom Slots
 
 <Canvas withSource="none">
-  <Story
-    name="Custom Slots"
-    inline={false}
-    height={500}
-    args={{
-      claimLang: 'en',
-    }}
-  >
+  <Story name="Custom Slots" inline={false} height={500} args={{}}>
     {() => ({
       components: { AppFooter },
       props: AppFooter.props,
       template: `
         <div style="margin: -1rem;">
           <scale-app-footer
-            :claim-lang="claimLang"
+            
             :variant="variant"
             :copyright="copyright"
           >
@@ -197,11 +180,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-app-footer
-  :claim-lang="claimLang"
-  :variant="variant"
-  :copyright="copyright"
->
+<scale-app-footer :variant="variant" :copyright="copyright">
   <div slot="navigation">
     <span>custom navigation placeholder</span>
   </div>

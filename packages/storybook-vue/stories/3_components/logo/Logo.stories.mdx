@@ -34,16 +34,19 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleLogo.props,
   },
   template: `
-    <scale-logo
-        :variant="variant"
-        :transparent="transparent"
-        :language="language"
-        :size="size"
-        :href="href"
-        :accessibility-title="accessibilityTitle"
-        @click-handler="clickHandler"
-    >
-    </scale-logo>
+    <div :style="variant === 'white' ? 'background: #e20074; padding: 12px;' : ''">
+        <scale-logo
+            :variant="variant"
+            :transparent="transparent"
+            :language="language"
+            :size="size"
+            :href="href"
+            :accessibility-title="accessibilityTitle"
+            :styles="styles"
+            @click-handler="clickHandler"
+        >
+        </scale-logo>
+    </div>
     `,
   methods: {
     clickHandler: action('clickHandler'),

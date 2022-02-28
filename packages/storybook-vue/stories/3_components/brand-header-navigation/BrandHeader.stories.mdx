@@ -10,7 +10,7 @@ import {
   iconNavigation,
   addonNavigation,
   sectorNavigation,
-  userNavigation
+  userNavigation,
 } from './fixtures';
 import AppShell from './AppShell.vue';
 
@@ -84,7 +84,18 @@ import AppShell from './AppShell.vue';
     claimLang: {
       control: {
         type: 'select',
-        options: ['en', 'de'],
+        options: [
+          'de',
+          'en',
+          'cz',
+          'hr',
+          'hu',
+          'me',
+          'mk_lat',
+          'mk_kyr',
+          'ro',
+          'sk',
+        ],
       },
     },
   }}
@@ -111,7 +122,7 @@ import AppShell from './AppShell.vue';
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -154,11 +165,7 @@ import AppShell from './AppShell.vue';
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-shell
-  claim-lang="en"
-  logo-title="App Name"
-  logo-href="/"
->
+<scale-app-shell claim-lang="de" logo-title="App Name" logo-href="/">
   <div style="height: 800px; padding: 48px 0;">
     Scroll to test header behavior
   </div>
@@ -169,6 +176,7 @@ import AppShell from './AppShell.vue';
 ```
 
 ## Using scale-app-shell over scale-header
+
 Using scale-app-shell provides the page with the common region `content`, which helps you fulfill accessibility requirements. The scale-app-shell component includes both the Header and optionally the <a href="?path=/docs/components-footer--standard">Footer</a> component. However, there is a story <a href="?path=/docs/components-brand-header-navigation--standalone-header">demonstrating the standalone mode of the Header</a> for special cases.
 
 ## Dropdown Navigation Beta
@@ -184,7 +192,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -227,6 +235,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
                 @keydown="$event.key === 'Escape' && handleClose()"
             >
                 <div slot="menu-main">
@@ -276,10 +285,18 @@ You can find code examples where the Flyout Menu Beta component is implemented i
   </scale-app-shell>
   <script>
     const header = document.getElementById('header');
-    header.mainNavigation = [/* ... */];
-    header.iconNavigation = [/* ... */];
-    header.addonNavigation = [/* ... */];
-    header.sectionNavigation = [/* ... */];
+    header.mainNavigation = [
+      /* ... */
+    ];
+    header.iconNavigation = [
+      /* ... */
+    ];
+    header.addonNavigation = [
+      /* ... */
+    ];
+    header.sectionNavigation = [
+      /* ... */
+    ];
     const navMainWithMegaMenu = document.getElementById(
       'nav-main-with-mega-menu'
     );
@@ -332,7 +349,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -356,6 +373,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
             >
                 <div slot="menu-icon">
                   <scale-nav-icon icon="action-mute">
@@ -413,7 +431,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -436,6 +454,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
             >
                 <div slot="menu-sector">
                   <scale-nav-segment active="true" href="#custom-sector-1">
@@ -473,10 +492,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       >
         Custom Sector #1
       </scale-nav-segment>
-      <scale-nav-segment
-        href="#custom-sector-2"
-        onclick="handleClick()"
-      >
+      <scale-nav-segment href="#custom-sector-2" onclick="handleClick()">
         Custom Sector #2
       </scale-nav-segment>
     </div>
@@ -505,7 +521,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -528,6 +544,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :sector-navigation="sectorNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
             >
                 <div slot="menu-addon">
                   <scale-nav-segment active="true" href="#custom-addon-1">
@@ -565,10 +582,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       >
         Custom Addon #1
       </scale-nav-segment>
-      <scale-nav-segment
-        href="#custom-addon-2"
-        onclick="handleClick()"
-      >
+      <scale-nav-segment href="#custom-addon-2" onclick="handleClick()">
         Custom Addon #2
       </scale-nav-segment>
     </div>
@@ -597,7 +611,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -615,6 +629,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
             <scale-app-header
                 slot="header"
                 id="header"
+                :claim-lang="claimLang"
                 :main-navigation="mainNavigation"
                 :icon-navigation="iconNavigation"
                 :sector-navigation="sectorNavigation"
@@ -622,11 +637,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :active-sector-id="activeSectorId"
             >
                 <div slot="logo">
-                  <app-logo
-                    claim
-                    href="#custom"
-                    logo-title="Custom"
-                  ></app-logo>
+                    <scale-logo transparent variant="white" language="hu" href="#custom" logo-title="Custom" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"></scale-logo>
                 </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
@@ -642,12 +653,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 <scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="logo">
-      <app-logo
-        claim
+      <scale-logo
+        transparent
+        variant="white"
+        language="hu"
         href="#custom"
         logo-title="Custom"
-        onclick="handleClick()"
-      ></app-logo>
+        styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+      ></scale-logo>
     </div>
   </scale-app-header>
   <div style="height: 800px; padding: 48px 0;">
@@ -674,7 +687,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
     height={500}
     args={{
       portalName: '',
-      claimLang: 'en',
+      claimLang: 'de',
       mainNavigation: JSON.stringify(mainNavigation),
       iconNavigation: JSON.stringify(iconNavigation),
       addonNavigation: JSON.stringify(addonNavigation),
@@ -694,6 +707,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 id="header"
                 ref="header"
                 :main-navigation="mainNavigation"
+                :claim-lang="claimLang"
                 :icon-navigation="iconNavigation"
                 :sector-navigation="sectorNavigation"
                 :active-route-id="activeRouteId"
@@ -747,27 +761,27 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 ## Standalone Header
 
 <Canvas withSource="none">
-    <Story
-        name="Standalone Header"
-        inline={false}
-        height={500}
-        args={{
-            portalName: '',
-            claimLang: 'en',
-            mainNavigation: JSON.stringify(mainNavigation),
-            iconNavigation: JSON.stringify(iconNavigation),
-            addonNavigation: JSON.stringify(addonNavigation),
-            sectorNavigation: JSON.stringify(sectorNavigation),
-            activeRouteId: 'Third Level 24',
-            activeSectorId: 'Personal38',
-            logoTitle: 'Custom Logo Title',
-            logoHref: '#custom-href',
-        }}
-    >
-        {() => ({
-            components: { AppShell },
-            props: AppShell.props,
-            template: `
+  <Story
+    name="Standalone Header"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'de',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+      logoTitle: 'Custom Logo Title',
+      logoHref: '#custom-href',
+    }}
+  >
+    {() => ({
+      components: { AppShell },
+      props: AppShell.props,
+      template: `
         <div class="brand-header-spacing">
           <scale-app-header
             :logo-title="logoTitle"
@@ -785,17 +799,13 @@ You can find code examples where the Flyout Menu Beta component is implemented i
           </scale-app-header>
         </div>
       `,
-        })}
-    </Story>
+    })}
+  </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-header
-    claim-lang="en"
-    logo-title="App Name"
-    logo-href="/"
->
+<scale-app-header claim-lang="de" logo-title="App Name" logo-href="/">
 </scale-app-header>
 ```

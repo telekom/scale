@@ -31,7 +31,6 @@ const readData = (data) => {
 })
 export class AppFooter {
   @Element() hostElement: HTMLStencilElement;
-  @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
   @Prop() copyright?: string = '© Deutsche Telekom AG';
@@ -60,7 +59,12 @@ export class AppFooter {
                 {this.hasSlotLogo ? (
                   <slot name="logo"></slot>
                 ) : (
-                  <app-logo claim claimLang={this.claimLang}></app-logo>
+                  <scale-logo
+                    transparent
+                    variant="white"
+                    language=""
+                    size={24}
+                  ></scale-logo>
                 )}
               </div>
               <div class="footer-copyright">{this.copyright}</div>

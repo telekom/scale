@@ -49,13 +49,14 @@ graph TD;
   scale-app-header --> scale-menu-flyout-list
   scale-app-header --> app-navigation-user-menu
   scale-app-header --> scale-nav-segment
-  scale-app-header --> app-logo
+  scale-app-header --> scale-logo
   scale-app-header --> app-navigation-sector-mobile
   scale-app-header --> app-navigation-main-mobile
   scale-nav-icon --> scale-notification-badge
   scale-nav-icon --> scale-icon
   app-navigation-user-menu --> scale-button
   app-navigation-user-menu --> scale-icon
+  scale-logo --> scale-logo-svg
   app-navigation-main-mobile --> scale-icon-navigation-left
   app-navigation-main-mobile --> scale-icon-navigation-right
   style scale-app-shell fill:#f9f,stroke:#333,stroke-width:4px

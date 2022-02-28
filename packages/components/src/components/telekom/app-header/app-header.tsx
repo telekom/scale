@@ -435,13 +435,17 @@ export class Header {
                   {this.hasSlotLogo ? (
                     <slot name="logo"></slot>
                   ) : (
-                    <app-logo
-                      claim
-                      claimLang={this.claimLang}
+                    <scale-logo
+                      transparent
+                      language={this.claimLang}
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
                       onClick={this.logoClick}
-                    ></app-logo>
+                      variant="white"
+                      scrollIntoViewOnFocus={true}
+                      focusable={true}
+                      styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+                    ></scale-logo>
                   )}
                 </div>
                 <div class="header__brand-sector">{this.menuSector()}</div>
@@ -453,13 +457,15 @@ export class Header {
               <span class="header__nav-after"></span>
               <div class="header__nav-content">
                 <div class="header__nav-logo">
-                  <app-logo
-                    color="#e20074"
+                  <scale-logo
+                    transparent
+                    language=""
                     href={this.logoHref}
                     logoTitle={this.logoTitle}
                     onClick={this.logoClick}
                     focusable={this.scrolled || this.sticky}
-                  ></app-logo>
+                    size={24}
+                  ></scale-logo>
                 </div>
                 <div class="header__nav-menu-wrapper">
                   <div class="header__nav-menu-main">{this.menuMain()}</div>

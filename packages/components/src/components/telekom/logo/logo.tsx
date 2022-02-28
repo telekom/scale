@@ -35,62 +35,44 @@ export class Logo {
     | 'mk_kyr'
     | 'ro'
     | 'sk'
-    | '' = 'en';
+    | string = 'en';
   /** (optional) The height in pixels */
-  @Prop() size: number = 36;
+  @Prop() size?: number = 36;
   /** (optional) Set a link */
-  @Prop() href: string = '';
-  /** (optional) Possibility for adding a onClick Event */
-  @Prop() clickHandler: any;
+  @Prop() href?: string = 'javascript:void(0);';
   /** (optional) When using the icon standalone, make it meaningful for accessibility */
   @Prop() accessibilityTitle?: string;
-
-  styles() {
-    return `:host {
-        --logo-size: ${this.size}px;
-      }`;
-  }
-
-  getLogoSvg(role: 'link' | 'img') {
-    if (this.accessibilityTitle) {
-      return (
-        <scale-logo-svg
-          language={this.language}
-          color={this.variant}
-          size={this.size}
-          accessibilityTitle={this.accessibilityTitle}
-          role={role}
-        ></scale-logo-svg>
-      );
-    } else {
-      return (
-        <scale-logo-svg
-          language={this.language}
-          color={this.variant}
-          size={this.size}
-          role={role}
-        ></scale-logo-svg>
-      );
-    }
-  }
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
+  @Prop() focusable: boolean = true;
+  @Prop() scrollIntoViewOnFocus: boolean = false;
+  @Prop() logoTitle?: string = 'Telekom Logo';
 
   render() {
     return (
       <Host>
-        <style>{this.styles()}</style>
-        {this.href === '' ? (
-          <div class={this.getCssClassMap()} onClick={this.clickHandler}>
-            {this.getLogoSvg('img')}
-          </div>
-        ) : (
-          <a
-            href={this.href}
-            class={this.getCssClassMap()}
-            onClick={this.clickHandler}
-          >
-            {this.getLogoSvg('link')}
-          </a>
-        )}
+        <style>
+          {this.size ? `:host { --logo-size: ${this.size}px; }` : ''}
+          {this.styles}
+        </style>
+        <a
+          href={this.href}
+          class={this.getCssClassMap()}
+          tabIndex={this.focusable === false ? -1 : 0}
+          onFocus={() => {
+            if (this.scrollIntoViewOnFocus === true) {
+              window.scrollTo({ top: 0 });
+            }
+          }}
+          title={this.logoTitle}
+        >
+          <scale-logo-svg
+            language={this.language}
+            color={this.variant}
+            accessibilityTitle={this.accessibilityTitle}
+            role="link"
+          ></scale-logo-svg>
+        </a>
       </Host>
     );
   }
