@@ -347,7 +347,11 @@ import text_de from './5.Colors_de.md';
                     }}
                   >
                     <button
-                      class="color_token_copy-paste-button"
+                      class={
+                        darkMode
+                          ? 'color_token_copy-paste-button_dark'
+                          : 'color_token_copy-paste-button'
+                      }
                       style={{
                         border: `${
                           darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
