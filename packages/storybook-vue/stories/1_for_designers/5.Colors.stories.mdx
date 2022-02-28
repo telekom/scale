@@ -347,6 +347,7 @@ import text_de from './5.Colors_de.md';
                     }}
                   >
                     <button
+                      id={`${item.cssVariableName}`}
                       class={
                         darkMode
                           ? 'color_token_copy-paste-button_dark'
@@ -361,8 +362,8 @@ import text_de from './5.Colors_de.md';
                         cursor: 'pointer',
                         backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                       }}
-                      onClick={() => {
-                        navigator.clipboard.writeText(item.cssVariableName);
+                      onClick={(event) => {
+                        navigator.clipboard.writeText(event.target.id);
                       }}
                     >
                       <scale-icon-action-copy-paste
@@ -413,6 +414,7 @@ import text_de from './5.Colors_de.md';
                     }}
                   >
                     <button
+                      id={`${item.jsPathName}`}
                       class="color_token_copy-paste-button"
                       style={{
                         border: `${
@@ -423,8 +425,8 @@ import text_de from './5.Colors_de.md';
                         cursor: 'pointer',
                         backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                       }}
-                      onClick={() => {
-                        navigator.clipboard.writeText(item.jsPathName);
+                      onClick={(event) => {
+                        navigator.clipboard.writeText(event.target.id);
                       }}
                     >
                       <scale-icon-action-copy-paste
