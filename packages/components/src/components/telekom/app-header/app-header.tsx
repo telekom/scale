@@ -458,7 +458,7 @@ export class Header {
                     href={this.logoHref}
                     logoTitle={this.logoTitle}
                     onClick={this.logoClick}
-                    focusable={this.scrolled}
+                    focusable={this.scrolled || this.sticky}
                   ></app-logo>
                 </div>
                 <div class="header__nav-menu-wrapper">
