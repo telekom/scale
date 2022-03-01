@@ -4,7 +4,7 @@
       "pathString": "color.text-&-icon.standard",
       "path": ["color", "text-&-icon", "standard"],
       "value": "#000000",
-      "comment": "For all standard texts.",
+      "comment": "Default text color with highest contrast.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Standard",
@@ -15,7 +15,7 @@
       "pathString": "color.text-&-icon.additional",
       "path": ["color", "text-&-icon", "additional"],
       "value": "hsla(0, 0%, 0%, 0.65)",
-      "comment": "For texts with supplementary information.",
+      "comment": "Use in combination with standard text for additional text elements.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Additional",
@@ -26,7 +26,7 @@
       "pathString": "color.text-&-icon.disabled",
       "path": ["color", "text-&-icon", "disabled"],
       "value": "hsla(0, 0%, 0%, 0.4)",
-      "comment": "Only for texts in disabled state.",
+      "comment": "Only use for disabled text.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Disabled",
@@ -37,7 +37,6 @@
       "pathString": "color.text-&-icon.link.standard",
       "path": ["color", "text-&-icon", "link", "standard"],
       "value": "#005ac4",
-      "comment": "For supporting information as well as for functions like synchronize, sort and add.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Link / Standard",
@@ -108,7 +107,7 @@
       "pathString": "color.text-&-icon.inverted.standard",
       "path": ["color", "text-&-icon", "inverted", "standard"],
       "value": "#ffffff",
-      "comment": "Inverted/Additional is the inverse state of the default text color. For texts displayed inverted in the other mode (white in light mode and dark gray in dark mode).",
+      "comment": "Standard text color inverted to be used on high contrast colors like ui/extra strong",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Inverted / Standard",
@@ -119,7 +118,7 @@
       "pathString": "color.text-&-icon.inverted.additional",
       "path": ["color", "text-&-icon", "inverted", "additional"],
       "value": "hsla(0, 0%, 100%, 0.65)",
-      "comment": "Inverted/Additional is the inverse state of the Additional text color. For texts displayed inverted in the respective other mode (a darker gray in light mode and lighter gray in dark mode).",
+      "comment": "Additional text color inverted to be used on high contrast colors like ui/extra strong",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Inverted / Additional",
@@ -174,7 +173,6 @@
       "pathString": "color.text-&-icon.functional.informational",
       "path": ["color", "text-&-icon", "functional", "informational"],
       "value": "#005ac4",
-      "comment": "For supporting information as well as for functions like synchronize, sort and add.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Functional / Informational",
@@ -185,7 +183,6 @@
       "pathString": "color.text-&-icon.functional.success",
       "path": ["color", "text-&-icon", "functional", "success"],
       "value": "#09572f",
-      "comment": "Confirms a successfully performed action or for function like send, call and activate.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Functional / Success",
@@ -196,7 +193,6 @@
       "pathString": "color.text-&-icon.functional.danger",
       "path": ["color", "text-&-icon", "functional", "danger"],
       "value": "#e60021",
-      "comment": "For error messages or functions like quit and delete.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Functional / Danger",
@@ -207,7 +203,6 @@
       "pathString": "color.text-&-icon.functional.warning",
       "path": ["color", "text-&-icon", "functional", "warning"],
       "value": "#bb5313",
-      "comment": "For warnings of potentially undesirable results.",
       "category": "Color",
       "section": "Text & Icon",
       "name": "Text & Icon / Functional / Warning",
@@ -218,7 +213,7 @@
       "pathString": "color.background.canvas",
       "path": ["color", "background", "canvas"],
       "value": "#ffffff",
-      "comment": "For the background of your website or app.",
+      "comment": "Use as the background for your product (app, website, etc.)",
       "category": "Color",
       "section": "Background",
       "name": "Background / Canvas",
@@ -290,8 +285,8 @@
     {
       "pathString": "color.background.canvas-subtle",
       "path": ["color", "background", "canvas-subtle"],
-      "value": "#e7e8e9",
-      "comment": "For the background of your website or app, e.g. when you create a card-based layout.",
+      "value": "#fbfbfb",
+      "comment": "Use as the background for your product (app, website, etc.)",
       "category": "Color",
       "section": "Background",
       "name": "Background / Canvas Subtle",
@@ -301,43 +296,43 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 17.117068386018293,
+          "ratio": 20.293724957889296,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 17.117068386018293,
+          "ratio": 20.293724957889296,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.disabled",
           "name": "Text & Icon / Disabled",
-          "ratio": 17.117068386018293,
+          "ratio": 20.293724957889296,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.standard",
           "name": "Text & Icon / Link / Standard",
-          "ratio": 5.251326789388783,
+          "ratio": 6.225889803355603,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.link.hovered",
           "name": "Text & Icon / Link / Hovered",
-          "ratio": 7.0913067145371045,
+          "ratio": 8.407340837312924,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.visited",
           "name": "Text & Icon / Link / Visited",
-          "ratio": 7.0953167581317045,
+          "ratio": 8.412095081435966,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.active",
           "name": "Text & Icon / Link / Active",
-          "ratio": 9.416942526978819,
+          "ratio": 11.16457779317275,
           "level": "aaa"
         }
       ]
@@ -346,7 +341,7 @@
       "pathString": "color.background.backdrop",
       "path": ["color", "background", "backdrop"],
       "value": "hsla(0, 0%, 0%, 0.5)",
-      "comment": "For darkening the content under dialogs.",
+      "comment": "Use to overlay content below dialogs to separate dialog from content below",
       "category": "Color",
       "section": "Background",
       "name": "Background / Backdrop",
@@ -357,7 +352,7 @@
       "pathString": "color.background.surface",
       "path": ["color", "background", "surface"],
       "value": "#ffffff",
-      "comment": "For the background area of components like headers or cards.",
+      "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
       "category": "Color",
       "section": "Background",
       "name": "Background / Surface",
@@ -429,8 +424,8 @@
     {
       "pathString": "color.background.surface-subtle",
       "path": ["color", "background", "surface-subtle"],
-      "value": "#f0f1f1",
-      "comment": "For the background area of components that should stand out somewhat against a white background.",
+      "value": "#f7f7f8",
+      "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
       "category": "Color",
       "section": "Background",
       "name": "Background / Surface Subtle",
@@ -440,43 +435,43 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 18.55734649702286,
+          "ratio": 19.61459927990755,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 18.55734649702286,
+          "ratio": 19.61459927990755,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.disabled",
           "name": "Text & Icon / Disabled",
-          "ratio": 18.55734649702286,
+          "ratio": 19.61459927990755,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.standard",
           "name": "Text & Icon / Link / Standard",
-          "ratio": 5.693188144261125,
+          "ratio": 6.017541575392665,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.link.hovered",
           "name": "Text & Icon / Link / Hovered",
-          "ratio": 7.687989137545366,
+          "ratio": 8.125990761956546,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.visited",
           "name": "Text & Icon / Link / Visited",
-          "ratio": 7.692336597447667,
+          "ratio": 8.13058590619674,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.active",
           "name": "Text & Icon / Link / Active",
-          "ratio": 10.209310465712665,
+          "ratio": 10.790957303149268,
           "level": "aaa"
         }
       ]
@@ -484,8 +479,8 @@
     {
       "pathString": "color.background.surface-highlight",
       "path": ["color", "background", "surface-highlight"],
-      "value": "#050505",
-      "comment": "For the background of components or areas that should be highlighted (e.g. the footer).",
+      "value": "#242426",
+      "comment": "Use as the background of elements that should stand out highlighted sections, footer, etc.",
       "category": "Color",
       "section": "Background",
       "name": "Background / Surface Highlight",
@@ -495,7 +490,7 @@
         {
           "path": "color.text-&-icon.white.standard",
           "name": "Text & Icon / White / Standard",
-          "ratio": 20.381370411830552,
+          "ratio": 15.494127232196467,
           "level": "aaa"
         }
       ]
@@ -504,7 +499,6 @@
       "pathString": "color.primary.standard",
       "path": ["color", "primary", "standard"],
       "value": "#e20074",
-      "comment": "Brand color magenta",
       "category": "Color",
       "section": "Primary",
       "name": "Primary / Standard",
@@ -559,7 +553,6 @@
       "pathString": "color.ui.outlined.border.standard",
       "path": ["color", "ui", "outlined", "border", "standard"],
       "value": "hsla(0, 0%, 0%, 0.44)",
-      "comment": "For outlines of components without visible filling.",
       "category": "Color",
       "section": "UI",
       "name": "UI / Outlined / Border / Standard",
@@ -709,8 +702,7 @@
     {
       "pathString": "color.ui.solid.standard",
       "path": ["color", "ui", "solid", "standard"],
-      "value": "#898b8f",
-      "comment": "For background areas of components without outline.",
+      "value": "#929296",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Standard",
@@ -720,7 +712,7 @@
     {
       "pathString": "color.ui.solid.hovered",
       "path": ["color", "ui", "solid", "hovered"],
-      "value": "#4a4b4d",
+      "value": "#747478",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Hovered",
@@ -730,7 +722,7 @@
     {
       "pathString": "color.ui.solid.pressed",
       "path": ["color", "ui", "solid", "pressed"],
-      "value": "#050505",
+      "value": "#242426",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Pressed",
@@ -740,7 +732,7 @@
     {
       "pathString": "color.ui.solid.disabled",
       "path": ["color", "ui", "solid", "disabled"],
-      "value": "#d3d5d6",
+      "value": "#d0d0d2",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Disabled",
@@ -774,7 +766,7 @@
     {
       "pathString": "color.ui.additional.subtle",
       "path": ["color", "ui", "additional", "subtle"],
-      "value": "#e7e8e9",
+      "value": "#f7f7f8",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Subtle",
@@ -784,13 +776,13 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 17.117068386018293,
+          "ratio": 19.61459927990755,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 17.117068386018293,
+          "ratio": 19.61459927990755,
           "level": "aaa"
         }
       ]
@@ -798,7 +790,7 @@
     {
       "pathString": "color.ui.additional.light",
       "path": ["color", "ui", "additional", "light"],
-      "value": "#babcbf",
+      "value": "#e7e7e9",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Light",
@@ -808,13 +800,13 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 11.033426156957947,
+          "ratio": 17.00478885687542,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 11.033426156957947,
+          "ratio": 17.00478885687542,
           "level": "aaa"
         }
       ]
@@ -822,7 +814,7 @@
     {
       "pathString": "color.ui.additional.regular",
       "path": ["color", "ui", "additional", "regular"],
-      "value": "#898b8f",
+      "value": "#929296",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Regular",
@@ -832,7 +824,7 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 6.153354593477463,
+          "ratio": 6.7741538663775955,
           "level": "aa"
         }
       ]
@@ -840,7 +832,7 @@
     {
       "pathString": "color.ui.additional.strong",
       "path": ["color", "ui", "additional", "strong"],
-      "value": "#4a4b4d",
+      "value": "#747478",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Strong",
@@ -850,21 +842,21 @@
         {
           "path": "color.text-&-icon.inverted.standard",
           "name": "Text & Icon / Inverted / Standard",
-          "ratio": 8.732664279593937,
-          "level": "aaa"
+          "ratio": 4.654285834599342,
+          "level": "aa"
         },
         {
           "path": "color.text-&-icon.inverted.additional",
           "name": "Text & Icon / Inverted / Additional",
-          "ratio": 8.732664279593937,
-          "level": "aaa"
+          "ratio": 4.654285834599342,
+          "level": "aa"
         }
       ]
     },
     {
       "pathString": "color.ui.additional.extra-strong",
       "path": ["color", "ui", "additional", "extra-strong"],
-      "value": "#050505",
+      "value": "#242426",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Extra Strong",
@@ -874,13 +866,13 @@
         {
           "path": "color.text-&-icon.inverted.standard",
           "name": "Text & Icon / Inverted / Standard",
-          "ratio": 20.381370411830552,
+          "ratio": 15.494127232196467,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.inverted.additional",
           "name": "Text & Icon / Inverted / Additional",
-          "ratio": 20.381370411830552,
+          "ratio": 15.494127232196467,
           "level": "aaa"
         }
       ]
@@ -899,7 +891,6 @@
       "pathString": "color.functional.success.standard",
       "path": ["color", "functional", "success", "standard"],
       "value": "#0d8347",
-      "comment": "For backgrounds of components that confirm a successful action, such as a Success Notification, or for functions such as send, call, and activate.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Success / Standard",
@@ -954,7 +945,6 @@
       "pathString": "color.functional.success.subtle",
       "path": ["color", "functional", "success", "subtle"],
       "value": "#f0fff7",
-      "comment": "For backgrounds of components that confirm a successful action, such as a Success Notification.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Success / Subtle",
@@ -1019,7 +1009,6 @@
       "pathString": "color.functional.informational.standard",
       "path": ["color", "functional", "informational", "standard"],
       "value": "#006cec",
-      "comment": "For backgrounds of components that provide additional and helpful information, such as an Informational Notification, or functions such as save.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Informational / Standard",
@@ -1074,7 +1063,6 @@
       "pathString": "color.functional.informational.subtle",
       "path": ["color", "functional", "informational", "subtle"],
       "value": "#f0f7ff",
-      "comment": "For backgrounds of components that provide additional and helpful information, such as a Success Notification.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Informational / Subtle",
@@ -1099,7 +1087,6 @@
       "pathString": "color.functional.warning.standard",
       "path": ["color", "functional", "warning", "standard"],
       "value": "#ff7f1f",
-      "comment": "For backgrounds of components that warn about possibly unwanted results, such as the Warning Notification.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Warning / Standard",
@@ -1154,7 +1141,6 @@
       "pathString": "color.functional.warning.subtle",
       "path": ["color", "functional", "warning", "subtle"],
       "value": "#fff6f0",
-      "comment": "For backgrounds of components that warn about possibly unwanted results, such as the Warning Notification.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Warning / Subtle",
@@ -1179,7 +1165,6 @@
       "pathString": "color.functional.danger.standard",
       "path": ["color", "functional", "danger", "standard"],
       "value": "#e60021",
-      "comment": "Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification, oder Funktionen wie löschen.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Danger / Standard",
@@ -1234,7 +1219,6 @@
       "pathString": "color.functional.danger.subtle",
       "path": ["color", "functional", "danger", "subtle"],
       "value": "#fff0f2",
-      "comment": "Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification,.",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Danger / Subtle",

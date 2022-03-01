@@ -212,7 +212,7 @@
     {
       "pathString": "color.background.canvas",
       "path": ["color", "background", "canvas"],
-      "value": "#050505",
+      "value": "#000000",
       "comment": "Use as the background for your product (app, website, etc.)",
       "category": "Color",
       "section": "Background",
@@ -223,61 +223,61 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 20.381370411830552,
+          "ratio": 21,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 20.381370411830552,
+          "ratio": 21,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.disabled",
           "name": "Text & Icon / Disabled",
-          "ratio": 20.381370411830552,
+          "ratio": 21,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.standard",
           "name": "Text & Icon / Link / Standard",
-          "ratio": 8.36271512984456,
+          "ratio": 8.616546099608554,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.hovered",
           "name": "Text & Icon / Link / Hovered",
-          "ratio": 10.637128163284434,
+          "ratio": 10.959993705786845,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.visited",
           "name": "Text & Icon / Link / Visited",
-          "ratio": 8.329270639990677,
+          "ratio": 8.582086479242504,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.active",
           "name": "Text & Icon / Link / Active",
-          "ratio": 13.736259641284406,
+          "ratio": 14.153192186700675,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.primary.standard",
           "name": "Text & Icon / Primary / Standard",
-          "ratio": 4.3537917180403385,
+          "ratio": 4.485941044758008,
           "level": "aa-large"
         },
         {
           "path": "color.text-&-icon.primary.hovered",
           "name": "Text & Icon / Primary / Hovered",
-          "ratio": 6.3462223399885165,
+          "ratio": 6.538847312367213,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.primary.pressed",
           "name": "Text & Icon / Primary / Pressed",
-          "ratio": 8.251306281060002,
+          "ratio": 8.501755691642773,
           "level": "aaa"
         }
       ]
@@ -285,7 +285,7 @@
     {
       "pathString": "color.background.canvas-subtle",
       "path": ["color", "background", "canvas-subtle"],
-      "value": "#161617",
+      "value": "#0e0e0f",
       "comment": "Use as the background for your product (app, website, etc.)",
       "category": "Color",
       "section": "Background",
@@ -296,43 +296,43 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 18.083949686928708,
+          "ratio": 19.294633774657868,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 18.083949686928708,
+          "ratio": 19.294633774657868,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.disabled",
           "name": "Text & Icon / Disabled",
-          "ratio": 18.083949686928708,
+          "ratio": 19.294633774657868,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.standard",
           "name": "Text & Icon / Link / Standard",
-          "ratio": 7.42005648287728,
+          "ratio": 7.916814352114463,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.hovered",
           "name": "Text & Icon / Link / Hovered",
-          "ratio": 9.438094035452602,
+          "ratio": 10.069955463129167,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.visited",
           "name": "Text & Icon / Link / Visited",
-          "ratio": 7.390381909499647,
+          "ratio": 7.885153125687003,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.active",
           "name": "Text & Icon / Link / Active",
-          "ratio": 12.187886448272739,
+          "ratio": 13.003840951654224,
           "level": "aaa"
         }
       ]
@@ -351,7 +351,7 @@
     {
       "pathString": "color.background.surface",
       "path": ["color", "background", "surface"],
-      "value": "#272729",
+      "value": "#1c1c1e",
       "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
       "category": "Color",
       "section": "Background",
@@ -362,61 +362,61 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 14.909545219184075,
+          "ratio": 17.014735210873155,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 14.909545219184075,
+          "ratio": 17.014735210873155,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.disabled",
           "name": "Text & Icon / Disabled",
-          "ratio": 14.909545219184075,
+          "ratio": 17.014735210873155,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.standard",
           "name": "Text & Icon / Link / Standard",
-          "ratio": 6.117561128823709,
+          "ratio": 6.981345253196257,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.link.hovered",
           "name": "Text & Icon / Link / Hovered",
-          "ratio": 7.781358178971515,
+          "ratio": 8.880066229371408,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.visited",
           "name": "Text & Icon / Link / Visited",
-          "ratio": 6.093095544629255,
+          "ratio": 6.953425190529803,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.link.active",
           "name": "Text & Icon / Link / Active",
-          "ratio": 10.048459947781737,
+          "ratio": 11.467277021205275,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.primary.standard",
           "name": "Text & Icon / Primary / Standard",
-          "ratio": 3.1849209932101608,
+          "ratio": 3.6346237641973898,
           "level": "aa-large"
         },
         {
           "path": "color.text-&-icon.primary.hovered",
           "name": "Text & Icon / Primary / Hovered",
-          "ratio": 4.642439985003772,
+          "ratio": 5.297940743059891,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.primary.pressed",
           "name": "Text & Icon / Primary / Pressed",
-          "ratio": 6.036062425095405,
+          "ratio": 6.888339139087407,
           "level": "aa"
         }
       ]
@@ -424,7 +424,7 @@
     {
       "pathString": "color.background.surface-subtle",
       "path": ["color", "background", "surface-subtle"],
-      "value": "#38393b",
+      "value": "#242426",
       "comment": "Use as the background of elements like cards, headers, bottom bars, etc.",
       "category": "Color",
       "section": "Background",
@@ -435,43 +435,43 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 11.560343928013255,
+          "ratio": 15.494127232196467,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 11.560343928013255,
+          "ratio": 15.494127232196467,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.disabled",
           "name": "Text & Icon / Disabled",
-          "ratio": 11.560343928013255,
+          "ratio": 15.494127232196467,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.standard",
           "name": "Text & Icon / Link / Standard",
-          "ratio": 4.743344589669335,
+          "ratio": 6.357421979496245,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.link.hovered",
           "name": "Text & Icon / Link / Hovered",
-          "ratio": 6.033395080369354,
-          "level": "aa"
+          "ratio": 8.08645414007304,
+          "level": "aaa"
         },
         {
           "path": "color.text-&-icon.link.visited",
           "name": "Text & Icon / Link / Visited",
-          "ratio": 4.724374824761702,
+          "ratio": 6.331997134623637,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.link.active",
           "name": "Text & Icon / Link / Active",
-          "ratio": 7.791227112263323,
+          "ratio": 10.442445737260439,
           "level": "aaa"
         }
       ]
@@ -479,7 +479,7 @@
     {
       "pathString": "color.background.surface-highlight",
       "path": ["color", "background", "surface-highlight"],
-      "value": "#4a4b4d",
+      "value": "#48484b",
       "comment": "Use as the background of elements that should stand out highlighted sections, footer, etc.",
       "category": "Color",
       "section": "Background",
@@ -490,7 +490,7 @@
         {
           "path": "color.text-&-icon.white.standard",
           "name": "Text & Icon / White / Standard",
-          "ratio": 8.732664279593937,
+          "ratio": 9.1142297022516,
           "level": "aaa"
         }
       ]
@@ -552,7 +552,7 @@
     {
       "pathString": "color.ui.outlined.border.standard",
       "path": ["color", "ui", "outlined", "border", "standard"],
-      "value": "hsla(0, 0%, 100%, 0.36)",
+      "value": "hsla(0, 0%, 100%, 0.4)",
       "category": "Color",
       "section": "UI",
       "name": "UI / Outlined / Border / Standard",
@@ -702,7 +702,7 @@
     {
       "pathString": "color.ui.solid.standard",
       "path": ["color", "ui", "solid", "standard"],
-      "value": "#898b8f",
+      "value": "#656569",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Standard",
@@ -712,7 +712,7 @@
     {
       "pathString": "color.ui.solid.hovered",
       "path": ["color", "ui", "solid", "hovered"],
-      "value": "#4a4b4d",
+      "value": "#39393c",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Hovered",
@@ -722,7 +722,7 @@
     {
       "pathString": "color.ui.solid.pressed",
       "path": ["color", "ui", "solid", "pressed"],
-      "value": "#050505",
+      "value": "#1c1c1e",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Pressed",
@@ -732,7 +732,7 @@
     {
       "pathString": "color.ui.solid.disabled",
       "path": ["color", "ui", "solid", "disabled"],
-      "value": "#e7e8e9",
+      "value": "#39393c",
       "category": "Color",
       "section": "UI",
       "name": "UI / Solid / Disabled",
@@ -742,7 +742,7 @@
     {
       "pathString": "color.ui.additional.base",
       "path": ["color", "ui", "additional", "base"],
-      "value": "#38393b",
+      "value": "#838387",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Base",
@@ -752,21 +752,21 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 11.560343928013255,
-          "level": "aaa"
+          "ratio": 3.7760054237313434,
+          "level": "aa-large"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 11.560343928013255,
-          "level": "aaa"
+          "ratio": 3.7760054237313434,
+          "level": "aa-large"
         }
       ]
     },
     {
       "pathString": "color.ui.additional.subtle",
       "path": ["color", "ui", "additional", "subtle"],
-      "value": "#272729",
+      "value": "#1c1c1e",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Subtle",
@@ -776,13 +776,13 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 14.909545219184075,
+          "ratio": 17.014735210873155,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 14.909545219184075,
+          "ratio": 17.014735210873155,
           "level": "aaa"
         }
       ]
@@ -790,7 +790,7 @@
     {
       "pathString": "color.ui.additional.light",
       "path": ["color", "ui", "additional", "light"],
-      "value": "#38393b",
+      "value": "#39393c",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Light",
@@ -800,13 +800,13 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 11.560343928013255,
+          "ratio": 11.510183970285562,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.additional",
           "name": "Text & Icon / Additional",
-          "ratio": 11.560343928013255,
+          "ratio": 11.510183970285562,
           "level": "aaa"
         }
       ]
@@ -814,7 +814,7 @@
     {
       "pathString": "color.ui.additional.regular",
       "path": ["color", "ui", "additional", "regular"],
-      "value": "#5d5f61",
+      "value": "#656569",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Regular",
@@ -824,7 +824,7 @@
         {
           "path": "color.text-&-icon.standard",
           "name": "Text & Icon / Standard",
-          "ratio": 6.412354182829931,
+          "ratio": 5.803033994055767,
           "level": "aa"
         }
       ]
@@ -832,7 +832,7 @@
     {
       "pathString": "color.ui.additional.strong",
       "path": ["color", "ui", "additional", "strong"],
-      "value": "#898b8f",
+      "value": "#929296",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Strong",
@@ -842,13 +842,13 @@
         {
           "path": "color.text-&-icon.inverted.standard",
           "name": "Text & Icon / Inverted / Standard",
-          "ratio": 6.153354593477463,
+          "ratio": 6.7741538663775955,
           "level": "aa"
         },
         {
           "path": "color.text-&-icon.inverted.additional",
           "name": "Text & Icon / Inverted / Additional",
-          "ratio": 6.153354593477463,
+          "ratio": 6.7741538663775955,
           "level": "aa"
         }
       ]
@@ -856,7 +856,7 @@
     {
       "pathString": "color.ui.additional.extra-strong",
       "path": ["color", "ui", "additional", "extra-strong"],
-      "value": "#f0f1f1",
+      "value": "#efeff0",
       "category": "Color",
       "section": "UI",
       "name": "UI / Additional / Extra Strong",
@@ -866,13 +866,13 @@
         {
           "path": "color.text-&-icon.inverted.standard",
           "name": "Text & Icon / Inverted / Standard",
-          "ratio": 18.55734649702286,
+          "ratio": 18.274999372977383,
           "level": "aaa"
         },
         {
           "path": "color.text-&-icon.inverted.additional",
           "name": "Text & Icon / Inverted / Additional",
-          "ratio": 18.55734649702286,
+          "ratio": 18.274999372977383,
           "level": "aaa"
         }
       ]
@@ -1164,30 +1164,12 @@
     {
       "pathString": "color.functional.danger.standard",
       "path": ["color", "functional", "danger", "standard"],
-      "value": "#9c0018",
+      "value": "#c1001c",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Danger / Standard",
       "cssVariableName": "--telekom-color-functional-danger-standard",
       "jsPathName": "color.functional.danger.standard",
-      "contrastChecks": [
-        {
-          "path": "color.text-&-icon.white.standard",
-          "name": "Text & Icon / White / Standard",
-          "ratio": 8.653465139957525,
-          "level": "aaa"
-        }
-      ]
-    },
-    {
-      "pathString": "color.functional.danger.hovered",
-      "path": ["color", "functional", "danger", "hovered"],
-      "value": "#c1001c",
-      "category": "Color",
-      "section": "Functional",
-      "name": "Functional / Danger / Hovered",
-      "cssVariableName": "--telekom-color-functional-danger-hovered",
-      "jsPathName": "color.functional.danger.hovered",
       "contrastChecks": [
         {
           "path": "color.text-&-icon.white.standard",
@@ -1198,9 +1180,27 @@
       ]
     },
     {
+      "pathString": "color.functional.danger.hovered",
+      "path": ["color", "functional", "danger", "hovered"],
+      "value": "#e60021",
+      "category": "Color",
+      "section": "Functional",
+      "name": "Functional / Danger / Hovered",
+      "cssVariableName": "--telekom-color-functional-danger-hovered",
+      "jsPathName": "color.functional.danger.hovered",
+      "contrastChecks": [
+        {
+          "path": "color.text-&-icon.white.standard",
+          "name": "Text & Icon / White / Standard",
+          "ratio": 4.787350520914719,
+          "level": "aa"
+        }
+      ]
+    },
+    {
       "pathString": "color.functional.danger.pressed",
       "path": ["color", "functional", "danger", "pressed"],
-      "value": "#e60021",
+      "value": "#fe4543",
       "category": "Color",
       "section": "Functional",
       "name": "Functional / Danger / Pressed",
@@ -1210,8 +1210,8 @@
         {
           "path": "color.text-&-icon.white.standard",
           "name": "Text & Icon / White / Standard",
-          "ratio": 4.787350520914719,
-          "level": "aa"
+          "ratio": 3.4165983252508365,
+          "level": "aa-large"
         }
       ]
     },
