@@ -1,56 +1,66 @@
 describe('TabNavigation', () => {
-  test.each([
-    ['text-icon'],
-    ['text-icon-small'],
-    ['text-only'],
-    ['text-only-small'],
-    ['disabled-tabs'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-
-    const previewHtml = await page.$('body');
-    await page.evaluate(() => {
-      [
-        '--telekom-motion-duration-immediate',
-        '--telekom-motion-duration-transition',
-        '--telekom-motion-duration-animation',
-        '--telekom-motion-duration-animation-deliberate',
-      ].forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      );
+      await page.evaluate((mode) => {
+        localStorage.setItem('persistedColorMode', JSON.stringify(mode));
+      }, mode);
     });
-
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  // hover, focus, active
-  test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    await page.evaluate(() => {
-      [
-        '--telekom-motion-duration-immediate',
-        '--telekom-motion-duration-transition',
-        '--telekom-motion-duration-animation',
-        '--telekom-motion-duration-animation-deliberate',
-      ].forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
+    test.each([
+      ['text-icon'],
+      ['text-icon-small'],
+      ['text-only'],
+      ['text-only-small'],
+      ['disabled-tabs'],
+    ])('%p', async (variant) => {
+      await global.page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
+      );
+      await page.waitForSelector('html.hydrated');
+  
+      const previewHtml = await page.$('body');
+      await page.evaluate(() => {
+        [
+          '--telekom-motion-duration-immediate',
+          '--telekom-motion-duration-transition',
+          '--telekom-motion-duration-animation',
+          '--telekom-motion-duration-animation-deliberate',
+        ].forEach((transitionSpeed) => {
+          document.body.style.setProperty(transitionSpeed, '0s');
+        });
       });
+  
+      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-    const tabHeader = await page.evaluateHandle(
-      'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'
-    );
-    await tabHeader.hover();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await tabHeader.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await page.mouse.move(20, 40);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    // hover, focus, active
+    test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
+      await global.page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
+      );
+      await page.waitForSelector('html.hydrated');
+      const previewHtml = await page.$('body');
+      await page.evaluate(() => {
+        [
+          '--telekom-motion-duration-immediate',
+          '--telekom-motion-duration-transition',
+          '--telekom-motion-duration-animation',
+          '--telekom-motion-duration-animation-deliberate',
+        ].forEach((transitionSpeed) => {
+          document.body.style.setProperty(transitionSpeed, '0s');
+        });
+      });
+      const tabHeader = await page.evaluateHandle(
+        'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'
+      );
+      await tabHeader.hover();
+      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await tabHeader.click();
+      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await page.mouse.move(20, 40);
+      await page.mouse.down();
+      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    });
   });
-});
+});  

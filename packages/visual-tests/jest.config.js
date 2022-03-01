@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'jest-puppeteer-docker',
-  setupFilesAfterEnv: ['./test-environment-setup.js'],
+  setupFilesAfterEnv: ['./test-environment-setup.js', './set-mode.js'],
   globalSetup: './setup.js',
   globalTeardown: './teardown.js',
   testMatch: ['**/?(*.)+(visual.spec).[tj]s?(x)'],
