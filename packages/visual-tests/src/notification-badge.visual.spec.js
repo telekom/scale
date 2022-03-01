@@ -1,8 +1,8 @@
 describe('NotificationBadge', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+    beforeAll(async () => {     
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-notification-badge--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -17,7 +17,7 @@ describe('NotificationBadge', () => {
       ['icon'],
       ['standard'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=beta-components-notification-badge--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

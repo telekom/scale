@@ -1,8 +1,8 @@
 describe('ProgressBar', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-progress-bar--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -13,7 +13,7 @@ describe('ProgressBar', () => {
       ['progress-with-description'],
       ['complete-error'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-progress-bar--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

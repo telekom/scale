@@ -1,8 +1,8 @@
 describe('Link', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-link--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -11,7 +11,7 @@ describe('Link', () => {
     test.each([['standard'], ['disabled'], ['with-icon']])(
       '%p',
       async (variant) => {
-        await global.page.goto(
+        await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=components-link--${variant}&viewMode=story`
         );
         await page.waitForSelector('html.hydrated');
@@ -31,7 +31,7 @@ describe('Link', () => {
     );
     // hover, active, focus
     test.each([['with-icon']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-link--${variant}&viewMode=story`
       );
   

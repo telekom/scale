@@ -1,8 +1,8 @@
 describe('SidebarNavigation', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+    beforeAll(async () => {  
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -14,7 +14,7 @@ describe('SidebarNavigation', () => {
       ['active-on-level-2'],
       ['custom-media-query'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -32,7 +32,7 @@ describe('SidebarNavigation', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     test.each([['standard']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -65,7 +65,7 @@ describe('SidebarNavigation', () => {
   // hover, active, focus SidebarNavItem
   describe('SidebarNavItem', () => {
     test.each([['standard']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -90,7 +90,7 @@ describe('SidebarNavigation', () => {
   // hover, active, focus SidebarNavCollapsible
   describe('SidebarNavCollapsible', () => {
     test.each([['standard']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

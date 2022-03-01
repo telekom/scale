@@ -1,8 +1,8 @@
 describe('List', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-list--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -11,7 +11,7 @@ describe('List', () => {
     test.each([['ordered'], ['unordered'], ['unordered-with-custom-icon']])(
       '%p',
       async (variant) => {
-        await global.page.goto(
+        await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=components-list--${variant}&viewMode=story`
         );
         await page.waitForSelector('html.hydrated');

@@ -1,8 +1,8 @@
 describe('ToggleGroup', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-toggle-group--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -20,7 +20,7 @@ describe('ToggleGroup', () => {
       ['icon-before'],
       ['icon-only'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=beta-components-toggle-group--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -41,7 +41,7 @@ describe('ToggleGroup', () => {
     });
     // hover, active, focus
     test.each([['standard'], ['monochrome-variant']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=beta-components-toggle-group--${variant}&viewMode=story`
       );
   

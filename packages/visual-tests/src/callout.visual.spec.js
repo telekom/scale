@@ -1,8 +1,8 @@
 describe('Callout', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-callout--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -11,7 +11,7 @@ describe('Callout', () => {
     test.each([['standard'], ['size'], ['rotation'], ['variants'], ['asterisk']])(
       '%p',
       async (variant) => {
-        await global.page.goto(
+        await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=beta-components-callout--${variant}&viewMode=story`
         );
         await page.waitForSelector('html.hydrated');

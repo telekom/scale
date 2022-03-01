@@ -1,8 +1,8 @@
 describe('Pagination', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-pagination--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -14,7 +14,7 @@ describe('Pagination', () => {
       ['hidden-borders'],
       ['embedded-hidden-borders'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -32,7 +32,7 @@ describe('Pagination', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     test('buttons disabled', async () => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-pagination--standard&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -61,7 +61,7 @@ describe('Pagination', () => {
     test.each([['small'], ['hidden-borders'], ['embedded-hidden-borders']])(
       '%p',
       async (variant) => {
-        await global.page.goto(
+        await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
         );
         await page.waitForSelector('html.hydrated');

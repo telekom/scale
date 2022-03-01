@@ -1,15 +1,15 @@
 describe('Brand Header', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
       }, mode);
     });
     it('default mega menu states', async () => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -35,7 +35,7 @@ describe('Brand Header', () => {
     });
   
     it('custom mega menu states', async () => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--custom-main-navigation&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -68,7 +68,7 @@ describe('Brand Header', () => {
       ['custom-addon-navigation'],
       ['custom-logo'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

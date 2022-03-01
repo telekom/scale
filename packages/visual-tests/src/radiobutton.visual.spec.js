@@ -1,8 +1,8 @@
 describe('RadioButton', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-radio-button--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -16,7 +16,7 @@ describe('RadioButton', () => {
       ['helper-text'],
       ['error'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-radio-button--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -36,7 +36,7 @@ describe('RadioButton', () => {
   });
   // hover, active, focus
   test.each([['standard'], ['selected']])('%p', async (variant) => {
-    await global.page.goto(
+    await page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-radio-button--${variant}&viewMode=story`
     );
   

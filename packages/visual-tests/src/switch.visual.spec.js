@@ -1,8 +1,8 @@
 describe('Switch', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-switch--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -14,7 +14,7 @@ describe('Switch', () => {
       ['selected'],
       ['selected-disabled'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -34,7 +34,7 @@ describe('Switch', () => {
     });
     // hover, active
     test.each([['standard'], ['selected']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -60,7 +60,7 @@ describe('Switch', () => {
     });
     // focus
     test.each([['standard'], ['selected']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -80,7 +80,7 @@ describe('Switch', () => {
     });
     // click
     test.each([['standard'], ['selected']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

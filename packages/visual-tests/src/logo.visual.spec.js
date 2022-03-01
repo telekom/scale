@@ -1,8 +1,8 @@
 describe('Logo', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-logo--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -16,7 +16,7 @@ describe('Logo', () => {
       ['macedonia-cyrillic'],
       ['macedonia-latin-script'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-logo--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

@@ -1,8 +1,8 @@
 describe('Menu', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+    beforeAll(async () => {     
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -14,7 +14,7 @@ describe('Menu', () => {
       ['checked-toggle'],
       ['brand-header-primary-navigation'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -33,7 +33,7 @@ describe('Menu', () => {
     });
     // open menu on click
     test.each([['standard'], ['cascading-menu']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -58,7 +58,7 @@ describe('Menu', () => {
     // open 2nd and 3rd level of cascading menu on click
     // hover, active, focus
     test.each([['cascading-menu']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

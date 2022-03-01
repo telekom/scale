@@ -1,8 +1,8 @@
 describe('TabNavigation', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -15,7 +15,7 @@ describe('TabNavigation', () => {
       ['text-only-small'],
       ['disabled-tabs'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -36,7 +36,7 @@ describe('TabNavigation', () => {
     });
     // hover, focus, active
     test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

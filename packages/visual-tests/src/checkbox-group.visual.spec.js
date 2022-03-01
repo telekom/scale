@@ -1,7 +1,7 @@
 describe('CheckboxGroup', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
@@ -14,7 +14,7 @@ describe('CheckboxGroup', () => {
       ['group-error'],
       ['helper-text'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-checkbox-group--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -33,7 +33,7 @@ describe('CheckboxGroup', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     test.each([['standard']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-checkbox-group--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');

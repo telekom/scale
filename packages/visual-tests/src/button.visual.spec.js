@@ -1,7 +1,7 @@
 describe('Button', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
@@ -26,7 +26,7 @@ describe('Button', () => {
       ['small-icon-only'],
       ['small-link'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-button--${variant}&viewMode=story`
       );
   
@@ -54,7 +54,7 @@ describe('Button', () => {
     test.each([['standard'], ['secondary'], ['with-icon-before'], ['icon-only']])(
       '%p',
       async (variant) => {
-        await global.page.goto(
+        await page.goto(
           `http://host.docker.internal:3123/iframe.html?id=components-button--${variant}&viewMode=story`
         );
   

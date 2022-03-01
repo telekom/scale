@@ -1,8 +1,8 @@
-describe('RatingStars', () => {
+describe('RatingStars', () => { 
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
+    beforeAll(async () => {  
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--standard&viewMode=story`
       );
       await page.evaluate((mode) => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
@@ -15,7 +15,7 @@ describe('RatingStars', () => {
       ['hidden-label'],
       ['readonly'],
     ])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
@@ -34,7 +34,7 @@ describe('RatingStars', () => {
     });
     // focus, active
     test.each([['info-text-and-custom-label']])('%p', async (variant) => {
-      await global.page.goto(
+      await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
