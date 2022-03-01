@@ -528,6 +528,7 @@ import text_de from './5.Colors_de.md';
                       color: `${
                         darkMode ? borderItemColorDark : borderItemColorLight
                       }`,
+                      fontSize: '12px',
                     }}
                   >
                     Border color
@@ -555,7 +556,7 @@ import text_de from './5.Colors_de.md';
                         color: `${darkMode ? itemColorDark : itemColorLight}`,
                       }}
                     >
-                      <span>
+                      <span style={{ fontSize: '12px' }}>
                         Fill color <br />
                       </span>
                       Recommended colors for text & icons
@@ -639,7 +640,7 @@ import text_de from './5.Colors_de.md';
                       color: `${darkMode ? '#fff' : '#000'}`,
                     }}
                   >
-                    <span>Fill color</span>
+                    <span style={{ fontSize: '12px' }}>Fill color</span>
                   </div>
                 )}
               </td>
@@ -1198,6 +1199,10 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.ui.solid.disabled')}
                 </tbody>
                 {generateSectionTitle('Weitere', 'Additional')}
+                {generateSectionSubTitle(
+                  'Für Farbakzente und Datenvisualisierungen empfehlen wir diese zusätzlichen Farben:',
+                  'For color accents and data visualizations, we recommend these additional colors:'
+                )}
                 {generateSectionSubTitle('Braun', 'Brown')}
                 <tbody>
                   {generateTableColorRow(
