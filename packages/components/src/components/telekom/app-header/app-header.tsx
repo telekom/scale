@@ -48,6 +48,7 @@ export class Header {
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
   @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
   @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any = [];
@@ -439,8 +440,9 @@ export class Header {
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
                       onClick={this.logoClick}
-                    ></app-logo>
-                  )}
+                      ariaDescribedBy={this.logoAriaDescribedBy}
+                      ></app-logo>
+                      )}
                 </div>
                 <div class="header__brand-sector">{this.menuSector()}</div>
                 <div class="header__brand-meta">{this.menuAddon()}</div>
@@ -457,6 +459,7 @@ export class Header {
                     logoTitle={this.logoTitle}
                     onClick={this.logoClick}
                     focusable={this.scrolled}
+                    ariaDescribedBy={this.logoAriaDescribedBy}
                   ></app-logo>
                 </div>
                 <div class="header__nav-menu-wrapper">

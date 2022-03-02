@@ -22,7 +22,7 @@ export class Logo {
   @Prop() claim: boolean = false;
   @Prop() claimLang: string;
   @Prop() focusable: boolean = true;
-
+  @Prop() ariaDescribedBy?: string;
   render() {
     if (!this.claim) {
       return (
@@ -54,6 +54,7 @@ export class Logo {
         onFocus={() => {
           window.scrollTo({ top: 0 });
         }}
+        aria-describedby={this.ariaDescribedBy}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 36">
           <g fill={this.color} fill-rule="nonzero">

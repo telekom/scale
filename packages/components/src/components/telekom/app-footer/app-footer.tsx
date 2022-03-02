@@ -31,6 +31,10 @@ const readData = (data) => {
 })
 export class AppFooter {
   @Element() hostElement: HTMLStencilElement;
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
@@ -60,7 +64,14 @@ export class AppFooter {
                 {this.hasSlotLogo ? (
                   <slot name="logo"></slot>
                 ) : (
-                  <app-logo claim claimLang={this.claimLang}></app-logo>
+                  <app-logo  
+                    claim
+                    claimLang={this.claimLang}
+                    href={this.logoHref}
+                    logoTitle={this.logoTitle}
+                    onClick={this.logoClick}
+                    ariaDescribedBy={this.logoAriaDescribedBy}
+                  ></app-logo>
                 )}
               </div>
               <div class="footer-copyright">{this.copyright}</div>
