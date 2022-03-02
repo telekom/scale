@@ -24,6 +24,7 @@ export class Shell {
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
   @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
   @Prop() userNavigation?: any = [];
@@ -52,6 +53,7 @@ export class Shell {
           ) : (
             <scale-app-header
               logoClick={this.logoClick}
+              logoAriaDescribedBy={this.logoAriaDescribedBy}
               logoHref={this.logoHref}
               logoTitle={this.logoTitle}
               portalName={this.portalName}

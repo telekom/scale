@@ -4,6 +4,7 @@
     :transparent="transparent"
     :language="language"
     :size="size"
+    :styles="styles"
     :href="href"
     :accessibility-title="accessibilityTitle"
      @click-handler="clickHandler"
@@ -31,11 +32,12 @@ export default {
         "ro" |
         "sk" |
         "",
-      default: "en",
+      default: "de",
     },
     size: { type: Number, default: 36 },
     href: { type: String },
     accessibilityTitle: { type: String, default: "Telekom Logo" },
+    styles: { type: String }
   },
   methods: {
     clickHandler($event) {
