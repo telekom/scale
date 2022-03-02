@@ -47,6 +47,7 @@ export class Logo {
   @Prop() focusable: boolean = true;
   @Prop() scrollIntoViewOnFocus: boolean = false;
   @Prop() logoTitle?: string = 'Telekom Logo';
+  @Prop() logoAriaDescribedBy?: string;
 
   render() {
     return (
@@ -65,6 +66,7 @@ export class Logo {
             }
           }}
           title={this.logoTitle}
+          aria-describedby={this.logoAriaDescribedBy}
         >
           <scale-logo-svg
             language={this.language}

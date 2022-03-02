@@ -48,6 +48,7 @@ export class Header {
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
   @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
   @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any = [];
@@ -445,6 +446,7 @@ export class Header {
                       scrollIntoViewOnFocus={true}
                       focusable={true}
                       styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+                      logoAriaDescribedBy={this.logoAriaDescribedBy}
                     ></scale-logo>
                   )}
                 </div>
@@ -465,6 +467,7 @@ export class Header {
                     onClick={this.logoClick}
                     focusable={this.scrolled || this.sticky}
                     size={24}
+                    logoAriaDescribedBy={this.logoAriaDescribedBy}
                   ></scale-logo>
                 </div>
                 <div class="header__nav-menu-wrapper">

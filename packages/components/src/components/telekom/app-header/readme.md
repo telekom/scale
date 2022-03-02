@@ -16,6 +16,7 @@
 | `iconNavigation`      | `icon-navigation`        |             | `any`     | `[]`        |
 | `isMegaMenuVisible`   | `is-mega-menu-visible`   |             | `boolean` | `false`     |
 | `isMobileMenuVisible` | `is-mobile-menu-visible` |             | `boolean` | `false`     |
+| `logoAriaDescribedBy` | `logo-aria-described-by` |             | `string`  | `undefined` |
 | `logoClick`           | `logo-click`             |             | `any`     | `undefined` |
 | `logoHref`            | `logo-href`              |             | `string`  | `undefined` |
 | `logoTitle`           | `logo-title`             |             | `string`  | `undefined` |

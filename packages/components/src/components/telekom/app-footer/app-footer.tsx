@@ -34,6 +34,10 @@ export class AppFooter {
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
   @Prop() copyright?: string = '© Deutsche Telekom AG';
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   hasSlotLogo: boolean;
@@ -64,6 +68,10 @@ export class AppFooter {
                     variant="white"
                     language=""
                     size={24}
+                    href={this.logoHref}
+                    logoTitle={this.logoTitle}
+                    onClick={this.logoClick}
+                    logoAriaDescribedBy={this.logoAriaDescribedBy}
                   ></scale-logo>
                 )}
               </div>

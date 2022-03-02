@@ -7,12 +7,16 @@
 
 ## Properties
 
-| Property           | Attribute           | Description                    | Type     | Default                   |
-| ------------------ | ------------------- | ------------------------------ | -------- | ------------------------- |
-| `copyright`        | `copyright`         |                                | `string` | `'© Deutsche Telekom AG'` |
-| `footerNavigation` | `footer-navigation` |                                | `any`    | `[]`                      |
-| `styles`           | `styles`            | (optional) Injected CSS styles | `string` | `undefined`               |
-| `variant`          | `variant`           |                                | `string` | `'standard'`              |
+| Property              | Attribute                | Description                    | Type     | Default                   |
+| --------------------- | ------------------------ | ------------------------------ | -------- | ------------------------- |
+| `copyright`           | `copyright`              |                                | `string` | `'© Deutsche Telekom AG'` |
+| `footerNavigation`    | `footer-navigation`      |                                | `any`    | `[]`                      |
+| `logoAriaDescribedBy` | `logo-aria-described-by` |                                | `string` | `undefined`               |
+| `logoClick`           | `logo-click`             |                                | `any`    | `undefined`               |
+| `logoHref`            | `logo-href`              |                                | `string` | `undefined`               |
+| `logoTitle`           | `logo-title`             |                                | `string` | `undefined`               |
+| `styles`              | `styles`                 | (optional) Injected CSS styles | `string` | `undefined`               |
+| `variant`             | `variant`                |                                | `string` | `'standard'`              |
 
 
 ## Dependencies
