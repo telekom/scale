@@ -50,7 +50,7 @@ li {
   color: var(--scl-color-text-link) !important;
 }
 
-.sbdocs-div {
+.sbdocs-div, .sbdocs-span {
   font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
 }
 
