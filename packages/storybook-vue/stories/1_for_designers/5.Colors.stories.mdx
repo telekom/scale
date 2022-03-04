@@ -204,6 +204,7 @@ import text_de from './5.Colors_de.md';
                                   style={{
                                     color: `${getItemColorByPath(path)}`,
                                     fontSize: '13px',
+                                    fontWeight: 600,
                                   }}
                                 >
                                   {getItemPathByPath(path)}
@@ -238,6 +239,7 @@ import text_de from './5.Colors_de.md';
                                         style={{
                                           color: `${getItemColorByPath(path)}`,
                                           fontSize: '13px',
+                                          fontWeight: 600,
                                         }}
                                       >
                                         {getItemPathByPath(path)}
@@ -455,7 +457,7 @@ import text_de from './5.Colors_de.md';
                 <div
                   style={{
                     padding: '10px 0 0 0',
-                    fontWeight: '500',
+                    fontWeight: 500,
                     fontSize: '13px',
                     color: `${darkMode ? '#fff' : '#000'}`,
                   }}
@@ -581,6 +583,7 @@ import text_de from './5.Colors_de.md';
                                   style={{
                                     color: `${getItemColorByPath(path)}`,
                                     fontSize: '11px',
+                                    fontWeight: 600,
                                   }}
                                 >
                                   {getItemPathByPath(path)}
@@ -614,6 +617,7 @@ import text_de from './5.Colors_de.md';
                                         style={{
                                           color: `${getItemColorByPath(path)}`,
                                           fontSize: '11px',
+                                          fontWeight: 600,
                                         }}
                                       >
                                         {getItemPathByPath(path)}
@@ -862,11 +866,11 @@ import text_de from './5.Colors_de.md';
             <div
               style={{
                 marginTop: '100px',
-                marginBottom: '50px',
-                fontWeight: 'bold',
+                marginBottom: '24px',
+                fontWeight: 800,
                 fontSize: '32px',
                 color: `${darkMode ? '#fff' : '#000'}`,
-                paddingLeft: '8px',
+                paddingLeft: '13px',
               }}
             >
               {locale === 'en' ? sectionTitleEnglish : sectionTitleGerman}
@@ -875,21 +879,45 @@ import text_de from './5.Colors_de.md';
         }
         function generateSectionSubTitle(
           sectionSubTitleGerman,
-          sectionSubTitleEnglish
+          sectionSubTitleEnglish,
+          hasFollowingText
         ) {
           return (
             <div
               style={{
-                marginTop: '25px',
-                marginBottom: '25px',
-                fontWeight: 'normal',
-                fontSize: '15px',
+                marginTop: '24px',
+                marginBottom: `${hasFollowingText ? '24px' : '32px'}`,
+                fontWeight: 'bold',
+                fontSize: '21px',
                 color: `${darkMode ? '#fff' : '#000'}`,
-                paddingLeft: '8px',
+                paddingLeft: '13px',
               }}
             >
               {locale === 'en' ? sectionSubTitleEnglish : sectionSubTitleGerman}
             </div>
+          );
+        }
+        function generateSectionDescription(
+          sectionSubTitleGerman,
+          sectionSubTitleEnglish
+        ) {
+          return (
+            <p>
+              <div
+                style={{
+                  marginTop: '21px',
+                  marginBottom: '18px',
+                  fontWeight: 'normal',
+                  fontSize: '16px',
+                  color: `${darkMode ? '#fff' : '#000'}`,
+                  paddingLeft: '13px',
+                }}
+              >
+                {locale === 'en'
+                  ? sectionSubTitleEnglish
+                  : sectionSubTitleGerman}
+              </div>
+            </p>
           );
         }
         function generateColorModeLinkText() {
@@ -933,12 +961,12 @@ import text_de from './5.Colors_de.md';
                       'Dark Mode Primary Colors'
                     )}
                 {!darkMode
-                  ? generateSectionSubTitle(
+                  ? generateSectionDescription(
                       'Unsere Markenfarben sind Magenta, Weiß und Dunkelgrau sind die primären Farben für User Interfaces. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte ist freundlich, offen und hell.',
                       'Our brand colors are magenta, white and dark gray are the primary colors for user interfaces. The basic tonality of our websites and digital products is friendly, open and bright.',
                       true
                     )
-                  : generateSectionSubTitle(
+                  : generateSectionDescription(
                       'Unsere Markenfarbe Magenta, Schwarz und Grau sind die primären Farben für User Interfaces im Dark Mode.',
                       'Our brand colors are magenta, black and gray are the primary colors for user interfaces in dark mode.',
                       true
@@ -982,7 +1010,7 @@ import text_de from './5.Colors_de.md';
                     'Only for texts in disabled state.'
                   )}
                 </tbody>
-                {generateSectionSubTitle(
+                {generateSectionDescription(
                   'Weitere Farben für spezielle Anwendungsfälle',
                   'More colors for special usecase'
                 )}
@@ -1155,7 +1183,7 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.ui.additional.extra-strong')}
                 </tbody>
                 {generateSectionTitle('Agent States', 'Agent States')}
-                {generateSectionSubTitle(
+                {generateSectionDescription(
                   'z.B Primary Button',
                   'e.g. Primary Button'
                 )}
@@ -1238,7 +1266,7 @@ import text_de from './5.Colors_de.md';
                   {generateTableColorRow('color.ui.solid.disabled')}
                 </tbody>
                 {generateSectionTitle('Weitere', 'Additional')}
-                {generateSectionSubTitle(
+                {generateSectionDescription(
                   'Für Farbakzente und Datenvisualisierungen empfehlen wir diese zusätzlichen Farben:',
                   'For color accents and data visualizations, we recommend these additional colors:'
                 )}
