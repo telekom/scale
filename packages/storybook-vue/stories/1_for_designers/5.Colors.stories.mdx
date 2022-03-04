@@ -6,7 +6,6 @@ import { addons } from '@storybook/addons';
 import text_en from './5.Colors_en.md';
 import text_de from './5.Colors_de.md';
 
-
 <Meta
   title="Scale for Designers/Colors"
   parameters={{
@@ -894,25 +893,29 @@ import text_de from './5.Colors_de.md';
           );
         }
         function generateColorModeLinkText() {
-          return (
-            locale === 'en' ? `To the ${darkMode ? 'light' : 'dark' } mode color palette` : `Zur Farbpalette des ${darkMode ? 'Light' : 'Dark'} Modes`
-          )
+          return locale === 'en'
+            ? `To the ${darkMode ? 'light' : 'dark'} mode color palette`
+            : `Zur Farbpalette des ${darkMode ? 'Light' : 'Dark'} Modes`;
         }
         function changeModeLink() {
-          const toggleMode = darkMode ? 'light' : 'dark'
+          const toggleMode = darkMode ? 'light' : 'dark';
           channel.emit(UPDATE_GLOBALS, {
             globals: { colorMode: toggleMode },
           });
-        }         
+        }
         return (
           <DocsContainer context={context}>
             <Description markdown={locale === 'en' ? text_en : text_de} />
-            <a role="button" 
+            <a
+              role="button"
               style={{
-                cursor: 'pointer'
-              }} 
-              onClick={() => {changeModeLink()}}> 
-                { generateColorModeLinkText() } 
+                cursor: 'pointer',
+              }}
+              onClick={() => {
+                changeModeLink();
+              }}
+            >
+              {generateColorModeLinkText()}
             </a>
             <table
               style={{
@@ -920,14 +923,26 @@ import text_de from './5.Colors_de.md';
               }}
             >
               <div>
-                {generateSectionTitle('Primär-Farben', 'Primary Colors')}
+                {!darkMode
+                  ? generateSectionTitle(
+                      'Primäre Farben im Light Mode',
+                      'Light Mode Primary Colors'
+                    )
+                  : generateSectionTitle(
+                      'Primäre Farben im Dark Mode',
+                      'Dark Mode Primary Colors'
+                    )}
                 {!darkMode
                   ? generateSectionSubTitle(
                       'Unsere Markenfarben sind Magenta, Weiß und Dunkelgrau sind die primären Farben für User Interfaces. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte ist freundlich, offen und hell.',
                       'Our brand colors are magenta, white and dark gray are the primary colors for user interfaces. The basic tonality of our websites and digital products is friendly, open and bright.',
                       true
                     )
-                  : null}
+                  : generateSectionSubTitle(
+                      'Unsere Markenfarbe Magenta, Schwarz und Grau sind die primären Farben für User Interfaces im Dark Mode.',
+                      'Our brand colors are magenta, black and gray are the primary colors for user interfaces in dark mode.',
+                      true
+                    )}
                 {generateTableHead()}
                 <tbody>
                   {generateTableColorRow(
