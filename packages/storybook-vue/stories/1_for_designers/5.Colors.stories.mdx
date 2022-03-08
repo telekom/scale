@@ -178,6 +178,7 @@ import text_de from './5.Colors_de.md';
                       style={{
                         color: `${getItemColorByPath(pathStringItem[0])}`,
                         fontSize: '11px',
+                        fontWeight: 500,
                         padding: '4px 0px 4px 0px',
                       }}
                     >
@@ -258,7 +259,7 @@ import text_de from './5.Colors_de.md';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
-                      marginTop: '8px',
+                      marginTop: '4px',
                       marginLeft: '8px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
@@ -566,6 +567,7 @@ import text_de from './5.Colors_de.md';
                       style={{
                         color: `${getItemColorByPath(pathStringItem[0])}`,
                         fontSize: '11px',
+                        fontWeight: 500,
                         padding: '0px 0px 4px 0px',
                         color: `${darkMode ? itemColorDark : itemColorLight}`,
                       }}
@@ -876,7 +878,7 @@ import text_de from './5.Colors_de.md';
           return (
             <div
               style={{
-                marginTop: '100px',
+                marginTop: '48px',
                 marginBottom: '24px',
                 fontWeight: 800,
                 fontSize: '32px',
@@ -1029,7 +1031,7 @@ import text_de from './5.Colors_de.md';
                     'Only for texts in disabled state.'
                   )}
                 </tbody>
-                {generateSectionDescription(
+                {generateSectionSubTitle(
                   'Weitere Farben für spezielle Anwendungsfälle',
                   'More colors for special usecase'
                 )}
