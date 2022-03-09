@@ -3,6 +3,93 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+
+### Features
+
+* **accordion:**  add option for the icon being displayed on the right ([#863](https://github.com/telekom/scale/issues/863)) ([7ab140d](https://github.com/telekom/scale/commit/7ab140db1588d0d55da0ad4b826fef440816e0d0))
+
+
+
+
+
+# [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
+
+
+### Features
+
+* **slider:** add name prop ([#894](https://github.com/telekom/scale/issues/894)) ([b1ad291](https://github.com/telekom/scale/commit/b1ad29168bee6e0eeb95563f9c4877134f11f4ae))
+
+
+
+
+
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+
+### Features
+
+* **tooltip:** add styles prop ([#895](https://github.com/telekom/scale/issues/895)) ([4bae4a9](https://github.com/telekom/scale/commit/4bae4a91fb04ff884bc9b6882730ebade97b70a6))
+
+
+
+
+
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
+
+
+### Features
+
+* **data-table:** add email and phone cells ([#808](https://github.com/telekom/scale/issues/808)) ([9327af2](https://github.com/telekom/scale/commit/9327af2b0dd4b06362af97380303c8fa1cb4dbdd))
+
+
+
+
+
+# [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
+
+
+### Bug Fixes
+
+* **sidebar-nav-collapsible:** proper opacity for chevron ([#840](https://github.com/telekom/scale/issues/840)) ([363cbcc](https://github.com/telekom/scale/commit/363cbcc25400a0bdcda74bd9c6333c12b83fbed8))
+
+
+
+
+
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue

@@ -11,24 +11,28 @@
 
 import { CheckboxCell } from './cell-handlers/checkbox-cell';
 import { DateCell } from './cell-handlers/date-cell';
+import { EmailCell } from './cell-handlers/email-cell';
 import { GraphCell } from './cell-handlers/graph-cell';
 import { LinkCell } from './cell-handlers/link-cell';
 import { HTMLCell } from './cell-handlers/html-cell';
 import { NumberCell } from './cell-handlers/number-cell';
 import { SelectCell } from './cell-handlers/select-cell';
 import { TagsCell } from './cell-handlers/tags-cell';
+import { TelephoneCell } from './cell-handlers/telephone-cell';
 import { TextCell } from './cell-handlers/text-cell';
 import { ActionsCell } from './cell-handlers/actions-cell';
 
 export const CELL_TYPES = {
   checkbox: CheckboxCell,
   date: DateCell,
+  email: EmailCell,
   graph: GraphCell,
   html: HTMLCell,
   link: LinkCell,
   number: NumberCell,
   select: SelectCell,
   tags: TagsCell,
+  telephone: TelephoneCell,
   text: TextCell,
   actions: ActionsCell,
 };

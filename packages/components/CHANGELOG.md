@@ -3,6 +3,119 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+
+### Bug Fixes
+
+* **app-logo:** make it focusable when header is sticky ([#898](https://github.com/telekom/scale/issues/898)) ([d26d314](https://github.com/telekom/scale/commit/d26d31470cb4e6aa99683df24d547df5bef3cb03))
+
+
+### Features
+
+* **accordion:**  add option for the icon being displayed on the right ([#863](https://github.com/telekom/scale/issues/863)) ([7ab140d](https://github.com/telekom/scale/commit/7ab140db1588d0d55da0ad4b826fef440816e0d0))
+
+
+
+
+
+# [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
+
+
+### Features
+
+* **slider:** add name prop ([#894](https://github.com/telekom/scale/issues/894)) ([b1ad291](https://github.com/telekom/scale/commit/b1ad29168bee6e0eeb95563f9c4877134f11f4ae))
+
+
+
+
+
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+
+### Bug Fixes
+
+* **checkbox:** show icon in neutral mode ([#896](https://github.com/telekom/scale/issues/896)) ([839c3de](https://github.com/telekom/scale/commit/839c3debfe951dc80e3d4c57ff588658f73b9463))
+
+
+### Features
+
+* **tooltip:** add styles prop ([#895](https://github.com/telekom/scale/issues/895)) ([4bae4a9](https://github.com/telekom/scale/commit/4bae4a91fb04ff884bc9b6882730ebade97b70a6))
+
+
+
+
+
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+
+### Bug Fixes
+
+* **modal:** remove title attribute from modal window ([#852](https://github.com/telekom/scale/issues/852)) ([3e4213b](https://github.com/telekom/scale/commit/3e4213b23b2aebd6ac44797b0a86832e1de7763f))
+
+
+
+
+
+# [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
+
+
+### Bug Fixes
+
+* **app-header:** check for userMenuToggle presence before trying to focus ([#847](https://github.com/telekom/scale/issues/847)) ([186576c](https://github.com/telekom/scale/commit/186576ce1175ae730c8c8b9f8f83c4e4187b0d11))
+
+
+### Features
+
+* **data-table:** add email and phone cells ([#808](https://github.com/telekom/scale/issues/808)) ([9327af2](https://github.com/telekom/scale/commit/9327af2b0dd4b06362af97380303c8fa1cb4dbdd))
+
+
+
+
+
+# [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
+
+
+### Bug Fixes
+
+* **sidebar-nav:** set initial collapsible state ([#839](https://github.com/telekom/scale/issues/839)) ([fad731e](https://github.com/telekom/scale/commit/fad731ee42eed94c4234a1ecaa9c5e1bc794d87f))
+* **sidebar-nav-collapsible:** proper opacity for chevron ([#840](https://github.com/telekom/scale/issues/840)) ([363cbcc](https://github.com/telekom/scale/commit/363cbcc25400a0bdcda74bd9c6333c12b83fbed8))
+* **tooltip:** add z-index ([#821](https://github.com/telekom/scale/issues/821)) ([b3773b0](https://github.com/telekom/scale/commit/b3773b032389ee75d3992b8ac03a4729d0890c60))
+
+
+
+
+
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+
+### Bug Fixes
+
+* **checkbox:** do not emit change from watching _disabled_ ([#836](https://github.com/telekom/scale/issues/836)) ([a7d50e2](https://github.com/telekom/scale/commit/a7d50e21b400d432d2ca882c0e8d762e310bad9e))
+
+
+
+
+
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+
+### Bug Fixes
+
+* **checkbox:** apply scoped css variable spacing control ([#807](https://github.com/telekom/scale/issues/807)) ([8545c21](https://github.com/telekom/scale/commit/8545c211438ee21d89191181ab8314bec7eeaf8f))
+
+
+
+
+
 # [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
 
 

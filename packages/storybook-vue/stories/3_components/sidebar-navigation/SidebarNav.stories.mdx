@@ -161,7 +161,6 @@ export const Template = (args, { argTypes }) => ({
   --max-width: 15rem;
   --spacing-indent: var(--scl-spacing-24);
   --spacing-collapsible: var(--scl-spacing-16);
-  --opacity-chevron: 0;
   --left-current-border: 0;
 
   --color: var(--scl-color-primary);
@@ -174,6 +173,7 @@ export const Template = (args, { argTypes }) => ({
 
 /* sidebar-nav-collapsible */
 :host {
+  --opacity-chevron: 1;
   --border-bottom-color: var(--scl-color-grey-10);
   --border-left-color-third-nesting: var(--scl-color-grey-70);
   --color-active: var(--scl-color-primary-active);

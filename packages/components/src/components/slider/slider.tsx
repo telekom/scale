@@ -37,6 +37,8 @@ export class Slider {
   sliderTrack?: HTMLDivElement;
   /* Host HTML Element */
   @Element() hostElement: HTMLElement;
+  /** (optional) the name of the slider */
+  @Prop() name?: string;
   /** (optional) the display value of the slider */
   @Prop() value?: number;
   /** t(optional) he minimal value of the slider */
@@ -249,6 +251,7 @@ export class Slider {
                 />
               </div>
             </div>
+            <input type="hidden" value={this.value} name={this.name} />
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
                 {this.value != null && this.value.toFixed(this.decimals)}

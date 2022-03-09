@@ -2,175 +2,175 @@ import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import ScaleDataGrid from './ScaleDataGrid.vue';
 
 <Meta
-    title='Components/Data Grid'
-    component={ScaleDataGrid}
-    argTypes={{
-        fields: {
-            table: {
-                type: { summary: 'array' },
-            },
-            description: `(required) Input fields config array`,
-            control: { type: null },
-        },
-        rows: {
-            table: {
-                type: { summary: 'array' },
-            },
-            description: `(required) Input data array`,
-            control: { type: null },
-        },
-        freezeHeader: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Freeze header row from scrolling`,
-            control: { type: null },
-        },
-        heading: {
-            table: {
-                type: { summary: 'string' },
-                defaultValue: { summary: '' },
-            },
-            description: `(optional) Heading string`,
-            control: { type: null },
-        },
-        height: {
-            table: {
-                type: { summary: 'string' },
-                defaultValue: { summary: 'auto' },
-            },
-            description: `(optional) Set static table height, by default will auto-resize`,
-            control: { type: null },
-        },
-        hideBorder: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to remove border`,
-            control: { type: null },
-        },
-        hideHeader: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to hide header row`,
-            control: { type: null },
-        },
-        hideInfo: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to remove info footer block including pagination and selection status`,
-            control: { type: null },
-        },
-        hideMenu: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to hide settings menu`,
-            control: { type: null },
-        },
-        numbered: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to add numbers column`,
-            control: { type: null },
-        },
-        pageSize: {
-            table: {
-                type: { summary: 'number' },
-                defaultValue: { summary: Infinity },
-            },
-            description: `(optional) Set number of rows to display per pagination page`,
-            control: { type: null },
-        },
-        selectable: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Set to true to add selection column`,
-            control: { type: null },
-        },
-        shadeAlternate: {
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: false },
-            },
-            description: `(optional) Shade every second row darker`,
-            control: { type: null },
-        },
-        styles: {
-            table: {
-                type: { summary: 'string' },
-            },
-            description: `(optional) Injected styles`,
-            control: { type: null },
-        },
-        selection: {
-            name: `[readonly] selection`,
-            table: {
-                type: { summary: 'array' },
-            },
-            description: `Read-only selection array - populated with raw data from selected rows. Note needs selectable set to true`,
-            control: { type: null },
-        },
-        eventScaleEditLegacy: {
-            name: '[event] scaleEdit',
-            table: {
-                type: { summary: 'event' },
-            },
-            description: `Event triggered every time the editable cells are changed, updating the original rows data`,
-            control: { type: null }
-        },
-        eventScaleEdit: {
-            name: '[event] scale-edit',
-            table: {
-                type: { summary: 'event' },
-            },
-            description: `Deprecated!: Event triggered every time the editable cells are changed, updating the original rows data`,
-            control: { type: null }
-        },
-        eventScaleSortLegacy: {
-            name: '[event] scaleSort',
-            table: {
-                type: { summary: 'event' },
-            },
-            description: `Deprecated!: Event triggered every time the data is sorted, changing original rows data`,
-            control: { type: null }
-        },
-        eventScaleSort: {
-            name: '[event] scale-sort',
-            table: {
-                type: { summary: 'event' },
-            },
-            description: `Event triggered every time the data is sorted, changing original rows data`,
-            control: { type: null }
-        },
-        slotMenu: {
-            name: '[slot] menu',
-            table: {
-                type: { summary: 'scale-menu-flyout-item' },
-            },
-            description: `Used for adding extra menu items within the settings menu. Note hideMenu must be false`,
-            control: { type: null }
-        },
-        slotDefault: {
-            name: '[slot] default',
-            table: {
-                type: { summary: 'scale-button' },
-            },
-            description: `Used for adding elements into the top section between the heading and the settings menu`,
-            control: { type: null }
-        },
-    }}
+  title="Components/Data Grid"
+  component={ScaleDataGrid}
+  argTypes={{
+    fields: {
+      table: {
+        type: { summary: 'array' },
+      },
+      description: `(required) Input fields config array`,
+      control: { type: null },
+    },
+    rows: {
+      table: {
+        type: { summary: 'array' },
+      },
+      description: `(required) Input data array`,
+      control: { type: null },
+    },
+    freezeHeader: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Freeze header row from scrolling`,
+      control: { type: null },
+    },
+    heading: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '' },
+      },
+      description: `(optional) Heading string`,
+      control: { type: null },
+    },
+    height: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'auto' },
+      },
+      description: `(optional) Set static table height, by default will auto-resize`,
+      control: { type: null },
+    },
+    hideBorder: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to remove border`,
+      control: { type: null },
+    },
+    hideHeader: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to hide header row`,
+      control: { type: null },
+    },
+    hideInfo: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to remove info footer block including pagination and selection status`,
+      control: { type: null },
+    },
+    hideMenu: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to hide settings menu`,
+      control: { type: null },
+    },
+    numbered: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to add numbers column`,
+      control: { type: null },
+    },
+    pageSize: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: Infinity },
+      },
+      description: `(optional) Set number of rows to display per pagination page`,
+      control: { type: null },
+    },
+    selectable: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to add selection column`,
+      control: { type: null },
+    },
+    shadeAlternate: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Shade every second row darker`,
+      control: { type: null },
+    },
+    styles: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Injected styles`,
+      control: { type: null },
+    },
+    selection: {
+      name: `[readonly] selection`,
+      table: {
+        type: { summary: 'array' },
+      },
+      description: `Read-only selection array - populated with raw data from selected rows. Note needs selectable set to true`,
+      control: { type: null },
+    },
+    eventScaleEditLegacy: {
+      name: '[event] scaleEdit',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Event triggered every time the editable cells are changed, updating the original rows data`,
+      control: { type: null },
+    },
+    eventScaleEdit: {
+      name: '[event] scale-edit',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered every time the editable cells are changed, updating the original rows data`,
+      control: { type: null },
+    },
+    eventScaleSortLegacy: {
+      name: '[event] scaleSort',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered every time the data is sorted, changing original rows data`,
+      control: { type: null },
+    },
+    eventScaleSort: {
+      name: '[event] scale-sort',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Event triggered every time the data is sorted, changing original rows data`,
+      control: { type: null },
+    },
+    slotMenu: {
+      name: '[slot] menu',
+      table: {
+        type: { summary: 'scale-menu-flyout-item' },
+      },
+      description: `Used for adding extra menu items within the settings menu. Note hideMenu must be false`,
+      control: { type: null },
+    },
+    slotDefault: {
+      name: '[slot] default',
+      table: {
+        type: { summary: 'scale-button' },
+      },
+      description: `Used for adding elements into the top section between the heading and the settings menu`,
+      control: { type: null },
+    },
+  }}
 />
 
 export const Template = (args, {}) => ({
@@ -191,7 +191,7 @@ export const Template = (args, {}) => ({
   }}
 >
   <h1>Data Grid</h1>
-  <img src="assets/beta.png" alt="Beta Component" />
+  <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
 ### Properties
@@ -266,6 +266,7 @@ const rows = [ [1, 'John', '12:30'], [2, 'Mary', '2:12'], [3, 'Patek', '16:01'],
 
 - `actions`
 - `checkbox`
+- `email`
 - `date`
 - `graph`
 - `html`
@@ -273,6 +274,7 @@ const rows = [ [1, 'John', '12:30'], [2, 'Mary', '2:12'], [3, 'Patek', '16:01'],
 - `number`
 - `select`
 - `tags`
+- `telephone`
 - `text`
 
 ## Field Options
@@ -399,6 +401,35 @@ Expected format: `boolean`, eg `true`
             [true, true, true, false],
             [false, true, false, false],
             [false, false, false, true]
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Email Cell
+
+Expected format: a email `string`, eg: `'mailto:example@domain.org'`
+
+Email label is partially beautified by automatically removing the protocol (`mailto:`)
+
+<Canvas withSource="close">
+  <Story name="Email Cell">
+    {`<content>
+    <scale-data-grid id="email-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#email-example');
+        dataGrid.fields = [
+            {
+                type: 'email',
+                label: 'Email',
+            }
+        ];
+        dataGrid.rows = [
+            ['mailto:testuser_1@domain.org'],
+            ['mailto:testuser_2@domain.org',]
         ];
     }
     </script>
@@ -663,6 +694,35 @@ Expected format: comma delimited `string`, eg `'one, two, three'`
             ['Apple, Banana', 'Tomato, Cucumber'],
             ['Strawberry', 'Aubergine, Carrot, Celery'],
             ['Orange, Lemon, Watermelon', 'Pizza'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Telephone Cell
+
+Expected format: a telephone `string`, eg: `'tel: +0011122223333'`
+
+telephone label is partially beautified by automatically removing the protocol (`tel:`)
+
+<Canvas withSource="close">
+  <Story name="Telephone Cell">
+    {`<content>
+    <scale-data-grid id="telephone-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#telephone-example');
+        dataGrid.fields = [
+            {
+                type: 'telephone',
+                label: 'Telephone Number',
+            }
+        ];
+        dataGrid.rows = [
+            ['tel:+0011122223333'],
+            ['tel:+0011122223333',]
         ];
     }
     </script>

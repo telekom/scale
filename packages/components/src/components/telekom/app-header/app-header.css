@@ -216,13 +216,6 @@ scale-app-header {
     border-right: transparent;
     border-top-right-radius: var(--header-border-radius);
   }
-  .header .header__brand .logo svg {
-    width: auto;
-    height: 26px;
-  }
-}
-.header .header__nav .header__nav-logo svg path {
-  fill: var(--scl-color-primary) !important;
 }
 @media (min-width: 1024px) {
   .header .header__nav-before {
@@ -287,6 +280,7 @@ scale-app-header {
   .header *[slot='menu-addon'],
   .header .sector-navigation {
     display: flex;
+    padding: 0;
   }
   .header .addon-navigation {
     display: flex;
@@ -348,7 +342,7 @@ scale-app-header {
     align-items: center;
     justify-content: flex-end;
   }
-  .header .header__brand app-logo {
+  .header .header__brand scale-logo {
     margin-right: var(--scl-spacing-16);
   }
 }
