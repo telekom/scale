@@ -42,6 +42,7 @@ export const parameters = {
         'Scale Design System',
         'About Scale',
         'FAQ',
+        'Update History',
         'Setup & Info',
         [
           'Getting Started For Designers',
@@ -65,7 +66,6 @@ export const parameters = {
         ],
         'Components',
         'Beta Components',
-        'Update History',
         ['Design', 'Development'],
         'Contact',
       ],
