@@ -63,4 +63,4 @@ describe('TabNavigation', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

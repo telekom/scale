@@ -31,7 +31,6 @@ describe('Button', () => {
       );
   
       await page.waitForSelector('html.hydrated');
-  
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [

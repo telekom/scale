@@ -1,0 +1,326 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs/blocks';
+import index from './tokens.json';
+
+import text_first_de from './Typography_1_de.md';
+import text_second_de from './Typography_2_de.md';
+import text_first_en from './Typography_1_en.md';
+import text_second_en from './Typography_2_en.md';
+
+<Meta
+  title="Guidelines/Typography"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        const tokenPathStrings = [
+          'color.text-&-icon.standard',
+          'color.text-&-icon.additional',
+          'color.text-&-icon.link.standard',
+          'color.text-&-icon.functional.danger',
+          'color.text-&-icon.functional.success',
+        ];
+        function getTokenValueByPathString(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index.tokens[i].pathString === path) {
+              return index.tokens[i].value;
+            }
+          }
+        }
+        function getTokenNameByPathString(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index.tokens[i].pathString === path) {
+              return index.tokens[i].name;
+            }
+          }
+        }
+        function getCssVariableNameByPathString(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index.tokens[i].pathString === path) {
+              return index.tokens[i].cssVariableName;
+            }
+          }
+        }
+        function getJsPathNameByPathString(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index.tokens[i].pathString === path) {
+              return index.tokens[i].jsPathName;
+            }
+          }
+        }
+        function getCommentByPathString(path) {
+          for (let i = 0; i < 100; i++) {
+            if (index.tokens[i].pathString === path) {
+              return index.tokens[i].comment;
+            }
+          }
+        }
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <div>
+                <Description
+                  markdown={locale === 'en' ? text_first_en : text_first_de}
+                />
+                <div>
+                  <table>
+                    <tr>
+                      <th
+                        style={{
+                          textAlign: 'left',
+                          color: '#6A6A6A',
+                          fontSize: '13px',
+                          borderColor: '#fff',
+                          borderBottom: '#000',
+                        }}
+                      >
+                        Example
+                      </th>
+                      <th
+                        style={{
+                          textAlign: 'left',
+                          color: '#6A6A6A',
+                          fontSize: '13px',
+                          borderColor: '#fff',
+                          borderBottom: '#000',
+                        }}
+                      >
+                        Description
+                      </th>
+                      <th
+                        style={{
+                          textAlign: 'left',
+                          color: '#6A6A6A',
+                          fontSize: '13px',
+                          borderColor: '#fff',
+                          borderBottom: '#000',
+                        }}
+                      >
+                        Token Name
+                      </th>
+                    </tr>
+                    {tokenPathStrings.map((pathString) => {
+                      return (
+                        <tr>
+                          <td
+                            style={{
+                              border: 'none',
+                              verticalAlign: 'top',
+                              width: '200px',
+                            }}
+                          >
+                            <div
+                              style={{
+                                backgroundColor: `${getTokenValueByPathString(
+                                  pathString
+                                )}`,
+                                padding: '20px',
+                                marginTop: '10px',
+                                border: '1px solid #f0f1f1',
+                                borderRadius: '4px',
+                                width: '350px',
+                                minHeight: '120px',
+                              }}
+                            ></div>
+                          </td>
+                          <td
+                            style={{
+                              verticalAlign: 'top',
+                              width: '00px',
+                              height: 'inherit',
+                              border: 'none',
+                            }}
+                          >
+                            <div
+                              style={{
+                                marginTop: '7px',
+                                marginBottom: '7px',
+                                width: '400px',
+                              }}
+                            >
+                              <div>
+                                <span
+                                  style={{
+                                    fontWeight: 'bolder',
+                                    fontSize: '18px',
+                                  }}
+                                >
+                                  {getTokenNameByPathString(pathString)}
+                                </span>
+                              </div>
+                              <div>
+                                <span
+                                  style={{
+                                    fontSize: '14px',
+                                  }}
+                                >
+                                  {getCommentByPathString(pathString)}
+                                </span>
+                              </div>
+                            </div>
+                          </td>
+                          <td
+                            style={{
+                              verticalAlign: 'top',
+                              border: 'none',
+                            }}
+                          >
+                            <div
+                              style={{ fontWeight: '500', fontSize: '13px' }}
+                            >
+                              css
+                            </div>
+                            <div
+                              style={{
+                                textAlign: 'start',
+                                position: 'relative',
+                                width: '350px',
+                                height: '30px',
+                                backgroundColor: '#f0f1f1',
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontSize: '11px',
+                                  lineHeight: '30px',
+                                  padding: '20px',
+                                }}
+                              >
+                                {getCssVariableNameByPathString(pathString)}
+                              </span>
+                              <div
+                                style={{
+                                  margin: '0',
+                                  position: 'absolute',
+                                  top: '50%',
+                                  right: '5px',
+                                  msTransform: 'translateY(-50%)',
+                                  transform: 'translateY(-50%)',
+                                }}
+                              >
+                                <button
+                                  style={{
+                                    border: '1px solid #f0f1f1',
+                                    borderRadius: '4px',
+                                    padding: '1px 3px 1px 3px',
+                                    cursor: 'pointer',
+                                  }}
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(
+                                      getCssVariableNameByPathString(pathString)
+                                    );
+                                  }}
+                                >
+                                  <scale-icon-action-copy-paste
+                                    size={15}
+                                    accessibility-title="copy-paste"
+                                    color="hsla(0, 0%, 0%, 0.65)"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+                            <div
+                              style={{
+                                padding: '10px 0 0 0',
+                                fontWeight: '500',
+                                fontSize: '13px',
+                              }}
+                            >
+                              js
+                            </div>
+                            <div
+                              style={{
+                                textAlign: 'start',
+                                position: 'relative',
+                                width: '350px',
+                                height: '30px',
+                                backgroundColor: '#f0f1f1',
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontSize: '11px',
+                                  lineHeight: '30px',
+                                  padding: '20px',
+                                }}
+                                id={pathString.pathString}
+                              >
+                                {pathString.jsPathName}
+                                {getJsPathNameByPathString(pathString)}
+                              </span>
+                              <div
+                                style={{
+                                  margin: '0',
+                                  position: 'absolute',
+                                  top: '50%',
+                                  right: '5px',
+                                  msTransform: 'translateY(-50%)',
+                                  transform: 'translateY(-50%)',
+                                }}
+                              >
+                                <button
+                                  style={{
+                                    border: '1px solid #f0f1f1',
+                                    borderRadius: '4px',
+                                    padding: '1px 3px 1px 3px',
+                                    cursor: 'pointer',
+                                  }}
+                                  onClick={() => {
+                                    navigator.clipboard.writeText(
+                                      getJsPathNameByPathString(pathString)
+                                    );
+                                  }}
+                                >
+                                  <scale-icon-action-copy-paste
+                                    size={15}
+                                    accessibility-title="copy-paste"
+                                    color="hsla(0, 0%, 0%, 0.65)"
+                                  />
+                                </button>
+                              </div>
+                            </div>
+                            <div
+                              style={{
+                                padding: '10px 0 0 0',
+                                fontWeight: '500',
+                                fontSize: '13px',
+                              }}
+                            >
+                              hex
+                            </div>
+                            <div
+                              style={{
+                                textAlign: 'start',
+                                position: 'relative',
+                                width: '350px',
+                                height: '30px',
+                                backgroundColor: '#f0f1f1',
+                              }}
+                            >
+                              <span
+                                style={{
+                                  fontSize: '11px',
+                                  lineHeight: '30px',
+                                  padding: '20px',
+                                }}
+                                id={pathString.pathString}
+                              >
+                                {getTokenValueByPathString(pathString)}
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </table>
+                </div>
+                <Description
+                  markdown={locale === 'en' ? text_second_en : text_second_de}
+                />
+              </div>
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

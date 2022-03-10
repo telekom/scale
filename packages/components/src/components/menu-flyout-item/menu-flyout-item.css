@@ -79,13 +79,13 @@
   left: 0;
   height: 100%;
   width: 0;
-  background-color: var(--telekom-color-primary-hovered);
+  background-color: var(--telekom-color-primary-standard);
   /* a11y: HCM */
   border-left: var(--telekom-spacing-unit-x05) solid transparent;
 }
 
 .menu-flyout-item--active {
-  color: var(--telekom-color-text-and-icon-primary-pressed);
+  color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
 /* a11y: HCM */

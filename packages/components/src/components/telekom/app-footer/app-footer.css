@@ -15,24 +15,24 @@
   --spacing-top: var(--telekom-spacing-unit-x8);
   --spacing-bottom: var(--telekom-spacing-unit-x6);
   --spacing-x: var(--telekom-spacing-unit-x6);
-  --background-container: var(--telekom-color-background-surface, #fff);
+  --background-container: var(--telekom-color-background-canvas);
   --radius: var(--telekom-radius-large);
   --max-width: inherit;
 
   --border-top-minimal: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-additional-subtle);
-  --color-minimal: var(--telekom-color-ui-additional-regular);
+  --color-minimal: var(--telekom-color-text-and-icon-additional);
   --background-minimal: var(--telekom-color-background-surface);
   --spacing-angular: var(--telekom-spacing-unit-x6);
   --spacing-minimal: var(--telekom-spacing-unit-x6);
 
-  --background-mask: var(--telekom-color-background-surface, #fff);
+  --background-mask: var(--telekom-color-background-canvas);
   --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);
 
   --height-logo: var(--telekom-spacing-unit-x6);
   --font-size-copyright: var(--telekom-typography-font-size-caption);
   --color-link-standard: var(--telekom-color-text-and-icon-white-standard);
-  --color-link-minimal: var(--telekom-color-ui-additional-regular);
+  --color-link-minimal: var(--telekom-color-text-and-icon-additional);
 
   --font-size-navigation-standard: var(--telekom-typography-font-size-caption);
   --font-family-navigation-standard: var(--telekom-typography-font-family-sans);

@@ -33,6 +33,7 @@
   --vertical-align: middle;
   --border-color: var(--telekom-color-ui-outlined-border-standard);
   --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* size: small */
   --font-size-small: var(--telekom-typography-font-size-small);
@@ -46,10 +47,19 @@
   --color-primary: var(--telekom-color-ui-additional-extra-strong);
   --color-primary-hover: var(--telekom-color-primary-hovered);
   --color-primary-active: var(--telekom-color-primary-pressed);
-  --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* variant: secondary */
   --background-secondary: transparent;
+  --color-secondary: var(--telekom-color-text-and-icon-standard);
+  --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
+  --background-secondary-disabled: var(
+    --telekom-color-ui-outlined-fill-disabled
+  );
+  --border-secondary: var(--telekom-color-ui-outlined-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-outlined-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-outlined-border-pressed);
+  --border-secondary-focus: var(--telekom-color-functional-focus);
 
   /* selected */
   --color-selected: var(--telekom-color-text-and-icon-white-standard);
@@ -96,6 +106,7 @@
 }
 
 .toggle-button--secondary {
+  color: var(--color-secondary);
   background: var(--background-secondary);
 }
 
@@ -138,15 +149,17 @@
 }
 
 .toggle-button:not(.button--disabled):hover {
-  color: var(--color-primary-hover);
+  color: var(--color-secondary-hover);
+  background-color: var(--background-secondary-hover);
 }
 
 .toggle-button:not(.button--disabled):active {
-  color: var(--color-primary-active);
+  color: var(--color-secondary-active);
+  background-color: var(--background-secondary-active);
 }
 
 .toggle-button:disabled {
-  color: var(--color-primary-disabled);
+  color: var(--color-disabled);
   pointer-events: none;
   border: 1px solid var(--border-color-disabled);
 }
@@ -171,7 +184,7 @@
 }
 
 .toggle-button--selected.toggle-button--monochrome {
-  color: var(--color-selected);
+  color: var(--telekom-color-text-and-icon-inverted-standard);
   background: var(--background-selected-dark);
 }
 

@@ -56,4 +56,4 @@ describe('Table', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

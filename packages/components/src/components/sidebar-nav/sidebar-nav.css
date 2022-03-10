@@ -16,7 +16,7 @@
   --opacity-chevron: 0;
   --left-current-border: 0;
 
-  --color: var(--telekom-color-text-and-icon-primary-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
@@ -68,7 +68,7 @@
 }
 
 .sidebar-nav__toggle-button:hover {
-  color: var(--color); /* TODO: shouldn't this be hover color? */
+  color: var(--color-hover);
 }
 
 .sidebar-nav__toggle-button:active {

@@ -110,5 +110,5 @@ describe('Menu', () => {
       await flyoutItemTwo.click();
       await expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

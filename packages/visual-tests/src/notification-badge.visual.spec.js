@@ -35,4 +35,4 @@ describe('NotificationBadge', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });  
-});  
+});

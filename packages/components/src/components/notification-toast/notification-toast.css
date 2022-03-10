@@ -159,6 +159,19 @@
 .notification-message__icon-close {
   cursor: pointer;
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 13.5px;
+}
+
+.notification-message__icon-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 6.5px;
+  border-radius: 20%;
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+.notification-message__icon-close:hover svg {
+  background-color: white;
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }

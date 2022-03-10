@@ -67,4 +67,4 @@ describe('RadioButton', () => {
     await page.mouse.down();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });  
-});  
+});

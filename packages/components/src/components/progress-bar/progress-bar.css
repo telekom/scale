@@ -12,7 +12,7 @@
 :host {
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background: var(--telekom-color-primary-standard);
+  --background: var(--telekom-color-ui-additional-extra-strong);
   --color-inner-status: var(--telekom-color-background-surface);
   --font-size-inner-status: var(--telekom-typography-font-size-small);
   --font-size-status: var(--telekom-typography-font-size-small);

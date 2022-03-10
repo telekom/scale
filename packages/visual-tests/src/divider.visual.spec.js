@@ -26,6 +26,6 @@ describe('Divider', () => {
       });
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });
   

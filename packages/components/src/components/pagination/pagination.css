@@ -99,12 +99,18 @@ button:focus {
 button svg {
   display: block;
 }
+
 button:not(:disabled) {
   cursor: pointer;
 }
 button:not(:disabled) svg {
   stroke: var(--stroke-svg);
 }
+
+button:disabled svg {
+  stroke: var(--telekom-color-text-and-icon-disabled);
+}
+
 button:not(:disabled):hover {
   border-color: var(--telekom-color-primary-hovered);
   z-index: 1;

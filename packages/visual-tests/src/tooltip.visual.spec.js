@@ -32,4 +32,4 @@ describe('Tooltip', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });  
-});  
+});

@@ -138,6 +138,14 @@ scale-radio-button {
 .radio-button.radio-button--status-error input {
   border: var(--border-control-error);
 }
+.radio-button.radio-button--status-error:hover
+  input:not(:checked):not([disabled]) {
+  border-color: var(--telekom-color-functional-danger-hovered);
+}
+.radio-button.radio-button--status-error:active
+  input:not(:checked):not([disabled]) {
+  border-color: var(--telekom-color-functional-danger-pressed);
+}
 .radio-button input:checked {
   border: var(--border-control-checked);
 }
