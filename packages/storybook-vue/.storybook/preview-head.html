@@ -3,7 +3,6 @@
 <style>
   body {
     font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif;
-
     /* needed for dark mode */
     color: var(--telekom-color-text-and-icon-standard);
     background: var(--telekom-color-background-canvas);
@@ -14,17 +13,14 @@
     color: var(--telekom-color-text-and-icon-standard);
     background: var(--telekom-color-background-canvas);
   }
-
   .sbdocs.sbdocs-content {
     max-width: 1066px !important;
   }
-
   .sr-only {
     position: absolute;
     left: -10000px;
     overflow: hidden;
   }
-
   .brand-header-spacing {
     margin: -1rem;
   }
@@ -38,6 +34,22 @@
 
   /*toolbar button color*/
   .css-1nin9qf {
-    color: var(--telekom-color-text-and-icon-standard) !important;
+    color: var(--scl-color-text-standard) !important;
+  }
+
+  /*color token table*/
+  .color_token_copy-paste-button scale-icon-action-copy-paste {
+    color: var(--scl-color-text-additional);
+  }
+  .color_token_copy-paste-button:hover scale-icon-action-copy-paste {
+    color: var(--scl-color-text-standard);
+    border: 0;
+  }
+  .color_token_copy-paste-button_dark scale-icon-action-copy-paste {
+    color: #fff;
+  }
+  .color_token_copy-paste-button_dark:hover scale-icon-action-copy-paste {
+    color: #a6a6a6;
+    border: 0;
   }
 </style>
