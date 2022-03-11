@@ -3,6 +3,7 @@
     :logo-click="logoClick"
     :logo-title="logoTitle"
     :logo-href="logoHref"
+    :logo-aria-described-by="logoAriaDescribedBy"
     :portal-name="portalName"
     :claim-lang="claimLang"
     :main-navigation="mainNavigation"
@@ -24,6 +25,7 @@ export default {
   props: {
     logoTitle: String,
     logoHref: String,
+    logoAriaDescribedBy: String,
     logoClick: Function,
     portalName: String,
     claimLang: String,
@@ -33,7 +35,7 @@ export default {
     userNavigation: String,
     addonNavigation: String,
     activeRouteId: String,
-    activeSectorId: String
-  }
+    activeSectorId: String,
+  },
 };
 </script>
