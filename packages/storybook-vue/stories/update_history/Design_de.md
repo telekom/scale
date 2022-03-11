@@ -3,15 +3,14 @@
 ​
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
-​
-## Dark and Light Mode
 
+## Dark and Light Mode
 
 15.03.22
 
 - Dark Mode
-- Optimized color palette
-- Implementation of semantic tokens for the color palette 
+- Optimierte Farbpalette
+- Einführung von semantischen Tokens für die Farben
 ​
 
 ## Rundungen
