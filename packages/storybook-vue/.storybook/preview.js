@@ -43,6 +43,7 @@ export const parameters = {
         'About Scale',
         'FAQ',
         'Update History',
+        ['SketchLibrary', 'Design', 'Development'],
         'Setup & Info',
         [
           'Getting Started For Designers',
@@ -66,7 +67,6 @@ export const parameters = {
         ],
         'Components',
         'Beta Components',
-        ['Design', 'Development'],
         'Contact',
       ],
     },

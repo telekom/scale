@@ -28,8 +28,7 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 - In Sketch, click the notification icon (bell) in the upper right corner and select "Component updates available".
 - Select "Update components".
 - Now your design will appear in the other mode.
-
-### Figma
+- Version note: Color variables have been available in Sketch since version 69 (October 2020). Please be advised that it is not possible to switch between dark and light mode in older versions, and the color tokens may not be used.
 
 ## For Developers:
 

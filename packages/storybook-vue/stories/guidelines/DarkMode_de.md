@@ -28,8 +28,7 @@ Scale erlaubt es, entweder im hellen oder dunklen Modus zu gestalten. Ein Wechse
 - Klicke in Sketch auf das Benachrichtigungssymbol (Glocke) in der rechten oberen Ecke und wähle „Komponenten-Updates verfügbar“.
 - Wähle „Komponenten aktualisieren“.
 - Nun wird dein Design im jeweils anderen Modus angezeigt.
-
-### Figma
+- Versionshinweis: Farbvariablen existieren in Sketch erst seit der Version 69 (Oktober 2020). Wir bitten um Verständnis, dass sich in älteren Programmversionen nicht zwischen Dark und Light Mode wechseln lässt und die Farbtokens in diesen nicht genutzt werden können.
 
 ## Für Entwickler\*innen:
 

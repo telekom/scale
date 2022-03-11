@@ -3,7 +3,15 @@
 ​
 This page documents updates to the visual appearance of Scale
 ​
-​
+
+## Dark and light mode
+
+
+15.03.22
+
+- Dark Mode
+- Optimierte Farbpalette
+- Einführung von semantischen Tokens für die Farben
 ​
 
 ## Roundings
