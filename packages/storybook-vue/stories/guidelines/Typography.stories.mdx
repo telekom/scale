@@ -147,14 +147,18 @@ import { addons } from '@storybook/addons';
             : resetAdditionalColorSettings();
           item = getItemByPathString(itemPathString);
           return item ? (
-            <tr style={{ backgroundColor: `${darkMode ? '#000' : '#fff'}` }}>
+            <tr
+              style={{
+                backgroundColor: 'var(--telekom-color-background-canvas)',
+              }}
+            >
               {/* Example Column */}
               <td
                 style={{
                   border: 'none',
                   verticalAlign: 'top',
                   width: '200px',
-                  padding: '5px 5px 5px 0',
+                  padding: '4px 4px 4px 0',
                 }}
               >
                 {clearContrastStates()}
@@ -163,10 +167,10 @@ import { addons } from '@storybook/addons';
                   <div
                     style={{
                       backgroundColor: `${item.value}`,
-                      padding: '20px 20px 20px 20px',
-                      marginTop: '10px',
-                      marginBottom: '10px',
-                      marginLeft: '10px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      marginTop: 'var(--telekom-spacing-unit-x2)',
+                      marginBottom: 'var(--telekom-spacing-unit-x2)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
@@ -179,7 +183,9 @@ import { addons } from '@storybook/addons';
                       style={{
                         color: `${getItemColorByPath(pathStringItem[0])}`,
                         fontSize: '11px',
-                        padding: '0px 0px 5px 0px',
+                        fontWeight: 500,
+                        paddingTop: 'var(--telekom-spacing-unit-x1)',
+                        passingBottom: 'var(--telekom-spacing-unit-x1)',
                       }}
                     >
                       {locale === 'en'
@@ -189,7 +195,7 @@ import { addons } from '@storybook/addons';
                     {hasContrastWithoutSlash(pathStringItem) ? (
                       <td
                         style={{
-                          padding: '0px 18px 0px 0px',
+                          paddingRight: 'var(--telekom-spacing-unit-x4)',
                           border: 'none',
                           width: '140px',
                         }}
@@ -223,7 +229,7 @@ import { addons } from '@storybook/addons';
                             <td
                               style={{
                                 border: 'none',
-                                padding: '0px 18px 0px 0px',
+                                paddingRight: 'var(--telekom-spacing-unit-x4)',
                                 width: '200px',
                               }}
                             >
@@ -259,8 +265,8 @@ import { addons } from '@storybook/addons';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
-                      marginTop: '10px',
-                      marginLeft: '10px',
+                      marginTop: '4px',
+                      marginLeft: '8px',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
@@ -275,16 +281,16 @@ import { addons } from '@storybook/addons';
               <td
                 style={{
                   verticalAlign: 'top',
-                  width: '00px',
+                  width: '100px',
                   height: 'inherit',
                   border: 'none',
                 }}
               >
                 <div
                   style={{
-                    marginTop: '7px',
-                    marginBottom: '7px',
-                    width: '400px',
+                    marginTop: 'var(--telekom-spacing-unit-x2)',
+                    marginBottom: 'var(--telekom-spacing-unit-x2)',
+                    width: '380px',
                   }}
                 >
                   <div>
@@ -292,7 +298,7 @@ import { addons } from '@storybook/addons';
                       style={{
                         fontWeight: 'bolder',
                         fontSize: '18px',
-                        color: `${darkMode ? '#fff' : '#000'}`,
+                        color: 'var(--telekom-color-text-and-icon-standard)',
                       }}
                     >
                       {item.name}
@@ -302,7 +308,7 @@ import { addons } from '@storybook/addons';
                     <span
                       style={{
                         fontSize: '14px',
-                        color: `${darkMode ? '#fff' : '#000'}`,
+                        color: 'var(--telekom-color-text-and-icon-standard)',
                       }}
                     >
                       {/*item.comment*/}
@@ -318,15 +324,17 @@ import { addons } from '@storybook/addons';
                 style={{
                   verticalAlign: 'top',
                   border: 'none',
-                  padding: '10px 0 10px 0',
+                  paddingTop: 'var(--telekom-spacing-unit-x1)',
+                  paddingBottom: 'var(--telekom-spacing-unit-x1)',
                 }}
               >
                 <div
                   style={{
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
-                    width: '350px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                    width: '330px',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   }}
                 >
                   css
@@ -335,16 +343,17 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '342px',
+                    width: '320px',
                     height: '30px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
                   }}
                 >
                   <span
                     style={{
                       fontSize: '11px',
                       lineHeight: '30px',
-                      padding: '20px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
                       color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     }}
                     id={item.pathString}
@@ -373,7 +382,7 @@ import { addons } from '@storybook/addons';
                           darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                         }`,
                         borderRadius: '4px',
-                        padding: '1px 3px 1px 3px',
+                        padding: 'var(--telekom-spacing-unit-x1)',
                         cursor: 'pointer',
                         backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                       }}
@@ -384,16 +393,20 @@ import { addons } from '@storybook/addons';
                       <scale-icon-action-copy-paste
                         size={15}
                         accessibility-title="copy-paste"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
                       />
                     </button>
                   </div>
                 </div>
                 <div
                   style={{
-                    padding: '10px 0 0 0',
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
                     fontWeight: '500',
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: 'var(--telekom-color-text-and-icon-standard)',
                   }}
                 >
                   js
@@ -402,16 +415,17 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '342px',
+                    width: '320px',
                     height: '30px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
                   }}
                 >
                   <span
                     style={{
                       fontSize: '11px',
                       lineHeight: '30px',
-                      padding: '20px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
                       color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     }}
                     id={item.pathString}
@@ -440,7 +454,7 @@ import { addons } from '@storybook/addons';
                           darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                         }`,
                         borderRadius: '4px',
-                        padding: '1px 3px 1px 3px',
+                        padding: 'var(--telekom-spacing-unit-x1)',
                         cursor: 'pointer',
                         backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
                       }}
@@ -451,16 +465,20 @@ import { addons } from '@storybook/addons';
                       <scale-icon-action-copy-paste
                         size={15}
                         accessibility-title="copy-paste"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
                       />
                     </button>
                   </div>
                 </div>
                 <div
                   style={{
-                    padding: '10px 0 0 0',
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
                     fontWeight: 500,
                     fontSize: '13px',
-                    color: `${darkMode ? '#fff' : '#000'}`,
+                    color: 'var(--telekom-color-text-and-icon-standard)',
                   }}
                 >
                   hex
@@ -469,16 +487,17 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'start',
                     position: 'relative',
-                    width: '342px',
+                    width: '320px',
                     height: '30px',
                     backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
                   }}
                 >
                   <span
                     style={{
                       fontSize: '11px',
                       lineHeight: '30px',
-                      padding: '20px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
                       color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     }}
                     id={item.pathString}
@@ -499,7 +518,7 @@ import { addons } from '@storybook/addons';
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     fontSize: '13px',
-                    borderColor: `${darkMode ? '#000' : '#fff'}`,
+                    borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: `${
                       darkMode
                         ? '1px solid hsla(0, 0%, 100%, 36%)'
@@ -510,7 +529,10 @@ import { addons } from '@storybook/addons';
                         ? '1px solid hsla(0, 0%, 100%, 36%)'
                         : '1px solid #E7E8E9'
                     }`,
-                    padding: '5px',
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   }}
                 >
                   Example
@@ -520,7 +542,7 @@ import { addons } from '@storybook/addons';
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     fontSize: '13px',
-                    borderColor: `${darkMode ? '#000' : '#fff'}`,
+                    borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: `${
                       darkMode
                         ? '1px solid hsla(0, 0%, 100%, 36%)'
@@ -531,6 +553,10 @@ import { addons } from '@storybook/addons';
                         ? '1px solid hsla(0, 0%, 100%, 36%)'
                         : '1px solid #E7E8E9'
                     }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   }}
                 >
                   Description
@@ -540,13 +566,16 @@ import { addons } from '@storybook/addons';
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
                     fontSize: '13px',
-                    borderColor: `${darkMode ? '#000' : '#fff'}`,
+                    borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: `${
                       darkMode
                         ? '1px solid hsla(0, 0%, 100%, 36%)'
                         : '1px solid #E7E8E9'
                     }`,
-                    padding: '5px',
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
                     width: '342px',
                   }}
                 >
@@ -560,12 +589,12 @@ import { addons } from '@storybook/addons';
           return (
             <div
               style={{
-                marginTop: '50px',
-                marginBottom: '24px',
+                marginTop: 'var(--telekom-spacing-unit-x12)',
+                marginBottom: 'var(--telekom-spacing-unit-x6)',
                 fontWeight: 800,
                 fontSize: '32px',
-                color: `${darkMode ? '#fff' : '#000'}`,
-                paddingLeft: '13px',
+                color: 'var(--telekom-color-text-and-icon-standard)',
+                paddingLeft: 'var(--telekom-spacing-unit-x2)',
               }}
             >
               {locale === 'en' ? sectionTitleEnglish : sectionTitleGerman}
