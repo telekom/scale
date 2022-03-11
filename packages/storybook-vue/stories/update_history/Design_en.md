@@ -9,10 +9,9 @@ This page documents updates to the visual appearance of Scale
 
 15.03.22
 
-- Dark Mode
-- Optimierte Farbpalette
-- Einführung von semantischen Tokens für die Farben
-​
+​- Dark Mode
+- Optimized color palette
+- Implementation of semantic tokens for the color palette 
 
 ## Roundings
 
