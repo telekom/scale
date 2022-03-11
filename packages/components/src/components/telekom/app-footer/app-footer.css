@@ -99,11 +99,6 @@
   display: none;
 }
 
-.footer-branding .logo svg {
-  width: auto;
-  height: var(--height-logo);
-}
-
 .footer-copyright {
   font-size: var(--font-size-copyright);
 }

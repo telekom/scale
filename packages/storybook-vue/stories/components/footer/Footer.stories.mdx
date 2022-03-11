@@ -24,7 +24,7 @@ const setColorMode = () => {
         type: 'select',
         options: ['en', 'de'],
       },
-    },
+    },    
     variant: {
       control: { type: 'select', options: ['angular', 'standard', 'minimal'] },
     },
@@ -37,7 +37,6 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <div style="margin: -1rem;">
       <scale-app-footer
-        :claim-lang="claimLang"
         :footer-navigation="footerNavigation"
         :variant="variant"
         :copyright="copyright"
@@ -207,7 +206,7 @@ For Shadow Parts, please inspect the element's #shadow.
         template: `
         <div style="margin: -1rem;">
           <scale-app-footer
-            :claim-lang="claimLang"
+            
             :variant="variant"
             :copyright="copyright"
           >
@@ -226,11 +225,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-app-footer
-  :claim-lang="claimLang"
-  :variant="variant"
-  :copyright="copyright"
->
+<scale-app-footer :variant="variant" :copyright="copyright">
   <div slot="navigation">
     <span>custom navigation placeholder</span>
   </div>

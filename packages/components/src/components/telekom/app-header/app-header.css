@@ -288,6 +288,7 @@ scale-app-header {
   .header *[slot='menu-addon'],
   .header .sector-navigation {
     display: flex;
+    padding: 0;
   }
   .header .addon-navigation {
     display: flex;

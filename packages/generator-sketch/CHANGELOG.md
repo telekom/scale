@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+
+### Features
+
+* add new logo and the footer to the sketch library.  ([#912](https://github.com/telekom/scale/issues/912)) ([e6842cf](https://github.com/telekom/scale/commit/e6842cf2ef4d401ef2c2261e7d1bc6ed95b7645b))
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
 # [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
 
 **Note:** Version bump only for package @telekom/scale-generator-sketch
