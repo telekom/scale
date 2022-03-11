@@ -92,9 +92,9 @@
     "de": "Anpassungen und Themes"
   },
   {
-    "elementSelector": "#guidelines-dark-mode--page",
-    "en": "Dark Mode",
-    "de": "Dark Mode"
+    "elementSelector": "#guidelines-light-and-dark-mode--page",
+    "en": "Light and Dark Mode",
+    "de": "Light and Dark Mode"
   },
   {
     "elementSelector": "#guidelines-shadows--page",
@@ -118,6 +118,11 @@
     "en": "Update History",
     "de": "Update History"
   },
+  {
+    "elementSelector": "#update-history-sketchlibrary--page",
+    "en": "Sketch Library",
+    "de": "Sketch Library"
+  },  
   {
     "elementSelector": "#update-history-design--page",
     "en": "Design",
