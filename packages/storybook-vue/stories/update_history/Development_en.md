@@ -1,4 +1,72 @@
-# Scale v1 to v2 migration guide
+# Development Updates
+
+This page documents updates in `@telekom/scale-components` and related packages.
+
+## v3, release candidate (`v3.0.0-rc.1`)
+
+Get it with the `@next` [dist tag](https://docs.npmjs.com/cli/v8/commands/npm-dist-tag) in npm:
+
+`npm install @telekom/scale-components@next`
+
+The `latest` tag —the version that gets installed by default— will keep being the previous beta from some time. So you can update at your own pace.
+
+The update includes:
+
+- Dark mode ([See docs](./?path=/docs/guidelines-light-and-dark-mode--page))
+- A new set of design tokens with an optimized color palette
+- Visual updates for some components
+
+### Changes in CSS
+
+For developers and teams using Scale with style customisations that involve overwriting the --scl prefixed CSS variables (e.g. `--scl-color-blue-60`), updating will require a bit of work from your side. For the rest, the update should require no extra work and can be considered non-breaking.
+
+#### No work needed
+
+The update will require no work (non-breaking) if:
+
+✅ you use ::part to add some custom CSS, e.g.
+
+```css
+scale-button::part(base) {
+  background: lime;
+}
+```
+
+✅ you overwrite component-scoped variables (e.g. `--background-window` for scale-modal), either in CSS or inlined in HTML, e.g.
+
+```html
+<scale-modal style="--background-window: turquoise" heading="Nice">Lorem ipsum</scale-modal>
+```
+
+✅ you use --scl prefixed variables in your own CSS, e.g.
+
+```css
+.my-own-component {
+  background: var(--scl-color-grey-20);
+}
+```
+
+#### Bit of work needed
+
+It will require work, if:
+
+⚠️ you overwrite --scl prefixed variables, e.g.
+
+```css
+#my-app {
+  --scl-color-primary: tomato;
+}
+```
+
+#### On --scl prefixed variables
+
+The --scl prefixed variables will continue to be available until the next major release.
+
+It is recommended however that you replace those with the equivalents in the new `@telekom/design-tokens` package.
+
+---
+
+## v1 to v2 migration guide
 
 If you have been part of our closed beta phase, you have been running the first version of scale. The current version 2 offers numerous bugfixes, AA accessibility and full browser support. We upgraded to Stencil 2 and are using CSS instead of JSS now, amongst others.
 
@@ -18,11 +86,11 @@ In this document you'll find a list of all the breaking changes in v2 and how to
 - [Tag](#tag)
 - [Changes in styling](#changes-in-styling)
 
-## Accordion
+### Accordion
 
 `scale-accordion` and `scale-collapsible`
 
-### Markup and slots
+#### Markup and slots
 
 For `scale-collapsible`:
 
@@ -55,7 +123,7 @@ After:
 </scale-accordion>
 ```
 
-## Brand Header
+### Brand Header
 
 The `iconNavigation` configuration has changed. The `icon` property is now taking any icon name from the [Icon Library](./?path=/docs/components-icon--icon-library).
 
@@ -83,11 +151,11 @@ export const iconNavigation = [
 
 Please see the [Component Stories](./?path=/docs/components-brand-header-navigation--standard) for all the possible customization options available in v2.
 
-## Button
+### Button
 
 `scale-button`
 
-### Attributes
+#### Attributes
 
 - Removed `focusable`
 - Removed `icon`
@@ -98,12 +166,12 @@ Please see the [Component Stories](./?path=/docs/components-brand-header-navigat
 - Added `iconOnly` (optional) - Set to `true` when the button contains only an icon and no label
 - Added `iconPosition` (optional) - The icon position related to the label
 
-### Methods
+#### Methods
 
 - Removed `disable`
 - Removed `enable`
 
-### Markup and slots
+#### Markup and slots
 
 Icons are now part of the markup and no longer provided via attributes.
 
@@ -121,11 +189,11 @@ After:
 <scale-button><scale-icon-action-search />Search</scale-button>
 ```
 
-## Card
+### Card
 
 `scale-card`
 
-### Attributes
+#### Attributes
 
 - Removed `disabled`
 - Removed `href`
@@ -135,20 +203,20 @@ After:
 - Added `rel` (optional) - `rel` attribute
 - Added `label` (optional) - Label for the card (a11y)
 
-## Icon
+### Icon
 
 `scale-icon`
 
-### Attributes
+#### Attributes
 
 - Added `accessibilityTitle` (optional) - When using the icon as standalone, make it meaningful for accessibility
 - Added `decorative` (optional) - If `true` the svg element will get aria-hidden="true"
 
-## List
+### List
 
 `scale-list` and `scale-list-item`
 
-### Attributes
+#### Attributes
 
 For `scale-list`:
 
@@ -164,7 +232,7 @@ For `scale-list-item`:
 - Added `marker` (optional) - If false, no marker or left padding will be visible
 - Added `ordered` (optional) - Whether this is a child of an ordered scale-list, gets set automatically by its parent
 
-### Markup and slots
+#### Markup and slots
 
 Lists are unordered by default (ul), to make it ordered (ol) use the `ordered` attribute.
 
@@ -216,7 +284,7 @@ After:
 </scale-list>
 ```
 
-## Input
+### Input
 
 We have split the scale-input into several stand-alone components:
 
@@ -229,7 +297,7 @@ We have split the scale-input into several stand-alone components:
 The attributes are not changed with one exception: `type` got removed from all new components but the `text-field`
 where it still makes sense to provide one of the [standard input type values](https://www.w3schools.com/html/html_form_input_types.asp).
 
-### Markup and slots
+#### Markup and slots
 
 Before:
 
@@ -277,9 +345,9 @@ After:
 
 The original `scale-input` is still available with a deprecation warning. It is to be removed in v3.
 
-## Modal
+### Modal
 
-### Attributes
+#### Attributes
 
 - Removed `transitions`
 - Added `alignActions` (optional) - Alignment of action buttons
@@ -287,11 +355,11 @@ The original `scale-input` is still available with a deprecation warning. It is 
 - Added `duration` (optional) - Transition duration
 - Added `heading` - Modal heading
 
-### Events
+#### Events
 
 - Added `scaleOpen`
 
-### Markup and slots
+#### Markup and slots
 
 - Removed slot `header`
 - Removed slot `modal-actions`
@@ -341,11 +409,11 @@ After:
 
 Order in markup is important. Put the modal's content first and then any action buttons.
 
-## Tab Navigation
+### Tab Navigation
 
 `scale-tab-nav`, `scale-tab-header` and `scale-tab-panel`
 
-### Attributes
+#### Attributes
 
 For `scale-tab-nav`:
 
@@ -364,13 +432,13 @@ For `scale-tab-panel`:
 - Removed `ariaLabel`
 - Removed `identifier`
 
-### Events
+#### Events
 
 For `scale-tab-nav`:
 
 - Removed `tabclick`
 
-### Markup and slots
+#### Markup and slots
 
 Slots has been renamed and the `label` attribute removed in favor of slotted text.
 
@@ -419,13 +487,13 @@ After:
 </scale-tab-header>
 ```
 
-## Tag
+### Tag
 
-### Attributes
+#### Attributes
 
 - Added `dismissText` (optional) - Dismiss label for accessibility
 
-## Changes in styling
+### Changes in styling
 
 - the JSS-related theming API (`useTheme` and `getTheme`) has been removed
 - the `customClass` attribute has been removed
