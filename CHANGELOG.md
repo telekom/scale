@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.53](https://github.com/telekom/scale/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2022-03-14)
+
+
+### Bug Fixes
+
+* binary files conflicts ([cfd1366](https://github.com/telekom/scale/commit/cfd1366ad7de3ddf78658366bbe763817602af66))
+* windows firefox problem with fit-content ([#928](https://github.com/telekom/scale/issues/928)) ([1499ba9](https://github.com/telekom/scale/commit/1499ba9051e3059fccc578441354a8ce732a4f8d))
+
+
+### Features
+
+* updates sketch library name for rss feed ([#941](https://github.com/telekom/scale/issues/941)) ([971d305](https://github.com/telekom/scale/commit/971d305d7a158a8da8338208112212c85c9a34a0))
+
+
+
+
+
 # [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
 
 
