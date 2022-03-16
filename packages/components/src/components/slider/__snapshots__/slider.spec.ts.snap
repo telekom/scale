@@ -11,6 +11,7 @@ exports[`Slider should match snapshot 1`] = `
             <div aria-labelledby="slider-0-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuetext="undefined" class="slider__thumb" id="slider-0" part="thumb" role="slider" tabindex="0"></div>
           </div>
         </div>
+        <input type="hidden">
         <div class="slider__display-value" part="display-value"></div>
       </div>
     </div>
@@ -30,6 +31,7 @@ exports[`Slider should match snapshot 2`] = `
             <div aria-labelledby="slider-1-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" aria-valuetext="10" class="slider__thumb" id="slider-1" part="thumb" role="slider" tabindex="0"></div>
           </div>
         </div>
+        <input type="hidden" value="10">
         <div class="slider__display-value" part="display-value">
           10%
         </div>

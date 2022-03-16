@@ -57,7 +57,7 @@
   --background-selected-active-light: var(--scl-color-primary-active);
   --background-selected-dark: var(--scl-color-grey-90);
   --background-selected-hover-dark: var(--scl-color-grey-70);
-  --background-selected-active-dark: var(--scl-color-black);
+  --background-selected-active-dark: var(--scl-color-grey-90);
 
   /* high contrast */
   --color-high-contrast: var(--scl-color-white);
@@ -204,6 +204,10 @@
   border-radius: var(--radius-primary);
 }
 
+.toggle-button--all,
+.toggle-button--all:disabled {
+  border-radius: var(--radius-primary);
+}
 .toggle-button--neither,
 .toggle-button--neither:disabled {
   border-right: 0;

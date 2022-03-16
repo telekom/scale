@@ -17,7 +17,6 @@ import {
   h,
   Host,
   Prop,
-  Watch,
 } from '@stencil/core';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
@@ -83,13 +82,6 @@ export class Checkbox {
         source: this.host,
       });
     }
-  }
-
-  @Watch('disabled')
-  handleDisabledChange() {
-    const { checked, indeterminate, value, disabled } = this;
-
-    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
   }
 
   handleChange = (ev) => {

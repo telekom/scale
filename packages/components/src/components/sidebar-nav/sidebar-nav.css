@@ -13,7 +13,6 @@
   --max-width: 15rem;
   --spacing-indent: var(--scl-spacing-24);
   --spacing-collapsible: var(--scl-spacing-16);
-  --opacity-chevron: 0;
   --left-current-border: 0;
 
   --color: var(--scl-color-primary);
@@ -27,7 +26,6 @@
 .sidebar-nav--collapsible {
   --max-width: none;
   --spacing-indent: 0;
-  --opacity-chevron: 1;
   --left-current-border: calc(-1 * var(--spacing-collapsible));
 
   padding-right: var(--spacing-collapsible);

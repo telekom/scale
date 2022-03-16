@@ -3,6 +3,137 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.53](https://github.com/telekom/scale/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2022-03-14)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+
+### Features
+
+* **accordion:**  add option for the icon being displayed on the right ([#863](https://github.com/telekom/scale/issues/863)) ([7ab140d](https://github.com/telekom/scale/commit/7ab140db1588d0d55da0ad4b826fef440816e0d0))
+
+
+
+
+
+# [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
+
+
+### Features
+
+* **data-table:** add email and phone cells ([#808](https://github.com/telekom/scale/issues/808)) ([9327af2](https://github.com/telekom/scale/commit/9327af2b0dd4b06362af97380303c8fa1cb4dbdd))
+
+
+
+
+
+# [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.42](https://github.com/telekom/scale/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2022-01-14)
+
+
+### Bug Fixes
+
+* **checkbox:** spacing problem ([#783](https://github.com/telekom/scale/issues/783)) ([3507aa2](https://github.com/telekom/scale/commit/3507aa24d37bcdf6c2ea5781e5669c517e358072))
+* **dropdown:** set default background color ([#787](https://github.com/telekom/scale/issues/787)) ([b381940](https://github.com/telekom/scale/commit/b381940f135619e1945db00876b8de30973c7d3f))
+* **notification-message:** add lifecycle method for slots ([#793](https://github.com/telekom/scale/issues/793)) ([026fbd3](https://github.com/telekom/scale/commit/026fbd355fd891944583079373c417e2e37203ee))
+
+
+
+
+
+# [3.0.0-beta.41](https://github.com/telekom/scale/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2022-01-11)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.40](https://github.com/telekom/scale/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2022-01-06)
+
+
+### Bug Fixes
+
+* **colors:** use correct gray ([#769](https://github.com/telekom/scale/issues/769)) ([71ab821](https://github.com/telekom/scale/commit/71ab82139d68435e6f3c68fe829350bca77adb65))
+
+
+### Features
+
+* **notification-toast:** add new beta component ([#714](https://github.com/telekom/scale/issues/714)) ([1a9abb5](https://github.com/telekom/scale/commit/1a9abb51ce5dc393019260d4b2a65b877bf52873))
+
+
+
+
+
 # [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
 
 

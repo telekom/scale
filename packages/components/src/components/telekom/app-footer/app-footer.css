@@ -10,7 +10,7 @@
  */
 
 :host {
-  --background: var(--scl-color-black);
+  --background: var(--scl-color-grey-90);
   --color: var(--scl-color-white);
   --spacing-top: var(--scl-spacing-32);
   --spacing-bottom: var(--scl-spacing-24);
@@ -29,7 +29,6 @@
   --background-mask: var(--scl-color-background-standard, #fff);
   --radius-mask: 0 0 var(--scl-radius-12) var(--scl-radius-12);
 
-  --height-logo: var(--scl-spacing-24);
   --font-size-copyright: var(--scl-font-size-14);
   --color-link-standard: var(--scl-color-white);
   --color-link-minimal: var(--scl-color-grey-60);
@@ -86,11 +85,6 @@
 .footer--variant-angular .footer-mask,
 .footer--variant-minimal .footer-mask {
   display: none;
-}
-
-.footer-branding .logo svg {
-  width: auto;
-  height: var(--height-logo);
 }
 
 .footer-copyright {

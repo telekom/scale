@@ -253,7 +253,6 @@ export class Modal {
             role="dialog"
             aria-modal="true"
             aria-label={this.heading}
-            title={this.heading}
           >
             <div
               class="modal__header"

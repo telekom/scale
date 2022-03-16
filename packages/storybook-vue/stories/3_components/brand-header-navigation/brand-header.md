@@ -15,9 +15,9 @@ The brand bar contains our logo and slogan, metalinks, and other functions. When
 
 ![Image Name](assets/3_components/brand-header/EN_brandheader_brandbar.png)
 
-#### Telekom logo and slogan (1)
+#### Telekom logo (1)
 
-The logo, slogan, and Magenta background are required for any Telekom webpage and cannot be changed. The logo should always link to the homepage or the entry point of the current process.
+The logo and Magenta background are required for any Telekom webpage and cannot be changed. The logo should always link to the homepage or the entry point of the current process.
 
 #### Personal/business switch (2)
 

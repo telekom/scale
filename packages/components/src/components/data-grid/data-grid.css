@@ -72,7 +72,7 @@
   font-weight: var(--scl-font-weight-regular);
   line-height: var(--scl-font-line-height-150);
 
-  color: var(--scl-color-black);
+  color: var(--scl-color-grey-90);
 }
 
 .data-grid input,
@@ -206,12 +206,12 @@
 
 .thead__arrow-top {
   border-top: none;
-  border-bottom: 5px solid var(--scl-color-black);
+  border-bottom: 5px solid var(--scl-color-grey-90);
 }
 
 .thead__arrow-bottom {
   border-bottom: none;
-  border-top: 5px solid var(--scl-color-black);
+  border-top: 5px solid var(--scl-color-grey-90);
 }
 
 .thead__sort-prompt {
@@ -310,6 +310,10 @@
 .tbody__cell--selection scale-checkbox::part(container),
 .tbody__cell--selection scale-checkbox [part='container'] {
   justify-content: center;
+}
+
+.tbody__cell scale-checkbox {
+  width: auto;
 }
 
 .tbody__nested {

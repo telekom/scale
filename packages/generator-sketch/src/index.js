@@ -776,7 +776,7 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
   });
 
   rssBuilder.build(`./sketch/${documentName}.xml`, {
-    title: config.libraryTitle + ' build ' + version,
+    title: config.libraryTitle,
     description: config.libraryDescription,
     url: `${serverPath}${documentName}.sketch`,
     version: version,

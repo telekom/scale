@@ -15,6 +15,7 @@
 | `label`       | `label`        | (optional) slider label                                                                   | `string`      | `undefined` |
 | `max`         | `max`          | (optional) the maximal value of the slider                                                | `number`      | `100`       |
 | `min`         | `min`          | t(optional) he minimal value of the slider                                                | `number`      | `0`         |
+| `name`        | `name`         | (optional) the name of the slider                                                         | `string`      | `undefined` |
 | `showValue`   | `show-value`   | (optional) slider display value                                                           | `boolean`     | `true`      |
 | `sliderId`    | `slider-id`    | (optional) Slider id                                                                      | `string`      | `undefined` |
 | `step`        | `step`         | (optional) the step size to increase or decrease when dragging slider                     | `number`      | `1`         |
