@@ -59,9 +59,11 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   `,
   methods: {
     startSuccess() {
+      this.reset();
       this.start('success');
     },
     startFailure() {
+      this.reset();
       this.start('failure');
     },
     start(outcome) {
