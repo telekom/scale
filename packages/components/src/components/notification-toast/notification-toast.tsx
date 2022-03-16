@@ -139,7 +139,12 @@ export class NotificationToast {
           <style>{this.transitions(this.toastHeightWithOffset)}</style>
           <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
 
-          <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
+          <div
+            role="alert"
+            style={{ display: `${this.opened ? '' : 'none'}` }}
+            class={this.getCssClassMap()}
+            part={this.getBasePartMap()}
+          >
             <div class="notification-toast__icon-container">
               {this.handleIcons()}
             </div>

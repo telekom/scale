@@ -103,6 +103,8 @@ export class NotificationMessage {
     return (
       <Host>
         <div
+          role="alert"
+          style={{ display: `${this.opened ? '' : 'none'}` }}
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           tabindex="0"
