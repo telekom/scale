@@ -143,6 +143,9 @@ scale-checkbox.indeterminate [part='checkbox'] {
   border-color: var(--telekom-color-ui-outlined-border-standard);
   color: var(--color-icon-checked-active);
 }
+scale-checkbox.indeterminate [part='icon'] {
+  color: var(--telekom-color-text-and-icon-standard);
+}
 
 /* :host([checked]) [part='checkbox'], */
 scale-checkbox.checked [part='checkbox']
@@ -283,7 +286,7 @@ scale-checkbox.disabled [part='checkbox'] {
 
 scale-checkbox.checked.disabled [part='checkbox'] {
   background-color: var(--telekom-color-ui-solid-disabled);
-  border-color: var(--telekom-color-ui-outlined-border-disabled);
+  border-color: transparent;
 }
 
 /* :host([checked][disabled]) [part='icon'], */
