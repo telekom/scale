@@ -52,6 +52,7 @@ export class NotificationToast {
   @Prop() story?: boolean;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
+  @Prop() href: string;
 
   @Element() element: HTMLElement;
 
@@ -144,6 +145,7 @@ export class NotificationToast {
             style={{ display: `${this.opened ? '' : 'none'}` }}
             class={this.getCssClassMap()}
             part={this.getBasePartMap()}
+            tabindex="0"
           >
             <div class="notification-toast__icon-container">
               {this.handleIcons()}
@@ -151,13 +153,18 @@ export class NotificationToast {
             <div class="notification-toast__text-container">
               <slot name="header" />
               <slot name="body" />
-              <scale-link>
+              <scale-link
+                href={this.href}
+                class="notification-toast__link"
+                tabindex={0}
+              >
                 <slot name="link" />
               </scale-link>
             </div>
 
             <scale-icon-action-circle-close
               tabindex="0"
+              role="button"
               class="notification-message__icon-close"
               size={20}
               onClick={() => {
