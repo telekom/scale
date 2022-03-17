@@ -456,7 +456,7 @@
   padding: var(--telekom-spacing-unit-x6);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
-  border: 1px solid var(--telekom-color-ui-additional-subtle);
+  border: 1px solid var(--telekom-color-ui-additional-light);
 }
 .data-grid--mobile .tbody__row:hover {
   background: var(--telekom-color-background-surface);
@@ -516,7 +516,7 @@
   margin-bottom: var(--telekom-spacing-unit-x2);
 }
 .data-grid--mobile.data-grid--shade-alternate .tbody__row:nth-of-type(even) {
-  background: none;
+  background: var(--telekom-color-background-surface);
 }
 .data-grid--mobile .info {
   height: auto;
