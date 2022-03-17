@@ -142,9 +142,26 @@
   close icon part
 */
 
-.notification-message__icon-close {
-  cursor: pointer;
+.notification-toast__button-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 13.5px;
+  color: #191919;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.notification-toast__button-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 6.5px;
+  border-radius: 20%;
+}
+
+.notification-toast__button-close:hover svg {
+  background-color: white;
+  color: var(--scl-color-primary-hover);
 }

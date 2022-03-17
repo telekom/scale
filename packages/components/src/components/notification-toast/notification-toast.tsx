@@ -87,7 +87,7 @@ export class NotificationToast {
               size={20}
               color="#ffffff"
               selected
-              accessibility-title="success"
+              aria-hidden="true"
             />
           );
         case 'informational':
@@ -97,7 +97,7 @@ export class NotificationToast {
               size={20}
               selected
               color="#ffffff"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
         case 'error':
@@ -107,7 +107,7 @@ export class NotificationToast {
               size={20}
               selected
               color="#ffffff"
-              accessibility-title="error"
+              aria-hidden="true"
             />
           );
         case 'warning':
@@ -117,7 +117,7 @@ export class NotificationToast {
               color="#ffff"
               size={20}
               selected
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
       }
@@ -157,26 +157,27 @@ export class NotificationToast {
                 href={this.href}
                 class="notification-toast__link"
                 tabindex={0}
+                role="link"
               >
                 <slot name="link" />
               </scale-link>
             </div>
 
-            <scale-icon-action-circle-close
-              tabindex="0"
+            <button
+              part="button-dismissable"
               role="button"
-              class="notification-message__icon-close"
-              size={20}
-              onClick={() => {
-                this.close();
-              }}
+              class="notification-toast__button-close"
+              onClick={() => this.close()}
+              tabindex={0}
+              aria-label="close"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   this.close();
                 }
               }}
-              accessibility-title="close"
-            />
+            >
+              <scale-icon-action-circle-close />
+            </button>
           </div>
         </Host>
       );
