@@ -59,7 +59,12 @@
   position: absolute;
   top: 8px;
   right: 13.5px;
-  color: hsl(0, 0%, 10%);
+  color: #191919;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .notification-message__icon-close svg {
@@ -70,7 +75,7 @@
 }
 
 .notification-message__icon-close:hover svg {
-  background-color: hsl(0, 0%, 100%);
+  background-color: white;
   color: var(--scl-color-primary-hover);
 }
 

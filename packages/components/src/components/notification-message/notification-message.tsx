@@ -61,21 +61,21 @@ export class NotificationMessage {
             <scale-icon-alert-success
               class="notification-message__icon-success"
               color="#187431"
-              accessibility-title="success"
+              aria-hidden="true"
             />
           );
         case 'informational':
           return (
             <scale-icon-alert-information
               class="notification-message__icon-information"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
         case 'error':
           return (
             <scale-icon-alert-error
               class="notification-message__icon-error"
-              accessibility-title="error"
+              aria-hidden="true"
             />
           );
         case 'warning':
@@ -83,7 +83,7 @@ export class NotificationMessage {
             <scale-icon-alert-error
               class="notification-message__icon-information"
               color="#AE461C"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
       }
@@ -115,19 +115,21 @@ export class NotificationMessage {
               <slot>&emsp;</slot>
 
               {this.dismissible && (
-                <scale-icon-action-circle-close
-                  tabindex="0"
+                <button
+                  part="button-dismissable"
+                  role="button"
                   class="notification-message__icon-close"
-                  onClick={() => {
-                    this.close();
-                  }}
+                  onClick={() => this.close()}
+                  tabindex={0}
+                  aria-label="close"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       this.close();
                     }
                   }}
-                  accessibility-title="close"
-                />
+                >
+                  <scale-icon-action-circle-close />
+                </button>
               )}
             </div>
             {this.hasSlotText && (
