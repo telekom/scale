@@ -120,7 +120,7 @@ export class NotificationBanner {
               {this.dismissible && (
                 <button
                   part="button-dismissable"
-                  role="button"
+                  type="button"
                   class="notification-banner__button-close"
                   onClick={() => this.close()}
                   tabindex={0}

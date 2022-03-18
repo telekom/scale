@@ -117,7 +117,7 @@ export class NotificationMessage {
               {this.dismissible && (
                 <button
                   part="button-dismissable"
-                  role="button"
+                  type="button"
                   class="notification-message__icon-close"
                   onClick={() => this.close()}
                   tabindex={0}
