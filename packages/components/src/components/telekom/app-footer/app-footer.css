@@ -54,7 +54,7 @@
     --telekom-color-text-and-icon-primary-pressed
   );
   --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-primary-standard);
+    var(--telekom-color-functional-focus);
   --border-color-standard-hover: var(
     --telekom-color-text-and-icon-white-standard
   );
@@ -97,11 +97,6 @@
 .footer--variant-angular .footer-mask,
 .footer--variant-minimal .footer-mask {
   display: none;
-}
-
-.footer-branding .logo svg {
-  width: auto;
-  height: var(--height-logo);
 }
 
 .footer-copyright {

@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+
+### Bug Fixes
+
+* **app-logo:** make it focusable when header is sticky ([#898](https://github.com/telekom/scale/issues/898)) ([d26d314](https://github.com/telekom/scale/commit/d26d31470cb4e6aa99683df24d547df5bef3cb03))
+
+
+### Features
+
+* **accordion:**  add option for the icon being displayed on the right ([#863](https://github.com/telekom/scale/issues/863)) ([7ab140d](https://github.com/telekom/scale/commit/7ab140db1588d0d55da0ad4b826fef440816e0d0))
+
+
+
+
+
 # [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
 
 

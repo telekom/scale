@@ -9,14 +9,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-:host {
-  --logo-size: 36px;
-}
-
 .logo {
   display: inline-flex;
   height: var(--logo-size);
-  padding: calc(var(--logo-size) / 3);
   position: relative;
 }
 
@@ -30,4 +25,8 @@
 
 .logo--transparent {
   background-color: transparent;
+}
+
+.logo svg {
+  height: var(--logo-size);
 }

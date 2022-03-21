@@ -1,5 +1,5 @@
 describe('Accordion', () => {
-  describe.each(['light', 'dark'])('%p', (mode) => {
+  describe.each(['light', 'dark'])('%p', async (mode) => {
     beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-accordion--standard&viewMode=story`
@@ -34,7 +34,7 @@ describe('Accordion', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-accordion--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [

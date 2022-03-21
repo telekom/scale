@@ -28,9 +28,42 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 - In Sketch, click the notification icon (bell) in the upper right corner and select "Component updates available".
 - Select "Update components".
 - Now your design will appear in the other mode.
+- Version note: Color variables have been available in Sketch since version 69 (October 2020). Please be advised that it is not possible to switch between dark and light mode in older versions, and the color tokens may not be used.
 
-### Figma
+## For Developers:
 
-## Information for developers:
+Dark mode is included in Scale from version `3.0.0-rc.1`. It leverages CSS variables to allow changing modes.
 
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](https://gist.github.com/acstll/904b65679f5bd1568f1ed8c4e66744f9).
+By default, the mode will be set to match the operating system preferences, via the `prefers-color-scheme` media query.
+
+Alternatively, modes can be set via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the `body`, e.g. `<body data-mode="light">`, though it's possible to also switch only a specific part of the page.
+
+Setting the `data-mode` attribute will override the system preferences.
+
+### Adding a switch
+
+A switch can be built into the UI with a bit of JavaScript, to set the `data-mode` attribute accordingly. The following snippet should serve as an illustration:
+
+```js
+const element = document.querySelector('.mode-switch')
+
+element.addEventListener('click', function switchMode() {
+  const isDark = document.body.dataset.mode === 'dark'
+  document.body.dataset.mode = isDark ? 'light' : 'dark'
+})
+```
+
+In JavaScript, you can check and monitor the system preference via the window.matchMedia method.
+
+```js
+const mq = window.matchMedia('(prefers-color-scheme: dark)')
+const isDark = mq.matches
+```
+
+### Disabling automatic switching
+
+If you want your app to be in either light or dark mode regardless of the user's system preferences, set the `data-mode` attribute to the desired mode:
+
+```html
+<body data-mode="light">
+```

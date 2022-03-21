@@ -45,6 +45,11 @@ const setColorMode = () => {
         type: 'text',
       },
     },
+      logoAriaDescribedBy: {
+      control: {
+        type: 'text',
+      },
+    },
     logoClick: {
       control: {
         type: 'disabled',
@@ -91,7 +96,18 @@ const setColorMode = () => {
     claimLang: {
       control: {
         type: 'select',
-        options: ['en', 'de'],
+        options: [
+          'de',
+          'en',
+          'cz',
+          'hr',
+          'hu',
+          'me',
+          'mk_lat',
+          'mk_kyr',
+          'ro',
+          'sk',
+        ],
       },
     },
   }}
@@ -164,7 +180,7 @@ const setColorMode = () => {
 <ArgsTable story="Standard" />
 
 ```html
-<scale-app-shell claim-lang="en" logo-title="App Name" logo-href="/">
+<scale-app-shell claim-lang="de" logo-title="App Name" logo-href="/">
   <div style="height: 800px; padding: 48px 0;">
     Scroll to test header behavior
   </div>
@@ -236,6 +252,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
                 @keydown="$event.key === 'Escape' && handleClose()"
             >
                 <div slot="menu-main">
@@ -376,6 +393,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
             >
                 <div slot="menu-icon">
                   <scale-nav-icon icon="action-mute">
@@ -459,6 +477,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :addon-navigation="addonNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
             >
                 <div slot="menu-sector">
                   <scale-nav-segment active="true" href="#custom-sector-1">
@@ -551,6 +570,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :sector-navigation="sectorNavigation"
                 :active-route-id="activeRouteId"
                 :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
             >
                 <div slot="menu-addon">
                   <scale-nav-segment active="true" href="#custom-addon-1">
@@ -638,6 +658,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
             <scale-app-header
                 slot="header"
                 id="header"
+                :claim-lang="claimLang"
                 :main-navigation="mainNavigation"
                 :icon-navigation="iconNavigation"
                 :sector-navigation="sectorNavigation"
@@ -645,11 +666,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 :active-sector-id="activeSectorId"
             >
                 <div slot="logo">
-                  <app-logo
-                    claim
-                    href="#custom"
-                    logo-title="Custom"
-                  ></app-logo>
+                    <scale-logo transparent variant="white" language="en" href="#custom" logo-title="Custom" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"></scale-logo>
                 </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
@@ -666,12 +683,14 @@ You can find code examples where the Flyout Menu Beta component is implemented i
 <scale-app-shell>
   <scale-app-header slot="header" id="header">
     <div slot="logo">
-      <app-logo
-        claim
+      <scale-logo
+        transparent
+        variant="white"
+        language="en"
         href="#custom"
         logo-title="Custom"
-        onclick="handleClick()"
-      ></app-logo>
+        styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+      ></scale-logo>
     </div>
   </scale-app-header>
   <div style="height: 800px; padding: 48px 0;">
@@ -720,6 +739,7 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 id="header"
                 ref="header"
                 :main-navigation="mainNavigation"
+                :claim-lang="claimLang"
                 :icon-navigation="iconNavigation"
                 :sector-navigation="sectorNavigation"
                 :active-route-id="activeRouteId"

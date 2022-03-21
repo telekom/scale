@@ -191,7 +191,7 @@ scale-app-header {
     height: calc(100vh - var(--header-nav-height));
     display: block;
     overflow-y: auto;
-    background: #fff;
+    background: var(--telekom-color-background-canvas);
   }
 
   .header .header__brand .header__brand-before,
@@ -288,6 +288,7 @@ scale-app-header {
   .header *[slot='menu-addon'],
   .header .sector-navigation {
     display: flex;
+    padding: 0;
   }
   .header .addon-navigation {
     display: flex;
