@@ -29,11 +29,12 @@ Type: `Promise<void>`
 
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"container"` |             |
-| `"heading"`   |             |
-| `"text"`      |             |
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
+| `"container"`          |             |
+| `"heading"`            |             |
+| `"text"`               |             |
 
 
 ## Dependencies

@@ -12,6 +12,7 @@
 | `alignment`          | `alignment`           | (optional) Alignment choose for top and bottom | `"bottom-left" \| "bottom-right" \| "top-left" \| "top-right"` | `'top-right'`     |
 | `animated`           | `animated`            | (optional) Animated toast                      | `boolean`                                                      | `true`            |
 | `fadeDuration`       | `fade-duration`       | (optional) Toast fade duration                 | `number`                                                       | `500`             |
+| `href`               | `href`                |                                                | `string`                                                       | `undefined`       |
 | `opened`             | `opened`              | (optional) Toast opened                        | `boolean`                                                      | `undefined`       |
 | `positionHorizontal` | `position-horizontal` | (optional) Toast position right                | `number`                                                       | `12`              |
 | `positionVertical`   | `position-vertical`   | (optional) Toast position at the top           | `number`                                                       | `12`              |
@@ -31,6 +32,13 @@ Toast method: open()
 Type: `Promise<void>`
 
 
+
+
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
 
 
 ## Dependencies
