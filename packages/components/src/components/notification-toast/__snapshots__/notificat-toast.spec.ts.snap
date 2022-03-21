@@ -40,18 +40,20 @@ exports[`NotificationToast  handle variant prop 1`] = `
           opacity: 0;
         }
     </style>
-    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-error" part="base --variant-error --opened --show">
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-error" part="base --variant-error --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-error accessibility-title="error" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-error>
+        <scale-icon-alert-error aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-error>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link>
+        <scale-link class="notification-toast__link" role="link" tabindex="0">
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <scale-icon-action-circle-close accessibility-title="close" class="notification-message__icon-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
     </div>
   </mock:shadow-root>
   Label
@@ -98,18 +100,20 @@ exports[`NotificationToast  handle variant prop 2`] = `
           opacity: 0;
         }
     </style>
-    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-warning" part="base --variant-warning --opened --show">
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-warning" part="base --variant-warning --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-error accessibility-title="information" class="notification-toast__icon" color="#ffff" selected="" size="20"></scale-icon-alert-error>
+        <scale-icon-alert-error aria-hidden="true" class="notification-toast__icon" color="#ffff" selected="" size="20"></scale-icon-alert-error>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link>
+        <scale-link class="notification-toast__link" role="link" tabindex="0">
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <scale-icon-action-circle-close accessibility-title="close" class="notification-message__icon-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
     </div>
   </mock:shadow-root>
   Label
@@ -156,18 +160,20 @@ exports[`NotificationToast  handle variant prop 3`] = `
           opacity: 0;
         }
     </style>
-    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-informational" part="base --variant-informational --opened --show">
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-informational" part="base --variant-informational --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-information accessibility-title="information" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-information>
+        <scale-icon-alert-information aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-information>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link>
+        <scale-link class="notification-toast__link" role="link" tabindex="0">
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <scale-icon-action-circle-close accessibility-title="close" class="notification-message__icon-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
     </div>
   </mock:shadow-root>
   Label
@@ -214,18 +220,20 @@ exports[`NotificationToast  handle variant prop 4`] = `
           opacity: 0;
         }
     </style>
-    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-success" part="base --variant-success --opened --show">
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-success" part="base --variant-success --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-success accessibility-title="success" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-success>
+        <scale-icon-alert-success aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-success>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link>
+        <scale-link class="notification-toast__link" role="link" tabindex="0">
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <scale-icon-action-circle-close accessibility-title="close" class="notification-message__icon-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
     </div>
   </mock:shadow-root>
   Label
@@ -272,18 +280,20 @@ exports[`NotificationToast  should match snapshot 1`] = `
           opacity: 0;
         }
     </style>
-    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-informational" part="base --variant-informational --opened --show">
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-informational" part="base --variant-informational --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-information accessibility-title="information" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-information>
+        <scale-icon-alert-information aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-information>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link>
+        <scale-link class="notification-toast__link" role="link" tabindex="0">
           <slot name="link"></slot>
         </scale-link>
       </div>
-      <scale-icon-action-circle-close accessibility-title="close" class="notification-message__icon-close" size="20" tabindex="0"></scale-icon-action-circle-close>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
     </div>
   </mock:shadow-root>
 </scale-notification-toast>
