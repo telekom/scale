@@ -23,10 +23,14 @@ function switchMode(mode) {
   try {
     const previewIframe = document.querySelector('#storybook-preview-iframe');
     previewIframe.contentWindow.document.body.dataset.mode = mode;
+    previewIframe.contentWindow.document.body.style = `background: #fff`
 
     Array.from(
       previewIframe.contentWindow.document.querySelectorAll('iframe')
-    ).forEach((x) => (x.contentWindow.document.body.dataset.mode = mode));
+    ).forEach((x) => {
+      x.contentWindow.document.body.dataset.mode = mode
+      x.contentWindow.document.body.style = `background: #fff`
+    });
   } catch (e) {}
 }
 
