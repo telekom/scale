@@ -192,7 +192,7 @@ import { addons } from '@storybook/addons';
                     {hasContrastWithoutSlash(pathStringItem) ? (
                       <td
                         style={{
-                          paddingRight: 'var(--telekom-spacing-unit-x4)',
+                          padding: '4px 4px 4px 0',
                           border: 'none',
                           width: '140px',
                         }}
@@ -226,7 +226,7 @@ import { addons } from '@storybook/addons';
                             <td
                               style={{
                                 border: 'none',
-                                paddingRight: 'var(--telekom-spacing-unit-x4)',
+                                padding: '4px 4px 4px 0',
                                 width: '200px',
                               }}
                             >
@@ -592,7 +592,7 @@ import { addons } from '@storybook/addons';
                     {hasContrastWithoutSlash(pathStringItem) ? (
                       <td
                         style={{
-                          paddingRight: 'var(--telekom-spacing-unit-x4)',
+                          padding: '4px 4px 4px 0',
                           border: 'none',
                         }}
                       >
@@ -625,7 +625,7 @@ import { addons } from '@storybook/addons';
                             <td
                               style={{
                                 border: 'none',
-                                paddingRight: 'var(--telekom-spacing-unit-x4)',
+                                padding: '4px 4px 4px 0',
                               }}
                             >
                               {pathStringItem
@@ -965,8 +965,8 @@ import { addons } from '@storybook/addons';
         }
         function generateColorModeLinkText() {
           return locale === 'en'
-            ? `To the ${darkMode ? 'light' : 'dark'} mode color palette`
-            : `Zur Farbpalette des ${darkMode ? 'Light' : 'Dark'} Modes`;
+            ? `Show ${darkMode ? 'light' : 'dark'} mode color palette`
+            : `Farbpalette des ${darkMode ? 'Light' : 'Dark'} Modes anzeigen`;
         }
         function changeModeLink() {
           const toggleMode = darkMode ? 'light' : 'dark';
@@ -1013,7 +1013,7 @@ import { addons } from '@storybook/addons';
                     )}
                 {!darkMode
                   ? generateSectionDescription(
-                      'Unsere Markenfarben sind Magenta, Weiß und Dunkelgrau sind die primären Farben für User Interfaces im Light Mode. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte ist freundlich, offen und hell.',
+                      'Unsere Markenfarbe Magenta sowie Weiß und Schwarz sind die primären Farben für User Interfaces im Light Mode. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte wirkt dadurch freundlich, offen und hell.',
                       'Our brand colors are magenta, white and dark gray are the primary colors for user interfaces in light mode. The basic tonality of our websites and digital products is friendly, open and bright.',
                       true
                     )
@@ -1047,7 +1047,7 @@ import { addons } from '@storybook/addons';
                 <tbody>
                   {generateTableColorRow(
                     'color.text-&-icon.standard',
-                    'Für alle Standard Texte.',
+                    'Für alle Standardtexte.',
                     'For all standard texts.'
                   )}
                   {generateTableColorRow(
@@ -1057,7 +1057,7 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.text-&-icon.disabled',
-                    'Nur für Texte im disabled State.',
+                    'Nur für Texte im „disabled State“.',
                     'Only for texts in disabled state.'
                   )}
                 </tbody>
@@ -1068,22 +1068,22 @@ import { addons } from '@storybook/addons';
                 <tbody>
                   {generateTableColorRow(
                     'color.text-&-icon.inverted.standard',
-                    'Inverted/Standard ist der umgekehrte Zustand der Standard Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (Weiß im hellen Modus und Dunkelgrau im dunklen Modus).',
+                    'Inverted/Standard ist der umgekehrte Zustand der Standard-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (Farbe Weiß im hellen Modus und Dunkelgrau im dunklen Modus).',
                     'Inverted/Standard is the inverse state of the default text color. For texts displayed inverted in the other mode (white in light mode and dark gray in dark mode).'
                   )}
                   {generateTableColorRow(
                     'color.text-&-icon.inverted.additional',
-                    'Inverted/Additional ist der umgekehrte Zustand der Additional Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (ein dunkleres Grau im hellen Modus und helleres Grau im dunklen Modus).',
+                    'Inverted/Additional ist der umgekehrte Zustand der Additional-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (ein dunkleres Grau im hellen Modus und ein helleres Grau im dunklen Modus).',
                     'Inverted/Additional is the inverse state of the Additional text color. For texts displayed inverted in the other mode (a darker gray in light mode and lighter gray in dark mode)'
                   )}
                   {generateTableColorRow(
                     'color.text-&-icon.white.standard',
-                    'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary-Button.',
+                    'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
                     'For standard texts that are displayed in white color in both light and dark modes. This is mostly used when texts are placed on color areas that are identical in both modes, such as the Primary button.'
                   )}
                   {generateTableColorRow(
                     'color.text-&-icon.white.additional',
-                    'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary-Button.',
+                    'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
                     'For standard texts that are displayed in white color in both light and dark modes. This is mostly used when texts are placed on color areas that are identical in both modes, such as the Primary button.'
                   )}
                   {generateTableColorRow(
@@ -1104,17 +1104,17 @@ import { addons } from '@storybook/addons';
                 <tbody>
                   {generateTableColorRow(
                     'color.text-&-icon.link.standard',
-                    'Für unterstützende Informationen sowie für Funktionen wie synchronisieren, sortieren und hinzufügen.',
+                    'Für unterstützende Informationen sowie für Funktionen wie Synchronisieren, Sortieren und Hinzufügen.',
                     'For supporting information as well as for functions like synchronize, sort and add.'
                   )}
                   {generateTableColorRow(
                     'color.text-&-icon.functional.success',
-                    'Bestätigt eine erfolgreich durchgeführte Aktion oder für Funktion wie senden, anrufen und aktivieren.',
+                    'Für Funktionen wie Senden, Anrufen und Aktivieren und zur Bestätigung einer erfolgreich durchgeführten Aktion.',
                     'Confirms a successfully performed action or for function like send, call and activate.'
                   )}
                   {generateTableColorRow(
                     'color.text-&-icon.functional.danger',
-                    'Für Fehlermeldungen oder Funktionen wie beenden und löschen.',
+                    'Für Fehlermeldungen oder Funktionen wie Beenden und Löschen.',
                     'Used for error messages or functions like cancel or delete.'
                   )}
                   {generateTableColorRow(
@@ -1141,7 +1141,7 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.background.canvas-subtle',
-                    'Für den Hintergrund deiner Webseite oder App, bspw. wenn du ein Card basiertes Layout anlegst.',
+                    'Für den Hintergrund deiner Webseite oder App, bspw. wenn du ein card-basiertes Layout anlegst.',
                     'For the background of your website or app, e.g. when you create a card-based layout.'
                   )}
                   {generateTableColorRow(
@@ -1151,7 +1151,7 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.background.surface-subtle',
-                    'Für die Hintergrundfläche von Komponenten, die sich etwas von weißem Hintergrund abheben sollen.',
+                    'Für die Hintergrundfläche von Komponenten, die sich etwas vom weißen Hintergrund abheben sollen.',
                     'For the background area of components that should stand out somewhat against a white background.'
                   )}
                   {generateTableColorRow(
@@ -1161,7 +1161,7 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.background.surface-highlight',
-                    'Für Hintergründe von Komponenten, die sich vom restlichen Inhalt abheben sollen wie bspw. der Footer.',
+                    'Für Hintergründe von Komponenten, die sich vom restlichen Inhalt abheben sollen, wie bspw. der Footer.',
                     'For backgrounds of components that should stand out from the rest of the content, such as the footer.'
                   )}
                 </tbody>
@@ -1172,7 +1172,7 @@ import { addons } from '@storybook/addons';
                 <tbody>
                   {generateTableColorRow(
                     'color.functional.success.standard',
-                    'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification, oder für Funktionen wie senden, anrufen und aktivieren.',
+                    'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification oder für Funktionen wie Senden, Anrufen und Aktivieren.',
                     'For backgrounds of components that confirm a successful action, such as a Success Notification, or for functions such as send, call, and activate.'
                   )}
                   {generateTableColorRow(
@@ -1182,7 +1182,7 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.functional.informational.standard',
-                    'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Informational Notification, oder Funktionen wie bspw. speichern.',
+                    'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Informational Notification oder für Funktionen wie Speichern.',
                     'For backgrounds of components that provide additional and helpful information, such as an Informational Notification, or functions such as store.'
                   )}
                   {generateTableColorRow(
@@ -1202,7 +1202,7 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.functional.danger.standard',
-                    'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification, oder Funktionen wie löschen.',
+                    'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification, oder Funktionen wie Löschen.',
                     'For backgrounds of components that inform about a failed action or error, such as the Error Notification, or functions like delete.'
                   )}
                   {generateTableColorRow(
