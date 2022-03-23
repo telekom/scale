@@ -8,7 +8,7 @@
   --height-large: 160px;
   --width-large: 160px;
   /* FIXME variables shouldn't have color names */
-  --color-blue: var(--telekom-color-additional-blue-600);
+  --color-blue: var(--telekom-color-functional-informational-standard);
   /* FIXME variables are used sometimes as background and sometimes as font color */
   --color-white: var(--telekom-color-background-surface);
   --color-black: var(--telekom-color-text-and-icon-functional-black);
@@ -39,9 +39,11 @@
 }
 .callout.callout--color-blue {
   background: var(--color-blue);
+  color: var(--telekom-color-text-and-icon-white-standard)
 }
 .callout.callout--color-black {
-  background: var(--color-black);
+  background: var(--telekom-color-ui-additional-extra-strong);
+  color: var(--telekom-color-text-and-icon-inverted-standard);
 }
 
 .callout.callout--size-large {
