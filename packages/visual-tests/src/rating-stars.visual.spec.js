@@ -56,7 +56,7 @@ describe('RatingStars', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       await page.mouse.move(40, 60);
       await page.mouse.down();
-      await page.waitForTimeout(500);
+      await page.waitFor(500);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });

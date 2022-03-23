@@ -29,7 +29,7 @@ describe('CheckboxGroup', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-      await page.waitForTimeout(500);
+      await page.waitFor(500);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     test.each([['standard']])('%p', async (variant) => {

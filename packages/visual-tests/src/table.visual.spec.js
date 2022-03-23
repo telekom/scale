@@ -18,7 +18,7 @@ describe('Table', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-table--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-      await page.waitForTimeout(5000);
+      await page.waitFor(5000);
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -37,7 +37,7 @@ describe('Table', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-table--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-      await page.waitForTimeout(5000);
+      await page.waitFor(5000);
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [

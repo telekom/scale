@@ -29,7 +29,7 @@ describe('DatePicker', () => {
         `document.querySelector("#root > div > scale-date-picker > div > duet-date-picker > div > div.duet-date__input-wrapper > button")`
       );
       await openButton.click();
-      await page.waitForTimeout(3000);
+      await page.waitFor(3000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // screenshots of stories

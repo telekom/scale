@@ -33,7 +33,7 @@ describe('Logo', () => {
       });
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       const image = await page.evaluateHandle(
-        `document.querySelector("#root > scale-logo").shadowRoot.querySelector("svg")`
+        `document.querySelector("#root scale-logo").shadowRoot.querySelector("svg")`
       );
       await image.focus();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
