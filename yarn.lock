@@ -4702,24 +4702,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@telekom/design-tokens@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.13.tgz#9f5c343a899426b412b680560c75c37fc07c8002"
-  integrity sha512-qREYj5pEs81uUBxcebGbiDBCPrZpUZ+YRinnRwIeVWWtwwXmcNiaiOcsTOGJDGBUcAxCaMk9Fnqw/xlQV69a3Q==
-
-"@telekom/scale-components@^3.0.0-beta.52":
-  version "3.0.0-beta.52"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-components/-/scale-components-3.0.0-beta.52.tgz#3c68f3b2e46782f7298e9555e715861f5e9e8717"
-  integrity sha512-yJwAG6VxYKb0PoKEcxMt8wh4V6KfXiGMRHVmzc+iyULkjbBzzy0RUOuWGcoaOfpvuTV33UigR892wdzT9WHXpA==
-  dependencies:
-    "@duetds/date-picker" "1.2.0"
-    "@popperjs/core" "2.6.0"
-    "@proyecto26/animatable-component" "^1.1.8"
-    "@stencil/core" "^2.7.1"
-    "@telekom/scale-design-tokens" "^3.0.0-beta.52"
-    classnames "^2.2.6"
-    stencil-inline-svg "^1.0.1"
-    web-animations-js "^2.3.2"
+"@telekom/design-tokens@^1.0.0-alpha.14":
+  version "1.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.15.tgz#c0e38823ba432548a7342bf38a811c3b578260f4"
+  integrity sha512-d2Y5uh16+WCVgaYF7lhe5K2qOLZwQsQbxeUUBkor37bd+QbYC1yW6YAeo3W+9Tc4j3ipuT4bZw5CmdVaCA18mw==
 
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"

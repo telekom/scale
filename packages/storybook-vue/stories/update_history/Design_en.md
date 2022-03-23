@@ -1,29 +1,24 @@
 # Design Updates
 
-​
 This page documents updates to the visual appearance of Scale
-​
 
 ## Dark and light mode
 
-
 15.03.22
 
-​- Dark Mode
+- Dark Mode
 - Optimized color palette
-- Implementation of semantic tokens for the color palette 
+- Implementation of semantic tokens for the color palette
 
 ## Roundings
 
-​
 11.11.2021
-​
 
 - Element roundings have been harmonized for better visual appearance.  
   <br>
   Affected Content: <br>
   [Brand Header](./?path=/docs/components-brand-header-navigation--standard)  
-  [Card](/?path=/docs/components-card--standard)  
+  [Card](./?path=/docs/components-card--standard)  
   [Data Grid](./?path=/docs/components-data-grid--standard)  
   [Date Picker](./?path=/docs/components-date-picker--standard)  
   [Dropdown](./?path=/docs/components-dropdown--standard)  
@@ -34,16 +29,11 @@ This page documents updates to the visual appearance of Scale
   [Table](./?path=/docs/components-table--standard)  
   [Tag](./?path=/docs/components-tag--standard)  
   [Text Area](./?path=/docs/components-text-area--standard)  
-  [Text Field](./?path=/docs/components-text-field--standard)  
-   ​
-  ​
-  ​
+  [Text Field](./?path=/docs/components-text-field--standard)
 
 ## Link color & underline
 
-​
 13.9.2021
-​
 
 - The default link color has been updated to blue-60. This way we ensure better contrasts and accessibility.
 - The option to use a link without underline has been added.  
