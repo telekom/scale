@@ -45,10 +45,35 @@
   line-height: 22px !important;
 }
 
-.addon-usage a {
+.sbdocs-a {
   font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
-  text-decoration: none !important;
-  color: #005ac4 !important;
+  color: #1c41eb !important;
+
+  outline: none;
+  font-weight: var(--telekom-typography-font-weight-medium);
+  position: relative;
+  display: inline-flex;
+  text-decoration: underline !important;
+  text-underline-offset: 0.1875em;
+  text-underline-position: from-font;
+  text-decoration-thickness: var(
+    --telekom-line-weight-standard,
+    var(--telekom-line-weight-standard)
+  ) !important;
+  transition: text-decoration var(--telekom-motion-duration-transition);
+}
+.sbdocs-a:hover {
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: #1035e3 !important;
+}
+.sbdocs-a:visited {
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: #51417f !important;
+}
+
+.sbdocs-a:active {
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: #082cdb !important;
 }
 
 .addon-usage p,
