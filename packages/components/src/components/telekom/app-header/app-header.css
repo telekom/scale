@@ -25,7 +25,8 @@ scale-app-header {
   --background-brand: var(--telekom-color-primary-standard);
 
   --color-nav: var(--telekom-color-text-and-icon-standard);
-  --background-nav: var(--telekom-color-background-canvas);
+  --background-nav: var(--telekom-color-background-surface);
+  --background-header-sticky: var(--telekom-color-background-canvas);
 
   --spacing-nav: 0 var(--telekom-spacing-unit-x4);
 }
@@ -39,6 +40,7 @@ scale-app-header {
 }
 
 .header__container {
+  background: var(--background-header-sticky);
   width: 100%;
   height: 128px;
 }
@@ -114,7 +116,7 @@ scale-app-header {
   position: absolute;
   border-top: var(--border);
   box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
-    var(--telekom-color-background-canvas);
+    var(--telekom-color-background-surface);
   background-color: transparent;
 }
 .header.menu--open .header__nav-before,
@@ -191,7 +193,7 @@ scale-app-header {
     height: calc(100vh - var(--header-nav-height));
     display: block;
     overflow-y: auto;
-    background: var(--telekom-color-background-canvas);
+    background: var(--telekom-color-background-surface);
   }
 
   .header .header__brand .header__brand-before,

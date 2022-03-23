@@ -29,7 +29,6 @@ function switchMode(mode) {
       previewIframe.contentWindow.document.querySelectorAll('iframe')
     ).forEach((x) => {
       x.contentWindow.document.body.dataset.mode = mode
-      x.contentWindow.document.body.style = `background: #fff`
     });
   } catch (e) {}
 }
