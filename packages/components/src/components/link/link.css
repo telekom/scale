@@ -101,6 +101,7 @@ slot[name='icon']::slotted(*) {
 :host(.no-underline) {
   --color-line-initial: transparent;
   --color-line-visited: transparent;
+  --line-color: transparent;
 }
 
 [part='anchor']:hover,
