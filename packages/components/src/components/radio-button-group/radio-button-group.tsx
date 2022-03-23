@@ -32,30 +32,28 @@ export class RadioButtonGroup {
 
   render() {
     return (
-      <form>
-        <fieldset class="radio-button-group">
-          <legend class="radio-button-group__title">
-            <label
-              class="radio-button-group__title-label"
-              aria-label={this.label}
+      <fieldset class="radio-button-group">
+        <legend class="radio-button-group__title">
+          <label
+            class="radio-button-group__title-label"
+            aria-label={this.label}
+          >
+            {this.label}
+          </label>
+          {this.helperText ? (
+            <div
+              role="text"
+              class={this.getCssClassMap()}
+              aria-label={this.helperText}
             >
-              {this.label}
-            </label>
-            {this.helperText ? (
-              <div
-                role="text"
-                class={this.getCssClassMap()}
-                aria-label={this.helperText}
-              >
-                {this.helperText}
-              </div>
-            ) : null}
-          </legend>
-          <div class="radio-button-group__container">
-            <slot />
-          </div>
-        </fieldset>
-      </form>
+              {this.helperText}
+            </div>
+          ) : null}
+        </legend>
+        <div class="radio-button-group__container">
+          <slot />
+        </div>
+      </fieldset>
     );
   }
 

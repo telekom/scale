@@ -59,7 +59,6 @@ scale-checkbox {
   --stroke-width: var(--stroke-width-checkbox, 0.5px);
 }
 
-:host,
 scale-checkbox {
   display: flex;
   width: fit-content;

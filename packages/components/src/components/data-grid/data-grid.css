@@ -320,6 +320,10 @@
   justify-content: center;
 }
 
+.tbody__cell scale-checkbox {
+  width: auto;
+}
+
 .tbody__nested {
   white-space: nowrap;
   padding: 0px;
