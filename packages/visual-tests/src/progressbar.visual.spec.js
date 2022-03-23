@@ -31,5 +31,5 @@ describe('ProgressBar', () => {
       });
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

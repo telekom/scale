@@ -1,6 +1,6 @@
 describe('Textfield', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => { 
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-text-field--standard&viewMode=story`
       );
@@ -52,7 +52,7 @@ describe('Textfield', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-  
+
       const textfield = await page.evaluateHandle(
         'document.querySelector("#input-text-field0")'
       );
@@ -65,5 +65,5 @@ describe('Textfield', () => {
       await textfield.focus();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
-});  
+  });
+});

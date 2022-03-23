@@ -1,6 +1,6 @@
-describe('RatingStars', () => { 
+describe('RatingStars', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {  
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--standard&viewMode=story`
       );
@@ -59,5 +59,5 @@ describe('RatingStars', () => {
       await page.waitForTimeout(500);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
-});  
+  });
+});

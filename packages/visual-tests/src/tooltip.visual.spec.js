@@ -14,7 +14,7 @@ describe('Tooltip', () => {
       );
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');
-  
+
       await page.evaluate(() => {
         [
           '--telekom-motion-duration-immediate',
@@ -31,5 +31,5 @@ describe('Tooltip', () => {
       await button.hover();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

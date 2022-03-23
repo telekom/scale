@@ -38,7 +38,7 @@ describe('DataGrid', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-  
+
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });

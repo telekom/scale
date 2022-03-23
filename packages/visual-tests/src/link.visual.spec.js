@@ -34,7 +34,7 @@ describe('Link', () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-link--${variant}&viewMode=story`
       );
-  
+
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
@@ -58,5 +58,5 @@ describe('Link', () => {
       await page.mouse.down();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

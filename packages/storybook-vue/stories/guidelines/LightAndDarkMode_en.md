@@ -45,19 +45,19 @@ Setting the `data-mode` attribute will override the system preferences.
 A switch can be built into the UI with a bit of JavaScript, to set the `data-mode` attribute accordingly. The following snippet should serve as an illustration:
 
 ```js
-const element = document.querySelector('.mode-switch')
+const element = document.querySelector('.mode-switch');
 
 element.addEventListener('click', function switchMode() {
-  const isDark = document.body.dataset.mode === 'dark'
-  document.body.dataset.mode = isDark ? 'light' : 'dark'
-})
+  const isDark = document.body.dataset.mode === 'dark';
+  document.body.dataset.mode = isDark ? 'light' : 'dark';
+});
 ```
 
 In JavaScript, you can check and monitor the system preference via the window.matchMedia method.
 
 ```js
-const mq = window.matchMedia('(prefers-color-scheme: dark)')
-const isDark = mq.matches
+const mq = window.matchMedia('(prefers-color-scheme: dark)');
+const isDark = mq.matches;
 ```
 
 ### Disabling automatic switching
@@ -65,5 +65,5 @@ const isDark = mq.matches
 If you want your app to be in either light or dark mode regardless of the user's system preferences, set the `data-mode` attribute to the desired mode:
 
 ```html
-<body data-mode="light">
+<body data-mode="light"></body>
 ```

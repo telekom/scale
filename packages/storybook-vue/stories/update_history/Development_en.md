@@ -35,7 +35,9 @@ scale-button::part(base) {
 ✅ you overwrite component-scoped variables (e.g. `--background-window` for scale-modal), either in CSS or inlined in HTML, e.g.
 
 ```html
-<scale-modal style="--background-window: turquoise" heading="Nice">Lorem ipsum</scale-modal>
+<scale-modal style="--background-window: turquoise" heading="Nice"
+  >Lorem ipsum</scale-modal
+>
 ```
 
 ✅ you use --scl prefixed variables in your own CSS, e.g.

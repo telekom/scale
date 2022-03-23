@@ -1,6 +1,6 @@
 describe('Table', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {     
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-table--standard&viewMode=story`
       );

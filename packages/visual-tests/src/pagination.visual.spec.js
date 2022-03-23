@@ -79,8 +79,10 @@ describe('Pagination', () => {
         const firstButton = await page.evaluateHandle(
           `document.querySelector("#root scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
         );
-        const base = await page.evaluateHandle(`document.querySelector("#root")`);
-  
+        const base = await page.evaluateHandle(
+          `document.querySelector("#root")`
+        );
+
         firstButton.hover();
         expect(await previewHtml.screenshot()).toMatchImageSnapshot();
         base.hover();
@@ -92,4 +94,4 @@ describe('Pagination', () => {
       }
     );
   });
-});  
+});

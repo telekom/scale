@@ -65,4 +65,4 @@ describe('Dropdown', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

@@ -34,5 +34,5 @@ describe('NotificationToast', () => {
       await page.waitFor(3000);
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

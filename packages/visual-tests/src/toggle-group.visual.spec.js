@@ -36,7 +36,7 @@ describe('ToggleGroup', () => {
         });
       });
       await page.waitForTimeout(500);
-  
+
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // hover, active, focus
@@ -44,10 +44,10 @@ describe('ToggleGroup', () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=beta-components-toggle-group--${variant}&viewMode=story`
       );
-  
+
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');
-  
+
       await page.evaluate(() => {
         [
           '--telekom-motion-duration-immediate',
@@ -58,7 +58,7 @@ describe('ToggleGroup', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-  
+
       const buttonOne = await page.evaluateHandle(
         `document.querySelector("#root scale-toggle-group > scale-toggle-button[radius='left']").shadowRoot.querySelector("button")`
       );
@@ -79,4 +79,4 @@ describe('ToggleGroup', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

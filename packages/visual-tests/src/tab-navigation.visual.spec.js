@@ -19,7 +19,7 @@ describe('TabNavigation', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -31,7 +31,7 @@ describe('TabNavigation', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-  
+
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
     // hover, focus, active

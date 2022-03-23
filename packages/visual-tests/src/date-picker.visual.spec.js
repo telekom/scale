@@ -76,4 +76,4 @@ describe('DatePicker', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

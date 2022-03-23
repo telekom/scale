@@ -13,7 +13,7 @@ describe('Brand Header', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -33,13 +33,13 @@ describe('Brand Header', () => {
       await firstLink.focus();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  
+
     it('custom mega menu states', async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--custom-main-navigation&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -59,7 +59,7 @@ describe('Brand Header', () => {
       await firstLink.focus();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  
+
     test.each([
       ['standard'],
       ['custom-main-navigation'],
@@ -72,7 +72,7 @@ describe('Brand Header', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -86,5 +86,5 @@ describe('Brand Header', () => {
       });
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
-})
+  });
+});

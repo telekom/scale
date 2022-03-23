@@ -32,5 +32,4 @@ describe('Icon', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
-
+});

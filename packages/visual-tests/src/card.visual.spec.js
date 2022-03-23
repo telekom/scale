@@ -18,7 +18,7 @@ describe('Card', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-card--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -40,5 +40,5 @@ describe('Card', () => {
         expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       }
     });
-  });  
-});  
+  });
+});

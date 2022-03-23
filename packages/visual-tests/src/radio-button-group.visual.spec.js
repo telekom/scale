@@ -53,7 +53,7 @@ describe('RadioButtonGroup', () => {
         `document.querySelector("#root scale-radio-button-group > scale-radio-button:nth-child(1) > div > label")`
       );
       const base = await page.evaluateHandle(`document.querySelector("#root")`);
-  
+
       await firstRadioButton.focus();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       await base.click();
@@ -66,5 +66,5 @@ describe('RadioButtonGroup', () => {
       await firstRadioButton.click();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

@@ -27,5 +27,4 @@ describe('Footer', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
-
+});

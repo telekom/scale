@@ -1,6 +1,6 @@
 describe('NotificationMessage', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {     
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-notification-message--standard&viewMode=story`
       );
@@ -36,4 +36,4 @@ describe('NotificationMessage', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

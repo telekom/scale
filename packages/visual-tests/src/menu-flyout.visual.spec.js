@@ -1,6 +1,6 @@
 describe('Menu', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {     
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-flyout-menu--standard&viewMode=story`
       );

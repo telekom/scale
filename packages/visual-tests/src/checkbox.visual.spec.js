@@ -49,7 +49,7 @@ describe('Checkbox', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-checkbox--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -78,5 +78,5 @@ describe('Checkbox', () => {
         expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       }
     });
-  });  
+  });
 });

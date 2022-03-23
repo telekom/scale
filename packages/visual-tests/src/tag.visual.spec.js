@@ -1,6 +1,6 @@
 describe('Tag', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {     
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-tag--standard&viewMode=story`
       );
@@ -38,4 +38,4 @@ describe('Tag', () => {
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });
-});  
+});

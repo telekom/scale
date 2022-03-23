@@ -37,5 +37,5 @@ describe('NotificationBanner', () => {
       });
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

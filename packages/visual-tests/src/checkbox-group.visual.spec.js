@@ -48,7 +48,7 @@ describe('CheckboxGroup', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-  
+
       const firstCheckbox = await page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
       );
@@ -58,7 +58,7 @@ describe('CheckboxGroup', () => {
       const label = await page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > label")`
       );
-  
+
       await label.hover();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       await firstCheckbox.focus();
@@ -67,5 +67,5 @@ describe('CheckboxGroup', () => {
       await page.mouse.down();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
-});  
+  });
+});

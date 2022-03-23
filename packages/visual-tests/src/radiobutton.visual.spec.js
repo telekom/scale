@@ -39,7 +39,7 @@ describe('RadioButton', () => {
     await page.goto(
       `http://host.docker.internal:3123/iframe.html?id=components-radio-button--${variant}&viewMode=story`
     );
-  
+
     await page.waitForSelector('html.hydrated');
     const previewHtml = await page.$('body');
     await page.evaluate(() => {
@@ -58,7 +58,7 @@ describe('RadioButton', () => {
     const radioButton = await page.evaluateHandle(
       `document.querySelector("#root > scale-radio-button > div > input")`
     );
-  
+
     radioButton.focus();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     radioButtonWrapper.hover();
@@ -66,5 +66,5 @@ describe('RadioButton', () => {
     await page.mouse.move(20, 20);
     await page.mouse.down();
     expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });  
+  });
 });

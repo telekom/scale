@@ -1,6 +1,6 @@
 describe('NotificationBadge', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {     
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-notification-badge--standard&viewMode=story`
       );
@@ -34,5 +34,5 @@ describe('NotificationBadge', () => {
       });
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

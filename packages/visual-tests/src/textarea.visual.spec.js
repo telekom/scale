@@ -54,7 +54,7 @@ describe('Textarea', () => {
       const textarea = await page.evaluateHandle(
         'document.querySelector("#input-textarea0")'
       );
-  
+
       await page.mouse.move(60, 40);
       await page.mouse.down();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
@@ -64,5 +64,5 @@ describe('Textarea', () => {
       await textarea.focus();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });

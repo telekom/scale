@@ -13,7 +13,7 @@ describe('Breadcrumb', () => {
         `http://host.docker.internal:3123/iframe.html?id=components-breadcrumb--${variant}&viewMode=story`
       );
       await page.waitForSelector('html.hydrated');
-  
+
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
         [
@@ -36,6 +36,5 @@ describe('Breadcrumb', () => {
       await page.mouse.down();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
-  });  
+  });
 });
-  

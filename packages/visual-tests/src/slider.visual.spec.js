@@ -1,6 +1,6 @@
-describe('Slider', () => { 
+describe('Slider', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
-    beforeAll(async () => {  
+    beforeAll(async () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-slider--standard&viewMode=story`
       );
@@ -37,7 +37,7 @@ describe('Slider', () => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-slider--${variant}&viewMode=story`
       );
-  
+
       await page.waitForSelector('html.hydrated');
       const previewHtml = await page.$('body');
       await page.evaluate(() => {
@@ -50,7 +50,7 @@ describe('Slider', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-  
+
       const slider = await page.evaluateHandle(
         `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
       );
