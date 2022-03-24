@@ -39,7 +39,7 @@
 }
 .callout.callout--color-blue {
   background: var(--color-blue);
-  color: var(--telekom-color-text-and-icon-white-standard)
+  color: var(--telekom-color-text-and-icon-white-standard);
 }
 .callout.callout--color-black {
   background: var(--telekom-color-ui-additional-extra-strong);
