@@ -92,17 +92,12 @@ scale-table {
 .table th:focus {
   outline: none;
 }
-.table--size-default {
-}
 .table--size-default tbody tr td {
   padding: var(--spacing-tbody-td);
-}
-.table--sortable {
 }
 .table--sortable th {
   cursor: pointer;
   padding: var(--spacing-th-sortable);
-  border-radius: var(--radius);
 }
 .table--sortable th:hover {
   padding: var(--spacing-th-sortable);
@@ -113,6 +108,7 @@ scale-table {
 }
 .table--sortable th:focus {
   box-shadow: var(--box-shadow-th-sortable-focus);
+  border-radius: var(--radius);
 }
 .table--sortable th .scale-sort-indicator svg {
   display: block;
