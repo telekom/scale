@@ -25,7 +25,8 @@ scale-app-header {
   --background-brand: var(--telekom-color-primary-standard);
 
   --color-nav: var(--telekom-color-text-and-icon-standard);
-  --background-nav: var(--telekom-color-background-surface);
+  --background-nav: var(--telekom-color-background-canvas);
+  --background-nav-sticky: var(--telekom-color-background-surface);
   --background-header-sticky: var(--telekom-color-background-canvas);
 
   --spacing-nav: 0 var(--telekom-spacing-unit-x4);
@@ -94,6 +95,7 @@ scale-app-header {
 .header.menu--open .header__nav,
 .header.header--sticky .header__nav {
   border-bottom: var(--border);
+  background: var(--background-nav-sticky);
 }
 .header .header__nav-content {
   width: 100%;
