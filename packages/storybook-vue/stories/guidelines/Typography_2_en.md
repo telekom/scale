@@ -1,41 +1,24 @@
-## Hierarchy through typography
+## Font formats for user interfaces
 
-Clearly distinguishable font hierarchies provide orientation and make important information immediately apparent.
+Scale uses a selected combination of font formats to create clear and focused interfaces. A selection from the following font formats is well suited for designing your content.
 
-![Image Name](assets/2_guidelines/3_typography/hierarchie01.png)
+![Image Name](assets/2_guidelines/3_typography/Formate-en.png)
 
-Example 1: The focus on the headline with lead text (Body large) allows for a smooth transition into the content. The left alignment supports the flow of reading.
+### Format and CSS class names
 
-![Image Name](assets/2_guidelines/3_typography/hierarchie02.png)
+| application | CSS class name               |
+| ----------- | ---------------------------- |
+| Heading 01  | .scl-font-variant-heading-1  |
+| Heading 02  | .scl-font-variant-heading-2  |
+| Heading 03  | .scl-font-variant-heading-3  |
+| Heading 04  | .scl-font-variant-heading-4  |
+| Heading 05  | .scl-font-variant-heading-5  |
+| Heading 06  | .scl-font-variant-heading-6  |
+| Body large  | .scl-font-variant-body-large |
+| Body long   | .scl-font-variant-body       |
+| Body short  | .scl-font-variant-body-short |
 
-Example 2: Section headings help easily structure more complex content.
+## Colors
 
-## Legibility
-
-### Line spacing
-
-Longer body text is easier to read if the line spacing is slightly increased. For text with more than three lines, use the "Body long" format (TeleNeo Regular 16 px with 24 px line spacing).
-
-![Image Name](assets/2_guidelines/3_typography/lesbarkeit01.png)
-
-Short texts are easier to grasp when they appear more compact.
-For just a few lines, use the "Body short" format (TeleNeo Regular 16 px with 20 px line spacing).
-
-![Image Name](assets/2_guidelines/3_typography/lesbarkeit02.png)
-
-### Line length
-
-Lines that are too long tire readers out. Lines that are too short make it difficult to read the text.
-The table of font formats shows our recommendations for the appropriate line length for different font sizes.
-
-![Image Name](assets/2_guidelines/3_typography/zeilenlaengen01.png)
-
-The line of a headline with the size Heading 01 should consist of approx. 30 - 50 characters. Avoid multi-line headlines.
-
-![Image Name](assets/2_guidelines/3_typography/zeilenlaengen02.png)
-
-A line of copy text (here: Body short) should consist of minimum 25 and maximum 80-100 characters.
-
-## Language, style, and tone
-
-You can find information on Telekom's style, language, and tone in the article [Brand-Specific Writing](https://www.brand-design.telekom.com/en/articles/brand-specific-writing/).
+When choosing text colors, it’s most important to consider legibility. The minimum contrast for small texts is 4.5 to 1.
+Scale contains standard colors for texts, text links, and user feedback like error and success messages.
