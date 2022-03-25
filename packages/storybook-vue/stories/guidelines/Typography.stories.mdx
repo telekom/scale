@@ -130,7 +130,7 @@ import { addons } from '@storybook/addons';
           levelStringItem.length = 0;
           cleared = true;
         }
-        function generateTableColorRow(
+        function generateColorTableRow(
           itemPathString,
           commentStringGerman,
           commentStringEnglish,
@@ -509,7 +509,7 @@ import { addons } from '@storybook/addons';
             </tr>
           ) : null;
         }
-        function generateTableHead() {
+        function generateColorTableHead() {
           return (
             <thead>
               <tr>
@@ -585,7 +585,10 @@ import { addons } from '@storybook/addons';
             </thead>
           );
         }
-        function generateSectionTitle(sectionTitleGerman, sectionTitleEnglish) {
+        function generateColorSectionTitle(
+          sectionTitleGerman,
+          sectionTitleEnglish
+        ) {
           return (
             <div
               style={{
@@ -612,6 +615,137 @@ import { addons } from '@storybook/addons';
             globals: { colorMode: toggleMode },
           });
         }
+        function generateFontFormatTableHead() {
+          return (
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  {locale === 'en' ? 'Application' : 'Anwendung'}
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  {locale === 'en' ? 'Typeface' : 'Schriftschnitt'}
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  {locale === 'en'
+                    ? 'Font size/ Line spacing (in px)'
+                    : 'Schriftgröße/ Zellenabstand (in px)'}
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  {locale === 'en'
+                    ? 'Line spacing (in %)'
+                    : 'Zeilenabstand (in %)'}
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  {locale === 'en'
+                    ? 'Max. keystrokes per line'
+                    : 'Max. Anschläge pro Zeile'}
+                  Max. keystrokes per line
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  {locale === 'en'
+                    ? ' Font size/ Line spacing (in REM)'
+                    : 'Schriftgröße/ Zeilenabstand (in REM)'}
+                </th>
+              </tr>
+            </thead>
+          );
+        }
         return (
           <DocsContainer context={context}>
             {locale && (
@@ -637,55 +771,55 @@ import { addons } from '@storybook/addons';
                     }}
                   >
                     <div>
-                      {generateSectionTitle(
+                      {generateColorSectionTitle(
                         'Textfarben Standard',
                         'Textcolor Standard'
                       )}
-                      {generateTableHead()}
+                      {generateColorTableHead()}
                       <tbody>
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.standard',
                           'Für alle Standard Texte.',
                           'For all standard texts.'
                         )}
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.additional',
                           'Für Texte mit ergänzenden Informationen.',
                           'For texts with additional information.'
                         )}
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.disabled',
                           'Nur für Texte im disabled State.',
                           'Only for texts in disabled state.'
                         )}
                       </tbody>
-                      {generateSectionTitle(
+                      {generateColorSectionTitle(
                         'Textfarbe Funktion',
                         'Textcolor Function'
                       )}
-                      {generateTableHead()}
+                      {generateColorTableHead()}
                       <tbody>
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.link.standard',
                           'Für unterstützende Informationen sowie für Funktionen wie synchronisieren, sortieren und hinzufügen.',
                           'For supporting information as well as for functions like synchronize, sort and add.'
                         )}
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.functional.success',
                           'Bestätigt eine erfolgreich durchgeführte Aktion oder für Funktion wie senden, anrufen und aktivieren.',
                           ''
                         )}
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.functional.danger',
                           'Für Fehlermeldungen oder Funktionen wie beenden und löschen.',
                           'Confirms a successfully performed action or for function like send, call and activate.'
                         )}
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.functional.warning',
                           'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
                           'For warnings of potentially undesirable results.'
                         )}
-                        {generateTableColorRow(
+                        {generateColorTableRow(
                           'color.text-&-icon.functional.informational',
                           'Für unterstützende Informationen.',
                           'For supporting information.'
