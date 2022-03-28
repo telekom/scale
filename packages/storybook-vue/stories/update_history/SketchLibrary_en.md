@@ -1,29 +1,39 @@
-# Sketch-Library Update
+# Update Sketch Library
 
-## Aktualisierung der Sketch Library
+## Important for existing projects
 
-Die neuesten Änderungen der Sketch-Library können in einzelnen Fällen unerwünschte Auswirkungen auf deine bestehenden Projekte haben. Um sicherzustellen, dass du auf alle Eventualitäten gut vorbereitet bist, weichen wir vom üblichen Vorgehen, die Library direkt aus Sketch zu aktualisieren, ab. Bitte lese dir zunächst die folgenden Punkte durch und aktualisiere dann die Library über den unten stehenden Button.
+To take full advantage of the new features, your components and colors should be linked to the library. Especially self-defined colors remain unaffected by the update. In order to avoid unwanted effects caused by an automatic update of the library, we are providing a new library for this release. Please read the following points first and only then load the new library via the button below.
 
-## Wichtig für existierende Projekte
+## How to best prepare your project for the update
 
-Importierst du die neue Scale Library, wirken sich die Neuerungen in deinen Layouts nur auf die mit der Library verknüpften Komponenten aus. Hast du Komponenten getrennt (detached) oder selbst gebaut, bleiben diese vom Update unberührt.
+### 1. Check your layout for detached components
 
-## Bereite dein Projekt optimal auf das Update vor
+Check your layout for detached components, otherwise they cannot be updated via the library update. Name the layer group of the detached component like the corresponding symbol in the library. Now you can simply replace it with the symbol from the library: Menu Layer -> Replace with.
 
-### 1. Prüfe dein Layout auf abgetrennte Komponenten
+<img src="assets/replace-component-en.png"  />
 
-Prüfe zunächst dein Layout auf abgetrennte Komponenten, da diese sonst nicht über das Update aktualisiert werden können. In Sketch kannst du Instanzen, Gruppen oder Ebenen mit Symbolen aus Libraries ersetzen. Wähle hierzu das zu überschreibende Objekt aus und wähle (Menü „Layer”, „Replace with”).
+### 2. Make sure your elements are linked to colors from the library
 
-### 2. Stelle sicher, dass deine Elemente mit Farben aus der Library verknüpft sind
+By clicking on a layer and then selecting Fill and/or Border in the inspector panel, you can see whether a color is individually selected or whether it comes from the selected default library color. The correct color tokens must be applied for the library to be fully functional. Find out more in our Design Tokens guideline
 
-Klicke auf eine Ebene und wähle danach „Fill“ und/oder „Border“ im Inspector-Panel aus, um zu erkennen, ob eine Farbe individuell gewählt ist oder ob sie aus der vorgegebenen Farbauswahl der Library stammt. Für die volle Funktionsfähigkeit der Library müssen die korrekten Farb-Tokens angewendet werden. Erfahre mehr in unserer Guideline zu den Design Tokens.
+<img src="assets/choose-color-token-en.png"  />
 
-### Library Update laden
+## Add new library
 
-Hast du deine bestehenden Projekt geprüft? Dann aktualisiere hier deine Sketch Library. Viel Spaß mit der neuen Version.
+Have you checked your existing project? Then add the new Sketch Library. Have fun with the new version. Scale Components Light Mode
 
-[Neue Library-Version hinzufügen](./#)
+<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
+name="SketchLibrary"
+style="border: none;"
+frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
+</iframe>
 
-### So setzt du die Library auf die vorherige Version zurück
+## Reverting back to the previous version of the library
 
-Lade hier die vorherige Version erneut herunter und ersetze die neue Version. In Sketch klickst du auf die Mitteilung in der oberen rechten Ecke. Es öffnet sich ein Flyout mit der Option „Components update available“. Durch Klick auf diese Option wird dein Layout auf die vorherige Version zurückgesetzt.
+Download the previous version and replace the new version. In Sketch, click the notification in the top-right corner. A flyout opens with the option: Components update available. This option will revert your layout back to the previous version.
+
+<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=1&no_cache=1"
+name="SketchLibrary"
+style="border: none;"
+frameborder="0" marginheight="0px" marginwidth="0px" height="22px" width="100%">
+</iframe>
