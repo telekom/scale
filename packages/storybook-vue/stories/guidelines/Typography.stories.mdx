@@ -625,7 +625,7 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: '#6A6A6A',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
                     paddingTop: 'var(--telekom-spacing-unit-x1)',
@@ -641,7 +641,7 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: '#6A6A6A',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
                     paddingTop: 'var(--telekom-spacing-unit-x1)',
@@ -657,7 +657,7 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: '#6A6A6A',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
                     paddingTop: 'var(--telekom-spacing-unit-x1)',
@@ -675,14 +675,14 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: '#6A6A6A',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
                     paddingTop: 'var(--telekom-spacing-unit-x1)',
-                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingRight: 'var(--telekom-spacing-unit-x3)',
                     paddingBottom: 'var(--telekom-spacing-unit-x1)',
                     paddingLeft: 'var(--telekom-spacing-unit-x2)',
-                    width: '150px',
+                    width: '80px',
                   }}
                 >
                   {locale === 'en'
@@ -693,11 +693,11 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: '#6A6A6A',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
                     paddingTop: 'var(--telekom-spacing-unit-x1)',
-                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingRight: 'var(--telekom-spacing-unit-x3)',
                     paddingBottom: 'var(--telekom-spacing-unit-x1)',
                     paddingLeft: 'var(--telekom-spacing-unit-x2)',
                     width: '100px',
@@ -711,7 +711,7 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: '#6A6A6A',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
                     paddingTop: 'var(--telekom-spacing-unit-x1)',
@@ -767,6 +767,7 @@ import { addons } from '@storybook/addons';
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
+                  fontSize: '14px',
                 }}
               >
                 {getFontWeightNameByNumber(item.value.fontWeight)}
@@ -775,13 +776,14 @@ import { addons } from '@storybook/addons';
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
+                  fontSize: '14px',
                 }}
               >
                 {item.value.fontSize.substring(
                   0,
                   item.value.fontSize.length - 3
                 ) * 16}
-                {'/'}
+                {' / '}
                 {(
                   item.value.fontSize.substring(
                     0,
@@ -795,6 +797,7 @@ import { addons } from '@storybook/addons';
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
+                  fontSize: '14px',
                 }}
               >
                 {(item.value.lineSpacing * 100).toFixed(0)}
@@ -803,6 +806,7 @@ import { addons } from '@storybook/addons';
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
+                  fontSize: '14px',
                 }}
               >
                 Hello
@@ -811,13 +815,14 @@ import { addons } from '@storybook/addons';
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
+                  fontSize: '14px',
                 }}
               >
                 {item.value.fontSize.substring(
                   0,
                   item.value.fontSize.length - 3
                 )}
-                {'/'}
+                {' / '}
                 {(
                   item.value.fontSize.substring(
                     0,
