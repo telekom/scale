@@ -6,7 +6,7 @@
 
 Zusätzlich zum Light Mode enthält Scale nun alle Komponenten auch für den [Dark Mode](./?path=/docs/guidelines-light-and-dark-mode--page).
 
-## Optimierte Farbpalette und semantische Farb-Tokens
+### Optimierte Farbpalette und semantische Farb-Tokens
 
 Wir haben die [Farbpalette](./?path=/docs/guidelines-colors--page) angepasst, sodass sie für beide Modi ein konsistentes Erscheinungsbild bietet. Selbstverständlich sind alle Farben in unseren Komponenten auf Barrierefreiheit geprüft. Durch die Verwendung semantischer Token-Namen wie Text & Icon oder Link erkennst du leichter, welcher Stil für welches Element gedacht ist.
 
