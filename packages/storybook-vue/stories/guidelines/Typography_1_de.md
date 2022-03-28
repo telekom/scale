@@ -30,19 +30,6 @@ Scale verwendet eine ausgewählte Kombination von Schriftformaten, um klare und 
 
 ![Image Name](assets/2_guidelines/3_typography/Formate_2x.jpg)
 
-### Formate und CSS Klassen
-
-| Format     | CSS Klasse                   |
-| ---------- | ---------------------------- |
-| Heading 01 | .scl-font-variant-heading-1  |
-| Heading 02 | .scl-font-variant-heading-2  |
-| Heading 03 | .scl-font-variant-heading-3  |
-| Heading 04 | .scl-font-variant-heading-4  |
-| Heading 05 | .scl-font-variant-heading-5  |
-| Heading 06 | .scl-font-variant-heading-6  |
-| Lead text  | .scl-font-variant-body-large |
-| Body long  | .scl-font-variant-body       |
-
 ## Farben
 
 Achte bei der Auswahl von Textfarben auf die Lesbarkeit. Der Mindestkontrast bei kleinen Texten liegt bei 4,5 zu 1.
