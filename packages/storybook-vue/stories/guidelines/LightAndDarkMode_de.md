@@ -51,7 +51,7 @@ Wenn du bereits eine ältere Version unserer Sketch Library nutzt, lese dir bitt
 
 ## Hinweis für Entwickler\*innen
 
-## Dark Mode implementieren
+### Dark Mode implementieren
 
 Der Dark Mode ist in Scale ab Version `3.0.0-rc.1` enthalten. Er nutzt CSS-Variablen, um einen Wechsel des Modus zu ermöglichen.
 
