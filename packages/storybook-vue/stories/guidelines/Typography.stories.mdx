@@ -729,6 +729,105 @@ import { addons } from '@storybook/addons';
             </thead>
           );
         }
+        function getFontWeightNameByNumber(fontWeightNumber) {
+          switch (fontWeightNumber) {
+            case 100:
+              return 'Thin';
+            case 200:
+              return 'Extra Light';
+            case 300:
+              return 'Light';
+            case 400:
+              return 'Regular/ Normal';
+            case 500:
+              return 'Medium';
+            case 600:
+              return 'Semi Bold';
+            case 700:
+              return 'Bold';
+            case 800:
+              return 'Extra Bold';
+          }
+        }
+        function generateFontFormatTableRow(itemPathString) {
+          item = getItemByPathString(itemPathString);
+          return (
+            <tr>
+              <td
+                style={{
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingTop: 'var(--telekom-spacing-unit-x2)',
+                  fontSize: `${item.value.fontSize}`,
+                  fontWeight: `${item.value.fontWeight}`,
+                }}
+              >
+                {item.name}
+              </td>
+              <td
+                style={{
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingTop: 'var(--telekom-spacing-unit-x2)',
+                }}
+              >
+                {getFontWeightNameByNumber(item.value.fontWeight)}
+              </td>
+              <td
+                style={{
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingTop: 'var(--telekom-spacing-unit-x2)',
+                }}
+              >
+                {item.value.fontSize.substring(
+                  0,
+                  item.value.fontSize.length - 3
+                ) * 16}
+                {'/'}
+                {(
+                  item.value.fontSize.substring(
+                    0,
+                    item.value.fontSize.length - 3
+                  ) *
+                  16 *
+                  item.value.lineSpacing
+                ).toFixed(0)}
+              </td>
+              <td
+                style={{
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingTop: 'var(--telekom-spacing-unit-x2)',
+                }}
+              >
+                {(item.value.lineSpacing * 100).toFixed(0)}
+              </td>
+              <td
+                style={{
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingTop: 'var(--telekom-spacing-unit-x2)',
+                }}
+              >
+                Hello
+              </td>
+              <td
+                style={{
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingTop: 'var(--telekom-spacing-unit-x2)',
+                }}
+              >
+                {item.value.fontSize.substring(
+                  0,
+                  item.value.fontSize.length - 3
+                )}
+                {'/'}
+                {(
+                  item.value.fontSize.substring(
+                    0,
+                    item.value.fontSize.length - 3
+                  ) * item.value.lineSpacing
+                ).toFixed(2)}
+              </td>
+            </tr>
+          );
+        }
         return (
           <DocsContainer context={context}>
             {locale && (
@@ -736,7 +835,14 @@ import { addons } from '@storybook/addons';
                 <Description
                   markdown={locale === 'en' ? text_first_en : text_first_de}
                 />
-                <div>{generateFontFormatTableHead()}</div>
+                {generateFontFormatTableHead()}
+                {lightTokens.tokens
+                  .filter((item) => item.category == 'Text Style')
+                  .map((item) => {
+                    {
+                      return generateFontFormatTableRow(item.pathString);
+                    }
+                  })}
                 <Description
                   markdown={locale === 'en' ? text_second_en : text_second_de}
                 />
@@ -757,58 +863,56 @@ import { addons } from '@storybook/addons';
                       backgroundColor: `${darkMode ? '#000' : '#fff'}`,
                     }}
                   >
-                    <div>
-                      {generateColorSectionTitle(
-                        'Textfarben Standard',
-                        'Textcolor Standard'
-                      )}
-                      {generateColorTableHead()}
-                      {generateColorTableRow(
-                        'color.text-&-icon.standard',
-                        'Für alle Standard Texte.',
-                        'For all standard texts.'
-                      )}
-                      {generateColorTableRow(
-                        'color.text-&-icon.additional',
-                        'Für Texte mit ergänzenden Informationen.',
-                        'For texts with additional information.'
-                      )}
-                      {generateColorTableRow(
-                        'color.text-&-icon.disabled',
-                        'Nur für Texte im disabled State.',
-                        'Only for texts in disabled state.'
-                      )}
-                      {generateColorSectionTitle(
-                        'Textfarbe Funktion',
-                        'Textcolor Function'
-                      )}
-                      {generateColorTableHead()}
-                      {generateColorTableRow(
-                        'color.text-&-icon.link.standard',
-                        'Für unterstützende Informationen sowie für Funktionen wie synchronisieren, sortieren und hinzufügen.',
-                        'For supporting information as well as for functions like synchronize, sort and add.'
-                      )}
-                      {generateColorTableRow(
-                        'color.text-&-icon.functional.success',
-                        'Bestätigt eine erfolgreich durchgeführte Aktion oder für Funktion wie senden, anrufen und aktivieren.',
-                        ''
-                      )}
-                      {generateColorTableRow(
-                        'color.text-&-icon.functional.danger',
-                        'Für Fehlermeldungen oder Funktionen wie beenden und löschen.',
-                        'Confirms a successfully performed action or for function like send, call and activate.'
-                      )}
-                      {generateColorTableRow(
-                        'color.text-&-icon.functional.warning',
-                        'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
-                        'For warnings of potentially undesirable results.'
-                      )}
-                      {generateColorTableRow(
-                        'color.text-&-icon.functional.informational',
-                        'Für unterstützende Informationen.',
-                        'For supporting information.'
-                      )}
-                    </div>
+                    {generateColorSectionTitle(
+                      'Textfarben Standard',
+                      'Textcolor Standard'
+                    )}
+                    {generateColorTableHead()}
+                    {generateColorTableRow(
+                      'color.text-&-icon.standard',
+                      'Für alle Standard Texte.',
+                      'For all standard texts.'
+                    )}
+                    {generateColorTableRow(
+                      'color.text-&-icon.additional',
+                      'Für Texte mit ergänzenden Informationen.',
+                      'For texts with additional information.'
+                    )}
+                    {generateColorTableRow(
+                      'color.text-&-icon.disabled',
+                      'Nur für Texte im disabled State.',
+                      'Only for texts in disabled state.'
+                    )}
+                    {generateColorSectionTitle(
+                      'Textfarbe Funktion',
+                      'Textcolor Function'
+                    )}
+                    {generateColorTableHead()}
+                    {generateColorTableRow(
+                      'color.text-&-icon.link.standard',
+                      'Für unterstützende Informationen sowie für Funktionen wie synchronisieren, sortieren und hinzufügen.',
+                      'For supporting information as well as for functions like synchronize, sort and add.'
+                    )}
+                    {generateColorTableRow(
+                      'color.text-&-icon.functional.success',
+                      'Bestätigt eine erfolgreich durchgeführte Aktion oder für Funktion wie senden, anrufen und aktivieren.',
+                      ''
+                    )}
+                    {generateColorTableRow(
+                      'color.text-&-icon.functional.danger',
+                      'Für Fehlermeldungen oder Funktionen wie beenden und löschen.',
+                      'Confirms a successfully performed action or for function like send, call and activate.'
+                    )}
+                    {generateColorTableRow(
+                      'color.text-&-icon.functional.warning',
+                      'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
+                      'For warnings of potentially undesirable results.'
+                    )}
+                    {generateColorTableRow(
+                      'color.text-&-icon.functional.informational',
+                      'Für unterstützende Informationen.',
+                      'For supporting information.'
+                    )}
                   </table>
                 </div>
                 <Description
