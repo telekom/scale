@@ -16,33 +16,32 @@ TeleNeo has five font styles that are evenly graded in terms of weight. When use
 
 ### Font weights and CSS variables
 
-| weight    | variable name               | CSS value |
-| --------- | --------------------------- | --------- |
-| extrabold | --scl-font-weight-extrabold | 800       |
-| bold      | --scl-font-weight-bold      | 700       |
-| medium    | --scl-font-weight-medium    | 500       |
-| regular   | --scl-font-weight-regular   | 400       |
-| thin      | --scl-font-weight-thin      | 200       |
+| weight    | variable name                              | CSS value |
+| --------- | ------------------------------------------ | --------- |
+| extrabold | --telekom-typography-font-weight-extrabold | 800       |
+| bold      | --telekom-typography-font-weight-bold      | 700       |
+| medium    | --telekom-typography-font-weight-medium    | 500       |
+| regular   | --telekom-typography-font-weight-regular   | 400       |
+| thin      | --telekom-typography-font-weight-thin      | 200       |
 
 ## Font formats for user interfaces
 
 Scale uses a selected combination of font formats to create clear and focused interfaces. A selection from the following font formats is well suited for designing your content.
 
-![Image Name](assets/2_guidelines/3_typography/Formate-en.png)
+![Image Name](assets/2_guidelines/3_typography/Formate-en_2x.jpg)
 
 ### Format and CSS class names
 
-| application | CSS class name               |
-| ----------- | ---------------------------- |
-| Heading 01  | .scl-font-variant-heading-1  |
-| Heading 02  | .scl-font-variant-heading-2  |
-| Heading 03  | .scl-font-variant-heading-3  |
-| Heading 04  | .scl-font-variant-heading-4  |
-| Heading 05  | .scl-font-variant-heading-5  |
-| Heading 06  | .scl-font-variant-heading-6  |
-| Body large  | .scl-font-variant-body-large |
-| Body long   | .scl-font-variant-body       |
-| Body short  | .scl-font-variant-body-short |
+| application | CSS class name                   |
+| ----------- |----------------------------------|
+| Heading 01  | .telekom-font-variant-heading-1  |
+| Heading 02  | .telekom-font-variant-heading-2  |
+| Heading 03  | .telekom-font-variant-heading-3  |
+| Heading 04  | .telekom-font-variant-heading-4  |
+| Heading 05  | .telekom-font-variant-heading-5  |
+| Heading 06  | .telekom-font-variant-heading-6  |
+| Lead text   | .telekom-font-variant-body-large |
+| Body long   | .telekom-font-variant-body       |
 
 ## Colors
 
