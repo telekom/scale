@@ -1,8 +1,12 @@
-# Telekom Light and Dark Mode
+# Telekom Dark and Light Mode
 
-## General
+## Light & Dark Mode
 
-Light and dark mode are directed at different user groups and different use cases. This is not only about aesthetics, but also about avoiding eye strain. Be it due to ambient light or, for example, visual impairments such as cataracts.
+**Light and dark mode are directed at different user groups and different use cases. This is not only about aesthetics, but also about avoiding eye strain. Be it due to ambient light or, for example, visual impairments such as cataracts.**
+
+With the help of our components, dark mode can be implemented with almost no additional effort. Both in the design and in the code.
+
+![Dark mode example modal](assets/dark-mode-example-modal.png)
 
 ## Light mode
 
@@ -12,9 +16,22 @@ Most general users without visual impairments prefer light mode, especially in a
 
 Dark mode is especially beneficial for users with certain visual impairments, as it makes it easier to distinguish between elements and text. Some users also benefit from the lower contrast in dark mode. Most users, even without visual impairments, prefer dark mode at night and in dimly-lit environments. This helps avoid eye strain and fatigue.
 
+## Modus Switch
+
+Each color of a component is replaced by a matching color from the other mode. This allows designers and developers to change modes with almost no additional effort.
+
+![Dark mode example shapes](assets/dark-mode-example-shapes.png)
+
+## An optimized color palette
+
+We’ve optimized the Scale color palette so that it provides a consistent look and feel across both modes. Of course, all colors in our components are
+certified for accessibility. To learn more, [check out an overview of the new color palette](./?path=/docs/guidelines-colors--page).
+
+![Dark mode example palette](assets/dark-mode-example-palette.png)
+
 ## Let your users decide
 
-Since there are many personal reasons for choosing a mode, it’s ideal to let your users decide which mode they want to use. The preferred way of implementing light and dark mode is with a button or similar UI element that toggles between light and dark mode. If you can detect user preferences from the operating system (like via prefers-color-scheme on the web), select the preferred mode automatically.
+Since there are many personal reasons for choosing a mode, it’s ideal to let your users decide which mode they want to use. If you can detect user preferences from the operating system (like via `prefers-color-scheme` on the web), select the preferred mode automatically. To offer a manual change you can offer a button or switch that toggles between light and dark mode – e.g. in the settings of your product.
 
 ## For designers
 
@@ -28,9 +45,12 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 - In Sketch, click the notification icon (bell) in the upper right corner and select "Component updates available".
 - Select "Update components".
 - Now your design will appear in the other mode.
-- Version note: Color variables have been available in Sketch since version 69 (October 2020). Please be advised that it is not possible to switch between dark and light mode in older versions, and the color tokens may not be used.
 
-## For Developers:
+![Dark mode sketch modes](assets/dark-mode-sketch-modes-en.png)
+
+## Information for developers
+
+### Implement the dark Mode
 
 Dark mode is included in Scale from version `3.0.0-rc.1`. It leverages CSS variables to allow changing modes.
 
@@ -40,7 +60,15 @@ Alternatively, modes can be set via the `data-mode` attribute. The value must be
 
 Setting the `data-mode` attribute will override the system preferences.
 
-### Adding a switch
+### Disabling automatic switching
+
+If you want your app to be in either light or dark mode regardless of the user's system preferences, set the data-mode attribute to the desired mode:
+
+```html
+<body data-mode="light"></body>
+```
+
+### Change Mode manually
 
 A switch can be built into the UI with a bit of JavaScript, to set the `data-mode` attribute accordingly. The following snippet should serve as an illustration:
 
@@ -60,10 +88,6 @@ const mq = window.matchMedia('(prefers-color-scheme: dark)');
 const isDark = mq.matches;
 ```
 
-### Disabling automatic switching
+## Migration Info
 
-If you want your app to be in either light or dark mode regardless of the user's system preferences, set the `data-mode` attribute to the desired mode:
-
-```html
-<body data-mode="light"></body>
-```
+We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](https://gist.github.com/acstll/904b65679f5bd1568f1ed8c4e66744f9).
