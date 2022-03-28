@@ -32,16 +32,16 @@ Scale uses a selected combination of font formats to create clear and focused in
 
 ### Format and CSS class names
 
-| application | CSS class name                   |
-| ----------- |----------------------------------|
-| Heading 01  | .telekom-font-variant-heading-1  |
-| Heading 02  | .telekom-font-variant-heading-2  |
-| Heading 03  | .telekom-font-variant-heading-3  |
-| Heading 04  | .telekom-font-variant-heading-4  |
-| Heading 05  | .telekom-font-variant-heading-5  |
-| Heading 06  | .telekom-font-variant-heading-6  |
-| Lead text   | .telekom-font-variant-body-large |
-| Body long   | .telekom-font-variant-body       |
+| application | CSS class name               |
+| ----------- | ---------------------------- |
+| Heading 01  | .scl-font-variant-heading-1  |
+| Heading 02  | .scl-font-variant-heading-2  |
+| Heading 03  | .scl-font-variant-heading-3  |
+| Heading 04  | .scl-font-variant-heading-4  |
+| Heading 05  | .scl-font-variant-heading-5  |
+| Heading 06  | .scl-font-variant-heading-6  |
+| Lead text   | .scl-font-variant-body-large |
+| Body long   | .scl-font-variant-body       |
 
 ## Colors
 
