@@ -20,6 +20,16 @@
     "de": "Setup & Info"
   },
   {
+    "elementSelector": "#new-release-release-notes--page",
+    "en": "Release Notes",
+    "de": "Release Notes"
+  },
+  {
+    "elementSelector": "#new-release-sketch-library-update--page",
+    "en": "Sketch Library Update",
+    "de": "Sketch Library Update"
+  },
+  {
     "elementSelector": "#setup-info-getting-started-for-designers--page",
     "en": "Getting Started for Designers",
     "de": "Erste Schritte für Designer*innen"
@@ -119,19 +129,14 @@
     "de": "Update History"
   },
   {
-    "elementSelector": "#update-history-sketchlibrary--page",
-    "en": "Sketch Library",
-    "de": "Sketch Library"
-  },  
-  {
     "elementSelector": "#update-history-design--page",
     "en": "Design",
     "de": "Design"
   },
   {
     "elementSelector": "#update-history-development--page",
-    "en": "Development",
-    "de": "Development"
+    "en": "Code",
+    "de": "Code"
   },
 
   {
