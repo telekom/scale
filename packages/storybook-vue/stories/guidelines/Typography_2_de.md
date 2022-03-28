@@ -1,9 +1,3 @@
-## Schriftformate für User Interfaces
-
-Scale verwendet eine ausgewählte Kombination von Schriftformaten, um klare und fokussierte Interfaces zu erzeugen. Für die Ausgestaltung deiner Inhalte eignet sich eine Auswahl der folgenden Schriftformate.
-
-![Image Name](assets/2_guidelines/3_typography/Formate.png)
-
 ### Formate und CSS Klassen
 
 | Format     | CSS Klasse                   |

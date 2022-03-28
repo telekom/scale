@@ -1,9 +1,3 @@
-## Font formats for user interfaces
-
-Scale uses a selected combination of font formats to create clear and focused interfaces. A selection from the following font formats is well suited for designing your content.
-
-![Image Name](assets/2_guidelines/3_typography/Formate-en.png)
-
 ### Format and CSS class names
 
 | application | CSS class name               |

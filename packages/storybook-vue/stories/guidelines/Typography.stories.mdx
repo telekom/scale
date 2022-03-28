@@ -759,6 +759,7 @@ import { addons } from '@storybook/addons';
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: `${item.value.fontSize}`,
                   fontWeight: `${item.value.fontWeight}`,
+                  color: '#6A6A6A',
                 }}
               >
                 {item.name}
@@ -768,6 +769,8 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
+                  color: '#6A6A6A',
+                  fontWeight: 'bold',
                 }}
               >
                 {getFontWeightNameByNumber(item.value.fontWeight)}
@@ -777,6 +780,8 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
+                  color: '#6A6A6A',
+                  fontWeight: 'bold',
                 }}
               >
                 {item.value.fontSize.substring(
@@ -798,6 +803,8 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
+                  color: '#6A6A6A',
+                  fontWeight: 'bold',
                 }}
               >
                 {(item.value.lineSpacing * 100).toFixed(0)}
@@ -807,15 +814,16 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
+                  color: '#6A6A6A',
                 }}
-              >
-                Hello
-              </td>
+              ></td>
               <td
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
+                  color: '#6A6A6A',
+                  fontWeight: 'bold',
                 }}
               >
                 {item.value.fontSize.substring(
@@ -840,14 +848,18 @@ import { addons } from '@storybook/addons';
                 <Description
                   markdown={locale === 'en' ? text_first_en : text_first_de}
                 />
-                {generateFontFormatTableHead()}
-                {lightTokens.tokens
-                  .filter((item) => item.category == 'Text Style')
-                  .map((item) => {
-                    {
-                      return generateFontFormatTableRow(item.pathString);
-                    }
-                  })}
+                <div style={{ padding: '0 0 48px 0' }}>
+                  {generateFontFormatTableHead()}
+                  {lightTokens.tokens
+                    .slice(0)
+                    .reverse()
+                    .filter((item) => item.category == 'Text Style')
+                    .map((item) => {
+                      {
+                        return generateFontFormatTableRow(item.pathString);
+                      }
+                    })}
+                </div>
                 <Description
                   markdown={locale === 'en' ? text_second_en : text_second_de}
                 />
