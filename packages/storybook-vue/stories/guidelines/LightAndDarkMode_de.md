@@ -47,7 +47,7 @@ Wenn du bereits eine ältere Version unserer Sketch Library nutzt, lese dir bitt
 - Wähle „Update Components“.
 - Nun wird dein Design im jeweils anderen Modus angezeigt.
 
-![Dark mode sketch modes](assets/dark-mode-sketch-modes-en.png)
+![Dark mode sketch modes](assets/dark-mode-sketch-modes-de.png)
 
 ## Hinweis für Entwickler\*innen
 
