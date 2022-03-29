@@ -53,7 +53,7 @@ scale-nav-main {
   color: var(--color-hover);
 }
 .main-navigation__item:hover .main-navigation__item-link-text {
-  border-bottom: 2px solid var(--color-selected);
+  border-bottom: 2px solid var(--color-hover);
   color: var(--color-hover);
   margin-bottom: -2px;
   height: calc(100% - 4px);
@@ -73,7 +73,8 @@ scale-nav-main {
 .main-navigation__item.selected .main-navigation__item-link {
   color: var(--color-selected);
 }
-.main-navigation__item.mega-menu--visible .main-navigation__item-link {
+
+.main-navigation__item.selected:hover .main-navigation__item-link {
   color: var(--color-selected);
 }
 .main-navigation__item.selected .main-navigation__item-link-text {
@@ -83,8 +84,12 @@ scale-nav-main {
   display: flex;
   align-items: center;
 }
-.main-navigation__item.mega-menu--visible .main-navigation__item-link-text {
+.main-navigation__item.selected:hover .main-navigation__item-link-text {
+  color: var(--color-selected);
   border-bottom: 2px solid var(--color-selected);
+}
+.main-navigation__item.mega-menu--visible .main-navigation__item-link-text {
+  border-bottom: 2px solid var(--color-hover);
   margin-bottom: -2px;
   height: calc(100% - 4px);
   display: flex;
