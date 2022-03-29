@@ -219,7 +219,6 @@ export class Header {
       this.activeRouteId
     );
     const isActive = (item) => rootNode && rootNode.id === item.id;
-    console.log(rootNode, this.visibleMegaMenu);
     return (
       <ul
         class="main-navigation"
