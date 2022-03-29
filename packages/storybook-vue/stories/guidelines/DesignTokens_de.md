@@ -21,7 +21,7 @@ Als Entwickler*in bindest du die Tokens in Form von CSS-Variablen oder Javascrip
 ## Light und Dark Mode
 
 Design Tokens bilden die Grundlage für einen intuitiven Light und Dark Mode. In dieser Guideline erfährst du mehr darüber, welche Vorteile der Dark Mode bietet und wie du diesen implementieren kannst.
-[Light and Dark Mode](https://github.com/telekom/design-tokens/blob/main/docs/light-and-dark-mode.md)
+[Light and Dark Mode](./?path=/docs/guidelines-light-and-dark-mode--page)
 
 ## Die Vorteile im Überblick
 

@@ -91,4 +91,4 @@ const isDark = mq.matches;
 
 ## Update Info
 
-Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte. Mehr Details findet du auf GitHub: [Scale dark mode release migration guide](https://gist.github.com/acstll/904b65679f5bd1568f1ed8c4e66744f9).
+Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte. Mehr Details findet du auf GitHub: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page).

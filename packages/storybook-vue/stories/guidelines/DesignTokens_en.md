@@ -19,7 +19,7 @@ As a developer, you can include the tokens as CSS variables or Javascript object
 ## Light and dark mode
 
 Design tokens are the basis for an intuitive light and dark mode. In this guideline, you will learn more about the advantages of dark mode and how to implement it:
-[Light and dark mode](https://github.com/telekom/design-tokens/blob/main/docs/light-and-dark-mode.md)
+[Light and dark mode](./?path=/docs/guidelines-light-and-dark-mode--page)
 
 ## The advantages at a glance
 
@@ -32,4 +32,4 @@ Design tokens are the basis for an intuitive light and dark mode. In this guidel
 
 ## Information for developers:
 
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](https://gist.github.com/acstll/904b65679f5bd1568f1ed8c4e66744f9)
+We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page)

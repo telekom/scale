@@ -15,14 +15,15 @@ Betroffene Inhalte:
 
 Alle Komponenten
 
+[Hinweise zum Release](./?path=/docs/new-release-release-notes--page)<br>
+[Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)<br>
+
 <iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
 name="SketchLibrary"
 style="border: none;"
 frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
 </iframe><br>
 
-[Hinweise zum Release](./?path=/docs/new-release-release-notes--page)<br>
-[Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)<br>
 [Design Tokens](./?path=/docs/guidelines-design-tokens--page)<br>
 [Typografie](./?path=/docs/guidelines-typography--page)<br>
 [Farben](./?path=/docs/guidelines-colors--page)<br>
