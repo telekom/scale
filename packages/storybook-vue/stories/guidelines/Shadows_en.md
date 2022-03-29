@@ -20,7 +20,7 @@ For floating elements like notifications or action buttons (not yet included).
 
 ## Top
 
-For elements that are positioned above the main content, like navigations, bottom sheets, etc.
+For elements that are positioned above the main content, like navigations, bottomsheets, etc.
 
 ## Overlay
 
