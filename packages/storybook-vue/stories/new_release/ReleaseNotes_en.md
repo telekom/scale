@@ -1,12 +1,10 @@
-# Release Notes
+# New in this release
 
-## New in this release
-
-### Dark mode
+## Dark mode
 
 In addition to light mode, Scale now includes all components for [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page).
 
-### An optimized color palette and token logic
+## An optimized color palette and token logic
 
 We’ve optimized the [Scale color palette](./?path=/docs/guidelines-colors--page) so that it provides a consistent look and feel across both modes. Of course, all colors in our components are certified for accessibility. By using [semantic token](./?path=/docs/guidelines-design-tokens--page) names like Text & Icon or Link, you can more easily identify which style is meant for which element.
 
