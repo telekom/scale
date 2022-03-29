@@ -425,6 +425,8 @@ export class Header {
         <header class="header__container">
           <div class={this.getCssClassMap()}>
             <div class="header__brand">
+              <span class="header__brand-before"></span>
+              <span class="header__brand-after"></span>              
               <div class="header__brand-content">
                 <div class="header__brand-branding">
                   {this.hasSlotLogo ? (
