@@ -92,7 +92,7 @@ scale-app-header {
   border-top-right-radius: var(--header-border-radius);
   border-bottom: 1px solid transparent;
 }
-.header.menu--open .header__nav,
+.header__nav,
 .header.header--sticky .header__nav {
   border-bottom: var(--border);
   background: var(--background-nav-sticky);
@@ -108,33 +108,8 @@ scale-app-header {
   align-items: center;
   justify-content: space-between;
 }
-.header.header--sticky .header__nav-before,
-.header.header--sticky .header__nav-after,
-.header.menu--open .header__nav-before,
-.header.menu--open .header__nav-after {
-  width: var(--header-border-radius);
-  bottom: calc(-2 * var(--header-border-radius));
-  height: calc(2 * var(--header-border-radius));
-  position: absolute;
-  border-top: var(--border);
-  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
-    var(--telekom-color-background-surface);
-  background-color: transparent;
-}
-.header.menu--open .header__nav-before,
-.header.header--sticky .header__nav-before {
-  left: -1px;
-  z-index: 97;
-  border-left: var(--border);
-  border-top-left-radius: var(--header-border-radius);
-}
-.header.menu--open .header__nav-after,
-.header.header--sticky .header__nav-after {
-  right: -1px;
-  z-index: 98;
-  border-right: var(--border);
-  border-top-right-radius: var(--header-border-radius);
-}
+
+
 .header *[slot='menu-icon'],
 .header .meta-navigation {
   display: flex;
@@ -147,12 +122,6 @@ scale-app-header {
 @media (max-width: 1023px) {
   .header {
     height: var(--header-nav-height);
-  }
-  .header.menu--open .header__nav-before,
-  .header.header--sticky .header__nav-before,
-  .header.header--sticky .header__nav-after,
-  .header.menu--open .header__nav-after {
-    top: 51px;
   }
 
   .header .sector-navigation,
@@ -197,30 +166,6 @@ scale-app-header {
     overflow-y: auto;
     background: var(--telekom-color-background-surface);
   }
-
-  .header .header__brand .header__brand-before,
-  .header .header__brand .header__brand-after {
-    width: var(--header-border-radius);
-    bottom: calc(-2 * var(--header-border-radius));
-    height: calc(2 * var(--header-border-radius));
-    position: absolute;
-    border-top: transparent;
-    box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
-      var(--telekom-color-primary-standard);
-    background-color: transparent;
-  }
-  .header .header__brand .header__brand-before {
-    left: -1px;
-    z-index: 97;
-    border-left: transparent;
-    border-top-left-radius: var(--header-border-radius);
-  }
-  .header .header__brand .header__brand-after {
-    right: -1px;
-    z-index: 98;
-    border-right: transparent;
-    border-top-right-radius: var(--header-border-radius);
-  }
   .header .header__brand .logo svg {
     width: auto;
     height: 26px;
@@ -230,12 +175,6 @@ scale-app-header {
   fill: var(--telekom-color-text-and-icon-primary-standard) !important;
 }
 @media (min-width: 1024px) {
-  .header .header__nav-before {
-    top: 55px;
-  }
-  .header .header__nav-after {
-    top: 55px;
-  }
   .header .mobile-menu,
   .header .header__nav__mobile-menu {
     display: none;

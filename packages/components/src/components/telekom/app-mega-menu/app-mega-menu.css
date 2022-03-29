@@ -45,8 +45,7 @@ app-mega-menu {
     var(--spacing-left);
   background: var(--background);
   pointer-events: none;
-  border-bottom-left-radius: var(--header-border-radius);
-  border-bottom-right-radius: var(--header-border-radius);
+  border-radius: var(--header-border-radius);
 }
 .mega-menu__container {
   max-width: 1168px;
