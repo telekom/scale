@@ -18,6 +18,4 @@ Farbvariablen existieren in Sketch erst seit der Version 69 (Oktober 2020). Wir 
 
 ## Hinweis für Entwickler\*innen
 
-Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte. Mehr Details findet du auf GitHub:
-
-[Scale dark mode release migration guide](./?path=/docs/update-history-development--page)
+Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte. Mehr Details findet du [auf GitHub.](#)

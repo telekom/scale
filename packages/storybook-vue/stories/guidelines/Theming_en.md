@@ -61,7 +61,7 @@ If you need to customize a single instance, you can inline it:
 
 ### Shadow Parts
 
-Shadow parts make it possible to target internal elements of a component directly via the [` ::part` pseudo-element selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part).
+Shadow parts make it possible to target internal elements of a component directly via the [`::part` pseudo-element selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part).
 
 ```css
 scale-button::part(base) {
@@ -74,11 +74,11 @@ It's possible to apply the same idea of a variant.
 ```css
 scale-button[variant='squared']::part(base) {
   border-radius: 0;
-  background: var(--scl-color-green-80);
+  background: var(--telekom-color-additional-teal-600);
 }
 
 scale-button[variant='squared']::part(base):hover {
-  background: var(--scl-color-green-100);
+  background: var(--telekom-color-additional-teal-900);
 }
 ```
 
@@ -88,16 +88,14 @@ Bear in mind that the `::part` selector is limited exclusively to a single eleme
 
 When we group a set of style customization under the scope of a CSS class, we create a theme we can activate as easily as adding that class to the body of the document.
 
-There is no Scale standard or default theme, only the design tokens that represent the system.
-
 As an example:
 
 ```css
 <style>
   .theme-example {
-    --scl-color-primary: limegreen;
-    --scl-color-primary-hover: seagreen;
-    --scl-color-primary-active: green;
+    --telekom-color-primary-standard: limegreen;
+    --telekom-color-primary-hovered: seagreen;
+    --telekom-color-primary-pressed: green;
   }
 
   .theme-example scale-button,
@@ -114,5 +112,3 @@ As an example:
 
 <body class="theme-example">
 ```
-
-Overriding design tokens isn’t recommended, but sometimes it can make things easier depending on what you're trying to achieve. Creating your own tokens, and using them in your theme, is encouraged when the tokens from Scale are not enough to satisfy your UI needs.

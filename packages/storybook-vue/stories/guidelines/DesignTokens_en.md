@@ -29,7 +29,3 @@ Design tokens are the basis for an intuitive light and dark mode. In this guidel
 - You automatically have the option to offer dark mode without additional effort.
 - Design tokens enable much more customization, so that Scale will be able to grow with the needs of your projects.
 - Product theming is easy to carry out (e.g., for third party products).
-
-## Information for developers:
-
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page)

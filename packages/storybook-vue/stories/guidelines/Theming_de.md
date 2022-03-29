@@ -61,7 +61,7 @@ Wenn du nur ein einzelnes Element einer Komponente anpassen möchtest, kannst du
 
 ### Shadow Parts
 
-Mit Shadow Parts ist es möglich, interne Elemente einer Komponente gezielt anzusteuern über [` ::part` pseudo-element selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part).
+Mit Shadow Parts ist es möglich, interne Elemente einer Komponente gezielt anzusteuern über [`::part` pseudo-element selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part).
 
 ```css
 scale-button::part(base) {
@@ -74,11 +74,11 @@ Diese Herangehensweise lässt sich auch auf eigene Varianten anwenden.
 ```css
 scale-button[variant='squared']::part(base) {
   border-radius: 0;
-  background: var(--scl-color-green-80);
+  background: var(--telekom-color-additional-teal-600);
 }
 
 scale-button[variant='squared']::part(base):hover {
-  background: var(--scl-color-green-100);
+  background: var(--telekom-color-additional-teal-900);
 }
 ```
 
@@ -88,16 +88,14 @@ Beachte, dass der `::part` Selector auf ein Element beschränkt ist. Damit läss
 
 Du kannst eine Reihe von Stilanpassungen im Bereich einer CSS-Klasse zusammenfassen. Als Ergebnis erhältst du ein Theme, das sich so einfach aktivieren lässt wie das Hinzufügen dieser Klasse zum Dokument.
 
-Es gibt kein Standard-Theme in Scale, sondern nur die Design-Tokens, die das System abbilden.
-
 Ein möglichst aussagekräftiges Beispiel sagt mehr als tausend Worte:
 
 ```css
 <style>
   .theme-example {
-    --scl-color-primary: limegreen;
-    --scl-color-primary-hover: seagreen;
-    --scl-color-primary-active: green;
+    --telekom-color-primary-standard: limegreen;
+    --telekom-color-primary-hovered: seagreen;
+    --telekom-color-primary-pressed: green;
   }
 
   .theme-example scale-button,
@@ -114,5 +112,3 @@ Ein möglichst aussagekräftiges Beispiel sagt mehr als tausend Worte:
 
 <body class="theme-example">
 ```
-
-Auch wenn das Überschreiben von Design-Tokens nicht empfehlenswert ist, kann es je nach Anliegen die Arbeit vereinfachen. Wir empfehlen stattdessen, selbst Tokens zu erstellen und im eigenen Design zu verwenden, sollten die Scale Tokens deinen Ansprüchen an ein User Interface nicht genügen.
