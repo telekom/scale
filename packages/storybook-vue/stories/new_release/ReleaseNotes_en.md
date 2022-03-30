@@ -16,6 +16,8 @@ To take full advantage of the new features, link your components and colors to t
 
 Color variables exist in Sketch only since version 69 (October 2020). We ask for your understanding that in older program versions it is not possible to switch between Dark and Light Mode and the color tokens cannot be used in these.
 
-## Information for developers
+## Information for developers:
 
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details [on GitHub.](#)
+We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github:
+
+[Scale dark mode release migration guide](./?path=/docs/update-history-development--page)

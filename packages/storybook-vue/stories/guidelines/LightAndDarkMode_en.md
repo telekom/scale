@@ -52,7 +52,7 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 
 ### Implement the dark Mode
 
-Dark mode is included in Scale from version `3.0.0-beta.100`. It leverages CSS variables to allow changing modes.
+Dark mode is included in Scale from version `3.0.0-rc.1`. It leverages CSS variables to allow changing modes.
 
 By default, the mode will be set to match the operating system preferences, via the `prefers-color-scheme` media query.
 
@@ -87,3 +87,7 @@ In JavaScript, you can check and monitor the system preference via the window.ma
 const mq = window.matchMedia('(prefers-color-scheme: dark)');
 const isDark = mq.matches;
 ```
+
+## Migration Info
+
+We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page).

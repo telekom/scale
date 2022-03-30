@@ -53,7 +53,7 @@ Wenn du bereits eine ältere Version unserer Sketch Library nutzt, lese dir bitt
 
 ### Dark Mode implementieren
 
-Der Dark Mode ist in Scale ab Version `3.0.0-beta.100` enthalten. Er nutzt CSS-Variablen, um einen Wechsel des Modus zu ermöglichen.
+Der Dark Mode ist in Scale ab Version `3.0.0-rc.1` enthalten. Er nutzt CSS-Variablen, um einen Wechsel des Modus zu ermöglichen.
 
 Standardmäßig wird der Modus so eingestellt, dass er den Einstellungen des Betriebssystems entspricht, und zwar über die Medienabfrage `prefers-color-scheme`.
 
@@ -88,3 +88,7 @@ In JavaScript kannst du die Systemeinstellung mit der Methode window.matchMedia 
 const mq = window.matchMedia('(prefers-color-scheme: dark)');
 const isDark = mq.matches;
 ```
+
+## Update Info
+
+Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte. Mehr Details findet du auf GitHub: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page).
