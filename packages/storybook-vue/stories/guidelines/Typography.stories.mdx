@@ -624,7 +624,7 @@ import { addons } from '@storybook/addons';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: '#6A6A6A',
+                    color: '#000',
                     fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
@@ -640,7 +640,7 @@ import { addons } from '@storybook/addons';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: '#6A6A6A',
+                    color: '#000',
                     fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
@@ -656,7 +656,7 @@ import { addons } from '@storybook/addons';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: '#6A6A6A',
+                    color: '#000',
                     fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
@@ -674,7 +674,7 @@ import { addons } from '@storybook/addons';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: '#6A6A6A',
+                    color: '#000',
                     fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
@@ -692,7 +692,7 @@ import { addons } from '@storybook/addons';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: '#6A6A6A',
+                    color: '#000',
                     fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
@@ -710,7 +710,7 @@ import { addons } from '@storybook/addons';
                 <th
                   style={{
                     textAlign: 'left',
-                    color: '#6A6A6A',
+                    color: '#000',
                     fontSize: '14px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: '1px solid #E7E8E9',
@@ -718,7 +718,7 @@ import { addons } from '@storybook/addons';
                     paddingRight: 'var(--telekom-spacing-unit-x2)',
                     paddingBottom: 'var(--telekom-spacing-unit-x1)',
                     paddingLeft: 'var(--telekom-spacing-unit-x2)',
-                    width: '150px',
+                    width: '130px',
                   }}
                 >
                   {locale === 'en'
@@ -749,7 +749,12 @@ import { addons } from '@storybook/addons';
               return 'Extra Bold';
           }
         }
-        function generateFontFormatTableRow(itemPathString) {
+        function generateFontFormatTableRow(
+          itemPathString,
+          typeface,
+          maxKeystrokes,
+          lineSpacingRem
+        ) {
           item = getItemByPathString(itemPathString);
           return (
             <tr>
@@ -758,8 +763,8 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: `${item.value.fontSize}`,
+                  color: '#000000',
                   fontWeight: `${item.value.fontWeight}`,
-                  color: '#6A6A6A',
                 }}
               >
                 {item.name}
@@ -769,18 +774,18 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
-                  color: '#6A6A6A',
+                  color: '#000000',
                   fontWeight: 'bold',
                 }}
               >
-                {getFontWeightNameByNumber(item.value.fontWeight)}
+                {typeface}
               </td>
               <td
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
-                  color: '#6A6A6A',
+                  color: '#000000',
                   fontWeight: 'bold',
                 }}
               >
@@ -803,7 +808,7 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
-                  color: '#6A6A6A',
+                  color: '#000000',
                   fontWeight: 'bold',
                 }}
               >
@@ -814,15 +819,18 @@ import { addons } from '@storybook/addons';
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
-                  color: '#6A6A6A',
+                  color: '#000000',
+                  fontWeight: 'bold',
                 }}
-              ></td>
+              >
+                {maxKeystrokes}
+              </td>
               <td
                 style={{
                   paddingLeft: 'var(--telekom-spacing-unit-x2)',
                   paddingTop: 'var(--telekom-spacing-unit-x2)',
                   fontSize: '14px',
-                  color: '#6A6A6A',
+                  color: '#000000',
                   fontWeight: 'bold',
                 }}
               >
@@ -831,12 +839,7 @@ import { addons } from '@storybook/addons';
                   item.value.fontSize.length - 3
                 )}
                 {' / '}
-                {(
-                  item.value.fontSize.substring(
-                    0,
-                    item.value.fontSize.length - 3
-                  ) * item.value.lineSpacing
-                ).toFixed(2)}
+                {lineSpacingRem}
               </td>
             </tr>
           );
@@ -850,15 +853,90 @@ import { addons } from '@storybook/addons';
                 />
                 <div style={{ padding: '0 0 48px 0' }}>
                   {generateFontFormatTableHead()}
-                  {lightTokens.tokens
-                    .slice(0)
-                    .reverse()
-                    .filter((item) => item.category == 'Text Style')
-                    .map((item) => {
-                      {
-                        return generateFontFormatTableRow(item.pathString);
-                      }
-                    })}
+                  {generateFontFormatTableRow(
+                    'text-style.title-1',
+                    'Extra Bold',
+                    '30-50',
+                    '5.5'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.title-2',
+                    'Extra Bold',
+                    '30-50',
+                    '4.875'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.heading-1',
+                    'Extra Bold',
+                    '30-50',
+                    '4'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.heading-2',
+                    'Extra Bold',
+                    '30-50',
+                    '3'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.heading-3',
+                    'Extra Bold',
+                    '30-50',
+                    '2.5'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.heading-4',
+                    'Extra Bold',
+                    '50-70',
+                    '2'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.heading-5',
+                    'Extra Bold',
+                    '80-100',
+                    '1.75'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.heading-6',
+                    'Bold',
+                    '80-100',
+                    '1.375'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.lead-text',
+                    'Regular',
+                    '80-100',
+                    '1.75'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.body',
+                    'Regular/ Bold',
+                    '80-100',
+                    '1.375'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.ui',
+                    'Medium/ Bold',
+                    '80-100',
+                    '1'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.caption',
+                    'Regular/ Bold',
+                    '80-100',
+                    '1.25'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.small',
+                    'Medium/ Bold',
+                    '80-100',
+                    '1'
+                  )}
+                  {generateFontFormatTableRow(
+                    'text-style.footnote',
+                    'Regular',
+                    '80-100',
+                    '0.75'
+                  )}
                 </div>
                 <Description
                   markdown={locale === 'en' ? text_second_en : text_second_de}
