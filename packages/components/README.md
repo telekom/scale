@@ -69,7 +69,7 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-react-neutral    | Component proxies for React   |
 | @telekom/scale-components-vue-neutral*     | Component proxies for Vue     |
 | @telekom/scale-components-angular-neutral* | Component proxies for Angular |
-| @telekom/scale-design-tokens-neutral\**     | Design tokens                 |
+| @telekom/scale-design-tokens-neutral\**    | Design tokens                 |
 
 > *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
 
