@@ -119,14 +119,14 @@
     var(--telekom-color-background-surface);
   background-color: transparent;
 }
-.header.menu--open .header__nav-before,
+.header.header--sticky.menu--open .header__nav-before,
 .header.header--sticky .header__nav-before {
   left: -1px;
   z-index: 97;
   border-left: var(--border);
   border-top-left-radius: var(--header-border-radius);
 }
-.header.menu--open .header__nav-after,
+.header.header--sticky.menu--open .header__nav-after,
 .header.header--sticky .header__nav-after {
   right: -1px;
   z-index: 98;
