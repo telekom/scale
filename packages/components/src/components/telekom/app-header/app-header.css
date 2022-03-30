@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-scale-app-header {
+ scale-app-header {
   --header-nav-height: var(--telekom-spacing-unit-x14);
   --header-brand-height: var(--telekom-spacing-unit-x18);
   --header-border-radius: var(--telekom-radius-large);
@@ -92,7 +92,7 @@ scale-app-header {
   border-top-right-radius: var(--header-border-radius);
   border-bottom: 1px solid transparent;
 }
-.header.menu--open .header__nav,
+.header__nav,
 .header.header--sticky .header__nav {
   border-bottom: var(--border);
   background: var(--background-nav-sticky);
@@ -109,9 +109,7 @@ scale-app-header {
   justify-content: space-between;
 }
 .header.header--sticky .header__nav-before,
-.header.header--sticky .header__nav-after,
-.header.menu--open .header__nav-before,
-.header.menu--open .header__nav-after {
+.header.header--sticky .header__nav-after {
   width: var(--header-border-radius);
   bottom: calc(-2 * var(--header-border-radius));
   height: calc(2 * var(--header-border-radius));
@@ -121,14 +119,14 @@ scale-app-header {
     var(--telekom-color-background-surface);
   background-color: transparent;
 }
-.header.menu--open .header__nav-before,
+.header.header--sticky.menu--open .header__nav-before,
 .header.header--sticky .header__nav-before {
   left: -1px;
   z-index: 97;
   border-left: var(--border);
   border-top-left-radius: var(--header-border-radius);
 }
-.header.menu--open .header__nav-after,
+.header.header--sticky.menu--open .header__nav-after,
 .header.header--sticky .header__nav-after {
   right: -1px;
   z-index: 98;
