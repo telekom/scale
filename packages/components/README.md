@@ -136,7 +136,7 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-react    | Component proxies for React   |
 | @telekom/scale-components-vue*     | Component proxies for Vue     |
 | @telekom/scale-components-angular* | Component proxies for Angular |
-| @telekom/scale-design-tokens\**     | Telekom design tokens         |
+| @telekom/scale-design-tokens\**    | Telekom design tokens         |
 
 > *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://www.brand-design.telekom.com/scale/).
 
