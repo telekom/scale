@@ -1,8 +1,7 @@
-import React, { createElement } from 'react';
+import React from 'react';
 
 import {
   attachProps,
-  camelToDashCase,
   createForwardRef,
   dashToPascalCase,
   isCoveredByReact,
@@ -30,13 +29,9 @@ export const createReactComponent = <
     originalProps: StencilReactInternalProps<ElementType>,
     propsToPass: any,
   ) => ExpandedPropsTypes,
-  defineCustomElement?: () => void,
 ) => {
-  if (defineCustomElement !== undefined) {
-    defineCustomElement();
-  }
-
   const displayName = dashToPascalCase(tagName);
+
   const ReactComponent = class extends React.Component<StencilReactInternalProps<ElementType>> {
     componentEl!: ElementType;
 
@@ -59,22 +54,14 @@ export const createReactComponent = <
     render() {
       const { children, forwardedRef, style, className, ref, ...cProps } = this.props;
 
-      let propsToPass = Object.keys(cProps).reduce((acc: any, name) => {
-        const value = (cProps as any)[name];
-
+      let propsToPass = Object.keys(cProps).reduce((acc, name) => {
         if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
           const eventName = name.substring(2).toLowerCase();
-          if (typeof document !== 'undefined' && isCoveredByReact(eventName)) {
-            acc[name] = value;
+          if (typeof document !== 'undefined' && isCoveredByReact(eventName, document)) {
+            (acc as any)[name] = (cProps as any)[name];
           }
         } else {
-          // we should only render strings, booleans, and numbers as attrs in html.
-          // objects, functions, arrays etc get synced via properties on mount.
-          const type = typeof value;
-
-          if (type === 'string' || type === 'boolean' || type === 'number') {
-            acc[camelToDashCase(name)] = value;
-          }
+          (acc as any)[name] = (cProps as any)[name];
         }
         return acc;
       }, {});
@@ -83,20 +70,13 @@ export const createReactComponent = <
         propsToPass = manipulatePropsFunction(this.props, propsToPass);
       }
 
-      const newProps: Omit<StencilReactInternalProps<ElementType>, 'forwardedRef'> = {
+      let newProps: Omit<StencilReactInternalProps<ElementType>, 'forwardedRef'> = {
         ...propsToPass,
         ref: mergeRefs(forwardedRef, this.setComponentElRef),
         style,
       };
 
-      /**
-       * We use createElement here instead of
-       * React.createElement to work around a
-       * bug in Vite (https://github.com/vitejs/vite/issues/6104).
-       * React.createElement causes all elements to be rendered
-       * as <tagname> instead of the actual Web Component.
-       */
-      return createElement(tagName, newProps, children);
+      return React.createElement(tagName, newProps, children);
     }
 
     static get displayName() {
