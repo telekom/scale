@@ -53,6 +53,11 @@
 :host(:focus) .menu-flyout-item:not(.menu-flyout-item--disabled) {
   color: var(--telekom-color-text-and-icon-standard);
 }
+
+:host(:focus) .menu-flyout-item:hover:not(.menu-flyout-item--disabled) {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
 :host(:focus) .menu-flyout-item {
   box-shadow: var(--box-shadow-focus);
 }
