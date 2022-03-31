@@ -9,31 +9,41 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/*
-  TODO
-  - [ ] move all variables scale-switch, now they're no use!
-*/
-
 .switch {
   --size: 20px;
   --offset: 2px;
 
-  --color-off: var(--telekom-color-ui-solid-standard);
-  --color-on: var(--telekom-color-primary-standard);
-  --color-active: var(--telekom-color-primary-pressed);
-  --color-hover-on: var(--telekom-color-primary-hovered);
-  --border-standard: var(--telekom-color-ui-outlined-border-standard);
-  --border-hover-off: var(--telekom-color-ui-outlined-border-hovered);
-  --border-active-on: var(--telekom-color-ui-outlined-border-pressed);
+  --toggle-off: var(--telekom-color-ui-solid-standard);
+  --background-off: var(--telekom-color-ui-outlined-fill-standard);
+  --border-off: var(--telekom-color-ui-outlined-border-standard);
+  --text-off: var(--telekom-color-text-and-icon-standard);
 
-  --color-hover-off: var(--telekom-color-ui-solid-hovered);
-  --color-disabled: var(--telekom-color-ui-solid-disabled);
-  --color-state-contrast: var(--telekom-color-ui-outlined-fill-standard);
+  --toggle-off-hover: var(--telekom-color-ui-solid-hovered);
+  --background-off-hover: var(--telekom-color-ui-outlined-fill-hovered);
+  --border-off-hover: var(--telekom-color-ui-outlined-border-hovered);
 
-  --color-state: var(--color-off);
-  --color-background: var(--color-state-contrast);
-  --color-toggle: var(--color-state);
-  --color-text: var(--telekom-color-text-and-icon-standard);
+  --toggle-off-active: var(--telekom-color-ui-solid-pressed);
+  --background-off-active: var(--telekom-color-ui-outlined-fill-pressed);
+  --border-off-active: var(--telekom-color-ui-outlined-border-pressed);
+
+  --toggle-on: var(--telekom-color-ui-additional-base);
+  --background-on: var(--telekom-color-primary-standard);;
+  --border-on: transparent;
+  --text-on: '';
+
+  --toggle-on-hover: var(--telekom-color-ui-additional-base);
+  --background-on-hover: var(--telekom-color-primary-hovered);;
+  --border-on-hover: transparent;
+  --text-on: '';
+
+  --toggle-on-active: var(--telekom-color-ui-additional-base);
+  --background-on-active: var(--telekom-color-primary-pressed);;
+  --border-on-active: transparent;
+  --text-on-active: '';
+
+  --toggle-disabled: var(--telekom-color-ui-solid-disabled);
+  --border-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --text-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --transition-duration: var(--telekom-motion-duration-transition);
   --transition-timing-function: cubic-bezier(
@@ -59,25 +69,44 @@
   position: absolute;
 }
 
+/* OFF */
+
 .switch .switch__wrapper {
   position: relative;
-  border: 1px solid var(--color-state);
+  border: 1px solid var(--border-off);
   border-radius: calc(var(--size) / 2);
   width: calc(2 * var(--size) - var(--offset));
   height: calc(var(--size) - var(--offset));
   display: inline-flex;
   justify-content: space-between;
-  background: var(--color-background);
-  border-color: var(--border-standard);
+  background: var(--background-off);
   transition-property: background;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
 
+.switch:hover input:not(:checked) ~ .switch__wrapper {
+  background: var(--background-off-hover);
+  border: 1px solid var(--border-off-hover);
+}
+
+.switch:hover input:not(:checked) ~ .switch__wrapper  .switch__toggle {
+  background: var(--toggle-off-hover);
+}
+
+.switch:active input:not(:checked) ~ .switch__wrapper {
+  border-color: var(--border-off-active);
+  background-color: var(--background-off-active);
+}
+
+.switch:active input:not(:checked) ~ .switch__wrapper .switch__toggle {
+  background: var(--toggle-off-active);
+}
+
 .switch .switch__text {
   display: flex;
   width: 100%;
-  color: var(--color-text);
+  color: var(--text-off);
   justify-content: space-evenly;
   font-size: var(--telekom-typography-font-size-small);
   line-height: calc(var(--size) - var(--offset));
@@ -103,7 +132,7 @@
   border-radius: 50%;
   padding: calc(0.5 * var(--size) - var(--offset));
   margin: calc(-0.5 * var(--size) + var(--offset));
-  background: var(--color-toggle);
+  background: var(--toggle-off);
   left: calc(0.5 * var(--size) - 0.5 * var(--offset));
   top: 50%;
   transition-property: transform, background;
@@ -126,7 +155,7 @@
 
 .switch .switch__label {
   cursor: inherit;
-  color: var(--color-text);
+  color: var(--text-off);
   margin-left: var(--spacing-left);
   font-weight: var(--font-weight);
   transition-property: color;
@@ -142,7 +171,7 @@
   input:focus-visible:not(:checked)
   ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
-  border-color: var(--telekom-color-ui-outlined-border-hovered);
+  border-color: var(--border-hover);
 }
 
 .switch--focus-visible-supported
@@ -151,59 +180,32 @@
   box-shadow: var(--box-shadow-focus);
 }
 
+/* ON */
+
 .switch input:checked ~ .switch__wrapper {
-  --color-state: var(--color-on);
-  --color-background: var(--color-state);
-  --color-toggle: var(--telekom-color-ui-additional-base);
-  --color-text: var(--color-state-contrast);
-  border-color: transparent;
+  background: var(--background-on);
+  border: 1px solid var(--border-on);
 }
 
-/* Needs to placed after :checked but before :active */
-/* .switch:hover, */
+.switch input:checked ~ .switch__wrapper .switch__toggle {
+  background-color: var(--toggle-on);
+}
+
 .switch:hover input:checked ~ .switch__wrapper {
-  --color-state: var(--color-hover-on);
+  background: var(--background-on-hover);
+  border: 1px solid var(--border-on-hover);
 }
 
-.switch:hover input:not(:checked) ~ .switch__wrapper {
-  --color-state: var(--color-hover-off);
-  --color-toggle: var(--color-hover-off);
-  --color-background: var(--telekom-color-ui-outlined-fill-hovered);
-  border-color: var(--border-hover-off);
-}
-
-.switch:active input:not(:checked) ~ .switch__wrapper {
-  border-color: var(--border-active-on);
-  background-color: var(--telekom-color-ui-outlined-fill-pressed);
-}
-
-.switch:active input:not(:checked) ~ .switch__wrapper {
-  border-color: var(--border-active-on);
-  background-color: var(--telekom-color-ui-outlined-fill-pressed);
-}
-
-.switch:active input:not(:checked) ~ .switch__wrapper .switch__toggle {
-  background-color: var(--telekom-color-ui-solid-pressed);
+.switch:hover input:checked ~ .switch__wrapper  .switch__toggle {
+  background: var(--toggle-on-hover);
 }
 
 .switch:active input:checked ~ .switch__wrapper {
-  border-color: transparent;
-  background-color: var(--color-active);
+  background-color: var(--background-on-active);
 }
 
 .switch:active input:checked ~ .switch__wrapper .switch__toggle {
-  background-color: var(--telekom-color-ui-additional-base);
-}
-
-.switch:focus input:not(:checked) ~ .switch__wrapper {
-  border-color: var(--border-hover-off);
-}
-
-.switch input:checked:not(:disabled):active ~ .switch__wrapper {
-  --color-state: var(--color-active);
-  --color-background: var(--color-state-contrast);
-  --color-toggle: var(--color-active);
-  --color-text: var(--color-active);
+  background: var(--toggle-on-active);
 }
 
 /* disabled states */
@@ -215,7 +217,7 @@
   --color-toggle: var(--color-disabled);
   --color-text: var(--color-disabled);
   --color-background: var(--color-background);
-  border-color: var(--telekom-color-ui-outlined-border-disabled);
+  border-color: var(--border-disabled);
 }
 
 .switch.switch--disabled label {
@@ -223,18 +225,20 @@
 }
 
 .switch.switch--disabled .switch__label {
-  color: var(--telekom-color-text-and-icon-disabled);
+  color: var(--text-disabled);
 }
 
 .switch.switch--disabled input:checked ~ .switch__wrapper {
-  --color-state: var(--color-disabled);
-  --color-toggle: var(--color-disabled);
-  --color-text: var(--color-state-contrast);
-  background-color: var(--telekom-color-ui-outlined-fill-disabled);
-  border-color: var(--telekom-color-ui-outlined-border-disabled);
+  background-color: var(--toggle-disabl);
+  border-color: var(--border-disabled);
+}
+
+.switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,
+.switch.switch--disabled .switch__wrapper .switch__toggle  {
+  background: var(--toggle-disabled);
 }
 
 .switch.switch--disabled .switch__text:before,
 .switch.switch--disabled .switch__text:after {
-  color: var(--telekom-color-text-and-icon-disabled);
+  color: var(--text-disabled);
 }
