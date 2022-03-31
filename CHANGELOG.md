@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.54](https://github.com/telekom/scale/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2022-03-31)
+
+
+### Bug Fixes
+
+* **button:** remove deprecated small prop warning ([#945](https://github.com/telekom/scale/issues/945)) ([505d7f5](https://github.com/telekom/scale/commit/505d7f53615f24ab370599c034a9791622442fe5))
+* **pagination:** add direction to events ([#931](https://github.com/telekom/scale/issues/931)) ([#950](https://github.com/telekom/scale/issues/950)) ([776c9ee](https://github.com/telekom/scale/commit/776c9eefd12fccc44b50680147bf224b98a03543))
+* **radio-button-group:** remove form element ([#946](https://github.com/telekom/scale/issues/946)) ([2ab9cf5](https://github.com/telekom/scale/commit/2ab9cf50782b221d764aec59428b626cf87859cf))
+
+
+
+
+
 # [3.0.0-beta.53](https://github.com/telekom/scale/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2022-03-14)
 
 
