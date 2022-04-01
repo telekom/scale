@@ -75,7 +75,7 @@ scale-nav-main {
 }
 
 .main-navigation__item.selected:hover .main-navigation__item-link {
-  color: var(--color-selected);
+  color: var(--color-hover);
 }
 .main-navigation__item.selected .main-navigation__item-link-text {
   border-bottom: 2px solid var(--color-selected);
@@ -85,8 +85,8 @@ scale-nav-main {
   align-items: center;
 }
 .main-navigation__item.selected:hover .main-navigation__item-link-text {
-  color: var(--color-selected);
-  border-bottom: 2px solid var(--color-selected);
+  color: var(--color-hover);
+  border-bottom: 2px solid var(--color-hover);
 }
 .main-navigation__item.mega-menu--visible .main-navigation__item-link-text {
   border-bottom: 2px solid var(--color-hover);
