@@ -60,7 +60,7 @@ export class RatingStars {
   /** disables input  */
   @Prop({ reflect: true }) disabled = false;
   /** a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaLabelTranslation?:string = '$rating out of $max stars';
+  @Prop() ariaLabelTranslation?: string = '$rating out of $max stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label = 'Rating';
   /** (optional) info text */
