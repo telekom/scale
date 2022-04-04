@@ -29,6 +29,7 @@ export default {
     trigger: { type: String },
     flip: { type: Boolean },
     preventOverflow: { type: Boolean },
+    styles: String,
   },
   methods: {
     'scale-show'($event) {

@@ -51,9 +51,9 @@ scale-checkbox {
   --color-icon-checked-active: var(--scl-color-white);
   --width-icon: var(--scl-spacing-12);
   --height-icon: var(--scl-spacing-12);
+  --stroke-width: var(--stroke-width-checkbox, 0.5px);
 }
 
-:host,
 scale-checkbox {
   display: flex;
   width: fit-content;
@@ -112,7 +112,7 @@ scale-checkbox [part='icon'] svg {
 scale-checkbox [part='icon'] svg rect,
 scale-checkbox [part='icon'] svg path {
   stroke: currentColor;
-  stroke-width: 0.5px;
+  stroke-width: var(--stroke-width);
 }
 
 scale-checkbox [part='container'] {

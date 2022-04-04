@@ -107,6 +107,10 @@
   margin-top: var(--spacing-top-icon);
 }
 
+.collapsible__icon-right {
+  margin-left: auto;
+}
+
 .collapsible__button[aria-expanded='true'] .collapsible__icon {
   transform: none;
 }

@@ -17,6 +17,7 @@
     :invalid="invalid"
     :size="size"
     :popup-title="popupTitle"
+    :styles="styles"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
     @scaleBlur="scaleBlur"
@@ -46,6 +47,7 @@ export default {
     disabled: { type: Boolean },
     size: { type: String },
     popupTitle: { type: String },
+    styles: {type: String}
   },
   methods: {
     scaleChange($event) {

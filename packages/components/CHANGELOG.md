@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.54](https://github.com/telekom/scale/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2022-03-31)
+
+
+### Bug Fixes
+
+* **button:** remove deprecated small prop warning ([#945](https://github.com/telekom/scale/issues/945)) ([505d7f5](https://github.com/telekom/scale/commit/505d7f53615f24ab370599c034a9791622442fe5))
+* **pagination:** add direction to events ([#931](https://github.com/telekom/scale/issues/931)) ([#950](https://github.com/telekom/scale/issues/950)) ([776c9ee](https://github.com/telekom/scale/commit/776c9eefd12fccc44b50680147bf224b98a03543))
+* **radio-button-group:** remove form element ([#946](https://github.com/telekom/scale/issues/946)) ([2ab9cf5](https://github.com/telekom/scale/commit/2ab9cf50782b221d764aec59428b626cf87859cf))
+
+
+
+
+
+# [3.0.0-beta.53](https://github.com/telekom/scale/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2022-03-14)
+
+
+### Bug Fixes
+
+* windows firefox problem with fit-content ([#928](https://github.com/telekom/scale/issues/928)) ([1499ba9](https://github.com/telekom/scale/commit/1499ba9051e3059fccc578441354a8ce732a4f8d))
+
+
+
+
+
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+
+### Bug Fixes
+
+* **app-logo:** make it focusable when header is sticky ([#898](https://github.com/telekom/scale/issues/898)) ([d26d314](https://github.com/telekom/scale/commit/d26d31470cb4e6aa99683df24d547df5bef3cb03))
+
+
+### Features
+
+* **accordion:**  add option for the icon being displayed on the right ([#863](https://github.com/telekom/scale/issues/863)) ([7ab140d](https://github.com/telekom/scale/commit/7ab140db1588d0d55da0ad4b826fef440816e0d0))
+
+
+
+
+
+# [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
+
+
+### Features
+
+* **slider:** add name prop ([#894](https://github.com/telekom/scale/issues/894)) ([b1ad291](https://github.com/telekom/scale/commit/b1ad29168bee6e0eeb95563f9c4877134f11f4ae))
+
+
+
+
+
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+
+### Bug Fixes
+
+* **checkbox:** show icon in neutral mode ([#896](https://github.com/telekom/scale/issues/896)) ([839c3de](https://github.com/telekom/scale/commit/839c3debfe951dc80e3d4c57ff588658f73b9463))
+
+
+### Features
+
+* **tooltip:** add styles prop ([#895](https://github.com/telekom/scale/issues/895)) ([4bae4a9](https://github.com/telekom/scale/commit/4bae4a91fb04ff884bc9b6882730ebade97b70a6))
+
+
+
+
+
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+
+### Bug Fixes
+
+* **modal:** remove title attribute from modal window ([#852](https://github.com/telekom/scale/issues/852)) ([3e4213b](https://github.com/telekom/scale/commit/3e4213b23b2aebd6ac44797b0a86832e1de7763f))
+
+
+
+
+
 # [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
 
 

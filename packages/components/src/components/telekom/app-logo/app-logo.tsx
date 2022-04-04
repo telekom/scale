@@ -9,19 +9,32 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
+import statusNote from '../../../utils/status-note';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
   tag: 'app-logo',
   styleUrl: 'app-logo.css',
 })
 export class Logo {
+  @Element() hostElement: HTMLStencilElement;
   @Prop() href?: string = 'javascript:void(0);';
   @Prop() logoTitle?: string = 'Telekom Logo';
   @Prop() color: string = '#fff';
   @Prop() claim: boolean = false;
   @Prop() claimLang: string;
   @Prop() focusable: boolean = true;
+
+  componentDidRender() {
+    statusNote({
+      tag: 'deprecated',
+      message:
+        '<app-logo></app-logo> is deprecated, please use <scale-logo></scale-logo>',
+      type: 'warn',
+      source: this.hostElement,
+    });
+  }
 
   render() {
     if (!this.claim) {
