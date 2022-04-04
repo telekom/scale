@@ -1,5 +1,9 @@
 # Update Sketch Library
 
+Dark mode release 05.04.2022
+
+Scale now includes all components in [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page). The light mode version has also been optimized. Both modes are available as two separate Sketch libraries. Modes can be switched by replacing one library with the other.
+
 ## Important for existing projects
 
 To take full advantage of the new features, your components and colors should be linked to the library. Especially self-defined colors remain unaffected by the update. In order to avoid unwanted effects caused by an automatic update of the library, we are providing a new library for this release. Please read the following points first and only then load the new library via the button below.

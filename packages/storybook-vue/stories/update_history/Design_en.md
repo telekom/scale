@@ -15,7 +15,6 @@ Affected content:
 
 All components
 
-
 [Release Notes](./?path=/docs/new-release-release-notes--page)<br>
 [Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)<br>
 

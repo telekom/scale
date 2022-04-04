@@ -16,6 +16,10 @@ We have converted the design tokens into color, text, and shadow styles for Sket
 
 As a developer, you can include the tokens as CSS variables or Javascript objects. This way, you can easily implement the styles you receive from the designers. By using the correct tokens, no extra implementation is needed for dark mode. Whenever a token needs to update, all you have to do is pull in the latest changes from GitHub or npm, and your code will update automatically. You can find the core and semantics tokens in the @telekom/design-tokens repo (folder: src). By using Scale or the design tokens repository, you only need to take care of the semantic tokens.
 
+[Color Tokens](.?path=/docs/guidelines-colors--page)
+
+[Shadows](./?path=/docs/guidelines-shadows--page)
+
 ## Light and dark mode
 
 Design tokens are the basis for an intuitive light and dark mode. In this guideline, you will learn more about the advantages of dark mode and how to implement it:
@@ -29,7 +33,3 @@ Design tokens are the basis for an intuitive light and dark mode. In this guidel
 - You automatically have the option to offer dark mode without additional effort.
 - Design tokens enable much more customization, so that Scale will be able to grow with the needs of your projects.
 - Product theming is easy to carry out (e.g., for third party products).
-
-## Information for developers:
-
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page)

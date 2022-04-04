@@ -15,8 +15,10 @@ Wir haben die Design Tokens in Farb-, Text- und Schattenstile für Sketch und Fi
 ## So arbeiten Entwickler\*innen mit Design Tokens
 
 Als Entwickler*in bindest du die Tokens in Form von CSS-Variablen oder Javascript-Objekten ein. So kannst du die Stile, die du von den Designer*innen erhältst, leicht umsetzen. Für den Dark Mode ist keine zusätzliche Implementierung erforderlich. Wann immer ein Token aktualisiert werden muss, spielst du einfach die neuesten Updates von GitHub oder NPM ein und dein Code wird automatisch aktualisiert. Du findest die Core- und Semantik-Tokens im @telekom/design-tokens Repo (Ordner: src). Als Benutzer\*in von Scale oder dem Design-Token-Repository musst du dich nur um die semantischen Tokens kümmern.
-[Color Tokens](https://github.com/telekom/design-tokens/blob/main/docs/color.md)
-[Shadows](https://github.com/telekom/design-tokens/blob/main/docs/shadows.md)
+
+[Farben](.?path=/docs/guidelines-colors--page)
+
+[Schatten](./?path=/docs/guidelines-shadows--page)
 
 ## Light und Dark Mode
 
