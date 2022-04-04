@@ -152,7 +152,7 @@
   input:focus-visible:not(:checked)
   ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
-  border-color: var(--border-hover);
+  border-color: var(--border);
 }
 
 .switch--focus-visible-supported
