@@ -183,6 +183,9 @@
     z-index: 95;
     position: absolute;
   }
+  .header.menu--open .header__nav {
+    background-color: var(--telekom-color-background-surface);
+  }
   .header .header__nav__mobile-menu {
     top: var(--header-nav-height);
     width: 100%;
