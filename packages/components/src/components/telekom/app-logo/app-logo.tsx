@@ -21,10 +21,10 @@ export class Logo {
   @Element() hostElement: HTMLStencilElement;
   @Prop() href?: string = 'javascript:void(0);';
   @Prop() logoTitle?: string = 'Telekom Logo';
-  @Prop() color: string = '#fff';
-  @Prop() claim: boolean = false;
+  @Prop() color?: string = '#fff';
+  @Prop() claim?: boolean = false;
   @Prop() claimLang: string;
-  @Prop() focusable: boolean = true;
+  @Prop() focusable?: boolean = true;
 
   componentDidRender() {
     statusNote({

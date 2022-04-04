@@ -9,10 +9,10 @@ let i = 0;
   shadow: true,
 })
 export class LoadingSpinner {
-  @Prop() variant: 'white' | 'primary' = 'primary';
-  @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
+  @Prop() variant?: 'white' | 'primary' = 'primary';
+  @Prop() alignment?: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string;
-  @Prop() size: 'small' | 'large' = 'small';
+  @Prop() size?: 'small' | 'large' = 'small';
 
   componentWillLoad() {
     i++;

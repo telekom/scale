@@ -56,10 +56,10 @@ export class DatePicker {
   /**
    * Name of the date picker input.
    */
-  @Prop() name: string = 'date';
+  @Prop() name?: string = 'date';
 
   /** @deprecated in v3 in favor of localization.calendarHeading */
-  @Prop() popupTitle: string = 'Pick a date';
+  @Prop() popupTitle?: string = 'Pick a date';
 
   /**
    * Adds a unique identifier for the date picker input. Use this instead of html `id` attribute.
@@ -82,12 +82,12 @@ export class DatePicker {
    * This setting can be useful when the input is smaller than the opening date picker
    * would be as by default the picker always opens towards right.
    */
-  @Prop() direction: DuetDatePickerDirection = 'right';
+  @Prop() direction?: DuetDatePickerDirection = 'right';
 
   /**
    * Should the input be marked as required?
    */
-  @Prop() required: boolean = false;
+  @Prop() required?: boolean = false;
 
   /**
    * Date value. Must be in IS0-8601 format: YYYY-MM-DD.
@@ -98,13 +98,13 @@ export class DatePicker {
    * Minimum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.
    * This setting can be used alone or together with the max property.
    */
-  @Prop() min: string = '';
+  @Prop() min?: string = '';
 
   /**
    * Maximum date allowed to be picked. Must be in IS0-8601 format: YYYY-MM-DD.
    * This setting can be used alone or together with the min property.
    */
-  @Prop() max: string = '';
+  @Prop() max?: string = '';
 
   /**
    * Which day is considered first day of the week? `0` for Sunday, `1` for Monday, etc.
@@ -138,7 +138,7 @@ export class DatePicker {
   @Prop() invalid?: boolean;
 
   /** (optional) Label */
-  @Prop() label: string = '';
+  @Prop() label?: string = '';
 
   /** (optional) Size */
   @Prop() size?: string = '';

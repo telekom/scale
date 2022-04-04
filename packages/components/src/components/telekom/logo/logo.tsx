@@ -20,11 +20,11 @@ import classNames from 'classnames';
 export class Logo {
   @Element() hostElement: HTMLElement;
   /** (optional) Variant/color of the logo text and logo */
-  @Prop() variant: 'magenta' | 'white' = 'magenta';
+  @Prop() variant?: 'magenta' | 'white' = 'magenta';
   /** (optional) Set transparent background */
-  @Prop() transparent: boolean = false;
+  @Prop() transparent?: boolean = false;
   /** (optional) Language of the logo text/ claimOff showes just the T Logo */
-  @Prop() language:
+  @Prop() language?:
     | 'de'
     | 'en'
     | 'cz'
@@ -44,8 +44,8 @@ export class Logo {
   @Prop() accessibilityTitle?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  @Prop() focusable: boolean = true;
-  @Prop() scrollIntoViewOnFocus: boolean = false;
+  @Prop() focusable?: boolean = true;
+  @Prop() scrollIntoViewOnFocus?: boolean = false;
   @Prop() logoTitle?: string = 'Telekom Logo';
   @Prop() logoAriaDescribedBy?: string;
 

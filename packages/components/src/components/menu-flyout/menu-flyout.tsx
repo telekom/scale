@@ -33,7 +33,7 @@ export class MenuFlyout {
   @Element() hostElement: HTMLElement;
 
   /** (optional) Determines whether the flyout should close when a menu item is selected */
-  @Prop() closeOnSelect = true;
+  @Prop() closeOnSelect?: boolean = true;
   /** (optional) Set preference for where the menu appears, space permitting */
   @Prop() direction:
     | 'bottom-right'

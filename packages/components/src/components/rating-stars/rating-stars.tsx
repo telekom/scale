@@ -44,13 +44,13 @@ export class RatingStars {
   ratingStarId = `scale-rating-star-${ratingStarCount++}`;
 
   /** @deprecated; size should be used instead of starSize */
-  @Prop() starSize: 'small' | 'large' = 'large';
+  @Prop() starSize?: 'small' | 'large' = 'large';
   /** size of the stars  */
   @Prop({ reflect: true, mutable: true }) size: 'small' | 'large' = 'large';
   /** @deprecated; The lower limit of the rating */
-  @Prop() minRating = 0;
+  @Prop() minRating?: number = 0;
   /** @deprecated; max should be used instead of maxRating */
-  @Prop() maxRating = 5;
+  @Prop() maxRating?: number = 5;
   /** The upper limit of the rating */
   @Prop({ reflect: true, mutable: true }) max = 5;
   /** Represents the current value of the rating */
@@ -60,7 +60,7 @@ export class RatingStars {
   /** disables input  */
   @Prop({ reflect: true }) disabled = false;
   /** a11y text for getting meaningful value. `$rating` and `$max` (deprecated `$maxRating`) are template variables and will be replaces by their corresponding properties.  */
-  @Prop() ariaLabelTranslation = '$rating out of $max stars';
+  @Prop() ariaLabelTranslation?:string = '$rating out of $max stars';
   /** (optional) rating label */
   @Prop({ reflect: true }) label = 'Rating';
   /** (optional) info text */

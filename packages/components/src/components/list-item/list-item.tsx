@@ -30,7 +30,7 @@ export class ListItem {
   /** Index number, useful only for styling the `ordered` type */
   @Prop({ mutable: true }) index?: number;
   /** If `false`, no marker or left padding will be visible */
-  @Prop() marker: boolean = true;
+  @Prop() marker?: boolean = true;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 

@@ -49,16 +49,16 @@ export class SidebarNavItem {
   @Element() el: HTMLElement;
 
   /** Used normally for third level items, remove the bottom border */
-  @Prop() condensed: boolean = false;
+  @Prop() condensed?: boolean = false;
   /** Bold text */
-  @Prop() bold: boolean = false;
+  @Prop() bold?: boolean = false;
   /** Text gets the active color */
   @Prop({ mutable: true, reflect: true }) active: boolean = false;
   /**
    * Mark the child link as "current" with `aria-current=page`.
    * Provide the text hint if needed, default is: "Zurzeit aktiv"
    */
-  @Prop() current: string | null | boolean = null;
+  @Prop() current?: string | null | boolean = null;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
   @Prop() nestingLevel: number;
   /** (optional) Extra styles */

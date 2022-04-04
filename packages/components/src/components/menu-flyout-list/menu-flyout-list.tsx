@@ -54,7 +54,7 @@ export class MenuFlyoutList {
   /**  */
   @Prop({ reflect: true, mutable: true }) active: boolean = false;
   /** (optional) Determines whether the flyout should close when a menu item is selected */
-  @Prop() closeOnSelect = true;
+  @Prop() closeOnSelect?: boolean = true;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 

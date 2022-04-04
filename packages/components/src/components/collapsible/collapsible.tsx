@@ -42,7 +42,7 @@ export class Collapsible {
   /** Set to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
   /** Default aria-level for heading */
-  @Prop() headingLevel: number = 2;
+  @Prop() headingLevel?: number = 2;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() iconLocation?: 'left' | 'right' = 'left';

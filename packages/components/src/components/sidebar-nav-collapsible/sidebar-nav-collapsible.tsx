@@ -25,17 +25,17 @@ export class SidebarNavCollapsible {
   /** The text for the button */
   @Prop() label: string;
   /** The URL where the link should point to */
-  @Prop() href: string = '#';
+  @Prop() href?: string = '#';
   /** Set this to `true` to expand */
   @Prop({ mutable: true, reflect: true }) expanded: boolean;
   /** Label and icon get the active color */
   @Prop() active?: boolean = false;
   /** Bold label and icon */
-  @Prop() bold: boolean = false;
+  @Prop() bold?: boolean = false;
   /** Used normally for third level items */
-  @Prop() condensed: boolean = false;
+  @Prop() condensed?: boolean = false;
   /** Nesting level within the <scale-sidebar-nav> parent, gets set automatically */
-  @Prop() nestingLevel: number;
+  @Prop() nestingLevel?: number;
   /** (optional) Extra styles */
   @Prop() styles?: string;
 
