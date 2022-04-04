@@ -2,7 +2,7 @@
 
 ## Dark mode
 
-In addition to light mode, Scale now includes all components for [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page).
+In addition to light mode, Scale now includes all components for [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page)
 
 ## An optimized color palette and token logic
 
@@ -14,10 +14,10 @@ To take full advantage of the new features, link your components and colors to t
 
 [Update Sketch Library](./?path=/docs/new-release-sketch-library-update--page)
 
-Color variables exist in Sketch only since version 69 (October 2020). We ask for your understanding that in older program versions it is not possible to switch between Dark and Light Mode and the color tokens cannot be used in these.
+Sketch only started supporting color variables with version 69 (October 2020). We ask for your understanding that in older versions it isn’t possible to switch between dark and light mode, because these older versions don’t support color tokens.
 
-## Information for developers:
+## Information for developers
 
 We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github:
 
-[Scale dark mode release migration guide](./?path=/docs/update-history-development--page)
+[more details on GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
