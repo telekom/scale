@@ -50,13 +50,13 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 
 ## Information for developers
 
-### Implement the dark Mode
+### Implement the dark mode
 
-Dark mode is included in Scale from version `3.0.0-rc.1`. It leverages CSS variables to allow changing modes.
+Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages CSS variables to allow switching modes.
 
-By default, the mode will be set to match the operating system preferences, via the `prefers-color-scheme` media query.
+By default, the mode is set to match the operating system preferences, via the `prefers-color-scheme` media query.
 
-Alternatively, modes can be set via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the `body`, e.g. `<body data-mode="light">`, though it's possible to also switch only a specific part of the page.
+Alternatively, you can set the modes via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch only a specific part of the page.
 
 Setting the `data-mode` attribute will override the system preferences.
 
@@ -68,9 +68,9 @@ If you want your app to be in either light or dark mode regardless of the user's
 <body data-mode="light"></body>
 ```
 
-### Change Mode manually
+### Changing modes manually
 
-A switch can be built into the UI with a bit of JavaScript, to set the `data-mode` attribute accordingly. The following snippet should serve as an illustration:
+You can build a switch into the UI with a bit of JavaScript, to set the `data-mode` attribute accordingly. The following snippet should serve as an illustration:
 
 ```js
 const element = document.querySelector('.mode-switch');
@@ -81,13 +81,9 @@ element.addEventListener('click', function switchMode() {
 });
 ```
 
-In JavaScript, you can check and monitor the system preference via the window.matchMedia method.
+In JavaScript, you can check and monitor the system preference via the [window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method.
 
 ```js
 const mq = window.matchMedia('(prefers-color-scheme: dark)');
 const isDark = mq.matches;
 ```
-
-## Migration Info
-
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. You can find more details on Github: [Scale dark mode release migration guide](./?path=/docs/update-history-development--page).

@@ -1,8 +1,8 @@
 # Update Sketch Library
 
-Dark mode release 05.04.2022
+## Dark mode release 05.04.2022
 
-Scale now includes all components in [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page). The light mode version has also been optimized. Both modes are available as two separate Sketch libraries. Modes can be switched by replacing one library with the other.
+Scale now includes all components for [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page). In addition, we have optimized the Light Mode. There is a separate library for each mode. You can change the mode used at any time by replacing one library with the other.
 
 ## Important for existing projects
 
@@ -12,7 +12,7 @@ To take full advantage of the new features, your components and colors should be
 
 ### 1. Check your layout for detached components
 
-Check your layout for detached components, otherwise they cannot be updated via the library update. Name the layer group of the detached component like the corresponding symbol in the library. Now you can simply replace it with the symbol from the library: Menu Layer -> Replace with.
+This is important; otherwise they can’t update via the library update. In Sketch, you can replace instances, groups, or layers with symbols from libraries. To do this, select the object you want to overwrite and then click Menu → Layer → Replace with.
 
 <img src="assets/replace-component-en.png"  />
 
