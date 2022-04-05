@@ -35,6 +35,8 @@ import { emitEvent } from '../../utils/utils';
   [ ] Add icons to the icon components ?
 */
 
+export type PaginationEventDirection = 'FIRST' | 'PREVIOUS' | 'NEXT' | 'LAST';
+
 const name = 'pagination';
 @Component({
   tag: 'scale-pagination',
@@ -78,11 +80,13 @@ export class Pagination {
   @Event({ eventName: 'scale-pagination' }) scalePagination: EventEmitter<{
     startElement?: number;
     currentPage?: number;
+    direction: PaginationEventDirection;
   }>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scalePagination' }) scalePaginationLegacy: EventEmitter<{
     startElement?: number;
     currentPage?: number;
+    direction: PaginationEventDirection;
   }>;
   /* 5. Private Properties (alphabetical) */
   /** Calculated width of largest text so buttons don't move while changing pages */
@@ -131,30 +135,31 @@ export class Pagination {
   /* 9. Local Methods */
   goFirstPage() {
     this.startElement = 0;
-    this.emitUpdate();
+    this.emitUpdate('FIRST');
   }
 
   goPreviousPage() {
     // Min to prevent going below 0
     this.startElement -= Math.min(this.pageSize, this.startElement);
-    this.emitUpdate();
+    this.emitUpdate('PREVIOUS');
   }
 
   goNextPage() {
     this.startElement += this.pageSize;
-    this.emitUpdate();
+    this.emitUpdate('NEXT');
   }
 
   goLastPage() {
     const p = this.pageSize;
     // Make sure startElement is multiple of pageSize
     this.startElement = Math.ceil((this.totalElements - p) / p) * p;
-    this.emitUpdate();
+    this.emitUpdate('LAST');
   }
 
-  emitUpdate() {
+  emitUpdate(direction: PaginationEventDirection) {
     const data = {
       startElement: this.startElement,
+      direction,
     };
     emitEvent(this, 'scalePagination', data);
   }
