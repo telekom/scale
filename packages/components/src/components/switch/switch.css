@@ -14,12 +14,12 @@
   --offset: 2px;
 
   --text: var(--telekom-color-text-and-icon-standard);
-  --text-disabled: var(--telekom-color-text-and-icon-disabled); 
+  --text-disabled: var(--telekom-color-text-and-icon-disabled);
 
   --toggle: var(--telekom-color-ui-solid-standard);
   --background: var(--telekom-color-ui-outlined-fill-standard);
   --border: var(--telekom-color-ui-outlined-border-standard);
-  
+
   --transition-duration: var(--telekom-motion-duration-transition);
   --transition-timing-function: cubic-bezier(
     var(--telekom-motion-easing-standard)
@@ -122,7 +122,7 @@
   transition-timing-function: var(--transition-timing-function);
 }
 
-.switch:not(.switch--disabled) .switch__wrapper  .switch__toggle {
+.switch:not(.switch--disabled) .switch__wrapper .switch__toggle {
   background-color: var(--toggle);
 }
 
@@ -131,7 +131,10 @@
   --border: var(--telekom-color-ui-outlined-border-hovered);
 }
 
-.switch:not(.switch--disabled):hover input:not(:checked) ~ .switch__wrapper  .switch__toggle {
+.switch:not(.switch--disabled):hover
+  input:not(:checked)
+  ~ .switch__wrapper
+  .switch__toggle {
   --toggle: var(--telekom-color-ui-solid-hovered);
 }
 
@@ -140,7 +143,10 @@
   --border: var(--telekom-color-ui-outlined-border-pressed);
 }
 
-.switch:not(.switch--disabled):active input:not(:checked) ~ .switch__wrapper .switch__toggle {
+.switch:not(.switch--disabled):active
+  input:not(:checked)
+  ~ .switch__wrapper
+  .switch__toggle {
   --toggle: var(--telekom-color-ui-solid-pressed);
 }
 
@@ -164,29 +170,38 @@
 /* toggle on */
 
 .switch:not(.switch--disabled) input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-standard);;
-  --border: transparent;  
+  --background: var(--telekom-color-primary-standard);
+  --border: transparent;
 }
 
-.switch:not(.switch--disabled) input:checked ~ .switch__wrapper .switch__toggle {
+.switch:not(.switch--disabled)
+  input:checked
+  ~ .switch__wrapper
+  .switch__toggle {
   --toggle: var(--telekom-color-ui-additional-base);
 }
 
 .switch:not(.switch--disabled):hover input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-hovered);;
+  --background: var(--telekom-color-primary-hovered);
   --border: transparent;
 }
 
-.switch:not(.switch--disabled):hover input:checked ~ .switch__wrapper  .switch__toggle {
+.switch:not(.switch--disabled):hover
+  input:checked
+  ~ .switch__wrapper
+  .switch__toggle {
   --toggle: var(--telekom-color-ui-additional-base);
 }
 
 .switch:not(.switch--disabled):active input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-pressed);;
+  --background: var(--telekom-color-primary-pressed);
   --border: transparent;
 }
 
-.switch:not(.switch--disabled):active input:checked ~ .switch__wrapper .switch__toggle {
+.switch:not(.switch--disabled):active
+  input:checked
+  ~ .switch__wrapper
+  .switch__toggle {
   --toggle: var(--telekom-color-ui-additional-base);
 }
 
@@ -202,16 +217,16 @@
 
 .switch.switch--disabled .switch__wrapper {
   --border: var(--telekom-color-ui-outlined-border-disabled);
-  --background: var(--telekom-color-ui-outlined-fill-disabled)
+  --background: var(--telekom-color-ui-outlined-fill-disabled);
 }
 
 .switch.switch--disabled input:checked ~ .switch__wrapper {
   --border: var(--telekom-color-ui-outlined-border-disabled);
-  --background: var(--telekom-color-ui-outlined-fill-disabled)
+  --background: var(--telekom-color-ui-outlined-fill-disabled);
 }
 
 .switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,
-.switch.switch--disabled .switch__wrapper .switch__toggle  {
+.switch.switch--disabled .switch__wrapper .switch__toggle {
   --toggle: var(--telekom-color-ui-solid-disabled);
 }
 
