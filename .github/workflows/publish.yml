@@ -77,6 +77,10 @@ jobs:
       - name: Deprecate Vue Package
         run: |
           npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+    
+      - name: Deprecate Scale Design Tokens Package
+        run: |
+          npm deprecate @telekom/scale-design-tokens@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
 
   publish-neutral:
     runs-on: ubuntu-latest
@@ -154,3 +158,7 @@ jobs:
       - name: Deprecate Vue Package
         run: |
           npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+
+      - name: Deprecate Scale Design Tokens Package
+        run: |
+          npm deprecate @telekom/scale-design-tokens-neutral@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
