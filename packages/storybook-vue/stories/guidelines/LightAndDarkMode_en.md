@@ -50,7 +50,7 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 
 ## Information for developers
 
-### Implement the dark mode
+### Implementing dark mode
 
 Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages CSS variables to allow switching modes.
 
