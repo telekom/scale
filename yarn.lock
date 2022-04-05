@@ -4702,10 +4702,17 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@telekom/design-tokens@^1.0.0-alpha.16":
-  version "1.0.0-alpha.16"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.16.tgz#ab0c2cd4c886fba1594d5ea256da021498b98962"
-  integrity sha512-gSAcUADGmK8BuL5BaK7BKobZ2vsba/Ly7DZ3c00sjMyhC7vhPF0XmYSwXuqjyu4ZgqkwKN9JrY+14VAGedSi/A==
+"@telekom/design-tokens@^1.0.0-alpha.19":
+  version "1.0.0-alpha.19"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.19.tgz#51f0cea326d462390061f5ce6e1accf380b37f2f"
+  integrity sha512-cPnLuKwbWubj5qi8IYRisWvnCiEtSbNO5lO4yTZVqDtCWq5VTUpApnukqq24+RUESWKEtyDwYt0XQa9AIiGokQ==
+
+"@telekom/scale-design-tokens@^3.0.0-beta.54":
+  version "3.0.0-beta.54"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/scale-design-tokens-3.0.0-beta.54.tgz#0240db725e88e5f263b961f63293259f21fde682"
+  integrity sha512-JjRhm9gs3vrw/GsLOsxktCkxqCOaExtm+Rdk4BxVKP9ex/726ecTe1B98Lxthe7AquuALyC/qhPoAiX6Ribr4Q==
+  dependencies:
+    color "^3.1.3"
 
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"
