@@ -10,24 +10,24 @@
  */
 
 .switch {
-  /* TODO these variables placed in here are no use, they should be placed inside scale-switch */
   --size: 20px;
   --offset: 2px;
-  --color-off: var(--scl-color-text-standard);
-  --color-on: var(--scl-color-primary);
-  --color-active: var(--scl-color-primary-active);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-disabled: var(--scl-color-background-disabled);
-  --color-state: var(--color-off);
-  --color-state-contrast: var(--scl-color-background-standard);
-  --color-background: var(--color-state-contrast);
-  --color-toggle: var(--color-state);
-  --color-text: var(--color-state);
-  --transition-duration: var(--scl-motion-duration-fast);
-  --transition-timing-function: var(--scl-motion-easing-standard);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --spacing-left: var(--scl-spacing-8);
-  --font-weight: var(--scl-font-weight-medium);
+
+  --text: var(--telekom-color-text-and-icon-standard);
+  --text-disabled: var(--telekom-color-text-and-icon-disabled);
+
+  --toggle: var(--telekom-color-ui-solid-standard);
+  --background: var(--telekom-color-ui-outlined-fill-standard);
+  --border: var(--telekom-color-ui-outlined-border-standard);
+
+  --transition-duration: var(--telekom-motion-duration-transition);
+  --transition-timing-function: cubic-bezier(
+    var(--telekom-motion-easing-standard)
+  );
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --spacing-left: var(--telekom-spacing-unit-x2);
+  --font-weight: var(--telekom-typography-font-weight-medium);
 
   display: inline-block;
   position: relative;
@@ -44,26 +44,14 @@
   position: absolute;
 }
 
-.switch .switch__wrapper {
-  position: relative;
-  border: 1px solid var(--color-state);
-  border-radius: calc(var(--size) / 2);
-  width: calc(2 * var(--size) - var(--offset));
-  height: calc(var(--size) - var(--offset));
-  display: inline-flex;
-  justify-content: space-between;
-  background: var(--color-background);
-  transition-property: background;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
+/* base elements */
 
 .switch .switch__text {
   display: flex;
   width: 100%;
-  color: var(--color-text);
+  color: var(--text);
   justify-content: space-evenly;
-  font-size: var(--scl-font-size-12);
+  font-size: var(--telekom-typography-font-size-small);
   line-height: calc(var(--size) - var(--offset));
   transition-property: color;
   transition-duration: var(--transition-duration);
@@ -71,10 +59,12 @@
 }
 
 .switch .switch__text:before {
+  color: var(--telekom-color-text-and-icon-white-standard);
   content: 'I';
 }
 
 .switch .switch__text:after {
+  color: var(--telekom-color-text-and-icon-additional);
   content: '0';
   position: relative;
   right: -1px;
@@ -85,12 +75,13 @@
   border-radius: 50%;
   padding: calc(0.5 * var(--size) - var(--offset));
   margin: calc(-0.5 * var(--size) + var(--offset));
-  background: var(--color-toggle);
+  background: var(--toggle);
   left: calc(0.5 * var(--size) - 0.5 * var(--offset));
   top: 50%;
   transition-property: transform, background;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
+  z-index: 20;
 }
 
 .switch input:checked:disabled + .switch__wrapper .switch__toggle,
@@ -107,7 +98,7 @@
 
 .switch .switch__label {
   cursor: inherit;
-  color: var(--color-text);
+  color: var(--text);
   margin-left: var(--spacing-left);
   font-weight: var(--font-weight);
   transition-property: color;
@@ -115,60 +106,131 @@
   transition-timing-function: var(--transition-timing-function);
 }
 
+/* toggle off */
+
+.switch .switch__wrapper {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--size) / 2);
+  width: calc(2 * var(--size) - var(--offset));
+  height: calc(var(--size) - var(--offset));
+  display: inline-flex;
+  justify-content: space-between;
+  background: var(--background);
+  transition-property: background;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.switch:not(.switch--disabled) .switch__wrapper .switch__toggle {
+  background-color: var(--toggle);
+}
+
+.switch:not(.switch--disabled):hover input:not(:checked) ~ .switch__wrapper {
+  --background: var(--telekom-color-ui-outlined-fill-hovered);
+  --border: var(--telekom-color-ui-outlined-border-hovered);
+}
+
+.switch:not(.switch--disabled):hover
+  input:not(:checked)
+  ~ .switch__wrapper
+  .switch__toggle {
+  --toggle: var(--telekom-color-ui-solid-hovered);
+}
+
+.switch:not(.switch--disabled):active input:not(:checked) ~ .switch__wrapper {
+  --background: var(--telekom-color-ui-outlined-fill-pressed);
+  --border: var(--telekom-color-ui-outlined-border-pressed);
+}
+
+.switch:not(.switch--disabled):active
+  input:not(:checked)
+  ~ .switch__wrapper
+  .switch__toggle {
+  --toggle: var(--telekom-color-ui-solid-pressed);
+}
+
 .switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
 }
 
-.switch--focus-visible-supported input:focus-visible ~ .switch__wrapper {
+.switch--focus-visible-supported
+  input:focus-visible:not(:checked)
+  ~ .switch__wrapper {
+  box-shadow: var(--box-shadow-focus);
+  border-color: var(--border);
+}
+
+.switch--focus-visible-supported
+  input:focus-visible:checked
+  ~ .switch__wrapper {
   box-shadow: var(--box-shadow-focus);
 }
 
-.switch input:checked ~ .switch__wrapper {
-  --color-state: var(--color-on);
-  --color-background: var(--color-state);
-  --color-toggle: var(--color-state-contrast);
-  --color-text: var(--color-state-contrast);
+/* toggle on */
+
+.switch:not(.switch--disabled) input:checked ~ .switch__wrapper {
+  --background: var(--telekom-color-primary-standard);
+  --border: transparent;
 }
 
-/* Needs to placed after :checked but before :active */
-.switch:hover,
-.switch:hover input ~ .switch__wrapper {
-  --color-state: var(--color-hover);
+.switch:not(.switch--disabled)
+  input:checked
+  ~ .switch__wrapper
+  .switch__toggle {
+  --toggle: var(--telekom-color-ui-additional-base);
 }
 
-.switch input:not(:disabled):active ~ .switch__wrapper {
-  --color-state: var(--color-active);
-  --color-background: var(--color-state);
-  --color-toggle: var(--color-state-contrast);
-  --color-text: var(--color-state-contrast);
+.switch:not(.switch--disabled):hover input:checked ~ .switch__wrapper {
+  --background: var(--telekom-color-primary-hovered);
+  --border: transparent;
 }
 
-.switch input:checked:not(:disabled):active ~ .switch__wrapper {
-  --color-state: var(--color-active);
-  --color-background: var(--color-state-contrast);
-  --color-toggle: var(--color-active);
-  --color-text: var(--color-active);
+.switch:not(.switch--disabled):hover
+  input:checked
+  ~ .switch__wrapper
+  .switch__toggle {
+  --toggle: var(--telekom-color-ui-additional-base);
 }
 
-.switch input:not(:disabled):active ~ .switch__label {
-  --color-text: var(--color-active);
+.switch:not(.switch--disabled):active input:checked ~ .switch__wrapper {
+  --background: var(--telekom-color-primary-pressed);
+  --border: transparent;
+}
+
+.switch:not(.switch--disabled):active
+  input:checked
+  ~ .switch__wrapper
+  .switch__toggle {
+  --toggle: var(--telekom-color-ui-additional-base);
 }
 
 /* disabled states */
-
-.switch.switch--disabled {
-  --color-state: var(--color-disabled);
-  --color-hover: var(--color-disabled);
-  --color-toggle: var(--color-disabled);
-  --color-text: var(--color-disabled);
-}
 
 .switch.switch--disabled label {
   cursor: not-allowed;
 }
 
+.switch.switch--disabled .switch__label {
+  color: var(--text-disabled);
+}
+
+.switch.switch--disabled .switch__wrapper {
+  --border: var(--telekom-color-ui-outlined-border-disabled);
+  --background: var(--telekom-color-ui-outlined-fill-disabled);
+}
+
 .switch.switch--disabled input:checked ~ .switch__wrapper {
-  --color-state: var(--color-disabled);
-  --color-toggle: var(--color-state-contrast);
-  --color-text: var(--color-state-contrast);
+  --border: var(--telekom-color-ui-outlined-border-disabled);
+  --background: var(--telekom-color-ui-outlined-fill-disabled);
+}
+
+.switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,
+.switch.switch--disabled .switch__wrapper .switch__toggle {
+  --toggle: var(--telekom-color-ui-solid-disabled);
+}
+
+.switch.switch--disabled .switch__text:before,
+.switch.switch--disabled .switch__text:after {
+  color: var(--text-disabled);
 }

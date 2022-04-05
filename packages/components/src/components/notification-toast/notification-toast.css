@@ -11,25 +11,39 @@
 
 :host {
   /* toast */
-
   --width: 367px;
-  --radius: var(--scl-radius-8);
-  --background: var(--scl-color-background-standard);
-  --box-shadow: var(--scl-shadow-level-0);
+  --radius: var(--telekom-radius-standard);
+  --background: var(--telekom-color-background-surface);
+  /* FIXME:TOKEN not sure what elevation to use here */
+  --box-shadow: var(--telekom-shadow-raised-standard);
 
   /* icon container colors */
-
-  --background-success-icon-container: var(--scl-color-text-success);
-  --background-warning-icon-container: var(--scl-color-orange-70);
-  --background-error-icon-container: var(--scl-color-red-70);
-  --background-informational-icon-container: var(--scl-color-blue-60);
+  --background-success-icon-container: var(
+    --telekom-color-functional-success-standard
+  );
+  --background-warning-icon-container: var(
+    --telekom-color-functional-warning-standard
+  );
+  --background-error-icon-container: var(
+    --telekom-color-functional-danger-standard
+  );
+  --background-informational-icon-container: var(
+    --telekom-color-functional-informational-standard
+  );
 
   /* icon container colors */
-
-  --background-success-text-container: #f2f7ef;
-  --background-warning-text-container: #fbf4eb;
-  --background-error-text-container: #fbf3f4;
-  --background-informational-text-container: #eff9fb;
+  --background-success-text-container: var(
+    --telekom-color-functional-success-subtle
+  );
+  --background-warning-text-container: var(
+    --telekom-color-functional-warning-subtle
+  );
+  --background-error-text-container: var(
+    --telekom-color-functional-danger-subtle
+  );
+  --background-informational-text-container: var(
+    --telekom-color-functional-informational-subtle
+  );
 }
 .notification-toast {
   width: var(--width);
@@ -145,6 +159,19 @@
 .notification-message__icon-close {
   cursor: pointer;
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 13.5px;
+}
+
+.notification-message__icon-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 6.5px;
+  border-radius: 20%;
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+.notification-message__icon-close:hover svg {
+  background-color: white;
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
