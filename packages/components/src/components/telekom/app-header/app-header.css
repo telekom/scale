@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- scale-app-header {
+scale-app-header {
   --header-nav-height: var(--telekom-spacing-unit-x14);
   --header-brand-height: var(--telekom-spacing-unit-x18);
   --header-border-radius: var(--telekom-radius-large);

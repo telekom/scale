@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.54](https://github.com/telekom/scale/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2022-03-31)
+
+**Note:** Version bump only for package @telekom/scale-html-to-sketch
+
+
+
+
+
 # [3.0.0-beta.53](https://github.com/telekom/scale/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2022-03-14)
 
 **Note:** Version bump only for package @telekom/scale-html-to-sketch
