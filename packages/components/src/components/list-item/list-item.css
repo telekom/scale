@@ -11,19 +11,21 @@
 
 :host(scale-list-item) {
   --display: block;
-  --font-size: var(--scl-font-size-16);
-  --line-height: var(--scl-font-line-height-150);
-  --spacing-left: calc(0.25ch + var(--scl-spacing-16));
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --spacing-left: calc(0.25ch + var(--telekom-spacing-unit-x4));
 
-  --font-size-marker-ordered: var(--scl-font-size-16);
-  --font-weight-marker-ordered: var(--scl-font-weight-bold);
-  --font-size-marker-ordered-nested: var(--scl-font-size-12);
-  --line-height-marker-ordered-nested: var(--scl-font-line-height-150);
+  --font-size-marker-ordered: var(--telekom-typography-font-size-body);
+  --font-weight-marker-ordered: var(--telekom-typography-font-weight-bold);
+  --font-size-marker-ordered-nested: var(--telekom-typography-font-size-small);
+  --line-height-marker-ordered-nested: var(
+    --telekom-typography-line-spacing-standard
+  );
   --spacing-top-marker-ordered-nested: calc(
-    var(--scl-spacing-16) - var(--scl-spacing-12)
+    var(--telekom-spacing-unit-x4) - var(--telekom-spacing-unit-x3)
   );
 
-  --spacing-right-no-marker: var(--scl-spacing-8);
+  --spacing-right-no-marker: var(--telekom-spacing-unit-x2);
 
   display: var(--display);
 }
@@ -44,18 +46,18 @@
 
 .list-item--unordered:before {
   top: 0.5em;
-  border: var(--scl-spacing-1) solid currentColor;
+  border: var(--telekom-spacing-unit-x025) solid currentColor;
   display: block;
   transform: scale(0.66);
   background: currentColor;
   box-sizing: border-box;
   border-radius: 50%;
-  width: var(--scl-spacing-8);
-  height: var(--scl-spacing-8);
+  width: var(--telekom-spacing-unit-x2);
+  height: var(--telekom-spacing-unit-x2);
 }
 
 .list-item--nested.list-item--unordered:before {
-  border: var(--scl-spacing-1) solid currentColor;
+  border: var(--telekom-spacing-unit-x025) solid currentColor;
   background: transparent;
 }
 
