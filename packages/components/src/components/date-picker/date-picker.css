@@ -18,10 +18,7 @@ duet-date-picker {
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
   --duet-color-placeholder: var(--telekom-color-ui-additional-regular);
   --duet-radius: var(--telekom-radius-standard);
-  --duet-color-text-active: var(
-    --telekom-color-text-and-icon-white-standard,
-    #ffffff
-  );
+  --duet-color-text-active: var(--telekom-color-text-and-icon-white-standard);
   --duet-color-button: var(--telekom-color-background-surface);
   --duet-color-surface: var(--telekom-color-background-surface);
   --duet-z-index: 600;
