@@ -10,22 +10,22 @@
  */
 
 scale-nav-icon {
-  --spacing-mobile: 0 6px;
-  --font-size-mobile: var(--scl-font-size-10);
-  --line-height-mobile: var(--scl-font-line-height-120);
-  --font-weight-mobile: var(--scl-font-weight-bold);
+  --spacing-mobile: var(--telekom-spacing-unit-x0) 6px;
+  --font-size-mobile: var(--telekom-typography-font-size-footnote);
+  --line-height-mobile: var(--telekom-typography-line-spacing-tight);
+  --font-weight-mobile: var(--telekom-typography-font-weight-bold);
 
-  --spacing-desktop: 0 0 0 var(--scl-spacing-16);
-  --font-size-desktop: var(--scl-font-size-12);
-  --line-height-desktop: var(--scl-font-line-height-133);
+  --spacing-desktop: 0 0 0 var(--telekom-spacing-unit-x4);
+  --font-size-desktop: var(--telekom-typography-font-size-small);
+  --line-height-desktop: var(--telekom-typography-line-spacing-standard);
 
-  --color: var(--scl-color-primary);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-active);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 .meta-navigation__item-link {
-  color: var(--scl-color-text-standard);
+  color: var(--color);
   display: flex;
   transition: all 0.2s ease-in-out;
   align-items: center;
@@ -40,7 +40,7 @@ scale-nav-icon {
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {
   .meta-navigation__item-link {
-    color: var(--scl-color-white);
+    color: var(--telekom-color-text-and-icon-inverted-standard);
   }
 }
 

@@ -9,6 +9,7 @@ let i = 0;
   shadow: true,
 })
 export class LoadingSpinner {
+  // todo the variant white should be renamed for dark mode
   @Prop() variant: 'white' | 'primary' = 'primary';
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string;
