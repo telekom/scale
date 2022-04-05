@@ -4702,10 +4702,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@telekom/design-tokens@^1.0.0-alpha.19":
-  version "1.0.0-alpha.19"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.19.tgz#51f0cea326d462390061f5ce6e1accf380b37f2f"
-  integrity sha512-cPnLuKwbWubj5qi8IYRisWvnCiEtSbNO5lO4yTZVqDtCWq5VTUpApnukqq24+RUESWKEtyDwYt0XQa9AIiGokQ==
+"@telekom/design-tokens@^1.0.0-alpha.20":
+  version "1.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.20.tgz#d94e4878debc349c7ffac09f2845f28db9da49f9"
+  integrity sha512-dUbJm1jFFUH6nNtezKIx1q56jjs511FnyVHnF5TF3rWek8qE+FlwLpKIyUCw5d8s7fHqbtYj4qsHKEzUWw2kAQ==
 
 "@telekom/scale-design-tokens@^3.0.0-beta.54":
   version "3.0.0-beta.54"
