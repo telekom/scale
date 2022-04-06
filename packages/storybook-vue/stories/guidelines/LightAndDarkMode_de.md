@@ -1,12 +1,10 @@
-# Telekom Light and Dark Mode
-
-## Light & Dark Mode
+# Light and Dark Mode
 
 **Light und Dark Mode richten sich an unterschiedliche Nutzungsgruppen und -szenarien. Dabei geht es nicht nur um Ästhetik, sondern oft auch darum, eine Überanstrengung der Augen zu vermeiden. Sei es aufgrund des Umgebungslichts oder bspw. bei Sehbehinderungen, wie dem Grauen Star.**
 
 Mithilfe unserer Komponenten lässt sich der Dark Mode nahezu ohne zusätzlichen Aufwand implementieren. Sowohl im Design als auch im Code.
 
-![Dark mode example modal](assets/dark-mode-example-modal.png)
+![Dark mode example modal](assets/img_color.png)
 
 ## Light Mode
 

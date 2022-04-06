@@ -1,12 +1,10 @@
-# Telekom Dark and Light Mode
-
-## Light & Dark Mode
+# Dark and Light Mode
 
 **Light and dark mode are directed at different user groups and different use cases. This is not only about aesthetics, but also about avoiding eye strain. Be it due to ambient light or, for example, visual impairments such as cataracts.**
 
 With the help of our components, dark mode can be implemented with almost no additional effort. Both in the design and in the code.
 
-![Dark mode example modal](assets/dark-mode-example-modal.png)
+![Dark mode example modal](assets/img_color.png)
 
 ## Light mode
 
@@ -16,7 +14,7 @@ Most general users without visual impairments prefer light mode, especially in a
 
 Dark mode is especially beneficial for users with certain visual impairments, as it makes it easier to distinguish between elements and text. Some users also benefit from the lower contrast in dark mode. Most users, even without visual impairments, prefer dark mode at night and in dimly-lit environments. This helps avoid eye strain and fatigue.
 
-## Modus Switch
+## Switching modes
 
 Each color of a component is replaced by a matching color from the other mode. This allows designers and developers to change modes with almost no additional effort.
 
@@ -25,13 +23,13 @@ Each color of a component is replaced by a matching color from the other mode. T
 ## An optimized color palette
 
 We’ve optimized the Scale color palette so that it provides a consistent look and feel across both modes. Of course, all colors in our components are
-certified for accessibility. To learn more, [check out an overview of the new color palette](./?path=/docs/guidelines-colors--page).
+certified for accessibility. To learn more, [check out an overview of the new color palette](./?path=/docs/guidelines-colors--page)
 
 ![Dark mode example palette](assets/dark-mode-example-palette.png)
 
 ## Let your users decide
 
-Since there are many personal reasons for choosing a mode, it’s ideal to let your users decide which mode they want to use. If you can detect user preferences from the operating system (like via `prefers-color-scheme` on the web), select the preferred mode automatically. To offer a manual change you can offer a button or switch that toggles between light and dark mode – e.g. in the settings of your product.
+Since there are many personal reasons for choosing a mode, it’s ideal to let your users decide which mode they want to use. If you can detect user preferences from the operating system (like via `prefers-color-scheme` on the web), select the preferred mode automatically. To offer a manual change, you can offer a button or switch that toggles between light and dark mode – e.g., in the settings of your product.
 
 ## For designers
 
@@ -42,7 +40,7 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 - Go to <a href="./?path=/docs/setup-info-getting-started-for-designers--page">Getting Started for Designers</a> and import the libraries for light and dark mode.
 - Design your interface with the library of your choice.
 - To change the mode, go to Preferences > Libraries and select the other library. When asked, select "Replace". Close the preferences window.
-- In Sketch, click the notification icon (bell) in the upper right corner and select "Component updates available".
+- In Sketch, click the notification icon (bell) in the upper-right corner and select "Component updates available".
 - Select "Update components".
 - Now your design will appear in the other mode.
 
@@ -56,7 +54,7 @@ Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages
 
 By default, the mode is set to match the operating system preferences, via the `prefers-color-scheme` media query.
 
-Alternatively, you can set the modes via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch only a specific part of the page.
+Alternatively, you can set the mode via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch a specific part of the page.
 
 Setting the `data-mode` attribute will override the system preferences.
 
