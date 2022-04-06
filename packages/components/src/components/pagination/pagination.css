@@ -10,23 +10,25 @@
  */
 
 :host {
-  --color: var(--scl-color-grey-90);
-  --radius: var(--scl-radius-12);
-  --font-size: var(--scl-font-size-12);
-  --border: 1px solid var(--scl-color-grey-10);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-active);
-  --color-button: var(--scl-color-grey-10);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --radius: var(--telekom-radius-large);
+  --font-size: var(--telekom-typography-font-size-small);
+  --border: 1px solid var(--telekom-color-ui-additional-subtle);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-button: var(--telekom-color-ui-additional-subtle);
   --border-button: var(--border);
-  --box-shadow-focus: inset 0 0 0 2px var(--scl-color-focus);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
   --radius-first-prompt: var(--radius) 0 0 var(--radius);
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
   --radius-last-prompt-stack: 0 0 var(--radius) 0;
-  --stroke-svg: var(--scl-color-grey-90);
-  --stroke-svg-high-contrast: var(--scl-color-white);
+  --stroke-svg: var(--telekom-color-ui-additional-extra-strong);
+  /* FIXME is this needed? */
+  --stroke-svg-high-contrast: #fff;
   --width-button: 42px;
-  --padding-info: var(--scl-spacing-8);
+  --padding-info: var(--telekom-spacing-unit-x2);
   --height-button: 56px;
   --height-button-small: 40px;
   --line-height-info: calc(var(--height-button) - 2px);
@@ -97,14 +99,20 @@ button:focus {
 button svg {
   display: block;
 }
+
 button:not(:disabled) {
   cursor: pointer;
 }
 button:not(:disabled) svg {
   stroke: var(--stroke-svg);
 }
+
+button:disabled svg {
+  stroke: var(--telekom-color-text-and-icon-disabled);
+}
+
 button:not(:disabled):hover {
-  border-color: var(--color-hover);
+  border-color: var(--telekom-color-primary-hovered);
   z-index: 1;
 }
 button:not(:disabled):hover svg {
@@ -136,7 +144,7 @@ button:not(:disabled):active svg {
 .pagination--hide-borders button:not(:disabled):hover {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
   border-width: 1px;
-  border-color: var(--color-hover);
+  border-color: var(--telekom-color-primary-hovered);
 }
 
 .pagination__button-wrapper {
