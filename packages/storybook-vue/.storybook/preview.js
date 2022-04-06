@@ -36,4 +36,41 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS, // newViewports would be an ViewportMap. (see below for examples)
   },
   viewMode: 'docs',
+  options: {
+    storySort: {
+      order: [
+        'Scale Design System',
+        'About Scale',
+        'FAQ',
+        'New Release',
+        ['SketchLibrary'],
+        'Setup & Info',
+        [
+          'Getting Started For Designers',
+          'Getting Started For Developers',
+          'Scale and Vue',
+          'Scale and Angular',
+          'Scale and React',
+          'Accessibility',
+          'Browser Support',
+        ],
+        'Guidelines',
+        [
+          'Design Tokens',
+          'Dark Mode',
+          'Customization and Themes',
+          'Grid',
+          'Spacings',
+          'Typography',
+          'Colors',
+          'Shadows',
+        ],
+        'Update History',
+        ['SketchLibrary', 'Design', 'Development'],
+        'Components',
+        'Beta Components',
+        'Contact',
+      ],
+    },
+  },
 };
