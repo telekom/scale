@@ -176,7 +176,7 @@
   color: var(--telekom-color-text-and-icon-standard);
 }
 
-.notification-message__icon-close:hover svg {
+.notification-toast__button-close:hover svg {
   background-color: white;
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }
