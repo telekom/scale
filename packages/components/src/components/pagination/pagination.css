@@ -13,7 +13,7 @@
   --color: var(--telekom-color-text-and-icon-standard);
   --radius: var(--telekom-radius-large);
   --font-size: var(--telekom-typography-font-size-small);
-  --border: 1px solid var(--telekom-color-ui-additional-subtle);
+  --border: 1px solid var(--telekom-color-ui-additional-light);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-button: var(--telekom-color-ui-additional-subtle);
