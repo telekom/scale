@@ -69,18 +69,22 @@
 
 .notification-toast.notification-toast--variant-success {
   background: var(--background-success-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-toast.notification-toast--variant-warning {
   background: var(--background-warning-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-toast.notification-toast--variant-error {
   background: var(--background-error-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-toast.notification-toast--variant-informational {
   background: var(--background-informational-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 /*
