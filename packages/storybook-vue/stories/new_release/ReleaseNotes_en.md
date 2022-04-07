@@ -18,6 +18,6 @@ Sketch only started supporting color variables with version 69 (October 2020). W
 
 ## Information for developers
 
-We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work. 
+We consider the release to be non-breaking, but there is a very unlikely edge case in which the update might require a bit of work.
 
 [You can find more details on GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
