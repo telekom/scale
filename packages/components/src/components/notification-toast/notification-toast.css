@@ -148,7 +148,7 @@
 }
 
 .notification-toast__text-container {
-  width: var(--width);
+  width: 271px;
   min-height: 33px;
   float: left;
   position: relative;
@@ -163,7 +163,7 @@
 .notification-toast__button-close {
   position: absolute;
   top: 10px;
-  right: 13.5px;
+  right: 7.5px;
   color: #191919;
   border: none;
   cursor: pointer;
