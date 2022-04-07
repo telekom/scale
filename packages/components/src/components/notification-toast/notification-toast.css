@@ -101,7 +101,7 @@
   left: 0;
   top: 0;
   float: left;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .notification-toast.notification-toast--variant-success
