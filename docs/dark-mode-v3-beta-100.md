@@ -1,5 +1,46 @@
 # Dark mode (`3.0.0-beta.100`)
 
+- [Implement the dark mode](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md#implement-the-dark-mode)
+- [Changes in CSS](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md#changes-in-css)
+
+## Implement the dark mode
+
+Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages CSS variables to allow switching modes.
+
+By default, the mode is set to match the operating system preferences, via the `prefers-color-scheme` media query.
+
+Alternatively, you can set the modes via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch only a specific part of the page.
+
+Setting the `data-mode` attribute will override the system preferences.
+
+### Disabling automatic switching
+
+If you want your app to be in either light or dark mode regardless of the user's system preferences, set the data-mode attribute to the desired mode:
+
+```html
+<body data-mode="light"></body>
+```
+
+### Changing modes manually
+
+You can build a switch into the UI with a bit of JavaScript, to set the `data-mode` attribute accordingly. The following snippet should serve as an illustration:
+
+```js
+const element = document.querySelector('.mode-switch');
+
+element.addEventListener('click', function switchMode() {
+  const isDark = document.body.dataset.mode === 'dark';
+  document.body.dataset.mode = isDark ? 'light' : 'dark';
+});
+```
+
+In JavaScript, you can check and monitor the system preference via the [window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method.
+
+```js
+const mq = window.matchMedia('(prefers-color-scheme: dark)');
+const isDark = mq.matches;
+```
+
 ## Changes in CSS
 
 If you use Scale with style customisations that involve overwriting the --scl prefixed CSS variables (e.g. `--scl-color-blue-60`), updating from a previous beta version (`<=3.0.0-beta.54`) will require a bit of work from your side. For the rest, the update should require no extra work and **can be considered non-breaking**.
