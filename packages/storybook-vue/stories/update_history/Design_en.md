@@ -1,15 +1,15 @@
 # Design Updates
 
-This page documents updates to the visual appearance of Scale
+This page documents updates to the visual appearance of Scale.
 
-## Dark and light mode
+## Light and dark mode
 
 31.03.22
 
-- The Scale components are now also available in Dark Mode
-- The color palette was optimized
-- The design token concept was optimized and extended by semantic tokens
-- The text styles have been optimized
+- The Scale components are now also available in dark mode.
+- The color palette has been optimized.
+- The design token concept has been optimized and extended with semantic tokens.
+- The text styles have been optimized.
 
 Affected content:
 
