@@ -4,7 +4,7 @@
 
 With the help of our components, dark mode can be implemented with almost no additional effort. Both in the design and in the code.
 
-![Dark mode example modal](assets/img_color.png)
+![Dark mode example modal](assets/dark-mode-example-modal.png)
 
 ## Light mode
 
@@ -25,7 +25,7 @@ Each color of a component is replaced by a matching color from the other mode. T
 We’ve optimized the Scale color palette so that it provides a consistent look and feel across both modes. Of course, all colors in our components are
 certified for accessibility. To learn more, [check out an overview of the new color palette](./?path=/docs/guidelines-colors--page)
 
-![Dark mode example palette](assets/dark-mode-example-palette.png)
+![Dark mode example palette](assets/img_color.png)
 
 ## Let your users decide
 

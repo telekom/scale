@@ -4,7 +4,7 @@
 
 Mithilfe unserer Komponenten lässt sich der Dark Mode nahezu ohne zusätzlichen Aufwand implementieren. Sowohl im Design als auch im Code.
 
-![Dark mode example modal](assets/img_color.png)
+![Dark mode example modal](assets/dark-mode-example-modal.png)
 
 ## Light Mode
 
@@ -24,7 +24,7 @@ Jede Farbe einer Komponente wird durch eine passende Farbe aus dem jeweils ander
 
 Wir haben die Farbpalette angepasst, sodass sie für beide Modi ein konsistentes Erscheinungsbild bietet. Selbstverständlich sind alle Farben in unseren Komponenten auf Barrierefreiheit geprüft. Eine Übersicht der neuen Farbpalette mit Nutzungshinweisen findest du [hier](./?path=/docs/guidelines-colors--page).
 
-![Dark mode example palette](assets/dark-mode-example-palette.png)
+![Dark mode example palette](assets/img_color.png)
 
 ## Lass die Nutzer\*innen entscheiden
 

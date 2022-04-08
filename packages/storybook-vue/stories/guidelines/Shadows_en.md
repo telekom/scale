@@ -26,12 +26,14 @@ For elements that are positioned above the main content, like navigations, botto
 
 For elements that are temporarily positioned above everything else. Use this for modals, dialogs, or something similar.
 
-## Special shadows
+## App bar top
 
-### App bar top
+> Available soon
 
 The app bar top shadow tokens are for headers and app bars at the top.
 
-### App bar bottom
+## App bar bottom
+
+> Available soon
 
 The app bar bottom shadow tokens are for bottom bars and other elements that are stuck to the bottom.

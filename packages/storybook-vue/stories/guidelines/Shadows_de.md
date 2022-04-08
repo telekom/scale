@@ -26,12 +26,14 @@ Für Komponenten auf oberster Ebene, wie bspw. die Navigation.
 
 Für Komponenten, die den gesamten Inhalt temporär überlagern, wie bspw. das Modal.
 
-## Spezielle Schatten
+## App Bar Top
 
-### App Bar Top
+> Diese Funktion ist bald verfügbar.
 
 Die App Bar Top Shadow Tokens für den oberen Schatten sind für Kopfzeilen und App-Bars im oberen Bereich gedacht.
 
-### App Bar Bottom
+## App Bar Bottom
+
+> Diese Funktion ist bald verfügbar.
 
 Die App Bar Bottom Shadow Tokens sind für Bottom Bars und andere Elemente, die persistent am unteren Viewport sitzen.
