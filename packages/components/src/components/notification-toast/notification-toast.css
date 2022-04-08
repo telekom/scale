@@ -175,7 +175,7 @@
 .notification-toast__button-close svg {
   height: 19px;
   width: 19px;
-  padding: 6.5px;
+  padding: 7.5px 6.5px 6.5px 6.5px;
   border-radius: 20%;
   color: var(--telekom-color-text-and-icon-standard);
 }
