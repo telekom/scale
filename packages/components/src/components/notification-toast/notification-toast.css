@@ -69,18 +69,22 @@
 
 .notification-toast.notification-toast--variant-success {
   background: var(--background-success-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-toast.notification-toast--variant-warning {
   background: var(--background-warning-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-toast.notification-toast--variant-error {
   background: var(--background-error-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .notification-toast.notification-toast--variant-informational {
   background: var(--background-informational-text-container);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 /*
@@ -101,7 +105,7 @@
   left: 0;
   top: 0;
   float: left;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .notification-toast.notification-toast--variant-success
@@ -144,7 +148,7 @@
 }
 
 .notification-toast__text-container {
-  width: var(--width);
+  width: 271px;
   min-height: 33px;
   float: left;
   position: relative;
@@ -159,7 +163,7 @@
 .notification-toast__button-close {
   position: absolute;
   top: 10px;
-  right: 13.5px;
+  right: 7.5px;
   color: #191919;
   border: none;
   cursor: pointer;
@@ -171,7 +175,7 @@
 .notification-toast__button-close svg {
   height: 19px;
   width: 19px;
-  padding: 6.5px;
+  padding: 7.5px 6.5px 6.5px 6.5px;
   border-radius: 20%;
   color: var(--telekom-color-text-and-icon-standard);
 }
