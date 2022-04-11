@@ -45,10 +45,10 @@ export class TextField {
     | 'tel'
     | 'text'
     | 'date'
-    | 'month' //example yyyy-mm
-    | 'week' //example yyyy-W##
-    | 'time' //example hh:mm
-    | 'datetime-local' //example yyyy-mm-ddThh:mm
+    | 'month' // example yyyy-mm
+    | 'week' // example yyyy-W##
+    | 'time' // example hh:mm
+    | 'datetime-local' // example yyyy-mm-ddThh:mm
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
