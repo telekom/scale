@@ -13,7 +13,6 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 Read more about [the changes in GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md).
 Erfahre weitere Details [auf GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
 
-
 ### Betroffene Inhalte:
 
 Alle Komponenten  
@@ -22,7 +21,7 @@ Alle Komponenten
 [Design Tokens](./?path=/docs/guidelines-design-tokens--page)  
 [Typografie](./?path=/docs/guidelines-typography--page)  
 [Farben](./?path=/docs/guidelines-colors--page)  
-[Schatten](./?path=/docs/guidelines-shadows--page)  
+[Schatten](./?path=/docs/guidelines-shadows--page)
 
 ## v1 zu v2 Migrationsleitung
 
