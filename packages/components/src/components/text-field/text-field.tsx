@@ -52,8 +52,8 @@ export class TextField {
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
-  /** (optional) Input label */
-  @Prop() label?: string = '';
+  /** Input label */
+  @Prop() label: string = '';
   /** (optional) Input size */
   @Prop() size?: string = '';
   /** (optional) Input helper text */
