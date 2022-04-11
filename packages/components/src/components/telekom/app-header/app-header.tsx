@@ -218,11 +218,7 @@ export class Header {
       readData(this.mainNavigation),
       this.activeRouteId
     );
-    const isActive = (item) =>
-      rootNode &&
-      rootNode.id === item.id &&
-      !this.visibleMegaMenu &&
-      this.visibleMegaMenu !== null;
+    const isActive = (item) => rootNode && rootNode.id === item.id;
     return (
       <ul
         class="main-navigation"

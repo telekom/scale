@@ -11,12 +11,12 @@
 
 scale-nav-segment {
   --transition: all 0.2s ease-in-out;
-  --color: var(--scl-color-white);
-  --spacing-y: var(--scl-spacing-4);
-  --font-size: var(--scl-font-size-14);
-  --font-weight: var(--scl-font-weight-extrabold);
-  --line-height: var(--scl-font-line-height-114);
-  --border-bottom: 1px solid var(--scl-color-white);
+  --color: var(--telekom-color-text-and-icon-white-standard);
+  --spacing-y: var(--telekom-spacing-unit-x1);
+  --font-size: var(--telekom-typography-font-size-caption);
+  --font-weight: var(--telekom-typography-font-weight-extra-bold);
+  --line-height: var(--telekom-typography-line-spacing-extra-tight);
+  --border-bottom: 1px solid var(--telekom-color-text-and-icon-white-standard);
 }
 .sr-only {
   position: absolute;
