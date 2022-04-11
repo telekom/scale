@@ -43,7 +43,7 @@
     "@nowseemee/vue-output-target": "0.0.4",
     "@stencil/angular-output-target": "^0.0.7",
     "@stencil/postcss": "^2.0.0",
-    "@stencil/react-output-target": "^0.0.9",
+    "@stencil/react-output-target": "^0.3.1",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
     "@types/lodash": "4.14.149",
