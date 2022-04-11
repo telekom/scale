@@ -106,7 +106,7 @@ export class ToggleButton {
         source: this.hostElement,
       });
     }
-  }  
+  }
 
   componentWillLoad() {
     if (this.toggleButtonId == null) {

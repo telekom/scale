@@ -90,7 +90,7 @@ export class Checkbox {
         type: 'warn',
         source: this.host,
       });
-    }    
+    }
   }
 
   handleChange = (ev) => {
