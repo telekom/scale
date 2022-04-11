@@ -84,6 +84,15 @@ export class CheckboxGroup {
         source: this.host,
       });
     }
+    if (this.host.hasAttribute('aria-label')) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelCheckboxGroup" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
   }
 
   getChildNodes() {
