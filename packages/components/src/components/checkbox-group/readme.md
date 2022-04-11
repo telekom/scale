@@ -9,8 +9,7 @@
 
 | Property                 | Attribute                   | Description                                                                                                 | Type      | Default          |
 | ------------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------- |
-| `ariaLabel`              | `aria-label`                | <span style="color:red">**[DEPRECATED]**</span> - ariaLabelCheckboxGroup should replace ariaLabel<br/><br/> | `string`  | `''`             |
-| `ariaLabelCheckboxGroup` | `aria-label-checkbox-group` | (optional) Input label output                                                                               | `string`  | `undefined`      |
+| `ariaLabelCheckboxGroup` | `aria-label-checkbox-group` | <span style="color:red">**[DEPRECATED]**</span> - ariaLabelCheckboxGroup should replace ariaLabel<br/><br/> | `string`  | `undefined`      |
 | `helperText`             | `helper-text`               | (optional) Input helper text                                                                                | `string`  | `undefined`      |
 | `inputId`                | `input-id`                  | (optional) Input checkbox id                                                                                | `string`  | `undefined`      |
 | `invalid`                | `invalid`                   | (optional) Input status                                                                                     | `boolean` | `false`          |

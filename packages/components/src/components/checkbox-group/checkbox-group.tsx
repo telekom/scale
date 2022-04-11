@@ -34,8 +34,6 @@ export class CheckboxGroup {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** @deprecated - ariaLabelCheckboxGroup should replace ariaLabel */
-  @Prop() ariaLabel?: string = '';
-  /** (optional) Input label output */
   @Prop() ariaLabelCheckboxGroup?: string;
   /** (optional) Input helper text */
   @Prop() helperText?: string;
@@ -82,15 +80,6 @@ export class CheckboxGroup {
         tag: 'deprecated',
         message:
           'Property "status" is deprecated. Please use the "invalid" property!',
-        type: 'warn',
-        source: this.host,
-      });
-    }
-    if (this.ariaLabel !== '') {
-      statusNote({
-        tag: 'deprecated',
-        message:
-          'Property "ariaLabel" is deprecated. Please use the "ariaLabelCheckboxGroup" property!',
         type: 'warn',
         source: this.host,
       });
