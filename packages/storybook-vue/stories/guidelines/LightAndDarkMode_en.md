@@ -50,6 +50,14 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 
 ### Implementing dark mode
 
+Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages CSS variables to allow switching modes.
+
+By default, the mode is set to match the operating system preferences, via the `prefers-color-scheme` media query.
+
+Alternatively, you can set the mode via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch a specific part of the page.
+
+Setting the `data-mode` attribute will override the system preferences.
+
 In order to have your app switch modes completely, not only the Scale components, use the following tokens for the canvas and text colors:
 
 ```css
@@ -59,15 +67,7 @@ body {
 }
 ```
 
-There are more color tokens at your disposal for different situations, please make sure to check the guideline colors.
-
-Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages CSS variables to allow switching modes.
-
-By default, the mode is set to match the operating system preferences, via the `prefers-color-scheme` media query.
-
-Alternatively, you can set the mode via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch a specific part of the page.
-
-Setting the `data-mode` attribute will override the system preferences.
+There are more color tokens at your disposal for different situations, please make sure to check the guideline [colors](./?path=/docs/guidelines-colors--page).
 
 ### Disabling automatic switching
 

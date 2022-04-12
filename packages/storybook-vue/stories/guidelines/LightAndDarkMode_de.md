@@ -51,6 +51,14 @@ Wenn du bereits eine ältere Version unserer Sketch Library nutzt, lese dir bitt
 
 ### Dark Mode implementieren
 
+Der Dark Mode ist in Scale ab Version `3.0.0-beta.100` enthalten. Er nutzt CSS-Variablen, um einen Wechsel des Modus zu ermöglichen.
+
+Standardmäßig wird der Modus so eingestellt, dass er den Einstellungen des Betriebssystems entspricht, und zwar über die Medienabfrage `prefers-color-scheme`.
+
+Alternativ können die Modi auch über das `data-mode`-Attribut festgelegt werden. Der Wert muss entweder `light` oder `dark` sein. Es wird empfohlen, dies im Body Text zu tun, z. B. `<body data-mode="light">`, obwohl es auch möglich ist, nur einen bestimmten Teil der Seite umzuschalten.
+
+Das Setzen des `data-mode`-Attributs setzt die Systemeinstellungen außer Kraft.
+
 Damit deine Anwendung komplett zwischen den Modi wechselt und nicht nur die Scale Komponenten, verwenden die folgenden Tokens für den Hintergrund und die Texte:
 
 ```css
@@ -60,15 +68,7 @@ body {
 } 
 ```
 
-Mehr Informationen zu weiteren Farb-Tokens findest du in der Guideline Colors.
-
-Der Dark Mode ist in Scale ab Version `3.0.0-beta.100` enthalten. Er nutzt CSS-Variablen, um einen Wechsel des Modus zu ermöglichen.
-
-Standardmäßig wird der Modus so eingestellt, dass er den Einstellungen des Betriebssystems entspricht, und zwar über die Medienabfrage `prefers-color-scheme`.
-
-Alternativ können die Modi auch über das `data-mode`-Attribut festgelegt werden. Der Wert muss entweder `light` oder `dark` sein. Es wird empfohlen, dies im Body Text zu tun, z. B. `<body data-mode="light">`, obwohl es auch möglich ist, nur einen bestimmten Teil der Seite umzuschalten.
-
-Das Setzen des `data-mode`-Attributs setzt die Systemeinstellungen außer Kraft.
+Mehr Informationen zu weiteren Farb-Tokens findest du in der Guideline [Colors](./?path=/docs/guidelines-colors--page).
 
 ### Deaktivieren der automatischen Umschaltung
 
