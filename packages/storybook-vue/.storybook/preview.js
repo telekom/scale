@@ -57,7 +57,7 @@ export const parameters = {
         'Guidelines',
         [
           'Design Tokens',
-          'Dark Mode',
+          'Light and Dark Mode',
           'Customization and Themes',
           'Grid',
           'Spacings',
