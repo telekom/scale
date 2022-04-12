@@ -1,6 +1,6 @@
 # Sketch-Library Update
 
-## Release 05.04.2022 mit Dark Mode
+## Release 19.04.2022 mit Dark Mode
 
 Scale enthält nun alle Komponenten auch in einer [Dark Mode](./?path=/docs/guidelines-light-and-dark-mode--page)-Variante. Darüber hinaus wurde der Light Mode optimiert. Beide Varianten sind als zwei separate Libraries verfügbar. Du kannst jederzeit den verwendeten Modus wechseln, indem du die eine Library mit der anderen ersetzt.
 
