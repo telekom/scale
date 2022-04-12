@@ -8,10 +8,9 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 - Die Farbpalette wurde optimiert
 - Das Design Token Konzept wurde optimiert und um semantische Tokens erweitert
 - Die Text Stile wurden optimiert
-- CSS variables prefixed with `--scl` are deprecated in favor of the new `--telekom` ones.
+- CSS-Variablen mit dem Präfix `--scl` werden nicht weiter genutzt. Der neue Präfix is `--telekom`.
 
-Read more about [the changes in GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md).
-Erfahre weitere Details [auf GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
+Mehr zu den Änderungen findest du [auf GitHub.](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
 
 ### Betroffene Inhalte:
 
