@@ -9,7 +9,7 @@ Ein Beispiel für eine Boilerplate App findest du im Ordner _Examples_ in unsere
 Installiere zuerst das Package:
 
 ```bash
-npm install @telekom/scale-components
+npm install @telekom/scale-components@next
 ```
 
 Lade danach die Komponenten und das CSS in `index.js`:
