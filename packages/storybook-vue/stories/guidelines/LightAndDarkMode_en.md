@@ -50,6 +50,17 @@ Scale allows you to design in either light or dark mode. Switching is possible a
 
 ### Implementing dark mode
 
+In order to have your app switch modes completely, not only the Scale components, use the following tokens for the canvas and text colors:
+
+```css
+body { 
+  background-color: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+```
+
+There are more color tokens at your disposal for different situations, please make sure to check the guideline colors.
+
 Dark mode is included starting with Scale version `3.0.0-beta.100`. It leverages CSS variables to allow switching modes.
 
 By default, the mode is set to match the operating system preferences, via the `prefers-color-scheme` media query.

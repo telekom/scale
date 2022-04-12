@@ -51,6 +51,17 @@ Wenn du bereits eine ältere Version unserer Sketch Library nutzt, lese dir bitt
 
 ### Dark Mode implementieren
 
+Damit deine Anwendung komplett zwischen den Modi wechselt und nicht nur die Scale Komponenten, verwenden die folgenden Tokens für den Hintergrund und die Texte:
+
+```css
+body { 
+  background-color: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-standard);
+} 
+```
+
+Mehr Informationen zu weiteren Farb-Tokens findest du in der Guideline Colors.
+
 Der Dark Mode ist in Scale ab Version `3.0.0-beta.100` enthalten. Er nutzt CSS-Variablen, um einen Wechsel des Modus zu ermöglichen.
 
 Standardmäßig wird der Modus so eingestellt, dass er den Einstellungen des Betriebssystems entspricht, und zwar über die Medienabfrage `prefers-color-scheme`.
