@@ -22,6 +22,6 @@ All components
 [Colors](./?path=/docs/guidelines-colors--page)  
 [Shadows](./?path=/docs/guidelines-shadows--page)
 
-## v1 to v2 migration guide
+## v1 to v2 Migration
 
 Find the guide [on GitHub](https://github.com/telekom/scale/blob/main/docs/archive/v1-to-v2-migration-guide.md).
