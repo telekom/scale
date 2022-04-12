@@ -62,10 +62,10 @@ Das Setzen des `data-mode`-Attributs setzt die Systemeinstellungen außer Kraft.
 Damit deine Anwendung komplett zwischen den Modi wechselt und nicht nur die Scale Komponenten, verwenden die folgenden Tokens für den Hintergrund und die Texte:
 
 ```css
-body { 
+body {
   background-color: var(--telekom-color-background-canvas);
   color: var(--telekom-color-text-and-icon-standard);
-} 
+}
 ```
 
 Mehr Informationen zu weiteren Farb-Tokens findest du in der Guideline [Colors](./?path=/docs/guidelines-colors--page).

@@ -61,7 +61,7 @@ Setting the `data-mode` attribute will override the system preferences.
 In order to have your app switch modes completely, not only the Scale components, use the following tokens for the canvas and text colors:
 
 ```css
-body { 
+body {
   background-color: var(--telekom-color-background-canvas);
   color: var(--telekom-color-text-and-icon-standard);
 }
