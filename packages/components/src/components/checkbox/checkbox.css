@@ -60,6 +60,7 @@ scale-checkbox {
 }
 
 scale-checkbox {
+  position: relative;
   display: flex;
   width: fit-content;
   padding: 0 2px 0 2px;
