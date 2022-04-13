@@ -58,7 +58,7 @@ Alternatively, you can set the mode via the `data-mode` attribute. The value mus
 
 Setting the `data-mode` attribute will override the system preferences.
 
-In order to have your app switch modes completely, not only the Scale components, use the following tokens for the canvas and text colors:
+In order to have your app switch modes entirely (not only the Scale components), use the following tokens for the canvas and text colors:
 
 ```css
 body {
@@ -67,7 +67,7 @@ body {
 }
 ```
 
-There are more color tokens at your disposal for different situations, please make sure to check the guideline [colors](./?path=/docs/guidelines-colors--page).
+There are more color tokens at your disposal for different use cases. Please make sure to check our guideline on [Colors](./?path=/docs/guidelines-colors--page).
 
 ### Disabling automatic switching
 
