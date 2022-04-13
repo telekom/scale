@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.101](https://github.com/telekom/scale/compare/v3.0.0-beta.100...v3.0.0-beta.101) (2022-04-07)
+
+
+### Bug Fixes
+
+* update design tokens and corresponding storybook docs, remove duplicates and unused vars ([991ed7e](https://github.com/telekom/scale/commit/991ed7e63466c59efca9bd7624ae8e91be274b43)), closes [#978](https://github.com/telekom/scale/issues/978) [#977](https://github.com/telekom/scale/issues/977)
+
+
+
+
+
+# [3.0.0-beta.100](https://github.com/telekom/scale/compare/v3.0.0-beta.54...v3.0.0-beta.100) (2022-04-05)
+
+
+### Features
+
+* dark mode 🌓 ([#900](https://github.com/telekom/scale/issues/900)) ([b7f580f](https://github.com/telekom/scale/commit/b7f580f8cf3097d645a394d55c61d3a7fc6265dd))
+
+
+
+
+
 # [3.0.0-beta.54](https://github.com/telekom/scale/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2022-03-31)
 
 **Note:** Version bump only for package @telekom/scale-storybook-vue

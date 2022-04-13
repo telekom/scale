@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.101](https://github.com/telekom/scale/compare/v3.0.0-beta.100...v3.0.0-beta.101) (2022-04-07)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.100](https://github.com/telekom/scale/compare/v3.0.0-beta.54...v3.0.0-beta.100) (2022-04-05)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
 # [3.0.0-beta.54](https://github.com/telekom/scale/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2022-03-31)
 
 **Note:** Version bump only for package @telekom/scale-components-vue
