@@ -1,6 +1,6 @@
 ## Design and code are one
 
-Scale is the Telekom Digital Design System for products and experiences. It helps you build your online products faster and create superior experiences with ease. With 23+ production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
+Scale is the Telekom Digital Design System for products and experiences. It helps you build your online products faster and create superior experiences with ease. With 32+ production-ready components in code and design, a centrally accessible library and comprehensive documentation, Scale gives you everything you need to make it happen. Scale is currently an open beta.
 
 [Learn more about Scale](./?path=/story/about-scale--page)
 

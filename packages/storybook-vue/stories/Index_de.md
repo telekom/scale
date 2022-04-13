@@ -1,6 +1,6 @@
 ## Design & Code sind eins
 
-Scale ist das digitale Designsystem der Telekom für Produkte und Services. Mit Scale erstellst du mit Leichtigkeit brandkonforme Interfaces. Mit 23+ produktionsfertigen Komponenten in Code und Design, einer zentral zugänglichen Bibliothek und umfassender Dokumentation enthält Scale alles, was du dafür benötigst. Scale ist derzeit eine Open Beta.
+Scale ist das digitale Designsystem der Telekom für Produkte und Services. Mit Scale erstellst du mit Leichtigkeit brandkonforme Interfaces. Mit 32+ produktionsfertigen Komponenten in Code und Design, einer zentral zugänglichen Bibliothek und umfassender Dokumentation enthält Scale alles, was du dafür benötigst. Scale ist derzeit eine Open Beta.
 
 [Scale entdecken](./?path=/story/about-scale--page)
 
