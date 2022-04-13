@@ -20,6 +20,11 @@
     "de": "Setup & Info"
   },
   {
+    "elementSelector": "#new-release",
+    "en": "New Release",
+    "de": "New Release"
+  },  
+  {
     "elementSelector": "#new-release-release-notes--page",
     "en": "Release Notes",
     "de": "Release Notes"
