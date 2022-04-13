@@ -11,6 +11,7 @@
 | ------------------ | -------------------- | ---------------------------------------- | ------------------- | ---------------- |
 | `alignActions`     | `align-actions`      | (optional) Alignment of action buttons   | `"left" \| "right"` | `'right'`        |
 | `closeButtonLabel` | `close-button-label` | (optional) Label for close button        | `string`            | `'Close Pop-up'` |
+| `closeButtonTitle` | `close-button-title` | (optional) title for close button        | `string`            | `'Close'`        |
 | `customClass`      | `custom-class`       | (optional) Custom class                  | `string`            | `''`             |
 | `duration`         | `duration`           | (optional) Transition duration           | `number`            | `200`            |
 | `heading`          | `heading`            | Modal heading                            | `string`            | `undefined`      |

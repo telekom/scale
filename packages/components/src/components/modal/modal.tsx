@@ -60,6 +60,8 @@ export class Modal {
   @Prop() duration?: number = 200;
   /** (optional) Label for close button */
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  /** (optional) title for close button */
+  @Prop() closeButtonTitle?: string = 'Close';
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
@@ -267,6 +269,7 @@ export class Modal {
                 part="close-button"
                 onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
                 aria-label={this.closeButtonLabel}
+                title={this.closeButtonTitle}
               >
                 <slot name="close-icon">
                   <scale-icon-action-circle-close decorative />
