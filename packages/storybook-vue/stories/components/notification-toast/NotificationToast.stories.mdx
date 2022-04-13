@@ -40,6 +40,8 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant" 
       :alignment="alignment"
       :opened="opened"
+      :auto-hide-duration="autoHideDuration"
+      :auto-hide="autoHide"
       ><p slot="header">Informational toast headline</p>
     </scale-notification-toast>
     </div>
@@ -188,6 +190,29 @@ export const TemplateLink = (args, { argTypes }) => ({
 ```html
 <scale-notification-toast variant="informational" opened>
   <p slot="header">Informational toast headline</p>
+</scale-notification-toast>
+```
+
+## Timeout
+
+<Canvas withSource="none">
+  <Story
+    name="Timeout"
+    args={{
+      opened: true,
+      autoHide: true,
+      autHideDuration: '4000',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-toast opened>
+  <p slot="header" auto-hide auto-hide-duration="4000">
+    Informational toast headline
+  </p>
 </scale-notification-toast>
 ```
 

@@ -44,6 +44,10 @@ export class NotificationToast {
   @Prop() positionVertical?: number = 12;
   /** (optional) Toast position right */
   @Prop() positionHorizontal?: number = 12;
+  /** (optional) Toast auto hide */
+  @Prop() autoHide?: boolean = false;
+  /** (optional) Toast auto hide duration */
+  @Prop() autoHideDuration?: number = 3000;
   /** (optional) Toast fade duration */
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
@@ -68,6 +72,12 @@ export class NotificationToast {
     const alignmentParts = this.alignment.split('-');
     this.alignmentVertical = alignmentParts[0];
     this.alignmentHorizontal = alignmentParts[1];
+  }
+
+  componentDidRender() {
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
+    }
   }
 
   close = () => {
