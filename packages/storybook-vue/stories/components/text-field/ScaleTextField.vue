@@ -7,6 +7,8 @@
     :invalid="invalid"
     :max-length="maxLength"
     :min-length="minLength"
+    :max="max"
+    :min="min"
     :placeholder="placeholder"
     :disabled="disabled"
     :readonly="readonly"
@@ -38,6 +40,8 @@ export default {
     invalid: { type: Boolean },
     maxLength: { type: Number },
     minLength: { type: Number },
+    max: { type: Number },
+    min: { type: Number },
     placeholder: { type: String },
     disabled: { type: Boolean },
     readonly: { type: Boolean },
