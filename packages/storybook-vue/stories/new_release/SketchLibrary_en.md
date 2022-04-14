@@ -24,7 +24,7 @@ By clicking on a layer and then selecting Fill and/or Border in the inspector pa
 
 ## Add new library
 
-Have you finished checking your existing project? Then add the new Sketch library. And enjoy the new version! Scale components light mode
+Have you finished checking your existing project? Then add the new Sketch library. And enjoy the new version!
 
 <iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
 name="SketchLibrary"
