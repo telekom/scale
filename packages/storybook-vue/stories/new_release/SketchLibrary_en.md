@@ -6,7 +6,7 @@ Scale now includes all components for [dark mode](./?path=/docs/guidelines-light
 
 ## Important for existing projects
 
-To take full advantage of the new features, your components and colors should be linked to the library. Especially self-defined colors remain unaffected by the update. In order to avoid unwanted effects of the update, we provide a new library with this release and ask you to briefly check your project beforehand. 
+To take full advantage of the new features, your components and colors should be linked to the library. Especially self-defined colors remain unaffected by the update. In order to avoid unwanted effects of the update, we provide a new library with this release and ask you to briefly check your project beforehand.
 
 Please read the following points first and only then load the new library via the button below.
 
