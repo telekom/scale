@@ -50,8 +50,8 @@ defineCustomElements(window);
 
 ## Frameworks
 
-[Scale and Vue](?path=/docs/setup-info-scale-and-vue--page)<br/>
-[Scale and Angular](?path=/docs/setup-info-scale-and-angular--page)<br/>
+[Scale and Vue](./?path=/docs/setup-info-scale-and-vue--page)<br/>
+[Scale and Angular](./?path=/docs/setup-info-scale-and-angular--page)<br/>
 [Scale and React](./?path=/docs/setup-info-scale-and-react--page)
 
 ## Source Code on GitHub
