@@ -1,4 +1,4 @@
-# Light and Dark Mode
+# Light und Dark Mode
 
 **Light und Dark Mode richten sich an unterschiedliche Nutzungsgruppen und -szenarien. Dabei geht es nicht nur um Ästhetik, sondern oft auch darum, eine Überanstrengung der Augen zu vermeiden. Sei es aufgrund des Umgebungslichts oder bspw. bei Sehbehinderungen, wie dem Grauen Star.**
 

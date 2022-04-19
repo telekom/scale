@@ -1,4 +1,4 @@
-# Dark and Light Mode
+# Light and Dark Mode
 
 **Light and dark mode are directed at different user groups and different use cases. This is not only about aesthetics, but also about avoiding eye strain. Be it due to ambient light or, for example, visual impairments such as cataracts.**
 

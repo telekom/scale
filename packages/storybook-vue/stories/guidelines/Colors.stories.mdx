@@ -996,6 +996,13 @@ import { addons } from '@storybook/addons';
             >
               {generateColorModeLinkText()}
             </a>
+            <br/>
+            <div style={{ paddingLeft: 'var(--telekom-spacing-unit-x2)' }}>
+              {locale === 'en' 
+              ? <p>To make it as easy as possible for you to apply our color tokens, we use semantic names for the colors. If you change scale components or develop new components, pay attention to the correct use of the color tokens. This is the only way to ensure that future updates can be easily transferred to your designs at the push of a button. Only then can dark mode be implemented without additional effort. You can learn more about this concept in the guideline for <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">Design Tokens</a></p>
+              : <p>Damit die Anwendung unserer Farb-Tokens möglichst einfach für dich ist, verwenden wir semantische Bezeichnungen für die Farben. Solltest du Scale Komponenten ändern oder neue Komponenten entwickeln, achte auf die korrekte Anwendung der Farb-Tokens. Nur dann ist gewährleistet, dass du künftige Updates einfach per Knopfdruck in deine Designs übertragen kannst. Auch der Dark Mode lässt sich nur dann ohne Mehraufwand umsetzen. In der Guideline <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">Design-Tokens </a> erfährst du mehr über das Konzept der Tokens im Design. </p>
+              }              
+            </div>
             <table
               className="colors-table"
               style={{
