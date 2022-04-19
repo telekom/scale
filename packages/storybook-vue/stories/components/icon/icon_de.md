@@ -65,4 +65,3 @@ Wenn du mehr über die Gestaltung von Telekom Icons erfahren möchtest, lies bit
 ## Verwandte Komponenten
 
 [Button](?path=/usage/components-button--standard)
-

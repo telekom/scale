@@ -55,4 +55,3 @@ Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darste
 
 [Accordion, ](?path=/usage/components-accordion--standard)
 [List](?path=/usage/components-list--ordered)
-

@@ -57,5 +57,3 @@ This button always takes users to the last page.
 
 [Table, ](?path=/usage/components-table--standard)
 [Data Grid](?path=/usage/beta-components-data-grid--standard)
-
-

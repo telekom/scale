@@ -97,6 +97,7 @@ Unser Ziel ist es, Scale so zugänglich wie möglich zu machen. Wenn du Ideen od
 Alle unsere Komponenten funktionieren mit den gängigsten Internet-Browsern.
 
 Hier findest du die [komplette Liste](./?path=/docs/setup-info-browser-support--page)
+
 ## Wer steckt hinter Scale?
 
 Scale wurde gemeinsam mit UX-Designer\*innen und Frontend-Spezialist\*innen entwickelt, um die Frontend-Entwicklung einfacher, schneller und effektiver zu machen.
