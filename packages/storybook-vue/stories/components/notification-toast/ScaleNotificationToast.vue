@@ -22,6 +22,8 @@ export default {
     positionVertical: { type: Number, default: 12 },
     positionHorizontal: { type: Number, default: 12 },
     fadeDuration: { type: Number, default: 500 },
+    autoHideDuration: { type: Number, default: 3000 },
+    autoHide: { type: Boolean, default: false },
     styles: { type: String },
   },
 };
