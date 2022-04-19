@@ -52,4 +52,4 @@ If there isn't much space (e.g., if you use the spinner within a component), cho
 
 ## Related components
 
-<a href="?path=/usage/components-progress-bar--determinate">Progress Bar</a>
+[Progress Bar](?path=/usage/components-progress-bar--determinate)

@@ -53,5 +53,6 @@ Die Tabellenstruktur und -darstellung auf mobilen Geräten entspricht der Darste
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-accordion--standard">Accordion, </a>
-<a href="?path=/usage/components-list--ordered">List</a>
+[Accordion, ](?path=/usage/components-accordion--standard)
+[List](?path=/usage/components-list--ordered)
+

@@ -30,5 +30,5 @@ The Telekom logo with claim is available in 9 country-specific variants (Interna
 
 ## Related components
 
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
-<a href="?path=/usage/components-footer--standard">Footer</a>
+[Brand Header & Navigation, ](?path=/usage/components-brand-header-navigation--standard)
+[Footer](?path=/usage/components-footer--standard)

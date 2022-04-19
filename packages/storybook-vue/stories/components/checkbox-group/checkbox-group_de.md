@@ -67,4 +67,6 @@ Dabei ergibt sich der deaktivierte Zustand der gesamten Gruppe automatisch, wenn
 
 ## Verwandte Komponenten
 
-[Checkbox](?path=/usage/components-checkbox), [Radio Button](?path=/usage/components-radio-button), [Radio Button Group](?path=/usage/components-radio-button-group)
+[Checkbox, ](?path=/usage/components-checkbox)
+[Radio Button, ](?path=/usage/components-radio-button)
+[Radio Button Group](?path=/usage/components-radio-button-group)

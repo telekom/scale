@@ -93,4 +93,4 @@ Important: Use either only small or only large elements within groups.
 
 ## Related components
 
-<a href="?path=/usage/components-text-area--standard">Text area</a>
+[Text Area](?path=/usage/components-text-area--standard)

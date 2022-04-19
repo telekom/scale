@@ -65,4 +65,4 @@ Read-Only-Text-Areas zeigen einen vorausgefüllten Text an, den Nutzer\*innen ni
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-text-field--standard">Text-Field</a>
+[Text Field](?path=/usage/components-text-field--standard)
