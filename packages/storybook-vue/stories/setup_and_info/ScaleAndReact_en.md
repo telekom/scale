@@ -98,7 +98,7 @@ Due to React's [synthetic events](https://reactjs.org/docs/handling-events.html)
 
 It's important to remember that most Scale components leverage the Shadow DOM, so it's not possible to apply styles directly from the outside.
 
-Please refer to our [Customization and Themes](./?path=/docs/scale-for-developers-customization-and-themes--page) page for guidance.
+Please refer to our [Customization and Themes](./?path=/docs/guidelines-customization-and-themes--page) page for guidance.
 
 `styled-components`-type of techniques will not work. However, it's possible to inline scoped variables overwrites:
 

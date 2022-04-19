@@ -8,13 +8,13 @@ Scale is the Telekom Digital Design System for products and experiences. It help
 
 Designers use Scale components to build outstanding digital experiences in Sketch.
 
-[Get started for Designers](./?path=/story/scale-for-designers-getting-started--page)
+[Get started for Designers](./?path=/docs/setup-info-getting-started-for-designers--page)
 
 ## Scale for developers
 
 Developers use Scale web components in HTML, Angular, React and Vue Interfaces.
 
-[Get started for Developers](./?path=/story/scale-for-developers-setup--page)
+[Get started for Developers](./?path=/docs/setup-info-getting-started-for-developers--page)
 
 ## Any questions?
 
