@@ -10,7 +10,7 @@ This page documents updates in `@telekom/scale-components` and related packages.
 - The text styles have been optimized
 - CSS variables prefixed with `--scl` are deprecated in favor of the new `--telekom` ones.
 
-Read more about [the changes in GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md).
+Read more about [the changes on GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md).
 
 ### Affected content
 
@@ -22,6 +22,6 @@ All components
 [Colors](./?path=/docs/guidelines-colors--page)  
 [Shadows](./?path=/docs/guidelines-shadows--page)
 
-## v1 to v2 migration guide
+## v1 to v2 Migration
 
 Find the guide [on GitHub](https://github.com/telekom/scale/blob/main/docs/archive/v1-to-v2-migration-guide.md).

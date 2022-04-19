@@ -50,9 +50,9 @@ applyPolyfills().then(() => {
 
 ## Frameworks
 
-[Scale und Vue](./?path=//story/scale-for-developers-scale-and-vue--page)<br/>
-[Scale und Angular](./?path=/story/scale-for-developers-scale-and-angular--page)<br/>
-[Scale und React](./?path=/story/scale-for-developers-scale-and-react--page)
+[Scale und Vue](./?path=/docs/setup-info-scale-and-vue--page)<br/>
+[Scale und Angular](./?path=/docs/setup-info-scale-and-angular--page)<br/>
+[Scale und React](./?path=/docs/setup-info-scale-and-react--page)
 
 ## Quellcode auf GitHub
 

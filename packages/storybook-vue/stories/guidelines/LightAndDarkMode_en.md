@@ -1,10 +1,10 @@
-# Dark and Light Mode
+# Light and Dark Mode
 
 **Light and dark mode are directed at different user groups and different use cases. This is not only about aesthetics, but also about avoiding eye strain. Be it due to ambient light or, for example, visual impairments such as cataracts.**
 
 With the help of our components, dark mode can be implemented with almost no additional effort. Both in the design and in the code.
 
-![Dark mode example modal](assets/img_color.png)
+![Dark mode example modal](assets/dark-mode-example-modal.png)
 
 ## Light mode
 
@@ -25,7 +25,7 @@ Each color of a component is replaced by a matching color from the other mode. T
 We’ve optimized the Scale color palette so that it provides a consistent look and feel across both modes. Of course, all colors in our components are
 certified for accessibility. To learn more, [check out an overview of the new color palette](./?path=/docs/guidelines-colors--page)
 
-![Dark mode example palette](assets/dark-mode-example-palette.png)
+![Dark mode example palette](assets/img_color.png)
 
 ## Let your users decide
 
@@ -57,6 +57,17 @@ By default, the mode is set to match the operating system preferences, via the `
 Alternatively, you can set the mode via the `data-mode` attribute. The value must be either `light` or `dark`. It's recommended to do this in the body, e.g. `<body data-mode="light">`, although it's also possible to only switch a specific part of the page.
 
 Setting the `data-mode` attribute will override the system preferences.
+
+In order to have your app switch modes entirely (not only the Scale components), use the following tokens for the canvas and text colors:
+
+```css
+body {
+  background-color: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+```
+
+There are more color tokens at your disposal for different use cases. Please make sure to check our guideline on [Colors](./?path=/docs/guidelines-colors--page).
 
 ### Disabling automatic switching
 

@@ -123,7 +123,7 @@ Je nach Anzahl der Hierarchieebenen navigieren die Nutzer\*innen sich durch weit
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-breadcrumb--standard">Breadcrumb, </a>
-<a href="?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation, </a>
-<a href="?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
-<a href="?path=/usage/components-accordion--standard">Accordion</a>
+[Breadcrumb, ](?path=/usage/components-breadcrumb--standard)
+[Sidebar-Navigation, ](?path=/usage/components-sidebar-navigation--standard)
+[Tab-Navigation, ](?path=/usage/components-tab-navigation--text-icon)
+[Accordion](?path=/usage/components-accordion--standard)

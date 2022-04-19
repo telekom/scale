@@ -64,5 +64,5 @@ Das Label beschreibt verständlich den Inhalt eines Tabs. Am besten funktioniere
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-accordion--standard">Accordion, </a>
-<a href="?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation</a>
+[Accordion, ](?path=/usage/components-accordion--standard)
+[Sidebar-Navigation](?path=/usage/components-sidebar-navigation--standard)

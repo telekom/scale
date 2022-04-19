@@ -8,7 +8,7 @@ Here is a list of common questions about Scale, along with practical answers.
 
 All Scale components meet the Telekom accessibility requirements as well as the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/) version 2.1, level AA criteria.
 
-[Learn more about accessibility](./?path=/story/scale-for-developers-accessibility--page) in Scale and how we test our components.
+[Learn more about accessibility](./?path=/docs/setup-info-accessibility--page) in Scale and how we test our components.
 
 ## Can I integrate Scale into an ongoing project?
 
@@ -28,9 +28,9 @@ Here are the best ways to get started:
 
 [General documentation](./?path=/story/scale-design-system--page)
 
-[For designers](./?path=/story/scale-for-designers-getting-started--page)
+[For designers](./?path=/docs/setup-info-getting-started-for-designers--page)
 
-[For developers](./?path=/story/scale-for-developers-setup--page)
+[For developers](./?path=/docs/setup-info-getting-started-for-developers--page)
 
 Also have Sketch ready to work with Scale.
 
@@ -85,7 +85,7 @@ What's special about Scale: the UX design libraries are generated directly from 
 We aim at making inclusive products and experiences that serve everyone.
 Scale components meet the Telekom accessibility requirements as well as the Web Content Accessibility Guidelines (WCAG) version 2.1, level AA criteria.
 
-[Have a look at our standards](./?path=/story/scale-for-developers-accessibility--page)
+[Have a look at our standards](./?path=/docs/setup-info-accessibility--page)
 
 **How to achieve full compliance**
 
@@ -101,7 +101,7 @@ Our goal is to make Scale as accessible as possible. If you have any comments or
 **We love evergreens!**
 All our components are tested to support the most important (evergreen) browsers.
 
-[Our complete list of browsers](./?path=/story/scale-for-developers-browser-support--page)
+[Our complete list of browsers](./?path=/docs/setup-info-browser-support--page)
 
 ## Who is behind Scale?
 

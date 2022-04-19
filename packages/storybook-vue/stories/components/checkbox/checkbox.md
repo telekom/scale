@@ -73,6 +73,6 @@ When checking a box is required, use an asterisk (\*) in the text label.
 
 ## Related components
 
-<a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="?path=/usage/components-switch--standard">Switch, </a>
-<a href="?path=/usage/components-radio-button--standard">Radio Button</a>
+[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Switch, ](?path=/usage/components-switch--standard)
+[Radio Button](?path=/usage/components-radio-button--standard)

@@ -53,5 +53,5 @@ Dieser Button führt immer auf die letzte Seite.
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-table--standard">Tabelle, </a>
-<a href="?path=/usage/beta-components-data-grid--standard">Data Grid</a>
+[Tabelle, ](?path=/usage/components-table--standard)
+[Data Grid](?path=/usage/beta-components-data-grid--standard)
