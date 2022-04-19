@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.102](https://github.com/telekom/scale/compare/v3.0.0-beta.101...v3.0.0-beta.102) (2022-04-19)
+
+
+### Features
+
+* **button:** add name and value props ([#996](https://github.com/telekom/scale/issues/996)) ([32270da](https://github.com/telekom/scale/commit/32270dae2bf1dd6d463ff0bef0dcf14e033b2a32))
+* **modal:** add closeButtonTitle prop, closes [#771](https://github.com/telekom/scale/issues/771) ([#995](https://github.com/telekom/scale/issues/995)) ([1555fe3](https://github.com/telekom/scale/commit/1555fe3a25b2bcf3132ae664065de03de0c91cac))
+* **notification-toast:** add auto-hide prop, closes [#948](https://github.com/telekom/scale/issues/948) ([#979](https://github.com/telekom/scale/issues/979)) ([aa1c3be](https://github.com/telekom/scale/commit/aa1c3bef2c8a3267155f0a40eaed12a01bdb81e2))
+* **text-field:** add min and max attributes ([#988](https://github.com/telekom/scale/issues/988)) ([a073dfb](https://github.com/telekom/scale/commit/a073dfb3120997bc16cd9923cb2ec3b32d88aa37))
+
+
+
+
+
 # [3.0.0-beta.101](https://github.com/telekom/scale/compare/v3.0.0-beta.100...v3.0.0-beta.101) (2022-04-07)
 
 

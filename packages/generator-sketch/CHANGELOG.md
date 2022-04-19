@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.102](https://github.com/telekom/scale/compare/v3.0.0-beta.101...v3.0.0-beta.102) (2022-04-19)
+
+**Note:** Version bump only for package @telekom/scale-generator-sketch
+
+
+
+
+
 # [3.0.0-beta.101](https://github.com/telekom/scale/compare/v3.0.0-beta.100...v3.0.0-beta.101) (2022-04-07)
 
 **Note:** Version bump only for package @telekom/scale-generator-sketch
