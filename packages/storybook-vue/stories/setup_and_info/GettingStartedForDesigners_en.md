@@ -22,10 +22,10 @@ The following download has templates for Brand Header, Footer, and Grid:
 
 Scale components exist as a Sketch library:
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=1&no_cache=1"
+<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
 name="SketchLibrary"
 style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="22px" width="100%">
+frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
 </iframe>
 
 &nbsp;
