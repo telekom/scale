@@ -4,7 +4,7 @@ This page documents updates to the visual appearance of Scale.
 
 ## Light and dark mode
 
-31.03.22
+19.04.22
 
 - The Scale components are now also available in dark mode.
 - The color palette has been optimized.

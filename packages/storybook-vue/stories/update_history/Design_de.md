@@ -4,7 +4,7 @@ Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
 ## Dark and Light Mode
 
-15.03.22
+19.04.22
 
 - Die Scale Komponenten sind nun auch im Dark Mode verfügbar
 - Die Farbpalette wurde optimiert
