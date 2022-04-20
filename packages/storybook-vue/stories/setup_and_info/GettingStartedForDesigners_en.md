@@ -6,7 +6,6 @@ Quickly create beautiful, intuitive, and accessible experiences. The Scale compo
 
 To work with the design system components, you need the latest version of <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>.
 
-
 ## 2. Download and install the TeleNeo font
 
 TeleNeo is the Telekom company font:

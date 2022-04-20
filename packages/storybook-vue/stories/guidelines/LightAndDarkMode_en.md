@@ -92,8 +92,6 @@ element.addEventListener('click', function switchMode() {
 
 In JavaScript, you can check and monitor the system preference via the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia" target="_blank" rel="noopener noreferrer">window.matchMedia</a> method.
 
-
-
 ```js
 const mq = window.matchMedia('(prefers-color-scheme: dark)');
 const isDark = mq.matches;
