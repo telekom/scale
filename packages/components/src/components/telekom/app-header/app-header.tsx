@@ -282,7 +282,7 @@ export class Header {
     };
 
     return (
-      <ul class="meta-navigation">
+      <ul class="meta-navigation" role="menu">
         {this.hasSlotMenuIcon ? (
           <slot name="menu-icon"></slot>
         ) : (

@@ -62,9 +62,11 @@ export class NavIcon {
 
   render() {
     return (
-      <li class={this.getCssClassMap()}>
+      <li class={this.getCssClassMap()} role="none">
         <a
           class="meta-navigation__item-link"
+          role="menuitem"
+          aria-current="page"
           ref={
             this.refMobileMenuToggle ||
             this.refMobileUserMenuToggle ||
