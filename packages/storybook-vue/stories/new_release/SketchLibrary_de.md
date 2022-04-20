@@ -1,4 +1,4 @@
-# Sketch-Library Update
+# Aktualisierung der Sketch Library
 
 ## Release 19.04.2022 mit Dark Mode
 

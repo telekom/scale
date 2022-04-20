@@ -4,7 +4,7 @@ Mit Scale entwickelst du ästhetische, intuitive und barrierefreie Produkte und 
 
 ## 1. Installiere Sketch
 
-Um mit der Scale Design System Library zu arbeiten, benötigst du die aktuelle Version von [Sketch](https://www.sketch.com/).
+Um mit der Scale Design System Library zu arbeiten, benötigst du die aktuelle Version von <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>.
 
 ## 2. Lade und installiere die TeleNeo Schrift
 
@@ -58,4 +58,4 @@ Mit deinem [Feedback](./?path=/story/contact-your-feedback--page) können wir Sc
 
 ## Brauchst du Hilfe bei Sketch?
 
-Sketch bietet sehr gute [Tutorials und Hilfe-Dokumente](https://www.sketch.com/docs/) an.
+Sketch bietet sehr gute <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">Tutorials und Hilfe-Dokumente</a> an.
