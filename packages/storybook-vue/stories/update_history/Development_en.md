@@ -1,4 +1,4 @@
-# Development Updates
+# Code Updates
 
 This page documents updates in `@telekom/scale-components` and related packages.
 
@@ -24,4 +24,4 @@ All components
 
 ## v1 to v2 Migration
 
-Find the guide [on GitHub](https://github.com/telekom/scale/blob/main/docs/archive/v1-to-v2-migration-guide.md).
+Find the guide <a href="https://github.com/telekom/scale/blob/main/docs/archive/v1-to-v2-migration-guide.md" target="_blank" rel="noopener noreferrer">on GitHub</a>.
