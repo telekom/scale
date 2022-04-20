@@ -10,7 +10,7 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 - Die Text Stile wurden optimiert
 - CSS-Variablen mit dem Präfix `--scl` werden nicht weiter genutzt. Der neue Präfix ist `--telekom`.
 
-Mehr zu den Änderungen findest du [auf GitHub.](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
+Mehr zu den Änderungen findest du <a href="https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md" target="_blank" rel="noopener noreferrer">auf GitHub</a>.
 
 ### Betroffene Inhalte:
 

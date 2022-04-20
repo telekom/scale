@@ -59,4 +59,4 @@ Share your designs so we can learn from each other.
 
 ## Get help with Sketch
 
-Sketch provides outstanding <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">tutorials and help docs.</a>.
+Sketch provides outstanding <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">tutorials and help docs</a>.
