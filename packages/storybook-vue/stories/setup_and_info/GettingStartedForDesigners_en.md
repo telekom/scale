@@ -4,7 +4,7 @@ Quickly create beautiful, intuitive, and accessible experiences. The Scale compo
 
 ## 1. Install Sketch
 
-To work with the design system components, you need the latest version of [Sketch](https://www.sketch.com/).
+To work with the design system components, you need the latest version of <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>.
 
 ## 2. Download and install the TeleNeo font
 
@@ -59,4 +59,4 @@ Share your designs so we can learn from each other.
 
 ## Get help with Sketch
 
-Sketch provides outstanding [tutorials and help docs.](https://www.sketch.com/docs/)
+Sketch provides outstanding <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">tutorials and help docs</a>.

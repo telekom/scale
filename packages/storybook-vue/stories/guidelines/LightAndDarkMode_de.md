@@ -91,7 +91,7 @@ element.addEventListener('click', function switchMode() {
 });
 ```
 
-In JavaScript kannst du die Systemeinstellung mit der Methode window.matchMedia prüfen und überwachen.
+In JavaScript kannst du die Systemeinstellung mit der Methode <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia" target="_blank" rel="noopener noreferrer">window.matchMedia</a> prüfen und überwachen.
 
 ```js
 const mq = window.matchMedia('(prefers-color-scheme: dark)');
