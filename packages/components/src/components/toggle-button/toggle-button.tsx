@@ -17,6 +17,7 @@ import {
   Element,
   Event,
   EventEmitter,
+  Method,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -85,6 +86,13 @@ export class ToggleButton {
   }>;
 
   hasScaleIcon = false;
+
+  private focusableElement: HTMLElement;
+
+  @Method()
+  async setFocus() {
+    this.focusableElement.focus();
+  }
 
   connectedCallback() {
     this.setIconPositionProp();
@@ -185,6 +193,7 @@ export class ToggleButton {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <button
+          ref={(el) => (this.focusableElement = el)}
           class={this.getCssClassMap()}
           id={this.toggleButtonId}
           onClick={this.handleClick}
