@@ -61,13 +61,13 @@ export const KEYFRAMES = {
       offset: 0,
       ...keyframeDefaults,
       opacity: 0,
-      top: '-3rem'
+      top: '-3rem',
     },
     {
       offset: 1,
       ...keyframeDefaults,
       opacity: 1,
-      top: 0
+      top: 0,
     },
   ],
 };
