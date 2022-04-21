@@ -23,7 +23,6 @@
 
 .menu-flyout-list {
   display: none;
-  position: absolute;
   pointer-events: initial;
   z-index: var(--scl-z-index-20);
   background: var(--telekom-color-background-surface);

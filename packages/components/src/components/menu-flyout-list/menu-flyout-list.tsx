@@ -24,6 +24,8 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+//@ts-ignore
+import {computePosition, autoPlacement, detectOverflow} from '@floating-ui/dom';
 
 const PAD = 10;
 const ITEM_ROLES = ['menuitem', 'menuitemcheckbox', 'menuitemradio'];
@@ -102,7 +104,6 @@ export class MenuFlyoutList {
 
   componentDidRender() {
     if (this.opened && this.needsCheckPlacement) {
-      this.setSize();
       this.checkPlacement();
     }
   }
@@ -287,15 +288,20 @@ export class MenuFlyoutList {
   }
 
   setPosition() {
-    const { top, left } = this.triggerRect;
-    this.hostElement.style.top = `${top}px`;
-    this.hostElement.style.left = `${left}px`;
-  }
-
-  setSize() {
-    const { width, height } = this.triggerRect;
-    this.hostElement.style.height = `${height}px`;
-    this.hostElement.style.width = `${width}px`;
+    const isSublist = this.hostElement.getAttribute('slot') === 'sublist'
+    const referenceElement = this.trigger();
+    const floatingElement = this.hostElement;
+    function applyStyles({x = 0, y = 0}) {
+      Object.assign(floatingElement.style, {
+        position: 'fixed',
+        left: `${x}px`,
+        top: `${y}px`,
+      });
+    }
+    
+    computePosition(referenceElement, floatingElement, {
+      placement: isSublist ? 'right' : 'bottom-start',
+    }).then(applyStyles)
   }
 
   checkPlacement() {
