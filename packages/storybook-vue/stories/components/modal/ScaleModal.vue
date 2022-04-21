@@ -10,6 +10,7 @@
     :close-button-title="closeButtonTitle"
     :align-actions="alignActions"
     :styles="styles"
+    :allow-injecting-style-to-body="allowInjectingStyleToBody"
     @scaleClose="scaleClose"
     @scaleOpen="scaleOpen"
     @scaleBeforeClose="scaleBeforeClose"
@@ -36,6 +37,7 @@ export default {
     closeButtonLabel: String,
     closeButtonTitle: String,
     alignActions: { type: String, default: 'right' },
+    allowInjectingStyleToBody: Boolean,
     styles: { type: String },
   },
   methods: {

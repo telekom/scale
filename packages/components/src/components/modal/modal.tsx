@@ -19,7 +19,6 @@ import {
   Watch,
   Event,
   EventEmitter,
-  Listen,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
@@ -66,6 +65,8 @@ export class Modal {
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) allow to inject css style {overflow: hidden} to body when modal is open */
+  @Prop() allowInjectingStyleToBody: boolean = false;
 
   /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = this.opened || false;
@@ -99,15 +100,14 @@ export class Modal {
   // @ts-ignore
   private resizeObserver: ResizeObserver;
 
-  @Listen('keydown', { target: 'window' })
-  handleKeypress(event: KeyboardEvent) {
+  handleKeypress = (event: KeyboardEvent) => {
     if (!this.isOpen) {
       return;
     }
     if (event.key === 'Escape') {
       this.emitBeforeClose('ESCAPE_KEY');
     }
-  }
+  };
 
   disconnectedCallback() {
     if (this.resizeObserver) {
@@ -155,6 +155,7 @@ export class Modal {
       this.resizeObserver.observe(this.modalBody as Element);
     }
     this.setHasScroll();
+    this.hostElement.addEventListener('keydown', this.handleKeypress);
   }
 
   setHasScroll() {
@@ -190,8 +191,16 @@ export class Modal {
   openedChanged(newValue) {
     if (newValue === true) {
       this.open();
+      if (this.allowInjectingStyleToBody) {
+        // The following style will disable body from scrolling when modal is open
+        document.body.style.overflow = 'hidden';
+      }
     } else {
       this.close();
+      if (this.allowInjectingStyleToBody) {
+        // remove injected css style from body
+        document.body.style.overflow = null;
+      }
     }
   }
 

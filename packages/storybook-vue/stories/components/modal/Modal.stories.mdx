@@ -77,6 +77,7 @@ export const Template = (args, context) => ({
         :close-button-title="closeButtonTitle"
         :align-actions="alignActions"
         :styles="styles"
+        :allow-injecting-style-to-body="allowInjectingStyleToBody"
         @scaleClose="scaleClose()"
       >
         <template v-if="shortBody">
