@@ -25,7 +25,13 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 //@ts-ignore
-import {computePosition, flip, autoPlacement, detectOverflow, shift} from '@floating-ui/dom';
+import {
+  computePosition,
+  flip,
+  autoPlacement,
+  detectOverflow,
+  shift,
+} from '@floating-ui/dom';
 
 const ITEM_ROLES = ['menuitem', 'menuitemcheckbox', 'menuitemradio'];
 
@@ -276,40 +282,42 @@ export class MenuFlyoutList {
   }
 
   setPosition() {
-    const isInModal = this.hostElement.closest("scale-modal") && this.hostElement.closest("scale-modal").shadowRoot.querySelector(".modal__window")
+    const isInModal =
+      this.hostElement.closest('scale-modal') &&
+      this.hostElement
+        .closest('scale-modal')
+        .shadowRoot.querySelector('.modal__window');
     const modalCheck = {
       name: 'middleware',
       async fn(middlewareArguments) {
-          const overflow = await detectOverflow(middlewareArguments, {
-            boundary: isInModal ? isInModal : 'clippingAncestors',
-            rootBoundary: 'viewport'
-          });
-          if (overflow.bottom > 0) {
-            return {
-              y: middlewareArguments.y - overflow.bottom
-            };
-          }
-          return {}
+        const overflow = await detectOverflow(middlewareArguments, {
+          boundary: isInModal ? isInModal : 'clippingAncestors',
+          rootBoundary: 'viewport',
+        });
+        if (overflow.bottom > 0) {
+          return {
+            y: middlewareArguments.y - overflow.bottom,
+          };
+        }
+        return {};
       },
     };
 
-    const isSublist = this.hostElement.getAttribute('slot') === 'sublist'
+    const isSublist = this.hostElement.getAttribute('slot') === 'sublist';
     const referenceElement = this.trigger();
     const floatingElement = this.hostElement;
-    function applyStyles({x = 0, y = 0 }) {
+    function applyStyles({ x = 0, y = 0 }) {
       Object.assign(floatingElement.style, {
         position: 'fixed',
         left: `${x}px`,
         top: `${y}px`,
       });
     }
-    
+
     computePosition(referenceElement, floatingElement, {
       placement: isSublist ? 'right' : 'bottom-start',
-      middleware: [
-        modalCheck
-      ],
-    }).then(applyStyles)
+      middleware: [modalCheck],
+    }).then(applyStyles);
   }
 
   /**
