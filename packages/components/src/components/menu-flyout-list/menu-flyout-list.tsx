@@ -25,9 +25,8 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 //@ts-ignore
-import {computePosition, autoPlacement, detectOverflow} from '@floating-ui/dom';
+import {computePosition, flip, autoPlacement, detectOverflow, shift} from '@floating-ui/dom';
 
-const PAD = 10;
 const ITEM_ROLES = ['menuitem', 'menuitemcheckbox', 'menuitemradio'];
 
 @Component({
@@ -37,10 +36,8 @@ const ITEM_ROLES = ['menuitem', 'menuitemcheckbox', 'menuitemradio'];
 })
 export class MenuFlyoutList {
   @Element() hostElement: HTMLElement;
-
   /** Used to force a re-render */
   @State() forceRender = 0;
-
   /** */
   @Prop({ mutable: true, reflect: true }) opened = false;
   /** */
@@ -92,8 +89,6 @@ export class MenuFlyoutList {
   private needsCheckPlacement = true;
   /** Track window height to see if menus are off screen */
   private windowHeight: number;
-  /** Track window width to see if menus are off screen */
-  private windowWidth: number;
 
   private items: Element[];
   private focusedItemIndex: number;
@@ -104,7 +99,7 @@ export class MenuFlyoutList {
 
   componentDidRender() {
     if (this.opened && this.needsCheckPlacement) {
-      this.checkPlacement();
+      this.setPosition();
     }
   }
 
@@ -230,8 +225,6 @@ export class MenuFlyoutList {
     if (this.opened) {
       this.active = true;
       this.setFocus();
-      this.setWindowSize();
-      this.setPosition();
       this.padForNonOverlayScrollbars();
       this.updateScrollIndicators();
     }
@@ -282,16 +275,28 @@ export class MenuFlyoutList {
     }
   }
 
-  setWindowSize() {
-    this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
-  }
-
   setPosition() {
+    const isInModal = this.hostElement.closest("scale-modal") && this.hostElement.closest("scale-modal").shadowRoot.querySelector(".modal__window")
+    const modalCheck = {
+      name: 'middleware',
+      async fn(middlewareArguments) {
+          const overflow = await detectOverflow(middlewareArguments, {
+            boundary: isInModal ? isInModal : 'clippingAncestors',
+            rootBoundary: 'viewport'
+          });
+          if (overflow.bottom > 0) {
+            return {
+              y: middlewareArguments.y - overflow.bottom
+            };
+          }
+          return {}
+      },
+    };
+
     const isSublist = this.hostElement.getAttribute('slot') === 'sublist'
     const referenceElement = this.trigger();
     const floatingElement = this.hostElement;
-    function applyStyles({x = 0, y = 0}) {
+    function applyStyles({x = 0, y = 0 }) {
       Object.assign(floatingElement.style, {
         position: 'fixed',
         left: `${x}px`,
@@ -301,86 +306,10 @@ export class MenuFlyoutList {
     
     computePosition(referenceElement, floatingElement, {
       placement: isSublist ? 'right' : 'bottom-start',
+      middleware: [
+        modalCheck
+      ],
     }).then(applyStyles)
-  }
-
-  checkPlacement() {
-    this.needsCheckPlacement = false;
-    let isOutOfBounds = false;
-    const rect = this.base.getBoundingClientRect();
-
-    // Check horizontal flips
-    if (rect.left < PAD) {
-      // console.log('off left edge');
-      isOutOfBounds = true;
-      if (this.direction.includes('left')) {
-        this.flipHorizontal = true;
-      }
-    }
-    if (rect.right > this.windowWidth - PAD) {
-      // console.log('off right edge');
-      isOutOfBounds = true;
-      if (this.direction.includes('right')) {
-        this.flipHorizontal = true;
-      }
-    }
-
-    // Check vertical flips
-    if (rect.top < PAD) {
-      // console.log('off top edge');
-      isOutOfBounds = true;
-      if (this.direction.includes('top')) {
-        this.flipVertical = true;
-      }
-    }
-    if (rect.bottom > this.windowHeight - PAD) {
-      // console.log('off bottom edge');
-      isOutOfBounds = true;
-      if (this.direction.includes('bottom')) {
-        this.flipVertical = true;
-      }
-    }
-
-    if (isOutOfBounds) {
-      this.furtherAdjustPlacement();
-    }
-  }
-
-  furtherAdjustPlacement() {
-    // Apply flip class changes immediately to avoid frame flash
-    this.base.className = this.getCssClassMap();
-    // Force layout and style recalculation
-    window.getComputedStyle(this.base);
-
-    const rect = this.base.getBoundingClientRect();
-
-    // TODO: add more functionality for order of priority of which edge to snap to
-    // Shift to be snapped to a padded edge
-    // Note can't use transform as it creates
-    // a relative parent for nested position fixed elements
-    let left = 0;
-    let top = 0;
-    if (rect.left < PAD) {
-      // console.log('still off left edge');
-      left = PAD - rect.left;
-    } else if (rect.right > this.windowWidth - PAD) {
-      // console.log('still off right edge');
-      left = this.windowWidth - PAD - rect.right;
-    }
-    if (rect.top < PAD) {
-      // console.log('still off top edge');
-      top = PAD - rect.top;
-    } else if (rect.bottom > this.windowHeight - PAD) {
-      // console.log('still off bottom edge');
-      top = this.windowHeight - PAD - rect.bottom;
-    }
-    this.hostElement.style.marginLeft = `${left}px`;
-    this.hostElement.style.marginTop = `${top}px`;
-    this.hostElement.style.marginRight = `${-left}px`;
-    this.hostElement.style.marginBottom = `${-top}px`;
-
-    // Re-render visibly next frame with correct placement to update vdom
-    setTimeout(() => this.forceRender++);
   }
 
   /**

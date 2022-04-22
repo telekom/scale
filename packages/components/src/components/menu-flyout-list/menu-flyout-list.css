@@ -59,62 +59,6 @@
   overscroll-behavior: contain;
 }
 
-.menu-flyout-list--flip-horizontal.menu-flyout-list--direction-bottom-left,
-.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-right,
-.menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-left,
-.menu-flyout-list--direction-bottom-right {
-  top: calc(100% + var(--telekom-spacing-unit-x1));
-  left: 0;
-  right: auto;
-  bottom: auto;
-}
-
-.menu-flyout-list--flip-horizontal.menu-flyout-list--direction-bottom-right,
-.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-left,
-.menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-right,
-.menu-flyout-list--direction-bottom-left {
-  top: calc(100% + var(--telekom-spacing-unit-x1));
-  right: 0;
-  left: auto;
-  bottom: auto;
-}
-
-.menu-flyout-list--flip-horizontal.menu-flyout-list--direction-top-left,
-.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-right,
-.menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-left,
-.menu-flyout-list--direction-top-right {
-  bottom: calc(100% + var(--telekom-spacing-unit-x1));
-  left: 0;
-  right: auto;
-  top: auto;
-}
-
-.menu-flyout-list--flip-horizontal.menu-flyout-list--direction-top-right,
-.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-left,
-.menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-right,
-.menu-flyout-list--direction-top-left {
-  bottom: calc(100% + var(--telekom-spacing-unit-x1));
-  right: 0;
-  left: auto;
-  top: auto;
-}
-
-.menu-flyout-list--flip-horizontal.menu-flyout-list--direction-left,
-.menu-flyout-list--direction-right {
-  left: calc(100% - var(--telekom-spacing-unit-x1));
-  top: -20px;
-  right: auto;
-  bottom: auto;
-}
-
-.menu-flyout-list--flip-horizontal.menu-flyout-list--direction-right,
-.menu-flyout-list--direction-left {
-  right: calc(100% - var(--telekom-spacing-unit-x1));
-  top: -20px;
-  left: auto;
-  bottom: auto;
-}
-
 .menu-flyout-list__scroll-up-indicator,
 .menu-flyout-list__scroll-down-indicator {
   position: absolute;
