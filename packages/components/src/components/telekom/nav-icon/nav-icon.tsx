@@ -66,7 +66,8 @@ export class NavIcon {
         <a
           class="meta-navigation__item-link"
           role="menuitem"
-          aria-current="page"
+          tabindex="0"
+          aria-current={this.active || this.isActive ? 'true' : 'false'}
           ref={
             this.refMobileMenuToggle ||
             this.refMobileUserMenuToggle ||
@@ -106,6 +107,9 @@ export class NavIcon {
           <span class="meta-navigation__item-label">
             <slot></slot>
           </span>
+          {(this.active || this.isActive) && (
+            <span class="sr-only">active</span>
+          )}
         </a>
       </li>
     );

@@ -66,9 +66,11 @@ export class NavMain {
   render() {
     return (
       <Host>
-        <li class={this.getCssClassMap()}>
+        <li class={this.getCssClassMap()} role="none">
           <a
             class="main-navigation__item-link"
+            role="menuitem"
+            tabindex="0"
             href={this.href}
             aria-current={this.active || this.isActive ? 'true' : 'false'}
             aria-haspopup={this.hasPopup ? 'true' : 'false'}

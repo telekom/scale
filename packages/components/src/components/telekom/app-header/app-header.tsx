@@ -222,6 +222,7 @@ export class Header {
     return (
       <ul
         class="main-navigation"
+        role="menu"
         onKeyDown={(e) => {
           if (e.key === 'Escape') {
             this.visibleMegaMenu = '';
