@@ -76,6 +76,8 @@ export class Modal {
   @State() hasBody: boolean = false;
   /** Useful for toggling scroll-specific styles */
   @State() hasScroll: boolean = false;
+  /** store document body original overflow style if applicable, this is useful when modal opens and inject overflow style to body */
+  @State() bodyOverflowValue: string = '';
 
   /** Fires when the modal has been opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
@@ -155,7 +157,6 @@ export class Modal {
       this.resizeObserver.observe(this.modalBody as Element);
     }
     this.setHasScroll();
-    this.hostElement.addEventListener('keydown', this.handleKeypress);
   }
 
   setHasScroll() {
@@ -192,14 +193,15 @@ export class Modal {
     if (newValue === true) {
       this.open();
       if (this.allowInjectingStyleToBody) {
+        this.bodyOverflowValue = document.body.style.overflow;
         // The following style will disable body from scrolling when modal is open
-        document.body.style.overflow = 'hidden';
+        document.body.style.setProperty('overflow', 'hidden');
       }
     } else {
       this.close();
       if (this.allowInjectingStyleToBody) {
-        // remove injected css style from body
-        document.body.style.overflow = null;
+        // remove injected overflow style or set it to original value
+        document.body.style.setProperty('overflow', this.bodyOverflowValue);
       }
     }
   }
@@ -218,6 +220,7 @@ export class Modal {
         this.attemptFocus(this.getFirstFocusableElement());
         emitEvent(this, 'scaleOpen');
       });
+      this.hostElement.addEventListener('keydown', this.handleKeypress);
     } catch (err) {
       emitEvent(this, 'scaleOpen');
     }
@@ -232,6 +235,7 @@ export class Modal {
         this.isOpen = false;
         emitEvent(this, 'scaleClose');
       });
+      this.hostElement.removeEventListener('keydown', this.handleKeypress);
     } catch (err) {
       this.isOpen = false;
       emitEvent(this, 'scaleClose');
