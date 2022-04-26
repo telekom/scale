@@ -194,7 +194,13 @@ export class MainNavigationMobile {
           }}
         >
           {(this.navigation || []).map((item) => (
-            <li class="main-navigation-mobile__item">
+            <li
+              class={`main-navigation-mobile__item${
+                isActive(item.id)
+                  ? ' main-navigation-mobile__item--selected'
+                  : ''
+              }`}
+            >
               <a
                 aria-current={isActive(item.id) ? 'true' : 'false'}
                 aria-haspopup={item.children ? 'true' : 'false'}
