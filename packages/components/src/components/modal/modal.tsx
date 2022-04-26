@@ -188,10 +188,13 @@ export class Modal {
 
   @Watch('opened')
   openedChanged(newValue) {
+    const body = this.hostElement.closest('body');
     if (newValue === true) {
       this.open();
+      body.style.overflow = "hidden";
     } else {
       this.close();
+      body.style.overflow = "visible";
     }
   }
 
