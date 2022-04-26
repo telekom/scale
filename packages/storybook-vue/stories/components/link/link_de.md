@@ -63,4 +63,4 @@ Wähle die Schriftgröße auf Basis der verwendeten Schrift im Fließtext.
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-button--standard">Button</a>
+[Button](?path=/usage/components-button--standard)

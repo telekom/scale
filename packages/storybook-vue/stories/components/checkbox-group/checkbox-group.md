@@ -71,4 +71,6 @@ The deactivated state of the entire group occurs automatically when all individu
 
 ## Related components
 
-[Checkbox](?path=/usage/components-checkbox), [Radio Button](?path=/usage/components-radio-button), [Radio Button Group](?path=/usage/components-radio-button-group)
+[Checkbox, ](?path=/usage/components-checkbox)
+[Radio Button, ](?path=/usage/components-radio-button)
+[Radio Button Group](?path=/usage/components-radio-button-group)

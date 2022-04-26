@@ -13,6 +13,17 @@ Alternatively, you can set the modes via the `data-mode` attribute. The value mu
 
 Setting the `data-mode` attribute will override the system preferences.
 
+In order to have your app switch modes completely, not only the Scale components, use the following tokens for the body's background and text colors:
+
+```css
+body {
+  background-color: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+```
+
+There are more color tokens for different situations.
+
 ### Disabling automatic switching
 
 If you want your app to be in either light or dark mode regardless of the user's system preferences, set the data-mode attribute to the desired mode:

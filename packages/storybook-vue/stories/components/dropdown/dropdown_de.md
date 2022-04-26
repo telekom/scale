@@ -87,6 +87,6 @@ Der Darstellungsfehler liegt auf Seiten des Browsers.
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
-<a href="?path=/usage/components-switch--standard">Switch, </a>
-<a href="?path=/usage/components-radio-button--standard">Radio-Button</a>
+[Checkbox, ](?path=/usage/components-checkbox--standard)
+[Switch, ](?path=/usage/components-switch--standard)
+[Radio Button](?path=/usage/components-radio-button--standard)

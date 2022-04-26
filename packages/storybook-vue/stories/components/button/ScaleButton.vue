@@ -6,6 +6,8 @@
     :target="target"
     :size="size"
     :type="type"
+    :name="name"
+    :value="value"
     :variant="variant"
     :icon-only="iconOnly"
     :inner-tabindex="innerTabindex"
@@ -27,6 +29,8 @@ export default {
     href: String,
     download: String,
     type: String,
+    name: String,
+    value: String,
     target: String,
     variant: String,
     size: String,

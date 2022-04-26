@@ -67,6 +67,6 @@ Display one option as a default selection to align with user expectations and re
 
 ## Related components
 
-<a href="?path=/usage/components-checkbox--standard">Checkbox, </a>
-<a href="?path=/usage/components-switch--standard">Switch, </a>
-<a href="?path=/usage/components-dropdown--standard">Dropdown</a>
+[Checkbox, ](?path=/usage/components-checkbox--standard)
+[Switch, ](?path=/usage/components-switch--standard)
+[Dropdown ](?path=/usage/components-dropdown--standard)

@@ -65,4 +65,4 @@ Read-only text areas show prefilled text that users cannot edit or change. Howev
 
 ## Related components
 
-<a href="?path=/usage/components-text-field--standard">Text field</a>
+[Text Field](?path=/usage/components-text-field--standard)

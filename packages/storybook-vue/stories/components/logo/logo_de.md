@@ -30,5 +30,5 @@ Das Telekom Logo mit Claim liegt in 9 länderspezifischen Varianten vor (für De
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation, </a>
-<a href="?path=/usage/components-footer--standard">Footer</a>
+[Brand Header & Navigation, ](?path=/usage/components-brand-header-navigation--standard)
+[Footer](?path=/usage/components-footer--standard)

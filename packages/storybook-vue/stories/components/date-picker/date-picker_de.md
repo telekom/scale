@@ -42,7 +42,7 @@ In Monatskalender stehen die Tage des angezeigten Monats zur Auswahl.
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-text-field--standard">Input, </a>
-<a href="?path=/usage/components-dropdown--standard">Dropdown, </a>
-<a href="?path=/usage/components-slider--standard">Slider, </a>
-<a href="?path=/usage/components-radio-button--standard">Radio Button</a>
+[Input, ](?path=/usage/components-text-field--standard)
+[Dropdown, ](?path=/usage/components-dropdown--standard)
+[Slider, ](?path=/usage/components-slider--standard)
+[Radio Button](?path=/usage/components-radio-button--standard)

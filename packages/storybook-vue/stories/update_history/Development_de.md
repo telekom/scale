@@ -1,27 +1,27 @@
-# Development Updates
+# Code Updates
 
-This page documents updates in `@telekom/scale-components` and related packages.
+Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und verwandten Paketen.
 
-## Dark and light mode (`v3.0.0-beta.100`)
+## Dark mode (`v3.0.0-beta.100`)
 
-- The Scale components are now also available in Dark Mode
-- The color palette was optimized
-- The design token concept was optimized and extended by semantic tokens
-- The text styles have been optimized
-- CSS variables prefixed with `--scl` are deprecated in favor of the new `--telekom` ones.
+- Die Scale Komponenten sind nun auch im Dark Mode verfügbar
+- Die Farbpalette wurde optimiert
+- Das Design Token Konzept wurde optimiert und um semantische Tokens erweitert
+- Die Text Stile wurden optimiert
+- CSS-Variablen mit dem Präfix `--scl` werden nicht weiter genutzt. Der neue Präfix ist `--telekom`.
 
-Read more about [the changes in GitHub](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md).
+Mehr zu den Änderungen findest du <a href="https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md" target="_blank" rel="noopener noreferrer">auf GitHub</a>.
 
-### Affected content
+### Betroffene Inhalte:
 
-All components  
-[Release Notes](./?path=/docs/new-release-release-notes--page)  
+Alle Komponenten  
+[Hinweise zum Release](./?path=/docs/new-release-release-notes--page)  
 [Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)  
 [Design Tokens](./?path=/docs/guidelines-design-tokens--page)  
-[Typography](./?path=/docs/guidelines-typography--page)  
-[Colors](./?path=/docs/guidelines-colors--page)  
-[Shadows](./?path=/docs/guidelines-shadows--page)
+[Typografie](./?path=/docs/guidelines-typography--page)  
+[Farben](./?path=/docs/guidelines-colors--page)  
+[Schatten](./?path=/docs/guidelines-shadows--page)
 
-## v1 to v2 migration guide
+## v1 zu v2 Migration
 
-Find the guide [on GitHub](https://github.com/telekom/scale/blob/main/docs/archive/v1-to-v2-migration-guide.md).
+Finde die Migrationsleitung <a href="https://github.com/telekom/scale/blob/main/docs/archive/v1-to-v2-migration-guide.md" target="_blank" rel="noopener noreferrer">auf GitHub</a>.

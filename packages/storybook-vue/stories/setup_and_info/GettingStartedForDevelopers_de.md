@@ -10,7 +10,7 @@ Installiere die Komponenten-Library mit `npm` oder `yarn` in dein Projekt:
 npm install @telekom/scale-components@next
 ```
 
-> To install the [version prior to dark mode](https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53), do `npm install @telekom/scale-components` (without `@next`)
+> To install the <a href="https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53" target="_blank" rel="noopener noreferrer">version prior to dark mode</a>, do `npm install @telekom/scale-components` (without `@next`)
 
 Um die Komponenten zu verwenden, lade die CSS-Datei sowie JavaScript. Die CSS-Datei enthält die Schriftarten und die Design-Tokens.
 
@@ -50,9 +50,9 @@ applyPolyfills().then(() => {
 
 ## Frameworks
 
-[Scale und Vue](./?path=//story/scale-for-developers-scale-and-vue--page)<br/>
-[Scale und Angular](./?path=/story/scale-for-developers-scale-and-angular--page)<br/>
-[Scale und React](./?path=/story/scale-for-developers-scale-and-react--page)
+[Scale und Vue](./?path=/docs/setup-info-scale-and-vue--page)<br/>
+[Scale und Angular](./?path=/docs/setup-info-scale-and-angular--page)<br/>
+[Scale und React](./?path=/docs/setup-info-scale-and-react--page)
 
 ## Quellcode auf GitHub
 
