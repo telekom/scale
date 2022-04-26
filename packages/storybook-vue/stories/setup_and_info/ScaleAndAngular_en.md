@@ -16,7 +16,7 @@ Then load the component library in `main.ts`:
 
 ```ts
 // src/main.ts
-import { defineCustomElements } from 'packages/components/loader/index';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 // ...
 
