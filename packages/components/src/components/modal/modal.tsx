@@ -191,10 +191,10 @@ export class Modal {
     const body = this.hostElement.closest('body');
     if (newValue === true) {
       this.open();
-      body.style.overflow = "hidden";
+      body.style.overflow = 'hidden';
     } else {
       this.close();
-      body.style.overflow = "visible";
+      body.style.overflow = 'visible';
     }
   }
 
