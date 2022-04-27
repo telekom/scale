@@ -1,12 +1,11 @@
-# Legal notice
+# Legal Notice
 
 Brand & Design is a service offered by Telekom Customer Experience Management as well as Brand Strategy and Marketing Communications, Deutsche Telekom AG.
 
 Deutsche Telekom AG<br>
 Friedrich-Ebert-Allee 140<br>
 53113 Bonn
-
-E-Mail: [contact@brand-design.telekom.com](mailto:contact@brand-design.telekom.com)<br>
+E-Mail: [contact-NOSPAM-brand-design.telekom.com](mailto:contact-NOSPAM-brand-design.telekom.com)<br>
 Phone: +49 228 181-24299
 
 **Commercial Register:**
@@ -39,10 +38,3 @@ Lead Customer Experience Management<br>
 
 Alexander Engelhardt<br>
 Vice President Brand Management
-
-## Technical Implementation
-
-mehrwert intermediale kommunikation GmbH<br>
-Steinfelder Gasse 11<br>
-50670 Köln<br>
-www.mehrwert.de
