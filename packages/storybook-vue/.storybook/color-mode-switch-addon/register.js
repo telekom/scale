@@ -127,7 +127,7 @@ addons.register('@telekom/scale-color-mode-switch-addon', () => {
           if (!document.getElementById('color-mode-switch')) {
             document.querySelector('#root .css-p1dfi6').style =
               'justify-content: start;';
-            document.querySelector('#root .css-pvky73').style =
+            document.querySelector('#root .css-102is01').style =
               'position: absolute; right: 0;';
             toolbar.insertBefore(colorModeSwitch, rightSection);
             toolbar.insertBefore(createSeparator(), rightSection);
