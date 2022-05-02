@@ -43,7 +43,7 @@ You have the right
   <li>To <b>object</b> to the processing of data on the grounds of legitimate interests, for reasons relating to your particular situation (Article 21 (1) GDPR);</li>
   <li>To request the <b>erasure</b> of data in certain cases under Art. 17 GDPR – especially if the data is no longer necessary in relation to the purposes for which it was collected or is unlawfully processed, or you withdraw your consent according to (c) above or object according to (d) above;</li>
   <li>To demand, under certain circumstances, the <b>restriction</b> of data where erasure is not possible or the erasure obligation is disputed (Art. 18 GDPR);</li>
-  <li><b>To data portability</b>, i.e., you can receive the data that you provided to us in a commonly used and machine-readable format such as CSV, and can, where necessary, transfer the data to others (Art. 20 GDPR);</li>
+  <li>To <b>data portability</b>, i.e., you can receive the data that you provided to us in a commonly used and machine-readable format such as CSV, and can, where necessary, transfer the data to others (Art. 20 GDPR);</li>
   <li>To <b>file a complaint about the data processing</b> with the responsible <b>supervisory authority</b> (for telecommunications contracts: the German Federal Commissioner for Data Protection and Freedom of Information (Bundesbeauftragter für den Datenschutz und die Informationsfreiheit); for any other matters: State Commissioner for Data Protection and Freedom of Information, North Rhine-Westphalia (Landesbeauftragter für den Datenschutz und die Informationsfreiheit Nordrhein-Westfalen)).</li>
 </ol>
 

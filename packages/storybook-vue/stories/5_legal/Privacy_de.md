@@ -1,66 +1,66 @@
-# Data Privacy Policy
+# Datenschutzhinweise
 
-Deutsche Telekom AG attaches great importance to protecting your personal data. We always inform you what personal data we collect, how your data is used, and how you can influence the process.
+Der Schutz Ihrer personenbezogenen Daten hat für die Deutsche Telekom AG einen hohen Stellenwert. Wir informieren Sie stets darüber, welche personenbezogenen Daten erfasst werden, wie wir diese verwenden und welche Gestaltungsmöglichkeiten Sie dabei haben.
 
-## 1. What data is recorded, how is it used, and how long is it stored?
+## 1. Welche Daten werden erfasst, wie werden sie verwendet und wie lange werden sie gespeichert?
 
-We will only collect technical characteristics: When you visit our websites, the web server temporarily records the domain name or your computer’s IP address, the file requested (file name and URL) by the client, the http response code, and the website from which you are visiting us. The recorded data is used solely for data security purposes, particularly to protect against attempted attacks on our web server (Article 6 (1f) GDPR). We do not use it to create individual user profiles nor do we share this information with third parties. It is erased after seven days at the latest. We reserve the right to statistically analyze anonymized data records.
+Wir erfassen lediglich **technische Merkmale**: Wenn Sie unsere Webseiten besuchen, erfasst der Webserver vorübergehend den Domain-Namen oder die IP-Adresse Ihres Computers, die Dateianfrage des Clients (Dateiname und URL), den http-Antwort-Code und die Webseite, von der aus Sie unsere Seite aufrufen. Die erfassten Daten werden ausschließlich für Zwecke der Datensicherheit, insbesondere zur Abwehr von Angriffsversuchen auf unseren Webserver verwendet (Art. 6 Abs.1f DSGVO). Sie werden weder für die Erstellung von individuellen Nutzerprofilen verwendet noch an Dritte weitergegeben. Die Daten werden nach spätestens sieben Tagen wieder gelöscht. Wir behalten uns das Recht vor, anonymisierte Datensätze statistisch auszuwerten.
 
-## 2. Controlling data used by social-media plug-ins and links to social media platforms
+## 2. Kontrolle der von Social-Media-Plugins verwendeten Daten und bei Verlinkungen zu Social-Media-Plattformen
 
-No social media plug-ins are used and no links to social media platforms are provided.
+Wir verwenden keine Social-Media-Plugins und verlinken nicht auf Social-Media-Plattformen.
 
-## 3. Will my usage habits be evaluated, e.g. for advertising purposes or tracking?
+## 3. Wird mein Nutzungsverhalten ausgewertet, z. B. für Werbung, Tracking oder Betrugsprävention?
 
-We want you to enjoy using our websites and take advantage of our products and services. We have an economic interest in ensuring this is the case. We analyze usage habits anonymously and pseudonymously so you can find the products that interest you and so we can make our websites user-friendly. We or our contract service providers create usage profiles that comply with the legal requirements. This information cannot be traced back to you directly. The following information is intended to provide you with general information on the various purposes, techniques, storage periods, and the processing countries of this data.
+Wir möchten, dass Sie unsere Webseiten gerne nutzen und unsere Produkte und Dienste in Anspruch nehmen. Daran haben wir ein wirtschaftliches Interesse. Damit Sie die Informationen finden, die Sie interessieren und wir unsere Webseiten nutzerfreundlich ausgestalten können, analysieren wir anonymisiert und pseudonymisiert das Nutzungsverhalten. Im Rahmen der gesetzlichen Regelungen legen wir, oder von uns im Rahmen einer Auftragsverarbeitung beauftragte Unternehmen, Nutzungsprofile an. Ein unmittelbarer Rückschluss auf Ihre Person ist dabei nicht möglich. Nachfolgend informieren wir Sie allgemein über die verschiedenen Zwecke, Techniken, Speicherdauer sowie die Verarbeitungsländer.
 
-### Technology
+### Techniken
 
-### Required cookies
+### Erforderliche Cookies
 
-These cookies are required to enable you to navigate through the web pages and use key functions. They support basic functions to ensure access to secure areas of the website. The legal basis for these cookies is Article 6 (1) b GDPR, or for third countries Article 49 (1) b GDPR.
+Diese Cookies sind notwendig, damit Sie durch die Seiten navigieren und wesentliche Funktionen nutzen können. Sie ermöglichen Grundfunktionen, um den Zugriff auf gesicherte Bereiche der Webseite zu gewährleisten. Rechtsgrundlage für diese Cookies ist Art. 6 Abs. 1b DSGVO bzw. bei Drittstaaten Art. 49 Abs. 1b DSGVO.
 
-| Name   | Description                             | Expires / Max-Age | Location |
-| ------ | --------------------------------------- | ----------------- | -------- |
-| Matomo | Website security / website optimization | 24 hours          | Germany  |
+| Name   | Description                               | Expires / Max-Age | Location    |
+| ------ | ----------------------------------------- | ----------------- | ----------- |
+| Matomo | Webseitensicherheit, Webseitenoptimierung | 24 Stunden        | Deutschland |
 
-## 4. Where can I find the information that is important to me?
+## 4. Wo finde ich die Informationen, die für mich wichtig sind?
 
-This data privacy information provides an overview of the items which apply to Deutsche Telekom processing your data in this web portal. Further information, including information on data protection in general and in specific products, is available at https://www.telekom.com/en/corporate-responsibility/data-protection-data-security/data-protection and http://www.telekom.de/datenschutzhinweise.
+Dieser **Datenschutzinhinweis** gibt einen Überblick über die Punkte, die für die Verarbeitung Ihrer Daten auf diesem Webportal durch die Deutsche Telekom gelten. Weitere Informationen, auch zum Datenschutz im Allgemeinen oder in speziellen Produkten, erhalten Sie auf https://www.telekom.com/en/corporate-responsibility/data-protection-data-security/data-protection und unter http://www.telekom.de/datenschutzhinweise.
 
-## 5. Who is responsible for data processing? Who should I contact if I have any queries regarding data privacy at Deutsche Telekom?
+## 5. Wer ist für die Datenverarbeitung verantwortlich? An wen muss ich mich wenden, wenn ich Fragen zum Datenschutz bei der Deutschen Telekom habe?
 
-Deutsche Telekom AG acts as the data controller. If you have any queries, please contact our Customer Services department or the Global Data Privacy Officer, Dr. Claus D. Ulmer, Friedrich-Ebert-Allee 140, 53113 Bonn, Germany, datenschutz@telekom.de.
+Datenverantwortliche ist die Deutsche Telekom AG. Bei Fragen kontaktieren Sie bitte unseren Kundenservice oder unseren Datenschutzbeauftragten, Dr. Claus D. Ulmer, Friedrich-Ebert-Allee 140, 53113 Bonn, datenschutz@telekom.de.
 
-## 6. What rights do I have?
+## 6. Welche Rechte habe ich?
 
-You have the right
-
-<ol type="a">
-  <li>To request <b>information</b> on the categories of personal data concerned, the purposes of the processing, any recipients of the data, and the envisaged storage period (Art. 15 GDPR);</li>
-  <li>To request that incorrect or incomplete data be <b>rectified</b> or supplemented (Article 16 GDPR);</li>
-  <li>To <b>withdraw</b> consent at any time with effect for the future (Art. 7 (3) GDPR);</li>
-  <li>To <b>object</b> to the processing of data on the grounds of legitimate interests, for reasons relating to your particular situation (Article 21 (1) GDPR);</li>
-  <li>To request the <b>erasure</b> of data in certain cases under Art. 17 GDPR – especially if the data is no longer necessary in relation to the purposes for which it was collected or is unlawfully processed, or you withdraw your consent according to (c) above or object according to (d) above;</li>
-  <li>To demand, under certain circumstances, the <b>restriction</b> of data where erasure is not possible or the erasure obligation is disputed (Art. 18 GDPR);</li>
-  <li><b>To data portability</b>, i.e., you can receive the data that you provided to us in a commonly used and machine-readable format such as CSV, and can, where necessary, transfer the data to others (Art. 20 GDPR);</li>
-  <li>To <b>file a complaint about the data processing</b> with the responsible <b>supervisory authority</b> (for telecommunications contracts: the German Federal Commissioner for Data Protection and Freedom of Information (Bundesbeauftragter für den Datenschutz und die Informationsfreiheit); for any other matters: State Commissioner for Data Protection and Freedom of Information, North Rhine-Westphalia (Landesbeauftragter für den Datenschutz und die Informationsfreiheit Nordrhein-Westfalen)).</li>
-</ol>
-
-## 7. Who does Deutsche Telekom AG pass my data on to?
-
-We will only pass your data **owing to legal obligations:** In certain cases, we are legally obliged to transfer certain data to a state authority that requests it.
-
-## 8. Where is my data processed?
-
-Your data will be processed in Germany and other European countries. If, in exceptional cases, your data is processed in countries outside the European Union (in so-called third countries), this will take place
+Sie haben das Recht,
 
 <ol type="a">
-  <li>if you have expressly consented to this (Article 49 (1) a GDPR). (In most countries outside the EU, the level of data protection does not meet EU standards. This concerns in particular comprehensive monitoring and control rights of state authorities, e. g. in the USA, which disproportionately interfere with the data protection of European citizens,</li>
-  <li>or to the extent necessary for our service provision to you (Article 49 (1) b GDPR),</li>
-  <li>or to the extent required by law (Article 49 (1) c GDPR).</li>
+    <li><b>Auskunft</b> zu verlangen zu Kategorien der verarbeiteten personenbezogenen Daten, Verarbeitungszwecken, etwaigen Empfängern der Daten und der geplanten Speicherdauer (Art. 15 DSGVO);</li>
+    <li>die <b>Berichtigung</b> bzw. Ergänzung unrichtiger oder unvollständiger Daten zu verlangen (Art. 16 DSGVO);</li>
+    <li>eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft <b>zu widerrufen</b> (Art. 7 Abs. 3 DSGVO);</li>
+    <li>einer Datenverarbeitung, die aufgrund eines berechtigten Interesses erfolgen soll, aus Gründen <b>zu widersprechen</b>, die sich aus Ihrer besonderen Situation ergeben (Art. 21 Abs. 1 DSGVO);</li>
+    <li>in bestimmten Fällen im Rahmen des Art. 17 DSGVO die <b>Löschung</b> von Daten zu verlangen – insbesondere soweit die Daten für den vorgesehenen Zweck nicht mehr erforderlich sind bzw. unrechtmäßig verarbeitet werden, oder Sie Ihre Einwilligung gemäß oben (c) widerrufen oder einen Widerspruch gemäß oben (d) erklärt haben;</li>
+    <li>unter bestimmten Voraussetzungen die <b>Einschränkung</b> der Verarbeitung zu verlangen, soweit eine Löschung nicht möglich bzw. die Löschpflicht streitig ist (Art. 18 DSGVO);</li>
+    <li>auf <b>Datenübertragbarkeit</b>, d. h. Sie können die Daten, die Sie uns bereitgestellt haben, in einem gängigen maschinenlesbaren Format wie z. B.  CSV erhalten und, soweit erforderlich, an Dritte übermitteln (Art. 20 DSGVO);</li>
+    <li>sich bei der zuständigen <b>Aufsichtsbehörde</b> über die Datenverarbeitung zu <b>beschweren</b> (für Telekommunikationsverträge: Bundesbeauftragte für den Datenschutz und die Informationsfreiheit; für alle übrigen: Landesbeauftragte für den Datenschutz und die Informationsfreiheit Nordrhein-Westfalen).</li>
 </ol>
 
-Furthermore, your data will only be processed in third countries if certain measures ensure a suitable level of data protection (e.g., EU Commission's adequacy decision or suitable guarantees, Art. 44 et seq. GDPR).
+## 7. An wen gibt die Deutsche Telekom AG meine Daten weiter?
+
+Wir geben Ihre Daten ausschließlich **aufgrund gesetzlicher Verpflichtung** weiter: In bestimmen Fällen sind wir gesetzlich dazu verpflichtet, bestimmte Daten an die anfragende staatliche Stelle zu übermitteln.
+
+## 8. Wo werden meine Daten verarbeitet?
+
+Ihre Daten werden in Deutschland und im europäischen Ausland verarbeitet. Findet eine Verarbeitung Ihrer Daten in Ausnahmefällen auch in Ländern außerhalb der Europäischen Union (in sog. Drittstaaten) statt, geschieht dies,
+
+<ol type="a">
+    <li>soweit Sie hierin ausdrücklich eingewilligt haben (Art. 49 Abs. 1a DSGVO). (In den meisten Ländern außerhalb der EU entspricht das Datenschutzniveau nicht den EU-Standards. Dies betrifft insbesondere umfassende Überwachungs- und Kontrollrechte staatliche Behörden – z. B. in den USA, die in den Datenschutz der europäischen Bürgerinnen und Bürger unverhältnismäßig eingreifen.),</li>
+    <li>oder soweit es für unsere Leistungserbringung Ihnen gegenüber erforderlich ist (Art. 49 Abs. 1b DSGVO),</li>
+    <li>oder soweit es gesetzlich vorgesehen ist (Art. 49 Abs. 1c DSGVO).</li>
+</ol>
+
+Darüber hinaus erfolgt eine Verarbeitung Ihrer Daten in Drittstaaten nur, soweit durch bestimmte Maßnahmen sichergestellt ist, dass hierfür ein angemessenes Datenschutzniveau besteht (z. B. Angemessenheitsbeschluss der EU-Kommission oder sog. geeignete Garantien, Art. 44 ff. DSGVO).
 
 **© Deutsche Telekom AG – April 2022**

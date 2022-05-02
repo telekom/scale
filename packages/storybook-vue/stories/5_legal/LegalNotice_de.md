@@ -1,19 +1,21 @@
-# Legal Notice
+# Impressum
 
-Brand & Design is a service offered by Telekom Customer Experience Management as well as Brand Strategy and Marketing Communications, Deutsche Telekom AG.
+Brand & Design ist ein Dienst der Bereiche Telekom „Customer Experience Management“ und „Group Brand Strategy and Marketing Communications“ der Deutschen Telekom AG.
 
 Deutsche Telekom AG<br>
 Friedrich-Ebert-Allee 140<br>
 53113 Bonn
+
 E-Mail: [contact-NOSPAM-brand-design.telekom.com](mailto:contact-NOSPAM-brand-design.telekom.com)<br>
 Phone: +49 228 181-24299
 
-**Commercial Register:**
-Bonn District Court (Amtsgericht) HRB 6794,<br>
-Registered Office, Bonn,<br>
-VAT ID: DE 123475223, WEEE Reg. No. DE50478376
+**Handelsregister:**
+Amtsgericht Bonn HRB 6794<br>
+Sitz der Gesellschaft: Bonn<br>
+USt-IdNr. DE 123475223<br>
+WEEE-Reg.-Nr. DE50478376
 
-## Authorized Representatives
+## Vertretungsberechtigt
 
 Timotheus Höttges<br>
 Adel Al-Saleh<br>
@@ -24,17 +26,16 @@ Thorsten Langheim<br>
 Dominique Leroy<br>
 Claudia Nemat<br>
 
-## Regulatory Authority
+## Aufsichtsbehörde
 
-Federal Network Agency for Electricity, Gas, Telecommunications, Post and Railway<br>
+Bundesnetzagentur für Elektrizität, Gas, Telekommunikation, Post und Eisenbahnen
 Tulpenfeld 4<br>
 53113 Bonn
-Germany
 
-## Responsible
+## Verantwortlich
 
 Ole Heydekamp<br>
-Lead Customer Experience Management<br>
+Leiter Customer Experience Management<br>
 
 Alexander Engelhardt<br>
-Vice President Brand Management
+Leiter Markenmanagement
