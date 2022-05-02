@@ -19,7 +19,7 @@
   position: fixed;
   /* z-index over 99 to flow over app-header
   TODO: (a solid system for z-index values would be nicer) */
-  z-index: var(--scl-z-index-100);
+  z-index: 100;
   pointer-events: none;
 }
 
