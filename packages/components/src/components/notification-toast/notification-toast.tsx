@@ -166,7 +166,6 @@ export class NotificationToast {
               <scale-link
                 href={this.href}
                 class="notification-toast__link"
-                tabindex={0}
                 role="link"
               >
                 <slot name="link" />

@@ -141,7 +141,11 @@ export class NotificationBanner {
               )}
 
               {this.hasSlotLink && (
-                <scale-link href={this.href} class="notification-banner__link">
+                <scale-link
+                  href={this.href}
+                  class="notification-banner__link"
+                  role="link"
+                >
                   <slot name="link" />
                 </scale-link>
               )}
