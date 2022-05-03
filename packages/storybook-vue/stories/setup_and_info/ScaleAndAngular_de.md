@@ -9,14 +9,14 @@ Ein Beispiel für eine Boilerplate-App findest du im [GitHub Repository](https:/
 Installiere zuerst das Package:
 
 ```bash
-npm install @telekom/scale-components
+npm install @telekom/scale-components@next
 ```
 
 Lade danach die Komponenten-Bibliothek in `main.ts`:
 
 ```ts
 // src/main.ts
-import { defineCustomElements } from 'packages/components/loader/index';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 // ...
 

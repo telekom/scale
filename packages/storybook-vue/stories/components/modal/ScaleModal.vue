@@ -7,6 +7,7 @@
     :opened="opened"
     :duration="duration"
     :close-button-label="closeButtonLabel"
+    :close-button-title="closeButtonTitle"
     :align-actions="alignActions"
     :styles="styles"
     @scaleClose="scaleClose"
@@ -20,7 +21,7 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
 const scaleCloseAction = action('scaleClose');
 
@@ -33,34 +34,35 @@ export default {
     opened: Boolean,
     duration: { type: Number, default: 200 },
     closeButtonLabel: String,
+    closeButtonTitle: String,
     alignActions: { type: String, default: 'right' },
     styles: { type: String },
   },
   methods: {
     scaleOpen($event) {
-      action("scaleOpen");
-      this.$emit("scaleOpen", $event);
+      action('scaleOpen');
+      this.$emit('scaleOpen', $event);
     },
     'scale-open'($event) {
-      action("scale-open");
-      this.$emit("scale-open", $event);
+      action('scale-open');
+      this.$emit('scale-open', $event);
     },
     scaleBeforeClose($event) {
-      action("scaleBeforeClose");
-      this.$emit("scaleBeforeClose", $event);
+      action('scaleBeforeClose');
+      this.$emit('scaleBeforeClose', $event);
     },
     'scale-before-close'($event) {
-      action("scale-before-close");
-      this.$emit("scale-before-close", $event);
+      action('scale-before-close');
+      this.$emit('scale-before-close', $event);
     },
     scaleClose($event) {
-      action("scaleClose");
-      this.$emit("scaleClose", $event);
+      action('scaleClose');
+      this.$emit('scaleClose', $event);
     },
     'scale-close'($event) {
-      action("scale-close");
-      this.$emit("scale-close", $event);
+      action('scale-close');
+      this.$emit('scale-close', $event);
     },
-  }
+  },
 };
 </script>

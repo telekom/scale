@@ -38,3 +38,5 @@ The current page is highlighted at the right end of the breadcrumb. It has no in
 ## Related components
 
 <a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>
+
+[Brand Header & Navigation](?path=/usage/components-brand-header-navigation--standard)

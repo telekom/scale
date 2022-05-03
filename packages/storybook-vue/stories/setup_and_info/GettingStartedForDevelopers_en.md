@@ -12,7 +12,7 @@ Install the component library in your project with `npm` or `yarn`:
 npm install @telekom/scale-components@next
 ```
 
-> To install the [version prior to dark mode](https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53), do `npm install @telekom/scale-components` (without `@next`)
+> To install the <a href="https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53" target="_blank" rel="noopener noreferrer">version prior to dark mode</a>, do `npm install @telekom/scale-components` (without `@next`)
 
 To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and the design tokens.
 
@@ -50,9 +50,9 @@ defineCustomElements(window);
 
 ## Frameworks
 
-[Scale and Vue](./?path=/story/scale-for-developers-scale-and-vue--page)<br/>
-[Scale and Angular](./?path=/story/scale-for-developers-scale-and-angular--page)<br/>
-[Scale and React](./?path=/story/scale-for-developers-scale-and-react--page)
+[Scale and Vue](./?path=/docs/setup-info-scale-and-vue--page)<br/>
+[Scale and Angular](./?path=/docs/setup-info-scale-and-angular--page)<br/>
+[Scale and React](./?path=/docs/setup-info-scale-and-react--page)
 
 ## Source Code on GitHub
 

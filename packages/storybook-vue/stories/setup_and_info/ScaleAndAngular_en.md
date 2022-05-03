@@ -9,14 +9,14 @@ You can find an example boilerplate app in the "examples" folder in the [GitHub 
 First, install the package:
 
 ```bash
-npm install @telekom/scale-components
+npm install @telekom/scale-components@next
 ```
 
 Then load the component library in `main.ts`:
 
 ```ts
 // src/main.ts
-import { defineCustomElements } from 'packages/components/loader/index';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 // ...
 

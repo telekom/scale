@@ -124,7 +124,7 @@ Depending on how many levels of hierarchy there are, the user navigates through 
 
 ## Related components
 
-<a href="?path=/usage/components-breadcrumb--standard">Breadcrumb, </a>
-<a href="?path=/usage/components-sidebar-navigation--standard">Sidebar Navigation, </a>
-<a href="?path=/usage/components-tab-navigation--text-icon">Tab Navigation, </a>
-<a href="?path=/usage/components-accordion--standard">Accordion</a>
+[Breadcrumb, ](?path=/usage/components-breadcrumb--standard)
+[Sidebar Navigation, ](?path=/usage/components-sidebar-navigation--standard)
+[Tab Navigation, ](?path=/usage/components-tab-navigation--text-icon)
+[Accordion](?path=/usage/components-accordion--standard)

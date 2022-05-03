@@ -25,12 +25,12 @@ In jedem anderen Fall kontaktiere uns bitte, damit wir dich über das beste Setu
 ## Wie erhalte ich Zugang zu Scale?
 
 Als Designer\*in findest du alles Wichtige für den Start mit Scale hier:
-[Scale für Designer](./?path=/story/scale-for-designers-getting-started--page)
+[Scale für Designer](./?path=/docs/setup-info-getting-started-for-designers--page)
 
 Bitte beachte: Du benötigst Sketch, um Scale nutzen zu können.
 
 Als Entwickler\*in erhältst du alle Informationen zur Nutzung von Scale hier:
-[Scale für Entwickler](./?path=/story/scale-for-developers-setup--page)
+[Scale für Entwickler](./?path=/docs/setup-info-getting-started-for-developers--page)
 
 ## Was ist der Entwicklungsstand von Scale?
 
@@ -80,7 +80,7 @@ Das Besondere an Scale: Die UX-Design-Bibliotheken werden direkt aus dem Code ge
 
 Unser Ziel ist es, inklusive Produkte und Erlebnisse zu schaffen, die allen Menschen zugänglich sind. Daher erfüllen die Scale Komponenten bereits alle Anforderungen der Telekom für Barrierefreiheit sowie die Kriterien der Web Content Accessibility Guidelines (WCAG) Version 2.1, Stufe AA.
 
-Hier findest du [weitere Informationen zum Thema Barrierefreiheit](./?path=/story/scale-for-developers-accessibility--page).
+Hier findest du [weitere Informationen zum Thema Barrierefreiheit](./?path=/docs/setup-info-accessibility--page)
 
 **Wirklich alle Anforderungen kennen**
 
@@ -96,7 +96,7 @@ Unser Ziel ist es, Scale so zugänglich wie möglich zu machen. Wenn du Ideen od
 **Wir setzen auf Evergreens**
 Alle unsere Komponenten funktionieren mit den gängigsten Internet-Browsern.
 
-Hier findest du die [komplette Liste](./?path=/story/scale-for-developers-browser-support--page).
+Hier findest du die [komplette Liste](./?path=/docs/setup-info-browser-support--page)
 
 ## Wer steckt hinter Scale?
 

@@ -46,4 +46,4 @@ Diese Liste beinhaltet Begriffe und darunter die jeweilige Definition.
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-table--standard">Table</a>
+[Table](?path=/usage/components-table--standard)

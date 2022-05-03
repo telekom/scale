@@ -26,7 +26,6 @@ export default {
     disabled: { type: Boolean, default: false },
     hideBorder: { type: Boolean, default: false },
     singleSelect: { type: Boolean, default: false },
-    ariaLabel: { type: String },
     ariaLabelTranslation: { type: String, default: 'toggle button group with $slottedButtons buttons' },
     variant: { type: String, default: 'color' },
     styles: { type: String },

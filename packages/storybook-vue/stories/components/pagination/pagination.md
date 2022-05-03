@@ -55,5 +55,5 @@ This button always takes users to the last page.
 
 ## Related components
 
-<a href="?path=/usage/components-table--standard">Table, </a>
-<a href="?path=/usage/beta-components-data-grid--standard">Data Grid</a>
+[Table, ](?path=/usage/components-table--standard)
+[Data Grid](?path=/usage/beta-components-data-grid--standard)
