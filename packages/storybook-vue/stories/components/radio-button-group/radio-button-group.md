@@ -69,4 +69,6 @@ Deactivate a radio button when:
 
 ## Related components
 
-[Radio Button](?path=/usage/components-radio-button), [Checkbox](?path=/usage/components-checkbox), [Checkbox Group](?path=/usage/components-checkbox-group)
+[Radio Button, ](?path=/usage/components-radio-button)
+[Checkbox, ](?path=/usage/components-checkbox),
+[Checkbox Group](?path=/usage/components-checkbox-group)

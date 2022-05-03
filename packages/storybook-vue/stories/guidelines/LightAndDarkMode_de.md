@@ -1,10 +1,10 @@
-# Light and Dark Mode
+# Light und Dark Mode
 
 **Light und Dark Mode richten sich an unterschiedliche Nutzungsgruppen und -szenarien. Dabei geht es nicht nur um Ästhetik, sondern oft auch darum, eine Überanstrengung der Augen zu vermeiden. Sei es aufgrund des Umgebungslichts oder bspw. bei Sehbehinderungen, wie dem Grauen Star.**
 
 Mithilfe unserer Komponenten lässt sich der Dark Mode nahezu ohne zusätzlichen Aufwand implementieren. Sowohl im Design als auch im Code.
 
-![Dark mode example modal](assets/img_color.png)
+![Dark mode example modal](assets/dark-mode-example-modal.png)
 
 ## Light Mode
 
@@ -24,7 +24,7 @@ Jede Farbe einer Komponente wird durch eine passende Farbe aus dem jeweils ander
 
 Wir haben die Farbpalette angepasst, sodass sie für beide Modi ein konsistentes Erscheinungsbild bietet. Selbstverständlich sind alle Farben in unseren Komponenten auf Barrierefreiheit geprüft. Eine Übersicht der neuen Farbpalette mit Nutzungshinweisen findest du [hier](./?path=/docs/guidelines-colors--page).
 
-![Dark mode example palette](assets/dark-mode-example-palette.png)
+![Dark mode example palette](assets/img_color.png)
 
 ## Lass die Nutzer\*innen entscheiden
 
@@ -59,6 +59,17 @@ Alternativ können die Modi auch über das `data-mode`-Attribut festgelegt werde
 
 Das Setzen des `data-mode`-Attributs setzt die Systemeinstellungen außer Kraft.
 
+Damit deine Anwendung komplett zwischen den Modi wechselt und nicht nur die Scale Komponenten, verwende die folgenden Tokens für den Hintergrund und die Texte.
+
+```css
+body {
+  background-color: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+```
+
+Mehr Informationen zu weiteren Farb-Tokens findest du in der Guideline [Colors](./?path=/docs/guidelines-colors--page).
+
 ### Deaktivieren der automatischen Umschaltung
 
 Soll sich die Anwendung unabhängig von den Systemeinstellungen der Nutzer\*innen entweder im hellen oder im dunklen Modus befinden, setze das Attribut data-mode auf den gewünschten Modus:
@@ -80,7 +91,7 @@ element.addEventListener('click', function switchMode() {
 });
 ```
 
-In JavaScript kannst du die Systemeinstellung mit der Methode window.matchMedia prüfen und überwachen.
+In JavaScript kannst du die Systemeinstellung mit der Methode <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia" target="_blank" rel="noopener noreferrer">window.matchMedia</a> prüfen und überwachen.
 
 ```js
 const mq = window.matchMedia('(prefers-color-scheme: dark)');

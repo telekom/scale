@@ -39,4 +39,4 @@ Die aktuelle Seite ist immer der letzte Eintrag der Breadcrumb. Sie hat keine in
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-brand-header-navigation--standard">Brand Header & Navigation</a>
+[Brand Header & Navigation](?path=/usage/components-brand-header-navigation--standard)

@@ -48,4 +48,4 @@ A definition list consists of terms and their definition.
 
 ## Related components
 
-<a href="?path=/usage/components-table--standard">Table</a>
+[Table](?path=/usage/components-table--standard)

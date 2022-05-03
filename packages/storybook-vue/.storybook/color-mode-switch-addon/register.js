@@ -23,8 +23,6 @@ function switchMode(mode) {
   try {
     const previewIframe = document.querySelector('#storybook-preview-iframe');
     previewIframe.contentWindow.document.body.dataset.mode = mode;
-    previewIframe.contentWindow.document.body.style = `background: #fff`
-
     Array.from(
       previewIframe.contentWindow.document.querySelectorAll('iframe')
     ).forEach((x) => {
@@ -129,7 +127,7 @@ addons.register('@telekom/scale-color-mode-switch-addon', () => {
           if (!document.getElementById('color-mode-switch')) {
             document.querySelector('#root .css-p1dfi6').style =
               'justify-content: start;';
-            document.querySelector('#root .css-pvky73').style =
+            document.querySelector('#root .css-102is01').style =
               'position: absolute; right: 0;';
             toolbar.insertBefore(colorModeSwitch, rightSection);
             toolbar.insertBefore(createSeparator(), rightSection);

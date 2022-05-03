@@ -46,15 +46,8 @@ app-navigation-main-mobile {
   line-height: var(--line-height);
 }
 
-.main-navigation-mobile__item-wrapper {
-  box-sizing: border-box;
-  width: calc(100% - 34px);
-  display: flex;
-  justify-content: space-between;
-  margin-left: 34px;
-  border-bottom: var(--border-bottom);
-  padding-right: 34px;
-  align-items: center;
+.main-navigation-mobile__item--selected {
+  border-right: 2px solid var(--color-selected);
 }
 
 .main-navigation-mobile__item-link {
@@ -68,12 +61,19 @@ app-navigation-main-mobile {
   transition: var(--transition);
 }
 
-.main-navigation-mobile__item-link--selected .main-navigation-mobile__item {
-  border-right: 2px solid var(--color-selected);
-}
-
 .main-navigation-mobile__item-link--selected svg {
   margin-right: -2px;
+}
+
+.main-navigation-mobile__item-wrapper {
+  box-sizing: border-box;
+  width: calc(100% - 34px);
+  display: flex;
+  justify-content: space-between;
+  margin-left: 34px;
+  border-bottom: var(--border-bottom);
+  padding-right: 34px;
+  align-items: center;
 }
 
 .main-navigation-mobile__child-menu {

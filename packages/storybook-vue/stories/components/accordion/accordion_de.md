@@ -41,5 +41,5 @@ Du kannst sowohl einen einfachen Fließtext als auch Überschriften einfügen, T
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-tab-navigation--text-icon">Tab-Navigation, </a>
-<a href="?path=/usage/components-sidebar-navigation--standard">Sidebar-Navigation</a>
+[Tab-Navigation, ](?path=/usage/components-tab-navigation--text-icon)
+[Sidebar-Navigation ](?path=/usage/components-sidebar-navigation--standard)

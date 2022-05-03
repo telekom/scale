@@ -65,4 +65,4 @@ Choose the size based on the body text you are using.
 
 ## Related components
 
-<a href="?path=/usage/components-button--standard">Button</a>
+[Button](?path=/usage/components-button--standard)
