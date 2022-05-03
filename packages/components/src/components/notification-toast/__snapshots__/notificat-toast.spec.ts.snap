@@ -47,7 +47,7 @@ exports[`NotificationToast  handle variant prop 1`] = `
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link class="notification-toast__link" role="link" tabindex="0">
+        <scale-link class="notification-toast__link" role="link">
           <slot name="link"></slot>
         </scale-link>
       </div>
@@ -107,7 +107,7 @@ exports[`NotificationToast  handle variant prop 2`] = `
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link class="notification-toast__link" role="link" tabindex="0">
+        <scale-link class="notification-toast__link" role="link">
           <slot name="link"></slot>
         </scale-link>
       </div>
@@ -167,7 +167,7 @@ exports[`NotificationToast  handle variant prop 3`] = `
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link class="notification-toast__link" role="link" tabindex="0">
+        <scale-link class="notification-toast__link" role="link">
           <slot name="link"></slot>
         </scale-link>
       </div>
@@ -227,7 +227,7 @@ exports[`NotificationToast  handle variant prop 4`] = `
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link class="notification-toast__link" role="link" tabindex="0">
+        <scale-link class="notification-toast__link" role="link">
           <slot name="link"></slot>
         </scale-link>
       </div>
@@ -287,7 +287,7 @@ exports[`NotificationToast  should match snapshot 1`] = `
       <div class="notification-toast__text-container">
         <slot name="header"></slot>
         <slot name="body"></slot>
-        <scale-link class="notification-toast__link" role="link" tabindex="0">
+        <scale-link class="notification-toast__link" role="link">
           <slot name="link"></slot>
         </scale-link>
       </div>
