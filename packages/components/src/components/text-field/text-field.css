@@ -115,10 +115,10 @@ scale-text-field {
 }
 .text-field .text-field__helper-text {
   transition: var(--transition-helper-text);
-  padding-left: var(--spacing-x);
   font-size: var(--font-size-helper-text);
   line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
+  font-weight: var(--telekom-typography-font-weight-bold);
 }
 .text-field .text-field__meta {
   display: flex;
