@@ -12,6 +12,7 @@
 :host {
   /* toast */
   --width: 367px;
+  --width-icon-container: 48px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
   /* FIXME:TOKEN not sure what elevation to use here */
@@ -96,12 +97,13 @@
 
 .notification-toast__icon-container {
   height: 100%;
-  width: 48px;
+  width: var(--width-icon-container);
   position: absolute;
   left: 0;
   top: 0;
   float: left;
-  border-radius: 10px 0 0 10px;
+  border-radius: var(--telekom-radius-standard) 0 0
+    var(--telekom-radius-standard);
 }
 
 .notification-toast.notification-toast--variant-success
@@ -144,11 +146,11 @@
 }
 
 .notification-toast__text-container {
-  width: var(--width);
+  width: calc(var(--width) - calc(var(--width-icon-container) * 2));
   min-height: 33px;
   float: left;
   position: relative;
-  margin: 0 0 0 48px;
+  margin: 0 0 0 var(--width-icon-container);
   padding: 15px 0 0 0;
 }
 
@@ -156,22 +158,27 @@
   close icon part
 */
 
-.notification-message__icon-close {
-  cursor: pointer;
+.notification-toast__button-close {
   position: absolute;
-  top: 8px;
-  right: 13.5px;
+  top: 10px;
+  right: 7.5px;
+  color: #191919;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-.notification-message__icon-close svg {
+.notification-toast__button-close svg {
   height: 19px;
   width: 19px;
-  padding: 6.5px;
+  padding: 7.5px 6.5px 6.5px 6.5px;
   border-radius: 20%;
   color: var(--telekom-color-text-and-icon-standard);
 }
 
-.notification-message__icon-close:hover svg {
+.notification-toast__button-close:hover svg {
   background-color: white;
   color: var(--telekom-color-text-and-icon-primary-hovered);
 }

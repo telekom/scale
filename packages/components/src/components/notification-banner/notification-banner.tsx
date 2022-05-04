@@ -63,6 +63,7 @@ export class NotificationBanner {
               class="notification-banner__icon-success"
               color="#187431"
               accessibility-title="success"
+              aria-hidden="true"
             />
           );
         case 'informational':
@@ -70,6 +71,7 @@ export class NotificationBanner {
             <scale-icon-alert-information
               class="notification-banner__icon-information"
               accessibility-title="information"
+              aria-hidden="true"
             />
           );
         case 'error':
@@ -77,6 +79,7 @@ export class NotificationBanner {
             <scale-icon-alert-error
               class="notification-banner__icon-error"
               accessibility-title="error"
+              aria-hidden="true"
             />
           );
         case 'warning':
@@ -84,7 +87,7 @@ export class NotificationBanner {
             <scale-icon-alert-error
               class="notification-banner__icon-information"
               color="#AE461C"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
       }
@@ -104,6 +107,8 @@ export class NotificationBanner {
     return (
       <Host>
         <div
+          role="alert"
+          style={{ display: `${this.opened ? '' : 'none'}` }}
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           tabindex="0"
@@ -115,15 +120,18 @@ export class NotificationBanner {
               {this.dismissible && (
                 <button
                   part="button-dismissable"
+                  type="button"
                   class="notification-banner__button-close"
                   onClick={() => this.close()}
+                  tabindex={0}
+                  aria-label="close"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       this.close();
                     }
                   }}
                 >
-                  <scale-icon-action-circle-close accessibility-title="close" />
+                  <scale-icon-action-circle-close />
                 </button>
               )}
               {this.hasSlotText && (
@@ -133,7 +141,11 @@ export class NotificationBanner {
               )}
 
               {this.hasSlotLink && (
-                <scale-link href={this.href} class="notification-banner__link">
+                <scale-link
+                  href={this.href}
+                  class="notification-banner__link"
+                  role="link"
+                >
                   <slot name="link" />
                 </scale-link>
               )}

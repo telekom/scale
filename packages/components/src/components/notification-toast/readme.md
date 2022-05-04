@@ -14,6 +14,7 @@
 | `autoHide`           | `auto-hide`           | (optional) Toast auto hide                     | `boolean`                                                      | `false`           |
 | `autoHideDuration`   | `auto-hide-duration`  | (optional) Toast auto hide duration            | `number`                                                       | `3000`            |
 | `fadeDuration`       | `fade-duration`       | (optional) Toast fade duration                 | `number`                                                       | `500`             |
+| `href`               | `href`                |                                                | `string`                                                       | `undefined`       |
 | `opened`             | `opened`              | (optional) Toast opened                        | `boolean`                                                      | `undefined`       |
 | `positionHorizontal` | `position-horizontal` | (optional) Toast position right                | `number`                                                       | `12`              |
 | `positionVertical`   | `position-vertical`   | (optional) Toast position at the top           | `number`                                                       | `12`              |
@@ -33,6 +34,13 @@ Toast method: open()
 Type: `Promise<void>`
 
 
+
+
+## Shadow Parts
+
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"button-dismissable"` |             |
 
 
 ## Dependencies
