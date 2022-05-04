@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.103](https://github.com/telekom/scale/compare/v3.0.0-beta.102...v3.0.0-beta.103) (2022-05-04)
+
+
+### Bug Fixes
+
+* **modal:** clicking esc key to close all opened modal window ([#1003](https://github.com/telekom/scale/issues/1003)) ([dbe17fd](https://github.com/telekom/scale/commit/dbe17fd46ae7d136be358a5699d878a18c7f939b))
+* transition ([#1028](https://github.com/telekom/scale/issues/1028)) ([a36e97f](https://github.com/telekom/scale/commit/a36e97fe635472bfa9bc1cf11743f6f3e84f571a))
+* **storybook:** broken path in import snippet ([#1014](https://github.com/telekom/scale/issues/1014)) ([8724bfc](https://github.com/telekom/scale/commit/8724bfc669e5cad4bb8234148240c9727ff84e5f))
+
+
+
+
+
 # [3.0.0-beta.102](https://github.com/telekom/scale/compare/v3.0.0-beta.101...v3.0.0-beta.102) (2022-04-19)
 
 

@@ -12,7 +12,7 @@ Install the component library in your project with `npm` or `yarn`:
 npm install @telekom/scale-components@next
 ```
 
-> To install the [version prior to dark mode](https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53), do `npm install @telekom/scale-components` (without `@next`)
+> To install the <a href="https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53" target="_blank" rel="noopener noreferrer">version prior to dark mode</a>, do `npm install @telekom/scale-components` (without `@next`)
 
 To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and the design tokens.
 

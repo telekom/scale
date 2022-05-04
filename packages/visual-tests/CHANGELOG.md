@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.103](https://github.com/telekom/scale/compare/v3.0.0-beta.102...v3.0.0-beta.103) (2022-05-04)
+
+
+### Bug Fixes
+
+* **text-input:** remove padding, add font-weight to helper text ([#1019](https://github.com/telekom/scale/issues/1019)) ([373ca47](https://github.com/telekom/scale/commit/373ca4789e98f39ff593364df1a69314678d6805))
+
+
+
+
+
 # [3.0.0-beta.102](https://github.com/telekom/scale/compare/v3.0.0-beta.101...v3.0.0-beta.102) (2022-04-19)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests
