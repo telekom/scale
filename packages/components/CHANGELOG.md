@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.103](https://github.com/telekom/scale/compare/v3.0.0-beta.102...v3.0.0-beta.103) (2022-05-04)
+
+
+### Bug Fixes
+
+* **modal:** clicking esc key to close all opened modal window ([#1003](https://github.com/telekom/scale/issues/1003)) ([dbe17fd](https://github.com/telekom/scale/commit/dbe17fd46ae7d136be358a5699d878a18c7f939b))
+* **text-input:** remove padding, add font-weight to helper text ([#1019](https://github.com/telekom/scale/issues/1019)) ([373ca47](https://github.com/telekom/scale/commit/373ca4789e98f39ff593364df1a69314678d6805))
+* transition ([#1028](https://github.com/telekom/scale/issues/1028)) ([a36e97f](https://github.com/telekom/scale/commit/a36e97fe635472bfa9bc1cf11743f6f3e84f571a))
+* **header:** use valid li > a html nesting + a11y improvements ([#1015](https://github.com/telekom/scale/issues/1015)) ([614f83d](https://github.com/telekom/scale/commit/614f83d485bdd9fed05282b9ff5201bf9cbed804))
+* increase flyout zindex ([#1022](https://github.com/telekom/scale/issues/1022)) ([6e75493](https://github.com/telekom/scale/commit/6e75493625484319bd863323989431862596f18b))
+* remove transform to maintain fixed positioning in child elements ([#1006](https://github.com/telekom/scale/issues/1006)) ([2fea224](https://github.com/telekom/scale/commit/2fea224a3594aa60bbddd6383c5337c75d22e28d))
+
+
+### Features
+
+* **toggle-button:** add setFocus method ([#1005](https://github.com/telekom/scale/issues/1005)) ([8754b66](https://github.com/telekom/scale/commit/8754b663765f035e1344cadb6bdb4f012bed1435))
+
+
+
+
+
 # [3.0.0-beta.102](https://github.com/telekom/scale/compare/v3.0.0-beta.101...v3.0.0-beta.102) (2022-04-19)
 
 
