@@ -401,7 +401,7 @@ duet-date-picker .duet-date__day.is-today.is-disabled::before {
 duet-date-picker .duet-date__day:focus {
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-  background: var(--telekom-color-background-surface);
+  background: var(--telekom-color-primary-hovered);
   color: var(--telekom-color-text-and-icon-white-standard);
 }
 
