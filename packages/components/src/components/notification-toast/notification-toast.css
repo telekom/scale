@@ -12,7 +12,7 @@
 :host {
   /* toast */
   --width: 367px;
-  --width-text-container: 271px;
+  --width-icon-container: 48px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
   /* FIXME:TOKEN not sure what elevation to use here */
@@ -97,7 +97,7 @@
 
 .notification-toast__icon-container {
   height: 100%;
-  width: 48px;
+  width: var(--width-icon-container);
   position: absolute;
   left: 0;
   top: 0;
@@ -146,11 +146,11 @@
 }
 
 .notification-toast__text-container {
-  width: var(--width-text-container);
+  width: calc(var(--width) - calc(var(--width-icon-container) * 2));
   min-height: 33px;
   float: left;
   position: relative;
-  margin: 0 0 0 48px;
+  margin: 0 0 0 var(--width-icon-container);
   padding: 15px 0 0 0;
 }
 
