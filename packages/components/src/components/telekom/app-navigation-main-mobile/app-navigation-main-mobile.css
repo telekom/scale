@@ -23,7 +23,7 @@ app-navigation-main-mobile {
   --font-weight-child: var(--telekom-typography-font-weight-regular);
 
   --transition: all var(--telekom-motion-duration-transition)
-    var(--telekom-motion-easing-standard);
+    cubic-bezier(var(--telekom-motion-easing-standard));
   width: 100%;
 }
 
