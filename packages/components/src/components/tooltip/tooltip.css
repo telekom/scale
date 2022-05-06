@@ -48,11 +48,6 @@
   z-index: var(--z-index);
 }
 
-.slot-container {
-  width: max-content;
-  height: max-content;
-}
-
 .tooltip {
   max-width: var(--max-width);
   border-radius: var(--radius);
