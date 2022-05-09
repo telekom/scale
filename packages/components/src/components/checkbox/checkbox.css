@@ -15,7 +15,7 @@
 scale-checkbox {
   --spacing-x: var(--telekom-spacing-unit-x2);
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
   --color-text: var(--telekom-color-text-and-icon-standard);
   --color-error: var(--telekom-color-functional-danger-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);

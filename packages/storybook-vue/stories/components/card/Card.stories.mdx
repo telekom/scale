@@ -100,8 +100,8 @@ export const Template = (args, { argTypes }) => ({
 ```css
 :host {
   --background: var(--telekom-color-background-surface);
-  --transition: all var(--telekom-motion-duration-transition) cubic-bezier(
-      var(--telekom-motion-easing-standard)
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
     );
   --radius: var(--telekom-radius-large);
   --box-shadow: var(--telekom-shadow-raised-standard);

@@ -17,7 +17,7 @@ scale-dropdown {
   --spacing-dropdown: var(--telekom-spacing-unit-x3)
     var(--telekom-spacing-unit-x10) 0 calc(var(--spacing-x) - 1px);
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-outlined-border-standard);

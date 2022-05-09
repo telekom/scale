@@ -12,7 +12,7 @@
 scale-icon {
   --display: inline-flex;
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
 
   display: var(--display);
 }
