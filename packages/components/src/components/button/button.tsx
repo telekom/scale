@@ -44,6 +44,10 @@ export class Button {
   @Prop() disabled?: boolean = false;
   /** (optional) Button type */
   @Prop() type?: 'reset' | 'submit' | 'button';
+  /** (optional) The name of the button, submitted as a pair with the button's `value` as part of the form data */
+  @Prop() name?: string;
+  /** (optional) Defines the value associated with the button's `name` */
+  @Prop() value?: string;
   /** (optional) Set to `true` when the button contains only an icon */
   @Prop() iconOnly?: boolean = false;
   /** (optional) Icon position related to the label */
@@ -174,6 +178,8 @@ export class Button {
             type={this.type}
             part={basePart}
             tabIndex={this.innerTabindex}
+            name={this.name}
+            value={this.value}
           >
             <slot />
           </button>

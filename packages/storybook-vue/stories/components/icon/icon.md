@@ -66,4 +66,4 @@ If you want to learn more about creating Telekom icons, please read our guidline
 
 ## Related components
 
-<a href="?path=/usage/components-button--standard">Button</a>
+[Button](?path=/usage/components-button--standard)

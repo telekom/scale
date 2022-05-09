@@ -18,6 +18,6 @@ Farbvariablen existieren in Sketch erst seit der Version 69 (Oktober 2020). Wir 
 
 ## Hinweis für Entwickler\*innen
 
-Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte. Mehr Details findest du auf GitHub:
+Das aktuelle Release enthält keine Breaking Changes. Es gibt allerdings einen sehr unwahrscheinlichen Edge Case, in dem die Aktualisierung ein wenig Arbeit erfordern könnte.
 
-[Mehr Details findet du auf GitHub.](https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md)
+<a href="https://github.com/telekom/scale/blob/main/docs/dark-mode-v3-beta-100.md" target="_blank" rel="noopener noreferrer">Mehr Details findest du auf GitHub.</a>

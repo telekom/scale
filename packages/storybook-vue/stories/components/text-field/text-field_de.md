@@ -87,4 +87,4 @@ Verwende kleine Text-Fields, wenn du nicht genug Platz für die Standardgröße 
 
 ## Verwandte Komponenten
 
-<a href="?path=/usage/components-text-area--standard">Text area</a>
+[Text Area](?path=/usage/components-text-area--standard)

@@ -4,7 +4,7 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import ScaleProgressBar from './ScaleProgressBar.vue';
 
 <Meta
@@ -165,7 +165,7 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background: var(--telekom-color-primary-standard);
-  --color-inner-status: var(--telekom-color-background-surface);
+  --color-inner-status: var(--telekom-color-primary-standard);
   --font-size-inner-status: var(--telekom-typography-font-size-small);
   --font-size-status: var(--telekom-typography-font-size-small);
   --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
@@ -174,7 +174,7 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
   --spacing-label: var(--telekom-spacing-unit-x2) 0;
-  --border: 1px solid var(--telekom-color-ui-additional-regular);
+  --border: 1px solid var(--telekom-color-ui-outlined-border-standard);
 }
 ```
 

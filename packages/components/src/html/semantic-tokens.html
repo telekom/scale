@@ -21,7 +21,9 @@
         background: var(--telekom-color-background-canvas);
         transition: background;
         transition-duration: var(--telekom-motion-duration-animation);
-        transition-timing-function: var(--telekom-motion-easing-standard);
+        transition-timing-function: cubic-bezier(
+          var(--telekom-motion-easing-standard)
+        );
       }
     </style>
   </head>

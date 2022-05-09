@@ -20,7 +20,7 @@
   --height-large: var(--telekom-spacing-unit-x12);
   --radius: var(--telekom-radius-small);
   --transition: all var(--telekom-motion-duration-transition)
-      var(--telekom-motion-easing-standard),
+      cubic-bezier(var(--telekom-motion-easing-standard)),
     border-radius var(--telekom-motion-duration-instant);
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);

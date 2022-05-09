@@ -16,10 +16,8 @@
   --height-small: 2rem;
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
-  --background-underline-hover: var(--telekom-color-primary-hovered);
-  --background-underline-active: var(--telekom-color-primary-pressed);
-  --color-active: var(--telekom-color-text-and-icon-primary-standard);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
@@ -97,13 +95,16 @@
   color: var(--color-hover);
 }
 .tab-header:hover:after {
-  background-color: var(--background-underline-hover);
+  background-color: var(--color-hover);
 }
 .tab-header:active {
   color: var(--color-active);
 }
 .tab-header:active:after {
-  background-color: var(--background-underline-active);
+  background-color: var(--color-active);
+}
+.tab-header:active:after {
+  background-color: var(--color-active);
 }
 .tab-header ::slotted(*) {
   margin-right: var(--spacing-right-slotted);

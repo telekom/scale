@@ -11,7 +11,7 @@ export default {
     name: { type: String },
     label: { type: String, default: '' },
     helperText: { type: String },
-    ariaLabel: { type: String },
+    ariaLabelCheckboxGroup: { type: String },
     invalid: { type: Boolean },
     selectText: { type: String, default: 'Select all' },
     unselectText: { type: String, default: 'Unselect all' },

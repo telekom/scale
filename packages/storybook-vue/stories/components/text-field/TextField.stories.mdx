@@ -4,7 +4,7 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import ScaleTextField from './ScaleTextField.vue';
 import { action } from '@storybook/addon-actions';
 export const ICON =
@@ -23,7 +23,19 @@ export const ICON =
     type: {
       control: {
         type: 'select',
-        options: ['email', 'hidden', 'number', 'password', 'tel', 'text'],
+        options: [
+          'email',
+          'hidden',
+          'number',
+          'password',
+          'tel',
+          'text',
+          'date',
+          'month',
+          'week',
+          'time',
+          'datetime-local',
+        ],
       },
     },
   }}
@@ -44,6 +56,8 @@ export const Template = (args, { argTypes }) => ({
       :invalid="invalid"
       :max-length="maxLength"
       :min-length="minLength"
+      :max="max"
+      :min="min"
       :placeholder="placeholder"
       :disabled="disabled"
       :readonly="readonly"
@@ -98,8 +112,8 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 scale-text-field {
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
+  --transition: all var(--telekom-motion-duration-transition) cubic-bezier(var(
+      --telekom-motion-easing-standard)
     );
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid var(

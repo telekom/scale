@@ -9,13 +9,13 @@ You can find an example boilerplate app in the "examples" folder in the [GitHub 
 First, install the package:
 
 ```bash
-npm install @telekom/scale-components
+npm install @telekom/scale-components@next
 ```
 
 Then load the component library and the CSS in `main.js`:
 
 ```js
-import { defineCustomElements } from 'packages/components/loader/index';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 import '@telekom/scale-components/dist/scale-components/scale-components.css';
 
 // ...

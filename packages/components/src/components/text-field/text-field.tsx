@@ -45,10 +45,14 @@ export class TextField {
     | 'tel'
     | 'text'
     | 'date'
+    | 'month' // example yyyy-mm
+    | 'week' // example yyyy-W##
+    | 'time' // example hh:mm
+    | 'datetime-local' // example yyyy-mm-ddThh:mm
     | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
-  /** (optional) Input label */
+  /** Input label */
   @Prop() label: string = '';
   /** (optional) Input size */
   @Prop() size?: string = '';
@@ -58,10 +62,14 @@ export class TextField {
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) Input max length */
+  /** (optional) Input text string max length */
   @Prop() maxLength?: number;
-  /** (optional) Input min length */
+  /** (optional) Input text string min length */
   @Prop() minLength?: number;
+  /** (optional) define the numeric maximum value of input types such as month, date, time */
+  @Prop() max?: number;
+  /** (optional) defines the numeric minimum value of input types such as month, date, time */
+  @Prop() min?: number;
   /** (optional) Input placeHolder */
   @Prop() placeholder?: string = '';
   /** (optional) Input disabled */
@@ -182,6 +190,14 @@ export class TextField {
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
     const helperTextId = `helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+    const numericTypes = [
+      'number',
+      'date',
+      'month',
+      'week',
+      'time',
+      'datetime-local',
+    ];
 
     return (
       <Host>
@@ -200,6 +216,8 @@ export class TextField {
             required={this.required}
             minLength={this.minLength}
             maxLength={this.maxLength}
+            min={this.min}
+            max={this.max}
             id={this.inputId}
             list={this.list}
             onInput={this.handleInput}
@@ -212,7 +230,7 @@ export class TextField {
             readonly={this.readonly}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
-            {...(this.type === 'number' ? { step: this.step } : {})}
+            {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
           />
 
           {(!!this.helperText || !!this.counter) && (
@@ -239,9 +257,11 @@ export class TextField {
   }
 
   getCssClassMap() {
-    // input[type="date"] will print a placeholder in some browsers
+    // the numeric type as followings, eg input[type="date"], will print a placeholder in some browsers
+    const numericTypes = ['date', 'month', 'week', 'time', 'datetime-local'];
     const animated =
-      (this.value != null && this.value !== '') || this.type === 'date';
+      (this.value != null && this.value !== '') ||
+      numericTypes.includes(this.type);
 
     return classNames(
       'text-field',
