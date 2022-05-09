@@ -402,7 +402,7 @@ duet-date-picker .duet-date__day:focus {
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
   background: var(--telekom-color-background-surface);
-  color: var(--telekom-color-text-and-icon-white-standard);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 duet-date-picker .duet-date__day:hover {
