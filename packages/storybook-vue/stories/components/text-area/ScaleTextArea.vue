@@ -18,6 +18,7 @@
     :input-id="inputId"
     :transparent="transparent"
     :input-autofocus="inputAutofocus"
+    :styles="styles"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <scale-checkbox-group>
     <!-- this has the slots show up in ArgsTable -->
     <slot></slot>
-  </div>
+  </scale-checkbox-group>
 </template>
 
 <script>
@@ -17,7 +17,6 @@ export default {
     unselectText: { type: String, default: 'Unselect all' },
     value: { type: String, default: '' },
     inputId: { type: String },
-    styles: { type: String },
   },
 };
 </script>
