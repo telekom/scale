@@ -8,6 +8,8 @@ Um mit der Scale Design System Library zu arbeiten, benötigst du die aktuelle V
 
 ## 2. Lade und installiere die TeleNeo Schrift
 
+> Bitte beachte: Die folgende Schrift gehört zu den Marken- und Design-Assets der Telekom. Sie ist nicht Open Source und darf nicht frei verwendet werden. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
+
 TeleNeo ist die Telekom Hausschrift.
 
 [Download TeleNeo](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
@@ -20,13 +22,13 @@ Die folgenden Templates enthalten den Brand Header und Footer sowie das Gestaltu
 
 ## 4. Importiere die Scale Sketch Library
 
+> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind nicht Open Source und dürfen nicht frei verwendet werden. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
+
 Jetzt musst du nur noch die Scale Sketch Library mit den Komponenten importieren:
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
-name="SketchLibrary"
-style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
-</iframe>
+[Telekom Scale Components (Light)](https://www.brand-design.telekom.com/sketch-light.rss)
+
+[Telekom Scale Components (Dark)](https://www.brand-design.telekom.com/sketch-dark.rss)
 
 &nbsp;
 
