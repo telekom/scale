@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.104](https://github.com/telekom/scale/compare/v3.0.0-beta.103...v3.0.0-beta.104) (2022-05-12)
+
+
+### Bug Fixes
+
+* **date-picker:** keyboard nav styles ([#1034](https://github.com/telekom/scale/issues/1034)) ([6f30cd5](https://github.com/telekom/scale/commit/6f30cd54201c8043dccfb971a87dabc0f8c7c0fd))
+* css transition values ([#1033](https://github.com/telekom/scale/issues/1033)) ([eb71637](https://github.com/telekom/scale/commit/eb71637ee607d8be4bea038549adcfdbc4c2f327))
+
+
+### Features
+
+* **notification-toast:** add css var for z-index ([#1041](https://github.com/telekom/scale/issues/1041)) ([e4c9820](https://github.com/telekom/scale/commit/e4c982093a7f0339aac21d982ad6f64248cf38a7))
+
+
+
+
+
 # [3.0.0-beta.103](https://github.com/telekom/scale/compare/v3.0.0-beta.102...v3.0.0-beta.103) (2022-05-04)
 
 

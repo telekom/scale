@@ -12,7 +12,7 @@
 :host {
   --background: var(--telekom-color-background-surface);
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-large);
   --box-shadow: var(--telekom-shadow-raised-standard);
   --box-shadow-hover: var(--telekom-shadow-raised-hover);

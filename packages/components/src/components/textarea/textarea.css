@@ -11,7 +11,7 @@
 
 scale-textarea {
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-outlined-border-standard);

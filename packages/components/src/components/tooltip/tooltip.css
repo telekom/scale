@@ -27,15 +27,11 @@
   --max-width: 20rem;
   --transition-delay-hide: var(--telekom-motion-duration-instant);
   --transition-duration-hide: var(--telekom-motion-duration-immediate);
-  --transition-timing-function-hide: cubic-bezier(
-    var(--telekom-motion-easing-standard)
-  );
+  --transition-timing-function-hide: var(--telekom-motion-easing-standard);
 
   /* tooltip show */
   --transition-duration-show: var(--telekom-motion-duration-immediate);
-  --transition-timing-function-show: cubic-bezier(
-    var(--telekom-motion-easing-standard)
-  );
+  --transition-timing-function-show: var(--telekom-motion-easing-standard);
   --z-index: var(--scl-z-index-70);
 
   display: contents;

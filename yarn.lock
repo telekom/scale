@@ -4781,10 +4781,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@telekom/design-tokens@^1.0.0-alpha.21":
-  version "1.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.21.tgz#ac4925f3b044b350ec0e9280aa43d2c8fbd0cf30"
-  integrity sha512-GF43jpkahOciuAuOiiIrQNkqLHxcqkhdwpEb/lRDlM2TTCkRxUlkYUS2KsWlK6lZejx5Unk1WccRB2ZsYLq3Dg==
+"@telekom/design-tokens@^1.0.0-alpha.22":
+  version "1.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.22.tgz#64ead67c6cc66a5b07fde3f85a1ed0684c0518bb"
+  integrity sha512-kRyROZOh9bQzi1kkKuM3M7nOyJU7nOcsqNF44wWS0Iupa6v7jAi9TDo4SoxjZhaRifkNkKC9/Jbq0evoEU0poA==
 
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"
