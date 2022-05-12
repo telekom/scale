@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.104](https://github.com/telekom/scale/compare/v3.0.0-beta.103...v3.0.0-beta.104) (2022-05-12)
+
+
+### Bug Fixes
+
+* css transition values ([#1033](https://github.com/telekom/scale/issues/1033)) ([eb71637](https://github.com/telekom/scale/commit/eb71637ee607d8be4bea038549adcfdbc4c2f327))
+
+
+
+
+
 # [3.0.0-beta.103](https://github.com/telekom/scale/compare/v3.0.0-beta.102...v3.0.0-beta.103) (2022-05-04)
 
 
