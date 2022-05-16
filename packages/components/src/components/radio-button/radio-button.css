@@ -14,7 +14,7 @@ scale-radio-button {
   --background-disabled: var(--telekom-color-ui-disabled);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);
   --color-primary-hover: var(--telekom-color-text-and-icon-standard);
   --color-primary-active: var(--telekom-color-text-and-icon-standard);

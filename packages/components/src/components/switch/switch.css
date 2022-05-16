@@ -21,9 +21,7 @@
   --border: var(--telekom-color-ui-outlined-border-standard);
 
   --transition-duration: var(--telekom-motion-duration-transition);
-  --transition-timing-function: cubic-bezier(
-    var(--telekom-motion-easing-standard)
-  );
+  --transition-timing-function: var(--telekom-motion-easing-standard);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --spacing-left: var(--telekom-spacing-unit-x2);

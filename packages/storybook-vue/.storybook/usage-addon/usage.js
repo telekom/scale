@@ -11,7 +11,7 @@
 
 import React from 'react';
 import { DocsWrapper, DocsContent } from '@storybook/components';
-import { Description } from '@storybook/addon-docs/blocks';
+import { Description } from '@storybook/components';
 import { useStorybookState, useGlobals } from '@storybook/api';
 import accordion_en from 'raw-loader!../../stories/components/accordion/accordion.md';
 import accordion_de from 'raw-loader!../../stories/components/accordion/accordion_de.md';

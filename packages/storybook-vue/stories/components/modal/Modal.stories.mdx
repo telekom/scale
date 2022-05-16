@@ -4,7 +4,7 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import ScaleModal from './ScaleModal.vue';
 
 <Meta
@@ -77,6 +77,7 @@ export const Template = (args, context) => ({
         :close-button-title="closeButtonTitle"
         :align-actions="alignActions"
         :styles="styles"
+        :allow-injecting-style-to-body="allowInjectingStyleToBody"
         @scaleClose="scaleClose()"
       >
         <template v-if="shortBody">
