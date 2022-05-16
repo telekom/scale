@@ -30,12 +30,12 @@ By clicking on a layer and then selecting Fill and/or Border in the inspector pa
 
 Have you finished checking your existing project? Then add the new Sketch library. And enjoy the new version!
 
-[Telekom Scale Components (Light)](https://www.brand-design.telekom.com/sketch-light.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
 
-[Telekom Scale Components (Dark)](https://www.brand-design.telekom.com/sketch-dark.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 ## Reverting back to the previous version of the library
 
 Download the previous version and replace the new version. In Sketch, click the notification in the top-right corner. A flyout opens with the option: Components update available. This option will revert your layout back to the previous version.
 
-[Telekom Scale Components](https://www.brand-design.telekom.com/sketch.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch.rss" rel="nofollow" class="matomo_download">Telekom Scale Components</a></p>

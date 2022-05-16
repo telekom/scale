@@ -26,9 +26,9 @@ Die folgenden Templates enthalten den Brand Header und Footer sowie das Gestaltu
 
 Jetzt musst du nur noch die Scale Sketch Library mit den Komponenten importieren:
 
-[Telekom Scale Components (Light)](https://www.brand-design.telekom.com/sketch-light.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
 
-[Telekom Scale Components (Dark)](https://www.brand-design.telekom.com/sketch-dark.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 &nbsp;
 

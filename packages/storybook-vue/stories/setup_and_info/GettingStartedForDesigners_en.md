@@ -26,9 +26,9 @@ The following download has templates for Brand Header, Footer, and Grid:
 
 Scale components exist as a Sketch library:
 
-[Telekom Scale Components (Light)](https://www.brand-design.telekom.com/sketch-light.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
 
-[Telekom Scale Components (Dark)](https://www.brand-design.telekom.com/sketch-dark.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 &nbsp;
 

@@ -30,12 +30,12 @@ Klicke auf eine Ebene und wähle danach „Fill“ und/oder „Border“ im Insp
 
 Hast du deine bestehenden Projekt geprüft? Dann füge jetzt die neue Sketch Library hinzu.
 
-[Telekom Scale Components (Light)](https://www.brand-design.telekom.com/sketch-light.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
 
-[Telekom Scale Components (Dark)](https://www.brand-design.telekom.com/sketch-dark.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 ### So setzt du die Library auf die vorherige Version zurück
 
 Lade die vorherige Version erneut herunter und klicke in Sketch auf die Mitteilung in der oberen rechten Ecke. Es öffnet sich ein Flyout mit der Option „Components Update Available“. Durch Klick auf diese Option wird dein Layout auf die vorherige Version zurückgesetzt.
 
-[Telekom Scale Components](https://www.brand-design.telekom.com/sketch.rss)
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch.rss" rel="nofollow" class="matomo_download">Telekom Scale Components</a></p>
