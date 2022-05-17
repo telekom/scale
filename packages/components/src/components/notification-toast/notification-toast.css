@@ -103,8 +103,7 @@
   left: 0;
   top: 0;
   float: left;
-  border-radius: var(--telekom-radius-standard) 0 0
-    var(--telekom-radius-standard);
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .notification-toast.notification-toast--variant-success
