@@ -4,15 +4,15 @@ Deutsche Telekom AG attaches great importance to protecting your personal data. 
 
 ## 1. What data is recorded, how is it used, and how long is it stored?
 
-We will only collect technical characteristics: When you visit our websites, the web server temporarily records the domain name or your computer’s IP address, the file requested by the client, the http response code, and the website from which you are visiting us. The recorded data is used solely for data security purposes, particularly to protect against attempted attacks on our web server (Article 6 (1f) GDPR). We do not use it to create individual user profiles nor do we share this information with third parties. It is erased after seven days at the latest. We reserve the right to statistically analyze anonymized data records.
+We will only collect technical characteristics: When you visit our websites, the web server temporarily records the domain name or your computer’s IP address, the file requested by the client (file name and URL), the http response code, and the website from which you are visiting us. The recorded data is used solely for data security purposes, particularly to protect against attempted attacks on our web server (Article 6 (1f) GDPR). We do not use it to create individual user profiles nor do we share this information with third parties. It is erased after seven days at the latest. We reserve the right to statistically analyze anonymized data records.
 
 ## 2. Controlling data used by social media plug-ins and links to social media platforms
 
-No social media plug-ins are used and no links to social media platforms are provided.
+No social media plug-ins are used, and no links to social media platforms are provided.
 
 ## 3. Will my usage habits be evaluated, e.g. for advertising purposes or tracking?
 
-We want you to enjoy using our websites and take advantage of our products and services. We have an economic interest in ensuring this is the case. We analyze usage habits anonymously and pseudonymously so you can find the products that interest you and so we can make our websites user-friendly. We or our contract service providers create usage profiles that comply with the legal requirements. This information cannot be traced back to you directly. The following information is intended to provide you with general information on the various purposes, techniques, storage periods, and the processing countries of this data.
+We want you to enjoy using our websites and take advantage of our products and services. We have an economic interest in ensuring this is the case. We analyze usage habits anonymously and pseudonymously so you can find the products that interest you and so we can make our websites user-friendly. We, or our contract service providers, create usage profiles that comply with the legal requirements. This information cannot be traced back to you directly. The following information is intended to provide you with general information on the various purposes, techniques, storage periods, and the processing countries of this data.
 
 ### Technology
 
@@ -26,9 +26,9 @@ These cookies are required to enable you to navigate through the web pages and u
 
 ## 4. Where can I find the information that is important to me?
 
-This data privacy information provides an overview of the items which apply to Deutsche Telekom processing your data in this web portal. Further information, including information on data protection in general and in specific products, is available at https://www.telekom.com/en/corporate-responsibility/data-protection-data-security/data-protection and http://www.telekom.de/datenschutzhinweise.
+This data privacy information provides an overview of the items which apply to Deutsche Telekom AG processing your data in this web portal. Further information, including information on data protection in general and in specific products, is available at https://www.telekom.com/en/corporate-responsibility/data-protection-data-security/data-protection and http://www.telekom.de/datenschutzhinweise.
 
-## 5. Who is responsible for data processing? Who should I contact if I have any queries regarding data privacy at Deutsche Telekom?
+## 5. Who is responsible for data processing? Who should I contact if I have any queries regarding data privacy at Deutsche Telekom AG?
 
 Deutsche Telekom AG acts as the data controller. If you have any queries, please contact our Customer Service department or the Global Data Privacy Officer, Dr. Claus D. Ulmer, Friedrich-Ebert-Allee 140, 53113 Bonn, Germany, datenschutz@telekom.de.
 
@@ -53,7 +53,7 @@ We will only pass your data **owing to legal obligations:** In certain cases, we
 
 ## 8. Where is my data processed?
 
-Your data will be processed in Germany and other European countries. If, in exceptional cases, your data is processed in countries outside the European Union (in so-called third countries), this will take place
+Your data will be processed in Germany and other European countries. If, in exceptional cases, your data is processed in countries outside the European Union (in so-called third countries), this will take place:
 
 <ol type="a">
   <li>if you have expressly consented to this (Article 49 (1) a GDPR). (In most countries outside the EU, the level of data protection does not meet EU standards. This concerns in particular comprehensive monitoring and control rights of state authorities, e.g. in the USA, which disproportionately interfere with the data protection of European citizens,</li>
