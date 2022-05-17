@@ -228,20 +228,25 @@ scale-dropdown {
   background: var(--background-disabled);
 }
 
-/*TODO: remove hardcoded values for FF and windows browser (must define system dropdown bg color, 
-see https://github.com/telekom/scale/issues/1018) */
+
+/* Tokens exceptionally hard-coded, instead of using the component variables,
+to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018) */
 [data-mode='dark'] .dropdown .input__dropdown {
-  background-color: var(--telekom-color-background-canvas-subtle);
+  background-color: var(--telekom-color-background-canvas);
 }
 
 [data-mode='dark']
   .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
   .input__dropdown:hover {
-  background-color: var(--telekom-color-background-canvas-subtle);
+  background-color: #1b1b1b;
 }
 
 [data-mode='dark']
   .dropdown:not(.dropdown--disabled).dropdown--status-error
   .input__dropdown:hover {
-  background-color: var(--telekom-color-background-canvas-subtle);
+  background-color: #1b1b1b;
+}
+
+[data-mode='dark'] .dropdown--disabled .input__dropdown {
+  background-color: var(--telekom-color-background-canvas);
 }
