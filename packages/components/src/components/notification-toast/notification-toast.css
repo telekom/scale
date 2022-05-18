@@ -11,7 +11,7 @@
 
 :host {
   /* toast */
-  --width: 367px;
+  --width: 359px;
   --width-icon-container: 48px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
@@ -100,7 +100,7 @@
   height: 100%;
   width: var(--width-icon-container);
   position: absolute;
-  left: 0;
+  left: -8px;
   top: 0;
   float: left;
   border-radius: var(--radius) 0 0 var(--radius);
@@ -150,7 +150,7 @@
   min-height: 33px;
   float: left;
   position: relative;
-  margin: 0 0 0 var(--width-icon-container);
+  margin: 0 0 0 calc(var(--width-icon-container) - 8px);
   padding: 15px 0 0 0;
 }
 
