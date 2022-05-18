@@ -69,6 +69,10 @@
   opacity: 0;
 }
 
+.notification-toast.notification-toast--story.notification-toast--opened {
+  opacity: 1;
+}
+
 .notification-toast.notification-toast--variant-success {
   background: var(--background-success-text-container);
 }
