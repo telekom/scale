@@ -9,9 +9,19 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-notification-banner',
@@ -28,6 +38,8 @@ export class NotificationBanner {
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
   @Prop() href: string;
+  /** Fires when the notification banner has been dismissed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
 
   hasSlotText?: boolean;
   hasSlotLink?: boolean;
@@ -97,6 +109,7 @@ export class NotificationBanner {
 
   close = () => {
     this.opened = false;
+    emitEvent(this, 'scaleClose');
   };
 
   render() {
