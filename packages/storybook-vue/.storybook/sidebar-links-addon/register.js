@@ -23,7 +23,7 @@ const createLink = ({ title, href }) => {
   link.id = `sidebar-link-${title}`;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.setAttribute("class", "sidebar-item css-b6bmib");
+  link.setAttribute("class", "sidebar-item css-8l36wn");
   link.innerHTML = title;
   return link;
 };
