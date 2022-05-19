@@ -44,6 +44,10 @@ export class NotificationToast {
   @Prop() positionVertical?: number = 12;
   /** (optional) Toast position right */
   @Prop() positionHorizontal?: number = 12;
+  /** (optional) Toast auto hide */
+  @Prop() autoHide?: boolean = false;
+  /** (optional) Toast auto hide duration */
+  @Prop() autoHideDuration?: number = 3000;
   /** (optional) Toast fade duration */
   @Prop() fadeDuration?: number = 500;
   /** (optional) Injected CSS styles */
@@ -52,6 +56,7 @@ export class NotificationToast {
   @Prop() story?: boolean;
   /** (optional) Toast state height with offset */
   @State() toastHeightWithOffset: number = 0;
+  @Prop() href: string;
 
   @Element() element: HTMLElement;
 
@@ -67,6 +72,12 @@ export class NotificationToast {
     const alignmentParts = this.alignment.split('-');
     this.alignmentVertical = alignmentParts[0];
     this.alignmentHorizontal = alignmentParts[1];
+  }
+
+  componentDidRender() {
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
+    }
   }
 
   close = () => {
@@ -86,7 +97,7 @@ export class NotificationToast {
               size={20}
               color="#ffffff"
               selected
-              accessibility-title="success"
+              aria-hidden="true"
             />
           );
         case 'informational':
@@ -96,7 +107,7 @@ export class NotificationToast {
               size={20}
               selected
               color="#ffffff"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
         case 'error':
@@ -106,7 +117,7 @@ export class NotificationToast {
               size={20}
               selected
               color="#ffffff"
-              accessibility-title="error"
+              aria-hidden="true"
             />
           );
         case 'warning':
@@ -116,7 +127,7 @@ export class NotificationToast {
               color="#ffff"
               size={20}
               selected
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
       }
@@ -139,32 +150,43 @@ export class NotificationToast {
           <style>{this.transitions(this.toastHeightWithOffset)}</style>
           <style>{this.animationStyle(this.toastHeightWithOffset)}</style>
 
-          <div class={this.getCssClassMap()} part={this.getBasePartMap()}>
+          <div
+            role="alert"
+            style={{ display: `${this.opened ? '' : 'none'}` }}
+            class={this.getCssClassMap()}
+            part={this.getBasePartMap()}
+            tabindex="0"
+          >
             <div class="notification-toast__icon-container">
               {this.handleIcons()}
             </div>
             <div class="notification-toast__text-container">
               <slot name="header" />
               <slot name="body" />
-              <scale-link>
+              <scale-link
+                href={this.href}
+                class="notification-toast__link"
+                role="link"
+              >
                 <slot name="link" />
               </scale-link>
             </div>
 
-            <scale-icon-action-circle-close
-              tabindex="0"
-              class="notification-message__icon-close"
-              size={20}
-              onClick={() => {
-                this.close();
-              }}
+            <button
+              part="button-dismissable"
+              type="button"
+              class="notification-toast__button-close"
+              onClick={() => this.close()}
+              tabindex={0}
+              aria-label="close"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   this.close();
                 }
               }}
-              accessibility-title="close"
-            />
+            >
+              <scale-icon-action-circle-close />
+            </button>
           </div>
         </Host>
       );

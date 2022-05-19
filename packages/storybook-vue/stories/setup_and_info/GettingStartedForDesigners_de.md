@@ -4,7 +4,7 @@ Mit Scale entwickelst du ästhetische, intuitive und barrierefreie Produkte und 
 
 ## 1. Installiere Sketch
 
-Um mit der Scale Design System Library zu arbeiten, benötigst du die aktuelle Version von [Sketch](https://www.sketch.com/).
+Um mit der Scale Design System Library zu arbeiten, benötigst du die aktuelle Version von <a href="https://www.sketch.com/" target="_blank" rel="noopener noreferrer">Sketch</a>.
 
 ## 2. Lade und installiere die TeleNeo Schrift
 
@@ -22,10 +22,10 @@ Die folgenden Templates enthalten den Brand Header und Footer sowie das Gestaltu
 
 Jetzt musst du nur noch die Scale Sketch Library mit den Komponenten importieren:
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=1&no_cache=1"
+<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
 name="SketchLibrary"
 style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="22px" width="100%">
+frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
 </iframe>
 
 &nbsp;
@@ -58,4 +58,4 @@ Mit deinem [Feedback](./?path=/story/contact-your-feedback--page) können wir Sc
 
 ## Brauchst du Hilfe bei Sketch?
 
-Sketch bietet sehr gute [Tutorials und Hilfe-Dokumente](https://www.sketch.com/docs/) an.
+Sketch bietet sehr gute <a href="https://www.sketch.com/docs/" target="_blank" rel="noopener noreferrer">Tutorials und Hilfe-Dokumente</a> an.

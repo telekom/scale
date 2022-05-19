@@ -9,9 +9,19 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-notification-message',
@@ -27,6 +37,8 @@ export class NotificationMessage {
   @Prop({ reflect: true }) opened: boolean;
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
+  /** Fires when the notification message has been dismissed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
 
   hasSlotText: boolean;
 
@@ -61,21 +73,21 @@ export class NotificationMessage {
             <scale-icon-alert-success
               class="notification-message__icon-success"
               color="#187431"
-              accessibility-title="success"
+              aria-hidden="true"
             />
           );
         case 'informational':
           return (
             <scale-icon-alert-information
               class="notification-message__icon-information"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
         case 'error':
           return (
             <scale-icon-alert-error
               class="notification-message__icon-error"
-              accessibility-title="error"
+              aria-hidden="true"
             />
           );
         case 'warning':
@@ -83,7 +95,7 @@ export class NotificationMessage {
             <scale-icon-alert-error
               class="notification-message__icon-information"
               color="#AE461C"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
       }
@@ -93,6 +105,7 @@ export class NotificationMessage {
 
   close = () => {
     this.opened = false;
+    emitEvent(this, 'scaleClose');
   };
 
   render() {
@@ -103,6 +116,8 @@ export class NotificationMessage {
     return (
       <Host>
         <div
+          role="alert"
+          style={{ display: `${this.opened ? '' : 'none'}` }}
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           tabindex="0"
@@ -113,19 +128,21 @@ export class NotificationMessage {
               <slot>&emsp;</slot>
 
               {this.dismissible && (
-                <scale-icon-action-circle-close
-                  tabindex="0"
+                <button
+                  part="button-dismissable"
+                  type="button"
                   class="notification-message__icon-close"
-                  onClick={() => {
-                    this.close();
-                  }}
+                  onClick={() => this.close()}
+                  tabindex={0}
+                  aria-label="close"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       this.close();
                     }
                   }}
-                  accessibility-title="close"
-                />
+                >
+                  <scale-icon-action-circle-close />
+                </button>
               )}
             </div>
             {this.hasSlotText && (

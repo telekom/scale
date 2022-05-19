@@ -4,7 +4,7 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import ScaleIcon from './ScaleIcon.vue';
 import ScaleIconLibraryExample from './ScaleIconLibraryExample.vue';
 import index from '@telekom/scale-components/dist/scale-components/components/icons/scale-icons.json';
@@ -107,8 +107,8 @@ export const Template = (args, { argTypes }) => ({
 ```css
 scale-icon {
   --display: inline-flex;
-  --transition: all var(--telekom-motion-duration-transition) cubic-bezier(
-      var(--telekom-motion-easing-standard)
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
     );
 }
 ```

@@ -16,6 +16,7 @@ Use input fields when users should enter information like:
 - email addresses,
 - passwords,
 - phone numbers,
+- date, month, week, time, datetime-local
 - or any other kind of information as free text.
 
 ### When not to use
@@ -93,4 +94,4 @@ Important: Use either only small or only large elements within groups.
 
 ## Related components
 
-<a href="?path=/usage/components-text-area--standard">Text area</a>
+[Text Area](?path=/usage/components-text-area--standard)

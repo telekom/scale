@@ -10,7 +10,7 @@
 | Property                     | Attribute                      | Description                                                                                                                                            | Type                                       | Default        |
 | ---------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ | -------------- |
 | `ariaDescriptionTranslation` | `aria-description-translation` | a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties. | `string`                                   | `'$selected'`  |
-| `ariaLabel`                  | `aria-label`                   | (optional) aria-label attribute needed for icon-only buttons                                                                                           | `string`                                   | `undefined`    |
+| `ariaLabelToggleButton`      | `aria-label-toggle-button`     | (optional) aria-label attribute needed for icon-only buttons                                                                                           | `string`                                   | `undefined`    |
 | `ariaLangDeselected`         | `aria-lang-deselected`         | (optional) translation of 'deselected                                                                                                                  | `string`                                   | `'deselected'` |
 | `ariaLangSelected`           | `aria-lang-selected`           | (optional) translation of 'selected                                                                                                                    | `string`                                   | `'selected'`   |
 | `background`                 | `background`                   | (optional) Button background                                                                                                                           | `"grey" \| "white"`                        | `'white'`      |
@@ -34,6 +34,19 @@
 | ------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
 | `scale-click` | Emitted when button is clicked                                                                     | `CustomEvent<{ id: string; selected: boolean; }>` |
 | `scaleClick`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<{ id: string; selected: boolean; }>` |
+
+
+## Methods
+
+### `setFocus() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ----------------------------------------------

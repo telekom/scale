@@ -50,4 +50,5 @@ Interaktiver Text mit jeweils einem Icon links und rechts.
 
 ## Verwandte Komponenten
 
-[Brand Header & Navigation](?path=/story/components-brand-header-navigation), [Data Grid](?path=/story/beta-components-data-grid)
+[Brand Header & Navigation, ](?path=/story/components-brand-header-navigation)
+[Data Grid](?path=/story/beta-components-data-grid)

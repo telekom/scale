@@ -34,7 +34,7 @@ export class Link {
   /** (optional) Link href */
   @Prop() href: string;
   /** (optional) Download declaration */
-  @Prop() download?: boolean = false;
+  @Prop() download?: string;
   /** (optional) Chnage icon/content slot order */
   @Prop() iconPosition?: 'before' | 'after' = 'after';
   /** (optional) */

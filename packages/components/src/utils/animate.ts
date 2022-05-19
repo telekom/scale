@@ -61,6 +61,10 @@ export const KEYFRAMES = {
       offset: 0,
       ...keyframeDefaults,
       opacity: 0,
+      /**
+       * we are not using transform here to avoid breaking positioning for nested fixed elements (i.e. a flyout menu in an animated modal)
+       * see 'fixed' section @link https://developer.mozilla.org/en-US/docs/Web/CSS/position
+       */
       top: '-3rem',
     },
     {

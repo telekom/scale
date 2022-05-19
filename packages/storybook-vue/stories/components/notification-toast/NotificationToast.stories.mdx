@@ -4,7 +4,7 @@ import {
   ArgsTable,
   Canvas,
   Description,
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import ScaleNotificationToast from './ScaleNotificationToast.vue';
 
 <Meta
@@ -40,6 +40,8 @@ export const Template = (args, { argTypes }) => ({
       :variant="variant" 
       :alignment="alignment"
       :opened="opened"
+      :auto-hide-duration="autoHideDuration"
+      :auto-hide="autoHide"
       ><p slot="header">Informational toast headline</p>
     </scale-notification-toast>
     </div>
@@ -191,6 +193,29 @@ export const TemplateLink = (args, { argTypes }) => ({
 </scale-notification-toast>
 ```
 
+## Timeout
+
+<Canvas withSource="none">
+  <Story
+    name="Timeout"
+    args={{
+      opened: true,
+      autoHide: true,
+      autHideDuration: '4000',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-toast opened>
+  <p slot="header" auto-hide auto-hide-duration="4000">
+    Informational toast headline
+  </p>
+</scale-notification-toast>
+```
+
 ## With Text
 
 <Canvas withSource="none">
@@ -225,7 +250,7 @@ export const TemplateLink = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-notification-toast variant="success" story>
+<scale-notification-toast variant="success" opened>
   <p slot="header">Informational toast headline</p>
   <p slot="link">Link Text</p>
 </scale-notification-toast>

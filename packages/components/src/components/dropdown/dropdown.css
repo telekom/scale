@@ -17,7 +17,7 @@ scale-dropdown {
   --spacing-dropdown: var(--telekom-spacing-unit-x3)
     var(--telekom-spacing-unit-x10) 0 calc(var(--spacing-x) - 1px);
   --transition: all var(--telekom-motion-duration-transition)
-    cubic-bezier(var(--telekom-motion-easing-standard));
+    var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-outlined-border-standard);
@@ -135,6 +135,7 @@ scale-dropdown {
   border-color: var(--border-color-hover);
   background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
+
 .dropdown:not(.dropdown--disabled).dropdown--status-error
   .input__dropdown:hover {
   border-color: var(--telekom-color-functional-danger-hovered);
@@ -225,4 +226,26 @@ scale-dropdown {
   border-color: var(--border-color-disabled);
   color: var(--color-disabled);
   background: var(--background-disabled);
+}
+
+/* Tokens exceptionally hard-coded, instead of using the component variables,
+to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018) */
+[data-mode='dark'] .dropdown .input__dropdown {
+  background-color: var(--telekom-color-background-canvas);
+}
+
+[data-mode='dark']
+  .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
+  .input__dropdown:hover {
+  background-color: #1b1b1b;
+}
+
+[data-mode='dark']
+  .dropdown:not(.dropdown--disabled).dropdown--status-error
+  .input__dropdown:hover {
+  background-color: #1b1b1b;
+}
+
+[data-mode='dark'] .dropdown--disabled .input__dropdown {
+  background-color: var(--telekom-color-background-canvas);
 }

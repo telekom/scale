@@ -106,7 +106,7 @@ addons.register('@telekom/scale-language-addon', () => {
       // Wait for the DOM to settle, then append the languageToolbar if it's not there yet
       setTimeout(() => {
         const rightSection = document.querySelector(
-          '#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div > div.css-pvky73'
+          '#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div > div.css-102is01'
         );
 
         const toolbar = document.querySelector(

@@ -19,7 +19,6 @@ import {
   Watch,
   Event,
   EventEmitter,
-  Listen,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { queryShadowRoot, isHidden, isFocusable } from '../../utils/focus-trap';
@@ -60,10 +59,14 @@ export class Modal {
   @Prop() duration?: number = 200;
   /** (optional) Label for close button */
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  /** (optional) title for close button */
+  @Prop() closeButtonTitle?: string = 'Close';
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) allow to inject css style {overflow: hidden} to body when modal is open */
+  @Prop() allowInjectingStyleToBody: boolean = false;
 
   /** What actually triggers opening/closing the modal */
   @State() isOpen: boolean = this.opened || false;
@@ -73,6 +76,8 @@ export class Modal {
   @State() hasBody: boolean = false;
   /** Useful for toggling scroll-specific styles */
   @State() hasScroll: boolean = false;
+  /** store document body original overflow style if applicable, this is useful when modal opens and inject overflow style to body */
+  @State() bodyOverflowValue: string = '';
 
   /** Fires when the modal has been opened */
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
@@ -97,15 +102,14 @@ export class Modal {
   // @ts-ignore
   private resizeObserver: ResizeObserver;
 
-  @Listen('keydown', { target: 'window' })
-  handleKeypress(event: KeyboardEvent) {
+  handleKeypress = (event: KeyboardEvent) => {
     if (!this.isOpen) {
       return;
     }
     if (event.key === 'Escape') {
       this.emitBeforeClose('ESCAPE_KEY');
     }
-  }
+  };
 
   disconnectedCallback() {
     if (this.resizeObserver) {
@@ -188,8 +192,17 @@ export class Modal {
   openedChanged(newValue) {
     if (newValue === true) {
       this.open();
+      if (this.allowInjectingStyleToBody) {
+        this.bodyOverflowValue = document.body.style.overflow;
+        // The following style will disable body from scrolling when modal is open
+        document.body.style.setProperty('overflow', 'hidden');
+      }
     } else {
       this.close();
+      if (this.allowInjectingStyleToBody) {
+        // remove injected overflow style or set it to original value
+        document.body.style.setProperty('overflow', this.bodyOverflowValue);
+      }
     }
   }
 
@@ -207,6 +220,7 @@ export class Modal {
         this.attemptFocus(this.getFirstFocusableElement());
         emitEvent(this, 'scaleOpen');
       });
+      this.hostElement.addEventListener('keydown', this.handleKeypress);
     } catch (err) {
       emitEvent(this, 'scaleOpen');
     }
@@ -221,6 +235,7 @@ export class Modal {
         this.isOpen = false;
         emitEvent(this, 'scaleClose');
       });
+      this.hostElement.removeEventListener('keydown', this.handleKeypress);
     } catch (err) {
       this.isOpen = false;
       emitEvent(this, 'scaleClose');
@@ -267,6 +282,7 @@ export class Modal {
                 part="close-button"
                 onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
                 aria-label={this.closeButtonLabel}
+                title={this.closeButtonTitle}
               >
                 <slot name="close-icon">
                   <scale-icon-action-circle-close decorative />

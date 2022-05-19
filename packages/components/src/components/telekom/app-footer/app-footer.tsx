@@ -38,6 +38,7 @@ export class AppFooter {
   @Prop() logoTitle?: string;
   @Prop() logoClick?: any;
   @Prop() logoAriaDescribedBy?: string;
+  @Prop() claimLang: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   hasSlotLogo: boolean;
@@ -66,7 +67,7 @@ export class AppFooter {
                   <scale-logo
                     transparent
                     variant="white"
-                    language=""
+                    language={this.claimLang}
                     size={24}
                     href={this.logoHref}
                     logoTitle={this.logoTitle}
