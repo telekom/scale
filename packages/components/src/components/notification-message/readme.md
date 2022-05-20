@@ -14,6 +14,13 @@
 | `variant`          | `variant`            |             | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
+## Events
+
+| Event         | Description                                            | Type                |
+| ------------- | ------------------------------------------------------ | ------------------- |
+| `scale-close` | Fires when the notification message has been dismissed | `CustomEvent<void>` |
+
+
 ## Methods
 
 ### `open() => Promise<void>`
