@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.105](https://github.com/telekom/scale/compare/v3.0.0-beta.104...v3.0.0-beta.105) (2022-05-20)
+
+
+### Bug Fixes
+
+* **dropdown:** hardcoded bg color in dark mode (temp) ([#1059](https://github.com/telekom/scale/issues/1059)) ([3818ed8](https://github.com/telekom/scale/commit/3818ed8039d369339b4c0ed04144d8533b5a2dab))
+* **header:** avoid hiding elements directly under scrolled header ([#1067](https://github.com/telekom/scale/issues/1067)) ([c8a3d2f](https://github.com/telekom/scale/commit/c8a3d2fac89bf1f1da88c9a9999b1a7dbf5f709d))
+* **link:** download attribute is string ([#1061](https://github.com/telekom/scale/issues/1061)) ([3278442](https://github.com/telekom/scale/commit/32784423627a199be86f3b4ee248a812580ca5a1))
+
+
+### Features
+
+* **notification:** emit scale-close on close ([#1066](https://github.com/telekom/scale/issues/1066)) ([88af117](https://github.com/telekom/scale/commit/88af11720f71e16f800036ba01d6176198cce8fa))
+
+
+
+
+
 # [3.0.0-beta.104](https://github.com/telekom/scale/compare/v3.0.0-beta.103...v3.0.0-beta.104) (2022-05-12)
 
 
