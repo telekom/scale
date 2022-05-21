@@ -354,9 +354,6 @@ scale-app-header {
     align-items: center;
     justify-content: flex-end;
   }
-  .header .header__brand app-logo {
-    margin-right: var(--telekom-spacing-unit-x4);
-  }
 }
 
 @media (min-width: 1552px) {

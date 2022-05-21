@@ -29,7 +29,6 @@
   --background-mask: var(--telekom-color-background-canvas);
   --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);
 
-  --height-logo: var(--telekom-spacing-unit-x6);
   --font-size-copyright: var(--telekom-typography-font-size-caption);
   --color-link-standard: var(--telekom-color-text-and-icon-white-standard);
   --color-link-minimal: var(--telekom-color-text-and-icon-additional);
@@ -275,4 +274,8 @@
     margin: 0 auto;
     max-width: var(--max-width);
   }
+}
+
+scale-logo:focus-visible {
+  outline: none;
 }
