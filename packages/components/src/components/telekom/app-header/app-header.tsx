@@ -81,6 +81,7 @@ export class Header {
   hasSlotMenuAddon: boolean;
   hasSlotMenuMobile: boolean;
   hasSlotLogo: boolean;
+  hasSlotLogoInverse: boolean;
 
   @Watch('megaMenuVisible')
   megaMenuVisibleChange(isVisible) {
@@ -142,6 +143,9 @@ export class Header {
       '[slot="menu-mobile"]'
     );
     this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+    this.hasSlotLogoInverse = !!this.hostElement.querySelector(
+      '[slot="logo-inverse"]'
+    );
   }
 
   componentDidUpdate() {
@@ -162,6 +166,9 @@ export class Header {
       '[slot="menu-mobile"]'
     );
     this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+    this.hasSlotLogoInverse = !!this.hostElement.querySelector(
+      '[slot="logo-inverse"]'
+    );
   }
 
   componentWillRender() {
@@ -455,16 +462,20 @@ export class Header {
               <span class="header__nav-after"></span>
               <div class="header__nav-content">
                 <div class="header__nav-logo">
-                  <scale-logo
-                    transparent
-                    language=""
-                    href={this.logoHref}
-                    logoTitle={this.logoTitle}
-                    onClick={this.logoClick}
-                    focusable={this.scrolled || this.sticky}
-                    size={24}
-                    logoAriaDescribedBy={this.logoAriaDescribedBy}
-                  ></scale-logo>
+                  {this.hasSlotLogoInverse ? (
+                    <slot name="logo-inverse"></slot>
+                  ) : (
+                    <scale-logo
+                      transparent
+                      language=""
+                      href={this.logoHref}
+                      logoTitle={this.logoTitle}
+                      onClick={this.logoClick}
+                      focusable={this.scrolled || this.sticky}
+                      size={24}
+                      logoAriaDescribedBy={this.logoAriaDescribedBy}
+                    ></scale-logo>
+                  )}
                 </div>
                 <div class="header__nav-menu-wrapper">
                   <div class="header__nav-menu-main">{this.menuMain()}</div>

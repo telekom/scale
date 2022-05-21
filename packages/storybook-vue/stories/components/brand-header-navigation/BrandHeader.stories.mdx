@@ -668,6 +668,9 @@ You can find code examples where the Flyout Menu Beta component is implemented i
                 <div slot="logo">
                     <scale-logo transparent variant="white" language="en" href="#custom" logo-title="Custom" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"></scale-logo>
                 </div>
+                <div slot="logo-inverse">
+                    <scale-logo transparent language="en" href="#custom" logo-title="Custom" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"></scale-logo>
+                </div>
             </scale-app-header>
             <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
             <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
@@ -691,6 +694,15 @@ You can find code examples where the Flyout Menu Beta component is implemented i
         logo-title="Custom"
         styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
       ></scale-logo>
+    </div>
+    <div slot="logo-inverse">
+        <scale-logo
+            transparent
+            language=""
+            href="#custom"
+            logo-title="Custom"
+            styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+        ></scale-logo>
     </div>
   </scale-app-header>
   <div style="height: 800px; padding: 48px 0;">
