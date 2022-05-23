@@ -9,9 +9,19 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-notification-message',
@@ -27,6 +37,8 @@ export class NotificationMessage {
   @Prop({ reflect: true }) opened: boolean;
   @Prop() autoHide?: boolean = false;
   @Prop() autoHideDuration?: number = 3000;
+  /** Fires when the notification message has been dismissed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
 
   hasSlotText: boolean;
 
@@ -93,6 +105,7 @@ export class NotificationMessage {
 
   close = () => {
     this.opened = false;
+    emitEvent(this, 'scaleClose');
   };
 
   render() {
