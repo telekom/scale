@@ -49,7 +49,7 @@
 }
 .notification-toast {
   width: var(--width);
-  opacity: 0;
+  opacity: 1;
   z-index: var(--z-index);
   position: fixed;
   background: var(--background);
