@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.105](https://github.com/telekom/scale/compare/v3.0.0-beta.104...v3.0.0-beta.105) (2022-05-20)
+
+
+### Bug Fixes
+
+* **dropdown:** hardcoded bg color in dark mode (temp) ([#1059](https://github.com/telekom/scale/issues/1059)) ([3818ed8](https://github.com/telekom/scale/commit/3818ed8039d369339b4c0ed04144d8533b5a2dab))
+
+
+
+
+
 # [3.0.0-beta.104](https://github.com/telekom/scale/compare/v3.0.0-beta.103...v3.0.0-beta.104) (2022-05-12)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests
