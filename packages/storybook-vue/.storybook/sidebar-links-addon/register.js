@@ -9,30 +9,30 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import React from "react";
-import Events from "@storybook/core-events";
-import { addons, types } from "@storybook/addons";
-import { useGlobals } from "@storybook/api";
-import sidebarLinks from "../../sidebar-links.json";
-
-const sidebarClassName = "css-ohbggj";
+import React from 'react';
+import Events from '@storybook/core-events';
+import { addons, types } from '@storybook/addons';
+import { useGlobals } from '@storybook/api';
+import sidebarLinks from '../../sidebar-links.json';
 
 const createLink = ({ title, href }) => {
-  const link = document.createElement("a");
+  const link = document.createElement('a');
   link.href = href;
   link.id = `sidebar-link-${title}`;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.setAttribute("class", "sidebar-item css-8l36wn");
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('class', 'sidebar-item css-8l36wn');
   link.innerHTML = title;
   return link;
 };
 
 let sidebarLinksContainer;
 
-addons.register("@telekom/scale-sidebar-links-addon", (api) => {
+addons.register('@telekom/scale-sidebar-links-addon', (api) => {
   api.on(Events.STORY_CHANGED, (title) => {
-    const content = document.getElementsByTagName('iframe') && document.getElementsByTagName('iframe')[0];
+    const content =
+      document.getElementsByTagName('iframe') &&
+      document.getElementsByTagName('iframe')[0];
     _paq.push(['setDocumentTitle', title]);
     _paq.push(['trackPageView']);
     _paq.push(['MediaAnalytics::scanForMedia', content]);
@@ -45,8 +45,8 @@ addons.register("@telekom/scale-sidebar-links-addon", (api) => {
     type: types.TAB,
     route: () => {
       const [{ locale }] = useGlobals();
-      const sidebarContainer = document.querySelector(
-          "#storybook-explorer-tree > div > div"
+      const sidebarLinksContainerInjectTarget = document.querySelector(
+        '#contact-your-feedback--page'
       );
 
       React.useEffect(() => {
@@ -57,10 +57,11 @@ addons.register("@telekom/scale-sidebar-links-addon", (api) => {
         if (sidebarLinksContainer) {
           sidebarLinksContainer.remove();
         }
-        sidebarLinksContainer = document.createElement("div");
-        sidebarLinksContainer.setAttribute("style", "margin-top: 48px;");
-        sidebarLinksContainer.id = "sidebar-links";
-        sidebarContainer.appendChild(sidebarLinksContainer);
+        sidebarLinksContainer = document.createElement('div');
+        sidebarLinksContainer.id = 'sidebar-links';
+        sidebarLinksContainerInjectTarget.parentNode.appendChild(
+          sidebarLinksContainer
+        );
 
         sidebarLinks[locale].forEach((link) => {
           sidebarLinksContainer.appendChild(createLink(link));
