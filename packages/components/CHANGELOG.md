@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
+
+
+### Bug Fixes
+
+* **header:** add logo-inverse slot ([#1070](https://github.com/telekom/scale/issues/1070)) ([37eff58](https://github.com/telekom/scale/commit/37eff58bd82511c3a6bb1724995a5f304d0b4f3a))
+* **menu-flyout:** add default value for lists to avoid early type errors ([#1073](https://github.com/telekom/scale/issues/1073)) ([7f20cef](https://github.com/telekom/scale/commit/7f20cef0f3bdab463f97e29a64abd6b3e0e54cd6))
+* **notification:** stop disappearing right after opening and omit white border ([#1080](https://github.com/telekom/scale/issues/1080)) ([d20aad1](https://github.com/telekom/scale/commit/d20aad1d9a56eacf6e7609ef8c4a784c6280d99d))
+* **pagination:** use proper border-radius ([#1079](https://github.com/telekom/scale/issues/1079)) ([870d1a9](https://github.com/telekom/scale/commit/870d1a90fa115430f1ced46fd355aa898eedc4ee))
+
+
+### Features
+
+* **logo:** shadow parts and css variables ([#1071](https://github.com/telekom/scale/issues/1071)) ([cf037b3](https://github.com/telekom/scale/commit/cf037b30c7808ebd654b674ec9f1ef691befb126))
+* **tooltip:** shadow parts and css variables ([#1072](https://github.com/telekom/scale/issues/1072)) ([2232164](https://github.com/telekom/scale/commit/223216476828c369824927198f5ae780572409a1))
+* deploy Storybook to GitHub pages 🌍 ([#746](https://github.com/telekom/scale/issues/746)) ([543e759](https://github.com/telekom/scale/commit/543e75979c2e31de1e1dc2a397a8b6c4a36c1901))
+
+
+
+
+
 # [3.0.0-beta.105](https://github.com/telekom/scale/compare/v3.0.0-beta.104...v3.0.0-beta.105) (2022-05-20)
 
 

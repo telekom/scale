@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
+
+
+### Bug Fixes
+
+* **notification:** stop disappearing right after opening and omit white border ([#1080](https://github.com/telekom/scale/issues/1080)) ([d20aad1](https://github.com/telekom/scale/commit/d20aad1d9a56eacf6e7609ef8c4a784c6280d99d))
+* **pagination:** use proper border-radius ([#1079](https://github.com/telekom/scale/issues/1079)) ([870d1a9](https://github.com/telekom/scale/commit/870d1a90fa115430f1ced46fd355aa898eedc4ee))
+
+
+
+
+
 # [3.0.0-beta.105](https://github.com/telekom/scale/compare/v3.0.0-beta.104...v3.0.0-beta.105) (2022-05-20)
 
 

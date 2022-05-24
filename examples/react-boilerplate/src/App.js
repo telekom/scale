@@ -7,7 +7,7 @@ function App() {
       <div className="hello">
         <h1 className="scl-font-variant-heading-1">Scale + React</h1>
         <ScaleButton
-          href={'https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-angular--page'}
+          href={'https://telekom.github.io/scale/?path=/story/scale-for-developers-scale-and-angular--page'}
           title={'External link'}
         >
           Open the docs

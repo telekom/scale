@@ -8,25 +8,44 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-
-.logo {
+:host {
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --background-magenta: var(--telekom-color-background-canvas);
+  --background-white: var(--telekom-color-primary-standard);
+}
+[part~='logo'] {
   display: inline-flex;
   height: var(--logo-size);
   position: relative;
 }
 
-.logo--variant-magenta {
-  background-color: var(--telekom-color-background-canvas);
+[part~='logo']:focus,
+[part~='logo']:focus-visible {
+  box-shadow: var(--box-shadow-focus);
+  outline: none;
 }
 
-.logo--variant-white {
-  background-color: var(--telekom-color-primary-standard);
+[part~='variant-magenta'] {
+  background-color: var(--background-magenta);
 }
 
-.logo--transparent {
+[part~='variant-white'] {
+  background-color: var(--background-white);
+}
+
+[part~='transparent'] {
   background-color: transparent;
 }
 
-.logo svg {
+[part~='icon'] svg {
   height: var(--logo-size);
+}
+
+[part~='icon']:focus-visible {
+  outline: none;
+}
+
+[part~='icon'] svg:focus {
+  outline: none;
 }
