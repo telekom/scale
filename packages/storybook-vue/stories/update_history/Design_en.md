@@ -15,7 +15,7 @@ Affected content:
 
 All components
 
-> Please note that the following components make use of Telekom brand and design assets —including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components— and are not Open Source and not available for free use. They require Deutsche Telekom's express permission for use in commerce.
+> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a><br /><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 

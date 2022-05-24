@@ -26,7 +26,7 @@ By clicking on a layer and then selecting Fill and/or Border in the inspector pa
 
 ## Add new library
 
-> Please note that the following components make use of Telekom brand and design assets —including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components— and are not Open Source and not available for free use. They require Deutsche Telekom's express permission for use in commerce.
+> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
 
 Have you finished checking your existing project? Then add the new Sketch library. And enjoy the new version!
 

@@ -15,7 +15,7 @@ Betroffene Inhalte:
 
 Alle Komponenten
 
-> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind nicht Open Source und dürfen nicht frei verwendet werden. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
+> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind **nicht Open Source** und dürfen **nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
 
 <p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a><br /><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 

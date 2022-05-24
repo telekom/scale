@@ -26,7 +26,7 @@ Klicke auf eine Ebene und wähle danach „Fill“ und/oder „Border“ im Insp
 
 ### Library Update laden
 
-> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind nicht Open Source und dürfen nicht frei verwendet werden. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
+> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind **nicht Open Source** und dürfen **nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
 
 Hast du deine bestehenden Projekt geprüft? Dann füge jetzt die neue Sketch Library hinzu.
 
