@@ -46,7 +46,7 @@ export class MenuFlyout {
   @Prop() styles?: string;
 
   private trigger: HTMLElement;
-  private lists: Set<HTMLScaleMenuFlyoutListElement>;
+  private lists: Set<HTMLScaleMenuFlyoutListElement> = new Set();
 
   @Listen('scale-select')
   handleScaleSelect({ detail }) {
