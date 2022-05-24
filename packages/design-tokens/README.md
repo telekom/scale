@@ -36,12 +36,12 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 
 ```html
 <link
-  rel="stylesheet"
-  href="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css"
+        rel="stylesheet"
+        href="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css"
 />
 <script
-  type="module"
-  src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.esm.js"
+        type="module"
+        src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.esm.js"
 ></script>
 ```
 
@@ -50,12 +50,12 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ```javascript
 import '@telekom/scale-components-neutral/dist/scale-components/scale-components.css';
 import {
-  applyPolyfills,
-  defineCustomElements,
+    applyPolyfills,
+    defineCustomElements,
 } from '@telekom/scale-components-neutral/loader';
 
 applyPolyfills().then(() => {
-  defineCustomElements(window);
+    defineCustomElements(window);
 });
 ```
 
@@ -100,12 +100,12 @@ npm install @telekom/scale-components
 
 ```html
 <link
-  rel="stylesheet"
-  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+        rel="stylesheet"
+        href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
 />
 <script
-  type="module"
-  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+        type="module"
+        src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
 ></script>
 ```
 

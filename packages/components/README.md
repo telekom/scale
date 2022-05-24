@@ -8,11 +8,11 @@ Scale components are customizable and written in TypeScript. If you want to repr
 
 # Welcome to Scale
 
-Access the [comprehensive documentation for Scale](https://telekom.github.io/scale/).
+Access the [comprehensive documentation for Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
 
 # Are you a designer?
 
-We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://telekom.github.io/scale/?path=/story/scale-for-designers-getting-started--page).
+We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-designers-getting-started--page) with your Brand & Design credentials.
 
 # Customizing Scale for open source software
 
@@ -138,7 +138,7 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-angular* | Component proxies for Angular |
 | @telekom/scale-design-tokens\**    | Telekom design tokens         |
 
-> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://telekom.github.io/scale/).
+> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://www.brand-design.telekom.com/scale/).
 
 > \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
 

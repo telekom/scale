@@ -13,7 +13,7 @@ The brand header allows users to clearly identify Telekom as the sender of a pag
 
 ## Live Example
 
-https://telekom.github.io/scale-header/
+https://www.brand-design.telekom.com/scale-header/
 
 ## How to run locally
 
@@ -57,9 +57,9 @@ To customize the mobile menu labels, add and entry to `app.iconNavigation` with 
 
 ```js
 {
-  id: 'menu',
-  defaultName: 'Menü',
-  openedName: 'Schließen',
+    id: 'menu',
+        defaultName: 'Menü',
+        openedName: 'Schließen',
 },
 ```
 
@@ -67,11 +67,11 @@ In case you want a custom callback to be fired on click of a menu item, you can 
 
 ```js
 {
-  name: "Smartphone-Tarife",
-  href: "/#smartphone-tarife",
-  onClick: (event) => {
-    event.preventDefault();
-    this.$router.push("/");
-  }
+    name: "Smartphone-Tarife",
+        href: "/#smartphone-tarife",
+        onClick: (event) => {
+        event.preventDefault();
+        this.$router.push("/");
+    }
 },
 ```
