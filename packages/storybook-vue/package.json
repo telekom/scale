@@ -1,4 +1,5 @@
 {
+  "homepage": "https://telekom.github.io/scale",
   "name": "@telekom/scale-storybook-vue",
   "private": true,
   "version": "3.0.0-beta.105",
@@ -19,6 +20,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-vue": "^2.0.2",
     "copy-webpack-plugin": "^6.0.3",
+    "gh-pages": "^3.2.3",
     "http-server": "^0.12.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -40,6 +42,7 @@
     "build": "build-storybook -s ./public",
     "preserve": "yarn build",
     "serve": "http-server storybook-static",
-    "format": "prettier --write \"package.json\" \"stories/**/*.md\""
+    "format": "prettier --write \"package.json\" \"stories/**/*.md\"",
+    "deploy": "gh-pages -d storybook-static -m 'chore(deploy): storybook to gh-pages'"
   }
 }
