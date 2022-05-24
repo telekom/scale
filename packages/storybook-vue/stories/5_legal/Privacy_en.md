@@ -12,7 +12,7 @@ No social media plug-ins are used, and no links to social media platforms are pr
 
 ## 3. Will my usage habits be evaluated, e.g. for advertising purposes or tracking?
 
-We want you to enjoy using our websites and take advantage of our products and services. We have an economic interest in ensuring this is the case. We analyze usage habits anonymously and pseudonymously so you can find the products that interest you and so we can make our websites user-friendly. We, or our contract service providers, create usage profiles that comply with the legal requirements. This information cannot be traced back to you directly. The following information is intended to provide you with general information on the various purposes, techniques, storage periods, and the processing countries of this data.
+We want you to enjoy using our websites and take advantage of our products and services. We have an economic interest in ensuring this is the case. We analyze usage habits anonymously and pseudonymously so you can find the products that interest you and so we can make our websites user-friendly. We, or our contract service providers, create usage profiles that comply with the legal requirements. This information cannot be traced back to you directly. The following information is intended to provide you with general information on the various purposes, techniques, storage periods, and processing countries of this data.
 
 ### Technology
 
@@ -34,7 +34,7 @@ Deutsche Telekom AG acts as the data controller. If you have any queries, please
 
 ## 6. What rights do I have?
 
-You have the right
+You have the right:
 
 <ol type="a">
   <li>to request <b>information</b> on the categories of personal data concerned, the purposes of the processing, any recipients of the data, and the envisaged storage period (Article 15 GDPR);</li>
