@@ -128,6 +128,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'telekom'
+          git config --global user.email 'telekom@users.noreply.github.com'
+          git remote set-url origin https://telekom:${{ secrets.GITHUB_TOKEN }}@github.com/telekom/scale
+
       - name: Authenticate with Registry
         run: |
           yarn logout
