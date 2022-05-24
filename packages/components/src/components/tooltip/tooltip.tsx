@@ -100,6 +100,12 @@ export class Tooltip {
     this.popover = new Popover(this.target, this.tooltipPositioner);
     this.syncPopoverOptions();
 
+    // width: max-content on .slot-container causes elements with undefined width to be resized
+    const resizeElements = this.host.querySelector('scale-text-field, scale-textarea, scale-dropdown')
+    if (resizeElements) {
+      this.target.style.width =  "100%"
+    }
+
     this.host.addEventListener('blur', this.handleBlur, true);
     this.host.addEventListener('click', this.handleClick, true);
     this.host.addEventListener('focus', this.handleFocus, true);
