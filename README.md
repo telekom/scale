@@ -12,7 +12,7 @@ Access the [comprehensive documentation for Scale](https://telekom.github.io/sca
 
 # Are you a designer?
 
-We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://telekom.github.io/scale/?path=/story/scale-for-designers-getting-started--page).
+We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://telekom.github.io/scale/?path=/docs/setup-info-getting-started-for-designers--page).
 
 # Customizing Scale for open source software
 
