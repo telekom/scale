@@ -8,11 +8,11 @@ Scale components are customizable and written in TypeScript. If you want to repr
 
 # Welcome to Scale
 
-Access the [comprehensive documentation for Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
+Access the [comprehensive documentation for Scale](https://telekom.github.io/scale/).
 
 # Are you a designer?
 
-We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-designers-getting-started--page) with your Brand & Design credentials.
+We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://telekom.github.io/scale/?path=/docs/setup-info-getting-started-for-designers--page).
 
 # Customizing Scale for open source software
 
@@ -61,13 +61,15 @@ applyPolyfills().then(() => {
 
 ### NPM packages
 
-| Package name                              | Description                   |
-| ----------------------------------------- | ----------------------------- |
-| @telekom/scale-components-neutral         | Stencil components            |
-| @telekom/scale-components-react-neutral   | Component proxies for React   |
-| @telekom/scale-components-vue-neutral     | Component proxies for Vue     |
-| @telekom/scale-components-angular-neutral | Component proxies for Angular |
-| @telekom/scale-design-tokens-neutral      | Design tokens                 |
+| Package name                               | Description                   |
+| ------------------------------------------ | ----------------------------- |
+| @telekom/scale-components-neutral          | Stencil components            |
+| @telekom/scale-components-react-neutral    | Component proxies for React   |
+| @telekom/scale-components-vue-neutral*     | Component proxies for Vue     |
+| @telekom/scale-components-angular-neutral* | Component proxies for Angular |
+| @telekom/scale-design-tokens-neutral       | Design tokens                 |
+
+> *deprecated since `v3.0.0-beta.x` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
 
 ### Using the source code directly
 
@@ -122,13 +124,15 @@ applyPolyfills().then(() => {
 
 ### NPM packages
 
-| Package name                      | Description                   |
-| --------------------------------- | ----------------------------- |
-| @telekom/scale-components         | Stencil components            |
-| @telekom/scale-components-react   | Component proxies for React   |
-| @telekom/scale-components-vue     | Component proxies for Vue     |
-| @telekom/scale-components-angular | Component proxies for Angular |
-| @telekom/scale-design-tokens      | Telekom design tokens         |
+| Package name                       | Description                   |
+| ---------------------------------- | ----------------------------- |
+| @telekom/scale-components          | Stencil components            |
+| @telekom/scale-components-react    | Component proxies for React   |
+| @telekom/scale-components-vue*     | Component proxies for Vue     |
+| @telekom/scale-components-angular* | Component proxies for Angular |
+| @telekom/scale-design-tokens       | Telekom design tokens         |
+
+> *deprecated since `v3.0.0-beta.x` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://telekom.github.io/scale/).
 
 ### Using the source code directly
 
