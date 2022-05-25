@@ -2,7 +2,7 @@ name: publish to NPM
 on:
   push:
     branches:
-      - release
+      - maintenance/release
 
 jobs:
   publish-telekom:
