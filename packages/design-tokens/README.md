@@ -8,11 +8,11 @@ Scale components are customizable and written in TypeScript. If you want to repr
 
 # Welcome to Scale
 
-Access the [comprehensive documentation for Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
+Access the [comprehensive documentation for Scale](https://telekom.github.io/scale/).
 
 # Are you a designer?
 
-We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-designers-getting-started--page) with your Brand & Design credentials.
+We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://telekom.github.io/scale/?path=/story/scale-for-designers-getting-started--page).
 
 # Customizing Scale for open source software
 
@@ -36,12 +36,12 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 
 ```html
 <link
-  rel="stylesheet"
-  href="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css"
+        rel="stylesheet"
+        href="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.css"
 />
 <script
-  type="module"
-  src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.esm.js"
+        type="module"
+        src="node_modules/@telekom/scale-components-neutral/dist/scale-components/scale-components.esm.js"
 ></script>
 ```
 
@@ -50,12 +50,12 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 ```javascript
 import '@telekom/scale-components-neutral/dist/scale-components/scale-components.css';
 import {
-  applyPolyfills,
-  defineCustomElements,
+    applyPolyfills,
+    defineCustomElements,
 } from '@telekom/scale-components-neutral/loader';
 
 applyPolyfills().then(() => {
-  defineCustomElements(window);
+    defineCustomElements(window);
 });
 ```
 
@@ -100,12 +100,12 @@ npm install @telekom/scale-components
 
 ```html
 <link
-  rel="stylesheet"
-  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+        rel="stylesheet"
+        href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
 />
 <script
-  type="module"
-  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+        type="module"
+        src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
 ></script>
 ```
 

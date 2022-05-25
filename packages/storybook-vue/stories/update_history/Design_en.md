@@ -15,11 +15,9 @@ Affected content:
 
 All components
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
-name="SketchLibrary"
-style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
-</iframe><br>
+> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
+
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a><br /><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 [Release Notes](./?path=/docs/new-release-release-notes--page)<br>
 [Sketch Library Update](./?path=/docs/new-release-sketch-library-update--page)<br>

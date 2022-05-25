@@ -26,20 +26,16 @@ By clicking on a layer and then selecting Fill and/or Border in the inspector pa
 
 ## Add new library
 
+> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
+
 Have you finished checking your existing project? Then add the new Sketch library. And enjoy the new version!
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
-name="SketchLibrary"
-style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
-</iframe>
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
+
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 ## Reverting back to the previous version of the library
 
 Download the previous version and replace the new version. In Sketch, click the notification in the top-right corner. A flyout opens with the option: Components update available. This option will revert your layout back to the previous version.
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=1&no_cache=1"
-name="SketchLibrary"
-style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="22px" width="100%">
-</iframe>
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch.rss" rel="nofollow" class="matomo_download">Telekom Scale Components</a></p>

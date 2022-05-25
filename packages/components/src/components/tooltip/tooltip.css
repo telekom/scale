@@ -34,6 +34,10 @@
   --transition-timing-function-show: var(--telekom-motion-easing-standard);
   --z-index: var(--scl-z-index-70);
 
+  /*slot-container  */
+  --width-slot-container: max-content;
+  --height-slot-container: max-content;
+
   display: contents;
   position: relative;
   box-sizing: border-box;

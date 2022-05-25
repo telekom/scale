@@ -56,9 +56,13 @@ Type: `Promise<void>`
 
 ## Shadow Parts
 
-| Part     | Description |
-| -------- | ----------- |
-| `"base"` |             |
+| Part                   | Description |
+| ---------------------- | ----------- |
+| `"base"`               |             |
+| `"content-wrapper"`    |             |
+| `"host-container"`     |             |
+| `"slot-container"`     |             |
+| `"tooltip-positioner"` |             |
 
 
 ----------------------------------------------

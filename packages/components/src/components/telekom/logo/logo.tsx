@@ -58,7 +58,7 @@ export class Logo {
         </style>
         <a
           href={this.href}
-          class={this.getCssClassMap()}
+          part={this.getCssClassMap()}
           tabIndex={this.focusable === false ? -1 : 0}
           onFocus={() => {
             if (this.scrollIntoViewOnFocus === true) {
@@ -69,6 +69,7 @@ export class Logo {
           aria-describedby={this.logoAriaDescribedBy}
         >
           <scale-logo-svg
+            part="icon"
             language={this.language}
             color={this.variant}
             accessibilityTitle={this.accessibilityTitle}
@@ -82,8 +83,8 @@ export class Logo {
   getCssClassMap() {
     return classNames(
       `logo`,
-      this.variant && `logo--variant-${this.variant}`,
-      this.transparent && `logo--transparent`
+      this.variant && `variant-${this.variant}`,
+      this.transparent && `transparent`
     );
   }
 }

@@ -8,6 +8,8 @@ To work with the design system components, you need the latest version of <a hre
 
 ## 2. Download and install the TeleNeo font
 
+> Please note that the following font is a part of Telekom brand and design assets and is **not open source** and **not available for free use**. Commercial usage requires Deutsche Telekom's express permission.
+
 TeleNeo is the Telekom company font:
 
 [Download TeleNeo](https://www.brand-design.telekom.com/asset/font-0-teleneo/)
@@ -20,13 +22,13 @@ The following download has templates for Brand Header, Footer, and Grid:
 
 ## 4. Import the Components Kit
 
+> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
+
 Scale components exist as a Sketch library:
 
-<iframe src="https://www.brand-design.telekom.com/?tx_bdrss_sketchlibraryiframe[show]=2&no_cache=1"
-name="SketchLibrary"
-style="border: none;"
-frameborder="0" marginheight="0px" marginwidth="0px" height="64px" width="100%">
-</iframe>
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
+
+<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 &nbsp;
 

@@ -316,7 +316,6 @@ scale-app-header {
     transition: opacity var(--header-transition-speed) ease-in-out;
   }
   .header.header--sticky .header__brand-content {
-    top: 56px;
     opacity: 0;
     transition: opacity var(--header-transition-speed) ease-in-out,
       top var(--header-transition-speed) ease-in-out;
@@ -354,9 +353,6 @@ scale-app-header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-  .header .header__brand app-logo {
-    margin-right: var(--telekom-spacing-unit-x4);
   }
 }
 

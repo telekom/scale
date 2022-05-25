@@ -3,36 +3,12 @@
     {
       "title": "Kontakt",
       "href": "mailto:contact@brand-design.telekom.com"
-    },
-    {
-      "title": "Nutzungsbedingungen",
-      "href": "https://www.brand-design.telekom.com/nutzungsbedingungen/"
-    },
-    {
-      "title": "Impressum",
-      "href": "https://www.brand-design.telekom.com/impressum/"
-    },
-    {
-      "title": "Datenschutz",
-      "href": "https://www.brand-design.telekom.com/datenschutz/"
     }
   ],
   "en": [
     {
       "title": "Contact",
       "href": "mailto:contact@brand-design.telekom.com"
-    },
-    {
-      "title": "Terms of Use",
-      "href": "https://www.brand-design.telekom.com/en/terms-of-use/"
-    },
-    {
-      "title": "Legal Notice",
-      "href": "https://www.brand-design.telekom.com/en/legal-notice/"
-    },
-    {
-      "title": "Privacy",
-      "href": "https://www.brand-design.telekom.com/en/privacy/"
     }
   ]
 }

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
+
+
+### Features
+
+* deploy Storybook to GitHub pages 🌍 ([#746](https://github.com/telekom/scale/issues/746)) ([543e759](https://github.com/telekom/scale/commit/543e75979c2e31de1e1dc2a397a8b6c4a36c1901))
+
+
+
+
+
+# [3.0.0-beta.105](https://github.com/telekom/scale/compare/v3.0.0-beta.104...v3.0.0-beta.105) (2022-05-20)
+
+**Note:** Version bump only for package @telekom/scale-design-tokens
+
+
+
+
+
 # [3.0.0-beta.104](https://github.com/telekom/scale/compare/v3.0.0-beta.103...v3.0.0-beta.104) (2022-05-12)
 
 **Note:** Version bump only for package @telekom/scale-design-tokens

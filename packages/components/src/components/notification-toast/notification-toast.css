@@ -11,7 +11,7 @@
 
 :host {
   /* toast */
-  --width: 367px;
+  --width: 366px;
   --width-icon-container: 48px;
   --radius: var(--telekom-radius-standard);
   --background: var(--telekom-color-background-surface);
@@ -48,25 +48,28 @@
   );
 }
 .notification-toast {
-  width: var(--width);
-  opacity: 0;
+  width: calc(var(--width) - var(--width-icon-container));
+  opacity: 1;
   z-index: var(--z-index);
   position: fixed;
   background: var(--background);
   box-shadow: var(--box-shadow);
   box-sizing: border-box;
-  border-radius: var(--radius);
+  border-radius: 0 var(--radius) var(--radius) 0;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .notification-toast.notification-toast--story {
-  opacity: 1;
   position: absolute;
 }
 
 .notification-toast.notification-toast--story.notification-toast--hide {
   opacity: 0;
+}
+
+.notification-toast.notification-toast--story.notification-toast--opened {
+  opacity: 1;
 }
 
 .notification-toast.notification-toast--variant-success {
@@ -100,11 +103,10 @@
   height: 100%;
   width: var(--width-icon-container);
   position: absolute;
-  left: 0;
+  left: calc(var(--width-icon-container) * -1 + 1px);
   top: 0;
   float: left;
-  border-radius: var(--telekom-radius-standard) 0 0
-    var(--telekom-radius-standard);
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .notification-toast.notification-toast--variant-success
@@ -147,11 +149,11 @@
 }
 
 .notification-toast__text-container {
-  width: calc(var(--width) - calc(var(--width-icon-container) * 2));
+  width: calc(var(--width) - calc(var(--width-icon-container) * 1));
   min-height: 33px;
   float: left;
   position: relative;
-  margin: 0 0 0 var(--width-icon-container);
+  margin: 0 0 0 1px;
   padding: 15px 0 0 0;
 }
 
