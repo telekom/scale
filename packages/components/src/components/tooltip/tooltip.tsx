@@ -21,7 +21,7 @@ import {
   h,
   State,
 } from '@stencil/core';
-import {computePosition, flip, shift, arrow, offset} from '@floating-ui/dom';
+import { computePosition, flip, shift, arrow, offset } from '@floating-ui/dom';
 
 let id = 0;
 
@@ -98,9 +98,11 @@ export class Tooltip {
   componentDidLoad() {
     this.target = this.getTarget();
     // width: max-content on .slot-container causes elements with undefined width to be resized
-    const resizeElements = this.host.querySelector('scale-text-field, scale-textarea, scale-dropdown')
+    const resizeElements = this.host.querySelector(
+      'scale-text-field, scale-textarea, scale-dropdown'
+    );
     if (resizeElements) {
-      this.target.style.width =  "100%"
+      this.target.style.width = '100%';
     }
 
     this.host.addEventListener('blur', this.handleBlur, true);
@@ -122,14 +124,14 @@ export class Tooltip {
     });
     const arrowEl: HTMLElement = this.host.shadowRoot.querySelector('#arrow');
     computePosition(this.target, this.tooltip, {
-      middleware: [offset(6), flip(), shift(), arrow({element: arrowEl})],
-      placement: this.placement
-    }).then(({x,y, middlewareData, placement}) => {
+      middleware: [offset(6), flip(), shift(), arrow({ element: arrowEl })],
+      placement: this.placement,
+    }).then(({ x, y, middlewareData, placement }) => {
       Object.assign(this.tooltip.style, {
         left: `${x}px`,
         top: `${y}px`,
-      });      
-      const {x: arrowX, y: arrowY} = middlewareData.arrow;
+      });
+      const { x: arrowX, y: arrowY } = middlewareData.arrow;
       const staticSide = {
         top: 'bottom',
         right: 'left',
@@ -165,8 +167,8 @@ export class Tooltip {
 
     this.isVisible = true;
     this.open = true;
-    this.tooltip.classList.add('tooltip__visible')
-    this.updateTooltip()
+    this.tooltip.classList.add('tooltip__visible');
+    this.updateTooltip();
   }
 
   @Method()
@@ -181,7 +183,7 @@ export class Tooltip {
     }
     this.isVisible = false;
     this.open = false;
-    this.tooltip.classList.remove('tooltip__visible')
+    this.tooltip.classList.remove('tooltip__visible');
   }
 
   getTarget() {

@@ -81,14 +81,14 @@
   background: #333;
   width: 8px;
   height: 8px;
-  transform: rotate(45deg); 
+  transform: rotate(45deg);
 }
 
 .tooltip.tooltip__visible {
   opacity: 1;
   transform: none;
   transition-duration: var(--transition-duration-show);
-  transition-timing-function: var(--transition-timing-function-show);  
+  transition-timing-function: var(--transition-timing-function-show);
 }
 
 @media screen and (-ms-high-contrast: active) {
