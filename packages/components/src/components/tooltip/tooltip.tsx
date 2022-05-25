@@ -21,7 +21,7 @@ import {
   h,
   State,
 } from '@stencil/core';
-import Popover from './utilities/popover';
+import {computePosition, flip, shift, arrow, offset} from '@floating-ui/dom';
 
 let id = 0;
 
@@ -33,7 +33,6 @@ let id = 0;
 export class Tooltip {
   componentId = `tooltip-${++id}`;
   isVisible = false;
-  popover: Popover;
   tooltipPositioner: HTMLElement;
   target: HTMLElement;
   tooltip: any;
@@ -82,6 +81,7 @@ export class Tooltip {
 
   @Watch('open')
   handleOpenChange() {
+    console.log('should change', this.open);
     this.open ? this.showTooltip() : this.hideTooltip();
   }
 
@@ -97,25 +97,56 @@ export class Tooltip {
 
   componentDidLoad() {
     this.target = this.getTarget();
-    this.popover = new Popover(this.target, this.tooltipPositioner);
-    this.syncPopoverOptions();
+    // width: max-content on .slot-container causes elements with undefined width to be resized
+    const resizeElements = this.host.querySelector('scale-text-field, scale-textarea, scale-dropdown')
+    if (resizeElements) {
+      this.target.style.width =  "100%"
+    }
 
     this.host.addEventListener('blur', this.handleBlur, true);
     this.host.addEventListener('click', this.handleClick, true);
     this.host.addEventListener('focus', this.handleFocus, true);
 
-    this.tooltipPositioner.hidden = !this.open;
     if (this.open) {
       this.showTooltip();
     }
   }
 
   componentDidUpdate() {
-    this.syncPopoverOptions();
+    this.updateTooltip();
+  }
+
+  updateTooltip() {
+    Object.assign(this.tooltip.style, {
+      position: 'absolute',
+    });
+    const arrowEl: HTMLElement = this.host.shadowRoot.querySelector('#arrow');
+    computePosition(this.target, this.tooltip, {
+      middleware: [offset(6), flip(), shift(), arrow({element: arrowEl})],
+      placement: this.placement
+    }).then(({x,y, middlewareData, placement}) => {
+      Object.assign(this.tooltip.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      });      
+      const {x: arrowX, y: arrowY} = middlewareData.arrow;
+      const staticSide = {
+        top: 'bottom',
+        right: 'left',
+        bottom: 'top',
+        left: 'right',
+      }[placement.split('-')[0]];
+      Object.assign(arrowEl.style, {
+        left: arrowX != null ? `${arrowX}px` : '',
+        top: arrowY != null ? `${arrowY}px` : '',
+        right: '',
+        bottom: '',
+        [staticSide]: '-4px',
+      });
+    });
   }
 
   disconnectedCallback() {
-    this.popover.destroy();
     this.host.removeEventListener('blur', this.handleBlur, true);
     this.host.removeEventListener('click', this.handleClick, true);
     this.host.removeEventListener('focus', this.handleFocus, true);
@@ -131,9 +162,11 @@ export class Tooltip {
       this.open = false;
       return;
     }
+
     this.isVisible = true;
     this.open = true;
-    this.popover.show();
+    this.tooltip.classList.add('tooltip__visible')
+    this.updateTooltip()
   }
 
   @Method()
@@ -148,7 +181,7 @@ export class Tooltip {
     }
     this.isVisible = false;
     this.open = false;
-    this.popover.hide();
+    this.tooltip.classList.remove('tooltip__visible')
   }
 
   getTarget() {
@@ -222,19 +255,6 @@ export class Tooltip {
     return triggers.includes(triggerType);
   }
 
-  syncPopoverOptions() {
-    this.popover.setOptions({
-      placement: this.placement,
-      distance: this.distance,
-      skidding: this.skidding,
-      transitionElement: this.tooltip,
-      onAfterHide: () => this.tooltipHide.emit(),
-      onAfterShow: () => this.tooltipShow.emit(),
-    });
-    this.popover.setPreventOverflow(this.preventOverflow);
-    this.popover.setFlip(this.flip);
-  }
-
   render() {
     return (
       <Host
@@ -249,26 +269,21 @@ export class Tooltip {
         </div>
         {!this.disabled && (
           <div
-            class="tooltip-positioner"
-            ref={(el) => (this.tooltipPositioner = el)}
+            class={{
+              tooltip: true,
+              'tooltip--open': this.open,
+            }}
             onMouseOver={this.handleTooltipMouseOver}
+            part="base"
+            ref={(el) => (this.tooltip = el)}
+            id={this.componentId}
+            role="tooltip"
+            aria-hidden={this.open ? 'false' : 'true'}
           >
-            <div
-              class={{
-                tooltip: true,
-                'tooltip--open': this.open,
-              }}
-              onMouseOver={this.handleTooltipMouseOver}
-              part="base"
-              ref={(el) => (this.tooltip = el)}
-              id={this.componentId}
-              role="tooltip"
-              aria-hidden={this.open ? 'false' : 'true'}
-            >
-              <div class="content-wrapper" tabindex={0}>
-                <slot name="content">{this.content}</slot>
-              </div>
+            <div class="content-wrapper" tabindex={0}>
+              <slot name="content">{this.content}</slot>
             </div>
+            <div id="arrow"></div>
           </div>
         )}
       </Host>
