@@ -10,12 +10,12 @@
   "version": "3.0.0-beta.54",
   "command": {
     "version": {
-      "allowBranch": "main"
+      "allowBranch": "maintenance/3.0.0-beta/pre-dark-mode"
     },
     "publish": {
       "conventionalCommits": true,
       "message": "chore(release): publish",
-      "allowBranch": "release",
+      "allowBranch": "maintenance/release",
       "access": "public"
     }
   }
