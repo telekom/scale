@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = async ({ config }) => {
   config.plugins.push(
     new CopyWebpackPlugin({
-      patterns: [{ from: "../components/src/telekom/fonts", to: "fonts" }],
+      patterns: [{ from: '../../node_modules/@telekom/design-tokens/dist/telekom/fonts/TeleNeoWeb', to: "fonts" }],
     })
   );
 
