@@ -18,7 +18,8 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [
         {
-          src: '../../../node_modules/@telekom/design-tokens/dist/telekom/fonts/TeleNeoWeb',
+          src:
+            '../../../node_modules/@telekom/design-tokens/dist/telekom/fonts/TeleNeoWeb',
           dest: 'fonts/TeleNeoWeb',
           warn: true,
         },

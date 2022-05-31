@@ -9,9 +9,10 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- @font-face {
+@font-face {
   font-family: 'TeleNeoWeb';
-  src: url('./TeleNeoWeb/TeleNeoVariable-Upright.woff2') format('woff2-variations');
+  src: url('./TeleNeoWeb/TeleNeoVariable-Upright.woff2')
+    format('woff2-variations');
   font-weight: 200 800;
   font-stretch: 75% 125%;
   font-style: normal;

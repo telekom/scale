@@ -11,7 +11,8 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
       copy: [
         {
-          src: '../../../node_modules/@telekom/design-tokens/dist/telekom/fonts/TeleNeoWeb',
+          src:
+            '../../../node_modules/@telekom/design-tokens/dist/telekom/fonts/TeleNeoWeb',
           dest: 'build/fonts/TeleNeoWeb',
           warn: true,
         },
