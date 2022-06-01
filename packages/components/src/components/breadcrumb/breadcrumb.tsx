@@ -91,7 +91,7 @@ export class Breadcrumb {
                 );
               return (
                 <li class="breadcrumb__list-item" part="list-item">
-                  {element.href || element.tagName == 'SCALE-LINK' ? (
+                  {element.href || element.tagName === 'SCALE-LINK' ? (
                     <a
                       href={element.href}
                       class={classNames(
