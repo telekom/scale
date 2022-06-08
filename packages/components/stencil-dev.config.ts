@@ -12,11 +12,11 @@ export const config: Config = {
       copy: [
         {
           src:
-            '../../../node_modules/@telekom/design-tokens/dist/telekom/fonts/TeleNeoWeb',
-          dest: 'build/fonts/TeleNeoWeb',
+            '../../../node_modules/@telekom/design-tokens/dist/assets/telekom/fonts',
+          dest: 'build/fonts',
           warn: true,
         },
-        { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
+        // { src: '../../design-tokens/dist/*', dest: 'build/', warn: true },
         { src: './html/*', dest: './', warn: true },
         ...(!process.env.WHITELABEL
           ? [{ src: './html/telekom/*', dest: './', warn: true }]
