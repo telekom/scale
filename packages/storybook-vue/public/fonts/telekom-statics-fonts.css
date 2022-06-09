@@ -1,0 +1,99 @@
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: normal;
+	font-weight: 200;
+	src: url("./TeleNeoWeb/TeleNeoWeb-Thin.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Thin.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Thin.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: italic;
+	font-weight: 200;
+	src: url("./TeleNeoWeb/TeleNeoWeb-ThinItalic.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-ThinItalic.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-ThinItalic.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: normal;
+	font-weight: 400;
+	src: url("./TeleNeoWeb/TeleNeoWeb-Regular.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Regular.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Regular.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: italic;
+	font-weight: 400;
+	src: url("./TeleNeoWeb/TeleNeoWeb-RegularItalic.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-RegularItalic.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-RegularItalic.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: normal;
+	font-weight: 500;
+	src: url("./TeleNeoWeb/TeleNeoWeb-Medium.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Medium.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Medium.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: italic;
+	font-weight: 500;
+	src: url("./TeleNeoWeb/TeleNeoWeb-MediumItalic.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-MediumItalic.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-MediumItalic.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: normal;
+	font-weight: 700;
+	src: url("./TeleNeoWeb/TeleNeoWeb-Bold.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Bold.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-Bold.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: italic;
+	font-weight: 700;
+	src: url("./TeleNeoWeb/TeleNeoWeb-BoldItalic.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-BoldItalic.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-BoldItalic.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: normal;
+	font-weight: 800;
+	src: url("./TeleNeoWeb/TeleNeoWeb-ExtraBold.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-ExtraBold.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-ExtraBold.woff2") format("woff2");
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: italic;
+	font-weight: 800;
+	src: url("./TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.eot") format("embedded-opentype"),
+			 url("./TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff") format("woff"),
+			 url("./TeleNeoWeb/TeleNeoWeb-ExtraBoldItalic.woff2") format("woff2");
+	font-display: fallback;
+}

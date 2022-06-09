@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "TeleNeoWeb";
+	font-style: normal;
+	font-weight: 200 800;
+	font-stretch: 75% 125%;
+	/* src: url("./TeleNeoWeb/TeleNeoVariable-Upright.woff2") format("woff2-variations"); */
+	src: url("./fonts/TeleNeoWeb/TeleNeoVariable-Upright.woff2") format("woff2-variations");
+	font-display: fallback;
+}
