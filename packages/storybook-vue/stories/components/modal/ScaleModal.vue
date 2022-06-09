@@ -1,6 +1,5 @@
 <template>
   <scale-modal
-    :custom-class="customClass"
     :heading="heading"
     :size="size"
     :variant="size"
@@ -28,7 +27,6 @@ const scaleCloseAction = action('scaleClose');
 
 export default {
   props: {
-    customClass: String,
     heading: { type: String, default: 'Today is your lucky day' },
     size: String,
     variant: String,
