@@ -996,12 +996,38 @@ import { addons } from '@storybook/addons';
             >
               {generateColorModeLinkText()}
             </a>
-            <br/>
+            <br />
             <div style={{ paddingLeft: 'var(--telekom-spacing-unit-x2)' }}>
-              {locale === 'en' 
-              ? <p>To make it as easy as possible for you to apply our color tokens, we use semantic names for the colors. If you change scale components or develop new components, pay attention to the correct use of the color tokens. This is the only way to ensure that future updates can be easily transferred to your designs at the push of a button. Only then can dark mode be implemented without additional effort. You can learn more about this concept in the guideline for <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">Design Tokens</a></p>
-              : <p>Damit die Anwendung unserer Farb-Tokens möglichst einfach für dich ist, verwenden wir semantische Bezeichnungen für die Farben. Solltest du Scale Komponenten ändern oder neue Komponenten entwickeln, achte auf die korrekte Anwendung der Farb-Tokens. Nur dann ist gewährleistet, dass du künftige Updates einfach per Knopfdruck in deine Designs übertragen kannst. Auch der Dark Mode lässt sich nur dann ohne Mehraufwand umsetzen. In der Guideline <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">Design-Tokens </a> erfährst du mehr über das Konzept der Tokens im Design. </p>
-              }              
+              {locale === 'en' ? (
+                <p>
+                  To make it as easy as possible for you to apply our color
+                  tokens, we use semantic names for the colors. If you change
+                  scale components or develop new components, pay attention to
+                  the correct use of the color tokens. This is the only way to
+                  ensure that future updates can be easily transferred to your
+                  designs at the push of a button. Only then can dark mode be
+                  implemented without additional effort. You can learn more
+                  about this concept in the guideline for{' '}
+                  <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">
+                    Design Tokens
+                  </a>
+                </p>
+              ) : (
+                <p>
+                  Damit die Anwendung unserer Farb-Tokens möglichst einfach für
+                  dich ist, verwenden wir semantische Bezeichnungen für die
+                  Farben. Solltest du Scale Komponenten ändern oder neue
+                  Komponenten entwickeln, achte auf die korrekte Anwendung der
+                  Farb-Tokens. Nur dann ist gewährleistet, dass du künftige
+                  Updates einfach per Knopfdruck in deine Designs übertragen
+                  kannst. Auch der Dark Mode lässt sich nur dann ohne
+                  Mehraufwand umsetzen. In der Guideline{' '}
+                  <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">
+                    Design-Tokens{' '}
+                  </a>{' '}
+                  erfährst du mehr über das Konzept der Tokens im Design.{' '}
+                </p>
+              )}
             </div>
             <table
               className="colors-table"
@@ -1323,70 +1349,7 @@ import { addons } from '@storybook/addons';
                   'Für Farbakzente und Datenvisualisierungen empfehlen wir diese zusätzlichen Farben:',
                   'For color accents and data visualizations, we recommend these additional colors:'
                 )}
-                {generateSectionSubTitle('Brown', 'Brown')}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.additional.brown.0',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.100',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.200',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.300',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.400',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.500',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.600',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.700',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.800',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.900',
-                    '',
-                    '',
-                    true
-                  )}
-                </tbody>
-                {generateSectionSubTitle('Violet', 'Violet')}
+                {generateSectionSubTitle('Violett', 'Violet')}
                 <tbody>
                   {generateTableColorRow(
                     'color.additional.violet.0',
@@ -1444,6 +1407,132 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.additional.violet.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
+                {generateSectionSubTitle('Blau', 'Blue')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.blue.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.blue.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
+                {generateSectionSubTitle('Türkis', 'Cyan')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.cyan.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.cyan.900',
                     '',
                     '',
                     true
@@ -1512,6 +1601,69 @@ import { addons } from '@storybook/addons';
                     true
                   )}
                 </tbody>
+                {generateSectionSubTitle('Grün', 'Green')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.green.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.green.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
                 {generateSectionSubTitle('Olive', 'Olive')}
                 <tbody>
                   {generateTableColorRow(
@@ -1570,6 +1722,258 @@ import { addons } from '@storybook/addons';
                   )}
                   {generateTableColorRow(
                     'color.additional.olive.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
+                {generateSectionSubTitle('Braun', 'Brown')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.brown.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.brown.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
+                {generateSectionSubTitle('Geld', 'Yellow')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.yellow.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.yellow.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
+                {generateSectionSubTitle('Orange', 'Orange')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.orange.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.orange.900',
+                    '',
+                    '',
+                    true
+                  )}
+                </tbody>
+                {generateSectionSubTitle('Rot', 'Red')}
+                <tbody>
+                  {generateTableColorRow(
+                    'color.additional.red.0',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.100',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.200',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.300',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.400',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.500',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.600',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.700',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.800',
+                    '',
+                    '',
+                    true
+                  )}
+                  {generateTableColorRow(
+                    'color.additional.red.900',
                     '',
                     '',
                     true
