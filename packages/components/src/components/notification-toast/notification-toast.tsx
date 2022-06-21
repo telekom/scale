@@ -122,7 +122,7 @@ export class NotificationToast {
           );
         case 'warning':
           return (
-            <scale-icon-alert-error
+            <scale-icon-alert-warning
               class="notification-toast__icon"
               color="#ffff"
               size={20}
