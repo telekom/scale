@@ -69,6 +69,8 @@ The deactivated state of the entire group occurs automatically when all individu
 
 ![A deactivated checkbox](assets/3_components/checkbox-group/Checkbox_Group_single_Disabled_State_EN.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Related components
 
 [Checkbox, ](?path=/usage/components-checkbox)

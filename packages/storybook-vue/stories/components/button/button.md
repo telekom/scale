@@ -67,6 +67,8 @@ When disabled, the interactive function of the button is removed. Use this state
 
 ![Image Name](assets/3_components/button/Button_Disabled.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Elements
 
 ### Button label

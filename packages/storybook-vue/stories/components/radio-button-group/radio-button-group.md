@@ -67,6 +67,8 @@ Deactivate a radio button when:
 
 ![Disabled Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Disabled.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Related components
 
 [Radio Button, ](?path=/usage/components-radio-button)

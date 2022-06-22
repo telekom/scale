@@ -57,6 +57,8 @@ If the text area is disabled, users can't enter or change text. Use this state i
 
 ![Image Name](assets/3_components/text-area/text_area_disabled.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Read only
 
 Read-only text areas show prefilled text that users cannot edit or change. However, the content is accessible for screen readers. Use this state when you want users to read, but not edit, a specific piece of content.
