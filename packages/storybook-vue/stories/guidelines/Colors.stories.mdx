@@ -164,7 +164,7 @@ import { addons } from '@storybook/addons';
                   <div
                     style={{
                       backgroundColor: `${item.value}`,
-                      padding: 'var(--telekom-spacing-unit-x5)',
+                      padding: '0px',
                       marginTop: 'var(--telekom-spacing-unit-x2)',
                       marginBottom: 'var(--telekom-spacing-unit-x2)',
                       marginLeft: 'var(--telekom-spacing-unit-x2)',
@@ -172,7 +172,7 @@ import { addons } from '@storybook/addons';
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '4px',
-                      minWidth: '380px',
+                      minWidth: '400px',
                       minHeight: '120px',
                     }}
                   >
@@ -268,7 +268,7 @@ import { addons } from '@storybook/addons';
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '4px',
-                      width: '380px',
+                      width: '393px',
                       minHeight: '120px',
                     }}
                   ></div>
@@ -531,6 +531,7 @@ import { addons } from '@storybook/addons';
                   paddingTop: 'var(--telekom-spacing-unit-x1)',
                   paddingRight: 'var(--telekom-spacing-unit-x1)',
                   paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                  paddingLeft: '0px',
                 }}
               >
                 {clearContrastStates()}
@@ -665,7 +666,7 @@ import { addons } from '@storybook/addons';
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '0px 0px 4px 4px',
-                      width: '380px',
+                      width: '393px',
                       minHeight: '110px',
                       color: 'var(--telekom-color-text-and-icon-standard)',
                     }}
@@ -832,6 +833,7 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    backgroundColor: 'transparent',
                     fontSize: '13px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: `${
@@ -1029,32 +1031,34 @@ import { addons } from '@storybook/addons';
                 </p>
               )}
             </div>
-            {!darkMode
-              ? generateSectionTitle(
-                  'Primäre Farben im Light Mode',
-                  'Light mode primary colors'
-                )
-              : generateSectionTitle(
-                  'Primäre Farben im Dark Mode',
-                  'Dark Mode Primary Colors'
-                )}
-            {!darkMode
-              ? generateSectionDescription(
-                  'Unsere Markenfarbe Magenta sowie Weiß und Schwarz sind die primären Farben für User Interfaces im Light Mode. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte wirkt dadurch freundlich, offen und hell.',
-                  'The primary colors for user interfaces in light mode are our brand color, Magenta, as well as white and black. This makes the basic tonality of our websites and digital products friendly, open, and bright.',
-                  true
-                )
-              : generateSectionDescription(
-                  'Unsere Markenfarbe Magenta sowie Schwarz und Grau sind die primären Farben für User Interfaces im Dark Mode.',
-                  'The primary colors for user interfaces in dark mode are our brand color, Magenta, as well as black and gray.',
-                  true
-                )}
             <table
               className="colors-table"
               style={{
                 backgroundColor: `${darkMode ? '#000' : '#fff'}`,
               }}
             >
+              <thead>
+                {!darkMode
+                  ? generateSectionTitle(
+                      'Primäre Farben im Light Mode',
+                      'Light mode primary colors'
+                    )
+                  : generateSectionTitle(
+                      'Primäre Farben im Dark Mode',
+                      'Dark Mode Primary Colors'
+                    )}
+                {!darkMode
+                  ? generateSectionDescription(
+                      'Unsere Markenfarbe Magenta sowie Weiß und Schwarz sind die primären Farben für User Interfaces im Light Mode. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte wirkt dadurch freundlich, offen und hell.',
+                      'The primary colors for user interfaces in light mode are our brand color, Magenta, as well as white and black. This makes the basic tonality of our websites and digital products friendly, open, and bright.',
+                      true
+                    )
+                  : generateSectionDescription(
+                      'Unsere Markenfarbe Magenta sowie Schwarz und Grau sind die primären Farben für User Interfaces im Dark Mode.',
+                      'The primary colors for user interfaces in dark mode are our brand color, Magenta, as well as black and gray.',
+                      true
+                    )}
+              </thead>
               {generateTableHead()}
               <tbody>
                 {generateTableColorRow(
