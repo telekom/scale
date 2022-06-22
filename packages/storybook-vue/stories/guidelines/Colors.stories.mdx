@@ -164,9 +164,9 @@ import { addons } from '@storybook/addons';
                   <div
                     style={{
                       backgroundColor: `${item.value}`,
-                      padding: '0px',
-                      marginTop: 'var(--telekom-spacing-unit-x2)',
-                      marginBottom: 'var(--telekom-spacing-unit-x2)',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      marginTop: 'var(--telekom-spacing-unit-x1)',
+                      marginBottom: 'var(--telekom-spacing-unit-x1)',
                       marginLeft: 'var(--telekom-spacing-unit-x2)',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
@@ -244,6 +244,7 @@ import { addons } from '@storybook/addons';
                                           color: `${getItemColorByPath(path)}`,
                                           fontSize: '13px',
                                           fontWeight: 600,
+                                          marginRight: '10px',
                                         }}
                                       >
                                         {getItemPathByPath(path)}
@@ -262,13 +263,14 @@ import { addons } from '@storybook/addons';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
-                      marginTop: '4px',
-                      marginLeft: '8px',
+                      marginTop: 'var(--telekom-spacing-unit-x1)',
+                      marginBottom: 'var(--telekom-spacing-unit-x1)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '4px',
-                      width: '393px',
+                      width: '400px',
                       minHeight: '120px',
                     }}
                   ></div>
@@ -666,7 +668,7 @@ import { addons } from '@storybook/addons';
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '0px 0px 4px 4px',
-                      width: '393px',
+                      width: '400px',
                       minHeight: '110px',
                       color: 'var(--telekom-color-text-and-icon-standard)',
                     }}
@@ -721,7 +723,7 @@ import { addons } from '@storybook/addons';
                   border: 'none',
                   paddingTop: 'var(--telekom-spacing-unit-x1)',
                   paddingBottom: 'var(--telekom-spacing-unit-x2)',
-                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingLeft: 'var(--telekom-spacing-unit-x5)',
                 }}
               >
                 <div
