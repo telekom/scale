@@ -14,10 +14,6 @@ import { Cell } from './cell-interface';
 
 export const ActionsCell: Cell = {
   defaults: {},
-  getLongestContent({ rows, columnIndex }) {
-    // Skip check as content width is always the same
-    return rows[0][columnIndex];
-  },
   render: ({ content }) => {
     return (
       <div class={`tbody__actions`}>
