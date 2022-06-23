@@ -2,6 +2,40 @@
 
 This page documents updates to the visual appearance of Scale.
 
+## Refinements to the Color Palette
+
+23.06.22
+
+Color updates:
+
+- New color category (on-subtle) for texts on colored backgrounds of the gradation Subtle
+- New color scale Yellow
+- New color scale Cyan
+- New color scale Green
+- New color scale Red
+- New color scale Orange
+- New color scale Blue
+
+Color value changes:
+
+- Updated text color function
+- Updated background color function
+- Updated Brown scale
+- Updated Violet scale
+- Updated Teal scale
+- Updated Olive scale
+- Updated gray value for Disabled in dark mode
+
+Removed colors:
+
+- The Interaction category was removed due to duplication. If you want to use these colors, you can use the Blue color scale
+
+Affected content:
+
+- All error states and notifications, as well as warning and success messages of the respective components
+- These components: Notification Banner, Notification Message, and Notification Toast
+- Color tokens (color updates, color value changes)
+
 ## Light and dark mode
 
 19.04.22
