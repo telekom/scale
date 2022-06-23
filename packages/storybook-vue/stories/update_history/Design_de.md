@@ -2,6 +2,40 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Überarbeitung der Farbpalette
+
+23.06.22
+
+Farbergänzungen:
+
+- Neue Farbkategorie („on-subtle”) für Texte auf farbigen Hintergründen der Abstufung „Subtle”
+- Neue Farbskala „Yellow“
+- Neue Farbskala „Cyan“
+- Neue Farbskala „Green“
+- Neue Farbskala „Red“
+- Neue Farbskala „Orange“
+- Neue Farbskala „Blue“
+
+Farbwertänderungen:
+
+- Anpassung der „Textfarben Funktion“
+- Anpassung der „Hintergrundfarben Funktion“
+- Anpassung der Skala „Brown“
+- Anpassung der Skala „Violet“
+- Anpassung der Skala „Teal“
+- Anpassung der Skala „Olive“
+- Anpassung des Grauwerts für „Disabled“ im Dark Mode
+
+Entfernte Farben:
+
+- Die Kategorie „Interaction“ wurde aufgrund von Dopplungen entfernt. Wer diese Farben nutzen möchte, kann auf die Farbskala „Blue“ zurückgreifen
+
+Betroffene Inhalte:
+
+- Alle Error-States, Benachrichtigungen sowie Warn- und Erfolgsmeldungen der jeweiligen Komponenten
+- Die Komponenten „Notification Banner”, „Notification Message” und „Notification Toast”
+- Farbtokens (Farbergänzungen, Farbwertänderungen)
+
 ## Dark and Light Mode
 
 19.04.22
