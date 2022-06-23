@@ -31,7 +31,7 @@ Use tooltips very conservatively and always try to make your UI as self-explanat
 
 You can attach tooltips to all four sides of an element. If possible, decide on one positioning for a website. Make sure the tooltip doesn’t hide any content it
 describes.
-![Tooltip all](assets/3_components/tooltip/tooltip-position.jpeg)
+![Tooltip all](assets/3_components/tooltip/tooltip-position.png)
 
 ## Elements
 

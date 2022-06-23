@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+
+### Bug Fixes
+
+* **modal:** remove customClass attribute leftover ([#1094](https://github.com/telekom/scale/issues/1094)) ([fdf09cc](https://github.com/telekom/scale/commit/fdf09ccba8ce9a533ba7b8a1c31174a9f7bc377b))
+
+
+### Features
+
+* new color table ([#1105](https://github.com/telekom/scale/issues/1105)) ([a0c663d](https://github.com/telekom/scale/commit/a0c663d5cf6fcc581f32901989c58e8e74432e82))
+
+
+
+
+
 # [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
 
 

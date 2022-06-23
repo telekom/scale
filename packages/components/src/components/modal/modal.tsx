@@ -47,8 +47,6 @@ export interface BeforeCloseEventDetail {
 })
 export class Modal {
   @Element() hostElement: HTMLElement;
-  /** (optional) Custom class */
-  @Prop() customClass?: string = '';
   /** Modal heading */
   @Prop() heading: string;
   /** (optional) Modal size */

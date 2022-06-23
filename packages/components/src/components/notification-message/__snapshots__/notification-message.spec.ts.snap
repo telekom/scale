@@ -21,7 +21,7 @@ exports[`NotificationMessage handle variant prop 2`] = `
   <mock:shadow-root>
     <div class="notification-message notification-message--variant-warning" part="notification-message variant-warning" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-error aria-hidden="true" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-error>
+        <scale-icon-alert-warning aria-hidden="true" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-warning>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>

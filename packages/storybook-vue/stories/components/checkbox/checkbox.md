@@ -57,6 +57,8 @@ Disable the checkbox if:
 
 ![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Nested groups of checkboxes
 
 > Available soon
