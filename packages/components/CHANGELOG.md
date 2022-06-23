@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.56](https://github.com/telekom/scale/compare/v3.0.0-beta.55...v3.0.0-beta.56) (2022-06-23)
+
+**Note:** Version bump only for package @telekom/scale-components
+
+
+
+
+
 # [3.0.0-beta.55](https://github.com/telekom/scale/compare/v3.0.0-beta.54...v3.0.0-beta.55) (2022-05-25)
 
 **Note:** Version bump only for package @telekom/scale-components
