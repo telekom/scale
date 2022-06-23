@@ -2,18 +2,6 @@
 
 Shadows make the visual level clear where components and elements are located. They help users quickly understand the UI. As such, it’s important to use the right shadow for a specific use case.
 
-## Flat
-
-For elements without a shadow that lie flat on the surface.
-
-![flat shadows](assets/shadows-flat.png)
-
-## Resting
-
-For elements that should be set apart somewhat within a component.
-
-![resting shadows](assets/shadows-resting.png)
-
 ## Raised
 
 For elements that are visually elevated.
