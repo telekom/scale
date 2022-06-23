@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+
+### Bug Fixes
+
+* **data-grid:** enable content width check for actions cell ([#1108](https://github.com/telekom/scale/issues/1108)) ([49a3966](https://github.com/telekom/scale/commit/49a396638d21973dc841244d0d096d33af82a7a9))
+* **modal:** remove customClass attribute leftover ([#1094](https://github.com/telekom/scale/issues/1094)) ([fdf09cc](https://github.com/telekom/scale/commit/fdf09ccba8ce9a533ba7b8a1c31174a9f7bc377b))
+
+
+### Features
+
+* new color table ([#1105](https://github.com/telekom/scale/issues/1105)) ([a0c663d](https://github.com/telekom/scale/commit/a0c663d5cf6fcc581f32901989c58e8e74432e82))
+
+
+### Reverts
+
+* Revert "docs: restore B&D links" ([c83b6ba](https://github.com/telekom/scale/commit/c83b6ba75cb51dfff569f4cb999d4f0a3d133eab))
+
+
+
+
+
 # [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
 
 
