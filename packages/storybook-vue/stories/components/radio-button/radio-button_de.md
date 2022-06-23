@@ -57,6 +57,8 @@ Deaktiviere den Radio-Button, wenn
 
 ![Image Name](assets/3_components/radio-button/disabled_radiobutton.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Titel und Default-Auswahl
 
 Treffe eine Vorauswahl durch die Default-Aktivierung einer Option. Entspricht diese den Erwartungen der Nutzer\*innen, reduzierst du somit den benötigen Interaktionsaufwand. Das ist zudem eine gute Möglichkeit, Nutzer\*innen Vorschläge zu machen.

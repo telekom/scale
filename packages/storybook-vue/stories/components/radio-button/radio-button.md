@@ -57,6 +57,8 @@ Disable the radio button if:
 
 ![Image Name](assets/3_components/radio-button/disabled_radiobutton.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Headline and default selection
 
 Consider using a headline to provide more clarity to the user.

@@ -70,6 +70,8 @@ Im deaktivierten Zustand ist die interaktive Funktion des Buttons ausgeschaltet.
 
 ![Image Name](assets/3_components/button/Button_Disabled.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Elemente
 
 ### Label

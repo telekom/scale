@@ -47,6 +47,8 @@ Deaktiviere den Slider, wenn
 
 ![Image Name](assets/3_components/slider/slider_disabled_de.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Verwandte Komponenten
 
 <a href="?path=/usage/components-text-field--standard">Text-Field</a>
