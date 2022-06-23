@@ -27,7 +27,7 @@ Setze Tooltips grundsätzlich sehr restriktiv ein und versuche immer, dein Inter
 
 Tooltips lassen sich an allen vier Seiten eines zu beschreibenden Elements anfügen. Entscheide dich – wenn möglich – für eine Positionierung innerhalb
 einer Webseite. Stelle außerdem sicher, dass das Tooltip keine Inhalte verdeckt, die es beschreibt.
-![Tooltip all](assets/3_components/tooltip/tooltip-position.jpeg)
+![Tooltip all](assets/3_components/tooltip/tooltip-position.png)
 
 ## Elemente
 
