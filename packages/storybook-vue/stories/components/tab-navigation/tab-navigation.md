@@ -55,6 +55,8 @@ A user needs to understand why they can't access a tab, or this will lead to a l
 
 ![Image Name](assets/3_components/tab-navigation/tab_navigation_disabled.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Label
 
 The label clearly describes the content which a particular tab represents. Since short labels are more scannable, don't use more than 1-2 words.

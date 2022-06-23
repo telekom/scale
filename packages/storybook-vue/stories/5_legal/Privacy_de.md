@@ -20,9 +20,9 @@ Wir möchten, dass du unsere Webseiten gerne nutzt und unsere Produkte und Diens
 
 Diese Cookies sind notwendig, damit du durch die Seiten navigieren und wesentliche Funktionen nutzen kannst. Sie ermöglichen Grundfunktionen, um den Zugriff auf gesicherte Bereiche der Webseite zu gewährleisten. Rechtsgrundlage für diese Cookies ist Art. 6 Abs. 1b DSGVO bzw. bei Drittstaaten Art. 49 Abs. 1b DSGVO.
 
-| Name   | Description                               | Expires / Max-Age | Location    |
-| ------ | ----------------------------------------- | ----------------- | ----------- |
-| Matomo | Webseitensicherheit, Webseitenoptimierung | 24 Stunden        | Deutschland |
+| Firma     | Zweck            | Speicherdauer  | Land der Verarbeitung |
+| --------- | ---------------- | -------------- | --------------------- |
+| T-Systems | Session ID / WAF | Session cookie | Deutschland           |
 
 ## 4. Wo finde ich die Informationen, die für mich wichtig sind?
 

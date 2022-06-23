@@ -21,7 +21,7 @@ exports[`NotificationBanner handle variant prop 2`] = `
   <mock:shadow-root>
     <div class="notification-banner notification-banner--has-no-text notification-banner--variant-warning" part="notification-banner variant-warning has-no-text" role="alert" tabindex="0">
       <div class="notification-banner__container" part="container">
-        <scale-icon-alert-error aria-hidden="true" class="notification-banner__icon-information" color="#AE461C"></scale-icon-alert-error>
+        <scale-icon-alert-warning aria-hidden="true" class="notification-banner__icon-information" color="#AE461C"></scale-icon-alert-warning>
         <div class="notification-banner__heading" part="heading">
           <slot></slot>
         </div>

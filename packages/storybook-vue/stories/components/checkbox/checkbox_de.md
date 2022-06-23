@@ -58,6 +58,8 @@ Deaktiviere die Checkbox, wenn
 
 ![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Verschachtelte Checkboxen
 
 > Diese Funktion ist bald verfügbar.
