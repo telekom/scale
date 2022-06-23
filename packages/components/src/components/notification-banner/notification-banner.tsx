@@ -96,7 +96,7 @@ export class NotificationBanner {
           );
         case 'warning':
           return (
-            <scale-icon-alert-error
+            <scale-icon-alert-warning
               class="notification-banner__icon-information"
               color="#AE461C"
               aria-hidden="true"

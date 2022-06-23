@@ -54,6 +54,7 @@ Type: `Promise<void>`
 - [scale-icon-alert-success](../icons/alert-success)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
+- [scale-icon-alert-warning](../icons/alert-warning)
 - [scale-icon-action-circle-close](../icons/action-circle-close)
 - [scale-link](../link)
 
@@ -63,6 +64,7 @@ graph TD;
   scale-notification-banner --> scale-icon-alert-success
   scale-notification-banner --> scale-icon-alert-information
   scale-notification-banner --> scale-icon-alert-error
+  scale-notification-banner --> scale-icon-alert-warning
   scale-notification-banner --> scale-icon-action-circle-close
   scale-notification-banner --> scale-link
   style scale-notification-banner fill:#f9f,stroke:#333,stroke-width:4px
