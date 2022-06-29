@@ -33,10 +33,10 @@
   position: relative;
   box-sizing: border-box;
   align-items: center;
-  padding-left: 0;
   height: var(--tab-height);
+  padding-left: calc(var(--tab-spacing) / 2);
   margin-right: var(--tab-spacing);
-  padding-right: var(--tab-spacing);
+  padding-right: calc(var(--tab-spacing) / 2);
   font-family: var(--font-family);
   font-size: calc(var(--tab-height) / 2);
   font-weight: var(--font-weight);
@@ -76,7 +76,7 @@
   content: '';
   display: block;
   position: absolute;
-  height: var(--tab-border-size);
+  height: 1px;
   background-color: var(--tab-border-color);
 }
 .tab-header:before {
@@ -116,9 +116,7 @@
   color: var(--color-selected);
 }
 .tab-header--selected:after {
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
-  height: var(--tab-border-size-selected);
+  height: 3px;
   background-color: var(--color-selected);
 }
 .tab-header--selected:before {
