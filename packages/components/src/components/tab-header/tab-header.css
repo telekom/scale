@@ -13,7 +13,7 @@
   outline: none;
   --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height-small: 2rem;
+  --height: 2rem;
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -43,8 +43,8 @@
   border-radius: var(--tab-radius);
 }
 
-.tab-header--small {
-  --tab-height: var(--height-small);
+.tab-header {
+  --tab-height: var(--height);
 }
 
 .tab-header--disabled {
