@@ -76,7 +76,7 @@
   content: '';
   display: block;
   position: absolute;
-  height: 1px;
+  height: var(--tab-border-size);
   background-color: var(--tab-border-color);
 }
 .tab-header:before {
@@ -116,7 +116,7 @@
   color: var(--color-selected);
 }
 .tab-header--selected:after {
-  height: 3px;
+  height: var(--tab-border-size-selected);
   background-color: var(--color-selected);
 }
 .tab-header--selected:before {
