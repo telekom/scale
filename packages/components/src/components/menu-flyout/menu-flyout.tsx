@@ -126,7 +126,7 @@ export class MenuFlyout {
   }
 
   closeAll() {
-    this.lists.forEach(async (list) => {
+    (this.lists || new Set()).forEach(async (list) => {
       await list.close(); // Wait for `scale-close` event to fire
       list.active = false; // Make sure focus control is right while reopening
     });
