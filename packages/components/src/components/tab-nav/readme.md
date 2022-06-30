@@ -7,11 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                                           | Type                 | Default     |
-| -------- | --------- | ------------------------------------------------------------------------------------- | -------------------- | ----------- |
-| `size`   | `size`    | (optional) size                                                                       | `"large" \| "small"` | `'large'`   |
-| `small`  | `small`   | <span style="color:red">**[DEPRECATED]**</span> - size should replace small<br/><br/> | `boolean`            | `false`     |
-| `styles` | `styles`  | (optional) Injected CSS styles                                                        | `string`             | `undefined` |
+| Property | Attribute | Description                    | Type     | Default     |
+| -------- | --------- | ------------------------------ | -------- | ----------- |
+| `styles` | `styles`  | (optional) Injected CSS styles | `string` | `undefined` |
 
 
 ----------------------------------------------

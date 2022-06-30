@@ -12,7 +12,6 @@
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { ScaleIcon, isScaleIcon } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
 
 const DEFAULT_ICON_SIZE = 24;
 const PER_SPEC_ICON_SIZE = 16;
