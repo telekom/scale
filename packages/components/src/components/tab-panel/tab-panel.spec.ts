@@ -28,13 +28,4 @@ describe('TabPanel', () => {
     await page.waitForChanges();
     expect(page.root).toMatchSnapshot();
   });
-  it('should handle css classes', async () => {
-    const tabPanel = new TabPanel();
-    tabPanel.small = true;
-    expect(tabPanel.getCssClassMap()).toBe('tab-panel tab-panel--small');
-    tabPanel.small = false;
-    expect(tabPanel.getCssClassMap()).toBe('tab-panel');
-    tabPanel.size = 'small';
-    expect(tabPanel.getCssClassMap()).toBe('tab-panel tab-panel--small');
-  });
 });
