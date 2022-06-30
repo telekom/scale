@@ -97,6 +97,10 @@ scale-dropdown {
   color: var(--telekom-color-text-and-icon-standard);
 }
 
+.dropdown.animated .input__dropdown {
+  color: transparent;
+}
+
 @-moz-document url-prefix() {
   .dropdown .input__dropdown {
     text-indent: -2px;
