@@ -125,12 +125,12 @@ export class MenuFlyout {
     });
   }
 
-  closeAll() {
-    (this.lists || new Set()).forEach(async (list) => {
+  closeAll = () => {
+    this.lists.forEach(async (list) => {
       await list.close(); // Wait for `scale-close` event to fire
       list.active = false; // Make sure focus control is right while reopening
     });
-  }
+  };
 
   toggle = () => {
     const list = this.getListElement();
