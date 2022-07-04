@@ -70,7 +70,7 @@ export class Switch {
             />
             <div class="switch__wrapper">
               <div class="switch__toggle" />
-              <div class="switch__text" />
+              <div class="switch__text" aria-hidden="true" />
             </div>
             {this.label && <span class="switch__label">{this.label}</span>}
           </label>
