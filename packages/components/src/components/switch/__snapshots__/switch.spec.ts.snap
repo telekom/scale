@@ -7,7 +7,7 @@ exports[`Switch should match snapshot 1`] = `
       <input aria-labelledby="switch-0-label" id="switch-0" type="checkbox">
       <div class="switch__wrapper">
         <div class="switch__toggle"></div>
-        <div class="switch__text"></div>
+        <div aria-hidden="true" class="switch__text"></div>
       </div>
     </label>
   </div>
