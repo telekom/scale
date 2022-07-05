@@ -12,8 +12,8 @@
 import { Component, h, State, Element, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
 /*
-  @see https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
-*/
+    @see https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
+  */
 
 @Component({
   tag: 'scale-breadcrumb',
@@ -91,7 +91,7 @@ export class Breadcrumb {
                 );
               return (
                 <li class="breadcrumb__list-item" part="list-item">
-                  {element.href ? (
+                  {element.href || element.tagName === 'SCALE-LINK' ? (
                     <a
                       href={element.href}
                       class={classNames(
