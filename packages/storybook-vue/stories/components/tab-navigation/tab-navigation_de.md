@@ -40,12 +40,6 @@ Füge ein Icon hinzu, wenn die Nutzer\*innen dadurch leichter verstehen können,
 
 ![Image Name](assets/3_components/tab-navigation/tab_navigation_icon-text.png)
 
-## Größen
-
-Du kannst zwischen zwei Größen wählen – Large und Small. Entscheide nach visuellen Aspekten oder aufgrund der Relevanz des Inhalts. Verwende für mobile Anwendungen die kleine Größe.
-
-![Image Name](assets/3_components/tab-navigation/tab_navigation_sizes.png)
-
 ## Deaktivierter Zustand
 
 Du kannst einen Tab deaktivieren, wenn sein Inhalt vorübergehend nicht verfügbar ist. Für eine gute User Experience müssen Nutzer\*innen verstehen, warum sie auf einen Tab nicht zugreifen können. Versuche daher die Funktionalität der Tabs zu erhalten und im Inhaltsbereich zu erklären, warum der Inhalt des Tabs verübergehend nicht sichtbar ist.
