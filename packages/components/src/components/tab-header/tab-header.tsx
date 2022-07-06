@@ -12,6 +12,7 @@
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import classNames from 'classnames';
 import { ScaleIcon, isScaleIcon } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 const DEFAULT_ICON_SIZE = 24;
 const PER_SPEC_ICON_SIZE = 16;
@@ -31,6 +32,9 @@ export class TabHeader {
 
   /** True for a disabled Tabnavigation */
   @Prop() disabled?: boolean = false;
+  /** True for smaller height and font size */
+  /** @deprecated - css overwrites should replace small */
+  @Prop() small?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -51,6 +55,17 @@ export class TabHeader {
 
   componentDidLoad() {
     this.setChildrenIconSize();
+  }
+
+  componentDidRender() {
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "small" is deprecated. Please use css overwrites.',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   /**
@@ -123,7 +138,6 @@ export class TabHeader {
 
     return classNames(
       component,
-      `${prefix}`,
       this.selected && `${prefix}selected`,
       this.hasFocus && `${prefix}has-focus`,
       this.disabled && `${prefix}disabled`

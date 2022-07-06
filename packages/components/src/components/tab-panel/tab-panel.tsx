@@ -11,6 +11,7 @@
 
 import { Component, Element, h, Prop, Host } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 let i = 0;
 
@@ -23,8 +24,23 @@ export class TabPanel {
   generatedId: number = i++;
 
   @Element() el: HTMLElement;
+  /** True for smaller height and font size */
+  /** @deprecated - css overwrites should replace small */
+  @Prop() small?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
+  componentDidRender() {
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the css overwrites!',
+        type: 'warn',
+        source: this.el,
+      });
+    }
+  }
 
   render() {
     return (

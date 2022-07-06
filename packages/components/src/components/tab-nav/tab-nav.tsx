@@ -11,6 +11,7 @@
 
 import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 /**
  * @see https://github.com/GoogleChromeLabs/howto-components/blob/master/elements/howto-tabs/howto-tabs.js
@@ -29,6 +30,9 @@ const END = 'End';
 export class TabNav {
   @Element() el: HTMLElement;
 
+  /** True for smaller height and font size in tab headers. */
+  /** @deprecated - css overwrites should replace small */
+  @Prop() small?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -88,6 +92,16 @@ export class TabNav {
     ]).then(() => {
       this.linkPanels();
     });
+
+    if (this.small !== false) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "small" is deprecated. Please use the css overwrites!',
+        type: 'warn',
+        source: this.el,
+      });
+    }
   }
 
   getAllTabs(): HTMLScaleTabHeaderElement[] {
