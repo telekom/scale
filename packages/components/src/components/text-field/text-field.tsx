@@ -92,7 +92,8 @@ export class TextField {
   @Prop() list?: string;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
-
+  /** (optional) Makes for an accessible search input without using `type=search` */
+  @Prop() role?: 'searchbox';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
