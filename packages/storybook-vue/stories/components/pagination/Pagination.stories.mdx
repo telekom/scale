@@ -52,13 +52,6 @@ import ScalePagination from './ScalePagination.vue';
       description: `(optional) Injected styles`,
       control: { type: null },
     },
-    size: {
-      table: {
-        type: { summary: 'string' },
-      },
-      description: `(optional) size`,
-      control: { type: null },
-    },
     small: {
       table: {
         type: { summary: 'Boolean' },
@@ -108,7 +101,6 @@ export const Template = (args, { argTypes }) => ({
     :hide-border="hideBorder"
     :page-size="pageSize"
     :small="small"
-    :size="size"
     :start-element="startElement"
     :total-elements="totalElements"
     :aria-label-first-page="ariaLabelFirstPage"
@@ -133,7 +125,6 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         :hide-border="hideBorder"
         :page-size="pageSize"
         :small="small"
-        :size="size"
         :start-element="startElement"
         :total-elements="totalElements"
         :styles="styles"
@@ -178,34 +169,6 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
   page-size="10"
   start-element="100"
   total-elements="200"
-></scale-pagination>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      size: 'small',
-      pageSize: 5,
-      startElement: 100,
-      totalElements: 200,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<!-- Deprecated:
-<scale-pagination page-size="5" start-element="100" total-elements="200" small></scale-pagination>
--->
-<scale-pagination
-  page-size="5"
-  start-element="100"
-  total-elements="200"
-  size="small"
 ></scale-pagination>
 ```
 
