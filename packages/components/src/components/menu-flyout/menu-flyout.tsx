@@ -47,6 +47,25 @@ export class MenuFlyout {
 
   private trigger: HTMLElement;
   private lists: Set<HTMLScaleMenuFlyoutListElement> = new Set();
+  // Keep track of the current active/open list
+  private activeList: HTMLScaleMenuFlyoutListElement;
+
+  @Listen('scale-open')
+  async handleScaleOpen({ detail }) {
+    // Close the previous active list if
+    // - it's not the root and
+    // - it's not the one being opened
+    // (useful only with "click" interactions)
+    if (
+      this.activeList &&
+      this.activeList.active &&
+      this.activeList !== this.getListElement() &&
+      this.activeList !== detail.list
+    ) {
+      await this.activeList.close(true);
+    }
+    this.activeList = detail.list;
+  }
 
   @Listen('scale-select')
   handleScaleSelect({ detail }) {
