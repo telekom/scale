@@ -42,7 +42,7 @@ scale-radio-button {
   --height-control: var(--telekom-spacing-unit-x4);
   --transition-control: var(--transition);
   --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
-  --background-color-control: var(--telekom-color-ui-additional-base);
+  --background-color-control: var(--telekom-color-ui-base);
   --border-control: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-outlined-border-standard);
   --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
