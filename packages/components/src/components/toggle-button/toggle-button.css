@@ -51,7 +51,7 @@
   /* variant: secondary */
   --background-secondary: transparent;
   --color-secondary: var(--telekom-color-text-and-icon-standard);
-  --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
   --background-secondary-disabled: var(
     --telekom-color-ui-outlined-fill-disabled

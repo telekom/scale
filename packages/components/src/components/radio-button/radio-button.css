@@ -117,7 +117,7 @@ scale-radio-button {
 .radio-button:hover input:not(:checked):not([disabled]) {
   box-shadow: none;
   border-color: var(--telekom-color-ui-border-hovered);
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 .radio-button:hover input:not(:checked):not([disabled]) ~ label {
   color: var(--color-primary-hover);

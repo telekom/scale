@@ -159,7 +159,7 @@ scale-checkbox.checked [part='checkbox']
 scale-checkbox [part='container']:hover
 /* :host([indeterminate]) [part='checkbox'], */
 [part='checkbox'] {
-  background: var(--telekom-color-ui-outlined-fill-hovered);
+  background: var(--telekom-color-ui-state-fill-hovered);
   border-color: var(--telekom-color-ui-border-hovered);
   color: var(--color-icon-checked-active);
 }
@@ -245,7 +245,7 @@ scale-checkbox.error
 }
 
 scale-checkbox.error:hover [part='checkbox'] {
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
   border: 2px solid var(--telekom-color-functional-danger-hovered);
 }
 

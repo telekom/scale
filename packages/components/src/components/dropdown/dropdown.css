@@ -133,13 +133,13 @@ scale-dropdown {
 .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
   .input__dropdown:hover {
   border-color: var(--border-color-hover);
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 .dropdown:not(.dropdown--disabled).dropdown--status-error
   .input__dropdown:hover {
   border-color: var(--telekom-color-functional-danger-hovered);
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)

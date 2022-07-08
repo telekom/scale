@@ -44,7 +44,7 @@ duet-date-picker .duet-date__input {
 duet-date-picker .duet-date__input:hover {
   border: var(--telekom-spacing-unit-x025) solid
     var(--telekom-color-ui-border-hovered);
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 duet-date-picker .duet-date__input:focus {
@@ -68,7 +68,7 @@ duet-date-picker .duet-date__toggle:focus {
 .scale-date-picker:not(.scale-date-picker--disabled)
   duet-date-picker
   .duet-date__toggle:hover {
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
 .scale-date-picker:not(.scale-date-picker--disabled)
