@@ -21,7 +21,7 @@
   --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-toggle-button: var(--telekom-color-ui-regular);
-  --border-y-toggle-button: 1px solid var(--telekom-color-ui-subtle);
+  --border-y-toggle-button: 1px solid var(--telekom-color-ui-faint);
   --radius-toggle-button: var(--telekom-radius-small);
 }
 
