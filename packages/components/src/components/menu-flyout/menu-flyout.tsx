@@ -47,42 +47,25 @@ export class MenuFlyout {
 
   private trigger: HTMLElement;
   private lists: Set<HTMLScaleMenuFlyoutListElement> = new Set();
+  // Keep track of the current active/open list
+  private activeList: HTMLScaleMenuFlyoutListElement;
 
   @Listen('scale-open')
   async handleScaleOpen({ detail }) {
-    const allLists = this.hostElement.getElementsByTagName(
-      'scale-menu-flyout-list'
-    );
-
-    for (let i = 0; i < allLists.length; i++)
-      if (allLists[i].active) {
-        //get all parents of active list
-        var els = [];
-        let listEls = [];
-        let a = allLists[i];
-        while (a) {
-          els.unshift(a);
-          a = a.parentElement as HTMLScaleMenuFlyoutListElement;
-        }
-        for (let k = 0; k < els.length; k++) {
-          if (els[k].tagName == 'SCALE-MENU-FLYOUT-LIST') {
-            listEls.push(els[k]);
-          }
-        }
-        console.log(listEls);
-        //compare allLists with parents of active list
-        var closeThem = Array.prototype.slice
-          .call(allLists)
-          .filter((x) => listEls.indexOf(x) === -1);
-
-        //console.log(closeThem);
-        closeThem.map((list) => {
-          let l = list as HTMLScaleMenuFlyoutListElement;
-          //console.log(l);
-          l.close(true);
-        });
-        listEls = [];
-      }
+    // Close the previous active list if
+    // - it's not the root and
+    // - it's not the one being opened
+    // (useful only with "click" interactions)
+    if (
+      this.activeList &&
+      this.activeList.active &&
+      this.activeList !== this.getListElement() &&
+      this.activeList !== detail.list
+    ) {
+      //TODO: currently after closing double click is needed
+      this.handleListClosing();
+    }
+    this.activeList = detail.list;
   }
 
   @Listen('scale-select')
@@ -184,11 +167,39 @@ export class MenuFlyout {
   };
 
   getListElement(): HTMLScaleMenuFlyoutListElement {
-    // TODO use [role="menu"]?
+    // TODO: use [role="menu"]?
     return Array.from(this.hostElement.children).find((el) =>
       el.tagName.toUpperCase().startsWith('SCALE-MENU-FLYOUT')
     ) as HTMLScaleMenuFlyoutListElement;
   }
+
+  handleListClosing = () => {
+    const allLists = this.hostElement.getElementsByTagName(
+      'scale-menu-flyout-list'
+    );
+    for (let i = 0; i < allLists.length; i++)
+      if (allLists[i].active) {
+        let currentList = allLists[i];
+        let activeListPathStorage = [];
+        let activeListStorage = [];
+
+        while (currentList) {
+          activeListPathStorage.unshift(currentList);
+          currentList = currentList.parentElement as HTMLScaleMenuFlyoutListElement;
+        }
+        for (let j = 0; j < activeListPathStorage.length; j++) {
+          if (activeListPathStorage[j].tagName == 'SCALE-MENU-FLYOUT-LIST')
+            activeListStorage.push(activeListPathStorage[j]);
+        }
+        const listsToClose = Array.prototype.slice
+          .call(allLists)
+          .filter((x) => activeListStorage.indexOf(x) === -1);
+        listsToClose.map(async (list) => {
+          const tempList = list as HTMLScaleMenuFlyoutListElement;
+          await tempList.close(true);
+        });
+      }
+  };
 
   render() {
     return (
