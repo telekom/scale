@@ -74,7 +74,7 @@ duet-date-picker .duet-date__toggle:focus {
 .scale-date-picker:not(.scale-date-picker--disabled)
   duet-date-picker
   .duet-date__toggle:active {
-  background-color: var(--telekom-color-ui-outlined-fill-pressed);
+  background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 
 duet-date-picker .duet-date__toggle:hover scale-icon-content-calendar {

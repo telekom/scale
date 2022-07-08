@@ -137,7 +137,7 @@
 }
 
 .switch:not(.switch--disabled):active input:not(:checked) ~ .switch__wrapper {
-  --background: var(--telekom-color-ui-outlined-fill-pressed);
+  --background: var(--telekom-color-ui-state-fill-pressed);
   --border: var(--telekom-color-ui-border-pressed);
 }
 
