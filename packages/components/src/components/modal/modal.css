@@ -46,10 +46,7 @@
   --spacing-y-header: var(--telekom-spacing-unit-x6);
 
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
-    var(
-      --telekom-color-ui-general-subtle,
-      var(--telekom-color-ui-subtle)
-    );
+    var(--telekom-color-ui-subtle);
 
   --font-family-heading: var(--telekom-typography-font-family-sans);
   --font-size-heading: var(--telekom-typography-font-size-callout);
