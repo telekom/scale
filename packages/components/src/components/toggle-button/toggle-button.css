@@ -43,7 +43,7 @@
   /* variant: primary */
   --radius-primary: var(--radius);
   --background-primary: var(--telekom-color-ui-subtle);
-  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
   --color-primary: var(--telekom-color-ui-extra-strong);
   --color-primary-hover: var(--telekom-color-primary-hovered);
   --color-primary-active: var(--telekom-color-primary-pressed);

@@ -285,12 +285,12 @@ scale-checkbox.disabled [part='checkbox'] {
 }
 
 scale-checkbox.checked.disabled [part='checkbox'] {
-  background-color: var(--telekom-color-ui-solid-disabled);
+  background-color: var(--telekom-color-ui-disabled);
   border-color: transparent;
 }
 
 /* :host([checked][disabled]) [part='icon'], */
 scale-checkbox.checked.disabled [part='icon'] {
   color: var(--color-icon-checked-disabled);
-  background-color: var(--telekom-color-ui-solid-disabled);
+  background-color: var(--telekom-color-ui-disabled);
 }

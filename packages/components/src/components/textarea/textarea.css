@@ -30,7 +30,7 @@ scale-textarea {
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: transparent;
   --border-color-readonly: var(--telekom-color-ui-border-disabled);
-  --background-readonly: var(--telekom-color-ui-solid-disabled);
+  --background-readonly: var(--telekom-color-ui-disabled);
 
   /*meta*/
   --font-weight-meta: var(--telekom-typography-font-weight-bold);

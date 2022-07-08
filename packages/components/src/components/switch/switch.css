@@ -225,7 +225,7 @@
 
 .switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,
 .switch.switch--disabled .switch__wrapper .switch__toggle {
-  --toggle: var(--telekom-color-ui-solid-disabled);
+  --toggle: var(--telekom-color-ui-disabled);
 }
 
 .switch.switch--disabled .switch__text:before,

@@ -35,7 +35,7 @@
   --background-primary: var(--telekom-color-primary-standard);
   --background-primary-hover: var(--telekom-color-primary-hovered);
   --background-primary-active: var(--telekom-color-primary-pressed);
-  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
   --color-primary: var(--telekom-color-text-and-icon-white-standard);
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
