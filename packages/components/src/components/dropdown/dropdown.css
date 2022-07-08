@@ -25,7 +25,7 @@ scale-dropdown {
     var(--telekom-color-functional-danger-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
-  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);

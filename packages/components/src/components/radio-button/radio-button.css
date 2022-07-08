@@ -50,14 +50,14 @@ scale-radio-button {
   --border-control-checked-active: calc(0.5 * var(--telekom-spacing-unit-x3))
     solid var(--telekom-color-primary-pressed, #cb0068);
   --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
-    solid var(--telekom-color-ui-outlined-border-disabled);
+    solid var(--telekom-color-ui-border-disabled);
   --background-control-checked-disabled: var(
     --telekom-color-ui-outlined-fill-disabled
   );
   --border-control-active: var(--telekom-spacing-unit-x2) solid
     var(--telekom-color-primary-pressed);
   --border-control-disabled: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-disabled);
+    var(--telekom-color-ui-border-disabled);
   --border-control-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x05)

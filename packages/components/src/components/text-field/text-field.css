@@ -19,7 +19,7 @@ scale-text-field {
     var(--telekom-color-functional-danger-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
-  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-outlined-fill-hovered);
   --background-color-disabled: var(--telekom-color-ui-outlined-fill-disabled);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
@@ -29,7 +29,7 @@ scale-text-field {
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
-  --border-color-readonly: var(--telekom-color-ui-outlined-border-disabled);
+  --border-color-readonly: var(--telekom-color-ui-border-disabled);
   --background-readonly: var(--telekom-color-ui-solid-disabled);
 
   /* meta */

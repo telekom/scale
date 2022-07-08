@@ -53,7 +53,7 @@
 }
 .tab-header--disabled:after {
   cursor: auto;
-  background-color: var(--telekom-color-ui-outlined-border-disabled) !important;
+  background-color: var(--telekom-color-ui-border-disabled) !important;
 }
 
 .tab-header--disabled:active {
@@ -65,7 +65,7 @@
 }
 
 .tab-header--disabled:hover:after {
-  background-color: var(--telekom-color-ui-outlined-border-disabled) !important;
+  background-color: var(--telekom-color-ui-border-disabled) !important;
 }
 
 .tab-header:after {

@@ -251,12 +251,12 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker.scale-date-picker--disabled input,
 .scale-date-picker.scale-date-picker--disabled input:hover {
   color: var(--telekom-color-text-and-icon-disabled);
-  border-color: var(--telekom-color-ui-outlined-border-disabled);
+  border-color: var(--telekom-color-ui-border-disabled);
   background: var(--telekom-color-ui-outlined-fill-disabled);
 }
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
   color: var(--telekom-color-text-and-icon-disabled);
-  box-shadow: inset 1px 0 0 var(--telekom-color-ui-outlined-border-disabled);
+  box-shadow: inset 1px 0 0 var(--telekom-color-ui-border-disabled);
 }
 
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle:hover,

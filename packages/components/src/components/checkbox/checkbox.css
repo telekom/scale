@@ -281,7 +281,7 @@ scale-checkbox.disabled [part='helper-text'] {
 /* :host([checked][disabled]) [part='checkbox'], */
 scale-checkbox.disabled [part='checkbox'] {
   background: var(--telekom-color-ui-solid-fill-disabled);
-  border-color: var(--telekom-color-ui-outlined-border-disabled);
+  border-color: var(--telekom-color-ui-border-disabled);
 }
 
 scale-checkbox.checked.disabled [part='checkbox'] {

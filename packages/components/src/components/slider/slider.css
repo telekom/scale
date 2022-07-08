@@ -139,7 +139,7 @@
 }
 
 .slider--disabled .slider__track {
-  border-color: var(--telekom-color-ui-outlined-border-disabled);
+  border-color: var(--telekom-color-ui-border-disabled);
 }
 
 .slider--disabled .slider__thumb {
