@@ -23,7 +23,7 @@
   --icon-color-hover: var(--color);
   --color-secondary: var(--telekom-color-text-and-icon-white-standard);
   --background-secondary: var(--telekom-color-additional-teal-600);
-  --background-secondary-hover: var(--telekom-color-ui-ghost-hovered);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-secondary-active: var(--telekom-color-ui-ghost-pressed);
 
   --background-disabled: var(--telekom-color-ui-solid-disabled);
@@ -35,7 +35,7 @@
     var(--telekom-color-ui-border-standard);
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
   --background-button-dismissable-hover: var(
-    --telekom-color-ui-ghost-hovered-inverted
+    --telekom-color-ui-state-fill-hovered-inverted
   );
   --background-button-dismissable-active: var(
     --telekom-color-ui-ghost-pressed-inverted
