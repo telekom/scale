@@ -145,7 +145,7 @@
   input:not(:checked)
   ~ .switch__wrapper
   .switch__toggle {
-  --toggle: var(--telekom-color-ui-solid-pressed);
+  --toggle: var(--telekom-color-ui-extra-strong);
 }
 
 .switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
