@@ -133,7 +133,7 @@
   input:not(:checked)
   ~ .switch__wrapper
   .switch__toggle {
-  --toggle: var(--telekom-color-ui-solid-hovered);
+  --toggle: var(--telekom-color-ui-strong);
 }
 
 .switch:not(.switch--disabled):active input:not(:checked) ~ .switch__wrapper {
