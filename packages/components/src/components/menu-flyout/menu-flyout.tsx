@@ -134,9 +134,10 @@ export class MenuFlyout {
 
   toggle = () => {
     const list = this.getListElement();
-    // We could check for `list.opened === true` to do `closeAll`
-    // but list close themselves with outside clicks, so `list.opened`
-    // will always be `false` here…
+    if (list.opened) {
+      this.closeAll();
+      return;
+    }
     if (this.direction != null) {
       // Overwrite `direction` in list
       list.direction = this.direction;
