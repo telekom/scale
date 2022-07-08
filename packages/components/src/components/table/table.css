@@ -29,11 +29,11 @@ scale-table {
     var(--telekom-color-ui-additional-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
-  --background-th-sortable-hover: var(--telekom-color-ui-additional-subtle);
+  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
   --background-th-sortable-active: var(--telekom-color-ui-additional-light);
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
-  --background-tr-striped: var(--telekom-color-ui-additional-subtle);
+  --background-tr-striped: var(--telekom-color-ui-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 .table {

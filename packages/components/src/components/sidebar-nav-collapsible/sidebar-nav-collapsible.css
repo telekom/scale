@@ -11,7 +11,7 @@
 
 :host {
   --opacity-chevron: 1;
-  --border-bottom-color: var(--telekom-color-ui-additional-subtle);
+  --border-bottom-color: var(--telekom-color-ui-subtle);
   --border-left-color-third-nesting: var(--telekom-color-ui-additional-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
