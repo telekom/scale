@@ -47,7 +47,7 @@
   --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
   --color-secondary-active: var(--telekom-color-text-and-icon-standard);
   --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-secondary: var(--telekom-color-ui-outlined-fill-standard);
+  --background-secondary: var(--telekom-color-ui-state-fill-standard);
   --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
   --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
   --background-secondary-disabled: var(

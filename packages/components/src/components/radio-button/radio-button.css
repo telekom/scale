@@ -105,7 +105,7 @@ scale-radio-button {
   transition: var(--transition-control);
   border-radius: 50%;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-ui-outlined-fill-standard);
+  background-color: var(--telekom-color-ui-state-fill-standard);
   border: var(--border-control);
   margin: var(--spacing-control);
   cursor: pointer;
@@ -167,5 +167,5 @@ scale-radio-button {
   cursor: not-allowed;
   border-color: var(--color-disabled);
   color: var(--color-disabled);
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
 }

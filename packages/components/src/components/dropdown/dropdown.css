@@ -93,7 +93,7 @@ scale-dropdown {
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-ui-outlined-fill-standard);
+  background-color: var(--telekom-color-ui-state-fill-standard);
   color: var(--telekom-color-text-and-icon-standard);
 }
 

@@ -86,7 +86,7 @@
 .data-grid {
   position: relative;
   display: block;
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
   border-radius: var(--telekom-radius-large);
   border: 1px solid var(--telekom-color-ui-faint);
   overflow: hidden;
@@ -152,7 +152,7 @@
   white-space: nowrap;
   border-bottom: 1px solid var(--telekom-color-ui-faint);
   position: relative;
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
   z-index: 1;
 }
 
