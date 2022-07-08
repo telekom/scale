@@ -67,8 +67,8 @@
   --background-selected-hover-light: var(--telekom-color-primary-hovered);
   --background-selected-active-light: var(--telekom-color-primary-pressed);
   --background-selected-dark: var(--telekom-color-ui-additional-extra-strong);
-  --background-selected-hover-dark: var(--telekom-color-ui-additional-strong);
-  --background-selected-active-dark: var(--telekom-color-ui-additional-strong);
+  --background-selected-hover-dark: var(--telekom-color-ui-strong);
+  --background-selected-active-dark: var(--telekom-color-ui-strong);
 
   /* high contrast */
   --color-high-contrast: var(--telekom-color-text-and-icon-white-standard);
