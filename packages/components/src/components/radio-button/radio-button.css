@@ -123,7 +123,7 @@ scale-radio-button {
   color: var(--color-primary-hover);
 }
 .radio-button:active input:not(:checked):not([disabled]) {
-  border-color: var(--telekom-color-ui-outlined-border-pressed);
+  border-color: var(--telekom-color-ui-border-pressed);
   background-color: var(--telekom-color-ui-outlined-fill-pressed);
 }
 .radio-button input:not(:checked):not([disabled]):active ~ label {
