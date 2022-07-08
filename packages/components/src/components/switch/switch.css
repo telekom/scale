@@ -16,7 +16,7 @@
   --text: var(--telekom-color-text-and-icon-standard);
   --text-disabled: var(--telekom-color-text-and-icon-disabled);
 
-  --toggle: var(--telekom-color-ui-solid-standard);
+  --toggle: var(--telekom-color-ui-regular);
   --background: var(--telekom-color-ui-state-fill-standard);
   --border: var(--telekom-color-ui-border-standard);
 
