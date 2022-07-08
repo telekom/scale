@@ -29,7 +29,7 @@ scale-dropdown {
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
+  --background-disabled: none;
 
   /*input*/
   --transition-input: var(--transition);

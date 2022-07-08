@@ -215,12 +215,12 @@
 
 .switch.switch--disabled .switch__wrapper {
   --border: var(--telekom-color-ui-border-disabled);
-  --background: var(--telekom-color-ui-outlined-fill-disabled);
+  --background: none;
 }
 
 .switch.switch--disabled input:checked ~ .switch__wrapper {
   --border: var(--telekom-color-ui-border-disabled);
-  --background: var(--telekom-color-ui-outlined-fill-disabled);
+  --background: none;
 }
 
 .switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,

@@ -252,7 +252,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 .scale-date-picker.scale-date-picker--disabled input:hover {
   color: var(--telekom-color-text-and-icon-disabled);
   border-color: var(--telekom-color-ui-border-disabled);
-  background: var(--telekom-color-ui-outlined-fill-disabled);
+  background: none;
 }
 .scale-date-picker.scale-date-picker--disabled .duet-date__toggle {
   color: var(--telekom-color-text-and-icon-disabled);
