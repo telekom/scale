@@ -17,8 +17,8 @@ scale-text-field {
     var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
-  --border-color-focus: var(--telekom-color-ui-outlined-border-hovered);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
   --background-color-hover: var(--telekom-color-ui-outlined-fill-hovered);
   --background-color-disabled: var(--telekom-color-ui-outlined-fill-disabled);

@@ -94,7 +94,7 @@
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
-  border-color: var(--telekom-color-ui-outlined-border-hovered);
+  border-color: var(--telekom-color-ui-border-hovered);
 }
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,

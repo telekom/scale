@@ -43,7 +43,7 @@ duet-date-picker .duet-date__input {
 
 duet-date-picker .duet-date__input:hover {
   border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-hovered);
+    var(--telekom-color-ui-border-hovered);
   background-color: var(--telekom-color-ui-outlined-fill-hovered);
 }
 

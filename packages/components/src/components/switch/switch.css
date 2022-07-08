@@ -126,7 +126,7 @@
 
 .switch:not(.switch--disabled):hover input:not(:checked) ~ .switch__wrapper {
   --background: var(--telekom-color-ui-outlined-fill-hovered);
-  --border: var(--telekom-color-ui-outlined-border-hovered);
+  --border: var(--telekom-color-ui-border-hovered);
 }
 
 .switch:not(.switch--disabled):hover
