@@ -20,7 +20,7 @@ scale-dropdown {
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
   --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);

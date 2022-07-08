@@ -32,7 +32,7 @@
   --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
 
   --border-button-dismissable-focus: 1px solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
   --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
   --background-button-dismissable-hover: var(
     --telekom-color-ui-ghost-hovered-inverted

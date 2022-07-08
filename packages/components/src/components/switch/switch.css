@@ -18,7 +18,7 @@
 
   --toggle: var(--telekom-color-ui-solid-standard);
   --background: var(--telekom-color-ui-outlined-fill-standard);
-  --border: var(--telekom-color-ui-outlined-border-standard);
+  --border: var(--telekom-color-ui-border-standard);
 
   --transition-duration: var(--telekom-motion-duration-transition);
   --transition-timing-function: var(--telekom-motion-easing-standard);

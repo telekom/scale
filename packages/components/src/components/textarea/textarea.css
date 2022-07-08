@@ -14,7 +14,7 @@ scale-textarea {
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-danger-standard);
   --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);

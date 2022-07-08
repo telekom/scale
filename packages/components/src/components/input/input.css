@@ -32,7 +32,7 @@
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
 }
 .input .input__textarea {
   width: 100%;
@@ -49,7 +49,7 @@
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
 }
 .input .input__select {
   appearance: none;
@@ -449,7 +449,7 @@
   -webkit-appearance: none;
   background-color: #fff;
   border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
   margin: 0 var(--telekom-spacing-unit-x2) 0 0;
 }
 .input--type-radio input:focus {
