@@ -10,7 +10,7 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-additional-extra-strong);
+  --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);

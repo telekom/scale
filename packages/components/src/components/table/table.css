@@ -26,7 +26,7 @@ scale-table {
   --background-tbody-tr-hover: var(--telekom-color-ui-ghost-hovered);
   --background-tfoot: var(--telekom-color-ui-outlined-fill-standard);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-additional-extra-strong);
+    var(--telekom-color-ui-extra-strong);
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
   --background-th-sortable-hover: var(--telekom-color-ui-subtle);

@@ -44,7 +44,7 @@
   --radius-primary: var(--radius);
   --background-primary: var(--telekom-color-ui-subtle);
   --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
-  --color-primary: var(--telekom-color-ui-additional-extra-strong);
+  --color-primary: var(--telekom-color-ui-extra-strong);
   --color-primary-hover: var(--telekom-color-primary-hovered);
   --color-primary-active: var(--telekom-color-primary-pressed);
 
@@ -66,7 +66,7 @@
   --background-selected-light: var(--telekom-color-primary-standard);
   --background-selected-hover-light: var(--telekom-color-primary-hovered);
   --background-selected-active-light: var(--telekom-color-primary-pressed);
-  --background-selected-dark: var(--telekom-color-ui-additional-extra-strong);
+  --background-selected-dark: var(--telekom-color-ui-extra-strong);
   --background-selected-hover-dark: var(--telekom-color-ui-strong);
   --background-selected-active-dark: var(--telekom-color-ui-strong);
 
