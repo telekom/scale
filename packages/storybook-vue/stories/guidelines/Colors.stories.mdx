@@ -1252,25 +1252,20 @@ import { addons } from '@storybook/addons';
               </tbody>
               {generateSectionTitle('UI', 'UI')}
               <tbody>
-                {generateTableColorRow(
-                  'color.ui.outlined.border.standard',
-                  'Für Outlines von Komponenten ohne sichtbare Füllung.',
-                  'For outlines of components without visible filling.'
-                )}
-                {generateTableColorRow(
-                  'color.ui.solid.standard',
-                  'Für Hintergrundflächen von Komponenten ohne Outline.',
-                  'For background areas of components without an outline.'
-                )}
-              </tbody>
-              {generateSectionSubTitle('UI Additional', 'UI additional')}
-              <tbody>
                 {generateTableColorRow('color.ui.additional.base')}
                 {generateTableColorRow('color.ui.additional.subtle')}
                 {generateTableColorRow('color.ui.additional.light')}
                 {generateTableColorRow('color.ui.additional.regular')}
                 {generateTableColorRow('color.ui.additional.strong')}
                 {generateTableColorRow('color.ui.additional.extra-strong')}
+              </tbody>
+              {generateSectionSubTitle('UI Border', 'UI border')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.ui.outlined.border.standard',
+                  'Für Outlines von Komponenten ohne sichtbare Füllung.',
+                  'For outlines of components without visible filling.'
+                )}
               </tbody>
               {generateSectionTitle('Agent States', 'Agent states')}
               {generateSectionDescription(
