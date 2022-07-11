@@ -35,7 +35,7 @@
   --background-primary: var(--telekom-color-primary-standard);
   --background-primary-hover: var(--telekom-color-primary-hovered);
   --background-primary-active: var(--telekom-color-primary-pressed);
-  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
   --color-primary: var(--telekom-color-text-and-icon-white-standard);
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
@@ -47,15 +47,15 @@
   --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
   --color-secondary-active: var(--telekom-color-text-and-icon-standard);
   --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-secondary: var(--telekom-color-ui-outlined-fill-standard);
-  --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
-  --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
+  --background-secondary: var(--telekom-color-ui-state-fill-standard);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-state-fill-pressed);
   --background-secondary-disabled: var(
     --telekom-color-ui-outlined-fill-disabled
   );
-  --border-secondary: var(--telekom-color-ui-outlined-border-standard);
-  --border-secondary-hover: var(--telekom-color-ui-outlined-border-hovered);
-  --border-secondary-active: var(--telekom-color-ui-outlined-border-pressed);
+  --border-secondary: var(--telekom-color-ui-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-border-pressed);
   --border-secondary-focus: var(--telekom-color-functional-focus);
 
   /* variant: ghost */
@@ -66,8 +66,8 @@
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-ghost-hover: var(--telekom-color-ui-ghost-hovered);
-  --background-ghost-active: var(--telekom-color-ui-ghost-pressed);
+  --background-ghost-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-ghost-active: var(--telekom-color-ui-state-fill-pressed);
 }
 
 .button {

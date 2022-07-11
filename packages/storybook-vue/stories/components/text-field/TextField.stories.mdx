@@ -117,16 +117,16 @@ scale-text-field {
     );
   --radius: var(--telekom-radius-standard);
   --border: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-outlined-border-standard
+      --telekom-color-ui-border-standard
     );
   --border-error: var(--telekom-spacing-unit-x05) solid var(
       --telekom-color-functional-danger-standard
     );
-  --border-color-hover: var(--telekom-color-ui-outlined-border-hovered);
-  --border-color-focus: var(--telekom-color-ui-outlined-border-hovered);
-  --border-color-disabled: var(--telekom-color-ui-outlined-border-disabled);
-  --background-color-hover: var(--telekom-color-ui-outlined-fill-hovered);
-  --background-color-disabled: var(--telekom-color-ui-outlined-fill-disabled);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-color-disabled: none;
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
       --telekom-color-functional-focus
     );
@@ -134,9 +134,9 @@ scale-text-field {
   --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
-  --border-color-readonly: var(--telekom-color-ui-outlined-border-disabled);
-  --background-readonly: var(--telekom-color-ui-solid-disabled);
+  --background-disabled: none;
+  --border-color-readonly: var(--telekom-color-ui-border-disabled);
+  --background-readonly: var(--telekom-color-ui-disabled);
 
   /* meta */
   --font-weight-meta: var(--telekom-line-weight-bold);
@@ -152,7 +152,7 @@ scale-text-field {
         ) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
-  --background-control: var(--telekom-color-ui-outlined-fill-standard);
+  --background-control: var(--telekom-color-ui-state-fill-standard);
 
   /* counter */
   --transition-counter: var(--transition);
