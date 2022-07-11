@@ -2,6 +2,12 @@
 
 This page documents updates to the visual appearance of Scale.
 
+## Simplification of UI color tokens
+
+11.07.22
+
+We have simplified the structure of UI colors and removed duplications. You can find [a detailed overview of the changes here](https://github.com/telekom/design-tokens/pull/192#issuecomment-1178815001).
+
 ## Refinements to the Color Palette
 
 23.06.22
