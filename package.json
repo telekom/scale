@@ -33,5 +33,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "@telekom/design-tokens": "^1.0.0-beta.1"
   }
 }
