@@ -51,9 +51,7 @@ scale-radio-button {
     solid var(--telekom-color-primary-pressed, #cb0068);
   --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
     solid var(--telekom-color-ui-border-disabled);
-  --background-control-checked-disabled: var(
-    --telekom-color-ui-outlined-fill-disabled
-  );
+  --background-control-checked-disabled: none;
   --border-control-active: var(--telekom-spacing-unit-x2) solid
     var(--telekom-color-primary-pressed);
   --border-control-disabled: var(--telekom-spacing-unit-x025) solid
