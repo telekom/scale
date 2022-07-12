@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="build/scale-components.esm.js"></script>
+    <script nomodule src="build/scale-components.js"></script>
+    <link rel="stylesheet" href="build/scale-components.css" />
+
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        background: var(--telekom-color-background-canvas-subtle);
+      }
+      .largeish {
+        font: var(--telekom-text-style-lead-text);
+        font-weight: var(--telekom-typography-font-weight-extra-bold);
+      }
+      .smallish {
+        font-size: var(--telekom-typography-font-size-caption);
+      }
+      scale-button {
+        --color-ghost: var(--telekom-color-text-and-icon-standard);
+      }
+      scale-button[variant='ghost']::part(base):hover {
+        color: var(--telekom-color-primary-hovered);
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body data-mode="light">
+
+    <scale-brand-header-poc>
+      <div slot="main-lg" class="largeish">
+        <span>Hello Main Nav</span>
+        <span>Hello Main Nav</span>
+        <span>Hello Main Nav</span>
+      </div>
+      <div slot="extra-lg">
+        <span class="smallish">This is the top</span>
+      </div>
+      <div slot="meta-lg">
+        <scale-link href="#" class="smallish">English</scale-link>
+      </div>
+      <div slot="icon-lg" style="display: flex">
+        <scale-menu-flyout>
+          <scale-button slot="trigger" variant="ghost" icon-only>
+            <scale-icon-service-settings></scale-icon-service-settings>
+          </scale-button>
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item>Action 1</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Action 2</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Action 3</scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+        <scale-button variant="ghost" icon-only>
+          <scale-icon-action-search></scale-icon-action-search>
+        </scale-button>
+      </div>
+      <div slot="icon-sm">
+        <scale-button variant="ghost" icon-only>
+          <scale-icon-action-search></scale-icon-action-search>
+        </scale-button>
+      </div>
+    </scale-brand-header-poc>
+
+    <img src="nima-mot-CdMlh9z906E-unsplash-large.jpg" alt="">
+
+    <script type="module">
+      let f = document.querySelector('scale-menu-flyout');
+      let t = document.querySelector(
+        'scale-button[slot="trigger"] > scale-icon-service-settings'
+      );
+      f.addEventListener('scale-open', () => {
+        t.selected = true;
+      });
+      f.addEventListener('scale-close', () => {
+        t.selected = false;
+      });
+    </script>
+  </body>
+</html>

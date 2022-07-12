@@ -1,0 +1,106 @@
+:host {
+  display: block;
+  position: relative;
+  z-index: 2147483647; /* https://open-props.style/#z-index */
+
+  --logo-width: 108px;
+  --top-bar-min-height: var(--telekom-spacing-unit-x12);
+  --right-spacing-right-lg: var(--telekom-spacing-unit-x5);
+  --right-spacing-right-sm: var(--telekom-spacing-unit-x2);
+}
+
+:host([debug]) div {
+  outline: 1px solid gold;
+}
+
+@media screen and (max-width: 1023px) {
+  :host .viewport-large {
+    display: none;
+  }
+
+  :host {
+    --logo-width: 56px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :host .viewport-small {
+    display: none;
+  }
+}
+
+.base {
+  display: flex;
+  box-shadow: var(--telekom-shadow-app-bar-top-raised);
+}
+
+.logo {
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  width: var(--logo-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--telekom-color-primary-standard);
+}
+
+.logo svg {
+  width: 50%;
+  fill: var(--telekom-color-text-and-icon-white-standard);
+}
+
+.bar {
+  display: flex;
+  flex-grow: 1;
+}
+
+.viewport-large,
+.viewport-small {
+  display: contents;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.left {
+  flex-grow: 1;
+  align-items: center;
+}
+
+.right {
+  align-items: flex-end;
+  margin-left: var(--telekom-spacing-unit-x6);
+  padding-right: var(--right-spacing-right-lg);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  min-height: var(--top-bar-min-height);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.viewport-small .left,
+.viewport-small .right {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.viewport-small .right {
+  margin-left: var(--telekom-spacing-unit-x2);
+  padding-right: var(--right-spacing-right-sm);
+}
