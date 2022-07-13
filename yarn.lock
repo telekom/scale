@@ -4793,11 +4793,6 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@telekom/design-tokens@^1.0.0-alpha.25":
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.25.tgz#94c5fbe18e04089a055fa68b5e87a843fae8d637"
-  integrity sha512-moX65JszvUi5E3Xz5bnZfXKPXKr/h2rN5XiwCZz7NgPczxiAnW9CYWGYjcyvmPub4Q5F1VMsbLyDXUYAmQ6v7A==
-
 "@telekom/design-tokens@^1.0.0-beta.1":
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.1.tgz#44cc5dbb34ffae464dc0ddb03c07a5a7fe1edb28"
