@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+
+### Bug Fixes
+
+* **menu-flyout:** properly close sublists ([#1131](https://github.com/telekom/scale/issues/1131)) ([b47d6e9](https://github.com/telekom/scale/commit/b47d6e983f3c4cbb23ca88062ca1d04aa1978faa))
+* Potential a11y issue with switch [#822](https://github.com/telekom/scale/issues/822) ([#1121](https://github.com/telekom/scale/issues/1121)) ([4e959aa](https://github.com/telekom/scale/commit/4e959aabe59ca124bc44a0b9449633abf806ad9a))
+* use correct border color token ([#1112](https://github.com/telekom/scale/issues/1112)) ([077633b](https://github.com/telekom/scale/commit/077633b751e9b1c11c759ca28901ecd44cb8ec70))
+* use next release version for working nuxt3 app ([#1129](https://github.com/telekom/scale/issues/1129)) ([29e9e5b](https://github.com/telekom/scale/commit/29e9e5b3752f2fa4b4b28bb1814148b4dcda5d94))
+* **flyout:** avoid type errors of this.list ([#1118](https://github.com/telekom/scale/issues/1118)) ([6b4e505](https://github.com/telekom/scale/commit/6b4e50593ed26840f329a038e7827b9fe996f55c))
+
+
+### Features
+
+* **button:** forms will submit with Enter key ([#1120](https://github.com/telekom/scale/issues/1120)) ([73af76f](https://github.com/telekom/scale/commit/73af76f2ecb367be0345d5fc192eb04cd8f2b0d2))
+* **menu-flyout:** close menu with click on trigger ([#1126](https://github.com/telekom/scale/issues/1126)) ([2372c43](https://github.com/telekom/scale/commit/2372c4359bdfa1b6c36e063a4ffce9ea8f534d37))
+* **modal:** add --min-height-window var ([#1127](https://github.com/telekom/scale/issues/1127)) ([bb48463](https://github.com/telekom/scale/commit/bb4846394b84e4c4f81123b1766ca00bfe5f0c18))
+* adding possibility to use a tags with scale-link inside breadcrumbs ([#1089](https://github.com/telekom/scale/issues/1089)) ([8b44a3b](https://github.com/telekom/scale/commit/8b44a3b8edc22d8968f36e53aa04fa41d904f4b8))
+
+
+
+
+
 # [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
 
 
