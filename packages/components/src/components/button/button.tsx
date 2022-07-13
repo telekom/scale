@@ -64,6 +64,7 @@ export class Button {
   @Prop() innerTabindex?: number;
 
   private focusableElement: HTMLElement;
+  private fallbackSubmitInputElement: HTMLInputElement;
 
   /**
    * Prevent clicks from being emitted from the host
@@ -88,8 +89,8 @@ export class Button {
   handleClick = (ev: Event) => {
     // No need to check for `disabled` because disabled buttons won't emit clicks
     if (hasShadowDom(this.hostElement)) {
-      const form = this.hostElement.closest('form');
-      if (form) {
+      const parentForm = this.hostElement.closest('form');
+      if (parentForm) {
         ev.preventDefault();
 
         const fakeButton = document.createElement('button');
@@ -97,7 +98,7 @@ export class Button {
           fakeButton.type = this.type;
         }
         fakeButton.style.display = 'none';
-        form.appendChild(fakeButton);
+        parentForm.appendChild(fakeButton);
         fakeButton.click();
         fakeButton.remove();
       }
@@ -106,10 +107,51 @@ export class Button {
 
   connectedCallback() {
     this.setIconPositionProp();
+    this.appendEnterKeySubmitFallback();
   }
 
   componentDidLoad() {
     this.setChildrenIconSize();
+  }
+
+  disconnectedCallback() {
+    this.cleanUpEnterKeySubmitFallback();
+  }
+
+  /**
+   * In order for forms to be submitted with the Enter key
+   * there has to be a `button` or an `input[type="submit"]` in the form.
+   * Browsers do not take the <button> inside the Shadow DOM into account for this matter.
+   * So we carefully append an `input[type="submit"]` to overcome this.
+   *
+   * @see https://stackoverflow.com/a/35235768
+   * @see https://github.com/telekom/scale/issues/859
+   */
+  appendEnterKeySubmitFallback() {
+    if (hasShadowDom(this.hostElement)) {
+      const parentForm = this.hostElement.closest('form');
+      if (parentForm == null) {
+        return;
+      }
+      const hasSubmitInputAlready =
+        parentForm.querySelector('input[type="submit"]') != null;
+      if (hasSubmitInputAlready) {
+        return;
+      }
+      this.fallbackSubmitInputElement = document.createElement('input');
+      this.fallbackSubmitInputElement.type = 'submit';
+      this.fallbackSubmitInputElement.hidden = true;
+      parentForm.appendChild(this.fallbackSubmitInputElement);
+    }
+  }
+
+  cleanUpEnterKeySubmitFallback() {
+    if (this.fallbackSubmitInputElement != null) {
+      try {
+        this.fallbackSubmitInputElement.remove();
+        this.fallbackSubmitInputElement = null;
+      } catch (err) {}
+    }
   }
 
   /**
