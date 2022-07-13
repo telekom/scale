@@ -1252,25 +1252,20 @@ import { addons } from '@storybook/addons';
               </tbody>
               {generateSectionTitle('UI', 'UI')}
               <tbody>
+                {generateTableColorRow('color.ui.base')}
+                {generateTableColorRow('color.ui.subtle')}
+                {generateTableColorRow('color.ui.light')}
+                {generateTableColorRow('color.ui.regular')}
+                {generateTableColorRow('color.ui.strong')}
+                {generateTableColorRow('color.ui.extra-strong')}
+              </tbody>
+              {generateSectionSubTitle('UI Border', 'UI border')}
+              <tbody>
                 {generateTableColorRow(
-                  'color.ui.outlined.border.standard',
+                  'color.ui.border.standard',
                   'Für Outlines von Komponenten ohne sichtbare Füllung.',
                   'For outlines of components without visible filling.'
                 )}
-                {generateTableColorRow(
-                  'color.ui.solid.standard',
-                  'Für Hintergrundflächen von Komponenten ohne Outline.',
-                  'For background areas of components without an outline.'
-                )}
-              </tbody>
-              {generateSectionSubTitle('UI Additional', 'UI additional')}
-              <tbody>
-                {generateTableColorRow('color.ui.additional.base')}
-                {generateTableColorRow('color.ui.additional.subtle')}
-                {generateTableColorRow('color.ui.additional.light')}
-                {generateTableColorRow('color.ui.additional.regular')}
-                {generateTableColorRow('color.ui.additional.strong')}
-                {generateTableColorRow('color.ui.additional.extra-strong')}
               </tbody>
               {generateSectionTitle('Agent States', 'Agent states')}
               {generateSectionDescription(
@@ -1310,44 +1305,37 @@ import { addons } from '@storybook/addons';
               {generateSectionSubTitle('UI Outlined', 'UI outlined elements')}
               <tbody>
                 {generateUIOutlinedTableColorRow(
-                  'color.ui.outlined.fill.standard',
-                  'color.ui.outlined.border.standard',
+                  'color.ui.state-fill.standard',
+                  'color.ui.border.standard',
                   '#fff',
                   '#fff',
                   '#000',
                   '#fff'
                 )}
                 {generateUIOutlinedTableColorRow(
-                  'color.ui.outlined.fill.hovered',
-                  'color.ui.outlined.border.hovered',
+                  'color.ui.state-fill.hovered',
+                  'color.ui.border.hovered',
                   '#000',
                   '#fff',
                   '#fff',
                   '#fff'
                 )}
                 {generateUIOutlinedTableColorRow(
-                  'color.ui.outlined.fill.pressed',
-                  'color.ui.outlined.border.pressed',
+                  'color.ui.state-fill.pressed',
+                  'color.ui.border.pressed',
                   '#000',
                   '#fff',
                   '#fff',
                   '#000'
                 )}
                 {generateUIOutlinedTableColorRow(
-                  'color.ui.outlined.fill.disabled',
-                  'color.ui.outlined.border.disabled',
+                  'color.ui.state-fill.standard',
+                  'color.ui.border.disabled',
                   '#000',
                   '#000',
                   '#fff',
                   '#fff'
                 )}
-              </tbody>
-              {generateSectionSubTitle('UI Solid', 'UI solid elements')}
-              <tbody>
-                {generateTableColorRow('color.ui.solid.standard')}
-                {generateTableColorRow('color.ui.solid.hovered')}
-                {generateTableColorRow('color.ui.solid.pressed')}
-                {generateTableColorRow('color.ui.solid.disabled')}
               </tbody>
               {generateSectionTitle('Additional', 'Additional')}
               {generateSectionDescription(
