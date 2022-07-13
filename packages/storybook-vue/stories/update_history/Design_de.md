@@ -6,7 +6,7 @@ Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
 11.07.22
 
-Wir habe die Struktur der UI-Farben vereinfacht und Dopplungen entfernt. Eine [detaillierte Übersicht der Änderungen findest du hier](https://github.com/telekom/design-tokens/pull/192#issuecomment-1178815001).
+Wir habe die Struktur der UI-Farben vereinfacht und Dopplungen entfernt. Eine <a href="https://github.com/telekom/design-tokens/pull/192#issuecomment-1178815001" target="_blank" rel="noopener noreferrer">detaillierte Übersicht der Änderungen findest du hier</a>.
 
 ## Überarbeitung der Farbpalette
 
