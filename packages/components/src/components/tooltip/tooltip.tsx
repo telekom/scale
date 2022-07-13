@@ -58,7 +58,7 @@ export class Tooltip {
   /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
   /** (optional) Set custom trigger Event selection */
-  @Prop() trigger: string = 'click';
+  @Prop() trigger: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
   @Prop() flip: boolean = true;
   /** (optional) Injected CSS styles */
