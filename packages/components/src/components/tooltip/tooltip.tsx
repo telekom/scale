@@ -20,8 +20,10 @@ import {
   Watch,
   h,
   State,
+  Listen,
 } from '@stencil/core';
-import Popover from './utilities/popover';
+import { computePosition, offset, flip, shift, arrow } from '@floating-ui/dom';
+import { isClickOutside } from '../../utils/utils';
 
 let id = 0;
 
@@ -32,13 +34,7 @@ let id = 0;
 })
 export class Tooltip {
   componentId = `tooltip-${++id}`;
-  isVisible = false;
-  popover: Popover;
-  tooltipPositioner: HTMLElement;
-  target: HTMLElement;
-  tooltip: any;
-
-  @Element() host: HTMLElement;
+  @Element() hostEl: HTMLElement;
   /** (optional) The content of the Tooltip supporting Text only */
   @Prop() content = '';
   /** (optional) Position of the Tooltip on the Object */
@@ -61,16 +57,10 @@ export class Tooltip {
   @Prop() distance = 5;
   /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
-  /** (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either
-   * on an x-axis (at `placement` top/down) or on a y-axis (for output `placement` left/right)
-   */
-  @Prop() skidding = 0;
   /** (optional) Set custom trigger Event selection */
   @Prop() trigger: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
   @Prop() flip: boolean = true;
-  /** (optional) Switching the preventOverflow option of the tooltip on and off */
-  @Prop() preventOverflow: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @State() mouseOverTooltip: boolean = false;
@@ -80,50 +70,87 @@ export class Tooltip {
   @Event({ eventName: 'scale-before-hide' }) tooltipBeforeHide: EventEmitter;
   @Event({ eventName: 'scale-hide' }) tooltipHide: EventEmitter;
 
+  private tooltipEl: HTMLElement;
+  private arrowEl: HTMLElement;
+
   @Watch('open')
   handleOpenChange() {
     this.open ? this.showTooltip() : this.hideTooltip();
   }
 
-  connectedCallback() {
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleMouseOver = this.handleMouseOver.bind(this);
-    this.handleMouseOut = this.handleMouseOut.bind(this);
-    this.handleSlotChange = this.handleSlotChange.bind(this);
+  componentDidLoad() {
+    this.hostEl.addEventListener('blur', this.handleBlur, true);
+    this.hostEl.addEventListener('click', this.handleClick, true);
+    this.hostEl.addEventListener('focus', this.handleFocus, true);
+  }
+  disconnectedCallback() {
+    this.hostEl.removeEventListener('blur', this.handleBlur, true);
+    this.hostEl.removeEventListener('click', this.handleClick, true);
+    this.hostEl.removeEventListener('focus', this.handleFocus, true);
   }
 
-  componentDidLoad() {
-    this.target = this.getTarget();
-    this.popover = new Popover(this.target, this.tooltipPositioner);
-    this.syncPopoverOptions();
+  @Listen('click', { target: 'document' })
+  handleOutsideClick(event: MouseEvent) {
+    if (isClickOutside(event, this.hostEl)) {
+      this.hideTooltip();
+    }
+  }
 
-    this.host.addEventListener('blur', this.handleBlur, true);
-    this.host.addEventListener('click', this.handleClick, true);
-    this.host.addEventListener('focus', this.handleFocus, true);
-
-    this.tooltipPositioner.hidden = !this.open;
+  componentDidUpdate() {
+    this.update();
     if (this.open) {
       this.showTooltip();
     }
   }
 
-  componentDidUpdate() {
-    this.syncPopoverOptions();
-  }
+  update = () => {
+    if (!this.disabled) {
+      computePosition(
+        Array.from(this.hostEl.children).find((x) => !x.hasAttribute('slot')),
+        this.tooltipEl,
+        {
+          placement: this.placement,
+          middleware: [
+            offset(this.distance),
+            ...(this.flip ? [flip()] : []),
+            arrow({ element: this.arrowEl }),
+            shift({ crossAxis: true }),
+          ],
+        }
+      ).then(({ x, y, placement, middlewareData }) => {
+        Object.assign(this.tooltipEl.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        });
 
-  disconnectedCallback() {
-    this.popover.destroy();
-    this.host.removeEventListener('blur', this.handleBlur, true);
-    this.host.removeEventListener('click', this.handleClick, true);
-    this.host.removeEventListener('focus', this.handleFocus, true);
+        // Accessing the data
+        const { x: arrowX, y: arrowY } = middlewareData.arrow;
+
+        const staticSide = {
+          top: 'bottom',
+          right: 'left',
+          bottom: 'top',
+          left: 'right',
+        }[placement.split('-')[0]];
+
+        Object.assign(this.arrowEl.style, {
+          left: arrowX != null ? `${arrowX}px` : '',
+          top: arrowY != null ? `${arrowY}px` : '',
+          right: '',
+          bottom: '',
+          [staticSide]: '-2.79px',
+        });
+      });
+    }
+  };
+
+  componentDidRender() {
+    this.update();
   }
 
   @Method()
   async showTooltip() {
-    if (this.isVisible) {
+    if (this.open) {
       return;
     }
     const scaleShow = this.tooltipBeforeShow.emit();
@@ -131,14 +158,13 @@ export class Tooltip {
       this.open = false;
       return;
     }
-    this.isVisible = true;
     this.open = true;
-    this.popover.show();
+    this.update();
   }
 
   @Method()
   async hideTooltip() {
-    if (!this.isVisible) {
+    if (!this.open) {
       return;
     }
     const tooltipBeforeHide = this.tooltipBeforeHide.emit();
@@ -146,131 +172,91 @@ export class Tooltip {
       this.open = true;
       return;
     }
-    this.isVisible = false;
     this.open = false;
-    this.popover.hide();
+    this.update();
   }
 
-  getTarget() {
-    const target = this.host.shadowRoot.querySelector(
-      '[part="slot-container"]'
-    ) as HTMLElement;
-
-    if (!target) {
-      throw new Error('Invalid tooltip target: no child element was found.');
-    }
-    return target;
-  }
-
-  handleBlur() {
+  handleBlur = () => {
     if (this.hasTrigger('focus')) {
       this.hideTooltip();
     }
-  }
+  };
 
-  handleClick() {
+  handleClick = () => {
     if (this.hasTrigger('click')) {
-      this.open ? this.hideTooltip() : this.showTooltip();
+      this.open && !this.hasTrigger('focus')
+        ? this.hideTooltip()
+        : this.showTooltip();
     }
-  }
+  };
 
-  handleFocus() {
+  handleFocus = () => {
     if (this.hasTrigger('focus')) {
       this.showTooltip();
     }
-  }
+  };
 
-  handleKeyDown(event: KeyboardEvent) {
+  handleKeyDown = (event: KeyboardEvent) => {
     if (this.open && event.key === 'Escape') {
       event.stopPropagation();
       this.hideTooltip();
     }
-  }
+  };
 
-  handleMouseOver() {
+  handleMouseOver = () => {
     if (this.hasTrigger('hover')) {
       this.showTooltip();
     }
-  }
+  };
 
-  handleTooltipMouseOver() {
-    this.mouseOverTooltip = true;
-  }
-
-  handleMouseOut() {
+  handleMouseOut = () => {
     if (!this.mouseOverTooltip) {
       if (this.hasTrigger('hover')) {
         this.hideTooltip();
       }
     }
-  }
+  };
 
-  handleSlotChange() {
-    const oldTarget = this.target;
-    const newTarget = this.getTarget();
+  handleTooltipMouseOver = () => {
+    this.mouseOverTooltip = true;
+  };
 
-    if (newTarget !== oldTarget) {
-      if (oldTarget) {
-        oldTarget.removeAttribute('aria-describedby');
-      }
-      newTarget.setAttribute('aria-describedby', this.componentId);
-    }
-  }
+  handleTooltipBlur = () => {
+    this.mouseOverTooltip = false;
+    this.handleMouseOut();
+  };
 
-  hasTrigger(triggerType: string) {
+  hasTrigger = (triggerType: string) => {
     const triggers = this.trigger.split(' ');
     return triggers.includes(triggerType);
-  }
-
-  syncPopoverOptions() {
-    this.popover.setOptions({
-      placement: this.placement,
-      distance: this.distance,
-      skidding: this.skidding,
-      transitionElement: this.tooltip,
-      onAfterHide: () => this.tooltipHide.emit(),
-      onAfterShow: () => this.tooltipShow.emit(),
-    });
-    this.popover.setPreventOverflow(this.preventOverflow);
-    this.popover.setFlip(this.flip);
-  }
+  };
 
   render() {
     return (
       <Host
-        class="host-container"
-        part="host-container"
         onKeyDown={this.handleKeyDown}
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
       >
         {this.styles && <style>{this.styles}</style>}
-        <div part="slot-container">
-          <slot onSlotchange={this.handleSlotChange}></slot>
+
+        <div part="trigger" aria-describedby={this.componentId}>
+          <slot></slot>
         </div>
+
         {!this.disabled && (
           <div
-            class="tooltip-positioner"
-            part="tooltip-positioner"
-            ref={(el) => (this.tooltipPositioner = el)}
+            part="tooltip"
+            role="tooltip"
+            aria-hidden={this.open ? 'false' : 'true'}
+            ref={(el) => (this.tooltipEl = el)}
+            id={this.componentId}
+            tabIndex={0}
             onMouseOver={this.handleTooltipMouseOver}
+            onMouseLeave={this.handleTooltipBlur}
           >
-            <div
-              class={{
-                tooltip: true,
-                'tooltip--open': this.open,
-              }}
-              onMouseOver={this.handleTooltipMouseOver}
-              part="base"
-              ref={(el) => (this.tooltip = el)}
-              id={this.componentId}
-              role="tooltip"
-              aria-hidden={this.open ? 'false' : 'true'}
-            >
-              <div class="content-wrapper" part="content-wrapper" tabindex={0}>
-                <slot name="content">{this.content}</slot>
-              </div>
-            </div>
+            <slot name="content">{this.content}</slot>
+            <div part="arrow" ref={(el) => (this.arrowEl = el)}></div>
           </div>
         )}
       </Host>

@@ -10,7 +10,7 @@
  */
 
 app-navigation-sector-mobile {
-  --border-bottom: 1px solid var(--telekom-color-ui-additional-subtle);
+  --border-bottom: 1px solid var(--telekom-color-ui-subtle);
   --color: var(--telekom-color-text-and-icon-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);

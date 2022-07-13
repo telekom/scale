@@ -168,6 +168,7 @@ export const Template = (args, context) => ({
   );
 
   --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unit-x20)));
+  --min-height-window: ; /* undefined by design */
   --radius-window: var(--telekom-radius-large);
   --box-shadow-window: var(--telekom-shadow-top);
   --background-window: var(--telekom-color-background-surface);
@@ -195,7 +196,7 @@ export const Template = (args, context) => ({
 
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid var(
       --telekom-color-ui-general-subtle,
-      var(--telekom-color-ui-additional-subtle)
+      var(--telekom-color-ui-subtle)
     );
 
   --font-family-heading: var(--telekom-typography-font-family-sans);

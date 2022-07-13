@@ -86,9 +86,9 @@
 .data-grid {
   position: relative;
   display: block;
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
   border-radius: var(--telekom-radius-large);
-  border: 1px solid var(--telekom-color-ui-additional-light);
+  border: 1px solid var(--telekom-color-ui-faint);
   overflow: hidden;
 }
 
@@ -150,9 +150,9 @@
 .thead {
   display: block;
   white-space: nowrap;
-  border-bottom: 1px solid var(--telekom-color-ui-additional-light);
+  border-bottom: 1px solid var(--telekom-color-ui-faint);
   position: relative;
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
   z-index: 1;
 }
 
@@ -250,7 +250,7 @@
   pointer-events: none;
   height: 100%;
   width: 1px;
-  background: var(--telekom-color-ui-additional-light);
+  background: var(--telekom-color-ui-faint);
 }
 
 .thead__cell:first-child {
@@ -413,7 +413,7 @@
   height: 54px;
   position: relative;
   border-top: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-additional-subtle);
+    var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;
 }
@@ -426,8 +426,8 @@
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
-  border-bottom: 1px solid var(--telekom-color-ui-additional-subtle);
-  border-right: 1px solid var(--telekom-color-ui-additional-subtle);
+  border-bottom: 1px solid var(--telekom-color-ui-subtle);
+  border-right: 1px solid var(--telekom-color-ui-subtle);
 }
 
 /* Mobile */
@@ -466,7 +466,7 @@
   padding: var(--telekom-spacing-unit-x6);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
-  border: 1px solid var(--telekom-color-ui-additional-light);
+  border: 1px solid var(--telekom-color-ui-faint);
 }
 .data-grid--mobile .tbody__row:hover {
   background: var(--telekom-color-background-surface);

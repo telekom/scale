@@ -11,7 +11,7 @@
 
 :host {
   --border-width-divider: var(--telekom-spacing-unit-x025);
-  --color-divider: var(--telekom-color-ui-additional-subtle);
+  --color-divider: var(--telekom-color-ui-subtle);
   --color-menu-item-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-menu-item-active: var(--telekom-color-text-and-icon-primary-pressed);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
