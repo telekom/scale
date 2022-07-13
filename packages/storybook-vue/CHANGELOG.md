@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+
+### Features
+
+* **modal:** add --min-height-window var ([#1127](https://github.com/telekom/scale/issues/1127)) ([bb48463](https://github.com/telekom/scale/commit/bb4846394b84e4c4f81123b1766ca00bfe5f0c18))
+
+
+
+
+
 # [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
 
 
