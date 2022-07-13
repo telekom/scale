@@ -89,8 +89,8 @@ export class Button {
   handleClick = (ev: Event) => {
     // No need to check for `disabled` because disabled buttons won't emit clicks
     if (hasShadowDom(this.hostElement)) {
-      const form = this.hostElement.closest('form');
-      if (form) {
+      const parentForm = this.hostElement.closest('form');
+      if (parentForm) {
         ev.preventDefault();
 
         const fakeButton = document.createElement('button');
@@ -98,7 +98,7 @@ export class Button {
           fakeButton.type = this.type;
         }
         fakeButton.style.display = 'none';
-        form.appendChild(fakeButton);
+        parentForm.appendChild(fakeButton);
         fakeButton.click();
         fakeButton.remove();
       }
@@ -128,19 +128,21 @@ export class Button {
    * @see https://github.com/telekom/scale/issues/859
    */
   appendEnterKeySubmitFallback() {
-    const parentForm = this.hostElement.closest('form');
-    if (parentForm == null) {
-      return;
+    if (hasShadowDom(this.hostElement)) {
+      const parentForm = this.hostElement.closest('form');
+      if (parentForm == null) {
+        return;
+      }
+      const hasSubmitInputAlready =
+        parentForm.querySelector('input[type="submit"]') != null;
+      if (hasSubmitInputAlready) {
+        return;
+      }
+      this.fallbackSubmitInputElement = document.createElement('input');
+      this.fallbackSubmitInputElement.type = 'submit';
+      this.fallbackSubmitInputElement.hidden = true;
+      parentForm.appendChild(this.fallbackSubmitInputElement);
     }
-    const hasSubmitInputAlready =
-      parentForm.querySelector('input[type="submit"]') != null;
-    if (hasSubmitInputAlready) {
-      return;
-    }
-    this.fallbackSubmitInputElement = document.createElement('input');
-    this.fallbackSubmitInputElement.type = 'submit';
-    this.fallbackSubmitInputElement.hidden = true;
-    parentForm.appendChild(this.fallbackSubmitInputElement);
   }
 
   cleanUpEnterKeySubmitFallback() {
