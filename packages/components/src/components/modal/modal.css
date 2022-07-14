@@ -17,6 +17,7 @@
   );
 
   --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unit-x20)));
+  --min-height-window: ; /* undefined by design */
   --radius-window: var(--telekom-radius-large);
   --box-shadow-window: var(--telekom-shadow-top);
   --background-window: var(--telekom-color-background-surface);
@@ -46,10 +47,7 @@
   --spacing-y-header: var(--telekom-spacing-unit-x6);
 
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
-    var(
-      --telekom-color-ui-general-subtle,
-      var(--telekom-color-ui-additional-subtle)
-    );
+    var(--telekom-color-ui-subtle);
 
   --font-family-heading: var(--telekom-typography-font-family-sans);
   --font-size-heading: var(--telekom-typography-font-size-callout);
@@ -116,6 +114,7 @@
   background-color: var(--background-window);
   color: var(--color-window);
   max-height: var(--max-height-window);
+  min-height: var(--min-height-window);
   border-radius: var(--radius-window);
   box-shadow: var(--box-shadow-window);
 }
@@ -123,6 +122,7 @@
 .modal__window .modal__body-wrapper {
   overflow-y: auto;
   flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .modal--size-small .modal__window {
