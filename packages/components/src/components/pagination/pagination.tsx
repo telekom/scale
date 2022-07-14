@@ -64,6 +64,9 @@ export class Pagination {
   @Prop() styles?: string;
   /** @deprecated - size should replace small */
   @Prop() small: boolean = false;
+  /** (optional) size  */
+  /** @deprecated - size should replace small */
+  @Prop() size: 'small' | 'large';
   /** (optional) translation to 'Go to first page'  */
   @Prop() ariaLabelFirstPage = 'Go to first page';
   /** (optional) translation to 'Go to next page'  */
@@ -110,7 +113,15 @@ export class Pagination {
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message: 'Property "small" is deprecated. Please use css overwrites!',
+        message: 'Property "small" is deprecated. Please use css overwrite!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.hostElement,
       });
