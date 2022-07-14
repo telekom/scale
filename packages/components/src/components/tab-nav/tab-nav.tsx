@@ -33,6 +33,9 @@ export class TabNav {
   /** True for smaller height and font size in tab headers. */
   /** @deprecated - css overwrites should replace small */
   @Prop() small?: boolean = false;
+  /** (optional) size  */
+  /** @deprecated - css overwrites should replace size */
+  @Prop() size: 'small' | 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -96,8 +99,14 @@ export class TabNav {
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message:
-          'Property "small" is deprecated. Please use the css overwrites!',
+        message: 'Property "small" is deprecated. Please use css overwrite!',
+        type: 'warn',
+        source: this.el,
+      });
+    } else if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.el,
       });
