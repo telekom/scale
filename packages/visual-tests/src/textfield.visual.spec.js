@@ -15,7 +15,6 @@ describe('Textfield', () => {
       ['with-error'],
       ['disabled'],
       ['read-only'],
-      ['small'],
       ['max-length-with-counter'],
     ])('%p', async (variant) => {
       await page.goto(

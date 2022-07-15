@@ -35,7 +35,6 @@ describe('TextField', () => {
                  label ="label"
                  max-length="2"
                  min-length="1"
-                 size ="size"
                  invalid="true"
                  placeholder ="placeholder"
                  disabled ="true"
@@ -52,7 +51,6 @@ describe('TextField', () => {
     expect(specPage.rootInstance.type).toBe('email');
     expect(specPage.rootInstance.name).toBe('name');
     expect(specPage.rootInstance.label).toBe('label');
-    expect(specPage.rootInstance.size).toBe('size');
     expect(specPage.rootInstance.maxLength).toBe(2);
     expect(specPage.rootInstance.minLength).toBe(1);
     expect(specPage.rootInstance.invalid).toBe(true);
@@ -190,9 +188,6 @@ describe('TextField', () => {
 
     element.invalid = true;
     expect(element.getCssClassMap()).toContain('text-field--status-error');
-
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('text-field--size-small');
   });
 
   it('should handle hasFocus right', () => {
