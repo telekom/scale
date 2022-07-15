@@ -189,24 +189,6 @@ scale-text-field {
 .text-field--status-error .text-field__counter {
   color: var(--color-counter-error);
 }
-.text-field--size-small .text-field__control {
-  height: var(--height-small);
-}
-.text-field--size-small .text-field__label {
-  font-size: var(--font-size-label-small);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height-small) - var(--font-size-label-small)) / 2)
-  );
-  font-weight: var(--font-weight-label-small);
-}
-.text-field--size-small.text-field--has-focus:not(.text-field--readonly)
-  .text-field__label,
-.text-field--size-small.animated .text-field__label {
-  line-height: var(--telekom-typography-font-size-small);
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
-  font-size: var(--font-size-label-focus);
-}
 .text-field--transparent .text-field__control {
   background-color: transparent;
 }

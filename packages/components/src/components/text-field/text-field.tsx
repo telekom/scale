@@ -54,8 +54,8 @@ export class TextField {
   @Prop() name?: string = '';
   /** Input label */
   @Prop() label: string = '';
-  /** (optional) Input size */
-  @Prop() size?: string = '';
+  /** @deprecate - css overwrite should replace size */
+  @Prop() size?: string;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** @deprecated - invalid should replace status */
@@ -137,6 +137,14 @@ export class TextField {
         tag: 'deprecated',
         message:
           'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.hostElement,
       });
@@ -271,7 +279,6 @@ export class TextField {
       this.transparent && 'text-field--transparent',
       this.status && `text-field--status-${this.status}`,
       this.invalid && `text-field--status-error`,
-      this.size && `text-field--size-${this.size}`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'
     );

@@ -38,6 +38,13 @@ export const ICON =
         ],
       },
     },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
   }}
 />
 
@@ -63,7 +70,6 @@ export const Template = (args, { argTypes }) => ({
       :readonly="readonly"
       :required="required"
       :counter="counter"
-      :size="size"
       :value="value"
       :input-id="inputId"
       :input-autofocus="inputAutofocus"
@@ -131,7 +137,6 @@ scale-text-field {
       --telekom-color-functional-focus
     );
   --height: var(--telekom-spacing-unit-x12);
-  --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: var(--telekom-color-ui-outlined-fill-disabled);
@@ -180,8 +185,6 @@ scale-text-field {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-small: var(--telekom-typography-font-size-body);
-  --font-weight-label-small: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
@@ -260,24 +263,6 @@ scale-text-field {
   label="Helper Text"
   helper-text="Make sure to fill this"
 ></scale-text-field>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      label: 'Small',
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-text-field label="Small" size="small"></scale-text-field>
 ```
 
 ## With Error
