@@ -140,7 +140,7 @@ export class TextField {
     // When `controlled` is true,
     // make sure the <input> is always in sync with the value.
     const value = this.value == null ? '' : this.value.toString();
-    const input = this.hostElement.querySelector('input')
+    const input = this.hostElement.querySelector('input');
     if (this.controlled && input.value.toString() !== value) {
       input.value = value;
     }
