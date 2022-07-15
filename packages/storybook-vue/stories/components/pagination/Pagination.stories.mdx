@@ -54,9 +54,16 @@ import ScalePagination from './ScalePagination.vue';
     },
     small: {
       table: {
-        type: { summary: 'Boolean' },
+        type: { summary: 'boolean' },
       },
-      description: `(optional) DEPRECATED - size should replace small`,
+      description: `(optional) DEPRECATED - css overwrite should replace small`,
+      control: { type: null },
+    },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED -  css overwrite should replace size`,
       control: { type: null },
     },
     ariaLabelFirstPage: {
@@ -100,7 +107,6 @@ export const Template = (args, { argTypes }) => ({
     :hide-borders="hideBorders"
     :hide-border="hideBorder"
     :page-size="pageSize"
-    :small="small"
     :start-element="startElement"
     :total-elements="totalElements"
     :aria-label-first-page="ariaLabelFirstPage"
@@ -124,7 +130,6 @@ export const TemplateEmbedded = (args, { argTypes }) => ({
         :hide-borders="hideBorders"
         :hide-border="hideBorder"
         :page-size="pageSize"
-        :small="small"
         :start-element="startElement"
         :total-elements="totalElements"
         :styles="styles"
