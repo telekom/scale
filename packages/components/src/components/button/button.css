@@ -12,7 +12,7 @@
 :host {
   --width: auto;
   --spacing-x: var(--telekom-spacing-unit-x6);
-  --spacing-x-icon-only: var(--telekom-spacing-unit-x2);
+  --spacing-x-icon-only: 0.625rem;
   --min-height: var(--telekom-spacing-unit-x11);
   --radius: var(--telekom-radius-standard);
   --transition: all var(--telekom-motion-duration-transition)
