@@ -272,6 +272,7 @@ export class DropdownSelect {
     if (!this.open) {
       this.comboEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       this.comboEl.focus();
+      this.currentIndex = -1;
     }
   }
 
@@ -483,6 +484,7 @@ export class DropdownSelect {
       this.transparent && 'transparent',
       this.invalid && `invalid`,
       this.size && `size-${this.size}`,
+      this.currentIndex > -1 && `steal-focus`,
       animated && 'animated'
     );
   }

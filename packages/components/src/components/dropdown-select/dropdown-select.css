@@ -146,7 +146,8 @@
   border-color: var(--border-color-focus);
 }
 
-[part~='select']:not([part~='disabled']) [part='combobox']:focus {
+[part~='select']:not([part~='disabled']):not([part~='steal-focus'])
+  [part='combobox']:focus {
   box-shadow: var(--box-shadow-focus);
 }
 
