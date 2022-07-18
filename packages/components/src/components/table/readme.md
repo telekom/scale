@@ -267,7 +267,7 @@
 | Property   | Attribute   | Description                           | Type      | Default     |
 | ---------- | ----------- | ------------------------------------- | --------- | ----------- |
 | `showSort` | `show-sort` | (optional) Display sort arrows on/off | `boolean` | `false`     |
-| `size`     | `size`      | (optional) Visual size                | `string`  | `'default'` |
+| `size`     | `size`      |                                       | `string`  | `undefined` |
 | `striped`  | `striped`   | (optional) Striped Table              | `boolean` | `false`     |
 | `styles`   | `styles`    | (optional) Injected CSS styles        | `string`  | `undefined` |
 
