@@ -27,6 +27,13 @@ import ScaleButton from './ScaleButton.vue';
     download: {
       control: { type: 'text' },
     },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `Deprecated – for a small version use css overwrites`,
+      control: { type: null },
+    },
   }}
 />
 
@@ -40,7 +47,6 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-button
       :disabled="disabled"
-      :size="size"
       :href="href"
       :download="download"
       :target="target"
@@ -114,11 +120,6 @@ export const Template = (args, { argTypes }) => ({
   --line-height: var(--telekom-typography-line-spacing-standard);
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
-
-  /* size: small */
-  --font-size-small: var(--telekom-typography-font-size-small);
-  --line-height-small: var(--telekom-typography-line-spacing-standard);
-  --min-height-small: var(--telekom-spacing-unit-x8);
 
   /* variant: primary */
   --radius-primary: var(--radius);
@@ -340,182 +341,4 @@ If the icon is an `img` element, its `alt` attribute should be empty.
     accesibility-title="External link, opens in new tab"
   ></scale-icon-navigation-external-link>
 </scale-button>
-```
-
-## Small Standard
-
-<Canvas withSource="none">
-  <Story
-    name="Small Standard"
-    args={{
-      size: 'small',
-      label: 'Label',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small">Label</scale-button>
-```
-
-## Small Secondary
-
-<Canvas withSource="none">
-  <Story
-    name="Small Secondary"
-    args={{
-      size: 'small',
-      variant: 'secondary',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small" variant="secondary">Label</scale-button>
-```
-
-## Small Disabled
-
-<Canvas withSource="none">
-  <Story
-    name="Small Disabled"
-    args={{
-      size: 'small',
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small" disabled>Label</scale-button>
-```
-
-## Small Secondary Disabled
-
-<Canvas withSource="none">
-  <Story
-    name="Small Secondary Disabled"
-    args={{
-      size: 'small',
-      variant: 'secondary',
-      disabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small" variant="secondary" disabled>Label</scale-button>
-```
-
-## Small With Icon Before
-
-<Canvas withSource="none">
-  <Story
-    name="Small With Icon Before"
-    args={{
-      size: 'small',
-      icon: 'before',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small">
-  <scale-icon-action-search></scale-icon-action-search> Label
-</scale-button>
-```
-
-## Small With Icon After
-
-<Canvas withSource="none">
-  <Story
-    name="Small With Icon After"
-    args={{
-      size: 'small',
-      icon: 'after',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small">
-  Label <scale-icon-navigation-right></scale-icon-navigation-right>
-</scale-button>
-```
-
-## Small Icon Only
-
-<Canvas withSource="none">
-  <Story
-    name="Small Icon Only"
-    args={{
-      size: 'small',
-      iconOnly: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small">
-  <scale-icon-navigation-external-link
-    accessibility-title="External link, opens in new tab"
-  ></scale-icon-navigation-external-link>
-</scale-button>
-```
-
-## Small Link
-
-<Canvas withSource="none">
-  <Story
-    name="Small Link"
-    args={{
-      size: 'small',
-      href: 'https://example.com',
-      target: '_blank',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small" href="https://example.com" target="_blank"
-  >Label</scale-button
->
-```
-
-## Small Link Download
-
-<Canvas withSource="none">
-  <Story
-    name="Small Link Download"
-    args={{
-      size: 'small',
-      href: 'assets/welcome.png',
-      download: 'welcome.png',
-      label: 'Download',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-button size="small" href="assets/welcome.png" download="welcome.png"
-  >Download</scale-button
->
 ```

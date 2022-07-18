@@ -144,7 +144,8 @@ export class TextField {
     if (this.size) {
       statusNote({
         tag: 'deprecated',
-        message: 'Property "size" is deprecated. Please use css overwrite!',
+        message:
+          'Property "size" is deprecated. Please use css overwrites for a small version!',
         type: 'warn',
         source: this.hostElement,
       });

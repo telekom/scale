@@ -27,15 +27,4 @@ describe('scale-button', () => {
     const element = await page.find('scale-button >>> button');
     expect(element.getAttribute('tabindex')).toBe('5');
   });
-
-  it('should set size for icons', async () => {
-    const page = await newE2EPage();
-    await page.setContent(`
-      <scale-button size="small">
-        <scale-icon-action-search></scale-icon-action-search> Label
-      </scale-button>
-    `);
-    const element = await page.find('scale-icon-action-search');
-    expect(element.getAttribute('size')).toBe('16');
-  });
 });

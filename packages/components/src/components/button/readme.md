@@ -16,7 +16,7 @@
 | `iconPosition`  | `icon-position`  | (optional) Icon position related to the label                                                             | `"after" \| "before"`             | `'before'`  |
 | `innerTabindex` | `inner-tabindex` | (optional) Set `tabindex` in the inner button or link element                                             | `number`                          | `undefined` |
 | `name`          | `name`           | (optional) The name of the button, submitted as a pair with the button's `value` as part of the form data | `string`                          | `undefined` |
-| `size`          | `size`           | (optional) The size of the button                                                                         | `"large" \| "small"`              | `'large'`   |
+| `size`          | `size`           | <span style="color:red">**[DEPRECATED]**</span> - css overwrite should replace size<br/><br/>             | `string`                          | `undefined` |
 | `styles`        | `styles`         | (optional) Injected CSS styles                                                                            | `string`                          | `undefined` |
 | `target`        | `target`         | (optional) The target attribute for the <a> tag                                                           | `string`                          | `'_self'`   |
 | `type`          | `type`           | (optional) Button type                                                                                    | `"button" \| "reset" \| "submit"` | `undefined` |

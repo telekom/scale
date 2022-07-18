@@ -55,12 +55,6 @@ In certain cases, you can also use an icon without text, for example when space 
 
 ![Image Name](assets/3_components/button/Button_Icon-only.png)
 
-## Button sizes
-
-We typically use the large button to ensure a good visual balance between the content and button. In special cases, you might not have enough space, so we also offer a smaller variant.
-
-![Image Name](assets/3_components/button/Button_Sizes.png)
-
 ## Disabled state
 
 When disabled, the interactive function of the button is removed. Use this state if an interaction is not allowed due to permissions or dependencies.
