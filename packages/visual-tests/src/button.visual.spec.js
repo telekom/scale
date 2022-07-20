@@ -17,6 +17,14 @@ describe('Button', () => {
       ['with-icon-after'],
       ['icon-only'],
       ['link'],
+      ['small-standard'],
+      ['small-secondary'],
+      ['small-secondary-disabled'],
+      ['small-disabled'],
+      ['small-with-icon-before'],
+      ['small-with-icon-after'],
+      ['small-icon-only'],
+      ['small-link'],
     ])('%p', async (variant) => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-button--${variant}&viewMode=story`

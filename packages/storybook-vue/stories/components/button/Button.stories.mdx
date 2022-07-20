@@ -27,13 +27,6 @@ import ScaleButton from './ScaleButton.vue';
     download: {
       control: { type: 'text' },
     },
-    size: {
-      table: {
-        type: { summary: 'string' },
-      },
-      description: `Deprecated – for a small version use css overwrites`,
-      control: { type: null },
-    },
   }}
 />
 
@@ -47,6 +40,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-button
       :disabled="disabled"
+      :size="size"
       :href="href"
       :download="download"
       :target="target"
@@ -121,12 +115,17 @@ export const Template = (args, { argTypes }) => ({
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
 
+  /* size: small */
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --min-height-small: var(--telekom-spacing-unit-x8);
+
   /* variant: primary */
   --radius-primary: var(--radius);
   --background-primary: var(--telekom-color-primary-standard);
   --background-primary-hover: var(--telekom-color-primary-hovered);
   --background-primary-active: var(--telekom-color-primary-pressed);
-  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
   --color-primary: var(--telekom-color-text-and-icon-white-standard);
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
@@ -138,15 +137,13 @@ export const Template = (args, { argTypes }) => ({
   --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
   --color-secondary-active: var(--telekom-color-text-and-icon-standard);
   --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-secondary: var(--telekom-color-ui-outlined-fill-standard);
-  --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
-  --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
-  --background-secondary-disabled: var(
-    --telekom-color-ui-outlined-fill-disabled
-  );
-  --border-secondary: var(--telekom-color-ui-outlined-border-standard);
-  --border-secondary-hover: var(--telekom-color-ui-outlined-border-hovered);
-  --border-secondary-active: var(--telekom-color-ui-outlined-border-pressed);
+  --background-secondary: var(--telekom-color-ui-state-fill-standard);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-state-fill-pressed);
+  --background-secondary-disabled: none;
+  --border-secondary: var(--telekom-color-ui-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-border-pressed);
   --border-secondary-focus: var(--telekom-color-functional-focus);
 
   /* variant: ghost */
@@ -157,8 +154,8 @@ export const Template = (args, { argTypes }) => ({
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-ghost-hover: var(--telekom-color-ui-ghost-hovered);
-  --background-ghost-active: var(--telekom-color-ui-ghost-pressed);
+  --background-ghost-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-ghost-active: var(--telekom-color-ui-state-fill-pressed);
 }
 ```
 
@@ -268,8 +265,10 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-button icon-only>
-  <scale-icon-action-add accessibility-title="add" />
+<scale-button>
+  <scale-icon-navigation-external-link
+    accessibility-title="External link, opens in new tab"
+  ></scale-icon-navigation-external-link>
 </scale-button>
 ```
 
@@ -339,4 +338,182 @@ If the icon is an `img` element, its `alt` attribute should be empty.
     accesibility-title="External link, opens in new tab"
   ></scale-icon-navigation-external-link>
 </scale-button>
+```
+
+## Small Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Small Standard"
+    args={{
+      size: 'small',
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">Label</scale-button>
+```
+
+## Small Secondary
+
+<Canvas withSource="none">
+  <Story
+    name="Small Secondary"
+    args={{
+      size: 'small',
+      variant: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" variant="secondary">Label</scale-button>
+```
+
+## Small Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Small Disabled"
+    args={{
+      size: 'small',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" disabled>Label</scale-button>
+```
+
+## Small Secondary Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Small Secondary Disabled"
+    args={{
+      size: 'small',
+      variant: 'secondary',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" variant="secondary" disabled>Label</scale-button>
+```
+
+## Small With Icon Before
+
+<Canvas withSource="none">
+  <Story
+    name="Small With Icon Before"
+    args={{
+      size: 'small',
+      icon: 'before',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">
+  <scale-icon-action-search></scale-icon-action-search> Label
+</scale-button>
+```
+
+## Small With Icon After
+
+<Canvas withSource="none">
+  <Story
+    name="Small With Icon After"
+    args={{
+      size: 'small',
+      icon: 'after',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">
+  Label <scale-icon-navigation-right></scale-icon-navigation-right>
+</scale-button>
+```
+
+## Small Icon Only
+
+<Canvas withSource="none">
+  <Story
+    name="Small Icon Only"
+    args={{
+      size: 'small',
+      iconOnly: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">
+  <scale-icon-navigation-external-link
+    accessibility-title="External link, opens in new tab"
+  ></scale-icon-navigation-external-link>
+</scale-button>
+```
+
+## Small Link
+
+<Canvas withSource="none">
+  <Story
+    name="Small Link"
+    args={{
+      size: 'small',
+      href: 'https://example.com',
+      target: '_blank',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" href="https://example.com" target="_blank"
+  >Label</scale-button
+>
+```
+
+## Small Link Download
+
+<Canvas withSource="none">
+  <Story
+    name="Small Link Download"
+    args={{
+      size: 'small',
+      href: 'assets/welcome.png',
+      download: 'welcome.png',
+      label: 'Download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" href="assets/welcome.png" download="welcome.png"
+  >Download</scale-button
+>
 ```

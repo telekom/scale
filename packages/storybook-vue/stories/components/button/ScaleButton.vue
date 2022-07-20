@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import { action } from '@storybook/addon-actions';
+import { action } from "@storybook/addon-actions";
 
-const handler = action('click');
+const handler = action("click");
 
 export default {
   props: {

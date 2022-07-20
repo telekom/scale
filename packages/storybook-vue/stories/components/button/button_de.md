@@ -58,6 +58,12 @@ In manchen Fällen kannst du auch ein Icon ohne Text verwenden. Das ist zum Beis
 
 ![Image Name](assets/3_components/button/Button_Icon-only.png)
 
+## Größen
+
+Nutze den großen Button, um eine gute visuelle Balance zwischen Inhalt und Button zu erreichen. Wenn nur wenig Platz zur Verfügung steht, kannst du die kleinere Variante verwenden.
+
+![Image Name](assets/3_components/button/Button_Sizes.png)
+
 ## Deaktivierter Zustand
 
 Im deaktivierten Zustand ist die interaktive Funktion des Buttons ausgeschaltet. Verwende diesen Zustand, wenn eine Interaktion aufgrund von Berechtigungen oder Abhängigkeiten nicht erfolgen kann.
