@@ -41,12 +41,6 @@ describe('TabHeader', () => {
     element.selected = true;
     expect(element.getCssClassMap()).toContain('selected');
 
-    element.small = true;
-    expect(element.getCssClassMap()).toContain('small');
-
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('small');
-
     element.hasFocus = true;
     expect(element.getCssClassMap()).toContain('has-focus');
   });
