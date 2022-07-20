@@ -10,8 +10,8 @@
  */
 
 :host {
-  --border-bottom-color: var(--telekom-color-ui-additional-subtle);
-  --border-left-color-third-nesting: var(--telekom-color-ui-additional-strong);
+  --border-bottom-color: var(--telekom-color-ui-faint);
+  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-primary: var(--telekom-color-text-and-icon-primary-standard);

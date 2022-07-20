@@ -22,7 +22,7 @@
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
   --spacing-label: var(--telekom-spacing-unit-x2) 0;
-  --border: 1px solid var(--telekom-color-ui-outlined-border-standard);
+  --border: 1px solid var(--telekom-color-ui-border-standard);
 }
 
 .progress-bar {

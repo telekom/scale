@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+
+### Bug Fixes
+
+* use correct border color token ([#1112](https://github.com/telekom/scale/issues/1112)) ([077633b](https://github.com/telekom/scale/commit/077633b751e9b1c11c759ca28901ecd44cb8ec70))
+
+
+
+
+
 # [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
 
 

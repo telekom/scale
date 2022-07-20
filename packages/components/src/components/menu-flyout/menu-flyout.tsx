@@ -47,6 +47,30 @@ export class MenuFlyout {
 
   private trigger: HTMLElement;
   private lists: Set<HTMLScaleMenuFlyoutListElement> = new Set();
+  // Keep track of the current active/open list
+  private activeList: HTMLScaleMenuFlyoutListElement;
+
+  @Listen('scale-open')
+  async handleScaleOpen({ detail }) {
+    // Close the previous active list and its parents if
+    // - it's not the root and
+    // - it's not the one being opened
+    // (useful only with "click" interactions)
+    const rootList = this.getListElement();
+    if (
+      this.activeList &&
+      this.activeList.active &&
+      this.activeList !== rootList &&
+      this.activeList !== detail.list
+    ) {
+      let list: HTMLScaleMenuFlyoutListElement = this.activeList;
+      while (list != null && list !== rootList) {
+        await list.close(true);
+        list = list.parentElement.closest(MENU_SELECTOR);
+      }
+    }
+    this.activeList = detail.list;
+  }
 
   @Listen('scale-select')
   handleScaleSelect({ detail }) {
@@ -134,9 +158,10 @@ export class MenuFlyout {
 
   toggle = () => {
     const list = this.getListElement();
-    // We could check for `list.opened === true` to do `closeAll`
-    // but list close themselves with outside clicks, so `list.opened`
-    // will always be `false` here…
+    if (list.opened) {
+      this.closeAll();
+      return;
+    }
     if (this.direction != null) {
       // Overwrite `direction` in list
       list.direction = this.direction;
