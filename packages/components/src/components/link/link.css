@@ -42,7 +42,7 @@
   --line-thickness-active: var(--line-thickness-initial);
   /* disabled */
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --color-line-disabled: var(--telekom-color-ui-outlined-border-disabled);
+  --color-line-disabled: var(--telekom-color-ui-border-disabled);
   --line-thickness-disabled: var(--line-thickness-initial);
 }
 

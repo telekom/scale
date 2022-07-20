@@ -12,10 +12,10 @@
   --font-size: var(--telekom-typography-font-size-body);
 
   --color-circle-primary: var(--telekom-color-primary-standard);
-  --color-circle-primary-inner: var(--telekom-color-ui-additional-subtle);
+  --color-circle-primary-inner: var(--telekom-color-ui-subtle);
   --color-text-primary: var(--telekom-color-text-and-icon-additional);
-  --color-circle-white: var(--telekom-color-ui-additional-base);
-  --color-circle-white-inner: var(--telekom-color-ui-additional-regular);
+  --color-circle-white: var(--telekom-color-ui-base);
+  --color-circle-white-inner: var(--telekom-color-ui-regular);
   --color-text-white: var(--telekom-color-text-and-icon-white-standard);
 }
 

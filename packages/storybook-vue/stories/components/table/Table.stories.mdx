@@ -65,7 +65,7 @@ export const Template = (args, { argTypes }) => ({
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">9.356</span>
                 <scale-progress-bar
-                  custom-color="var(--telekom-color-ui-additional-extra-strong)"
+                  custom-color="var(--telekom-color-ui-extra-strong)"
                   variant="info"
                   style="width: 120px;"
                   stroke-width="6"
@@ -93,7 +93,7 @@ export const Template = (args, { argTypes }) => ({
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">3.356</span>
                 <scale-progress-bar
-                  custom-color="var(--telekom-color-ui-additional-extra-strong)"
+                  custom-color="var(--telekom-color-ui-extra-strong)"
                   variant="info"
                   style="width: 120px;"
                   stroke-width="6"
@@ -121,7 +121,7 @@ export const Template = (args, { argTypes }) => ({
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">6.356</span>
                 <scale-progress-bar
-                  custom-color="var(--telekom-color-ui-additional-extra-strong)"
+                  custom-color="var(--telekom-color-ui-extra-strong)"
                   variant="info"
                   style="width: 120px;"
                   stroke-width="6"
@@ -231,7 +231,7 @@ export const Template = (args, { argTypes }) => ({
 ```css
 scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
-  --background: var(--telekom-color-ui-outlined-fill-standard);
+  --background: var(--telekom-color-ui-state-fill-standard);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -242,22 +242,22 @@ scale-table {
       --telekom-spacing-unit-x2
     );
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-additional-light
+      --telekom-color-ui-faint
     );
-  --background-tbody: var(--telekom-color-ui-outlined-fill-standard);
-  --background-tbody-tr-hover: var(--telekom-color-ui-ghost-hovered);
-  --background-tfoot: var(--telekom-color-ui-outlined-fill-standard);
+  --background-tbody: var(--telekom-color-ui-state-fill-standard);
+  --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-tfoot: var(--telekom-color-ui-state-fill-standard);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-additional-extra-strong
+      --telekom-color-ui-extra-strong
     );
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
-  --background-th-sortable-hover: var(--telekom-color-ui-additional-subtle);
-  --background-th-sortable-active: var(--telekom-color-ui-additional-light);
+  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
+  --background-th-sortable-active: var(--telekom-color-ui-faint);
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05) var(
       --telekom-color-functional-focus
     );
-  --background-tr-striped: var(--telekom-color-ui-additional-subtle);
+  --background-tr-striped: var(--telekom-color-ui-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 ```
