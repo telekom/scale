@@ -12,8 +12,9 @@
 :host {
   --width: auto;
   --spacing-x: var(--telekom-spacing-unit-x6);
-  --spacing-x-icon-only: 0.625rem;
-  --min-height: var(--telekom-spacing-unit-x11);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x3);
+  --min-height: var(--telekom-spacing-unit-x12);
+  --min-width: var(--telekom-spacing-unit-x12);
   --radius: var(--telekom-radius-standard);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -30,7 +31,7 @@
   --background-primary: var(--telekom-color-primary-standard);
   --background-primary-hover: var(--telekom-color-primary-hovered);
   --background-primary-active: var(--telekom-color-primary-pressed);
-  --background-primary-disabled: var(--telekom-color-ui-solid-disabled);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
   --color-primary: var(--telekom-color-text-and-icon-white-standard);
   --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
 
@@ -42,15 +43,13 @@
   --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
   --color-secondary-active: var(--telekom-color-text-and-icon-standard);
   --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-secondary: var(--telekom-color-ui-outlined-fill-standard);
-  --background-secondary-hover: var(--telekom-color-ui-outlined-fill-hovered);
-  --background-secondary-active: var(--telekom-color-ui-outlined-fill-pressed);
-  --background-secondary-disabled: var(
-    --telekom-color-ui-outlined-fill-disabled
-  );
-  --border-secondary: var(--telekom-color-ui-outlined-border-standard);
-  --border-secondary-hover: var(--telekom-color-ui-outlined-border-hovered);
-  --border-secondary-active: var(--telekom-color-ui-outlined-border-pressed);
+  --background-secondary: var(--telekom-color-ui-state-fill-standard);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-state-fill-pressed);
+  --background-secondary-disabled: none;
+  --border-secondary: var(--telekom-color-ui-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-border-pressed);
   --border-secondary-focus: var(--telekom-color-functional-focus);
 
   /* variant: ghost */
@@ -61,8 +60,10 @@
   --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background-ghost-hover: var(--telekom-color-ui-ghost-hovered);
-  --background-ghost-active: var(--telekom-color-ui-ghost-pressed);
+  --background-ghost-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-ghost-active: var(--telekom-color-ui-state-fill-pressed);
+
+  display: inline-flex;
 }
 
 .button {
@@ -117,6 +118,7 @@
 }
 
 .button--icon-only {
+  min-width: var(--min-width);
   padding-left: var(--spacing-x-icon-only);
   padding-right: var(--spacing-x-icon-only);
 }
