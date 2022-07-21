@@ -1911,6 +1911,18 @@
   dependencies:
     "@stencil/core" "^2.3.0"
 
+"@floating-ui/core@^0.7.3":
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-0.7.3.tgz#d274116678ffae87f6b60e90f88cc4083eefab86"
+  integrity sha512-buc8BXHmG9l82+OQXOFU3Kr2XQx9ys01U/Q9HMIrZ300iLc8HLMgh7dcCqgYzAzf4BkoQvDcXf5Y+CuEZ5JBYg==
+
+"@floating-ui/dom@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-0.5.4.tgz#4eae73f78bcd4bd553ae2ade30e6f1f9c73fe3f1"
+  integrity sha512-419BMceRLq0RrmTSDxn8hf9R3VCJv2K9PUfugh5JyEFmdjzDo+e8U5EdR8nzKq8Yj1htzLm3b6eQEEam3/rrtg==
+  dependencies:
+    "@floating-ui/core" "^0.7.3"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -2083,17 +2095,17 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@popperjs/core@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.6.0.tgz#f022195afdfc942e088ee2101285a1d31c7d727f"
-  integrity sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw==
-
 "@proyecto26/animatable-component@^1.1.8":
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/@proyecto26/animatable-component/-/animatable-component-1.1.10.tgz#6ea3c4ce85428913b9d53f7acc1ebaa7ea8d7dff"
   integrity sha512-mZSt7HhlHxlMTtYhDcgvrR/biXox5PhQ3pQ4PggQ14UBZxyPDWbjhDw8PjRC4a5K0CZaAZTCJTl7iMw8lYkcEw==
 
-"@stencil/core@^2.3.0", "@stencil/core@^2.7.1":
+"@stencil/core@^2.17.0":
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.17.1.tgz#c0fd74d2991c2ea9d7e382017726bfd01009a05c"
+  integrity sha512-ErjQsNALgZQ9SYeBHhqwL1UO+Zbptwl3kwrRJC2tGlc3G/T6UvPuaKr+PGsqI+CZGia+0+R5EELQvFu74mYeIg==
+
+"@stencil/core@^2.3.0":
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.15.0.tgz#cc49f090a24906b28c926e2f6dc49e75c4adaedf"
   integrity sha512-58+FPFpJCJScd5nmqVsZN+qk7aui57wFcMHWzySr1SQzoY8Efst9OPG7XRf27UsNj1DNeEdYWTtdrTfJyn3mZg==
@@ -2796,37 +2808,37 @@
     vue-docgen-loader "^1.5.0"
     webpack ">=4.0.0 <6.0.0"
 
-"@telekom/design-tokens@^1.0.0-alpha.23":
-  version "1.0.0-alpha.23"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-alpha.23.tgz#d566b477487401feaf2b64b0d3dbb63ac4676eeb"
-  integrity sha512-6FTGPGCcy5LTdk1tOS+CtJJU1sJqj1+2f+vMAB0wWrmcsdIJiE3K9NJG80tfdUmzOPhmFVf24gsROTsxVUIrgw==
+"@telekom/design-tokens@^1.0.0-beta.1":
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.1.tgz#44cc5dbb34ffae464dc0ddb03c07a5a7fe1edb28"
+  integrity sha512-+aWTs/fD69u6YE4fjh6VoAd/fH1yKCpQIC+xTBGzFUvPNCcYBGlocwgbz1HG4wFU/toZuh2uKsHZh+s5FqcGBw==
 
-"@telekom/scale-components-vue@^3.0.0-beta.106":
-  version "3.0.0-beta.106"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-components-vue/-/scale-components-vue-3.0.0-beta.106.tgz#33108812ff4fa4069de3be442e1bef3ac8612692"
-  integrity sha512-sAa0mkkrXSBkyYIIUH4fafsqM+rM2QucNPv/O8z7E3rsU5Xr6poh09iqtudrsdmHTZXw/nolA+cqNcL9j94sbw==
+"@telekom/scale-components-vue@^3.0.0-beta.108":
+  version "3.0.0-beta.108"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-components-vue/-/scale-components-vue-3.0.0-beta.108.tgz#6da624c50f6b6052cf961d79cf05a372b562ab46"
+  integrity sha512-7ETwE/3aVkC1R/gbfXG8lHGjcKCaoCtZeRD7PqDUxy2uAZJZ3cXyTGCXyKncMfH6NMI3Oh33/FFTWpXPpC+i1w==
   dependencies:
     vue "^2.6.11"
 
-"@telekom/scale-components@^3.0.0-beta.106":
-  version "3.0.0-beta.106"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-components/-/scale-components-3.0.0-beta.106.tgz#67471a6ed84ed738ac0034dc52e4fe24341c996f"
-  integrity sha512-zC7Hfki8skKzqUysfbTZoJTAll86JFR5wIpCT9W3oWP8kzDNC769h6f1S+Rxv8Om9ES3zSE/8rtkNo7yX5YyNA==
+"@telekom/scale-components@^3.0.0-beta.108":
+  version "3.0.0-beta.108"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-components/-/scale-components-3.0.0-beta.108.tgz#26d6a3c6383b38a89e08e30eab47550e02bd622d"
+  integrity sha512-QF/b1naL5C6/8e/wHxrmCuxDxy/oqaf9pxDIn44IR4k4EEUJWQreOQhz5BSHG6DHH/yaWydHip1TZFMFj3Utmw==
   dependencies:
     "@duetds/date-picker" "1.2.0"
-    "@popperjs/core" "2.6.0"
+    "@floating-ui/dom" "^0.5.4"
     "@proyecto26/animatable-component" "^1.1.8"
-    "@stencil/core" "^2.7.1"
-    "@telekom/design-tokens" "^1.0.0-alpha.23"
-    "@telekom/scale-design-tokens" "^3.0.0-beta.106"
+    "@stencil/core" "^2.17.0"
+    "@telekom/design-tokens" "^1.0.0-beta.1"
+    "@telekom/scale-design-tokens" "^3.0.0-beta.108"
     classnames "^2.2.6"
     stencil-inline-svg "^1.0.1"
     web-animations-js "^2.3.2"
 
-"@telekom/scale-design-tokens@^3.0.0-beta.106":
-  version "3.0.0-beta.106"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/scale-design-tokens-3.0.0-beta.106.tgz#43f392570e2e5ecfa2f47255feb1be8ea17a0025"
-  integrity sha512-AviXGudWqWAs6hG/9e0cgvrHKbCZKunp/QdMcFXjKGaK28XVnBYRR7Lc8paaBq8O6QnH/C4acRMSaZM/cAynSQ==
+"@telekom/scale-design-tokens@^3.0.0-beta.108":
+  version "3.0.0-beta.108"
+  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/scale-design-tokens-3.0.0-beta.108.tgz#659b1205bb4ce2e93a884c9ca8a46d4ab0c1b8d7"
+  integrity sha512-QBRAJMuYsCRA7S1rF+wR+Npza+PbLShtI6FNO6ELrsVtSEArbkGRdchT/c+nI+JWNHoXROOZa/XMw4su3Mm7Tw==
   dependencies:
     color "^3.1.3"
 
@@ -3465,15 +3477,10 @@ acorn@^7.1.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
-acorn@^8.4.1:
+acorn@^8.4.1, acorn@^8.5.0:
   version "8.7.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
-
-acorn@^8.5.0:
-  version "8.7.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.0.tgz#90951fde0f8f09df93549481e5fc141445b791cf"
-  integrity sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==
 
 address@^1.0.1:
   version "1.1.2"
@@ -4248,9 +4255,9 @@ bser@2.1.1:
     node-int64 "^0.4.0"
 
 buffer-from@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
-  integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
+  integrity sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==
 
 buffer-xor@^1.0.3:
   version "1.0.3"
@@ -9958,15 +9965,7 @@ source-map-resolve@^0.5.0:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.5.16, source-map-support@~0.5.12:
-  version "0.5.19"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
-  integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
-  dependencies:
-    buffer-from "^1.0.0"
-    source-map "^0.6.0"
-
-source-map-support@~0.5.20:
+source-map-support@^0.5.16, source-map-support@~0.5.12, source-map-support@~0.5.20:
   version "0.5.21"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"
   integrity sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==
@@ -9989,7 +9988,7 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-source-map@^0.7.3, source-map@~0.7.2:
+source-map@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
@@ -10416,25 +10415,15 @@ terser-webpack-plugin@^5.1.3:
     terser "^5.7.2"
 
 terser@^4.1.2, terser@^4.6.3:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.8.0.tgz#63056343d7c70bb29f3af665865a46fe03a0df17"
-  integrity sha512-EAPipTNeWsb/3wLPeup1tVPaXfIaU68xMnVdPafIL1TV05OhASArYyIfFvnvJCNrR2NIOvDVNNTFRa+Re2MWyw==
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.8.1.tgz#a00e5634562de2239fd404c649051bf6fc21144f"
+  integrity sha512-4GnLC0x667eJG0ewJTa6z/yXrbLGv80D9Ru6HIpCQmO+Q4PfEtBFi0ObSckqwL6VyQv/7ENJieXHo2ANmdQwgw==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-terser@^5.3.4:
-  version "5.12.1"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.12.1.tgz#4cf2ebed1f5bceef5c83b9f60104ac4a78b49e9c"
-  integrity sha512-NXbs+7nisos5E+yXwAD+y7zrcTkMqb0dEJxIGtSKPdCBzopf7ni4odPul2aechpV7EXNvOudYOX2bb5tln1jbQ==
-  dependencies:
-    acorn "^8.5.0"
-    commander "^2.20.0"
-    source-map "~0.7.2"
-    source-map-support "~0.5.20"
-
-terser@^5.7.2:
+terser@^5.3.4, terser@^5.7.2:
   version "5.14.0"
   resolved "https://registry.yarnpkg.com/terser/-/terser-5.14.0.tgz#eefeec9af5153f55798180ee2617f390bdd285e2"
   integrity sha512-JC6qfIEkPBd9j1SMO3Pfn+A6w2kQV54tv+ABQLgZr7dA3k/DL/OBoYSWxzVpZev3J+bUHXfr55L8Mox7AaNo6g==
