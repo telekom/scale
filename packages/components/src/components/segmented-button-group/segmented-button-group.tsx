@@ -90,7 +90,7 @@
 
       // el.setAttribute('adjacent-siblings', adjacentSiblings)
 
-      // el.setAttribute('size', this.size);
+      el.setAttribute('size', this.size);
       // el.setAttribute('background', this.background);
       !el.getAttributeNames().includes('disabled') && el.setAttribute('disabled', this.disabled && 'disabled');
 
@@ -143,7 +143,6 @@
     }
 
     setState(tempState: ButtonStatus[]) {
-      console.log('in set new state')
       const toggleButtons = Array.from(
         this.hostElement.querySelectorAll('scale-segmented-button')
       );
@@ -179,6 +178,7 @@
       }
 
     render() {
+      console.log('SIZE', this.size)
       return (
         <Host>
           {this.styles && <style>{this.styles}</style>}
@@ -203,11 +203,11 @@
     }
   
     getCssOrBasePartMap(mode: 'basePart' | 'css') {
-      const prefix = mode === 'basePart' ? '' : 'toggle-group--';
+      const prefix = mode === 'basePart' ? '' : 'segmented-button-group--';
   
       return classNames(
         'segmented-button-group',
-        // this.fullWidth && `${prefix}block`,
+        this.size && `${prefix}${this.size}`,
         // !this.fullWidth && `${prefix}inline`,
         // this.disabled && `${prefix}disabled`
       );

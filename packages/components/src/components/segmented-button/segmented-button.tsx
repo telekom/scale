@@ -23,12 +23,6 @@
   import { emitEvent } from '../../utils/utils';
   import statusNote from '../../utils/status-note';
   
-  enum iconSizes {
-    small = '12',
-    large = '24',
-    xl = '36'
-  }
-  
   let i = 0;
   
   @Component({
@@ -39,7 +33,7 @@
   export class SegmentedButton {
     @Element() hostElement: HTMLElement;
     /** (optional) The size of the button */
-    @Prop() size?: 'small' | 'large' | 'xl' = 'small';
+    @Prop() size?: 'small' | 'large' | 'xl';
     /** (optional) If `true`, the button is selected */
     @Prop({ mutable: true }) selected?: boolean = false;
     /** (optional) If `true`, the button is disabled */
@@ -99,16 +93,6 @@
       this.focusableElement.focus();
     }
   
-    connectedCallback() {
-      // this.setIconPositionProp();
-      // this.handleIconShape();
-    }
-  
-    componentDidLoad() {
-      this.handleIconSize();
-      this.setIconPositionProp();   
-    }
-  
     componentDidRender() {
       this.handleIconSize();
       if (this.hostElement.hasAttribute('aria-label')) {
@@ -129,7 +113,6 @@
     }
 
     componentDidUpdate() {
-      console.log('host element', this.hostElement.shadowRoot.querySelector('button'), this.hostElement.shadowRoot.querySelector('button').matches(':hover'))
       if (this.selected) {
         // if (!this.hostElement.shadowRoot.querySelector('scale-icon-action-success') && !this.hostElement.shadowRoot.querySelector('scale-icon-action-close')) {
           
@@ -163,7 +146,7 @@
     handleIconSize() {
       Array.from(this.hostElement.children).forEach((child) => {
         if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
-          child.setAttribute('size', iconSizes[this.size]);
+          child.setAttribute('size', '16');
         }
       });
     }
@@ -178,49 +161,6 @@
     //     selected: this.selected,
     //   });
     // };
-  
-    handleIconShape = () => {
-      if (this.hasScaleIcon) {
-        Array.from(this.hostElement.children).forEach((node) => {
-          if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
-            if (this.selected) {
-              node.setAttribute('selected', 'true');
-            } else {
-              node.removeAttribute('selected');
-            }
-          }
-        });
-      }
-    };
-  
-    /**
-     * Detect whether both a scale icon and text are child nodes.
-     * If so, display the select/deselect buttons.
-     */
-    setIconPositionProp() {
-      const nodes = Array.from(this.hostElement.shadowRoot.querySelector('.segmented-button').childNodes).filter((node) => {
-        if (node.nodeName.substr(0, 10) === 'SCALE-ICON') {
-          this.hasScaleIcon = true;
-        }
-        // ignore empty text nodes, which are probably due to formatting
-        return !(node.nodeType === 3 && node.nodeValue.trim() === '');
-      });
-      console.log('this.has', this.hasScaleIcon, nodes)
-
-
-      if (this.hasScaleIcon && nodes.length > 1){
-        console.log('text and icon')
-      } 
-      // if (
-      //   !this.hasScaleIcon &&
-      //   nodes &&
-      //   nodes.length &&
-      //   nodes[nodes.length - 1] &&
-      //   nodes[nodes.length - 1].nodeName.substr(0, 10) === 'SCALE-ICON'
-      // ) {
-      //   // this.iconPosition = 'after';
-      // }
-    }
 
     handleClick = (event: MouseEvent) => {
         event.preventDefault();
@@ -234,6 +174,7 @@
     };
   
     render() {
+      console.log('child size', this.size)
       return (
         <Host>
           {this.styles && <style>{this.styles}</style>}
@@ -249,7 +190,7 @@
             part={this.getBasePartMap()}
             // aria-description={this.getAriaDescriptionTranslation()}
           >
-            {this.selected && <div><scale-icon-action-success size={10} class="scale-icon-action-success" accessibility-title="success" /> <scale-icon-action-close size={10} accessibility-title="success" /></div>}
+            {this.selected && <div><scale-icon-action-success size={12} class="scale-icon-action-success" accessibility-title="success" /> <scale-icon-action-close size={12} accessibility-title="success" /></div>}
             <slot />
           </button>
         </Host>
@@ -269,7 +210,7 @@
   
       return classNames(
         'segmented-button',
-        // this.size && `${prefix}${this.size}`,
+        this.size && `${prefix}${this.size}`,
         // this.background &&
         //   `${prefix}${this.background === 'grey' ? 'primary' : 'secondary'}`,
         // !this.iconOnly &&

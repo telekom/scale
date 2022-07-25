@@ -22,6 +22,7 @@
     padding: 2px;
     display: flex;
     width: fit-content;
+    height: 32px;
     /* box-sizing: border-box;
     display: inline-flex;
     align-items: center;
@@ -48,3 +49,10 @@
     color: var(--color-primary); */
   }
   
+  .segmented-button-group--large {
+    height: 40px
+  }
+
+  .segmented-button-group--xl {
+    height: 44px
+  }
