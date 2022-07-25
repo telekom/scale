@@ -262,20 +262,26 @@
 
 /*listbox*/
 [part='listbox'] {
+  overflow-y: auto;
+  position: relative;
+  max-height: var(--max-height-listbox);
+}
+
+[part='listbox-pad'] {
   background: var(--background-listbox);
   box-shadow: var(--box-shadow-listbox);
   border-radius: var(--radius);
-  display: none;
-  max-height: var(--max-height-listbox);
-  overflow-y: auto;
+  padding: var(--radius) 0;
+  margin-top: var(--telekom-line-weight-highlight);
   left: 0;
   position: absolute;
   top: 100%;
   width: 100%;
   z-index: var(--z-index-listbox);
+  display: none;
 }
 
-[part~='open'] [part='listbox'] {
+[part~='open'] [part='listbox-pad'] {
   display: block;
 }
 
@@ -302,16 +308,10 @@
   position: relative;
 }
 
-[part~='option'][aria-selected='true']::after {
-  border-bottom: 2px solid var(--color-icon);
-  border-right: 2px solid var(--color-icon);
-  content: '';
-  height: 16px;
+[part~='option'][aria-selected='true'] scale-icon-action-success {
   position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translate(0, -50%) rotate(45deg);
-  width: 8px;
+  right: 16px;
+  top: 12px;
 }
 
 [part~='option'] scale-dropdown-select-item::part(base) {

@@ -27,7 +27,11 @@ describe('DropdownSelect', () => {
             document.body.style.setProperty(transitionSpeed, '0s');
           });
         });
-        await page.waitFor(1000);
+        const select = await page.evaluateHandle(
+          `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
+        );
+        expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+        await select.click();
         expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       }
     );
@@ -56,9 +60,6 @@ describe('DropdownSelect', () => {
       await select.hover();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
       await select.focus();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      await page.mouse.move(60, 60);
-      await page.mouse.down();
       expect(await previewHtml.screenshot()).toMatchImageSnapshot();
     });
   });

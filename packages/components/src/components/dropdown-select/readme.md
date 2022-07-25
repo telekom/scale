@@ -39,6 +39,7 @@
 | `"icon"`               |             |
 | `"label"`              |             |
 | `"listbox"`            |             |
+| `"listbox-pad"`        |             |
 | `"meta"`               |             |
 
 
@@ -46,12 +47,14 @@
 
 ### Depends on
 
+- [scale-icon-action-success](../icons/action-success)
 - [scale-icon-navigation-collapse-up](../icons/navigation-collapse-up)
 - [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
 
 ### Graph
 ```mermaid
 graph TD;
+  scale-dropdown-select --> scale-icon-action-success
   scale-dropdown-select --> scale-icon-navigation-collapse-up
   scale-dropdown-select --> scale-icon-navigation-collapse-down
   style scale-dropdown-select fill:#f9f,stroke:#333,stroke-width:4px

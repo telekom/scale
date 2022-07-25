@@ -12,7 +12,7 @@ import {
 } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-import { computePosition, offset } from '@floating-ui/dom';
+import { computePosition } from '@floating-ui/dom';
 import { emitEvent } from '../../utils/utils';
 
 enum Actions {
@@ -225,7 +225,6 @@ export class DropdownSelect {
   componentDidRender() {
     computePosition(this.comboEl, this.listboxEl, {
       placement: 'bottom',
-      middleware: [offset(2)],
     }).then(({ x, y }) => {
       Object.assign(this.listboxEl.style, {
         left: `${x}px`,
@@ -415,36 +414,43 @@ export class DropdownSelect {
             >
               {ValueElement}
             </div>
-            <div
-              ref={(el) => (this.listboxEl = el)}
-              part="listbox"
-              role="listbox"
-              id={`${this.comboboxId}-listbox`}
-              aria-labelledby={`${this.comboboxId}-label`}
-              tabindex="-1"
-            >
-              {readOptions(this.hostElement).map(
-                ({ value, ItemElement }, index) => (
-                  <div
-                    role="option"
-                    part={`option${
-                      index === this.currentIndex ? ' current' : ''
-                    }`}
-                    id={value}
-                    onClick={(event) => {
-                      this.handleOptionClick(event, index);
-                    }}
-                    onMouseDown={() => {
-                      this.ignoreBlur = true;
-                    }}
-                    {...(value === this.value
-                      ? { 'aria-selected': 'true' }
-                      : {})}
-                  >
-                    {ItemElement}
-                  </div>
-                )
-              )}
+            <div part="listbox-pad">
+              <div
+                ref={(el) => (this.listboxEl = el)}
+                part="listbox"
+                role="listbox"
+                id={`${this.comboboxId}-listbox`}
+                aria-labelledby={`${this.comboboxId}-label`}
+                tabindex="-1"
+              >
+                {readOptions(this.hostElement).map(
+                  ({ value, ItemElement }, index) => (
+                    <div
+                      role="option"
+                      part={`option${
+                        index === this.currentIndex ? ' current' : ''
+                      }`}
+                      id={value}
+                      onClick={(event) => {
+                        this.handleOptionClick(event, index);
+                      }}
+                      onMouseDown={() => {
+                        this.ignoreBlur = true;
+                      }}
+                      {...(value === this.value
+                        ? { 'aria-selected': 'true' }
+                        : {})}
+                    >
+                      {ItemElement}
+                      {value === this.value ? (
+                        <scale-icon-action-success
+                          size={16}
+                        ></scale-icon-action-success>
+                      ) : null}
+                    </div>
+                  )
+                )}
+              </div>
             </div>
 
             <div part="icon">
