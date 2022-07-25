@@ -1,0 +1,109 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+ :host {
+    /* not selected */
+    --background-color: transparent;
+    --background-color-selected: var(--telekom-color-ui-base);
+    --button-radius: var(--telekom-radius-standard);
+    --padding-top-bottom: var(--telekom-spacing-unit-x1);
+    --padding-left-right: var(--telekom-spacing-unit-x2);
+    --font-weight: var(--telekom-typography-font-weight-bold);
+    --font-size: var(--telekom-typography-font-size-caption);
+    --label-disabled: var(--telekom-color-text-and-icon-disabled);
+  }
+  
+  .segmented-button {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    border: 0;
+    border-radius: var(--button-radius);
+    background-color: var(--background-color);
+    height: 28px;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    padding-top: var(--padding-top-bottom);
+    padding-bottom: var(--padding-top-bottom);
+    margin-left: calc(var(--padding-top-bottom) / 2);
+    margin-right: calc(var(--padding-top-bottom) / 2);
+    font-size: var(--font-size);
+    /* outline: none;
+    cursor: pointer;
+    user-select: none;
+    font-family: inherit;
+    word-spacing: inherit;
+    letter-spacing: inherit;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    min-height: var(--min-height);
+    width: var(--width);
+    vertical-align: var(--vertical-align);
+    transition: var(--transition);
+    margin: 0;
+    color: var(--color-primary); */
+  }
+
+  .segmented-button--selected {
+    background-color: var(--background-color-selected);
+  }
+
+  .segmented-button--disabled {
+    color: var(--label-disabled);
+  }
+
+  .segmented-button--left{
+    border-radius: 0 var(--button-radius) var(--button-radius) 0;
+    margin-left: 0;
+  }
+
+  .segmented-button--right{
+    border-radius: var(--button-radius) 0 0 var(--button-radius);
+    margin-right: 0;
+  }
+
+  .segmented-button--leftright{
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .segmented-button:hover scale-icon-action-success{
+    display: none !important;
+    vertical-align: middle;
+    margin-right: var(--telekom-spacing-unit-x1);
+    padding-bottom: 2px;
+
+  }
+
+  .segmented-button scale-icon-action-success{
+    vertical-align: middle;
+    margin-right: var(--telekom-spacing-unit-x1);
+    padding-bottom: 2px;
+  }
+
+  .segmented-button:hover scale-icon-action-close{
+    display: inline-flex !important;
+    vertical-align: middle;
+    margin-right: var(--telekom-spacing-unit-x1);
+    padding-bottom: 2px;
+  }
+
+  .segmented-button scale-icon-action-close{
+    display: none !important;
+    vertical-align: middle;
+    margin-right: var(--telekom-spacing-unit-x1);
+    padding-bottom: 2px;
+  }
