@@ -206,6 +206,7 @@ export class DropdownSelect {
 
   private comboEl: HTMLElement;
   private listboxEl: HTMLElement;
+  private listboxPadEl: HTMLElement;
 
   @Watch('value')
   valueChange(newValue) {
@@ -223,10 +224,13 @@ export class DropdownSelect {
   }
 
   componentDidRender() {
-    computePosition(this.comboEl, this.listboxEl, {
+    if (!this.open) {
+      return;
+    }
+    computePosition(this.comboEl, this.listboxPadEl, {
       placement: 'bottom',
     }).then(({ x, y }) => {
-      Object.assign(this.listboxEl.style, {
+      Object.assign(this.listboxPadEl.style, {
         left: `${x}px`,
         top: `${y}px`,
       });
@@ -414,7 +418,7 @@ export class DropdownSelect {
             >
               {ValueElement}
             </div>
-            <div part="listbox-pad">
+            <div part="listbox-pad" ref={(el) => (this.listboxPadEl = el)}>
               <div
                 ref={(el) => (this.listboxEl = el)}
                 part="listbox"
