@@ -19,11 +19,10 @@
     Listen,
     Event,
     EventEmitter,
-    Watch,
+    // Watch,
   } from '@stencil/core';
   import classNames from 'classnames';
   import { emitEvent } from '../../utils/utils';
-  import statusNote from '../../utils/status-note';
   
   interface ButtonStatus {
     id: string;
@@ -47,7 +46,7 @@
     /** (optional) The size of the button, default is small */
     @Prop() size?: 'small' | 'large' | 'xl' = 'small';
     /** (optional) more than one button selected possible */
-    @Prop() singleSelect: boolean = true;
+    @Prop() multiSelect: boolean = false;
     /** (optional) If `true`, the group is disabled */
     @Prop() disabled?: boolean = false;        
     /** (optional) Injected CSS styles */
@@ -63,7 +62,7 @@
     @Listen('scaleClick')
     scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
       let tempState: ButtonStatus[];
-      if (this.singleSelect) {
+      if (!this.multiSelect) {
         if (!ev.detail.selected) {
           tempState = this.status.map((obj) =>
             ev.detail.id === obj.id ? ev.detail : { ...obj }
@@ -86,26 +85,9 @@
    * Keep props, needed in children buttons, in sync
    */
    propagatePropsToChildren() {
-    this.getAllToggleButtons().forEach((el, i) => {
-
-      // el.setAttribute('adjacent-siblings', adjacentSiblings)
-
+    this.getAllToggleButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      // el.setAttribute('background', this.background);
       !el.getAttributeNames().includes('disabled') && el.setAttribute('disabled', this.disabled && 'disabled');
-
-      // /** DEPRECATED */
-      // // if attribute variant is set it overrides color-scheme
-      // el.setAttribute(
-      //   'color-scheme',
-      //   this.variant !== 'color' ? this.variant : this.colorScheme
-      // );
-      // // if attribute color-scheme is set it overrides variant
-      // el.setAttribute(
-      //   'variant',
-      //   this.colorScheme !== 'color' ? this.colorScheme : this.variant
-      // );
-      // el.setAttribute('hide-border', this.hideBorder ? 'true' : 'false');
     });
   }    
 
@@ -113,7 +95,7 @@
       const tempState: ButtonStatus[] = [];
       const toggleButtons = this.getAllToggleButtons();
       this.slottedButtons = toggleButtons.length;
-      toggleButtons.forEach((toggleButton, i) => {
+      toggleButtons.forEach((toggleButton) => {
         // this.position++;
         tempState.push({
           id: toggleButton.getAttribute('segmented-button-id'),
@@ -146,17 +128,6 @@
       const toggleButtons = Array.from(
         this.hostElement.querySelectorAll('scale-segmented-button')
       );
-
-      // const getAdjacentSiblings = (tempState, i) => {
-      //   let adjacentSiblings = '';
-      //   if (i != 0 && tempState[i].selected && tempState[i - 1].selected ) {
-      //     adjacentSiblings = 'left'
-      //    }
-      //    if ( i != tempState.length - 1 && tempState[i].selected && tempState[i + 1].selected ) {
-      //      adjacentSiblings = adjacentSiblings + 'right'
-      //    }
-      //   return adjacentSiblings;
-      // }
       toggleButtons.forEach((button, i) => {
         button.setAttribute('adjacent-siblings', this.getAdjacentSiblings(tempState, i))
         button.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
@@ -178,7 +149,7 @@
       }
 
     render() {
-      console.log('SIZE', this.size)
+      console.log('IN GROUP', this.multiSelect)
       return (
         <Host>
           {this.styles && <style>{this.styles}</style>}
@@ -208,7 +179,6 @@
       return classNames(
         'segmented-button-group',
         this.size && `${prefix}${this.size}`,
-        // !this.fullWidth && `${prefix}inline`,
         // this.disabled && `${prefix}disabled`
       );
     }

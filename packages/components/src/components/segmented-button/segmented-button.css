@@ -19,7 +19,9 @@
     --font-weight: var(--telekom-typography-font-weight-bold);
     --font-size: var(--telekom-typography-font-size-caption);
     --label-disabled: var(--telekom-color-text-and-icon-disabled);
-    
+    --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+
     /* large styles */
     --font-size-large:  var(--telekom-typography-font-size-body);
     --large-height: var(--telekom-spacing-unit-x6);
@@ -40,7 +42,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
   }
   
   .segmented-button {
@@ -60,39 +62,22 @@
     margin-left: calc(var(--padding-top-bottom) / 2);
     margin-right: calc(var(--padding-top-bottom) / 2);
     font-size: var(--font-size);
-    /* outline: none;
-    cursor: pointer;
-    user-select: none;
-    font-family: inherit;
-    word-spacing: inherit;
-    letter-spacing: inherit;
-    justify-content: center;
-    text-decoration: none;
-    font-weight: var(--font-weight);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
-    min-height: var(--min-height);
-    width: var(--width);
-    vertical-align: var(--vertical-align);
     transition: var(--transition);
-    margin: 0;
-    color: var(--color-primary); */
   }
 
   .segmented-button--large {
     font-size: var(--font-size-large);
-    /* height: var(--large-height); */
     height: 36px;
   }
 
   .segmented-button--xl {
     font-size: var(--font-size-large);
-    /* height: var(--large-height); */
     height: 40px;
   }
 
   .segmented-button--selected {
     background-color: var(--background-color-selected);
+    z-index: 10;
   }
 
   .segmented-button--disabled {
@@ -117,21 +102,23 @@
   }
 
   .segmented-button:not(.segmented-button--disabled):hover {
-    background-color: var(--background-color-hover)
+    background-color: var(--background-color-hover);
   }
 
   .segmented-button:not(.segmented-button--disabled):active {
-    background-color: var(--background-color-active)
+    background-color: var(--background-color-active);
+
   }
 
   .segmented-button:focus {
     box-shadow: var(--box-shadow-focus);
+    z-index: 999;    
   }
 
-  /* ::slotted(*) {
+  ::slotted(*) {
     margin-right: var(--telekom-spacing-unit-x1);
     padding-bottom: 2px;
-  } */
+  }
 
   .segmented-button scale-icon-action-success, 
   .segmented-button scale-icon-action-close {

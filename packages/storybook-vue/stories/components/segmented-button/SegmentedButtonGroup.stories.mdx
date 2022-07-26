@@ -1,0 +1,67 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleSegmentedButtonGroup from './ScaleSegmentedButtonGroup.vue';
+
+<Meta
+  title="Beta Components/Segmented Button"
+  component={ScaleSegmentedButtonGroup}
+  argTypes={{
+    size: {
+      control: { type: 'select', options: [ 'small', 'large', 'xl'] },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segmented-button>FOO</scale-segmented-button>
+      <scale-segmented-button>Two</scale-segmented-button>
+      <scale-segmented-button>Three</scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-segmented-button-group>
+  <scale-segmented-button>One</scale-segmented-button>
+  <scale-segmented-button>Two</scale-segmented-button>
+  <scale-segmented-button selected>Three</scale-segmented-button>
+</scale-segmented-button-group>
+```
+
+## Multi Select
+
+<Canvas withSource="none">
+  <Story name="multi" args={{multiSelect: true}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button-group>
+  <scale-segmented-button>One</scale-segmented-button>
+  <scale-segmented-button>Two</scale-segmented-button>
+  <scale-segmented-button selected>Three</scale-segmented-button>
+</scale-segmented-button-group>
+```

@@ -38,35 +38,14 @@
     @Prop({ mutable: true }) selected?: boolean = false;
     /** (optional) If `true`, the button is disabled */
     @Prop() disabled?: boolean = false;    
-    /** (optional) Button background */
-    // @Prop() background?: 'grey' | 'white' = 'white';
-    // /** @deprecated - variant should replace colorScheme */
-    // @Prop() colorScheme?: 'monochrome' | 'color' = 'color';
-    // /** (optional) background variant of a selected toggle-button */
-    // @Prop() variant?: 'monochrome' | 'color' = 'color';
-    // /** (optional) If `true`, the button is selected */
-    // @Prop({ mutable: true }) selected?: boolean = false;
-    // /** (optional) Button type */
-    // @Prop() iconOnly?: boolean = false;
-    // /** (optional) Icon position related to the label */
-    // @Prop({ reflect: true, mutable: true }) iconPosition: 'before' | 'after' =
-    //   'before';
-    // /** (optional) set the border-radius left, right or both */
-    // @Prop() hideBorder: false;
-    // /** (optional) set the border-radius left, right or both */
-    // @Prop() radius: 'left' | 'right' | 'both' | 'neither' | null = null;
     /** (optional) button's id */
     @Prop({ reflect: true }) segmentedButtonId?: string;
     // /** (optional) aria-label attribute needed for icon-only buttons */
     // @Prop() ariaLabelToggleButton: string;
     /** (optional) Injected CSS styles */
     @Prop() styles?: string;
-
-    @Prop( {reflect: true, mutable: true} ) adjacentSiblings?: string;
-
-
-    // /** (optional) position within group */
-    // @Prop() position?: number;
+    // /** (optional)  */
+    @Prop( {reflect: true, mutable: true} ) adjacentSiblings?: 'left' | 'right' | 'leftright' ;
     // /** (optional) translation of 'selected */
     // @Prop() ariaLangSelected? = 'selected';
     // /** (optional) translation of 'deselected */
@@ -83,8 +62,6 @@
       id: string;
       selected: boolean;
     }>;
-
-    hasScaleIcon = false;
   
     private focusableElement: HTMLElement;
   
@@ -111,61 +88,29 @@
         this.segmentedButtonId = 'segmented-button-' + i++;
       }
     }
-
-    componentDidUpdate() {
-      if (this.selected) {
-        // if (!this.hostElement.shadowRoot.querySelector('scale-icon-action-success') && !this.hostElement.shadowRoot.querySelector('scale-icon-action-close')) {
-          
-          // if(this.hostElement.shadowRoot.querySelector('button').matches(':hover')) {
-          //   const icons = document.createElement('div')
-          //   icons.innerHTML = '<scale-icon-action-success/><scale-icon-action-close/>'
-          //   this.hostElement.shadowRoot.querySelector('button').prepend(icons)
-          // }
-
-        // }
-      }
-      else {
-        // if (this.hostElement.shadowRoot.querySelector('scale-icon-action-success') && this.hostElement.shadowRoot.querySelector('scale-icon-action-close'))
-        // this.hostElement.shadowRoot.querySelector('scale-icon-action-success').remove()
-        // this.hostElement.shadowRoot.querySelector('scale-icon-action-close').remove()
-        // document.querySelector('scale-icon-action-success').remove();
-        // document.querySelector('scale-icon-action-success').remove();
-      }
-    }
-  
-    // getAriaDescriptionTranslation() {
-    //   const replaceSelected = this.selected
-    //     ? this.ariaLangSelected
-    //     : this.ariaLangDeselected;
-    //   const filledText = this.ariaDescriptionTranslation
-    //     .replace(/\$position/g, `${this.position}`)
-    //     .replace(/\$selected/g, `${replaceSelected}`);
-    //   return filledText;
-    // }
   
     handleIconSize() {
       Array.from(this.hostElement.children).forEach((child) => {
         if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
+          // const foo: HTMLElement  = this.hostElement.querySelector(child.t agName)
+          // foo.style.marginRight = '30px';
           child.setAttribute('size', '16');
         }
       });
     }
-  
-    // handleClick = (event: MouseEvent) => {
-    //   event.preventDefault();
-    //   this.selected = !this.selected;
-    //   // this.handleIconShape();
-    //   this.scaleClick.emit({ id: this.toggleButtonId, selected: this.selected });
-    //   emitEvent(this, 'scaleClick', {
-    //     id: this.segmentedButtonId,
-    //     selected: this.selected,
-    //   });
-    // };
+
+    setIconMargin() {
+      Array.from(this.hostElement.children).forEach((child) => {
+        if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
+          child.setAttribute('size', '16');
+          
+        }
+      });
+    }
 
     handleClick = (event: MouseEvent) => {
         event.preventDefault();
         this.selected = !this.selected;
-        // this.handleIconShape();
         // this.scaleClick.emit({ id: this.segmentedButtonId, selected: this.selected });
         emitEvent(this, 'scaleClick', {
             id: this.segmentedButtonId,
@@ -174,7 +119,6 @@
     };
   
     render() {
-      console.log('child size', this.size)
       return (
         <Host>
           {this.styles && <style>{this.styles}</style>}
@@ -191,7 +135,8 @@
             // aria-description={this.getAriaDescriptionTranslation()}
           >
             {this.selected && <div><scale-icon-action-success size={12} class="scale-icon-action-success" accessibility-title="success" /> <scale-icon-action-close size={12} accessibility-title="success" /></div>}
-            <slot />
+            <slot name="segmented-button-icon"/>
+            <slot/>
           </button>
         </Host>
       );
@@ -211,18 +156,8 @@
       return classNames(
         'segmented-button',
         this.size && `${prefix}${this.size}`,
-        // this.background &&
-        //   `${prefix}${this.background === 'grey' ? 'primary' : 'secondary'}`,
-        // !this.iconOnly &&
-        //   this.iconPosition &&
-        //   `toggle-button--icon-${this.iconPosition}`,
-        // this.iconOnly && `${prefix}icon-only`,
         !this.disabled && this.selected && `${prefix}selected`,
         this.disabled && `${prefix}disabled`,
-        // this.radius && `${prefix}${this.radius}`,
-        // this.colorScheme && `${prefix}${this.colorScheme}`,
-        // this.variant && `${prefix}${this.variant}`,
-        // !this.hideBorder && `${prefix}border`
         this.adjacentSiblings && `${prefix}${this.adjacentSiblings}`
       );
     }
