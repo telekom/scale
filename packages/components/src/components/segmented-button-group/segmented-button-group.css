@@ -9,21 +9,21 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- :host {
-    --background-color: var(--telekom-color-ui-faint);
-    --radius: var(--telekom-radius-standard);
-  }
-  
-  .segmented-button-group {
-    /* border: 2px solid green; */
-    background-color: var(--background-color);
-    border: 0;
-    border-radius: var(--radius);
-    padding: 2px;
-    display: flex;
-    width: fit-content;
-    height: 32px;
-    /* box-sizing: border-box;
+:host {
+  --background-color: var(--telekom-color-ui-faint);
+  --radius: var(--telekom-radius-standard);
+}
+
+.segmented-button-group {
+  /* border: 2px solid green; */
+  background-color: var(--background-color);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 2px;
+  display: flex;
+  width: fit-content;
+  height: 32px;
+  /* box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     position: relative;
@@ -47,12 +47,12 @@
     transition: var(--transition);
     margin: 0;
     color: var(--color-primary); */
-  }
-  
-  .segmented-button-group--large {
-    height: 40px
-  }
+}
 
-  .segmented-button-group--xl {
-    height: 44px
-  }
+.segmented-button-group--large {
+  height: 40px;
+}
+
+.segmented-button-group--xl {
+  height: 44px;
+}
