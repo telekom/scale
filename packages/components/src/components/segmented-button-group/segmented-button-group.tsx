@@ -124,7 +124,7 @@ export class SegmentedButtonGroup {
       tempState[i].selected &&
       tempState[i + 1].selected
     ) {
-      adjacentSiblings = adjacentSiblings + 'right';
+      adjacentSiblings = `${adjacentSiblings ? adjacentSiblings + ' right' : 'right'}`;
     }
     return adjacentSiblings;
   };

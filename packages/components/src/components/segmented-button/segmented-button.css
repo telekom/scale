@@ -85,17 +85,17 @@
   background-color: transparent;
 }
 
-.segmented-button--left {
+.segmented-button--left-sibling-selected {
   border-radius: 0 var(--button-radius) var(--button-radius) 0;
   margin-left: 0;
 }
 
-.segmented-button--right {
+.segmented-button--right-sibling-selected {
   border-radius: var(--button-radius) 0 0 var(--button-radius);
   margin-right: 0;
 }
 
-.segmented-button--leftright {
+.segmented-button--left-right-sibling-selected {
   border-radius: 0;
   margin-left: 0;
   margin-right: 0;
@@ -111,12 +111,7 @@
 
 .segmented-button:focus {
   box-shadow: var(--box-shadow-focus);
-  z-index: 999;
-}
-
-::slotted(*) {
-  margin-right: var(--telekom-spacing-unit-x1);
-  padding-bottom: 2px;
+  z-index: 10;
 }
 
 .segmented-button scale-icon-action-success,

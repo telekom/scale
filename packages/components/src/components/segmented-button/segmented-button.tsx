@@ -110,8 +110,13 @@ export class SegmentedButton {
         const icon: HTMLElement = this.hostElement.querySelector(child.tagName);
         child.setAttribute('size', '16');
         icon.style.display = 'inline-flex';
+        icon.style.marginRight = '4px';
+
         if (this.hostElement.children.length > 1 && this.selected) {
           icon.style.display = 'none';
+        }
+        if (this.hostElement.children.length == 1) {
+          icon.style.marginRight = '0';
         }
       }
     });
@@ -187,7 +192,7 @@ export class SegmentedButton {
       this.size && `${prefix}${this.size}`,
       !this.disabled && this.selected && `${prefix}selected`,
       this.disabled && `${prefix}disabled`,
-      this.adjacentSiblings && `${prefix}${this.adjacentSiblings}`
+      this.adjacentSiblings && `${prefix}${this.adjacentSiblings.replace(/ /g,"-")}-sibling-selected`
     );
   }
 }
