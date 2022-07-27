@@ -53,7 +53,7 @@
     @Prop() styles?: string;
     /** (optional) aria-label attribute needed for icon-only buttons */
     @Prop()
-    ariaLabelTranslation = `toggle button group with $slottedButtons buttons`;
+    ariaLabelTranslation = `segment button group with $slottedButtons buttons`;
     /** Emitted when button is clicked */
     @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
     /** @deprecated in v3 in favor of kebab-case event names */
@@ -95,20 +95,20 @@
       const tempState: ButtonStatus[] = [];
       const toggleButtons = this.getAllToggleButtons();
       this.slottedButtons = toggleButtons.length;
+      // this.position = 0;
       toggleButtons.forEach((toggleButton) => {
-        // this.position++;
+        this.position++;
         tempState.push({
           id: toggleButton.getAttribute('segmented-button-id'),
           selected: toggleButton.hasAttribute('selected'),
         });
-        // toggleButton.setAttribute('position', this.position.toString());
+        toggleButton.setAttribute('position', this.position.toString());
         toggleButton.setAttribute(
           'aria-description-translation',
           '$position $selected'
         );
       });
       this.propagatePropsToChildren();
-      // this.position = 0;
       this.status = tempState;
       this.setState(tempState)
     }
@@ -149,7 +149,6 @@
       }
 
     render() {
-      console.log('IN GROUP', this.multiSelect)
       return (
         <Host>
           {this.styles && <style>{this.styles}</style>}
