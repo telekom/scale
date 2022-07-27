@@ -92,9 +92,12 @@
     handleIconSize() {
       Array.from(this.hostElement.children).forEach((child) => {
         if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
-          // const foo: HTMLElement  = this.hostElement.querySelector(child.t agName)
-          // foo.style.marginRight = '30px';
+          const icon: HTMLElement  = this.hostElement.querySelector(child.tagName)
           child.setAttribute('size', '16');
+          icon.style.display = 'inline-flex';
+          if (this.hostElement.children.length > 1 && this.selected) {
+            icon.style.display = 'none';
+          }           
         }
       });
     }
@@ -103,7 +106,6 @@
       Array.from(this.hostElement.children).forEach((child) => {
         if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
           child.setAttribute('size', '16');
-          
         }
       });
     }
