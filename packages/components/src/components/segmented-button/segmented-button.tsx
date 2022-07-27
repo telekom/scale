@@ -40,18 +40,20 @@
     @Prop() disabled?: boolean = false;    
     /** (optional) button's id */
     @Prop({ reflect: true }) segmentedButtonId?: string;
-    // /** (optional) aria-label attribute needed for icon-only buttons */
-    // @Prop() ariaLabelToggleButton: string;
+    /** (optional) aria-label attribute needed for icon-only buttons */
+    @Prop() ariaLabelToggleButton: string;
     /** (optional) Injected CSS styles */
     @Prop() styles?: string;
     // /** (optional)  */
     @Prop( {reflect: true, mutable: true} ) adjacentSiblings?: 'left' | 'right' | 'leftright' ;
-    // /** (optional) translation of 'selected */
-    // @Prop() ariaLangSelected? = 'selected';
-    // /** (optional) translation of 'deselected */
-    // @Prop() ariaLangDeselected? = 'deselected';
-    // /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
+    /** (optional) translation of 'selected */
+    @Prop() ariaLangSelected? = 'selected';
+    /** (optional) translation of 'deselected */
+    @Prop() ariaLangDeselected? = 'deselected';
+    /** a11y text for getting meaningful value. `$buttonNumber` and `$selected` are template variables and will be replaces by their corresponding properties.  */
     @Prop() ariaDescriptionTranslation = '$selected';
+    /** (optional) position within group */
+    @Prop() position?: number;
     /** Emitted when button is clicked */
     @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
       id: string;
@@ -88,6 +90,16 @@
         this.segmentedButtonId = 'segmented-button-' + i++;
       }
     }
+
+    getAriaDescriptionTranslation() {
+      const replaceSelected = this.selected
+        ? this.ariaLangSelected
+        : this.ariaLangDeselected;
+      const filledText = this.ariaDescriptionTranslation
+        .replace(/\$position/g, `${this.position}`)
+        .replace(/\$selected/g, `${replaceSelected}`);
+      return filledText;
+    }    
   
     handleIconSize() {
       Array.from(this.hostElement.children).forEach((child) => {
@@ -131,10 +143,10 @@
             onClick={this.handleClick}
             disabled={this.disabled}
             type="button"
-            // aria-label={this.ariaLabelToggleButton}
-            // aria-pressed={this.selected}
+            aria-label={this.ariaLabelToggleButton}
+            aria-pressed={this.selected}
             part={this.getBasePartMap()}
-            // aria-description={this.getAriaDescriptionTranslation()}
+            aria-description={this.getAriaDescriptionTranslation()}
           >
             {this.selected && <div><scale-icon-action-success size={12} class="scale-icon-action-success" accessibility-title="success" /> <scale-icon-action-close size={12} accessibility-title="success" /></div>}
             <slot name="segmented-button-icon"/>
