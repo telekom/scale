@@ -9,7 +9,7 @@ describe('DropdownSelect', () => {
       }, mode);
     });
     // screenshots of stories
-    test.each([['standard'], ['small'], ['disabled'], ['error']])(
+    test.each([['standard'], ['disabled'], ['error']])(
       '%p',
       async (variant) => {
         await page.goto(

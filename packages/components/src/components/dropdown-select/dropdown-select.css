@@ -1,7 +1,6 @@
 :host {
   --font-weight: var(--telekom-typography-font-weight-bold);
   --height: var(--telekom-spacing-unit-x12);
-  --height-small: var(--telekom-spacing-unit-x10);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
@@ -54,7 +53,6 @@
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
-  --font-size-label-small: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
@@ -66,10 +64,6 @@
   --transform-label-animated: translate(
     var(--spacing-x),
     var(--telekom-spacing-unit-x2)
-  );
-  --transform-label-small-animated: translate(
-    var(--spacing-x),
-    var(--telekom-spacing-unit-x1)
   );
 
   /*listbox*/
@@ -155,10 +149,6 @@
   border: var(--border-invalid);
 }
 
-[part~='size-small'] [part='combobox'] {
-  height: var(--height-small);
-}
-
 [part~='transparent'] [part='combobox'] {
   background-color: transparent;
 }
@@ -232,22 +222,6 @@
 
 [part~='animated'] [part='label'] {
   transform: var(--transform-label-animated);
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
-  line-height: var(--line-height-label-animated);
-}
-
-[part~='size-small'] [part='label'] {
-  font-size: var(--font-size-label-small);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height-small) - var(--font-size-label-small)) / 2)
-  );
-  font-weight: var(--font-weight-label-small);
-}
-
-[part~='size-small'][part~='animated'] [part='label'] {
-  transform: var(--transform-label-small-animated);
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
   line-height: var(--line-height-label-animated);

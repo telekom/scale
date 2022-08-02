@@ -189,7 +189,6 @@ export class DropdownSelect {
   @Prop() readonly?: boolean;
   @Prop() transparent?: boolean;
   @Prop() invalid?: boolean = false;
-  @Prop() size?: string = '';
   @Prop({ mutable: true, reflect: true }) value: any;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
@@ -493,7 +492,6 @@ export class DropdownSelect {
       this.readonly && `readonly`,
       this.transparent && 'transparent',
       this.invalid && `invalid`,
-      this.size && `size-${this.size}`,
       this.currentIndex > -1 && `steal-focus`,
       animated && 'animated'
     );

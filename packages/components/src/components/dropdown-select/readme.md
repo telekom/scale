@@ -15,7 +15,6 @@
 | `invalid`     | `invalid`     |             | `boolean` | `false`      |
 | `label`       | `label`       |             | `string`  | `undefined`  |
 | `readonly`    | `readonly`    |             | `boolean` | `undefined`  |
-| `size`        | `size`        |             | `string`  | `''`         |
 | `transparent` | `transparent` |             | `boolean` | `undefined`  |
 | `value`       | `value`       |             | `any`     | `undefined`  |
 
