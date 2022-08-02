@@ -65,6 +65,8 @@ import ratingStars_en from 'raw-loader!../../stories/components/rating-stars/rat
 import ratingStars_de from 'raw-loader!../../stories/components/rating-stars/rating-stars_de.md';
 import radioButtonGroup_de from 'raw-loader!../../stories/components/radio-button-group/radio-button-group_de.md';
 import radioButtonGroup_en from 'raw-loader!../../stories/components/radio-button-group/radio-button-group.md';
+import dropdownSelect_en from 'raw-loader!../../stories/components/dropdown-select/dropdown-select.md';
+import dropdownSelect_de from 'raw-loader!../../stories/components/dropdown-select/dropdown-select_de.md';
 import dropdown_en from 'raw-loader!../../stories/components/dropdown/dropdown.md';
 import dropdown_de from 'raw-loader!../../stories/components/dropdown/dropdown_de.md';
 import sidebarNav_en from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav.md';
@@ -169,6 +171,8 @@ const Usage = (props) => {
     'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,
     'rating-stars_de': ratingStars_de,
+    'dropdown-select_en': dropdownSelect_en,
+    'dropdown-select_de': dropdownSelect_de,
     dropdown_en,
     dropdown_de,
     'sidebar-navigation_en': sidebarNav_en,
