@@ -104,7 +104,7 @@ export class Tooltip {
   }
 
   update = () => {
-    if (!this.disabled) {
+    if (!this.disabled && this.open) {
       computePosition(
         Array.from(this.hostEl.children).find((x) => !x.hasAttribute('slot')),
         this.tooltipEl,
