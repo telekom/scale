@@ -25,7 +25,6 @@ export default {
     open: { type: Boolean },
     trigger: { type: String },
     flip: { type: Boolean },
-    preventOverflow: { type: Boolean },
     styles: String,
   },
   methods: {
