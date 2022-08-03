@@ -85,5 +85,6 @@ export const config: Config = {
   ],
   extras: {
     cloneNodeFix: true,
+    experimentalImportInjection: true,
   },
 };
