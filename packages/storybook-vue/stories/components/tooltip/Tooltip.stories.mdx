@@ -46,20 +46,12 @@ import ScaleTooltip from './ScaleTooltip.vue';
       defaultValue: false,
       control: { type: 'boolean' },
     },
-    skidding: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
     trigger: {
       defaultValue: 'hover focus',
       control: { type: 'text' },
     },
     flip: {
       defaultValue: true,
-      control: { type: 'boolean' },
-    },
-    preventOverflow: {
-      defaultValue: false,
       control: { type: 'boolean' },
     },
   }}
@@ -77,10 +69,8 @@ export const Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :distance="distance"
       :open="open"
-      :skidding="skidding"
       :trigger="trigger"
       :flip="flip"
-      :preventOverflow="preventOverflow"
       :styles="styles"
     >
     <scale-button></scale-button>
@@ -100,40 +90,17 @@ export const SlotTemplate = (args, { argTypes }) => ({
       :disabled="disabled"
       :distance="distance"
       :open="open"
-      :skidding="skidding"
       :trigger="trigger"
       :flip="flip"
-      :preventOverflow="preventOverflow"
       :styles="styles"
     >
     <template v-slot:content>
-      <scale-link slot="content" href="https://github.com/telekom/scale">I'm a HTML-tooltip with a link</scale-link>
-    </template>
-    <scale-button></scale-button>
-    </scale-tooltip>
-  `,
-});
-
-export const Slot2Template = (args, { argTypes }) => ({
-  components: { ScaleTooltip },
-  props: {
-    ...ScaleTooltip.props,
-  },
-  template: `
-    <scale-tooltip
-      :content="content"
-      :placement="placement"
-      :disabled="disabled"
-      :distance="distance"
-      :open="open"
-      :skidding="skidding"
-      :trigger="trigger"
-      :flip="flip"
-      :preventOverflow="preventOverflow"
-      :styles="styles"
-    >
-    <template v-slot:content>
-      <scale-rating-stars slot="content" rating="1"></scale-rating-stars>
+      <span slot="content">
+        I'm a HTML-tooltip
+        <scale-link href="https://github.com/telekom/scale"
+        >with a link</scale-link
+        >
+      </span>
     </template>
     <scale-button></scale-button>
     </scale-tooltip>
@@ -277,12 +244,10 @@ export const FocusTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-tooltip>
-  <p>
+  <span slot="content">
     I'm a HTML-tooltip
-    <scale-link slot="content" href="https://github.com/telekom/scale"
-      >with a link</scale-link
-    >
-  </p>
+    <scale-link href="https://github.com/telekom/scale">with a link</scale-link>
+  </span>
   <scale-button>Hover me</scale-button>
 </scale-tooltip>
 ```
