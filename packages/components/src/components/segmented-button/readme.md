@@ -20,6 +20,7 @@
 | `selected`                   | `selected`                     | (optional) If `true`, the button is selected                                                                                                           | `boolean`                          | `false`        |
 | `size`                       | `size`                         | (optional) The size of the button                                                                                                                      | `"large" \| "small" \| "xl"`       | `undefined`    |
 | `styles`                     | `styles`                       | (optional) Injected CSS styles                                                                                                                         | `string`                           | `undefined`    |
+| `width`                      | `width`                        | (optional) Button width                                                                                                                                | `string`                           | `undefined`    |
 
 
 ## Events

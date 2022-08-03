@@ -35,17 +35,17 @@ interface ButtonStatus {
   shadow: true,
 })
 export class SegmentedButtonGroup {
-  /** toggle button position within group */
+  /** segmented button position within group */
   position = 0;
 
   slottedButtons = 0;
 
   @Element() hostElement: HTMLElement;
-  /** state */
+  /** state */  
   @State() status: ButtonStatus[] = [];
-  /** (optional) The size of the button, default is small */
+  /** (optional) The size of the button */
   @Prop() size?: 'small' | 'large' | 'xl' = 'small';
-  /** (optional) more than one button selected possible */
+  /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
   /** (optional) If `true`, the group is disabled */
   @Prop() disabled?: boolean = false;
@@ -54,6 +54,8 @@ export class SegmentedButtonGroup {
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `segment button group with $slottedButtons buttons`;
+  @Prop()
+  longestButtonWidth: string
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -85,7 +87,7 @@ export class SegmentedButtonGroup {
    * Keep props, needed in children buttons, in sync
    */
   propagatePropsToChildren() {
-    this.getAllToggleButtons().forEach((el) => {
+    this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
       !el.getAttributeNames().includes('disabled') &&
         el.setAttribute('disabled', this.disabled && 'disabled');
@@ -94,21 +96,24 @@ export class SegmentedButtonGroup {
 
   componentDidLoad() {
     const tempState: ButtonStatus[] = [];
-    const toggleButtons = this.getAllToggleButtons();
-    this.slottedButtons = toggleButtons.length;
-    // this.position = 0;
-    toggleButtons.forEach((toggleButton) => {
+    const segmentedButtons = this.getAllSegmentedButtons();
+    this.slottedButtons = segmentedButtons.length;
+    this.getLongestButtonWidth();
+
+    segmentedButtons.forEach((SegmentedButton) => {
       this.position++;
       tempState.push({
-        id: toggleButton.getAttribute('segmented-button-id'),
-        selected: toggleButton.hasAttribute('selected'),
+        id: SegmentedButton.getAttribute('segmented-button-id'),
+        selected: SegmentedButton.hasAttribute('selected'),
       });
-      toggleButton.setAttribute('position', this.position.toString());
-      toggleButton.setAttribute(
+      SegmentedButton.setAttribute('position', this.position.toString());
+      SegmentedButton.setAttribute(
         'aria-description-translation',
         '$position $selected'
       );
+      SegmentedButton.setAttribute('width', this.longestButtonWidth)
     });
+
     this.propagatePropsToChildren();
     this.status = tempState;
     this.setState(tempState);
@@ -129,22 +134,32 @@ export class SegmentedButtonGroup {
     return adjacentSiblings;
   };
 
+  // all segmented buttons should have the same width, based on the largest one
+  getLongestButtonWidth() {
+    let tempWidth = 0;
+    Array.from(this.hostElement.children).forEach((child) => {
+      tempWidth = child.getBoundingClientRect().width > tempWidth ? child.getBoundingClientRect().width : tempWidth;
+    })
+    this.longestButtonWidth = `${tempWidth}px`
+    return tempWidth
+  }
+
   setState(tempState: ButtonStatus[]) {
-    const toggleButtons = Array.from(
+    const segmentedButtons = Array.from(
       this.hostElement.querySelectorAll('scale-segmented-button')
     );
-    toggleButtons.forEach((button, i) => {
-      button.setAttribute(
+    segmentedButtons.forEach((segmentedButton, i) => {
+      segmentedButton.setAttribute(
         'adjacent-siblings',
         this.getAdjacentSiblings(tempState, i)
       );
-      button.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
+      segmentedButton.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
     });
     this.status = tempState;
     emitEvent(this, 'scaleChange', this.status);
   }
 
-  getAllToggleButtons() {
+  getAllSegmentedButtons() {
     return Array.from(
       this.hostElement.querySelectorAll('scale-segmented-button')
     );
@@ -188,7 +203,6 @@ export class SegmentedButtonGroup {
     return classNames(
       'segmented-button-group',
       this.size && `${prefix}${this.size}`
-      // this.disabled && `${prefix}disabled`
     );
   }
 }
