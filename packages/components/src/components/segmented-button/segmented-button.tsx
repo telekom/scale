@@ -41,7 +41,9 @@ export class SegmentedButton {
   /** (optional) button's id */
   @Prop({ reflect: true }) segmentedButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabelToggleButton: string;
+  @Prop() ariaLabelSegmentedButton: string;
+  /** (optional) Button width set to ensure that all buttons have the same width */
+  @Prop() width?: string;  
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   // /** (optional)  */
@@ -81,7 +83,7 @@ export class SegmentedButton {
       statusNote({
         tag: 'deprecated',
         message:
-          'Property "ariaLabel" is deprecated. Please use the "ariaLabelToggleButton" property!',
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelSegmentedButton" property!',
         type: 'warn',
         source: this.hostElement,
       });
@@ -133,7 +135,6 @@ export class SegmentedButton {
   handleClick = (event: MouseEvent) => {
     event.preventDefault();
     this.selected = !this.selected;
-    // this.scaleClick.emit({ id: this.segmentedButtonId, selected: this.selected });
     emitEvent(this, 'scaleClick', {
       id: this.segmentedButtonId,
       selected: this.selected,
@@ -151,7 +152,8 @@ export class SegmentedButton {
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
-          aria-label={this.ariaLabelToggleButton}
+          style={{width: this.width}}
+          aria-label={this.ariaLabelSegmentedButton}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
@@ -190,7 +192,7 @@ export class SegmentedButton {
     return classNames(
       'segmented-button',
       this.size && `${prefix}${this.size}`,
-      !this.disabled && this.selected && `${prefix}selected`,
+      this.selected && `${prefix}selected`,
       this.disabled && `${prefix}disabled`,
       this.adjacentSiblings && `${prefix}${this.adjacentSiblings.replace(/ /g,"-")}-sibling-selected`
     );
