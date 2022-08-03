@@ -104,7 +104,7 @@ export class Tooltip {
   }
 
   update = () => {
-    if (!this.disabled && this.open) {
+    if (!this.disabled) {
       computePosition(
         Array.from(this.hostEl.children).find((x) => !x.hasAttribute('slot')),
         this.tooltipEl,
@@ -240,9 +240,9 @@ export class Tooltip {
       >
         {this.styles && <style>{this.styles}</style>}
 
-        <div part="trigger" aria-describedby={this.componentId}>
+        <span part="trigger" aria-describedby={this.componentId}>
           <slot></slot>
-        </div>
+        </span>
 
         {!this.disabled && (
           <div
