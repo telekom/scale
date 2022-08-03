@@ -46,20 +46,12 @@ import ScaleTooltip from './ScaleTooltip.vue';
       defaultValue: false,
       control: { type: 'boolean' },
     },
-    skidding: {
-      defaultValue: false,
-      control: { type: 'boolean' },
-    },
     trigger: {
       defaultValue: 'hover focus',
       control: { type: 'text' },
     },
     flip: {
       defaultValue: true,
-      control: { type: 'boolean' },
-    },
-    preventOverflow: {
-      defaultValue: false,
       control: { type: 'boolean' },
     },
   }}
@@ -77,10 +69,8 @@ export const Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :distance="distance"
       :open="open"
-      :skidding="skidding"
       :trigger="trigger"
       :flip="flip"
-      :preventOverflow="preventOverflow"
       :styles="styles"
     >
     <scale-button></scale-button>
@@ -100,10 +90,8 @@ export const SlotTemplate = (args, { argTypes }) => ({
       :disabled="disabled"
       :distance="distance"
       :open="open"
-      :skidding="skidding"
       :trigger="trigger"
       :flip="flip"
-      :preventOverflow="preventOverflow"
       :styles="styles"
     >
     <template v-slot:content>
@@ -126,10 +114,8 @@ export const Slot2Template = (args, { argTypes }) => ({
       :disabled="disabled"
       :distance="distance"
       :open="open"
-      :skidding="skidding"
       :trigger="trigger"
       :flip="flip"
-      :preventOverflow="preventOverflow"
       :styles="styles"
     >
     <template v-slot:content>
