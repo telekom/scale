@@ -43,7 +43,7 @@ export class SegmentedButton {
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabelSegmentedButton: string;
   /** (optional) Button width set to ensure that all buttons have the same width */
-  @Prop() width?: string;  
+  @Prop() width?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   // /** (optional)  */
@@ -152,7 +152,7 @@ export class SegmentedButton {
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
-          style={{width: this.width}}
+          style={{ width: this.width }}
           aria-label={this.ariaLabelSegmentedButton}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
@@ -194,7 +194,8 @@ export class SegmentedButton {
       this.size && `${prefix}${this.size}`,
       this.selected && `${prefix}selected`,
       this.disabled && `${prefix}disabled`,
-      this.adjacentSiblings && `${prefix}${this.adjacentSiblings.replace(/ /g,"-")}-sibling-selected`
+      this.adjacentSiblings &&
+        `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`
     );
   }
 }

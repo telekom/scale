@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- :host {
+:host {
   /* not selected */
   --background-color: var(--telekom-color-ui-state-fill-standard);
   --background-color-selected: var(--telekom-color-ui-base);
@@ -75,7 +75,7 @@
   height: 40px;
 }
 
-.segmented-button--selected{
+.segmented-button--selected {
   background-color: var(--background-color-selected);
   box-shadow: var(--telekom-shadow-raised-standard);
   /* box-shadow: 0px 8px 32px 0px green, 0px 4px 8px 0px red; */
@@ -111,7 +111,6 @@
   backface-visibility: hidden;
 }
 
-
 .segmented-button:not(.segmented-button--disabled):hover {
   background-color: var(--background-color-hover);
 }
@@ -132,7 +131,8 @@
   padding-bottom: 2px;
 }
 
-.segmented-button:hover:not(.segmented-button--disabled) scale-icon-action-success {
+.segmented-button:hover:not(.segmented-button--disabled)
+  scale-icon-action-success {
   display: none !important;
   vertical-align: middle;
 }
@@ -141,7 +141,8 @@
   vertical-align: middle;
 }
 
-.segmented-button:hover:not(.segmented-button--disabled) scale-icon-action-close {
+.segmented-button:hover:not(.segmented-button--disabled)
+  scale-icon-action-close {
   display: inline-flex !important;
   vertical-align: middle;
 }
