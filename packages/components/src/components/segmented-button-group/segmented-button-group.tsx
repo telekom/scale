@@ -41,7 +41,7 @@ export class SegmentedButtonGroup {
   slottedButtons = 0;
 
   @Element() hostElement: HTMLElement;
-  /** state */  
+  /** state */
   @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
   @Prop() size?: 'small' | 'large' | 'xl' = 'small';
@@ -55,7 +55,7 @@ export class SegmentedButtonGroup {
   @Prop()
   ariaLabelTranslation = `segment button group with $slottedButtons buttons`;
   @Prop()
-  longestButtonWidth: string
+  longestButtonWidth: string;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -111,7 +111,7 @@ export class SegmentedButtonGroup {
         'aria-description-translation',
         '$position $selected'
       );
-      SegmentedButton.setAttribute('width', this.longestButtonWidth)
+      SegmentedButton.setAttribute('width', this.longestButtonWidth);
     });
 
     this.propagatePropsToChildren();
@@ -129,7 +129,9 @@ export class SegmentedButtonGroup {
       tempState[i].selected &&
       tempState[i + 1].selected
     ) {
-      adjacentSiblings = `${adjacentSiblings ? adjacentSiblings + ' right' : 'right'}`;
+      adjacentSiblings = `${
+        adjacentSiblings ? adjacentSiblings + ' right' : 'right'
+      }`;
     }
     return adjacentSiblings;
   };
@@ -138,10 +140,13 @@ export class SegmentedButtonGroup {
   getLongestButtonWidth() {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
-      tempWidth = child.getBoundingClientRect().width > tempWidth ? child.getBoundingClientRect().width : tempWidth;
-    })
-    this.longestButtonWidth = `${tempWidth}px`
-    return tempWidth
+      tempWidth =
+        child.getBoundingClientRect().width > tempWidth
+          ? child.getBoundingClientRect().width
+          : tempWidth;
+    });
+    this.longestButtonWidth = `${tempWidth}px`;
+    return tempWidth;
   }
 
   setState(tempState: ButtonStatus[]) {
@@ -153,7 +158,10 @@ export class SegmentedButtonGroup {
         'adjacent-siblings',
         this.getAdjacentSiblings(tempState, i)
       );
-      segmentedButton.setAttribute('selected', tempState[i].selected ? 'true' : 'false');
+      segmentedButton.setAttribute(
+        'selected',
+        tempState[i].selected ? 'true' : 'false'
+      );
     });
     this.status = tempState;
     emitEvent(this, 'scaleChange', this.status);
