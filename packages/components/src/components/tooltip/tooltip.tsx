@@ -54,7 +54,9 @@ export class Tooltip {
   /** (optional) Disable Tooltip */
   @Prop() disabled = false;
   /** (optional) Distance of the Tooltip from the Target Object (related to the `placement`) */
-  @Prop() distance = 5;
+  @Prop() distance = 10;
+  /** (optional) How much of the arrow element is "hidden" */
+  @Prop() arrowOffset?: number = -4;
   /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
   @Prop({ mutable: true, reflect: true }) open = false;
   /** (optional) Set custom trigger Event selection */
@@ -138,7 +140,7 @@ export class Tooltip {
           top: arrowY != null ? `${arrowY}px` : '',
           right: '',
           bottom: '',
-          [staticSide]: '-2.79px',
+          [staticSide]: `${this.arrowOffset}px`,
         });
       });
     }
