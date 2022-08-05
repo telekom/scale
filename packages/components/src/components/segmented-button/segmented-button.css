@@ -63,6 +63,7 @@
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .segmented-button--large {
@@ -77,8 +78,7 @@
 
 .segmented-button--selected {
   background-color: var(--background-color-selected);
-  box-shadow: var(--telekom-shadow-raised-standard);
-  /* box-shadow: 0px 8px 32px 0px green, 0px 4px 8px 0px red; */
+  box-shadow:  0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
 }
 
 .segmented-button--disabled:not(.segmented-button--selected) {

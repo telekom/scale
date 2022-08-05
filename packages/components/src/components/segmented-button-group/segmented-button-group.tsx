@@ -145,7 +145,7 @@ export class SegmentedButtonGroup {
           ? child.getBoundingClientRect().width
           : tempWidth;
     });
-    this.longestButtonWidth = `${tempWidth}px`;
+    this.longestButtonWidth = `${Math.ceil(tempWidth)}px`;
     return tempWidth;
   }
 
