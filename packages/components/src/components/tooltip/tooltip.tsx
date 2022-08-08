@@ -34,7 +34,9 @@ let id = 0;
 })
 export class Tooltip {
   componentId = `tooltip-${++id}`;
-  @Element() hostEl: HTMLElement;
+
+  @Element() hostElement: HTMLElement;
+
   /** (optional) The content of the Tooltip supporting Text only */
   @Prop() content = '';
   /** (optional) Position of the Tooltip on the Object */
@@ -65,6 +67,7 @@ export class Tooltip {
   @Prop() flip: boolean = true;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
   @State() mouseOverTooltip: boolean = false;
 
   @Event({ eventName: 'scale-before-show' }) tooltipBeforeShow: EventEmitter;
@@ -74,26 +77,40 @@ export class Tooltip {
 
   private tooltipEl: HTMLElement;
   private arrowEl: HTMLElement;
+  private triggerEl: HTMLElement;
 
   @Watch('open')
   handleOpenChange() {
     this.open ? this.showTooltip() : this.hideTooltip();
   }
 
-  componentDidLoad() {
-    this.hostEl.addEventListener('blur', this.handleBlur, true);
-    this.hostEl.addEventListener('click', this.handleClick, true);
-    this.hostEl.addEventListener('focus', this.handleFocus, true);
+  connectedCallback() {
+    const children = Array.from(this.hostElement.children).filter(
+      (x) => !x.hasAttribute('slot')
+    );
+    if (children.length == 0) {
+      // TODO warn
+      return;
+    }
+    this.triggerEl = children[0] as HTMLElement;
+    this.triggerEl.addEventListener('blur', this.handleBlur, true);
+    this.triggerEl.addEventListener('click', this.handleClick, true);
+    this.triggerEl.addEventListener('focus', this.handleFocus, true);
+    this.triggerEl.addEventListener('mouseover', this.handleMouseOver, true);
+    this.triggerEl.addEventListener('mouseout', this.handleMouseOut, true);
   }
+
   disconnectedCallback() {
-    this.hostEl.removeEventListener('blur', this.handleBlur, true);
-    this.hostEl.removeEventListener('click', this.handleClick, true);
-    this.hostEl.removeEventListener('focus', this.handleFocus, true);
+    this.triggerEl.removeEventListener('blur', this.handleBlur, true);
+    this.triggerEl.removeEventListener('click', this.handleClick, true);
+    this.triggerEl.removeEventListener('focus', this.handleFocus, true);
+    this.triggerEl.removeEventListener('mouseover', this.handleMouseOver, true);
+    this.triggerEl.removeEventListener('mouseout', this.handleMouseOut, true);
   }
 
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
-    if (isClickOutside(event, this.hostEl)) {
+    if (isClickOutside(event, this.hostElement)) {
       this.hideTooltip();
     }
   }
@@ -106,20 +123,16 @@ export class Tooltip {
   }
 
   update = () => {
-    if (!this.disabled) {
-      computePosition(
-        Array.from(this.hostEl.children).find((x) => !x.hasAttribute('slot')),
-        this.tooltipEl,
-        {
-          placement: this.placement,
-          middleware: [
-            offset(this.distance),
-            ...(this.flip ? [flip()] : []),
-            arrow({ element: this.arrowEl }),
-            shift({ crossAxis: true }),
-          ],
-        }
-      ).then(({ x, y, placement, middlewareData }) => {
+    if (!this.disabled && this.triggerEl != null) {
+      computePosition(this.triggerEl, this.tooltipEl, {
+        placement: this.placement,
+        middleware: [
+          offset(this.distance),
+          ...(this.flip ? [flip()] : []),
+          arrow({ element: this.arrowEl }),
+          shift({ crossAxis: true }),
+        ],
+      }).then(({ x, y, placement, middlewareData }) => {
         Object.assign(this.tooltipEl.style, {
           left: `${x}px`,
           top: `${y}px`,
@@ -235,11 +248,7 @@ export class Tooltip {
 
   render() {
     return (
-      <Host
-        onKeyDown={this.handleKeyDown}
-        onMouseOver={this.handleMouseOver}
-        onMouseOut={this.handleMouseOut}
-      >
+      <Host onKeyDown={this.handleKeyDown}>
         {this.styles && <style>{this.styles}</style>}
 
         <span part="trigger" aria-describedby={this.componentId}>
