@@ -39,7 +39,7 @@ export class SegmentedButton {
   /** (optional) If `true`, the button is disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) button's id */
-  @Prop({ reflect: true }) segmentedButtonId?: string;
+  @Prop({ reflect: true, mutable: true }) segmentedButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop() ariaLabelSegmentedButton: string;
   /** (optional) Button width set to ensure that all buttons have the same width */
@@ -78,7 +78,7 @@ export class SegmentedButton {
   }
 
   componentDidRender() {
-    this.handleIconSize();
+    // this.handleIconSize();
     if (this.hostElement.hasAttribute('aria-label')) {
       statusNote({
         tag: 'deprecated',
@@ -94,6 +94,7 @@ export class SegmentedButton {
     if (this.segmentedButtonId == null) {
       this.segmentedButtonId = 'segmented-button-' + i++;
     }
+    this.handleIconSize();
   }
 
   getAriaDescriptionTranslation() {
@@ -115,7 +116,7 @@ export class SegmentedButton {
         icon.style.marginRight = '4px';
 
         if (this.hostElement.children.length > 1 && this.selected) {
-          icon.style.display = 'none';
+          // icon.style.display = 'none';
         }
         if (this.hostElement.children.length == 1) {
           icon.style.marginRight = '0';
@@ -152,25 +153,19 @@ export class SegmentedButton {
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
-          style={{ width: this.width }}
+          // style={{ width: this.width }}
           aria-label={this.ariaLabelSegmentedButton}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-          {this.selected && (
             <div>
               <scale-icon-action-success
                 size={12}
                 class="scale-icon-action-success"
                 accessibility-title="success"
-              />{' '}
-              <scale-icon-action-close
-                size={12}
-                accessibility-title="success"
               />
             </div>
-          )}
           <slot name="segmented-button-icon" />
           <slot />
         </button>

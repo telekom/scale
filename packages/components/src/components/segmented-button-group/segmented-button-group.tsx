@@ -54,7 +54,7 @@ export class SegmentedButtonGroup {
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
   ariaLabelTranslation = `segment button group with $slottedButtons buttons`;
-  @Prop()
+  @Prop({mutable: true})
   longestButtonWidth: string;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
@@ -98,7 +98,7 @@ export class SegmentedButtonGroup {
     const tempState: ButtonStatus[] = [];
     const segmentedButtons = this.getAllSegmentedButtons();
     this.slottedButtons = segmentedButtons.length;
-    this.getLongestButtonWidth();
+    const longestButtonWidth = this.getLongestButtonWidth();
 
     segmentedButtons.forEach((SegmentedButton) => {
       this.position++;
@@ -111,7 +111,8 @@ export class SegmentedButtonGroup {
         'aria-description-translation',
         '$position $selected'
       );
-      SegmentedButton.setAttribute('width', this.longestButtonWidth);
+      console.log('longest width', longestButtonWidth)
+      SegmentedButton.setAttribute('width', `${Math.ceil(longestButtonWidth)}px`);
     });
 
     this.propagatePropsToChildren();
@@ -140,12 +141,18 @@ export class SegmentedButtonGroup {
   getLongestButtonWidth() {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
+      // console.log('getting width', child.getBoundingClientRect())
+      // tempWidth =
+      //   child.getBoundingClientRect().width > tempWidth
+      //     ? child.getBoundingClientRect().width
+      //     : tempWidth;
+
       tempWidth =
         child.getBoundingClientRect().width > tempWidth
           ? child.getBoundingClientRect().width
-          : tempWidth;
+          : tempWidth;      
+      
     });
-    this.longestButtonWidth = `${Math.ceil(tempWidth)}px`;
     return tempWidth;
   }
 

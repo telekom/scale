@@ -12,8 +12,8 @@
 | `ariaLabelTranslation` | `aria-label-translation` | (optional) aria-label attribute needed for icon-only buttons | `string`                     | ``segment button group with $slottedButtons buttons`` |
 | `disabled`             | `disabled`               | (optional) If `true`, the group is disabled                  | `boolean`                    | `false`                                               |
 | `longestButtonWidth`   | `longest-button-width`   |                                                              | `string`                     | `undefined`                                           |
-| `multiSelect`          | `multi-select`           | (optional) more than one button selected possible            | `boolean`                    | `false`                                               |
-| `size`                 | `size`                   | (optional) The size of the button, default is small          | `"large" \| "small" \| "xl"` | `'small'`                                             |
+| `multiSelect`          | `multi-select`           | (optional) Allow more than one button to be selected         | `boolean`                    | `false`                                               |
+| `size`                 | `size`                   | (optional) The size of the button                            | `"large" \| "small" \| "xl"` | `'small'`                                             |
 | `styles`               | `styles`                 | (optional) Injected CSS styles                               | `string`                     | `undefined`                                           |
 
 
