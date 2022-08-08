@@ -129,9 +129,19 @@ export class Tooltip {
     }
   }
 
-  update = () => {
-    if (!this.disabled && this.triggerEl != null) {
-      computePosition(this.triggerEl, this.tooltipEl, {
+  /**
+   * @see https://floating-ui.com/docs/tutorial#arrow-middleware
+   */
+  update = async () => {
+    if (this.disabled || this.triggerEl == null) {
+      return;
+    }
+
+    // Position tooltip
+    const { x, y, placement, middlewareData } = await computePosition(
+      this.triggerEl,
+      this.tooltipEl,
+      {
         placement: this.placement,
         middleware: [
           offset(this.distance),
@@ -139,31 +149,28 @@ export class Tooltip {
           arrow({ element: this.arrowEl }),
           shift({ crossAxis: true }),
         ],
-      }).then(({ x, y, placement, middlewareData }) => {
-        Object.assign(this.tooltipEl.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        });
+      }
+    );
+    Object.assign(this.tooltipEl.style, {
+      left: `${x}px`,
+      top: `${y}px`,
+    });
 
-        // Accessing the data
-        const { x: arrowX, y: arrowY } = middlewareData.arrow;
-
-        const staticSide = {
-          top: 'bottom',
-          right: 'left',
-          bottom: 'top',
-          left: 'right',
-        }[placement.split('-')[0]];
-
-        Object.assign(this.arrowEl.style, {
-          left: arrowX != null ? `${arrowX}px` : '',
-          top: arrowY != null ? `${arrowY}px` : '',
-          right: '',
-          bottom: '',
-          [staticSide]: `${this.arrowOffset}px`,
-        });
-      });
-    }
+    // Position arrow
+    const { x: arrowX, y: arrowY } = middlewareData.arrow;
+    const staticSide = {
+      top: 'bottom',
+      right: 'left',
+      bottom: 'top',
+      left: 'right',
+    }[placement.split('-')[0]];
+    Object.assign(this.arrowEl.style, {
+      left: arrowX != null ? `${arrowX}px` : '',
+      top: arrowY != null ? `${arrowY}px` : '',
+      right: '',
+      bottom: '',
+      [staticSide]: `${this.arrowOffset}px`,
+    });
   };
 
   componentDidRender() {
