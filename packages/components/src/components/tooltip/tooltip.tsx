@@ -86,6 +86,8 @@ export class Tooltip {
   }
 
   connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
+
     const children = Array.from(this.hostElement.children).filter(
       (x) => !x.hasAttribute('slot')
     );
