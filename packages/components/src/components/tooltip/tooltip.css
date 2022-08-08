@@ -49,13 +49,13 @@
   line-height: var(--line-height);
   padding: var(--spacing);
   border-radius: var(--radius);
+  transition-property: opacity;
   transition-duration: var(--transition-duration-show);
   transition-timing-function: var(--transition-timing-function-show);
 }
 
 [part='tooltip'][aria-hidden='true'] {
   opacity: 0;
-  transition-property: opacity;
   transition-delay: var(--transition-delay-hide);
   transition-duration: var(--transition-duration-hide);
   transition-timing-function: var(--transition-timing-function-hide);
