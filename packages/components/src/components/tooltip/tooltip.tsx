@@ -38,10 +38,10 @@ export class Tooltip {
 
   @Element() hostElement: HTMLElement;
 
-  /** (optional) The content of the Tooltip supporting Text only */
-  @Prop() content = '';
-  /** (optional) Position of the Tooltip on the Object */
-  @Prop() placement:
+  /** (optional) The content of the Tooltip, supporting text only */
+  @Prop() content? = '';
+  /** (optional) Position of the Tooltip around the trigger element */
+  @Prop() placement?:
     | 'top'
     | 'top-start'
     | 'top-end'
@@ -54,18 +54,18 @@ export class Tooltip {
     | 'left'
     | 'left-start'
     | 'left-end' = 'top';
-  /** (optional) Disable Tooltip */
-  @Prop() disabled = false;
-  /** (optional) Distance of the Tooltip from the Target Object (related to the `placement`) */
-  @Prop() distance = 10;
+  /** (optional) Disable the Tooltip */
+  @Prop() disabled? = false;
+  /** (optional) Distance of the Tooltip from the target element (related to `placement`) */
+  @Prop() distance? = 10;
   /** (optional) How much of the arrow element is "hidden" */
   @Prop() arrowOffset?: number = -4;
-  /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
-  @Prop({ mutable: true, reflect: true }) open = false;
-  /** (optional) Set custom trigger Event selection */
-  @Prop() trigger: string = 'hover focus';
+  /** (optional) Set the Tooltip to open by default (will still be closed on closing Events) */
+  @Prop({ mutable: true, reflect: true }) open? = false;
+  /** (optional) Set custom trigger Event (hover, focus, click) */
+  @Prop() trigger?: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
-  @Prop() flip: boolean = true;
+  @Prop() flip?: boolean = true;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
