@@ -88,6 +88,14 @@ export class Tooltip {
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });
 
+    if (this.hostElement.hasAttribute('open')) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'The `open` prop is deprecated in favor of `opened`',
+        source: this.hostElement,
+      });
+    }
+
     const children = Array.from(this.hostElement.children).filter(
       (x) => !x.hasAttribute('slot')
     );
