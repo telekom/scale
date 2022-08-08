@@ -59,6 +59,7 @@
   transition-delay: var(--transition-delay-hide);
   transition-duration: var(--transition-duration-hide);
   transition-timing-function: var(--transition-timing-function-hide);
+  pointer-events: none;
 }
 
 [part='trigger'] {
