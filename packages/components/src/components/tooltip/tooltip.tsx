@@ -60,8 +60,8 @@ export class Tooltip {
   @Prop() distance? = 10;
   /** (optional) How much of the arrow element is "hidden" */
   @Prop() arrowOffset?: number = -4;
-  /** (optional) Set the Tooltip to open by default (will still be closed on closing Events) */
-  @Prop({ mutable: true, reflect: true }) open? = false;
+  /** (optional) Set the Tooltip to opened by default (will still be closed on closing Events) */
+  @Prop({ mutable: true, reflect: true }) opened? = false;
   /** (optional) Set custom trigger Event (hover, focus, click) */
   @Prop() trigger?: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
@@ -80,9 +80,9 @@ export class Tooltip {
   private arrowEl: HTMLElement;
   private triggerEl: HTMLElement;
 
-  @Watch('open')
+  @Watch('opened')
   handleOpenChange() {
-    this.open ? this.showTooltip() : this.hideTooltip();
+    this.opened ? this.showTooltip() : this.hideTooltip();
   }
 
   connectedCallback() {
@@ -126,7 +126,7 @@ export class Tooltip {
 
   componentDidUpdate() {
     this.update();
-    if (this.open) {
+    if (this.opened) {
       this.showTooltip();
     }
   }
@@ -181,29 +181,29 @@ export class Tooltip {
 
   @Method()
   async showTooltip() {
-    if (this.open) {
+    if (this.opened) {
       return;
     }
     const scaleShow = this.tooltipBeforeShow.emit();
     if (scaleShow.defaultPrevented) {
-      this.open = false;
+      this.opened = false;
       return;
     }
-    this.open = true;
+    this.opened = true;
     this.update();
   }
 
   @Method()
   async hideTooltip() {
-    if (!this.open) {
+    if (!this.opened) {
       return;
     }
     const tooltipBeforeHide = this.tooltipBeforeHide.emit();
     if (tooltipBeforeHide.defaultPrevented) {
-      this.open = true;
+      this.opened = true;
       return;
     }
-    this.open = false;
+    this.opened = false;
     this.update();
   }
 
@@ -215,7 +215,7 @@ export class Tooltip {
 
   handleClick = () => {
     if (this.hasTrigger('click')) {
-      this.open && !this.hasTrigger('focus')
+      this.opened && !this.hasTrigger('focus')
         ? this.hideTooltip()
         : this.showTooltip();
     }
@@ -228,7 +228,7 @@ export class Tooltip {
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    if (this.open && event.key === 'Escape') {
+    if (this.opened && event.key === 'Escape') {
       event.stopPropagation();
       this.hideTooltip();
     }
@@ -275,7 +275,7 @@ export class Tooltip {
           <div
             part="tooltip"
             role="tooltip"
-            aria-hidden={this.open ? 'false' : 'true'}
+            aria-hidden={this.opened ? 'false' : 'true'}
             ref={(el) => (this.tooltipEl = el)}
             id={this.componentId}
             tabIndex={0}
