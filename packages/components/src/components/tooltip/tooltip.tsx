@@ -99,7 +99,7 @@ export class Tooltip {
     const children = Array.from(this.hostElement.children).filter(
       (x) => !x.hasAttribute('slot')
     );
-    if (children.length == 0) {
+    if (children.length === 0) {
       // If not children found to be used as trigger, warn
       statusNote({
         tag: 'warning',
