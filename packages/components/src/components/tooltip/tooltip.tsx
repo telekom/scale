@@ -24,6 +24,7 @@ import {
 } from '@stencil/core';
 import { computePosition, offset, flip, shift, arrow } from '@floating-ui/dom';
 import { isClickOutside } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 let id = 0;
 
@@ -89,7 +90,13 @@ export class Tooltip {
       (x) => !x.hasAttribute('slot')
     );
     if (children.length == 0) {
-      // TODO warn
+      // If not children found to be used as trigger, warn
+      statusNote({
+        tag: 'warning',
+        message: 'An element is required, if using text, wrap it in a `<span>`',
+        type: 'warn',
+        source: this.hostElement,
+      });
       return;
     }
     this.triggerEl = children[0] as HTMLElement;
