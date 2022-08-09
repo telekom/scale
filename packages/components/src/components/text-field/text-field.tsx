@@ -169,7 +169,6 @@ export class TextField {
   handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement | null;
     if (this.controlled) {
-      emitEvent(this, 'scaleChange', { value: target.value });
       this.hostElement.querySelector('input').value = String(this.value);
       this.forceUpdate = String(Date.now());
     }
