@@ -2,7 +2,7 @@
   <div>
     <h1 class="scl-font-variant-heading-1">Scale + Vue3 + Vite </h1>
     <scale-button
-      href="https://telekom.github.io/scale/?path=/story/scale-for-developers-scale-and-angular--page"
+      href="https://telekom.github.io/scale/?path=/docs/setup-info-scale-and-vue--page"
       title="External link"
     >
       Open the docs
