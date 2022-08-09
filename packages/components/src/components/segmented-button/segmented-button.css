@@ -131,16 +131,9 @@
   padding-bottom: 2px;
 }
 
-/* .segmented-button:hover:not(.segmented-button--disabled)
-  scale-icon-action-success {
-  display: none !important;
-  vertical-align: middle;
-} */
-
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
-  /* display: none!important; */
-  visibility: hidden;
-  border: 1px solid red;
+  display: none!important;
+  /* visibility: hidden; */
 }
 
 .segmented-button scale-icon-action-success {
