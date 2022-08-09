@@ -153,7 +153,7 @@ export class SegmentedButton {
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
-          // style={{ width: this.width }}
+          style={{ width: this.width }}
           aria-label={this.ariaLabelSegmentedButton}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
