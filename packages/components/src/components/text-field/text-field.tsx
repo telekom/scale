@@ -95,7 +95,7 @@ export class TextField {
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  /** (experimental)) Makes type `input` behave as a controlled component in React */  
+  /** (experimental)) Makes type `input` behave as a controlled component in React */
   @Prop() controlled?: boolean = false;
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
