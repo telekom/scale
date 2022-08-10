@@ -95,8 +95,8 @@ export class TextField {
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  /** (experimental)) Makes type `input` behave as a controlled component in React */
-  @Prop() controlled?: boolean = false;
+  /** (optional)) Makes type `input` behave as a controlled component in React */
+  @Prop() experimental_controlled?: boolean = false;
   /** Emitted when a keyboard input occurred. */
   @Event({ eventName: 'scale-input' }) scaleInput!: EventEmitter<KeyboardEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -136,11 +136,11 @@ export class TextField {
   }
 
   componentDidRender() {
-    // When `controlled` is true,
+    // When `experimental_controlled` is true,
     // make sure the <input> is always in sync with the value.
     const value = this.value == null ? '' : this.value.toString();
     const input = this.hostElement.querySelector('input');
-    if (this.controlled && input.value.toString() !== value) {
+    if (this.experimental_controlled && input.value.toString() !== value) {
       input.value = value;
     }
     if (this.status !== '') {
@@ -167,7 +167,7 @@ export class TextField {
 
   handleInput = (event: Event) => {
     const target = event.target as HTMLInputElement | null;
-    if (this.controlled) {
+    if (this.experimental_controlled) {
       this.hostElement.querySelector('input').value = String(this.value);
       this.forceUpdate = String(Date.now());
     }
