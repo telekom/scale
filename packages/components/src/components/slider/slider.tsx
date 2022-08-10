@@ -81,6 +81,7 @@ export class Slider {
 
   private dragging: boolean;
   private offsetLeft: number;
+  private stepPointDummyArray = [];
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -92,6 +93,7 @@ export class Slider {
       this.sliderId = 'slider-' + i++;
     }
     this.setPosition();
+    this.generateStepPoints();
   }
 
   disconnectedCallback() {
@@ -182,6 +184,7 @@ export class Slider {
 
   handleSteppedPosition = (value) => {
     this.value = value;
+    console.log(this.value);
   };
 
   addGlobalListeners() {
@@ -196,6 +199,13 @@ export class Slider {
     window.removeEventListener('mouseup', this.onDragEnd);
     window.removeEventListener('touchmove', this.onDragging);
     window.removeEventListener('touchend', this.onDragEnd);
+  }
+  generateStepPoints() {
+    let numberOfSteps = this.max / this.step;
+    console.log(numberOfSteps);
+    for (let i = -1; i < numberOfSteps; i++) {
+      this.stepPointDummyArray.push(`${i + 1}`);
+    }
   }
 
   render() {
@@ -232,51 +242,22 @@ export class Slider {
                     : `var(--background-bar)`,
                 }}
               ></div>
-              <div class="slider_track-point-wrapper">
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(0)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(10)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(20)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(30)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(40)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(50)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(60)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(70)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(80)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(90)}
-                ></div>
-                <div
-                  class="slider_track-point"
-                  onClick={() => this.handleSteppedPosition(100)}
-                ></div>
+              <div
+                class="slider_track-point-wrapper"
+                id="slider_track-point-wrapper"
+              >
+                {this.stepPointDummyArray.map((positionStepNumber) => {
+                  return (
+                    <div
+                      class="slider_track-point"
+                      onClick={() =>
+                        this.handleSteppedPosition(
+                          positionStepNumber * this.step
+                        )
+                      }
+                    ></div>
+                  );
+                })}
               </div>
               <div
                 part="thumb-wrapper"
