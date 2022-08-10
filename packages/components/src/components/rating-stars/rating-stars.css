@@ -192,7 +192,8 @@ input[type='range']::-webkit-slider-thumb {
 
 :host(:focus-within) [part='wrapper'],
 [part='wrapper']:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--telekom-color-functional-focus);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
   outline: none;
 }
 
