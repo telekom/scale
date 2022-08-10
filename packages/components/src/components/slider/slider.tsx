@@ -177,6 +177,11 @@ export class Slider {
     const clampedValue = this.clamp(this.value);
     // https://stackoverflow.com/a/25835683
     this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
+    console.log('position' + this.position);
+  };
+
+  handleSteppedPosition = (value) => {
+    this.value = value;
   };
 
   addGlobalListeners() {
@@ -228,17 +233,50 @@ export class Slider {
                 }}
               ></div>
               <div class="slider_track-point-wrapper">
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
-                <div class="slider_track-point"></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(0)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(10)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(20)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(30)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(40)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(50)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(60)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(70)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(80)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(90)}
+                ></div>
+                <div
+                  class="slider_track-point"
+                  onClick={() => this.handleSteppedPosition(100)}
+                ></div>
               </div>
               <div
                 part="thumb-wrapper"
