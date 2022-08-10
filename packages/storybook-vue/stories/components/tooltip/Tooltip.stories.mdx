@@ -42,7 +42,7 @@ import ScaleTooltip from './ScaleTooltip.vue';
       defaultValue: 5,
       control: { type: 'text' },
     },
-    open: {
+    opened: {
       defaultValue: false,
       control: { type: 'boolean' },
     },
@@ -68,7 +68,7 @@ export const Template = (args, { argTypes }) => ({
       :placement="placement"
       :disabled="disabled"
       :distance="distance"
-      :open="open"
+      :opened="opened"
       :trigger="trigger"
       :flip="flip"
       :styles="styles"
@@ -89,7 +89,7 @@ export const SlotTemplate = (args, { argTypes }) => ({
       :placement="placement"
       :disabled="disabled"
       :distance="distance"
-      :open="open"
+      :opened="opened"
       :trigger="trigger"
       :flip="flip"
       :styles="styles"
@@ -110,9 +110,9 @@ export const SlotTemplate = (args, { argTypes }) => ({
 export const FocusTemplate = (args, { argTypes }) => ({
   template: `
     <div style="padding: 30px 30px 30px 70px">
-    <scale-tooltip trigger="focus" content="Tooltip">
-    <scale-button>Focus me</scale-button>
-    </scale-tooltip>
+      <scale-tooltip trigger="focus" content="Tooltip">
+        <scale-button>Focus me</scale-button>
+      </scale-tooltip>
     </div>
   `,
 });
