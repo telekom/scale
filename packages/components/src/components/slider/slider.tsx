@@ -227,6 +227,19 @@ export class Slider {
                     : `var(--background-bar)`,
                 }}
               ></div>
+              <div class="slider_track-point-wrapper">
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+                <div class="slider_track-point"></div>
+              </div>
               <div
                 part="thumb-wrapper"
                 class="slider__thumb-wrapper"
