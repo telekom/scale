@@ -47,6 +47,8 @@ export class Slider {
   @Prop() max?: number = 100;
   /** (optional) the step size to increase or decrease when dragging slider */
   @Prop() step?: number = 1;
+  /** */
+  @Prop() visibleStep?: boolean = false;
   /** (optional) slider label */
   @Prop() label?: string;
   /** (optional) slider display value */
@@ -81,7 +83,7 @@ export class Slider {
 
   private dragging: boolean;
   private offsetLeft: number;
-  private stepPointDummyArray = [];
+  private stepPointInitArray = [];
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -204,7 +206,7 @@ export class Slider {
     let numberOfSteps = this.max / this.step;
     console.log(numberOfSteps);
     for (let i = -1; i < numberOfSteps; i++) {
-      this.stepPointDummyArray.push(`${i + 1}`);
+      this.stepPointInitArray.push(`${i + 1}`);
     }
   }
 
@@ -246,18 +248,20 @@ export class Slider {
                 class="slider_track-point-wrapper"
                 id="slider_track-point-wrapper"
               >
-                {this.stepPointDummyArray.map((positionStepNumber) => {
-                  return (
-                    <div
-                      class="slider_track-point"
-                      onClick={() =>
-                        this.handleSteppedPosition(
-                          positionStepNumber * this.step
-                        )
-                      }
-                    ></div>
-                  );
-                })}
+                {this.visibleStep == true
+                  ? this.stepPointInitArray.map((positionStepNumber) => {
+                      return (
+                        <div
+                          class="slider_track-point"
+                          onClick={() =>
+                            this.handleSteppedPosition(
+                              positionStepNumber * this.step
+                            )
+                          }
+                        ></div>
+                      );
+                    })
+                  : null}
               </div>
               <div
                 part="thumb-wrapper"
