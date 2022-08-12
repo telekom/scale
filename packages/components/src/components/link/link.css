@@ -46,6 +46,25 @@
   --line-thickness-disabled: var(--line-thickness-initial);
 }
 
+/* Quick fix for inaccessible link color when placed inside a scale-tooltip */
+:host-context(scale-tooltip) {
+  /* initial */
+  --color: currentColor;
+  --color-line-initial: currentColor;
+  /* visited */
+  --color-visited: currentColor;
+  --color-line-visited: currentColor;
+  /* hover */
+  --color-hover: currentColor;
+  --color-line-hover: currentColor;
+  /* focus */
+  --color-focus: currentColor;
+  --color-line-focus: currentColor;
+  /* active */
+  --color-active: currentColor;
+  --color-line-active: currentColor;
+}
+
 :host {
   display: inline;
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
