@@ -24,7 +24,7 @@ scale-text-field {
   --background-color-disabled: none;
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
-  --height: var(--telekom-spacing-unit-x12);
+  --height: var(--telekom-spacing-unit-x11);
   --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
