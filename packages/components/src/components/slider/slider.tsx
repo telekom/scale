@@ -43,6 +43,8 @@ export class Slider {
   @Prop() value?: number;
   /** (optional) the display value of the second slider */
   @Prop() valueSecond?: number;
+  /** */
+  @Prop() range?: boolean;
   /** t(optional) he minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
@@ -90,8 +92,15 @@ export class Slider {
     this.setPosition();
   }
 
+  @Watch('valueSecond')
+  handleSecondValueChange() {
+    this.setPosition();
+  }
+
   private dragging: boolean;
+  private draggingSecond: boolean;
   private offsetLeft: number;
+  private offsetLeftSecond: number;
   private thumbNumber: string;
   private stepPointInitArray = [];
 
@@ -152,7 +161,11 @@ export class Slider {
     if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
       steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
     }
-    this.setValue(this.value + steps);
+    if (this.thumbNumber == '1') {
+      this.setValue(this.value + steps);
+    } else {
+      this.setSecondValue(this.valueSecond + steps);
+    }
   };
 
   onDragStart = () => {
@@ -160,6 +173,9 @@ export class Slider {
     if (this.thumbNumber == '1') {
       this.dragging = true;
       this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
+    } else {
+      this.draggingSecond = true;
+      this.offsetLeftSecond = this.sliderTrack.getBoundingClientRect().left;
     }
   };
 
@@ -177,6 +193,18 @@ export class Slider {
         const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
         this.setValue(roundedNextValue);
       }
+    } else {
+      const { draggingSecond, offsetLeftSecond } = this;
+      if (draggingSecond) {
+        const currentX = this.handleTouchEvent(event).clientX;
+
+        const position: number =
+          ((currentX - offsetLeftSecond) / this.sliderTrack.offsetWidth) * 100;
+        const nextValue = (position * (this.max - this.min)) / 100 + this.min;
+        // https://stackoverflow.com/q/14627566
+        const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
+        this.setSecondValue(roundedNextValue);
+      }
     }
   };
 
@@ -185,6 +213,10 @@ export class Slider {
     if (this.thumbNumber == '1') {
       this.dragging = false;
       emitEvent(this, 'scaleChange', this.value);
+      this.removeGlobalListeners();
+    } else {
+      this.draggingSecond = false;
+      emitEvent(this, 'scaleChange', this.valueSecond);
       this.removeGlobalListeners();
     }
   };
@@ -200,15 +232,35 @@ export class Slider {
     emitEvent(this, 'scaleInput', this.value);
   };
 
+  setSecondValue = (nextValue: number) => {
+    // console.log('setValue');
+    this.valueSecond = this.clamp(nextValue);
+    emitEvent(this, 'scaleInput', this.valueSecond);
+  };
+
   setPosition = () => {
     //console.log('setPosition');
-    if (!this.value) {
-      this.position = 0;
-      return;
+
+    if (this.thumbNumber == '1') {
+      if (!this.value) {
+        this.position = 0;
+        return;
+      }
+      const clampedValue = this.clamp(this.value);
+      // https://stackoverflow.com/a/25835683
+      this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
+    } else {
+      if (!this.valueSecond) {
+        this.positionSecond = 0;
+        return;
+      }
+
+      const clampedValueSecond = this.clamp(this.valueSecond);
+
+      this.positionSecond =
+        ((clampedValueSecond - this.min) * 100) / (this.max - this.min);
     }
-    const clampedValue = this.clamp(this.value);
-    // https://stackoverflow.com/a/25835683
-    this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
+
     //console.log('position' + this.position);
   };
 
@@ -229,7 +281,12 @@ export class Slider {
   }
 
   handleSteppedPosition = (value) => {
-    this.value = value;
+    if (this.thumbNumber == '1') {
+      this.value = value;
+    } else {
+      this.valueSecond = value;
+    }
+
     //console.log('handleSteppedPosition');
   };
   generateStepPoints() {
@@ -317,35 +374,39 @@ export class Slider {
                   onKeyDown={this.onKeyDown}
                 />
               </div>
-              <div
-                part="thumb-wrapper"
-                class="slider__thumb-wrapper-second"
-                id={'2-' + this.sliderId + '-wrapper'}
-                style={{ left: `${this.position}%` }}
-                onMouseDown={this.onButtonDown}
-                onTouchStart={this.onButtonDown}
-              >
+              {this.range && (
                 <div
-                  part="thumb"
-                  class="slider__thumb"
-                  tabindex="0"
-                  role="slider"
-                  id={'2-' + this.sliderId}
-                  aria-valuemin={this.min}
-                  aria-valuenow={this.value}
-                  aria-valuemax={this.max}
-                  aria-valuetext={`${this.value}`}
-                  aria-labelledby={`${this.sliderId}-label`}
-                  aria-orientation="horizontal"
-                  aria-disabled={this.disabled}
-                  onKeyDown={this.onKeyDown}
-                />
-              </div>
+                  part="thumb-wrapper"
+                  class="slider__thumb-wrapper-second"
+                  id={'2-' + this.sliderId + '-wrapper'}
+                  style={{ left: `${this.positionSecond}%` }}
+                  onMouseDown={this.onButtonDown}
+                  onTouchStart={this.onButtonDown}
+                >
+                  <div
+                    part="thumb"
+                    class="slider__thumb"
+                    tabindex="0"
+                    role="slider"
+                    id={'2-' + this.sliderId}
+                    aria-valuemin={this.min}
+                    aria-valuenow={this.valueSecond}
+                    aria-valuemax={this.max}
+                    aria-valuetext={`${this.valueSecond}`}
+                    aria-labelledby={`${this.sliderId}-label`}
+                    aria-orientation="horizontal"
+                    aria-disabled={this.disabled}
+                    onKeyDown={this.onKeyDown}
+                  />
+                </div>
+              )}
             </div>
             <input type="hidden" value={this.value} name={this.name} />
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
                 {this.value != null && this.value.toFixed(this.decimals)}
+                {this.valueSecond != null &&
+                  this.valueSecond.toFixed(this.decimals)}
                 {this.value != null && this.unit}
               </div>
             )}

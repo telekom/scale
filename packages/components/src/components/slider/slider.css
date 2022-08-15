@@ -84,7 +84,15 @@
 }
 
 .slider .slider__thumb-wrapper-second {
+  width: 32px;
+  height: 32px;
+  display: flex;
   z-index: var(--scl-z-index-40);
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 }
 
 .slider .slider__display-value {
