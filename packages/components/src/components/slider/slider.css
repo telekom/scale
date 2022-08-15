@@ -83,6 +83,10 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+.slider .slider__thumb-wrapper-second {
+  z-index: var(--scl-z-index-40);
+}
+
 .slider .slider__display-value {
   color: var(--color-display-value);
   margin-left: 24px;

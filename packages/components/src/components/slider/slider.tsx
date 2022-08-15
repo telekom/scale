@@ -41,6 +41,8 @@ export class Slider {
   @Prop() name?: string;
   /** (optional) the display value of the slider */
   @Prop() value?: number;
+  /** (optional) the display value of the second slider */
+  @Prop() valueSecond?: number;
   /** t(optional) he minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
@@ -72,6 +74,8 @@ export class Slider {
 
   // The actual position in % of the slider thumb
   @State() position: number;
+  // The actual position in % of the slider thumb
+  @State() positionSecond: number;
 
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<number>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -81,8 +85,14 @@ export class Slider {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
+  @Watch('value')
+  handleValueChange() {
+    this.setPosition();
+  }
+
   private dragging: boolean;
   private offsetLeft: number;
+  private thumbNumber: string;
   private stepPointInitArray = [];
 
   constructor() {
@@ -115,7 +125,17 @@ export class Slider {
     }
   }
 
-  onButtonDown = () => {
+  /**
+   *
+   * first thumb
+   *
+   * */
+
+  onButtonDown = (event: any) => {
+    //console.log('onButtonDown');
+    console.log(event.target.id);
+    let targetIDString = event.target.id;
+    this.thumbNumber = targetIDString.charAt(0);
     if (this.disabled) {
       return;
     }
@@ -124,6 +144,7 @@ export class Slider {
   };
 
   onKeyDown = (event: KeyboardEvent) => {
+    //console.log('onKeyDown');
     let steps = 0;
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
       steps = event.key === 'ArrowRight' ? this.step : -this.step;
@@ -135,45 +156,52 @@ export class Slider {
   };
 
   onDragStart = () => {
-    this.dragging = true;
-    this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
+    //console.log('onDragStart');
+    if (this.thumbNumber == '1') {
+      this.dragging = true;
+      this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
+    }
   };
 
   onDragging = (event: any) => {
-    const { dragging, offsetLeft } = this;
+    //console.log('onDragging');
+    if (this.thumbNumber == '1') {
+      const { dragging, offsetLeft } = this;
+      if (dragging) {
+        const currentX = this.handleTouchEvent(event).clientX;
 
-    if (dragging) {
-      const currentX = this.handleTouchEvent(event).clientX;
-      const position: number =
-        ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
-      const nextValue = (position * (this.max - this.min)) / 100 + this.min;
-      // https://stackoverflow.com/q/14627566
-      const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
-      this.setValue(roundedNextValue);
+        const position: number =
+          ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
+        const nextValue = (position * (this.max - this.min)) / 100 + this.min;
+        // https://stackoverflow.com/q/14627566
+        const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
+        this.setValue(roundedNextValue);
+      }
     }
   };
 
   onDragEnd = () => {
-    this.dragging = false;
-    emitEvent(this, 'scaleChange', this.value);
-    this.removeGlobalListeners();
+    //console.log('onDragEnd');
+    if (this.thumbNumber == '1') {
+      this.dragging = false;
+      emitEvent(this, 'scaleChange', this.value);
+      this.removeGlobalListeners();
+    }
   };
 
   handleTouchEvent(event: any): MouseEvent | Touch {
+    //console.log('handleTouchEvent');
     return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
   }
 
   setValue = (nextValue: number) => {
+    // console.log('setValue');
     this.value = this.clamp(nextValue);
     emitEvent(this, 'scaleInput', this.value);
   };
 
-  @Watch('value')
-  handleValueChange() {
-    this.setPosition();
-  }
-
   setPosition = () => {
+    //console.log('setPosition');
     if (!this.value) {
       this.position = 0;
       return;
@@ -181,15 +209,11 @@ export class Slider {
     const clampedValue = this.clamp(this.value);
     // https://stackoverflow.com/a/25835683
     this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
-    console.log('position' + this.position);
-  };
-
-  handleSteppedPosition = (value) => {
-    this.value = value;
-    console.log(this.value);
+    //console.log('position' + this.position);
   };
 
   addGlobalListeners() {
+    //console.log('addGlobalListeners');
     window.addEventListener('mousemove', this.onDragging.bind(this));
     window.addEventListener('mouseup', this.onDragEnd.bind(this));
     window.addEventListener('touchmove', this.onDragging.bind(this));
@@ -197,14 +221,20 @@ export class Slider {
   }
 
   removeGlobalListeners() {
+    //console.log('removeGlobalListeners');
     window.removeEventListener('mousemove', this.onDragging);
     window.removeEventListener('mouseup', this.onDragEnd);
     window.removeEventListener('touchmove', this.onDragging);
     window.removeEventListener('touchend', this.onDragEnd);
   }
+
+  handleSteppedPosition = (value) => {
+    this.value = value;
+    //console.log('handleSteppedPosition');
+  };
   generateStepPoints() {
     let numberOfSteps = this.max / this.step;
-    console.log(numberOfSteps);
+    //console.log(numberOfSteps);
     for (let i = -1; i < numberOfSteps; i++) {
       this.stepPointInitArray.push(`${i + 1}`);
     }
@@ -266,6 +296,7 @@ export class Slider {
               <div
                 part="thumb-wrapper"
                 class="slider__thumb-wrapper"
+                id={'1-' + this.sliderId + '-wrapper'}
                 style={{ left: `${this.position}%` }}
                 onMouseDown={this.onButtonDown}
                 onTouchStart={this.onButtonDown}
@@ -275,7 +306,31 @@ export class Slider {
                   class="slider__thumb"
                   tabindex="0"
                   role="slider"
-                  id={this.sliderId}
+                  id={'1-' + this.sliderId}
+                  aria-valuemin={this.min}
+                  aria-valuenow={this.value}
+                  aria-valuemax={this.max}
+                  aria-valuetext={`${this.value}`}
+                  aria-labelledby={`${this.sliderId}-label`}
+                  aria-orientation="horizontal"
+                  aria-disabled={this.disabled}
+                  onKeyDown={this.onKeyDown}
+                />
+              </div>
+              <div
+                part="thumb-wrapper"
+                class="slider__thumb-wrapper-second"
+                id={'2-' + this.sliderId + '-wrapper'}
+                style={{ left: `${this.position}%` }}
+                onMouseDown={this.onButtonDown}
+                onTouchStart={this.onButtonDown}
+              >
+                <div
+                  part="thumb"
+                  class="slider__thumb"
+                  tabindex="0"
+                  role="slider"
+                  id={'2-' + this.sliderId}
                   aria-valuemin={this.min}
                   aria-valuenow={this.value}
                   aria-valuemax={this.max}
