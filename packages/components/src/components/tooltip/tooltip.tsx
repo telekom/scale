@@ -156,7 +156,7 @@ export class Tooltip {
         middleware: [
           offset(this.distance),
           ...(this.flip ? [flip()] : []),
-          arrow({ element: this.arrowEl }),
+          arrow({ element: this.arrowEl, padding: 8 }),
           shift({ crossAxis: true }),
         ],
       }
@@ -168,29 +168,16 @@ export class Tooltip {
 
     // Position arrow
     const { x: arrowX, y: arrowY } = middlewareData.arrow;
-    const [side, edge] = placement.split('-');
+    const [side,] = placement.split('-');
     const staticSide = {
       top: 'bottom',
       right: 'left',
       bottom: 'top',
       left: 'right',
     }[side];
-    // When placement has -start or -end (on the edges) we need to
-    // add an extra offset to the arrow for correct positioning
-    // (Probably there's a simpler way to do it than those if statements
-    // below but I don't know better right now)
-    const EDGE_OFFSET = 8;
-    let arrowOffsetX = 0;
-    let arrowOffsetY = 0;
-    if (edge != null && (side === 'top' || side === 'bottom')) {
-      arrowOffsetX = edge === 'start' ? EDGE_OFFSET * -1 : EDGE_OFFSET;
-    }
-    if (edge != null && (side === 'left' || side === 'right')) {
-      arrowOffsetY = edge === 'start' ? EDGE_OFFSET * -1 : EDGE_OFFSET;
-    }
     Object.assign(this.arrowEl.style, {
-      left: arrowX != null ? `${arrowX + arrowOffsetX}px` : '',
-      top: arrowY != null ? `${arrowY + arrowOffsetY}px` : '',
+      left: arrowX != null ? `${arrowX}px` : '',
+      top: arrowY != null ? `${arrowY}px` : '',
       right: '',
       bottom: '',
       [staticSide]: `${this.arrowOffset}px`,
