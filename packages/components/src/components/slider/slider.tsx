@@ -404,9 +404,14 @@ export class Slider {
             <input type="hidden" value={this.value} name={this.name} />
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
-                {this.value != null && this.value.toFixed(this.decimals)}
+                {this.value != null &&
+                  !this.valueSecond &&
+                  this.value.toFixed(this.decimals)}
                 {this.valueSecond != null &&
-                  this.valueSecond.toFixed(this.decimals)}
+                  this.value != null &&
+                  this.value.toFixed(this.decimals) +
+                    '-' +
+                    this.valueSecond.toFixed(this.decimals)}
                 {this.value != null && this.unit}
               </div>
             )}
