@@ -54,15 +54,17 @@ export class Tooltip {
     | 'left'
     | 'left-start'
     | 'left-end' = 'top';
-  /** (optional) Disable the Tooltip */
+  /** (optional) Disable the tooltip */
   @Prop() disabled? = false;
-  /** (optional) Distance of the Tooltip from the target element (related to `placement`) */
+  /** (optional) Tooltip distance from the target element (related to `placement`) */
   @Prop() distance? = 10;
   /** (optional) How much of the arrow element is "hidden" */
   @Prop() arrowOffset?: number = -4;
-  /** (optional) Set the Tooltip to opened by default (will still be closed on closing Events) */
+  /** (optional) Padding between the arrow and the edges of the tooltip */
+  @Prop() arrowPadding?: number = 8;
+  /** (optional) Set the tooltip to opened by default (will still be closed on closing events) */
   @Prop({ mutable: true, reflect: true }) opened? = false;
-  /** (optional) Set custom trigger Event (hover, focus, click) */
+  /** (optional) Set custom trigger event (hover, focus, click) */
   @Prop() trigger?: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
   @Prop() flip?: boolean = true;
@@ -156,7 +158,7 @@ export class Tooltip {
         middleware: [
           offset(this.distance),
           ...(this.flip ? [flip()] : []),
-          arrow({ element: this.arrowEl, padding: 8 }),
+          arrow({ element: this.arrowEl, padding: this.arrowPadding }),
           shift({ crossAxis: true }),
         ],
       }
