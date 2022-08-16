@@ -170,7 +170,7 @@ export class Tooltip {
 
     // Position arrow
     const { x: arrowX, y: arrowY } = middlewareData.arrow;
-    const [side,] = placement.split('-');
+    const [side] = placement.split('-');
     const staticSide = {
       top: 'bottom',
       right: 'left',
