@@ -44,7 +44,13 @@ export class RadioButton {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
+  @Prop() info?: boolean = true;  
+  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
+  /** (optional) Input status */
+  @Prop() warning?: boolean = false;
+  /** (optional) Input status */
+  @Prop() success?: boolean = false;
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input checked */
@@ -65,6 +71,9 @@ export class RadioButton {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-' + i++;
+    }
+    if (this.invalid || this.warning || this.success) {
+      this.info = false
     }
   }
 
@@ -112,6 +121,18 @@ export class RadioButton {
     ) as HTMLScaleRadioButtonElement[];
   }
 
+  renderHelperIcon() {
+    if (this.info || this.warning) {
+      return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>
+    }
+    if (this.success) {
+      return <scale-icon-alert-success size={11}></scale-icon-alert-success>
+    }
+  }
+
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
@@ -142,6 +163,7 @@ export class RadioButton {
               aria-live="polite"
               aria-relevant="additions removals"
             >
+              {this.renderHelperIcon()}
               <div class="radio-button__helper-text">{this.helperText}</div>
             </div>
           )}
@@ -156,7 +178,9 @@ export class RadioButton {
       this.checked && `radio-button--checked`,
       this.disabled && `radio-button--disabled`,
       this.status && `radio-button--status-${this.status}`,
-      this.invalid && `radio-button--status-error`
+      this.invalid && `radio-button--status-error`,
+      this.warning && `radio-button--status-warning`,
+      this.success && `radio-button--status-success`,
     );
   }
 }
