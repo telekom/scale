@@ -294,7 +294,7 @@ export class Tooltip {
             onMouseLeave={this.handleTooltipBlur}
           >
             <slot name="content">{this.content}</slot>
-            <div part="arrow" ref={(el) => (this.arrowEl = el)}></div>
+            <div aria-hidden="true" part="arrow" ref={(el) => (this.arrowEl = el)}></div>
           </div>
         )}
       </Host>
