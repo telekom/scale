@@ -213,9 +213,11 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
 .radio-button input:checked:disabled {
   background: var(--background-control-checked-disabled);
   border: var(--border-control-checked-disabled);
+  outline: var(--telekom-color-ui-border-disabled);
 }
 .radio-button input:checked:disabled ~ label {
   color: var(--color-disabled);
+  border: var(--border-control-disabled);
 }
 
 .radio-button--disabled label,

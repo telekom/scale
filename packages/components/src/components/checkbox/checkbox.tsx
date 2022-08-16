@@ -51,7 +51,13 @@ export class Checkbox {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
+  @Prop() info?: boolean = true;  
+  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
+  /** (optional) Input status */
+  @Prop() warning?: boolean = false;
+  /** (optional) Input status */
+  @Prop() success?: boolean = false;  
   /** (optional) Input disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
@@ -71,7 +77,11 @@ export class Checkbox {
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   private id = i++;
-
+  componentDidLoad() {
+    if (this.invalid || this.warning || this.success) {
+      this.info = false
+    }
+  }
   componentDidRender() {
     if (this.status !== '') {
       statusNote({
@@ -134,6 +144,18 @@ export class Checkbox {
     }
   }
 
+  renderHelperIcon() {
+    if (this.info || this.warning) {
+      return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>
+    }
+    if (this.success) {
+      return <scale-icon-alert-success size={11}></scale-icon-alert-success>
+    }
+  }
+
   renderHelperText(text) {
     if (this.helperText && this.helperText !== '') {
       return (
@@ -143,6 +165,8 @@ export class Checkbox {
           aria-live="polite"
           aria-relevant="additions removals"
         >
+          {this.renderHelperIcon()}
+
           {text.content}
         </div>
       );
@@ -163,6 +187,9 @@ export class Checkbox {
           disabled: this.disabled,
           error: this.status === 'error' || this.invalid,
           hideLabel: this.hideLabel,
+          warning: this.warning,
+          success: this.success,
+          info: this.info
         }}
       >
         <input

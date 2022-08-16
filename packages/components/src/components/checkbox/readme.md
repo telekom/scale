@@ -15,13 +15,16 @@
 | `helperText`        | `helper-text`         | (optional) Input helper text                                                              | `string`  | `undefined` |
 | `hideLabel`         | `hide-label`          | (optional) Hides the specified label visually                                             | `boolean` | `false`     |
 | `indeterminate`     | `indeterminate`       | (optional) indeterminate                                                                  | `boolean` | `false`     |
+| `info`              | `info`                | (optional) Input status                                                                   | `boolean` | `true`      |
 | `inputId`           | `input-id`            | (optional) Input checkbox id                                                              | `string`  | `undefined` |
 | `invalid`           | `invalid`             | (optional) Input status                                                                   | `boolean` | `false`     |
 | `label`             | `label`               | (optional) Input label                                                                    | `string`  | `''`        |
 | `name`              | `name`                | (optional) Input name                                                                     | `string`  | `undefined` |
 | `status`            | `status`              | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`  | `''`        |
 | `styles`            | `styles`              | (optional) Injected CSS styles                                                            | `string`  | `undefined` |
+| `success`           | `success`             | (optional) Input status                                                                   | `boolean` | `false`     |
 | `value`             | `value`               | (optional) Input value                                                                    | `string`  | `''`        |
+| `warning`           | `warning`             | (optional) Input status                                                                   | `boolean` | `false`     |
 
 
 ## Events
@@ -55,12 +58,18 @@
 
 - [scale-icon-action-indeterminate](../icons/action-indeterminate)
 - [scale-icon-action-success](../icons/action-success)
+- [scale-icon-alert-information](../icons/alert-information)
+- [scale-icon-alert-error](../icons/alert-error)
+- [scale-icon-alert-success](../icons/alert-success)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-alert-information
+  scale-checkbox --> scale-icon-alert-error
+  scale-checkbox --> scale-icon-alert-success
   scale-checkbox-group --> scale-checkbox
   scale-data-grid --> scale-checkbox
   style scale-checkbox fill:#f9f,stroke:#333,stroke-width:4px

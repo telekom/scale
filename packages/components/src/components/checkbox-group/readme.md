@@ -42,6 +42,9 @@ graph TD;
   scale-checkbox-group --> scale-checkbox
   scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-alert-information
+  scale-checkbox --> scale-icon-alert-error
+  scale-checkbox --> scale-icon-alert-success
   style scale-checkbox-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
