@@ -2,6 +2,8 @@
   <scale-radio-button
     :name="name"
     :invalid="invalid"
+    :warning="warning"
+    :success="success"
     :label="label"
     :helper-text="helperText"
     :disabled="disabled"
@@ -20,6 +22,8 @@ import { action } from "@storybook/addon-actions";
 export default {
   props: {
     invalid: { type: Boolean },
+    warning: { ype: Boolean },
+    success: { type: Boolean },
     name: { type: String },
     label: { type: String },
     helperText: { type: String },

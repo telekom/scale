@@ -4,6 +4,8 @@
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
+    :warning="warning"
+    :success="success"
     :disabled="disabled"
     :checked="checked"
     :indeterminate="indeterminate"
@@ -24,6 +26,8 @@ export default {
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
+    warning: { type: Boolean },
+    success: { type: Boolean },
     disabled: { type: Boolean },
     checked: { type: Boolean },
     indeterminate: { type: Boolean },
