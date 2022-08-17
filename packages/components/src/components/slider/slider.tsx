@@ -220,24 +220,15 @@ export class Slider {
   };
 
   initPosition = () => {
-    if (!this.value) {
-      this.position = 0;
-      return;
-    }
-    if (!this.valueSecond) {
-      this.positionSecond = 0;
-      return;
-    }
-    this.position = this.getClampedPosition(this.value);
-    this.positionSecond = this.getClampedPosition(this.valueSecond);
+    this.position = !this.value ? 0 : this.getClampedPosition(this.value);
+    this.positionSecond = !this.valueSecond
+      ? 0
+      : this.getClampedPosition(this.valueSecond);
   };
 
   setPosition = () => {
-    if (this.thumbNumber == '1') {
-      this.position = this.getClampedPosition(this.value);
-    } else {
-      this.positionSecond = this.getClampedPosition(this.valueSecond);
-    }
+    this.position = this.getClampedPosition(this.value);
+    this.positionSecond = this.getClampedPosition(this.valueSecond);
   };
 
   getClampedPosition(value: number) {
