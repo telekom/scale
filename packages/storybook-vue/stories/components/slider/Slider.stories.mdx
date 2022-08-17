@@ -25,44 +25,6 @@ export const Template = (args, { argTypes }) => ({
   },
   template: `
     <scale-slider
-        :custom-color="customColor"
-        :disabled="disabled"
-        :name="name"
-        :label="label"
-        :max="max"
-        :min="min"
-        :show-value="showValue"
-        :track-small="trackSmall"
-        :thumb-large="thumbLarge"
-        :step="step"
-        :value="value"
-        @scaleButtonDown="scaleButtonDown"
-        @scaleDragStart="scaleDragStart"
-        @scaleDragging="scaleDragging"
-        @scaleDragEnd="scaleDragEnd"
-        @scaleSetPosition="scaleSetPosition"
-        @scaleCurrentPosition="scaleCurrentPosition"
-        >
-    </scale-slider>
-    `,
-  methods: {
-    scaleButtonDown: action('scaleButtonDown'),
-    scaleDragStart: action('scaleDragStart'),
-    scaleDragging: action('scaleDragging'),
-    scaleDragEnd: action('scaleDragEnd'),
-    scaleSetPosition: action('scaleSetPosition'),
-    scaleCurrentPosition: action('scaleCurrentPosition'),
-  },
-});
-
-export const TemplateCustomColor = (args, { argTypes }) => ({
-  components: { ScaleSlider },
-  props: {
-    ...ScaleSlider.props,
-  },
-  template: `
-    <scale-slider style="--background-bar: green"
-        :custom-color="customColor"
         :disabled="disabled"
         :name="name"
         :label="label"
@@ -180,28 +142,6 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-slider label="Slider thumb large" value="20" thumb-large></scale-slider>
-```
-
-## Slider with custom color
-
-<Canvas withSource="none">
-  <Story
-    name="Slider with custom color"
-    args={{
-      label: 'Slider with custom color',
-      value: 20,
-    }}
-  >
-    {TemplateCustomColor.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-slider
-  label="Slider with custom color"
-  value="20"
-  style="--background-bar: green"
-></scale-slider>
 ```
 
 ## Disabled slider

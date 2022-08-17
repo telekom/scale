@@ -12,7 +12,6 @@ describe('Slider', () => {
       ['standard'],
       ['slider-track-small'],
       ['slider-thumb-large'],
-      ['slider-with-custom-color'],
       ['disabled-slider'],
     ])('%p', async (variant) => {
       await page.goto(

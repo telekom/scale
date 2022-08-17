@@ -1,6 +1,5 @@
 <template>
   <scale-slider
-    :custom-color="customColor"
     :disabled="disabled"
     :name="name"
     :label="label"
@@ -18,10 +17,9 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 export default {
   props: {
-    customColor: String,
     disabled: { type: Boolean, default: false },
     label: String,
     name: String,
@@ -31,25 +29,25 @@ export default {
     trackSmall: { type: Boolean, default: false },
     thumbLarge: { type: Boolean, default: false },
     step: { type: Number, default: 1 },
-    value: Number
+    value: Number,
   },
   methods: {
     scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
+      action('scaleChange');
+      this.$emit('scaleChange', $event);
     },
     'scale-change'($event) {
-      action("scale-change");
-      this.$emit("scale-change", $event);
+      action('scale-change');
+      this.$emit('scale-change', $event);
     },
     scaleInput($event) {
-      action("scaleInput");
-      this.$emit("scaleInput", $event);
+      action('scaleInput');
+      this.$emit('scaleInput', $event);
     },
     'scale-input'($event) {
-      action("scale-input");
-      this.$emit("scale-input", $event);
+      action('scale-input');
+      this.$emit('scale-input', $event);
     },
-  }
+  },
 };
 </script>
