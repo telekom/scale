@@ -113,7 +113,7 @@ export class Slider {
     if (this.sliderId == null) {
       this.sliderId = 'slider-' + i++;
     }
-    this.setPosition();
+    this.initPosition();
     this.generateStepPoints();
   }
 
@@ -219,18 +219,23 @@ export class Slider {
     emitEvent(this, 'scaleInput', this.valueSecond);
   };
 
+  initPosition = () => {
+    if (!this.value) {
+      this.position = 0;
+      return;
+    }
+    if (!this.valueSecond) {
+      this.positionSecond = 0;
+      return;
+    }
+    this.position = this.getClampedPosition(this.value);
+    this.positionSecond = this.getClampedPosition(this.valueSecond);
+  };
+
   setPosition = () => {
     if (this.thumbNumber == '1') {
-      if (!this.value) {
-        this.position = 0;
-        return;
-      }
       this.position = this.getClampedPosition(this.value);
     } else {
-      if (!this.valueSecond) {
-        this.positionSecond = 0;
-        return;
-      }
       this.positionSecond = this.getClampedPosition(this.valueSecond);
     }
   };
