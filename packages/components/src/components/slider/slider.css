@@ -99,6 +99,7 @@
 .slider .slider__display-value {
   color: var(--color-display-value);
   margin-left: 24px;
+  padding-right: 4px;
   font-weight: var(--font-weight-display-value);
   font-size: var(--font-size-display-value);
 }
