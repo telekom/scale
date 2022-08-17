@@ -40,7 +40,13 @@ export class CheckboxGroup {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
+  @Prop() info?: boolean = true;  
+  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
+  /** (optional) Input status */
+  @Prop() warning?: boolean = false;
+  /** (optional) Input status */
+  @Prop() success?: boolean = false;    
   /** (optional) Input value */
   @Prop() value?: string = '';
   /** (optional) Input checkbox id */
@@ -71,6 +77,12 @@ export class CheckboxGroup {
         this.updateChildrenCheckboxStates(checked);
         this.updateParentCheckboxState();
       }
+    }
+  }
+
+  componentWillLoad() {
+    if (this.invalid || this.warning || this.success) {
+      this.info = false
     }
   }
 
@@ -147,6 +159,8 @@ export class CheckboxGroup {
           helperText={this.helperText}
           status={this.status}
           invalid={this.invalid}
+          warning={this.warning}
+          success={this.success}
           value={this.value}
           inputId={this.inputId}
           checked={this.checked}

@@ -77,7 +77,7 @@ export class Checkbox {
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   private id = i++;
-  componentDidLoad() {
+  componentWillLoad() {
     if (this.invalid || this.warning || this.success) {
       this.info = false
     }

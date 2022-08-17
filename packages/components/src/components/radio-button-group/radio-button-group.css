@@ -51,10 +51,28 @@
   margin-top: calc(var(--margin-top-helper-text) * +1);
   padding-bottom: calc(var(--padding-bottom-helper-text) * -1);
   font-weight: var(--font-weight-helper-text);
+  display: flex;
+  align-items: center;
 }
 
 .radio-button-group__helper-text--status-error {
   color: var(--color-error-helper-text);
+  font-size: var(--font-size-error-helper-text);
+  margin-top: calc(var(--margin-top-error-helper-text) * +1);
+  padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
+  font-weight: var(--font-weight-error-helper-text);
+}
+
+.radio-button-group__helper-text--status-warning {
+  color: orange;
+  font-size: var(--font-size-error-helper-text);
+  margin-top: calc(var(--margin-top-error-helper-text) * +1);
+  padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
+  font-weight: var(--font-weight-error-helper-text);
+}
+
+.radio-button-group__helper-text--status-success {
+  color: green;
   font-size: var(--font-size-error-helper-text);
   margin-top: calc(var(--margin-top-error-helper-text) * +1);
   padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
@@ -76,4 +94,11 @@
   .radio-button-group__helper-text--status-error {
     color: var(--color-error-helper-text-hcm);
   }
+}
+
+.radio-button-group__helper-text scale-icon-alert-success,
+.radio-button-group__helper-text scale-icon-alert-warning,
+.radio-button-group__helper-text scale-icon-alert-information, 
+.radio-button-group__helper-text scale-icon-alert-error {
+  margin-right: var(--telekom-spacing-unit-x1);
 }

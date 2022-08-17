@@ -211,9 +211,9 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
   border: var(--border-control-checked-active);
 }
 .radio-button input:checked:disabled {
-  background: var(--background-control-checked-disabled);
-  border: var(--border-control-checked-disabled);
-  outline: var(--telekom-color-ui-border-disabled);
+  background-color: var(--background-disabled);
+  border: var(--border-control-checked);
+  outline: var(--border-control-disabled);
 }
 .radio-button input:checked:disabled ~ label {
   color: var(--color-disabled);
@@ -228,6 +228,13 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
   border-color: var(--color-disabled);
   color: var(--color-disabled);
   background: var(--telekom-color-ui-state-fill-standard);
+}
+
+.radio-button--disabled scale-icon-alert-information,
+.radio-button--disabled scale-icon-alert-warning,
+.radio-button--disabled scale-icon-alert-success,
+.radio-button--disabled scale-icon-alert-error {
+  color: var(--color-disabled);
 }
 
 .radio-button input:focus {

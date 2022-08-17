@@ -16,7 +16,19 @@ export class RadioButtonGroup {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
+  @Prop() info?: boolean = true;  
+  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
+  /** (optional) Input status */
+  @Prop() warning?: boolean = false;  
+  /** (optional) Input status */
+  @Prop() success?: boolean = false; 
+
+  componentWillLoad() {
+    if (this.invalid || this.warning || this.success) {
+      this.info = false
+    }
+  }
 
   componentDidRender() {
     if (this.status !== '') {
@@ -29,6 +41,18 @@ export class RadioButtonGroup {
       });
     }
   }
+
+  renderHelperIcon() {
+    if (this.info || this.warning) {
+      return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>
+    }
+    if (this.success) {
+      return <scale-icon-alert-success size={11}></scale-icon-alert-success>
+    }
+  }  
 
   render() {
     return (
@@ -46,6 +70,7 @@ export class RadioButtonGroup {
               class={this.getCssClassMap()}
               aria-label={this.helperText}
             >
+              {this.renderHelperIcon()}
               {this.helperText}
             </div>
           ) : null}
@@ -60,6 +85,8 @@ export class RadioButtonGroup {
   getCssClassMap() {
     return classNames(
       'radio-button-group__helper-text',
+      this.warning && `radio-button-group__helper-text--status-warning`, 
+      this.success && `radio-button-group__helper-text--status-success`,
       (this.status === 'error' || this.invalid) &&
         `radio-button-group__helper-text--status-error`
     );
