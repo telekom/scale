@@ -280,15 +280,6 @@ export class Slider {
     window.removeEventListener('touchend', this.onDragEnd);
   }
 
-  handleSteppedPosition = (value) => {
-    if (this.thumbNumber == '1') {
-      this.value = value;
-    } else {
-      this.valueSecond = value;
-    }
-
-    //console.log('handleSteppedPosition');
-  };
   generateStepPoints() {
     let numberOfSteps = this.max / this.step;
     //console.log(numberOfSteps);
@@ -374,17 +365,8 @@ export class Slider {
                 id="slider_track-point-wrapper"
               >
                 {this.visibleStep == true
-                  ? this.stepPointInitArray.map((positionStepNumber) => {
-                      return (
-                        <div
-                          class="slider_track-point"
-                          onClick={() =>
-                            this.handleSteppedPosition(
-                              positionStepNumber * this.step
-                            )
-                          }
-                        ></div>
-                      );
+                  ? this.stepPointInitArray.map(() => {
+                      return <div class="slider_track-point"></div>;
                     })
                   : null}
               </div>
