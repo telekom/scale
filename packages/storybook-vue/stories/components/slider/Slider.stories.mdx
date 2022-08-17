@@ -34,7 +34,9 @@ export const Template = (args, { argTypes }) => ({
         :track-small="trackSmall"
         :thumb-large="thumbLarge"
         :step="step"
+        :range="range"
         :value="value"
+        :value-second="valueSecond"
         @scaleButtonDown="scaleButtonDown"
         @scaleDragStart="scaleDragStart"
         @scaleDragging="scaleDragging"
@@ -142,6 +144,31 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-slider label="Slider thumb large" value="20" thumb-large></scale-slider>
+```
+
+## Range slider
+
+<Canvas withSource="none">
+  <Story
+    name="Range Slider"
+    args={{
+      label: 'Range Slider',
+      value: 40,
+      valueSecond: 10,
+      range: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Disabled Slider"
+  value="40"
+  value-second="10"
+  range
+></scale-slider>
 ```
 
 ## Disabled slider

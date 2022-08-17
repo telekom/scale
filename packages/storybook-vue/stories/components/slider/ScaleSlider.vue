@@ -10,6 +10,8 @@
     :thumb-large="thumbLarge"
     :step="step"
     :value="value"
+    :value-second="valueSecond"
+    :range="range"
     @scaleChange="scaleChange"
     @scaleInput="scaleInput"
   >
@@ -30,6 +32,8 @@ export default {
     thumbLarge: { type: Boolean, default: false },
     step: { type: Number, default: 1 },
     value: Number,
+    valueSecond: Number,
+    range: Boolean,
   },
   methods: {
     scaleChange($event) {
