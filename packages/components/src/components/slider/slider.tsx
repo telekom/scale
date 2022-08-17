@@ -134,14 +134,7 @@ export class Slider {
     }
   }
 
-  /**
-   *
-   * first thumb
-   *
-   * */
-
   onButtonDown = (event: any) => {
-    //console.log('onButtonDown');
     console.log(event.target.id);
     let targetIDString = event.target.id;
     this.thumbNumber = targetIDString.charAt(0);
@@ -153,7 +146,6 @@ export class Slider {
   };
 
   onKeyDown = (event: KeyboardEvent) => {
-    //console.log('onKeyDown');
     let steps = 0;
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
       steps = event.key === 'ArrowRight' ? this.step : -this.step;
@@ -161,86 +153,74 @@ export class Slider {
     if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
       steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
     }
-    if (this.thumbNumber == '1') {
-      this.setValue(this.value + steps);
-    } else {
-      this.setSecondValue(this.valueSecond + steps);
-    }
+    this.thumbNumber == '1'
+      ? this.setValue(this.value + steps)
+      : this.setSecondValue(this.valueSecond + steps);
   };
 
   onDragStart = () => {
-    //console.log('onDragStart');
-    if (this.thumbNumber == '1') {
-      this.dragging = true;
-      this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
-    } else {
-      this.draggingSecond = true;
-      this.offsetLeftSecond = this.sliderTrack.getBoundingClientRect().left;
+    switch (this.thumbNumber) {
+      case '2':
+        this.draggingSecond = true;
+        this.offsetLeftSecond = this.sliderTrack.getBoundingClientRect().left;
+      default:
+        this.dragging = true;
+        this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
     }
   };
 
   onDragging = (event: any) => {
-    //console.log('onDragging');
-    if (this.thumbNumber == '1') {
-      const { dragging, offsetLeft } = this;
-      if (dragging) {
-        const currentX = this.handleTouchEvent(event).clientX;
-
-        const position: number =
-          ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
-        const nextValue = (position * (this.max - this.min)) / 100 + this.min;
-        // https://stackoverflow.com/q/14627566
-        const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
-        this.setValue(roundedNextValue);
-      }
-    } else {
-      const { draggingSecond, offsetLeftSecond } = this;
-      if (draggingSecond) {
-        const currentX = this.handleTouchEvent(event).clientX;
-
-        const position: number =
-          ((currentX - offsetLeftSecond) / this.sliderTrack.offsetWidth) * 100;
-        const nextValue = (position * (this.max - this.min)) / 100 + this.min;
-        // https://stackoverflow.com/q/14627566
-        const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
-        this.setSecondValue(roundedNextValue);
-      }
+    switch (this.thumbNumber) {
+      case '1':
+        if (this.dragging) {
+          this.setValue(this.draggingHelper(event, this.offsetLeft));
+        }
+      case '2':
+        if (this.draggingSecond) {
+          this.setSecondValue(
+            this.draggingHelper(event, this.offsetLeftSecond)
+          );
+        }
     }
+  };
+
+  draggingHelper = (event: any, offsetLeft: number) => {
+    const currentX = this.handleTouchEvent(event).clientX;
+    const position: number =
+      ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
+    const nextValue = (position * (this.max - this.min)) / 100 + this.min;
+    // https://stackoverflow.com/q/14627566
+    const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
+    return roundedNextValue;
   };
 
   onDragEnd = () => {
-    //console.log('onDragEnd');
-    if (this.thumbNumber == '1') {
-      this.dragging = false;
-      emitEvent(this, 'scaleChange', this.value);
-      this.removeGlobalListeners();
-    } else {
-      this.draggingSecond = false;
-      emitEvent(this, 'scaleChange', this.valueSecond);
-      this.removeGlobalListeners();
+    switch (this.thumbNumber) {
+      case '2':
+        this.draggingSecond = false;
+        emitEvent(this, 'scaleChange', this.valueSecond);
+      default:
+        this.dragging = false;
+        emitEvent(this, 'scaleChange', this.value);
     }
+    this.removeGlobalListeners();
   };
 
   handleTouchEvent(event: any): MouseEvent | Touch {
-    //console.log('handleTouchEvent');
     return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
   }
 
   setValue = (nextValue: number) => {
-    // console.log('setValue');
     this.value = this.clamp(nextValue);
     emitEvent(this, 'scaleInput', this.value);
   };
 
   setSecondValue = (nextValue: number) => {
-    // console.log('setValue');
     this.valueSecond = this.clamp(nextValue);
     emitEvent(this, 'scaleInput', this.valueSecond);
   };
 
   setPosition = () => {
-    //console.log('setPosition');
-
     if (this.thumbNumber == '1') {
       if (!this.value) {
         this.position = 0;
@@ -260,12 +240,9 @@ export class Slider {
       this.positionSecond =
         ((clampedValueSecond - this.min) * 100) / (this.max - this.min);
     }
-
-    //console.log('position' + this.position);
   };
 
   addGlobalListeners() {
-    //console.log('addGlobalListeners');
     window.addEventListener('mousemove', this.onDragging.bind(this));
     window.addEventListener('mouseup', this.onDragEnd.bind(this));
     window.addEventListener('touchmove', this.onDragging.bind(this));
@@ -273,7 +250,6 @@ export class Slider {
   }
 
   removeGlobalListeners() {
-    //console.log('removeGlobalListeners');
     window.removeEventListener('mousemove', this.onDragging);
     window.removeEventListener('mouseup', this.onDragEnd);
     window.removeEventListener('touchmove', this.onDragging);
@@ -282,7 +258,6 @@ export class Slider {
 
   generateStepPoints() {
     let numberOfSteps = this.max / this.step;
-    //console.log(numberOfSteps);
     for (let i = -1; i < numberOfSteps; i++) {
       this.stepPointInitArray.push(`${i + 1}`);
     }
@@ -334,7 +309,6 @@ export class Slider {
                   part="bar"
                   class="slider__bar"
                   style={{
-                    //width: `${this.position}%`,
                     width: `${
                       (this.getDistanzBetweenValues() / this.max) * 100
                     }%`,
