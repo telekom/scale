@@ -297,6 +297,25 @@ export class Slider {
     }
   }
 
+  generateCurrentValueArray() {
+    const currentValues = [];
+    currentValues.push(this.value != null ? this.value : '0');
+    currentValues.push(this.valueSecond != null ? this.valueSecond : '0');
+    return currentValues;
+  }
+
+  getLowestValue() {
+    return Math.min(...this.generateCurrentValueArray());
+  }
+
+  getHighestValue() {
+    return Math.max(...this.generateCurrentValueArray());
+  }
+
+  getDistanzBetweenValues() {
+    return this.getHighestValue() - this.getLowestValue();
+  }
+
   render() {
     return (
       <Host>
@@ -319,18 +338,37 @@ export class Slider {
               class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
             >
-              <div
-                part="bar"
-                class="slider__bar"
-                style={{
-                  width: `${this.position}%`,
-                  backgroundColor: this.customColor
-                    ? this.customColor
-                    : this.disabled
-                    ? `var(--background-bar-disabled)`
-                    : `var(--background-bar)`,
-                }}
-              ></div>
+              {this.range ? (
+                <div
+                  part="bar"
+                  class="slider__bar"
+                  style={{
+                    //width: `${this.position}%`,
+                    width: `${
+                      (this.getDistanzBetweenValues() / this.max) * 100
+                    }%`,
+                    left: `${(this.getLowestValue() / this.max) * 100}%`,
+                    backgroundColor: this.customColor
+                      ? this.customColor
+                      : this.disabled
+                      ? `var(--background-bar-disabled)`
+                      : `var(--background-bar)`,
+                  }}
+                ></div>
+              ) : (
+                <div
+                  part="bar"
+                  class="slider__bar"
+                  style={{
+                    width: `${this.position}%`,
+                    backgroundColor: this.customColor
+                      ? this.customColor
+                      : this.disabled
+                      ? `var(--background-bar-disabled)`
+                      : `var(--background-bar)`,
+                  }}
+                ></div>
+              )}
               <div
                 class="slider_track-point-wrapper"
                 id="slider_track-point-wrapper"
@@ -405,13 +443,10 @@ export class Slider {
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
                 {this.value != null &&
-                  !this.valueSecond &&
+                  !this.range &&
                   this.value.toFixed(this.decimals)}
-                {this.valueSecond != null &&
-                  this.value != null &&
-                  this.value.toFixed(this.decimals) +
-                    '-' +
-                    this.valueSecond.toFixed(this.decimals)}
+                {this.range &&
+                  this.getLowestValue() + '-' + this.getHighestValue()}
                 {this.value != null && this.unit}
               </div>
             )}
