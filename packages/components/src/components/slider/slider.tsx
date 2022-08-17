@@ -43,15 +43,15 @@ export class Slider {
   @Prop() value?: number;
   /** (optional) the display value of the second slider */
   @Prop() valueSecond?: number;
-  /** */
+  /** (optional)  slider with range*/
   @Prop() range?: boolean;
-  /** t(optional) he minimal value of the slider */
+  /** (optional) the minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
   @Prop() max?: number = 100;
   /** (optional) the step size to increase or decrease when dragging slider */
   @Prop() step?: number = 1;
-  /** */
+  /** (optional) slider shows visible steps*/
   @Prop() visibleStep?: boolean = false;
   /** (optional) slider label */
   @Prop() label?: string;
@@ -135,7 +135,6 @@ export class Slider {
   }
 
   onButtonDown = (event: any) => {
-    console.log(event.target.id);
     let targetIDString = event.target.id;
     this.thumbNumber = targetIDString.charAt(0);
     if (this.disabled) {
@@ -173,18 +172,18 @@ export class Slider {
     switch (this.thumbNumber) {
       case '1':
         if (this.dragging) {
-          this.setValue(this.draggingHelper(event, this.offsetLeft));
+          this.setValue(this.getNextDraggingValue(event, this.offsetLeft));
         }
       case '2':
         if (this.draggingSecond) {
           this.setSecondValue(
-            this.draggingHelper(event, this.offsetLeftSecond)
+            this.getNextDraggingValue(event, this.offsetLeftSecond)
           );
         }
     }
   };
 
-  draggingHelper = (event: any, offsetLeft: number) => {
+  getNextDraggingValue = (event: any, offsetLeft: number) => {
     const currentX = this.handleTouchEvent(event).clientX;
     const position: number =
       ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
@@ -226,21 +225,20 @@ export class Slider {
         this.position = 0;
         return;
       }
-      const clampedValue = this.clamp(this.value);
-      // https://stackoverflow.com/a/25835683
-      this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
+      this.position = this.getClampedPosition(this.value);
     } else {
       if (!this.valueSecond) {
         this.positionSecond = 0;
         return;
       }
-
-      const clampedValueSecond = this.clamp(this.valueSecond);
-
-      this.positionSecond =
-        ((clampedValueSecond - this.min) * 100) / (this.max - this.min);
+      this.positionSecond = this.getClampedPosition(this.valueSecond);
     }
   };
+
+  getClampedPosition(value: number) {
+    const clampedValue = this.clamp(value);
+    return ((clampedValue - this.min) * 100) / (this.max - this.min);
+  }
 
   addGlobalListeners() {
     window.addEventListener('mousemove', this.onDragging.bind(this));
