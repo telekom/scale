@@ -7,6 +7,7 @@
     :min="min"
     :show-value="showValue"
     :step="step"
+    :platform="platform"
     :value="value"
     :value-second="valueSecond"
     :range="range"
@@ -32,6 +33,7 @@ export default {
     valueSecond: Number,
     range: Boolean,
     visibleStep: Boolean,
+    platform: { type: 'web' | 'ios' | 'android', default: 'web' },
   },
   methods: {
     scaleChange($event) {

@@ -36,6 +36,7 @@ export const Template = (args, { argTypes }) => ({
         :value="value"
         :value-second="valueSecond"
         :visible-step="visibleStep"
+        :platform="platform"
         @scaleButtonDown="scaleButtonDown"
         @scaleDragStart="scaleDragStart"
         @scaleDragging="scaleDragging"
@@ -183,6 +184,52 @@ For Shadow Parts, please inspect the element's #shadow.
   step="10"
   range
   visible-step
+></scale-slider>
+```
+
+## Platform iOS
+
+<Canvas withSource="none">
+  <Story
+    name="Platform iOS"
+    args={{
+      label: 'Platform iOS Slider',
+      value: 40,
+      platform: 'ios',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Platform iOS Slider"
+  value="40"
+  platform="ios"
+></scale-slider>
+```
+
+## Platform Android
+
+<Canvas withSource="none">
+  <Story
+    name="Platform Android"
+    args={{
+      label: 'Platform Android Slider',
+      value: 40,
+      platform: 'android',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Platform Android Slider"
+  value="40"
+  platform="android"
 ></scale-slider>
 ```
 

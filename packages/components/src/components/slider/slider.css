@@ -40,7 +40,7 @@
 .slider .slider__track {
   width: 303px;
   background-color: #e7e7e9;
-  height: 8px;
+  height: 6px;
   margin: 16px 0;
   display: flex;
   position: relative;
@@ -50,12 +50,28 @@
   z-index: var(--scl-z-index-10);
 }
 
+.slider--ios .slider__track {
+  height: 4px;
+}
+
+.slider--android .slider__track {
+  height: 6px;
+}
+
 .slider .slider__bar {
-  height: 8px;
+  height: 6px;
   position: absolute;
   border-radius: 100px;
   background-color: var(--background-bar);
   z-index: var(--scl-z-index-10);
+}
+
+.slider--ios .slider__bar {
+  height: 4px;
+}
+
+.slider--android .slider__bar {
+  height: 6px;
 }
 
 .slider .slider__thumb-wrapper {
@@ -72,15 +88,26 @@
 }
 
 .slider .slider__thumb {
-  width: 16px;
+  width: 24px;
   border: 1px solid;
-  height: 16px;
+  height: 24px;
   outline: none;
   box-sizing: border-box;
   border-color: #00000005;
   border-radius: 50%;
   background-color: #ffffff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.slider--ios .slider__thumb {
+  width: 26px;
+  height: 26px;
+}
+.slider--android .slider__thumb {
+  width: 22px;
+  height: 22px;
+  border-color: #00000014;
+  background-color: #e20074;
 }
 
 .slider .slider__thumb-wrapper-second {
