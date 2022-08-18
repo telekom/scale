@@ -124,25 +124,6 @@
   cursor: grabbing;
 }
 
-.slider--track-small .slider__track {
-  border: none;
-  height: 1px;
-  border-top: 1px solid transparent;
-  background-color: var(--background-track);
-}
-
-.slider--track-small .slider__bar {
-  border: 1px solid transparent;
-  height: 3px;
-  z-index: 1;
-  box-sizing: border-box;
-}
-
-.slider--thumb-large .slider__thumb {
-  width: 24px;
-  height: 24px;
-}
-
 .slider--disabled .slider__track-wrapper {
   cursor: not-allowed;
 }

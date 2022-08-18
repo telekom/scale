@@ -31,12 +31,11 @@ export const Template = (args, { argTypes }) => ({
         :max="max"
         :min="min"
         :show-value="showValue"
-        :track-small="trackSmall"
-        :thumb-large="thumbLarge"
         :step="step"
         :range="range"
         :value="value"
         :value-second="valueSecond"
+        :visible-step="visibleStep"
         @scaleButtonDown="scaleButtonDown"
         @scaleDragStart="scaleDragStart"
         @scaleDragging="scaleDragging"
@@ -108,44 +107,6 @@ export const Template = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## Slider track small
-
-<Canvas withSource="none">
-  <Story
-    name="Slider track small"
-    args={{
-      label: 'Slider track small',
-      value: 20,
-      trackSmall: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-slider label="Slider track small" value="20" track-small></scale-slider>
-```
-
-## Slider thumb large
-
-<Canvas withSource="none">
-  <Story
-    name="Slider thumb large"
-    args={{
-      label: 'Slider thumb large',
-      value: 20,
-      thumbLarge: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-slider label="Slider thumb large" value="20" thumb-large></scale-slider>
-```
-
 ## Range slider
 
 <Canvas withSource="none">
@@ -164,10 +125,35 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-slider
-  label="Disabled Slider"
+  label="Range Slider"
   value="40"
   value-second="10"
   range
+></scale-slider>
+```
+
+## Stepped slider
+
+<Canvas withSource="none">
+  <Story
+    name="Stepped Slider"
+    args={{
+      label: 'Stepped Slider',
+      value: 40,
+      step: 10,
+      visibleStep: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Stepped Slider"
+  value="40"
+  step="10"
+  visible-step
 ></scale-slider>
 ```
 

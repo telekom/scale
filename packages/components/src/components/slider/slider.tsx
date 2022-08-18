@@ -37,6 +37,8 @@ export class Slider {
   sliderTrack?: HTMLDivElement;
   /* Host HTML Element */
   @Element() hostElement: HTMLElement;
+  /** (optional) the platform the slider is used for */
+  @Prop() platform?: 'web' | 'ios' | 'android' = 'web';
   /** (optional) the name of the slider */
   @Prop() name?: string;
   /** (optional) the display value of the slider */
@@ -61,14 +63,14 @@ export class Slider {
   @Prop() unit?: string = '%';
   /** (optional) number of decimal places */
   @Prop() decimals?: 0 | 1 | 2 = 0;
-  /** @deprecated - optional) slider custom color */
+  /** @deprecated - (optional) smaller track */
+  @Prop() trackSmall?: boolean = false;
+  /** @deprecated - (optional) larger thumb */
+  @Prop() thumbLarge?: boolean = false;
+  /** @deprecated - (optional) slider custom color */
   @Prop() customColor?: string;
   /** (optional) disabled  */
   @Prop() disabled?: boolean = false;
-  /** (optional) smaller track */
-  @Prop() trackSmall?: boolean = false;
-  /** (optional) larger thumb */
-  @Prop() thumbLarge?: boolean = false;
   /** (optional) Slider id */
   @Prop() sliderId?: string;
   /** (optional) Injected CSS styles */
@@ -128,6 +130,22 @@ export class Slider {
         message: `Property "customColor" is deprecated. 
           Please use css variable "--background-bar" to set the slider-bar color;
           e.g. <scale-slider value="20" style="--background-bar: green"></scale-slider>`,
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.thumbLarge !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message: `Property "thumbLarge" is deprecated.`,
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.trackSmall !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message: `Property "trackSmall" is deprecated.`,
         type: 'warn',
         source: this.hostElement,
       });
@@ -252,6 +270,7 @@ export class Slider {
 
   generateStepPoints() {
     let numberOfSteps = this.max / this.step;
+    this.stepPointInitArray.length = 0;
     for (let i = -1; i < numberOfSteps; i++) {
       this.stepPointInitArray.push(`${i + 1}`);
     }
@@ -272,7 +291,7 @@ export class Slider {
     return Math.max(...this.generateCurrentValueArray());
   }
 
-  getDistanzBetweenValues() {
+  getDistanceBetweenValues() {
     return this.getHighestValue() - this.getLowestValue();
   }
 
@@ -304,7 +323,7 @@ export class Slider {
                   class="slider__bar"
                   style={{
                     width: `${
-                      (this.getDistanzBetweenValues() / this.max) * 100
+                      (this.getDistanceBetweenValues() / this.max) * 100
                     }%`,
                     left: `${(this.getLowestValue() / this.max) * 100}%`,
                     backgroundColor: this.customColor
@@ -421,8 +440,7 @@ export class Slider {
     return classNames(
       component,
       this.disabled && `${prefix}disabled`,
-      this.trackSmall && `${prefix}track-small`,
-      this.thumbLarge && `${prefix}thumb-large`
+      this.platform && `${prefix}${this.platform}`
     );
   }
 

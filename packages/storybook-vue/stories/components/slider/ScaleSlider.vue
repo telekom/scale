@@ -6,12 +6,11 @@
     :max="max"
     :min="min"
     :show-value="showValue"
-    :track-small="trackSmall"
-    :thumb-large="thumbLarge"
     :step="step"
     :value="value"
     :value-second="valueSecond"
     :range="range"
+    :visible-step="visibleStep"
     @scaleChange="scaleChange"
     @scaleInput="scaleInput"
   >
@@ -28,12 +27,11 @@ export default {
     max: { type: Number, default: 100 },
     min: { type: Number, default: 0 },
     showValue: { type: Boolean, default: true },
-    trackSmall: { type: Boolean, default: false },
-    thumbLarge: { type: Boolean, default: false },
     step: { type: Number, default: 1 },
     value: Number,
     valueSecond: Number,
     range: Boolean,
+    visibleStep: Boolean,
   },
   methods: {
     scaleChange($event) {
