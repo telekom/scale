@@ -48,6 +48,8 @@ export class Dropdown {
   @Prop() helperText?: string = '';
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** @deprecated */
+  @Prop() size?: string;
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
   /** (optional) Input disabled */
@@ -157,6 +159,14 @@ export class Dropdown {
         tag: 'deprecated',
         message:
           'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.hostElement,
       });
