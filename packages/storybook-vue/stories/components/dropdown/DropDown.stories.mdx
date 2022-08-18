@@ -15,7 +15,6 @@ export const Template = (args, { argTypes }) => ({
       :invalid="invalid"
       :disabled="disabled"
       :required="required"
-      :size="size"
       :value="value"
       :input-id="inputId"
       :visible-size="visibleSize"
@@ -72,28 +71,6 @@ export const Template = (args, { argTypes }) => ({
 
 ```html
 <scale-dropdown label="select">
-  <option value="1">item 1</option>
-  <option value="2" selected>item 2</option>
-  <option value="3">item 3</option>
-</scale-dropdown>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      label: 'Small',
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-dropdown label="Small" size="small">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>

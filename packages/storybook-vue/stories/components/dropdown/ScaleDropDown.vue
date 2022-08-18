@@ -6,7 +6,6 @@
     :invalid="invalid"
     :disabled="disabled"
     :required="required"
-    :size="size"
     :value="value"
     :input-id="inputId"
     :visible-size="visibleSize"
@@ -32,7 +31,6 @@ export default {
     invalid: { type: Boolean },
     disabled: { type: Boolean },
     required: { type: Boolean },
-    size: { type: String },
     value: { type: String },
     inputId: { type: String },
     visibleSize: { type: Number },
