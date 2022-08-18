@@ -18,7 +18,6 @@
 | `multiple`    | `multiple`     | (optional) select multiple options                                                        | `boolean`          | `undefined` |
 | `name`        | `name`         | (optional) Input name                                                                     | `string`           | `''`        |
 | `required`    | `required`     | (optional) Input required                                                                 | `boolean`          | `undefined` |
-| `size`        | `size`         | (optional) Input size                                                                     | `string`           | `''`        |
 | `status`      | `status`       | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`           | `''`        |
 | `styles`      | `styles`       | (optional) Injected CSS styles                                                            | `string`           | `undefined` |
 | `transparent` | `transparent`  | (optional) input background transparent                                                   | `boolean`          | `undefined` |

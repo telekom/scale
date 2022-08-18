@@ -194,24 +194,6 @@ scale-dropdown {
 .dropdown--status-error .input__helper-text {
   color: var(--color-helper-text-error);
 }
-.dropdown--size-small .input__dropdown {
-  height: var(--height-small);
-}
-.dropdown--size-small .input__label {
-  font-size: var(--font-size-label-small);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height-small) - var(--font-size-label-small)) / 2)
-  );
-  font-weight: var(--font-weight-label-small);
-}
-
-.dropdown--size-small.animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
-  line-height: var(--telekom-typography-font-size-small);
-}
 
 .dropdown--transparent .input__dropdown {
   background-color: transparent;

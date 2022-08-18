@@ -44,8 +44,6 @@ export class Dropdown {
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
-  /** (optional) Input size */
-  @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** @deprecated - invalid should replace status */
@@ -292,7 +290,6 @@ export class Dropdown {
       this.transparent && 'dropdown--transparent',
       this.status && `dropdown--status-${this.status}`,
       this.invalid && `dropdown--status-error`,
-      this.size && `dropdown--size-${this.size}`,
       this.value != null && this.value !== '' && 'animated'
     );
   }
