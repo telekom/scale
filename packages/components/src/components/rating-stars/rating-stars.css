@@ -152,7 +152,8 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 [part='star'][data-selected] [part='selected-star'] {
-  color: var(--stars-color);
+  /* color: var(--stars-color); */
+  color: green;
 }
 
 /* hover states */

@@ -32,7 +32,7 @@
   --xl-height: var(--telekom-spacing-unit-x9);
 
   /* hover styles */
-  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-color-hover: var(--telekom-color-ui-subtle);
 
   /* active styles */
   --background-color-active: var(--telekom-color-ui-state-fill-pressed);
@@ -133,20 +133,16 @@
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
   display: none!important;
-  /* visibility: hidden; */
 }
 
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
 }
 
-/* .segmented-button:hover:not(.segmented-button--disabled)
-  scale-icon-action-close {
-  display: inline-flex !important;
-  vertical-align: middle;
+.segmented-button--has-icon scale-icon-action-success {
+  display: none !important;
 }
 
-.segmented-button scale-icon-action-close {
+.segmented-button--has-icon.segmented-button--selected scale-icon-action-success{
   display: none !important;
-  vertical-align: middle;
-} */
+}
