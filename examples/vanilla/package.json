@@ -6,7 +6,7 @@
     "start": "npx servor --reload --browse"
   },
   "dependencies": {
-    "@telekom/scale-components-neutral": "^3.0.0-beta.33"
+    "@telekom/scale-components-neutral": "^3.0.0-beta.100"
   },
   "browserslist": [
     "> 1%",
