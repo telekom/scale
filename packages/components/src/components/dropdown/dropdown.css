@@ -86,11 +86,11 @@ scale-dropdown {
   box-sizing: border-box;
   transition: var(--transition-input);
   font-family: inherit;
-  font-size: 16px;
+  font-size: var(--font-size-input);
   border-radius: var(--radius);
   border: var(--border);
   white-space: nowrap;
-  line-height: 16px;
+  line-height: var(--font-size-input);
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
@@ -174,7 +174,6 @@ scale-dropdown {
   transition: var(--transition-label);
   pointer-events: none;
   font-size: var(--font-size-label);
-  line-height: 13px;
   transform: translate(
     var(--spacing-x),
     calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
