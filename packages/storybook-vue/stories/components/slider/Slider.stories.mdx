@@ -107,11 +107,11 @@ export const Template = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## Range slider
+## Range
 
 <Canvas withSource="none">
   <Story
-    name="Range Slider"
+    name="Range"
     args={{
       label: 'Range Slider',
       value: 40,
@@ -132,11 +132,11 @@ For Shadow Parts, please inspect the element's #shadow.
 ></scale-slider>
 ```
 
-## Stepped slider
+## Stepped
 
 <Canvas withSource="none">
   <Story
-    name="Stepped Slider"
+    name="Stepped"
     args={{
       label: 'Stepped Slider',
       value: 40,
@@ -157,11 +157,40 @@ For Shadow Parts, please inspect the element's #shadow.
 ></scale-slider>
 ```
 
-## Disabled slider
+## Range Stepped
 
 <Canvas withSource="none">
   <Story
-    name="Disabled Slider"
+    name="Range Stepped"
+    args={{
+      label: 'Range Stepped Slider',
+      value: 40,
+      valueSecond: 80,
+      step: 10,
+      visibleStep: true,
+      range: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Range Stepped Slider"
+  value="40"
+  value-second="80"
+  step="10"
+  range
+  visible-step
+></scale-slider>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
     args={{
       label: 'Disabled Slider',
       value: 40,
