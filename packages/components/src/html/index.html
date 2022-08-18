@@ -23,7 +23,7 @@
     </style>
   </head>
 
-  <body>
+  <body data-mode="light">
     <h1 class="scl-font-variant-body">index.html</h1>
 
     <p class="scl-font-variant-heading-1">
@@ -33,5 +33,38 @@
     <p class="scl-font-variant-body-short">
       <mark>Avoid commiting your new file if you think it's not worth it.</mark>
     </p>
+
+
+    <scale-segmented-button-group>
+      <scale-segmented-button selected><label>One</label></scale-segmented-button>
+      <scale-segmented-button><label>Two</label></scale-segmented-button>
+      <scale-segmented-button selected><label>Three</label></scale-segmented-button>
+    </scale-segmented-button-group>
+
+
+    <scale-segmented-button-group>
+      <scale-segmented-button selected><label>One</label></scale-segmented-button>
+      <scale-segmented-button><label>Two</label></scale-segmented-button>
+      <scale-segmented-button selected><label>Three</label></scale-segmented-button>
+    </scale-segmented-button-group>    
+
+
+
+    
+    <scale-segmented-button-group>
+      <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone><label>One</label></scale-segmented-button>
+      <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone><label>Two</label></scale-segmented-button>
+      <scale-segmented-button selected><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone><label>Three</label></scale-segmented-button>
+    </scale-segmented-button-group>
+
+    <scale-segmented-button-group multi-select>
+      <scale-segmented-button selected><scale-icon-weather-cloudy slot="segmented-button-icon"></scale-icon-weather-cloudy></scale-segmented-button>
+      <scale-segmented-button selected><scale-icon-action-favorite slot="segmented-button-icon"></scale-icon-weather-cloudy></scale-segmented-button>
+
+      <scale-segmented-button><scale-icon-weather-rain slot="segmented-button-icon"></scale-icon-weather-rain></scale-segmented-button>
+      <scale-segmented-button><scale-icon-weather-sunny slot="segmented-button-icon"></scale-icon-weather-sunny></scale-segmented-button>
+      <scale-segmented-button><scale-icon-weather-heavy-snow slot="segmented-button-icon"></scale-icon-weather-heavy-snow></scale-segmented-button>
+    </scale-segmented-button-group>   
+
   </body>
 </html>

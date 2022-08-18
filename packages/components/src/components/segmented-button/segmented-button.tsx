@@ -59,6 +59,8 @@ export class SegmentedButton {
   @Prop() ariaDescriptionTranslation = '$selected';
   /** (optional) position within group */
   @Prop() position?: number;
+  /** (optional) position within group */
+  @Prop({mutable: true}) hasIcon?: boolean;  
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -94,7 +96,30 @@ export class SegmentedButton {
     if (this.segmentedButtonId == null) {
       this.segmentedButtonId = 'segmented-button-' + i++;
     }
-    this.handleIconSize();
+    this.handleIcon();
+  }
+
+  componentWillUpdate() {
+    this.handleSelectIcon();
+  } 
+
+  componentDidLoad() {
+    this.handleSelectIcon();
+  }
+
+  handleSelectIcon() {
+    if (this.hostElement.children.length == 1) {
+      if (this.selected) {
+        this.hostElement.children[0].setAttribute('stroke', 'var(--telekom-color-text-and-icon-inverted-standard)')
+        this.hostElement.children[0].setAttribute('color', 'var(--telekom-color-text-and-icon-standard)')
+        this.hostElement.children[0].setAttribute('selected', '')
+      }
+      if (!this.selected) {
+        this.hostElement.children[0].setAttribute('stroke', 'var(--telekom-color-text-and-icon-standard)')
+        this.hostElement.children[0].setAttribute('color', 'var(--telekom-color-text-and-icon-standard)')
+        this.hostElement.children[0].removeAttribute('selected')
+      }          
+    }    
   }
 
   getAriaDescriptionTranslation() {
@@ -107,13 +132,14 @@ export class SegmentedButton {
     return filledText;
   }
 
-  handleIconSize() {
+  handleIcon() {
     Array.from(this.hostElement.children).forEach((child) => {
       if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
         const icon: HTMLElement = this.hostElement.querySelector(child.tagName);
         child.setAttribute('size', '16');
         icon.style.display = 'inline-flex';
         icon.style.marginRight = '4px';
+        this.hasIcon = true      
 
         if (this.hostElement.children.length > 1 && this.selected) {
           // icon.style.display = 'none';
@@ -166,7 +192,9 @@ export class SegmentedButton {
                 accessibility-title="success"
               />
             </div>
-          <slot name="segmented-button-icon" />
+            <div class="icon-container">
+              <slot name="segmented-button-icon" />
+            </div>
           <slot />
         </button>
       </Host>
@@ -190,7 +218,8 @@ export class SegmentedButton {
       this.selected && `${prefix}selected`,
       this.disabled && `${prefix}disabled`,
       this.adjacentSiblings &&
-        `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`
+        `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
+      this.hasIcon && `${prefix}has-icon`,
     );
   }
 }

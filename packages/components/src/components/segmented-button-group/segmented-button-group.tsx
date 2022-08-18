@@ -111,7 +111,6 @@ export class SegmentedButtonGroup {
         'aria-description-translation',
         '$position $selected'
       );
-      console.log('longest width', longestButtonWidth)
       SegmentedButton.setAttribute('width', `${Math.ceil(longestButtonWidth)}px`);
     });
 
@@ -141,12 +140,6 @@ export class SegmentedButtonGroup {
   getLongestButtonWidth() {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
-      // console.log('getting width', child.getBoundingClientRect())
-      // tempWidth =
-      //   child.getBoundingClientRect().width > tempWidth
-      //     ? child.getBoundingClientRect().width
-      //     : tempWidth;
-
       tempWidth =
         child.getBoundingClientRect().width > tempWidth
           ? child.getBoundingClientRect().width
