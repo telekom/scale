@@ -8,12 +8,7 @@ describe('Slider', () => {
         localStorage.setItem('persistedColorMode', JSON.stringify(mode));
       }, mode);
     });
-    test.each([
-      ['standard'],
-      ['slider-track-small'],
-      ['slider-thumb-large'],
-      ['disabled-slider'],
-    ])('%p', async (variant) => {
+    test.each([['standard'], ['disabled-slider']])('%p', async (variant) => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-slider--${variant}&viewMode=story`
       );
