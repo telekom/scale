@@ -61,6 +61,8 @@ export class SegmentedButton {
   @Prop() position?: number;
   /** (optional) position within group */
   @Prop({mutable: true}) hasIcon?: boolean;  
+  /** (optional) position within group */
+  @Prop({mutable: true}) textOnly?: boolean;    
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -139,15 +141,14 @@ export class SegmentedButton {
         child.setAttribute('size', '16');
         icon.style.display = 'inline-flex';
         icon.style.marginRight = '4px';
-        this.hasIcon = true      
-
-        if (this.hostElement.children.length > 1 && this.selected) {
-          // icon.style.display = 'none';
-        }
+        this.hasIcon = true;
         if (this.hostElement.children.length == 1) {
           icon.style.marginRight = '0';
         }
       }
+      if (child.tagName === "LABEL" && this.hostElement.children.length === 1) {
+        this.textOnly = true
+      }      
     });
   }
 
@@ -185,13 +186,13 @@ export class SegmentedButton {
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-            <div>
+            {this.textOnly && <div>
               <scale-icon-action-success
                 size={12}
                 class="scale-icon-action-success"
                 accessibility-title="success"
               />
-            </div>
+            </div>}
             <div class="icon-container">
               <slot name="segmented-button-icon" />
             </div>

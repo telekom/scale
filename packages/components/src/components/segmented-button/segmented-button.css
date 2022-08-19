@@ -138,11 +138,3 @@
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
 }
-
-.segmented-button--has-icon scale-icon-action-success {
-  display: none !important;
-}
-
-.segmented-button--has-icon.segmented-button--selected scale-icon-action-success{
-  display: none !important;
-}
