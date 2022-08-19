@@ -41,7 +41,7 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: var(--telekom-spacing-unit-x3) var(--spacing-x) 0
+  --spacing-control: 21px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
@@ -150,8 +150,7 @@ scale-text-field {
 }
 
 .text-field__label {
-  top: 0;
-  left: 0;
+  top: -2px;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
