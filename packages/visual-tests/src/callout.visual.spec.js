@@ -10,10 +10,12 @@ describe('Callout', () => {
     });
     test.each([
       ['standard'],
-      ['size'],
-      ['rotation'],
-      ['variants'],
-      ['asterisk'],
+      ['primary'],
+      ['black'],
+      ['white'],
+      ['blue'],
+      ['medium'],
+      ['large-and-small'],
     ])('%p', async (variant) => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=beta-components-callout--${variant}&viewMode=story`
