@@ -1,7 +1,13 @@
 import { Component, h, Host, Prop, Element, Watch } from '@stencil/core';
 import statusNote from '../../utils/status-note';
 
-const allowRawInts = (val) => (Number.isNaN(Number(val)) ? val : val + 'px');
+/**
+ * Adds the `px` suffix to a string number
+ * but leaves other units untouched.
+ * 1  -> 1px
+ * 5% -> 5%
+ */
+const numToPx = (val: string) => (Number.isNaN(Number(val)) ? val : val + 'px');
 
 @Component({
   tag: 'scale-callout',
@@ -74,12 +80,19 @@ export class Callout {
   syncPropsToCSS() {
     this.hostElement.style.setProperty('--rotation', `${this.rotation}deg`);
 
-    Object.assign(this.hostElement.style, {
-      top: allowRawInts(this.top),
-      right: allowRawInts(this.right),
-      bottom: allowRawInts(this.bottom),
-      left: allowRawInts(this.left),
-    });
+    if (
+      this.top != null ||
+      this.right != null ||
+      this.bottom != null ||
+      this.left != null
+    ) {
+      Object.assign(this.hostElement.style, {
+        top: numToPx(this.top),
+        right: numToPx(this.right),
+        bottom: numToPx(this.bottom),
+        left: numToPx(this.left),
+      });
+    }
   }
 
   render() {
