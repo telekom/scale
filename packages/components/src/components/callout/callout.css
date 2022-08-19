@@ -1,4 +1,5 @@
 :host {
+  --position: absolute;
   --background: var(--telekom-color-ui-extra-strong);
   --color: var(--telekom-color-text-and-icon-inverted-standard);
   --spacing: var(--telekom-spacing-unit-x6);
@@ -9,13 +10,13 @@
   --font-small: var(--telekom-text-style-body-bold);
   --font-large: var(--telekom-text-style-heading-1);
 
-  position: absolute;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 50%;
+  position: var(--position);
   background: var(--background);
   color: var(--color);
   min-width: var(--min-width);
@@ -28,6 +29,7 @@
   padding: var(--spacing);
   font: var(--font-standard);
   font-weight: var(--telekom-typography-font-weight-bold);
+  line-height: var(--telekom-typography-line-spacing-tight);
 }
 
 /* Color variants */
