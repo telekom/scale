@@ -88,7 +88,7 @@ import textField_de from 'raw-loader!../../stories/components/text-field/text-fi
 import footer_en from 'raw-loader!../../stories/components/footer/footer.md';
 import footer_de from 'raw-loader!../../stories/components/footer/footer_de.md';
 import callout_en from 'raw-loader!../../stories/components/callout/callout.md';
-import callout_de from 'raw-loader!../../stories/components/callout/callout_de.md';
+import callout_de from 'raw-loader!../../stories/components/callout/callout.md';
 import toggleGroup_de from 'raw-loader!../../stories/components/toggle-group/toggle-group_de.md';
 import toggleGroup_en from 'raw-loader!../../stories/components/toggle-group/toggle-group.md';
 import tooltip_en from 'raw-loader!../../stories/components/tooltip/tooltip.md';
