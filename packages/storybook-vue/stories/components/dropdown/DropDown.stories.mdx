@@ -2,7 +2,19 @@ import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
 import ScaleDropDown from './ScaleDropDown.vue';
 import { action } from '@storybook/addon-actions';
 
-<Meta title="Components/Dropdown" component={ScaleDropDown} argTypes={{}} />
+<Meta
+  title="Components/Dropdown"
+  component={ScaleDropDown}
+  argTypes={{
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
+  }}
+/>
 
 export const Template = (args, { argTypes }) => ({
   components: { ScaleDropDown },

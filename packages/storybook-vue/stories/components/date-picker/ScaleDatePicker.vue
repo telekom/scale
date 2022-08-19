@@ -12,6 +12,7 @@
     :date-adapter="dateAdapter"
     :value="value"
     :disabled="disabled"
+    :size="size"
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
@@ -46,6 +47,7 @@ export default {
     disabled: { type: Boolean },
     popupTitle: { type: String },
     styles: { type: String },
+    size: { type: String },
   },
   methods: {
     scaleChange($event) {

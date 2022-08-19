@@ -11,7 +11,15 @@ import { action } from '@storybook/addon-actions';
 <Meta
   title="Components/Date Picker"
   component={ScaleDatePicker}
-  argTypes={{}}
+  argTypes={{
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({

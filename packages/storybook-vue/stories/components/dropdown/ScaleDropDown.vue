@@ -7,6 +7,7 @@
     :disabled="disabled"
     :required="required"
     :value="value"
+    :size="size"
     :input-id="inputId"
     :visible-size="visibleSize"
     :controlled="controlled"
@@ -36,6 +37,7 @@ export default {
     visibleSize: { type: Number },
     controlled: { type: Boolean },
     styles: { type: String },
+    size: { type: String },
   },
   methods: {
     scaleInput($event) {
