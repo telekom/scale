@@ -32,6 +32,8 @@ export class Callout {
   @Prop() bottom?: string;
   /** (optional) CSS `left` value for absolute position */
   @Prop() left?: string;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });
@@ -98,6 +100,7 @@ export class Callout {
   render() {
     return (
       <Host>
+        {this.styles && <style>{this.styles}</style>}
         <div part="base" ref={(el) => (this.baseEl = el)}>
           <slot></slot>
         </div>

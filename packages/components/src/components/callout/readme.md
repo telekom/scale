@@ -13,6 +13,7 @@
 | `left`     | `left`     | (optional) CSS `left` value for absolute position   | `string` | `undefined` |
 | `right`    | `right`    | (optional) CSS `right` value for absolute position  | `string` | `undefined` |
 | `rotation` | `rotation` | (optional) Degree of rotation                       | `number` | `0`         |
+| `styles`   | `styles`   | (optional) Injected CSS styles                      | `string` | `undefined` |
 | `top`      | `top`      | (optional) CSS `top` value for absolute position    | `string` | `undefined` |
 | `variant`  | `variant`  | (optional) Color variant of the callout             | `string` | `undefined` |
 
