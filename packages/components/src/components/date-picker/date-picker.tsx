@@ -140,9 +140,6 @@ export class DatePicker {
   /** (optional) Label */
   @Prop() label: string = '';
 
-  /** (optional) Size */
-  @Prop() size?: string = '';
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -409,7 +406,6 @@ export class DatePicker {
             this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
-            this.size && `scale-date-picker--size-${this.size}`,
             this.hasValue && 'animated'
           )}
         >

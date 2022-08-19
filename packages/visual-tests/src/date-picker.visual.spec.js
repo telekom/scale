@@ -38,7 +38,6 @@ describe('DatePicker', () => {
       ['helper-text'],
       ['with-error'],
       ['disabled'],
-      ['small'],
       ['date-range-picker'],
     ])('%p', async (variant) => {
       await page.goto(

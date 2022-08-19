@@ -36,7 +36,6 @@ export const Template = (args, { argTypes }) => ({
             :label="label"
             :helper-text="helperText"
             :invalid="invalid"
-            :size="size"
             @scaleChange="scaleChange"
             @scale-change="scale-change"
             @scaleFocus="scaleFocus"
@@ -260,29 +259,6 @@ duet-date-picker {
 <scale-date-picker
   helperText="Make sure to fill this"
   label="Helper Text"
-  value="2020-12-31"
-></scale-date-picker>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      value: '2020-12-31',
-      label: 'Small',
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-date-picker
-  label="Small"
-  size="small"
   value="2020-12-31"
 ></scale-date-picker>
 ```
