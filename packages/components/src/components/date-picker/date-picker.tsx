@@ -143,6 +143,9 @@ export class DatePicker {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** @deprecated */
+  @Prop() size?: string;
+
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
 
@@ -348,6 +351,14 @@ export class DatePicker {
         tag: 'deprecated',
         message:
           'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.hostElement,
       });
