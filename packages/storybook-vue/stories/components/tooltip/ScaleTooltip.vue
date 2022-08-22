@@ -5,7 +5,7 @@
       :placement="placement"
       :disabled="disabled"
       :distance="distance"
-      :open="open"
+      :opened="opened"
       :trigger="trigger"
       :flip="flip"
     >
@@ -22,7 +22,7 @@ export default {
     placement: { type: String },
     disabled: { type: Boolean },
     distance: { type: Number },
-    open: { type: Boolean },
+    opened: { type: Boolean },
     trigger: { type: String },
     flip: { type: Boolean },
     styles: String,

@@ -284,7 +284,7 @@ duet-date-picker .duet-date__input:focus::placeholder {
 
 duet-date-picker .duet-date__dialog-content {
   border: none;
-  box-shadow: var(--scl-shadow-level-4);
+  box-shadow: var(--telekom-shadow-top);
 }
 
 duet-date-picker .duet-date__select {
