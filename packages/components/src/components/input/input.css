@@ -193,7 +193,7 @@
 .input--size-small .input__label {
   top: 0;
   left: 0;
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-additional);
   display: flex;
   z-index: var(--scl-z-index-10);
   position: absolute;
@@ -473,10 +473,10 @@
 }
 .input--type-radio input:disabled {
   border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-disabled);
+    var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:disabled ~ label {
-  color: var(--scl-color-grey-30);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--type-radio.input--status-error input {
   border: var(--telekom-spacing-unit-x05) solid
@@ -491,12 +491,12 @@
     var(--telekom-color-primary-pressed, #cb0068);
 }
 .input--type-radio input:checked:disabled {
-  background: var(--scl-color-grey-30);
+  background: var(--telekom-color-ui-disabled);
   border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
-    var(--telekom-color-ui-disabled);
+    var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:checked:disabled ~ label {
-  color: var(--scl-color-grey-30);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 .input__textarea-label-safety-background {
   top: var(--telekom-spacing-unit-x05);
