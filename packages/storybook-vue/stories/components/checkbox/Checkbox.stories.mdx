@@ -21,8 +21,6 @@ export const Template = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
-      :warning="warning"
-      :success="success"
       :disabled="disabled"
       :checked="checked"
       :indeterminate="indeterminate"
@@ -229,52 +227,6 @@ scale-checkbox {
   label="Standard with error"
   helper-text="This is the error message"
   invalid
-></scale-checkbox>
-```
-
-## Warning
-
-<Canvas withSource="none">
-  <Story
-    name="Warning"
-    args={{
-      label: 'Standard with warning',
-      warning: true,
-      helperText: 'This is the warning message',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-checkbox
-  label="Standard with warning"
-  helper-text="This is the warning message"
-  warning
-></scale-checkbox>
-```
-
-## Success
-
-<Canvas withSource="none">
-  <Story
-    name="Success"
-    args={{
-      label: 'Standard success',
-      success: true,
-      helperText: 'This is the success message',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-checkbox
-  label="Standard success"
-  helper-text="This is the success message"
-  success
 ></scale-checkbox>
 ```
 
