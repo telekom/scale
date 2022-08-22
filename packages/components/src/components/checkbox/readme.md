@@ -60,7 +60,6 @@
 - [scale-icon-action-success](../icons/action-success)
 - [scale-icon-alert-information](../icons/alert-information)
 - [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-alert-success](../icons/alert-success)
 
 ### Graph
 ```mermaid
@@ -69,7 +68,6 @@ graph TD;
   scale-checkbox --> scale-icon-action-success
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
-  scale-checkbox --> scale-icon-alert-success
   scale-checkbox-group --> scale-checkbox
   scale-data-grid --> scale-checkbox
   style scale-checkbox fill:#f9f,stroke:#333,stroke-width:4px

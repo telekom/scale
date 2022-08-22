@@ -11,7 +11,6 @@
 | ------------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------- | --------- | ---------------- |
 | `ariaLabelCheckboxGroup` | `aria-label-checkbox-group` | <span style="color:red">**[DEPRECATED]**</span> - ariaLabelCheckboxGroup should replace ariaLabel<br/><br/> | `string`  | `undefined`      |
 | `helperText`             | `helper-text`               | (optional) Input helper text                                                                                | `string`  | `undefined`      |
-| `info`                   | `info`                      | (optional) Input status                                                                                     | `boolean` | `true`           |
 | `inputId`                | `input-id`                  | (optional) Input checkbox id                                                                                | `string`  | `undefined`      |
 | `invalid`                | `invalid`                   | (optional) Input status                                                                                     | `boolean` | `false`          |
 | `label`                  | `label`                     | (optional) Input label                                                                                      | `string`  | `''`             |
@@ -19,10 +18,8 @@
 | `selectText`             | `select-text`               |                                                                                                             | `string`  | `'Select all'`   |
 | `status`                 | `status`                    | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/>                   | `string`  | `''`             |
 | `styles`                 | `styles`                    | (optional) Injected CSS styles                                                                              | `string`  | `undefined`      |
-| `success`                | `success`                   | (optional) Input status                                                                                     | `boolean` | `false`          |
 | `unselectText`           | `unselect-text`             |                                                                                                             | `string`  | `'Unselect all'` |
 | `value`                  | `value`                     | (optional) Input value                                                                                      | `string`  | `''`             |
-| `warning`                | `warning`                   | (optional) Input status                                                                                     | `boolean` | `false`          |
 
 
 ## Shadow Parts
@@ -47,7 +44,6 @@ graph TD;
   scale-checkbox --> scale-icon-action-success
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
-  scale-checkbox --> scale-icon-alert-success
   style scale-checkbox-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
