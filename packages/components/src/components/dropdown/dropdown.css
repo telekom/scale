@@ -12,7 +12,6 @@
 scale-dropdown {
   --font-weight: var(--telekom-typography-font-weight-bold);
   --height: var(--telekom-spacing-unit-x11);
-  --height-small: var(--telekom-spacing-unit-x10);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --spacing-dropdown: 21px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
@@ -30,6 +29,9 @@ scale-dropdown {
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
+  --color: var(--telekom-color-text-and-icon-standard)
+  --background-color: var(--telekom-color-ui-state-fill-standard);
+  
 
   /*input*/
   --transition-input: var(--transition);
@@ -62,7 +64,6 @@ scale-dropdown {
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
-  --font-size-label-small: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
@@ -94,8 +95,8 @@ scale-dropdown {
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-ui-state-fill-standard);
-  color: var(--telekom-color-text-and-icon-standard);
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 @-moz-document url-prefix() {

@@ -89,6 +89,64 @@ export const Template = (args, { argTypes }) => ({
 </scale-dropdown>
 ```
 
+### Scoped CSS variables
+
+```css
+:host {
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --height: var(--telekom-spacing-unit-x11);
+  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-dropdown: 21px var(--telekom-spacing-unit-x10) 5px
+    calc(var(--spacing-x) - 1px);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --radius: var(--telekom-radius-standard);
+  --border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-border-standard);
+  --border-error: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-standard);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: none;
+  --color: var(--telekom-color-text-and-icon-standard)
+  --background-color: var(--telekom-color-ui-state-fill-standard);
+  /*input*/
+  --transition-input: var(--transition);
+  --font-size-input: var(--telekom-typography-font-size-body);
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --color-helper-text-error: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
+  /*meta*/
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --color-meta: var(--telekom-color-text-and-icon-standard);
+  /*icon*/
+  --height-icon: var(--telekom-spacing-unit-x6);
+  --color-icon: var(--telekom-color-text-and-icon-standard);
+  --color-icon-hover: var(--telekom-color-text-and-icon-standard);
+  --color-icon-active: var(--telekom-color-text-and-icon-standard);
+  --transition-icon: var(--transition);
+  /*label*/
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--telekom-typography-font-size-body);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+}
+```
+
 ## Disabled
 
 Known issues: The dropdown is ready for use. The component in disabled state is displayed incorrectly with white background in Firefox 85.0.2 (64-bit) in HCM (high contrast mode).
