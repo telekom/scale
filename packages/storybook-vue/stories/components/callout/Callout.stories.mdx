@@ -83,7 +83,7 @@ export const CANVAS_HEIGHT = 180
             :left="left"
           >
             <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15€</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
           </scale-callout>
         </div>
       `
@@ -96,7 +96,7 @@ export const CANVAS_HEIGHT = 180
 ```html
 <scale-callout variant="primary">
   <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15€</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
@@ -128,7 +128,7 @@ export const CANVAS_HEIGHT = 180
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="primary">
             <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15€</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
           </scale-callout>
         </div>
       `
@@ -139,7 +139,7 @@ export const CANVAS_HEIGHT = 180
 ```html
 <scale-callout variant="primary">
   <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15€</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
@@ -152,7 +152,7 @@ export const CANVAS_HEIGHT = 180
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="black">
             <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15€</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
           </scale-callout>
         </div>
       `
@@ -163,7 +163,7 @@ export const CANVAS_HEIGHT = 180
 ```html
 <scale-callout variant="black">
   <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15€</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
@@ -176,7 +176,7 @@ export const CANVAS_HEIGHT = 180
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="white">
             <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15€</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
           </scale-callout>
         </div>
       `
@@ -187,7 +187,7 @@ export const CANVAS_HEIGHT = 180
 ```html
 <scale-callout variant="white">
   <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15€</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
@@ -200,7 +200,7 @@ export const CANVAS_HEIGHT = 180
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="blue">
             <span class="scl-callout-text-small">Now only</span>
-            <span class="scl-callout-text-large">15€</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
           </scale-callout>
         </div>
       `
@@ -211,7 +211,7 @@ export const CANVAS_HEIGHT = 180
 ```html
 <scale-callout variant="blue">
   <span class="scl-callout-text-small">Now only</span>
-  <span class="scl-callout-text-large">15€</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
@@ -225,7 +225,10 @@ export const CANVAS_HEIGHT = 180
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="black">
-            Bis zu 200 €<br />Tauschprämie +<br />Altgerätewert<br />erhalten
+            <span>Bis zu 200 &#8364;</span>
+            <span>Tauschprämie +</span>
+            <span>Altgerätewert</span>
+            <span>erhalten</span>
           </scale-callout>
         </div>
       `
@@ -235,10 +238,10 @@ export const CANVAS_HEIGHT = 180
 
 ```html
 <scale-callout variant="black">
-  Bis zu 200 €
-  <br />Tauschprämie +
-  <br />Altgerätewert
-  <br />erhalten
+  <span>Bis zu 200 &#8364;</span>
+  <span>Tauschprämie +</span>
+  <span>Altgerätewert</span>
+  <span>erhalten</span>
 </scale-callout>
 ```
 
@@ -252,7 +255,7 @@ For convenience, two scoped CSS classes are provided for large and small text: `
       template: `
         <div style="min-height: ${CANVAS_HEIGHT}px">
           <scale-callout variant="primary">
-            LOREM
+            <span>LOREM</span>
             <span class="scl-callout-text-large">ipsum</span>
             <span class="scl-callout-text-small">dolor sit amet</span>
           </scale-callout>
@@ -264,7 +267,7 @@ For convenience, two scoped CSS classes are provided for large and small text: `
 
 ```html
 <scale-callout variant="primary">
-  LOREM
+  <span>LOREM</span>
   <span class="scl-callout-text-large">ipsum</span>
   <span class="scl-callout-text-small">dolor sit amet</span>
 </scale-callout>

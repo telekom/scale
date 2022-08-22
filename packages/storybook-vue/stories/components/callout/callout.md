@@ -10,9 +10,9 @@ A Callout component provides a way for users to highlight important content visu
 ### When to use
 
 - Mainly used in marketing assets to highlight very specific information on the page, in order to differentiate it from the surrounding content
-    - For example, to state and highlight prices
-    - for numbers up to 5 characters
-    - For short sentences, numbers with short text
+  - For example, to state and highlight prices
+  - for numbers up to 5 characters
+  - For short sentences, numbers with short text
 
 ### When not to use
 
@@ -28,18 +28,18 @@ A Callout component provides a way for users to highlight important content visu
 There are 5 color variants:
 
 - **Standard:** inverts the colors in dark and light mode
-- **Magenta, Blue:** Stay the same in dark and light mode 
+- **Magenta, Blue:** Stay the same in dark and light mode
 - **Black, White:** To be used on images, stay the same in dark and light mode
 
 ### Text Size Variants
 
-There are 3 text sizes to offer the most flexibility for different types of content. 
+There are 3 text sizes to offer the most flexibility for different types of content.
 
 It is recommended to use the medium text size for sentences that have only one level of hierarchy.
 
-It is recommended to use the small and large text sizes for information that requires two levels of hierarchy. 
+It is recommended to use the small and large text sizes for information that requires two levels of hierarchy.
 
-For both options, the bubble size adjusts to the content. 
+For both options, the bubble size adjusts to the content.
 
 ### Rotation
 
