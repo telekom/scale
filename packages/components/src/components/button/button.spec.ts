@@ -28,9 +28,6 @@ describe('Button', () => {
   });
 
   it('should handle css classes', () => {
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('button--size-small');
-
     element.variant = 'primary';
     expect(element.getCssClassMap()).toContain('button--variant-primary');
 
@@ -42,7 +39,7 @@ describe('Button', () => {
     const page = await newSpecPage({
       components: [Button],
       html: `    
-      <scale-button size="small">
+      <scale-button>
       <scale-icon-action-search></scale-icon-action-search>Label
       </scale-button>
       `,
@@ -55,7 +52,7 @@ describe('Button', () => {
     const page = await newSpecPage({
       components: [Button],
       html: `    
-      <scale-button size="small">
+      <scale-button>
         Label<scale-icon-action-search></scale-icon-action-search>
       </scale-button>
       `,
