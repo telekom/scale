@@ -26,13 +26,6 @@
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
 
-  /* size: small */
-  --font-size-small: var(--telekom-typography-font-size-small);
-  --line-height-small: var(--telekom-typography-line-spacing-standard);
-  --min-height-small: var(--telekom-spacing-unit-x8);
-  --min-width-small: var(--telekom-spacing-unit-x8);
-  --spacing-x-icon-only-small: var(--telekom-spacing-unit-x2);
-
   /* variant: primary */
   --radius-primary: var(--radius);
   --background-primary: var(--telekom-color-primary-standard);
@@ -123,17 +116,6 @@
   box-sizing: border-box;
   pointer-events: none;
   border-radius: var(--radius);
-}
-
-.button--size-small {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
-  min-height: var(--min-height-small);
-  min-width: var(--min-width-small);
-}
-
-.button--icon-only.button--size-small {
-  padding: var(--spacing-x-icon-only-small);
 }
 
 .button--icon-only {
