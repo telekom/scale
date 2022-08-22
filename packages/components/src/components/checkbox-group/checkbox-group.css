@@ -7,7 +7,7 @@
   --spacing-left-checkbox: var(--telekom-spacing-unit-x2);
 
   /* slotted item */
-  --spacing-top-slotted-item: var(--telekom-spacing-unit-x1);
+  --spacing-top-slotted-item: var(--telekom-spacing-unit-x3);
 }
 
 .checkbox-group {
@@ -36,5 +36,5 @@
 }
 
 .checkbox-group scale-checkbox {
-  margin: var(--spacing-top-slotted-item) 0;
+  margin-top: var(--spacing-top-slotted-item);
 }

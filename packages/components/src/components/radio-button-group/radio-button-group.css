@@ -31,7 +31,7 @@
   --margin-left-title: var(--telekom-spacing-unit-x05);
 
   /*slotted items*/
-  --margin-top-slotted-item: var(--telekom-spacing-unit-x1);
+  --margin-top-slotted-item: var(--telekom-spacing-unit-x3);
 }
 
 .radio-button-group {
