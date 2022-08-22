@@ -82,7 +82,7 @@
 
 .radio-button-group__helper-text scale-icon-alert-success,
 .radio-button-group__helper-text scale-icon-alert-warning,
-.radio-button-group__helper-text scale-icon-alert-information, 
+.radio-button-group__helper-text scale-icon-alert-information,
 .radio-button-group__helper-text scale-icon-alert-error {
   margin-right: var(--telekom-spacing-unit-x1);
 }

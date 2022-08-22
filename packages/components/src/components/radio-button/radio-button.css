@@ -31,7 +31,9 @@ scale-radio-button {
   );
   --spacing-left-helper-text: var(--telekom-spacing-unit-x6);
   --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
-  --color-helper-text-error: var(--telekom-color-text-and-icon-functional-danger);
+  --color-helper-text-error: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
   /*label*/
   --transition-label: var(--transition);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
@@ -60,7 +62,6 @@ scale-radio-button {
     var(--telekom-color-functional-danger-standard);
   --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x1)
     var(--color-focus);
-  
 }
 
 .radio-button {
@@ -89,7 +90,8 @@ scale-radio-button {
   /* padding-left: var(--spacing-left-helper-text); */
 }
 
-scale-icon-alert-information, scale-icon-alert-error  {
+scale-icon-alert-information,
+scale-icon-alert-error {
   color: var(--color-helper-text);
   display: flex;
   justify-content: center;

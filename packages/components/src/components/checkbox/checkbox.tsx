@@ -51,13 +51,13 @@ export class Checkbox {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
-  @Prop() info?: boolean = true;  
+  @Prop() info?: boolean = true;
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
   /** (optional) Input status */
   @Prop() warning?: boolean = false;
   /** (optional) Input status */
-  @Prop() success?: boolean = false;  
+  @Prop() success?: boolean = false;
   /** (optional) Input disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
@@ -79,7 +79,7 @@ export class Checkbox {
   private id = i++;
   componentWillLoad() {
     if (this.invalid || this.warning || this.success) {
-      this.info = false
+      this.info = false;
     }
   }
   componentDidRender() {
@@ -146,10 +146,12 @@ export class Checkbox {
 
   renderHelperIcon() {
     if (this.helperText && !this.invalid) {
-      return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
     }
     if (this.invalid) {
-      return <scale-icon-alert-error size={11}></scale-icon-alert-error>
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
     }
   }
 

@@ -226,7 +226,8 @@ scale-checkbox:not(.checked) [part='container']:active [part='checkbox'] {
   border-color: var(--telekom-color-ui-border-pressed);
 }
 
-scale-icon-alert-information, scale-icon-alert-error  {
+scale-icon-alert-information,
+scale-icon-alert-error {
   color: var(--color-helper-text);
   display: flex;
   justify-content: center;
@@ -309,7 +310,7 @@ scale-checkbox.checked.disabled [part='icon'] {
   background-color: var(--telekom-color-ui-disabled);
 }
 
-scale-checkbox.disabled [part='helper-text'] scale-icon-alert-information, 
+scale-checkbox.disabled [part='helper-text'] scale-icon-alert-information,
 scale-checkbox.disabled.error [part='helper-text'] scale-icon-alert-error {
   color: var(--color-disabled);
 }

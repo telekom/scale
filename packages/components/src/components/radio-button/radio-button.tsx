@@ -114,10 +114,12 @@ export class RadioButton {
 
   renderHelperIcon() {
     if (this.helperText && !this.invalid) {
-      return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
     }
     if (this.invalid) {
-      return <scale-icon-alert-error size={11}></scale-icon-alert-error>
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
     }
   }
 
@@ -166,7 +168,7 @@ export class RadioButton {
       this.checked && `radio-button--checked`,
       this.disabled && `radio-button--disabled`,
       this.status && `radio-button--status-${this.status}`,
-      this.invalid && `radio-button--status-error`,
+      this.invalid && `radio-button--status-error`
     );
   }
 }
