@@ -44,13 +44,7 @@ export class RadioButton {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
-  @Prop() info?: boolean = true;  
-  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) Input status */
-  @Prop() warning?: boolean = false;
-  /** (optional) Input status */
-  @Prop() success?: boolean = false;
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input checked */
@@ -71,9 +65,6 @@ export class RadioButton {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-' + i++;
-    }
-    if (this.invalid || this.warning || this.success) {
-      this.info = false
     }
   }
 
@@ -122,14 +113,11 @@ export class RadioButton {
   }
 
   renderHelperIcon() {
-    if (this.info || this.warning) {
+    if (this.helperText && !this.invalid) {
       return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
     }
     if (this.invalid) {
       return <scale-icon-alert-error size={11}></scale-icon-alert-error>
-    }
-    if (this.success) {
-      return <scale-icon-alert-success size={11}></scale-icon-alert-success>
     }
   }
 
@@ -179,8 +167,6 @@ export class RadioButton {
       this.disabled && `radio-button--disabled`,
       this.status && `radio-button--status-${this.status}`,
       this.invalid && `radio-button--status-error`,
-      this.warning && `radio-button--status-warning`,
-      this.success && `radio-button--status-success`,
     );
   }
 }

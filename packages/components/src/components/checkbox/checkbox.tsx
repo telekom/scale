@@ -145,14 +145,11 @@ export class Checkbox {
   }
 
   renderHelperIcon() {
-    if (this.info || this.warning) {
+    if (this.helperText && !this.invalid) {
       return <scale-icon-alert-information size={11}></scale-icon-alert-information>      
     }
     if (this.invalid) {
       return <scale-icon-alert-error size={11}></scale-icon-alert-error>
-    }
-    if (this.success) {
-      return <scale-icon-alert-success size={11}></scale-icon-alert-success>
     }
   }
 
@@ -187,9 +184,6 @@ export class Checkbox {
           disabled: this.disabled,
           error: this.status === 'error' || this.invalid,
           hideLabel: this.hideLabel,
-          warning: this.warning,
-          success: this.success,
-          info: this.info
         }}
       >
         <input

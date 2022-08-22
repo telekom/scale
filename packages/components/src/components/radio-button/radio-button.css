@@ -31,10 +31,6 @@ scale-radio-button {
   );
   --spacing-left-helper-text: var(--telekom-spacing-unit-x6);
   --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
-  --icon-warning-color: var(--telekom-color-functional-warning-standard);
-  --color-helper-text-warning: var(--telekom-color-text-and-icon-functional-warning);
-  --icon-success-color: var(--telekom-color-functional-success-standard);
-  --color-helper-text-success: var(--telekom-color-text-and-icon-functional-success);
   --color-helper-text-error: var(--telekom-color-text-and-icon-functional-danger);
   /*label*/
   --transition-label: var(--transition);
@@ -93,7 +89,7 @@ scale-radio-button {
   /* padding-left: var(--spacing-left-helper-text); */
 }
 
-scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  {
+scale-icon-alert-information, scale-icon-alert-error  {
   color: var(--color-helper-text);
   display: flex;
   justify-content: center;
@@ -106,20 +102,6 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
 }
 .radio-button--status-error scale-icon-alert-error {
   color: var(--color-helper-text-error);
-}
-
-.radio-button--status-warning .radio-button__helper-text {
-  color: var(--color-helper-text-warning);
-}
-.radio-button--status-warning scale-icon-alert-information {
-  color: var(--color-helper-text-warning);
-}
-.radio-button--status-success .radio-button__helper-text {
-  color: var(--color-helper-text-success);
-}
-
-.radio-button--status-success scale-icon-alert-success {
-  color: var(--icon-success-color);
 }
 
 .radio-button label {
@@ -164,16 +146,6 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
 .radio-button.radio-button--status-error input {
   border: var(--border-control-error);
 }
-.radio-button.radio-button--status-warning input {
-  border: var(--telekom-spacing-unit-x05) solid
-  var(--icon-warning-color);
-}
-
-.radio-button.radio-button--status-success input {
-  border: var(--telekom-spacing-unit-x05) solid
-  var(--icon-success-color);
-}
-
 .radio-button.radio-button--status-error:hover
   input:not(:checked):not([disabled]) {
   border-color: var(--telekom-color-functional-danger-hovered);
@@ -182,23 +154,6 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
   input:not(:checked):not([disabled]) {
   border-color: var(--telekom-color-functional-danger-pressed);
 }
-.radio-button.radio-button--status-warning:hover
-  input:not(:checked):not([disabled]) {
-  border-color: var(--telekom-color-functional-warning-hovered);
-}
-.radio-button.radio-button--status-warning:active
-  input:not(:checked):not([disabled]) {
-  border-color: var(--telekom-color-functional-warning-pressed);
-}
-.radio-button.radio-button--status-success:hover
-  input:not(:checked):not([disabled]) {
-  border-color: var(--telekom-color-functional-success-hovered);
-}
-.radio-button.radio-button--status-warning:active
-  input:not(:checked):not([disabled]) {
-  border-color: var(--telekom-color-functional-success-pressed);
-}
-
 
 .radio-button input:checked {
   border: var(--border-control-checked);
@@ -231,8 +186,6 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
 }
 
 .radio-button--disabled scale-icon-alert-information,
-.radio-button--disabled scale-icon-alert-warning,
-.radio-button--disabled scale-icon-alert-success,
 .radio-button--disabled scale-icon-alert-error {
   color: var(--color-disabled);
 }

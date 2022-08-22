@@ -63,22 +63,6 @@
   font-weight: var(--font-weight-error-helper-text);
 }
 
-.radio-button-group__helper-text--status-warning {
-  color: orange;
-  font-size: var(--font-size-error-helper-text);
-  margin-top: calc(var(--margin-top-error-helper-text) * +1);
-  padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
-  font-weight: var(--font-weight-error-helper-text);
-}
-
-.radio-button-group__helper-text--status-success {
-  color: green;
-  font-size: var(--font-size-error-helper-text);
-  margin-top: calc(var(--margin-top-error-helper-text) * +1);
-  padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
-  font-weight: var(--font-weight-error-helper-text);
-}
-
 .radio-button-group__title-label {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-title);
