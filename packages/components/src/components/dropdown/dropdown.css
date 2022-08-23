@@ -29,9 +29,8 @@ scale-dropdown {
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
-  --color: var(--telekom-color-text-and-icon-standard)
+  --color: var(--telekom-color-text-and-icon-standard);
   --background-color: var(--telekom-color-ui-state-fill-standard);
-  
 
   /*input*/
   --transition-input: var(--transition);
