@@ -17,7 +17,7 @@
     "jest-cli": "^26.6.3",
     "jest-image-snapshot": "4.3.0",
     "jest-puppeteer-docker": "^1.4.2",
-    "puppeteer": "^13.0.0",
+    "puppeteer": "^16.2.0",
     "rimraf": "^3.0.2"
   }
 }
