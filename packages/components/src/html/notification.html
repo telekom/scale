@@ -20,10 +20,53 @@
         margin: 0;
         padding: 4rem;
       }
+      body > *:not(script) + *:not(script) {
+        display: block;
+        margin-top: 2rem;
+      }
     </style>
   </head>
 
   <body>
-    <scale-notification heading="The heading is mandatory, yes"></scale-notification>
+    <scale-notification
+      heading="The heading is mandatory, yes"
+    ></scale-notification>
+
+    <scale-notification
+      heading="The heading is mandatory, this is a banner (danger)"
+      type="banner"
+      variant="danger"
+      opened
+      dismissible
+    ></scale-notification>
+
+    <scale-notification
+      heading="The heading is mandatory, this is a toast (success)"
+      type="toast"
+      variant="success"
+      dismissible
+      opened
+    >
+      <span slot="text"
+        >Lorem ipsum dolor sit amet, consetetur tempordede invidunt ut labore et
+        dolore.</span
+      >
+    </scale-notification>
+
+    <script>
+      let n = document.querySelector('scale-notification');
+      setTimeout(() => {
+        n.opened = true;
+      }, 1000);
+
+      setTimeout(() => {
+        let n2 = Object.assign(document.createElement('scale-notification'), {
+          opened: true,
+          heading: 'This is madness…',
+          variant: 'warning',
+        });
+        document.body.appendChild(n2);
+      }, 2000);
+    </script>
   </body>
 </html>

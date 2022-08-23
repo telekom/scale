@@ -9,8 +9,16 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Element, Host } from '@stencil/core';
-// import statusNote from '../../utils/status-note';
+import { Component, Prop, h, Element, State, Host } from '@stencil/core';
+
+const ICON_SIZE = 20;
+
+const iconVariantNameMap = {
+  informational: 'scale-icon-alert-information',
+  warning: 'scale-icon-alert-warning',
+  success: 'scale-icon-alert-success',
+  danger: 'scale-icon-alert-error',
+};
 
 @Component({
   tag: 'scale-notification',
@@ -22,71 +30,67 @@ export class Notification {
 
   /** Heading */
   @Prop() heading: string;
+  /** (optional) Type */
+  @Prop() type?: 'inline' | 'banner' | 'toast' = 'inline';
   /** (optional) Variant */
-  @Prop() variant?: 'error' | 'warning' | 'success' | 'informational' =
+  @Prop() variant?: 'danger' | 'warning' | 'success' | 'informational' =
     'informational';
-  /** (optional) Toast opened */
-  @Prop({ reflect: true }) opened?: boolean;
+  /** (optional) Visible */
+  @Prop({ reflect: true, mutable: true }) opened?: boolean;
+  /** (optional) Dismissible via close button */
+  @Prop() dismissible?: boolean = false;
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
-  connectedCallback() {
-    // statusNote({ source: this.element, type: 'warn' });
-  }
+  @State() role: string = 'alert';
+  @State() hasTextSlot: boolean = false;
+  @State() hasActionSlot: boolean = false; // unused for now
 
-  handleIcons() {
-    if (this.variant) {
-      switch (this.variant) {
-        case 'success':
-          return (
-            <scale-icon-alert-success
-              class="notification-toast__icon"
-              size={20}
-              color="#ffffff"
-              selected
-              aria-hidden="true"
-            />
-          );
-        case 'informational':
-          return (
-            <scale-icon-alert-information
-              class="notification-toast__icon"
-              size={20}
-              selected
-              color="#ffffff"
-              aria-hidden="true"
-            />
-          );
-        case 'error':
-          return (
-            <scale-icon-alert-error
-              class="notification-toast__icon"
-              size={20}
-              selected
-              color="#ffffff"
-              aria-hidden="true"
-            />
-          );
-        case 'warning':
-          return (
-            <scale-icon-alert-warning
-              class="notification-toast__icon"
-              color="#ffff"
-              size={20}
-              selected
-              aria-hidden="true"
-            />
-          );
-      }
+  connectedCallback() {
+    // Do not use `role="alert"` if opened/visible on page load
+    if (this.hostElement.hasAttribute('opened')) {
+      this.role = undefined;
     }
-    return;
+    this.hasTextSlot = this.hostElement.querySelector('[slot="text"]') != null;
+    this.hasActionSlot =
+      this.hostElement.querySelector('[slot="action"]') != null;
   }
 
   render() {
+    const IconTag = iconVariantNameMap[this.variant];
+
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <div role="alert">{this.heading}</div>
+        <div
+          part="base"
+          role={this.role}
+          class={{
+            [`variant-${this.variant}`]: true,
+            [`type-${this.type}`]: true,
+          }}
+        >
+          {this.dismissible && (
+            <scale-button part="close-button" variant="ghost">
+              <slot name="close-icon">
+                <scale-icon-action-circle-close size={ICON_SIZE} decorative />
+              </slot>
+            </scale-button>
+          )}
+          <div part="icon" aria-hidden="true">
+            <slot name="icon">
+              <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
+            </slot>
+          </div>
+          <div part="body">
+            <div part="heading">{this.heading}</div>
+            {this.hasTextSlot && (
+              <div part="text">
+                <slot name="text"></slot>
+              </div>
+            )}
+          </div>
+        </div>
       </Host>
     );
   }

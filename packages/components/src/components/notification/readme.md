@@ -7,30 +7,40 @@
 
 ## Properties
 
-| Property  | Attribute | Description                | Type                                                   | Default           |
-| --------- | --------- | -------------------------- | ------------------------------------------------------ | ----------------- |
-| `heading` | `heading` | Heading                    | `string`                                               | `undefined`       |
-| `opened`  | `opened`  | (optional) Toast opened    | `boolean`                                              | `undefined`       |
-| `styles`  | `styles`  | (optional) Injected styles | `string`                                               | `undefined`       |
-| `variant` | `variant` | (optional) Variant         | `"error" \| "informational" \| "success" \| "warning"` | `'informational'` |
+| Property      | Attribute     | Description                             | Type                                                    | Default           |
+| ------------- | ------------- | --------------------------------------- | ------------------------------------------------------- | ----------------- |
+| `dismissible` | `dismissible` | (optional) Dismissible via close button | `boolean`                                               | `false`           |
+| `heading`     | `heading`     | Heading                                 | `string`                                                | `undefined`       |
+| `opened`      | `opened`      | (optional) Visible                      | `boolean`                                               | `undefined`       |
+| `styles`      | `styles`      | (optional) Injected styles              | `string`                                                | `undefined`       |
+| `type`        | `type`        | (optional) Type                         | `"banner" \| "inline" \| "toast"`                       | `'inline'`        |
+| `variant`     | `variant`     | (optional) Variant                      | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
+
+
+## Shadow Parts
+
+| Part             | Description |
+| ---------------- | ----------- |
+| `"base"`         |             |
+| `"body"`         |             |
+| `"close-button"` |             |
+| `"heading"`      |             |
+| `"icon"`         |             |
+| `"text"`         |             |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [scale-icon-alert-success](../icons/alert-success)
-- [scale-icon-alert-information](../icons/alert-information)
-- [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-alert-warning](../icons/alert-warning)
+- [scale-button](../button)
+- [scale-icon-action-circle-close](../icons/action-circle-close)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-notification --> scale-icon-alert-success
-  scale-notification --> scale-icon-alert-information
-  scale-notification --> scale-icon-alert-error
-  scale-notification --> scale-icon-alert-warning
+  scale-notification --> scale-button
+  scale-notification --> scale-icon-action-circle-close
   style scale-notification fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

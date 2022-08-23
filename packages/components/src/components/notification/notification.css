@@ -10,4 +10,108 @@
  */
 
 :host {
+  --width: 100%;
+  --radius: var(--telekom-radius-standard);
+  --spacing-y: var(--telekom-spacing-unit-x4);
+  --spacing-y-inner: var(--telekom-spacing-unit-x2);
+  --spacing-x-aside: var(--telekom-spacing-unit-x12);
+
+  display: contents;
+}
+
+[part='base'] {
+  position: relative;
+  display: none;
+  box-sizing: border-box;
+  border-radius: var(--radius);
+  padding-right: var(--spacing-x-aside);
+  width: var(--width);
+  background: var(--_background-subtle);
+  box-shadow: var(--_shadow);
+}
+
+:host([opened]) [part='base'] {
+  display: flex;
+}
+
+.variant-informational {
+  --_background-subtle: var(--telekom-color-functional-informational-subtle);
+  --_background-accent: var(--telekom-color-functional-informational-standard);
+  --_color-accent: var(--telekom-color-text-and-icon-functional-informational);
+}
+.variant-warning {
+  --_background-subtle: var(--telekom-color-functional-warning-subtle);
+  --_background-accent: var(--telekom-color-functional-warning-standard);
+  --_color-accent: var(--telekom-color-text-and-icon-functional-warning);
+}
+.variant-success {
+  --_background-subtle: var(--telekom-color-functional-success-subtle);
+  --_background-accent: var(--telekom-color-functional-success-standard);
+  --_color-accent: var(--telekom-color-text-and-icon-functional-success);
+}
+.variant-danger {
+  --_background-subtle: var(--telekom-color-functional-danger-subtle);
+  --_background-accent: var(--telekom-color-functional-danger-standard);
+  --_color-accent: var(--telekom-color-text-and-icon-functional-danger);
+}
+
+.type-banner {
+  --_shadow: var(--telekom-shadow-floating-standard);
+}
+.type-toast {
+  --_shadow: var(--telekom-shadow-top);
+}
+
+[part='icon'] {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: flex-start;
+  width: var(--spacing-x-aside);
+  padding-top: var(--spacing-y);
+  padding-bottom: var(--spacing-y);
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  color: var(--_color-accent);
+}
+
+.type-toast [part='icon'] {
+  background: var(--_background-accent);
+  color: var(--telekom-color-text-and-icon-white-standard);
+  align-items: center;
+}
+
+[part='body'] {
+  margin-top: var(--spacing-y);
+  margin-bottom: var(--spacing-y);
+}
+
+.type-toast [part='body'] {
+  padding-left: var(--spacing-y);
+}
+
+[part='heading'] {
+  font: var(--telekom-text-style-heading-6);
+  line-height: var(--telekom-typography-line-spacing-tight);
+}
+
+[part='text'] {
+  margin-top: var(--spacing-y-inner);
+}
+
+::slotted(*) {
+  font: var(--telekom-text-style-body);
+}
+
+[part='close-button'] {
+  --color-ghost: var(--telekom-color-text-and-icon-standard);
+  position: absolute;
+  /*
+    TODO this needs adjusment
+    (probably scale-button will change, or
+    we can set it up inside a flex container just like
+    one the left...)
+  */
+  right: calc(var(--telekom-spacing-unit-x2) - 2px);
+  top: calc(var(--telekom-spacing-unit-x2) - 2px);
 }
