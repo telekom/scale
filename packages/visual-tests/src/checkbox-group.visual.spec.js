@@ -15,7 +15,8 @@ describe('CheckboxGroup', () => {
     });
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-checkbox-group--${variant}`);
-
+      await global.page.waitForSelector('html.hydrated');
+      await global.page.$('body');
       const firstCheckbox = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
       );

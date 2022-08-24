@@ -22,11 +22,14 @@ module.exports = async function globalTeardown(jestConfig) {
     `${__dirname}/inject-fail-images.js`,
     `${__dirname}/report/inject-fail-images.js`
   );
-  fse.copySync(
-    `${__dirname}/src/__image_snapshots__/__diff_output__`,
-    `${__dirname}/report/__diff_output__`,
-    {
-      overwrite: true,
-    }
-  );
+
+  try {
+    fse.copySync(
+      `${__dirname}/src/__image_snapshots__/__diff_output__`,
+      `${__dirname}/report/__diff_output__`,
+      {
+        overwrite: true,
+      }
+    );
+  } catch {}
 };

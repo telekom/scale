@@ -8,11 +8,11 @@ jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: |
             node_modules
@@ -38,11 +38,11 @@ jobs:
   tslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: |
             node_modules
@@ -64,11 +64,11 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: |
             node_modules
@@ -90,11 +90,11 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: |
             node_modules
@@ -121,11 +121,11 @@ jobs:
   visual-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: |
             node_modules
@@ -145,11 +145,33 @@ jobs:
         run: |
           yarn lerna run generate
 
+      - name: Restore Components
+        id: components-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            packages/components/dist
+            packages/components/hydrate
+            packages/components/loader
+            packages/components/www
+            packages/components/custom-elements.json
+          key: ${{ runner.os }}-${{ hashFiles('./packages/components') }}
+
       - name: Build Components
+        if: steps.components-cache.outputs.cache-hit != 'true'
         run: |
           yarn workspace @telekom/scale-components build
 
+      - name: Restore Storybook
+        id: storybook-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            packages/storybook-vue/storybook-static
+          key: ${{ runner.os }}-${{ hashFiles('./packages/storybook-vue') }}
+
       - name: Build Storybook
+        if: steps.storybook-cache.outputs.cache-hit != 'true'
         run: |
           yarn workspace @telekom/scale-storybook-vue build --quiet
 
@@ -171,11 +193,11 @@ jobs:
   uncommitted-changes:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: |
             node_modules
