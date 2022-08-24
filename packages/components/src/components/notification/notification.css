@@ -10,7 +10,6 @@
  */
 
 :host {
-  --display: block;
   --width: 100%;
   --radius: var(--telekom-radius-standard);
   --spacing-y: var(--telekom-spacing-unit-x4);
@@ -18,10 +17,11 @@
   --spacing-x-aside: var(--telekom-spacing-unit-x12);
   --spacing-toast: var(--telekom-spacing-unit-x4);
 
-  display: var(--display);
+  display: contents;
 }
 
 :host-context(.scl-toast-stack) {
+  display: block;
   margin: var(--spacing-toast);
 }
 
