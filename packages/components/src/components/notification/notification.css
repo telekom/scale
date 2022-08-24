@@ -15,14 +15,14 @@
   --spacing-y: var(--telekom-spacing-unit-x4);
   --spacing-y-inner: var(--telekom-spacing-unit-x2);
   --spacing-x-aside: var(--telekom-spacing-unit-x12);
-  --spacing-toast: var(--telekom-spacing-unit-x4);
+  --spacing-outer-toast: var(--telekom-spacing-unit-x4);
 
   display: contents;
 }
 
 :host-context(.scl-toast-stack) {
   display: block;
-  margin: var(--spacing-toast);
+  margin: var(--spacing-outer-toast);
 }
 
 [part~='base'] {

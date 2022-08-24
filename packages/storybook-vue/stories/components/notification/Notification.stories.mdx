@@ -124,6 +124,7 @@ import ScaleNotification from './ScaleNotification.vue';
   --spacing-y: var(--telekom-spacing-unit-x4);
   --spacing-y-inner: var(--telekom-spacing-unit-x2);
   --spacing-x-aside: var(--telekom-spacing-unit-x12);
+  --spacing-outer-toast: var(--telekom-spacing-unit-x4);
 }
 ```
 
@@ -234,6 +235,8 @@ import ScaleNotification from './ScaleNotification.vue';
     }}
   </Story>
 </Canvas>
+
+In order to "toast" a notification, append it to a div with the `.scl-toast-stack` class. Listen to the `scale-close` event if you'd like to remove them from the DOM after being dismissed.
 
 ```html
 <div class="scl-toast-stack">
