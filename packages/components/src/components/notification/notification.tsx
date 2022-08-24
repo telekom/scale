@@ -46,7 +46,7 @@ export class Notification {
   @Prop() variant?: 'danger' | 'warning' | 'success' | 'informational' =
     'informational';
   /** (optional) Visible */
-  @Prop({ reflect: true, mutable: true }) opened?: boolean;
+  @Prop({ reflect: true }) opened?: boolean;
   /** (optional) Show the close button */
   @Prop() dismissible?: boolean = false;
   /** (optional) Time in milliseconds until it closes by itself */
@@ -88,7 +88,7 @@ export class Notification {
   openedChanged(newValue) {
     if (newValue === true) {
       this.open();
-    } else {
+    } else if (this.isOpen) {
       this.close();
     }
   }
@@ -96,6 +96,9 @@ export class Notification {
   open = () => {
     this.isOpen = true;
     this.scaleOpen.emit();
+    if (this.delay !== undefined) {
+      setTimeout(this.close, this.delay);
+    }
   };
 
   close = () => {

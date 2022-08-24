@@ -1,0 +1,381 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleNotification from './ScaleNotification.vue';
+
+<!-- TODO events -->
+
+<Meta
+  title="Beta Components/Notification"
+  component={ScaleNotification}
+  argTypes={{
+    heading: {
+      control: {
+        type: 'text',
+      },
+    },
+    type: {
+      options: ['inline', 'banner', 'toast'],
+      control: {
+        type: 'select',
+      },
+    },
+    variant: {
+      options: ['informational', 'warning', 'success', 'danger'],
+      control: {
+        type: 'select',
+      },
+    },
+    opened: {
+      defaultValue: true,
+      control: {
+        type: 'boolean'
+      }
+    },
+    dismissible: {
+      defaultValue: true,
+      control: {
+        type: 'boolean'
+      }
+    },
+    delay: {
+      control: {
+        type: 'number'
+      }
+    },
+    innerAriaLive: {
+      control: {
+        type: 'text'
+      }
+    },
+    closeButtonLabel: {
+      control: {
+        type: 'text'
+      }
+    },
+    closeButtonTitle: {
+      control: {
+        type: 'text'
+      }
+    },
+  }}
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Notification</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      heading: 'Notification heading goes here'
+    }}
+  >
+    {{
+      props: {
+        ...ScaleNotification.props,
+      },
+      template: `
+        <div>
+          <scale-notification
+            :heading="heading"
+            :type="type"
+            :variant="variant"
+            :opened="opened"
+            :dismissible="dismissible"
+            :delay="delay"
+            :inner-aria-live="innerAriaLive"
+            :close-button-label="closeButtonLabel"
+            :close-button-title="closeButtonTitle"
+          ></scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-notification-message heading="Notification text goes here" opened></scale-notification-message>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+  --width: 100%;
+  --radius: var(--telekom-radius-standard);
+  --spacing-y: var(--telekom-spacing-unit-x4);
+  --spacing-y-inner: var(--telekom-spacing-unit-x2);
+  --spacing-x-aside: var(--telekom-spacing-unit-x12);
+}
+```
+
+## Types
+
+### Inline (default)
+
+<Canvas withSource="none">
+  <Story name="Inline">
+    {{
+      template: `
+        <div>
+          <scale-notification
+            heading="Notification heading goes here"
+            opened
+          ></scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message heading="Notification text goes here" opened></scale-notification-message>
+```
+
+### Banner
+
+<Canvas withSource="none">
+  <Story name="Banner">
+    {{
+      data() {
+        return {
+          isOpen: false,
+        }
+      },
+      template: `
+        <div>
+          <scale-button variant="secondary" @click="isOpen = true">Show</scale-button>
+          <div style="margin-top: 1rem">
+            <scale-notification
+              heading="Notification heading goes here"
+              type="banner"
+              variant="success"
+              :opened="isOpen"
+              delay="3000"
+              @scale-close="close"
+            ></scale-notification>
+          </div>
+        </div>
+      `,
+      methods: {
+        close() {
+          this.isOpen = false;
+        }
+      }
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message
+  heading="Notification text goes here"
+  type="banner"
+  variant="success"
+  delay="3000"
+>
+</scale-notification-message>
+```
+
+### Toast
+
+<Canvas withSource="none">
+  <Story name="Toast">
+    {{
+      data() {
+        return {
+          count: 1,
+          variants: ['informational', 'warning', 'success', 'danger'],
+          currentVariant: 0,
+        }
+      },
+      template: `
+        <div>
+          <div ref="stack" class="scl-toast-stack"></div>
+          <scale-button variant="secondary" @click="create">Show</scale-button>
+        </div>
+      `,
+      methods: {
+        create() {
+          const toast = Object.assign(
+            document.createElement('scale-notification'),
+            {
+              heading: `Notification toast #${this.count++}`, 
+              type: 'toast',
+              variant: this.variants[this.currentVariant],
+              delay: 5000,
+              dismissible: true,
+              opened: true,
+              // is this safe?
+              innerHTML: '<span slot="text">Additional text goes in the `text` slot</span>'
+            }
+          );
+          this.$refs.stack.appendChild(toast);
+          this.currentVariant = (this.currentVariant + 1) % this.variants.length;
+        }
+      }
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div class="scl-toast-stack">
+  <scale-notification-message
+    heading="Notification text goes here"
+    type="toast"
+    dismissible
+    delay="5000"
+    opened
+  >
+    <span slot="text">Additional text goes in the `text` slot</span>
+  </scale-notification-message>
+</div>
+```
+
+## Variant
+
+### Informational (default)
+
+<Canvas withSource="none">
+  <Story name="Informational">
+    {{
+      template: `
+        <div>
+          <scale-notification
+            heading="Notification heading goes here"
+            variant="informational"
+            opened
+          ></scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message
+  heading="Notification text goes here"
+  variant="informational"
+  opened
+></scale-notification-message>
+```
+
+### Warning
+
+<Canvas withSource="none">
+  <Story name="Warning">
+    {{
+      template: `
+        <div>
+          <scale-notification
+            heading="Notification heading goes here"
+            variant="warning"
+            opened
+          ></scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message
+  heading="Notification text goes here"
+  variant="warning"
+  opened
+></scale-notification-message>
+```
+
+### Success
+
+<Canvas withSource="none">
+  <Story name="Success">
+    {{
+      template: `
+        <div>
+          <scale-notification
+            heading="Notification heading goes here"
+            variant="success"
+            opened
+          ></scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message
+  heading="Notification text goes here"
+  variant="success"
+  opened
+></scale-notification-message>
+```
+
+### Danger
+
+<Canvas withSource="none">
+  <Story name="Danger">
+    {{
+      template: `
+        <div>
+          <scale-notification
+            heading="Notification heading goes here"
+            variant="danger"
+            opened
+          ></scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message
+  heading="Notification text goes here"
+  variant="danger"
+  opened
+></scale-notification-message>
+```
+
+## Text Slot
+
+<Canvas withSource="none">
+  <Story name="Text Slot">
+    {{
+      template: `
+        <div>
+          <scale-notification
+            heading="Notification heading goes here"
+            opened
+          >
+            <span slot="text">Additional text</span>
+          </scale-notification>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-notification-message heading="Notification text goes here" opened>
+  <span slot="text">Additional text</span>
+</scale-notification-message>
+```
