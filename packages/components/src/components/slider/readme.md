@@ -17,7 +17,6 @@
 | `min`         | `min`          | (optional) the minimal value of the slider                                                 | `number`                      | `0`         |
 | `name`        | `name`         | (optional) the name of the slider                                                          | `string`                      | `undefined` |
 | `platform`    | `platform`     | (optional) the platform the slider is used for                                             | `"android" \| "ios" \| "web"` | `'web'`     |
-| `range`       | `range`        | (optional)  slider with range                                                              | `boolean`                     | `undefined` |
 | `showValue`   | `show-value`   | (optional) slider display value                                                            | `boolean`                     | `true`      |
 | `sliderId`    | `slider-id`    | (optional) Slider id                                                                       | `string`                      | `undefined` |
 | `step`        | `step`         | (optional) the step size to increase or decrease when dragging slider                      | `number`                      | `1`         |

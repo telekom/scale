@@ -32,7 +32,6 @@ export const Template = (args, { argTypes }) => ({
         :min="min"
         :show-value="showValue"
         :step="step"
-        :range="range"
         :value="value"
         :value-second="valueSecond"
         :visible-step="visibleStep"
@@ -117,7 +116,6 @@ For Shadow Parts, please inspect the element's #shadow.
       label: 'Range Slider',
       value: 40,
       valueSecond: 10,
-      range: true,
     }}
   >
     {Template.bind({})}
@@ -125,12 +123,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-slider
-  label="Range Slider"
-  value="40"
-  value-second="10"
-  range
-></scale-slider>
+<scale-slider label="Range Slider" value="40" value-second="10"></scale-slider>
 ```
 
 ## Stepped
@@ -169,7 +162,6 @@ For Shadow Parts, please inspect the element's #shadow.
       valueSecond: 80,
       step: 10,
       visibleStep: true,
-      range: true,
     }}
   >
     {Template.bind({})}
@@ -182,7 +174,6 @@ For Shadow Parts, please inspect the element's #shadow.
   value="40"
   value-second="80"
   step="10"
-  range
   visible-step
 ></scale-slider>
 ```

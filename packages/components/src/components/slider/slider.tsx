@@ -45,8 +45,6 @@ export class Slider {
   @Prop() value?: number;
   /** (optional) the display value of the second slider */
   @Prop() valueSecond?: number;
-  /** (optional)  slider with range*/
-  @Prop() range?: boolean;
   /** (optional) the minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
@@ -320,7 +318,7 @@ export class Slider {
               class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
             >
-              {this.range ? (
+              {this.valueSecond ? (
                 <div
                   part="bar"
                   class="slider__bar"
@@ -386,7 +384,7 @@ export class Slider {
                   }}
                 />
               </div>
-              {this.range && (
+              {this.valueSecond && (
                 <div
                   part="thumb-wrapper"
                   class="slider__thumb-wrapper-second"
@@ -419,9 +417,9 @@ export class Slider {
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
                 {this.value != null &&
-                  !this.range &&
+                  !this.valueSecond &&
                   this.value.toFixed(this.decimals)}
-                {this.range &&
+                {this.valueSecond &&
                   this.getLowestValue() + '-' + this.getHighestValue()}
                 {this.value != null && this.unit}
               </div>

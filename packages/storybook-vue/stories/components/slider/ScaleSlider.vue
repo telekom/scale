@@ -10,7 +10,6 @@
     :platform="platform"
     :value="value"
     :value-second="valueSecond"
-    :range="range"
     :visible-step="visibleStep"
     @scaleChange="scaleChange"
     @scaleInput="scaleInput"
@@ -31,7 +30,6 @@ export default {
     step: { type: Number, default: 1 },
     value: Number,
     valueSecond: Number,
-    range: Boolean,
     visibleStep: Boolean,
     platform: { type: 'web' | 'ios' | 'android', default: 'web' },
   },
