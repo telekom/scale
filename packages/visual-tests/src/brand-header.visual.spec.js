@@ -1,12 +1,10 @@
 describe('Brand Header', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
+      await global.runColorSetup(
+        'components-brand-header-navigation--standard',
+        mode
       );
-      await page.evaluate((mode) => {
-        localStorage.setItem('persistedColorMode', JSON.stringify(mode));
-      }, mode);
     });
     it('default mega menu states', async () => {
       await page.goto(

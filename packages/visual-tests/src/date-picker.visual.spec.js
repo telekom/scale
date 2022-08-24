@@ -1,12 +1,7 @@
 describe('DatePicker', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-date-picker--standard&viewMode=story`
-      );
-      await page.evaluate((mode) => {
-        localStorage.setItem('persistedColorMode', JSON.stringify(mode));
-      }, mode);
+      await global.runColorSetup('components-date-picker--standard', mode);
     });
     // open date-picker
     test.each([['standard']])('%p', async (variant) => {
