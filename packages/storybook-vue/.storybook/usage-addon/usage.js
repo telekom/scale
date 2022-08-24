@@ -51,6 +51,8 @@ import menuFlyout_en from 'raw-loader!../../stories/components/flyout-menu/menu-
 import menuFlyout_de from 'raw-loader!../../stories/components/flyout-menu/menu-flyout_de.md';
 import modal_en from 'raw-loader!../../stories/components/modal/modal.md';
 import modal_de from 'raw-loader!../../stories/components/modal/modal_de.md';
+import notification_de from 'raw-loader!../../stories/components/notification/notification_de.md';
+import notification_en from 'raw-loader!../../stories/components/notification/notification.md';
 import notificationBadge_de from 'raw-loader!../../stories/components/notification-badge/notification-badge_de.md';
 import notificationBadge_en from 'raw-loader!../../stories/components/notification-badge/notification-badge.md';
 import notificationBanner_de from 'raw-loader!../../stories/components/notification-banner/notification-banner_de.md';
@@ -165,6 +167,8 @@ const Usage = (props) => {
     'flyout-menu_de': menuFlyout_de,
     modal_en,
     modal_de,
+    notification_en,
+    notification_de,
     'notification-badge_en': notificationBadge_en,
     'notification-badge_de': notificationBadge_de,
     'notification-banner_en': notificationBanner_en,
