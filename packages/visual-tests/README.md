@@ -25,6 +25,8 @@ Just run the tests again with the `-u` flag: `yarn test -u`.
 ## Checking for failing tests
 After a failed run, Jest will put the differences in a folder, so you can inspect: `packages/visual-tests/src/__image_snapshots__/__diff_output__/` 
 
+For HTML report, check: `packages/visual-tests/report/`
+
 ## Checking the test results in CI:
 Let's assume the `build-pr / visual-tests (pull_request)` check failed after you pushed to GitHub and you want to see what went wrong.
 
