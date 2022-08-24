@@ -134,7 +134,7 @@ describe('TextField', () => {
     page.rootInstance.emitChange();
     await page.waitForChanges();
     expect(emitSpy).toHaveBeenCalled();
-    expect(emitSpyLegacy).toHaveBeenCalled();
+    expect(emitSpyLegacy).toHaveBeenCalledTimes(1);
   });
   it('should emit on focus', async () => {
     const focusSpy = jest.fn();
@@ -201,5 +201,24 @@ describe('TextField', () => {
     expect(element.hasFocus).toBeTruthy();
     element.handleBlur();
     expect(element.hasFocus).toBeFalsy();
+  });
+
+  it('should emit Onchange only once', async () => {
+    const controlledInputPage = await newSpecPage({
+      components: [TextField],
+      html: `<scale-text-field controlled></scale-text-field>`,
+    });
+    const inputSpy = jest.fn();
+    const inputSpyLegacy = jest.fn();
+    controlledInputPage.doc.addEventListener('scale-change', inputSpy);
+    controlledInputPage.doc.addEventListener('scaleChange', inputSpyLegacy);
+
+    const inputField = controlledInputPage.doc.querySelector('input');
+
+    inputField.value = TEST_VALUE;
+    await inputField.dispatchEvent(new Event('input'));
+    await controlledInputPage.waitForChanges();
+    expect(inputSpy).toHaveBeenCalledTimes(1);
+    expect(inputSpyLegacy).toHaveBeenCalledTimes(1);
   });
 });

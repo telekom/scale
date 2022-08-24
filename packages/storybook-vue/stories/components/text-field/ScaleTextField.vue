@@ -18,6 +18,7 @@
     :value="value"
     :input-id="inputId"
     :input-autofocus="inputAutofocus"
+    :experimental-controlled="experimental-controlled"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"
@@ -51,6 +52,7 @@ export default {
     value: { type: String },
     inputId: { type: String },
     inputAutofocus: { type: Boolean },
+    experimentalControlled: { type: Boolean },
     styles: { type: String },
   },
   methods: {
