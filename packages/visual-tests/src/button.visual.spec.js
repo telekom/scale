@@ -23,7 +23,7 @@ describe('Button', () => {
     ])('%p', async (variant) => {
       await global.runSetup(`components-button--${variant}`);
 
-      const button = await page.evaluateHandle(
+      const button = await global.page.evaluateHandle(
         `document.querySelector("#root scale-button").shadowRoot.querySelector(".button")`
       );
       await global.visualCheck();
@@ -39,16 +39,16 @@ describe('Button', () => {
     ])('%p', async (variant) => {
       await global.runSetup(`components-button--${variant}`);
 
-      const button = await page.evaluateHandle(
+      const button = await global.page.evaluateHandle(
         `document.querySelector("#root scale-button").shadowRoot.querySelector(".button")`
       );
       await button.hover();
       await global.visualCheck();
-      await page.mouse.move(20, 20);
-      await page.mouse.down();
+      await global.page.mouse.move(20, 20);
+      await global.page.mouse.down();
       await global.visualCheck();
-      await page.mouse.up();
-      await page.mouse.move(0, 0);
+      await global.page.mouse.up();
+      await global.page.mouse.move(0, 0);
       await button.focus();
       await global.visualCheck();
     });

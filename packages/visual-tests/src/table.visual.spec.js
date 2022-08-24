@@ -16,7 +16,7 @@ describe('Table', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-table--${variant}`);
       await global.page.waitFor(5000);
-      const row = await page.evaluateHandle(
+      const row = await global.page.evaluateHandle(
         'document.querySelector("#sortable-table > tbody > tr:nth-child(3)")'
       );
       row.hover();

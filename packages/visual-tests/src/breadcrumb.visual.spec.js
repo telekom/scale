@@ -6,15 +6,15 @@ describe('Breadcrumb', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-breadcrumb--${variant}`);
 
-      const firstLink = await page.evaluateHandle(
+      const firstLink = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-breadcrumb").shadowRoot.querySelector("nav > ol > li:nth-child(1) > a")`
       );
       await global.visualCheck();
       await firstLink.hover();
       await global.visualCheck();
       // mouse down on firstlink
-      await page.mouse.move(40, 30);
-      await page.mouse.down();
+      await global.page.mouse.move(40, 30);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

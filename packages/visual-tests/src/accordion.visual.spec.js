@@ -14,7 +14,7 @@ describe('Accordion', () => {
     test.each([['standard'], ['dependent']])('%p', async (variant) => {
       await global.runSetup(`components-accordion--${variant}`);
 
-      const firstButton = await page.evaluateHandle(
+      const firstButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-accordion > scale-collapsible:nth-child(1)").shadowRoot.querySelector("div > h2 > button")`
       );
       await firstButton.hover();
@@ -23,11 +23,11 @@ describe('Accordion', () => {
       await firstButton.click();
       await global.visualCheck();
       // mouse down on first button
-      await page.mouse.move(20, 60);
-      await page.mouse.down();
+      await global.page.mouse.move(20, 60);
+      await global.page.mouse.down();
       await global.visualCheck();
-      await page.mouse.up();
-      await page.mouse.move(0, 0);
+      await global.page.mouse.up();
+      await global.page.mouse.move(0, 0);
       await firstButton.focus();
       await global.visualCheck();
     });

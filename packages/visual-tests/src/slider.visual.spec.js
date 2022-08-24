@@ -17,10 +17,10 @@ describe('Slider', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-slider--${variant}`);
 
-      const slider = await page.evaluateHandle(
+      const slider = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
       );
-      const sliderTrack = await page.evaluateHandle(
+      const sliderTrack = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-slider").shadowRoot.querySelector("div > div > div.slider__track")`
       );
       slider.hover();
@@ -28,8 +28,8 @@ describe('Slider', () => {
       await sliderTrack.click();
       await slider.focus();
       await global.visualCheck();
-      await page.mouse.move(80, 60);
-      await page.mouse.down();
+      await global.page.mouse.move(80, 60);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

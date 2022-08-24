@@ -22,10 +22,10 @@ describe('ToggleGroup', () => {
     // hover, active, focus
     test.each([['standard'], ['monochrome-variant']])('%p', async (variant) => {
       await global.runSetup(`beta-components-toggle-group--${variant}`);
-      const buttonOne = await page.evaluateHandle(
+      const buttonOne = await global.page.evaluateHandle(
         `document.querySelector("#root scale-toggle-group > scale-toggle-button[radius='left']").shadowRoot.querySelector("button")`
       );
-      const buttonThree = await page.evaluateHandle(
+      const buttonThree = await global.page.evaluateHandle(
         `document.querySelector("#root scale-toggle-group > scale-toggle-button[radius='right']").shadowRoot.querySelector("button")`
       );
       buttonThree.hover();
@@ -34,11 +34,11 @@ describe('ToggleGroup', () => {
       await global.visualCheck();
       buttonOne.focus();
       await global.visualCheck();
-      await page.mouse.move(30, 30);
-      await page.mouse.down();
+      await global.page.mouse.move(30, 30);
+      await global.page.mouse.down();
       await global.visualCheck();
-      await page.mouse.up();
-      await page.mouse.down();
+      await global.page.mouse.up();
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

@@ -12,7 +12,7 @@ describe('DropdownSelect', () => {
       async (variant) => {
         await global.runSetup(`beta-components-dropdown-select--${variant}`);
 
-        const select = await page.evaluateHandle(
+        const select = await global.page.evaluateHandle(
           `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
         );
         await global.visualCheck();
@@ -24,7 +24,7 @@ describe('DropdownSelect', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`beta-components-dropdown-select--${variant}`);
 
-      const select = await page.evaluateHandle(
+      const select = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-dropdown-select").shadowRoot.querySelector("#combobox")`
       );
       await global.page.waitFor(300);

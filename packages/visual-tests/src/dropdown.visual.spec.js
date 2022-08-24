@@ -19,7 +19,7 @@ describe('Dropdown', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-dropdown--${variant}`);
 
-      const dropdown = await page.evaluateHandle(
+      const dropdown = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-dropdown .input__dropdown")`
       );
       await global.page.waitFor(300);
@@ -27,8 +27,8 @@ describe('Dropdown', () => {
       await global.visualCheck();
       await dropdown.focus();
       await global.visualCheck();
-      await page.mouse.move(60, 60);
-      await page.mouse.down();
+      await global.page.mouse.move(60, 60);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

@@ -18,10 +18,10 @@ describe('SidebarNavigation', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
 
-      const collabsibleButton = await page.evaluateHandle(
+      const collabsibleButton = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2) > scale-sidebar-nav-collapsible:nth-child(1)").shadowRoot.querySelector("li > div > a")`
       );
-      const secondItem = await page.evaluateHandle(
+      const secondItem = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
       );
 
@@ -36,10 +36,12 @@ describe('SidebarNavigation', () => {
   describe('SidebarNavItem', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
-      const sidebarNavItem = await page.evaluateHandle(
+      const sidebarNavItem = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-item:nth-child(1) > a")`
       );
-      const base = await page.evaluateHandle(`document.querySelector("#root")`);
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
       await sidebarNavItem.focus();
       await global.visualCheck();
@@ -48,8 +50,8 @@ describe('SidebarNavigation', () => {
       await sidebarNavItem.hover();
       await global.visualCheck();
 
-      await page.mouse.move(20, 50);
-      await page.mouse.down();
+      await global.page.mouse.move(20, 50);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });
@@ -58,10 +60,12 @@ describe('SidebarNavigation', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-sidebar-navigation--${variant}`);
 
-      const sidebarNavCollapsible = await page.evaluateHandle(
+      const sidebarNavCollapsible = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
       );
-      const base = await page.evaluateHandle(`document.querySelector("#root")`);
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
       await sidebarNavCollapsible.focus();
       await global.visualCheck();
@@ -70,8 +74,8 @@ describe('SidebarNavigation', () => {
       await sidebarNavCollapsible.hover();
       await global.visualCheck();
 
-      await page.mouse.move(20, 100);
-      await page.mouse.down();
+      await global.page.mouse.move(20, 100);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

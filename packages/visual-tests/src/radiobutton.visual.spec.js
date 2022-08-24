@@ -19,10 +19,10 @@ describe('RadioButton', () => {
   test.each([['standard'], ['selected']])('%p', async (variant) => {
     await global.runSetup(`components-radio-button--${variant}`);
 
-    const radioButtonWrapper = await page.evaluateHandle(
+    const radioButtonWrapper = await global.page.evaluateHandle(
       `document.querySelector("#root > scale-radio-button > div")`
     );
-    const radioButton = await page.evaluateHandle(
+    const radioButton = await global.page.evaluateHandle(
       `document.querySelector("#root > scale-radio-button > div > input")`
     );
 
@@ -30,8 +30,8 @@ describe('RadioButton', () => {
     await global.visualCheck();
     radioButtonWrapper.hover();
     await global.visualCheck();
-    await page.mouse.move(20, 20);
-    await page.mouse.down();
+    await global.page.mouse.move(20, 20);
+    await global.page.mouse.down();
     await global.visualCheck();
   });
 });

@@ -16,15 +16,15 @@ describe('TabNavigation', () => {
     // hover, focus, active
     test.each([['text-icon'], ['text-only']])('%p', async (variant) => {
       await global.runSetup(`components-tab-navigation--${variant}`);
-      const tabHeader = await page.evaluateHandle(
+      const tabHeader = await global.page.evaluateHandle(
         'document.querySelector("#scale-tab-header-1").shadowRoot.querySelector(".tab-header")'
       );
       await tabHeader.hover();
       await global.visualCheck();
       await tabHeader.click();
       await global.visualCheck();
-      await page.mouse.move(20, 40);
-      await page.mouse.down();
+      await global.page.mouse.move(20, 40);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

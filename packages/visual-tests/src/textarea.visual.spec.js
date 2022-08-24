@@ -18,13 +18,13 @@ describe('Textarea', () => {
     // hover, focus, active
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-text-area--${variant}`);
-      const textarea = await page.evaluateHandle(
+      const textarea = await global.page.evaluateHandle(
         'document.querySelector("#input-textarea0")'
       );
-      await page.mouse.move(60, 40);
-      await page.mouse.down();
+      await global.page.mouse.move(60, 40);
+      await global.page.mouse.down();
       await global.visualCheck();
-      await page.keyboard.press('Tab');
+      await global.page.keyboard.press('Tab');
       await textarea.hover();
       await global.visualCheck();
       await textarea.focus();

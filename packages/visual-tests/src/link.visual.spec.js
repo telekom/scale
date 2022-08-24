@@ -15,15 +15,15 @@ describe('Link', () => {
     test.each([['with-icon']])('%p', async (variant) => {
       await global.runSetup(`components-link--${variant}`);
 
-      const link = await page.evaluateHandle(
+      const link = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-link").shadowRoot.querySelector("a")`
       );
       link.hover();
       await global.visualCheck();
       link.focus();
       await global.visualCheck();
-      await page.mouse.move(30, 30);
-      await page.mouse.down();
+      await global.page.mouse.move(30, 30);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

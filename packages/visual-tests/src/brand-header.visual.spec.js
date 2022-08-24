@@ -7,13 +7,13 @@ describe('Brand Header', () => {
       );
     });
     it('default mega menu states', async () => {
-      await page.goto(
+      await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--standard&viewMode=story`
       );
-      await page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('html.hydrated');
 
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
+      const previewHtml = await global.page.$('body');
+      await global.page.evaluate(() => {
         [
           '--telekom-motion-duration-immediate',
           '--telekom-motion-duration-transition',
@@ -23,7 +23,7 @@ describe('Brand Header', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-      const firstLink = await page.evaluateHandle(
+      const firstLink = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-app-shell").shadowRoot.querySelector("scale-app-header nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a")`
       );
       await firstLink.hover();
@@ -33,13 +33,13 @@ describe('Brand Header', () => {
     });
 
     it('custom mega menu states', async () => {
-      await page.goto(
+      await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--custom-main-navigation&viewMode=story`
       );
-      await page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('html.hydrated');
 
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
+      const previewHtml = await global.page.$('body');
+      await global.page.evaluate(() => {
         [
           '--telekom-motion-duration-immediate',
           '--telekom-motion-duration-transition',
@@ -49,7 +49,7 @@ describe('Brand Header', () => {
           document.body.style.setProperty(transitionSpeed, '0s');
         });
       });
-      const firstLink = await page.evaluateHandle(
+      const firstLink = await global.page.evaluateHandle(
         `document.querySelector("#nav-main-with-mega-menu > li > a")`
       );
       await firstLink.hover();
@@ -66,13 +66,13 @@ describe('Brand Header', () => {
       ['custom-addon-navigation'],
       ['custom-logo'],
     ])('%p', async (variant) => {
-      await page.goto(
+      await global.page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-brand-header-navigation--${variant}&viewMode=story`
       );
-      await page.waitForSelector('html.hydrated');
+      await global.page.waitForSelector('html.hydrated');
 
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
+      const previewHtml = await global.page.$('body');
+      await global.page.evaluate(() => {
         [
           '--telekom-motion-duration-immediate',
           '--telekom-motion-duration-transition',

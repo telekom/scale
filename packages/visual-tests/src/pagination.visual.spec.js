@@ -14,10 +14,10 @@ describe('Pagination', () => {
     });
     test('buttons disabled', async () => {
       await global.runSetup(`components-pagination--standard`);
-      const firstButton = await page.evaluateHandle(
+      const firstButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
       );
-      const lastButton = await page.evaluateHandle(
+      const lastButton = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__last-prompt")`
       );
       firstButton.click();
@@ -30,10 +30,10 @@ describe('Pagination', () => {
       async (variant) => {
         await global.runSetup(`components-pagination--${variant}`);
 
-        const firstButton = await page.evaluateHandle(
+        const firstButton = await global.page.evaluateHandle(
           `document.querySelector("#root scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
         );
-        const base = await page.evaluateHandle(
+        const base = await global.page.evaluateHandle(
           `document.querySelector("#root")`
         );
 
@@ -42,8 +42,8 @@ describe('Pagination', () => {
         base.hover();
         firstButton.focus();
         await global.visualCheck();
-        await page.mouse.move(20, 30);
-        await page.mouse.down();
+        await global.page.mouse.move(20, 30);
+        await global.page.mouse.down();
         await global.visualCheck();
       }
     );

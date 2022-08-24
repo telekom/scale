@@ -17,13 +17,15 @@ describe('RadioButtonGroup', () => {
     // focus, hover, active, click
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-radio-button-group--${variant}`);
-      const firstRadioButton = await page.evaluateHandle(
+      const firstRadioButton = await global.page.evaluateHandle(
         `document.querySelector("#root > div > scale-radio-button-group > scale-radio-button:nth-child(1) input[type=radio]")`
       );
-      const label = await page.evaluateHandle(
+      const label = await global.page.evaluateHandle(
         `document.querySelector("#root scale-radio-button-group > scale-radio-button:nth-child(1) > div > label")`
       );
-      const base = await page.evaluateHandle(`document.querySelector("#root")`);
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
       await firstRadioButton.focus();
       await global.visualCheck();
@@ -31,8 +33,8 @@ describe('RadioButtonGroup', () => {
       await label.hover();
       await global.visualCheck();
       await base.click();
-      await page.mouse.move(40, 70);
-      await page.mouse.down();
+      await global.page.mouse.move(40, 70);
+      await global.page.mouse.down();
       await global.visualCheck();
       await firstRadioButton.click();
       await global.visualCheck();

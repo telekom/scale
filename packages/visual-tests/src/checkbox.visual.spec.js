@@ -28,7 +28,7 @@ describe('Checkbox', () => {
     ])('%p', async (variant, state) => {
       await global.runSetup(`components-checkbox--${variant}`);
 
-      const checkbox = await page.evaluateHandle(
+      const checkbox = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox > label")`
       );
       if (state === 'hover') {
@@ -36,8 +36,8 @@ describe('Checkbox', () => {
         await global.visualCheck();
       }
       if (state === 'active') {
-        await page.mouse.move(20, 20);
-        await page.mouse.down();
+        await global.page.mouse.move(20, 20);
+        await global.page.mouse.down();
         await global.visualCheck();
       }
       if (state === 'focus') {

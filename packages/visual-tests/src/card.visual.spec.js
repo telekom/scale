@@ -11,7 +11,7 @@ describe('Card', () => {
     ])('%p', async (variant) => {
       await global.runSetup(`components-card--${variant}`);
 
-      const anchor = await page.evaluateHandle(
+      const anchor = await global.page.evaluateHandle(
         `document.querySelector("body scale-card").shadowRoot.querySelector("div > a")`
       );
       await global.visualCheck();

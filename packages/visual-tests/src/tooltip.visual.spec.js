@@ -5,7 +5,7 @@ describe('Tooltip', () => {
     });
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`beta-components-tooltip--${variant}`);
-      const button = await page.evaluateHandle(
+      const button = await global.page.evaluateHandle(
         'document.querySelector("#root > div > scale-tooltip > scale-button")'
       );
       await button.hover();

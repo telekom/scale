@@ -20,13 +20,13 @@ describe('Textfield', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-text-field--${variant}`);
 
-      const textfield = await page.evaluateHandle(
+      const textfield = await global.page.evaluateHandle(
         'document.querySelector("#input-text-field0")'
       );
-      await page.mouse.move(60, 40);
-      await page.mouse.down();
+      await global.page.mouse.move(60, 40);
+      await global.page.mouse.down();
       await global.visualCheck();
-      await page.keyboard.press('Tab');
+      await global.page.keyboard.press('Tab');
       await textfield.hover();
       await global.visualCheck();
       await textfield.focus();

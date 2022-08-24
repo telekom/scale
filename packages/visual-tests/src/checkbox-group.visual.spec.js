@@ -16,10 +16,10 @@ describe('CheckboxGroup', () => {
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-checkbox-group--${variant}`);
 
-      const firstCheckbox = await page.evaluateHandle(
+      const firstCheckbox = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
       );
-      const label = await page.evaluateHandle(
+      const label = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > label")`
       );
 
@@ -27,8 +27,8 @@ describe('CheckboxGroup', () => {
       await global.visualCheck();
       await firstCheckbox.focus();
       await global.visualCheck();
-      await page.mouse.move(20, 40);
-      await page.mouse.down();
+      await global.page.mouse.move(20, 40);
+      await global.page.mouse.down();
       await global.visualCheck();
     });
   });

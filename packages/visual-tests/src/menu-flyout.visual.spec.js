@@ -35,7 +35,9 @@ describe('Menu', () => {
       const flyoutItemTwo = await global.page.evaluateHandle(
         `document.querySelector("#root scale-menu-flyout > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(8) > scale-menu-flyout-list > scale-menu-flyout-item:nth-child(2)")`
       );
-      const base = await global.page.evaluateHandle(`document.querySelector("#root")`);
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
       await button.click();
       await global.page.waitFor(300);
       await flyoutItemOne.hover();

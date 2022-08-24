@@ -13,7 +13,7 @@ describe('Logo', () => {
     ])('%p', async (variant) => {
       await global.runSetup(`components-logo--${variant}`);
       await global.visualCheck();
-      const image = await page.evaluateHandle(
+      const image = await global.page.evaluateHandle(
         `document.querySelector("#root scale-logo").shadowRoot.querySelector("svg")`
       );
       await image.focus();
