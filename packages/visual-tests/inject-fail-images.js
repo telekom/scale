@@ -1,6 +1,13 @@
-// This script works out which tests failed and injects an image tag pointing to the diff image path that
-// was reported in the error message. This may break if jest-html-reporter or jest-image-snapshot changes,
-// but this is good enough for us right now
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
   [...document.querySelectorAll('.failureMsg')].forEach((fail, i) => {
