@@ -19,7 +19,7 @@
   display: contents;
 }
 
-[part='base'] {
+[part*='base'] {
   position: relative;
   display: none;
   box-sizing: border-box;
@@ -30,7 +30,7 @@
   box-shadow: var(--_shadow);
 }
 
-:host([opened]) [part='base'] {
+[part*='base'].is-open {
   display: flex;
 }
 
@@ -107,7 +107,7 @@
   --color-ghost: var(--telekom-color-text-and-icon-standard);
   position: absolute;
   /*
-    TODO this needs adjusment
+    TODO this might need adjusment
     (probably scale-button will change, or
     we can set it up inside a flex container just like
     one the left...)

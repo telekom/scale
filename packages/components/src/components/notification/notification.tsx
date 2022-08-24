@@ -9,7 +9,17 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Element, State, Host } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Element,
+  Event,
+  EventEmitter,
+  State,
+  Host,
+  Watch,
+} from '@stencil/core';
 
 const ICON_SIZE = 20;
 
@@ -37,24 +47,61 @@ export class Notification {
     'informational';
   /** (optional) Visible */
   @Prop({ reflect: true, mutable: true }) opened?: boolean;
-  /** (optional) Dismissible via close button */
+  /** (optional) Show the close button */
   @Prop() dismissible?: boolean = false;
+  /** (optional) Time in milliseconds until it closes by itself */
+  @Prop() delay?: number;
+  /** (optional) `aria-live` of element */
+  @Prop() innerAriaLive?: string = 'assertive';
+  /** (optional) Label for close button */
+  @Prop() closeButtonLabel?: string = 'Close Pop-up';
+  /** (optional) `title` for close button */
+  @Prop() closeButtonTitle?: string = 'Close';
   /** (optional) Injected styles */
   @Prop() styles?: string;
 
+  /** What actually triggers opening/closing the notification */
+  @State() isOpen: boolean = this.opened || false;
   @State() role: string = 'alert';
+  @State() ariaLive: string;
   @State() hasTextSlot: boolean = false;
   @State() hasActionSlot: boolean = false; // unused for now
 
+  @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
+
   connectedCallback() {
-    // Do not use `role="alert"` if opened/visible on page load
     if (this.hostElement.hasAttribute('opened')) {
+      // Do not use `role="alert"` if opened/visible on page load
       this.role = undefined;
+      this.isOpen = true;
+    }
+    if (this.delay !== undefined) {
+      setTimeout(this.close, this.delay);
     }
     this.hasTextSlot = this.hostElement.querySelector('[slot="text"]') != null;
     this.hasActionSlot =
       this.hostElement.querySelector('[slot="action"]') != null;
   }
+
+  @Watch('opened')
+  openedChanged(newValue) {
+    if (newValue === true) {
+      this.open();
+    } else {
+      this.close();
+    }
+  }
+
+  open = () => {
+    this.isOpen = true;
+    this.scaleOpen.emit();
+  };
+
+  close = () => {
+    this.isOpen = false;
+    this.scaleClose.emit();
+  };
 
   render() {
     const IconTag = iconVariantNameMap[this.variant];
@@ -63,20 +110,15 @@ export class Notification {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div
-          part="base"
+          part={`base ${this.type} ${this.variant}`}
           role={this.role}
+          aria-live={this.innerAriaLive}
           class={{
+            'is-open': this.isOpen,
             [`variant-${this.variant}`]: true,
             [`type-${this.type}`]: true,
           }}
         >
-          {this.dismissible && (
-            <scale-button part="close-button" variant="ghost">
-              <slot name="close-icon">
-                <scale-icon-action-circle-close size={ICON_SIZE} decorative />
-              </slot>
-            </scale-button>
-          )}
           <div part="icon" aria-hidden="true">
             <slot name="icon">
               <IconTag size={ICON_SIZE} selected={this.type === 'toast'} />
@@ -90,6 +132,19 @@ export class Notification {
               </div>
             )}
           </div>
+          {this.dismissible && (
+            <scale-button
+              part="close-button"
+              variant="ghost"
+              onClick={this.close}
+              aria-label={this.closeButtonLabel}
+              title={this.closeButtonTitle}
+            >
+              <slot name="close-icon">
+                <scale-icon-action-circle-close size={ICON_SIZE} decorative />
+              </slot>
+            </scale-button>
+          )}
         </div>
       </Host>
     );
