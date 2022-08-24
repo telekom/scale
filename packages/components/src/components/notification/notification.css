@@ -25,7 +25,7 @@
   margin: var(--spacing-toast);
 }
 
-[part*='base'] {
+[part~='base'] {
   position: relative;
   display: none;
   box-sizing: border-box;
@@ -36,35 +36,35 @@
   box-shadow: var(--_shadow);
 }
 
-[part*='base'].is-open {
+[part~='base'][part~='open'] {
   display: flex;
 }
 
-.variant-informational {
+[part~='variant-informational'] {
   --_background-subtle: var(--telekom-color-functional-informational-subtle);
   --_background-accent: var(--telekom-color-functional-informational-standard);
   --_color-accent: var(--telekom-color-text-and-icon-functional-informational);
 }
-.variant-warning {
+[part~='variant-warning'] {
   --_background-subtle: var(--telekom-color-functional-warning-subtle);
   --_background-accent: var(--telekom-color-functional-warning-standard);
   --_color-accent: var(--telekom-color-text-and-icon-functional-warning);
 }
-.variant-success {
+[part~='variant-success'] {
   --_background-subtle: var(--telekom-color-functional-success-subtle);
   --_background-accent: var(--telekom-color-functional-success-standard);
   --_color-accent: var(--telekom-color-text-and-icon-functional-success);
 }
-.variant-danger {
+[part~='variant-danger'] {
   --_background-subtle: var(--telekom-color-functional-danger-subtle);
   --_background-accent: var(--telekom-color-functional-danger-standard);
   --_color-accent: var(--telekom-color-text-and-icon-functional-danger);
 }
 
-.type-banner {
+[part~='type-banner'] {
   --_shadow: var(--telekom-shadow-floating-standard);
 }
-.type-toast {
+[part~='type-toast'] {
   --_shadow: var(--telekom-shadow-top);
 }
 
@@ -80,8 +80,7 @@
   border-bottom-left-radius: var(--radius);
   color: var(--_color-accent);
 }
-
-.type-toast [part='icon'] {
+[part~='type-toast'] [part='icon'] {
   background: var(--_background-accent);
   color: var(--telekom-color-text-and-icon-white-standard);
   align-items: center;
@@ -91,8 +90,7 @@
   margin-top: var(--spacing-y);
   margin-bottom: var(--spacing-y);
 }
-
-.type-toast [part='body'] {
+[part~='type-toast'] [part='body'] {
   padding-left: var(--spacing-y);
 }
 

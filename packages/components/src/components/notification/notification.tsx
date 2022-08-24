@@ -20,6 +20,7 @@ import {
   Host,
   Watch,
 } from '@stencil/core';
+import cn from 'classnames';
 
 const ICON_SIZE = 20;
 
@@ -113,14 +114,14 @@ export class Notification {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div
-          part={`base ${this.type} ${this.variant}`}
+          part={cn(
+            'base',
+            `type-${this.type}`,
+            `variant-${this.variant}`,
+            this.isOpen && 'open'
+          )}
           role={this.role}
           aria-live={this.innerAriaLive}
-          class={{
-            'is-open': this.isOpen,
-            [`variant-${this.variant}`]: true,
-            [`type-${this.type}`]: true,
-          }}
         >
           <div part="icon" aria-hidden="true">
             <slot name="icon">
