@@ -127,6 +127,7 @@ describe('Slider', () => {
     });
     page.root.value = 50;
     simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowRight');
+    expect(await page.rootInstance.thumbNumber).toBe('1');
     expect(await page.rootInstance.value).toBe(51);
   });
 
@@ -153,6 +154,7 @@ describe('Slider', () => {
     });
     page.root.value = 50;
     simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowUp');
+    expect(await page.rootInstance.thumbNumber).toBe('1');
     expect(await page.rootInstance.value).toBe(60);
   });
 

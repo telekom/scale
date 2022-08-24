@@ -162,14 +162,17 @@ export class Slider {
     this.addGlobalListeners();
   };
 
-  onKeyDown = (event: KeyboardEvent) => {
+  onKeyDown = (event: KeyboardEvent, id: string) => {
     let steps = 0;
+    let targetIDString = id;
+    this.thumbNumber = targetIDString.charAt(0);
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
       steps = event.key === 'ArrowRight' ? this.step : -this.step;
     }
     if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
       steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
     }
+    console.log(this.thumbNumber);
     this.thumbNumber == '1'
       ? this.setValue(this.value + steps)
       : this.setSecondValue(this.valueSecond + steps);
@@ -378,7 +381,9 @@ export class Slider {
                   aria-labelledby={`${this.sliderId}-label`}
                   aria-orientation="horizontal"
                   aria-disabled={this.disabled}
-                  onKeyDown={this.onKeyDown}
+                  onKeyDown={(event) => {
+                    this.onKeyDown(event, `1-${this.sliderId}`);
+                  }}
                 />
               </div>
               {this.range && (
@@ -403,7 +408,9 @@ export class Slider {
                     aria-labelledby={`${this.sliderId}-label`}
                     aria-orientation="horizontal"
                     aria-disabled={this.disabled}
-                    onKeyDown={this.onKeyDown}
+                    onKeyDown={(event) => {
+                      this.onKeyDown(event, `2-${this.sliderId}`);
+                    }}
                   />
                 </div>
               )}
