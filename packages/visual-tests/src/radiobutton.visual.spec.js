@@ -17,9 +17,7 @@ describe('RadioButton', () => {
   });
   // hover, active, focus
   test.each([['standard'], ['selected']])('%p', async (variant) => {
-    await page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-radio-button--${variant}&viewMode=story`
-    );
+    await global.runSetup(`components-radio-button--${variant}`);
 
     const radioButtonWrapper = await page.evaluateHandle(
       `document.querySelector("#root > scale-radio-button > div")`

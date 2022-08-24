@@ -1,7 +1,7 @@
 describe('CheckboxGroup', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await global.runColorSetup('components-accordion--standard', mode);
+      await global.runColorSetup('components-checkbox-group--standard', mode);
     });
     test.each([
       ['standard'],
@@ -18,9 +18,6 @@ describe('CheckboxGroup', () => {
 
       const firstCheckbox = await page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > input[type=checkbox]")`
-      );
-      const secondCheckbox = await page.evaluateHandle(
-        `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(2) > input[type=checkbox]")`
       );
       const label = await page.evaluateHandle(
         `document.querySelector("#root > scale-checkbox-group > scale-checkbox:nth-child(1) > label")`
