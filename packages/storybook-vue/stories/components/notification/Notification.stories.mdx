@@ -112,7 +112,7 @@ import ScaleNotification from './ScaleNotification.vue';
 <ArgsTable story="Standard" />
 
 ```html
-<scale-notification-message heading="Notification text goes here" opened></scale-notification-message>
+<scale-notification heading="Notification text goes here" opened></scale-notification>
 ```
 
 ### Scoped CSS variables
@@ -147,7 +147,7 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message heading="Notification text goes here" opened></scale-notification-message>
+<scale-notification heading="Notification text goes here" opened></scale-notification>
 ```
 
 ### Banner
@@ -185,13 +185,13 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message
+<scale-notification
   heading="Notification text goes here"
   type="banner"
   variant="success"
   delay="3000"
 >
-</scale-notification-message>
+</scale-notification>
 ```
 
 ### Toast
@@ -237,15 +237,15 @@ import ScaleNotification from './ScaleNotification.vue';
 
 ```html
 <div class="scl-toast-stack">
-  <scale-notification-message
-    heading="Notification text goes here"
+  <scale-notification
+    heading="Notification toast #1"
     type="toast"
     dismissible
     delay="5000"
     opened
   >
     <span slot="text">Additional text goes in the `text` slot</span>
-  </scale-notification-message>
+  </scale-notification>
 </div>
 ```
 
@@ -270,11 +270,11 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message
+<scale-notification
   heading="Notification text goes here"
   variant="informational"
   opened
-></scale-notification-message>
+></scale-notification>
 ```
 
 ### Warning
@@ -296,11 +296,11 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message
+<scale-notification
   heading="Notification text goes here"
   variant="warning"
   opened
-></scale-notification-message>
+></scale-notification>
 ```
 
 ### Success
@@ -322,11 +322,11 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message
+<scale-notification
   heading="Notification text goes here"
   variant="success"
   opened
-></scale-notification-message>
+></scale-notification>
 ```
 
 ### Danger
@@ -348,11 +348,11 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message
+<scale-notification
   heading="Notification text goes here"
   variant="danger"
   opened
-></scale-notification-message>
+></scale-notification>
 ```
 
 ## Text Slot
@@ -375,7 +375,7 @@ import ScaleNotification from './ScaleNotification.vue';
 </Canvas>
 
 ```html
-<scale-notification-message heading="Notification text goes here" opened>
+<scale-notification heading="Notification text goes here" opened>
   <span slot="text">Additional text</span>
-</scale-notification-message>
+</scale-notification>
 ```
