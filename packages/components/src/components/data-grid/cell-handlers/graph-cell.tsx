@@ -45,7 +45,7 @@ export const GraphCell: Cell = {
                 max-width: 200px;
               }
               .progress-bar__inner {
-                background: var(--scl-color-grey-80) !important;
+                background: var(--telekom-color-ui-faint) !important;
               }
               `
               }
@@ -66,7 +66,7 @@ export const GraphCell: Cell = {
               max-width: 200px;
             }
             .progress-bar__inner {
-                background: var(--scl-color-blue-60) !important;
+                background: var(--telekom-color-functional-informational-standard) !important;
               }
             `
             }

@@ -2,6 +2,14 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Neue Dropdown Select Beta-Komponente
+
+02.08.2022
+
+Das Dropdown-Menü ist nun ein integrierter Bestandteil der Komponente und wird nicht mehr wie in der [bestehenden Version](./?path=/docs/components-dropdown--standard) vom Browser generiert. Dadurch ist die Komponente weniger fehleranfällig. Insbesondere Fehler, die beim Switch zwischen Light- und Dark Mode entstehen konnten, werden nun vermieden.
+
+Wir planen, die bestehende [Dropdown-Komponente](./?path=/docs/components-dropdown--standard) zugunsten der neu veröffentlichten Beta-Version von [Dropdown Select](./?path=/docs/beta-components-dropdown-select--standard) zu verwerfen, sobald die neue Komponente die Beta-Phase verlassen hat.
+
 ## Vereinfachung der UI-Farbtokens
 
 11.07.22

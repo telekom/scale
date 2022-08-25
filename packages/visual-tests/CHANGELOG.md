@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.110](https://github.com/telekom/scale/compare/v3.0.0-beta.109...v3.0.0-beta.110) (2022-08-03)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.109](https://github.com/telekom/scale/compare/v3.0.0-beta.108...v3.0.0-beta.109) (2022-08-02)
+
+
+### Bug Fixes
+
+* footer border color ([#1157](https://github.com/telekom/scale/issues/1157)) ([e3ad388](https://github.com/telekom/scale/commit/e3ad38863ca63906ea4dfd2269c6c602430697e0))
+
+
+### Features
+
+* dropdown-select ([#1069](https://github.com/telekom/scale/issues/1069)) ([ceb92ae](https://github.com/telekom/scale/commit/ceb92aed459882369b0cf25c11d50f368aa91b4e)), closes [#2](https://github.com/telekom/scale/issues/2)
+
+
+
+
+
 # [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
 
 
