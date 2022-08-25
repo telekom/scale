@@ -27,13 +27,13 @@
 
 ## Properties
 
-| Property | Attribute | Description                    | Type     | Default     |
-| -------- | --------- | ------------------------------ | -------- | ----------- |
-| `label`  | `label`   | (optional) Label of the card   | `string` | `''`        |
-| `rel`    | `rel`     | (optional) Link card rel       | `string` | `''`        |
-| `styles` | `styles`  | (optional) Injected CSS styles | `string` | `undefined` |
-| `target` | `target`  | (optional) Link card target    | `string` | `'_self'`   |
-| `to`     | `to`      | (optional) Link card           | `string` | `''`        |
+| Property  | Attribute | Description                       | Type      | Default   |
+| --------- | --------- | --------------------------------- | --------- | --------- |
+| `label`   | `label`   | (optional) Label of the card      | `string`  | `''`      |
+| `movable` | `movable` | (optional) Supports drag and drop | `boolean` | `false`   |
+| `rel`     | `rel`     | (optional) Link card rel          | `string`  | `''`      |
+| `target`  | `target`  | (optional) Link card target       | `string`  | `'_self'` |
+| `to`      | `to`      | (optional) Link card              | `string`  | `''`      |
 
 
 ## Shadow Parts
