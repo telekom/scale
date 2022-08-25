@@ -44,6 +44,7 @@ scale-switch {
 .switch__wrapper {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .switch__toggle {
@@ -79,6 +80,10 @@ scale-switch {
 .switch--disabled:active {
   --_background: var(--telekom-color-ui-disabled);
   --_color: var(--telekom-color-ui-faint);
+}
+
+.switch--disabled .switch__wrapper {
+  cursor: not-allowed;
 }
 
 /*
