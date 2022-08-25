@@ -103,6 +103,7 @@ export class Slider {
   private offsetLeftSecond: number;
   private thumbNumber: string;
   private stepPointInitArray = [];
+  private activeRange: boolean;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -113,6 +114,9 @@ export class Slider {
     if (this.sliderId == null) {
       this.sliderId = 'slider-' + i++;
     }
+    this.valueSecond || this.valueSecond == 0
+      ? (this.activeRange = true)
+      : (this.activeRange = false);
     this.initPosition();
     this.generateStepPoints();
   }
@@ -318,7 +322,7 @@ export class Slider {
               class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
             >
-              {this.valueSecond ? (
+              {this.activeRange ? (
                 <div
                   part="bar"
                   class="slider__bar"
@@ -384,7 +388,7 @@ export class Slider {
                   }}
                 />
               </div>
-              {this.valueSecond && (
+              {this.activeRange && (
                 <div
                   part="thumb-wrapper"
                   class="slider__thumb-wrapper-second"
@@ -417,9 +421,9 @@ export class Slider {
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
                 {this.value != null &&
-                  !this.valueSecond &&
+                  !this.activeRange &&
                   this.value.toFixed(this.decimals)}
-                {this.valueSecond &&
+                {this.activeRange &&
                   this.getLowestValue() + '-' + this.getHighestValue()}
                 {this.value != null && this.unit}
               </div>
