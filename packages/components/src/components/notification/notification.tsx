@@ -64,9 +64,8 @@ export class Notification {
   /** What actually triggers opening/closing the notification */
   @State() isOpen: boolean = this.opened || false;
   @State() role: string = 'alert';
-  @State() ariaLive: string;
   @State() hasTextSlot: boolean = false;
-  @State() hasActionSlot: boolean = false; // unused for now
+  // @State() hasActionSlot: boolean = false; // unused for now
 
   @Event({ eventName: 'scale-open' }) scaleOpen: EventEmitter<void>;
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
@@ -75,15 +74,14 @@ export class Notification {
     if (this.hostElement.hasAttribute('opened')) {
       // Do not use `role="alert"` if opened/visible on page load
       this.role = undefined;
-      this.ariaLive = undefined;
       this.isOpen = true;
     }
     if (this.delay !== undefined) {
       setTimeout(this.close, this.delay);
     }
     this.hasTextSlot = this.hostElement.querySelector('[slot="text"]') != null;
-    this.hasActionSlot =
-      this.hostElement.querySelector('[slot="action"]') != null;
+    // this.hasActionSlot =
+    //   this.hostElement.querySelector('[slot="action"]') != null;
   }
 
   @Watch('opened')
@@ -97,6 +95,7 @@ export class Notification {
 
   open = () => {
     this.isOpen = true;
+    this.role = 'alert';
     this.scaleOpen.emit();
     if (this.delay !== undefined) {
       setTimeout(this.close, this.delay);
@@ -122,7 +121,7 @@ export class Notification {
             this.isOpen && 'open'
           )}
           role={this.role}
-          aria-live={this.innerAriaLive}
+          aria-live={this.role === undefined ? undefined : this.innerAriaLive}
         >
           <div part="icon" aria-hidden="true">
             <slot name="icon">
