@@ -135,7 +135,7 @@ scale-icon-alert-error {
   color: var(--color-primary-active);
 }
 .radio-button input:disabled {
-  border: var(--border-control-disabled);
+  box-shadow: var(--border-control-disabled);
 }
 .radio-button input:disabled ~ label {
   color: var(--color-disabled);
