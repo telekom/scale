@@ -156,7 +156,7 @@ scale-icon-alert-error {
   border: var(--border-control-checked);
   background-color: var(--telekom-color-primary-standard);
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x025)
-  var(--telekom-color-text-and-icon-primary-standard);
+    var(--telekom-color-text-and-icon-primary-standard);
 }
 .radio-button input:checked:disabled {
   background-color: var(--background-disabled);
