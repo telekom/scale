@@ -54,7 +54,7 @@ scale-radio-button {
   --background-control-checked-disabled: none;
   --border-control-active: var(--telekom-spacing-unit-x2) solid
     var(--telekom-color-primary-pressed);
-  --border-control-disabled: var(--telekom-spacing-unit-x025) solid
+  --border-control-disabled: 0 0 0 var(--telekom-spacing-unit-x025)
     var(--telekom-color-ui-border-disabled);
   --border-control-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
@@ -161,7 +161,7 @@ scale-icon-alert-error {
 .radio-button input:checked:disabled {
   background-color: var(--background-disabled);
   border: var(--border-control-checked);
-  outline: var(--border-control-disabled);
+  box-shadow: var(--border-control-disabled);
 }
 .radio-button input:checked:disabled ~ label {
   color: var(--color-disabled);
