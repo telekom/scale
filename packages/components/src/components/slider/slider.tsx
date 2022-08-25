@@ -34,6 +34,14 @@ let i = 0;
   shadow: true,
 })
 export class Slider {
+  private dragging: boolean;
+  private draggingSecond: boolean;
+  private offsetLeft: number;
+  private offsetLeftSecond: number;
+  private thumbNumber: string;
+  private stepPointInitArray = [];
+  private activeRange: boolean;
+
   sliderTrack?: HTMLDivElement;
   /* Host HTML Element */
   @Element() hostElement: HTMLElement;
@@ -96,14 +104,6 @@ export class Slider {
   handleSecondValueChange() {
     this.setPosition();
   }
-
-  private dragging: boolean;
-  private draggingSecond: boolean;
-  private offsetLeft: number;
-  private offsetLeftSecond: number;
-  private thumbNumber: string;
-  private stepPointInitArray = [];
-  private activeRange: boolean;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
