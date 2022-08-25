@@ -26,7 +26,7 @@ import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
-let i = 0;
+let index = 0;
 
 @Component({
   tag: 'scale-slider',
@@ -34,14 +34,6 @@ let i = 0;
   shadow: true,
 })
 export class Slider {
-  private dragging: boolean;
-  private draggingSecond: boolean;
-  private offsetLeft: number;
-  private offsetLeftSecond: number;
-  private thumbNumber: string;
-  private stepPointInitArray = [];
-  private activeRange: boolean;
-
   sliderTrack?: HTMLDivElement;
   /* Host HTML Element */
   @Element() hostElement: HTMLElement;
@@ -59,7 +51,7 @@ export class Slider {
   @Prop() max?: number = 100;
   /** (optional) the step size to increase or decrease when dragging slider */
   @Prop() step?: number = 1;
-  /** (optional) slider shows visible steps*/
+  /** (optional) slider shows visible steps */
   @Prop() visibleStep?: boolean = false;
   /** (optional) slider label */
   @Prop() label?: string;
@@ -95,6 +87,19 @@ export class Slider {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
+  private dragging: boolean;
+  private draggingSecond: boolean;
+  private offsetLeft: number;
+  private offsetLeftSecond: number;
+  private thumbNumber: string;
+  private stepPointInitArray = [];
+  private activeRange: boolean;
+
+  constructor() {
+    this.onDragging = this.onDragging.bind(this);
+    this.onDragEnd = this.onDragEnd.bind(this);
+  }
+
   @Watch('value')
   handleValueChange() {
     this.setPosition();
@@ -105,16 +110,11 @@ export class Slider {
     this.setPosition();
   }
 
-  constructor() {
-    this.onDragging = this.onDragging.bind(this);
-    this.onDragEnd = this.onDragEnd.bind(this);
-  }
-
   componentWillLoad() {
     if (this.sliderId == null) {
-      this.sliderId = 'slider-' + i++;
+      this.sliderId = 'slider-' + index++;
     }
-    this.valueSecond || this.valueSecond == 0
+    this.valueSecond || this.valueSecond === 0
       ? (this.activeRange = true)
       : (this.activeRange = false);
     this.initPosition();
@@ -155,7 +155,7 @@ export class Slider {
   }
 
   onButtonDown = (event: any) => {
-    let targetIDString = event.target.id;
+    const targetIDString = event.target.id;
     this.thumbNumber = targetIDString.charAt(0);
     if (this.disabled) {
       return;
@@ -166,7 +166,7 @@ export class Slider {
 
   onKeyDown = (event: KeyboardEvent, id: string) => {
     let steps = 0;
-    let targetIDString = id;
+    const targetIDString = id;
     this.thumbNumber = targetIDString.charAt(0);
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
       steps = event.key === 'ArrowRight' ? this.step : -this.step;
@@ -174,8 +174,7 @@ export class Slider {
     if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
       steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
     }
-    console.log(this.thumbNumber);
-    this.thumbNumber == '1'
+    this.thumbNumber === '1'
       ? this.setValue(this.value + steps)
       : this.setSecondValue(this.valueSecond + steps);
   };
@@ -274,7 +273,7 @@ export class Slider {
   }
 
   generateStepPoints() {
-    let numberOfSteps = this.max / this.step;
+    const numberOfSteps = this.max / this.step;
     this.stepPointInitArray.length = 0;
     for (let i = -1; i < numberOfSteps; i++) {
       this.stepPointInitArray.push(`${i + 1}`);
@@ -356,7 +355,7 @@ export class Slider {
                 class="slider_track-point-wrapper"
                 id="slider_track-point-wrapper"
               >
-                {this.visibleStep == true
+                {this.visibleStep === true
                   ? this.stepPointInitArray.map(() => {
                       return <div class="slider_track-point"></div>;
                     })
