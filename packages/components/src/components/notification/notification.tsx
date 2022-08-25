@@ -75,6 +75,7 @@ export class Notification {
     if (this.hostElement.hasAttribute('opened')) {
       // Do not use `role="alert"` if opened/visible on page load
       this.role = undefined;
+      this.ariaLive = undefined;
       this.isOpen = true;
     }
     if (this.delay !== undefined) {
