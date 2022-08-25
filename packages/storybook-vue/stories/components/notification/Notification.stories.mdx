@@ -5,6 +5,7 @@ import {
   Canvas,
   Description,
 } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
 import ScaleNotification from './ScaleNotification.vue';
 
 <!-- TODO events -->
@@ -102,9 +103,15 @@ import ScaleNotification from './ScaleNotification.vue';
             :inner-aria-live="innerAriaLive"
             :close-button-label="closeButtonLabel"
             :close-button-title="closeButtonTitle"
+            @scale-open="emitOpen"
+            @scale-close="emitClose"
           ></scale-notification>
         </div>
-      `
+      `,
+      methods: {
+        emitOpen: action('scale-open'),
+        emitClose: action('scale-close'),
+      }
     }}
   </Story>
 </Canvas>
@@ -171,6 +178,7 @@ import ScaleNotification from './ScaleNotification.vue';
               variant="success"
               :opened="isOpen"
               delay="3000"
+              @scale-open="emitOpen"
               @scale-close="close"
             ></scale-notification>
           </div>
@@ -179,7 +187,10 @@ import ScaleNotification from './ScaleNotification.vue';
       methods: {
         close() {
           this.isOpen = false;
-        }
+          this.emitClose();
+        },
+        emitOpen: action('scale-open'),
+        emitClose: action('scale-close'),
       }
     }}
   </Story>
@@ -228,9 +239,15 @@ import ScaleNotification from './ScaleNotification.vue';
               innerHTML: '<span slot="text">Additional text goes in the `text` slot</span>'
             }
           );
+          const handleClose = () => {
+            this.emitClose()
+            toast.removeEventListener('scale-close', handleClose)
+          }
+          toast.addEventListener('scale-close', handleClose);
           this.$refs.stack.appendChild(toast);
           this.currentVariant = (this.currentVariant + 1) % this.variants.length;
-        }
+        },
+        emitClose: action('scale-close')
       }
     }}
   </Story>
@@ -252,7 +269,7 @@ In order to "toast" a notification, append it to a div with the `.scl-toast-stac
 </div>
 ```
 
-## Variant
+## Variants
 
 ### Informational (default)
 
