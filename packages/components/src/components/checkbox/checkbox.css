@@ -187,7 +187,8 @@ scale-checkbox [part='container']:active
 /* focus states */
 
 scale-checkbox [part='input']:focus ~ [part='container'] [part='checkbox'] {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--color-focus);
+  outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
+  outline-offset: var(--telekom-spacing-unit-x025);
 }
 
 /* hover states */
@@ -255,7 +256,8 @@ scale-checkbox.error
   [part='input']:focus
   ~ [part='container']
   [part='checkbox'] {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05) var(--color-focus);
+  outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
+  outline-offset: var(--telekom-spacing-unit-x025);
   border: 2px solid var(--telekom-color-functional-danger-hovered);
 }
 
