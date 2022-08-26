@@ -89,7 +89,7 @@ export class SegmentedButtonGroup {
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      el.setAttribute('disabled', this.disabled)
+      el.setAttribute('disabled', this.disabled && 'disabled')
     });
   }
 
