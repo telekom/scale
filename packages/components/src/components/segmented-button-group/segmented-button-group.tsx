@@ -89,8 +89,6 @@ export class SegmentedButtonGroup {
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      !el.getAttributeNames().includes('disabled') &&
-        el.setAttribute('disabled', this.disabled && 'disabled');
     });
   }
 
@@ -124,11 +122,11 @@ export class SegmentedButtonGroup {
 
   getAdjacentSiblings = (tempState, i) => {
     let adjacentSiblings = '';
-    if (i != 0 && tempState[i].selected && tempState[i - 1].selected) {
+    if (i !== 0 && tempState[i].selected && tempState[i - 1].selected) {
       adjacentSiblings = 'left';
     }
     if (
-      i != tempState.length - 1 &&
+      i !== tempState.length - 1 &&
       tempState[i].selected &&
       tempState[i + 1].selected
     ) {
