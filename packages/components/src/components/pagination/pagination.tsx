@@ -208,7 +208,7 @@ export class Pagination {
               aria-label={this.ariaLabelFirstPage}
             >
               <svg
-                height="12"
+                height="16"
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +229,7 @@ export class Pagination {
               aria-label={this.ariaLabelPreviousPage}
             >
               <svg
-                height="12"
+                height="16"
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -253,7 +253,7 @@ export class Pagination {
               aria-label={this.ariaLabelNextPage}
             >
               <svg
-                height="12"
+                height="16"
                 viewBox="0 0 37 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -274,7 +274,7 @@ export class Pagination {
               aria-label={this.ariaLabelLastPage}
             >
               <svg
-                height="12"
+                height="16"
                 viewBox="0 0 48 52"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
