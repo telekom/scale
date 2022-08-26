@@ -110,7 +110,7 @@ export class SegmentedButton {
   }
 
   handleSelectIcon() {
-    if (this.hostElement.children.length == 1) {
+    if (this.hostElement.children.length === 1) {
       if (this.selected) {
         this.hostElement.children[0].setAttribute(
           'stroke',
@@ -154,7 +154,7 @@ export class SegmentedButton {
         icon.style.display = 'inline-flex';
         icon.style.marginRight = '4px';
         this.hasIcon = true;
-        if (this.hostElement.children.length == 1) {
+        if (this.hostElement.children.length === 1) {
           icon.style.marginRight = '0';
         }
       }
