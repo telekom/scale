@@ -29,7 +29,7 @@ scale-radio-button {
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
-  --spacing-left-helper-text: var(--telekom-spacing-unit-x6);
+  --spacing-left-helper-text: calc(var(--width-control) + var(--telekom-spacing-unit-x2));
   --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
   --color-helper-text-error: var(
     --telekom-color-text-and-icon-functional-danger

@@ -67,7 +67,6 @@
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-title);
   padding-bottom: var(--padding-bottom-title);
-  margin-left: calc(var(--margin-left-title) * -1.5);
 }
 
 ::slotted(*) {
