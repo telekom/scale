@@ -116,6 +116,7 @@ scale-text-field {
   font-size: var(--font-size-helper-text);
   line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
+  padding-left: var(--telekom-spacing-unit-x3);
   font-weight: var(--telekom-typography-font-weight-bold);
 }
 .text-field .text-field__meta {
@@ -148,7 +149,7 @@ scale-text-field {
 }
 
 .text-field__label {
-  top: -2px;
+  top: -1px;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
