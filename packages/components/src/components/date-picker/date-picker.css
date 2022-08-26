@@ -181,8 +181,6 @@ duet-date-picker .duet-date__input:focus::placeholder {
     var(--telekom-color-functional-danger-hovered);
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
-  border: var(--telekom-spacing-unit-x05) solid
-    var(--telekom-color-functional-danger-hovered);
   box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
     var(--telekom-color-functional-focus);
 }
@@ -191,9 +189,6 @@ duet-date-picker .duet-date__input:focus::placeholder {
 }
 
 .scale-date-picker--status-error .duet-date__toggle {
-  height: 44px;
-  margin-top: var(--telekom-spacing-unit-x025);
-  margin-right: var(--telekom-spacing-unit-x025);
   width: 47px;
 }
 
