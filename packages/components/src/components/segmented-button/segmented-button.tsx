@@ -60,9 +60,9 @@ export class SegmentedButton {
   /** (optional) position within group */
   @Prop() position?: number;
   /** (optional) position within group */
-  @Prop({mutable: true}) hasIcon?: boolean;  
+  @Prop({ mutable: true }) hasIcon?: boolean;
   /** (optional) position within group */
-  @Prop({mutable: true}) textOnly?: boolean;    
+  @Prop({ mutable: true }) textOnly?: boolean;
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -103,7 +103,7 @@ export class SegmentedButton {
 
   componentWillUpdate() {
     this.handleSelectIcon();
-  } 
+  }
 
   componentDidLoad() {
     this.handleSelectIcon();
@@ -112,16 +112,28 @@ export class SegmentedButton {
   handleSelectIcon() {
     if (this.hostElement.children.length == 1) {
       if (this.selected) {
-        this.hostElement.children[0].setAttribute('stroke', 'var(--telekom-color-text-and-icon-inverted-standard)')
-        this.hostElement.children[0].setAttribute('color', 'var(--telekom-color-text-and-icon-standard)')
-        this.hostElement.children[0].setAttribute('selected', '')
+        this.hostElement.children[0].setAttribute(
+          'stroke',
+          'var(--telekom-color-text-and-icon-inverted-standard)'
+        );
+        this.hostElement.children[0].setAttribute(
+          'color',
+          'var(--telekom-color-text-and-icon-standard)'
+        );
+        this.hostElement.children[0].setAttribute('selected', '');
       }
       if (!this.selected) {
-        this.hostElement.children[0].setAttribute('stroke', 'var(--telekom-color-text-and-icon-standard)')
-        this.hostElement.children[0].setAttribute('color', 'var(--telekom-color-text-and-icon-standard)')
-        this.hostElement.children[0].removeAttribute('selected')
-      }          
-    }    
+        this.hostElement.children[0].setAttribute(
+          'stroke',
+          'var(--telekom-color-text-and-icon-standard)'
+        );
+        this.hostElement.children[0].setAttribute(
+          'color',
+          'var(--telekom-color-text-and-icon-standard)'
+        );
+        this.hostElement.children[0].removeAttribute('selected');
+      }
+    }
   }
 
   getAriaDescriptionTranslation() {
@@ -146,9 +158,9 @@ export class SegmentedButton {
           icon.style.marginRight = '0';
         }
       }
-      if (child.tagName === "LABEL" && this.hostElement.children.length === 1) {
-        this.textOnly = true
-      }      
+      if (child.tagName === 'LABEL' && this.hostElement.children.length === 1) {
+        this.textOnly = true;
+      }
     });
   }
 
@@ -186,16 +198,18 @@ export class SegmentedButton {
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-            {this.textOnly && <div>
+          {this.textOnly && (
+            <div>
               <scale-icon-action-success
                 size={12}
                 class="scale-icon-action-success"
                 accessibility-title="success"
               />
-            </div>}
-            <div class="icon-container">
-              <slot name="segmented-button-icon" />
             </div>
+          )}
+          <div class="icon-container">
+            <slot name="segmented-button-icon" />
+          </div>
           <slot />
         </button>
       </Host>
@@ -220,7 +234,7 @@ export class SegmentedButton {
       this.disabled && `${prefix}disabled`,
       this.adjacentSiblings &&
         `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
-      this.hasIcon && `${prefix}has-icon`,
+      this.hasIcon && `${prefix}has-icon`
     );
   }
 }

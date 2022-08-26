@@ -78,7 +78,7 @@
 
 .segmented-button--selected {
   background-color: var(--background-color-selected);
-  box-shadow:  0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
 }
 
 .segmented-button--disabled:not(.segmented-button--selected) {
@@ -132,7 +132,7 @@
 }
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
-  display: none!important;
+  display: none !important;
 }
 
 .segmented-button scale-icon-action-success {
