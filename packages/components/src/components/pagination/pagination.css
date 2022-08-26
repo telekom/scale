@@ -42,7 +42,7 @@
   color: var(--color);
   text-align: center;
   font-size: var(--font-size);
-  line-height: var(--height-button);
+  line-height: var(--line-height-info);
   padding: 0 var(--padding-info);
   border: var(--border);
   flex-shrink: 0;
