@@ -79,7 +79,6 @@
   position: absolute;
   height: var(--tab-border-size);
   background-color: var(--tab-border-color);
-  z-index: -1;
 }
 .tab-header:before {
   left: 0;
@@ -89,7 +88,6 @@
   height: 0;
   content: '';
   display: block;
-  z-index: 1;
   position: absolute;
   border-top: 1px solid transparent;
 }
@@ -114,6 +112,10 @@
 .tab-header--has-focus {
   border-radius: var(--tab-radius);
   box-shadow: var(--box-shadow-focus);
+  z-index: 1;
+}
+.tab-header--has-focus.tab-header--selected:after {
+  border-radius: 0 0 25px 25px;
 }
 .tab-header--selected {
   color: var(--color-selected);
