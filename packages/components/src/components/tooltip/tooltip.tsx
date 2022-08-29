@@ -24,6 +24,7 @@ import {
 } from '@stencil/core';
 import { computePosition, offset, flip, shift, arrow } from '@floating-ui/dom';
 import { isClickOutside } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 let id = 0;
 
@@ -34,11 +35,13 @@ let id = 0;
 })
 export class Tooltip {
   componentId = `tooltip-${++id}`;
-  @Element() hostEl: HTMLElement;
-  /** (optional) The content of the Tooltip supporting Text only */
-  @Prop() content = '';
-  /** (optional) Position of the Tooltip on the Object */
-  @Prop() placement:
+
+  @Element() hostElement: HTMLElement;
+
+  /** (optional) The content of the Tooltip, supporting text only */
+  @Prop() content? = '';
+  /** (optional) Position of the Tooltip around the trigger element */
+  @Prop() placement?:
     | 'top'
     | 'top-start'
     | 'top-end'
@@ -51,18 +54,23 @@ export class Tooltip {
     | 'left'
     | 'left-start'
     | 'left-end' = 'top';
-  /** (optional) Disable Tooltip */
-  @Prop() disabled = false;
-  /** (optional) Distance of the Tooltip from the Target Object (related to the `placement`) */
-  @Prop() distance = 5;
-  /** (optional) Set the Tooltip to open per default (will still be closed on closing Events) */
-  @Prop({ mutable: true, reflect: true }) open = false;
-  /** (optional) Set custom trigger Event selection */
-  @Prop() trigger: string = 'hover focus';
+  /** (optional) Disable the tooltip */
+  @Prop() disabled? = false;
+  /** (optional) Tooltip distance from the target element (related to `placement`) */
+  @Prop() distance? = 10;
+  /** (optional) How much of the arrow element is "hidden" */
+  @Prop() arrowOffset?: number = -4;
+  /** (optional) Padding between the arrow and the edges of the tooltip */
+  @Prop() arrowPadding?: number = 8;
+  /** (optional) Set the tooltip to opened by default (will still be closed on closing events) */
+  @Prop({ mutable: true, reflect: true }) opened? = false;
+  /** (optional) Set custom trigger event (hover, focus, click) */
+  @Prop() trigger?: string = 'hover focus';
   /** (optional) Switching the flip option of the tooltip on and off */
-  @Prop() flip: boolean = true;
+  @Prop() flip?: boolean = true;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
   @State() mouseOverTooltip: boolean = false;
 
   @Event({ eventName: 'scale-before-show' }) tooltipBeforeShow: EventEmitter;
@@ -72,76 +80,110 @@ export class Tooltip {
 
   private tooltipEl: HTMLElement;
   private arrowEl: HTMLElement;
+  private triggerEl: HTMLElement;
 
-  @Watch('open')
+  @Watch('opened')
   handleOpenChange() {
-    this.open ? this.showTooltip() : this.hideTooltip();
+    this.opened ? this.showTooltip() : this.hideTooltip();
   }
 
-  componentDidLoad() {
-    this.hostEl.addEventListener('blur', this.handleBlur, true);
-    this.hostEl.addEventListener('click', this.handleClick, true);
-    this.hostEl.addEventListener('focus', this.handleFocus, true);
+  connectedCallback() {
+    statusNote({ source: this.hostElement, tag: 'beta' });
+
+    if (this.hostElement.hasAttribute('open')) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'The `open` prop is deprecated in favor of `opened`',
+        source: this.hostElement,
+      });
+    }
+
+    const children = Array.from(this.hostElement.children).filter(
+      (x) => !x.hasAttribute('slot')
+    );
+    if (children.length === 0) {
+      // If not children found to be used as trigger, warn
+      statusNote({
+        tag: 'warning',
+        message: 'An element is required, if using text, wrap it in a `<span>`',
+        type: 'warn',
+        source: this.hostElement,
+      });
+      return;
+    }
+    this.triggerEl = children[0] as HTMLElement;
+    this.triggerEl.addEventListener('blur', this.handleBlur, true);
+    this.triggerEl.addEventListener('click', this.handleClick, true);
+    this.triggerEl.addEventListener('focus', this.handleFocus, true);
+    this.triggerEl.addEventListener('mouseover', this.handleMouseOver, true);
+    this.triggerEl.addEventListener('mouseout', this.handleMouseOut, true);
   }
+
   disconnectedCallback() {
-    this.hostEl.removeEventListener('blur', this.handleBlur, true);
-    this.hostEl.removeEventListener('click', this.handleClick, true);
-    this.hostEl.removeEventListener('focus', this.handleFocus, true);
+    this.triggerEl.removeEventListener('blur', this.handleBlur, true);
+    this.triggerEl.removeEventListener('click', this.handleClick, true);
+    this.triggerEl.removeEventListener('focus', this.handleFocus, true);
+    this.triggerEl.removeEventListener('mouseover', this.handleMouseOver, true);
+    this.triggerEl.removeEventListener('mouseout', this.handleMouseOut, true);
   }
 
   @Listen('click', { target: 'document' })
   handleOutsideClick(event: MouseEvent) {
-    if (isClickOutside(event, this.hostEl)) {
+    if (isClickOutside(event, this.hostElement)) {
       this.hideTooltip();
     }
   }
 
   componentDidUpdate() {
     this.update();
-    if (this.open) {
+    if (this.opened) {
       this.showTooltip();
     }
   }
 
-  update = () => {
-    if (!this.disabled) {
-      computePosition(
-        Array.from(this.hostEl.children).find((x) => !x.hasAttribute('slot')),
-        this.tooltipEl,
-        {
-          placement: this.placement,
-          middleware: [
-            offset(this.distance),
-            ...(this.flip ? [flip()] : []),
-            arrow({ element: this.arrowEl }),
-            shift({ crossAxis: true }),
-          ],
-        }
-      ).then(({ x, y, placement, middlewareData }) => {
-        Object.assign(this.tooltipEl.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        });
-
-        // Accessing the data
-        const { x: arrowX, y: arrowY } = middlewareData.arrow;
-
-        const staticSide = {
-          top: 'bottom',
-          right: 'left',
-          bottom: 'top',
-          left: 'right',
-        }[placement.split('-')[0]];
-
-        Object.assign(this.arrowEl.style, {
-          left: arrowX != null ? `${arrowX}px` : '',
-          top: arrowY != null ? `${arrowY}px` : '',
-          right: '',
-          bottom: '',
-          [staticSide]: '-2.79px',
-        });
-      });
+  /**
+   * @see https://floating-ui.com/docs/tutorial#arrow-middleware
+   */
+  update = async () => {
+    if (this.disabled || this.triggerEl == null) {
+      return;
     }
+
+    // Position tooltip
+    const { x, y, placement, middlewareData } = await computePosition(
+      this.triggerEl,
+      this.tooltipEl,
+      {
+        placement: this.placement,
+        middleware: [
+          offset(this.distance),
+          ...(this.flip ? [flip()] : []),
+          arrow({ element: this.arrowEl, padding: this.arrowPadding }),
+          shift({ crossAxis: true }),
+        ],
+      }
+    );
+    Object.assign(this.tooltipEl.style, {
+      left: `${x}px`,
+      top: `${y}px`,
+    });
+
+    // Position arrow
+    const { x: arrowX, y: arrowY } = middlewareData.arrow;
+    const [side] = placement.split('-');
+    const staticSide = {
+      top: 'bottom',
+      right: 'left',
+      bottom: 'top',
+      left: 'right',
+    }[side];
+    Object.assign(this.arrowEl.style, {
+      left: arrowX != null ? `${arrowX}px` : '',
+      top: arrowY != null ? `${arrowY}px` : '',
+      right: '',
+      bottom: '',
+      [staticSide]: `${this.arrowOffset}px`,
+    });
   };
 
   componentDidRender() {
@@ -150,29 +192,29 @@ export class Tooltip {
 
   @Method()
   async showTooltip() {
-    if (this.open) {
+    if (this.opened) {
       return;
     }
     const scaleShow = this.tooltipBeforeShow.emit();
     if (scaleShow.defaultPrevented) {
-      this.open = false;
+      this.opened = false;
       return;
     }
-    this.open = true;
+    this.opened = true;
     this.update();
   }
 
   @Method()
   async hideTooltip() {
-    if (!this.open) {
+    if (!this.opened) {
       return;
     }
     const tooltipBeforeHide = this.tooltipBeforeHide.emit();
     if (tooltipBeforeHide.defaultPrevented) {
-      this.open = true;
+      this.opened = true;
       return;
     }
-    this.open = false;
+    this.opened = false;
     this.update();
   }
 
@@ -184,7 +226,7 @@ export class Tooltip {
 
   handleClick = () => {
     if (this.hasTrigger('click')) {
-      this.open && !this.hasTrigger('focus')
+      this.opened && !this.hasTrigger('focus')
         ? this.hideTooltip()
         : this.showTooltip();
     }
@@ -197,7 +239,7 @@ export class Tooltip {
   };
 
   handleKeyDown = (event: KeyboardEvent) => {
-    if (this.open && event.key === 'Escape') {
+    if (this.opened && event.key === 'Escape') {
       event.stopPropagation();
       this.hideTooltip();
     }
@@ -233,11 +275,7 @@ export class Tooltip {
 
   render() {
     return (
-      <Host
-        onKeyDown={this.handleKeyDown}
-        onMouseOver={this.handleMouseOver}
-        onMouseOut={this.handleMouseOut}
-      >
+      <Host onKeyDown={this.handleKeyDown}>
         {this.styles && <style>{this.styles}</style>}
 
         <span part="trigger" aria-describedby={this.componentId}>
@@ -248,7 +286,7 @@ export class Tooltip {
           <div
             part="tooltip"
             role="tooltip"
-            aria-hidden={this.open ? 'false' : 'true'}
+            aria-hidden={this.opened ? 'false' : 'true'}
             ref={(el) => (this.tooltipEl = el)}
             id={this.componentId}
             tabIndex={0}
