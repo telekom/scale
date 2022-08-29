@@ -54,7 +54,7 @@ export class TextField {
   @Prop() name?: string = '';
   /** Input label */
   @Prop() label: string = '';
-  /** @deprecate - css overwrite should replace size */
+  /** @deprecated - css overwrite should replace size */
   @Prop() size?: string;
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';

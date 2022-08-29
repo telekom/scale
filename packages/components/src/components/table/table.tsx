@@ -22,7 +22,7 @@ export class Table {
   @Element() hostElement: HTMLElement;
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
-  /** @deprecate - css overwrite should replace size */
+  /** @deprecated - css overwrite should replace size */
   @Prop() size?: string;
   /** (optional) Striped Table */
   @Prop() striped?: boolean = false;
