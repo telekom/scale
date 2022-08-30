@@ -75,7 +75,7 @@ export class Slider {
   @Prop() styles?: string;
 
   // The actual position in % of the slider thumb
-  @State() position: number;
+  @State() positionValueFrom: number;
   // The actual position in % of the slider thumb
   @State() positionValueTo: number;
 
@@ -242,7 +242,7 @@ export class Slider {
   };
 
   initPosition = () => {
-    this.position = !this.valueFrom
+    this.positionValueFrom = !this.valueFrom
       ? 0
       : this.getClampedPosition(this.valueFrom);
     this.positionValueTo = !this.valueTo
@@ -251,7 +251,7 @@ export class Slider {
   };
 
   setPosition = () => {
-    this.position = this.getClampedPosition(this.valueFrom);
+    this.positionValueFrom = this.getClampedPosition(this.valueFrom);
     this.positionValueTo = this.getClampedPosition(this.valueTo);
   };
 
@@ -368,7 +368,7 @@ export class Slider {
                   part="thumb-wrapper"
                   class="slider__thumb-wrapper"
                   id={'1-' + this.sliderId + '-wrapper'}
-                  style={{ left: `${this.position}%` }}
+                  style={{ left: `${this.positionValueFrom}%` }}
                   onMouseDown={this.onButtonDown}
                   onTouchStart={this.onButtonDown}
                 >
