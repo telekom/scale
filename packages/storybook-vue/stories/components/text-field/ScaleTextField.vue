@@ -18,7 +18,7 @@
     :value="value"
     :input-id="inputId"
     :input-autofocus="inputAutofocus"
-    :experimental-controlled="experimental-controlled"
+    :experimental-controlled="experimentalControlled"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
     @scaleFocus="scaleFocus"

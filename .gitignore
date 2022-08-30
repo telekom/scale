@@ -3,5 +3,6 @@
 node_modules
 dist/
 lerna-debug.log
+report/
 # Needed to avoid a nasty error while trying to build components-angular
 #yarn.lock
