@@ -98,7 +98,6 @@ export class SegmentedButtonGroup {
     const segmentedButtons = this.getAllSegmentedButtons();
     this.slottedButtons = segmentedButtons.length;
     const longestButtonWidth = this.getLongestButtonWidth();
-
     segmentedButtons.forEach((SegmentedButton) => {
       this.position++;
       tempState.push({
@@ -142,10 +141,18 @@ export class SegmentedButtonGroup {
   getLongestButtonWidth() {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
-      tempWidth =
-        child.getBoundingClientRect().width > tempWidth
-          ? child.getBoundingClientRect().width
+      const selected = child.hasAttribute('selected')
+      if (selected) {
+        tempWidth =
+        child.getBoundingClientRect().width - 16 > tempWidth
+          ? child.getBoundingClientRect().width - 16
           : tempWidth;
+      } else {
+        tempWidth =
+        child.getBoundingClientRect().width + 16 > tempWidth
+          ? child.getBoundingClientRect().width + 16
+          : tempWidth;        
+      }
     });
     return tempWidth;
   }
