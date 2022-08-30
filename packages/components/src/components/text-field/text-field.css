@@ -17,6 +17,10 @@ scale-text-field {
     var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
+  --border-success: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-success-standard);
+  --border-warning: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
@@ -113,11 +117,33 @@ scale-text-field {
 .text-field .text-field__helper-text {
   transition: var(--transition-helper-text);
   font-size: var(--font-size-helper-text);
-  line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
-  padding-left: var(--telekom-spacing-unit-x3);
   font-weight: var(--telekom-typography-font-weight-bold);
+  display: flex;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
+.text-field .text-field__helper-text_label {
+  font-size: 12px;
+}
+.text-field--status-warning .text-field__helper-text_label {
+  color: #b63d00;
+}
+.text-field--status-success .text-field__helper-text_label {
+  color: #008653;
+}
+.text-field .text-field__helper-text_icon {
+  justify-content: center;
+  padding-top: 1.5px;
+  padding-right: 4.5px;
+}
+.text-field--status-warning .text-field__helper-text_icon {
+  color: #b63d00;
+}
+.text-field--status-success .text-field__helper-text_icon {
+  color: #008653;
+}
+
 .text-field .text-field__meta {
   display: flex;
   justify-content: space-between;
@@ -172,6 +198,12 @@ scale-text-field {
 .text-field--status-error .text-field__control {
   border: var(--border-error);
 }
+.text-field--status-success .text-field__control {
+  border: var(--border-success);
+}
+.text-field--status-warning .text-field__control {
+  border: var(--border-warning);
+}
 
 .text-field--status-error:not(.text-field--disabled):not(.text-field--readonly)
   .text-field__control:hover,
@@ -180,11 +212,39 @@ scale-text-field {
   border-color: var(--telekom-color-functional-danger-hovered);
 }
 
+.text-field--status-success:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:hover,
+.text-field--status-success:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:focus {
+  border-color: var(--telekom-color-functional-success-hovered);
+}
+
+.text-field--status-warning:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:hover,
+.text-field--status-warning:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:focus {
+  border-color: var(--telekom-color-functional-warning-hovered);
+}
+
 .text-field--status-error .text-field__helper-text {
   color: var(--color-helper-text-error);
 }
 .text-field--status-error .text-field__counter {
   color: var(--color-counter-error);
+}
+
+.text-field--status-success .text-field__helper-text {
+  color: #008653;
+}
+.text-field--status-success .text-field__counter {
+  color: #008653;
+}
+
+.text-field--status-warning .text-field__helper-text {
+  color: #b63d00;
+}
+.text-field--status-warning .text-field__counter {
+  color: #b63d00;
 }
 .text-field--transparent .text-field__control {
   background-color: transparent;

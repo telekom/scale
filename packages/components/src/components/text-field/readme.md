@@ -13,6 +13,7 @@
 | `disabled`               | `disabled`                | (optional) Input disabled                                                                                       | `boolean`                                                                                                                                | `undefined` |
 | `experimentalControlled` | `experimental-controlled` | (optional)) Makes type `input` behave as a controlled component in React                                        | `boolean`                                                                                                                                | `false`     |
 | `helperText`             | `helper-text`             | (optional) Input helper text                                                                                    | `string`                                                                                                                                 | `''`        |
+| `info`                   | `info`                    | (optional) Input status                                                                                         | `boolean`                                                                                                                                | `true`      |
 | `inputAutofocus`         | `input-autofocus`         | (optional) the input should automatically get focus when the page loads.                                        | `boolean`                                                                                                                                | `undefined` |
 | `inputId`                | `input-id`                | (optional) Input checkbox id                                                                                    | `string`                                                                                                                                 | `undefined` |
 | `invalid`                | `invalid`                 | (optional) Input status                                                                                         | `boolean`                                                                                                                                | `false`     |
@@ -30,9 +31,11 @@
 | `status`                 | `status`                  | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/>                       | `string`                                                                                                                                 | `''`        |
 | `step`                   | `step`                    | (optional) the step attribute specifies the interval between legal numbers in an <input type="number"> element. | `string`                                                                                                                                 | `'1'`       |
 | `styles`                 | `styles`                  | (optional) Injected CSS styles                                                                                  | `string`                                                                                                                                 | `undefined` |
+| `success`                | `success`                 | (optional) Input status                                                                                         | `boolean`                                                                                                                                | `false`     |
 | `transparent`            | `transparent`             | (optional) input background transparent                                                                         | `boolean`                                                                                                                                | `undefined` |
 | `type`                   | `type`                    | (optional) Input type                                                                                           | `"date" \| "datetime-local" \| "email" \| "hidden" \| "month" \| "number" \| "password" \| "tel" \| "text" \| "time" \| "url" \| "week"` | `'text'`    |
 | `value`                  | `value`                   | (optional) Input value                                                                                          | `number \| string`                                                                                                                       | `''`        |
+| `warning`                | `warning`                 | (optional) Input status                                                                                         | `boolean`                                                                                                                                | `false`     |
 
 
 ## Events
@@ -57,9 +60,18 @@
 
  - [scale-data-grid](../data-grid)
 
+### Depends on
+
+- [scale-icon-alert-information](../icons/alert-information)
+- [scale-icon-alert-error](../icons/alert-error)
+- [scale-icon-alert-success](../icons/alert-success)
+
 ### Graph
 ```mermaid
 graph TD;
+  scale-text-field --> scale-icon-alert-information
+  scale-text-field --> scale-icon-alert-error
+  scale-text-field --> scale-icon-alert-success
   scale-data-grid --> scale-text-field
   style scale-text-field fill:#f9f,stroke:#333,stroke-width:4px
 ```

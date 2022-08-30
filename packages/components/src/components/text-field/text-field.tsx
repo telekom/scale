@@ -62,6 +62,12 @@ export class TextField {
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
+  /** (optional) Input status */
+  @Prop() info?: boolean = true;
+  /** (optional) Input status */
+  @Prop() warning?: boolean = false;
+  /** (optional) Input status */
+  @Prop() success?: boolean = false;
   /** (optional) Input text string max length */
   @Prop() maxLength?: number;
   /** (optional) Input text string min length */
@@ -132,6 +138,9 @@ export class TextField {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-text-field' + i++;
+    }
+    if (this.invalid || this.warning || this.success) {
+      this.info = false;
     }
   }
 
@@ -209,6 +218,20 @@ export class TextField {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
+  renderHelperIcon() {
+    if (this.info || this.warning) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+    if (this.success) {
+      return <scale-icon-alert-success size={11}></scale-icon-alert-success>;
+    }
+  }
+
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
@@ -265,7 +288,14 @@ export class TextField {
               aria-relevant="additions removals"
             >
               {!!this.helperText && (
-                <div class="text-field__helper-text">{this.helperText}</div>
+                <div class="text-field__helper-text">
+                  <div class="text-field__helper-text_icon">
+                    {this.renderHelperIcon()}
+                  </div>
+                  <div class="text-field__helper-text_label">
+                    {this.helperText}
+                  </div>
+                </div>
               )}
               {this.counter && (
                 <div class="text-field__counter">
@@ -295,6 +325,9 @@ export class TextField {
       this.transparent && 'text-field--transparent',
       this.status && `text-field--status-${this.status}`,
       this.invalid && `text-field--status-error`,
+      this.success && `text-field--status-success`,
+      this.warning && `text-field--status-warning`,
+      this.info && `text-field--status-info`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'
     );
