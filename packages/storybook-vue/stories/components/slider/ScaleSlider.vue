@@ -8,8 +8,8 @@
     :show-value="showValue"
     :step="step"
     :platform="platform"
-    :value="value"
-    :value-second="valueSecond"
+    :value-from="valueFrom"
+    :value-to="valueTo"
     :visible-step="visibleStep"
     @scaleChange="scaleChange"
     @scaleInput="scaleInput"
@@ -28,8 +28,8 @@ export default {
     min: { type: Number, default: 0 },
     showValue: { type: Boolean, default: true },
     step: { type: Number, default: 1 },
-    value: Number,
-    valueSecond: Number,
+    valueTo: Number,
+    valueFrom: Number,
     visibleStep: Boolean,
     platform: { type: 'web' | 'ios' | 'android', default: 'web' },
   },

@@ -54,7 +54,7 @@ describe('Slider', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Slider],
-      html: `<scale-slider value="10">Label</scale-slider>`,
+      html: `<scale-slider value-to="10">Label</scale-slider>`,
     });
     expect(page.root).toMatchSnapshot();
   });
@@ -92,7 +92,7 @@ describe('Slider', () => {
         components: [Slider],
         html: `<scale-slider></scale-slider>`,
       });
-      page.root.value = 50;
+      page.root.valueTo = 50;
       page.root.min = 10;
       page.root.max = 90;
       page.root.step = 2;
@@ -105,7 +105,7 @@ describe('Slider', () => {
       page.root.sliderId = 'sliderID';
       page.root.styles = 'background : red';
       await page.waitForChanges();
-      expect(page.rootInstance.value).toBe(50);
+      expect(page.rootInstance.valueTo).toBe(50);
       expect(page.rootInstance.min).toBe(10);
       expect(page.rootInstance.max).toBe(90);
       expect(page.rootInstance.step).toBe(2);
@@ -125,10 +125,10 @@ describe('Slider', () => {
       components: [Slider],
       html: `<scale-slider></scale-slider>`,
     });
-    page.root.value = 50;
+    page.root.valueTo = 50;
     simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowRight');
-    expect(await page.rootInstance.thumbNumber).toBe('1');
-    expect(await page.rootInstance.value).toBe(51);
+    expect(await page.rootInstance.thumbNumber).toBe('2');
+    expect(await page.rootInstance.valueTo).toBe(51);
   });
 
   it('input events', async () => {
@@ -152,10 +152,10 @@ describe('Slider', () => {
       components: [Slider],
       html: `<scale-slider></scale-slider>`,
     });
-    page.root.value = 50;
+    page.root.valueTo = 50;
     simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowUp');
-    expect(await page.rootInstance.thumbNumber).toBe('1');
-    expect(await page.rootInstance.value).toBe(60);
+    expect(await page.rootInstance.thumbNumber).toBe('2');
+    expect(await page.rootInstance.valueTo).toBe(60);
   });
 
   it('mousedown .slider__thumb-wrapper', async () => {
@@ -165,7 +165,7 @@ describe('Slider', () => {
     });
     page.root.dragging = false;
     expect(await page.rootInstance.dragging).toBe(undefined);
-    simulateMouseEvent(page, 'mousedown', '.slider__thumb-wrapper');
+    simulateMouseEvent(page, 'mousedown', '.slider__thumb-wrapper-to');
     expect(await page.rootInstance.dragging).toBe(true);
   });
 });

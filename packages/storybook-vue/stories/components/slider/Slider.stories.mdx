@@ -32,8 +32,8 @@ export const Template = (args, { argTypes }) => ({
         :min="min"
         :show-value="showValue"
         :step="step"
-        :value="value"
-        :value-second="valueSecond"
+        :value-from="valueFrom"
+        :value-to="valueTo"
         :visible-step="visibleStep"
         :platform="platform"
         @scaleButtonDown="scaleButtonDown"
@@ -74,7 +74,7 @@ export const Template = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: 'Standard',
-      value: 20,
+      valueTo: 20,
     }}
   >
     {Template.bind({})}
@@ -107,6 +107,10 @@ export const Template = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
+```html
+<scale-slider label="Standard Slider" value-to="20"></scale-slider>
+```
+
 ## Range
 
 <Canvas withSource="none">
@@ -114,8 +118,8 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Range"
     args={{
       label: 'Range Slider',
-      value: 40,
-      valueSecond: 10,
+      valueTo: 40,
+      valueFrom: 10,
     }}
   >
     {Template.bind({})}
@@ -123,7 +127,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-slider label="Range Slider" value="40" value-second="10"></scale-slider>
+<scale-slider label="Range Slider" value-from="10" value-to="40"></scale-slider>
 ```
 
 ## Stepped
@@ -133,7 +137,7 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Stepped"
     args={{
       label: 'Stepped Slider',
-      value: 40,
+      valueTo: 40,
       step: 10,
       visibleStep: true,
     }}
@@ -145,7 +149,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-slider
   label="Stepped Slider"
-  value="40"
+  value-to="40"
   step="10"
   visible-step
 ></scale-slider>
@@ -158,8 +162,8 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Range Stepped"
     args={{
       label: 'Range Stepped Slider',
-      value: 40,
-      valueSecond: 80,
+      valueFrom: 40,
+      valueTo: 80,
       step: 10,
       visibleStep: true,
     }}
@@ -171,8 +175,8 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-slider
   label="Range Stepped Slider"
-  value="40"
-  value-second="80"
+  value-from="40"
+  value-to="80"
   step="10"
   visible-step
 ></scale-slider>
@@ -185,7 +189,7 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Platform iOS"
     args={{
       label: 'Platform iOS Slider',
-      value: 40,
+      valueTo: 40,
       platform: 'ios',
     }}
   >
@@ -196,7 +200,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-slider
   label="Platform iOS Slider"
-  value="40"
+  value-to="40"
   platform="ios"
 ></scale-slider>
 ```
@@ -208,7 +212,7 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Platform Android"
     args={{
       label: 'Platform Android Slider',
-      value: 40,
+      valueTo: 40,
       platform: 'android',
     }}
   >
@@ -219,7 +223,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-slider
   label="Platform Android Slider"
-  value="40"
+  value-to="40"
   platform="android"
 ></scale-slider>
 ```
@@ -231,7 +235,7 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Disabled"
     args={{
       label: 'Disabled Slider',
-      value: 40,
+      valueTo: 40,
       disabled: true,
     }}
   >
@@ -240,5 +244,5 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-slider label="Disabled Slider" value="40" disabled></scale-slider>
+<scale-slider label="Disabled Slider" value-to="40" disabled></scale-slider>
 ```
