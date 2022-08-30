@@ -24,9 +24,8 @@
 | `thumbLarge`  | `thumb-large`  | <span style="color:red">**[DEPRECATED]**</span> - (optional) larger thumb<br/><br/>        | `boolean`                     | `false`     |
 | `trackSmall`  | `track-small`  | <span style="color:red">**[DEPRECATED]**</span> - (optional) smaller track<br/><br/>       | `boolean`                     | `false`     |
 | `unit`        | `unit`         | (optional) slider value unit                                                               | `string`                      | `'%'`       |
-| `value`       | `value`        | (optional) the display value of the slider                                                 | `number`                      | `undefined` |
-| `valueFrom`   | `value-from`   | (optional) the display value of the slider                                                 | `number`                      | `undefined` |
-| `valueTo`     | `value-to`     | (optional) the display value of the second slider                                          | `number`                      | `undefined` |
+| `valueFrom`   | `value-from`   | (optional) the display value of from slider                                                | `number`                      | `undefined` |
+| `valueTo`     | `value-to`     | (optional) the display value of the to slider                                              | `number`                      | `undefined` |
 | `visibleStep` | `visible-step` | (optional) slider shows visible steps                                                      | `boolean`                     | `false`     |
 
 
