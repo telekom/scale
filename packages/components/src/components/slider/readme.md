@@ -25,7 +25,8 @@
 | `trackSmall`  | `track-small`  | <span style="color:red">**[DEPRECATED]**</span> - (optional) smaller track<br/><br/>       | `boolean`                     | `false`     |
 | `unit`        | `unit`         | (optional) slider value unit                                                               | `string`                      | `'%'`       |
 | `value`       | `value`        | (optional) the display value of the slider                                                 | `number`                      | `undefined` |
-| `valueSecond` | `value-second` | (optional) the display value of the second slider                                          | `number`                      | `undefined` |
+| `valueFrom`   | `value-from`   | (optional) the display value of the slider                                                 | `number`                      | `undefined` |
+| `valueTo`     | `value-to`     | (optional) the display value of the second slider                                          | `number`                      | `undefined` |
 | `visibleStep` | `visible-step` | (optional) slider shows visible steps                                                      | `boolean`                     | `false`     |
 
 

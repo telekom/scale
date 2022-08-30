@@ -41,10 +41,10 @@ export class Slider {
   @Prop() platform?: 'web' | 'ios' | 'android' = 'web';
   /** (optional) the name of the slider */
   @Prop() name?: string;
-  /** (optional) the display value of the slider */
-  @Prop() value?: number;
-  /** (optional) the display value of the second slider */
-  @Prop() valueSecond?: number;
+  /** (optional) the display value of from slider */
+  @Prop() valueFrom?: number;
+  /** (optional) the display value of the to slider */
+  @Prop() valueTo?: number;
   /** (optional) the minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
@@ -77,7 +77,7 @@ export class Slider {
   // The actual position in % of the slider thumb
   @State() position: number;
   // The actual position in % of the slider thumb
-  @State() positionSecond: number;
+  @State() positionValueTo: number;
 
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<number>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -88,9 +88,9 @@ export class Slider {
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
   private dragging: boolean;
-  private draggingSecond: boolean;
+  private draggingValueTo: boolean;
   private offsetLeft: number;
-  private offsetLeftSecond: number;
+  private offsetLeftValueTo: number;
   private thumbNumber: string;
   private stepPointInitArray = [];
   private activeRange: boolean;
@@ -100,13 +100,13 @@ export class Slider {
     this.onDragEnd = this.onDragEnd.bind(this);
   }
 
-  @Watch('value')
+  @Watch('valueFrom')
   handleValueChange() {
     this.setPosition();
   }
 
-  @Watch('valueSecond')
-  handleSecondValueChange() {
+  @Watch('valueTo')
+  handleValueToChange() {
     this.setPosition();
   }
 
@@ -114,7 +114,7 @@ export class Slider {
     if (this.sliderId == null) {
       this.sliderId = 'slider-' + index++;
     }
-    this.valueSecond || this.valueSecond === 0
+    this.valueFrom || this.valueFrom === 0
       ? (this.activeRange = true)
       : (this.activeRange = false);
     this.initPosition();
@@ -175,15 +175,15 @@ export class Slider {
       steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
     }
     this.thumbNumber === '1'
-      ? this.setValue(this.value + steps)
-      : this.setSecondValue(this.valueSecond + steps);
+      ? this.setValue(this.valueFrom + steps)
+      : this.setValueTo(this.valueTo + steps);
   };
 
   onDragStart = () => {
     switch (this.thumbNumber) {
       case '2':
-        this.draggingSecond = true;
-        this.offsetLeftSecond = this.sliderTrack.getBoundingClientRect().left;
+        this.draggingValueTo = true;
+        this.offsetLeftValueTo = this.sliderTrack.getBoundingClientRect().left;
       default:
         this.dragging = true;
         this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
@@ -197,9 +197,9 @@ export class Slider {
           this.setValue(this.getNextDraggingValue(event, this.offsetLeft));
         }
       case '2':
-        if (this.draggingSecond) {
-          this.setSecondValue(
-            this.getNextDraggingValue(event, this.offsetLeftSecond)
+        if (this.draggingValueTo) {
+          this.setValueTo(
+            this.getNextDraggingValue(event, this.offsetLeftValueTo)
           );
         }
     }
@@ -218,11 +218,11 @@ export class Slider {
   onDragEnd = () => {
     switch (this.thumbNumber) {
       case '2':
-        this.draggingSecond = false;
-        emitEvent(this, 'scaleChange', this.valueSecond);
+        this.draggingValueTo = false;
+        emitEvent(this, 'scaleChange', this.valueTo);
       default:
         this.dragging = false;
-        emitEvent(this, 'scaleChange', this.value);
+        emitEvent(this, 'scaleChange', this.valueFrom);
     }
     this.removeGlobalListeners();
   };
@@ -232,25 +232,27 @@ export class Slider {
   }
 
   setValue = (nextValue: number) => {
-    this.value = this.clamp(nextValue);
-    emitEvent(this, 'scaleInput', this.value);
+    this.valueFrom = this.clamp(nextValue);
+    emitEvent(this, 'scaleInput', this.valueFrom);
   };
 
-  setSecondValue = (nextValue: number) => {
-    this.valueSecond = this.clamp(nextValue);
-    emitEvent(this, 'scaleInput', this.valueSecond);
+  setValueTo = (nextValue: number) => {
+    this.valueTo = this.clamp(nextValue);
+    emitEvent(this, 'scaleInput', this.valueTo);
   };
 
   initPosition = () => {
-    this.position = !this.value ? 0 : this.getClampedPosition(this.value);
-    this.positionSecond = !this.valueSecond
+    this.position = !this.valueFrom
       ? 0
-      : this.getClampedPosition(this.valueSecond);
+      : this.getClampedPosition(this.valueFrom);
+    this.positionValueTo = !this.valueTo
+      ? 0
+      : this.getClampedPosition(this.valueTo);
   };
 
   setPosition = () => {
-    this.position = this.getClampedPosition(this.value);
-    this.positionSecond = this.getClampedPosition(this.valueSecond);
+    this.position = this.getClampedPosition(this.valueFrom);
+    this.positionValueTo = this.getClampedPosition(this.valueTo);
   };
 
   getClampedPosition(value: number) {
@@ -282,8 +284,8 @@ export class Slider {
 
   generateCurrentValueArray() {
     const currentValues = [];
-    currentValues.push(this.value != null ? this.value : '0');
-    currentValues.push(this.valueSecond != null ? this.valueSecond : '0');
+    currentValues.push(this.valueFrom != null ? this.valueFrom : '0');
+    currentValues.push(this.valueTo != null ? this.valueTo : '0');
     return currentValues;
   }
 
@@ -342,7 +344,7 @@ export class Slider {
                   part="bar"
                   class="slider__bar"
                   style={{
-                    width: `${this.position}%`,
+                    width: `${this.positionValueTo}%`,
                     backgroundColor: this.customColor
                       ? this.customColor
                       : this.disabled
@@ -361,38 +363,12 @@ export class Slider {
                     })
                   : null}
               </div>
-              <div
-                part="thumb-wrapper"
-                class="slider__thumb-wrapper"
-                id={'1-' + this.sliderId + '-wrapper'}
-                style={{ left: `${this.position}%` }}
-                onMouseDown={this.onButtonDown}
-                onTouchStart={this.onButtonDown}
-              >
-                <div
-                  part="thumb"
-                  class="slider__thumb"
-                  tabindex="0"
-                  role="slider"
-                  id={'1-' + this.sliderId}
-                  aria-valuemin={this.min}
-                  aria-valuenow={this.value}
-                  aria-valuemax={this.max}
-                  aria-valuetext={`${this.value}`}
-                  aria-labelledby={`${this.sliderId}-label`}
-                  aria-orientation="horizontal"
-                  aria-disabled={this.disabled}
-                  onKeyDown={(event) => {
-                    this.onKeyDown(event, `1-${this.sliderId}`);
-                  }}
-                />
-              </div>
               {this.activeRange && (
                 <div
                   part="thumb-wrapper"
-                  class="slider__thumb-wrapper-second"
-                  id={'2-' + this.sliderId + '-wrapper'}
-                  style={{ left: `${this.positionSecond}%` }}
+                  class="slider__thumb-wrapper"
+                  id={'1-' + this.sliderId + '-wrapper'}
+                  style={{ left: `${this.position}%` }}
                   onMouseDown={this.onButtonDown}
                   onTouchStart={this.onButtonDown}
                 >
@@ -401,30 +377,56 @@ export class Slider {
                     class="slider__thumb"
                     tabindex="0"
                     role="slider"
-                    id={'2-' + this.sliderId}
+                    id={'1-' + this.sliderId}
                     aria-valuemin={this.min}
-                    aria-valuenow={this.valueSecond}
+                    aria-valuenow={this.valueFrom}
                     aria-valuemax={this.max}
-                    aria-valuetext={`${this.valueSecond}`}
+                    aria-valuetext={`${this.valueFrom}`}
                     aria-labelledby={`${this.sliderId}-label`}
                     aria-orientation="horizontal"
                     aria-disabled={this.disabled}
                     onKeyDown={(event) => {
-                      this.onKeyDown(event, `2-${this.sliderId}`);
+                      this.onKeyDown(event, `1-${this.sliderId}`);
                     }}
                   />
                 </div>
               )}
+              <div
+                part="thumb-wrapper"
+                class="slider__thumb-wrapper-to"
+                id={'2-' + this.sliderId + '-wrapper'}
+                style={{ left: `${this.positionValueTo}%` }}
+                onMouseDown={this.onButtonDown}
+                onTouchStart={this.onButtonDown}
+              >
+                <div
+                  part="thumb"
+                  class="slider__thumb"
+                  tabindex="0"
+                  role="slider"
+                  id={'2-' + this.sliderId}
+                  aria-valuemin={this.min}
+                  aria-valuenow={this.valueTo}
+                  aria-valuemax={this.max}
+                  aria-valuetext={`${this.valueTo}`}
+                  aria-labelledby={`${this.sliderId}-label`}
+                  aria-orientation="horizontal"
+                  aria-disabled={this.disabled}
+                  onKeyDown={(event) => {
+                    this.onKeyDown(event, `2-${this.sliderId}`);
+                  }}
+                />
+              </div>
             </div>
-            <input type="hidden" value={this.value} name={this.name} />
+            <input type="hidden" value={this.valueFrom} name={this.name} />
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
-                {this.value != null &&
+                {this.valueTo != null &&
                   !this.activeRange &&
-                  this.value.toFixed(this.decimals)}
+                  this.valueTo.toFixed(this.decimals)}
                 {this.activeRange &&
                   this.getLowestValue() + '-' + this.getHighestValue()}
-                {this.value != null && this.unit}
+                {this.unit != null && this.unit}
               </div>
             )}
           </div>
