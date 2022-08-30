@@ -15,16 +15,13 @@
 | `helperText`        | `helper-text`         | (optional) Input helper text                                                              | `string`  | `undefined` |
 | `hideLabel`         | `hide-label`          | (optional) Hides the specified label visually                                             | `boolean` | `false`     |
 | `indeterminate`     | `indeterminate`       | (optional) indeterminate                                                                  | `boolean` | `false`     |
-| `info`              | `info`                | (optional) Input status                                                                   | `boolean` | `true`      |
 | `inputId`           | `input-id`            | (optional) Input checkbox id                                                              | `string`  | `undefined` |
 | `invalid`           | `invalid`             | (optional) Input status                                                                   | `boolean` | `false`     |
 | `label`             | `label`               | (optional) Input label                                                                    | `string`  | `''`        |
 | `name`              | `name`                | (optional) Input name                                                                     | `string`  | `undefined` |
 | `status`            | `status`              | <span style="color:red">**[DEPRECATED]**</span> - invalid should replace status<br/><br/> | `string`  | `''`        |
 | `styles`            | `styles`              | (optional) Injected CSS styles                                                            | `string`  | `undefined` |
-| `success`           | `success`             | (optional) Input status                                                                   | `boolean` | `false`     |
 | `value`             | `value`               | (optional) Input value                                                                    | `string`  | `''`        |
-| `warning`           | `warning`             | (optional) Input status                                                                   | `boolean` | `false`     |
 
 
 ## Events

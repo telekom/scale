@@ -51,13 +51,7 @@ export class Checkbox {
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
   /** (optional) Input status */
-  @Prop() info?: boolean = true;
-  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) Input status */
-  @Prop() warning?: boolean = false;
-  /** (optional) Input status */
-  @Prop() success?: boolean = false;
   /** (optional) Input disabled */
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) Active switch */
@@ -77,11 +71,6 @@ export class Checkbox {
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   private id = i++;
-  componentWillLoad() {
-    if (this.invalid || this.warning || this.success) {
-      this.info = false;
-    }
-  }
   componentDidRender() {
     if (this.status !== '') {
       statusNote({
