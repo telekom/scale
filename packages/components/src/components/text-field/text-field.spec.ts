@@ -188,6 +188,12 @@ describe('TextField', () => {
 
     element.invalid = true;
     expect(element.getCssClassMap()).toContain('text-field--status-error');
+
+    element.success = true;
+    expect(element.getCssClassMap()).toContain('text-field--status-success');
+
+    element.warning = true;
+    expect(element.getCssClassMap()).toContain('text-field--status-warning');
   });
 
   it('should handle hasFocus right', () => {
