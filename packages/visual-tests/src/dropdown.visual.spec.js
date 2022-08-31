@@ -4,28 +4,32 @@ describe('Dropdown', () => {
       await global.runColorSetup('components-dropdown--standard', mode);
     });
     // screenshots of stories
-    test.each([['standard'], ['disabled'], ['error'], ['with-custom-icon']])(
-      '%p',
-      async (variant) => {
-        await page.goto(
-          `http://host.docker.internal:3123/iframe.html?id=components-dropdown--${variant}&viewMode=story`
-        );
-        await page.waitForSelector('html.hydrated');
-        const previewHtml = await page.$('body');
-        await page.evaluate(() => {
-          [
-            '--telekom-motion-duration-immediate',
-            '--telekom-motion-duration-transition',
-            '--telekom-motion-duration-animation',
-            '--telekom-motion-duration-animation-deliberate',
-          ].forEach((transitionSpeed) => {
-            document.body.style.setProperty(transitionSpeed, '0s');
-          });
+    test.each([
+      ['standard'],
+      ['disabled'],
+      ['error'],
+      ['success'],
+      ['warning'],
+      ['with-custom-icon'],
+    ])('%p', async (variant) => {
+      await page.goto(
+        `http://host.docker.internal:3123/iframe.html?id=components-dropdown--${variant}&viewMode=story`
+      );
+      await page.waitForSelector('html.hydrated');
+      const previewHtml = await page.$('body');
+      await page.evaluate(() => {
+        [
+          '--telekom-motion-duration-immediate',
+          '--telekom-motion-duration-transition',
+          '--telekom-motion-duration-animation',
+          '--telekom-motion-duration-animation-deliberate',
+        ].forEach((transitionSpeed) => {
+          document.body.style.setProperty(transitionSpeed, '0s');
         });
-        await page.waitFor(1000);
-        expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      }
-    );
+      });
+      await page.waitFor(1000);
+      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    });
     // hover, active, focus
     test.each([['standard']])('%p', async (variant) => {
       await global.runSetup(`components-dropdown--${variant}`);
