@@ -140,7 +140,7 @@ scale-text-field {
   color: var(--telekom-color-text-and-icon-functional-warning);
 }
 .text-field--status-success .text-field__helper-text_icon {
-  color: var(telekom-color-text-and-icon-functional-success);
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 
 .text-field .text-field__meta {
