@@ -61,6 +61,9 @@ export const Template = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
+      :info="info"
+      :warning="warning"
+      :success="success"
       :max-length="maxLength"
       :min-length="minLength"
       :max="max"
@@ -287,6 +290,52 @@ scale-text-field {
   label="With Error"
   helper-text="something is wrong"
   invalid
+></scale-text-field>
+```
+
+## With Warning
+
+<Canvas withSource="none">
+  <Story
+    name="With Warning"
+    args={{
+      label: 'With Warning',
+      warning: true,
+      helperText: 'something with warning',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Error"
+  helper-text="something with warning"
+  warning
+></scale-text-field>
+```
+
+## With Success
+
+<Canvas withSource="none">
+  <Story
+    name="With Success"
+    args={{
+      label: 'With Success',
+      success: true,
+      helperText: 'something is successful',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Success"
+  helper-text="something is successful"
+  success
 ></scale-text-field>
 ```
 

@@ -25,6 +25,9 @@ export const Template = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
+      :success="success"
+      :info="info"
+      :warning="warning"
       :disabled="disabled"
       :required="required"
       :value="value"
@@ -194,6 +197,56 @@ The display error is on the browser side.
 
 ```html
 <scale-dropdown label="Error" invalid helper-text="Something went wrong...">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+## Success
+
+<Canvas withSource="none">
+  <Story
+    name="Success"
+    args={{
+      label: 'Success',
+      success: true,
+      helperText: 'Something went successful...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown
+  label="Success"
+  success
+  helper-text="Something went successful..."
+>
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+## Warning
+
+<Canvas withSource="none">
+  <Story
+    name="Warning"
+    args={{
+      label: 'Warning',
+      warning: true,
+      helperText: 'Something with warning...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown label="Warning" warning helper-text="Something with warning...">
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
