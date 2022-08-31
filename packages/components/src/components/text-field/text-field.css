@@ -120,17 +120,16 @@ scale-text-field {
   color: var(--color-helper-text);
   font-weight: var(--telekom-typography-font-weight-bold);
   display: flex;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0;
 }
 .text-field .text-field__helper-text_label {
-  font-size: 12px;
+  font-size: var(--telekom-typography-font-size-small);
 }
 .text-field--status-warning .text-field__helper-text_label {
-  color: #b63d00;
+  color: var(--telekom-color-text-and-icon-functional-warning);
 }
 .text-field--status-success .text-field__helper-text_label {
-  color: #008653;
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 .text-field .text-field__helper-text_icon {
   justify-content: center;
@@ -138,10 +137,10 @@ scale-text-field {
   padding-right: 4.5px;
 }
 .text-field--status-warning .text-field__helper-text_icon {
-  color: #b63d00;
+  color: var(--telekom-color-text-and-icon-functional-warning);
 }
 .text-field--status-success .text-field__helper-text_icon {
-  color: #008653;
+  color: var(telekom-color-text-and-icon-functional-success);
 }
 
 .text-field .text-field__meta {
@@ -234,17 +233,17 @@ scale-text-field {
 }
 
 .text-field--status-success .text-field__helper-text {
-  color: #008653;
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 .text-field--status-success .text-field__counter {
-  color: #008653;
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 
 .text-field--status-warning .text-field__helper-text {
-  color: #b63d00;
+  color: var(--telekom-color-text-and-icon-functional-warning);
 }
 .text-field--status-warning .text-field__counter {
-  color: #b63d00;
+  color: var(--telekom-color-text-and-icon-functional-warning);
 }
 .text-field--transparent .text-field__control {
   background-color: transparent;
