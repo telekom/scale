@@ -8,6 +8,8 @@ describe('Textfield', () => {
       ['placeholder'],
       ['helper-text'],
       ['with-error'],
+      ['with-success'],
+      ['with-warning'],
       ['disabled'],
       ['read-only'],
       ['max-length-with-counter'],
