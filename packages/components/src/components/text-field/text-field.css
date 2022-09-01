@@ -64,6 +64,12 @@ scale-text-field {
     --telekom-color-text-and-icon-functional-informational
   );
   --color-helper-text-error: var(--color-meta-error);
+  --color-helper-text-success: var(
+    --telekom-color-text-and-icon-functional-success
+  );
+  --color-helper-text-warning: var(
+    --telekom-color-text-and-icon-functional-warning
+  );
 
   /* placeholder */
   --transition-placeholder: var(--transition);
@@ -126,10 +132,10 @@ scale-text-field {
   font-size: var(--telekom-typography-font-size-small);
 }
 .text-field--status-warning .text-field__helper-text_label {
-  color: var(--telekom-color-text-and-icon-functional-warning);
+  color: var(--color-helper-text-warning);
 }
 .text-field--status-success .text-field__helper-text_label {
-  color: var(--telekom-color-text-and-icon-functional-success);
+  color: var(--color-helper-text-success);
 }
 .text-field .text-field__helper-text_icon {
   justify-content: center;
@@ -137,10 +143,10 @@ scale-text-field {
   padding-right: 4.5px;
 }
 .text-field--status-warning .text-field__helper-text_icon {
-  color: var(--telekom-color-text-and-icon-functional-warning);
+  color: var(--color-helper-text-warning);
 }
 .text-field--status-success .text-field__helper-text_icon {
-  color: var(--telekom-color-text-and-icon-functional-success);
+  color: var(--color-helper-text-success);
 }
 
 .text-field .text-field__meta {
@@ -233,14 +239,14 @@ scale-text-field {
 }
 
 .text-field--status-success .text-field__helper-text {
-  color: var(--telekom-color-text-and-icon-functional-success);
+  color: var(--color-helper-text-success);
 }
 .text-field--status-success .text-field__counter {
   color: var(--telekom-color-text-and-icon-functional-success);
 }
 
 .text-field--status-warning .text-field__helper-text {
-  color: var(--telekom-color-text-and-icon-functional-warning);
+  color: var(--color-helper-text-warning);
 }
 .text-field--status-warning .text-field__counter {
   color: var(--telekom-color-text-and-icon-functional-warning);
