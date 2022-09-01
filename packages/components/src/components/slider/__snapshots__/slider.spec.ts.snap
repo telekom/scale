@@ -4,6 +4,11 @@ exports[`Slider should match snapshot 1`] = `
 <scale-slider>
   <mock:shadow-root>
     <div class="slider slider--web" part="slider web">
+      <div class="slider__headline">
+        <div class="slider__display-value" part="display-value">
+          %
+        </div>
+      </div>
       <div class="slider__track-wrapper" part="track-wrapper">
         <div class="slider__track" part="track">
           <div class="slider__bar" part="bar" style="width: 0%; background-color: var(--background-bar);"></div>
@@ -13,9 +18,6 @@ exports[`Slider should match snapshot 1`] = `
           </div>
         </div>
         <input type="hidden">
-        <div class="slider__display-value" part="display-value">
-          %
-        </div>
       </div>
     </div>
   </mock:shadow-root>
@@ -27,6 +29,11 @@ exports[`Slider should match snapshot 2`] = `
 <scale-slider value-to="10">
   <mock:shadow-root>
     <div class="slider slider--web" part="slider web">
+      <div class="slider__headline">
+        <div class="slider__display-value" part="display-value">
+          10%
+        </div>
+      </div>
       <div class="slider__track-wrapper" part="track-wrapper">
         <div class="slider__track" part="track">
           <div class="slider__bar" part="bar" style="width: 10%; background-color: var(--background-bar);"></div>
@@ -36,9 +43,6 @@ exports[`Slider should match snapshot 2`] = `
           </div>
         </div>
         <input type="hidden">
-        <div class="slider__display-value" part="display-value">
-          10%
-        </div>
       </div>
     </div>
   </mock:shadow-root>
