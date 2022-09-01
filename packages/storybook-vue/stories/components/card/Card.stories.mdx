@@ -188,10 +188,7 @@ For Shadow Parts, please inspect the element's #shadow.
       },
       template: `
     <div :style="{ maxWidth: '300px' }" v-on:click="handleClick($event)">
-        <scale-card
-           to="javascript:void(0);"
-           label="example card"
-        >
+        <scale-card label="example card">
           <div style="display: flex; justify-content: space-between">
             <span style="font: var(--telekom-text-style-heading-4)">Action Icon</span>
             <scale-menu-flyout>
@@ -236,7 +233,7 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-card label="Icon" id="icon-card" to="javascript:void(0);">
+<scale-card label="Icon" id="icon-card">
   <div style="display: flex; justify-content: space-between">
     <span style="font: var(--telekom-text-style-heading-4)">Icon</span>
     <scale-menu-flyout>
