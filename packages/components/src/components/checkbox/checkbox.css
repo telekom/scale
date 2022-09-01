@@ -94,7 +94,6 @@ scale-checkbox [part='checkbox'] {
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
-  margin: var(--spacing-control) 0;
   width: var(--width-control);
   height: var(--height-control);
   border-radius: var(--radius-control);
@@ -125,11 +124,13 @@ scale-checkbox [part='icon'] svg path {
 scale-checkbox [part='container'] {
   align-items: center;
   display: flex;
+  line-height: var(--telekom-typography-line-spacing-standard);
 }
 
 scale-checkbox [part='helper-text'] {
   font-size: var(--font-size-helper-text);
   font-weight: var(--font-weight-helper-text);
+  line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
   padding-left: calc(
     var(--width-control) + var(--spacing-control) + var(--spacing-x) + calc(var(--border-width-control) * 2)

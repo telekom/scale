@@ -58,7 +58,7 @@ export class RadioButtonGroup {
               aria-label={this.helperText}
             >
               {this.renderHelperIcon()}
-              {this.helperText}
+              <span>{this.helperText}</span>
             </div>
           ) : null}
         </legend>

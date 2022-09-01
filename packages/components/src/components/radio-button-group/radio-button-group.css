@@ -10,7 +10,8 @@
   );
   --padding-bottom-helper-text: var(--telekom-spacing-unit-x2);
   --margin-top-helper-text: var(--telekom-spacing-unit-x1);
-  --font-weight-helper-text: var(--telekom-typography-font-weight-medium);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);  
 
   /*helper-text--status-error*/
   --font-size-error-helper-text: var(--telekom-typography-font-size-small);
@@ -23,6 +24,7 @@
   --color-error-helper-text-hcm: var(
     --telekom-color-text-and-icon-white-standard
   );
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
 
   /*title*/
   --font-size-title: var(--font-size-label);
@@ -31,7 +33,9 @@
   --margin-left-title: var(--telekom-spacing-unit-x05);
 
   /*slotted items*/
-  --margin-top-slotted-item: var(--telekom-spacing-unit-x3);
+  --margin-top-slotted-item: var(--telekom-spacing-unit-x2);
+
+  margin-top: var(--margin-top-slotted-item);
 }
 
 .radio-button-group {
@@ -43,34 +47,33 @@
 .radio-button-group__container {
   display: flex;
   flex-direction: column;
+  /* todo: find out why this is necessary, some additional space gets added between the legend and this div */
+  margin-top: -6px;
 }
 
 .radio-button-group__helper-text {
   color: var(--color-helper-text);
   font-size: var(--font-size-helper-text);
-  margin-top: calc(var(--margin-top-helper-text) * +1);
-  padding-bottom: calc(var(--padding-bottom-helper-text) * -1);
   font-weight: var(--font-weight-helper-text);
   display: flex;
   align-items: center;
+  line-height: var(--line-height-helper-text);
 }
 
 .radio-button-group__helper-text--status-error {
   color: var(--color-error-helper-text);
   font-size: var(--font-size-error-helper-text);
-  margin-top: calc(var(--margin-top-error-helper-text) * +1);
-  padding-bottom: calc(var(--padding-bottom-error-helper-text) * -1);
   font-weight: var(--font-weight-error-helper-text);
 }
 
 .radio-button-group__title-label {
   font-size: var(--font-size-title);
-  font-weight: var(--font-weight-title);
-  padding-bottom: var(--padding-bottom-title);
+  line-height: var(--telekom-typography-line-spacing-standard);
+  font-weight: var(--telekom-typography-font-weight-bold);  
 }
 
 ::slotted(*) {
-  margin-top: var(--margin-top-slotted-item);
+  margin-top: calc(var(--margin-top-slotted-item));
 }
 
 @media screen and (forced-colors: active), (-ms-high-contrast: active) {

@@ -7,12 +7,13 @@
   --spacing-left-checkbox: var(--telekom-spacing-unit-x2);
 
   /* slotted item */
-  --spacing-top-slotted-item: var(--telekom-spacing-unit-x3);
+  --spacing-top-slotted-item: var(--telekom-spacing-unit-x2);
 }
 
 .checkbox-group {
   display: inline-flex;
   flex-direction: column;
+  position: relative;
 }
 .checkbox-group [part='fieldset'] {
   display: flex;
@@ -21,6 +22,11 @@
   padding: 0;
   margin: 0;
   margin-left: var(--spacing-left-container);
+}
+
+.checkbox-group [part='parent-checkbox'] {
+  line-height: var(--telekom-typography-line-spacing-standard);
+  --font-weight-label: var(--telekom-typography-font-weight-bold);
 }
 
 .checkbox-group legend {
