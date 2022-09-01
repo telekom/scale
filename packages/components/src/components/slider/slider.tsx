@@ -307,16 +307,28 @@ export class Slider {
         {this.styles && <style>{this.styles}</style>}
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          {!!this.label && (
-            <label
-              part="label"
-              class="slider__label"
-              id={`${this.sliderId}-label`}
-              htmlFor={this.sliderId}
-            >
-              {this.label}
-            </label>
-          )}
+          <div class="slider__headline">
+            {!!this.label && (
+              <label
+                part="label"
+                class="slider__label"
+                id={`${this.sliderId}-label`}
+                htmlFor={this.sliderId}
+              >
+                {this.label}
+              </label>
+            )}
+            {this.showValue && (
+              <div part="display-value" class="slider__display-value">
+                {this.valueTo != null &&
+                  !this.activeRange &&
+                  this.valueTo.toFixed(this.decimals)}
+                {this.activeRange &&
+                  this.getLowestValue() + '-' + this.getHighestValue()}
+                {this.unit != null && this.unit}
+              </div>
+            )}
+          </div>
           <div part="track-wrapper" class="slider__track-wrapper">
             <div
               part="track"
@@ -419,16 +431,6 @@ export class Slider {
               </div>
             </div>
             <input type="hidden" value={this.valueFrom} name={this.name} />
-            {this.showValue && (
-              <div part="display-value" class="slider__display-value">
-                {this.valueTo != null &&
-                  !this.activeRange &&
-                  this.valueTo.toFixed(this.decimals)}
-                {this.activeRange &&
-                  this.getLowestValue() + '-' + this.getHighestValue()}
-                {this.unit != null && this.unit}
-              </div>
-            )}
           </div>
         </div>
       </Host>

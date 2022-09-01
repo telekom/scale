@@ -24,24 +24,47 @@
   --background-track: var(--telekom-color-ui-faint);
   --background-bar-disabled: var(--telekom-color-ui-disabled);
   --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
+  --width-track: 361px;
 }
 
 .slider {
-  width: 100%;
-  display: block;
   align-items: center;
 }
 
-.slider .slider__track-wrapper {
-  display: flex;
-  align-items: center;
+.slider--web {
+  display: inline-block;
+}
+
+.slider__headline {
+  text-align: left;
+  height: 20px;
+}
+
+.slider__headline .slider__label {
+  display: inline-block;
+  font-weight: var(--telekom-text-style-ui);
+  font-size: var(--telekom-typography-font-size-body);
+}
+
+.slider__headline .slider__display-value {
+  display: block;
+  float: right;
+  font-weight: var(--telekom-text-style-ui);
+  font-size: var(--telekom-typography-font-size-body);
+}
+
+.slider--android {
+  width: var(--width-track);
+}
+.slider--ios {
+  width: var(--width-track);
 }
 
 .slider .slider__track {
-  width: 303px;
+  width: var(--width-track);
   background-color: #e7e7e9;
   height: 6px;
-  margin: 16px 0;
+  margin: var(--telekom-spacing-unit-x4) 0;
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -106,8 +129,8 @@
 .slider--android .slider__thumb {
   width: 22px;
   height: 22px;
-  border-color: #00000014;
-  background-color: #e20074;
+  border-color: var(--telekom-color-ui-border-disabled);
+  background-color: var(--telekom-color-primary-standard);
 }
 
 .slider .slider__thumb-wrapper-to {
@@ -121,14 +144,6 @@
   justify-content: center;
   background-color: transparent;
   margin-left: -16px;
-}
-
-.slider .slider__display-value {
-  color: var(--color-display-value);
-  margin-left: 24px;
-  padding-right: 4px;
-  font-weight: var(--font-weight-display-value);
-  font-size: var(--font-size-display-value);
 }
 
 .slider .slider__thumb:hover {
@@ -189,6 +204,6 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: #00000065;
+  background-color: var(--telekom-color-text-and-icon-black-additional);
   float: left;
 }
