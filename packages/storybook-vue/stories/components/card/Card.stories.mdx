@@ -349,7 +349,9 @@ For Shadow Parts, please inspect the element's #shadow.
           "
   >
     <span style="font: var(--telekom-text-style-heading-4)">Checkbox</span>
-    <span style="margin-right: -10px"><scale-checkbox id="checkbox" checked></scale-checkbox></span>
+    <span style="margin-right: -10px"
+      ><scale-checkbox id="checkbox" checked></scale-checkbox
+    ></span>
   </div>
   <div
     style="
@@ -603,112 +605,4 @@ For Shadow Parts, please inspect the element's #shadow.
     </div>
   </div>
 </scale-card>
-```
-
-## With Link
-
-<Canvas withSource="none">
-  <Story
-    name="With Link"
-    args={{
-      slot: 'A card with a link to example.com',
-      to: 'https://example.com',
-      target: '_blank',
-      rel: 'noopener noreferrer',
-    }}
-  >
-    {() => ({
-      components: { ScaleCard },
-      props: ScaleCard.props,
-      template: `
-        <scale-card
-           to="https://example.com"
-           target="_blank"
-           label="with link"
-           rel="noopener noreferrer"
-        >
-          A card with a link to example.com
-        </scale-card>
-      `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<scale-card
-  to="https://example.com"
-  target="_blank"
-  label="with link"
-  rel="noopener noreferrer"
->
-  A card with a link to example.com
-</scale-card>
-```
-
-## With Further Functions
-
-<Canvas withSource="none">
-  <Story
-    name="With Further Functions"
-    args={{
-      label: 'Example Card with further functions',
-    }}
-  >
-    {(args, { argTypes }) => ({
-      components: { ScaleCard },
-      props: {
-        slot: String,
-        ...ScaleCard.props,
-      },
-      template: `
-                <div :style="{ maxWidth: '300px' }">
-                    <scale-card
-                          :to="to"
-                          :target="target"
-                          :label="label"
-                          :rel="rel"
-                          :movable="movable"
-                        >
-                          <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
-                              <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
-                              <div style="padding: var(--telekom-spacing-unit-x4)">
-                                <div style="padding: 0 0 24px 0;">A card with with further functions</div>
-                                <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>Label</scale-button></div>
-                                <div style="display: flex; justify-content: flex-end;"><scale-link href="https://example.com" tabindex=0>More...</scale-link></div>
-                              </div>
-                          </div>
-                    </scale-card>
-                </div>
-              `,
-    })}
-  </Story>
-</Canvas>
-
-```html
-<div style="max-width: 300px">
-  <scale-card label="Example Card with further functions">
-    <article style="margin: -24px;">
-      <img
-        style="margin-bottom: -4px; width:100%;"
-        src="assets/card-grayscale.jpeg"
-        alt="placeholder"
-      />
-      <div style="padding: 24px;">
-        <div style="padding: 0 0 24px 0;">
-          A card with with further functions
-        </div>
-        <div
-          style="padding: 0 0 24px 0; display: flex; justify-content: center;"
-        >
-          <scale-button>Label</scale-button>
-        </div>
-        <div style="display: flex; justify-content: flex-end;">
-          <scale-link href="https://example.com" tabindex="0"
-            >More...</scale-link
-          >
-        </div>
-      </div>
-    </article>
-  </scale-card>
-</div>
 ```
