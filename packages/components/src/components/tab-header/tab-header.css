@@ -115,7 +115,9 @@
   z-index: 1;
 }
 .tab-header--has-focus.tab-header--selected:after {
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 3px 3px;
+  width: 98%;
+  margin-left: 1%;
 }
 .tab-header--selected {
   color: var(--color-selected);
