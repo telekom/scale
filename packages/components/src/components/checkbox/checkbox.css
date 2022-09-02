@@ -133,7 +133,8 @@ scale-checkbox [part='helper-text'] {
   line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
   padding-left: calc(
-    var(--width-control) + var(--spacing-control) + var(--spacing-x) + calc(var(--border-width-control) * 2)
+    var(--width-control) + var(--spacing-control) + var(--spacing-x) +
+      calc(var(--border-width-control) * 2)
   );
   display: flex;
   align-items: center;
@@ -287,7 +288,6 @@ scale-checkbox.error [part='helper-text'] {
     var(--width-control) + var(--spacing-control) + var(--spacing-x) + 4px
   );
 }
-
 
 /* disabled states */
 

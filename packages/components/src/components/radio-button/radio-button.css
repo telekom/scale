@@ -24,7 +24,7 @@ scale-radio-button {
   /*helper-text*/
   --transition-helper-text: var(--transition);
   --font-size-helper-text: var(--telekom-typography-font-size-small);
-  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);  
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
   --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
@@ -110,7 +110,6 @@ scale-icon-alert-error {
   font-weight: var(--font-weight-label);
   cursor: pointer;
   line-height: var(--telekom-typography-line-spacing-standard);
-
 }
 .radio-button input {
   width: var(--width-control);

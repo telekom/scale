@@ -11,7 +11,7 @@
   --padding-bottom-helper-text: var(--telekom-spacing-unit-x2);
   --margin-top-helper-text: var(--telekom-spacing-unit-x1);
   --font-size-helper-text: var(--telekom-typography-font-size-small);
-  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);  
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
 
   /*helper-text--status-error*/
   --font-size-error-helper-text: var(--telekom-typography-font-size-small);
@@ -69,7 +69,7 @@
 .radio-button-group__title-label {
   font-size: var(--font-size-title);
   line-height: var(--telekom-typography-line-spacing-standard);
-  font-weight: var(--telekom-typography-font-weight-bold);  
+  font-weight: var(--telekom-typography-font-weight-bold);
 }
 
 ::slotted(*) {
