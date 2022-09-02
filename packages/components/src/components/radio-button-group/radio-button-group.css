@@ -42,13 +42,13 @@
   display: inline-flex;
   flex-direction: column;
   border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .radio-button-group__container {
   display: flex;
   flex-direction: column;
-  /* todo: find out why this is necessary, some additional space gets added between the legend and this div */
-  margin-top: -6px;
 }
 
 .radio-button-group__helper-text {
@@ -64,6 +64,11 @@
   color: var(--color-error-helper-text);
   font-size: var(--font-size-error-helper-text);
   font-weight: var(--font-weight-error-helper-text);
+}
+
+.radio-button-group__title {
+  margin: 0;
+  padding: 0;   
 }
 
 .radio-button-group__title-label {
