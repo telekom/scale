@@ -24,7 +24,7 @@
   --background-track: var(--telekom-color-ui-faint);
   --background-bar-disabled: var(--telekom-color-ui-disabled);
   --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
-  --width-track: 361px;
+  --width-track: 353px;
 }
 
 .slider {
@@ -32,6 +32,7 @@
 }
 
 .slider--web {
+  width: 361px;
   display: inline-block;
 }
 
@@ -49,18 +50,32 @@
 .slider__headline .slider__display-value {
   display: block;
   float: right;
+  padding-right: 3px;
   font-weight: var(--telekom-text-style-ui);
   font-size: var(--telekom-typography-font-size-body);
 }
 
 .slider--android {
-  width: var(--width-track);
+  width: 361px;
 }
 .slider--ios {
-  width: var(--width-track);
+  width: 361px;
 }
 
 .slider .slider__track {
+  width: var(--width-track);
+  background-color: blue;
+  height: 6px;
+  margin: var(--telekom-spacing-unit-x4) 0;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 100px;
+  z-index: var(--scl-z-index-10);
+}
+
+.slider .slider__sub-track {
   width: var(--width-track);
   background-color: #e7e7e9;
   height: 6px;
@@ -71,6 +86,21 @@
   align-items: center;
   border-radius: 100px;
   z-index: var(--scl-z-index-10);
+  margin: 0 8px 0 0;
+}
+
+.slider .slider__sub-track-helper {
+  width: var(--width-track);
+  background-color: #e7e7e9;
+  height: 6px;
+  margin: var(--telekom-spacing-unit-x4) 0;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 100px;
+  z-index: var(--scl-z-index-10);
+  margin: 0 8px 0 8px;
 }
 
 .slider--ios .slider__track {
@@ -133,7 +163,7 @@
   background-color: var(--telekom-color-primary-standard);
 }
 
-.slider .slider__thumb-wrapper-to {
+.slider .slider-first-half__thumb-wrapper {
   width: 32px;
   height: 32px;
   display: flex;
@@ -143,7 +173,20 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  margin-left: -16px;
+  margin-left: -14px;
+}
+
+.slider .slider-second-half__thumb-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  z-index: var(--scl-z-index-40);
+  position: absolute;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin-left: -18px;
 }
 
 .slider .slider__thumb:hover {

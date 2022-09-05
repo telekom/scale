@@ -87,13 +87,23 @@ export class Slider {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
+  //Boolean whether FROM thumb is currently being dragged
   private dragging: boolean;
+  //Boolean whether TO thumb is currently being dragged
   private draggingValueTo: boolean;
+  //Current positioning of the FROM thumbs as seen from the left
   private offsetLeft: number;
+  //Current positioning of the TO thumbs as seen from the left.
   private offsetLeftValueTo: number;
+  //Current selected thumb
   private thumbNumber: string;
+  //Based on this array the step points are generated, measured by the length the number is determined
   private stepPointInitArray = [];
   private activeRange: boolean;
+  //Boolean to monitor when the TO thumb is pushed over the half of the slider
+  private firstHalfValueTo: boolean;
+  //Boolean to monitor when the FROM thumb is pushed over the half of the slider
+  private firstHalfValueFrom: boolean;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -233,11 +243,17 @@ export class Slider {
 
   setValue = (nextValue: number) => {
     this.valueFrom = this.clamp(nextValue);
+    this.valueFrom < this.max / 2
+      ? (this.firstHalfValueFrom = true)
+      : (this.firstHalfValueFrom = false);
     emitEvent(this, 'scaleInput', this.valueFrom);
   };
 
   setValueTo = (nextValue: number) => {
     this.valueTo = this.clamp(nextValue);
+    this.valueTo < this.max / 2
+      ? (this.firstHalfValueTo = true)
+      : (this.firstHalfValueTo = false);
     emitEvent(this, 'scaleInput', this.valueTo);
   };
 
@@ -334,100 +350,115 @@ export class Slider {
               part="track"
               class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
+              style={{
+                backgroundColor: this.valueFrom ? '#e7e7e9' : '#e20074',
+              }}
             >
-              {this.activeRange ? (
-                <div
-                  part="bar"
-                  class="slider__bar"
-                  style={{
-                    width: `${
-                      (this.getDistanceBetweenValues() / this.max) * 100
-                    }%`,
-                    left: `${(this.getLowestValue() / this.max) * 100}%`,
-                    backgroundColor: this.customColor
-                      ? this.customColor
-                      : this.disabled
-                      ? `var(--background-bar-disabled)`
-                      : `var(--background-bar)`,
-                  }}
-                ></div>
-              ) : (
-                <div
-                  part="bar"
-                  class="slider__bar"
-                  style={{
-                    width: `${this.positionValueTo}%`,
-                    backgroundColor: this.customColor
-                      ? this.customColor
-                      : this.disabled
-                      ? `var(--background-bar-disabled)`
-                      : `var(--background-bar)`,
-                  }}
-                ></div>
-              )}
-              <div
-                class="slider_track-point-wrapper"
-                id="slider_track-point-wrapper"
-              >
-                {this.visibleStep === true
-                  ? this.stepPointInitArray.map(() => {
-                      return <div class="slider_track-point"></div>;
-                    })
-                  : null}
-              </div>
-              {this.activeRange && (
-                <div
-                  part="thumb-wrapper"
-                  class="slider__thumb-wrapper"
-                  id={'1-' + this.sliderId + '-wrapper'}
-                  style={{ left: `${this.positionValueFrom}%` }}
-                  onMouseDown={this.onButtonDown}
-                  onTouchStart={this.onButtonDown}
-                >
+              <div part="track" class="slider__sub-track-helper">
+                <div part="track" class="slider__sub-track">
+                  {this.activeRange ? (
+                    <div
+                      part="bar"
+                      class="slider__bar"
+                      style={{
+                        width: `${
+                          (this.getDistanceBetweenValues() / this.max) * 100
+                        }%`,
+                        left: `${(this.getLowestValue() / this.max) * 100}%`,
+                        backgroundColor: this.customColor
+                          ? this.customColor
+                          : this.disabled
+                          ? `var(--background-bar-disabled)`
+                          : `var(--background-bar)`,
+                      }}
+                    ></div>
+                  ) : (
+                    <div
+                      part="bar"
+                      class="slider__bar"
+                      style={{
+                        width: `${this.positionValueTo}%`,
+                        backgroundColor: this.customColor
+                          ? this.customColor
+                          : this.disabled
+                          ? `var(--background-bar-disabled)`
+                          : `var(--background-bar)`,
+                      }}
+                    ></div>
+                  )}
                   <div
-                    part="thumb"
-                    class="slider__thumb"
-                    tabindex="0"
-                    role="slider"
-                    id={'1-' + this.sliderId}
-                    aria-valuemin={this.min}
-                    aria-valuenow={this.valueFrom}
-                    aria-valuemax={this.max}
-                    aria-valuetext={`${this.valueFrom}`}
-                    aria-labelledby={`${this.sliderId}-label`}
-                    aria-orientation="horizontal"
-                    aria-disabled={this.disabled}
-                    onKeyDown={(event) => {
-                      this.onKeyDown(event, `1-${this.sliderId}`);
-                    }}
-                  />
+                    class="slider_track-point-wrapper"
+                    id="slider_track-point-wrapper"
+                  >
+                    {this.visibleStep === true
+                      ? this.stepPointInitArray.map(() => {
+                          return <div class="slider_track-point"></div>;
+                        })
+                      : null}
+                  </div>
+                  {this.activeRange && (
+                    <div
+                      part="thumb-wrapper"
+                      class={
+                        this.firstHalfValueFrom
+                          ? 'slider-first-half__thumb-wrapper'
+                          : 'slider-second-half__thumb-wrapper'
+                      }
+                      id={'1-' + this.sliderId + '-wrapper'}
+                      style={{ left: `${this.positionValueFrom}%` }}
+                      onMouseDown={this.onButtonDown}
+                      onTouchStart={this.onButtonDown}
+                    >
+                      <div
+                        part="thumb"
+                        class="slider__thumb"
+                        tabindex="0"
+                        role="slider"
+                        id={'1-' + this.sliderId}
+                        aria-valuemin={this.min}
+                        aria-valuenow={this.valueFrom}
+                        aria-valuemax={this.max}
+                        aria-valuetext={`${this.valueFrom}`}
+                        aria-labelledby={`${this.sliderId}-label`}
+                        aria-orientation="horizontal"
+                        aria-disabled={this.disabled}
+                        onKeyDown={(event) => {
+                          this.onKeyDown(event, `1-${this.sliderId}`);
+                        }}
+                      />
+                    </div>
+                  )}
+                  <div
+                    part="thumb-wrapper"
+                    class={
+                      this.firstHalfValueTo
+                        ? 'slider-first-half__thumb-wrapper'
+                        : 'slider-second-half__thumb-wrapper'
+                    }
+                    id={'2-' + this.sliderId + '-wrapper'}
+                    style={{ left: `${this.positionValueTo}%` }}
+                    onMouseDown={this.onButtonDown}
+                    onTouchStart={this.onButtonDown}
+                  >
+                    <div
+                      part="thumb"
+                      class="slider__thumb"
+                      tabindex="0"
+                      role="slider"
+                      id={'2-' + this.sliderId}
+                      aria-valuemin={this.min}
+                      aria-valuenow={this.valueTo}
+                      aria-valuemax={this.max}
+                      aria-valuetext={`${this.valueTo}`}
+                      aria-labelledby={`${this.sliderId}-label`}
+                      aria-orientation="horizontal"
+                      aria-disabled={this.disabled}
+                      onKeyDown={(event) => {
+                        this.onKeyDown(event, `2-${this.sliderId}`);
+                      }}
+                    />
+                  </div>
                 </div>
-              )}
-              <div
-                part="thumb-wrapper"
-                class="slider__thumb-wrapper-to"
-                id={'2-' + this.sliderId + '-wrapper'}
-                style={{ left: `${this.positionValueTo}%` }}
-                onMouseDown={this.onButtonDown}
-                onTouchStart={this.onButtonDown}
-              >
-                <div
-                  part="thumb"
-                  class="slider__thumb"
-                  tabindex="0"
-                  role="slider"
-                  id={'2-' + this.sliderId}
-                  aria-valuemin={this.min}
-                  aria-valuenow={this.valueTo}
-                  aria-valuemax={this.max}
-                  aria-valuetext={`${this.valueTo}`}
-                  aria-labelledby={`${this.sliderId}-label`}
-                  aria-orientation="horizontal"
-                  aria-disabled={this.disabled}
-                  onKeyDown={(event) => {
-                    this.onKeyDown(event, `2-${this.sliderId}`);
-                  }}
-                />
               </div>
             </div>
             <input type="hidden" value={this.valueFrom} name={this.name} />
