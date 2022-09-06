@@ -89,12 +89,19 @@ export class Slider {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
-  private dragging: boolean;
+  //Boolean whether FROM thumb is currently being dragged
+  private draggingValueFrom: boolean;
+  //Boolean whether TO thumb is currently being dragged
   private draggingValueTo: boolean;
-  private offsetLeft: number;
+  //Current positioning of the FROM thumbs as seen from the left
+  private offsetLeftValueFrom: number;
+  //Current positioning of the TO thumbs as seen from the left.
   private offsetLeftValueTo: number;
+  //Current selected thumb
   private thumbNumber: string;
+  //Based on this array the step points are generated, measured by the length the number is determined
   private stepPointInitArray = [];
+  //Signals that a range slider is rendered
   private activeRange: boolean;
 
   constructor() {
@@ -116,6 +123,7 @@ export class Slider {
     if (this.sliderId == null) {
       this.sliderId = 'slider-' + index++;
     }
+    //
     this.valueFrom || this.valueFrom === 0
       ? (this.activeRange = true)
       : (this.activeRange = false);
@@ -195,16 +203,18 @@ export class Slider {
         this.draggingValueTo = true;
         this.offsetLeftValueTo = this.sliderTrack.getBoundingClientRect().left;
       default:
-        this.dragging = true;
-        this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
+        this.draggingValueFrom = true;
+        this.offsetLeftValueFrom = this.sliderTrack.getBoundingClientRect().left;
     }
   };
 
   onDragging = (event: any) => {
     switch (this.thumbNumber) {
       case '1':
-        if (this.dragging) {
-          this.setValue(this.getNextDraggingValue(event, this.offsetLeft));
+        if (this.draggingValueFrom) {
+          this.setValue(
+            this.getNextDraggingValue(event, this.offsetLeftValueFrom)
+          );
         }
       case '2':
         if (this.draggingValueTo) {
@@ -231,7 +241,7 @@ export class Slider {
         this.draggingValueTo = false;
         emitEvent(this, 'scaleChange', this.valueTo);
       default:
-        this.dragging = false;
+        this.draggingValueFrom = false;
         emitEvent(this, 'scaleChange', this.valueFrom);
     }
     this.removeGlobalListeners();
