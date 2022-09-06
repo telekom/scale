@@ -168,7 +168,6 @@ export class Slider {
     const sliderLength = this.hostElement.shadowRoot.querySelector(
       '#slider_track-point-wrapper'
     ) as HTMLInputElement;
-    console.log(sliderLength.offsetWidth);
     this.sliderLength = sliderLength.offsetWidth;
   }
 
@@ -261,6 +260,11 @@ export class Slider {
     emitEvent(this, 'scaleInput', this.valueTo);
   };
 
+  setPosition = () => {
+    this.positionValueFrom = this.getClampedPosition(this.valueFrom);
+    this.positionValueTo = this.getClampedPosition(this.valueTo);
+  };
+
   initPosition = () => {
     this.positionValueFrom = !this.valueFrom
       ? 0
@@ -270,44 +274,9 @@ export class Slider {
       : this.getClampedPosition(this.valueTo);
   };
 
-  setPosition = () => {
-    console.log(this.valueTo);
-    this.positionValueFrom = this.getClampedPosition(this.valueFrom);
-    this.positionValueTo = this.getClampedPosition(this.valueTo);
-  };
-
   getClampedPosition(value: number) {
     const clampedValue = this.clamp(value);
     return ((clampedValue - this.min) * 100) / (this.max - this.min);
-  }
-
-  addGlobalListeners() {
-    window.addEventListener('mousemove', this.onDragging.bind(this));
-    window.addEventListener('mouseup', this.onDragEnd.bind(this));
-    window.addEventListener('touchmove', this.onDragging.bind(this));
-    window.addEventListener('touchend', this.onDragEnd.bind(this));
-  }
-
-  removeGlobalListeners() {
-    window.removeEventListener('mousemove', this.onDragging);
-    window.removeEventListener('mouseup', this.onDragEnd);
-    window.removeEventListener('touchmove', this.onDragging);
-    window.removeEventListener('touchend', this.onDragEnd);
-  }
-
-  generateStepPoints() {
-    const numberOfSteps = this.max / this.step;
-    this.stepPointInitArray.length = 0;
-    for (let i = -1; i < numberOfSteps; i++) {
-      this.stepPointInitArray.push(`${i + 1}`);
-    }
-  }
-
-  generateCurrentValueArray() {
-    const currentValues = [];
-    currentValues.push(this.valueFrom != null ? this.valueFrom : '0');
-    currentValues.push(this.valueTo != null ? this.valueTo : '0');
-    return currentValues;
   }
 
   getLowestValue() {
@@ -340,6 +309,35 @@ export class Slider {
       case 'from':
         return sliderPositionFromInPx + 8;
     }
+  }
+
+  generateStepPoints() {
+    const numberOfSteps = this.max / this.step;
+    this.stepPointInitArray.length = 0;
+    for (let i = -1; i < numberOfSteps; i++) {
+      this.stepPointInitArray.push(`${i + 1}`);
+    }
+  }
+
+  generateCurrentValueArray() {
+    const currentValues = [];
+    currentValues.push(this.valueFrom != null ? this.valueFrom : '0');
+    currentValues.push(this.valueTo != null ? this.valueTo : '0');
+    return currentValues;
+  }
+
+  addGlobalListeners() {
+    window.addEventListener('mousemove', this.onDragging.bind(this));
+    window.addEventListener('mouseup', this.onDragEnd.bind(this));
+    window.addEventListener('touchmove', this.onDragging.bind(this));
+    window.addEventListener('touchend', this.onDragEnd.bind(this));
+  }
+
+  removeGlobalListeners() {
+    window.removeEventListener('mousemove', this.onDragging);
+    window.removeEventListener('mouseup', this.onDragEnd);
+    window.removeEventListener('touchmove', this.onDragging);
+    window.removeEventListener('touchend', this.onDragEnd);
   }
 
   render() {

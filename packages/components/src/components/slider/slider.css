@@ -24,7 +24,7 @@
   --background-track: var(--telekom-color-ui-faint);
   --background-bar-disabled: var(--telekom-color-ui-disabled);
   --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
-  --width-track: 500px;
+  --width-track: 361px;
 }
 
 .slider {
