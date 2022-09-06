@@ -130,13 +130,13 @@ scale-switch {
   align-items: center;
   width: 50%;
   height: var(--height);
-  margin-left: 50%;
+  margin-left: calc(50% - var(--offset));
   font: var(--font-io-text);
   line-height: var(--telekom-typography-line-spacing-none);
 }
 
 .switch--checked .switch__io-text {
-  margin-left: 0;
+  margin-left: var(--offset);
   color: var(--telekom-color-text-and-icon-white-standard);
 }
 
