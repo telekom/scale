@@ -25,6 +25,7 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+import { range } from 'lodash';
 
 let index = 0;
 
@@ -88,17 +89,18 @@ export class Slider {
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
   //Boolean whether FROM thumb is currently being dragged
-  private dragging: boolean;
+  private draggingValueFrom: boolean;
   //Boolean whether TO thumb is currently being dragged
   private draggingValueTo: boolean;
   //Current positioning of the FROM thumbs as seen from the left
-  private offsetLeft: number;
+  private offsetLeftValueFrom: number;
   //Current positioning of the TO thumbs as seen from the left.
   private offsetLeftValueTo: number;
   //Current selected thumb
   private thumbNumber: string;
   //Based on this array the step points are generated, measured by the length the number is determined
   private stepPointInitArray = [];
+  //Boolean to signal the use of the range slider
   private activeRange: boolean;
   //Boolean to monitor when the TO thumb is pushed over the half of the slider
   private firstHalfValueTo: boolean;
@@ -195,16 +197,18 @@ export class Slider {
         this.draggingValueTo = true;
         this.offsetLeftValueTo = this.sliderTrack.getBoundingClientRect().left;
       default:
-        this.dragging = true;
-        this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
+        this.draggingValueFrom = true;
+        this.offsetLeftValueFrom = this.sliderTrack.getBoundingClientRect().left;
     }
   };
 
   onDragging = (event: any) => {
     switch (this.thumbNumber) {
       case '1':
-        if (this.dragging) {
-          this.setValue(this.getNextDraggingValue(event, this.offsetLeft));
+        if (this.draggingValueFrom) {
+          this.setValue(
+            this.getNextDraggingValue(event, this.offsetLeftValueFrom)
+          );
         }
       case '2':
         if (this.draggingValueTo) {
@@ -231,7 +235,7 @@ export class Slider {
         this.draggingValueTo = false;
         emitEvent(this, 'scaleChange', this.valueTo);
       default:
-        this.dragging = false;
+        this.draggingValueFrom = false;
         emitEvent(this, 'scaleChange', this.valueFrom);
     }
     this.removeGlobalListeners();
@@ -350,9 +354,6 @@ export class Slider {
               part="track"
               class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
-              style={{
-                backgroundColor: this.valueFrom ? '#e7e7e9' : '#e20074',
-              }}
             >
               <div part="track" class="slider__sub-track-helper">
                 <div part="track" class="slider__sub-track">
@@ -483,7 +484,8 @@ export class Slider {
     return classNames(
       component,
       this.disabled && `${prefix}disabled`,
-      this.platform && `${prefix}${this.platform}`
+      this.platform && `${prefix}${this.platform}`,
+      this.activeRange && `${prefix}range`
     );
   }
 
