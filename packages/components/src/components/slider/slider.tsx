@@ -25,7 +25,6 @@ import {
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
-import { range } from 'lodash';
 
 let index = 0;
 
@@ -391,7 +390,7 @@ export class Slider {
                     class="slider_track-point-wrapper"
                     id="slider_track-point-wrapper"
                   >
-                    {this.visibleStep === true
+                    {this.visibleStep === true && !this.disabled
                       ? this.stepPointInitArray.map(() => {
                           return <div class="slider_track-point"></div>;
                         })

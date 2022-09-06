@@ -64,7 +64,7 @@
 
 .slider .slider__track {
   width: var(--width-track);
-  background-color: blue;
+  background-color: var(--telekom-color-primary-standard);
   height: 6px;
   margin: var(--telekom-spacing-unit-x4) 0;
   display: flex;
@@ -73,6 +73,14 @@
   align-items: center;
   border-radius: 100px;
   z-index: var(--scl-z-index-10);
+}
+
+.slider--disabled .slider__track {
+  background-color: var(--background-bar-disabled);
+}
+
+.slider--range .slider__track {
+  background-color: var(--background-track);
 }
 
 .slider .slider__sub-track {
