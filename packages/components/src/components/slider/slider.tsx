@@ -78,6 +78,8 @@ export class Slider {
   @State() positionValueFrom: number;
   // The actual position in % of the slider thumb
   @State() positionValueTo: number;
+  // The selected slider length
+  @State() sliderLength: number;
 
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<number>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -87,24 +89,13 @@ export class Slider {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
-  //Boolean whether FROM thumb is currently being dragged
-  private draggingValueFrom: boolean;
-  //Boolean whether TO thumb is currently being dragged
+  private dragging: boolean;
   private draggingValueTo: boolean;
-  //Current positioning of the FROM thumbs as seen from the left
-  private offsetLeftValueFrom: number;
-  //Current positioning of the TO thumbs as seen from the left.
+  private offsetLeft: number;
   private offsetLeftValueTo: number;
-  //Current selected thumb
   private thumbNumber: string;
-  //Based on this array the step points are generated, measured by the length the number is determined
   private stepPointInitArray = [];
-  //Boolean to signal the use of the range slider
   private activeRange: boolean;
-  //Boolean to monitor when the TO thumb is pushed over the half of the slider
-  private firstHalfValueTo: boolean;
-  //Boolean to monitor when the FROM thumb is pushed over the half of the slider
-  private firstHalfValueFrom: boolean;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -165,6 +156,14 @@ export class Slider {
     }
   }
 
+  componentDidRender() {
+    const sliderLength = this.hostElement.shadowRoot.querySelector(
+      '#slider_track-point-wrapper'
+    ) as HTMLInputElement;
+    console.log(sliderLength.offsetWidth);
+    this.sliderLength = sliderLength.offsetWidth;
+  }
+
   onButtonDown = (event: any) => {
     const targetIDString = event.target.id;
     this.thumbNumber = targetIDString.charAt(0);
@@ -196,18 +195,16 @@ export class Slider {
         this.draggingValueTo = true;
         this.offsetLeftValueTo = this.sliderTrack.getBoundingClientRect().left;
       default:
-        this.draggingValueFrom = true;
-        this.offsetLeftValueFrom = this.sliderTrack.getBoundingClientRect().left;
+        this.dragging = true;
+        this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
     }
   };
 
   onDragging = (event: any) => {
     switch (this.thumbNumber) {
       case '1':
-        if (this.draggingValueFrom) {
-          this.setValue(
-            this.getNextDraggingValue(event, this.offsetLeftValueFrom)
-          );
+        if (this.dragging) {
+          this.setValue(this.getNextDraggingValue(event, this.offsetLeft));
         }
       case '2':
         if (this.draggingValueTo) {
@@ -234,7 +231,7 @@ export class Slider {
         this.draggingValueTo = false;
         emitEvent(this, 'scaleChange', this.valueTo);
       default:
-        this.draggingValueFrom = false;
+        this.dragging = false;
         emitEvent(this, 'scaleChange', this.valueFrom);
     }
     this.removeGlobalListeners();
@@ -246,17 +243,11 @@ export class Slider {
 
   setValue = (nextValue: number) => {
     this.valueFrom = this.clamp(nextValue);
-    this.valueFrom < this.max / 2
-      ? (this.firstHalfValueFrom = true)
-      : (this.firstHalfValueFrom = false);
     emitEvent(this, 'scaleInput', this.valueFrom);
   };
 
   setValueTo = (nextValue: number) => {
     this.valueTo = this.clamp(nextValue);
-    this.valueTo < this.max / 2
-      ? (this.firstHalfValueTo = true)
-      : (this.firstHalfValueTo = false);
     emitEvent(this, 'scaleInput', this.valueTo);
   };
 
@@ -270,6 +261,7 @@ export class Slider {
   };
 
   setPosition = () => {
+    console.log(this.valueTo);
     this.positionValueFrom = this.getClampedPosition(this.valueFrom);
     this.positionValueTo = this.getClampedPosition(this.valueTo);
   };
@@ -320,6 +312,26 @@ export class Slider {
     return this.getHighestValue() - this.getLowestValue();
   }
 
+  /* Calculate the current left offset for the thumbs in px. 
+  Here the horizontal paddings are already considered. */
+  getThumbOffset(thumb: string) {
+    // -16px, sum of both paddings right and left of 8px each
+    const sliderLengthWithoutHoricontalPadding = this.sliderLength - 16;
+    const valueRange = this.max - this.min;
+    const sliderPositionToInPx =
+      (this.valueTo / valueRange) * sliderLengthWithoutHoricontalPadding;
+    const sliderPositionFromInPx =
+      (this.valueFrom / valueRange) * sliderLengthWithoutHoricontalPadding;
+
+    // 8px, related to the padding-left
+    switch (thumb) {
+      case 'to':
+        return sliderPositionToInPx + 8;
+      case 'from':
+        return sliderPositionFromInPx + 8;
+    }
+  }
+
   render() {
     return (
       <Host>
@@ -354,111 +366,103 @@ export class Slider {
               class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
             >
-              <div part="track" class="slider__sub-track-helper">
-                <div part="track" class="slider__sub-track">
-                  {this.activeRange ? (
-                    <div
-                      part="bar"
-                      class="slider__bar"
-                      style={{
-                        width: `${
-                          (this.getDistanceBetweenValues() / this.max) * 100
-                        }%`,
-                        left: `${(this.getLowestValue() / this.max) * 100}%`,
-                        backgroundColor: this.customColor
-                          ? this.customColor
-                          : this.disabled
-                          ? `var(--background-bar-disabled)`
-                          : `var(--background-bar)`,
-                      }}
-                    ></div>
-                  ) : (
-                    <div
-                      part="bar"
-                      class="slider__bar"
-                      style={{
-                        width: `${this.positionValueTo}%`,
-                        backgroundColor: this.customColor
-                          ? this.customColor
-                          : this.disabled
-                          ? `var(--background-bar-disabled)`
-                          : `var(--background-bar)`,
-                      }}
-                    ></div>
-                  )}
+              {this.activeRange ? (
+                <div
+                  part="bar"
+                  class="slider__bar"
+                  style={{
+                    width: `${
+                      (this.getDistanceBetweenValues() / this.max) * 100
+                    }%`,
+                    left: `${(this.getLowestValue() / this.max) * 100}%`,
+                    backgroundColor: this.customColor
+                      ? this.customColor
+                      : this.disabled
+                      ? `var(--background-bar-disabled)`
+                      : `var(--background-bar)`,
+                  }}
+                ></div>
+              ) : (
+                <div
+                  part="bar"
+                  class="slider__bar"
+                  style={{
+                    width: `${this.positionValueTo}%`,
+                    backgroundColor: this.customColor
+                      ? this.customColor
+                      : this.disabled
+                      ? `var(--background-bar-disabled)`
+                      : `var(--background-bar)`,
+                  }}
+                ></div>
+              )}
+              <div
+                class="slider_track-point-wrapper"
+                id="slider_track-point-wrapper"
+              >
+                {this.visibleStep === true
+                  ? this.stepPointInitArray.map(() => {
+                      return <div class="slider_track-point"></div>;
+                    })
+                  : null}
+              </div>
+              {this.activeRange && (
+                <div
+                  part="thumb-wrapper"
+                  class="slider__thumb-wrapper"
+                  id={'1-' + this.sliderId + '-wrapper'}
+                  style={{
+                    left: `${this.getThumbOffset('from')}px`,
+                  }}
+                  onMouseDown={this.onButtonDown}
+                  onTouchStart={this.onButtonDown}
+                >
                   <div
-                    class="slider_track-point-wrapper"
-                    id="slider_track-point-wrapper"
-                  >
-                    {this.visibleStep === true && !this.disabled
-                      ? this.stepPointInitArray.map(() => {
-                          return <div class="slider_track-point"></div>;
-                        })
-                      : null}
-                  </div>
-                  {this.activeRange && (
-                    <div
-                      part="thumb-wrapper"
-                      class={
-                        this.firstHalfValueFrom
-                          ? 'slider-first-half__thumb-wrapper'
-                          : 'slider-second-half__thumb-wrapper'
-                      }
-                      id={'1-' + this.sliderId + '-wrapper'}
-                      style={{ left: `${this.positionValueFrom}%` }}
-                      onMouseDown={this.onButtonDown}
-                      onTouchStart={this.onButtonDown}
-                    >
-                      <div
-                        part="thumb"
-                        class="slider__thumb"
-                        tabindex="0"
-                        role="slider"
-                        id={'1-' + this.sliderId}
-                        aria-valuemin={this.min}
-                        aria-valuenow={this.valueFrom}
-                        aria-valuemax={this.max}
-                        aria-valuetext={`${this.valueFrom}`}
-                        aria-labelledby={`${this.sliderId}-label`}
-                        aria-orientation="horizontal"
-                        aria-disabled={this.disabled}
-                        onKeyDown={(event) => {
-                          this.onKeyDown(event, `1-${this.sliderId}`);
-                        }}
-                      />
-                    </div>
-                  )}
-                  <div
-                    part="thumb-wrapper"
-                    class={
-                      this.firstHalfValueTo
-                        ? 'slider-first-half__thumb-wrapper'
-                        : 'slider-second-half__thumb-wrapper'
-                    }
-                    id={'2-' + this.sliderId + '-wrapper'}
-                    style={{ left: `${this.positionValueTo}%` }}
-                    onMouseDown={this.onButtonDown}
-                    onTouchStart={this.onButtonDown}
-                  >
-                    <div
-                      part="thumb"
-                      class="slider__thumb"
-                      tabindex="0"
-                      role="slider"
-                      id={'2-' + this.sliderId}
-                      aria-valuemin={this.min}
-                      aria-valuenow={this.valueTo}
-                      aria-valuemax={this.max}
-                      aria-valuetext={`${this.valueTo}`}
-                      aria-labelledby={`${this.sliderId}-label`}
-                      aria-orientation="horizontal"
-                      aria-disabled={this.disabled}
-                      onKeyDown={(event) => {
-                        this.onKeyDown(event, `2-${this.sliderId}`);
-                      }}
-                    />
-                  </div>
+                    part="thumb"
+                    class="slider__thumb"
+                    tabindex="0"
+                    role="slider"
+                    id={'1-' + this.sliderId}
+                    aria-valuemin={this.min}
+                    aria-valuenow={this.valueFrom}
+                    aria-valuemax={this.max}
+                    aria-valuetext={`${this.valueFrom}`}
+                    aria-labelledby={`${this.sliderId}-label`}
+                    aria-orientation="horizontal"
+                    aria-disabled={this.disabled}
+                    onKeyDown={(event) => {
+                      this.onKeyDown(event, `1-${this.sliderId}`);
+                    }}
+                  />
                 </div>
+              )}
+              <div
+                part="thumb-wrapper"
+                class="slider__thumb-wrapper-to"
+                id={'2-' + this.sliderId + '-wrapper'}
+                style={{
+                  left: `${this.getThumbOffset('to')}px`,
+                }}
+                onMouseDown={this.onButtonDown}
+                onTouchStart={this.onButtonDown}
+              >
+                <div
+                  part="thumb"
+                  class="slider__thumb"
+                  tabindex="0"
+                  role="slider"
+                  id={'2-' + this.sliderId}
+                  aria-valuemin={this.min}
+                  aria-valuenow={this.valueTo}
+                  aria-valuemax={this.max}
+                  aria-valuetext={`${this.valueTo}`}
+                  aria-labelledby={`${this.sliderId}-label`}
+                  aria-orientation="horizontal"
+                  aria-disabled={this.disabled}
+                  onKeyDown={(event) => {
+                    this.onKeyDown(event, `2-${this.sliderId}`);
+                  }}
+                />
               </div>
             </div>
             <input type="hidden" value={this.valueFrom} name={this.name} />
@@ -483,8 +487,7 @@ export class Slider {
     return classNames(
       component,
       this.disabled && `${prefix}disabled`,
-      this.platform && `${prefix}${this.platform}`,
-      this.activeRange && `${prefix}range`
+      this.platform && `${prefix}${this.platform}`
     );
   }
 
