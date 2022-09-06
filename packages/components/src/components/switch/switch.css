@@ -166,8 +166,7 @@ scale-switch {
 
 [data-platform='android'] .switch__thumb {
   /* FIXME no color token for this :( */
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: none;
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x025) rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
