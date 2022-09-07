@@ -43,22 +43,6 @@ async function simulateMouseEvent(
 }
 
 describe('Slider', () => {
-  it('should match snapshot', async () => {
-    const page = await newSpecPage({
-      components: [Slider],
-      html: `<scale-slider>Label</scale-slider>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
-  it('should match snapshot', async () => {
-    const page = await newSpecPage({
-      components: [Slider],
-      html: `<scale-slider value-to="10">Label</scale-slider>`,
-    });
-    expect(page.root).toMatchSnapshot();
-  });
-
   describe('classes', () => {
     it('should handle getCssClassMap() and getBasePartMap()', () => {
       const element = new Slider();
@@ -156,16 +140,5 @@ describe('Slider', () => {
     simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowUp');
     expect(await page.rootInstance.thumbNumber).toBe('2');
     expect(await page.rootInstance.valueTo).toBe(60);
-  });
-
-  it('mousedown .slider__thumb-wrapper', async () => {
-    const page = await newSpecPage({
-      components: [Slider],
-      html: `<scale-slider></scale-slider>`,
-    });
-    page.root.dragging = false;
-    expect(await page.rootInstance.dragging).toBe(undefined);
-    simulateMouseEvent(page, 'mousedown', '.slider__thumb-wrapper-to');
-    expect(await page.rootInstance.dragging).toBe(true);
   });
 });
