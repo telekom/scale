@@ -7,6 +7,7 @@
     :duration="duration"
     :close-button-label="closeButtonLabel"
     :close-button-title="closeButtonTitle"
+    :display-close-button="displayCloseButton"
     :align-actions="alignActions"
     :styles="styles"
     :allow-injecting-style-to-body="allowInjectingStyleToBody"
@@ -34,6 +35,7 @@ export default {
     duration: { type: Number, default: 200 },
     closeButtonLabel: String,
     closeButtonTitle: String,
+    displayCloseButton: { type: Boolean, default: true },
     alignActions: { type: String, default: 'right' },
     allowInjectingStyleToBody: Boolean,
     styles: { type: String },

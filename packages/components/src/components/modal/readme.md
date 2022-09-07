@@ -13,6 +13,7 @@
 | `allowInjectingStyleToBody` | `allow-injecting-style-to-body` | (optional) allow to inject css style {overflow: hidden} to body when modal is open | `boolean`           | `false`          |
 | `closeButtonLabel`          | `close-button-label`            | (optional) Label for close button                                                  | `string`            | `'Close Pop-up'` |
 | `closeButtonTitle`          | `close-button-title`            | (optional) title for close button                                                  | `string`            | `'Close'`        |
+| `displayCloseButton`        | `display-close-button`          | (optional) display close button                                                    | `boolean`           | `true`           |
 | `duration`                  | `duration`                      | (optional) Transition duration                                                     | `number`            | `200`            |
 | `heading`                   | `heading`                       | Modal heading                                                                      | `string`            | `undefined`      |
 | `opened`                    | `opened`                        | (optional) If `true`, the Modal is open.                                           | `boolean`           | `false`          |
