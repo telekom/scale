@@ -7,7 +7,7 @@
   --spacing-left-checkbox: var(--telekom-spacing-unit-x2);
 
   /* slotted item */
-  --spacing-top-slotted-item: var(--telekom-spacing-unit-x2);
+  --spacing-top-slotted-item: var(--telekom-spacing-unit-x3);
 }
 
 .checkbox-group {
