@@ -5,7 +5,7 @@ describe('Tag', () => {
     });
     test.each([
       ['standard'],
-      ['dissmisable-tag'],
+      ['dismissable-tag'],
       ['small-tag'],
       ['small-dismissable-tag'],
       ['disabled-dismissable-tag'],

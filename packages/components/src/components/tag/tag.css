@@ -166,11 +166,11 @@ disabled
 
 .tag--disabled {
   background-color: var(--telekom-color-ui-faint) !important;
-  color: #00000040 !important;
+  color: var(--color-disabled) !important;
   pointer-events: none;
 }
 .tag--disabled scale-icon-action-close {
-  color: #00000040 !important;
+  color: var(--color-disabled) !important;
   pointer-events: none;
 }
 
