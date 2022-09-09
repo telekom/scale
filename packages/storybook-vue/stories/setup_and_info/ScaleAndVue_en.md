@@ -63,6 +63,19 @@ rules: [
   // ...
 ];
 
+// in vite.config.js
+defineConfig({
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('scale-'),
+        },
+      },
+    }),
+  ],
+});
+
 // or in main.js (on-the-fly template compilation)
 const app = Vue.createApp({});
 app.config.compilerOptions.isCustomElement = (tag) => tag.startsWith('scale-');
