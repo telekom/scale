@@ -73,6 +73,8 @@ export class Slider {
   @Prop() sliderId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) */
+  @Prop() helperText?: string;
 
   // The actual position in % of the slider thumb
   @State() positionValueFrom: number;
@@ -474,6 +476,9 @@ export class Slider {
               </div>
             </div>
             <input type="hidden" value={this.valueFrom} name={this.name} />
+            {this.helperText && (
+              <p class="slider__helper-text">{this.helperText}</p>
+            )}
           </div>
         </div>
       </Host>

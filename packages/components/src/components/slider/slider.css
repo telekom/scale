@@ -130,6 +130,7 @@
   width: 22px;
   height: 22px;
   background-color: var(--telekom-color-primary-standard);
+  border-color: #00000014;
 }
 
 .slider .slider__thumb-wrapper-to {
@@ -178,11 +179,21 @@
   border-color: var(--telekom-color-ui-border-disabled);
 }
 
-.slider--disabled .slider__thumb {
-  display: none;
+.slider--disabled .slider__thumb:focus {
+  box-shadow: none;
+}
+.slider--disabled .slider__thumb:active {
+  border-color: #00000005;
+}
+.slider--disabled .slider__thumb:hover {
+  border-color: #00000005;
 }
 
 .slider--disabled .slider__label {
+  color: var(--color-label-disabled);
+}
+
+.slider--disabled .slider__display-value {
   color: var(--color-label-disabled);
 }
 
@@ -206,4 +217,12 @@
   border-radius: 50%;
   background-color: var(--telekom-color-text-and-icon-black-additional);
   float: left;
+}
+
+.slider__helper-text {
+  color: var(--telekom-color-text-and-icon-additional);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  font-size: var(--telekom-typography-font-size-small);
+  margin-bottom: 0;
+  line-height: 135%;
 }

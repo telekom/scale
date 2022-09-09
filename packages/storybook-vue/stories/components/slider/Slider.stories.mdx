@@ -36,6 +36,7 @@ export const Template = (args, { argTypes }) => ({
         :value-to="valueTo"
         :visible-step="visibleStep"
         :platform="platform"
+        :helper-text="helperText"
         @scaleButtonDown="scaleButtonDown"
         @scaleDragStart="scaleDragStart"
         @scaleDragging="scaleDragging"
@@ -246,4 +247,27 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-slider label="Disabled Slider" value-to="40" disabled></scale-slider>
+```
+
+## Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: 'Helper Text',
+      valueTo: 40,
+      helperText: 'Helper text message',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Disabled Slider"
+  value-to="40"
+  helper-text="Helper text message"
+></scale-slider>
 ```

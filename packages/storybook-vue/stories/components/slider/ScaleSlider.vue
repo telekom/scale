@@ -11,6 +11,7 @@
     :value-from="valueFrom"
     :value-to="valueTo"
     :visible-step="visibleStep"
+    :helper-text="helperText"
     @scaleChange="scaleChange"
     @scaleInput="scaleInput"
   >
@@ -32,6 +33,7 @@ export default {
     valueFrom: Number,
     visibleStep: Boolean,
     platform: { type: 'web' | 'ios' | 'android', default: 'web' },
+    helperText: String,
   },
   methods: {
     scaleChange($event) {

@@ -12,6 +12,7 @@
 | `customColor` | `custom-color` | <span style="color:red">**[DEPRECATED]**</span> - (optional) slider custom color<br/><br/> | `string`                      | `undefined` |
 | `decimals`    | `decimals`     | (optional) number of decimal places                                                        | `0 \| 1 \| 2`                 | `0`         |
 | `disabled`    | `disabled`     | (optional) disabled                                                                        | `boolean`                     | `false`     |
+| `helperText`  | `helper-text`  | (optional)                                                                                 | `string`                      | `undefined` |
 | `label`       | `label`        | (optional) slider label                                                                    | `string`                      | `undefined` |
 | `max`         | `max`          | (optional) the maximal value of the slider                                                 | `number`                      | `100`       |
 | `min`         | `min`          | (optional) the minimal value of the slider                                                 | `number`                      | `0`         |
