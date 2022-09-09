@@ -1,7 +1,7 @@
 :host,
 .checkbox-group {
   /* checkbox-group container */
-  --spacing-left-container: var(--telekom-spacing-unit-x6);
+  --spacing-left-container: var(--telekom-spacing-unit-x8);
 
   /* checkbox-group checkbox */
   --spacing-left-checkbox: var(--telekom-spacing-unit-x2);
