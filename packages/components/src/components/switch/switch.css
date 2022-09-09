@@ -176,7 +176,7 @@
   input:checked
   ~ .switch__wrapper
   .switch__toggle {
-  --toggle: var(--telekom-color-ui-base);
+  --toggle: var(--telekom-color-ui-white);
 }
 
 .switch:not(.switch--disabled):hover input:checked ~ .switch__wrapper {
@@ -188,7 +188,7 @@
   input:checked
   ~ .switch__wrapper
   .switch__toggle {
-  --toggle: var(--telekom-color-ui-base);
+  --toggle: var(--telekom-color-ui-white);
 }
 
 .switch:not(.switch--disabled):active input:checked ~ .switch__wrapper {
@@ -200,7 +200,7 @@
   input:checked
   ~ .switch__wrapper
   .switch__toggle {
-  --toggle: var(--telekom-color-ui-base);
+  --toggle: var(--telekom-color-ui-white);
 }
 
 /* disabled states */
