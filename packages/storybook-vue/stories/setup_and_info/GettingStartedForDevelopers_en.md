@@ -32,8 +32,6 @@ import { defineCustomElements } from "@telekom/scale-components/loader";
 defineCustomElements(window);
 ```
 
-> As of July 2021, modern build tools like Vite or Snowpack will break with this lazy-loading mechanism ([see GitHub issue in Stencil's repo](https://github.com/ionic-team/stencil/issues/2827)). To work around this issue, please load the library via `link` and `script` tags as in the "Plain HTML" snippet above.
-
 ### NPM Packages
 
 | Package Name                        | Description                                 |
