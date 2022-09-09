@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+
+### Bug Fixes
+
+* **dropdown-select-item:** reflect value prop, fixes [#1194](https://github.com/telekom/scale/issues/1194) ([#1196](https://github.com/telekom/scale/issues/1196)) ([85bd383](https://github.com/telekom/scale/commit/85bd3834e29070d8f6cd278ede3afcf30c5e3185))
+* checkbox group leads to double scroll in modal window ([#1188](https://github.com/telekom/scale/issues/1188)) ([fc08dcf](https://github.com/telekom/scale/commit/fc08dcfd2d84ad0419a940cfb6c371b8b0850497))
+
+
+### Features
+
+* **TeleNeo:** update fonts to latest ([#1186](https://github.com/telekom/scale/issues/1186)) ([cb5a8bf](https://github.com/telekom/scale/commit/cb5a8bf822f012fb49a577df9254c21c8989f42f))
+
+
+
+
+
 # [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
 
 
