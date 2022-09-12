@@ -59,8 +59,8 @@ export class Modal {
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
   /** (optional) title for close button */
   @Prop() closeButtonTitle?: string = 'Close';
-  /** (optional) display close button */
-  @Prop() displayCloseButton?: boolean = true;
+  /** (optional) hide close button */
+  @Prop() omitCloseButton?: boolean = false;
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
@@ -276,7 +276,7 @@ export class Modal {
               <h2 class="modal__heading" part="heading">
                 {this.heading}
               </h2>
-              {this.displayCloseButton && (
+              {!this.omitCloseButton && (
                 <button
                   ref={(el) => (this.closeButton = el)}
                   class="modal__close-button"

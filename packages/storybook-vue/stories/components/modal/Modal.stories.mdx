@@ -48,7 +48,7 @@ import ScaleModal from './ScaleModal.vue';
     },
     'scale-before-close': {
       description:
-        'It fires on every close attempt. Calling `event.preventDefault()` will prevent the modal from closing.',
+        'It fires on every close attempt. Those events can be one of the event.detail.trigger, such as CLOSE_BUTTON, ESCAPE_KEY or BACKDROP, depending on the action that triggered the event. Calling `event.preventDefault()` will prevent the modal from closing.',
     },
   }}
 />
@@ -81,7 +81,7 @@ export const Template = (args, context) => ({
         :duration="duration"
         :close-button-label="closeButtonLabel"
         :close-button-title="closeButtonTitle"
-        :display-close-button="displayCloseButton"
+        :omit-close-button="omitCloseButton"
         :align-actions="alignActions"
         :styles="styles"
         :allow-injecting-style-to-body="allowInjectingStyleToBody"
