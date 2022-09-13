@@ -115,20 +115,20 @@ dismissable
 .tag--dismissable:not(.tag--disabled) button:hover {
   background: var(--background-button-dismissable-hover);
 }
-.tag--dismissable.tag--color-standard:not(.tag--disabled) button:hover {
+.tag--dismissable.tag--color-grey:not(.tag--disabled) button:hover {
   background: var(--background-button-standard-dismissible-hover);
 }
-.tag--dismissable.tag--type-strong.tag--color-standard:not(.tag--disabled)
+.tag--dismissable.tag--type-strong.tag--color-grey:not(.tag--disabled)
   button:hover {
   background: var(--background-button-standard-strong-dismissible-hover);
 }
 .tag--dismissable button:active {
   background: var(--background-button-dismissable-active);
 }
-.tag--dismissable.tag--color-standard button:active {
+.tag--dismissable.tag--color-grey button:active {
   background: var(--background-button-standard-dismissible-hover);
 }
-.tag--dismissable.tag--type-strong.tag--color-standard button:active {
+.tag--dismissable.tag--type-strong.tag--color-grey button:active {
   background: var(--background-button-standard-strong-dismissible-hover);
 }
 .tag--dismissable button:focus scale-icon-action-close {
@@ -201,12 +201,11 @@ standard type
 **/
 
 /*standard*/
-.tag--type-standard.tag--color-standard {
+.tag--type-standard.tag--color-grey {
   background-color: var(--telekom-color-ui-faint);
   color: var(--telekom-color-text-and-icon-standard);
 }
-.tag--type-standard.tag--color-standard.tag--dismissable
-  scale-icon-action-close {
+.tag--type-standard.tag--color-grey.tag--dismissable scale-icon-action-close {
   color: var(--telekom-color-text-and-icon-standard);
 }
 /*cyan*/
@@ -295,11 +294,11 @@ strong type
   color: var(--telekom-color-text-and-icon-additional);
 }
 /*standard*/
-.tag--type-strong.tag--color-standard {
+.tag--type-strong.tag--color-grey {
   background-color: var(--telekom-color-ui-extra-strong);
   color: var(--telekom-color-text-and-icon-inverted-standard);
 }
-.tag--type-strong.tag--color-standard.tag--dismissable scale-icon-action-close {
+.tag--type-strong.tag--color-grey.tag--dismissable scale-icon-action-close {
   color: var(--telekom-color-text-and-icon-inverted-standard);
 }
 /*cyan*/
