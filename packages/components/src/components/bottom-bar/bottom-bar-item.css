@@ -1,0 +1,33 @@
+:host {
+    --selected-color: var(--telekom-color-text-and-icon-primary-standard);
+    --label-size: var(--telekom-typography-font-size-small);
+    --label-weight: var(--telekom-typography-font-weight-medium);
+}
+
+.bottom-bar-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+.bottom-bar-item--selected {
+    color: var(--selected-color);
+}
+
+.bottom-bar-item__label {
+    font-size: var(--label-size);
+    font-weight: var(--label-weight);
+} 
+
+[data-platform='ios'] .scale-bottom-bar-item {
+    border: 2px solid blue;
+    --selected-color: blue;
+  }
+
+  [data-platform='android'] scale-bottom-bar-item {
+    border: 2px solid green;
+    --selected-color: green;
+  }
