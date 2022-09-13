@@ -1,0 +1,188 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleInteractiveIcon from './ScaleInteractiveIcon';
+
+<Meta
+  title="Beta Components/Interactive Icon"
+  component={ScaleInteractiveIcon}
+  argTypes={{}}
+/>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="medium">
+          <scale-icon-alert-help accessibility-title="help" size="24"></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+## Selected
+
+<Canvas withSource="none">
+  <Story name="Selected" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="medium">
+          <scale-icon-alert-help accessibility-title="help" size="24" selected></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="medium">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="24"
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
+
+## Active
+
+<Canvas withSource="none">
+  <Story name="Active" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="medium" active="true">
+          <scale-icon-alert-help accessibility-title="help" size="24"></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="medium" active="true">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="24"
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
+
+## Active Selected
+
+<Canvas withSource="none">
+  <Story name="Active Selected" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="medium" active="true">
+          <scale-icon-alert-help accessibility-title="help" size="24" selected></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="medium" active="true">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="24"
+    selected
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
+
+## Small
+
+<Canvas withSource="none">
+  <Story name="Small" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="small">
+          <scale-icon-alert-help accessibility-title="help" size="16"></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="small">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="16"
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
+
+## Small Selected
+
+<Canvas withSource="none">
+  <Story name="Small Selected" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="small">
+          <scale-icon-alert-help accessibility-title="help" size="16" selected></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="small">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="16"
+    selected
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
+
+## Small Active
+
+<Canvas withSource="none">
+  <Story name="Small Active" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="small" active="true">
+          <scale-icon-alert-help accessibility-title="help" size="16"></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="small" active="true">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="16"
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
+
+## Small Active Selected
+
+<Canvas withSource="none">
+  <Story name="Small Active Selected" args={{}}>
+    {() => ({
+      template: `
+        <scale-interactive-icon size="small" active="true">
+          <scale-icon-alert-help accessibility-title="help" size="16" selected></scale-icon-alert-help>
+        </scale-interactive-icon>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-interactive-icon size="small" active="true">
+  <scale-icon-alert-help
+    accessibility-title="help"
+    size="16"
+    selected
+  ></scale-icon-alert-help>
+</scale-interactive-icon>
+```
