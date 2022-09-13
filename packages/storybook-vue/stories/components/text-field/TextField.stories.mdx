@@ -55,6 +55,51 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleTextField.props,
   },
   template: `
+  <div style="padding: 20px 0 20px 0;">
+    <scale-text-field
+      :name="name"
+      :type="type"
+      :label="label"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :info="info"
+      :warning="warning"
+      :success="success"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :max="max"
+      :min="min"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :readonly="readonly"
+      :required="required"
+      :counter="counter"
+      :value="value"
+      :input-id="inputId"
+      :input-autofocus="inputAutofocus"
+      :experimental-controlled="experimentalControlled"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-text-field>
+    </div>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+export const StorySectionsTemplate = (args, { argTypes }) => ({
+  components: { ScaleTextField },
+  props: {
+    label: String,
+    ...ScaleTextField.props,
+  },
+  template: `
     <scale-text-field
       :name="name"
       :type="type"
@@ -215,7 +260,7 @@ scale-text-field {
       label: 'Text With Events',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -249,7 +294,7 @@ scale-text-field {
       placeholder: 'this is the placeholder',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -270,7 +315,7 @@ scale-text-field {
       helperText: 'Make sure to fill this',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -292,7 +337,7 @@ scale-text-field {
       helperText: 'something is wrong',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -315,7 +360,7 @@ scale-text-field {
       helperText: 'something with warning',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -338,7 +383,7 @@ scale-text-field {
       helperText: 'something is successful',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -360,7 +405,7 @@ scale-text-field {
       disabled: true,
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -379,7 +424,7 @@ scale-text-field {
       value: 'This cannot be changed',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -402,7 +447,7 @@ scale-text-field {
       counter: true,
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 

@@ -114,11 +114,11 @@ scale-text-field {
   display: flex;
   transition: var(--transition-counter);
   margin-left: auto;
-  padding-right: var(--spacing-x);
   justify-content: flex-end;
   font-size: var(--font-size-counter);
   line-height: var(--line-height-counter);
   color: inherit;
+  font-weight: var(--telekom-typography-font-weight-medium);
 }
 .text-field .text-field__helper-text {
   transition: var(--transition-helper-text);
@@ -257,7 +257,7 @@ scale-text-field {
 .text-field--readonly input,
 .text-field--readonly .text-field__control {
   color: var(--color-label-readonly);
-  border-color: var(--border-color-readonly);
+  border: none;
   background: var(--background-readonly);
 }
 
