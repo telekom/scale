@@ -2,4 +2,3 @@
     <h1>Interactive Icon</h1>
     <img src="assets/beta.png" alt="Beta Component" />
 </div>
-

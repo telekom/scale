@@ -124,7 +124,27 @@ For Shadow Parts, please inspect the element's #shadow.
                label="example card"
                movable="true"
             >
-                <span style="font: var(--telekom-text-style-heading-4)">Movable</span>
+              <div>
+                <div
+                    style="
+                    font: var(--telekom-text-style-caption);
+                    color: var(--telekom-color-text-and-icon-additional);
+                  "
+                >
+                  A kicker
+                </div>
+                <div style="font: var(--telekom-text-style-heading-4)">
+                  Movable
+                </div>
+                <div
+                    style="
+                    font: var(--telekom-text-style-body);
+                    color: var(--telekom-color-text-and-icon-additional);
+                  "
+                >
+                  Subline
+                </div>
+              </div>
               <div
                   style="
                     display: flex;
@@ -149,19 +169,37 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-card label="example card" movable="true">
-  <span style="font: var(--telekom-text-style-heading-4)">Movable</span>
+  <div>
+    <div
+      style="
+        font: var(--telekom-text-style-caption);
+        color: var(--telekom-color-text-and-icon-additional);
+      "
+    >
+      A kicker
+    </div>
+    <div style="font: var(--telekom-text-style-heading-4)">Movable</div>
+    <div
+      style="
+        font: var(--telekom-text-style-body);
+        color: var(--telekom-color-text-and-icon-additional);
+      "
+    >
+      Subline
+    </div>
+  </div>
   <div
     style="
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: var(--telekom-radius-small);
-                    background: var(--telekom-color-functional-informational-subtle);
-                    color: var(--telekom-color-text-and-icon-link-standard);
-                    margin-top: var(--telekom-spacing-unit-x6);
-                    height: 178px;
-                  "
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--telekom-radius-small);
+        background: var(--telekom-color-functional-informational-subtle);
+        color: var(--telekom-color-text-and-icon-link-standard);
+        margin-top: var(--telekom-spacing-unit-x6);
+        height: 178px;
+    "
   >
     Content area
   </div>
@@ -173,36 +211,15 @@ For Shadow Parts, please inspect the element's #shadow.
     {() => ({
       components: { ScaleCard },
       props: ScaleCard.props,
-      methods: {
-        handleClick: function (e) {
-          if (!e.path.find(({ id }) => id === 'flyout-trigger')) {
-            e.stopImmediatePropagation();
-            document.getElementById('flyout-trigger').dispatchEvent(
-              new MouseEvent('click', {
-                bubbles: true,
-                cancelable: false,
-              })
-            );
-          }
-        },
-      },
       template: `
-    <div :style="{ maxWidth: '300px' }" v-on:click="handleClick($event)">
+    <div :style="{ maxWidth: '300px' }">
         <scale-card label="example card">
-          <div style="display: flex; justify-content: space-between">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
             <span style="font: var(--telekom-text-style-heading-4)">Action Icon</span>
             <scale-menu-flyout>
-              <scale-button
-                  slot="trigger"
-                  variant="secondary"
-                  icon-only
-                  size="small"
-                  id="flyout-trigger"
-              >
-                <scale-icon-service-settings
-                    accessibility-title="Open menu"
-                ></scale-icon-service-settings>
-              </scale-button>
+              <scale-interactive-icon size="medium" slot="trigger">
+                <scale-icon-service-settings accessibility-title="Open menu" size="24"></scale-icon-service-settings>
+              </scale-interactive-icon>
               <scale-menu-flyout-list>
                 <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
                 <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
@@ -234,20 +251,17 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-card label="Icon" id="icon-card">
-  <div style="display: flex; justify-content: space-between">
+  <div
+    style="display: flex; justify-content: space-between; align-items: center;"
+  >
     <span style="font: var(--telekom-text-style-heading-4)">Icon</span>
     <scale-menu-flyout>
-      <scale-button
-        slot="trigger"
-        variant="secondary"
-        icon-only
-        size="small"
-        id="flyout-trigger"
-      >
+      <scale-interactive-icon size="medium" slot="trigger">
         <scale-icon-service-settings
           accessibility-title="Open menu"
+          size="24"
         ></scale-icon-service-settings>
-      </scale-button>
+      </scale-interactive-icon>
       <scale-menu-flyout-list>
         <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
         <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
@@ -271,21 +285,6 @@ For Shadow Parts, please inspect the element's #shadow.
     Content area
   </div>
 </scale-card>
-
-<script>
-  document.getElementById('icon-card').addEventListener('click', (e) => {
-    if (!e.path.find(({ id }) => id === 'flyout-trigger')) {
-      e.stopImmediatePropagation();
-
-      document.getElementById('flyout-trigger').dispatchEvent(
-        new MouseEvent('click', {
-          bubbles: true,
-          cancelable: false,
-        })
-      );
-    }
-  });
-</script>
 ```
 
 <Canvas withSource="none">
@@ -403,7 +402,7 @@ For Shadow Parts, please inspect the element's #shadow.
                     Powered by AI
                   </div>
                   <div
-                      style="
+                    style="
                     font: var(--telekom-text-style-body);
                     color: var(--telekom-color-text-and-icon-additional);
                   "
@@ -421,7 +420,7 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-card to="https://example.com" target="_blank">
-  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
+  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4)">
     <img
       style="margin-bottom: -4px; width: 100%"
       src="https://via.placeholder.com/150"
@@ -528,16 +527,9 @@ For Shadow Parts, please inspect the element's #shadow.
                     src="assets/card-avatar.png"
                     alt="placeholder"
                 />
-                <scale-button
-                    variant="secondary"
-                    icon-only
-                    size="small"
-                    style="margin-left: auto;height: fit-content; "
-                >
-                  <scale-icon-service-settings
-                      accessibility-title="Open menu"
-                  ></scale-icon-service-settings>
-                </scale-button>
+                <scale-interactive-icon size="medium" slot="trigger"                     style="margin-left: auto;height: fit-content; ">
+                  <scale-icon-service-settings accessibility-title="Open menu" size="24"></scale-icon-service-settings>
+                </scale-interactive-icon>
               </div>
               <div
                   style="margin-top: var(--telekom-spacing-unit-x6); display: flex;flex-direction: column;align-items: center;"
@@ -577,16 +569,16 @@ For Shadow Parts, please inspect the element's #shadow.
       src="assets/card-avatar.png"
       alt="placeholder"
     />
-    <scale-button
-      variant="secondary"
-      icon-only
-      size="small"
+    <scale-interactive-icon
+      size="medium"
+      slot="trigger"
       style="margin-left: auto;height: fit-content; "
     >
       <scale-icon-service-settings
         accessibility-title="Open menu"
+        size="24"
       ></scale-icon-service-settings>
-    </scale-button>
+    </scale-interactive-icon>
   </div>
   <div
     style="margin-top: var(--telekom-spacing-unit-x6); display: flex;flex-direction: column;align-items: center;"
@@ -596,12 +588,86 @@ For Shadow Parts, please inspect the element's #shadow.
     </div>
     <div
       style="
-                        font: var(--telekom-text-style-body);
-                        color: var(--telekom-color-text-and-icon-additional);
-                    font-size: 14px;
-                      "
+        font: var(--telekom-text-style-body);
+        color: var(--telekom-color-text-and-icon-additional);
+        font-size: 14px;
+      "
     >
       +49 125 165 5455
+    </div>
+  </div>
+</scale-card>
+```
+
+## With Interactive Icons
+
+<Canvas withSource="none">
+  <Story name="With Interactive Icons">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      template: `
+        <div style="max-width: 394px">
+            <scale-card>
+              <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
+                <img
+                    style="margin-bottom: -4px; width: 100%"
+                    src="assets/card-grayscale.jpeg"
+                    alt="placeholder"
+                />
+                <div style="padding: var(--telekom-spacing-unit-x4)">
+                  <div style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);">
+                    Powered by AI
+                  </div>
+                  <div
+                      style=""
+                  >
+                    <scale-tooltip placement="bottom" content="Chat with us!"><scale-icon-communication-chat size="24"></scale-icon-communication-chat></scale-tooltip>
+                    <scale-tooltip placement="bottom" content="Call us!"><scale-icon-communication-call-outgoing style="margin-left: var(--telekom-spacing-unit-x6);"  size="24"></scale-icon-communication-call-outgoing></scale-tooltip>
+                    <scale-tooltip placement="bottom" content="Book an appointment!"><scale-icon-content-calendar style="margin-left: var(--telekom-spacing-unit-x6);"  size="24"></scale-icon-content-calendar></scale-tooltip>
+                  </div>
+                </div>
+              </div>
+            </scale-card>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card>
+  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x6))">
+    <img
+      style="margin-bottom: -4px; width: 100%"
+      src="assets/card-grayscale.jpeg"
+      alt="placeholder"
+    />
+    <div style="padding: var(--telekom-spacing-unit-x4)">
+      <div
+        style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);"
+      >
+        Powered by AI
+      </div>
+      <div>
+        <scale-tooltip placement="bottom" content="Chat with us!"
+          ><scale-icon-communication-chat
+            size="24"
+          ></scale-icon-communication-chat
+        ></scale-tooltip>
+        <scale-tooltip placement="bottom" content="Call us!"
+          ><scale-icon-communication-call-outgoing
+            style="margin-left: var(--telekom-spacing-unit-x6);"
+            size="24"
+          ></scale-icon-communication-call-outgoing
+        ></scale-tooltip>
+        <scale-tooltip placement="bottom" content="Book an appointment!"
+          ><scale-icon-content-calendar
+            style="margin-left: var(--telekom-spacing-unit-x6);"
+            size="24"
+          ></scale-icon-content-calendar
+        ></scale-tooltip>
+      </div>
     </div>
   </div>
 </scale-card>
