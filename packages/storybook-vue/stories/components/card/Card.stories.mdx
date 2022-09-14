@@ -606,6 +606,10 @@ For Shadow Parts, please inspect the element's #shadow.
     {() => ({
       components: { ScaleCard },
       props: ScaleCard.props,
+      data: () => ({
+        selected: false,
+        active: false,
+      }),
       template: `
         <div style="max-width: 394px">
             <scale-card>
@@ -619,12 +623,9 @@ For Shadow Parts, please inspect the element's #shadow.
                   <div style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);">
                     Powered by AI
                   </div>
-                  <div
-                      style=""
-                  >
-                    <scale-tooltip placement="bottom" content="Chat with us!"><scale-icon-communication-chat size="24"></scale-icon-communication-chat></scale-tooltip>
-                    <scale-tooltip placement="bottom" content="Call us!"><scale-icon-communication-call-outgoing style="margin-left: var(--telekom-spacing-unit-x6);"  size="24"></scale-icon-communication-call-outgoing></scale-tooltip>
-                    <scale-tooltip placement="bottom" content="Book an appointment!"><scale-icon-content-calendar style="margin-left: var(--telekom-spacing-unit-x6);"  size="24"></scale-icon-content-calendar></scale-tooltip>
+                  <div>
+                    <scale-tooltip placement="bottom" content="Select"><scale-interactive-icon @click="selected = !selected" size="small"><scale-icon-content-heart size="16" :selected="selected"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
+                    <scale-tooltip placement="bottom" content="Activate"><scale-interactive-icon @click="active = !active" size="small" :active="active"><scale-icon-action-forward size="16"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
                   </div>
                 </div>
               </div>
@@ -637,36 +638,19 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-card>
-  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x6))">
+  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
     <img
-      style="margin-bottom: -4px; width: 100%"
-      src="assets/card-grayscale.jpeg"
-      alt="placeholder"
+        style="margin-bottom: -4px; width: 100%"
+        src="assets/card-grayscale.jpeg"
+        alt="placeholder"
     />
     <div style="padding: var(--telekom-spacing-unit-x4)">
-      <div
-        style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);"
-      >
+      <div style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);">
         Powered by AI
       </div>
       <div>
-        <scale-tooltip placement="bottom" content="Chat with us!"
-          ><scale-icon-communication-chat
-            size="24"
-          ></scale-icon-communication-chat
-        ></scale-tooltip>
-        <scale-tooltip placement="bottom" content="Call us!"
-          ><scale-icon-communication-call-outgoing
-            style="margin-left: var(--telekom-spacing-unit-x6);"
-            size="24"
-          ></scale-icon-communication-call-outgoing
-        ></scale-tooltip>
-        <scale-tooltip placement="bottom" content="Book an appointment!"
-          ><scale-icon-content-calendar
-            style="margin-left: var(--telekom-spacing-unit-x6);"
-            size="24"
-          ></scale-icon-content-calendar
-        ></scale-tooltip>
+        <scale-tooltip placement="bottom" content="Heart"><scale-interactive-icon @click="selected = !selected" size="small"><scale-icon-content-heart size="16" :selected="selected"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
+        <scale-tooltip placement="bottom" content="Heart"><scale-interactive-icon @click="active = !active" size="small" :active="active"><scale-icon-action-forward size="16"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
       </div>
     </div>
   </div>
