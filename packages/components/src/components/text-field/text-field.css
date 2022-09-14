@@ -294,3 +294,9 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+
+/* Chrome, Edge */
+input[type='datetime-local']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 12px;
+}
