@@ -1254,6 +1254,12 @@ import { addons } from '@storybook/addons';
               </tbody>
               {generateSectionTitle('UI', 'UI')}
               <tbody>
+                {generateTableColorRow('color.ui.base', '', '', true)}
+                {generateTableColorRow('color.ui.subtle')}
+                {generateTableColorRow('color.ui.light')}
+                {generateTableColorRow('color.ui.regular')}
+                {generateTableColorRow('color.ui.strong')}
+                {generateTableColorRow('color.ui.extra-strong')}
                 {generateTableColorRow(
                   'color.ui.black',
                   'Für Elemente, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden.',
@@ -1264,12 +1270,6 @@ import { addons } from '@storybook/addons';
                   'Für Elemente, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden.',
                   'Use for elements that are displayed in white in both light and dark mode.'
                 )}
-                {generateTableColorRow('color.ui.base', '', '', true)}
-                {generateTableColorRow('color.ui.subtle')}
-                {generateTableColorRow('color.ui.light')}
-                {generateTableColorRow('color.ui.regular')}
-                {generateTableColorRow('color.ui.strong')}
-                {generateTableColorRow('color.ui.extra-strong')}
               </tbody>
               {generateSectionSubTitle('UI Border', 'UI border')}
               <tbody>
