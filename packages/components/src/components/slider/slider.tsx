@@ -252,11 +252,11 @@ export class Slider {
 
   getTextValue = () => {
     if (this.range) {
-      const from = this.valueFrom.toFixed(this.decimals);
-      const to = this.valueTo.toFixed(this.decimals);
-      return `${from}—${to}${this.unit}`;
+      const from = this.valueFrom?.toFixed(this.decimals);
+      const to = this.valueTo?.toFixed(this.decimals);
+      return `${from}–${to}${this.unit}`;
     }
-    return `${this.value.toFixed(this.decimals)}${this.unit}`;
+    return `${this.value?.toFixed(this.decimals)}${this.unit}`;
   };
 
   clamp = (val: number) => {
