@@ -18,6 +18,7 @@ duet-date-picker {
   --duet-font-bold: var(--telekom-typography-font-weight-medium);
   --duet-color-placeholder: var(--telekom-color-ui-regular);
   --duet-radius: var(--telekom-radius-standard);
+  --duet-radius-toggle-focus: 6px;
   --duet-color-text-active: var(--telekom-color-text-and-icon-white-standard);
   --duet-color-button: var(--telekom-color-background-surface);
   --duet-color-surface: var(--telekom-color-background-surface);
@@ -56,9 +57,11 @@ duet-date-picker .duet-date__input:focus {
 }
 
 duet-date-picker .duet-date__toggle {
-  border-radius: 0 var(--duet-radius) var(--duet-radius) 0;
+  border-radius: 0 var(--duet-radius-toggle-focus)
+    var(--duet-radius-toggle-focus) 0;
   background: transparent;
   box-shadow: inset 1px 0 0 var(--telekom-color-ui-faint);
+  margin-right: 1px;
 }
 
 duet-date-picker .duet-date__toggle:focus {
@@ -173,6 +176,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
 /* Error state */
 
 .scale-date-picker--status-error duet-date-picker .duet-date__input {
+  margin-top: -1px;
+  margin-bottom: -1px;
   border: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
 }
