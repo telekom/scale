@@ -11,6 +11,21 @@
 
 // ((input - min) * 100) / (max - min)
 
+/*
+  TODO
+  - [x] multi-range
+    - [x] basic implementation
+    - [x] keyboard support
+    - [x] text value
+    - [x] clamp to each other
+    - [ ] fix bug: TO won't clamp with FROM on first drag
+  - [ ] update styles (use part selector)
+  - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
+  - [ ] styles for android
+  - [ ] styles for iOS
+  - [ ] update storybook
+*/
+
 import {
   Component,
   h,
@@ -21,6 +36,7 @@ import {
   Watch,
   EventEmitter,
   Element,
+  Fragment,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -35,12 +51,20 @@ let i = 0;
 })
 export class Slider {
   sliderTrack?: HTMLDivElement;
+
   /* Host HTML Element */
   @Element() hostElement: HTMLElement;
+
   /** (optional) the name of the slider */
   @Prop() name?: string;
-  /** (optional) the display value of the slider */
-  @Prop() value?: number;
+  /** (optional) the value of the slider */
+  @Prop({ mutable: true, reflect: true }) value?: number;
+  /** (optional) multi-thumb */
+  @Prop() range?: boolean = false;
+  /** (optional) when `range` is true, the "from" value */
+  @Prop({ mutable: true }) valueFrom?: number;
+  /** (optional) when `range` is true, the "to" value */
+  @Prop({ mutable: true }) valueTo?: number;
   /** t(optional) he minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
@@ -64,12 +88,14 @@ export class Slider {
   /** (optional) larger thumb */
   @Prop() thumbLarge?: boolean = false;
   /** (optional) Slider id */
-  @Prop() sliderId?: string;
+  @Prop({ mutable: true }) sliderId?: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
   // The actual position in % of the slider thumb
-  @State() position: number;
+  @State() position: number = 0;
+  @State() positionFrom: number = 25;
+  @State() positionTo: number = 75;
 
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<number>;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -80,11 +106,22 @@ export class Slider {
   @Event({ eventName: 'scaleInput' }) scaleInputLegacy: EventEmitter<number>;
 
   private dragging: boolean;
-  private offsetLeft: number;
+  // Don't know how to make TypeScript handle `this[offsetKey]`
+  // private offsetLeft: number;
+  // private offsetLeftFrom: number;
+  // private offsetLeftTo: number;
+  private activeRangeThumb: null | 'from' | 'to' = null;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
     this.onDragEnd = this.onDragEnd.bind(this);
+  }
+
+  @Watch('value')
+  @Watch('valueFrom')
+  @Watch('valueTo')
+  handleValueChange() {
+    this.setPosition();
   }
 
   componentWillLoad() {
@@ -111,47 +148,58 @@ export class Slider {
     }
   }
 
-  onButtonDown = () => {
+  onButtonDown = (event) => {
     if (this.disabled) {
       return;
     }
+    this.setActiveRangeThumbFromEvent(event);
     this.onDragStart();
     this.addGlobalListeners();
   };
 
   onKeyDown = (event: KeyboardEvent) => {
     let steps = 0;
+    this.setActiveRangeThumbFromEvent(event);
     if (['ArrowRight', 'ArrowLeft'].includes(event.key)) {
       steps = event.key === 'ArrowRight' ? this.step : -this.step;
     }
     if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
       steps = event.key === 'ArrowUp' ? this.step * 10 : -this.step * 10;
     }
-    this.setValue(this.value + steps);
+    const valueKey = this.getKeyFor('value');
+    this.setValue(this[valueKey] + steps, valueKey);
   };
 
   onDragStart = () => {
+    const offsetKey = this.getKeyFor('offsetLeft');
     this.dragging = true;
-    this.offsetLeft = this.sliderTrack.getBoundingClientRect().left;
+    this[offsetKey] = this.sliderTrack.getBoundingClientRect().left;
   };
 
   onDragging = (event: any) => {
-    const { dragging, offsetLeft } = this;
-
-    if (dragging) {
-      const currentX = this.handleTouchEvent(event).clientX;
-      const position: number =
-        ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
-      const nextValue = (position * (this.max - this.min)) / 100 + this.min;
-      // https://stackoverflow.com/q/14627566
-      const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
-      this.setValue(roundedNextValue);
+    if (!this.dragging) {
+      return;
     }
+    const valueKey = this.getKeyFor('value');
+    const offsetLeftKey = this.getKeyFor('offsetLeft');
+    const offsetLeft = this[offsetLeftKey];
+
+    const currentX = this.handleTouchEvent(event).clientX;
+    const position: number =
+      ((currentX - offsetLeft) / this.sliderTrack.offsetWidth) * 100;
+    const nextValue = (position * (this.max - this.min)) / 100 + this.min;
+    // https://stackoverflow.com/q/14627566
+    const roundedNextValue = Math.ceil(nextValue / this.step) * this.step;
+    this.setValue(roundedNextValue, valueKey);
   };
 
   onDragEnd = () => {
     this.dragging = false;
-    emitEvent(this, 'scaleChange', this.value);
+    emitEvent(
+      this,
+      'scaleChange',
+      this.range ? [this.valueFrom, this.valueTo] : this.value
+    );
     this.removeGlobalListeners();
   };
 
@@ -159,24 +207,71 @@ export class Slider {
     return event.type.indexOf('touch') === 0 ? event.touches[0] : event;
   }
 
-  setValue = (nextValue: number) => {
-    this.value = this.clamp(nextValue);
-    emitEvent(this, 'scaleInput', this.value);
+  setValue = (
+    nextValue: number,
+    valueKey: string | 'value' | 'valueFrom' | 'valueTo' = 'value'
+  ) => {
+    this[valueKey] = this.clamp(nextValue);
+    emitEvent(
+      this,
+      'scaleInput',
+      this.range ? [this.valueFrom, this.valueTo] : this.value
+    );
   };
 
-  @Watch('value')
-  handleValueChange() {
-    this.setPosition();
-  }
-
-  setPosition = () => {
-    if (!this.value) {
-      this.position = 0;
+  setActiveRangeThumbFromEvent = (event) => {
+    if (!this.range) {
+      this.activeRangeThumb = null;
       return;
     }
-    const clampedValue = this.clamp(this.value);
+    const part = (event.target as HTMLElement).part;
+    this.activeRangeThumb = part.contains('from') ? 'from' : 'to';
+  };
+
+  setPosition = () => {
+    const valueKey = this.getKeyFor('value');
+    const positionKey = this.getKeyFor('position');
+    const clampedValue = this.clamp(this[valueKey]);
     // https://stackoverflow.com/a/25835683
-    this.position = ((clampedValue - this.min) * 100) / (this.max - this.min);
+    this[positionKey] =
+      ((clampedValue - this.min) * 100) / (this.max - this.min);
+  };
+
+  /**
+   * Utility function
+   * e.g. 'value' -> 'valueFrom' if `activeRangeThumb='from'`
+   * @param propName
+   * @returns {string} The prop name with the range suffix if needed
+   */
+  getKeyFor = (propName: 'value' | 'offsetLeft' | 'position') => {
+    if (this.range) {
+      return propName + (this.activeRangeThumb === 'from' ? 'From' : 'To');
+    }
+    return propName;
+  };
+
+  getTextValue = () => {
+    if (this.range) {
+      const from = this.valueFrom.toFixed(this.decimals);
+      const to = this.valueTo.toFixed(this.decimals);
+      return `${from}—${to}${this.unit}`;
+    }
+    return `${this.value.toFixed(this.decimals)}${this.unit}`;
+  };
+
+  clamp = (val: number) => {
+    let min = this.min;
+    let max = this.max;
+    // Take into account the other thumb, when `range=true`
+    if (this.range) {
+      if (this.activeRangeThumb === 'from') {
+        max = Math.min(this.valueTo, this.max);
+      } else if (this.activeRangeThumb === 'to') {
+        min = Math.max(this.valueFrom, this.min);
+      }
+    }
+    // Regular generic clamp
+    return Math.min(Math.max(val, min), max);
   };
 
   addGlobalListeners() {
@@ -219,7 +314,12 @@ export class Slider {
                 part="bar"
                 class="slider__bar"
                 style={{
-                  width: `${this.position}%`,
+                  left: (this.range ? this.positionFrom : 0) + '%',
+                  width: `${
+                    this.range
+                      ? this.positionTo - this.positionFrom
+                      : this.position
+                  }%`,
                   backgroundColor: this.customColor
                     ? this.customColor
                     : this.disabled
@@ -227,35 +327,87 @@ export class Slider {
                     : `var(--background-bar)`,
                 }}
               ></div>
-              <div
-                part="thumb-wrapper"
-                class="slider__thumb-wrapper"
-                style={{ left: `${this.position}%` }}
-                onMouseDown={this.onButtonDown}
-                onTouchStart={this.onButtonDown}
-              >
+              {/* Two thumbs or one */}
+              {this.range ? (
+                <Fragment>
+                  <div
+                    part="thumb-wrapper from"
+                    class="slider__thumb-wrapper"
+                    style={{ left: `${this.positionFrom}%` }}
+                    onMouseDown={this.onButtonDown}
+                    onTouchStart={this.onButtonDown}
+                  >
+                    <div
+                      part="thumb from"
+                      class="slider__thumb"
+                      tabindex="0"
+                      role="slider"
+                      id={this.sliderId + '-from'}
+                      aria-valuemin={this.min}
+                      aria-valuenow={this.value}
+                      aria-valuemax={this.max}
+                      aria-valuetext={`${this.value}`}
+                      aria-labelledby={`${this.sliderId}-label`}
+                      aria-orientation="horizontal"
+                      aria-disabled={this.disabled}
+                      onKeyDown={this.onKeyDown}
+                    />
+                  </div>
+                  <div
+                    part="thumb-wrapper to"
+                    class="slider__thumb-wrapper"
+                    style={{ left: `${this.positionTo}%` }}
+                    onMouseDown={this.onButtonDown}
+                    onTouchStart={this.onButtonDown}
+                  >
+                    <div
+                      part="thumb to"
+                      class="slider__thumb"
+                      tabindex="0"
+                      role="slider"
+                      id={this.sliderId + '-to'}
+                      aria-valuemin={this.min}
+                      aria-valuenow={this.value}
+                      aria-valuemax={this.max}
+                      aria-valuetext={`${this.value}`}
+                      aria-labelledby={`${this.sliderId}-label`}
+                      aria-orientation="horizontal"
+                      aria-disabled={this.disabled}
+                      onKeyDown={this.onKeyDown}
+                    />
+                  </div>
+                </Fragment>
+              ) : (
                 <div
-                  part="thumb"
-                  class="slider__thumb"
-                  tabindex="0"
-                  role="slider"
-                  id={this.sliderId}
-                  aria-valuemin={this.min}
-                  aria-valuenow={this.value}
-                  aria-valuemax={this.max}
-                  aria-valuetext={`${this.value}`}
-                  aria-labelledby={`${this.sliderId}-label`}
-                  aria-orientation="horizontal"
-                  aria-disabled={this.disabled}
-                  onKeyDown={this.onKeyDown}
-                />
-              </div>
+                  part="thumb-wrapper"
+                  class="slider__thumb-wrapper"
+                  style={{ left: `${this.position}%` }}
+                  onMouseDown={this.onButtonDown}
+                  onTouchStart={this.onButtonDown}
+                >
+                  <div
+                    part="thumb"
+                    class="slider__thumb"
+                    tabindex="0"
+                    role="slider"
+                    id={this.sliderId}
+                    aria-valuemin={this.min}
+                    aria-valuenow={this.value}
+                    aria-valuemax={this.max}
+                    aria-valuetext={`${this.value}`}
+                    aria-labelledby={`${this.sliderId}-label`}
+                    aria-orientation="horizontal"
+                    aria-disabled={this.disabled}
+                    onKeyDown={this.onKeyDown}
+                  />
+                </div>
+              )}
             </div>
-            <input type="hidden" value={this.value} name={this.name} />
+            {/* (a11y) Not sure about this being only one input, or its value */}
+            <input type="hidden" value={this.getTextValue()} name={this.name} />
             {this.showValue && (
               <div part="display-value" class="slider__display-value">
-                {this.value != null && this.value.toFixed(this.decimals)}
-                {this.value != null && this.unit}
+                {this.getTextValue()}
               </div>
             )}
           </div>
@@ -283,8 +435,4 @@ export class Slider {
       this.thumbLarge && `${prefix}thumb-large`
     );
   }
-
-  private clamp = (val: number) => {
-    return Math.min(Math.max(val, this.min), this.max);
-  };
 }
