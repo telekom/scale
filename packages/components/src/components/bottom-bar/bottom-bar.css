@@ -7,18 +7,17 @@
     height: 48px;
     padding-left: 36px;
     padding-right: 36px;
-    box-shadow: var(--telekom-shadow-app-bar-bottom-raised);
+    box-shadow: var(--telekom-shadow-app-bar-bottom-flat);
 }
 
 ::slotted(scale-bottom-bar-item) {
     flex: 1;
 }
 
+:host-context([data-platform="android"]) .bottom-bar {
+    height: 80px;
+} 
 
-[data-platform='ios'] .bottom-bar{
-    border: 2px solid blue;
-  }
-
-[data-platform='android'] scale-bottom-bar {
-    border: 2px solid green;
-  }
+:host-context([data-platform="ios"]) .bottom-bar {
+    height: 48px;
+} 

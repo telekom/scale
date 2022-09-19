@@ -35,6 +35,7 @@ import { renderIcon } from '../../utils/render-icon';
              class={this.getCssClassMap()}
             //  part={classNames('base', !!this.to && 'interactive')}
            >
+            <div class="scale-bottom-bar-item__container">
               <slot name="icon"/>
                     {this.icon && renderIcon({
                     tag: `scale-icon-${this.icon}`,
@@ -44,7 +45,9 @@ import { renderIcon } from '../../utils/render-icon';
                         color: this.selected ? `var(--selected-color)` : `var(--telekom-color-text-and-icon-standard)`
                     }})
                 }
-              {this.label && <span class="bottom-bar-item__label"> {this.label} </span>}
+            </div>
+            {this.label && <span class="bottom-bar-item__label"> {this.label} </span>}
+
                
            </div>
        </Host>

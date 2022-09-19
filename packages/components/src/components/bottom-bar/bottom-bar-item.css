@@ -20,14 +20,13 @@
 .bottom-bar-item__label {
     font-size: var(--label-size);
     font-weight: var(--label-weight);
+    margin-top: 4px;
+}
+
+:host-context([data-platform="android"]) .scale-bottom-bar-item__container {
+    background-color: var(--telekom-color-ui-subtle); 
+    border-radius: var(--telekom-radius-pill);
+    padding: 7px 22px 7px 22px;
+    display: flex;
 } 
 
-[data-platform='ios'] .scale-bottom-bar-item {
-    border: 2px solid blue;
-    --selected-color: blue;
-  }
-
-  [data-platform='android'] scale-bottom-bar-item {
-    border: 2px solid green;
-    --selected-color: green;
-  }

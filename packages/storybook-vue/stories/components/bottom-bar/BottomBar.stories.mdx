@@ -1,0 +1,138 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleBottomBar from './BottomBar.vue';
+
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+<Meta
+  title="Components/Bottom Bar"
+  component={ScaleBottomBar}
+  parameters={{
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+  }}  
+  argTypes={{
+    icon: {
+      control: { type: 'text' },
+    },
+    label: {
+      control: { type: 'text' },
+    }
+  }}
+/>
+
+export const TemplateIOS = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div data-platform="ios">
+        <scale-bottom-bar
+        :separator="separator"
+        :styles="styles"
+        >
+        <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
+        </scale-bottom-bar>    
+    </div>
+  `,
+});
+
+export const TemplateAndroid = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div data-platform="android" style="border: 2px solid red; width: 500px">
+        <scale-bottom-bar
+        :separator="separator"
+        :styles="styles"
+        >
+        <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
+        </scale-bottom-bar>    
+    </div>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Bottom Bar</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## iOS
+
+<Canvas withSource="none">
+  <Story name="IOS" args={{}} parameters={{
+    viewport: {
+      defaultViewport: 'iphonex',
+    },
+  }}>
+    {
+        TemplateIOS.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="IOS" />
+
+```html
+<scale-bottom-bar>
+    <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>  
+</scale-breadcrumb>
+```
+
+
+## Android
+
+<Canvas withSource="none">
+  <Story name="Android" args={{}}>
+    {TemplateAndroid.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Android" />
+
+```html
+<scale-bottom-bar>
+    <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>  
+</scale-breadcrumb>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
