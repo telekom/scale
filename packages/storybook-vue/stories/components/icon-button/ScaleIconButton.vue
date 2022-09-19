@@ -1,5 +1,6 @@
+
 <template>
-  <scale-interactive-icon
+  <scale-icon-button
     :size="size"
     :active="active"
     :innerTabindex="innerTabindex"
@@ -9,7 +10,7 @@
     :type="type"
   >
     <slot></slot>
-  </scale-interactive-icon>
+  </scale-icon-button>
 </template>
 
 <script>

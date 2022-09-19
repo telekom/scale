@@ -11,22 +11,22 @@
 
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('scale-interactive-icon', () => {
+describe('scale-icon-button', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent(
-      '<scale-interactive-icon><scale-icon-action-search></scale-icon-action-search></scale-interactive-icon>'
+      '<scale-icon-button><scale-icon-action-search></scale-icon-action-search></scale-icon-button>'
     );
-    const element = await page.find('scale-interactive-icon');
+    const element = await page.find('scale-icon-button');
     expect(element).toHaveClass('hydrated');
   });
 
   it('should set tabindex on its inner element', async () => {
     const page = await newE2EPage();
     await page.setContent(
-      '<scale-interactive-icon inner-tabindex="5"><scale-icon-action-search></scale-icon-action-search></scale-interactive-icon>'
+      '<scale-icon-button inner-tabindex="5"><scale-icon-action-search></scale-icon-action-search></scale-icon-button>'
     );
-    const element = await page.find('scale-interactive-icon >>> button');
+    const element = await page.find('scale-icon-button >>> button');
     expect(element.getAttribute('tabindex')).toBe('5');
   });
 });

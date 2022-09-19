@@ -35,8 +35,8 @@ import divider_en from 'raw-loader!../../stories/components/divider/divider.md';
 import divider_de from 'raw-loader!../../stories/components/divider/divider_de.md';
 import icon_en from 'raw-loader!../../stories/components/icon/icon.md';
 import icon_de from 'raw-loader!../../stories/components/icon/icon_de.md';
-import interactiveIcon_en from 'raw-loader!../../stories/components/interactive-icon/interactive-icon.md';
-import interactiveIcon_de from 'raw-loader!../../stories/components/interactive-icon/interactive-icon_de.md';
+import iconButton_en from 'raw-loader!../../stories/components/icon-button/icon-button.md';
+import iconButton_de from 'raw-loader!../../stories/components/icon-button/icon-button_de.md';
 import linkMarkdown_en from 'raw-loader!../../stories/components/link/link.md';
 import linkMarkdown_de from 'raw-loader!../../stories/components/link/link_de.md';
 import logo_en from 'raw-loader!../../stories/components/logo/logo.md';
@@ -143,8 +143,8 @@ const Usage = (props) => {
     'icon-library_de': icon_de,
     icon_en,
     icon_de,
-    'interactive-icon_en': interactiveIcon_en,
-    'interactive-icon_de': interactiveIcon_de,
+    'icon-button_en': iconButton_en,
+    'icon-button_de': iconButton_de,
     link_en: linkMarkdown_en,
     link_de: linkMarkdown_de,
     logo_en,

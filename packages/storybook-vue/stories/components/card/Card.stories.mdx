@@ -217,9 +217,9 @@ For Shadow Parts, please inspect the element's #shadow.
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <span style="font: var(--telekom-text-style-heading-4)">Action Icon</span>
             <scale-menu-flyout>
-              <scale-interactive-icon size="medium" slot="trigger">
+              <scale-icon-button size="medium" slot="trigger">
                 <scale-icon-service-settings accessibility-title="Open menu" size="24"></scale-icon-service-settings>
-              </scale-interactive-icon>
+              </scale-icon-button>
               <scale-menu-flyout-list>
                 <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
                 <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
@@ -256,12 +256,12 @@ For Shadow Parts, please inspect the element's #shadow.
   >
     <span style="font: var(--telekom-text-style-heading-4)">Icon</span>
     <scale-menu-flyout>
-      <scale-interactive-icon size="medium" slot="trigger">
+      <scale-icon-button size="medium" slot="trigger">
         <scale-icon-service-settings
           accessibility-title="Open menu"
           size="24"
         ></scale-icon-service-settings>
-      </scale-interactive-icon>
+      </scale-icon-button>
       <scale-menu-flyout-list>
         <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
         <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
@@ -527,9 +527,9 @@ For Shadow Parts, please inspect the element's #shadow.
                     src="assets/card-avatar.png"
                     alt="placeholder"
                 />
-                <scale-interactive-icon size="medium" slot="trigger"                     style="margin-left: auto;height: fit-content; ">
+                <scale-icon-button size="medium" slot="trigger"                     style="margin-left: auto;height: fit-content; ">
                   <scale-icon-service-settings accessibility-title="Open menu" size="24"></scale-icon-service-settings>
-                </scale-interactive-icon>
+                </scale-icon-button>
               </div>
               <div
                   style="margin-top: var(--telekom-spacing-unit-x6); display: flex;flex-direction: column;align-items: center;"
@@ -569,7 +569,7 @@ For Shadow Parts, please inspect the element's #shadow.
       src="assets/card-avatar.png"
       alt="placeholder"
     />
-    <scale-interactive-icon
+    <scale-icon-button
       size="medium"
       slot="trigger"
       style="margin-left: auto;height: fit-content; "
@@ -578,7 +578,7 @@ For Shadow Parts, please inspect the element's #shadow.
         accessibility-title="Open menu"
         size="24"
       ></scale-icon-service-settings>
-    </scale-interactive-icon>
+    </scale-icon-button>
   </div>
   <div
     style="margin-top: var(--telekom-spacing-unit-x6); display: flex;flex-direction: column;align-items: center;"
@@ -624,8 +624,8 @@ For Shadow Parts, please inspect the element's #shadow.
                     Powered by AI
                   </div>
                   <div>
-                    <scale-tooltip placement="bottom" content="Select"><scale-interactive-icon @click="selected = !selected" size="small"><scale-icon-content-heart size="16" :selected="selected"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
-                    <scale-tooltip placement="bottom" content="Activate"><scale-interactive-icon @click="active = !active" size="small" :active="active"><scale-icon-action-forward size="16"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
+                    <scale-tooltip placement="bottom" content="Like"><scale-icon-button @click="selected = !selected" size="medium"><scale-icon-content-heart size="24" :selected="selected"></scale-icon-content-heart></scale-icon-button></scale-tooltip>
+                    <scale-tooltip placement="bottom" content="Share"><scale-icon-button size="medium"><scale-icon-action-forward size="24"></scale-icon-action-forward ></scale-icon-button></scale-tooltip>
                   </div>
                 </div>
               </div>
@@ -649,9 +649,9 @@ For Shadow Parts, please inspect the element's #shadow.
         Powered by AI
       </div>
       <div>
-        <scale-tooltip placement="bottom" content="Heart"><scale-interactive-icon @click="selected = !selected" size="small"><scale-icon-content-heart size="16" :selected="selected"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
-        <scale-tooltip placement="bottom" content="Heart"><scale-interactive-icon @click="active = !active" size="small" :active="active"><scale-icon-action-forward size="16"></scale-icon-content-heart></scale-interactive-icon></scale-tooltip>
-      </div>
+        <scale-tooltip placement="bottom" content="Like"><scale-icon-button @click="selected = !selected" size="medium"><scale-icon-content-heart size="24" :selected="selected"></scale-icon-content-heart></scale-icon-button></scale-tooltip>
+        <scale-tooltip placement="bottom" content="Share"><scale-icon-button size="medium"><scale-icon-action-forward size="24"></scale-icon-action-forward ></scale-icon-button></scale-tooltip>
+  </div>
     </div>
   </div>
 </scale-card>

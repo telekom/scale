@@ -1,4 +1,4 @@
-# scale-interactive-icon
+# scale-icon-button
 
 
 

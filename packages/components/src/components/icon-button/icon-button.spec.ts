@@ -10,21 +10,21 @@
  */
 
 import { newSpecPage, SpecPage } from '@stencil/core/testing';
-import { InteractiveIcon } from './interactive-icon';
+import { IconButton } from './icon-button';
 
-describe('InteractiveIcon', () => {
+describe('IconButton', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
-      components: [InteractiveIcon],
-      html: `<scale-interactive-icon><scale-icon-action-search></scale-icon-action-search></scale-interactive-icon>`,
+      components: [IconButton],
+      html: `<scale-icon-button><scale-icon-action-search></scale-icon-action-search></scale-icon-button>`,
     });
     expect(page.root).toMatchSnapshot();
   });
 
   it('should handle click', async () => {
     const page = await newSpecPage({
-      components: [InteractiveIcon],
-      html: `<scale-interactive-icon><scale-icon-action-search></scale-icon-action-search></scale-interactive-icon>`,
+      components: [IconButton],
+      html: `<scale-icon-button><scale-icon-action-search></scale-icon-action-search></scale-icon-button>`,
     });
     expect(page.root).toMatchSnapshot();
     simulateMouseEvent(

@@ -13,11 +13,11 @@ import { Component, Prop, h, Host, Element, Method } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
-  tag: 'scale-interactive-icon',
-  styleUrl: 'interactive-icon.css',
+  tag: 'scale-icon-button',
+  styleUrl: 'icon-button.css',
   shadow: true,
 })
-export class InteractiveIcon {
+export class IconButton {
   @Element() hostElement: HTMLElement;
 
   /** (optional) The size of the element */
@@ -58,6 +58,7 @@ export class InteractiveIcon {
           tabIndex={this.innerTabindex}
           name={this.name}
           value={this.value}
+          aria-pressed={this.active ? 'true' : 'false'}
         >
           <slot />
         </button>
