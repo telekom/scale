@@ -296,7 +296,12 @@ input[type='number'] {
 }
 
 /* Chrome, Edge */
-input[type='datetime-local']::-webkit-calendar-picker-indicator {
+input[type='datetime-local']::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator,
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='week']::-webkit-calendar-picker-indicator,
+input[type='month']::-webkit-calendar-picker-indicator {
   position: absolute;
   right: 12px;
+  font-size: 24px;
 }
