@@ -23,7 +23,8 @@
     - [x] disabled
     - [x] styles for android
     - [x] styles for iOS
-  - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
+  - [x] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
+  - [ ] fix spacing on the sides, thumb position (so marks match too)
   - [ ] helper text
   - [ ] update storybook
 */
@@ -72,6 +73,8 @@ export class Slider {
   @Prop() max?: number = 100;
   /** (optional) the step size to increase or decrease when dragging slider */
   @Prop() step?: number = 1;
+  /** (optional) show a mark for each step */
+  @Prop() showStepMarks?: boolean = false;
   /** (optional) slider label */
   @Prop() label?: string;
   /** (optional) slider display value */
@@ -292,6 +295,11 @@ export class Slider {
       : `${this.value?.toFixed(this.decimals)}${this.unit}`;
   };
 
+  getNumberOfSteps = () => {
+    const n = (this.max - this.min) / this.step + 1;
+    return [...Array(n).keys()];
+  };
+
   clamp = (val: number) => {
     let min = this.min;
     let max = this.max;
@@ -357,6 +365,13 @@ export class Slider {
                   }%`,
                 }}
               ></div>
+              {this.showStepMarks && (
+                <div part="step-marks">
+                  {this.getNumberOfSteps().map(() => (
+                    <span part="step-mark"></span>
+                  ))}
+                </div>
+              )}
               {/* Two thumbs or one */}
               {this.range ? (
                 <Fragment>

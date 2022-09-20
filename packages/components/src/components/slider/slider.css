@@ -20,6 +20,9 @@
   --border-color-thumb: rgba(0, 0, 0, 0.05);
   --background-thumb: var(--telekom-color-ui-white);
   --color-focus: var(--telekom-color-functional-focus);
+  --color-step-mark: var(--telekom-color-text-and-icon-additional);
+  --radius-step-mark: var(--telekom-radius-circle);
+  --size-step-mark: 4px;
 }
 
 [part='base'] {
@@ -57,13 +60,14 @@
 [part='bar'] {
   height: 100%;
   position: absolute;
+  z-index: 1;
   border-radius: var(--radius-track);
   background-color: var(--background-bar);
 }
 
 [part~='thumb-wrapper'] {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,6 +99,22 @@
 [part~='thumb']:focus {
   outline: var(--telekom-line-weight-highlight) solid var(--color-focus);
   outline-offset: 1px;
+}
+
+[part='step-marks'] {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+[part='step-mark'] {
+  width: var(--size-step-mark);
+  height: var(--size-step-mark);
+  background: var(--color-step-mark);
+  border-radius: var(--telekom-radius-circle);
 }
 
 /* disabled */
@@ -131,6 +151,7 @@
 :host-context([data-platform='ios']) {
   --height-track: 4px;
   --size-thumb: 26px;
+  --size-step-mark: 2px;
 }
 
 /* PLATFORM Android */
