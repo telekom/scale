@@ -40,24 +40,34 @@
           unit="deg"
           range
         ></scale-slider>
-        <scale-slider id="s" label="Saturation" value="100"></scale-slider>
+        <div data-platform="android">
+          <scale-slider
+            id="s"
+            label="Saturation (Android)"
+            value="100"
+          ></scale-slider>
+        </div>
         <scale-slider
           id="l"
           label="Lightness"
           value="44.3"
           step="0.1"
+          disabled
           decimals="1"
         ></scale-slider>
-        <scale-slider
-          id="a"
-          label="Alpha"
-          unit=""
-          decimals="2"
-          value="1"
-          min="0"
-          max="1"
-          step="0.01"
-        ></scale-slider>
+        <div data-platform="ios">
+          <scale-slider
+            id="a"
+            label="Alpha (iOS)"
+            unit="$ "
+            decimals="2"
+            value="1"
+            min="0"
+            max="1"
+            unit-position="before"
+            step="0.01"
+          ></scale-slider>
+        </div>
       </demo-controls>
     </demo-hue>
 

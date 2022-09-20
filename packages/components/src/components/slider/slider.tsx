@@ -17,12 +17,14 @@
     - [x] text value
     - [x] clamp to each other
     - [x] fix bug: TO won't clamp with FROM on first drag
-  - [x] use part selector [attr~=value]
-  - [ ] update styles
-  - [ ] styles for android
-  - [ ] styles for iOS
-  - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
   - [x] deprecate props `trackSmall`, etc.
+  - [x] use part selector [attr~=value]
+  - [x] update styles
+    - [x] disabled
+    - [x] styles for android
+    - [x] styles for iOS
+  - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
+  - [ ] helper text
   - [ ] update storybook
 */
 
@@ -76,6 +78,8 @@ export class Slider {
   @Prop() showValue?: boolean = true;
   /** (optional) slider value unit */
   @Prop() unit?: string = '%';
+  /** (optional) unit position */
+  @Prop() unitPosition?: 'before' | 'after' = 'after';
   /** (optional) number of decimal places */
   @Prop() decimals?: 0 | 1 | 2 = 0;
   /** @deprecated (optional) slider custom color */
@@ -279,9 +283,13 @@ export class Slider {
     if (this.range) {
       const from = this.valueFrom?.toFixed(this.decimals);
       const to = this.valueTo?.toFixed(this.decimals);
-      return `${from}–${to}${this.unit}`;
+      return this.unitPosition === 'before'
+        ? `${this.unit}${from} - ${this.unit}${to}`
+        : `${from}${this.unit} - ${to}${this.unit}`;
     }
-    return `${this.value?.toFixed(this.decimals)}${this.unit}`;
+    return this.unitPosition === 'before'
+      ? `${this.unit}${this.value?.toFixed(this.decimals)}`
+      : `${this.value?.toFixed(this.decimals)}${this.unit}`;
   };
 
   clamp = (val: number) => {
@@ -330,7 +338,7 @@ export class Slider {
               </label>
             )}
             {this.showValue && (
-              <div part="display-value">{this.getTextValue()}</div>
+              <div part="value-text">{this.getTextValue()}</div>
             )}
           </div>
           <div part="track-wrapper">
@@ -347,11 +355,6 @@ export class Slider {
                       ? this.positionTo - this.positionFrom
                       : this.position
                   }%`,
-                  backgroundColor: this.customColor
-                    ? this.customColor
-                    : this.disabled
-                    ? `var(--background-bar-disabled)`
-                    : `var(--background-bar)`,
                 }}
               ></div>
               {/* Two thumbs or one */}
