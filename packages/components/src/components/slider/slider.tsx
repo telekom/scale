@@ -23,6 +23,7 @@
   - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
   - [ ] styles for android
   - [ ] styles for iOS
+  - [ ] deprecate props `trackSmall`, etc.
   - [ ] update storybook
 */
 
@@ -58,13 +59,13 @@ export class Slider {
   /** (optional) the name of the slider */
   @Prop() name?: string;
   /** (optional) the value of the slider */
-  @Prop({ mutable: true, reflect: true }) value?: number;
+  @Prop({ mutable: true, reflect: true }) value?: number = 0;
   /** (optional) multi-thumb */
   @Prop() range?: boolean = false;
   /** (optional) when `range` is true, the "from" value */
-  @Prop({ mutable: true }) valueFrom?: number;
+  @Prop({ mutable: true, reflect: true }) valueFrom?: number = 0;
   /** (optional) when `range` is true, the "to" value */
-  @Prop({ mutable: true }) valueTo?: number;
+  @Prop({ mutable: true, reflect: true }) valueTo?: number = 0;
   /** t(optional) he minimal value of the slider */
   @Prop() min?: number = 0;
   /** (optional) the maximal value of the slider */
@@ -110,7 +111,7 @@ export class Slider {
   // private offsetLeft: number;
   // private offsetLeftFrom: number;
   // private offsetLeftTo: number;
-  private activeRangeThumb: null | 'from' | 'to' = null;
+  private activeRangeThumb: null | 'From' | 'To' = null;
 
   constructor() {
     this.onDragging = this.onDragging.bind(this);
@@ -128,7 +129,13 @@ export class Slider {
     if (this.sliderId == null) {
       this.sliderId = 'slider-' + i++;
     }
-    this.setPosition();
+    // Set initial position
+    if (this.range) {
+      this.setPosition('From');
+      this.setPosition('To');
+    } else {
+      this.setPosition();
+    }
   }
 
   disconnectedCallback() {
@@ -225,12 +232,12 @@ export class Slider {
       return;
     }
     const part = (event.target as HTMLElement).part;
-    this.activeRangeThumb = part.contains('from') ? 'from' : 'to';
+    this.activeRangeThumb = part.contains('from') ? 'From' : 'To';
   };
 
-  setPosition = () => {
-    const valueKey = this.getKeyFor('value');
-    const positionKey = this.getKeyFor('position');
+  setPosition = (thumb?: string) => {
+    const valueKey = this.getKeyFor('value', thumb);
+    const positionKey = this.getKeyFor('position', thumb);
     const clampedValue = this.clamp(this[valueKey]);
     // https://stackoverflow.com/a/25835683
     this[positionKey] =
@@ -239,13 +246,16 @@ export class Slider {
 
   /**
    * Utility function
-   * e.g. 'value' -> 'valueFrom' if `activeRangeThumb='from'`
+   * e.g. 'value' -> 'valueFrom' if `activeRangeThumb='From'`
    * @param propName
    * @returns {string} The prop name with the range suffix if needed
    */
-  getKeyFor = (propName: 'value' | 'offsetLeft' | 'position') => {
+  getKeyFor = (
+    propName: 'value' | 'offsetLeft' | 'position',
+    thumb?: string
+  ) => {
     if (this.range) {
-      return propName + (this.activeRangeThumb === 'from' ? 'From' : 'To');
+      return `${propName}${this.activeRangeThumb ?? thumb}`;
     }
     return propName;
   };
@@ -264,9 +274,9 @@ export class Slider {
     let max = this.max;
     // Take into account the other thumb, when `range=true`
     if (this.range) {
-      if (this.activeRangeThumb === 'from') {
+      if (this.activeRangeThumb === 'From') {
         max = Math.min(this.valueTo, this.max);
-      } else if (this.activeRangeThumb === 'to') {
+      } else if (this.activeRangeThumb === 'To') {
         min = Math.max(this.valueFrom, this.min);
       }
     }
