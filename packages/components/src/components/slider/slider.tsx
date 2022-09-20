@@ -17,10 +17,11 @@
     - [x] text value
     - [x] clamp to each other
     - [x] fix bug: TO won't clamp with FROM on first drag
-  - [ ] update styles (use part selector)
-  - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
+  - [x] use part selector [attr~=value]
+  - [ ] update styles
   - [ ] styles for android
   - [ ] styles for iOS
+  - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
   - [x] deprecate props `trackSmall`, etc.
   - [ ] update storybook
 */
@@ -37,7 +38,6 @@ import {
   Element,
   Fragment,
 } from '@stencil/core';
-import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
@@ -318,26 +318,28 @@ export class Slider {
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          {!!this.label && (
-            <label
-              part="label"
-              class="slider__label"
-              id={`${this.sliderId}-label`}
-              htmlFor={this.sliderId}
-            >
-              {this.label}
-            </label>
-          )}
-          <div part="track-wrapper" class="slider__track-wrapper">
+        <div part={`base ${this.disabled && 'disabled'}`}>
+          <div part="label-wrapper">
+            {!!this.label && (
+              <label
+                part="label"
+                id={`${this.sliderId}-label`}
+                htmlFor={this.sliderId}
+              >
+                {this.label}
+              </label>
+            )}
+            {this.showValue && (
+              <div part="display-value">{this.getTextValue()}</div>
+            )}
+          </div>
+          <div part="track-wrapper">
             <div
               part="track"
-              class="slider__track"
               ref={(el) => (this.sliderTrack = el as HTMLDivElement)}
             >
               <div
                 part="bar"
-                class="slider__bar"
                 style={{
                   left: (this.range ? this.positionFrom : 0) + '%',
                   width: `${
@@ -357,14 +359,12 @@ export class Slider {
                 <Fragment>
                   <div
                     part="thumb-wrapper from"
-                    class="slider__thumb-wrapper"
                     style={{ left: `${this.positionFrom}%` }}
                     onMouseDown={this.onButtonDown}
                     onTouchStart={this.onButtonDown}
                   >
                     <div
                       part="thumb from"
-                      class="slider__thumb"
                       tabindex="0"
                       role="slider"
                       id={this.sliderId + '-from'}
@@ -380,14 +380,12 @@ export class Slider {
                   </div>
                   <div
                     part="thumb-wrapper to"
-                    class="slider__thumb-wrapper"
                     style={{ left: `${this.positionTo}%` }}
                     onMouseDown={this.onButtonDown}
                     onTouchStart={this.onButtonDown}
                   >
                     <div
                       part="thumb to"
-                      class="slider__thumb"
                       tabindex="0"
                       role="slider"
                       id={this.sliderId + '-to'}
@@ -405,14 +403,12 @@ export class Slider {
               ) : (
                 <div
                   part="thumb-wrapper"
-                  class="slider__thumb-wrapper"
                   style={{ left: `${this.position}%` }}
                   onMouseDown={this.onButtonDown}
                   onTouchStart={this.onButtonDown}
                 >
                   <div
                     part="thumb"
-                    class="slider__thumb"
                     tabindex="0"
                     role="slider"
                     id={this.sliderId}
@@ -430,34 +426,9 @@ export class Slider {
             </div>
             {/* (a11y) Not sure about this being only one input, or its value */}
             <input type="hidden" value={this.getTextValue()} name={this.name} />
-            {this.showValue && (
-              <div part="display-value" class="slider__display-value">
-                {this.getTextValue()}
-              </div>
-            )}
           </div>
         </div>
       </Host>
-    );
-  }
-
-  getBasePartMap() {
-    return this.getCssOrBasePartMap('basePart');
-  }
-
-  getCssClassMap() {
-    return this.getCssOrBasePartMap('css');
-  }
-
-  getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const component = 'slider';
-    const prefix = mode === 'basePart' ? '' : `${component}--`;
-
-    return classNames(
-      component,
-      this.disabled && `${prefix}disabled`,
-      this.trackSmall && `${prefix}track-small`,
-      this.thumbLarge && `${prefix}thumb-large`
     );
   }
 }

@@ -26,18 +26,18 @@
   --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
 }
 
-.slider {
+[part='base'] {
   width: 100%;
   display: block;
   align-items: center;
 }
 
-.slider .slider__track-wrapper {
+[part='track-wrapper'] {
   display: flex;
   align-items: center;
 }
 
-.slider .slider__track {
+[part='track'] {
   width: 303px;
   border: var(--border);
   height: 6px;
@@ -49,7 +49,7 @@
   border-radius: 100px;
 }
 
-.slider .slider__bar {
+[part='bar'] {
   height: 6px;
   z-index: -1;
   position: absolute;
@@ -58,7 +58,7 @@
   z-index: var(--scl-z-index-10);
 }
 
-.slider .slider__thumb-wrapper {
+[part~='thumb-wrapper'] {
   width: 32px;
   height: 32px;
   display: flex;
@@ -71,7 +71,7 @@
   background-color: transparent;
 }
 
-.slider .slider__thumb {
+[part~='thumb'] {
   width: 16px;
   border: 1px solid;
   height: 16px;
@@ -83,73 +83,54 @@
   box-shadow: var(--telekom-shadow-resting-standard);
 }
 
-.slider .slider__display-value {
+[part='display-value'] {
   color: var(--color-display-value);
   margin-left: 24px;
   font-weight: var(--font-weight-display-value);
   font-size: var(--font-size-display-value);
 }
 
-.slider .slider__thumb:hover {
+[part~='thumb']:hover {
   border-color: var(--border-color-thumb-hover);
 }
 
-.slider .slider__thumb:active {
+[part~='thumb']:active {
   border-color: var(--border-color-thumb-active);
 }
 
-.slider .slider__thumb:focus {
+[part~='thumb']:focus {
   box-shadow: var(--box-shadow-thumb-focus);
 }
 
-.slider .slider__thumb-wrapper:hover {
+[part~='thumb-wrapper']:hover {
   cursor: grab;
 }
 
-.slider .slider__thumb-wrapper:active {
+[part~='thumb-wrapper']:active {
   cursor: grabbing;
 }
 
-.slider--track-small .slider__track {
-  border: none;
-  height: 1px;
-  border-top: 1px solid transparent;
-  background-color: var(--background-track);
-}
-
-.slider--track-small .slider__bar {
-  border: 1px solid transparent;
-  height: 3px;
-  z-index: 1;
-  box-sizing: border-box;
-}
-
-.slider--thumb-large .slider__thumb {
-  width: 24px;
-  height: 24px;
-}
-
-.slider--disabled .slider__track-wrapper {
+[part~='disabled'] [part='track-wrapper'] {
   cursor: not-allowed;
 }
 
-.slider--disabled .slider__bar {
+[part~='disabled'] [part='bar'] {
   background-color: var(--background-bar-disabled);
   z-index: var(--scl-z-index-10);
 }
 
-.slider--disabled .slider__track {
+[part~='disabled'] [part='track'] {
   border-color: var(--telekom-color-ui-border-disabled);
 }
 
-.slider--disabled .slider__thumb {
+[part~='disabled'] [part~='thumb'] {
   display: none;
 }
 
-.slider--disabled .slider__label {
+[part~='disabled'] [part='label'] {
   color: var(--color-label-disabled);
 }
 
-.slider--disabled .slider__thumb-wrapper:hover {
+[part~='disabled'] [part~='thumb-wrapper']:hover {
   cursor: not-allowed;
 }
