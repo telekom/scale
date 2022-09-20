@@ -9,8 +9,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-// ((input - min) * 100) / (max - min)
-
 /*
   TODO
   - [x] multi-range
@@ -18,12 +16,12 @@
     - [x] keyboard support
     - [x] text value
     - [x] clamp to each other
-    - [ ] fix bug: TO won't clamp with FROM on first drag
+    - [x] fix bug: TO won't clamp with FROM on first drag
   - [ ] update styles (use part selector)
   - [ ] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
   - [ ] styles for android
   - [ ] styles for iOS
-  - [ ] deprecate props `trackSmall`, etc.
+  - [x] deprecate props `trackSmall`, etc.
   - [ ] update storybook
 */
 
@@ -80,14 +78,14 @@ export class Slider {
   @Prop() unit?: string = '%';
   /** (optional) number of decimal places */
   @Prop() decimals?: 0 | 1 | 2 = 0;
-  /** @deprecated - optional) slider custom color */
+  /** @deprecated (optional) slider custom color */
   @Prop() customColor?: string;
   /** (optional) disabled  */
   @Prop() disabled?: boolean = false;
-  /** (optional) smaller track */
-  @Prop() trackSmall?: boolean = false;
-  /** (optional) larger thumb */
-  @Prop() thumbLarge?: boolean = false;
+  /** @deprecated (optional) smaller track */
+  @Prop() trackSmall?: boolean;
+  /** @deprecated (optional) larger thumb */
+  @Prop() thumbLarge?: boolean;
   /** (optional) Slider id */
   @Prop({ mutable: true }) sliderId?: string;
   /** (optional) Injected CSS styles */
@@ -149,6 +147,22 @@ export class Slider {
         message: `Property "customColor" is deprecated. 
           Please use css variable "--background-bar" to set the slider-bar color;
           e.g. <scale-slider value="20" style="--background-bar: green"></scale-slider>`,
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.thumbLarge !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message: `Property "thumbLarge" is deprecated.`,
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.trackSmall !== undefined) {
+      statusNote({
+        tag: 'deprecated',
+        message: `Property "trackSmall" is deprecated.`,
         type: 'warn',
         source: this.hostElement,
       });
@@ -240,6 +254,7 @@ export class Slider {
     const positionKey = this.getKeyFor('position', thumb);
     const clampedValue = this.clamp(this[valueKey]);
     // https://stackoverflow.com/a/25835683
+    // ((input - min) * 100) / (max - min)
     this[positionKey] =
       ((clampedValue - this.min) * 100) / (this.max - this.min);
   };

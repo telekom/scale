@@ -7,23 +7,26 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                                                                               | Type          | Default     |
-| ------------- | -------------- | ----------------------------------------------------------------------------------------- | ------------- | ----------- |
-| `customColor` | `custom-color` | <span style="color:red">**[DEPRECATED]**</span> - optional) slider custom color<br/><br/> | `string`      | `undefined` |
-| `decimals`    | `decimals`     | (optional) number of decimal places                                                       | `0 \| 1 \| 2` | `0`         |
-| `disabled`    | `disabled`     | (optional) disabled                                                                       | `boolean`     | `false`     |
-| `label`       | `label`        | (optional) slider label                                                                   | `string`      | `undefined` |
-| `max`         | `max`          | (optional) the maximal value of the slider                                                | `number`      | `100`       |
-| `min`         | `min`          | t(optional) he minimal value of the slider                                                | `number`      | `0`         |
-| `name`        | `name`         | (optional) the name of the slider                                                         | `string`      | `undefined` |
-| `showValue`   | `show-value`   | (optional) slider display value                                                           | `boolean`     | `true`      |
-| `sliderId`    | `slider-id`    | (optional) Slider id                                                                      | `string`      | `undefined` |
-| `step`        | `step`         | (optional) the step size to increase or decrease when dragging slider                     | `number`      | `1`         |
-| `styles`      | `styles`       | (optional) Injected CSS styles                                                            | `string`      | `undefined` |
-| `thumbLarge`  | `thumb-large`  | (optional) larger thumb                                                                   | `boolean`     | `false`     |
-| `trackSmall`  | `track-small`  | (optional) smaller track                                                                  | `boolean`     | `false`     |
-| `unit`        | `unit`         | (optional) slider value unit                                                              | `string`      | `'%'`       |
-| `value`       | `value`        | (optional) the display value of the slider                                                | `number`      | `undefined` |
+| Property      | Attribute      | Description                                                                              | Type          | Default     |
+| ------------- | -------------- | ---------------------------------------------------------------------------------------- | ------------- | ----------- |
+| `customColor` | `custom-color` | <span style="color:red">**[DEPRECATED]**</span> (optional) slider custom color<br/><br/> | `string`      | `undefined` |
+| `decimals`    | `decimals`     | (optional) number of decimal places                                                      | `0 \| 1 \| 2` | `0`         |
+| `disabled`    | `disabled`     | (optional) disabled                                                                      | `boolean`     | `false`     |
+| `label`       | `label`        | (optional) slider label                                                                  | `string`      | `undefined` |
+| `max`         | `max`          | (optional) the maximal value of the slider                                               | `number`      | `100`       |
+| `min`         | `min`          | t(optional) he minimal value of the slider                                               | `number`      | `0`         |
+| `name`        | `name`         | (optional) the name of the slider                                                        | `string`      | `undefined` |
+| `range`       | `range`        | (optional) multi-thumb                                                                   | `boolean`     | `false`     |
+| `showValue`   | `show-value`   | (optional) slider display value                                                          | `boolean`     | `true`      |
+| `sliderId`    | `slider-id`    | (optional) Slider id                                                                     | `string`      | `undefined` |
+| `step`        | `step`         | (optional) the step size to increase or decrease when dragging slider                    | `number`      | `1`         |
+| `styles`      | `styles`       | (optional) Injected CSS styles                                                           | `string`      | `undefined` |
+| `thumbLarge`  | `thumb-large`  | <span style="color:red">**[DEPRECATED]**</span> (optional) larger thumb<br/><br/>        | `boolean`     | `undefined` |
+| `trackSmall`  | `track-small`  | <span style="color:red">**[DEPRECATED]**</span> (optional) smaller track<br/><br/>       | `boolean`     | `undefined` |
+| `unit`        | `unit`         | (optional) slider value unit                                                             | `string`      | `'%'`       |
+| `value`       | `value`        | (optional) the value of the slider                                                       | `number`      | `0`         |
+| `valueFrom`   | `value-from`   | (optional) when `range` is true, the "from" value                                        | `number`      | `0`         |
+| `valueTo`     | `value-to`     | (optional) when `range` is true, the "to" value                                          | `number`      | `0`         |
 
 
 ## Events
@@ -42,9 +45,11 @@
 | ----------------- | ----------- |
 | `"bar"`           |             |
 | `"display-value"` |             |
+| `"from"`          |             |
 | `"label"`         |             |
 | `"thumb"`         |             |
 | `"thumb-wrapper"` |             |
+| `"to"`            |             |
 | `"track"`         |             |
 | `"track-wrapper"` |             |
 

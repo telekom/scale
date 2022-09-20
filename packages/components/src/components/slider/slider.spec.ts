@@ -63,17 +63,11 @@ describe('Slider', () => {
     it('should handle getCssClassMap() and getBasePartMap()', () => {
       const element = new Slider();
       element.disabled = true;
-      element.trackSmall = true;
-      element.thumbLarge = true;
       expect(element.getCssClassMap()).toContain('slider');
       expect(element.getCssClassMap()).toContain('slider--disabled');
-      expect(element.getCssClassMap()).toContain('slider--track-small');
-      expect(element.getCssClassMap()).toContain('slider--thumb-large');
 
       expect(element.getBasePartMap()).toContain('slider');
-      expect(element.getBasePartMap()).toContain('track-small');
       expect(element.getBasePartMap()).toContain('disabled');
-      expect(element.getBasePartMap()).toContain('thumb-large');
     });
   });
 
@@ -91,8 +85,6 @@ describe('Slider', () => {
       expect(page.rootInstance.showValue).toBe(true);
       expect(page.rootInstance.customColor).toBe(undefined);
       expect(page.rootInstance.disabled).toBe(false);
-      expect(page.rootInstance.trackSmall).toBe(false);
-      expect(page.rootInstance.thumbLarge).toBe(false);
     });
 
     it('check props being set', async () => {
@@ -110,8 +102,6 @@ describe('Slider', () => {
       page.root.showValue = false;
       page.root.customColor = 'magenta';
       page.root.disabled = 'true';
-      page.root.trackSmall = 'true';
-      page.root.thumbLarge = 'true';
       page.root.sliderId = 'sliderID';
       page.root.styles = 'background : red';
       await page.waitForChanges();
@@ -125,8 +115,6 @@ describe('Slider', () => {
       expect(page.rootInstance.showValue).toBe(false);
       expect(page.rootInstance.customColor).toBe('magenta');
       expect(page.rootInstance.disabled).toBe(true);
-      expect(page.rootInstance.trackSmall).toBe(true);
-      expect(page.rootInstance.thumbLarge).toBe(true);
       expect(page.rootInstance.sliderId).toBe('sliderID');
       expect(page.rootInstance.styles).toBe('background : red');
     });
