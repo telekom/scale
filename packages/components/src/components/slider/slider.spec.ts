@@ -59,18 +59,6 @@ describe('Slider', () => {
     expect(page.root).toMatchSnapshot();
   });
 
-  describe('classes', () => {
-    it('should handle getCssClassMap() and getBasePartMap()', () => {
-      const element = new Slider();
-      element.disabled = true;
-      expect(element.getCssClassMap()).toContain('slider');
-      expect(element.getCssClassMap()).toContain('slider--disabled');
-
-      expect(element.getBasePartMap()).toContain('slider');
-      expect(element.getBasePartMap()).toContain('disabled');
-    });
-  });
-
   describe('props', () => {
     it('check default props', async () => {
       const page = await newSpecPage({
@@ -120,13 +108,13 @@ describe('Slider', () => {
     });
   });
 
-  it('keydown .slider__thumb with ArrowRight', async () => {
+  it('keydown [part="thumb"] with ArrowRight', async () => {
     const page = await newSpecPage({
       components: [Slider],
       html: `<scale-slider></scale-slider>`,
     });
     page.root.value = 50;
-    simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowRight');
+    simulateKeyboardEvent(page, 'keydown', '[part="thumb"]', 'ArrowRight');
     expect(await page.rootInstance.value).toBe(51);
   });
 
@@ -139,31 +127,31 @@ describe('Slider', () => {
     const inputSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-input', inputSpy);
     page.doc.addEventListener('scaleInput', inputSpyLegacy);
-    const element = page.root.shadowRoot.querySelector('.slider__thumb');
+    const element = page.root.shadowRoot.querySelector('[part="thumb"]');
     element.dispatchEvent(new Event('keydown'));
     await page.waitForChanges();
     expect(inputSpy).toHaveBeenCalled();
     expect(inputSpyLegacy).toHaveBeenCalled();
   });
 
-  it('keydown .slider__thumb with ArrowUp', async () => {
+  it('keydown [part="thumb"] with ArrowUp', async () => {
     const page = await newSpecPage({
       components: [Slider],
       html: `<scale-slider></scale-slider>`,
     });
     page.root.value = 50;
-    simulateKeyboardEvent(page, 'keydown', '.slider__thumb', 'ArrowUp');
+    simulateKeyboardEvent(page, 'keydown', '[part="thumb"]', 'ArrowUp');
     expect(await page.rootInstance.value).toBe(60);
   });
 
-  it('mousedown .slider__thumb-wrapper', async () => {
+  it('mousedown [part="thumb-wrapper"]', async () => {
     const page = await newSpecPage({
       components: [Slider],
       html: `<scale-slider></scale-slider>`,
     });
     page.root.dragging = false;
     expect(await page.rootInstance.dragging).toBe(undefined);
-    simulateMouseEvent(page, 'mousedown', '.slider__thumb-wrapper');
+    simulateMouseEvent(page, 'mousedown', '[part="thumb-wrapper"]');
     expect(await page.rootInstance.dragging).toBe(true);
   });
 });
