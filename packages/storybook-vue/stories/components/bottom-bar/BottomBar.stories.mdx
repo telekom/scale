@@ -36,15 +36,37 @@ export const TemplateIOS = (args, { argTypes }) => ({
     ...ScaleBottomBar.props,
   },
   template: `
-    <div data-platform="ios">
+    <div data-platform="ios" style="width: 500px">
         <scale-bottom-bar
         :separator="separator"
         :styles="styles"
         >
-        <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
         <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
         <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
         <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
+        </scale-bottom-bar>    
+    </div>
+  `,
+});
+
+export const TemplateIOSLabel = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div data-platform="ios" style="width: 500px">
+        <scale-bottom-bar
+        :separator="separator"
+        :styles="styles"
+        >
+        <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item>    
         </scale-bottom-bar>    
     </div>
   `,
@@ -58,15 +80,37 @@ export const TemplateAndroid = (args, { argTypes }) => ({
     ...ScaleBottomBar.props,
   },
   template: `
-    <div data-platform="android" style="border: 2px solid red; width: 500px">
+    <div data-platform="android" style="width: 500px">
         <scale-bottom-bar
         :separator="separator"
         :styles="styles"
         >
-        <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
         <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
         <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
         <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
+        </scale-bottom-bar>    
+    </div>
+  `,
+});
+
+export const TemplateAndroidLabel = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div data-platform="android" style="width: 500px">
+        <scale-bottom-bar
+        :separator="separator"
+        :styles="styles"
+        >
+        <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item>    
         </scale-bottom-bar>    
     </div>
   `,
@@ -101,10 +145,34 @@ export const TemplateAndroid = (args, { argTypes }) => ({
 
 ```html
 <scale-bottom-bar>
-    <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
     <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
     <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
     <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>  
+</scale-breadcrumb>
+```
+
+## iOS with Label
+
+<Canvas withSource="none">
+  <Story name="iOS with Label" args={{}} parameters={{
+    viewport: {
+      defaultViewport: 'iphonex',
+    },
+  }}>
+    {
+        TemplateIOSLabel.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="IOS" />
+
+```html
+<scale-bottom-bar>
+  <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item> 
 </scale-breadcrumb>
 ```
 
@@ -121,10 +189,30 @@ export const TemplateAndroid = (args, { argTypes }) => ({
 
 ```html
 <scale-bottom-bar>
-    <scale-bottom-bar-item icon="home-home" label="booba" selected></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
     <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
     <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
     <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>  
+</scale-breadcrumb>
+```
+
+
+## Android with Label
+
+<Canvas withSource="none">
+  <Story name="Android with Label" args={{}}>
+    {TemplateAndroidLabel.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Android" />
+
+```html
+<scale-bottom-bar>
+  <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item> 
 </scale-breadcrumb>
 ```
 
