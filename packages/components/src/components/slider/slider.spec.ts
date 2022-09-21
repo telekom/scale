@@ -71,7 +71,6 @@ describe('Slider', () => {
       expect(page.rootInstance.unit).toBe('%');
       expect(page.rootInstance.decimals).toBe(0);
       expect(page.rootInstance.showValue).toBe(true);
-      expect(page.rootInstance.customColor).toBe(undefined);
       expect(page.rootInstance.disabled).toBe(false);
     });
 
@@ -87,8 +86,8 @@ describe('Slider', () => {
       page.root.unit = '';
       page.root.decimals = 2;
       page.root.label = 'slider label';
+      page.root.helperText = 'helper text';
       page.root.showValue = false;
-      page.root.customColor = 'magenta';
       page.root.disabled = 'true';
       page.root.sliderId = 'sliderID';
       page.root.styles = 'background : red';
@@ -100,8 +99,8 @@ describe('Slider', () => {
       expect(page.rootInstance.unit).toBe('');
       expect(page.rootInstance.decimals).toBe(2);
       expect(page.rootInstance.label).toBe('slider label');
+      expect(page.rootInstance.helperText).toBe('helper text');
       expect(page.rootInstance.showValue).toBe(false);
-      expect(page.rootInstance.customColor).toBe('magenta');
       expect(page.rootInstance.disabled).toBe(true);
       expect(page.rootInstance.sliderId).toBe('sliderID');
       expect(page.rootInstance.styles).toBe('background : red');

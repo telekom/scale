@@ -10,10 +10,12 @@
  */
 
 :host {
-  --width-track: 362px;
+  --width: 368px;
   --height-track: 6px;
   --background-track: var(--telekom-color-ui-faint);
   --radius-track: var(--telekom-radius-pill);
+  --spacing-track: var(--telekom-spacing-unit-x5) 0
+    var(--telekom-spacing-unit-x4);
   --background-bar: var(--telekom-color-primary-standard);
   --radius-thumb: var(--telekom-radius-circle);
   --size-thumb: 24px;
@@ -23,10 +25,13 @@
   --color-step-mark: var(--telekom-color-text-and-icon-additional);
   --radius-step-mark: var(--telekom-radius-circle);
   --size-step-mark: 4px;
+  --font-label: var(--telekom-text-style-ui);
+  --font-helper-text: var(--telekom-text-style-small-bold);
+  --color-helper-text: var(--telekom-color-text-and-icon-additional);
 }
 
-[part='base'] {
-  /*  */
+[part~='base'] {
+  width: var(--width);
 }
 
 [part='label-wrapper'] {
@@ -37,7 +42,7 @@
 
 [part='label'],
 [part='value-text'] {
-  font: var(--telekom-text-style-ui);
+  font: var(--font-label);
 }
 
 [part='track-wrapper'] {
@@ -50,8 +55,8 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  margin: var(--telekom-spacing-unit-x5) 0;
-  width: var(--width-track);
+  margin: var(--spacing-track);
+  width: 100%;
   height: var(--height-track);
   background: var(--background-track);
   border-radius: var(--radius-track);
@@ -118,10 +123,21 @@
   border-radius: var(--telekom-radius-circle);
 }
 
+[part='meta'] {
+  display: flex;
+  justify-content: space-between;
+}
+
+[part='helper-text'] {
+  font: var(--font-helper-text);
+  color: var(--color-helper-text);
+}
+
 /* disabled */
 
 /* TODO can this be overwritten? it should... */
-[part~='disabled'] [part='label-wrapper'] {
+[part~='disabled'] [part='label-wrapper'],
+[part~='disabled'] [part='helper-text'] {
   color: var(--telekom-color-text-and-icon-disabled);
 }
 

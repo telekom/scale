@@ -25,7 +25,7 @@
     - [x] styles for iOS
   - [x] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
   - [ ] fix spacing on the sides, thumb position (so marks match too)
-  - [ ] helper text
+  - [x] helper text
   - [ ] update storybook
 */
 
@@ -41,6 +41,7 @@ import {
   Element,
   Fragment,
 } from '@stencil/core';
+import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
@@ -77,6 +78,8 @@ export class Slider {
   @Prop() showStepMarks?: boolean = false;
   /** (optional) slider label */
   @Prop() label?: string;
+  /** (optional) helper text */
+  @Prop() helperText?: string;
   /** (optional) slider display value */
   @Prop() showValue?: boolean = true;
   /** (optional) slider value unit */
@@ -330,11 +333,14 @@ export class Slider {
   }
 
   render() {
+    const helperTextId = `slider-helper-message-${i}`;
+    const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
+
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
 
-        <div part={`base ${this.disabled && 'disabled'}`}>
+        <div part={classNames('base', this.disabled && 'disabled')}>
           <div part="label-wrapper">
             {!!this.label && (
               <label
@@ -393,6 +399,7 @@ export class Slider {
                       aria-labelledby={`${this.sliderId}-label`}
                       aria-orientation="horizontal"
                       aria-disabled={this.disabled}
+                      {...(this.helperText ? ariaDescribedByAttr : {})}
                       onKeyDown={this.onKeyDown}
                     />
                   </div>
@@ -414,6 +421,7 @@ export class Slider {
                       aria-labelledby={`${this.sliderId}-label`}
                       aria-orientation="horizontal"
                       aria-disabled={this.disabled}
+                      {...(this.helperText ? ariaDescribedByAttr : {})}
                       onKeyDown={this.onKeyDown}
                     />
                   </div>
@@ -437,14 +445,25 @@ export class Slider {
                     aria-labelledby={`${this.sliderId}-label`}
                     aria-orientation="horizontal"
                     aria-disabled={this.disabled}
+                    {...(this.helperText ? ariaDescribedByAttr : {})}
                     onKeyDown={this.onKeyDown}
                   />
                 </div>
               )}
             </div>
-            {/* (a11y) Not sure about this being only one input, or its value */}
+            {/* (a11y) Not sure about this being only one input, or its value, or useful at all… */}
             <input type="hidden" value={this.getTextValue()} name={this.name} />
           </div>
+          {this.helperText && (
+            <div
+              part="meta"
+              id={helperTextId}
+              aria-live="polite"
+              aria-relevant="additions removals"
+            >
+              <div part="helper-text">{this.helperText}</div>
+            </div>
+          )}
         </div>
       </Host>
     );
