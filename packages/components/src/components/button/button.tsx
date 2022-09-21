@@ -19,8 +19,13 @@ import {
   Method,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { hasShadowDom, isScaleIcon } from '../../utils/utils';
-import statusNote from '../../utils/status-note';
+import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
+
+const DEFAULT_ICON_SIZE = 24;
+const buttonIconSizeMap = {
+  small: 16,
+  large: 24,
+};
 
 @Component({
   tag: 'scale-button',
@@ -30,8 +35,8 @@ import statusNote from '../../utils/status-note';
 export class Button {
   @Element() hostElement: HTMLElement;
 
-  /** @deprecated - css overwrite should replace size */
-  @Prop() size?: string;
+  /** (optional) The size of the button */
+  @Prop() size?: 'small' | 'large' = 'large';
   /** (optional) Button variant */
   @Prop() variant?: string = 'primary';
   /** (optional) If `true`, the button is disabled */
@@ -76,6 +81,10 @@ export class Button {
     this.focusableElement.focus();
   }
 
+  componentDidLoad() {
+    this.setChildrenIconSize();
+  }
+
   /**
    * Hack to make the button behave has expected when inside forms.
    * @see https://github.com/ionic-team/ionic-framework/blob/master/core/src/components/button/button.tsx#L155-L175
@@ -102,17 +111,6 @@ export class Button {
   connectedCallback() {
     this.setIconPositionProp();
     this.appendEnterKeySubmitFallback();
-  }
-
-  componentDidRender() {
-    if (this.size) {
-      statusNote({
-        tag: 'deprecated',
-        message: 'Property "size" is deprecated. Please use the css overwrite!',
-        type: 'warn',
-        source: this.hostElement,
-      });
-    }
   }
 
   disconnectedCallback() {
@@ -170,6 +168,22 @@ export class Button {
     }
   }
 
+  /**
+   * Set any children icon's size according the button size.
+   */
+  setChildrenIconSize() {
+    if (this.size != null && buttonIconSizeMap[this.size] != null) {
+      const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+        isScaleIcon
+      );
+      icons.forEach((icon) => {
+        if (icon.size === DEFAULT_ICON_SIZE) {
+          icon.size = buttonIconSizeMap[this.size];
+        }
+      });
+    }
+  }
+
   render() {
     const basePart = classNames(
       'base',
@@ -218,6 +232,7 @@ export class Button {
   getCssClassMap() {
     return classNames(
       'button',
+      this.size && `button--size-${this.size}`,
       this.variant && `button--variant-${this.variant}`,
       this.iconOnly && `button--icon-only`,
       !this.iconOnly &&

@@ -26,6 +26,11 @@
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
 
+  /* size: small */
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --min-height-small: var(--telekom-spacing-unit-x8);
+
   /* variant: primary */
   --radius-primary: var(--radius);
   --background-primary: var(--telekom-color-primary-standard);
@@ -92,15 +97,21 @@
   transition: var(--transition);
 }
 
+.button.button--size-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  min-height: var(--min-height-small);
+}
+
 .button:not(.button--disabled):focus {
   box-shadow: var(--box-shadow-focus);
 }
 
-.button.button--icon-before ::slotted(*) {
+.button.button--icon-before:not(.button--icon-only) ::slotted(*) {
   margin-right: var(--spacing-icon-x);
 }
 
-.button.button--icon-after ::slotted(*) {
+.button.button--icon-after:not(.button--icon-only) ::slotted(*) {
   margin-left: var(--spacing-icon-x);
 }
 
@@ -116,10 +127,6 @@
   box-sizing: border-box;
   pointer-events: none;
   border-radius: var(--radius);
-}
-
-.button--icon-only {
-  padding: var(--spacing-x-icon-only);
 }
 
 .button--disabled {
@@ -189,4 +196,13 @@
 }
 .button--disabled.button--variant-ghost {
   color: var(--color-ghost-disabled);
+}
+
+.button--icon-only {
+  padding-left: var(--spacing-x-icon-only);
+  padding-right: var(--spacing-x-icon-only);
+}
+
+.button--icon-only.button--size-small {
+  min-width: 24px;
 }
