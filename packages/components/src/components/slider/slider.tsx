@@ -24,7 +24,7 @@
     - [x] styles for android
     - [x] styles for iOS
   - [x] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
-  - [ ] fix spacing on the sides, thumb position (so marks match too)
+  - [x] fix spacing on the sides, thumb position (so marks match too)
   - [x] helper text
   - [ ] update storybook
 */
@@ -378,20 +378,67 @@ export class Slider {
                   ))}
                 </div>
               )}
-              {/* Two thumbs or one */}
-              {this.range ? (
-                <Fragment>
+              <div part="inner-track">
+                {/* Two thumbs or one */}
+                {this.range ? (
+                  <Fragment>
+                    <div
+                      part="thumb-wrapper from"
+                      style={{ left: `${this.positionFrom}%` }}
+                      onMouseDown={this.onButtonDown}
+                      onTouchStart={this.onButtonDown}
+                    >
+                      <div
+                        part="thumb from"
+                        tabindex="0"
+                        role="slider"
+                        id={this.sliderId + '-from'}
+                        aria-valuemin={this.min}
+                        aria-valuenow={this.value}
+                        aria-valuemax={this.max}
+                        aria-valuetext={`${this.value}`}
+                        aria-labelledby={`${this.sliderId}-label`}
+                        aria-orientation="horizontal"
+                        aria-disabled={this.disabled}
+                        {...(this.helperText ? ariaDescribedByAttr : {})}
+                        onKeyDown={this.onKeyDown}
+                      />
+                    </div>
+                    <div
+                      part="thumb-wrapper to"
+                      style={{ left: `${this.positionTo}%` }}
+                      onMouseDown={this.onButtonDown}
+                      onTouchStart={this.onButtonDown}
+                    >
+                      <div
+                        part="thumb to"
+                        tabindex="0"
+                        role="slider"
+                        id={this.sliderId + '-to'}
+                        aria-valuemin={this.min}
+                        aria-valuenow={this.value}
+                        aria-valuemax={this.max}
+                        aria-valuetext={`${this.value}`}
+                        aria-labelledby={`${this.sliderId}-label`}
+                        aria-orientation="horizontal"
+                        aria-disabled={this.disabled}
+                        {...(this.helperText ? ariaDescribedByAttr : {})}
+                        onKeyDown={this.onKeyDown}
+                      />
+                    </div>
+                  </Fragment>
+                ) : (
                   <div
-                    part="thumb-wrapper from"
-                    style={{ left: `${this.positionFrom}%` }}
+                    part="thumb-wrapper"
+                    style={{ left: `${this.position}%` }}
                     onMouseDown={this.onButtonDown}
                     onTouchStart={this.onButtonDown}
                   >
                     <div
-                      part="thumb from"
+                      part="thumb"
                       tabindex="0"
                       role="slider"
-                      id={this.sliderId + '-from'}
+                      id={this.sliderId}
                       aria-valuemin={this.min}
                       aria-valuenow={this.value}
                       aria-valuemax={this.max}
@@ -403,57 +450,12 @@ export class Slider {
                       onKeyDown={this.onKeyDown}
                     />
                   </div>
-                  <div
-                    part="thumb-wrapper to"
-                    style={{ left: `${this.positionTo}%` }}
-                    onMouseDown={this.onButtonDown}
-                    onTouchStart={this.onButtonDown}
-                  >
-                    <div
-                      part="thumb to"
-                      tabindex="0"
-                      role="slider"
-                      id={this.sliderId + '-to'}
-                      aria-valuemin={this.min}
-                      aria-valuenow={this.value}
-                      aria-valuemax={this.max}
-                      aria-valuetext={`${this.value}`}
-                      aria-labelledby={`${this.sliderId}-label`}
-                      aria-orientation="horizontal"
-                      aria-disabled={this.disabled}
-                      {...(this.helperText ? ariaDescribedByAttr : {})}
-                      onKeyDown={this.onKeyDown}
-                    />
-                  </div>
-                </Fragment>
-              ) : (
-                <div
-                  part="thumb-wrapper"
-                  style={{ left: `${this.position}%` }}
-                  onMouseDown={this.onButtonDown}
-                  onTouchStart={this.onButtonDown}
-                >
-                  <div
-                    part="thumb"
-                    tabindex="0"
-                    role="slider"
-                    id={this.sliderId}
-                    aria-valuemin={this.min}
-                    aria-valuenow={this.value}
-                    aria-valuemax={this.max}
-                    aria-valuetext={`${this.value}`}
-                    aria-labelledby={`${this.sliderId}-label`}
-                    aria-orientation="horizontal"
-                    aria-disabled={this.disabled}
-                    {...(this.helperText ? ariaDescribedByAttr : {})}
-                    onKeyDown={this.onKeyDown}
-                  />
-                </div>
-              )}
+                )}
+              </div>
             </div>
-            {/* (a11y) Not sure about this being only one input, or its value, or useful at all… */}
-            <input type="hidden" value={this.getTextValue()} name={this.name} />
           </div>
+          {/* (a11y) Not sure about this being only one input, or its value, or useful at all… */}
+          <input type="hidden" value={this.getTextValue()} name={this.name} />
           {this.helperText && (
             <div
               part="meta"

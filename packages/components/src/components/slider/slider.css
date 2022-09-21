@@ -16,12 +16,14 @@
   --radius-track: var(--telekom-radius-pill);
   --spacing-track: var(--telekom-spacing-unit-x5) 0
     var(--telekom-spacing-unit-x4);
+  --spacing-x-inner-track: 10px;
   --background-bar: var(--telekom-color-primary-standard);
   --radius-thumb: var(--telekom-radius-circle);
   --size-thumb: 24px;
   --border-color-thumb: rgba(0, 0, 0, 0.05);
   --background-thumb: var(--telekom-color-ui-white);
   --color-focus: var(--telekom-color-functional-focus);
+  --spacing-x-step-marks: 8px;
   --color-step-mark: var(--telekom-color-text-and-icon-additional);
   --radius-step-mark: var(--telekom-radius-circle);
   --size-step-mark: 4px;
@@ -47,6 +49,7 @@
 
 [part='track-wrapper'] {
   display: flex;
+  position: relative;
   align-items: center;
 }
 
@@ -60,6 +63,16 @@
   height: var(--height-track);
   background: var(--background-track);
   border-radius: var(--radius-track);
+}
+
+/* Really holds the thumb, adding some spacing on the sides */
+[part='inner-track'] {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: var(--spacing-x-inner-track);
+  width: calc(100% - var(--spacing-x-inner-track) * 2);
+  height: 100%;
 }
 
 [part='bar'] {
@@ -112,8 +125,7 @@
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  /* FIXME use token? */
-  padding: 0 8px;
+  padding: 0 var(--spacing-x-step-marks);
 }
 
 [part='step-mark'] {
