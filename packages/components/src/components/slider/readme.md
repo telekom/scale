@@ -12,6 +12,7 @@
 | `customColor`   | `custom-color`    | <span style="color:red">**[DEPRECATED]**</span> (optional) slider custom color<br/><br/> | `string`              | `undefined` |
 | `decimals`      | `decimals`        | (optional) number of decimal places                                                      | `0 \| 1 \| 2`         | `0`         |
 | `disabled`      | `disabled`        | (optional) disabled                                                                      | `boolean`             | `false`     |
+| `helperText`    | `helper-text`     | (optional) helper text                                                                   | `string`              | `undefined` |
 | `label`         | `label`           | (optional) slider label                                                                  | `string`              | `undefined` |
 | `max`           | `max`             | (optional) the maximal value of the slider                                               | `number`              | `100`       |
 | `min`           | `min`             | t(optional) he minimal value of the slider                                               | `number`              | `0`         |
@@ -24,7 +25,7 @@
 | `styles`        | `styles`          | (optional) Injected CSS styles                                                           | `string`              | `undefined` |
 | `thumbLarge`    | `thumb-large`     | <span style="color:red">**[DEPRECATED]**</span> (optional) larger thumb<br/><br/>        | `boolean`             | `undefined` |
 | `trackSmall`    | `track-small`     | <span style="color:red">**[DEPRECATED]**</span> (optional) smaller track<br/><br/>       | `boolean`             | `undefined` |
-| `unit`          | `unit`            | (optional) slider value unit                                                             | `string`              | `'%'`       |
+| `unit`          | `unit`            | (optional) slider value unit                                                             | `string`              | `''`        |
 | `unitPosition`  | `unit-position`   | (optional) unit position                                                                 | `"after" \| "before"` | `'after'`   |
 | `value`         | `value`           | (optional) the value of the slider                                                       | `number`              | `0`         |
 | `valueFrom`     | `value-from`      | (optional) when `range` is true, the "from" value                                        | `number`              | `0`         |
@@ -47,11 +48,13 @@
 | ----------------- | ----------- |
 | `"bar"`           |             |
 | `"from"`          |             |
+| `"helper-text"`   |             |
+| `"inner-track"`   |             |
 | `"label"`         |             |
 | `"label-wrapper"` |             |
+| `"meta"`          |             |
 | `"step-mark"`     |             |
 | `"step-marks"`    |             |
-| `"thumb"`         |             |
 | `"thumb-wrapper"` |             |
 | `"to"`            |             |
 | `"track"`         |             |

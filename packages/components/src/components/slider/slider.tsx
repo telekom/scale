@@ -26,7 +26,7 @@
   - [x] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
   - [x] fix spacing on the sides, thumb position (so marks match too)
   - [x] helper text
-  - [ ] update storybook
+  - [x] update storybook
 */
 
 import {
@@ -83,7 +83,7 @@ export class Slider {
   /** (optional) slider display value */
   @Prop() showValue?: boolean = true;
   /** (optional) slider value unit */
-  @Prop() unit?: string = '%';
+  @Prop() unit?: string = '';
   /** (optional) unit position */
   @Prop() unitPosition?: 'before' | 'after' = 'after';
   /** (optional) number of decimal places */
