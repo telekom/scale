@@ -42,9 +42,13 @@
   align-items: flex-start;
 }
 
-[part='label'],
+[part='label'] {
+  font: var(--font-label);
+}
+
 [part='value-text'] {
   font: var(--font-label);
+  font-variant-numeric: tabular-nums;
 }
 
 [part='track-wrapper'] {
