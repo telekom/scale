@@ -303,5 +303,4 @@ input[type='week']::-webkit-calendar-picker-indicator,
 input[type='month']::-webkit-calendar-picker-indicator {
   position: absolute;
   right: 12px;
-  font-size: 24px;
 }
