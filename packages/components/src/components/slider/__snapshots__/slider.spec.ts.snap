@@ -6,7 +6,7 @@ exports[`Slider should match snapshot 1`] = `
     <div part="base">
       <div part="label-wrapper">
         <div part="value-text">
-          0%
+          0
         </div>
       </div>
       <div part="track-wrapper">
@@ -19,7 +19,7 @@ exports[`Slider should match snapshot 1`] = `
           </div>
         </div>
       </div>
-      <input type="hidden" value="0%">
+      <input type="hidden" value="0">
     </div>
   </mock:shadow-root>
   Label
@@ -32,7 +32,7 @@ exports[`Slider should match snapshot 2`] = `
     <div part="base">
       <div part="label-wrapper">
         <div part="value-text">
-          10%
+          10
         </div>
       </div>
       <div part="track-wrapper">
@@ -45,7 +45,7 @@ exports[`Slider should match snapshot 2`] = `
           </div>
         </div>
       </div>
-      <input type="hidden" value="10%">
+      <input type="hidden" value="10">
     </div>
   </mock:shadow-root>
   Label

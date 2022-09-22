@@ -68,7 +68,7 @@ describe('Slider', () => {
       expect(page.rootInstance.min).toBe(0);
       expect(page.rootInstance.max).toBe(100);
       expect(page.rootInstance.step).toBe(1);
-      expect(page.rootInstance.unit).toBe('%');
+      expect(page.rootInstance.unit).toBe('');
       expect(page.rootInstance.decimals).toBe(0);
       expect(page.rootInstance.showValue).toBe(true);
       expect(page.rootInstance.disabled).toBe(false);
