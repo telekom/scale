@@ -9,26 +9,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/*
-  TODO
-  - [x] multi-range
-    - [x] basic implementation
-    - [x] keyboard support
-    - [x] text value
-    - [x] clamp to each other
-    - [x] fix bug: TO won't clamp with FROM on first drag
-  - [x] deprecate props `trackSmall`, etc.
-  - [x] use part selector [attr~=value]
-  - [x] update styles
-    - [x] disabled
-    - [x] styles for android
-    - [x] styles for iOS
-  - [x] show "hash marks" https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#a_range_control_with_hash_marks
-  - [x] fix spacing on the sides, thumb position (so marks match too)
-  - [x] helper text
-  - [x] update storybook
-*/
-
 import {
   Component,
   h,
