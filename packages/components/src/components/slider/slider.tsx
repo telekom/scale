@@ -199,6 +199,11 @@ export class Slider {
     }
     const valueKey = this.getKeyFor('value');
     this.setValue(this[valueKey] + steps, valueKey);
+    emitEvent(
+      this,
+      'scaleChange',
+      this.range ? [this.valueFrom, this.valueTo] : this.value
+    );
   };
 
   onDragStart = () => {
@@ -319,10 +324,10 @@ export class Slider {
   };
 
   addGlobalListeners() {
-    window.addEventListener('mousemove', this.onDragging.bind(this));
-    window.addEventListener('mouseup', this.onDragEnd.bind(this));
-    window.addEventListener('touchmove', this.onDragging.bind(this));
-    window.addEventListener('touchend', this.onDragEnd.bind(this));
+    window.addEventListener('mousemove', this.onDragging);
+    window.addEventListener('mouseup', this.onDragEnd);
+    window.addEventListener('touchmove', this.onDragging);
+    window.addEventListener('touchend', this.onDragEnd);
   }
 
   removeGlobalListeners() {
