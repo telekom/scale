@@ -62,9 +62,7 @@ export const Template = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
-      :info="info"
-      :warning="warning"
-      :success="success"
+      :variant="variant"
       :max-length="maxLength"
       :min-length="minLength"
       :max="max"
@@ -106,9 +104,7 @@ export const StorySectionsTemplate = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
-      :info="info"
-      :warning="warning"
-      :success="success"
+      :variant="variant"
       :max-length="maxLength"
       :min-length="minLength"
       :max="max"
@@ -356,7 +352,7 @@ scale-text-field {
     name="With Warning"
     args={{
       label: 'With Warning',
-      warning: true,
+      variant: 'warning',
       helperText: 'something with warning',
     }}
   >
@@ -368,7 +364,7 @@ scale-text-field {
 <scale-text-field
   label="With Error"
   helper-text="something with warning"
-  warning
+  variant="warning"
 ></scale-text-field>
 ```
 
@@ -379,7 +375,7 @@ scale-text-field {
     name="With Success"
     args={{
       label: 'With Success',
-      success: true,
+      variant: 'success',
       helperText: 'something is successful',
     }}
   >
@@ -391,7 +387,7 @@ scale-text-field {
 <scale-text-field
   label="With Success"
   helper-text="something is successful"
-  success
+  variant="success"
 ></scale-text-field>
 ```
 

@@ -62,12 +62,9 @@ export class TextField {
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) Input status */
-  @Prop() info?: boolean = true;
-  /** (optional) Input status */
-  @Prop() warning?: boolean = false;
-  /** (optional) Input status */
-  @Prop() success?: boolean = false;
+  /** (optional) Variant */
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   /** (optional) Input text string max length */
   @Prop() maxLength?: number;
   /** (optional) Input text string min length */
@@ -138,9 +135,6 @@ export class TextField {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-text-field' + i++;
-    }
-    if (this.invalid || this.warning || this.success) {
-      this.info = false;
     }
   }
 
@@ -219,15 +213,18 @@ export class TextField {
   };
 
   renderHelperIcon() {
-    if (this.info || this.warning) {
+    if (
+      (this.variant === 'informational' && !this.invalid) ||
+      (this.variant === 'warning' && !this.invalid)
+    ) {
       return (
         <scale-icon-alert-information size={11}></scale-icon-alert-information>
       );
     }
-    if (this.invalid) {
+    if (this.invalid || this.variant === 'danger') {
       return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
     }
-    if (this.success) {
+    if (this.variant === 'success') {
       return <scale-icon-alert-success size={11}></scale-icon-alert-success>;
     }
   }
@@ -324,10 +321,8 @@ export class TextField {
       this.disabled && `text-field--disabled`,
       this.transparent && 'text-field--transparent',
       this.status && `text-field--status-${this.status}`,
-      this.invalid && `text-field--status-error`,
-      this.success && `text-field--status-success`,
-      this.warning && `text-field--status-warning`,
-      this.info && `text-field--status-info`,
+      this.invalid && `text-field--variant-danger`,
+      this.variant && `text-field--variant-${this.variant}`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'
     );
