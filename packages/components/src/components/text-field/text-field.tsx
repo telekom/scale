@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
+ import {
   Component,
   Prop,
   Element,
@@ -62,8 +62,6 @@ export class TextField {
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) variant */
-  @Prop() variant?: 'neutral' | 'informational' | 'warning' | 'danger' | 'success' = 'informational';  
   /** (optional) Input text string max length */
   @Prop() maxLength?: number;
   /** (optional) Input text string min length */
@@ -134,9 +132,6 @@ export class TextField {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-text-field' + i++;
-    }
-    if (this.invalid) {
-      this.variant = "danger"
     }
   }
 
@@ -218,7 +213,7 @@ export class TextField {
       'time',
       'datetime-local',
     ];
-    console.log('REndering,', this.helperText, this.variant)
+
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -260,6 +255,9 @@ export class TextField {
               aria-live="polite"
               aria-relevant="additions removals"
             >
+              {!!this.helperText && (
+                <div class="text-field__helper-text">{this.helperText}</div>
+              )}
               {this.counter && (
                 <div class="text-field__counter">
                   {!!this.value ? String(this.value).length : 0} /{' '}
@@ -268,8 +266,6 @@ export class TextField {
               )}
             </div>
           )}
-          {this.helperText && <scale-helper-text helperText={this.helperText} variant={this.variant}></scale-helper-text>}
-
         </div>
       </Host>
     );
@@ -284,7 +280,6 @@ export class TextField {
 
     return classNames(
       'text-field',
-      `text-field--status-${this.variant}`,
       this.type && `text-field--type-${this.type}`,
       this.hasFocus && 'text-field--has-focus',
       this.disabled && `text-field--disabled`,
