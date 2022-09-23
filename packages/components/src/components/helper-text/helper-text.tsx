@@ -24,7 +24,7 @@ import { Component, h, Prop, Host } from '@stencil/core';
   styleUrl: './helper-text.css',
   shadow: false,
 })
-export class Link {
+export class HelperText {
   /** (optional) Helper text */
   @Prop() helperText?: string;
   /** (optional) Injected CSS styles */
