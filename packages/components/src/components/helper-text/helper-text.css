@@ -29,3 +29,7 @@ scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  
 .helper-text--success {
     color: var(--telekom-color-text-and-icon-functional-success);
 }
+
+.helper-text--neutral {
+    color: var(--telekom-color-text-and-icon-additional);
+}

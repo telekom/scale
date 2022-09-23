@@ -30,7 +30,7 @@
     /** (optional) Injected CSS styles */
     @Prop() styles?: string;
     /** (optional) Injected CSS styles */
-    @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' = 'informational';   
+    @Prop() variant?: 'neutral' | 'informational' | 'warning' | 'danger' | 'success' = 'informational';   
  
    renderHelperIcon() {
         const variant = this.variant;
@@ -46,6 +46,9 @@
         if (variant === 'success') {
             return <scale-icon-alert-success color="var(--telekom-color-text-and-icon-functional-success)" size={11}></scale-icon-alert-success>
         }
+        if (variant === 'neutral') {
+            return 
+        }        
     }
    
    render() {
@@ -57,6 +60,7 @@
             'helper-text--warning': this.variant === 'warning',
             'helper-text--danger': this.variant === 'danger',
             'helper-text--success': this.variant === 'success',
+            'helper-text--neutral': this.variant === 'neutral',
          }}
        >
          {this.styles && <style>{this.styles}</style>}

@@ -63,7 +63,7 @@ export class TextField {
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
   /** (optional) variant */
-  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' = 'informational';  
+  @Prop() variant?: 'neutral' | 'informational' | 'warning' | 'danger' | 'success' = 'informational';  
   /** (optional) Input text string max length */
   @Prop() maxLength?: number;
   /** (optional) Input text string min length */
@@ -134,6 +134,9 @@ export class TextField {
   componentWillLoad() {
     if (this.inputId == null) {
       this.inputId = 'input-text-field' + i++;
+    }
+    if (this.invalid) {
+      this.variant = "danger"
     }
   }
 
