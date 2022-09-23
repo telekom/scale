@@ -1,35 +1,36 @@
 .helper-text {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    font: var(--telekom-text-style-small-bold);
-
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font: var(--telekom-text-style-small-bold);
 }
 
-scale-icon-alert-information, scale-icon-alert-error, scale-icon-alert-success  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: var(--telekom-spacing-unit-x1);
+scale-icon-alert-information,
+scale-icon-alert-error,
+scale-icon-alert-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--telekom-spacing-unit-x1);
 }
 
 .helper-text--informational {
-    color: var(--telekom-color-text-and-icon-functional-informational);
+  color: var(--telekom-color-text-and-icon-functional-informational);
 }
 
 .helper-text--warning {
-    color: var(--telekom-color-text-and-icon-functional-warning);
+  color: var(--telekom-color-text-and-icon-functional-warning);
 }
 
 .helper-text--danger {
-    color: var(--telekom-color-text-and-icon-functional-danger);
+  color: var(--telekom-color-text-and-icon-functional-danger);
 }
 
 .helper-text--success {
-    color: var(--telekom-color-text-and-icon-functional-success);
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
 
 .helper-text--neutral {
-    color: var(--telekom-color-text-and-icon-additional);
+  color: var(--telekom-color-text-and-icon-additional);
 }

@@ -9,7 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
- scale-text-field {
+scale-text-field {
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
