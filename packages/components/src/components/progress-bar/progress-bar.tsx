@@ -27,7 +27,7 @@ export class ProgressBar {
   /** (required) Progress bar percentage */
   @Prop() percentage: number = 0;
   /** (optional) Progress bar percentage to start the animation from (default: 0) */
-  @Prop() percentage_start: number = 0;
+  @Prop() percentageStart: number = 0;
   /** @deprecated - (optional) Progress bar customColor */
   @Prop() customColor?: string;
   /** (optional) Progress bar stroke width */
@@ -97,7 +97,7 @@ export class ProgressBar {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <style>{this.transitions(this.percentage, this.percentage_start)}</style>
+        <style>{this.transitions(this.percentage, this.percentageStart)}</style>
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
           {!!this.label && (
