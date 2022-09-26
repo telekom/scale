@@ -126,6 +126,13 @@
 
 .button.button--icon-after:not(.button--icon-only) ::slotted(*) {
   margin-left: var(--spacing-icon-x);
+  margin-right: calc(var(--spacing-icon-x) * -1);
+}
+
+.button.button--icon-after:not(.button--icon-only).button--size-small
+  ::slotted(*) {
+  margin-left: var(--spacing-icon-x);
+  margin-right: calc(var(--spacing-icon-x) * -0.5);
 }
 
 .button:after {
