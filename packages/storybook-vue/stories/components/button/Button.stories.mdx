@@ -102,8 +102,9 @@ export const Template = (args, { argTypes }) => ({
 ```css
 :host {
   --width: auto;
-  --spacing-x: var(--telekom-spacing-unit-x5);
-  --spacing-x-icon-only: var(--telekom-spacing-unit-x2);
+  --spacing-x-right: var(--telekom-spacing-unit-x5);
+  --spacing-x-left: var(--telekom-spacing-unit-x5);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x3);
   --min-height: var(--telekom-spacing-unit-x11);
   --min-width: var(--telekom-spacing-unit-x11);
   --radius: var(--telekom-radius-standard);
@@ -115,14 +116,17 @@ export const Template = (args, { argTypes }) => ({
     );
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);
-  --line-height: var(--telekom-typography-line-spacing-standard);
+  --line-height: var(--telekom-typography-line-spacing-tight);
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
 
   /* size: small */
   --font-size-small: var(--telekom-typography-font-size-small);
-  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --line-height-small: 1.125rem;
   --min-height-small: var(--telekom-spacing-unit-x8);
+  --spacing-x-right-small: var(--telekom-spacing-unit-x4);
+  --spacing-x-left-small: var(--telekom-spacing-unit-x4);
+  --spacing-x-icon-only-small: var(--telekom-spacing-unit-x0);
 
   /* variant: primary */
   --radius-primary: var(--radius);

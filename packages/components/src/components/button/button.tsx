@@ -178,7 +178,7 @@ export class Button {
       );
       icons.forEach((icon) => {
         if (icon.size === DEFAULT_ICON_SIZE) {
-          icon.size = buttonIconSizeMap[this.size];
+          icon.size = buttonIconSizeMap['small'];
         }
       });
     }
