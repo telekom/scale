@@ -186,14 +186,14 @@ describe('TextField', () => {
     element.transparent = true;
     expect(element.getCssClassMap()).toContain('text-field--transparent');
 
-    element.invalid = true;
-    expect(element.getCssClassMap()).toContain('text-field--status-error');
+    element.variant = 'danger';
+    expect(element.getCssClassMap()).toContain('text-field--variant-danger');
 
-    element.success = true;
-    expect(element.getCssClassMap()).toContain('text-field--status-success');
+    element.variant = 'success';
+    expect(element.getCssClassMap()).toContain('text-field--variant-success');
 
-    element.warning = true;
-    expect(element.getCssClassMap()).toContain('text-field--status-warning');
+    element.variant = 'warning';
+    expect(element.getCssClassMap()).toContain('text-field--variant-warning');
   });
 
   it('should handle hasFocus right', () => {
