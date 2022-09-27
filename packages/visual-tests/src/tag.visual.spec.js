@@ -5,15 +5,13 @@ describe('Tag', () => {
     });
     test.each([
       ['standard'],
-      ['a-dissmisable-tag'],
-      ['a-small-tag'],
-      ['a-small-dismissable-tag'],
+      ['dismissable-tag'],
+      ['small-tag'],
+      ['small-dismissable-tag'],
       ['disabled-dismissable-tag'],
-      ['variant-secondary-tag'],
-      ['variant-secondary-link'],
-      ['variant-secondary-dismissable'],
-      ['variant-secondary-small'],
-      ['variant-secondary-dismissable-small'],
+      ['colors'],
+      ['color-standard-tag'],
+      ['color-strong-tag'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-tag--${variant}`);
       await global.visualCheck();
