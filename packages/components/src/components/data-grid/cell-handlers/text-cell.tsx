@@ -52,7 +52,6 @@ export const TextCell: Cell = {
     if (editable) {
       const props = {
         type: 'text',
-        size: 'small',
         value: content,
         label,
       } as any;

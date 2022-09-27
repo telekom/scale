@@ -13,7 +13,7 @@
   --tab-height: var(--telekom-spacing-unit-x10);
   --tab-spacing: var(--telekom-spacing-unit-x6);
   --tab-radius: var(--telekom-radius-small);
-  --tab-border-size: var(--telekom-line-weight-highlight);
-  --tab-border-size-selected: var(--telekom-line-weight-bold);
+  --tab-border-size: var(--telekom-line-weight-standard);
+  --tab-border-size-selected: var(--telekom-line-weight-highlight);
   --tab-border-color: var(--telekom-color-ui-subtle);
 }

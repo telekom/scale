@@ -18,18 +18,18 @@ import ScaleTabNav from './ScaleTabNav.vue';
       description: `(optional) Injected styles`,
       control: { type: null },
     },
-    size: {
-      table: {
-        type: { summary: 'string' },
-      },
-      description: `(optional) size`,
-      control: { type: null },
-    },
     small: {
       table: {
         type: { summary: 'Boolean' },
       },
-      description: `(optional) DEPRECATED - size should replace small`,
+      description: `(optional) DEPRECATED - css overwrites should replace small`,
+      control: { type: null },
+    },
+    size: {
+      table: {
+        type: { summary: 'large | small' },
+      },
+      description: `(optional) DEPRECATED - css overwrites should replace size`,
       control: { type: null },
     },
   }}
@@ -39,7 +39,7 @@ export const Template = (args, { argTypes }) => ({
   components: { ScaleTabNav },
   props: ScaleTabNav.props,
   template: `
-    <scale-tab-nav :disabled="disabled ? true : false"  :small="small" :size="size" :with-icon="withIcon"></scale-tab-nav>
+    <scale-tab-nav :disabled="disabled ? true : false" :with-icon="withIcon"></scale-tab-nav>
   `,
 });
 
@@ -62,8 +62,6 @@ export const Template = (args, { argTypes }) => ({
     {Template.bind({})}
   </Story>
 </Canvas>
-
-{' '}
 
 <ArgsTable story="Text & Icon" />
 
@@ -112,7 +110,7 @@ export const Template = (args, { argTypes }) => ({
 :host {
   --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height-small: 2rem;
+  --height: 3rem;
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -128,49 +126,10 @@ export const Template = (args, { argTypes }) => ({
 /* tab-panel */
 :host {
   --spacing-top: var(--telekom-spacing-unit-x6);
-  --spacing-top-small: var(--telekom-spacing-unit-x4);
 }
 ```
 
 For Shadow Parts, please inspect the element's #shadow.
-
-## Text & Icon, Small
-
-<Canvas withSource="none">
-  <Story name="Text & Icon, Small" args={{ size: 'small', small: true }}>
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tab-nav size="small">
-  <!-- Deprecated: <scale-tab-nav small> -->
-  <scale-tab-header slot="tab">
-    <scale-icon-home-home></scale-icon-home-home> General
-  </scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Freegan kinfolk farm-to-table humblebrag cred…
-  </scale-tab-panel>
-  <scale-tab-header slot="tab">
-    <scale-icon-user-file-analytics></scale-icon-user-file-analytics> Usage
-  </scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Bespoke austin pork belly yuccie pop-up. Before they sold out…
-  </scale-tab-panel>
-  <scale-tab-header slot="tab">
-    <scale-icon-content-heart></scale-icon-content-heart> Style
-  </scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Biodiesel chia af hoodie tumeric bespoke letterpress…
-  </scale-tab-panel>
-  <scale-tab-header slot="tab">
-    <scale-icon-action-random></scale-icon-action-random> Code
-  </scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Asymmetrical tattooed chia, banh mi blog microdosing…
-  </scale-tab-panel>
-</scale-tab-nav>
-```
 
 ## Text Only
 
@@ -182,39 +141,6 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-tab-nav>
-  <scale-tab-header slot="tab">General</scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Freegan kinfolk farm-to-table humblebrag cred…
-  </scale-tab-panel>
-  <scale-tab-header slot="tab">Usage</scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Bespoke austin pork belly yuccie pop-up. Before they sold out…
-  </scale-tab-panel>
-  <scale-tab-header slot="tab">Style</scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Biodiesel chia af hoodie tumeric bespoke letterpress…
-  </scale-tab-panel>
-  <scale-tab-header slot="tab">Code</scale-tab-header>
-  <scale-tab-panel slot="panel">
-    Asymmetrical tattooed chia, banh mi blog microdosing…
-  </scale-tab-panel>
-</scale-tab-nav>
-```
-
-## Text Only, Small
-
-<Canvas withSource="none">
-  <Story
-    name="Text Only, Small"
-    args={{ size: 'small', small: true, withIcon: false }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tab-nav size="small">
-  <!-- Deprecated: <scale-tab-nav small> -->
   <scale-tab-header slot="tab">General</scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
