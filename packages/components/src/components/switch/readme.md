@@ -31,9 +31,14 @@
 
  - [scale-data-grid](../data-grid)
 
+### Depends on
+
+- [scale-icon-action-success](../icons/action-success)
+
 ### Graph
 ```mermaid
 graph TD;
+  scale-switch --> scale-icon-action-success
   scale-data-grid --> scale-switch
   style scale-switch fill:#f9f,stroke:#333,stroke-width:4px
 ```
