@@ -1,0 +1,84 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: var(--telekom-spacing-unit-x6);
+  --height: var(--telekom-spacing-unit-x6);
+  --width-medium: var(--telekom-spacing-unit-x8);
+  --height-medium: var(--telekom-spacing-unit-x8);
+  --radius: var(--telekom-radius-standard);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --background: var(--telekom-color-background-canvas);
+  --background-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-pressed: var(--telekom-color-ui-state-fill-pressed);
+  --background-active: var(--telekom-color-ui-state-fill-pressed);
+  --spacing-icon-x: var(--telekom-spacing-unit-x2);
+  --vertical-align: middle;
+
+  display: inline-flex;
+}
+
+[part~='base'] {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border: 0;
+  border-radius: var(--radius);
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0;
+  background: var(--background);
+  width: var(--width);
+  height: var(--height);
+  vertical-align: var(--vertical-align);
+}
+
+[part~='base'][part~='size-medium'] {
+  height: var(--height-medium);
+  width: var(--width-medium);
+}
+
+[part~='base']:hover {
+  background-color: var(--background-hover);
+}
+
+[part~='base']:active {
+  background-color: var(--background-pressed);
+}
+
+[part~='base']:focus {
+  box-shadow: var(--box-shadow-focus);
+}
+
+[part~='base'][part~='active'] {
+  background: var(--background-active);
+}
+
+[part~='base'][part~='active']:hover {
+  background: var(--background-hover);
+}
+
+[part~='base'][part~='active']:active {
+  background: var(--background-pressed);
+}
+
+[part~='base'][part~='active']:focus {
+  background: var(--background-active);
+  box-shadow: var(--box-shadow-focus);
+}

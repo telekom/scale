@@ -32,40 +32,8 @@ import ScaleCard from './ScaleCard.vue';
     label: {
       control: { type: 'text' },
     },
-    styles: {
-      control: { type: String },
-    },
   }}
 />
-
-export const Template = (args, { argTypes }) => ({
-  components: { ScaleCard },
-  props: {
-    slot: String,
-    ...ScaleCard.props,
-  },
-  template: `
-    <div :style="{ maxWidth: slot.startsWith('<div') ? '300px'  : 'auto' }">
-        <scale-card
-              :to="to"
-              :target="target"
-              :label="label"
-              :rel="rel"
-              :styles="styles"
-            >
-                <div v-if="slot.startsWith('<div')">
-                    <div style="margin: -24px;">
-                      <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
-                      <div style="padding: 24px;">A card with a full width image</div>
-                    </div>
-                </div>
-                <div v-if="!slot.startsWith('<div')">
-                  {{ slot }}
-                </div>
-        </scale-card>
-    </div>
-  `,
-});
 
 <div
   style={{
@@ -82,14 +50,35 @@ export const Template = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story
-    name="Standard"
-    args={{
-      slot: 'A card',
-      label: 'Example Card',
-    }}
-  >
-    {Template.bind({})}
+  <Story name="Standard">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      template: `
+        <div :style="{ maxWidth: '300px' }">
+            <scale-card
+               label="example card"
+            >
+                <span style="font: var(--telekom-text-style-heading-4)">Standard</span>
+              <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: var(--telekom-radius-small);
+                    background: var(--telekom-color-functional-informational-subtle);
+                    color: var(--telekom-color-text-and-icon-link-standard);
+                    margin-top: var(--telekom-spacing-unit-x6);
+                    height: 178px;
+                  "
+              >
+                Content area
+              </div>
+            </scale-card>
+        </div>
+  `,
+    })}
   </Story>
 </Canvas>
 
@@ -111,7 +100,11 @@ export const Template = (args, { argTypes }) => ({
     );
   --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
-  --spacing-body: var(--telekom-spacing-unit-x6);
+  --box-shadow-movable: var(--telekom-shadow-floating-standard);
+  --box-shadow-movable-hover: var(--telekom-shadow-floating-hover);
+  --box-shadow-movable-active: var(--telekom-shadow-floating-pressed);
+
+  --spacing-body: var(--telekom-spacing-unit-x4);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;
@@ -120,132 +113,546 @@ export const Template = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## With Link
-
 <Canvas withSource="none">
-  <Story
-    name="With Link"
-    args={{
-      slot: 'A card with a link to example.com',
-      to: 'https://example.com',
-      target: '_blank',
-      rel: 'noopener noreferrer',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-card
-  to="https://example.com"
-  to="_blank"
-  target="_blank"
-  rel="noopener noreferrer"
-  label="Example Card"
-  >A card with a link to example.com</scale-card
->
-```
-
-## With Image
-
-<Canvas withSource="none">
-  <Story
-    name="With Image"
-    args={{
-      slot: `<div style="margin: -24px;">
-        <img style="margin-bottom: -4px; width:100%;" src="https://placeimg.com/200/200/tech/grayscale" alt="placeholder" />
-        <div style="padding: 24px;">A card with a full width image</div>
-      </div>
-      `,
-      to: 'https://example.com',
-      target: '_blank',
-      rel: 'noopener noreferrer',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<div style="max-width: 200px;">
-  <scale-card to="https://example.com" target="_blank">
-    <div style="margin: -24px;">
-      <img
-        style="margin-bottom: -4px; width:100%;"
-        src="https://via.placeholder.com/150"
-        alt="placeholder"
-      />
-      <div style="padding: 24px;">A card with a full width image</div>
-    </div>
-  </scale-card>
-</div>
-```
-
-## With Further Functions
-
-<Canvas withSource="none">
-  <Story
-    name="With Further Functions"
-    args={{
-      label: 'Example Card with further functions',
-    }}
-  >
-    {(args, { argTypes }) => ({
+  <Story name="Movable">
+    {() => ({
       components: { ScaleCard },
-      props: {
-        slot: String,
-        ...ScaleCard.props,
-      },
+      props: ScaleCard.props,
       template: `
-                <div :style="{ maxWidth: '300px' }">
-                    <scale-card
-                          :to="to"
-                          :target="target"
-                          :label="label"
-                          :rel="rel"
-                          :styles="JSON.stringify(styles)"
-                        >
-                          <div style="margin: -24px;">
-                              <img style="margin-bottom: -4px; width:100%;" src="assets/card-grayscale.jpeg" alt="placeholder" />
-                              <div style="padding: 24px;">
-                                <div style="padding: 0 0 24px 0;">A card with with further functions</div>
-                                <div style="padding: 0 0 24px 0; display: flex; justify-content: center;"><scale-button>Label</scale-button></div>
-                                <div style="display: flex; justify-content: flex-end;"><scale-link href="https://example.com" tabindex=0>More...</scale-link></div>
-                              </div>
-                          </div>
-                    </scale-card>
+        <div :style="{ maxWidth: '300px' }">
+            <scale-card
+               label="example card"
+               movable="true"
+            >
+              <div>
+                <div
+                    style="
+                    font: var(--telekom-text-style-caption);
+                    color: var(--telekom-color-text-and-icon-additional);
+                  "
+                >
+                  A kicker
                 </div>
-              `,
+                <div style="font: var(--telekom-text-style-heading-4)">
+                  Movable
+                </div>
+                <div
+                    style="
+                    font: var(--telekom-text-style-body);
+                    color: var(--telekom-color-text-and-icon-additional);
+                  "
+                >
+                  Subline
+                </div>
+              </div>
+              <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: var(--telekom-radius-small);
+                    background: var(--telekom-color-functional-informational-subtle);
+                    color: var(--telekom-color-text-and-icon-link-standard);
+                    margin-top: var(--telekom-spacing-unit-x6);
+                    height: 178px;
+                  "
+              >
+                Content area
+              </div>
+            </scale-card>
+        </div>
+  `,
     })}
   </Story>
 </Canvas>
 
 ```html
-<div style="max-width: 300px">
-  <scale-card label="Example Card with further functions">
-    <article style="margin: -24px;">
-      <img
-        style="margin-bottom: -4px; width:100%;"
-        src="assets/card-grayscale.jpeg"
-        alt="placeholder"
-      />
-      <div style="padding: 24px;">
-        <div style="padding: 0 0 24px 0;">
-          A card with with further functions
+<scale-card label="example card" movable="true">
+  <div>
+    <div
+      style="
+        font: var(--telekom-text-style-caption);
+        color: var(--telekom-color-text-and-icon-additional);
+      "
+    >
+      A kicker
+    </div>
+    <div style="font: var(--telekom-text-style-heading-4)">Movable</div>
+    <div
+      style="
+        font: var(--telekom-text-style-body);
+        color: var(--telekom-color-text-and-icon-additional);
+      "
+    >
+      Subline
+    </div>
+  </div>
+  <div
+    style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--telekom-radius-small);
+        background: var(--telekom-color-functional-informational-subtle);
+        color: var(--telekom-color-text-and-icon-link-standard);
+        margin-top: var(--telekom-spacing-unit-x6);
+        height: 178px;
+    "
+  >
+    Content area
+  </div>
+</scale-card>
+```
+
+<Canvas withSource="none">
+  <Story name="Action Icon">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      template: `
+    <div :style="{ maxWidth: '300px' }">
+        <scale-card label="example card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font: var(--telekom-text-style-heading-4)">Action Icon</span>
+            <scale-menu-flyout>
+              <scale-icon-button size="medium" slot="trigger">
+                <scale-icon-service-settings accessibility-title="Open menu" size="24"></scale-icon-service-settings>
+              </scale-icon-button>
+              <scale-menu-flyout-list>
+                <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout>
+          </div>
+          <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-radius: var(--telekom-radius-small);
+                background: var(--telekom-color-functional-informational-subtle);
+                color: var(--telekom-color-text-and-icon-link-standard);
+                margin-top: var(--telekom-spacing-unit-x6);
+                height: 178px;
+              "
+          >
+            Content area
+          </div>
+        </scale-card>
+    </div>
+  `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card label="Icon" id="icon-card">
+  <div
+    style="display: flex; justify-content: space-between; align-items: center;"
+  >
+    <span style="font: var(--telekom-text-style-heading-4)">Icon</span>
+    <scale-menu-flyout>
+      <scale-icon-button size="medium" slot="trigger">
+        <scale-icon-service-settings
+          accessibility-title="Open menu"
+          size="24"
+        ></scale-icon-service-settings>
+      </scale-icon-button>
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+  </div>
+  <div
+    style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--telekom-radius-small);
+            background: var(--telekom-color-functional-informational-subtle);
+            color: var(--telekom-color-text-and-icon-link-standard);
+            margin-top: var(--telekom-spacing-unit-x6);
+            height: 178px;
+          "
+  >
+    Content area
+  </div>
+</scale-card>
+```
+
+<Canvas withSource="none">
+  <Story name="Action Checkbox">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      methods: {
+        handleClick: function () {
+          const checkbox = document.getElementById('checkbox');
+          if (!checkbox.hasAttribute('checked')) {
+            checkbox.setAttribute('checked', 'true');
+          } else {
+            checkbox.removeAttribute('checked');
+          }
+        },
+      },
+      template: `
+    <div :style="{ maxWidth: '300px' }" v-on:click="handleClick($event)">
+      <scale-card label="Checkbox" id="checkbox-card" to="javascript:void(0);">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span style="font: var(--telekom-text-style-heading-4)">Checkbox</span>
+          <span style="margin-right: -10px"><scale-checkbox id="checkbox" checked></scale-checkbox></span>
         </div>
         <div
-          style="padding: 0 0 24px 0; display: flex; justify-content: center;"
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--telekom-radius-small);
+            background: var(--telekom-color-functional-informational-subtle);
+            color: var(--telekom-color-text-and-icon-link-standard);
+            margin-top: var(--telekom-spacing-unit-x6);
+            width: 100%;
+            height: 178px;
+          "
         >
-          <scale-button>Label</scale-button>
+          Content area
         </div>
-        <div style="display: flex; justify-content: flex-end;">
-          <scale-link href="https://example.com" tabindex="0"
-            >More...</scale-link
-          >
+      </scale-card>
+    </div>
+`,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card label="Checkbox" id="checkbox-card" to="javascript:void(0);">
+  <div
+    style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+  >
+    <span style="font: var(--telekom-text-style-heading-4)">Checkbox</span>
+    <span style="margin-right: -10px"
+      ><scale-checkbox id="checkbox" checked></scale-checkbox
+    ></span>
+  </div>
+  <div
+    style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--telekom-radius-small);
+            background: var(--telekom-color-functional-informational-subtle);
+            color: var(--telekom-color-text-and-icon-link-standard);
+            margin-top: var(--telekom-spacing-unit-x6);
+            width: 100%;
+            height: 178px;
+          "
+  >
+    Content area
+  </div>
+</scale-card>
+<script>
+  const checkbox = document.getElementById('checkbox');
+  document.getElementById('checkbox-card').addEventListener('click', () => {
+    if (!checkbox.hasAttribute('checked')) {
+      checkbox.setAttribute('checked', 'true');
+    } else {
+      checkbox.removeAttribute('checked');
+    }
+  });
+</script>
+```
+
+## Full Width Image And Headline
+
+<Canvas withSource="none">
+  <Story name="Full Width Image And Headline">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      template: `
+        <div style="max-width: 394px">
+            <scale-card to="https://example.com" target="_blank">
+              <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
+                <img
+                    style="margin-bottom: -4px; width: 100%"
+                    src="assets/card-grayscale.jpeg"
+                    alt="placeholder"
+                />
+                <div style="padding: var(--telekom-spacing-unit-x4)">
+                  <div style="font: var(--telekom-text-style-heading-4)">
+                    Powered by AI
+                  </div>
+                  <div
+                    style="
+                    font: var(--telekom-text-style-body);
+                    color: var(--telekom-color-text-and-icon-additional);
+                  "
+                  >
+                    Learn about current use cases for artifical intelligence.
+                  </div>
+                </div>
+              </div>
+            </scale-card>
         </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card to="https://example.com" target="_blank">
+  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4)">
+    <img
+      style="margin-bottom: -4px; width: 100%"
+      src="https://via.placeholder.com/150"
+      alt="placeholder"
+    />
+    <div style="padding: var(--telekom-spacing-unit-x4)">
+      <div style="font: var(--telekom-text-style-heading-4)">Powered by AI</div>
+      <div
+        style="font: var(--telekom-text-style-body); color: var(--telekom-color-text-and-icon-additional);"
+      >
+        Learn about current use cases for artifical intelligence.
       </div>
-    </article>
-  </scale-card>
-</div>
+    </div>
+  </div>
+</scale-card>
+```
+
+<Canvas withSource="none">
+  <Story name="Asset, Headline and Subline">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      template: `
+        <div :style="{ maxWidth: '300px' }">
+            <scale-card label="example card">
+              <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start;"
+              >
+                <img src="assets/card-asset-2.png" alt="placeholder" />
+                <scale-button variant="secondary" icon-only size="small">
+                  <scale-icon-service-settings
+                      accessibility-title="Open menu"
+                  ></scale-icon-service-settings>
+                </scale-button>
+              </div>
+              <div style="margin-top: var(--telekom-spacing-unit-x6);">
+                <div style="font: var(--telekom-text-style-heading-4)">
+                  Asset, Headline and Subline
+                </div>
+                <div
+                    style="
+                        font: var(--telekom-text-style-body);
+                        color: var(--telekom-color-text-and-icon-additional);
+                        font-size: 16px;
+                      "
+                >
+                  On
+                </div>
+              </div>
+            </scale-card>
+        </div>
+`,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card label="example card">
+  <div
+    style="display: flex; justify-content: space-between; align-items: flex-start;"
+  >
+    <img src="assets/card-asset-2.png" alt="placeholder" />
+    <scale-button variant="secondary" icon-only size="small">
+      <scale-icon-service-settings
+        accessibility-title="Open menu"
+      ></scale-icon-service-settings>
+    </scale-button>
+  </div>
+  <div style="margin-top: var(--telekom-spacing-unit-x6);">
+    <div style="font: var(--telekom-text-style-heading-4)">
+      Asset, Headline and Subline
+    </div>
+    <div
+      style="
+                    font: var(--telekom-text-style-body);
+                    color: var(--telekom-color-text-and-icon-additional);
+                    font-size: 16px;
+                  "
+    >
+      On
+    </div>
+  </div>
+</scale-card>
+```
+
+<Canvas withSource="none">
+  <Story name="Centered Image and Headline">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      template: `
+        <div :style="{ maxWidth: '300px' }">
+            <scale-card label="example card">
+              <div
+                  style="
+      display: grid;
+      grid-template-columns: 1fr repeat(1, auto) 1fr;
+      grid-column-gap: 5px;
+      justify-items: center;
+    "
+              >
+                <img
+                    style="grid-column-start: 2;"
+                    src="assets/card-avatar.png"
+                    alt="placeholder"
+                />
+                <scale-icon-button size="medium" slot="trigger"                     style="margin-left: auto;height: fit-content; ">
+                  <scale-icon-service-settings accessibility-title="Open menu" size="24"></scale-icon-service-settings>
+                </scale-icon-button>
+              </div>
+              <div
+                  style="margin-top: var(--telekom-spacing-unit-x6); display: flex;flex-direction: column;align-items: center;"
+              >
+                <div style="font: var(--telekom-text-style-heading-4)">
+                  Image and headline
+                </div>
+                <div
+                    style="
+                            font: var(--telekom-text-style-body);
+                            color: var(--telekom-color-text-and-icon-additional);
+                        font-size: 14px;
+                          "
+                >
+                  +49 125 165 5455
+                </div>
+              </div>
+            </scale-card>
+        </div>
+`,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card label="example card">
+  <div
+    style="
+  display: grid;
+  grid-template-columns: 1fr repeat(1, auto) 1fr;
+  grid-column-gap: 5px;
+  justify-items: center;
+"
+  >
+    <img
+      style="grid-column-start: 2;"
+      src="assets/card-avatar.png"
+      alt="placeholder"
+    />
+    <scale-icon-button
+      size="medium"
+      slot="trigger"
+      style="margin-left: auto;height: fit-content; "
+    >
+      <scale-icon-service-settings
+        accessibility-title="Open menu"
+        size="24"
+      ></scale-icon-service-settings>
+    </scale-icon-button>
+  </div>
+  <div
+    style="margin-top: var(--telekom-spacing-unit-x6); display: flex;flex-direction: column;align-items: center;"
+  >
+    <div style="font: var(--telekom-text-style-heading-4)">
+      Image and headline
+    </div>
+    <div
+      style="
+        font: var(--telekom-text-style-body);
+        color: var(--telekom-color-text-and-icon-additional);
+        font-size: 14px;
+      "
+    >
+      +49 125 165 5455
+    </div>
+  </div>
+</scale-card>
+```
+
+## With Interactive Icons
+
+<Canvas withSource="none">
+  <Story name="With Interactive Icons">
+    {() => ({
+      components: { ScaleCard },
+      props: ScaleCard.props,
+      data: () => ({
+        selected: false,
+        active: false,
+      }),
+      template: `
+        <div style="max-width: 394px">
+            <scale-card>
+              <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
+                <img
+                    style="margin-bottom: -4px; width: 100%"
+                    src="assets/card-grayscale.jpeg"
+                    alt="placeholder"
+                />
+                <div style="padding: var(--telekom-spacing-unit-x4)">
+                  <div style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);">
+                    Powered by AI
+                  </div>
+                  <div>
+                    <scale-tooltip placement="bottom" content="Like"><scale-icon-button @click="selected = !selected" size="medium"><scale-icon-content-heart size="24" :selected="selected"></scale-icon-content-heart></scale-icon-button></scale-tooltip>
+                    <scale-tooltip placement="bottom" content="Share"><scale-icon-button size="medium"><scale-icon-action-forward size="24"></scale-icon-action-forward ></scale-icon-button></scale-tooltip>
+                  </div>
+                </div>
+              </div>
+            </scale-card>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-card>
+  <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
+    <img
+        style="margin-bottom: -4px; width: 100%"
+        src="assets/card-grayscale.jpeg"
+        alt="placeholder"
+    />
+    <div style="padding: var(--telekom-spacing-unit-x4)">
+      <div style="font: var(--telekom-text-style-heading-4); margin-bottom: var(--telekom-spacing-unit-x3);">
+        Powered by AI
+      </div>
+      <div>
+        <scale-tooltip placement="bottom" content="Like"><scale-icon-button @click="selected = !selected" size="medium"><scale-icon-content-heart size="24" :selected="selected"></scale-icon-content-heart></scale-icon-button></scale-tooltip>
+        <scale-tooltip placement="bottom" content="Share"><scale-icon-button size="medium"><scale-icon-action-forward size="24"></scale-icon-action-forward ></scale-icon-button></scale-tooltip>
+  </div>
+    </div>
+  </div>
+</scale-card>
 ```

@@ -85,6 +85,7 @@ graph TD;
   scale-checkbox --> scale-icon-action-success
   scale-checkbox --> scale-icon-alert-information
   scale-checkbox --> scale-icon-alert-error
+  scale-switch --> scale-icon-action-success
   scale-dropdown --> scale-icon-navigation-collapse-down
   scale-tag --> scale-icon-action-close
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px
