@@ -12,14 +12,34 @@ import { action } from '@storybook/addon-actions';
   title="Components/Tag"
   component={ScaleTag}
   argTypes={{
-    variant: {
-      control: { type: 'select', options: ['default', 'secondary'] },
-    },
     size: {
       control: { type: 'select', options: ['default', 'small'] },
     },
     label: {
       control: { type: 'text' },
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          'cyan',
+          'yellow',
+          'green',
+          'orange',
+          'red',
+          'violet',
+          'brown',
+          'olive',
+          'teal',
+          'grey',
+        ],
+      },
+    },
+    type: {
+      control: {
+        type: 'select',
+        options: ['strong', 'standard'],
+      },
     },
     styles: {
       control: { disable: true },
@@ -39,7 +59,8 @@ export const Template = (args, { argTypes }) => ({
       :href="href"
       :size="size"
       :target="target"
-      :variant="variant"
+      :color="color"
+      :type="type"
       @scaleClose="action('scaleClose')($event)"
     >
     {{ label }}
@@ -52,23 +73,35 @@ export const Template = (args, { argTypes }) => ({
 
 export const TemplateInteractive = (args, { argTypes }) => ({
   template: `
-      <ul aria-label="fruits" style="display: flex; list-style: none; padding: 0;">
-          <li v-for="fruit in fruits" :key="fruit" style="margin-right: 4px;">
+      <ul aria-label="colors" style="display: flex; list-style: none; padding: 0;">
+          <li v-for="color in colors" :key="color" style="margin-right: 4px;">
             <scale-tag
                 dismissable="true"
-                v-bind:dismiss-text="'Remove ' + fruit + ' from the list'"
-                @scaleClose="removeFruit(fruit)"
+                type="strong"
+                v-bind:color=color
+                v-bind:dismiss-text="'Remove ' + color + ' from the list'"
+                @scaleClose="removeColor(color)"
             >
-                {{fruit}}
+                {{color}}
+            </scale-tag>
+            <div style="height: 10px"/>
+             <scale-tag
+                dismissable="true"
+                type="standard"
+                v-bind:color=color
+                v-bind:dismiss-text="'Remove ' + color + ' from the list'"
+                @scaleClose="removeColor(color)"
+            >
+                {{color}}
             </scale-tag>
           </li>
       </ul>
   `,
   methods: {
     action: action('scaleClose'),
-    removeFruit(fruit) {
+    removeColor(color) {
       this.action();
-      this.fruits = this.fruits.filter((x) => x !== fruit);
+      this.colors = this.colors.filter((x) => x !== color);
       setTimeout(() => {
         this.$el.querySelector('#root > ul > li > scale-tag') &&
           this.$el
@@ -79,7 +112,18 @@ export const TemplateInteractive = (args, { argTypes }) => ({
     },
   },
   data: () => ({
-    fruits: ['Melon', 'Banana', 'Pear'],
+    colors: [
+      'grey',
+      'cyan',
+      'yellow',
+      'green',
+      'orange',
+      'red',
+      'violet',
+      'brown',
+      'olive',
+      'teal',
+    ],
   }),
 });
 
@@ -154,13 +198,13 @@ export const TemplateInteractive = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## A dissmisable tag
+## Dismissable tag
 
 <Canvas withSource="none">
   <Story
-    name="A dissmisable tag"
+    name="Dismissable tag"
     args={{
-      label: 'A dissmisable tag',
+      label: 'Dismissable tag',
       dismissable: true,
     }}
   >
@@ -169,16 +213,16 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-tag dismissable>A dissmisable tag</scale-tag>
+<scale-tag dismissable>A dismissable tag</scale-tag>
 ```
 
-## A small tag
+## Small tag
 
 <Canvas withSource="none">
   <Story
-    name="A small tag"
+    name="Small tag"
     args={{
-      label: 'A small tag',
+      label: 'Small tag',
       size: 'small',
     }}
   >
@@ -190,13 +234,13 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-tag size="small">A small tag</scale-tag>
 ```
 
-## A small dismissable tag
+## Small dismissable tag
 
 <Canvas withSource="none">
   <Story
-    name="A small dismissable tag"
+    name="Small dismissable tag"
     args={{
-      label: 'A small dismissable tag',
+      label: 'Small dismissable tag',
       size: 'small',
       dismissable: true,
     }}
@@ -209,7 +253,7 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-tag size="small" dismissable>A small dismissable tag</scale-tag>
 ```
 
-## Disable dissmisable tag
+## Disabled dismissable tag
 
 <Canvas withSource="none">
   <Story
@@ -228,14 +272,20 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-tag disabled dismissable>Disabled dismissable tag</scale-tag>
 ```
 
-## Variant secondary tag
+## Colors
+
+<Canvas withSource="none">
+  <Story name="Colors">{TemplateInteractive.bind({})}</Story>
+</Canvas>
+
+## Color standard tag
 
 <Canvas withSource="none">
   <Story
-    name="Variant secondary tag"
+    name="Color standard tag"
     args={{
-      label: 'Variant secondary tag',
-      variant: 'secondary',
+      label: 'Color standard tag',
+      color: 'red',
     }}
   >
     {Template.bind({})}
@@ -243,19 +293,18 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-tag variant="secondary">Variant secondary tag</scale-tag>
+<scale-tag color="red" type="standard">Color tag</scale-tag>
 ```
 
-## Variant secondary link
+## Color strong tag
 
 <Canvas withSource="none">
   <Story
-    name="Variant secondary link"
+    name="Color strong tag"
     args={{
-      label: 'Variant secondary link',
-      variant: 'secondary',
-      href: 'https://www.example.com',
-      target: '_blank',
+      label: 'Color strong tag',
+      color: 'red',
+      type: 'strong',
     }}
   >
     {Template.bind({})}
@@ -263,75 +312,5 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-tag variant="secondary" href="https://www.example.com" target="_blank"
-  >Variant secondary link</scale-tag
->
+<scale-tag color="red" type="strong">Color tag</scale-tag>
 ```
-
-## Variant secondary dismissable
-
-<Canvas withSource="none">
-  <Story
-    name="Variant secondary dismissable"
-    args={{
-      label: 'Variant secondary dismissable',
-      variant: 'secondary',
-      dismissable: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tag variant="secondary" dismissable
-  >Variant secondary dismissable</scale-tag
->
-```
-
-## Variant secondary small
-
-<Canvas withSource="none">
-  <Story
-    name="Variant secondary small"
-    args={{
-      label: 'Variant secondary small',
-      variant: 'secondary',
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tag variant="secondary" size="small">Variant secondary small</scale-tag>
-```
-
-## Variant secondary dismissable small
-
-<Canvas withSource="none">
-  <Story
-    name="Variant secondary dismissable small"
-    args={{
-      label: 'Variant secondary dismissable small',
-      variant: 'secondary',
-      dismissable: true,
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-tag variant="secondary" dismissable size="small"
-  >Variant secondary dismissable small</scale-tag
->
-```
-
-## Complete example
-
-<Canvas withSource="none">
-  <Story name="Complete example">{TemplateInteractive.bind({})}</Story>
-</Canvas>
