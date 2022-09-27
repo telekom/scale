@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="scl-font-variant-body">Interactive icons</h1>
+
+    <scale-interactive-icon>
+      <scale-icon-action-add size="16"></scale-icon-action-add>
+    </scale-interactive-icon>
+
+    <scale-interactive-icon active="true">
+      <scale-icon-action-add size="16"></scale-icon-action-add>
+    </scale-interactive-icon>
+
+    <scale-interactive-icon size="medium">
+      <scale-icon-action-add size="24"></scale-icon-action-add>
+    </scale-interactive-icon>
+
+    <scale-interactive-icon size="medium">
+      <scale-icon-action-add size="24"></scale-icon-action-add>
+    </scale-interactive-icon>
+  </body>
+</html>

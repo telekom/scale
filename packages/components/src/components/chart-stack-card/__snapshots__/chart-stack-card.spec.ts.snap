@@ -3,20 +3,7 @@
 exports[`ChartStack should match snapshot 1`] = `
 <scale-chart-stack-card data="[{&quot;type&quot;:&quot;Android&quot;,&quot;value&quot;:&quot;55&quot;,&quot;percentage&quot;:&quot;55&quot;},{&quot;type&quot;:&quot;IOS&quot;,&quot;value&quot;:&quot;35&quot;,&quot;percentage&quot;:&quot;35&quot;},{&quot;type&quot;:&quot;Other&quot;,&quot;value&quot;:&quot;10&quot;,&quot;percentage&quot;:&quot;10&quot;}]" heading="Operating System">
   <div class="chart-stack-card">
-    <scale-card styles="
-      .card:after {
-          content: '';
-          display: block;
-          background: linear-gradient(0deg, white, rgba(255,255,255, 0));
-          height: 2rem;
-          margin-top: -2rem;
-          position: relative;
-        }
-
-      .card__body: {
-        padding-bottom: 0 !important;
-      }
-  ">
+    <scale-card>
       <div class="header">
         Operating System
       </div>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+
+      section {
+        display: inline-grid;
+        width: 18vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>card</h1>
+
+    <section>
+      <h3>icon</h3>
+      <scale-card label="Icon" id="icon-card" to="javascript:void(0);">
+        <div style="display: flex; justify-content: space-between">
+          <span style="font: var(--telekom-text-style-heading-5)">Icon</span>
+          <scale-menu-flyout>
+            <scale-button
+              slot="trigger"
+              variant="secondary"
+              icon-only
+              size="small"
+              id="flyout-trigger"
+            >
+              <scale-icon-service-settings
+                accessibility-title="Open menu"
+              ></scale-icon-service-settings>
+            </scale-button>
+            <scale-menu-flyout-list>
+              <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+            </scale-menu-flyout-list>
+          </scale-menu-flyout>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--telekom-radius-small);
+            background: var(--telekom-color-functional-informational-subtle);
+            color: var(--telekom-color-text-and-icon-link-standard);
+            margin-top: var(--telekom-spacing-unit-x6);
+            height: 178px;
+          "
+        >
+          Content area
+        </div>
+      </scale-card>
+
+      <script>
+        document.getElementById('icon-card').addEventListener('click', (e) => {
+          if (!e.path.find(({ id }) => id === 'flyout-trigger')) {
+            e.stopImmediatePropagation();
+
+            document.getElementById('flyout-trigger').dispatchEvent(
+              new MouseEvent('click', {
+                bubbles: true,
+                cancelable: false,
+              })
+            );
+          }
+        });
+      </script>
+
+      <h3>checkbox</h3>
+
+      <scale-card label="Checkbox" id="checkbox-card" to="javascript:void(0);">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span style="font: var(--telekom-text-style-heading-5)"
+            >Checkbox</span
+          >
+          <scale-checkbox id="checkbox" checked></scale-checkbox>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--telekom-radius-small);
+            background: var(--telekom-color-functional-informational-subtle);
+            color: var(--telekom-color-text-and-icon-link-standard);
+            margin-top: var(--telekom-spacing-unit-x6);
+            width: 100%;
+            height: 178px;
+          "
+        >
+          Content area
+        </div>
+      </scale-card>
+      <script>
+        const checkbox = document.getElementById('checkbox');
+        document
+          .getElementById('checkbox-card')
+          .addEventListener('click', () => {
+            if (!checkbox.hasAttribute('checked')) {
+              checkbox.setAttribute('checked', 'true');
+            } else {
+              checkbox.removeAttribute('checked');
+            }
+          });
+      </script>
+    </section>
+
+    <section>
+      <h2>Movable</h2>
+
+      <h3>one</h3>
+      <scale-card
+        movable="true"
+        to="https://example.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        label="Example Card"
+        >A card with a link to example.com</scale-card
+      >
+      <h3>two</h3>
+
+      <scale-card movable="true" to="https://example.com" target="_blank">
+        <div style="margin: calc(-1 * var(--telekom-spacing-unit-x4))">
+          <img
+            style="margin-bottom: -4px; width: 100%"
+            src="assets/card-grayscale.jpeg"
+            alt="placeholder"
+          />
+          <div style="padding: var(--telekom-spacing-unit-x4)">
+            <div style="font: var(--telekom-text-style-heading-5)">
+              Powered by AI
+            </div>
+            <div
+              style="
+                font: var(--telekom-text-style-body);
+                color: var(--telekom-color-text-and-icon-additional);
+              "
+            >
+              Learn about current use cases for artifical intelligence.
+            </div>
+          </div>
+        </div>
+      </scale-card>
+
+      <h3>three</h3>
+
+      <div style="max-width: 200px">
+        <scale-card movable="true" label="Example Card with further functions">
+          <article style="margin: -24px">
+            <img
+              style="margin-bottom: -4px; width: 100%"
+              src="https://placeimg.com/200/200/tech/grayscale"
+              alt="placeholder"
+            />
+            <div style="padding: 24px">
+              <div style="padding: 0 0 24px 0">
+                A card with with further functions
+              </div>
+              <div
+                style="
+                  padding: 0 0 24px 0;
+                  display: flex;
+                  justify-content: center;
+                "
+              >
+                <scale-button>Label</scale-button>
+              </div>
+              <div style="display: flex; justify-content: flex-end">
+                <scale-link href="https://example.com" tabindex="0"
+                  >More...</scale-link
+                >
+              </div>
+            </div>
+          </article>
+        </scale-card>
+      </div>
+    </section>
+  </body>
+</html>

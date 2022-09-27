@@ -20,17 +20,22 @@
     var(--telekom-color-functional-focus);
   --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
-  --spacing-body: var(--telekom-spacing-unit-x6);
+  --box-shadow-movable: var(--telekom-shadow-floating-standard);
+  --box-shadow-movable-hover: var(--telekom-shadow-floating-hover);
+  --box-shadow-movable-active: var(--telekom-shadow-floating-pressed);
+
+  --spacing-body: var(--telekom-spacing-unit-x4);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;
 }
 
-.card-border {
+[part='border'] {
   /* a11y: add border for high contrast mode */
   border: 1px solid transparent;
 }
-.card {
+
+[part~='base'] {
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -40,15 +45,20 @@
   box-shadow: var(--box-shadow);
 }
 
-.card__body {
+[part~='base'][part~='movable'] {
+  box-shadow: var(--box-shadow-movable);
+  cursor: move;
+}
+
+[part~='body'] {
   padding: var(--spacing-body);
 }
 
-.card__body ::slotted(*) {
+[part~='body'] ::slotted(*) {
   margin: var(--spacing-body-slotted);
 }
 
-.card--interactive {
+[part~='interactive'] {
   color: inherit;
   cursor: pointer;
   display: block;
@@ -56,19 +66,32 @@
   text-decoration: none;
 }
 
-.card--interactive:hover {
+[part~='interactive']:hover {
   box-shadow: var(--box-shadow-hover);
 }
 
-.card--interactive:focus {
-  box-shadow: var(--telekom-shadow-raised-hover), var(--box-shadow-focus);
+[part~='movable']:hover {
+  box-shadow: var(--box-shadow-movable-hover);
 }
 
-.card--interactive:active {
+[part~='interactive']:focus {
+  box-shadow: var(--box-shadow-hover), var(--box-shadow-focus);
+}
+
+[part~='movable']:focus {
+  box-shadow: var(--box-shadow-movable-hover), var(--box-shadow-focus);
+}
+
+[part~='interactive']:active {
   border: none;
   box-shadow: var(--box-shadow-active);
 }
 
-.card--interactive .card__body ::slotted(*) {
+[part~='movable']:active {
+  border: none;
+  box-shadow: var(--box-shadow-movable-active);
+}
+
+[part~='interactive'] [part~='body'] ::slotted(*) {
   margin: var(--spacing-body-slotted-interactive);
 }
