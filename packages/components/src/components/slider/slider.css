@@ -10,146 +10,185 @@
  */
 
 :host {
-  --border: 1px solid var(--telekom-color-ui-border-standard);
-  --background-bar: var(--telekom-color-primary-standard);
-  --border-color-thumb: var(--telekom-color-ui-border-standard);
-  --box-shadow-thumb: var(--telekom-shadow-resting-standard);
-  --border-color-thumb-hover: var(--telekom-color-ui-border-hovered);
-  --border-color-thumb-active: var(--telekom-color-ui-border-pressed);
-  --box-shadow-thumb-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
-  --color-display-value: var(--telekom-color-text-and-icon-additional);
-  --font-weight-display-value: var(--telekom-typography-font-weight-bold);
-  --font-size-display-value: var(--telekom-typography-font-size-small);
+  --width: 368px;
+  --height-track: 6px;
   --background-track: var(--telekom-color-ui-faint);
-  --background-bar-disabled: var(--telekom-color-ui-disabled);
-  --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
+  --radius-track: var(--telekom-radius-pill);
+  --spacing-track: var(--telekom-spacing-unit-x5) 0
+    var(--telekom-spacing-unit-x4);
+  --spacing-x-inner-track: 10px;
+  --background-bar: var(--telekom-color-primary-standard);
+  --radius-thumb: var(--telekom-radius-circle);
+  --size-thumb: 24px;
+  --border-color-thumb: rgba(0, 0, 0, 0.05);
+  --background-thumb: var(--telekom-color-ui-white);
+  --color-focus: var(--telekom-color-functional-focus);
+  --spacing-x-step-marks: 8px;
+  --color-step-mark: var(--telekom-color-text-and-icon-additional);
+  --radius-step-mark: var(--telekom-radius-circle);
+  --size-step-mark: 4px;
+  --font-label: var(--telekom-text-style-ui);
+  --font-helper-text: var(--telekom-text-style-small-bold);
+  --color-helper-text: var(--telekom-color-text-and-icon-additional);
 }
 
-.slider {
-  width: 100%;
-  display: block;
-  align-items: center;
+[part~='base'] {
+  width: var(--width);
 }
 
-.slider .slider__track-wrapper {
+[part='label-wrapper'] {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.slider .slider__track {
-  width: 303px;
-  border: var(--border);
-  height: 6px;
-  margin: 16px 0;
+[part='label'] {
+  font: var(--font-label);
+}
+
+[part='value-text'] {
+  font: var(--font-label);
+  font-variant-numeric: tabular-nums;
+}
+
+[part='track-wrapper'] {
   display: flex;
   position: relative;
-  box-sizing: border-box;
   align-items: center;
-  border-radius: 100px;
 }
 
-.slider .slider__bar {
-  height: 6px;
-  z-index: -1;
+[part='track'] {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin: var(--spacing-track);
+  width: 100%;
+  height: var(--height-track);
+  background: var(--background-track);
+  border-radius: var(--radius-track);
+}
+
+/* Really holds the thumb, adding some spacing on the sides */
+[part='inner-track'] {
   position: absolute;
-  border-radius: 100px;
-  background-color: var(--background-bar);
-  z-index: var(--scl-z-index-10);
+  display: flex;
+  align-items: center;
+  left: var(--spacing-x-inner-track);
+  width: calc(100% - var(--spacing-x-inner-track) * 2);
+  height: 100%;
 }
 
-.slider .slider__thumb-wrapper {
+[part='bar'] {
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  border-radius: var(--radius-track);
+  background-color: var(--background-bar);
+}
+
+[part~='thumb-wrapper'] {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
-  display: flex;
-  z-index: var(--scl-z-index-20);
-  position: absolute;
-  text-align: center;
-  align-items: center;
   margin-left: -16px;
-  justify-content: center;
   background-color: transparent;
 }
 
-.slider .slider__thumb {
-  width: 16px;
-  border: 1px solid;
-  height: 16px;
+[part~='thumb'] {
+  --_border: 0 0 0 var(--telekom-spacing-unit-x025) var(--border-color-thumb);
+  width: var(--size-thumb);
+  height: var(--size-thumb);
   outline: none;
   box-sizing: border-box;
-  border-color: var(--border-color-thumb);
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: var(--telekom-shadow-resting-standard);
+  border-radius: var(--radius-thumb);
+  background-color: var(--background-thumb);
+  box-shadow: var(--_border), var(--telekom-shadow-raised-standard);
 }
 
-.slider .slider__display-value {
-  color: var(--color-display-value);
-  margin-left: 24px;
-  font-weight: var(--font-weight-display-value);
-  font-size: var(--font-size-display-value);
+[part~='thumb-wrapper']:hover [part~='thumb'] {
+  box-shadow: var(--_border), var(--telekom-shadow-raised-hover);
 }
 
-.slider .slider__thumb:hover {
-  border-color: var(--border-color-thumb-hover);
+[part~='thumb-wrapper']:active [part~='thumb'] {
+  box-shadow: var(--_border), var(--telekom-shadow-raised-pressed);
 }
 
-.slider .slider__thumb:active {
-  border-color: var(--border-color-thumb-active);
+[part~='thumb']:focus {
+  outline: var(--telekom-line-weight-highlight) solid var(--color-focus);
+  outline-offset: 1px;
 }
 
-.slider .slider__thumb:focus {
-  box-shadow: var(--box-shadow-thumb-focus);
+[part='step-marks'] {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--spacing-x-step-marks);
 }
 
-.slider .slider__thumb-wrapper:hover {
-  cursor: grab;
+[part='step-mark'] {
+  width: var(--size-step-mark);
+  height: var(--size-step-mark);
+  background: var(--color-step-mark);
+  border-radius: var(--telekom-radius-circle);
 }
 
-.slider .slider__thumb-wrapper:active {
-  cursor: grabbing;
+[part='meta'] {
+  display: flex;
+  justify-content: space-between;
 }
 
-.slider--track-small .slider__track {
-  border: none;
-  height: 1px;
-  border-top: 1px solid transparent;
-  background-color: var(--background-track);
+[part='helper-text'] {
+  font: var(--font-helper-text);
+  color: var(--color-helper-text);
 }
 
-.slider--track-small .slider__bar {
-  border: 1px solid transparent;
-  height: 3px;
-  z-index: 1;
-  box-sizing: border-box;
+/* disabled */
+
+/* TODO can this be overwritten? it should... */
+[part~='disabled'] [part='label-wrapper'],
+[part~='disabled'] [part='helper-text'] {
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 
-.slider--thumb-large .slider__thumb {
-  width: 24px;
-  height: 24px;
+[part~='disabled'] [part='bar'] {
+  background-color: var(--telekom-color-ui-border-disabled);
 }
 
-.slider--disabled .slider__track-wrapper {
-  cursor: not-allowed;
-}
-
-.slider--disabled .slider__bar {
-  background-color: var(--background-bar-disabled);
-  z-index: var(--scl-z-index-10);
-}
-
-.slider--disabled .slider__track {
-  border-color: var(--telekom-color-ui-border-disabled);
-}
-
-.slider--disabled .slider__thumb {
+[part~='disabled'] [part~='thumb-wrapper'] {
   display: none;
 }
 
-.slider--disabled .slider__label {
-  color: var(--color-label-disabled);
+/* cursor */
+
+[part~='thumb-wrapper']:hover {
+  cursor: grab;
 }
 
-.slider--disabled .slider__thumb-wrapper:hover {
+[part~='thumb-wrapper']:active {
+  cursor: grabbing;
+}
+
+[part~='disabled'] [part='track-wrapper'] {
   cursor: not-allowed;
+}
+
+/* PLATFORM iOS */
+
+:host-context([data-platform='ios']) {
+  --height-track: 4px;
+  --size-thumb: 26px;
+  --size-step-mark: 2px;
+}
+
+/* PLATFORM Android */
+
+:host-context([data-platform='android']) {
+  --background-thumb: var(--telekom-color-primary-standard);
 }
