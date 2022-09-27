@@ -28,12 +28,13 @@
   --vertical-align: middle;
 
   /* size: small */
-  --font-size-small: var(--telekom-typography-font-size-small);
+  --font-size-small: var(--telekom-typography-font-size-caption);
   --line-height-small: 1.125rem;
   --min-height-small: var(--telekom-spacing-unit-x8);
   --spacing-x-right-small: var(--telekom-spacing-unit-x4);
   --spacing-x-left-small: var(--telekom-spacing-unit-x4);
   --spacing-x-icon-only-small: var(--telekom-spacing-unit-x0);
+  --spacing-icon-x-small: var(--telekom-spacing-unit-x1);
 
   /* variant: primary */
   --radius-primary: var(--radius);
@@ -120,7 +121,7 @@
 
 .button.button--icon-before:not(.button--icon-only).button--size-small
   ::slotted(*) {
-  margin-right: var(--spacing-icon-x);
+  margin-right: var(--spacing-icon-x-small);
   margin-left: calc(var(--spacing-icon-x) * -0.5);
 }
 
@@ -131,7 +132,7 @@
 
 .button.button--icon-after:not(.button--icon-only).button--size-small
   ::slotted(*) {
-  margin-left: var(--spacing-icon-x);
+  margin-left: var(--spacing-icon-x-small);
   margin-right: calc(var(--spacing-icon-x) * -0.5);
 }
 
