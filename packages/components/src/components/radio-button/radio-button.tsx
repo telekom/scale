@@ -112,6 +112,17 @@ export class RadioButton {
     ) as HTMLScaleRadioButtonElement[];
   }
 
+  renderHelperIcon() {
+    if (this.helperText && !this.invalid) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+  }
+
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
@@ -142,6 +153,7 @@ export class RadioButton {
               aria-live="polite"
               aria-relevant="additions removals"
             >
+              {this.renderHelperIcon()}
               <div class="radio-button__helper-text">{this.helperText}</div>
             </div>
           )}

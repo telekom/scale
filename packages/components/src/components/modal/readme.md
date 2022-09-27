@@ -1,7 +1,5 @@
 # scale-modal
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -15,6 +13,7 @@
 | `closeButtonTitle`          | `close-button-title`            | (optional) title for close button                                                  | `string`            | `'Close'`        |
 | `duration`                  | `duration`                      | (optional) Transition duration                                                     | `number`            | `200`            |
 | `heading`                   | `heading`                       | Modal heading                                                                      | `string`            | `undefined`      |
+| `omitCloseButton`           | `omit-close-button`             | (optional) hide close button                                                       | `boolean`           | `false`          |
 | `opened`                    | `opened`                        | (optional) If `true`, the Modal is open.                                           | `boolean`           | `false`          |
 | `size`                      | `size`                          | (optional) Modal size                                                              | `string`            | `'default'`      |
 | `styles`                    | `styles`                        | (optional) Injected CSS styles                                                     | `string`            | `undefined`      |

@@ -5,21 +5,16 @@ describe('Card', () => {
     });
     test.each([
       ['standard'],
-      ['with-link'],
-      ['with-image'],
-      ['with-further-functions'],
+      ['movable'],
+      ['action-icon'],
+      ['action-checkbox'],
+      ['full-width-image-and-headline'],
+      ['asset-headline-and-subline'],
+      ['centered-image-and-headline'],
+      ['with-interactive-icons'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-card--${variant}`);
-
-      const anchor = await global.page.evaluateHandle(
-        `document.querySelector("body scale-card").shadowRoot.querySelector("div > a")`
-      );
       await global.visualCheck();
-      // if no anchor is found an error object is returned
-      if (anchor._remoteObject.className) {
-        await anchor.hover();
-        await global.visualCheck();
-      }
     });
   });
 });

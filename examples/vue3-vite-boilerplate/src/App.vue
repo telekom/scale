@@ -1,4 +1,5 @@
 <template>
+  <main>  
   <div>
     <h1 class="scl-font-variant-heading-1">Scale + Vue3 + Vite </h1>
     <scale-button
@@ -8,6 +9,7 @@
       Open the docs
     </scale-button>
   </div>
+  </main>  
 </template>
 
 <style>
@@ -21,6 +23,13 @@
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: sans-serif;
 }
 
 </style>

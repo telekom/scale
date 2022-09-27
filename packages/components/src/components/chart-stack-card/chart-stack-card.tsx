@@ -60,7 +60,7 @@ export class ChartStackCard {
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-          <scale-card styles={this.getCardStyle()}>
+          <scale-card>
             <div class="header">{this.heading}</div>
             <div class="bar">
               {this.readData(this.data)

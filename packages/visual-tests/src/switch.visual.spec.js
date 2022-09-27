@@ -8,6 +8,8 @@ describe('Switch', () => {
       ['standard-disabled'],
       ['selected'],
       ['selected-disabled'],
+      ['ios'],
+      ['android'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-switch--${variant}`);
       await global.visualCheck();

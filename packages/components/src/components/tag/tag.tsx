@@ -20,8 +20,22 @@ import { emitEvent } from '../../utils/utils';
 export class Tag {
   /** (optional) Tag size */
   @Prop() size?: 'small';
-  /** (optional) Tag variant */
-  @Prop() variant?: 'secondary';
+  /** (optional) Tag type */
+  @Prop() type?: 'standard' | 'strong' = 'standard';
+  /** (optional) Tag color */
+  @Prop() color?:
+    | 'cyan'
+    | 'yellow'
+    | 'green'
+    | 'orange'
+    | 'red'
+    | 'violet'
+    | 'brown'
+    | 'olive'
+    | 'teal'
+    | 'black'
+    | 'dismissable'
+    | 'grey' = 'grey';
   /** (optional) Tag href */
   @Prop() href?: string = '';
   /** (optional) Tag target */
@@ -80,10 +94,7 @@ export class Tag {
               aria-label={this.dismissText}
               onClick={this.handleClose}
             >
-              <scale-icon-action-close
-                part="icon-dismissable"
-                size={this.size === 'small' ? 20 : 24}
-              />
+              <scale-icon-action-close part="icon-dismissable" size={15} />
             </button>
           )}
         </Element>
@@ -106,7 +117,8 @@ export class Tag {
     return classNames(
       mode === 'basePart' ? 'base' : component,
       this.size && `${prefix}size-${this.size}`,
-      this.variant && `${prefix}variant-${this.variant}`,
+      this.type && `${prefix}type-${this.type}`,
+      this.color && `${prefix}color-${this.color}`,
       !!this.href && `${prefix}link`,
       !!this.dismissable && `${prefix}dismissable`,
       !!this.disabled && `${prefix}disabled`
