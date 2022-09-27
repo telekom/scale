@@ -7,6 +7,7 @@ describe('Button', () => {
       ['standard'],
       ['secondary'],
       ['secondary-disabled'],
+      ['secondary-white'],
       ['disabled'],
       ['with-icon-before'],
       ['with-icon-after'],
