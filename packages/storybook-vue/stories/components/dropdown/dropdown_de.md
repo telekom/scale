@@ -64,20 +64,6 @@ Der Titel fordert zur Auswahl einer Option auf.
 
 Das Dropdown Menü beinhaltet die verfügbaren Optionen oder Optionsgruppen.
 
-## Größen
-
-Bei einem Dropdown kannst du zwischen zwei Größen wählen – Large und Small. Achte jedoch darauf, die beiden Größen nicht zu kombinieren. Auch andere UI-Elemente wie Eingabefelder und Buttons sollten dieselbe Größe haben.
-
-### Large
-
-Verwende das große Dropdown als Standard.
-
-![Image Name](assets/3_components/select-box/dropdown-gross.png)
-
-### Small
-
-Wenn nur wenig Platz zur Verfügung steht, setze das kleine Dropdown ein.
-
 ![Image Name](assets/3_components/select-box/dropdown-klein.png)
 
 ## Bekannte Einschränkungen

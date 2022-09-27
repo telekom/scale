@@ -44,14 +44,19 @@ export class Dropdown {
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
-  /** (optional) Input size */
-  @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
-  /** (optional) Input status */
+  /** @deprecated */
+  @Prop() size?: string;
   @Prop() invalid?: boolean = false;
+  /** (optional) Input status */
+  @Prop() info?: boolean = true;
+  /** (optional) Input status */
+  @Prop() warning?: boolean = false;
+  /** (optional) Input status */
+  @Prop() success?: boolean = false;
   /** (optional) Input disabled */
   @Prop() disabled?: boolean;
   /** (optional) Input required */
@@ -109,6 +114,9 @@ export class Dropdown {
     if (this.inputId == null) {
       this.inputId = 'input-dropdown' + i++;
     }
+    if (this.invalid || this.warning || this.success) {
+      this.info = false;
+    }
   }
 
   componentDidLoad() {
@@ -159,6 +167,14 @@ export class Dropdown {
         tag: 'deprecated',
         message:
           'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.hostElement,
       });
@@ -227,6 +243,20 @@ export class Dropdown {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
+  renderHelperIcon() {
+    if (this.info || this.warning) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+    if (this.success) {
+      return <scale-icon-alert-success size={11}></scale-icon-alert-success>;
+    }
+  }
+
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
@@ -277,7 +307,12 @@ export class Dropdown {
               aria-live="polite"
               aria-relevant="additions removals"
             >
-              <div class="input__helper-text">{this.helperText}</div>
+              <div class="input__helper-text">
+                <div class="input__helper-text_icon">
+                  {this.renderHelperIcon()}
+                </div>
+                <div class="input__helper-text_label">{this.helperText}</div>
+              </div>
             </div>
           )}
         </div>
@@ -292,7 +327,9 @@ export class Dropdown {
       this.transparent && 'dropdown--transparent',
       this.status && `dropdown--status-${this.status}`,
       this.invalid && `dropdown--status-error`,
-      this.size && `dropdown--size-${this.size}`,
+      this.success && `dropdown--status-success`,
+      this.warning && `dropdown--status-warning`,
+      this.info && `dropdown--status-info`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

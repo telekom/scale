@@ -25,10 +25,8 @@ export class TabPanel {
 
   @Element() el: HTMLElement;
   /** True for smaller height and font size */
-  // DEPRECATED - size should replace small
+  /** @deprecated - css overwrites should replace small */
   @Prop() small?: boolean = false;
-  /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -37,7 +35,7 @@ export class TabPanel {
       statusNote({
         tag: 'deprecated',
         message:
-          'Property "small" is deprecated. Please use the "size" property!',
+          'Property "small" is deprecated. Please use the css overwrites!',
         type: 'warn',
         source: this.el,
       });
@@ -68,9 +66,6 @@ export class TabPanel {
     const component = 'tab-panel';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
 
-    return classNames(
-      component,
-      (this.size === 'small' || this.small) && `${prefix}small`
-    );
+    return classNames(component, `${prefix}`);
   }
 }

@@ -5,6 +5,7 @@
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
+    :variant="variant"
     :max-length="maxLength"
     :min-length="minLength"
     :max="max"
@@ -39,6 +40,7 @@ export default {
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
+    variant: { type: String },
     maxLength: { type: Number },
     minLength: { type: Number },
     max: { type: Number },

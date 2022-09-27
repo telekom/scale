@@ -17,6 +17,10 @@ scale-text-field {
     var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
+  --border-success: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-success-standard);
+  --border-warning: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
@@ -24,8 +28,7 @@ scale-text-field {
   --background-color-disabled: none;
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
-  --height: var(--telekom-spacing-unit-x12);
-  --height-small: var(--telekom-spacing-unit-x10);
+  --height: var(--telekom-spacing-unit-x11);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
@@ -41,7 +44,7 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: var(--telekom-spacing-unit-x3) var(--spacing-x) 0
+  --spacing-control: 21px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
@@ -61,6 +64,12 @@ scale-text-field {
     --telekom-color-text-and-icon-functional-informational
   );
   --color-helper-text-error: var(--color-meta-error);
+  --color-helper-text-success: var(
+    --telekom-color-text-and-icon-functional-success
+  );
+  --color-helper-text-warning: var(
+    --telekom-color-text-and-icon-functional-warning
+  );
 
   /* placeholder */
   --transition-placeholder: var(--transition);
@@ -73,8 +82,6 @@ scale-text-field {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-small: var(--telekom-typography-font-size-body);
-  --font-weight-label-small: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
@@ -107,19 +114,41 @@ scale-text-field {
   display: flex;
   transition: var(--transition-counter);
   margin-left: auto;
-  padding-right: var(--spacing-x);
   justify-content: flex-end;
   font-size: var(--font-size-counter);
   line-height: var(--line-height-counter);
   color: inherit;
+  font-weight: var(--telekom-typography-font-weight-medium);
 }
 .text-field .text-field__helper-text {
   transition: var(--transition-helper-text);
   font-size: var(--font-size-helper-text);
-  line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
   font-weight: var(--telekom-typography-font-weight-bold);
+  display: flex;
+  margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0;
 }
+.text-field .text-field__helper-text_label {
+  font-size: var(--telekom-typography-font-size-small);
+}
+.text-field--variant-warning .text-field__helper-text_label {
+  color: var(--color-helper-text-warning);
+}
+.text-field--variant-success .text-field__helper-text_label {
+  color: var(--color-helper-text-success);
+}
+.text-field .text-field__helper-text_icon {
+  justify-content: center;
+  padding-top: 1.5px;
+  padding-right: 4.5px;
+}
+.text-field--variant-warning .text-field__helper-text_icon {
+  color: var(--color-helper-text-warning);
+}
+.text-field--variant-success .text-field__helper-text_icon {
+  color: var(--color-helper-text-success);
+}
+
 .text-field .text-field__meta {
   display: flex;
   justify-content: space-between;
@@ -150,8 +179,7 @@ scale-text-field {
 }
 
 .text-field__label {
-  top: 0;
-  left: 0;
+  top: -1px;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
@@ -172,40 +200,56 @@ scale-text-field {
   font-size: var(--font-size-label-focus);
   font-weight: var(--font-weight-label-focus);
 }
-.text-field--status-error .text-field__control {
+.text-field--variant-danger .text-field__control {
   border: var(--border-error);
 }
+.text-field--variant-success .text-field__control {
+  border: var(--border-success);
+}
+.text-field--variant-warning .text-field__control {
+  border: var(--border-warning);
+}
 
-.text-field--status-error:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-danger:not(.text-field--disabled):not(.text-field--readonly)
   .text-field__control:hover,
-.text-field--status-error:not(.text-field--disabled):not(.text-field--readonly)
+.text-field--variant-danger:not(.text-field--disabled):not(.text-field--readonly)
   .text-field__control:focus {
   border-color: var(--telekom-color-functional-danger-hovered);
 }
 
-.text-field--status-error .text-field__helper-text {
+.text-field--variant-success:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:hover,
+.text-field--variant-success:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:focus {
+  border-color: var(--telekom-color-functional-success-hovered);
+}
+
+.text-field--variant-warning:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:hover,
+.text-field--variant-warning:not(.text-field--disabled):not(.text-field--readonly)
+  .text-field__control:focus {
+  border-color: var(--telekom-color-functional-warning-hovered);
+}
+
+.text-field--variant-danger .text-field__helper-text {
   color: var(--color-helper-text-error);
 }
-.text-field--status-error .text-field__counter {
+.text-field--variant-danger .text-field__counter {
   color: var(--color-counter-error);
 }
-.text-field--size-small .text-field__control {
-  height: var(--height-small);
+
+.text-field--variant-success .text-field__helper-text {
+  color: var(--color-helper-text-success);
 }
-.text-field--size-small .text-field__label {
-  font-size: var(--font-size-label-small);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height-small) - var(--font-size-label-small)) / 2)
-  );
-  font-weight: var(--font-weight-label-small);
+.text-field--variant-success .text-field__counter {
+  color: var(--telekom-color-text-and-icon-functional-success);
 }
-.text-field--size-small.text-field--has-focus:not(.text-field--readonly)
-  .text-field__label,
-.text-field--size-small.animated .text-field__label {
-  line-height: var(--telekom-typography-font-size-small);
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
-  font-size: var(--font-size-label-focus);
+
+.text-field--variant-warning .text-field__helper-text {
+  color: var(--color-helper-text-warning);
+}
+.text-field--variant-warning .text-field__counter {
+  color: var(--telekom-color-text-and-icon-functional-warning);
 }
 .text-field--transparent .text-field__control {
   background-color: transparent;
@@ -213,7 +257,7 @@ scale-text-field {
 .text-field--readonly input,
 .text-field--readonly .text-field__control {
   color: var(--color-label-readonly);
-  border-color: var(--border-color-readonly);
+  border: none;
   background: var(--background-readonly);
 }
 
@@ -249,4 +293,14 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+/* Chrome, Edge */
+input[type='datetime-local']::-webkit-calendar-picker-indicator,
+input[type='time']::-webkit-calendar-picker-indicator,
+input[type='date']::-webkit-calendar-picker-indicator,
+input[type='week']::-webkit-calendar-picker-indicator,
+input[type='month']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 12px;
 }
