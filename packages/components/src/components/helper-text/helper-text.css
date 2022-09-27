@@ -1,3 +1,12 @@
+:host {
+  --font: var(--telekom-text-style-small-bold);
+  --color-informational: var(--telekom-color-text-and-icon-functional-informational);
+  --color-warning: var(--telekom-color-text-and-icon-functional-warning);
+  --color-danger: var(--telekom-color-text-and-icon-functional-danger);
+  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --color-neutral: var(--telekom-color-text-and-icon-additional);
+}
+
 .helper-text {
   display: flex;
   align-items: center;
@@ -16,21 +25,21 @@ scale-icon-alert-success {
 }
 
 .helper-text--informational {
-  color: var(--telekom-color-text-and-icon-functional-informational);
+  color: var(--color-informational);
 }
 
 .helper-text--warning {
-  color: var(--telekom-color-text-and-icon-functional-warning);
+  color: var(--color-warning);
 }
 
 .helper-text--danger {
-  color: var(--telekom-color-text-and-icon-functional-danger);
+  color: var(--color-danger);
 }
 
 .helper-text--success {
-  color: var(--telekom-color-text-and-icon-functional-success);
+  color: var(--color-success);
 }
 
 .helper-text--neutral {
-  color: var(--telekom-color-text-and-icon-additional);
+  color: var(--color-neutral);
 }
