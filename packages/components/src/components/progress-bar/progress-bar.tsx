@@ -73,10 +73,10 @@ export class ProgressBar {
     }
   }
 
-  transitions = (width: number, width_start: number) => `
+  transitions = (width: number, widthStart: number) => `
     @keyframes showProgress {
       from {
-        width: ${width_start}%;
+        width: ${widthStart}%;
       }
       to {
         width: ${width}%;
