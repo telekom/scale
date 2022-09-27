@@ -68,22 +68,6 @@ The title prompts the user to select an option
 
 The dropdown menu contains the available options or groups of options.
 
-## Sizes
-
-Scale offers the dropdown in two sizes. Be careful not to combine the two sizes. Other UI elements such as input fields and buttons should also have the same size.
-
-### Large
-
-Use large dropdowns as the default option.
-
-![Image Name](assets/3_components/select-box/dropdown-gross.png)
-
-### Small
-
-When space is limited, use the small dropdown consistently.
-
-![Image Name](assets/3_components/select-box/dropdown-klein.png)
-
 ## Known issues
 
 The dropdown is ready for use. The component in disabled state is displayed incorrectly with white background in Firefox 85.0.2 (64-bit) in HCM (high contrast mode).

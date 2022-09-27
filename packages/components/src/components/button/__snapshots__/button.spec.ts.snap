@@ -23,9 +23,9 @@ exports[`Button should handle click 2`] = `
 `;
 
 exports[`Button should handle icon after 1`] = `
-<scale-button icon-position="after" size="small">
+<scale-button icon-position="after">
   <mock:shadow-root>
-    <button class="button button--icon-after button--size-small button--variant-primary" part="base variant-primary after">
+    <button class="button button--icon-after button--size-large button--variant-primary" part="base variant-primary after">
       <slot></slot>
     </button>
   </mock:shadow-root>
@@ -35,9 +35,9 @@ exports[`Button should handle icon after 1`] = `
 `;
 
 exports[`Button should handle icon before 1`] = `
-<scale-button icon-position="before" size="small">
+<scale-button icon-position="before">
   <mock:shadow-root>
-    <button class="button button--icon-before button--size-small button--variant-primary" part="base variant-primary before">
+    <button class="button button--icon-before button--size-large button--variant-primary" part="base variant-primary before">
       <slot></slot>
     </button>
   </mock:shadow-root>

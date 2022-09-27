@@ -8,9 +8,10 @@ describe('Textfield', () => {
       ['placeholder'],
       ['helper-text'],
       ['with-error'],
+      ['with-success'],
+      ['with-warning'],
       ['disabled'],
       ['read-only'],
-      ['small'],
       ['max-length-with-counter'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-text-field--${variant}`);

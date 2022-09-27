@@ -24,10 +24,10 @@ describe('scale-tab-header', () => {
   it('should set size for icons', async () => {
     const page = await newE2EPage();
     await page.setContent(`
-      <scale-tab-header>
-        <scale-icon-home-home></scale-icon-home-home> General
-      </scale-tab-header>
-    `);
+       <scale-tab-header>
+         <scale-icon-home-home></scale-icon-home-home> General
+       </scale-tab-header>
+     `);
     const element = await page.find('scale-icon-home-home');
     expect(element.getAttribute('size')).toBe('16');
   });

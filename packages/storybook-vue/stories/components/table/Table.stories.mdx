@@ -14,7 +14,11 @@ export const ICON =
   component={ScaleTable}
   argTypes={{
     size: {
-      control: { type: 'select', options: ['default', 'small'] },
+      table: {
+        type: 'select',
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
     },
   }}
 />
@@ -28,18 +32,17 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-table
       :show-sort="showSort"
-      :size="size"
       :striped="striped ? true : false"
     >
       <table id="sortable-table">
         <caption class="sr-only">All sortable columns are focusable</caption>
         <thead>
           <tr>
-            <th scope="col" width="40%" title="sortable" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
-            <th scope="col" width="20%" aria-disabled="true" class="tags">Tags</th>
-            <th scope="col" width="20%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
-            <th scope="col" width="10%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
-            <th scope="col" width="10%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
+            <th scope="col" width="13%" title="sortable" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
+            <th scope="col" width="28%" aria-disabled="true" class="tags">Tags</th>
+            <th scope="col" width="23%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
+            <th scope="col" width="18%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
+            <th scope="col" width="18%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
               Euros
             </th>
           </tr>
@@ -257,51 +260,6 @@ scale-table {
   --background-tr-striped: var(--telekom-color-ui-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-table size="small">
-  <table>
-    <!-- Add visibility CSS to caption, to not show the caption. For example shifting it out of the view -->
-    <caption>
-      Table title
-    </caption>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Tags</th>
-        <th>Stats</th>
-        <th>Time</th>
-        <th>Euros</th>
-      </tr>
-    </thead>
-    <tbody>
-      ...
-    </tbody>
-    <tfoot>
-      <tr>
-        <td>Total</td>
-        <td></td>
-        <td></td>
-        <td>00:00:20</td>
-        <td>100.245,10</td>
-      </tr>
-    </tfoot>
-  </table>
-</scale-table>
 ```
 
 ## With Sorting Icons
