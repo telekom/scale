@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBar check props 1`] = `
-<scale-progress-bar label="testLabel" percentage="18" show-status="" status-description="statusDescription" status-inside="" stroke-width="24" styles="color:blue;" text-inside="">
+<scale-progress-bar label="testLabel" percentage="18" percentage-start="5" show-status="" status-description="statusDescription" status-inside="" stroke-width="24" styles="color:blue;" text-inside="">
   <mock:shadow-root>
     <style>
       color:blue;
@@ -9,7 +9,7 @@ exports[`ProgressBar check props 1`] = `
     <style>
       @keyframes showProgress {
       from {
-        width: 0;
+        width: 5%;
       }
       to {
         width: 18%;
@@ -51,7 +51,7 @@ exports[`ProgressBar should match snapshot 1`] = `
     <style>
       @keyframes showProgress {
       from {
-        width: 0;
+        width: 0%;
       }
       to {
         width: 0%;
