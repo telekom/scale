@@ -71,7 +71,6 @@ export class Checkbox {
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
   private id = i++;
-
   componentDidRender() {
     if (this.status !== '') {
       statusNote({
@@ -134,6 +133,17 @@ export class Checkbox {
     }
   }
 
+  renderHelperIcon() {
+    if (this.helperText && !this.invalid) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+  }
+
   renderHelperText(text) {
     if (this.helperText && this.helperText !== '') {
       return (
@@ -143,6 +153,8 @@ export class Checkbox {
           aria-live="polite"
           aria-relevant="additions removals"
         >
+          {this.renderHelperIcon()}
+
           {text.content}
         </div>
       );
