@@ -9,226 +9,173 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-.switch {
-  --size: 20px;
+scale-switch {
+  --width: 42px;
+  --height: 24px;
   --offset: 2px;
+  --radius: 1em;
+  --transition-duration: var(--telekom-motion-duration-immediate);
+  --transition-easing: var(--telekom-motion-easing-standard);
+  --shadow-thumb: var(--telekom-shadow-raised-standard);
+  --spacing-x-label: var(--telekom-spacing-unit-x2);
+  --font-label: var(--telekom-text-style-ui);
+  --font-io-text: var(--telekom-text-style-small-bold);
+}
 
-  --text: var(--telekom-color-text-and-icon-standard);
-  --text-disabled: var(--telekom-color-text-and-icon-disabled);
-
-  --toggle: var(--telekom-color-ui-regular);
-  --background: var(--telekom-color-ui-state-fill-standard);
-  --border: var(--telekom-color-ui-border-standard);
-
-  --transition-duration: var(--telekom-motion-duration-transition);
-  --transition-timing-function: var(--telekom-motion-easing-standard);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
-  --spacing-left: var(--telekom-spacing-unit-x2);
-  --font-weight: var(--telekom-typography-font-weight-medium);
+.switch {
+  --_background: var(--telekom-color-ui-faint);
+  --_color-thumb: var(--telekom-color-ui-white, #fff);
 
   display: inline-block;
   position: relative;
 }
 
-.switch label {
+/* <input> */
+.switch__control {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  width: var(--width);
+  height: var(--height);
+  opacity: 0;
+}
+
+/* <label> */
+.switch__wrapper {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.switch input {
-  width: 0;
-  height: 0;
-  opacity: 0;
-  position: absolute;
-}
-
-/* base elements */
-
-.switch .switch__text {
-  display: flex;
-  width: 100%;
-  color: var(--text);
-  justify-content: space-evenly;
-  font-size: var(--telekom-typography-font-size-small);
-  line-height: calc(var(--size) - var(--offset));
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-
-.switch .switch__text:before {
-  color: var(--telekom-color-text-and-icon-white-standard);
-  content: 'I';
-}
-
-.switch .switch__text:after {
-  color: var(--telekom-color-text-and-icon-additional);
-  content: '0';
+.switch__toggle {
   position: relative;
-  right: -1px;
-}
-
-.switch .switch__toggle {
-  position: absolute;
-  border-radius: 50%;
-  padding: calc(0.5 * var(--size) - var(--offset));
-  margin: calc(-0.5 * var(--size) + var(--offset));
-  background: var(--toggle);
-  left: calc(0.5 * var(--size) - 0.5 * var(--offset));
-  top: 50%;
-  transition-property: transform, background;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  z-index: 20;
-}
-
-.switch input:checked:disabled + .switch__wrapper .switch__toggle,
-.switch
-  input:not(:checked):not(:disabled):active
-  + .switch__wrapper
-  .switch__toggle,
-.switch
-  input:checked:not(:disabled):not(:active)
-  + .switch__wrapper
-  .switch__toggle {
-  transform: translateX(var(--size));
-}
-
-.switch .switch__label {
-  cursor: inherit;
-  color: var(--text);
-  margin-left: var(--spacing-left);
-  font-weight: var(--font-weight);
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-
-/* toggle off */
-
-.switch .switch__wrapper {
-  position: relative;
-  border: 1px solid var(--border);
-  border-radius: calc(var(--size) / 2);
-  width: calc(2 * var(--size) - var(--offset));
-  height: calc(var(--size) - var(--offset));
-  display: inline-flex;
-  justify-content: space-between;
-  background: var(--background);
+  width: var(--width);
+  height: var(--height);
+  background: var(--_background);
+  border-radius: var(--radius);
   transition-property: background;
   transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition-timing-function: var(--transition-easing);
 }
 
-.switch:not(.switch--disabled) .switch__wrapper .switch__toggle {
-  background-color: var(--toggle);
+.switch:hover {
+  --_background: var(--telekom-color-ui-regular);
+}
+.switch:active {
+  --_background: var(--telekom-color-ui-strong);
 }
 
-.switch:not(.switch--disabled):hover input:not(:checked) ~ .switch__wrapper {
-  --background: var(--telekom-color-ui-state-fill-hovered);
-  --border: var(--telekom-color-ui-border-hovered);
+.switch--checked {
+  --_background: var(--telekom-color-primary-standard);
+}
+.switch--checked:hover {
+  --_background: var(--telekom-color-primary-hovered);
+}
+.switch--checked.switch__control {
+  --_background: var(--telekom-color-primary-pressed);
 }
 
-.switch:not(.switch--disabled):hover
-  input:not(:checked)
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-strong);
+.switch--disabled,
+.switch--disabled:hover,
+.switch--disabled:active {
+  --_background: var(--telekom-color-ui-disabled);
+  --_color: var(--telekom-color-ui-faint);
 }
 
-.switch:not(.switch--disabled):active input:not(:checked) ~ .switch__wrapper {
-  --background: var(--telekom-color-ui-state-fill-pressed);
-  --border: var(--telekom-color-ui-border-pressed);
-}
-
-.switch:not(.switch--disabled):active
-  input:not(:checked)
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-extra-strong);
-}
-
-.switch--focus-visible-not-supported input:focus ~ .switch__wrapper {
-  box-shadow: var(--box-shadow-focus);
-}
-
-.switch--focus-visible-supported
-  input:focus-visible:not(:checked)
-  ~ .switch__wrapper {
-  box-shadow: var(--box-shadow-focus);
-  border-color: var(--border);
-}
-
-.switch--focus-visible-supported
-  input:focus-visible:checked
-  ~ .switch__wrapper {
-  box-shadow: var(--box-shadow-focus);
-}
-
-/* toggle on */
-
-.switch:not(.switch--disabled) input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-standard);
-  --border: transparent;
-}
-
-.switch:not(.switch--disabled)
-  input:checked
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-white);
-}
-
-.switch:not(.switch--disabled):hover input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-hovered);
-  --border: transparent;
-}
-
-.switch:not(.switch--disabled):hover
-  input:checked
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-white);
-}
-
-.switch:not(.switch--disabled):active input:checked ~ .switch__wrapper {
-  --background: var(--telekom-color-primary-pressed);
-  --border: transparent;
-}
-
-.switch:not(.switch--disabled):active
-  input:checked
-  ~ .switch__wrapper
-  .switch__toggle {
-  --toggle: var(--telekom-color-ui-white);
-}
-
-/* disabled states */
-
-.switch.switch--disabled label {
+.switch--disabled .switch__wrapper {
   cursor: not-allowed;
 }
 
-.switch.switch--disabled .switch__label {
-  color: var(--text-disabled);
+/*
+  I think there's a selector combination that could
+  replace .switch--focus-visible-not-supported and the JS check
+*/
+
+/* I don't like the ~ */
+.switch--focus-visible-not-supported :focus ~ .switch__toggle,
+:focus-visible ~ .switch__toggle {
+  outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus);
+  outline-offset: var(--telekom-spacing-unit-x025);
 }
 
-.switch.switch--disabled .switch__wrapper {
-  --border: var(--telekom-color-ui-border-disabled);
-  --background: none;
+.switch__thumb {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: calc(var(--height) - var(--offset) * 2);
+  aspect-ratio: 1 / 1;
+  background: var(--_color-thumb);
+  border-radius: 50%;
+  box-shadow: var(--shadow-thumb);
+  margin: var(--offset);
+  transition-property: margin;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-easing);
+  color: transparent;
 }
 
-.switch.switch--disabled input:checked ~ .switch__wrapper {
-  --border: var(--telekom-color-ui-border-disabled);
-  --background: none;
+.switch--checked .switch__thumb {
+  margin-left: 1em;
+  margin-inline-start: calc(var(--width) - var(--height) + var(--offset));
 }
 
-.switch.switch--disabled input:checked ~ .switch__wrapper .switch__toggle,
-.switch.switch--disabled .switch__wrapper .switch__toggle {
-  --toggle: var(--telekom-color-ui-disabled);
+.switch__io-text {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: var(--height);
+  margin-left: calc(50% - var(--offset));
+  font: var(--font-io-text);
+  line-height: var(--telekom-typography-line-spacing-none);
 }
 
-.switch.switch--disabled .switch__text:before,
-.switch.switch--disabled .switch__text:after {
-  color: var(--text-disabled);
+.switch--checked .switch__io-text {
+  margin-left: var(--offset);
+  color: var(--telekom-color-text-and-icon-white-standard);
+}
+
+.switch--disabled .switch__io-text {
+  color: var(--telekom-color-text-and-icon-disabled);
+}
+
+.switch__label-text {
+  font: var(--font-label);
+  margin-inline-start: var(--spacing-x-label);
+}
+
+/* PLATFORM iOS */
+
+[data-platform='ios'] scale-switch {
+  --width: 56px;
+  --height: 32px;
+}
+
+/* PLATFORM Android */
+
+[data-platform='android'] scale-switch {
+  --width: 56px;
+  --height: 32px;
+  --offset: 4px;
+}
+
+[data-platform='android'] .switch__thumb {
+  /* FIXME no color token for this :( */
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x025) rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-platform='android'] .switch--checked .switch__thumb {
+  color: var(--_background);
+}
+
+[data-platform='android'] .switch__io-text {
+  display: none;
 }

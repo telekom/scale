@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      <scale-switch
+        id="toggle-disabled"
+        label="Disable all below"
+      ></scale-switch>
+    </p>
+
+    <p>
+      <scale-switch label="Hello friend (web)"></scale-switch>
+    </p>
+
+    <p data-platform="ios">
+      <scale-switch label="Hello friend (ios)"></scale-switch>
+    </p>
+
+    <p data-platform="android">
+      <scale-switch label="Hello friend (android)"></scale-switch>
+    </p>
+
+    <script>
+      let t = document.querySelector('#toggle-disabled');
+      let all = [...document.querySelectorAll('scale-switch')].filter(
+        (x) => x !== t
+      );
+      t.addEventListener('scale-change', (event) => {
+        all.forEach((x) => {
+          x.disabled = event.target.checked;
+        });
+      });
+    </script>
+  </body>
+</html>
