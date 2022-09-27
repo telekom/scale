@@ -110,3 +110,59 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <scale-switch disabled checked label="Selected disabled"></scale-switch>
 ```
+
+## iOS
+
+<Canvas withSource="none">
+  <Story name="iOS">
+    {{
+      template: `
+        <div data-platform="ios">
+          <scale-switch
+            label="Platform iOS"
+            name="ios"
+            @scale-change="emitChange"
+          >
+          </scale-switch>
+        </div>
+      `,
+      methods: {
+        emitChange: action('scale-change'),
+      },
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="ios">
+  <scale-switch label="Platform iOS"></scale-switch>
+</div>
+```
+
+## Android
+
+<Canvas withSource="none">
+  <Story name="Android">
+    {{
+      template: `
+        <div data-platform="android">
+          <scale-switch
+            label="Platform Android"
+            name="android"
+            @scale-change="emitChange"
+          >
+          </scale-switch>
+        </div>
+      `,
+      methods: {
+        emitChange: action('scale-change'),
+      },
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="android">
+  <scale-switch label="Platform Android"></scale-switch>
+</div>
+```

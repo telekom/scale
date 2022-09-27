@@ -54,25 +54,29 @@ export class Switch {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <div class={this.getCssClassMap()}>
-          <label id={`${this.inputId}-label`}>
+          <label id={`${this.inputId}-label`} class="switch__wrapper">
             <input
               type="checkbox"
               name={this.name}
+              class="switch__control"
               checked={this.checked}
               disabled={this.disabled}
               aria-labelledby={`${this.inputId}-label`}
               id={this.inputId}
-              onChange={(e: any) => {
-                this.checked = e.target.checked;
-                // bubble event through the shadow dom
+              onChange={(event: any) => {
+                this.checked = event.target.checked;
                 emitEvent(this, 'scaleChange', { value: this.checked });
               }}
             />
-            <div class="switch__wrapper">
-              <div class="switch__toggle" />
-              <div class="switch__text" aria-hidden="true" />
+            <div class="switch__toggle" aria-hidden="true">
+              <div class="switch__thumb">
+                <scale-icon-action-success size={12} decorative selected />
+              </div>
+              <div class="switch__io-text">
+                <span>{this.checked ? 'I' : '0'}</span>
+              </div>
             </div>
-            {this.label && <span class="switch__label">{this.label}</span>}
+            {this.label && <span class="switch__label-text">{this.label}</span>}
           </label>
         </div>
       </Host>
@@ -82,6 +86,7 @@ export class Switch {
   getCssClassMap() {
     return classNames(
       'switch',
+      this.checked && 'switch--checked',
       this.disabled && 'switch--disabled',
       isFocusVisibleSupported && 'switch--focus-visible-supported',
       !isFocusVisibleSupported && 'switch--focus-visible-not-supported'
