@@ -13,7 +13,7 @@
   outline: none;
   --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height-small: 2rem;
+  --height: 3rem;
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -33,18 +33,19 @@
   position: relative;
   box-sizing: border-box;
   align-items: center;
-  padding-left: 0;
   height: var(--tab-height);
-  margin-right: var(--tab-spacing);
-  padding-right: var(--tab-spacing);
+  padding-right: calc(var(--tab-spacing) / 2);
+  padding-left: calc(var(--tab-spacing) / 2);
+  padding-top: var(--telekom-spacing-unit-x4);
+  padding-bottom: var(--telekom-spacing-unit-x4);
   font-family: var(--font-family);
-  font-size: calc(var(--tab-height) / 2);
+  font-size: calc(var(--tab-height) / 3);
   font-weight: var(--font-weight);
   border-radius: var(--tab-radius);
 }
 
-.tab-header--small {
-  --tab-height: var(--height-small);
+.tab-header {
+  --tab-height: var(--height);
 }
 
 .tab-header--disabled {
@@ -87,7 +88,6 @@
   height: 0;
   content: '';
   display: block;
-  z-index: 1;
   position: absolute;
   border-top: 1px solid transparent;
 }
@@ -110,14 +110,19 @@
   margin-right: var(--spacing-right-slotted);
 }
 .tab-header--has-focus {
+  border-radius: var(--tab-radius);
   box-shadow: var(--box-shadow-focus);
+  z-index: 1;
+}
+.tab-header--has-focus.tab-header--selected:after {
+  border-radius: 0 0 3px 3px;
+  width: 98%;
+  margin-left: 1%;
 }
 .tab-header--selected {
   color: var(--color-selected);
 }
 .tab-header--selected:after {
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
   height: var(--tab-border-size-selected);
   background-color: var(--color-selected);
 }

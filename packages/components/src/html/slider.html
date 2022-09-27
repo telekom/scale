@@ -96,13 +96,13 @@
     </demo-hue>
 
     <script>
-      const slider = document.querySelector('[label="Hello World"]')
+      const slider = document.querySelector('[label="Hello World"]');
       slider.addEventListener('scale-change', (event) => {
-        console.log('scale-change', event.detail)
-      })
+        console.log('scale-change', event.detail);
+      });
       slider.addEventListener('scale-input', (event) => {
-        console.log('scale-input', event.detail)
-      })
+        console.log('scale-input', event.detail);
+      });
 
       const h = document.getElementById('h');
       const s = document.getElementById('s');

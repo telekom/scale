@@ -22,10 +22,9 @@ import classNames from 'classnames';
 import { hasShadowDom, ScaleIcon, isScaleIcon } from '../../utils/utils';
 
 const DEFAULT_ICON_SIZE = 24;
-
 const buttonIconSizeMap = {
   small: 16,
-  // large: 24,
+  large: 24,
 };
 
 @Component({
@@ -82,6 +81,10 @@ export class Button {
     this.focusableElement.focus();
   }
 
+  componentDidLoad() {
+    this.setChildrenIconSize();
+  }
+
   /**
    * Hack to make the button behave has expected when inside forms.
    * @see https://github.com/ionic-team/ionic-framework/blob/master/core/src/components/button/button.tsx#L155-L175
@@ -108,10 +111,6 @@ export class Button {
   connectedCallback() {
     this.setIconPositionProp();
     this.appendEnterKeySubmitFallback();
-  }
-
-  componentDidLoad() {
-    this.setChildrenIconSize();
   }
 
   disconnectedCallback() {
@@ -179,7 +178,7 @@ export class Button {
       );
       icons.forEach((icon) => {
         if (icon.size === DEFAULT_ICON_SIZE) {
-          icon.size = buttonIconSizeMap[this.size];
+          icon.size = buttonIconSizeMap['small'];
         }
       });
     }

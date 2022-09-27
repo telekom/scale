@@ -4,10 +4,13 @@
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
+    :success="success"
+    :warning="warning"
+    :info="info"
     :disabled="disabled"
     :required="required"
-    :size="size"
     :value="value"
+    :size="size"
     :input-id="inputId"
     :visible-size="visibleSize"
     :controlled="controlled"
@@ -30,14 +33,17 @@ export default {
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
+    info: { type: Boolean },
+    success: { type: Boolean },
+    warning: { type: Boolean },
     disabled: { type: Boolean },
     required: { type: Boolean },
-    size: { type: String },
     value: { type: String },
     inputId: { type: String },
     visibleSize: { type: Number },
     controlled: { type: Boolean },
     styles: { type: String },
+    size: { type: String },
   },
   methods: {
     scaleInput($event) {
