@@ -25,35 +25,33 @@ export class Card {
   @Prop() target?: string = '_self';
   /** (optional) Link card rel */
   @Prop() rel?: string = '';
-  /** (optional) Injected CSS styles */
-  @Prop() styles?: string;
+  /** (optional) Supports drag and drop */
+  @Prop() movable?: boolean = false;
 
   render() {
     const Tag = !!this.to ? 'a' : 'div';
 
     return (
       <Host>
-        {this.styles && <style>{this.styles}</style>}
-        <div class="card-border" part="border">
+        <div part="border">
           <Tag
-            class={this.getCssClassMap()}
-            part={classNames('base', !!this.to && 'interactive')}
+            part={classNames(
+              'base',
+              !!this.to && 'interactive',
+              !!this.movable && 'movable'
+            )}
             {...(!this.to ? { role: 'group' } : {})}
             {...(!!this.to ? { href: this.to } : {})}
             {...(!!this.target ? { target: this.target } : {})}
             {...(!!this.rel ? { rel: this.rel } : {})}
             {...(!!this.label ? { ['aria-label']: this.label } : {})}
           >
-            <div class="card__body" part="body">
+            <div part="body">
               <slot />
             </div>
           </Tag>
         </div>
       </Host>
     );
-  }
-
-  getCssClassMap() {
-    return classNames('card', !!this.to && 'card--interactive');
   }
 }
