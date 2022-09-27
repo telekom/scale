@@ -11,11 +11,10 @@
 
 scale-dropdown {
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: var(--telekom-spacing-unit-x12);
-  --height-small: var(--telekom-spacing-unit-x10);
+  --height: var(--telekom-spacing-unit-x11);
   --spacing-x: var(--telekom-spacing-unit-x3);
-  --spacing-dropdown: var(--telekom-spacing-unit-x3)
-    var(--telekom-spacing-unit-x10) 0 calc(var(--spacing-x) - 1px);
+  --spacing-dropdown: 21px var(--telekom-spacing-unit-x10) 5px
+    calc(var(--spacing-x) - 1px);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
@@ -23,6 +22,10 @@ scale-dropdown {
     var(--telekom-color-ui-border-standard);
   --border-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
+  --border-success: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-success-standard);
+  --border-warning: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-warning-standard);
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
@@ -30,6 +33,8 @@ scale-dropdown {
     var(--telekom-color-functional-focus);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
+  --color: var(--telekom-color-text-and-icon-standard);
+  --background-color: var(--telekom-color-ui-state-fill-standard);
 
   /*input*/
   --transition-input: var(--transition);
@@ -62,7 +67,6 @@ scale-dropdown {
   --z-index-label: var(--scl-z-index-10);
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
-  --font-size-label-small: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
@@ -90,11 +94,12 @@ scale-dropdown {
   border-radius: var(--radius);
   border: var(--border);
   white-space: nowrap;
+  line-height: var(--font-size-input);
   text-overflow: ellipsis;
   appearance: none;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-ui-state-fill-standard);
-  color: var(--telekom-color-text-and-icon-standard);
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 @-moz-document url-prefix() {
@@ -108,10 +113,10 @@ scale-dropdown {
 }
 .dropdown .input__helper-text {
   transition: var(--transition-helper-text);
-  padding-left: var(--spacing-x);
   font-size: var(--font-size-helper-text);
   line-height: var(--line-height-helper-text);
-  color: var(--color-helper-text);
+  margin: var(--telekom-spacing-unit-x1) 0 var(--telekom-spacing-unit-x1) 0;
+  display: flex;
 }
 .dropdown .input__meta {
   display: flex;
@@ -142,6 +147,18 @@ scale-dropdown {
   background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 
+.dropdown:not(.dropdown--disabled).dropdown--status-warning
+  .input__dropdown:hover {
+  border-color: var(--telekom-color-functional-warning-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
+.dropdown:not(.dropdown--disabled).dropdown--status-success
+  .input__dropdown:hover {
+  border-color: var(--telekom-color-functional-success-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+
 .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
   .input__dropdown:focus {
   border-color: var(--border-color-focus);
@@ -149,6 +166,14 @@ scale-dropdown {
 .dropdown:not(.dropdown--disabled).dropdown--status-error
   .input__dropdown:focus {
   border-color: var(--telekom-color-functional-danger-hovered);
+}
+.dropdown:not(.dropdown--disabled).dropdown--status-warning
+  .input__dropdown:focus {
+  border-color: var(--telekom-color-functional-warning-hovered);
+}
+.dropdown:not(.dropdown--disabled).dropdown--status-success
+  .input__dropdown:focus {
+  border-color: var(--telekom-color-functional-success-hovered);
 }
 .dropdown:not(.dropdown--disabled) .input__dropdown:focus {
   box-shadow: var(--box-shadow-focus);
@@ -165,8 +190,7 @@ scale-dropdown {
 }
 
 .input__label {
-  top: 0;
-  left: 0;
+  top: -2px;
   color: var(--color-label);
   display: flex;
   z-index: var(--z-index-label);
@@ -191,28 +215,43 @@ scale-dropdown {
 .dropdown--status-error .input__dropdown {
   border: var(--border-error);
 }
+.dropdown--status-warning .input__dropdown {
+  border: var(--border-warning);
+}
+.dropdown--status-success .input__dropdown {
+  border: var(--border-success);
+}
 .dropdown--status-error .input__helper-text {
   color: var(--color-helper-text-error);
 }
-.dropdown--size-small .input__dropdown {
-  height: var(--height-small);
+
+.dropdown .input__helper-text_label {
+  font-size: var(--telekom-typography-font-size-small);
 }
-.dropdown--size-small .input__label {
-  font-size: var(--font-size-label-small);
-  transform: translate(
-    var(--spacing-x),
-    calc((var(--height-small) - var(--font-size-label-small)) / 2)
-  );
-  font-weight: var(--font-weight-label-small);
+.dropdown--status-warning .input__helper-text_label {
+  color: var(--telekom-color-text-and-icon-functional-warning);
+}
+.dropdown--status-success .input__helper-text_label {
+  color: var(--telekom-color-text-and-icon-functional-success);
+}
+.dropdown--status-info .input__helper-text_label {
+  color: var(--telekom-color-text-and-icon-functional-informational);
 }
 
-.dropdown--size-small.animated .input__label {
-  transform: translate(var(--spacing-x), var(--telekom-spacing-unit-x1));
-  font-size: var(--font-size-label-focus);
-  font-weight: var(--font-weight-label-focus);
-  line-height: var(--telekom-typography-font-size-small);
+.dropdown .input__helper-text_icon {
+  justify-content: center;
+  padding-top: 1.5px;
+  padding-right: 4.5px;
 }
-
+.dropdown--status-warning .input__helper-text_icon {
+  color: var(--telekom-color-text-and-icon-functional-warning);
+}
+.dropdown--status-success .input__helper-text_icon {
+  color: var(--telekom-color-text-and-icon-functional-success);
+}
+.dropdown--status-info .input__helper-text_icon {
+  color: var(--telekom-color-text-and-icon-functional-informational);
+}
 .dropdown--transparent .input__dropdown {
   background-color: transparent;
 }

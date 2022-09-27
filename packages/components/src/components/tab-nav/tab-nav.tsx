@@ -9,15 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Element,
-  Component,
-  h,
-  Prop,
-  Host,
-  Listen,
-  Watch,
-} from '@stencil/core';
+import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -39,17 +31,13 @@ export class TabNav {
   @Element() el: HTMLElement;
 
   /** True for smaller height and font size in tab headers. */
-  /** @deprecated - size should replace small */
+  /** @deprecated - css overwrites should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
+  /** @deprecated - css overwrites should replace size */
+  @Prop() size: 'small' | 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  @Watch('small')
-  smallChanged() {
-    this.propagateSizeToTabs();
-  }
 
   @Listen('click')
   handleClick(event: MouseEvent) {
@@ -106,14 +94,19 @@ export class TabNav {
       customElements.whenDefined('scale-tab-panel'),
     ]).then(() => {
       this.linkPanels();
-      this.propagateSizeToTabs();
     });
 
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message:
-          'Property "small" is deprecated. Please use the "size" property!',
+        message: 'Property "small" is deprecated. Please use css overwrite!',
+        type: 'warn',
+        source: this.el,
+      });
+    } else if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.el,
       });
@@ -189,17 +182,6 @@ export class TabNav {
     nextTab.selected = true;
   }
 
-  /**
-   * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
-   */
-  propagateSizeToTabs() {
-    const action =
-      this.size === 'small' || this.small ? 'setAttribute' : 'removeAttribute';
-    const tabs = this.getAllTabs();
-    const panels = this.getAllPanels();
-    [...tabs, ...panels].forEach((child) => child[action]('size', 'small'));
-  }
-
   render() {
     return (
       <Host>
@@ -225,9 +207,6 @@ export class TabNav {
     const component = 'tab-nav';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
 
-    return classNames(
-      component,
-      (this.size === 'small' || this.small) && `${prefix}small`
-    );
+    return classNames(component, `${prefix}`);
   }
 }
