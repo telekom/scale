@@ -1,6 +1,8 @@
 :host {
   --font: var(--telekom-text-style-small-bold);
-  --color-informational: var(--telekom-color-text-and-icon-functional-informational);
+  --color-informational: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
   --color-warning: var(--telekom-color-text-and-icon-functional-warning);
   --color-danger: var(--telekom-color-text-and-icon-functional-danger);
   --color-success: var(--telekom-color-text-and-icon-functional-success);

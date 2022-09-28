@@ -1,48 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Helper Text should render danger text with danger icon if dange variant is specified 1`] = `
-<scale-helper-text class="helper-text helper-text--danger" variant="danger">
+<scale-helper-text variant="danger">
+  <mock:shadow-root>
+    <div class="helper-text helper-text--danger">
+      <span>
+        <slot></slot>
+      </span>
+      <scale-icon-alert-error size="11"></scale-icon-alert-error>
+    </div>
+  </mock:shadow-root>
   danger
-  <span></span>
-  <scale-icon-alert-error color="var(--telekom-color-text-and-icon-functional-danger)" size="11"></scale-icon-alert-error>
 </scale-helper-text>
 `;
 
 exports[`Helper Text should render informational helper text with info icon if informational variant is specified 1`] = `
-<scale-helper-text class="helper-text helper-text--informational" variant="informational">
+<scale-helper-text variant="informational">
+  <mock:shadow-root>
+    <div class="helper-text helper-text--informational">
+      <span>
+        <slot></slot>
+      </span>
+      <scale-icon-alert-information size="11"></scale-icon-alert-information>
+    </div>
+  </mock:shadow-root>
   informational
-  <span></span>
-  <scale-icon-alert-information color="var(--telekom-color-text-and-icon-functional-informational)" size="11"></scale-icon-alert-information>
 </scale-helper-text>
 `;
 
 exports[`Helper Text should render informational helper text with info icon if no variant is specified 1`] = `
-<scale-helper-text class="helper-text helper-text--informational">
+<scale-helper-text>
+  <mock:shadow-root>
+    <div class="helper-text helper-text--informational">
+      <span>
+        <slot></slot>
+      </span>
+      <scale-icon-alert-information size="11"></scale-icon-alert-information>
+    </div>
+  </mock:shadow-root>
   informational
-  <span></span>
-  <scale-icon-alert-information color="var(--telekom-color-text-and-icon-functional-informational)" size="11"></scale-icon-alert-information>
 </scale-helper-text>
 `;
 
 exports[`Helper Text should render neutral text without icon if neutral variant is specified 1`] = `
-<scale-helper-text class="helper-text helper-text--neutral" variant="neutral">
+<scale-helper-text variant="neutral">
+  <mock:shadow-root>
+    <div class="helper-text helper-text--neutral">
+      <span>
+        <slot></slot>
+      </span>
+    </div>
+  </mock:shadow-root>
   neutral
-  <span></span>
 </scale-helper-text>
 `;
 
 exports[`Helper Text should render success text with success icon if success variant is specified 1`] = `
-<scale-helper-text class="helper-text helper-text--success" variant="success">
+<scale-helper-text variant="success">
+  <mock:shadow-root>
+    <div class="helper-text helper-text--success">
+      <span>
+        <slot></slot>
+      </span>
+      <scale-icon-alert-success size="11"></scale-icon-alert-success>
+    </div>
+  </mock:shadow-root>
   success
-  <span></span>
-  <scale-icon-alert-success color="var(--telekom-color-text-and-icon-functional-success)" size="11"></scale-icon-alert-success>
 </scale-helper-text>
 `;
 
 exports[`Helper Text should render warning text with warning icon if warning variant is specified 1`] = `
-<scale-helper-text class="helper-text helper-text--warning" variant="warning">
+<scale-helper-text variant="warning">
+  <mock:shadow-root>
+    <div class="helper-text helper-text--warning">
+      <span>
+        <slot></slot>
+      </span>
+      <scale-icon-alert-information size="11"></scale-icon-alert-information>
+    </div>
+  </mock:shadow-root>
   warning
-  <span></span>
-  <scale-icon-alert-information color="var(--telekom-color-text-and-icon-functional-warning)" size="11"></scale-icon-alert-information>
 </scale-helper-text>
 `;
