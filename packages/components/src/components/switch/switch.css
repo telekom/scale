@@ -100,10 +100,12 @@ scale-switch {
 }
 
 .switch__thumb {
+  --_size: calc(var(--height) - var(--offset) * 2);
   position: relative;
   z-index: 2;
   box-sizing: border-box;
-  width: calc(var(--height) - var(--offset) * 2);
+  width: var(--_size);
+  height: var(--_size);
   aspect-ratio: 1 / 1;
   background: var(--_color-thumb);
   border-radius: 50%;
