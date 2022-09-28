@@ -49,17 +49,11 @@ export class HelperText {
       );
     }
     if (variant === 'danger') {
-      return (
-        <scale-icon-alert-error
-          size={ICON_SIZE}
-        ></scale-icon-alert-error>
-      );
+      return <scale-icon-alert-error size={ICON_SIZE}></scale-icon-alert-error>;
     }
     if (variant === 'success') {
       return (
-        <scale-icon-alert-success
-          size={ICON_SIZE}
-        ></scale-icon-alert-success>
+        <scale-icon-alert-success size={ICON_SIZE}></scale-icon-alert-success>
       );
     }
   }
@@ -68,20 +62,21 @@ export class HelperText {
     return (
       <Host>
         <div
-            class={{
-              'helper-text': true,
-              'helper-text--informational': this.variant === 'informational',
-              'helper-text--warning': this.variant === 'warning',
-              'helper-text--danger': this.variant === 'danger',
-              'helper-text--success': this.variant === 'success',
-              'helper-text--neutral': this.variant === 'neutral',
-            }}        
+          class={{
+            'helper-text': true,
+            'helper-text--informational': this.variant === 'informational',
+            'helper-text--warning': this.variant === 'warning',
+            'helper-text--danger': this.variant === 'danger',
+            'helper-text--success': this.variant === 'success',
+            'helper-text--neutral': this.variant === 'neutral',
+          }}
         >
-          <span><slot></slot></span>
+          <span>
+            <slot></slot>
+          </span>
           {this.renderHelperIcon()}
         </div>
         {this.styles && <style>{this.styles}</style>}
-
       </Host>
     );
   }
