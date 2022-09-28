@@ -83,7 +83,7 @@
   --background-ghost-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-ghost-active: var(--telekom-color-ui-state-fill-pressed);
 
-  display: inline-flex;
+  display: inline-block;
 }
 
 .button {
