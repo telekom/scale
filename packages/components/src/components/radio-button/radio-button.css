@@ -42,8 +42,8 @@ scale-radio-button {
   --color-label: var(--color-text);
 
   /*control*/
-  --width-control: var(--telekom-spacing-unit-x5);
-  --height-control: var(--telekom-spacing-unit-x5);
+  --width-control: 18px;
+  --height-control: 18px;
   --transition-control: var(--transition);
   --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
   --background-color-control: var(--telekom-color-ui-base);

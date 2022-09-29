@@ -212,23 +212,6 @@ export class TextField {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
-  renderHelperIcon() {
-    if (
-      (this.variant === 'informational' && !this.invalid) ||
-      (this.variant === 'warning' && !this.invalid)
-    ) {
-      return (
-        <scale-icon-alert-information size={11}></scale-icon-alert-information>
-      );
-    }
-    if (this.invalid || this.variant === 'danger') {
-      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
-    }
-    if (this.variant === 'success') {
-      return <scale-icon-alert-success size={11}></scale-icon-alert-success>;
-    }
-  }
-
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
@@ -276,7 +259,6 @@ export class TextField {
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
           />
-
           {(!!this.helperText || !!this.counter) && (
             <div
               class="text-field__meta"
@@ -284,16 +266,6 @@ export class TextField {
               aria-live="polite"
               aria-relevant="additions removals"
             >
-              {!!this.helperText && (
-                <div class="text-field__helper-text">
-                  <div class="text-field__helper-text_icon">
-                    {this.renderHelperIcon()}
-                  </div>
-                  <div class="text-field__helper-text_label">
-                    {this.helperText}
-                  </div>
-                </div>
-              )}
               {this.counter && (
                 <div class="text-field__counter">
                   {!!this.value ? String(this.value).length : 0} /{' '}
@@ -301,6 +273,12 @@ export class TextField {
                 </div>
               )}
             </div>
+          )}
+          {this.helperText && (
+            <scale-helper-text
+              helperText={this.helperText}
+              variant={this.invalid ? 'danger' : this.variant}
+            ></scale-helper-text>
           )}
         </div>
       </Host>
@@ -323,6 +301,7 @@ export class TextField {
       this.status && `text-field--status-${this.status}`,
       this.invalid && `text-field--variant-danger`,
       this.variant && `text-field--variant-${this.variant}`,
+      this.helperText && `text-field--helper-text`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'
     );
