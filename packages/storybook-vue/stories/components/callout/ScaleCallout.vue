@@ -1,23 +1,16 @@
-<template>
-  <scale-callout
-    :size="size"
-    :variant="variant"
-    :rotation="rotation"
-    :asterisk="asterisk"
-  >
-    <slot name="prefix" />
-    <slot></slot>
-  </scale-callout>
-</template>
-
 <script>
 export default {
   props: {
-    size: { type: String, default: "large" },
-    variant: {type: String, default: "primary"},
-    rotation:{type: Number, default: 0},
-    asterisk: {type: String},
+    variant: { type: String, default: '' },
+    rotation: { type: Number, default: 0 },
+    top: { type: String },
+    right: { type: String },
+    bottom: { type: String },
+    left: { type: String },
+    styles: { type: String }
   },
-};
+  render() {
+    return this.$slots.default
+  }
+}
 </script>
-
