@@ -60,16 +60,15 @@
 
 ### Depends on
 
-- [scale-icon-alert-information](../icons/alert-information)
-- [scale-icon-alert-error](../icons/alert-error)
-- [scale-icon-alert-success](../icons/alert-success)
+- [scale-helper-text](../helper-text)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-text-field --> scale-icon-alert-information
-  scale-text-field --> scale-icon-alert-error
-  scale-text-field --> scale-icon-alert-success
+  scale-text-field --> scale-helper-text
+  scale-helper-text --> scale-icon-alert-information
+  scale-helper-text --> scale-icon-alert-error
+  scale-helper-text --> scale-icon-alert-success
   scale-data-grid --> scale-text-field
   style scale-text-field fill:#f9f,stroke:#333,stroke-width:4px
 ```
