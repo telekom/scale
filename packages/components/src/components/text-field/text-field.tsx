@@ -301,6 +301,7 @@ export class TextField {
       this.status && `text-field--status-${this.status}`,
       this.invalid && `text-field--variant-danger`,
       this.variant && `text-field--variant-${this.variant}`,
+      this.helperText && `text-field--helper-text`,
       this.readonly && `text-field--readonly`,
       animated && 'animated'
     );
