@@ -10,21 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Restore Lerna
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+#      - name: Restore Lerna
+#        id: yarn-cache
+#        uses: actions/cache@v2
+#        with:
+#          path: |
+#            node_modules
+#            */*/node_modules
+#          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+#        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn
 
       - name: Run Lerna bootstrap
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
+#        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
           yarn bootstrap
 
