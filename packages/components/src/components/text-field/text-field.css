@@ -49,6 +49,7 @@ scale-text-field {
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
+  --margin-bottom-control: var(--telekom-spacing-unit-x1)
 
   /* counter */
   --transition-counter: var(--transition);
@@ -109,6 +110,9 @@ scale-text-field {
   border: var(--border);
   background-color: var(--background-control);
   color: var(--color-meta);
+}
+.text-field.text-field--helper-text .text-field__control{
+  margin-bottom: var(--margin-bottom-control);
 }
 .text-field .text-field__counter {
   display: flex;

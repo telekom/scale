@@ -4,9 +4,7 @@
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
-    :success="success"
-    :warning="warning"
-    :info="info"
+    :variant="variant"
     :disabled="disabled"
     :required="required"
     :value="value"
@@ -33,9 +31,7 @@ export default {
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
-    info: { type: Boolean },
-    success: { type: Boolean },
-    warning: { type: Boolean },
+    variant: { type: String },
     disabled: { type: Boolean },
     required: { type: Boolean },
     value: { type: String },
