@@ -7,20 +7,15 @@ import {
 } from '@storybook/addon-docs';
 import ScaleCallout from './ScaleCallout.vue';
 
+export const CANVAS_HEIGHT = 180
+
 <Meta
   title="Beta Components/Callout"
   component={ScaleCallout}
   argTypes={{
     variant: {
-      defaultValue: 'primary',
-      options: ['primary', 'white', 'black', 'blue'],
-      control: {
-        type: 'select',
-      },
-    },
-    size: {
-      defaultValue: 'large',
-      options: ['small', 'large'],
+      options: ['standard', 'primary', 'blue', 'white', 'black'],
+      defaultValue: 'standard',
       control: {
         type: 'select',
       },
@@ -28,63 +23,31 @@ import ScaleCallout from './ScaleCallout.vue';
     rotation: {
       defaultValue: 0,
       control: {
+        type: 'number',
+      },
+    },
+    top: {
+      control: {
         type: 'text',
       },
     },
-    asterisk: {
+    right: {
+      control: {
+        type: 'text',
+      },
+    },
+    bottom: {
+      control: {
+        type: 'text',
+      },
+    },
+    left: {
       control: {
         type: 'text',
       },
     },
   }}
 />
-
-export const Template = (args, { argTypes }) => ({
-  props: { ...ScaleCallout.props, prefix: String, text: String },
-  template: `
-    <scale-callout 
-      :size="size" 
-      :variant="variant" 
-      :rotation="rotation" 
-      :asterisk="asterisk"
-      >
-      <div slot="prefix"> {{ prefix }} </div>
-      15 €
-    </scale-callout>
-  `,
-});
-
-export const TemplateSmall = (args, { argTypes }) => ({
-  props: { ...ScaleCallout.props, prefix: String },
-  template: `
-    <scale-callout 
-      :size="size" 
-      :variant="variant" 
-      :rotation="rotation" 
-      :asterisk="asterisk"
-      style="--font-size-prefix: 15px; --font-size: 40px"
-      >
-      <div slot="prefix"> {{ prefix }} </div>
-      15 €
-    </scale-callout>
-  `,
-});
-
-export const TemplateAsterisk = (args, { argTypes }) => ({
-  props: { ...ScaleCallout.props, prefix: String },
-  template: `
-    <scale-callout 
-      :size="size" 
-      :variant="variant" 
-      :rotation="rotation" 
-      :asterisk="asterisk"
-      style="--font-size-prefix: 25px; --font-size: 35px"
-      >
-      <div slot="prefix"> {{ prefix }} </div>
-      <span>15 €</span>
-    </scale-callout>
-  `,
-});
 
 <div
   style={{
@@ -100,25 +63,40 @@ export const TemplateAsterisk = (args, { argTypes }) => ({
 
 ## Standard
 
-### All default values
-
 <Canvas withSource="none">
   <Story
     name="Standard"
-    args={{
-      prefix: 'Für nur',
-    }}
+    args={{ variant: 'primary' }}
   >
-    {Template.bind({})}
+    {{
+      props: {
+        ...ScaleCallout.props,
+      },
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout
+            :variant="variant"
+            :rotation="rotation"
+            :top="top"
+            :right="right"
+            :bottom="bottom"
+            :left="left"
+          >
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
   </Story>
 </Canvas>
 
 <ArgsTable story="Standard" />
 
 ```html
-<scale-callout>
-  <div slot="prefix">Für nur</div>
-  15 €
+<scale-callout variant="primary">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
@@ -126,114 +104,171 @@ export const TemplateAsterisk = (args, { argTypes }) => ({
 
 ```css
  :host {
-  --inner-width-small: var(--telekom-spacing-unit-x20);
-  --inner-height-small: var(--telekom-spacing-unit-x20);
-  --inner-width-large: 126.5px;
-  --inner-height-large: 96px;
-  --width-small: 120px;
-  --height-small: 120px;
-  --height-large: 160px;
-  --width-large: 160px;
-  --color-blue: var(--telekom-color-functional-informational-standard);
-  --color-white: var(--telekom-color-background-surface);
-  --color-black: var(--telekom-color-text-and-icon-functional-black);
-  --color-primary: var(--telekom-color-primary-standard);
-  --font-family: var(--telekom-typography-font-family-sans);
-  --font-size: calc(var(--telekom-typography-font-size-callout) * 3);
-  --font-size-prefix: var(--telekom-typography-font-size-callout);
+  --position: absolute;
+  --background: var(--telekom-color-ui-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --spacing: var(--telekom-spacing-unit-x6);
+  --min-width: 6rem;
+  --aspect-ratio: 1;
+  --rotation: 0deg;
+  --font-standard: var(--telekom-text-style-lead-text);
+  --font-small: var(--telekom-text-style-body-bold);
+  --font-large: var(--telekom-text-style-heading-1);
 }
-}
-```
-
-## Size
-
-There are two sizes:
-Large / small. Large has the size 160x160 and small 120x120. In the example below, the callout is small
-
-<Canvas withSource="none">
-  <Story
-    name="Size"
-    args={{
-      prefix: 'Für nur',
-      size: 'small',
-    }}
-  >
-    {TemplateSmall.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-callout size="small" style="--font-size-prefix: 15px; --font-size: 40px">
-  <div slot="prefix">Für nur</div>
-  15 €
-</scale-callout>
-```
-
-## Rotation
-
-<Canvas withSource="none">
-  <Story
-    name="Rotation"
-    args={{
-      prefix: 'Für nur',
-      rotation: 33,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-callout rotation="33">
-  <div slot="prefix">Für nur</div>
-  15 €
-</scale-callout>
 ```
 
 ## Variants
 
-There are 4 standard colors (Primary - default, black, white, blue). The user also has the possibilty to determine another color by accessing the specific css class.
+### Primary
 
 <Canvas withSource="none">
-  <Story
-    name="Variants"
-    args={{
-      prefix: 'Für nur',
-      variant: 'blue',
+  <Story name="Primary">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="primary">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
     }}
-  >
-    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="primary">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### Black
+
+<Canvas withSource="none">
+  <Story name="Black">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="black">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="black">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### White
+
+<Canvas withSource="none" style={{ background: '#222' }}>
+  <Story name="White">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="white">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="white">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### Blue
+
+<Canvas withSource="none">
+  <Story name="Blue">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="blue">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
   </Story>
 </Canvas>
 
 ```html
 <scale-callout variant="blue">
-  <div slot="prefix">Für nur</div>
-  15 €
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
 </scale-callout>
 ```
 
-## Asterisk
+## Font Sizes
+
+### Medium
 
 <Canvas withSource="none">
-  <Story
-    name="Asterisk"
-    args={{
-      prefix: 'Für nur',
-      asterisk: 'Infotext when hovering astrisk',
+  <Story name="Medium">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="black">
+            <span>Bis zu 200 &#8364;</span>
+            <span>Tauschprämie +</span>
+            <span>Altgerätewert</span>
+            <span>erhalten</span>
+          </scale-callout>
+        </div>
+      `
     }}
-  >
-    {TemplateAsterisk.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-callout
-  size="small"
-  style="--font-size-prefix: 25px; --font-size: 35px"
-  asterisk="Infotext when hovering astrisk"
->
-  <div slot="prefix">Für nur</div>
-  15 €
+<scale-callout variant="black">
+  <span>Bis zu 200 &#8364;</span>
+  <span>Tauschprämie +</span>
+  <span>Altgerätewert</span>
+  <span>erhalten</span>
+</scale-callout>
+```
+
+### Large and Small
+
+For convenience, two scoped CSS classes are provided for large and small text: `scl-callout-text-large` and `scl-callout-text-small`. But any size can be set using CSS.
+
+<Canvas withSource="none">
+  <Story name="Large and Small">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="primary">
+            <span>LOREM</span>
+            <span class="scl-callout-text-large">ipsum</span>
+            <span class="scl-callout-text-small">dolor sit amet</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="primary">
+  <span>LOREM</span>
+  <span class="scl-callout-text-large">ipsum</span>
+  <span class="scl-callout-text-small">dolor sit amet</span>
 </scale-callout>
 ```

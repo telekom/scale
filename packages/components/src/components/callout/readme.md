@@ -7,19 +7,22 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                       | Type                                        | Default     |
-| ---------- | ---------- | ------------------------------------------------- | ------------------------------------------- | ----------- |
-| `asterisk` | `asterisk` | (optional) text when hovering with asterisk       | `string`                                    | `undefined` |
-| `rotation` | `rotation` | (optional) Variant rotation of the callout/circle | `number`                                    | `0`         |
-| `size`     | `size`     | (optional) Variant size of the callout itself     | `"large" \| "small"`                        | `'large'`   |
-| `variant`  | `variant`  | (optional) Variant filling of the callout         | `"black" \| "blue" \| "primary" \| "white"` | `undefined` |
+| Property   | Attribute  | Description                                         | Type     | Default     |
+| ---------- | ---------- | --------------------------------------------------- | -------- | ----------- |
+| `bottom`   | `bottom`   | (optional) CSS `bottom` value for absolute position | `string` | `undefined` |
+| `left`     | `left`     | (optional) CSS `left` value for absolute position   | `string` | `undefined` |
+| `right`    | `right`    | (optional) CSS `right` value for absolute position  | `string` | `undefined` |
+| `rotation` | `rotation` | (optional) Degree of rotation                       | `number` | `0`         |
+| `styles`   | `styles`   | (optional) Injected CSS styles                      | `string` | `undefined` |
+| `top`      | `top`      | (optional) CSS `top` value for absolute position    | `string` | `undefined` |
+| `variant`  | `variant`  | (optional) Color variant of the callout             | `string` | `undefined` |
 
 
 ## Shadow Parts
 
-| Part      | Description |
-| --------- | ----------- |
-| `"inner"` |             |
+| Part     | Description |
+| -------- | ----------- |
+| `"base"` |             |
 
 
 ----------------------------------------------

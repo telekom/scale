@@ -5,10 +5,12 @@ describe('Callout', () => {
     });
     test.each([
       ['standard'],
-      ['size'],
-      ['rotation'],
-      ['variants'],
-      ['asterisk'],
+      ['primary'],
+      ['black'],
+      ['white'],
+      ['blue'],
+      ['medium'],
+      ['large-and-small'],
     ])('%p', async (variant) => {
       await global.runSetup(`beta-components-callout--${variant}`);
       await global.visualCheck();

@@ -1,6 +1,13 @@
-import { Component, h, Host, Prop, Element } from '@stencil/core';
-import classNames from 'classnames';
+import { Component, h, Host, Prop, Element, Watch } from '@stencil/core';
 import statusNote from '../../utils/status-note';
+
+/**
+ * Adds the `px` suffix to a string number
+ * but leaves other units untouched.
+ * 1  -> 1px
+ * 5% -> 5%
+ */
+const numToPx = (val: string) => (Number.isNaN(Number(val)) ? val : val + 'px');
 
 @Component({
   tag: 'scale-callout',
@@ -9,67 +16,95 @@ import statusNote from '../../utils/status-note';
 })
 export class Callout {
   @Element() hostElement: HTMLElement;
-  /** (optional) Variant size of the callout itself */
-  @Prop({ mutable: true }) size: 'large' | 'small' = 'large';
-  /** (optional) Variant filling of the callout */
-  @Prop({ mutable: true }) variant: 'primary' | 'white' | 'black' | 'blue';
-  /** (optional) Variant rotation of the callout/circle */
-  @Prop({ mutable: true }) rotation: number = 0;
-  /** (optional) text when hovering with asterisk */
-  @Prop({ mutable: true }) asterisk: string;
+
+  baseEl: HTMLElement;
+  mo: MutationObserver;
+
+  /** (optional) Color variant of the callout */
+  @Prop() variant?: 'primary' | 'blue' | 'white' | 'black' | string;
+  /** (optional) Degree of rotation */
+  @Prop() rotation?: number = 0;
+  /** (optional) CSS `top` value for absolute position */
+  @Prop() top?: string;
+  /** (optional) CSS `right` value for absolute position */
+  @Prop() right?: string;
+  /** (optional) CSS `bottom` value for absolute position */
+  @Prop() bottom?: string;
+  /** (optional) CSS `left` value for absolute position */
+  @Prop() left?: string;
+  /** (optional) Injected CSS styles */
+  @Prop() styles?: string;
 
   connectedCallback() {
     statusNote({ source: this.hostElement, tag: 'beta' });
+    this.syncPropsToCSS();
   }
 
-  displayStyle() {
-    return `:host {
-      --rotation: ${this.rotation}deg;
-    }`;
+  componentDidLoad() {
+    const observer = new MutationObserver(() => {
+      this.adjustSize();
+    });
+    observer.observe(this.hostElement, {
+      attributes: false,
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+    this.mo = observer;
+    // Wait for full styles before measuring
+    window.requestAnimationFrame(this.adjustSize);
+  }
+
+  disconnectedCallback() {
+    if (this.mo) {
+      this.mo.disconnect();
+    }
+  }
+
+  @Watch('rotation')
+  @Watch('top')
+  @Watch('right')
+  @Watch('bottom')
+  @Watch('left')
+  rotationChanged() {
+    this.syncPropsToCSS();
+  }
+
+  /**
+   * `aspect-ratio` is not enough when dealing with text :(
+   */
+  adjustSize = () => {
+    const { width, height } = this.baseEl.getBoundingClientRect();
+    const largest = Math.max(width, height);
+    this.hostElement.style.setProperty('--min-width', `${largest}px`);
+  };
+
+  syncPropsToCSS() {
+    this.hostElement.style.setProperty('--rotation', `${this.rotation}deg`);
+
+    if (
+      this.top != null ||
+      this.right != null ||
+      this.bottom != null ||
+      this.left != null
+    ) {
+      Object.assign(this.hostElement.style, {
+        top: numToPx(this.top),
+        right: numToPx(this.right),
+        bottom: numToPx(this.bottom),
+        left: numToPx(this.left),
+      });
+    }
   }
 
   render() {
     return (
       <Host>
-        <style>{this.displayStyle()}</style>
-        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          <div part="inner" class="callout__inner">
-            <div class="callout__prefix">
-              <slot name="prefix" />
-            </div>
-            <div class="callout__text">
-              <span>
-                <slot></slot>
-              </span>
-              {this.asterisk && (
-                <sup title={this.asterisk} class="callout__sup">
-                  *
-                </sup>
-              )}
-            </div>
-          </div>
+        {this.styles && <style>{this.styles}</style>}
+        <div part="base" ref={(el) => (this.baseEl = el)}>
+          <slot></slot>
         </div>
       </Host>
-    );
-  }
-
-  getBasePartMap() {
-    return this.getCssOrBasePartMap('basePart');
-  }
-
-  getCssClassMap() {
-    return this.getCssOrBasePartMap('css');
-  }
-
-  getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const name = 'callout';
-    const prefix = mode === 'basePart' ? '' : `${name}--`;
-
-    return classNames(
-      name,
-      this.variant && `${prefix}color-${this.variant}`,
-      this.size && `${prefix}size-${this.size}`,
-      this.asterisk && `${prefix}asterisk`
     );
   }
 }
