@@ -32,6 +32,11 @@
 
 ## Dependencies
 
+### Used by
+
+ - [scale-dropdown](../dropdown)
+ - [scale-text-field](../text-field)
+
 ### Depends on
 
 - [scale-icon-alert-information](../icons/alert-information)
@@ -44,6 +49,8 @@ graph TD;
   scale-helper-text --> scale-icon-alert-information
   scale-helper-text --> scale-icon-alert-error
   scale-helper-text --> scale-icon-alert-success
+  scale-dropdown --> scale-helper-text
+  scale-text-field --> scale-helper-text
   style scale-helper-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
