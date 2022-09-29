@@ -9,7 +9,7 @@ describe.skip('Switch', () => {
       ['standard-disabled'],
       ['selected'],
       ['selected-disabled'],
-      ['ios'],
+      ['i-os'],
       ['android'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-switch--${variant}`);
