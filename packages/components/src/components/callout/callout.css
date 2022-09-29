@@ -1,95 +1,71 @@
 :host {
-  --inner-width-small: var(--telekom-spacing-unit-x20);
-  --inner-height-small: var(--telekom-spacing-unit-x20);
-  --inner-width-large: 126.5px;
-  --inner-height-large: 96px;
-  --width-small: 120px;
-  --height-small: 120px;
-  --height-large: 160px;
-  --width-large: 160px;
-  /* FIXME variables shouldn't have color names */
-  --color-blue: var(--telekom-color-functional-informational-standard);
-  /* FIXME variables are used sometimes as background and sometimes as font color */
-  --color-white: var(--telekom-color-background-surface);
-  --color-black: var(--telekom-color-text-and-icon-functional-black);
-  --color-primary: var(--telekom-color-primary-standard);
-  --font-family: var(--telekom-typography-font-family-sans);
-  /* FIXME is this calc necessary? */
-  --font-size: calc(var(--telekom-typography-font-size-callout) * 3);
-  --font-size-prefix: var(--telekom-typography-font-size-callout);
-}
+  --position: absolute;
+  --background: var(--telekom-color-ui-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --spacing: var(--telekom-spacing-unit-x6);
+  --min-width: 6rem;
+  --aspect-ratio: 1;
+  --rotation: 0deg;
+  --font-standard: var(--telekom-text-style-lead-text);
+  --font-small: var(--telekom-text-style-body-bold);
+  --font-large: var(--telekom-text-style-heading-1);
 
-.callout {
-  display: flex;
-  justify-content: center;
+  box-sizing: border-box;
+  display: inline-flex;
   align-items: center;
-  border-radius: 100%;
-  background: var(--color-primary);
-  font-family: var(--font-family);
-  color: var(--color-white);
+  justify-content: center;
   text-align: center;
+  border-radius: 50%;
+  position: var(--position);
+  background: var(--background);
+  color: var(--color);
+  min-width: var(--min-width);
+  aspect-ratio: var(--aspect-ratio);
+  transform: rotateZ(var(--rotation, 0deg));
 }
 
-.callout.callout--color-primary {
-  background: var(--color-primary);
-}
-.callout.callout--color-white {
-  background: var(--color-white);
-  color: var(--color-black);
-}
-.callout.callout--color-blue {
-  background: var(--color-blue);
-  color: var(--telekom-color-text-and-icon-white-standard);
-}
-.callout.callout--color-black {
-  background: var(--telekom-color-ui-extra-strong);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+[part='base'] {
+  box-sizing: border-box;
+  padding: var(--spacing);
+  font: var(--font-standard);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  line-height: var(--telekom-typography-line-spacing-tight);
 }
 
-.callout.callout--size-large {
-  width: var(--width-large);
-  height: var(--height-large);
+/* Color variants */
+
+:host([variant='primary']) {
+  --background: var(--telekom-color-primary-standard);
+  --color: var(--telekom-color-text-and-icon-white-standard);
 }
 
-.callout.callout--size-small {
-  width: var(--width-small);
-  height: var(--height-small);
+:host([variant='black']) {
+  --background: var(--telekom-color-ui-black, #000000);
+  --color: var(--telekom-color-text-and-icon-white-standard);
 }
 
-.callout.callout--size-large .callout__inner {
-  width: var(--inner-width-large);
-  height: var(--inner-height-large);
+:host([variant='white']) {
+  --background: var(--telekom-color-ui-white, #ffffff);
+  --color: var(--telekom-color-text-and-icon-black-standard);
 }
 
-.callout.callout--size-small .callout__inner {
-  width: var(--inner-width-small);
-  height: var(--inner-height-small);
+:host([variant='blue']) {
+  --background: var(--telekom-color-additional-cyan-400);
+  --color: var(--telekom-color-text-and-icon-black-standard);
 }
 
-.callout__inner {
-  transform: rotateZ(var(--rotation));
-  overflow: hidden;
+/* Enforce "line break" for every direct child of scale-callout */
+
+::slotted(*) {
+  display: block;
 }
 
-.callout__prefix {
-  font-size: var(--font-size-prefix);
-  font-weight: 400;
+/* Font style options (medium is default) */
+
+::slotted(.scl-callout-text-small) {
+  font: var(--font-small);
 }
 
-.callout__text {
-  font-size: var(--font-size);
-  font-weight: 700;
-}
-
-.callout__sup {
-  font-size: 30px;
-  cursor: help;
-}
-
-.callout.callout--size-large.callout--asterisk .callout__prefix {
-  margin-bottom: 10px;
-}
-
-.callout.callout--size-small .callout__prefix {
-  margin-bottom: 10px;
+::slotted(.scl-callout-text-large) {
+  font: var(--font-large);
 }
