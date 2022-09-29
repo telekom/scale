@@ -35,6 +35,7 @@ scale-dropdown {
   --background-disabled: none;
   --color: var(--telekom-color-text-and-icon-standard);
   --background-color: var(--telekom-color-ui-state-fill-standard);
+  --margin-bottom-helper-text: var(--telekom-spacing-unit-x1);
 
   /*input*/
   --transition-input: var(--transition);
@@ -111,6 +112,10 @@ scale-dropdown {
 .dropdown .input__dropdown-wrapper {
   position: relative;
 }
+.dropdown.dropdown--helper-text .input__dropdown-wrapper {
+  margin-bottom: var(--margin-bottom-helper-text);
+}
+
 .dropdown .input__helper-text {
   transition: var(--transition-helper-text);
   font-size: var(--font-size-helper-text);

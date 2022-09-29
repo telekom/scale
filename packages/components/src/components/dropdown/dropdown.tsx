@@ -296,6 +296,7 @@ export class Dropdown {
       this.disabled && `dropdown--disabled`,
       this.transparent && 'dropdown--transparent',
       this.status && `dropdown--status-${this.status}`,
+      this.helperText && 'dropdown--helper-text',
       this.variant &&
         `dropdown--variant-${this.invalid ? 'danger' : this.variant}`,
       this.value != null && this.value !== '' && 'animated'
