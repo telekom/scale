@@ -50,14 +50,11 @@ export class Dropdown {
   @Prop() status?: string = '';
   /** @deprecated */
   @Prop() size?: string;
+  /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) Input status */
-  @Prop() info?: boolean = true;
-  /** (optional) Input status */
-  @Prop() warning?: boolean = false;
-  /** (optional) Input status */
-  @Prop() success?: boolean = false;
-  /** (optional) Input disabled */
+  /** (optional) Variant */
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   @Prop() disabled?: boolean;
   /** (optional) Input required */
   @Prop() required?: boolean;
@@ -113,9 +110,6 @@ export class Dropdown {
 
     if (this.inputId == null) {
       this.inputId = 'input-dropdown' + i++;
-    }
-    if (this.invalid || this.warning || this.success) {
-      this.info = false;
     }
   }
 
@@ -243,20 +237,6 @@ export class Dropdown {
     emitEvent(this, 'scaleKeyDown', event);
   };
 
-  renderHelperIcon() {
-    if (this.info || this.warning) {
-      return (
-        <scale-icon-alert-information size={11}></scale-icon-alert-information>
-      );
-    }
-    if (this.invalid) {
-      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
-    }
-    if (this.success) {
-      return <scale-icon-alert-success size={11}></scale-icon-alert-success>;
-    }
-  }
-
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
@@ -299,21 +279,11 @@ export class Dropdown {
               )}
             </div>
           </div>
-
-          {!!this.helperText && (
-            <div
-              class="input__meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              <div class="input__helper-text">
-                <div class="input__helper-text_icon">
-                  {this.renderHelperIcon()}
-                </div>
-                <div class="input__helper-text_label">{this.helperText}</div>
-              </div>
-            </div>
+          {this.helperText && (
+            <scale-helper-text
+              helperText={this.helperText}
+              variant={this.invalid ? 'danger' : this.variant}
+            ></scale-helper-text>
           )}
         </div>
       </Host>
@@ -326,10 +296,9 @@ export class Dropdown {
       this.disabled && `dropdown--disabled`,
       this.transparent && 'dropdown--transparent',
       this.status && `dropdown--status-${this.status}`,
-      this.invalid && `dropdown--status-error`,
-      this.success && `dropdown--status-success`,
-      this.warning && `dropdown--status-warning`,
-      this.info && `dropdown--status-info`,
+      this.helperText && 'dropdown--helper-text',
+      this.variant &&
+        `dropdown--variant-${this.invalid ? 'danger' : this.variant}`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

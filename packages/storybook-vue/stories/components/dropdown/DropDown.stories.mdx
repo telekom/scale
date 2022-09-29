@@ -25,9 +25,7 @@ export const Template = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
-      :success="success"
-      :info="info"
-      :warning="warning"
+      :variant="variant"
       :disabled="disabled"
       :required="required"
       :value="value"
@@ -210,7 +208,7 @@ The display error is on the browser side.
     name="Success"
     args={{
       label: 'Success',
-      success: true,
+      variant: 'success',
       helperText: 'Something went successful...',
     }}
   >
@@ -221,7 +219,7 @@ The display error is on the browser side.
 ```html
 <scale-dropdown
   label="Success"
-  success
+  variant="success"
   helper-text="Something went successful..."
 >
   <option value="1">item 1</option>
@@ -237,7 +235,7 @@ The display error is on the browser side.
     name="Warning"
     args={{
       label: 'Warning',
-      warning: true,
+      variant: 'warning',
       helperText: 'Something with warning...',
     }}
   >
@@ -246,7 +244,11 @@ The display error is on the browser side.
 </Canvas>
 
 ```html
-<scale-dropdown label="Warning" warning helper-text="Something with warning...">
+<scale-dropdown
+  label="Warning"
+  variant="warning"
+  helper-text="Something with warning..."
+>
   <option value="1">item 1</option>
   <option value="2" selected>item 2</option>
   <option value="3">item 3</option>
