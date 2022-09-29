@@ -71,9 +71,13 @@ export class HelperText {
             'helper-text--neutral': this.variant === 'neutral',
           }}
         >
-          <span>
-            <slot></slot>
-          </span>
+          {this.helperText ? (
+            <span>{this.helperText}</span>
+          ) : (
+            <span>
+              <slot></slot>
+            </span>
+          )}
           {this.renderHelperIcon()}
         </div>
         {this.styles && <style>{this.styles}</style>}
