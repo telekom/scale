@@ -64,24 +64,6 @@ Read-only text fields show prefilled text that users cannot edit or change. Howe
 
 ![Image Name](assets/3_components/text-input/input_readonly.png)
 
-## Sizes
-
-Scale provides two sizes of text fields. Only use one size within a group.
-
-### Large
-
-Use the large size in all standard cases.
-
-![Image Name](assets/3_components/text-input/input-field-large.png)
-
-### Small
-
-When space is limited, the small size may work better.
-
-![Image Name](assets/3_components/text-input/input-field-small.png)
-
-Important: Use either only small or only large elements within groups.
-
 ## Best practices
 
 - Declare text fields for specific data formats accordingly (e.g., for types like text, number, email, or password).
