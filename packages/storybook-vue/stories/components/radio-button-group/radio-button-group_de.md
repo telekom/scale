@@ -8,7 +8,7 @@ Radio-Buttons ermöglichen es Nutzer*innen, eine Option aus einer Reihe von Alte
 
 Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons wird die zuvor gewählte Option automatisch abgewählt. Durch einen Gruppentitel erfassen Nutzer\*innen inhaltliche Zusammenhänge schneller. Interfaces mit vielen Auswahloptionen wirken insgesamt ruhiger und aufgeräumter.
 
-![Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group.png)
+![Radio Button Group](assets/3_components/radio-button-group/radio-button-group-general.png)
 
 ### Verwende eine Radio Button Group, um
 
@@ -24,7 +24,7 @@ Verwende Radio-Buttons grundsätzlich nicht, wenn
 
 ## Elemente
 
-![Elemente der Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Elements.png)
+![Elemente der Radio Button Group](assets/3_components/radio-button-group/radio-button-group-elements.png)
 
 ### Gruppenlabel (1)
 
@@ -57,7 +57,7 @@ Deaktiviere einen Radio Button, wenn
 - eine andere Aktion erfolgen muss, bevor der Radio-Button nutzbar ist oder
 - die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
 
-![Deaktivierte Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Disabled.png)
+![Deaktivierte Radio Button Group](assets/3_components/radio-button-group/radio-button-group-items-disabled.png)
 
 > Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
