@@ -23,7 +23,7 @@ Ein Text-Field ist ein Eingabefeld für eine einzelne Textzeile. Das Feld kann i
 
 ## Elemente
 
-![Image Name](assets/3_components/text-input/de/input-field-elements.png)
+![Image Name](assets/3_components/text-input/input-field-elements.png)
 
 ### Label (1)
 
@@ -49,7 +49,7 @@ Bei nicht ausgefüllten, aber verpflichtenden Feldern erscheint eine Fehlermeldu
 
 Ist das Text-Field deaktiviert, können Nutzer\*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
 
-![Image Name](assets/3_components/text-input/de/input_disabled.png)
+![Image Name](assets/3_components/text-input/input_disabled.png)
 
 > Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
@@ -57,23 +57,7 @@ Ist das Text-Field deaktiviert, können Nutzer\*innen keinen Text eingeben, bezi
 
 Read-Only-Text-Fields zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer\*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
 
-![Image Name](assets/3_components/text-input/de/input_readonly.png)
-
-## Größen
-
-Du kannst Text-Fields in zwei Größen verwenden. Achte darauf, die beiden Größen nicht zu kombinieren.
-
-### Large
-
-Verwende große Text-Fields als Standard.
-
-![Image Name](assets/3_components/text-input/de/input-field-large.png)
-
-### Small
-
-Verwende kleine Text-Fields, wenn du nicht genug Platz für die Standardgröße hast.
-
-![Image Name](assets/3_components/text-input/de/input-field-small.png)
+![Image Name](assets/3_components/text-input/input_readonly.png)
 
 ## Best Practices
 
