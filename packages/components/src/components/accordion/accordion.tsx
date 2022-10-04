@@ -89,7 +89,7 @@ export class Accordion {
   ) {
     this.getCollapsibleChildren().forEach((item) => {
       if (
-        parseInt(item.parentElement.getAttribute('heading-level')) ===
+        parseInt(item.parentElement.getAttribute('heading-level'), 10) ===
         headingLevel
       ) {
         item.headingLevel = headingLevel;
