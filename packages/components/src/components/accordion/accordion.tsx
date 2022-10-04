@@ -88,8 +88,10 @@ export class Accordion {
     iconLocation: 'left' | 'right'
   ) {
     this.getCollapsibleChildren().forEach((item) => {
-      item.headingLevel = headingLevel;
-      item.iconLocation = iconLocation;
+      if(parseInt(item.parentElement.getAttribute("heading-level")) === headingLevel){
+        item.headingLevel = headingLevel;
+        item.iconLocation = iconLocation;
+      }
     });
   }
 
