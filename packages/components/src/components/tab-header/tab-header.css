@@ -34,8 +34,8 @@
   box-sizing: border-box;
   align-items: center;
   height: var(--tab-height);
-  padding-right: var(--telekom-spacing-unit-x3);
-  padding-left: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-unit-x4);
+  padding-left: var(--telekom-spacing-unit-x4);
   padding-top: var(--tab-spacing);
   padding-bottom: var(--tab-spacing);
   font-size: calc(var(--tab-height) / 2.4);
