@@ -10,7 +10,7 @@
  */
 
 duet-date-picker {
-  --duet-color-primary: transparent;
+  --duet-color-primary: var(--telekom-color-primary-standard);
   --duet-color-text: var(--telekom-color-text-and-icon-standard);
   --duet-color-overlay: var(--telekom-color-background-surface);
   --duet-font: var(--telekom-typography-font-family-sans);
@@ -56,6 +56,7 @@ duet-date-picker .duet-date__input:focus {
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-border-pressed);    
   outline: var(--focus-outline);
+  box-shadow: none;
   outline-offset: 2px;
 }
 
@@ -69,7 +70,8 @@ duet-date-picker .duet-date__toggle {
 
 duet-date-picker .duet-date__toggle:focus {
   outline: var(--focus-outline);
-  outline-offset: 1px;    
+  outline-offset: 1px;
+  box-shadow: none;
 }
 
 .scale-date-picker:not(.scale-date-picker--disabled)
@@ -190,7 +192,8 @@ duet-date-picker .duet-date__input:focus::placeholder {
 }
 .scale-date-picker--status-error duet-date-picker .duet-date__input:focus {
   outline: var(--focus-outline);
-  outline-offset: 1px;    
+  outline-offset: 1px;
+  box-shadow: none;
 }
 .scale-date-picker--status-error .date-picker__helper-text {
   color: var(--telekom-color-text-and-icon-functional-danger);
@@ -263,8 +266,7 @@ duet-date-picker .duet-date__select-label svg {
 }
 
 duet-date-picker .duet-date__select select:focus + .duet-date__select-label {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  outline: var(--focus-outline);
 }
 
 duet-date-picker .duet-date__select select:hover + .duet-date__select-label {
@@ -299,8 +301,7 @@ duet-date-picker .duet-date__next:active {
 }
 duet-date-picker .duet-date__prev:focus,
 duet-date-picker .duet-date__next:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  outline: var(--focus-outline);
 }
 
 duet-date-picker .duet-date__close {
@@ -308,8 +309,7 @@ duet-date-picker .duet-date__close {
 }
 
 duet-date-picker .duet-date__close:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
+  outline: var(--focus-outline);
 }
 
 duet-date-picker .duet-date__table-header {
@@ -359,6 +359,8 @@ duet-date-picker .duet-date__day.is-today.is-disabled::before {
 duet-date-picker .duet-date__day:focus {
   background: var(--telekom-color-background-surface);
   color: var(--telekom-color-text-and-icon-standard);
+  outline: var(--focus-outline);
+  box-shadow: none;
 }
 
 duet-date-picker .duet-date__day:hover {
