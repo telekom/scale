@@ -17,15 +17,21 @@ Um die Komponenten zu verwenden, lade die CSS-Datei sowie JavaScript. Die CSS-Da
 ### Plain HTML
 
 ```html
-<link rel="stylesheet" href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css">
-<script type="module" src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"></script>
+<link
+  rel="stylesheet"
+  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+/>
+<script
+  type="module"
+  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+></script>
 ```
 
 ### Mit Bundler oder ES-Modulen
 
 ```js
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { defineCustomElements } from "@telekom/scale-components/loader";
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
 defineCustomElements();
 ```
