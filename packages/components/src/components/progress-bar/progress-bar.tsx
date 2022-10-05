@@ -13,7 +13,7 @@ import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
-const ICON_SIZE=14;
+const ICON_SIZE = 14;
 let i = 0;
 @Component({
   tag: 'scale-progress-bar',
@@ -91,7 +91,7 @@ export class ProgressBar {
       border: '1px solid transparent',
       background: this.customColor ? this.customColor : `var(--background)`,
       animation: 'showProgress 3s ease-in-out',
-      height: `${this.strokeWidth - 2}px`
+      height: `${this.strokeWidth - 2}px`,
     };
   };
 
@@ -110,9 +110,9 @@ export class ProgressBar {
                 htmlFor={this.progressBarId}
               >
                 {this.label}
-              </label>            
+              </label>
             )}
-            {!!this.showStatus && !this.hasError && this.percentage != 100 &&(
+            {!!this.showStatus && !this.hasError && this.percentage != 100 && (
               <div
                 part="status"
                 class="progress-bar__status"
@@ -121,10 +121,16 @@ export class ProgressBar {
                 {this.percentage}%
               </div>
             )}
-            <div class="progress-bar__icon">{
-              this.hasError ?  <scale-icon-alert-error size={ICON_SIZE}></scale-icon-alert-error> : 
-              this.percentage == 100 ? <scale-icon-alert-success size={ICON_SIZE}></scale-icon-alert-success> : null
-            }
+            <div class="progress-bar__icon">
+              {this.hasError ? (
+                <scale-icon-alert-error
+                  size={ICON_SIZE}
+                ></scale-icon-alert-error>
+              ) : this.percentage == 100 ? (
+                <scale-icon-alert-success
+                  size={ICON_SIZE}
+                ></scale-icon-alert-success>
+              ) : null}
             </div>
           </div>
           <div part="wrapper" class="progress-bar-wrapper">
