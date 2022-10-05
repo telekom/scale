@@ -80,7 +80,9 @@ export class Accordion {
   }
 
   getCollapsibleChildren(): HTMLScaleCollapsibleElement[] {
-    return Array.from(this.el.querySelectorAll('scale-collapsible'));
+    return Array.from(this.el.children).filter(
+      (el) => el.tagName === 'SCALE-COLLAPSIBLE'
+    ) as HTMLScaleCollapsibleElement[];
   }
 
   propagatePropsToChildren(
