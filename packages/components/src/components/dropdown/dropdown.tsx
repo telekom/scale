@@ -103,11 +103,13 @@ export class Dropdown {
 
   hasSlotIcon: boolean;
 
+  private readonly internalId = i++;
+
   componentWillLoad() {
     this.hasSlotIcon = !!this.hostElement.querySelector('[slot="icon"]');
 
     if (this.inputId == null) {
-      this.inputId = 'input-dropdown' + i++;
+      this.inputId = 'input-dropdown' + this.internalId;
     }
   }
 
@@ -230,7 +232,7 @@ export class Dropdown {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
