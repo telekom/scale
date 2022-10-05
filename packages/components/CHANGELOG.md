@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+
+### Bug Fixes
+
+* **accordion:** deal only with direct collapsible children ([#1243](https://github.com/telekom/scale/issues/1243)) ([19a137b](https://github.com/telekom/scale/commit/19a137bcbd8346ab4b92302ba6000a6c1406606c))
+* **checkbox:** rename private class property to avoid clashing with restricted name ([#1241](https://github.com/telekom/scale/issues/1241)) ([368a5a7](https://github.com/telekom/scale/commit/368a5a7a0dcf34cb42cd2ad2875ca0d204a73028))
+
+
+
+
+
 # [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
 
 
