@@ -186,7 +186,7 @@ export class DatePicker {
   @Event({ eventName: 'scaleFocus' })
   scaleFocusLegacy: EventEmitter<DuetDatePickerFocusEvent>;
 
-  private helperTextId = `helper-message-${i}`;
+  private readonly internalId = i++;
 
   private mo: MutationObserver;
 
@@ -289,7 +289,10 @@ export class DatePicker {
     }
 
     if (input && this.helperText) {
-      input.setAttribute('aria-describedby', this.helperTextId);
+      input.setAttribute(
+        'aria-describedby',
+        `helper-message-${this.internalId}`
+      );
     }
 
     if (input && (this.status === 'error' || this.invalid)) {
@@ -399,6 +402,7 @@ export class DatePicker {
   }
 
   render() {
+    const helperTextId = `helper-message-${this.internalId}`;
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -448,7 +452,7 @@ export class DatePicker {
           {!!this.helperText && (
             <div
               class="date-picker__meta"
-              id={this.helperTextId}
+              id={helperTextId}
               aria-live="polite"
               aria-relevant="additions removals"
             >
