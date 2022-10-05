@@ -584,9 +584,10 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
     if (/\.sketch$/i.test(includeFile)) {
       var doc = await Sketch.fromFile(`./includes/${includeFile}`);
       // Copy foreign references over
-      sketch.document.foreignLayerStyles = sketch.document.foreignLayerStyles.concat(
-        doc.document.foreignLayerStyles
-      );
+      sketch.document.foreignLayerStyles =
+        sketch.document.foreignLayerStyles.concat(
+          doc.document.foreignLayerStyles
+        );
       sketch.document.foreignSwatches = (
         sketch.document.foreignSwatches || []
       ).concat(doc.document.foreignSwatches);
@@ -596,12 +597,14 @@ const dbFilename = path.resolve(__dirname, `../sketch/symbol_database.sqlite`);
       sketch.document.foreignTextStyles = (
         sketch.document.foreignTextStyles || []
       ).concat(doc.document.foreignTextStyles);
-      sketch.document.layerStyles.objects = sketch.document.layerStyles.objects.concat(
-        doc.document.layerStyles.objects
-      );
-      sketch.document.layerTextStyles.objects = sketch.document.layerTextStyles.objects.concat(
-        doc.document.layerTextStyles.objects
-      );
+      sketch.document.layerStyles.objects =
+        sketch.document.layerStyles.objects.concat(
+          doc.document.layerStyles.objects
+        );
+      sketch.document.layerTextStyles.objects =
+        sketch.document.layerTextStyles.objects.concat(
+          doc.document.layerTextStyles.objects
+        );
       sketch.document.layerStyles.objects.forEach((style) => {
         const styleKey = makeStyleKey(style.value);
         replaceValue(doc, style.do_objectID, styleKey);
