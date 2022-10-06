@@ -4,9 +4,11 @@ describe('ProgressBar', () => {
       await global.runColorSetup('components-progress-bar--standard', mode);
     });
     test.each([
-      ['determinate'],
-      ['progress-with-description'],
-      ['complete-error'],
+      ['standard'],
+      ['description'],
+      ['completed'],
+      ['error'],
+      ['interactive'],
     ])('%p', async (variant) => {
       await global.runSetup(`components-progress-bar--${variant}`);
 

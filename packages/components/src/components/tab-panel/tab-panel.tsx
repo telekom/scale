@@ -10,7 +10,6 @@
  */
 
 import { Component, Element, h, Prop, Host } from '@stencil/core';
-import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
 let i = 0;
@@ -49,25 +48,10 @@ export class TabPanel {
       <Host id={`scale-tab-panel-${this.generatedId}`} role="tabpanel">
         {this.styles && <style>{this.styles}</style>}
 
-        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
+        <div part="tab-panel" class="tab-panel">
           <slot />
         </div>
       </Host>
     );
-  }
-
-  getBasePartMap() {
-    return this.getCssOrBasePartMap('basePart');
-  }
-
-  getCssClassMap() {
-    return this.getCssOrBasePartMap('css');
-  }
-
-  getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const component = 'tab-panel';
-    const prefix = mode === 'basePart' ? '' : `${component}--`;
-    this.size === 'small' && `${prefix}small`;
-    return classNames(component, `${prefix}`);
   }
 }

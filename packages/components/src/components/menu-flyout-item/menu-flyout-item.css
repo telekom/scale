@@ -10,7 +10,8 @@
  */
 
 :host {
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   display: block;
   position: relative;
   outline-color: transparent;

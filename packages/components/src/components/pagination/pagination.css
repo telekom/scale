@@ -18,7 +18,8 @@
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-button: var(--telekom-color-ui-subtle);
   --border-button: var(--border);
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   --radius-first-prompt: var(--radius) 0 0 var(--radius);
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
