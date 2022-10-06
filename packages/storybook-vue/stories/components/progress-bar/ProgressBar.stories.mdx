@@ -68,8 +68,9 @@ export const TemplateInteractive = (args, { argTypes }) => ({
       this.start('failure');
     },
     start(outcome) {
-      const xxx = setInterval(() => {
-        if (this.$data.percentage === 100) {
+      const max = outcome === 'success' ? 100 : 42
+      this.interval = setInterval(() => {
+        if (this.$data.percentage === max) {
           clearInterval(this.interval);
           this.$data.state = outcome;
           this.interval = null;
@@ -77,8 +78,6 @@ export const TemplateInteractive = (args, { argTypes }) => ({
         }
         this.$data.percentage += 1;
       }, 40);
-      this.interval = xxx;
-      return xxx;
     },
     reset() {
       clearInterval(this.interval);
@@ -90,14 +89,11 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   data: () => ({
     interval: null,
     success: {
-      showStatus: false,
       statusDescription: 'Upload complete',
-      customColor: '#67c23a',
     },
     failure: {
-      showStatus: false,
       hasError: true,
-      statusDescription: 'Upload fail',
+      statusDescription: 'Upload failed',
     },
     initial: {
       showStatus: true,
@@ -188,8 +184,8 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Description"
     args={{
       percentage: 40,
-      statusDescription: 'Progress status description text',
       label: 'Description',
+      statusDescription: 'Progress status description text',
       showStatus: true,
     }}
   >
@@ -200,7 +196,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-progress-bar
   percentage="40"
-  stroke-width="40"
+  label="Description"
   status-description="Progress status description text"
   show-status="true"
 ></scale-progress-bar>
@@ -225,9 +221,9 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-progress-bar
   percentage="100"
-  show-status="true"
+  label="Completed"
   status-description="Upload complete"
-  label="Status completed"
+  show-status="true"
 >
 </scale-progress-bar>
 ```
@@ -241,7 +237,7 @@ For Shadow Parts, please inspect the element's #shadow.
       percentage: 40,
       hasError: true,
       showStatus: true,
-      statusDescription: 'Upload fail',
+      statusDescription: 'Upload failed',
       label: 'Error',
     }}
   >
@@ -252,10 +248,10 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-progress-bar
   percentage="40"
-  has-error
-  show-status="true"
+  label="Error"
   status-description="Upload failed"
-  label="Complete error"
+  show-status="true"
+  has-error
 >
 </scale-progress-bar>
 ```
@@ -267,9 +263,6 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Interactive"
     args={{
       percentage: 0,
-      hasError: true,
-      showStatus: false,
-      statusDescription: 'Upload fail',
       label: 'Interactive',
     }}
   >
