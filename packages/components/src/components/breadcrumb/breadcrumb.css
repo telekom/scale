@@ -23,9 +23,8 @@
   --radius-link: var(--telekom-radius-standard);
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --box-shadow-link-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
 
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -72,8 +71,7 @@
 }
 
 .breadcrumb__link:focus {
-  outline: none;
-  box-shadow: var(--box-shadow-link-focus);
+  outline: var(--focus-outline);  
 }
 
 .breadcrumb__current {

@@ -16,7 +16,7 @@
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --radius: var(--telekom-radius-small);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) #2238df;
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
 
   --icon-color: var(--color);
   --icon-color-hover: var(--color);
@@ -110,7 +110,7 @@ dismissable
 .tag--dismissable button:focus {
   border: var(--border-button-dismissable-focus);
   justify-content: center;
-  box-shadow: var(--box-shadow-button-dismissable-focus);
+  outline: var(--focus-outline);
 }
 .tag--dismissable:not(.tag--disabled) button:hover {
   background: var(--background-button-dismissable-hover);
@@ -183,7 +183,7 @@ link
 }
 .tag--link:focus {
   border: 1px solid white;
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
 }
 .tag--link {
   background: var(--background-secondary);

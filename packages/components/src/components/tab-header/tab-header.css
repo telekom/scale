@@ -19,8 +19,7 @@
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
@@ -114,7 +113,7 @@
 }
 .tab-header--has-focus {
   border-radius: var(--tab-radius);
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
   z-index: 1;
 }
 .tab-header--has-focus.tab-header--selected:after {
