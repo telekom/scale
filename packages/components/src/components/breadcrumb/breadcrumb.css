@@ -24,7 +24,8 @@
   --color-link-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-link-active: var(--telekom-color-text-and-icon-primary-pressed);
 
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   --color-current: var(--telekom-color-text-and-icon-standard);
 }
 
@@ -71,7 +72,7 @@
 }
 
 .breadcrumb__link:focus {
-  outline: var(--focus-outline);  
+  outline: var(--focus-outline);
 }
 
 .breadcrumb__current {

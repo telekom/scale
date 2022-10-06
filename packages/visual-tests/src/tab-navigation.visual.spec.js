@@ -7,8 +7,8 @@ describe('TabNavigation', () => {
       ['text-icon'],
       ['text-only'],
       ['disabled-tabs'],
-      ['text-only-small'],
-      ['text-icon-small'],
+      ['large-text-only'],
+      ['large-text-icon'],
     ])('%p', async (variant) => {
       await page.goto(
         `http://host.docker.internal:3123/iframe.html?id=components-tab-navigation--${variant}&viewMode=story`

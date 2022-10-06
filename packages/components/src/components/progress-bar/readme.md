@@ -19,9 +19,8 @@
 | `percentage`        | `percentage`         | (required) Progress bar percentage                                                              | `number`  | `0`         |
 | `percentageStart`   | `percentage-start`   | (optional) Progress bar percentage to start the animation from (default: 0)                     | `number`  | `0`         |
 | `progressBarId`     | `progress-bar-id`    | (optional) Progress bar id                                                                      | `string`  | `undefined` |
-| `showStatus`        | `show-status`        | (optional) Progress bar percentage text                                                         | `boolean` | `undefined` |
+| `showStatus`        | `show-status`        | (optional) Progress bar percentage text                                                         | `boolean` | `true`      |
 | `statusDescription` | `status-description` | (optional) Progress bar status description text                                                 | `string`  | `undefined` |
-| `strokeWidth`       | `stroke-width`       | (optional) Progress bar stroke width                                                            | `number`  | `6`         |
 | `styles`            | `styles`             | (optional) Injected CSS styles                                                                  | `string`  | `undefined` |
 
 

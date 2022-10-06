@@ -34,7 +34,7 @@ export class TabNav {
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large';
+  @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -176,13 +176,13 @@ export class TabNav {
   }
 
   /**
-   * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
+   * Sets or removes the `large` prop in `scale-tab-header` and `scale-tab-panel` children.
    */
   propagateSizeToTabs() {
-    const action = this.size === 'small' ? 'setAttribute' : 'removeAttribute';
+    const action = this.size === 'large' ? 'setAttribute' : 'removeAttribute';
     const tabs = this.getAllTabs();
     const panels = this.getAllPanels();
-    [...tabs, ...panels].forEach((child) => child[action]('size', 'small'));
+    [...tabs, ...panels].forEach((child) => child[action]('size', 'large'));
   }
 
   render() {

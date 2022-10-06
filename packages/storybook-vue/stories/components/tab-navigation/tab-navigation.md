@@ -42,6 +42,12 @@ Add icons if they help users understand which content a certain tab represents. 
 
 ![Image Name](assets/3_components/tab-navigation/tab_navigation_icon-text.png)
 
+## Sizes
+
+We provide the tab navigation in two sizes: large and small. You can choose one of the two options for purely visual reasons or based on how relevant the content is. For mobile applications, we recommend using the small size.
+
+![Image Name](assets/3_components/tab-navigation/tab_navigation_sizes.png)
+
 ## Disabled tab
 
 If the content in one tab is temporarily unavailable, you can disable the tab.

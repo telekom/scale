@@ -7,11 +7,18 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                                                     | Type                 | Default     |
-| -------- | --------- | ----------------------------------------------------------------------------------------------- | -------------------- | ----------- |
-| `size`   | `size`    | (optional) size                                                                                 | `"large" \| "small"` | `'large'`   |
-| `small`  | `small`   | <span style="color:red">**[DEPRECATED]**</span> - css overwrites should replace small<br/><br/> | `boolean`            | `false`     |
-| `styles` | `styles`  | (optional) Injected CSS styles                                                                  | `string`             | `undefined` |
+| Property | Attribute | Description                                                                         | Type                 | Default     |
+| -------- | --------- | ----------------------------------------------------------------------------------- | -------------------- | ----------- |
+| `size`   | `size`    | <span style="color:red">**[DEPRECATED]**</span> - no more size difference<br/><br/> | `"large" \| "small"` | `'small'`   |
+| `small`  | `small`   | <span style="color:red">**[DEPRECATED]**</span> - no more size difference<br/><br/> | `boolean`            | `false`     |
+| `styles` | `styles`  | (optional) Injected CSS styles                                                      | `string`             | `undefined` |
+
+
+## Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"tab-panel"` |             |
 
 
 ----------------------------------------------

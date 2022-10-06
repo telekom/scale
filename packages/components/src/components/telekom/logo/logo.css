@@ -9,7 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 :host {
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   --background-magenta: var(--telekom-color-background-canvas);
   --background-white: var(--telekom-color-primary-standard);
 }
@@ -22,7 +23,7 @@
 [part~='logo']:focus,
 [part~='logo']:focus-visible {
   outline: var(--focus-outline);
-  outline-offset: 1px;  
+  outline-offset: 1px;
 }
 
 [part~='variant-magenta'] {
