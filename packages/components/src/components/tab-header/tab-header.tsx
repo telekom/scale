@@ -33,8 +33,10 @@ export class TabHeader {
   /** True for a disabled Tabnavigation */
   @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
-  /** @deprecated - css overwrites should replace small */
+  /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
+  /** (optional) size  */
+  @Prop() size: 'small' | 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -139,6 +141,7 @@ export class TabHeader {
     return classNames(
       component,
       this.selected && `${prefix}selected`,
+      this.size === 'small' && `${prefix}small`,
       this.hasFocus && `${prefix}has-focus`,
       this.disabled && `${prefix}disabled`
     );

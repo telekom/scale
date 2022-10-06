@@ -1,5 +1,5 @@
 <template>
-  <scale-tab-nav>
+  <scale-tab-nav :size="size">
     <scale-tab-header :disabled="disabled ? true : false" slot="tab">
       <scale-icon-home-home v-if="withIcon" /> General
     </scale-tab-header>
@@ -56,6 +56,7 @@ export default {
     styles: { type: String },
     disabled: { type: Boolean, default: false },
     withIcon: { type: Boolean, default: true },
+    size: { type: String, default: 'large' },
   },
 };
 </script>
