@@ -119,21 +119,20 @@ export class ProgressBar {
                 {this.percentage}%
               </div>
             )}
-            
-              {this.hasError ? (
-                <div class="progress-bar__icon">
-                  <scale-icon-alert-error
-                    size={ICON_SIZE}
-                  ></scale-icon-alert-error>
-                </div>
-              ) : this.percentage == 100 ? (
-                <div class="progress-bar__icon">
-                  <scale-icon-alert-success
-                    size={ICON_SIZE}
-                  ></scale-icon-alert-success>
-                </div>
-              ) : null}
-            
+
+            {this.hasError ? (
+              <div class="progress-bar__icon">
+                <scale-icon-alert-error
+                  size={ICON_SIZE}
+                ></scale-icon-alert-error>
+              </div>
+            ) : this.percentage == 100 ? (
+              <div class="progress-bar__icon">
+                <scale-icon-alert-success
+                  size={ICON_SIZE}
+                ></scale-icon-alert-success>
+              </div>
+            ) : null}
           </div>
           <div part="wrapper" class="progress-bar-wrapper">
             <div
@@ -153,8 +152,7 @@ export class ProgressBar {
                 part="inner"
                 class="progress-bar__inner"
                 style={this.progressStyle()}
-              >
-              </div>
+              ></div>
             </div>
             <slot name="icon"></slot>
           </div>
