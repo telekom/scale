@@ -98,18 +98,22 @@ export const Template = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --tab-height-small: var(--telekom-spacing-unit-x10);
   --tab-height: var(--telekom-spacing-unit-x12);
-  --tab-spacing-small: var(--telekom-spacing-unit-x6);
-  --tab-spacing: 0.875rem;
+  --tab-spacing-horizontal: var(--telekom-spacing-unit-x4);
+  --tab-spacing-vertical: 0.875rem;
   --tab-radius: var(--telekom-radius-small);
   --tab-border-size: var(--telekom-line-weight-standard);
   --tab-border-size-selected: var(--telekom-line-weight-highlight);
   --tab-border-color: var(--telekom-color-ui-subtle);
+
+  --tab-height-small: var(--telekom-spacing-unit-x10);
+  --tab-spacing-horizontal-small: var(--telekom-spacing-unit-x3);
+  --tab-spacing-vertical-small: var(--telekom-spacing-unit-x4);
 }
 
 /* tab-header */
 :host {
+  --font-size: var(--telekom-typography-font-size-callout);
   --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --height: 3rem;
@@ -123,6 +127,8 @@ export const Template = (args, { argTypes }) => ({
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
+
+  --font-size-small: var(--telekom-typography-font-size-body);
 }
 
 /* tab-panel */
