@@ -10,6 +10,11 @@ import ScaleProgressBar from './ScaleProgressBar.vue';
 <Meta
   title="Components/Progress Bar"
   component={ScaleProgressBar}
+  parameters={{
+    controls: {
+      sort: 'alpha'
+    }
+  }}
   argTypes={{}}
 />
 
@@ -27,6 +32,7 @@ export const Template = (args, { argTypes }) => ({
         :status-description="statusDescription"
         :show-status="showStatus"
         :stroke-width="strokeWidth"
+        :percentageStart="percentageStart"
         :percentage="percentage"
         :styles="styles"
       >
