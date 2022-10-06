@@ -6,7 +6,7 @@ exports[`TabPanel should handle styles 1`] = `
     <style>
       background-color:red
     </style>
-    <div class="tab-panel tab-panel--" part="tab-panel">
+    <div class="tab-panel" part="tab-panel">
       <slot></slot>
     </div>
   </mock:shadow-root>
@@ -16,7 +16,7 @@ exports[`TabPanel should handle styles 1`] = `
 exports[`TabPanel should match snapshot 1`] = `
 <scale-tab-panel id="scale-tab-panel-0" role="tabpanel">
   <mock:shadow-root>
-    <div class="tab-panel tab-panel--" part="tab-panel">
+    <div class="tab-panel" part="tab-panel">
       <slot></slot>
     </div>
   </mock:shadow-root>
