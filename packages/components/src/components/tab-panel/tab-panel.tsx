@@ -27,6 +27,8 @@ export class TabPanel {
   /** True for smaller height and font size */
   /** @deprecated - css overwrites should replace small */
   @Prop() small?: boolean = false;
+  /** (optional) size  */
+  @Prop() size: 'small' | 'large' = 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -65,7 +67,7 @@ export class TabPanel {
   getCssOrBasePartMap(mode: 'basePart' | 'css') {
     const component = 'tab-panel';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
-
+    this.size === 'small' && `${prefix}small`;
     return classNames(component, `${prefix}`);
   }
 }
