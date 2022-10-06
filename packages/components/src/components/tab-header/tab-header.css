@@ -11,6 +11,7 @@
 
 :host {
   outline: none;
+  --font-size: var(--telekom-typography-font-size-callout);
   --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --height: 3rem;
@@ -23,6 +24,8 @@
   --spacing-right-slotted: var(--telekom-spacing-unit-x2);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
+
+  --font-size-small: var(--telekom-typography-font-size-body);
 }
 
 .tab-header {
@@ -34,12 +37,12 @@
   box-sizing: border-box;
   align-items: center;
   height: var(--tab-height);
-  padding-right: calc(var(--tab-spacing) / 2);
-  padding-left: calc(var(--tab-spacing) / 2);
-  padding-top: var(--telekom-spacing-unit-x4);
-  padding-bottom: var(--telekom-spacing-unit-x4);
+  padding-right: var(--tab-spacing-horizontal);
+  padding-left: var(--tab-spacing-horizontal);
+  padding-top: var(--tab-spacing-vertical);
+  padding-bottom: var(--tab-spacing-vertical);
+  font-size: var(--font-size);
   font-family: var(--font-family);
-  font-size: calc(var(--tab-height) / 3);
   font-weight: var(--font-weight);
   border-radius: var(--tab-radius);
 }
@@ -128,4 +131,14 @@
 }
 .tab-header--selected:before {
   border-top: var(--tab-border-size-selected) solid transparent;
+}
+
+/* small size */
+
+.tab-header--small {
+  padding-right: var(--tab-spacing-horizontal-small);
+  padding-left: var(--tab-spacing-horizontal-small);
+  padding-top: var(--tab-spacing-vertical-small);
+  padding-bottom: var(--tab-spacing-vertical-small);
+  font-size: var(--font-size-small);
 }
