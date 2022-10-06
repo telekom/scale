@@ -10,9 +10,7 @@
  */
 
 :host {
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
-
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
   display: block;
   position: relative;
   outline-color: transparent;
@@ -59,7 +57,7 @@
 }
 
 :host(:focus) .menu-flyout-item {
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
 }
 
 :host(:active) .menu-flyout-item:not(.menu-flyout-item--disabled) {
