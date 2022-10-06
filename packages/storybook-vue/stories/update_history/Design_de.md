@@ -2,6 +2,88 @@
 
 Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
+## Komponenten-Update (Optimierung von Mobile und Visual Design)
+
+20.09.2022
+
+**Visuelle und funktionale Änderungen**
+
+- Slider: Visuelle Optimierung und funktionale Erweiterung
+- Radio Buttons: Optimierung des Interactive States „Selected“
+- Tags: Farbliche Optimierung und Erweiterung um vordefinierte Farben
+- Switch: Visuelle Überarbeitung und neue Varianten für iOS und Android
+- Cards: Erweiterung möglicher Konfigurationen und Beispiele
+- Tab Navigation: Visuelle Optimierung
+
+**Optimierung für Geräte mit Touchscreen**
+
+Die Größe der folgenden Komponenten ist angepasst und vereinfacht die Nutzung auf Touchscreens:
+
+- Radio Button
+- Radio Button Group
+- Checkbox
+- Checkbox Group
+
+**Entfernte Varianten „Small“**
+
+Die folgenden Komponenten sind in ihrer Höhe angepasst und ab sofort nur noch in einer Größe auf Scale verfügbar. Wenn du für deinen Anwendungsfall eine andere Größe brauchst, kannst du die Komponenten per CSS-Overwrite ändern.
+
+- Textfield
+- Dropdown
+- Dropdown Select
+- Date Picker
+- Pagination
+
+Den Button unterstützen wir weiterhin in den Größen „Small“ und „Large“.
+Die Höhe des „Large Button“ ist ebenfalls angepasst.
+
+**Barierrefreiheit**
+
+Informationstexte enthalten ab sofort Icons, um Menschen mit Farbfehlsichtigkeit in ihrer Nutzung zu unterstützen. Das sind die geänderten Komponenten:
+
+- Text Field
+- Text Area, Dropdown
+- Dropdown Select
+- Radio Button
+- Radio Button Group
+- Checkbox
+- Checkbox Group
+
+**Sketch Library**
+Die oben genannten Änderungen wurden auch in unserer Sketch-Library angepasst. Zusätzlich haben wir die Symbole der folgenden Komponenten optimiert:
+
+- Buttons
+- Text-Field
+- Text-Area
+- Rating Stars
+- Switch
+- Dropdown
+- Text List
+- Table
+
+Bitte beachte: Einige „Small“-Varianten werden nicht mehr unterstützt und sind in der Library nicht mehr verfügbar. Solltest du in deinem Layout solche Varianten verwenden, kannst du sie über „Layer“ ➔ „Replace with“ durch die neue Standardgröße ersetzen. Hier eine Übersicht der entfernten Komponenten:
+
+| Komponente      | Alte Variantengröße | Neuer Variantenname | Ersetzen durch |
+| --------------- | ------------------- | ------------------- | -------------- |
+| Textfield       | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Dropdown        | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Dropdown Select | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Date Picker     | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Pagination      | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Tab Navigation  | Small               | Standard            | –              |
+|                 | Large               | ❌                  | Standard       |
+| Table           | Small               | Standard            | –              |
+|                 | Large               | ❌                  | Standard       |
+
+**Farbtokens**
+
+Die neuen UI-Farben „White“ und „Black“ sind für Anwendungsfälle geeignet, bei denen die Farbe im Dark und Light Mode identisch ist.
+
 ## Neue Dropdown Select Beta-Komponente
 
 02.08.2022
