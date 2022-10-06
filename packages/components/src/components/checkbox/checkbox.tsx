@@ -70,7 +70,8 @@ export class Checkbox {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
-  private id = i++;
+  private readonly internalId = i++;
+
   componentDidRender() {
     if (this.status !== '') {
       statusNote({
@@ -108,7 +109,7 @@ export class Checkbox {
 
   connectedCallback() {
     if (!this.inputId) {
-      this.inputId = 'input-checkbox-' + this.id;
+      this.inputId = 'input-checkbox-' + this.internalId;
     }
   }
 
@@ -163,7 +164,7 @@ export class Checkbox {
 
   render() {
     const helperText = {
-      id: this.helperText ? `helper-text-${this.id}` : null,
+      id: this.helperText ? `helper-text-${this.internalId}` : null,
       content: this.helperText,
     };
 

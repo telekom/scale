@@ -16,23 +16,25 @@ Um die Komponenten zu verwenden, lade die CSS-Datei sowie JavaScript. Die CSS-Da
 
 ### Plain HTML
 
-```bash
-<link rel="stylesheet" href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css">
-<script type="module" src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"></script>
+```html
+<link
+  rel="stylesheet"
+  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+/>
+<script
+  type="module"
+  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+></script>
 ```
 
 ### Mit Bundler oder ES-Modulen
 
-```bash
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+```js
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements();
 ```
-
-> Ab Juli 2021 unterstützen moderne Build-Tools wie Vite oder Snowpack diesen Lazy-Loading-Mechanismus nicht (siehe [GitHub-Problem im Stencil-Repository](https://github.com/ionic-team/stencil/issues/2827)). Um diese Einschränkung zu umgehen, laden Sie die Bibliothek mit Link- und Skript-Tags wie im "einfachen HTML"-Code weiter oben auf dieser Seite.
 
 ### NPM Packages
 
