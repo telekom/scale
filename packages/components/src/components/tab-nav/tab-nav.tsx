@@ -31,10 +31,9 @@ export class TabNav {
   @Element() el: HTMLElement;
 
   /** True for smaller height and font size in tab headers. */
-  /** @deprecated - css overwrites should replace small */
+  /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  /** @deprecated - css overwrites should replace size */
   @Prop() size: 'small' | 'large';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -94,19 +93,13 @@ export class TabNav {
       customElements.whenDefined('scale-tab-panel'),
     ]).then(() => {
       this.linkPanels();
+      this.propagateSizeToTabs();
     });
 
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
         message: 'Property "small" is deprecated. Please use css overwrite!',
-        type: 'warn',
-        source: this.el,
-      });
-    } else if (this.size) {
-      statusNote({
-        tag: 'deprecated',
-        message: 'Property "size" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.el,
       });
@@ -180,6 +173,16 @@ export class TabNav {
     this.reset();
     nextPanel.hidden = false;
     nextTab.selected = true;
+  }
+
+  /**
+   * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
+   */
+  propagateSizeToTabs() {
+    const action = this.size === 'small' ? 'setAttribute' : 'removeAttribute';
+    const tabs = this.getAllTabs();
+    const panels = this.getAllPanels();
+    [...tabs, ...panels].forEach((child) => child[action]('size', 'small'));
   }
 
   render() {
