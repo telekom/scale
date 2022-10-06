@@ -18,8 +18,7 @@
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
   --color-button: var(--telekom-color-ui-subtle);
   --border-button: var(--border);
-  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
   --radius-first-prompt: var(--radius) 0 0 var(--radius);
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
@@ -72,8 +71,8 @@ button {
   border: var(--border-button);
 }
 button:focus {
-  outline: none;
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: -3px;
 }
 .pagination__first-prompt {
   border-radius: var(--radius-first-prompt);
