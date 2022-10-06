@@ -110,7 +110,7 @@ export class ProgressBar {
                 {this.label}
               </label>
             )}
-            {!!this.showStatus && !this.hasError && this.percentage != 100 && (
+            {!!this.showStatus && !this.hasError && this.percentage !== 100 && (
               <div
                 part="status"
                 class="progress-bar__status"
@@ -126,7 +126,7 @@ export class ProgressBar {
                   size={ICON_SIZE}
                 ></scale-icon-alert-error>
               </div>
-            ) : this.percentage == 100 ? (
+            ) : this.percentage === 100 ? (
               <div class="progress-bar__icon">
                 <scale-icon-alert-success
                   size={ICON_SIZE}
@@ -134,7 +134,7 @@ export class ProgressBar {
               </div>
             ) : null}
           </div>
-          <div part="wrapper" class="progress-bar-wrapper">
+          <div part="wrapper" class="progress-bar__wrapper">
             <div
               part="outer"
               class="progress-bar__outer"
@@ -193,7 +193,7 @@ export class ProgressBar {
       component,
       this.hasError && `${prefix}has-error`,
       this.disabled && `${prefix}disabled`,
-      this.percentage == 100 && `${prefix}completed`
+      this.percentage === 100 && `${prefix}completed`
     );
   }
 }
