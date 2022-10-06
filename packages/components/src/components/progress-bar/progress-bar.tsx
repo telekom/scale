@@ -138,7 +138,7 @@ export class ProgressBar {
             <div
               part="outer"
               class="progress-bar__outer"
-              style={{ height: `${this.strokeWidth}px`}}
+              style={{ height: `${this.strokeWidth}px` }}
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}

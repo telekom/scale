@@ -12,7 +12,8 @@
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --border-invalid: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-hovered);
-  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
@@ -143,7 +144,7 @@
 [part~='select']:not([part~='disabled']):not([part~='steal-focus'])
   [part='combobox']:focus {
   outline: var(--focus-outline);
-  outline-offset: 1px;    
+  outline-offset: 1px;
 }
 
 [part~='invalid'] [part='combobox'] {
