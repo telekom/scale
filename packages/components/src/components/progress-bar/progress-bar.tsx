@@ -13,7 +13,7 @@ import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
-const ICON_SIZE = 14;
+const ICON_SIZE = 16;
 let i = 0;
 @Component({
   tag: 'scale-progress-bar',
