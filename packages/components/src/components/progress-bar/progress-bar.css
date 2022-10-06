@@ -31,7 +31,6 @@
 .progress-bar {
   width: 100%;
   max-width: 30rem;
-  margin: var(--spacing);
 }
 
 .progress-bar--disabled {

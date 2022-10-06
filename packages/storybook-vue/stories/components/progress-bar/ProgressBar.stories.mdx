@@ -46,6 +46,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
             :percentage="$data.percentage"
           >
           </scale-progress-bar>
+          <br/>
           <scale-button variant="secondary" size="small" @click="startSuccess">Start Success</scale-button>
           <scale-button variant="secondary" size="small" @click="startFailure">Start Failure</scale-button>
           <scale-button variant="secondary" size="small" @click="reset">Reset</scale-button>
@@ -69,7 +70,7 @@ export const TemplateInteractive = (args, { argTypes }) => ({
           return;
         }
         this.$data.percentage += 1;
-      }, 100);
+      }, 40);
       this.interval = xxx;
       return xxx;
     },
