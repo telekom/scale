@@ -186,18 +186,23 @@ jobs:
         run: |
           yarn workspace @telekom/scale-visual-tests test:ci -u
 
-      - name: Check for changed snapshots
+      - name: Check for any snapshots changes
         run: |
           sh scripts/porcelain.sh
+
+      - name: Set patch branch name
+        if: failure()
+        id: vars
+        run: echo ::set-output name=branch-name::"visual-snapshots/${{ github.head_ref }}"
 
       - name: Create pull request with new snapshots
         if: failure()
         uses: peter-evans/create-pull-request@v4
         with:
           commit-message: 'test(visual): update snapshots'
-          title: Update visual test snapshots
+          title: 'update visual snapshots: ${{ github.event.pull_request.title }}'
           body: This is an auto-generated PR with visual snapshot updates for ##${{ github.event.number }}.
-          labels: automated pr, visual snapshots
+          labels: automated pr
           branch: ${{ steps.vars.outputs.branch-name }}
 
   uncommitted-changes:
