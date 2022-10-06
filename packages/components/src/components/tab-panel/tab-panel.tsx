@@ -53,5 +53,5 @@ export class TabPanel {
         </div>
       </Host>
     );
-  };
+  }
 }
