@@ -57,7 +57,7 @@ duet-date-picker .duet-date__input:focus {
     var(--telekom-color-ui-border-pressed);    
   outline: var(--focus-outline);
   box-shadow: none;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 duet-date-picker .duet-date__toggle {
@@ -65,12 +65,11 @@ duet-date-picker .duet-date__toggle {
     var(--duet-radius-toggle-focus) 0;
   background: transparent;
   box-shadow: inset 1px 0 0 var(--telekom-color-ui-faint);
-  margin-right: 1px;
 }
 
 duet-date-picker .duet-date__toggle:focus {
   outline: var(--focus-outline);
-  outline-offset: 1px;
+  outline-offset: 2px;
   box-shadow: none;
 }
 
