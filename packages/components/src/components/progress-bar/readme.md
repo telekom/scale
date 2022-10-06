@@ -21,7 +21,6 @@
 | `progressBarId`     | `progress-bar-id`    | (optional) Progress bar id                                                                      | `string`  | `undefined` |
 | `showStatus`        | `show-status`        | (optional) Progress bar percentage text                                                         | `boolean` | `undefined` |
 | `statusDescription` | `status-description` | (optional) Progress bar status description text                                                 | `string`  | `undefined` |
-| `statusInside`      | `status-inside`      | (optional) Progress text display inside bar                                                     | `boolean` | `undefined` |
 | `strokeWidth`       | `stroke-width`       | (optional) Progress bar stroke width                                                            | `number`  | `6`         |
 | `styles`            | `styles`             | (optional) Injected CSS styles                                                                  | `string`  | `undefined` |
 
@@ -31,7 +30,6 @@
 | Part                   | Description |
 | ---------------------- | ----------- |
 | `"inner"`              |             |
-| `"inner-status"`       |             |
 | `"label"`              |             |
 | `"outer"`              |             |
 | `"status"`             |             |
