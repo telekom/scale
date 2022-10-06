@@ -26,8 +26,7 @@ scale-text-field {
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
-    var(--telekom-color-functional-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid var(--telekom-color-functional-focus);
   --height: var(--telekom-spacing-unit-x11);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
@@ -169,7 +168,8 @@ scale-text-field {
 .text-field:not(.text-field--disabled):not(.text-field--readonly)
   .text-field__control:focus {
   border-color: var(--border-color-focus);
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: 1px;    
 }
 
 .text-field:not(.text-field--disabled) .text-field__control:focus::placeholder {
@@ -266,7 +266,8 @@ scale-text-field {
 }
 
 .text-field--readonly .text-field__control:focus {
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: 1px;  
 }
 
 .text-field--disabled label,
