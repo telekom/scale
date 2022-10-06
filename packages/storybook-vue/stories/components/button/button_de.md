@@ -94,7 +94,7 @@ Stehen Buttons in direkter Beziehung zueinander, dann ordne sie als Gruppe an. W
 
 In Prozessen und modalen Dialogen sind Buttons rechtsbündig angeordnet, um den Fortschritt anzuzeigen. Platziere den Primär-Button rechts und den Sekundär-Button links. Bei Formularen sind Buttons linksbündig am Inhalt ausgerichtet. Hier setzt du den Primär-Button links und den Sekundär-Button rechts.
 
-![Image Name](assets/3_components/button/Button_Group.png)
+![Image Name](assets/3_components/button/ButtonGroup_Modal.png)
 
 ### Anordnung von Icon und Label
 

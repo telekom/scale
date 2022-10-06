@@ -56,7 +56,7 @@ export default {
     styles: { type: String },
     disabled: { type: Boolean, default: false },
     withIcon: { type: Boolean, default: true },
-    size: { type: String, default: 'large' },
+    size: { type: String, default: 'small' },
   },
 };
 </script>

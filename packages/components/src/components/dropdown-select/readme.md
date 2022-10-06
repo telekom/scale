@@ -34,12 +34,10 @@
 | Part                   | Description |
 | ---------------------- | ----------- |
 | `"combobox-container"` |             |
-| `"helper-text"`        |             |
 | `"icon"`               |             |
 | `"label"`              |             |
 | `"listbox"`            |             |
 | `"listbox-pad"`        |             |
-| `"meta"`               |             |
 
 
 ## Dependencies
@@ -49,6 +47,7 @@
 - [scale-icon-action-success](../icons/action-success)
 - [scale-icon-navigation-collapse-up](../icons/navigation-collapse-up)
 - [scale-icon-navigation-collapse-down](../icons/navigation-collapse-down)
+- [scale-helper-text](../helper-text)
 
 ### Graph
 ```mermaid
@@ -56,6 +55,10 @@ graph TD;
   scale-dropdown-select --> scale-icon-action-success
   scale-dropdown-select --> scale-icon-navigation-collapse-up
   scale-dropdown-select --> scale-icon-navigation-collapse-down
+  scale-dropdown-select --> scale-helper-text
+  scale-helper-text --> scale-icon-alert-information
+  scale-helper-text --> scale-icon-alert-error
+  scale-helper-text --> scale-icon-alert-success
   style scale-dropdown-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

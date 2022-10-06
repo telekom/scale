@@ -1,5 +1,34 @@
 # Aktualisierung der Sketch Library
 
+## Update 10.09.2022
+
+Einige Varianten unserer Komponenten wurden entfernt (siehe Update History). In bestehenden Layouts werden die Symbole weiterhin als Teil der Library angezeigt, auch wenn sie nicht mehr verfügbar sind. Bitte halte deine Layouts aktuell, indem du die verwendeten Elemente über „Replace with“ erneut verknüpfst. So geht's:
+
+### 1. Prüfe dein Dokument nach entfernten Symbolen
+
+Die folgenden Komponenten werden nicht mehr unterstützt. Prüfe am besten, ob du eine davon verwendest.
+
+| Komponente      | Alte Variantengröße | Neuer Variantenname | Ersetzen durch |
+| --------------- | ------------------- | ------------------- | -------------- |
+| Textfield       | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Dropdown        | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Dropdown Select | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Date Picker     | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Pagination      | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Table           | Small               | Standard            | –              |
+|                 | Large               | ❌                  | Standard       |
+
+### 2. Ersetze die alten Symbole
+
+In Sketch lassen sich verwendete Komponenten einfach durch Symbole austauschen. Markiere dafür das zu überschreibende Element und klicke im Menü unter „Layer“ ➔ „Replace with“. Wähle dann „Telekom Scale Components“ und suche nach dem entsprechenden Symbol.
+
+<img src="assets/replace-component-de.png"  />
+
 ## Release 19.04.2022 mit Dark Mode
 
 Scale enthält nun alle Komponenten auch in einer [Dark Mode](./?path=/docs/guidelines-light-and-dark-mode--page)-Variante. Darüber hinaus wurde der Light Mode optimiert. Beide Varianten sind als zwei separate Libraries verfügbar. Du kannst jederzeit den verwendeten Modus wechseln, indem du die eine Library mit der anderen ersetzt.

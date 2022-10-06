@@ -21,6 +21,8 @@
   color: var(--color);
   min-width: var(--min-width);
   aspect-ratio: var(--aspect-ratio);
+  /* needed for browsers not supporting aspect-ratio */
+  min-height: var(--min-width);
   transform: rotateZ(var(--rotation, 0deg));
 }
 

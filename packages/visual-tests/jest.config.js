@@ -27,5 +27,6 @@ module.exports = {
         customScriptPath: './inject-fail-images.js',
       },
     ],
+    './outdated-snapshot-reporter.js',
   ],
 };
