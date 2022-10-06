@@ -43,6 +43,17 @@ export class TabPanel {
     }
   }
 
+
+
+
+
+
+
+
+
+
+
+
   render() {
     return (
       <Host id={`scale-tab-panel-${this.generatedId}`} role="tabpanel">
@@ -53,5 +64,5 @@ export class TabPanel {
         </div>
       </Host>
     );
-  }
+  };
 }
