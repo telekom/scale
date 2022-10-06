@@ -121,7 +121,9 @@ jobs:
   visual-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Restore Lerna
         id: yarn-cache
@@ -180,15 +182,28 @@ jobs:
           yarn workspace @telekom/scale-visual-tests copy
 
       - name: Run visual tests
+        id: visual-tests
         run: |
-          yarn workspace @telekom/scale-visual-tests test:ci
+          yarn workspace @telekom/scale-visual-tests test:ci -u
 
-      - name: Upload Diff output
-        uses: actions/upload-artifact@v2
+      - name: Check for any snapshots changes
+        run: |
+          sh scripts/porcelain.sh
+
+      - name: Set patch branch name
         if: failure()
+        id: vars
+        run: echo ::set-output name=branch-name::"visual-snapshots/${{ github.head_ref }}"
+
+      - name: Create pull request with new snapshots
+        if: failure()
+        uses: peter-evans/create-pull-request@v4
         with:
-          name: diff-output
-          path: packages/visual-tests/src/__image_snapshots__/__diff_output__
+          commit-message: 'test(visual): update snapshots'
+          title: 'update visual snapshots: ${{ github.event.pull_request.title }}'
+          body: This is an auto-generated PR with visual snapshot updates for \#${{ github.event.number }}.
+          labels: automated pr
+          branch: ${{ steps.vars.outputs.branch-name }}
 
   uncommitted-changes:
     runs-on: ubuntu-latest
