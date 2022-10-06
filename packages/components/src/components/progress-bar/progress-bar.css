@@ -10,21 +10,22 @@
  */
 
 :host {
+  --background: var(--telekom-color-primary-standard);
+  --background-color: var(--telekom-color-ui-faint);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --background-error: var(--telekom-color-functional-danger-subtle);
   --color-success: var(--telekom-color-text-and-icon-functional-success);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --background: var(--telekom-color-primary-standard);
-  --background-color: var(--telekom-color-ui-faint);
+  --progress-bar-outer-size: var(--telekom-spacing-unit-x2);
+  --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
+  --font-label: var(--telekom-text-style-ui);
   --color-inner-status: var(--telekom-color-primary-standard);
   --font-size-inner-status: var(--telekom-typography-font-size-small);
   --font-size-status: var(--telekom-typography-font-size-small);
   --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
-  --color-status: var(--telekom-color-text-and-icon-additional);
   --color-status-description: var(--telekom-color-text-and-icon-additional);
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
-  --spacing: 6px 0;
 }
 
 .progress-bar {
@@ -49,10 +50,11 @@
 
 .progress-bar__label {
   display: block;
-  padding: var(--spacing);
+  padding: var(--telekom-spacing-unit-x3) 0;
+  font: var(--font-label);
 }
 
-.progress-bar-wrapper {
+.progress-bar__wrapper {
   width: 100%;
   display: flex;
   box-sizing: border-box;
@@ -61,8 +63,8 @@
 
 .progress-bar__outer {
   width: 100%;
-  height: var(--telekom-spacing-unit-x2);
-  margin: var(--spacing);
+  height: var(--progress-bar-outer-size);
+  margin-bottom: var(--telekom-spacing-unit-x2);
   margin-left: 0;
   overflow: hidden;
   position: relative;
@@ -73,7 +75,7 @@
 .progress-bar__inner {
   top: 0;
   left: 0;
-  height: var(--telekom-spacing-unit-x1);
+  height: var(--progress-bar-inner-size);
   display: flex;
   position: absolute;
   align-items: center;
@@ -84,16 +86,10 @@
   background: var(--background);
 }
 
-.progress-bar__inner-status {
-  color: var(--color-inner-status);
-  padding: 0 12px;
-  font-size: var(--font-size-inner-status);
-}
-
 .progress-bar__status {
-  display: inline-block;
-  color: var(--color-status);
-  padding: var(--spacing);
+  padding: var(--telekom-spacing-unit-x3) 0;
+  font: var(--font-label);
+  font-variant-numeric: tabular-nums;
 }
 
 .progress-bar--completed .progress-bar__icon {

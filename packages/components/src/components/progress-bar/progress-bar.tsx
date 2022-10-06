@@ -13,7 +13,7 @@ import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
-const ICON_SIZE = 14;
+const ICON_SIZE = 16;
 let i = 0;
 @Component({
   tag: 'scale-progress-bar',
@@ -39,8 +39,6 @@ export class ProgressBar {
   @Prop() icon?: string;
   /** (optional) Progress bar status description text */
   @Prop() statusDescription?: string;
-  /** (optional) Progress text display inside bar */
-  @Prop() statusInside?: boolean;
   /** (optional) Progress bar error */
   @Prop() hasError?: boolean;
   /** (optional) Progress bar disabled */
@@ -112,7 +110,7 @@ export class ProgressBar {
                 {this.label}
               </label>
             )}
-            {!!this.showStatus && !this.hasError && this.percentage != 100 && (
+            {!!this.showStatus && !this.hasError && this.percentage !== 100 && (
               <div
                 part="status"
                 class="progress-bar__status"
@@ -121,23 +119,26 @@ export class ProgressBar {
                 {this.percentage}%
               </div>
             )}
-            <div class="progress-bar__icon">
-              {this.hasError ? (
+
+            {this.hasError ? (
+              <div class="progress-bar__icon">
                 <scale-icon-alert-error
                   size={ICON_SIZE}
                 ></scale-icon-alert-error>
-              ) : this.percentage == 100 ? (
+              </div>
+            ) : this.percentage === 100 ? (
+              <div class="progress-bar__icon">
                 <scale-icon-alert-success
                   size={ICON_SIZE}
                 ></scale-icon-alert-success>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
           </div>
-          <div part="wrapper" class="progress-bar-wrapper">
+          <div part="wrapper" class="progress-bar__wrapper">
             <div
               part="outer"
               class="progress-bar__outer"
-              style={{ height: `${this.strokeWidth}px` }}
+              style={{ height: `${this.strokeWidth}px`}}
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}
@@ -151,17 +152,7 @@ export class ProgressBar {
                 part="inner"
                 class="progress-bar__inner"
                 style={this.progressStyle()}
-              >
-                {!!this.statusInside && (
-                  <div
-                    part="inner-status"
-                    class="progress-bar__inner-status"
-                    aria-hidden="true"
-                  >
-                    {this.percentage}%
-                  </div>
-                )}
-              </div>
+              ></div>
             </div>
             <slot name="icon"></slot>
           </div>
@@ -202,7 +193,7 @@ export class ProgressBar {
       component,
       this.hasError && `${prefix}has-error`,
       this.disabled && `${prefix}disabled`,
-      this.percentage == 100 && `${prefix}completed`
+      this.percentage === 100 && `${prefix}completed`
     );
   }
 }
