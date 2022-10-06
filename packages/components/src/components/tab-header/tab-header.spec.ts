@@ -43,6 +43,9 @@ describe('TabHeader', () => {
 
     element.hasFocus = true;
     expect(element.getCssClassMap()).toContain('has-focus');
+
+    element.size = 'small';
+    expect(element.getCssClassMap()).toContain('small');
   });
 
   it('should handle blur event', async () => {

@@ -1,83 +1,98 @@
-<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Tag</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
-</div>
-
 Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer\*innen auf markierte und kategorisierte Inhalte.
 
 ## Allgemein
 
-Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statischer Tag weist auf eine Kategorie hin, ein interaktiver Tag zeigt beispielsweise gewählte Filter an und kann entfernt werden.
+Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statischer Tag lässt sich nicht entfernen und weist auf eine Kategorie oder ein Attribut hin. Ein interaktiver Tag kann hingegen ausgeblendet werden und zeigt beispielsweise gewählte Filter an.
 
-### Verwende einen Tag, um
+**Verwende einen Tag, um**
 
 - die Aufmerksamkeit der Nutzer\*innen auf bestimmte Elemente zu lenken, die sonst möglicherweise übersehen werden,
 - Nutzer\*innen die Zuordnung von Inhalten zu erleichtern (beispielsweise in Tabellen) und
 - Nutzer\*innen ausgewählte Filter anzuzeigen.
-
-### Verwende Tags besser nicht, wenn
+- **Verwende Tags besser nicht, wenn**
 
 - sie mit Buttons verwechselt werden könnten oder
 - relevante Inhalte dadurch nicht mehr erkennbar sind (insbesondere, wenn es zu viele Tags gibt).
 
-## Varianten
+## **Basistypen**
 
-### Statischer Tag
+**Statischer Tag**
 
 Ein statischer Tag hat keine interaktive Funktion. Er zeigt lediglich eine Information an, bspw. eine Kategorie innerhalb einer Tabelle.
 
-![Image Name](assets/3_components/chip/Tag-static.png)
+![Tag-static.png](assets/3_components/tag/tag-static.png)
 
-### Interaktiver Tag
+**Interaktiver Tag**
 
 Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon zu schließen. Eine typische Anwendung ist bspw. das Deaktivieren von gesetzten Filtern.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
 
-## Elemente
+## **Varianten**
 
-![Image Name](assets/3_components/chip/Tag-Elements.png)
+**Farben**
 
-### Container (1)
+![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
-Der Container beinhaltet ein Label und optional ein Schließen-Icon.
+Die Standardfarbe ist Dunkelgrau mit schwarzem Text. Jede definierte Farbe hat eine Standard- und eine markante Version mit dunklerem Hintergrund. Die Version „Strong“ eignet sich für eine stärkere Betonung. Alle Farbvarianten sind für Lesbarkeit und Barrierefreiheit optimiert.
 
-### Label (2)
-
-Formuliere das Label eindeutig und kurz.
-
-### Icon (3)
-
-Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
-
-## Farben
-
-Die Standardfarbe für Tags ist Dunkelgrau. So garantierst du maximalen Kontrast und beste Lesbarkeit.
-
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+Definierte Farben:
+Teal
+Olive
+Violet
+Brown
+Cyan
+Yellow
+Green
+Orange
+Red
 
 Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst du eine eigene Farbe wählen. Wichtig ist, dass das Farbschema verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
-![Image Name](assets/3_components/chip/Tag-color_de.png)
+![Tag-Basic-Colors.png](assets/3_components/tag/tag-basic-colors.png)
 
-## Größen
+**Größen**
 
-Du kannst Tags in zwei Größen verwenden. Achte darauf, die beiden Größen nicht zu kombinieren.
+Scale bietet Tags in zwei Größen an: Large und Small. Du kannst die Größe der Tags bei Bedarf anpassen.
 
-### Large
+**Large**
 
 Verwende große Tags als Standard.
 
-![Image Name](assets/3_components/chip/Tag-size-default.png)
+![Tag-size-large.png](assets/3_components/tag/tag-size-large.png)
 
-### Small
+**Small**
 
 Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße hast.
 
-![Image Name](assets/3_components/chip/Tag-size-small.png)
+![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
 
-### Best Practices
+### Barrierefreiheit
 
-- Mische keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
-- Entscheide dich für eine Größe.
-- Verwende ein eindeutiges Schlüsselwort für das Label.
+-
+
+### Deaktivierter Zustand
+
+![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
+
+### Elemente
+
+**Container (1)**
+
+Der Container beinhaltet ein Label und optional ein Schließen-Icon.
+
+**Label (2)**
+
+Die Beschriftung steht für eine Kategorie oder ein Attribut. Formuliere das Label eindeutig und kurz.
+
+**Icon (3)**
+
+Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
+
+![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
+
+### **Best Practices**
+
+- Kombiniere keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
+- Wähle eine einheitliche Größe für Tags.
+- Verwende eine eindeutige Bezeichnung für das Label.
