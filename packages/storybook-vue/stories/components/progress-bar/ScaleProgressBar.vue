@@ -8,7 +8,6 @@
     :show-status="showStatus"
     :stroke-width="strokeWidth"
     :percentage="percentage"
-    :message="message"
     :styles="styles"
   >
   </scale-progress-bar>
@@ -26,7 +25,6 @@ export default {
     showStatus: Boolean,
     strokeWidth: Number,
     percentage: Number,
-    message: String,
   },
 };
 </script>

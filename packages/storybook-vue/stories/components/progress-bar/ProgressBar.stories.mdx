@@ -137,17 +137,17 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story
-    name="Determinate"
+    name="Standard"
     args={{
       percentage: 20,
-      label: 'Determinate',
+      label: 'Standard',
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Determinate" />
+<ArgsTable story="Standard" />
 
 ### Scoped CSS variables
 
@@ -160,6 +160,7 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
   --background: var(--telekom-color-primary-standard);
   --background-color: var(--telekom-color-ui-faint);
   --color-inner-status: var(--telekom-color-primary-standard);
+  --font-label: var(--telekom-text-style-ui);
   --font-size-inner-status: var(--telekom-typography-font-size-small);
   --font-size-status: var(--telekom-typography-font-size-small);
   --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
@@ -173,37 +174,15 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## Progress custom
+## Description
 
 <Canvas withSource="none">
   <Story
-    name="Progress custom"
-    args={{
-      percentage: 20,
-      label: 'Progress custom',
-    }}
-  >
-    {TemplateCustomColor.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-progress-bar
-  percentage="20"
-  style="--background: #009DE0"
-  label="Progress custom"
-></scale-progress-bar>
-```
-
-## Progress with description
-
-<Canvas withSource="none">
-  <Story
-    name="Progress with description"
+    name="Description"
     args={{
       percentage: 40,
       statusDescription: 'Progress status description text',
-      label: 'Progress with description',
+      label: 'Description',
       showStatus: true,
     }}
   >
@@ -220,16 +199,16 @@ For Shadow Parts, please inspect the element's #shadow.
 ></scale-progress-bar>
 ```
 
-## Complete default
+## Completed
 
 <Canvas withSource="none">
   <Story
-    name="Complete default"
+    name="Completed"
     args={{
       percentage: 100,
       showStatus: false,
       statusDescription: 'Upload complete',
-      label: 'Complete default',
+      label: 'Completed',
     }}
   >
     {Template.bind({})}
@@ -238,37 +217,10 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-progress-bar
-  percentage="40"
-  show-status="false"
+  percentage="100"
+  show-status="true"
   status-description="Upload complete"
-  label="Complete default"
->
-</scale-progress-bar>
-```
-
-## Complete custom color
-
-<Canvas withSource="none">
-  <Story
-    name="Complete custom color"
-    args={{
-      percentage: 100,
-      showStatus: false,
-      statusDescription: 'Upload complete',
-      label: 'Complete custom color',
-    }}
-  >
-    {TemplateCustomColor.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-progress-bar
-  label="Complete custom color"
-  percentage="40"
-  show-status="false"
-  status-description="Upload complete"
-  style="--color-success: purple"
+  label="Status completed"
 >
 </scale-progress-bar>
 ```
@@ -279,9 +231,9 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Error"
     args={{
-      percentage: 0,
+      percentage: 40,
       hasError: true,
-      showStatus: false,
+      showStatus: true,
       statusDescription: 'Upload fail',
       label: 'Error',
     }}
@@ -294,8 +246,8 @@ For Shadow Parts, please inspect the element's #shadow.
 <scale-progress-bar
   percentage="40"
   has-error
-  show-status="false"
-  status-description="Upload fail"
+  show-status="true"
+  status-description="Upload failed"
   label="Complete error"
 >
 </scale-progress-bar>
