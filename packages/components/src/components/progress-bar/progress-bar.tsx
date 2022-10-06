@@ -39,8 +39,6 @@ export class ProgressBar {
   @Prop() icon?: string;
   /** (optional) Progress bar status description text */
   @Prop() statusDescription?: string;
-  /** (optional) Progress text display inside bar */
-  @Prop() statusInside?: boolean;
   /** (optional) Progress bar error */
   @Prop() hasError?: boolean;
   /** (optional) Progress bar disabled */
@@ -121,23 +119,27 @@ export class ProgressBar {
                 {this.percentage}%
               </div>
             )}
-            <div class="progress-bar__icon">
+            
               {this.hasError ? (
-                <scale-icon-alert-error
-                  size={ICON_SIZE}
-                ></scale-icon-alert-error>
+                <div class="progress-bar__icon">
+                  <scale-icon-alert-error
+                    size={ICON_SIZE}
+                  ></scale-icon-alert-error>
+                </div>
               ) : this.percentage == 100 ? (
-                <scale-icon-alert-success
-                  size={ICON_SIZE}
-                ></scale-icon-alert-success>
+                <div class="progress-bar__icon">
+                  <scale-icon-alert-success
+                    size={ICON_SIZE}
+                  ></scale-icon-alert-success>
+                </div>
               ) : null}
-            </div>
+            
           </div>
           <div part="wrapper" class="progress-bar-wrapper">
             <div
               part="outer"
               class="progress-bar__outer"
-              style={{ height: `${this.strokeWidth}px` }}
+              style={{ height: `${this.strokeWidth}px`, marginRight: '6px' }}
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}
@@ -152,15 +154,6 @@ export class ProgressBar {
                 class="progress-bar__inner"
                 style={this.progressStyle()}
               >
-                {!!this.statusInside && (
-                  <div
-                    part="inner-status"
-                    class="progress-bar__inner-status"
-                    aria-hidden="true"
-                  >
-                    {this.percentage}%
-                  </div>
-                )}
               </div>
             </div>
             <slot name="icon"></slot>
