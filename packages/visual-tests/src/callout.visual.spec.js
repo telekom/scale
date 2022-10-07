@@ -13,6 +13,7 @@ describe('Callout', () => {
       ['large-and-small'],
     ])('%p', async (variant) => {
       await global.runSetup(`beta-components-callout--${variant}`);
+      await global.page.waitFor(500);
       await global.visualCheck();
     });
   });
