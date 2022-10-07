@@ -52,8 +52,6 @@ duet-date-picker .duet-date__input:hover {
 }
 
 duet-date-picker .duet-date__input:focus {
-  /* border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-border-pressed); */
   border: var(--telekom-line-weight-standard) solid
     var(--telekom-color-ui-border-pressed);
   outline: var(--focus-outline);
