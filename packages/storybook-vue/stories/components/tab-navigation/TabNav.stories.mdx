@@ -58,7 +58,7 @@ export const Template = (args, { argTypes }) => ({
 ## Text & Icon
 
 <Canvas withSource="none">
-  <Story name="Text & Icon" args={{}}>
+  <Story name="Text & Icon" args={{ size: 'small' }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -142,7 +142,7 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Text Only
 
 <Canvas withSource="none">
-  <Story name="Text Only" args={{ withIcon: false }}>
+  <Story name="Text Only" args={{ withIcon: false, size: 'small' }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -171,7 +171,10 @@ For Shadow Parts, please inspect the element's #shadow.
 ## Disabled Tabs
 
 <Canvas withSource="none">
-  <Story name="Disabled Tabs" args={{ disabled: true, withIcon: false }}>
+  <Story
+    name="Disabled Tabs"
+    args={{ disabled: true, withIcon: false, size: 'small' }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -197,17 +200,16 @@ For Shadow Parts, please inspect the element's #shadow.
 </scale-tab-nav>
 ```
 
-## Small, Text & Icon
+## Large, Text & Icon
 
 <Canvas withSource="none">
-  <Story name="Text & Icon, Small" args={{ size: 'small' }}>
+  <Story name="Large, Text & Icon" args={{ size: 'large' }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-tab-nav size="small">
-  <!-- Deprecated: <scale-tab-nav small> -->
+<scale-tab-nav size="large">
   <scale-tab-header slot="tab">
     <scale-icon-home-home></scale-icon-home-home> General
   </scale-tab-header>
@@ -235,17 +237,16 @@ For Shadow Parts, please inspect the element's #shadow.
 </scale-tab-nav>
 ```
 
-## Small, Text Only, Small
+## Large, Text Only
 
 <Canvas withSource="none">
-  <Story name="Text Only, Small" args={{ size: 'small', withIcon: false }}>
+  <Story name="Large, Text Only" args={{ size: 'large', withIcon: false }}>
     {Template.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-tab-nav size="small">
-  <!-- Deprecated: <scale-tab-nav small> -->
+<scale-tab-nav size="large">
   <scale-tab-header slot="tab">General</scale-tab-header>
   <scale-tab-panel slot="panel">
     Freegan kinfolk farm-to-table humblebrag cred…
