@@ -50,7 +50,7 @@ The value increase/decrease from both knobs is by increments of 1.
 
 **Stepped slider**
 
-Der Regler ist so eingestellt, dass der Wert in bestimmten Schritten erhöht und verringert wird (bspw. um den Wert 10 anstatt 1).
+The slider increases and decreases the value by set increments (e.g., increments of 10 instead of 1).
 
 ![slider_types-stepped-EN.png](assets/3_components/slider/slider_types-stepped-EN.png)
 
@@ -58,32 +58,29 @@ Der Regler ist so eingestellt, dass der Wert in bestimmten Schritten erhöht und
 
 ## Variants
 
-### **Ein-/ausgeblendete Elemente**
+### **Shown/hidden elements**
 
-Aktueller Wert ein-/ausgeblendet
+Current value shown/hidden
 
 ![slider_variants-EN.png](assets/3_components/slider/slider_variants-EN.png)
 
-Meldung ein-/ausgeblendet
-
+Message shown/hidden
 ![slider_variants-message-EN.png](assets/3_components/slider/slider_variants-message-EN.png)
 
-### **Farben**
+### **Colors**
 
-Der Slider hat einen magentafarbenen Balken. Möchtest du mit anderen Farben arbeiten, kannst du entweder eine aus der Telekom Farbpalette auswählen oder eine eigene Farbe festlegen. Achte in jedem Fall darauf, dass die Farbe für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
+Telekom sliders use Magenta as an accent color. If you need to apply a custom color, you can either use colors from the Telekom color palette or create a new one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
 ![slider_color-EN.png](assets/3_components/slider/slider_color-EN.png)
 
 ### **Disabled state**
 
-Deaktiviere den Slider, wenn
+Disable the slider if:
 
-- eine andere Aktion erfolgen muss, bevor der Slider nutzbar ist oder
-- die Nutzer\*innen den Wert/Wertebereich aktuell nicht ändern können.
+- another action has to take place before the slider is usable or
+- users cannot change the value at the moment.
 
-Wenn der Slider deaktiviert ist, werden die Regler entfernt, um anzuzeigen, dass der Wert nicht verändert werden kann.
-
-Deaktivierter Zustand (Regler ausgeblendet)
+When disabled, remove the knobs to show that the value can’t be changed.
 
 ![slider_disabled-EN.png](assets/3_components/slider/slider_disabled-EN.png)
 
