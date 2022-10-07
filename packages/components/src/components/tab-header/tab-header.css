@@ -11,7 +11,7 @@
 
 :host {
   outline: none;
-  --font-size: var(--telekom-typography-font-size-callout);
+  --font-size: var(--telekom-typography-font-size-body);
   --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --height: 3rem;
@@ -25,7 +25,7 @@
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --radius: var(--telekom-radius-standard);
 
-  --font-size-small: var(--telekom-typography-font-size-body);
+  --font-size-large: var(--telekom-typography-font-size-callout);
 }
 
 .tab-header {
@@ -135,10 +135,10 @@
 
 /* small size */
 
-.tab-header--small {
-  padding-right: var(--tab-spacing-horizontal-small);
-  padding-left: var(--tab-spacing-horizontal-small);
-  padding-top: var(--tab-spacing-vertical-small);
-  padding-bottom: var(--tab-spacing-vertical-small);
-  font-size: var(--font-size-small);
+.tab-header--large {
+  padding-right: var(--tab-spacing-horizontal-large);
+  padding-left: var(--tab-spacing-horizontal-large);
+  padding-top: var(--tab-spacing-vertical-large);
+  padding-bottom: var(--tab-spacing-vertical-large);
+  font-size: var(--font-size-large);
 }

@@ -36,7 +36,7 @@ export class TabHeader {
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large';
+  @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -141,7 +141,7 @@ export class TabHeader {
     return classNames(
       component,
       this.selected && `${prefix}selected`,
-      this.size === 'small' && `${prefix}small`,
+      this.size === 'large' && `${prefix}large`,
       this.hasFocus && `${prefix}has-focus`,
       this.disabled && `${prefix}disabled`
     );
