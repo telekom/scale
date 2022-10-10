@@ -320,7 +320,6 @@ export class Slider {
   render() {
     const helperTextId = `slider-helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
-
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
@@ -379,9 +378,9 @@ export class Slider {
                         role="slider"
                         id={this.sliderId + '-from'}
                         aria-valuemin={this.min}
-                        aria-valuenow={this.value}
+                        aria-valuenow={`${this.valueFrom} to ${this.valueTo}`}
                         aria-valuemax={this.max}
-                        aria-valuetext={`${this.value}`}
+                        aria-valuetext={`${this.valueFrom} to ${this.valueTo}`}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
@@ -401,9 +400,9 @@ export class Slider {
                         role="slider"
                         id={this.sliderId + '-to'}
                         aria-valuemin={this.min}
-                        aria-valuenow={this.value}
+                        aria-valuenow={`${this.valueFrom} to ${this.valueTo}`}
                         aria-valuemax={this.max}
-                        aria-valuetext={`${this.value}`}
+                        aria-valuetext={`${this.valueFrom} to ${this.valueTo}`}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
