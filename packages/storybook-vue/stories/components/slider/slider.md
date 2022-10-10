@@ -88,23 +88,23 @@ When disabled, remove the knobs to show that the value can’t be changed.
 
 ![slider-elements-EN.png](assets/3_components/slider/slider-elements-EN.png)
 
-**Label (1)**
+#### Label (1)
 
 The label clearly indicates what kind of value is being adjusted.
 
-**Value (2) (optional)**
+#### Value (2) (optional)
 
 Display the selected value either as a single value for the value slider or as a range for the range slider.
 
-**Knob 1 (3) (for a range slider)**
+#### Knob 1 (3) (for a range slider)
 
 Knob 1 indicates the starting point of the range the user wants to select.
 
-**Knob 2 (4)**
+#### Knob 2 (4)
 
 Knob 2 indicates the end point of the range the user wants to select.
 
-**Message (5) (optional)**
+#### Message (5) (optional)
 
 Display error or informational messages here.
 

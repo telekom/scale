@@ -83,15 +83,15 @@ Use small tags if space is limited.
 
 ## Elements
 
-**Container (1)**
+#### Container (1)
 
 The container contains a label and optionally, a remove icon.
 
-**Label (2)**
+#### Label (2)
 
 The label represents a category or an attribute; try to make it clear and concise.
 
-**Icon (3)**
+#### Icon (3)
 
 By clicking/tapping on the icon, users remove the tag.
 

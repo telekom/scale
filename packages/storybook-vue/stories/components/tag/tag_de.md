@@ -76,23 +76,23 @@ Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße has
 
 -
 
-### Elemente
+## Elemente
 
-**Container (1)**
+#### Container (1)
 
 Der Container beinhaltet ein Label und optional ein Schließen-Icon.
 
-**Label (2)**
+#### Label (2)
 
 Die Beschriftung steht für eine Kategorie oder ein Attribut. Formuliere das Label eindeutig und kurz.
 
-**Icon (3)**
+#### Icon (3)
 
 Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
 
 ![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
 
-### **Best Practices**
+## Best Practices
 
 - Kombiniere keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
 - Wähle eine einheitliche Größe für Tags.

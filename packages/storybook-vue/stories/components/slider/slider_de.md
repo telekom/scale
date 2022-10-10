@@ -90,23 +90,23 @@ Deaktivierter Zustand (Regler ausgeblendet)
 
 ![slider-elements-DE.png](assets/3_components/slider/slider-elements-DE.png)
 
-**Label (1)**
+#### Label (1)
 
 Die Beschriftung zeigt deutlich an, welche Art von Wert aktuell eingestellt ist.
 
-**Value (2)**
+#### Value (2)
 
 Der ausgewählte Wert zeigt entweder einen Einzelwert oder den Wertebereich eines Sliders an.
 
-**Regler 1 (3) (Bei Slider mit Wertebereich)**
+#### Regler 1 (3) (Bei Slider mit Wertebereich)
 
 Regler 1 zeigt den Startpunkt des Wertebereichs an.
 
-**Regler 2 (4)**
+#### Regler 2 (4)
 
 Regler 2 zeigt den Endpunkt des Wertebereichs an.
 
-**Meldung (5)**
+#### Meldung (5)
 
 Hier werden Fehler und Hinweise angezeigt.
 
