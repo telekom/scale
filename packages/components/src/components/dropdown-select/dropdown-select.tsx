@@ -464,17 +464,11 @@ export class DropdownSelect {
             </div>
           </div>
 
-          {!!this.helperText && (
-            <div
-              part="meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              {!!this.helperText && (
-                <div part="helper-text">{this.helperText}</div>
-              )}
-            </div>
+          {this.helperText && (
+            <scale-helper-text
+              helperText={this.helperText}
+              variant={this.invalid ? 'danger' : 'neutral'}
+            ></scale-helper-text>
           )}
         </div>
       </Host>

@@ -23,8 +23,8 @@
   --transition-combobox: var(--transition);
   --font-size-combobox: var(--telekom-typography-font-size-body);
   --background-combobox: var(--telekom-color-ui-state-fill-standard);
-  --spacing-combobox: var(--telekom-spacing-unit-x3)
-    var(--telekom-spacing-unit-x10) 0 calc(var(--spacing-x) - 1px);
+  --spacing-combobox: 18px var(--telekom-spacing-unit-x10) 5px
+    calc(var(--spacing-x) - 1px);
 
   /*helper-text*/
   --transition-helper-text: var(--transition);
