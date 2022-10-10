@@ -4,33 +4,34 @@ Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer\*inne
 
 Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statischer Tag lässt sich nicht entfernen und weist auf eine Kategorie oder ein Attribut hin. Ein interaktiver Tag kann hingegen ausgeblendet werden und zeigt beispielsweise gewählte Filter an.
 
-**Verwende einen Tag, um**
+### Verwende einen Tag, um
 
 - die Aufmerksamkeit der Nutzer\*innen auf bestimmte Elemente zu lenken, die sonst möglicherweise übersehen werden,
 - Nutzer\*innen die Zuordnung von Inhalten zu erleichtern (beispielsweise in Tabellen) und
 - Nutzer\*innen ausgewählte Filter anzuzeigen.
-- **Verwende Tags besser nicht, wenn**
+
+### Verwende Tags besser nicht, wenn
 
 - sie mit Buttons verwechselt werden könnten oder
 - relevante Inhalte dadurch nicht mehr erkennbar sind (insbesondere, wenn es zu viele Tags gibt).
 
-## **Basistypen**
+## Basistypen
 
-**Statischer Tag**
+### Statischer Tag
 
 Ein statischer Tag hat keine interaktive Funktion. Er zeigt lediglich eine Information an, bspw. eine Kategorie innerhalb einer Tabelle.
 
 ![Tag-static.png](assets/3_components/tag/tag-static.png)
 
-**Interaktiver Tag**
+### Interaktiver Tag
 
 Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon zu schließen. Eine typische Anwendung ist bspw. das Deaktivieren von gesetzten Filtern.
 
 ![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
 
-## **Varianten**
+## Varianten
 
-**Farben**
+### Farben
 
 ![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
@@ -51,29 +52,29 @@ Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst d
 
 ![Tag-Basic-Colors.png](assets/3_components/tag/tag-basic-colors.png)
 
-**Größen**
+### Größen
 
 Scale bietet Tags in zwei Größen an: Large und Small. Du kannst die Größe der Tags bei Bedarf anpassen.
 
-**Large**
+### Large
 
 Verwende große Tags als Standard.
 
 ![Tag-size-large.png](assets/3_components/tag/tag-size-large.png)
 
-**Small**
+### Small
 
 Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße hast.
 
 ![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
 
-### Barrierefreiheit
-
--
-
 ### Deaktivierter Zustand
 
 ![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
+
+## Barrierefreiheit
+
+-
 
 ### Elemente
 
