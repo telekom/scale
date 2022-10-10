@@ -4,7 +4,7 @@ Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
-20.09.2022
+20.10.2022
 
 **Visuelle und funktionale Änderungen**
 
@@ -15,6 +15,8 @@ Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 - Cards: Erweiterung möglicher Konfigurationen und Beispiele
 - Tab Navigation: Visuelle Optimierung
 
+<br>
+
 **Optimierung für Geräte mit Touchscreen**
 
 Die Größe der folgenden Komponenten ist angepasst und vereinfacht die Nutzung auf Touchscreens:
@@ -23,6 +25,8 @@ Die Größe der folgenden Komponenten ist angepasst und vereinfacht die Nutzung 
 - Radio Button Group
 - Checkbox
 - Checkbox Group
+
+<br>
 
 **Entfernte Varianten „Small“**
 
@@ -37,19 +41,25 @@ Die folgenden Komponenten sind in ihrer Höhe angepasst und ab sofort nur noch i
 Den Button unterstützen wir weiterhin in den Größen „Small“ und „Large“.
 Die Höhe des „Large Button“ ist ebenfalls angepasst.
 
+<br>
+
 **Barierrefreiheit**
 
 Informationstexte enthalten ab sofort Icons, um Menschen mit Farbfehlsichtigkeit in ihrer Nutzung zu unterstützen. Das sind die geänderten Komponenten:
 
 - Text Field
-- Text Area, Dropdown
+- Text Area
+- Dropdown
 - Dropdown Select
 - Radio Button
 - Radio Button Group
 - Checkbox
 - Checkbox Group
 
+<br>
+
 **Sketch Library**
+
 Die oben genannten Änderungen wurden auch in unserer Sketch-Library angepasst. Zusätzlich haben wir die Symbole der folgenden Komponenten optimiert:
 
 - Buttons
@@ -75,8 +85,6 @@ Bitte beachte: Einige „Small“-Varianten werden nicht mehr unterstützt und s
 |                 | Large               | Standard            | –              |
 | Pagination      | Small               | ❌                  | Standard       |
 |                 | Large               | Standard            | –              |
-| Tab Navigation  | Small               | Standard            | –              |
-|                 | Large               | ❌                  | Standard       |
 | Table           | Small               | Standard            | –              |
 |                 | Large               | ❌                  | Standard       |
 
