@@ -319,7 +319,7 @@ export class Slider {
     window.removeEventListener('touchend', this.onDragEnd);
   }
 
-  getRatingText() {
+  getRangeAriaLabel() {
     const filledText = this.rangeAriaLabel
       .replace(/\$from/g, `${this.valueFrom}`)
       .replace(/\$to/g, `${this.valueTo}`)
@@ -411,7 +411,7 @@ export class Slider {
                         aria-valuemin={this.min}
                         aria-valuenow={this.value}
                         aria-valuemax={this.max}
-                        aria-valuetext={this.getRatingText()}
+                        aria-valuetext={this.getRangeAriaLabel()}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
