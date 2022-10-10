@@ -1,5 +1,34 @@
 # Update Sketch Library
 
+## Update 20.10.2022
+
+Some of our component variants have been removed (see update history). In existing layouts, the symbols will continue to appear as part of the library even if they’re no longer available. Please keep your layouts up to date by re-linking the elements with the Replace With function. Here’s how to do it:
+
+### 1. Check your document for removed symbols
+
+The following components are no longer supported. It's best to check if you're using one of them.
+
+| Component       | Previous variant size | New variant name | Replaced with |
+| --------------- | --------------------- | ---------------- | ------------- |
+| Text Field      | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Dropdown        | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Dropdown Select | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Date Picker     | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Pagination      | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Table           | Small                 | Standard         | –             |
+|                 | Large                 | ❌               | Standard      |
+
+### 2. Replace the old symbols
+
+Components used in Sketch are easily replaced with symbols. To do this, select the element to overwrite and click in the menu under Layer ➔ Replace With. Then select Telekom Scale Components and look for the corresponding icon.
+
+<img src="assets/replace-component-en.png"  />
+
 ## Dark mode release 19.04.2022
 
 Scale now includes all components for [dark mode](./?path=/docs/guidelines-light-and-dark-mode--page). In addition, we've optimized light mode. There is a separate library for each mode. You can change the mode used at any time by replacing one library with the other.
