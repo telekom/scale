@@ -39,15 +39,13 @@ describe('DropdownSelect', function () {
     const selectEl = page.doc.querySelector('scale-dropdown-select');
 
     const labelEl = selectEl.shadowRoot.querySelector('[part="label"]');
-    const helperTextEl = selectEl.shadowRoot.querySelector(
-      '[part="helper-text"]'
-    );
+    const helperTextEl = selectEl.shadowRoot.querySelector('scale-helper-text');
     await page.waitForChanges();
     const comboboxEl = selectEl.shadowRoot.querySelector('#combobox');
     await page.waitForChanges();
 
     expect(labelEl.textContent).toBe(label);
-    expect(helperTextEl.textContent).toBe(helperText);
+    expect(helperTextEl).toBeTruthy();
     expect(comboboxEl.textContent).toBe('Cedric');
   });
 
