@@ -78,6 +78,8 @@ export class Slider {
   @Prop() thumbLarge?: boolean;
   /** (optional) Slider id */
   @Prop({ mutable: true }) sliderId?: string;
+  /** (optional) Aria label for range slider */
+  @Prop() rangeAriaLabel?: string;  
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -317,6 +319,13 @@ export class Slider {
     window.removeEventListener('touchend', this.onDragEnd);
   }
 
+  getRatingText() {
+    const filledText = this.rangeAriaLabel
+      .replace(/\$from/g, `${this.valueFrom}`)
+      .replace(/\$to/g, `${this.valueTo}`)
+    return filledText;
+  }  
+
   render() {
     const helperTextId = `slider-helper-message-${i}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
@@ -400,9 +409,9 @@ export class Slider {
                         role="slider"
                         id={this.sliderId + '-to'}
                         aria-valuemin={this.min}
-                        aria-valuenow={`${this.valueFrom} to ${this.valueTo}`}
+                        aria-valuenow={this.value}
                         aria-valuemax={this.max}
-                        aria-valuetext={`${this.valueFrom} to ${this.valueTo}`}
+                        aria-valuetext={this.getRatingText()}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
