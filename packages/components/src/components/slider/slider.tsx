@@ -79,7 +79,7 @@ export class Slider {
   /** (optional) Slider id */
   @Prop({ mutable: true }) sliderId?: string;
   /** (optional) Aria label for range slider */
-  @Prop() rangeAriaLabel?: string;  
+  @Prop() rangeAriaLabel = '$from to $to';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
