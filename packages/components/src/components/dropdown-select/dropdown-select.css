@@ -18,6 +18,7 @@
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
+  --spacing-x-for-helper-text: var(--telekom-spacing-unit-x1);
 
   /*combobox*/
   --transition-combobox: var(--transition);
@@ -25,17 +26,6 @@
   --background-combobox: var(--telekom-color-ui-state-fill-standard);
   --spacing-combobox: 18px var(--telekom-spacing-unit-x10) 5px
     calc(var(--spacing-x) - 1px);
-
-  /*helper-text*/
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--telekom-typography-font-size-small);
-  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
-  --color-helper-text: var(
-    --telekom-color-text-and-icon-functional-informational
-  );
-  --color-helper-text-invalid: var(
-    --telekom-color-text-and-icon-functional-danger
-  );
 
   /*meta*/
   --spacing-y-meta: var(--telekom-spacing-unit-x1);
@@ -162,27 +152,6 @@
   background: var(--background-disabled);
 }
 
-/*helper-text*/
-[part='helper-text'] {
-  font-weight: var(--font-weight);
-  transition: var(--transition-helper-text);
-  padding-left: var(--spacing-x);
-  font-size: var(--font-size-helper-text);
-  line-height: var(--line-height-helper-text);
-  color: var(--color-helper-text);
-}
-
-[part~='invalid'] [part='helper-text'] {
-  color: var(--color-helper-text-invalid);
-}
-
-[part~='disabled'] [part='helper-text'] {
-  cursor: not-allowed;
-  border-color: var(--border-color-disabled);
-  color: var(--color-disabled);
-  background: var(--background-disabled);
-}
-
 /*meta*/
 [part='meta'] {
   display: flex;
@@ -293,4 +262,9 @@
 
 [part~='option'] scale-dropdown-select-item::part(base) {
   padding: 12px;
+}
+
+/*helper-text*/
+[part~='has-helper-text'] [part~='combobox-container'] {
+  margin-bottom: var(--spacing-x-for-helper-text);
 }

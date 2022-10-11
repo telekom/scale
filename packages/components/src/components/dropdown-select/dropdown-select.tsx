@@ -486,7 +486,8 @@ export class DropdownSelect {
       this.transparent && 'transparent',
       this.invalid && `invalid`,
       this.currentIndex > -1 && `steal-focus`,
-      animated && 'animated'
+      animated && 'animated',
+      this.helperText && 'has-helper-text'
     );
   }
 }
