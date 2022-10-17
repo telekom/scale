@@ -80,6 +80,8 @@ Use small tags if space is limited.
 
 ## Elements
 
+![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
+
 #### Container (1)
 
 The container contains a label and optionally, a remove icon.
@@ -91,8 +93,6 @@ The label represents a category or an attribute; try to make it clear and concis
 #### Icon (3)
 
 By clicking/tapping on the icon, users remove the tag.
-
-![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
 
 ## Best practices
 

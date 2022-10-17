@@ -75,6 +75,8 @@ Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße has
 
 ## Elemente
 
+![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
+
 #### Container (1)
 
 Der Container beinhaltet ein Label und optional ein Schließen-Icon.
@@ -86,8 +88,6 @@ Die Beschriftung steht für eine Kategorie oder ein Attribut. Formuliere das Lab
 #### Icon (3)
 
 Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
-
-![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
 
 ## Best Practices
 
