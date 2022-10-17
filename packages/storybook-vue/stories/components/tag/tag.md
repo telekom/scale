@@ -43,15 +43,16 @@ The standard color for the tag is black text on light grey. Each defined color h
 All standard and strong colors are optimized for legibility and accessibility.
 
 Defined colors:
-Teal
-Olive
-Violet
-Brown
-Cyan
-Yellow
-Green
-Orange
-Red
+
+- Teal
+- Olive
+- Violet
+- Brown
+- Cyan
+- Yellow
+- Green
+- Orange
+- Red
 
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 
@@ -69,17 +70,13 @@ Use large tags as default.
 
 ### Small
 
+![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
+
 Use small tags if space is limited.
 
 ### Disabled state
 
 ![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
-
-![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
-
-## Accessibility
-
--
 
 ## Elements
 

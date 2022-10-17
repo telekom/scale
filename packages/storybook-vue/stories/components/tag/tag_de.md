@@ -38,15 +38,16 @@ Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon
 Die Standardfarbe ist Dunkelgrau mit schwarzem Text. Jede definierte Farbe hat eine Standard- und eine markante Version mit dunklerem Hintergrund. Die Version „Strong“ eignet sich für eine stärkere Betonung. Alle Farbvarianten sind für Lesbarkeit und Barrierefreiheit optimiert.
 
 Definierte Farben:
-Teal
-Olive
-Violet
-Brown
-Cyan
-Yellow
-Green
-Orange
-Red
+
+- Teal
+- Olive
+- Violet
+- Brown
+- Cyan
+- Yellow
+- Green
+- Orange
+- Red
 
 Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst du eine eigene Farbe wählen. Wichtig ist, dass das Farbschema verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
@@ -71,10 +72,6 @@ Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße has
 ### Deaktivierter Zustand
 
 ![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
-
-## Barrierefreiheit
-
--
 
 ## Elemente
 
