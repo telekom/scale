@@ -255,11 +255,13 @@ to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018)
     background-color: var(--telekom-color-background-canvas);
   }
 
-  .dropdown:not(.dropdown--disabled):not(.dropdown--status-error) .input__dropdown:hover {
+  .dropdown:not(.dropdown--disabled):not(.dropdown--status-error)
+    .input__dropdown:hover {
     background-color: #1b1b1b;
   }
 
-  .dropdown:not(.dropdown--disabled).dropdown--status-error .input__dropdown:hover {
+  .dropdown:not(.dropdown--disabled).dropdown--status-error
+    .input__dropdown:hover {
     background-color: #1b1b1b;
   }
 
