@@ -249,3 +249,21 @@ to fix bug in Firefox/Windows, see https://github.com/telekom/scale/issues/1018)
 [data-mode='dark'] .dropdown--disabled .input__dropdown {
   background-color: var(--telekom-color-background-canvas);
 }
+
+@media (prefers-color-scheme: dark) {
+  .dropdown .input__dropdown {
+    background-color: var(--telekom-color-background-canvas);
+  }
+
+  .dropdown:not(.dropdown--disabled):not(.dropdown--status-error) .input__dropdown:hover {
+    background-color: #1b1b1b;
+  }
+
+  .dropdown:not(.dropdown--disabled).dropdown--status-error .input__dropdown:hover {
+    background-color: #1b1b1b;
+  }
+
+  .dropdown--disabled .input__dropdown {
+    background-color: var(--telekom-color-background-canvas);
+  }
+}
