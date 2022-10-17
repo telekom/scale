@@ -79,7 +79,7 @@ export class Slider {
   /** (optional) Slider id */
   @Prop({ mutable: true }) sliderId?: string;
   /** (optional) Aria label for range slider */
-  @Prop() innerAriaLabelText = '$from to $to';
+  @Prop() innerAriaValueText = '$from to $to';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -319,8 +319,8 @@ export class Slider {
     window.removeEventListener('touchend', this.onDragEnd);
   }
 
-  getAriaValueText() {
-    const filledText = this.innerAriaLabelText
+  getRangeAriaValueText() {
+    const filledText = this.innerAriaValueText
       .replace(/\$from/g, `${this.valueFrom}`)
       .replace(/\$to/g, `${this.valueTo}`)
     return filledText;
@@ -411,7 +411,7 @@ export class Slider {
                         aria-valuemin={this.min}
                         aria-valuenow={this.value}
                         aria-valuemax={this.max}
-                        aria-valuetext={this.getAriaValueText()}
+                        aria-valuetext={this.getRangeAriaValueText()}
                         aria-labelledby={`${this.sliderId}-label`}
                         aria-orientation="horizontal"
                         aria-disabled={this.disabled}
