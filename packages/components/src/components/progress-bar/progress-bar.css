@@ -11,12 +11,13 @@
 
 :host {
   --background: var(--telekom-color-primary-standard);
+  --background-disabled: var(--telekom-color-ui-disabled);
   --background-color: var(--telekom-color-ui-faint);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --background-error: var(--telekom-color-functional-danger-subtle);
   --color-success: var(--telekom-color-text-and-icon-functional-success);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-  --progress-bar-outer-size: var(--telekom-spacing-unit-x2);
+  --progress-bar-outer-size: 6px;
   --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
   --font-label: var(--telekom-text-style-ui);
   --color-inner-status: var(--telekom-color-primary-standard);
@@ -44,7 +45,8 @@
   align-items: center;
 }
 
-.progress-bar--disabled .progress-bar__label {
+.progress-bar--disabled .progress-bar__label,
+.progress-bar--disabled .progress-bar__status {
   color: var(--color-disabled);
 }
 
