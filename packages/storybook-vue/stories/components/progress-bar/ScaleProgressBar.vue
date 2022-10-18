@@ -6,7 +6,6 @@
     :has-error="hasError"
     :status-description="statusDescription"
     :show-status="showStatus"
-    :stroke-width="strokeWidth"
     :percentage="percentage"
     :percentageStart="percentageStart"
     :styles="styles"
@@ -24,7 +23,6 @@ export default {
     statusDescription: String,
     styles: String,
     showStatus: Boolean,
-    strokeWidth: Number,
     percentage: Number,
     percentageStart: {type: Number, default: 0} 
   },
