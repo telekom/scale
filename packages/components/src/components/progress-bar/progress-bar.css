@@ -11,6 +11,7 @@
 
 :host {
   --background: var(--telekom-color-primary-standard);
+  --background-disabled: var(--telekom-color-ui-disabled);
   --background-color: var(--telekom-color-ui-faint);
   --color-error: var(--telekom-color-text-and-icon-functional-danger);
   --background-error: var(--telekom-color-functional-danger-subtle);
