@@ -66,7 +66,6 @@
 .progress-bar__outer {
   width: 100%;
   height: var(--progress-bar-outer-size);
-  margin-bottom: var(--telekom-spacing-unit-x2);
   margin-left: 0;
   overflow: hidden;
   position: relative;
@@ -116,6 +115,7 @@
   color: var(--color-status-description);
   font-size: var(--font-size-status-description);
   font-weight: var(--font-weight-status-description);
+  margin-top: var(--telekom-spacing-unit-x2);
 }
 
 .progress-bar__aria-live {
