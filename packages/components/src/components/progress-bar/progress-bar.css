@@ -36,7 +36,6 @@
 
 .progress-bar--disabled {
   cursor: not-allowed;
-  opacity: 0.5;
 }
 
 .progress-bar__top-container {

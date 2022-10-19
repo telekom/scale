@@ -144,7 +144,7 @@ scale-checkbox [part='helper-text'] {
 /* :host([indeterminate]) [part='checkbox'], */
 scale-checkbox.indeterminate [part='checkbox'] {
   background: var(--telekom-color-primary-standard);
-  border-color: var(--telekom-color-ui-border-standard);
+  border: none;
   color: var(--color-icon-checked-active);
 }
 scale-checkbox.indeterminate [part='icon'] {
