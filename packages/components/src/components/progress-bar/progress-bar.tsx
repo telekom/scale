@@ -86,7 +86,7 @@ export class ProgressBar {
 
   progressStyle = () => {
     return {
-      width: `${this.percentage}%`,
+      width: this.disabled ? '100%' : `${this.percentage}%`,
       border: '1px solid transparent',
       background: this.customColor ? this.customColor : this.disabled ? 'var(--background-disabled)' : `var(--background)`,
       animation: this.disabled ? 'none' : 'showProgress 3s ease-in-out',

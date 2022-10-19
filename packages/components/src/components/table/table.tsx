@@ -46,16 +46,6 @@ export class Table {
     });
   }
 
-  componentDidLoad() {
-    const table = this.hostElement;
-    const progressbar = table.querySelectorAll('scale-progress-bar')
-    if (progressbar) {
-      progressbar.forEach(el => {
-        el.showStatus = false;
-      })
-    }
-  }
-
   componentDidRender() {
     if (this.size) {
       statusNote({
