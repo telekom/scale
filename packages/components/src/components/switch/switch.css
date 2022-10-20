@@ -16,7 +16,8 @@ scale-switch {
   --radius: 1em;
   --transition-duration: var(--telekom-motion-duration-immediate);
   --transition-easing: var(--telekom-motion-easing-standard);
-  --shadow-thumb: var(--telekom-shadow-raised-standard);
+  --shadow-thumb: 0 0 2px 0 rgba(0, 0, 0, 0.24), 0 2px 4px 0 rgba(0, 0, 0, 0.24),
+    0 4px 12px 0 rgba(0, 0, 0, 0.26);
   --spacing-x-label: var(--telekom-spacing-unit-x2);
   --font-label: var(--telekom-text-style-ui);
   --font-io-text: var(--telekom-text-style-small-bold);
@@ -61,6 +62,7 @@ scale-switch {
 .switch:hover {
   --_background: var(--telekom-color-ui-regular);
 }
+
 .switch:active {
   --_background: var(--telekom-color-ui-strong);
 }
@@ -68,22 +70,76 @@ scale-switch {
 .switch--checked {
   --_background: var(--telekom-color-primary-standard);
 }
+
+[data-platform='android'] .switch .switch--checked {
+  --_background: var(--telekom-color-primary-standard);
+}
+
+[data-platform='android'] .switch {
+  --_color-thumb: var(--telekom-color-ui-strong);
+}
+
+[data-platform='android'] .switch:hover {
+  --_background: var(--telekom-color-ui-faint);
+}
+
+[data-platform='android'] .switch:active {
+  --_background: var(--telekom-color-ui-faint);
+}
+
+[data-platform='android'] .switch:hover {
+  --_color-thumb: var(--telekom-color-ui-extra-strong);
+}
+[data-platform='android'] .switch:active {
+  --_color-thumb: var(--telekom-color-ui-extra-strong);
+}
+[data-platform='android'] .switch--checked:hover {
+  --_color-thumb: var(--telekom-color-ui-white);
+}
+
+[data-platform='android'] .switch--checked:hover,
 .switch--checked:hover {
   --_background: var(--telekom-color-primary-hovered);
 }
-.switch--checked.switch__control {
+
+[data-platform='android'] .switch--checked:active,
+.switch--checked:active {
   --_background: var(--telekom-color-primary-pressed);
+}
+
+[data-platform='android'] .switch--disabled {
+  --_background: var(--telekom-color-ui-faint);
+}
+[data-platform='android'] .switch--disabled:hover {
+  --_color-thumb: var(--telekom-color-ui-strong);
+  --_background: var(--telekom-color-ui-faint);
 }
 
 .switch--disabled,
 .switch--disabled:hover,
 .switch--disabled:active {
   --_background: var(--telekom-color-ui-disabled);
-  --_color: var(--telekom-color-ui-faint);
+  --_color-thumb: var(--telekom-color-ui-faint);
+}
+
+.switch--checked .switch--disabled,
+.switch--checked .switch--disabled:hover,
+.switch--checked .switch--disabled:active {
+  --_background: var(--telekom-color-ui-faint);
+  --_color-thumb: var(--telekom-color-ui-disabled);
+  box-shadow: var(--telekom-shadow-raised-standard);
 }
 
 .switch--disabled .switch__wrapper {
   cursor: not-allowed;
+}
+.switch--disabled .switch__thumb {
+  box-shadow: var(--telekom-shadow-raised-standard);
+}
+
+.switch--size-large {
+  --width: 56px;
+  --height: 32px;
 }
 
 /*
@@ -111,7 +167,7 @@ scale-switch {
   border-radius: 50%;
   box-shadow: var(--shadow-thumb);
   margin: var(--offset);
-  transition-property: margin;
+  transition-property: margin, width, height, background, color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-easing);
   color: transparent;
@@ -151,27 +207,48 @@ scale-switch {
   margin-inline-start: var(--spacing-x-label);
 }
 
-/* PLATFORM iOS */
-
-[data-platform='ios'] scale-switch {
-  --width: 56px;
-  --height: 32px;
-}
-
 /* PLATFORM Android */
 
 [data-platform='android'] scale-switch {
   --width: 56px;
   --height: 32px;
+  --offset: 7px;
+}
+
+[data-platform='android'] .switch__thumb {
+  width: 18px;
+  height: 18px;
+}
+
+[data-platform='android'] scale-switch:not([disabled]):active .switch__thumb {
+  width: 28px;
+  height: 28px;
+  --offset: 2px;
+}
+[data-platform='android'] .switch--checked .switch__thumb {
+  width: 24px;
+  height: 24px;
   --offset: 4px;
 }
 
 [data-platform='android'] .switch__thumb {
-  /* FIXME no color token for this :( */
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x025) rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+[data-platform='android'] .switch--checked .switch__thumb {
+  background: var(--telekom-color-ui-white);
+}
+
+scale-switch scale-icon-action-success {
+  display: none !important;
+}
+
+[data-platform='android'] scale-icon-action-success {
+  position: absolute;
+  display: inline-block !important;
+  margin-top: 2px;
 }
 
 [data-platform='android'] .switch--checked .switch__thumb {
@@ -180,4 +257,12 @@ scale-switch {
 
 [data-platform='android'] .switch__io-text {
   display: none;
+}
+
+[data-platform='android'] .switch--checked .switch__thumb {
+  color: var(--telekom-color-primary-standard);
+}
+
+[data-platform='android'] .switch--disabled .switch__thumb {
+  color: var(--telekom-color-ui-strong);
 }

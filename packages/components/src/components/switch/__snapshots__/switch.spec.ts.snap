@@ -2,7 +2,7 @@
 
 exports[`Switch should match snapshot 1`] = `
 <scale-switch>
-  <div class="switch switch--focus-visible-not-supported">
+  <div class="switch switch--focus-visible-not-supported switch--size-large">
     <label class="switch__wrapper" id="switch-0-label">
       <input aria-labelledby="switch-0-label" class="switch__control" id="switch-0" type="checkbox">
       <div aria-hidden="true" class="switch__toggle">

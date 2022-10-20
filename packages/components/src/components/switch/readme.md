@@ -14,6 +14,7 @@
 | `inputId`  | `input-id` | (optional) Input id            | `string`  | `undefined` |
 | `label`    | `label`    | (optional) switch label        | `string`  | `undefined` |
 | `name`     | `name`     | (optional) Input name          | `string`  | `undefined` |
+| `size`     | `size`     |                                | `string`  | `'large'`   |
 | `styles`   | `styles`   | (optional) Injected CSS styles | `string`  | `undefined` |
 
 

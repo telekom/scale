@@ -19,6 +19,7 @@ export const Template = (args, { argTypes }) => ({
       :input-id="inputId"
       :checked="checked"
       :label="label"
+      :size="size"
       :name="name"
       @scaleChange="scaleChange"
     >
@@ -55,6 +56,24 @@ export const Template = (args, { argTypes }) => ({
 </Canvas>
 
 <ArgsTable story="Standard" />
+
+## Small
+
+<Canvas withSource="none">
+  <Story
+    name="Small"
+    args={{
+      label: 'Small',
+      size: 'small',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-switch size="small" label="Standard disabled"></scale-switch>
+```
 
 ## Standard disabled
 
@@ -111,34 +130,6 @@ export const Template = (args, { argTypes }) => ({
 <scale-switch disabled checked label="Selected disabled"></scale-switch>
 ```
 
-## iOS
-
-<Canvas withSource="none">
-  <Story name="iOS">
-    {{
-      template: `
-        <div data-platform="ios">
-          <scale-switch
-            label="Platform iOS"
-            name="ios"
-            @scale-change="emitChange"
-          >
-          </scale-switch>
-        </div>
-      `,
-      methods: {
-        emitChange: action('scale-change'),
-      },
-    }}
-  </Story>
-</Canvas>
-
-```html
-<div data-platform="ios">
-  <scale-switch label="Platform iOS"></scale-switch>
-</div>
-```
-
 ## Android
 
 <Canvas withSource="none">
@@ -164,5 +155,93 @@ export const Template = (args, { argTypes }) => ({
 ```html
 <div data-platform="android">
   <scale-switch label="Platform Android"></scale-switch>
+</div>
+```
+
+## Android Disabled
+
+<Canvas withSource="none">
+  <Story name="Android Disabled">
+    {{
+      template: `
+        <div data-platform="android">
+          <scale-switch
+            label="Platform Android"
+            name="android"
+            disabled
+            @scale-change="emitChange"
+          >
+          </scale-switch>
+        </div>
+      `,
+      methods: {
+        emitChange: action('scale-change'),
+      },
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="android">
+  <scale-switch disabled label="Platform Android"></scale-switch>
+</div>
+```
+
+## Android Selected
+
+<Canvas withSource="none">
+  <Story name="Android Selected">
+    {{
+      template: `
+        <div data-platform="android">
+          <scale-switch
+            label="Platform Android"
+            name="android"
+            checked
+            @scale-change="emitChange"
+          >
+          </scale-switch>
+        </div>
+      `,
+      methods: {
+        emitChange: action('scale-change'),
+      },
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="android">
+  <scale-switch checked label="Platform Android"></scale-switch>
+</div>
+```
+
+## Android Selected Disabled
+
+<Canvas withSource="none">
+  <Story name="Android Selected Disabled">
+    {{
+      template: `
+        <div data-platform="android">
+          <scale-switch
+            label="Platform Android"
+            name="android"
+            disabled
+            checked
+            @scale-change="emitChange"
+          >
+          </scale-switch>
+        </div>
+      `,
+      methods: {
+        emitChange: action('scale-change'),
+      },
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="android">
+  <scale-switch disabled checked label="Platform Android"></scale-switch>
 </div>
 ```
