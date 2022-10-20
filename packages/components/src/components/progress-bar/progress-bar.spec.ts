@@ -92,7 +92,6 @@ describe('ProgressBar', () => {
       border: '1px solid transparent',
       background: 'magenta',
       animation: 'showProgress 3s ease-in-out',
-      height: '4px',
     };
     element.percentage = 20;
     element.customColor = 'magenta';
