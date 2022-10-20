@@ -1,4 +1,3 @@
-// FIXME
 describe('Switch', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
@@ -6,49 +5,45 @@ describe('Switch', () => {
     });
     test.each([
       ['standard'],
+      ['small'],
       ['standard-disabled'],
       ['selected'],
       ['selected-disabled'],
+      ['android'],
+      ['android-disabled'],
+      ['android-selected'],
+      ['android-selected-disabled'],
     ])('story %p', async (variant) => {
       await global.runSetup(`components-switch--${variant}`);
       await global.visualCheck();
     });
-    // hover, active
-    test.each([['standard'], ['selected']])('hover %p', async (variant) => {
-      await global.runSetup(`components-switch--${variant}`);
-      const firstButton = await global.page.evaluateHandle(
-        'document.querySelector("#root > scale-switch > div")'
-      );
-      await firstButton.hover();
-      await global.visualCheck();
-    });
-    test.each([['standard'], ['selected']])('active %p', async (variant) => {
-      await global.runSetup(`components-switch--${variant}`);
-      const firstButton = await global.page.evaluateHandle(
-        'document.querySelector("#root > scale-switch > div")'
-      );
-      await global.page.mouse.move(25, 25);
-      await global.page.mouse.down();
-      await global.visualCheck();
-    });
-    // focus
-    test.each([['standard'], ['selected']])('focus %p', async (variant) => {
-      await global.runSetup(`components-switch--${variant}`);
-      await global.page.keyboard.press('Tab');
-      await global.visualCheck();
-    });
-    // click
-    test.each([['standard'], ['selected']])('click %p', async (variant) => {
-      await global.runSetup(`components-switch--${variant}`);
-      const firstButton = await global.page.evaluateHandle(
-        'document.querySelector("#root > scale-switch > div .switch__wrapper")'
-      );
-      const base = await global.page.evaluateHandle(
-        `document.querySelector("#root")`
-      );
-      await firstButton.click();
-      await base.click();
-      await global.visualCheck();
-    });
+    test.each([['standard'], ['selected'], ['android'], ['android-selected']])(
+      'hover %p',
+      async (variant) => {
+        await global.runSetup(`components-switch--${variant}`);
+        const firstButton = await global.page.evaluateHandle(
+          'document.querySelector("#root scale-switch")'
+        );
+        await firstButton.hover();
+        await global.visualCheck();
+      }
+    );
+    test.each([['standard'], ['selected'], ['android'], ['android-selected']])(
+      'active %p',
+      async (variant) => {
+        await global.runSetup(`components-switch--${variant}`);
+        await global.page.mouse.move(25, 25);
+        await global.page.mouse.down();
+        await global.visualCheck();
+      }
+    );
+    test.each([['standard'], ['selected'], ['android'], ['android-selected']])(
+      'focus %p',
+      async (variant) => {
+        await global.runSetup(`components-switch--${variant}`);
+        await global.page.keyboard.press('Tab');
+        await global.visualCheck();
+      }
+    );
   });
 });

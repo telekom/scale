@@ -38,6 +38,8 @@ export class Switch {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  @Prop() size?: string = 'large';
+
   /** Emitted when the switch was clicked */
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
@@ -88,6 +90,7 @@ export class Switch {
       'switch',
       this.checked && 'switch--checked',
       this.disabled && 'switch--disabled',
+      this.size && `switch--size-${this.size}`,
       isFocusVisibleSupported && 'switch--focus-visible-supported',
       !isFocusVisibleSupported && 'switch--focus-visible-not-supported'
     );
