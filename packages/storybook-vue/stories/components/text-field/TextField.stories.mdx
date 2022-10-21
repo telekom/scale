@@ -38,10 +38,60 @@ export const ICON =
         ],
       },
     },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
   }}
 />
 
 export const Template = (args, { argTypes }) => ({
+  components: { ScaleTextField },
+  props: {
+    label: String,
+    ...ScaleTextField.props,
+  },
+  template: `
+  <div style="padding: 20px 0 20px 0;">
+    <scale-text-field
+      :name="name"
+      :type="type"
+      :label="label"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :variant="variant"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :max="max"
+      :min="min"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :readonly="readonly"
+      :required="required"
+      :counter="counter"
+      :value="value"
+      :input-id="inputId"
+      :input-autofocus="inputAutofocus"
+      :experimental-controlled="experimentalControlled"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-text-field>
+    </div>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+export const StorySectionsTemplate = (args, { argTypes }) => ({
   components: { ScaleTextField },
   props: {
     label: String,
@@ -54,6 +104,7 @@ export const Template = (args, { argTypes }) => ({
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
+      :variant="variant"
       :max-length="maxLength"
       :min-length="minLength"
       :max="max"
@@ -63,7 +114,6 @@ export const Template = (args, { argTypes }) => ({
       :readonly="readonly"
       :required="required"
       :counter="counter"
-      :size="size"
       :value="value"
       :input-id="inputId"
       :input-autofocus="inputAutofocus"
@@ -123,6 +173,12 @@ scale-text-field {
   --border-error: var(--telekom-spacing-unit-x05) solid var(
       --telekom-color-functional-danger-standard
     );
+  --border-success: var(--telekom-spacing-unit-x05) solid var(
+      --telekom-color-functional-success-standard
+    );
+  --border-warning: var(--telekom-spacing-unit-x05) solid var(
+      --telekom-color-functional-warning-standard
+    );
   --border-color-hover: var(--telekom-color-ui-border-hovered);
   --border-color-focus: var(--telekom-color-ui-border-hovered);
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
@@ -131,8 +187,7 @@ scale-text-field {
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
       --telekom-color-functional-focus
     );
-  --height: var(--telekom-spacing-unit-x12);
-  --height-small: var(--telekom-spacing-unit-x10);
+  --height: var(--telekom-spacing-unit-x11);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
@@ -148,9 +203,9 @@ scale-text-field {
   --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
 
   /* control */
-  --spacing-control: var(--telekom-spacing-unit-x3) var(--spacing-x) 0 calc(var(
-          --spacing-x
-        ) - 1px);
+  --spacing-control: 21px var(--telekom-spacing-unit-x10) 5px calc(
+      var(--spacing-x) - 1px
+    );
   --transition-control: var(--transition);
   --font-size-control: var(--telekom-typography-font-size-body);
   --background-control: var(--telekom-color-ui-state-fill-standard);
@@ -169,6 +224,12 @@ scale-text-field {
     --telekom-color-text-and-icon-functional-informational
   );
   --color-helper-text-error: var(--color-meta-error);
+  --color-helper-text-success: var(
+    --telekom-color-text-and-icon-functional-success
+  );
+  --color-helper-text-warning: var(
+    --telekom-color-text-and-icon-functional-warning
+  );
 
   /* placeholder */
   --transition-placeholder: var(--transition);
@@ -181,8 +242,6 @@ scale-text-field {
   --transition-label: var(--transition);
   --font-size-label: var(--telekom-typography-font-size-body);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
-  --font-size-label-small: var(--telekom-typography-font-size-body);
-  --font-weight-label-small: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
 }
@@ -197,7 +256,7 @@ scale-text-field {
       label: 'Text With Events',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -231,7 +290,7 @@ scale-text-field {
       placeholder: 'this is the placeholder',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -252,7 +311,7 @@ scale-text-field {
       helperText: 'Make sure to fill this',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -261,24 +320,6 @@ scale-text-field {
   label="Helper Text"
   helper-text="Make sure to fill this"
 ></scale-text-field>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      label: 'Small',
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-text-field label="Small" size="small"></scale-text-field>
 ```
 
 ## With Error
@@ -292,7 +333,7 @@ scale-text-field {
       helperText: 'something is wrong',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -301,6 +342,52 @@ scale-text-field {
   label="With Error"
   helper-text="something is wrong"
   invalid
+></scale-text-field>
+```
+
+## With Warning
+
+<Canvas withSource="none">
+  <Story
+    name="With Warning"
+    args={{
+      label: 'With Warning',
+      variant: 'warning',
+      helperText: 'something with warning',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Error"
+  helper-text="something with warning"
+  variant="warning"
+></scale-text-field>
+```
+
+## With Success
+
+<Canvas withSource="none">
+  <Story
+    name="With Success"
+    args={{
+      label: 'With Success',
+      variant: 'success',
+      helperText: 'something is successful',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Success"
+  helper-text="something is successful"
+  variant="success"
 ></scale-text-field>
 ```
 
@@ -314,7 +401,7 @@ scale-text-field {
       disabled: true,
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -333,7 +420,7 @@ scale-text-field {
       value: 'This cannot be changed',
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -356,7 +443,7 @@ scale-text-field {
       counter: true,
     }}
   >
-    {Template.bind({})}
+    {StorySectionsTemplate.bind({})}
   </Story>
 </Canvas>
 

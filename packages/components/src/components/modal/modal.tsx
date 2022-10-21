@@ -59,6 +59,8 @@ export class Modal {
   @Prop() closeButtonLabel?: string = 'Close Pop-up';
   /** (optional) title for close button */
   @Prop() closeButtonTitle?: string = 'Close';
+  /** (optional) hide close button */
+  @Prop() omitCloseButton?: boolean = false;
   /** (optional) Alignment of action buttons */
   @Prop() alignActions?: 'right' | 'left' = 'right';
   /** (optional) Injected CSS styles */
@@ -274,18 +276,20 @@ export class Modal {
               <h2 class="modal__heading" part="heading">
                 {this.heading}
               </h2>
-              <button
-                ref={(el) => (this.closeButton = el)}
-                class="modal__close-button"
-                part="close-button"
-                onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
-                aria-label={this.closeButtonLabel}
-                title={this.closeButtonTitle}
-              >
-                <slot name="close-icon">
-                  <scale-icon-action-circle-close decorative />
-                </slot>
-              </button>
+              {!this.omitCloseButton && (
+                <button
+                  ref={(el) => (this.closeButton = el)}
+                  class="modal__close-button"
+                  part="close-button"
+                  onClick={() => this.emitBeforeClose('CLOSE_BUTTON')}
+                  aria-label={this.closeButtonLabel}
+                  title={this.closeButtonTitle}
+                >
+                  <slot name="close-icon">
+                    <scale-icon-action-circle-close decorative />
+                  </slot>
+                </button>
+              )}
             </div>
             <div
               ref={(el) => (this.modalBody = el)}

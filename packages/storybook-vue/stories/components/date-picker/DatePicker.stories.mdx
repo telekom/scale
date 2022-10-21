@@ -11,7 +11,15 @@ import { action } from '@storybook/addon-actions';
 <Meta
   title="Components/Date Picker"
   component={ScaleDatePicker}
-  argTypes={{}}
+  argTypes={{
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
+  }}
 />
 
 export const Template = (args, { argTypes }) => ({
@@ -36,7 +44,6 @@ export const Template = (args, { argTypes }) => ({
             :label="label"
             :helper-text="helperText"
             :invalid="invalid"
-            :size="size"
             @scaleChange="scaleChange"
             @scale-change="scale-change"
             @scaleFocus="scaleFocus"
@@ -231,6 +238,8 @@ duet-date-picker {
   --duet-color-surface: var(--telekom-color-background-surface);
   --duet-z-index: 600;
 
+  --spacing-x: var(--telekom-spacing-unit-x3);
+
   --spacing-heading: 0 0 var(--telekom-spacing-unit-x4) 0;
   --font-size-heading: var(--telekom-typography-font-size-callout);
   --font-size-select-label: var(--telekom-typography-font-size-body);
@@ -260,29 +269,6 @@ duet-date-picker {
 <scale-date-picker
   helperText="Make sure to fill this"
   label="Helper Text"
-  value="2020-12-31"
-></scale-date-picker>
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      value: '2020-12-31',
-      label: 'Small',
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-date-picker
-  label="Small"
-  size="small"
   value="2020-12-31"
 ></scale-date-picker>
 ```

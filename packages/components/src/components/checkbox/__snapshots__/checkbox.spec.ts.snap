@@ -20,6 +20,7 @@ exports[`Checkbox should match snapshot 2`] = `
     <div part="label"></div>
   </label>
   <div aria-live="polite" aria-relevant="additions removals" id="helper-text-2" part="helper-text">
+    <scale-icon-alert-information size="11"></scale-icon-alert-information>
     helpertext
   </div>
 </scale-checkbox>

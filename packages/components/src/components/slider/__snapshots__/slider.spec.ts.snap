@@ -1,19 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Slider should match snapshot 1`] = `
-<scale-slider>
+<scale-slider value="0" value-from="0" value-to="0">
   <mock:shadow-root>
-    <div class="slider" part="slider">
-      <div class="slider__track-wrapper" part="track-wrapper">
-        <div class="slider__track" part="track">
-          <div class="slider__bar" part="bar" style="width: 0%; background-color: var(--background-bar);"></div>
-          <div class="slider__thumb-wrapper" part="thumb-wrapper" style="left: 0%;">
-            <div aria-labelledby="slider-0-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuetext="undefined" class="slider__thumb" id="slider-0" part="thumb" role="slider" tabindex="0"></div>
+    <div part="base">
+      <div part="label-wrapper">
+        <div part="value-text">
+          0
+        </div>
+      </div>
+      <div part="track-wrapper">
+        <div part="track">
+          <div part="bar" style="left: 0%; width: 0%;"></div>
+          <div part="inner-track">
+            <div part="thumb-wrapper" style="left: 0%;">
+              <div aria-labelledby="slider-0-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" aria-valuetext="0" id="slider-0" part="thumb" role="slider" tabindex="0"></div>
+            </div>
           </div>
         </div>
-        <input type="hidden">
-        <div class="slider__display-value" part="display-value"></div>
       </div>
+      <input type="hidden" value="0">
     </div>
   </mock:shadow-root>
   Label
@@ -21,21 +27,25 @@ exports[`Slider should match snapshot 1`] = `
 `;
 
 exports[`Slider should match snapshot 2`] = `
-<scale-slider value="10">
+<scale-slider value="10" value-from="0" value-to="0">
   <mock:shadow-root>
-    <div class="slider" part="slider">
-      <div class="slider__track-wrapper" part="track-wrapper">
-        <div class="slider__track" part="track">
-          <div class="slider__bar" part="bar" style="width: 10%; background-color: var(--background-bar);"></div>
-          <div class="slider__thumb-wrapper" part="thumb-wrapper" style="left: 10%;">
-            <div aria-labelledby="slider-1-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" aria-valuetext="10" class="slider__thumb" id="slider-1" part="thumb" role="slider" tabindex="0"></div>
-          </div>
-        </div>
-        <input type="hidden" value="10">
-        <div class="slider__display-value" part="display-value">
-          10%
+    <div part="base">
+      <div part="label-wrapper">
+        <div part="value-text">
+          10
         </div>
       </div>
+      <div part="track-wrapper">
+        <div part="track">
+          <div part="bar" style="left: 0%; width: 10%;"></div>
+          <div part="inner-track">
+            <div part="thumb-wrapper" style="left: 10%;">
+              <div aria-labelledby="slider-1-label" aria-orientation="horizontal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" aria-valuetext="10" id="slider-1" part="thumb" role="slider" tabindex="0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" value="10">
     </div>
   </mock:shadow-root>
   Label

@@ -1,17 +1,12 @@
-<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Tag</h1>
-    <img src="assets/aa.png" alt="Accessible AA" />
-</div>
-
 Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
 ## General
 
-Tags consist of relevant keywords in a container. A static tag indicates a category or an attribute; an interactive tag shows things like selected filters, which users can then also remove.
+Tags consist of relevant keywords in a container. A static tag is non-dismissable and indicates a category or an attribute; an interactive tag is dismissable and shows things like selected filters, which users can then also remove.
 
 ### When to use
 
-Use tags to:
+Use a tag to:
 
 - draw a user's attention to certain elements they might otherwise overlook,
 - make it easier for users to recognize content, for instance in tables, or
@@ -30,57 +25,76 @@ In general, be careful using tags. Don't use them when:
 
 A static tag has no interactive function. It only conveys information, for instance a category within a table.
 
-![Image Name](assets/3_components/chip/Tag-static.png)
+![Tag-static.png](assets/3_components/tag/tag-static.png)
 
 ### Interactive tag
 
-An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use is, for example, the deactivation of selected filters.
+An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use, for example, is deactivating selected filters.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
 
-## Elements
+## Variants
 
-![Image Name](assets/3_components/chip/Tag-Elements.png)
+### Colors
 
-### Container (1)
+![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
-The container contains labels and optionally a close icon.
+The standard color for the tag is black text on light grey. Each defined color has a standard and stronger version with a darker background. Use the stronger version to provide more emphasis.
+All standard and strong colors are optimized for legibility and accessibility.
 
-### Label (2)
+Defined colors:
 
-Make the label clear and short.
-
-### Icon (3)
-
-By clicking/tapping on the icon, users remove the tag.
-
-## Colors
-
-The default color for tags is dark gray. This way, the maximum contrast guarantees the best legibility.
-
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+- Teal
+- Olive
+- Violet
+- Brown
+- Cyan
+- Yellow
+- Green
+- Orange
+- Red
 
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 
-![Image Name](assets/3_components/chip/Tag-color.png)
+![Tag-Basic-Colors.png](assets/3_components/tag/tag-basic-colors.png)
 
-## Sizes
+### Sizes
 
-Scale offers two sizes for tags. Be careful not to combine the two sizes.
+Scale offers two sizes for tags: large and small. If needed, you can adjust the size of the tags yourself.
 
 ### Large
 
 Use large tags as default.
 
-![Image Name](assets/3_components/chip/Tag-size-default.png)
+![Tag-size-large.png](assets/3_components/tag/tag-size-large.png)
 
 ### Small
 
-Only use small tags if you don't have enough space for the standard size.
+![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
 
-![Image Name](assets/3_components/chip/Tag-size-small.png)
+Use small tags if space is limited.
 
-### Best practices
+### Disabled state
+
+![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
+
+## Elements
+
+![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
+
+#### Container (1)
+
+The container contains a label and optionally, a remove icon.
+
+#### Label (2)
+
+The label represents a category or an attribute; try to make it clear and concise.
+
+#### Icon (3)
+
+By clicking/tapping on the icon, users remove the tag.
+
+## Best practices
 
 - Don't mix interactive and static tags within a product or service.
 - Decide on one size for your tags.

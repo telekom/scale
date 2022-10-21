@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+
+### Bug Fixes
+
+* **accordion:** deal only with direct collapsible children ([#1243](https://github.com/telekom/scale/issues/1243)) ([19a137b](https://github.com/telekom/scale/commit/19a137bcbd8346ab4b92302ba6000a6c1406606c))
+* **checkbox:** rename private class property to avoid clashing with restricted name ([#1241](https://github.com/telekom/scale/issues/1241)) ([368a5a7](https://github.com/telekom/scale/commit/368a5a7a0dcf34cb42cd2ad2875ca0d204a73028))
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+
+### Bug Fixes
+
+* add displayCloseButton prop, update storybook ([#1197](https://github.com/telekom/scale/issues/1197)) ([2e7898b](https://github.com/telekom/scale/commit/2e7898b6e5c9be282609407f7cc3801bf6ac648e)), closes [#1194](https://github.com/telekom/scale/issues/1194) [#1196](https://github.com/telekom/scale/issues/1196) [#1195](https://github.com/telekom/scale/issues/1195)
+* replace deprecated `dist-custom-elements-bundle` dist ([#1202](https://github.com/telekom/scale/issues/1202)) ([6bd34e9](https://github.com/telekom/scale/commit/6bd34e989c134938b257968cafdd330be49e2918))
+
+
+### Features
+
+* **progress-bar:** add optional percentageStart prop ([#1204](https://github.com/telekom/scale/issues/1204)) ([573baf3](https://github.com/telekom/scale/commit/573baf3634c0480508ca3b90223da358dfcd2cf6))
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+
+### Bug Fixes
+
+* **dropdown-select-item:** reflect value prop, fixes [#1194](https://github.com/telekom/scale/issues/1194) ([#1196](https://github.com/telekom/scale/issues/1196)) ([85bd383](https://github.com/telekom/scale/commit/85bd3834e29070d8f6cd278ede3afcf30c5e3185))
+* checkbox group leads to double scroll in modal window ([#1188](https://github.com/telekom/scale/issues/1188)) ([fc08dcf](https://github.com/telekom/scale/commit/fc08dcfd2d84ad0419a940cfb6c371b8b0850497))
+
+
+### Features
+
+* **TeleNeo:** update fonts to latest ([#1186](https://github.com/telekom/scale/issues/1186)) ([cb5a8bf](https://github.com/telekom/scale/commit/cb5a8bf822f012fb49a577df9254c21c8989f42f))
+
+
+
+
+
 # [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
 
 

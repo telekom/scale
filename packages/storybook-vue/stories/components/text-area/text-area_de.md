@@ -19,7 +19,7 @@ Nutzer\*innen nur sehr kurze Texte eingeben müssen (hier eignen sich Text-Field
 
 ## Elemente
 
-![Image Name](assets/3_components/text-area/de/text_area_elements.png)
+![Image Name](assets/3_components/text-area/text_area_elements.png)
 
 ### Label (1)
 
@@ -49,13 +49,13 @@ Mit diesem Element können Nutzer\*innen den gesamten Text sichtbar machen.
 
 Ist der Text länger als der sichtbare Bereich, kannst du ihn scrollbar machen. Das gilt auch für den Fall, wenn die Größe der Text-Area veränderbar ist.
 
-![Image Name](assets/3_components/text-area/de/text_area_scrolling.png)
+![Image Name](assets/3_components/text-area/text_area_scrolling.png)
 
 ## Deaktivierter Zustand
 
 Ist die Text-Area deaktiviert, können Nutzer\*innen keinen Text eingeben, beziehungsweise ihn nicht mehr ändern. Verwende diesen Zustand, wenn eine bestimmte Interaktion aufgrund von Berechtigungen oder Einschränkungen nicht verfügbar ist.
 
-![Image Name](assets/3_components/text-area/de/text_area_disabled.png)
+![Image Name](assets/3_components/text-area/text_area_disabled.png)
 
 > Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
@@ -63,7 +63,7 @@ Ist die Text-Area deaktiviert, können Nutzer\*innen keinen Text eingeben, bezie
 
 Read-Only-Text-Areas zeigen einen vorausgefüllten Text an, den Nutzer\*innen nicht bearbeiten können. Verwende diesen Zustand, wenn eine bestimmte Information nicht mehr editierbar, jedoch lesbar für Nutzer\*innen sein soll. Der Inhalt von schreibgeschützten Textfeldern ist für Screen Reader zugänglich.
 
-![Image Name](assets/3_components/text-area/de/text_area_disabled_readonly.png)
+![Image Name](assets/3_components/text-area/text_area_disabled_readonly.png)
 
 ## Verwandte Komponenten
 

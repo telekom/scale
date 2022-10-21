@@ -18,21 +18,25 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 
 ### Plain HTML
 
-```bash
-<link rel="stylesheet" href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css">
-<script type="module" src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"></script>
+```html
+<link
+  rel="stylesheet"
+  href="node_modules/@telekom/scale-components/dist/scale-components/scale-components.css"
+/>
+<script
+  type="module"
+  src="node_modules/@telekom/scale-components/dist/scale-components/scale-components.esm.js"
+></script>
 ```
 
 ### With a bundler or ES modules
 
-```bash
-import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { defineCustomElements } from "@telekom/scale-components/loader";
+```js
+import '@telekom/scale-components/dist/scale-components/scale-components.css';
+import { defineCustomElements } from '@telekom/scale-components/loader';
 
-defineCustomElements(window);
+defineCustomElements();
 ```
-
-> As of July 2021, modern build tools like Vite or Snowpack will break with this lazy-loading mechanism ([see GitHub issue in Stencil's repo](https://github.com/ionic-team/stencil/issues/2827)). To work around this issue, please load the library via `link` and `script` tags as in the "Plain HTML" snippet above.
 
 ### NPM Packages
 

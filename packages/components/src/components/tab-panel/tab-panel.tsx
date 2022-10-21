@@ -10,7 +10,6 @@
  */
 
 import { Component, Element, h, Prop, Host } from '@stencil/core';
-import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
 let i = 0;
@@ -25,10 +24,11 @@ export class TabPanel {
 
   @Element() el: HTMLElement;
   /** True for smaller height and font size */
-  // DEPRECATED - size should replace small
+  /** @deprecated - no more size difference */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
+  /** @deprecated  - no more size difference */
+  @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -36,8 +36,7 @@ export class TabPanel {
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message:
-          'Property "small" is deprecated. Please use the "size" property!',
+        message: 'Property "small" is deprecated.',
         type: 'warn',
         source: this.el,
       });
@@ -49,28 +48,10 @@ export class TabPanel {
       <Host id={`scale-tab-panel-${this.generatedId}`} role="tabpanel">
         {this.styles && <style>{this.styles}</style>}
 
-        <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
+        <div part="tab-panel" class="tab-panel">
           <slot />
         </div>
       </Host>
-    );
-  }
-
-  getBasePartMap() {
-    return this.getCssOrBasePartMap('basePart');
-  }
-
-  getCssClassMap() {
-    return this.getCssOrBasePartMap('css');
-  }
-
-  getCssOrBasePartMap(mode: 'basePart' | 'css') {
-    const component = 'tab-panel';
-    const prefix = mode === 'basePart' ? '' : `${component}--`;
-
-    return classNames(
-      component,
-      (this.size === 'small' || this.small) && `${prefix}small`
     );
   }
 }

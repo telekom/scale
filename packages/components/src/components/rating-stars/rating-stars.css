@@ -23,6 +23,8 @@
   --font-weight-medium: var(--telekom-typography-font-weight-medium);
   --font-size-small: var(--telekom-typography-font-size-small);
   --infotext-color: var(--telekom-color-text-and-icon-additional);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
 }
 
 :host([star-size='small']) {
@@ -193,9 +195,7 @@ input[type='range']::-webkit-slider-thumb {
 
 :host(:focus-within) [part='wrapper'],
 [part='wrapper']:focus {
-  box-shadow: 0 0 0 var(--telekom-spacing-unit-x05)
-    var(--telekom-color-functional-focus);
-  outline: none;
+  outline: var(--focus-outline);
 }
 
 /* readonly states */

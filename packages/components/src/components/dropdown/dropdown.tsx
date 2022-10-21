@@ -44,15 +44,17 @@ export class Dropdown {
   @Prop() name?: string = '';
   /** (optional) Input label */
   @Prop() label: string = '';
-  /** (optional) Input size */
-  @Prop() size?: string = '';
   /** (optional) Input helper text */
   @Prop() helperText?: string = '';
   /** @deprecated - invalid should replace status */
   @Prop() status?: string = '';
+  /** @deprecated */
+  @Prop() size?: string;
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-  /** (optional) Input disabled */
+  /** (optional) Variant */
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   @Prop() disabled?: boolean;
   /** (optional) Input required */
   @Prop() required?: boolean;
@@ -163,6 +165,14 @@ export class Dropdown {
         source: this.hostElement,
       });
     }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   disconnectedCallback() {
@@ -269,16 +279,11 @@ export class Dropdown {
               )}
             </div>
           </div>
-
-          {!!this.helperText && (
-            <div
-              class="input__meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              <div class="input__helper-text">{this.helperText}</div>
-            </div>
+          {this.helperText && (
+            <scale-helper-text
+              helperText={this.helperText}
+              variant={this.invalid ? 'danger' : this.variant}
+            ></scale-helper-text>
           )}
         </div>
       </Host>
@@ -291,8 +296,9 @@ export class Dropdown {
       this.disabled && `dropdown--disabled`,
       this.transparent && 'dropdown--transparent',
       this.status && `dropdown--status-${this.status}`,
-      this.invalid && `dropdown--status-error`,
-      this.size && `dropdown--size-${this.size}`,
+      this.helperText && 'dropdown--helper-text',
+      this.variant &&
+        `dropdown--variant-${this.invalid ? 'danger' : this.variant}`,
       this.value != null && this.value !== '' && 'animated'
     );
   }

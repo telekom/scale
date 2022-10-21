@@ -3,17 +3,20 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Mit einem Slider können Nutzer\*innen einen Wert oder Wertebereich verändern.
+Mit einem Slider können Nutzer\*innen
+
+- einen einzelnen Wert aus einem gegebenen Bereich von Werten auswählen oder
+- den Start- und Endpunkt von Werten festlegen, der einen Bereich innerhalb des gesamten vorgegebenen Bereichs bestimmt.
 
 ## Allgemein
 
-Der Slider zeigt einen Default-Wert oder -Wertebereich an, den Nutzer\*innen durch Verschieben des Reglers vergrößern oder verkleinern können. In der Regel wird eine sofortige Wirkung ausgelöst, zum Beispiel beim Einstellen der Lautstärke oder beim Filtern von Daten.
+Der Slider zeigt einen voreingestellten Wert oder Wertebereich an, den Nutzer\*innen durch Verschieben des Reglers vergrößern oder verkleinern können. In der Regel wird eine sofortige Wirkung ausgelöst, zum Beispiel beim Einstellen der Lautstärke oder beim Filtern von Daten.
 
 ### Verwende einen Slider, wenn
 
 - Nutzer\*innen einen Wert oder Wertebereich schnell anpassen möchten oder
 - die Anpassung des Wertes oder Wertebereichs eine sofortige Wirkung auslöst und
-- die Eingabe nicht präzise sein muss.
+- die Eingabe nicht präzise sein muss (z. B. Lautstärkeregler, der ohne sichtbaren Wert funktioniert).
 
 ### Verwende besser keine Slider, wenn
 
@@ -22,32 +25,90 @@ Der Slider zeigt einen Default-Wert oder -Wertebereich an, den Nutzer\*innen dur
 - der Wertebereich sehr groß ist (z. B. 1-100) oder
 - der Wertebereich sehr klein ist (z. B. 1-3).
 
+## Basistypen
+
+Jeder Slider benötigt ein Label, das den sich ändernden Wert beschreibt. Standardmäßig wird der aktuelle Wert angezeigt.
+
+### Slider mit Wert
+
+Nutzer\*innen können einen genauen Wert, z. B. 200 $, aus einem vorgegebenen Wertebereich einstellen.
+
+Der eingestellte Wert ändert sich in Echtzeit, sobald sich der Regler bewegt.
+
+Der Wert erhöht/verringert sich jeweils in 1er-Schritten.
+
+![slider_types-value-DE.png](assets/3_components/slider/slider_types-value-DE.png)
+
+### Slider mit Wertebereich
+
+Nutzer\*innen können sowohl den Start- als auch den Endpunkt des gewünschten Bereichs festlegen.
+
+Der Wertebereich verändert sich durch das Verschieben der Regler jeweils in 1er-Schritten.
+
+![slider_types-range-DE.png](assets/3_components/slider/slider_types-range-DE.png)
+
+### Slider mit Abschnitten
+
+Der Regler ist so eingestellt, dass der Wert in bestimmten Schritten erhöht und verringert wird (bspw. um den Wert 10 anstatt 1).
+
+![slider_types-stepped-DE.png](assets/3_components/slider/slider_types-stepped-DE.png)
+
+![slider_types-stepped-range-DE.png](assets/3_components/slider/slider_types-stepped-range-DE.png)
+
 ## Varianten
 
-Jeder Slider benötigt ein Label, das den sich ändernden Wert beschreibt. Zeige den aktuellen Wert immer per Default.
+### Ein-/ausgeblendete Elemente
 
-![Image Name](assets/3_components/slider/slider_types_de.png)
+Aktueller Wert ein-/ausgeblendet
 
-## Farben
+![slider_variants-DE.png](assets/3_components/slider/slider_variants-DE.png)
 
-Der Slider hat einen Magenta Balken. Möchtest du mit Farbkodierungen arbeiten, kannst du eine Farbe aus der Telekom Farbpalette oder eine eigene Farbe wählen. Achte in jedem Fall darauf, dass die Farbkodierung für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
+Meldung ein-/ausgeblendet
 
-![Image Name](assets/3_components/slider/slider_color_de.png)
+![slider_variants-message-DE.png](assets/3_components/slider/slider_variants-message-DE.png)
 
-## Größen
+### Farben
 
-![Image Name](assets/3_components/slider/slider_sizes_de.png)
+Der Slider hat einen magentafarbenen Balken. Möchtest du mit anderen Farben arbeiten, kannst du entweder eine aus der Telekom Farbpalette auswählen oder eine eigene Farbe festlegen. Achte in jedem Fall darauf, dass die Farbe für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
-## Deaktivierter Zustand
+![slider_color-DE.png](assets/3_components/slider/slider_color-DE.png)
+
+### Deaktivierter Zustand
 
 Deaktiviere den Slider, wenn
 
 - eine andere Aktion erfolgen muss, bevor der Slider nutzbar ist oder
 - die Nutzer\*innen den Wert/Wertebereich aktuell nicht ändern können.
 
-![Image Name](assets/3_components/slider/slider_disabled_de.png)
+Wenn der Slider deaktiviert ist, werden die Regler entfernt, um anzuzeigen, dass der Wert nicht verändert werden kann.
 
-> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+Deaktivierter Zustand (Regler ausgeblendet)
+
+![slider_disabled-DE.png](assets/3_components/slider/slider_disabled-DE.png)
+
+## Elemente
+
+![slider-elements-DE.png](assets/3_components/slider/slider-elements-DE.png)
+
+#### Label (1)
+
+Die Beschriftung zeigt deutlich an, welche Art von Wert aktuell eingestellt ist.
+
+#### Value (2)
+
+Der ausgewählte Wert zeigt entweder einen Einzelwert oder den Wertebereich eines Sliders an.
+
+#### Regler 1 (3) (Bei Slider mit Wertebereich)
+
+Regler 1 zeigt den Startpunkt des Wertebereichs an.
+
+#### Regler 2 (4)
+
+Regler 2 zeigt den Endpunkt des Wertebereichs an.
+
+#### Meldung (5)
+
+Hier werden Fehler und Hinweise angezeigt.
 
 ## Verwandte Komponenten
 

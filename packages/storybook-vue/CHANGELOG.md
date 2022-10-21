@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+
+### Bug Fixes
+
+* add displayCloseButton prop, update storybook ([#1197](https://github.com/telekom/scale/issues/1197)) ([2e7898b](https://github.com/telekom/scale/commit/2e7898b6e5c9be282609407f7cc3801bf6ac648e)), closes [#1194](https://github.com/telekom/scale/issues/1194) [#1196](https://github.com/telekom/scale/issues/1196) [#1195](https://github.com/telekom/scale/issues/1195)
+* replace deprecated `dist-custom-elements-bundle` dist ([#1202](https://github.com/telekom/scale/issues/1202)) ([6bd34e9](https://github.com/telekom/scale/commit/6bd34e989c134938b257968cafdd330be49e2918))
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
 # [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
 
 

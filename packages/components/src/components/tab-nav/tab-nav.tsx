@@ -9,15 +9,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import {
-  Element,
-  Component,
-  h,
-  Prop,
-  Host,
-  Listen,
-  Watch,
-} from '@stencil/core';
+import { Element, Component, h, Prop, Host, Listen } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
@@ -42,14 +34,9 @@ export class TabNav {
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
+  @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-
-  @Watch('small')
-  smallChanged() {
-    this.propagateSizeToTabs();
-  }
 
   @Listen('click')
   handleClick(event: MouseEvent) {
@@ -112,8 +99,7 @@ export class TabNav {
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message:
-          'Property "small" is deprecated. Please use the "size" property!',
+        message: 'Property "small" is deprecated. Please use css overwrite!',
         type: 'warn',
         source: this.el,
       });
@@ -190,14 +176,13 @@ export class TabNav {
   }
 
   /**
-   * Sets or removes the `small` prop in `scale-tab-header` and `scale-tab-panel` children.
+   * Sets or removes the `large` prop in `scale-tab-header` and `scale-tab-panel` children.
    */
   propagateSizeToTabs() {
-    const action =
-      this.size === 'small' || this.small ? 'setAttribute' : 'removeAttribute';
+    const action = this.size === 'large' ? 'setAttribute' : 'removeAttribute';
     const tabs = this.getAllTabs();
     const panels = this.getAllPanels();
-    [...tabs, ...panels].forEach((child) => child[action]('size', 'small'));
+    [...tabs, ...panels].forEach((child) => child[action]('size', 'large'));
   }
 
   render() {
@@ -225,9 +210,6 @@ export class TabNav {
     const component = 'tab-nav';
     const prefix = mode === 'basePart' ? '' : `${component}--`;
 
-    return classNames(
-      component,
-      (this.size === 'small' || this.small) && `${prefix}small`
-    );
+    return classNames(component, `${prefix}`);
   }
 }

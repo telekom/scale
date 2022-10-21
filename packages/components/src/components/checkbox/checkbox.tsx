@@ -70,7 +70,7 @@ export class Checkbox {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
-  private id = i++;
+  private readonly internalId = i++;
 
   componentDidRender() {
     if (this.status !== '') {
@@ -109,7 +109,7 @@ export class Checkbox {
 
   connectedCallback() {
     if (!this.inputId) {
-      this.inputId = 'input-checkbox-' + this.id;
+      this.inputId = 'input-checkbox-' + this.internalId;
     }
   }
 
@@ -134,6 +134,17 @@ export class Checkbox {
     }
   }
 
+  renderHelperIcon() {
+    if (this.helperText && !this.invalid) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+  }
+
   renderHelperText(text) {
     if (this.helperText && this.helperText !== '') {
       return (
@@ -143,6 +154,8 @@ export class Checkbox {
           aria-live="polite"
           aria-relevant="additions removals"
         >
+          {this.renderHelperIcon()}
+
           {text.content}
         </div>
       );
@@ -151,7 +164,7 @@ export class Checkbox {
 
   render() {
     const helperText = {
-      id: this.helperText ? `helper-text-${this.id}` : null,
+      id: this.helperText ? `helper-text-${this.internalId}` : null,
       content: this.helperText,
     };
 

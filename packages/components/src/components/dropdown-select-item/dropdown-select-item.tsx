@@ -9,7 +9,7 @@ export class DropdownSelectItem {
   @Element() hostElement: HTMLElement;
   @Prop() selected?: boolean;
   @Prop() focused?: boolean;
-  @Prop() value?: any;
+  @Prop({ reflect: true }) value?: any;
 
   render() {
     return (
