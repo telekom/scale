@@ -132,10 +132,9 @@
   z-index: 40;
 }
 
-.segmented-button scale-icon-action-success,
+.segmented-button:not(.segmented-button--icon-only) scale-icon-action-success,
 .segmented-button scale-icon-action-close {
   margin-right: var(--telekom-spacing-unit-x1);
-  padding-bottom: 2px;
 }
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
@@ -146,17 +145,14 @@
   vertical-align: middle;
 }
 
-.segmented-button--selected::part(segmented-button-icon) {
-  /* Styles to apply to the `foo` part */
-  border: 2px solid red;
-}
-
-.segmented-button--selected [slot='segmented-button-icon'] {
-  border: 2px solid red !important;
-}
-
 .segmented-button--selected .icon-container {
   display: none;
+}
+
+.segmented-button--selected .success-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon-container {

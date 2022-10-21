@@ -63,6 +63,8 @@ export class SegmentedButton {
   @Prop({ mutable: true }) hasIcon?: boolean;
   /** (optional) position within group */
   @Prop({ mutable: true }) textOnly?: boolean;
+  /** (optional) position within group */
+  @Prop({ mutable: true }) iconOnly?: boolean;  
   /** Emitted when button is clicked */
   @Event({ eventName: 'scale-click' }) scaleClick!: EventEmitter<{
     id: string;
@@ -161,6 +163,9 @@ export class SegmentedButton {
       if (child.tagName === 'LABEL' && this.hostElement.children.length === 1) {
         this.textOnly = true;
       }
+      if (child.tagName.substr(0, 10) === 'SCALE-ICON' && this.hostElement.children.length === 1) {
+        this.iconOnly = true;
+      }      
     });
   }
 
@@ -198,7 +203,7 @@ export class SegmentedButton {
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-          <div>
+          <div class="success-icon-container">
             <scale-icon-action-success
               size={12}
               class="scale-icon-action-success"
@@ -232,7 +237,8 @@ export class SegmentedButton {
       this.disabled && `${prefix}disabled`,
       this.adjacentSiblings &&
         `${prefix}${this.adjacentSiblings.replace(/ /g, '-')}-sibling-selected`,
-      this.hasIcon && `${prefix}has-icon`
+      this.hasIcon && `${prefix}has-icon`,
+      this.iconOnly && `${prefix}icon-only`,
     );
   }
 }
