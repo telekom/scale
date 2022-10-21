@@ -55,7 +55,7 @@ export class ProgressBar {
       this.progressBarId = 'progress-bar-' + i++;
     }
     if (this.disabled) {
-      this.showStatus = false
+      this.showStatus = false;
     }
   }
   componentWillUpdate() {}
@@ -88,7 +88,11 @@ export class ProgressBar {
     return {
       width: this.disabled ? '100%' : `${this.percentage}%`,
       border: '1px solid transparent',
-      background: this.customColor ? this.customColor : this.disabled ? 'var(--background-disabled)' : `var(--background)`,
+      background: this.customColor
+        ? this.customColor
+        : this.disabled
+        ? 'var(--background-disabled)'
+        : `var(--background)`,
       animation: this.disabled ? 'none' : 'showProgress 3s ease-in-out',
     };
   };

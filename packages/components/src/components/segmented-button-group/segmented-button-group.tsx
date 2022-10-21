@@ -91,7 +91,7 @@ export class SegmentedButtonGroup {
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      el.setAttribute('disabled', this.disabled && 'disabled')
+      el.setAttribute('disabled', this.disabled && 'disabled');
     });
   }
 
@@ -143,21 +143,19 @@ export class SegmentedButtonGroup {
   getLongestButtonWidth() {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
-      const selected = child.hasAttribute('selected')
+      const selected = child.hasAttribute('selected');
 
       if (selected) {
-
         tempWidth =
-        child.getBoundingClientRect().width > tempWidth
-          ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
-          : tempWidth;
+          child.getBoundingClientRect().width > tempWidth
+            ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
+            : tempWidth;
       } else {
-
         tempWidth =
-        child.getBoundingClientRect().width + CHECKMARK_WIDTH > tempWidth
-          ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
-          : tempWidth;        
-      } 
+          child.getBoundingClientRect().width + CHECKMARK_WIDTH > tempWidth
+            ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
+            : tempWidth;
+      }
     });
     return tempWidth;
   }

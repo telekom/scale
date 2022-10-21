@@ -65,7 +65,7 @@
   font-weight: var(--font-weight);
   transition: var(--transition);
   white-space: nowrap;
-  color: var(--telekom-color-text-and-icon-standard)
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .segmented-button--large {

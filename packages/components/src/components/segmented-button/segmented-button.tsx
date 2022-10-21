@@ -198,7 +198,6 @@ export class SegmentedButton {
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-          
           <div>
             <scale-icon-action-success
               size={12}
