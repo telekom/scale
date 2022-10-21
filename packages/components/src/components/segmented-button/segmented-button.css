@@ -23,6 +23,8 @@
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
 
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+
   /* large styles */
   --font-size-large: var(--telekom-typography-font-size-body);
   --large-height: var(--telekom-spacing-unit-x6);
@@ -36,7 +38,6 @@
 
   /* active styles */
   --background-color-active: var(--telekom-color-ui-state-fill-pressed);
-
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
     var(--telekom-color-functional-focus);
 
@@ -80,6 +81,7 @@
 .segmented-button--selected {
   background-color: var(--background-color-selected);
   box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
+  color: var(--color-selected);
 }
 
 .segmented-button--disabled.segmented-button--selected {

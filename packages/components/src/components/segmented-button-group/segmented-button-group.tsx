@@ -29,6 +29,8 @@ interface ButtonStatus {
   selected: boolean;
 }
 
+const CHECKMARK_WIDTH = 16;
+
 @Component({
   tag: 'scale-segmented-button-group',
   styleUrl: 'segmented-button-group.css',
@@ -142,17 +144,20 @@ export class SegmentedButtonGroup {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
       const selected = child.hasAttribute('selected')
+
       if (selected) {
+
         tempWidth =
-        child.getBoundingClientRect().width - 16 > tempWidth
-          ? child.getBoundingClientRect().width - 16
+        child.getBoundingClientRect().width > tempWidth
+          ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
           : tempWidth;
       } else {
+
         tempWidth =
-        child.getBoundingClientRect().width + 16 > tempWidth
-          ? child.getBoundingClientRect().width + 16
+        child.getBoundingClientRect().width + CHECKMARK_WIDTH > tempWidth
+          ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
           : tempWidth;        
-      }
+      } 
     });
     return tempWidth;
   }
