@@ -5741,18 +5741,6 @@
   resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.2.tgz#b3e9eeef05417883315e509fb9a3686a89fa91b0"
   integrity sha512-FZ8XfT5drDPjpzYhHfJ7JIYumHeNN/C92aJIRILmD4052wNgUU7ormdD2rvTCprvvDFFQXwCDhrl+9kNEgtNLg==
 
-"@telekom/design-tokens@^1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@telekom/design-tokens/-/design-tokens-1.0.0-beta.2.tgz#b3e9eeef05417883315e509fb9a3686a89fa91b0"
-  integrity sha512-FZ8XfT5drDPjpzYhHfJ7JIYumHeNN/C92aJIRILmD4052wNgUU7ormdD2rvTCprvvDFFQXwCDhrl+9kNEgtNLg==
-
-"@telekom/scale-design-tokens@^3.0.0-beta.110":
-  version "3.0.0-beta.110"
-  resolved "https://registry.yarnpkg.com/@telekom/scale-design-tokens/-/scale-design-tokens-3.0.0-beta.110.tgz#c50981ee8308cc22b94757ec04d31f764cf1d2c4"
-  integrity sha512-r6fVozsS2hbPSDnIhwZwsXip1/XUNJEieEcXe9MWeorYICkCg5F4v0jLjUjAY3W6jHmOrK3DJ90KG+dR3r9IzQ==
-  dependencies:
-    color "^3.1.3"
-
 "@testing-library/jest-dom@^5.8.0":
   version "5.11.4"
   resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.4.tgz"
