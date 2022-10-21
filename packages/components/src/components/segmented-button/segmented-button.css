@@ -64,6 +64,7 @@
   font-weight: var(--font-weight);
   transition: var(--transition);
   white-space: nowrap;
+  color: var(--telekom-color-text-and-icon-standard)
 }
 
 .segmented-button--large {
@@ -79,6 +80,10 @@
 .segmented-button--selected {
   background-color: var(--background-color-selected);
   box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
+}
+
+.segmented-button--disabled.segmented-button--selected {
+  color: var(--label-disabled);
 }
 
 .segmented-button--disabled:not(.segmented-button--selected) {
@@ -137,4 +142,24 @@
 
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
+}
+
+.segmented-button--selected::part(segmented-button-icon) {
+  /* Styles to apply to the `foo` part */
+  border: 2px solid red;
+}
+
+.segmented-button--selected [slot='segmented-button-icon'] {
+  border: 2px solid red !important;
+}
+
+.segmented-button--selected .icon-container {
+  display: none;
+}
+
+.icon-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

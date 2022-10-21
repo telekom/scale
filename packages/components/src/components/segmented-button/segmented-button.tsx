@@ -198,15 +198,14 @@ export class SegmentedButton {
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-          {this.textOnly && (
-            <div>
-              <scale-icon-action-success
-                size={12}
-                class="scale-icon-action-success"
-                accessibility-title="success"
-              />
-            </div>
-          )}
+          
+          <div>
+            <scale-icon-action-success
+              size={12}
+              class="scale-icon-action-success"
+              accessibility-title="success"
+            />
+          </div>
           <div class="icon-container">
             <slot name="segmented-button-icon" />
           </div>

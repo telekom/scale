@@ -26,8 +26,10 @@
 
 .segmented-button-group--large {
   height: 40px;
+  padding: 0 2px 0 2px;
 }
 
 .segmented-button-group--xl {
   height: 44px;
+  padding: 0 2px 0 2px;
 }
