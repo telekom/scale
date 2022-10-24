@@ -69,7 +69,7 @@ Message shown/hidden
 
 ### Colors
 
-Telekom sliders use Magenta as an accent color. If you need to apply a custom color, you can either use colors from the Telekom color palette or create a new one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
+Telekom sliders use Magenta as an accent color. If you need to apply a custom color, you can either use colors from the <a href="?path=/docs/guidelines-colors--page">Telekom color palette</a> or create a new one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
 ![slider_color-EN.png](assets/3_components/slider/slider_color-EN.png)
 

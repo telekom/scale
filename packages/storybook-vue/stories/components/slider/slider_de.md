@@ -69,7 +69,7 @@ Meldung ein-/ausgeblendet
 
 ### Farben
 
-Der Slider hat einen magentafarbenen Balken. Möchtest du mit anderen Farben arbeiten, kannst du entweder eine aus der Telekom Farbpalette auswählen oder eine eigene Farbe festlegen. Achte in jedem Fall darauf, dass die Farbe für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
+Der Slider hat einen magentafarbenen Balken. Möchtest du mit anderen Farben arbeiten, kannst du entweder eine aus der <a href="?path=/docs/guidelines-colors--page">Telekom Farbpalette</a> auswählen oder eine eigene Farbe festlegen. Achte in jedem Fall darauf, dass die Farbe für Nutzer\*innen verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
 ![slider_color-DE.png](assets/3_components/slider/slider_color-DE.png)
 
