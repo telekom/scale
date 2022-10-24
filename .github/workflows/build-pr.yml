@@ -147,30 +147,10 @@ jobs:
         run: |
           yarn lerna run generate
 
-      - name: Restore Components
-        id: components-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            packages/components/dist
-            packages/components/hydrate
-            packages/components/loader
-            packages/components/www
-            packages/components/custom-elements.json
-          key: ${{ runner.os }}-${{ hashFiles('./packages/components') }}
-
       - name: Build Components
         if: steps.components-cache.outputs.cache-hit != 'true'
         run: |
           yarn workspace @telekom/scale-components build
-
-      - name: Restore Storybook
-        id: storybook-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            packages/storybook-vue/storybook-static
-          key: ${{ runner.os }}-${{ hashFiles('./packages/storybook-vue') }}
 
       - name: Build Storybook
         if: steps.storybook-cache.outputs.cache-hit != 'true'

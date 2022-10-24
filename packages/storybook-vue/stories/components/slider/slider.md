@@ -9,7 +9,7 @@ A slider lets users control a value or a range of values.
 
 A slider displays the current value or range of values by default. Users can increase or decrease the value or range of values by moving a handle along a bar. Using a slider usually triggers an immediate effect (e.g., adjusting a setting like volume or filtering data).
 
-**When to use**
+### When to use
 
 Use a slider when:
 
@@ -17,7 +17,7 @@ Use a slider when:
 - adjusting the value or range triggers an immediate effect, or
 - the input doesn’t have to be precise (e.g., for a volume slider, the value can be hidden).
 
-**When not to use**
+### When not to use
 
 Don’t use a slider when:
 
@@ -30,7 +30,7 @@ Don’t use a slider when:
 
 Each slider needs a label which describes the value that is changing. Always display the current value by default.
 
-**Single value slider**
+### Single value slider
 
 The user can set a precise value (e.g., $200) from the pre-defined range.
 
@@ -40,7 +40,7 @@ The increase/decrease is by increments of 1.
 
 ![slider_types-value-EN.png](assets/3_components/slider/slider_types-value-EN.png)
 
-**Range slider**
+### Range slider
 
 The user can control both the starting point and end point of the value range they want to set.
 
@@ -48,7 +48,7 @@ The value increase/decrease from both knobs is by increments of 1.
 
 ![slider_types-range-EN.png](assets/3_components/slider/slider_types-range-EN.png)
 
-**Stepped slider**
+### Stepped slider
 
 The slider increases and decreases the value by set increments (e.g., increments of 10 instead of 1).
 
@@ -58,7 +58,7 @@ The slider increases and decreases the value by set increments (e.g., increments
 
 ## Variants
 
-### **Shown/hidden elements**
+### Shown/hidden elements
 
 Current value shown/hidden
 
@@ -67,13 +67,13 @@ Current value shown/hidden
 Message shown/hidden
 ![slider_variants-message-EN.png](assets/3_components/slider/slider_variants-message-EN.png)
 
-### **Colors**
+### Colors
 
 Telekom sliders use Magenta as an accent color. If you need to apply a custom color, you can either use colors from the Telekom color palette or create a new one. When customizing, use a color-code scheme that is clear to the user and meets all accessibility requirements.
 
 ![slider_color-EN.png](assets/3_components/slider/slider_color-EN.png)
 
-### **Disabled state**
+### Disabled state
 
 Disable the slider if:
 
@@ -84,27 +84,27 @@ When disabled, remove the knobs to show that the value can’t be changed.
 
 ![slider_disabled-EN.png](assets/3_components/slider/slider_disabled-EN.png)
 
-### Elements
+## Elements
 
 ![slider-elements-EN.png](assets/3_components/slider/slider-elements-EN.png)
 
-**Label (1)**
+#### Label (1)
 
 The label clearly indicates what kind of value is being adjusted.
 
-**Value (2) (optional)**
+#### Value (2) (optional)
 
 Display the selected value either as a single value for the value slider or as a range for the range slider.
 
-**Knob 1 (3) (for a range slider)**
+#### Knob 1 (3) (for a range slider)
 
 Knob 1 indicates the starting point of the range the user wants to select.
 
-**Knob 2 (4)**
+#### Knob 2 (4)
 
 Knob 2 indicates the end point of the range the user wants to select.
 
-**Message (5) (optional)**
+#### Message (5) (optional)
 
 Display error or informational messages here.
 

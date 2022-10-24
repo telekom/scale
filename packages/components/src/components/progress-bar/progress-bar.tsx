@@ -31,10 +31,8 @@ export class ProgressBar {
   @Prop() percentageStart: number = 0;
   /** @deprecated - (optional) Progress bar customColor */
   @Prop() customColor?: string;
-  /** (optional) Progress bar stroke width */
-  @Prop() strokeWidth?: number = 6;
   /** (optional) Progress bar percentage text */
-  @Prop() showStatus?: boolean;
+  @Prop() showStatus?: boolean = true;
   /** (optional) Progress bar icon indicator */
   @Prop() icon?: string;
   /** (optional) Progress bar status description text */
@@ -55,6 +53,9 @@ export class ProgressBar {
   componentWillLoad() {
     if (this.progressBarId == null) {
       this.progressBarId = 'progress-bar-' + i++;
+    }
+    if (this.disabled) {
+      this.showStatus = false;
     }
   }
   componentWillUpdate() {}
@@ -85,11 +86,14 @@ export class ProgressBar {
 
   progressStyle = () => {
     return {
-      width: `${this.percentage}%`,
+      width: this.disabled ? '100%' : `${this.percentage}%`,
       border: '1px solid transparent',
-      background: this.customColor ? this.customColor : `var(--background)`,
-      animation: 'showProgress 3s ease-in-out',
-      height: `${this.strokeWidth - 2}px`,
+      background: this.customColor
+        ? this.customColor
+        : this.disabled
+        ? 'var(--background-disabled)'
+        : `var(--background)`,
+      animation: this.disabled ? 'none' : 'showProgress 3s ease-in-out',
     };
   };
 
@@ -138,7 +142,6 @@ export class ProgressBar {
             <div
               part="outer"
               class="progress-bar__outer"
-              style={{ height: `${this.strokeWidth}px` }}
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}

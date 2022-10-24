@@ -2,6 +2,95 @@
 
 This page documents updates to the visual appearance of Scale.
 
+## Component Update (Optimized Mobile and Visual Design)
+
+20.10.2022
+
+**Visual and functionality changes**
+
+- Slider: optimized the design and expanded the functionality
+- Radio Buttons: optimized the selected interactive state
+- Tags: optimized colors and added predefined colors
+- Switch: revised the design and added variants for iOS and Android
+- Cards: expanded possible configurations and examples
+- Tab Navigation: optimized the design
+
+<br>
+
+**Optimized for touch-screen devices**
+
+The following components have been resized to make them easier to use on touch screens:
+
+- Radio Button
+- Radio Button Group
+- Checkbox
+- Checkbox Group
+
+<br>
+
+**Removed small variants**
+
+The following components have been adjusted in height and are now only available in one size on Scale. If you need a different size, you can change the components with CSS overwrite.
+
+- Text Field
+- Dropdown
+- Dropdown Select
+- Date Picker
+- Pagination
+
+We continue to support the small and large button sizes. The height of the large button was also adjusted.
+
+<br>
+
+**Accessibility**
+
+Information text now contain icons to support people with color vision deficiency (often referred to as color blindness). These are the updated components:
+
+- Text Field
+- Text Area
+- Dropdown
+- Dropdown Select
+- Radio Button
+- Radio Button Group
+- Checkbox
+- Checkbox Group
+
+<br>
+
+**Sketch library**
+
+The changes above have also been applied to our Sketch library. In addition, we’ve optimized the icons for the following components:
+
+- Buttons
+- Text Field
+- Text Area
+- Rating Stars
+- Switch
+- Dropdown
+- Text List
+- Table
+
+Please note: some small variants are no longer supported or available in the library. If you use such variants, you can replace them with the new standard size by clicking Layer ➔ Replace With. Here is an overview of the removed components:
+
+| Component       | Previous variant size | New variant name | Replaced with |
+| --------------- | --------------------- | ---------------- | ------------- |
+| Text Field      | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Dropdown        | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Dropdown Select | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Date Picker     | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Pagination      | Small                 | ❌               | Standard      |
+|                 | Large                 | Standard         | –             |
+| Table           | Small                 | Standard         | –             |
+|                 | Large                 | ❌               | Standard      |
+
+**Color tokens**
+
+The new UI colors white and black are well suited when the color is identical in dark and light mode.
+
 ## New dropdown select beta component
 
 02.08.22

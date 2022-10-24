@@ -62,9 +62,7 @@ Deaktiviere die Checkbox, wenn
 
 ## Verschachtelte Checkboxen
 
-> Diese Funktion ist bald verfügbar.
-
-Wenn Checkboxen zu einer übergeordneten Auswahloption gehören, dann kannst du diese verschachtelt darstellen. Durch Aktivieren der übergeordneten Checkbox werden alle anderen dieser Gruppe automatisch ausgewählt und umgekehrt. Wählen Nutzer\*innen nur eine der untergeordneten Checkboxen, ist der Status des übergeordneten Kontrollkästchens unbestimmt.
+Wenn Checkboxen zu einer übergeordneten Auswahloption gehören, dann kannst du diese in einer [Checkbox Group](?path=/usage/components-checkbox-group--standard) verschachteln. Durch Aktivieren der übergeordneten Checkbox werden alle anderen dieser Gruppe automatisch ausgewählt und umgekehrt. Wählen Nutzer\*innen nur eine der untergeordneten Checkboxen, ist der Status des übergeordneten Kontrollkästchens unbestimmt.
 
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
