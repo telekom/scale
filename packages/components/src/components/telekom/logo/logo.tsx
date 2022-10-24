@@ -46,6 +46,9 @@ export class Logo {
   @Prop() styles?: string;
   @Prop() focusable: boolean = true;
   @Prop() scrollIntoViewOnFocus: boolean = false;
+  /** (optional) Hide all logo related titles */
+  @Prop() hideTitle?: boolean = false;
+  /** (optional) set logo specific title */
   @Prop() logoTitle?: string = 'Telekom Logo';
   @Prop() logoAriaDescribedBy?: string;
 
@@ -65,7 +68,7 @@ export class Logo {
               window.scrollTo({ top: 0 });
             }
           }}
-          title={this.logoTitle}
+          title={this.hideTitle ? '' : this.logoTitle}
           aria-describedby={this.logoAriaDescribedBy}
         >
           <scale-logo-svg
@@ -74,6 +77,7 @@ export class Logo {
             color={this.variant}
             accessibilityTitle={this.accessibilityTitle}
             role="link"
+            hideTitle={this.hideTitle}
           ></scale-logo-svg>
         </a>
       </Host>

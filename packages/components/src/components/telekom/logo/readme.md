@@ -12,6 +12,7 @@
 | `accessibilityTitle` | `accessibility-title` | (optional) When using the icon standalone, make it meaningful for accessibility | `string`          | `undefined` |
 | `color`              | `color`               | (optional) Sets the icon color via the `fill` attribute                         | `string`          | `'magenta'` |
 | `focusable`          | `focusable`           |                                                                                 | `boolean`         | `true`      |
+| `hideTitle`          | `hide-title`          | (optional) Hide all logo related titles                                         | `boolean`         | `false`     |
 | `language`           | `language`            | (optional) The languages for the Text behind the Logo                           | `string`          | `'en'`      |
 | `role`               | `role`                |                                                                                 | `"img" \| "link"` | `'img'`     |
 
