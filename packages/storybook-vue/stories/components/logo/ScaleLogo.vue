@@ -40,9 +40,10 @@ export default {
     size: { type: Number, default: 36 },
     href: { type: String },
     styles: { type: String },
-    logoTitle: { type: String },
+    hideTitle: { type: Boolean, default: false },
+    logoTitle: { type: String, default: 'Telekom Logo' },
     logoAriaDescribedBy: { type: String },
-    accessibilityTitle: { type: String, default: 'Telekom Logo' },
+    accessibilityTitle: { type: String },
   },
 };
 </script>
