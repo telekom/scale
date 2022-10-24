@@ -69,6 +69,7 @@
   height: var(--height-track);
   background: var(--background-track);
   border-radius: var(--radius-track);
+  border: 1px solid transparent;
 }
 
 /* Really holds the thumb, adding some spacing on the sides */
@@ -105,11 +106,11 @@
   --_border: 0 0 0 var(--telekom-spacing-unit-x025) var(--border-color-thumb);
   width: var(--size-thumb);
   height: var(--size-thumb);
-  outline: none;
   box-sizing: border-box;
   border-radius: var(--radius-thumb);
   background-color: var(--background-thumb);
   box-shadow: var(--_border), var(--shadow-thumb);
+  border: 1px solid transparent;
 }
 
 [part~='thumb']:focus {
