@@ -20,6 +20,26 @@ Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/a
 - die Nutzer\*innen die Änderung über Speichern oder Absenden bestätigen müssen oder
 - ein unmittelbares Ergebnis nicht möglich ist (bei beidem eigenen sich Radio-Buttons oder Checkboxen).
 
+## Varianten
+
+### Large
+
+Der Switch in „Large“ funktioniert für alle Web-Apps. Verwende diese Variante auch für mobile Apps, die in erster Linie für iOS entworfen sind.
+
+![Image Name](assets/3_components/switch/switch_large.png)
+
+### Small
+
+Only Verwende diese Variante ausschließlich in Anwendungen, die für die Darstellung auf Desktops entwickelt sind. Ist dein Layout responsiv, kannst du für kleineren Viewportgrößen den Wechsel auf den großen Switch festlegen. this variant for desktop apps. If your layout is responsive, you can change to the large switch for smaller viewport sizes.
+
+![Image Name](assets/3_components/switch/
+
+### Android
+
+Diese Variante eignet sich, wenn du mit Scale eine mobile App baust, die sich visuell möglichst nahtlos in die Android Plattform einfügen soll.
+
+![Image Name](assets/3_components/switch/switch_android.png)
+
 ## Label
 
 Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eignet sich ein einzelnes Substantiv am besten.
