@@ -142,6 +142,7 @@ scale-switch {
 .switch--disabled:active {
   --_background: var(--telekom-color-ui-disabled);
   --_color-thumb: var(--telekom-color-ui-faint);
+  --_overlay-background: transparent;
 }
 
 .switch--checked .switch--disabled,
@@ -150,6 +151,7 @@ scale-switch {
   --_background: var(--telekom-color-ui-faint);
   --_color-thumb: var(--telekom-color-ui-disabled);
   box-shadow: var(--telekom-shadow-raised-standard);
+  --_overlay-background: transparent;
 }
 
 [data-platform='android'] .switch--disabled.switch--checked {
