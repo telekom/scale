@@ -78,6 +78,7 @@ export class Switch {
                 <span>{this.checked ? 'I' : '0'}</span>
               </div>
             </div>
+            <div class="switch__toggle--overlay" aria-hidden="true"></div>
             {this.label && <span class="switch__label-text">{this.label}</span>}
           </label>
         </div>
