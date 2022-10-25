@@ -29,13 +29,10 @@ describe('Switch', () => {
       }
     );
 
-    test.each([['standard']])(
-      'focus %p',
-      async (variant) => {
-        await global.runSetup(`components-switch--${variant}`);
-        await global.page.keyboard.press('Tab');
-        await global.visualCheck();
-      }
-    );
+    test.each([['standard']])('focus %p', async (variant) => {
+      await global.runSetup(`components-switch--${variant}`);
+      await global.page.keyboard.press('Tab');
+      await global.visualCheck();
+    });
   });
 });
