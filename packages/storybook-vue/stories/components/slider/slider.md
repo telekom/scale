@@ -65,6 +65,7 @@ Current value shown/hidden
 ![slider_variants-EN.png](assets/3_components/slider/slider_variants-EN.png)
 
 Message shown/hidden
+
 ![slider_variants-message-EN.png](assets/3_components/slider/slider_variants-message-EN.png)
 
 ### Colors
