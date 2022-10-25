@@ -1,3 +1,8 @@
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tags</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
 Tags draw the user's attention to certain content elements. They represent a category or an attribute.
 
 ## General
@@ -35,24 +40,12 @@ An interactive tag offers the possibility to remove the tag by clicking/tapping 
 
 ## Variants
 
-### Colors
-
 ![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
 The standard color for the tag is black text on light grey. Each defined color has a standard and stronger version with a darker background. Use the stronger version to provide more emphasis.
 All standard and strong colors are optimized for legibility and accessibility.
 
-Defined colors:
-
-- Teal
-- Olive
-- Violet
-- Brown
-- Cyan
-- Yellow
-- Green
-- Orange
-- Red
+### Colors
 
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 

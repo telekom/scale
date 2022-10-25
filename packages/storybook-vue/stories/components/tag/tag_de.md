@@ -1,8 +1,13 @@
+<div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+    <h1>Tags</h1>
+    <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
 Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer\*innen auf markierte und kategorisierte Inhalte.
 
 ## Allgemein
 
-Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statischer Tag lässt sich nicht entfernen und weist auf eine Kategorie oder ein Attribut hin. Ein interaktiver Tag kann hingegen ausgeblendet werden und zeigt beispielsweise gewählte Filter an.
+Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statischer Tag lässt weist auf eine Kategorie oder ein Attribut hin und lässt sich nicht entfernen. Ein schließbarer Tag kann ausgeblendet werden.
 
 ### Verwende einen Tag, um
 
@@ -31,23 +36,11 @@ Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon
 
 ## Varianten
 
-### Farben
-
 ![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
-Die Standardfarbe ist Dunkelgrau mit schwarzem Text. Jede definierte Farbe hat eine Standard- und eine markante Version mit dunklerem Hintergrund. Die Version „Strong“ eignet sich für eine stärkere Betonung. Alle Farbvarianten sind für Lesbarkeit und Barrierefreiheit optimiert.
+Scale enthält die Varianten "Standard" und "Strong". Die Variante "Strong" eignet sich für eine stärkere Betonung.
 
-Definierte Farben:
-
-- Teal
-- Olive
-- Violet
-- Brown
-- Cyan
-- Yellow
-- Green
-- Orange
-- Red
+### Farben
 
 Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst du eine eigene Farbe wählen. Wichtig ist, dass das Farbschema verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
