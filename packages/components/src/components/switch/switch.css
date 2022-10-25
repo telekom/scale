@@ -224,7 +224,7 @@ scale-switch {
 }
 
 .switch--size-large .switch__io-text {
-  margin-top: var(--offset);
+  margin-top: 1px;
   font: var(--telekom-text-style-caption-bold);
 }
 
