@@ -25,7 +25,6 @@ describe('Switch', () => {
           'document.querySelector("#root scale-switch")'
         );
         await firstButton.hover();
-        await page.waitFor(600);
         await global.visualCheck();
       }
     );
@@ -35,7 +34,6 @@ describe('Switch', () => {
         await global.runSetup(`components-switch--${variant}`);
         await global.page.mouse.move(25, 25);
         await global.page.mouse.down();
-        await page.waitFor(600);
         await global.visualCheck();
       }
     );
@@ -44,7 +42,6 @@ describe('Switch', () => {
       async (variant) => {
         await global.runSetup(`components-switch--${variant}`);
         await global.page.keyboard.press('Tab');
-        await page.waitFor(600);
         await global.visualCheck();
       }
     );
