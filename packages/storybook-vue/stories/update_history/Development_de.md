@@ -4,15 +4,14 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
-20.09.2022
+25.09.2022
 
 **Visuelle und funktionale Änderungen**
 
 - Slider: Visuelle Optimierung und funktionale Erweiterung
 - Radio Buttons: Optimierung des Interactive States „Selected“
 - Tags: Farbliche Optimierung und Erweiterung um vordefinierte Farben
-- Switch: Visuelle Überarbeitung und neue Varianten für iOS und Android
-- Cards: Erweiterung möglicher Konfigurationen und Beispiele
+- Switch: Visuelle Überarbeitung und neue Varianten
 - Tab Navigation: Visuelle Optimierung
 
 <br>

@@ -4,15 +4,14 @@ This page documents updates to the visual appearance of Scale.
 
 ## Component Update (Optimized Mobile and Visual Design)
 
-20.10.2022
+25.10.2022
 
 **Visual and functionality changes**
 
 - Slider: optimized the design and expanded the functionality
 - Radio Buttons: optimized the selected interactive state
 - Tags: optimized colors and added predefined colors
-- Switch: revised the design and added variants for iOS and Android
-- Cards: expanded possible configurations and examples
+- Switch: revised the design and added new variants
 - Tab Navigation: optimized the design
 
 <br>
