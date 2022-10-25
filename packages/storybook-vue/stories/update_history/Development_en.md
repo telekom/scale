@@ -4,7 +4,7 @@ This page documents updates in `@telekom/scale-components` and related packages.
 
 ## Component Update (Optimized Mobile and Visual Design)
 
-25.10.2022
+26.10.2022
 
 **Visual and functionality changes**
 

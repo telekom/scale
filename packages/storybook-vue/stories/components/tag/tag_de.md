@@ -7,7 +7,7 @@ Tags funktionieren wie Etiketten. Sie lenken die Aufmerksamkeit der Nutzer\*inne
 
 ## Allgemein
 
-Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein statischer Tag lässt weist auf eine Kategorie oder ein Attribut hin und lässt sich nicht entfernen. Ein schließbarer Tag kann ausgeblendet werden.
+Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein Tag weist auf eine Kategorie oder ein Attribut hin.
 
 ### Verwende einen Tag, um
 
@@ -34,19 +34,23 @@ Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon
 
 ![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
 
+### Schließbarer Tag
+
+Ein schließbarer Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon auszublenden.
+
 ## Varianten
 
 ![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
 Scale enthält die Varianten "Standard" und "Strong". Die Variante "Strong" eignet sich für eine stärkere Betonung.
 
-### Farben
+## Farben
 
 Für Farbcodierungen oder um eine andere visuelle Wirkung zu erreichen, kannst du eine eigene Farbe wählen. Wichtig ist, dass das Farbschema verständlich ist und allen Anforderungen der Barrierefreiheit entspricht.
 
 ![Tag-Basic-Colors.png](assets/3_components/tag/tag-basic-colors.png)
 
-### Größen
+## Größen
 
 Scale bietet Tags in zwei Größen an: Large und Small. Du kannst die Größe der Tags bei Bedarf anpassen.
 
@@ -62,7 +66,7 @@ Verwende kleine Tags nur, wenn du nicht genug Platz für die Standardgröße has
 
 ![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
 
-### Deaktivierter Zustand
+## Deaktivierter Zustand
 
 ![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
 
@@ -78,12 +82,12 @@ Der Container beinhaltet ein Label und optional ein Schließen-Icon.
 
 Die Beschriftung steht für eine Kategorie oder ein Attribut. Formuliere das Label eindeutig und kurz.
 
-#### Icon (3)
+#### Icon (3) (optional)
 
 Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
 
 ## Best Practices
 
-- Kombiniere keine interaktiven und statischen Tags innerhalb eines Produkts oder Services.
+- Kombiniere keine schließbaren und statischen Tags innerhalb eines Produkts oder Services.
 - Wähle eine einheitliche Größe für Tags.
 - Verwende eine eindeutige Bezeichnung für das Label.

@@ -4,7 +4,7 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
-25.09.2022
+26.10.2022
 
 **Visuelle und funktionale Änderungen**
 

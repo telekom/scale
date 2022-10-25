@@ -4,7 +4,7 @@ Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
-25.10.2022
+26.10.2022
 
 **Visuelle und funktionale Änderungen**
 
