@@ -46,6 +46,13 @@ global.runSetup = async (id) => {
     ].forEach((transitionSpeed) => {
       document.body.style.setProperty(transitionSpeed, '0s');
     });
+    [
+      '--telekom-motion-easing-standard',
+      '--telekom-motion-easing-enter',
+      '--telekom-motion-easing-leave',
+    ].forEach((motion) => {
+      document.body.style.setProperty(motion, 'unset');
+    });
   });
 };
 
