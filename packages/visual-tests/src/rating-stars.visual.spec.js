@@ -23,7 +23,7 @@ describe('RatingStars', () => {
       await global.visualCheck();
       await global.page.mouse.move(40, 60);
       await global.page.mouse.down();
-      await global.page.waitFor(500);
+      await global.page.waitFor(600);
       await global.visualCheck();
     });
   });
