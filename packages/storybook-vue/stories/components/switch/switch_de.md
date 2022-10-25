@@ -30,9 +30,9 @@ Der Switch in „Large“ funktioniert für alle Web-Apps. Verwende diese Varian
 
 ### Small
 
-Only Verwende diese Variante ausschließlich in Anwendungen, die für die Darstellung auf Desktops entwickelt sind. Ist dein Layout responsiv, kannst du für kleineren Viewportgrößen den Wechsel auf den großen Switch festlegen. this variant for desktop apps. If your layout is responsive, you can change to the large switch for smaller viewport sizes.
+Verwende diese Variante ausschließlich in Anwendungen, die für die Darstellung auf Desktops entwickelt sind. Ist dein Layout responsiv, kannst du für kleineren Viewportgrößen den Wechsel auf den großen Switch festlegen.
 
-![Image Name](assets/3_components/switch/
+![Image Name](assets/3_components/switch/switch_small.png)
 
 ### Android
 

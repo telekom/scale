@@ -38,7 +38,7 @@ Only use this variant for desktop apps. If your layout is responsive, you can ch
 
 ### Android
 
-Das Label des Switch sollte kurz und verständlich sein. Für einige Fälle eignet sich ein einzelnes Substantiv am besten.
+This variant is ideal if you’re using Scale to build a mobile app that should visually integrate into Android as seamlessly as possible.
 
 ![Image Name](assets/3_components/switch/switch_android.png)
 
