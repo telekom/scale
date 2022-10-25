@@ -322,9 +322,9 @@ export class Slider {
   getRangeAriaValueText() {
     const filledText = this.innerAriaValueText
       .replace(/\$from/g, `${this.valueFrom}`)
-      .replace(/\$to/g, `${this.valueTo}`)
+      .replace(/\$to/g, `${this.valueTo}`);
     return filledText;
-  }  
+  }
 
   render() {
     const helperTextId = `slider-helper-message-${i}`;
