@@ -11,7 +11,7 @@ Diese Seite dokumentiert Aktualisierungen in `@telekom/scale-components` und ver
 - Slider: Visuelle Optimierung und funktionale Erweiterung
 - Radio Buttons: Optimierung des Interactive States „Selected“
 - Tags: Farbliche Optimierung und Erweiterung um vordefinierte Farben
-- Switch: Visuelle Überarbeitung und neue Varianten
+- Switch: Visuelle Überarbeitung und eine neue Variante für Android
 - Tab Navigation: Visuelle Optimierung
 
 <br>
