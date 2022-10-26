@@ -34,13 +34,9 @@ A static tag has no interactive function. It only conveys information, for insta
 
 ### Dismissible tag
 
-A dismissible tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use, for example, is deactivating selected filters.
+A dismissible tag offers the possibility to remove the tag by clicking/tapping on the icon.
 
 ![Tag-Dismissible.png](assets/3_components/tag/tag-interactive.png)
-
-### Dismissible tag
-
-A dismissible tag offers the possibility to remove the tag by clicking/tapping on the icon.
 
 ## Variants
 

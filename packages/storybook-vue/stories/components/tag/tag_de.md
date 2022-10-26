@@ -30,13 +30,9 @@ Ein statischer Tag hat keine interaktive Funktion. Er zeigt lediglich eine Infor
 
 ### Schließbarer Tag
 
-Ein schließbarer Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon zu schließen. Eine typische Anwendung ist bspw. das Deaktivieren von gesetzten Filtern.
+Ein schließbarer Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon auszublenden.
 
 ![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
-
-### Schließbarer Tag
-
-Ein schließbarer Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon auszublenden.
 
 ## Varianten
 
