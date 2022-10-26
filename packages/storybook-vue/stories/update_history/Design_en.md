@@ -4,7 +4,7 @@ This page documents updates to the visual appearance of Scale.
 
 ## Component Update (Optimized Mobile and Visual Design)
 
-26.10.2022
+27.10.2022
 
 **Visual and functionality changes**
 

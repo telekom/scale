@@ -7,7 +7,7 @@ Mit Hilfe eines Switch können Nutzer\*innen eine Option direkt ein- oder aussch
 
 ## Allgemein
 
-Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/aus oder ja/nein). Er hat immer einen Default-Wert. Der magentafarbene, flächige Switch zeigt an, dass er eingeschaltet ist, während ein Outline-Switch anzeigt, dass er ausgeschaltet ist.
+Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/aus oder ja/nein). Er hat immer einen Default-Wert.
 
 ![Image Name](assets/3_components/switch/switch.png)
 

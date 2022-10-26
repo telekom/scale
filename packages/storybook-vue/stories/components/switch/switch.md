@@ -7,7 +7,7 @@ Switches allow users to quickly turn an item on or off. Like a physical light sw
 
 ## General
 
-A switch offers two mutually exclusive states (on/off, yes/no). It always has a default value. A solid Magenta color shows it is on, while a dark outline shows it is off.
+A switch offers two mutually exclusive states (on/off, yes/no). It always has a default value.
 
 ![Image Name](assets/3_components/switch/switch.png)
 
