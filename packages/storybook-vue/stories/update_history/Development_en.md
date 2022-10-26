@@ -4,15 +4,15 @@ This page documents updates in `@telekom/scale-components` and related packages.
 
 ## Component Update (Optimized Mobile and Visual Design)
 
-26.10.2022
+27.10.2022
 
 **Visual and functionality changes**
 
-- Slider: optimized the design and expanded the functionality
+- Slider: optimized the design and expanded on the overall functionality
 - Radio Buttons: optimized the selected interactive state
-- Tags: optimized colors and added predefined colors
-- Switch: revised the design and added new variants
-- Tab Navigation: optimized the design
+- Tags: optimized the current colors and added predefined colors
+- Switch: revised the design and added a variant for Android
+- Tab Navigation: optimized the visual design
 
 <br>
 
@@ -43,7 +43,7 @@ We continue to support the small and large button sizes. The height of the large
 
 **Accessibility**
 
-Information text now contain icons to support people with color vision deficiency (often referred to as color blindness). These are the updated components:
+Information text now contains icons to support people with color vision deficiency (often referred to as color blindness). These are the updated components:
 
 - Text Field
 - Text Area

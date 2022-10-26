@@ -4,14 +4,14 @@ Diese Seite dokumentiert Updates der visuellen Erscheinung von Scale
 
 ## Komponenten-Update (Optimierung von Mobile und Visual Design)
 
-26.10.2022
+27.10.2022
 
 **Visuelle und funktionale Änderungen**
 
 - Slider: Visuelle Optimierung und funktionale Erweiterung
 - Radio Buttons: Optimierung des Interactive States „Selected“
 - Tags: Farbliche Optimierung und Erweiterung um vordefinierte Farben
-- Switch: Visuelle Überarbeitung und neue Varianten
+- Switch: Visuelle Überarbeitung und eine neue Variante für Android
 - Tab Navigation: Visuelle Optimierung
 
 <br>
