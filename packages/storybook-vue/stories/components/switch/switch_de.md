@@ -22,23 +22,31 @@ Ein Switch verfügt über zwei sich gegenseitig ausschließende Zustände (ein/a
 
 ## Varianten
 
-### Large
+### Standard / iOS
 
-Der Switch in „Large“ funktioniert für alle Web-Apps. Verwende diese Variante auch für mobile Apps, die in erster Linie für iOS entworfen sind.
-
-![Image Name](assets/3_components/switch/switch_large.png)
-
-### Small
-
-Verwende diese Variante ausschließlich in Anwendungen, die für die Darstellung auf Desktops entwickelt sind. Ist dein Layout responsiv, kannst du für kleineren Viewportgrößen den Wechsel auf den großen Switch festlegen.
-
-![Image Name](assets/3_components/switch/switch_small.png)
+Nutze die Standardvariante für alle plattformunabhängigen Applikationen oder für solche, die in erster Linie für iOS entworfen sind.
 
 ### Android
 
 Diese Variante eignet sich, wenn du mit Scale eine mobile App baust, die sich visuell möglichst nahtlos in die Android Plattform einfügen soll.
 
 ![Image Name](assets/3_components/switch/switch_android.png)
+
+## Sizes
+
+Die Standardvariante hat zwei Größen.
+
+### Large
+
+Der Switch „Large“ funktioniert für alle Web-Apps. Verwende diese Variante auch für mobile Apps, die plattformunabhängig oder in erster Linie für iOS entworfen sind.
+
+![Image Name](assets/3_components/switch/switch_large.png)
+
+### Small
+
+Verwende diese Variante ausschließlich in Anwendungen, die für die Darstellung auf Desktops entwickelt sind. Ist dein Layout responsiv, kannst du für kleinere Viewportgrößen den Wechsel auf den großen Switch festlegen.
+
+![Image Name](assets/3_components/switch/switch_small.png)
 
 ## Label
 
