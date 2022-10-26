@@ -30,17 +30,17 @@ Verwende Radio-Buttons grundsätzlich nicht, wenn
 
 Wähle einen kurzen und aussagekräftigen Titel für die gesamte Gruppe.
 
-### Radio-Button ausgeschaltet (2)
+### Radio-Button eingeschaltet (2)
 
-Wenn der Kreis leer ist, gilt eine Option als abgewählt.
+Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
 
 ### Label (3)
 
 Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
 
-### Radio-Button eingeschaltet
+### Radio-Button ausgeschaltet (4)
 
-Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
+Wenn der Kreis leer ist, gilt eine Option als abgewählt.
 
 ### Information (5) (optional)
 

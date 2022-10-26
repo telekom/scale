@@ -37,17 +37,17 @@ Don't use a radio button group when:
 
 Choose a short and meaningful title for the entire group.
 
-### Deselected radio button (2)
+### Selected radio button (2)
 
-If the circle is empty, an option is deselected.
+If the circle is filled in, an option is selected.
 
 ### Label (3)
 
 Use the label to clearly describe the effect of the respective selection. A label usually contains max three words.
 
-### Selected radio button
+### Deselected radio button (4)
 
-If the circle is filled in, an option is selected.
+If the circle is empty, an option is deselected.
 
 ### Information (5) (optional)
 

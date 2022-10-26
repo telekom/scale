@@ -59,10 +59,6 @@ Disable the checkbox if:
 
 > The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
-## Nested groups of checkboxes
-
-When checkboxes are related to a parent checkbox, you can nest them in a [Checkbox Group](?path=/usage/components-checkbox-group--standard). Selecting the parent checkbox automatically selects all checkboxes of the group and vice versa. When the user selects a portion of the nested checkboxes, the state of the parent checkbox is indeterminate.
-
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
 ## Required input
@@ -73,6 +69,7 @@ When checking a box is required, use an asterisk (\*) in the text label.
 
 ## Related components
 
+[Checkbox Group, ](?path=/usage/components-checkbox-group--standard)
 [Dropdown, ](?path=/usage/components-dropdown--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

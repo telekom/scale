@@ -49,8 +49,8 @@ Gib, wenn möglich, immer eine Beschreibung an, die den Nutzer\*innen weitere In
 
 Nutze bei Telekom Progress-Bars Magenta als Akzentfarbe. Wenn du aus einem bestimmten Grund eine andere Farbe verwenden möchtest, kannst du entweder die Farben aus der Telekom Farbpalette nutzen oder eine eigene Farbe auswählen. Bitte achte in diesem Fall darauf, dass das Farbschema für die Nutzer\*innen verständlich ist und alle Anforderungen der Barrierefreiheit erfüllt.
 
-![Image Name](assets/3_components/progress-bar/pb-in-custom-color_de.png)
+![Image Name](assets/3_components/progress-bar/pb-in-custom-color.png)
 
 ### Fortschritt-Status
 
-![Image Name](assets/3_components/progress-bar/pb_states-de.png)
+![Image Name](assets/3_components/progress-bar/pb_states.png)

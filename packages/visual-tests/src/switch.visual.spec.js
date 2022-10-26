@@ -17,7 +17,7 @@ describe('Switch', () => {
       await global.runSetup(`components-switch--${variant}`);
       await global.visualCheck();
     });
-    test.each([['standard'], ['selected'], ['android'], ['android-selected']])(
+    test.each([['standard'], ['selected'], ['android-selected']])(
       'hover %p',
       async (variant) => {
         await global.runSetup(`components-switch--${variant}`);
