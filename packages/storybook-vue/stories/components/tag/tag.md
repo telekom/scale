@@ -1,5 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Tags</h1>
+    <h1>Tag</h1>
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
@@ -32,11 +32,11 @@ A static tag has no interactive function. It only conveys information, for insta
 
 ![Tag-static.png](assets/3_components/tag/tag-static.png)
 
-### Interactive tag
+### Dismissible tag
 
-An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use, for example, is deactivating selected filters.
+A dismissible tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use, for example, is deactivating selected filters.
 
-![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
+![Tag-Dismissible.png](assets/3_components/tag/tag-interactive.png)
 
 ### Dismissible tag
 
@@ -46,8 +46,7 @@ A dismissible tag offers the possibility to remove the tag by clicking/tapping o
 
 ![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
-The standard color for the tag is black text on light grey. Each defined color has a standard and stronger version with a darker background. Use the stronger version to provide more emphasis.
-All standard and strong colors are optimized for legibility and accessibility.
+Scale offers standard and strong variants. The strong variant is ideal for more emphasis.
 
 ## Colors
 
@@ -67,9 +66,9 @@ Use large tags as default.
 
 ### Small
 
-![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
-
 Use small tags if space is limited.
+
+![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
 
 ## Disabled state
 
@@ -93,6 +92,5 @@ By clicking/tapping on the icon, users remove the tag.
 
 ## Best practices
 
-- Don't mix dismissible and static tags within a product or service.
 - Decide on one size for your tags.
 - Use a clear keyword for the label.

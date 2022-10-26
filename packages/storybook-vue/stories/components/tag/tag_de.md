@@ -1,5 +1,5 @@
 <div style="display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-    <h1>Tags</h1>
+    <h1>Tag</h1>
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
@@ -28,9 +28,9 @@ Ein statischer Tag hat keine interaktive Funktion. Er zeigt lediglich eine Infor
 
 ![Tag-static.png](assets/3_components/tag/tag-static.png)
 
-### Interaktiver Tag
+### Schließbarer Tag
 
-Ein interaktiver Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon zu schließen. Eine typische Anwendung ist bspw. das Deaktivieren von gesetzten Filtern.
+Ein schließbarer Tag bietet die Möglichkeit, den Tag per Klick/Tap auf das Icon zu schließen. Eine typische Anwendung ist bspw. das Deaktivieren von gesetzten Filtern.
 
 ![Tag-Interactive.png](assets/3_components/tag/tag-interactive.png)
 
@@ -88,6 +88,5 @@ Per Klick/Tap auf das Icon blenden Nutzer\*innen den Tag aus.
 
 ## Best Practices
 
-- Kombiniere keine schließbaren und statischen Tags innerhalb eines Produkts oder Services.
 - Wähle eine einheitliche Größe für Tags.
 - Verwende eine eindeutige Bezeichnung für das Label.
