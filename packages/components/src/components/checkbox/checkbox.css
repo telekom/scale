@@ -90,6 +90,7 @@ scale-checkbox.hideLabel [part='label'] {
 }
 
 scale-checkbox [part='checkbox'] {
+  box-sizing: border-box;
   display: flex;
   flex: 0 0 auto;
   justify-content: center;
