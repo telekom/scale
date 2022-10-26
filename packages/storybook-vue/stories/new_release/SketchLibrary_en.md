@@ -1,6 +1,6 @@
 # Update Sketch Library
 
-## Update 20.10.2022
+## Update 27.10.2022
 
 Some of our component variants have been removed (see update history). In existing layouts, the symbols will continue to appear as part of the library even if they’re no longer available. Please keep your layouts up to date by re-linking the elements with the Replace With function. Here’s how to do it:
 
