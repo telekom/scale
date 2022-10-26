@@ -22,6 +22,26 @@ Use radio buttons or a single checkbox if
 - the user has to confirm by saving or submitting to apply the new state or
 - immediate results are not possible.
 
+## Variants
+
+### Large
+
+The large switch works for all web apps. Also, use this variant for mobile apps designed primarily for iOS.
+
+![Image Name](assets/3_components/switch/switch_large.png)
+
+### Small
+
+Only use this variant for desktop apps. If your layout is responsive, you can change to the large switch for smaller viewport sizes.
+
+![Image Name](assets/3_components/switch/switch_small.png)
+
+### Android
+
+This variant is ideal if you’re using Scale to build a mobile app that should visually integrate into Android as seamlessly as possible.
+
+![Image Name](assets/3_components/switch/switch_android.png)
+
 ## Label
 
 Clearly label the switch and keep it short. For some use cases, a single noun provides the best guidance.
