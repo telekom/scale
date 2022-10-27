@@ -15,7 +15,6 @@ Use a tag to:
 
 - draw a user's attention to certain elements they might otherwise overlook,
 - make it easier for users to recognize content, for instance in tables, or
-- show users selected filters.
 
 ### When not to use
 
