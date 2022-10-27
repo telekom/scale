@@ -13,8 +13,8 @@ Tags consist of relevant keywords in a container. A tag refers to a category or 
 
 Use a tag to:
 
-- draw a user's attention to certain elements they might otherwise overlook,
-- make it easier for users to recognize content, for instance in tables, or
+- draw a user's attention to certain elements they might otherwise overlook.
+- make it easier for users to recognize content, for instance in tables.
 
 ### When not to use
 

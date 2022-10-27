@@ -11,8 +11,8 @@ Tags bestehen aus relevanten Schlüsselwörtern in einem Container. Ein Tag weis
 
 ### Verwende einen Tag, um
 
-- die Aufmerksamkeit der Nutzer\*innen auf bestimmte Elemente zu lenken, die sonst möglicherweise übersehen werden,
-- Nutzer\*innen die Zuordnung von Inhalten zu erleichtern (beispielsweise in Tabellen) und
+- die Aufmerksamkeit der Nutzer*innen auf bestimmte Elemente zu lenken, die sonst möglicherweise übersehen werden.
+- Nutzer*innen die Zuordnung von Inhalten zu erleichtern (beispielsweise in Tabellen).
 
 ### Verwende Tags besser nicht, wenn
 
