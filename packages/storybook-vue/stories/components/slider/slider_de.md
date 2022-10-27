@@ -79,8 +79,6 @@ Deaktiviere den Slider, wenn
 
 Wenn der Slider deaktiviert ist, werden die Regler entfernt, um anzuzeigen, dass der Wert nicht verändert werden kann.
 
-Deaktivierter Zustand (Regler ausgeblendet)
-
 ![slider_disabled-DE.png](assets/3_components/slider/slider_disabled-DE.png)
 
 ## Elemente
