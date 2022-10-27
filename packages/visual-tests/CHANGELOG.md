@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+
+### Features
+
+* **button:** add secondary white variant ([#1220](https://github.com/telekom/scale/issues/1220)) ([a6ed3a6](https://github.com/telekom/scale/commit/a6ed3a65c040900f049da35b72ee7b5c1e195203))
+* **callout:** refactor, improve accessibility ([#1175](https://github.com/telekom/scale/issues/1175)) ([23f4b8a](https://github.com/telekom/scale/commit/23f4b8a0099a7c1e1d515c0589d8e3f040f5e95a))
+* **checkbox+radio-button:** mobile optimisation ([#1214](https://github.com/telekom/scale/issues/1214)) ([52e8367](https://github.com/telekom/scale/commit/52e836730877962875c12c52841e12c26f263a5f))
+* **dropdown-select:** mobile optimisation ([#1215](https://github.com/telekom/scale/issues/1215)) ([8dc1fa4](https://github.com/telekom/scale/commit/8dc1fa40b77b8fbd7f93b125f9a62fd3e8ecdd46))
+* **switch:** mobile optimisation ([#1184](https://github.com/telekom/scale/issues/1184)) ([#1244](https://github.com/telekom/scale/issues/1244)) ([ec0a078](https://github.com/telekom/scale/commit/ec0a078577ddebcb6636c530a76f85a5ae6ffe8a))
+* **tag:** mobile optimisation ([#1163](https://github.com/telekom/scale/issues/1163)) ([3ac7fd1](https://github.com/telekom/scale/commit/3ac7fd12176342f751ef16781c3c05368bf4c7bc))
+
+
+
+
+
 # [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
 
 **Note:** Version bump only for package @telekom/scale-visual-tests
