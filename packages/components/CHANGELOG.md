@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+
+### Features
+
+* **button:** add secondary white variant ([#1220](https://github.com/telekom/scale/issues/1220)) ([a6ed3a6](https://github.com/telekom/scale/commit/a6ed3a65c040900f049da35b72ee7b5c1e195203))
+* **callout:** refactor, improve accessibility ([#1175](https://github.com/telekom/scale/issues/1175)) ([23f4b8a](https://github.com/telekom/scale/commit/23f4b8a0099a7c1e1d515c0589d8e3f040f5e95a))
+* **checkbox+radio-button:** mobile optimisation ([#1214](https://github.com/telekom/scale/issues/1214)) ([52e8367](https://github.com/telekom/scale/commit/52e836730877962875c12c52841e12c26f263a5f))
+* **dropdown-select:** mobile optimisation ([#1215](https://github.com/telekom/scale/issues/1215)) ([8dc1fa4](https://github.com/telekom/scale/commit/8dc1fa40b77b8fbd7f93b125f9a62fd3e8ecdd46))
+* **focus-outline:** mobile optimisation ([de48476](https://github.com/telekom/scale/commit/de48476c9c36f27d7aa47fdda6bba7a2980c493d))
+* **helper-text:** mobile optimisation, reusable helper-text ([#1222](https://github.com/telekom/scale/issues/1222)) ([819c9d6](https://github.com/telekom/scale/commit/819c9d67337565c4c3415a93027ee815a8dacd7e))
+* **progress-bar:** mobile optimisation ([14934d3](https://github.com/telekom/scale/commit/14934d3bb93bd04e2ad07a155d3d9168dc4a89f0))
+* **progress-bar:** mobile optimisation ([#1246](https://github.com/telekom/scale/issues/1246)) ([c11beda](https://github.com/telekom/scale/commit/c11bedab48255f1b81eb457c9ae6a302804c07e2))
+* **slider:** mobile optimisation ([#1221](https://github.com/telekom/scale/issues/1221)) ([5d41da7](https://github.com/telekom/scale/commit/5d41da774de8df7db7baba84baf1f11e9f0874eb))
+* **switch:** mobile optimisation ([#1184](https://github.com/telekom/scale/issues/1184)) ([#1244](https://github.com/telekom/scale/issues/1244)) ([ec0a078](https://github.com/telekom/scale/commit/ec0a078577ddebcb6636c530a76f85a5ae6ffe8a))
+* **tag:** mobile optimisation ([#1163](https://github.com/telekom/scale/issues/1163)) ([3ac7fd1](https://github.com/telekom/scale/commit/3ac7fd12176342f751ef16781c3c05368bf4c7bc))
+
+
+
+
+
 # [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
 
 

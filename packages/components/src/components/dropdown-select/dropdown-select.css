@@ -1,6 +1,6 @@
 :host {
   --font-weight: var(--telekom-typography-font-weight-bold);
-  --height: var(--telekom-spacing-unit-x12);
+  --height: var(--telekom-spacing-unit-x11);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background-disabled: none;
@@ -12,30 +12,20 @@
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --border-invalid: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-hovered);
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+  --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
   --spacing-x: var(--telekom-spacing-unit-x3);
   --transition: all var(--telekom-motion-duration-transition)
     var(--telekom-motion-easing-standard);
   --radius: var(--telekom-radius-standard);
+  --spacing-x-for-helper-text: var(--telekom-spacing-unit-x1);
 
   /*combobox*/
   --transition-combobox: var(--transition);
   --font-size-combobox: var(--telekom-typography-font-size-body);
   --background-combobox: var(--telekom-color-ui-state-fill-standard);
-  --spacing-combobox: var(--telekom-spacing-unit-x3)
-    var(--telekom-spacing-unit-x10) 0 calc(var(--spacing-x) - 1px);
-
-  /*helper-text*/
-  --transition-helper-text: var(--transition);
-  --font-size-helper-text: var(--telekom-typography-font-size-small);
-  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
-  --color-helper-text: var(
-    --telekom-color-text-and-icon-functional-informational
-  );
-  --color-helper-text-invalid: var(
-    --telekom-color-text-and-icon-functional-danger
-  );
+  --spacing-combobox: 18px var(--telekom-spacing-unit-x10) 5px
+    calc(var(--spacing-x) - 1px);
 
   /*meta*/
   --spacing-y-meta: var(--telekom-spacing-unit-x1);
@@ -56,10 +46,11 @@
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --font-size-label-focus: var(--telekom-typography-font-size-footnote);
   --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+  --line-height-label: var(--telekom-typography-font-size-body);
   --line-height-label-animated: var(--telekom-typography-font-size-small);
   --transform-label: translate(
     var(--spacing-x),
-    calc((var(--telekom-spacing-unit-x12) - var(--font-size-label)) / 2)
+    calc((var(--telekom-spacing-unit-x11) - var(--font-size-label)) / 2)
   );
   --transform-label-animated: translate(
     var(--spacing-x),
@@ -142,7 +133,8 @@
 
 [part~='select']:not([part~='disabled']):not([part~='steal-focus'])
   [part='combobox']:focus {
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: 1px;
 }
 
 [part~='invalid'] [part='combobox'] {
@@ -154,27 +146,6 @@
 }
 
 [part~='disabled'] [part='combobox'] {
-  cursor: not-allowed;
-  border-color: var(--border-color-disabled);
-  color: var(--color-disabled);
-  background: var(--background-disabled);
-}
-
-/*helper-text*/
-[part='helper-text'] {
-  font-weight: var(--font-weight);
-  transition: var(--transition-helper-text);
-  padding-left: var(--spacing-x);
-  font-size: var(--font-size-helper-text);
-  line-height: var(--line-height-helper-text);
-  color: var(--color-helper-text);
-}
-
-[part~='invalid'] [part='helper-text'] {
-  color: var(--color-helper-text-invalid);
-}
-
-[part~='disabled'] [part='helper-text'] {
   cursor: not-allowed;
   border-color: var(--border-color-disabled);
   color: var(--color-disabled);
@@ -218,6 +189,7 @@
   font-size: var(--font-size-label);
   transform: var(--transform-label);
   font-weight: var(--font-weight-label);
+  line-height: var(--line-height-label);
 }
 
 [part~='animated'] [part='label'] {
@@ -290,4 +262,9 @@
 
 [part~='option'] scale-dropdown-select-item::part(base) {
   padding: 12px;
+}
+
+/*helper-text*/
+[part~='has-helper-text'] [part~='combobox-container'] {
+  margin-bottom: var(--spacing-x-for-helper-text);
 }

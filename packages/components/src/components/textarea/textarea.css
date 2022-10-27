@@ -22,7 +22,7 @@ scale-textarea {
   --border-color-disabled: var(--telekom-color-ui-border-disabled);
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
   --background-color-disabled: none;
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+  --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
   --spacing-x-control: var(--telekom-spacing-unit-x3);
   --spacing-bottom-control: var(--telekom-spacing-unit-x3);
@@ -141,7 +141,8 @@ scale-textarea {
 .textarea:not(.textarea--disabled):not(.textarea--readonly).textarea--has-focus
   .textarea__wrapper {
   border-color: var(--border-color-focus);
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: 1px;
 }
 
 .textarea:not(.textarea--disabled) .textarea__control:focus::placeholder {
@@ -207,7 +208,8 @@ scale-textarea {
 }
 
 .textarea--readonly.textarea--has-focus .textarea__wrapper {
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: 1px;
 }
 
 .textarea--readonly textarea,

@@ -1,5 +1,34 @@
 # Aktualisierung der Sketch Library
 
+## Update 27.10.2022
+
+Einige Varianten unserer Komponenten wurden entfernt (siehe [Update History](./?path=/docs/update-history-design--page)). In bestehenden Layouts werden die Symbole weiterhin als Teil der Library angezeigt, auch wenn sie nicht mehr verfügbar sind. Bitte halte deine Layouts aktuell, indem du die verwendeten Elemente über „Replace with“ erneut verknüpfst. So geht's:
+
+### 1. Prüfe dein Dokument nach entfernten Symbolen
+
+Die folgenden Komponenten werden nicht mehr unterstützt. Prüfe am besten, ob du eine davon verwendest.
+
+| Komponente      | Alte Variantengröße | Neuer Variantenname | Ersetzen durch |
+| --------------- | ------------------- | ------------------- | -------------- |
+| Textfield       | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Dropdown        | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Dropdown Select | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Date Picker     | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Pagination      | Small               | ❌                  | Standard       |
+|                 | Large               | Standard            | –              |
+| Table           | Small               | Standard            | –              |
+|                 | Large               | ❌                  | Standard       |
+
+### 2. Ersetze die alten Symbole
+
+In Sketch lassen sich verwendete Komponenten einfach durch Symbole austauschen. Markiere dafür das zu überschreibende Element und klicke im Menü unter „Layer“ ➔ „Replace with“. Wähle dann „Telekom Scale Components“ und suche nach dem entsprechenden Symbol.
+
+<img src="assets/replace-component-de.png"  />
+
 ## Release 19.04.2022 mit Dark Mode
 
 Scale enthält nun alle Komponenten auch in einer [Dark Mode](./?path=/docs/guidelines-light-and-dark-mode--page)-Variante. Darüber hinaus wurde der Light Mode optimiert. Beide Varianten sind als zwei separate Libraries verfügbar. Du kannst jederzeit den verwendeten Modus wechseln, indem du die eine Library mit der anderen ersetzt.
@@ -7,8 +36,6 @@ Scale enthält nun alle Komponenten auch in einer [Dark Mode](./?path=/docs/guid
 ## Wichtig für existierende Projekte
 
 Um die Neuerungen vollumfänglich nutzen zu können, sollten deine Komponenten und Farben mit der Library verknüpft sein. Insbesondere selbst definierte Farben bleiben vom Update unberührt. Um unerwünschte Auswirkungen durch die Aktualisierung zu vermeiden, stellen wir bei diesem Release eine neue Library zur Verfügung und bitten dich darum, dein Projekt vorab kurz zu prüfen.
-
-Bitte lese dir zunächst die folgenden Punkte durch und lade erst dann die neue Library über den untenstehenden Button.
 
 ## Bereite dein Projekt optimal auf das Update vor
 
@@ -24,17 +51,7 @@ Klicke auf eine Ebene und wähle danach „Fill“ und/oder „Border“ im Insp
 
 <img src="assets/choose-color-token-de.png"  />
 
-### Library Update laden
-
-> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind **nicht Open Source** und dürfen **nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
-
-Hast du deine bestehenden Projekt geprüft? Dann füge jetzt die neue Sketch Library hinzu.
-
-<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
-
-<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
-
-### So setzt du die Library auf die vorherige Version zurück
+## So setzt du die Library auf die vorherige Version zurück
 
 Lade die vorherige Version erneut herunter und klicke in Sketch auf die Mitteilung in der oberen rechten Ecke. Es öffnet sich ein Flyout mit der Option „Components Update Available“. Durch Klick auf diese Option wird dein Layout auf die vorherige Version zurückgesetzt.
 

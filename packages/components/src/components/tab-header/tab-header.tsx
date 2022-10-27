@@ -33,10 +33,10 @@ export class TabHeader {
   /** True for a disabled Tabnavigation */
   @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
-  // DEPRECATED - size should replace small
+  /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
+  @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -63,8 +63,7 @@ export class TabHeader {
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message:
-          'Property "small" is deprecated. Please use the "size" property!',
+        message: 'Property "small" is deprecated. Please use css overwrites.',
         type: 'warn',
         source: this.hostElement,
       });
@@ -142,7 +141,7 @@ export class TabHeader {
     return classNames(
       component,
       this.selected && `${prefix}selected`,
-      (this.size === 'small' || this.small) && `${prefix}small`,
+      this.size === 'large' && `${prefix}large`,
       this.hasFocus && `${prefix}has-focus`,
       this.disabled && `${prefix}disabled`
     );

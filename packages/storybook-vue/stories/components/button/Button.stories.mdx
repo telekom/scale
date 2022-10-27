@@ -11,6 +11,9 @@ import ScaleButton from './ScaleButton.vue';
   title="Components/Button"
   component={ScaleButton}
   argTypes={{
+    size: {
+      control: { type: 'select', options: ['large', 'small'] },
+    },
     variant: {
       control: { type: 'select', options: ['primary', 'secondary', 'ghost'] },
     },
@@ -38,7 +41,8 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleButton.props,
   },
   template: `
-    <scale-button
+  <div style="${args.variant === 'secondary-white'? 'background-color: var(--telekom-color-primary-standard); padding: var(--telekom-spacing-unit-x3);' : ''}">
+  <scale-button
       :disabled="disabled"
       :size="size"
       :href="href"
@@ -54,12 +58,13 @@ export const Template = (args, { argTypes }) => ({
       :styles="styles"
       @click="action('clicked')"
     >
-      <scale-icon-action-search v-if="icon === 'before'" />
+      <scale-icon-action-search size="16" v-if="icon === 'before'" />
       {{ iconOnly !== true ? label : null }}
-      <scale-icon-action-add accessibility-title="Add" v-if="iconOnly" />
-      <scale-icon-navigation-right accessibility-title="Next" v-if="icon === 'after'" />
-      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" v-if="icon === 'external'" />
+      <scale-icon-action-add accessibility-title="Add" size="16" v-if="iconOnly" />
+      <scale-icon-navigation-right accessibility-title="Next" size="16" v-if="icon === 'after'" />
+      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" size="16" v-if="icon === 'external'" />
     </scale-button>
+    </div>
   `,
 });
 
@@ -99,26 +104,29 @@ export const Template = (args, { argTypes }) => ({
 ```css
 :host {
   --width: auto;
-  --spacing-x: var(--telekom-spacing-unit-x6);
-  --spacing-x-icon-only: var(--telekom-spacing-unit-x2);
-  --min-height: var(--telekom-spacing-unit-x10);
+  --spacing-x-right: var(--telekom-spacing-unit-x5);
+  --spacing-x-left: var(--telekom-spacing-unit-x5);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x3);
+  --min-height: var(--telekom-spacing-unit-x11);
+  --min-width: var(--telekom-spacing-unit-x11);
   --radius: var(--telekom-radius-standard);
-  --transition: all var(--telekom-motion-duration-transition) var(
-      --telekom-motion-easing-standard
-    );
-  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --color-focus: var(--telekom-color-functional-focus);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --font-size: var(--telekom-typography-font-size-body);
-  --line-height: var(--telekom-typography-line-spacing-standard);
+  --line-height: var(--telekom-typography-line-spacing-tight);
   --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
 
   /* size: small */
-  --font-size-small: var(--telekom-typography-font-size-small);
-  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --font-size-small: var(--telekom-typography-font-size-caption);
+  --line-height-small: 1.125rem;
   --min-height-small: var(--telekom-spacing-unit-x8);
+  --spacing-x-right-small: var(--telekom-spacing-unit-x4);
+  --spacing-x-left-small: var(--telekom-spacing-unit-x4);
+  --spacing-x-icon-only-small: var(--telekom-spacing-unit-x0);
+  --spacing-icon-x-small: var(--telekom-spacing-unit-x1);
 
   /* variant: primary */
   --radius-primary: var(--radius);
@@ -145,6 +153,17 @@ export const Template = (args, { argTypes }) => ({
   --border-secondary-hover: var(--telekom-color-ui-border-hovered);
   --border-secondary-active: var(--telekom-color-ui-border-pressed);
   --border-secondary-focus: var(--telekom-color-functional-focus);
+
+  /* variant: secondary white */
+  --border-secondary-white: var(--telekom-color-ui-white);
+  --color-secondary-white: var(--telekom-color-ui-white);
+  --background-secondary-white-hover: var(
+    --telekom-color-ui-state-fill-hovered-inverted
+  );
+  --background-secondary-white-active: var(
+    --telekom-color-ui-state-fill-pressed-inverted
+  );
+  --secondary-white-opacity: 0.5;
 
   /* variant: ghost */
   --radius-ghost: var(--radius);
@@ -176,6 +195,23 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-button variant="secondary">Label</scale-button>
+```
+
+## Secondary White
+
+<Canvas withSource="none">
+  <Story
+    name="Secondary White"
+    args={{
+      variant: 'secondary-white',
+    }}
+  >
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button variant="secondary-white">Label</scale-button>
 ```
 
 ## Disabled
@@ -257,6 +293,7 @@ For Shadow Parts, please inspect the element's #shadow.
   <Story
     name="Icon Only"
     args={{
+      size: 'large',
       iconOnly: true,
     }}
   >
@@ -265,10 +302,8 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-button>
-  <scale-icon-navigation-external-link
-    accessibility-title="External link, opens in new tab"
-  ></scale-icon-navigation-external-link>
+<scale-button icon-only>
+  <scale-icon-action-add accessibility-title="add" />
 </scale-button>
 ```
 
@@ -513,7 +548,7 @@ If the icon is an `img` element, its `alt` attribute should be empty.
 </Canvas>
 
 ```html
-<scale-button size="small" href="assets/welcome.png" download="welcome.png"
-  >Download</scale-button
->
+<scale-button size="small" icon-only>
+  <scale-icon-action-add accessibility-title="add" />
+</scale-button>
 ```

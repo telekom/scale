@@ -12,10 +12,10 @@
     :date-adapter="dateAdapter"
     :value="value"
     :disabled="disabled"
+    :size="size"
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
-    :size="size"
     :popup-title="popupTitle"
     :styles="styles"
     @scaleChange="scaleChange"
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
 export default {
   props: {
@@ -45,35 +45,35 @@ export default {
     helperText: { type: String },
     invalid: { type: Boolean },
     disabled: { type: Boolean },
-    size: { type: String },
     popupTitle: { type: String },
-    styles: {type: String}
+    styles: { type: String },
+    size: { type: String },
   },
   methods: {
     scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
+      action('scaleChange');
+      this.$emit('scaleChange', $event);
     },
     'scale-change'($event) {
-      action("scale-change");
-      this.$emit("scale-change", $event);
+      action('scale-change');
+      this.$emit('scale-change', $event);
     },
     scaleFocus($event) {
-      action("scaleFocus");
-      this.$emit("scaleFocus", $event);
+      action('scaleFocus');
+      this.$emit('scaleFocus', $event);
     },
     'scale-focus'($event) {
-      action("scale-focus");
-      this.$emit("scale-focus", $event);
+      action('scale-focus');
+      this.$emit('scale-focus', $event);
     },
     scaleBlur($event) {
-      action("scaleBlur");
-      this.$emit("scaleBlur", $event);
+      action('scaleBlur');
+      this.$emit('scaleBlur', $event);
     },
     'scale-blur'($event) {
-      action("scale-blur");
-      this.$emit("scale-blur", $event);
-    }
-  }
+      action('scale-blur');
+      this.$emit('scale-blur', $event);
+    },
+  },
 };
 </script>

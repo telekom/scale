@@ -264,12 +264,12 @@
 
 ## Properties
 
-| Property   | Attribute   | Description                           | Type      | Default     |
-| ---------- | ----------- | ------------------------------------- | --------- | ----------- |
-| `showSort` | `show-sort` | (optional) Display sort arrows on/off | `boolean` | `false`     |
-| `size`     | `size`      | (optional) Visual size                | `string`  | `'default'` |
-| `striped`  | `striped`   | (optional) Striped Table              | `boolean` | `false`     |
-| `styles`   | `styles`    | (optional) Injected CSS styles        | `string`  | `undefined` |
+| Property   | Attribute   | Description                                                                                   | Type      | Default     |
+| ---------- | ----------- | --------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `showSort` | `show-sort` | (optional) Display sort arrows on/off                                                         | `boolean` | `false`     |
+| `size`     | `size`      | <span style="color:red">**[DEPRECATED]**</span> - css overwrite should replace size<br/><br/> | `string`  | `undefined` |
+| `striped`  | `striped`   | (optional) Striped Table                                                                      | `boolean` | `false`     |
+| `styles`   | `styles`    | (optional) Injected CSS styles                                                                | `string`  | `undefined` |
 
 
 ----------------------------------------------

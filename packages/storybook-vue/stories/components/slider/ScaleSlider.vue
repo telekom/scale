@@ -1,55 +1,27 @@
-<template>
-  <scale-slider
-    :custom-color="customColor"
-    :disabled="disabled"
-    :name="name"
-    :label="label"
-    :max="max"
-    :min="min"
-    :show-value="showValue"
-    :track-small="trackSmall"
-    :thumb-large="thumbLarge"
-    :step="step"
-    :value="value"
-    @scaleChange="scaleChange"
-    @scaleInput="scaleInput"
-  >
-  </scale-slider>
-</template>
-
 <script>
-import { action } from "@storybook/addon-actions";
 export default {
   props: {
-    customColor: String,
-    disabled: { type: Boolean, default: false },
-    label: String,
-    name: String,
-    max: { type: Number, default: 100 },
+    label: { type: String },
+    value: { type: Number, default: 0 },
+    range: { type: Boolean, default: false },
+    valueFrom: { type: Number, default: 0 },
+    valueTo: { type: Number, default: 0 },
     min: { type: Number, default: 0 },
-    showValue: { type: Boolean, default: true },
-    trackSmall: { type: Boolean, default: false },
-    thumbLarge: { type: Boolean, default: false },
+    max: { type: Number, default: 100 },
     step: { type: Number, default: 1 },
-    value: Number
+    showStepMarks: { type: Boolean, default: false },
+    unit: { type: String, default: '' },
+    unitPosition: { type: 'before' | 'after', default: 'after' },
+    decimals: { type: Number, default: 0 },
+    disabled: { type: Boolean, default: false },
+    showValue: { type: Boolean, default: true },
+    name: { type: String },
+    sliderId: { type: String },
+    helperText: String,
+    styles: { type: String },
   },
-  methods: {
-    scaleChange($event) {
-      action("scaleChange");
-      this.$emit("scaleChange", $event);
-    },
-    'scale-change'($event) {
-      action("scale-change");
-      this.$emit("scale-change", $event);
-    },
-    scaleInput($event) {
-      action("scaleInput");
-      this.$emit("scaleInput", $event);
-    },
-    'scale-input'($event) {
-      action("scale-input");
-      this.$emit("scale-input", $event);
-    },
+  render() {
+    return this.$slots.default;
   }
 };
 </script>

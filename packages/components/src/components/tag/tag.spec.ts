@@ -38,8 +38,8 @@ describe('Tag', () => {
     element.size = 'small';
     expect(element.getCssClassMap()).toContain('tag--size-small');
 
-    element.variant = 'primary';
-    expect(element.getCssClassMap()).toContain('tag--variant-primary');
+    element.type = 'strong';
+    expect(element.getCssClassMap()).toContain('tag--type-strong');
 
     element.href = 'http://example.com';
     expect(element.getCssClassMap()).toContain('tag--link');

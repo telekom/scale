@@ -31,16 +31,17 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                    | Type          | Default     |
-| ------------- | -------------- | ------------------------------ | ------------- | ----------- |
-| `disabled`    | `disabled`     | (optional) Tag disabled        | `boolean`     | `false`     |
-| `dismissText` | `dismiss-text` | (optional) Dismiss label       | `string`      | `'dismiss'` |
-| `dismissable` | `dismissable`  | (optional) Tag dismissable     | `boolean`     | `false`     |
-| `href`        | `href`         | (optional) Tag href            | `string`      | `''`        |
-| `size`        | `size`         | (optional) Tag size            | `"small"`     | `undefined` |
-| `styles`      | `styles`       | (optional) Injected CSS styles | `string`      | `undefined` |
-| `target`      | `target`       | (optional) Tag target          | `string`      | `'_self'`   |
-| `variant`     | `variant`      | (optional) Tag variant         | `"secondary"` | `undefined` |
+| Property      | Attribute      | Description                    | Type                                                                                                                                   | Default      |
+| ------------- | -------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `color`       | `color`        | (optional) Tag color           | `"black" \| "brown" \| "cyan" \| "dismissable" \| "green" \| "grey" \| "olive" \| "orange" \| "red" \| "teal" \| "violet" \| "yellow"` | `'grey'`     |
+| `disabled`    | `disabled`     | (optional) Tag disabled        | `boolean`                                                                                                                              | `false`      |
+| `dismissText` | `dismiss-text` | (optional) Dismiss label       | `string`                                                                                                                               | `'dismiss'`  |
+| `dismissable` | `dismissable`  | (optional) Tag dismissable     | `boolean`                                                                                                                              | `false`      |
+| `href`        | `href`         | (optional) Tag href            | `string`                                                                                                                               | `''`         |
+| `size`        | `size`         | (optional) Tag size            | `"small"`                                                                                                                              | `undefined`  |
+| `styles`      | `styles`       | (optional) Injected CSS styles | `string`                                                                                                                               | `undefined`  |
+| `target`      | `target`       | (optional) Tag target          | `string`                                                                                                                               | `'_self'`    |
+| `type`        | `type`         | (optional) Tag type            | `"standard" \| "strong"`                                                                                                               | `'standard'` |
 
 
 ## Events

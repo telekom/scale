@@ -13,6 +13,7 @@ import { Component, Prop, h, Host, Element } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 
+const ICON_SIZE = 16;
 let i = 0;
 @Component({
   tag: 'scale-progress-bar',
@@ -30,16 +31,12 @@ export class ProgressBar {
   @Prop() percentageStart: number = 0;
   /** @deprecated - (optional) Progress bar customColor */
   @Prop() customColor?: string;
-  /** (optional) Progress bar stroke width */
-  @Prop() strokeWidth?: number = 6;
   /** (optional) Progress bar percentage text */
-  @Prop() showStatus?: boolean;
+  @Prop() showStatus?: boolean = true;
   /** (optional) Progress bar icon indicator */
   @Prop() icon?: string;
   /** (optional) Progress bar status description text */
   @Prop() statusDescription?: string;
-  /** (optional) Progress text display inside bar */
-  @Prop() statusInside?: boolean;
   /** (optional) Progress bar error */
   @Prop() hasError?: boolean;
   /** (optional) Progress bar disabled */
@@ -56,6 +53,9 @@ export class ProgressBar {
   componentWillLoad() {
     if (this.progressBarId == null) {
       this.progressBarId = 'progress-bar-' + i++;
+    }
+    if (this.disabled) {
+      this.showStatus = false;
     }
   }
   componentWillUpdate() {}
@@ -86,10 +86,14 @@ export class ProgressBar {
 
   progressStyle = () => {
     return {
-      width: `${this.percentage}%`,
+      width: this.disabled ? '100%' : `${this.percentage}%`,
       border: '1px solid transparent',
-      background: this.customColor ? this.customColor : `var(--background)`,
-      animation: 'showProgress 3s ease-in-out',
+      background: this.customColor
+        ? this.customColor
+        : this.disabled
+        ? 'var(--background-disabled)'
+        : `var(--background)`,
+      animation: this.disabled ? 'none' : 'showProgress 3s ease-in-out',
     };
   };
 
@@ -100,20 +104,44 @@ export class ProgressBar {
         <style>{this.transitions(this.percentage, this.percentageStart)}</style>
 
         <div part={this.getBasePartMap()} class={this.getCssClassMap()}>
-          {!!this.label && (
-            <label
-              part="label"
-              class="progress-bar__label"
-              htmlFor={this.progressBarId}
-            >
-              {this.label}
-            </label>
-          )}
-          <div part="wrapper" class="progress-bar-wrapper">
+          <div class="progress-bar__top-container">
+            {!!this.label && (
+              <label
+                part="label"
+                class="progress-bar__label"
+                htmlFor={this.progressBarId}
+              >
+                {this.label}
+              </label>
+            )}
+            {!!this.showStatus && !this.hasError && this.percentage !== 100 && (
+              <div
+                part="status"
+                class="progress-bar__status"
+                aria-hidden="true"
+              >
+                {this.percentage}%
+              </div>
+            )}
+
+            {this.hasError ? (
+              <div class="progress-bar__icon">
+                <scale-icon-alert-error
+                  size={ICON_SIZE}
+                ></scale-icon-alert-error>
+              </div>
+            ) : this.percentage === 100 ? (
+              <div class="progress-bar__icon">
+                <scale-icon-alert-success
+                  size={ICON_SIZE}
+                ></scale-icon-alert-success>
+              </div>
+            ) : null}
+          </div>
+          <div part="wrapper" class="progress-bar__wrapper">
             <div
               part="outer"
               class="progress-bar__outer"
-              style={{ height: `${this.strokeWidth}px` }}
               role="progressbar"
               aria-valuemin={0}
               aria-valuemax={100}
@@ -127,29 +155,8 @@ export class ProgressBar {
                 part="inner"
                 class="progress-bar__inner"
                 style={this.progressStyle()}
-              >
-                {!!this.statusInside && (
-                  <div
-                    part="inner-status"
-                    class="progress-bar__inner-status"
-                    aria-hidden="true"
-                  >
-                    {this.percentage}%
-                  </div>
-                )}
-              </div>
+              ></div>
             </div>
-
-            {!!this.showStatus && (
-              <div
-                part="status"
-                class="progress-bar__status"
-                aria-hidden="true"
-              >
-                {this.percentage}%
-              </div>
-            )}
-
             <slot name="icon"></slot>
           </div>
         </div>
@@ -188,7 +195,8 @@ export class ProgressBar {
     return classNames(
       component,
       this.hasError && `${prefix}has-error`,
-      this.disabled && `${prefix}disabled`
+      this.disabled && `${prefix}disabled`,
+      this.percentage === 100 && `${prefix}completed`
     );
   }
 }

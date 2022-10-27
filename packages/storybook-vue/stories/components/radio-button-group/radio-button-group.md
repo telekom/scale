@@ -13,7 +13,7 @@ automatically deselects the previously selected option. With a group
 label, users can grasp contextual context more quickly. Interfaces with
 many options appear smoother and tidier overall.
 
-![Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group.png)
+![Radio Button Group](assets/3_components/radio-button-group/radio-button-group-general.png)
 
 ### When to use
 
@@ -31,23 +31,23 @@ Don't use a radio button group when:
 
 ## Elements
 
-![Elements of Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Elements.png)
+![Elements of Radio Button Group](assets/3_components/radio-button-group/radio-button-group-elements.png)
 
 ### Group label (1)
 
 Choose a short and meaningful title for the entire group.
 
-### Deselected radio button (2)
+### Selected radio button (2)
 
-If the circle is empty, an option is deselected.
+If the circle is filled in, an option is selected.
 
 ### Label (3)
 
 Use the label to clearly describe the effect of the respective selection. A label usually contains max three words.
 
-### Selected radio button
+### Deselected radio button (4)
 
-If the circle is filled in, an option is selected.
+If the circle is empty, an option is deselected.
 
 ### Information (5) (optional)
 
@@ -65,7 +65,7 @@ Deactivate a radio button when:
   button or
 - the option must be listed but users can\'t currently select it.
 
-![Disabled Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Disabled.png)
+![Disabled Radio Button Group](assets/3_components/radio-button-group/radio-button-group-items-disabled.png)
 
 > The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
