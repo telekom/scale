@@ -69,6 +69,7 @@ Display one option as a default selection to align with user expectations and re
 
 ## Related components
 
+[Radio Button Group, ](?path=/usage/components-radio-button-group--standard)
 [Checkbox, ](?path=/usage/components-checkbox--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Dropdown ](?path=/usage/components-dropdown--standard)

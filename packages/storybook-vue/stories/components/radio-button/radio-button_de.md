@@ -71,6 +71,7 @@ In vielen Fällen ist es für Nutzer\*innen hilfreich, wenn du eine Headline ver
 
 ## Verwandte Komponenten
 
+[Radio Button Group, ](?path=/usage/components-radio-button-group--standard)
 [Checkbox, ](?path=/usage/components-checkbox--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Dropdown ](?path=/usage/components-dropdown--standard)
