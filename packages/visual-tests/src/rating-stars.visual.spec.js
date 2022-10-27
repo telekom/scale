@@ -19,7 +19,6 @@ describe('RatingStars', () => {
         `document.querySelector("#root > scale-rating-stars").shadowRoot.querySelector("input[type=range]")`
       );
       await input.focus();
-      await global.page.waitFor(600);
       await global.visualCheck();
     });
     test.each([['info-text-and-custom-label']])(
