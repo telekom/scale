@@ -3,10 +3,7 @@
     <img src="assets/aa.png" alt="Accessible AA" />
 </div>
 
-Mit einem Slider können Nutzer\*innen
-
-- einen einzelnen Wert aus einem gegebenen Bereich von Werten auswählen oder
-- den Start- und Endpunkt von Werten festlegen, der einen Bereich innerhalb des gesamten vorgegebenen Bereichs bestimmt.
+Mit einem Slider können Nutzer\*innen einen Wert oder Wertebereich verändern.
 
 ## Allgemein
 
