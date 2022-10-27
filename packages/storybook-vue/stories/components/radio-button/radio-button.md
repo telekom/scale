@@ -15,12 +15,12 @@ Radio buttons only appear in groups. Activating a radio button automatically des
 
 ### When to use
 
-Use radio buttons to provide the user with a collection of related but mutually exclusive choices.
+- Use radio buttons to provide the user with a collection of related but mutually exclusive choices.
 
 ### When not to use
 
-If the user needs to choose one or more options, use checkboxes.
-To initiate an action, use a button.
+- If the user needs to choose one or more options, use checkboxes.
+- To initiate an action, use a button.
 
 ## Elements
 
