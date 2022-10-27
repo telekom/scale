@@ -37,8 +37,6 @@ Scale enthält nun alle Komponenten auch in einer [Dark Mode](./?path=/docs/guid
 
 Um die Neuerungen vollumfänglich nutzen zu können, sollten deine Komponenten und Farben mit der Library verknüpft sein. Insbesondere selbst definierte Farben bleiben vom Update unberührt. Um unerwünschte Auswirkungen durch die Aktualisierung zu vermeiden, stellen wir bei diesem Release eine neue Library zur Verfügung und bitten dich darum, dein Projekt vorab kurz zu prüfen.
 
-Bitte lese dir zunächst die folgenden Punkte durch und lade erst dann die neue Library über den untenstehenden Button.
-
 ## Bereite dein Projekt optimal auf das Update vor
 
 ### 1. Prüfe dein Layout auf abgetrennte Komponenten
