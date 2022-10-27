@@ -2,7 +2,7 @@
 
 ## Update 27.10.2022
 
-Einige Varianten unserer Komponenten wurden entfernt (siehe [Update History](?path=/docs/update-history-design--page)). In bestehenden Layouts werden die Symbole weiterhin als Teil der Library angezeigt, auch wenn sie nicht mehr verfügbar sind. Bitte halte deine Layouts aktuell, indem du die verwendeten Elemente über „Replace with“ erneut verknüpfst. So geht's:
+Einige Varianten unserer Komponenten wurden entfernt (siehe [Update History](./?path=/docs/update-history-design--page)). In bestehenden Layouts werden die Symbole weiterhin als Teil der Library angezeigt, auch wenn sie nicht mehr verfügbar sind. Bitte halte deine Layouts aktuell, indem du die verwendeten Elemente über „Replace with“ erneut verknüpfst. So geht's:
 
 ### 1. Prüfe dein Dokument nach entfernten Symbolen
 
