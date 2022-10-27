@@ -53,17 +53,7 @@ Klicke auf eine Ebene und wähle danach „Fill“ und/oder „Border“ im Insp
 
 <img src="assets/choose-color-token-de.png"  />
 
-### Library Update laden
-
-> Bitte beachte: Die folgenden Komponenten enthalten Marken- und Design-Assets der Telekom – beispielsweise Logos, die Farbe Magenta, die Schrift, Icons sowie Footer und Header. Die Komponenten sind **nicht Open Source** und dürfen **nicht frei verwendet werden**. Für eine kommerzielle Nutzung ist die ausdrückliche Zustimmung der Deutschen Telekom erforderlich.
-
-Hast du deine bestehenden Projekt geprüft? Dann füge jetzt die neue Sketch Library hinzu.
-
-<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
-
-<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
-
-### So setzt du die Library auf die vorherige Version zurück
+## So setzt du die Library auf die vorherige Version zurück
 
 Lade die vorherige Version erneut herunter und klicke in Sketch auf die Mitteilung in der oberen rechten Ecke. Es öffnet sich ein Flyout mit der Option „Components Update Available“. Durch Klick auf diese Option wird dein Layout auf die vorherige Version zurückgesetzt.
 

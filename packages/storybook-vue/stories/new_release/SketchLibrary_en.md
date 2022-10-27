@@ -25,7 +25,7 @@ The following components are no longer supported. It's best to check if you're u
 
 ### 2. Replace the old symbols
 
-Components used in Sketch are easily replaced with symbols. To do this, select the element to overwrite and click in the menu under Layer ➔ Replace With. Then select Telekom Scale Components and look for the corresponding icon.
+Components used in Sketch are easily replaced with symbols. To do this, select the element to overwrite and click in the menu under Layer ➔ Replace With. Then select Telekom Scale Components and look for the corresponding symbol.
 
 <img src="assets/replace-component-en.png"  />
 
@@ -52,16 +52,6 @@ This is important; otherwise they can’t update via the library update. In Sket
 By clicking on a layer and then selecting Fill and/or Border in the inspector panel, you can see whether a color is individually selected or whether it comes from the selected default library color. The correct color tokens must be applied for the library to be fully functional. [Find out more in our Design Tokens guideline](./?path=/docs/guidelines-design-tokens--page)
 
 <img src="assets/choose-color-token-en.png"  />
-
-## Add new library
-
-> Please note that the following components make use of Telekom brand and design assets — including but not limited to the logos, the color magenta, the typeface and icons, as well as the footer and header components — and are **not open source** and **not available for free use**. They require Deutsche Telekom's express permission for use in commerce.
-
-Have you finished checking your existing project? Then add the new Sketch library. And enjoy the new version!
-
-<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-light.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Light)</a></p>
-
-<p><a href="sketch://add-library?url=https%3A%2F%2Fwww.brand-design.telekom.com%2Fsketch-dark.rss" rel="nofollow" class="matomo_download">Telekom Scale Components (Dark)</a></p>
 
 ## Reverting back to the previous version of the library
 
