@@ -42,7 +42,7 @@ When necessary, you can also provide additional information to help users.
 
 If the selection is contradictory or not applicable, an error message appears.
 
-### Label
+## Label
 
 The label clearly describes the effect of activating the radio button. Labels normally contain at most three words.
 

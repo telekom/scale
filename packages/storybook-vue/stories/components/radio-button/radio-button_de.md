@@ -42,7 +42,7 @@ Wenn nötig, kannst du auch noch eine zusätzliche Information angeben.
 
 Bei widersprüchlicher oder nichtzutreffender Auswahl erscheint eine Fehlermeldung.
 
-### Label
+## Label
 
 Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
 
