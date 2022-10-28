@@ -88,6 +88,8 @@
   z-index: 1;
   border-radius: var(--radius-track);
   background-color: var(--background-bar);
+  /* to cover the transparent border in the track */
+  border: 1px solid var(--background-bar);
 }
 
 [part~='thumb-wrapper'] {
