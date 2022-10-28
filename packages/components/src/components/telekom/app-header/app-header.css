@@ -54,7 +54,7 @@ scale-app-header {
   display: none;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1023.99px) {
   .header__container {
     width: 100%;
     height: 66px;
@@ -142,7 +142,7 @@ scale-app-header {
   margin-block-start: 0;
   margin-block-end: 0;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1023.99px) {
   .header {
     height: var(--header-nav-height);
   }
