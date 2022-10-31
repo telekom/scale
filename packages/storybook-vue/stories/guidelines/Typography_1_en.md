@@ -16,13 +16,13 @@ TeleNeo has five font styles that are evenly graded in terms of weight. When use
 
 ### Font weights and CSS variables
 
-| weight    | variable name                              | CSS value |
-| --------- | ------------------------------------------ | --------- |
-| extrabold | --telekom-typography-font-weight-extrabold | 800       |
-| bold      | --telekom-typography-font-weight-bold      | 700       |
-| medium    | --telekom-typography-font-weight-medium    | 500       |
-| regular   | --telekom-typography-font-weight-regular   | 400       |
-| thin      | --telekom-typography-font-weight-thin      | 200       |
+| weight    | variable name                               | CSS value |
+| --------- | ------------------------------------------- | --------- |
+| extrabold | --telekom-typography-font-weight-extra-bold | 800       |
+| bold      | --telekom-typography-font-weight-bold       | 700       |
+| medium    | --telekom-typography-font-weight-medium     | 500       |
+| regular   | --telekom-typography-font-weight-regular    | 400       |
+| thin      | --telekom-typography-font-weight-thin       | 200       |
 
 ## Font formats for user interfaces
 
