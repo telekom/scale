@@ -89,7 +89,7 @@
   border-radius: var(--radius-track);
   background-color: var(--background-bar);
   /* to cover the transparent border in the track */
-  border: 1px solid var(--background-bar);
+  border: 1px solid transparent;
 }
 
 [part~='thumb-wrapper'] {
