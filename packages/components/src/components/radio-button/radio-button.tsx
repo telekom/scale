@@ -62,9 +62,11 @@ export class RadioButton {
   @Event({ eventName: 'scaleChange' })
   scaleChangeLegacy!: EventEmitter<InputChangeEventDetail>;
 
+  private readonly internalId = i++;
+
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-' + i++;
+      this.inputId = 'input-' + this.internalId;
     }
   }
 
@@ -126,7 +128,7 @@ export class RadioButton {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
