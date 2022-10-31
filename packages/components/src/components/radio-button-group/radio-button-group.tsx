@@ -30,32 +30,42 @@ export class RadioButtonGroup {
     }
   }
 
+  renderHelperIcon() {
+    if (this.helperText && !this.invalid) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+  }
+
   render() {
     return (
-      <form>
-        <fieldset class="radio-button-group">
-          <legend class="radio-button-group__title">
-            <label
-              class="radio-button-group__title-label"
-              aria-label={this.label}
+      <fieldset class="radio-button-group">
+        <legend class="radio-button-group__title">
+          <label
+            class="radio-button-group__title-label"
+            aria-label={this.label}
+          >
+            {this.label}
+          </label>
+          {this.helperText ? (
+            <div
+              role="text"
+              class={this.getCssClassMap()}
+              aria-label={this.helperText}
             >
-              {this.label}
-            </label>
-            {this.helperText ? (
-              <div
-                role="text"
-                class={this.getCssClassMap()}
-                aria-label={this.helperText}
-              >
-                {this.helperText}
-              </div>
-            ) : null}
-          </legend>
-          <div class="radio-button-group__container">
-            <slot />
-          </div>
-        </fieldset>
-      </form>
+              {this.renderHelperIcon()}
+              <span>{this.helperText}</span>
+            </div>
+          ) : null}
+        </legend>
+        <div class="radio-button-group__container">
+          <slot />
+        </div>
+      </fieldset>
     );
   }
 

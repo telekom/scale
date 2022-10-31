@@ -11,19 +11,19 @@
 
 app-navigation-main-mobile {
   --min-height: calc(100vh - 56px - 56px);
-  --font-size: var(--scl-font-size-24);
-  --font-weight: var(--scl-font-weight-extrabold);
+  --font-size: var(--telekom-typography-font-size-headline-3);
+  --font-weight: var(--telekom-typography-font-weight-extra-bold);
   --line-height: 3.333;
-  --border-bottom: 1px solid #efefef;
-  --color: var(--scl-color-text-standard);
-  --color-selected: var(--scl-color-primary);
+  --border-bottom: 1px solid var(--telekom-color-ui-faint);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 
-  --font-size-child: var(--scl-font-size-24);
+  --font-size-child: var(--telekom-typography-font-size-headline-3);
   --line-height-child: 2.5;
-  --font-weight-child: var(--scl-font-weight-regular);
+  --font-weight-child: var(--telekom-typography-font-weight-regular);
 
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
   width: 100%;
 }
 
@@ -46,15 +46,8 @@ app-navigation-main-mobile {
   line-height: var(--line-height);
 }
 
-.main-navigation-mobile__item-wrapper {
-  box-sizing: border-box;
-  width: calc(100% - 34px);
-  display: flex;
-  justify-content: space-between;
-  margin-left: 34px;
-  border-bottom: var(--border-bottom);
-  padding-right: 34px;
-  align-items: center;
+.main-navigation-mobile__item--selected {
+  border-right: 2px solid var(--color-selected);
 }
 
 .main-navigation-mobile__item-link {
@@ -68,19 +61,26 @@ app-navigation-main-mobile {
   transition: var(--transition);
 }
 
-.main-navigation-mobile__item-link--selected .main-navigation-mobile__item {
-  border-right: 2px solid var(--color-selected);
-}
-
 .main-navigation-mobile__item-link--selected svg {
   margin-right: -2px;
+}
+
+.main-navigation-mobile__item-wrapper {
+  box-sizing: border-box;
+  width: calc(100% - 34px);
+  display: flex;
+  justify-content: space-between;
+  margin-left: 34px;
+  border-bottom: var(--border-bottom);
+  padding-right: 34px;
+  align-items: center;
 }
 
 .main-navigation-mobile__child-menu {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--scl-color-white);
+  background: var(--telekom-color-background-surface);
   width: 100%;
   min-height: var(--min-height);
 }
@@ -95,8 +95,8 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current {
-  font-size: var(--scl-font-size-24);
-  font-weight: var(--scl-font-weight-extrabold);
+  font-size: var(--telekom-typography-font-size-headline-3);
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
   color: var(--color-selected);
   text-decoration: none;
 }
@@ -110,7 +110,7 @@ app-navigation-main-mobile {
 }
 
 .main-navigation-mobile__child-menu-current app-icon {
-  margin-right: var(--scl-spacing-8);
+  margin-right: var(--telekom-spacing-unit-x2);
 }
 
 .main-navigation-mobile__child-menu-current .icon-back {
@@ -153,10 +153,10 @@ app-navigation-main-mobile {
   justify-content: space-between;
   align-items: center;
   border-bottom: var(--border-bottom);
-  margin-left: var(--scl-spacing-64);
+  margin-left: var(--telekom-spacing-unit-x16);
   box-sizing: border-box;
 }
 
 .main-navigation-mobile__child-menu-item-wrapper svg {
-  margin-right: var(--scl-spacing-40);
+  margin-right: var(--telekom-spacing-unit-x10);
 }

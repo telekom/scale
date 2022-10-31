@@ -1,0 +1,22 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+
+import text_en from './GettingStartedForDevelopers_en.md';
+import text_de from './GettingStartedForDevelopers_de.md';
+
+<Meta
+  title="Setup & Info/Getting Started For Developers"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <Description markdown={locale === 'en' ? text_en : text_de} />
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

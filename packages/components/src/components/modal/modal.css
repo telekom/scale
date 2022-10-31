@@ -10,57 +10,68 @@
  */
 
 :host {
-  --spacing-x: var(--scl-spacing-16);
+  --spacing-x: var(--telekom-spacing-unit-x4);
   --background-overlay: var(
-    --scl-color-background-overlay,
+    --telekom-color-background-backdrop,
     rgba(108, 108, 108, 0.7)
   );
 
-  --max-height-window: calc(100vh - (2 * var(--scl-spacing-80)));
-  --radius-window: var(--scl-radius-8);
-  --box-shadow-window: var(--scl-shadow-level-5);
+  --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unit-x20)));
+  --min-height-window: ; /* undefined by design */
+  --radius-window: var(--telekom-radius-large);
+  --box-shadow-window: var(--telekom-shadow-top);
+  --background-window: var(--telekom-color-background-surface);
+  --color-window: var(--telekom-color-text-and-icon-standard);
 
   /*
     we're rudimentarily creating a grid here
     in the following modal--size-*,
     with 6, 8 and 12 columns
+
+    -spacing-56 !== --telekom-spacing-unrelated-sm
   */
   --size-window-small: calc(
-    (6 * var(--scl-spacing-56, 3.5rem)) + (5 * var(--scl-spacing-32))
+    (6 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (5 * var(--telekom-spacing-unit-x8))
   );
   --size-window-default: calc(
-    (8 * var(--scl-spacing-56, 3.5rem)) + (7 * var(--scl-spacing-32))
+    (8 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (7 * var(--telekom-spacing-unit-x8))
   );
   --size-window-large: calc(
-    (12 * var(--scl-spacing-56, 3.5rem)) + (11 * var(--scl-spacing-32))
+    (12 * var(--telekom-spacing-unit-x14, 3.5rem)) +
+      (11 * var(--telekom-spacing-unit-x8))
   );
 
-  --spacing-x-header: var(--scl-spacing-24);
-  --spacing-y-header: var(--scl-spacing-24);
+  --spacing-x-header: var(--telekom-spacing-unit-x6);
+  --spacing-y-header: var(--telekom-spacing-unit-x6);
 
-  --border-bottom-header-has-scroll: var(--scl-spacing-1) solid
-    var(--scl-color-grey-20);
+  --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-ui-subtle);
 
-  --font-family-heading: var(--scl-font-family-sans);
-  --font-size-heading: var(--scl-font-size-20);
-  --font-weight-heading: var(--scl-font-weight-extrabold);
+  --font-family-heading: var(--telekom-typography-font-family-sans);
+  --font-size-heading: var(--telekom-typography-font-size-callout);
+  --font-weight-heading: var(--telekom-typography-font-weight-extra-bold);
 
-  --spacing-close-button: var(--scl-spacing-8);
-  --radius-close-button: var(--scl-radius-8);
-  --transition-close-button: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --box-shadow-close-button-focus: 0 0 0 var(--scl-spacing-2)
-    var(--scl-color-focus);
-  --color-close-button-hover: var(--scl-color-primary-hover);
-  --color-close-button-active: var(--scl-color-primary-active);
+  --spacing-close-button: var(--telekom-spacing-unit-x2);
+  --radius-close-button: var(--telekom-radius-standard);
+  --transition-close-button: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --box-shadow-close-button-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-close-button: var(--telekom-color-text-and-icon-standard);
+  --color-close-button-hover: var(--telekom-color-primary-hovered);
+  --color-close-button-active: var(--telekom-color-primary-pressed);
 
-  --spacing-x-body-wrapper: var(--scl-spacing-24);
-  --spacing-y-body: var(--scl-spacing-24);
+  --spacing-x-body-wrapper: var(--telekom-spacing-unit-x6);
+  --spacing-y-body: var(--telekom-spacing-unit-x6);
 
-  --spacing-actions: var(--scl-spacing-24);
+  --spacing-actions: var(--telekom-spacing-unit-x6);
 
-  --spacing-x-actions-slotted: var(--scl-spacing-8);
-  --background-actions-has-scroll: var(--scl-color-background-light);
+  --spacing-x-actions-slotted: var(--telekom-spacing-unit-x2);
+  --background-actions-has-scroll: var(
+    --telekom-color-background-surface-subtle
+  );
 }
 
 .modal {
@@ -100,8 +111,10 @@
   position: relative;
   overflow-y: auto;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--background-window);
+  color: var(--color-window);
   max-height: var(--max-height-window);
+  min-height: var(--min-height-window);
   border-radius: var(--radius-window);
   box-shadow: var(--box-shadow-window);
 }
@@ -109,6 +122,7 @@
 .modal__window .modal__body-wrapper {
   overflow-y: auto;
   flex-shrink: 1;
+  flex-grow: 1;
 }
 
 .modal--size-small .modal__window {
@@ -125,7 +139,7 @@
 
 @media (max-height: 30em) {
   .modal__window {
-    max-height: calc(100vh - var(--scl-spacing-24));
+    max-height: calc(100vh - var(--telekom-spacing-unit-x6));
   }
 }
 
@@ -176,6 +190,7 @@
   border: 0;
   border-radius: var(--radius-close-button);
   outline: none;
+  color: var(--color-close-button);
   background: transparent;
   transition: var(--transition-close-button);
   transform: translate(
@@ -205,7 +220,7 @@
 }
 
 .modal--has-body .modal__body-wrapper {
-  min-height: var(--scl-spacing-48);
+  min-height: var(--telekom-spacing-related-lg);
 }
 
 .modal--has-body .modal__body {

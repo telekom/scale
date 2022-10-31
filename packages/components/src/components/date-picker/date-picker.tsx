@@ -140,11 +140,11 @@ export class DatePicker {
   /** (optional) Label */
   @Prop() label: string = '';
 
-  /** (optional) Size */
-  @Prop() size?: string = '';
-
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+
+  /** @deprecated */
+  @Prop() size?: string;
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
@@ -355,6 +355,14 @@ export class DatePicker {
         source: this.hostElement,
       });
     }
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message: 'Property "size" is deprecated. Please use css overwrite!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   /**
@@ -396,7 +404,6 @@ export class DatePicker {
 
   handleKeyPress(e) {
     this.hasValue = e.target.value != null && e.target.value !== '';
-    this.value = e.target.value;
   }
 
   render() {
@@ -410,7 +417,6 @@ export class DatePicker {
             this.invalid && `scale-date-picker--status-error`,
             this.hasFocus && 'scale-date-picker--focus',
             this.disabled && 'scale-date-picker--disabled',
-            this.size && `scale-date-picker--size-${this.size}`,
             this.hasValue && 'animated'
           )}
         >

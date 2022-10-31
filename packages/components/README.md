@@ -8,11 +8,11 @@ Scale components are customizable and written in TypeScript. If you want to repr
 
 # Welcome to Scale
 
-Access the [comprehensive documentation for Scale](https://www.brand-design.telekom.com/scale/) on [Telekom Brand & Design](https://www.brand-design.telekom.com/).
+Access the [comprehensive documentation for Scale](https://telekom.github.io/scale/).
 
 # Are you a designer?
 
-We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://www.brand-design.telekom.com/scale/?path=/story/scale-for-designers-getting-started--page) with your Brand & Design credentials.
+We provide a comprehensive Sketch library for designers building Telekom software. All components in the Sketch library are also available to your developers as code, making the handover very smooth and straightforward. For more information, access the [Scale website](https://telekom.github.io/scale/?path=/docs/setup-info-getting-started-for-designers--page).
 
 # Customizing Scale for open source software
 
@@ -27,8 +27,10 @@ By following the instructions for the open source version, you obtain source cod
 ### Setup with NPM
 
 ```
-npm install @telekom/scale-components-neutral
+npm install @telekom/scale-components-neutral@next
 ```
+
+> To install the [version prior to dark mode](https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53), do `npm install @telekom/scale-components-neutral` (without `@next`)
 
 To use the components, you need to load a CSS file and some JavaScript. The CSS file includes the fonts and design tokens.
 
@@ -49,14 +51,9 @@ To use the components, you need to load a CSS file and some JavaScript. The CSS 
 
 ```javascript
 import '@telekom/scale-components-neutral/dist/scale-components/scale-components.css';
-import {
-  applyPolyfills,
-  defineCustomElements,
-} from '@telekom/scale-components-neutral/loader';
+import { defineCustomElements } from '@telekom/scale-components-neutral/loader';
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements();
 ```
 
 ### NPM packages
@@ -67,9 +64,11 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-react-neutral    | Component proxies for React   |
 | @telekom/scale-components-vue-neutral*     | Component proxies for Vue     |
 | @telekom/scale-components-angular-neutral* | Component proxies for Angular |
-| @telekom/scale-design-tokens-neutral       | Design tokens                 |
+| @telekom/scale-design-tokens-neutral\**    | Design tokens                 |
 
-> *deprecated since `v3.0.0-beta.x`
+> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components-neutral` directly, support for custom elements is already great.
+
+> \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
 
 ### Using the source code directly
 
@@ -95,8 +94,10 @@ Please note that the use of the Telekom brand and design assets – including bu
 Install the Scale component library in your project with NPM or Yarn:
 
 ```
-npm install @telekom/scale-components
+npm install @telekom/scale-components@next
 ```
+
+> To install the [version prior to dark mode](https://github.com/telekom/scale/releases/tag/v3.0.0-beta.53), do `npm install @telekom/scale-components` (without `@next`)
 
 ### Setup with plain HTML
 
@@ -113,13 +114,11 @@ npm install @telekom/scale-components
 
 ### Setup with a bundler or ES modules
 
-```
+```js
 import "@telekom/scale-components/dist/scale-components/scale-components.css";
-import { applyPolyfills, defineCustomElements } from "@telekom/scale-components/loader";
+import { defineCustomElements } from "@telekom/scale-components/loader";
 
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+defineCustomElements();
 ```
 
 ### NPM packages
@@ -130,9 +129,11 @@ applyPolyfills().then(() => {
 | @telekom/scale-components-react    | Component proxies for React   |
 | @telekom/scale-components-vue*     | Component proxies for Vue     |
 | @telekom/scale-components-angular* | Component proxies for Angular |
-| @telekom/scale-design-tokens       | Telekom design tokens         |
+| @telekom/scale-design-tokens\**    | Telekom design tokens         |
 
-> *deprecated since `v3.0.0-beta.x` — please check out the info relative to frameworks in [the documentation](https://www.brand-design.telekom.com/scale/)
+> *deprecated since `v3.0.0-beta.X` — Please use `@telekom/scale-components` directly, support for custom elements is already great. Check out the info relative to frameworks in [the documentation](https://telekom.github.io/scale/).
+
+> \**deprecated since `v3.0.0-beta.100` in favor of [`@telekom/design-tokens`](https://www.npmjs.com/package/@telekom/design-tokens)
 
 ### Using the source code directly
 
@@ -177,7 +178,8 @@ You may obtain a copy of the License by reviewing the file [LICENSE](./LICENSE) 
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the [LICENSE](./LICENSE) for the specific language governing permissions and limitations under the License.
 
-## Local development
+
+# Local development
 
 ## Get dependencies
 
@@ -199,7 +201,7 @@ yarn start
 
 ## Component development
 
-## Useful commands
+### Useful commands
 
 See the `scripts` section inside `package.json` for a list of all available commands
 

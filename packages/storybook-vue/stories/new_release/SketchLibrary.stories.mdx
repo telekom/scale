@@ -1,0 +1,22 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+
+import text_en from './SketchLibrary_en.md';
+import text_de from './SketchLibrary_de.md';
+
+<Meta
+  title="New Release/Sketch Library Update"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <Description markdown={locale === 'en' ? text_en : text_de} />
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

@@ -1,0 +1,295 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleAccordion from './ScaleAccordion.vue';
+
+<Meta
+  title="Components/Accordion"
+  component={ScaleAccordion}
+  argTypes={{
+    dependent: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    expanded: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleAccordion },
+  props: {
+    ...ScaleAccordion.props,
+  },
+  template: `
+    <scale-accordion
+      :styles="styles"
+      :dependent="dependent"
+      :expanded="expanded"
+      :headingLevel="headingLevel"
+    >
+      <scale-collapsible>
+        <span slot="heading">Leo integer malesuada nunc vel risus</span>
+        <p>Freegan kinfolk <scale-link href="/">farm-to-table humblebrag cred</scale-link>, hammock bespoke small batch pabst. 90's tumblr whatever direct trade, organic master cleanse copper mug schlitz palo santo bushwick ethical pop-up chambray portland. Sartorial austin iceland street art, pug asymmetrical marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin food truck everyday carry 3 wolf moon.</p>
+      </scale-collapsible>
+      <scale-collapsible>
+        <span slot="heading">Dolor purus non enim</span>
+        <p>Bespoke austin pork belly yuccie pop-up. <scale-link href="/">Before they sold out</scale-link> YOLO kickstarter scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers microdosing etsy hashtag seitan photo booth bitters.</p>
+      </scale-collapsible>
+      <scale-collapsible>
+        <span slot="heading">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</span>
+        <p>Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh four loko selfies you probably haven't heard of them locavore bushwick. Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf godard skateboard celiac taxidermy tacos offal.</p>
+      </scale-collapsible>
+    </scale-accordion>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Accordion</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard">{Template.bind({})}</Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-accordion>
+  <scale-collapsible>
+    <span slot="heading">Leo integer malesuada nunc vel risus</span>
+    <p>
+      Freegan kinfolk
+      <scale-link href="/">farm-to-table humblebrag cred</scale-link>, hammock
+      bespoke small batch pabst. 90's tumblr whatever direct trade, organic
+      master cleanse copper mug schlitz palo santo bushwick ethical pop-up
+      chambray portland. Sartorial austin iceland street art, pug asymmetrical
+      marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin
+      food truck everyday carry 3 wolf moon.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading">Dolor purus non enim</span>
+    <p>
+      Bespoke austin pork belly yuccie pop-up.
+      <scale-link href="/">Before they sold out</scale-link> YOLO kickstarter
+      scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers
+      microdosing etsy hashtag seitan photo booth bitters.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading"
+      >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</span
+    >
+    <p>
+      Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe
+      helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh
+      four loko selfies you probably haven't heard of them locavore bushwick.
+      Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf
+      godard skateboard celiac taxidermy tacos offal.
+    </p>
+  </scale-collapsible>
+</scale-accordion>
+```
+
+### Scoped CSS variables
+
+```css
+/* scale-collapsible */
+:host {
+  --spacing-y: var(--telekom-spacing-unit-x4);
+
+  /* button */
+  --font-size-button: var(--telekom-typography-font-size-callout);
+  --font-weight-button: var(--telekom-typography-font-weight-extra-bold);
+  --line-height-button: var(--telekom-typography-line-spacing-standard);
+  --border-width-button: var(--telekom-spacing-unit-x05);
+  --radius-button: var(--telekom-radius-small);
+  --spacing-left-button: var(--telekom-spacing-unit-x1);
+  --spacing-left-button-text: var(--telekom-spacing-unit-x2);
+  --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --background-button-hover: var(--telekom-color-ui-state-fill-hovered);
+  --border-color-button-focus: var(--telekom-color-functional-focus);
+
+  /* icon */
+  --spacing-top-icon: calc(var(--telekom-spacing-unit-x1) + 1px);
+
+  /* content */
+  --spacing-right-content: var(--telekom-spacing-unit-x12);
+  --spacing-left-content: var(--telekom-spacing-unit-x8);
+  --spacing-top-content: var(--telekom-spacing-unit-x4);
+  --spacing-bottom-content: var(--telekom-spacing-unit-x6);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
+## Dependent
+
+<Canvas withSource="none">
+  <Story
+    name="Dependent"
+    args={{
+      dependent: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-accordion dependent>
+  <scale-collapsible>
+    <span slot="heading">Leo integer malesuada nunc vel risus</span>
+    <p>
+      Freegan kinfolk
+      <scale-link href="/">farm-to-table humblebrag cred</scale-link>, hammock
+      bespoke small batch pabst. 90's tumblr whatever direct trade, organic
+      master cleanse copper mug schlitz palo santo bushwick ethical pop-up
+      chambray portland. Sartorial austin iceland street art, pug asymmetrical
+      marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin
+      food truck everyday carry 3 wolf moon.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading">Dolor purus non enim</span>
+    <p>
+      Bespoke austin pork belly yuccie pop-up.
+      <scale-link href="/">Before they sold out</scale-link> YOLO kickstarter
+      scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers
+      microdosing etsy hashtag seitan photo booth bitters.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading"
+      >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</span
+    >
+    <p>
+      Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe
+      helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh
+      four loko selfies you probably haven't heard of them locavore bushwick.
+      Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf
+      godard skateboard celiac taxidermy tacos offal.
+    </p>
+  </scale-collapsible>
+</scale-accordion>
+```
+
+## Expanded
+
+<Canvas withSource="none">
+  <Story
+    name="Expanded"
+    args={{
+      expanded: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-accordion expanded>
+  <scale-collapsible>
+    <span slot="heading">Leo integer malesuada nunc vel risus</span>
+    <p>
+      Freegan kinfolk
+      <scale-link href="/">farm-to-table humblebrag cred</scale-link>, hammock
+      bespoke small batch pabst. 90's tumblr whatever direct trade, organic
+      master cleanse copper mug schlitz palo santo bushwick ethical pop-up
+      chambray portland. Sartorial austin iceland street art, pug asymmetrical
+      marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin
+      food truck everyday carry 3 wolf moon.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading">Dolor purus non enim</span>
+    <p>
+      Bespoke austin pork belly yuccie pop-up.
+      <scale-link href="/">Before they sold out</scale-link> YOLO kickstarter
+      scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers
+      microdosing etsy hashtag seitan photo booth bitters.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading"
+      >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</span
+    >
+    <p>
+      Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe
+      helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh
+      four loko selfies you probably haven't heard of them locavore bushwick.
+      Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf
+      godard skateboard celiac taxidermy tacos offal.
+    </p>
+  </scale-collapsible>
+</scale-accordion>
+```
+
+## Heading Level
+
+The default level for the heading (h1, h2, h3…) inside the toggle button is `2`. So setting `heading-level` in `<scale-accordion>` will affect all `<scale-collapsible>` children automatically.
+
+Adding `aria-level=""` to the heading slot on each item is not needed, but results in better accessibility in case JavaScript fails to load or execute.
+
+<Canvas withSource="none">
+  <Story
+    name="Heading Level"
+    args={{
+      headingLevel: 3,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-accordion heading-level="3">
+  <scale-collapsible>
+    <span slot="heading" aria-level="3"
+      >Leo integer malesuada nunc vel risus</span
+    >
+    <p>
+      Freegan kinfolk
+      <scale-link href="/">farm-to-table humblebrag cred</scale-link>, hammock
+      bespoke small batch pabst. 90's tumblr whatever direct trade, organic
+      master cleanse copper mug schlitz palo santo bushwick ethical pop-up
+      chambray portland. Sartorial austin iceland street art, pug asymmetrical
+      marfa mustache mumblecore. Shoreditch raclette knausgaard, swag enamel pin
+      food truck everyday carry 3 wolf moon.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading" aria-level="3">Dolor purus non enim</span>
+    <p>
+      Bespoke austin pork belly yuccie pop-up.
+      <scale-link href="/">Before they sold out</scale-link> YOLO kickstarter
+      scenester meggings echo park aesthetic. Thundercats post-ironic wayfarers
+      microdosing etsy hashtag seitan photo booth bitters.
+    </p>
+  </scale-collapsible>
+  <scale-collapsible>
+    <span slot="heading" aria-level="3"
+      >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</span
+    >
+    <p>
+      Biodiesel chia af hoodie tumeric bespoke letterpress man bun fashion axe
+      helvetica brunch godard cray viral prism. Street art tattooed bitters, ugh
+      four loko selfies you probably haven't heard of them locavore bushwick.
+      Tattooed 90's kinfolk, banh mi umami banjo palo santo cliche. Cray wolf
+      godard skateboard celiac taxidermy tacos offal.
+    </p>
+  </scale-collapsible>
+</scale-accordion>
+```

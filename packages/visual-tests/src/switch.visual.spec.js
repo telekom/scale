@@ -1,86 +1,38 @@
 describe('Switch', () => {
-  test.each([
-    ['standard'],
-    ['standard-disabled'],
-    ['selected'],
-    ['selected-disabled'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-
-    const previewHtml = await page.$('body');
-
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  // hover, active
-  test.each([['standard'], ['selected']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-switch--standard', mode);
     });
-
-    const firstButton = await page.evaluateHandle(
-      'document.querySelector("#root > scale-switch > div")'
-    );
-    await firstButton.hover();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await page.mouse.move(25, 25);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  // focus
-  test.each([['standard'], ['selected']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    await page.keyboard.press('Tab');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  // click
-  test.each([['standard'], ['selected']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-switch--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
+    test.each([
+      ['standard'],
+      ['small'],
+      ['standard-disabled'],
+      ['selected'],
+      ['selected-disabled'],
+      ['android'],
+      ['android-disabled'],
+      ['android-selected'],
+      ['android-selected-disabled'],
+    ])('story %p', async (variant) => {
+      await global.runSetup(`components-switch--${variant}`);
+      await global.visualCheck();
     });
-
-    const firstButton = await page.evaluateHandle(
-      'document.querySelector("#root > scale-switch > div .switch__wrapper")'
+    test.each([['standard'], ['selected'], ['android-selected']])(
+      'hover %p',
+      async (variant) => {
+        await global.runSetup(`components-switch--${variant}`);
+        const firstButton = await global.page.evaluateHandle(
+          'document.querySelector("#root scale-switch")'
+        );
+        await firstButton.hover();
+        await global.visualCheck();
+      }
     );
-    const base = await page.evaluateHandle(`document.querySelector("#root")`);
-    await firstButton.click();
-    await base.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+
+    test.each([['standard']])('focus %p', async (variant) => {
+      await global.runSetup(`components-switch--${variant}`);
+      await global.page.keyboard.press('Tab');
+      await global.visualCheck();
+    });
   });
 });

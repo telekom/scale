@@ -1,0 +1,325 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleSidebarNav from './SidebarNav.vue';
+import ScaleSidebarNavCollapsible from './SidebarNavCollapsible.vue';
+import ScaleSidebarNavItem from './SidebarNavItem.vue';
+
+<Meta
+  title="Components/Sidebar Navigation"
+  component={ScaleSidebarNav}
+  subcomponents={{
+    'scale-sidebar-nav-collapsible': ScaleSidebarNavCollapsible,
+    'scale-sidebar-nav-item': ScaleSidebarNavItem,
+  }}
+  argTypes={{
+    width: {
+      control: {
+        type: 'radio',
+        options: ['256px', '25rem', '100%'],
+      },
+      defaultValue: '100%',
+      description: 'Example width for wrapper element',
+    },
+    styles: {
+      control: { disable: true },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: {
+    width: { type: String },
+    ...ScaleSidebarNav.props,
+  },
+  computed: {
+    wrapperStyles() {
+      return {
+        maxWidth: this.width,
+      };
+    },
+  },
+  template: `
+    <div :style="wrapperStyles">
+      <scale-sidebar-nav
+        :arial-label="ariaLabel"
+        :collapsible="collapsible"
+        :collapsible-label="collapsibleLabel"
+        :collapsible-media-query="collapsibleMediaQuery"
+        :styles="styles"
+      >
+        <scale-sidebar-nav-item>
+          <a href="#">Overview</a>
+        </scale-sidebar-nav-item>
+        <scale-sidebar-nav-collapsible label="Reference" expanded>
+          <scale-sidebar-nav-collapsible label="Function A" expanded>
+            <scale-sidebar-nav-item current>
+              <a href="#">Endpoint 1</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 2</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 3</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-collapsible label="Function B">
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 4</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 5</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Endpoint 6</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-collapsible label="Etcetera">
+          <scale-sidebar-nav-item>
+            <a href="#">Some foo</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">More bar</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Links baz</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav-collapsible>
+        <scale-sidebar-nav-item>
+          <a href="#">Console</a>
+        </scale-sidebar-nav-item>
+      </scale-sidebar-nav>
+    </div>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Sidebar Navigation</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{ collapsibleLabel: 'Explore this topic' }}>
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-sidebar-nav collapsible-label="Explore this topic">
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-collapsible label="Function A" expanded>
+      <scale-sidebar-nav-item current>
+        <a href="#">Endpoint 1</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 2</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 3</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav-collapsible>
+    <scale-sidebar-nav-collapsible label="Function B">
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 4</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 5</a>
+      </scale-sidebar-nav-item>
+      <scale-sidebar-nav-item>
+        <a href="#">Endpoint 6</a>
+      </scale-sidebar-nav-item>
+    </scale-sidebar-nav-collapsible>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-collapsible label="Etcetera">
+    <scale-sidebar-nav-item>
+      <a href="#">Some foo</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">More bar</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">Links baz</a>
+    </scale-sidebar-nav-item>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+### Scoped CSS variables
+
+```css
+/* sidebar-nav */
+:host {
+  --max-width: 15rem;
+  --spacing-indent: var(--telekom-spacing-unit-x6);
+  --spacing-collapsible: var(--telekom-spacing-unit-x4);
+  --opacity-chevron: 0;
+  --left-current-border: 0;
+
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+  --color-toggle-button: var(--telekom-color-ui-regular);
+  --border-y-toggle-button: 1px solid var(--telekom-color-ui-subtle);
+  --radius-toggle-button: var(--telekom-radius-small);
+}
+
+/* sidebar-nav-collapsible */
+:host {
+  --opacity-chevron: 1;
+  --border-bottom-color: var(--telekom-color-ui-subtle);
+  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-primary: var(--telekom-color-text-and-icon-primary-hovered);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--telekom-typography-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+}
+
+/* sidebar-nav-item */
+:host {
+  --border-bottom-color: var(--telekom-color-ui-subtle);
+  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
+  --background-color-before-active: var(--color-primary);
+  --font-weight-bold: var(--telekom-typography-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
+## Active on Level 1
+
+<Canvas withSource="none">
+  <Story name="Active on Level 1">
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-item>
+            <a href="#">Overview</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item current>
+            <a href="#">Resources</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-item>
+            <a href="#">Console</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-item current>
+    <a href="#">Resources</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Active on Level 2
+
+<Canvas withSource="none">
+  <Story name="Active on Level 2">
+    {{
+      template: `
+        <scale-sidebar-nav>
+          <scale-sidebar-nav-item>
+            <a href="#">Overview</a>
+          </scale-sidebar-nav-item>
+          <scale-sidebar-nav-collapsible label="Reference" expanded>
+            <scale-sidebar-nav-item current>
+              <a href="#">Day</a>
+            </scale-sidebar-nav-item>
+            <scale-sidebar-nav-item>
+              <a href="#">Night</a>
+            </scale-sidebar-nav-item>
+          </scale-sidebar-nav-collapsible>
+          <scale-sidebar-nav-item>
+            <a href="#">Console</a>
+          </scale-sidebar-nav-item>
+        </scale-sidebar-nav>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <scale-sidebar-nav-collapsible label="Reference" expanded>
+    <scale-sidebar-nav-item current>
+      <a href="#">Day</a>
+    </scale-sidebar-nav-item>
+    <scale-sidebar-nav-item>
+      <a href="#">Night</a>
+    </scale-sidebar-nav-item>
+  </scale-sidebar-nav-collapsible>
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```
+
+## Custom Media Query
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Media Query"
+    args={{
+      collapsibleLabel: 'Menu',
+      collapsibleMediaQuery: '(max-width: 44em)',
+    }}
+  >
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+```html
+<scale-sidebar-nav
+  collapsible-label="Menu"
+  collapsible-media-query="(max-width: 44em)"
+>
+  <scale-sidebar-nav-item>
+    <a href="#">Overview</a>
+  </scale-sidebar-nav-item>
+  <!-- ... -->
+  <scale-sidebar-nav-item>
+    <a href="#">Console</a>
+  </scale-sidebar-nav-item>
+</scale-sidebar-nav>
+```

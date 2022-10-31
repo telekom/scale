@@ -13,66 +13,50 @@
 /* typography utility classes for using native tags */
 .scl-body {
   margin: 0;
-  line-height: var(--scl-font-variant-body-line-height);
-  font-weight: var(--scl-font-variant-body-weight);
+  font: var(--telekom-text-style-body);
 }
 
 .scl-label {
   margin: 0;
-  font-size: var(--scl-font-variant-label-size);
-  line-height: var(--scl-font-variant-label-line-height);
-  font-weight: var(--scl-font-variant-label-weight);
+  font: var(--telekom-text-style-small);
 }
 
 .scl-h1 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-1-size);
-  line-height: var(--scl-font-variant-heading-1-line-height);
-  font-weight: var(--scl-font-variant-heading-1-weight);
+  font: var(--telekom-text-style-heading-1);
 }
 
 .scl-h2 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-2-size);
-  line-height: var(--scl-font-variant-heading-2-line-height);
-  font-weight: var(--scl-font-variant-heading-2-weight);
+  font: var(--telekom-text-style-heading-2);
 }
 
 .scl-h3 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-3-size);
-  line-height: var(--scl-font-variant-heading-3-line-height);
-  font-weight: var(--scl-font-variant-heading-3-weight);
+  font: var(--telekom-text-style-heading-3);
 }
 
 .scl-h4 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-4-size);
-  line-height: var(--scl-font-variant-heading-4-line-height);
-  font-weight: var(--scl-font-variant-heading-4-weight);
+  font: var(--telekom-text-style-heading-4);
 }
 
 .scl-h5 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-5-size);
-  line-height: var(--scl-font-variant-heading-5-line-height);
-  font-weight: var(--scl-font-variant-heading-5-weight);
+  font: var(--telekom-text-style-heading-5);
 }
 
 .scl-h6 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-6-size);
-  line-height: var(--scl-font-variant-heading-6-line-height);
-  font-weight: var(--scl-font-variant-heading-6-weight);
+  font: var(--telekom-text-style-heading-6);
 }
 
 :host {
-  font-family: var(--scl-font-family-sans);
-  font-size: var(--scl-font-size-16);
-  font-weight: var(--scl-font-weight-regular);
-  line-height: var(--scl-font-line-height-150);
-
-  color: var(--scl-color-black);
+  font-family: var(--telekom-typography-font-family-sans);
+  font-size: var(--telekom-typography-font-size-body);
+  font-weight: var(--telekom-typography-font-weight-regular);
+  line-height: var(--telekom-typography-line-spacing-standard);
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .data-grid input,
@@ -86,9 +70,9 @@
 .data-grid {
   position: relative;
   display: block;
-  background: var(--scl-color-white);
-  border-radius: var(--scl-radius-8);
-  border: 1px solid var(--scl-color-grey-10);
+  background: var(--telekom-color-ui-state-fill-standard);
+  border-radius: var(--telekom-radius-large);
+  border: 1px solid var(--telekom-color-ui-faint);
   overflow: hidden;
 }
 
@@ -106,7 +90,7 @@
   align-items: center;
   justify-content: space-between;
   padding-right: 62px;
-  padding-left: var(--scl-spacing-24);
+  padding-left: var(--telekom-spacing-unit-x6);
 }
 
 .data-grid__heading {
@@ -114,8 +98,8 @@
 
 .data-grid__settings-menu {
   position: absolute;
-  top: var(--scl-spacing-16);
-  right: var(--scl-spacing-16);
+  top: var(--telekom-spacing-unit-x4);
+  right: var(--telekom-spacing-unit-x4);
 }
 
 .data-grid__scroll-container {
@@ -143,34 +127,41 @@
   min-height: 72px;
 }
 .data-grid--hide-menu .data-grid__title-block {
-  padding-right: var(--scl-spacing-16);
+  padding-right: var(--telekom-spacing-unit-x4);
 }
 
 /* Head block */
 .thead {
   display: block;
   white-space: nowrap;
-  border-bottom: 1px solid var(--scl-color-grey-10);
+  border-bottom: 1px solid var(--telekom-color-ui-faint);
   position: relative;
-  background: #fff;
+  background: var(--telekom-color-ui-state-fill-standard);
   z-index: 1;
 }
+
+.data-grid--freeze-header .thead {
+  z-index: 30;
+  background-color: var(--telekom-color-background-canvas);
+}
+
 .thead-sortable {
   cursor: pointer;
 }
 .thead-sortable:focus {
-  box-shadow: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  box-shadow: inset 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
 }
 
 .thead__cell {
   display: inline-flex;
   align-items: center;
-  height: var(--scl-spacing-32);
+  height: var(--telekom-spacing-unit-x8);
   text-align: left;
   user-select: none;
   position: relative;
-  padding: 0 var(--scl-spacing-16);
-  color: var(--scl-color-grey);
+  padding: 0 var(--telekom-spacing-unit-x4);
+  color: var(--telekom-color-text-and-icon-additional);
 }
 
 .thead__cell--numbered {
@@ -187,11 +178,12 @@
   justify-content: center;
 }
 .thead__title {
+  color: var(--telekom-color-text-and-icon-standard);
 }
 
 .thead__text {
-  font-size: var(--scl-font-size-12);
-  line-height: var(--scl-font-variant-body-size);
+  font-size: var(--telekom-typography-font-size-small);
+  line-height: var(--telekom-typography-line-spacing-standard);
   position: relative;
 }
 
@@ -206,12 +198,12 @@
 
 .thead__arrow-top {
   border-top: none;
-  border-bottom: 5px solid var(--scl-color-black);
+  border-bottom: 5px solid var(--telekom-color-text-and-icon-standard);
 }
 
 .thead__arrow-bottom {
   border-bottom: none;
-  border-top: 5px solid var(--scl-color-black);
+  border-top: 5px solid var(--telekom-color-text-and-icon-standard);
 }
 
 .thead__sort-prompt {
@@ -229,10 +221,10 @@
 
 .thead__divider {
   position: absolute;
-  right: calc(-1 * var(--scl-spacing-8));
+  right: calc(-1 * var(--telekom-spacing-unit-x2));
   bottom: 0px;
   height: 100%;
-  padding: 19px var(--scl-spacing-8) 0px;
+  padding: 19px var(--telekom-spacing-unit-x2) 0px;
   box-sizing: border-box;
   cursor: col-resize;
   z-index: 1;
@@ -242,11 +234,11 @@
   pointer-events: none;
   height: 100%;
   width: 1px;
-  background: var(--scl-color-grey-10);
+  background: var(--telekom-color-ui-faint);
 }
 
 .thead__cell:first-child {
-  padding-left: var(--scl-spacing-24);
+  padding-left: var(--telekom-spacing-unit-x6);
 }
 
 .thead__cell:focus {
@@ -262,20 +254,20 @@
 }
 
 .thead__cell[aria-sort]:hover {
-  color: var(--scl-color-primary-hover);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 .thead__cell[aria-sort='none']:hover .thead__arrow-top {
   display: block;
-  border-bottom: 5px solid var(--scl-color-primary-hover);
+  border-bottom: 5px solid var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 .thead__cell[aria-sort='ascending']:hover .thead__arrow-top {
-  border-bottom: 5px solid var(--scl-color-primary-hover);
+  border-bottom: 5px solid var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 .thead__cell[aria-sort='descending']:hover .thead__arrow-bottom {
-  border-top: 5px solid var(--scl-color-primary-hover);
+  border-top: 5px solid var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 /* Body block */
@@ -312,6 +304,10 @@
   justify-content: center;
 }
 
+.tbody__cell scale-checkbox {
+  width: auto;
+}
+
 .tbody__nested {
   white-space: nowrap;
   padding: 0px;
@@ -319,13 +315,13 @@
 }
 .tbody__nested-cell {
   display: block;
-  padding: var(--scl-spacing-16);
+  padding: var(--telekom-spacing-unit-x4);
   margin: 0px;
 }
 
 .tbody__cell:first-of-type {
-  margin-left: var(--scl-spacing-16);
-  /* padding-left: var(--scl-spacing-24); */
+  margin-left: var(--telekom-spacing-unit-x4);
+  /* padding-left: var(--telekom-spacing-unit-x6); */
 }
 
 .tbody__nested-cell:first-child {
@@ -333,12 +329,8 @@
 }
 .data-grid--shade-alternate .tbody__row:nth-of-type(even),
 .data-grid--shade-alternate .tbody__nested:nth-of-type(even) {
-  background: #f3f3f3;
+  background: var(--telekom-color-background-surface-subtle);
 }
-/* .tbody__row:hover,
-.data-grid--shade-alternate .tbody__row:nth-of-type(even):hover {
-  background: var(--scl-color-background-darker);
-} */
 
 .data-grid__auto-width-check .tbody__cell {
   padding: 0;
@@ -393,14 +385,15 @@
   flex-grow: 1;
 }
 .tbody__actions scale-button {
-  margin-right: var(--scl-spacing-8);
+  margin-right: var(--telekom-spacing-unit-x2);
 }
 
 /* Info block */
 .info {
   height: 54px;
   position: relative;
-  border-top: 1px solid var(--scl-color-grey-20);
+  border-top: var(--telekom-line-weight-standard) solid
+    var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;
 }
@@ -409,12 +402,12 @@
   position: absolute;
   bottom: 0;
   line-height: 54px;
-  left: var(--scl-spacing-24);
+  left: var(--telekom-spacing-unit-x6);
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
-  border-bottom: 1px solid var(--scl-color-grey-10);
-  border-right: 1px solid var(--scl-color-grey-10);
+  border-bottom: 1px solid var(--telekom-color-ui-subtle);
+  border-right: 1px solid var(--telekom-color-ui-subtle);
 }
 
 /* Mobile */
@@ -449,18 +442,18 @@
   display: block;
   position: relative;
   white-space: initial;
-  margin: 0 0 var(--scl-spacing-8);
-  padding: var(--scl-spacing-24);
-  border-radius: var(--scl-radius-8);
-  background: var(--scl-color-white);
-  border: 1px solid var(--scl-color-grey-10);
+  margin: 0 0 var(--telekom-spacing-unit-x2);
+  padding: var(--telekom-spacing-unit-x6);
+  border-radius: var(--telekom-radius-standard);
+  background: var(--telekom-color-background-surface);
+  border: 1px solid var(--telekom-color-ui-faint);
 }
 .data-grid--mobile .tbody__row:hover {
-  background: var(--scl-color-white);
+  background: var(--telekom-color-background-surface);
 }
 .data-grid--mobile .tbody__mobile-title {
   display: block;
-  margin-bottom: var(--scl-spacing-8);
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 .data-grid--mobile .tbody__mobile-label {
   display: block;
@@ -472,8 +465,8 @@
   padding: 5px 0;
   margin: 0;
   /* 24 to match text component, otherwise will not be centered */
-  min-height: var(--scl-spacing-24);
-  line-height: var(--scl-spacing-24);
+  min-height: var(--telekom-spacing-unit-x6);
+  line-height: var(--telekom-spacing-unit-x6);
   overflow: auto;
   overflow-x: hidden;
 }
@@ -484,9 +477,9 @@
   display: block;
   width: 100px;
   flex-shrink: 0;
-  color: var(--scl-color-grey);
-  font-size: var(--scl-font-size-12);
-  font-weight: var(--scl-font-weight-medium);
+  color: var(--telekom-color-text-and-icon-additional);
+  font-size: var(--telekom-typography-font-size-small);
+  font-weight: var(--telekom-typography-font-weight-medium);
 }
 .data-grid--mobile .tbody__cell:first-child {
   margin-left: 0px;
@@ -510,10 +503,10 @@
 }
 .data-grid--mobile .tbody__nested-cell {
   padding: 0;
-  margin-bottom: var(--scl-spacing-8);
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 .data-grid--mobile.data-grid--shade-alternate .tbody__row:nth-of-type(even) {
-  background: none;
+  background: var(--telekom-color-background-surface);
 }
 .data-grid--mobile .info {
   height: auto;

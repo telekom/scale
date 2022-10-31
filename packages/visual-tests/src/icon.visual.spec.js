@@ -1,15 +1,16 @@
 describe('Icon', () => {
-  test.each([
-    ['standard'],
-    ['with-path-attribute'],
-    ['with-name-attribute'],
-    ['icon-library'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-icon--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-icon--standard', mode);
+    });
+    test.each([
+      ['standard'],
+      ['with-path-attribute'],
+      ['with-name-attribute'],
+      ['icon-library'],
+    ])('%p', async (variant) => {
+      await global.runSetup(`components-icon--${variant}`);
+      await global.visualCheck();
+    });
   });
 });

@@ -10,13 +10,16 @@
  */
 
 :host {
-  --border-bottom-color: var(--scl-color-grey-10);
-  --border-left-color-third-nesting: var(--scl-color-grey-70);
-  --color-active: var(--scl-color-primary-active);
-  --color-primary: var(--scl-color-primary);
+  --opacity-chevron: 1;
+  --border-bottom-color: var(--telekom-color-ui-faint);
+  --border-left-color-third-nesting: var(--telekom-color-ui-strong);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-primary: var(--telekom-color-text-and-icon-primary-hovered);
   --background-color-before-active: var(--color-primary);
-  --font-weight-bold: var(--scl-font-weight-bold);
-  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
+  --font-weight-bold: var(--telekom-typography-font-weight-bold);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
 }
 .sidebar-nav-collapsible {
   margin: 0;
@@ -53,11 +56,11 @@
   justify-content: space-between;
   text-decoration: none;
   font-family: inherit;
-  border-radius: 2px;
+  border-radius: var(--telekom-radius-small);
 }
 
 .sidebar-nav-collapsible__button:hover {
-  color: var(--color-primary);
+  color: var(--color-hover);
 }
 
 .sidebar-nav-collapsible__button:active {

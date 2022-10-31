@@ -1,45 +1,38 @@
 describe('RatingStars', () => {
-  test.each([
-    ['info-text-and-custom-label'],
-    ['disabled'],
-    ['small-with-info-text'],
-    ['hidden-label'],
-    ['readonly'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  // focus, active
-  test.each([['info-text-and-custom-label']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-rating-stars--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-rating-stars--standard', mode);
     });
-    const input = await page.evaluateHandle(
-      `document.querySelector("#root > scale-rating-stars").shadowRoot.querySelector("input[type=range]")`
+    test.each([
+      ['info-text-and-custom-label'],
+      ['disabled'],
+      ['small-with-info-text'],
+      ['hidden-label'],
+      ['readonly'],
+    ])('story %p', async (variant) => {
+      await global.runSetup(`components-rating-stars--${variant}`);
+      await global.visualCheck();
+    });
+    test.each([['info-text-and-custom-label']])('focus %p', async (variant) => {
+      await global.runSetup(`components-rating-stars--${variant}`);
+      const input = await global.page.evaluateHandle(
+        `document.querySelector("#root > scale-rating-stars").shadowRoot.querySelector("input[type=range]")`
+      );
+      await input.focus();
+      await global.visualCheck();
+    });
+    test.each([['info-text-and-custom-label']])(
+      'active %p',
+      async (variant) => {
+        await global.runSetup(`components-rating-stars--${variant}`);
+        const input = await global.page.evaluateHandle(
+          `document.querySelector("#root > scale-rating-stars").shadowRoot.querySelector("input[type=range]")`
+        );
+        await global.page.mouse.move(40, 60);
+        await global.page.mouse.down();
+        await global.page.waitFor(600);
+        await global.visualCheck();
+      }
     );
-    await input.focus();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await page.mouse.move(40, 60);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
   });
 });

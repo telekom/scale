@@ -10,27 +10,27 @@
  */
 
 :host {
-  --color: var(--scl-color-black);
-  --radius: var(--scl-radius-8);
-  --font-size: var(--scl-font-size-12);
-  --border: 1px solid var(--scl-color-grey-10);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-active);
-  --color-button: var(--scl-color-grey-10);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --radius: var(--telekom-radius-standard);
+  --font-size: var(--telekom-typography-font-size-small);
+  --border: 1px solid var(--telekom-color-ui-faint);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-button: var(--telekom-color-ui-subtle);
   --border-button: var(--border);
-  --box-shadow-focus: inset 0 0 0 2px var(--scl-color-focus);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   --radius-first-prompt: var(--radius) 0 0 var(--radius);
   --radius-last-prompt: 0 var(--radius) var(--radius) 0;
   --radius-first-prompt-stack: 0 0 0 var(--radius);
   --radius-last-prompt-stack: 0 0 var(--radius) 0;
-  --stroke-svg: var(--scl-color-black);
-  --stroke-svg-high-contrast: var(--scl-color-white);
-  --width-button: 42px;
-  --padding-info: var(--scl-spacing-8);
-  --height-button: 56px;
-  --height-button-small: 40px;
+  --stroke-svg: var(--telekom-color-ui-extra-strong);
+  /* FIXME is this needed? */
+  --stroke-svg-high-contrast: #fff;
+  --width-button: 44px;
+  --padding-info: var(--telekom-spacing-unit-x2);
+  --height-button: 44px;
   --line-height-info: calc(var(--height-button) - 2px);
-  --line-height-info-small: calc(var(--height-button-small) - 2px);
 }
 .pagination {
   display: flex;
@@ -54,10 +54,6 @@
 .pagination__info-responsive {
   display: none;
 }
-.pagination--small .pagination__info,
-.pagination--small .pagination__info-responsive {
-  line-height: var(--line-height-info-small);
-}
 .pagination__info span,
 .pagination__info-responsive span {
   font-weight: bold;
@@ -75,12 +71,9 @@ button {
   background: none;
   border: var(--border-button);
 }
-.pagination--small button {
-  height: var(--height-button-small);
-}
 button:focus {
-  outline: none;
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
+  outline-offset: -3px;
 }
 .pagination__first-prompt {
   border-radius: var(--radius-first-prompt);
@@ -97,14 +90,20 @@ button:focus {
 button svg {
   display: block;
 }
+
 button:not(:disabled) {
   cursor: pointer;
 }
 button:not(:disabled) svg {
   stroke: var(--stroke-svg);
 }
+
+button:disabled svg {
+  stroke: var(--telekom-color-text-and-icon-disabled);
+}
+
 button:not(:disabled):hover {
-  border-color: var(--color-hover);
+  border-color: var(--telekom-color-primary-hovered);
   z-index: 1;
 }
 button:not(:disabled):hover svg {
@@ -136,7 +135,7 @@ button:not(:disabled):active svg {
 .pagination--hide-borders button:not(:disabled):hover {
   /* Important to override external changes to hide side borders - i.e. in scale-data-grid */
   border-width: 1px;
-  border-color: var(--color-hover);
+  border-color: var(--telekom-color-primary-hovered);
 }
 
 .pagination__button-wrapper {
@@ -164,11 +163,11 @@ button:not(:disabled):active svg {
     border-right: var(--border);
     border-bottom: 0;
     border-radius: var(--radius) var(--radius) 0 0;
-    line-height: var(--line-height-info-small);
+    line-height: var(--line-height-info);
   }
   .pagination__info {
     display: none;
-    line-height: var(--line-height-info-small);
+    line-height: var(--line-height-info);
   }
   .pagination__first-prompt {
     border-radius: var(--radius-first-prompt-stack);
@@ -181,7 +180,7 @@ button:not(:disabled):active svg {
   }
   button {
     flex: 1;
-    height: var(--height-button-small);
+    height: var(--height-button);
   }
   .pagination--hide-borders .pagination__first-prompt {
     border-left-width: 0;

@@ -9,11 +9,19 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Host, Prop, Element, Method } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Prop,
+  Element,
+  Method,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-
-const TIMEOUT = 3000;
+import { emitEvent } from '../../utils/utils';
 
 @Component({
   tag: 'scale-notification-message',
@@ -27,19 +35,25 @@ export class NotificationMessage {
     'informational';
   @Prop() dismissible?: boolean = false;
   @Prop({ reflect: true }) opened: boolean;
-  @Prop() timeout?: boolean | number = false;
+  @Prop() autoHide?: boolean = false;
+  @Prop() autoHideDuration?: number = 3000;
+  /** Fires when the notification message has been dismissed */
+  @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<void>;
 
   hasSlotText: boolean;
 
-  componentDidLoad() {
-    this.hasSlotText = !!this.hostElement.querySelector("p[slot='text']");
+  componentWillLoad() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
   }
 
   componentDidRender() {
-    if (this.timeout) {
-      const timeout = this.timeout === true ? TIMEOUT : this.timeout;
-      setTimeout(this.close, timeout);
+    if (this.autoHide === true) {
+      setTimeout(this.close, this.autoHideDuration);
     }
+  }
+
+  componentDidUpdate() {
+    this.hasSlotText = !!this.hostElement.querySelector('[slot=text]');
   }
 
   connectedCallback() {
@@ -56,31 +70,32 @@ export class NotificationMessage {
       switch (this.variant) {
         case 'success':
           return (
-            <scale-notification-message-svg
+            <scale-icon-alert-success
               class="notification-message__icon-success"
-              accessibility-title="success"
+              color="#187431"
+              aria-hidden="true"
             />
           );
         case 'informational':
           return (
             <scale-icon-alert-information
               class="notification-message__icon-information"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
         case 'error':
           return (
-            <scale-icon-alert-warning
+            <scale-icon-alert-error
               class="notification-message__icon-error"
-              accessibility-title="error"
+              aria-hidden="true"
             />
           );
         case 'warning':
           return (
-            <scale-icon-alert-information
+            <scale-icon-alert-warning
               class="notification-message__icon-information"
               color="#AE461C"
-              accessibility-title="information"
+              aria-hidden="true"
             />
           );
       }
@@ -90,6 +105,7 @@ export class NotificationMessage {
 
   close = () => {
     this.opened = false;
+    emitEvent(this, 'scaleClose');
   };
 
   render() {
@@ -100,6 +116,8 @@ export class NotificationMessage {
     return (
       <Host>
         <div
+          role="alert"
+          style={{ display: `${this.opened ? '' : 'none'}` }}
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           tabindex="0"
@@ -110,19 +128,21 @@ export class NotificationMessage {
               <slot>&emsp;</slot>
 
               {this.dismissible && (
-                <scale-icon-action-circle-close
-                  tabindex="0"
+                <button
+                  part="button-dismissable"
+                  type="button"
                   class="notification-message__icon-close"
-                  onClick={() => {
-                    this.close();
-                  }}
+                  onClick={() => this.close()}
+                  tabindex={0}
+                  aria-label="close"
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                       this.close();
                     }
                   }}
-                  accessibility-title="close"
-                />
+                >
+                  <scale-icon-action-circle-close />
+                </button>
               )}
             </div>
             {this.hasSlotText && (

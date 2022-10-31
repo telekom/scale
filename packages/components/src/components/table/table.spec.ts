@@ -54,11 +54,6 @@ describe('Table', () => {
     });
     expect(page.root).toMatchSnapshot();
   });
-
-  it('should handle css classes', () => {
-    element.size = 'big';
-    expect(element.getCssClassMap()).toContain('table--size-big');
-  });
   it('should handle css classes', () => {
     element.showSort = true;
     expect(element.getCssClassMap()).toContain('table--sortable');

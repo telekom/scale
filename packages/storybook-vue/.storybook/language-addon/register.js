@@ -9,43 +9,51 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import React from "react";
-import { addons, types } from "@storybook/addons";
-import { useGlobals } from "@storybook/api";
-import useLocalStorage from "../use-localstorage";
-import translationMap from "../../translations.json";
+import React from 'react';
+import { addons, types } from '@storybook/addons';
+import { useGlobals } from '@storybook/api';
+import useLocalStorage from '../use-localstorage';
+import translationMap from '../../translations.json';
 
-const activeBtnClassName = "css-mszgbt";
-const inactiveBtnClassName = "css-1nin9qf";
+const activeBtnClassName = 'css-mszgbt';
+const inactiveBtnClassName = 'css-am1h1h';
+const separatorClassName = 'css-14kbt3m';
 
 // utility to create new links
-const createLink = label => {
-  const link = document.createElement("a");
-  link.href = "#";
+const createLink = (label) => {
+  const link = document.createElement('a');
+  link.href = '#';
   link.id = `language-${label}`;
-  link.setAttribute("class", "css-1xonygc");
+  link.setAttribute('class', 'css-1xonygc');
 
-  const button = document.createElement("button");
-  button.setAttribute("class", activeBtnClassName);
+  const button = document.createElement('button');
+  button.setAttribute('class', activeBtnClassName);
   button.innerHTML = label;
   link.appendChild(button);
 
   return link;
 };
 
+// const createSeparator = () => {
+//   const separator = document.createElement('span');
+//   separator.style = "margin-left: 15px;";
+//   separator.setAttribute("class", separatorClassName);
+//   return separator
+// }
+
 // global variables so there can only be one for each;
 let languageToolbar;
-const englishLink = createLink("English");
-const germanLink = createLink("Deutsch");
+const englishLink = createLink('English');
+const germanLink = createLink('Deutsch');
 
-addons.register("@telekom/scale-language-addon", () => {
+addons.register('@telekom/scale-language-addon', () => {
   addons.add(`@telekom/scale-language-addon`, {
     type: types.TAB,
-    title: "",
+    title: '',
     route: () => {
       const [persistedLocale, setPersistedLocale] = useLocalStorage(
-        "persistedLocale",
-        "en"
+        'persistedLocale',
+        'en'
       );
       const [globals, updateGlobals] = useGlobals();
       const { locale } = globals;
@@ -59,20 +67,19 @@ addons.register("@telekom/scale-language-addon", () => {
 
       // Create the languageToolbar element, add event listeners to it's links and put them inside
       if (!languageToolbar) {
-        englishLink.addEventListener("click", e => {
+        englishLink.addEventListener('click', (e) => {
           e.preventDefault();
-          setPersistedLocale("en");
-          updateGlobals({ ...globals, locale: "en" });
+          setPersistedLocale('en');
+          updateGlobals({ ...globals, locale: 'en' });
         });
-        germanLink.addEventListener("click", e => {
+        germanLink.addEventListener('click', (e) => {
           e.preventDefault();
-          setPersistedLocale("de");
-          updateGlobals({ ...globals, locale: "de" });
+          setPersistedLocale('de');
+          updateGlobals({ ...globals, locale: 'de' });
         });
 
-        languageToolbar = document.createElement("div");
-        languageToolbar.setAttribute("style", "width: 100%;");
-        languageToolbar.id = "language-toolbar";
+        languageToolbar = document.createElement('div');
+        languageToolbar.id = 'language-toolbar';
         languageToolbar.appendChild(englishLink);
         languageToolbar.appendChild(germanLink);
       }
@@ -83,32 +90,33 @@ addons.register("@telekom/scale-language-addon", () => {
           return;
         }
         englishLink
-          .querySelector("button")
+          .querySelector('button')
           .setAttribute(
-            "class",
-            locale === "en" ? activeBtnClassName : inactiveBtnClassName
+            'class',
+            locale === 'en' ? activeBtnClassName : inactiveBtnClassName
           );
         germanLink
-          .querySelector("button")
+          .querySelector('button')
           .setAttribute(
-            "class",
-            locale === "de" ? activeBtnClassName : inactiveBtnClassName
+            'class',
+            locale === 'de' ? activeBtnClassName : inactiveBtnClassName
           );
       }, [locale]);
 
       // Wait for the DOM to settle, then append the languageToolbar if it's not there yet
       setTimeout(() => {
         const rightSection = document.querySelector(
-          "#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div > div.css-pvky73"
+          '#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div > div.css-102is01'
         );
 
         const toolbar = document.querySelector(
-          "#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div"
+          '#root > div > div.css-sqdry3 > div > div.css-sqdry3 > div.os-host.os-host-foreign.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition > div.os-padding > div > div > div'
         );
 
         if (rightSection) {
-          if (!document.getElementById("language-toolbar")) {
+          if (!document.getElementById('language-toolbar')) {
             toolbar.insertBefore(languageToolbar, rightSection);
+            // toolbar.insertBefore(createSeparator(), languageToolbar);
           }
         }
       }, 100);
@@ -118,7 +126,7 @@ addons.register("@telekom/scale-language-addon", () => {
         if (!locale) {
           return;
         }
-        translationMap.forEach(translation => {
+        translationMap.forEach((translation) => {
           const element = window.document.querySelector(
             translation.elementSelector
           );
@@ -132,6 +140,6 @@ addons.register("@telekom/scale-language-addon", () => {
       return null;
     },
     render: () => null,
-    match: () => null
+    match: () => null,
   });
 });

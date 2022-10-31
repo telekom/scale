@@ -10,43 +10,53 @@
  */
 
 :host {
-  --background: var(--scl-color-black);
-  --color: var(--scl-color-white);
-  --spacing-top: var(--scl-spacing-32);
-  --spacing-bottom: var(--scl-spacing-24);
-  --spacing-x: var(--scl-spacing-24);
-  --background-container: var(--scl-color-background-standard, #fff);
-  --radius: var(--scl-radius-4);
+  --background: var(--telekom-color-background-surface-highlight);
+  --color: var(--telekom-color-text-and-icon-white-standard);
+  --spacing-top: var(--telekom-spacing-unit-x8);
+  --spacing-bottom: var(--telekom-spacing-unit-x6);
+  --spacing-x: var(--telekom-spacing-unit-x6);
+  --background-container: var(--telekom-color-background-canvas);
+  --radius: var(--telekom-radius-large);
   --max-width: inherit;
 
-  --border-top-minimal: var(--scl-spacing-1) solid var(--scl-color-grey-20);
-  --color-minimal: var(--scl-color-grey-60);
-  --background-minimal: var(--scl-color-background-standard);
+  --border-top-minimal: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-faint);
+  --color-minimal: var(--telekom-color-text-and-icon-additional);
+  --background-minimal: var(--telekom-color-background-surface);
+  --spacing-angular: var(--telekom-spacing-unit-x6);
+  --spacing-minimal: var(--telekom-spacing-unit-x6);
 
-  --spacing-angular: var(--scl-spacing-24);
-  --spacing-minimal: var(--scl-spacing-24);
+  --background-mask: var(--telekom-color-background-canvas);
+  --radius-mask: 0 0 var(--telekom-radius-large) var(--telekom-radius-large);
 
-  --background-mask: var(--scl-color-background-standard, #fff);
-  --radius-mask: 0 0 var(--scl-radius-8) var(--scl-radius-8);
+  --font-size-copyright: var(--telekom-typography-font-size-caption);
+  --color-link-standard: var(--telekom-color-text-and-icon-white-standard);
+  --color-link-minimal: var(--telekom-color-text-and-icon-additional);
 
-  --height-logo: var(--scl-spacing-24);
-  --font-size-copyright: var(--scl-font-size-14);
-  --color-link-standard: var(--scl-color-white);
-  --color-link-minimal: var(--scl-color-grey-60);
+  --font-size-navigation-standard: var(--telekom-typography-font-size-caption);
+  --font-family-navigation-standard: var(--telekom-typography-font-family-sans);
+  --font-weight-navigation-standard: var(
+    --telekom-typography-font-weight-extra-bold
+  );
+  --font-weight-navigation-minimal: var(
+    --telekom-typography-font-weight-medium
+  );
 
-  --font-size-navigation-standard: var(--scl-font-size-14);
-  --font-family-navigation-standard: var(--scl-font-family-sans);
-  --font-weight-navigation-standard: var(--scl-font-weight-extrabold);
-  --font-weight-navigation-minimal: var(--scl-font-weight-medium);
-
-  --spacing-navigation-standard: var(--scl-spacing-8);
-  --color-navigation-standard-hover: var(--scl-color-white);
-  --color-navigation-minimal-hover: var(--scl-color-primary-hover);
-  --color-navigation-active-focus: var(--scl-color-primary-active);
-  --box-shadow-navigation-focus: 0 0 0 var(--scl-spacing-2)
-    var(--scl-color-primary);
-
-  --border-color-standard-hover: var(--scl-color-white);
+  --spacing-navigation-standard: var(--telekom-spacing-unit-x2);
+  --color-navigation-standard-hover: var(
+    --telekom-color-text-and-icon-white-standard
+  );
+  --color-navigation-minimal-hover: var(
+    --telekom-color-text-and-icon-primary-hovered
+  );
+  --color-navigation-active-focus: var(
+    --telekom-color-text-and-icon-primary-pressed
+  );
+  --box-shadow-navigation-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
+  --border-color-standard-hover: var(
+    --telekom-color-text-and-icon-white-standard
+  );
 }
 .footer {
   width: 100%;
@@ -77,8 +87,8 @@
 .footer-mask {
   position: relative;
   z-index: 1;
-  height: var(--scl-spacing-8);
-  top: var(--scl-spacing-8);
+  height: var(--radius);
+  top: var(--radius);
   background: var(--background-mask);
   border-radius: var(--radius-mask);
 }
@@ -86,11 +96,6 @@
 .footer--variant-angular .footer-mask,
 .footer--variant-minimal .footer-mask {
   display: none;
-}
-
-.footer-branding .logo svg {
-  width: auto;
-  height: var(--height-logo);
 }
 
 .footer-copyright {
@@ -125,7 +130,7 @@
   margin: calc(-1 * var(--spacing-navigation-standard)) 0;
 }
 .footer-navigation li span {
-  padding: var(--scl-spacing-4) 0;
+  padding: var(--telekom-spacing-unit-x1) 0;
 }
 
 .footer-navigation li a:hover {
@@ -133,7 +138,7 @@
 }
 
 .footer--variant-minimal .footer-navigation li a:hover {
-  color: var(--scl-color-primary-hover);
+  color: var(--color-navigation-minimal-hover);
 }
 
 .footer--variant-minimal .footer-navigation li a:hover span {
@@ -175,8 +180,8 @@
 
 .footer-navigation svg {
   width: auto;
-  height: var(--scl-spacing-16);
-  margin-right: var(--scl-spacing-8);
+  height: var(--telekom-spacing-unit-x4);
+  margin-right: var(--spacing-navigation-standard);
 }
 
 .footer--variant-minimal .footer-copyright {
@@ -193,17 +198,18 @@
 
 @media (max-width: 639px) {
   .footer-branding {
-    margin-bottom: var(--scl-spacing-24);
+    margin-bottom: var(--spacing-angular);
   }
   .footer-copyright {
-    margin-bottom: var(--scl-spacing-16);
+    margin-bottom: var(--telekom-spacing-unit-x4);
   }
   .footer-navigation ul {
-    line-height: var(--scl-spacing-32);
+    line-height: var(--telekom-spacing-unit-x8);
   }
   .footer-navigation li a {
-    padding: var(--scl-spacing-4);
-    margin: calc(-1 * var(--scl-spacing-8)) calc(-1 * var(--scl-spacing-4));
+    padding: var(--telekom-spacing-unit-x1);
+    margin: calc(-1 * var(--spacing-navigation-standard))
+      calc(-1 * var(--telekom-spacing-unit-x1));
   }
 }
 
@@ -248,7 +254,7 @@
   }
 
   .footer-branding {
-    margin-bottom: var(--scl-spacing-24);
+    margin-bottom: var(--spacing-angular);
   }
   .footer-copyright {
     justify-content: flex-start;
@@ -268,4 +274,8 @@
     margin: 0 auto;
     max-width: var(--max-width);
   }
+}
+
+scale-logo:focus-visible {
+  outline: none;
 }

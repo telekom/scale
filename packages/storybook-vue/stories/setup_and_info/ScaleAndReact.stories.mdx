@@ -1,0 +1,22 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+
+import text_en from './ScaleAndReact_en.md';
+import text_de from './ScaleAndReact_de.md';
+
+<Meta
+  title="Setup & Info/Scale and React"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <Description markdown={locale === 'en' ? text_en : text_de} />
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

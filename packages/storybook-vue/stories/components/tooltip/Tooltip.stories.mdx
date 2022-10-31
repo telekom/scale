@@ -1,0 +1,259 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleTooltip from './ScaleTooltip.vue';
+
+<Meta
+  title="Beta Components/Tooltip"
+  component={ScaleTooltip}
+  argTypes={{
+    content: {
+      control: { type: 'text' },
+    },
+    placement: {
+      control: {
+        defaultValue: 'top',
+        type: 'select',
+        options: [
+          'top',
+          'top-start',
+          'top-end',
+          'right',
+          'right-start',
+          'right-end',
+          'bottom',
+          'bottom-start',
+          'bottom-end',
+          'left',
+          'left-start',
+          'left-end',
+        ],
+      },
+    },
+    disabled: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    distance: {
+      control: { type: 'text' },
+    },
+    opened: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    trigger: {
+      defaultValue: 'hover focus',
+      control: { type: 'text' },
+    },
+    flip: {
+      defaultValue: true,
+      control: { type: 'boolean' },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTooltip },
+  props: {
+    ...ScaleTooltip.props,
+  },
+  template: `
+    <scale-tooltip
+      :content="content"
+      :placement="placement"
+      :disabled="disabled"
+      :distance="distance"
+      :opened="opened"
+      :trigger="trigger"
+      :flip="flip"
+      :styles="styles"
+    >
+    <scale-button></scale-button>
+    </scale-tooltip>
+  `,
+});
+
+export const SlotTemplate = (args, { argTypes }) => ({
+  template: `
+    <div style="padding: 30px 30px 30px 70px">
+      <scale-tooltip trigger="click">
+        <span slot="content">
+          I'm a HTML-tooltip
+          <scale-link href="https://github.com/telekom/scale"
+          >with a link</scale-link
+          >
+        </span>
+        <scale-button>Click me</scale-button>
+      </scale-tooltip>
+    </div>
+  `,
+});
+
+export const FocusTemplate = (args, { argTypes }) => ({
+  template: `
+    <div style="padding: 30px 30px 30px 70px">
+      <scale-tooltip trigger="focus" content="Tooltip">
+        <scale-button>Focus me</scale-button>
+      </scale-tooltip>
+    </div>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Tooltip</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      content: 'Tooltip',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-tooltip content="Tooltip">
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```
+
+## Placement
+
+### Left
+
+<Canvas withSource="none">
+  <Story
+    name="Placement-Left"
+    args={{
+      content: 'Tooltip',
+      placement: 'left',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip" placement="left">
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```
+
+### Right
+
+<Canvas withSource="none">
+  <Story
+    name="Placement-Right"
+    args={{
+      content: 'Tooltip',
+      placement: 'right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip" placement="right">
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```
+
+### Below
+
+<Canvas withSource="none">
+  <Story
+    name="Placement-Below"
+    args={{
+      content: 'Tooltip',
+      placement: 'bottom',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip" placement="bottom">
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```
+
+## Trigger
+
+<Canvas withSource="none">
+  <Story
+    name="Trigger"
+    args={{
+      content: 'Tooltip',
+      trigger: 'focus',
+    }}
+  >
+    {FocusTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip" trigger="focus">
+  <scale-button>Focus me</scale-button>
+</scale-tooltip>
+```
+
+## Slot
+
+### Link Example
+
+<Canvas withSource="none">
+  <Story name="Slot" args={{}}>
+    {SlotTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip trigger="click">
+  <span slot="content">
+    I'm a HTML-tooltip
+    <scale-link href="https://github.com/telekom/scale">with a link</scale-link>
+  </span>
+  <scale-button>Click me</scale-button>
+</scale-tooltip>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      content: 'Tooltip',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tooltip content="Tooltip" disabled="true">
+  <scale-button>Hover me</scale-button>
+</scale-tooltip>
+```

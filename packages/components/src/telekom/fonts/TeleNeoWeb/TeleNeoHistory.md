@@ -38,4 +38,6 @@ Display problem with one Cyrillic character solved.
 - Synchronisation of version numbers. All fonts now with the same version number (1.6)
 - First release of TeleNeo Marker along with version V1.6 - separate download
 
+##V1.7 – 13.07.2022
+- Addition new corporate T logo .T.
 

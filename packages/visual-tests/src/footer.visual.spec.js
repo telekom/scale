@@ -1,10 +1,11 @@
 describe('Footer', () => {
-  test.each([['standard'], ['minimal']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-footer--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-footer--standard', mode);
+    });
+    test.each([['standard'], ['minimal']])('%p', async (variant) => {
+      await global.runSetup(`components-footer--${variant}`);
+      await global.visualCheck();
+    });
   });
 });

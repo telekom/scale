@@ -7,17 +7,18 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                                                                                                                                                                           | Type                                                                                                                                                                 | Default         |
-| ----------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `content`         | `content`          | (optional) The content of the Tooltip supporting Text only                                                                                                                                            | `string`                                                                                                                                                             | `''`            |
-| `disabled`        | `disabled`         | (optional) Disable Tooltip                                                                                                                                                                            | `boolean`                                                                                                                                                            | `false`         |
-| `distance`        | `distance`         | (optional) Distance of the Tooltip from the Target Object (related to the `placement`)                                                                                                                | `number`                                                                                                                                                             | `5`             |
-| `flip`            | `flip`             | (optional) Switching the flip option of the tooltip on and off                                                                                                                                        | `boolean`                                                                                                                                                            | `true`          |
-| `open`            | `open`             | (optional) Set the Tooltip to open per default (will still be closed on closing Events)                                                                                                               | `boolean`                                                                                                                                                            | `false`         |
-| `placement`       | `placement`        | (optional) Position of the Tooltip on the Object                                                                                                                                                      | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`         |
-| `preventOverflow` | `prevent-overflow` | (optional) Switching the preventOverflow option of the tooltip on and off                                                                                                                             | `boolean`                                                                                                                                                            | `false`         |
-| `skidding`        | `skidding`         | (optional) skidding moves the tooltip of the element in dependence of its `placement` to the element either on an x-axis (at `placement` top/down) or on a y-axis (for output `placement` left/right) | `number`                                                                                                                                                             | `0`             |
-| `trigger`         | `trigger`          | (optional) Set custom trigger Event selection                                                                                                                                                         | `string`                                                                                                                                                             | `'hover focus'` |
+| Property       | Attribute       | Description                                                                              | Type                                                                                                                                                                 | Default         |
+| -------------- | --------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `arrowOffset`  | `arrow-offset`  | (optional) How much of the arrow element is "hidden"                                     | `number`                                                                                                                                                             | `-4`            |
+| `arrowPadding` | `arrow-padding` | (optional) Padding between the arrow and the edges of the tooltip                        | `number`                                                                                                                                                             | `8`             |
+| `content`      | `content`       | (optional) The content of the Tooltip, supporting text only                              | `string`                                                                                                                                                             | `''`            |
+| `disabled`     | `disabled`      | (optional) Disable the tooltip                                                           | `boolean`                                                                                                                                                            | `false`         |
+| `distance`     | `distance`      | (optional) Tooltip distance from the target element (related to `placement`)             | `number`                                                                                                                                                             | `10`            |
+| `flip`         | `flip`          | (optional) Switching the flip option of the tooltip on and off                           | `boolean`                                                                                                                                                            | `true`          |
+| `opened`       | `opened`        | (optional) Set the tooltip to opened by default (will still be closed on closing events) | `boolean`                                                                                                                                                            | `false`         |
+| `placement`    | `placement`     | (optional) Position of the Tooltip around the trigger element                            | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`         |
+| `styles`       | `styles`        | (optional) Injected CSS styles                                                           | `string`                                                                                                                                                             | `undefined`     |
+| `trigger`      | `trigger`       | (optional) Set custom trigger event (hover, focus, click)                                | `string`                                                                                                                                                             | `'hover focus'` |
 
 
 ## Events
@@ -55,9 +56,11 @@ Type: `Promise<void>`
 
 ## Shadow Parts
 
-| Part     | Description |
-| -------- | ----------- |
-| `"base"` |             |
+| Part        | Description |
+| ----------- | ----------- |
+| `"arrow"`   |             |
+| `"tooltip"` |             |
+| `"trigger"` |             |
 
 
 ----------------------------------------------

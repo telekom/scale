@@ -1,0 +1,47 @@
+:host {
+  --font: var(--telekom-text-style-small-bold);
+  --color-informational: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --color-warning: var(--telekom-color-text-and-icon-functional-warning);
+  --color-danger: var(--telekom-color-text-and-icon-functional-danger);
+  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --color-neutral: var(--telekom-color-text-and-icon-additional);
+}
+
+.helper-text {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font: var(--telekom-text-style-small-bold);
+}
+
+scale-icon-alert-information,
+scale-icon-alert-error,
+scale-icon-alert-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--telekom-spacing-unit-x1);
+}
+
+.helper-text--informational {
+  color: var(--color-informational);
+}
+
+.helper-text--warning {
+  color: var(--color-warning);
+}
+
+.helper-text--danger {
+  color: var(--color-danger);
+}
+
+.helper-text--success {
+  color: var(--color-success);
+}
+
+.helper-text--neutral {
+  color: var(--color-neutral);
+}

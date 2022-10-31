@@ -1,0 +1,22 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs/blocks';
+
+import text_en from './Disclaimer_en.md';
+import text_de from './Disclaimer_de.md';
+
+<Meta
+  title="Legal/Disclaimer"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <Description markdown={locale === 'en' ? text_en : text_de} />
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

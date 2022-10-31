@@ -11,7 +11,11 @@
 
 import { Component, h, Prop, Host, Watch, State, Element } from '@stencil/core';
 import classNames from 'classnames';
+import { ScaleIcon, isScaleIcon } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
+
+const DEFAULT_ICON_SIZE = 24;
+const PER_SPEC_ICON_SIZE = 16;
 
 let i = 0;
 
@@ -24,15 +28,15 @@ export class TabHeader {
   generatedId: number = i++;
   container: HTMLElement;
 
-  @Element() el: HTMLElement;
+  @Element() hostElement: HTMLElement;
 
   /** True for a disabled Tabnavigation */
   @Prop() disabled?: boolean = false;
   /** True for smaller height and font size */
-  // DEPRECATED - size should replace small
-  @Prop() small: boolean = false;
+  /** @deprecated - size should replace small */
+  @Prop() small?: boolean = false;
   /** (optional) size  */
-  @Prop() size: 'small' | 'large' = 'large';
+  @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   @Prop() selected: boolean;
@@ -45,20 +49,23 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        this.el.focus();
+        this.hostElement.focus();
       }
       this.updateSlottedIcon();
     }
+  }
+
+  componentDidLoad() {
+    this.setChildrenIconSize();
   }
 
   componentDidRender() {
     if (this.small !== false) {
       statusNote({
         tag: 'deprecated',
-        message:
-          'Property "small" is deprecated. Please use the "size" property!',
+        message: 'Property "small" is deprecated. Please use css overwrites.',
         type: 'warn',
-        source: this.el,
+        source: this.hostElement,
       });
     }
   }
@@ -79,6 +86,21 @@ export class TabHeader {
     }
     const action = this.selected ? 'setAttribute' : 'removeAttribute';
     children.forEach((child) => child[action]('selected', ''));
+  }
+
+  /**
+   * Set any children icon's size according the button size.
+   */
+  setChildrenIconSize() {
+    const icons: ScaleIcon[] = Array.from(this.hostElement.children).filter(
+      isScaleIcon
+    );
+    icons.forEach((icon) => {
+      // This is meh people might actually want 24
+      if (icon.size === DEFAULT_ICON_SIZE) {
+        icon.size = PER_SPEC_ICON_SIZE;
+      }
+    });
   }
 
   render() {
@@ -119,7 +141,7 @@ export class TabHeader {
     return classNames(
       component,
       this.selected && `${prefix}selected`,
-      (this.size === 'small' || this.small) && `${prefix}small`,
+      this.size === 'large' && `${prefix}large`,
       this.hasFocus && `${prefix}has-focus`,
       this.disabled && `${prefix}disabled`
     );

@@ -17,7 +17,6 @@ import {
   h,
   Host,
   Prop,
-  Watch,
 } from '@stencil/core';
 import { emitEvent } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
@@ -28,7 +27,7 @@ export interface CheckboxInterface extends HTMLElement {
   disabled: boolean;
   value: string;
   label: string;
-  ariaLabel: string;
+  ariaLabelCheckbox?: string;
 }
 
 let i = 0;
@@ -44,7 +43,7 @@ export class Checkbox {
   /** (optional) Input label */
   @Prop() label: string = '';
   /** (optional) Input label output */
-  @Prop() ariaLabel?: string;
+  @Prop() ariaLabelCheckbox?: string;
   /** (optional) Hides the specified label visually */
   @Prop() hideLabel?: boolean = false;
   /** (optional) Input helper text */
@@ -71,7 +70,7 @@ export class Checkbox {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
-  private id = i++;
+  private readonly internalId = i++;
 
   componentDidRender() {
     if (this.status !== '') {
@@ -83,13 +82,15 @@ export class Checkbox {
         source: this.host,
       });
     }
-  }
-
-  @Watch('disabled')
-  handleDisabledChange() {
-    const { checked, indeterminate, value, disabled } = this;
-
-    emitEvent(this, 'scaleChange', { checked, indeterminate, value, disabled });
+    if (this.host.hasAttribute('aria-label')) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelCheckbox" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
   }
 
   handleChange = (ev) => {
@@ -108,7 +109,7 @@ export class Checkbox {
 
   connectedCallback() {
     if (!this.inputId) {
-      this.inputId = 'input-checkbox-' + this.id;
+      this.inputId = 'input-checkbox-' + this.internalId;
     }
   }
 
@@ -133,6 +134,17 @@ export class Checkbox {
     }
   }
 
+  renderHelperIcon() {
+    if (this.helperText && !this.invalid) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+  }
+
   renderHelperText(text) {
     if (this.helperText && this.helperText !== '') {
       return (
@@ -142,6 +154,8 @@ export class Checkbox {
           aria-live="polite"
           aria-relevant="additions removals"
         >
+          {this.renderHelperIcon()}
+
           {text.content}
         </div>
       );
@@ -150,7 +164,7 @@ export class Checkbox {
 
   render() {
     const helperText = {
-      id: this.helperText ? `helper-text-${this.id}` : null,
+      id: this.helperText ? `helper-text-${this.internalId}` : null,
       content: this.helperText,
     };
 
@@ -172,7 +186,7 @@ export class Checkbox {
           value={this.value}
           checked={this.checked}
           indeterminate={this.indeterminate}
-          aria-label={this.ariaLabel}
+          aria-label={this.ariaLabelCheckbox}
           aria-checked={this.indeterminate ? 'mixed' : false}
           aria-invalid={this.status === 'error' || this.invalid}
           aria-describedBy={helperText.id}

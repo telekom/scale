@@ -10,23 +10,22 @@
  */
 
 app-mega-menu {
-  --box-shadow: var(--scl-shadow-level-4);
-  --spacing-y: 34px;
-  --spacing-right: var(--scl-spacing-16);
-  --spacing-left: var(--scl-spacing-24);
-  --background: var(--scl-color-white);
-  --color-active: var(--scl-color-primary);
-
-  --font-size-row-title: var(--scl-font-size-16);
-  --spacing-bottom-row-title: 18px;
-  --font-weight-row-title: var(--scl-font-weight-extrabold);
-  --color-row-title: var(--scl-color-text-standard);
-
-  --font-size-row-item: var(--scl-font-size-16);
-  --line-height-row-item: var(--scl-font-line-height-150);
-  --font-weight-row-item: var(--scl-font-weight-medium);
-  --color-row-item: var(--scl-color-text-standard);
-  --spacing-bottom-row-item: var(--scl-spacing-8);
+  --box-shadow: var(--telekom-shadow-top);
+  --spacing-y: 2.125rem;
+  --spacing-right: var(--telekom-spacing-unit-x4);
+  --spacing-left: var(--telekom-spacing-unit-x6);
+  --background: var(--telekom-color-background-surface);
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --font-size-row-title: var(--telekom-typography-font-size-body);
+  --spacing-bottom-row-title: 1.125rem;
+  --font-weight-row-title: var(--telekom-typography-font-weight-extra-bold);
+  --color-row-title: var(--telekom-color-text-and-icon-standard);
+  --font-size-row-item: var(--telekom-typography-font-size-body);
+  --line-height-row-item: var(--telekom-typography-line-spacing-loose);
+  --font-weight-row-item: var(--telekom-typography-font-weight-medium);
+  --color-row-item: var(--telekom-color-text-and-icon-standard);
+  --spacing-bottom-row-item: var(--telekom-spacing-unit-x2);
 }
 .mega-menu {
   width: 100%;
@@ -45,8 +44,7 @@ app-mega-menu {
     var(--spacing-left);
   background: var(--background);
   pointer-events: none;
-  border-bottom-left-radius: var(--header-border-radius);
-  border-bottom-right-radius: var(--header-border-radius);
+  border-radius: var(--header-border-radius);
 }
 .mega-menu__container {
   max-width: 1168px;
@@ -54,7 +52,7 @@ app-mega-menu {
   display: grid;
   grid-template-columns: repeat(5, minmax(min-content, 240px));
   list-style: none;
-  padding-left: var(--scl-spacing-32);
+  padding-left: var(--telekom-spacing-unit-x8);
 }
 
 .mega-menu__row-title {
@@ -74,20 +72,31 @@ app-mega-menu {
   text-decoration: none;
   transition: color, border 0.15s ease-in-out;
   display: block;
-}
-
-.mega-menu__row-item.active,
-.mega-menu__row-item:hover {
-  color: var(--color-active);
   margin-bottom: 7px;
 }
 
-.mega-menu__row-item.active span,
+.mega-menu__row-item:hover,
 .mega-menu__row-item:hover span {
+  color: var(--color-hover);
+}
+.mega-menu__row-item.active span {
   padding-bottom: 2px;
   margin-bottom: -2px;
   display: inline-block;
-  border-bottom: 1px solid var(--color-active);
+  border-bottom: 1px solid var(--color-selected);
+}
+
+.mega-menu__row-item.active {
+  color: var(--color-selected);
+}
+
+.mega-menu__row-item.active:hover {
+  color: var(--color-hover);
+}
+
+.mega-menu__row-item.active:hover span {
+  color: var(--color-hover);
+  border-bottom: 1px solid var(--color-hover);
 }
 
 .mega-menu__row li {

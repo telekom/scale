@@ -10,29 +10,30 @@
  */
 
 :host {
-  --spacing-y: var(--scl-spacing-16);
+  --spacing-y: var(--telekom-spacing-unit-x4);
 
   /* button */
-  --font-size-button: var(--scl-font-size-20);
-  --font-weight-button: var(--scl-font-weight-extrabold);
-  --line-height-button: var(--scl-font-line-height-125);
-  --border-width-button: var(--scl-spacing-2);
-  --radius-button: var(--scl-radius-4);
-  --spacing-left-button: var(--scl-spacing-4);
-  --spacing-left-button-text: var(--scl-spacing-8);
-  --color-button-hover: var(--scl-color-primary-hover);
-  --color-button-active: var(--scl-color-primary-active);
-  --background-button-hover: var(--scl-color-background-light);
-  --border-color-button-focus: var(--scl-color-focus);
+  --font-size-button: var(--telekom-typography-font-size-callout);
+  --font-weight-button: var(--telekom-typography-font-weight-extra-bold);
+  --line-height-button: var(--telekom-typography-line-spacing-standard);
+  --border-width-button: var(--telekom-spacing-unit-x05);
+  --radius-button: var(--telekom-radius-small);
+  --spacing-left-button: var(--telekom-spacing-unit-x1);
+  --spacing-left-button-text: var(--telekom-spacing-unit-x2);
+  --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --background-button-hover: var(--telekom-color-ui-state-fill-hovered);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
 
   /* icon */
-  --spacing-top-icon: calc(var(--scl-spacing-4) + 1px);
+  --spacing-top-icon: calc(var(--telekom-spacing-unit-x1) + 1px);
 
   /* content */
-  --spacing-right-content: var(--scl-spacing-48);
-  --spacing-left-content: var(--scl-spacing-32);
-  --spacing-top-content: var(--scl-spacing-16);
-  --spacing-bottom-content: var(--scl-spacing-24);
+  --spacing-right-content: var(--telekom-spacing-unit-x12);
+  --spacing-left-content: var(--telekom-spacing-unit-x8);
+  --spacing-top-content: var(--telekom-spacing-unit-x4);
+  --spacing-bottom-content: var(--telekom-spacing-unit-x6);
 }
 
 .collapsible {
@@ -45,7 +46,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  border: var(--scl-spacing-1) solid transparent;
+  border: var(--telekom-spacing-unit-x025) solid transparent;
   content: '';
   display: block;
   position: absolute;
@@ -94,17 +95,21 @@
 
 .collapsible__button:active {
   color: var(--color-button-active);
+  background-color: transparent;
 }
 
 .collapsible__button:focus {
-  outline: none;
-  border-color: var(--border-color-button-focus);
+  outline: var(--focus-outline);
 }
 
 .collapsible__icon {
   transform: rotate(0.75turn);
   flex-shrink: 0;
   margin-top: var(--spacing-top-icon);
+}
+
+.collapsible__icon-right {
+  margin-left: auto;
 }
 
 .collapsible__button[aria-expanded='true'] .collapsible__icon {

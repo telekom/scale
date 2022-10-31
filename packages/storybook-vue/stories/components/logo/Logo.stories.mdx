@@ -1,0 +1,168 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleLogo from './ScaleLogo.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Components/Logo"
+  component={ScaleLogo}
+  argTypes={{
+    language: {
+      control: {
+        type: 'select',
+        options: [
+          'de',
+          'en',
+          'cz',
+          'hr',
+          'hu',
+          'me',
+          'mk_kyr',
+          'mk_lat',
+          'ro',
+          'sk',
+          '',
+        ],
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleLogo },
+  props: {
+    label: String,
+    ...ScaleLogo.props,
+  },
+  template: `
+    <div :style="variant === 'white' ? 'background: #e20074; padding: 12px;' : ''">
+        <scale-logo
+            :variant="variant"
+            :transparent="transparent"
+            :language="language"
+            :size="size"
+            :href="href"
+            :accessibility-title="accessibilityTitle"
+            :styles="styles"
+            @click-handler="clickHandler"
+        >
+        </scale-logo>
+    </div>
+    `,
+  methods: {
+    clickHandler: action('clickHandler'),
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Logo</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+## White
+
+<Canvas withSource="none">
+  <Story
+    name="White"
+    args={{
+      variant: 'white',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo variant="white"></scale-logo>
+```
+
+## Sizing
+
+<Canvas withSource="none">
+  <Story
+    name="Sizing"
+    args={{
+      size: 100,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo size="100"></scale-logo>
+```
+
+## Link
+
+<Canvas withSource="none">
+  <Story
+    name="Link"
+    args={{
+      language: 'de',
+      href: 'https://www.telekom.de/start',
+      accessibilityTitle:
+        'Telekom Logo – Erleben, was verbindet – Zur Startseite',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo
+  language="de"
+  href="https://www.telekom.de/start"
+  accessibility-title="Telekom Logo – Erleben, was verbindet – Zur Startseite"
+></scale-logo>
+```
+
+## Macedonia Cyrillic
+
+<Canvas withSource="none">
+  <Story
+    name="Macedonia Cyrillic"
+    args={{
+      language: 'mk_kyr',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo language="mk_kyr"></scale-logo>
+```
+
+## Macedonia Latin Script
+
+<Canvas withSource="none">
+  <Story
+    name="Macedonia Latin Script"
+    args={{
+      language: 'mk_lat',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-logo language="mk_lat"></scale-logo>
+```

@@ -15,8 +15,8 @@ exports[`AppNavigationMainMobile should handle menuitem 1`] = `
         </div>
       </a>
       <ul class="main-navigation-mobile__child-menu-items">
-        <a aria-current="true" aria-haspopup="false" class="main-navigation-mobile__child-menu-item-link selected" href="#" tabindex="0">
-          <li class="main-navigation-mobile__child-menu-item">
+        <li class="main-navigation-mobile__child-menu-item">
+          <a aria-current="true" aria-haspopup="false" class="main-navigation-mobile__child-menu-item-link selected" href="#" tabindex="0">
             <div class="main-navigation-mobile__child-menu-item-wrapper">
               <span>
                 menuItem1-1
@@ -25,13 +25,13 @@ exports[`AppNavigationMainMobile should handle menuitem 1`] = `
                 active
               </span>
             </div>
-          </li>
-        </a>
+          </a>
+        </li>
       </ul>
     </div>
     <ul class="main-navigation-mobile__main-menu">
-      <a aria-current="true" aria-haspopup="true" class="main-navigation-mobile__item-link main-navigation-mobile__item-link--selected" href="#" tabindex="-1">
-        <li class="main-navigation-mobile__item">
+      <li class="main-navigation-mobile__item main-navigation-mobile__item--selected">
+        <a aria-current="true" aria-haspopup="true" class="main-navigation-mobile__item-link main-navigation-mobile__item-link--selected" href="#" tabindex="-1">
           <div class="main-navigation-mobile__item-wrapper">
             <span>
               nav1
@@ -41,8 +41,8 @@ exports[`AppNavigationMainMobile should handle menuitem 1`] = `
             </span>
             <scale-icon-navigation-right></scale-icon-navigation-right>
           </div>
-        </li>
-      </a>
+        </a>
+      </li>
     </ul>
   </div>
 </app-navigation-main-mobile>
@@ -53,15 +53,15 @@ exports[`AppNavigationMainMobile should handle without childs 1`] = `
   <div class="main-navigation-mobile">
     <div></div>
     <ul class="main-navigation-mobile__main-menu">
-      <a aria-current="false" aria-haspopup="false" class="main-navigation-mobile__item-link" href="#" tabindex="0">
-        <li class="main-navigation-mobile__item">
+      <li class="main-navigation-mobile__item">
+        <a aria-current="false" aria-haspopup="false" class="main-navigation-mobile__item-link" href="#" tabindex="0">
           <div class="main-navigation-mobile__item-wrapper">
             <span>
               nav1
             </span>
           </div>
-        </li>
-      </a>
+        </a>
+      </li>
     </ul>
   </div>
 </app-navigation-main-mobile>

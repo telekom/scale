@@ -2,7 +2,20 @@
 <link rel="stylesheet" href="scale-components.css" />
 <style>
   body {
-    font-family: "TeleNeoWeb", "TeleNeo", sans-serif;
+    font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif;
+    /* needed for dark mode */
+    color: var(--telekom-color-text-and-icon-standard);
+    background: var(--telekom-color-background-canvas);
+  }
+
+  .sbdocs.sbdocs-preview {
+    /* needed for dark mode */
+    color: var(--telekom-color-text-and-icon-standard);
+    background: var(--telekom-color-background-canvas);
+  }
+
+  #secondary-white + .sbdocs.sbdocs-preview {
+    background: var(--telekom-color-primary-standard);
   }
   .sbdocs.sbdocs-content {
     max-width: 1066px !important;
@@ -16,16 +29,31 @@
     margin: -1rem;
   }
 
-
   scale-sb-spacing {
     display: block;
     width: var(--size, 1px);
     height: 1em;
-    background-color: var(--scl-color-teal-60);
+    background-color: var(--telekom-color-additional-teal-600);
   }
 
   /*toolbar button color*/
   .css-1nin9qf {
-    color: var(--scl-color-text-standard) !important;
+    color: var(--telekom-color-primary-standard) !important;
+  }
+
+  /*color token table*/
+  .color_token_copy-paste-button scale-icon-action-copy-paste {
+    color: var(--telekom-color-text-and-icon-additional);
+  }
+  .color_token_copy-paste-button:hover scale-icon-action-copy-paste {
+    color: var(--telekom-color-primary-standard);
+    border: 0;
+  }
+  .color_token_copy-paste-button_dark scale-icon-action-copy-paste {
+    color: #fff;
+  }
+  .color_token_copy-paste-button_dark:hover scale-icon-action-copy-paste {
+    color: #a6a6a6;
+    border: 0;
   }
 </style>

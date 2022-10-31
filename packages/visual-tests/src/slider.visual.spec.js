@@ -1,40 +1,39 @@
 describe('Slider', () => {
-  test.each([
-    ['standard'],
-    ['slider-track-small'],
-    ['slider-thumb-large'],
-    ['slider-with-custom-color'],
-    ['disabled-slider'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-slider--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  // hover, active, focus
-  test.each([['standard']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-slider--${variant}&viewMode=story`
-    );
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-slider--standard', mode);
+    });
+    test.each([
+      ['standard'],
+      ['range'],
+      ['step-marks'],
+      ['helper-text'],
+      ['disabled'],
+      ['platform-i-os'],
+      ['platform-android'],
+    ])('story %p', async (variant) => {
+      await global.runSetup(`components-slider--${variant}`);
+      await global.visualCheck();
+    });
+    test.each([['standard']])('hover %p', async (variant) => {
+      await global.runSetup(`components-slider--${variant}`);
 
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
+      const slider = await global.page.evaluateHandle(
+        `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
+      );
 
-    const slider = await page.evaluateHandle(
-      `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
-    );
-    const sliderTrack = await page.evaluateHandle(
-      `document.querySelector("#root > scale-slider").shadowRoot.querySelector("div > div > div.slider__track")`
-    );
-    slider.hover();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await sliderTrack.click();
-    await slider.focus();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await page.mouse.move(80, 60);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      slider.hover();
+      await global.visualCheck();
+    });
+    test.each([['standard']])('focus %p', async (variant) => {
+      await global.runSetup(`components-slider--${variant}`);
+
+      const slider = await global.page.evaluateHandle(
+        `document.querySelector("#root > scale-slider").shadowRoot.querySelector("#slider-0")`
+      );
+
+      await slider.focus();
+      await global.visualCheck();
+    });
   });
 });

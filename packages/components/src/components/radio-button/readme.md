@@ -29,6 +29,21 @@
 | `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<InputChangeEventDetail>` |
 
 
+## Dependencies
+
+### Depends on
+
+- [scale-icon-alert-information](../icons/alert-information)
+- [scale-icon-alert-error](../icons/alert-error)
+
+### Graph
+```mermaid
+graph TD;
+  scale-radio-button --> scale-icon-alert-information
+  scale-radio-button --> scale-icon-alert-error
+  style scale-radio-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

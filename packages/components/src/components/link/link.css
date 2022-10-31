@@ -16,42 +16,61 @@
 */
 
 :host {
-  --font-weight: var(--scl-font-weight-medium);
-  --spacing-x-icon: var(--scl-spacing-4);
+  --font-weight: var(--telekom-typography-font-weight-medium);
+  --spacing-x-icon: var(--telekom-spacing-unit-x1);
   --line-offset: 0.0625em;
 
   /* initial */
-  --color: var(--scl-color-blue-60);
-  --color-line-initial: hsl(219, 100%, 87%);
-  --line-thickness-initial: 0.0625em;
+  --color: var(--telekom-color-text-and-icon-link-standard);
+  --color-line-initial: var(--telekom-color-functional-interaction-subtle);
+  --line-thickness-initial: var(--telekom-line-weight-standard);
   /* visited */
-  --color-visited: var(--scl-color-text-link-visited);
-  --color-line-visited: var(--scl-color-text-link-visited);
+  --color-visited: var(--telekom-color-text-and-icon-link-visited);
+  --color-line-visited: currentColor;
   --line-thickness-visited: var(--line-thickness-initial);
   /* hover */
-  --color-hover: var(--scl-color-blue-70);
-  --color-line-hover: var(--scl-color-blue-70);
+  --color-hover: var(--telekom-color-text-and-icon-link-hovered);
+  --color-line-hover: var(--telekom-color-functional-interaction-hovered);
   --line-thickness-hover: var(--line-thickness-initial);
   /* focus */
-  --color-focus: var(--scl-color-blue-70);
-  --color-line-focus: var(--scl-color-blue-70);
-  --line-thickness-focus: calc(var(--line-thickness-initial) * 2);
+  --color-focus: var(--telekom-color-text-and-icon-link-standard);
+  --color-line-focus: var(--telekom-color-text-and-icon-link-standard);
+  --line-thickness-focus: var(--telekom-line-weight-bold);
   /* active */
-  --color-active: var(--scl-color-blue-60);
-  --color-line-active: var(--scl-color-blue-60);
+  --color-active: var(--telekom-color-text-and-icon-link-active);
+  --color-line-active: var(--telekom-color-functional-interaction-pressed);
   --line-thickness-active: var(--line-thickness-initial);
   /* disabled */
-  --color-disabled: var(--scl-color-grey-50);
-  --color-line-disabled: var(--scl-color-grey-50);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --color-line-disabled: var(--telekom-color-ui-border-disabled);
   --line-thickness-disabled: var(--line-thickness-initial);
+}
+
+/* Quick fix for inaccessible link color when placed inside a scale-tooltip */
+:host-context(scale-tooltip) {
+  /* initial */
+  --color: currentColor;
+  --color-line-initial: currentColor;
+  /* visited */
+  --color-visited: currentColor;
+  --color-line-visited: currentColor;
+  /* hover */
+  --color-hover: currentColor;
+  --color-line-hover: currentColor;
+  /* focus */
+  --color-focus: currentColor;
+  --color-line-focus: currentColor;
+  /* active */
+  --color-active: currentColor;
+  --color-line-active: currentColor;
 }
 
 :host {
   display: inline;
   margin-bottom: calc(var(--line-offset) + var(--line-thickness-initial));
   --anchor-color: var(--color);
-  --line-color: var(--color-line-initial);
-  --line-thickess: var(--line-thickness-initial);
+  --line-color: var(--color);
+  --line-thickness: var(--line-thickness-initial);
 }
 
 [part='anchor'] {
@@ -68,8 +87,9 @@
     --line-thickness,
     var(--line-thickness-initial)
   );
+  /*FIXME:TOKEN color decoration should have 0.75 opacity*/
   text-decoration-color: var(--line-color);
-  transition: text-decoration var(--scl-motion-duration-fast);
+  transition: text-decoration var(--telekom-motion-duration-transition);
 }
 
 [part='anchor'] {
@@ -100,12 +120,14 @@ slot[name='icon']::slotted(*) {
 :host(.no-underline) {
   --color-line-initial: transparent;
   --color-line-visited: transparent;
+  --line-color: transparent;
 }
 
 [part='anchor']:hover,
 [part='anchor']:focus,
 [part='anchor']:active {
-  transition: text-decoration var(--scl-motion-duration-fast);
+  transition: text-decoration var(--telekom-motion-duration-transition);
+  text-decoration: underline;
 }
 
 [part='anchor']:visited {

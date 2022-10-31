@@ -11,6 +11,7 @@
 
 import { Component, Prop, h, Element, Host } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-table',
@@ -21,8 +22,8 @@ export class Table {
   @Element() hostElement: HTMLElement;
   /** (optional) Display sort arrows on/off */
   @Prop() showSort?: boolean = false;
-  /** (optional) Visual size */
-  @Prop() size?: 'default' | 'small' | string = 'default';
+  /** @deprecated - css overwrite should replace size */
+  @Prop() size?: string;
   /** (optional) Striped Table */
   @Prop() striped?: boolean = false;
   /** (optional) Injected CSS styles */
@@ -45,6 +46,28 @@ export class Table {
     });
   }
 
+  componentDidLoad() {
+    const table = this.hostElement;
+    const progressbar = table.querySelectorAll('scale-progress-bar');
+    if (progressbar) {
+      progressbar.forEach((el) => {
+        el.showStatus = false;
+      });
+    }
+  }
+
+  componentDidRender() {
+    if (this.size) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "size" is deprecated. Please use css overwrites for a small version!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
+  }
+
   render() {
     return (
       <Host class={this.getCssClassMap()}>
@@ -57,7 +80,6 @@ export class Table {
   getCssClassMap() {
     return classNames(
       'table',
-      this.size && `table--size-${this.size}`,
       this.showSort && 'table--sortable',
       this.striped && 'table--striped'
     );

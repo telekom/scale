@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Semantic Tokens Refactor POC</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      * {
+        margin: 0;
+      }
+
+      body {
+        padding: var(--telekom-spacing-unit-x4);
+        color: var(--telekom-color-text-and-icon-standard);
+        background: var(--telekom-color-background-canvas);
+        transition: background;
+        transition-duration: var(--telekom-motion-duration-animation);
+        transition-timing-function: cubic-bezier(
+          var(--telekom-motion-easing-standard)
+        );
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Hello.</p>
+
+    <script type="module">
+      const body = document.body;
+      body.dataset.mode = 'light';
+      setTimeout(() => {
+        console.log(
+          'To enable dark mode press Ctrl+Shift+M while having focus on the canvas'
+        );
+      }, 1000);
+      function switchMode(bool) {
+        body.dataset.mode = bool ? 'dark' : 'light';
+        console.log(`${body.dataset.mode.toUpperCase()} mode enabled`);
+      }
+      document.addEventListener('keydown', (event) => {
+        if (
+          event.key.toUpperCase() === 'M' &&
+          event.ctrlKey &&
+          event.shiftKey
+        ) {
+          switchMode(body.dataset.mode === 'light');
+        }
+      });
+    </script>
+  </body>
+</html>

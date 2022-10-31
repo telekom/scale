@@ -1,0 +1,271 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScalePagination from './ScalePagination.vue';
+
+<Meta
+  title="Components/Pagination"
+  component={ScalePagination}
+  argTypes={{
+    hideBorders: {
+      table: {
+        type: { summary: 'Boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Deprecated; hideBorder should replace hideBorders`,
+      control: { type: 'boolean' },
+    },
+    hideBorder: {
+      table: {
+        type: { summary: 'Boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to hide top and bottom borders`,
+      control: { type: 'boolean' },
+    },
+    pageSize: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 10 },
+      },
+      description: `(optional) Set number of rows/elements to show per page`,
+      control: { type: null },
+    },
+    startElement: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 0 },
+      },
+      description: `(optional) Index of first element to display`,
+      control: { type: null },
+    },
+    totalElements: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: 1 },
+      },
+      description: `(optional) Total number of rows/elements used to calculate page displays`,
+      control: { type: null },
+    },
+    styles: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Injected styles`,
+      control: { type: null },
+    },
+    small: {
+      table: {
+        type: { summary: 'boolean' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace small`,
+      control: { type: null },
+    },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED -  css overwrite should replace size`,
+      control: { type: null },
+    },
+    ariaLabelFirstPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to first page'`,
+      control: { type: null },
+    },
+    ariaLabelNextPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to next page'`,
+      control: { type: null },
+    },
+    ariaLabelPreviousPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to previous page'`,
+      control: { type: null },
+    },
+    ariaLabelLastPage: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) translation to 'Go to last page'`,
+      control: { type: null },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScalePagination },
+  props: {
+    ...ScalePagination.props,
+  },
+  template: `
+    <scale-pagination
+    :hide-borders="hideBorders"
+    :hide-border="hideBorder"
+    :page-size="pageSize"
+    :start-element="startElement"
+    :total-elements="totalElements"
+    :aria-label-first-page="ariaLabelFirstPage"
+    :aria-label-last-page="ariaLabelLastPage"
+    :aria-label-previous-page="ariaLabelPreviousPage"
+    :aria-label-next-page="ariaLabelNextPage"
+    :styles="styles"
+  >
+  </scale-pagination>
+        `,
+});
+
+export const TemplateEmbedded = (args, { argTypes }) => ({
+  components: { ScalePagination },
+  props: {
+    ...ScalePagination.props,
+  },
+  template: `
+  <div style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;">
+    <scale-pagination
+        :hide-borders="hideBorders"
+        :hide-border="hideBorder"
+        :page-size="pageSize"
+        :start-element="startElement"
+        :total-elements="totalElements"
+        :styles="styles"
+    >
+    </scale-pagination>
+  </div>`,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Pagination</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+### Properties
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      pageSize: 10,
+      startElement: 100,
+      totalElements: 200,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-pagination
+  page-size="10"
+  start-element="100"
+  total-elements="200"
+></scale-pagination>
+```
+
+## Hidden Borders
+
+<Canvas withSource="none">
+  <Story
+    name="Hidden Borders"
+    args={{
+      pageSize: 5,
+      startElement: 100,
+      totalElements: 200,
+      hideBorder: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<!--
+  Deprecated:
+   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+-->
+<scale-pagination
+  page-size="5"
+  start-element="100"
+  total-elements="200"
+  hide-border
+></scale-pagination>
+```
+
+## Embedded Hidden Borders
+
+<Canvas withSource="none">
+  <Story
+    name=" Embedded Hidden Borders"
+    args={{
+      pageSize: 5,
+      startElement: 100,
+      totalElements: 200,
+      hideBorder: true,
+    }}
+  >
+    {TemplateEmbedded.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<!--
+  Deprecated:
+   <scale-pagination page-size="5" start-element="100" total-elements="200" hide-borders></scale-pagination>
+-->
+<div
+  style="border: 1px solid #000; display: flex; align-items: center;  overflow: auto;"
+>
+  <scale-pagination
+    page-size="5"
+    start-element="100"
+    total-elements="200"
+    hide-border
+  ></scale-pagination>
+</div>
+```
+
+## Translated Aria Labels
+
+<Canvas withSource="none">
+  <Story
+    name="Translated Aria Labels"
+    args={{
+      pageSize: 10,
+      startElement: 100,
+      totalElements: 200,
+      ariaLabelFirstPage: 'Zur ersten Seite',
+      ariaLabelLastPage: 'Zur letzten Seite',
+      ariaLabelPreviousPage: 'Zur vorigen Seite',
+      ariaLabelNextPage: 'Zur nächsten Seite',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-pagination
+  page-size="10"
+  start-element="100"
+  total-elements="200"
+  aria-label-first-page="Zur ersten Seite"
+  aria-label-last-page="Zur nächsten Seite"
+  aria-label-previous-page="Zur vorigen Seite"
+  aria-label-next-page="Zur letzten Seite"
+></scale-pagination>
+```

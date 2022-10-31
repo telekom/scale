@@ -10,14 +10,14 @@
  */
 
 app-navigation-sector-mobile {
-  --border-bottom: 1px solid #efefef;
-  --color: var(--scl-color-text-standard);
-  --font-weight: var(--scl-font-weight-bold);
-  --font-size: var(--scl-font-size-16);
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --border-bottom-selected: 1px solid var(--scl-color-primary);
-  --color-selected: var(--scl-color-primary);
+  --border-bottom: 1px solid var(--telekom-color-ui-subtle);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size: var(--telekom-typography-font-size-body);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --border-bottom-selected: 1px solid var(--telekom-color-primary-standard);
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
   width: 100%;
 }
 

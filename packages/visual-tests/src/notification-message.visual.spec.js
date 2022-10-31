@@ -1,19 +1,23 @@
 describe('NotificationMessage', () => {
-  test.each([
-    ['standard'],
-    ['warning'],
-    ['error'],
-    ['success'],
-    ['informational'],
-    ['dismissible'],
-    ['timeout'],
-    ['with-text'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=beta-components-notification-message--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup(
+        'components-notification-message--standard',
+        mode
+      );
+    });
+    test.each([
+      ['standard'],
+      ['warning'],
+      ['error'],
+      ['success'],
+      ['informational'],
+      ['dismissible'],
+      ['timeout'],
+      ['with-text'],
+    ])('%p', async (variant) => {
+      await global.runSetup(`beta-components-notification-message--${variant}`);
+      await global.visualCheck();
+    });
   });
 });

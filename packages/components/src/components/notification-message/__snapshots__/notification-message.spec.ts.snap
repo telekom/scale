@@ -3,9 +3,9 @@
 exports[`NotificationMessage handle variant prop 1`] = `
 <scale-notification-message opened="">
   <mock:shadow-root>
-    <div class="notification-message notification-message--variant-error" part="notification-message variant-error" tabindex="0">
+    <div class="notification-message notification-message--variant-error" part="notification-message variant-error" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-warning accessibility-title="error" class="notification-message__icon-error"></scale-icon-alert-warning>
+        <scale-icon-alert-error aria-hidden="true" class="notification-message__icon-error"></scale-icon-alert-error>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>
@@ -19,9 +19,9 @@ exports[`NotificationMessage handle variant prop 1`] = `
 exports[`NotificationMessage handle variant prop 2`] = `
 <scale-notification-message opened="">
   <mock:shadow-root>
-    <div class="notification-message notification-message--variant-warning" part="notification-message variant-warning" tabindex="0">
+    <div class="notification-message notification-message--variant-warning" part="notification-message variant-warning" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-information accessibility-title="information" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-information>
+        <scale-icon-alert-warning aria-hidden="true" class="notification-message__icon-information" color="#AE461C"></scale-icon-alert-warning>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>
@@ -35,9 +35,9 @@ exports[`NotificationMessage handle variant prop 2`] = `
 exports[`NotificationMessage handle variant prop 3`] = `
 <scale-notification-message opened="">
   <mock:shadow-root>
-    <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" tabindex="0">
+    <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-information accessibility-title="information" class="notification-message__icon-information"></scale-icon-alert-information>
+        <scale-icon-alert-information aria-hidden="true" class="notification-message__icon-information"></scale-icon-alert-information>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>
@@ -51,9 +51,9 @@ exports[`NotificationMessage handle variant prop 3`] = `
 exports[`NotificationMessage handle variant prop 4`] = `
 <scale-notification-message opened="">
   <mock:shadow-root>
-    <div class="notification-message notification-message--variant-success" part="notification-message variant-success" tabindex="0">
+    <div class="notification-message notification-message--variant-success" part="notification-message variant-success" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-notification-message-svg accessibility-title="success" class="notification-message__icon-success"></scale-notification-message-svg>
+        <scale-icon-alert-success aria-hidden="true" class="notification-message__icon-success" color="#187431"></scale-icon-alert-success>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>
@@ -67,9 +67,9 @@ exports[`NotificationMessage handle variant prop 4`] = `
 exports[`NotificationMessage should match snapshot 1`] = `
 <scale-notification-message opened="">
   <mock:shadow-root>
-    <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" tabindex="0">
+    <div class="notification-message notification-message--variant-informational" part="notification-message variant-informational" role="alert" tabindex="0">
       <div class="notification-message__container" part="container">
-        <scale-icon-alert-information accessibility-title="information" class="notification-message__icon-information"></scale-icon-alert-information>
+        <scale-icon-alert-information aria-hidden="true" class="notification-message__icon-information"></scale-icon-alert-information>
         <div class="notification-message__heading" part="heading">
           <slot></slot>
         </div>

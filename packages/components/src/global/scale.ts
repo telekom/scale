@@ -9,13 +9,4 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-if (
-  typeof window !== 'undefined' &&
-  typeof window.Audio !== 'undefined' &&
-  typeof require !== 'undefined'
-) {
-  // tslint:disable-next-line:no-var-requires
-  require('web-animations-js');
-}
-
-export default () => {};
+// Nothing at the moment

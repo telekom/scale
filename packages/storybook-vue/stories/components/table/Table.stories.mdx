@@ -1,0 +1,427 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleTable from './ScaleTable.vue';
+export const ICON =
+  'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+
+<Meta
+  title="Components/Table"
+  component={ScaleTable}
+  argTypes={{
+    size: {
+      table: {
+        type: 'select',
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTable },
+  props: {
+    label: String,
+    ...ScaleTable.props,
+  },
+  template: `
+    <scale-table
+      :show-sort="showSort"
+      :striped="striped ? true : false"
+    >
+      <table id="sortable-table">
+        <caption class="sr-only">All sortable columns are focusable</caption>
+        <thead>
+          <tr>
+            <th scope="col" width="13%" title="sortable" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
+            <th scope="col" width="28%" aria-disabled="true" class="tags">Tags</th>
+            <th scope="col" width="23%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
+            <th scope="col" width="18%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
+            <th scope="col" width="18%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
+              Euros
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jane</td>
+            <td>
+              <ul style="list-style: none; display: flex; padding-left: 0; margin: 0;">
+                  <li>
+                    <scale-tag size="small" style="margin-right: 8px;" type="strong"
+                      >Other</scale-tag
+                    >
+                  </li>
+                  <li><scale-tag size="small" type="strong" style="margin-right: 8px;">N/A</scale-tag></li>
+                  <li><scale-tag size="small" type="strong">Demo</scale-tag></li>
+              </ul>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px;">9.356</span>
+                <scale-progress-bar
+                  custom-color="var(--telekom-color-ui-extra-strong)"
+                  variant="info"
+                  style="width: 120px;"
+                  stroke-width="6"
+                  percentage="90"
+                  show-status="false"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 200;">00:00:20</td>
+            <td style="text-align: right; font-weight: 200;">100.245,10</td>
+          </tr>
+          <tr>
+            <td>Jack</td>
+            <td>
+              <ul style="list-style: none; display: flex; padding-left: 0; margin: 0;">
+                  <li>
+                    <scale-tag size="small" type="strong" style="margin-right: 8px;"
+                      >Other</scale-tag
+                    >
+                  </li>
+                  <li><scale-tag size="small" type="strong" style="margin-right: 8px;">N/A</scale-tag></li>
+                  <li><scale-tag size="small" type="strong">Demo</scale-tag></li>
+              </ul>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px;">3.356</span>
+                <scale-progress-bar
+                  custom-color="var(--telekom-color-ui-extra-strong)"
+                  variant="info"
+                  style="width: 120px;"
+                  stroke-width="6"
+                  percentage="30"
+                  show-status="false"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 200;">00:00:30</td>
+            <td style="text-align: right; font-weight: 200;">100.345,10</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>
+              <ul style="list-style: none; display: flex; padding-left: 0; margin: 0;">
+                  <li>
+                    <scale-tag size="small" type="strong" style="margin-right: 8px;"
+                      >Other</scale-tag
+                    >
+                  </li>
+                  <li><scale-tag size="small" type="strong" style="margin-right: 8px;">N/A</scale-tag></li>
+                  <li><scale-tag size="small" type="strong">Demo</scale-tag></li>
+              </ul>
+            </td>
+            <td>
+              <div style="display: inline-flex; align-items: center;">
+                <span style="margin-right: 8px;">6.356</span>
+                <scale-progress-bar
+                  custom-color="var(--telekom-color-ui-extra-strong)"
+                  variant="info"
+                  style="width: 120px;"
+                  stroke-width="6"
+                  percentage="60"
+                  show-status="false"
+                />
+              </div>
+            </td>
+            <td style="text-align: right; font-weight: 200;">00:00:40</td>
+            <td style="text-align: right; font-weight: 200;">100.445,10</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td />
+            <td />
+            <td style="text-align: right;">00:00:20</td>
+            <td style="text-align: right;">100.245,10</td>
+          </tr>
+        </tfoot>
+      </table>
+    </scale-table>
+  `,
+  methods: {
+    handleKeyUp: function (e, th) {
+      if (['Space', 'Enter'].includes(e.code)) {
+        this.sortTable(th);
+      }
+    },
+    sortTable: function (className) {
+      const getNextSort = (sort) => {
+        if (sort === 'ascending') {
+          return 'descending';
+        }
+        return 'ascending';
+      };
+      const ths = document.getElementsByClassName(className);
+      const th = ths[ths.length - 1];
+      const currentSort = th.getAttribute('aria-sort');
+      const nextSort = getNextSort(currentSort);
+      const tableHeaders = Array.from(document.getElementsByTagName('TH'));
+      const columnIndex = tableHeaders.findIndex((x) => x === th);
+      tableHeaders.forEach((tableHeader) => {
+        tableHeader.setAttribute('aria-sort', 'none');
+      });
+      th.setAttribute('aria-sort', nextSort);
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById('sortable-table');
+      switching = true;
+      try {
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 1; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName('TD')[columnIndex];
+            y = rows[i + 1].getElementsByTagName('TD')[columnIndex];
+            if (
+              !['ascending', 'descending'].includes(nextSort) ||
+              x.parentElement.parentElement.tagName === 'TFOOT' ||
+              y.parentElement.parentElement.tagName === 'TFOOT'
+            ) {
+              break;
+            }
+            if (
+              (nextSort === 'descending' ? y : x).innerHTML.toLowerCase() >
+              (nextSort === 'descending' ? x : y).innerHTML.toLowerCase()
+            ) {
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      } catch (error) {}
+    },
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Table</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+scale-table {
+  --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
+  --background: var(--telekom-color-ui-state-fill-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --font-size: var(--telekom-typography-font-size-small);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+
+  --spacing-tbody-td: var(--telekom-spacing-unit-x4) var(
+      --telekom-spacing-unit-x2
+    );
+  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid var(
+      --telekom-color-ui-faint
+    );
+  --background-tbody: var(--telekom-color-ui-state-fill-standard);
+  --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-tfoot: var(--telekom-color-ui-state-fill-standard);
+  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid var(
+      --telekom-color-ui-extra-strong
+    );
+
+  --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
+  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
+  --background-th-sortable-active: var(--telekom-color-ui-faint);
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05) var(
+      --telekom-color-functional-focus
+    );
+  --background-tr-striped: var(--telekom-color-ui-subtle);
+  --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
+}
+```
+
+## With Sorting Icons
+
+Please switch to the Canvas view for a working example
+
+<Canvas withSource="none">
+  <Story
+    name="With Sorting Icons"
+    args={{
+      showSort: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-table show-sort>
+  <table>
+    <caption>
+      Table title
+    </caption>
+    <thead>
+      <tr>
+        <!-- aria-sort can be descending or ascending -->
+        <th
+          tabindex="0"
+          aria-sort="descending"
+          onkeyup="handleKeyUp(event, 'title')"
+          onclick="sortTable('title')"
+          id="title"
+        >
+          Title
+        </th>
+        <!-- aria-disabled="true" disables sorting -->
+        <th aria-disabled="true">Tags</th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'stats')"
+          onclick="sortTable('stats')"
+          id="stats"
+        >
+          Stats
+        </th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'time')"
+          onclick="sortTable('time')"
+          id="time"
+        >
+          Time
+        </th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'euros')"
+          onclick="sortTable('euros')"
+          id="euros"
+        >
+          Euros
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      ...
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td>00:00:20</td>
+        <td>100.245,10</td>
+      </tr>
+    </tfoot>
+  </table>
+</scale-table>
+
+<script>
+  function handleKeyUp(event, id) {
+    /* ... */
+  }
+  function sortTable(id) {
+    /* ... */
+  }
+</script>
+```
+
+## With Striped Rows
+
+<Canvas withSource="none">
+  <Story
+    name="With Striped Rows"
+    args={{
+      striped: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-table striped>
+  <table>
+    <caption>
+      Table title
+    </caption>
+    <thead>
+      <tr>
+        <!-- aria-sort can be descending or ascending -->
+        <th
+          tabindex="0"
+          aria-sort="descending"
+          onkeyup="handleKeyUp(event, 'title')"
+          onclick="sortTable('title')"
+          id="title"
+        >
+          Title
+        </th>
+        <!-- aria-disabled="true" disables sorting -->
+        <th aria-disabled="true">Tags</th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'stats')"
+          onclick="sortTable('stats')"
+          id="stats"
+        >
+          Stats
+        </th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'time')"
+          onclick="sortTable('time')"
+          id="time"
+        >
+          Time
+        </th>
+        <th
+          tabindex="0"
+          onkeyup="handleKeyUp(event, 'euros')"
+          onclick="sortTable('euros')"
+          id="euros"
+        >
+          Euros
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      ...
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td>00:00:20</td>
+        <td>100.245,10</td>
+      </tr>
+    </tfoot>
+  </table>
+</scale-table>
+```

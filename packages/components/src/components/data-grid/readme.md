@@ -1,7 +1,5 @@
 # scale-data-grid
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -24,7 +22,7 @@
 | `selection`      | --                | Read-only selection array - populated with raw data from selected rows                       | `string[]` | `[]`        |
 | `shadeAlternate` | `shade-alternate` | (optional) Shade every second row darker                                                     | `boolean`  | `true`      |
 | `styles`         | `styles`          | (optional) Injected css styles                                                               | `any`      | `undefined` |
-| `visible`        | `visible`         | (optional) Set to falseto hide table, used for nested tables to re-render upon toggle        | `boolean`  | `true`      |
+| `visible`        | `visible`         | (optional) Set to false to hide table, used for nested tables to re-render upon toggle       | `boolean`  | `true`      |
 
 
 ## Events
@@ -54,8 +52,8 @@
 - [scale-checkbox](../checkbox)
 - [scale-pagination](../pagination)
 - [scale-switch](../switch)
-- [scale-progress-bar](../progress-bar)
 - [scale-link](../link)
+- [scale-progress-bar](../progress-bar)
 - [scale-text-field](../text-field)
 - [scale-dropdown](../dropdown)
 - [scale-tag](../tag)
@@ -76,8 +74,8 @@ graph TD;
   scale-data-grid --> scale-checkbox
   scale-data-grid --> scale-pagination
   scale-data-grid --> scale-switch
-  scale-data-grid --> scale-progress-bar
   scale-data-grid --> scale-link
+  scale-data-grid --> scale-progress-bar
   scale-data-grid --> scale-text-field
   scale-data-grid --> scale-dropdown
   scale-data-grid --> scale-tag
@@ -85,7 +83,17 @@ graph TD;
   scale-menu-flyout-item --> scale-icon-navigation-right
   scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-alert-information
+  scale-checkbox --> scale-icon-alert-error
+  scale-switch --> scale-icon-action-success
+  scale-progress-bar --> scale-icon-alert-error
+  scale-progress-bar --> scale-icon-alert-success
+  scale-text-field --> scale-helper-text
+  scale-helper-text --> scale-icon-alert-information
+  scale-helper-text --> scale-icon-alert-error
+  scale-helper-text --> scale-icon-alert-success
   scale-dropdown --> scale-icon-navigation-collapse-down
+  scale-dropdown --> scale-helper-text
   scale-tag --> scale-icon-action-close
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```

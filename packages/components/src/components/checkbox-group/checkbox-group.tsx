@@ -33,8 +33,8 @@ export class CheckboxGroup {
   @Prop() name?: string;
   /** (optional) Input label */
   @Prop() label: string = '';
-  /** (optional) Input label output */
-  @Prop() ariaLabel?: string;
+  /** @deprecated - ariaLabelCheckboxGroup should replace ariaLabel */
+  @Prop() ariaLabelCheckboxGroup?: string;
   /** (optional) Input helper text */
   @Prop() helperText?: string;
   /** @deprecated - invalid should replace status */
@@ -80,6 +80,15 @@ export class CheckboxGroup {
         tag: 'deprecated',
         message:
           'Property "status" is deprecated. Please use the "invalid" property!',
+        type: 'warn',
+        source: this.host,
+      });
+    }
+    if (this.host.hasAttribute('aria-label')) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelCheckboxGroup" property!',
         type: 'warn',
         source: this.host,
       });
@@ -132,7 +141,9 @@ export class CheckboxGroup {
           ref={(el) => (this.groupNode = el)}
           name={this.name}
           label={this.label}
-          ariaLabel={`${this.ariaLabel || this.label} - ${this.actionText}`}
+          ariaLabelCheckbox={`${this.ariaLabelCheckboxGroup || this.label} - ${
+            this.actionText
+          }`}
           helperText={this.helperText}
           status={this.status}
           invalid={this.invalid}
@@ -144,7 +155,7 @@ export class CheckboxGroup {
           part="parent-checkbox"
         />
         <fieldset part="fieldset">
-          <legend>{this.ariaLabel || this.label}</legend>
+          <legend>{this.ariaLabelCheckboxGroup || this.label}</legend>
           <slot />
         </fieldset>
       </Host>

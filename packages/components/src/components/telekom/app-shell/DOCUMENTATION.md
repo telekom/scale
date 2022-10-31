@@ -13,7 +13,7 @@ The brand header allows users to clearly identify Telekom as the sender of a pag
 
 ## Live Example
 
-https://www.brand-design.telekom.com/scale-header/
+https://telekom.github.io/scale-header/
 
 ## How to run locally
 

@@ -9,5 +9,83 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/**
+ * Load fonts and set font-family to `TeleNeoWeb`.
+ */
 @import './fonts.css';
+
+/**
+ * Include --scl tokens from legacy @telekom/scale-design-tokens package for backward-compat.
+ * @deprecated in v3
+ */
 @import '~@telekom/scale-design-tokens/dist/design-tokens-telekom.css';
+
+/**
+ * Include --telekom tokens (including dark mode).
+ */
+@import '~@telekom/design-tokens/dist/telekom/css/telekom-design-tokens.all.css';
+
+/**
+ * Styles for scale-grid and scale-grid-item are global
+ * because one should be able to use the CSS only, without the custom elements being upgraded.
+ */
+@import './grid.css';
+
+/**
+ * --telekom tokens have no z-index, by design, so we keep this here for now.
+ * 
+ */
+:root {
+  --scl-z-index-10: 10;
+  --scl-z-index-20: 20;
+  --scl-z-index-30: 30;
+  --scl-z-index-40: 40;
+  --scl-z-index-50: 50;
+  --scl-z-index-60: 60;
+  --scl-z-index-70: 70;
+}
+
+/**
+ * Upgrade the legacy .scl-font-variant- to use the latest design values.
+ * @deprecated in v3
+ *
+ * We don't create new classes for all --telekom-text-style tokens yet, because
+ * we want to figure out how a possible CSS framework would look like first…
+ */
+.scl-font-variant-body {
+  font: var(--telekom-text-style-body);
+}
+.scl-font-variant-body-short {
+  font: var(--telekom-text-style-body);
+  line-height: var(--telekom-typography-line-spacing-tight);
+}
+.scl-font-variant-body-large {
+  font: var(--telekom-text-style-lead-text);
+}
+.scl-font-variant-smaller {
+  font: var(--telekom-text-style-small);
+}
+.scl-font-variant-label {
+  font: var(--telekom-text-style-small);
+}
+.scl-font-variant-caption {
+  font: var(--telekom-text-style-caption);
+}
+.scl-font-variant-heading-6 {
+  font: var(--telekom-text-style-heading-6);
+}
+.scl-font-variant-heading-5 {
+  font: var(--telekom-text-style-heading-5);
+}
+.scl-font-variant-heading-4 {
+  font: var(--telekom-text-style-heading-4);
+}
+.scl-font-variant-heading-3 {
+  font: var(--telekom-text-style-heading-3);
+}
+.scl-font-variant-heading-2 {
+  font: var(--telekom-text-style-heading-2);
+}
+.scl-font-variant-heading-1 {
+  font: var(--telekom-text-style-heading-1);
+}

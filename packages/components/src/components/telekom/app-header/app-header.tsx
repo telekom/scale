@@ -48,6 +48,7 @@ export class Header {
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
   @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
   @Prop() portalName?: string = '';
   @Prop() mainNavigation?: any = [];
@@ -57,6 +58,7 @@ export class Header {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId: string;
   @Prop() activeSectorId?: string;
+  @Prop() sticky?: boolean = false;
   // DEPRECATED - megaMenuVisible should replace isMegaMenuVisible
   @Prop() isMegaMenuVisible?: boolean = false;
   @Prop() megaMenuVisible?: boolean = false;
@@ -79,6 +81,7 @@ export class Header {
   hasSlotMenuAddon: boolean;
   hasSlotMenuMobile: boolean;
   hasSlotLogo: boolean;
+  hasSlotLogoInverse: boolean;
 
   @Watch('megaMenuVisible')
   megaMenuVisibleChange(isVisible) {
@@ -105,7 +108,9 @@ export class Header {
 
   @Listen('scale-close')
   handleCloseUserMenu() {
-    this.userMenuToggle.focus();
+    if (this.userMenuToggle) {
+      this.userMenuToggle.focus();
+    }
     this.userMenu = false;
   }
 
@@ -121,13 +126,11 @@ export class Header {
   }
 
   componentWillLoad() {
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
+    this.hasSlotMenuMain =
+      !!this.hostElement.querySelector('[slot="menu-main"]');
 
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
+    this.hasSlotMenuIcon =
+      !!this.hostElement.querySelector('[slot="menu-icon"]');
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
@@ -138,16 +141,17 @@ export class Header {
       '[slot="menu-mobile"]'
     );
     this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+    this.hasSlotLogoInverse = !!this.hostElement.querySelector(
+      '[slot="logo-inverse"]'
+    );
   }
 
   componentDidUpdate() {
-    this.hasSlotMenuMain = !!this.hostElement.querySelector(
-      '[slot="menu-main"]'
-    );
+    this.hasSlotMenuMain =
+      !!this.hostElement.querySelector('[slot="menu-main"]');
 
-    this.hasSlotMenuIcon = !!this.hostElement.querySelector(
-      '[slot="menu-icon"]'
-    );
+    this.hasSlotMenuIcon =
+      !!this.hostElement.querySelector('[slot="menu-icon"]');
     this.hasSlotMenuSector = !!this.hostElement.querySelector(
       '[slot="menu-sector"]'
     );
@@ -158,6 +162,9 @@ export class Header {
       '[slot="menu-mobile"]'
     );
     this.hasSlotLogo = !!this.hostElement.querySelector('[slot="logo"]');
+    this.hasSlotLogoInverse = !!this.hostElement.querySelector(
+      '[slot="logo-inverse"]'
+    );
   }
 
   componentWillRender() {
@@ -214,11 +221,7 @@ export class Header {
       readData(this.mainNavigation),
       this.activeRouteId
     );
-    const isActive = (item) =>
-      rootNode &&
-      rootNode.id === item.id &&
-      !this.visibleMegaMenu &&
-      this.visibleMegaMenu !== null;
+    const isActive = (item) => rootNode && rootNode.id === item.id;
     return (
       <ul
         class="main-navigation"
@@ -275,9 +278,13 @@ export class Header {
     const { defaultName, openedName } = readData(this.iconNavigation).find(
       ({ id }) => id === 'menu'
     ) || { defaultName: 'Menu', openedName: 'Close' };
-    const { shortName = 'Login', badge, badgeLabel } = readData(
-      this.userNavigation
-    ).find(({ type }) => type === 'userInfo') || {
+    const {
+      shortName = 'Login',
+      badge,
+      badgeLabel,
+    } = readData(this.userNavigation).find(
+      ({ type }) => type === 'userInfo'
+    ) || {
       shortName: 'Login',
     };
 
@@ -324,6 +331,7 @@ export class Header {
                     hide={() => {
                       this.userMenu = false;
                       this.userMenuToggle.focus();
+                      window.document.dispatchEvent(new Event('click'));
                     }}
                     navigation={readData(this.userNavigation)}
                   ></app-navigation-user-menu>
@@ -431,13 +439,18 @@ export class Header {
                   {this.hasSlotLogo ? (
                     <slot name="logo"></slot>
                   ) : (
-                    <app-logo
-                      claim
-                      claimLang={this.claimLang}
+                    <scale-logo
+                      transparent
+                      language={this.claimLang}
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
                       onClick={this.logoClick}
-                    ></app-logo>
+                      variant="white"
+                      scrollIntoViewOnFocus={true}
+                      focusable={true}
+                      styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+                      logoAriaDescribedBy={this.logoAriaDescribedBy}
+                    ></scale-logo>
                   )}
                 </div>
                 <div class="header__brand-sector">{this.menuSector()}</div>
@@ -449,13 +462,20 @@ export class Header {
               <span class="header__nav-after"></span>
               <div class="header__nav-content">
                 <div class="header__nav-logo">
-                  <app-logo
-                    color="#e20074"
-                    href={this.logoHref}
-                    logoTitle={this.logoTitle}
-                    onClick={this.logoClick}
-                    focusable={this.scrolled}
-                  ></app-logo>
+                  {this.hasSlotLogoInverse ? (
+                    <slot name="logo-inverse"></slot>
+                  ) : (
+                    <scale-logo
+                      transparent
+                      language=""
+                      href={this.logoHref}
+                      logoTitle={this.logoTitle}
+                      onClick={this.logoClick}
+                      focusable={this.scrolled || this.sticky}
+                      size={24}
+                      logoAriaDescribedBy={this.logoAriaDescribedBy}
+                    ></scale-logo>
+                  )}
                 </div>
                 <div class="header__nav-menu-wrapper">
                   <div class="header__nav-menu-main">{this.menuMain()}</div>
@@ -519,7 +539,7 @@ export class Header {
   getCssClassMap() {
     return classNames(
       'header',
-      this.scrolled && 'header--sticky',
+      (this.scrolled || this.sticky) && 'header--sticky',
       (this.visibleMegaMenu || this.mobileMenu || this.userMenuMobile) &&
         'menu--open'
     );

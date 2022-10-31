@@ -1,0 +1,1407 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleDataGrid from './ScaleDataGrid.vue';
+
+<Meta
+  title="Components/Data Grid"
+  component={ScaleDataGrid}
+  argTypes={{
+    fields: {
+      table: {
+        type: { summary: 'array' },
+      },
+      description: `(required) Input fields config array`,
+      control: { type: null },
+    },
+    rows: {
+      table: {
+        type: { summary: 'array' },
+      },
+      description: `(required) Input data array`,
+      control: { type: null },
+    },
+    freezeHeader: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Freeze header row from scrolling`,
+      control: { type: null },
+    },
+    heading: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '' },
+      },
+      description: `(optional) Heading string`,
+      control: { type: null },
+    },
+    height: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'auto' },
+      },
+      description: `(optional) Set static table height, by default will auto-resize`,
+      control: { type: null },
+    },
+    hideBorder: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to remove border`,
+      control: { type: null },
+    },
+    hideHeader: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to hide header row`,
+      control: { type: null },
+    },
+    hideInfo: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to remove info footer block including pagination and selection status`,
+      control: { type: null },
+    },
+    hideMenu: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to hide settings menu`,
+      control: { type: null },
+    },
+    numbered: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to add numbers column`,
+      control: { type: null },
+    },
+    pageSize: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: Infinity },
+      },
+      description: `(optional) Set number of rows to display per pagination page`,
+      control: { type: null },
+    },
+    selectable: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Set to true to add selection column`,
+      control: { type: null },
+    },
+    shadeAlternate: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+      description: `(optional) Shade every second row darker`,
+      control: { type: null },
+    },
+    styles: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Injected styles`,
+      control: { type: null },
+    },
+    selection: {
+      name: `[readonly] selection`,
+      table: {
+        type: { summary: 'array' },
+      },
+      description: `Read-only selection array - populated with raw data from selected rows. Note needs selectable set to true`,
+      control: { type: null },
+    },
+    eventScaleEditLegacy: {
+      name: '[event] scaleEdit',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Event triggered every time the editable cells are changed, updating the original rows data`,
+      control: { type: null },
+    },
+    eventScaleEdit: {
+      name: '[event] scale-edit',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered every time the editable cells are changed, updating the original rows data`,
+      control: { type: null },
+    },
+    eventScaleSortLegacy: {
+      name: '[event] scaleSort',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Deprecated!: Event triggered every time the data is sorted, changing original rows data`,
+      control: { type: null },
+    },
+    eventScaleSort: {
+      name: '[event] scale-sort',
+      table: {
+        type: { summary: 'event' },
+      },
+      description: `Event triggered every time the data is sorted, changing original rows data`,
+      control: { type: null },
+    },
+    slotMenu: {
+      name: '[slot] menu',
+      table: {
+        type: { summary: 'scale-menu-flyout-item' },
+      },
+      description: `Used for adding extra menu items within the settings menu. Note hideMenu must be false`,
+      control: { type: null },
+    },
+    slotDefault: {
+      name: '[slot] default',
+      table: {
+        type: { summary: 'scale-button' },
+      },
+      description: `Used for adding elements into the top section between the heading and the settings menu`,
+      control: { type: null },
+    },
+  }}
+/>
+
+export const Template = (args, {}) => ({
+  components: { ScaleDataGrid },
+  props: {
+    // Ignored, but can't be empty ¯\_(ツ)_/¯
+    unused: {},
+  },
+  template: '',
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Data Grid</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+### Properties
+
+<ArgsTable story="Standard" />
+
+<Canvas withSource="close">
+  <Story name="Standard">
+    {`<content>
+    <scale-data-grid heading="Default" id="default-example"></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#default-example');
+        dataGrid.fields = [
+            {
+                type: 'number',
+                label: 'ID',
+            },
+            {
+                type: 'text',
+                label: 'Name',
+                sortable: true,
+            },
+            {
+                type: 'date',
+                label: 'Time',
+                stretchWeight: 1,
+            },
+        ];
+        dataGrid.rows = [
+            [1, 'John', '12:30'],
+            [2, 'Mary', '2:12'],
+            [3, 'Patek', '16:01'],
+            [4, 'Heidi', '3:15'],
+            [5, 'Muhammad', '21:45'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Fields Structure
+
+The `fields` property is an array of field options. Each set of options defines the parameters for that field/column.
+
+The field columns will display in the same order as this array.
+
+The number of objects in the `fields` array determines the number of items that must be in each row supplied to the `rows` property.
+
+The only required field option is `type`. All common options are listed further down the page, as well as individual cell type options.
+
+```html
+const fields = [ { type: 'number', label: 'ID', }, { type: 'text', label:
+'Name', }, { type: 'date', label: 'Time', }, ];
+```
+
+## Rows Structure
+
+The `rows` property is an array of row data. Each row is a flat array that must match the length of the `fields` property array.
+
+Each item in the row contains the cell value for the associated field type, and must therefore match the expected format of the field options.
+
+Eg. the first item in the fields example above is a `text` field type, therefore the first item in each row must be a `string`. Each type's expected format is documented further down the page.
+
+```html
+const rows = [ [1, 'John', '12:30'], [2, 'Mary', '2:12'], [3, 'Patek', '16:01'],
+[4, 'Heidi', '3:15'], [5, 'Muhammad', '21:45'], ];
+```
+
+## Field Cell Types
+
+- `actions`
+- `checkbox`
+- `email`
+- `date`
+- `graph`
+- `html`
+- `link`
+- `number`
+- `select`
+- `tags`
+- `telephone`
+- `text`
+
+## Field Options
+
+##### Common options, and their defaults
+
+- `type: string`
+- `label?: string`
+- `maxWidth?: number = Infinity`
+- `minWidth?: number = 20`
+- `mobileTitle?: boolean = false`
+- `resizable?: boolean = true`
+- `sortable?: boolean = false`
+- `sortBy?: 'number' | 'text' = 'text'`
+- `textAlign?: 'left' | 'center' | 'right' = 'left'`
+- `stretchWeight?: 'number'`
+- `visible?: boolean = true`
+- `width?: number`
+
+## Cell Type Options
+
+## Actions Cell
+
+Expected format: an array of objects, e.g. `[{ label: 'Edit', onClick: () => { /* ... */ }]`
+
+##### Unique options, and their defaults
+
+- `label: string = '' | object = { __html: '' }`
+- any `scale-button` attributes
+
+<Canvas withSource="close">
+  <Story name="Actions Cell">
+    {`<content>
+    <scale-data-grid id="actions-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#actions-example');
+        dataGrid.fields = [
+            {
+                type: 'actions',
+                label: 'Actions (secondary)',
+            },
+            {
+                type: 'actions',
+                label: 'Actions (icon-only)',
+            }
+        ];
+        dataGrid.rows = [
+            [
+                [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
+                [
+                    {
+                        label: { __html: '<scale-icon-action-more accessibility-title="More"></scale-icon-action-more>' },
+                        variant: 'ghost'
+                    },
+                    {
+                        label: { __html: '<scale-icon-action-remove accessibility-title="Delete"></scale-icon-action-remove>' }, variant: 'ghost'
+                    }
+                ]
+            ],
+            [
+                [{ label: 'edit', variant: 'secondary', onClick: () => {} }],
+                [
+                    {
+                        label: { __html: '<scale-icon-action-more accessibility-title="More"></scale-icon-action-more>' },
+                        variant: 'ghost'
+                    },
+                    {
+                        label: { __html: '<scale-icon-action-remove accessibility-title="Delete"></scale-icon-action-remove>' }, variant: 'ghost'
+                    }
+                ]
+            ]
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Checkbox Cell
+
+Expected format: `boolean`, eg `true`
+
+##### Unique options, and their defaults
+
+- `style?: 'checkbox' | 'switch' = 'checkbox'`
+- `editable?: boolean = false`
+
+<Canvas withSource="close">
+  <Story name="Checkbox Cell">
+    {`<content>
+    <scale-data-grid id="checkbox-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#checkbox-example');
+        dataGrid.fields = [
+            {
+                type: 'checkbox',
+                label: 'Checkbox',
+                style: 'checkbox',
+            },
+            {
+                type: 'checkbox',
+                label: 'Switch',
+                style: 'switch',
+            },
+            {
+                type: 'checkbox',
+                label: 'Editable Checkbox',
+                style: 'checkbox',
+                editable: true,
+                sortable: true,
+            },
+            {
+                type: 'checkbox',
+                label: 'Editable Switch',
+                style: 'switch',
+                editable: true,
+                sortable: true,
+            },
+        ];
+        dataGrid.rows = [
+            [true, false, true, true],
+            [true, true, true, false],
+            [false, true, false, false],
+            [false, false, false, true]
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Email Cell
+
+Expected format: a email `string`, eg: `'mailto:example@domain.org'`
+
+Email label is partially beautified by automatically removing the protocol (`mailto:`)
+
+<Canvas withSource="close">
+  <Story name="Email Cell">
+    {`<content>
+    <scale-data-grid id="email-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#email-example');
+        dataGrid.fields = [
+            {
+                type: 'email',
+                label: 'Email',
+            }
+        ];
+        dataGrid.rows = [
+            ['mailto:testuser_1@domain.org'],
+            ['mailto:testuser_2@domain.org',]
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Date Cell
+
+Expected format: date/time `string`, eg `'10:23:00'`
+
+<Canvas withSource="close">
+  <Story name="Date Cell">
+    {`<content>
+    <scale-data-grid id="date-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#date-example');
+        dataGrid.fields = [
+            {
+                type: 'date',
+                label: 'Time',
+            },
+            {
+                type: 'date',
+                label: 'Date',
+            },
+        ];
+        dataGrid.rows = [
+            ['00:00:20', 'Mon Aug 05'],
+            ['17:24', '12/10/2020'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Graph Cell
+
+Expected format: `number`, eg `10230.32`
+
+##### Unique options, and their defaults
+
+- `style?: 'progress' | 'bar' = 'progress'`
+- `min?: number = 0`
+- `max?: number = 100`
+
+<Canvas withSource="close">
+  <Story name="Graph Cell">
+    {`<content>
+    <scale-data-grid id="graph-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#graph-example');
+        dataGrid.fields = [
+            {
+                type: 'graph',
+                label: 'Progress',
+            },
+            {
+                type: 'graph',
+                label: 'Bar',
+                style: 'bar',
+                max: 20000,
+            },
+        ];
+        dataGrid.rows = [
+            [87, 1020],
+            [100, 15034],
+            [12, 19209],
+            [34, 89],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## HTML Cell
+
+Expected format: `HTMLElement`
+
+<Canvas withSource="close">
+  <Story name="HTML Cell">
+    {`<content>
+    <scale-data-grid id="html-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#html-example');
+        dataGrid.fields = [
+            {
+                type: 'html',
+                label: 'HTML',
+            },
+        ];
+        dataGrid.rows = [
+            [document.createElement('scale-icon-service-support')],
+            [document.createElement('scale-icon-service-settings')],
+            [document.createElement('scale-icon-service-services')],
+            [document.createElement('scale-icon-service-devices-service')],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Link Cell
+
+Expected format: a url `string`, eg: `'https://sample.com'`
+
+Link label is partially beautified by automatically removing the protocol (`http://` / `https://`)
+
+<Canvas withSource="close">
+  <Story name="Link Cell">
+    {`<content>
+    <scale-data-grid id="link-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#link-example');
+        dataGrid.fields = [
+            {
+                type: 'link',
+                label: 'Https link',
+            },
+            {
+                type: 'link',
+                label: 'Http link',
+            },
+        ];
+        dataGrid.rows = [
+            ['https://www.google.com', 'http://www.google.com'],
+            ['https://example.com', 'http://example.com'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Number Cell
+
+Expected format: `number` or `string`, eg `120.0`
+
+##### Unique options, and their defaults
+
+- `decimalSymbol?: string = '.'`
+- `groupSymbol?: string = ''`
+- `precision?: number Infinity`
+- `prefix?: string`
+- `suffix?: string`
+- `editable?: boolean = false`
+
+<Canvas withSource="close">
+  <Story name="Number Cell">
+    {`<content>
+    <scale-data-grid id="number-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#number-example');
+        dataGrid.fields = [
+            {
+                type: 'number',
+                label: 'Default',
+            },
+            {
+                type: 'number',
+                label: 'Precision',
+                precision: 2,
+            },
+            {
+                type: 'number',
+                label: 'Currency',
+                precision: 2,
+                decimalSymbol: ',',
+                groupSymbol: '.',
+                prefix: '$',
+                suffix: ' USD',
+            },
+            {
+                type: 'number',
+                label: 'Editable',
+                editable: true,
+            },
+        ];
+        dataGrid.rows = [
+            [11, 11, 11, 11],
+            [126.3, 126.3, 126.3, 126.3],
+            [0.032, 0.032, 0.032, 0.032],
+            [123045, 123045, 123045, 123045],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Select Cell
+
+Expected format: string
+
+##### Unique options, and their defaults
+
+- `options: string[]`
+- `editable?: boolean = false`
+
+<Canvas withSource="close">
+  <Story name="Select Cell">
+    {`<content>
+    <scale-data-grid id="select-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#select-example');
+        dataGrid.fields = [
+            {
+                type: 'select',
+                label: 'Select',
+                options: ['Apple', 'Orange', 'Banana'],
+            },
+            {
+                type: 'select',
+                label: 'Options',
+                options: ['Apple', 'Orange', 'Banana'],
+                editable: true,
+            },
+        ];
+        dataGrid.rows = [
+            ['Apple', 'Orange'],
+            ['Orange', 'Apple'],
+            ['Banana', 'Banana'],
+            ['Apple', 'Orange']
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Tags Cell
+
+Expected format: comma delimited `string`, eg `'one, two, three'`
+
+<Canvas withSource="close">
+  <Story name="Tags Cell">
+    {`<content>
+    <scale-data-grid id="tags-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#tags-example');
+        dataGrid.fields = [
+            {
+                type: 'tags',
+                label: 'Fruits',
+            },
+            {
+                type: 'tags',
+                label: 'Vegetables',
+            },
+        ];
+        dataGrid.rows = [
+            ['Apple, Banana', 'Tomato, Cucumber'],
+            ['Strawberry', 'Aubergine, Carrot, Celery'],
+            ['Orange, Lemon, Watermelon', 'Pizza'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Telephone Cell
+
+Expected format: a telephone `string`, eg: `'tel: +0011122223333'`
+
+telephone label is partially beautified by automatically removing the protocol (`tel:`)
+
+<Canvas withSource="close">
+  <Story name="Telephone Cell">
+    {`<content>
+    <scale-data-grid id="telephone-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#telephone-example');
+        dataGrid.fields = [
+            {
+                type: 'telephone',
+                label: 'Telephone Number',
+            }
+        ];
+        dataGrid.rows = [
+            ['tel:+0011122223333'],
+            ['tel:+0011122223333',]
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Text Cell
+
+Expected format: unformatted `string`, eg `'this is a string'`
+
+##### Unique options, and their defaults
+
+- `variant?: 'body' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'body'`
+- `iconPrefix?: scale-icon-string (eg 'action-download')`
+- `iconSuffix?: scale-icon-string (eg 'action-download')`
+- `editable?: boolean = false`
+
+<Canvas withSource="close">
+  <Story name="Text Cell">
+    {`<content>
+    <scale-data-grid id="text-example" hide-menu></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#text-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Title h5 + Prefix',
+                variant: 'h5',
+                iconPrefix: 'action-logout',
+            },
+            {
+                type: 'text',
+                label: 'Body + Suffix',
+                iconSuffix: 'action-mute',
+            },
+            {
+                type: 'text',
+                label: 'Sortable',
+                sortable: true,
+            },
+            {
+                type: 'text',
+                label: 'Editable',
+                editable: true,
+            },
+        ];
+        dataGrid.rows = [
+            ['Row lorem title', 'Lorem ipsum dolor sit amet', 'Row lorem title', 'Lorem ipsum dolor sit amet'],
+            ['Dolor sit amet', 'Quasi architecto beatae vitae', 'Dolor sit amet', 'Quasi architecto beatae vitae'],
+            ['Sed quia non', 'Ut enim ad minima veniam', 'Sed quia non', 'Ut enim ad minima veniam'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Component Properties
+
+## Freeze Header And Height
+
+<Canvas withSource="close">
+  <Story name="Freeze Header">
+    {`<content>
+    <scale-data-grid
+        id="freeze-header-example"
+        hide-menu
+        height="300px"
+        freeze-header
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#freeze-header-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Graham Ross', true],
+            ['Ina Burks', true],
+            ['Lee Jackson', false],
+            ['Regina Cain', false],
+            ['Cameran Gordon', false],
+            ['Geoffrey Padilla', false],
+            ['Rajah Oliver', true],
+            ['Maggie Reid', true],
+            ['Dean Lawson', false],
+            ['Kylynn Weaver', false],
+            ['Justine Mcdowell', true],
+            ['Stephen Good', true],
+            ['Quyn Snow', false],
+            ['Hakeem Stephens', false],
+            ['Lyle Owen', true],
+            ['Isaac Mcfadden', false],
+            ['Cheyenne Jordan', true],
+            ['Brock Griffin', true],
+            ['Thor Riddle', false],
+            ['Calvin Bishop', false],
+            ['Deanna Daniels', false],
+            ['Alexander Chambers', false],
+            ['Orli Hurley', false],
+            ['Carson Ewing', false],
+            ['Gil Sweeney', false],
+            ['Lars Franks', true],
+            ['Kane Cortez', true],
+            ['Abbot Massey', false],
+            ['Jenette Gill', true],
+            ['Heather Greer', true],
+            ['Linus Mooney', false],
+            ['Illana Waters', true],
+            ['Ariel Foley', false],
+            ['Yolanda Alvarado', true],
+            ['Julie Brown', true],
+            ['Odessa Love', true],
+            ['Nehru Baird', false],
+            ['Paki Osborn', false],
+            ['Roary Shields', true],
+            ['Myles Hess', true],
+            ['Hannah Britt', false],
+            ['Eden Crane', false],
+            ['Dominique Anderson', false],
+            ['Cecilia Sawyer', false],
+            ['Lucas Daugherty', false],
+            ['Lee Wheeler', false],
+            ['Kimberly Gibbs', false],
+            ['Uta Hampton', false],
+            ['Kadeem Gillespie', false],
+            ['Ina Salas', false],
+            ['Lucas Finley', false],
+            ['Adrian Grimes', true],
+            ['Hilel Hurley', false],
+            ['Holmes Thornton', true],
+            ['Irma Gonzales', false],
+            ['Molly Burgess', true],
+            ['Martha Walker', false],
+            ['Jenette Bass', true],
+            ['Kyra Fields', true],
+            ['Kareem Irwin', false],
+            ['Kirk Santos', false],
+            ['Warren Stokes', false],
+            ['Noelle Joseph', false],
+            ['Katelyn Hopper', true],
+            ['Cruz Rocha', true],
+            ['Armand Carrillo', true],
+            ['Travis Molina', false],
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+            ['Hollee Gates', true],
+            ['Nathaniel Sherman', true],
+            ['Devin Mosley', false],
+            ['Candice Wynn', true],
+            ['Kaye Herman', false],
+            ['Patience Jacobs', false],
+            ['Philip Langley', true],
+            ['Ainsley Acosta', true],
+            ['Gary Rose', false],
+            ['Melissa Sawyer', true],
+            ['Rama Odom', false],
+            ['Malcolm Roth', true],
+            ['Sage Mullen', true],
+            ['Elton Frank', true],
+            ['Hilda Pearson', true],
+            ['Justine Stark', true],
+            ['Hasad Long', false],
+            ['Heather Watson', false],
+            ['Elliott Schwartz', true],
+            ['Hannah Hobbs', true],
+            ['Maisie Reid', true],
+            ['Yuli Kramer', false],
+            ['Signe Holmes', false],
+            ['George Terry', false],
+            ['Lacota Logan', false],
+            ['Carlos Franco', true],
+            ['Xandra Terry', false],
+            ['Myles Butler', true],
+            ['Hunter Salazar', false],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Heading
+
+<Canvas withSource="close">
+  <Story name="Heading">
+    {`<content>
+    <scale-data-grid
+        id="heading-example"
+        heading="Data Grid Heading"
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#heading-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Hide Extras
+
+<Canvas withSource="close">
+  <Story name="Hide Extras">
+    {`<content>
+    <scale-data-grid
+        id="hide-extras-example"
+        hide-border
+        hide-header
+        hide-info
+        hide-menu
+        shade-alternate="false"
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#hide-extras-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Numbered
+
+<Canvas withSource="close">
+  <Story name="Numbered">
+    {`<content>
+    <scale-data-grid
+        id="numbered-example"
+        numbered
+        hide-menu
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#numbered-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+            },
+        ];
+        dataGrid.rows = [
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Pagination
+
+<Canvas withSource="close">
+  <Story name="Pagination">
+    {`<content>
+    <scale-data-grid
+        id="pagination-example"
+        heading="Pagination Example"
+        numbered
+        selectable
+        page-size="5"
+    ></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#pagination-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                sortable: true,
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+                sortable: true,
+            },
+        ];
+        dataGrid.rows = [
+            ['Hilel Hurley', false],
+            ['Holmes Thornton', true],
+            ['Irma Gonzales', false],
+            ['Molly Burgess', true],
+            ['Martha Walker', false],
+            ['Jenette Bass', true],
+            ['Kyra Fields', true],
+            ['Kareem Irwin', false],
+            ['Kirk Santos', false],
+            ['Warren Stokes', false],
+            ['Noelle Joseph', false],
+            ['Katelyn Hopper', true],
+            ['Cruz Rocha', true],
+            ['Armand Carrillo', true],
+            ['Travis Molina', false],
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+            ['Hope Bass', false],
+            ['Hollee Gates', true],
+            ['Nathaniel Sherman', true],
+            ['Devin Mosley', false],
+            ['Candice Wynn', true],
+            ['Kaye Herman', false],
+            ['Patience Jacobs', false],
+            ['Philip Langley', true],
+            ['Ainsley Acosta', true],
+            ['Gary Rose', false],
+            ['Melissa Sawyer', true],
+            ['Rama Odom', false],
+            ['Malcolm Roth', true],
+            ['Sage Mullen', true],
+            ['Elton Frank', true],
+            ['Hilda Pearson', true],
+            ['Justine Stark', true],
+            ['Hasad Long', false],
+            ['Heather Watson', false],
+            ['Elliott Schwartz', true],
+            ['Hannah Hobbs', true],
+            ['Maisie Reid', true],
+            ['Yuli Kramer', false],
+            ['Signe Holmes', false],
+            ['George Terry', false],
+            ['Lacota Logan', false],
+            ['Carlos Franco', true],
+            ['Xandra Terry', false],
+            ['Myles Butler', true],
+            ['Hunter Salazar', false],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Selection Export
+
+<Canvas withSource="close">
+  <Story name="Selection Export">
+    {`<content>
+    <div aria-live="polite" id="aria-live" style="margin-top:8px; text-align:center;"></div>
+    <scale-data-grid
+        id="selection-export-example"
+        heading="Selection Example"
+        numbered
+        selectable
+        page-size="5"
+    >
+        <scale-button id="export-btn">
+            Export Selection!
+        </scale-button>
+    </scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#selection-export-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                sortable: true,
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+                sortable: true,
+            },
+        ];
+        dataGrid.rows = [
+            ['Hilel Hurley', false],
+            ['Holmes Thornton', true],
+            ['Irma Gonzales', false],
+            ['Molly Burgess', true],
+            ['Martha Walker', false],
+            ['Jenette Bass', true],
+            ['Kyra Fields', true],
+            ['Kareem Irwin', false],
+            ['Kirk Santos', false],
+            ['Warren Stokes', false],
+            ['Noelle Joseph', false],
+            ['Katelyn Hopper', true],
+            ['Cruz Rocha', true],
+            ['Armand Carrillo', true],
+            ['Travis Molina', false],
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+        ];
+        document.getElementById("export-btn").addEventListener('click', () => {
+            document.querySelector('#aria-live').innerText=document.querySelector('#selection-export-example').selection.length + ' rows selected for export'
+        });
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+<!-- This is not accessible yet! -->
+<!-- ## Menu Slot -->
+
+<!--<Canvas withSource="close">
+  <Story name="Menu Slot">
+    {`<content>
+    <div aria-live="polite" id="aria-live" style="margin-top:8px; text-align:center;"></div>
+    <scale-data-grid
+        id="menu-slot-example"
+        heading="Menu Slot"
+        numbered
+        selectable
+        page-size="5"
+    >
+        <scale-menu-flyout-item slot="menu" id="export-btn">
+            <scale-icon-navigation-external-link slot="prefix"></scale-icon-navigation-external-link>
+            Slotted Export Selection
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item slot="menu">
+            Slotted Menu
+            <scale-menu-flyout-list slot="sublist">
+                <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                <scale-menu-flyout-item>Option 4</scale-menu-flyout-item>
+            </scale-menu-flyout-list>
+        </scale-menu-flyout-item>
+    </scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#menu-slot-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                sortable: true,
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+                sortable: true,
+            },
+        ];
+        dataGrid.rows = [
+            ['Hilel Hurley', false],
+            ['Holmes Thornton', true],
+            ['Irma Gonzales', false],
+            ['Molly Burgess', true],
+            ['Martha Walker', false],
+            ['Jenette Bass', true],
+            ['Kyra Fields', true],
+            ['Kareem Irwin', false],
+            ['Kirk Santos', false],
+            ['Warren Stokes', false],
+            ['Noelle Joseph', false],
+            ['Katelyn Hopper', true],
+            ['Cruz Rocha', true],
+            ['Armand Carrillo', true],
+            ['Travis Molina', false],
+            ['Adrienne Hopper', true],
+            ['Merritt Hardin', true],
+            ['Randall Copeland', false],
+        ];
+            document.getElementById("export-btn").addEventListener('click', () => {
+            document.querySelector('#aria-live').innerText=document.querySelector('#menu-slot-example').selection.length + ' rows selected for export'
+        });
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>-->
+
+## Column Stretch
+
+<Canvas withSource="close">
+  <Story name="Column Stretch">
+    {`<content>
+    <scale-data-grid heading="Column Stretch" id="column-stretch-example"></scale-data-grid>
+    <script type="application/javascript">
+    {
+        const dataGrid = document.querySelector('#column-stretch-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                stretchWeight: 1,
+            },
+            {
+                type: 'number',
+                label: 'ID',
+            },
+            {
+                type: 'date',
+                label: 'Time',
+            },
+        ];
+        dataGrid.rows = [
+            ['John', 1, '12:30'],
+            ['Mary', 2, '2:12'],
+            ['Patek', 3, '16:01'],
+            ['Heidi', 4, '3:15'],
+            ['Muhammad', 5, '21:45'],
+        ];
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+## Show More
+
+<Canvas withSource="close">
+  <Story name="Show More">
+    {`<content style="display: block;">
+    <scale-data-grid
+        id="show-more-example"
+        heading="Show More"
+        numbered
+        hide-info
+    ></scale-data-grid>
+    <scale-button
+        id="show-more-example-button"
+        size="small"
+        style="display: block; width: 128px; margin: 20px auto;"
+        variant="secondary"
+    >Show More<scale-icon-navigation-collapse-down size="16"></scale-icon-navigation-collapse-down></scale-button>
+      <div aria-live="polite" id="aria-live" style="position: absolute; left: -10000px; overflow: hidden;"></div>
+    <script type="application/javascript">
+    {
+        const data = [
+            ['Graham Ross', true],
+            ['Ina Burks', true],
+            ['Lee Jackson', false],
+            ['Regina Cain', false],
+            ['Cameran Gordon', false],
+            ['Geoffrey Padilla', false],
+            ['Rajah Oliver', true],
+            ['Maggie Reid', true],
+            ['Dean Lawson', false],
+            ['Kylynn Weaver', false],
+            ['Justine Mcdowell', true],
+            ['Stephen Good', true],
+            ['Quyn Snow', false],
+            ['Hakeem Stephens', false],
+            ['Lyle Owen', true],
+            ['Isaac Mcfadden', false],
+            ['Cheyenne Jordan', true],
+            ['Brock Griffin', true],
+            ['Thor Riddle', false],
+            ['Calvin Bishop', false],
+            ['Deanna Daniels', false],
+            ['Alexander Chambers', false],
+            ['Orli Hurley', false],
+            ['Carson Ewing', false],
+            ['Gil Sweeney', false],
+            ['Lars Franks', true],
+            ['Kane Cortez', true],
+            ['Abbot Massey', false],
+            ['Jenette Gill', true],
+            ['Heather Greer', true],
+            ['Linus Mooney', false],
+            ['Illana Waters', true],
+            ['Ariel Foley', false],
+            ['Yolanda Alvarado', true],
+            ['Julie Brown', true],
+            ['Odessa Love', true],
+            ['Nehru Baird', false],
+            ['Paki Osborn', false],
+            ['Roary Shields', true],
+            ['Myles Hess', true],
+            ['Hannah Britt', false],
+            ['Eden Crane', false],
+            ['Dominique Anderson', false],
+            ['Cecilia Sawyer', false],
+            ['Lucas Daugherty', false],
+            ['Lee Wheeler', false],
+            ['Kimberly Gibbs', false],
+            ['Uta Hampton', false],
+            ['Kadeem Gillespie', false],
+            ['Ina Salas', false],
+        ];
+        const dataGrid = document.querySelector('#show-more-example');
+        dataGrid.fields = [
+            {
+                type: 'text',
+                label: 'Name',
+                sortable: true,
+            },
+            {
+                type: 'checkbox',
+                label: 'Toggle',
+                style: 'switch',
+                sortable: true,
+            },
+        ];
+        let showCount = 5;
+        dataGrid.rows = data.slice(0, showCount);
+        const showMorePrompt = document.querySelector('#show-more-example-button');
+        showMorePrompt.addEventListener('click', () => {
+            showCount = Math.min(showCount + 5, data.length);
+            dataGrid.rows = data.slice(0, showCount);
+            document.querySelector('#aria-live').innerText="5 more rows added, total " + String(dataGrid.rows.length)
+        });
+    }
+    </script>
+</content>`}
+  </Story>
+</Canvas>
+
+<!-- TODO -->
+<!-- manual pagination example -->
+<!-- search filtering example -->
+<!-- custom data end-point example -->
+
+<!-- Story Template With One Root -->
+<!-- <Canvas withSource="close">
+    <Story name="Default" >
+{``}
+    </Story>
+</Canvas> -->
+
+<!-- Story Template With Multiple Roots And/Or Script -->
+<!-- <Canvas withSource="close">
+    <Story name="Standard">
+{`<content>
+
+    <script type="application/javascript">
+    </script>
+</content>`}
+    </Story>
+</Canvas> -->

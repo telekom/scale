@@ -40,5 +40,5 @@ export default create({
   brandTitle: "Telekom Scale Design System",
   // TODO add URL
   // brandUrl: 'https://example.com',
-  brandImage: "assets/Telekom-Logo-Magenta-350x150.svg",
+  brandImage: "assets/Telekom-Logo-Magenta.svg",
 });

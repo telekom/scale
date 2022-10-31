@@ -1,0 +1,278 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleDropDown from './ScaleDropDown.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Components/Dropdown"
+  component={ScaleDropDown}
+  argTypes={{
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleDropDown },
+  props: ScaleDropDown.props,
+  template: `
+    <scale-dropdown
+      :name="name"
+      :label="label"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :variant="variant"
+      :disabled="disabled"
+      :required="required"
+      :value="value"
+      :input-id="inputId"
+      :visible-size="visibleSize"
+      :controlled="controlled"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    >
+      <option value="1">Category 1</option>
+      <optgroup label="Category Group">
+        <option value="2">Category 2</option>
+      </optgroup>
+      <optgroup label="Category Group 2">
+        <option value="3">Category 3</option>
+      </optgroup>
+      <scale-icon-content-calendar v-if="label === 'With Custom Icon'" slot="icon"></scale-icon-content-calendar>
+    </scale-dropdown>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Dropdown</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Select',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-dropdown label="select">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --height: var(--telekom-spacing-unit-x11);
+  --spacing-x: var(--telekom-spacing-unit-x3);
+  --spacing-dropdown: 21px var(--telekom-spacing-unit-x10) 5px
+    calc(var(--spacing-x) - 1px);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --radius: var(--telekom-radius-standard);
+  --border: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-border-standard);
+  --border-error: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-danger-standard);
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: none;
+  --color: var(--telekom-color-text-and-icon-standard)
+  --background-color: var(--telekom-color-ui-state-fill-standard);
+
+  /*input*/
+  --transition-input: var(--transition);
+  --font-size-input: var(--telekom-typography-font-size-body);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --color-helper-text-error: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
+
+  /*meta*/
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --color-meta: var(--telekom-color-text-and-icon-standard);
+
+  /*icon*/
+  --height-icon: var(--telekom-spacing-unit-x6);
+  --color-icon: var(--telekom-color-text-and-icon-standard);
+  --color-icon-hover: var(--telekom-color-text-and-icon-standard);
+  --color-icon-active: var(--telekom-color-text-and-icon-standard);
+  --transition-icon: var(--transition);
+
+  /*label*/
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--telekom-typography-font-size-body);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+}
+```
+
+## Disabled
+
+Known issues: The dropdown is ready for use. The component in disabled state is displayed incorrectly with white background in Firefox 85.0.2 (64-bit) in HCM (high contrast mode).
+The display error is on the browser side.
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown label="Disabled" disabled>
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+## Error
+
+<Canvas withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: 'Error',
+      invalid: true,
+      helperText: 'Something went wrong...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown label="Error" invalid helper-text="Something went wrong...">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+## Success
+
+<Canvas withSource="none">
+  <Story
+    name="Success"
+    args={{
+      label: 'Success',
+      variant: 'success',
+      helperText: 'Something went successful...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown
+  label="Success"
+  variant="success"
+  helper-text="Something went successful..."
+>
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+## Warning
+
+<Canvas withSource="none">
+  <Story
+    name="Warning"
+    args={{
+      label: 'Warning',
+      variant: 'warning',
+      helperText: 'Something with warning...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown
+  label="Warning"
+  variant="warning"
+  helper-text="Something with warning..."
+>
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+</scale-dropdown>
+```
+
+## With Custom Icon
+
+<Canvas withSource="none">
+  <Story
+    name="With Custom Icon"
+    args={{
+      label: 'With Custom Icon',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-dropdown label="With Custom Icon">
+  <option value="1">item 1</option>
+  <option value="2" selected>item 2</option>
+  <option value="3">item 3</option>
+  <scale-icon-content-calendar slot="icon"></scale-icon-content-calendar>
+</scale-dropdown>
+```

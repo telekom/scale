@@ -1,0 +1,707 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+import text_first_de from './Typography_1_de.md';
+import text_second_de from './Typography_2_de.md';
+import text_first_en from './Typography_1_en.md';
+import text_second_en from './Typography_2_en.md';
+import lightTokens from '@telekom/design-tokens/dist/telekom/docs-json/telekom-design-tokens.light.json';
+import darkTokens from '@telekom/design-tokens/dist/telekom/docs-json/telekom-design-tokens.dark.json';
+import { UPDATE_GLOBALS } from '@storybook/core-events';
+import { addons } from '@storybook/addons';
+
+<Meta
+  title="Guidelines/Typography"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        const colorMode =
+          context && context.globals && context.globals.colorMode;
+        let allTokens = colorMode === 'light' ? lightTokens : darkTokens;
+        const darkMode = colorMode === 'light' ? false : true;
+        let pathStringItem = [];
+        let levelStringItem = [];
+        let currentSection;
+        let cleared = false;
+        let item;
+        let contrastSections;
+        const channel = addons.getChannel();
+        function getItemPathByPath(path) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
+            if (allTokens.tokens[i].pathString === path) {
+              if (allTokens.tokens[i].path[3]) {
+                return (
+                  allTokens.tokens[i].path[2] +
+                  ' / ' +
+                  allTokens.tokens[i].path[3]
+                );
+              }
+              return allTokens.tokens[i].path[2];
+            }
+          }
+        }
+        function getItemColorByPath(path) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
+            if (allTokens.tokens[i].pathString === path) {
+              return allTokens.tokens[i].value;
+            }
+          }
+        }
+        function getLevelByPath(path) {
+          for (let i = 0; i < levelStringItem.length; i++) {
+            let currentItem = levelStringItem[i];
+            let splittedItem = currentItem.split('/');
+            if (splittedItem[0] === path) {
+              return splittedItem[1];
+            }
+          }
+        }
+        function getItemByPathString(pathString) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
+            let currentItem = allTokens.tokens[i];
+            if (currentItem.pathString === pathString) {
+              return currentItem;
+            }
+          }
+        }
+        function getAllSections(items) {
+          let itemPaths = [];
+          let sections = [];
+          let currentSection;
+          items.map((path) => itemPaths.push(getItemPathByPath(path)));
+          for (let i = 0; i < itemPaths.length; i++) {
+            if (itemPaths[i].includes('/')) {
+              if (sections.length == 0) {
+                currentSection = itemPaths[i].substr(
+                  0,
+                  itemPaths[i].indexOf('/')
+                );
+                sections.push(
+                  itemPaths[i].substr(0, itemPaths[i].indexOf('/'))
+                );
+              } else {
+                if (
+                  currentSection !==
+                  itemPaths[i].substr(0, itemPaths[i].indexOf('/'))
+                ) {
+                  sections.push(
+                    itemPaths[i].substr(0, itemPaths[i].indexOf('/'))
+                  );
+                  currentSection = itemPaths[i].substr(
+                    0,
+                    itemPaths[i].indexOf('/')
+                  );
+                }
+              }
+            }
+          }
+          contrastSections = sections;
+        }
+        function hasContrastWithoutSlash(items) {
+          let itemPaths = [];
+          items.map((item) => {
+            itemPaths.push(getItemPathByPath(item));
+          });
+          for (let i = 0; i < itemPaths.length; i++) {
+            if (!itemPaths[i].includes('/')) {
+              return true;
+            }
+          }
+        }
+        function setAdditionalColorSettings() {
+          allTokens = lightTokens;
+          return;
+        }
+        function resetAdditionalColorSettings() {
+          allTokens = colorMode === 'light' ? lightTokens : darkTokens;
+          return;
+        }
+        function setContrastStates() {
+          item.contrastChecks
+            ? item.contrastChecks.map((contrastCkeckItem) => {
+                pathStringItem.push(contrastCkeckItem.path);
+                levelStringItem.push(
+                  contrastCkeckItem.path + '/' + contrastCkeckItem.level
+                );
+              })
+            : null;
+        }
+        function clearContrastStates() {
+          pathStringItem.length = 0;
+          levelStringItem.length = 0;
+          cleared = true;
+        }
+        function generateTableColorRow(
+          itemPathString,
+          commentStringGerman,
+          commentStringEnglish,
+          additionalColor
+        ) {
+          {
+            /*
+              Additional query, because the additional colors are only available in the light json, 
+              but are also needed in the darkmode 
+            */
+          }
+          additionalColor
+            ? setAdditionalColorSettings()
+            : resetAdditionalColorSettings();
+          item = getItemByPathString(itemPathString);
+          return item ? (
+            <tr
+              style={{
+                backgroundColor: 'var(--telekom-color-background-canvas)',
+              }}
+            >
+              {/* Example Column */}
+              <td
+                style={{
+                  border: 'none',
+                  verticalAlign: 'top',
+                  width: '200px',
+                  padding: '4px 4px 4px 0',
+                }}
+              >
+                {clearContrastStates()}
+                {cleared ? setContrastStates() : null}
+                {item.contrastChecks ? (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      marginTop: 'var(--telekom-spacing-unit-x2)',
+                      marginBottom: 'var(--telekom-spacing-unit-x2)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '4px',
+                      minWidth: '380px',
+                      minHeight: '120px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        color: `${getItemColorByPath(pathStringItem[0])}`,
+                        fontSize: '11px',
+                        fontWeight: 500,
+                        paddingTop: 'var(--telekom-spacing-unit-x1)',
+                        passingBottom: 'var(--telekom-spacing-unit-x1)',
+                      }}
+                    >
+                      {locale === 'en'
+                        ? 'Recommended colors for text & icons'
+                        : 'Empfohlene Farben für Text & Icons'}
+                    </div>
+                    {hasContrastWithoutSlash(pathStringItem) ? (
+                      <td
+                        style={{
+                          paddingRight: 'var(--telekom-spacing-unit-x4)',
+                          border: 'none',
+                          width: '140px',
+                        }}
+                      >
+                        {pathStringItem
+                          .filter(
+                            (path) => !getItemPathByPath(path).includes('/')
+                          )
+                          .map((path) => {
+                            return (
+                              <a href={`#${path}`}>
+                                <div
+                                  style={{
+                                    color: `${getItemColorByPath(path)}`,
+                                    fontSize: '13px',
+                                    fontWeight: 600,
+                                  }}
+                                >
+                                  {getItemPathByPath(path)}
+                                  {' (' + getLevelByPath(path) + ')'}
+                                </div>
+                              </a>
+                            );
+                          })}
+                      </td>
+                    ) : null}
+                    {getAllSections(pathStringItem)}
+                    {contrastSections
+                      ? contrastSections.map((item, i) => {
+                          return (
+                            <td
+                              style={{
+                                border: 'none',
+                                paddingRight: 'var(--telekom-spacing-unit-x4)',
+                                width: '200px',
+                              }}
+                            >
+                              {pathStringItem
+                                .filter((path) =>
+                                  getItemPathByPath(path).includes(
+                                    `${contrastSections[i]}`
+                                  )
+                                )
+                                .map((path) => {
+                                  return (
+                                    <a href={`#${path}`}>
+                                      <div
+                                        style={{
+                                          color: `${getItemColorByPath(path)}`,
+                                          fontSize: '13px',
+                                          fontWeight: 600,
+                                        }}
+                                      >
+                                        {getItemPathByPath(path)}
+                                        {' (' + getLevelByPath(path) + ')'}
+                                      </div>
+                                    </a>
+                                  );
+                                })}
+                            </td>
+                          );
+                        })
+                      : null}
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: '20px',
+                      marginTop: '4px',
+                      marginLeft: '8px',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '4px',
+                      width: '380px',
+                      minHeight: '120px',
+                    }}
+                  ></div>
+                )}
+              </td>
+              {/* Description Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  width: '100px',
+                  height: 'inherit',
+                  border: 'none',
+                }}
+              >
+                <div
+                  style={{
+                    marginTop: 'var(--telekom-spacing-unit-x2)',
+                    marginBottom: 'var(--telekom-spacing-unit-x2)',
+                    width: '380px',
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        fontWeight: 'bolder',
+                        fontSize: '18px',
+                        color: 'var(--telekom-color-text-and-icon-standard)',
+                      }}
+                    >
+                      {item.name}
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        color: 'var(--telekom-color-text-and-icon-standard)',
+                      }}
+                    >
+                      {/*item.comment*/}
+                      {locale === 'en'
+                        ? commentStringEnglish
+                        : commentStringGerman}
+                    </span>
+                  </div>
+                </div>
+              </td>
+              {/* Token Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  border: 'none',
+                  paddingTop: 'var(--telekom-spacing-unit-x1)',
+                  paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                }}
+              >
+                <div
+                  style={{
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                    width: '330px',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  css
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '30px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      lineHeight: '30px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    {item.cssVariableName}
+                  </span>
+                  <div
+                    style={{
+                      margin: '0',
+                      position: 'absolute',
+                      top: '50%',
+                      right: '5px',
+                      msTransform: 'translateY(-50%)',
+                      transform: 'translateY(-50%)',
+                    }}
+                  >
+                    <button
+                      id={`${item.cssVariableName}`}
+                      class={
+                        darkMode
+                          ? 'color_token_copy-paste-button_dark'
+                          : 'color_token_copy-paste-button'
+                      }
+                      style={{
+                        border: `${
+                          darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                        }`,
+                        borderRadius: '4px',
+                        padding: 'var(--telekom-spacing-unit-x1)',
+                        cursor: 'pointer',
+                        backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                      }}
+                      onClick={(event) => {
+                        navigator.clipboard.writeText(event.target.id);
+                      }}
+                    >
+                      <scale-icon-action-copy-paste
+                        size={15}
+                        accessibility-title="copy-paste"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  js
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '30px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      lineHeight: '30px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    {item.jsPathName}
+                  </span>
+                  <div
+                    style={{
+                      margin: '0',
+                      position: 'absolute',
+                      top: '50%',
+                      right: '5px',
+                      msTransform: 'translateY(-50%)',
+                      transform: 'translateY(-50%)',
+                    }}
+                  >
+                    <button
+                      id={`${item.jsPathName}`}
+                      class={
+                        darkMode
+                          ? 'color_token_copy-paste-button_dark'
+                          : 'color_token_copy-paste-button'
+                      }
+                      style={{
+                        border: `${
+                          darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                        }`,
+                        borderRadius: '4px',
+                        padding: 'var(--telekom-spacing-unit-x1)',
+                        cursor: 'pointer',
+                        backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                      }}
+                      onClick={(event) => {
+                        navigator.clipboard.writeText(event.target.id);
+                      }}
+                    >
+                      <scale-icon-action-copy-paste
+                        size={15}
+                        accessibility-title="copy-paste"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                    fontWeight: 500,
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  hex
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '30px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      lineHeight: '30px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    {item.value}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          ) : null;
+        }
+        function generateTableHead() {
+          return (
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    borderRight: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  Example
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    borderRight: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  Description
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                    width: '342px',
+                  }}
+                >
+                  Token
+                </th>
+              </tr>
+            </thead>
+          );
+        }
+        function generateSectionTitle(sectionTitleGerman, sectionTitleEnglish) {
+          return (
+            <div
+              style={{
+                marginTop: 'var(--telekom-spacing-unit-x12)',
+                marginBottom: 'var(--telekom-spacing-unit-x6)',
+                fontWeight: 800,
+                fontSize: '32px',
+                color: 'var(--telekom-color-text-and-icon-standard)',
+                paddingLeft: 'var(--telekom-spacing-unit-x2)',
+              }}
+            >
+              {locale === 'en' ? sectionTitleEnglish : sectionTitleGerman}
+            </div>
+          );
+        }
+        function generateColorModeLinkText() {
+          return locale === 'en'
+            ? `To the ${darkMode ? 'light' : 'dark'} mode color palette`
+            : `Zur Farbpalette des ${darkMode ? 'Light' : 'Dark'} Modes`;
+        }
+        function changeModeLink() {
+          const toggleMode = darkMode ? 'light' : 'dark';
+          channel.emit(UPDATE_GLOBALS, {
+            globals: { colorMode: toggleMode },
+          });
+        }
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <div>
+                <Description
+                  markdown={locale === 'en' ? text_first_en : text_first_de}
+                />
+                <a
+                  role="button"
+                  style={{
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => {
+                    changeModeLink();
+                  }}
+                >
+                  {generateColorModeLinkText()}
+                </a>
+                <div>
+                  <table
+                    style={{
+                      backgroundColor: `${darkMode ? '#000' : '#fff'}`,
+                    }}
+                  >
+                    <div>
+                      {generateSectionTitle(
+                        'Textfarben Standard',
+                        'Textcolor Standard'
+                      )}
+                      {generateTableHead()}
+                      <tbody>
+                        {generateTableColorRow(
+                          'color.text-&-icon.standard',
+                          'Für alle Standard Texte.',
+                          'For all standard texts.'
+                        )}
+                        {generateTableColorRow(
+                          'color.text-&-icon.additional',
+                          'Für Texte mit ergänzenden Informationen.',
+                          'For texts with additional information.'
+                        )}
+                        {generateTableColorRow(
+                          'color.text-&-icon.disabled',
+                          'Nur für Texte im disabled State.',
+                          'Only for texts in disabled state.'
+                        )}
+                      </tbody>
+                      {generateSectionTitle(
+                        'Textfarbe Funktion',
+                        'Textcolor Function'
+                      )}
+                      {generateTableHead()}
+                      <tbody>
+                        {generateTableColorRow(
+                          'color.text-&-icon.link.standard',
+                          'Für unterstützende Informationen sowie für Funktionen wie synchronisieren, sortieren und hinzufügen.',
+                          'For supporting information as well as for functions like synchronize, sort and add.'
+                        )}
+                        {generateTableColorRow(
+                          'color.text-&-icon.functional.success',
+                          'Bestätigt eine erfolgreich durchgeführte Aktion oder für Funktion wie senden, anrufen und aktivieren.',
+                          ''
+                        )}
+                        {generateTableColorRow(
+                          'color.text-&-icon.functional.danger',
+                          'Für Fehlermeldungen oder Funktionen wie beenden und löschen.',
+                          'Confirms a successfully performed action or for function like send, call and activate.'
+                        )}
+                        {generateTableColorRow(
+                          'color.text-&-icon.functional.warning',
+                          'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
+                          'For warnings of potentially undesirable results.'
+                        )}
+                        {generateTableColorRow(
+                          'color.text-&-icon.functional.informational',
+                          'Für unterstützende Informationen.',
+                          'For supporting information.'
+                        )}
+                      </tbody>
+                    </div>
+                  </table>
+                </div>
+                <Description
+                  markdown={locale === 'en' ? text_second_en : text_second_de}
+                />
+              </div>
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

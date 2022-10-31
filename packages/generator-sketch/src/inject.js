@@ -9,8 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-const nodeTreeToSketchPage = require('@telekom/scale-html-to-sketch')
-  .nodeTreeToSketchPage;
+const nodeTreeToSketchPage =
+  require('@telekom/scale-html-to-sketch').nodeTreeToSketchPage;
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
@@ -113,11 +113,9 @@ puppeteer
           if (node.shadowRoots && node.shadowRoots[0]) {
             await Promise.all(
               (nodesByParent[node.shadowRoots[0].nodeId] || []).map((n) =>
-                recursivelyForcePseudoState(
-                  n,
-                  state,
-                  depth + 1
-                ).catch((e) => {})
+                recursivelyForcePseudoState(n, state, depth + 1).catch(
+                  (e) => {}
+                )
               )
             );
           }

@@ -11,82 +11,88 @@
 
 import React from 'react';
 import { DocsWrapper, DocsContent } from '@storybook/components';
-import { Description } from '@storybook/addon-docs/blocks';
+import { Description } from '@storybook/components';
 import { useStorybookState, useGlobals } from '@storybook/api';
-import accordion_en from 'raw-loader!../../stories/3_components/accordion/accordion.md';
-import accordion_de from 'raw-loader!../../stories/3_components/accordion/accordion_de.md';
-import brandHeader_en from 'raw-loader!../../stories/3_components/brand-header-navigation/brand-header.md';
-import brandHeader_de from 'raw-loader!../../stories/3_components/brand-header-navigation/brand-header_de.md';
-import breadcrumb_en from 'raw-loader!../../stories/3_components/breadcrumb/breadcrumb.md';
-import breadcrumb_de from 'raw-loader!../../stories/3_components/breadcrumb/breadcrumb_de.md';
-import button_en from 'raw-loader!../../stories/3_components/button/button.md';
-import button_de from 'raw-loader!../../stories/3_components/button/button_de.md';
-import card_en from 'raw-loader!../../stories/3_components/card/card.md';
-import card_de from 'raw-loader!../../stories/3_components/card/card_de.md';
-import checkbox_en from 'raw-loader!../../stories/3_components/checkbox/checkbox.md';
-import checkbox_de from 'raw-loader!../../stories/3_components/checkbox/checkbox_de.md';
-import checkboxGroup_en from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group.md';
-import checkboxGroup_de from 'raw-loader!../../stories/3_components/checkbox-group/checkbox-group_de.md';
-import datagrid_en from 'raw-loader!../../stories/3_components/data-grid/data-grid.md';
-import datagrid_de from 'raw-loader!../../stories/3_components/data-grid/data-grid_de.md';
-import date_picker_en from 'raw-loader!../../stories/3_components/date-picker/date-picker.md';
-import date_picker_de from 'raw-loader!../../stories/3_components/date-picker/date-picker_de.md';
-import divider_en from 'raw-loader!../../stories/3_components/divider/divider.md';
-import divider_de from 'raw-loader!../../stories/3_components/divider/divider_de.md';
-import icon_en from 'raw-loader!../../stories/3_components/icon/icon.md';
-import icon_de from 'raw-loader!../../stories/3_components/icon/icon_de.md';
-import linkMarkdown_en from 'raw-loader!../../stories/3_components/link/link.md';
-import linkMarkdown_de from 'raw-loader!../../stories/3_components/link/link_de.md';
-import logo_en from 'raw-loader!../../stories/3_components/logo/logo.md';
-import logo_de from 'raw-loader!../../stories/3_components/logo/logo_de.md';
-import loadingSpinner_en from 'raw-loader!../../stories/3_components/loading-spinner/loading-spinner.md';
-import loadingSpinner_de from 'raw-loader!../../stories/3_components/loading-spinner/loading-spinner_de.md';
-import list_en from 'raw-loader!../../stories/3_components/list/list.md';
-import list_de from 'raw-loader!../../stories/3_components/list/list_de.md';
-import menuFlyout_en from 'raw-loader!../../stories/3_components/flyout-menu/menu-flyout.md';
-import menuFlyout_de from 'raw-loader!../../stories/3_components/flyout-menu/menu-flyout_de.md';
-import modal_en from 'raw-loader!../../stories/3_components/modal/modal.md';
-import modal_de from 'raw-loader!../../stories/3_components/modal/modal_de.md';
-import notificationBadge_de from 'raw-loader!../../stories/3_components/notification-badge/notification-badge_de.md';
-import notificationBadge_en from 'raw-loader!../../stories/3_components/notification-badge/notification-badge.md';
-import notificationMessage_de from 'raw-loader!../../stories/3_components/notification-message/notification-message_de.md';
-import notificationMessage_en from 'raw-loader!../../stories/3_components/notification-message/notification-message.md';
-import pagination_en from 'raw-loader!../../stories/3_components/pagination/pagination.md';
-import pagination_de from 'raw-loader!../../stories/3_components/pagination/pagination_de.md';
-import progressBar_en from 'raw-loader!../../stories/3_components/progress-bar/progress-bar.md';
-import progressBar_de from 'raw-loader!../../stories/3_components/progress-bar/progress-bar_de.md';
-import radioButton_en from 'raw-loader!../../stories/3_components/radio-button/radio-button.md';
-import radioButton_de from 'raw-loader!../../stories/3_components/radio-button/radio-button_de.md';
-import ratingStars_en from 'raw-loader!../../stories/3_components/rating-stars/rating-stars.md';
-import ratingStars_de from 'raw-loader!../../stories/3_components/rating-stars/rating-stars_de.md';
-import radioButtonGroup_de from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group_de.md';
-import radioButtonGroup_en from 'raw-loader!../../stories/3_components/radio-button-group/radio-button-group.md';
-import dropdown_en from 'raw-loader!../../stories/3_components/dropdown/dropdown.md';
-import dropdown_de from 'raw-loader!../../stories/3_components/dropdown/dropdown_de.md';
-import sidebarNav_en from 'raw-loader!../../stories/3_components/sidebar-navigation/sidebar-nav.md';
-import sidebarNav_de from 'raw-loader!../../stories/3_components/sidebar-navigation/sidebar-nav_de.md';
-import slider_en from 'raw-loader!../../stories/3_components/slider/slider.md';
-import slider_de from 'raw-loader!../../stories/3_components/slider/slider_de.md';
-import switchMarkdown_en from 'raw-loader!../../stories/3_components/switch/switch.md';
-import switchMarkdown_de from 'raw-loader!../../stories/3_components/switch/switch_de.md';
-import tabNavigation_en from 'raw-loader!../../stories/3_components/tab-navigation/tab-navigation.md';
-import tabNavigation_de from 'raw-loader!../../stories/3_components/tab-navigation/tab-navigation_de.md';
-import table_en from 'raw-loader!../../stories/3_components/table/table.md';
-import table_de from 'raw-loader!../../stories/3_components/table/table_de.md';
-import tag_en from 'raw-loader!../../stories/3_components/tag/tag.md';
-import tag_de from 'raw-loader!../../stories/3_components/tag/tag_de.md';
-import textArea_en from 'raw-loader!../../stories/3_components/text-area/text-area.md';
-import textArea_de from 'raw-loader!../../stories/3_components/text-area/text-area_de.md';
-import textField_en from 'raw-loader!../../stories/3_components/text-field/text-field.md';
-import textField_de from 'raw-loader!../../stories/3_components/text-field/text-field_de.md';
-import footer_en from 'raw-loader!../../stories/3_components/footer/footer.md';
-import footer_de from 'raw-loader!../../stories/3_components/footer/footer_de.md';
-import callout_en from 'raw-loader!../../stories/3_components/callout/callout.md';
-import callout_de from 'raw-loader!../../stories/3_components/callout/callout_de.md';
-import toggleGroup_de from 'raw-loader!../../stories/3_components/toggle-group/toggle-group_de.md';
-import toggleGroup_en from 'raw-loader!../../stories/3_components/toggle-group/toggle-group.md';
-import tooltip_en from 'raw-loader!../../stories/3_components/tooltip/tooltip.md';
-import tooltip_de from 'raw-loader!../../stories/3_components/tooltip/tooltip_de.md';
+import accordion_en from 'raw-loader!../../stories/components/accordion/accordion.md';
+import accordion_de from 'raw-loader!../../stories/components/accordion/accordion_de.md';
+import brandHeader_en from 'raw-loader!../../stories/components/brand-header-navigation/brand-header.md';
+import brandHeader_de from 'raw-loader!../../stories/components/brand-header-navigation/brand-header_de.md';
+import breadcrumb_en from 'raw-loader!../../stories/components/breadcrumb/breadcrumb.md';
+import breadcrumb_de from 'raw-loader!../../stories/components/breadcrumb/breadcrumb_de.md';
+import button_en from 'raw-loader!../../stories/components/button/button.md';
+import button_de from 'raw-loader!../../stories/components/button/button_de.md';
+import card_en from 'raw-loader!../../stories/components/card/card.md';
+import card_de from 'raw-loader!../../stories/components/card/card_de.md';
+import checkbox_en from 'raw-loader!../../stories/components/checkbox/checkbox.md';
+import checkbox_de from 'raw-loader!../../stories/components/checkbox/checkbox_de.md';
+import checkboxGroup_en from 'raw-loader!../../stories/components/checkbox-group/checkbox-group.md';
+import checkboxGroup_de from 'raw-loader!../../stories/components/checkbox-group/checkbox-group_de.md';
+import datagrid_en from 'raw-loader!../../stories/components/data-grid/data-grid.md';
+import datagrid_de from 'raw-loader!../../stories/components/data-grid/data-grid_de.md';
+import date_picker_en from 'raw-loader!../../stories/components/date-picker/date-picker.md';
+import date_picker_de from 'raw-loader!../../stories/components/date-picker/date-picker_de.md';
+import divider_en from 'raw-loader!../../stories/components/divider/divider.md';
+import divider_de from 'raw-loader!../../stories/components/divider/divider_de.md';
+import icon_en from 'raw-loader!../../stories/components/icon/icon.md';
+import icon_de from 'raw-loader!../../stories/components/icon/icon_de.md';
+import linkMarkdown_en from 'raw-loader!../../stories/components/link/link.md';
+import linkMarkdown_de from 'raw-loader!../../stories/components/link/link_de.md';
+import logo_en from 'raw-loader!../../stories/components/logo/logo.md';
+import logo_de from 'raw-loader!../../stories/components/logo/logo_de.md';
+import loadingSpinner_en from 'raw-loader!../../stories/components/loading-spinner/loading-spinner.md';
+import loadingSpinner_de from 'raw-loader!../../stories/components/loading-spinner/loading-spinner_de.md';
+import list_en from 'raw-loader!../../stories/components/list/list.md';
+import list_de from 'raw-loader!../../stories/components/list/list_de.md';
+import menuFlyout_en from 'raw-loader!../../stories/components/flyout-menu/menu-flyout.md';
+import menuFlyout_de from 'raw-loader!../../stories/components/flyout-menu/menu-flyout_de.md';
+import modal_en from 'raw-loader!../../stories/components/modal/modal.md';
+import modal_de from 'raw-loader!../../stories/components/modal/modal_de.md';
+import notificationBadge_de from 'raw-loader!../../stories/components/notification-badge/notification-badge_de.md';
+import notificationBadge_en from 'raw-loader!../../stories/components/notification-badge/notification-badge.md';
+import notificationBanner_de from 'raw-loader!../../stories/components/notification-banner/notification-banner_de.md';
+import notificationBanner_en from 'raw-loader!../../stories/components/notification-banner/notification-banner.md';
+import notificationMessage_de from 'raw-loader!../../stories/components/notification-message/notification-message_de.md';
+import notificationMessage_en from 'raw-loader!../../stories/components/notification-message/notification-message.md';
+import notificationToast_de from 'raw-loader!../../stories/components/notification-toast/notification-toast_de.md';
+import notificationToast_en from 'raw-loader!../../stories/components/notification-toast/notification-toast.md';
+import pagination_en from 'raw-loader!../../stories/components/pagination/pagination.md';
+import pagination_de from 'raw-loader!../../stories/components/pagination/pagination_de.md';
+import progressBar_en from 'raw-loader!../../stories/components/progress-bar/progress-bar.md';
+import progressBar_de from 'raw-loader!../../stories/components/progress-bar/progress-bar_de.md';
+import radioButton_en from 'raw-loader!../../stories/components/radio-button/radio-button.md';
+import radioButton_de from 'raw-loader!../../stories/components/radio-button/radio-button_de.md';
+import ratingStars_en from 'raw-loader!../../stories/components/rating-stars/rating-stars.md';
+import ratingStars_de from 'raw-loader!../../stories/components/rating-stars/rating-stars_de.md';
+import radioButtonGroup_de from 'raw-loader!../../stories/components/radio-button-group/radio-button-group_de.md';
+import radioButtonGroup_en from 'raw-loader!../../stories/components/radio-button-group/radio-button-group.md';
+import dropdownSelect_en from 'raw-loader!../../stories/components/dropdown-select/dropdown-select.md';
+import dropdownSelect_de from 'raw-loader!../../stories/components/dropdown-select/dropdown-select_de.md';
+import dropdown_en from 'raw-loader!../../stories/components/dropdown/dropdown.md';
+import dropdown_de from 'raw-loader!../../stories/components/dropdown/dropdown_de.md';
+import sidebarNav_en from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav.md';
+import sidebarNav_de from 'raw-loader!../../stories/components/sidebar-navigation/sidebar-nav_de.md';
+import slider_en from 'raw-loader!../../stories/components/slider/slider.md';
+import slider_de from 'raw-loader!../../stories/components/slider/slider_de.md';
+import switchMarkdown_en from 'raw-loader!../../stories/components/switch/switch.md';
+import switchMarkdown_de from 'raw-loader!../../stories/components/switch/switch_de.md';
+import tabNavigation_en from 'raw-loader!../../stories/components/tab-navigation/tab-navigation.md';
+import tabNavigation_de from 'raw-loader!../../stories/components/tab-navigation/tab-navigation_de.md';
+import table_en from 'raw-loader!../../stories/components/table/table.md';
+import table_de from 'raw-loader!../../stories/components/table/table_de.md';
+import tag_en from 'raw-loader!../../stories/components/tag/tag.md';
+import tag_de from 'raw-loader!../../stories/components/tag/tag_de.md';
+import textArea_en from 'raw-loader!../../stories/components/text-area/text-area.md';
+import textArea_de from 'raw-loader!../../stories/components/text-area/text-area_de.md';
+import textField_en from 'raw-loader!../../stories/components/text-field/text-field.md';
+import textField_de from 'raw-loader!../../stories/components/text-field/text-field_de.md';
+import footer_en from 'raw-loader!../../stories/components/footer/footer.md';
+import footer_de from 'raw-loader!../../stories/components/footer/footer_de.md';
+import callout_en from 'raw-loader!../../stories/components/callout/callout.md';
+import callout_de from 'raw-loader!../../stories/components/callout/callout_de.md';
+import toggleGroup_de from 'raw-loader!../../stories/components/toggle-group/toggle-group_de.md';
+import toggleGroup_en from 'raw-loader!../../stories/components/toggle-group/toggle-group.md';
+import tooltip_en from 'raw-loader!../../stories/components/tooltip/tooltip.md';
+import tooltip_de from 'raw-loader!../../stories/components/tooltip/tooltip_de.md';
 
 const NOT_A_COMPONENT_MD = '`Browse to any component to see usage.`';
 const COMPONENT_NOT_MAPPED_MD =
@@ -149,8 +155,12 @@ const Usage = (props) => {
     modal_de,
     'notification-badge_en': notificationBadge_en,
     'notification-badge_de': notificationBadge_de,
+    'notification-banner_en': notificationBanner_en,
+    'notification-banner_de': notificationBanner_de,
     'notification-message_en': notificationMessage_en,
     'notification-message_de': notificationMessage_de,
+    'notification-toast_en': notificationToast_en,
+    'notification-toast_de': notificationToast_de,
     pagination_en,
     pagination_de,
     'progress-bar_en': progressBar_en,
@@ -161,6 +171,8 @@ const Usage = (props) => {
     'radio-button-group_de': radioButtonGroup_de,
     'rating-stars_en': ratingStars_en,
     'rating-stars_de': ratingStars_de,
+    'dropdown-select_en': dropdownSelect_en,
+    'dropdown-select_de': dropdownSelect_de,
     dropdown_en,
     dropdown_de,
     'sidebar-navigation_en': sidebarNav_en,

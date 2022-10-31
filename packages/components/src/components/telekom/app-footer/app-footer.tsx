@@ -31,10 +31,14 @@ const readData = (data) => {
 })
 export class AppFooter {
   @Element() hostElement: HTMLStencilElement;
-  @Prop() claimLang: string;
   @Prop() footerNavigation?: any = [];
   @Prop() variant?: string = 'standard';
   @Prop() copyright?: string = '© Deutsche Telekom AG';
+  @Prop() logoHref?: string;
+  @Prop() logoTitle?: string;
+  @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
+  @Prop() claimLang: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   hasSlotLogo: boolean;
@@ -60,7 +64,16 @@ export class AppFooter {
                 {this.hasSlotLogo ? (
                   <slot name="logo"></slot>
                 ) : (
-                  <app-logo claim claimLang={this.claimLang}></app-logo>
+                  <scale-logo
+                    transparent
+                    variant="white"
+                    language={this.claimLang}
+                    size={24}
+                    href={this.logoHref}
+                    logoTitle={this.logoTitle}
+                    onClick={this.logoClick}
+                    logoAriaDescribedBy={this.logoAriaDescribedBy}
+                  ></scale-logo>
                 )}
               </div>
               <div class="footer-copyright">{this.copyright}</div>

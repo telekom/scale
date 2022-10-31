@@ -2,7 +2,7 @@
   <div class="hello">
     <h1 class="scl-font-variant-heading-1">{{ msg }}</h1>
     <scale-button
-      href="https://www.brand-design.telekom.com/scale/?path=/story/scale-for-developers-scale-and-angular--page"
+      href="https://telekom.github.io/scale/?path=/story/scale-for-developers-scale-and-angular--page"
       title="External link"
     >
       Open the docs

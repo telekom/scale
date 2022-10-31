@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property       | Attribute       | Description                    | Type      | Default     |
-| -------------- | --------------- | ------------------------------ | --------- | ----------- |
-| `expanded`     | `expanded`      | Set to `true` to expand        | `boolean` | `undefined` |
-| `headingLevel` | `heading-level` | Default aria-level for heading | `number`  | `2`         |
-| `styles`       | `styles`        | (optional) Injected CSS styles | `string`  | `undefined` |
+| Property       | Attribute       | Description                    | Type                | Default     |
+| -------------- | --------------- | ------------------------------ | ------------------- | ----------- |
+| `expanded`     | `expanded`      | Set to `true` to expand        | `boolean`           | `undefined` |
+| `headingLevel` | `heading-level` | Default aria-level for heading | `number`            | `2`         |
+| `iconLocation` | `icon-location` |                                | `"left" \| "right"` | `'left'`    |
+| `styles`       | `styles`        | (optional) Injected CSS styles | `string`            | `undefined` |
 
 
 ## Events

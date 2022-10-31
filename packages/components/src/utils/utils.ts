@@ -91,3 +91,14 @@ export function isClickOutside(event: MouseEvent, host: HTMLElement) {
   } while (target);
   return true;
 }
+
+export interface ScaleIcon extends Element {
+  size?: number;
+}
+
+export const isScaleIcon = (el: Node) => {
+  if (el == null) {
+    return false;
+  }
+  return el.nodeName.toUpperCase().substring(0, 10) === 'SCALE-ICON';
+};

@@ -1,0 +1,316 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleTag from './ScaleTag.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Components/Tag"
+  component={ScaleTag}
+  argTypes={{
+    size: {
+      control: { type: 'select', options: ['default', 'small'] },
+    },
+    label: {
+      control: { type: 'text' },
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          'cyan',
+          'yellow',
+          'green',
+          'orange',
+          'red',
+          'violet',
+          'brown',
+          'olive',
+          'teal',
+          'grey',
+        ],
+      },
+    },
+    type: {
+      control: {
+        type: 'select',
+        options: ['strong', 'standard'],
+      },
+    },
+    styles: {
+      control: { disable: true },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: {
+    label: String,
+    ...ScaleTag.props,
+  },
+  template: `
+    <scale-tag
+      :disabled="disabled"
+      :dismissable="dismissable"
+      :href="href"
+      :size="size"
+      :target="target"
+      :color="color"
+      :type="type"
+      @scaleClose="action('scaleClose')($event)"
+    >
+    {{ label }}
+    </scale-tag>
+  `,
+  methods: {
+    action,
+  },
+});
+
+export const TemplateInteractive = (args, { argTypes }) => ({
+  template: `
+      <ul aria-label="colors" style="display: flex; list-style: none; padding: 0;">
+          <li v-for="color in colors" :key="color" style="margin-right: 4px;">
+            <scale-tag
+                dismissable="true"
+                type="strong"
+                v-bind:color=color
+                v-bind:dismiss-text="'Remove ' + color + ' from the list'"
+                @scaleClose="removeColor(color)"
+            >
+                {{color}}
+            </scale-tag>
+            <div style="height: 10px"/>
+             <scale-tag
+                dismissable="true"
+                type="standard"
+                v-bind:color=color
+                v-bind:dismiss-text="'Remove ' + color + ' from the list'"
+                @scaleClose="removeColor(color)"
+            >
+                {{color}}
+            </scale-tag>
+          </li>
+      </ul>
+  `,
+  methods: {
+    action: action('scaleClose'),
+    removeColor(color) {
+      this.action();
+      this.colors = this.colors.filter((x) => x !== color);
+      setTimeout(() => {
+        this.$el.querySelector('#root > ul > li > scale-tag') &&
+          this.$el
+            .querySelector('#root > ul > li > scale-tag')
+            .shadowRoot.querySelector('span > button')
+            .focus();
+      });
+    },
+  },
+  data: () => ({
+    colors: [
+      'grey',
+      'cyan',
+      'yellow',
+      'green',
+      'orange',
+      'red',
+      'violet',
+      'brown',
+      'olive',
+      'teal',
+    ],
+  }),
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Tag</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'A tag',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+:host {
+  --background: var(--telekom-color-ui-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --radius: var(--telekom-radius-small);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+
+  --icon-color: var(--color);
+  --icon-color-hover: var(--color);
+  --color-secondary: var(--telekom-color-text-and-icon-white-standard);
+  --background-secondary: var(--telekom-color-additional-teal-600);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-state-fill-pressed);
+
+  --background-disabled: var(--telekom-color-ui-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+
+  --spacing-left-dismissable: var(--telekom-spacing-unit-x05);
+
+  --border-button-dismissable-focus: 1px solid var(--telekom-color-ui-border-standard);
+  --box-shadow-button-dismissable-focus: var(--box-shadow-focus);
+  --background-button-dismissable-hover: var(
+    --telekom-color-ui-state-fill-hovered-inverted
+  );
+  --background-button-dismissable-active: var(
+    --telekom-color-ui-state-fill-pressed-inverted
+  );
+  --height-button-dismissable-small: 20px;
+
+  --spacing-small: 0 var(--telekom-spacing-unit-x2);
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-loose);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
+## Dismissable tag
+
+<Canvas withSource="none">
+  <Story
+    name="Dismissable tag"
+    args={{
+      label: 'Dismissable tag',
+      dismissable: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tag dismissable>A dismissable tag</scale-tag>
+```
+
+## Small tag
+
+<Canvas withSource="none">
+  <Story
+    name="Small tag"
+    args={{
+      label: 'Small tag',
+      size: 'small',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tag size="small">A small tag</scale-tag>
+```
+
+## Small dismissable tag
+
+<Canvas withSource="none">
+  <Story
+    name="Small dismissable tag"
+    args={{
+      label: 'Small dismissable tag',
+      size: 'small',
+      dismissable: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tag size="small" dismissable>A small dismissable tag</scale-tag>
+```
+
+## Disabled dismissable tag
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled dismissable tag"
+    args={{
+      label: 'Disabled dismissable tag',
+      disabled: true,
+      dismissable: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tag disabled dismissable>Disabled dismissable tag</scale-tag>
+```
+
+## Colors
+
+<Canvas withSource="none">
+  <Story name="Colors">{TemplateInteractive.bind({})}</Story>
+</Canvas>
+
+## Color standard tag
+
+<Canvas withSource="none">
+  <Story
+    name="Color standard tag"
+    args={{
+      label: 'Color standard tag',
+      color: 'red',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tag color="red" type="standard">Color tag</scale-tag>
+```
+
+## Color strong tag
+
+<Canvas withSource="none">
+  <Story
+    name="Color strong tag"
+    args={{
+      label: 'Color strong tag',
+      color: 'red',
+      type: 'strong',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tag color="red" type="strong">Color tag</scale-tag>
+```

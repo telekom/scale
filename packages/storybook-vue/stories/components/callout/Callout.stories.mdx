@@ -1,0 +1,274 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleCallout from './ScaleCallout.vue';
+
+export const CANVAS_HEIGHT = 180
+
+<Meta
+  title="Beta Components/Callout"
+  component={ScaleCallout}
+  argTypes={{
+    variant: {
+      options: ['standard', 'primary', 'blue', 'white', 'black'],
+      defaultValue: 'standard',
+      control: {
+        type: 'select',
+      },
+    },
+    rotation: {
+      defaultValue: 0,
+      control: {
+        type: 'number',
+      },
+    },
+    top: {
+      control: {
+        type: 'text',
+      },
+    },
+    right: {
+      control: {
+        type: 'text',
+      },
+    },
+    bottom: {
+      control: {
+        type: 'text',
+      },
+    },
+    left: {
+      control: {
+        type: 'text',
+      },
+    },
+  }}
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Callout</h1>
+  <img src="assets/beta.png" alt="Beta Component" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{ variant: 'primary' }}
+  >
+    {{
+      props: {
+        ...ScaleCallout.props,
+      },
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout
+            :variant="variant"
+            :rotation="rotation"
+            :top="top"
+            :right="right"
+            :bottom="bottom"
+            :left="left"
+          >
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-callout variant="primary">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### Scoped CSS variables
+
+```css
+ :host {
+  --position: absolute;
+  --background: var(--telekom-color-ui-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --spacing: var(--telekom-spacing-unit-x6);
+  --min-width: 6rem;
+  --aspect-ratio: 1;
+  --rotation: 0deg;
+  --font-standard: var(--telekom-text-style-lead-text);
+  --font-small: var(--telekom-text-style-body-bold);
+  --font-large: var(--telekom-text-style-heading-1);
+}
+```
+
+## Variants
+
+### Primary
+
+<Canvas withSource="none">
+  <Story name="Primary">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="primary">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="primary">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### Black
+
+<Canvas withSource="none">
+  <Story name="Black">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="black">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="black">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### White
+
+<Canvas withSource="none" style={{ background: '#222' }}>
+  <Story name="White">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="white">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="white">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+### Blue
+
+<Canvas withSource="none">
+  <Story name="Blue">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="blue">
+            <span class="scl-callout-text-small">Now only</span>
+            <span class="scl-callout-text-large">15&#8364;</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="blue">
+  <span class="scl-callout-text-small">Now only</span>
+  <span class="scl-callout-text-large">15&#8364;</span>
+</scale-callout>
+```
+
+## Font Sizes
+
+### Medium
+
+<Canvas withSource="none">
+  <Story name="Medium">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="black">
+            <span>Bis zu 200 &#8364;</span>
+            <span>Tauschprämie +</span>
+            <span>Altgerätewert</span>
+            <span>erhalten</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="black">
+  <span>Bis zu 200 &#8364;</span>
+  <span>Tauschprämie +</span>
+  <span>Altgerätewert</span>
+  <span>erhalten</span>
+</scale-callout>
+```
+
+### Large and Small
+
+For convenience, two scoped CSS classes are provided for large and small text: `scl-callout-text-large` and `scl-callout-text-small`. But any size can be set using CSS.
+
+<Canvas withSource="none">
+  <Story name="Large and Small">
+    {{
+      template: `
+        <div style="min-height: ${CANVAS_HEIGHT}px">
+          <scale-callout variant="primary">
+            <span>LOREM</span>
+            <span class="scl-callout-text-large">ipsum</span>
+            <span class="scl-callout-text-small">dolor sit amet</span>
+          </scale-callout>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-callout variant="primary">
+  <span>LOREM</span>
+  <span class="scl-callout-text-large">ipsum</span>
+  <span class="scl-callout-text-small">dolor sit amet</span>
+</scale-callout>
+```

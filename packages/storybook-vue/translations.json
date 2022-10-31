@@ -15,100 +15,108 @@
     "de": "FAQ"
   },
   {
-    "elementSelector": "#scale-for-designers",
-    "en": "Scale for Designers",
-    "de": "Design mit Scale"
+    "elementSelector": "#setup-info",
+    "en": "Setup & Info",
+    "de": "Setup & Info"
   },
   {
-    "elementSelector": "#scale-for-designers-getting-started--page",
+    "elementSelector": "#new-release",
+    "en": "New Release",
+    "de": "New Release"
+  },  
+  {
+    "elementSelector": "#new-release-release-notes--page",
+    "en": "Release Notes",
+    "de": "Release Notes"
+  },
+  {
+    "elementSelector": "#new-release-sketch-library-update--page",
+    "en": "Update Sketch Library",
+    "de": "Update Sketch Library"
+  },
+  {
+    "elementSelector": "#setup-info-getting-started-for-designers--page",
     "en": "Getting Started for Designers",
     "de": "Erste Schritte für Designer*innen"
   },
   {
-    "elementSelector": "#scale-for-designers-grid--page",
-    "en": "Grid",
-    "de": "Gestaltungsraster"
+    "elementSelector": "#setup-info-getting-started-for-developers--page",
+    "en": "Getting Started for Developers",
+    "de": "Erste Schritte für Entwickler*innen"
   },
   {
-    "elementSelector": "#scale-for-designers-spacing--page",
-    "en": "Spacing",
-    "de": "Abstände"
-  },
-  {
-    "elementSelector": "#scale-for-designers-typography--page",
-    "en": "Typography",
-    "de": "Typografie"
-  },
-  {
-    "elementSelector": "#scale-for-designers-colors--page",
-    "en": "Colors",
-    "de": "Farben"
-  },
-  {
-    "elementSelector": "#scale-for-designers-design-updates--page",
-    "en": "Design Updates",
-    "de": "Design Updates"
-  },
-  {
-    "elementSelector": "#scale-for-developers",
-    "en": "Scale for Developers",
-    "de": "Entwicklung mit Scale"
-  },
-  {
-    "elementSelector": "#scale-for-developers-setup--page",
-    "en": "Setup for Developers",
-    "de": "Setup für Entwickler*innen"
-  },
-  {
-    "elementSelector": "#scale-for-developers-icon-library--page",
-    "en": "Icon Library",
-    "de": "Icon Library"
-  },
-  {
-    "elementSelector": "#scale-for-developers-scale-and-vue--page",
+    "elementSelector": "#setup-info-scale-and-vue--page",
     "en": "Scale and Vue",
     "de": "Scale und Vue"
   },
   {
-    "elementSelector": "#scale-for-developers-scale-and-vue--page",
-    "en": "Scale and Vue",
-    "de": "Scale und Vue"
-  },
-  {
-    "elementSelector": "#scale-for-developers-scale-and-angular--page",
+    "elementSelector": "#setup-info-scale-and-angular--page",
     "en": "Scale and Angular",
     "de": "Scale und Angular"
   },
   {
-    "elementSelector": "#scale-for-developers-scale-and-react--page",
+    "elementSelector": "#setup-info-scale-and-react--page",
     "en": "Scale and React",
     "de": "Scale und React"
   },
   {
-    "elementSelector": "#scale-for-developers-accessibility--page",
+    "elementSelector": "#setup-info-accessibility--page",
     "en": "Accessibility",
     "de": "Barrierefreiheit"
   },
   {
-    "elementSelector": "#scale-for-developers-design-tokens--page",
+    "elementSelector": "#setup-info-browser-support--page",
+    "en": "Browser Support",
+    "de": "Unterstützte Internet-Browser"
+  },
+
+  {
+    "elementSelector": "#guidelines",
+    "en": "Guidelines",
+    "de": "Guidelines"
+  },
+
+  {
+    "elementSelector": "#guidelines-grid--page",
+    "en": "Grid",
+    "de": "Gestaltungsraster"
+  },
+  {
+    "elementSelector": "#guidelines-spacing--page",
+    "en": "Spacing",
+    "de": "Abstände"
+  },
+  {
+    "elementSelector": "#guidelines-typography--page",
+    "en": "Typography",
+    "de": "Typografie"
+  },
+  {
+    "elementSelector": "#guidelines-colors--page",
+    "en": "Colors",
+    "de": "Farben"
+  },
+  {
+    "elementSelector": "#guidelines-design-tokens--page",
     "en": "Design Tokens",
     "de": "Design Tokens"
   },
   {
-    "elementSelector": "#scale-for-developers-customization-and-themes--page",
+    "elementSelector": "#guidelines-customization-and-themes--page",
     "en": "Customization and Themes",
     "de": "Anpassungen und Themes"
   },
   {
-    "elementSelector": "#scale-for-developers-browser-support--page",
-    "en": "Browser Support",
-    "de": "Unterstützte Internet-Browser"
+    "elementSelector": "#guidelines-light-and-dark-mode--page",
+    "en": "Light and Dark Mode",
+    "de": "Light und Dark Mode"
   },
   {
-    "elementSelector": "#scale-for-developers-migration-guide-to-v2--page",
-    "en": "Migration Guide v2",
-    "de": "Migration Guide v2"
+    "elementSelector": "#guidelines-shadows--page",
+    "en": "Shadows",
+    "de": "Shadows"
   },
+
   {
     "elementSelector": "#components",
     "en": "Components",
@@ -119,10 +127,32 @@
     "en": "Beta Components",
     "de": "Beta Komponenten"
   },
+
+  {
+    "elementSelector": "#update-history",
+    "en": "Update History",
+    "de": "Update History"
+  },
+  {
+    "elementSelector": "#update-history-design--page",
+    "en": "Design",
+    "de": "Design"
+  },
+  {
+    "elementSelector": "#update-history-development--page",
+    "en": "Code",
+    "de": "Code"
+  },
+
   {
     "elementSelector": "#contact",
     "en": "Contact",
     "de": "Kontakt"
+  },
+  {
+    "elementSelector": "#legal",
+    "en": "Legal",
+    "de": "Legal"
   },
   {
     "elementSelector": "#contact-contributing-to-scale--page",
@@ -133,5 +163,20 @@
     "elementSelector": "#contact-your-feedback--page",
     "en": "Your Feedback",
     "de": "Feedback"
+  },
+  {
+    "elementSelector": "#legal-disclaimer--page",
+    "en": "Disclaimer",
+    "de": "Haftungsausschluss"
+  },
+  {
+    "elementSelector": "#legal-legal-notice--page",
+    "en": "Legal Notice",
+    "de": "Impressum"
+  },
+  {
+    "elementSelector": "#legal-privacy--page",
+    "en": "Data Privacy Policy",
+    "de": "Datenschutzhinweise"
   }
 ]

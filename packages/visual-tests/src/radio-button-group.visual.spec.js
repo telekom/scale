@@ -1,54 +1,43 @@
 describe('RadioButtonGroup', () => {
-  test.each([['standard'], ['error'], ['helper-text']])(
-    '%p',
-    async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-radio-button-group--${variant}&viewMode=story`
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup(
+        'components-radio-button-group--standard',
+        mode
       );
-      await page.waitForSelector('html.hydrated');
-      const previewHtml = await page.$('body');
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    }
-  );
-  // focus, hover, active, click
-  test.each([['standard']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-radio-button-group--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
     });
+    test.each([['standard'], ['error'], ['helper-text']])(
+      '%p',
+      async (variant) => {
+        await global.runSetup(`components-radio-button-group--${variant}`);
 
-    const firstRadioButton = await page.evaluateHandle(
-      `document.querySelector("#root > div > scale-radio-button-group > scale-radio-button:nth-child(1) input[type=radio]")`
+        await global.visualCheck();
+      }
     );
-    const label = await page.evaluateHandle(
-      `document.querySelector("#root scale-radio-button-group > scale-radio-button:nth-child(1) > div > label")`
-    );
-    const base = await page.evaluateHandle(`document.querySelector("#root")`);
+    // focus, hover, active, click
+    test.each([['standard']])('%p', async (variant) => {
+      await global.runSetup(`components-radio-button-group--${variant}`);
+      const firstRadioButton = await global.page.evaluateHandle(
+        `document.querySelector("#root > div > scale-radio-button-group > scale-radio-button:nth-child(1) input[type=radio]")`
+      );
+      const label = await global.page.evaluateHandle(
+        `document.querySelector("#root scale-radio-button-group > scale-radio-button:nth-child(1) > div > label")`
+      );
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
-    await firstRadioButton.focus();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await base.click();
-    await label.hover();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await base.click();
-    await page.mouse.move(40, 70);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await firstRadioButton.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await firstRadioButton.focus();
+      await global.visualCheck();
+      await base.click();
+      await label.hover();
+      await global.visualCheck();
+      await base.click();
+      await global.page.mouse.move(40, 70);
+      await global.page.mouse.down();
+      await global.visualCheck();
+      await firstRadioButton.click();
+      await global.visualCheck();
+    });
   });
 });

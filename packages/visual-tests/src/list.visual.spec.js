@@ -1,14 +1,17 @@
 describe('List', () => {
-  test.each([['ordered'], ['unordered'], ['unordered-with-custom-icon']])(
-    '%p',
-    async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-list--${variant}&viewMode=story`
-      );
-      await page.waitForSelector('html.hydrated');
-      await page.waitFor(1000);
-      const previewHtml = await page.$('body');
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    }
-  );
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-list--standard', mode);
+    });
+    test.each([['ordered'], ['unordered'], ['unordered-with-custom-icon']])(
+      '%p',
+      async (variant) => {
+        await global.runSetup(`components-list--${variant}`);
+
+        await global.page.waitFor(1000);
+
+        await global.visualCheck();
+      }
+    );
+  });
 });

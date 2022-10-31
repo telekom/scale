@@ -17,11 +17,10 @@
 | `label`             | `label`              | (optional) Progress bar label                                                                   | `string`  | `undefined` |
 | `mute`              | `mute`               | (optional) disables aria-live                                                                   | `boolean` | `undefined` |
 | `percentage`        | `percentage`         | (required) Progress bar percentage                                                              | `number`  | `0`         |
+| `percentageStart`   | `percentage-start`   | (optional) Progress bar percentage to start the animation from (default: 0)                     | `number`  | `0`         |
 | `progressBarId`     | `progress-bar-id`    | (optional) Progress bar id                                                                      | `string`  | `undefined` |
-| `showStatus`        | `show-status`        | (optional) Progress bar percentage text                                                         | `boolean` | `undefined` |
+| `showStatus`        | `show-status`        | (optional) Progress bar percentage text                                                         | `boolean` | `true`      |
 | `statusDescription` | `status-description` | (optional) Progress bar status description text                                                 | `string`  | `undefined` |
-| `statusInside`      | `status-inside`      | (optional) Progress text display inside bar                                                     | `boolean` | `undefined` |
-| `strokeWidth`       | `stroke-width`       | (optional) Progress bar stroke width                                                            | `number`  | `6`         |
 | `styles`            | `styles`             | (optional) Injected CSS styles                                                                  | `string`  | `undefined` |
 
 
@@ -30,7 +29,6 @@
 | Part                   | Description |
 | ---------------------- | ----------- |
 | `"inner"`              |             |
-| `"inner-status"`       |             |
 | `"label"`              |             |
 | `"outer"`              |             |
 | `"status"`             |             |
@@ -44,9 +42,16 @@
 
  - [scale-data-grid](../data-grid)
 
+### Depends on
+
+- [scale-icon-alert-error](../icons/alert-error)
+- [scale-icon-alert-success](../icons/alert-success)
+
 ### Graph
 ```mermaid
 graph TD;
+  scale-progress-bar --> scale-icon-alert-error
+  scale-progress-bar --> scale-icon-alert-success
   scale-data-grid --> scale-progress-bar
   style scale-progress-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```

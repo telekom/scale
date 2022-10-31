@@ -1,0 +1,269 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleProgressBar from './ScaleProgressBar.vue';
+
+<Meta
+  title="Components/Progress Bar"
+  component={ScaleProgressBar}
+  parameters={{
+    controls: {
+      sort: 'alpha'
+    }
+  }}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleProgressBar },
+  props: {
+    ...ScaleProgressBar.props,
+  },
+  template: `
+      <scale-progress-bar
+        :custom-color="customColor"
+        :disabled="disabled"
+        :label="label"
+        :has-error="hasError"
+        :status-description="statusDescription"
+        :show-status="showStatus"
+        :percentageStart="percentageStart"
+        :percentage="percentage"
+        :styles="styles"
+      >
+      </scale-progress-bar>
+  `,
+});
+export const TemplateInteractive = (args, { argTypes }) => ({
+  components: { ScaleProgressBar },
+  template: `
+      <div>
+          <scale-progress-bar
+            label="Download progress example"
+            :custom-color="$data[$data.state].customColor"
+            :has-error="$data[$data.state].hasError"
+            :status-description="$data[$data.state].statusDescription"
+            :show-status="$data[$data.state].showStatus"
+            :percentage="$data.percentage"
+          >
+          </scale-progress-bar>
+          <br/>
+          <scale-button variant="secondary" size="small" @click="startSuccess">Start Success</scale-button>
+          <scale-button variant="secondary" size="small" @click="startFailure">Start Failure</scale-button>
+          <scale-button variant="secondary" size="small" @click="reset">Reset</scale-button>
+      </div>
+  `,
+  methods: {
+    startSuccess() {
+      this.reset();
+      this.start('success');
+    },
+    startFailure() {
+      this.reset();
+      this.start('failure');
+    },
+    start(outcome) {
+      const max = outcome === 'success' ? 100 : 42
+      this.interval = setInterval(() => {
+        if (this.$data.percentage === max) {
+          clearInterval(this.interval);
+          this.$data.state = outcome;
+          this.interval = null;
+          return;
+        }
+        this.$data.percentage += 1;
+      }, 40);
+    },
+    reset() {
+      clearInterval(this.interval);
+      this.interval = null;
+      this.$data.state = 'initial';
+      this.$data.percentage = 0;
+    },
+  },
+  data: () => ({
+    interval: null,
+    success: {
+      statusDescription: 'Upload complete',
+    },
+    failure: {
+      hasError: true,
+      statusDescription: 'Upload failed',
+    },
+    initial: {
+      showStatus: true,
+    },
+    percentage: 0,
+    state: 'initial',
+    busy: false,
+  }),
+});
+
+export const TemplateCustomColor = (args, { argTypes }) => ({
+  components: { ScaleProgressBar },
+  props: {
+    ...ScaleProgressBar.props,
+  },
+  template: `
+      <scale-progress-bar style="--color-success: purple"
+        :disabled="disabled"
+        :label="label"
+        :has-error="hasError"
+        :status-description="statusDescription"
+        :show-status="showStatus"
+        :percentage="percentage"
+        :styles="styles"
+      >
+      </scale-progress-bar>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Progress Bar</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      percentage: 20,
+      label: 'Standard',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+:host {
+  --background: var(--telekom-color-primary-standard);
+  --background-color: var(--telekom-color-ui-faint);
+  --color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --background-error: var(--telekom-color-functional-danger-subtle);
+  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --progress-bar-outer-size: var(--telekom-spacing-unit-x2);
+  --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
+  --font-label: var(--telekom-text-style-ui);
+  --color-inner-status: var(--telekom-color-primary-standard);
+  --font-size-inner-status: var(--telekom-typography-font-size-small);
+  --font-size-status: var(--telekom-typography-font-size-small);
+  --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
+  --color-status-description: var(--telekom-color-text-and-icon-additional);
+  --font-size-status-description: var(--telekom-typography-font-size-small);
+  --font-weight-status-description: var(--telekom-typography-font-weight-bold);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
+## Description
+
+<Canvas withSource="none">
+  <Story
+    name="Description"
+    args={{
+      percentage: 40,
+      label: 'Description',
+      statusDescription: 'Progress status description text',
+      showStatus: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-progress-bar
+  percentage="40"
+  label="Description"
+  status-description="Progress status description text"
+  show-status="true"
+></scale-progress-bar>
+```
+
+## Completed
+
+<Canvas withSource="none">
+  <Story
+    name="Completed"
+    args={{
+      percentage: 100,
+      showStatus: false,
+      statusDescription: 'Upload complete',
+      label: 'Completed',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-progress-bar
+  percentage="100"
+  label="Completed"
+  status-description="Upload complete"
+  show-status="true"
+>
+</scale-progress-bar>
+```
+
+## Error
+
+<Canvas withSource="none">
+  <Story
+    name="Error"
+    args={{
+      percentage: 40,
+      hasError: true,
+      showStatus: true,
+      statusDescription: 'Upload failed',
+      label: 'Error',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-progress-bar
+  percentage="40"
+  label="Error"
+  status-description="Upload failed"
+  show-status="true"
+  has-error
+>
+</scale-progress-bar>
+```
+
+## Interactive
+
+<Canvas withSource="none">
+  <Story
+    name="Interactive"
+    args={{
+      percentage: 0,
+      label: 'Interactive',
+    }}
+  >
+    {TemplateInteractive.bind({})}
+  </Story>
+</Canvas>

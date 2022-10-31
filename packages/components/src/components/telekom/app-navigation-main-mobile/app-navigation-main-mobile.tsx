@@ -135,36 +135,35 @@ export class MainNavigationMobile {
           }}
         >
           {section.children.map((child) => (
-            <a
-              aria-current={isActive(child) ? 'true' : 'false'}
-              aria-haspopup={child.children ? 'true' : 'false'}
-              class={`main-navigation-mobile__child-menu-item-link ${
-                isActive(child) ? 'selected' : ''
-              }`}
-              href={child.href || 'javascript:void(0);'}
-              tabIndex={0}
-              onClick={(event) => {
-                this.handleSelect(event, child);
-              }}
-              onKeyDown={(event) => {
-                if (['Enter', ' '].includes(event.key)) {
+            <li class="main-navigation-mobile__child-menu-item">
+              <a
+                aria-current={isActive(child) ? 'true' : 'false'}
+                aria-haspopup={child.children ? 'true' : 'false'}
+                class={`main-navigation-mobile__child-menu-item-link ${
+                  isActive(child) ? 'selected' : ''
+                }`}
+                href={child.href || 'javascript:void(0);'}
+                tabIndex={0}
+                onClick={(event) => {
                   this.handleSelect(event, child);
-                  setTimeout(() => {
-                    // focus first child menu item link to ease tab navigation
-                    const firstChildren = this.childrenWrapper.querySelector(
-                      'a'
-                    );
-                    if (firstChildren) {
-                      this.childrenWrapper.querySelector('a').focus();
-                    }
-                  });
-                }
-                if (['Escape', 'Esc'].includes(event.key)) {
-                  this.hide();
-                }
-              }}
-            >
-              <li class="main-navigation-mobile__child-menu-item">
+                }}
+                onKeyDown={(event) => {
+                  if (['Enter', ' '].includes(event.key)) {
+                    this.handleSelect(event, child);
+                    setTimeout(() => {
+                      // focus first child menu item link to ease tab navigation
+                      const firstChildren =
+                        this.childrenWrapper.querySelector('a');
+                      if (firstChildren) {
+                        this.childrenWrapper.querySelector('a').focus();
+                      }
+                    });
+                  }
+                  if (['Escape', 'Esc'].includes(event.key)) {
+                    this.hide();
+                  }
+                }}
+              >
                 <div class="main-navigation-mobile__child-menu-item-wrapper">
                   <span>{child.name}</span>
                   {isActive(child) && <span class="sr-only">active</span>}
@@ -172,8 +171,8 @@ export class MainNavigationMobile {
                     <scale-icon-navigation-right></scale-icon-navigation-right>
                   )}
                 </div>
-              </li>
-            </a>
+              </a>
+            </li>
           ))}
         </ul>
       </div>
@@ -194,39 +193,44 @@ export class MainNavigationMobile {
           }}
         >
           {(this.navigation || []).map((item) => (
-            <a
-              aria-current={isActive(item.id) ? 'true' : 'false'}
-              aria-haspopup={item.children ? 'true' : 'false'}
-              class={`main-navigation-mobile__item-link${
+            <li
+              class={`main-navigation-mobile__item${
                 isActive(item.id)
-                  ? ' main-navigation-mobile__item-link--selected'
+                  ? ' main-navigation-mobile__item--selected'
                   : ''
               }`}
-              href={item.href || 'javascript:void(0);'}
-              onClick={(event) => {
-                this.handleSelect(event, item);
-              }}
-              onKeyDown={(event) => {
-                if (['Enter', ' '].includes(event.key)) {
-                  this.handleSelect(event, item);
-                  setTimeout(() => {
-                    // focus first child menu item link to ease tab navigation
-                    const firstChildren = this.childrenWrapper.querySelector(
-                      'a'
-                    );
-                    if (firstChildren) {
-                      this.childrenWrapper.querySelector('a').focus();
-                    }
-                  });
-                }
-                if (['Escape', 'Esc'].includes(event.key)) {
-                  this.hide();
-                }
-              }}
-              // hide from tab navigation when on childMenuPage
-              tabIndex={this.selected ? -1 : 0}
             >
-              <li class="main-navigation-mobile__item">
+              <a
+                aria-current={isActive(item.id) ? 'true' : 'false'}
+                aria-haspopup={item.children ? 'true' : 'false'}
+                class={`main-navigation-mobile__item-link${
+                  isActive(item.id)
+                    ? ' main-navigation-mobile__item-link--selected'
+                    : ''
+                }`}
+                href={item.href || 'javascript:void(0);'}
+                onClick={(event) => {
+                  this.handleSelect(event, item);
+                }}
+                onKeyDown={(event) => {
+                  if (['Enter', ' '].includes(event.key)) {
+                    this.handleSelect(event, item);
+                    setTimeout(() => {
+                      // focus first child menu item link to ease tab navigation
+                      const firstChildren =
+                        this.childrenWrapper.querySelector('a');
+                      if (firstChildren) {
+                        this.childrenWrapper.querySelector('a').focus();
+                      }
+                    });
+                  }
+                  if (['Escape', 'Esc'].includes(event.key)) {
+                    this.hide();
+                  }
+                }}
+                // hide from tab navigation when on childMenuPage
+                tabIndex={this.selected ? -1 : 0}
+              >
                 <div class="main-navigation-mobile__item-wrapper">
                   <span>{item.name}</span>
                   {isActive(item.id) && <span class="sr-only">active</span>}
@@ -234,8 +238,8 @@ export class MainNavigationMobile {
                     <scale-icon-navigation-right></scale-icon-navigation-right>
                   )}
                 </div>
-              </li>
-            </a>
+              </a>
+            </li>
           ))}
         </ul>
       </div>

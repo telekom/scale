@@ -1,0 +1,270 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleLoadingSpinner from './ScaleLoadingSpinner.vue';
+
+<Meta
+  title="Components/Loading-Spinner"
+  component={ScaleLoadingSpinner}
+  argTypes={{
+    variant: {
+      control: { type: 'select', options: ['primary', 'white'] },
+    },
+    size: {
+      control: { type: 'select', options: ['small', 'large', 'button'] },
+    },
+    alignment: {
+      control: { type: 'select', options: ['vertical', 'horizontal'] },
+    },
+  }}
+/>
+
+export const Template = () => ({
+  components: { ScaleLoadingSpinner },
+  props: {
+    label: String,
+    ...ScaleLoadingSpinner.props,
+  },
+  template: `
+    <div :style="variant==='primary' ? 'background: transparent;' : 'background: black;' + ' display: flex; padding: 2em; min-height: 50px; margin: -30px -20px;'">
+        <scale-loading-spinner
+            :variant='variant'
+            :alignment='alignment'
+            :text='text'
+            :size='size'
+        >
+        </scale-loading-spinner>
+    </div>
+    `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Loading-Spinner</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+## Small Size & Horizontal Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Small Primary (horizontal)"
+    args={{
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner text="Loading..."></scale-loading-spinner>
+```
+
+## Small Size & Vertical Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Small Primary (vertical)"
+    args={{
+      text: 'Loading...',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner
+  text="Loading..."
+  alignment="vertical"
+></scale-loading-spinner>
+```
+
+## Large Size & Horizontal Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Large Primary (horizontal)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner size="large" text="Loading..."></scale-loading-spinner>
+```
+
+## Large Size & Vertical Text (Primary)
+
+<Canvas withSource="none">
+  <Story
+    name="Large Primary (vertical)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner
+  size="large"
+  text="Loading..."
+  alignment="vertical"
+></scale-loading-spinner>
+```
+
+## Small Size (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Small White"
+    args={{
+      size: 'small',
+      variant: 'white',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner size="small" variant="white"></scale-loading-spinner>
+```
+
+## Small Size & Horizontal Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Small White (horizontal)"
+    args={{
+      size: 'small',
+      text: 'Loading...',
+      variant: 'white',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner
+  size="small"
+  text="Loading..."
+  variant="white"
+></scale-loading-spinner>
+```
+
+## Small Size & Vertical Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Small White (vertical)"
+    args={{
+      size: 'small',
+      text: 'Loading...',
+      variant: 'white',
+      alignment: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner
+  size="small"
+  text="Loading..."
+  variant="white"
+  alignment="vertical"
+></scale-loading-spinner>
+```
+
+## Large Size (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White"
+    args={{
+      size: 'large',
+      variant: 'white',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner size="large" variant="white"></scale-loading-spinner>
+```
+
+## Large Size & Horizontal Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White (horizontal)"
+    args={{
+      size: 'large',
+      text: 'Loading...',
+      variant: 'white',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner
+  size="large"
+  text="Loading..."
+  variant="white"
+></scale-loading-spinner>
+```
+
+## Large Size & Vertical Text (White)
+
+<Canvas withSource="none">
+  <Story
+    name="Large White (vertical)"
+    args={{
+      size: 'large',
+      variant: 'white',
+      alignment: 'vertical',
+      text: 'Loading...',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-loading-spinner
+  size="large"
+  variant="white"
+  alignment="vertical"
+  text="Loading..."
+></scale-loading-spinner>
+```

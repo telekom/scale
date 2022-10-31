@@ -19,7 +19,7 @@ exports[`CheckboxGroup should match standard snapshot 1`] = `
       <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
-  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <scale-checkbox arialabelcheckbox=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
   <fieldset part="fieldset">
     <legend></legend>
   </fieldset>
@@ -45,7 +45,7 @@ exports[`CheckboxGroup should match standard snapshot 2`] = `
       <scale-checkbox disabled="" label="checkbox" name="nameOfCheckbox" value="3"></scale-checkbox>
     </div>
   </div>
-  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <scale-checkbox arialabelcheckbox=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
   <fieldset part="fieldset">
     <legend></legend>
   </fieldset>
@@ -74,7 +74,7 @@ exports[`CheckboxGroup should select all on master click 1`] = `
       <scale-checkbox label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
     </div>
   </div>
-  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <scale-checkbox arialabelcheckbox=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
   <fieldset part="fieldset">
     <legend></legend>
   </fieldset>
@@ -103,7 +103,7 @@ exports[`CheckboxGroup should select all on master click 2`] = `
       <scale-checkbox label="checkbox" name="nameOfCheckbox" value="5"></scale-checkbox>
     </div>
   </div>
-  <scale-checkbox arialabel=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
+  <scale-checkbox arialabelcheckbox=" - Unselect all" checked="" disabled="" label="" part="parent-checkbox" status="" value=""></scale-checkbox>
   <fieldset part="fieldset">
     <legend></legend>
   </fieldset>

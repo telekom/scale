@@ -10,23 +10,26 @@
  */
 
 scale-app-header {
-  --header-nav-height: 56px;
-  --header-brand-height: 72px;
-  --header-border-radius: var(--scl-radius-8);
-  --header-transition-speed: 0.3s;
-  --header-brand-collapsed-height: 4px;
+  --header-nav-height: var(--telekom-spacing-unit-x14);
+  --header-brand-height: var(--telekom-spacing-unit-x18);
+  --header-border-radius: var(--telekom-radius-large);
+  --header-transition-speed: var(--telekom-motion-duration-transition);
+  --header-brand-collapsed-height: var(--telekom-spacing-unit-x1);
   --header-max-width: inherit;
 
-  --background: var(--scl-color-primary);
-  --font-weight: var(--scl-font-weight-regular);
-  --border: 1px solid var(--scl-color-grey-10);
+  --background: var(--telekom-color-primary-standard);
+  --font-weight: var(--telekom-typography-font-weight-regular);
+  --border: 1px solid var(--telekom-color-ui-faint);
 
-  --color-brand: var(--scl-color-white);
-  --background-brand: var(--scl-color-primary);
+  --color-brand: var(--telekom-color-text-and-icon-inverted-standard);
+  --background-brand: var(--telekom-color-primary-standard);
 
-  --color-nav: var(--scl-color-text-standard);
-  --background-nav: var(--scl-color-white);
-  --spacing-nav: 0 var(--scl-spacing-16);
+  --color-nav: var(--telekom-color-text-and-icon-standard);
+  --background-nav: var(--telekom-color-background-canvas);
+  --background-nav-sticky: var(--telekom-color-background-surface);
+  --background-header-sticky: var(--telekom-color-background-canvas);
+
+  --spacing-nav: 0 var(--telekom-spacing-unit-x4);
 }
 @keyframes keyframes-slideUp {
   from {
@@ -38,6 +41,7 @@ scale-app-header {
 }
 
 .header__container {
+  background: var(--background-header-sticky);
   width: 100%;
   height: 128px;
 }
@@ -88,9 +92,10 @@ scale-app-header {
   border-top-right-radius: var(--header-border-radius);
   border-bottom: 1px solid transparent;
 }
-.header.menu--open .header__nav,
+.header__nav,
 .header.header--sticky .header__nav {
   border-bottom: var(--border);
+  background: var(--background-nav-sticky);
 }
 .header .header__nav-content {
   width: 100%;
@@ -104,25 +109,24 @@ scale-app-header {
   justify-content: space-between;
 }
 .header.header--sticky .header__nav-before,
-.header.header--sticky .header__nav-after,
-.header.menu--open .header__nav-before,
-.header.menu--open .header__nav-after {
+.header.header--sticky .header__nav-after {
   width: var(--header-border-radius);
   bottom: calc(-2 * var(--header-border-radius));
   height: calc(2 * var(--header-border-radius));
   position: absolute;
   border-top: var(--border);
-  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0 #fff;
+  box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
+    var(--telekom-color-background-surface);
   background-color: transparent;
 }
-.header.menu--open .header__nav-before,
+.header.header--sticky.menu--open .header__nav-before,
 .header.header--sticky .header__nav-before {
   left: -1px;
   z-index: 97;
   border-left: var(--border);
   border-top-left-radius: var(--header-border-radius);
 }
-.header.menu--open .header__nav-after,
+.header.header--sticky.menu--open .header__nav-after,
 .header.header--sticky .header__nav-after {
   right: -1px;
   z-index: 98;
@@ -159,7 +163,7 @@ scale-app-header {
     width: 100%;
     height: var(--header-nav-height);
     display: flex;
-    padding: 0 var(--scl-spacing-16);
+    padding: var(--spacing-nav);
     z-index: 96;
     position: absolute;
     transition: height var(--header-transition-speed) ease-in-out;
@@ -179,6 +183,9 @@ scale-app-header {
     z-index: 95;
     position: absolute;
   }
+  .header.menu--open .header__nav {
+    background-color: var(--telekom-color-background-surface);
+  }
   .header .header__nav__mobile-menu {
     top: var(--header-nav-height);
     width: 100%;
@@ -189,7 +196,7 @@ scale-app-header {
     height: calc(100vh - var(--header-nav-height));
     display: block;
     overflow-y: auto;
-    background: #fff;
+    background: var(--telekom-color-background-surface);
   }
 
   .header .header__brand .header__brand-before,
@@ -200,7 +207,7 @@ scale-app-header {
     position: absolute;
     border-top: transparent;
     box-shadow: 0 calc(-1 * var(--header-border-radius)) 0 0
-      var(--scl-color-primary);
+      var(--telekom-color-primary-standard);
     background-color: transparent;
   }
   .header .header__brand .header__brand-before {
@@ -221,7 +228,7 @@ scale-app-header {
   }
 }
 .header .header__nav .header__nav-logo svg path {
-  fill: var(--scl-color-primary) !important;
+  fill: var(--telekom-color-text-and-icon-primary-standard) !important;
 }
 @media (min-width: 1024px) {
   .header .header__nav-before {
@@ -236,7 +243,7 @@ scale-app-header {
   }
   .header .header__brand {
     height: var(--header-brand-height);
-    padding: 0 var(--scl-spacing-24);
+    padding: 0 var(--telekom-spacing-unit-x6);
     transition: height var(--header-transition-speed) ease-in-out;
     justify-content: space-between;
   }
@@ -252,20 +259,20 @@ scale-app-header {
   }
   .header .header__nav {
     height: var(--header-nav-height);
-    padding: 0 var(--scl-spacing-24);
+    padding: 0 var(--telekom-spacing-unit-x6);
     position: relative;
   }
   .header .header__nav-logo {
     width: 50px;
     opacity: 0;
-    transition: opacity var(--header-transition-speed) ease-in-out;
-    font-weight: var(--scl-font-weight-bold);
-    margin-right: var(--scl-spacing-16);
+    transition: none;
+    font-weight: var(--telekom-typography-font-weight-bold);
+    margin-right: var(--telekom-spacing-unit-x4);
     pointer-events: none;
   }
   .header.header--sticky .header__nav-logo {
     pointer-events: all;
-    margin-right: var(--scl-spacing-32);
+    margin-right: var(--telekom-spacing-unit-x8);
   }
 
   .header scale-nav-main:first-child li {
@@ -280,12 +287,13 @@ scale-app-header {
     list-style: none;
     transition: margin-left var(--header-transition-speed) ease-in-out;
     align-items: center;
-    margin-left: calc(-50px - var(--scl-spacing-16));
+    margin-left: calc(-50px - var(--telekom-spacing-unit-x4));
   }
   .header *[slot='menu-sector'],
   .header *[slot='menu-addon'],
   .header .sector-navigation {
     display: flex;
+    padding: 0;
   }
   .header .addon-navigation {
     display: flex;
@@ -308,7 +316,6 @@ scale-app-header {
     transition: opacity var(--header-transition-speed) ease-in-out;
   }
   .header.header--sticky .header__brand-content {
-    top: 56px;
     opacity: 0;
     transition: opacity var(--header-transition-speed) ease-in-out,
       top var(--header-transition-speed) ease-in-out;
@@ -319,8 +326,8 @@ scale-app-header {
     margin-left: 0;
   }
   .header .sector-navigation .sector-navigation__portal-name {
-    font-weight: var(--scl-font-weight-extrabold);
-    font-size: var(--scl-font-variant-body-large-size);
+    font-weight: var(--telekom-typography-font-weight-extra-bold);
+    font-size: var(--telekom-typography-font-size-callout);
     list-style-type: none;
   }
 
@@ -346,9 +353,6 @@ scale-app-header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-  .header .header__brand app-logo {
-    margin-right: var(--scl-spacing-16);
   }
 }
 

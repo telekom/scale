@@ -1,56 +1,63 @@
 describe('Pagination', () => {
-  test.each([
-    ['standard'],
-    ['small'],
-    ['hidden-borders'],
-    ['embedded-hidden-borders'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-pagination--standard', mode);
+    });
+    test.each([['standard'], ['hidden-borders'], ['embedded-hidden-borders']])(
+      '%p',
+      async (variant) => {
+        await page.goto(
+          `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
+        );
+        await page.waitForSelector('html.hydrated');
+        const previewHtml = await page.$('body');
+        await page.evaluate(() => {
+          [
+            '--telekom-motion-duration-immediate',
+            '--telekom-motion-duration-transition',
+            '--telekom-motion-duration-animation',
+            '--telekom-motion-duration-animation-deliberate',
+          ].forEach((transitionSpeed) => {
+            document.body.style.setProperty(transitionSpeed, '0s');
+          });
+        });
+        expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      }
     );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  test('buttons disabled', async () => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-pagination--standard&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    const firstButton = await page.evaluateHandle(
-      `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
-    );
-    const lastButton = await page.evaluateHandle(
-      `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__last-prompt")`
-    );
-    firstButton.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    lastButton.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-  test.each([['small'], ['hidden-borders'], ['embedded-hidden-borders']])(
-    '%p',
-    async (variant) => {
-      await global.page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-pagination--${variant}&viewMode=story`
+    test('buttons disabled', async () => {
+      await global.runSetup(`components-pagination--standard`);
+      const firstButton = await global.page.evaluateHandle(
+        `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
       );
-      await page.waitForSelector('html.hydrated');
-      const previewHtml = await page.$('body');
-
-      const firstButton = await page.evaluateHandle(
-        `document.querySelector("#root scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
+      const lastButton = await global.page.evaluateHandle(
+        `document.querySelector("#root > scale-pagination").shadowRoot.querySelector("div > button.pagination__last-prompt")`
       );
-      const base = await page.evaluateHandle(`document.querySelector("#root")`);
+      firstButton.click();
+      await global.visualCheck();
+      lastButton.click();
+      await global.visualCheck();
+    });
+    test.each([['hidden-borders'], ['embedded-hidden-borders']])(
+      '%p',
+      async (variant) => {
+        await global.runSetup(`components-pagination--${variant}`);
 
-      firstButton.hover();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      base.hover();
-      firstButton.focus();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      await page.mouse.move(20, 30);
-      await page.mouse.down();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    }
-  );
+        const firstButton = await global.page.evaluateHandle(
+          `document.querySelector("#root scale-pagination").shadowRoot.querySelector("div > button.pagination__first-prompt")`
+        );
+        const base = await global.page.evaluateHandle(
+          `document.querySelector("#root")`
+        );
+
+        firstButton.hover();
+        await global.visualCheck();
+        base.hover();
+        firstButton.focus();
+        await global.visualCheck();
+        await global.page.mouse.move(20, 30);
+        await global.page.mouse.down();
+        await global.visualCheck();
+      }
+    );
+  });
 });

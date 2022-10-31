@@ -1,0 +1,859 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Description,
+  Canvas,
+} from '@storybook/addon-docs';
+import {
+  mainNavigation,
+  iconNavigation,
+  addonNavigation,
+  sectorNavigation,
+  userNavigation,
+} from './fixtures';
+import AppShell from './AppShell.vue';
+const setColorMode = () => {
+  try {
+    document.body.dataset.mode = JSON.parse(
+      window.localStorage.getItem('persistedColorMode')
+    );
+  } catch (e) {}
+};
+
+<Meta
+  title="Components/Brand Header & Navigation"
+  component={AppShell}
+  argTypes={{
+    activeRouteId: {
+      control: {
+        type: 'text',
+      },
+    },
+    activeSectorId: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoTitle: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoHref: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoAriaDescribedBy: {
+      control: {
+        type: 'text',
+      },
+    },
+    logoClick: {
+      control: {
+        type: 'disabled',
+      },
+      description: 'logo click event handler custom function',
+    },
+    mainNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item takes an optional onClick handler',
+    },
+    iconNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item takes an optional onClick handler',
+    },
+    sectorNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item takes an optional onClick handler',
+    },
+    addonNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item takes an optional onClick handler',
+    },
+    userNavigation: {
+      control: {
+        type: 'text',
+      },
+      description: 'each item and button takes an optional onClick handler',
+    },
+    portalName: {
+      control: {
+        type: 'text',
+      },
+      description:
+        'optionally replaces the sectorNavigation with a single bold title',
+    },
+    claimLang: {
+      control: {
+        type: 'select',
+        options: [
+          'de',
+          'en',
+          'cz',
+          'hr',
+          'hu',
+          'me',
+          'mk_lat',
+          'mk_kyr',
+          'ro',
+          'sk',
+        ],
+      },
+    },
+  }}
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Brand Header & Navigation</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      userNavigation: JSON.stringify(userNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+      logoTitle: 'Custom Logo Title',
+      logoHref: '#custom-href',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell
+            :logo-title="logoTitle"
+            :logo-href="logoHref"
+            :logo-click="logoClick"
+            :portal-name="portalName"
+            :claim-lang="claimLang"
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :user-navigation="userNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+            :active-sector-id="activeSectorId"
+          >
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-app-shell claim-lang="de" logo-title="App Name" logo-href="/">
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+```
+
+## Using scale-app-shell over scale-header
+
+Using scale-app-shell provides the page with the common region `content`, which helps you fulfill accessibility requirements. The scale-app-shell component includes both the Header and optionally the <a href="?path=/docs/components-footer--standard">Footer</a> component. However, there is a story <a href="?path=/docs/components-brand-header-navigation--standalone-header">demonstrating the standalone mode of the Header</a> for special cases.
+
+## Dropdown Navigation Beta
+
+You can find code examples where the Flyout Menu Beta component is implemented in the <a href="?path=/story/beta-components-flyout-menu--brand-header-primary-navigation">Primary navigation</a> and the <a href="?path=/story/beta-components-flyout-menu--brand-header-user-menu">User menu</a>.
+
+## Custom Main Navigation
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Main Navigation"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        methods: {
+          handleOpen: function () {
+            // Deprecated
+            this.$refs.header.isMegaMenuVisible = true;
+            // Deprecated
+            this.$refs.navMainWithMegaMenu.isMegaMenuVisible = true;
+            this.$refs.header.megaMenuVisible = true;
+            this.$refs.navMainWithMegaMenu.megaMenuVisible = true;
+          },
+          handleClose: function () {
+            // Deprecated
+            this.$refs.header.isMegaMenuVisible = false;
+            // Deprecated
+            this.$refs.navMainWithMegaMenu.isMegaMenuVisible = false;
+            this.$refs.header.megaMenuVisible = false;
+            this.$refs.navMainWithMegaMenu.megaMenuVisible = false;
+          },
+        },
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                ref="header"
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
+                @keydown="$event.key === 'Escape' && handleClose()"
+            >
+                <div slot="menu-main">
+                  <scale-nav-main name="Custom Item #1"></scale-nav-main>
+                  <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu" ref="navMainWithMegaMenu" @mouseenter="handleOpen" @mouseleave="handleClose" @keydown="$event.key === 'Enter' && handleOpen()">
+                    <app-mega-menu>
+                      <div slot="custom-body"><pre>custom-body</pre></div>
+                    </app-mega-menu></scale-nav-main>
+                  <scale-nav-main active name="Custom Item #3"></scale-nav-main>
+                  <scale-nav-main name="Custom Item #4"></scale-nav-main>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+```html
+<body>
+  <scale-app-shell>
+    <scale-app-header slot="header" id="header">
+      <div slot="menu-main">
+        <scale-nav-main name="Custom Item #1"></scale-nav-main>
+        <scale-nav-main name="Custom Item #2" id="nav-main-with-mega-menu">
+          <app-mega-menu>
+            <div slot="custom-body"><pre>custom-body</pre></div>
+          </app-mega-menu>
+        </scale-nav-main>
+        <!--
+          Deprecated:
+          <scale-nav-main is-active name="Custom Item #3"></scale-nav-main>
+        -->
+        <scale-nav-main active name="Custom Item #3"></scale-nav-main>
+        <scale-nav-main name="Custom Item #4"></scale-nav-main>
+      </div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll to test header behavior
+    </div>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll more to test header behavior
+    </div>
+  </scale-app-shell>
+  <script>
+    const header = document.getElementById('header');
+    header.mainNavigation = [
+      /* ... */
+    ];
+    header.iconNavigation = [
+      /* ... */
+    ];
+    header.addonNavigation = [
+      /* ... */
+    ];
+    header.sectionNavigation = [
+      /* ... */
+    ];
+    const navMainWithMegaMenu = document.getElementById(
+      'nav-main-with-mega-menu'
+    );
+    header.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        // Deprecated
+        navMainWithMegaMenu.isMegaMenuVisible = false;
+        // Deprecated
+        header.isMegaMenuVisible = false;
+        navMainWithMegaMenu.megaMenuVisible = false;
+        header.megaMenuVisible = false;
+      }
+    });
+    navMainWithMegaMenu.addEventListener('mouseenter', function () {
+      // Deprecated
+      navMainWithMegaMenu.isMegaMenuVisible = true;
+      // Deprecated
+      header.isMegaMenuVisible = true;
+      navMainWithMegaMenu.megaMenuVisible = true;
+      header.megaMenuVisible = true;
+    });
+    navMainWithMegaMenu.addEventListener('mouseleave', function () {
+      // Deprecated
+      navMainWithMegaMenu.isMegaMenuVisible = false;
+      // Deprecated
+      header.isMegaMenuVisible = false;
+      navMainWithMegaMenu.megaMenuVisible = false;
+      header.megaMenuVisible = false;
+    });
+    navMainWithMegaMenu.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        // Deprecated
+        navMainWithMegaMenu.isMegaMenuVisible = true;
+        // Deprecated
+        header.isMegaMenuVisible = true;
+        navMainWithMegaMenu.megaMenuVisible = true;
+        header.megaMenuVisible = true;
+      }
+    });
+  </script>
+</body>
+```
+
+## Custom Icon Navigation
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Icon Navigation"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
+            >
+                <div slot="menu-icon">
+                  <scale-nav-icon icon="action-mute">
+                    Mute
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-play">
+                    Play
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-pause">
+                    Pause
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-fast-forward">
+                    Forward
+                  </scale-nav-icon>
+                  <scale-nav-icon icon="action-favorite">
+                    Favorite
+                  </scale-nav-icon>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+```html
+<scale-app-shell>
+  <scale-app-header slot="header" id="header">
+    <div slot="menu-icon">
+      <scale-nav-icon icon="action-mute"> Mute </scale-nav-icon>
+      <scale-nav-icon icon="action-play"> Play </scale-nav-icon>
+      <scale-nav-icon icon="action-pause"> Pause </scale-nav-icon>
+      <scale-nav-icon icon="action-fast-forward"> Forward </scale-nav-icon>
+      <scale-nav-icon icon="action-favorite"> Favorite </scale-nav-icon>
+    </div>
+  </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+```
+
+## Custom Sector Navigation
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Sector Navigation"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :addon-navigation="addonNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
+            >
+                <div slot="menu-sector">
+                  <scale-nav-segment active="true" href="#custom-sector-1">
+                    Custom Sector #1
+                  </scale-nav-segment>
+                  <scale-nav-segment href="#custom-sector-2">
+                    Custom Sector #2
+                  </scale-nav-segment>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+```html
+<scale-app-shell>
+  <scale-app-header slot="header" id="header">
+    <div slot="menu-sector">
+      <!--
+        Deprecated:
+        <scale-nav-segment
+        is-active="true"
+        ...
+      >
+      -->
+      <scale-nav-segment
+        active="true"
+        href="#custom-sector-1"
+        onclick="handleClick()"
+      >
+        Custom Sector #1
+      </scale-nav-segment>
+      <scale-nav-segment href="#custom-sector-2" onclick="handleClick()">
+        Custom Sector #2
+      </scale-nav-segment>
+    </div>
+  </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
+<script>
+  function handleClick() {
+    /* ... */
+  }
+</script>
+```
+
+## Custom Addon Navigation
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Addon Navigation"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+                :claim-lang="claimLang"
+            >
+                <div slot="menu-addon">
+                  <scale-nav-segment active="true" href="#custom-addon-1">
+                    Custom Addon #1
+                  </scale-nav-segment>
+                  <scale-nav-segment href="#custom-addon-2">
+                    Custom Addon #2
+                  </scale-nav-segment>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+```html
+<scale-app-shell>
+  <scale-app-header slot="header" id="header">
+    <div slot="menu-addon">
+      <!--
+        Deprecated:
+        <scale-nav-segment
+        is-active="true"
+        ...
+      >
+      -->
+      <scale-nav-segment
+        active="true"
+        href="#custom-addon-1"
+        onclick="handleClick()"
+      >
+        Custom Addon #1
+      </scale-nav-segment>
+      <scale-nav-segment href="#custom-addon-2" onclick="handleClick()">
+        Custom Addon #2
+      </scale-nav-segment>
+    </div>
+  </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
+<script>
+  function handleClick() {
+    /* ... */
+  }
+</script>
+```
+
+## Custom Logo
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Logo"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                :claim-lang="claimLang"
+                :main-navigation="mainNavigation"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+                <div slot="logo">
+                    <scale-logo transparent variant="white" language="en" href="#custom" logo-title="Custom" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"></scale-logo>
+                </div>
+                <div slot="logo-inverse">
+                    <scale-logo transparent language="en" href="#custom" logo-title="Custom" styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"></scale-logo>
+                </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+```html
+<scale-app-shell>
+  <scale-app-header slot="header" id="header">
+    <div slot="logo">
+      <scale-logo
+        transparent
+        variant="white"
+        language="en"
+        href="#custom"
+        logo-title="Custom"
+        styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+      ></scale-logo>
+    </div>
+    <div slot="logo-inverse">
+        <scale-logo
+            transparent
+            language=""
+            href="#custom"
+            logo-title="Custom"
+            styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+        ></scale-logo>
+    </div>
+  </scale-app-header>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll to test header behavior
+  </div>
+  <div style="height: 800px; padding: 48px 0;">
+    Scroll more to test header behavior
+  </div>
+</scale-app-shell>
+
+<script>
+  function handleClick() {
+    /* ... */
+  }
+</script>
+```
+
+## Custom Mobile Menu
+
+<Canvas withSource="none">
+  <Story
+    name="Custom Mobile Menu"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+                slot="header"
+                id="header"
+                ref="header"
+                :main-navigation="mainNavigation"
+                :claim-lang="claimLang"
+                :icon-navigation="iconNavigation"
+                :sector-navigation="sectorNavigation"
+                :active-route-id="activeRouteId"
+                :active-sector-id="activeSectorId"
+            >
+              <div slot="menu-mobile"><pre>menu-mobile</pre></div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+        mounted() {
+          document.body.addEventListener('keydown', (event) => {
+            if (['Escape', 'Esc'].includes(event.key)) {
+              event.preventDefault();
+              this.$refs.header &&
+                this.$refs.header.dispatchEvent(new Event('closeMenu'));
+            }
+          });
+        },
+      }
+    )}
+  </Story>
+</Canvas>
+
+```html
+<body>
+  <scale-app-shell>
+    <scale-app-header slot="header" id="header">
+      <div slot="menu-mobile"><pre>menu-mobile</pre></div>
+    </scale-app-header>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll to test header behavior
+    </div>
+    <div style="height: 800px; padding: 48px 0;">
+      Scroll more to test header behavior
+    </div>
+  </scale-app-shell>
+  <script>
+    const header = document.getElementById('header');
+    document.body.addEventListener('keydown', function (event) {
+      if (['Escape', 'Esc'].includes(event.key)) {
+        event.preventDefault();
+        header.dispatchEvent(new Event('closeMenu'));
+      }
+    });
+  </script>
+</body>
+```
+
+## Standalone Header
+
+<Canvas withSource="none">
+  <Story
+    name="Standalone Header"
+    inline={false}
+    height={500}
+    args={{
+      portalName: '',
+      claimLang: 'en',
+      mainNavigation: JSON.stringify(mainNavigation),
+      iconNavigation: JSON.stringify(iconNavigation),
+      addonNavigation: JSON.stringify(addonNavigation),
+      sectorNavigation: JSON.stringify(sectorNavigation),
+      activeRouteId: 'Third Level 24',
+      activeSectorId: 'Personal38',
+      logoTitle: 'Custom Logo Title',
+      logoHref: '#custom-href',
+    }}
+  >
+    {() => (
+      setColorMode(),
+      {
+        components: { AppShell },
+        props: AppShell.props,
+        template: `
+        <div class="brand-header-spacing">
+          <scale-app-header
+            :logo-title="logoTitle"
+            :logo-href="logoHref"
+            :logo-click="logoClick"
+            :portal-name="portalName"
+            :claim-lang="claimLang"
+            :main-navigation="mainNavigation"
+            :icon-navigation="iconNavigation"
+            :sector-navigation="sectorNavigation"
+            :addon-navigation="addonNavigation"
+            :active-route-id="activeRouteId"
+            :active-sector-id="activeSectorId"
+          >
+          </scale-app-header>
+        </div>
+      `,
+      }
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-app-header claim-lang="en" logo-title="App Name" logo-href="/">
+</scale-app-header>
+```

@@ -105,7 +105,7 @@ export class DataGrid {
   @Prop() shadeAlternate?: boolean = true;
   /** (optional) Injected css styles */
   @Prop() styles: any;
-  /** (optional) Set to falseto hide table, used for nested tables to re-render upon toggle */
+  /** (optional) Set to false to hide table, used for nested tables to re-render upon toggle */
   @Prop() visible?: boolean = true;
 
   /* 4. Events (alphabetical) */
@@ -208,6 +208,16 @@ export class DataGrid {
     // Set flag to dirty to redo column width with new data
     this.needsAutoWidthParse = true;
     this.needsColumnResize = true;
+
+    if (
+      // when we run out of items on the current page
+      this.rows.length <= this.paginationStart &&
+      // and we are NOT on the first page
+      this.paginationStart - this.pageSize > -1
+    ) {
+      // step back one page
+      this.paginationStart = this.paginationStart - this.pageSize;
+    }
   }
 
   /* 8. Public Methods */
@@ -236,7 +246,7 @@ export class DataGrid {
       row.selected = false;
     });
     // Determine if pagination will be required
-    this.isPagination = this.pageSize < this.rows.length;
+    this.isPagination = this.pageSize <= this.rows.length - 1;
   }
 
   checkHasData() {
@@ -720,6 +730,20 @@ export class DataGrid {
     this.elTableHead.style.transform = `translateY(${scrollY}px)`;
   }
 
+  handleMenuListClick = (event) => {
+    const menuItems = ['sortBy', 'toggleVisibility'];
+    const currentMenuItemsIndex = menuItems.indexOf(event.target.id);
+    if (currentMenuItemsIndex > -1) {
+      // check if there is already opened flyout menu list with different id, if opened, close it
+      const inactiveMenuItem = this.hostElement.shadowRoot.querySelector(
+        `#${menuItems[1 - currentMenuItemsIndex]}List`
+      ) as HTMLUListElement;
+      if (inactiveMenuItem) {
+        inactiveMenuItem.setAttribute('opened', 'false');
+      }
+    }
+  };
+
   renderSettingsMenu() {
     return (
       <scale-menu-flyout class={`${name}__settings-menu`}>
@@ -733,10 +757,13 @@ export class DataGrid {
         </scale-button>
         <scale-menu-flyout-list>
           {this.isSortable && (
-            <scale-menu-flyout-item>
+            <scale-menu-flyout-item
+              id="sortBy"
+              onClick={this.handleMenuListClick}
+            >
               <scale-icon-action-sort slot="prefix"></scale-icon-action-sort>
               Sort By
-              <scale-menu-flyout-list slot="sublist">
+              <scale-menu-flyout-list slot="sublist" id="sortByList">
                 {this.fields.map(
                   (
                     { label, type, sortable, sortDirection = 'none' },
@@ -782,10 +809,17 @@ export class DataGrid {
               </scale-menu-flyout-list>
             </scale-menu-flyout-item>
           )}
-          <scale-menu-flyout-item>
+          <scale-menu-flyout-item
+            id="toggleVisibility"
+            onClick={this.handleMenuListClick}
+          >
             <scale-icon-action-hide-password slot="prefix"></scale-icon-action-hide-password>
             Toggle Visibility
-            <scale-menu-flyout-list slot="sublist" close-on-select="false">
+            <scale-menu-flyout-list
+              slot="sublist"
+              close-on-select="false"
+              id="toggleVisibilityList"
+            >
               {this.fields.map(
                 (
                   {
@@ -815,8 +849,8 @@ export class DataGrid {
           {this.selectable && (
             <scale-menu-flyout-item
               onScale-select={() => {
-                this.elToggleSelectAll.checked = !this.elToggleSelectAll
-                  .checked;
+                this.elToggleSelectAll.checked =
+                  !this.elToggleSelectAll.checked;
                 this.toggleSelectAll();
               }}
             >
@@ -1228,7 +1262,7 @@ export class DataGrid {
         {this.isPagination && (
           <scale-pagination
             class={`info__pagination`}
-            hideBorders={!this.isMobile}
+            hideBorder={!this.isMobile}
             startElement={this.paginationStart}
             totalElements={this.rows.length}
             pageSize={this.pageSize}

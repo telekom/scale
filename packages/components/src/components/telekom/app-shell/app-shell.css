@@ -10,8 +10,8 @@
  */
 
 :host {
-  --background: var(--scl-color-background-standard, #fff);
-  --spacing-x: var(--scl-spacing-24);
+  --background: var(--telekom-color-background-canvas, #fff);
+  --spacing-x: var(--telekom-spacing-unit-x6);
   --min-height: 100vh;
 }
 
@@ -28,6 +28,9 @@
 }
 
 .shell .content {
+  box-sizing: border-box;
+  align-self: center;
+  width: 100%;
   background: var(--background);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);

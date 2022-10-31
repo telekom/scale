@@ -18,12 +18,23 @@
         border-radius: 60px;
         background: hsla(var(--h) var(--s) var(--l) / var(--a));
         margin-right: 2rem;
-        box-shadow: var(--scl-shadow-level-2);
+        box-shadow: var(--telekom-shadow-raised-standard);
       }
     </style>
   </head>
   <body>
     <h1 class="scl-font-variant-heading-3">Color thingy</h1>
+
+    <p>
+      <scale-slider
+        label="Hello World"
+        value="20"
+        step="10"
+        helper-text="It's a movie"
+        show-step-marks
+      ></scale-slider>
+    </p>
+
     <demo-hue>
       <demo-color-display
         style="--h: 110deg; --s: 100%; --l: 44.3%; --a: 1"
@@ -32,34 +43,67 @@
         <scale-slider
           id="h"
           label="Hue"
-          value="110"
+          value-from="25"
+          value-to="250"
           max="360"
-          step="0.1"
-          decimals="1"
+          step="1"
+          decimals="0"
           unit="deg"
+          range
         ></scale-slider>
-        <scale-slider id="s" label="Saturation" value="100"></scale-slider>
+        <div data-platform="android">
+          <scale-slider
+            id="s"
+            label="Saturation (Android)"
+            value="100"
+          ></scale-slider>
+        </div>
         <scale-slider
           id="l"
           label="Lightness"
           value="44.3"
           step="0.1"
+          disabled
           decimals="1"
         ></scale-slider>
+        <div data-platform="ios">
+          <scale-slider
+            id="a"
+            label="Alpha (iOS)"
+            unit="$ "
+            show-step-marks
+            value="50"
+            min="0"
+            max="100"
+            unit-position="before"
+            helper-text="This is madness"
+            step="10"
+          ></scale-slider>
+        </div>
         <scale-slider
           id="a"
-          label="Alpha"
-          unit=""
+          label="Testing steps"
+          unit="$ "
+          show-step-marks
+          value="0"
           decimals="2"
-          value="1"
           min="0"
           max="1"
-          step="0.01"
+          unit-position="before"
+          step="0.25"
         ></scale-slider>
       </demo-controls>
     </demo-hue>
 
     <script>
+      const slider = document.querySelector('[label="Hello World"]');
+      slider.addEventListener('scale-change', (event) => {
+        console.log('scale-change', event.detail);
+      });
+      slider.addEventListener('scale-input', (event) => {
+        console.log('scale-input', event.detail);
+      });
+
       const h = document.getElementById('h');
       const s = document.getElementById('s');
       const l = document.getElementById('l');
@@ -67,7 +111,7 @@
       const display = document.querySelector('demo-color-display');
 
       h.addEventListener('scaleInput', () => {
-        display.style.setProperty('--h', h.value + 'deg');
+        display.style.setProperty('--h', h.valueTo + 'deg');
       });
       s.addEventListener('scaleInput', () => {
         display.style.setProperty('--s', s.value + '%');

@@ -10,15 +10,14 @@
  */
 
 scale-nav-main {
-  --spacing-x: var(--scl-font-size-16);
-
-  --color: var(--scl-color-text-standard);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-hover);
-  --color-selected: var(--scl-color-primary);
-  --font-size: var(--scl-font-variant-body-large-size);
-  --font-weight: var(--scl-font-weight-extrabold);
-  --line-height: var(--scl-font-line-height-120);
+  --spacing-x: var(--telekom-typography-font-size-body);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+  --font-size: var(--telekom-typography-font-size-callout);
+  --font-weight: var(--telekom-typography-font-weight-extra-bold);
+  --line-height: var(--telekom-typography-line-spacing-tight);
 }
 
 .main-navigation__item {
@@ -55,6 +54,7 @@ scale-nav-main {
 }
 .main-navigation__item:hover .main-navigation__item-link-text {
   border-bottom: 2px solid var(--color-hover);
+  color: var(--color-hover);
   margin-bottom: -2px;
   height: calc(100% - 4px);
   display: flex;
@@ -73,8 +73,9 @@ scale-nav-main {
 .main-navigation__item.selected .main-navigation__item-link {
   color: var(--color-selected);
 }
-.main-navigation__item.mega-menu--visible .main-navigation__item-link {
-  color: var(--color-selected);
+
+.main-navigation__item.selected:hover .main-navigation__item-link {
+  color: var(--color-hover);
 }
 .main-navigation__item.selected .main-navigation__item-link-text {
   border-bottom: 2px solid var(--color-selected);
@@ -83,8 +84,12 @@ scale-nav-main {
   display: flex;
   align-items: center;
 }
+.main-navigation__item.selected:hover .main-navigation__item-link-text {
+  color: var(--color-hover);
+  border-bottom: 2px solid var(--color-hover);
+}
 .main-navigation__item.mega-menu--visible .main-navigation__item-link-text {
-  border-bottom: 2px solid var(--color-selected);
+  border-bottom: 2px solid var(--color-hover);
   margin-bottom: -2px;
   height: calc(100% - 4px);
   display: flex;

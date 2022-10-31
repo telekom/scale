@@ -72,6 +72,8 @@ export class Textarea {
   @Prop() inputId?: string;
   /** (optional) input background transparent */
   @Prop() transparent?: boolean;
+  /** (optional) the input should automatically get focus when the page loads. */
+  @Prop() inputAutofocus?: boolean;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -103,6 +105,8 @@ export class Textarea {
 
   /** Whether the input element has focus */
   @State() hasFocus: boolean = false;
+
+  private focusableElement: HTMLElement;
 
   componentWillLoad() {
     if (this.inputId == null) {
@@ -173,35 +177,43 @@ export class Textarea {
     return (
       <Host>
         <div class={this.getCssClassMap()}>
-          {/* Accessibility: label should be always *before* the actual input */}
-          <label class="textarea__label" htmlFor={this.inputId}>
-            {this.label}
-          </label>
-          <textarea
-            class="textarea__control"
-            style={!!this.resize && { resize: this.resize }}
-            value={this.value}
-            {...(!!this.name ? { name: this.name } : {})}
-            required={this.required}
-            minLength={this.minLength}
-            maxLength={this.maxLength}
-            id={this.inputId}
-            onInput={this.handleInput}
-            onChange={this.handleChange}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            onKeyDown={this.handleKeyDown}
-            {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
-            disabled={this.disabled}
-            {...readonlyAttr}
-            {...(!!this.rows ? { rows: this.rows } : {})}
-            {...(!!this.cols ? { cols: this.cols } : {})}
-            {...ariaInvalidAttr}
-            {...(this.helperText ? ariaDescribedByAttr : {})}
-          />
-
-          {/* Accessibility: solid background for the textarea label to avoid making the label unreadable when there's text underneath */}
-          <span class="textarea__label-safety-background" aria-hidden="true" />
+          <div
+            class="textarea__wrapper"
+            onClick={() => this.focusableElement.focus()}
+            style={
+              !!this.resize &&
+              this.resize === 'horizontal' && { width: 'max-content' }
+            }
+          >
+            {/* Accessibility: label should be always *before* the actual input */}
+            <label class="textarea__label" htmlFor={this.inputId}>
+              {this.label}
+            </label>
+            <textarea
+              class="textarea__control"
+              style={!!this.resize && { resize: this.resize }}
+              value={this.value}
+              {...(!!this.name ? { name: this.name } : {})}
+              {...(!!this.inputAutofocus ? { autofocus: 'true' } : {})}
+              required={this.required}
+              minLength={this.minLength}
+              maxLength={this.maxLength}
+              id={this.inputId}
+              onInput={this.handleInput}
+              onChange={this.handleChange}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
+              onKeyDown={this.handleKeyDown}
+              {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
+              disabled={this.disabled}
+              {...readonlyAttr}
+              {...(!!this.rows ? { rows: this.rows } : {})}
+              {...(!!this.cols ? { cols: this.cols } : {})}
+              {...ariaInvalidAttr}
+              {...(this.helperText ? ariaDescribedByAttr : {})}
+              ref={(el) => (this.focusableElement = el)}
+            />
+          </div>
           {(!!this.helperText || !!this.counter) && (
             <div
               class="textarea__meta"

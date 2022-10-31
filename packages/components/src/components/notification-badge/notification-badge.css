@@ -15,15 +15,19 @@
   --padding-type-icon-after-badge-slot: 0 0 0 7px;
 
   /*notification-badge circle*/
-  --background-color-circle: var(--scl-color-primary);
-  --color-circle: var(--scl-color-white);
-  --font-size-circle: 12px;
+  --background-color-circle: var(--telekom-color-primary-standard);
+  --color-circle: var(--telekom-color-text-and-icon-inverted-standard);
+  --font-size-circle: var(--telekom-typography-font-size-footnote);
   --font-weight-circle: bold;
-  --border-radius-circle: 20px;
+  --border-radius-circle: var(--telekom-radius-circle);
 
   /*border*/
-  --color-notification-badge-border-focus: #009de0;
-  --color-notification-badge-border-hover: var(--scl-color-primary-hover);
+  --color-notification-badge-border-focus: var(
+    --telekom-color-functional-focus
+  );
+  --color-notification-badge-border-hover: var(
+    --telekom-color-text-and-icon-primary-hovered
+  );
   --line-width-notification-badge-border-focus: 2px;
   --padding-notification-badge-border: 8px 5px 0 5px;
   --margin-notification-badge-border: -8px -5px 0 -5px;

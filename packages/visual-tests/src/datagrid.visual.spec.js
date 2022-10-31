@@ -1,34 +1,26 @@
 describe('DataGrid', () => {
-  test.each([
-    ['date-cell'],
-    ['html-cell'],
-    ['number-cell'],
-    ['select-cell'],
-    ['text-cell'],
-    ['heading'],
-    ['hide-extras'],
-    ['pagination'],
-    ['column-stretch'],
-    ['tags-cell'],
-    ['selection-export'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-data-grid--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    await page.evaluate(() => {
-      const transitions = [
-        '--scl-motion-duration-immediate',
-        '--scl-motion-duration-fast',
-        '--scl-motion-duration-slower',
-        '--scl-motion-duration-deliberate',
-      ];
-
-      transitions.forEach((transitionSpeed) => {
-        document.body.style.setProperty(transitionSpeed, '0s');
-      });
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-data-grid--standard', mode);
     });
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+    test.each([
+      ['email-cell'],
+      ['date-cell'],
+      ['html-cell'],
+      ['number-cell'],
+      ['select-cell'],
+      ['text-cell'],
+      ['heading'],
+      ['hide-extras'],
+      ['pagination'],
+      ['column-stretch'],
+      ['tags-cell'],
+      ['telephone-cell'],
+      ['selection-export'],
+    ])('%p', async (variant) => {
+      await global.runSetup(`components-data-grid--${variant}`);
+
+      await global.visualCheck();
+    });
   });
 });

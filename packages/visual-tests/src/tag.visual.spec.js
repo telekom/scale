@@ -1,21 +1,20 @@
 describe('Tag', () => {
-  test.each([
-    ['standard'],
-    ['a-dissmisable-tag'],
-    ['a-small-tag'],
-    ['a-small-dismissable-tag'],
-    ['disabled-dismissable-tag'],
-    ['variant-secondary-tag'],
-    ['variant-secondary-link'],
-    ['variant-secondary-dismissable'],
-    ['variant-secondary-small'],
-    ['variant-secondary-dismissable-small'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-tag--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-tag--standard', mode);
+    });
+    test.each([
+      ['standard'],
+      ['dismissable-tag'],
+      ['small-tag'],
+      ['small-dismissable-tag'],
+      ['disabled-dismissable-tag'],
+      ['colors'],
+      ['color-standard-tag'],
+      ['color-strong-tag'],
+    ])('%p', async (variant) => {
+      await global.runSetup(`components-tag--${variant}`);
+      await global.visualCheck();
+    });
   });
 });

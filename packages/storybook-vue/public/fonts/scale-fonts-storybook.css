@@ -1,13 +1,15 @@
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  color: var(--scl-color-text-standard) !important;
+.sbdocs.sbdocs-li,
+.sbdocs.sbdocs-h6,
+.sbdocs.sbdocs-h5,
+.sbdocs.sbdocs-h4,
+.sbdocs.sbdocs-h3,
+.sbdocs.sbdocs-h2,
+.sbdocs.sbdocs-h1,
+.sbdocs.sbdocs-span,
+.sbdocs.sbdocs-div,
+.sbdocs.sbdocs-p {
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: black;
 }
 
 .sbdocs-h1,
@@ -45,12 +47,52 @@ li {
   line-height: 22px !important;
 }
 
-.sbdocs-a {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  color: var(--scl-color-text-link) !important;
+.sbdocs-a.css-19nbuh3 {
+  text-decoration: underline;
+  text-underline-offset: 0.1875em;
+  text-underline-position: from-font;
+  text-decoration-thickness: 0.0625rem;
+  text-decoration-color: #1c41eb;
 }
 
-.sbdocs-p, .sbdocs-ul, .sbdocs-li {
+.colors-table .sbdocs-a.css-19nbuh3 {
+  text-decoration: none !important;
+}
+
+.sbdocs-a.css-19nbuh3 {
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: #1c41eb;
+  outline: none;
+  font-weight: var(--telekom-typography-font-weight-medium);
+  position: relative;
+  display: inline-flex;
+}
+
+.sbdocs-a.css-19nbuh3:hover {
+  color: #1035e3;
+  text-decoration: underline;
+  text-decoration-color: #1035e3;
+}
+
+.sbdocs-a.css-19nbuh3:focus {
+  color: #1c41eb;
+  text-decoration: underline;
+  text-decoration-color: #1c41eb;
+}
+
+.sbdocs-a.css-19nbuh3:active {
+  color: #082cdb;
+  text-decoration: underline;
+  text-decoration-color: #082cdb;
+}
+
+.sbdocs-p,
+.sbdocs-ul,
+.sbdocs-li {
   font-size: 16px !important;
   line-height: 24px !important;
+}
+
+.sbdocs-ol[type='a'] {
+  list-style-type: lower-alpha;
 }

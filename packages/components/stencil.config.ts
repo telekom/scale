@@ -52,7 +52,8 @@ export const config: Config = {
       ],
     },
     {
-      type: 'dist-custom-elements-bundle',
+      type: 'dist-custom-elements',
+      generateTypeDeclarations: true,
     },
     {
       type: 'www',
@@ -83,4 +84,8 @@ export const config: Config = {
     },
     { type: 'dist-hydrate-script' },
   ],
+  extras: {
+    cloneNodeFix: true,
+    experimentalImportInjection: true,
+  },
 };

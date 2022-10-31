@@ -24,6 +24,7 @@ export class Shell {
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
   @Prop() logoClick?: any;
+  @Prop() logoAriaDescribedBy?: string;
   @Prop() mainNavigation?: any = [];
   @Prop() iconNavigation?: any = [];
   @Prop() userNavigation?: any = [];
@@ -31,6 +32,7 @@ export class Shell {
   @Prop() addonNavigation?: any = [];
   @Prop() activeRouteId?: string = '';
   @Prop() activeSectorId?: string = '';
+  @Prop() sticky?: boolean = false;
   @State() scrolled: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -51,6 +53,7 @@ export class Shell {
           ) : (
             <scale-app-header
               logoClick={this.logoClick}
+              logoAriaDescribedBy={this.logoAriaDescribedBy}
               logoHref={this.logoHref}
               logoTitle={this.logoTitle}
               portalName={this.portalName}
@@ -62,6 +65,7 @@ export class Shell {
               activeRouteId={this.activeRouteId}
               activeSectorId={this.activeSectorId}
               claimLang={this.claimLang}
+              sticky={this.sticky}
             ></scale-app-header>
           )}
           <main class="content">

@@ -45,6 +45,7 @@ export class Collapsible {
   @Prop() headingLevel: number = 2;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  @Prop() iconLocation?: 'left' | 'right' = 'left';
 
   /** Emitted so parent <scale-accordion> knows about it */
   @Event({ eventName: 'scale-expand' })
@@ -73,9 +74,8 @@ export class Collapsible {
    * @see https://github.com/telekom/scale/pull/319
    */
   setHeadingFromLightDOM() {
-    const lightHeading: HTMLElement = this.hostElement.querySelector(
-      ':first-child'
-    );
+    const lightHeading: HTMLElement =
+      this.hostElement.querySelector(':first-child');
     if (lightHeading == null) {
       return;
     }
@@ -110,12 +110,14 @@ export class Collapsible {
               aria-expanded={this.expanded ? 'true' : 'false'}
               aria-controls={this.panelId}
             >
-              <scale-icon-navigation-collapse-down
-                size={16}
-                decorative
-                class="collapsible__icon"
-                part={classNames('icon', this.expanded && 'expanded')}
-              />
+              {this.iconLocation === 'left' ? (
+                <scale-icon-navigation-collapse-down
+                  size={16}
+                  decorative
+                  class="collapsible__icon"
+                  part={classNames('icon', this.expanded && 'expanded')}
+                />
+              ) : null}
               <span
                 ref={(el) => (this.headingElement = el)}
                 class="collapsible__button-text"
@@ -123,6 +125,14 @@ export class Collapsible {
               >
                 <slot name="heading"></slot>
               </span>
+              {this.iconLocation === 'right' ? (
+                <scale-icon-navigation-collapse-down
+                  size={16}
+                  decorative
+                  class="collapsible__icon collapsible__icon-right"
+                  part={classNames('icon', this.expanded && 'expanded')}
+                />
+              ) : null}
             </button>
           </h2>
           <div

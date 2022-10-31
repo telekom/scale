@@ -3,6 +3,334 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.110](https://github.com/telekom/scale/compare/v3.0.0-beta.109...v3.0.0-beta.110) (2022-08-03)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.109](https://github.com/telekom/scale/compare/v3.0.0-beta.108...v3.0.0-beta.109) (2022-08-02)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.105](https://github.com/telekom/scale/compare/v3.0.0-beta.104...v3.0.0-beta.105) (2022-05-20)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.104](https://github.com/telekom/scale/compare/v3.0.0-beta.103...v3.0.0-beta.104) (2022-05-12)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.103](https://github.com/telekom/scale/compare/v3.0.0-beta.102...v3.0.0-beta.103) (2022-05-04)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.102](https://github.com/telekom/scale/compare/v3.0.0-beta.101...v3.0.0-beta.102) (2022-04-19)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.101](https://github.com/telekom/scale/compare/v3.0.0-beta.100...v3.0.0-beta.101) (2022-04-07)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.100](https://github.com/telekom/scale/compare/v3.0.0-beta.54...v3.0.0-beta.100) (2022-04-05)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.54](https://github.com/telekom/scale/compare/v3.0.0-beta.53...v3.0.0-beta.54) (2022-03-31)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.53](https://github.com/telekom/scale/compare/v3.0.0-beta.52...v3.0.0-beta.53) (2022-03-14)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.52](https://github.com/telekom/scale/compare/v3.0.0-beta.51...v3.0.0-beta.52) (2022-03-02)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.51](https://github.com/telekom/scale/compare/v3.0.0-beta.50...v3.0.0-beta.51) (2022-03-01)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.50](https://github.com/telekom/scale/compare/v3.0.0-beta.49...v3.0.0-beta.50) (2022-02-23)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.49](https://github.com/telekom/scale/compare/v3.0.0-beta.48...v3.0.0-beta.49) (2022-02-22)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.48](https://github.com/telekom/scale/compare/v3.0.0-beta.47...v3.0.0-beta.48) (2022-02-08)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.47](https://github.com/telekom/scale/compare/v3.0.0-beta.46...v3.0.0-beta.47) (2022-02-04)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.46](https://github.com/telekom/scale/compare/v3.0.0-beta.45...v3.0.0-beta.46) (2022-02-02)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.45](https://github.com/telekom/scale/compare/v3.0.0-beta.44...v3.0.0-beta.45) (2022-02-01)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.44](https://github.com/telekom/scale/compare/v3.0.0-beta.43...v3.0.0-beta.44) (2022-01-31)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.43](https://github.com/telekom/scale/compare/v3.0.0-beta.42...v3.0.0-beta.43) (2022-01-18)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.42](https://github.com/telekom/scale/compare/v3.0.0-beta.41...v3.0.0-beta.42) (2022-01-14)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.41](https://github.com/telekom/scale/compare/v3.0.0-beta.40...v3.0.0-beta.41) (2022-01-11)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.40](https://github.com/telekom/scale/compare/v3.0.0-beta.39...v3.0.0-beta.40) (2022-01-06)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.39](https://github.com/telekom/scale/compare/v3.0.0-beta.38...v3.0.0-beta.39) (2021-12-21)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.38](https://github.com/telekom/scale/compare/v3.0.0-beta.37...v3.0.0-beta.38) (2021-12-16)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.37](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.37) (2021-12-15)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.36](https://github.com/telekom/scale/compare/v3.0.0-beta.35...v3.0.0-beta.36) (2021-12-15)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.35](https://github.com/telekom/scale/compare/v3.0.0-beta.34...v3.0.0-beta.35) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.34](https://github.com/telekom/scale/compare/v3.0.0-beta.33...v3.0.0-beta.34) (2021-12-10)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.33](https://github.com/telekom/scale/compare/v3.0.0-beta.32...v3.0.0-beta.33) (2021-12-06)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.32](https://github.com/telekom/scale/compare/v3.0.0-beta.31...v3.0.0-beta.32) (2021-11-30)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.31](https://github.com/telekom/scale/compare/v3.0.0-beta.30...v3.0.0-beta.31) (2021-11-15)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
+# [3.0.0-beta.30](https://github.com/telekom/scale/compare/v3.0.0-beta.29...v3.0.0-beta.30) (2021-11-15)
+
+**Note:** Version bump only for package @telekom/scale-components-angular
+
+
+
+
+
 # [3.0.0-beta.29](https://github.com/telekom/scale/compare/v3.0.0-beta.28...v3.0.0-beta.29) (2021-11-11)
 
 **Note:** Version bump only for package @telekom/scale-components-angular

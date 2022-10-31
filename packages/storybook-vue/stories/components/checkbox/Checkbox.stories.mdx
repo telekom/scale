@@ -1,0 +1,256 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleCheckbox from './ScaleCheckbox.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta title="Components/Checkbox" component={ScaleCheckbox} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => ({
+  props: {
+    label: String,
+    ...ScaleCheckbox.props,
+  },
+  template: `
+    <scale-checkbox
+      :name="name"
+      :label="label"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :disabled="disabled"
+      :checked="checked"
+      :indeterminate="indeterminate"
+      :value="value"
+      :input-id="inputId"
+      @scaleChange="action('scaleChange')($event)"
+      @scale-change="action('scale-change')($event)"
+    ></scale-checkbox>
+  `,
+  methods: {
+    action,
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Checkbox</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Checkbox',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+scale-checkbox {
+  --spacing-x: var(--telekom-spacing-unit-x2);
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
+  --color-text: var(--telekom-color-text-and-icon-standard);
+  --color-error: var(--telekom-color-functional-danger-standard);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --color-standard: var(--telekom-color-background-surface);
+  --background-disabled: none;
+  --color-primary: var(--telekom-color-primary-standard);
+  --color-focus: var(--telekom-color-functional-focus);
+  --color-primary-hover: var(--telekom-color-text-and-icon-standard);
+  --color-primary-active: var(--telekom-color-text-and-icon-standard);
+
+  /*control*/
+  --width-control: var(--telekom-spacing-unit-x4);
+  --height-control: var(--telekom-spacing-unit-x4);
+  --transition-control: var(--transition);
+  --spacing-control: var(--telekom-spacing-unit-x05);
+  --spacing-left-control: var(--telekom-spacing-unit-x1);
+  --radius-control: var(--telekom-radius-small);
+  --border-width-control: var(--telekom-spacing-unit-x025);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --spacing-left-helper-text: calc(var(--width-control) + var(--spacing-x));
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+
+  /*label*/
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --transition-label: var(--transition);
+
+  /*icon*/
+  --color-icon-checked-disabled: var(--telekom-color-text-and-icon-disabled);
+  --color-icon-checked-active: var(
+    --telekom-color-text-and-icon-white-standard
+  );
+  --width-icon: var(--telekom-spacing-unit-x3);
+  --height-icon: var(--telekom-spacing-unit-x3);
+}
+```
+
+## Standard Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Standard Disabled"
+    args={{
+      label: 'Standard Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox disabled label="Standard Disabled"></scale-checkbox>
+```
+
+## Selected
+
+<Canvas withSource="none">
+  <Story
+    name="Selected"
+    args={{
+      label: 'Selected',
+      checked: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox checked label="Selected"></scale-checkbox>
+```
+
+## Selected Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Selected Disabled"
+    args={{
+      label: 'Selected Disabled',
+      checked: true,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox checked disabled label="Selected Disabled"></scale-checkbox>
+```
+
+## Indeterminate
+
+<Canvas withSource="none">
+  <Story
+    name="Indeterminate"
+    args={{
+      label: 'Indeterminate',
+      indeterminate: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox indeterminate label="Indeterminate"></scale-checkbox>
+```
+
+## Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: 'Helper Text',
+      helperText: 'Make sure to check this',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox
+  label="Helper Text"
+  helper-text="Make sure to check this"
+></scale-checkbox>
+```
+
+## Error
+
+<Canvas withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: 'Standard with error',
+      invalid: true,
+      helperText: 'This is the error message',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox
+  label="Standard with error"
+  helper-text="This is the error message"
+  invalid
+></scale-checkbox>
+```
+
+## Custom Label
+
+<Canvas withSource="none">
+  <Story name="Custom Label" args={{}}>
+    {() => ({
+      template: `
+        <scale-checkbox>
+          <span style="display: flex; align-items: center">
+            Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy></scale-icon-alert-imprint-dataprivacy>
+          </span>
+        </scale-checkbox>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-checkbox>
+  <span style="display: flex; align-items: center">
+    Custom label &nbsp;<scale-icon-alert-imprint-dataprivacy
+    ></scale-icon-alert-imprint-dataprivacy>
+  </span>
+</scale-checkbox>
+```

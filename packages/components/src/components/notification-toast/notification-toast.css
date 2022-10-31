@@ -1,0 +1,187 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  /* toast */
+  --width: 366px;
+  --width-icon-container: 48px;
+  --radius: var(--telekom-radius-standard);
+  --background: var(--telekom-color-background-surface);
+  --z-index: 1;
+  /* FIXME:TOKEN not sure what elevation to use here */
+  --box-shadow: var(--telekom-shadow-raised-standard);
+
+  /* icon container colors */
+  --background-success-icon-container: var(
+    --telekom-color-functional-success-standard
+  );
+  --background-warning-icon-container: var(
+    --telekom-color-functional-warning-standard
+  );
+  --background-error-icon-container: var(
+    --telekom-color-functional-danger-standard
+  );
+  --background-informational-icon-container: var(
+    --telekom-color-functional-informational-standard
+  );
+
+  /* icon container colors */
+  --background-success-text-container: var(
+    --telekom-color-functional-success-subtle
+  );
+  --background-warning-text-container: var(
+    --telekom-color-functional-warning-subtle
+  );
+  --background-error-text-container: var(
+    --telekom-color-functional-danger-subtle
+  );
+  --background-informational-text-container: var(
+    --telekom-color-functional-informational-subtle
+  );
+}
+.notification-toast {
+  width: calc(var(--width) - var(--width-icon-container));
+  opacity: 1;
+  z-index: var(--z-index);
+  position: fixed;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notification-toast.notification-toast--story {
+  position: absolute;
+}
+
+.notification-toast.notification-toast--story.notification-toast--hide {
+  opacity: 0;
+}
+
+.notification-toast.notification-toast--story.notification-toast--opened {
+  opacity: 1;
+}
+
+.notification-toast.notification-toast--variant-success {
+  background: var(--background-success-text-container);
+}
+
+.notification-toast.notification-toast--variant-warning {
+  background: var(--background-warning-text-container);
+}
+
+.notification-toast.notification-toast--variant-error {
+  background: var(--background-error-text-container);
+}
+
+.notification-toast.notification-toast--variant-informational {
+  background: var(--background-informational-text-container);
+}
+
+/*
+  variant icon part
+*/
+
+.notification-toast__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+}
+
+.notification-toast__icon-container {
+  height: 100%;
+  width: var(--width-icon-container);
+  position: absolute;
+  left: calc(var(--width-icon-container) * -1 + 1px);
+  top: 0;
+  float: left;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.notification-toast.notification-toast--variant-success
+  .notification-toast__icon-container {
+  background: var(--background-success-icon-container);
+}
+
+.notification-toast.notification-toast--variant-warning
+  .notification-toast__icon-container {
+  background: var(--background-warning-icon-container);
+}
+
+.notification-toast.notification-toast--variant-error
+  .notification-toast__icon-container {
+  background: var(--background-error-icon-container);
+}
+
+.notification-toast.notification-toast--variant-informational
+  .notification-toast__icon-container {
+  background: var(--background-informational-icon-container);
+}
+
+/*
+  text part
+*/
+
+::slotted([slot='header']) {
+  margin: 0;
+  padding: 3px 0 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+::slotted([slot='body']) {
+  padding: 3px 0 0 10px;
+  margin: 0;
+}
+::slotted([slot='link']) {
+  padding: 10px 0 15px 10px;
+  margin: 0;
+}
+
+.notification-toast__text-container {
+  width: calc(var(--width) - calc(var(--width-icon-container) * 1));
+  min-height: 33px;
+  float: left;
+  position: relative;
+  margin: 0 0 0 1px;
+  padding: 15px 0 0 0;
+}
+
+/*
+  close icon part
+*/
+
+.notification-toast__button-close {
+  position: absolute;
+  top: 10px;
+  right: 7.5px;
+  color: #191919;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.notification-toast__button-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 7.5px 6.5px 6.5px 6.5px;
+  border-radius: 20%;
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+.notification-toast__button-close:hover svg {
+  background-color: white;
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}

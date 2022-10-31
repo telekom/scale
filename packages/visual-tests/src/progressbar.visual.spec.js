@@ -1,15 +1,20 @@
 describe('ProgressBar', () => {
-  test.each([
-    ['determinate'],
-    ['progress-with-description'],
-    ['complete-error'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-progress-bar--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    await page.waitFor(3000);
-    const previewHtml = await page.$('body');
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup('components-progress-bar--standard', mode);
+    });
+    test.each([
+      ['standard'],
+      ['description'],
+      ['completed'],
+      ['error'],
+      ['interactive'],
+    ])('%p', async (variant) => {
+      await global.runSetup(`components-progress-bar--${variant}`);
+
+      await global.page.waitFor(3000);
+
+      await global.visualCheck();
+    });
   });
 });

@@ -11,56 +11,65 @@
 
 :host {
   --width: auto;
-  --spacing-x: var(--scl-spacing-24);
-  --spacing-x-icon-only: var(--scl-spacing-8);
-  --min-height: var(--scl-spacing-24);
-  --height-xs: var(--scl-spacing-24);
-  --height-small: var(--scl-spacing-32);
-  --height-regular: var(--scl-spacing-40);
-  --height-large: var(--scl-spacing-48);
-  --radius: var(--scl-radius-4);
-  --transition: all var(--scl-motion-duration-fast)
-      var(--scl-motion-easing-standard),
-    border-radius 0ms;
-  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --font-weight: var(--scl-font-weight-bold);
-  --font-size-large: var(--scl-font-size-16);
-  --font-size-small: var(--scl-font-size-14);
-  --font-size-xs: var(--scl-font-size-12);
-  --line-height: var(--scl-font-line-height-150);
-  --spacing-icon-x: var(--scl-spacing-8);
+  --spacing-x: var(--telekom-spacing-unit-x6);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x2);
+  --min-height: var(--telekom-spacing-unit-x6);
+  --height-xs: var(--telekom-spacing-unit-x6);
+  --height-small: var(--telekom-spacing-unit-x8);
+  --height-regular: var(--telekom-spacing-unit-x10);
+  --height-large: var(--telekom-spacing-unit-x12);
+  --radius: var(--telekom-radius-small);
+  --transition: all var(--telekom-motion-duration-transition)
+      var(--telekom-motion-easing-standard),
+    border-radius var(--telekom-motion-duration-instant);
+  --box-shadow-focus: inset 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size-large: var(--telekom-typography-font-size-body);
+  --font-size-small: var(--telekom-typography-font-size-caption);
+  --font-size-xs: var(--telekom-typography-font-size-small);
+  --line-height: var(--telekom-spacing-unit-x2);
+  --spacing-icon-x: var(--telekom-spacing-unit-x2);
   --vertical-align: middle;
-  --border-color: var(--scl-color-grey-90);
-  --border-color-disabled: var(--scl-color-background-disabled);
+  --border-color: var(--telekom-color-ui-border-standard);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
 
   /* size: small */
-  --font-size-small: var(--scl-font-size-12);
-  --line-height-small: var(--scl-font-line-height-133);
-  --min-height-small: var(--scl-spacing-32);
+  --font-size-small: var(--telekom-typography-font-size-small);
+  --line-height-small: var(--telekom-typography-line-spacing-standard);
+  --min-height-small: var(--telekom-spacing-unit-x8);
 
   /* variant: primary */
   --radius-primary: var(--radius);
-  --background-primary: var(--scl-color-grey-10);
-  --background-primary-disabled: var(--scl-color-grey-0);
-  --color-primary: var(--scl-color-grey-90);
-  --color-primary-hover: var(--scl-color-primary-hover);
-  --color-primary-active: var(--scl-color-primary-active);
-  --color-primary-disabled: var(--scl-color-grey-20);
+  --background-primary: var(--telekom-color-ui-subtle);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
+  --color-primary: var(--telekom-color-ui-extra-strong);
+  --color-primary-hover: var(--telekom-color-primary-hovered);
+  --color-primary-active: var(--telekom-color-primary-pressed);
 
-  /* variant: secondary different from primary*/
-  --background-secondary: var(--scl-color-white);
+  /* variant: secondary */
+  --background-secondary: transparent;
+  --color-secondary: var(--telekom-color-text-and-icon-standard);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-state-fill-pressed);
+  --background-secondary-disabled: none;
+  --border-secondary: var(--telekom-color-ui-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-border-pressed);
+  --border-secondary-focus: var(--telekom-color-functional-focus);
 
   /* selected */
-  --color-selected: var(--scl-color-white);
-  --background-selected-light: var(--scl-color-primary);
-  --background-selected-hover-light: var(--color-primary-hover);
-  --background-selected-active-light: var(--scl-color-primary-active);
-  --background-selected-dark: var(--scl-color-grey-90);
-  --background-selected-hover-dark: var(--scl-color-grey-70);
-  --background-selected-active-dark: var(--scl-color-black);
+  --color-selected: var(--telekom-color-text-and-icon-white-standard);
+  --background-selected-light: var(--telekom-color-primary-standard);
+  --background-selected-hover-light: var(--telekom-color-primary-hovered);
+  --background-selected-active-light: var(--telekom-color-primary-pressed);
+  --background-selected-dark: var(--telekom-color-ui-extra-strong);
+  --background-selected-hover-dark: var(--telekom-color-ui-strong);
+  --background-selected-active-dark: var(--telekom-color-ui-strong);
 
   /* high contrast */
-  --color-high-contrast: var(--scl-color-white);
+  --color-high-contrast: var(--telekom-color-text-and-icon-white-standard);
 }
 
 .toggle-button {
@@ -87,6 +96,7 @@
   vertical-align: var(--vertical-align);
   transition: var(--transition);
   margin: 0;
+  color: var(--color-primary);
 }
 
 .toggle-button--primary {
@@ -94,6 +104,7 @@
 }
 
 .toggle-button--secondary {
+  color: var(--color-secondary);
   background: var(--background-secondary);
 }
 
@@ -136,15 +147,17 @@
 }
 
 .toggle-button:not(.button--disabled):hover {
-  color: var(--color-primary-hover);
+  color: var(--color-secondary-hover);
+  background-color: var(--background-secondary-hover);
 }
 
 .toggle-button:not(.button--disabled):active {
-  color: var(--scl-color-primary-active);
+  color: var(--color-secondary-active);
+  background-color: var(--background-secondary-active);
 }
 
 .toggle-button:disabled {
-  color: var(--color-primary-disabled);
+  color: var(--color-disabled);
   pointer-events: none;
   border: 1px solid var(--border-color-disabled);
 }
@@ -169,7 +182,7 @@
 }
 
 .toggle-button--selected.toggle-button--monochrome {
-  color: var(--color-selected);
+  color: var(--telekom-color-text-and-icon-inverted-standard);
   background: var(--background-selected-dark);
 }
 
@@ -204,6 +217,10 @@
   border-radius: var(--radius-primary);
 }
 
+.toggle-button--all,
+.toggle-button--all:disabled {
+  border-radius: var(--radius-primary);
+}
 .toggle-button--neither,
 .toggle-button--neither:disabled {
   border-right: 0;

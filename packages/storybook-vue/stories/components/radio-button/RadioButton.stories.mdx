@@ -1,0 +1,230 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleRadioButton from './ScaleRadioButton.vue';
+import { action } from '@storybook/addon-actions';
+export const ICON =
+  'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+
+<Meta
+  title="Components/Radio Button"
+  component={ScaleRadioButton}
+  argTypes={{}}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleRadioButton },
+  props: {
+    label: String,
+    ...ScaleRadioButton.props,
+  },
+  template: `
+    <scale-radio-button
+      :invalid="invalid"
+      :name="name"
+      :label="label"
+      :helper-text="helperText"
+      :disabled="disabled"
+      :checked="checked"
+      :value="value"
+      :input-id="inputId"
+      @scaleChange="scaleChange"
+    ></scale-radio-button>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Radio Button</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Radio',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+scale-radio-button {
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: var(--telekom-color-ui-disabled);
+  --color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
+  --color-primary: var(--telekom-color-text-and-icon-primary-standard);
+  --color-primary-hover: var(--telekom-color-text-and-icon-standard);
+  --color-primary-active: var(--telekom-color-text-and-icon-standard);
+  --color-focus: var(--telekom-color-functional-focus);
+  --color-text: var(--telekom-color-text-and-icon-standard);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--telekom-typography-font-size-small);
+  --font-weight-helper-text: var(--telekom-typography-font-weight-bold);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --spacing-left-helper-text: var(--telekom-spacing-unit-x6);
+  --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
+
+  /*label*/
+  --transition-label: var(--transition);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --color-label: var(--color-text);
+
+  /*control*/
+  --width-control: var(--telekom-spacing-unit-x4);
+  --height-control: var(--telekom-spacing-unit-x4);
+  --transition-control: var(--transition);
+  --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
+  --background-color-control: var(--telekom-color-ui-base);
+  --border-control: var(--telekom-spacing-unit-x025) solid var(
+      --telekom-color-ui-border-standard
+    );
+  --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x3)) solid var(
+      --telekom-color-primary-standard
+    );
+  --border-control-checked-active: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+    var(--telekom-color-primary-pressed, #cb0068);
+  --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
+    var(--telekom-color-ui-border-disabled);
+  --background-control-checked-disabled: none;
+  --border-control-active: var(--telekom-spacing-unit-x2) solid var(
+      --telekom-color-primary-pressed
+    );
+  --border-control-disabled: var(--telekom-spacing-unit-x025) solid var(
+      --telekom-color-ui-border-disabled
+    );
+  --border-control-error: var(--telekom-spacing-unit-x05) solid var(
+      --telekom-color-functional-danger-standard
+    );
+  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x05) var(
+      --color-focus
+    );
+}
+```
+
+## Standard Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Standard Disabled"
+    args={{
+      label: 'Standard Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button disabled></scale-radio-button>
+```
+
+## Selected
+
+<Canvas withSource="none">
+  <Story
+    name="Selected"
+    args={{
+      label: 'Selected',
+      checked: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button checked></scale-radio-button>
+```
+
+## Selected Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Selected Disabled"
+    args={{
+      label: 'Selected Disabled',
+      checked: true,
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button checked disabled></scale-radio-button>
+```
+
+## Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: 'Helper Text',
+      helperText: 'Make sure to select this',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button
+  label="Helper Text"
+  helper-text="Make sure to select this"
+></scale-radio-button>
+```
+
+## Error
+
+<Canvas withSource="none">
+  <Story
+    name="Error"
+    args={{
+      label: 'Standard with error',
+      invalid: true,
+      helperText: 'This is the error message',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-radio-button
+  invalid
+  helper-text="This is the error message"
+></scale-radio-button>
+```

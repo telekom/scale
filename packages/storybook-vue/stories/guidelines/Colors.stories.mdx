@@ -1,0 +1,1961 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+import lightTokens from '@telekom/design-tokens/dist/telekom/docs-json/telekom-design-tokens.light.json';
+import darkTokens from '@telekom/design-tokens/dist/telekom/docs-json/telekom-design-tokens.dark.json';
+import { UPDATE_GLOBALS } from '@storybook/core-events';
+import { addons } from '@storybook/addons';
+
+<Meta
+  title="Guidelines/Colors"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        const colorMode =
+          context && context.globals && context.globals.colorMode;
+        let allTokens = colorMode === 'light' ? lightTokens : darkTokens;
+        const darkMode = colorMode === 'light' ? false : true;
+        const channel = addons.getChannel();
+        let pathStringItem = [];
+        let levelStringItem = [];
+        let currentSection;
+        let cleared = false;
+        let item;
+        let borderItem;
+        let contrastSections;
+        function getItemPathByPath(path) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
+            if (allTokens.tokens[i].pathString === path) {
+              if (allTokens.tokens[i].path[3]) {
+                return (
+                  allTokens.tokens[i].path[2] +
+                  ' / ' +
+                  allTokens.tokens[i].path[3]
+                );
+              }
+              return allTokens.tokens[i].path[2];
+            }
+          }
+        }
+        function getItemColorByPath(path) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
+            if (allTokens.tokens[i].pathString === path) {
+              return allTokens.tokens[i].value;
+            }
+          }
+        }
+        function getLevelByPath(path) {
+          for (let i = 0; i < levelStringItem.length; i++) {
+            let currentItem = levelStringItem[i];
+            let splittedItem = currentItem.split('/');
+            if (splittedItem[0] === path) {
+              return splittedItem[1];
+            }
+          }
+        }
+        function getItemByPathString(pathString) {
+          for (let i = 0; i < allTokens.tokens.length; i++) {
+            let currentItem = allTokens.tokens[i];
+            if (currentItem.pathString === pathString) {
+              return currentItem;
+            }
+          }
+        }
+        function getAllSections(items) {
+          let itemPaths = [];
+          let sections = [];
+          let currentSection;
+          items.map((path) => itemPaths.push(getItemPathByPath(path)));
+          for (let i = 0; i < itemPaths.length; i++) {
+            if (itemPaths[i].includes('/')) {
+              if (sections.length == 0) {
+                currentSection = itemPaths[i].substr(
+                  0,
+                  itemPaths[i].indexOf('/')
+                );
+                sections.push(
+                  itemPaths[i].substr(0, itemPaths[i].indexOf('/'))
+                );
+              } else {
+                if (
+                  currentSection !==
+                  itemPaths[i].substr(0, itemPaths[i].indexOf('/'))
+                ) {
+                  sections.push(
+                    itemPaths[i].substr(0, itemPaths[i].indexOf('/'))
+                  );
+                  currentSection = itemPaths[i].substr(
+                    0,
+                    itemPaths[i].indexOf('/')
+                  );
+                }
+              }
+            }
+          }
+          contrastSections = sections;
+        }
+        function hasContrastWithoutSlash(items) {
+          let itemPaths = [];
+          items.map((item) => {
+            itemPaths.push(getItemPathByPath(item));
+          });
+          for (let i = 0; i < itemPaths.length; i++) {
+            if (!itemPaths[i].includes('/')) {
+              return true;
+            }
+          }
+        }
+        function setAdditionalColorSettings() {
+          allTokens = lightTokens;
+          return;
+        }
+        function resetAdditionalColorSettings() {
+          allTokens = colorMode === 'light' ? lightTokens : darkTokens;
+          return;
+        }
+        function setContrastStates() {
+          item.contrastChecks
+            ? item.contrastChecks.map((contrastCkeckItem) => {
+                pathStringItem.push(contrastCkeckItem.path);
+                levelStringItem.push(
+                  contrastCkeckItem.path + '/' + contrastCkeckItem.level
+                );
+              })
+            : null;
+        }
+        function clearContrastStates() {
+          pathStringItem.length = 0;
+          levelStringItem.length = 0;
+          cleared = true;
+        }
+        function generateTableColorRow(
+          itemPathString,
+          commentStringGerman,
+          commentStringEnglish,
+          additionalColor
+        ) {
+          {
+            /*
+              Additional query, because the additional colors are only available in the light json, 
+              but are also needed in the darkmode 
+            */
+          }
+          additionalColor
+            ? setAdditionalColorSettings()
+            : resetAdditionalColorSettings();
+          item = getItemByPathString(itemPathString);
+          return item ? (
+            <tr
+              style={{
+                backgroundColor: 'var(--telekom-color-background-canvas)',
+              }}
+            >
+              {/* Example Column */}
+              <td
+                style={{
+                  border: 'none',
+                  verticalAlign: 'top',
+                  width: '200px',
+                  padding: '4px 4px 4px 0',
+                }}
+              >
+                {clearContrastStates()}
+                {cleared ? setContrastStates() : null}
+                {item.contrastChecks ? (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      marginTop: 'var(--telekom-spacing-unit-x1)',
+                      marginBottom: 'var(--telekom-spacing-unit-x1)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '4px',
+                      minWidth: '400px',
+                      minHeight: '120px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        color: `${getItemColorByPath(pathStringItem[0])}`,
+                        fontSize: '11px',
+                        fontWeight: 500,
+                        paddingTop: 'var(--telekom-spacing-unit-x1)',
+                        passingBottom: 'var(--telekom-spacing-unit-x1)',
+                      }}
+                    >
+                      {locale === 'en'
+                        ? 'Recommended colors for text and icons'
+                        : 'Empfohlene Farben für Text & Icons'}
+                    </div>
+                    {hasContrastWithoutSlash(pathStringItem) ? (
+                      <td
+                        style={{
+                          padding: '4px 4px 4px 0',
+                          border: 'none',
+                          width: '140px',
+                        }}
+                      >
+                        {pathStringItem
+                          .filter(
+                            (path) => !getItemPathByPath(path).includes('/')
+                          )
+                          .map((path) => {
+                            return (
+                              <a href={`#${path}`}>
+                                <div
+                                  style={{
+                                    color: `${getItemColorByPath(path)}`,
+                                    fontSize: '13px',
+                                    fontWeight: 600,
+                                  }}
+                                >
+                                  {getItemPathByPath(path)}
+                                  {' (' + getLevelByPath(path) + ')'}
+                                </div>
+                              </a>
+                            );
+                          })}
+                      </td>
+                    ) : null}
+                    {getAllSections(pathStringItem)}
+                    {contrastSections
+                      ? contrastSections.map((item, i) => {
+                          return (
+                            <td
+                              style={{
+                                border: 'none',
+                                padding: '4px 4px 4px 0',
+                                width: '200px',
+                              }}
+                            >
+                              {pathStringItem
+                                .filter((path) =>
+                                  getItemPathByPath(path).includes(
+                                    `${contrastSections[i]}`
+                                  )
+                                )
+                                .map((path) => {
+                                  return (
+                                    <a href={`#${path}`}>
+                                      <div
+                                        style={{
+                                          color: `${getItemColorByPath(path)}`,
+                                          fontSize: '13px',
+                                          fontWeight: 600,
+                                          marginRight: '10px',
+                                        }}
+                                      >
+                                        {getItemPathByPath(path)}
+                                        {' (' + getLevelByPath(path) + ')'}
+                                      </div>
+                                    </a>
+                                  );
+                                })}
+                            </td>
+                          );
+                        })
+                      : null}
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: '20px',
+                      marginTop: 'var(--telekom-spacing-unit-x1)',
+                      marginBottom: 'var(--telekom-spacing-unit-x1)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '4px',
+                      width: '400px',
+                      minHeight: '120px',
+                    }}
+                  ></div>
+                )}
+              </td>
+              {/* Description Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  width: '100px',
+                  height: 'inherit',
+                  border: 'none',
+                }}
+              >
+                <div
+                  style={{
+                    marginTop: 'var(--telekom-spacing-unit-x2)',
+                    marginBottom: 'var(--telekom-spacing-unit-x2)',
+                    width: '380px',
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        fontWeight: 'bolder',
+                        fontSize: '18px',
+                        color: 'var(--telekom-color-text-and-icon-standard)',
+                      }}
+                    >
+                      {item.name}
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        color: 'var(--telekom-color-text-and-icon-standard)',
+                      }}
+                    >
+                      {/*item.comment*/}
+                      {locale === 'en'
+                        ? commentStringEnglish
+                        : commentStringGerman}
+                    </span>
+                  </div>
+                </div>
+              </td>
+              {/* Token Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  border: 'none',
+                  paddingTop: 'var(--telekom-spacing-unit-x1)',
+                  paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                }}
+              >
+                <div
+                  style={{
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                    width: '330px',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  css
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '30px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      lineHeight: '30px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    {item.cssVariableName}
+                  </span>
+                  <div
+                    style={{
+                      margin: '0',
+                      position: 'absolute',
+                      top: '50%',
+                      right: '5px',
+                      msTransform: 'translateY(-50%)',
+                      transform: 'translateY(-50%)',
+                    }}
+                  >
+                    <button
+                      id={`${item.cssVariableName}`}
+                      className={
+                        darkMode
+                          ? 'color_token_copy-paste-button_dark'
+                          : 'color_token_copy-paste-button'
+                      }
+                      style={{
+                        border: `${
+                          darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                        }`,
+                        borderRadius: '4px',
+                        padding: 'var(--telekom-spacing-unit-x1)',
+                        cursor: 'pointer',
+                        backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                      }}
+                      onClick={(event) => {
+                        navigator.clipboard.writeText(event.target.id);
+                      }}
+                    >
+                      <scale-icon-action-copy-paste
+                        size={15}
+                        accessibility-title="copy-paste"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  js
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '30px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      lineHeight: '30px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    {item.jsPathName}
+                  </span>
+                  <div
+                    style={{
+                      margin: '0',
+                      position: 'absolute',
+                      top: '50%',
+                      right: '5px',
+                      msTransform: 'translateY(-50%)',
+                      transform: 'translateY(-50%)',
+                    }}
+                  >
+                    <button
+                      id={`${item.jsPathName}`}
+                      className={
+                        darkMode
+                          ? 'color_token_copy-paste-button_dark'
+                          : 'color_token_copy-paste-button'
+                      }
+                      style={{
+                        border: `${
+                          darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                        }`,
+                        borderRadius: '4px',
+                        padding: 'var(--telekom-spacing-unit-x1)',
+                        cursor: 'pointer',
+                        backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                      }}
+                      onClick={(event) => {
+                        navigator.clipboard.writeText(event.target.id);
+                      }}
+                    >
+                      <scale-icon-action-copy-paste
+                        size={15}
+                        accessibility-title="copy-paste"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                    fontWeight: 500,
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  hex
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '30px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      lineHeight: '30px',
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    {item.value}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          ) : null;
+        }
+        function generateUIOutlinedTableColorRow(
+          itemPathString,
+          borderItemPathString,
+          itemTextColorLight,
+          borderItemColorLight,
+          itemTextColorDark,
+          borderItemColorDark
+        ) {
+          item = getItemByPathString(itemPathString);
+          borderItem = getItemByPathString(borderItemPathString);
+          return item && borderItem ? (
+            <tr
+              style={{
+                backgroundColor: `${darkMode ? '#000' : '#fff'}`,
+              }}
+            >
+              {/* Example Column */}
+              <td
+                style={{
+                  border: 'none',
+                  verticalAlign: 'top',
+                  width: '200px',
+                  paddingTop: 'var(--telekom-spacing-unit-x1)',
+                  paddingRight: 'var(--telekom-spacing-unit-x1)',
+                  paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                  paddingLeft: '0px',
+                }}
+              >
+                {clearContrastStates()}
+                {cleared ? setContrastStates() : null}
+                <div
+                  style={{
+                    backgroundColor: `${borderItem.value}`,
+                    paddingTop: 'var(--telekom-spacing-unit-x5)',
+                    marginTop: 'var(--telekom-spacing-unit-x2)',
+                    marginLeft: 'var(--telekom-spacing-unit-x2)',
+                    border: `${
+                      darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                    }`,
+                    borderRadius: '4px 4px 0px 0px',
+                    minWidth: '380px',
+                    minHeight: '80px',
+                  }}
+                >
+                  <span
+                    style={{
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      color: `${
+                        darkMode ? borderItemColorDark : borderItemColorLight
+                      }`,
+                      fontSize: '12px',
+                    }}
+                  >
+                    Border color
+                  </span>
+                </div>
+                {item.contrastChecks ? (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '0px 0px 4px 4px',
+                      minWidth: '380px',
+                      minHeight: '120px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        color: `${getItemColorByPath(pathStringItem[0])}`,
+                        fontSize: '11px',
+                        fontWeight: 500,
+                        paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                        color: `${darkMode ? itemColorDark : itemColorLight}`,
+                      }}
+                    >
+                      <span style={{ fontSize: '12px' }}>
+                        Fill color <br />
+                      </span>
+                      Recommended colors for text & icons
+                    </div>
+                    {hasContrastWithoutSlash(pathStringItem) ? (
+                      <td
+                        style={{
+                          padding: '4px 4px 4px 0',
+                          border: 'none',
+                        }}
+                      >
+                        {pathStringItem
+                          .filter(
+                            (path) => !getItemPathByPath(path).includes('/')
+                          )
+                          .map((path) => {
+                            return (
+                              <a href={`#${path}`}>
+                                <div
+                                  style={{
+                                    color: `${getItemColorByPath(path)}`,
+                                    fontSize: '11px',
+                                    fontWeight: 600,
+                                  }}
+                                >
+                                  {getItemPathByPath(path)}
+                                  {' (' + getLevelByPath(path) + ')'}
+                                </div>
+                              </a>
+                            );
+                          })}
+                      </td>
+                    ) : null}
+                    {getAllSections(pathStringItem)}
+                    {contrastSections
+                      ? contrastSections.map((item, i) => {
+                          return (
+                            <td
+                              style={{
+                                border: 'none',
+                                padding: '4px 4px 4px 0',
+                              }}
+                            >
+                              {pathStringItem
+                                .filter((path) =>
+                                  getItemPathByPath(path).includes(
+                                    `${contrastSections[i]}`
+                                  )
+                                )
+                                .map((path) => {
+                                  return (
+                                    <a href={`#${path}`}>
+                                      <div
+                                        style={{
+                                          color: `${getItemColorByPath(path)}`,
+                                          fontSize: '11px',
+                                          fontWeight: 600,
+                                        }}
+                                      >
+                                        {getItemPathByPath(path)}
+                                        {'(' + getLevelByPath(path) + ')'}
+                                      </div>
+                                    </a>
+                                  );
+                                })}
+                            </td>
+                          );
+                        })
+                      : null}
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      backgroundColor: `${item.value}`,
+                      padding: 'var(--telekom-spacing-unit-x5)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
+                      border: `${
+                        darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
+                      }`,
+                      borderRadius: '0px 0px 4px 4px',
+                      width: '400px',
+                      minHeight: '110px',
+                      color: 'var(--telekom-color-text-and-icon-standard)',
+                    }}
+                  >
+                    <span style={{ fontSize: '12px' }}>Fill color</span>
+                  </div>
+                )}
+              </td>
+              {/* Description Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  width: '100px',
+                  height: 'inherit',
+                  border: 'none',
+                }}
+              >
+                <div
+                  style={{
+                    marginTop: 'var(--telekom-spacing-unit-x2)',
+                    marginBottom: 'var(--telekom-spacing-unit-x2)',
+                    width: '380px',
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        fontWeight: 'bolder',
+                        fontSize: '18px',
+                        color: 'var(--telekom-color-text-and-icon-standard)',
+                      }}
+                    >
+                      {borderItem.name}
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: '14px',
+                        color: 'var(--telekom-color-text-and-icon-standard)',
+                      }}
+                    >
+                      {borderItem.comment}
+                    </span>
+                  </div>
+                </div>
+              </td>
+              {/* Token Column */}
+              <td
+                style={{
+                  verticalAlign: 'top',
+                  border: 'none',
+                  paddingTop: 'var(--telekom-spacing-unit-x1)',
+                  paddingBottom: 'var(--telekom-spacing-unit-x2)',
+                  paddingLeft: 'var(--telekom-spacing-unit-x5)',
+                }}
+              >
+                <div
+                  style={{
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  css
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '60px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      paddingTop: 'var(--telekom-spacing-unit-x1)',
+                      paddingLeft: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    border: {borderItem.cssVariableName} <br />
+                    fill: {item.cssVariableName}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  js
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    width: '320px',
+                    height: '60px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      paddingTop: 'var(--telekom-spacing-unit-x1)',
+                      paddingLeft: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    border: {borderItem.jsPathName} <br />
+                    fill: {item.jsPathName}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    fontWeight: '500',
+                    fontSize: '13px',
+                    color: 'var(--telekom-color-text-and-icon-standard)',
+                  }}
+                >
+                  hex
+                </div>
+                <div
+                  style={{
+                    textAlign: 'start',
+                    position: 'relative',
+                    width: '320px',
+                    height: '60px',
+                    backgroundColor: `${darkMode ? '#38393b' : '#f0f1f1'}`,
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      paddingTop: 'var(--telekom-spacing-unit-x1)',
+                      paddingLeft: 'var(--telekom-spacing-unit-x5)',
+                      color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    }}
+                    id={item.pathString}
+                  >
+                    border: {borderItem.value} <br />
+                    fill: {item.value}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          ) : null;
+        }
+        function generateTableHead() {
+          return (
+            <thead>
+              <tr>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    backgroundColor: 'transparent',
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    borderRight: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  Example
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    borderRight: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  }}
+                >
+                  Description
+                </th>
+                <th
+                  style={{
+                    textAlign: 'left',
+                    color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    fontSize: '13px',
+                    borderColor: 'var(--telekom-color-background-canvas)',
+                    borderBottom: `${
+                      darkMode
+                        ? '1px solid hsla(0, 0%, 100%, 36%)'
+                        : '1px solid #E7E8E9'
+                    }`,
+                    paddingTop: 'var(--telekom-spacing-unit-x1)',
+                    paddingRight: 'var(--telekom-spacing-unit-x2)',
+                    paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                    paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                    width: '342px',
+                  }}
+                >
+                  Token
+                </th>
+              </tr>
+            </thead>
+          );
+        }
+        function generateSectionTitle(sectionTitleGerman, sectionTitleEnglish) {
+          return (
+            <div
+              style={{
+                marginTop: 'var(--telekom-spacing-unit-x12)',
+                marginBottom: 'var(--telekom-spacing-unit-x6)',
+                fontWeight: 800,
+                fontSize: '32px',
+                color: 'var(--telekom-color-text-and-icon-standard)',
+                paddingLeft: 'var(--telekom-spacing-unit-x2)',
+              }}
+            >
+              {locale === 'en' ? sectionTitleEnglish : sectionTitleGerman}
+            </div>
+          );
+        }
+        function generateSectionSubTitle(
+          sectionSubTitleGerman,
+          sectionSubTitleEnglish,
+          hasFollowingText
+        ) {
+          return (
+            <div
+              style={{
+                marginTop: 'var(--telekom-spacing-unit-x6)',
+                marginBottom: `${
+                  hasFollowingText
+                    ? 'var(--telekom-spacing-unit-x6)'
+                    : 'var(--telekom-spacing-unit-x8)'
+                }`,
+                fontWeight: 'bold',
+                fontSize: '21px',
+                color: 'var(--telekom-color-text-and-icon-standard)',
+                paddingLeft: 'var(--telekom-spacing-unit-x2)',
+              }}
+            >
+              {locale === 'en' ? sectionSubTitleEnglish : sectionSubTitleGerman}
+            </div>
+          );
+        }
+        function generateSectionDescription(
+          sectionSubTitleGerman,
+          sectionSubTitleEnglish
+        ) {
+          return (
+            <p>
+              <div
+                style={{
+                  marginTop: 'var(--telekom-spacing-unit-x5)',
+                  marginBottom: 'var(--telekom-spacing-unit-x5)',
+                  fontWeight: 'normal',
+                  fontSize: '16px',
+                  color: 'var(--telekom-color-text-and-icon-standard)',
+                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                }}
+              >
+                {locale === 'en'
+                  ? sectionSubTitleEnglish
+                  : sectionSubTitleGerman}
+              </div>
+            </p>
+          );
+        }
+        function generateColorModeLinkText() {
+          return locale === 'en'
+            ? `Show ${darkMode ? 'light' : 'dark'} mode color palette`
+            : `Farbpalette des ${darkMode ? 'Light' : 'Dark'} Modes anzeigen`;
+        }
+        function changeModeLink() {
+          const toggleMode = darkMode ? 'light' : 'dark';
+          channel.emit(UPDATE_GLOBALS, {
+            globals: { colorMode: toggleMode },
+          });
+        }
+        return (
+          <DocsContainer context={context}>
+            <h1 style={{ paddingLeft: 'var(--telekom-spacing-unit-x2)' }}>
+              {locale === 'en' ? 'Colors' : 'Farben'}
+            </h1>
+            <p style={{ paddingLeft: 'var(--telekom-spacing-unit-x2)' }}>
+              {locale === 'en'
+                ? 'Color design is one of the decisive factors for our overall visual appearance and brand recognition. With our brand color, Magenta, Deutsche Telekom is one of the few companies that can be recognized internationally by its color alone. This is why Magenta is always the dominant color in our visual appearance. To create a lively and interesting visual appearance, we can add more colors – as long as they harmonize with Magenta.'
+                : 'Die Farbgestaltung ist einer der entscheidenden Faktoren für die visuelle Gesamterscheinung und Wiedererkennung unserer Marke. Mit unserer Markenfarbe Magenta ist die Deutsche Telekom eines der wenigen Unternehmen, das man international allein über seine Farbe erkennt. Deswegen ist Magenta in unserem Auftritt immer die dominante Farbe. Um einen lebendigen und interessanten Auftritt zu schaffen, können wir weitere Farben hinzufügen – solange sie mit Magenta harmonieren.'}
+            </p>
+            <a
+              role="button"
+              style={{
+                cursor: 'pointer',
+                paddingLeft: 'var(--telekom-spacing-unit-x2)',
+              }}
+              onClick={() => {
+                changeModeLink();
+              }}
+            >
+              {generateColorModeLinkText()}
+            </a>
+            <br />
+            <div style={{ paddingLeft: 'var(--telekom-spacing-unit-x2)' }}>
+              {locale === 'en' ? (
+                <p>
+                  To make it as easy as possible for you to apply our color
+                  tokens, we use semantic names for the colors. If you change
+                  scale components or develop new components, pay attention to
+                  the correct use of the color tokens. This is the only way to
+                  ensure that future updates can be easily transferred to your
+                  designs at the push of a button. Only then can dark mode be
+                  implemented without additional effort. You can learn more
+                  about this concept in the guideline for{' '}
+                  <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">
+                    Design Tokens
+                  </a>
+                </p>
+              ) : (
+                <p>
+                  Damit die Anwendung unserer Farb-Tokens möglichst einfach für
+                  dich ist, verwenden wir semantische Bezeichnungen für die
+                  Farben. Solltest du Scale Komponenten ändern oder neue
+                  Komponenten entwickeln, achte auf die korrekte Anwendung der
+                  Farb-Tokens. Nur dann ist gewährleistet, dass du künftige
+                  Updates einfach per Knopfdruck in deine Designs übertragen
+                  kannst. Auch der Dark Mode lässt sich nur dann ohne
+                  Mehraufwand umsetzen. In der Guideline{' '}
+                  <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">
+                    Design-Tokens{' '}
+                  </a>{' '}
+                  erfährst du mehr über das Konzept der Tokens im Design.{' '}
+                </p>
+              )}
+            </div>
+            <table
+              className="colors-table"
+              style={{
+                backgroundColor: `${darkMode ? '#000' : '#fff'}`,
+              }}
+            >
+              <thead>
+                {!darkMode
+                  ? generateSectionTitle(
+                      'Primäre Farben im Light Mode',
+                      'Light mode primary colors'
+                    )
+                  : generateSectionTitle(
+                      'Primäre Farben im Dark Mode',
+                      'Dark Mode Primary Colors'
+                    )}
+                {!darkMode
+                  ? generateSectionDescription(
+                      'Unsere Markenfarbe Magenta sowie Weiß und Schwarz sind die primären Farben für User Interfaces im Light Mode. Die grundlegende Tonalität unserer Webseiten und digitalen Produkte wirkt dadurch freundlich, offen und hell.',
+                      'The primary colors for user interfaces in light mode are our brand color, Magenta, as well as white and black. This makes the basic tonality of our websites and digital products friendly, open, and bright.',
+                      true
+                    )
+                  : generateSectionDescription(
+                      'Unsere Markenfarbe Magenta sowie Schwarz und Grau sind die primären Farben für User Interfaces im Dark Mode.',
+                      'The primary colors for user interfaces in dark mode are our brand color, Magenta, as well as black and gray.',
+                      true
+                    )}
+              </thead>
+              {generateTableHead()}
+              <tbody>
+                {generateTableColorRow(
+                  'color.primary.standard',
+                  'Markenfarbe Magenta',
+                  'Brand color, Magenta'
+                )}
+                {generateTableColorRow(
+                  'color.background.canvas',
+                  'Für den Hintergrund deiner Webseite oder App.',
+                  'For the background of your website or app.'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface-highlight',
+                  'Für den Hintergrund von Komponenten oder Flächen, die hervorgehoben werden sollen (bspw. der Footer).',
+                  'For the background of components or areas that should be highlighted (e.g., the footer).'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Textfarben Standard',
+                'Text color standard'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.standard',
+                  'Für alle Standardtexte.',
+                  'For all standard text.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.additional',
+                  'Für Texte mit ergänzenden Informationen.',
+                  'For text with additional information.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.disabled',
+                  'Nur für Texte im „disabled State“.',
+                  'Only for text in a disabled state.'
+                )}
+              </tbody>
+              {generateSectionSubTitle(
+                'Weitere Farben für spezielle Anwendungsfälle',
+                'More colors for special use cases'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.inverted.standard',
+                  'Inverted/Standard ist der umgekehrte Zustand der Standard-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (Farbe Weiß im hellen Modus und Dunkelgrau im dunklen Modus).',
+                  'Inverted / standard is the inverse state of the default text color. For text displayed as inverted in the other mode (white in light mode and dark gray in dark mode).'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.inverted.additional',
+                  'Inverted/Additional ist der umgekehrte Zustand der Additional-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (ein dunkleres Grau im hellen Modus und ein helleres Grau im dunklen Modus).',
+                  'Inverted / additional is the inverse state of the additional text color. For text displayed as inverted in the other mode (a darker gray in light mode and a lighter gray in dark mode).'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.white.standard',
+                  'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
+                  'For standard text displayed in white in both light and dark mode. This is mostly used when text is on a colored area that is identical in both modes, such as the primary button.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.white.additional',
+                  'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
+                  'For supplementary text displayed in white in both light and dark mode. This is mostly used when text is on a colored area that is identical in both modes, such as the primary button.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.black.standard',
+                  'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi hell sind.',
+                  'For standard text displayed in black in both light and dark mode. This is mostly used when text is on a colored area that is light in both modes.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.black.additional',
+                  'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi hell sind.',
+                  'For standard text displayed in black in both light and dark mode. This is mostly used when text is on a colored area that is light in both modes.'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Textfarbe Funktion',
+                'Text color function'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.link.standard',
+                  'Für unterstützende Informationen sowie für Funktionen wie Synchronisieren, Sortieren und Hinzufügen.',
+                  'For supporting information as well as for functions like synchronize, sort, and add.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.success',
+                  'Für Funktionen wie Senden, Anrufen und Aktivieren und zur Bestätigung einer erfolgreich durchgeführten Aktion.',
+                  'For confirming a successfully performed action or for functions like send, call, and activate.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.danger',
+                  'Für Fehlermeldungen oder Funktionen wie Beenden und Löschen.',
+                  'For error messages or functions like exit and delete.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.warning',
+                  'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
+                  'For warnings of potentially undesirable results.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.informational',
+                  'Für unterstützende Informationen.',
+                  'For supporting information.'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Hintergrund Standard',
+                'Background standard'
+              )}
+              {generateTableHead()}
+              <tbody>
+                {generateTableColorRow(
+                  'color.background.canvas',
+                  'Für den Hintergrund deiner Webseite oder App.',
+                  'For the background of your website or app.'
+                )}
+                {generateTableColorRow(
+                  'color.background.canvas-subtle',
+                  'Für den Hintergrund deiner Webseite oder App, bspw. wenn du ein card-basiertes Layout anlegst.',
+                  'For the background of your website or app (e.g., when you create a card-based layout).'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface',
+                  'Für die Hintergrundfläche von Komponenten wie Header oder Cards.',
+                  'For the background area of components like headers or cards.'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface-subtle',
+                  'Für die Hintergrundfläche von Komponenten, die sich etwas vom weißen Hintergrund abheben sollen.',
+                  'For the background area of components that should stand out somewhat against a white background.'
+                )}
+                {generateTableColorRow(
+                  'color.background.backdrop',
+                  'Für die Abdunklung des Contents unter Dialogen.',
+                  'For darkening the content under dialogs.'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface-highlight',
+                  'Für Hintergründe von Komponenten, die sich vom restlichen Inhalt abheben sollen, wie bspw. der Footer.',
+                  'For backgrounds of components that should stand out from the rest of the content, such as the footer.'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Background Funktion',
+                'Background function'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.functional.success.standard',
+                  'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification oder für Funktionen wie Senden, Anrufen und Aktivieren.',
+                  'For backgrounds of components that confirm a successful action, such as a success notification, or for functions such as send, call, and activate.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.success.subtle',
+                  'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification.',
+                  'For backgrounds of components that confirm a successful action, such as a success notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.informational.standard',
+                  'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Informational Notification oder für Funktionen wie Speichern.',
+                  'For backgrounds of components that provide additional and helpful information, such as an informational notification, or functions such as save.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.informational.subtle',
+                  'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Success Notification.',
+                  'For backgrounds of components that provide additional and helpful information, such as a success notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.warning.standard',
+                  'Für Hintergründe von Komponenten, die vor möglicherweise unerwünschten Ergebnissen warnen, wie bspw. die Warning Notification.',
+                  'For backgrounds of components that warn of potentially undesirable results, such as a warning notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.warning.subtle',
+                  'Für Hintergründe von Komponenten, die vor möglicherweise unerwünschten Ergebnissen warnen, wie bspw. die Warning Notification.',
+                  'For backgrounds of components that warn of potentially undesirable results, such as a warning notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.danger.standard',
+                  'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification, oder Funktionen wie Löschen.',
+                  'For backgrounds of components that inform about a failed action or error, such as the error notification, or functions like delete.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.danger.subtle',
+                  'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification.',
+                  'For backgrounds of components that inform about a failed action or error, such as error notification.'
+                )}
+              </tbody>
+              {generateSectionTitle('UI', 'UI')}
+              <tbody>
+                {generateTableColorRow('color.ui.base')}
+                {generateTableColorRow('color.ui.subtle')}
+                {generateTableColorRow('color.ui.light')}
+                {generateTableColorRow('color.ui.regular')}
+                {generateTableColorRow('color.ui.strong')}
+                {generateTableColorRow('color.ui.extra-strong')}
+              </tbody>
+              {generateSectionSubTitle('UI Border', 'UI border')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.ui.border.standard',
+                  'Für Outlines von Komponenten ohne sichtbare Füllung.',
+                  'For outlines of components without visible filling.'
+                )}
+              </tbody>
+              {generateSectionTitle('Agent States', 'Agent states')}
+              {generateSectionDescription(
+                'Z. B. Primary Button',
+                'e.g., Primary Button'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.primary.standard',
+                  'Markenfarbe Magenta',
+                  'Brand color, Magenta'
+                )}
+                {generateTableColorRow('color.text-&-icon.primary.hovered')}
+                {generateTableColorRow('color.text-&-icon.primary.pressed')}
+              </tbody>
+              {generateSectionSubTitle('Text-Link', 'Text link')}
+              <tbody>
+                {generateTableColorRow('color.text-&-icon.link.standard')}
+                {generateTableColorRow('color.text-&-icon.link.hovered')}
+                {generateTableColorRow('color.text-&-icon.link.visited')}
+                {generateTableColorRow('color.text-&-icon.link.active')}
+              </tbody>
+              {generateSectionSubTitle(
+                'Funktionale Elemente',
+                'Functional elements'
+              )}
+              <tbody>
+                {generateTableColorRow('color.functional.success.standard')}
+                {generateTableColorRow('color.functional.success.hovered')}
+                {generateTableColorRow('color.functional.success.pressed')}
+              </tbody>
+              {generateSectionSubTitle(
+                'Border Focus State',
+                'Border focus state'
+              )}
+              <tbody>{generateTableColorRow('color.functional.focus')}</tbody>
+              {generateSectionSubTitle('UI Outlined', 'UI outlined elements')}
+              <tbody>
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.standard',
+                  'color.ui.border.standard',
+                  '#fff',
+                  '#fff',
+                  '#000',
+                  '#fff'
+                )}
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.hovered',
+                  'color.ui.border.hovered',
+                  '#000',
+                  '#fff',
+                  '#fff',
+                  '#fff'
+                )}
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.pressed',
+                  'color.ui.border.pressed',
+                  '#000',
+                  '#fff',
+                  '#fff',
+                  '#000'
+                )}
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.standard',
+                  'color.ui.border.disabled',
+                  '#000',
+                  '#000',
+                  '#fff',
+                  '#fff'
+                )}
+              </tbody>
+              {generateSectionTitle('Additional', 'Additional')}
+              {generateSectionDescription(
+                'Für Farbakzente und Datenvisualisierungen empfehlen wir diese zusätzlichen Farben:',
+                'For color accents and data visualizations, we recommend these additional colors:'
+              )}
+              {generateSectionSubTitle('Violett', 'Violet')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.violet.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Blau', 'Blue')}
+              <tbody>
+                {generateTableColorRow('color.additional.blue.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.blue.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Türkis', 'Cyan')}
+              <tbody>
+                {generateTableColorRow('color.additional.cyan.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.cyan.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Teal', 'Teal')}
+              <tbody>
+                {generateTableColorRow('color.additional.teal.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.teal.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Grün', 'Green')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.green.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Olive', 'Olive')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.olive.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Braun', 'Brown')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.brown.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Gelb', 'Yellow')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.yellow.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Orange', 'Orange')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.orange.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Rot', 'Red')}
+              <tbody>
+                {generateTableColorRow('color.additional.red.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.red.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+            </table>
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

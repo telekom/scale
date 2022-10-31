@@ -1,0 +1,267 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleTabNav from './ScaleTabNav.vue';
+
+<Meta
+  title="Components/Tab Navigation"
+  component={ScaleTabNav}
+  argTypes={{
+    styles: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) Injected styles`,
+      control: { type: null },
+    },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) size`,
+      control: { type: 'select', options: ['large', 'small'] },
+    },
+    small: {
+      table: {
+        type: { summary: 'Boolean' },
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTabNav },
+  props: ScaleTabNav.props,
+  template: `
+    <scale-tab-nav :disabled="disabled ? true : false" :size="size" :with-icon="withIcon"></scale-tab-nav>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Tab Navigation</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Text & Icon
+
+<Canvas withSource="none">
+  <Story name="Text & Icon" args={{ size: 'small' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Text & Icon" />
+
+```html
+<scale-tab-nav>
+  <scale-tab-header slot="tab">
+    <scale-icon-home-home></scale-icon-home-home> General
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">
+    <scale-icon-user-file-analytics></scale-icon-user-file-analytics> Usage
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">
+    <scale-icon-content-heart></scale-icon-content-heart> Style
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">
+    <scale-icon-action-random></scale-icon-action-random> Code
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+  --tab-height: var(--telekom-spacing-unit-x12);
+  --tab-spacing-horizontal: var(--telekom-spacing-unit-x4);
+  --tab-spacing-vertical: 0.875rem;
+  --tab-radius: var(--telekom-radius-small);
+  --tab-border-size: var(--telekom-line-weight-standard);
+  --tab-border-size-selected: var(--telekom-line-weight-highlight);
+  --tab-border-color: var(--telekom-color-ui-subtle);
+
+  --tab-height-small: var(--telekom-spacing-unit-x10);
+  --tab-spacing-horizontal-small: var(--telekom-spacing-unit-x3);
+  --tab-spacing-vertical-small: var(--telekom-spacing-unit-x4);
+}
+
+/* tab-header */
+:host {
+  --font-size: var(--telekom-typography-font-size-callout);
+  --font-family: var(--telekom-typography-font-family-sans, TeleNeoWeb);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --height: 3rem;
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+  --spacing-right-slotted: var(--telekom-spacing-unit-x2);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --radius: var(--telekom-radius-standard);
+
+  --font-size-small: var(--telekom-typography-font-size-body);
+}
+
+/* tab-panel */
+:host {
+  --spacing-top: var(--telekom-spacing-unit-x6);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
+## Text Only
+
+<Canvas withSource="none">
+  <Story name="Text Only" args={{ withIcon: false, size: 'small' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header slot="tab">General</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Usage</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Style</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Code</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```
+
+## Disabled Tabs
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled Tabs"
+    args={{ disabled: true, withIcon: false, size: 'small' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tab-nav>
+  <scale-tab-header disabled slot="tab">General</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Usage</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Style</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Code</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```
+
+## Large, Text & Icon
+
+<Canvas withSource="none">
+  <Story name="Large, Text & Icon" args={{ size: 'large' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tab-nav size="large">
+  <scale-tab-header slot="tab">
+    <scale-icon-home-home></scale-icon-home-home> General
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">
+    <scale-icon-user-file-analytics></scale-icon-user-file-analytics> Usage
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">
+    <scale-icon-content-heart></scale-icon-content-heart> Style
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">
+    <scale-icon-action-random></scale-icon-action-random> Code
+  </scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```
+
+## Large, Text Only
+
+<Canvas withSource="none">
+  <Story name="Large, Text Only" args={{ size: 'large', withIcon: false }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-tab-nav size="large">
+  <scale-tab-header slot="tab">General</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Freegan kinfolk farm-to-table humblebrag cred…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Usage</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Bespoke austin pork belly yuccie pop-up. Before they sold out…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Style</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Biodiesel chia af hoodie tumeric bespoke letterpress…
+  </scale-tab-panel>
+  <scale-tab-header slot="tab">Code</scale-tab-header>
+  <scale-tab-panel slot="panel">
+    Asymmetrical tattooed chia, banh mi blog microdosing…
+  </scale-tab-panel>
+</scale-tab-nav>
+```

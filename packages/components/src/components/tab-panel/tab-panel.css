@@ -10,16 +10,11 @@
  */
 
 :host {
-  --spacing-top: var(--scl-spacing-24);
-  --spacing-top-small: var(--scl-spacing-16);
+  --spacing-top: var(--telekom-spacing-unit-x6);
 }
 
 .tab-panel {
   /* we use `margin` and top padding because we want to allow "margin collapse" */
   /* @see https://web.dev/learn/css/spacing/#margin-collapse */
   margin-top: var(--spacing-top);
-}
-
-.tab-panel--small {
-  margin-top: var(--spacing-top-small);
 }

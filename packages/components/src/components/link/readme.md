@@ -58,7 +58,7 @@
 | Property         | Attribute        | Description                                                                                                                                                          | Type                                                                                                                                                                                     | Default     |
 | ---------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | `disabled`       | `disabled`       | (optional) Disabled link                                                                                                                                             | `boolean`                                                                                                                                                                                | `false`     |
-| `download`       | `download`       | (optional) Download declaration                                                                                                                                      | `boolean`                                                                                                                                                                                | `false`     |
+| `download`       | `download`       | (optional) Download declaration                                                                                                                                      | `string`                                                                                                                                                                                 | `undefined` |
 | `href`           | `href`           | (optional) Link href                                                                                                                                                 | `string`                                                                                                                                                                                 | `undefined` |
 | `hreflang`       | `hreflang`       | (optional)                                                                                                                                                           | `string`                                                                                                                                                                                 | `undefined` |
 | `iconPosition`   | `icon-position`  | (optional) Chnage icon/content slot order                                                                                                                            | `"after" \| "before"`                                                                                                                                                                    | `'after'`   |
@@ -106,11 +106,15 @@ Type: `Promise<void>`
 ### Used by
 
  - [scale-data-grid](../data-grid)
+ - [scale-notification-banner](../notification-banner)
+ - [scale-notification-toast](../notification-toast)
 
 ### Graph
 ```mermaid
 graph TD;
   scale-data-grid --> scale-link
+  scale-notification-banner --> scale-link
+  scale-notification-toast --> scale-link
   style scale-link fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -10,14 +10,14 @@
  */
 
 :host {
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
   display: block;
   position: relative;
   outline-color: transparent;
   /* So box-shadow is visible on the sides */
-  padding-left: var(--scl-spacing-2);
-  padding-right: var(--scl-spacing-2);
+  padding-left: var(--telekom-spacing-unit-x05);
+  padding-right: var(--telekom-spacing-unit-x05);
 }
 
 * {
@@ -29,16 +29,16 @@
   display: flex;
   align-items: stretch;
   text-align: left;
-  font-size: var(--scl-font-size-16);
+  font-size: var(--telekom-typography-font-size-body);
   line-height: 2.635em;
-  padding: 0 var(--scl-spacing-24);
+  padding: 0 var(--telekom-spacing-unit-x6);
   user-select: none;
   white-space: nowrap;
-  border-radius: var(--scl-radius-4);
+  border-radius: 0;
   cursor: pointer;
-  color: var(--scl-color-black);
+  color: var(--telekom-color-text-and-icon-standard);
   /* 10px relates to the PAD value in Menu component */
-  max-width: calc(100vw - 2 * var(--scl-spacing-24) - 2 * 10px);
+  max-width: calc(100vw - 2 * var(--telekom-spacing-unit-x6) - 2 * 10px);
   overflow: hidden;
   min-width: fit-content;
   min-width: -moz-fit-content;
@@ -46,27 +46,32 @@
 
 .menu-flyout-item:focus:not(.menu-flyout-item--disabled),
 .menu-flyout-item:hover:not(.menu-flyout-item--disabled) {
-  color: var(--scl-color-primary-hover);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
 
 :host(:focus) .menu-flyout-item:not(.menu-flyout-item--disabled) {
-  color: var(--scl-color-primary-hover);
+  color: var(--telekom-color-text-and-icon-standard);
 }
+
+:host(:focus) .menu-flyout-item:hover:not(.menu-flyout-item--disabled) {
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
 :host(:focus) .menu-flyout-item {
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
 }
 
 :host(:active) .menu-flyout-item:not(.menu-flyout-item--disabled) {
-  color: var(--scl-color-primary-active);
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 :host([aria-expanded='true']) .menu-flyout-item {
-  color: var(--scl-color-primary-active);
+  color: var(--telekom-color-text-and-icon-primary-pressed);
 }
 
 .menu-flyout-item--disabled {
   outline: none;
-  color: #ccc;
+  color: var(--telekom-color-text-and-icon-disabled);
   cursor: not-allowed;
 }
 
@@ -78,13 +83,13 @@
   left: 0;
   height: 100%;
   width: 0;
-  background-color: var(--scl-color-primary-active);
+  background-color: var(--telekom-color-primary-standard);
   /* a11y: HCM */
-  border-left: var(--scl-spacing-2) solid transparent;
+  border-left: var(--telekom-spacing-unit-x05) solid transparent;
 }
 
 .menu-flyout-item--active {
-  color: var(--scl-color-primary-active);
+  color: var(--telekom-color-text-and-icon-primary-standard);
 }
 
 /* a11y: HCM */
@@ -110,7 +115,7 @@
 
 .menu-flyout-item__check,
 slot[name='prefix']::slotted(:last-of-type) {
-  margin-right: var(--scl-spacing-8);
+  margin-right: var(--telekom-spacing-unit-x2);
 }
 
 .menu-flyout-item__check {
@@ -129,5 +134,5 @@ slot[name='prefix']::slotted(:last-of-type) {
 
 .menu-flyout-item__cascade,
 slot[name='suffix']::slotted(:first-of-type) {
-  margin-left: var(--scl-spacing-16);
+  margin-left: var(--telekom-spacing-unit-x4);
 }

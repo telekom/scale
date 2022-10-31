@@ -6,8 +6,8 @@
 .addon-usage h5,
 .addon-usage h6,
 .addon-usage li {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  color: var(--scl-color-text-standard) !important;
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: black !important;
 }
 
 .addon-usage h1,
@@ -45,10 +45,36 @@
   line-height: 22px !important;
 }
 
-.addon-usage a {
-  font-family: "TeleNeoWeb", "TeleNeo", sans-serif !important;
-  text-decoration: none !important;
-  color: var(--scl-color-text-link) !important;
+.sbdocs-a.css-nv4uup {
+  font-family: 'TeleNeoWeb', 'TeleNeo', sans-serif !important;
+  color: #1c41eb;
+  outline: none;
+  font-weight: var(--telekom-typography-font-weight-medium);
+  position: relative;
+  display: inline-flex;
+
+  text-decoration: underline;
+  text-underline-offset: 0.1875em;
+  text-underline-position: from-font;
+  text-decoration-thickness: 0.0625rem;
+  text-decoration-color: #1c41eb;
+}
+.sbdocs-a.css-nv4uup:hover {
+  color: #1035e3;
+  text-decoration: underline;
+  text-decoration-color: #1035e3;
+}
+
+.sbdocs-a.css-nv4uup:focus {
+  color: #1c41eb;
+  text-decoration: underline;
+  text-decoration-color: #1c41eb;
+}
+
+.sbdocs-a.css-nv4uup:active {
+  color: #082cdb;
+  text-decoration: underline;
+  text-decoration-color: #082cdb;
 }
 
 .addon-usage p,
@@ -57,4 +83,8 @@
 .addon-usage a {
   font-size: 16px !important;
   line-height: 24px !important;
+}
+
+.sbdocs-ol[type='a'] {
+  list-style-type: lower-alpha;
 }

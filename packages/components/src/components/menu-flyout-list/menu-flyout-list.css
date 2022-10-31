@@ -17,7 +17,9 @@
 :host {
   box-sizing: content-box;
   position: fixed;
-  z-index: var(--scl-z-index-20);
+  /* z-index over 99 to flow over app-header
+  TODO: (a solid system for z-index values would be nicer) */
+  z-index: 100;
   pointer-events: none;
 }
 
@@ -26,9 +28,9 @@
   position: absolute;
   pointer-events: initial;
   z-index: var(--scl-z-index-20);
-  background: var(--scl-color-white);
-  border-radius: var(--scl-radius-8);
-  box-shadow: var(--scl-shadow-level-4);
+  background: var(--telekom-color-background-surface);
+  border-radius: var(--telekom-radius-large);
+  box-shadow: var(--telekom-shadow-overlay);
   overflow-y: hidden;
   margin-top: var(--spacing-y-list, 0);
   margin-bottom: var(--spacing-y-list, 0);
@@ -44,7 +46,7 @@
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   inset: 0;
-  border-radius: var(--scl-radius-8);
+  border-radius: var(--telekom-radius-standard);
   border: 1px solid transparent;
   pointer-events: none;
 }
@@ -64,7 +66,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-right,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-left,
 .menu-flyout-list--direction-bottom-right {
-  top: calc(100% + var(--scl-spacing-4));
+  top: calc(100% + var(--telekom-spacing-unit-x1));
   left: 0;
   right: auto;
   bottom: auto;
@@ -74,7 +76,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-left,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-top-right,
 .menu-flyout-list--direction-bottom-left {
-  top: calc(100% + var(--scl-spacing-4));
+  top: calc(100% + var(--telekom-spacing-unit-x1));
   right: 0;
   left: auto;
   bottom: auto;
@@ -84,7 +86,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-right,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-left,
 .menu-flyout-list--direction-top-right {
-  bottom: calc(100% + var(--scl-spacing-4));
+  bottom: calc(100% + var(--telekom-spacing-unit-x1));
   left: 0;
   right: auto;
   top: auto;
@@ -94,7 +96,7 @@
 .menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-left,
 .menu-flyout-list--flip-horizontal.menu-flyout-list--flip-vertical.menu-flyout-list--direction-bottom-right,
 .menu-flyout-list--direction-top-left {
-  bottom: calc(100% + var(--scl-spacing-4));
+  bottom: calc(100% + var(--telekom-spacing-unit-x1));
   right: 0;
   left: auto;
   top: auto;
@@ -102,7 +104,7 @@
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-left,
 .menu-flyout-list--direction-right {
-  left: calc(100% - var(--scl-spacing-4));
+  left: calc(100% - var(--telekom-spacing-unit-x1));
   top: -20px;
   right: auto;
   bottom: auto;
@@ -110,7 +112,7 @@
 
 .menu-flyout-list--flip-horizontal.menu-flyout-list--direction-right,
 .menu-flyout-list--direction-left {
-  right: calc(100% - var(--scl-spacing-4));
+  right: calc(100% - var(--telekom-spacing-unit-x1));
   top: -20px;
   left: auto;
   bottom: auto;
@@ -126,13 +128,13 @@
   left: 50%;
 }
 .menu-flyout-list__scroll-up-indicator {
-  top: var(--scl-spacing-8);
-  border-bottom: 5px solid var(--scl-color-grey-40);
+  top: var(--telekom-spacing-unit-x2);
+  border-bottom: 5px solid var(--telekom-color-ui-faint);
   border-top: 0;
 }
 .menu-flyout-list__scroll-down-indicator {
-  bottom: var(--scl-spacing-8);
-  border-top: 5px solid var(--scl-color-grey-40);
+  bottom: var(--telekom-spacing-unit-x2);
+  border-top: 5px solid var(--telekom-color-ui-faint);
   border-bottom: 0;
 }
 

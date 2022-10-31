@@ -8,7 +8,7 @@ exports[`AppFooter should match snapshot 1`] = `
       <footer class="footer">
         <div class="footer-content">
           <div class="footer-branding">
-            <app-logo claim=""></app-logo>
+            <scale-logo size="24" transparent="" variant="white"></scale-logo>
           </div>
           <div class="footer-copyright">
             © Deutsche Telekom AG

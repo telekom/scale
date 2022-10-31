@@ -10,16 +10,17 @@
  */
 
 :host {
-  --background: var(--scl-color-background-standard);
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
-  --radius: var(--scl-radius-8);
-  --box-shadow: var(--scl-shadow-level-1);
-  --box-shadow-hover: var(--scl-shadow-level-1-hover);
-  --box-shadow-focus: 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --box-shadow-active: var(--scl-shadow-level-1-active);
+  --background: var(--telekom-color-background-surface);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --radius: var(--telekom-radius-large);
+  --box-shadow: var(--telekom-shadow-raised-standard);
+  --box-shadow-hover: var(--telekom-shadow-raised-hover);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+  --box-shadow-active: var(--telekom-shadow-raised-pressed);
 
-  --spacing-body: var(--scl-spacing-24);
+  --spacing-body: var(--telekom-spacing-unit-x6);
 
   --spacing-body-slotted: 0;
   --spacing-body-slotted-interactive: 0;
@@ -60,7 +61,7 @@
 }
 
 .card--interactive:focus {
-  box-shadow: var(--scl-shadow-level-1-hover), var(--box-shadow-focus);
+  box-shadow: var(--telekom-shadow-raised-hover), var(--box-shadow-focus);
 }
 
 .card--interactive:active {

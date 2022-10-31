@@ -1,86 +1,82 @@
 describe('SidebarNavigation', () => {
-  test.each([
-    ['standard'],
-    ['active-on-level-1'],
-    ['active-on-level-2'],
-    ['custom-media-query'],
-  ])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const previewHtml = await page.$('body');
+  describe.each(['light', 'dark'])('%p', (mode) => {
+    beforeAll(async () => {
+      await global.runColorSetup(
+        'components-sidebar-navigation--standard',
+        mode
+      );
+    });
+    test.each([
+      ['standard'],
+      ['active-on-level-1'],
+      ['active-on-level-2'],
+      ['custom-media-query'],
+    ])('%p', async (variant) => {
+      await global.runSetup(`components-sidebar-navigation--${variant}`);
+      await global.visualCheck();
+    });
+    test.each([['standard']])('%p', async (variant) => {
+      await global.runSetup(`components-sidebar-navigation--${variant}`);
 
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      const collabsibleButton = await global.page.evaluateHandle(
+        `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2) > scale-sidebar-nav-collapsible:nth-child(1)").shadowRoot.querySelector("li > div > a")`
+      );
+      const secondItem = await global.page.evaluateHandle(
+        `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
+      );
+
+      await collabsibleButton.click();
+      await global.visualCheck();
+
+      await secondItem.click();
+      await global.visualCheck();
+    });
   });
-  test.each([['standard']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
+  // hover, active, focus SidebarNavItem
+  describe('SidebarNavItem', () => {
+    test.each([['standard']])('%p', async (variant) => {
+      await global.runSetup(`components-sidebar-navigation--${variant}`);
+      const sidebarNavItem = await global.page.evaluateHandle(
+        `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-item:nth-child(1) > a")`
+      );
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
-    const collabsibleButton = await page.evaluateHandle(
-      `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2) > scale-sidebar-nav-collapsible:nth-child(1)").shadowRoot.querySelector("li > div > a")`
-    );
-    const secondItem = await page.evaluateHandle(
-      `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
-    );
-    const previewHtml = await page.$('body');
+      await sidebarNavItem.focus();
+      await global.visualCheck();
+      await base.click();
 
-    await collabsibleButton.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await sidebarNavItem.hover();
+      await global.visualCheck();
 
-    await secondItem.click();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await global.page.mouse.move(20, 50);
+      await global.page.mouse.down();
+      await global.visualCheck();
+    });
   });
-});
-// hover, active, focus SidebarNavItem
-describe('SidebarNavItem', () => {
-  test.each([['standard']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const sidebarNavItem = await page.evaluateHandle(
-      `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-item:nth-child(1) > a")`
-    );
-    const base = await page.evaluateHandle(`document.querySelector("#root")`);
-    const previewHtml = await page.$('body');
+  // hover, active, focus SidebarNavCollapsible
+  describe('SidebarNavCollapsible', () => {
+    test.each([['standard']])('%p', async (variant) => {
+      await global.runSetup(`components-sidebar-navigation--${variant}`);
 
-    await sidebarNavItem.focus();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await base.click();
+      const sidebarNavCollapsible = await global.page.evaluateHandle(
+        `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
+      );
+      const base = await global.page.evaluateHandle(
+        `document.querySelector("#root")`
+      );
 
-    await sidebarNavItem.hover();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await sidebarNavCollapsible.focus();
+      await global.visualCheck();
+      await base.click();
 
-    await page.mouse.move(20, 50);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-  });
-});
-// hover, active, focus SidebarNavCollapsible
-describe('SidebarNavCollapsible', () => {
-  test.each([['standard']])('%p', async (variant) => {
-    await global.page.goto(
-      `http://host.docker.internal:3123/iframe.html?id=components-sidebar-navigation--${variant}&viewMode=story`
-    );
-    await page.waitForSelector('html.hydrated');
-    const sidebarNavCollapsible = await page.evaluateHandle(
-      `document.querySelector("#root > div > scale-sidebar-nav > scale-sidebar-nav-collapsible:nth-child(2)").shadowRoot.querySelector("li > div > a")`
-    );
-    const base = await page.evaluateHandle(`document.querySelector("#root")`);
-    const previewHtml = await page.$('body');
+      await sidebarNavCollapsible.hover();
+      await global.visualCheck();
 
-    await sidebarNavCollapsible.focus();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-    await base.click();
-
-    await sidebarNavCollapsible.hover();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-
-    await page.mouse.move(20, 100);
-    await page.mouse.down();
-    expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await global.page.mouse.move(20, 100);
+      await global.page.mouse.down();
+      await global.visualCheck();
+    });
   });
 });

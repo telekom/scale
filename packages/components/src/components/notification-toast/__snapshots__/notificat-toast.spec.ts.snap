@@ -1,0 +1,300 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationToast  handle variant prop 1`] = `
+<scale-notification-toast opened="">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          top: -0px;
+        }
+        to {
+          opacity: 1;
+          top: 12px;
+        }
+      }
+  
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          top: 12px;
+        }
+        to {
+          opacity: 0;
+          top: -0px;
+        }
+      }
+    </style>
+    <style>
+      .notification-toast--show {
+          right: 12px;
+          animation: fadeIn 0.5s ease-in-out;
+          top: 12px;
+          opacity: 1;
+        },
+        .notification-toast--show {
+          right: 12px;
+          animation: fadeOut 0.5s ease-in-out;
+          top: -0px;
+          opacity: 0;
+        }
+    </style>
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-error" part="base --variant-error --opened --show" role="alert" tabindex="0">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-error aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-error>
+      </div>
+      <div class="notification-toast__text-container">
+        <slot name="header"></slot>
+        <slot name="body"></slot>
+        <scale-link class="notification-toast__link" role="link">
+          <slot name="link"></slot>
+        </scale-link>
+      </div>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-toast>
+`;
+
+exports[`NotificationToast  handle variant prop 2`] = `
+<scale-notification-toast opened="">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          top: -0px;
+        }
+        to {
+          opacity: 1;
+          top: 12px;
+        }
+      }
+  
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          top: 12px;
+        }
+        to {
+          opacity: 0;
+          top: -0px;
+        }
+      }
+    </style>
+    <style>
+      .notification-toast--show {
+          right: 12px;
+          animation: fadeIn 0.5s ease-in-out;
+          top: 12px;
+          opacity: 1;
+        },
+        .notification-toast--show {
+          right: 12px;
+          animation: fadeOut 0.5s ease-in-out;
+          top: -0px;
+          opacity: 0;
+        }
+    </style>
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-warning" part="base --variant-warning --opened --show" role="alert" tabindex="0">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-warning aria-hidden="true" class="notification-toast__icon" color="#ffff" selected="" size="20"></scale-icon-alert-warning>
+      </div>
+      <div class="notification-toast__text-container">
+        <slot name="header"></slot>
+        <slot name="body"></slot>
+        <scale-link class="notification-toast__link" role="link">
+          <slot name="link"></slot>
+        </scale-link>
+      </div>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-toast>
+`;
+
+exports[`NotificationToast  handle variant prop 3`] = `
+<scale-notification-toast opened="">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          top: -0px;
+        }
+        to {
+          opacity: 1;
+          top: 12px;
+        }
+      }
+  
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          top: 12px;
+        }
+        to {
+          opacity: 0;
+          top: -0px;
+        }
+      }
+    </style>
+    <style>
+      .notification-toast--show {
+          right: 12px;
+          animation: fadeIn 0.5s ease-in-out;
+          top: 12px;
+          opacity: 1;
+        },
+        .notification-toast--show {
+          right: 12px;
+          animation: fadeOut 0.5s ease-in-out;
+          top: -0px;
+          opacity: 0;
+        }
+    </style>
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-informational" part="base --variant-informational --opened --show" role="alert" tabindex="0">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-information aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-information>
+      </div>
+      <div class="notification-toast__text-container">
+        <slot name="header"></slot>
+        <slot name="body"></slot>
+        <scale-link class="notification-toast__link" role="link">
+          <slot name="link"></slot>
+        </scale-link>
+      </div>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-toast>
+`;
+
+exports[`NotificationToast  handle variant prop 4`] = `
+<scale-notification-toast opened="">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          top: -0px;
+        }
+        to {
+          opacity: 1;
+          top: 12px;
+        }
+      }
+  
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          top: 12px;
+        }
+        to {
+          opacity: 0;
+          top: -0px;
+        }
+      }
+    </style>
+    <style>
+      .notification-toast--show {
+          right: 12px;
+          animation: fadeIn 0.5s ease-in-out;
+          top: 12px;
+          opacity: 1;
+        },
+        .notification-toast--show {
+          right: 12px;
+          animation: fadeOut 0.5s ease-in-out;
+          top: -0px;
+          opacity: 0;
+        }
+    </style>
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-success" part="base --variant-success --opened --show" role="alert" tabindex="0">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-success aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-success>
+      </div>
+      <div class="notification-toast__text-container">
+        <slot name="header"></slot>
+        <slot name="body"></slot>
+        <scale-link class="notification-toast__link" role="link">
+          <slot name="link"></slot>
+        </scale-link>
+      </div>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
+    </div>
+  </mock:shadow-root>
+  Label
+</scale-notification-toast>
+`;
+
+exports[`NotificationToast  should match snapshot 1`] = `
+<scale-notification-toast opened="">
+  <mock:shadow-root>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          top: -0px;
+        }
+        to {
+          opacity: 1;
+          top: 12px;
+        }
+      }
+  
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          top: 12px;
+        }
+        to {
+          opacity: 0;
+          top: -0px;
+        }
+      }
+    </style>
+    <style>
+      .notification-toast--show {
+          right: 12px;
+          animation: fadeIn 0.5s ease-in-out;
+          top: 12px;
+          opacity: 1;
+        },
+        .notification-toast--show {
+          right: 12px;
+          animation: fadeOut 0.5s ease-in-out;
+          top: -0px;
+          opacity: 0;
+        }
+    </style>
+    <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-informational" part="base --variant-informational --opened --show" role="alert" tabindex="0">
+      <div class="notification-toast__icon-container">
+        <scale-icon-alert-information aria-hidden="true" class="notification-toast__icon" color="#ffffff" selected="" size="20"></scale-icon-alert-information>
+      </div>
+      <div class="notification-toast__text-container">
+        <slot name="header"></slot>
+        <slot name="body"></slot>
+        <scale-link class="notification-toast__link" role="link">
+          <slot name="link"></slot>
+        </scale-link>
+      </div>
+      <button aria-label="close" class="notification-toast__button-close" part="button-dismissable" tabindex="0" type="button">
+        <scale-icon-action-circle-close></scale-icon-action-circle-close>
+      </button>
+    </div>
+  </mock:shadow-root>
+</scale-notification-toast>
+`;

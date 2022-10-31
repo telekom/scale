@@ -1,0 +1,554 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleButton from './ScaleButton.vue';
+
+<Meta
+  title="Components/Button"
+  component={ScaleButton}
+  argTypes={{
+    size: {
+      control: { type: 'select', options: ['large', 'small'] },
+    },
+    variant: {
+      control: { type: 'select', options: ['primary', 'secondary', 'ghost'] },
+    },
+    type: {
+      control: { type: 'select', options: ['reset', 'submit', 'button'] },
+    },
+    label: {
+      defaultValue: 'Label',
+      control: { type: 'text' },
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    download: {
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleButton },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleButton.props,
+  },
+  template: `
+  <div style="${args.variant === 'secondary-white'? 'background-color: var(--telekom-color-primary-standard); padding: var(--telekom-spacing-unit-x3);' : ''}">
+  <scale-button
+      :disabled="disabled"
+      :size="size"
+      :href="href"
+      :download="download"
+      :target="target"
+      :type="type"
+      :name="name"
+      :value="value"
+      :variant="variant"
+      :icon-position="icon === 'after' ? 'after' : 'before'"
+      :icon-only="iconOnly"
+      :inner-tabindex="innerTabindex"
+      :styles="styles"
+      @click="action('clicked')"
+    >
+      <scale-icon-action-search size="16" v-if="icon === 'before'" />
+      {{ iconOnly !== true ? label : null }}
+      <scale-icon-action-add accessibility-title="Add" size="16" v-if="iconOnly" />
+      <scale-icon-navigation-right accessibility-title="Next" size="16" v-if="icon === 'after'" />
+      <scale-icon-navigation-external-link accessibility-title="External link, opens in new tab" size="16" v-if="icon === 'external'" />
+    </scale-button>
+    </div>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Button</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-button>Label</scale-button>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+  --width: auto;
+  --spacing-x-right: var(--telekom-spacing-unit-x5);
+  --spacing-x-left: var(--telekom-spacing-unit-x5);
+  --spacing-x-icon-only: var(--telekom-spacing-unit-x3);
+  --min-height: var(--telekom-spacing-unit-x11);
+  --min-width: var(--telekom-spacing-unit-x11);
+  --radius: var(--telekom-radius-standard);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+  --color-focus: var(--telekom-color-functional-focus);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-tight);
+  --spacing-icon-x: var(--telekom-spacing-unit-x2);
+  --vertical-align: middle;
+
+  /* size: small */
+  --font-size-small: var(--telekom-typography-font-size-caption);
+  --line-height-small: 1.125rem;
+  --min-height-small: var(--telekom-spacing-unit-x8);
+  --spacing-x-right-small: var(--telekom-spacing-unit-x4);
+  --spacing-x-left-small: var(--telekom-spacing-unit-x4);
+  --spacing-x-icon-only-small: var(--telekom-spacing-unit-x0);
+  --spacing-icon-x-small: var(--telekom-spacing-unit-x1);
+
+  /* variant: primary */
+  --radius-primary: var(--radius);
+  --background-primary: var(--telekom-color-primary-standard);
+  --background-primary-hover: var(--telekom-color-primary-hovered);
+  --background-primary-active: var(--telekom-color-primary-pressed);
+  --background-primary-disabled: var(--telekom-color-ui-disabled);
+  --color-primary: var(--telekom-color-text-and-icon-white-standard);
+  --color-primary-disabled: var(--telekom-color-text-and-icon-disabled);
+
+  /* variant: secondary */
+  --radius-secondary: var(--radius);
+  --border-width-secondary: var(--telekom-spacing-unit-x025);
+  --background-secondary: transparent;
+  --color-secondary: var(--telekom-color-text-and-icon-standard);
+  --color-secondary-hover: var(--telekom-color-text-and-icon-standard);
+  --color-secondary-active: var(--telekom-color-text-and-icon-standard);
+  --color-secondary-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-secondary: var(--telekom-color-ui-state-fill-standard);
+  --background-secondary-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-secondary-active: var(--telekom-color-ui-state-fill-pressed);
+  --background-secondary-disabled: none;
+  --border-secondary: var(--telekom-color-ui-border-standard);
+  --border-secondary-hover: var(--telekom-color-ui-border-hovered);
+  --border-secondary-active: var(--telekom-color-ui-border-pressed);
+  --border-secondary-focus: var(--telekom-color-functional-focus);
+
+  /* variant: secondary white */
+  --border-secondary-white: var(--telekom-color-ui-white);
+  --color-secondary-white: var(--telekom-color-ui-white);
+  --background-secondary-white-hover: var(
+    --telekom-color-ui-state-fill-hovered-inverted
+  );
+  --background-secondary-white-active: var(
+    --telekom-color-ui-state-fill-pressed-inverted
+  );
+  --secondary-white-opacity: 0.5;
+
+  /* variant: ghost */
+  --radius-ghost: var(--radius);
+  --border-width-ghost: var(--telekom-spacing-unit-x025);
+  --spacing-x-ghost: var(--telekom-spacing-unit-x2);
+  --color-ghost: var(--telekom-color-text-and-icon-primary-standard);
+  --color-ghost-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-ghost-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --color-ghost-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-ghost-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-ghost-active: var(--telekom-color-ui-state-fill-pressed);
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
+
+## Secondary
+
+<Canvas withSource="none">
+  <Story
+    name="Secondary"
+    args={{
+      variant: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button variant="secondary">Label</scale-button>
+```
+
+## Secondary White
+
+<Canvas withSource="none">
+  <Story
+    name="Secondary White"
+    args={{
+      variant: 'secondary-white',
+    }}
+  >
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button variant="secondary-white">Label</scale-button>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button disabled>Label</scale-button>
+```
+
+## Secondary Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Secondary Disabled"
+    args={{
+      variant: 'secondary',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button variant="secondary" disabled>Label</scale-button>
+```
+
+## With Icon Before
+
+<Canvas withSource="none">
+  <Story
+    name="With Icon Before"
+    args={{
+      icon: 'before',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button>
+  <scale-icon-action-search></scale-icon-action-search> Label
+</scale-button>
+```
+
+## With Icon After
+
+<Canvas withSource="none">
+  <Story
+    name="With Icon After"
+    args={{
+      icon: 'after',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button icon-position="after">
+  Label <scale-icon-navigation-right></scale-icon-navigation-right>
+</scale-button>
+```
+
+## Icon Only
+
+<Canvas withSource="none">
+  <Story
+    name="Icon Only"
+    args={{
+      size: 'large',
+      iconOnly: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button icon-only>
+  <scale-icon-action-add accessibility-title="add" />
+</scale-button>
+```
+
+## Link
+
+<Canvas withSource="none">
+  <Story
+    name="Link"
+    args={{
+      href: 'https://example.com',
+      target: '_blank',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button href="https://example.com" target="_blank">Label</scale-button>
+```
+
+## Link Download
+
+<Canvas withSource="none">
+  <Story
+    name="Link Download"
+    args={{
+      href: 'assets/welcome.png',
+      download: 'welcome.png',
+      label: 'Download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button href="assets/welcome.png" download="welcome.png"
+  >Download</scale-button
+>
+```
+
+## External Link
+
+If the button with a link is used to point the user to an external address, then the user should be informed of this.
+We recommend using an icon (visually) and an additional caption for screen readers.
+If the icon is an `img` element, its `alt` attribute should be empty.
+
+<Canvas withSource="none">
+  <Story
+    name="External link"
+    args={{
+      href: 'https://example.com',
+      target: '_blank',
+      label: 'Label',
+      icon: 'external',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button href="https://example.com" target="_blank">
+  External link, opens in new tab
+  <scale-icon-navigation-external-link
+    accesibility-title="External link, opens in new tab"
+  ></scale-icon-navigation-external-link>
+</scale-button>
+```
+
+## Small Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Small Standard"
+    args={{
+      size: 'small',
+      label: 'Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">Label</scale-button>
+```
+
+## Small Secondary
+
+<Canvas withSource="none">
+  <Story
+    name="Small Secondary"
+    args={{
+      size: 'small',
+      variant: 'secondary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" variant="secondary">Label</scale-button>
+```
+
+## Small Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Small Disabled"
+    args={{
+      size: 'small',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" disabled>Label</scale-button>
+```
+
+## Small Secondary Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Small Secondary Disabled"
+    args={{
+      size: 'small',
+      variant: 'secondary',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" variant="secondary" disabled>Label</scale-button>
+```
+
+## Small With Icon Before
+
+<Canvas withSource="none">
+  <Story
+    name="Small With Icon Before"
+    args={{
+      size: 'small',
+      icon: 'before',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">
+  <scale-icon-action-search></scale-icon-action-search> Label
+</scale-button>
+```
+
+## Small With Icon After
+
+<Canvas withSource="none">
+  <Story
+    name="Small With Icon After"
+    args={{
+      size: 'small',
+      icon: 'after',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">
+  Label <scale-icon-navigation-right></scale-icon-navigation-right>
+</scale-button>
+```
+
+## Small Icon Only
+
+<Canvas withSource="none">
+  <Story
+    name="Small Icon Only"
+    args={{
+      size: 'small',
+      iconOnly: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small">
+  <scale-icon-navigation-external-link
+    accessibility-title="External link, opens in new tab"
+  ></scale-icon-navigation-external-link>
+</scale-button>
+```
+
+## Small Link
+
+<Canvas withSource="none">
+  <Story
+    name="Small Link"
+    args={{
+      size: 'small',
+      href: 'https://example.com',
+      target: '_blank',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" href="https://example.com" target="_blank"
+  >Label</scale-button
+>
+```
+
+## Small Link Download
+
+<Canvas withSource="none">
+  <Story
+    name="Small Link Download"
+    args={{
+      size: 'small',
+      href: 'assets/welcome.png',
+      download: 'welcome.png',
+      label: 'Download',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-button size="small" icon-only>
+  <scale-icon-action-add accessibility-title="add" />
+</scale-button>
+```

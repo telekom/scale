@@ -10,3 +10,9 @@
  */
 
 @import '~@telekom/scale-design-tokens/dist/design-tokens.css';
+@import '~@telekom/design-tokens/dist/css/design-tokens.all.css';
+@import './grid.css';
+
+:root {
+  --stroke-width-checkbox: 50px;
+}

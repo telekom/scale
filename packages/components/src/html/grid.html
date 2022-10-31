@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style>
+      body {
+        margin: 2rem 0;
+      }
+
+      z-block {
+        display: block;
+        min-height: 200px;
+        padding: var(--telekom-spacing-unit-x4);
+        background-color: var(--scl-color-orange-10);
+      }
+    </style>
+  </head>
+  <body>
+    <scale-grid>
+      <scale-grid-item>
+        <h1>Scale Grid (3d iteration) demo</h1>
+      </scale-grid-item>
+    </scale-grid>
+
+    <scale-grid
+      columns="2,4,6,8,12"
+      gutter-y="12px,25px,11px"
+      gutter-x="12px,25px,11px,5px,25px"
+      spacing="12px,25px,11px,5px,25px"
+    >
+      <scale-grid-item size="2,3,5,1,8" offset="2,1,5,2,4">
+        <z-block>A</z-block>
+      </scale-grid-item>
+      <scale-grid-item size="1,2,4,6,2">
+        <z-block>B</z-block>
+      </scale-grid-item>
+      <scale-grid-item size="1,7,5,2,3">
+        <z-block>C</z-block>
+      </scale-grid-item>
+      <scale-grid-item size="1,3,2,6,12">
+        <z-block>D</z-block>
+      </scale-grid-item>
+    </scale-grid>
+  </body>
+</html>

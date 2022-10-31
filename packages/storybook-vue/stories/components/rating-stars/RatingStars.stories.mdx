@@ -1,0 +1,285 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleRatingStars from './ScaleRatingStars.vue';
+
+<Meta
+  title="Components/Rating Stars"
+  component={ScaleRatingStars}
+  argTypes={{
+    starSize: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'large' },
+      },
+      description: `(optional) Deprecated; size should be used instead of starSize`,
+      control: { type: 'select', options: ['large', 'small'] },
+    },
+    size: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: 'large',
+        },
+      },
+      description: `(optional) size of the stars. Overwritten by deprecated starSize`,
+      control: { type: 'select', options: ['large', 'small'] },
+    },
+    minRating: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 0,
+        },
+      },
+      description: `(optional) Deprecated; minimum rating value. Will be dropped on next release`,
+      control: { type: 'number' },
+    },
+    maxRating: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 5,
+        },
+      },
+      description: `(optional) Deprecated; max should be used instead of maxRating`,
+      control: { type: 'number' },
+    },
+    max: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 5,
+        },
+      },
+      description: `(optional) The upper limit of the rating. Overwritten by deprecated maxRating`,
+      control: { type: 'number' },
+    },
+    rating: {
+      table: {
+        type: { summary: 'number' },
+        defaultValue: {
+          summary: 0,
+        },
+      },
+      description: `(optional) Represents the current value of the rating`,
+      control: { type: 'number' },
+    },
+    readonly: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: {
+          summary: false,
+        },
+      },
+      description: `(optional) makes the rating non-interactive (but still accessible)`,
+      control: { type: 'boolean' },
+    },
+    disabled: {
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: {
+          summary: false,
+        },
+      },
+      description: `(optional) disables input`,
+      control: { type: 'boolean' },
+    },
+    ariaLabelTranslation: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: '$rating out of $max stars',
+        },
+      },
+      description: `(optional) a11y text for getting meaningful value.`,
+      control: { type: 'text' },
+    },
+    label: {
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: 'rating label',
+        },
+      },
+      description: `(optional) rating label`,
+      control: { type: 'text' },
+    },
+    infoText: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) info text`,
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleRatingStars },
+  props: {
+    label: String,
+    ...ScaleRatingStars.props,
+  },
+  template: `
+  <scale-rating-stars
+    :max-rating="maxRating"
+    :max="max"
+    :min-rating="minRating"
+    :rating="rating"
+    :star-size="starSize"
+    :size="size"
+    :disabled="disabled"
+    :aria-label-translation="ariaLabelTranslation"
+    :label="label"
+    :readonly="readonly"
+    :info-text="infoText"
+    :hide-label="hideLabel"
+    custom-styles
+  >
+  </scale-rating-stars>
+    `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Rating Stars</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard with Info Text and custom Label
+
+<Canvas withSource="none">
+  <Story
+    name="Info Text and custom Label"
+    args={{
+      rating: 3,
+      infoText: 'Info Text',
+      label: 'Custom Rating Label',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Info Text and custom Label" />
+
+```html
+<scale-rating-stars
+  rating="3"
+  info-text="Info Text"
+  label="Custom Rating Label"
+></scale-rating-stars>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      rating: 2,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="2" disabled></scale-rating-stars>
+```
+
+## Small With Info Text
+
+<Canvas withSource="none">
+  <Story
+    name="Small With Info Text"
+    args={{
+      rating: 4,
+      starSize: 'small',
+      infoText: 'Info Text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<!--
+  deprecated:
+  <scale-rating-stars rating="4" star-size="small" info-text="Info Text"></scale-rating-stars>
+-->
+<scale-rating-stars
+  rating="4"
+  size="small"
+  info-text="Info Text"
+></scale-rating-stars>
+```
+
+## Aria Label Translation
+
+<Canvas withSource="none">
+  <Story
+    name="Aria Label Translation"
+    args={{
+      rating: 1,
+      ariaLabelTranslation: '$rating out of $maxRating stars',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars
+  rating="1"
+  aria-label-translation="$rating out of $max stars"
+></scale-rating-stars>
+<!--  e.g. German
+  <scale-rating-stars
+  rating="1"
+  aria-label-translation="$rating von $max Sternen"
+></scale-rating-stars>
+  -->
+```
+
+## Hidden Label
+
+<Canvas withSource="none">
+  <Story
+    name="Hidden Label"
+    args={{
+      rating: 4,
+      hideLabel: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="4" hideLabel></scale-rating-stars>
+```
+
+## Readonly
+
+<Canvas withSource="none">
+  <Story
+    name="Readonly"
+    args={{
+      rating: 3,
+      readonly: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-rating-stars rating="3" readonly></scale-rating-stars>
+```

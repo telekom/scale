@@ -1,0 +1,303 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleTextArea from './ScaleTextArea.vue';
+import { action } from '@storybook/addon-actions';
+
+<Meta
+  title="Components/Text Area"
+  component={ScaleTextArea}
+  argTypes={{
+    resize: {
+      control: {
+        type: 'select',
+        options: ['unset', 'none', 'vertical', 'horizontal'],
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTextArea },
+  props: ScaleTextArea.props,
+  template: `
+    <scale-textarea
+      :name="name"
+      :label="label"
+      :rows="rows"
+      :cols="cols"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :min-length="minLength"
+      :max-length="maxLength"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :readonly="readonly"
+      :required="required"
+      :counter="counter"
+      :resize="resize"
+      :value="value"
+      :input-id="inputId"
+      :transparent="transparent"
+      :input-autofocus="inputAutofocus"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-textarea>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Text Area</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'Textarea',
+      rows: 3,
+      resize: 'vertical',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-textarea label="Textarea" rows="3" resize="vertical"></scale-textarea>
+```
+
+### Scoped CSS variables
+
+```css
+scale-textarea {
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
+  --radius: var(--telekom-radius-standard);
+  --border: var(--telekom-line-weight-standard) solid var(
+      --telekom-color-ui-border-standard
+    );
+  --border-error: var(--telekom-line-weight-highlight) solid var(
+      --telekom-color-functional-danger-standard
+    );
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-color-disabled: none;
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+  --spacing-x-control: var(--telekom-spacing-unit-x3);
+  --spacing-bottom-control: var(--telekom-spacing-unit-x3);
+  --spacing-top-control: var(--telekom-spacing-unit-x6);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: transparent;
+  --border-color-readonly: var(--telekom-color-ui-border-disabled);
+  --background-readonly: var(--telekom-color-ui-disabled);
+
+  /*meta*/
+  --font-weight-meta: var(--telekom-typography-font-weight-bold);
+  --font-size-meta: var(--telekom-typography-font-size-small);
+  --line-height-meta: var(--telekom-typography-line-spacing-standard);
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --color-meta: var(--telekom-color-text-and-icon-standard);
+  --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
+
+  /*control*/
+  --spacing-control: 0 var(--spacing-x-control) var(--spacing-top-control);
+  --transition-control: var(--transition);
+  --font-size-control: var(--telekom-typography-font-size-body);
+  --background-control: var(--telekom-color-ui-state-fill-standard);
+  /*counter*/
+  --transition-counter: var(--transition);
+  --font-size-counter: var(--font-size-meta);
+  --line-height-counter: var(--line-height-meta);
+  --color-counter-error: var(--color-meta-error);
+
+  /*helper-text*/
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--font-size-meta);
+  --line-height-helper-text: var(--line-height-meta);
+  --color-helper-text: var(--telekom-color-functional-informational-standard);
+  --color-helper-text-error: var(--color-meta-error);
+
+  /*placeholder*/
+  --transition-placeholder: var(--transition);
+  --color-placeholder: var(--telekom-color-text-and-icon-additional);
+
+  /*label*/
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --color-label-readonly: var(--telekom-color-text-and-icon-standard);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--telekom-typography-font-size-body);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+}
+```
+
+## Placeholder
+
+<Canvas withSource="none">
+  <Story
+    name="Placeholder"
+    args={{
+      label: 'Placeholder',
+      placeholder: 'this is the placeholder',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea
+  label="Placeholder"
+  placeholder="this is the placeholder"
+></scale-textarea>
+```
+
+## Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      helperText: 'Make sure to fill this',
+      label: 'Helper Text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea
+  label="Helper Text"
+  helper-text="Make sure to fill this"
+></scale-textarea>
+```
+
+## With Error
+
+<Canvas withSource="none">
+  <Story
+    name="With Error"
+    args={{
+      label: 'With Error',
+      invalid: true,
+      helperText: 'something is wrong',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea
+  label="With Error"
+  helper-text="something is wrong"
+  invalid="true"
+></scale-textarea>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea label="Disabled" disabled></scale-textarea>
+```
+
+<!--
+## Readonly
+
+<Canvas withSource="none">
+  <Story
+    name="Readonly"
+    args={{
+      label: "Readonly",
+      readonly: true,
+      value: "This cannot be changed"
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea label="Readonly" value="This cannot be changed" readonly></scale-textarea>
+```
+-->
+
+## Max Length With Counter
+
+<Canvas withSource="none">
+  <Story
+    name="Max Length With Counter"
+    args={{
+      label: 'Max Length With Counter',
+      maxLength: 10,
+      counter: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea
+  label="Max Length With Counter"
+  max-length="10"
+  counter
+></scale-textarea>
+```
+
+## More rows
+
+<Canvas withSource="none">
+  <Story
+    name="More rows"
+    args={{
+      label: 'More rows',
+      rows: 10,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-textarea label="More rows" rows="10"></scale-textarea>
+```

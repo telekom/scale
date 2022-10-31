@@ -140,7 +140,11 @@ export class MenuFlyoutList {
     if (!this.active) {
       return;
     }
-    event.preventDefault();
+
+    if (!this.hostElement.querySelector('app-navigation-user-menu')) {
+      event.preventDefault();
+    }
+
     if ('ArrowDown' === event.key) {
       this.shiftItemsFocus();
       return;
@@ -424,10 +428,9 @@ export class MenuFlyoutList {
   }
 
   getListItems() {
-    return Array.from(
-      this.hostElement.children
-    ).filter((el: HTMLScaleMenuFlyoutItemElement) =>
-      ITEM_ROLES.includes(el.getAttribute('role'))
+    return Array.from(this.hostElement.children).filter(
+      (el: HTMLScaleMenuFlyoutItemElement) =>
+        ITEM_ROLES.includes(el.getAttribute('role'))
     );
   }
 

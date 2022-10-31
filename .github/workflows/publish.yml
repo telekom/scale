@@ -5,30 +5,70 @@ on:
       - release
 
 jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name 'telekom'
+          git config --global user.email 'telekom@users.noreply.github.com'
+          git remote set-url origin https://telekom:${{ secrets.GITHUB_TOKEN }}@github.com/telekom/scale
+
+      - name: Restore Lerna
+        id: yarn-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install project dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      - name: Run Lerna bootstrap
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn bootstrap
+
+      - name: Generate files
+        if: steps.yarn-cache.outputs.cache-hit == 'true'
+        run: |
+          lerna run generate
+
+      - name: Build Components
+        run: |
+          yarn workspace @telekom/scale-components build
+
+      - name: Build Storybook
+        run: |
+          yarn workspace @telekom/scale-storybook-vue build --quiet
+
+      - name: Deploy Storybook
+        run: |
+          yarn workspace @telekom/scale-storybook-vue deploy
+
   publish-telekom:
     runs-on: ubuntu-latest
     environment: RELEASE
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Configure CI Git User
-        run: |
-          git config --global user.name '@telekom'
-          git config --global user.email 'telekom@users.noreply.github.com'
+      - uses: actions/checkout@v3
 
       - name: Authenticate with Registry
         run: |
           yarn logout
           touch .npmrc
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
@@ -70,30 +110,42 @@ jobs:
         run: |
           yarn publish-telekom
 
+      - name: Deprecate Angular Package
+        run: |
+          npm deprecate @telekom/scale-components-angular@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
+
+      - name: Deprecate Vue Package
+        run: |
+          npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+
+      - name: Deprecate Scale Design Tokens Package
+        run: |
+          npm deprecate @telekom/scale-design-tokens@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
+
   publish-neutral:
     runs-on: ubuntu-latest
     environment: RELEASE
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Configure CI Git User
         run: |
-          git config --global user.name '@telekom'
+          git config --global user.name 'telekom'
           git config --global user.email 'telekom@users.noreply.github.com'
+          git remote set-url origin https://telekom:${{ secrets.GITHUB_TOKEN }}@github.com/telekom/scale
 
       - name: Authenticate with Registry
         run: |
           yarn logout
           touch .npmrc
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
@@ -138,3 +190,15 @@ jobs:
       - name: Publish to NPM
         run: |
           yarn publish-neutral
+
+      - name: Deprecate Angular Package
+        run: |
+          npm deprecate @telekom/scale-components-angular-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Angular support for web components is already great."
+
+      - name: Deprecate Vue Package
+        run: |
+          npm deprecate @telekom/scale-components-vue-neutral@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
+
+      - name: Deprecate Scale Design Tokens Package
+        run: |
+          npm deprecate @telekom/scale-design-tokens-neutral@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."

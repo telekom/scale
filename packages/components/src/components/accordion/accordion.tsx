@@ -33,6 +33,7 @@ export class Accordion {
   @Prop() expanded: boolean = false;
   /** Heading level for scale-collapsible descendants */
   @Prop() headingLevel: number | null = null;
+  @Prop() iconLocation?: 'left' | 'right' = 'left';
 
   /**
    * Handle `dependent`
@@ -53,7 +54,12 @@ export class Accordion {
 
   @Watch('headingLevel')
   headingLevelChanged(newValue: number | null) {
-    this.propagatePropsToChildren(newValue);
+    this.propagatePropsToChildren(newValue, this.iconLocation);
+  }
+
+  @Watch('iconLocation')
+  iconLocationChanged(newValue: 'left' | 'right') {
+    this.propagatePropsToChildren(this.headingLevel, newValue);
   }
 
   connectedCallback() {
@@ -68,18 +74,24 @@ export class Accordion {
   }
 
   componentDidLoad() {
-    if (this.headingLevel !== null) {
-      this.propagatePropsToChildren(this.headingLevel);
+    if (this.headingLevel !== null || this.iconLocation !== 'left') {
+      this.propagatePropsToChildren(this.headingLevel, this.iconLocation);
     }
   }
 
   getCollapsibleChildren(): HTMLScaleCollapsibleElement[] {
-    return Array.from(this.el.querySelectorAll('scale-collapsible'));
+    return Array.from(this.el.children).filter(
+      (el) => el.tagName === 'SCALE-COLLAPSIBLE'
+    ) as HTMLScaleCollapsibleElement[];
   }
 
-  propagatePropsToChildren(headingLevel: number) {
+  propagatePropsToChildren(
+    headingLevel: number,
+    iconLocation: 'left' | 'right'
+  ) {
     this.getCollapsibleChildren().forEach((item) => {
       item.headingLevel = headingLevel;
+      item.iconLocation = iconLocation;
     });
   }
 

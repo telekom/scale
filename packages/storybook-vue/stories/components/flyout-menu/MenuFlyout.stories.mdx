@@ -1,0 +1,513 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+import {
+  iconNavigation,
+  addonNavigation,
+  sectorNavigation,
+  mainNavigation,
+  mainNavigationFlyout,
+} from '../brand-header-navigation/fixtures';
+
+import ScaleMenuFlyout from './ScaleMenuFlyout.vue';
+
+<Meta
+  title="Components/Flyout Menu"
+  component={ScaleMenuFlyout}
+  argTypes={{
+    direction: {
+      control: {
+        type: 'select',
+        options: [
+          'bottom-right',
+          'bottom-left',
+          'top-right',
+          'top-left',
+          'right',
+          'left',
+        ],
+      },
+      description:
+        'Set preference for where the menu appears, space permitting',
+    },
+    closeOnSelect: {
+      control: {
+        type: 'boolean',
+      },
+      description:
+        'Determines whether the dropdown should close when a menu item is selected',
+    },
+  }}
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Flyout Menu</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard">
+    {{
+      props: {
+        ...ScaleMenuFlyout.props,
+      },
+      methods: {
+        handleOpen: action('scale-open'),
+        handleClose: action('scale-close'),
+        handleSelect: action('scale-select'),
+      },
+      template: `
+        <div style="display:flex; height:200px;">
+          <scale-menu-flyout
+            :direction="direction"
+            :close-on-select="String(closeOnSelect)"
+            @scale-open="handleOpen"
+            @scale-close="handleClose"
+            @scale-select="handleSelect"
+          >
+            <scale-button slot="trigger" variant="secondary" icon-only>
+              <scale-icon-service-settings accessibility-title="Open menu"></scale-icon-service-settings>
+            </scale-button>
+            <scale-menu-flyout-list>
+              <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+            </scale-menu-flyout-list>
+          </scale-menu-flyout>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-menu-flyout>
+  <scale-button slot="trigger" variant="secondary" icon-only>
+    <scale-icon-service-settings
+      accessibility-title="Open menu"
+    ></scale-icon-service-settings>
+  </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>Menu Item 1</scale-menu-flyout-item>
+    <scale-menu-flyout-item>Menu Item 2</scale-menu-flyout-item>
+    <scale-menu-flyout-item>Menu Item 3</scale-menu-flyout-item>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+```
+
+## Scoped CSS variables
+
+```css
+:host {
+  --spacing-y-list: 0;
+  --spacing-x-list: 0;
+}
+
+/* menu-flyout-divider */
+:host(scale-menu-flyout-divider) {
+  --color: var(--telekom-color-ui-faint);
+}
+```
+
+## Breaking Changes from `3.0.0-beta.22`
+
+### Cascading has changed
+
+Before (you'd nest an entire `scale-menu-flyout` in place of an item):
+
+```html
+<scale-menu-flyout>
+  <scale-button slot="trigger" variant="secondary"> Menu </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+    <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+    <scale-menu-flyout>
+      <scale-menu-flyout-item slot="trigger" cascade
+        >More Options</scale-menu-flyout-item
+      >
+      <scale-menu-flyout-list>
+        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+```
+
+After (you place a `scale-menu-flyout-list` with `slot="sublist"` inside of a `scale-menu-flyout-item`):
+
+```html
+<scale-menu-flyout>
+  <scale-button slot="trigger" variant="secondary"> Menu </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+    <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+    <scale-menu-flyout-item
+      >More Options
+      <scale-menu-flyout-list slot="sublist">
+        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout-item>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+```
+
+### Checked toogles require a new `checkable` attribute
+
+With a value of either `checkbox` or `radio`. And then use `checked` has a truly boolean attribute to mark these items has checked.
+
+Before:
+
+```html
+<scale-menu-flyout-list>
+  <scale-menu-flyout-item checked="false"
+    >Toggle option 1</scale-menu-flyout-item
+  >
+  <scale-menu-flyout-item checked="true"
+    >Toggle option 2</scale-menu-flyout-item
+  >
+  <scale-menu-flyout-item checked="false"
+    >Toggle option 3</scale-menu-flyout-item
+  >
+  <scale-menu-flyout-item checked="false"
+    >Toggle option 4</scale-menu-flyout-item
+  >
+</scale-menu-flyout-list>
+```
+
+After:
+
+```html
+<scale-menu-flyout-list>
+  <scale-menu-flyout-item checkable="checkbox"
+    >Toggle option 1</scale-menu-flyout-item
+  >
+  <scale-menu-flyout-item checkable="checkbox" checked
+    >Toggle option 2</scale-menu-flyout-item
+  >
+  <scale-menu-flyout-item checkable="checkbox"
+    >Toggle option 3</scale-menu-flyout-item
+  >
+  <scale-menu-flyout-item checkable="checkbox"
+    >Toggle option 4</scale-menu-flyout-item
+  >
+</scale-menu-flyout-list>
+```
+
+### Avoid listening for `click` events in items
+
+Use `scale-select` which will be triggered by both mouse and keyboard input.
+
+## Cascading Menu
+
+<Canvas withSource="none">
+  <Story name="Cascading Menu">
+    {{
+      methods: {
+        handleOpen: action('scale-open'),
+        handleClose: action('scale-close'),
+        handleSelect: action('scale-select'),
+      },
+      template: `
+      <div style="display:flex; height:400px;">
+        <scale-menu-flyout @scale-open="handleOpen" @scale-close="handleClose" @scale-select="handleSelect">
+          <scale-button slot="trigger" variant="secondary" icon-only>
+            <scale-icon-action-filter accessibility-title="Open menu"></scale-icon-action-filter>
+          </scale-button>
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item>Item Title</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Really Quite Long Item Title</scale-menu-flyout-item>
+            <scale-menu-flyout-divider></scale-menu-flyout-divider>
+            <scale-menu-flyout-item>Item With Suffix 1<span slot="suffix">⌘X</span></scale-menu-flyout-item>
+            <scale-menu-flyout-item>Item With Suffix 2<span slot="suffix">⌘Y</span></scale-menu-flyout-item>
+            <scale-menu-flyout-item disabled>Item With Suffix 3<span slot="suffix">⌘Z</span></scale-menu-flyout-item>
+            <scale-menu-flyout-divider></scale-menu-flyout-divider>
+            <scale-menu-flyout-item>
+              Other Options
+              <scale-menu-flyout-list slot="sublist">
+                <scale-menu-flyout-item><scale-icon-action-cut-paste slot="prefix"></scale-icon-action-cut-paste>Item With Prefix 1</scale-menu-flyout-item>
+                <scale-menu-flyout-item>
+                  <scale-icon-action-loop slot="prefix"></scale-icon-action-loop>Item With Prefix 2
+                  <scale-menu-flyout-list slot="sublist">
+                    <scale-menu-flyout-item>Third Level Item 1</scale-menu-flyout-item>
+                    <scale-menu-flyout-item>Third Level Item 2</scale-menu-flyout-item>
+                    <scale-menu-flyout-item>Third Level Item 3</scale-menu-flyout-item>
+                  </scale-menu-flyout-list>
+                </scale-menu-flyout-item>
+                <scale-menu-flyout-item><scale-icon-action-more slot="prefix"></scale-icon-action-more>Item With Prefix 3</scale-menu-flyout-item>
+              </scale-menu-flyout-list>
+            </scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+      </div>  
+      `,
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-menu-flyout>
+  <scale-button slot="trigger" variant="secondary" icon-only>
+    <scale-icon-action-filter
+      accessibility-title="Open menu"
+    ></scale-icon-action-filter>
+  </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item>Item Title</scale-menu-flyout-item>
+    <scale-menu-flyout-item
+      >Really Quite Long Item Title</scale-menu-flyout-item
+    >
+    <scale-menu-flyout-divider></scale-menu-flyout-divider>
+    <scale-menu-flyout-item
+      >Item With Suffix 1<span slot="suffix">⌘F</span></scale-menu-flyout-item
+    >
+    <scale-menu-flyout-item
+      >Item With Suffix 2<span slot="suffix">⌘H</span></scale-menu-flyout-item
+    >
+    <scale-menu-flyout-divider></scale-menu-flyout-divider>
+    <scale-menu-flyout-item>
+      Other Options
+      <scale-menu-flyout-list slot="sublist">
+        <scale-menu-flyout-item>
+          <scale-icon-action-cut-paste
+            slot="prefix"
+          ></scale-icon-action-cut-paste
+          >Item With Prefix 1
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item>
+          <scale-icon-action-loop slot="prefix"></scale-icon-action-loop>Item
+          With Prefix 2
+          <scale-menu-flyout-list slot="sublist">
+            <scale-menu-flyout-item>Third Level Item 1</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Third Level Item 2</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Third Level Item 3</scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout-item>
+        <scale-menu-flyout-item>
+          <scale-icon-action-more slot="prefix"></scale-icon-action-more>Item
+          With Prefix 3
+        </scale-menu-flyout-item>
+      </scale-menu-flyout-list>
+    </scale-menu-flyout-item>
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+```
+
+### Accessibility Notice
+
+There are two known issues with the JAWS2019 screen reader and Google Chrome, that may represent slight limitations. When nested submenus are present, (1) the focus will be placed on the second item of the menu, and (2) in submenus with submenus, the first item in the menu won't be read the first time it receives focus.
+
+## Checked Toggle
+
+<Canvas withSource="none">
+  <Story name="Checked Toggle">
+    {{
+      methods: {
+        handleOpen: action('scale-open'),
+        handleClose: action('scale-close'),
+        handleSelect: action('scale-select'),
+        toggleChecked: function (event) {
+          event.target.checked = !event.target.checked;
+        },
+      },
+      template: `
+        <scale-menu-flyout close-on-select="false" @scale-open="handleOpen" @scale-close="handleClose" @scale-select="handleSelect">
+          <scale-button slot="trigger" variant="secondary">
+            Options <scale-icon-navigation-collapse-down aria-hidden="true"></scale-icon-navigation-collapse-down>
+          </scale-button>
+          <scale-menu-flyout-list @scale-select="toggleChecked">
+            <scale-menu-flyout-item checkable="checkbox">Toggle option 1</scale-menu-flyout-item>
+            <scale-menu-flyout-item checkable="checkbox" checked>Toggle option 2</scale-menu-flyout-item>
+            <scale-menu-flyout-item checkable="checkbox">Toggle option 3</scale-menu-flyout-item>
+            <scale-menu-flyout-item checkable="checkbox">Toggle option 4</scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+```html
+<scale-menu-flyout close-on-select="false">
+  <scale-button slot="trigger" variant="secondary">
+    Options
+    <scale-icon-navigation-collapse-down
+      aria-hidden="true"
+    ></scale-icon-navigation-collapse-down>
+  </scale-button>
+  <scale-menu-flyout-list>
+    <scale-menu-flyout-item checkable="checkbox"
+      >Toggle option 1</scale-menu-flyout-item
+    >
+    <scale-menu-flyout-item checkable="checkbox" checked
+      >Toggle option 2</scale-menu-flyout-item
+    >
+    <scale-menu-flyout-item checkable="checkbox"
+      >Toggle option 3</scale-menu-flyout-item
+    >
+    <scale-menu-flyout-item checkable="checkbox"
+      >Toggle option 4</scale-menu-flyout-item
+    >
+  </scale-menu-flyout-list>
+</scale-menu-flyout>
+
+<script>
+  const list = document.querySelector('scale-menu-flyout-list');
+
+  list.addEventListener('scale-select', function (event) {
+    const item = event.target;
+    item.checked = !item.checked;
+  });
+</script>
+```
+
+## Brand Header Primary Navigation
+
+<Canvas withSource="none">
+  <Story name="Brand Header Primary Navigation" inline={false} height={500}>
+    {() => ({
+      data() {
+        return {
+          iconNavigation: JSON.stringify(iconNavigation),
+          sectorNavigation: JSON.stringify(sectorNavigation),
+          addonNavigation: JSON.stringify(addonNavigation),
+          mainNavigationFlyout: JSON.stringify(mainNavigationFlyout),
+        };
+      },
+      methods: {
+        handleMouseEnter: function () {
+          this.$refs.header.isMegaMenuVisible = true;
+          this.$refs.navMainWithMegaMenu.isMegaMenuVisible = true;
+        },
+        handleMouseLeave: function () {
+          this.$refs.header.isMegaMenuVisible = false;
+          this.$refs.navMainWithMegaMenu.isMegaMenuVisible = false;
+        },
+      },
+      template: `
+        <div class="brand-header-spacing">
+          <scale-app-shell>
+            <scale-app-header
+              ref="header"
+              slot="header"
+              id="header"
+              :icon-navigation="iconNavigation"
+              :sector-navigation="sectorNavigation"
+              :addon-navigation="addonNavigation"
+              :main-navigation="mainNavigationFlyout"
+            >
+              <div slot="menu-main">
+                <scale-menu-flyout @scale-close="$refs.first.isActive = false">
+                  <div slot="trigger" style="height: 56px;">
+                    <scale-nav-main popup="true" ref="first" @click="$refs.first.isActive = true" name="Cascading Menu Item"></scale-nav-main>
+                  </div>
+                  <scale-menu-flyout-list>
+                    <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+                    <scale-menu-flyout-item active aria-current="true">Item 2 <span class="sr-only">active</span></scale-menu-flyout-item>
+                    <scale-menu-flyout-item>
+                      More Options
+                      <scale-menu-flyout-list slot="sublist">
+                        <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                        <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                        <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                        <scale-menu-flyout-item>
+                          Even more
+                          <scale-menu-flyout-list slot="sublist">
+                            <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                            <scale-menu-flyout-item>
+                              Very Specific Options
+                              <scale-menu-flyout-list slot="sublist">
+                                <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                                <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                                <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                              </scale-menu-flyout-list>
+                            </scale-menu-flyout-item>
+                          </scale-menu-flyout-list>
+                        </scale-menu-flyout-item>
+                      </scale-menu-flyout-list>
+                    </scale-menu-flyout-item>
+                    <scale-menu-flyout-item disabled>
+                      Item 4 <span slot="suffix">⌘+Space</span>
+                    </scale-menu-flyout-item>
+                  </scale-menu-flyout-list>
+                </scale-menu-flyout>
+                <scale-nav-main name="Custom Item #1"></scale-nav-main>
+                <scale-nav-main name="Custom Item #2"></scale-nav-main>
+              </div>
+            </scale-app-header>
+            <div style="height: 800px; padding: 48px 0;">Scroll to test header behavior</div>
+            <div style="height: 800px; padding: 48px 0;">Scroll more to test header behavior</div>
+          </scale-app-shell>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
+
+```html
+<scale-app-shell>
+  <scale-app-header
+    ref="header"
+    slot="header"
+    id="header"
+    :icon-navigation="iconNavigation"
+    :sector-navigation="sectorNavigation"
+    :addon-navigation="addonNavigation"
+  >
+    <div slot="menu-main">
+      <scale-menu-flyout>
+        <div slot="trigger" style="height: 56px;">
+          <scale-nav-main name="Cascading Menu Item"></scale-nav-main>
+        </div>
+        <scale-menu-flyout-list>
+          <scale-menu-flyout-item>Item 1</scale-menu-flyout-item>
+          <scale-menu-flyout-item>Item 2</scale-menu-flyout-item>
+          <scale-menu-flyout-item>
+            More Options
+            <scale-menu-flyout-list slot="sublist">
+              <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+              <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+              <scale-menu-flyout-item>
+                Even more
+                <scale-menu-flyout-list slot="sublist">
+                  <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                  <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                  <scale-menu-flyout-item>
+                    Very Specific Options
+                    <scale-menu-flyout-list slot="sublist">
+                      <scale-menu-flyout-item>Option 1</scale-menu-flyout-item>
+                      <scale-menu-flyout-item>Option 2</scale-menu-flyout-item>
+                      <scale-menu-flyout-item>Option 3</scale-menu-flyout-item>
+                    </scale-menu-flyout-list>
+                  </scale-menu-flyout-item>
+                </scale-menu-flyout-list>
+              </scale-menu-flyout-item>
+            </scale-menu-flyout-list>
+          </scale-menu-flyout-item>
+          <scale-menu-flyout-item disabled>
+            Item 4 <span slot="suffix">⌘+Space</span>
+          </scale-menu-flyout-item>
+        </scale-menu-flyout-list>
+      </scale-menu-flyout>
+      <scale-nav-main name="Custom Item #1"></scale-nav-main>
+      <scale-nav-main name="Custom Item #2"></scale-nav-main>
+    </div>
+  </scale-app-header>
+  <!-- content -->
+</scale-app-shell>
+```

@@ -1,18 +1,19 @@
 :host,
 .checkbox-group {
   /* checkbox-group container */
-  --spacing-left-container: var(--scl-spacing-24);
+  --spacing-left-container: var(--telekom-spacing-unit-x8);
 
   /* checkbox-group checkbox */
-  --spacing-left-checkbox: var(--scl-spacing-8);
+  --spacing-left-checkbox: var(--telekom-spacing-unit-x2);
 
   /* slotted item */
-  --spacing-top-slotted-item: var(--scl-spacing-4);
+  --spacing-top-slotted-item: var(--telekom-spacing-unit-x3);
 }
 
 .checkbox-group {
   display: inline-flex;
   flex-direction: column;
+  position: relative;
 }
 .checkbox-group [part='fieldset'] {
   display: flex;
@@ -21,6 +22,11 @@
   padding: 0;
   margin: 0;
   margin-left: var(--spacing-left-container);
+}
+
+.checkbox-group [part='parent-checkbox'] {
+  line-height: var(--telekom-typography-line-spacing-standard);
+  --font-weight-label: var(--telekom-typography-font-weight-bold);
 }
 
 .checkbox-group legend {
@@ -36,5 +42,5 @@
 }
 
 .checkbox-group scale-checkbox {
-  margin: var(--spacing-top-slotted-item) 0;
+  margin-top: var(--spacing-top-slotted-item);
 }

@@ -1,9 +1,10 @@
 :host {
-  --border-color: var(--scl-color-grey-90);
-  --border-color-disabled: var(--scl-color-background-disabled);
-  --border: var(--scl-spacing-1) solid var(--border-color);
-  --border-disabled: var(--scl-spacing-1) solid var(--border-color-disabled);
-  --radius: var(--scl-radius-4);
+  --border-color: var(--telekom-color-ui-border-standard);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --border: var(--telekom-spacing-unit-x025) solid var(--border-color);
+  --border-disabled: var(--telekom-spacing-unit-x025) solid
+    var(--border-color-disabled);
+  --radius: var(--telekom-radius-standard);
 }
 
 .toggle-group--inline {

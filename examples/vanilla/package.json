@@ -1,0 +1,19 @@
+{
+  "name": "TODO",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx servor --reload --browse"
+  },
+  "dependencies": {
+    "@telekom/scale-components-neutral": "^3.0.0-beta.100"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "devDependencies": {
+    "servor": "^4.0.2"
+  }
+}

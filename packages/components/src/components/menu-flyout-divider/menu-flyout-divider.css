@@ -13,10 +13,12 @@
 
 :host {
   display: block;
-  --color: var(--scl-color-grey-10);
+  /* FIXME rename to --border-color */
+  --color: var(--telekom-color-ui-faint);
 }
 
 .menu-flyout-divider {
-  border-top: 1px solid var(--color);
+  border-top: var(--telekom-line-weight-standard) solid var(--color);
+  /* FIXME use --telekom-spacing-unit-x2 ? */
   margin: 6px 0;
 }

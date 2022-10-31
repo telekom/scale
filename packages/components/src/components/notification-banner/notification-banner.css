@@ -1,0 +1,129 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --width: 100%;
+  --radius: var(--telekom-radius-standard);
+
+  --background-error: var(--telekom-color-functional-danger-subtle);
+  --background-warning: var(--telekom-color-functional-warning-subtle);
+  --background-informational: var(
+    --telekom-color-functional-informational-subtle
+  );
+  --background-success: var(--telekom-color-functional-success-subtle);
+}
+
+.notification-banner {
+  border-radius: var(--radius);
+  width: var(--width);
+  position: relative;
+  /* FIXME:TOKEN not sure what elevation to use here */
+  box-shadow: var(--telekom-shadow-overlay);
+  min-height: 48px;
+}
+
+.notification-banner--variant-error {
+  background-color: var(--background-error);
+}
+.notification-banner--variant-warning {
+  background-color: var(--background-warning);
+}
+.notification-banner--variant-informational {
+  background-color: var(--background-informational);
+}
+.notification-banner--variant-success {
+  background-color: var(--background-success);
+}
+
+.notification-banner__heading {
+  margin: 14px 48px 14px 48px;
+  font-weight: var(--telekom-typography-font-weight-bold);
+  line-height: 48px;
+}
+
+.notification-banner__text ::slotted(*) {
+  margin: -10px 0px -25px 0px;
+  line-height: 16px;
+  padding-bottom: 15px;
+}
+
+.notification-banner--has-no-text .notification-banner__link ::slotted(*) {
+  margin: 0;
+  padding: 0px 0px 0px 16px;
+}
+
+.notification-banner--has-text .notification-banner__link ::slotted(*) {
+  margin: 20px 0 0 0;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
+
+::slotted(*) {
+  font-weight: var(--telekom-typography-font-weight-regular);
+}
+
+.notification-banner__button-close {
+  position: absolute;
+  top: 8px;
+  right: 13.5px;
+  color: #191919;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.notification-banner__button-close svg {
+  height: 19px;
+  width: 19px;
+  padding: 6.5px;
+  border-radius: 20%;
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+.notification-banner__button-close:hover svg {
+  background-color: white;
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+.notification-banner__icon-success {
+  position: absolute;
+  top: 12.5px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  color: var(--telekom-color-text-and-icon-functional-success);
+}
+
+.notification-banner__icon-error {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  color: var(--telekom-color-text-and-icon-functional-danger);
+}
+
+.notification-banner__icon-information {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  color: var(--telekom-color-text-and-icon-functional-informational);
+}
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  .notification-banner__icon-close {
+    color: white;
+  }
+}

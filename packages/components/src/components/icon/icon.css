@@ -11,8 +11,8 @@
 
 scale-icon {
   --display: inline-flex;
-  --transition: all var(--scl-motion-duration-fast)
-    var(--scl-motion-easing-standard);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
 
   display: var(--display);
 }

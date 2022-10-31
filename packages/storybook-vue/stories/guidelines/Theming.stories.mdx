@@ -1,0 +1,22 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+
+import text_en from './Theming_en.md';
+import text_de from './Theming_de.md';
+
+<Meta
+  title="Guidelines/Customization and Themes"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        return (
+          <DocsContainer context={context}>
+            {locale && (
+              <Description markdown={locale === 'en' ? text_en : text_de} />
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

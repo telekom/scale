@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.29",
+  "version": "3.0.0-beta.115",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
@@ -11,7 +11,7 @@
     "access": "public"
   },
   "main": "dist/index.cjs.js",
-  "module": "dist/custom-elements/index.js",
+  "module": "dist/components/index.js",
   "unpkg": "dist/scale-components/scale-components.esm.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -43,11 +43,10 @@
     "@nowseemee/vue-output-target": "0.0.4",
     "@stencil/angular-output-target": "^0.0.7",
     "@stencil/postcss": "^2.0.0",
-    "@stencil/react-output-target": "^0.0.9",
+    "@stencil/react-output-target": "^0.3.1",
     "@types/classnames": "2.2.8",
     "@types/jest": "24.9.1",
     "@types/lodash": "4.14.149",
-    "@types/puppeteer": "1.20.3",
     "@types/resize-observer-browser": "^0.1.6",
     "babel-loader": "^8.1.0",
     "date-fns": "^2.6.0",
@@ -59,7 +58,6 @@
     "hast-util-to-html": "^7.1.1",
     "jsx-dom": "^6.4.17",
     "lodash": "^4.17.15",
-    "puppeteer": "^4.0.0",
     "rimraf": "^3.0.2",
     "svg-parser": "^2.0.4",
     "svgo": "^1.3.2",
@@ -69,11 +67,11 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
-    "@proyecto26/animatable-component": "^1.1.8",
-    "@stencil/core": "^2.7.1",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.29",
+    "@floating-ui/dom": "^0.5.4",
+    "@stencil/core": "^2.17.0",
+    "@telekom/design-tokens": "^1.0.0-beta.2",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.115",
     "classnames": "^2.2.6",
-    "stencil-inline-svg": "^1.0.1",
-    "web-animations-js": "^2.3.2"
+    "stencil-inline-svg": "^1.0.1"
   }
 }

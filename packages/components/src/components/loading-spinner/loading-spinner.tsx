@@ -9,6 +9,7 @@ let i = 0;
   shadow: true,
 })
 export class LoadingSpinner {
+  // todo the variant white should be renamed for dark mode
   @Prop() variant: 'white' | 'primary' = 'primary';
   @Prop() alignment: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() text: string;
@@ -51,9 +52,13 @@ export class LoadingSpinner {
           <div class="sr-only" aria-live="polite" id={`spinner-label-${i}`}>
             {this.text || 'Loading'}
           </div>
-          <div part="text" class="spinner__text" aria-hidden="true">
-            {this.text}
-          </div>
+          {this.text ? (
+            <div part="text" class="spinner__text" aria-hidden="true">
+              {this.text}
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </Host>
     );

@@ -10,27 +10,31 @@
  */
 
 scale-table {
-  --radius: var(--scl-radius-4) var(--scl-radius-4) 0 0;
-  --background: var(--scl-color-background-light);
-  --color: var(--scl-color-text-standard);
-  --color-hover: var(--scl-color-primary-hover);
-  --color-active: var(--scl-color-primary-active);
-  --font-size: var(--scl-font-size-12);
+  --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
+  --background: var(--telekom-color-ui-state-fill-standard);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --font-size: var(--telekom-typography-font-size-small);
+  --font-weight: var(--telekom-typography-font-weight-bold);
 
-  --spacing-tbody-td: 16px 8px;
-  --border-bottom-tbody-td: 1px solid var(--scl-color-grey-20);
-  --background-tbody: var(--scl-color-background-standard);
-  --background-tbody-tr-hover: #ededed;
+  --spacing-tbody-td: var(--telekom-spacing-unit-x4)
+    var(--telekom-spacing-unit-x2);
+  --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-faint);
+  --background-tbody: var(--telekom-color-ui-state-fill-standard);
+  --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-tfoot: var(--telekom-color-ui-state-fill-standard);
+  --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid
+    var(--telekom-color-ui-extra-strong);
 
-  --background-tfoot: var(--scl-color-background-standard);
-  --border-bottom-tfoot-td: 1px solid var(--scl-color-text-standard);
-
-  --spacing-th-sortable: 0 8px 0 0;
-  --background-th-sortable-hover: #ededed;
-  --background-th-sortable-active: #dcdcdc;
-  --box-shadow-th-sortable-focus: inset 0 0 0 var(--scl-spacing-2)
-    var(--scl-color-focus);
-  --background-tr-striped: var(--scl-color-grey-0);
+  --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
+  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
+  --background-th-sortable-active: var(--telekom-color-ui-faint);
+  --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05)
+    var(--telekom-color-functional-focus);
+  --background-tr-striped: var(--telekom-color-ui-subtle);
+  --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
 .table {
   display: block;
@@ -46,14 +50,15 @@ scale-table {
   border-collapse: collapse;
 }
 .table th {
-  padding: 0 8px;
+  padding: var(--padding);
   text-align: left;
   line-height: 32px; /*  TODO: revise, this is weird */
   color: var(--color);
   font-size: var(--font-size);
+  background: var(--telekom-color-background-surface-subtle);
 }
 .table td {
-  padding: 0 8px;
+  padding: var(--padding);
 }
 .table tbody tr td {
   padding: 8px;
@@ -75,7 +80,7 @@ scale-table {
 }
 .table tfoot tr td {
   padding: 8px;
-  font-weight: 600;
+  font-weight: var(--font-weight);
   border-bottom: var(--border-bottom-tfoot-td);
 }
 .table .scale-sort-indicator svg {
@@ -87,17 +92,12 @@ scale-table {
 .table th:focus {
   outline: none;
 }
-.table--size-default {
-}
 .table--size-default tbody tr td {
   padding: var(--spacing-tbody-td);
-}
-.table--sortable {
 }
 .table--sortable th {
   cursor: pointer;
   padding: var(--spacing-th-sortable);
-  border-radius: var(--radius);
 }
 .table--sortable th:hover {
   padding: var(--spacing-th-sortable);
@@ -108,19 +108,20 @@ scale-table {
 }
 .table--sortable th:focus {
   box-shadow: var(--box-shadow-th-sortable-focus);
+  border-radius: var(--radius);
 }
 .table--sortable th .scale-sort-indicator svg {
   display: block;
 }
 .table--sortable th[aria-disabled] {
-  padding: 0 8px;
+  padding: var(--padding);
   pointer-events: none;
 }
 .table--sortable th:not([aria-sort]) {
-  padding: 0 8px;
+  padding: var(--padding);
 }
 .table--sortable th[aria-sort='none'] {
-  padding: 0 8px;
+  padding: var(--padding);
 }
 .table--sortable
   th[aria-sort='ascending']

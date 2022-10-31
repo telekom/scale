@@ -3,7 +3,7 @@
 exports[`Tag should have a link 1`] = `
 <scale-tag href="#">
   <mock:shadow-root>
-    <a class="tag tag--link" href="#" part="base link" target="_self">
+    <a class="tag tag--color-grey tag--link tag--type-standard" href="#" part="base type-standard color-grey link" target="_self">
       <slot></slot>
     </a>
   </mock:shadow-root>
@@ -14,7 +14,7 @@ exports[`Tag should have a link 1`] = `
 exports[`Tag should match snapshot 1`] = `
 <scale-tag>
   <mock:shadow-root>
-    <span class="tag" part="base">
+    <span class="tag tag--color-grey tag--type-standard" part="base type-standard color-grey">
       <slot></slot>
     </span>
   </mock:shadow-root>

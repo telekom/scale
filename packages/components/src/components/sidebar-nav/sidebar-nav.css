@@ -11,17 +11,18 @@
 
 :host {
   --max-width: 15rem;
-  --spacing-indent: var(--scl-spacing-24);
-  --spacing-collapsible: var(--scl-spacing-16);
+  --spacing-indent: var(--telekom-spacing-unit-x6);
+  --spacing-collapsible: var(--telekom-spacing-unit-x4);
   --opacity-chevron: 0;
   --left-current-border: 0;
 
-  --color: var(--scl-color-primary);
-  --color-active: var(--scl-color-primary-active);
-  --box-shadow-focus: inset 0 0 0 var(--scl-spacing-2) var(--scl-color-focus);
-  --color-toggle-button: var(--scl-color-grey-60);
-  --border-y-toggle-button: 1px solid var(--scl-color-grey-10);
-  --radius-toggle-button: var(--scl-radius-2);
+  --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
+  --color-active: var(--telekom-color-text-and-icon-primary-pressed);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
+  --color-toggle-button: var(--telekom-color-ui-regular);
+  --border-y-toggle-button: 1px solid var(--telekom-color-ui-faint);
+  --radius-toggle-button: var(--telekom-radius-small);
 }
 
 .sidebar-nav--collapsible {
@@ -67,7 +68,7 @@
 }
 
 .sidebar-nav__toggle-button:hover {
-  color: var(--color); /* TODO: shouldn't this be hover color? */
+  color: var(--color-hover);
 }
 
 .sidebar-nav__toggle-button:active {
@@ -75,8 +76,7 @@
 }
 
 .sidebar-nav__toggle-button:focus {
-  outline: none;
-  box-shadow: var(--box-shadow-focus);
+  outline: var(--focus-outline);
 }
 
 [aria-expanded='true'] .sidebar-nav__icon {

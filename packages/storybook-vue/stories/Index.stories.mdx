@@ -1,0 +1,27 @@
+import { Meta, Description, DocsContainer } from '@storybook/addon-docs';
+
+import text_en from './Index_en.md';
+import text_de from './Index_de.md';
+
+<Meta
+  title="Scale Design System"
+  parameters={{
+    docs: {
+      container: ({ context }) => {
+        const locale = context && context.globals && context.globals.locale;
+        const alt =
+          locale === 'en'
+            ? 'Welcome to Scale Design System'
+            : 'Wilkommen beim Scale Design System';
+        return (
+          <DocsContainer context={context}>
+            <img src="assets/welcome.png" alt={alt} style={{ width: '100%' }} />
+            {locale && (
+              <Description markdown={locale === 'en' ? text_en : text_de} />
+            )}
+          </DocsContainer>
+        );
+      },
+    },
+  }}
+/>

@@ -34,32 +34,27 @@ describe('component prop snapshots', () => {
     | 'ro'
     | 'sk'
     | '' = 'en';
-  const size: number = 36;
   const color: string = 'magenta';
 
   describe('all props', () => {
     it('are not set', async () => {
       await page.waitForChanges();
       expect(page.rootInstance.language).toBe(language);
-      expect(page.rootInstance.size).toBe(size);
       expect(page.rootInstance.color).toBe(color);
       expect(page.root).toMatchSnapshot();
     });
     it('are set', async () => {
       const setLanguage = 'hr';
-      const setSize = 100;
       const setColor = 'black';
       const setAccessibilityTitle = 'title';
 
       page.rootInstance.language = setLanguage;
-      page.rootInstance.size = setSize;
       page.rootInstance.color = setColor;
       page.rootInstance.accessibilityTitle = setAccessibilityTitle;
 
       await page.waitForChanges();
       expect(page.rootInstance.language).toBe(setLanguage);
       expect(page.rootInstance.accessibilityTitle).toBe(setAccessibilityTitle);
-      expect(page.rootInstance.size).toBe(setSize);
       expect(page.rootInstance.color).toBe(setColor);
 
       expect(page.root).toMatchSnapshot();

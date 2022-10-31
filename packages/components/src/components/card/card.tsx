@@ -28,8 +28,6 @@ export class Card {
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
-  @Prop() clickCard?: any;
-
   render() {
     const Tag = !!this.to ? 'a' : 'div';
 
@@ -40,7 +38,6 @@ export class Card {
           <Tag
             class={this.getCssClassMap()}
             part={classNames('base', !!this.to && 'interactive')}
-            onClick={this.clickCard}
             {...(!this.to ? { role: 'group' } : {})}
             {...(!!this.to ? { href: this.to } : {})}
             {...(!!this.target ? { target: this.target } : {})}

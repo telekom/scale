@@ -17,9 +17,11 @@ import {
   Element,
   Event,
   EventEmitter,
+  Method,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
+import statusNote from '../../utils/status-note';
 
 enum iconSizes {
   xs = '12',
@@ -61,7 +63,7 @@ export class ToggleButton {
   /** (optional) toggle button's id */
   @Prop({ reflect: true }) toggleButtonId?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
-  @Prop() ariaLabel: string;
+  @Prop() ariaLabelToggleButton: string;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) position within group */
@@ -85,6 +87,13 @@ export class ToggleButton {
 
   hasScaleIcon = false;
 
+  private focusableElement: HTMLElement;
+
+  @Method()
+  async setFocus() {
+    this.focusableElement.focus();
+  }
+
   connectedCallback() {
     this.setIconPositionProp();
     this.handleIconShape();
@@ -96,6 +105,15 @@ export class ToggleButton {
 
   componentDidRender() {
     this.handleIconSize();
+    if (this.hostElement.hasAttribute('aria-label')) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelToggleButton" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   componentWillLoad() {
@@ -175,12 +193,13 @@ export class ToggleButton {
       <Host>
         {this.styles && <style>{this.styles}</style>}
         <button
+          ref={(el) => (this.focusableElement = el)}
           class={this.getCssClassMap()}
           id={this.toggleButtonId}
           onClick={this.handleClick}
           disabled={this.disabled}
           type="button"
-          aria-label={this.ariaLabel}
+          aria-label={this.ariaLabelToggleButton}
           aria-pressed={this.selected}
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}

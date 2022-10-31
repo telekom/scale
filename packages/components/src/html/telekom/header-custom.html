@@ -40,7 +40,21 @@ width: 100%; */
       <div class="block">Two</div>
       <scale-app-header slot="header" id="header">
         <div slot="logo">
-          <app-logo claim href="#custom" logo-title="Custom"></app-logo>
+          <scale-logo
+            transparent
+            variant="white"
+            language="de"
+            href="#custom"
+            logo-title="Custom"
+          ></scale-logo>
+        </div>
+        <div slot="logo-inverse">
+          <scale-logo
+            transparent
+            language=""
+            href="#custom"
+            logo-title="Custom"
+          ></scale-logo>
         </div>
         <div slot="menu-main">
           <scale-nav-main is-active name="Menu item #1"></scale-nav-main>

@@ -1,0 +1,16 @@
+:host {
+}
+
+/*!*option*!*/
+
+[part~='base'] {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+[part~='prefix'],
+[part~='label'],
+[part~='suffix'] {
+  display: flex;
+}

@@ -36,7 +36,7 @@
   height: 24px;
   width: 24px;
   margin: 0 0.5rem 0 0;
-  border-radius: 4px;
+  border-radius: var(--telekom-radius-standard);
 }
 .alert__close {
   height: 16px;

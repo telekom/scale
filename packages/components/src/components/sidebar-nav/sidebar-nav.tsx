@@ -11,6 +11,7 @@
 
 import { Component, h, Prop, Host, Element, State } from '@stencil/core';
 import classNames from 'classnames';
+import statusNote from '../../utils/status-note';
 
 @Component({
   tag: 'scale-sidebar-nav',
@@ -21,13 +22,12 @@ export class SidebarNav {
   mq: MediaQueryList;
 
   @Element() el: HTMLElement;
-
   /**
    * From mdn: A brief description of the purpose of the navigation,
    * omitting the term "navigation", as the screen reader will read
    * both the role and the contents of the label.
    */
-  @Prop() ariaLabel?: string;
+  @Prop() ariaLabelSidebarNav?: string;
   /** Set to `true` to make the sidebar toggleable (useful for small screens) */
   @Prop({ mutable: true, reflect: true }) collapsible?: boolean = false;
   /** Automatically set `collapsible` based on this media query */
@@ -47,6 +47,18 @@ export class SidebarNav {
   disconnectedCallback() {
     if (this.mq != null) {
       this.mq.removeListener(this.handleMediaQueryChange);
+    }
+  }
+
+  componentDidRender() {
+    if (this.el.hasAttribute('aria-label')) {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "ariaLabel" is deprecated. Please use the "ariaLabelSidebarNav" property!',
+        type: 'warn',
+        source: this.el,
+      });
     }
   }
 
@@ -87,6 +99,7 @@ export class SidebarNav {
       // Recent versions of Safari throw with `addEventListener`
       // https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
       this.mq.addListener(this.handleMediaQueryChange);
+      this.collapsible = this.mq.matches;
     }
   }
 
@@ -99,7 +112,9 @@ export class SidebarNav {
   };
 
   render() {
-    const label = this.ariaLabel ? { 'aria-label': this.ariaLabel } : {};
+    const label = this.ariaLabelSidebarNav
+      ? { 'aria-label': this.ariaLabelSidebarNav }
+      : {};
     const hidden = this.collapsible ? { hidden: this.collapsed } : {};
 
     return (

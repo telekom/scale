@@ -31,8 +31,7 @@ describe('pagination', () => {
                 page-size="11"
                 start-element="2"
                 total-elements="33"
-                styles="style"
-                size="small">
+                styles="style">
               </scale-pagination>`,
     });
     expect(specPage.rootInstance.hideBorders).toBe(true);
@@ -41,7 +40,6 @@ describe('pagination', () => {
     expect(specPage.rootInstance.startElement).toBe(2);
     expect(specPage.rootInstance.totalElements).toBe(33);
     expect(specPage.rootInstance.styles).toBe('style');
-    expect(specPage.rootInstance.size).toBe('small');
   });
   it('should emit when clicked goFirstPage()', async () => {
     const clickSpy = jest.fn();
@@ -53,8 +51,16 @@ describe('pagination', () => {
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
-    expect(clickSpy).toHaveBeenCalled();
-    expect(clickSpyLegacy).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'FIRST' }),
+      })
+    );
+    expect(clickSpyLegacy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'FIRST' }),
+      })
+    );
   });
   it('should emit when clicked goPreviousPage()', async () => {
     const clickSpy = jest.fn();
@@ -66,8 +72,16 @@ describe('pagination', () => {
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
-    expect(clickSpy).toHaveBeenCalled();
-    expect(clickSpyLegacy).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'PREVIOUS' }),
+      })
+    );
+    expect(clickSpyLegacy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'PREVIOUS' }),
+      })
+    );
   });
   it('should emit when clicked goNextPage()', async () => {
     const clickSpy = jest.fn();
@@ -79,10 +93,18 @@ describe('pagination', () => {
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
-    expect(clickSpy).toHaveBeenCalled();
-    expect(clickSpyLegacy).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'NEXT' }),
+      })
+    );
+    expect(clickSpyLegacy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'NEXT' }),
+      })
+    );
   });
-  it('should emit when clicked golastPage()', async () => {
+  it('should emit when clicked goLastPage()', async () => {
     const clickSpy = jest.fn();
     const clickSpyLegacy = jest.fn();
     page.doc.addEventListener('scale-pagination', clickSpy);
@@ -92,7 +114,15 @@ describe('pagination', () => {
     ) as HTMLElement;
     buttonElement.click();
     await page.waitForChanges();
-    expect(clickSpy).toHaveBeenCalled();
-    expect(clickSpyLegacy).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'LAST' }),
+      })
+    );
+    expect(clickSpyLegacy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        detail: expect.objectContaining({ direction: 'LAST' }),
+      })
+    );
   });
 });

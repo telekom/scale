@@ -1,0 +1,456 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleTextField from './ScaleTextField.vue';
+import { action } from '@storybook/addon-actions';
+export const ICON =
+  'M16.471,8.321 L12.613594,0.502886112 L8.755,8.321 L0.126435258,9.57533801 L6.37,15.66 L4.89610548,24.2548735 L12.613,20.197 L20.3310826,24.2548735 L18.856,15.66 L25.1007528,9.57533801 L16.471,8.321 Z M9.41891527,9.23556376 L12.613,2.761 L15.8082728,9.23556376 L22.951,10.273 L17.7826928,15.3122039 L19.003,22.427 L12.613594,19.067774 L6.223,22.427 L7.44449521,15.3122039 L2.275,10.273 L9.41891527,9.23556376 Z';
+
+<Meta
+  title="Components/Text Field"
+  component={ScaleTextField}
+  argTypes={{
+    resize: {
+      control: {
+        type: 'select',
+        options: ['unset', 'none', 'vertical', 'horizontal'],
+      },
+    },
+    type: {
+      control: {
+        type: 'select',
+        options: [
+          'email',
+          'hidden',
+          'number',
+          'password',
+          'tel',
+          'text',
+          'date',
+          'month',
+          'week',
+          'time',
+          'datetime-local',
+        ],
+      },
+    },
+    size: {
+      table: {
+        type: { summary: 'string' },
+      },
+      description: `(optional) DEPRECATED - css overwrite should replace size`,
+      control: { type: null },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleTextField },
+  props: {
+    label: String,
+    ...ScaleTextField.props,
+  },
+  template: `
+  <div style="padding: 20px 0 20px 0;">
+    <scale-text-field
+      :name="name"
+      :type="type"
+      :label="label"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :variant="variant"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :max="max"
+      :min="min"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :readonly="readonly"
+      :required="required"
+      :counter="counter"
+      :value="value"
+      :input-id="inputId"
+      :input-autofocus="inputAutofocus"
+      :experimental-controlled="experimentalControlled"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-text-field>
+    </div>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+export const StorySectionsTemplate = (args, { argTypes }) => ({
+  components: { ScaleTextField },
+  props: {
+    label: String,
+    ...ScaleTextField.props,
+  },
+  template: `
+    <scale-text-field
+      :name="name"
+      :type="type"
+      :label="label"
+      :helper-text="helperText"
+      :invalid="invalid"
+      :variant="variant"
+      :max-length="maxLength"
+      :min-length="minLength"
+      :max="max"
+      :min="min"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :readonly="readonly"
+      :required="required"
+      :counter="counter"
+      :value="value"
+      :input-id="inputId"
+      :input-autofocus="inputAutofocus"
+      :experimental-controlled="experimentalControlled"
+      @scaleChange="scaleChange"
+      @scaleFocus="scaleFocus"
+      @scaleBlur="scaleBlur"
+      @scaleKeyDown="scaleKeyDown"
+    ></scale-text-field>
+  `,
+  methods: {
+    scaleChange: action('scaleChange'),
+    scaleFocus: action('scaleFocus'),
+    scaleBlur: action('scaleBlur'),
+    scaleKeyDown: action('scaleKeyDown'),
+  },
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Text Field</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story
+    name="Standard"
+    args={{
+      label: 'An input',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+### Scoped CSS variables
+
+```css
+scale-text-field {
+  --transition: all var(--telekom-motion-duration-transition) var(
+      --telekom-motion-easing-standard
+    );
+  --radius: var(--telekom-radius-standard);
+  --border: var(--telekom-spacing-unit-x025) solid var(
+      --telekom-color-ui-border-standard
+    );
+  --border-error: var(--telekom-spacing-unit-x05) solid var(
+      --telekom-color-functional-danger-standard
+    );
+  --border-success: var(--telekom-spacing-unit-x05) solid var(
+      --telekom-color-functional-success-standard
+    );
+  --border-warning: var(--telekom-spacing-unit-x05) solid var(
+      --telekom-color-functional-warning-standard
+    );
+  --border-color-hover: var(--telekom-color-ui-border-hovered);
+  --border-color-focus: var(--telekom-color-ui-border-hovered);
+  --border-color-disabled: var(--telekom-color-ui-border-disabled);
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-color-disabled: none;
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
+      --telekom-color-functional-focus
+    );
+  --height: var(--telekom-spacing-unit-x11);
+  --spacing-x: var(--telekom-spacing-unit-x3);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --background-disabled: none;
+  --border-color-readonly: var(--telekom-color-ui-border-disabled);
+  --background-readonly: var(--telekom-color-ui-disabled);
+
+  /* meta */
+  --font-weight-meta: var(--telekom-line-weight-bold);
+  --font-size-meta: var(--telekom-typography-font-size-small);
+  --line-height-meta: var(--telekom-typography-line-spacing-standard);
+  --spacing-y-meta: var(--telekom-spacing-unit-x1);
+  --color-meta: var(--telekom-color-text-and-icon-standard);
+  --color-meta-error: var(--telekom-color-text-and-icon-functional-danger);
+
+  /* control */
+  --spacing-control: 21px var(--telekom-spacing-unit-x10) 5px calc(
+      var(--spacing-x) - 1px
+    );
+  --transition-control: var(--transition);
+  --font-size-control: var(--telekom-typography-font-size-body);
+  --background-control: var(--telekom-color-ui-state-fill-standard);
+
+  /* counter */
+  --transition-counter: var(--transition);
+  --font-size-counter: var(--font-size-meta);
+  --line-height-counter: var(--line-height-meta);
+  --color-counter-error: var(--color-meta-error);
+
+  /* helper-text */
+  --transition-helper-text: var(--transition);
+  --font-size-helper-text: var(--font-size-meta);
+  --line-height-helper-text: var(--line-height-meta);
+  --color-helper-text: var(
+    --telekom-color-text-and-icon-functional-informational
+  );
+  --color-helper-text-error: var(--color-meta-error);
+  --color-helper-text-success: var(
+    --telekom-color-text-and-icon-functional-success
+  );
+  --color-helper-text-warning: var(
+    --telekom-color-text-and-icon-functional-warning
+  );
+
+  /* placeholder */
+  --transition-placeholder: var(--transition);
+  --color-placeholder: var(--telekom-color-text-and-icon-additional);
+
+  /* label */
+  --color-label: var(--telekom-color-text-and-icon-additional);
+  --color-label-readonly: var(--telekom-color-text-and-icon-standard);
+  --z-index-label: var(--scl-z-index-10);
+  --transition-label: var(--transition);
+  --font-size-label: var(--telekom-typography-font-size-body);
+  --font-weight-label: var(--telekom-typography-font-weight-medium);
+  --font-size-label-focus: var(--telekom-typography-font-size-footnote);
+  --font-weight-label-focus: var(--telekom-typography-font-weight-bold);
+}
+```
+
+## Text With Events
+
+<Canvas withSource="none">
+  <Story
+    name="Text With Events"
+    args={{
+      label: 'Text With Events',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field id="text-field" label="Text With Events"></scale-text-field>
+
+<script>
+  const textField = document.getElementById('text-field');
+  textField.addEventListener('scaleChange', () => {
+    /* ... */
+  });
+  textField.addEventListener('scaleBlur', () => {
+    /* ... */
+  });
+  textField.addEventListener('scaleFocus', () => {
+    /* ... */
+  });
+  textField.addEventListener('scaleKeyDown', () => {
+    /* ... */
+  });
+</script>
+```
+
+## Placeholder
+
+<Canvas withSource="none">
+  <Story
+    name="Placeholder"
+    args={{
+      label: 'Placeholder',
+      placeholder: 'this is the placeholder',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="Placeholder"
+  placeholder="this is the placeholder"
+></scale-text-field>
+```
+
+## Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: 'Helper Text',
+      helperText: 'Make sure to fill this',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="Helper Text"
+  helper-text="Make sure to fill this"
+></scale-text-field>
+```
+
+## With Error
+
+<Canvas withSource="none">
+  <Story
+    name="With Error"
+    args={{
+      label: 'With Error',
+      invalid: true,
+      helperText: 'something is wrong',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Error"
+  helper-text="something is wrong"
+  invalid
+></scale-text-field>
+```
+
+## With Warning
+
+<Canvas withSource="none">
+  <Story
+    name="With Warning"
+    args={{
+      label: 'With Warning',
+      variant: 'warning',
+      helperText: 'something with warning',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Error"
+  helper-text="something with warning"
+  variant="warning"
+></scale-text-field>
+```
+
+## With Success
+
+<Canvas withSource="none">
+  <Story
+    name="With Success"
+    args={{
+      label: 'With Success',
+      variant: 'success',
+      helperText: 'something is successful',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="With Success"
+  helper-text="something is successful"
+  variant="success"
+></scale-text-field>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Disabled',
+      disabled: true,
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field label="Disabled" disabled></scale-text-field>
+```
+
+## Readonly
+
+<Canvas withSource="none">
+  <Story
+    name="Read Only"
+    args={{
+      label: 'Read only',
+      readonly: true,
+      value: 'This cannot be changed',
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="Read only"
+  value="This cannot be changed"
+  readonly
+></scale-text-field>
+```
+
+## Max Length With Counter
+
+<Canvas withSource="none">
+  <Story
+    name="Max Length With Counter"
+    args={{
+      label: 'Max Length With Counter',
+      maxLength: 10,
+      counter: true,
+    }}
+  >
+    {StorySectionsTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-text-field
+  label="Max Length With Counter"
+  max-length="10"
+  counter
+></scale-text-field>
+```
