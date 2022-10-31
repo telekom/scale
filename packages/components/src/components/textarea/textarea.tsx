@@ -107,10 +107,11 @@ export class Textarea {
   @State() hasFocus: boolean = false;
 
   private focusableElement: HTMLElement;
+  private readonly internalId = i++;
 
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-textarea' + i++;
+      this.inputId = 'input-textarea' + this.internalId;
     }
   }
 
@@ -170,7 +171,7 @@ export class Textarea {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const readonlyAttr = this.readonly ? { readonly: 'readonly' } : {};
 

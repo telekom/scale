@@ -132,9 +132,11 @@ export class TextField {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
+  private readonly internalId = i++;
+
   componentWillLoad() {
     if (this.inputId == null) {
-      this.inputId = 'input-text-field' + i++;
+      this.inputId = 'input-text-field' + this.internalId;
     }
   }
 
@@ -215,7 +217,7 @@ export class TextField {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${i}`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     const numericTypes = [
       'number',
