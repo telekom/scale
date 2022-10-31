@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* **slider:** bar styles ([#1328](https://github.com/telekom/scale/issues/1328)) ([c924e6f](https://github.com/telekom/scale/commit/c924e6f08c18ad656a054457286fc22d9a6152bb))
+
+
+
+
+
 # [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
 
 

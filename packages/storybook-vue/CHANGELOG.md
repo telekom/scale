@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* typography documentation variable name ([#1330](https://github.com/telekom/scale/issues/1330)) ([8d200a3](https://github.com/telekom/scale/commit/8d200a3a3b6ade9b9ef43e4f84aea4b1e1d984ce))
+
+
+### Features
+
+* adding UI black and white ([#1212](https://github.com/telekom/scale/issues/1212)) ([a8f88a0](https://github.com/telekom/scale/commit/a8f88a04e2f6119b615ecc4d25da32ed1b5bc181))
+
+
+
+
+
 # [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
 
 
