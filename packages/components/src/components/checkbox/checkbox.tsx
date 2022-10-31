@@ -150,7 +150,7 @@ export class Checkbox {
       return (
         <div
           part="helper-text"
-          id={text.id}
+          id={text.internalId}
           aria-live="polite"
           aria-relevant="additions removals"
         >
