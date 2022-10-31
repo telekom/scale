@@ -5,11 +5,9 @@
       :placement="placement"
       :disabled="disabled"
       :distance="distance"
-      :open="open"
-      :skidding="skidding"
+      :opened="opened"
       :trigger="trigger"
       :flip="flip"
-      :prevent-overflow="preventOverflow"
     >
       <slot name="content"></slot>
       <scale-button>Hover me</scale-button>
@@ -24,11 +22,9 @@ export default {
     placement: { type: String },
     disabled: { type: Boolean },
     distance: { type: Number },
-    open: { type: Boolean },
-    skidding: { type: Boolean },
+    opened: { type: Boolean },
     trigger: { type: String },
     flip: { type: Boolean },
-    preventOverflow: { type: Boolean },
     styles: String,
   },
   methods: {

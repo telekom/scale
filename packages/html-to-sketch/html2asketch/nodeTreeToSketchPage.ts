@@ -54,10 +54,10 @@ function traverse(node: HTMLElement): void {
     );
   }
   for (let i = 0; i < node.children.length; i++) {
-    traverse((node.children[i] as unknown) as HTMLElement);
+    traverse(node.children[i] as unknown as HTMLElement);
   }
   if (node.shadowRoot) {
-    traverse((node.shadowRoot as unknown) as HTMLElement);
+    traverse(node.shadowRoot as unknown as HTMLElement);
   }
 }
 

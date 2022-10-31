@@ -14,7 +14,7 @@ app-navigation-main-mobile {
   --font-size: var(--telekom-typography-font-size-headline-3);
   --font-weight: var(--telekom-typography-font-weight-extra-bold);
   --line-height: 3.333;
-  --border-bottom: 1px solid var(--telekom-color-ui-additional-light);
+  --border-bottom: 1px solid var(--telekom-color-ui-faint);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 

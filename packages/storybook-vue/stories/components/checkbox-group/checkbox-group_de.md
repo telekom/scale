@@ -65,6 +65,8 @@ Dabei ergibt sich der deaktivierte Zustand der gesamten Gruppe automatisch, wenn
 
 ![Eine deaktivierte Checkbox](assets/3_components/checkbox-group/Checkbox_Group_single_Disabled_State_DE.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Verwandte Komponenten
 
 [Checkbox, ](?path=/usage/components-checkbox)

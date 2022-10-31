@@ -32,7 +32,7 @@
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
 }
 .input .input__textarea {
   width: 100%;
@@ -49,7 +49,7 @@
   font-size: var(--telekom-typography-font-size-body);
   border-radius: var(--telekom-radius-standard);
   border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
 }
 .input .input__select {
   appearance: none;
@@ -94,7 +94,7 @@
 .input:not(.input--disabled) .input__select:focus,
 .input:not(.input--disabled) .input__textarea:hover,
 .input:not(.input--disabled) .input__textarea:focus {
-  border-color: var(--telekom-color-ui-outlined-border-hovered);
+  border-color: var(--telekom-color-ui-border-hovered);
 }
 .input:not(.input--disabled) .input__input:focus,
 .input:not(.input--disabled) .input__select:focus,
@@ -193,7 +193,7 @@
 .input--size-small .input__label {
   top: 0;
   left: 0;
-  color: var(--scl-color-grey-60);
+  color: var(--telekom-color-text-and-icon-additional);
   display: flex;
   z-index: var(--scl-z-index-10);
   position: absolute;
@@ -449,7 +449,7 @@
   -webkit-appearance: none;
   background-color: #fff;
   border: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-outlined-border-standard);
+    var(--telekom-color-ui-border-standard);
   margin: 0 var(--telekom-spacing-unit-x2) 0 0;
 }
 .input--type-radio input:focus {
@@ -473,10 +473,10 @@
 }
 .input--type-radio input:disabled {
   border: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-disabled);
+    var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:disabled ~ label {
-  color: var(--scl-color-grey-30);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 .input--type-radio.input--status-error input {
   border: var(--telekom-spacing-unit-x05) solid
@@ -491,12 +491,12 @@
     var(--telekom-color-primary-pressed, #cb0068);
 }
 .input--type-radio input:checked:disabled {
-  background: var(--scl-color-grey-30);
+  background: var(--telekom-color-ui-disabled);
   border: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
-    var(--telekom-color-ui-disabled);
+    var(--telekom-color-ui-border-disabled);
 }
 .input--type-radio input:checked:disabled ~ label {
-  color: var(--scl-color-grey-30);
+  color: var(--telekom-color-text-and-icon-disabled);
 }
 .input__textarea-label-safety-background {
   top: var(--telekom-spacing-unit-x05);

@@ -9,9 +9,27 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+const fs = require('fs');
+const fse = require('fs-extra');
+
 const { teardown: teardownPuppeteer } = require('jest-puppeteer-docker');
 
-module.exports = async (jestConfig) => {
+module.exports = async function globalTeardown(jestConfig) {
+  global.__SERVER__.close();
   await teardownPuppeteer(jestConfig);
-  // any stuff you need to do can go here
+
+  fs.copyFileSync(
+    `${__dirname}/inject-fail-images.js`,
+    `${__dirname}/report/inject-fail-images.js`
+  );
+
+  try {
+    fse.copySync(
+      `${__dirname}/src/__image_snapshots__/__diff_output__`,
+      `${__dirname}/report/__diff_output__`,
+      {
+        overwrite: true,
+      }
+    );
+  } catch {}
 };

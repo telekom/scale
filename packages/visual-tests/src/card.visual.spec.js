@@ -1,12 +1,7 @@
 describe('Card', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-card--standard&viewMode=story`
-      );
-      await page.evaluate((mode) => {
-        localStorage.setItem('persistedColorMode', JSON.stringify(mode));
-      }, mode);
+      await global.runColorSetup('components-card--standard', mode);
     });
     test.each([
       ['standard'],
@@ -14,30 +9,16 @@ describe('Card', () => {
       ['with-image'],
       ['with-further-functions'],
     ])('%p', async (variant) => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-card--${variant}&viewMode=story`
-      );
-      await page.waitForSelector('html.hydrated');
+      await global.runSetup(`components-card--${variant}`);
 
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      const anchor = await page.evaluateHandle(
+      const anchor = await global.page.evaluateHandle(
         `document.querySelector("body scale-card").shadowRoot.querySelector("div > a")`
       );
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await global.visualCheck();
       // if no anchor is found an error object is returned
       if (anchor._remoteObject.className) {
         await anchor.hover();
-        expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+        await global.visualCheck();
       }
     });
   });

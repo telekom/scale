@@ -70,6 +70,8 @@ Im deaktivierten Zustand ist die interaktive Funktion des Buttons ausgeschaltet.
 
 ![Image Name](assets/3_components/button/Button_Disabled.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Elemente
 
 ### Label
@@ -92,7 +94,7 @@ Stehen Buttons in direkter Beziehung zueinander, dann ordne sie als Gruppe an. W
 
 In Prozessen und modalen Dialogen sind Buttons rechtsbündig angeordnet, um den Fortschritt anzuzeigen. Platziere den Primär-Button rechts und den Sekundär-Button links. Bei Formularen sind Buttons linksbündig am Inhalt ausgerichtet. Hier setzt du den Primär-Button links und den Sekundär-Button rechts.
 
-![Image Name](assets/3_components/button/Button_Group.png)
+![Image Name](assets/3_components/button/ButtonGroup_Modal.png)
 
 ### Anordnung von Icon und Label
 

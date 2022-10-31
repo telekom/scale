@@ -3,6 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.110](https://github.com/telekom/scale/compare/v3.0.0-beta.109...v3.0.0-beta.110) (2022-08-03)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.109](https://github.com/telekom/scale/compare/v3.0.0-beta.108...v3.0.0-beta.109) (2022-08-02)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+**Note:** Version bump only for package @telekom/scale-components-vue
+
+
+
+
+
 # [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
 
 **Note:** Version bump only for package @telekom/scale-components-vue

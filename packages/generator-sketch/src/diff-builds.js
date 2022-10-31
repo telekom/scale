@@ -52,7 +52,8 @@ if (!file2) {
 const doc1 = JSON.parse(fs.readFileSync('./sketch/' + file1));
 const doc2 = JSON.parse(fs.readFileSync('./sketch/' + file2));
 
-const ignoreSymbolRe = /^(overrideName|do_objectID|variantName|changeIdentifier|sharedStyleID)$/;
+const ignoreSymbolRe =
+  /^(overrideName|do_objectID|variantName|changeIdentifier|sharedStyleID)$/;
 const ignoreIdNumRe = /(\#.*-)\d+/;
 
 function compare(a, b, symbolPath, keyPath, changes) {

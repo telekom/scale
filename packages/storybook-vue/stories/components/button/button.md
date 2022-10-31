@@ -67,6 +67,8 @@ When disabled, the interactive function of the button is removed. Use this state
 
 ![Image Name](assets/3_components/button/Button_Disabled.png)
 
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Elements
 
 ### Button label
@@ -88,7 +90,7 @@ To learn more about the usage and construction of our interface icons, read our 
 If buttons are directly related to each other, align them as a group. Use only one primary button for each button group.
 In processes and modal dialogs, buttons are aligned to the right to indicate progress. The button farthest to the right is the primary button; the secondary button is placed on the left. In forms, we align buttons to the left side of the form content. The primary button is placed on the left and the secondary button on the right.
 
-![Image Name](assets/3_components/button/Button_Group.png)
+![Image Name](assets/3_components/button/ButtonGroup_Modal.png)
 
 ### Icon & text label
 

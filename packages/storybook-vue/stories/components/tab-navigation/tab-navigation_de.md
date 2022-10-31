@@ -52,6 +52,8 @@ Du kannst einen Tab deaktivieren, wenn sein Inhalt vorübergehend nicht verfügb
 
 ![Image Name](assets/3_components/tab-navigation/tab_navigation_disabled.png)
 
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
 ## Label
 
 Das Label beschreibt verständlich den Inhalt eines Tabs. Am besten funktionieren kurze Label mit ein bis zwei Wörtern, da sie schnell zu erfassen sind.

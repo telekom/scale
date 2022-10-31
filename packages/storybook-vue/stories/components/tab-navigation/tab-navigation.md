@@ -28,7 +28,7 @@ Don't use tabs if:
 - users need to read the content in a particular order (e.g., with processes), or
 - you have the option to optimize the content and display it within one viewing element.
 
-## Basic Types
+## Variants
 
 ### Text only
 
@@ -54,6 +54,8 @@ If the content in one tab is temporarily unavailable, you can disable the tab.
 A user needs to understand why they can't access a tab, or this will lead to a less-than-ideal experience. Therefore, see if you can maintain the functionality of each tab and explain in the content area when a tab is temporarily unavailable.
 
 ![Image Name](assets/3_components/tab-navigation/tab_navigation_disabled.png)
+
+> The disabled state is exempt from the WCAG contrast minimum for text colors. You can find more information in the [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ## Label
 

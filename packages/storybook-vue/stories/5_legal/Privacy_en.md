@@ -20,9 +20,9 @@ We want you to enjoy using our websites and take advantage of our products and s
 
 These cookies are required to enable you to navigate through the web pages and use key functions. They support basic functions to ensure access to secure areas of the website. The legal basis for these cookies is Article 6 (1) b GDPR, or for third countries Article 49 (1) b GDPR.
 
-| Name   | Description                             | Expires / Max-Age | Location |
-| ------ | --------------------------------------- | ----------------- | -------- |
-| Matomo | Website security / website optimization | 24 hours          | Germany  |
+| Firma     | Purpose          | Expires / Max-Age | Location |
+| --------- | ---------------- | ----------------- | -------- |
+| T-Systems | Session ID / WAF | Session cookie    | Germany  |
 
 ## 4. Where can I find the information that is important to me?
 

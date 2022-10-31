@@ -3,6 +3,130 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* typography documentation variable name ([#1330](https://github.com/telekom/scale/issues/1330)) ([8d200a3](https://github.com/telekom/scale/commit/8d200a3a3b6ade9b9ef43e4f84aea4b1e1d984ce))
+
+
+### Features
+
+* adding UI black and white ([#1212](https://github.com/telekom/scale/issues/1212)) ([a8f88a0](https://github.com/telekom/scale/commit/a8f88a04e2f6119b615ecc4d25da32ed1b5bc181))
+
+
+
+
+
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+
+### Features
+
+* **button:** add secondary white variant ([#1220](https://github.com/telekom/scale/issues/1220)) ([a6ed3a6](https://github.com/telekom/scale/commit/a6ed3a65c040900f049da35b72ee7b5c1e195203))
+* **callout:** refactor, improve accessibility ([#1175](https://github.com/telekom/scale/issues/1175)) ([23f4b8a](https://github.com/telekom/scale/commit/23f4b8a0099a7c1e1d515c0589d8e3f040f5e95a))
+* **checkbox+radio-button:** mobile optimisation ([#1214](https://github.com/telekom/scale/issues/1214)) ([52e8367](https://github.com/telekom/scale/commit/52e836730877962875c12c52841e12c26f263a5f))
+* **progress-bar:** mobile optimisation ([#1246](https://github.com/telekom/scale/issues/1246)) ([c11beda](https://github.com/telekom/scale/commit/c11bedab48255f1b81eb457c9ae6a302804c07e2))
+* **slider:** mobile optimisation ([#1221](https://github.com/telekom/scale/issues/1221)) ([5d41da7](https://github.com/telekom/scale/commit/5d41da774de8df7db7baba84baf1f11e9f0874eb))
+* **switch:** mobile optimisation ([#1184](https://github.com/telekom/scale/issues/1184)) ([#1244](https://github.com/telekom/scale/issues/1244)) ([ec0a078](https://github.com/telekom/scale/commit/ec0a078577ddebcb6636c530a76f85a5ae6ffe8a))
+* **tag:** mobile optimisation ([#1163](https://github.com/telekom/scale/issues/1163)) ([3ac7fd1](https://github.com/telekom/scale/commit/3ac7fd12176342f751ef16781c3c05368bf4c7bc))
+
+
+
+
+
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+
+### Bug Fixes
+
+* add displayCloseButton prop, update storybook ([#1197](https://github.com/telekom/scale/issues/1197)) ([2e7898b](https://github.com/telekom/scale/commit/2e7898b6e5c9be282609407f7cc3801bf6ac648e)), closes [#1194](https://github.com/telekom/scale/issues/1194) [#1196](https://github.com/telekom/scale/issues/1196) [#1195](https://github.com/telekom/scale/issues/1195)
+* replace deprecated `dist-custom-elements-bundle` dist ([#1202](https://github.com/telekom/scale/issues/1202)) ([6bd34e9](https://github.com/telekom/scale/commit/6bd34e989c134938b257968cafdd330be49e2918))
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
+
+
+### Bug Fixes
+
+* add controlled prop ([#1140](https://github.com/telekom/scale/issues/1140)) ([fb828fb](https://github.com/telekom/scale/commit/fb828fbdb4f7c3c6342538aab3d0932b0766011e))
+* **tooltip:** a few issues ([#1165](https://github.com/telekom/scale/issues/1165)) ([4656a51](https://github.com/telekom/scale/commit/4656a5188c8649506d14fc5a2e932e78bc5ea335))
+
+
+
+
+
+# [3.0.0-beta.110](https://github.com/telekom/scale/compare/v3.0.0-beta.109...v3.0.0-beta.110) (2022-08-03)
+
+**Note:** Version bump only for package @telekom/scale-storybook-vue
+
+
+
+
+
+# [3.0.0-beta.109](https://github.com/telekom/scale/compare/v3.0.0-beta.108...v3.0.0-beta.109) (2022-08-02)
+
+
+### Bug Fixes
+
+* footer border color ([#1157](https://github.com/telekom/scale/issues/1157)) ([e3ad388](https://github.com/telekom/scale/commit/e3ad38863ca63906ea4dfd2269c6c602430697e0))
+
+
+### Features
+
+* dropdown-select ([#1069](https://github.com/telekom/scale/issues/1069)) ([ceb92ae](https://github.com/telekom/scale/commit/ceb92aed459882369b0cf25c11d50f368aa91b4e)), closes [#2](https://github.com/telekom/scale/issues/2)
+
+
+
+
+
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+
+### Features
+
+* **modal:** add --min-height-window var ([#1127](https://github.com/telekom/scale/issues/1127)) ([bb48463](https://github.com/telekom/scale/commit/bb4846394b84e4c4f81123b1766ca00bfe5f0c18))
+
+
+
+
+
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+
+### Bug Fixes
+
+* **modal:** remove customClass attribute leftover ([#1094](https://github.com/telekom/scale/issues/1094)) ([fdf09cc](https://github.com/telekom/scale/commit/fdf09ccba8ce9a533ba7b8a1c31174a9f7bc377b))
+
+
+### Features
+
+* new color table ([#1105](https://github.com/telekom/scale/issues/1105)) ([a0c663d](https://github.com/telekom/scale/commit/a0c663d5cf6fcc581f32901989c58e8e74432e82))
+
+
+
+
+
 # [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
 
 

@@ -10,11 +10,11 @@
  */
 
 :host {
-  --scl-chart-stack-card-color: var(--telekom-color-blue-600);
+  --scl-chart-stack-card-color: var(--telekom-color-additional-blue-600);
 }
 .chart-stack-card {
   color: var(--color-text);
-  --scl-chart-stack-card-color: var(--telekom-color-blue-600);
+  --scl-chart-stack-card-color: var(--telekom-color-additional-blue-600);
 }
 .chart-stack-card .header {
   height: var(--telekom-spacing-unit-x6);

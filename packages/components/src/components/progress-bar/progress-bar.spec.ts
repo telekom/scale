@@ -34,6 +34,7 @@ describe('ProgressBar', () => {
           label="testLabel"
           status-description="statusDescription"
           status-inside
+          percentage-start="5"
           percentage="18"
           text-inside 
           stroke-width=24

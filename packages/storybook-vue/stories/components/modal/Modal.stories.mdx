@@ -43,6 +43,13 @@ import ScaleModal from './ScaleModal.vue';
         disable: true,
       },
     },
+    scaleBeforeClose: {
+      description: '@deprecated in v3 in favor of kebab-case event names.',
+    },
+    'scale-before-close': {
+      description:
+        'It fires on every close attempt. Those events can be one of the event.detail.trigger, such as CLOSE_BUTTON, ESCAPE_KEY or BACKDROP, depending on the action that triggered the event. Calling `event.preventDefault()` will prevent the modal from closing.',
+    },
   }}
 />
 
@@ -67,7 +74,6 @@ export const Template = (args, context) => ({
   template: `
     <div>
       <scale-modal
-        :custom-class="customClass"
         :heading="heading"
         :size="size"
         :variant="size"
@@ -75,6 +81,7 @@ export const Template = (args, context) => ({
         :duration="duration"
         :close-button-label="closeButtonLabel"
         :close-button-title="closeButtonTitle"
+        :omit-close-button="omitCloseButton"
         :align-actions="alignActions"
         :styles="styles"
         :allow-injecting-style-to-body="allowInjectingStyleToBody"
@@ -141,10 +148,10 @@ export const Template = (args, context) => ({
 ```html
 <scale-modal heading="Today is your lucky day" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
-  <scale-button variant="secondary" onclick="closeModal()">
+  <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button> Primary Action </scale-button>
+  <scale-button slot="action"> Primary Action </scale-button>
 </scale-modal>
 
 <script>
@@ -169,6 +176,7 @@ export const Template = (args, context) => ({
   );
 
   --max-height-window: calc(100vh - (2 * var(--telekom-spacing-unit-x20)));
+  --min-height-window: ; /* undefined by design */
   --radius-window: var(--telekom-radius-large);
   --box-shadow-window: var(--telekom-shadow-top);
   --background-window: var(--telekom-color-background-surface);
@@ -196,7 +204,7 @@ export const Template = (args, context) => ({
 
   --border-bottom-header-has-scroll: var(--telekom-line-weight-standard) solid var(
       --telekom-color-ui-general-subtle,
-      var(--telekom-color-ui-additional-subtle)
+      var(--telekom-color-ui-subtle)
     );
 
   --font-family-heading: var(--telekom-typography-font-family-sans);
@@ -248,10 +256,10 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-modal heading="Today is your lucky day" size="small" id="modal">
   <p>Hello. Welcome. What a pleasure it is to have you.</p>
-  <scale-button variant="secondary" onclick="closeModal()">
+  <scale-button slot="action" variant="secondary" onclick="closeModal()">
     Cancel
   </scale-button>
-  <scale-button> Primary Action </scale-button>
+  <scale-button slot="action"> Primary Action </scale-button>
 </scale-modal>
 
 <script>

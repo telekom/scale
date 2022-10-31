@@ -58,11 +58,7 @@ Deaktiviere die Checkbox, wenn
 
 ![Image Name](assets/3_components/checkbox/checkbox_disabled.png)
 
-## Verschachtelte Checkboxen
-
-> Diese Funktion ist bald verfügbar.
-
-Wenn Checkboxen zu einer übergeordneten Auswahloption gehören, dann kannst du diese verschachtelt darstellen. Durch Aktivieren der übergeordneten Checkbox werden alle anderen dieser Gruppe automatisch ausgewählt und umgekehrt. Wählen Nutzer\*innen nur eine der untergeordneten Checkboxen, ist der Status des übergeordneten Kontrollkästchens unbestimmt.
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ![Image Name](assets/3_components/checkbox/checkbox_nesting.png)
 
@@ -74,6 +70,7 @@ Verwende ein Sternchen (\*) hinter dem Text, wenn eine Checkbox ausgewählt werd
 
 ## Verwandte Komponenten
 
+[Checkbox Group, ](?path=/usage/components-checkbox-group--standard)
 [Dropdown, ](?path=/usage/components-dropdown--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Radio Button](?path=/usage/components-radio-button--standard)

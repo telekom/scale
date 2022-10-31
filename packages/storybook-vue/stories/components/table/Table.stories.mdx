@@ -14,7 +14,11 @@ export const ICON =
   component={ScaleTable}
   argTypes={{
     size: {
-      control: { type: 'select', options: ['default', 'small'] },
+      table: {
+        type: 'select',
+      },
+      description: `(optional) DEPRECATED - size should replace small`,
+      control: { type: null },
     },
   }}
 />
@@ -28,18 +32,17 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <scale-table
       :show-sort="showSort"
-      :size="size"
       :striped="striped ? true : false"
     >
       <table id="sortable-table">
         <caption class="sr-only">All sortable columns are focusable</caption>
         <thead>
           <tr>
-            <th scope="col" width="40%" title="sortable" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
-            <th scope="col" width="20%" aria-disabled="true" class="tags">Tags</th>
-            <th scope="col" width="20%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
-            <th scope="col" width="10%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
-            <th scope="col" width="10%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
+            <th scope="col" width="13%" title="sortable" :tabindex="showSort ? 0 : -1" aria-sort="descending" @click="showSort && sortTable('title')" @keyup="showSort && handleKeyUp($event, 'title')" class="title">Title</th>
+            <th scope="col" width="28%" aria-disabled="true" class="tags">Tags</th>
+            <th scope="col" width="23%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('stats')" @keyup="showSort && handleKeyUp($event, 'stats')" class="stats">Stats</th>
+            <th scope="col" width="18%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('time')" @keyup="showSort && handleKeyUp($event, 'time')" class="time" style="text-align: right;">Time</th>
+            <th scope="col" width="18%" title="sortable" :tabindex="showSort ? 0 : -1" @click="showSort && sortTable('euros')" @keyup="showSort && handleKeyUp($event, 'euros')" class="euros" style="text-align: right;">
               Euros
             </th>
           </tr>
@@ -50,23 +53,24 @@ export const Template = (args, { argTypes }) => ({
             <td>
               <ul style="list-style: none; display: flex; padding-left: 0; margin: 0;">
                   <li>
-                    <scale-tag size="small" style="margin-right: 8px;"
+                    <scale-tag size="small" style="margin-right: 8px;" type="strong"
                       >Other</scale-tag
                     >
                   </li>
-                  <li><scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag></li>
-                  <li><scale-tag size="small">Demo</scale-tag></li>
+                  <li><scale-tag size="small" type="strong" style="margin-right: 8px;">N/A</scale-tag></li>
+                  <li><scale-tag size="small" type="strong">Demo</scale-tag></li>
               </ul>
             </td>
             <td>
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">9.356</span>
                 <scale-progress-bar
-                  custom-color="var(--telekom-color-ui-additional-extra-strong)"
+                  custom-color="var(--telekom-color-ui-extra-strong)"
                   variant="info"
                   style="width: 120px;"
                   stroke-width="6"
                   percentage="90"
+                  show-status="false"
                 />
               </div>
             </td>
@@ -78,23 +82,24 @@ export const Template = (args, { argTypes }) => ({
             <td>
               <ul style="list-style: none; display: flex; padding-left: 0; margin: 0;">
                   <li>
-                    <scale-tag size="small" style="margin-right: 8px;"
+                    <scale-tag size="small" type="strong" style="margin-right: 8px;"
                       >Other</scale-tag
                     >
                   </li>
-                  <li><scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag></li>
-                  <li><scale-tag size="small">Demo</scale-tag></li>
+                  <li><scale-tag size="small" type="strong" style="margin-right: 8px;">N/A</scale-tag></li>
+                  <li><scale-tag size="small" type="strong">Demo</scale-tag></li>
               </ul>
             </td>
             <td>
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">3.356</span>
                 <scale-progress-bar
-                  custom-color="var(--telekom-color-ui-additional-extra-strong)"
+                  custom-color="var(--telekom-color-ui-extra-strong)"
                   variant="info"
                   style="width: 120px;"
                   stroke-width="6"
                   percentage="30"
+                  show-status="false"
                 />
               </div>
             </td>
@@ -106,23 +111,24 @@ export const Template = (args, { argTypes }) => ({
             <td>
               <ul style="list-style: none; display: flex; padding-left: 0; margin: 0;">
                   <li>
-                    <scale-tag size="small" style="margin-right: 8px;"
+                    <scale-tag size="small" type="strong" style="margin-right: 8px;"
                       >Other</scale-tag
                     >
                   </li>
-                  <li><scale-tag size="small" style="margin-right: 8px;">N/A</scale-tag></li>
-                  <li><scale-tag size="small">Demo</scale-tag></li>
+                  <li><scale-tag size="small" type="strong" style="margin-right: 8px;">N/A</scale-tag></li>
+                  <li><scale-tag size="small" type="strong">Demo</scale-tag></li>
               </ul>
             </td>
             <td>
               <div style="display: inline-flex; align-items: center;">
                 <span style="margin-right: 8px;">6.356</span>
                 <scale-progress-bar
-                  custom-color="var(--telekom-color-ui-additional-extra-strong)"
+                  custom-color="var(--telekom-color-ui-extra-strong)"
                   variant="info"
                   style="width: 120px;"
                   stroke-width="6"
                   percentage="60"
+                  show-status="false"
                 />
               </div>
             </td>
@@ -228,7 +234,7 @@ export const Template = (args, { argTypes }) => ({
 ```css
 scale-table {
   --radius: var(--telekom-radius-standard) var(--telekom-radius-standard) 0 0;
-  --background: var(--telekom-color-ui-outlined-fill-standard);
+  --background: var(--telekom-color-ui-state-fill-standard);
   --color: var(--telekom-color-text-and-icon-standard);
   --color-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-active: var(--telekom-color-text-and-icon-primary-pressed);
@@ -239,69 +245,24 @@ scale-table {
       --telekom-spacing-unit-x2
     );
   --border-bottom-tbody-td: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-additional-light
+      --telekom-color-ui-faint
     );
-  --background-tbody: var(--telekom-color-ui-outlined-fill-standard);
-  --background-tbody-tr-hover: var(--telekom-color-ui-ghost-hovered);
-  --background-tfoot: var(--telekom-color-ui-outlined-fill-standard);
+  --background-tbody: var(--telekom-color-ui-state-fill-standard);
+  --background-tbody-tr-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-tfoot: var(--telekom-color-ui-state-fill-standard);
   --border-bottom-tfoot-td: var(--telekom-spacing-unit-x025) solid var(
-      --telekom-color-ui-additional-extra-strong
+      --telekom-color-ui-extra-strong
     );
 
   --spacing-th-sortable: 0 var(--telekom-spacing-unit-x2) 0 0;
-  --background-th-sortable-hover: var(--telekom-color-ui-additional-subtle);
-  --background-th-sortable-active: var(--telekom-color-ui-additional-light);
+  --background-th-sortable-hover: var(--telekom-color-ui-subtle);
+  --background-th-sortable-active: var(--telekom-color-ui-faint);
   --box-shadow-th-sortable-focus: inset 0 0 0 var(--telekom-spacing-unit-x05) var(
       --telekom-color-functional-focus
     );
-  --background-tr-striped: var(--telekom-color-ui-additional-subtle);
+  --background-tr-striped: var(--telekom-color-ui-subtle);
   --padding: var(--telekom-spacing-unit-x0) var(--telekom-spacing-unit-x2);
 }
-```
-
-## Small
-
-<Canvas withSource="none">
-  <Story
-    name="Small"
-    args={{
-      size: 'small',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-table size="small">
-  <table>
-    <!-- Add visibility CSS to caption, to not show the caption. For example shifting it out of the view -->
-    <caption>
-      Table title
-    </caption>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Tags</th>
-        <th>Stats</th>
-        <th>Time</th>
-        <th>Euros</th>
-      </tr>
-    </thead>
-    <tbody>
-      ...
-    </tbody>
-    <tfoot>
-      <tr>
-        <td>Total</td>
-        <td></td>
-        <td></td>
-        <td>00:00:20</td>
-        <td>100.245,10</td>
-      </tr>
-    </tfoot>
-  </table>
-</scale-table>
 ```
 
 ## With Sorting Icons

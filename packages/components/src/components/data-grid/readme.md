@@ -83,7 +83,17 @@ graph TD;
   scale-menu-flyout-item --> scale-icon-navigation-right
   scale-checkbox --> scale-icon-action-indeterminate
   scale-checkbox --> scale-icon-action-success
+  scale-checkbox --> scale-icon-alert-information
+  scale-checkbox --> scale-icon-alert-error
+  scale-switch --> scale-icon-action-success
+  scale-progress-bar --> scale-icon-alert-error
+  scale-progress-bar --> scale-icon-alert-success
+  scale-text-field --> scale-helper-text
+  scale-helper-text --> scale-icon-alert-information
+  scale-helper-text --> scale-icon-alert-error
+  scale-helper-text --> scale-icon-alert-success
   scale-dropdown --> scale-icon-navigation-collapse-down
+  scale-dropdown --> scale-helper-text
   scale-tag --> scale-icon-action-close
   style scale-data-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```

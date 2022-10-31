@@ -3,6 +3,117 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* **slider:** bar styles ([#1328](https://github.com/telekom/scale/issues/1328)) ([c924e6f](https://github.com/telekom/scale/commit/c924e6f08c18ad656a054457286fc22d9a6152bb))
+
+
+
+
+
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+
+### Features
+
+* **button:** add secondary white variant ([#1220](https://github.com/telekom/scale/issues/1220)) ([a6ed3a6](https://github.com/telekom/scale/commit/a6ed3a65c040900f049da35b72ee7b5c1e195203))
+* **callout:** refactor, improve accessibility ([#1175](https://github.com/telekom/scale/issues/1175)) ([23f4b8a](https://github.com/telekom/scale/commit/23f4b8a0099a7c1e1d515c0589d8e3f040f5e95a))
+* **checkbox+radio-button:** mobile optimisation ([#1214](https://github.com/telekom/scale/issues/1214)) ([52e8367](https://github.com/telekom/scale/commit/52e836730877962875c12c52841e12c26f263a5f))
+* **dropdown-select:** mobile optimisation ([#1215](https://github.com/telekom/scale/issues/1215)) ([8dc1fa4](https://github.com/telekom/scale/commit/8dc1fa40b77b8fbd7f93b125f9a62fd3e8ecdd46))
+* **switch:** mobile optimisation ([#1184](https://github.com/telekom/scale/issues/1184)) ([#1244](https://github.com/telekom/scale/issues/1244)) ([ec0a078](https://github.com/telekom/scale/commit/ec0a078577ddebcb6636c530a76f85a5ae6ffe8a))
+* **tag:** mobile optimisation ([#1163](https://github.com/telekom/scale/issues/1163)) ([3ac7fd1](https://github.com/telekom/scale/commit/3ac7fd12176342f751ef16781c3c05368bf4c7bc))
+
+
+
+
+
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+
+### Features
+
+* **TeleNeo:** update fonts to latest ([#1186](https://github.com/telekom/scale/issues/1186)) ([cb5a8bf](https://github.com/telekom/scale/commit/cb5a8bf822f012fb49a577df9254c21c8989f42f))
+
+
+
+
+
+# [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
+
+
+### Bug Fixes
+
+* **tooltip:** a few issues ([#1165](https://github.com/telekom/scale/issues/1165)) ([4656a51](https://github.com/telekom/scale/commit/4656a5188c8649506d14fc5a2e932e78bc5ea335))
+
+
+
+
+
+# [3.0.0-beta.110](https://github.com/telekom/scale/compare/v3.0.0-beta.109...v3.0.0-beta.110) (2022-08-03)
+
+**Note:** Version bump only for package @telekom/scale-visual-tests
+
+
+
+
+
+# [3.0.0-beta.109](https://github.com/telekom/scale/compare/v3.0.0-beta.108...v3.0.0-beta.109) (2022-08-02)
+
+
+### Bug Fixes
+
+* footer border color ([#1157](https://github.com/telekom/scale/issues/1157)) ([e3ad388](https://github.com/telekom/scale/commit/e3ad38863ca63906ea4dfd2269c6c602430697e0))
+
+
+### Features
+
+* dropdown-select ([#1069](https://github.com/telekom/scale/issues/1069)) ([ceb92ae](https://github.com/telekom/scale/commit/ceb92aed459882369b0cf25c11d50f368aa91b4e)), closes [#2](https://github.com/telekom/scale/issues/2)
+
+
+
+
+
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+
+### Bug Fixes
+
+* use correct border color token ([#1112](https://github.com/telekom/scale/issues/1112)) ([077633b](https://github.com/telekom/scale/commit/077633b751e9b1c11c759ca28901ecd44cb8ec70))
+
+
+
+
+
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+
+### Features
+
+* new color table ([#1105](https://github.com/telekom/scale/issues/1105)) ([a0c663d](https://github.com/telekom/scale/commit/a0c663d5cf6fcc581f32901989c58e8e74432e82))
+
+
+
+
+
 # [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
 
 

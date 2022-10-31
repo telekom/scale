@@ -13,58 +13,42 @@
 /* typography utility classes for using native tags */
 .scl-body {
   margin: 0;
-  line-height: var(--telekom-typography-line-spacing-standard);
-  font-weight: var(--telekom-typography-font-weight-medium);
+  font: var(--telekom-text-style-body);
 }
 
 .scl-label {
   margin: 0;
-  font-size: var(--telekom-typography-font-size-small);
-  line-height: var(--scl-font-variant-label-line-height);
-  font-weight: var(--telekom-typography-font-weight-medium);
+  font: var(--telekom-text-style-small);
 }
 
-/* FIXME use --telekom tokens */
 .scl-h1 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-1-size);
-  line-height: var(--scl-font-variant-heading-1-line-height);
-  font-weight: var(--scl-font-variant-heading-1-weight);
+  font: var(--telekom-text-style-heading-1);
 }
 
 .scl-h2 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-2-size);
-  line-height: var(--scl-font-variant-heading-2-line-height);
-  font-weight: var(--scl-font-variant-heading-2-weight);
+  font: var(--telekom-text-style-heading-2);
 }
 
 .scl-h3 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-3-size);
-  line-height: var(--scl-font-variant-heading-3-line-height);
-  font-weight: var(--scl-font-variant-heading-3-weight);
+  font: var(--telekom-text-style-heading-3);
 }
 
 .scl-h4 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-4-size);
-  line-height: var(--scl-font-variant-heading-4-line-height);
-  font-weight: var(--scl-font-variant-heading-4-weight);
+  font: var(--telekom-text-style-heading-4);
 }
 
 .scl-h5 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-5-size);
-  line-height: var(--scl-font-variant-heading-5-line-height);
-  font-weight: var(--scl-font-variant-heading-5-weight);
+  font: var(--telekom-text-style-heading-5);
 }
 
 .scl-h6 {
   margin: 0;
-  font-size: var(--scl-font-variant-heading-6-size);
-  line-height: var(--scl-font-variant-heading-6-line-height);
-  font-weight: var(--scl-font-variant-heading-6-weight);
+  font: var(--telekom-text-style-heading-6);
 }
 
 :host {
@@ -86,9 +70,9 @@
 .data-grid {
   position: relative;
   display: block;
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
   border-radius: var(--telekom-radius-large);
-  border: 1px solid var(--telekom-color-ui-additional-light);
+  border: 1px solid var(--telekom-color-ui-faint);
   overflow: hidden;
 }
 
@@ -150,9 +134,9 @@
 .thead {
   display: block;
   white-space: nowrap;
-  border-bottom: 1px solid var(--telekom-color-ui-additional-light);
+  border-bottom: 1px solid var(--telekom-color-ui-faint);
   position: relative;
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
   z-index: 1;
 }
 
@@ -250,7 +234,7 @@
   pointer-events: none;
   height: 100%;
   width: 1px;
-  background: var(--telekom-color-ui-additional-light);
+  background: var(--telekom-color-ui-faint);
 }
 
 .thead__cell:first-child {
@@ -347,10 +331,6 @@
 .data-grid--shade-alternate .tbody__nested:nth-of-type(even) {
   background: var(--telekom-color-background-surface-subtle);
 }
-/* .tbody__row:hover,
-.data-grid--shade-alternate .tbody__row:nth-of-type(even):hover {
-  background: var(--scl-color-background-darker);
-} */
 
 .data-grid__auto-width-check .tbody__cell {
   padding: 0;
@@ -413,7 +393,7 @@
   height: 54px;
   position: relative;
   border-top: var(--telekom-line-weight-standard) solid
-    var(--telekom-color-ui-additional-subtle);
+    var(--telekom-color-ui-subtle);
   display: flex;
   justify-content: center;
 }
@@ -426,8 +406,8 @@
 }
 
 .data-grid--hide-border:not(.data-grid--mobile) .info__pagination {
-  border-bottom: 1px solid var(--telekom-color-ui-additional-subtle);
-  border-right: 1px solid var(--telekom-color-ui-additional-subtle);
+  border-bottom: 1px solid var(--telekom-color-ui-subtle);
+  border-right: 1px solid var(--telekom-color-ui-subtle);
 }
 
 /* Mobile */
@@ -466,7 +446,7 @@
   padding: var(--telekom-spacing-unit-x6);
   border-radius: var(--telekom-radius-standard);
   background: var(--telekom-color-background-surface);
-  border: 1px solid var(--telekom-color-ui-additional-light);
+  border: 1px solid var(--telekom-color-ui-faint);
 }
 .data-grid--mobile .tbody__row:hover {
   background: var(--telekom-color-background-surface);

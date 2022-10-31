@@ -152,9 +152,8 @@ export class MainNavigationMobile {
                     this.handleSelect(event, child);
                     setTimeout(() => {
                       // focus first child menu item link to ease tab navigation
-                      const firstChildren = this.childrenWrapper.querySelector(
-                        'a'
-                      );
+                      const firstChildren =
+                        this.childrenWrapper.querySelector('a');
                       if (firstChildren) {
                         this.childrenWrapper.querySelector('a').focus();
                       }
@@ -218,9 +217,8 @@ export class MainNavigationMobile {
                     this.handleSelect(event, item);
                     setTimeout(() => {
                       // focus first child menu item link to ease tab navigation
-                      const firstChildren = this.childrenWrapper.querySelector(
-                        'a'
-                      );
+                      const firstChildren =
+                        this.childrenWrapper.querySelector('a');
                       if (firstChildren) {
                         this.childrenWrapper.querySelector('a').focus();
                       }

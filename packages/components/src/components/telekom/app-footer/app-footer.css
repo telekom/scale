@@ -20,7 +20,7 @@
   --max-width: inherit;
 
   --border-top-minimal: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-additional-subtle);
+    var(--telekom-color-ui-faint);
   --color-minimal: var(--telekom-color-text-and-icon-additional);
   --background-minimal: var(--telekom-color-background-surface);
   --spacing-angular: var(--telekom-spacing-unit-x6);

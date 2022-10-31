@@ -2,18 +2,6 @@
 
 Schatten verdeutlichen, auf welcher visuellen Ebene Komponenten und Elemente liegen. Sie helfen Nutzer\*innen, die Benutzungsoberfläche schnell zu verstehen. Daher ist es wichtig, für jeden Anwendungsfall den richtigen Schatten zu verwenden.
 
-## Flat
-
-Flat ist für Komponenten, die direkt auf dem Canvas liegen und keinen Schatten benötigen.
-
-![flat shadows](assets/shadows-flat.png)
-
-## Resting
-
-Resting ist für Elemente, die innerhalb einer Komponente etwas abgesetzt werden sollen.
-
-![resting shadows](assets/shadows-resting.png)
-
 ## Raised
 
 Für Komponenten, die visuell angehoben werden.

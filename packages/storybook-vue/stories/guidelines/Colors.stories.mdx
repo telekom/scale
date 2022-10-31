@@ -165,30 +165,32 @@ import { addons } from '@storybook/addons';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: 'var(--telekom-spacing-unit-x5)',
-                      marginTop: 'var(--telekom-spacing-unit-x2)',
-                      marginBottom: 'var(--telekom-spacing-unit-x2)',
+                      marginTop: 'var(--telekom-spacing-unit-x1)',
+                      marginBottom: 'var(--telekom-spacing-unit-x1)',
                       marginLeft: 'var(--telekom-spacing-unit-x2)',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '4px',
-                      minWidth: '380px',
+                      minWidth: '400px',
                       minHeight: '120px',
                     }}
                   >
-                    <div
-                      style={{
-                        color: `${getItemColorByPath(pathStringItem[0])}`,
-                        fontSize: '11px',
-                        fontWeight: 500,
-                        paddingTop: 'var(--telekom-spacing-unit-x1)',
-                        passingBottom: 'var(--telekom-spacing-unit-x1)',
-                      }}
-                    >
-                      {locale === 'en'
-                        ? 'Recommended colors for text and icons'
-                        : 'Empfohlene Farben für Text & Icons'}
-                    </div>
+                    {pathStringItem.length !== 0 ? (
+                      <div
+                        style={{
+                          color: `${getItemColorByPath(pathStringItem[0])}`,
+                          fontSize: '11px',
+                          fontWeight: 500,
+                          paddingTop: 'var(--telekom-spacing-unit-x1)',
+                          passingBottom: 'var(--telekom-spacing-unit-x1)',
+                        }}
+                      >
+                        {locale === 'en'
+                          ? 'Recommended colors for text and icons'
+                          : 'Empfohlene Farben für Text & Icons'}
+                      </div>
+                    ) : null}
                     {hasContrastWithoutSlash(pathStringItem) ? (
                       <td
                         style={{
@@ -244,6 +246,7 @@ import { addons } from '@storybook/addons';
                                           color: `${getItemColorByPath(path)}`,
                                           fontSize: '13px',
                                           fontWeight: 600,
+                                          marginRight: '10px',
                                         }}
                                       >
                                         {getItemPathByPath(path)}
@@ -262,13 +265,14 @@ import { addons } from '@storybook/addons';
                     style={{
                       backgroundColor: `${item.value}`,
                       padding: '20px',
-                      marginTop: '4px',
-                      marginLeft: '8px',
+                      marginTop: 'var(--telekom-spacing-unit-x1)',
+                      marginBottom: 'var(--telekom-spacing-unit-x1)',
+                      marginLeft: 'var(--telekom-spacing-unit-x2)',
                       border: `${
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '4px',
-                      width: '380px',
+                      width: '400px',
                       minHeight: '120px',
                     }}
                   ></div>
@@ -369,7 +373,7 @@ import { addons } from '@storybook/addons';
                   >
                     <button
                       id={`${item.cssVariableName}`}
-                      class={
+                      className={
                         darkMode
                           ? 'color_token_copy-paste-button_dark'
                           : 'color_token_copy-paste-button'
@@ -441,7 +445,7 @@ import { addons } from '@storybook/addons';
                   >
                     <button
                       id={`${item.jsPathName}`}
-                      class={
+                      className={
                         darkMode
                           ? 'color_token_copy-paste-button_dark'
                           : 'color_token_copy-paste-button'
@@ -531,6 +535,7 @@ import { addons } from '@storybook/addons';
                   paddingTop: 'var(--telekom-spacing-unit-x1)',
                   paddingRight: 'var(--telekom-spacing-unit-x1)',
                   paddingBottom: 'var(--telekom-spacing-unit-x1)',
+                  paddingLeft: '0px',
                 }}
               >
                 {clearContrastStates()}
@@ -665,7 +670,7 @@ import { addons } from '@storybook/addons';
                         darkMode ? '1px solid #38393b' : '1px solid #f0f1f1'
                       }`,
                       borderRadius: '0px 0px 4px 4px',
-                      width: '380px',
+                      width: '400px',
                       minHeight: '110px',
                       color: 'var(--telekom-color-text-and-icon-standard)',
                     }}
@@ -720,7 +725,7 @@ import { addons } from '@storybook/addons';
                   border: 'none',
                   paddingTop: 'var(--telekom-spacing-unit-x1)',
                   paddingBottom: 'var(--telekom-spacing-unit-x2)',
-                  paddingLeft: 'var(--telekom-spacing-unit-x2)',
+                  paddingLeft: 'var(--telekom-spacing-unit-x5)',
                 }}
               >
                 <div
@@ -832,6 +837,7 @@ import { addons } from '@storybook/addons';
                   style={{
                     textAlign: 'left',
                     color: `${darkMode ? '#fff' : '#6A6A6A'}`,
+                    backgroundColor: 'transparent',
                     fontSize: '13px',
                     borderColor: 'var(--telekom-color-background-canvas)',
                     borderBottom: `${
@@ -996,12 +1002,38 @@ import { addons } from '@storybook/addons';
             >
               {generateColorModeLinkText()}
             </a>
-            <br/>
+            <br />
             <div style={{ paddingLeft: 'var(--telekom-spacing-unit-x2)' }}>
-              {locale === 'en' 
-              ? <p>To make it as easy as possible for you to apply our color tokens, we use semantic names for the colors. If you change scale components or develop new components, pay attention to the correct use of the color tokens. This is the only way to ensure that future updates can be easily transferred to your designs at the push of a button. Only then can dark mode be implemented without additional effort. You can learn more about this concept in the guideline for <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">Design Tokens</a></p>
-              : <p>Damit die Anwendung unserer Farb-Tokens möglichst einfach für dich ist, verwenden wir semantische Bezeichnungen für die Farben. Solltest du Scale Komponenten ändern oder neue Komponenten entwickeln, achte auf die korrekte Anwendung der Farb-Tokens. Nur dann ist gewährleistet, dass du künftige Updates einfach per Knopfdruck in deine Designs übertragen kannst. Auch der Dark Mode lässt sich nur dann ohne Mehraufwand umsetzen. In der Guideline <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">Design-Tokens </a> erfährst du mehr über das Konzept der Tokens im Design. </p>
-              }              
+              {locale === 'en' ? (
+                <p>
+                  To make it as easy as possible for you to apply our color
+                  tokens, we use semantic names for the colors. If you change
+                  scale components or develop new components, pay attention to
+                  the correct use of the color tokens. This is the only way to
+                  ensure that future updates can be easily transferred to your
+                  designs at the push of a button. Only then can dark mode be
+                  implemented without additional effort. You can learn more
+                  about this concept in the guideline for{' '}
+                  <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">
+                    Design Tokens
+                  </a>
+                </p>
+              ) : (
+                <p>
+                  Damit die Anwendung unserer Farb-Tokens möglichst einfach für
+                  dich ist, verwenden wir semantische Bezeichnungen für die
+                  Farben. Solltest du Scale Komponenten ändern oder neue
+                  Komponenten entwickeln, achte auf die korrekte Anwendung der
+                  Farb-Tokens. Nur dann ist gewährleistet, dass du künftige
+                  Updates einfach per Knopfdruck in deine Designs übertragen
+                  kannst. Auch der Dark Mode lässt sich nur dann ohne
+                  Mehraufwand umsetzen. In der Guideline{' '}
+                  <a href="?path=/story/guidelines-design-tokens--page&globals=locale:en;colorMode:dark">
+                    Design-Tokens{' '}
+                  </a>{' '}
+                  erfährst du mehr über das Konzept der Tokens im Design.{' '}
+                </p>
+              )}
             </div>
             <table
               className="colors-table"
@@ -1009,7 +1041,7 @@ import { addons } from '@storybook/addons';
                 backgroundColor: `${darkMode ? '#000' : '#fff'}`,
               }}
             >
-              <div>
+              <thead>
                 {!darkMode
                   ? generateSectionTitle(
                       'Primäre Farben im Light Mode',
@@ -1030,552 +1062,908 @@ import { addons } from '@storybook/addons';
                       'The primary colors for user interfaces in dark mode are our brand color, Magenta, as well as black and gray.',
                       true
                     )}
-                {generateTableHead()}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.primary.standard',
-                    'Markenfarbe Magenta',
-                    'Brand color, Magenta'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.canvas',
-                    'Für den Hintergrund deiner Webseite oder App.',
-                    'For the background of your website or app.'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.surface-highlight',
-                    'Für den Hintergrund von Komponenten oder Flächen, die hervorgehoben werden sollen (bspw. der Footer).',
-                    'For the background of components or areas that should be highlighted (e.g., the footer).'
-                  )}
-                </tbody>
-                {generateSectionTitle(
-                  'Textfarben Standard',
-                  'Text color standard'
+              </thead>
+              {generateTableHead()}
+              <tbody>
+                {generateTableColorRow(
+                  'color.primary.standard',
+                  'Markenfarbe Magenta',
+                  'Brand color, Magenta'
                 )}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.text-&-icon.standard',
-                    'Für alle Standardtexte.',
-                    'For all standard text.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.additional',
-                    'Für Texte mit ergänzenden Informationen.',
-                    'For text with additional information.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.disabled',
-                    'Nur für Texte im „disabled State“.',
-                    'Only for text in a disabled state.'
-                  )}
-                </tbody>
-                {generateSectionSubTitle(
-                  'Weitere Farben für spezielle Anwendungsfälle',
-                  'More colors for special use cases'
+                {generateTableColorRow(
+                  'color.background.canvas',
+                  'Für den Hintergrund deiner Webseite oder App.',
+                  'For the background of your website or app.'
                 )}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.text-&-icon.inverted.standard',
-                    'Inverted/Standard ist der umgekehrte Zustand der Standard-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (Farbe Weiß im hellen Modus und Dunkelgrau im dunklen Modus).',
-                    'Inverted / standard is the inverse state of the default text color. For text displayed as inverted in the other mode (white in light mode and dark gray in dark mode).'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.inverted.additional',
-                    'Inverted/Additional ist der umgekehrte Zustand der Additional-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (ein dunkleres Grau im hellen Modus und ein helleres Grau im dunklen Modus).',
-                    'Inverted / additional is the inverse state of the additional text color. For text displayed as inverted in the other mode (a darker gray in light mode and a lighter gray in dark mode).'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.white.standard',
-                    'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
-                    'For standard text displayed in white in both light and dark mode. This is mostly used when text is on a colored area that is identical in both modes, such as the primary button.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.white.additional',
-                    'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
-                    'For supplementary text displayed in white in both light and dark mode. This is mostly used when text is on a colored area that is identical in both modes, such as the primary button.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.black.standard',
-                    'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi hell sind.',
-                    'For standard text displayed in black in both light and dark mode. This is mostly used when text is on a colored area that is light in both modes.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.black.additional',
-                    'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi hell sind.',
-                    'For standard text displayed in black in both light and dark mode. This is mostly used when text is on a colored area that is light in both modes.'
-                  )}
-                </tbody>
-                {generateSectionTitle(
-                  'Textfarbe Funktion',
-                  'Text color function'
+                {generateTableColorRow(
+                  'color.background.surface-highlight',
+                  'Für den Hintergrund von Komponenten oder Flächen, die hervorgehoben werden sollen (bspw. der Footer).',
+                  'For the background of components or areas that should be highlighted (e.g., the footer).'
                 )}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.text-&-icon.link.standard',
-                    'Für unterstützende Informationen sowie für Funktionen wie Synchronisieren, Sortieren und Hinzufügen.',
-                    'For supporting information as well as for functions like synchronize, sort, and add.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.functional.success',
-                    'Für Funktionen wie Senden, Anrufen und Aktivieren und zur Bestätigung einer erfolgreich durchgeführten Aktion.',
-                    'For confirming a successfully performed action or for functions like send, call, and activate.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.functional.danger',
-                    'Für Fehlermeldungen oder Funktionen wie Beenden und Löschen.',
-                    'For error messages or functions like exit and delete.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.functional.warning',
-                    'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
-                    'For warnings of potentially undesirable results.'
-                  )}
-                  {generateTableColorRow(
-                    'color.text-&-icon.functional.informational',
-                    'Für unterstützende Informationen.',
-                    'For supporting information.'
-                  )}
-                </tbody>
-                {generateSectionTitle(
-                  'Hintergrund Standard',
-                  'Background standard'
+              </tbody>
+              {generateSectionTitle(
+                'Textfarben Standard',
+                'Text color standard'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.standard',
+                  'Für alle Standardtexte.',
+                  'For all standard text.'
                 )}
-                {generateTableHead()}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.background.canvas',
-                    'Für den Hintergrund deiner Webseite oder App.',
-                    'For the background of your website or app.'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.canvas-subtle',
-                    'Für den Hintergrund deiner Webseite oder App, bspw. wenn du ein card-basiertes Layout anlegst.',
-                    'For the background of your website or app (e.g., when you create a card-based layout).'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.surface',
-                    'Für die Hintergrundfläche von Komponenten wie Header oder Cards.',
-                    'For the background area of components like headers or cards.'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.surface-subtle',
-                    'Für die Hintergrundfläche von Komponenten, die sich etwas vom weißen Hintergrund abheben sollen.',
-                    'For the background area of components that should stand out somewhat against a white background.'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.backdrop',
-                    'Für die Abdunklung des Contents unter Dialogen.',
-                    'For darkening the content under dialogs.'
-                  )}
-                  {generateTableColorRow(
-                    'color.background.surface-highlight',
-                    'Für Hintergründe von Komponenten, die sich vom restlichen Inhalt abheben sollen, wie bspw. der Footer.',
-                    'For backgrounds of components that should stand out from the rest of the content, such as the footer.'
-                  )}
-                </tbody>
-                {generateSectionTitle(
-                  'Background Funktion',
-                  'Background function'
+                {generateTableColorRow(
+                  'color.text-&-icon.additional',
+                  'Für Texte mit ergänzenden Informationen.',
+                  'For text with additional information.'
                 )}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.functional.success.standard',
-                    'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification oder für Funktionen wie Senden, Anrufen und Aktivieren.',
-                    'For backgrounds of components that confirm a successful action, such as a success notification, or for functions such as send, call, and activate.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.success.subtle',
-                    'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification.',
-                    'For backgrounds of components that confirm a successful action, such as a success notification.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.informational.standard',
-                    'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Informational Notification oder für Funktionen wie Speichern.',
-                    'For backgrounds of components that provide additional and helpful information, such as an informational notification, or functions such as save.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.informational.subtle',
-                    'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Success Notification.',
-                    'For backgrounds of components that provide additional and helpful information, such as a success notification.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.warning.standard',
-                    'Für Hintergründe von Komponenten, die vor möglicherweise unerwünschten Ergebnissen warnen, wie bspw. die Warning Notification.',
-                    'For backgrounds of components that warn of potentially undesirable results, such as a warning notification.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.warning.subtle',
-                    'Für Hintergründe von Komponenten, die vor möglicherweise unerwünschten Ergebnissen warnen, wie bspw. die Warning Notification.',
-                    'For backgrounds of components that warn of potentially undesirable results, such as a warning notification.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.danger.standard',
-                    'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification, oder Funktionen wie Löschen.',
-                    'For backgrounds of components that inform about a failed action or error, such as the error notification, or functions like delete.'
-                  )}
-                  {generateTableColorRow(
-                    'color.functional.danger.subtle',
-                    'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification.',
-                    'For backgrounds of components that inform about a failed action or error, such as error notification.'
-                  )}
-                </tbody>
-                {generateSectionTitle('UI', 'UI')}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.ui.outlined.border.standard',
-                    'Für Outlines von Komponenten ohne sichtbare Füllung.',
-                    'For outlines of components without visible filling.'
-                  )}
-                  {generateTableColorRow(
-                    'color.ui.solid.standard',
-                    'Für Hintergrundflächen von Komponenten ohne Outline.',
-                    'For background areas of components without an outline.'
-                  )}
-                </tbody>
-                {generateSectionSubTitle('UI Additional', 'UI additional')}
-                <tbody>
-                  {generateTableColorRow('color.ui.additional.base')}
-                  {generateTableColorRow('color.ui.additional.subtle')}
-                  {generateTableColorRow('color.ui.additional.light')}
-                  {generateTableColorRow('color.ui.additional.regular')}
-                  {generateTableColorRow('color.ui.additional.strong')}
-                  {generateTableColorRow('color.ui.additional.extra-strong')}
-                </tbody>
-                {generateSectionTitle('Agent States', 'Agent states')}
-                {generateSectionDescription(
-                  'Z. B. Primary Button',
-                  'e.g., Primary Button'
+                {generateTableColorRow(
+                  'color.text-&-icon.disabled',
+                  'Nur für Texte im „disabled State“.',
+                  'Only for text in a disabled state.'
                 )}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.text-&-icon.primary.standard',
-                    'Markenfarbe Magenta',
-                    'Brand color, Magenta'
-                  )}
-                  {generateTableColorRow('color.text-&-icon.primary.hovered')}
-                  {generateTableColorRow('color.text-&-icon.primary.pressed')}
-                </tbody>
-                {generateSectionSubTitle('Text-Link', 'Text link')}
-                <tbody>
-                  {generateTableColorRow('color.text-&-icon.link.standard')}
-                  {generateTableColorRow('color.text-&-icon.link.hovered')}
-                  {generateTableColorRow('color.text-&-icon.link.visited')}
-                  {generateTableColorRow('color.text-&-icon.link.active')}
-                </tbody>
-                {generateSectionSubTitle(
-                  'Funktionale Elemente',
-                  'Functional elements'
+              </tbody>
+              {generateSectionSubTitle(
+                'Weitere Farben für spezielle Anwendungsfälle',
+                'More colors for special use cases'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.inverted.standard',
+                  'Inverted/Standard ist der umgekehrte Zustand der Standard-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (Farbe Weiß im hellen Modus und Dunkelgrau im dunklen Modus).',
+                  'Inverted / standard is the inverse state of the default text color. For text displayed as inverted in the other mode (white in light mode and dark gray in dark mode).'
                 )}
-                <tbody>
-                  {generateTableColorRow('color.functional.success.standard')}
-                  {generateTableColorRow('color.functional.success.hovered')}
-                  {generateTableColorRow('color.functional.success.pressed')}
-                </tbody>
-                {generateSectionSubTitle(
-                  'Border Focus State',
-                  'Border focus state'
+                {generateTableColorRow(
+                  'color.text-&-icon.inverted.additional',
+                  'Inverted/Additional ist der umgekehrte Zustand der Additional-Textfarbe. Für Texte, die im jeweils anderen Modus invertiert dargestellt werden (ein dunkleres Grau im hellen Modus und ein helleres Grau im dunklen Modus).',
+                  'Inverted / additional is the inverse state of the additional text color. For text displayed as inverted in the other mode (a darker gray in light mode and a lighter gray in dark mode).'
                 )}
-                <tbody>{generateTableColorRow('color.functional.focus')}</tbody>
-                {generateSectionSubTitle('UI Outlined', 'UI outlined elements')}
-                <tbody>
-                  {generateUIOutlinedTableColorRow(
-                    'color.ui.outlined.fill.standard',
-                    'color.ui.outlined.border.standard',
-                    '#fff',
-                    '#fff',
-                    '#000',
-                    '#fff'
-                  )}
-                  {generateUIOutlinedTableColorRow(
-                    'color.ui.outlined.fill.hovered',
-                    'color.ui.outlined.border.hovered',
-                    '#000',
-                    '#fff',
-                    '#fff',
-                    '#fff'
-                  )}
-                  {generateUIOutlinedTableColorRow(
-                    'color.ui.outlined.fill.pressed',
-                    'color.ui.outlined.border.pressed',
-                    '#000',
-                    '#fff',
-                    '#fff',
-                    '#000'
-                  )}
-                  {generateUIOutlinedTableColorRow(
-                    'color.ui.outlined.fill.disabled',
-                    'color.ui.outlined.border.disabled',
-                    '#000',
-                    '#000',
-                    '#fff',
-                    '#fff'
-                  )}
-                </tbody>
-                {generateSectionSubTitle('UI Solid', 'UI solid elements')}
-                <tbody>
-                  {generateTableColorRow('color.ui.solid.standard')}
-                  {generateTableColorRow('color.ui.solid.hovered')}
-                  {generateTableColorRow('color.ui.solid.pressed')}
-                  {generateTableColorRow('color.ui.solid.disabled')}
-                </tbody>
-                {generateSectionTitle('Additional', 'Additional')}
-                {generateSectionDescription(
-                  'Für Farbakzente und Datenvisualisierungen empfehlen wir diese zusätzlichen Farben:',
-                  'For color accents and data visualizations, we recommend these additional colors:'
+                {generateTableColorRow(
+                  'color.text-&-icon.white.standard',
+                  'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
+                  'For standard text displayed in white in both light and dark mode. This is mostly used when text is on a colored area that is identical in both modes, such as the primary button.'
                 )}
-                {generateSectionSubTitle('Brown', 'Brown')}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.additional.brown.0',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.100',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.200',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.300',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.400',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.500',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.600',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.700',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.800',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.brown.900',
-                    '',
-                    '',
-                    true
-                  )}
-                </tbody>
-                {generateSectionSubTitle('Violet', 'Violet')}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.additional.violet.0',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.100',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.200',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.300',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.400',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.500',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.600',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.700',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.800',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.violet.900',
-                    '',
-                    '',
-                    true
-                  )}
-                </tbody>
-                {generateSectionSubTitle('Teal', 'Teal')}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.additional.teal.0',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.100',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.200',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.300',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.400',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.500',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.600',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.700',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.800',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.teal.900',
-                    '',
-                    '',
-                    true
-                  )}
-                </tbody>
-                {generateSectionSubTitle('Olive', 'Olive')}
-                <tbody>
-                  {generateTableColorRow(
-                    'color.additional.olive.0',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.100',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.200',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.300',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.400',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.500',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.600',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.700',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.800',
-                    '',
-                    '',
-                    true
-                  )}
-                  {generateTableColorRow(
-                    'color.additional.olive.900',
-                    '',
-                    '',
-                    true
-                  )}
-                </tbody>
-              </div>
+                {generateTableColorRow(
+                  'color.text-&-icon.white.additional',
+                  'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi identisch sind, so zum Beispiel beim Primary Button.',
+                  'For supplementary text displayed in white in both light and dark mode. This is mostly used when text is on a colored area that is identical in both modes, such as the primary button.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.black.standard',
+                  'Für Standardtexte, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi hell sind.',
+                  'For standard text displayed in black in both light and dark mode. This is mostly used when text is on a colored area that is light in both modes.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.black.additional',
+                  'Für ergänzende Texte, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden. Dies findet meist Anwendung, wenn Texte auf Farbflächen stehen, die in beiden Modi hell sind.',
+                  'For standard text displayed in black in both light and dark mode. This is mostly used when text is on a colored area that is light in both modes.'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Textfarbe Funktion',
+                'Text color function'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.link.standard',
+                  'Für unterstützende Informationen sowie für Funktionen wie Synchronisieren, Sortieren und Hinzufügen.',
+                  'For supporting information as well as for functions like synchronize, sort, and add.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.success',
+                  'Für Funktionen wie Senden, Anrufen und Aktivieren und zur Bestätigung einer erfolgreich durchgeführten Aktion.',
+                  'For confirming a successfully performed action or for functions like send, call, and activate.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.danger',
+                  'Für Fehlermeldungen oder Funktionen wie Beenden und Löschen.',
+                  'For error messages or functions like exit and delete.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.warning',
+                  'Für Warnungen vor möglicherweise unerwünschten Ergebnissen.',
+                  'For warnings of potentially undesirable results.'
+                )}
+                {generateTableColorRow(
+                  'color.text-&-icon.functional.informational',
+                  'Für unterstützende Informationen.',
+                  'For supporting information.'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Hintergrund Standard',
+                'Background standard'
+              )}
+              {generateTableHead()}
+              <tbody>
+                {generateTableColorRow(
+                  'color.background.canvas',
+                  'Für den Hintergrund deiner Webseite oder App.',
+                  'For the background of your website or app.'
+                )}
+                {generateTableColorRow(
+                  'color.background.canvas-subtle',
+                  'Für den Hintergrund deiner Webseite oder App, bspw. wenn du ein card-basiertes Layout anlegst.',
+                  'For the background of your website or app (e.g., when you create a card-based layout).'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface',
+                  'Für die Hintergrundfläche von Komponenten wie Header oder Cards.',
+                  'For the background area of components like headers or cards.'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface-subtle',
+                  'Für die Hintergrundfläche von Komponenten, die sich etwas vom weißen Hintergrund abheben sollen.',
+                  'For the background area of components that should stand out somewhat against a white background.'
+                )}
+                {generateTableColorRow(
+                  'color.background.backdrop',
+                  'Für die Abdunklung des Contents unter Dialogen.',
+                  'For darkening the content under dialogs.'
+                )}
+                {generateTableColorRow(
+                  'color.background.surface-highlight',
+                  'Für Hintergründe von Komponenten, die sich vom restlichen Inhalt abheben sollen, wie bspw. der Footer.',
+                  'For backgrounds of components that should stand out from the rest of the content, such as the footer.'
+                )}
+              </tbody>
+              {generateSectionTitle(
+                'Background Funktion',
+                'Background function'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.functional.success.standard',
+                  'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification oder für Funktionen wie Senden, Anrufen und Aktivieren.',
+                  'For backgrounds of components that confirm a successful action, such as a success notification, or for functions such as send, call, and activate.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.success.subtle',
+                  'Für Hintergründe von Komponenten, die eine erfolgreiche Aktion bestätigen, wie bspw. eine Success Notification.',
+                  'For backgrounds of components that confirm a successful action, such as a success notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.informational.standard',
+                  'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Informational Notification oder für Funktionen wie Speichern.',
+                  'For backgrounds of components that provide additional and helpful information, such as an informational notification, or functions such as save.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.informational.subtle',
+                  'Für Hintergründe von Komponenten, die zusätzliche und hilfreiche Informationen bereitstellen, wie bspw. eine Success Notification.',
+                  'For backgrounds of components that provide additional and helpful information, such as a success notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.warning.standard',
+                  'Für Hintergründe von Komponenten, die vor möglicherweise unerwünschten Ergebnissen warnen, wie bspw. die Warning Notification.',
+                  'For backgrounds of components that warn of potentially undesirable results, such as a warning notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.warning.subtle',
+                  'Für Hintergründe von Komponenten, die vor möglicherweise unerwünschten Ergebnissen warnen, wie bspw. die Warning Notification.',
+                  'For backgrounds of components that warn of potentially undesirable results, such as a warning notification.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.danger.standard',
+                  'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification, oder Funktionen wie Löschen.',
+                  'For backgrounds of components that inform about a failed action or error, such as the error notification, or functions like delete.'
+                )}
+                {generateTableColorRow(
+                  'color.functional.danger.subtle',
+                  'Für Hintergründe von Komponenten, die über eine fehlgeschlagene Aktion oder einen Fehler informieren, wie bspw. die Error Notification.',
+                  'For backgrounds of components that inform about a failed action or error, such as error notification.'
+                )}
+              </tbody>
+              {generateSectionTitle('UI', 'UI')}
+              <tbody>
+                {generateTableColorRow('color.ui.base', '', '', true)}
+                {generateTableColorRow('color.ui.subtle')}
+                {generateTableColorRow('color.ui.light')}
+                {generateTableColorRow('color.ui.regular')}
+                {generateTableColorRow('color.ui.strong')}
+                {generateTableColorRow('color.ui.extra-strong')}
+                {generateTableColorRow(
+                  'color.ui.black',
+                  'Für Elemente, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden.',
+                  'Use for elements that are displayed in black in both light and dark mode.'
+                )}
+                {generateTableColorRow(
+                  'color.ui.white',
+                  'Für Elemente, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden.',
+                  'Use for elements that are displayed in white in both light and dark mode.'
+                )}
+              </tbody>
+              {generateSectionSubTitle('UI Border', 'UI border')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.ui.border.standard',
+                  'Für Outlines von Komponenten ohne sichtbare Füllung.',
+                  'For outlines of components without visible filling.'
+                )}
+              </tbody>
+              {generateSectionTitle('Agent States', 'Agent states')}
+              {generateSectionDescription(
+                'Z. B. Primary Button',
+                'e.g., Primary Button'
+              )}
+              <tbody>
+                {generateTableColorRow(
+                  'color.text-&-icon.primary.standard',
+                  'Markenfarbe Magenta',
+                  'Brand color, Magenta'
+                )}
+                {generateTableColorRow('color.text-&-icon.primary.hovered')}
+                {generateTableColorRow('color.text-&-icon.primary.pressed')}
+              </tbody>
+              {generateSectionSubTitle('Text-Link', 'Text link')}
+              <tbody>
+                {generateTableColorRow('color.text-&-icon.link.standard')}
+                {generateTableColorRow('color.text-&-icon.link.hovered')}
+                {generateTableColorRow('color.text-&-icon.link.visited')}
+                {generateTableColorRow('color.text-&-icon.link.active')}
+              </tbody>
+              {generateSectionSubTitle(
+                'Funktionale Elemente',
+                'Functional elements'
+              )}
+              <tbody>
+                {generateTableColorRow('color.functional.success.standard')}
+                {generateTableColorRow('color.functional.success.hovered')}
+                {generateTableColorRow('color.functional.success.pressed')}
+              </tbody>
+              {generateSectionSubTitle(
+                'Border Focus State',
+                'Border focus state'
+              )}
+              <tbody>{generateTableColorRow('color.functional.focus')}</tbody>
+              {generateSectionSubTitle('UI Outlined', 'UI outlined elements')}
+              <tbody>
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.standard',
+                  'color.ui.border.standard',
+                  '#fff',
+                  '#fff',
+                  '#000',
+                  '#fff'
+                )}
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.hovered',
+                  'color.ui.border.hovered',
+                  '#000',
+                  '#fff',
+                  '#fff',
+                  '#fff'
+                )}
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.pressed',
+                  'color.ui.border.pressed',
+                  '#000',
+                  '#fff',
+                  '#fff',
+                  '#000'
+                )}
+                {generateUIOutlinedTableColorRow(
+                  'color.ui.state-fill.standard',
+                  'color.ui.border.disabled',
+                  '#000',
+                  '#000',
+                  '#fff',
+                  '#fff'
+                )}
+              </tbody>
+              {generateSectionTitle('Additional', 'Additional')}
+              {generateSectionDescription(
+                'Für Farbakzente und Datenvisualisierungen empfehlen wir diese zusätzlichen Farben:',
+                'For color accents and data visualizations, we recommend these additional colors:'
+              )}
+              {generateSectionSubTitle('Violett', 'Violet')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.violet.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.violet.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Blau', 'Blue')}
+              <tbody>
+                {generateTableColorRow('color.additional.blue.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.blue.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.blue.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Türkis', 'Cyan')}
+              <tbody>
+                {generateTableColorRow('color.additional.cyan.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.cyan.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.cyan.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Teal', 'Teal')}
+              <tbody>
+                {generateTableColorRow('color.additional.teal.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.teal.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.teal.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Grün', 'Green')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.green.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.green.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Olive', 'Olive')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.olive.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.olive.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Braun', 'Brown')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.brown.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.brown.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Gelb', 'Yellow')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.yellow.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.yellow.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Orange', 'Orange')}
+              <tbody>
+                {generateTableColorRow(
+                  'color.additional.orange.0',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.orange.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
+              {generateSectionSubTitle('Rot', 'Red')}
+              <tbody>
+                {generateTableColorRow('color.additional.red.0', '', '', true)}
+                {generateTableColorRow(
+                  'color.additional.red.100',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.200',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.300',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.400',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.500',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.600',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.700',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.800',
+                  '',
+                  '',
+                  true
+                )}
+                {generateTableColorRow(
+                  'color.additional.red.900',
+                  '',
+                  '',
+                  true
+                )}
+              </tbody>
             </table>
           </DocsContainer>
         );

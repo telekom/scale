@@ -28,14 +28,19 @@ describe('scale-button', () => {
     expect(element.getAttribute('tabindex')).toBe('5');
   });
 
-  it('should set size for icons', async () => {
+  it('should allow submitting forms with the Enter key', async () => {
     const page = await newE2EPage();
     await page.setContent(`
-      <scale-button size="small">
-        <scale-icon-action-search></scale-icon-action-search> Label
-      </scale-button>
+      <form>
+        <input type="text" name="a" />
+        <input type="text" name="b" />
+        <scale-button>Submit</scale-button>
+      </form>
     `);
-    const element = await page.find('scale-icon-action-search');
-    expect(element.getAttribute('size')).toBe('16');
+    const form = await page.find('form');
+    const input = await page.find('input[name="a"]');
+    const spy = await form.spyOnEvent('submit');
+    await input.press('Enter');
+    expect(spy).toHaveReceivedEvent();
   });
 });

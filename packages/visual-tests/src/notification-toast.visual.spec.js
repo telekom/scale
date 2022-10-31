@@ -1,12 +1,10 @@
 describe('NotificationToast', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-notification-toast--standard&viewMode=story`
+      await global.runColorSetup(
+        'components-notification-toast--standard',
+        mode
       );
-      await page.evaluate((mode) => {
-        localStorage.setItem('persistedColorMode', JSON.stringify(mode));
-      }, mode);
     });
     test.each([
       ['standard'],
@@ -16,23 +14,9 @@ describe('NotificationToast', () => {
       ['with-text'],
       ['with-link'],
     ])('%p', async (variant) => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=beta-components-notification-toast--${variant}&viewMode=story`
-      );
-      await page.waitForSelector('html.hydrated');
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      await page.waitFor(3000);
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await global.runSetup(`beta-components-notification-toast--${variant}`);
+      await global.page.waitFor(3000);
+      await global.visualCheck();
     });
   });
 });

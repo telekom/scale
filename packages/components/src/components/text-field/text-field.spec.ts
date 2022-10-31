@@ -35,7 +35,6 @@ describe('TextField', () => {
                  label ="label"
                  max-length="2"
                  min-length="1"
-                 size ="size"
                  invalid="true"
                  placeholder ="placeholder"
                  disabled ="true"
@@ -52,7 +51,6 @@ describe('TextField', () => {
     expect(specPage.rootInstance.type).toBe('email');
     expect(specPage.rootInstance.name).toBe('name');
     expect(specPage.rootInstance.label).toBe('label');
-    expect(specPage.rootInstance.size).toBe('size');
     expect(specPage.rootInstance.maxLength).toBe(2);
     expect(specPage.rootInstance.minLength).toBe(1);
     expect(specPage.rootInstance.invalid).toBe(true);
@@ -134,7 +132,7 @@ describe('TextField', () => {
     page.rootInstance.emitChange();
     await page.waitForChanges();
     expect(emitSpy).toHaveBeenCalled();
-    expect(emitSpyLegacy).toHaveBeenCalled();
+    expect(emitSpyLegacy).toHaveBeenCalledTimes(1);
   });
   it('should emit on focus', async () => {
     const focusSpy = jest.fn();
@@ -188,11 +186,14 @@ describe('TextField', () => {
     element.transparent = true;
     expect(element.getCssClassMap()).toContain('text-field--transparent');
 
-    element.invalid = true;
-    expect(element.getCssClassMap()).toContain('text-field--status-error');
+    element.variant = 'danger';
+    expect(element.getCssClassMap()).toContain('text-field--variant-danger');
 
-    element.size = 'small';
-    expect(element.getCssClassMap()).toContain('text-field--size-small');
+    element.variant = 'success';
+    expect(element.getCssClassMap()).toContain('text-field--variant-success');
+
+    element.variant = 'warning';
+    expect(element.getCssClassMap()).toContain('text-field--variant-warning');
   });
 
   it('should handle hasFocus right', () => {
@@ -201,5 +202,24 @@ describe('TextField', () => {
     expect(element.hasFocus).toBeTruthy();
     element.handleBlur();
     expect(element.hasFocus).toBeFalsy();
+  });
+
+  it('should emit Onchange only once', async () => {
+    const controlledInputPage = await newSpecPage({
+      components: [TextField],
+      html: `<scale-text-field controlled></scale-text-field>`,
+    });
+    const inputSpy = jest.fn();
+    const inputSpyLegacy = jest.fn();
+    controlledInputPage.doc.addEventListener('scale-change', inputSpy);
+    controlledInputPage.doc.addEventListener('scaleChange', inputSpyLegacy);
+
+    const inputField = controlledInputPage.doc.querySelector('input');
+
+    inputField.value = TEST_VALUE;
+    await inputField.dispatchEvent(new Event('input'));
+    await controlledInputPage.waitForChanges();
+    expect(inputSpy).toHaveBeenCalledTimes(1);
+    expect(inputSpyLegacy).toHaveBeenCalledTimes(1);
   });
 });

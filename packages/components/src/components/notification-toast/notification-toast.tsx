@@ -122,7 +122,7 @@ export class NotificationToast {
           );
         case 'warning':
           return (
-            <scale-icon-alert-error
+            <scale-icon-alert-warning
               class="notification-toast__icon"
               color="#ffff"
               size={20}
@@ -249,8 +249,8 @@ export class NotificationToast {
   };
 
   getToastHeightWithOffset() {
-    const toastHeight = this.element.shadowRoot.querySelector('.toast')
-      .scrollHeight;
+    const toastHeight =
+      this.element.shadowRoot.querySelector('.toast').scrollHeight;
     this.toastHeightWithOffset = toastHeight + this.positionVertical;
   }
 

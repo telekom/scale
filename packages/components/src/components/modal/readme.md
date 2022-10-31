@@ -1,7 +1,5 @@
 # scale-modal
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -13,9 +11,9 @@
 | `allowInjectingStyleToBody` | `allow-injecting-style-to-body` | (optional) allow to inject css style {overflow: hidden} to body when modal is open | `boolean`           | `false`          |
 | `closeButtonLabel`          | `close-button-label`            | (optional) Label for close button                                                  | `string`            | `'Close Pop-up'` |
 | `closeButtonTitle`          | `close-button-title`            | (optional) title for close button                                                  | `string`            | `'Close'`        |
-| `customClass`               | `custom-class`                  | (optional) Custom class                                                            | `string`            | `''`             |
 | `duration`                  | `duration`                      | (optional) Transition duration                                                     | `number`            | `200`            |
 | `heading`                   | `heading`                       | Modal heading                                                                      | `string`            | `undefined`      |
+| `omitCloseButton`           | `omit-close-button`             | (optional) hide close button                                                       | `boolean`           | `false`          |
 | `opened`                    | `opened`                        | (optional) If `true`, the Modal is open.                                           | `boolean`           | `false`          |
 | `size`                      | `size`                          | (optional) Modal size                                                              | `string`            | `'default'`      |
 | `styles`                    | `styles`                        | (optional) Injected CSS styles                                                     | `string`            | `undefined`      |

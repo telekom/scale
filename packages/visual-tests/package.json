@@ -1,23 +1,25 @@
 {
   "name": "@telekom/scale-visual-tests",
   "private": true,
-  "version": "3.0.0-beta.106",
+  "version": "3.0.0-beta.116",
   "main": "index.js",
   "license": "MPL-2.0",
   "scripts": {
     "pretest": "cd ../components && yarn build && cd ../storybook-vue && yarn build && cd ../visual-tests && yarn copy",
     "copy": "rimraf ./storybook-static && cp -R ../storybook-vue/storybook-static ./",
-    "test": "PUPPETEER_CHROMIUM_REVISION=818858 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true jest --forceExit",
-    "test:m1": "PUPPETEER_CHROMIUM_REVISION=818858 DOCKER_DEFAULT_PLATFORM=linux/amd64 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn jest --forceExit",
-    "test:ci": "PUPPETEER_CHROMIUM_REVISION=818858 jest --forceExit",
+    "test": "PUPPETEER_CHROMIUM_REVISION=1055161 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true jest --forceExit",
+    "test:ci": "JEST_IMAGE_SNAPSHOT_TRACK_OBSOLETE=1 PUPPETEER_CHROMIUM_REVISION=1055161 jest --forceExit",
     "format": "prettier --write \"package.json\" \"src/**/*.js\" \"./*.js\""
   },
   "dependencies": {
+    "fs-extra": "^10.1.0",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
+    "jest-html-reporter": "^3.6.0",
     "jest-image-snapshot": "4.3.0",
     "jest-puppeteer-docker": "^1.4.2",
     "puppeteer": "^13.0.0",
+    "puppeteer-extensions": "^1.0.3",
     "rimraf": "^3.0.2"
   }
 }

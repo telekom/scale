@@ -1,5 +1,5 @@
 <template>
-  <scale-tab-nav :small="small" :size="size">
+  <scale-tab-nav :size="size">
     <scale-tab-header :disabled="disabled ? true : false" slot="tab">
       <scale-icon-home-home v-if="withIcon" /> General
     </scale-tab-header>
@@ -54,10 +54,9 @@
 export default {
   props: {
     styles: { type: String },
-    small: { type: Boolean, default: false },
-    size: { type: String, default: 'large' },
-    disabled: {type: Boolean, default: false},
+    disabled: { type: Boolean, default: false },
     withIcon: { type: Boolean, default: true },
+    size: { type: String, default: 'small' },
   },
 };
 </script>

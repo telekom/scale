@@ -14,7 +14,7 @@
 :host {
   display: block;
   /* FIXME rename to --border-color */
-  --color: var(--telekom-color-ui-additional-light);
+  --color: var(--telekom-color-ui-faint);
 }
 
 .menu-flyout-divider {

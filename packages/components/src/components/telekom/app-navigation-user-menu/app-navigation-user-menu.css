@@ -11,7 +11,7 @@
 
 :host {
   --border-width-divider: var(--telekom-spacing-unit-x025);
-  --color-divider: var(--telekom-color-ui-additional-subtle);
+  --color-divider: var(--telekom-color-ui-subtle);
   --color-menu-item-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-menu-item-active: var(--telekom-color-text-and-icon-primary-pressed);
   --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
@@ -45,9 +45,7 @@
 }
 
 .app-navigation-user-menu__user-info--name {
-  font-size: var(--scl-font-variant-heading-5-size);
-  line-height: var(--scl-font-variant-heading-5-line-height);
-  font-weight: var(--scl-font-variant-heading-5-weight);
+  font: var(--telekom-text-style-heading-5);
   margin-bottom: var(--telekom-spacing-unit-x1);
 }
 .app-navigation-user-menu__user-info--email {
@@ -56,9 +54,7 @@
 
 .app-navigation-user-menu__item {
   display: flex;
-  font-size: var(--scl-font-variant-heading-6-size);
-  line-height: var(--scl-font-variant-heading-6-line-height);
-  font-weight: var(--scl-font-variant-heading-6-weight);
+  font: var(--telekom-text-style-heading-6);
   padding: var(--telekom-spacing-unit-x2) var(--telekom-spacing-unit-x4);
   border-radius: calc(var(--telekom-radius-small) / 2);
   color: var(--telekom-color-text-and-icon-standard);

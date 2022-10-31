@@ -1,6 +1,6 @@
 {
   "name": "@telekom/scale-components",
-  "version": "3.0.0-beta.106",
+  "version": "3.0.0-beta.116",
   "description": "Scale is the digital design system for Telekom products and experiences.",
   "homepage": "https://github.com/telekom/scale",
   "repository": {
@@ -11,7 +11,7 @@
     "access": "public"
   },
   "main": "dist/index.cjs.js",
-  "module": "dist/custom-elements/index.js",
+  "module": "dist/components/index.js",
   "unpkg": "dist/scale-components/scale-components.esm.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -67,13 +67,11 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@duetds/date-picker": "1.2.0",
-    "@popperjs/core": "2.6.0",
-    "@proyecto26/animatable-component": "^1.1.8",
-    "@stencil/core": "^2.7.1",
-    "@telekom/design-tokens": "^1.0.0-alpha.23",
-    "@telekom/scale-design-tokens": "^3.0.0-beta.106",
+    "@floating-ui/dom": "^0.5.4",
+    "@stencil/core": "^2.17.0",
+    "@telekom/design-tokens": "^1.0.0-beta.2",
+    "@telekom/scale-design-tokens": "^3.0.0-beta.116",
     "classnames": "^2.2.6",
-    "stencil-inline-svg": "^1.0.1",
-    "web-animations-js": "^2.3.2"
+    "stencil-inline-svg": "^1.0.1"
   }
 }

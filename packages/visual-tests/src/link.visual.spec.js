@@ -1,62 +1,30 @@
 describe('Link', () => {
   describe.each(['light', 'dark'])('%p', (mode) => {
     beforeAll(async () => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-link--standard&viewMode=story`
-      );
-      await page.evaluate((mode) => {
-        localStorage.setItem('persistedColorMode', JSON.stringify(mode));
-      }, mode);
+      await global.runColorSetup('components-link--standard', mode);
     });
     test.each([['standard'], ['disabled'], ['with-icon']])(
       '%p',
       async (variant) => {
-        await page.goto(
-          `http://host.docker.internal:3123/iframe.html?id=components-link--${variant}&viewMode=story`
-        );
-        await page.waitForSelector('html.hydrated');
-        const previewHtml = await page.$('body');
-        await page.evaluate(() => {
-          [
-            '--telekom-motion-duration-immediate',
-            '--telekom-motion-duration-transition',
-            '--telekom-motion-duration-animation',
-            '--telekom-motion-duration-animation-deliberate',
-          ].forEach((transitionSpeed) => {
-            document.body.style.setProperty(transitionSpeed, '0s');
-          });
-        });
-        expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+        await global.runSetup(`components-link--${variant}`);
+
+        await global.visualCheck();
       }
     );
     // hover, active, focus
     test.each([['with-icon']])('%p', async (variant) => {
-      await page.goto(
-        `http://host.docker.internal:3123/iframe.html?id=components-link--${variant}&viewMode=story`
-      );
+      await global.runSetup(`components-link--${variant}`);
 
-      await page.waitForSelector('html.hydrated');
-      const previewHtml = await page.$('body');
-      await page.evaluate(() => {
-        [
-          '--telekom-motion-duration-immediate',
-          '--telekom-motion-duration-transition',
-          '--telekom-motion-duration-animation',
-          '--telekom-motion-duration-animation-deliberate',
-        ].forEach((transitionSpeed) => {
-          document.body.style.setProperty(transitionSpeed, '0s');
-        });
-      });
-      const link = await page.evaluateHandle(
+      const link = await global.page.evaluateHandle(
         `document.querySelector("#root > scale-link").shadowRoot.querySelector("a")`
       );
       link.hover();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await global.visualCheck();
       link.focus();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
-      await page.mouse.move(30, 30);
-      await page.mouse.down();
-      expect(await previewHtml.screenshot()).toMatchImageSnapshot();
+      await global.visualCheck();
+      await global.page.mouse.move(30, 30);
+      await global.page.mouse.down();
+      await global.visualCheck();
     });
   });
 });

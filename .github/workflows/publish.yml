@@ -8,7 +8,7 @@ jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Configure CI Git User
         run: |
@@ -18,7 +18,7 @@ jobs:
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: RELEASE
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Authenticate with Registry
         run: |
@@ -68,7 +68,7 @@ jobs:
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
@@ -117,7 +117,7 @@ jobs:
       - name: Deprecate Vue Package
         run: |
           npm deprecate @telekom/scale-components-vue@~3.0.0-beta.17 "Please use @telekom/scale-components directly, see the Scale docs. Vue support for web components is already great."
-    
+
       - name: Deprecate Scale Design Tokens Package
         run: |
           npm deprecate @telekom/scale-design-tokens@~3.0.0-beta.100 "Deprecated in favor of @telekom/design-tokens."
@@ -126,7 +126,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: RELEASE
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Configure CI Git User
         run: |
@@ -145,7 +145,7 @@ jobs:
 
       - name: Restore Lerna
         id: yarn-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules

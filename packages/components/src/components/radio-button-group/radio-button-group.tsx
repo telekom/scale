@@ -30,6 +30,17 @@ export class RadioButtonGroup {
     }
   }
 
+  renderHelperIcon() {
+    if (this.helperText && !this.invalid) {
+      return (
+        <scale-icon-alert-information size={11}></scale-icon-alert-information>
+      );
+    }
+    if (this.invalid) {
+      return <scale-icon-alert-error size={11}></scale-icon-alert-error>;
+    }
+  }
+
   render() {
     return (
       <fieldset class="radio-button-group">
@@ -46,7 +57,8 @@ export class RadioButtonGroup {
               class={this.getCssClassMap()}
               aria-label={this.helperText}
             >
-              {this.helperText}
+              {this.renderHelperIcon()}
+              <span>{this.helperText}</span>
             </div>
           ) : null}
         </legend>

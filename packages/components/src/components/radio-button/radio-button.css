@@ -29,38 +29,39 @@ scale-radio-button {
   --color-helper-text: var(
     --telekom-color-text-and-icon-functional-informational
   );
-  --spacing-left-helper-text: var(--telekom-spacing-unit-x6);
+  --spacing-left-helper-text: calc(
+    var(--width-control) + var(--telekom-spacing-unit-x2)
+  );
   --spacing-top-helper-text: var(--telekom-spacing-unit-x1);
-
+  --color-helper-text-error: var(
+    --telekom-color-text-and-icon-functional-danger
+  );
   /*label*/
   --transition-label: var(--transition);
   --font-weight-label: var(--telekom-typography-font-weight-medium);
   --color-label: var(--color-text);
 
   /*control*/
-  --width-control: var(--telekom-spacing-unit-x4);
-  --height-control: var(--telekom-spacing-unit-x4);
+  --width-control: var(--telekom-spacing-unit-x5);
+  --height-control: var(--telekom-spacing-unit-x5);
   --transition-control: var(--transition);
   --spacing-control: 0 var(--telekom-spacing-unit-x2) 0 0;
-  --background-color-control: var(--telekom-color-ui-additional-base);
+  --background-color-control: var(--telekom-color-ui-base);
   --border-control: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-standard);
-  --border-control-checked: calc(0.5 * var(--telekom-spacing-unit-x3)) solid
-    var(--telekom-color-primary-standard);
-  --border-control-checked-active: calc(0.5 * var(--telekom-spacing-unit-x3))
-    solid var(--telekom-color-primary-pressed, #cb0068);
+    var(--telekom-color-ui-border-standard);
+  --line-height-helper-text: var(--telekom-typography-line-spacing-standard);
+  --border-control-checked: calc(0.25 * var(--telekom-spacing-unit-x3)) solid
+    var(--telekom-color-background-canvas);
   --border-control-checked-disabled: calc(0.5 * var(--telekom-spacing-unit-x3))
-    solid var(--telekom-color-ui-outlined-border-disabled);
-  --background-control-checked-disabled: var(
-    --telekom-color-ui-outlined-fill-disabled
-  );
+    solid var(--telekom-color-ui-border-disabled);
+  --background-control-checked-disabled: none;
   --border-control-active: var(--telekom-spacing-unit-x2) solid
     var(--telekom-color-primary-pressed);
-  --border-control-disabled: var(--telekom-spacing-unit-x025) solid
-    var(--telekom-color-ui-outlined-border-disabled);
+  --border-control-disabled: 0 0 0 var(--telekom-spacing-unit-x025)
+    var(--telekom-color-ui-border-disabled);
   --border-control-error: var(--telekom-spacing-unit-x05) solid
     var(--telekom-color-functional-danger-standard);
-  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x05)
+  --box-shadow-control-focus: 0 0 0 var(--telekom-spacing-unit-x1)
     var(--color-focus);
 }
 
@@ -76,7 +77,7 @@ scale-radio-button {
 .radio-button .radio-button__meta {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  padding-left: var(--spacing-left-helper-text);
 }
 
 .radio-button .radio-button__helper-text {
@@ -85,12 +86,22 @@ scale-radio-button {
   font-weight: var(--font-weight-helper-text);
   line-height: var(--line-height-helper-text);
   color: var(--color-helper-text);
-  margin-top: var(--spacing-top-helper-text);
-  padding-left: var(--spacing-left-helper-text);
+}
+
+scale-icon-alert-information,
+scale-icon-alert-error {
+  color: var(--color-helper-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--telekom-spacing-unit-x1);
 }
 
 .radio-button--status-error .radio-button__helper-text {
-  color: var(--color-error);
+  color: var(--color-helper-text-error);
+}
+.radio-button--status-error scale-icon-alert-error {
+  color: var(--color-helper-text-error);
 }
 
 .radio-button label {
@@ -98,6 +109,7 @@ scale-radio-button {
   transition: var(--transition-label);
   font-weight: var(--font-weight-label);
   cursor: pointer;
+  line-height: var(--telekom-typography-line-spacing-standard);
 }
 .radio-button input {
   width: var(--width-control);
@@ -105,32 +117,29 @@ scale-radio-button {
   transition: var(--transition-control);
   border-radius: 50%;
   -webkit-appearance: none;
-  background-color: var(--telekom-color-ui-outlined-fill-standard);
+  background-color: var(--telekom-color-ui-state-fill-standard);
   border: var(--border-control);
   margin: var(--spacing-control);
   cursor: pointer;
 }
-.radio-button input:focus {
-  outline: none;
-  box-shadow: var(--box-shadow-control-focus);
-}
+
 .radio-button:hover input:not(:checked):not([disabled]) {
   box-shadow: none;
-  border-color: var(--telekom-color-ui-outlined-border-hovered);
-  background-color: var(--telekom-color-ui-outlined-fill-hovered);
+  border-color: var(--telekom-color-ui-border-hovered);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
 }
 .radio-button:hover input:not(:checked):not([disabled]) ~ label {
   color: var(--color-primary-hover);
 }
 .radio-button:active input:not(:checked):not([disabled]) {
-  border-color: var(--telekom-color-ui-outlined-border-pressed);
-  background-color: var(--telekom-color-ui-outlined-fill-pressed);
+  border-color: var(--telekom-color-ui-border-pressed);
+  background-color: var(--telekom-color-ui-state-fill-pressed);
 }
 .radio-button input:not(:checked):not([disabled]):active ~ label {
   color: var(--color-primary-active);
 }
 .radio-button input:disabled {
-  border: var(--border-control-disabled);
+  box-shadow: var(--border-control-disabled);
 }
 .radio-button input:disabled ~ label {
   color: var(--color-disabled);
@@ -146,18 +155,21 @@ scale-radio-button {
   input:not(:checked):not([disabled]) {
   border-color: var(--telekom-color-functional-danger-pressed);
 }
+
 .radio-button input:checked {
   border: var(--border-control-checked);
-}
-.radio-button input:checked:active {
-  border: var(--border-control-checked-active);
+  background-color: var(--telekom-color-primary-standard);
+  box-shadow: 0 0 0 var(--telekom-spacing-unit-x025)
+    var(--telekom-color-text-and-icon-primary-standard);
 }
 .radio-button input:checked:disabled {
-  background: var(--background-control-checked-disabled);
-  border: var(--border-control-checked-disabled);
+  background-color: var(--background-disabled);
+  border: var(--border-control-checked);
+  box-shadow: var(--border-control-disabled);
 }
 .radio-button input:checked:disabled ~ label {
   color: var(--color-disabled);
+  border: var(--border-control-disabled);
 }
 
 .radio-button--disabled label,
@@ -167,5 +179,15 @@ scale-radio-button {
   cursor: not-allowed;
   border-color: var(--color-disabled);
   color: var(--color-disabled);
-  background: var(--telekom-color-ui-outlined-fill-standard);
+  background: var(--telekom-color-ui-state-fill-standard);
+}
+
+.radio-button--disabled scale-icon-alert-information,
+.radio-button--disabled scale-icon-alert-error {
+  color: var(--color-disabled);
+}
+
+.radio-button input:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }

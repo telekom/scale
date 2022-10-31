@@ -45,10 +45,10 @@ scale-grid,
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(var(--columns-sm, 4), minmax(0, 1fr));
-  padding-left: var(--spacing-sm, var(--scl-spacing-16, 1em));
-  padding-right: var(--spacing-sm, var(--scl-spacing-16, 1em));
-  column-gap: var(--gutter-y-sm, var(--scl-spacing-32, 2em));
-  row-gap: var(--gutter-x-sm, var(--scl-spacing-32, 2em));
+  padding-left: var(--spacing-sm, var(--telekom-spacing-unit-x4, 1em));
+  padding-right: var(--spacing-sm, var(--telekom-spacing-unit-x4, 1em));
+  column-gap: var(--gutter-y-sm, var(--telekom-spacing-unit-x8, 2em));
+  row-gap: var(--gutter-x-sm, var(--telekom-spacing-unit-x8, 2em));
   /* xxl: (64px * 16 cols) + (32px * 15 gutters) + 24px + 24px */
   max-width: var(--max-width, 1552px);
 }
@@ -77,10 +77,10 @@ scale-grid-item,
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-md, 8), minmax(0, 1fr));
-    padding-left: var(--spacing-md, var(--scl-spacing-16, 1em));
-    padding-right: var(--spacing-md, var(--scl-spacing-16, 1em));
-    column-gap: var(--gutter-y-md, var(--scl-spacing-32, 2em));
-    row-gap: var(--gutter-x-md, var(--scl-spacing-32, 2em));
+    padding-left: var(--spacing-md, var(--telekom-spacing-unit-x4, 1em));
+    padding-right: var(--spacing-md, var(--telekom-spacing-unit-x4, 1em));
+    column-gap: var(--gutter-y-md, var(--telekom-spacing-unit-x8, 2em));
+    row-gap: var(--gutter-x-md, var(--telekom-spacing-unit-x8, 2em));
   }
 
   scale-grid-item,
@@ -94,10 +94,10 @@ scale-grid-item,
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-lg, 16), minmax(0, 1fr));
-    padding-left: var(--spacing-lg, var(--scl-spacing-24, 1.5em));
-    padding-right: var(--spacing-lg, var(--scl-spacing-24, 1.5em));
-    column-gap: var(--gutter-y-lg, var(--scl-spacing-32, 2em));
-    row-gap: var(--gutter-x-lg, var(--scl-spacing-32, 2em));
+    padding-left: var(--spacing-lg, var(--telekom-spacing-unit-x6, 1.5em));
+    padding-right: var(--spacing-lg, var(--telekom-spacing-unit-x6, 1.5em));
+    column-gap: var(--gutter-y-lg, var(--telekom-spacing-unit-x8, 2em));
+    row-gap: var(--gutter-x-lg, var(--telekom-spacing-unit-x8, 2em));
   }
 
   scale-grid-item,
@@ -111,10 +111,10 @@ scale-grid-item,
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-xl, 16), minmax(0, 1fr));
-    padding-left: var(--spacing-xl, var(--scl-spacing-24, 1.5em));
-    padding-right: var(--spacing-xl, var(--scl-spacing-24, 1.5em));
-    column-gap: var(--gutter-y-xl, var(--scl-spacing-32, 2em));
-    row-gap: var(--gutter-x-xl, var(--scl-spacing-32, 2em));
+    padding-left: var(--spacing-xl, var(--telekom-spacing-unit-x6, 1.5em));
+    padding-right: var(--spacing-xl, var(--telekom-spacing-unit-x6, 1.5em));
+    column-gap: var(--gutter-y-xl, var(--telekom-spacing-unit-x8, 2em));
+    row-gap: var(--gutter-x-xl, var(--telekom-spacing-unit-x8, 2em));
   }
 
   scale-grid-item,
@@ -128,10 +128,10 @@ scale-grid-item,
   scale-grid,
   .scl-grid {
     grid-template-columns: repeat(var(--columns-xxl, 16), minmax(0, 1fr));
-    padding-left: var(--spacing-xxl, var(--scl-spacing-24, 1.5em));
-    padding-right: var(--spacing-xxl, var(--scl-spacing-24, 1.5em));
-    column-gap: var(--gutter-y-xxl, var(--scl-spacing-32, 2em));
-    row-gap: var(--gutter-x-xxl, var(--scl-spacing-32, 2em));
+    padding-left: var(--spacing-xxl, var(--telekom-spacing-unit-x6, 1.5em));
+    padding-right: var(--spacing-xxl, var(--telekom-spacing-unit-x6, 1.5em));
+    column-gap: var(--gutter-y-xxl, var(--telekom-spacing-unit-x8, 2em));
+    row-gap: var(--gutter-x-xxl, var(--telekom-spacing-unit-x8, 2em));
   }
 
   scale-grid-item,

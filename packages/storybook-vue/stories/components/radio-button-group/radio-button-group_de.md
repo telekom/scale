@@ -8,7 +8,7 @@ Radio-Buttons ermöglichen es Nutzer*innen, eine Option aus einer Reihe von Alte
 
 Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons wird die zuvor gewählte Option automatisch abgewählt. Durch einen Gruppentitel erfassen Nutzer\*innen inhaltliche Zusammenhänge schneller. Interfaces mit vielen Auswahloptionen wirken insgesamt ruhiger und aufgeräumter.
 
-![Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group.png)
+![Radio Button Group](assets/3_components/radio-button-group/radio-button-group-general.png)
 
 ### Verwende eine Radio Button Group, um
 
@@ -24,23 +24,23 @@ Verwende Radio-Buttons grundsätzlich nicht, wenn
 
 ## Elemente
 
-![Elemente der Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Elements.png)
+![Elemente der Radio Button Group](assets/3_components/radio-button-group/radio-button-group-elements.png)
 
 ### Gruppenlabel (1)
 
 Wähle einen kurzen und aussagekräftigen Titel für die gesamte Gruppe.
 
-### Radio-Button ausgeschaltet (2)
+### Radio-Button eingeschaltet (2)
 
-Wenn der Kreis leer ist, gilt eine Option als abgewählt.
+Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
 
 ### Label (3)
 
 Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
 
-### Radio-Button eingeschaltet
+### Radio-Button ausgeschaltet (4)
 
-Ist der Kreis ausgefüllt, so gilt eine Option als ausgewählt.
+Wenn der Kreis leer ist, gilt eine Option als abgewählt.
 
 ### Information (5) (optional)
 
@@ -57,7 +57,9 @@ Deaktiviere einen Radio Button, wenn
 - eine andere Aktion erfolgen muss, bevor der Radio-Button nutzbar ist oder
 - die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
 
-![Deaktivierte Radio Button Group](assets/3_components/radio-button-group/Radio_Button_Group_Disabled.png)
+![Deaktivierte Radio Button Group](assets/3_components/radio-button-group/radio-button-group-items-disabled.png)
+
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ## Verwandte Komponenten
 

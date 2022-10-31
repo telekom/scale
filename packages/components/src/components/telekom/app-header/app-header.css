@@ -19,7 +19,7 @@ scale-app-header {
 
   --background: var(--telekom-color-primary-standard);
   --font-weight: var(--telekom-typography-font-weight-regular);
-  --border: 1px solid var(--telekom-color-ui-additional-light);
+  --border: 1px solid var(--telekom-color-ui-faint);
 
   --color-brand: var(--telekom-color-text-and-icon-inverted-standard);
   --background-brand: var(--telekom-color-primary-standard);
@@ -327,7 +327,7 @@ scale-app-header {
   }
   .header .sector-navigation .sector-navigation__portal-name {
     font-weight: var(--telekom-typography-font-weight-extra-bold);
-    font-size: var(--scl-font-variant-body-large-size);
+    font-size: var(--telekom-typography-font-size-callout);
     list-style-type: none;
   }
 

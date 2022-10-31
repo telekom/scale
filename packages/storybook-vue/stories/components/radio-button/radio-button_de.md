@@ -11,7 +11,7 @@ Ein Radio-Button ist ein Steuerelement und besteht aus einem runden Button mit e
 
 Radio-Buttons funktionieren nur als Gruppe. Durch Aktivieren eines Radio-Buttons wird die zuvor gewählte Option automatisch abgewählt.
 
-![Image Name](assets/3_components/radio-button/radiobuttons_general.png)
+![Image Name](assets/3_components/radio-button/radiobuttons-general.png)
 
 ### Verwende Radio-Buttons, um
 
@@ -46,7 +46,7 @@ Bei widersprüchlicher oder nichtzutreffender Auswahl erscheint eine Fehlermeldu
 
 Beschreibe mit dem Label deutlich, welche Auswirkung die jeweilige Auswahl hat. Ein Label enthält in der Regel maximal drei Wörter.
 
-![Image Name](assets/3_components/radio-button/radiobuttons_label.png)
+![Image Name](assets/3_components/radio-button/radiobuttons-label.png)
 
 ## Deaktivierter Zustand
 
@@ -55,7 +55,9 @@ Deaktiviere den Radio-Button, wenn
 - eine andere Aktion erfolgen muss, bevor der Radio-Button nutzbar ist oder
 - die Option aufgeführt werden muss, aber aktuell nicht auswählbar ist.
 
-![Image Name](assets/3_components/radio-button/disabled_radiobutton.png)
+![Image Name](assets/3_components/radio-button/disabled-radiobutton.png)
+
+> Der deaktivierte Zustand (Disabled State) ist vom Kontrastminimum der WCAG für Textfarben ausgenommen. Weitere Informationen hierzu findest du in den [Richtlinien der WCAG](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ## Titel und Default-Auswahl
 
@@ -65,10 +67,11 @@ Es gibt ein paar wenige Fälle, in denen du besser keine Vorauswahl triffst, zum
 
 In vielen Fällen ist es für Nutzer\*innen hilfreich, wenn du eine Headline verwendest.
 
-![Image Name](assets/3_components/radio-button/radiobuttons_bestpractice.png)
+![Image Name](assets/3_components/radio-button/radiobuttons-bestpractice.png)
 
 ## Verwandte Komponenten
 
+[Radio Button Group, ](?path=/usage/components-radio-button-group--standard)
 [Checkbox, ](?path=/usage/components-checkbox--standard)
 [Switch, ](?path=/usage/components-switch--standard)
 [Dropdown ](?path=/usage/components-dropdown--standard)

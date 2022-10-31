@@ -102,7 +102,7 @@ exports[`NotificationToast  handle variant prop 2`] = `
     </style>
     <div class="notification-toast notification-toast--opened notification-toast--show notification-toast--variant-warning" part="base --variant-warning --opened --show" role="alert" tabindex="0">
       <div class="notification-toast__icon-container">
-        <scale-icon-alert-error aria-hidden="true" class="notification-toast__icon" color="#ffff" selected="" size="20"></scale-icon-alert-error>
+        <scale-icon-alert-warning aria-hidden="true" class="notification-toast__icon" color="#ffff" selected="" size="20"></scale-icon-alert-warning>
       </div>
       <div class="notification-toast__text-container">
         <slot name="header"></slot>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 4rem;
+      }
+    </style>
+  </head>
+
+  <body data-mode="dark" style="height: 200vh; background: black">
+    <scale-dropdown-select
+      label="Favorite person"
+      id="person-select"
+      helper-text="not Jerry!"
+      size="small"
+      invalid
+      value="caspar"
+    >
+      <scale-dropdown-select-item value="caspar">
+        <scale-icon-action-add slot="suffix"></scale-icon-action-add>
+        Caspar</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="cedric">
+        Cedric</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="cedrik"
+        >Cedrik</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="cem">Cem</scale-dropdown-select-item>
+      <scale-dropdown-select-item value="charlie"
+        >Charlie</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="chris"
+        >Chris</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="christian"
+        >Christian</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="christiano"
+        >Christiano</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="christoph"
+        >Christoph</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="christopher"
+        >Christopher</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="claas"
+        >Claas</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="clemens"
+        >Clemens</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="colin"
+        >Colin</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="collin"
+        >Collin</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="conner"
+        >Conner</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="connor"
+        >Connor</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="constantin"
+        >Constantin</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="corvin"
+        >Corvin</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="curt">Curt</scale-dropdown-select-item>
+      <scale-dropdown-select-item value="damian"
+        >Damian</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="damien"
+        >Damien</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="daniel"
+        >Daniel</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="danilo"
+        >Danilo</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="danny"
+        >Danny</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="darian"
+        >Darian</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="dario"
+        >Dario</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="darius"
+        >Darius</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="darren"
+        >Darren</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="david"
+        >David</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="davide"
+        >Davide</scale-dropdown-select-item
+      >
+      <scale-dropdown-select-item value="davin"
+        >Davin</scale-dropdown-select-item
+      >
+    </scale-dropdown-select>
+
+    <scale-button id="choose-dario">choose Dario</scale-button>
+  </body>
+
+  <script>
+    const Select = document.getElementById('person-select');
+    const ChooseDarioBtn = document.getElementById('choose-dario');
+
+    Select.addEventListener('scale-change', function (event) {
+      console.log(event.detail.value);
+    });
+
+    ChooseDarioBtn.addEventListener('click', function () {
+      Select.value = 'dario';
+      const newOption = document.createElement('option');
+
+      newOption.appendChild(document.createTextNode('Annabella'));
+
+      newOption.setAttribute('value', 'annabella');
+      Select.appendChild(newOption);
+    });
+  </script>
+</html>

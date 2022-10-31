@@ -7,15 +7,14 @@ Tags draw the user's attention to certain content elements. They represent a cat
 
 ## General
 
-Tags consist of relevant keywords in a container. A static tag indicates a category or an attribute; an interactive tag shows things like selected filters, which users can then also remove.
+Tags consist of relevant keywords in a container. A tag refers to a category or attribute.
 
 ### When to use
 
-Use tags to:
+Use a tag to:
 
-- draw a user's attention to certain elements they might otherwise overlook,
-- make it easier for users to recognize content, for instance in tables, or
-- show users selected filters.
+- draw a user's attention to certain elements they might otherwise overlook, or
+- make it easier for users to recognize content, for instance in tables.
 
 ### When not to use
 
@@ -30,58 +29,63 @@ In general, be careful using tags. Don't use them when:
 
 A static tag has no interactive function. It only conveys information, for instance a category within a table.
 
-![Image Name](assets/3_components/chip/Tag-static.png)
+![Tag-static.png](assets/3_components/tag/tag-static.png)
 
-### Interactive tag
+### Dismissible tag
 
-An interactive tag offers the possibility to remove the tag by clicking/tapping on the icon. A typical use is, for example, the deactivation of selected filters.
+A dismissible tag offers the possibility to remove the tag by clicking/tapping on the icon.
 
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
+![Tag-Dismissible.png](assets/3_components/tag/tag-interactive.png)
 
-## Elements
+## Variants
 
-![Image Name](assets/3_components/chip/Tag-Elements.png)
+![Tag-Strong-Standard.png](assets/3_components/tag/tag-strong-standard.png)
 
-### Container (1)
-
-The container contains labels and optionally a close icon.
-
-### Label (2)
-
-Make the label clear and short.
-
-### Icon (3)
-
-By clicking/tapping on the icon, users remove the tag.
+Scale offers standard and strong variants. The strong variant is ideal for more emphasis.
 
 ## Colors
 
-The default color for tags is dark gray. This way, the maximum contrast guarantees the best legibility.
-
-![Image Name](assets/3_components/chip/Tag-Interactive.png)
-
 You can choose your own color for color coding or to achieve a different visual effect. It's important that the color scheme is easily understandable and meets all accessibility requirements.
 
-![Image Name](assets/3_components/chip/Tag-color.png)
+![Tag-Basic-Colors.png](assets/3_components/tag/tag-basic-colors.png)
 
 ## Sizes
 
-Scale offers two sizes for tags. Be careful not to combine the two sizes.
+Scale offers two sizes for tags: large and small. If needed, you can adjust the size of the tags yourself.
 
 ### Large
 
 Use large tags as default.
 
-![Image Name](assets/3_components/chip/Tag-size-default.png)
+![Tag-size-large.png](assets/3_components/tag/tag-size-large.png)
 
 ### Small
 
-Only use small tags if you don't have enough space for the standard size.
+Use small tags if space is limited.
 
-![Image Name](assets/3_components/chip/Tag-size-small.png)
+![Tag-size-small.png](assets/3_components/tag/tag-size-small.png)
 
-### Best practices
+## Disabled state
 
-- Don't mix interactive and static tags within a product or service.
+![Tag-disabled.png](assets/3_components/tag/tag-disabled.png)
+
+## Elements
+
+![Tag-Elements Copy 2.png](assets/3_components/tag/tag-elements.png)
+
+#### Container (1)
+
+The container contains a label and optionally, a remove icon.
+
+#### Label (2)
+
+The label represents a category or an attribute; try to make it clear and concise.
+
+#### Icon (3) (optional)
+
+By clicking/tapping on the icon, users remove the tag.
+
+## Best practices
+
 - Decide on one size for your tags.
 - Use a clear keyword for the label.

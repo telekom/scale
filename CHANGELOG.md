@@ -3,6 +3,175 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* typography documentation variable name ([#1330](https://github.com/telekom/scale/issues/1330)) ([8d200a3](https://github.com/telekom/scale/commit/8d200a3a3b6ade9b9ef43e4f84aea4b1e1d984ce))
+* **slider:** bar styles ([#1328](https://github.com/telekom/scale/issues/1328)) ([c924e6f](https://github.com/telekom/scale/commit/c924e6f08c18ad656a054457286fc22d9a6152bb))
+
+
+### Features
+
+* adding UI black and white ([#1212](https://github.com/telekom/scale/issues/1212)) ([a8f88a0](https://github.com/telekom/scale/commit/a8f88a04e2f6119b615ecc4d25da32ed1b5bc181))
+
+
+
+
+
+# [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
+
+
+### Features
+
+* **button:** add secondary white variant ([#1220](https://github.com/telekom/scale/issues/1220)) ([a6ed3a6](https://github.com/telekom/scale/commit/a6ed3a65c040900f049da35b72ee7b5c1e195203))
+* **callout:** refactor, improve accessibility ([#1175](https://github.com/telekom/scale/issues/1175)) ([23f4b8a](https://github.com/telekom/scale/commit/23f4b8a0099a7c1e1d515c0589d8e3f040f5e95a))
+* **checkbox+radio-button:** mobile optimisation ([#1214](https://github.com/telekom/scale/issues/1214)) ([52e8367](https://github.com/telekom/scale/commit/52e836730877962875c12c52841e12c26f263a5f))
+* **dropdown-select:** mobile optimisation ([#1215](https://github.com/telekom/scale/issues/1215)) ([8dc1fa4](https://github.com/telekom/scale/commit/8dc1fa40b77b8fbd7f93b125f9a62fd3e8ecdd46))
+* **focus-outline:** mobile optimisation ([de48476](https://github.com/telekom/scale/commit/de48476c9c36f27d7aa47fdda6bba7a2980c493d))
+* **helper-text:** mobile optimisation, reusable helper-text ([#1222](https://github.com/telekom/scale/issues/1222)) ([819c9d6](https://github.com/telekom/scale/commit/819c9d67337565c4c3415a93027ee815a8dacd7e))
+* **progress-bar:** mobile optimisation ([14934d3](https://github.com/telekom/scale/commit/14934d3bb93bd04e2ad07a155d3d9168dc4a89f0))
+* **progress-bar:** mobile optimisation ([#1246](https://github.com/telekom/scale/issues/1246)) ([c11beda](https://github.com/telekom/scale/commit/c11bedab48255f1b81eb457c9ae6a302804c07e2))
+* **slider:** mobile optimisation ([#1221](https://github.com/telekom/scale/issues/1221)) ([5d41da7](https://github.com/telekom/scale/commit/5d41da774de8df7db7baba84baf1f11e9f0874eb))
+* **switch:** mobile optimisation ([#1184](https://github.com/telekom/scale/issues/1184)) ([#1244](https://github.com/telekom/scale/issues/1244)) ([ec0a078](https://github.com/telekom/scale/commit/ec0a078577ddebcb6636c530a76f85a5ae6ffe8a))
+* **tag:** mobile optimisation ([#1163](https://github.com/telekom/scale/issues/1163)) ([3ac7fd1](https://github.com/telekom/scale/commit/3ac7fd12176342f751ef16781c3c05368bf4c7bc))
+
+
+
+
+
+# [3.0.0-beta.114](https://github.com/telekom/scale/compare/v3.0.0-beta.113...v3.0.0-beta.114) (2022-10-05)
+
+
+### Bug Fixes
+
+* **accordion:** deal only with direct collapsible children ([#1243](https://github.com/telekom/scale/issues/1243)) ([19a137b](https://github.com/telekom/scale/commit/19a137bcbd8346ab4b92302ba6000a6c1406606c))
+* **checkbox:** rename private class property to avoid clashing with restricted name ([#1241](https://github.com/telekom/scale/issues/1241)) ([368a5a7](https://github.com/telekom/scale/commit/368a5a7a0dcf34cb42cd2ad2875ca0d204a73028))
+
+
+
+
+
+# [3.0.0-beta.113](https://github.com/telekom/scale/compare/v3.0.0-beta.112...v3.0.0-beta.113) (2022-09-28)
+
+
+### Bug Fixes
+
+* add displayCloseButton prop, update storybook ([#1197](https://github.com/telekom/scale/issues/1197)) ([2e7898b](https://github.com/telekom/scale/commit/2e7898b6e5c9be282609407f7cc3801bf6ac648e)), closes [#1194](https://github.com/telekom/scale/issues/1194) [#1196](https://github.com/telekom/scale/issues/1196) [#1195](https://github.com/telekom/scale/issues/1195)
+* replace deprecated `dist-custom-elements-bundle` dist ([#1202](https://github.com/telekom/scale/issues/1202)) ([6bd34e9](https://github.com/telekom/scale/commit/6bd34e989c134938b257968cafdd330be49e2918))
+
+
+### Features
+
+* **progress-bar:** add optional percentageStart prop ([#1204](https://github.com/telekom/scale/issues/1204)) ([573baf3](https://github.com/telekom/scale/commit/573baf3634c0480508ca3b90223da358dfcd2cf6))
+
+
+
+
+
+# [3.0.0-beta.112](https://github.com/telekom/scale/compare/v3.0.0-beta.111...v3.0.0-beta.112) (2022-09-09)
+
+
+### Bug Fixes
+
+* **dropdown-select-item:** reflect value prop, fixes [#1194](https://github.com/telekom/scale/issues/1194) ([#1196](https://github.com/telekom/scale/issues/1196)) ([85bd383](https://github.com/telekom/scale/commit/85bd3834e29070d8f6cd278ede3afcf30c5e3185))
+* checkbox group leads to double scroll in modal window ([#1188](https://github.com/telekom/scale/issues/1188)) ([fc08dcf](https://github.com/telekom/scale/commit/fc08dcfd2d84ad0419a940cfb6c371b8b0850497))
+
+
+### Features
+
+* **TeleNeo:** update fonts to latest ([#1186](https://github.com/telekom/scale/issues/1186)) ([cb5a8bf](https://github.com/telekom/scale/commit/cb5a8bf822f012fb49a577df9254c21c8989f42f))
+
+
+
+
+
+# [3.0.0-beta.111](https://github.com/telekom/scale/compare/v3.0.0-beta.110...v3.0.0-beta.111) (2022-08-29)
+
+
+### Bug Fixes
+
+* add controlled prop ([#1140](https://github.com/telekom/scale/issues/1140)) ([fb828fb](https://github.com/telekom/scale/commit/fb828fbdb4f7c3c6342538aab3d0932b0766011e))
+* **scale-link:** use currentColor when inside Tooltip (a11y) ([#1166](https://github.com/telekom/scale/issues/1166)) ([8f557e5](https://github.com/telekom/scale/commit/8f557e53a50e8acd5bcbc019e40685fea6dc5d4f))
+* **tooltip:** a few issues ([#1165](https://github.com/telekom/scale/issues/1165)) ([4656a51](https://github.com/telekom/scale/commit/4656a5188c8649506d14fc5a2e932e78bc5ea335))
+
+
+
+
+
+# [3.0.0-beta.110](https://github.com/telekom/scale/compare/v3.0.0-beta.109...v3.0.0-beta.110) (2022-08-03)
+
+
+### Bug Fixes
+
+* add _experimentalImportInjection_ in stencil.config ([#1158](https://github.com/telekom/scale/issues/1158)) ([2495eb5](https://github.com/telekom/scale/commit/2495eb59243de55838ca6c2c87d31a52e0774331)), closes [#369](https://github.com/telekom/scale/issues/369)
+
+
+
+
+
+# [3.0.0-beta.109](https://github.com/telekom/scale/compare/v3.0.0-beta.108...v3.0.0-beta.109) (2022-08-02)
+
+
+### Bug Fixes
+
+* footer border color ([#1157](https://github.com/telekom/scale/issues/1157)) ([e3ad388](https://github.com/telekom/scale/commit/e3ad38863ca63906ea4dfd2269c6c602430697e0))
+
+
+### Features
+
+* dropdown-select ([#1069](https://github.com/telekom/scale/issues/1069)) ([ceb92ae](https://github.com/telekom/scale/commit/ceb92aed459882369b0cf25c11d50f368aa91b4e)), closes [#2](https://github.com/telekom/scale/issues/2)
+
+
+
+
+
+# [3.0.0-beta.108](https://github.com/telekom/scale/compare/v3.0.0-beta.107...v3.0.0-beta.108) (2022-07-13)
+
+
+### Bug Fixes
+
+* **menu-flyout:** properly close sublists ([#1131](https://github.com/telekom/scale/issues/1131)) ([b47d6e9](https://github.com/telekom/scale/commit/b47d6e983f3c4cbb23ca88062ca1d04aa1978faa))
+* Potential a11y issue with switch [#822](https://github.com/telekom/scale/issues/822) ([#1121](https://github.com/telekom/scale/issues/1121)) ([4e959aa](https://github.com/telekom/scale/commit/4e959aabe59ca124bc44a0b9449633abf806ad9a))
+* use correct border color token ([#1112](https://github.com/telekom/scale/issues/1112)) ([077633b](https://github.com/telekom/scale/commit/077633b751e9b1c11c759ca28901ecd44cb8ec70))
+* use next release version for working nuxt3 app ([#1129](https://github.com/telekom/scale/issues/1129)) ([29e9e5b](https://github.com/telekom/scale/commit/29e9e5b3752f2fa4b4b28bb1814148b4dcda5d94))
+* **flyout:** avoid type errors of this.list ([#1118](https://github.com/telekom/scale/issues/1118)) ([6b4e505](https://github.com/telekom/scale/commit/6b4e50593ed26840f329a038e7827b9fe996f55c))
+
+
+### Features
+
+* **button:** forms will submit with Enter key ([#1120](https://github.com/telekom/scale/issues/1120)) ([73af76f](https://github.com/telekom/scale/commit/73af76f2ecb367be0345d5fc192eb04cd8f2b0d2))
+* **menu-flyout:** close menu with click on trigger ([#1126](https://github.com/telekom/scale/issues/1126)) ([2372c43](https://github.com/telekom/scale/commit/2372c4359bdfa1b6c36e063a4ffce9ea8f534d37))
+* **modal:** add --min-height-window var ([#1127](https://github.com/telekom/scale/issues/1127)) ([bb48463](https://github.com/telekom/scale/commit/bb4846394b84e4c4f81123b1766ca00bfe5f0c18))
+* adding possibility to use a tags with scale-link inside breadcrumbs ([#1089](https://github.com/telekom/scale/issues/1089)) ([8b44a3b](https://github.com/telekom/scale/commit/8b44a3b8edc22d8968f36e53aa04fa41d904f4b8))
+
+
+
+
+
+# [3.0.0-beta.107](https://github.com/telekom/scale/compare/v3.0.0-beta.106...v3.0.0-beta.107) (2022-06-23)
+
+
+### Bug Fixes
+
+* **data-grid:** enable content width check for actions cell ([#1108](https://github.com/telekom/scale/issues/1108)) ([49a3966](https://github.com/telekom/scale/commit/49a396638d21973dc841244d0d096d33af82a7a9))
+* **modal:** remove customClass attribute leftover ([#1094](https://github.com/telekom/scale/issues/1094)) ([fdf09cc](https://github.com/telekom/scale/commit/fdf09ccba8ce9a533ba7b8a1c31174a9f7bc377b))
+
+
+### Features
+
+* new color table ([#1105](https://github.com/telekom/scale/issues/1105)) ([a0c663d](https://github.com/telekom/scale/commit/a0c663d5cf6fcc581f32901989c58e8e74432e82))
+
+
+### Reverts
+
+* Revert "docs: restore B&D links" ([c83b6ba](https://github.com/telekom/scale/commit/c83b6ba75cb51dfff569f4cb999d4f0a3d133eab))
+
+
+
+
+
 # [3.0.0-beta.106](https://github.com/telekom/scale/compare/v3.0.0-beta.105...v3.0.0-beta.106) (2022-05-24)
 
 

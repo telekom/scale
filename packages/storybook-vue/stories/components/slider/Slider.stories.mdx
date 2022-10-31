@@ -19,76 +19,36 @@ import { action } from '@storybook/addon-actions';
 />
 
 export const Template = (args, { argTypes }) => ({
-  components: { ScaleSlider },
   props: {
     ...ScaleSlider.props,
   },
   template: `
     <scale-slider
-        :custom-color="customColor"
-        :disabled="disabled"
-        :name="name"
-        :label="label"
-        :max="max"
-        :min="min"
-        :show-value="showValue"
-        :track-small="trackSmall"
-        :thumb-large="thumbLarge"
-        :step="step"
-        :value="value"
-        @scaleButtonDown="scaleButtonDown"
-        @scaleDragStart="scaleDragStart"
-        @scaleDragging="scaleDragging"
-        @scaleDragEnd="scaleDragEnd"
-        @scaleSetPosition="scaleSetPosition"
-        @scaleCurrentPosition="scaleCurrentPosition"
-        >
+      :label="label"
+      :value="value"
+      :range="range"
+      :value-from="valueFrom"
+      :value-to="valueTo"
+      :min="min"
+      :max="max"
+      :step="step"
+      :show-step-marks="showStepMarks"
+      :unit="unit"
+      :unit-position="unitPosition"
+      :decimals="decimals"
+      :disabled="disabled"
+      :show-value="String(showValue)"
+      :name="name"
+      :slider-id="sliderId"
+      :helper-text="helperText"
+      @scale-change="handleScaleChange"
+      @scale-input="handleScaleInput"
+      >
     </scale-slider>
-    `,
+  `,
   methods: {
-    scaleButtonDown: action('scaleButtonDown'),
-    scaleDragStart: action('scaleDragStart'),
-    scaleDragging: action('scaleDragging'),
-    scaleDragEnd: action('scaleDragEnd'),
-    scaleSetPosition: action('scaleSetPosition'),
-    scaleCurrentPosition: action('scaleCurrentPosition'),
-  },
-});
-
-export const TemplateCustomColor = (args, { argTypes }) => ({
-  components: { ScaleSlider },
-  props: {
-    ...ScaleSlider.props,
-  },
-  template: `
-    <scale-slider style="--background-bar: green"
-        :custom-color="customColor"
-        :disabled="disabled"
-        :name="name"
-        :label="label"
-        :max="max"
-        :min="min"
-        :show-value="showValue"
-        :track-small="trackSmall"
-        :thumb-large="thumbLarge"
-        :step="step"
-        :value="value"
-        @scaleButtonDown="scaleButtonDown"
-        @scaleDragStart="scaleDragStart"
-        @scaleDragging="scaleDragging"
-        @scaleDragEnd="scaleDragEnd"
-        @scaleSetPosition="scaleSetPosition"
-        @scaleCurrentPosition="scaleCurrentPosition"
-        >
-    </scale-slider>
-    `,
-  methods: {
-    scaleButtonDown: action('scaleButtonDown'),
-    scaleDragStart: action('scaleDragStart'),
-    scaleDragging: action('scaleDragging'),
-    scaleDragEnd: action('scaleDragEnd'),
-    scaleSetPosition: action('scaleSetPosition'),
-    scaleCurrentPosition: action('scaleCurrentPosition'),
+    handleScaleChange: action('scale-change'),
+    handleScaleInput: action('scale-input'),
   },
 });
 
@@ -111,7 +71,7 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
     name="Standard"
     args={{
       label: 'Standard',
-      value: 20,
+      value: 42,
     }}
   >
     {Template.bind({})}
@@ -124,94 +84,123 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
 
 ```css
 :host {
-  --border: 1px solid var(--telekom-color-ui-outlined-border-standard);
+  --width: 368px;
+  --height-track: 6px;
+  --background-track: var(--telekom-color-ui-faint);
+  --radius-track: var(--telekom-radius-pill);
+  --spacing-track: var(--telekom-spacing-unit-x5) 0
+    var(--telekom-spacing-unit-x4);
+  --spacing-x-inner-track: 10px;
   --background-bar: var(--telekom-color-primary-standard);
-  --border-color-thumb: var(--telekom-color-ui-outlined-border-standard);
-  --box-shadow-thumb: var(--telekom-shadow-resting-standard);
-  --border-color-thumb-hover: var(--telekom-color-ui-outlined-border-hovered);
-  --border-color-thumb-active: var(--telekom-color-ui-outlined-border-pressed);
-  --box-shadow-thumb-focus: 0 0 0 var(--telekom-line-weight-highlight) var(
-      --telekom-color-functional-focus
-    );
-  --color-display-value: var(--telekom-color-text-and-icon-additional);
-  --font-weight-display-value: var(--telekom-typography-font-weight-bold);
-  --font-size-display-value: var(--telekom-typography-font-size-small);
-  --background-track: var(--telekom-color-ui-additional-light);
-  --background-bar-disabled: var(--telekom-color-ui-solid-disabled);
-  --color-label-disabled: var(--telekom-color-text-and-icon-disabled);
+  --radius-thumb: var(--telekom-radius-circle);
+  --size-thumb: 24px;
+  --border-color-thumb: rgba(0, 0, 0, 0.05);
+  --background-thumb: var(--telekom-color-ui-white);
+  --color-focus: var(--telekom-color-functional-focus);
+  --spacing-x-step-marks: 8px;
+  --color-step-mark: var(--telekom-color-text-and-icon-additional);
+  --radius-step-mark: var(--telekom-radius-circle);
+  --size-step-mark: 4px;
+  --font-label: var(--telekom-text-style-ui);
+  --font-helper-text: var(--telekom-text-style-small-bold);
+  --color-helper-text: var(--telekom-color-text-and-icon-additional);
 }
 ```
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## Slider track small
+## Range
 
 <Canvas withSource="none">
   <Story
-    name="Slider track small"
+    name="Range"
     args={{
-      label: 'Slider track small',
-      value: 20,
-      trackSmall: true,
+      label: 'Temperature',
+      range: true,
+      valueFrom: 180,
+      valueTo: 330,
+      max: 500,
+      unit: 'ºC'
     }}
   >
     {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-slider label="Slider track small" value="20" track-small></scale-slider>
-```
-
-## Slider thumb large
-
-<Canvas withSource="none">
-  <Story
-    name="Slider thumb large"
-    args={{
-      label: 'Slider thumb large',
-      value: 20,
-      thumbLarge: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-slider label="Slider thumb large" value="20" thumb-large></scale-slider>
-```
-
-## Slider with custom color
-
-<Canvas withSource="none">
-  <Story
-    name="Slider with custom color"
-    args={{
-      label: 'Slider with custom color',
-      value: 20,
-    }}
-  >
-    {TemplateCustomColor.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-slider
-  label="Slider with custom color"
-  value="20"
-  style="--background-bar: green"
-></scale-slider>
+  label="Temperature"
+  range
+  valueFrom="100"
+  valueTo="300"
+  max="500"
+  unit="ºC">
+</scale-slider>
 ```
 
-## Disabled slider
+## Step Marks
 
 <Canvas withSource="none">
   <Story
-    name="Disabled Slider"
+    name="Step Marks"
     args={{
-      label: 'Disabled Slider',
-      value: 40,
+      label: 'Step Marks',
+      step: 25,
+      showStepMarks: true,
+      value: 50,
+      max: 200,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Step Marks"
+  step="25"
+  show-step-marks
+  value="50"
+  max="200">
+</scale-slider>
+```
+
+## Helper Text
+
+<Canvas withSource="none">
+  <Story
+    name="Helper Text"
+    args={{
+      label: 'Alpha',
+      value: 0.66,
+      step: 0.01,
+      decimals: 2,
+      max: 1,
+      helperText: 'Between 0 and 1',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-slider
+  label="Alpha"
+  value="0.66"
+  step="0.01"
+  max="1"
+  helper-text="Between 0 and 1">
+</scale-slider>
+```
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled"
+    args={{
+      label: 'Disabled',
+      value: 13,
       disabled: true,
     }}
   >
@@ -220,5 +209,49 @@ For Shadow Parts, please inspect the element's #shadow.
 </Canvas>
 
 ```html
-<scale-slider label="Disabled Slider" value="40" disabled></scale-slider>
+<scale-slider
+  label="Disabled"
+  value="13"
+  disabled>
+</scale-slider>
+```
+
+## Platform iOS
+
+<Canvas withSource="none">
+  <Story name="Platform iOS">
+    {{
+      template: `
+        <div data-platform="ios">
+          <scale-slider label="iOS" value="25"></scale-slider>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="ios">
+  <scale-slider label="Apple" value="25"></scale-slider>
+</div>
+```
+
+## Platform Android
+
+<Canvas withSource="none">
+  <Story name="Platform Android">
+    {{
+      template: `
+        <div data-platform="android">
+          <scale-slider label="Android" value="75"></scale-slider>
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+```html
+<div data-platform="android">
+  <scale-slider label="Android" value="75"></scale-slider>
+</div>
 ```

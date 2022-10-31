@@ -10,6 +10,11 @@ import ScaleProgressBar from './ScaleProgressBar.vue';
 <Meta
   title="Components/Progress Bar"
   component={ScaleProgressBar}
+  parameters={{
+    controls: {
+      sort: 'alpha'
+    }
+  }}
   argTypes={{}}
 />
 
@@ -24,15 +29,12 @@ export const Template = (args, { argTypes }) => ({
         :disabled="disabled"
         :label="label"
         :has-error="hasError"
-        :status-inside="statusInside"
         :status-description="statusDescription"
         :show-status="showStatus"
-        :stroke-width="strokeWidth"
+        :percentageStart="percentageStart"
         :percentage="percentage"
         :styles="styles"
       >
-        <scale-icon-action-success v-if="statusDescription === 'Upload complete'" slot="icon" decorative size="16"></scale-icon-action-success>
-        <scale-icon-action-circle-close v-if="statusDescription === 'Upload fail'" color="#d82a48" slot="icon" decorative size="16"></scale-icon-action-circle-close>
       </scale-progress-bar>
   `,
 });
@@ -44,14 +46,12 @@ export const TemplateInteractive = (args, { argTypes }) => ({
             label="Download progress example"
             :custom-color="$data[$data.state].customColor"
             :has-error="$data[$data.state].hasError"
-            :status-inside="$data[$data.state].statusInside"
             :status-description="$data[$data.state].statusDescription"
             :show-status="$data[$data.state].showStatus"
             :percentage="$data.percentage"
           >
-            <scale-icon-action-success v-if="$data[$data.state].statusDescription === 'Upload complete'" slot="icon" decorative size="16"></scale-icon-action-success>
-            <scale-icon-action-circle-close v-if="$data[$data.state].statusDescription === 'Upload fail'" color="#d82a48" slot="icon" decorative size="16"></scale-icon-action-circle-close>
           </scale-progress-bar>
+          <br/>
           <scale-button variant="secondary" size="small" @click="startSuccess">Start Success</scale-button>
           <scale-button variant="secondary" size="small" @click="startFailure">Start Failure</scale-button>
           <scale-button variant="secondary" size="small" @click="reset">Reset</scale-button>
@@ -67,17 +67,16 @@ export const TemplateInteractive = (args, { argTypes }) => ({
       this.start('failure');
     },
     start(outcome) {
-      const xxx = setInterval(() => {
-        if (this.$data.percentage === 100) {
+      const max = outcome === 'success' ? 100 : 42
+      this.interval = setInterval(() => {
+        if (this.$data.percentage === max) {
           clearInterval(this.interval);
           this.$data.state = outcome;
           this.interval = null;
           return;
         }
         this.$data.percentage += 1;
-      }, 100);
-      this.interval = xxx;
-      return xxx;
+      }, 40);
     },
     reset() {
       clearInterval(this.interval);
@@ -89,14 +88,11 @@ export const TemplateInteractive = (args, { argTypes }) => ({
   data: () => ({
     interval: null,
     success: {
-      showStatus: false,
       statusDescription: 'Upload complete',
-      customColor: '#67c23a',
     },
     failure: {
-      showStatus: false,
       hasError: true,
-      statusDescription: 'Upload fail',
+      statusDescription: 'Upload failed',
     },
     initial: {
       showStatus: true,
@@ -113,19 +109,15 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
     ...ScaleProgressBar.props,
   },
   template: `
-      <scale-progress-bar style="--background: #009DE0"
+      <scale-progress-bar style="--color-success: purple"
         :disabled="disabled"
         :label="label"
         :has-error="hasError"
-        :status-inside="statusInside"
         :status-description="statusDescription"
         :show-status="showStatus"
-        :stroke-width="strokeWidth"
         :percentage="percentage"
         :styles="styles"
       >
-        <scale-icon-action-success v-if="statusDescription === 'Upload complete'" slot="icon" decorative size="16"></scale-icon-action-success>
-        <scale-icon-action-circle-close v-if="statusDescription === 'Upload fail'" color="#d82a48" slot="icon" decorative size="16"></scale-icon-action-circle-close>
       </scale-progress-bar>
   `,
 });
@@ -146,71 +138,52 @@ export const TemplateCustomColor = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story
-    name="Determinate"
+    name="Standard"
     args={{
       percentage: 20,
-      label: 'Determinate',
+      label: 'Standard',
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="Determinate" />
+<ArgsTable story="Standard" />
 
 ### Scoped CSS variables
 
 ```css
 :host {
-  --color-error: var(--telekom-color-text-and-icon-functional-danger);
-  --color-disabled: var(--telekom-color-text-and-icon-disabled);
   --background: var(--telekom-color-primary-standard);
+  --background-color: var(--telekom-color-ui-faint);
+  --color-error: var(--telekom-color-text-and-icon-functional-danger);
+  --background-error: var(--telekom-color-functional-danger-subtle);
+  --color-success: var(--telekom-color-text-and-icon-functional-success);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+  --progress-bar-outer-size: var(--telekom-spacing-unit-x2);
+  --progress-bar-inner-size: var(--telekom-spacing-unit-x1);
+  --font-label: var(--telekom-text-style-ui);
   --color-inner-status: var(--telekom-color-primary-standard);
   --font-size-inner-status: var(--telekom-typography-font-size-small);
   --font-size-status: var(--telekom-typography-font-size-small);
   --font-weight-status: var(--telekom-typography-font-weight-extra-bold);
-  --color-status: var(--telekom-color-text-and-icon-additional);
   --color-status-description: var(--telekom-color-text-and-icon-additional);
   --font-size-status-description: var(--telekom-typography-font-size-small);
   --font-weight-status-description: var(--telekom-typography-font-weight-bold);
-  --spacing-label: var(--telekom-spacing-unit-x2) 0;
-  --border: 1px solid var(--telekom-color-ui-outlined-border-standard);
 }
 ```
 
 For Shadow Parts, please inspect the element's #shadow.
 
-## Progress custom
+## Description
 
 <Canvas withSource="none">
   <Story
-    name="Progress custom"
-    args={{
-      percentage: 20,
-      label: 'Progress custom',
-    }}
-  >
-    {TemplateCustomColor.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-progress-bar
-  percentage="20"
-  style="--background: #009DE0"
-  label="Progress custom"
-></scale-progress-bar>
-```
-
-## Progress with description
-
-<Canvas withSource="none">
-  <Story
-    name="Progress with description"
+    name="Description"
     args={{
       percentage: 40,
+      label: 'Description',
       statusDescription: 'Progress status description text',
-      label: 'Progress with description',
       showStatus: true,
     }}
   >
@@ -221,22 +194,22 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-progress-bar
   percentage="40"
-  stroke-width="40"
+  label="Description"
   status-description="Progress status description text"
   show-status="true"
 ></scale-progress-bar>
 ```
 
-## Complete default
+## Completed
 
 <Canvas withSource="none">
   <Story
-    name="Complete default"
+    name="Completed"
     args={{
       percentage: 100,
       showStatus: false,
       statusDescription: 'Upload complete',
-      label: 'Complete default',
+      label: 'Completed',
     }}
   >
     {Template.bind({})}
@@ -245,62 +218,25 @@ For Shadow Parts, please inspect the element's #shadow.
 
 ```html
 <scale-progress-bar
-  percentage="40"
-  show-status="false"
+  percentage="100"
+  label="Completed"
   status-description="Upload complete"
-  label="Complete default"
+  show-status="true"
 >
-  <scale-icon-action-success
-    slot="icon"
-    decorative
-    size="16"
-  ></scale-icon-action-success>
 </scale-progress-bar>
 ```
 
-## Complete custom color
+## Error
 
 <Canvas withSource="none">
   <Story
-    name="Complete custom color"
+    name="Error"
     args={{
-      percentage: 100,
-      showStatus: false,
-      statusDescription: 'Upload complete',
-      label: 'Complete custom color',
-    }}
-  >
-    {TemplateCustomColor.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-progress-bar
-  label="Complete custom color"
-  percentage="40"
-  show-status="false"
-  status-description="Upload complete"
-  style="--background: #009DE0"
->
-  <scale-icon-action-success
-    slot="icon"
-    decorative
-    size="16"
-  ></scale-icon-action-success>
-</scale-progress-bar>
-```
-
-## Complete error
-
-<Canvas withSource="none">
-  <Story
-    name="Complete error"
-    args={{
-      percentage: 0,
+      percentage: 40,
       hasError: true,
-      showStatus: false,
-      statusDescription: 'Upload fail',
-      label: 'Complete error',
+      showStatus: true,
+      statusDescription: 'Upload failed',
+      label: 'Error',
     }}
   >
     {Template.bind({})}
@@ -310,17 +246,11 @@ For Shadow Parts, please inspect the element's #shadow.
 ```html
 <scale-progress-bar
   percentage="40"
+  label="Error"
+  status-description="Upload failed"
+  show-status="true"
   has-error
-  show-status="false"
-  status-description="Upload fail"
-  label="Complete error"
 >
-  <scale-icon-action-circle-close
-    color="#d82a48"
-    slot="icon"
-    decorative
-    size="16"
-  ></scale-icon-action-circle-close>
 </scale-progress-bar>
 ```
 
@@ -331,9 +261,6 @@ For Shadow Parts, please inspect the element's #shadow.
     name="Interactive"
     args={{
       percentage: 0,
-      hasError: true,
-      showStatus: false,
-      statusDescription: 'Upload fail',
       label: 'Interactive',
     }}
   >

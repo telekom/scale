@@ -11,28 +11,23 @@
     "build:storybook:staging": "./scripts/build-storybook.sh",
     "build:components": "yarn workspace @telekom/scale-components build",
     "build:sketch": "./scripts/build-sketch.sh",
-    "serve:storybook:staging": "http-server ./packages/storybook-vue/storybook-static/ --port ${PORT:-8080} --username ${HTTP_USERNAME:-admin} --password ${HTTP_PASSWORD:-admin} --silent",
     "bootstrap": "lerna bootstrap",
     "postbootstrap": "lerna run generate",
     "new-version": "lerna version --conventional-commits --no-push",
     "force-version": "lerna version --conventional-commits --force-publish",
     "format": "lerna run format",
-    "publish-telekom": "lerna publish -y from-package --no-git-tag-version --no-push --force-publish @telekom/scale-components,@telekom/scale-components-react,@telekom/scale-components-angular,@telekom/scale-components-vue,@telekom/scale-design-tokens --dist-tag next",
+    "publish-telekom": "lerna publish -y from-package --no-verify-access --no-git-tag-version --no-push --force-publish @telekom/scale-components,@telekom/scale-components-react,@telekom/scale-components-angular,@telekom/scale-components-vue,@telekom/scale-design-tokens --dist-tag next",
     "prepare-neutral": "node scripts/prepare-neutral-release.js && git commit . -m 'chore: temp commit'",
-    "publish-neutral": "lerna publish -y from-package --no-git-tag-version --no-push --force-publish @telekom/scale-components-neutral,@telekom/scale-components-react-neutral,@telekom/scale-components-angular-neutral,@telekom/scale-components-vue-neutral,@telekom/scale-design-tokens-neutral --dist-tag next"
+    "publish-neutral": "lerna publish -y from-package --no-verify-access --no-git-tag-version --no-push --force-publish @telekom/scale-components-neutral,@telekom/scale-components-react-neutral,@telekom/scale-components-angular-neutral,@telekom/scale-components-vue-neutral,@telekom/scale-design-tokens-neutral --dist-tag next"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
-    "basic-auth": "^2.0.1",
-    "http-server": "^0.12.3",
     "husky": "^3.0.9",
     "lerna": "^3.20.2",
-    "prettier": "^2.2.1",
+    "prettier": "2.7.1",
     "replace-in-file": "^6.2.0",
-    "rimraf": "2.6.3",
-    "serve-handler": "^6.1.3",
-    "tsscmp": "^1.0.6"
+    "rimraf": "2.6.3"
   },
   "husky": {
     "hooks": {

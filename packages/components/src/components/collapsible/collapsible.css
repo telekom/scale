@@ -22,8 +22,9 @@
   --spacing-left-button-text: var(--telekom-spacing-unit-x2);
   --color-button-hover: var(--telekom-color-text-and-icon-primary-hovered);
   --color-button-active: var(--telekom-color-text-and-icon-primary-pressed);
-  --background-button-hover: var(--telekom-color-ui-ghost-hovered);
-  --border-color-button-focus: var(--telekom-color-functional-focus);
+  --background-button-hover: var(--telekom-color-ui-state-fill-hovered);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
 
   /* icon */
   --spacing-top-icon: calc(var(--telekom-spacing-unit-x1) + 1px);
@@ -98,8 +99,7 @@
 }
 
 .collapsible__button:focus {
-  outline: none;
-  border-color: var(--border-color-button-focus);
+  outline: var(--focus-outline);
 }
 
 .collapsible__icon {
