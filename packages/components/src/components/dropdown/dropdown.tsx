@@ -103,8 +103,8 @@ export class Dropdown {
   /** "forceUpdate" hack, set it to trigger and re-render */
   @State() forceUpdate: string;
 
-  private readonly internalId = i++;
   hasSlotIcon: boolean;
+  private readonly internalId = i++;
 
   componentWillLoad() {
     this.hasSlotIcon = !!this.hostElement.querySelector('[slot="icon"]');
