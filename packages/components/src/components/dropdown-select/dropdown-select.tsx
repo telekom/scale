@@ -29,6 +29,8 @@ enum Actions {
   Type = 'Type',
 }
 
+let i = 0;
+
 const readOptions = (
   hostElement: HTMLElement
 ): Array<{ label: string; value: any; ItemElement: VNode }> => {
@@ -206,6 +208,7 @@ export class DropdownSelect {
   private comboEl: HTMLElement;
   private listboxEl: HTMLElement;
   private listboxPadEl: HTMLElement;
+  private readonly internalId = i++;
 
   @Watch('value')
   valueChange(newValue) {
@@ -379,7 +382,7 @@ export class DropdownSelect {
       readOptions(this.hostElement).find(({ value }) => value === this.value) ||
       ({} as any)
     ).ItemElement;
-    const helperTextId = `helper-message`;
+    const helperTextId = `helper-message-${this.internalId}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (
