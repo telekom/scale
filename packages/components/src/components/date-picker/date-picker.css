@@ -36,6 +36,8 @@ duet-date-picker {
   --font-weight-table-header: var(--telekom-typography-font-weight-extra-bold);
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
+
+  --z-index-label: 10;
 }
 
 duet-date-picker .duet-date__input {
@@ -111,7 +113,6 @@ duet-date-picker .duet-date__toggle:active scale-icon-content-calendar {
 }
 
 .scale-date-picker {
-  --z-index-label: 10;
   position: relative;
 }
 
