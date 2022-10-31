@@ -54,7 +54,7 @@ export class LogoSvg {
       : this.color;
   }
 
-  getTitle = (title: String, linkAddition: String) => {
+  getTitle = (title: string, linkAddition: string) => {
     if (!this.hideTitle) {
       return this.accessibilityTitle ? (
         <title id={`logo-title-${i}`}>{this.accessibilityTitle}</title>
