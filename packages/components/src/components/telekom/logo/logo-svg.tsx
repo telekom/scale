@@ -9,7 +9,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, h, Prop, Host } from '@stencil/core';
+import { Component, h, Prop, Host, Element } from '@stencil/core';
+import statusNote from '../../../utils/status-note';
 
 let i = 0;
 
@@ -22,6 +23,7 @@ const colors = {
   tag: 'scale-logo-svg',
 })
 export class LogoSvg {
+  @Element() hostElement: HTMLElement;
   /** (optional) The languages for the Text behind the Logo */
   @Prop() language:
     | 'de'
@@ -37,15 +39,29 @@ export class LogoSvg {
     | string = 'en';
   /** (optional) Sets the icon color via the `fill` attribute */
   @Prop() color?: string = 'magenta';
-  /** (optional) When using the icon standalone, make it meaningful for accessibility */
-  @Prop() accessibilityTitle?: string;
   @Prop() role?: 'link' | 'img' = 'img';
   @Prop() focusable: boolean = true;
+  /** (optional) When using the icon standalone, make it meaningful for accessibility */
+  @Prop() accessibilityTitle?: string;
+  /** (optional) When using the icon standalone, make it meaningful for accessibility */
+  @Prop() logoTitle?: string;
   /** (optional) Hide all logo related titles */
-  @Prop() hideTitle: boolean = false;
+  @Prop() logoHideTitle?: boolean;
 
   componentWillLoad() {
     i++;
+  }
+
+  componentDidRender() {
+    if (this.accessibilityTitle !== '') {
+      statusNote({
+        tag: 'deprecated',
+        message:
+          'Property "accessibilityTitle" is deprecated. Please use the "logoTitle" property!',
+        type: 'warn',
+        source: this.hostElement,
+      });
+    }
   }
 
   getColor() {
@@ -55,9 +71,9 @@ export class LogoSvg {
   }
 
   getTitle = (title: string, linkAddition: string) => {
-    if (!this.hideTitle) {
-      return this.accessibilityTitle ? (
-        <title id={`logo-title-${i}`}>{this.accessibilityTitle}</title>
+    if (!this.logoHideTitle) {
+      return this.logoTitle ? (
+        <title id={`logo-title-${i}`}>{this.logoTitle}</title>
       ) : (
         <title id={`logo-title-${i}`}>{`${title} ${
           this.role === 'link' ? linkAddition : ''

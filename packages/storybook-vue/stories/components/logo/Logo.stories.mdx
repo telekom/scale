@@ -41,7 +41,8 @@ export const Template = (args, { argTypes }) => ({
             :language="language"
             :size="size"
             :href="href"
-            :accessibility-title="accessibilityTitle"
+            :logo-title="logoTitle"
+            :logo-hide-title="logoHideTitle"
             :styles="styles"
             @click-handler="clickHandler"
         >
@@ -117,8 +118,7 @@ export const Template = (args, { argTypes }) => ({
     args={{
       language: 'de',
       href: 'https://www.telekom.de/start',
-      accessibilityTitle:
-        'Telekom Logo – Erleben, was verbindet – Zur Startseite',
+      logoTitle: 'Telekom Logo – Erleben, was verbindet – Zur Startseite',
     }}
   >
     {Template.bind({})}
@@ -129,7 +129,7 @@ export const Template = (args, { argTypes }) => ({
 <scale-logo
   language="de"
   href="https://www.telekom.de/start"
-  accessibility-title="Telekom Logo – Erleben, was verbindet – Zur Startseite"
+  logo-title="Telekom Logo – Erleben, was verbindet – Zur Startseite"
 ></scale-logo>
 ```
 
