@@ -70,11 +70,12 @@ export class HelperText {
             'helper-text--success': this.variant === 'success',
             'helper-text--neutral': this.variant === 'neutral',
           }}
+          part="base"
         >
           {this.helperText ? (
-            <span>{this.helperText}</span>
+            <span part="text">{this.helperText}</span>
           ) : (
-            <span>
+            <span part="text">
               <slot></slot>
             </span>
           )}
