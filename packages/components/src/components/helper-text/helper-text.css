@@ -11,10 +11,14 @@
 
 .helper-text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row-reverse;
   justify-content: flex-end;
   font: var(--telekom-text-style-small-bold);
+}
+
+[part='text'] {
+  text-align: left;
 }
 
 scale-icon-alert-information,
@@ -24,6 +28,7 @@ scale-icon-alert-success {
   justify-content: center;
   align-items: center;
   margin-right: var(--telekom-spacing-unit-x1);
+  margin-top: 0.1666em; /* magic */
 }
 
 .helper-text--informational {

@@ -27,7 +27,9 @@
 | Part        | Description                                          |
 | ----------- | ---------------------------------------------------- |
 | `"anchor"`  | the native achor element wrapping all contents       |
+| `"base"`    |                                                      |
 | `"content"` | a wrapper around the default slot with the underline |
+| `"text"`    |                                                      |
 
 
 ## Dependencies

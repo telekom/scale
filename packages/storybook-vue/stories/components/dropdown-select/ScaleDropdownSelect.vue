@@ -2,6 +2,7 @@
   <scale-dropdown-select
     :label="label"
     :helper-text="helperText"
+    :variant="variant"
     :invalid="invalid"
     :disabled="disabled"
     :size="size"
@@ -27,6 +28,7 @@ export default {
     disabled: { type: Boolean },
     size: { type: String },
     value: { type: String },
+    variant: { type: String },
     comboboxId: { type: String },
   },
   methods: {
