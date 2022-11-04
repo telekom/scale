@@ -38,6 +38,21 @@ export const ICON =
         ],
       },
     },
+    inputModeType: {
+      control: {
+        type: 'select',
+        options: [
+          'none',
+          'text',
+          'decimal',
+          'numeric',
+          'tel',
+          'search',
+          'email',
+          'url',
+        ],
+      },
+    },
     size: {
       table: {
         type: { summary: 'string' },
@@ -59,6 +74,7 @@ export const Template = (args, { argTypes }) => ({
     <scale-text-field
       :name="name"
       :type="type"
+      :input-mode-type="inputModeType"
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"
@@ -101,6 +117,7 @@ export const StorySectionsTemplate = (args, { argTypes }) => ({
     <scale-text-field
       :name="name"
       :type="type"
+      :input-mode-type="inputModeType"
       :label="label"
       :helper-text="helperText"
       :invalid="invalid"

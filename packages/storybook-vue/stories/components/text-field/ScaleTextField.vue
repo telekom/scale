@@ -2,6 +2,7 @@
   <scale-text-field
     :name="name"
     :type="type"
+    :input-mode-type="inputModeType"
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
@@ -37,6 +38,7 @@ export default {
   props: {
     name: { type: String },
     type: { type: String },
+    inputModeType: { type: String },
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
