@@ -23,6 +23,7 @@ export class Shell {
   @Prop() claimLang?: string = 'de';
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
   @Prop() logoClick?: any;
   @Prop() logoAriaDescribedBy?: string;
   @Prop() mainNavigation?: any = [];
@@ -56,6 +57,7 @@ export class Shell {
               logoAriaDescribedBy={this.logoAriaDescribedBy}
               logoHref={this.logoHref}
               logoTitle={this.logoTitle}
+              logoHideTitle={this.logoHideTitle}
               portalName={this.portalName}
               mainNavigation={this.mainNavigation}
               iconNavigation={this.iconNavigation}

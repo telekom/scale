@@ -40,6 +40,11 @@ const setColorMode = () => {
         type: 'text',
       },
     },
+    logoHideTitle: {
+      control: {
+        type: 'boolean',
+      },
+    },
     logoHref: {
       control: {
         type: 'text',
@@ -155,6 +160,7 @@ const setColorMode = () => {
         <div class="brand-header-spacing">
           <scale-app-shell
             :logo-title="logoTitle"
+            :logo-hide-title="logoHideTitle"
             :logo-href="logoHref"
             :logo-click="logoClick"
             :portal-name="portalName"
@@ -696,13 +702,13 @@ You can find code examples where the Flyout Menu Beta component is implemented i
       ></scale-logo>
     </div>
     <div slot="logo-inverse">
-        <scale-logo
-            transparent
-            language=""
-            href="#custom"
-            logo-title="Custom"
-            styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
-        ></scale-logo>
+      <scale-logo
+        transparent
+        language=""
+        href="#custom"
+        logo-title="Custom"
+        styles=":host { --logo-size: 36px;} @media (max-width: 1023px) { :host {--logo-size: 26px;} }"
+      ></scale-logo>
     </div>
   </scale-app-header>
   <div style="height: 800px; padding: 48px 0;">

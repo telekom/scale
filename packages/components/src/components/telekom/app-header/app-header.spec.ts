@@ -54,8 +54,9 @@ describe('app-Header', () => {
       components: [Header],
       html: `
        <scale-app-header
-         logo-href="logoHref";
-         logo-title="logoTitle"
+         logo-href="logoHref"
+         logo-title="logoTitle" 
+         logo-hide-title="false"
          claim-lang="us"
          portal-name="portalName",
          active-route-id="activeRouteId"
@@ -66,6 +67,7 @@ describe('app-Header', () => {
     });
     expect(page.rootInstance.logoHref).toBe('logoHref');
     expect(page.rootInstance.logoTitle).toBe('logoTitle');
+    expect(page.rootInstance.logoHideTitle).toBe(false);
     expect(page.rootInstance.claimLang).toBe('us');
     expect(page.rootInstance.portalName).toBe('portalName');
     expect(page.rootInstance.activeRouteId).toBe('activeRouteId');
