@@ -189,6 +189,8 @@ export class DropdownSelect {
   @Prop() readonly?: boolean;
   @Prop() transparent?: boolean;
   @Prop() invalid?: boolean = false;
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   @Prop({ mutable: true, reflect: true }) value: any;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
@@ -222,6 +224,11 @@ export class DropdownSelect {
       ) || -1;
   }
 
+  componentWillRender() {
+    !this.value && (this.value = readOptions(this.hostElement)[0].value);
+    emitEvent(this, 'scaleChange', { value: this.value });
+  }
+
   componentDidRender() {
     if (!this.open) {
       return;
@@ -248,9 +255,8 @@ export class DropdownSelect {
   }
 
   bringIntoView(index) {
-    const options: NodeListOf<HTMLElement> = this.listboxEl.querySelectorAll(
-      '[role=option]'
-    );
+    const options: NodeListOf<HTMLElement> =
+      this.listboxEl.querySelectorAll('[role=option]');
 
     if (hasOverflow(this.listboxEl)) {
       keepInView(options[index], this.listboxEl);
@@ -465,17 +471,11 @@ export class DropdownSelect {
             </div>
           </div>
 
-          {!!this.helperText && (
-            <div
-              part="meta"
-              id={helperTextId}
-              aria-live="polite"
-              aria-relevant="additions removals"
-            >
-              {!!this.helperText && (
-                <div part="helper-text">{this.helperText}</div>
-              )}
-            </div>
+          {this.helperText && (
+            <scale-helper-text
+              helperText={this.helperText}
+              variant={this.invalid ? 'danger' : this.variant}
+            ></scale-helper-text>
           )}
         </div>
       </Host>
@@ -493,7 +493,8 @@ export class DropdownSelect {
       this.transparent && 'transparent',
       this.invalid && `invalid`,
       this.currentIndex > -1 && `steal-focus`,
-      animated && 'animated'
+      animated && 'animated',
+      this.helperText && 'has-helper-text'
     );
   }
 }
