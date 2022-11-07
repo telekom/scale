@@ -291,3 +291,9 @@
 [part~='option'] scale-dropdown-select-item::part(base) {
   padding: 12px;
 }
+
+@media screen and (forced-colors: active), (-ms-high-contrast: active) {
+  [part='listbox-pad'] {
+    border: var(--telekom-spacing-unit-x025) solid hsl(0, 0%, 100%);
+  }
+}
