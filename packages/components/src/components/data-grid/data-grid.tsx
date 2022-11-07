@@ -986,7 +986,7 @@ export class DataGrid {
                 class: `thead__cell`,
                 style: {
                   width: `calc(${width}px + ${stretchWidth}px)`,
-                  textAlign,
+                  'justify-content': textAlign,
                 },
                 'data-type': type,
               };

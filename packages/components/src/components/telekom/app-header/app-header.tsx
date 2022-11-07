@@ -47,6 +47,7 @@ export class Header {
   userMenuMobileToggle?: HTMLAnchorElement;
   @Prop() logoHref?: string;
   @Prop() logoTitle?: string;
+  @Prop() logoHideTitle?: boolean;
   @Prop() logoClick?: any;
   @Prop() logoAriaDescribedBy?: string;
   @Prop() claimLang: string;
@@ -444,6 +445,7 @@ export class Header {
                       language={this.claimLang}
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
+                      logoHideTitle={this.logoHideTitle}
                       onClick={this.logoClick}
                       variant="white"
                       scrollIntoViewOnFocus={true}
@@ -470,6 +472,7 @@ export class Header {
                       language=""
                       href={this.logoHref}
                       logoTitle={this.logoTitle}
+                      logoHideTitle={this.logoHideTitle}
                       onClick={this.logoClick}
                       focusable={this.scrolled || this.sticky}
                       size={24}

@@ -70,7 +70,7 @@
 }
 
 .footer-container {
-  background: var(--background-container);
+  background: var(--background);
 }
 
 .footer--variant-angular .footer {
@@ -88,7 +88,6 @@
   position: relative;
   z-index: 1;
   height: var(--radius);
-  top: var(--radius);
   background: var(--background-mask);
   border-radius: var(--radius-mask);
 }
