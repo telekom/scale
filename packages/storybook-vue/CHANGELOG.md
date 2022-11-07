@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
+
+
+### Bug Fixes
+
+* **helper-text:** improve styles, icon position ([#1351](https://github.com/telekom/scale/issues/1351)) ([ca8ad1c](https://github.com/telekom/scale/commit/ca8ad1cb780fff92fb3eb8f88a81a978bf73cb98))
+
+
+
+
+
 # [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
 
 
