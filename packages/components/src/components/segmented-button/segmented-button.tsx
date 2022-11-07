@@ -149,30 +149,24 @@ export class SegmentedButton {
   }
 
   handleIcon() {
-    Array.from(this.hostElement.children).forEach((child) => {
-      if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
-        const icon: HTMLElement = this.hostElement.querySelector(child.tagName);
-        child.setAttribute('size', '16');
+    Array.from(this.hostElement.childNodes).forEach((child) => {
+      if (child.nodeType == 1 && child.nodeName.substr(0, 10) === 'SCALE-ICON') {
+        const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
+        icon.setAttribute('size', '16');
         icon.style.display = 'inline-flex';
         icon.style.marginRight = '4px';
         this.hasIcon = true;
-        if (this.hostElement.children.length === 1) {
-          icon.style.marginRight = '0';
-        }
       }
-      if (child.tagName === 'LABEL' && this.hostElement.children.length === 1) {
+      if (child.nodeType == 3 && this.hostElement.childNodes.length == 1) {
         this.textOnly = true;
+        var span = document.createElement('span');
+        child.parentNode.insertBefore(span, child);
+        span.appendChild(child);
       }
-      if (child.tagName.substr(0, 10) === 'SCALE-ICON' && this.hostElement.children.length === 1) {
+      if (child.nodeType == 1 && child.nodeName.substr(0, 10) === 'SCALE-ICON' && this.hostElement.childNodes.length === 1) {
         this.iconOnly = true;
-      }      
-    });
-  }
-
-  setIconMargin() {
-    Array.from(this.hostElement.children).forEach((child) => {
-      if (child.tagName.substr(0, 10) === 'SCALE-ICON') {
-        child.setAttribute('size', '16');
+        const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
+        icon.style.marginRight = '0px';
       }
     });
   }

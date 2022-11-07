@@ -118,6 +118,7 @@ export class SegmentedButtonGroup {
     });
 
     this.propagatePropsToChildren();
+    this.position = 0;
     this.status = tempState;
     this.setState(tempState);
   }
@@ -144,11 +145,10 @@ export class SegmentedButtonGroup {
     let tempWidth = 0;
     Array.from(this.hostElement.children).forEach((child) => {
       const selected = child.hasAttribute('selected');
-
       if (selected) {
         tempWidth =
           child.getBoundingClientRect().width > tempWidth
-            ? child.getBoundingClientRect().width + CHECKMARK_WIDTH
+            ? child.getBoundingClientRect().width
             : tempWidth;
       } else {
         tempWidth =
