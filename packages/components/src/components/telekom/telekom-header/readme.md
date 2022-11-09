@@ -15,11 +15,11 @@
 
 ## Shadow Parts
 
-| Part           | Description |
-| -------------- | ----------- |
-| `"base"`       |             |
-| `"main-nav"`   |             |
-| `"portalname"` |             |
+| Part            | Description |
+| --------------- | ----------- |
+| `"base"`        |             |
+| `"main-nav"`    |             |
+| `"portal-name"` |             |
 
 
 ## Dependencies
