@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Telekom Header</title>
+
+    <script type="module" src="/build/scale-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/scale-components.css" />
+    <style type="text/css" media="screen, print">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <scale-telekom-header
+      main-navigation='[{"name":"Topic One","id":"Topic One","children":[{"name":"Second Level","id":"Second Level 3","children":[{"name":"Third Level","id":"Third Level 4","href":"#third-level"},{"name":"Third Level","id":"Third Level 5","href":"#third-level"},{"name":"Third Level","id":"Third Level 6","href":"#third-level"},{"name":"Third Level","id":"Third Level 7","href":"#third-level"},{"name":"Third Level","id":"Third Level 8","href":"#third-level"},{"name":"Third Level","id":"Third Level 9","href":"#third-level"},{"name":"Third Level","id":"Third Level 10","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 4","children":[{"name":"Third Level","id":"Third Level 11","href":"#third-level"},{"name":"Third Level","id":"Third Level 12","href":"#third-level"},{"name":"Third Level","id":"Third Level 13","href":"#third-level"},{"name":"Third Level","id":"Third Level 14","href":"#third-level"},{"name":"Third Level","id":"Third Level 15","href":"#third-level"},{"name":"Third Level","id":"Third Level 16","href":"#third-level"},{"name":"Third Level","id":"Third Level 17","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 5","children":[{"name":"Third Level","id":"Third Level 18","href":"#third-level"},{"name":"Third Level","id":"Third Level 19","href":"#third-level"},{"name":"Third Level","id":"Third Level 20","href":"#third-level"},{"name":"Third Level","id":"Third Level 21","href":"#third-level"},{"name":"Third Level","id":"Third Level 22","href":"#third-level"},{"name":"Third Level","id":"Third Level 23","href":"#third-level"},{"name":"Third Level","id":"Third Level 24","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 6","children":[{"name":"Third Level","id":"Third Level 25","href":"#third-level"},{"name":"Third Level","id":"Third Level 26","href":"#third-level"},{"name":"Third Level","id":"Third Level 27","href":"#third-level"},{"name":"Third Level","id":"Third Level 28","href":"#third-level"},{"name":"Third Level","id":"Third Level 29","href":"#third-level"},{"name":"Third Level","id":"Third Level 30","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 7"}]},{"name":"Topic Two","id":"Topic Two","children":[{"name":"Second Level","id":"Second Level 1","children":[{"name":"Third Level","id":"Third Level 1","href":"#third-level"},{"name":"Third Level","id":"Third Level 2","href":"#third-level"}]},{"name":"Second Level","id":"Second Level 2","children":[{"name":"Third Level","id":"Third Level 3","href":"#third-level"}]}]},{"name":"Topic Three","id":"Topic Three","href":"#topic-three"},{"name":"Topic Four","id":"Topic Four","href":"#topic-four"},{"name":"Topic Five","id":"Topic Five","href":"#topic-five"}]'
+    >
+      <!-- slots always win over config object-->
+      <ul slot="main-nav">
+        <scale-telekom-main-nav-item label="Topic 1" href="#topic1">
+          <ul slot="mega-menu">
+            <li role="none">
+              <a role="menuitem" aria-current="false" href="#xxx-sub-1">
+                xxx sub 1<span class="sr-only">active</span>
+              </a>
+            </li>
+          </ul>
+        </scale-telekom-main-nav-item>
+        <scale-telekom-main-nav-item label="Topic 2" href="#topic2">
+          <ul slot="mega-menu">
+            <li role="none">
+              <a role="menuitem" aria-current="false" href="#xxx-sub-1">
+                xxx sub 1<span class="sr-only">active</span>
+              </a>
+            </li>
+          </ul>
+        </scale-telekom-main-nav-item>
+      </ul>
+    </scale-telekom-header>
+  </body>
+</html>

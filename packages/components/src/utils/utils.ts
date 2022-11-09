@@ -102,3 +102,15 @@ export const isScaleIcon = (el: Node) => {
   }
   return el.nodeName.toUpperCase().substring(0, 10) === 'SCALE-ICON';
 };
+
+export function readMaybeJSONData(data) {
+  let parsedData;
+
+  try {
+    parsedData = JSON.parse(data);
+  } catch (error) {
+    parsedData = data;
+  }
+
+  return parsedData;
+}
