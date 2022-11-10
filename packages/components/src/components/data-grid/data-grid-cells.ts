@@ -15,6 +15,7 @@ import { EmailCell } from './cell-handlers/email-cell';
 import { GraphCell } from './cell-handlers/graph-cell';
 import { LinkCell } from './cell-handlers/link-cell';
 import { HTMLCell } from './cell-handlers/html-cell';
+import { HTMLNoDropdownCell } from './cell-handlers/html-no-dropdown-cell';
 import { NumberCell } from './cell-handlers/number-cell';
 import { SelectCell } from './cell-handlers/select-cell';
 import { TagsCell } from './cell-handlers/tags-cell';
@@ -28,6 +29,7 @@ export const CELL_TYPES = {
   email: EmailCell,
   graph: GraphCell,
   html: HTMLCell,
+  html_nodropdown: HTMLNoDropdownCell,
   link: LinkCell,
   number: NumberCell,
   select: SelectCell,
