@@ -1,0 +1,102 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  --background: var(--telekom-color-ui-faint);
+  --color: var(--telekom-color-text-and-icon-standard);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: 24px;
+  --font-weight: var(--telekom-typography-font-weight-bold);
+}
+
+.chip {
+  display: inline-flex;
+  outline: none;
+  padding: 0 10px 0 5.5px;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 20px;
+  vertical-align: baseline;
+  justify-content: center;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  background: var(--background);
+  color: var(--color);
+  cursor: default;
+}
+
+.chip--dismissable {
+  background-color: transparent;
+  padding: 0;
+}
+
+.chip svg {
+  color: var(--color);
+  /*TODO: -clarify magic number*/
+  padding: 4.5px;
+}
+
+.chip.chip--dismissable svg {
+  color: var(--telekom-color-text-and-icon-black-additional);
+  /*TODO: -clarify magic number*/
+  padding: 4.5px;
+}
+
+.chip button {
+  height: 24px;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.chip.chip--dismissable button {
+  border-radius: 20px;
+}
+
+/** hover */
+.chip.chip--dismissable svg:hover {
+  color: var(--telekom-color-text-and-icon-black-standard);
+  background-color: var(--telekom-color-ui-state-fill-hovered);
+}
+/** active */
+.chip.chip--dismissable svg:active {
+  background-color: var(--telekom-color-ui-state-fill-pressed);
+}
+
+/** color-black */
+
+.chip.chip--color-magenta {
+  background: var(--telekom-color-background-canvas);
+  color: var(--telekom-color-text-and-icon-primary-standard);
+  border: 1px var(--telekom-color-text-and-icon-primary-standard) solid;
+}
+
+.chip:not(.chip--dismissable).chip--color-black svg {
+  color: var(--telekom-color-text-and-icon-inverted-standard);
+}
+
+/** color-magenta */
+
+.chip.chip--color-black {
+  background: var(--telekom-color-ui-extra-strong);
+  color: var(--telekom-color-text-and-icon-inverted-standard);
+}
+
+.chip:not(.chip--dismissable).chip--color-magenta svg {
+  color: var(--telekom-color-text-and-icon-primary-standard);
+}
