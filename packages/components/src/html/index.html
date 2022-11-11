@@ -24,29 +24,13 @@
   </head>
 
   <body>
-    <scale-data-grid id="html-example" hide-menu></scale-data-grid>
-    <script type="application/javascript">
-    {
-        const dataGrid = document.querySelector('#html-example');
-        dataGrid.fields = [
-            {
-                type: 'html_nodropdown',
-                label: 'HTML_nodropdown',
-            },
-            // {
-            //     type: 'html',
-            //     label: 'HTML',
-            // },
-        ];
-        const el = document.createElement('h1')
-        el.textContent = 'goobar'
-        dataGrid.rows = [
-            [el],
-            [document.createElement('scale-icon-service-settings')],
-            [document.createElement('scale-icon-service-services')],
-            [document.createElement('scale-icon-service-devices-service')],
-        ];
-    }
-    </script>
+    <h1 class="scl-font-variant-body">index.html</h1>
+
+    <scale-switch label="hello"></scale-switch>
+    <scale-switch size="large" label="hello"></scale-switch>
+    <div data-platform="android">
+      <scale-switch label="hello"></scale-switch>
+      <scale-switch size="large" label="hello"></scale-switch>
+    </div>
   </body>
 </html>
