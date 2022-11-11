@@ -20,8 +20,17 @@ export const HTMLCell: Cell = {
     // Skip check as content width is always the same
     return rows[0][columnIndex];
   },
-  render: ({ content, component }) => {
+  render: ({ field, content, component }) => {
     return (
+      field.options == 'no_dropdown' ? 
+        <div
+          ref={(el) => {
+            if (el) {
+              el.appendChild(content);
+            }
+          }}
+        ></div>
+      : 
       <scale-button
         variant="secondary"
         size="small"

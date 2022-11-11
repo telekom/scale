@@ -1117,7 +1117,7 @@ export class DataGrid {
                     return;
                   }
                   // Add rows nested tables to array
-                  if (field.type === 'html') {
+                  if (field.type === 'html' && field.options !== 'no_dropdown') {
                     if (!!cellContent.isExpanded) {
                       isNestedExpanded = true;
                     }
