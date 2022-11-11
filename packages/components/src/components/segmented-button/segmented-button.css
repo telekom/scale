@@ -128,8 +128,16 @@
 
 .segmented-button:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
-  border: 2px solid var(--box-shadow-focus);
+  outline: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-focus );
+  outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;
+  position: relative;
+}
+
+.segmented-button--left-right-sibling-selected:focus,
+.segmented-button--right-sibling-selected:focus,
+.segmented-button--left-sibling-selected:focus {
+  clip-path: none;
 }
 
 .segmented-button:not(.segmented-button--icon-only) scale-icon-action-success,

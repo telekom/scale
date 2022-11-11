@@ -96,31 +96,33 @@ export class SegmentedButtonGroup {
   }
 
   componentDidLoad() {
-    const tempState: ButtonStatus[] = [];
-    const segmentedButtons = this.getAllSegmentedButtons();
-    this.slottedButtons = segmentedButtons.length;
-    const longestButtonWidth = this.getLongestButtonWidth();
-    segmentedButtons.forEach((SegmentedButton) => {
-      this.position++;
-      tempState.push({
-        id: SegmentedButton.getAttribute('segmented-button-id'),
-        selected: SegmentedButton.hasAttribute('selected'),
+    setTimeout( () => {
+      const tempState: ButtonStatus[] = [];
+      const segmentedButtons = this.getAllSegmentedButtons();
+      this.slottedButtons = segmentedButtons.length;
+      const longestButtonWidth = this.getLongestButtonWidth();
+      segmentedButtons.forEach((SegmentedButton) => {
+        this.position++;
+        tempState.push({
+          id: SegmentedButton.getAttribute('segmented-button-id'),
+          selected: SegmentedButton.hasAttribute('selected'),
+        });
+        SegmentedButton.setAttribute('position', this.position.toString());
+        SegmentedButton.setAttribute(
+          'aria-description-translation',
+          '$position $selected'
+        );
+        SegmentedButton.setAttribute(
+          'width',
+          `${Math.ceil(longestButtonWidth)}px`
+        );
       });
-      SegmentedButton.setAttribute('position', this.position.toString());
-      SegmentedButton.setAttribute(
-        'aria-description-translation',
-        '$position $selected'
-      );
-      SegmentedButton.setAttribute(
-        'width',
-        `${Math.ceil(longestButtonWidth)}px`
-      );
-    });
-
-    this.propagatePropsToChildren();
-    this.position = 0;
-    this.status = tempState;
-    this.setState(tempState);
+  
+      this.propagatePropsToChildren();
+      this.position = 0;
+      this.status = tempState;
+      this.setState(tempState);
+    })
   }
 
   getAdjacentSiblings = (tempState, i) => {
