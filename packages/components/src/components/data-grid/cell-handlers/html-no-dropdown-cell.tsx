@@ -12,17 +12,12 @@
 import { h } from '@stencil/core';
 import { Cell } from './cell-interface';
 
-// Expected content: HTMLElement
-
 export const HTMLNoDropdownCell: Cell = {
   defaults: {},
   getLongestContent({ rows, columnIndex }) {
-    // Skip check as content width is always the same
     return rows[0][columnIndex];
   },
-  //@ts-ignore
-  render: ({ content, component, nodropdown }) => {
-    console.log('foobar!', content.innerHTML, component, nodropdown)
+  render: ({ content }) => {
     return <div
     ref={(el) => {
       if (el) {
