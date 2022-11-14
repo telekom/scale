@@ -10,138 +10,187 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-faint);
-  --color: var(--telekom-color-text-and-icon-standard);
-  --font-size: var(--telekom-typography-font-size-caption);
-  --line-height: 24px;
+  --background: var(--telekom-color-ui-extra-strong);
+  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --font-size: var(--telekom-typography-font-size-body);
+  --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
+  --focus-outline: var(--telekom-line-weight-highlight) solid
+    var(--telekom-color-functional-focus);
 
-  --color-svg-hover: var(--telekom-color-text-and-icon-black-standard);
-  --background-svg-hover: var(--telekom-color-ui-state-fill-hovered);
-  --background-svg-active: var(--telekom-color-ui-state-fill-pressed);
+  --icon-color: var(--color);
+  --icon-color-hover: var(--color);
 
-  /** color: magenta */
-  --background-magenta: var(--telekom-color-background-canvas);
-  --color-magenta: var(--telekom-color-text-and-icon-primary-standard);
-  --border-magenta: 1px var(--telekom-color-text-and-icon-primary-standard)
-    solid;
-
-  --color-magenta-svg: var(--telekom-color-text-and-icon-primary-standard);
-
-  /** color: black */
-  --background-black: var(--telekom-color-ui-extra-strong);
-  --color-black: var(--telekom-color-text-and-icon-inverted-standard);
-
-  --color-black-svg: var(--telekom-color-text-and-icon-inverted-standard);
-
-  /** disabled */
-  --background-disabled: var(--telekom-color-ui-faint);
+  --background-disabled: var(--telekom-color-ui-disabled);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
-
-  --color-disabled-svg: var(--telekom-color-text-and-icon-disabled);
 }
 
 .chip {
+  border: 1px solid transparent;
   display: inline-flex;
   outline: none;
-  padding: 0 10px 0 5.5px;
+  padding: 0 8px;
   text-align: center;
   transition: all 0.15s ease-in-out;
   align-items: center;
   white-space: nowrap;
   border-radius: 20px;
+  height: 32px;
   vertical-align: baseline;
   justify-content: center;
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  font-weight: var(--font-weight);
   background: var(--background);
   color: var(--color);
   cursor: default;
 }
 
-.chip svg {
-  color: var(--color);
-  padding: 4.5px;
+/**
+link
+**/
+
+.chip--link {
+  text-decoration: none;
+}
+.chip--link:focus {
+  border: 1px solid white;
+  outline: var(--focus-outline);
+}
+.chip--link {
+  background: var(--background-secondary);
+}
+.chip--link:hover {
+  background: var(--background-secondary);
 }
 
-.chip button {
-  height: 24px;
-  width: 24px;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  margin-right: 1.5px;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-/** 
-    dismissable 
-*/
-
-.chip--dismissable {
-  background-color: transparent;
-  padding: 0;
-}
-
-.chip.chip--dismissable svg {
-  color: var(--telekom-color-text-and-icon-black-additional);
-  padding: 4.5px;
-}
-
-.chip.chip--dismissable button {
-  border-radius: 20px;
-}
-
-/** hover */
-.chip.chip--dismissable svg:hover {
-  color: var(--color-svg-hover);
-  background: var(--background-svg-hover);
-}
-/** active */
-.chip.chip--dismissable svg:active {
-  background: var(--background-svg-active);
-}
-
-/** 
-    color-black 
-*/
-
-.chip.chip--color-black {
-  background: var(--background-black);
-  color: var(--color-black);
-}
-
-.chip:not(.chip--dismissable).chip--color-black svg {
-  color: var(--color-black-svg);
-}
-
-/** 
-    color-magenta 
-*/
-
-.chip.chip--color-magenta {
-  background: var(--background-magenta);
-  color: var(--color-magenta);
-  border: var(--border-magenta);
-}
-
-.chip:not(.chip--dismissable).chip--color-magenta svg {
-  color: var(--color-magenta-svg);
+.chip--link:focus {
+  border: 1px solid white;
 }
 
 /**
-    disabled
-*/
+label
+**/
 
-.chip.chip--disabled {
-  background: var(--background-disabled);
-  color: var(--color-disabled);
-  border: var(--border-disabled);
+.chip-label {
+  padding: 0 12px 0 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
 }
 
-.chip:not(.chip--dismissable).chip--disabled svg {
-  color: var(--color-disabled-svg);
+/*icon slot front*/
+.chip slot[name='left-icon']::slotted(*) {
+  height: 16px;
+  width: 16px;
+  padding-left: 4px;
+}
+
+/*icon slot end*/
+.chip slot[name='right-icon']::slotted(*) {
+  height: 16px;
+  width: 16px;
+  padding-right: 4px;
+}
+
+/**
+standard type
+**/
+
+/*standard*/
+.chip--type-standard.chip--color-grey {
+  background-color: var(--telekom-color-ui-faint);
+  color: var(--telekom-color-text-and-icon-standard);
+}
+/*cyan*/
+.chip--type-standard.chip--color-cyan {
+  background-color: var(--telekom-color-additional-cyan-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-cyan);
+}
+/*yellow*/
+.chip--type-standard.chip--color-yellow {
+  background-color: var(--telekom-color-additional-yellow-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-yellow);
+}
+/*green*/
+.chip--type-standard.chip--color-green {
+  background-color: var(--telekom-color-functional-success-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-success);
+}
+/*orange*/
+.chip--type-standard.chip--color-orange {
+  background-color: var(--telekom-color-functional-warning-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-warning);
+}
+/*red*/
+.chip--type-standard.chip--color-red {
+  background-color: var(--telekom-color-functional-danger-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-danger);
+}
+/*violet*/
+.chip--type-standard.chip--color-violet {
+  background-color: var(--telekom-color-additional-violet-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-violet);
+}
+/*brown*/
+.chip--type-standard.chip--color-brown {
+  background-color: var(--telekom-color-additional-brown-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-brown);
+}
+/*olive*/
+.chip--type-standard.chip--color-olive {
+  background-color: var(--telekom-color-additional-olive-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-olive);
+}
+/*teal*/
+.chip--type-standard.chip--color-teal {
+  background-color: var(--telekom-color-additional-teal-subtle);
+  color: var(--telekom-color-text-and-icon-on-subtle-teal);
+}
+
+/*
+*
+strong type
+*
+*/
+.chip--type-strong {
+  color: var(--telekom-color-text-and-icon-standard);
+}
+/*standard*/
+.chip--type-strong.chip--color-grey {
+  background-color: var(--telekom-color-ui-extra-strong);
+  color: var(--telekom-color-text-and-icon-inverted-standard);
+}
+/*cyan*/
+.chip--type-strong.chip--color-cyan {
+  background-color: var(--telekom-color-additional-cyan-400);
+}
+/*yellow*/
+.chip--type-strong.chip--color-yellow {
+  background-color: var(--telekom-color-additional-yellow-400);
+}
+/*green*/
+.chip--type-strong.chip--color-green {
+  background-color: var(--telekom-color-functional-success-standard);
+}
+/*orange*/
+.chip--type-strong.chip--color-orange {
+  background-color: var(--telekom-color-functional-warning-standard);
+}
+/*red*/
+.chip--type-strong.chip--color-red {
+  background-color: var(--telekom-color-functional-danger-standard);
+}
+/*violet*/
+.chip--type-strong.chip--color-violet {
+  background-color: var(--telekom-color-additional-violet-300);
+}
+/*brown*/
+.chip--type-strong.chip--color-brown {
+  background-color: var(--telekom-color-additional-brown-400);
+}
+/*olive*/
+.chip--type-strong.chip--color-olive {
+  background-color: var(--telekom-color-additional-olive-400);
+}
+/*teal*/
+.chip--type-strong.chip--color-teal {
+  background-color: var(--telekom-color-additional-teal-400);
 }

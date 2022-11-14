@@ -18,18 +18,32 @@ import { emitEvent } from '../../utils/utils';
   shadow: true,
 })
 export class Chip {
-  /** (optional) Chip href */
+  /** (optional) chip type */
+  @Prop() type?: 'standard' | 'strong' | 'inversed' | 'colored' = 'standard';
+  /** (optional) chip color */
+  @Prop() color?:
+    | 'cyan'
+    | 'yellow'
+    | 'green'
+    | 'orange'
+    | 'red'
+    | 'violet'
+    | 'brown'
+    | 'olive'
+    | 'teal'
+    | 'black'
+    | 'grey';
+  /** (optional) chip href */
   @Prop() href?: string = '';
-  /** (optional) Chip target */
+  @Prop() label?: string;
+  /** (optional) chip target */
   @Prop() target?: string = '_self';
-  /** (optional) Chip dismissable */
+  /** (optional) chip dismissable */
   @Prop() dismissable?: boolean = false;
-  /** (optional) Chip icon only */
-  @Prop() iconOnly?: boolean = false;
-  /** (optional) Chip color */
-  @Prop() color?: 'black' | 'magenta' | 'default' = 'default';
-  /** (optional) Chip disabled */
+  /** (optional) chip disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) Dismiss label */
+  @Prop() dismissText?: string = 'dismiss';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -51,6 +65,13 @@ export class Chip {
     emitEvent(this, 'scaleClose', event);
   };
 
+  handleClick = (event: MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('hey');
+    emitEvent(this, 'scaleClose', event);
+  };
+
   render() {
     const Element = !!this.href && !this.disabled ? 'a' : 'span';
     const linkProps = !!this.href
@@ -68,24 +89,11 @@ export class Chip {
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           {...linkProps}
+          onClick={this.handleClick}
         >
-          {this.dismissable && (
-            <button>
-              <scale-icon-action-circle-close
-                accessibility-title="circle-close"
-                size={15}
-              />
-            </button>
-          )}
-          {!this.dismissable && (
-            <button>
-              <scale-icon-device-mobile-services
-                accessibility-title="mobile-services"
-                size={15}
-              />
-            </button>
-          )}
-          {!this.dismissable && <slot />}
+          <slot name="left-icon" />
+          <p class="chip-label">{this.label}</p>
+          <slot name="right-icon" />
         </Element>
       </Host>
     );
@@ -105,6 +113,7 @@ export class Chip {
 
     return classNames(
       mode === 'basePart' ? 'base' : component,
+      this.type && `${prefix}type-${this.type}`,
       this.color && `${prefix}color-${this.color}`,
       !!this.href && `${prefix}link`,
       !!this.dismissable && `${prefix}dismissable`,
