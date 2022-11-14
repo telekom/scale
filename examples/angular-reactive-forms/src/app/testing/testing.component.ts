@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-testing',
@@ -13,14 +13,14 @@ export class TestingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  testingForm = new FormGroup({
-    username: new FormControl('me'),
-    message: new FormControl(''),
-    consent: new FormControl(false),
-    superpowers: new FormControl(true),
-    points: new FormControl(10),
-    power: new FormControl(42),
-    size: new FormControl('large')
+  testingForm = new UntypedFormGroup({
+    username: new UntypedFormControl('me'),
+    message: new UntypedFormControl(''),
+    consent: new UntypedFormControl(false),
+    superpowers: new UntypedFormControl(true),
+    points: new UntypedFormControl(10),
+    power: new UntypedFormControl(42),
+    size: new UntypedFormControl('large')
   });
 
   onSubmit() {
