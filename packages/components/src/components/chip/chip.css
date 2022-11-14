@@ -12,9 +12,33 @@
 :host {
   --background: var(--telekom-color-ui-faint);
   --color: var(--telekom-color-text-and-icon-standard);
-  --font-size: var(--telekom-typography-font-size-body);
+  --font-size: var(--telekom-typography-font-size-caption);
   --line-height: 24px;
   --font-weight: var(--telekom-typography-font-weight-bold);
+
+  --color-svg-hover: var(--telekom-color-text-and-icon-black-standard);
+  --background-svg-hover: var(--telekom-color-ui-state-fill-hovered);
+  --background-svg-active: var(--telekom-color-ui-state-fill-pressed);
+
+  /** color: magenta */
+  --background-magenta: var(--telekom-color-background-canvas);
+  --color-magenta: var(--telekom-color-text-and-icon-primary-standard);
+  --border-magenta: 1px var(--telekom-color-text-and-icon-primary-standard)
+    solid;
+
+  --color-magenta-svg: var(--telekom-color-text-and-icon-primary-standard);
+
+  /** color: black */
+  --background-black: var(--telekom-color-ui-extra-strong);
+  --color-black: var(--telekom-color-text-and-icon-inverted-standard);
+
+  --color-black-svg: var(--telekom-color-text-and-icon-inverted-standard);
+
+  /** disabled */
+  --background-disabled: var(--telekom-color-ui-faint);
+  --color-disabled: var(--telekom-color-text-and-icon-disabled);
+
+  --color-disabled-svg: var(--telekom-color-text-and-icon-disabled);
 }
 
 .chip {
@@ -36,20 +60,8 @@
   cursor: default;
 }
 
-.chip--dismissable {
-  background-color: transparent;
-  padding: 0;
-}
-
 .chip svg {
   color: var(--color);
-  /*TODO: -clarify magic number*/
-  padding: 4.5px;
-}
-
-.chip.chip--dismissable svg {
-  color: var(--telekom-color-text-and-icon-black-additional);
-  /*TODO: -clarify magic number*/
   padding: 4.5px;
 }
 
@@ -59,9 +71,24 @@
   align-items: center;
   justify-content: center;
   margin: 0;
+  margin-right: 1.5px;
   padding: 0;
   border: 0;
   background-color: transparent;
+}
+
+/** 
+    dismissable 
+*/
+
+.chip--dismissable {
+  background-color: transparent;
+  padding: 0;
+}
+
+.chip.chip--dismissable svg {
+  color: var(--telekom-color-text-and-icon-black-additional);
+  padding: 4.5px;
 }
 
 .chip.chip--dismissable button {
@@ -70,33 +97,51 @@
 
 /** hover */
 .chip.chip--dismissable svg:hover {
-  color: var(--telekom-color-text-and-icon-black-standard);
-  background-color: var(--telekom-color-ui-state-fill-hovered);
+  color: var(--color-svg-hover);
+  background: var(--background-svg-hover);
 }
 /** active */
 .chip.chip--dismissable svg:active {
-  background-color: var(--telekom-color-ui-state-fill-pressed);
+  background: var(--background-svg-active);
 }
 
-/** color-black */
+/** 
+    color-black 
+*/
 
-.chip.chip--color-magenta {
-  background: var(--telekom-color-background-canvas);
-  color: var(--telekom-color-text-and-icon-primary-standard);
-  border: 1px var(--telekom-color-text-and-icon-primary-standard) solid;
+.chip.chip--color-black {
+  background: var(--background-black);
+  color: var(--color-black);
 }
 
 .chip:not(.chip--dismissable).chip--color-black svg {
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+  color: var(--color-black-svg);
 }
 
-/** color-magenta */
+/** 
+    color-magenta 
+*/
 
-.chip.chip--color-black {
-  background: var(--telekom-color-ui-extra-strong);
-  color: var(--telekom-color-text-and-icon-inverted-standard);
+.chip.chip--color-magenta {
+  background: var(--background-magenta);
+  color: var(--color-magenta);
+  border: var(--border-magenta);
 }
 
 .chip:not(.chip--dismissable).chip--color-magenta svg {
-  color: var(--telekom-color-text-and-icon-primary-standard);
+  color: var(--color-magenta-svg);
+}
+
+/**
+    disabled
+*/
+
+.chip.chip--disabled {
+  background: var(--background-disabled);
+  color: var(--color-disabled);
+  border: var(--border-disabled);
+}
+
+.chip:not(.chip--dismissable).chip--disabled svg {
+  color: var(--color-disabled-svg);
 }

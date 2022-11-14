@@ -69,9 +69,22 @@ export class Chip {
           class={this.getCssClassMap()}
           {...linkProps}
         >
-          <button>
-            <scale-icon-action-circle-close size={15} />
-          </button>
+          {this.dismissable && (
+            <button>
+              <scale-icon-action-circle-close
+                accessibility-title="circle-close"
+                size={15}
+              />
+            </button>
+          )}
+          {!this.dismissable && (
+            <button>
+              <scale-icon-device-mobile-services
+                accessibility-title="mobile-services"
+                size={15}
+              />
+            </button>
+          )}
           {!this.dismissable && <slot />}
         </Element>
       </Host>
