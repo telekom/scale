@@ -34,7 +34,7 @@
   --xl-height: var(--telekom-spacing-unit-x9);
 
   /* hover styles */
-  --background-color-hover: var(--telekom-color-ui-subtle);
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
 
   /* active styles */
   --background-color-active: var(--telekom-color-ui-state-fill-pressed);
@@ -80,7 +80,7 @@
 
 .segmented-button--selected {
   background-color: var(--background-color-selected);
-  box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.1);
+  box-shadow: var(--temp-shadow);
   color: var(--color-selected);
 }
 
@@ -127,7 +127,7 @@
 }
 
 .segmented-button:focus {
-  box-shadow: var(--telekom-shadow-raised-standard);
+  box-shadow: var(--temp-shadow);
   outline: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-focus );
   outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;
