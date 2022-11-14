@@ -20,6 +20,8 @@ import { emitEvent } from '../../utils/utils';
 export class Chip {
   /** (optional) chip type */
   @Prop() type?: 'standard' | 'strong' | 'inversed' | 'colored' = 'standard';
+  /** (optional) */
+  @Prop() selected?: boolean = false;
   /** (optional) chip color */
   @Prop() color?:
     | 'cyan'
@@ -35,25 +37,33 @@ export class Chip {
     | 'grey';
   /** (optional) chip href */
   @Prop() href?: string = '';
+  /** (optional) chip dismissible */
+  @Prop() dismissible?: boolean = false;
+  /** (optional) chip label */
   @Prop() label?: string;
   /** (optional) chip target */
   @Prop() target?: string = '_self';
-  /** (optional) chip dismissable */
-  @Prop() dismissable?: boolean = false;
   /** (optional) chip disabled */
   @Prop() disabled?: boolean = false;
-  /** (optional) Dismiss label */
-  @Prop() dismissText?: string = 'dismiss';
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
+  /** (optional) Change icon click event */
+  @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
+  /** @deprecated in v3 in favor of kebab-case event names */
+  @Event({ eventName: 'scaleChange' })
+  scaleChangeLegacy: EventEmitter<MouseEvent>;
   /** (optional) Close icon click event */
   @Event({ eventName: 'scale-close' }) scaleClose: EventEmitter<MouseEvent>;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleClose' })
   scaleCloseLegacy: EventEmitter<MouseEvent>;
 
-  componentWillUpdate() {}
+  componentWillLoad() {
+    if (this.dismissible) {
+      this.selected = true;
+    }
+  }
   disconnectedCallback() {}
 
   handleClose = (event: MouseEvent) => {
@@ -63,14 +73,32 @@ export class Chip {
       return;
     }
     emitEvent(this, 'scaleClose', event);
+    console.log('close');
   };
 
   handleClick = (event: MouseEvent) => {
+    if (this.dismissible) {
+      this.handleClose(event);
+      return;
+    }
     event.preventDefault();
     event.stopPropagation();
-    console.log('hey');
-    emitEvent(this, 'scaleClose', event);
+    if (this.disabled) {
+      return;
+    }
+    emitEvent(this, 'scaleChange', event);
+    console.log('change');
   };
+
+  getIcon() {
+    if (this.dismissible) {
+      return <scale-icon-action-close accessibility-title="close" size={16} />;
+    } else if (!this.dismissible) {
+      return (
+        <scale-icon-action-success accessibility-title="success" size={16} />
+      );
+    }
+  }
 
   render() {
     const Element = !!this.href && !this.disabled ? 'a' : 'span';
@@ -93,7 +121,7 @@ export class Chip {
         >
           <slot name="left-icon" />
           <p class="chip-label">{this.label}</p>
-          <slot name="right-icon" />
+          {this.selected ? this.getIcon() : null}
         </Element>
       </Host>
     );
@@ -116,7 +144,6 @@ export class Chip {
       this.type && `${prefix}type-${this.type}`,
       this.color && `${prefix}color-${this.color}`,
       !!this.href && `${prefix}link`,
-      !!this.dismissable && `${prefix}dismissable`,
       !!this.disabled && `${prefix}disabled`
     );
   }
