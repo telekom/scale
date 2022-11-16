@@ -56,8 +56,6 @@
   height: 100%;
   border-radius: var(--button-radius);
   background-color: var(--background-color);
-  padding-left: var(--padding-left-right);
-  padding-right: var(--padding-left-right);
   padding-top: var(--padding-top-bottom);
   padding-bottom: var(--padding-top-bottom);
   font-family: var(--font-family);
@@ -68,14 +66,33 @@
   color: var(--telekom-color-text-and-icon-standard);
 }
 
+button.segmented-button--icon-only.segmented-button--small {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
+button.segmented-button--small  {
+  padding-left: var(--telekom-spacing-unit-x2);
+  padding-right: var(--telekom-spacing-unit-x3);
+}
+
 .segmented-button--large {
   font-size: var(--font-size-large);
   height: 36px;
 }
 
+button.segmented-button--large {
+  padding-left: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
 .segmented-button--xl {
   font-size: var(--font-size-large);
   height: 40px;
+}
+button.segmented-button--xl {
+  padding-left: 16px;
+  padding-right: 20px;
 }
 
 .segmented-button--selected {
@@ -146,14 +163,14 @@
 }
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
-  display: none !important;
+  visibility: hidden !important;
 }
 
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
 }
 
-.segmented-button--selected .icon-container {
+.segmented-button--selected:not(.segmented-button--icon-only) .icon-container {
   display: none;
 }
 

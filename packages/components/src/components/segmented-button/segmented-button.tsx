@@ -33,7 +33,7 @@ let i = 0;
 export class SegmentedButton {
   @Element() hostElement: HTMLElement;
   /** (optional) The size of the button */
-  @Prop() size?: 'small' | 'large' | 'xl';
+  @Prop() size?: 'small' | 'large' | 'xl' = 'small';
   /** (optional) If `true`, the button is selected */
   @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) If `true`, the button is disabled */
@@ -165,8 +165,10 @@ export class SegmentedButton {
       }
       if (child.nodeType == 1 && child.nodeName.substr(0, 10) === 'SCALE-ICON' && this.hostElement.childNodes.length === 1) {
         this.iconOnly = true;
+        this.hostElement.setAttribute('icon-only', 'true')
         const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
         icon.style.marginRight = '0px';
+        icon.setAttribute('fill','var(--color-selected)')
       }
     });
   }
@@ -197,13 +199,13 @@ export class SegmentedButton {
           part={this.getBasePartMap()}
           aria-description={this.getAriaDescriptionTranslation()}
         >
-          <div class="success-icon-container">
+          { !this.iconOnly && <div class="success-icon-container">
             <scale-icon-action-success
-              size={12}
+              size={14}
               class="scale-icon-action-success"
               accessibility-title="success"
             />
-          </div>
+          </div>}
           <div class="icon-container">
             <slot name="segmented-button-icon" />
           </div>
