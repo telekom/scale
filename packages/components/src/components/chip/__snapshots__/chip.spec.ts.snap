@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip should match snapshot 1`] = `
+<scale-chip label="Label Text">
+  <mock:shadow-root>
+    <span class="chip chip--type-standard" part="base type-standard">
+      <slot name="chip-icon"></slot>
+      <p class="chip-label">
+        Label Text
+      </p>
+    </span>
+  </mock:shadow-root>
+</scale-chip>
+`;

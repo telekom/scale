@@ -7,37 +7,42 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                    | Type                                | Default     |
-| ------------- | ------------- | ------------------------------ | ----------------------------------- | ----------- |
-| `color`       | `color`       | (optional) Chip color          | `"black" \| "default" \| "magenta"` | `'default'` |
-| `disabled`    | `disabled`    | (optional) Chip disabled       | `boolean`                           | `false`     |
-| `dismissable` | `dismissable` | (optional) Chip dismissable    | `boolean`                           | `false`     |
-| `href`        | `href`        | (optional) Chip href           | `string`                            | `''`        |
-| `iconOnly`    | `icon-only`   | (optional) Chip icon only      | `boolean`                           | `false`     |
-| `styles`      | `styles`      | (optional) Injected CSS styles | `string`                            | `undefined` |
-| `target`      | `target`      | (optional) Chip target         | `string`                            | `'_self'`   |
+| Property      | Attribute     | Description                    | Type                                                                                                                  | Default      |
+| ------------- | ------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `color`       | `color`       | (optional) chip color          | `"black" \| "brown" \| "cyan" \| "green" \| "grey" \| "olive" \| "orange" \| "red" \| "teal" \| "violet" \| "yellow"` | `undefined`  |
+| `disabled`    | `disabled`    | (optional) chip disabled       | `boolean`                                                                                                             | `false`      |
+| `dismissible` | `dismissible` | (optional) chip dismissible    | `boolean`                                                                                                             | `false`      |
+| `href`        | `href`        | (optional) chip href           | `string`                                                                                                              | `''`         |
+| `iconSize`    | `icon-size`   | (optional) chip icon size      | `number`                                                                                                              | `16`         |
+| `label`       | `label`       | (optional) chip label          | `string`                                                                                                              | `undefined`  |
+| `selected`    | `selected`    | (optional)                     | `boolean`                                                                                                             | `false`      |
+| `styles`      | `styles`      | (optional) Injected CSS styles | `string`                                                                                                              | `undefined`  |
+| `target`      | `target`      | (optional) chip target         | `string`                                                                                                              | `'_self'`    |
+| `type`        | `type`        | (optional) chip type           | `"standard" \| "strong"`                                                                                              | `'standard'` |
 
 
 ## Events
 
-| Event         | Description                                                                                        | Type                      |
-| ------------- | -------------------------------------------------------------------------------------------------- | ------------------------- |
-| `scale-close` | (optional) Close icon click event                                                                  | `CustomEvent<MouseEvent>` |
-| `scaleClose`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
+| Event          | Description                                                                                        | Type                      |
+| -------------- | -------------------------------------------------------------------------------------------------- | ------------------------- |
+| `scale-change` | (optional) Change icon click event                                                                 | `CustomEvent<MouseEvent>` |
+| `scale-close`  | (optional) Close icon click event                                                                  | `CustomEvent<MouseEvent>` |
+| `scaleChange`  | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
+| `scaleClose`   | <span style="color:red">**[DEPRECATED]**</span> in v3 in favor of kebab-case event names<br/><br/> | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [scale-icon-action-circle-close](../icons/action-circle-close)
-- [scale-icon-device-mobile-services](../icons/device-mobile-services)
+- [scale-icon-action-close](../icons/action-close)
+- [scale-icon-action-success](../icons/action-success)
 
 ### Graph
 ```mermaid
 graph TD;
-  scale-chip --> scale-icon-action-circle-close
-  scale-chip --> scale-icon-device-mobile-services
+  scale-chip --> scale-icon-action-close
+  scale-chip --> scale-icon-action-success
   style scale-chip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
