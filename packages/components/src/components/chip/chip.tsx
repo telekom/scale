@@ -9,7 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-import { Component, Prop, h, Host, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  Prop,
+  h,
+  Host,
+  Event,
+  EventEmitter,
+  Element,
+} from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
 @Component({
@@ -18,8 +26,10 @@ import { emitEvent } from '../../utils/utils';
   shadow: true,
 })
 export class Chip {
+  @Element() hostElement: HTMLElement;
   /** (optional) chip type */
-  @Prop() type?: 'standard' | 'strong' | 'inversed' | 'colored' = 'standard';
+  //TODO: Inversed
+  @Prop() type?: 'standard' | 'strong' = 'standard';
   /** (optional) */
   @Prop() selected?: boolean = false;
   /** (optional) chip color */
@@ -47,6 +57,8 @@ export class Chip {
   @Prop() disabled?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
+  /** (optional) chip icon size */
+  @Prop() iconSize?: number = 16;
 
   /** (optional) Change icon click event */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
@@ -60,8 +72,21 @@ export class Chip {
   scaleCloseLegacy: EventEmitter<MouseEvent>;
 
   componentWillLoad() {
+    //TODO other logic needed
     if (this.dismissible) {
       this.selected = true;
+    }
+  }
+  componentDidRender() {
+    //handle no setted icon size attribute
+    const defaultIconSize = 24;
+    const iconSlot = this.hostElement.querySelector(
+      '[slot="chip-icon"]'
+    ) as HTMLElement;
+    if (iconSlot !== null) {
+      console.log(iconSlot.children[0]);
+      if (iconSlot.children[0].getAttribute('size') == String(defaultIconSize))
+        iconSlot.children[0].setAttribute('size', String(this.iconSize));
     }
   }
   disconnectedCallback() {}
@@ -81,6 +106,7 @@ export class Chip {
       this.handleClose(event);
       return;
     }
+    this.selected = !this.selected;
     event.preventDefault();
     event.stopPropagation();
     if (this.disabled) {
@@ -92,10 +118,18 @@ export class Chip {
 
   getIcon() {
     if (this.dismissible) {
-      return <scale-icon-action-close accessibility-title="close" size={16} />;
+      return (
+        <scale-icon-action-close
+          accessibility-title="close"
+          size={this.iconSize}
+        />
+      );
     } else if (!this.dismissible) {
       return (
-        <scale-icon-action-success accessibility-title="success" size={16} />
+        <scale-icon-action-success
+          accessibility-title="success"
+          size={this.iconSize}
+        />
       );
     }
   }
@@ -112,14 +146,13 @@ export class Chip {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-
         <Element
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
           {...linkProps}
           onClick={this.handleClick}
         >
-          <slot name="left-icon" />
+          <slot name="chip-icon" />
           <p class="chip-label">{this.label}</p>
           {this.selected ? this.getIcon() : null}
         </Element>
@@ -144,6 +177,7 @@ export class Chip {
       this.type && `${prefix}type-${this.type}`,
       this.color && `${prefix}color-${this.color}`,
       !!this.href && `${prefix}link`,
+      !!this.selected && `${prefix}selected`,
       !!this.disabled && `${prefix}disabled`
     );
   }

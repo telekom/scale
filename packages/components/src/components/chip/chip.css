@@ -10,8 +10,8 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-extra-strong);
-  --color: var(--telekom-color-text-and-icon-inverted-standard);
+  --background: var(--telekom-color-ui-subtle);
+  --color: var(--telekom-color-text-and-icon-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
@@ -34,13 +34,19 @@
   transition: all 0.15s ease-in-out;
   align-items: center;
   white-space: nowrap;
-  border-radius: 20px;
+  border-radius: 16px;
   height: 32px;
   vertical-align: baseline;
   justify-content: center;
+  background: var(--telekom-color-ui-base);
+  color: var(--telekom-color-ui-bold);
+  cursor: default;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.chip--selected {
   background: var(--background);
   color: var(--color);
-  cursor: default;
 }
 
 /**
@@ -77,17 +83,26 @@ label
 }
 
 /*icon slot front*/
-.chip slot[name='left-icon']::slotted(*) {
-  height: 16px;
-  width: 16px;
+.chip slot[name='chip-icon']::slotted(*) {
   padding-left: 4px;
+  padding-top: 4px;
 }
 
-/*icon slot end*/
-.chip slot[name='right-icon']::slotted(*) {
-  height: 16px;
-  width: 16px;
+/*icon end*/
+.chip scale-icon-action-success {
   padding-right: 4px;
+}
+
+.chip scale-icon-action-close {
+  padding-right: 4px;
+}
+
+/**
+inversed type
+**/
+.chip.chip--type-inversed {
+  color: var(--telekom-color-text-and-icon-inverted-standard);
+  background: var(--telekom-color-ui-extra-strong);
 }
 
 /**
