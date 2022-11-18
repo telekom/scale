@@ -28,7 +28,7 @@ import { emitEvent } from '../../utils/utils';
 export class Chip {
   @Element() hostElement: HTMLElement;
   /** (optional) chip type */
-  //TODO: Inversed
+  // TODO: Inversed
   @Prop() type?: 'standard' | 'strong' = 'standard';
   /** (optional) */
   @Prop() selected?: boolean = false;
@@ -72,21 +72,23 @@ export class Chip {
   scaleCloseLegacy: EventEmitter<MouseEvent>;
 
   componentWillLoad() {
-    //TODO other logic needed
+    // TODO other logic needed
     if (this.dismissible) {
       this.selected = true;
     }
   }
   componentDidRender() {
-    //handle no setted icon size attribute
+    // handle no setted icon size attribute
     const defaultIconSize = 24;
     const iconSlot = this.hostElement.querySelector(
       '[slot="chip-icon"]'
     ) as HTMLElement;
     if (iconSlot !== null) {
-      console.log(iconSlot.children[0]);
-      if (iconSlot.children[0].getAttribute('size') == String(defaultIconSize))
+      if (
+        iconSlot.children[0].getAttribute('size') === String(defaultIconSize)
+      ) {
         iconSlot.children[0].setAttribute('size', String(this.iconSize));
+      }
     }
   }
   disconnectedCallback() {}
@@ -98,7 +100,6 @@ export class Chip {
       return;
     }
     emitEvent(this, 'scaleClose', event);
-    console.log('close');
   };
 
   handleClick = (event: MouseEvent) => {
@@ -113,7 +114,6 @@ export class Chip {
       return;
     }
     emitEvent(this, 'scaleChange', event);
-    console.log('change');
   };
 
   getIcon() {
