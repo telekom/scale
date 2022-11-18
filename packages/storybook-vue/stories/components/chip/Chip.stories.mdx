@@ -242,6 +242,24 @@ export const TemplateClose = (args, { argTypes }) => ({
 <scale-chip dismissible label="Dismissible Chip"></scale-chip>
 ```
 
+## Disabled Chip
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled Chip"
+    args={{
+      label: 'Disabled Chip',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-chip disabled label="Disabled Chip"></scale-chip>
+```
+
 ## Selected Chip
 
 ### Selected Chip

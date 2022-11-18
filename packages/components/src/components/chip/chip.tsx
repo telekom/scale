@@ -45,14 +45,14 @@ export class Chip {
     | 'teal'
     | 'black'
     | 'grey';
-  /** (optional) chip href */
-  @Prop() href?: string = '';
+  /** (optional) chip aria-role */
+  @Prop() ariaRoleTitle?: string = 'switch';
+  /** (optional) chip aria-checked */
+  @Prop() ariaCheckedState?: boolean;
   /** (optional) chip dismissible */
   @Prop() dismissible?: boolean = false;
   /** (optional) chip label */
   @Prop() label?: string;
-  /** (optional) chip target */
-  @Prop() target?: string = '_self';
   /** (optional) chip disabled */
   @Prop() disabled?: boolean = false;
   /** (optional) Injected CSS styles */
@@ -135,27 +135,23 @@ export class Chip {
   }
 
   render() {
-    const Element = !!this.href && !this.disabled ? 'a' : 'span';
-    const linkProps = !!this.href
-      ? {
-          href: this.href,
-          target: this.target,
-        }
-      : {};
-
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        <Element
+        <span
+          role={this.ariaRoleTitle}
+          aria-checked={
+            this.ariaCheckedState ? this.ariaCheckedState : this.selected
+          }
+          tabindex={this.selected ? '0' : '-1'}
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
-          {...linkProps}
-          onClick={this.handleClick}
+          onClick={!this.disabled ? this.handleClick : null}
         >
           <slot name="chip-icon" />
           <p class="chip-label">{this.label}</p>
-          {this.selected ? this.getIcon() : null}
-        </Element>
+          {this.selected && !this.disabled ? this.getIcon() : null}
+        </span>
       </Host>
     );
   }
@@ -176,7 +172,6 @@ export class Chip {
       mode === 'basePart' ? 'base' : component,
       this.type && `${prefix}type-${this.type}`,
       this.color && `${prefix}color-${this.color}`,
-      !!this.href && `${prefix}link`,
       !!this.selected && `${prefix}selected`,
       !!this.disabled && `${prefix}disabled`
     );

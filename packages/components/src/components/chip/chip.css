@@ -10,65 +10,65 @@
  */
 
 :host {
-  --background: var(--telekom-color-ui-subtle);
+  --background: var(--telekom-color-ui-base);
   --color: var(--telekom-color-text-and-icon-standard);
   --font-size: var(--telekom-typography-font-size-body);
   --line-height: var(--telekom-typography-line-spacing-standard);
   --font-weight: var(--telekom-typography-font-weight-bold);
   --focus-outline: var(--telekom-line-weight-highlight) solid
     var(--telekom-color-functional-focus);
+  --box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 8px rgba(0, 0, 0, 0.1);
 
-  --icon-color: var(--color);
-  --icon-color-hover: var(--color);
+  /**
+  selected
+  **/
+  --background-selected: var(--telekom-color-ui-subtle);
+  --color-selected: var(--telekom-color-text-and-icon-standard);
 
-  --background-disabled: var(--telekom-color-ui-disabled);
+  /**
+  disabled
+  **/
+  --background-disabled: var(--telekom-color-ui-base);
   --color-disabled: var(--telekom-color-text-and-icon-disabled);
 }
 
 .chip {
-  border: 1px solid transparent;
+  border: var(--telekom-spacing-unit-x025) solid transparent;
   display: inline-flex;
   outline: none;
-  padding: 0 8px;
+  padding: 0 var(--telekom-spacing-unit-x2);
   text-align: center;
   transition: all 0.15s ease-in-out;
   align-items: center;
   white-space: nowrap;
-  border-radius: 16px;
+  border-radius: 1rem;
   height: 32px;
   vertical-align: baseline;
   justify-content: center;
-  background: var(--telekom-color-ui-base);
-  color: var(--telekom-color-ui-bold);
+  background: var(--background);
+  color: var(--color);
   cursor: default;
+  box-shadow: var(--box-shadow);
+}
+
+.chip:not(.chip--disabled):hover {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.1);
 }
 
+.chip:not(.chip--disabled):focus {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 24px rgba(0, 0, 0, 0.1);
+  border: 2px solid #2238df;
+  border-radius: 5000px;
+}
+
+.chip:not(.chip--disabled):active {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--telekom-color-ui-subtle);
+}
+
 .chip--selected {
-  background: var(--background);
-  color: var(--color);
-}
-
-/**
-link
-**/
-
-.chip--link {
-  text-decoration: none;
-}
-.chip--link:focus {
-  border: 1px solid white;
-  outline: var(--focus-outline);
-}
-.chip--link {
-  background: var(--background-secondary);
-}
-.chip--link:hover {
-  background: var(--background-secondary);
-}
-
-.chip--link:focus {
-  border: 1px solid white;
+  background: var(--background-selected);
+  color: var(--color-selected);
 }
 
 /**
@@ -76,25 +76,25 @@ label
 **/
 
 .chip-label {
-  padding: 0 12px 0 12px;
-  font-weight: 700;
-  font-size: 16px;
+  padding: 0 var(--telekom-spacing-unit-x3) 0 var(--telekom-spacing-unit-x3);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  font-size: 1rem;
   line-height: 100%;
 }
 
 /*icon slot front*/
 .chip slot[name='chip-icon']::slotted(*) {
-  padding-left: 4px;
-  padding-top: 4px;
+  padding-left: var(--telekom-spacing-unit-x1);
+  padding-top: var(--telekom-spacing-unit-x1);
 }
 
 /*icon end*/
 .chip scale-icon-action-success {
-  padding-right: 4px;
+  padding-right: var(--telekom-spacing-unit-x1);
 }
 
 .chip scale-icon-action-close {
-  padding-right: 4px;
+  padding-right: var(--telekom-spacing-unit-x1);
 }
 
 /**
@@ -103,6 +103,14 @@ inversed type
 .chip.chip--type-inversed {
   color: var(--telekom-color-text-and-icon-inverted-standard);
   background: var(--telekom-color-ui-extra-strong);
+}
+
+/**
+disabled
+**/
+.chip.chip--disabled {
+  background: var(--background-disabled);
+  color: var(--color-disabled);
 }
 
 /**

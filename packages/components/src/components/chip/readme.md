@@ -7,18 +7,18 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                    | Type                                                                                                                  | Default      |
-| ------------- | ------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ------------ |
-| `color`       | `color`       | (optional) chip color          | `"black" \| "brown" \| "cyan" \| "green" \| "grey" \| "olive" \| "orange" \| "red" \| "teal" \| "violet" \| "yellow"` | `undefined`  |
-| `disabled`    | `disabled`    | (optional) chip disabled       | `boolean`                                                                                                             | `false`      |
-| `dismissible` | `dismissible` | (optional) chip dismissible    | `boolean`                                                                                                             | `false`      |
-| `href`        | `href`        | (optional) chip href           | `string`                                                                                                              | `''`         |
-| `iconSize`    | `icon-size`   | (optional) chip icon size      | `number`                                                                                                              | `16`         |
-| `label`       | `label`       | (optional) chip label          | `string`                                                                                                              | `undefined`  |
-| `selected`    | `selected`    | (optional)                     | `boolean`                                                                                                             | `false`      |
-| `styles`      | `styles`      | (optional) Injected CSS styles | `string`                                                                                                              | `undefined`  |
-| `target`      | `target`      | (optional) chip target         | `string`                                                                                                              | `'_self'`    |
-| `type`        | `type`        | (optional) chip type           | `"standard" \| "strong"`                                                                                              | `'standard'` |
+| Property           | Attribute            | Description                    | Type                                                                                                                  | Default      |
+| ------------------ | -------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `ariaCheckedState` | `aria-checked-state` | (optional) chip aria-checked   | `boolean`                                                                                                             | `undefined`  |
+| `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                                                                                                              | `'switch'`   |
+| `color`            | `color`              | (optional) chip color          | `"black" \| "brown" \| "cyan" \| "green" \| "grey" \| "olive" \| "orange" \| "red" \| "teal" \| "violet" \| "yellow"` | `undefined`  |
+| `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                                                                                                             | `false`      |
+| `dismissible`      | `dismissible`        | (optional) chip dismissible    | `boolean`                                                                                                             | `false`      |
+| `iconSize`         | `icon-size`          | (optional) chip icon size      | `number`                                                                                                              | `16`         |
+| `label`            | `label`              | (optional) chip label          | `string`                                                                                                              | `undefined`  |
+| `selected`         | `selected`           | (optional)                     | `boolean`                                                                                                             | `false`      |
+| `styles`           | `styles`             | (optional) Injected CSS styles | `string`                                                                                                              | `undefined`  |
+| `type`             | `type`               | (optional) chip type           | `"standard" \| "strong"`                                                                                              | `'standard'` |
 
 
 ## Events

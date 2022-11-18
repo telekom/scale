@@ -3,10 +3,10 @@
     :type="type"
     :selected="selected"
     :color="color"
-    :href="href"
     :dismissible="dismissible"
     :label="label"
-    :target="target"
+    :aria-checked-state="ariaCheckedState"
+    :aria-role-title="ariaRoleTitle"
     :disabled="disabled"
     :styles="styles"
     :icon-size="iconSize"
@@ -39,13 +39,13 @@ export default {
         'teal' |
         'grey',
     },
-    href: { type: String, default: '' },
     dismissible: { type: Boolean, default: false },
     label: { type: String },
-    target: { type: String, default: '_self' },
     disabled: { type: Boolean, default: false },
     styles: { type: String },
     iconSize: { type: Number, default: 16 },
+    ariaRoleTitle: { type: String, default: 'switch' },
+    ariaCheckedState: { type: Boolean },
   },
   methods: {
     scaleChange($event) {
