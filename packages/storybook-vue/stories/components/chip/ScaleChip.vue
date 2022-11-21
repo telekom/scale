@@ -22,7 +22,7 @@ import { action } from '@storybook/addon-actions';
 export default {
   props: {
     type: {
-      type: 'strong' | 'standard',
+      type: 'strong' | 'standard' | 'inversed',
       default: 'standard',
     },
     selected: { type: Boolean, default: false },
