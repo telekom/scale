@@ -57,8 +57,6 @@ export const Template = (args, { argTypes }) => ({
             :disabled="disabled"
             :styles="styles"
             :icon-size="iconSize"
-            @scaleChange="scaleChange"
-            @scaleClose="scaleClose"
         >
         </scale-chip>
     </template>
@@ -79,15 +77,12 @@ export const TemplateIcon = (args, { argTypes }) => ({
             :type="type"
             :selected="selected"
             :color="color"
-            :href="href"
             :dismissible="dismissible"
             :label="label"
             :target="target"
             :disabled="disabled"
             :styles="styles"
             :icon-size="iconSize"
-            @scaleChange="scaleChange"
-            @scaleClose="scaleClose"
         >
         <div slot="chip-icon">
             <scale-icon-action-favorite accessibility-title="favorite" />
