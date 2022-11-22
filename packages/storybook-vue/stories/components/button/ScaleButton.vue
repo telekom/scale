@@ -11,6 +11,8 @@
     :variant="variant"
     :icon-only="iconOnly"
     :inner-tabindex="innerTabindex"
+    :form="form"
+    :aria-label="ariaLabel"
     :styles="styles"
     @click="handler"
   >
@@ -19,9 +21,9 @@
 </template>
 
 <script>
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
 
-const handler = action("click");
+const handler = action('click');
 
 export default {
   props: {
@@ -36,6 +38,8 @@ export default {
     size: String,
     iconOnly: Boolean,
     innerTabindex: Number,
+    form: String,
+    ariaLabel: String,
     styles: String,
   },
   methods: {
