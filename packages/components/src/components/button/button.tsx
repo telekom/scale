@@ -61,6 +61,8 @@ export class Button {
   @Prop() download?: string;
   /** (optional) Set `tabindex` in the inner button or link element */
   @Prop() innerTabindex?: number;
+  /** (optional) Button aria-label*/
+  @Prop() ariaLabel?: string;
 
   private focusableElement: HTMLElement;
   private fallbackSubmitInputElement: HTMLInputElement;
@@ -207,6 +209,7 @@ export class Button {
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             part={basePart}
             tabIndex={this.innerTabindex}
+            aria-label={this.ariaLabel}
           >
             <slot />
           </a>
@@ -221,6 +224,7 @@ export class Button {
             tabIndex={this.innerTabindex}
             name={this.name}
             value={this.value}
+            aria-label={this.ariaLabel}
           >
             <slot />
           </button>
