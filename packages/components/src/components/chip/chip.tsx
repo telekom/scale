@@ -103,10 +103,6 @@ export class Chip {
   };
 
   handleClick = (event: MouseEvent) => {
-    if (this.dismissible) {
-      this.handleClose(event);
-      return;
-    }
     this.selected = !this.selected;
     event.preventDefault();
     event.stopPropagation();
@@ -122,6 +118,7 @@ export class Chip {
         <scale-icon-action-close
           accessibility-title="close"
           size={this.iconSize}
+          onClick={!this.disabled ? this.handleClose : null}
         />
       );
     } else if (!this.dismissible) {
@@ -146,7 +143,9 @@ export class Chip {
           tabindex={this.selected ? '0' : '-1'}
           part={this.getBasePartMap()}
           class={this.getCssClassMap()}
-          onClick={!this.disabled ? this.handleClick : null}
+          onClick={
+            !this.disabled && !this.dismissible ? this.handleClick : null
+          }
         >
           <slot name="chip-icon" />
           <p class="chip-label">{this.label}</p>
