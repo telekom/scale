@@ -30,8 +30,5 @@ describe('Chip', () => {
 
     element.disabled = true;
     expect(element.getCssClassMap()).toContain('chip--disabled');
-
-    element.href = 'http://example.com';
-    expect(element.getCssClassMap()).toContain('chip--link');
   });
 });

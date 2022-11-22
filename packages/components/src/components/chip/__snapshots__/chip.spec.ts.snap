@@ -3,7 +3,7 @@
 exports[`Chip should match snapshot 1`] = `
 <scale-chip label="Label Text">
   <mock:shadow-root>
-    <span class="chip chip--type-standard" part="base type-standard">
+    <span class="chip chip--type-standard" part="base type-standard" role="switch" tabindex="-1">
       <slot name="chip-icon"></slot>
       <p class="chip-label">
         Label Text
