@@ -13,7 +13,7 @@ addons.register('@telekom/scale-mobile-prpeview', (api) => {
                 document.querySelectorAll('#storybook-preview-iframe').forEach( item =>
                     {
                             const storyCanvas = item.contentWindow.document.body.querySelectorAll('.docs-story')
-                            item.style = 'width: 762px; border: none'
+                            // item.style = 'width: 762px; border: none'
                             storyCanvas.forEach(el => {
                                 const firstChild = el.firstChild;
                                 firstChild.style = "padding: 0; height: 100%;"
