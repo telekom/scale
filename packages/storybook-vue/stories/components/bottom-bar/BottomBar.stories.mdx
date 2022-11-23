@@ -1,0 +1,253 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Canvas,
+  Description,
+} from '@storybook/addon-docs';
+import ScaleBottomBar from './BottomBar.vue';
+
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+<Meta
+  title="Components/Bottom Bar"
+  component={ScaleBottomBar}
+  parameters={{
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+    mobilePreview: true
+  }}  
+  argTypes={{
+    icon: {
+      control: { type: 'text' },
+    },
+    label: {
+      control: { type: 'text' },
+    }
+  }}
+/>
+
+export const TemplateIOS = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  parameters: {
+    mobilePreview: {
+      data: 'HELLO WORLD FOOO'
+    }
+  },
+  template: `
+  <div>
+    <div style="height: 560px">
+      CONTENT
+    </div>
+    <div data-platform="ios">
+        <scale-bottom-bar
+        :separator="separator"
+        :styles="styles"
+        >
+        <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+        <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
+        </scale-bottom-bar>    
+    </div>  
+  </div>
+  `,
+});
+
+
+export const TemplateIOSLabel = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div>
+      <div style="height: 560px">
+        CONTENT
+      </div>
+      <div data-platform="ios">
+          <scale-bottom-bar
+          :separator="separator"
+          :styles="styles"
+          >
+          <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item>    
+          </scale-bottom-bar>    
+      </div>
+    </div>
+  `,
+});
+
+export const TemplateAndroid = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div>
+      <div style="height: 560px">
+        CONTENT
+      </div>  
+      <div data-platform="android">
+          <scale-bottom-bar
+          :separator="separator"
+          :styles="styles"
+          >
+          <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
+          </scale-bottom-bar>    
+      </div>
+    </div>
+  `,
+});
+
+export const TemplateAndroidLabel = (args, { argTypes }) => ({
+  components: { ScaleBottomBar },
+  props: {
+    icon: String,
+    label: String,
+    ...ScaleBottomBar.props,
+  },
+  template: `
+    <div>
+      <div style="height: 560px">
+        CONTENT
+      </div>  
+      <div data-platform="android">
+          <scale-bottom-bar
+          :separator="separator"
+          :styles="styles"
+          >
+          <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+          <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item>    
+          </scale-bottom-bar>    
+      </div>
+    </div>
+  `,
+});
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Bottom Bar</h1>
+  <img src="assets/aa.png" alt="Accessible AA" />
+</div>
+
+## iOS
+
+<Canvas withSource="none">
+  <Story name="IOS" args={{}} parameters={{
+    viewport: {
+      defaultViewport: 'iphonex',
+    },
+  }}>
+    {
+        TemplateIOS.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="IOS" />
+
+```html
+<scale-bottom-bar>
+    <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>  
+</scale-breadcrumb>
+```
+
+## iOS with Label
+
+<Canvas withSource="none">
+  <Story name="iOS with Label" args={{}} parameters={{
+    viewport: {
+      defaultViewport: 'iphonex',
+    },
+  }}>
+    {
+        TemplateIOSLabel.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="IOS" />
+
+```html
+<scale-bottom-bar>
+  <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item> 
+</scale-breadcrumb>
+```
+
+
+## Android
+
+<Canvas withSource="none">
+  <Story name="Android" args={{}}>
+    {TemplateAndroid.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Android" />
+
+```html
+<scale-bottom-bar>
+    <scale-bottom-bar-item icon="home-home" selected></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="action-favorite"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="content-music"></scale-bottom-bar-item>
+    <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>  
+</scale-breadcrumb>
+```
+
+
+## Android with Label
+
+<Canvas withSource="none">
+  <Story name="Android with Label" args={{}}>
+    {TemplateAndroidLabel.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Android" />
+
+```html
+<scale-bottom-bar>
+  <scale-bottom-bar-item icon="home-home" label="home" selected></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="action-favorite" label="favorites"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="content-music" label="music"></scale-bottom-bar-item>
+  <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item> 
+</scale-breadcrumb>
+```
+
+### Scoped CSS variables
+
+```css
+:host {
+}
+```
+
+For Shadow Parts, please inspect the element's #shadow.
