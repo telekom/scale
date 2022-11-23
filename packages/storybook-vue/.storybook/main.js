@@ -9,6 +9,7 @@ module.exports = {
     "./language-addon/register.js",
     "./sidebar-links-addon/register.js",
     "./color-mode-switch-addon/register.js",
+    "./mobile-preview/register.js",
   ],
   stories: ["../stories/**/**/*.stories.mdx"]
 };
