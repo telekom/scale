@@ -25,6 +25,7 @@
 
  - [app-navigation-user-menu](../telekom/app-navigation-user-menu)
  - [scale-app-footer](../telekom/app-footer)
+ - [scale-bottom-bar-item](../bottom-bar)
  - [scale-data-grid](../data-grid)
  - [scale-input](../input)
  - [scale-nav-icon](../telekom/nav-icon)
@@ -34,6 +35,7 @@
 graph TD;
   app-navigation-user-menu --> scale-icon
   scale-app-footer --> scale-icon
+  scale-bottom-bar-item --> scale-icon
   scale-data-grid --> scale-icon
   scale-input --> scale-icon
   scale-nav-icon --> scale-icon

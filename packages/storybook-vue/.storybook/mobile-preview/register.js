@@ -19,13 +19,18 @@ addons.register('@telekom/scale-mobile-prpeview', (api) => {
                                 firstChild.style = "padding: 0; height: 100%;"
                                 const parentNode = el.parentNode;
                                 let topEl = document.createElement("div");
+                                topEl.classList.add("top-frame")
                                 let bottomEl = document.createElement("div");
+                                bottomEl.classList.add("bottom-frame")
                                 parentNode.style = "width: 375px; border-radius: 45px; filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.15)) drop-shadow(0px 12px 48px rgba(0, 0, 0, 0.1));"
                                 el.style = "height: 608px;"
                                 topEl.style = "height: 77px; background-color: #FBFBFB; border-radius: 45px 45px 0 0;"
                                 bottomEl.style = "height: 77px; background-color: #FBFBFB; border-radius: 0 0 45px 45px;"
-                                parentNode.insertBefore(topEl, el)
-                                parentNode.insertBefore(bottomEl, null)
+                                const topFrame = parentNode.querySelector('.top-frame')
+                                if (topFrame == null ) {
+                                    parentNode.insertBefore(topEl, el)
+                                    parentNode.insertBefore(bottomEl, null)
+                                }
                                 el.style = "border: 1px solid #E7E7E9; height: 608px;"
                             })
                     }
