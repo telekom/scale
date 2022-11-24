@@ -42,11 +42,7 @@ export const TemplateIOS = (args, { argTypes }) => ({
     }
   },
   template: `
-  <div>
-    <div style="height: 560px">
-      CONTENT
-    </div>
-    <div data-platform="ios">
+    <div data-platform="ios" style="position: absolute; bottom: 0; width: 100%;">
         <scale-bottom-bar
         :separator="separator"
         :styles="styles"
@@ -57,7 +53,6 @@ export const TemplateIOS = (args, { argTypes }) => ({
         <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
         </scale-bottom-bar>    
     </div>  
-  </div>
   `,
 });
 
@@ -70,11 +65,7 @@ export const TemplateIOSLabel = (args, { argTypes }) => ({
     ...ScaleBottomBar.props,
   },
   template: `
-    <div>
-      <div style="height: 560px">
-        CONTENT
-      </div>
-      <div data-platform="ios">
+      <div data-platform="ios" style="position: absolute; bottom: 0; width: 100%;">
           <scale-bottom-bar
           :separator="separator"
           :styles="styles"
@@ -85,7 +76,6 @@ export const TemplateIOSLabel = (args, { argTypes }) => ({
           <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item>    
           </scale-bottom-bar>    
       </div>
-    </div>
   `,
 });
 
@@ -97,11 +87,7 @@ export const TemplateAndroid = (args, { argTypes }) => ({
     ...ScaleBottomBar.props,
   },
   template: `
-    <div>
-      <div style="height: 560px">
-        CONTENT
-      </div>  
-      <div data-platform="android">
+      <div data-platform="android" style="position: absolute; bottom: 0; width: 100%;">
           <scale-bottom-bar
           :separator="separator"
           :styles="styles"
@@ -112,7 +98,6 @@ export const TemplateAndroid = (args, { argTypes }) => ({
           <scale-bottom-bar-item icon="user-file-user"></scale-bottom-bar-item>    
           </scale-bottom-bar>    
       </div>
-    </div>
   `,
 });
 
@@ -124,11 +109,7 @@ export const TemplateAndroidLabel = (args, { argTypes }) => ({
     ...ScaleBottomBar.props,
   },
   template: `
-    <div>
-      <div style="height: 560px">
-        CONTENT
-      </div>  
-      <div data-platform="android">
+      <div data-platform="android" style="position: absolute; bottom: 0; width: 100%;">
           <scale-bottom-bar
           :separator="separator"
           :styles="styles"
@@ -139,7 +120,6 @@ export const TemplateAndroidLabel = (args, { argTypes }) => ({
           <scale-bottom-bar-item icon="user-file-user" label="profile"></scale-bottom-bar-item>    
           </scale-bottom-bar>    
       </div>
-    </div>
   `,
 });
 
