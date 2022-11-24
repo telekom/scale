@@ -35,6 +35,8 @@ export class TabHeader {
   /** True for smaller height and font size */
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
+  /** (optional) autoFocus  */
+  @Prop() autoFocus: boolean;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
@@ -49,7 +51,7 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        this.hostElement.focus();
+        this.autoFocus && this.hostElement.focus();
       }
       this.updateSlottedIcon();
     }

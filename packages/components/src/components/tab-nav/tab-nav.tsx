@@ -35,6 +35,8 @@ export class TabNav {
   @Prop() small?: boolean = false;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
+  /** (optional) autoFocus  */
+  @Prop() autoFocus: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
 
@@ -149,6 +151,7 @@ export class TabNav {
     tabs.forEach((tab) => {
       const panel = tab.nextElementSibling;
       tab.setAttribute('aria-controls', panel.id);
+      tab.setAttribute('auto-focus', this.autoFocus.toString());
       panel.setAttribute('aria-labelledby', tab.id);
     });
     this.selectTab(selectedTab);
