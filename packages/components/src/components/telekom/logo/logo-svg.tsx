@@ -53,7 +53,7 @@ export class LogoSvg {
   }
 
   componentDidRender() {
-    if (this.accessibilityTitle !== '') {
+    if (this.accessibilityTitle) {
       statusNote({
         tag: 'deprecated',
         message:
