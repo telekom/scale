@@ -318,7 +318,7 @@ export class Header {
           <span>
             <span
               class="header__user-menu--desktop"
-              aria-label="hey ich bin anwesend"
+              aria-label={this.userMenuAriaLabel}
             >
               <scale-menu-flyout>
                 <scale-nav-icon
@@ -345,7 +345,7 @@ export class Header {
             </span>
             <span
               class="header__user-menu--mobile"
-              aria-label="hey ich bin anwesend"
+              aria-label={this.userMenuAriaLabel}
             >
               <scale-nav-icon
                 slot="trigger"
