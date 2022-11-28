@@ -18,7 +18,7 @@ import {
   Host,
   Prop,
 } from '@stencil/core';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, helperTextIncrement } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 export interface CheckboxInterface extends HTMLElement {
@@ -150,7 +150,7 @@ export class Checkbox {
       return (
         <div
           part="helper-text"
-          id={text.internalId}
+          id={text.id}
           aria-live="polite"
           aria-relevant="additions removals"
         >
@@ -164,7 +164,7 @@ export class Checkbox {
 
   render() {
     const helperText = {
-      id: this.helperText ? `helper-text-${this.internalId}` : null,
+      id: this.helperText ? `helper-message-${helperTextIncrement()}` : null,
       content: this.helperText,
     };
 
