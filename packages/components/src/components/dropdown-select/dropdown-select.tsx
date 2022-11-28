@@ -13,7 +13,7 @@ import {
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
 import { computePosition } from '@floating-ui/dom';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, helperTextIncrement } from '../../utils/utils';
 
 enum Actions {
   Close = 'Close',
@@ -28,8 +28,6 @@ enum Actions {
   Select = 'Select',
   Type = 'Type',
 }
-
-let i = 0;
 
 const readOptions = (
   hostElement: HTMLElement
@@ -208,7 +206,6 @@ export class DropdownSelect {
   private comboEl: HTMLElement;
   private listboxEl: HTMLElement;
   private listboxPadEl: HTMLElement;
-  private readonly internalId = i++;
 
   @Watch('value')
   valueChange(newValue) {
@@ -382,7 +379,7 @@ export class DropdownSelect {
       readOptions(this.hostElement).find(({ value }) => value === this.value) ||
       ({} as any)
     ).ItemElement;
-    const helperTextId = `helper-message-${this.internalId}`;
+    const helperTextId = `helper-message-${helperTextIncrement()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (

@@ -19,7 +19,7 @@ import {
   Prop,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, helperTextIncrement } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 interface InputChangeEventDetail {
@@ -128,7 +128,7 @@ export class RadioButton {
   render() {
     const ariaInvalidAttr =
       this.status === 'error' || this.invalid ? { 'aria-invalid': true } : {};
-    const helperTextId = `helper-message-${this.internalId}`;
+    const helperTextId = `helper-message-${helperTextIncrement()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
 
     return (

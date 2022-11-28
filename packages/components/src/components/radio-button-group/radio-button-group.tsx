@@ -1,8 +1,7 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 import classNames from 'classnames';
 import statusNote from '../../utils/status-note';
-
-let i = 0;
+import { helperTextIncrement } from '../../utils/utils';
 
 @Component({
   tag: 'scale-radio-button-group',
@@ -19,8 +18,6 @@ export class RadioButtonGroup {
   @Prop() status?: string = '';
   /** (optional) Input status */
   @Prop() invalid?: boolean = false;
-
-  private readonly internalId = i++;
 
   componentDidRender() {
     if (this.status !== '') {
@@ -46,7 +43,7 @@ export class RadioButtonGroup {
   }
 
   render() {
-    const helperTextId = `helper-message-${this.internalId}`;
+    const helperTextId = `helper-message-${helperTextIncrement()}`;
     return (
       <fieldset class="radio-button-group">
         <legend class="radio-button-group__title">

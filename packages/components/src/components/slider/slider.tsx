@@ -22,7 +22,7 @@ import {
   Fragment,
 } from '@stencil/core';
 import classNames from 'classnames';
-import { emitEvent } from '../../utils/utils';
+import { emitEvent, helperTextIncrement } from '../../utils/utils';
 import statusNote from '../../utils/status-note';
 
 let i = 0;
@@ -327,7 +327,7 @@ export class Slider {
   }
 
   render() {
-    const helperTextId = `slider-helper-message-${i}`;
+    const helperTextId = `helper-message-${helperTextIncrement()}`;
     const ariaDescribedByAttr = { 'aria-describedBy': helperTextId };
     return (
       <Host>
