@@ -89,6 +89,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 33 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -102,6 +103,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 153 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -119,6 +121,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 142 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -136,6 +139,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 107 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -153,6 +157,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 103 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -170,6 +175,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 114 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -187,6 +193,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 126 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -212,6 +219,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 144 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -229,6 +237,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 33 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -245,6 +254,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 142 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
@@ -262,6 +272,7 @@ export class LogoSvg {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 109 38"
+            part="logo-svg"
             fill={this.getColor()}
             role={this.role === 'link' ? null : 'img'}
             aria-labelledby={`logo-title-${i}`}
