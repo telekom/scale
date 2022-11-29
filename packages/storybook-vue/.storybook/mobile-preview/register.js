@@ -37,7 +37,7 @@ addons.register('@telekom/scale-mobile-prpeview', (api) => {
                             })
                     }
                 )
-            }, 200)
+            }, 500)
         }
         return null
       },
