@@ -18,10 +18,8 @@ addons.register('@telekom/scale-mobile-prpeview', (api) => {
                                 firstChild.style = "padding: 0; height: 100%; margin: 0;"
                                 const wrapper = el.querySelector('.innerZoomElementWrapper');
                                 wrapper.firstChild.style = "border: none !important;"
-
-                                const rootEl = el.querySelector('#root').firstChild
+                                const rootEl = el.querySelector('#root')
                                 rootEl.style = "position: relative; height: 612px;"
-
                                 const parentNode = el.parentNode;
                                 let topEl = document.createElement("div");
                                 topEl.classList.add("top-frame")
