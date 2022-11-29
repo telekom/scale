@@ -43,6 +43,14 @@
   --scl-z-index-50: 50;
   --scl-z-index-60: 60;
   --scl-z-index-70: 70;
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
+  --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1.00rem);
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  --step-2: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+  --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+  --step-5: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
 }
 
 /**
@@ -88,4 +96,28 @@
 }
 .scl-font-variant-heading-1 {
   font: var(--telekom-text-style-heading-1);
+}
+
+/* --telekom-typography-font-size-headline-3: 1.5rem;
+--telekom-typography-font-size-headline-2: 2rem;
+--telekom-typography-font-size-headline-1: 2.625rem; */
+
+h1 {
+  /* font-size: clamp(1.625rem, 2vw + 1rem, 2.625rem); */
+  font-size: var(--step-5);
+}
+
+h2 {
+  /* font-size: clamp(1.25rem, 2vw + 1rem, 2rem); */
+  font-size: var(--step-4);
+}
+
+h2 {
+  /* font-size: clamp(1.125rem, 2vw + 1rem, 1.5rem); */
+  font-size: var(--step-3);
+}
+
+p {
+  /* font-size: clamp(0.75rem, 2vw + 1rem, 1rem); */
+  font-size: var(--step--1);
 }
