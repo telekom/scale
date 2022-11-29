@@ -61,9 +61,9 @@ export class Button {
   @Prop() download?: string;
   /** (optional) Set `tabindex` in the inner button or link element */
   @Prop() innerTabindex?: number;
-  /** (optional) Button aria-label*/
+  /** (optional) Button aria-label */
   @Prop() ariaLabel?: string;
-  /** (optional) Button form*/
+  /** (optional) Button form */
   @Prop() form?: string;
 
   private focusableElement: HTMLElement;
