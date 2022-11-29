@@ -35,8 +35,6 @@ export class TabHeader {
   /** True for smaller height and font size */
   /** @deprecated - size should replace small */
   @Prop() small?: boolean = false;
-  /** (optional) false or undefined if the element should receive focus  */
-  @Prop() firstRender: boolean;
   /** (optional) size  */
   @Prop() size: 'small' | 'large' = 'small';
   /** (optional) Injected CSS styles */
@@ -51,7 +49,8 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        if (!this.firstRender) {
+        const firstRender = this.hostElement.getAttribute('first-render');
+        if (!firstRender) {
           this.hostElement.focus();
         }
       }

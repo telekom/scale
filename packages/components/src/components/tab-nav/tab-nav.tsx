@@ -162,6 +162,7 @@ export class TabNav {
       tab.setAttribute('aria-controls', panel.id);
       panel.setAttribute('aria-labelledby', tab.id);
       if (!selectedTab) {
+        // we pass this down to tab-header to prevent the first element to be focused on first render (a11y)
         tab.setAttribute('first-render', "true")
       }
     });
