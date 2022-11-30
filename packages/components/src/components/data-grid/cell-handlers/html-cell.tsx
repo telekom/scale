@@ -21,7 +21,7 @@ export const HTMLCell: Cell = {
     return rows[0][columnIndex];
   },
   render: ({ field, content, component }) => {
-    return field.options == 'no_dropdown' ? (
+    return field.options === 'no_dropdown' ? (
       <div
         ref={(el) => {
           if (el) {
