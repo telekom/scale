@@ -392,7 +392,7 @@ export class DataGrid {
         ? 'ascending'
         : sortDirection === 'ascending'
         ? 'descending'
-        : 'none';
+        : 'ascending'
     this.fields[columnIndex].sortDirection = newSortDirection;
     this.sortTable(newSortDirection, type, columnIndex);
   }
