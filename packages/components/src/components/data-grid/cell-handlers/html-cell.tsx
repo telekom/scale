@@ -21,16 +21,15 @@ export const HTMLCell: Cell = {
     return rows[0][columnIndex];
   },
   render: ({ field, content, component }) => {
-    return (
-      field.options == 'no_dropdown' ? 
-        <div
-          ref={(el) => {
-            if (el) {
-              el.appendChild(content);
-            }
-          }}
-        ></div>
-      : 
+    return field.options == 'no_dropdown' ? (
+      <div
+        ref={(el) => {
+          if (el) {
+            el.appendChild(content);
+          }
+        }}
+      ></div>
+    ) : (
       <scale-button
         variant="secondary"
         size="small"
