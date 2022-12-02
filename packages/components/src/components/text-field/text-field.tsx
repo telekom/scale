@@ -105,7 +105,7 @@ export class TextField {
   @Prop() list?: string;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
-  /** (optional) custom value for automplete HTML attribute*/
+  /** (optional) custom value for automplete HTML attribute */
   @Prop() autocomplete?: string;
 
   /** (optional) Injected CSS styles */
