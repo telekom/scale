@@ -105,6 +105,8 @@ export class TextField {
   @Prop() list?: string;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
+  /** (optional) custom value for autocomplete HTML attribute */
+  @Prop() inputAutocomplete?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -266,6 +268,7 @@ export class TextField {
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
             readonly={this.readonly}
+            autocomplete={this.inputAutocomplete}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
