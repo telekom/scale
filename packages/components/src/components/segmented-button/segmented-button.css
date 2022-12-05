@@ -78,7 +78,7 @@
   color: var(--telekom-color-text-and-icon-standard);
 }
 
-button.segmented-button--icon-only.segmented-button--small {
+button.segmented-button--icon-only.segmented-button--small .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x4);
 }
@@ -183,7 +183,11 @@ button.segmented-button--xl .segmented-button--mask {
 }
 
 .segmented-button--selected:not(.segmented-button--icon-only) .icon-container {
-  display: none;
+  display: none !important;
+}
+
+.segmented-button .success-icon-container {
+  display: none; 
 }
 
 .segmented-button--selected .success-icon-container {
