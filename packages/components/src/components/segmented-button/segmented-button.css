@@ -11,7 +11,6 @@
 
 :host {
   /* not selected */
-  --background-color: var(--telekom-color-ui-state-fill-standard);
   --background-color-selected: var(--telekom-color-ui-base);
   --button-radius: 6px;
   --padding-top-bottom: var(--telekom-spacing-unit-x1);
@@ -49,23 +48,34 @@
 
 .segmented-button {
   box-sizing: border-box;
+  position: relative;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  padding-top: var(--padding-top-bottom);
+  padding-bottom: var(--padding-top-bottom);
+  transition: var(--transition);
+  background-color: transparent;
+  padding: 0;
+}
+
+.segmented-button--mask {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 0;
   height: 100%;
+  width: 100%;
   border-radius: var(--button-radius);
-  background-color: var(--background-color);
-  padding-top: var(--padding-top-bottom);
-  padding-bottom: var(--padding-top-bottom);
+  background-color: transparent;  
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   transition: var(--transition);
   white-space: nowrap;
   color: var(--telekom-color-text-and-icon-standard);
-  width: 100%;
 }
 
 button.segmented-button--icon-only.segmented-button--small {
@@ -73,7 +83,7 @@ button.segmented-button--icon-only.segmented-button--small {
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
-button.segmented-button--small  {
+button.segmented-button--small .segmented-button--mask   {
   padding-left: var(--telekom-spacing-unit-x2);
   padding-right: var(--telekom-spacing-unit-x3);
 }
@@ -83,7 +93,7 @@ button.segmented-button--small  {
   height: 36px;
 }
 
-button.segmented-button--large {
+button.segmented-button--large .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x3);
   padding-right: var(--telekom-spacing-unit-x4);
 }
@@ -92,7 +102,7 @@ button.segmented-button--large {
   font-size: var(--font-size-large);
   height: 40px;
 }
-button.segmented-button--xl {
+button.segmented-button--xl .segmented-button--mask {
   padding-left: 16px;
   padding-right: 20px;
 }
@@ -103,11 +113,11 @@ button.segmented-button--xl {
   color: var(--color-selected);
 }
 
-.segmented-button--disabled.segmented-button--selected {
+.segmented-button--disabled.segmented-button--selected .segmented-button--mask {
   color: var(--label-disabled);
 }
 
-.segmented-button--disabled:not(.segmented-button--selected) {
+.segmented-button--disabled:not(.segmented-button--selected) .segmented-button--mask{
   color: var(--label-disabled);
   background-color: transparent;
 }
@@ -137,11 +147,11 @@ button.segmented-button--xl {
   backface-visibility: hidden;
 }
 
-.segmented-button:not(.segmented-button--disabled):hover {
+.segmented-button:not(.segmented-button--disabled):hover .segmented-button--mask{
   background-color: var(--background-color-hover);
 }
 
-.segmented-button:not(.segmented-button--disabled):active {
+.segmented-button:not(.segmented-button--disabled):active .segmented-button--mask{
   background-color: var(--background-color-active);
 }
 
