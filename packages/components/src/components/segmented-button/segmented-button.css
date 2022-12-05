@@ -176,7 +176,7 @@ button.segmented-button--xl .segmented-button--mask {
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
   visibility: hidden !important;
-}
+} 
 
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
@@ -201,4 +201,8 @@ button.segmented-button--xl .segmented-button--mask {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.segmented-button--selected .icon-container {
+  color: var(--color-selected);
 }
