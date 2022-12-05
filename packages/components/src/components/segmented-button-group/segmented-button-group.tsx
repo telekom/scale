@@ -66,6 +66,9 @@ export class SegmentedButtonGroup {
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
 
+
+  container: HTMLElement;
+
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: ButtonStatus[];
@@ -117,14 +120,9 @@ export class SegmentedButtonGroup {
           'aria-description-translation',
           '$position $selected'
         );
-        if (!this.fullWidth) {
-          SegmentedButton.setAttribute(
-            'width',
-            `${Math.ceil(longestButtonWidth)}px`
-          );        
-        }
       });
-  
+      // @ts-ignore
+      this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
       this.propagatePropsToChildren();
       this.position = 0;
       this.status = tempState;
@@ -212,6 +210,7 @@ export class SegmentedButtonGroup {
           part={this.getBasePartMap()}
           aria-label={this.getAriaLabelTranslation()}
           role="group"
+          ref={(el) => this.container = el as HTMLInputElement}
         >
           <slot />
         </div>

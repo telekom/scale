@@ -19,9 +19,9 @@
   border: 0;
   border-radius: var(--radius);
   padding: 2px;
-  display: flex;
   width: fit-content;
   height: 32px;
+  display: inline-grid;
 }
 
 .segmented-button-group--full-width {
