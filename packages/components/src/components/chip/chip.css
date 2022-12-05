@@ -40,7 +40,23 @@
   justify-content: center;
   cursor: default;
   background: var(--telekom-color-text-and-icon-inverted-standard);
-  box-shadow: var(--box-shadow);
+  border: 1px solid var(--telekom-color-ui-border-standard);
+}
+
+.chip:hover {
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-hovered),
+      var(--telekom-color-ui-state-fill-hovered)
+    ),
+    var(--telekom-color-text-and-icon-inverted-standard);
+}
+
+.chip:active {
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-pressed),
+      var(--telekom-color-ui-state-fill-pressed)
+    ),
+    var(--telekom-color-text-and-icon-inverted-standard);
 }
 
 .chip--selected {
@@ -48,13 +64,20 @@
   color: var(--color-standard-selected);
 }
 
-/*TODO: proof in storybook*/
 .chip--selected:hover {
-  background: var(--telekom-color-additional-violet-40);
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-hovered-inverted),
+      var(--telekom-color-ui-state-fill-hovered-inverted)
+    ),
+    var(--background-standard-selected);
 }
 
 .chip--selected:active {
-  background: var(--telekom-color-ui-state-fill-pressed-inverted);
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-pressed-inverted),
+      var(--telekom-color-ui-state-fill-pressed-inverted)
+    ),
+    var(--background-standard-selected);
 }
 
 /**
@@ -104,5 +127,26 @@ type outline
 
 .chip.chip--type-outline.chip--selected {
   color: var(--telekom-color-text-and-icon-primary-standard);
-  background-color: transparent;
+  background: var(--telekom-color-text-and-icon-inverted-standard);
+  border: 1px solid var(--telekom-color-text-and-icon-primary-standard);
+}
+
+.chip.chip--type-outline.chip--selected:hover {
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-hovered),
+      var(--telekom-color-ui-state-fill-hovered)
+    ),
+    var(--telekom-color-text-and-icon-inverted-standard);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
+  border: 1px solid var(--telekom-color-text-and-icon-primary-hovered);
+}
+
+.chip.chip--type-outline.chip--selected:active {
+  background: linear-gradient(
+      var(--telekom-color-ui-state-fill-pressed),
+      var(--telekom-color-ui-state-fill-pressed)
+    ),
+    var(--telekom-color-text-and-icon-inverted-standard);
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+  border: 1px solid var(--telekom-color-text-and-icon-primary-pressed);
 }
