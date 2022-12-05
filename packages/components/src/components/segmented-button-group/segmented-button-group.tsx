@@ -54,6 +54,10 @@ export class SegmentedButtonGroup {
   @Prop() disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
   @Prop() fullWidth?: boolean = false;  
+  /** (optional) If `true`, show error message if no element is selected */
+  @Prop() required?: boolean = false;
+  /** (optional) If `true`, show error message if no element is selected */
+  @Prop() helperText?: string;   
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -68,7 +72,7 @@ export class SegmentedButtonGroup {
 
 
   container: HTMLElement;
-
+  showHelperText = false;
   @Listen('scaleClick')
   scaleClickHandler(ev: { detail: { id: string; selected: boolean } }) {
     let tempState: ButtonStatus[];
@@ -128,6 +132,13 @@ export class SegmentedButtonGroup {
       this.status = tempState;
       this.setState(tempState);
     })
+  }
+
+  componentWillUpdate() {
+    this.showHelperText = false;
+    if (this.required && this.status.filter(e => e.selected === true).length <= 0) {
+      this.showHelperText = true;
+    }    
   }
 
   getAdjacentSiblings = (tempState, i) => {
@@ -213,7 +224,12 @@ export class SegmentedButtonGroup {
           ref={(el) => this.container = el as HTMLInputElement}
         >
           <slot />
+
         </div>
+        { this.showHelperText && <scale-helper-text
+              helperText={this.helperText}
+              variant={'danger'}
+            ></scale-helper-text>} 
       </Host>
     );
   }
