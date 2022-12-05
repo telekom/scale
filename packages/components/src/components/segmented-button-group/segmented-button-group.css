@@ -24,6 +24,10 @@
   height: 32px;
 }
 
+.segmented-button-group--full-width {
+  width: 100%;
+}
+
 .segmented-button-group--large {
   height: 40px;
   padding: 0 2px 0 2px;

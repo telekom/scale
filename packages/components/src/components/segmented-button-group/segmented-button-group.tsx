@@ -52,6 +52,8 @@ export class SegmentedButtonGroup {
   @Prop() multiSelect: boolean = false;
   /** (optional) If `true`, the group is disabled */
   @Prop() disabled?: boolean = false;
+  /** (optional) If `true`, expand to container width */
+  @Prop() fullWidth?: boolean = false;  
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
@@ -92,7 +94,9 @@ export class SegmentedButtonGroup {
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      el.setAttribute('disabled', this.disabled && 'disabled');
+      if (el.getAttribute('disabled') == null) {
+        el.setAttribute('disabled', this.disabled && 'disabled');
+      }
     });
   }
 
@@ -113,10 +117,19 @@ export class SegmentedButtonGroup {
           'aria-description-translation',
           '$position $selected'
         );
-        SegmentedButton.setAttribute(
-          'width',
-          `${Math.ceil(longestButtonWidth)}px`
-        );
+        if (!this.fullWidth) {
+          SegmentedButton.setAttribute(
+            'width',
+            `${Math.ceil(longestButtonWidth)}px`
+          );        
+        } else {
+          const groupWidth = this.hostElement.getBoundingClientRect().width; 
+          console.log('FULL WIDTH', groupWidth, this.hostElement.children)
+          SegmentedButton.setAttribute(
+            'width',
+            `${Math.ceil(groupWidth / this.hostElement.children.length)}px`
+          );
+        }
       });
   
       this.propagatePropsToChildren();
@@ -226,7 +239,8 @@ export class SegmentedButtonGroup {
 
     return classNames(
       'segmented-button-group',
-      this.size && `${prefix}${this.size}`
+      this.size && `${prefix}${this.size}`,
+      this.fullWidth && `${prefix}full-width`
     );
   }
 }

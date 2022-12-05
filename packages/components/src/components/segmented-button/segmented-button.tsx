@@ -103,41 +103,6 @@ export class SegmentedButton {
     this.handleIcon();
   }
 
-  componentWillUpdate() {
-    this.handleSelectIcon();
-  }
-
-  componentDidLoad() {
-    this.handleSelectIcon();
-  }
-
-  handleSelectIcon() {
-    if (this.hostElement.children.length === 1) {
-      if (this.selected) {
-        this.hostElement.children[0].setAttribute(
-          'stroke',
-          'var(--telekom-color-text-and-icon-inverted-standard)'
-        );
-        this.hostElement.children[0].setAttribute(
-          'color',
-          'var(--telekom-color-text-and-icon-standard)'
-        );
-        this.hostElement.children[0].setAttribute('selected', '');
-      }
-      if (!this.selected) {
-        this.hostElement.children[0].setAttribute(
-          'stroke',
-          'var(--telekom-color-text-and-icon-standard)'
-        );
-        this.hostElement.children[0].setAttribute(
-          'color',
-          'var(--telekom-color-text-and-icon-standard)'
-        );
-        this.hostElement.children[0].removeAttribute('selected');
-      }
-    }
-  }
-
   getAriaDescriptionTranslation() {
     const replaceSelected = this.selected
       ? this.ariaLangSelected
@@ -168,7 +133,6 @@ export class SegmentedButton {
         this.hostElement.setAttribute('icon-only', 'true')
         const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
         icon.style.marginRight = '0px';
-        icon.setAttribute('fill','var(--color-selected)')
       }
     });
   }
