@@ -16,15 +16,6 @@ describe('Chip', () => {
     expect(page.root).toMatchSnapshot();
   });
   it('should handle css classes', () => {
-    element.type = 'strong';
-    expect(element.getCssClassMap()).toContain('chip--type-strong');
-
-    element.color = 'green';
-    expect(element.getCssClassMap()).toContain('chip--color-green');
-
-    element.type = 'strong';
-    expect(element.getCssClassMap()).toContain('chip--type-strong');
-
     element.selected = true;
     expect(element.getCssClassMap()).toContain('chip--selected');
 

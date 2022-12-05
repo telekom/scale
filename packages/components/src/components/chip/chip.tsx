@@ -27,24 +27,9 @@ import { emitEvent } from '../../utils/utils';
 })
 export class Chip {
   @Element() hostElement: HTMLElement;
-  /** (optional) chip type */
-  // TODO: Inversed
-  @Prop() type?: 'standard' | 'strong' = 'standard';
+  @Prop() type?: 'standard' | 'outline' = 'standard';
   /** (optional) */
   @Prop() selected?: boolean = false;
-  /** (optional) chip color */
-  @Prop() color?:
-    | 'cyan'
-    | 'yellow'
-    | 'green'
-    | 'orange'
-    | 'red'
-    | 'violet'
-    | 'brown'
-    | 'olive'
-    | 'teal'
-    | 'black'
-    | 'grey';
   /** (optional) chip aria-role */
   @Prop() ariaRoleTitle?: string = 'switch';
   /** (optional) chip aria-checked */
@@ -169,10 +154,9 @@ export class Chip {
 
     return classNames(
       mode === 'basePart' ? 'base' : component,
-      this.type && `${prefix}type-${this.type}`,
-      this.color && `${prefix}color-${this.color}`,
       !!this.selected && `${prefix}selected`,
-      !!this.disabled && `${prefix}disabled`
+      !!this.disabled && `${prefix}disabled`,
+      this.type && `${prefix}type-${this.type}`
     );
   }
 }

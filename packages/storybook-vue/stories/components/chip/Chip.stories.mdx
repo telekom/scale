@@ -15,29 +15,6 @@ import { action } from '@storybook/addon-actions';
     label: {
       control: { type: 'text' },
     },
-    color: {
-      control: {
-        type: 'select',
-        options: [
-          'cyan',
-          'yellow',
-          'green',
-          'orange',
-          'red',
-          'violet',
-          'brown',
-          'olive',
-          'teal',
-          'grey',
-        ],
-      },
-    },
-    type: {
-      control: {
-        type: 'select',
-        options: ['strong', 'standard', 'inversed', 'colored'],
-      },
-    },
   }}
 />
 
@@ -49,9 +26,7 @@ export const Template = (args, { argTypes }) => ({
   template: `
     <template>
         <scale-chip
-            :type="type"
             :selected="selected"
-            :color="color"
             :dismissible="dismissible"
             :label="label"
             :disabled="disabled"
@@ -74,9 +49,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
   template: `
     <template>
         <scale-chip
-            :type="type"
             :selected="selected"
-            :color="color"
             :dismissible="dismissible"
             :label="label"
             :disabled="disabled"
@@ -92,80 +65,6 @@ export const TemplateIcon = (args, { argTypes }) => ({
   methods: {
     action,
   },
-});
-
-export const TemplateInteractive = (args, { argTypes }) => ({
-  template: `
-      <ul aria-label="colors" style="display: flex; list-style: none; padding: 0;">
-          <li v-for="color in colors" :key="color" style="margin-right: 4px;">
-            <scale-chip
-                type="strong"
-                v-bind:label="'Strong ' + color"
-                v-bind:color=color
-            >      
-            </scale-chip>
-            <div style="height: 10px"/>
-             <scale-chip
-                type="standard"
-                v-bind:label="'Standard ' + color"
-                v-bind:color=color
-            >     
-            </scale-chip>
-          </li>
-      </ul>
-  `,
-  methods: {
-    action: action('scaleChange'),
-  },
-  data: () => ({
-    colors: [
-      'grey',
-      'cyan',
-      'yellow',
-      'green',
-      'orange',
-      'red',
-      'violet',
-      'brown',
-      'olive',
-      'teal',
-    ],
-  }),
-});
-
-export const TemplateClose = (args, { argTypes }) => ({
-  template: `
-      <ul aria-label="colors" style="display: flex; list-style: none; padding: 0;">
-          <li v-for="color in colors" :key="color" style="margin-right: 4px;">
-            <scale-chip
-                type="strong"
-                dismissible
-                v-bind:label="'Close me'"
-                v-bind:color=color
-                v-bind:dismiss-text="'Remove ' + color + ' from the list'"
-                @scaleClose="removeColor(color)"
-            >      
-            </scale-chip>
-          </li>
-      </ul>
-  `,
-  methods: {
-    action: action('scaleClose'),
-    removeColor(color) {
-      this.action();
-      this.colors = this.colors.filter((x) => x !== color);
-      setTimeout(() => {
-        this.$el.querySelector('#root > ul > li > scale-chip') &&
-          this.$el
-            .querySelector('#root > ul > li > scale-chip')
-            .shadowRoot.querySelector('span > button')
-            .focus();
-      });
-    },
-  },
-  data: () => ({
-    colors: ['grey'],
-  }),
 });
 
 <div
@@ -194,6 +93,10 @@ export const TemplateClose = (args, { argTypes }) => ({
 </Canvas>
 
 <ArgsTable story="Standard" />
+
+```html
+<scale-chip label="Standard Chip"></scale-chip>
+```
 
 ## Icon
 
@@ -289,81 +192,4 @@ export const TemplateClose = (args, { argTypes }) => ({
 
 ```html
 <scale-chip dismissible selected label="Dismissible Selected Chip"></scale-chip>
-```
-
-## Colored
-
-### Color Standard
-
-<Canvas withSource="none">
-  <Story
-    name="Color Standard Chip"
-    args={{
-      label: 'Color Standard Chip',
-      color: 'red',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-chip
-  color="red"
-  type="standard"
-  label="Color Standard Chip"
-></scale-chip>
-```
-
-### Color Strong
-
-<Canvas withSource="none">
-  <Story
-    name="Color Strong Chip"
-    args={{
-      label: 'Color Strong Chip',
-      color: 'red',
-      type: 'strong',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-chip color="red" type="strong" label="Color Strong Chip"></scale-chip>
-```
-
-## Color Variety
-
-<Canvas withSource="none">
-  <Story name="Colors">{TemplateInteractive.bind({})}</Story>
-</Canvas>
-
-## Change Action
-
-<Canvas withSource="none">
-  <Story
-    name="Change Action Chip"
-    args={{
-      label: 'Change me',
-      selected: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-chip selected label="Change me"></scale-chip>
-```
-
-## Close Action
-
-<Canvas withSource="none">
-  <Story name="Close Action Chip">{TemplateClose.bind({})}</Story>
-</Canvas>
-
-```html
-<scale-chip dismissible color="grey" label="Close me"></scale-chip>
 ```

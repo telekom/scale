@@ -2,7 +2,6 @@
   <scale-chip
     :type="type"
     :selected="selected"
-    :color="color"
     :dismissible="dismissible"
     :label="label"
     :aria-checked-state="ariaCheckedState"
@@ -21,24 +20,8 @@
 import { action } from '@storybook/addon-actions';
 export default {
   props: {
-    type: {
-      type: 'strong' | 'standard' | 'inversed',
-      default: 'standard',
-    },
+    type: { type: 'standard' | 'outline', default: 'standard' },
     selected: { type: Boolean, default: false },
-    color: {
-      type:
-        'cyan' |
-        'yellow' |
-        'green' |
-        'orange' |
-        'red' |
-        'violet' |
-        'brown' |
-        'olive' |
-        'teal' |
-        'grey',
-    },
     dismissible: { type: Boolean, default: false },
     label: { type: String },
     disabled: { type: Boolean, default: false },
