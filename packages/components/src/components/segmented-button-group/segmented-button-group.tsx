@@ -108,7 +108,6 @@ export class SegmentedButtonGroup {
   }
 
   componentDidLoad() {
-    setTimeout( () => {
       const tempState: ButtonStatus[] = [];
       const segmentedButtons = this.getAllSegmentedButtons();
       this.slottedButtons = segmentedButtons.length;
@@ -131,7 +130,6 @@ export class SegmentedButtonGroup {
       this.position = 0;
       this.status = tempState;
       this.setState(tempState);
-    })
   }
 
   componentWillUpdate() {
