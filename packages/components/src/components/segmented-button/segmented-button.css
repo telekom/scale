@@ -44,6 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 .segmented-button {
@@ -64,6 +65,7 @@
   transition: var(--transition);
   white-space: nowrap;
   color: var(--telekom-color-text-and-icon-standard);
+  width: 100%;
 }
 
 button.segmented-button--icon-only.segmented-button--small {

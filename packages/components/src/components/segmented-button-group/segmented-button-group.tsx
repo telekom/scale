@@ -122,13 +122,6 @@ export class SegmentedButtonGroup {
             'width',
             `${Math.ceil(longestButtonWidth)}px`
           );        
-        } else {
-          const groupWidth = this.hostElement.getBoundingClientRect().width; 
-          console.log('FULL WIDTH', groupWidth, this.hostElement.children)
-          SegmentedButton.setAttribute(
-            'width',
-            `${Math.ceil(groupWidth / this.hostElement.children.length)}px`
-          );
         }
       });
   
