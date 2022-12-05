@@ -3,6 +3,8 @@
     :size="size"
     :disabled="disabled"
     :multi-select="multiSelect"
+    :required="required"
+    :helper-text="helperText"
     :styles="styles"
     @scaleChange="scaleChange"
   >
@@ -18,6 +20,8 @@ export default {
     size: { type: String, default: 'regular' },
     disabled: { type: Boolean, default: false },
     multiSelect: { type: Boolean, default: false },
+    required: {type: Boolean, default: false},
+    helperText: {type: String},
     styles: { type: String },
   },
   methods: {
