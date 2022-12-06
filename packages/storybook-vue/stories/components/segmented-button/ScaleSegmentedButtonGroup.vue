@@ -14,7 +14,6 @@
 
 <script>
 import { action } from "@storybook/addon-actions";
-console.log('FOOOOO')
 export default {
   props: {
     size: { type: String, default: 'regular' },
