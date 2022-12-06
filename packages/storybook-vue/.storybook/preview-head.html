@@ -7,7 +7,6 @@
     color: var(--telekom-color-text-and-icon-standard);
     background: var(--telekom-color-background-canvas);
   }
-
   .sbdocs.sbdocs-preview {
     /* needed for dark mode */
     color: var(--telekom-color-text-and-icon-standard);
@@ -27,6 +26,19 @@
   }
   .brand-header-spacing {
     margin: -1rem;
+  }
+  .brand-header-spacing .with-icon {
+    display: flex;
+    align-items: center;
+  }
+  .brand-header-spacing .with-icon > * {
+    margin-inline-start: 0.5ch;
+  }
+
+  @media screen and (min-width: 1040px) {
+    .brand-header-spacing .mobile-menu {
+      display: none;
+    }
   }
 
   scale-sb-spacing {
@@ -55,5 +67,50 @@
   .color_token_copy-paste-button_dark:hover scale-icon-action-copy-paste {
     color: #a6a6a6;
     border: 0;
+  }
+
+
+
+
+  slot[name='functions']::slotted(*) {
+    color: var(--telekom-color-text-and-icon-standard);
+  }
+  ol[slot='functions'] {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    list-style: none;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+  }
+  ol[slot='functions'] li {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  h2 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  h2,
+  h3,
+  h5 {
+    color: red;
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+    align-items: center;
+  }
+  section {
+    height: 100%;
+    display: inline-flex;
   }
 </style>
