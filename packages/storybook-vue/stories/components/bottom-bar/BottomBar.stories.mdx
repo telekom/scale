@@ -17,7 +17,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
       viewports: INITIAL_VIEWPORTS,
       defaultViewport: 'iphone6',
     },
-    mobilePreview: true
+    mobilePreview: 'bottom'
   }}  
   argTypes={{
     icon: {
@@ -35,11 +35,6 @@ export const TemplateIOS = (args, { argTypes }) => ({
     icon: String,
     label: String,
     ...ScaleBottomBar.props,
-  },
-  parameters: {
-    mobilePreview: {
-      data: 'HELLO WORLD FOOO'
-    }
   },
   template: `
     <div data-platform="ios" style="position: absolute; bottom: 0; width: 100%;">
