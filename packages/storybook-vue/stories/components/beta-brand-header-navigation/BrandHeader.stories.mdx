@@ -1,0 +1,251 @@
+import {
+  Meta,
+  Story,
+  ArgsTable,
+  Description,
+  Canvas,
+} from '@storybook/addon-docs';
+import TelekomHeader from './TelekomHeader.vue';
+
+<Meta
+  title="Beta Components/Brand Header & Navigation"
+  component={TelekomHeader}
+  argTypes={{
+    appNameLink: {
+      control: {
+        type: 'text',
+      },
+    },
+    appName: {
+      control: {
+        type: 'text',
+      },
+    },
+    appNameClick: {
+      control: {
+        type: 'disabled',
+      },
+      description: 'app name click event handler custom function',
+    },
+  }}
+/>
+
+<div
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  }}
+>
+  <h1>Beta Brand Header & Navigation</h1>
+  <img src="assets/beta.png" alt="Beta" />
+</div>
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{}} inline={false}>
+    {() => ({
+      template: `
+        <div class="brand-header-spacing" style="min-height: 120vh; background: var(--telekom-color-background-surface-subtle);">
+           <scale-telekom-header>
+                <!-- MAIN NAV -->
+                <scale-telekom-nav-list variant="main" slot="main-nav">
+                  <scale-telekom-nav-item active>
+                    <button><span>Category 1</span></button>
+                    <scale-telekom-nav-flyout hover>
+                      <div class="flyout-body" style="padding: var(--_spacing-x); margin-top: 12px;">
+                        <h2>Hello, this is a flyout</h2>
+                        <p>With a list of links.</p>
+                        <ul>
+                          <li><a href="#">Link 1</a></li>
+                          <li><a href="#">Link 2</a></li>
+                          <li><a href="#">Link 3</a></li>
+                          <li><a href="#">Link 4</a></li>
+                        </ul>
+                      </div>
+                    </scale-telekom-nav-flyout>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item>
+                    <button>Category 2</button>
+                    <scale-telekom-nav-flyout hover>
+                      <div class="flyout-body" style="padding: var(--_spacing-x); margin-top: 12px;">
+                        <h2>Hello, this is the same flyout</h2>
+                        <p>With a list of links.</p>
+                        <ul>
+                          <li><a href="#">Link 1</a></li>
+                          <li><a href="#">Link 2</a></li>
+                          <li><a href="#">Link 3</a></li>
+                          <li><a href="#">Link 4</a></li>
+                        </ul>
+                      </div>
+                    </scale-telekom-nav-flyout>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item>
+                    <a href="#">Category 3</a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item>
+                    <a href="#">Category 4</a>
+                  </scale-telekom-nav-item>
+                </scale-telekom-nav-list>
+                <scale-telekom-nav-list
+                  variant="meta"
+                  slot="meta-nav-ext"
+                  alignment="left"
+                >
+                  <scale-telekom-nav-item variant="meta">
+                    <a href="#">
+                      <span class="with-icon">
+                        Metalink ext 1 <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></scale-icon-action-external-link>
+                      </span>
+                    </a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item variant="meta">
+                    <a href="#">
+                      <span class="with-icon">
+                        Metalink ext 2 <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></scale-icon-action-external-link>
+                      </span>
+                    </a>
+                  </scale-telekom-nav-item>
+                </scale-telekom-nav-list>
+                <scale-telekom-nav-list
+                  variant="meta-tight"
+                  slot="meta-nav"
+                  alignment="left"
+                >
+                  <scale-telekom-nav-item variant="meta">
+                    <a href="#">Metalink 1</a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item variant="meta">
+                    <a href="#">Metalink 2</a>
+                  </scale-telekom-nav-item>
+                </scale-telekom-nav-list>
+                <section slot="language-switch"></section>
+                <scale-telekom-nav-list
+                  variant="function"
+                  slot="functions"
+                  alignment="right"
+                >
+                  <scale-telekom-nav-item variant="main">
+                    <a href="#">
+                      <scale-icon-action-search> </scale-icon-action-search>
+                    </a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item variant="main">
+                    <a href="#">
+                      <scale-icon-content-credit-card> </scale-icon-content-credit-card>
+                    </a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item variant="main">
+                    <a href="#">
+                      <scale-icon-action-shopping-cart>
+                      </scale-icon-action-shopping-cart>
+                    </a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item variant="main">
+                    <a href="#">
+                      <scale-badge count="1" label="messages" label-visually-hidden>
+                        <scale-icon-user-file-user> </scale-icon-user-file-user>
+                      </scale-badge>
+                    </a>
+                  </scale-telekom-nav-item>
+                  <scale-telekom-nav-item class="mobile-menu" variant="main">
+                    <scale-telekom-nav-item variant="main">
+                      <button class="mobile-menu-trigger">
+                        <scale-icon-action-menu></scale-icon-action-menu>
+                      </button>
+                    </scale-telekom-nav-item>
+                    <scale-telekom-nav-flyout
+                      class="mobile-menu-flyout"
+                      style="
+                        --translate-y: 100%;
+                        --duration: var(--telekom-motion-duration-animation);
+                        --top: 0;
+                        --height: 100vh;
+                        --spacing-x: 0;
+                      "
+                    >
+                      <scale-telekom-mobile-menu
+                        app-name="Application Name"
+                        app-name-link="#"
+                      >
+                        <scale-telekom-nav-list
+                          variant="meta"
+                          slot="top-left"
+                          alignment="left"
+                        >
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">
+                              <span class="with-icon">
+                                Metalink ext 1 <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></scale-icon-action-external-link>
+                              </span>
+                            </a>
+                          </scale-telekom-nav-item>
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">
+                              <span class="with-icon">
+                                Metalink ext 2 <scale-icon-navigation-external-link size="11"></scale-icon-navigation-external-link></scale-icon-action-external-link>
+                              </span>
+                            </a>
+                          </scale-telekom-nav-item>
+                        </scale-telekom-nav-list>
+                        <scale-telekom-nav-list
+                          variant="meta"
+                          slot="top-right"
+                          alignment="right"
+                        >
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">MK</a>
+                          </scale-telekom-nav-item>
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">SO</a>
+                          </scale-telekom-nav-item>
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">DE</a>
+                          </scale-telekom-nav-item>
+                        </scale-telekom-nav-list>
+                        <scale-telekom-mobile-menu-item>
+                          <a href="javascript:void(0);">Category 1</a>
+                          <scale-telekom-mobile-menu-item slot="children">
+                            <a href="#">2. Level Category 1</a>
+                          </scale-telekom-mobile-menu-item>
+                        </scale-telekom-mobile-menu-item>
+                        <scale-telekom-mobile-menu-item>
+                          <a href="#">Category 2</a>
+                          <scale-telekom-mobile-menu-item slot="children">
+                            <a href="#">2. Level Category 2.1</a>
+                            <scale-telekom-mobile-menu-item slot="children" active>
+                              <a href="#">3. Level Category 2.1.1</a>
+                            </scale-telekom-mobile-menu-item>
+                            <scale-telekom-mobile-menu-item slot="children">
+                              <a href="#">3. Level Category 2.1.2</a>
+                            </scale-telekom-mobile-menu-item>
+                          </scale-telekom-mobile-menu-item>
+                          <scale-telekom-mobile-menu-item slot="children">
+                            <a href="#">2. Level Category 2.2</a>
+                          </scale-telekom-mobile-menu-item>
+                        </scale-telekom-mobile-menu-item>
+                        <scale-telekom-nav-list
+                          variant="meta"
+                          slot="bottom"
+                          alignment="left"
+                          style="--flex-direction: column"
+                        >
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">Metalink ext 1</a>
+                          </scale-telekom-nav-item>
+                          <scale-telekom-nav-item variant="meta">
+                            <a href="#">Metalink ext 2</a>
+                          </scale-telekom-nav-item>
+                        </scale-telekom-nav-list>
+                      </scale-telekom-mobile-menu>
+                    </scale-telekom-nav-flyout>
+                  </scale-telekom-nav-item>
+                </scale-telekom-nav-list>
+              </scale-telekom-header>
+        </div>
+      `,
+    })}
+  </Story>
+</Canvas>
