@@ -29,11 +29,6 @@
   padding: var(--spacing) 0;
 }
 
-:host::part(close-button) {
-  position: absolute;
-  top: 22px;
-  right: calc(var(--spacing) - var(--spacing-close-button) + 2px);
-}
 :host::part(back-button) {
   display: flex;
   align-items: center;
@@ -56,6 +51,9 @@ scale-icon-navigation-left {
 }
 
 :host::part(close-button) {
+  position: absolute;
+  top: 22px;
+  right: 10px;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -65,7 +63,6 @@ scale-icon-navigation-left {
   border: 0;
   border-radius: var(--radius-close-button);
   outline: none;
-  color: var(--color);
   background: transparent;
   transition: var(--transition-close-button);
   transform: translate(
