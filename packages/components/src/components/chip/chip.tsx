@@ -134,7 +134,7 @@ export class Chip {
         >
           <slot name="chip-icon" />
           <p class="chip-label">{this.label}</p>
-          {this.selected && !this.disabled ? this.getIcon() : null}
+          {this.selected ? this.getIcon() : null}
         </span>
       </Host>
     );

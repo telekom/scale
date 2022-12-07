@@ -43,7 +43,7 @@
   border: 1px solid var(--telekom-color-ui-border-standard);
 }
 
-.chip:hover {
+.chip:not(.chip--disabled):hover {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-hovered),
       var(--telekom-color-ui-state-fill-hovered)
@@ -51,7 +51,7 @@
     var(--telekom-color-text-and-icon-inverted-standard);
 }
 
-.chip:active {
+.chip:not(.chip--disabled):active {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-pressed),
       var(--telekom-color-ui-state-fill-pressed)
@@ -64,7 +64,7 @@
   color: var(--color-standard-selected);
 }
 
-.chip--selected:hover {
+.chip--selected:not(.chip--disabled):hover {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-hovered-inverted),
       var(--telekom-color-ui-state-fill-hovered-inverted)
@@ -72,7 +72,7 @@
     var(--background-standard-selected);
 }
 
-.chip--selected:active {
+.chip--selected:not(.chip--disabled):active {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-pressed-inverted),
       var(--telekom-color-ui-state-fill-pressed-inverted)
@@ -115,10 +115,21 @@ icon end
 /**
 disabled
 **/
-
 .chip.chip--disabled {
-  background: var(--background-disabled);
-  color: var(--color-disabled);
+  color: var(--telekom-color-text-and-icon-disabled);
+  border: 1px solid var(--telekom-color-ui-border-disabled);
+}
+
+.chip--selected:not(.chip--type-outlined).chip--disabled {
+  background: var(--telekom-color-ui-disabled);
+  color: var(--telekom-color-text-and-icon-disabled);
+  border: none;
+}
+
+.chip--type-outlined.chip--selected.chip--disabled {
+  background-color: var(--telekom-color-text-and-icon-inverted-standard);
+  color: var(--telekom-color-text-and-icon-disabled);
+  border: 1px solid var(--telekom-color-ui-border-disabled);
 }
 
 /**
@@ -131,7 +142,7 @@ type outline
   border: 1px solid var(--telekom-color-text-and-icon-primary-standard);
 }
 
-.chip.chip--type-outline.chip--selected:hover {
+.chip.chip--type-outline.chip--selected:not(.chip.chip--disabled):hover {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-hovered),
       var(--telekom-color-ui-state-fill-hovered)
@@ -141,7 +152,7 @@ type outline
   border: 1px solid var(--telekom-color-text-and-icon-primary-hovered);
 }
 
-.chip.chip--type-outline.chip--selected:active {
+.chip.chip--type-outline.chip--selected:not(.chip.chip--disabled):active {
   background: linear-gradient(
       var(--telekom-color-ui-state-fill-pressed),
       var(--telekom-color-ui-state-fill-pressed)
