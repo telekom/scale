@@ -5,25 +5,25 @@
 
 ## Properties
 
-| Property         | Attribute         | Description                                                                                  | Type                                                     | Default     |
-| ---------------- | ----------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ----------- |
-| `fields`         | `fields`          | Input fields config array                                                                    | `any`                                                    | `undefined` |
-| `freezeHeader`   | `freeze-header`   | (optional) Freeze header row from scrolling                                                  | `boolean`                                                | `false`     |
-| `heading`        | `heading`         | (optional) Heading string                                                                    | `string`                                                 | `''`        |
-| `height`         | `height`          | (optional) Set static table height, by default will auto-resize                              | `string`                                                 | `undefined` |
-| `hideBorder`     | `hide-border`     | (optional) Set to true to remove border                                                      | `boolean`                                                | `false`     |
-| `hideHeader`     | `hide-header`     | (optional) Set to true to hide header row                                                    | `boolean`                                                | `false`     |
-| `hideInfo`       | `hide-info`       | (optional) Set to true to remove info footer block including pagination and selection status | `boolean`                                                | `false`     |
-| `hideMenu`       | `hide-menu`       | (optional) Set to true to hide settings menu                                                 | `boolean`                                                | `false`     |
-| `localization`   | --                | (optional) set localization for sort, toggle and select/deselect table Default is English.   | `{ sortBy?: string; toggle?: string; select?: string; }` | `undefined` |
-| `numbered`       | `numbered`        | (optional) Set to true to add numbers column                                                 | `boolean`                                                | `false`     |
-| `pageSize`       | `page-size`       | (optional) Set number of rows to display per pagination page                                 | `number`                                                 | `Infinity`  |
-| `rows`           | `rows`            | Input data array                                                                             | `any`                                                    | `undefined` |
-| `selectable`     | `selectable`      | (optional) Set to true to add selection column                                               | `boolean`                                                | `false`     |
-| `selection`      | --                | Read-only selection array - populated with raw data from selected rows                       | `string[]`                                               | `[]`        |
-| `shadeAlternate` | `shade-alternate` | (optional) Shade every second row darker                                                     | `boolean`                                                | `true`      |
-| `styles`         | `styles`          | (optional) Injected css styles                                                               | `any`                                                    | `undefined` |
-| `visible`        | `visible`         | (optional) Set to false to hide table, used for nested tables to re-render upon toggle       | `boolean`                                                | `true`      |
+| Property         | Attribute         | Description                                                                                  | Type                                                  | Default     |
+| ---------------- | ----------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ----------- |
+| `fields`         | `fields`          | Input fields config array                                                                    | `any`                                                 | `undefined` |
+| `freezeHeader`   | `freeze-header`   | (optional) Freeze header row from scrolling                                                  | `boolean`                                             | `false`     |
+| `heading`        | `heading`         | (optional) Heading string                                                                    | `string`                                              | `''`        |
+| `height`         | `height`          | (optional) Set static table height, by default will auto-resize                              | `string`                                              | `undefined` |
+| `hideBorder`     | `hide-border`     | (optional) Set to true to remove border                                                      | `boolean`                                             | `false`     |
+| `hideHeader`     | `hide-header`     | (optional) Set to true to hide header row                                                    | `boolean`                                             | `false`     |
+| `hideInfo`       | `hide-info`       | (optional) Set to true to remove info footer block including pagination and selection status | `boolean`                                             | `false`     |
+| `hideMenu`       | `hide-menu`       | (optional) Set to true to hide settings menu                                                 | `boolean`                                             | `false`     |
+| `localization`   | --                | (optional) set localization for sort, toggle and select/deselect table Default is English.   | `{ sortBy: string; toggle: string; select: string; }` | `undefined` |
+| `numbered`       | `numbered`        | (optional) Set to true to add numbers column                                                 | `boolean`                                             | `false`     |
+| `pageSize`       | `page-size`       | (optional) Set number of rows to display per pagination page                                 | `number`                                              | `Infinity`  |
+| `rows`           | `rows`            | Input data array                                                                             | `any`                                                 | `undefined` |
+| `selectable`     | `selectable`      | (optional) Set to true to add selection column                                               | `boolean`                                             | `false`     |
+| `selection`      | --                | Read-only selection array - populated with raw data from selected rows                       | `string[]`                                            | `[]`        |
+| `shadeAlternate` | `shade-alternate` | (optional) Shade every second row darker                                                     | `boolean`                                             | `true`      |
+| `styles`         | `styles`          | (optional) Injected css styles                                                               | `any`                                                 | `undefined` |
+| `visible`        | `visible`         | (optional) Set to false to hide table, used for nested tables to re-render upon toggle       | `boolean`                                             | `true`      |
 
 
 ## Events
