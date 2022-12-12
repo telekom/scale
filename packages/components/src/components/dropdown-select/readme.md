@@ -7,16 +7,17 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type      | Default      |
-| ------------- | ------------- | ----------- | --------- | ------------ |
-| `comboboxId`  | `combobox-id` |             | `string`  | `'combobox'` |
-| `disabled`    | `disabled`    |             | `boolean` | `undefined`  |
-| `helperText`  | `helper-text` |             | `string`  | `''`         |
-| `invalid`     | `invalid`     |             | `boolean` | `false`      |
-| `label`       | `label`       |             | `string`  | `undefined`  |
-| `readonly`    | `readonly`    |             | `boolean` | `undefined`  |
-| `transparent` | `transparent` |             | `boolean` | `undefined`  |
-| `value`       | `value`       |             | `any`     | `undefined`  |
+| Property      | Attribute     | Description | Type                                                    | Default           |
+| ------------- | ------------- | ----------- | ------------------------------------------------------- | ----------------- |
+| `comboboxId`  | `combobox-id` |             | `string`                                                | `'combobox'`      |
+| `disabled`    | `disabled`    |             | `boolean`                                               | `undefined`       |
+| `helperText`  | `helper-text` |             | `string`                                                | `''`              |
+| `invalid`     | `invalid`     |             | `boolean`                                               | `false`           |
+| `label`       | `label`       |             | `string`                                                | `undefined`       |
+| `readonly`    | `readonly`    |             | `boolean`                                               | `undefined`       |
+| `transparent` | `transparent` |             | `boolean`                                               | `undefined`       |
+| `value`       | `value`       |             | `any`                                                   | `undefined`       |
+| `variant`     | `variant`     |             | `"danger" \| "informational" \| "success" \| "warning"` | `'informational'` |
 
 
 ## Events

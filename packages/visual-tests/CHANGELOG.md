@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
+
+
+### Bug Fixes
+
+* **footer:** remove whitespace above footer ([#1172](https://github.com/telekom/scale/issues/1172)) ([00ccea7](https://github.com/telekom/scale/commit/00ccea7996c523e5995b314420ddda263d564b15)), closes [#1345](https://github.com/telekom/scale/issues/1345)
+* **helper-text:** improve styles, icon position ([#1351](https://github.com/telekom/scale/issues/1351)) ([ca8ad1c](https://github.com/telekom/scale/commit/ca8ad1cb780fff92fb3eb8f88a81a978bf73cb98))
+
+
+
+
+
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* **slider:** bar styles ([#1328](https://github.com/telekom/scale/issues/1328)) ([c924e6f](https://github.com/telekom/scale/commit/c924e6f08c18ad656a054457286fc22d9a6152bb))
+
+
+
+
+
 # [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
 
 
