@@ -7964,6 +7964,11 @@ caniuse-lite@^1.0.30001370:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001382.tgz#4d37f0d0b6fffb826c8e5e1c0f4bf8ce592db949"
   integrity sha512-2rtJwDmSZ716Pxm1wCtbPvHtbDWAreTPxXbkc5RkKglow3Ig/4GNGazDI9/BVnXbG/wnv6r3B5FEbkfg9OcTGg==
 
+caniuse-lite@^1.0.30001436:
+  version "1.0.30001436"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001436.tgz#22d7cbdbbbb60cdc4ca1030ccd6dea9f5de4848b"
+  integrity sha512-ZmWkKsnC2ifEPoWUvSAIGyOYwT+keAaaWPHiQ9DfMqS1t6tfuyFYoWR78TeZtznkEQ64+vGXH9cZrElwR2Mrxg==
+
 canonical-path@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/canonical-path/-/canonical-path-1.0.0.tgz"
