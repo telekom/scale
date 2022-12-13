@@ -109,7 +109,7 @@ button.segmented-button--xl .segmented-button--mask {
 
 .segmented-button--selected {
   background-color: var(--background-color-selected);
-  box-shadow: var(--temp-shadow);
+  box-shadow: var(--telekom-shadow-raised-standard);
   color: var(--color-selected);
 }
 
@@ -156,7 +156,7 @@ button.segmented-button--xl .segmented-button--mask {
 }
 
 .segmented-button:focus {
-  box-shadow: var(--temp-shadow);
+  box-shadow: var(--telekom-shadow-raised-standard);
   outline: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-focus );
   outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;

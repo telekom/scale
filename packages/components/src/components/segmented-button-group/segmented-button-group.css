@@ -13,8 +13,8 @@
   --background-color: var(--telekom-color-ui-faint);
   --radius: var(--telekom-radius-standard);
   --height: 36px;
-  display: block;
-  height: var(--height);
+  display: flex;
+  flex-direction: column;
 }
 
 .segmented-button-group {
@@ -41,4 +41,10 @@
   height: 44px;
   --height: 44px;
   padding: 0 2px 0 2px;
+}
+
+.segmented-button-group--label {
+  font-size: var(--telekom-typography-font-size-body);
+  font-weight: var(--telekom-typography-font-weight-bold);
+  margin-bottom: var(--telekom-spacing-unit-x2)
 }

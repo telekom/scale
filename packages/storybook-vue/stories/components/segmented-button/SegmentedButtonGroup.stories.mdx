@@ -26,6 +26,7 @@ export const Template = (args, { argTypes }) => ({
       :styles="styles"
       :required="required"
       :helper-text="helperText"
+      :label="label"
     >
       <scale-segmented-button selected>Apple</scale-segmented-button>
       <scale-segmented-button>One+</scale-segmented-button>
@@ -104,7 +105,7 @@ export const IconTextTemplate = (args, { argTypes }) => ({
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard">
+  <Story name="Standard" args={{label: "Group Label"}}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -123,7 +124,7 @@ export const IconTextTemplate = (args, { argTypes }) => ({
 ## Multi Select
 
 <Canvas withSource="none">
-  <Story name="MultiSelect" args={{multiSelect: true}}>
+  <Story name="MultiSelect" args={{multiSelect: true, label: "Group Label"}}>
     {MultiSelectTemplate.bind({})}
   </Story>
 </Canvas>
@@ -140,7 +141,7 @@ export const IconTextTemplate = (args, { argTypes }) => ({
 ## Icon only
 
 <Canvas withSource="none">
-  <Story name="Icon only" args={{}}>
+  <Story name="Icon only" args={{label: "Group Label"}}>
     {IconOnlyTemplate.bind({})}
   </Story>
 </Canvas>
@@ -157,7 +158,7 @@ export const IconTextTemplate = (args, { argTypes }) => ({
 ## Icon and Text
 
 <Canvas withSource="none">
-  <Story name="Icon and Text" args={{}}>
+  <Story name="Icon and Text" args={{label: "Group Label"}}>
     {IconTextTemplate.bind({})}
   </Story>
 </Canvas>

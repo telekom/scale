@@ -13,6 +13,7 @@
 | `disabled`             | `disabled`               | (optional) If `true`, the group is disabled                        | `boolean`                    | `false`                                               |
 | `fullWidth`            | `full-width`             | (optional) If `true`, expand to container width                    | `boolean`                    | `false`                                               |
 | `helperText`           | `helper-text`            | (optional) If `true`, show error message if no element is selected | `string`                     | `undefined`                                           |
+| `label`                | `label`                  | (optional) Group label                                             | `string`                     | `undefined`                                           |
 | `longestButtonWidth`   | `longest-button-width`   |                                                                    | `string`                     | `undefined`                                           |
 | `multiSelect`          | `multi-select`           | (optional) Allow more than one button to be selected               | `boolean`                    | `false`                                               |
 | `required`             | `required`               | (optional) If `true`, show error message if no element is selected | `boolean`                    | `false`                                               |

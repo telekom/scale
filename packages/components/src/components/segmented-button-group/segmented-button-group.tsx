@@ -58,7 +58,9 @@ export class SegmentedButtonGroup {
   @Prop() required?: boolean = false;
   /** (optional) If `true`, show error message if no element is selected */
   @Prop() helperText?: string;   
-  /** (optional) Injected CSS styles */
+  /** (optional) Group label */
+  @Prop() label?: string;   
+  /** (optional) Injected CSS styles */  
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
@@ -214,6 +216,9 @@ export class SegmentedButtonGroup {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
+        {this.label && 
+          <span class="segmented-button-group--label"> {this.label} </span>
+        }
         <div
           class={this.getCssClassMap()}
           part={this.getBasePartMap()}

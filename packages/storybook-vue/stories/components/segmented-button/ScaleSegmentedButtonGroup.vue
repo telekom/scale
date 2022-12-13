@@ -4,6 +4,7 @@
     :disabled="disabled"
     :multi-select="multiSelect"
     :required="required"
+    :label="label"
     :helper-text="helperText"
     :styles="styles"
     @scaleChange="scaleChange"
@@ -20,6 +21,7 @@ export default {
     disabled: { type: Boolean, default: false },
     multiSelect: { type: Boolean, default: false },
     required: {type: Boolean, default: false},
+    label: {type: String},
     helperText: {type: String},
     styles: { type: String },
   },
