@@ -12,6 +12,9 @@
 :host {
   --background-color: var(--telekom-color-ui-faint);
   --radius: var(--telekom-radius-standard);
+  --height: 36px;
+  display: block;
+  height: var(--height);
 }
 
 .segmented-button-group {
@@ -30,10 +33,12 @@
 
 .segmented-button-group--large {
   height: 40px;
+  --height: 40px;
   padding: 0 2px 0 2px;
 }
 
 .segmented-button-group--xl {
   height: 44px;
+  --height: 44px;
   padding: 0 2px 0 2px;
 }
