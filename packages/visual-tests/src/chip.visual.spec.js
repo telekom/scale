@@ -5,15 +5,14 @@ describe('Chip', () => {
     });
     test.each([
       ['standard'],
+      ['standard-selected'],
+      ['standard-selected-disabled'],
+      ['standard-dismissible'],
+      ['outline'],
+      ['outline-selected'],
+      ['outline-selected-disabled'],
+      ['outline-dismissible'],
       ['icon'],
-      ['dismissible'],
-      ['disabled'],
-      ['selected'],
-      ['color-standard'],
-      ['color-strong'],
-      ['dismissible-selected'],
-      ['change-action'],
-      ['close-action'],
     ])('%p', async (variant) => {
       await global.runSetup(`beta-components-chip--${variant}`);
       await global.visualCheck();

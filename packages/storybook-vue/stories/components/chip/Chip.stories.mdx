@@ -30,7 +30,6 @@ export const Template = (args, { argTypes }) => ({
     ...ScaleChip.props,
   },
   template: `
-    <template>
         <scale-chip
             :type="type"
             :selected="selected"
@@ -41,7 +40,6 @@ export const Template = (args, { argTypes }) => ({
             :icon-size="iconSize"
         >
         </scale-chip>
-    </template>
   `,
   methods: {
     action,
@@ -54,20 +52,18 @@ export const TemplateIcon = (args, { argTypes }) => ({
     ...ScaleChip.props,
   },
   template: `
-    <template>
-        <scale-chip
-            :selected="selected"
-            :dismissible="dismissible"
-            :label="label"
-            :disabled="disabled"
-            :styles="styles"
-            :icon-size="iconSize"
-        >
-        <div slot="chip-icon">
-            <scale-icon-action-favorite accessibility-title="favorite" />
-        </div>
-        </scale-chip>
-    </template>
+    <scale-chip
+      :selected="selected"
+      :dismissible="dismissible"
+      :label="label"
+      :disabled="disabled"
+      :styles="styles"
+      :icon-size="iconSize"
+      >
+      <div slot="chip-icon">
+        <scale-icon-action-favorite accessibility-title="favorite" />
+      </div>
+    </scale-chip>
   `,
   methods: {
     action,
@@ -92,7 +88,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
   <Story
     name="Standard"
     args={{
-      label: 'Standard Chip',
+      label: 'Standard',
     }}
   >
     {Template.bind({})}
@@ -102,7 +98,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-chip label="Standard Chip"></scale-chip>
+<scale-chip label="Standard"></scale-chip>
 ```
 
 ### Standard Selected
@@ -111,7 +107,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
   <Story
     name="Standard Selected"
     args={{
-      label: 'Standard Selected Chip',
+      label: 'Standard Selected',
       selected: true,
     }}
   >
@@ -120,16 +116,16 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Standard Selected Chip" selected></scale-chip>
+<scale-chip label="Standard Selected" selected></scale-chip>
 ```
 
 ### Standard Selected Disabled
 
 <Canvas withSource="none">
   <Story
-    name="Standard Selected Disabled Chip"
+    name="Standard Selected Disabled"
     args={{
-      label: 'Standard Selected Disabled Chip',
+      label: 'Standard Selected Disabled',
       disabled: true,
       selected: true,
     }}
@@ -139,20 +135,16 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip
-  disabled
-  label="Standard Selected Disabled Chip"
-  selected
-></scale-chip>
+<scale-chip disabled label="Standard Selected Disabled" selected></scale-chip>
 ```
 
 ### Standard Dismissible
 
 <Canvas withSource="none">
   <Story
-    name="Standard Dismissible Chip"
+    name="Standard Dismissible"
     args={{
-      label: 'Standard Dismissible Chip',
+      label: 'Standard Dismissible',
       dismissible: true,
       selected: true,
     }}
@@ -162,7 +154,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip dismissible selected label="Standard Dismissible Chip"></scale-chip>
+<scale-chip dismissible selected label="Standard Dismissible"></scale-chip>
 ```
 
 ## Outline
@@ -171,7 +163,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
   <Story
     name="Outline"
     args={{
-      label: 'Outline Chip',
+      label: 'Outline',
       type: 'outline',
     }}
   >
@@ -180,7 +172,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Standard Chip" type="outline"></scale-chip>
+<scale-chip label="Outline" type="outline"></scale-chip>
 ```
 
 ### Outline Selected
@@ -189,7 +181,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
   <Story
     name="Outline Selected"
     args={{
-      label: 'Outline Selected Chip',
+      label: 'Outline Selected',
       type: 'outline',
       selected: true,
     }}
@@ -199,17 +191,17 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Outline Selected Chip" selected></scale-chip>
+<scale-chip label="Outline Selected" selected></scale-chip>
 ```
 
 ### Outline Selected Disabled
 
 <Canvas withSource="none">
   <Story
-    name="Outline Selected Disabled Chip"
+    name="Outline Selected Disabled"
     args={{
       type: 'outlined',
-      label: 'Outline Selected Disabled Chip',
+      label: 'Outline Selected Disabled',
       disabled: true,
       selected: true,
     }}
@@ -222,7 +214,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 <scale-chip
   disabled
   type="otline"
-  label="Outline Selected Disabled Chip"
+  label="Outline Selected Disabled"
   selected
 ></scale-chip>
 ```
@@ -231,9 +223,9 @@ export const TemplateIcon = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story
-    name="Outline Dismissible Chip"
+    name="Outline Dismissible"
     args={{
-      label: 'Outline Dismissible Chip',
+      label: 'Outline Dismissible',
       dismissible: true,
       selected: true,
       type: 'outline',
@@ -247,7 +239,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 <scale-chip
   dismissible
   selected
-  label="Standard Dismissible Chip"
+  label="Standard Dismissible"
   type="outline"
 ></scale-chip>
 ```
@@ -256,9 +248,9 @@ export const TemplateIcon = (args, { argTypes }) => ({
 
 <Canvas withSource="none">
   <Story
-    name="Icon Chip"
+    name="Icon"
     args={{
-      label: 'Icon Chip',
+      label: 'Icon',
     }}
   >
     {TemplateIcon.bind({})}
@@ -266,7 +258,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Icon Chip"
+<scale-chip label="Icon"
   ><div slot="chip-icon">
     <scale-icon-action-favorite accessibility-title="favorite" />
   </div>

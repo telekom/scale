@@ -156,6 +156,7 @@ export class Chip {
       mode === 'basePart' ? 'base' : component,
       !!this.selected && `${prefix}selected`,
       !!this.disabled && `${prefix}disabled`,
+      !!this.dismissible && `${prefix}dismissible`,
       this.type && `${prefix}type-${this.type}`
     );
   }
