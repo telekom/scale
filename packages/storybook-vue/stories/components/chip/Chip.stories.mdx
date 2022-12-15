@@ -119,6 +119,24 @@ export const TemplateIcon = (args, { argTypes }) => ({
 <scale-chip label="Standard Selected" selected></scale-chip>
 ```
 
+### Standard Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Standard Disabled"
+    args={{
+      label: 'Standard Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-chip disabled label="Standard Disabled" selected></scale-chip>
+```
+
 ### Standard Selected Disabled
 
 <Canvas withSource="none">
@@ -136,25 +154,6 @@ export const TemplateIcon = (args, { argTypes }) => ({
 
 ```html
 <scale-chip disabled label="Standard Selected Disabled" selected></scale-chip>
-```
-
-### Standard Dismissible
-
-<Canvas withSource="none">
-  <Story
-    name="Standard Dismissible"
-    args={{
-      label: 'Standard Dismissible',
-      dismissible: true,
-      selected: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-```html
-<scale-chip dismissible selected label="Standard Dismissible"></scale-chip>
 ```
 
 ## Outline
@@ -194,6 +193,30 @@ export const TemplateIcon = (args, { argTypes }) => ({
 <scale-chip label="Outline Selected" selected></scale-chip>
 ```
 
+### Outline Disabled
+
+<Canvas withSource="none">
+  <Story
+    name="Outline Disabled"
+    args={{
+      type: 'outlined',
+      label: 'Outline Disabled',
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-chip
+  disabled
+  type="outline"
+  label="Outline Disabled"
+  selected
+></scale-chip>
+```
+
 ### Outline Selected Disabled
 
 <Canvas withSource="none">
@@ -213,10 +236,31 @@ export const TemplateIcon = (args, { argTypes }) => ({
 ```html
 <scale-chip
   disabled
-  type="otline"
+  type="outline"
   label="Outline Selected Disabled"
   selected
 ></scale-chip>
+```
+
+## Dismissible
+
+### Standard Dismissible
+
+<Canvas withSource="none">
+  <Story
+    name="Standard Dismissible"
+    args={{
+      label: 'Standard Dismissible',
+      dismissible: true,
+      selected: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-chip dismissible selected label="Standard Dismissible"></scale-chip>
 ```
 
 ### Outline Dismissible
@@ -227,7 +271,6 @@ export const TemplateIcon = (args, { argTypes }) => ({
     args={{
       label: 'Outline Dismissible',
       dismissible: true,
-      selected: true,
       type: 'outline',
     }}
   >
@@ -244,13 +287,13 @@ export const TemplateIcon = (args, { argTypes }) => ({
 ></scale-chip>
 ```
 
-## Icon
+## Icon + Text
 
 <Canvas withSource="none">
   <Story
-    name="Icon"
+    name="Icon+Text"
     args={{
-      label: 'Icon',
+      label: 'Icon+Text',
     }}
   >
     {TemplateIcon.bind({})}
@@ -258,7 +301,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Icon"
+<scale-chip label="Icon+Text"
   ><div slot="chip-icon">
     <scale-icon-action-favorite accessibility-title="favorite" />
   </div>
