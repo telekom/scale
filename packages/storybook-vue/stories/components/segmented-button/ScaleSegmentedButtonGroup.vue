@@ -17,7 +17,7 @@
 import { action } from "@storybook/addon-actions";
 export default {
   props: {
-    size: { type: String, default: 'regular' },
+    size: { type: String, default: 'small' },
     disabled: { type: Boolean, default: false },
     multiSelect: { type: Boolean, default: false },
     required: {type: Boolean, default: false},
