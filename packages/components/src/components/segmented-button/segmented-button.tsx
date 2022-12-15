@@ -84,7 +84,6 @@ export class SegmentedButton {
   }
 
   componentDidRender() {
-    // this.handleIconSize();
     if (this.hostElement.hasAttribute('aria-label')) {
       statusNote({
         tag: 'deprecated',
@@ -100,6 +99,8 @@ export class SegmentedButton {
     if (this.segmentedButtonId == null) {
       this.segmentedButtonId = 'segmented-button-' + i++;
     }
+  }
+  componentDidUpdate() {
     this.handleIcon();
   }
 
@@ -133,6 +134,7 @@ export class SegmentedButton {
         this.hostElement.setAttribute('icon-only', 'true')
         const icon: HTMLElement = this.hostElement.querySelector(child.nodeName);
         icon.style.marginRight = '0px';
+        this.selected ? icon.setAttribute('selected', '') : icon.removeAttribute('selected');
       }
     });
   }

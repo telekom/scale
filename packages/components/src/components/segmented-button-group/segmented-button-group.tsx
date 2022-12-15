@@ -127,7 +127,9 @@ export class SegmentedButtonGroup {
         );
       });
       // @ts-ignore
-      this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
+      // this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
+      this.container.style = `grid-template-columns: repeat(${this.hostElement.children.length}, ${Math.ceil(longestButtonWidth)}px);`;
+      
       this.propagatePropsToChildren();
       this.position = 0;
       this.status = tempState;
