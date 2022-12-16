@@ -57,7 +57,7 @@ export class SegmentedButtonGroup {
   /** (optional) If `true`, show error message if no element is selected */
   @Prop() required?: boolean = false;
   /** (optional) If `true`, show error message if no element is selected */
-  @Prop() helperText?: string;   
+  @Prop() helperText?: string = "Please select an option";   
   /** (optional) Group label */
   @Prop() label?: string;   
   /** (optional) Injected CSS styles */  

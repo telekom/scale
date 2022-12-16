@@ -12,7 +12,7 @@
 | `ariaLabelTranslation` | `aria-label-translation` | (optional) aria-label attribute needed for icon-only buttons       | `string`                     | ``segment button group with $slottedButtons buttons`` |
 | `disabled`             | `disabled`               | (optional) If `true`, the group is disabled                        | `boolean`                    | `false`                                               |
 | `fullWidth`            | `full-width`             | (optional) If `true`, expand to container width                    | `boolean`                    | `false`                                               |
-| `helperText`           | `helper-text`            | (optional) If `true`, show error message if no element is selected | `string`                     | `undefined`                                           |
+| `helperText`           | `helper-text`            | (optional) If `true`, show error message if no element is selected | `string`                     | `"Please select an option"`                           |
 | `label`                | `label`                  | (optional) Group label                                             | `string`                     | `undefined`                                           |
 | `longestButtonWidth`   | `longest-button-width`   |                                                                    | `string`                     | `undefined`                                           |
 | `multiSelect`          | `multi-select`           | (optional) Allow more than one button to be selected               | `boolean`                    | `false`                                               |
