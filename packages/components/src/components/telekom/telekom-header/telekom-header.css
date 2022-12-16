@@ -38,6 +38,18 @@
   --_spacing-right-app-name: 32px;
 
   --_base-menu-justify-content: end;
+
+  --test-a: gold;
+
+  /* Used in telekom-nav-list??? telekom-nav-item, defined here because breakpoints */
+  --_spacing-bottom-header-nav-item-main: 16px;
+  --_spacing-inline-header-nav-item-main: 32px;
+  --_spacing-top-header-nav-item-secondary: 12px;
+  --_spacing-inline-header-nav-item-secondary: 32px;
+  --_spacing-bottom-header-nav-item-main-icon: 16px;
+  --_spacing-inline-header-nav-item-main-icon: 24px; /* static */
+  /* --_spacing-bottom-header-nav-item-main-icon: var(--telekom-spacing-unit-x5);
+  --_spacing-inline-header-nav-item-main-icon: var(--telekom-spacing-unit-x6); */
 }
 
 @media screen and (min-width: 640px) {
@@ -134,6 +146,16 @@
   }
 }
 
+::slotted(*) {
+  height: 100%;
+  display: inline-flex;
+}
+
+slot[name='main-nav'],
+slot[name='meta-nav-ext'] {
+  width: 100%;
+}
+
 slot[name='app-logo'] {
   height: var(--_height);
   width: var(--_height);
@@ -142,6 +164,7 @@ slot[name='app-logo'] {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  border: 1px dotted greenyellow;
 }
 
 :host::part(app-name) {

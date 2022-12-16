@@ -17,84 +17,52 @@
         padding: 0;
         height: 200vh;
       }
-      slot[name='functions']::slotted(*) {
-        color: var(--telekom-color-text-and-icon-standard);
-      }
-      ol[slot='functions'] {
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        list-style: none;
-        margin: 0;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        margin-inline-start: 0;
-        margin-inline-end: 0;
-        padding-inline-start: 0;
-      }
-      ol[slot='functions'] li {
-        background-color: red;
-        display: flex;
-        align-items: center;
-        justify-items: center;
-      }
-
-      h2 {
-        font-style: normal;
-        font-weight: 800;
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      h2,
-      h3,
-      h5 {
-        color: red;
-        display: inline-flex;
-        padding: 0;
-        margin: 0;
-        justify-items: center;
-        align-items: center;
-      }
 
       section {
-        height: 100%;
-        display: inline-flex;
+        /* --b: #333; */
+        /* width: 22ch; */
+        /* border: 1px dotted #666; */
+      }
+
+      scale-telekom-nav-list {
+        --spacing-inner-x: var(--telekom-spacing-unit-x14);
       }
     </style>
   </head>
 
   <body>
-    <scale-telekom-header
-      app-name="cool app!"
-      app-nane-link="javascript:void(0)"
-    >
-      <section slot="main-nav">
-        <h2>Topic 1</h2>
-        <h2>Topic 2</h2>
-        <h2>Topic 2</h2>
-        <h2>Topic 4</h2>
-        <h2>Topic 5</h2>
-      </section>
-      <section slot="meta-nav-ext">
-        <h5>metanavigation x</h5>
-        <h5>metanavigation x</h5>
-      </section>
-      <section slot="meta-nav">
-        <h5>metanavigation</h5>
-        <h5>metanavigation</h5>
-      </section>
-      <section slot="language-switch">
-        <h5>MK</h5>
-        <h5>SO</h5>
-        <h5>DE</h5>
-      </section>
-      <ol slot="functions">
-        <li><scale-icon-alert-information></scale-icon-alert-information></li>
-        <li><scale-icon-alert-information></scale-icon-alert-information></li>
-        <li><scale-icon-alert-information></scale-icon-alert-information></li>
-        <li><scale-icon-alert-information></scale-icon-alert-information></li>
-      </ol>
+    <scale-telekom-header>
+      <!-- MAIN NAV -->
+      <scale-telekom-nav-list slot="main-nav" align="left" debug>
+        <scale-telekom-nav-item>
+          <button role="menuitem">Category 1</button>
+          <scale-telekom-nav-flyout debug>
+            <h2>My menu</h2>
+            <ol>
+              <li><a href="#1">My list</a></li>
+              <li><a href="#2">Of things</a></li>
+              <li><a href="#3">Is pretty</a></li>
+              <li><a href="#4">Nice</a></li>
+            </ol>
+          </scale-telekom-nav-flyout>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item active>
+          <a href="#">Category 2</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+
+      <scale-telekom-nav-list slot="meta-nav-ext" align="left" debug>
+        <scale-telekom-nav-item variant="meta">
+          <a href="#" id="haha">Category 1 meta</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item variant="meta">
+          <a href="#">Category 2</a>
+        </scale-telekom-nav-item>
+      </scale-telekom-nav-list>
+
+      <section slot="meta-nav"></section>
+      <section slot="language-switch"></section>
+      <section slot="functions"></section>
     </scale-telekom-header>
   </body>
 </html>

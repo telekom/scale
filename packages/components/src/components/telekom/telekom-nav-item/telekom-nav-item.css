@@ -1,0 +1,69 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+/*
+  TODO
+  - put CSS vars in telekom-header for all variants -> fonts and spacing (vertical mostly)
+*/
+
+:host {
+  --spacing-x: 0;
+  --color-active: limegreen;
+}
+
+:host([debug]) {
+  border: 1px dotted cyan;
+}
+
+::slotted(:where(a, button)) {
+  box-sizing: border-box;
+  font: inherit;
+  appearance: none;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+::slotted(:where(a, button):hover) {
+  color: var(--color-active);
+}
+
+/* main */
+
+:host([variant='main']) ::slotted(:where(a, button)) {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 800;
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+  padding-bottom: var(--_spacing-bottom-header-nav-item-main);
+  color: var(--test-a);
+}
+:host([variant='main'][active]) ::slotted(:where(a, button)) {
+  color: var(--color-active);
+}
+:host([variant='main'][active]) ::slotted(:where(a, button)):after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: var(--color-active);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
