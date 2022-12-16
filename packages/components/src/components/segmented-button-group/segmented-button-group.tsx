@@ -19,7 +19,7 @@ import {
   Listen,
   Event,
   EventEmitter,
-  // Watch,
+  Watch,
 } from '@stencil/core';
 import classNames from 'classnames';
 import { emitEvent } from '../../utils/utils';
@@ -51,7 +51,7 @@ export class SegmentedButtonGroup {
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
   /** (optional) If `true`, the group is disabled */
-  @Prop() disabled?: boolean = false;
+  @Prop({reflect: true}) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
   @Prop() fullWidth?: boolean = false;  
   /** (optional) If `true`, show error message if no element is selected */
@@ -97,15 +97,19 @@ export class SegmentedButtonGroup {
     this.setState(tempState);
   }
 
+  @Watch('disabled')
+  @Watch('size')
+  handlePropsChange() {
+    this.propagatePropsToChildren();
+  }
+
   /**
    * Keep props, needed in children buttons, in sync
    */
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      if (el.getAttribute('disabled') == null) {
-        el.setAttribute('disabled', this.disabled && 'disabled');
-      }
+      el.setAttribute('disabled', this.disabled && 'disabled');
     });
   }
 
