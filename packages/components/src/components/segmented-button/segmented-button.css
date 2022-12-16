@@ -110,7 +110,6 @@ button.segmented-button--xl .segmented-button--mask {
 .segmented-button--selected {
   background-color: var(--background-color-selected);
   box-shadow: var(--telekom-shadow-raised-standard);
-  color: var(--color-selected);
 }
 
 .segmented-button--selected .segmented-button--mask {
