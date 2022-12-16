@@ -63,8 +63,6 @@ export class Button {
   @Prop() innerTabindex?: number;
   /** (optional) Button aria-label */
   @Prop() innerAriaLabel?: string;
-  /** (optional) Button form */
-  @Prop() form?: string;
 
   private focusableElement: HTMLElement;
   private fallbackSubmitInputElement: HTMLInputElement;
@@ -227,7 +225,6 @@ export class Button {
             name={this.name}
             value={this.value}
             aria-label={this.innerAriaLabel}
-            form={this.form}
           >
             <slot />
           </button>

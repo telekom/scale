@@ -11,7 +11,6 @@
     :variant="variant"
     :icon-only="iconOnly"
     :inner-tabindex="innerTabindex"
-    :form="form"
     :inner-aria-label="innerAriaLabel"
     :styles="styles"
     @click="handler"
@@ -38,7 +37,6 @@ export default {
     size: String,
     iconOnly: Boolean,
     innerTabindex: Number,
-    form: String,
     innerAriaLabel: String,
     styles: String,
   },
