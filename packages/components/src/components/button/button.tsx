@@ -62,7 +62,7 @@ export class Button {
   /** (optional) Set `tabindex` in the inner button or link element */
   @Prop() innerTabindex?: number;
   /** (optional) Button aria-label */
-  @Prop() ariaLabel?: string;
+  @Prop() innerAriaLabel?: string;
   /** (optional) Button form */
   @Prop() form?: string;
 
@@ -211,7 +211,7 @@ export class Button {
             rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
             part={basePart}
             tabIndex={this.innerTabindex}
-            aria-label={this.ariaLabel}
+            aria-label={this.innerAriaLabel}
           >
             <slot />
           </a>
@@ -226,7 +226,7 @@ export class Button {
             tabIndex={this.innerTabindex}
             name={this.name}
             value={this.value}
-            aria-label={this.ariaLabel}
+            aria-label={this.innerAriaLabel}
             form={this.form}
           >
             <slot />
