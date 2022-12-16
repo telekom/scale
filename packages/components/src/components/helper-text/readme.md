@@ -38,6 +38,7 @@
 
  - [scale-dropdown](../dropdown)
  - [scale-dropdown-select](../dropdown-select)
+ - [scale-segmented-button-group](../segmented-button-group)
  - [scale-text-field](../text-field)
 
 ### Depends on
@@ -54,6 +55,7 @@ graph TD;
   scale-helper-text --> scale-icon-alert-success
   scale-dropdown --> scale-helper-text
   scale-dropdown-select --> scale-helper-text
+  scale-segmented-button-group --> scale-helper-text
   scale-text-field --> scale-helper-text
   style scale-helper-text fill:#f9f,stroke:#333,stroke-width:4px
 ```

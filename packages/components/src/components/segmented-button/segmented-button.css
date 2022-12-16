@@ -1,0 +1,211 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+:host {
+  /* not selected */
+  --background-color-selected: var(--telekom-color-ui-base);
+  --button-radius: 6px;
+  --padding-top-bottom: var(--telekom-spacing-unit-x1);
+  --padding-left-right: var(--telekom-spacing-unit-x2);
+  --font-family: var(--telekom-typography-font-family-sans);
+  --font-weight: var(--telekom-typography-font-weight-bold);
+  --font-size: var(--telekom-typography-font-size-caption);
+  --label-disabled: var(--telekom-color-text-and-icon-disabled);
+  --transition: all var(--telekom-motion-duration-transition)
+    var(--telekom-motion-easing-standard);
+
+  --color-selected: var(--telekom-color-text-and-icon-primary-standard);
+
+  /* large styles */
+  --font-size-large: var(--telekom-typography-font-size-body);
+  --large-height: var(--telekom-spacing-unit-x6);
+
+  /* xl styles */
+  --font-size-xl: var(--telekom-typography-font-size-body);
+  --xl-height: var(--telekom-spacing-unit-x9);
+
+  /* hover styles */
+  --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
+
+  /* active styles */
+  --background-color-active: var(--telekom-color-ui-state-fill-pressed);
+  --box-shadow-focus: 0 0 0 var(--telekom-line-weight-highlight)
+    var(--telekom-color-functional-focus);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.segmented-button {
+  box-sizing: border-box;
+  position: relative;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  padding-top: var(--padding-top-bottom);
+  padding-bottom: var(--padding-top-bottom);
+  transition: var(--transition);
+  background-color: transparent;
+  padding: 0;
+}
+
+.segmented-button--mask {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--button-radius);
+  background-color: transparent;  
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  transition: var(--transition);
+  white-space: nowrap;
+  color: var(--telekom-color-text-and-icon-standard);
+}
+
+button.segmented-button--icon-only.segmented-button--small .segmented-button--mask {
+  padding-left: var(--telekom-spacing-unit-x4);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
+button.segmented-button--small .segmented-button--mask   {
+  padding-left: var(--telekom-spacing-unit-x2);
+  padding-right: var(--telekom-spacing-unit-x3);
+}
+
+.segmented-button--large {
+  font-size: var(--font-size-large);
+  height: 36px;
+}
+
+button.segmented-button--large .segmented-button--mask {
+  padding-left: var(--telekom-spacing-unit-x3);
+  padding-right: var(--telekom-spacing-unit-x4);
+}
+
+.segmented-button--xl {
+  font-size: var(--font-size-large);
+  height: 40px;
+}
+button.segmented-button--xl .segmented-button--mask {
+  padding-left: 16px;
+  padding-right: 20px;
+}
+
+.segmented-button--selected {
+  background-color: var(--background-color-selected);
+  box-shadow: var(--telekom-shadow-raised-standard);
+}
+
+.segmented-button--selected .segmented-button--mask {
+  color: var(--color-selected);
+}
+
+.segmented-button--disabled.segmented-button--selected .segmented-button--mask {
+  color: var(--label-disabled);
+}
+
+.segmented-button--disabled:not(.segmented-button--selected) .segmented-button--mask{
+  color: var(--label-disabled);
+  background-color: transparent;
+}
+
+.segmented-button--left-sibling-selected {
+  border-radius: 0 var(--button-radius) var(--button-radius) 0;
+  margin-left: 0;
+  clip-path: inset(-44px -44px -44px 0px);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.segmented-button--right-sibling-selected {
+  border-radius: var(--button-radius) 0 0 var(--button-radius);
+  clip-path: inset(-44px -0px -44px -44px);
+  margin-right: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  position: relative;
+}
+
+.segmented-button--left-right-sibling-selected {
+  clip-path: inset(-44px 0px -44px -0px);
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  backface-visibility: hidden;
+}
+
+.segmented-button:not(.segmented-button--disabled):hover .segmented-button--mask{
+  background-color: var(--background-color-hover);
+}
+
+.segmented-button:not(.segmented-button--disabled):active .segmented-button--mask{
+  background-color: var(--background-color-active);
+}
+
+.segmented-button:focus {
+  box-shadow: var(--telekom-shadow-raised-standard);
+  outline: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-focus );
+  outline-offset: var(--telekom-spacing-unit-x025);
+  z-index: 40;
+  position: relative;
+}
+
+.segmented-button--left-right-sibling-selected:focus,
+.segmented-button--right-sibling-selected:focus,
+.segmented-button--left-sibling-selected:focus {
+  clip-path: none;
+}
+
+.segmented-button:not(.segmented-button--icon-only) scale-icon-action-success,
+.segmented-button scale-icon-action-close {
+  margin-right: var(--telekom-spacing-unit-x1);
+}
+
+.segmented-button:not(.segmented-button--selected) scale-icon-action-success {
+  visibility: hidden !important;
+} 
+
+.segmented-button scale-icon-action-success {
+  vertical-align: middle;
+}
+
+.segmented-button--selected:not(.segmented-button--icon-only) .icon-container {
+  display: none !important;
+}
+
+.segmented-button .success-icon-container {
+  display: none; 
+}
+
+.segmented-button--selected .success-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.segmented-button--selected .icon-container {
+  color: var(--color-selected);
+}

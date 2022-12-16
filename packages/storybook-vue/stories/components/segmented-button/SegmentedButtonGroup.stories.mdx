@@ -1,0 +1,173 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs';
+import ScaleSegmentedButtonGroup from './ScaleSegmentedButtonGroup.vue';
+
+<Meta
+  title="Beta Components/Segmented Button"
+  component={ScaleSegmentedButtonGroup}
+  argTypes={{
+    size: {
+      control: { type: 'select', options: [ 'small', 'large', 'xl'] },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+      :required="required"
+      :helper-text="helperText"
+      :label="label"
+    >
+      <scale-segmented-button selected>Apple</scale-segmented-button>
+      <scale-segmented-button>One+</scale-segmented-button>
+      <scale-segmented-button>Samsung</scale-segmented-button>
+      <scale-segmented-button>Huawei</scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
+export const MultiSelectTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segmented-button selected>Apple</scale-segmented-button>
+      <scale-segmented-button selected>One+</scale-segmented-button>
+      <scale-segmented-button>Samsung</scale-segmented-button>
+      <scale-segmented-button>Huawei</scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
+export const IconOnlyTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segmented-button selected><scale-icon-weather-cloudy slot="segmented-button-icon"></scale-icon-weather-cloudy></scale-segmented-button>
+      <scale-segmented-button><scale-icon-weather-rain slot="segmented-button-icon"></scale-icon-weather-rain></scale-segmented-button>
+      <scale-segmented-button><scale-icon-weather-sunny slot="segmented-button-icon"></scale-icon-weather-sunny></scale-segmented-button>
+      <scale-segmented-button><scale-icon-weather-heavy-snow slot="segmented-button-icon"></scale-icon-weather-heavy-snow></scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
+export const IconTextTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+    >
+      <scale-segmented-button selected><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Apple</scale-segmented-button>
+      <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>One+</scale-segmented-button>
+      <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Samsung</scale-segmented-button>
+      <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Huawei</scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
+## Standard
+
+<Canvas withSource="none">
+  <Story name="Standard" args={{label: "Group Label"}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Standard" />
+
+```html
+<scale-segmented-button-group>
+    <scale-segmented-button selected>Apple</scale-segmented-button>
+    <scale-segmented-button>One+</scale-segmented-button>
+    <scale-segmented-button>Samsung</scale-segmented-button>
+    <scale-segmented-button>Huawei</scale-segmented-button>
+</scale-segmented-button-group>
+```
+
+## Multi Select
+
+<Canvas withSource="none">
+  <Story name="MultiSelect" args={{multiSelect: true, label: "Group Label"}}>
+    {MultiSelectTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button-group multi-select>
+      <scale-segmented-button selected>Apple</scale-segmented-button>
+      <scale-segmented-button selected>One+</scale-segmented-button>
+      <scale-segmented-button>Samsung</scale-segmented-button>
+      <scale-segmented-button>Huawei</scale-segmented-button>
+</scale-segmented-button-group>
+```
+
+## Icon only
+
+<Canvas withSource="none">
+  <Story name="Icon only" args={{label: "Group Label"}}>
+    {IconOnlyTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button-group>
+  <scale-segmented-button selected><scale-icon-weather-cloudy slot="segmented-button-icon"></scale-icon-weather-cloudy></scale-segmented-button>
+  <scale-segmented-button><scale-icon-weather-rain slot="segmented-button-icon"></scale-icon-weather-rain></scale-segmented-button>
+  <scale-segmented-button><scale-icon-weather-sunny slot="segmented-button-icon"></scale-icon-weather-sunny></scale-segmented-button>
+  <scale-segmented-button><scale-icon-weahter-heavy-snow slot="segmented-button-icon"></scale-icon-weahter-heavy-snow></scale-segmented-button>
+</scale-segmented-button-group>
+```
+
+## Icon and Text
+
+<Canvas withSource="none">
+  <Story name="Icon and Text" args={{label: "Group Label"}}>
+    {IconTextTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button-group>
+  <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Apple</scale-segmented-button>
+  <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>One+</scale-segmented-button>
+  <scale-segmented-button selected><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Samsung</scale-segmented-button>
+  <scale-segmented-button selected><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Huawei</scale-segmented-button>
+</scale-segmented-button-group>
+```
