@@ -113,6 +113,10 @@ button.segmented-button--xl .segmented-button--mask {
   color: var(--color-selected);
 }
 
+.segmented-button--selected .segmented-button--mask {
+  color: var(--color-selected);
+}
+
 .segmented-button--disabled.segmented-button--selected .segmented-button--mask {
   color: var(--label-disabled);
 }
