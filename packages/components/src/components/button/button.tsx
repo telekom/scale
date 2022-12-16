@@ -198,18 +198,35 @@ export class Button {
         {this.styles && <style>{this.styles}</style>}
 
         {this.href ? (
-          <a
-            ref={(el) => (this.focusableElement = el)}
-            class={this.getCssClassMap()}
-            href={this.href}
-            download={this.download}
-            target={this.target}
-            rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
-            part={basePart}
-            tabIndex={this.innerTabindex}
-          >
-            <slot />
-          </a>
+          this.disabled ? (
+            <a
+              ref={(el) => (this.focusableElement = el)}
+              class={this.getCssClassMap()}
+              download={this.download}
+              target={this.target}
+              rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
+              part={basePart}
+              tabIndex={this.innerTabindex}
+              aria-disabled={this.disabled}
+              role="link"
+            >
+              {' '}
+              <slot />
+            </a>
+          ) : (
+            <a
+              ref={(el) => (this.focusableElement = el)}
+              class={this.getCssClassMap()}
+              href={this.href}
+              download={this.download}
+              target={this.target}
+              rel={this.target === '_blank' ? 'noopener noreferrer' : undefined}
+              part={basePart}
+              tabIndex={this.innerTabindex}
+            >
+              <slot />
+            </a>
+          )
         ) : (
           <button
             ref={(el) => (this.focusableElement = el)}
@@ -238,7 +255,7 @@ export class Button {
       !this.iconOnly &&
         this.iconPosition &&
         `button--icon-${this.iconPosition}`,
-      this.disabled && !this.href && `button--disabled`
+      this.disabled && `button--disabled`
     );
   }
 }
