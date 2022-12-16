@@ -231,7 +231,9 @@ export class SegmentedButtonGroup {
           <slot />
 
         </div>
-        { this.showHelperText && <scale-helper-text
+        { this.showHelperText && 
+            <scale-helper-text
+              class="segmented-button-group--helper-text"
               helperText={this.helperText}
               variant={'danger'}
             ></scale-helper-text>} 
