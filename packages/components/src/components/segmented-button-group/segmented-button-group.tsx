@@ -51,16 +51,16 @@ export class SegmentedButtonGroup {
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
   /** (optional) If `true`, the group is disabled */
-  @Prop({reflect: true}) disabled?: boolean = false;
+  @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
-  @Prop() fullWidth?: boolean = false;  
+  @Prop() fullWidth?: boolean = false;
   /** (optional) If `true`, show error message if no element is selected */
   @Prop() required?: boolean = false;
   /** (optional) If `true`, show error message if no element is selected */
-  @Prop() helperText?: string = "Please select an option";   
+  @Prop() helperText?: string = 'Please select an option';
   /** (optional) Group label */
-  @Prop() label?: string;   
-  /** (optional) Injected CSS styles */  
+  @Prop() label?: string;
+  /** (optional) Injected CSS styles */
   @Prop() styles?: string;
   /** (optional) aria-label attribute needed for icon-only buttons */
   @Prop()
@@ -71,7 +71,6 @@ export class SegmentedButtonGroup {
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter;
   /** @deprecated in v3 in favor of kebab-case event names */
   @Event({ eventName: 'scaleChange' }) scaleChangeLegacy: EventEmitter;
-
 
   container: HTMLElement;
   showHelperText = false;
@@ -109,42 +108,49 @@ export class SegmentedButtonGroup {
   propagatePropsToChildren() {
     this.getAllSegmentedButtons().forEach((el) => {
       el.setAttribute('size', this.size);
-      el.setAttribute('disabled', this.disabled && 'disabled');
+      if (this.disabled) {
+        el.setAttribute('disabled', true && 'disabled');
+      }
     });
   }
 
   componentDidLoad() {
-      const tempState: ButtonStatus[] = [];
-      const segmentedButtons = this.getAllSegmentedButtons();
-      this.slottedButtons = segmentedButtons.length;
-      const longestButtonWidth = this.getLongestButtonWidth();
-      segmentedButtons.forEach((SegmentedButton) => {
-        this.position++;
-        tempState.push({
-          id: SegmentedButton.getAttribute('segmented-button-id'),
-          selected: SegmentedButton.hasAttribute('selected'),
-        });
-        SegmentedButton.setAttribute('position', this.position.toString());
-        SegmentedButton.setAttribute(
-          'aria-description-translation',
-          '$position $selected'
-        );
+    const tempState: ButtonStatus[] = [];
+    const segmentedButtons = this.getAllSegmentedButtons();
+    this.slottedButtons = segmentedButtons.length;
+    const longestButtonWidth = this.getLongestButtonWidth();
+    segmentedButtons.forEach((SegmentedButton) => {
+      this.position++;
+      tempState.push({
+        id: SegmentedButton.getAttribute('segmented-button-id'),
+        selected: SegmentedButton.hasAttribute('selected'),
       });
-      // @ts-ignore
-      // this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
-      this.container.style = `grid-template-columns: repeat(${this.hostElement.children.length}, ${Math.ceil(longestButtonWidth)}px);`;
-      
-      this.propagatePropsToChildren();
-      this.position = 0;
-      this.status = tempState;
-      this.setState(tempState);
+      SegmentedButton.setAttribute('position', this.position.toString());
+      SegmentedButton.setAttribute(
+        'aria-description-translation',
+        '$position $selected'
+      );
+    });
+    // @ts-ignore
+    // this.container.style = `grid-template-columns: ${`minmax(0, ${Math.ceil(longestButtonWidth)}px) `.repeat(this.hostElement.children.length)};`;
+    this.container.style = `grid-template-columns: repeat(${
+      this.hostElement.children.length
+    }, ${Math.ceil(longestButtonWidth)}px);`;
+
+    this.propagatePropsToChildren();
+    this.position = 0;
+    this.status = tempState;
+    this.setState(tempState);
   }
 
   componentWillUpdate() {
     this.showHelperText = false;
-    if (this.required && this.status.filter(e => e.selected === true).length <= 0) {
+    if (
+      this.required &&
+      this.status.filter((e) => e.selected === true).length <= 0
+    ) {
       this.showHelperText = true;
-    }    
+    }
   }
 
   getAdjacentSiblings = (tempState, i) => {
@@ -170,7 +176,8 @@ export class SegmentedButtonGroup {
     Array.from(this.hostElement.children).forEach((child) => {
       const selected = child.hasAttribute('selected');
       const iconOnly = child.hasAttribute('icon-only');
-      const checkmark = this.size === 'small' ? CHECKMARK_WIDTH_SMALL : CHECKMARK_WIDTH_LARGE
+      const checkmark =
+        this.size === 'small' ? CHECKMARK_WIDTH_SMALL : CHECKMARK_WIDTH_LARGE;
       if (selected || iconOnly) {
         tempWidth =
           child.getBoundingClientRect().width > tempWidth
@@ -179,7 +186,7 @@ export class SegmentedButtonGroup {
       } else {
         tempWidth =
           child.getBoundingClientRect().width + checkmark > tempWidth
-            ? child.getBoundingClientRect().width + checkmark 
+            ? child.getBoundingClientRect().width + checkmark
             : tempWidth;
       }
     });
@@ -222,25 +229,25 @@ export class SegmentedButtonGroup {
     return (
       <Host>
         {this.styles && <style>{this.styles}</style>}
-        {this.label && 
+        {this.label && (
           <span class="segmented-button-group--label"> {this.label} </span>
-        }
+        )}
         <div
           class={this.getCssClassMap()}
           part={this.getBasePartMap()}
           aria-label={this.getAriaLabelTranslation()}
           role="group"
-          ref={(el) => this.container = el as HTMLInputElement}
+          ref={(el) => (this.container = el as HTMLInputElement)}
         >
           <slot />
-
         </div>
-        { this.showHelperText && 
-            <scale-helper-text
-              class="segmented-button-group--helper-text"
-              helperText={this.helperText}
-              variant={'danger'}
-            ></scale-helper-text>} 
+        {this.showHelperText && (
+          <scale-helper-text
+            class="segmented-button-group--helper-text"
+            helperText={this.helperText}
+            variant={'danger'}
+          ></scale-helper-text>
+        )}
       </Host>
     );
   }
