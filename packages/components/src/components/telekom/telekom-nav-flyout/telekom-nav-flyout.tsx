@@ -56,13 +56,11 @@ export class TelekomNavItem {
   };
 
   show = () => {
-    console.log('show!');
     this.isExpanded = true;
     this.triggerElement.setAttribute('aria-expanded', 'true');
   };
 
   hide = () => {
-    console.log('hide!');
     this.isExpanded = false;
     this.triggerElement.setAttribute('aria-expanded', 'false');
   };
