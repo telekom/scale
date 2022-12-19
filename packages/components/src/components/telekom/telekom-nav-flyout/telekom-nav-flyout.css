@@ -10,22 +10,51 @@
  */
 
 :host {
+  --top: 100%;
+  --left: 0;
+  --width: 100%;
+  --position: absolute;
+  --background: var(--telekom-color-background-surface-subtle);
+  --shadow: none;
+
+  /* TODO add vars for animation props, both in and out */
+
   display: contents;
 }
 
 :host([debug])::part(base) {
-  border: 1px dotted cyan;
+  border: 1px dotted gold;
 }
 
 :host::part(base) {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--telekom-color-background-surface);
+  position: var(--position);
+  top: var(--top);
+  left: var(--left);
+  width: var(--width);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  animation-duration: 440ms;
 }
 
 :host::part(base expanded) {
   display: block;
+}
+
+@keyframes toggle {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25em);
+  }
+}
+
+:host::part(in) {
+  animation-name: toggle;
+  animation-timing-function: var(--telekom-motion-easing-enter);
+}
+
+:host::part(out) {
+  animation-name: toggle;
+  animation-direction: reverse;
+  animation-timing-function: var(--telekom-motion-easing-exit);
 }

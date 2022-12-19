@@ -35,19 +35,38 @@
       <!-- MAIN NAV -->
       <scale-telekom-nav-list slot="main-nav" align="left" debug>
         <scale-telekom-nav-item>
-          <button role="menuitem">Category 1</button>
-          <scale-telekom-nav-flyout debug>
-            <h2>My menu</h2>
-            <ol>
-              <li><a href="#1">My list</a></li>
-              <li><a href="#2">Of things</a></li>
-              <li><a href="#3">Is pretty</a></li>
-              <li><a href="#4">Nice</a></li>
-            </ol>
+          <button><span>Category 1</span></button>
+          <scale-telekom-nav-flyout>
+            <div style="padding: 1em">
+              <h2>My menu</h2>
+              <ol>
+                <li><a href="#1">My list</a></li>
+                <li><a href="#2">Of things</a></li>
+                <li><a href="#3">Is pretty</a></li>
+                <li><a href="#4">Nice</a></li>
+              </ol>
+            </div>
           </scale-telekom-nav-flyout>
         </scale-telekom-nav-item>
         <scale-telekom-nav-item active>
-          <a href="#">Category 2</a>
+          <button>Category 2</button>
+          <scale-telekom-nav-flyout>
+            <div style="padding: 1em">
+              <h2>My second menu</h2>
+              <ol>
+                <li><a href="#1">My list</a></li>
+                <li><a href="#2">Of things</a></li>
+                <li><a href="#3">Gets even</a></li>
+                <li><a href="#4">Nicer</a></li>
+              </ol>
+            </div>
+          </scale-telekom-nav-flyout>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">Category 3</a>
+        </scale-telekom-nav-item>
+        <scale-telekom-nav-item>
+          <a href="#">Category 4</a>
         </scale-telekom-nav-item>
       </scale-telekom-nav-list>
 

@@ -9,18 +9,26 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/*
-  TODO
-  ----
-  - [ ] handle hover
-  - [ ] animate
-  - [ ] add CSS variables
-  - [ ] handle closing on focusout somehow (probably something for nav-list)
-*/
-
-import { Component, h, Host, Element, State, Prop, Watch } from '@stencil/core';
+import {
+  Component,
+  h,
+  Host,
+  Element,
+  Listen,
+  Method,
+  Prop,
+  State,
+  Watch,
+} from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import cx from 'classnames';
+
+// TODO make util
+const animFinished = (el: HTMLElement | ShadowRoot) => {
+  return Promise.all(
+    el.getAnimations({ subtree: true }).map((x) => x.finished)
+  );
+};
 
 @Component({
   tag: 'scale-telekom-nav-flyout',
@@ -34,9 +42,47 @@ export class TelekomNavItem {
   @Prop() triggerSelector?: string;
 
   @State() isExpanded: boolean = this.expanded;
+  @State() animationState: 'in' | 'out' | undefined;
+
+  @Listen('keydown', { target: 'window' })
+  handleWindowKeydown(event) {
+    if (!this.isExpanded) {
+      return;
+    }
+    if (event.key === 'Escape') {
+      this.expanded = false;
+      try {
+        this.triggerElement.focus();
+      } catch (err) {}
+    }
+  }
+
+  @Listen('focusin', { target: 'document' })
+  handleDocumentFocusin(event) {
+    if (!this.isExpanded) {
+      return;
+    }
+    if (!this.hostElement.contains(event.target)) {
+      this.expanded = false;
+    }
+  }
+
+  @Listen('click', { target: 'document' })
+  handleDocumentClick(event) {
+    if (!this.isExpanded) {
+      return;
+    }
+    const { target } = event;
+    const isNotTrigger = () =>
+      target !== this.triggerElement && !this.triggerElement.contains(target);
+    const isNotWithin = () => !this.hostElement.contains(target);
+    if (isNotTrigger() && isNotWithin()) {
+      this.expanded = false;
+    }
+  }
 
   @Watch('expanded')
-  expandedChanged(newValue) {
+  expandedChanged(newValue: boolean) {
     newValue ? this.show() : this.hide();
   }
 
@@ -49,35 +95,64 @@ export class TelekomNavItem {
     this.triggerElement.setAttribute('aria-expanded', String(this.expanded));
   }
 
-  toggle = (event) => {
-    event.preventDefault(); // TODO exclude ctrl, etc.
+  disconnectedCallback() {
+    this.triggerElement.removeEventListener('click', this.toggle);
+  }
+
+  toggle = (event: MouseEvent) => {
+    if (event.ctrlKey) {
+      return;
+    }
+    event.preventDefault();
     this.expanded = !this.expanded;
     this.expanded ? this.show() : this.hide();
   };
 
-  show = () => {
+  @Method()
+  async show() {
     this.isExpanded = true;
-    this.triggerElement.setAttribute('aria-expanded', 'true');
-  };
+    this.animationState = 'in';
+    requestAnimationFrame(async () => {
+      await animFinished(this.hostElement.shadowRoot);
+      this.animationState = undefined;
+      this.triggerElement.setAttribute('aria-expanded', 'true');
+    });
+  }
 
-  hide = () => {
-    this.isExpanded = false;
-    this.triggerElement.setAttribute('aria-expanded', 'false');
-  };
+  @Method()
+  async hide() {
+    this.animationState = 'out';
+    requestAnimationFrame(async () => {
+      await animFinished(this.hostElement.shadowRoot);
+      this.animationState = undefined;
+      this.isExpanded = false;
+      this.triggerElement.setAttribute('aria-expanded', 'false');
+    });
+  }
 
-  get triggerElement() {
+  /**
+   * Get the trigger element "on demand".
+   * Either query by `trigger-selector` or
+   * get the previous sibling.
+   */
+  get triggerElement(): HTMLElement {
     if (this.triggerSelector) {
-      return this.hostElement.ownerDocument.querySelector(this.triggerSelector);
+      return this.hostElement.ownerDocument.querySelector(
+        this.triggerSelector
+      ) as HTMLElement;
     }
-    return this.hostElement.previousElementSibling;
+    return this.hostElement.previousElementSibling as HTMLElement;
+  }
+
+  get baseElement(): HTMLElement {
+    return this.hostElement.shadowRoot.querySelector('[part~="base"]');
   }
 
   render() {
     return (
       <Host>
         <div
-          part={cx({
-            base: true,
+          part={cx('base', this.animationState, {
             expanded: this.isExpanded,
           })}
         >
