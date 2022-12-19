@@ -192,6 +192,7 @@ export class SegmentedButton {
                   size={this.size === 'small' ? 14 : 16}
                   class="scale-icon-action-success"
                   accessibility-title="success"
+                  selected
                 />
               </div>
             )}
