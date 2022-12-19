@@ -6,7 +6,7 @@ import ScaleSegmentedButtonGroup from './ScaleSegmentedButtonGroup.vue';
   component={ScaleSegmentedButtonGroup}
   argTypes={{
     size: {
-      control: { type: 'select', options: [ 'small', 'large', 'xl'] },
+      control: { type: 'select', options: ['small', 'medium', 'large'] },
     },
   }}
 />
@@ -102,10 +102,60 @@ export const IconTextTemplate = (args, { argTypes }) => ({
   `,
 });
 
+export const DisabledGroupTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    disabled: 'true',
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :disabled="disabled"
+      :size="size"
+      :multi-select="multiSelect"
+      :styles="styles"
+      :required="required"
+      :helper-text="helperText"
+    >
+      <scale-segmented-button>Apple</scale-segmented-button>
+      <scale-segmented-button selected>One+</scale-segmented-button>
+      <scale-segmented-button>Samsung</scale-segmented-button>
+      <scale-segmented-button>Huawei</scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
+export const DisabledTemplate = (args, { argTypes }) => ({
+  components: { ScaleSegmentedButtonGroup },
+  props: {
+    label: String,
+    icon: String,
+    disabled: true,
+    ...ScaleSegmentedButtonGroup.props,
+  },
+  template: `
+    <scale-segmented-button-group
+      :size="size"
+      :disabled="disabled"
+      :multi-select="multiSelect"
+      :styles="styles"
+      :required="required"
+      :helper-text="helperText"
+    >
+      <scale-segmented-button disabled>Apple</scale-segmented-button>
+      <scale-segmented-button>One+</scale-segmented-button>
+      <scale-segmented-button>Samsung</scale-segmented-button>
+      <scale-segmented-button>Huawei</scale-segmented-button>
+    </scale-segmented-button-group>
+  `,
+});
+
 ## Standard
 
 <Canvas withSource="none">
-  <Story name="Standard" args={{label: "Group Label"}}>
+  <Story name="Standard" args={{ label: 'Group Label' }}>
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -114,60 +164,135 @@ export const IconTextTemplate = (args, { argTypes }) => ({
 
 ```html
 <scale-segmented-button-group>
-    <scale-segmented-button selected>Apple</scale-segmented-button>
-    <scale-segmented-button>One+</scale-segmented-button>
-    <scale-segmented-button>Samsung</scale-segmented-button>
-    <scale-segmented-button>Huawei</scale-segmented-button>
+  <scale-segmented-button selected>Apple</scale-segmented-button>
+  <scale-segmented-button>One+</scale-segmented-button>
+  <scale-segmented-button>Samsung</scale-segmented-button>
+  <scale-segmented-button>Huawei</scale-segmented-button>
 </scale-segmented-button-group>
 ```
 
 ## Multi Select
 
 <Canvas withSource="none">
-  <Story name="MultiSelect" args={{multiSelect: true, label: "Group Label"}}>
+  <Story name="MultiSelect" args={{ multiSelect: true, label: 'Group Label' }}>
     {MultiSelectTemplate.bind({})}
   </Story>
 </Canvas>
 
 ```html
-<scale-segmented-button-group multi-select>
-      <scale-segmented-button selected>Apple</scale-segmented-button>
-      <scale-segmented-button selected>One+</scale-segmented-button>
-      <scale-segmented-button>Samsung</scale-segmented-button>
-      <scale-segmented-button>Huawei</scale-segmented-button>
+<scale-segmented-button-group multi-select disabled>
+  <scale-segmented-button>Apple</scale-segmented-button>
+  <scale-segmented-button>One+</scale-segmented-button>
+  <scale-segmented-button selected>Samsung</scale-segmented-button>
+  <scale-segmented-button>Huawei</scale-segmented-button>
+</scale-segmented-button-group>
+```
+
+## Disabled
+
+### Disabled Button
+
+<Canvas withSource="none">
+  <Story name="Disabled Button" args={{ label: 'Group Label' }}>
+    {DisabledTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button-group>
+  <scale-segmented-button disabled>Apple</scale-segmented-button>
+  <scale-segmented-button>One+</scale-segmented-button>
+  <scale-segmented-button>Samsung</scale-segmented-button>
+  <scale-segmented-button>Huawei</scale-segmented-button>
+</scale-segmented-button-group>
+```
+
+### Disabled Button Group
+
+<Canvas withSource="none">
+  <Story
+    name="Disabled Button Group"
+    args={{ label: 'Group Label', disabled: true }}
+  >
+    {DisabledGroupTemplate.bind({})}
+  </Story>
+</Canvas>
+
+```html
+<scale-segmented-button-group disabled>
+  <scale-segmented-button>Apple</scale-segmented-button>
+  <scale-segmented-button selected>One+</scale-segmented-button>
+  <scale-segmented-button>Samsung</scale-segmented-button>
+  <scale-segmented-button>Huawei</scale-segmented-button>
 </scale-segmented-button-group>
 ```
 
 ## Icon only
 
 <Canvas withSource="none">
-  <Story name="Icon only" args={{label: "Group Label"}}>
+  <Story name="Icon only" args={{ label: 'Group Label' }}>
     {IconOnlyTemplate.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-segmented-button-group>
-  <scale-segmented-button selected><scale-icon-weather-cloudy slot="segmented-button-icon"></scale-icon-weather-cloudy></scale-segmented-button>
-  <scale-segmented-button><scale-icon-weather-rain slot="segmented-button-icon"></scale-icon-weather-rain></scale-segmented-button>
-  <scale-segmented-button><scale-icon-weather-sunny slot="segmented-button-icon"></scale-icon-weather-sunny></scale-segmented-button>
-  <scale-segmented-button><scale-icon-weahter-heavy-snow slot="segmented-button-icon"></scale-icon-weahter-heavy-snow></scale-segmented-button>
+  <scale-segmented-button selected
+    ><scale-icon-weather-cloudy
+      slot="segmented-button-icon"
+    ></scale-icon-weather-cloudy
+  ></scale-segmented-button>
+  <scale-segmented-button
+    ><scale-icon-weather-rain
+      slot="segmented-button-icon"
+    ></scale-icon-weather-rain
+  ></scale-segmented-button>
+  <scale-segmented-button
+    ><scale-icon-weather-sunny
+      slot="segmented-button-icon"
+    ></scale-icon-weather-sunny
+  ></scale-segmented-button>
+  <scale-segmented-button
+    ><scale-icon-weahter-heavy-snow
+      slot="segmented-button-icon"
+    ></scale-icon-weahter-heavy-snow
+  ></scale-segmented-button>
 </scale-segmented-button-group>
 ```
 
 ## Icon and Text
 
 <Canvas withSource="none">
-  <Story name="Icon and Text" args={{label: "Group Label"}}>
+  <Story name="Icon and Text" args={{ label: 'Group Label' }}>
     {IconTextTemplate.bind({})}
   </Story>
 </Canvas>
 
 ```html
 <scale-segmented-button-group>
-  <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Apple</scale-segmented-button>
-  <scale-segmented-button><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>One+</scale-segmented-button>
-  <scale-segmented-button selected><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Samsung</scale-segmented-button>
-  <scale-segmented-button selected><scale-icon-device-device-phone slot="segmented-button-icon"></scale-icon-device-device-phone>Huawei</scale-segmented-button>
+  <scale-segmented-button
+    ><scale-icon-device-device-phone
+      slot="segmented-button-icon"
+    ></scale-icon-device-device-phone
+    >Apple</scale-segmented-button
+  >
+  <scale-segmented-button
+    ><scale-icon-device-device-phone
+      slot="segmented-button-icon"
+    ></scale-icon-device-device-phone
+    >One+</scale-segmented-button
+  >
+  <scale-segmented-button selected
+    ><scale-icon-device-device-phone
+      slot="segmented-button-icon"
+    ></scale-icon-device-device-phone
+    >Samsung</scale-segmented-button
+  >
+  <scale-segmented-button selected
+    ><scale-icon-device-device-phone
+      slot="segmented-button-icon"
+    ></scale-icon-device-device-phone
+    >Huawei</scale-segmented-button
+  >
 </scale-segmented-button-group>
 ```

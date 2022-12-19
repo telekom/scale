@@ -33,7 +33,7 @@ let i = 0;
 export class SegmentedButton {
   @Element() hostElement: HTMLElement;
   /** (optional) The size of the button */
-  @Prop() size?: 'small' | 'large' | 'xl' = 'small';
+  @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) If `true`, the button is selected */
   @Prop({ mutable: true }) selected?: boolean = false;
   /** (optional) If `true`, the button is disabled */
@@ -127,7 +127,7 @@ export class SegmentedButton {
           case 'small':
             icon.setAttribute('size', '14');
             break;
-          case 'large' || 'xl':
+          case 'medium' || 'large':
             icon.setAttribute('size', '16');
             break;
         }

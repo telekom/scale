@@ -31,13 +31,13 @@
   width: 100%;
 }
 
-.segmented-button-group--large {
+.segmented-button-group--medium {
   height: 40px;
   --height: 40px;
   padding: 0 2px 0 2px;
 }
 
-.segmented-button-group--xl {
+.segmented-button-group--large {
   height: 44px;
   --height: 44px;
   padding: 0 2px 0 2px;
@@ -46,7 +46,7 @@
 .segmented-button-group--label {
   font-size: var(--telekom-typography-font-size-body);
   font-weight: var(--telekom-typography-font-weight-bold);
-  margin-bottom: var(--telekom-spacing-unit-x2)
+  margin-bottom: var(--telekom-spacing-unit-x2);
 }
 
 .segmented-button-group--helper-text {

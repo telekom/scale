@@ -47,7 +47,7 @@ export class SegmentedButtonGroup {
   /** state */
   @State() status: ButtonStatus[] = [];
   /** (optional) The size of the button */
-  @Prop() size?: 'small' | 'large' | 'xl' = 'small';
+  @Prop() size?: 'small' | 'medium' | 'large' = 'small';
   /** (optional) Allow more than one button to be selected */
   @Prop() multiSelect: boolean = false;
   /** (optional) If `true`, the group is disabled */
