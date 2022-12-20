@@ -9,10 +9,20 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/* WIP 🚧 */
+
 :host {
   --spacing-inner-x: 58px;
   --height: 100%;
   --spacing-x: 30px;
+
+  /* TODO just for ref… */
+  /* --_spacing-bottom-header-nav-item-main: 16px;
+  --_spacing-inline-header-nav-item-main: 32px;
+  --_spacing-top-header-nav-item-secondary: 12px;
+  --_spacing-inline-header-nav-item-secondary: 32px;
+  --_spacing-bottom-header-nav-item-main-icon: 16px;
+  --_spacing-inline-header-nav-item-main-icon: 24px; */
 
   display: flex;
   width: 100%;
@@ -25,22 +35,22 @@
   border: 1px dotted gold;
 }
 
-:host([align='left']) {
+:host([alignment='left']) {
   justify-content: flex-start;
 }
-:host([align='right']) {
+:host([alignment='right']) {
   justify-content: flex-end;
 }
-:host([align='center']) {
+:host([alignment='center']) {
   justify-content: center;
 }
 
-:host([align='left']) ::slotted(*:not(:last-child)) {
+:host([alignment='left']) ::slotted(*:not(:last-child)) {
   margin-inline-end: var(--spacing-inner-x);
 }
-:host([align='right']) ::slotted(*:not(:first-child)) {
+:host([alignment='right']) ::slotted(*:not(:first-child)) {
   margin-inline-start: var(--spacing-inner-x);
 }
-:host([align='center']) ::slotted(*) {
+:host([alignment='center']) ::slotted(*) {
   margin-inline: calc(0.5 * var(--spacing-inner-x));
 }

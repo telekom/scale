@@ -38,18 +38,6 @@
   --_spacing-right-app-name: 32px;
 
   --_base-menu-justify-content: end;
-
-  --test-a: gold;
-
-  /* Used in telekom-nav-list??? telekom-nav-item, defined here because breakpoints */
-  --_spacing-bottom-header-nav-item-main: 16px;
-  --_spacing-inline-header-nav-item-main: 32px;
-  --_spacing-top-header-nav-item-secondary: 12px;
-  --_spacing-inline-header-nav-item-secondary: 32px;
-  --_spacing-bottom-header-nav-item-main-icon: 16px;
-  --_spacing-inline-header-nav-item-main-icon: 24px; /* static */
-  /* --_spacing-bottom-header-nav-item-main-icon: var(--telekom-spacing-unit-x5);
-  --_spacing-inline-header-nav-item-main-icon: var(--telekom-spacing-unit-x6); */
 }
 
 @media screen and (min-width: 640px) {

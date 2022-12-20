@@ -9,12 +9,15 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+/* WIP 🚧 */
+
 :host {
   --top: 100%;
   --left: 0;
   --width: 100%;
+  --height: auto;
   --position: absolute;
-  --background: var(--telekom-color-background-surface-subtle);
+  --background: var(--telekom-color-background-surface);
   --shadow: none;
 
   /* TODO add vars for animation props, both in and out */
@@ -32,6 +35,7 @@
   top: var(--top);
   left: var(--left);
   width: var(--width);
+  height: var(--height);
   background: var(--background);
   box-shadow: var(--shadow);
   animation-duration: 440ms;

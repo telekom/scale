@@ -38,11 +38,12 @@ const animFinished = (el: HTMLElement | ShadowRoot) => {
 export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
 
+  /** Open the flyout menu */
   @Prop({ reflect: true, mutable: true }) expanded?: boolean = false;
+  /** Selector to query the trigger element in case it's not the previous sibling */
   @Prop() triggerSelector?: string;
-  // TODO rename to something nice/consistent
-  // or maybe invert logic (no hover by default)
-  @Prop() noHover?: boolean = false;
+  /** Whether the flyout should open on hover (needs better name!) */
+  @Prop() hover?: boolean = false;
 
   @State() isExpanded: boolean = this.expanded;
   @State() animationState: 'in' | 'out' | undefined;
@@ -99,7 +100,7 @@ export class TelekomNavItem {
     this.triggerElement.setAttribute('aria-haspopup', 'true');
     this.triggerElement.setAttribute('aria-expanded', String(this.expanded));
     this.triggerElement.addEventListener('click', this.handleTriggerClick);
-    if (this.noHover === false) {
+    if (this.hover) {
       this.triggerElement.addEventListener('mouseenter', this.handlePointerIn);
     }
   }
