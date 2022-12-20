@@ -10,6 +10,7 @@
 | Property          | Attribute          | Description | Type      | Default     |
 | ----------------- | ------------------ | ----------- | --------- | ----------- |
 | `expanded`        | `expanded`         |             | `boolean` | `false`     |
+| `noHover`         | `no-hover`         |             | `boolean` | `false`     |
 | `triggerSelector` | `trigger-selector` |             | `string`  | `undefined` |
 
 
