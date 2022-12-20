@@ -8,7 +8,6 @@
     :aria-role-title="ariaRoleTitle"
     :disabled="disabled"
     :styles="styles"
-    :icon-size="iconSize"
     @scaleChange="scaleChange"
     @scaleClose="scaleClose"
   >
@@ -26,7 +25,6 @@ export default {
     label: { type: String },
     disabled: { type: Boolean, default: false },
     styles: { type: String },
-    iconSize: { type: Number, default: 16 },
     ariaRoleTitle: { type: String, default: 'switch' },
     ariaCheckedState: { type: Boolean },
   },

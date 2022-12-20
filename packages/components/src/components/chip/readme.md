@@ -13,7 +13,6 @@
 | `ariaRoleTitle`    | `aria-role-title`    | (optional) chip aria-role      | `string`                  | `'switch'`   |
 | `disabled`         | `disabled`           | (optional) chip disabled       | `boolean`                 | `false`      |
 | `dismissible`      | `dismissible`        | (optional) chip dismissible    | `boolean`                 | `false`      |
-| `iconSize`         | `icon-size`          | (optional) chip icon size      | `number`                  | `16`         |
 | `label`            | `label`              | (optional) chip label          | `string`                  | `undefined`  |
 | `selected`         | `selected`           | (optional)                     | `boolean`                 | `false`      |
 | `styles`           | `styles`             | (optional) Injected CSS styles | `string`                  | `undefined`  |

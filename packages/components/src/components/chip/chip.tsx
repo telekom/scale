@@ -42,8 +42,6 @@ export class Chip {
   @Prop() disabled?: boolean = false;
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
-  /** (optional) chip icon size */
-  @Prop() iconSize?: number = 16;
 
   /** (optional) Change icon click event */
   @Event({ eventName: 'scale-change' }) scaleChange: EventEmitter<MouseEvent>;
@@ -72,7 +70,7 @@ export class Chip {
       if (
         iconSlot.children[0].getAttribute('size') === String(defaultIconSize)
       ) {
-        iconSlot.children[0].setAttribute('size', String(this.iconSize));
+        iconSlot.children[0].setAttribute('size', String(16));
       }
     }
   }
@@ -102,16 +100,13 @@ export class Chip {
       return (
         <scale-icon-action-close
           accessibility-title="close"
-          size={this.iconSize}
+          size={16}
           onClick={!this.disabled ? this.handleClose : null}
         />
       );
     } else if (!this.dismissible) {
       return (
-        <scale-icon-action-success
-          accessibility-title="success"
-          size={this.iconSize}
-        />
+        <scale-icon-action-success accessibility-title="success" size={16} />
       );
     }
   }
