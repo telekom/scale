@@ -40,9 +40,14 @@ export class TelekomNavItem {
 
   @Prop({ reflect: true, mutable: true }) expanded?: boolean = false;
   @Prop() triggerSelector?: string;
+  // TODO rename to something nice/consistent
+  // or maybe invert logic (no hover by default)
+  @Prop() noHover?: boolean = false;
 
   @State() isExpanded: boolean = this.expanded;
   @State() animationState: 'in' | 'out' | undefined;
+
+  private parentElement: HTMLElement;
 
   @Listen('keydown', { target: 'window' })
   handleWindowKeydown(event) {
@@ -57,15 +62,15 @@ export class TelekomNavItem {
     }
   }
 
-  @Listen('focusin', { target: 'document' })
-  handleDocumentFocusin(event) {
-    if (!this.isExpanded) {
-      return;
-    }
-    if (!this.hostElement.contains(event.target)) {
-      this.expanded = false;
-    }
-  }
+  // @Listen('focusin', { target: 'document' })
+  // handleDocumentFocusin(event) {
+  //   if (!this.isExpanded) {
+  //     return;
+  //   }
+  //   if (!this.hostElement.contains(event.target)) {
+  //     this.expanded = false;
+  //   }
+  // }
 
   @Listen('click', { target: 'document' })
   handleDocumentClick(event) {
@@ -87,25 +92,43 @@ export class TelekomNavItem {
   }
 
   connectedCallback() {
+    this.parentElement = this.hostElement.parentElement;
     if (this.triggerElement == null) {
       return;
     }
-    this.triggerElement.addEventListener('click', this.toggle);
     this.triggerElement.setAttribute('aria-haspopup', 'true');
     this.triggerElement.setAttribute('aria-expanded', String(this.expanded));
+    this.triggerElement.addEventListener('click', this.handleTriggerClick);
+    if (this.noHover === false) {
+      this.triggerElement.addEventListener('mouseenter', this.handlePointerIn);
+    }
   }
 
   disconnectedCallback() {
-    this.triggerElement.removeEventListener('click', this.toggle);
+    this.triggerElement.removeEventListener('click', this.handleTriggerClick);
   }
 
-  toggle = (event: MouseEvent) => {
+  handleTriggerClick = (event: MouseEvent) => {
     if (event.ctrlKey) {
       return;
     }
     event.preventDefault();
     this.expanded = !this.expanded;
     this.expanded ? this.show() : this.hide();
+    this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
+  };
+
+  handlePointerIn = () => {
+    if (this.isExpanded) {
+      return;
+    }
+    this.expanded = true;
+    this.parentElement.addEventListener('mouseleave', this.handlePointerOut);
+  };
+
+  handlePointerOut = () => {
+    this.expanded = false;
+    this.parentElement.removeEventListener('mouseleave', this.handlePointerOut);
   };
 
   @Method()
@@ -142,10 +165,6 @@ export class TelekomNavItem {
       ) as HTMLElement;
     }
     return this.hostElement.previousElementSibling as HTMLElement;
-  }
-
-  get baseElement(): HTMLElement {
-    return this.hostElement.shadowRoot.querySelector('[part~="base"]');
   }
 
   render() {
