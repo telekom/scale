@@ -134,6 +134,18 @@
   }
 }
 
+/* WIP 🚧 */
+::slotted(*) {
+  height: 100%;
+  display: inline-flex;
+}
+
+/* WIP 🚧 */
+slot[name='main-nav'],
+slot[name='meta-nav-ext'] {
+  width: 100%;
+}
+
 slot[name='app-logo'] {
   height: var(--_height);
   width: var(--_height);

@@ -1,0 +1,56 @@
+/**
+ * @license
+ * Scale https://github.com/telekom/scale
+ *
+ * Copyright (c) 2021 Egor Kirpichev and contributors, Deutsche Telekom AG
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
+/* WIP 🚧 */
+
+:host {
+  --spacing-inner-x: 58px;
+  --height: 100%;
+  --spacing-x: 30px;
+
+  /* TODO just for ref… */
+  /* --_spacing-bottom-header-nav-item-main: 16px;
+  --_spacing-inline-header-nav-item-main: 32px;
+  --_spacing-top-header-nav-item-secondary: 12px;
+  --_spacing-inline-header-nav-item-secondary: 32px;
+  --_spacing-bottom-header-nav-item-main-icon: 16px;
+  --_spacing-inline-header-nav-item-main-icon: 24px; */
+
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  height: var(--height);
+  margin-inline-start: var(--spacing-x);
+}
+
+:host([debug]) {
+  border: 1px dotted gold;
+}
+
+:host([alignment='left']) {
+  justify-content: flex-start;
+}
+:host([alignment='right']) {
+  justify-content: flex-end;
+}
+:host([alignment='center']) {
+  justify-content: center;
+}
+
+:host([alignment='left']) ::slotted(*:not(:last-child)) {
+  margin-inline-end: var(--spacing-inner-x);
+}
+:host([alignment='right']) ::slotted(*:not(:first-child)) {
+  margin-inline-start: var(--spacing-inner-x);
+}
+:host([alignment='center']) ::slotted(*) {
+  margin-inline: calc(0.5 * var(--spacing-inner-x));
+}
