@@ -12,7 +12,6 @@ describe('Chip', () => {
       ['outline-selected'],
       ['outline-selected-disabled'],
       ['outline-dismissible'],
-      ['icon+text'],
     ])('%p', async (variant) => {
       await global.runSetup(`beta-components-chip--${variant}`);
       await global.visualCheck();
