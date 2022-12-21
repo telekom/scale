@@ -176,19 +176,21 @@ import { addons } from '@storybook/addons';
                       minHeight: '120px',
                     }}
                   >
-                    <div
-                      style={{
-                        color: `${getItemColorByPath(pathStringItem[0])}`,
-                        fontSize: '11px',
-                        fontWeight: 500,
-                        paddingTop: 'var(--telekom-spacing-unit-x1)',
-                        passingBottom: 'var(--telekom-spacing-unit-x1)',
-                      }}
-                    >
-                      {locale === 'en'
-                        ? 'Recommended colors for text and icons'
-                        : 'Empfohlene Farben für Text & Icons'}
-                    </div>
+                    {pathStringItem.length !== 0 ? (
+                      <div
+                        style={{
+                          color: `${getItemColorByPath(pathStringItem[0])}`,
+                          fontSize: '11px',
+                          fontWeight: 500,
+                          paddingTop: 'var(--telekom-spacing-unit-x1)',
+                          passingBottom: 'var(--telekom-spacing-unit-x1)',
+                        }}
+                      >
+                        {locale === 'en'
+                          ? 'Recommended colors for text and icons'
+                          : 'Empfohlene Farben für Text & Icons'}
+                      </div>
+                    ) : null}
                     {hasContrastWithoutSlash(pathStringItem) ? (
                       <td
                         style={{
@@ -1252,12 +1254,22 @@ import { addons } from '@storybook/addons';
               </tbody>
               {generateSectionTitle('UI', 'UI')}
               <tbody>
-                {generateTableColorRow('color.ui.base')}
+                {generateTableColorRow('color.ui.base', '', '', true)}
                 {generateTableColorRow('color.ui.subtle')}
                 {generateTableColorRow('color.ui.light')}
                 {generateTableColorRow('color.ui.regular')}
                 {generateTableColorRow('color.ui.strong')}
                 {generateTableColorRow('color.ui.extra-strong')}
+                {generateTableColorRow(
+                  'color.ui.black',
+                  'Für Elemente, die sowohl im hellen als auch im dunklen Modus in schwarzer Farbe dargestellt werden.',
+                  'Use for elements that are displayed in black in both light and dark mode.'
+                )}
+                {generateTableColorRow(
+                  'color.ui.white',
+                  'Für Elemente, die sowohl im hellen als auch im dunklen Modus in weißer Farbe dargestellt werden.',
+                  'Use for elements that are displayed in white in both light and dark mode.'
+                )}
               </tbody>
               {generateSectionSubTitle('UI Border', 'UI border')}
               <tbody>

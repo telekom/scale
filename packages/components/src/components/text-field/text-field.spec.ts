@@ -31,6 +31,7 @@ describe('TextField', () => {
       components: [TextField],
       html: `<scale-text-field
                  type ="email"
+                 input-mode-type="email"
                  name ="name"
                  label ="label"
                  max-length="2"
@@ -49,6 +50,7 @@ describe('TextField', () => {
     });
 
     expect(specPage.rootInstance.type).toBe('email');
+    expect(specPage.rootInstance.inputModeType).toBe('email');
     expect(specPage.rootInstance.name).toBe('name');
     expect(specPage.rootInstance.label).toBe('label');
     expect(specPage.rootInstance.maxLength).toBe(2);

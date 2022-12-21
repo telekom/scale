@@ -184,11 +184,14 @@ export class DropdownSelect {
 
   @Prop() comboboxId?: string = 'combobox';
   @Prop() label: string;
+  @Prop() name?: string;
   @Prop() helperText?: string = '';
   @Prop() disabled?: boolean;
   @Prop() readonly?: boolean;
   @Prop() transparent?: boolean;
   @Prop() invalid?: boolean = false;
+  @Prop() variant?: 'informational' | 'warning' | 'danger' | 'success' =
+    'informational';
   @Prop({ mutable: true, reflect: true }) value: any;
 
   @Event({ eventName: 'scale-change' }) scaleChange!: EventEmitter<void>;
@@ -467,7 +470,7 @@ export class DropdownSelect {
           {this.helperText && (
             <scale-helper-text
               helperText={this.helperText}
-              variant={this.invalid ? 'danger' : 'neutral'}
+              variant={this.invalid ? 'danger' : this.variant}
             ></scale-helper-text>
           )}
         </div>

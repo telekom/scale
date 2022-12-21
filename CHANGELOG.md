@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.117](https://github.com/telekom/scale/compare/v3.0.0-beta.116...v3.0.0-beta.117) (2022-11-07)
+
+
+### Bug Fixes
+
+* **data-grid:** make textAlign work ([#1289](https://github.com/telekom/scale/issues/1289)) ([c501409](https://github.com/telekom/scale/commit/c5014093339c2ed96e25cec974ce6df2b05c2236))
+* **footer:** remove whitespace above footer ([#1172](https://github.com/telekom/scale/issues/1172)) ([00ccea7](https://github.com/telekom/scale/commit/00ccea7996c523e5995b314420ddda263d564b15)), closes [#1345](https://github.com/telekom/scale/issues/1345)
+* **helper-text:** improve styles, icon position ([#1351](https://github.com/telekom/scale/issues/1351)) ([ca8ad1c](https://github.com/telekom/scale/commit/ca8ad1cb780fff92fb3eb8f88a81a978bf73cb98))
+* handle prefers-color-scheme ([#1285](https://github.com/telekom/scale/issues/1285)) ([b889334](https://github.com/telekom/scale/commit/b88933469d1b23b90905b48eccbd62fea2684253))
+* user-file-user-selected svg dimensions ([#1344](https://github.com/telekom/scale/issues/1344)) ([72a8e0c](https://github.com/telekom/scale/commit/72a8e0c8eb02f0a25fb899bf929a85ceba25e487))
+
+
+
+
+
+# [3.0.0-beta.116](https://github.com/telekom/scale/compare/v3.0.0-beta.115...v3.0.0-beta.116) (2022-10-31)
+
+
+### Bug Fixes
+
+* typography documentation variable name ([#1330](https://github.com/telekom/scale/issues/1330)) ([8d200a3](https://github.com/telekom/scale/commit/8d200a3a3b6ade9b9ef43e4f84aea4b1e1d984ce))
+* **slider:** bar styles ([#1328](https://github.com/telekom/scale/issues/1328)) ([c924e6f](https://github.com/telekom/scale/commit/c924e6f08c18ad656a054457286fc22d9a6152bb))
+
+
+### Features
+
+* adding UI black and white ([#1212](https://github.com/telekom/scale/issues/1212)) ([a8f88a0](https://github.com/telekom/scale/commit/a8f88a04e2f6119b615ecc4d25da32ed1b5bc181))
+
+
+
+
+
 # [3.0.0-beta.115](https://github.com/telekom/scale/compare/v3.0.0-beta.114...v3.0.0-beta.115) (2022-10-27)
 
 

@@ -2,6 +2,7 @@
   <scale-text-field
     :name="name"
     :type="type"
+    :input-mode-type="inputModeType"
     :label="label"
     :helper-text="helperText"
     :invalid="invalid"
@@ -19,6 +20,7 @@
     :value="value"
     :input-id="inputId"
     :input-autofocus="inputAutofocus"
+    :input-autocomplete="inputAutocomplete"
     :experimental-controlled="experimentalControlled"
     @scaleInput="scaleInput"
     @scaleChange="scaleChange"
@@ -37,6 +39,7 @@ export default {
   props: {
     name: { type: String },
     type: { type: String },
+    inputModeType: { type: String },
     label: { type: String },
     helperText: { type: String },
     invalid: { type: Boolean },
@@ -54,6 +57,7 @@ export default {
     value: { type: String },
     inputId: { type: String },
     inputAutofocus: { type: Boolean },
+    inputAutocomplete: { type: String },
     experimentalControlled: { type: Boolean },
     styles: { type: String },
   },

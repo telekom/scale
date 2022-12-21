@@ -49,7 +49,10 @@ export class TabHeader {
       if (newValue === true) {
         // Having focus on the host element, and not on inner elements,
         // is required because screen readers.
-        this.hostElement.focus();
+        const firstRender = this.hostElement.getAttribute('first-render');
+        if (!firstRender) {
+          this.hostElement.focus();
+        }
       }
       this.updateSlottedIcon();
     }

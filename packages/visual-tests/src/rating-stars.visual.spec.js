@@ -13,14 +13,6 @@ describe('RatingStars', () => {
       await global.runSetup(`components-rating-stars--${variant}`);
       await global.visualCheck();
     });
-    test.each([['info-text-and-custom-label']])('focus %p', async (variant) => {
-      await global.runSetup(`components-rating-stars--${variant}`);
-      const input = await global.page.evaluateHandle(
-        `document.querySelector("#root > scale-rating-stars").shadowRoot.querySelector("input[type=range]")`
-      );
-      await input.focus();
-      await global.visualCheck();
-    });
     test.each([['info-text-and-custom-label']])(
       'active %p',
       async (variant) => {

@@ -2,6 +2,7 @@
   <scale-app-shell
     :logo-click="logoClick"
     :logo-title="logoTitle"
+    :logo-hide-title="logoHideTitle"
     :logo-href="logoHref"
     :logo-aria-described-by="logoAriaDescribedBy"
     :portal-name="portalName"
@@ -24,6 +25,7 @@
 export default {
   props: {
     logoTitle: String,
+    logoHideTitle: Boolean,
     logoHref: String,
     logoAriaDescribedBy: String,
     logoClick: Function,

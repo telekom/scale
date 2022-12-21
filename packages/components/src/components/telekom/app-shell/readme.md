@@ -16,6 +16,7 @@
 | `iconNavigation`      | `icon-navigation`        |                                | `any`     | `[]`        |
 | `logoAriaDescribedBy` | `logo-aria-described-by` |                                | `string`  | `undefined` |
 | `logoClick`           | `logo-click`             |                                | `any`     | `undefined` |
+| `logoHideTitle`       | `logo-hide-title`        |                                | `boolean` | `undefined` |
 | `logoHref`            | `logo-href`              |                                | `string`  | `undefined` |
 | `logoTitle`           | `logo-title`             |                                | `string`  | `undefined` |
 | `mainNavigation`      | `main-navigation`        |                                | `any`     | `[]`        |

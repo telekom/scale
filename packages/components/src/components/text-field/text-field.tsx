@@ -50,6 +50,16 @@ export class TextField {
     | 'time' // example hh:mm
     | 'datetime-local' // example yyyy-mm-ddThh:mm
     | 'url' = 'text';
+  /** (optional) Input mode */
+  @Prop() inputModeType?:
+    | 'none'
+    | 'text'
+    | 'decimal'
+    | 'numeric'
+    | 'tel'
+    | 'search'
+    | 'email'
+    | 'url' = 'text';
   /** (optional) Input name */
   @Prop() name?: string = '';
   /** Input label */
@@ -95,6 +105,8 @@ export class TextField {
   @Prop() list?: string;
   /** (optional) the input should automatically get focus when the page loads. */
   @Prop() inputAutofocus?: boolean;
+  /** (optional) custom value for autocomplete HTML attribute */
+  @Prop() inputAutocomplete?: string;
 
   /** (optional) Injected CSS styles */
   @Prop() styles?: string;
@@ -236,6 +248,7 @@ export class TextField {
           </label>
           <input
             type={this.type}
+            inputMode={this.inputModeType}
             class="text-field__control"
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
@@ -255,6 +268,7 @@ export class TextField {
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
             readonly={this.readonly}
+            autocomplete={this.inputAutocomplete}
             {...ariaInvalidAttr}
             {...(this.helperText ? ariaDescribedByAttr : {})}
             {...(numericTypes.includes(this.type) ? { step: this.step } : {})}
