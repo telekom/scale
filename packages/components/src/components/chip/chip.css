@@ -45,6 +45,7 @@
 }
 
 .chip:not(.chip--disabled):focus {
+  background: black;
   outline: var(--telekom-spacing-unit-x05) solid var(--color-focus);
   outline-offset: var(--telekom-spacing-unit-x025);
 }
