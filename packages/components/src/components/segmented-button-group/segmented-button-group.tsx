@@ -54,9 +54,9 @@ export class SegmentedButtonGroup {
   @Prop({ reflect: true }) disabled?: boolean = false;
   /** (optional) If `true`, expand to container width */
   @Prop() fullWidth?: boolean = false;
-  /** (optional) If `true`, show error message if no element is selected */
-  @Prop() required?: boolean = false;
-  /** (optional) If `true`, show error message if no element is selected */
+  /** (optional) If `true`, show error message */
+  @Prop() invalid?: boolean = false;
+  /** (optional) If `true`, show error message */
   @Prop() helperText?: string = 'Please select an option';
   /** (optional) Group label */
   @Prop() label?: string;
@@ -146,7 +146,7 @@ export class SegmentedButtonGroup {
   componentWillUpdate() {
     this.showHelperText = false;
     if (
-      this.required &&
+      this.invalid &&
       this.status.filter((e) => e.selected === true).length <= 0
     ) {
       this.showHelperText = true;
