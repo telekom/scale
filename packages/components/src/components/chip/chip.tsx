@@ -106,7 +106,11 @@ export class Chip {
       );
     } else if (!this.dismissible) {
       return (
-        <scale-icon-action-success accessibility-title="success" size={16} />
+        <scale-icon-action-success
+          accessibility-title="success"
+          size={16}
+          selected
+        />
       );
     }
   }
