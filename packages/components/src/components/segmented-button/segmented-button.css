@@ -24,13 +24,13 @@
 
   --color-selected: var(--telekom-color-text-and-icon-primary-standard);
 
+  /* medium styles */
+  --font-size-medium: var(--telekom-typography-font-size-body);
+  --medium-height: var(--telekom-spacing-unit-x6);
+
   /* large styles */
   --font-size-large: var(--telekom-typography-font-size-body);
-  --large-height: var(--telekom-spacing-unit-x6);
-
-  /* xl styles */
-  --font-size-xl: var(--telekom-typography-font-size-body);
-  --xl-height: var(--telekom-spacing-unit-x9);
+  --large-height: var(--telekom-spacing-unit-x9);
 
   /* hover styles */
   --background-color-hover: var(--telekom-color-ui-state-fill-hovered);
@@ -69,7 +69,7 @@
   height: 100%;
   width: 100%;
   border-radius: var(--button-radius);
-  background-color: transparent;  
+  background-color: transparent;
   font-family: var(--font-family);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
@@ -78,18 +78,19 @@
   color: var(--telekom-color-text-and-icon-standard);
 }
 
-button.segmented-button--icon-only.segmented-button--small .segmented-button--mask {
+button.segmented-button--icon-only.segmented-button--small
+  .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x4);
   padding-right: var(--telekom-spacing-unit-x4);
 }
 
-button.segmented-button--small .segmented-button--mask   {
+button.segmented-button--small .segmented-button--mask {
   padding-left: var(--telekom-spacing-unit-x2);
   padding-right: var(--telekom-spacing-unit-x3);
 }
 
 .segmented-button--large {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   height: 36px;
 }
 
@@ -99,7 +100,7 @@ button.segmented-button--large .segmented-button--mask {
 }
 
 .segmented-button--xl {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   height: 40px;
 }
 button.segmented-button--xl .segmented-button--mask {
@@ -120,7 +121,8 @@ button.segmented-button--xl .segmented-button--mask {
   color: var(--label-disabled);
 }
 
-.segmented-button--disabled:not(.segmented-button--selected) .segmented-button--mask{
+.segmented-button--disabled:not(.segmented-button--selected)
+  .segmented-button--mask {
   color: var(--label-disabled);
   background-color: transparent;
 }
@@ -150,17 +152,20 @@ button.segmented-button--xl .segmented-button--mask {
   backface-visibility: hidden;
 }
 
-.segmented-button:not(.segmented-button--disabled):hover .segmented-button--mask{
+.segmented-button:not(.segmented-button--disabled):hover
+  .segmented-button--mask {
   background-color: var(--background-color-hover);
 }
 
-.segmented-button:not(.segmented-button--disabled):active .segmented-button--mask{
+.segmented-button:not(.segmented-button--disabled):active
+  .segmented-button--mask {
   background-color: var(--background-color-active);
 }
 
 .segmented-button:focus {
   box-shadow: var(--telekom-shadow-raised-standard);
-  outline: var(--telekom-spacing-unit-x05) solid var(--telekom-color-functional-focus );
+  outline: var(--telekom-spacing-unit-x05) solid
+    var(--telekom-color-functional-focus);
   outline-offset: var(--telekom-spacing-unit-x025);
   z-index: 40;
   position: relative;
@@ -179,7 +184,7 @@ button.segmented-button--xl .segmented-button--mask {
 
 .segmented-button:not(.segmented-button--selected) scale-icon-action-success {
   visibility: hidden !important;
-} 
+}
 
 .segmented-button scale-icon-action-success {
   vertical-align: middle;
@@ -190,7 +195,7 @@ button.segmented-button--xl .segmented-button--mask {
 }
 
 .segmented-button .success-icon-container {
-  display: none; 
+  display: none;
 }
 
 .segmented-button--selected .success-icon-container {
