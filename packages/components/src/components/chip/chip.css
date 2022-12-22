@@ -31,7 +31,6 @@
   outline: none;
   padding: 0 var(--telekom-spacing-unit-x3);
   text-align: center;
-  transition: all 0.15s ease-in-out;
   align-items: center;
   white-space: nowrap;
   border-radius: 1rem;
@@ -40,6 +39,7 @@
   vertical-align: baseline;
   justify-content: center;
   cursor: default;
+  color: var(--telekom-color-text-and-icon-standard);
   background: var(--telekom-color-text-and-icon-inverted-standard);
   border: 1px solid var(--telekom-color-ui-border-standard);
 }
