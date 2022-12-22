@@ -127,8 +127,9 @@ export class Chip {
             !this.disabled && !this.dismissible ? this.handleClick : null
           }
         >
-          <slot name="chip-icon" />
-          <p class="chip-label">{this.label}</p>
+          <span class="chip-label">
+            <slot />
+          </span>
           {this.selected ? this.getIcon() : null}
         </span>
       </Host>

@@ -3,7 +3,6 @@
     :type="type"
     :selected="selected"
     :dismissible="dismissible"
-    :label="label"
     :aria-checked-state="ariaCheckedState"
     :aria-role-title="ariaRoleTitle"
     :disabled="disabled"
@@ -12,6 +11,7 @@
     @scaleClose="scaleClose"
   >
     <slot name="chip-icon"></slot>
+    <slot />
   </scale-chip>
 </template>
 
@@ -22,7 +22,6 @@ export default {
     type: { type: 'standard' | 'outline', default: 'standard' },
     selected: { type: Boolean, default: false },
     dismissible: { type: Boolean, default: false },
-    label: { type: String },
     disabled: { type: Boolean, default: false },
     styles: { type: String },
     ariaRoleTitle: { type: String, default: 'switch' },

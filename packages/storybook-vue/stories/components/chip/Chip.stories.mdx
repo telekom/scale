@@ -34,10 +34,10 @@ export const Template = (args, { argTypes }) => ({
             :type="type"
             :selected="selected"
             :dismissible="dismissible"
-            :label="label"
             :disabled="disabled"
             :styles="styles"
         >
+        {{label}}
         </scale-chip>
   `,
   methods: {
@@ -58,6 +58,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
       :disabled="disabled"
       :styles="styles"
       >
+      {{label}}
       <div slot="chip-icon">
         <scale-icon-action-favorite accessibility-title="favorite" />
       </div>
@@ -96,7 +97,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 <ArgsTable story="Standard" />
 
 ```html
-<scale-chip label="Label"></scale-chip>
+<scale-chip>Label</scale-chip>
 ```
 
 ### Standard Selected
@@ -114,7 +115,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Label" selected></scale-chip>
+<scale-chip selected>Label</scale-chip>
 ```
 
 ### Standard Disabled
@@ -132,7 +133,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip disabled label="Label" selected></scale-chip>
+<scale-chip disabled selected>Label</scale-chip>
 ```
 
 ### Standard Selected Disabled
@@ -151,7 +152,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip disabled label="Label" selected></scale-chip>
+<scale-chip disabled selected>Label</scale-chip>
 ```
 
 ## Outline
@@ -169,7 +170,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Label" type="outline"></scale-chip>
+<scale-chip type="outline">Label</scale-chip>
 ```
 
 ### Outline Selected
@@ -188,7 +189,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Label" selected></scale-chip>
+<scale-chip selected>Label</scale-chip>
 ```
 
 ### Outline Disabled
@@ -207,7 +208,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip disabled type="outline" label="Label" selected></scale-chip>
+<scale-chip disabled type="outline" selected>Label</scale-chip>
 ```
 
 ### Outline Selected Disabled
@@ -227,7 +228,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip disabled type="outline" label="Label" selected></scale-chip>
+<scale-chip disabled type="outline" selected>Label</scale-chip>
 ```
 
 ## Dismissible
@@ -248,7 +249,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip dismissible selected label="Label"></scale-chip>
+<scale-chip dismissible selected>Label</scale-chip>
 ```
 
 ### Outline Dismissible
@@ -267,7 +268,7 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip dismissible selected label="Label" type="outline"></scale-chip>
+<scale-chip dismissible selected type="outline">Label</scale-chip>
 ```
 
 ## Icon + Text
@@ -284,8 +285,9 @@ export const TemplateIcon = (args, { argTypes }) => ({
 </Canvas>
 
 ```html
-<scale-chip label="Label"
-  ><div slot="chip-icon">
+<scale-chip
+  >Label
+  <div slot="chip-icon">
     <scale-icon-action-favorite accessibility-title="favorite" />
   </div>
 </scale-chip>

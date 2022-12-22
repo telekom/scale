@@ -11,7 +11,7 @@ describe('Chip', () => {
   it('should match snapshot', async () => {
     const page = await newSpecPage({
       components: [Chip],
-      html: `<scale-chip label="Label Text"></scale-chip>`,
+      html: `<scale-chip>Label</scale-chip>`,
     });
     expect(page.root).toMatchSnapshot();
   });
