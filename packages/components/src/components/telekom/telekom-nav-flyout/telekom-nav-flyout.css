@@ -36,9 +36,11 @@
   left: var(--left);
   width: var(--width);
   height: var(--height);
+  min-height: 25vh;
   background: var(--background);
   box-shadow: var(--shadow);
-  animation-duration: 440ms;
+  animation-duration: var(--telekom-motion-duration-transition);
+  border-top: 1px solid var(--telekom-color-ui-faint);
 }
 
 :host::part(base expanded) {
