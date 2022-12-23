@@ -20,7 +20,7 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 export class TelekomNavItem {
   @Element() hostElement: HTMLStencilElement;
 
-  @Prop({ reflect: true }) variant: 'main' | 'meta' | 'meta-external' | 'icon' =
+  @Prop({ reflect: true }) variant: 'main' | 'meta' =
     'main';
 
   render() {

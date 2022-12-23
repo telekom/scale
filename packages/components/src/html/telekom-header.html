@@ -61,13 +61,16 @@
   <!-- 
     TODO
     - [ ] improve app name size, make it flexible (also improve animation with "new technique")
-    - [ ] 
+    - [ ] make nav-list and nav-item use global CSS (no JS component)? — so we can put a flyout-menu in a item, ::slotted is too limited
+    - [ ] nav-item focus state
+    - [ ] test "external" icon in "meta external" items (probably copy/paste from scale-link?)
+    - [ ] make flyout animation more tweakable with CSS vars (see animxyz)
   -->
 
   <body>
     <scale-telekom-header>
       <!-- MAIN NAV -->
-      <scale-telekom-nav-list debug variant="main" slot="main-nav">
+      <scale-telekom-nav-list variant="main" slot="main-nav">
         <scale-telekom-nav-item>
           <button><span>Category 1</span></button>
           <scale-telekom-nav-flyout hover>
@@ -139,13 +142,21 @@
           <a href="#">🎄</a>
         </scale-telekom-nav-item>
 
-        <scale-telekom-nav-item variant="main">
+        <scale-telekom-nav-item variant="main" active>
           <a href="#">🧡</a>
         </scale-telekom-nav-item>
 
         <scale-telekom-nav-item variant="main">
           <a href="#">👑</a>
         </scale-telekom-nav-item>
+
+        <!-- <scale-menu-flyout id="new" close-on-select="false">
+          <button slot="trigger" class="item">🥭</button>
+          <scale-menu-flyout-list>
+            <scale-menu-flyout-item>Item one</scale-menu-flyout-item>
+            <scale-menu-flyout-item>Second item</scale-menu-flyout-item>
+          </scale-menu-flyout-list>
+        </scale-menu-flyout> -->
 
         <scale-telekom-nav-item class="mobile-menu" variant="main">
           <button class="mobile-menu-trigger">Menu</button>

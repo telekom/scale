@@ -238,12 +238,11 @@ slot[name='functions'] {
   margin-left: var(--_spacing-left-horizontal-menus);
 }
 
-:host::part(extended-menu-left) {
-  display: inline-flex;
-}
-
+:host::part(extended-menu-left),
 :host::part(extended-menu-right) {
   display: inline-flex;
+  align-items: flex-start;
+  height: 100%;
 }
 
 :host::part(extended-menu) {

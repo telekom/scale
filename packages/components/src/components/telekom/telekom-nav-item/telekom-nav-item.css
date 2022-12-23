@@ -9,17 +9,43 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/* WIP 🚧 */
+@import url('../../../global/custom-media.css');
 
 :host {
   --spacing-x: 0;
-  --color-active: var(--telekom-color-primary-standard);
-}
 
+  --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
+  --_spacing-b-slotted-main: var(--telekom-spacing-unit-x5);
+}
+ 
+@media screen and (--md) {
+  :host {
+    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x5);
+  }
+}
+@media screen and (--lg) {
+  :host {
+    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x4);
+  }
+  :host-context([scrolled]) {
+    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x6);
+  }
+}
+@media screen and (--xl) {
+  :host {
+    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x6);
+  }
+}
+@media screen and (--2xl) {
+  :host {
+    --_spacing-b-slotted-main: var(--telekom-spacing-unit-x8);
+  }
+}
+ 
 :host([debug]) {
   border: 1px dotted cyan;
 }
-
+ 
 ::slotted(:where(a, button)) {
   box-sizing: border-box;
   font: inherit;
@@ -35,32 +61,45 @@
   height: 100%;
   position: relative;
 }
-
+ 
 ::slotted(:where(a, button):hover) {
-  color: var(--color-active);
+  color: var(--telekom-color-text-and-icon-primary-hovered);
 }
-
+::slotted(:where(a, button):active) {
+  color: var(--telekom-color-text-and-icon-primary-pressed);
+}
+ 
 /* main */
-
+ 
 :host([variant='main']) ::slotted(:where(a, button)) {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 800;
+  font-size: 1.125rem; /* 18px, no token 😢 */
+  line-height: var(--telekom-typography-line-spacing-tight);
+  font-weight: var(--telekom-typography-font-weight-extra-bold);
   padding-left: var(--spacing-x);
   padding-right: var(--spacing-x);
-  padding-bottom: var(--_spacing-bottom-header-nav-item-main);
-  color: var(--my-color);
+  padding-bottom: var(--_spacing-b-slotted-main);
 }
 :host([variant='main'][active]) ::slotted(:where(a, button)) {
-  color: var(--color-active);
+  color: var(--telekom-color-text-and-icon-primary-standard);
 }
 :host([variant='main'][active]) ::slotted(:where(a, button)):after {
   content: '';
   width: 100%;
   height: var(--telekom-spacing-unit-x1);
-  background: var(--color-active);
+  background: var(--telekom-color-primary-standard);
   display: block;
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+/* meta */
+ 
+:host([variant='meta']) ::slotted(:where(a, button)) {
+  font-size: var(--telekom-typography-font-size-small);
+  line-height: var(--telekom-typography-line-spacing-tight);
+  font-weight: var(--telekom-typography-font-weight-regular);
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+  padding-top: var(--_spacing-t-slotted-meta);
 }
