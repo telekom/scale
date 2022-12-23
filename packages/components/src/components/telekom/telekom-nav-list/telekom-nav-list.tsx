@@ -21,7 +21,7 @@ export class TelekomNavList {
   @Element() hostElement: HTMLStencilElement;
 
   @Prop({ reflect: true }) alignment: 'left' | 'center' | 'right' = 'left';
-  @Prop({ reflect: true }) variant: 'main' | 'meta' | 'function' = 'main';
+  @Prop({ reflect: true }) variant: 'main' | 'meta' | 'meta-tight' | 'function' = 'main';
 
   render() {
     return (

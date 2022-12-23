@@ -60,11 +60,12 @@
 
   <!-- 
     TODO
-    - [ ] improve app name size, make it flexible (also improve animation with "new technique")
+    - [ ] improve "app name" width, make it flexibler (also improve animation with "new technique")
     - [ ] make nav-list and nav-item use global CSS (no JS component)? — so we can put a flyout-menu in a item, ::slotted is too limited
     - [ ] nav-item focus state
     - [ ] test "external" icon in "meta external" items (probably copy/paste from scale-link?)
     - [ ] make flyout animation more tweakable with CSS vars (see animxyz)
+    - [ ] discard nav-list variants and use slot name instead?
   -->
 
   <body>
@@ -122,7 +123,7 @@
         </scale-telekom-nav-item>
       </scale-telekom-nav-list>
 
-      <scale-telekom-nav-list variant="meta" slot="meta-nav" alignment="left">
+      <scale-telekom-nav-list variant="meta-tight" slot="meta-nav" alignment="left">
         <scale-telekom-nav-item variant="meta">
           <a href="#">Metalink 1</a>
         </scale-telekom-nav-item>
