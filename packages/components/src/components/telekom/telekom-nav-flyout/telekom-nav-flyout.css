@@ -9,8 +9,6 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/* WIP 🚧 */
-
 :host {
   --top: 100%;
   --left: 0;
@@ -20,7 +18,10 @@
   --background: var(--telekom-color-background-surface);
   --shadow: none;
 
-  /* TODO add vars for animation props, both in and out */
+  --duration: var(--telekom-motion-duration-transition);
+  --translate-x: 0;
+  --translate-y: var(--telekom-spacing-unit-x1);
+  --translate-z: 0;
 
   display: contents;
 }
@@ -39,7 +40,7 @@
   min-height: 25vh;
   background: var(--background);
   box-shadow: var(--shadow);
-  animation-duration: var(--telekom-motion-duration-transition);
+  animation-duration: var(--duration);
   border-top: 1px solid var(--telekom-color-ui-faint);
 }
 
@@ -50,7 +51,7 @@
 @keyframes toggle {
   from {
     opacity: 0;
-    transform: translateY(-0.25em);
+    transform: translate3d(var(--translate-x), var(--translate-y), var(--translate-z));
   }
 }
 

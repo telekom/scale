@@ -44,7 +44,6 @@
         height: 100%;
         box-sizing: border-box;
         padding: 1rem;
-        border: 2px dashed burlywood;
       }
       .mobile-menu-trigger[aria-expanded='true'] {
         color: red;
@@ -64,8 +63,8 @@
     - [ ] make nav-list and nav-item use global CSS (no JS component)? — so we can put a flyout-menu in a item, ::slotted is too limited
     - [ ] nav-item focus state
     - [ ] test "external" icon in "meta external" items (probably copy/paste from scale-link?)
-    - [ ] make flyout animation more tweakable with CSS vars (see animxyz)
     - [ ] discard nav-list variants and use slot name instead?
+    - [ ] add some default padding to nav-flyout to match header container (side margins)
   -->
 
   <body>
@@ -161,7 +160,10 @@
 
         <scale-telekom-nav-item class="mobile-menu" variant="main">
           <button class="mobile-menu-trigger">Menu</button>
-          <scale-telekom-nav-flyout class="mobile-menu-flyout">
+          <scale-telekom-nav-flyout class="mobile-menu-flyout" style="
+            --translate-y: 100%;
+            --duration: var(--telekom-motion-duration-animation);
+          ">
             <div>
               <p>Hey!</p>
             </div>
