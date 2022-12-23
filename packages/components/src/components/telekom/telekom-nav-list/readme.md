@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                            | Default  |
-| ----------- | ----------- | ----------- | ------------------------------- | -------- |
-| `alignment` | `alignment` |             | `"center" \| "left" \| "right"` | `'left'` |
+| Property    | Attribute   | Description | Type                                             | Default  |
+| ----------- | ----------- | ----------- | ------------------------------------------------ | -------- |
+| `alignment` | `alignment` |             | `"center" \| "left" \| "right"`                  | `'left'` |
+| `variant`   | `variant`   |             | `"function" \| "main" \| "meta" \| "meta-tight"` | `'main'` |
 
 
 ----------------------------------------------
