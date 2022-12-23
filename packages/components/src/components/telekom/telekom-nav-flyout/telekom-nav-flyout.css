@@ -51,7 +51,11 @@
 @keyframes toggle {
   from {
     opacity: 0;
-    transform: translate3d(var(--translate-x), var(--translate-y), var(--translate-z));
+    transform: translate3d(
+      var(--translate-x),
+      var(--translate-y),
+      var(--translate-z)
+    );
   }
 }
 
