@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                                            | Default  |
-| --------- | --------- | ----------- | ----------------------------------------------- | -------- |
-| `variant` | `variant` |             | `"icon" \| "main" \| "meta" \| "meta-external"` | `'main'` |
+| Property  | Attribute | Description | Type               | Default  |
+| --------- | --------- | ----------- | ------------------ | -------- |
+| `variant` | `variant` |             | `"main" \| "meta"` | `'main'` |
 
 
 ----------------------------------------------

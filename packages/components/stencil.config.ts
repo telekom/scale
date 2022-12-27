@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
+import postcssCustomMedia from 'postcss-custom-media';
 import { frameworkTargets } from './framework-targets';
 import { inlineSvg } from 'stencil-inline-svg';
 
@@ -26,7 +27,7 @@ export const config: Config = {
   plugins: [
     inlineSvg(),
     postcss({
-      plugins: [], // TODO
+      plugins: [postcssCustomMedia()],
     }),
   ],
   outputTargets: [

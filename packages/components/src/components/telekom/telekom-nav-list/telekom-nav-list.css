@@ -9,30 +9,70 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/* WIP 🚧 */
+/*
+       sm,md,lg,xl,2xl
+  main --,--,32,48,56
+  meta --,--,32,32,32
+  func 24,24,24,24,24
+*/
+
+@import url('../../../global/custom-media.css');
 
 :host {
-  --spacing-inner-x: 58px;
+  --width: 100%;
   --height: 100%;
-  --spacing-x: 30px;
+  --spacing-x-start: 0;
 
-  /* TODO just for ref… */
-  /* --_spacing-bottom-header-nav-item-main: 16px;
-  --_spacing-inline-header-nav-item-main: 32px;
-  --_spacing-top-header-nav-item-secondary: 12px;
-  --_spacing-inline-header-nav-item-secondary: 32px;
-  --_spacing-bottom-header-nav-item-main-icon: 16px;
-  --_spacing-inline-header-nav-item-main-icon: 24px; */
+  --_spacing-x-slotted: var(--_spacing-x-slotted-main, 24px);
+  --_spacing-x-slotted-main: var(--telekom-spacing-unit-x8);
+  --_spacing-x-slotted-meta: var(--telekom-spacing-unit-x8);
+  --_spacing-x-slotted-meta-tight: var(--telekom-spacing-unit-x4);
+  --_spacing-x-slotted-function: var(--telekom-spacing-unit-x6);
 
   display: flex;
-  width: 100%;
   align-items: stretch;
+  width: var(--width);
   height: var(--height);
-  margin-inline-start: var(--spacing-x);
+  margin-inline-start: var(--spacing-x-start);
 }
 
 :host([debug]) {
   border: 1px dotted gold;
+}
+
+@media screen and (--xl) {
+  :host {
+    --_spacing-x-slotted-main: var(--telekom-spacing-unit-x12);
+    --_spacing-x-slotted-meta-tight: var(--telekom-spacing-unit-x5);
+  }
+
+  :host([debug]) {
+    border: 1px dotted cyan;
+  }
+}
+
+@media screen and (--2xl) {
+  :host {
+    --_spacing-x-slotted-main: var(--telekom-spacing-unit-x14);
+  }
+
+  :host([debug]) {
+    border: 1px dotted magenta;
+  }
+}
+
+/* TODO could this also be [slot="..."]? */
+:host([variant='main']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-main);
+}
+:host([variant='meta']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-meta);
+}
+:host([variant='meta-tight']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-meta-tight);
+}
+:host([variant='function']) {
+  --_spacing-x-slotted: var(--_spacing-x-slotted-function);
 }
 
 :host([alignment='left']) {
@@ -46,11 +86,11 @@
 }
 
 :host([alignment='left']) ::slotted(*:not(:last-child)) {
-  margin-inline-end: var(--spacing-inner-x);
+  margin-inline-end: var(--_spacing-x-slotted);
 }
 :host([alignment='right']) ::slotted(*:not(:first-child)) {
-  margin-inline-start: var(--spacing-inner-x);
+  margin-inline-start: var(--_spacing-x-slotted);
 }
 :host([alignment='center']) ::slotted(*) {
-  margin-inline: calc(0.5 * var(--spacing-inner-x));
+  margin-inline: calc(0.5 * var(--_spacing-x-slotted));
 }
