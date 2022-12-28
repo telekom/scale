@@ -73,6 +73,11 @@ export class TelekomNavItem {
   //   }
   // }
 
+  @Listen('scale-close-nav-flyout')
+  handleScaleCloseNavFlyout() {
+    this.expanded = false;
+  }
+
   @Listen('click', { target: 'document' })
   handleDocumentClick(event) {
     if (!this.isExpanded) {
