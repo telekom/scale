@@ -14,7 +14,7 @@
 :host {
   --spacing-x: 0;
 
-  --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
+  --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x5);
   --_spacing-b-slotted-main: var(--telekom-spacing-unit-x5);
 }
 
@@ -25,6 +25,7 @@
 }
 @media screen and (--lg) {
   :host {
+    --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
     --_spacing-b-slotted-main: var(--telekom-spacing-unit-x4);
   }
   :host-context([scrolled]) {
@@ -33,11 +34,13 @@
 }
 @media screen and (--xl) {
   :host {
+    --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
     --_spacing-b-slotted-main: var(--telekom-spacing-unit-x6);
   }
 }
 @media screen and (--2xl) {
   :host {
+    --_spacing-t-slotted-meta: var(--telekom-spacing-unit-x3);
     --_spacing-b-slotted-main: var(--telekom-spacing-unit-x8);
   }
 }
