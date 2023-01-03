@@ -45,14 +45,15 @@
 
 .notification-banner__heading {
   margin: 14px 48px 14px 48px;
+  padding: 13px 0 13px 0;
   font-weight: var(--telekom-typography-font-weight-bold);
-  line-height: 48px;
+  line-height: 22px;
 }
 
 .notification-banner__text ::slotted(*) {
   margin: -10px 0px -25px 0px;
   line-height: 16px;
-  padding-bottom: 15px;
+  padding: 8px 0 15px 0;
 }
 
 .notification-banner--has-no-text .notification-banner__link ::slotted(*) {
