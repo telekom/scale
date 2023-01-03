@@ -53,7 +53,7 @@
 .notification-banner__text ::slotted(*) {
   margin: -10px 0px -25px 0px;
   line-height: 16px;
-  padding: 8px 0 15px 0;
+  padding: 13px 0 15px 0;
 }
 
 .notification-banner--has-no-text .notification-banner__link ::slotted(*) {
@@ -63,7 +63,7 @@
 
 .notification-banner--has-text .notification-banner__link ::slotted(*) {
   margin: 20px 0 0 0;
-  padding-bottom: 15px;
+  padding-bottom: 2px;
   line-height: 20px;
 }
 
