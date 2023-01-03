@@ -56,6 +56,12 @@
   padding: 13px 0 15px 0;
 }
 
+.notification-banner--has-no-link .notification-banner__text ::slotted(*) {
+  margin: -10px 0px -14px 0px;
+  line-height: 16px;
+  padding-bottom: 15px;
+}
+
 .notification-banner--has-no-text .notification-banner__link ::slotted(*) {
   margin: 0;
   padding: 0px 0px 0px 16px;
